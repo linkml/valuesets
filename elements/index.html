@@ -1,0 +1,1821 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://linkml.github.io/valuesets/elements/">
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../about/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.19">
+    
+    
+      
+        <title>Schema - valuesets</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.7e37652d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/ansi-colours.css">
+    
+      <link rel="stylesheet" href="../css/jupyter-cells.css">
+    
+      <link rel="stylesheet" href="../css/pandas-dataframe.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#valuesets" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="valuesets" class="md-header__button md-logo" aria-label="valuesets" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            valuesets
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Schema
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/linkml/valuesets" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="valuesets" class="md-nav__button md-logo" aria-label="valuesets" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    valuesets
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/linkml/valuesets" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Schema
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Schema
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Classes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slots" class="md-nav__link">
+    <span class="md-ellipsis">
+      Slots
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enumerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enumerations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subsets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Subsets
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    About
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Classes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slots" class="md-nav__link">
+    <span class="md-ellipsis">
+      Slots
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enumerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enumerations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subsets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Subsets
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="valuesets">valuesets</h1>
+<p>A collection of commonly used value sets</p>
+<p>URI: https://w3id.org/linkml/valuesets</p>
+<p>Name: valuesets</p>
+<h2 id="classes">Classes</h2>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="Fake/">Fake</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="slots">Slots</h2>
+<table>
+<thead>
+<tr>
+<th>Slot</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="enumerations">Enumerations</h2>
+<table>
+<thead>
+<tr>
+<th>Enumeration</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="AcademicDegree/">AcademicDegree</a></td>
+<td>Academic degrees and qualifications</td>
+</tr>
+<tr>
+<td><a href="ACMGPathogenicityEnum/">ACMGPathogenicityEnum</a></td>
+<td>ACMG/AMP variant pathogenicity classification for clinical genetics</td>
+</tr>
+<tr>
+<td><a href="AdditiveManufacturingEnum/">AdditiveManufacturingEnum</a></td>
+<td>3D printing and additive manufacturing methods</td>
+</tr>
+<tr>
+<td><a href="AgeGroupEnum/">AgeGroupEnum</a></td>
+<td>Standard age groups used in NIH clinical research, particularly NINDS CDEs</td>
+</tr>
+<tr>
+<td><a href="AgitationTypeEnum/">AgitationTypeEnum</a></td>
+<td>Types of agitation/mixing in bioreactors</td>
+</tr>
+<tr>
+<td><a href="AirPollutantEnum/">AirPollutantEnum</a></td>
+<td>Common air pollutants and air quality indicators</td>
+</tr>
+<tr>
+<td><a href="AllelicStateEnum/">AllelicStateEnum</a></td>
+<td>Allelic state/zygosity of a variant or genetic feature</td>
+</tr>
+<tr>
+<td><a href="AllergyTypeEnum/">AllergyTypeEnum</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="AminoAcidEnum/">AminoAcidEnum</a></td>
+<td>Standard amino acid single letter codes</td>
+</tr>
+<tr>
+<td><a href="AminoAcidExtendedEnum/">AminoAcidExtendedEnum</a></td>
+<td>Extended amino acid alphabet with ambiguity codes and special characters</td>
+</tr>
+<tr>
+<td><a href="AnatomicalAxis/">AnatomicalAxis</a></td>
+<td>Anatomical axes defining spatial organization</td>
+</tr>
+<tr>
+<td><a href="AnatomicalPlane/">AnatomicalPlane</a></td>
+<td>Standard anatomical planes for sectioning</td>
+</tr>
+<tr>
+<td><a href="AnatomicalRegion/">AnatomicalRegion</a></td>
+<td>Anatomical regions based on spatial position</td>
+</tr>
+<tr>
+<td><a href="AnatomicalSide/">AnatomicalSide</a></td>
+<td>Anatomical sides as defined in the Biological Spatial Ontology (BSPO)</td>
+</tr>
+<tr>
+<td><a href="AnatomicalSystemEnum/">AnatomicalSystemEnum</a></td>
+<td>Major anatomical systems of the body</td>
+</tr>
+<tr>
+<td><a href="AngleUnitEnum/">AngleUnitEnum</a></td>
+<td>Units of angle measurement</td>
+</tr>
+<tr>
+<td><a href="AnimalCoatColorEnum/">AnimalCoatColorEnum</a></td>
+<td>Animal coat/fur colors</td>
+</tr>
+<tr>
+<td><a href="AnomalyDetectionEnum/">AnomalyDetectionEnum</a></td>
+<td>Labels for anomaly detection tasks</td>
+</tr>
+<tr>
+<td><a href="ArchiveFormatEnum/">ArchiveFormatEnum</a></td>
+<td>Archive and compression formats</td>
+</tr>
+<tr>
+<td><a href="AudioFormatEnum/">AudioFormatEnum</a></td>
+<td>Audio file formats</td>
+</tr>
+<tr>
+<td><a href="AutomobilePaintColorEnum/">AutomobilePaintColorEnum</a></td>
+<td>Common automobile paint colors</td>
+</tr>
+<tr>
+<td><a href="AviationLightColorEnum/">AviationLightColorEnum</a></td>
+<td>Aviation lighting colors</td>
+</tr>
+<tr>
+<td><a href="BasicColorEnum/">BasicColorEnum</a></td>
+<td>Basic color names commonly used in everyday language</td>
+</tr>
+<tr>
+<td><a href="BasicEmotionEnum/">BasicEmotionEnum</a></td>
+<td>Ekman's six basic emotions commonly used in emotion recognition</td>
+</tr>
+<tr>
+<td><a href="BinaryClassificationEnum/">BinaryClassificationEnum</a></td>
+<td>Generic binary classification labels</td>
+</tr>
+<tr>
+<td><a href="BiologicalKingdom/">BiologicalKingdom</a></td>
+<td>Major kingdoms/domains of life</td>
+</tr>
+<tr>
+<td><a href="BiologicalProcess/">BiologicalProcess</a></td>
+<td>Biological processes from Gene Ontology</td>
+</tr>
+<tr>
+<td><a href="BiologicalSexEnum/">BiologicalSexEnum</a></td>
+<td>Biological sex assigned at birth based on anatomical and physiological traits</td>
+</tr>
+<tr>
+<td><a href="BioreactorTypeEnum/">BioreactorTypeEnum</a></td>
+<td>Types of bioreactors used in fermentation and cell culture</td>
+</tr>
+<tr>
+<td><a href="BloodTypeEnum/">BloodTypeEnum</a></td>
+<td>ABO and Rh blood group classifications</td>
+</tr>
+<tr>
+<td><a href="BMIClassificationEnum/">BMIClassificationEnum</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="BondTypeEnum/">BondTypeEnum</a></td>
+<td>Types of chemical bonds</td>
+</tr>
+<tr>
+<td><a href="BravaisLatticeEnum/">BravaisLatticeEnum</a></td>
+<td>The 14 Bravais lattices describing all possible crystal lattices</td>
+</tr>
+<tr>
+<td><a href="BronstedAcidBaseRoleEnum/">BronstedAcidBaseRoleEnum</a></td>
+<td>Brønsted-Lowry acid-base roles</td>
+</tr>
+<tr>
+<td><a href="BuildingEnergyStandard/">BuildingEnergyStandard</a></td>
+<td>Building energy efficiency standards and certifications</td>
+</tr>
+<tr>
+<td><a href="BusinessTimeFrame/">BusinessTimeFrame</a></td>
+<td>Common business and financial time frames</td>
+</tr>
+<tr>
+<td><a href="CanadianProvinceCodeEnum/">CanadianProvinceCodeEnum</a></td>
+<td>Canadian province and territory codes</td>
+</tr>
+<tr>
+<td><a href="Cancer/">Cancer</a></td>
+<td>Neoplastic and cancerous diseases</td>
+</tr>
+<tr>
+<td><a href="CarbonIntensity/">CarbonIntensity</a></td>
+<td>Carbon intensity levels for energy sources</td>
+</tr>
+<tr>
+<td><a href="CaseOrControlEnum/">CaseOrControlEnum</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="CatalystTypeEnum/">CatalystTypeEnum</a></td>
+<td>Types of catalysts</td>
+</tr>
+<tr>
+<td><a href="CellCycleCheckpoint/">CellCycleCheckpoint</a></td>
+<td>Cell cycle checkpoints that regulate progression</td>
+</tr>
+<tr>
+<td><a href="CellCyclePhase/">CellCyclePhase</a></td>
+<td>Major phases of the eukaryotic cell cycle</td>
+</tr>
+<tr>
+<td><a href="CellCycleRegulator/">CellCycleRegulator</a></td>
+<td>Types of cell cycle regulatory molecules</td>
+</tr>
+<tr>
+<td><a href="CellPolarity/">CellPolarity</a></td>
+<td>Spatial polarity in cells and tissues</td>
+</tr>
+<tr>
+<td><a href="CellProliferationState/">CellProliferationState</a></td>
+<td>Cell proliferation and growth states</td>
+</tr>
+<tr>
+<td><a href="CellType/">CellType</a></td>
+<td>Any cell type from the Cell Ontology (CL),</td>
+</tr>
+<tr>
+<td><a href="CellularComponent/">CellularComponent</a></td>
+<td>Cellular components and locations from Gene Ontology</td>
+</tr>
+<tr>
+<td><a href="ChemicalEntity/">ChemicalEntity</a></td>
+<td>Any chemical entity from ChEBI ontology</td>
+</tr>
+<tr>
+<td><a href="ChiralityEnum/">ChiralityEnum</a></td>
+<td>Chirality/stereochemistry descriptors</td>
+</tr>
+<tr>
+<td><a href="ChurnClassificationEnum/">ChurnClassificationEnum</a></td>
+<td>Customer churn prediction labels</td>
+</tr>
+<tr>
+<td><a href="CitationStyle/">CitationStyle</a></td>
+<td>Common citation and reference styles</td>
+</tr>
+<tr>
+<td><a href="ClinicalFinding/">ClinicalFinding</a></td>
+<td>Clinical findings and observations</td>
+</tr>
+<tr>
+<td><a href="CodonEnum/">CodonEnum</a></td>
+<td>Standard genetic code codons (DNA)</td>
+</tr>
+<tr>
+<td><a href="ColorSpaceEnum/">ColorSpaceEnum</a></td>
+<td>Color space and model types</td>
+</tr>
+<tr>
+<td><a href="CommonMineral/">CommonMineral</a></td>
+<td>Common minerals extracted through mining</td>
+</tr>
+<tr>
+<td><a href="CommonOrganismTaxaEnum/">CommonOrganismTaxaEnum</a></td>
+<td>Common model organisms used in biological research, mapped to NCBI Taxonomy I...</td>
+</tr>
+<tr>
+<td><a href="CompassDirection/">CompassDirection</a></td>
+<td>Cardinal and intercardinal compass directions</td>
+</tr>
+<tr>
+<td><a href="CompositeTypeEnum/">CompositeTypeEnum</a></td>
+<td>Types of composite materials</td>
+</tr>
+<tr>
+<td><a href="CompressionType/">CompressionType</a></td>
+<td>Compression types used with Content-Encoding</td>
+</tr>
+<tr>
+<td><a href="ConcentrationUnitEnum/">ConcentrationUnitEnum</a></td>
+<td>Units of concentration measurement</td>
+</tr>
+<tr>
+<td><a href="ConfidenceLevelEnum/">ConfidenceLevelEnum</a></td>
+<td>Confidence levels for predictions and classifications</td>
+</tr>
+<tr>
+<td><a href="ContinentEnum/">ContinentEnum</a></td>
+<td>Continental regions</td>
+</tr>
+<tr>
+<td><a href="CountryCodeISO2Enum/">CountryCodeISO2Enum</a></td>
+<td>ISO 3166-1 alpha-2 country codes (2-letter codes)</td>
+</tr>
+<tr>
+<td><a href="CountryCodeISO3Enum/">CountryCodeISO3Enum</a></td>
+<td>ISO 3166-1 alpha-3 country codes (3-letter codes)</td>
+</tr>
+<tr>
+<td><a href="CriticalMineral/">CriticalMineral</a></td>
+<td>Critical minerals essential for economic and national security,</td>
+</tr>
+<tr>
+<td><a href="CryoEMGridType/">CryoEMGridType</a></td>
+<td>Types of electron microscopy grids</td>
+</tr>
+<tr>
+<td><a href="CryoEMPreparationType/">CryoEMPreparationType</a></td>
+<td>Types of cryo-EM sample preparation</td>
+</tr>
+<tr>
+<td><a href="CrystalGrowthMethodEnum/">CrystalGrowthMethodEnum</a></td>
+<td>Methods for growing single crystals</td>
+</tr>
+<tr>
+<td><a href="CrystallizationMethod/">CrystallizationMethod</a></td>
+<td>Methods for protein crystallization</td>
+</tr>
+<tr>
+<td><a href="CrystalSystemEnum/">CrystalSystemEnum</a></td>
+<td>The seven crystal systems in crystallography</td>
+</tr>
+<tr>
+<td><a href="CurrencyCodeISO4217Enum/">CurrencyCodeISO4217Enum</a></td>
+<td>ISO 4217 currency codes</td>
+</tr>
+<tr>
+<td><a href="DataAbsentEnum/">DataAbsentEnum</a></td>
+<td>Used to specify why the normally expected content of the data element is miss...</td>
+</tr>
+<tr>
+<td><a href="DataFormatEnum/">DataFormatEnum</a></td>
+<td>Structured data file formats</td>
+</tr>
+<tr>
+<td><a href="DataSizeUnitEnum/">DataSizeUnitEnum</a></td>
+<td>Units of digital data size</td>
+</tr>
+<tr>
+<td><a href="DataType/">DataType</a></td>
+<td>Types of structural biology data</td>
+</tr>
+<tr>
+<td><a href="DayOfWeek/">DayOfWeek</a></td>
+<td>Days of the week following ISO 8601 standard (Monday = 1)</td>
+</tr>
+<tr>
+<td><a href="DefectClassificationEnum/">DefectClassificationEnum</a></td>
+<td>Manufacturing defect classification</td>
+</tr>
+<tr>
+<td><a href="Detector/">Detector</a></td>
+<td>Types of detectors for structural biology</td>
+</tr>
+<tr>
+<td><a href="DiagnosticTestTypeEnum/">DiagnosticTestTypeEnum</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Disease/">Disease</a></td>
+<td>Human diseases from the Mondo Disease Ontology</td>
+</tr>
+<tr>
+<td><a href="DNABaseEnum/">DNABaseEnum</a></td>
+<td>Standard DNA nucleotide bases (canonical)</td>
+</tr>
+<tr>
+<td><a href="DNABaseExtendedEnum/">DNABaseExtendedEnum</a></td>
+<td>Extended DNA alphabet with IUPAC ambiguity codes</td>
+</tr>
+<tr>
+<td><a href="DNADamageResponse/">DNADamageResponse</a></td>
+<td>DNA damage response pathways during cell cycle</td>
+</tr>
+<tr>
+<td><a href="DocumentFormatEnum/">DocumentFormatEnum</a></td>
+<td>Document and text file formats</td>
+</tr>
+<tr>
+<td><a href="DownstreamProcessEnum/">DownstreamProcessEnum</a></td>
+<td>Downstream processing unit operations</td>
+</tr>
+<tr>
+<td><a href="Drug/">Drug</a></td>
+<td>Pharmaceutical drugs and medications</td>
+</tr>
+<tr>
+<td><a href="DrugResponseEnum/">DrugResponseEnum</a></td>
+<td>Response categories for drug treatment outcomes</td>
+</tr>
+<tr>
+<td><a href="DrugRouteEnum/">DrugRouteEnum</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="EducationLevelEnum/">EducationLevelEnum</a></td>
+<td>Highest level of education completed, following NIH demographics standards</td>
+</tr>
+<tr>
+<td><a href="ElectricalConductivityEnum/">ElectricalConductivityEnum</a></td>
+<td>Classification of materials by electrical conductivity</td>
+</tr>
+<tr>
+<td><a href="ElectricalWireColorEnum/">ElectricalWireColorEnum</a></td>
+<td>Electrical wire color codes (US/International)</td>
+</tr>
+<tr>
+<td><a href="ElectricityMarket/">ElectricityMarket</a></td>
+<td>Types of electricity markets and pricing</td>
+</tr>
+<tr>
+<td><a href="ElementFamilyEnum/">ElementFamilyEnum</a></td>
+<td>Chemical element families/groups</td>
+</tr>
+<tr>
+<td><a href="ElementMetallicClassificationEnum/">ElementMetallicClassificationEnum</a></td>
+<td>Metallic character classification</td>
+</tr>
+<tr>
+<td><a href="EmissionScope/">EmissionScope</a></td>
+<td>Greenhouse gas emission scopes (GHG Protocol)</td>
+</tr>
+<tr>
+<td><a href="EmploymentStatusEnum/">EmploymentStatusEnum</a></td>
+<td>Employment status of a person</td>
+</tr>
+<tr>
+<td><a href="EndocrineDisruptorEnum/">EndocrineDisruptorEnum</a></td>
+<td>Common endocrine disrupting chemicals</td>
+</tr>
+<tr>
+<td><a href="EnergyEfficiencyRating/">EnergyEfficiencyRating</a></td>
+<td>Energy efficiency ratings and standards</td>
+</tr>
+<tr>
+<td><a href="EnergySource/">EnergySource</a></td>
+<td>Types of energy sources and generation methods</td>
+</tr>
+<tr>
+<td><a href="EnergyStorageType/">EnergyStorageType</a></td>
+<td>Types of energy storage systems</td>
+</tr>
+<tr>
+<td><a href="EnergyUnit/">EnergyUnit</a></td>
+<td>Units for measuring energy</td>
+</tr>
+<tr>
+<td><a href="Environment/">Environment</a></td>
+<td>Environmental systems and biomes</td>
+</tr>
+<tr>
+<td><a href="EnvironmentalImpact/">EnvironmentalImpact</a></td>
+<td>Environmental impacts of mining</td>
+</tr>
+<tr>
+<td><a href="EnvironmentalMaterial/">EnvironmentalMaterial</a></td>
+<td>Environmental materials and substances</td>
+</tr>
+<tr>
+<td><a href="EnzymeClassEnum/">EnzymeClassEnum</a></td>
+<td>EC enzyme classification</td>
+</tr>
+<tr>
+<td><a href="EthnicityOMB1997Enum/">EthnicityOMB1997Enum</a></td>
+<td>Ethnicity categories following OMB 1997 standards used by NIH and federal age...</td>
+</tr>
+<tr>
+<td><a href="ExposureDurationEnum/">ExposureDurationEnum</a></td>
+<td>Duration categories for environmental exposures</td>
+</tr>
+<tr>
+<td><a href="ExposureRouteEnum/">ExposureRouteEnum</a></td>
+<td>Routes by which exposure to environmental agents occurs</td>
+</tr>
+<tr>
+<td><a href="ExposureSourceEnum/">ExposureSourceEnum</a></td>
+<td>Common sources of environmental exposures</td>
+</tr>
+<tr>
+<td><a href="ExtendedEmotionEnum/">ExtendedEmotionEnum</a></td>
+<td>Extended emotion set including complex emotions</td>
+</tr>
+<tr>
+<td><a href="ExtractiveIndustryFacilityTypeEnum/">ExtractiveIndustryFacilityTypeEnum</a></td>
+<td>Types of extractive industry facilities</td>
+</tr>
+<tr>
+<td><a href="ExtractiveIndustryProductTypeEnum/">ExtractiveIndustryProductTypeEnum</a></td>
+<td>Types of products extracted from extractive industry facilities</td>
+</tr>
+<tr>
+<td><a href="EyeColorEnum/">EyeColorEnum</a></td>
+<td>Human eye color phenotypes</td>
+</tr>
+<tr>
+<td><a href="FeedstockTypeEnum/">FeedstockTypeEnum</a></td>
+<td>Types of feedstocks for bioprocessing</td>
+</tr>
+<tr>
+<td><a href="FermentationModeEnum/">FermentationModeEnum</a></td>
+<td>Modes of fermentation operation</td>
+</tr>
+<tr>
+<td><a href="FileFormat/">FileFormat</a></td>
+<td>File formats used in structural biology</td>
+</tr>
+<tr>
+<td><a href="FineSentimentClassificationEnum/">FineSentimentClassificationEnum</a></td>
+<td>Fine-grained sentiment analysis labels with intensity levels</td>
+</tr>
+<tr>
+<td><a href="FireSafetyColorEnum/">FireSafetyColorEnum</a></td>
+<td>Fire safety equipment and signage colors</td>
+</tr>
+<tr>
+<td><a href="FlowerColorEnum/">FlowerColorEnum</a></td>
+<td>Common flower colors</td>
+</tr>
+<tr>
+<td><a href="FoodColoringEnum/">FoodColoringEnum</a></td>
+<td>Food coloring and natural food dyes</td>
+</tr>
+<tr>
+<td><a href="FossilFuelTypeEnum/">FossilFuelTypeEnum</a></td>
+<td>Types of fossil fuels used for energy generation</td>
+</tr>
+<tr>
+<td><a href="FraudDetectionEnum/">FraudDetectionEnum</a></td>
+<td>Fraud detection classification labels</td>
+</tr>
+<tr>
+<td><a href="FrequencyUnitEnum/">FrequencyUnitEnum</a></td>
+<td>Units of frequency measurement</td>
+</tr>
+<tr>
+<td><a href="FundingType/">FundingType</a></td>
+<td>Types of research funding</td>
+</tr>
+<tr>
+<td><a href="GenderIdentityEnum/">GenderIdentityEnum</a></td>
+<td>Current gender identity, which may differ from sex assigned at birth</td>
+</tr>
+<tr>
+<td><a href="GeneFeature/">GeneFeature</a></td>
+<td>Gene-related sequence features</td>
+</tr>
+<tr>
+<td><a href="GeneticDisease/">GeneticDisease</a></td>
+<td>Hereditary and genetic diseases</td>
+</tr>
+<tr>
+<td><a href="GenomeFeatureType/">GenomeFeatureType</a></td>
+<td>Genome feature types from SOFA (Sequence Ontology Feature Annotation)</td>
+</tr>
+<tr>
+<td><a href="GeologicalEra/">GeologicalEra</a></td>
+<td>Major geological eras</td>
+</tr>
+<tr>
+<td><a href="GOElectronicMethods/">GOElectronicMethods</a></td>
+<td>Electronic annotation methods used in Gene Ontology, identified by GO_REF cod...</td>
+</tr>
+<tr>
+<td><a href="GOEvidenceCode/">GOEvidenceCode</a></td>
+<td>Gene Ontology evidence codes mapped to Evidence and Conclusion Ontology (ECO)...</td>
+</tr>
+<tr>
+<td><a href="GridType/">GridType</a></td>
+<td>Types of electrical grid systems</td>
+</tr>
+<tr>
+<td><a href="HairColorEnum/">HairColorEnum</a></td>
+<td>Human hair color phenotypes</td>
+</tr>
+<tr>
+<td><a href="HardOrSoftEnum/">HardOrSoftEnum</a></td>
+<td>HSAB (Hard Soft Acid Base) classification</td>
+</tr>
+<tr>
+<td><a href="HazmatColorEnum/">HazmatColorEnum</a></td>
+<td>Hazardous materials placarding colors (DOT/UN)</td>
+</tr>
+<tr>
+<td><a href="HealthcareEncounterClassification/">HealthcareEncounterClassification</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="HeavyMetalEnum/">HeavyMetalEnum</a></td>
+<td>Heavy metals of environmental health concern</td>
+</tr>
+<tr>
+<td><a href="HistoricalPeriod/">HistoricalPeriod</a></td>
+<td>Major historical periods</td>
+</tr>
+<tr>
+<td><a href="HumanAnatomicalStructure/">HumanAnatomicalStructure</a></td>
+<td>Anatomical structures specific to humans (Homo sapiens)</td>
+</tr>
+<tr>
+<td><a href="ImageFileFormatEnum/">ImageFileFormatEnum</a></td>
+<td>Common image file formats</td>
+</tr>
+<tr>
+<td><a href="ImmuneCell/">ImmuneCell</a></td>
+<td>Immune system cell types (leukocytes and their subtypes)</td>
+</tr>
+<tr>
+<td><a href="IndustrialDyeEnum/">IndustrialDyeEnum</a></td>
+<td>Industrial and textile dyes</td>
+</tr>
+<tr>
+<td><a href="InfectiousDisease/">InfectiousDisease</a></td>
+<td>Infectious diseases caused by pathogenic organisms</td>
+</tr>
+<tr>
+<td><a href="InsdcMissingValueEnum/">InsdcMissingValueEnum</a></td>
+<td>INSDC (International Nucleotide Sequence Database Collaboration) controlled v...</td>
+</tr>
+<tr>
+<td><a href="IntentClassificationEnum/">IntentClassificationEnum</a></td>
+<td>Common chatbot/NLU intent categories</td>
+</tr>
+<tr>
+<td><a href="InterpretationProgressEnum/">InterpretationProgressEnum</a></td>
+<td>Progress status of clinical interpretation or diagnosis</td>
+</tr>
+<tr>
+<td><a href="InvestigativeProtocolEnum/">InvestigativeProtocolEnum</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="KaryotypicSexEnum/">KaryotypicSexEnum</a></td>
+<td>Karyotypic sex of an individual based on chromosome composition</td>
+</tr>
+<tr>
+<td><a href="LanguageCodeISO6391Enum/">LanguageCodeISO6391Enum</a></td>
+<td>ISO 639-1 two-letter language codes</td>
+</tr>
+<tr>
+<td><a href="LateralityEnum/">LateralityEnum</a></td>
+<td>Laterality/sidedness of a finding or anatomical structure</td>
+</tr>
+<tr>
+<td><a href="LengthUnitEnum/">LengthUnitEnum</a></td>
+<td>Units of length/distance measurement</td>
+</tr>
+<tr>
+<td><a href="LewisAcidBaseRoleEnum/">LewisAcidBaseRoleEnum</a></td>
+<td>Lewis acid-base roles</td>
+</tr>
+<tr>
+<td><a href="LicenseType/">LicenseType</a></td>
+<td>Common software and content licenses</td>
+</tr>
+<tr>
+<td><a href="MagneticPropertyEnum/">MagneticPropertyEnum</a></td>
+<td>Classification of materials by magnetic properties</td>
+</tr>
+<tr>
+<td><a href="ManuscriptSection/">ManuscriptSection</a></td>
+<td>Sections of a scientific manuscript or publication</td>
+</tr>
+<tr>
+<td><a href="MaritalStatusEnum/">MaritalStatusEnum</a></td>
+<td>Marital or civil status of a person</td>
+</tr>
+<tr>
+<td><a href="MaritimeSignalColorEnum/">MaritimeSignalColorEnum</a></td>
+<td>Maritime signal and navigation colors</td>
+</tr>
+<tr>
+<td><a href="MassUnitEnum/">MassUnitEnum</a></td>
+<td>Units of mass measurement</td>
+</tr>
+<tr>
+<td><a href="MaterialClassEnum/">MaterialClassEnum</a></td>
+<td>Major classes of materials</td>
+</tr>
+<tr>
+<td><a href="MechanicalBehaviorEnum/">MechanicalBehaviorEnum</a></td>
+<td>Mechanical behavior of materials under stress</td>
+</tr>
+<tr>
+<td><a href="MechanicalTestingMethodEnum/">MechanicalTestingMethodEnum</a></td>
+<td>Mechanical testing methods</td>
+</tr>
+<tr>
+<td><a href="MedicalSpecialtyEnum/">MedicalSpecialtyEnum</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="MeioticPhase/">MeioticPhase</a></td>
+<td>Phases specific to meiotic cell division</td>
+</tr>
+<tr>
+<td><a href="MetabolicProcess/">MetabolicProcess</a></td>
+<td>Metabolic processes and pathways</td>
+</tr>
+<tr>
+<td><a href="Metabolite/">Metabolite</a></td>
+<td>Metabolites and metabolic intermediates</td>
+</tr>
+<tr>
+<td><a href="MetalTypeEnum/">MetalTypeEnum</a></td>
+<td>Types of metallic materials</td>
+</tr>
+<tr>
+<td><a href="MetazoanAnatomicalStructure/">MetazoanAnatomicalStructure</a></td>
+<td>Any anatomical structure found in metazoan organisms,</td>
+</tr>
+<tr>
+<td><a href="MicroscopyMethodEnum/">MicroscopyMethodEnum</a></td>
+<td>Microscopy techniques for material characterization</td>
+</tr>
+<tr>
+<td><a href="MimeType/">MimeType</a></td>
+<td>Common MIME types for various file formats</td>
+</tr>
+<tr>
+<td><a href="MimeTypeCategory/">MimeTypeCategory</a></td>
+<td>Categories of MIME types</td>
+</tr>
+<tr>
+<td><a href="MineralCategory/">MineralCategory</a></td>
+<td>Categories of minerals and materials</td>
+</tr>
+<tr>
+<td><a href="MiningEquipment/">MiningEquipment</a></td>
+<td>Types of mining equipment</td>
+</tr>
+<tr>
+<td><a href="MiningHazard/">MiningHazard</a></td>
+<td>Mining-related hazards and risks</td>
+</tr>
+<tr>
+<td><a href="MiningMethodEnum/">MiningMethodEnum</a></td>
+<td>Methods used for extracting minerals from the earth</td>
+</tr>
+<tr>
+<td><a href="MiningPhase/">MiningPhase</a></td>
+<td>Phases of mining operations</td>
+</tr>
+<tr>
+<td><a href="MiningType/">MiningType</a></td>
+<td>Types of mining operations</td>
+</tr>
+<tr>
+<td><a href="MitoticPhase/">MitoticPhase</a></td>
+<td>Stages of mitosis (M phase)</td>
+</tr>
+<tr>
+<td><a href="MolecularFunction/">MolecularFunction</a></td>
+<td>Molecular functions from Gene Ontology</td>
+</tr>
+<tr>
+<td><a href="Month/">Month</a></td>
+<td>Months of the year</td>
+</tr>
+<tr>
+<td><a href="NanostructureMorphologyEnum/">NanostructureMorphologyEnum</a></td>
+<td>Types of nanostructure morphologies</td>
+</tr>
+<tr>
+<td><a href="NetworkProtocolEnum/">NetworkProtocolEnum</a></td>
+<td>Network communication protocols</td>
+</tr>
+<tr>
+<td><a href="NeuronType/">NeuronType</a></td>
+<td>Neuron cell types from the Cell Ontology</td>
+</tr>
+<tr>
+<td><a href="NewsTopicCategoryEnum/">NewsTopicCategoryEnum</a></td>
+<td>Common news article topic categories</td>
+</tr>
+<tr>
+<td><a href="NucleotideModificationEnum/">NucleotideModificationEnum</a></td>
+<td>Common nucleotide modifications</td>
+</tr>
+<tr>
+<td><a href="OnsetTimingEnum/">OnsetTimingEnum</a></td>
+<td>Timing of disease or phenotype onset relative to developmental stages</td>
+</tr>
+<tr>
+<td><a href="OpenAccessType/">OpenAccessType</a></td>
+<td>Types of open access publishing</td>
+</tr>
+<tr>
+<td><a href="OpticalPropertyEnum/">OpticalPropertyEnum</a></td>
+<td>Optical properties of materials</td>
+</tr>
+<tr>
+<td><a href="OreGrade/">OreGrade</a></td>
+<td>Classification of ore grades</td>
+</tr>
+<tr>
+<td><a href="OrganismTaxonEnum/">OrganismTaxonEnum</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="OutcomeTypeEnum/">OutcomeTypeEnum</a></td>
+<td>Types of prediction outcomes for classification tasks</td>
+</tr>
+<tr>
+<td><a href="OxidationStateEnum/">OxidationStateEnum</a></td>
+<td>Common oxidation states</td>
+</tr>
+<tr>
+<td><a href="OxygenationStrategyEnum/">OxygenationStrategyEnum</a></td>
+<td>Oxygen supply strategies for fermentation</td>
+</tr>
+<tr>
+<td><a href="ParticipantVitalStatusEnum/">ParticipantVitalStatusEnum</a></td>
+<td>Vital status of a research participant in clinical studies</td>
+</tr>
+<tr>
+<td><a href="PeerReviewStatus/">PeerReviewStatus</a></td>
+<td>Status of peer review process</td>
+</tr>
+<tr>
+<td><a href="PeriodicTableBlockEnum/">PeriodicTableBlockEnum</a></td>
+<td>Blocks of the periodic table</td>
+</tr>
+<tr>
+<td><a href="PersonStatusEnum/">PersonStatusEnum</a></td>
+<td>Vital status of a person (living or deceased)</td>
+</tr>
+<tr>
+<td><a href="PesticideTypeEnum/">PesticideTypeEnum</a></td>
+<td>Categories of pesticides by target organism or chemical class</td>
+</tr>
+<tr>
+<td><a href="Phenotype/">Phenotype</a></td>
+<td>Phenotypic abnormalities from Human Phenotype Ontology</td>
+</tr>
+<tr>
+<td><a href="PhenotypicSexEnum/">PhenotypicSexEnum</a></td>
+<td>Phenotypic sex of an individual based on observable characteristics</td>
+</tr>
+<tr>
+<td><a href="PhysicalQuality/">PhysicalQuality</a></td>
+<td>Physical qualities like size, shape, color</td>
+</tr>
+<tr>
+<td><a href="PlantAnatomicalStructure/">PlantAnatomicalStructure</a></td>
+<td>Any anatomical structure found in plant organisms</td>
+</tr>
+<tr>
+<td><a href="PlantLeafColorEnum/">PlantLeafColorEnum</a></td>
+<td>Plant leaf colors (including seasonal changes)</td>
+</tr>
+<tr>
+<td><a href="PlantSexEnum/">PlantSexEnum</a></td>
+<td>Plant reproductive and sexual system types</td>
+</tr>
+<tr>
+<td><a href="PolymerTypeEnum/">PolymerTypeEnum</a></td>
+<td>Types of polymer materials</td>
+</tr>
+<tr>
+<td><a href="PowerUnit/">PowerUnit</a></td>
+<td>Units for measuring power (energy per time)</td>
+</tr>
+<tr>
+<td><a href="PredictionOutcomeType/">PredictionOutcomeType</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="PresenceEnum/">PresenceEnum</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="PressureUnitEnum/">PressureUnitEnum</a></td>
+<td>Units of pressure measurement</td>
+</tr>
+<tr>
+<td><a href="PriorityLevelEnum/">PriorityLevelEnum</a></td>
+<td>Standard priority levels for task/issue classification</td>
+</tr>
+<tr>
+<td><a href="ProcessingStatus/">ProcessingStatus</a></td>
+<td>Status of data processing workflows</td>
+</tr>
+<tr>
+<td><a href="ProcessScaleEnum/">ProcessScaleEnum</a></td>
+<td>Scale of bioprocessing operations from lab bench to commercial production</td>
+</tr>
+<tr>
+<td><a href="ProductTypeEnum/">ProductTypeEnum</a></td>
+<td>Types of products from bioprocessing</td>
+</tr>
+<tr>
+<td><a href="ProgrammingLanguageFileEnum/">ProgrammingLanguageFileEnum</a></td>
+<td>Programming language source file extensions</td>
+</tr>
+<tr>
+<td><a href="Protein/">Protein</a></td>
+<td>Proteins and protein complexes</td>
+</tr>
+<tr>
+<td><a href="PublicationType/">PublicationType</a></td>
+<td>Types of academic and research publications</td>
+</tr>
+<tr>
+<td><a href="Quality/">Quality</a></td>
+<td>Phenotypic qualities and attributes from PATO</td>
+</tr>
+<tr>
+<td><a href="QualityControlEnum/">QualityControlEnum</a></td>
+<td>Quality control classification labels</td>
+</tr>
+<tr>
+<td><a href="Quarter/">Quarter</a></td>
+<td>Calendar quarters</td>
+</tr>
+<tr>
+<td><a href="RaceOMB1997Enum/">RaceOMB1997Enum</a></td>
+<td>Race categories following OMB 1997 standards used by NIH and federal agencies</td>
+</tr>
+<tr>
+<td><a href="ReactionConditionEnum/">ReactionConditionEnum</a></td>
+<td>Reaction conditions</td>
+</tr>
+<tr>
+<td><a href="ReactionMechanismEnum/">ReactionMechanismEnum</a></td>
+<td>Reaction mechanism types</td>
+</tr>
+<tr>
+<td><a href="ReactionRateOrderEnum/">ReactionRateOrderEnum</a></td>
+<td>Reaction rate orders</td>
+</tr>
+<tr>
+<td><a href="ReactionTypeEnum/">ReactionTypeEnum</a></td>
+<td>Types of chemical reactions</td>
+</tr>
+<tr>
+<td><a href="RecruitmentStatusEnum/">RecruitmentStatusEnum</a></td>
+<td>Clinical trial or study recruitment status per NIH/ClinicalTrials</td>
+</tr>
+<tr>
+<td><a href="RegimenStatusEnum/">RegimenStatusEnum</a></td>
+<td>Status of a therapeutic regimen or treatment protocol</td>
+</tr>
+<tr>
+<td><a href="RelativeDirection/">RelativeDirection</a></td>
+<td>Relative directional terms</td>
+</tr>
+<tr>
+<td><a href="RelativeTimeEnum/">RelativeTimeEnum</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="RelToOxygenEnum/">RelToOxygenEnum</a></td>
+<td>Organism's relationship to oxygen for growth and survival</td>
+</tr>
+<tr>
+<td><a href="ResearchField/">ResearchField</a></td>
+<td>Major research fields and disciplines</td>
+</tr>
+<tr>
+<td><a href="ResearchRole/">ResearchRole</a></td>
+<td>Roles in research and authorship</td>
+</tr>
+<tr>
+<td><a href="RNABaseEnum/">RNABaseEnum</a></td>
+<td>Standard RNA nucleotide bases (canonical)</td>
+</tr>
+<tr>
+<td><a href="RNABaseExtendedEnum/">RNABaseExtendedEnum</a></td>
+<td>Extended RNA alphabet with IUPAC ambiguity codes</td>
+</tr>
+<tr>
+<td><a href="SafetyColorEnum/">SafetyColorEnum</a></td>
+<td>ANSI/ISO standard safety colors</td>
+</tr>
+<tr>
+<td><a href="SampleProcessingEnum/">SampleProcessingEnum</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="SampleType/">SampleType</a></td>
+<td>Types of biological samples used in structural biology</td>
+</tr>
+<tr>
+<td><a href="Season/">Season</a></td>
+<td>Seasons of the year (Northern Hemisphere)</td>
+</tr>
+<tr>
+<td><a href="SentimentClassificationEnum/">SentimentClassificationEnum</a></td>
+<td>Standard labels for sentiment analysis classification tasks</td>
+</tr>
+<tr>
+<td><a href="SequenceFeature/">SequenceFeature</a></td>
+<td>Sequence features from the Sequence Ontology</td>
+</tr>
+<tr>
+<td><a href="SequenceQualityEnum/">SequenceQualityEnum</a></td>
+<td>Sequence quality indicators (Phred scores)</td>
+</tr>
+<tr>
+<td><a href="SeverityLevelEnum/">SeverityLevelEnum</a></td>
+<td>Severity levels for incident/bug classification</td>
+</tr>
+<tr>
+<td><a href="SimpleSpatialDirection/">SimpleSpatialDirection</a></td>
+<td>Basic spatial directional terms for general use</td>
+</tr>
+<tr>
+<td><a href="SkinToneEnum/">SkinToneEnum</a></td>
+<td>Human skin tone classifications (Fitzpatrick scale based)</td>
+</tr>
+<tr>
+<td><a href="SolventClassEnum/">SolventClassEnum</a></td>
+<td>Classes of solvents</td>
+</tr>
+<tr>
+<td><a href="SpamClassificationEnum/">SpamClassificationEnum</a></td>
+<td>Standard labels for spam/ham email classification</td>
+</tr>
+<tr>
+<td><a href="SpatialRelationship/">SpatialRelationship</a></td>
+<td>Spatial relationships between anatomical structures</td>
+</tr>
+<tr>
+<td><a href="SpectroscopyMethodEnum/">SpectroscopyMethodEnum</a></td>
+<td>Spectroscopy techniques for material analysis</td>
+</tr>
+<tr>
+<td><a href="StateOfMatterEnum/">StateOfMatterEnum</a></td>
+<td>The physical state or phase of matter</td>
+</tr>
+<tr>
+<td><a href="StemCell/">StemCell</a></td>
+<td>Stem cell types and progenitor cells</td>
+</tr>
+<tr>
+<td><a href="SterilizationMethodEnum/">SterilizationMethodEnum</a></td>
+<td>Methods for sterilization in bioprocessing</td>
+</tr>
+<tr>
+<td><a href="StructuralBiologyTechnique/">StructuralBiologyTechnique</a></td>
+<td>Structural biology experimental techniques</td>
+</tr>
+<tr>
+<td><a href="StudyDesignEnum/">StudyDesignEnum</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="StudyPhaseEnum/">StudyPhaseEnum</a></td>
+<td>Clinical trial phases per FDA and NIH definitions</td>
+</tr>
+<tr>
+<td><a href="SubatomicParticleEnum/">SubatomicParticleEnum</a></td>
+<td>Fundamental and composite subatomic particles</td>
+</tr>
+<tr>
+<td><a href="SymptomSeverityEnum/">SymptomSeverityEnum</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="SynthesisMethodEnum/">SynthesisMethodEnum</a></td>
+<td>Common material synthesis and processing methods</td>
+</tr>
+<tr>
+<td><a href="TaxonomicRank/">TaxonomicRank</a></td>
+<td>Standard taxonomic ranks used in biological classification</td>
+</tr>
+<tr>
+<td><a href="TemperatureUnitEnum/">TemperatureUnitEnum</a></td>
+<td>Units of temperature measurement</td>
+</tr>
+<tr>
+<td><a href="TextCharset/">TextCharset</a></td>
+<td>Character encodings for text content</td>
+</tr>
+<tr>
+<td><a href="TherapeuticActionabilityEnum/">TherapeuticActionabilityEnum</a></td>
+<td>Clinical actionability of a genetic finding for treatment decisions</td>
+</tr>
+<tr>
+<td><a href="ThermalAnalysisMethodEnum/">ThermalAnalysisMethodEnum</a></td>
+<td>Thermal analysis techniques</td>
+</tr>
+<tr>
+<td><a href="ThermalConductivityEnum/">ThermalConductivityEnum</a></td>
+<td>Classification by thermal conductivity</td>
+</tr>
+<tr>
+<td><a href="ThermodynamicParameterEnum/">ThermodynamicParameterEnum</a></td>
+<td>Thermodynamic parameters</td>
+</tr>
+<tr>
+<td><a href="TimeOfDay/">TimeOfDay</a></td>
+<td>Common times of day</td>
+</tr>
+<tr>
+<td><a href="TimePeriod/">TimePeriod</a></td>
+<td>Common time periods and intervals</td>
+</tr>
+<tr>
+<td><a href="TimeUnit/">TimeUnit</a></td>
+<td>Units of time measurement</td>
+</tr>
+<tr>
+<td><a href="TimeUnitEnum/">TimeUnitEnum</a></td>
+<td>Units of time measurement</td>
+</tr>
+<tr>
+<td><a href="TimeZoneEnum/">TimeZoneEnum</a></td>
+<td>Common time zones</td>
+</tr>
+<tr>
+<td><a href="ToxicityClassificationEnum/">ToxicityClassificationEnum</a></td>
+<td>Text toxicity classification labels</td>
+</tr>
+<tr>
+<td><a href="TraditionalPigmentEnum/">TraditionalPigmentEnum</a></td>
+<td>Traditional artist pigments and their colors</td>
+</tr>
+<tr>
+<td><a href="TrafficLightColorEnum/">TrafficLightColorEnum</a></td>
+<td>Traffic signal colors (international)</td>
+</tr>
+<tr>
+<td><a href="TrophicLevelEnum/">TrophicLevelEnum</a></td>
+<td>Trophic levels are the feeding position in a food chain</td>
+</tr>
+<tr>
+<td><a href="UNRegionEnum/">UNRegionEnum</a></td>
+<td>United Nations regional classifications</td>
+</tr>
+<tr>
+<td><a href="USStateCodeEnum/">USStateCodeEnum</a></td>
+<td>United States state and territory codes</td>
+</tr>
+<tr>
+<td><a href="VaccineTypeEnum/">VaccineTypeEnum</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="VideoFormatEnum/">VideoFormatEnum</a></td>
+<td>Video file formats</td>
+</tr>
+<tr>
+<td><a href="ViralGenomeTypeEnum/">ViralGenomeTypeEnum</a></td>
+<td>Types of viral genomes based on Baltimore classification</td>
+</tr>
+<tr>
+<td><a href="VitalSignEnum/">VitalSignEnum</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="VitalStatusEnum/">VitalStatusEnum</a></td>
+<td>The vital status of a person or organism</td>
+</tr>
+<tr>
+<td><a href="VitrificationMethod/">VitrificationMethod</a></td>
+<td>Methods for sample vitrification</td>
+</tr>
+<tr>
+<td><a href="VolumeUnitEnum/">VolumeUnitEnum</a></td>
+<td>Units of volume measurement</td>
+</tr>
+<tr>
+<td><a href="WaterContaminantEnum/">WaterContaminantEnum</a></td>
+<td>Common water contaminants</td>
+</tr>
+<tr>
+<td><a href="WebColorEnum/">WebColorEnum</a></td>
+<td>Standard HTML/CSS named colors (147 colors)</td>
+</tr>
+<tr>
+<td><a href="WellTypeEnum/">WellTypeEnum</a></td>
+<td>Types of wells used for extracting fluid resources</td>
+</tr>
+<tr>
+<td><a href="WindDirection/">WindDirection</a></td>
+<td>Wind direction nomenclature (named for where wind comes FROM)</td>
+</tr>
+<tr>
+<td><a href="WorkflowType/">WorkflowType</a></td>
+<td>Types of computational processing workflows</td>
+</tr>
+<tr>
+<td><a href="X11ColorEnum/">X11ColorEnum</a></td>
+<td>X11/Unix system colors (extended set)</td>
+</tr>
+<tr>
+<td><a href="XRaySource/">XRaySource</a></td>
+<td>Types of X-ray sources</td>
+</tr>
+</tbody>
+</table>
+<h2 id="types">Types</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="Boolean/">Boolean</a></td>
+<td>A binary (true or false) value</td>
+</tr>
+<tr>
+<td><a href="Curie/">Curie</a></td>
+<td>a compact URI</td>
+</tr>
+<tr>
+<td><a href="Date/">Date</a></td>
+<td>a date (year, month and day) in an idealized calendar</td>
+</tr>
+<tr>
+<td><a href="DateOrDatetime/">DateOrDatetime</a></td>
+<td>Either a date or a datetime</td>
+</tr>
+<tr>
+<td><a href="Datetime/">Datetime</a></td>
+<td>The combination of a date and time</td>
+</tr>
+<tr>
+<td><a href="Decimal/">Decimal</a></td>
+<td>A real number with arbitrary precision that conforms to the xsd:decimal speci...</td>
+</tr>
+<tr>
+<td><a href="Double/">Double</a></td>
+<td>A real number that conforms to the xsd:double specification</td>
+</tr>
+<tr>
+<td><a href="Float/">Float</a></td>
+<td>A real number that conforms to the xsd:float specification</td>
+</tr>
+<tr>
+<td><a href="Integer/">Integer</a></td>
+<td>An integer</td>
+</tr>
+<tr>
+<td><a href="Jsonpath/">Jsonpath</a></td>
+<td>A string encoding a JSON Path</td>
+</tr>
+<tr>
+<td><a href="Jsonpointer/">Jsonpointer</a></td>
+<td>A string encoding a JSON Pointer</td>
+</tr>
+<tr>
+<td><a href="Ncname/">Ncname</a></td>
+<td>Prefix part of CURIE</td>
+</tr>
+<tr>
+<td><a href="Nodeidentifier/">Nodeidentifier</a></td>
+<td>A URI, CURIE or BNODE that represents a node in a model</td>
+</tr>
+<tr>
+<td><a href="Objectidentifier/">Objectidentifier</a></td>
+<td>A URI or CURIE that represents an object in the model</td>
+</tr>
+<tr>
+<td><a href="Sparqlpath/">Sparqlpath</a></td>
+<td>A string encoding a SPARQL Property Path</td>
+</tr>
+<tr>
+<td><a href="String/">String</a></td>
+<td>A character string</td>
+</tr>
+<tr>
+<td><a href="Time/">Time</a></td>
+<td>A time object represents a (local) time of day, independent of any particular...</td>
+</tr>
+<tr>
+<td><a href="Uri/">Uri</a></td>
+<td>a complete URI</td>
+</tr>
+<tr>
+<td><a href="Uriorcurie/">Uriorcurie</a></td>
+<td>a URI or a CURIE</td>
+</tr>
+</tbody>
+</table>
+<h2 id="subsets">Subsets</h2>
+<table>
+<thead>
+<tr>
+<th>Subset</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["content.tabs.link"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+    
+  </body>
+</html>
