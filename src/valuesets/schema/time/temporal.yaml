@@ -1,0 +1,618 @@
+---
+id: https://w3id.org/linkml/valuesets/time/temporal
+name: temporal
+title: Temporal and Time-Related Value Sets
+description: |-
+  Value sets for temporal concepts including days, months, time periods, and durations
+
+prefixes:
+  valuesets: https://w3id.org/linkml/valuesets/
+  TIME: http://www.w3.org/2006/time#
+  greg: http://www.w3.org/ns/time/gregorian#
+  OPMI: http://purl.obolibrary.org/obo/OPMI_
+  NCIT: http://purl.obolibrary.org/obo/NCIT_
+  UO: http://purl.obolibrary.org/obo/UO_
+  ENVO: http://purl.obolibrary.org/obo/ENVO_
+
+default_prefix: valuesets
+
+imports:
+  - linkml:types
+
+enums:
+
+  DayOfWeek:
+    description: |-
+      Days of the week following ISO 8601 standard (Monday = 1)
+    permissible_values:
+
+      MONDAY:
+        description: Monday (first day of week in ISO 8601)
+        meaning: TIME:Monday
+        exact_mappings:
+          - OPMI:0000084
+          - NCIT:C64962
+        annotations:
+          iso_number: 1
+          abbreviation: Mon
+
+      TUESDAY:
+        description: Tuesday
+        meaning: TIME:Tuesday
+        exact_mappings:
+          - OPMI:0000085
+          - NCIT:C64963
+        annotations:
+          iso_number: 2
+          abbreviation: Tue
+
+      WEDNESDAY:
+        description: Wednesday
+        meaning: TIME:Wednesday
+        exact_mappings:
+          - OPMI:0000086
+          - NCIT:C64964
+        annotations:
+          iso_number: 3
+          abbreviation: Wed
+
+      THURSDAY:
+        description: Thursday
+        meaning: TIME:Thursday
+        exact_mappings:
+          - OPMI:0000087
+          - NCIT:C64965
+        annotations:
+          iso_number: 4
+          abbreviation: Thu
+
+      FRIDAY:
+        description: Friday
+        meaning: TIME:Friday
+        exact_mappings:
+          - OPMI:0000088
+          - NCIT:C64966
+        annotations:
+          iso_number: 5
+          abbreviation: Fri
+
+      SATURDAY:
+        description: Saturday
+        meaning: TIME:Saturday
+        exact_mappings:
+          - OPMI:0000089
+          - NCIT:C64967
+        annotations:
+          iso_number: 6
+          abbreviation: Sat
+
+      SUNDAY:
+        description: Sunday (last day of week in ISO 8601)
+        meaning: TIME:Sunday
+        exact_mappings:
+          - OPMI:0000090
+          - NCIT:C64968
+        annotations:
+          iso_number: 7
+          abbreviation: Sun
+
+  Month:
+    description: |-
+      Months of the year
+    permissible_values:
+
+      JANUARY:
+        description: January
+        meaning: greg:January
+        exact_mappings:
+          - OPMI:0000071
+          - NCIT:C106180
+        annotations:
+          month_number: 1
+          abbreviation: Jan
+          days: 31
+
+      FEBRUARY:
+        description: February
+        meaning: greg:February
+        exact_mappings:
+          - OPMI:0000072
+          - NCIT:C106181
+        annotations:
+          month_number: 2
+          abbreviation: Feb
+          days: 28/29
+
+      MARCH:
+        description: March
+        meaning: greg:March
+        exact_mappings:
+          - OPMI:0000073
+          - NCIT:C106182
+        annotations:
+          month_number: 3
+          abbreviation: Mar
+          days: 31
+
+      APRIL:
+        description: April
+        meaning: greg:April
+        exact_mappings:
+          - OPMI:0000074
+          - NCIT:C106183
+        annotations:
+          month_number: 4
+          abbreviation: Apr
+          days: 30
+
+      MAY:
+        description: May
+        meaning: greg:May
+        exact_mappings:
+          - OPMI:0000075
+          - NCIT:C106184
+        annotations:
+          month_number: 5
+          abbreviation: May
+          days: 31
+
+      JUNE:
+        description: June
+        meaning: greg:June
+        exact_mappings:
+          - OPMI:0000076
+          - NCIT:C106185
+        annotations:
+          month_number: 6
+          abbreviation: Jun
+          days: 30
+
+      JULY:
+        description: July
+        meaning: greg:July
+        exact_mappings:
+          - OPMI:0000077
+          - NCIT:C106186
+        annotations:
+          month_number: 7
+          abbreviation: Jul
+          days: 31
+
+      AUGUST:
+        description: August
+        meaning: greg:August
+        exact_mappings:
+          - OPMI:0000078
+          - NCIT:C106187
+        annotations:
+          month_number: 8
+          abbreviation: Aug
+          days: 31
+
+      SEPTEMBER:
+        description: September
+        meaning: greg:September
+        exact_mappings:
+          - OPMI:0000079
+          - NCIT:C106188
+        annotations:
+          month_number: 9
+          abbreviation: Sep
+          days: 30
+
+      OCTOBER:
+        description: October
+        meaning: greg:October
+        exact_mappings:
+          - OPMI:0000080
+          - NCIT:C106189
+        annotations:
+          month_number: 10
+          abbreviation: Oct
+          days: 31
+
+      NOVEMBER:
+        description: November
+        meaning: greg:November
+        exact_mappings:
+          - OPMI:0000081
+          - NCIT:C106191
+        annotations:
+          month_number: 11
+          abbreviation: Nov
+          days: 30
+
+      DECEMBER:
+        description: December
+        meaning: greg:December
+        exact_mappings:
+          - OPMI:0000082
+          - NCIT:C106192
+        annotations:
+          month_number: 12
+          abbreviation: Dec
+          days: 31
+
+  Quarter:
+    description: |-
+      Calendar quarters
+    permissible_values:
+
+      Q1:
+        description: First quarter (January-March)
+        annotations:
+          months: Jan-Mar
+
+      Q2:
+        description: Second quarter (April-June)
+        annotations:
+          months: Apr-Jun
+
+      Q3:
+        description: Third quarter (July-September)
+        annotations:
+          months: Jul-Sep
+
+      Q4:
+        description: Fourth quarter (October-December)
+        annotations:
+          months: Oct-Dec
+
+  Season:
+    description: |-
+      Seasons of the year (Northern Hemisphere)
+    permissible_values:
+
+      SPRING:
+        description: Spring season
+        meaning: NCIT:C94731
+        annotations:
+          months: Mar-May
+          astronomical_start: ~Mar 20
+
+      SUMMER:
+        description: Summer season
+        meaning: NCIT:C94732
+        annotations:
+          months: Jun-Aug
+          astronomical_start: ~Jun 21
+
+      AUTUMN:
+        description: Autumn/Fall season
+        meaning: NCIT:C94733
+        annotations:
+          months: Sep-Nov
+          astronomical_start: ~Sep 22
+          aliases: Fall
+
+      WINTER:
+        description: Winter season
+        meaning: NCIT:C94730
+        annotations:
+          months: Dec-Feb
+          astronomical_start: ~Dec 21
+
+  TimePeriod:
+    description: |-
+      Common time periods and intervals
+    permissible_values:
+
+      HOURLY:
+        description: Every hour
+        annotations:
+          ucum: h
+
+      DAILY:
+        description: Every day
+        annotations:
+          ucum: d
+
+      WEEKLY:
+        description: Every week
+        annotations:
+          ucum: wk
+
+      BIWEEKLY:
+        description: Every two weeks
+        annotations:
+          ucum: 2.wk
+
+      MONTHLY:
+        description: Every month
+        annotations:
+          ucum: mo
+
+      QUARTERLY:
+        description: Every quarter (3 months)
+        annotations:
+          ucum: 3.mo
+
+      SEMIANNUALLY:
+        description: Every six months
+        annotations:
+          ucum: 6.mo
+
+      ANNUALLY:
+        description: Every year
+        annotations:
+          ucum: a
+
+      BIANNUALLY:
+        description: Every two years
+        annotations:
+          ucum: 2.a
+
+  TimeUnit:
+    description: |-
+      Units of time measurement
+    permissible_values:
+
+      NANOSECOND:
+        description: Nanosecond (10^-9 seconds)
+        annotations:
+          symbol: ns
+          ucum: ns
+          seconds: 1e-9
+
+      MICROSECOND:
+        description: Microsecond (10^-6 seconds)
+        annotations:
+          symbol: μs
+          ucum: us
+          seconds: 1e-6
+
+      MILLISECOND:
+        description: Millisecond (10^-3 seconds)
+        annotations:
+          symbol: ms
+          ucum: ms
+          seconds: 0.001
+
+      SECOND:
+        description: Second (SI base unit)
+        meaning: TIME:unitSecond
+        exact_mappings:
+          - UO:0000010
+        annotations:
+          symbol: s
+          ucum: s
+          seconds: 1
+
+      MINUTE:
+        description: Minute (60 seconds)
+        meaning: TIME:unitMinute
+        exact_mappings:
+          - UO:0000031
+        annotations:
+          symbol: min
+          ucum: min
+          seconds: 60
+
+      HOUR:
+        description: Hour (60 minutes)
+        meaning: TIME:unitHour
+        exact_mappings:
+          - UO:0000032
+        annotations:
+          symbol: h
+          ucum: h
+          seconds: 3600
+
+      DAY:
+        description: Day (24 hours)
+        meaning: TIME:unitDay
+        exact_mappings:
+          - UO:0000033
+        annotations:
+          symbol: d
+          ucum: d
+          seconds: 86400
+
+      WEEK:
+        description: Week (7 days)
+        meaning: TIME:unitWeek
+        exact_mappings:
+          - UO:0000034
+        annotations:
+          symbol: wk
+          ucum: wk
+          seconds: 604800
+
+      MONTH:
+        description: Month (approximately 30.44 days)
+        meaning: TIME:unitMonth
+        exact_mappings:
+          - UO:0000035
+        annotations:
+          symbol: mo
+          ucum: mo
+          seconds: ~2629800
+
+      YEAR:
+        description: Year (365.25 days)
+        meaning: TIME:unitYear
+        exact_mappings:
+          - UO:0000036
+        annotations:
+          symbol: yr
+          ucum: a
+          seconds: 31557600
+
+      DECADE:
+        description: Decade (10 years)
+        meaning: TIME:unitDecade
+        annotations:
+          ucum: "10.a"
+          years: 10
+
+      CENTURY:
+        description: Century (100 years)
+        meaning: TIME:unitCentury
+        annotations:
+          ucum: "100.a"
+          years: 100
+
+      MILLENNIUM:
+        description: Millennium (1000 years)
+        meaning: TIME:unitMillennium
+        annotations:
+          ucum: "1000.a"
+          years: 1000
+
+  TimeOfDay:
+    description: |-
+      Common times of day
+    permissible_values:
+
+      DAWN:
+        description: Dawn (first light)
+        annotations:
+          typical_time: 05:00-06:00
+
+      MORNING:
+        description: Morning
+        annotations:
+          typical_time: 06:00-12:00
+
+      NOON:
+        description: Noon/Midday
+        annotations:
+          typical_time: 12:00
+
+      AFTERNOON:
+        description: Afternoon
+        annotations:
+          typical_time: 12:00-18:00
+
+      EVENING:
+        description: Evening
+        annotations:
+          typical_time: 18:00-21:00
+
+      NIGHT:
+        description: Night
+        annotations:
+          typical_time: 21:00-05:00
+
+      MIDNIGHT:
+        description: Midnight
+        annotations:
+          typical_time: 00:00
+
+  BusinessTimeFrame:
+    description: |-
+      Common business and financial time frames
+    permissible_values:
+
+      REAL_TIME:
+        description: Real-time/instantaneous
+
+      INTRADAY:
+        description: Within the same day
+
+      T_PLUS_1:
+        description: Trade date plus one business day
+        annotations:
+          abbreviation: T+1
+
+      T_PLUS_2:
+        description: Trade date plus two business days
+        annotations:
+          abbreviation: T+2
+
+      T_PLUS_3:
+        description: Trade date plus three business days
+        annotations:
+          abbreviation: T+3
+
+      END_OF_DAY:
+        description: End of business day
+        annotations:
+          abbreviation: EOD
+
+      END_OF_WEEK:
+        description: End of business week
+        annotations:
+          abbreviation: EOW
+
+      END_OF_MONTH:
+        description: End of calendar month
+        annotations:
+          abbreviation: EOM
+
+      END_OF_QUARTER:
+        description: End of calendar quarter
+        annotations:
+          abbreviation: EOQ
+
+      END_OF_YEAR:
+        description: End of calendar year
+        annotations:
+          abbreviation: EOY
+
+      YEAR_TO_DATE:
+        description: From beginning of year to current date
+        annotations:
+          abbreviation: YTD
+
+      MONTH_TO_DATE:
+        description: From beginning of month to current date
+        annotations:
+          abbreviation: MTD
+
+      QUARTER_TO_DATE:
+        description: From beginning of quarter to current date
+        annotations:
+          abbreviation: QTD
+
+  GeologicalEra:
+    description: |-
+      Major geological eras
+    permissible_values:
+
+      PRECAMBRIAN:
+        description: Precambrian (4.6 billion - 541 million years ago)
+
+      PALEOZOIC:
+        description: Paleozoic Era (541 - 252 million years ago)
+
+      MESOZOIC:
+        description: Mesozoic Era (252 - 66 million years ago)
+
+      CENOZOIC:
+        description: Cenozoic Era (66 million years ago - present)
+
+  HistoricalPeriod:
+    description: |-
+      Major historical periods
+    permissible_values:
+
+      PREHISTORIC:
+        description: Before written records
+
+      ANCIENT:
+        description: Ancient history (3000 BCE - 500 CE)
+
+      CLASSICAL_ANTIQUITY:
+        description: Classical antiquity (8th century BCE - 6th century CE)
+
+      MIDDLE_AGES:
+        description: Middle Ages (5th - 15th century)
+
+      RENAISSANCE:
+        description: Renaissance (14th - 17th century)
+
+      EARLY_MODERN:
+        description: Early modern period (15th - 18th century)
+
+      INDUSTRIAL_AGE:
+        description: Industrial age (1760 - 1840)
+
+      MODERN:
+        description: Modern era (19th century - mid 20th century)
+
+      CONTEMPORARY:
+        description: Contemporary period (mid 20th century - present)
+
+      DIGITAL_AGE:
+        description: Digital/Information age (1950s - present)

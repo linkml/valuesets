@@ -1,0 +1,20 @@
+
+id: https://w3id.org/linkml/valuesets/types
+name: types
+title: Common Type Definitions
+description: Common type definitions for value sets
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+  cvs: https://w3id.org/linkml/valuesets/
+
+default_prefix: cvs
+
+imports:
+  - linkml:types
+
+types:
+
+  CountScalar:
+    typeof: integer
+    minimum_value: 0

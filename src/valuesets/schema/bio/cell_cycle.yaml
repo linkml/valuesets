@@ -1,0 +1,346 @@
+---
+id: https://w3id.org/linkml/valuesets/bio/cell_cycle
+name: cell_cycle
+title: Cell Cycle Value Sets
+description: |-
+  Value sets for cell cycle phases, checkpoints, and related concepts
+
+prefixes:
+  valuesets: https://w3id.org/linkml/valuesets/
+  GO: http://purl.obolibrary.org/obo/GO_
+
+default_prefix: valuesets
+
+imports:
+  - linkml:types
+
+enums:
+
+  CellCyclePhase:
+    description: |-
+      Major phases of the eukaryotic cell cycle
+    permissible_values:
+
+      G0:
+        description: G0 phase (quiescent/resting phase)
+        meaning: GO:0044838
+        title: cell quiescence
+        annotations:
+          aliases: quiescent phase, resting phase
+
+      G1:
+        description: G1 phase (Gap 1)
+        meaning: GO:0051318
+        title: G1 phase
+        annotations:
+          aliases: Gap 1, first gap phase
+          duration: variable (hours to years)
+
+      S:
+        description: S phase (DNA synthesis)
+        meaning: GO:0051320
+        title: S phase
+        annotations:
+          aliases: synthesis phase, DNA replication phase
+          duration: 6-8 hours
+
+      G2:
+        description: G2 phase (Gap 2)
+        meaning: GO:0051319
+        title: G2 phase
+        annotations:
+          aliases: Gap 2, second gap phase
+          duration: 3-4 hours
+
+      M:
+        description: M phase (mitosis and cytokinesis)
+        meaning: GO:0000279
+        title: M phase
+        annotations:
+          aliases: mitotic phase, division phase
+          duration: ~1 hour
+
+      INTERPHASE:
+        description: Interphase (G1, S, and G2 phases combined)
+        meaning: GO:0051325
+        annotations:
+          includes: G1, S, G2
+
+  MitoticPhase:
+    description: |-
+      Stages of mitosis (M phase)
+    permissible_values:
+
+      PROPHASE:
+        description: Prophase
+        meaning: GO:0051324
+        annotations:
+          order: 1
+          features: chromatin condensation, spindle formation begins
+
+      PROMETAPHASE:
+        description: Prometaphase
+        meaning: GO:0007080
+        title: mitotic metaphase chromosome alignment
+        annotations:
+          order: 2
+          features: nuclear envelope breakdown, kinetochore attachment
+
+      METAPHASE:
+        description: Metaphase
+        meaning: GO:0051323
+        annotations:
+          order: 3
+          features: chromosomes aligned at metaphase plate
+
+      ANAPHASE:
+        description: Anaphase
+        meaning: GO:0051322
+        annotations:
+          order: 4
+          features: sister chromatid separation
+
+      TELOPHASE:
+        description: Telophase
+        meaning: GO:0051326
+        annotations:
+          order: 5
+          features: nuclear envelope reformation
+
+      CYTOKINESIS:
+        description: Cytokinesis
+        meaning: GO:0000910
+        annotations:
+          order: 6
+          features: cytoplasmic division
+
+  CellCycleCheckpoint:
+    description: |-
+      Cell cycle checkpoints that regulate progression
+    permissible_values:
+
+      G1_S_CHECKPOINT:
+        description: G1/S checkpoint (Restriction point)
+        meaning: GO:0000082
+        title: G1/S transition of mitotic cell cycle
+        annotations:
+          aliases: Start checkpoint, Restriction point, R point
+          regulator: p53, Rb
+
+      INTRA_S_CHECKPOINT:
+        description: Intra-S checkpoint
+        meaning: GO:0031573
+        title: mitotic intra-S DNA damage checkpoint signaling
+        annotations:
+          function: monitors DNA replication
+          regulator: ATR, CHK1
+
+      G2_M_CHECKPOINT:
+        description: G2/M checkpoint
+        meaning: GO:0031571
+        title: mitotic G1 DNA damage checkpoint signaling
+        annotations:
+          function: ensures DNA properly replicated
+          regulator: p53, CHK1, CHK2
+
+      SPINDLE_CHECKPOINT:
+        description: Spindle checkpoint (M checkpoint)
+        meaning: GO:0031577
+        title: spindle checkpoint signaling
+        annotations:
+          aliases: SAC, spindle assembly checkpoint
+          function: ensures proper chromosome attachment
+          regulator: MAD2, BubR1
+
+  MeioticPhase:
+    description: |-
+      Phases specific to meiotic cell division
+    permissible_values:
+
+      MEIOSIS_I:
+        description: Meiosis I (reductional division)
+        meaning: GO:0007126
+        annotations:
+          result: reduction from diploid to haploid
+
+      PROPHASE_I:
+        description: Prophase I
+        meaning: GO:0007128
+        title: meiotic prophase I
+        annotations:
+          substages: leptotene, zygotene, pachytene, diplotene, diakinesis
+
+      METAPHASE_I:
+        description: Metaphase I
+        meaning: GO:0007132
+        title: meiotic metaphase I
+        annotations:
+          feature: homologous pairs align
+
+      ANAPHASE_I:
+        description: Anaphase I
+        meaning: GO:0007133
+        title: meiotic anaphase I
+        annotations:
+          feature: homologous chromosomes separate
+
+      TELOPHASE_I:
+        description: Telophase I
+        meaning: GO:0007134
+        title: meiotic telophase I
+
+      MEIOSIS_II:
+        description: Meiosis II (equational division)
+        meaning: GO:0007135
+        annotations:
+          similarity: similar to mitosis
+
+      PROPHASE_II:
+        description: Prophase II
+        meaning: GO:0007136
+        title: meiotic prophase II
+
+      METAPHASE_II:
+        description: Metaphase II
+        meaning: GO:0007137
+        title: meiotic metaphase II
+
+      ANAPHASE_II:
+        description: Anaphase II
+        meaning: GO:0007138
+        title: meiotic anaphase II
+        annotations:
+          feature: sister chromatids separate
+
+      TELOPHASE_II:
+        description: Telophase II
+        meaning: GO:0007139
+        title: meiotic telophase II
+
+  CellCycleRegulator:
+    description: |-
+      Types of cell cycle regulatory molecules
+    permissible_values:
+
+      CYCLIN:
+        description: Cyclin proteins
+        meaning: GO:0016538
+        title: cyclin-dependent protein serine/threonine kinase regulator activity
+        annotations:
+          examples: Cyclin A, B, D, E
+
+      CDK:
+        description: Cyclin-dependent kinase
+        meaning: GO:0004693
+        title: cyclin-dependent protein serine/threonine kinase activity
+        annotations:
+          examples: CDK1, CDK2, CDK4, CDK6
+
+      CDK_INHIBITOR:
+        description: CDK inhibitor
+        meaning: GO:0004861
+        title: cyclin-dependent protein serine/threonine kinase inhibitor activity
+        annotations:
+          examples: p21, p27, p57
+
+      CHECKPOINT_KINASE:
+        description: Checkpoint kinase
+        meaning: GO:0000077
+        title: DNA damage checkpoint signaling
+        annotations:
+          examples: CHK1, CHK2, ATR, ATM
+
+      TUMOR_SUPPRESSOR:
+        description: Tumor suppressor involved in cell cycle
+        meaning: GO:0051726
+        title: regulation of cell cycle
+        annotations:
+          examples: p53, Rb, BRCA1, BRCA2
+
+      E3_UBIQUITIN_LIGASE:
+        description: E3 ubiquitin ligase (cell cycle)
+        meaning: GO:0051437
+        title: obsolete positive regulation of ubiquitin-protein ligase activity involved in regulation of mitotic cell cycle transition
+        annotations:
+          examples: APC/C, SCF
+
+      PHOSPHATASE:
+        description: Cell cycle phosphatase
+        meaning: GO:0004721
+        title: phosphoprotein phosphatase activity
+        annotations:
+          examples: CDC25A, CDC25B, CDC25C
+
+  CellProliferationState:
+    description: |-
+      Cell proliferation and growth states
+    permissible_values:
+
+      PROLIFERATING:
+        description: Actively proliferating cells
+        meaning: GO:0008283
+        title: cell population proliferation
+
+      QUIESCENT:
+        description: Quiescent cells (reversibly non-dividing)
+        meaning: GO:0044838
+        title: cell quiescence
+        annotations:
+          phase: G0
+          reversible: true
+
+      SENESCENT:
+        description: Senescent cells (permanently non-dividing)
+        meaning: GO:0090398
+        title: cellular senescence
+        annotations:
+          reversible: false
+          markers: SA-β-gal, p16
+
+      DIFFERENTIATED:
+        description: Terminally differentiated cells
+        meaning: GO:0030154
+        title: cell differentiation
+        annotations:
+          examples: neurons, cardiomyocytes
+
+      APOPTOTIC:
+        description: Cells undergoing apoptosis
+        meaning: GO:0006915
+        title: apoptotic process
+        annotations:
+          aliases: programmed cell death
+
+      NECROTIC:
+        description: Cells undergoing necrosis
+        meaning: GO:0070265
+        title: obsolete necrotic cell death
+        annotations:
+          type: uncontrolled cell death
+
+  DNADamageResponse:
+    description: |-
+      DNA damage response pathways during cell cycle
+    permissible_values:
+
+      CELL_CYCLE_ARREST:
+        description: Cell cycle arrest
+        meaning: GO:0007050
+
+      DNA_REPAIR:
+        description: DNA repair
+        meaning: GO:0006281
+
+      APOPTOSIS_INDUCTION:
+        description: Induction of apoptosis
+        meaning: GO:0006917
+
+      SENESCENCE_INDUCTION:
+        description: Induction of senescence
+        meaning: GO:0090400
+        title: stress-induced premature senescence
+
+      CHECKPOINT_ADAPTATION:
+        description: Checkpoint adaptation
+        annotations:
+          description: override of checkpoint despite damage

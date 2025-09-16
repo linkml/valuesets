@@ -1,0 +1,122 @@
+name: material_properties
+id: https://w3id.org/linkml/valuesets/materials_science/material_properties
+prefixes:
+  CHEBI: http://purl.obolibrary.org/obo/CHEBI_
+  NCIT: http://purl.obolibrary.org/obo/NCIT_
+  PATO: http://purl.obolibrary.org/obo/PATO_
+  linkml_common: https://w3id.org/linkml-common/
+default_prefix: linkml_common
+enums:
+  ElectricalConductivityEnum:
+    description: Classification of materials by electrical conductivity
+    permissible_values:
+      CONDUCTOR:
+        description: Material with high electrical conductivity (resistivity < 10^-5 Ω·m)
+        title: Conductor
+        aliases:
+          - metal
+      SEMICONDUCTOR:
+        description: Material with intermediate electrical conductivity (10^-5 to 10^8 Ω·m)
+        title: Semiconductor
+        meaning: NCIT:C172788
+        aliases:
+          - semi
+      INSULATOR:
+        description: Material with very low electrical conductivity (resistivity > 10^8 Ω·m)
+        title: Insulator
+        aliases:
+          - dielectric
+      SUPERCONDUCTOR:
+        description: Material with zero electrical resistance below critical temperature
+        title: Superconductor
+        
+  MagneticPropertyEnum:
+    description: Classification of materials by magnetic properties
+    permissible_values:
+      DIAMAGNETIC:
+        description: Weakly repelled by magnetic fields
+        title: Diamagnetic
+      PARAMAGNETIC:
+        description: Weakly attracted to magnetic fields
+        title: Paramagnetic
+      FERROMAGNETIC:
+        description: Strongly attracted to magnetic fields, can be permanently magnetized
+        title: Ferromagnetic
+      FERRIMAGNETIC:
+        description: Similar to ferromagnetic but with opposing magnetic moments
+        title: Ferrimagnetic
+      ANTIFERROMAGNETIC:
+        description: Adjacent magnetic moments cancel each other
+        title: Antiferromagnetic
+        
+  OpticalPropertyEnum:
+    description: Optical properties of materials
+    permissible_values:
+      TRANSPARENT:
+        description: Allows light to pass through with minimal scattering
+        title: Transparent
+        meaning: PATO:0000964
+      TRANSLUCENT:
+        description: Allows light to pass through but with significant scattering
+        title: Translucent
+      OPAQUE:
+        description: Does not allow light to pass through
+        title: Opaque
+        meaning: PATO:0000963
+      REFLECTIVE:
+        description: Reflects most incident light
+        title: Reflective
+      ABSORBING:
+        description: Absorbs most incident light
+        title: Absorbing
+      FLUORESCENT:
+        description: Emits light when excited by radiation
+        title: Fluorescent
+      PHOSPHORESCENT:
+        description: Continues to emit light after excitation stops
+        title: Phosphorescent
+        
+  ThermalConductivityEnum:
+    description: Classification by thermal conductivity
+    permissible_values:
+      HIGH_THERMAL_CONDUCTOR:
+        description: High thermal conductivity (>100 W/m·K)
+        title: High Thermal Conductor
+        aliases:
+          - thermal conductor
+      MODERATE_THERMAL_CONDUCTOR:
+        description: Moderate thermal conductivity (1-100 W/m·K)
+        title: Moderate Thermal Conductor
+      THERMAL_INSULATOR:
+        description: Low thermal conductivity (<1 W/m·K)
+        title: Thermal Insulator
+        aliases:
+          - thermal barrier
+          
+  MechanicalBehaviorEnum:
+    description: Mechanical behavior of materials under stress
+    permissible_values:
+      ELASTIC:
+        description: Returns to original shape after stress removal
+        title: Elastic
+        meaning: PATO:0001171
+      PLASTIC:
+        description: Undergoes permanent deformation under stress
+        title: inelastic
+        meaning: PATO:0001172
+      BRITTLE:
+        description: Breaks without significant plastic deformation
+        title: Brittle
+        meaning: PATO:0002477
+      DUCTILE:
+        description: Can be drawn into wires, undergoes large plastic deformation
+        title: Ductile
+      MALLEABLE:
+        description: Can be hammered into sheets
+        title: Malleable
+      TOUGH:
+        description: High resistance to fracture
+        title: Tough
+      VISCOELASTIC:
+        description: Exhibits both viscous and elastic characteristics
+        title: Viscoelastic

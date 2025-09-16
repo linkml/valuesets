@@ -1,0 +1,538 @@
+---
+id: https://w3id.org/linkml/valuesets/spatial/spatial_qualifiers
+name: spatial_qualifiers
+title: Spatial Qualifier Value Sets
+description: |-
+  Value sets for spatial qualifiers, directions, and anatomical positions,
+  including both simple directional terms and biological spatial terminology
+
+prefixes:
+  valuesets: https://w3id.org/linkml/valuesets/
+  BSPO: http://purl.obolibrary.org/obo/BSPO_
+  PATO: http://purl.obolibrary.org/obo/PATO_
+  UBERON: http://purl.obolibrary.org/obo/UBERON_
+
+default_prefix: valuesets
+
+imports:
+  - linkml:types
+
+enums:
+
+  SimpleSpatialDirection:
+    description: |-
+      Basic spatial directional terms for general use
+    permissible_values:
+
+      LEFT:
+        description: To the left side
+
+      RIGHT:
+        description: To the right side
+
+      FORWARD:
+        description: In the forward direction
+        annotations:
+          aliases: ahead, front
+
+      BACKWARD:
+        description: In the backward direction
+        annotations:
+          aliases: back, behind, rear
+
+      UP:
+        description: In the upward direction
+        annotations:
+          aliases: above, upward
+
+      DOWN:
+        description: In the downward direction
+        annotations:
+          aliases: below, downward
+
+      INWARD:
+        description: Toward the center or interior
+        annotations:
+          aliases: medial, toward center
+
+      OUTWARD:
+        description: Away from the center or exterior
+        annotations:
+          aliases: peripheral, away from center
+
+      TOP:
+        description: At or toward the top
+        annotations:
+          aliases: upper, uppermost
+
+      BOTTOM:
+        description: At or toward the bottom
+        annotations:
+          aliases: lower, lowermost
+
+      MIDDLE:
+        description: At or toward the middle
+        annotations:
+          aliases: center, central
+
+  AnatomicalSide:
+    description: |-
+      Anatomical sides as defined in the Biological Spatial Ontology (BSPO).
+      An anatomical region bounded by a plane perpendicular to an axis through the middle.
+    permissible_values:
+
+      LEFT:
+        title: Left side of a bilaterally symmetric organism
+        aliases:
+          - left side
+        meaning: BSPO:0000000
+
+      RIGHT:
+        title: Right side of a bilaterally symmetric organism
+        aliases:
+          - right side
+        meaning: BSPO:0000007
+
+      ANTERIOR:
+        title: Front/ventral side in most animals, toward the head
+        aliases:
+          - anterior side
+        meaning: BSPO:0000055
+        annotations:
+          aliases: front, rostral, cranial (in head region)
+
+      POSTERIOR:
+        title: Back/dorsal side in most animals, toward the tail
+        aliases:
+          - posterior side
+        meaning: BSPO:0000056
+        annotations:
+          aliases: back, caudal
+
+      DORSAL:
+        title: Back side of organism (top in humans when standing)
+        aliases:
+          - dorsal side
+        meaning: BSPO:0000063
+        annotations:
+          aliases: back (in vertebrates), upper (in humans)
+
+      VENTRAL:
+        title: Belly side of organism (front in humans when standing)
+        aliases:
+          - ventral side
+        meaning: BSPO:0000068
+        annotations:
+          aliases: belly, front (in vertebrates), lower (in humans)
+
+      LATERAL:
+        title: Away from the midline
+        aliases:
+          - lateral side
+        meaning: BSPO:0000066
+        annotations:
+          aliases: side, outer
+
+      MEDIAL:
+        title: Toward the midline
+        aliases:
+          - medial side
+        meaning: BSPO:0000067
+        annotations:
+          aliases: inner, middle
+
+      PROXIMAL:
+        title: Closer to the point of attachment or origin
+        aliases:
+          - proximal side
+        meaning: BSPO:0000061
+        annotations:
+          context: commonly used for limbs
+
+      DISTAL:
+        title: Further from the point of attachment or origin
+        aliases:
+          - distal side
+        meaning: BSPO:0000062
+        annotations:
+          context: commonly used for limbs
+
+      APICAL:
+        title: At or toward the apex or tip
+        aliases:
+          - apical side
+        meaning: BSPO:0000057
+        annotations:
+          context: cells, organs, organisms
+
+      BASAL:
+        title: At or toward the base
+        aliases:
+          - basal side
+        meaning: BSPO:0000058
+        annotations:
+          context: cells, organs, organisms
+
+      SUPERFICIAL:
+        title: Near the surface
+        aliases:
+          - superficial side
+        meaning: BSPO:0000004
+        annotations:
+          aliases: external, outer
+
+      DEEP:
+        title: Away from the surface
+        aliases:
+          - deep side
+        meaning: BSPO:0000003
+        annotations:
+          aliases: internal, inner
+
+      SUPERIOR:
+        title: Above or upper (in standard anatomical position)
+        aliases:
+          - superior side
+        meaning: BSPO:0000022
+        annotations:
+          aliases: cranial (toward head), upper
+
+      INFERIOR:
+        title: Below or lower (in standard anatomical position)
+        aliases:
+          - inferior side
+        meaning: BSPO:0000025
+        annotations:
+          aliases: caudal (toward tail), lower
+
+      IPSILATERAL:
+        title: On the same side
+        aliases:
+          - ipsilateral side
+        meaning: BSPO:0000065
+        annotations:
+          context: relative to a reference point
+
+      CONTRALATERAL:
+        title: On the opposite side
+        aliases:
+          - contralateral side
+        meaning: BSPO:0000060
+        annotations:
+          context: relative to a reference point
+
+      CENTRAL:
+        title: At or near the center
+        aliases:
+          - central side
+        meaning: BSPO:0000059
+        annotations:
+          aliases: middle
+
+  AnatomicalRegion:
+    description: |-
+      Anatomical regions based on spatial position
+    permissible_values:
+
+      ANTERIOR_REGION:
+        title: Region in the anterior portion
+        aliases:
+          - anterior region
+        meaning: BSPO:0000071
+
+      POSTERIOR_REGION:
+        title: Region in the posterior portion
+        aliases:
+          - posterior region
+        meaning: BSPO:0000072
+
+      DORSAL_REGION:
+        title: Region in the dorsal portion
+        aliases:
+          - dorsal region
+        meaning: BSPO:0000079
+
+      VENTRAL_REGION:
+        title: Region in the ventral portion
+        aliases:
+          - ventral region
+        meaning: BSPO:0000084
+
+      LATERAL_REGION:
+        title: Region in the lateral portion
+        aliases:
+          - lateral region
+        meaning: BSPO:0000082
+
+      MEDIAL_REGION:
+        title: Region in the medial portion
+        aliases:
+          - medial region
+        meaning: BSPO:0000083
+
+      PROXIMAL_REGION:
+        title: Region in the proximal portion
+        aliases:
+          - proximal region
+        meaning: BSPO:0000077
+
+      DISTAL_REGION:
+        title: Region in the distal portion
+        aliases:
+          - distal region
+        meaning: BSPO:0000078
+
+      APICAL_REGION:
+        title: Region in the apical portion
+        aliases:
+          - apical region
+        meaning: BSPO:0000073
+
+      BASAL_REGION:
+        title: Region in the basal portion
+        aliases:
+          - basal region
+        meaning: BSPO:0000074
+
+      CENTRAL_REGION:
+        title: Region in the central portion
+        aliases:
+          - central region
+        meaning: BSPO:0000075
+
+      PERIPHERAL_REGION:
+        title: Region in the peripheral portion
+        aliases:
+          - peripheral region
+        meaning: BSPO:0000127
+
+  AnatomicalAxis:
+    description: |-
+      Anatomical axes defining spatial organization
+    permissible_values:
+
+      ANTERIOR_POSTERIOR:
+        title: Anterior-posterior axis (head-tail axis)
+        aliases:
+          - anterior-posterior axis
+        meaning: BSPO:0000013
+        annotations:
+          aliases: AP axis, rostrocaudal axis
+
+      DORSAL_VENTRAL:
+        title: Dorsal-ventral axis (back-belly axis)
+        aliases:
+          - dorsal-ventral axis
+        meaning: BSPO:0000016
+        annotations:
+          aliases: DV axis
+
+      LEFT_RIGHT:
+        title: Left-right axis (lateral axis)
+        aliases:
+          - left-right axis
+        meaning: BSPO:0000017
+        annotations:
+          aliases: LR axis, mediolateral axis
+
+      PROXIMAL_DISTAL:
+        title: Proximal-distal axis
+        aliases:
+          - transverse plane
+        meaning: BSPO:0000018
+        annotations:
+          context: commonly used for appendages
+
+      APICAL_BASAL:
+        title: Apical-basal axis
+        aliases:
+          - apical-basal gradient
+        meaning: BSPO:0000023
+        annotations:
+          context: epithelial cells, plant structures
+
+  AnatomicalPlane:
+    description: |-
+      Standard anatomical planes for sectioning
+    permissible_values:
+
+      SAGITTAL:
+        title: Vertical plane dividing body into left and right
+        aliases:
+          - sagittal plane
+        meaning: BSPO:0000417
+        annotations:
+          orientation: parallel to the median plane
+
+      MIDSAGITTAL:
+        title: Sagittal plane through the midline
+        aliases:
+          - midsagittal plane
+        meaning: BSPO:0000009
+        annotations:
+          aliases: median plane
+          note: divides body into equal left and right halves
+
+      PARASAGITTAL:
+        title: Sagittal plane parallel to midline
+        aliases:
+          - parasagittal plane
+        meaning: BSPO:0000008
+        annotations:
+          note: any sagittal plane not at midline
+
+      CORONAL:
+        title: Vertical plane dividing body into anterior and posterior
+        aliases:
+          - horizontal plane
+        meaning: BSPO:0000019
+        annotations:
+          aliases: frontal plane
+          orientation: perpendicular to sagittal plane
+
+      TRANSVERSE:
+        title: Horizontal plane dividing body into superior and inferior
+        aliases:
+          - transverse plane
+        meaning: BSPO:0000018
+        annotations:
+          aliases: horizontal plane, axial plane
+          orientation: perpendicular to longitudinal axis
+
+      OBLIQUE:
+        description: Any plane not parallel to sagittal, coronal, or transverse planes
+        annotations:
+          note: angled section
+
+  SpatialRelationship:
+    description: |-
+      Spatial relationships between anatomical structures
+    permissible_values:
+
+      ADJACENT_TO:
+        title: Next to or adjoining
+        aliases:
+          - adjacent to
+        meaning: RO:0002220
+
+      ANTERIOR_TO:
+        title: In front of
+        aliases:
+          - anterior to
+        meaning: BSPO:0000096
+
+      POSTERIOR_TO:
+        title: Behind
+        aliases:
+          - posterior to
+        meaning: BSPO:0000099
+
+      DORSAL_TO:
+        title: Above/on the back side of
+        aliases:
+          - dorsal to
+        meaning: BSPO:0000098
+
+      VENTRAL_TO:
+        title: Below/on the belly side of
+        aliases:
+          - ventral to
+        meaning: BSPO:0000102
+
+      LATERAL_TO:
+        title: To the side of
+        aliases:
+          - lateral to
+        meaning: BSPO:0000114
+
+      MEDIAL_TO:
+        title: Toward the midline from
+        aliases:
+          - X medial to y if x is closer to the midsagittal plane than y.
+        meaning: BSPO:0000115
+
+      PROXIMAL_TO:
+        title: Closer to the origin than
+        aliases:
+          - proximal to
+        meaning: BSPO:0000100
+
+      DISTAL_TO:
+        title: Further from the origin than
+        aliases:
+          - distal to
+        meaning: BSPO:0000097
+
+      SUPERFICIAL_TO:
+        title: Closer to the surface than
+        aliases:
+          - superficial to
+        meaning: BSPO:0000108
+
+      DEEP_TO:
+        title: Further from the surface than
+        aliases:
+          - deep to
+        meaning: BSPO:0000107
+
+      SURROUNDS:
+        title: Encircles or encompasses
+        aliases:
+          - surrounds
+        meaning: RO:0002221
+
+      WITHIN:
+        description: Inside or contained by
+        annotations:
+          inverse_of: contains
+
+      BETWEEN:
+        description: In the space separating two structures
+        annotations:
+          note: requires two reference points
+
+  CellPolarity:
+    description: |-
+      Spatial polarity in cells and tissues
+    permissible_values:
+
+      APICAL:
+        description: The free surface of an epithelial cell
+        annotations:
+          location: typically faces lumen or external environment
+
+      BASAL:
+        description: The attached surface of an epithelial cell
+        annotations:
+          location: typically attached to basement membrane
+
+      LATERAL:
+        description: The sides of an epithelial cell
+        annotations:
+          location: faces neighboring cells
+
+      APICAL_LATERAL:
+        description: Junction between apical and lateral surfaces
+
+      BASAL_LATERAL:
+        description: Junction between basal and lateral surfaces
+
+      LEADING_EDGE:
+        description: Front of a migrating cell
+        annotations:
+          context: cell migration
+
+      TRAILING_EDGE:
+        description: Rear of a migrating cell
+        annotations:
+          context: cell migration
+
+      PROXIMAL_POLE:
+        description: Pole closer to the cell body
+        annotations:
+          context: neurons, polarized cells
+
+      DISTAL_POLE:
+        description: Pole further from the cell body
+        annotations:
+          context: neurons, polarized cells

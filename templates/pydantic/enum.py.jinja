@@ -1,0 +1,146 @@
+{% set has_meaning = false %}
+{% set has_annotations = false %}
+{% set has_descriptions = false %}
+{% for pv_name, pv in values.items() %}
+  {% if pv.meaning %}
+    {% set has_meaning = true %}
+  {% endif %}
+  {% if pv.annotations %}
+    {% set has_annotations = true %}
+  {% endif %}
+  {% if pv.description %}
+    {% set has_descriptions = true %}
+  {% endif %}
+{% endfor %}
+
+{% if has_meaning or has_annotations or description %}
+class {{ name }}Meta:
+    """Metadata holder for {{ name }} enum values"""
+    
+    _descriptions = {
+    {% for pv_name, pv in values.items() %}
+        {% if pv.description %}
+        "{{ pv.label }}": """{{ pv.description }}""",
+        {% endif %}
+    {% endfor %}
+    }
+    
+    {% if has_meaning %}
+    _meanings = {
+    {% for pv_name, pv in values.items() %}
+        {% if pv.meaning %}
+        "{{ pv.label }}": "{{ pv.meaning }}",
+        {% endif %}
+    {% endfor %}
+    }
+    {% endif %}
+    
+    {% if has_annotations %}
+    _annotations = {
+    {% for pv_name, pv in values.items() %}
+        {% if pv.annotations %}
+        "{{ pv.label }}": {{ pv.annotations }},
+        {% endif %}
+    {% endfor %}
+    }
+    {% endif %}
+    
+    @classmethod
+    def description(cls, member: "{{ name }}") -> Optional[str]:
+        """Get description for enum member"""
+        return cls._descriptions.get(member.name, None)
+    
+    {% if has_meaning %}
+    @classmethod
+    def meaning(cls, member: "{{ name }}") -> Optional[str]:
+        """Get ontology meaning/mapping for enum member"""
+        return cls._meanings.get(member.name, None)
+    {% endif %}
+    
+    {% if has_annotations %}
+    @classmethod
+    def annotations(cls, member: "{{ name }}") -> Optional[dict]:
+        """Get annotations for enum member"""
+        return cls._annotations.get(member.name, None)
+    {% endif %}
+    
+    @classmethod
+    def all_metadata(cls, member: "{{ name }}") -> dict:
+        """Get all metadata for enum member"""
+        metadata = {
+            "name": member.name,
+            "value": member.value,
+        }
+        if member.name in cls._descriptions:
+            metadata["description"] = cls._descriptions[member.name]
+        {% if has_meaning %}
+        if member.name in cls._meanings:
+            metadata["meaning"] = cls._meanings[member.name]
+        {% endif %}
+        {% if has_annotations %}
+        if member.name in cls._annotations:
+            metadata["annotations"] = cls._annotations[member.name]
+        {% endif %}
+        return metadata
+{% endif %}
+
+
+class {{ name }}(str{% if values %}, Enum{% endif %}):
+{% if description %}
+    """
+    {{ description }}
+    """
+{% endif %}
+{% if values %}
+    # Enum members
+    {% for pv_name, pv in values.items() %}
+    {{ pv.label }} = "{{ pv.value }}"
+    {% endfor %}
+    
+    {% if has_meaning or has_annotations or description %}
+    # Metadata access methods
+    def get_description(self) -> Optional[str]:
+        """Get description for this enum value"""
+        return {{ name }}Meta.description(self)
+    
+    {% if has_meaning %}
+    def get_meaning(self) -> Optional[str]:
+        """Get ontology meaning/mapping for this enum value"""
+        return {{ name }}Meta.meaning(self)
+    {% endif %}
+    
+    {% if has_annotations %}
+    def get_annotations(self) -> Optional[dict]:
+        """Get annotations for this enum value"""
+        return {{ name }}Meta.annotations(self)
+    {% endif %}
+    
+    def get_metadata(self) -> dict:
+        """Get all metadata for this enum value"""
+        return {{ name }}Meta.all_metadata(self)
+    
+    @classmethod
+    def from_meaning(cls, meaning: str) -> Optional["{{ name }}"]:
+        """Get enum member by its ontology meaning"""
+        {% if has_meaning %}
+        for member in cls:
+            if {{ name }}Meta.meaning(member) == meaning:
+                return member
+        {% endif %}
+        return None
+    
+    @classmethod
+    def get_member_metadata(cls, member_name: str) -> Optional[dict]:
+        """Get metadata for a member by name"""
+        try:
+            member = cls[member_name]
+            return {{ name }}Meta.all_metadata(member)
+        except KeyError:
+            return None
+    {% endif %}
+    
+    def __repr__(self) -> str:
+        return f"<{self.__class__.__name__}.{self.name}: {self.value!r}>"
+{% else %}
+    pass
+{% endif %}

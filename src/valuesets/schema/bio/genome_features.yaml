@@ -1,0 +1,430 @@
+---
+id: https://w3id.org/linkml/valuesets/bio/genome_features
+name: genome_features
+title: Genome Feature Types
+description: |-
+  Genome feature types from SOFA (Sequence Ontology Feature Annotation),
+  the subset of SO used in GFF3 files for genome annotation.
+  Organized hierarchically following the Sequence Ontology structure.
+
+prefixes:
+  valuesets: https://w3id.org/linkml/valuesets/
+  SO: http://purl.obolibrary.org/obo/SO_
+
+default_prefix: valuesets
+
+imports:
+  - linkml:types
+
+enums:
+
+  GenomeFeatureType:
+    description: |-
+      Genome feature types from SOFA (Sequence Ontology Feature Annotation).
+      This is the subset of Sequence Ontology terms used in GFF3 files.
+      Organized hierarchically following the Sequence Ontology structure.
+    permissible_values:
+
+      # Root terms
+      REGION:
+        description: A sequence feature with an extent greater than zero
+        meaning: SO:0000001
+
+      BIOLOGICAL_REGION:
+        description: A region defined by its biological properties
+        meaning: SO:0001411
+        is_a: REGION
+
+      # Gene and Gene Structure
+      GENE:
+        description: A region (or regions) that includes all of the sequence elements necessary to encode a functional transcript
+        meaning: SO:0000704
+        is_a: BIOLOGICAL_REGION
+
+      TRANSCRIPT:
+        description: An RNA synthesized on a DNA or RNA template by an RNA polymerase
+        meaning: SO:0000673
+        is_a: BIOLOGICAL_REGION
+
+      PRIMARY_TRANSCRIPT:
+        description: A transcript that has not been processed
+        meaning: SO:0000185
+        is_a: TRANSCRIPT
+
+      MRNA:
+        description: Messenger RNA; includes 5'UTR, coding sequences and 3'UTR
+        meaning: SO:0000234
+        is_a: TRANSCRIPT
+
+      EXON:
+        description: A region of the transcript sequence within a gene which is not removed from the primary RNA transcript by RNA splicing
+        meaning: SO:0000147
+        is_a: BIOLOGICAL_REGION
+
+      CDS:
+        description: Coding sequence; sequence of nucleotides that corresponds with the sequence of amino acids in a protein
+        meaning: SO:0000316
+        is_a: BIOLOGICAL_REGION
+
+      INTRON:
+        description: A region of a primary transcript that is transcribed, but removed from within the transcript by splicing
+        meaning: SO:0000188
+        is_a: BIOLOGICAL_REGION
+
+      FIVE_PRIME_UTR:
+        description: 5' untranslated region
+        meaning: SO:0000204
+        is_a: BIOLOGICAL_REGION
+
+      THREE_PRIME_UTR:
+        description: 3' untranslated region
+        meaning: SO:0000205
+        is_a: BIOLOGICAL_REGION
+
+      # Non-coding RNA
+      NCRNA:
+        description: Non-protein coding RNA
+        meaning: SO:0000655
+        is_a: TRANSCRIPT
+
+      RRNA:
+        description: Ribosomal RNA
+        meaning: SO:0000252
+        is_a: NCRNA
+        structured_aliases:
+          - literal_form: rRNA
+            source: SO:0000252
+
+      TRNA:
+        description: Transfer RNA
+        meaning: SO:0000253
+        is_a: NCRNA
+
+      SNRNA:
+        description: Small nuclear RNA
+        meaning: SO:0000274
+        is_a: NCRNA
+
+      SNORNA:
+        description: Small nucleolar RNA
+        meaning: SO:0000275
+        is_a: NCRNA
+
+      MIRNA:
+        description: MicroRNA
+        meaning: SO:0000276
+        is_a: NCRNA
+
+      LNCRNA:
+        description: Long non-coding RNA
+        meaning: SO:0001877
+        is_a: NCRNA
+
+      RIBOZYME:
+        description: An RNA with catalytic activity
+        meaning: SO:0000374
+        is_a: NCRNA
+
+      ANTISENSE_RNA:
+        description: RNA that is complementary to other RNA
+        meaning: SO:0000644
+        is_a: NCRNA
+
+      # Pseudogenes
+      PSEUDOGENE:
+        description: A sequence that closely resembles a known functional gene but does not produce a functional product
+        meaning: SO:0000336
+        is_a: BIOLOGICAL_REGION
+
+      PROCESSED_PSEUDOGENE:
+        description: A pseudogene arising from reverse transcription of mRNA
+        meaning: SO:0000043
+        is_a: PSEUDOGENE
+
+      # Regulatory Elements
+      REGULATORY_REGION:
+        description: A region involved in the control of the process of gene expression
+        meaning: SO:0005836
+        is_a: BIOLOGICAL_REGION
+
+      PROMOTER:
+        description: A regulatory region initiating transcription
+        meaning: SO:0000167
+        is_a: REGULATORY_REGION
+
+      ENHANCER:
+        description: A cis-acting sequence that increases transcription
+        meaning: SO:0000165
+        is_a: REGULATORY_REGION
+
+      SILENCER:
+        description: A regulatory region which upon binding of transcription factors, suppresses transcription
+        meaning: SO:0000625
+        is_a: REGULATORY_REGION
+
+      TERMINATOR:
+        description: The sequence of DNA located either at the end of the transcript that causes RNA polymerase to terminate transcription
+        meaning: SO:0000141
+        is_a: REGULATORY_REGION
+
+      ATTENUATOR:
+        description: A sequence that causes transcription termination
+        meaning: SO:0000140
+        is_a: REGULATORY_REGION
+
+      POLYA_SIGNAL_SEQUENCE:
+        description: The recognition sequence for the cleavage and polyadenylation machinery
+        meaning: SO:0000551
+        is_a: REGULATORY_REGION
+
+      # Binding sites
+      BINDING_SITE:
+        description: A region on a molecule that binds to another molecule
+        meaning: SO:0000409
+        is_a: BIOLOGICAL_REGION
+
+      TFBS:
+        title: TF_binding_site
+        description: Transcription factor binding site
+        meaning: SO:0000235
+        is_a: BINDING_SITE
+
+      RIBOSOME_ENTRY_SITE:
+        description: Region where ribosome assembles on mRNA
+        meaning: SO:0000139
+        is_a: BINDING_SITE
+
+      POLYA_SITE:
+        description: Polyadenylation site
+        meaning: SO:0000553
+        is_a: BIOLOGICAL_REGION
+
+      # Repeat Elements
+      REPEAT_REGION:
+        description: A region of sequence containing one or more repeat units
+        meaning: SO:0000657
+        is_a: BIOLOGICAL_REGION
+
+      DISPERSED_REPEAT:
+        description: A repeat that is interspersed in the genome
+        meaning: SO:0000658
+        is_a: REPEAT_REGION
+
+      TANDEM_REPEAT:
+        description: A repeat where the same sequence is repeated in the same orientation
+        meaning: SO:0000705
+        is_a: REPEAT_REGION
+
+      INVERTED_REPEAT:
+        description: A repeat where the sequence is repeated in the opposite orientation
+        meaning: SO:0000294
+        is_a: REPEAT_REGION
+
+      TRANSPOSABLE_ELEMENT:
+        description: A DNA segment that can change its position within the genome
+        meaning: SO:0000101
+        is_a: BIOLOGICAL_REGION
+
+      MOBILE_ELEMENT:
+        title: mobile_genetic_element
+        description: A nucleotide region with the ability to move from one place in the genome to another
+        meaning: SO:0001037
+        is_a: BIOLOGICAL_REGION
+
+      # Structural Variants
+      SEQUENCE_ALTERATION:
+        description: A sequence that deviates from the reference sequence
+        meaning: SO:0001059
+        is_a: REGION
+
+      INSERTION:
+        description: The sequence of one or more nucleotides added between two adjacent nucleotides
+        meaning: SO:0000667
+        is_a: SEQUENCE_ALTERATION
+
+      DELETION:
+        description: The removal of a sequences of nucleotides from the genome
+        meaning: SO:0000159
+        is_a: SEQUENCE_ALTERATION
+
+      INVERSION:
+        description: A continuous nucleotide sequence is inverted in the same position
+        meaning: SO:1000036
+        is_a: SEQUENCE_ALTERATION
+
+      DUPLICATION:
+        description: One or more nucleotides are added between two adjacent nucleotides
+        meaning: SO:1000035
+        is_a: SEQUENCE_ALTERATION
+
+      SUBSTITUTION:
+        description: A sequence alteration where one nucleotide replaced by another
+        meaning: SO:1000002
+        is_a: SEQUENCE_ALTERATION
+
+      # Sequence Features
+      ORIGIN_OF_REPLICATION:
+        description: The origin of replication; starting site for duplication of a nucleic acid molecule
+        meaning: SO:0000296
+        is_a: BIOLOGICAL_REGION
+
+      POLYC_TRACT:
+        description: A sequence of Cs
+        is_a: REGION
+
+      GAP:
+        description: A gap in the sequence
+        meaning: SO:0000730
+        is_a: REGION
+
+      ASSEMBLY_GAP:
+        title: gap
+        description: A gap between two sequences in an assembly
+        meaning: SO:0000730
+        is_a: GAP
+
+      # Chromosomal Features
+      CHROMOSOME:
+        description: Structural unit composed of DNA and proteins
+        meaning: SO:0000340
+        is_a: REGION
+
+      SUPERCONTIG:
+        description: One or more contigs that have been ordered and oriented using end-read information
+        meaning: SO:0000148
+        is_a: REGION
+
+      CONTIG:
+        description: A contiguous sequence derived from sequence assembly
+        meaning: SO:0000149
+        is_a: REGION
+
+      SCAFFOLD:
+        title: supercontig
+        description: One or more contigs that have been ordered and oriented
+        meaning: SO:0000148
+        is_a: REGION
+
+      CLONE:
+        description: A piece of DNA that has been inserted into a vector
+        meaning: SO:0000151
+        is_a: REGION
+
+      PLASMID:
+        description: A self-replicating circular DNA molecule
+        meaning: SO:0000155
+        is_a: REGION
+
+      # Protein Features
+      POLYPEPTIDE:
+        description: A sequence of amino acids linked by peptide bonds
+        meaning: SO:0000104
+        is_a: REGION
+
+      MATURE_PROTEIN_REGION:
+        description: The polypeptide sequence that remains after post-translational processing
+        meaning: SO:0000419
+        is_a: POLYPEPTIDE
+
+      SIGNAL_PEPTIDE:
+        description: A peptide region that targets a polypeptide to a specific location
+        meaning: SO:0000418
+        is_a: POLYPEPTIDE
+
+      TRANSIT_PEPTIDE:
+        description: A peptide that directs the transport of a protein to an organelle
+        meaning: SO:0000725
+        is_a: POLYPEPTIDE
+
+      PROPEPTIDE:
+        title: propeptide
+        description: A peptide region that is cleaved during maturation
+        meaning: SO:0001062
+        is_a: POLYPEPTIDE
+
+      # Other Important Features
+      OPERON:
+        description: A group of contiguous genes transcribed as a single unit
+        meaning: SO:0000178
+        is_a: BIOLOGICAL_REGION
+
+      STEM_LOOP:
+        description: A double-helical region formed by base-pairing between adjacent sequences
+        meaning: SO:0000313
+        is_a: REGION
+
+      D_LOOP:
+        description: Displacement loop; a region where DNA is displaced by an invading strand
+        meaning: SO:0000297
+        is_a: REGION
+
+      # Match Features (for alignments)
+      MATCH:
+        description: A region of sequence similarity
+        meaning: SO:0000343
+        is_a: REGION
+
+      CDNA_MATCH:
+        description: A match to a cDNA sequence
+        meaning: SO:0000689
+        is_a: MATCH
+
+      EST_MATCH:
+        description: A match to an EST sequence
+        meaning: SO:0000668
+        is_a: MATCH
+
+      PROTEIN_MATCH:
+        description: A match to a protein sequence
+        meaning: SO:0000349
+        is_a: MATCH
+
+      NUCLEOTIDE_MATCH:
+        description: A match to a nucleotide sequence
+        meaning: SO:0000347
+        is_a: MATCH
+
+      # Boundaries and Junctions
+      JUNCTION_FEATURE:
+        title: junction
+        description: A boundary or junction between sequence regions
+        meaning: SO:0000699
+        is_a: BIOLOGICAL_REGION
+
+      SPLICE_SITE:
+        description: The position where intron is excised
+        meaning: SO:0000162
+        is_a: JUNCTION_FEATURE
+
+      FIVE_PRIME_SPLICE_SITE:
+        title: five_prime_cis_splice_site
+        description: The 5' splice site (donor site)
+        meaning: SO:0000163
+        is_a: SPLICE_SITE
+
+      THREE_PRIME_SPLICE_SITE:
+        title: three_prime_cis_splice_site
+        description: The 3' splice site (acceptor site)
+        meaning: SO:0000164
+        is_a: SPLICE_SITE
+
+      START_CODON:
+        description: The first codon to be translated
+        meaning: SO:0000318
+        is_a: BIOLOGICAL_REGION
+
+      STOP_CODON:
+        description: The codon that terminates translation
+        meaning: SO:0000319
+        is_a: BIOLOGICAL_REGION
+
+      # Genomic Regions
+      CENTROMERE:
+        description: A region where chromatids are held together
+        meaning: SO:0000577
+        is_a: BIOLOGICAL_REGION
+
+      TELOMERE:
+        description: The terminal region of a linear chromosome
+        meaning: SO:0000624
+        is_a: BIOLOGICAL_REGION

@@ -1,0 +1,94 @@
+name: viral_genome_types
+id: https://w3id.org/linkml/valuesets/bio/viral_genome_types
+prefixes:
+  NCIT: http://purl.obolibrary.org/obo/NCIT_
+  CHEBI: http://purl.obolibrary.org/obo/CHEBI_
+  SO: http://purl.obolibrary.org/obo/SO_
+  mixs: https://genomicsstandardsconsortium.github.io/mixs/
+default_prefix: mixs
+enums:
+  ViralGenomeTypeEnum:
+    description: Types of viral genomes based on Baltimore classification
+    conforms_to: https://en.wikipedia.org/wiki/Baltimore_classification
+    permissible_values:
+      DNA:
+        description: Viral genome composed of DNA
+        meaning: CHEBI:16991
+        title: deoxyribonucleic acid
+      DSDNA:
+        description: Double-stranded DNA viral genome
+        meaning: NCIT:C14348
+        title: Double Stranded DNA Virus
+        is_a: DNA
+        aliases:
+          - Baltimore Group I
+          - Group I
+      SSDNA:
+        description: Single-stranded DNA viral genome
+        meaning: NCIT:C14350
+        title: Single Stranded DNA Virus
+        is_a: DNA
+        aliases:
+          - Baltimore Group II
+          - Group II
+      RNA:
+        description: Viral genome composed of RNA
+        meaning: CHEBI:33697
+        title: ribonucleic acid
+      DSRNA:
+        description: Double-stranded RNA viral genome
+        meaning: NCIT:C28518
+        title: Double Stranded RNA Virus
+        is_a: RNA
+        aliases:
+          - Baltimore Group III
+          - Group III
+      SSRNA:
+        description: Single-stranded RNA viral genome
+        meaning: NCIT:C95939
+        title: Single-Stranded RNA
+        is_a: RNA
+      SSRNA_POSITIVE:
+        description: Positive-sense single-stranded RNA viral genome
+        meaning: NCIT:C14351
+        title: Positive Sense ssRNA Virus
+        is_a: SSRNA
+        aliases:
+          - Baltimore Group IV
+          - Group IV
+          - (+)ssRNA
+      SSRNA_NEGATIVE:
+        description: Negative-sense single-stranded RNA viral genome
+        meaning: NCIT:C14346
+        title: Negative Sense ssRNA Virus
+        is_a: SSRNA
+        aliases:
+          - Baltimore Group V
+          - Group V
+          - (-)ssRNA
+      SSRNA_RT:
+        description: Single-stranded RNA viruses that replicate through a DNA intermediate (retroviruses)
+        meaning: NCIT:C14347
+        title: Deltaretrovirus
+        is_a: SSRNA
+        aliases:
+          - Baltimore Group VI
+          - Group VI
+          - Retroviruses
+      DSDNA_RT:
+        description: Double-stranded DNA viruses that replicate through a single-stranded RNA intermediate (pararetroviruses)
+        meaning: NCIT:C14349
+        title: Other Virus Grouping
+        is_a: DSDNA
+        aliases:
+          - Baltimore Group VII
+          - Group VII
+          - Pararetroviruses
+      MIXED:
+        description: Mixed or hybrid viral genome type
+        meaning: NCIT:C128790
+        title: Hybrid
+      UNCHARACTERIZED:
+        description: Viral genome type not yet characterized
+        meaning: NCIT:C17998
+        title: Unknown

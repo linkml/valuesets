@@ -1,0 +1,429 @@
+id: https://w3id.org/valuesets/chemistry/reactions
+name: reactions
+title: Chemical Reactions Value Sets
+description: >
+  Value sets for chemical reactions, reaction types, mechanisms, and kinetics.
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+  RXNO: http://purl.obolibrary.org/obo/RXNO_
+  MOP: http://purl.obolibrary.org/obo/MOP_
+  REX: http://purl.obolibrary.org/obo/REX_
+  CHEBI: http://purl.obolibrary.org/obo/CHEBI_
+  GO: http://purl.obolibrary.org/obo/GO_
+  EC: https://enzyme.expasy.org/EC/
+
+imports:
+  - linkml:types
+
+enums:
+  ReactionTypeEnum:
+    description: Types of chemical reactions
+    permissible_values:
+      # Basic reaction types
+      SYNTHESIS:
+        description: Combination reaction (A + B → AB)
+        annotations:
+          aliases: "combination, addition"
+          pattern: "A + B → AB"
+      DECOMPOSITION:
+        description: Breakdown reaction (AB → A + B)
+        annotations:
+          aliases: "analysis"
+          pattern: "AB → A + B"
+      SINGLE_DISPLACEMENT:
+        description: Single replacement reaction (A + BC → AC + B)
+        annotations:
+          aliases: "single replacement"
+          pattern: "A + BC → AC + B"
+      DOUBLE_DISPLACEMENT:
+        description: Double replacement reaction (AB + CD → AD + CB)
+        annotations:
+          aliases: "double replacement, metathesis"
+          pattern: "AB + CD → AD + CB"
+      COMBUSTION:
+        description: Reaction with oxygen producing heat and light
+        annotations:
+          reactant: "oxygen"
+          products: "usually CO2 and H2O"
+      
+      # Organic reactions
+      SUBSTITUTION:
+        title: substitution reaction
+        description: Replacement of one group by another
+        meaning: MOP:0000790
+        annotations:
+          subtypes: "SN1, SN2, SNAr"
+      ELIMINATION:
+        title: elimination reaction
+        description: Removal of atoms/groups forming double bond
+        meaning: MOP:0000656
+        annotations:
+          subtypes: "E1, E2, E1cB"
+      ADDITION:
+        title: addition reaction
+        description: Addition to multiple bond
+        meaning: MOP:0000642
+        annotations:
+          subtypes: "electrophilic, nucleophilic, radical"
+      REARRANGEMENT:
+        description: Reorganization of molecular structure
+        annotations:
+          examples: "Claisen, Cope, Wagner-Meerwein"
+      OXIDATION:
+        description: Loss of electrons or increase in oxidation state
+        annotations:
+          electron_change: "loss"
+      REDUCTION:
+        description: Gain of electrons or decrease in oxidation state
+        annotations:
+          electron_change: "gain"
+      
+      # Named reactions
+      DIELS_ALDER:
+        title: Diels-Alder reaction
+        description: "[4+2] cycloaddition reaction"
+        meaning: RXNO:0000006
+        annotations:
+          type: "pericyclic"
+          components: "diene + dienophile"
+      FRIEDEL_CRAFTS:
+        title: Friedel-Crafts reaction
+        description: Electrophilic aromatic substitution
+        meaning: RXNO:0000369
+        annotations:
+          subtypes: "alkylation, acylation"
+      GRIGNARD:
+        title: Grignard reaction
+        description: Organometallic addition reaction
+        meaning: RXNO:0000014
+        annotations:
+          reagent: "RMgX"
+      WITTIG:
+        title: Wittig reaction
+        description: Alkene formation from phosphonium ylide
+        meaning: RXNO:0000015
+        annotations:
+          product: "alkene"
+      ALDOL:
+        title: aldol condensation
+        description: Condensation forming β-hydroxy carbonyl
+        meaning: RXNO:0000017
+        annotations:
+          mechanism: "enolate addition"
+      MICHAEL_ADDITION:
+        title: Michael addition
+        description: 1,4-addition to α,β-unsaturated carbonyl
+        meaning: RXNO:0000009
+        annotations:
+          type: "conjugate addition"
+
+  ReactionMechanismEnum:
+    description: Reaction mechanism types
+    permissible_values:
+      SN1:
+        description: Unimolecular nucleophilic substitution
+        annotations:
+          rate_determining: "carbocation formation"
+          stereochemistry: "racemization"
+      SN2:
+        description: Bimolecular nucleophilic substitution
+        annotations:
+          rate_determining: "concerted"
+          stereochemistry: "inversion"
+      E1:
+        description: Unimolecular elimination
+        annotations:
+          intermediate: "carbocation"
+      E2:
+        description: Bimolecular elimination
+        annotations:
+          requirement: "antiperiplanar"
+      E1CB:
+        description: Elimination via conjugate base
+        annotations:
+          intermediate: "carbanion"
+      RADICAL:
+        description: Free radical mechanism
+        annotations:
+          initiation: "homolytic cleavage"
+      PERICYCLIC:
+        description: Concerted cyclic electron reorganization
+        annotations:
+          examples: "Diels-Alder, Cope"
+      ELECTROPHILIC_AROMATIC:
+        description: Electrophilic aromatic substitution
+        annotations:
+          intermediate: "arenium ion"
+      NUCLEOPHILIC_AROMATIC:
+        description: Nucleophilic aromatic substitution
+        annotations:
+          requirement: "electron-withdrawing groups"
+      ADDITION_ELIMINATION:
+        description: Addition followed by elimination
+        annotations:
+          intermediate: "tetrahedral"
+
+  CatalystTypeEnum:
+    description: Types of catalysts
+    permissible_values:
+      HOMOGENEOUS:
+        description: Catalyst in same phase as reactants
+        annotations:
+          phase: "same as reactants"
+          examples: "acid, base, metal complexes"
+      HETEROGENEOUS:
+        description: Catalyst in different phase from reactants
+        annotations:
+          phase: "different from reactants"
+          examples: "Pt/Pd on carbon, zeolites"
+      ENZYME:
+        title: cofactor
+        description: Biological catalyst
+        meaning: CHEBI:23357
+        annotations:
+          type: "protein"
+          specificity: "high"
+      ORGANOCATALYST:
+        description: Small organic molecule catalyst
+        annotations:
+          metal_free: "true"
+          examples: "proline, thiourea"
+      PHOTOCATALYST:
+        description: Light-activated catalyst
+        annotations:
+          activation: "light"
+          examples: "TiO2, Ru complexes"
+      PHASE_TRANSFER:
+        description: Catalyst facilitating reaction between phases
+        annotations:
+          function: "transfers reactant between phases"
+      ACID:
+        description: Acid catalyst
+        annotations:
+          mechanism: "proton donation"
+      BASE:
+        description: Base catalyst
+        annotations:
+          mechanism: "proton abstraction"
+      METAL:
+        description: Metal catalyst
+        annotations:
+          examples: "Pd, Pt, Ni, Ru"
+      BIFUNCTIONAL:
+        description: Catalyst with two active sites
+        annotations:
+          sites: "multiple"
+
+  ReactionConditionEnum:
+    description: Reaction conditions
+    permissible_values:
+      ROOM_TEMPERATURE:
+        description: Standard room temperature (20-25°C)
+        annotations:
+          temperature: "20-25°C"
+      REFLUX:
+        description: Boiling with condensation return
+        annotations:
+          temperature: "solvent boiling point"
+      CRYOGENIC:
+        description: Very low temperature conditions
+        annotations:
+          temperature: "<-150°C"
+          examples: "liquid N2, liquid He"
+      HIGH_PRESSURE:
+        description: Elevated pressure conditions
+        annotations:
+          pressure: ">10 atm"
+      VACUUM:
+        description: Reduced pressure conditions
+        annotations:
+          pressure: "<1 atm"
+      INERT_ATMOSPHERE:
+        description: Non-reactive gas atmosphere
+        annotations:
+          gases: "N2, Ar"
+      MICROWAVE:
+        description: Microwave heating
+        annotations:
+          heating: "microwave irradiation"
+      ULTRASOUND:
+        description: Ultrasonic conditions
+        annotations:
+          activation: "ultrasound"
+      PHOTOCHEMICAL:
+        description: Light-induced conditions
+        annotations:
+          activation: "UV or visible light"
+      ELECTROCHEMICAL:
+        description: Electrically driven conditions
+        annotations:
+          activation: "electric current"
+      FLOW:
+        description: Continuous flow conditions
+        annotations:
+          type: "continuous process"
+      BATCH:
+        description: Batch reaction conditions
+        annotations:
+          type: "batch process"
+
+  ReactionRateOrderEnum:
+    description: Reaction rate orders
+    permissible_values:
+      ZERO_ORDER:
+        description: Rate independent of concentration
+        annotations:
+          rate_law: "rate = k"
+          integrated: "[A] = [A]₀ - kt"
+      FIRST_ORDER:
+        description: Rate proportional to concentration
+        annotations:
+          rate_law: "rate = k[A]"
+          integrated: "ln[A] = ln[A]₀ - kt"
+      SECOND_ORDER:
+        description: Rate proportional to concentration squared
+        annotations:
+          rate_law: "rate = k[A]²"
+          integrated: "1/[A] = 1/[A]₀ + kt"
+      PSEUDO_FIRST_ORDER:
+        description: Apparent first order (excess reagent)
+        annotations:
+          condition: "one reagent in large excess"
+      FRACTIONAL_ORDER:
+        description: Non-integer order
+        annotations:
+          indicates: "complex mechanism"
+      MIXED_ORDER:
+        description: Different orders for different reactants
+        annotations:
+          example: "rate = k[A][B]²"
+
+  EnzymeClassEnum:
+    description: EC enzyme classification
+    permissible_values:
+      OXIDOREDUCTASE:
+        title: Oxidoreductases
+        description: Catalyzes oxidation-reduction reactions
+        meaning: EC:1
+        annotations:
+          EC_class: "1"
+          examples: "dehydrogenases, oxidases"
+      TRANSFERASE:
+        title: Transferases
+        description: Catalyzes group transfer reactions
+        meaning: EC:2
+        annotations:
+          EC_class: "2"
+          examples: "kinases, transaminases"
+      HYDROLASE:
+        title: Hydrolases
+        description: Catalyzes hydrolysis reactions
+        meaning: EC:3
+        annotations:
+          EC_class: "3"
+          examples: "proteases, lipases"
+      LYASE:
+        title: Lyases
+        description: Catalyzes non-hydrolytic additions/removals
+        meaning: EC:4
+        annotations:
+          EC_class: "4"
+          examples: "decarboxylases, aldolases"
+      ISOMERASE:
+        title: Isomerases
+        description: Catalyzes isomerization reactions
+        meaning: EC:5
+        annotations:
+          EC_class: "5"
+          examples: "racemases, epimerases"
+      LIGASE:
+        title: Ligases
+        description: Catalyzes formation of bonds with ATP
+        meaning: EC:6
+        annotations:
+          EC_class: "6"
+          examples: "synthetases, carboxylases"
+      TRANSLOCASE:
+        title: Translocases
+        description: Catalyzes movement across membranes
+        meaning: EC:7
+        annotations:
+          EC_class: "7"
+          examples: "ATPases, ion pumps"
+
+  SolventClassEnum:
+    description: Classes of solvents
+    permissible_values:
+      PROTIC:
+        description: Solvents with acidic hydrogen
+        annotations:
+          H_bonding: "donor"
+          examples: "water, alcohols, acids"
+      APROTIC_POLAR:
+        description: Polar solvents without acidic H
+        annotations:
+          H_bonding: "acceptor only"
+          examples: "DMSO, DMF, acetone"
+      APROTIC_NONPOLAR:
+        description: Nonpolar solvents
+        annotations:
+          H_bonding: "none"
+          examples: "hexane, benzene, CCl4"
+      IONIC_LIQUID:
+        description: Room temperature ionic liquids
+        annotations:
+          state: "liquid salt"
+          examples: "imidazolium salts"
+      SUPERCRITICAL:
+        description: Supercritical fluids
+        annotations:
+          state: "supercritical"
+          examples: "scCO2, scH2O"
+      AQUEOUS:
+        description: Water-based solvents
+        annotations:
+          base: "water"
+      ORGANIC:
+        description: Organic solvents
+        annotations:
+          base: "organic compounds"
+      GREEN:
+        description: Environmentally friendly solvents
+        annotations:
+          property: "low environmental impact"
+          examples: "water, ethanol, scCO2"
+
+  ThermodynamicParameterEnum:
+    description: Thermodynamic parameters
+    permissible_values:
+      ENTHALPY:
+        description: Heat content (ΔH)
+        annotations:
+          symbol: "ΔH"
+          units: "kJ/mol"
+      ENTROPY:
+        description: Disorder (ΔS)
+        annotations:
+          symbol: "ΔS"
+          units: "J/mol·K"
+      GIBBS_ENERGY:
+        description: Free energy (ΔG)
+        annotations:
+          symbol: "ΔG"
+          units: "kJ/mol"
+      ACTIVATION_ENERGY:
+        description: Energy barrier (Ea)
+        annotations:
+          symbol: "Ea"
+          units: "kJ/mol"
+      HEAT_CAPACITY:
+        description: Heat capacity (Cp)
+        annotations:
+          symbol: "Cp"
+          units: "J/mol·K"
+      INTERNAL_ENERGY:
+        description: Internal energy (ΔU)
+        annotations:
+          symbol: "ΔU"
+          units: "kJ/mol"

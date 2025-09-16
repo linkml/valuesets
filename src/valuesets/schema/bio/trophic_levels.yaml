@@ -1,0 +1,113 @@
+name: trophic_levels
+id: https://w3id.org/linkml/valuesets/bio/trophic_levels
+prefixes:
+  ECOCORE: http://purl.obolibrary.org/obo/ECOCORE_
+  MICRO: http://purl.obolibrary.org/obo/MICRO_
+  BTO: http://purl.obolibrary.org/obo/BTO_
+  mixs: https://genomicsstandardsconsortium.github.io/mixs/
+default_prefix: mixs
+enums:
+  TrophicLevelEnum:
+    description: Trophic levels are the feeding position in a food chain
+    permissible_values:
+      AUTOTROPH:
+        description: Organism capable of synthesizing its own food from inorganic substances
+        meaning: ECOCORE:00000023
+        title: autotroph
+      CARBOXYDOTROPH:
+        description: Organism that uses carbon monoxide as a source of carbon and energy
+        title: carboxydotroph
+      CHEMOAUTOLITHOTROPH:
+        description: Autotroph that obtains energy from inorganic compounds
+        title: chemoautolithotroph
+      CHEMOAUTOTROPH:
+        description: Organism that obtains energy by oxidizing inorganic compounds
+        meaning: ECOCORE:00000129
+        title: chemoautotroph
+      CHEMOHETEROTROPH:
+        description: Organism that obtains energy from organic compounds
+        meaning: ECOCORE:00000132
+        title: chemoheterotroph
+      CHEMOLITHOAUTOTROPH:
+        description: Organism that uses inorganic compounds as electron donors
+        title: chemolithoautotroph
+      CHEMOLITHOTROPH:
+        description: Organism that obtains energy from oxidation of inorganic compounds
+        title: chemolithotroph
+      CHEMOORGANOHETEROTROPH:
+        description: Organism that uses organic compounds as both carbon and energy source
+        title: chemoorganoheterotroph
+      CHEMOORGANOTROPH:
+        description: Organism that obtains energy from organic compounds
+        meaning: ECOCORE:00000133
+        title: chemoorganotroph
+      CHEMOSYNTHETIC:
+        description: Relating to organisms that produce organic matter through chemosynthesis
+        title: chemosynthetic
+      CHEMOTROPH:
+        description: Organism that obtains energy from chemical compounds
+        title: chemotroph
+      COPIOTROPH:
+        description: Organism that thrives in nutrient-rich environments
+        title: copiotroph
+      DIAZOTROPH:
+        description: Organism capable of fixing atmospheric nitrogen
+        title: diazotroph
+      FACULTATIVE:
+        description: Organism that can switch between different metabolic modes
+        title: facultative
+      HETEROTROPH:
+        description: Organism that obtains carbon from organic compounds
+        meaning: ECOCORE:00000010
+        title: heterotroph
+      LITHOAUTOTROPH:
+        description: Autotroph that uses inorganic compounds as electron donors
+        title: lithoautotroph
+      LITHOHETEROTROPH:
+        description: Heterotroph that uses inorganic compounds as electron donors
+        title: lithoheterotroph
+      LITHOTROPH:
+        description: Organism that uses inorganic substrates as electron donors
+        title: lithotroph
+      METHANOTROPH:
+        description: Organism that uses methane as carbon and energy source
+        title: methanotroph
+      METHYLOTROPH:
+        description: Organism that uses single-carbon compounds
+        title: methylotroph
+      MIXOTROPH:
+        description: Organism that can use both autotrophic and heterotrophic methods
+        title: mixotroph
+      OBLIGATE:
+        description: Organism restricted to a particular metabolic mode
+        title: obligate
+      OLIGOTROPH:
+        description: Organism that thrives in nutrient-poor environments
+        meaning: ECOCORE:00000138
+        title: oligotroph
+      ORGANOHETEROTROPH:
+        description: Organism that uses organic compounds as carbon source
+        title: organoheterotroph
+      ORGANOTROPH:
+        description: Organism that uses organic compounds as electron donors
+        title: organotroph
+      PHOTOAUTOTROPH:
+        description: Organism that uses light energy to synthesize organic compounds
+        meaning: ECOCORE:00000130
+        title: photoautotroph
+      PHOTOHETEROTROPH:
+        description: Organism that uses light for energy but organic compounds for carbon
+        meaning: ECOCORE:00000131
+        title: photoheterotroph
+      PHOTOLITHOAUTOTROPH:
+        description: Photoautotroph that uses inorganic electron donors
+        title: photolithoautotroph
+      PHOTOLITHOTROPH:
+        description: Organism that uses light energy and inorganic electron donors
+        title: photolithotroph
+      PHOTOSYNTHETIC:
+        description: Relating to organisms that produce organic matter through photosynthesis
+        title: photosynthetic
+      PHOTOTROPH:
+        description: Organism that obtains energy from light
+        title: phototroph

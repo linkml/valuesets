@@ -1,0 +1,23 @@
+name: fossil_fuels
+id: https://w3id.org/linkml/valuesets/energy/fossil_fuels
+prefixes:
+  linkml_common: https://w3id.org/linkml-common/
+  ENVO: http://purl.obolibrary.org/obo/ENVO_
+  CHEBI: http://purl.obolibrary.org/obo/CHEBI_
+default_prefix: linkml_common
+enums:
+  FossilFuelTypeEnum:
+    description: Types of fossil fuels used for energy generation
+    permissible_values:
+      COAL:
+        description: Coal
+        title: Coal
+        meaning: ENVO:02000091
+      NATURAL_GAS:
+        description: Natural gas
+        title: Natural Gas
+        meaning: ENVO:01000552
+      PETROLEUM:
+        description: Petroleum
+        title: Petroleum
+        meaning: ENVO:00002984

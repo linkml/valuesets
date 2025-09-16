@@ -1,0 +1,113 @@
+name: priority_severity
+id: https://w3id.org/linkml/valuesets/data_science/priority_severity
+prefixes:
+  linkml_common: https://w3id.org/linkml-common/
+  NCIT: http://purl.obolibrary.org/obo/NCIT_
+  STATO: http://purl.obolibrary.org/obo/STATO_
+default_prefix: linkml_common
+enums:
+  PriorityLevelEnum:
+    description: Standard priority levels for task/issue classification
+    permissible_values:
+      CRITICAL:
+        description: Highest priority, requires immediate attention
+        title: Critical
+        aliases:
+          - P0
+          - urgent
+          - blocker
+          - "1"
+      HIGH:
+        description: High priority, should be addressed soon
+        title: High
+        aliases:
+          - P1
+          - important
+          - "2"
+      MEDIUM:
+        description: Medium priority, normal workflow
+        title: Medium
+        aliases:
+          - P2
+          - normal
+          - "3"
+      LOW:
+        description: Low priority, can be deferred
+        title: Low
+        aliases:
+          - P3
+          - minor
+          - "4"
+      TRIVIAL:
+        description: Lowest priority, nice to have
+        title: Trivial
+        aliases:
+          - P4
+          - cosmetic
+          - "5"
+          
+  SeverityLevelEnum:
+    description: Severity levels for incident/bug classification
+    permissible_values:
+      CRITICAL:
+        description: System is unusable, data loss possible
+        title: Critical
+        aliases:
+          - S1
+          - blocker
+          - showstopper
+      MAJOR:
+        description: Major functionality impaired
+        title: Major
+        aliases:
+          - S2
+          - severe
+          - high
+      MINOR:
+        description: Minor functionality impaired
+        title: Minor
+        aliases:
+          - S3
+          - moderate
+          - medium
+      TRIVIAL:
+        description: Cosmetic issue, minimal impact
+        title: Trivial
+        aliases:
+          - S4
+          - cosmetic
+          - low
+          
+  ConfidenceLevelEnum:
+    description: Confidence levels for predictions and classifications
+    permissible_values:
+      VERY_HIGH:
+        description: Very high confidence (>95%)
+        title: Very High
+        aliases:
+          - certain
+          - "5"
+      HIGH:
+        description: High confidence (80-95%)
+        title: High
+        aliases:
+          - confident
+          - "4"
+      MEDIUM:
+        description: Medium confidence (60-80%)
+        title: Medium
+        aliases:
+          - moderate
+          - "3"
+      LOW:
+        description: Low confidence (40-60%)
+        title: Low
+        aliases:
+          - uncertain
+          - "2"
+      VERY_LOW:
+        description: Very low confidence (<40%)
+        title: Very Low
+        aliases:
+          - guess
+          - "1"

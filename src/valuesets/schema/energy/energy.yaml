@@ -1,0 +1,714 @@
+---
+id: https://w3id.org/linkml/valuesets/energy/energy
+name: energy
+title: Energy and Power Value Sets
+description: |-
+  Value sets for energy sources, units, consumption, and related concepts
+
+prefixes:
+  valuesets: https://w3id.org/linkml/valuesets/
+  QUDT: http://qudt.org/vocab/unit/
+  ENVO: http://purl.obolibrary.org/obo/ENVO_
+  CHEBI: http://purl.obolibrary.org/obo/CHEBI_
+
+default_prefix: valuesets
+
+imports:
+  - linkml:types
+
+enums:
+
+  EnergySource:
+    description: |-
+      Types of energy sources and generation methods
+    permissible_values:
+
+      # Renewable Sources
+      SOLAR:
+        title: Solar energy (photovoltaic and thermal)
+        aliases:
+          - Solar radiation
+        meaning: ENVO:01001862
+        annotations:
+          renewable: true
+          emission_free: true
+
+      WIND:
+        title: Wind power
+        aliases:
+          - wind wave energy
+        related_mappings:
+          - ENVO:2000033
+        annotations:
+          renewable: true
+          emission_free: true
+
+      HYDROELECTRIC:
+        title: Hydroelectric power
+        aliases:
+          - hydroelectric dam
+        related_mappings:
+          - ENVO:00000468
+        annotations:
+          renewable: true
+          emission_free: true
+
+      GEOTHERMAL:
+        title: Geothermal energy
+        aliases:
+          - geothermal energy
+        meaning: ENVO:2000034
+        annotations:
+          renewable: true
+          emission_free: true
+
+      BIOMASS:
+        title: Biomass and bioenergy
+        aliases:
+          - organic material
+        related_mappings:
+          - ENVO:01000155
+        annotations:
+          renewable: true
+          emission_free: false
+
+      BIOFUEL:
+        title: Biofuels (ethanol, biodiesel)
+        annotations:
+          renewable: true
+          emission_free: false
+
+      TIDAL:
+        title: Tidal and wave energy
+        annotations:
+          renewable: true
+          emission_free: true
+
+      HYDROGEN:
+        title: Hydrogen fuel
+        aliases:
+          - dihydrogen
+        meaning: CHEBI:18276
+        annotations:
+          renewable: depends
+          emission_free: true
+
+      # Fossil Fuels
+      COAL:
+        title: Coal
+        meaning: ENVO:02000091
+        annotations:
+          renewable: false
+          emission_free: false
+          fossil_fuel: true
+
+      NATURAL_GAS:
+        title: Natural gas
+        meaning: ENVO:01000552
+        annotations:
+          renewable: false
+          emission_free: false
+          fossil_fuel: true
+
+      PETROLEUM:
+        title: Petroleum/oil
+        meaning: ENVO:00002984
+        annotations:
+          renewable: false
+          emission_free: false
+          fossil_fuel: true
+
+      DIESEL:
+        title: Diesel fuel
+        aliases:
+          - diesel fuel
+        meaning: ENVO:03510006
+        annotations:
+          renewable: false
+          emission_free: false
+          fossil_fuel: true
+
+      GASOLINE:
+        title: Gasoline/petrol
+        aliases:
+          - fuel oil
+        related_mappings:
+          - ENVO:00002983
+        annotations:
+          renewable: false
+          emission_free: false
+          fossil_fuel: true
+
+      PROPANE:
+        title: Propane/LPG
+        aliases:
+          - liquefied petroleum gas
+        meaning: ENVO:01000553
+        annotations:
+          renewable: false
+          emission_free: false
+          fossil_fuel: true
+
+      # Nuclear
+      NUCLEAR_FISSION:
+        title: Nuclear fission
+        aliases:
+          - nuclear energy
+        related_mappings:
+          - ENVO:2000025
+        exact_mappings:
+          - CHEBI:35231
+        annotations:
+          renewable: false
+          emission_free: true
+
+      NUCLEAR_FUSION:
+        title: Nuclear fusion (experimental)
+        aliases:
+          - nuclear energy
+        related_mappings:
+          - ENVO:2000025
+        annotations:
+          renewable: false
+          emission_free: true
+
+      # Grid/Mixed
+      GRID_MIX:
+        title: Grid electricity (mixed sources)
+        annotations:
+          renewable: partial
+
+      BATTERY_STORAGE:
+        description: Battery storage systems
+        annotations:
+          storage: true
+
+  EnergyUnit:
+    description: |-
+      Units for measuring energy
+    permissible_values:
+
+      # SI Units
+      JOULE:
+        description: Joule (J)
+        meaning: QUDT:J
+        annotations:
+          symbol: J
+          ucum: J
+          si_base: true
+
+      KILOJOULE:
+        description: Kilojoule (kJ)
+        meaning: QUDT:KiloJ
+        annotations:
+          symbol: kJ
+          ucum: kJ
+          joules: 1000
+
+      MEGAJOULE:
+        description: Megajoule (MJ)
+        meaning: QUDT:MegaJ
+        annotations:
+          symbol: MJ
+          ucum: MJ
+          joules: 1e6
+
+      GIGAJOULE:
+        description: Gigajoule (GJ)
+        meaning: QUDT:GigaJ
+        annotations:
+          symbol: GJ
+          ucum: GJ
+          joules: 1e9
+
+      # Electricity Units
+      WATT_HOUR:
+        description: Watt-hour (Wh)
+        meaning: QUDT:W-HR
+        annotations:
+          symbol: Wh
+          ucum: W.h
+          joules: 3600
+
+      KILOWATT_HOUR:
+        description: Kilowatt-hour (kWh)
+        meaning: QUDT:KiloW-HR
+        annotations:
+          symbol: kWh
+          ucum: kW.h
+          joules: 3.6e6
+
+      MEGAWATT_HOUR:
+        description: Megawatt-hour (MWh)
+        meaning: QUDT:MegaW-HR
+        annotations:
+          symbol: MWh
+          ucum: MW.h
+          joules: 3.6e9
+
+      GIGAWATT_HOUR:
+        description: Gigawatt-hour (GWh)
+        meaning: QUDT:GigaW-HR
+        annotations:
+          symbol: GWh
+          ucum: GW.h
+          joules: 3.6e12
+
+      TERAWATT_HOUR:
+        description: Terawatt-hour (TWh)
+        meaning: QUDT:TeraW-HR
+        annotations:
+          symbol: TWh
+          ucum: TW.h
+          joules: 3.6e15
+
+      # Thermal Units
+      CALORIE:
+        description: Calorie (cal)
+        meaning: QUDT:CAL
+        annotations:
+          symbol: cal
+          ucum: cal
+          joules: 4.184
+
+      KILOCALORIE:
+        description: Kilocalorie (kcal)
+        meaning: QUDT:KiloCAL
+        annotations:
+          symbol: kcal
+          ucum: kcal
+          joules: 4184
+
+      BTU:
+        description: British thermal unit
+        meaning: QUDT:BTU_IT
+        annotations:
+          symbol: BTU
+          ucum: "[Btu_IT]"
+          joules: 1055.06
+
+      THERM:
+        description: Therm
+        meaning: QUDT:THM_US
+        annotations:
+          symbol: thm
+          ucum: "[thm_us]"
+          joules: 1.055e8
+
+      # Other Units
+      ELECTRON_VOLT:
+        description: Electron volt (eV)
+        meaning: QUDT:EV
+        annotations:
+          symbol: eV
+          ucum: eV
+          joules: 1.602e-19
+
+      TOE:
+        description: Tonne of oil equivalent
+        meaning: QUDT:TOE
+        annotations:
+          symbol: toe
+          ucum: toe
+          joules: 4.187e10
+
+      TCE:
+        description: Tonne of coal equivalent
+        annotations:
+          symbol: tce
+          ucum: tce
+          joules: 2.93e10
+
+  PowerUnit:
+    description: |-
+      Units for measuring power (energy per time)
+    permissible_values:
+
+      WATT:
+        description: Watt (W)
+        meaning: QUDT:W
+        annotations:
+          symbol: W
+          ucum: W
+          si_base: true
+
+      KILOWATT:
+        description: Kilowatt (kW)
+        meaning: QUDT:KiloW
+        annotations:
+          symbol: kW
+          ucum: kW
+          watts: 1000
+
+      MEGAWATT:
+        description: Megawatt (MW)
+        meaning: QUDT:MegaW
+        annotations:
+          symbol: MW
+          ucum: MW
+          watts: 1e6
+
+      GIGAWATT:
+        description: Gigawatt (GW)
+        meaning: QUDT:GigaW
+        annotations:
+          symbol: GW
+          ucum: GW
+          watts: 1e9
+
+      TERAWATT:
+        description: Terawatt (TW)
+        meaning: QUDT:TeraW
+        annotations:
+          symbol: TW
+          ucum: TW
+          watts: 1e12
+
+      HORSEPOWER:
+        description: Horsepower
+        meaning: QUDT:HP
+        annotations:
+          symbol: hp
+          ucum: "[HP]"
+          watts: 745.7
+
+      BTU_PER_HOUR:
+        description: BTU per hour
+        annotations:
+          symbol: BTU/h
+          ucum: "[Btu_IT]/h"
+          watts: 0.293
+
+  EnergyEfficiencyRating:
+    description: |-
+      Energy efficiency ratings and standards
+    permissible_values:
+
+      # EU Energy Labels
+      A_PLUS_PLUS_PLUS:
+        description: A+++ (highest efficiency)
+        annotations:
+          rank: 1
+          region: EU
+
+      A_PLUS_PLUS:
+        description: A++
+        annotations:
+          rank: 2
+          region: EU
+
+      A_PLUS:
+        description: A+
+        annotations:
+          rank: 3
+          region: EU
+
+      A:
+        description: A
+        annotations:
+          rank: 4
+          region: EU
+
+      B:
+        description: B
+        annotations:
+          rank: 5
+          region: EU
+
+      C:
+        description: C
+        annotations:
+          rank: 6
+          region: EU
+
+      D:
+        description: D
+        annotations:
+          rank: 7
+          region: EU
+
+      E:
+        description: E
+        annotations:
+          rank: 8
+          region: EU
+
+      F:
+        description: F
+        annotations:
+          rank: 9
+          region: EU
+
+      G:
+        description: G (lowest efficiency)
+        annotations:
+          rank: 10
+          region: EU
+
+      # US Energy Star
+      ENERGY_STAR:
+        description: Energy Star certified
+        annotations:
+          region: US
+
+      ENERGY_STAR_MOST_EFFICIENT:
+        description: Energy Star Most Efficient
+        annotations:
+          region: US
+
+  BuildingEnergyStandard:
+    description: |-
+      Building energy efficiency standards and certifications
+    permissible_values:
+
+      PASSIVE_HOUSE:
+        description: Passive House (Passivhaus) standard
+
+      LEED_PLATINUM:
+        description: LEED Platinum certification
+
+      LEED_GOLD:
+        description: LEED Gold certification
+
+      LEED_SILVER:
+        description: LEED Silver certification
+
+      LEED_CERTIFIED:
+        description: LEED Certified
+
+      BREEAM_OUTSTANDING:
+        description: BREEAM Outstanding
+
+      BREEAM_EXCELLENT:
+        description: BREEAM Excellent
+
+      BREEAM_VERY_GOOD:
+        description: BREEAM Very Good
+
+      BREEAM_GOOD:
+        description: BREEAM Good
+
+      BREEAM_PASS:
+        description: BREEAM Pass
+
+      NET_ZERO:
+        description: Net Zero Energy Building
+
+      ENERGY_POSITIVE:
+        description: Energy Positive Building
+
+      ZERO_CARBON:
+        description: Zero Carbon Building
+
+  GridType:
+    description: |-
+      Types of electrical grid systems
+    permissible_values:
+
+      MAIN_GRID:
+        description: Main utility grid
+
+      MICROGRID:
+        description: Microgrid
+
+      OFF_GRID:
+        description: Off-grid/standalone
+
+      SMART_GRID:
+        description: Smart grid
+
+      MINI_GRID:
+        description: Mini-grid
+
+      VIRTUAL_POWER_PLANT:
+        description: Virtual power plant
+
+  EnergyStorageType:
+    description: |-
+      Types of energy storage systems
+    permissible_values:
+
+      # Electrochemical
+      LITHIUM_ION_BATTERY:
+        description: Lithium-ion battery
+        annotations:
+          category: electrochemical
+
+      LEAD_ACID_BATTERY:
+        description: Lead-acid battery
+        annotations:
+          category: electrochemical
+
+      FLOW_BATTERY:
+        description: Flow battery (e.g., vanadium redox)
+        annotations:
+          category: electrochemical
+
+      SOLID_STATE_BATTERY:
+        description: Solid-state battery
+        annotations:
+          category: electrochemical
+
+      SODIUM_ION_BATTERY:
+        description: Sodium-ion battery
+        annotations:
+          category: electrochemical
+
+      # Mechanical
+      PUMPED_HYDRO:
+        description: Pumped hydroelectric storage
+        annotations:
+          category: mechanical
+
+      COMPRESSED_AIR:
+        description: Compressed air energy storage (CAES)
+        annotations:
+          category: mechanical
+
+      FLYWHEEL:
+        description: Flywheel energy storage
+        annotations:
+          category: mechanical
+
+      GRAVITY_STORAGE:
+        description: Gravity-based storage
+        annotations:
+          category: mechanical
+
+      # Thermal
+      MOLTEN_SALT:
+        description: Molten salt thermal storage
+        annotations:
+          category: thermal
+
+      ICE_STORAGE:
+        description: Ice thermal storage
+        annotations:
+          category: thermal
+
+      PHASE_CHANGE:
+        description: Phase change materials
+        annotations:
+          category: thermal
+
+      # Chemical
+      HYDROGEN_STORAGE:
+        description: Hydrogen storage
+        annotations:
+          category: chemical
+
+      SYNTHETIC_FUEL:
+        description: Synthetic fuel storage
+        annotations:
+          category: chemical
+
+      # Electrical
+      SUPERCAPACITOR:
+        description: Supercapacitor
+        annotations:
+          category: electrical
+
+      SUPERCONDUCTING:
+        description: Superconducting magnetic energy storage (SMES)
+        annotations:
+          category: electrical
+
+  EmissionScope:
+    description: |-
+      Greenhouse gas emission scopes (GHG Protocol)
+    permissible_values:
+
+      SCOPE_1:
+        description: Direct emissions from owned or controlled sources
+        annotations:
+          ghg_protocol: Scope 1
+
+      SCOPE_2:
+        description: Indirect emissions from purchased energy
+        annotations:
+          ghg_protocol: Scope 2
+
+      SCOPE_3:
+        description: All other indirect emissions in value chain
+        annotations:
+          ghg_protocol: Scope 3
+
+      SCOPE_3_UPSTREAM:
+        description: Upstream Scope 3 emissions
+        annotations:
+          ghg_protocol: Scope 3
+
+      SCOPE_3_DOWNSTREAM:
+        description: Downstream Scope 3 emissions
+        annotations:
+          ghg_protocol: Scope 3
+
+  CarbonIntensity:
+    description: |-
+      Carbon intensity levels for energy sources
+    permissible_values:
+
+      ZERO_CARBON:
+        description: Zero carbon emissions
+        annotations:
+          gCO2_per_kWh: 0
+
+      VERY_LOW_CARBON:
+        description: Very low carbon (< 50 gCO2/kWh)
+        annotations:
+          gCO2_per_kWh: 0-50
+
+      LOW_CARBON:
+        description: Low carbon (50-200 gCO2/kWh)
+        annotations:
+          gCO2_per_kWh: 50-200
+
+      MEDIUM_CARBON:
+        description: Medium carbon (200-500 gCO2/kWh)
+        annotations:
+          gCO2_per_kWh: 200-500
+
+      HIGH_CARBON:
+        description: High carbon (500-1000 gCO2/kWh)
+        annotations:
+          gCO2_per_kWh: 500-1000
+
+      VERY_HIGH_CARBON:
+        description: Very high carbon (> 1000 gCO2/kWh)
+        annotations:
+          gCO2_per_kWh: 1000+
+
+  ElectricityMarket:
+    description: |-
+      Types of electricity markets and pricing
+    permissible_values:
+
+      SPOT_MARKET:
+        description: Spot market/real-time pricing
+
+      DAY_AHEAD:
+        description: Day-ahead market
+
+      INTRADAY:
+        description: Intraday market
+
+      FUTURES:
+        description: Futures market
+
+      CAPACITY_MARKET:
+        description: Capacity market
+
+      ANCILLARY_SERVICES:
+        description: Ancillary services market
+
+      BILATERAL:
+        description: Bilateral contracts
+
+      FEED_IN_TARIFF:
+        description: Feed-in tariff
+
+      NET_METERING:
+        description: Net metering
+
+      POWER_PURCHASE_AGREEMENT:
+        description: Power purchase agreement (PPA)

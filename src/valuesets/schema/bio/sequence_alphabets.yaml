@@ -1,0 +1,1180 @@
+id: https://w3id.org/valuesets/bio/sequence_alphabets
+name: sequence_alphabets
+title: Biological Sequence Alphabet Value Sets
+description: >
+  Alphabets for biological sequences including DNA, RNA, and protein sequences.
+  Includes standard alphabets and extended versions with ambiguity codes following
+  IUPAC nomenclature and common bioinformatics standards.
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+  SO: http://purl.obolibrary.org/obo/SO_
+  CHEBI: http://purl.obolibrary.org/obo/CHEBI_
+  EDAM: http://edamontology.org/
+  GENO: http://purl.obolibrary.org/obo/GENO_
+
+imports:
+  - linkml:types
+
+enums:
+  DNABaseEnum:
+    description: Standard DNA nucleotide bases (canonical)
+    permissible_values:
+      A:
+        title: Adenine
+        aliases:
+          - adenine
+        meaning: CHEBI:16708
+        annotations:
+          complement: "T"
+          purine: "true"
+          chemical_formula: "C5H5N5"
+      C:
+        title: Cytosine
+        aliases:
+          - cytosine
+        meaning: CHEBI:16040
+        annotations:
+          complement: "G"
+          pyrimidine: "true"
+          chemical_formula: "C4H5N3O"
+      G:
+        title: Guanine
+        aliases:
+          - guanine
+        meaning: CHEBI:16235
+        annotations:
+          complement: "C"
+          purine: "true"
+          chemical_formula: "C5H5N5O"
+      T:
+        title: Thymine
+        aliases:
+          - thymine
+        meaning: CHEBI:17821
+        annotations:
+          complement: "A"
+          pyrimidine: "true"
+          chemical_formula: "C5H6N2O2"
+
+  DNABaseExtendedEnum:
+    description: Extended DNA alphabet with IUPAC ambiguity codes
+    permissible_values:
+      A:
+        title: Adenine
+        aliases:
+          - adenine
+        meaning: CHEBI:16708
+        annotations:
+          represents: "A"
+      C:
+        title: Cytosine
+        aliases:
+          - cytosine
+        meaning: CHEBI:16040
+        annotations:
+          represents: "C"
+      G:
+        title: Guanine
+        aliases:
+          - guanine
+        meaning: CHEBI:16235
+        annotations:
+          represents: "G"
+      T:
+        title: Thymine
+        aliases:
+          - thymine
+        meaning: CHEBI:17821
+        annotations:
+          represents: "T"
+      # Two-fold ambiguity
+      R:
+        title: Purine (A or G)
+        annotations:
+          represents: "A,G"
+          iupac: "true"
+      Y:
+        title: Pyrimidine (C or T)
+        annotations:
+          represents: "C,T"
+          iupac: "true"
+      S:
+        title: Strong (G or C)
+        annotations:
+          represents: "G,C"
+          iupac: "true"
+          bond_strength: "strong (3 H-bonds)"
+      W:
+        title: Weak (A or T)
+        annotations:
+          represents: "A,T"
+          iupac: "true"
+          bond_strength: "weak (2 H-bonds)"
+      K:
+        title: Keto (G or T)
+        annotations:
+          represents: "G,T"
+          iupac: "true"
+      M:
+        title: Amino (A or C)
+        annotations:
+          represents: "A,C"
+          iupac: "true"
+      # Three-fold ambiguity
+      B:
+        title: Not A (C, G, or T)
+        annotations:
+          represents: "C,G,T"
+          iupac: "true"
+      D:
+        title: Not C (A, G, or T)
+        annotations:
+          represents: "A,G,T"
+          iupac: "true"
+      H:
+        title: Not G (A, C, or T)
+        annotations:
+          represents: "A,C,T"
+          iupac: "true"
+      V:
+        title: Not T (A, C, or G)
+        annotations:
+          represents: "A,C,G"
+          iupac: "true"
+      # Four-fold ambiguity
+      N:
+        title: Any nucleotide (A, C, G, or T)
+        annotations:
+          represents: "A,C,G,T"
+          iupac: "true"
+      # Gap
+      GAP:
+        title: Gap character
+        annotations:
+          symbol: "-"
+          represents: "gap"
+
+  RNABaseEnum:
+    description: Standard RNA nucleotide bases (canonical)
+    permissible_values:
+      A:
+        title: Adenine
+        aliases:
+          - adenine
+        meaning: CHEBI:16708
+        annotations:
+          complement: "U"
+          purine: "true"
+          chemical_formula: "C5H5N5"
+      C:
+        title: Cytosine
+        aliases:
+          - cytosine
+        meaning: CHEBI:16040
+        annotations:
+          complement: "G"
+          pyrimidine: "true"
+          chemical_formula: "C4H5N3O"
+      G:
+        title: Guanine
+        aliases:
+          - guanine
+        meaning: CHEBI:16235
+        annotations:
+          complement: "C"
+          purine: "true"
+          chemical_formula: "C5H5N5O"
+      U:
+        title: Uracil
+        aliases:
+          - uracil
+        meaning: CHEBI:17568
+        annotations:
+          complement: "A"
+          pyrimidine: "true"
+          chemical_formula: "C4H4N2O2"
+
+  RNABaseExtendedEnum:
+    description: Extended RNA alphabet with IUPAC ambiguity codes
+    permissible_values:
+      A:
+        title: Adenine
+        aliases:
+          - adenine
+        meaning: CHEBI:16708
+        annotations:
+          represents: "A"
+      C:
+        title: Cytosine
+        aliases:
+          - cytosine
+        meaning: CHEBI:16040
+        annotations:
+          represents: "C"
+      G:
+        title: Guanine
+        aliases:
+          - guanine
+        meaning: CHEBI:16235
+        annotations:
+          represents: "G"
+      U:
+        title: Uracil
+        aliases:
+          - uracil
+        meaning: CHEBI:17568
+        annotations:
+          represents: "U"
+      # Two-fold ambiguity
+      R:
+        title: Purine (A or G)
+        annotations:
+          represents: "A,G"
+          iupac: "true"
+      Y:
+        title: Pyrimidine (C or U)
+        annotations:
+          represents: "C,U"
+          iupac: "true"
+      S:
+        title: Strong (G or C)
+        annotations:
+          represents: "G,C"
+          iupac: "true"
+      W:
+        title: Weak (A or U)
+        annotations:
+          represents: "A,U"
+          iupac: "true"
+      K:
+        title: Keto (G or U)
+        annotations:
+          represents: "G,U"
+          iupac: "true"
+      M:
+        title: Amino (A or C)
+        annotations:
+          represents: "A,C"
+          iupac: "true"
+      # Three-fold ambiguity
+      B:
+        title: Not A (C, G, or U)
+        annotations:
+          represents: "C,G,U"
+          iupac: "true"
+      D:
+        title: Not C (A, G, or U)
+        annotations:
+          represents: "A,G,U"
+          iupac: "true"
+      H:
+        title: Not G (A, C, or U)
+        annotations:
+          represents: "A,C,U"
+          iupac: "true"
+      V:
+        title: Not U (A, C, or G)
+        annotations:
+          represents: "A,C,G"
+          iupac: "true"
+      # Four-fold ambiguity
+      N:
+        title: Any nucleotide (A, C, G, or U)
+        annotations:
+          represents: "A,C,G,U"
+          iupac: "true"
+      # Gap
+      GAP:
+        title: Gap character
+        annotations:
+          symbol: "-"
+          represents: "gap"
+
+  AminoAcidEnum:
+    description: Standard amino acid single letter codes
+    permissible_values:
+      A:
+        title: Alanine
+        aliases:
+          - alanine
+        meaning: CHEBI:16449
+        annotations:
+          three_letter: "Ala"
+          polarity: "nonpolar"
+          essential: "false"
+          molecular_weight: "89.09"
+      C:
+        title: Cysteine
+        aliases:
+          - L-cysteine
+        meaning: CHEBI:17561
+        annotations:
+          three_letter: "Cys"
+          polarity: "polar"
+          essential: "false"
+          molecular_weight: "121.15"
+          special: "forms disulfide bonds"
+      D:
+        title: Aspartic acid
+        aliases:
+          - L-aspartic acid
+        meaning: CHEBI:17053
+        annotations:
+          three_letter: "Asp"
+          polarity: "acidic"
+          essential: "false"
+          molecular_weight: "133.10"
+          charge: "negative"
+      E:
+        title: Glutamic acid
+        aliases:
+          - L-glutamic acid
+        meaning: CHEBI:16015
+        annotations:
+          three_letter: "Glu"
+          polarity: "acidic"
+          essential: "false"
+          molecular_weight: "147.13"
+          charge: "negative"
+      F:
+        title: Phenylalanine
+        aliases:
+          - L-phenylalanine
+        meaning: CHEBI:17295
+        annotations:
+          three_letter: "Phe"
+          polarity: "nonpolar"
+          essential: "true"
+          molecular_weight: "165.19"
+          aromatic: "true"
+      G:
+        title: Glycine
+        aliases:
+          - glycine
+        meaning: CHEBI:15428
+        annotations:
+          three_letter: "Gly"
+          polarity: "nonpolar"
+          essential: "false"
+          molecular_weight: "75.07"
+          special: "smallest, most flexible"
+      H:
+        title: Histidine
+        aliases:
+          - L-histidine
+        meaning: CHEBI:15971
+        annotations:
+          three_letter: "His"
+          polarity: "basic"
+          essential: "true"
+          molecular_weight: "155.16"
+          charge: "positive"
+      I:
+        title: Isoleucine
+        aliases:
+          - L-isoleucine
+        meaning: CHEBI:17191
+        annotations:
+          three_letter: "Ile"
+          polarity: "nonpolar"
+          essential: "true"
+          molecular_weight: "131.17"
+          branched: "true"
+      K:
+        title: Lysine
+        aliases:
+          - L-lysine
+        meaning: CHEBI:18019
+        annotations:
+          three_letter: "Lys"
+          polarity: "basic"
+          essential: "true"
+          molecular_weight: "146.19"
+          charge: "positive"
+      L:
+        title: Leucine
+        aliases:
+          - L-leucine
+        meaning: CHEBI:15603
+        annotations:
+          three_letter: "Leu"
+          polarity: "nonpolar"
+          essential: "true"
+          molecular_weight: "131.17"
+          branched: "true"
+      M:
+        title: Methionine
+        aliases:
+          - L-methionine
+        meaning: CHEBI:16643
+        annotations:
+          three_letter: "Met"
+          polarity: "nonpolar"
+          essential: "true"
+          molecular_weight: "149.21"
+          special: "start codon"
+      N:
+        title: Asparagine
+        aliases:
+          - L-asparagine
+        meaning: CHEBI:17196
+        annotations:
+          three_letter: "Asn"
+          polarity: "polar"
+          essential: "false"
+          molecular_weight: "132.12"
+      P:
+        title: Proline
+        aliases:
+          - L-proline
+        meaning: CHEBI:17203
+        annotations:
+          three_letter: "Pro"
+          polarity: "nonpolar"
+          essential: "false"
+          molecular_weight: "115.13"
+          special: "helix breaker, rigid"
+      Q:
+        title: Glutamine
+        aliases:
+          - L-glutamine
+        meaning: CHEBI:18050
+        annotations:
+          three_letter: "Gln"
+          polarity: "polar"
+          essential: "false"
+          molecular_weight: "146.15"
+      R:
+        title: Arginine
+        aliases:
+          - L-arginine
+        meaning: CHEBI:16467
+        annotations:
+          three_letter: "Arg"
+          polarity: "basic"
+          essential: "false"
+          molecular_weight: "174.20"
+          charge: "positive"
+      S:
+        title: Serine
+        aliases:
+          - L-serine
+        meaning: CHEBI:17115
+        annotations:
+          three_letter: "Ser"
+          polarity: "polar"
+          essential: "false"
+          molecular_weight: "105.09"
+          hydroxyl: "true"
+      T:
+        title: Threonine
+        aliases:
+          - L-threonine
+        meaning: CHEBI:16857
+        annotations:
+          three_letter: "Thr"
+          polarity: "polar"
+          essential: "true"
+          molecular_weight: "119.12"
+          hydroxyl: "true"
+      V:
+        title: Valine
+        aliases:
+          - L-valine
+        meaning: CHEBI:16414
+        annotations:
+          three_letter: "Val"
+          polarity: "nonpolar"
+          essential: "true"
+          molecular_weight: "117.15"
+          branched: "true"
+      W:
+        title: Tryptophan
+        aliases:
+          - L-tryptophan
+        meaning: CHEBI:16828
+        annotations:
+          three_letter: "Trp"
+          polarity: "nonpolar"
+          essential: "true"
+          molecular_weight: "204.23"
+          aromatic: "true"
+          special: "largest"
+      Y:
+        title: Tyrosine
+        aliases:
+          - L-tyrosine
+        meaning: CHEBI:17895
+        annotations:
+          three_letter: "Tyr"
+          polarity: "polar"
+          essential: "false"
+          molecular_weight: "181.19"
+          aromatic: "true"
+          hydroxyl: "true"
+
+  AminoAcidExtendedEnum:
+    description: Extended amino acid alphabet with ambiguity codes and special characters
+    permissible_values:
+      # Standard 20 amino acids
+      A:
+        title: Alanine
+        aliases:
+          - alanine
+        meaning: CHEBI:16449
+        annotations:
+          three_letter: "Ala"
+      C:
+        title: Cysteine
+        aliases:
+          - L-cysteine
+        meaning: CHEBI:17561
+        annotations:
+          three_letter: "Cys"
+      D:
+        title: Aspartic acid
+        aliases:
+          - L-aspartic acid
+        meaning: CHEBI:17053
+        annotations:
+          three_letter: "Asp"
+      E:
+        title: Glutamic acid
+        aliases:
+          - L-glutamic acid
+        meaning: CHEBI:16015
+        annotations:
+          three_letter: "Glu"
+      F:
+        title: Phenylalanine
+        aliases:
+          - L-phenylalanine
+        meaning: CHEBI:17295
+        annotations:
+          three_letter: "Phe"
+      G:
+        title: Glycine
+        aliases:
+          - glycine
+        meaning: CHEBI:15428
+        annotations:
+          three_letter: "Gly"
+      H:
+        title: Histidine
+        aliases:
+          - L-histidine
+        meaning: CHEBI:15971
+        annotations:
+          three_letter: "His"
+      I:
+        title: Isoleucine
+        aliases:
+          - L-isoleucine
+        meaning: CHEBI:17191
+        annotations:
+          three_letter: "Ile"
+      K:
+        title: Lysine
+        aliases:
+          - L-lysine
+        meaning: CHEBI:18019
+        annotations:
+          three_letter: "Lys"
+      L:
+        title: Leucine
+        aliases:
+          - L-leucine
+        meaning: CHEBI:15603
+        annotations:
+          three_letter: "Leu"
+      M:
+        title: Methionine
+        aliases:
+          - L-methionine
+        meaning: CHEBI:16643
+        annotations:
+          three_letter: "Met"
+      N:
+        title: Asparagine
+        aliases:
+          - L-asparagine
+        meaning: CHEBI:17196
+        annotations:
+          three_letter: "Asn"
+      P:
+        title: Proline
+        aliases:
+          - L-proline
+        meaning: CHEBI:17203
+        annotations:
+          three_letter: "Pro"
+      Q:
+        title: Glutamine
+        aliases:
+          - L-glutamine
+        meaning: CHEBI:18050
+        annotations:
+          three_letter: "Gln"
+      R:
+        title: Arginine
+        aliases:
+          - L-arginine
+        meaning: CHEBI:16467
+        annotations:
+          three_letter: "Arg"
+      S:
+        title: Serine
+        aliases:
+          - L-serine
+        meaning: CHEBI:17115
+        annotations:
+          three_letter: "Ser"
+      T:
+        title: Threonine
+        aliases:
+          - L-threonine
+        meaning: CHEBI:16857
+        annotations:
+          three_letter: "Thr"
+      V:
+        title: Valine
+        aliases:
+          - L-valine
+        meaning: CHEBI:16414
+        annotations:
+          three_letter: "Val"
+      W:
+        title: Tryptophan
+        aliases:
+          - L-tryptophan
+        meaning: CHEBI:16828
+        annotations:
+          three_letter: "Trp"
+      Y:
+        title: Tyrosine
+        aliases:
+          - L-tyrosine
+        meaning: CHEBI:17895
+        annotations:
+          three_letter: "Tyr"
+      # Ambiguity codes
+      B:
+        title: Aspartic acid
+        aliases:
+          - L-aspartic acid or Asparagine (D or N)
+        annotations:
+          three_letter: "Asx"
+          represents: "D,N"
+          ambiguity: "true"
+      Z:
+        title: Glutamic acid
+        aliases:
+          - L-glutamic acid or Glutamine (E or Q)
+        annotations:
+          three_letter: "Glx"
+          represents: "E,Q"
+          ambiguity: "true"
+      J:
+        title: Leucine
+        aliases:
+          - L-leucine or Isoleucine (L or I)
+        annotations:
+          three_letter: "Xle"
+          represents: "L,I"
+          ambiguity: "true"
+      X:
+        title: Any amino acid
+        annotations:
+          three_letter: "Xaa"
+          represents: "any"
+          ambiguity: "true"
+      # Special characters
+      STOP:
+        title: Translation stop/termination
+        annotations:
+          symbol: "*"
+          three_letter: "Ter"
+          represents: "stop codon"
+      GAP:
+        title: Gap character
+        annotations:
+          symbol: "-"
+          represents: "gap"
+      # Non-standard amino acids (commonly seen)
+      U:
+        title: Selenocysteine
+        aliases:
+          - L-selenocysteine
+        meaning: CHEBI:16633
+        annotations:
+          three_letter: "Sec"
+          special: "21st amino acid"
+          codon: "UGA with SECIS element"
+      O:
+        title: Pyrrolysine (22nd amino acid)
+        meaning: CHEBI:21786
+        annotations:
+          three_letter: "Pyl"
+          special: "22nd amino acid"
+          codon: "UAG in certain archaea/bacteria"
+
+  CodonEnum:
+    description: Standard genetic code codons (DNA)
+    permissible_values:
+      # Phenylalanine
+      TTT:
+        title: Phenylalanine codon
+        annotations:
+          amino_acid: "F"
+          amino_acid_name: "Phenylalanine"
+      TTC:
+        title: Phenylalanine codon
+        annotations:
+          amino_acid: "F"
+          amino_acid_name: "Phenylalanine"
+      # Leucine
+      TTA:
+        title: Leucine codon
+        annotations:
+          amino_acid: "L"
+          amino_acid_name: "Leucine"
+      TTG:
+        title: Leucine codon
+        annotations:
+          amino_acid: "L"
+          amino_acid_name: "Leucine"
+      CTT:
+        title: Leucine codon
+        annotations:
+          amino_acid: "L"
+          amino_acid_name: "Leucine"
+      CTC:
+        title: Leucine codon
+        annotations:
+          amino_acid: "L"
+          amino_acid_name: "Leucine"
+      CTA:
+        title: Leucine codon
+        annotations:
+          amino_acid: "L"
+          amino_acid_name: "Leucine"
+      CTG:
+        title: Leucine codon
+        annotations:
+          amino_acid: "L"
+          amino_acid_name: "Leucine"
+      # Isoleucine
+      ATT:
+        title: Isoleucine codon
+        annotations:
+          amino_acid: "I"
+          amino_acid_name: "Isoleucine"
+      ATC:
+        title: Isoleucine codon
+        annotations:
+          amino_acid: "I"
+          amino_acid_name: "Isoleucine"
+      ATA:
+        title: Isoleucine codon
+        annotations:
+          amino_acid: "I"
+          amino_acid_name: "Isoleucine"
+      # Methionine (START)
+      ATG:
+        title: Methionine codon (start codon)
+        annotations:
+          amino_acid: "M"
+          amino_acid_name: "Methionine"
+          special: "start codon"
+      # Valine
+      GTT:
+        title: Valine codon
+        annotations:
+          amino_acid: "V"
+          amino_acid_name: "Valine"
+      GTC:
+        title: Valine codon
+        annotations:
+          amino_acid: "V"
+          amino_acid_name: "Valine"
+      GTA:
+        title: Valine codon
+        annotations:
+          amino_acid: "V"
+          amino_acid_name: "Valine"
+      GTG:
+        title: Valine codon
+        annotations:
+          amino_acid: "V"
+          amino_acid_name: "Valine"
+      # Serine
+      TCT:
+        title: Serine codon
+        annotations:
+          amino_acid: "S"
+          amino_acid_name: "Serine"
+      TCC:
+        title: Serine codon
+        annotations:
+          amino_acid: "S"
+          amino_acid_name: "Serine"
+      TCA:
+        title: Serine codon
+        annotations:
+          amino_acid: "S"
+          amino_acid_name: "Serine"
+      TCG:
+        title: Serine codon
+        annotations:
+          amino_acid: "S"
+          amino_acid_name: "Serine"
+      AGT:
+        title: Serine codon
+        annotations:
+          amino_acid: "S"
+          amino_acid_name: "Serine"
+      AGC:
+        title: Serine codon
+        annotations:
+          amino_acid: "S"
+          amino_acid_name: "Serine"
+      # Proline
+      CCT:
+        title: Proline codon
+        annotations:
+          amino_acid: "P"
+          amino_acid_name: "Proline"
+      CCC:
+        title: Proline codon
+        annotations:
+          amino_acid: "P"
+          amino_acid_name: "Proline"
+      CCA:
+        title: Proline codon
+        annotations:
+          amino_acid: "P"
+          amino_acid_name: "Proline"
+      CCG:
+        title: Proline codon
+        annotations:
+          amino_acid: "P"
+          amino_acid_name: "Proline"
+      # Threonine
+      ACT:
+        title: Threonine codon
+        annotations:
+          amino_acid: "T"
+          amino_acid_name: "Threonine"
+      ACC:
+        title: Threonine codon
+        annotations:
+          amino_acid: "T"
+          amino_acid_name: "Threonine"
+      ACA:
+        title: Threonine codon
+        annotations:
+          amino_acid: "T"
+          amino_acid_name: "Threonine"
+      ACG:
+        title: Threonine codon
+        annotations:
+          amino_acid: "T"
+          amino_acid_name: "Threonine"
+      # Alanine
+      GCT:
+        title: Alanine codon
+        annotations:
+          amino_acid: "A"
+          amino_acid_name: "Alanine"
+      GCC:
+        title: Alanine codon
+        annotations:
+          amino_acid: "A"
+          amino_acid_name: "Alanine"
+      GCA:
+        title: Alanine codon
+        annotations:
+          amino_acid: "A"
+          amino_acid_name: "Alanine"
+      GCG:
+        title: Alanine codon
+        annotations:
+          amino_acid: "A"
+          amino_acid_name: "Alanine"
+      # Tyrosine
+      TAT:
+        title: Tyrosine codon
+        annotations:
+          amino_acid: "Y"
+          amino_acid_name: "Tyrosine"
+      TAC:
+        title: Tyrosine codon
+        annotations:
+          amino_acid: "Y"
+          amino_acid_name: "Tyrosine"
+      # STOP codons
+      TAA:
+        title: Stop codon (ochre)
+        annotations:
+          amino_acid: "*"
+          name: "ochre"
+          special: "stop codon"
+      TAG:
+        title: Stop codon (amber)
+        annotations:
+          amino_acid: "*"
+          name: "amber"
+          special: "stop codon"
+      TGA:
+        title: Stop codon (opal/umber)
+        annotations:
+          amino_acid: "*"
+          name: "opal"
+          special: "stop codon or selenocysteine"
+      # Histidine
+      CAT:
+        title: Histidine codon
+        annotations:
+          amino_acid: "H"
+          amino_acid_name: "Histidine"
+      CAC:
+        title: Histidine codon
+        annotations:
+          amino_acid: "H"
+          amino_acid_name: "Histidine"
+      # Glutamine
+      CAA:
+        title: Glutamine codon
+        annotations:
+          amino_acid: "Q"
+          amino_acid_name: "Glutamine"
+      CAG:
+        title: Glutamine codon
+        annotations:
+          amino_acid: "Q"
+          amino_acid_name: "Glutamine"
+      # Asparagine
+      AAT:
+        title: Asparagine codon
+        annotations:
+          amino_acid: "N"
+          amino_acid_name: "Asparagine"
+      AAC:
+        title: Asparagine codon
+        annotations:
+          amino_acid: "N"
+          amino_acid_name: "Asparagine"
+      # Lysine
+      AAA:
+        title: Lysine codon
+        annotations:
+          amino_acid: "K"
+          amino_acid_name: "Lysine"
+      AAG:
+        title: Lysine codon
+        annotations:
+          amino_acid: "K"
+          amino_acid_name: "Lysine"
+      # Aspartic acid
+      GAT:
+        title: Aspartic acid codon
+        annotations:
+          amino_acid: "D"
+          amino_acid_name: "Aspartic acid"
+      GAC:
+        title: Aspartic acid codon
+        annotations:
+          amino_acid: "D"
+          amino_acid_name: "Aspartic acid"
+      # Glutamic acid
+      GAA:
+        title: Glutamic acid codon
+        annotations:
+          amino_acid: "E"
+          amino_acid_name: "Glutamic acid"
+      GAG:
+        title: Glutamic acid codon
+        annotations:
+          amino_acid: "E"
+          amino_acid_name: "Glutamic acid"
+      # Cysteine
+      TGT:
+        title: Cysteine codon
+        annotations:
+          amino_acid: "C"
+          amino_acid_name: "Cysteine"
+      TGC:
+        title: Cysteine codon
+        annotations:
+          amino_acid: "C"
+          amino_acid_name: "Cysteine"
+      # Tryptophan
+      TGG:
+        title: Tryptophan codon
+        annotations:
+          amino_acid: "W"
+          amino_acid_name: "Tryptophan"
+      # Arginine
+      CGT:
+        title: Arginine codon
+        annotations:
+          amino_acid: "R"
+          amino_acid_name: "Arginine"
+      CGC:
+        title: Arginine codon
+        annotations:
+          amino_acid: "R"
+          amino_acid_name: "Arginine"
+      CGA:
+        title: Arginine codon
+        annotations:
+          amino_acid: "R"
+          amino_acid_name: "Arginine"
+      CGG:
+        title: Arginine codon
+        annotations:
+          amino_acid: "R"
+          amino_acid_name: "Arginine"
+      AGA:
+        title: Arginine codon
+        annotations:
+          amino_acid: "R"
+          amino_acid_name: "Arginine"
+      AGG:
+        title: Arginine codon
+        annotations:
+          amino_acid: "R"
+          amino_acid_name: "Arginine"
+      # Glycine
+      GGT:
+        title: Glycine codon
+        annotations:
+          amino_acid: "G"
+          amino_acid_name: "Glycine"
+      GGC:
+        title: Glycine codon
+        annotations:
+          amino_acid: "G"
+          amino_acid_name: "Glycine"
+      GGA:
+        title: Glycine codon
+        annotations:
+          amino_acid: "G"
+          amino_acid_name: "Glycine"
+      GGG:
+        title: Glycine codon
+        annotations:
+          amino_acid: "G"
+          amino_acid_name: "Glycine"
+
+  NucleotideModificationEnum:
+    description: Common nucleotide modifications
+    permissible_values:
+      FIVE_METHYL_C:
+        title: 5-methylcytosine
+        description: 5-methylcytosine
+        meaning: CHEBI:27551
+        annotations:
+          symbol: "m5C"
+          type: "DNA methylation"
+          function: "gene regulation"
+      SIX_METHYL_A:
+        title: N(6)-methyladenosine
+        description: N6-methyladenosine
+        meaning: CHEBI:21891
+        annotations:
+          symbol: "m6A"
+          type: "RNA modification"
+          function: "RNA stability, translation"
+      PSEUDOURIDINE:
+        description: Pseudouridine
+        meaning: CHEBI:17802
+        annotations:
+          symbol: "Ψ"
+          type: "RNA modification"
+          function: "RNA stability"
+      INOSINE:
+        description: Inosine
+        meaning: CHEBI:17596
+        annotations:
+          symbol: "I"
+          type: "RNA editing"
+          pairs_with: "A, C, U"
+      DIHYDROURIDINE:
+        title: dihydrouridine
+        description: Dihydrouridine
+        meaning: CHEBI:23774
+        annotations:
+          symbol: "D"
+          type: "tRNA modification"
+      SEVEN_METHYL_G:
+        title: 7-methylguanosine
+        description: 7-methylguanosine
+        meaning: CHEBI:20794
+        annotations:
+          symbol: "m7G"
+          type: "mRNA cap"
+          function: "translation initiation"
+      FIVE_HYDROXY_METHYL_C:
+        title: 5-(hydroxymethyl)cytosine
+        description: 5-hydroxymethylcytosine
+        meaning: CHEBI:76792
+        annotations:
+          symbol: "hmC"
+          type: "DNA modification"
+          function: "demethylation intermediate"
+      EIGHT_OXO_G:
+        title: 8-oxoguanine
+        description: 8-oxoguanine
+        meaning: CHEBI:44605
+        annotations:
+          symbol: "8-oxoG"
+          type: "oxidative damage"
+          pairs_with: "A or C"
+
+  SequenceQualityEnum:
+    description: Sequence quality indicators (Phred scores)
+    permissible_values:
+      Q0:
+        description: Phred quality 0 (100% error probability)
+        annotations:
+          phred_score: "0"
+          error_probability: "1.0"
+          ascii_char: "!"
+      Q10:
+        description: Phred quality 10 (10% error probability)
+        annotations:
+          phred_score: "10"
+          error_probability: "0.1"
+          ascii_char: "+"
+      Q20:
+        description: Phred quality 20 (1% error probability)
+        annotations:
+          phred_score: "20"
+          error_probability: "0.01"
+          ascii_char: "5"
+      Q30:
+        description: Phred quality 30 (0.1% error probability)
+        annotations:
+          phred_score: "30"
+          error_probability: "0.001"
+          ascii_char: "?"
+      Q40:
+        description: Phred quality 40 (0.01% error probability)
+        annotations:
+          phred_score: "40"
+          error_probability: "0.0001"
+          ascii_char: "I"
+      Q50:
+        description: Phred quality 50 (0.001% error probability)
+        annotations:
+          phred_score: "50"
+          error_probability: "0.00001"
+          ascii_char: "S"
+      Q60:
+        description: Phred quality 60 (0.0001% error probability)
+        annotations:
+          phred_score: "60"
+          error_probability: "0.000001"
+          ascii_char: "]"

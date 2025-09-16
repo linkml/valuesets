@@ -1,0 +1,78 @@
+name: extractive_industry
+id: https://w3id.org/linkml/valuesets/industry/extractive_industry
+prefixes:
+  linkml_common: https://w3id.org/linkml-common/
+default_prefix: linkml_common
+enums:
+  ExtractiveIndustryFacilityTypeEnum:
+    description: Types of extractive industry facilities
+    permissible_values:
+      MINING_FACILITY:
+        description: A facility where mineral resources are extracted
+        title: Mining Facility
+      WELL_FACILITY:
+        description: A facility where fluid resources are extracted
+        title: Well Facility
+      QUARRY_FACILITY:
+        description: A facility where stone, sand, or gravel are extracted
+        title: Quarry Facility
+
+  ExtractiveIndustryProductTypeEnum:
+    description: Types of products extracted from extractive industry facilities
+    permissible_values:
+      MINERAL:
+        description: A solid inorganic substance
+        title: Mineral
+      METAL:
+        description: A solid metallic substance
+        title: Metal
+      COAL:
+        description: A combustible black or brownish-black sedimentary rock
+        title: Coal
+      OIL:
+        description: A liquid petroleum resource
+        title: Oil
+      GAS:
+        description: A gaseous petroleum resource
+        title: Gas
+      STONE:
+        description: A solid aggregate of minerals
+        title: Stone
+      SAND:
+        description: A granular material composed of finely divided rock and mineral particles
+        title: Sand
+      GRAVEL:
+        description: A loose aggregation of rock fragments
+        title: Gravel
+
+  MiningMethodEnum:
+    description: Methods used for extracting minerals from the earth
+    permissible_values:
+      UNDERGROUND:
+        description: Extraction occurs beneath the earth's surface
+        title: Underground
+      OPEN_PIT:
+        description: Extraction occurs on the earth's surface
+        title: Open Pit
+      PLACER:
+        description: Extraction of valuable minerals from alluvial deposits
+        title: Placer
+      IN_SITU:
+        description: Extraction without removing the ore from its original location
+        title: In Situ
+
+  WellTypeEnum:
+    description: Types of wells used for extracting fluid resources
+    permissible_values:
+      OIL:
+        description: A well that primarily extracts crude oil
+        title: Oil
+      GAS:
+        description: A well that primarily extracts natural gas
+        title: Gas
+      WATER:
+        description: A well that extracts water for various purposes
+        title: Water
+      INJECTION:
+        description: A well used to inject fluids into underground formations
+        title: Injection

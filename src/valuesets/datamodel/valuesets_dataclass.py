@@ -1,0 +1,14259 @@
+# Auto generated from valuesets.yaml by pythongen.py version: 0.0.1
+# Generation date: 2025-09-16T07:20:32
+# Schema: valuesets
+#
+# id: https://w3id.org/linkml/valuesets
+# description: A collection of commonly used value sets
+# license: Apache-2.0
+
+import dataclasses
+import re
+from dataclasses import dataclass
+from datetime import (
+    date,
+    datetime,
+    time
+)
+from typing import (
+    Any,
+    ClassVar,
+    Dict,
+    List,
+    Optional,
+    Union
+)
+
+from jsonasobj2 import (
+    JsonObj,
+    as_dict
+)
+from linkml_runtime.linkml_model.meta import (
+    EnumDefinition,
+    PermissibleValue,
+    PvFormulaOptions
+)
+from linkml_runtime.utils.curienamespace import CurieNamespace
+from linkml_runtime.utils.enumerations import EnumDefinitionImpl
+from linkml_runtime.utils.formatutils import (
+    camelcase,
+    sfx,
+    underscore
+)
+from linkml_runtime.utils.metamodelcore import (
+    bnode,
+    empty_dict,
+    empty_list
+)
+from linkml_runtime.utils.slot import Slot
+from linkml_runtime.utils.yamlutils import (
+    YAMLRoot,
+    extended_float,
+    extended_int,
+    extended_str
+)
+from rdflib import (
+    Namespace,
+    URIRef
+)
+
+
+
+metamodel_version = "1.7.0"
+version = None
+
+# Namespaces
+VALUESETS = CurieNamespace('valuesets', 'https://w3id.org/linkml/valuesets/')
+DEFAULT_ = VALUESETS
+
+
+# Types
+
+# Class references
+
+
+
+class Fake(YAMLRoot):
+    _inherited_slots: ClassVar[list[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = VALUESETS["Fake"]
+    class_class_curie: ClassVar[str] = "valuesets:Fake"
+    class_name: ClassVar[str] = "Fake"
+    class_model_uri: ClassVar[URIRef] = VALUESETS.Fake
+
+
+# Enumerations
+class RelativeTimeEnum(EnumDefinitionImpl):
+
+    BEFORE = PermissibleValue(text="BEFORE")
+    AFTER = PermissibleValue(text="AFTER")
+    AT_SAME_TIME_AS = PermissibleValue(text="AT_SAME_TIME_AS")
+
+    _defn = EnumDefinition(
+        name="RelativeTimeEnum",
+    )
+
+class PresenceEnum(EnumDefinitionImpl):
+
+    PRESENT = PermissibleValue(
+        text="PRESENT",
+        description="The entity is present")
+    ABSENT = PermissibleValue(
+        text="ABSENT",
+        description="The entity is absent")
+    BELOW_DETECTION_LIMIT = PermissibleValue(
+        text="BELOW_DETECTION_LIMIT",
+        description="The entity is below the detection limit")
+    ABOVE_DETECTION_LIMIT = PermissibleValue(
+        text="ABOVE_DETECTION_LIMIT",
+        description="The entity is above the detection limit")
+
+    _defn = EnumDefinition(
+        name="PresenceEnum",
+    )
+
+class DataAbsentEnum(EnumDefinitionImpl):
+    """
+    Used to specify why the normally expected content of the data element is missing.
+    """
+    unknown = PermissibleValue(
+        text="unknown",
+        title="Unknown",
+        description="The value is expected to exist but is not known.",
+        meaning=FHIR_DATA_ABSENT_REASON["unknown"])
+    masked = PermissibleValue(
+        text="masked",
+        title="Masked",
+        description="The information is not available due to security, privacy or related reasons.",
+        meaning=FHIR_DATA_ABSENT_REASON["masked"])
+    unsupported = PermissibleValue(
+        text="unsupported",
+        title="Unsupported",
+        description="The source system wasn't capable of supporting this element.",
+        meaning=FHIR_DATA_ABSENT_REASON["unsupported"])
+    error = PermissibleValue(
+        text="error",
+        title="Error",
+        description="Some system or workflow process error means that the information is not available.",
+        meaning=FHIR_DATA_ABSENT_REASON["error"])
+
+    _defn = EnumDefinition(
+        name="DataAbsentEnum",
+        description="Used to specify why the normally expected content of the data element is missing.",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "asked-unknown",
+            PermissibleValue(
+                text="asked-unknown",
+                title="Asked But Unknown",
+                description="The source was asked but does not know the value.",
+                meaning=FHIR_DATA_ABSENT_REASON["asked-unknown"]))
+        setattr(cls, "temp-unknown",
+            PermissibleValue(
+                text="temp-unknown",
+                title="Temporarily Unknown",
+                description="There is reason to expect (from the workflow) that the value may become known.",
+                meaning=FHIR_DATA_ABSENT_REASON["temp-unknown"]))
+        setattr(cls, "not-asked",
+            PermissibleValue(
+                text="not-asked",
+                title="Not Asked",
+                description="The workflow didn't lead to this value being known.",
+                meaning=FHIR_DATA_ABSENT_REASON["not-asked"]))
+        setattr(cls, "asked-declined",
+            PermissibleValue(
+                text="asked-declined",
+                title="Asked But Declined",
+                description="The source was asked but declined to answer.",
+                meaning=FHIR_DATA_ABSENT_REASON["asked-declined"]))
+        setattr(cls, "not-applicable",
+            PermissibleValue(
+                text="not-applicable",
+                title="Not Applicable",
+                description="There is no proper value for this element (e.g. last menstrual period for a male).",
+                meaning=FHIR_DATA_ABSENT_REASON["not-applicable"]))
+        setattr(cls, "as-text",
+            PermissibleValue(
+                text="as-text",
+                title="As Text",
+                description="The content of the data is represented in the resource narrative.",
+                meaning=FHIR_DATA_ABSENT_REASON["as-text"]))
+        setattr(cls, "not-a-number",
+            PermissibleValue(
+                text="not-a-number",
+                title="Not a Number (NaN)",
+                description="""The numeric value is undefined or unrepresentable due to a floating point processing error.""",
+                meaning=FHIR_DATA_ABSENT_REASON["not-a-number"]))
+        setattr(cls, "negative-infinity",
+            PermissibleValue(
+                text="negative-infinity",
+                title="Negative Infinity (NINF)",
+                description="""The numeric value is excessively low and unrepresentable due to a floating point processing        error.""",
+                meaning=FHIR_DATA_ABSENT_REASON["negative-infinity"]))
+        setattr(cls, "positive-infinity",
+            PermissibleValue(
+                text="positive-infinity",
+                title="Positive Infinity (PINF)",
+                description="""The numeric value is excessively high and unrepresentable due to a floating point processing        error.""",
+                meaning=FHIR_DATA_ABSENT_REASON["positive-infinity"]))
+        setattr(cls, "not-performed",
+            PermissibleValue(
+                text="not-performed",
+                title="Not Performed",
+                description="""The value is not available because the observation procedure (test, etc.) was not performed.""",
+                meaning=FHIR_DATA_ABSENT_REASON["not-performed"]))
+        setattr(cls, "not-permitted",
+            PermissibleValue(
+                text="not-permitted",
+                title="Not Permitted",
+                description="""The value is not permitted in this context (e.g. due to profiles, or the base data types).""",
+                meaning=FHIR_DATA_ABSENT_REASON["not-permitted"]))
+
+class PredictionOutcomeType(EnumDefinitionImpl):
+
+    TP = PermissibleValue(
+        text="TP",
+        description="True Positive")
+    FP = PermissibleValue(
+        text="FP",
+        description="False Positive")
+    TN = PermissibleValue(
+        text="TN",
+        description="True Negative")
+    FN = PermissibleValue(
+        text="FN",
+        description="False Negative")
+
+    _defn = EnumDefinition(
+        name="PredictionOutcomeType",
+    )
+
+class VitalStatusEnum(EnumDefinitionImpl):
+    """
+    The vital status of a person or organism
+    """
+    ALIVE = PermissibleValue(
+        text="ALIVE",
+        description="The person is living",
+        meaning=NCIT["C37987"])
+    DECEASED = PermissibleValue(
+        text="DECEASED",
+        title="Dead",
+        description="The person has died",
+        meaning=NCIT["C28554"])
+    UNKNOWN = PermissibleValue(
+        text="UNKNOWN",
+        description="The vital status is not known",
+        meaning=NCIT["C17998"])
+    PRESUMED_ALIVE = PermissibleValue(
+        text="PRESUMED_ALIVE",
+        description="The person is presumed to be alive based on available information")
+    PRESUMED_DECEASED = PermissibleValue(
+        text="PRESUMED_DECEASED",
+        description="The person is presumed to be deceased based on available information")
+
+    _defn = EnumDefinition(
+        name="VitalStatusEnum",
+        description="The vital status of a person or organism",
+    )
+
+class HealthcareEncounterClassification(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="HealthcareEncounterClassification",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "Inpatient Visit",
+            PermissibleValue(
+                text="Inpatient Visit",
+                description="""Person visiting hospital, at a Care Site, in bed, for duration of more than one day, with physicians and other Providers permanently available to deliver service around the clock"""))
+        setattr(cls, "Emergency Room Visit",
+            PermissibleValue(
+                text="Emergency Room Visit",
+                description="""Person visiting dedicated healthcare institution for treating emergencies, at a Care Site, within one day, with physicians and Providers permanently available to deliver service around the clock"""))
+        setattr(cls, "Emergency Room and Inpatient Visit",
+            PermissibleValue(
+                text="Emergency Room and Inpatient Visit",
+                description="""Person visiting ER followed by a subsequent Inpatient Visit, where Emergency department is part of hospital, and transition from the ER to other hospital departments is undefined"""))
+        setattr(cls, "Non-hospital institution Visit",
+            PermissibleValue(
+                text="Non-hospital institution Visit",
+                description="""Person visiting dedicated institution for reasons of poor health, at a Care Site, long-term or permanently, with no physician but possibly other Providers permanently available to deliver service around the clock"""))
+        setattr(cls, "Outpatient Visit",
+            PermissibleValue(
+                text="Outpatient Visit",
+                description="""Person visiting dedicated ambulatory healthcare institution, at a Care Site, within one day, without bed, with physicians or medical Providers delivering service during Visit"""))
+        setattr(cls, "Home Visit",
+            PermissibleValue(
+                text="Home Visit",
+                description="Provider visiting Person, without a Care Site, within one day, delivering service"))
+        setattr(cls, "Telehealth Visit",
+            PermissibleValue(
+                text="Telehealth Visit",
+                description="Patient engages with Provider through communication media"))
+        setattr(cls, "Pharmacy Visit",
+            PermissibleValue(
+                text="Pharmacy Visit",
+                description="Person visiting pharmacy for dispensing of Drug, at a Care Site, within one day"))
+        setattr(cls, "Laboratory Visit",
+            PermissibleValue(
+                text="Laboratory Visit",
+                description="""Patient visiting dedicated institution, at a Care Site, within one day, for the purpose of a Measurement."""))
+        setattr(cls, "Ambulance Visit",
+            PermissibleValue(
+                text="Ambulance Visit",
+                description="""Person using transportation service for the purpose of initiating one of the other Visits, without a Care Site, within one day, potentially with Providers accompanying the Visit and delivering service"""))
+        setattr(cls, "Case Management Visit",
+            PermissibleValue(
+                text="Case Management Visit",
+                description="""Person interacting with healthcare system, without a Care Site, within a day, with no Providers involved, for administrative purposes"""))
+
+class CaseOrControlEnum(EnumDefinitionImpl):
+
+    CASE = PermissibleValue(
+        text="CASE",
+        title="case role in case-control study",
+        meaning=OBI["0002492"])
+    CONTROL = PermissibleValue(
+        text="CONTROL",
+        title="control role in case-control study",
+        meaning=OBI["0002493"])
+
+    _defn = EnumDefinition(
+        name="CaseOrControlEnum",
+    )
+
+class StudyDesignEnum(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="StudyDesignEnum",
+    )
+
+class InvestigativeProtocolEnum(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="InvestigativeProtocolEnum",
+    )
+
+class SampleProcessingEnum(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="SampleProcessingEnum",
+    )
+
+class GOEvidenceCode(EnumDefinitionImpl):
+    """
+    Gene Ontology evidence codes mapped to Evidence and Conclusion Ontology (ECO) terms
+    """
+    EXP = PermissibleValue(
+        text="EXP",
+        title="Inferred from Experiment",
+        meaning=ECO["0000269"])
+    IDA = PermissibleValue(
+        text="IDA",
+        title="Inferred from Direct Assay",
+        meaning=ECO["0000314"])
+    IPI = PermissibleValue(
+        text="IPI",
+        title="Inferred from Physical Interaction",
+        meaning=ECO["0000353"])
+    IMP = PermissibleValue(
+        text="IMP",
+        title="Inferred from Mutant Phenotype",
+        meaning=ECO["0000315"])
+    IGI = PermissibleValue(
+        text="IGI",
+        title="Inferred from Genetic Interaction",
+        meaning=ECO["0000316"])
+    IEP = PermissibleValue(
+        text="IEP",
+        title="Inferred from Expression Pattern",
+        meaning=ECO["0000270"])
+    HTP = PermissibleValue(
+        text="HTP",
+        title="Inferred from High Throughput Experiment",
+        meaning=ECO["0006056"])
+    HDA = PermissibleValue(
+        text="HDA",
+        title="Inferred from High Throughput Direct Assay",
+        meaning=ECO["0007005"])
+    HMP = PermissibleValue(
+        text="HMP",
+        title="Inferred from High Throughput Mutant Phenotype",
+        meaning=ECO["0007001"])
+    HGI = PermissibleValue(
+        text="HGI",
+        title="Inferred from High Throughput Genetic Interaction",
+        meaning=ECO["0007003"])
+    HEP = PermissibleValue(
+        text="HEP",
+        title="Inferred from High Throughput Expression Pattern",
+        meaning=ECO["0007007"])
+    IBA = PermissibleValue(
+        text="IBA",
+        title="Inferred from Biological aspect of Ancestor",
+        meaning=ECO["0000318"])
+    IBD = PermissibleValue(
+        text="IBD",
+        title="Inferred from Biological aspect of Descendant",
+        meaning=ECO["0000319"])
+    IKR = PermissibleValue(
+        text="IKR",
+        title="Inferred from Key Residues",
+        meaning=ECO["0000320"])
+    IRD = PermissibleValue(
+        text="IRD",
+        title="Inferred from Rapid Divergence",
+        meaning=ECO["0000321"])
+    ISS = PermissibleValue(
+        text="ISS",
+        title="Inferred from Sequence or structural Similarity",
+        meaning=ECO["0000250"])
+    ISO = PermissibleValue(
+        text="ISO",
+        title="Inferred from Sequence Orthology",
+        meaning=ECO["0000266"])
+    ISA = PermissibleValue(
+        text="ISA",
+        title="Inferred from Sequence Alignment",
+        meaning=ECO["0000247"])
+    ISM = PermissibleValue(
+        text="ISM",
+        title="Inferred from Sequence Model",
+        meaning=ECO["0000255"])
+    IGC = PermissibleValue(
+        text="IGC",
+        title="Inferred from Genomic Context",
+        meaning=ECO["0000317"])
+    RCA = PermissibleValue(
+        text="RCA",
+        title="Inferred from Reviewed Computational Analysis",
+        meaning=ECO["0000245"])
+    TAS = PermissibleValue(
+        text="TAS",
+        title="Traceable Author Statement",
+        meaning=ECO["0000304"])
+    NAS = PermissibleValue(
+        text="NAS",
+        title="Non-traceable Author Statement",
+        meaning=ECO["0000303"])
+    IC = PermissibleValue(
+        text="IC",
+        title="Inferred by Curator",
+        meaning=ECO["0000305"])
+    ND = PermissibleValue(
+        text="ND",
+        title="No biological Data available",
+        meaning=ECO["0000307"])
+    IEA = PermissibleValue(
+        text="IEA",
+        title="Inferred from Electronic Annotation",
+        meaning=ECO["0000501"])
+
+    _defn = EnumDefinition(
+        name="GOEvidenceCode",
+        description="Gene Ontology evidence codes mapped to Evidence and Conclusion Ontology (ECO) terms",
+    )
+
+class GOElectronicMethods(EnumDefinitionImpl):
+    """
+    Electronic annotation methods used in Gene Ontology, identified by GO_REF codes
+    """
+    INTERPRO2GO = PermissibleValue(
+        text="INTERPRO2GO",
+        title="Gene Ontology annotation based on InterPro classification",
+        meaning=GO_REF["0000002"])
+    EC2GO = PermissibleValue(
+        text="EC2GO",
+        title="Gene Ontology annotation based on Enzyme Commission mapping",
+        meaning=GO_REF["0000003"])
+    UNIPROTKB_KW2GO = PermissibleValue(
+        text="UNIPROTKB_KW2GO",
+        title="Gene Ontology annotation based on UniProtKB keywords",
+        meaning=GO_REF["0000004"])
+    UNIPROTKB_SUBCELL2GO = PermissibleValue(
+        text="UNIPROTKB_SUBCELL2GO",
+        title="Gene Ontology annotation based on UniProtKB Subcellular Location vocabulary",
+        meaning=GO_REF["0000023"])
+    HAMAP_RULE2GO = PermissibleValue(
+        text="HAMAP_RULE2GO",
+        title="Gene Ontology annotation based on HAMAP family rules",
+        meaning=GO_REF["0000020"])
+    UNIPATHWAY2GO = PermissibleValue(
+        text="UNIPATHWAY2GO",
+        title="Gene Ontology annotation based on UniPathway vocabulary",
+        meaning=GO_REF["0000041"])
+    UNIRULE2GO = PermissibleValue(
+        text="UNIRULE2GO",
+        title="Gene Ontology annotation based on UniRule rules",
+        meaning=GO_REF["0000104"])
+    RHEA2GO = PermissibleValue(
+        text="RHEA2GO",
+        title="Gene Ontology annotation based on Rhea mapping",
+        meaning=GO_REF["0000116"])
+    ENSEMBL_COMPARA = PermissibleValue(
+        text="ENSEMBL_COMPARA",
+        title="Gene Ontology annotation based on Ensembl Compara orthology",
+        meaning=GO_REF["0000107"])
+    PANTHER = PermissibleValue(
+        text="PANTHER",
+        title="Gene Ontology annotation based on PANTHER phylogenetic trees",
+        meaning=GO_REF["0000033"])
+    REACTOME = PermissibleValue(
+        text="REACTOME",
+        title="Gene Ontology annotation based on Reactome pathways",
+        meaning=GO_REF["0000018"])
+    RFAM2GO = PermissibleValue(
+        text="RFAM2GO",
+        title="Gene Ontology annotation based on Rfam classification",
+        meaning=GO_REF["0000115"])
+    DICTYBASE = PermissibleValue(
+        text="DICTYBASE",
+        title="Gene Ontology annotation by DictyBase",
+        meaning=GO_REF["0000015"])
+    MGI = PermissibleValue(
+        text="MGI",
+        title="Gene Ontology annotation by Mouse Genome Informatics",
+        meaning=GO_REF["0000096"])
+    ZFIN = PermissibleValue(
+        text="ZFIN",
+        title="Gene Ontology annotation by Zebrafish Information Network",
+        meaning=GO_REF["0000031"])
+    FLYBASE = PermissibleValue(
+        text="FLYBASE",
+        title="Gene Ontology annotation by FlyBase",
+        meaning=GO_REF["0000047"])
+    WORMBASE = PermissibleValue(
+        text="WORMBASE",
+        title="Gene Ontology annotation by WormBase",
+        meaning=GO_REF["0000003"])
+    SGD = PermissibleValue(
+        text="SGD",
+        title="Gene Ontology annotation by Saccharomyces Genome Database",
+        meaning=GO_REF["0000100"])
+    POMBASE = PermissibleValue(
+        text="POMBASE",
+        title="Gene Ontology annotation by PomBase",
+        meaning=GO_REF["0000024"])
+    METACYC2GO = PermissibleValue(
+        text="METACYC2GO",
+        title="Gene Ontology annotation based on MetaCyc pathways",
+        meaning=GO_REF["0000112"])
+
+    _defn = EnumDefinition(
+        name="GOElectronicMethods",
+        description="Electronic annotation methods used in Gene Ontology, identified by GO_REF codes",
+    )
+
+class OrganismTaxonEnum(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="OrganismTaxonEnum",
+    )
+
+class CommonOrganismTaxaEnum(EnumDefinitionImpl):
+    """
+    Common model organisms used in biological research, mapped to NCBI Taxonomy IDs
+    """
+    BACTERIA = PermissibleValue(
+        text="BACTERIA",
+        description="Bacteria domain",
+        meaning=NCBITAXON["2"])
+    ARCHAEA = PermissibleValue(
+        text="ARCHAEA",
+        description="Archaea domain",
+        meaning=NCBITAXON["2157"])
+    EUKARYOTA = PermissibleValue(
+        text="EUKARYOTA",
+        description="Eukaryota domain",
+        meaning=NCBITAXON["2759"])
+    VIRUSES = PermissibleValue(
+        text="VIRUSES",
+        description="Viruses (not a true domain)",
+        meaning=NCBITAXON["10239"])
+    VERTEBRATA = PermissibleValue(
+        text="VERTEBRATA",
+        title="Vertebrata <vertebrates>",
+        description="Vertebrates",
+        meaning=NCBITAXON["7742"])
+    MAMMALIA = PermissibleValue(
+        text="MAMMALIA",
+        description="Mammals",
+        meaning=NCBITAXON["40674"])
+    PRIMATES = PermissibleValue(
+        text="PRIMATES",
+        description="Primates",
+        meaning=NCBITAXON["9443"])
+    RODENTIA = PermissibleValue(
+        text="RODENTIA",
+        description="Rodents",
+        meaning=NCBITAXON["9989"])
+    CARNIVORA = PermissibleValue(
+        text="CARNIVORA",
+        description="Carnivores",
+        meaning=NCBITAXON["33554"])
+    ARTIODACTYLA = PermissibleValue(
+        text="ARTIODACTYLA",
+        description="Even-toed ungulates",
+        meaning=NCBITAXON["91561"])
+    AVES = PermissibleValue(
+        text="AVES",
+        description="Birds",
+        meaning=NCBITAXON["8782"])
+    ACTINOPTERYGII = PermissibleValue(
+        text="ACTINOPTERYGII",
+        description="Ray-finned fishes",
+        meaning=NCBITAXON["7898"])
+    AMPHIBIA = PermissibleValue(
+        text="AMPHIBIA",
+        description="Amphibians",
+        meaning=NCBITAXON["8292"])
+    ARTHROPODA = PermissibleValue(
+        text="ARTHROPODA",
+        description="Arthropods",
+        meaning=NCBITAXON["6656"])
+    INSECTA = PermissibleValue(
+        text="INSECTA",
+        description="Insects",
+        meaning=NCBITAXON["50557"])
+    NEMATODA = PermissibleValue(
+        text="NEMATODA",
+        description="Roundworms",
+        meaning=NCBITAXON["6231"])
+    FUNGI = PermissibleValue(
+        text="FUNGI",
+        description="Fungal kingdom",
+        meaning=NCBITAXON["4751"])
+    ASCOMYCOTA = PermissibleValue(
+        text="ASCOMYCOTA",
+        description="Sac fungi",
+        meaning=NCBITAXON["4890"])
+    VIRIDIPLANTAE = PermissibleValue(
+        text="VIRIDIPLANTAE",
+        description="Green plants",
+        meaning=NCBITAXON["33090"])
+    MAGNOLIOPHYTA = PermissibleValue(
+        text="MAGNOLIOPHYTA",
+        title="Magnoliopsida",
+        description="Flowering plants",
+        meaning=NCBITAXON["3398"])
+    PROTEOBACTERIA = PermissibleValue(
+        text="PROTEOBACTERIA",
+        title="Pseudomonadota",
+        description="Proteobacteria",
+        meaning=NCBITAXON["1224"])
+    GAMMAPROTEOBACTERIA = PermissibleValue(
+        text="GAMMAPROTEOBACTERIA",
+        description="Gamma proteobacteria",
+        meaning=NCBITAXON["1236"])
+    FIRMICUTES = PermissibleValue(
+        text="FIRMICUTES",
+        title="Bacillota",
+        description="Firmicutes (Gram-positive bacteria)",
+        meaning=NCBITAXON["1239"])
+    ACTINOBACTERIA = PermissibleValue(
+        text="ACTINOBACTERIA",
+        title="Actinomycetota",
+        description="Actinobacteria",
+        meaning=NCBITAXON["201174"])
+    EURYARCHAEOTA = PermissibleValue(
+        text="EURYARCHAEOTA",
+        title="Methanobacteriota",
+        description="Euryarchaeota",
+        meaning=NCBITAXON["28890"])
+    APICOMPLEXA = PermissibleValue(
+        text="APICOMPLEXA",
+        description="Apicomplexan parasites",
+        meaning=NCBITAXON["5794"])
+    HUMAN = PermissibleValue(
+        text="HUMAN",
+        title="Homo sapiens",
+        description="Homo sapiens (human)",
+        meaning=NCBITAXON["9606"])
+    MOUSE = PermissibleValue(
+        text="MOUSE",
+        title="Mus musculus",
+        description="Mus musculus (house mouse)",
+        meaning=NCBITAXON["10090"])
+    RAT = PermissibleValue(
+        text="RAT",
+        title="Rattus norvegicus",
+        description="Rattus norvegicus (Norway rat)",
+        meaning=NCBITAXON["10116"])
+    RHESUS = PermissibleValue(
+        text="RHESUS",
+        title="Macaca mulatta",
+        description="Macaca mulatta (rhesus macaque)",
+        meaning=NCBITAXON["9544"])
+    CHIMP = PermissibleValue(
+        text="CHIMP",
+        title="Pan troglodytes",
+        description="Pan troglodytes (chimpanzee)",
+        meaning=NCBITAXON["9598"])
+    DOG = PermissibleValue(
+        text="DOG",
+        title="Canis lupus familiaris",
+        description="Canis lupus familiaris (dog)",
+        meaning=NCBITAXON["9615"])
+    COW = PermissibleValue(
+        text="COW",
+        title="Bos taurus",
+        description="Bos taurus (cattle)",
+        meaning=NCBITAXON["9913"])
+    PIG = PermissibleValue(
+        text="PIG",
+        title="Sus scrofa",
+        description="Sus scrofa (pig)",
+        meaning=NCBITAXON["9823"])
+    CHICKEN = PermissibleValue(
+        text="CHICKEN",
+        title="Gallus gallus",
+        description="Gallus gallus (chicken)",
+        meaning=NCBITAXON["9031"])
+    ZEBRAFISH = PermissibleValue(
+        text="ZEBRAFISH",
+        title="Danio rerio",
+        description="Danio rerio (zebrafish)",
+        meaning=NCBITAXON["7955"])
+    MEDAKA = PermissibleValue(
+        text="MEDAKA",
+        title="Oryzias latipes",
+        description="Oryzias latipes (Japanese medaka)",
+        meaning=NCBITAXON["8090"])
+    PUFFERFISH = PermissibleValue(
+        text="PUFFERFISH",
+        title="Takifugu rubripes",
+        description="Takifugu rubripes (torafugu)",
+        meaning=NCBITAXON["31033"])
+    XENOPUS_TROPICALIS = PermissibleValue(
+        text="XENOPUS_TROPICALIS",
+        description="Xenopus tropicalis (western clawed frog)",
+        meaning=NCBITAXON["8364"])
+    XENOPUS_LAEVIS = PermissibleValue(
+        text="XENOPUS_LAEVIS",
+        description="Xenopus laevis (African clawed frog)",
+        meaning=NCBITAXON["8355"])
+    DROSOPHILA = PermissibleValue(
+        text="DROSOPHILA",
+        title="Drosophila melanogaster",
+        description="Drosophila melanogaster (fruit fly)",
+        meaning=NCBITAXON["7227"])
+    C_ELEGANS = PermissibleValue(
+        text="C_ELEGANS",
+        title="Caenorhabditis elegans",
+        description="Caenorhabditis elegans (roundworm)",
+        meaning=NCBITAXON["6239"])
+    S_CEREVISIAE = PermissibleValue(
+        text="S_CEREVISIAE",
+        title="Saccharomyces cerevisiae",
+        description="Saccharomyces cerevisiae (baker's yeast)",
+        meaning=NCBITAXON["4932"])
+    S_CEREVISIAE_S288C = PermissibleValue(
+        text="S_CEREVISIAE_S288C",
+        title="Saccharomyces cerevisiae S288C",
+        description="Saccharomyces cerevisiae S288C (reference strain)",
+        meaning=NCBITAXON["559292"])
+    S_POMBE = PermissibleValue(
+        text="S_POMBE",
+        title="Schizosaccharomyces pombe",
+        description="Schizosaccharomyces pombe (fission yeast)",
+        meaning=NCBITAXON["4896"])
+    C_ALBICANS = PermissibleValue(
+        text="C_ALBICANS",
+        title="Candida albicans",
+        description="Candida albicans (pathogenic yeast)",
+        meaning=NCBITAXON["5476"])
+    A_NIDULANS = PermissibleValue(
+        text="A_NIDULANS",
+        title="Aspergillus nidulans",
+        description="Aspergillus nidulans (filamentous fungus)",
+        meaning=NCBITAXON["162425"])
+    N_CRASSA = PermissibleValue(
+        text="N_CRASSA",
+        title="Neurospora crassa",
+        description="Neurospora crassa (red bread mold)",
+        meaning=NCBITAXON["5141"])
+    ARABIDOPSIS = PermissibleValue(
+        text="ARABIDOPSIS",
+        title="Arabidopsis thaliana",
+        description="Arabidopsis thaliana (thale cress)",
+        meaning=NCBITAXON["3702"])
+    RICE = PermissibleValue(
+        text="RICE",
+        title="Oryza sativa",
+        description="Oryza sativa (rice)",
+        meaning=NCBITAXON["4530"])
+    MAIZE = PermissibleValue(
+        text="MAIZE",
+        title="Zea mays",
+        description="Zea mays (corn)",
+        meaning=NCBITAXON["4577"])
+    TOMATO = PermissibleValue(
+        text="TOMATO",
+        title="Solanum lycopersicum",
+        description="Solanum lycopersicum (tomato)",
+        meaning=NCBITAXON["4081"])
+    TOBACCO = PermissibleValue(
+        text="TOBACCO",
+        title="Nicotiana tabacum",
+        description="Nicotiana tabacum (tobacco)",
+        meaning=NCBITAXON["4097"])
+    E_COLI = PermissibleValue(
+        text="E_COLI",
+        title="Escherichia coli",
+        description="Escherichia coli",
+        meaning=NCBITAXON["562"])
+    E_COLI_K12 = PermissibleValue(
+        text="E_COLI_K12",
+        title="Escherichia coli K-12",
+        description="Escherichia coli str. K-12",
+        meaning=NCBITAXON["83333"])
+    B_SUBTILIS = PermissibleValue(
+        text="B_SUBTILIS",
+        title="Bacillus subtilis",
+        description="Bacillus subtilis",
+        meaning=NCBITAXON["1423"])
+    M_TUBERCULOSIS = PermissibleValue(
+        text="M_TUBERCULOSIS",
+        title="Mycobacterium tuberculosis",
+        description="Mycobacterium tuberculosis",
+        meaning=NCBITAXON["1773"])
+    P_AERUGINOSA = PermissibleValue(
+        text="P_AERUGINOSA",
+        title="Pseudomonas aeruginosa",
+        description="Pseudomonas aeruginosa",
+        meaning=NCBITAXON["287"])
+    S_AUREUS = PermissibleValue(
+        text="S_AUREUS",
+        title="Staphylococcus aureus",
+        description="Staphylococcus aureus",
+        meaning=NCBITAXON["1280"])
+    S_PNEUMONIAE = PermissibleValue(
+        text="S_PNEUMONIAE",
+        title="Streptococcus pneumoniae",
+        description="Streptococcus pneumoniae",
+        meaning=NCBITAXON["1313"])
+    H_PYLORI = PermissibleValue(
+        text="H_PYLORI",
+        title="Helicobacter pylori",
+        description="Helicobacter pylori",
+        meaning=NCBITAXON["210"])
+    M_JANNASCHII = PermissibleValue(
+        text="M_JANNASCHII",
+        title="Methanocaldococcus jannaschii",
+        description="Methanocaldococcus jannaschii",
+        meaning=NCBITAXON["2190"])
+    H_SALINARUM = PermissibleValue(
+        text="H_SALINARUM",
+        title="Halobacterium salinarum",
+        description="Halobacterium salinarum",
+        meaning=NCBITAXON["2242"])
+    P_FALCIPARUM = PermissibleValue(
+        text="P_FALCIPARUM",
+        title="Plasmodium falciparum",
+        description="Plasmodium falciparum (malaria parasite)",
+        meaning=NCBITAXON["5833"])
+    T_GONDII = PermissibleValue(
+        text="T_GONDII",
+        title="Toxoplasma gondii",
+        description="Toxoplasma gondii",
+        meaning=NCBITAXON["5811"])
+    T_BRUCEI = PermissibleValue(
+        text="T_BRUCEI",
+        title="Trypanosoma brucei",
+        description="Trypanosoma brucei",
+        meaning=NCBITAXON["5691"])
+    DICTYOSTELIUM = PermissibleValue(
+        text="DICTYOSTELIUM",
+        title="Dictyostelium discoideum",
+        description="Dictyostelium discoideum (slime mold)",
+        meaning=NCBITAXON["44689"])
+    TETRAHYMENA = PermissibleValue(
+        text="TETRAHYMENA",
+        title="Tetrahymena thermophila",
+        description="Tetrahymena thermophila",
+        meaning=NCBITAXON["5911"])
+    PARAMECIUM = PermissibleValue(
+        text="PARAMECIUM",
+        title="Paramecium tetraurelia",
+        description="Paramecium tetraurelia",
+        meaning=NCBITAXON["5888"])
+    CHLAMYDOMONAS = PermissibleValue(
+        text="CHLAMYDOMONAS",
+        title="Chlamydomonas reinhardtii",
+        description="Chlamydomonas reinhardtii (green alga)",
+        meaning=NCBITAXON["3055"])
+    PHAGE_LAMBDA = PermissibleValue(
+        text="PHAGE_LAMBDA",
+        title="Lambdavirus lambda",
+        description="Escherichia phage lambda",
+        meaning=NCBITAXON["10710"])
+    HIV1 = PermissibleValue(
+        text="HIV1",
+        title="Human immunodeficiency virus 1",
+        description="Human immunodeficiency virus 1",
+        meaning=NCBITAXON["11676"])
+    INFLUENZA_A = PermissibleValue(
+        text="INFLUENZA_A",
+        title="Influenza A virus",
+        description="Influenza A virus",
+        meaning=NCBITAXON["11320"])
+    SARS_COV_2 = PermissibleValue(
+        text="SARS_COV_2",
+        title="Severe acute respiratory syndrome coronavirus 2",
+        description="Severe acute respiratory syndrome coronavirus 2",
+        meaning=NCBITAXON["2697049"])
+
+    _defn = EnumDefinition(
+        name="CommonOrganismTaxaEnum",
+        description="Common model organisms used in biological research, mapped to NCBI Taxonomy IDs",
+    )
+
+class TaxonomicRank(EnumDefinitionImpl):
+    """
+    Standard taxonomic ranks used in biological classification
+    """
+    DOMAIN = PermissibleValue(
+        text="DOMAIN",
+        description="Domain (highest rank)",
+        meaning=TAXRANK["0000037"])
+    KINGDOM = PermissibleValue(
+        text="KINGDOM",
+        description="Kingdom",
+        meaning=TAXRANK["0000017"])
+    PHYLUM = PermissibleValue(
+        text="PHYLUM",
+        description="Phylum (animals, plants, fungi) or Division (plants)",
+        meaning=TAXRANK["0000001"])
+    CLASS = PermissibleValue(
+        text="CLASS",
+        description="Class",
+        meaning=TAXRANK["0000002"])
+    ORDER = PermissibleValue(
+        text="ORDER",
+        description="Order",
+        meaning=TAXRANK["0000003"])
+    FAMILY = PermissibleValue(
+        text="FAMILY",
+        description="Family",
+        meaning=TAXRANK["0000004"])
+    GENUS = PermissibleValue(
+        text="GENUS",
+        description="Genus",
+        meaning=TAXRANK["0000005"])
+    SPECIES = PermissibleValue(
+        text="SPECIES",
+        description="Species",
+        meaning=TAXRANK["0000006"])
+    SUBSPECIES = PermissibleValue(
+        text="SUBSPECIES",
+        description="Subspecies",
+        meaning=TAXRANK["0000023"])
+    STRAIN = PermissibleValue(
+        text="STRAIN",
+        description="Strain (especially for microorganisms)",
+        meaning=TAXRANK["0001001"])
+    VARIETY = PermissibleValue(
+        text="VARIETY",
+        title="varietas",
+        description="Variety (mainly plants)",
+        meaning=TAXRANK["0000016"])
+    FORM = PermissibleValue(
+        text="FORM",
+        title="forma",
+        description="Form (mainly plants)",
+        meaning=TAXRANK["0000026"])
+    CULTIVAR = PermissibleValue(
+        text="CULTIVAR",
+        description="Cultivar (cultivated variety)",
+        meaning=TAXRANK["0000034"])
+
+    _defn = EnumDefinition(
+        name="TaxonomicRank",
+        description="Standard taxonomic ranks used in biological classification",
+    )
+
+class BiologicalKingdom(EnumDefinitionImpl):
+    """
+    Major kingdoms/domains of life
+    """
+    BACTERIA = PermissibleValue(
+        text="BACTERIA",
+        description="Bacteria domain",
+        meaning=NCBITAXON["2"])
+    ARCHAEA = PermissibleValue(
+        text="ARCHAEA",
+        description="Archaea domain",
+        meaning=NCBITAXON["2157"])
+    EUKARYOTA = PermissibleValue(
+        text="EUKARYOTA",
+        description="Eukaryota domain",
+        meaning=NCBITAXON["2759"])
+    ANIMALIA = PermissibleValue(
+        text="ANIMALIA",
+        title="Metazoa",
+        description="Animal kingdom",
+        meaning=NCBITAXON["33208"])
+    PLANTAE = PermissibleValue(
+        text="PLANTAE",
+        title="Viridiplantae",
+        description="Plant kingdom (Viridiplantae)",
+        meaning=NCBITAXON["33090"])
+    FUNGI = PermissibleValue(
+        text="FUNGI",
+        description="Fungal kingdom",
+        meaning=NCBITAXON["4751"])
+    PROTISTA = PermissibleValue(
+        text="PROTISTA",
+        description="Protist kingdom (polyphyletic group)")
+    VIRUSES = PermissibleValue(
+        text="VIRUSES",
+        description="Viruses (not a true kingdom)",
+        meaning=NCBITAXON["10239"])
+
+    _defn = EnumDefinition(
+        name="BiologicalKingdom",
+        description="Major kingdoms/domains of life",
+    )
+
+class CellCyclePhase(EnumDefinitionImpl):
+    """
+    Major phases of the eukaryotic cell cycle
+    """
+    G0 = PermissibleValue(
+        text="G0",
+        title="cell quiescence",
+        description="G0 phase (quiescent/resting phase)",
+        meaning=GO["0044838"])
+    G1 = PermissibleValue(
+        text="G1",
+        title="G1 phase",
+        description="G1 phase (Gap 1)",
+        meaning=GO["0051318"])
+    S = PermissibleValue(
+        text="S",
+        title="S phase",
+        description="S phase (DNA synthesis)",
+        meaning=GO["0051320"])
+    G2 = PermissibleValue(
+        text="G2",
+        title="G2 phase",
+        description="G2 phase (Gap 2)",
+        meaning=GO["0051319"])
+    M = PermissibleValue(
+        text="M",
+        title="M phase",
+        description="M phase (mitosis and cytokinesis)",
+        meaning=GO["0000279"])
+    INTERPHASE = PermissibleValue(
+        text="INTERPHASE",
+        description="Interphase (G1, S, and G2 phases combined)",
+        meaning=GO["0051325"])
+
+    _defn = EnumDefinition(
+        name="CellCyclePhase",
+        description="Major phases of the eukaryotic cell cycle",
+    )
+
+class MitoticPhase(EnumDefinitionImpl):
+    """
+    Stages of mitosis (M phase)
+    """
+    PROPHASE = PermissibleValue(
+        text="PROPHASE",
+        description="Prophase",
+        meaning=GO["0051324"])
+    PROMETAPHASE = PermissibleValue(
+        text="PROMETAPHASE",
+        title="mitotic metaphase chromosome alignment",
+        description="Prometaphase",
+        meaning=GO["0007080"])
+    METAPHASE = PermissibleValue(
+        text="METAPHASE",
+        description="Metaphase",
+        meaning=GO["0051323"])
+    ANAPHASE = PermissibleValue(
+        text="ANAPHASE",
+        description="Anaphase",
+        meaning=GO["0051322"])
+    TELOPHASE = PermissibleValue(
+        text="TELOPHASE",
+        description="Telophase",
+        meaning=GO["0051326"])
+    CYTOKINESIS = PermissibleValue(
+        text="CYTOKINESIS",
+        description="Cytokinesis",
+        meaning=GO["0000910"])
+
+    _defn = EnumDefinition(
+        name="MitoticPhase",
+        description="Stages of mitosis (M phase)",
+    )
+
+class CellCycleCheckpoint(EnumDefinitionImpl):
+    """
+    Cell cycle checkpoints that regulate progression
+    """
+    G1_S_CHECKPOINT = PermissibleValue(
+        text="G1_S_CHECKPOINT",
+        title="G1/S transition of mitotic cell cycle",
+        description="G1/S checkpoint (Restriction point)",
+        meaning=GO["0000082"])
+    INTRA_S_CHECKPOINT = PermissibleValue(
+        text="INTRA_S_CHECKPOINT",
+        title="mitotic intra-S DNA damage checkpoint signaling",
+        description="Intra-S checkpoint",
+        meaning=GO["0031573"])
+    G2_M_CHECKPOINT = PermissibleValue(
+        text="G2_M_CHECKPOINT",
+        title="mitotic G1 DNA damage checkpoint signaling",
+        description="G2/M checkpoint",
+        meaning=GO["0031571"])
+    SPINDLE_CHECKPOINT = PermissibleValue(
+        text="SPINDLE_CHECKPOINT",
+        title="spindle checkpoint signaling",
+        description="Spindle checkpoint (M checkpoint)",
+        meaning=GO["0031577"])
+
+    _defn = EnumDefinition(
+        name="CellCycleCheckpoint",
+        description="Cell cycle checkpoints that regulate progression",
+    )
+
+class MeioticPhase(EnumDefinitionImpl):
+    """
+    Phases specific to meiotic cell division
+    """
+    MEIOSIS_I = PermissibleValue(
+        text="MEIOSIS_I",
+        description="Meiosis I (reductional division)",
+        meaning=GO["0007126"])
+    PROPHASE_I = PermissibleValue(
+        text="PROPHASE_I",
+        title="meiotic prophase I",
+        description="Prophase I",
+        meaning=GO["0007128"])
+    METAPHASE_I = PermissibleValue(
+        text="METAPHASE_I",
+        title="meiotic metaphase I",
+        description="Metaphase I",
+        meaning=GO["0007132"])
+    ANAPHASE_I = PermissibleValue(
+        text="ANAPHASE_I",
+        title="meiotic anaphase I",
+        description="Anaphase I",
+        meaning=GO["0007133"])
+    TELOPHASE_I = PermissibleValue(
+        text="TELOPHASE_I",
+        title="meiotic telophase I",
+        description="Telophase I",
+        meaning=GO["0007134"])
+    MEIOSIS_II = PermissibleValue(
+        text="MEIOSIS_II",
+        description="Meiosis II (equational division)",
+        meaning=GO["0007135"])
+    PROPHASE_II = PermissibleValue(
+        text="PROPHASE_II",
+        title="meiotic prophase II",
+        description="Prophase II",
+        meaning=GO["0007136"])
+    METAPHASE_II = PermissibleValue(
+        text="METAPHASE_II",
+        title="meiotic metaphase II",
+        description="Metaphase II",
+        meaning=GO["0007137"])
+    ANAPHASE_II = PermissibleValue(
+        text="ANAPHASE_II",
+        title="meiotic anaphase II",
+        description="Anaphase II",
+        meaning=GO["0007138"])
+    TELOPHASE_II = PermissibleValue(
+        text="TELOPHASE_II",
+        title="meiotic telophase II",
+        description="Telophase II",
+        meaning=GO["0007139"])
+
+    _defn = EnumDefinition(
+        name="MeioticPhase",
+        description="Phases specific to meiotic cell division",
+    )
+
+class CellCycleRegulator(EnumDefinitionImpl):
+    """
+    Types of cell cycle regulatory molecules
+    """
+    CYCLIN = PermissibleValue(
+        text="CYCLIN",
+        title="cyclin-dependent protein serine/threonine kinase regulator activity",
+        description="Cyclin proteins",
+        meaning=GO["0016538"])
+    CDK = PermissibleValue(
+        text="CDK",
+        title="cyclin-dependent protein serine/threonine kinase activity",
+        description="Cyclin-dependent kinase",
+        meaning=GO["0004693"])
+    CDK_INHIBITOR = PermissibleValue(
+        text="CDK_INHIBITOR",
+        title="cyclin-dependent protein serine/threonine kinase inhibitor activity",
+        description="CDK inhibitor",
+        meaning=GO["0004861"])
+    CHECKPOINT_KINASE = PermissibleValue(
+        text="CHECKPOINT_KINASE",
+        title="DNA damage checkpoint signaling",
+        description="Checkpoint kinase",
+        meaning=GO["0000077"])
+    TUMOR_SUPPRESSOR = PermissibleValue(
+        text="TUMOR_SUPPRESSOR",
+        title="regulation of cell cycle",
+        description="Tumor suppressor involved in cell cycle",
+        meaning=GO["0051726"])
+    E3_UBIQUITIN_LIGASE = PermissibleValue(
+        text="E3_UBIQUITIN_LIGASE",
+        title="obsolete positive regulation of ubiquitin-protein ligase activity involved in regulation of mitotic cell cycle transition",
+        description="E3 ubiquitin ligase (cell cycle)",
+        meaning=GO["0051437"])
+    PHOSPHATASE = PermissibleValue(
+        text="PHOSPHATASE",
+        title="phosphoprotein phosphatase activity",
+        description="Cell cycle phosphatase",
+        meaning=GO["0004721"])
+
+    _defn = EnumDefinition(
+        name="CellCycleRegulator",
+        description="Types of cell cycle regulatory molecules",
+    )
+
+class CellProliferationState(EnumDefinitionImpl):
+    """
+    Cell proliferation and growth states
+    """
+    PROLIFERATING = PermissibleValue(
+        text="PROLIFERATING",
+        title="cell population proliferation",
+        description="Actively proliferating cells",
+        meaning=GO["0008283"])
+    QUIESCENT = PermissibleValue(
+        text="QUIESCENT",
+        title="cell quiescence",
+        description="Quiescent cells (reversibly non-dividing)",
+        meaning=GO["0044838"])
+    SENESCENT = PermissibleValue(
+        text="SENESCENT",
+        title="cellular senescence",
+        description="Senescent cells (permanently non-dividing)",
+        meaning=GO["0090398"])
+    DIFFERENTIATED = PermissibleValue(
+        text="DIFFERENTIATED",
+        title="cell differentiation",
+        description="Terminally differentiated cells",
+        meaning=GO["0030154"])
+    APOPTOTIC = PermissibleValue(
+        text="APOPTOTIC",
+        title="apoptotic process",
+        description="Cells undergoing apoptosis",
+        meaning=GO["0006915"])
+    NECROTIC = PermissibleValue(
+        text="NECROTIC",
+        title="obsolete necrotic cell death",
+        description="Cells undergoing necrosis",
+        meaning=GO["0070265"])
+
+    _defn = EnumDefinition(
+        name="CellProliferationState",
+        description="Cell proliferation and growth states",
+    )
+
+class DNADamageResponse(EnumDefinitionImpl):
+    """
+    DNA damage response pathways during cell cycle
+    """
+    CELL_CYCLE_ARREST = PermissibleValue(
+        text="CELL_CYCLE_ARREST",
+        description="Cell cycle arrest",
+        meaning=GO["0007050"])
+    DNA_REPAIR = PermissibleValue(
+        text="DNA_REPAIR",
+        description="DNA repair",
+        meaning=GO["0006281"])
+    APOPTOSIS_INDUCTION = PermissibleValue(
+        text="APOPTOSIS_INDUCTION",
+        description="Induction of apoptosis",
+        meaning=GO["0006917"])
+    SENESCENCE_INDUCTION = PermissibleValue(
+        text="SENESCENCE_INDUCTION",
+        title="stress-induced premature senescence",
+        description="Induction of senescence",
+        meaning=GO["0090400"])
+    CHECKPOINT_ADAPTATION = PermissibleValue(
+        text="CHECKPOINT_ADAPTATION",
+        description="Checkpoint adaptation")
+
+    _defn = EnumDefinition(
+        name="DNADamageResponse",
+        description="DNA damage response pathways during cell cycle",
+    )
+
+class GenomeFeatureType(EnumDefinitionImpl):
+    """
+    Genome feature types from SOFA (Sequence Ontology Feature Annotation).
+    This is the subset of Sequence Ontology terms used in GFF3 files.
+    Organized hierarchically following the Sequence Ontology structure.
+    """
+    REGION = PermissibleValue(
+        text="REGION",
+        description="A sequence feature with an extent greater than zero",
+        meaning=SO["0000001"])
+    BIOLOGICAL_REGION = PermissibleValue(
+        text="BIOLOGICAL_REGION",
+        description="A region defined by its biological properties",
+        meaning=SO["0001411"])
+    GENE = PermissibleValue(
+        text="GENE",
+        description="""A region (or regions) that includes all of the sequence elements necessary to encode a functional transcript""",
+        meaning=SO["0000704"])
+    TRANSCRIPT = PermissibleValue(
+        text="TRANSCRIPT",
+        description="An RNA synthesized on a DNA or RNA template by an RNA polymerase",
+        meaning=SO["0000673"])
+    PRIMARY_TRANSCRIPT = PermissibleValue(
+        text="PRIMARY_TRANSCRIPT",
+        description="A transcript that has not been processed",
+        meaning=SO["0000185"])
+    MRNA = PermissibleValue(
+        text="MRNA",
+        description="Messenger RNA; includes 5'UTR, coding sequences and 3'UTR",
+        meaning=SO["0000234"])
+    EXON = PermissibleValue(
+        text="EXON",
+        description="""A region of the transcript sequence within a gene which is not removed from the primary RNA transcript by RNA splicing""",
+        meaning=SO["0000147"])
+    CDS = PermissibleValue(
+        text="CDS",
+        description="""Coding sequence; sequence of nucleotides that corresponds with the sequence of amino acids in a protein""",
+        meaning=SO["0000316"])
+    INTRON = PermissibleValue(
+        text="INTRON",
+        description="""A region of a primary transcript that is transcribed, but removed from within the transcript by splicing""",
+        meaning=SO["0000188"])
+    FIVE_PRIME_UTR = PermissibleValue(
+        text="FIVE_PRIME_UTR",
+        description="5' untranslated region",
+        meaning=SO["0000204"])
+    THREE_PRIME_UTR = PermissibleValue(
+        text="THREE_PRIME_UTR",
+        description="3' untranslated region",
+        meaning=SO["0000205"])
+    NCRNA = PermissibleValue(
+        text="NCRNA",
+        description="Non-protein coding RNA",
+        meaning=SO["0000655"])
+    RRNA = PermissibleValue(
+        text="RRNA",
+        description="Ribosomal RNA",
+        meaning=SO["0000252"])
+    TRNA = PermissibleValue(
+        text="TRNA",
+        description="Transfer RNA",
+        meaning=SO["0000253"])
+    SNRNA = PermissibleValue(
+        text="SNRNA",
+        description="Small nuclear RNA",
+        meaning=SO["0000274"])
+    SNORNA = PermissibleValue(
+        text="SNORNA",
+        description="Small nucleolar RNA",
+        meaning=SO["0000275"])
+    MIRNA = PermissibleValue(
+        text="MIRNA",
+        description="MicroRNA",
+        meaning=SO["0000276"])
+    LNCRNA = PermissibleValue(
+        text="LNCRNA",
+        description="Long non-coding RNA",
+        meaning=SO["0001877"])
+    RIBOZYME = PermissibleValue(
+        text="RIBOZYME",
+        description="An RNA with catalytic activity",
+        meaning=SO["0000374"])
+    ANTISENSE_RNA = PermissibleValue(
+        text="ANTISENSE_RNA",
+        description="RNA that is complementary to other RNA",
+        meaning=SO["0000644"])
+    PSEUDOGENE = PermissibleValue(
+        text="PSEUDOGENE",
+        description="""A sequence that closely resembles a known functional gene but does not produce a functional product""",
+        meaning=SO["0000336"])
+    PROCESSED_PSEUDOGENE = PermissibleValue(
+        text="PROCESSED_PSEUDOGENE",
+        description="A pseudogene arising from reverse transcription of mRNA",
+        meaning=SO["0000043"])
+    REGULATORY_REGION = PermissibleValue(
+        text="REGULATORY_REGION",
+        description="A region involved in the control of the process of gene expression",
+        meaning=SO["0005836"])
+    PROMOTER = PermissibleValue(
+        text="PROMOTER",
+        description="A regulatory region initiating transcription",
+        meaning=SO["0000167"])
+    ENHANCER = PermissibleValue(
+        text="ENHANCER",
+        description="A cis-acting sequence that increases transcription",
+        meaning=SO["0000165"])
+    SILENCER = PermissibleValue(
+        text="SILENCER",
+        description="A regulatory region which upon binding of transcription factors, suppresses transcription",
+        meaning=SO["0000625"])
+    TERMINATOR = PermissibleValue(
+        text="TERMINATOR",
+        description="""The sequence of DNA located either at the end of the transcript that causes RNA polymerase to terminate transcription""",
+        meaning=SO["0000141"])
+    ATTENUATOR = PermissibleValue(
+        text="ATTENUATOR",
+        description="A sequence that causes transcription termination",
+        meaning=SO["0000140"])
+    POLYA_SIGNAL_SEQUENCE = PermissibleValue(
+        text="POLYA_SIGNAL_SEQUENCE",
+        description="The recognition sequence for the cleavage and polyadenylation machinery",
+        meaning=SO["0000551"])
+    BINDING_SITE = PermissibleValue(
+        text="BINDING_SITE",
+        description="A region on a molecule that binds to another molecule",
+        meaning=SO["0000409"])
+    TFBS = PermissibleValue(
+        text="TFBS",
+        title="TF_binding_site",
+        description="Transcription factor binding site",
+        meaning=SO["0000235"])
+    RIBOSOME_ENTRY_SITE = PermissibleValue(
+        text="RIBOSOME_ENTRY_SITE",
+        description="Region where ribosome assembles on mRNA",
+        meaning=SO["0000139"])
+    POLYA_SITE = PermissibleValue(
+        text="POLYA_SITE",
+        description="Polyadenylation site",
+        meaning=SO["0000553"])
+    REPEAT_REGION = PermissibleValue(
+        text="REPEAT_REGION",
+        description="A region of sequence containing one or more repeat units",
+        meaning=SO["0000657"])
+    DISPERSED_REPEAT = PermissibleValue(
+        text="DISPERSED_REPEAT",
+        description="A repeat that is interspersed in the genome",
+        meaning=SO["0000658"])
+    TANDEM_REPEAT = PermissibleValue(
+        text="TANDEM_REPEAT",
+        description="A repeat where the same sequence is repeated in the same orientation",
+        meaning=SO["0000705"])
+    INVERTED_REPEAT = PermissibleValue(
+        text="INVERTED_REPEAT",
+        description="A repeat where the sequence is repeated in the opposite orientation",
+        meaning=SO["0000294"])
+    TRANSPOSABLE_ELEMENT = PermissibleValue(
+        text="TRANSPOSABLE_ELEMENT",
+        description="A DNA segment that can change its position within the genome",
+        meaning=SO["0000101"])
+    MOBILE_ELEMENT = PermissibleValue(
+        text="MOBILE_ELEMENT",
+        title="mobile_genetic_element",
+        description="A nucleotide region with the ability to move from one place in the genome to another",
+        meaning=SO["0001037"])
+    SEQUENCE_ALTERATION = PermissibleValue(
+        text="SEQUENCE_ALTERATION",
+        description="A sequence that deviates from the reference sequence",
+        meaning=SO["0001059"])
+    INSERTION = PermissibleValue(
+        text="INSERTION",
+        description="The sequence of one or more nucleotides added between two adjacent nucleotides",
+        meaning=SO["0000667"])
+    DELETION = PermissibleValue(
+        text="DELETION",
+        description="The removal of a sequences of nucleotides from the genome",
+        meaning=SO["0000159"])
+    INVERSION = PermissibleValue(
+        text="INVERSION",
+        description="A continuous nucleotide sequence is inverted in the same position",
+        meaning=SO["1000036"])
+    DUPLICATION = PermissibleValue(
+        text="DUPLICATION",
+        description="One or more nucleotides are added between two adjacent nucleotides",
+        meaning=SO["1000035"])
+    SUBSTITUTION = PermissibleValue(
+        text="SUBSTITUTION",
+        description="A sequence alteration where one nucleotide replaced by another",
+        meaning=SO["1000002"])
+    ORIGIN_OF_REPLICATION = PermissibleValue(
+        text="ORIGIN_OF_REPLICATION",
+        description="The origin of replication; starting site for duplication of a nucleic acid molecule",
+        meaning=SO["0000296"])
+    POLYC_TRACT = PermissibleValue(
+        text="POLYC_TRACT",
+        description="A sequence of Cs")
+    GAP = PermissibleValue(
+        text="GAP",
+        description="A gap in the sequence",
+        meaning=SO["0000730"])
+    ASSEMBLY_GAP = PermissibleValue(
+        text="ASSEMBLY_GAP",
+        title="gap",
+        description="A gap between two sequences in an assembly",
+        meaning=SO["0000730"])
+    CHROMOSOME = PermissibleValue(
+        text="CHROMOSOME",
+        description="Structural unit composed of DNA and proteins",
+        meaning=SO["0000340"])
+    SUPERCONTIG = PermissibleValue(
+        text="SUPERCONTIG",
+        description="One or more contigs that have been ordered and oriented using end-read information",
+        meaning=SO["0000148"])
+    CONTIG = PermissibleValue(
+        text="CONTIG",
+        description="A contiguous sequence derived from sequence assembly",
+        meaning=SO["0000149"])
+    SCAFFOLD = PermissibleValue(
+        text="SCAFFOLD",
+        title="supercontig",
+        description="One or more contigs that have been ordered and oriented",
+        meaning=SO["0000148"])
+    CLONE = PermissibleValue(
+        text="CLONE",
+        description="A piece of DNA that has been inserted into a vector",
+        meaning=SO["0000151"])
+    PLASMID = PermissibleValue(
+        text="PLASMID",
+        description="A self-replicating circular DNA molecule",
+        meaning=SO["0000155"])
+    POLYPEPTIDE = PermissibleValue(
+        text="POLYPEPTIDE",
+        description="A sequence of amino acids linked by peptide bonds",
+        meaning=SO["0000104"])
+    MATURE_PROTEIN_REGION = PermissibleValue(
+        text="MATURE_PROTEIN_REGION",
+        description="The polypeptide sequence that remains after post-translational processing",
+        meaning=SO["0000419"])
+    SIGNAL_PEPTIDE = PermissibleValue(
+        text="SIGNAL_PEPTIDE",
+        description="A peptide region that targets a polypeptide to a specific location",
+        meaning=SO["0000418"])
+    TRANSIT_PEPTIDE = PermissibleValue(
+        text="TRANSIT_PEPTIDE",
+        description="A peptide that directs the transport of a protein to an organelle",
+        meaning=SO["0000725"])
+    PROPEPTIDE = PermissibleValue(
+        text="PROPEPTIDE",
+        title="propeptide",
+        description="A peptide region that is cleaved during maturation",
+        meaning=SO["0001062"])
+    OPERON = PermissibleValue(
+        text="OPERON",
+        description="A group of contiguous genes transcribed as a single unit",
+        meaning=SO["0000178"])
+    STEM_LOOP = PermissibleValue(
+        text="STEM_LOOP",
+        description="A double-helical region formed by base-pairing between adjacent sequences",
+        meaning=SO["0000313"])
+    D_LOOP = PermissibleValue(
+        text="D_LOOP",
+        description="Displacement loop; a region where DNA is displaced by an invading strand",
+        meaning=SO["0000297"])
+    MATCH = PermissibleValue(
+        text="MATCH",
+        description="A region of sequence similarity",
+        meaning=SO["0000343"])
+    CDNA_MATCH = PermissibleValue(
+        text="CDNA_MATCH",
+        description="A match to a cDNA sequence",
+        meaning=SO["0000689"])
+    EST_MATCH = PermissibleValue(
+        text="EST_MATCH",
+        description="A match to an EST sequence",
+        meaning=SO["0000668"])
+    PROTEIN_MATCH = PermissibleValue(
+        text="PROTEIN_MATCH",
+        description="A match to a protein sequence",
+        meaning=SO["0000349"])
+    NUCLEOTIDE_MATCH = PermissibleValue(
+        text="NUCLEOTIDE_MATCH",
+        description="A match to a nucleotide sequence",
+        meaning=SO["0000347"])
+    JUNCTION_FEATURE = PermissibleValue(
+        text="JUNCTION_FEATURE",
+        title="junction",
+        description="A boundary or junction between sequence regions",
+        meaning=SO["0000699"])
+    SPLICE_SITE = PermissibleValue(
+        text="SPLICE_SITE",
+        description="The position where intron is excised",
+        meaning=SO["0000162"])
+    FIVE_PRIME_SPLICE_SITE = PermissibleValue(
+        text="FIVE_PRIME_SPLICE_SITE",
+        title="five_prime_cis_splice_site",
+        description="The 5' splice site (donor site)",
+        meaning=SO["0000163"])
+    THREE_PRIME_SPLICE_SITE = PermissibleValue(
+        text="THREE_PRIME_SPLICE_SITE",
+        title="three_prime_cis_splice_site",
+        description="The 3' splice site (acceptor site)",
+        meaning=SO["0000164"])
+    START_CODON = PermissibleValue(
+        text="START_CODON",
+        description="The first codon to be translated",
+        meaning=SO["0000318"])
+    STOP_CODON = PermissibleValue(
+        text="STOP_CODON",
+        description="The codon that terminates translation",
+        meaning=SO["0000319"])
+    CENTROMERE = PermissibleValue(
+        text="CENTROMERE",
+        description="A region where chromatids are held together",
+        meaning=SO["0000577"])
+    TELOMERE = PermissibleValue(
+        text="TELOMERE",
+        description="The terminal region of a linear chromosome",
+        meaning=SO["0000624"])
+
+    _defn = EnumDefinition(
+        name="GenomeFeatureType",
+        description="""Genome feature types from SOFA (Sequence Ontology Feature Annotation).
+This is the subset of Sequence Ontology terms used in GFF3 files.
+Organized hierarchically following the Sequence Ontology structure.""",
+    )
+
+class MetazoanAnatomicalStructure(EnumDefinitionImpl):
+    """
+    Any anatomical structure found in metazoan organisms,
+    including organs, tissues, and body parts
+    """
+    _defn = EnumDefinition(
+        name="MetazoanAnatomicalStructure",
+        description="""Any anatomical structure found in metazoan organisms,
+including organs, tissues, and body parts""",
+    )
+
+class HumanAnatomicalStructure(EnumDefinitionImpl):
+    """
+    Anatomical structures specific to humans (Homo sapiens)
+    """
+    _defn = EnumDefinition(
+        name="HumanAnatomicalStructure",
+        description="Anatomical structures specific to humans (Homo sapiens)",
+    )
+
+class PlantAnatomicalStructure(EnumDefinitionImpl):
+    """
+    Any anatomical structure found in plant organisms
+    """
+    _defn = EnumDefinition(
+        name="PlantAnatomicalStructure",
+        description="Any anatomical structure found in plant organisms",
+    )
+
+class CellType(EnumDefinitionImpl):
+    """
+    Any cell type from the Cell Ontology (CL),
+    including native and experimentally modified cells
+    """
+    _defn = EnumDefinition(
+        name="CellType",
+        description="""Any cell type from the Cell Ontology (CL),
+including native and experimentally modified cells""",
+    )
+
+class NeuronType(EnumDefinitionImpl):
+    """
+    Neuron cell types from the Cell Ontology
+    """
+    _defn = EnumDefinition(
+        name="NeuronType",
+        description="Neuron cell types from the Cell Ontology",
+    )
+
+class ImmuneCell(EnumDefinitionImpl):
+    """
+    Immune system cell types (leukocytes and their subtypes)
+    """
+    _defn = EnumDefinition(
+        name="ImmuneCell",
+        description="Immune system cell types (leukocytes and their subtypes)",
+    )
+
+class StemCell(EnumDefinitionImpl):
+    """
+    Stem cell types and progenitor cells
+    """
+    _defn = EnumDefinition(
+        name="StemCell",
+        description="Stem cell types and progenitor cells",
+    )
+
+class Disease(EnumDefinitionImpl):
+    """
+    Human diseases from the Mondo Disease Ontology
+    """
+    _defn = EnumDefinition(
+        name="Disease",
+        description="Human diseases from the Mondo Disease Ontology",
+    )
+
+class InfectiousDisease(EnumDefinitionImpl):
+    """
+    Infectious diseases caused by pathogenic organisms
+    """
+    _defn = EnumDefinition(
+        name="InfectiousDisease",
+        description="Infectious diseases caused by pathogenic organisms",
+    )
+
+class Cancer(EnumDefinitionImpl):
+    """
+    Neoplastic and cancerous diseases
+    """
+    _defn = EnumDefinition(
+        name="Cancer",
+        description="Neoplastic and cancerous diseases",
+    )
+
+class GeneticDisease(EnumDefinitionImpl):
+    """
+    Hereditary and genetic diseases
+    """
+    _defn = EnumDefinition(
+        name="GeneticDisease",
+        description="Hereditary and genetic diseases",
+    )
+
+class ChemicalEntity(EnumDefinitionImpl):
+    """
+    Any chemical entity from ChEBI ontology
+    """
+    _defn = EnumDefinition(
+        name="ChemicalEntity",
+        description="Any chemical entity from ChEBI ontology",
+    )
+
+class Drug(EnumDefinitionImpl):
+    """
+    Pharmaceutical drugs and medications
+    """
+    _defn = EnumDefinition(
+        name="Drug",
+        description="Pharmaceutical drugs and medications",
+    )
+
+class Metabolite(EnumDefinitionImpl):
+    """
+    Metabolites and metabolic intermediates
+    """
+    _defn = EnumDefinition(
+        name="Metabolite",
+        description="Metabolites and metabolic intermediates",
+    )
+
+class Protein(EnumDefinitionImpl):
+    """
+    Proteins and protein complexes
+    """
+    _defn = EnumDefinition(
+        name="Protein",
+        description="Proteins and protein complexes",
+    )
+
+class Phenotype(EnumDefinitionImpl):
+    """
+    Phenotypic abnormalities from Human Phenotype Ontology
+    """
+    _defn = EnumDefinition(
+        name="Phenotype",
+        description="Phenotypic abnormalities from Human Phenotype Ontology",
+    )
+
+class ClinicalFinding(EnumDefinitionImpl):
+    """
+    Clinical findings and observations
+    """
+    _defn = EnumDefinition(
+        name="ClinicalFinding",
+        description="Clinical findings and observations",
+    )
+
+class BiologicalProcess(EnumDefinitionImpl):
+    """
+    Biological processes from Gene Ontology
+    """
+    _defn = EnumDefinition(
+        name="BiologicalProcess",
+        description="Biological processes from Gene Ontology",
+    )
+
+class MetabolicProcess(EnumDefinitionImpl):
+    """
+    Metabolic processes and pathways
+    """
+    _defn = EnumDefinition(
+        name="MetabolicProcess",
+        description="Metabolic processes and pathways",
+    )
+
+class MolecularFunction(EnumDefinitionImpl):
+    """
+    Molecular functions from Gene Ontology
+    """
+    _defn = EnumDefinition(
+        name="MolecularFunction",
+        description="Molecular functions from Gene Ontology",
+    )
+
+class CellularComponent(EnumDefinitionImpl):
+    """
+    Cellular components and locations from Gene Ontology
+    """
+    _defn = EnumDefinition(
+        name="CellularComponent",
+        description="Cellular components and locations from Gene Ontology",
+    )
+
+class SequenceFeature(EnumDefinitionImpl):
+    """
+    Sequence features from the Sequence Ontology
+    """
+    _defn = EnumDefinition(
+        name="SequenceFeature",
+        description="Sequence features from the Sequence Ontology",
+    )
+
+class GeneFeature(EnumDefinitionImpl):
+    """
+    Gene-related sequence features
+    """
+    _defn = EnumDefinition(
+        name="GeneFeature",
+        description="Gene-related sequence features",
+    )
+
+class Environment(EnumDefinitionImpl):
+    """
+    Environmental systems and biomes
+    """
+    _defn = EnumDefinition(
+        name="Environment",
+        description="Environmental systems and biomes",
+    )
+
+class EnvironmentalMaterial(EnumDefinitionImpl):
+    """
+    Environmental materials and substances
+    """
+    _defn = EnumDefinition(
+        name="EnvironmentalMaterial",
+        description="Environmental materials and substances",
+    )
+
+class Quality(EnumDefinitionImpl):
+    """
+    Phenotypic qualities and attributes from PATO
+    """
+    _defn = EnumDefinition(
+        name="Quality",
+        description="Phenotypic qualities and attributes from PATO",
+    )
+
+class PhysicalQuality(EnumDefinitionImpl):
+    """
+    Physical qualities like size, shape, color
+    """
+    _defn = EnumDefinition(
+        name="PhysicalQuality",
+        description="Physical qualities like size, shape, color",
+    )
+
+class SampleType(EnumDefinitionImpl):
+    """
+    Types of biological samples used in structural biology
+    """
+    PROTEIN = PermissibleValue(
+        text="PROTEIN",
+        description="Purified protein sample")
+    NUCLEIC_ACID = PermissibleValue(
+        text="NUCLEIC_ACID",
+        description="Nucleic acid sample (DNA or RNA)")
+    PROTEIN_COMPLEX = PermissibleValue(
+        text="PROTEIN_COMPLEX",
+        description="Protein-protein or protein-nucleic acid complex")
+    MEMBRANE_PROTEIN = PermissibleValue(
+        text="MEMBRANE_PROTEIN",
+        description="Membrane-associated protein sample")
+    VIRUS = PermissibleValue(
+        text="VIRUS",
+        description="Viral particle or capsid")
+    ORGANELLE = PermissibleValue(
+        text="ORGANELLE",
+        description="Cellular organelle (mitochondria, chloroplast, etc.)")
+    CELL = PermissibleValue(
+        text="CELL",
+        description="Whole cell sample")
+    TISSUE = PermissibleValue(
+        text="TISSUE",
+        description="Tissue sample")
+
+    _defn = EnumDefinition(
+        name="SampleType",
+        description="Types of biological samples used in structural biology",
+    )
+
+class StructuralBiologyTechnique(EnumDefinitionImpl):
+    """
+    Structural biology experimental techniques
+    """
+    CRYO_EM = PermissibleValue(
+        text="CRYO_EM",
+        title="cryogenic electron microscopy",
+        description="Cryo-electron microscopy",
+        meaning=CHMO["0002413"])
+    CRYO_ET = PermissibleValue(
+        text="CRYO_ET",
+        description="Cryo-electron tomography")
+    X_RAY_CRYSTALLOGRAPHY = PermissibleValue(
+        text="X_RAY_CRYSTALLOGRAPHY",
+        title="single crystal X-ray diffraction",
+        description="X-ray crystallography",
+        meaning=CHMO["0000159"])
+    NEUTRON_CRYSTALLOGRAPHY = PermissibleValue(
+        text="NEUTRON_CRYSTALLOGRAPHY",
+        description="Neutron crystallography")
+    SAXS = PermissibleValue(
+        text="SAXS",
+        title="small-angle X-ray scattering",
+        description="Small-angle X-ray scattering",
+        meaning=CHMO["0000204"])
+    SANS = PermissibleValue(
+        text="SANS",
+        description="Small-angle neutron scattering")
+    WAXS = PermissibleValue(
+        text="WAXS",
+        description="Wide-angle X-ray scattering")
+    NMR = PermissibleValue(
+        text="NMR",
+        title="nuclear magnetic resonance spectroscopy",
+        description="Nuclear magnetic resonance spectroscopy",
+        meaning=CHMO["0000591"])
+    MASS_SPECTROMETRY = PermissibleValue(
+        text="MASS_SPECTROMETRY",
+        description="Mass spectrometry",
+        meaning=CHMO["0000470"])
+    NEGATIVE_STAIN_EM = PermissibleValue(
+        text="NEGATIVE_STAIN_EM",
+        description="Negative stain electron microscopy")
+
+    _defn = EnumDefinition(
+        name="StructuralBiologyTechnique",
+        description="Structural biology experimental techniques",
+    )
+
+class CryoEMPreparationType(EnumDefinitionImpl):
+    """
+    Types of cryo-EM sample preparation
+    """
+    VITREOUS_ICE = PermissibleValue(
+        text="VITREOUS_ICE",
+        description="Sample embedded in vitreous ice")
+    CRYO_SECTIONING = PermissibleValue(
+        text="CRYO_SECTIONING",
+        description="Cryo-sectioned sample")
+    FREEZE_SUBSTITUTION = PermissibleValue(
+        text="FREEZE_SUBSTITUTION",
+        description="Freeze-substituted sample")
+    HIGH_PRESSURE_FREEZING = PermissibleValue(
+        text="HIGH_PRESSURE_FREEZING",
+        description="High-pressure frozen sample")
+
+    _defn = EnumDefinition(
+        name="CryoEMPreparationType",
+        description="Types of cryo-EM sample preparation",
+    )
+
+class CryoEMGridType(EnumDefinitionImpl):
+    """
+    Types of electron microscopy grids
+    """
+    C_FLAT = PermissibleValue(
+        text="C_FLAT",
+        description="C-flat holey carbon grid")
+    QUANTIFOIL = PermissibleValue(
+        text="QUANTIFOIL",
+        description="Quantifoil holey carbon grid")
+    LACEY_CARBON = PermissibleValue(
+        text="LACEY_CARBON",
+        description="Lacey carbon support film")
+    ULTRATHIN_CARBON = PermissibleValue(
+        text="ULTRATHIN_CARBON",
+        description="Ultrathin carbon film on holey support")
+    GOLD_GRID = PermissibleValue(
+        text="GOLD_GRID",
+        description="Pure gold grid")
+    GRAPHENE_OXIDE = PermissibleValue(
+        text="GRAPHENE_OXIDE",
+        description="Graphene oxide support")
+
+    _defn = EnumDefinition(
+        name="CryoEMGridType",
+        description="Types of electron microscopy grids",
+    )
+
+class VitrificationMethod(EnumDefinitionImpl):
+    """
+    Methods for sample vitrification
+    """
+    PLUNGE_FREEZING = PermissibleValue(
+        text="PLUNGE_FREEZING",
+        description="Plunge freezing in liquid ethane")
+    HIGH_PRESSURE_FREEZING = PermissibleValue(
+        text="HIGH_PRESSURE_FREEZING",
+        description="High pressure freezing")
+    SLAM_FREEZING = PermissibleValue(
+        text="SLAM_FREEZING",
+        description="Slam freezing against metal block")
+    SPRAY_FREEZING = PermissibleValue(
+        text="SPRAY_FREEZING",
+        description="Spray freezing into liquid nitrogen")
+
+    _defn = EnumDefinition(
+        name="VitrificationMethod",
+        description="Methods for sample vitrification",
+    )
+
+class CrystallizationMethod(EnumDefinitionImpl):
+    """
+    Methods for protein crystallization
+    """
+    VAPOR_DIFFUSION_HANGING = PermissibleValue(
+        text="VAPOR_DIFFUSION_HANGING",
+        description="Vapor diffusion hanging drop method")
+    VAPOR_DIFFUSION_SITTING = PermissibleValue(
+        text="VAPOR_DIFFUSION_SITTING",
+        description="Vapor diffusion sitting drop method")
+    MICROBATCH = PermissibleValue(
+        text="MICROBATCH",
+        description="Microbatch under oil method")
+    DIALYSIS = PermissibleValue(
+        text="DIALYSIS",
+        description="Dialysis crystallization")
+    FREE_INTERFACE_DIFFUSION = PermissibleValue(
+        text="FREE_INTERFACE_DIFFUSION",
+        description="Free interface diffusion")
+    LCP = PermissibleValue(
+        text="LCP",
+        description="Lipidic cubic phase crystallization")
+
+    _defn = EnumDefinition(
+        name="CrystallizationMethod",
+        description="Methods for protein crystallization",
+    )
+
+class XRaySource(EnumDefinitionImpl):
+    """
+    Types of X-ray sources
+    """
+    SYNCHROTRON = PermissibleValue(
+        text="SYNCHROTRON",
+        description="Synchrotron radiation source")
+    ROTATING_ANODE = PermissibleValue(
+        text="ROTATING_ANODE",
+        description="Rotating anode generator")
+    MICROFOCUS = PermissibleValue(
+        text="MICROFOCUS",
+        description="Microfocus sealed tube")
+    METAL_JET = PermissibleValue(
+        text="METAL_JET",
+        description="Liquid metal jet source")
+
+    _defn = EnumDefinition(
+        name="XRaySource",
+        description="Types of X-ray sources",
+    )
+
+class Detector(EnumDefinitionImpl):
+    """
+    Types of detectors for structural biology
+    """
+    DIRECT_ELECTRON = PermissibleValue(
+        text="DIRECT_ELECTRON",
+        description="Direct electron detector (DED)")
+    CCD = PermissibleValue(
+        text="CCD",
+        description="Charge-coupled device camera")
+    CMOS = PermissibleValue(
+        text="CMOS",
+        description="Complementary metal-oxide semiconductor detector")
+    HYBRID_PIXEL = PermissibleValue(
+        text="HYBRID_PIXEL",
+        description="Hybrid pixel detector")
+    PHOTOSTIMULABLE_PHOSPHOR = PermissibleValue(
+        text="PHOTOSTIMULABLE_PHOSPHOR",
+        description="Photostimulable phosphor (image plate)")
+
+    _defn = EnumDefinition(
+        name="Detector",
+        description="Types of detectors for structural biology",
+    )
+
+class WorkflowType(EnumDefinitionImpl):
+    """
+    Types of computational processing workflows
+    """
+    MOTION_CORRECTION = PermissibleValue(
+        text="MOTION_CORRECTION",
+        description="Motion correction for cryo-EM movies")
+    CTF_ESTIMATION = PermissibleValue(
+        text="CTF_ESTIMATION",
+        description="Contrast transfer function estimation")
+    PARTICLE_PICKING = PermissibleValue(
+        text="PARTICLE_PICKING",
+        description="Particle picking from micrographs")
+    CLASSIFICATION_2D = PermissibleValue(
+        text="CLASSIFICATION_2D",
+        description="2D classification of particles")
+    CLASSIFICATION_3D = PermissibleValue(
+        text="CLASSIFICATION_3D",
+        description="3D classification of particles")
+    REFINEMENT_3D = PermissibleValue(
+        text="REFINEMENT_3D",
+        description="3D refinement of particle orientations")
+    MODEL_BUILDING = PermissibleValue(
+        text="MODEL_BUILDING",
+        description="Atomic model building into density")
+    MODEL_REFINEMENT = PermissibleValue(
+        text="MODEL_REFINEMENT",
+        description="Atomic model refinement")
+    PHASING = PermissibleValue(
+        text="PHASING",
+        description="Phase determination for crystallography")
+    DATA_INTEGRATION = PermissibleValue(
+        text="DATA_INTEGRATION",
+        description="Integration of diffraction data")
+    DATA_SCALING = PermissibleValue(
+        text="DATA_SCALING",
+        description="Scaling and merging of diffraction data")
+    SAXS_ANALYSIS = PermissibleValue(
+        text="SAXS_ANALYSIS",
+        description="SAXS data analysis and modeling")
+
+    _defn = EnumDefinition(
+        name="WorkflowType",
+        description="Types of computational processing workflows",
+    )
+
+class FileFormat(EnumDefinitionImpl):
+    """
+    File formats used in structural biology
+    """
+    MRC = PermissibleValue(
+        text="MRC",
+        description="MRC format for EM density maps")
+    TIFF = PermissibleValue(
+        text="TIFF",
+        description="Tagged Image File Format")
+    HDF5 = PermissibleValue(
+        text="HDF5",
+        description="Hierarchical Data Format 5")
+    STAR = PermissibleValue(
+        text="STAR",
+        description="Self-defining Text Archival and Retrieval format")
+    PDB = PermissibleValue(
+        text="PDB",
+        description="Protein Data Bank coordinate format")
+    MMCIF = PermissibleValue(
+        text="MMCIF",
+        description="Macromolecular Crystallographic Information File")
+    MTZ = PermissibleValue(
+        text="MTZ",
+        description="MTZ reflection data format")
+    CBF = PermissibleValue(
+        text="CBF",
+        description="Crystallographic Binary Format")
+    DM3 = PermissibleValue(
+        text="DM3",
+        description="Digital Micrograph format")
+    SER = PermissibleValue(
+        text="SER",
+        description="FEI series format")
+
+    _defn = EnumDefinition(
+        name="FileFormat",
+        description="File formats used in structural biology",
+    )
+
+class DataType(EnumDefinitionImpl):
+    """
+    Types of structural biology data
+    """
+    MICROGRAPH = PermissibleValue(
+        text="MICROGRAPH",
+        description="Electron micrograph image")
+    MOVIE = PermissibleValue(
+        text="MOVIE",
+        description="Movie stack of frames")
+    DIFFRACTION = PermissibleValue(
+        text="DIFFRACTION",
+        description="X-ray diffraction pattern")
+    SCATTERING = PermissibleValue(
+        text="SCATTERING",
+        description="Small-angle scattering data")
+    PARTICLES = PermissibleValue(
+        text="PARTICLES",
+        description="Particle stack for single particle analysis")
+    VOLUME = PermissibleValue(
+        text="VOLUME",
+        description="3D electron density volume")
+    TOMOGRAM = PermissibleValue(
+        text="TOMOGRAM",
+        description="3D tomographic reconstruction")
+    MODEL = PermissibleValue(
+        text="MODEL",
+        description="Atomic coordinate model")
+    METADATA = PermissibleValue(
+        text="METADATA",
+        description="Associated metadata file")
+
+    _defn = EnumDefinition(
+        name="DataType",
+        description="Types of structural biology data",
+    )
+
+class ProcessingStatus(EnumDefinitionImpl):
+    """
+    Status of data processing workflows
+    """
+    RAW = PermissibleValue(
+        text="RAW",
+        description="Raw unprocessed data")
+    PREPROCESSING = PermissibleValue(
+        text="PREPROCESSING",
+        description="Initial preprocessing in progress")
+    PROCESSING = PermissibleValue(
+        text="PROCESSING",
+        description="Main processing workflow running")
+    COMPLETED = PermissibleValue(
+        text="COMPLETED",
+        description="Processing completed successfully")
+    FAILED = PermissibleValue(
+        text="FAILED",
+        description="Processing failed with errors")
+    QUEUED = PermissibleValue(
+        text="QUEUED",
+        description="Queued for processing")
+    PAUSED = PermissibleValue(
+        text="PAUSED",
+        description="Processing paused by user")
+    CANCELLED = PermissibleValue(
+        text="CANCELLED",
+        description="Processing cancelled by user")
+
+    _defn = EnumDefinition(
+        name="ProcessingStatus",
+        description="Status of data processing workflows",
+    )
+
+class InsdcMissingValueEnum(EnumDefinitionImpl):
+    """
+    INSDC (International Nucleotide Sequence Database Collaboration) controlled vocabulary for missing values in
+    sequence records
+    """
+    NOT_APPLICABLE = PermissibleValue(
+        text="NOT_APPLICABLE",
+        title="not applicable",
+        description="""Information is inappropriate to report, can indicate that the standard itself fails to model or represent the information appropriately""",
+        meaning=NCIT["C48660"])
+    MISSING = PermissibleValue(
+        text="MISSING",
+        title="missing",
+        description="Not stated explicitly or implied by any other means",
+        meaning=NCIT["C54031"])
+    NOT_COLLECTED = PermissibleValue(
+        text="NOT_COLLECTED",
+        title="Missing Data",
+        description="Information of an expected format was not given because it has never been collected",
+        meaning=NCIT["C142610"])
+    NOT_PROVIDED = PermissibleValue(
+        text="NOT_PROVIDED",
+        title="Not Available",
+        description="Information of an expected format was not given, a value may be given at the later stage",
+        meaning=NCIT["C126101"])
+    RESTRICTED_ACCESS = PermissibleValue(
+        text="RESTRICTED_ACCESS",
+        title="Data Not Releasable",
+        description="Information exists but cannot be released openly because of privacy concerns",
+        meaning=NCIT["C67110"])
+    MISSING_CONTROL_SAMPLE = PermissibleValue(
+        text="MISSING_CONTROL_SAMPLE",
+        description="""Information is not applicable to control samples, negative control samples (e.g. blank sample or clear sample)""")
+    MISSING_SAMPLE_GROUP = PermissibleValue(
+        text="MISSING_SAMPLE_GROUP",
+        description="""Information can not be provided for a sample group where a selection of samples is used to represent a species, location or some other attribute/metric""")
+    MISSING_SYNTHETIC_CONSTRUCT = PermissibleValue(
+        text="MISSING_SYNTHETIC_CONSTRUCT",
+        description="Information does not exist for a synthetic construct")
+    MISSING_LAB_STOCK = PermissibleValue(
+        text="MISSING_LAB_STOCK",
+        description="""Information is not collected for a lab stock and its cultivation, e.g. stock centers, culture collections, seed banks""")
+    MISSING_THIRD_PARTY_DATA = PermissibleValue(
+        text="MISSING_THIRD_PARTY_DATA",
+        title="Source Data Not Available",
+        description="Information has not been revealed by another party",
+        meaning=NCIT["C67329"])
+    MISSING_DATA_AGREEMENT_ESTABLISHED_PRE_2023 = PermissibleValue(
+        text="MISSING_DATA_AGREEMENT_ESTABLISHED_PRE_2023",
+        description="""Information can not be reported due to a data agreement established before metadata standards were introduced in 2023""")
+    MISSING_ENDANGERED_SPECIES = PermissibleValue(
+        text="MISSING_ENDANGERED_SPECIES",
+        description="Information can not be reported due to endangered species concerns")
+    MISSING_HUMAN_IDENTIFIABLE = PermissibleValue(
+        text="MISSING_HUMAN_IDENTIFIABLE",
+        description="Information can not be reported due to identifiable human data concerns")
+
+    _defn = EnumDefinition(
+        name="InsdcMissingValueEnum",
+        description="""INSDC (International Nucleotide Sequence Database Collaboration) controlled vocabulary for missing values in sequence records""",
+    )
+
+class ViralGenomeTypeEnum(EnumDefinitionImpl):
+    """
+    Types of viral genomes based on Baltimore classification
+    """
+    DNA = PermissibleValue(
+        text="DNA",
+        title="deoxyribonucleic acid",
+        description="Viral genome composed of DNA",
+        meaning=CHEBI["16991"])
+    DSDNA = PermissibleValue(
+        text="DSDNA",
+        title="Double Stranded DNA Virus",
+        description="Double-stranded DNA viral genome",
+        meaning=NCIT["C14348"])
+    SSDNA = PermissibleValue(
+        text="SSDNA",
+        title="Single Stranded DNA Virus",
+        description="Single-stranded DNA viral genome",
+        meaning=NCIT["C14350"])
+    RNA = PermissibleValue(
+        text="RNA",
+        title="ribonucleic acid",
+        description="Viral genome composed of RNA",
+        meaning=CHEBI["33697"])
+    DSRNA = PermissibleValue(
+        text="DSRNA",
+        title="Double Stranded RNA Virus",
+        description="Double-stranded RNA viral genome",
+        meaning=NCIT["C28518"])
+    SSRNA = PermissibleValue(
+        text="SSRNA",
+        title="Single-Stranded RNA",
+        description="Single-stranded RNA viral genome",
+        meaning=NCIT["C95939"])
+    SSRNA_POSITIVE = PermissibleValue(
+        text="SSRNA_POSITIVE",
+        title="Positive Sense ssRNA Virus",
+        description="Positive-sense single-stranded RNA viral genome",
+        meaning=NCIT["C14351"])
+    SSRNA_NEGATIVE = PermissibleValue(
+        text="SSRNA_NEGATIVE",
+        title="Negative Sense ssRNA Virus",
+        description="Negative-sense single-stranded RNA viral genome",
+        meaning=NCIT["C14346"])
+    SSRNA_RT = PermissibleValue(
+        text="SSRNA_RT",
+        title="Deltaretrovirus",
+        description="Single-stranded RNA viruses that replicate through a DNA intermediate (retroviruses)",
+        meaning=NCIT["C14347"])
+    DSDNA_RT = PermissibleValue(
+        text="DSDNA_RT",
+        title="Other Virus Grouping",
+        description="""Double-stranded DNA viruses that replicate through a single-stranded RNA intermediate (pararetroviruses)""",
+        meaning=NCIT["C14349"])
+    MIXED = PermissibleValue(
+        text="MIXED",
+        title="Hybrid",
+        description="Mixed or hybrid viral genome type",
+        meaning=NCIT["C128790"])
+    UNCHARACTERIZED = PermissibleValue(
+        text="UNCHARACTERIZED",
+        title="Unknown",
+        description="Viral genome type not yet characterized",
+        meaning=NCIT["C17998"])
+
+    _defn = EnumDefinition(
+        name="ViralGenomeTypeEnum",
+        description="Types of viral genomes based on Baltimore classification",
+    )
+
+class PlantSexEnum(EnumDefinitionImpl):
+    """
+    Plant reproductive and sexual system types
+    """
+    ANDRODIOECIOUS = PermissibleValue(
+        text="ANDRODIOECIOUS",
+        title="Androdioecious",
+        description="Having male and hermaphrodite flowers on separate plants")
+    ANDROECIOUS = PermissibleValue(
+        text="ANDROECIOUS",
+        title="Androecious",
+        description="Having only male flowers")
+    ANDROGYNOMONOECIOUS = PermissibleValue(
+        text="ANDROGYNOMONOECIOUS",
+        title="Androgynomonoecious",
+        description="Having male, female, and hermaphrodite flowers on the same plant")
+    ANDROGYNOUS = PermissibleValue(
+        text="ANDROGYNOUS",
+        title="Androgynous",
+        description="Having both male and female reproductive organs in the same flower")
+    ANDROMONOECIOUS = PermissibleValue(
+        text="ANDROMONOECIOUS",
+        title="Andromonoecious",
+        description="Having male and hermaphrodite flowers on the same plant")
+    BISEXUAL = PermissibleValue(
+        text="BISEXUAL",
+        title="Bisexual",
+        description="Having both male and female reproductive organs")
+    DICHOGAMOUS = PermissibleValue(
+        text="DICHOGAMOUS",
+        title="Dichogamous",
+        description="Male and female organs mature at different times")
+    DICLINOUS = PermissibleValue(
+        text="DICLINOUS",
+        title="Diclinous",
+        description="Having male and female reproductive organs in separate flowers")
+    DIOECIOUS = PermissibleValue(
+        text="DIOECIOUS",
+        title="Dioecious",
+        description="Having male and female flowers on separate plants",
+        meaning=GSSO["011872"])
+    GYNODIOECIOUS = PermissibleValue(
+        text="GYNODIOECIOUS",
+        title="Gynodioecious",
+        description="Having female and hermaphrodite flowers on separate plants")
+    GYNOECIOUS = PermissibleValue(
+        text="GYNOECIOUS",
+        title="Gynoecious",
+        description="Having only female flowers")
+    GYNOMONOECIOUS = PermissibleValue(
+        text="GYNOMONOECIOUS",
+        title="Gynomonoecious",
+        description="Having female and hermaphrodite flowers on the same plant")
+    HERMAPHRODITIC = PermissibleValue(
+        text="HERMAPHRODITIC",
+        title="hermaphroditic organism",
+        description="Having both male and female reproductive organs",
+        meaning=UBERON["0007197"])
+    IMPERFECT = PermissibleValue(
+        text="IMPERFECT",
+        title="Imperfect",
+        description="Flower lacking either male or female reproductive organs")
+    MONOCLINOUS = PermissibleValue(
+        text="MONOCLINOUS",
+        title="Monoclinous",
+        description="Having both male and female reproductive organs in the same flower")
+    MONOECIOUS = PermissibleValue(
+        text="MONOECIOUS",
+        title="Monoecious",
+        description="Having male and female flowers on the same plant",
+        meaning=GSSO["011868"])
+    PERFECT = PermissibleValue(
+        text="PERFECT",
+        title="Perfect",
+        description="Flower having both male and female reproductive organs")
+    POLYGAMODIOECIOUS = PermissibleValue(
+        text="POLYGAMODIOECIOUS",
+        title="Polygamodioecious",
+        description="Having male, female, and hermaphrodite flowers on separate plants")
+    POLYGAMOMONOECIOUS = PermissibleValue(
+        text="POLYGAMOMONOECIOUS",
+        title="Polygamomonoecious",
+        description="Having male, female, and hermaphrodite flowers on the same plant")
+    POLYGAMOUS = PermissibleValue(
+        text="POLYGAMOUS",
+        title="Polygamous",
+        description="Having male, female, and hermaphrodite flowers")
+    PROTANDROUS = PermissibleValue(
+        text="PROTANDROUS",
+        title="Protandrous",
+        description="Male organs mature before female organs")
+    PROTOGYNOUS = PermissibleValue(
+        text="PROTOGYNOUS",
+        title="Protogynous",
+        description="Female organs mature before male organs")
+    SUBANDROECIOUS = PermissibleValue(
+        text="SUBANDROECIOUS",
+        title="Subandroecious",
+        description="Mostly male flowers with occasional hermaphrodite flowers")
+    SUBDIOECIOUS = PermissibleValue(
+        text="SUBDIOECIOUS",
+        title="Subdioecious",
+        description="Mostly dioecious with occasional hermaphrodite flowers")
+    SUBGYNOECIOUS = PermissibleValue(
+        text="SUBGYNOECIOUS",
+        title="Subgynoecious",
+        description="Mostly female flowers with occasional hermaphrodite flowers")
+    SYNOECIOUS = PermissibleValue(
+        text="SYNOECIOUS",
+        title="Synoecious",
+        description="Having male and female organs fused together")
+    TRIMONOECIOUS = PermissibleValue(
+        text="TRIMONOECIOUS",
+        title="Trimonoecious",
+        description="Having male, female, and hermaphrodite flowers on the same plant")
+    TRIOECIOUS = PermissibleValue(
+        text="TRIOECIOUS",
+        title="Trioecious",
+        description="Having male, female, and hermaphrodite flowers on separate plants")
+    UNISEXUAL = PermissibleValue(
+        text="UNISEXUAL",
+        title="Unisexual",
+        description="Having only one sex of reproductive organs")
+
+    _defn = EnumDefinition(
+        name="PlantSexEnum",
+        description="Plant reproductive and sexual system types",
+    )
+
+class RelToOxygenEnum(EnumDefinitionImpl):
+    """
+    Organism's relationship to oxygen for growth and survival
+    """
+    AEROBE = PermissibleValue(
+        text="AEROBE",
+        title="aerobe",
+        description="Organism that can survive and grow in an oxygenated environment",
+        meaning=ECOCORE["00000173"])
+    ANAEROBE = PermissibleValue(
+        text="ANAEROBE",
+        title="anaerobe",
+        description="Organism that does not require oxygen for growth",
+        meaning=ECOCORE["00000172"])
+    FACULTATIVE = PermissibleValue(
+        text="FACULTATIVE",
+        title="facultative anaerobe",
+        description="Organism that can grow with or without oxygen",
+        meaning=ECOCORE["00000177"])
+    MICROAEROPHILIC = PermissibleValue(
+        text="MICROAEROPHILIC",
+        title="microaerophilic",
+        description="Organism that requires oxygen at lower concentrations than atmospheric",
+        meaning=MICRO["0000515"])
+    MICROANAEROBE = PermissibleValue(
+        text="MICROANAEROBE",
+        title="microanaerobe",
+        description="Organism that can tolerate very small amounts of oxygen")
+    OBLIGATE_AEROBE = PermissibleValue(
+        text="OBLIGATE_AEROBE",
+        title="obligate aerobe",
+        description="Organism that requires oxygen to grow",
+        meaning=ECOCORE["00000179"])
+    OBLIGATE_ANAEROBE = PermissibleValue(
+        text="OBLIGATE_ANAEROBE",
+        title="obligate anaerobe",
+        description="Organism that cannot grow in the presence of oxygen",
+        meaning=ECOCORE["00000178"])
+
+    _defn = EnumDefinition(
+        name="RelToOxygenEnum",
+        description="Organism's relationship to oxygen for growth and survival",
+    )
+
+class TrophicLevelEnum(EnumDefinitionImpl):
+    """
+    Trophic levels are the feeding position in a food chain
+    """
+    AUTOTROPH = PermissibleValue(
+        text="AUTOTROPH",
+        title="autotroph",
+        description="Organism capable of synthesizing its own food from inorganic substances",
+        meaning=ECOCORE["00000023"])
+    CARBOXYDOTROPH = PermissibleValue(
+        text="CARBOXYDOTROPH",
+        title="carboxydotroph",
+        description="Organism that uses carbon monoxide as a source of carbon and energy")
+    CHEMOAUTOLITHOTROPH = PermissibleValue(
+        text="CHEMOAUTOLITHOTROPH",
+        title="chemoautolithotroph",
+        description="Autotroph that obtains energy from inorganic compounds")
+    CHEMOAUTOTROPH = PermissibleValue(
+        text="CHEMOAUTOTROPH",
+        title="chemoautotroph",
+        description="Organism that obtains energy by oxidizing inorganic compounds",
+        meaning=ECOCORE["00000129"])
+    CHEMOHETEROTROPH = PermissibleValue(
+        text="CHEMOHETEROTROPH",
+        title="chemoheterotroph",
+        description="Organism that obtains energy from organic compounds",
+        meaning=ECOCORE["00000132"])
+    CHEMOLITHOAUTOTROPH = PermissibleValue(
+        text="CHEMOLITHOAUTOTROPH",
+        title="chemolithoautotroph",
+        description="Organism that uses inorganic compounds as electron donors")
+    CHEMOLITHOTROPH = PermissibleValue(
+        text="CHEMOLITHOTROPH",
+        title="chemolithotroph",
+        description="Organism that obtains energy from oxidation of inorganic compounds")
+    CHEMOORGANOHETEROTROPH = PermissibleValue(
+        text="CHEMOORGANOHETEROTROPH",
+        title="chemoorganoheterotroph",
+        description="Organism that uses organic compounds as both carbon and energy source")
+    CHEMOORGANOTROPH = PermissibleValue(
+        text="CHEMOORGANOTROPH",
+        title="chemoorganotroph",
+        description="Organism that obtains energy from organic compounds",
+        meaning=ECOCORE["00000133"])
+    CHEMOSYNTHETIC = PermissibleValue(
+        text="CHEMOSYNTHETIC",
+        title="chemosynthetic",
+        description="Relating to organisms that produce organic matter through chemosynthesis")
+    CHEMOTROPH = PermissibleValue(
+        text="CHEMOTROPH",
+        title="chemotroph",
+        description="Organism that obtains energy from chemical compounds")
+    COPIOTROPH = PermissibleValue(
+        text="COPIOTROPH",
+        title="copiotroph",
+        description="Organism that thrives in nutrient-rich environments")
+    DIAZOTROPH = PermissibleValue(
+        text="DIAZOTROPH",
+        title="diazotroph",
+        description="Organism capable of fixing atmospheric nitrogen")
+    FACULTATIVE = PermissibleValue(
+        text="FACULTATIVE",
+        title="facultative",
+        description="Organism that can switch between different metabolic modes")
+    HETEROTROPH = PermissibleValue(
+        text="HETEROTROPH",
+        title="heterotroph",
+        description="Organism that obtains carbon from organic compounds",
+        meaning=ECOCORE["00000010"])
+    LITHOAUTOTROPH = PermissibleValue(
+        text="LITHOAUTOTROPH",
+        title="lithoautotroph",
+        description="Autotroph that uses inorganic compounds as electron donors")
+    LITHOHETEROTROPH = PermissibleValue(
+        text="LITHOHETEROTROPH",
+        title="lithoheterotroph",
+        description="Heterotroph that uses inorganic compounds as electron donors")
+    LITHOTROPH = PermissibleValue(
+        text="LITHOTROPH",
+        title="lithotroph",
+        description="Organism that uses inorganic substrates as electron donors")
+    METHANOTROPH = PermissibleValue(
+        text="METHANOTROPH",
+        title="methanotroph",
+        description="Organism that uses methane as carbon and energy source")
+    METHYLOTROPH = PermissibleValue(
+        text="METHYLOTROPH",
+        title="methylotroph",
+        description="Organism that uses single-carbon compounds")
+    MIXOTROPH = PermissibleValue(
+        text="MIXOTROPH",
+        title="mixotroph",
+        description="Organism that can use both autotrophic and heterotrophic methods")
+    OBLIGATE = PermissibleValue(
+        text="OBLIGATE",
+        title="obligate",
+        description="Organism restricted to a particular metabolic mode")
+    OLIGOTROPH = PermissibleValue(
+        text="OLIGOTROPH",
+        title="oligotroph",
+        description="Organism that thrives in nutrient-poor environments",
+        meaning=ECOCORE["00000138"])
+    ORGANOHETEROTROPH = PermissibleValue(
+        text="ORGANOHETEROTROPH",
+        title="organoheterotroph",
+        description="Organism that uses organic compounds as carbon source")
+    ORGANOTROPH = PermissibleValue(
+        text="ORGANOTROPH",
+        title="organotroph",
+        description="Organism that uses organic compounds as electron donors")
+    PHOTOAUTOTROPH = PermissibleValue(
+        text="PHOTOAUTOTROPH",
+        title="photoautotroph",
+        description="Organism that uses light energy to synthesize organic compounds",
+        meaning=ECOCORE["00000130"])
+    PHOTOHETEROTROPH = PermissibleValue(
+        text="PHOTOHETEROTROPH",
+        title="photoheterotroph",
+        description="Organism that uses light for energy but organic compounds for carbon",
+        meaning=ECOCORE["00000131"])
+    PHOTOLITHOAUTOTROPH = PermissibleValue(
+        text="PHOTOLITHOAUTOTROPH",
+        title="photolithoautotroph",
+        description="Photoautotroph that uses inorganic electron donors")
+    PHOTOLITHOTROPH = PermissibleValue(
+        text="PHOTOLITHOTROPH",
+        title="photolithotroph",
+        description="Organism that uses light energy and inorganic electron donors")
+    PHOTOSYNTHETIC = PermissibleValue(
+        text="PHOTOSYNTHETIC",
+        title="photosynthetic",
+        description="Relating to organisms that produce organic matter through photosynthesis")
+    PHOTOTROPH = PermissibleValue(
+        text="PHOTOTROPH",
+        title="phototroph",
+        description="Organism that obtains energy from light")
+
+    _defn = EnumDefinition(
+        name="TrophicLevelEnum",
+        description="Trophic levels are the feeding position in a food chain",
+    )
+
+class DayOfWeek(EnumDefinitionImpl):
+    """
+    Days of the week following ISO 8601 standard (Monday = 1)
+    """
+    MONDAY = PermissibleValue(
+        text="MONDAY",
+        description="Monday (first day of week in ISO 8601)",
+        meaning=TIME["Monday"])
+    TUESDAY = PermissibleValue(
+        text="TUESDAY",
+        description="Tuesday",
+        meaning=TIME["Tuesday"])
+    WEDNESDAY = PermissibleValue(
+        text="WEDNESDAY",
+        description="Wednesday",
+        meaning=TIME["Wednesday"])
+    THURSDAY = PermissibleValue(
+        text="THURSDAY",
+        description="Thursday",
+        meaning=TIME["Thursday"])
+    FRIDAY = PermissibleValue(
+        text="FRIDAY",
+        description="Friday",
+        meaning=TIME["Friday"])
+    SATURDAY = PermissibleValue(
+        text="SATURDAY",
+        description="Saturday",
+        meaning=TIME["Saturday"])
+    SUNDAY = PermissibleValue(
+        text="SUNDAY",
+        description="Sunday (last day of week in ISO 8601)",
+        meaning=TIME["Sunday"])
+
+    _defn = EnumDefinition(
+        name="DayOfWeek",
+        description="Days of the week following ISO 8601 standard (Monday = 1)",
+    )
+
+class Month(EnumDefinitionImpl):
+    """
+    Months of the year
+    """
+    JANUARY = PermissibleValue(
+        text="JANUARY",
+        description="January",
+        meaning=GREG["January"])
+    FEBRUARY = PermissibleValue(
+        text="FEBRUARY",
+        description="February",
+        meaning=GREG["February"])
+    MARCH = PermissibleValue(
+        text="MARCH",
+        description="March",
+        meaning=GREG["March"])
+    APRIL = PermissibleValue(
+        text="APRIL",
+        description="April",
+        meaning=GREG["April"])
+    MAY = PermissibleValue(
+        text="MAY",
+        description="May",
+        meaning=GREG["May"])
+    JUNE = PermissibleValue(
+        text="JUNE",
+        description="June",
+        meaning=GREG["June"])
+    JULY = PermissibleValue(
+        text="JULY",
+        description="July",
+        meaning=GREG["July"])
+    AUGUST = PermissibleValue(
+        text="AUGUST",
+        description="August",
+        meaning=GREG["August"])
+    SEPTEMBER = PermissibleValue(
+        text="SEPTEMBER",
+        description="September",
+        meaning=GREG["September"])
+    OCTOBER = PermissibleValue(
+        text="OCTOBER",
+        description="October",
+        meaning=GREG["October"])
+    NOVEMBER = PermissibleValue(
+        text="NOVEMBER",
+        description="November",
+        meaning=GREG["November"])
+    DECEMBER = PermissibleValue(
+        text="DECEMBER",
+        description="December",
+        meaning=GREG["December"])
+
+    _defn = EnumDefinition(
+        name="Month",
+        description="Months of the year",
+    )
+
+class Quarter(EnumDefinitionImpl):
+    """
+    Calendar quarters
+    """
+    Q1 = PermissibleValue(
+        text="Q1",
+        description="First quarter (January-March)")
+    Q2 = PermissibleValue(
+        text="Q2",
+        description="Second quarter (April-June)")
+    Q3 = PermissibleValue(
+        text="Q3",
+        description="Third quarter (July-September)")
+    Q4 = PermissibleValue(
+        text="Q4",
+        description="Fourth quarter (October-December)")
+
+    _defn = EnumDefinition(
+        name="Quarter",
+        description="Calendar quarters",
+    )
+
+class Season(EnumDefinitionImpl):
+    """
+    Seasons of the year (Northern Hemisphere)
+    """
+    SPRING = PermissibleValue(
+        text="SPRING",
+        description="Spring season",
+        meaning=NCIT["C94731"])
+    SUMMER = PermissibleValue(
+        text="SUMMER",
+        description="Summer season",
+        meaning=NCIT["C94732"])
+    AUTUMN = PermissibleValue(
+        text="AUTUMN",
+        description="Autumn/Fall season",
+        meaning=NCIT["C94733"])
+    WINTER = PermissibleValue(
+        text="WINTER",
+        description="Winter season",
+        meaning=NCIT["C94730"])
+
+    _defn = EnumDefinition(
+        name="Season",
+        description="Seasons of the year (Northern Hemisphere)",
+    )
+
+class TimePeriod(EnumDefinitionImpl):
+    """
+    Common time periods and intervals
+    """
+    HOURLY = PermissibleValue(
+        text="HOURLY",
+        description="Every hour")
+    DAILY = PermissibleValue(
+        text="DAILY",
+        description="Every day")
+    WEEKLY = PermissibleValue(
+        text="WEEKLY",
+        description="Every week")
+    BIWEEKLY = PermissibleValue(
+        text="BIWEEKLY",
+        description="Every two weeks")
+    MONTHLY = PermissibleValue(
+        text="MONTHLY",
+        description="Every month")
+    QUARTERLY = PermissibleValue(
+        text="QUARTERLY",
+        description="Every quarter (3 months)")
+    SEMIANNUALLY = PermissibleValue(
+        text="SEMIANNUALLY",
+        description="Every six months")
+    ANNUALLY = PermissibleValue(
+        text="ANNUALLY",
+        description="Every year")
+    BIANNUALLY = PermissibleValue(
+        text="BIANNUALLY",
+        description="Every two years")
+
+    _defn = EnumDefinition(
+        name="TimePeriod",
+        description="Common time periods and intervals",
+    )
+
+class TimeUnit(EnumDefinitionImpl):
+    """
+    Units of time measurement
+    """
+    NANOSECOND = PermissibleValue(
+        text="NANOSECOND",
+        description="Nanosecond (10^-9 seconds)")
+    MICROSECOND = PermissibleValue(
+        text="MICROSECOND",
+        description="Microsecond (10^-6 seconds)")
+    MILLISECOND = PermissibleValue(
+        text="MILLISECOND",
+        description="Millisecond (10^-3 seconds)")
+    SECOND = PermissibleValue(
+        text="SECOND",
+        description="Second (SI base unit)",
+        meaning=TIME["unitSecond"])
+    MINUTE = PermissibleValue(
+        text="MINUTE",
+        description="Minute (60 seconds)",
+        meaning=TIME["unitMinute"])
+    HOUR = PermissibleValue(
+        text="HOUR",
+        description="Hour (60 minutes)",
+        meaning=TIME["unitHour"])
+    DAY = PermissibleValue(
+        text="DAY",
+        description="Day (24 hours)",
+        meaning=TIME["unitDay"])
+    WEEK = PermissibleValue(
+        text="WEEK",
+        description="Week (7 days)",
+        meaning=TIME["unitWeek"])
+    MONTH = PermissibleValue(
+        text="MONTH",
+        description="Month (approximately 30.44 days)",
+        meaning=TIME["unitMonth"])
+    YEAR = PermissibleValue(
+        text="YEAR",
+        description="Year (365.25 days)",
+        meaning=TIME["unitYear"])
+    DECADE = PermissibleValue(
+        text="DECADE",
+        description="Decade (10 years)",
+        meaning=TIME["unitDecade"])
+    CENTURY = PermissibleValue(
+        text="CENTURY",
+        description="Century (100 years)",
+        meaning=TIME["unitCentury"])
+    MILLENNIUM = PermissibleValue(
+        text="MILLENNIUM",
+        description="Millennium (1000 years)",
+        meaning=TIME["unitMillennium"])
+
+    _defn = EnumDefinition(
+        name="TimeUnit",
+        description="Units of time measurement",
+    )
+
+class TimeOfDay(EnumDefinitionImpl):
+    """
+    Common times of day
+    """
+    DAWN = PermissibleValue(
+        text="DAWN",
+        description="Dawn (first light)")
+    MORNING = PermissibleValue(
+        text="MORNING",
+        description="Morning")
+    NOON = PermissibleValue(
+        text="NOON",
+        description="Noon/Midday")
+    AFTERNOON = PermissibleValue(
+        text="AFTERNOON",
+        description="Afternoon")
+    EVENING = PermissibleValue(
+        text="EVENING",
+        description="Evening")
+    NIGHT = PermissibleValue(
+        text="NIGHT",
+        description="Night")
+    MIDNIGHT = PermissibleValue(
+        text="MIDNIGHT",
+        description="Midnight")
+
+    _defn = EnumDefinition(
+        name="TimeOfDay",
+        description="Common times of day",
+    )
+
+class BusinessTimeFrame(EnumDefinitionImpl):
+    """
+    Common business and financial time frames
+    """
+    REAL_TIME = PermissibleValue(
+        text="REAL_TIME",
+        description="Real-time/instantaneous")
+    INTRADAY = PermissibleValue(
+        text="INTRADAY",
+        description="Within the same day")
+    T_PLUS_1 = PermissibleValue(
+        text="T_PLUS_1",
+        description="Trade date plus one business day")
+    T_PLUS_2 = PermissibleValue(
+        text="T_PLUS_2",
+        description="Trade date plus two business days")
+    T_PLUS_3 = PermissibleValue(
+        text="T_PLUS_3",
+        description="Trade date plus three business days")
+    END_OF_DAY = PermissibleValue(
+        text="END_OF_DAY",
+        description="End of business day")
+    END_OF_WEEK = PermissibleValue(
+        text="END_OF_WEEK",
+        description="End of business week")
+    END_OF_MONTH = PermissibleValue(
+        text="END_OF_MONTH",
+        description="End of calendar month")
+    END_OF_QUARTER = PermissibleValue(
+        text="END_OF_QUARTER",
+        description="End of calendar quarter")
+    END_OF_YEAR = PermissibleValue(
+        text="END_OF_YEAR",
+        description="End of calendar year")
+    YEAR_TO_DATE = PermissibleValue(
+        text="YEAR_TO_DATE",
+        description="From beginning of year to current date")
+    MONTH_TO_DATE = PermissibleValue(
+        text="MONTH_TO_DATE",
+        description="From beginning of month to current date")
+    QUARTER_TO_DATE = PermissibleValue(
+        text="QUARTER_TO_DATE",
+        description="From beginning of quarter to current date")
+
+    _defn = EnumDefinition(
+        name="BusinessTimeFrame",
+        description="Common business and financial time frames",
+    )
+
+class GeologicalEra(EnumDefinitionImpl):
+    """
+    Major geological eras
+    """
+    PRECAMBRIAN = PermissibleValue(
+        text="PRECAMBRIAN",
+        description="Precambrian (4.6 billion - 541 million years ago)")
+    PALEOZOIC = PermissibleValue(
+        text="PALEOZOIC",
+        description="Paleozoic Era (541 - 252 million years ago)")
+    MESOZOIC = PermissibleValue(
+        text="MESOZOIC",
+        description="Mesozoic Era (252 - 66 million years ago)")
+    CENOZOIC = PermissibleValue(
+        text="CENOZOIC",
+        description="Cenozoic Era (66 million years ago - present)")
+
+    _defn = EnumDefinition(
+        name="GeologicalEra",
+        description="Major geological eras",
+    )
+
+class HistoricalPeriod(EnumDefinitionImpl):
+    """
+    Major historical periods
+    """
+    PREHISTORIC = PermissibleValue(
+        text="PREHISTORIC",
+        description="Before written records")
+    ANCIENT = PermissibleValue(
+        text="ANCIENT",
+        description="Ancient history (3000 BCE - 500 CE)")
+    CLASSICAL_ANTIQUITY = PermissibleValue(
+        text="CLASSICAL_ANTIQUITY",
+        description="Classical antiquity (8th century BCE - 6th century CE)")
+    MIDDLE_AGES = PermissibleValue(
+        text="MIDDLE_AGES",
+        description="Middle Ages (5th - 15th century)")
+    RENAISSANCE = PermissibleValue(
+        text="RENAISSANCE",
+        description="Renaissance (14th - 17th century)")
+    EARLY_MODERN = PermissibleValue(
+        text="EARLY_MODERN",
+        description="Early modern period (15th - 18th century)")
+    INDUSTRIAL_AGE = PermissibleValue(
+        text="INDUSTRIAL_AGE",
+        description="Industrial age (1760 - 1840)")
+    MODERN = PermissibleValue(
+        text="MODERN",
+        description="Modern era (19th century - mid 20th century)")
+    CONTEMPORARY = PermissibleValue(
+        text="CONTEMPORARY",
+        description="Contemporary period (mid 20th century - present)")
+    DIGITAL_AGE = PermissibleValue(
+        text="DIGITAL_AGE",
+        description="Digital/Information age (1950s - present)")
+
+    _defn = EnumDefinition(
+        name="HistoricalPeriod",
+        description="Major historical periods",
+    )
+
+class PublicationType(EnumDefinitionImpl):
+    """
+    Types of academic and research publications
+    """
+    JOURNAL_ARTICLE = PermissibleValue(
+        text="JOURNAL_ARTICLE",
+        description="Peer-reviewed journal article",
+        meaning=FABIO["JournalArticle"])
+    REVIEW_ARTICLE = PermissibleValue(
+        text="REVIEW_ARTICLE",
+        description="Review article synthesizing existing research",
+        meaning=FABIO["ReviewArticle"])
+    RESEARCH_ARTICLE = PermissibleValue(
+        text="RESEARCH_ARTICLE",
+        description="Original research article",
+        meaning=FABIO["ResearchPaper"])
+    SHORT_COMMUNICATION = PermissibleValue(
+        text="SHORT_COMMUNICATION",
+        description="Brief communication or short report",
+        meaning=FABIO["BriefCommunication"])
+    EDITORIAL = PermissibleValue(
+        text="EDITORIAL",
+        description="Editorial or opinion piece",
+        meaning=FABIO["Editorial"])
+    LETTER = PermissibleValue(
+        text="LETTER",
+        description="Letter to the editor",
+        meaning=FABIO["Letter"])
+    COMMENTARY = PermissibleValue(
+        text="COMMENTARY",
+        description="Commentary on existing work",
+        meaning=FABIO["Comment"])
+    PERSPECTIVE = PermissibleValue(
+        text="PERSPECTIVE",
+        description="Perspective or viewpoint article",
+        meaning=FABIO["Comment"])
+    CASE_REPORT = PermissibleValue(
+        text="CASE_REPORT",
+        description="Clinical or scientific case report",
+        meaning=FABIO["CaseReport"])
+    TECHNICAL_NOTE = PermissibleValue(
+        text="TECHNICAL_NOTE",
+        description="Technical or methodological note",
+        meaning=FABIO["BriefCommunication"])
+    BOOK = PermissibleValue(
+        text="BOOK",
+        description="Complete book or monograph",
+        meaning=FABIO["Book"])
+    BOOK_CHAPTER = PermissibleValue(
+        text="BOOK_CHAPTER",
+        description="Chapter in an edited book",
+        meaning=FABIO["BookChapter"])
+    EDITED_BOOK = PermissibleValue(
+        text="EDITED_BOOK",
+        description="Edited collection or anthology",
+        meaning=FABIO["EditedBook"])
+    REFERENCE_BOOK = PermissibleValue(
+        text="REFERENCE_BOOK",
+        description="Reference work or encyclopedia",
+        meaning=FABIO["ReferenceBook"])
+    TEXTBOOK = PermissibleValue(
+        text="TEXTBOOK",
+        description="Educational textbook",
+        meaning=FABIO["Textbook"])
+    CONFERENCE_PAPER = PermissibleValue(
+        text="CONFERENCE_PAPER",
+        description="Full conference paper",
+        meaning=FABIO["ConferencePaper"])
+    CONFERENCE_ABSTRACT = PermissibleValue(
+        text="CONFERENCE_ABSTRACT",
+        description="Conference abstract",
+        meaning=FABIO["ConferenceAbstract"])
+    CONFERENCE_POSTER = PermissibleValue(
+        text="CONFERENCE_POSTER",
+        description="Conference poster",
+        meaning=FABIO["ConferencePoster"])
+    CONFERENCE_PROCEEDINGS = PermissibleValue(
+        text="CONFERENCE_PROCEEDINGS",
+        description="Complete conference proceedings",
+        meaning=FABIO["ConferenceProceedings"])
+    PHD_THESIS = PermissibleValue(
+        text="PHD_THESIS",
+        description="Doctoral dissertation",
+        meaning=FABIO["DoctoralThesis"])
+    MASTERS_THESIS = PermissibleValue(
+        text="MASTERS_THESIS",
+        description="Master's thesis",
+        meaning=FABIO["MastersThesis"])
+    BACHELORS_THESIS = PermissibleValue(
+        text="BACHELORS_THESIS",
+        description="Bachelor's or undergraduate thesis",
+        meaning=FABIO["BachelorsThesis"])
+    TECHNICAL_REPORT = PermissibleValue(
+        text="TECHNICAL_REPORT",
+        description="Technical or research report",
+        meaning=FABIO["TechnicalReport"])
+    WORKING_PAPER = PermissibleValue(
+        text="WORKING_PAPER",
+        description="Working paper or discussion paper",
+        meaning=FABIO["WorkingPaper"])
+    WHITE_PAPER = PermissibleValue(
+        text="WHITE_PAPER",
+        description="White paper or position paper",
+        meaning=FABIO["WhitePaper"])
+    POLICY_BRIEF = PermissibleValue(
+        text="POLICY_BRIEF",
+        description="Policy brief or recommendation",
+        meaning=FABIO["PolicyBrief"])
+    DATASET = PermissibleValue(
+        text="DATASET",
+        description="Research dataset",
+        meaning=DCMITYPE["Dataset"])
+    SOFTWARE = PermissibleValue(
+        text="SOFTWARE",
+        description="Research software or code",
+        meaning=DCMITYPE["Software"])
+    DATA_PAPER = PermissibleValue(
+        text="DATA_PAPER",
+        description="Data descriptor or data paper",
+        meaning=FABIO["DataPaper"])
+    SOFTWARE_PAPER = PermissibleValue(
+        text="SOFTWARE_PAPER",
+        description="Software or tools paper",
+        meaning=FABIO["ResearchPaper"])
+    PROTOCOL = PermissibleValue(
+        text="PROTOCOL",
+        description="Research protocol or methodology",
+        meaning=FABIO["Protocol"])
+    PREPRINT = PermissibleValue(
+        text="PREPRINT",
+        description="Preprint or unrefereed manuscript",
+        meaning=FABIO["Preprint"])
+    POSTPRINT = PermissibleValue(
+        text="POSTPRINT",
+        description="Accepted manuscript after peer review",
+        meaning=FABIO["Preprint"])
+    PUBLISHED_VERSION = PermissibleValue(
+        text="PUBLISHED_VERSION",
+        title="publication",
+        description="Final published version",
+        meaning=IAO["0000311"])
+    PATENT = PermissibleValue(
+        text="PATENT",
+        description="Patent or patent application",
+        meaning=FABIO["Patent"])
+    STANDARD = PermissibleValue(
+        text="STANDARD",
+        description="Technical standard or specification",
+        meaning=FABIO["Standard"])
+    BLOG_POST = PermissibleValue(
+        text="BLOG_POST",
+        description="Academic blog post",
+        meaning=FABIO["BlogPost"])
+    PRESENTATION = PermissibleValue(
+        text="PRESENTATION",
+        description="Presentation slides or talk",
+        meaning=FABIO["Presentation"])
+    LECTURE = PermissibleValue(
+        text="LECTURE",
+        description="Lecture or educational material",
+        meaning=FABIO["Presentation"])
+    ANNOTATION = PermissibleValue(
+        text="ANNOTATION",
+        description="Annotation or scholarly note",
+        meaning=FABIO["Annotation"])
+
+    _defn = EnumDefinition(
+        name="PublicationType",
+        description="Types of academic and research publications",
+    )
+
+class PeerReviewStatus(EnumDefinitionImpl):
+    """
+    Status of peer review process
+    """
+    NOT_PEER_REVIEWED = PermissibleValue(
+        text="NOT_PEER_REVIEWED",
+        description="Not peer reviewed")
+    SUBMITTED = PermissibleValue(
+        text="SUBMITTED",
+        description="Submitted for review")
+    UNDER_REVIEW = PermissibleValue(
+        text="UNDER_REVIEW",
+        title="ongoing",
+        description="Currently under peer review",
+        meaning=SIO["000035"])
+    REVIEW_COMPLETE = PermissibleValue(
+        text="REVIEW_COMPLETE",
+        title="completed",
+        description="Peer review complete",
+        meaning=SIO["000034"])
+    MAJOR_REVISION = PermissibleValue(
+        text="MAJOR_REVISION",
+        description="Major revisions requested")
+    MINOR_REVISION = PermissibleValue(
+        text="MINOR_REVISION",
+        description="Minor revisions requested")
+    ACCEPTED = PermissibleValue(
+        text="ACCEPTED",
+        description="Accepted for publication")
+    ACCEPTED_WITH_REVISIONS = PermissibleValue(
+        text="ACCEPTED_WITH_REVISIONS",
+        description="Conditionally accepted pending revisions")
+    REJECTED = PermissibleValue(
+        text="REJECTED",
+        description="Rejected after review")
+    WITHDRAWN = PermissibleValue(
+        text="WITHDRAWN",
+        description="Withdrawn by authors")
+    PUBLISHED = PermissibleValue(
+        text="PUBLISHED",
+        title="publication",
+        description="Published after review",
+        meaning=IAO["0000311"])
+
+    _defn = EnumDefinition(
+        name="PeerReviewStatus",
+        description="Status of peer review process",
+    )
+
+class AcademicDegree(EnumDefinitionImpl):
+    """
+    Academic degrees and qualifications
+    """
+    BA = PermissibleValue(
+        text="BA",
+        title="Bachelor of Arts",
+        meaning=NCIT["C71345"])
+    BS = PermissibleValue(
+        text="BS",
+        description="Bachelor of Science",
+        meaning=NCIT["C71351"])
+    BSC = PermissibleValue(
+        text="BSC",
+        description="Bachelor of Science (British)",
+        meaning=NCIT["C71351"])
+    BENG = PermissibleValue(
+        text="BENG",
+        description="Bachelor of Engineering",
+        meaning=NCIT["C71347"])
+    BFA = PermissibleValue(
+        text="BFA",
+        description="Bachelor of Fine Arts",
+        meaning=NCIT["C71349"])
+    LLB = PermissibleValue(
+        text="LLB",
+        description="Bachelor of Laws",
+        meaning=NCIT["C71352"])
+    MBBS = PermissibleValue(
+        text="MBBS",
+        description="Bachelor of Medicine, Bachelor of Surgery",
+        meaning=NCIT["C39383"])
+    MA = PermissibleValue(
+        text="MA",
+        description="Master of Arts",
+        meaning=NCIT["C71364"])
+    MS = PermissibleValue(
+        text="MS",
+        description="Master of Science",
+        meaning=NCIT["C39452"])
+    MSC = PermissibleValue(
+        text="MSC",
+        description="Master of Science (British)",
+        meaning=NCIT["C39452"])
+    MBA = PermissibleValue(
+        text="MBA",
+        description="Master of Business Administration",
+        meaning=NCIT["C39449"])
+    MFA = PermissibleValue(
+        text="MFA",
+        description="Master of Fine Arts")
+    MPH = PermissibleValue(
+        text="MPH",
+        description="Master of Public Health",
+        meaning=NCIT["C39451"])
+    MENG = PermissibleValue(
+        text="MENG",
+        description="Master of Engineering",
+        meaning=NCIT["C71368"])
+    MED = PermissibleValue(
+        text="MED",
+        description="Master of Education",
+        meaning=NCIT["C71369"])
+    LLM = PermissibleValue(
+        text="LLM",
+        description="Master of Laws",
+        meaning=NCIT["C71363"])
+    MPHIL = PermissibleValue(
+        text="MPHIL",
+        description="Master of Philosophy")
+    PHD = PermissibleValue(
+        text="PHD",
+        description="Doctor of Philosophy",
+        meaning=NCIT["C39387"])
+    MD = PermissibleValue(
+        text="MD",
+        description="Doctor of Medicine",
+        meaning=NCIT["C39383"])
+    JD = PermissibleValue(
+        text="JD",
+        description="Juris Doctor",
+        meaning=NCIT["C71361"])
+    EDD = PermissibleValue(
+        text="EDD",
+        description="Doctor of Education",
+        meaning=NCIT["C71359"])
+    PSYD = PermissibleValue(
+        text="PSYD",
+        description="Doctor of Psychology")
+    DBA = PermissibleValue(
+        text="DBA",
+        description="Doctor of Business Administration")
+    DPHIL = PermissibleValue(
+        text="DPHIL",
+        description="Doctor of Philosophy (Oxford/Sussex)",
+        meaning=NCIT["C39387"])
+    SCD = PermissibleValue(
+        text="SCD",
+        description="Doctor of Science",
+        meaning=NCIT["C71379"])
+    POSTDOC = PermissibleValue(
+        text="POSTDOC",
+        description="Postdoctoral researcher")
+
+    _defn = EnumDefinition(
+        name="AcademicDegree",
+        description="Academic degrees and qualifications",
+    )
+
+class LicenseType(EnumDefinitionImpl):
+    """
+    Common software and content licenses
+    """
+    MIT = PermissibleValue(
+        text="MIT",
+        description="MIT License",
+        meaning=SPDX["MIT"])
+    APACHE_2_0 = PermissibleValue(
+        text="APACHE_2_0",
+        description="Apache License 2.0",
+        meaning=SPDX["Apache-2.0"])
+    BSD_3_CLAUSE = PermissibleValue(
+        text="BSD_3_CLAUSE",
+        description="BSD 3-Clause License",
+        meaning=SPDX["BSD-3-Clause"])
+    BSD_2_CLAUSE = PermissibleValue(
+        text="BSD_2_CLAUSE",
+        description="BSD 2-Clause License",
+        meaning=SPDX["BSD-2-Clause"])
+    ISC = PermissibleValue(
+        text="ISC",
+        description="ISC License",
+        meaning=SPDX["ISC"])
+    GPL_3_0 = PermissibleValue(
+        text="GPL_3_0",
+        description="GNU General Public License v3.0",
+        meaning=SPDX["GPL-3.0"])
+    GPL_2_0 = PermissibleValue(
+        text="GPL_2_0",
+        description="GNU General Public License v2.0",
+        meaning=SPDX["GPL-2.0"])
+    LGPL_3_0 = PermissibleValue(
+        text="LGPL_3_0",
+        description="GNU Lesser General Public License v3.0",
+        meaning=SPDX["LGPL-3.0"])
+    LGPL_2_1 = PermissibleValue(
+        text="LGPL_2_1",
+        description="GNU Lesser General Public License v2.1",
+        meaning=SPDX["LGPL-2.1"])
+    AGPL_3_0 = PermissibleValue(
+        text="AGPL_3_0",
+        description="GNU Affero General Public License v3.0",
+        meaning=SPDX["AGPL-3.0"])
+    MPL_2_0 = PermissibleValue(
+        text="MPL_2_0",
+        description="Mozilla Public License 2.0",
+        meaning=SPDX["MPL-2.0"])
+    CC_BY_4_0 = PermissibleValue(
+        text="CC_BY_4_0",
+        description="Creative Commons Attribution 4.0",
+        meaning=SPDX["CC-BY-4.0"])
+    CC_BY_SA_4_0 = PermissibleValue(
+        text="CC_BY_SA_4_0",
+        description="Creative Commons Attribution-ShareAlike 4.0",
+        meaning=SPDX["CC-BY-SA-4.0"])
+    CC_BY_NC_4_0 = PermissibleValue(
+        text="CC_BY_NC_4_0",
+        description="Creative Commons Attribution-NonCommercial 4.0",
+        meaning=SPDX["CC-BY-NC-4.0"])
+    CC_BY_NC_SA_4_0 = PermissibleValue(
+        text="CC_BY_NC_SA_4_0",
+        description="Creative Commons Attribution-NonCommercial-ShareAlike 4.0",
+        meaning=SPDX["CC-BY-NC-SA-4.0"])
+    CC_BY_ND_4_0 = PermissibleValue(
+        text="CC_BY_ND_4_0",
+        description="Creative Commons Attribution-NoDerivatives 4.0",
+        meaning=SPDX["CC-BY-ND-4.0"])
+    CC0_1_0 = PermissibleValue(
+        text="CC0_1_0",
+        description="Creative Commons Zero v1.0 Universal",
+        meaning=SPDX["CC0-1.0"])
+    UNLICENSE = PermissibleValue(
+        text="UNLICENSE",
+        description="The Unlicense",
+        meaning=SPDX["Unlicense"])
+    PROPRIETARY = PermissibleValue(
+        text="PROPRIETARY",
+        description="Proprietary/All rights reserved")
+    CUSTOM = PermissibleValue(
+        text="CUSTOM",
+        description="Custom license terms")
+
+    _defn = EnumDefinition(
+        name="LicenseType",
+        description="Common software and content licenses",
+    )
+
+class ResearchField(EnumDefinitionImpl):
+    """
+    Major research fields and disciplines
+    """
+    PHYSICS = PermissibleValue(
+        text="PHYSICS",
+        description="Physics",
+        meaning=NCIT["C16989"])
+    CHEMISTRY = PermissibleValue(
+        text="CHEMISTRY",
+        description="Chemistry",
+        meaning=NCIT["C16414"])
+    BIOLOGY = PermissibleValue(
+        text="BIOLOGY",
+        description="Biology",
+        meaning=NCIT["C16345"])
+    MATHEMATICS = PermissibleValue(
+        text="MATHEMATICS",
+        description="Mathematics",
+        meaning=NCIT["C16825"])
+    EARTH_SCIENCES = PermissibleValue(
+        text="EARTH_SCIENCES",
+        description="Earth sciences and geology")
+    ASTRONOMY = PermissibleValue(
+        text="ASTRONOMY",
+        description="Astronomy and astrophysics")
+    MEDICINE = PermissibleValue(
+        text="MEDICINE",
+        description="Medicine and health sciences",
+        meaning=NCIT["C16833"])
+    NEUROSCIENCE = PermissibleValue(
+        text="NEUROSCIENCE",
+        title="Neuroscience and Neuropsychiatric Research",
+        description="Neuroscience",
+        meaning=NCIT["C15817"])
+    GENETICS = PermissibleValue(
+        text="GENETICS",
+        description="Genetics and genomics",
+        meaning=NCIT["C16624"])
+    ECOLOGY = PermissibleValue(
+        text="ECOLOGY",
+        title="Ecology",
+        description="Ecology and environmental science",
+        meaning=NCIT["C16526"])
+    MICROBIOLOGY = PermissibleValue(
+        text="MICROBIOLOGY",
+        title="Microbiology",
+        meaning=NCIT["C16851"])
+    BIOCHEMISTRY = PermissibleValue(
+        text="BIOCHEMISTRY",
+        title="Biochemistry",
+        meaning=NCIT["C16337"])
+    COMPUTER_SCIENCE = PermissibleValue(
+        text="COMPUTER_SCIENCE",
+        description="Computer science")
+    ENGINEERING = PermissibleValue(
+        text="ENGINEERING",
+        description="Engineering")
+    MATERIALS_SCIENCE = PermissibleValue(
+        text="MATERIALS_SCIENCE",
+        description="Materials science")
+    ARTIFICIAL_INTELLIGENCE = PermissibleValue(
+        text="ARTIFICIAL_INTELLIGENCE",
+        description="Artificial intelligence and machine learning")
+    ROBOTICS = PermissibleValue(
+        text="ROBOTICS",
+        description="Robotics")
+    PSYCHOLOGY = PermissibleValue(
+        text="PSYCHOLOGY",
+        description="Psychology")
+    SOCIOLOGY = PermissibleValue(
+        text="SOCIOLOGY",
+        description="Sociology")
+    ECONOMICS = PermissibleValue(
+        text="ECONOMICS",
+        description="Economics")
+    POLITICAL_SCIENCE = PermissibleValue(
+        text="POLITICAL_SCIENCE",
+        description="Political science")
+    ANTHROPOLOGY = PermissibleValue(
+        text="ANTHROPOLOGY",
+        description="Anthropology")
+    EDUCATION = PermissibleValue(
+        text="EDUCATION",
+        description="Education")
+    HISTORY = PermissibleValue(
+        text="HISTORY",
+        description="History")
+    PHILOSOPHY = PermissibleValue(
+        text="PHILOSOPHY",
+        description="Philosophy")
+    LITERATURE = PermissibleValue(
+        text="LITERATURE",
+        description="Literature")
+    LINGUISTICS = PermissibleValue(
+        text="LINGUISTICS",
+        description="Linguistics")
+    ART = PermissibleValue(
+        text="ART",
+        description="Art and art history")
+    MUSIC = PermissibleValue(
+        text="MUSIC",
+        description="Music and musicology")
+    BIOINFORMATICS = PermissibleValue(
+        text="BIOINFORMATICS",
+        description="Bioinformatics")
+    COMPUTATIONAL_BIOLOGY = PermissibleValue(
+        text="COMPUTATIONAL_BIOLOGY",
+        description="Computational biology")
+    DATA_SCIENCE = PermissibleValue(
+        text="DATA_SCIENCE",
+        description="Data science")
+    COGNITIVE_SCIENCE = PermissibleValue(
+        text="COGNITIVE_SCIENCE",
+        description="Cognitive science")
+    ENVIRONMENTAL_SCIENCE = PermissibleValue(
+        text="ENVIRONMENTAL_SCIENCE",
+        description="Environmental science")
+    PUBLIC_HEALTH = PermissibleValue(
+        text="PUBLIC_HEALTH",
+        description="Public health")
+
+    _defn = EnumDefinition(
+        name="ResearchField",
+        description="Major research fields and disciplines",
+    )
+
+class FundingType(EnumDefinitionImpl):
+    """
+    Types of research funding
+    """
+    GRANT = PermissibleValue(
+        text="GRANT",
+        description="Research grant")
+    CONTRACT = PermissibleValue(
+        text="CONTRACT",
+        description="Research contract")
+    FELLOWSHIP = PermissibleValue(
+        text="FELLOWSHIP",
+        title="Fellowship Program",
+        description="Fellowship or scholarship",
+        meaning=NCIT["C20003"])
+    AWARD = PermissibleValue(
+        text="AWARD",
+        description="Prize or award")
+    GIFT = PermissibleValue(
+        text="GIFT",
+        description="Gift or donation")
+    INTERNAL = PermissibleValue(
+        text="INTERNAL",
+        description="Internal/institutional funding")
+    INDUSTRY = PermissibleValue(
+        text="INDUSTRY",
+        description="Industry sponsorship")
+    GOVERNMENT = PermissibleValue(
+        text="GOVERNMENT",
+        description="Government funding")
+    FOUNDATION = PermissibleValue(
+        text="FOUNDATION",
+        description="Foundation or charity funding")
+    CROWDFUNDING = PermissibleValue(
+        text="CROWDFUNDING",
+        description="Crowdfunded research")
+
+    _defn = EnumDefinition(
+        name="FundingType",
+        description="Types of research funding",
+    )
+
+class ManuscriptSection(EnumDefinitionImpl):
+    """
+    Sections of a scientific manuscript or publication
+    """
+    TITLE = PermissibleValue(
+        text="TITLE",
+        title="document title",
+        meaning=IAO["0000305"])
+    AUTHORS = PermissibleValue(
+        text="AUTHORS",
+        title="author list",
+        description="Authors and affiliations",
+        meaning=IAO["0000321"])
+    ABSTRACT = PermissibleValue(
+        text="ABSTRACT",
+        description="Abstract",
+        meaning=IAO["0000315"])
+    KEYWORDS = PermissibleValue(
+        text="KEYWORDS",
+        title="keywords section",
+        meaning=IAO["0000630"])
+    INTRODUCTION = PermissibleValue(
+        text="INTRODUCTION",
+        title="introduction to a publication about an investigation",
+        description="Introduction/Background",
+        meaning=IAO["0000316"])
+    LITERATURE_REVIEW = PermissibleValue(
+        text="LITERATURE_REVIEW",
+        title="related work section",
+        description="Literature review",
+        meaning=IAO["0000639"])
+    METHODS = PermissibleValue(
+        text="METHODS",
+        title="methods section",
+        description="Methods/Materials and Methods",
+        meaning=IAO["0000317"])
+    RESULTS = PermissibleValue(
+        text="RESULTS",
+        title="results section",
+        meaning=IAO["0000318"])
+    DISCUSSION = PermissibleValue(
+        text="DISCUSSION",
+        title="discussion section of a publication about an investigation",
+        meaning=IAO["0000319"])
+    CONCLUSIONS = PermissibleValue(
+        text="CONCLUSIONS",
+        title="conclusion section",
+        description="Conclusions",
+        meaning=IAO["0000615"])
+    RESULTS_AND_DISCUSSION = PermissibleValue(
+        text="RESULTS_AND_DISCUSSION",
+        description="Combined Results and Discussion")
+    ACKNOWLEDGMENTS = PermissibleValue(
+        text="ACKNOWLEDGMENTS",
+        title="acknowledgements section",
+        description="Acknowledgments",
+        meaning=IAO["0000324"])
+    REFERENCES = PermissibleValue(
+        text="REFERENCES",
+        title="references section",
+        description="References/Bibliography",
+        meaning=IAO["0000320"])
+    APPENDICES = PermissibleValue(
+        text="APPENDICES",
+        title="supplementary material to a document",
+        description="Appendices",
+        meaning=IAO["0000326"])
+    SUPPLEMENTARY_MATERIAL = PermissibleValue(
+        text="SUPPLEMENTARY_MATERIAL",
+        title="supplementary material to a document",
+        description="Supplementary material",
+        meaning=IAO["0000326"])
+    DATA_AVAILABILITY = PermissibleValue(
+        text="DATA_AVAILABILITY",
+        title="availability section",
+        description="Data availability statement",
+        meaning=IAO["0000611"])
+    CODE_AVAILABILITY = PermissibleValue(
+        text="CODE_AVAILABILITY",
+        title="availability section",
+        description="Code availability statement",
+        meaning=IAO["0000611"])
+    AUTHOR_CONTRIBUTIONS = PermissibleValue(
+        text="AUTHOR_CONTRIBUTIONS",
+        title="author contributions section",
+        description="Author contributions",
+        meaning=IAO["0000323"])
+    CONFLICT_OF_INTEREST = PermissibleValue(
+        text="CONFLICT_OF_INTEREST",
+        title="conflict of interest section",
+        description="Conflict of interest statement",
+        meaning=IAO["0000616"])
+    FUNDING = PermissibleValue(
+        text="FUNDING",
+        title="funding source declaration section",
+        description="Funding information",
+        meaning=IAO["0000623"])
+    ETHICS_STATEMENT = PermissibleValue(
+        text="ETHICS_STATEMENT",
+        title="ethical approval section",
+        description="Ethics approval statement",
+        meaning=IAO["0000620"])
+    SYSTEMATIC_REVIEW_METHODS = PermissibleValue(
+        text="SYSTEMATIC_REVIEW_METHODS",
+        description="Systematic review methodology (PRISMA)")
+    META_ANALYSIS = PermissibleValue(
+        text="META_ANALYSIS",
+        description="Meta-analysis section")
+    STUDY_PROTOCOL = PermissibleValue(
+        text="STUDY_PROTOCOL",
+        description="Study protocol")
+    CONSORT_FLOW_DIAGRAM = PermissibleValue(
+        text="CONSORT_FLOW_DIAGRAM",
+        description="CONSORT flow diagram")
+    HIGHLIGHTS = PermissibleValue(
+        text="HIGHLIGHTS",
+        description="Highlights/Key points")
+    GRAPHICAL_ABSTRACT = PermissibleValue(
+        text="GRAPHICAL_ABSTRACT",
+        description="Graphical abstract",
+        meaning=IAO["0000707"])
+    LAY_SUMMARY = PermissibleValue(
+        text="LAY_SUMMARY",
+        title="author summary section",
+        description="Lay summary/Plain language summary",
+        meaning=IAO["0000609"])
+    BOX = PermissibleValue(
+        text="BOX",
+        description="Box/Sidebar with supplementary information")
+    CASE_PRESENTATION = PermissibleValue(
+        text="CASE_PRESENTATION",
+        title="case report section",
+        description="Case presentation (for case reports)",
+        meaning=IAO["0000613"])
+    LIMITATIONS = PermissibleValue(
+        text="LIMITATIONS",
+        title="study limitations section",
+        description="Limitations section",
+        meaning=IAO["0000631"])
+    FUTURE_DIRECTIONS = PermissibleValue(
+        text="FUTURE_DIRECTIONS",
+        title="future directions section",
+        description="Future directions/Future work",
+        meaning=IAO["0000625"])
+    GLOSSARY = PermissibleValue(
+        text="GLOSSARY",
+        description="Glossary of terms")
+    ABBREVIATIONS = PermissibleValue(
+        text="ABBREVIATIONS",
+        title="abbreviations section",
+        description="List of abbreviations",
+        meaning=IAO["0000606"])
+    OTHER_MAIN_TEXT = PermissibleValue(
+        text="OTHER_MAIN_TEXT",
+        description="Other main text section")
+    OTHER_SUPPLEMENTARY = PermissibleValue(
+        text="OTHER_SUPPLEMENTARY",
+        description="Other supplementary section")
+
+    _defn = EnumDefinition(
+        name="ManuscriptSection",
+        description="Sections of a scientific manuscript or publication",
+    )
+
+class ResearchRole(EnumDefinitionImpl):
+    """
+    Roles in research and authorship
+    """
+    CONCEPTUALIZATION = PermissibleValue(
+        text="CONCEPTUALIZATION",
+        description="Ideas; formulation of research goals",
+        meaning=CREDIT["conceptualization"])
+    DATA_CURATION = PermissibleValue(
+        text="DATA_CURATION",
+        description="Data management and annotation",
+        meaning=CREDIT["data-curation"])
+    FORMAL_ANALYSIS = PermissibleValue(
+        text="FORMAL_ANALYSIS",
+        description="Statistical and mathematical analysis",
+        meaning=CREDIT["formal-analysis"])
+    FUNDING_ACQUISITION = PermissibleValue(
+        text="FUNDING_ACQUISITION",
+        description="Acquisition of financial support",
+        meaning=CREDIT["funding-acquisition"])
+    INVESTIGATION = PermissibleValue(
+        text="INVESTIGATION",
+        description="Conducting research and data collection",
+        meaning=CREDIT["investigation"])
+    METHODOLOGY = PermissibleValue(
+        text="METHODOLOGY",
+        description="Development of methodology",
+        meaning=CREDIT["methodology"])
+    PROJECT_ADMINISTRATION = PermissibleValue(
+        text="PROJECT_ADMINISTRATION",
+        description="Project management and coordination",
+        meaning=CREDIT["project-administration"])
+    RESOURCES = PermissibleValue(
+        text="RESOURCES",
+        description="Provision of materials and tools",
+        meaning=CREDIT["resources"])
+    SOFTWARE = PermissibleValue(
+        text="SOFTWARE",
+        description="Programming and software development",
+        meaning=CREDIT["software"])
+    SUPERVISION = PermissibleValue(
+        text="SUPERVISION",
+        description="Oversight and mentorship",
+        meaning=CREDIT["supervision"])
+    VALIDATION = PermissibleValue(
+        text="VALIDATION",
+        description="Verification of results",
+        meaning=CREDIT["validation"])
+    VISUALIZATION = PermissibleValue(
+        text="VISUALIZATION",
+        description="Data presentation and visualization",
+        meaning=CREDIT["visualization"])
+    WRITING_ORIGINAL = PermissibleValue(
+        text="WRITING_ORIGINAL",
+        description="Writing - original draft",
+        meaning=CREDIT["writing-original-draft"])
+    WRITING_REVIEW = PermissibleValue(
+        text="WRITING_REVIEW",
+        description="Writing - review and editing",
+        meaning=CREDIT["writing-review-editing"])
+    FIRST_AUTHOR = PermissibleValue(
+        text="FIRST_AUTHOR",
+        description="First/lead author",
+        meaning=MS["1002034"])
+    CORRESPONDING_AUTHOR = PermissibleValue(
+        text="CORRESPONDING_AUTHOR",
+        title="Corresponding Author indicator",
+        meaning=NCIT["C164481"])
+    SENIOR_AUTHOR = PermissibleValue(
+        text="SENIOR_AUTHOR",
+        description="Senior/last author")
+    CO_AUTHOR = PermissibleValue(
+        text="CO_AUTHOR",
+        title="Author",
+        description="Co-author",
+        meaning=NCIT["C42781"])
+    PRINCIPAL_INVESTIGATOR = PermissibleValue(
+        text="PRINCIPAL_INVESTIGATOR",
+        description="Principal investigator (PI)",
+        meaning=NCIT["C19924"])
+    CO_INVESTIGATOR = PermissibleValue(
+        text="CO_INVESTIGATOR",
+        title="Co-Investigator",
+        meaning=NCIT["C51812"])
+    COLLABORATOR = PermissibleValue(
+        text="COLLABORATOR",
+        title="Collaborator",
+        meaning=NCIT["C84336"])
+
+    _defn = EnumDefinition(
+        name="ResearchRole",
+        description="Roles in research and authorship",
+    )
+
+class OpenAccessType(EnumDefinitionImpl):
+    """
+    Types of open access publishing
+    """
+    GOLD = PermissibleValue(
+        text="GOLD",
+        description="Gold open access (published OA)")
+    GREEN = PermissibleValue(
+        text="GREEN",
+        description="Green open access (self-archived)")
+    HYBRID = PermissibleValue(
+        text="HYBRID",
+        description="Hybrid journal with OA option")
+    DIAMOND = PermissibleValue(
+        text="DIAMOND",
+        description="Diamond/platinum OA (no fees)")
+    BRONZE = PermissibleValue(
+        text="BRONZE",
+        description="Free to read but no license")
+    CLOSED = PermissibleValue(
+        text="CLOSED",
+        description="Closed access/subscription only")
+    EMBARGO = PermissibleValue(
+        text="EMBARGO",
+        description="Under embargo period")
+
+    _defn = EnumDefinition(
+        name="OpenAccessType",
+        description="Types of open access publishing",
+    )
+
+class CitationStyle(EnumDefinitionImpl):
+    """
+    Common citation and reference styles
+    """
+    APA = PermissibleValue(
+        text="APA",
+        description="American Psychological Association")
+    MLA = PermissibleValue(
+        text="MLA",
+        description="Modern Language Association")
+    CHICAGO = PermissibleValue(
+        text="CHICAGO",
+        description="Chicago Manual of Style")
+    HARVARD = PermissibleValue(
+        text="HARVARD",
+        description="Harvard referencing")
+    VANCOUVER = PermissibleValue(
+        text="VANCOUVER",
+        description="Vancouver style (biomedical)")
+    IEEE = PermissibleValue(
+        text="IEEE",
+        description="Institute of Electrical and Electronics Engineers")
+    ACS = PermissibleValue(
+        text="ACS",
+        description="American Chemical Society")
+    AMA = PermissibleValue(
+        text="AMA",
+        description="American Medical Association")
+    NATURE = PermissibleValue(
+        text="NATURE",
+        description="Nature style")
+    SCIENCE = PermissibleValue(
+        text="SCIENCE",
+        description="Science style")
+    CELL = PermissibleValue(
+        text="CELL",
+        description="Cell Press style")
+
+    _defn = EnumDefinition(
+        name="CitationStyle",
+        description="Common citation and reference styles",
+    )
+
+class EnergySource(EnumDefinitionImpl):
+    """
+    Types of energy sources and generation methods
+    """
+    SOLAR = PermissibleValue(
+        text="SOLAR",
+        title="Solar energy (photovoltaic and thermal)",
+        meaning=ENVO["01001862"])
+    WIND = PermissibleValue(
+        text="WIND",
+        title="Wind power")
+    HYDROELECTRIC = PermissibleValue(
+        text="HYDROELECTRIC",
+        title="Hydroelectric power")
+    GEOTHERMAL = PermissibleValue(
+        text="GEOTHERMAL",
+        title="Geothermal energy",
+        meaning=ENVO["2000034"])
+    BIOMASS = PermissibleValue(
+        text="BIOMASS",
+        title="Biomass and bioenergy")
+    BIOFUEL = PermissibleValue(
+        text="BIOFUEL",
+        title="Biofuels (ethanol, biodiesel)")
+    TIDAL = PermissibleValue(
+        text="TIDAL",
+        title="Tidal and wave energy")
+    HYDROGEN = PermissibleValue(
+        text="HYDROGEN",
+        title="Hydrogen fuel",
+        meaning=CHEBI["18276"])
+    COAL = PermissibleValue(
+        text="COAL",
+        title="Coal",
+        meaning=ENVO["02000091"])
+    NATURAL_GAS = PermissibleValue(
+        text="NATURAL_GAS",
+        title="Natural gas",
+        meaning=ENVO["01000552"])
+    PETROLEUM = PermissibleValue(
+        text="PETROLEUM",
+        title="Petroleum/oil",
+        meaning=ENVO["00002984"])
+    DIESEL = PermissibleValue(
+        text="DIESEL",
+        title="Diesel fuel",
+        meaning=ENVO["03510006"])
+    GASOLINE = PermissibleValue(
+        text="GASOLINE",
+        title="Gasoline/petrol")
+    PROPANE = PermissibleValue(
+        text="PROPANE",
+        title="Propane/LPG",
+        meaning=ENVO["01000553"])
+    NUCLEAR_FISSION = PermissibleValue(
+        text="NUCLEAR_FISSION",
+        title="Nuclear fission")
+    NUCLEAR_FUSION = PermissibleValue(
+        text="NUCLEAR_FUSION",
+        title="Nuclear fusion (experimental)")
+    GRID_MIX = PermissibleValue(
+        text="GRID_MIX",
+        title="Grid electricity (mixed sources)")
+    BATTERY_STORAGE = PermissibleValue(
+        text="BATTERY_STORAGE",
+        description="Battery storage systems")
+
+    _defn = EnumDefinition(
+        name="EnergySource",
+        description="Types of energy sources and generation methods",
+    )
+
+class EnergyUnit(EnumDefinitionImpl):
+    """
+    Units for measuring energy
+    """
+    JOULE = PermissibleValue(
+        text="JOULE",
+        description="Joule (J)",
+        meaning=QUDT["J"])
+    KILOJOULE = PermissibleValue(
+        text="KILOJOULE",
+        description="Kilojoule (kJ)",
+        meaning=QUDT["KiloJ"])
+    MEGAJOULE = PermissibleValue(
+        text="MEGAJOULE",
+        description="Megajoule (MJ)",
+        meaning=QUDT["MegaJ"])
+    GIGAJOULE = PermissibleValue(
+        text="GIGAJOULE",
+        description="Gigajoule (GJ)",
+        meaning=QUDT["GigaJ"])
+    WATT_HOUR = PermissibleValue(
+        text="WATT_HOUR",
+        description="Watt-hour (Wh)",
+        meaning=QUDT["W-HR"])
+    KILOWATT_HOUR = PermissibleValue(
+        text="KILOWATT_HOUR",
+        description="Kilowatt-hour (kWh)",
+        meaning=QUDT["KiloW-HR"])
+    MEGAWATT_HOUR = PermissibleValue(
+        text="MEGAWATT_HOUR",
+        description="Megawatt-hour (MWh)",
+        meaning=QUDT["MegaW-HR"])
+    GIGAWATT_HOUR = PermissibleValue(
+        text="GIGAWATT_HOUR",
+        description="Gigawatt-hour (GWh)",
+        meaning=QUDT["GigaW-HR"])
+    TERAWATT_HOUR = PermissibleValue(
+        text="TERAWATT_HOUR",
+        description="Terawatt-hour (TWh)",
+        meaning=QUDT["TeraW-HR"])
+    CALORIE = PermissibleValue(
+        text="CALORIE",
+        description="Calorie (cal)",
+        meaning=QUDT["CAL"])
+    KILOCALORIE = PermissibleValue(
+        text="KILOCALORIE",
+        description="Kilocalorie (kcal)",
+        meaning=QUDT["KiloCAL"])
+    BTU = PermissibleValue(
+        text="BTU",
+        description="British thermal unit",
+        meaning=QUDT["BTU_IT"])
+    THERM = PermissibleValue(
+        text="THERM",
+        description="Therm",
+        meaning=QUDT["THM_US"])
+    ELECTRON_VOLT = PermissibleValue(
+        text="ELECTRON_VOLT",
+        description="Electron volt (eV)",
+        meaning=QUDT["EV"])
+    TOE = PermissibleValue(
+        text="TOE",
+        description="Tonne of oil equivalent",
+        meaning=QUDT["TOE"])
+    TCE = PermissibleValue(
+        text="TCE",
+        description="Tonne of coal equivalent")
+
+    _defn = EnumDefinition(
+        name="EnergyUnit",
+        description="Units for measuring energy",
+    )
+
+class PowerUnit(EnumDefinitionImpl):
+    """
+    Units for measuring power (energy per time)
+    """
+    WATT = PermissibleValue(
+        text="WATT",
+        description="Watt (W)",
+        meaning=QUDT["W"])
+    KILOWATT = PermissibleValue(
+        text="KILOWATT",
+        description="Kilowatt (kW)",
+        meaning=QUDT["KiloW"])
+    MEGAWATT = PermissibleValue(
+        text="MEGAWATT",
+        description="Megawatt (MW)",
+        meaning=QUDT["MegaW"])
+    GIGAWATT = PermissibleValue(
+        text="GIGAWATT",
+        description="Gigawatt (GW)",
+        meaning=QUDT["GigaW"])
+    TERAWATT = PermissibleValue(
+        text="TERAWATT",
+        description="Terawatt (TW)",
+        meaning=QUDT["TeraW"])
+    HORSEPOWER = PermissibleValue(
+        text="HORSEPOWER",
+        description="Horsepower",
+        meaning=QUDT["HP"])
+    BTU_PER_HOUR = PermissibleValue(
+        text="BTU_PER_HOUR",
+        description="BTU per hour")
+
+    _defn = EnumDefinition(
+        name="PowerUnit",
+        description="Units for measuring power (energy per time)",
+    )
+
+class EnergyEfficiencyRating(EnumDefinitionImpl):
+    """
+    Energy efficiency ratings and standards
+    """
+    A_PLUS_PLUS_PLUS = PermissibleValue(
+        text="A_PLUS_PLUS_PLUS",
+        description="A+++ (highest efficiency)")
+    A_PLUS_PLUS = PermissibleValue(
+        text="A_PLUS_PLUS",
+        description="A++")
+    A_PLUS = PermissibleValue(
+        text="A_PLUS",
+        description="A+")
+    A = PermissibleValue(
+        text="A",
+        description="A")
+    B = PermissibleValue(
+        text="B",
+        description="B")
+    C = PermissibleValue(
+        text="C",
+        description="C")
+    D = PermissibleValue(
+        text="D",
+        description="D")
+    E = PermissibleValue(
+        text="E",
+        description="E")
+    F = PermissibleValue(
+        text="F",
+        description="F")
+    G = PermissibleValue(
+        text="G",
+        description="G (lowest efficiency)")
+    ENERGY_STAR = PermissibleValue(
+        text="ENERGY_STAR",
+        description="Energy Star certified")
+    ENERGY_STAR_MOST_EFFICIENT = PermissibleValue(
+        text="ENERGY_STAR_MOST_EFFICIENT",
+        description="Energy Star Most Efficient")
+
+    _defn = EnumDefinition(
+        name="EnergyEfficiencyRating",
+        description="Energy efficiency ratings and standards",
+    )
+
+class BuildingEnergyStandard(EnumDefinitionImpl):
+    """
+    Building energy efficiency standards and certifications
+    """
+    PASSIVE_HOUSE = PermissibleValue(
+        text="PASSIVE_HOUSE",
+        description="Passive House (Passivhaus) standard")
+    LEED_PLATINUM = PermissibleValue(
+        text="LEED_PLATINUM",
+        description="LEED Platinum certification")
+    LEED_GOLD = PermissibleValue(
+        text="LEED_GOLD",
+        description="LEED Gold certification")
+    LEED_SILVER = PermissibleValue(
+        text="LEED_SILVER",
+        description="LEED Silver certification")
+    LEED_CERTIFIED = PermissibleValue(
+        text="LEED_CERTIFIED",
+        description="LEED Certified")
+    BREEAM_OUTSTANDING = PermissibleValue(
+        text="BREEAM_OUTSTANDING",
+        description="BREEAM Outstanding")
+    BREEAM_EXCELLENT = PermissibleValue(
+        text="BREEAM_EXCELLENT",
+        description="BREEAM Excellent")
+    BREEAM_VERY_GOOD = PermissibleValue(
+        text="BREEAM_VERY_GOOD",
+        description="BREEAM Very Good")
+    BREEAM_GOOD = PermissibleValue(
+        text="BREEAM_GOOD",
+        description="BREEAM Good")
+    BREEAM_PASS = PermissibleValue(
+        text="BREEAM_PASS",
+        description="BREEAM Pass")
+    NET_ZERO = PermissibleValue(
+        text="NET_ZERO",
+        description="Net Zero Energy Building")
+    ENERGY_POSITIVE = PermissibleValue(
+        text="ENERGY_POSITIVE",
+        description="Energy Positive Building")
+    ZERO_CARBON = PermissibleValue(
+        text="ZERO_CARBON",
+        description="Zero Carbon Building")
+
+    _defn = EnumDefinition(
+        name="BuildingEnergyStandard",
+        description="Building energy efficiency standards and certifications",
+    )
+
+class GridType(EnumDefinitionImpl):
+    """
+    Types of electrical grid systems
+    """
+    MAIN_GRID = PermissibleValue(
+        text="MAIN_GRID",
+        description="Main utility grid")
+    MICROGRID = PermissibleValue(
+        text="MICROGRID",
+        description="Microgrid")
+    OFF_GRID = PermissibleValue(
+        text="OFF_GRID",
+        description="Off-grid/standalone")
+    SMART_GRID = PermissibleValue(
+        text="SMART_GRID",
+        description="Smart grid")
+    MINI_GRID = PermissibleValue(
+        text="MINI_GRID",
+        description="Mini-grid")
+    VIRTUAL_POWER_PLANT = PermissibleValue(
+        text="VIRTUAL_POWER_PLANT",
+        description="Virtual power plant")
+
+    _defn = EnumDefinition(
+        name="GridType",
+        description="Types of electrical grid systems",
+    )
+
+class EnergyStorageType(EnumDefinitionImpl):
+    """
+    Types of energy storage systems
+    """
+    LITHIUM_ION_BATTERY = PermissibleValue(
+        text="LITHIUM_ION_BATTERY",
+        description="Lithium-ion battery")
+    LEAD_ACID_BATTERY = PermissibleValue(
+        text="LEAD_ACID_BATTERY",
+        description="Lead-acid battery")
+    FLOW_BATTERY = PermissibleValue(
+        text="FLOW_BATTERY",
+        description="Flow battery (e.g., vanadium redox)")
+    SOLID_STATE_BATTERY = PermissibleValue(
+        text="SOLID_STATE_BATTERY",
+        description="Solid-state battery")
+    SODIUM_ION_BATTERY = PermissibleValue(
+        text="SODIUM_ION_BATTERY",
+        description="Sodium-ion battery")
+    PUMPED_HYDRO = PermissibleValue(
+        text="PUMPED_HYDRO",
+        description="Pumped hydroelectric storage")
+    COMPRESSED_AIR = PermissibleValue(
+        text="COMPRESSED_AIR",
+        description="Compressed air energy storage (CAES)")
+    FLYWHEEL = PermissibleValue(
+        text="FLYWHEEL",
+        description="Flywheel energy storage")
+    GRAVITY_STORAGE = PermissibleValue(
+        text="GRAVITY_STORAGE",
+        description="Gravity-based storage")
+    MOLTEN_SALT = PermissibleValue(
+        text="MOLTEN_SALT",
+        description="Molten salt thermal storage")
+    ICE_STORAGE = PermissibleValue(
+        text="ICE_STORAGE",
+        description="Ice thermal storage")
+    PHASE_CHANGE = PermissibleValue(
+        text="PHASE_CHANGE",
+        description="Phase change materials")
+    HYDROGEN_STORAGE = PermissibleValue(
+        text="HYDROGEN_STORAGE",
+        description="Hydrogen storage")
+    SYNTHETIC_FUEL = PermissibleValue(
+        text="SYNTHETIC_FUEL",
+        description="Synthetic fuel storage")
+    SUPERCAPACITOR = PermissibleValue(
+        text="SUPERCAPACITOR",
+        description="Supercapacitor")
+    SUPERCONDUCTING = PermissibleValue(
+        text="SUPERCONDUCTING",
+        description="Superconducting magnetic energy storage (SMES)")
+
+    _defn = EnumDefinition(
+        name="EnergyStorageType",
+        description="Types of energy storage systems",
+    )
+
+class EmissionScope(EnumDefinitionImpl):
+    """
+    Greenhouse gas emission scopes (GHG Protocol)
+    """
+    SCOPE_1 = PermissibleValue(
+        text="SCOPE_1",
+        description="Direct emissions from owned or controlled sources")
+    SCOPE_2 = PermissibleValue(
+        text="SCOPE_2",
+        description="Indirect emissions from purchased energy")
+    SCOPE_3 = PermissibleValue(
+        text="SCOPE_3",
+        description="All other indirect emissions in value chain")
+    SCOPE_3_UPSTREAM = PermissibleValue(
+        text="SCOPE_3_UPSTREAM",
+        description="Upstream Scope 3 emissions")
+    SCOPE_3_DOWNSTREAM = PermissibleValue(
+        text="SCOPE_3_DOWNSTREAM",
+        description="Downstream Scope 3 emissions")
+
+    _defn = EnumDefinition(
+        name="EmissionScope",
+        description="Greenhouse gas emission scopes (GHG Protocol)",
+    )
+
+class CarbonIntensity(EnumDefinitionImpl):
+    """
+    Carbon intensity levels for energy sources
+    """
+    ZERO_CARBON = PermissibleValue(
+        text="ZERO_CARBON",
+        description="Zero carbon emissions")
+    VERY_LOW_CARBON = PermissibleValue(
+        text="VERY_LOW_CARBON",
+        description="Very low carbon (< 50 gCO2/kWh)")
+    LOW_CARBON = PermissibleValue(
+        text="LOW_CARBON",
+        description="Low carbon (50-200 gCO2/kWh)")
+    MEDIUM_CARBON = PermissibleValue(
+        text="MEDIUM_CARBON",
+        description="Medium carbon (200-500 gCO2/kWh)")
+    HIGH_CARBON = PermissibleValue(
+        text="HIGH_CARBON",
+        description="High carbon (500-1000 gCO2/kWh)")
+    VERY_HIGH_CARBON = PermissibleValue(
+        text="VERY_HIGH_CARBON",
+        description="Very high carbon (> 1000 gCO2/kWh)")
+
+    _defn = EnumDefinition(
+        name="CarbonIntensity",
+        description="Carbon intensity levels for energy sources",
+    )
+
+class ElectricityMarket(EnumDefinitionImpl):
+    """
+    Types of electricity markets and pricing
+    """
+    SPOT_MARKET = PermissibleValue(
+        text="SPOT_MARKET",
+        description="Spot market/real-time pricing")
+    DAY_AHEAD = PermissibleValue(
+        text="DAY_AHEAD",
+        description="Day-ahead market")
+    INTRADAY = PermissibleValue(
+        text="INTRADAY",
+        description="Intraday market")
+    FUTURES = PermissibleValue(
+        text="FUTURES",
+        description="Futures market")
+    CAPACITY_MARKET = PermissibleValue(
+        text="CAPACITY_MARKET",
+        description="Capacity market")
+    ANCILLARY_SERVICES = PermissibleValue(
+        text="ANCILLARY_SERVICES",
+        description="Ancillary services market")
+    BILATERAL = PermissibleValue(
+        text="BILATERAL",
+        description="Bilateral contracts")
+    FEED_IN_TARIFF = PermissibleValue(
+        text="FEED_IN_TARIFF",
+        description="Feed-in tariff")
+    NET_METERING = PermissibleValue(
+        text="NET_METERING",
+        description="Net metering")
+    POWER_PURCHASE_AGREEMENT = PermissibleValue(
+        text="POWER_PURCHASE_AGREEMENT",
+        description="Power purchase agreement (PPA)")
+
+    _defn = EnumDefinition(
+        name="ElectricityMarket",
+        description="Types of electricity markets and pricing",
+    )
+
+class FossilFuelTypeEnum(EnumDefinitionImpl):
+    """
+    Types of fossil fuels used for energy generation
+    """
+    COAL = PermissibleValue(
+        text="COAL",
+        title="Coal",
+        description="Coal",
+        meaning=ENVO["02000091"])
+    NATURAL_GAS = PermissibleValue(
+        text="NATURAL_GAS",
+        title="Natural Gas",
+        description="Natural gas",
+        meaning=ENVO["01000552"])
+    PETROLEUM = PermissibleValue(
+        text="PETROLEUM",
+        title="Petroleum",
+        description="Petroleum",
+        meaning=ENVO["00002984"])
+
+    _defn = EnumDefinition(
+        name="FossilFuelTypeEnum",
+        description="Types of fossil fuels used for energy generation",
+    )
+
+class MiningType(EnumDefinitionImpl):
+    """
+    Types of mining operations
+    """
+    OPEN_PIT = PermissibleValue(
+        text="OPEN_PIT",
+        title="quarry",
+        description="Open-pit mining",
+        meaning=ENVO["00000284"])
+    STRIP_MINING = PermissibleValue(
+        text="STRIP_MINING",
+        title="opencast mining",
+        description="Strip mining",
+        meaning=ENVO["01001441"])
+    MOUNTAINTOP_REMOVAL = PermissibleValue(
+        text="MOUNTAINTOP_REMOVAL",
+        description="Mountaintop removal mining")
+    QUARRYING = PermissibleValue(
+        text="QUARRYING",
+        title="quarry",
+        description="Quarrying",
+        meaning=ENVO["00000284"])
+    PLACER = PermissibleValue(
+        text="PLACER",
+        title="alluvial deposit",
+        description="Placer mining",
+        meaning=ENVO["01001204"])
+    DREDGING = PermissibleValue(
+        text="DREDGING",
+        description="Dredging")
+    SHAFT_MINING = PermissibleValue(
+        text="SHAFT_MINING",
+        description="Shaft mining")
+    DRIFT_MINING = PermissibleValue(
+        text="DRIFT_MINING",
+        description="Drift mining")
+    SLOPE_MINING = PermissibleValue(
+        text="SLOPE_MINING",
+        description="Slope mining")
+    ROOM_AND_PILLAR = PermissibleValue(
+        text="ROOM_AND_PILLAR",
+        description="Room and pillar mining")
+    LONGWALL = PermissibleValue(
+        text="LONGWALL",
+        description="Longwall mining")
+    BLOCK_CAVING = PermissibleValue(
+        text="BLOCK_CAVING",
+        description="Block caving")
+    SOLUTION_MINING = PermissibleValue(
+        text="SOLUTION_MINING",
+        description="Solution mining (in-situ leaching)")
+    HYDRAULIC_MINING = PermissibleValue(
+        text="HYDRAULIC_MINING",
+        description="Hydraulic mining")
+    ARTISANAL = PermissibleValue(
+        text="ARTISANAL",
+        description="Artisanal and small-scale mining")
+    DEEP_SEA = PermissibleValue(
+        text="DEEP_SEA",
+        description="Deep sea mining")
+
+    _defn = EnumDefinition(
+        name="MiningType",
+        description="Types of mining operations",
+    )
+
+class MineralCategory(EnumDefinitionImpl):
+    """
+    Categories of minerals and materials
+    """
+    PRECIOUS_METALS = PermissibleValue(
+        text="PRECIOUS_METALS",
+        description="Precious metals")
+    BASE_METALS = PermissibleValue(
+        text="BASE_METALS",
+        description="Base metals")
+    FERROUS_METALS = PermissibleValue(
+        text="FERROUS_METALS",
+        description="Ferrous metals")
+    RARE_EARTH_ELEMENTS = PermissibleValue(
+        text="RARE_EARTH_ELEMENTS",
+        description="Rare earth elements")
+    RADIOACTIVE = PermissibleValue(
+        text="RADIOACTIVE",
+        description="Radioactive minerals")
+    INDUSTRIAL_MINERALS = PermissibleValue(
+        text="INDUSTRIAL_MINERALS",
+        description="Industrial minerals")
+    GEMSTONES = PermissibleValue(
+        text="GEMSTONES",
+        description="Gemstones")
+    ENERGY_MINERALS = PermissibleValue(
+        text="ENERGY_MINERALS",
+        description="Energy minerals")
+    CONSTRUCTION_MATERIALS = PermissibleValue(
+        text="CONSTRUCTION_MATERIALS",
+        description="Construction materials")
+    CHEMICAL_MINERALS = PermissibleValue(
+        text="CHEMICAL_MINERALS",
+        description="Chemical and fertilizer minerals")
+
+    _defn = EnumDefinition(
+        name="MineralCategory",
+        description="Categories of minerals and materials",
+    )
+
+class CriticalMineral(EnumDefinitionImpl):
+    """
+    Critical minerals essential for economic and national security,
+    particularly for clean energy, defense, and technology applications.
+    Based on US Geological Survey and EU critical raw materials lists.
+    """
+    LITHIUM = PermissibleValue(
+        text="LITHIUM",
+        title="lithium atom",
+        description="Lithium (Li) - essential for batteries",
+        meaning=CHEBI["30145"])
+    COBALT = PermissibleValue(
+        text="COBALT",
+        title="cobalt atom",
+        description="Cobalt (Co) - battery cathodes and superalloys",
+        meaning=CHEBI["27638"])
+    NICKEL = PermissibleValue(
+        text="NICKEL",
+        title="nickel atom",
+        description="Nickel (Ni) - stainless steel and batteries",
+        meaning=CHEBI["28112"])
+    GRAPHITE = PermissibleValue(
+        text="GRAPHITE",
+        description="Graphite - battery anodes and refractories",
+        meaning=CHEBI["33418"])
+    MANGANESE = PermissibleValue(
+        text="MANGANESE",
+        title="manganese atom",
+        description="Manganese (Mn) - steel and battery production",
+        meaning=CHEBI["18291"])
+    NEODYMIUM = PermissibleValue(
+        text="NEODYMIUM",
+        title="neodymium atom",
+        description="Neodymium (Nd) - permanent magnets",
+        meaning=CHEBI["33372"])
+    DYSPROSIUM = PermissibleValue(
+        text="DYSPROSIUM",
+        title="dysprosium atom",
+        description="Dysprosium (Dy) - high-performance magnets",
+        meaning=CHEBI["33377"])
+    PRASEODYMIUM = PermissibleValue(
+        text="PRASEODYMIUM",
+        title="praseodymium atom",
+        description="Praseodymium (Pr) - magnets and alloys",
+        meaning=CHEBI["49828"])
+    TERBIUM = PermissibleValue(
+        text="TERBIUM",
+        title="terbium atom",
+        description="Terbium (Tb) - phosphors and magnets",
+        meaning=CHEBI["33376"])
+    EUROPIUM = PermissibleValue(
+        text="EUROPIUM",
+        title="europium atom",
+        description="Europium (Eu) - phosphors and nuclear control",
+        meaning=CHEBI["32999"])
+    YTTRIUM = PermissibleValue(
+        text="YTTRIUM",
+        title="yttrium atom",
+        description="Yttrium (Y) - phosphors and ceramics",
+        meaning=CHEBI["33331"])
+    CERIUM = PermissibleValue(
+        text="CERIUM",
+        description="Cerium (Ce) - catalysts and glass polishing",
+        meaning=CHEBI["33369"])
+    LANTHANUM = PermissibleValue(
+        text="LANTHANUM",
+        title="lanthanum atom",
+        description="Lanthanum (La) - catalysts and optics",
+        meaning=CHEBI["33336"])
+    GALLIUM = PermissibleValue(
+        text="GALLIUM",
+        title="gallium atom",
+        description="Gallium (Ga) - semiconductors and LEDs",
+        meaning=CHEBI["49631"])
+    GERMANIUM = PermissibleValue(
+        text="GERMANIUM",
+        title="germanium atom",
+        description="Germanium (Ge) - fiber optics and infrared",
+        meaning=CHEBI["30441"])
+    INDIUM = PermissibleValue(
+        text="INDIUM",
+        title="indium atom",
+        description="Indium (In) - displays and semiconductors",
+        meaning=CHEBI["30430"])
+    TELLURIUM = PermissibleValue(
+        text="TELLURIUM",
+        title="tellurium atom",
+        description="Tellurium (Te) - solar panels and thermoelectrics",
+        meaning=CHEBI["30452"])
+    ARSENIC = PermissibleValue(
+        text="ARSENIC",
+        title="arsenic atom",
+        description="Arsenic (As) - semiconductors and alloys",
+        meaning=CHEBI["27563"])
+    TITANIUM = PermissibleValue(
+        text="TITANIUM",
+        title="titanium atom",
+        description="Titanium (Ti) - aerospace and defense",
+        meaning=CHEBI["33341"])
+    VANADIUM = PermissibleValue(
+        text="VANADIUM",
+        title="vanadium atom",
+        description="Vanadium (V) - steel alloys and batteries",
+        meaning=CHEBI["27698"])
+    CHROMIUM = PermissibleValue(
+        text="CHROMIUM",
+        title="chromium atom",
+        description="Chromium (Cr) - stainless steel and alloys",
+        meaning=CHEBI["28073"])
+    TUNGSTEN = PermissibleValue(
+        text="TUNGSTEN",
+        description="Tungsten (W) - hard metals and electronics",
+        meaning=CHEBI["27998"])
+    TANTALUM = PermissibleValue(
+        text="TANTALUM",
+        title="tantalum atom",
+        description="Tantalum (Ta) - capacitors and superalloys",
+        meaning=CHEBI["33348"])
+    NIOBIUM = PermissibleValue(
+        text="NIOBIUM",
+        title="niobium atom",
+        description="Niobium (Nb) - steel alloys and superconductors",
+        meaning=CHEBI["33344"])
+    ZIRCONIUM = PermissibleValue(
+        text="ZIRCONIUM",
+        title="zirconium atom",
+        description="Zirconium (Zr) - nuclear and ceramics",
+        meaning=CHEBI["33342"])
+    HAFNIUM = PermissibleValue(
+        text="HAFNIUM",
+        title="hafnium atom",
+        description="Hafnium (Hf) - nuclear and semiconductors",
+        meaning=CHEBI["33343"])
+    PLATINUM = PermissibleValue(
+        text="PLATINUM",
+        title="platinum(0)",
+        description="Platinum (Pt) - catalysts and electronics",
+        meaning=CHEBI["33400"])
+    PALLADIUM = PermissibleValue(
+        text="PALLADIUM",
+        description="Palladium (Pd) - catalysts and electronics",
+        meaning=CHEBI["33363"])
+    RHODIUM = PermissibleValue(
+        text="RHODIUM",
+        title="rhodium atom",
+        description="Rhodium (Rh) - catalysts and electronics",
+        meaning=CHEBI["33359"])
+    IRIDIUM = PermissibleValue(
+        text="IRIDIUM",
+        title="iridium atom",
+        description="Iridium (Ir) - electronics and catalysts",
+        meaning=CHEBI["49666"])
+    RUTHENIUM = PermissibleValue(
+        text="RUTHENIUM",
+        title="ruthenium atom",
+        description="Ruthenium (Ru) - electronics and catalysts",
+        meaning=CHEBI["30682"])
+    ANTIMONY = PermissibleValue(
+        text="ANTIMONY",
+        title="antimony atom",
+        description="Antimony (Sb) - flame retardants and batteries",
+        meaning=CHEBI["30513"])
+    BISMUTH = PermissibleValue(
+        text="BISMUTH",
+        title="bismuth atom",
+        description="Bismuth (Bi) - pharmaceuticals and alloys",
+        meaning=CHEBI["33301"])
+    BERYLLIUM = PermissibleValue(
+        text="BERYLLIUM",
+        title="beryllium atom",
+        description="Beryllium (Be) - aerospace and defense",
+        meaning=CHEBI["30501"])
+    MAGNESIUM = PermissibleValue(
+        text="MAGNESIUM",
+        title="magnesium atom",
+        description="Magnesium (Mg) - lightweight alloys",
+        meaning=CHEBI["25107"])
+    ALUMINUM = PermissibleValue(
+        text="ALUMINUM",
+        title="aluminium atom",
+        description="Aluminum (Al) - construction and transportation",
+        meaning=CHEBI["28984"])
+    TIN = PermissibleValue(
+        text="TIN",
+        title="tin atom",
+        description="Tin (Sn) - solders and coatings",
+        meaning=CHEBI["27007"])
+    FLUORSPAR = PermissibleValue(
+        text="FLUORSPAR",
+        title="calcium difluoride",
+        description="Fluorspar (CaF2) - steel and aluminum production",
+        meaning=CHEBI["35437"])
+    BARITE = PermissibleValue(
+        text="BARITE",
+        title="barium sulfate",
+        description="Barite (BaSO4) - drilling and chemicals",
+        meaning=CHEBI["133326"])
+    HELIUM = PermissibleValue(
+        text="HELIUM",
+        title="helium(0)",
+        description="Helium (He) - cryogenics and electronics",
+        meaning=CHEBI["33681"])
+    POTASH = PermissibleValue(
+        text="POTASH",
+        title="potassium oxide",
+        description="Potash (K2O) - fertilizers and chemicals",
+        meaning=CHEBI["88321"])
+    PHOSPHATE_ROCK = PermissibleValue(
+        text="PHOSPHATE_ROCK",
+        title="phosphate",
+        description="Phosphate rock - fertilizers and chemicals",
+        meaning=CHEBI["26020"])
+    SCANDIUM = PermissibleValue(
+        text="SCANDIUM",
+        title="scandium atom",
+        description="Scandium (Sc) - aerospace alloys",
+        meaning=CHEBI["33330"])
+    STRONTIUM = PermissibleValue(
+        text="STRONTIUM",
+        title="strontium atom",
+        description="Strontium (Sr) - magnets and pyrotechnics",
+        meaning=CHEBI["33324"])
+
+    _defn = EnumDefinition(
+        name="CriticalMineral",
+        description="""Critical minerals essential for economic and national security,
+particularly for clean energy, defense, and technology applications.
+Based on US Geological Survey and EU critical raw materials lists.""",
+    )
+
+class CommonMineral(EnumDefinitionImpl):
+    """
+    Common minerals extracted through mining
+    """
+    GOLD = PermissibleValue(
+        text="GOLD",
+        title="gold atom",
+        description="Gold (Au)",
+        meaning=CHEBI["29287"])
+    SILVER = PermissibleValue(
+        text="SILVER",
+        title="silver atom",
+        description="Silver (Ag)",
+        meaning=CHEBI["30512"])
+    PLATINUM = PermissibleValue(
+        text="PLATINUM",
+        title="elemental platinum",
+        description="Platinum (Pt)",
+        meaning=CHEBI["49202"])
+    COPPER = PermissibleValue(
+        text="COPPER",
+        title="copper atom",
+        description="Copper (Cu)",
+        meaning=CHEBI["28694"])
+    IRON = PermissibleValue(
+        text="IRON",
+        title="iron atom",
+        description="Iron (Fe)",
+        meaning=CHEBI["18248"])
+    ALUMINUM = PermissibleValue(
+        text="ALUMINUM",
+        title="aluminium atom",
+        description="Aluminum (Al)",
+        meaning=CHEBI["28984"])
+    ZINC = PermissibleValue(
+        text="ZINC",
+        title="zinc atom",
+        description="Zinc (Zn)",
+        meaning=CHEBI["27363"])
+    LEAD = PermissibleValue(
+        text="LEAD",
+        title="lead atom",
+        description="Lead (Pb)",
+        meaning=CHEBI["25016"])
+    NICKEL = PermissibleValue(
+        text="NICKEL",
+        title="nickel atom",
+        description="Nickel (Ni)",
+        meaning=CHEBI["28112"])
+    TIN = PermissibleValue(
+        text="TIN",
+        title="tin atom",
+        description="Tin (Sn)",
+        meaning=CHEBI["27007"])
+    COAL = PermissibleValue(
+        text="COAL",
+        description="Coal",
+        meaning=ENVO["02000091"])
+    URANIUM = PermissibleValue(
+        text="URANIUM",
+        title="uranium atom",
+        description="Uranium (U)",
+        meaning=CHEBI["27214"])
+    LIMESTONE = PermissibleValue(
+        text="LIMESTONE",
+        description="Limestone (CaCO3)",
+        meaning=ENVO["00002053"])
+    SALT = PermissibleValue(
+        text="SALT",
+        description="Salt (NaCl)",
+        meaning=CHEBI["24866"])
+    PHOSPHATE = PermissibleValue(
+        text="PHOSPHATE",
+        description="Phosphate rock",
+        meaning=CHEBI["26020"])
+    POTASH = PermissibleValue(
+        text="POTASH",
+        title="potassium oxide",
+        description="Potash (K2O)",
+        meaning=CHEBI["88321"])
+    LITHIUM = PermissibleValue(
+        text="LITHIUM",
+        title="lithium atom",
+        description="Lithium (Li)",
+        meaning=CHEBI["30145"])
+    COBALT = PermissibleValue(
+        text="COBALT",
+        title="cobalt atom",
+        description="Cobalt (Co)",
+        meaning=CHEBI["27638"])
+    DIAMOND = PermissibleValue(
+        text="DIAMOND",
+        description="Diamond (C)",
+        meaning=CHEBI["33417"])
+
+    _defn = EnumDefinition(
+        name="CommonMineral",
+        description="Common minerals extracted through mining",
+    )
+
+class MiningEquipment(EnumDefinitionImpl):
+    """
+    Types of mining equipment
+    """
+    DRILL_RIG = PermissibleValue(
+        text="DRILL_RIG",
+        description="Drilling rig")
+    JUMBO_DRILL = PermissibleValue(
+        text="JUMBO_DRILL",
+        description="Jumbo drill")
+    EXCAVATOR = PermissibleValue(
+        text="EXCAVATOR",
+        description="Excavator")
+    DRAGLINE = PermissibleValue(
+        text="DRAGLINE",
+        description="Dragline excavator")
+    BUCKET_WHEEL_EXCAVATOR = PermissibleValue(
+        text="BUCKET_WHEEL_EXCAVATOR",
+        description="Bucket-wheel excavator")
+    HAUL_TRUCK = PermissibleValue(
+        text="HAUL_TRUCK",
+        description="Haul truck")
+    LOADER = PermissibleValue(
+        text="LOADER",
+        description="Loader")
+    CONVEYOR = PermissibleValue(
+        text="CONVEYOR",
+        description="Conveyor system")
+    CRUSHER = PermissibleValue(
+        text="CRUSHER",
+        description="Crusher")
+    BALL_MILL = PermissibleValue(
+        text="BALL_MILL",
+        description="Ball mill")
+    FLOTATION_CELL = PermissibleValue(
+        text="FLOTATION_CELL",
+        description="Flotation cell")
+    CONTINUOUS_MINER = PermissibleValue(
+        text="CONTINUOUS_MINER",
+        description="Continuous miner")
+    ROOF_BOLTER = PermissibleValue(
+        text="ROOF_BOLTER",
+        description="Roof bolter")
+    SHUTTLE_CAR = PermissibleValue(
+        text="SHUTTLE_CAR",
+        description="Shuttle car")
+
+    _defn = EnumDefinition(
+        name="MiningEquipment",
+        description="Types of mining equipment",
+    )
+
+class OreGrade(EnumDefinitionImpl):
+    """
+    Classification of ore grades
+    """
+    HIGH_GRADE = PermissibleValue(
+        text="HIGH_GRADE",
+        description="High-grade ore")
+    MEDIUM_GRADE = PermissibleValue(
+        text="MEDIUM_GRADE",
+        description="Medium-grade ore")
+    LOW_GRADE = PermissibleValue(
+        text="LOW_GRADE",
+        description="Low-grade ore")
+    MARGINAL = PermissibleValue(
+        text="MARGINAL",
+        description="Marginal ore")
+    SUB_ECONOMIC = PermissibleValue(
+        text="SUB_ECONOMIC",
+        description="Sub-economic ore")
+    WASTE = PermissibleValue(
+        text="WASTE",
+        description="Waste rock")
+
+    _defn = EnumDefinition(
+        name="OreGrade",
+        description="Classification of ore grades",
+    )
+
+class MiningPhase(EnumDefinitionImpl):
+    """
+    Phases of mining operations
+    """
+    EXPLORATION = PermissibleValue(
+        text="EXPLORATION",
+        description="Exploration phase")
+    DEVELOPMENT = PermissibleValue(
+        text="DEVELOPMENT",
+        description="Development phase")
+    PRODUCTION = PermissibleValue(
+        text="PRODUCTION",
+        description="Production/extraction phase")
+    PROCESSING = PermissibleValue(
+        text="PROCESSING",
+        description="Processing/beneficiation phase")
+    CLOSURE = PermissibleValue(
+        text="CLOSURE",
+        description="Closure phase")
+    RECLAMATION = PermissibleValue(
+        text="RECLAMATION",
+        description="Reclamation phase")
+    POST_CLOSURE = PermissibleValue(
+        text="POST_CLOSURE",
+        description="Post-closure monitoring")
+
+    _defn = EnumDefinition(
+        name="MiningPhase",
+        description="Phases of mining operations",
+    )
+
+class MiningHazard(EnumDefinitionImpl):
+    """
+    Mining-related hazards and risks
+    """
+    CAVE_IN = PermissibleValue(
+        text="CAVE_IN",
+        description="Cave-in/roof collapse")
+    GAS_EXPLOSION = PermissibleValue(
+        text="GAS_EXPLOSION",
+        description="Gas explosion")
+    FLOODING = PermissibleValue(
+        text="FLOODING",
+        description="Mine flooding")
+    DUST_EXPOSURE = PermissibleValue(
+        text="DUST_EXPOSURE",
+        description="Dust exposure")
+    CHEMICAL_EXPOSURE = PermissibleValue(
+        text="CHEMICAL_EXPOSURE",
+        description="Chemical exposure")
+    RADIATION = PermissibleValue(
+        text="RADIATION",
+        description="Radiation exposure")
+    NOISE = PermissibleValue(
+        text="NOISE",
+        description="Noise exposure")
+    VIBRATION = PermissibleValue(
+        text="VIBRATION",
+        description="Vibration exposure")
+    HEAT_STRESS = PermissibleValue(
+        text="HEAT_STRESS",
+        description="Heat stress")
+    EQUIPMENT_ACCIDENT = PermissibleValue(
+        text="EQUIPMENT_ACCIDENT",
+        description="Equipment-related accident")
+
+    _defn = EnumDefinition(
+        name="MiningHazard",
+        description="Mining-related hazards and risks",
+    )
+
+class EnvironmentalImpact(EnumDefinitionImpl):
+    """
+    Environmental impacts of mining
+    """
+    HABITAT_DESTRUCTION = PermissibleValue(
+        text="HABITAT_DESTRUCTION",
+        title="habitat degradation",
+        description="Habitat destruction",
+        meaning=EXO["0000012"])
+    WATER_POLLUTION = PermissibleValue(
+        text="WATER_POLLUTION",
+        description="Water pollution",
+        meaning=ENVO["02500039"])
+    AIR_POLLUTION = PermissibleValue(
+        text="AIR_POLLUTION",
+        description="Air pollution",
+        meaning=ENVO["02500037"])
+    SOIL_CONTAMINATION = PermissibleValue(
+        text="SOIL_CONTAMINATION",
+        title="contaminated soil",
+        description="Soil contamination",
+        meaning=ENVO["00002116"])
+    DEFORESTATION = PermissibleValue(
+        text="DEFORESTATION",
+        description="Deforestation",
+        meaning=ENVO["02500012"])
+    EROSION = PermissibleValue(
+        text="EROSION",
+        description="Erosion and sedimentation",
+        meaning=ENVO["01001346"])
+    ACID_MINE_DRAINAGE = PermissibleValue(
+        text="ACID_MINE_DRAINAGE",
+        description="Acid mine drainage",
+        meaning=ENVO["00001997"])
+    TAILINGS = PermissibleValue(
+        text="TAILINGS",
+        description="Tailings contamination")
+    SUBSIDENCE = PermissibleValue(
+        text="SUBSIDENCE",
+        description="Ground subsidence")
+    BIODIVERSITY_LOSS = PermissibleValue(
+        text="BIODIVERSITY_LOSS",
+        description="Biodiversity loss")
+
+    _defn = EnumDefinition(
+        name="EnvironmentalImpact",
+        description="Environmental impacts of mining",
+    )
+
+class ExtractiveIndustryFacilityTypeEnum(EnumDefinitionImpl):
+    """
+    Types of extractive industry facilities
+    """
+    MINING_FACILITY = PermissibleValue(
+        text="MINING_FACILITY",
+        title="Mining Facility",
+        description="A facility where mineral resources are extracted")
+    WELL_FACILITY = PermissibleValue(
+        text="WELL_FACILITY",
+        title="Well Facility",
+        description="A facility where fluid resources are extracted")
+    QUARRY_FACILITY = PermissibleValue(
+        text="QUARRY_FACILITY",
+        title="Quarry Facility",
+        description="A facility where stone, sand, or gravel are extracted")
+
+    _defn = EnumDefinition(
+        name="ExtractiveIndustryFacilityTypeEnum",
+        description="Types of extractive industry facilities",
+    )
+
+class ExtractiveIndustryProductTypeEnum(EnumDefinitionImpl):
+    """
+    Types of products extracted from extractive industry facilities
+    """
+    MINERAL = PermissibleValue(
+        text="MINERAL",
+        title="Mineral",
+        description="A solid inorganic substance")
+    METAL = PermissibleValue(
+        text="METAL",
+        title="Metal",
+        description="A solid metallic substance")
+    COAL = PermissibleValue(
+        text="COAL",
+        title="Coal",
+        description="A combustible black or brownish-black sedimentary rock")
+    OIL = PermissibleValue(
+        text="OIL",
+        title="Oil",
+        description="A liquid petroleum resource")
+    GAS = PermissibleValue(
+        text="GAS",
+        title="Gas",
+        description="A gaseous petroleum resource")
+    STONE = PermissibleValue(
+        text="STONE",
+        title="Stone",
+        description="A solid aggregate of minerals")
+    SAND = PermissibleValue(
+        text="SAND",
+        title="Sand",
+        description="A granular material composed of finely divided rock and mineral particles")
+    GRAVEL = PermissibleValue(
+        text="GRAVEL",
+        title="Gravel",
+        description="A loose aggregation of rock fragments")
+
+    _defn = EnumDefinition(
+        name="ExtractiveIndustryProductTypeEnum",
+        description="Types of products extracted from extractive industry facilities",
+    )
+
+class MiningMethodEnum(EnumDefinitionImpl):
+    """
+    Methods used for extracting minerals from the earth
+    """
+    UNDERGROUND = PermissibleValue(
+        text="UNDERGROUND",
+        title="Underground",
+        description="Extraction occurs beneath the earth's surface")
+    OPEN_PIT = PermissibleValue(
+        text="OPEN_PIT",
+        title="Open Pit",
+        description="Extraction occurs on the earth's surface")
+    PLACER = PermissibleValue(
+        text="PLACER",
+        title="Placer",
+        description="Extraction of valuable minerals from alluvial deposits")
+    IN_SITU = PermissibleValue(
+        text="IN_SITU",
+        title="In Situ",
+        description="Extraction without removing the ore from its original location")
+
+    _defn = EnumDefinition(
+        name="MiningMethodEnum",
+        description="Methods used for extracting minerals from the earth",
+    )
+
+class WellTypeEnum(EnumDefinitionImpl):
+    """
+    Types of wells used for extracting fluid resources
+    """
+    OIL = PermissibleValue(
+        text="OIL",
+        title="Oil",
+        description="A well that primarily extracts crude oil")
+    GAS = PermissibleValue(
+        text="GAS",
+        title="Gas",
+        description="A well that primarily extracts natural gas")
+    WATER = PermissibleValue(
+        text="WATER",
+        title="Water",
+        description="A well that extracts water for various purposes")
+    INJECTION = PermissibleValue(
+        text="INJECTION",
+        title="Injection",
+        description="A well used to inject fluids into underground formations")
+
+    _defn = EnumDefinition(
+        name="WellTypeEnum",
+        description="Types of wells used for extracting fluid resources",
+    )
+
+class OutcomeTypeEnum(EnumDefinitionImpl):
+    """
+    Types of prediction outcomes for classification tasks
+    """
+    TP = PermissibleValue(
+        text="TP",
+        title="True Positive",
+        description="True Positive")
+    FP = PermissibleValue(
+        text="FP",
+        title="False Positive",
+        description="False Positive")
+    TN = PermissibleValue(
+        text="TN",
+        title="True Negative",
+        description="True Negative")
+    FN = PermissibleValue(
+        text="FN",
+        title="False Negative",
+        description="False Negative")
+
+    _defn = EnumDefinition(
+        name="OutcomeTypeEnum",
+        description="Types of prediction outcomes for classification tasks",
+    )
+
+class PersonStatusEnum(EnumDefinitionImpl):
+    """
+    Vital status of a person (living or deceased)
+    """
+    ALIVE = PermissibleValue(
+        text="ALIVE",
+        title="Alive",
+        description="The person is living",
+        meaning=PATO["0001421"])
+    DEAD = PermissibleValue(
+        text="DEAD",
+        title="Dead",
+        description="The person is deceased",
+        meaning=PATO["0001422"])
+    UNKNOWN = PermissibleValue(
+        text="UNKNOWN",
+        title="Unknown",
+        description="The vital status is not known",
+        meaning=NCIT["C17998"])
+
+    _defn = EnumDefinition(
+        name="PersonStatusEnum",
+        description="Vital status of a person (living or deceased)",
+    )
+
+class MaritalStatusEnum(EnumDefinitionImpl):
+    """
+    Marital or civil status of a person
+    """
+    SINGLE = PermissibleValue(
+        text="SINGLE",
+        title="Never Married",
+        description="Never married",
+        meaning=NCIT["C51774"])
+    MARRIED = PermissibleValue(
+        text="MARRIED",
+        title="Married",
+        description="Currently married or in civil partnership",
+        meaning=NCIT["C51773"])
+    DIVORCED = PermissibleValue(
+        text="DIVORCED",
+        title="Divorced",
+        description="Marriage legally dissolved",
+        meaning=NCIT["C51776"])
+    WIDOWED = PermissibleValue(
+        text="WIDOWED",
+        title="Widowed",
+        description="Marriage ended due to death of spouse",
+        meaning=NCIT["C51775"])
+    SEPARATED = PermissibleValue(
+        text="SEPARATED",
+        title="Legally Separated",
+        description="Living apart from spouse",
+        meaning=NCIT["C51777"])
+    DOMESTIC_PARTNERSHIP = PermissibleValue(
+        text="DOMESTIC_PARTNERSHIP",
+        title="Domestic Partnership",
+        description="In a domestic partnership",
+        meaning=NCIT["C53262"])
+    CIVIL_UNION = PermissibleValue(
+        text="CIVIL_UNION",
+        title="Marital Status",
+        description="In a civil union",
+        meaning=NCIT["C25188"])
+    UNKNOWN = PermissibleValue(
+        text="UNKNOWN",
+        title="Unknown",
+        description="Marital status not known",
+        meaning=NCIT["C17998"])
+    PREFER_NOT_TO_SAY = PermissibleValue(
+        text="PREFER_NOT_TO_SAY",
+        title="Marital or Civil Status Not Disclosed",
+        description="Prefers not to disclose marital status",
+        meaning=NCIT["C150742"])
+
+    _defn = EnumDefinition(
+        name="MaritalStatusEnum",
+        description="Marital or civil status of a person",
+    )
+
+class EmploymentStatusEnum(EnumDefinitionImpl):
+    """
+    Employment status of a person
+    """
+    EMPLOYED_FULL_TIME = PermissibleValue(
+        text="EMPLOYED_FULL_TIME",
+        title="Full Time Employment",
+        description="Employed full-time",
+        meaning=NCIT["C52658"])
+    EMPLOYED_PART_TIME = PermissibleValue(
+        text="EMPLOYED_PART_TIME",
+        title="Part Time Employment",
+        description="Employed part-time",
+        meaning=NCIT["C75562"])
+    SELF_EMPLOYED = PermissibleValue(
+        text="SELF_EMPLOYED",
+        title="Self-Employed",
+        description="Self-employed",
+        meaning=NCIT["C116000"])
+    UNEMPLOYED = PermissibleValue(
+        text="UNEMPLOYED",
+        title="Unemployed",
+        description="Unemployed",
+        meaning=NCIT["C75563"])
+    STUDENT = PermissibleValue(
+        text="STUDENT",
+        title="Student",
+        description="Student",
+        meaning=NCIT["C75561"])
+    RETIRED = PermissibleValue(
+        text="RETIRED",
+        title="Unemployed or Retired",
+        description="Retired",
+        meaning=NCIT["C148257"])
+    HOMEMAKER = PermissibleValue(
+        text="HOMEMAKER",
+        title="Homemaker",
+        description="Homemaker",
+        meaning=NCIT["C75560"])
+    DISABLED = PermissibleValue(
+        text="DISABLED",
+        title="Disabled",
+        description="Unable to work due to disability",
+        meaning=NCIT["C63367"])
+    OTHER = PermissibleValue(
+        text="OTHER",
+        title="Employed",
+        description="Other employment status",
+        meaning=NCIT["C25172"])
+    UNKNOWN = PermissibleValue(
+        text="UNKNOWN",
+        title="Unknown",
+        description="Employment status not known",
+        meaning=NCIT["C17998"])
+
+    _defn = EnumDefinition(
+        name="EmploymentStatusEnum",
+        description="Employment status of a person",
+    )
+
+class MimeType(EnumDefinitionImpl):
+    """
+    Common MIME types for various file formats
+    """
+    APPLICATION_JSON = PermissibleValue(
+        text="APPLICATION_JSON",
+        description="JSON format",
+        meaning=IANA["application/json"])
+    APPLICATION_XML = PermissibleValue(
+        text="APPLICATION_XML",
+        description="XML format",
+        meaning=IANA["application/xml"])
+    APPLICATION_PDF = PermissibleValue(
+        text="APPLICATION_PDF",
+        description="Adobe Portable Document Format",
+        meaning=IANA["application/pdf"])
+    APPLICATION_ZIP = PermissibleValue(
+        text="APPLICATION_ZIP",
+        description="ZIP archive",
+        meaning=IANA["application/zip"])
+    APPLICATION_GZIP = PermissibleValue(
+        text="APPLICATION_GZIP",
+        description="GZIP compressed archive",
+        meaning=IANA["application/gzip"])
+    APPLICATION_OCTET_STREAM = PermissibleValue(
+        text="APPLICATION_OCTET_STREAM",
+        description="Binary data",
+        meaning=IANA["application/octet-stream"])
+    APPLICATION_X_WWW_FORM_URLENCODED = PermissibleValue(
+        text="APPLICATION_X_WWW_FORM_URLENCODED",
+        description="Form data encoded",
+        meaning=IANA["application/x-www-form-urlencoded"])
+    APPLICATION_VND_MS_EXCEL = PermissibleValue(
+        text="APPLICATION_VND_MS_EXCEL",
+        description="Microsoft Excel",
+        meaning=IANA["application/vnd.ms-excel"])
+    APPLICATION_VND_OPENXMLFORMATS_SPREADSHEET = PermissibleValue(
+        text="APPLICATION_VND_OPENXMLFORMATS_SPREADSHEET",
+        description="Microsoft Excel (OpenXML)",
+        meaning=IANA["application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"])
+    APPLICATION_VND_MS_POWERPOINT = PermissibleValue(
+        text="APPLICATION_VND_MS_POWERPOINT",
+        description="Microsoft PowerPoint",
+        meaning=IANA["application/vnd.ms-powerpoint"])
+    APPLICATION_MSWORD = PermissibleValue(
+        text="APPLICATION_MSWORD",
+        description="Microsoft Word",
+        meaning=IANA["application/msword"])
+    APPLICATION_VND_OPENXMLFORMATS_DOCUMENT = PermissibleValue(
+        text="APPLICATION_VND_OPENXMLFORMATS_DOCUMENT",
+        description="Microsoft Word (OpenXML)",
+        meaning=IANA["application/vnd.openxmlformats-officedocument.wordprocessingml.document"])
+    APPLICATION_JAVASCRIPT = PermissibleValue(
+        text="APPLICATION_JAVASCRIPT",
+        description="JavaScript",
+        meaning=IANA["application/javascript"])
+    APPLICATION_TYPESCRIPT = PermissibleValue(
+        text="APPLICATION_TYPESCRIPT",
+        description="TypeScript source code",
+        meaning=IANA["application/typescript"])
+    APPLICATION_SQL = PermissibleValue(
+        text="APPLICATION_SQL",
+        description="SQL database format",
+        meaning=IANA["application/sql"])
+    APPLICATION_GRAPHQL = PermissibleValue(
+        text="APPLICATION_GRAPHQL",
+        description="GraphQL query language",
+        meaning=IANA["application/graphql"])
+    APPLICATION_LD_JSON = PermissibleValue(
+        text="APPLICATION_LD_JSON",
+        description="JSON-LD format",
+        meaning=IANA["application/ld+json"])
+    APPLICATION_WASM = PermissibleValue(
+        text="APPLICATION_WASM",
+        description="WebAssembly binary format",
+        meaning=IANA["application/wasm"])
+    TEXT_PLAIN = PermissibleValue(
+        text="TEXT_PLAIN",
+        description="Plain text",
+        meaning=IANA["text/plain"])
+    TEXT_HTML = PermissibleValue(
+        text="TEXT_HTML",
+        description="HTML document",
+        meaning=IANA["text/html"])
+    TEXT_CSS = PermissibleValue(
+        text="TEXT_CSS",
+        description="Cascading Style Sheets",
+        meaning=IANA["text/css"])
+    TEXT_CSV = PermissibleValue(
+        text="TEXT_CSV",
+        description="Comma-separated values",
+        meaning=IANA["text/csv"])
+    TEXT_MARKDOWN = PermissibleValue(
+        text="TEXT_MARKDOWN",
+        description="Markdown format",
+        meaning=IANA["text/markdown"])
+    TEXT_YAML = PermissibleValue(
+        text="TEXT_YAML",
+        description="YAML format",
+        meaning=IANA["text/yaml"])
+    TEXT_X_PYTHON = PermissibleValue(
+        text="TEXT_X_PYTHON",
+        description="Python source code",
+        meaning=IANA["text/x-python"])
+    TEXT_X_JAVA = PermissibleValue(
+        text="TEXT_X_JAVA",
+        description="Java source code",
+        meaning=IANA["text/x-java-source"])
+    TEXT_X_C = PermissibleValue(
+        text="TEXT_X_C",
+        description="C source code",
+        meaning=IANA["text/x-c"])
+    TEXT_X_CPP = PermissibleValue(
+        text="TEXT_X_CPP",
+        description="C++ source code",
+        meaning=IANA["text/x-c++"])
+    TEXT_X_CSHARP = PermissibleValue(
+        text="TEXT_X_CSHARP",
+        description="C# source code",
+        meaning=IANA["text/x-csharp"])
+    TEXT_X_GO = PermissibleValue(
+        text="TEXT_X_GO",
+        description="Go source code",
+        meaning=IANA["text/x-go"])
+    TEXT_X_RUST = PermissibleValue(
+        text="TEXT_X_RUST",
+        description="Rust source code",
+        meaning=IANA["text/x-rust"])
+    TEXT_X_RUBY = PermissibleValue(
+        text="TEXT_X_RUBY",
+        description="Ruby source code",
+        meaning=IANA["text/x-ruby"])
+    TEXT_X_SHELLSCRIPT = PermissibleValue(
+        text="TEXT_X_SHELLSCRIPT",
+        description="Shell script",
+        meaning=IANA["text/x-shellscript"])
+    IMAGE_JPEG = PermissibleValue(
+        text="IMAGE_JPEG",
+        description="JPEG image",
+        meaning=IANA["image/jpeg"])
+    IMAGE_PNG = PermissibleValue(
+        text="IMAGE_PNG",
+        description="PNG image",
+        meaning=IANA["image/png"])
+    IMAGE_GIF = PermissibleValue(
+        text="IMAGE_GIF",
+        description="GIF image",
+        meaning=IANA["image/gif"])
+    IMAGE_SVG_XML = PermissibleValue(
+        text="IMAGE_SVG_XML",
+        description="SVG vector image",
+        meaning=IANA["image/svg+xml"])
+    IMAGE_WEBP = PermissibleValue(
+        text="IMAGE_WEBP",
+        description="WebP image",
+        meaning=IANA["image/webp"])
+    IMAGE_BMP = PermissibleValue(
+        text="IMAGE_BMP",
+        description="Bitmap image",
+        meaning=IANA["image/bmp"])
+    IMAGE_ICO = PermissibleValue(
+        text="IMAGE_ICO",
+        description="Icon format",
+        meaning=IANA["image/vnd.microsoft.icon"])
+    IMAGE_TIFF = PermissibleValue(
+        text="IMAGE_TIFF",
+        description="TIFF image",
+        meaning=IANA["image/tiff"])
+    IMAGE_AVIF = PermissibleValue(
+        text="IMAGE_AVIF",
+        description="AVIF image format",
+        meaning=IANA["image/avif"])
+    AUDIO_MPEG = PermissibleValue(
+        text="AUDIO_MPEG",
+        description="MP3 audio",
+        meaning=IANA["audio/mpeg"])
+    AUDIO_WAV = PermissibleValue(
+        text="AUDIO_WAV",
+        description="WAV audio",
+        meaning=IANA["audio/wav"])
+    AUDIO_OGG = PermissibleValue(
+        text="AUDIO_OGG",
+        description="OGG audio",
+        meaning=IANA["audio/ogg"])
+    AUDIO_WEBM = PermissibleValue(
+        text="AUDIO_WEBM",
+        description="WebM audio",
+        meaning=IANA["audio/webm"])
+    AUDIO_AAC = PermissibleValue(
+        text="AUDIO_AAC",
+        description="AAC audio",
+        meaning=IANA["audio/aac"])
+    VIDEO_MP4 = PermissibleValue(
+        text="VIDEO_MP4",
+        description="MP4 video",
+        meaning=IANA["video/mp4"])
+    VIDEO_MPEG = PermissibleValue(
+        text="VIDEO_MPEG",
+        description="MPEG video",
+        meaning=IANA["video/mpeg"])
+    VIDEO_WEBM = PermissibleValue(
+        text="VIDEO_WEBM",
+        description="WebM video",
+        meaning=IANA["video/webm"])
+    VIDEO_OGG = PermissibleValue(
+        text="VIDEO_OGG",
+        description="OGG video",
+        meaning=IANA["video/ogg"])
+    VIDEO_QUICKTIME = PermissibleValue(
+        text="VIDEO_QUICKTIME",
+        description="QuickTime video",
+        meaning=IANA["video/quicktime"])
+    VIDEO_AVI = PermissibleValue(
+        text="VIDEO_AVI",
+        description="AVI video",
+        meaning=IANA["video/x-msvideo"])
+    FONT_WOFF = PermissibleValue(
+        text="FONT_WOFF",
+        description="Web Open Font Format",
+        meaning=IANA["font/woff"])
+    FONT_WOFF2 = PermissibleValue(
+        text="FONT_WOFF2",
+        description="Web Open Font Format 2",
+        meaning=IANA["font/woff2"])
+    FONT_TTF = PermissibleValue(
+        text="FONT_TTF",
+        description="TrueType Font",
+        meaning=IANA["font/ttf"])
+    FONT_OTF = PermissibleValue(
+        text="FONT_OTF",
+        description="OpenType Font",
+        meaning=IANA["font/otf"])
+    MULTIPART_FORM_DATA = PermissibleValue(
+        text="MULTIPART_FORM_DATA",
+        description="Form data with file upload",
+        meaning=IANA["multipart/form-data"])
+    MULTIPART_MIXED = PermissibleValue(
+        text="MULTIPART_MIXED",
+        description="Mixed multipart message",
+        meaning=IANA["multipart/mixed"])
+
+    _defn = EnumDefinition(
+        name="MimeType",
+        description="Common MIME types for various file formats",
+    )
+
+class MimeTypeCategory(EnumDefinitionImpl):
+    """
+    Categories of MIME types
+    """
+    APPLICATION = PermissibleValue(
+        text="APPLICATION",
+        description="Application data")
+    TEXT = PermissibleValue(
+        text="TEXT",
+        description="Text documents")
+    IMAGE = PermissibleValue(
+        text="IMAGE",
+        description="Image files")
+    AUDIO = PermissibleValue(
+        text="AUDIO",
+        description="Audio files")
+    VIDEO = PermissibleValue(
+        text="VIDEO",
+        description="Video files")
+    FONT = PermissibleValue(
+        text="FONT",
+        description="Font files")
+    MULTIPART = PermissibleValue(
+        text="MULTIPART",
+        description="Multipart messages")
+    MESSAGE = PermissibleValue(
+        text="MESSAGE",
+        description="Message formats")
+    MODEL = PermissibleValue(
+        text="MODEL",
+        description="3D models and similar")
+
+    _defn = EnumDefinition(
+        name="MimeTypeCategory",
+        description="Categories of MIME types",
+    )
+
+class TextCharset(EnumDefinitionImpl):
+    """
+    Character encodings for text content
+    """
+    UTF_8 = PermissibleValue(
+        text="UTF_8",
+        description="UTF-8 Unicode encoding")
+    UTF_16 = PermissibleValue(
+        text="UTF_16",
+        description="UTF-16 Unicode encoding")
+    UTF_32 = PermissibleValue(
+        text="UTF_32",
+        description="UTF-32 Unicode encoding")
+    ASCII = PermissibleValue(
+        text="ASCII",
+        description="ASCII encoding")
+    ISO_8859_1 = PermissibleValue(
+        text="ISO_8859_1",
+        description="ISO-8859-1 (Latin-1) encoding")
+    ISO_8859_2 = PermissibleValue(
+        text="ISO_8859_2",
+        description="ISO-8859-2 (Latin-2) encoding")
+    WINDOWS_1252 = PermissibleValue(
+        text="WINDOWS_1252",
+        description="Windows-1252 encoding")
+    GB2312 = PermissibleValue(
+        text="GB2312",
+        description="Simplified Chinese encoding")
+    SHIFT_JIS = PermissibleValue(
+        text="SHIFT_JIS",
+        description="Japanese encoding")
+    EUC_KR = PermissibleValue(
+        text="EUC_KR",
+        description="Korean encoding")
+    BIG5 = PermissibleValue(
+        text="BIG5",
+        description="Traditional Chinese encoding")
+
+    _defn = EnumDefinition(
+        name="TextCharset",
+        description="Character encodings for text content",
+    )
+
+class CompressionType(EnumDefinitionImpl):
+    """
+    Compression types used with Content-Encoding
+    """
+    GZIP = PermissibleValue(
+        text="GZIP",
+        description="GZIP compression")
+    DEFLATE = PermissibleValue(
+        text="DEFLATE",
+        description="DEFLATE compression")
+    BR = PermissibleValue(
+        text="BR",
+        description="Brotli compression")
+    COMPRESS = PermissibleValue(
+        text="COMPRESS",
+        description="Unix compress")
+    IDENTITY = PermissibleValue(
+        text="IDENTITY",
+        description="No compression")
+
+    _defn = EnumDefinition(
+        name="CompressionType",
+        description="Compression types used with Content-Encoding",
+    )
+
+class StateOfMatterEnum(EnumDefinitionImpl):
+    """
+    The physical state or phase of matter
+    """
+    SOLID = PermissibleValue(
+        text="SOLID",
+        description="A state of matter where particles are closely packed together with fixed positions",
+        meaning=AFO["AFQ_0000112"])
+    LIQUID = PermissibleValue(
+        text="LIQUID",
+        description="A nearly incompressible fluid that conforms to the shape of its container",
+        meaning=AFO["AFQ_0000113"])
+    GAS = PermissibleValue(
+        text="GAS",
+        description="A compressible fluid that expands to fill its container",
+        meaning=AFO["AFQ_0000114"])
+    PLASMA = PermissibleValue(
+        text="PLASMA",
+        description="An ionized gas with freely moving charged particles",
+        meaning=AFO["AFQ_0000115"])
+    BOSE_EINSTEIN_CONDENSATE = PermissibleValue(
+        text="BOSE_EINSTEIN_CONDENSATE",
+        description="""A state of matter formed at extremely low temperatures where particles occupy the same quantum state""")
+    FERMIONIC_CONDENSATE = PermissibleValue(
+        text="FERMIONIC_CONDENSATE",
+        description="A superfluid phase formed by fermionic particles at extremely low temperatures")
+    SUPERCRITICAL_FLUID = PermissibleValue(
+        text="SUPERCRITICAL_FLUID",
+        description="A state where distinct liquid and gas phases do not exist")
+    SUPERFLUID = PermissibleValue(
+        text="SUPERFLUID",
+        description="A phase of matter with zero viscosity")
+    SUPERSOLID = PermissibleValue(
+        text="SUPERSOLID",
+        description="A spatially ordered material with superfluid properties")
+    QUARK_GLUON_PLASMA = PermissibleValue(
+        text="QUARK_GLUON_PLASMA",
+        description="An extremely hot phase where quarks and gluons are not confined")
+
+    _defn = EnumDefinition(
+        name="StateOfMatterEnum",
+        description="The physical state or phase of matter",
+    )
+
+class AirPollutantEnum(EnumDefinitionImpl):
+    """
+    Common air pollutants and air quality indicators
+    """
+    PM2_5 = PermissibleValue(
+        text="PM2_5",
+        title="fine respirable suspended particulate matter",
+        description="Fine particulate matter with diameter less than 2.5 micrometers",
+        meaning=ENVO["01000415"])
+    PM10 = PermissibleValue(
+        text="PM10",
+        title="respirable suspended particulate matter",
+        description="Respirable particulate matter with diameter less than 10 micrometers",
+        meaning=ENVO["01000405"])
+    ULTRAFINE_PARTICLES = PermissibleValue(
+        text="ULTRAFINE_PARTICLES",
+        title="ultrafine respirable suspended particulate matter",
+        description="Ultrafine particles with diameter less than 100 nanometers",
+        meaning=ENVO["01000416"])
+    OZONE = PermissibleValue(
+        text="OZONE",
+        description="Ground-level ozone (O3)",
+        meaning=CHEBI["25812"])
+    NITROGEN_DIOXIDE = PermissibleValue(
+        text="NITROGEN_DIOXIDE",
+        description="Nitrogen dioxide (NO2)",
+        meaning=CHEBI["33101"])
+    SULFUR_DIOXIDE = PermissibleValue(
+        text="SULFUR_DIOXIDE",
+        description="Sulfur dioxide (SO2)",
+        meaning=CHEBI["18422"])
+    CARBON_MONOXIDE = PermissibleValue(
+        text="CARBON_MONOXIDE",
+        description="Carbon monoxide (CO)",
+        meaning=CHEBI["17245"])
+    LEAD = PermissibleValue(
+        text="LEAD",
+        title="Lead Metal",
+        description="Airborne lead particles",
+        meaning=NCIT["C44396"])
+    BENZENE = PermissibleValue(
+        text="BENZENE",
+        description="Benzene vapor",
+        meaning=CHEBI["16716"])
+    FORMALDEHYDE = PermissibleValue(
+        text="FORMALDEHYDE",
+        description="Formaldehyde gas",
+        meaning=CHEBI["16842"])
+    VOLATILE_ORGANIC_COMPOUNDS = PermissibleValue(
+        text="VOLATILE_ORGANIC_COMPOUNDS",
+        title="volatile organic compound",
+        description="Volatile organic compounds (VOCs)",
+        meaning=CHEBI["134179"])
+    POLYCYCLIC_AROMATIC_HYDROCARBONS = PermissibleValue(
+        text="POLYCYCLIC_AROMATIC_HYDROCARBONS",
+        title="polycyclic arene",
+        description="Polycyclic aromatic hydrocarbons (PAHs)",
+        meaning=CHEBI["33848"])
+
+    _defn = EnumDefinition(
+        name="AirPollutantEnum",
+        description="Common air pollutants and air quality indicators",
+    )
+
+class PesticideTypeEnum(EnumDefinitionImpl):
+    """
+    Categories of pesticides by target organism or chemical class
+    """
+    HERBICIDE = PermissibleValue(
+        text="HERBICIDE",
+        description="Chemical used to kill unwanted plants",
+        meaning=CHEBI["24527"])
+    INSECTICIDE = PermissibleValue(
+        text="INSECTICIDE",
+        description="Chemical used to kill insects",
+        meaning=CHEBI["24852"])
+    FUNGICIDE = PermissibleValue(
+        text="FUNGICIDE",
+        description="Chemical used to kill fungi",
+        meaning=CHEBI["24127"])
+    RODENTICIDE = PermissibleValue(
+        text="RODENTICIDE",
+        description="Chemical used to kill rodents",
+        meaning=CHEBI["33288"])
+    ORGANOPHOSPHATE = PermissibleValue(
+        text="ORGANOPHOSPHATE",
+        title="organophosphate insecticide",
+        description="Organophosphate pesticide",
+        meaning=CHEBI["25708"])
+    ORGANOCHLORINE = PermissibleValue(
+        text="ORGANOCHLORINE",
+        title="organochlorine insecticide",
+        description="Organochlorine pesticide",
+        meaning=CHEBI["25705"])
+    PYRETHROID = PermissibleValue(
+        text="PYRETHROID",
+        title="pyrethroid insecticide",
+        description="Pyrethroid pesticide",
+        meaning=CHEBI["26413"])
+    CARBAMATE = PermissibleValue(
+        text="CARBAMATE",
+        title="carbamate insecticide",
+        description="Carbamate pesticide",
+        meaning=CHEBI["38461"])
+    NEONICOTINOID = PermissibleValue(
+        text="NEONICOTINOID",
+        title="neonicotinoid insectide",
+        description="Neonicotinoid pesticide",
+        meaning=CHEBI["25540"])
+    GLYPHOSATE = PermissibleValue(
+        text="GLYPHOSATE",
+        description="Glyphosate herbicide",
+        meaning=CHEBI["27744"])
+
+    _defn = EnumDefinition(
+        name="PesticideTypeEnum",
+        description="Categories of pesticides by target organism or chemical class",
+    )
+
+class HeavyMetalEnum(EnumDefinitionImpl):
+    """
+    Heavy metals of environmental health concern
+    """
+    LEAD = PermissibleValue(
+        text="LEAD",
+        title="Lead Metal",
+        description="Lead (Pb)",
+        meaning=NCIT["C44396"])
+    MERCURY = PermissibleValue(
+        text="MERCURY",
+        description="Mercury (Hg)",
+        meaning=NCIT["C66842"])
+    CADMIUM = PermissibleValue(
+        text="CADMIUM",
+        description="Cadmium (Cd)",
+        meaning=NCIT["C44348"])
+    ARSENIC = PermissibleValue(
+        text="ARSENIC",
+        description="Arsenic (As)",
+        meaning=NCIT["C28131"])
+    CHROMIUM = PermissibleValue(
+        text="CHROMIUM",
+        description="Chromium (Cr)",
+        meaning=NCIT["C370"])
+    NICKEL = PermissibleValue(
+        text="NICKEL",
+        title="nickel atom",
+        description="Nickel (Ni)",
+        meaning=CHEBI["28112"])
+    COPPER = PermissibleValue(
+        text="COPPER",
+        title="copper atom",
+        description="Copper (Cu)",
+        meaning=CHEBI["28694"])
+    ZINC = PermissibleValue(
+        text="ZINC",
+        title="zinc atom",
+        description="Zinc (Zn)",
+        meaning=CHEBI["27363"])
+    MANGANESE = PermissibleValue(
+        text="MANGANESE",
+        title="manganese atom",
+        description="Manganese (Mn)",
+        meaning=CHEBI["18291"])
+    COBALT = PermissibleValue(
+        text="COBALT",
+        title="cobalt atom",
+        description="Cobalt (Co)",
+        meaning=CHEBI["27638"])
+
+    _defn = EnumDefinition(
+        name="HeavyMetalEnum",
+        description="Heavy metals of environmental health concern",
+    )
+
+class ExposureRouteEnum(EnumDefinitionImpl):
+    """
+    Routes by which exposure to environmental agents occurs
+    """
+    INHALATION = PermissibleValue(
+        text="INHALATION",
+        title="Nasal Route of Administration",
+        description="Exposure through breathing",
+        meaning=NCIT["C38284"])
+    INGESTION = PermissibleValue(
+        text="INGESTION",
+        title="Oral Route of Administration",
+        description="Exposure through eating or drinking",
+        meaning=NCIT["C38288"])
+    DERMAL = PermissibleValue(
+        text="DERMAL",
+        title="Cutaneous Route of Administration",
+        description="Exposure through skin contact",
+        meaning=NCIT["C38675"])
+    INJECTION = PermissibleValue(
+        text="INJECTION",
+        title="Intravenous Route of Administration",
+        description="Exposure through injection",
+        meaning=NCIT["C38276"])
+    TRANSPLACENTAL = PermissibleValue(
+        text="TRANSPLACENTAL",
+        title="Transplacental Route of Administration",
+        description="Exposure through placental transfer",
+        meaning=NCIT["C38307"])
+    OCULAR = PermissibleValue(
+        text="OCULAR",
+        title="Ophthalmic Route of Administration",
+        description="Exposure through the eyes",
+        meaning=NCIT["C38287"])
+    MULTIPLE_ROUTES = PermissibleValue(
+        text="MULTIPLE_ROUTES",
+        description="Exposure through multiple pathways")
+
+    _defn = EnumDefinition(
+        name="ExposureRouteEnum",
+        description="Routes by which exposure to environmental agents occurs",
+    )
+
+class ExposureSourceEnum(EnumDefinitionImpl):
+    """
+    Common sources of environmental exposures
+    """
+    AMBIENT_AIR = PermissibleValue(
+        text="AMBIENT_AIR",
+        description="Outdoor air pollution")
+    INDOOR_AIR = PermissibleValue(
+        text="INDOOR_AIR",
+        description="Indoor air pollution")
+    DRINKING_WATER = PermissibleValue(
+        text="DRINKING_WATER",
+        description="Contaminated drinking water")
+    SOIL = PermissibleValue(
+        text="SOIL",
+        title="contaminated soil",
+        description="Contaminated soil",
+        meaning=ENVO["00002116"])
+    FOOD = PermissibleValue(
+        text="FOOD",
+        description="Contaminated food")
+    OCCUPATIONAL = PermissibleValue(
+        text="OCCUPATIONAL",
+        title="occupational environment",
+        description="Workplace exposure",
+        meaning=ENVO["03501332"])
+    CONSUMER_PRODUCTS = PermissibleValue(
+        text="CONSUMER_PRODUCTS",
+        description="Household and consumer products")
+    INDUSTRIAL_EMISSIONS = PermissibleValue(
+        text="INDUSTRIAL_EMISSIONS",
+        description="Industrial facility emissions")
+    AGRICULTURAL = PermissibleValue(
+        text="AGRICULTURAL",
+        description="Agricultural activities")
+    TRAFFIC = PermissibleValue(
+        text="TRAFFIC",
+        description="Traffic-related pollution")
+    TOBACCO_SMOKE = PermissibleValue(
+        text="TOBACCO_SMOKE",
+        title="Passive Smoke Exposure",
+        description="Active or passive tobacco smoke exposure",
+        meaning=NCIT["C17140"])
+    CONSTRUCTION = PermissibleValue(
+        text="CONSTRUCTION",
+        description="Construction-related exposure")
+    MINING = PermissibleValue(
+        text="MINING",
+        description="Mining-related exposure")
+
+    _defn = EnumDefinition(
+        name="ExposureSourceEnum",
+        description="Common sources of environmental exposures",
+    )
+
+class WaterContaminantEnum(EnumDefinitionImpl):
+    """
+    Common water contaminants
+    """
+    LEAD = PermissibleValue(
+        text="LEAD",
+        title="Lead Metal",
+        description="Lead contamination",
+        meaning=NCIT["C44396"])
+    ARSENIC = PermissibleValue(
+        text="ARSENIC",
+        description="Arsenic contamination",
+        meaning=NCIT["C28131"])
+    NITRATES = PermissibleValue(
+        text="NITRATES",
+        title="nitrate",
+        description="Nitrate contamination",
+        meaning=CHEBI["17632"])
+    FLUORIDE = PermissibleValue(
+        text="FLUORIDE",
+        description="Fluoride levels",
+        meaning=CHEBI["17051"])
+    CHLORINE = PermissibleValue(
+        text="CHLORINE",
+        description="Chlorine and chlorination byproducts",
+        meaning=NCIT["C28140"])
+    BACTERIA = PermissibleValue(
+        text="BACTERIA",
+        description="Bacterial contamination",
+        meaning=NCIT["C14187"])
+    VIRUSES = PermissibleValue(
+        text="VIRUSES",
+        title="Virus",
+        description="Viral contamination",
+        meaning=NCIT["C14283"])
+    PARASITES = PermissibleValue(
+        text="PARASITES",
+        title="Parasite",
+        description="Parasitic contamination",
+        meaning=NCIT["C28176"])
+    PFAS = PermissibleValue(
+        text="PFAS",
+        title="perfluoroalkyl substance",
+        description="Per- and polyfluoroalkyl substances",
+        meaning=CHEBI["172397"])
+    MICROPLASTICS = PermissibleValue(
+        text="MICROPLASTICS",
+        title="microplastic particle",
+        description="Microplastic particles",
+        meaning=ENVO["01000944"])
+    PHARMACEUTICALS = PermissibleValue(
+        text="PHARMACEUTICALS",
+        title="pharmaceutical",
+        description="Pharmaceutical residues",
+        meaning=CHEBI["52217"])
+    PESTICIDES = PermissibleValue(
+        text="PESTICIDES",
+        title="pesticide",
+        description="Pesticide residues",
+        meaning=CHEBI["25944"])
+
+    _defn = EnumDefinition(
+        name="WaterContaminantEnum",
+        description="Common water contaminants",
+    )
+
+class EndocrineDisruptorEnum(EnumDefinitionImpl):
+    """
+    Common endocrine disrupting chemicals
+    """
+    BPA = PermissibleValue(
+        text="BPA",
+        title="bisphenol A",
+        description="Bisphenol A",
+        meaning=CHEBI["33216"])
+    PHTHALATES = PermissibleValue(
+        text="PHTHALATES",
+        title="phthalate",
+        description="Phthalates",
+        meaning=CHEBI["26092"])
+    PFAS = PermissibleValue(
+        text="PFAS",
+        title="perfluoroalkyl substance",
+        description="Per- and polyfluoroalkyl substances",
+        meaning=CHEBI["172397"])
+    PCB = PermissibleValue(
+        text="PCB",
+        title="polychlorobiphenyl",
+        description="Polychlorinated biphenyls",
+        meaning=CHEBI["53156"])
+    DIOXINS = PermissibleValue(
+        text="DIOXINS",
+        title="Dioxin Compound",
+        description="Dioxins",
+        meaning=NCIT["C442"])
+    DDT = PermissibleValue(
+        text="DDT",
+        description="Dichlorodiphenyltrichloroethane and metabolites",
+        meaning=CHEBI["16130"])
+    PARABENS = PermissibleValue(
+        text="PARABENS",
+        title="paraben",
+        description="Parabens",
+        meaning=CHEBI["85122"])
+    TRICLOSAN = PermissibleValue(
+        text="TRICLOSAN",
+        description="Triclosan",
+        meaning=CHEBI["164200"])
+    FLAME_RETARDANTS = PermissibleValue(
+        text="FLAME_RETARDANTS",
+        title="brominated flame retardant",
+        description="Brominated flame retardants",
+        meaning=CHEBI["172368"])
+
+    _defn = EnumDefinition(
+        name="EndocrineDisruptorEnum",
+        description="Common endocrine disrupting chemicals",
+    )
+
+class ExposureDurationEnum(EnumDefinitionImpl):
+    """
+    Duration categories for environmental exposures
+    """
+    ACUTE = PermissibleValue(
+        text="ACUTE",
+        description="Single or short-term exposure (hours to days)")
+    SUBACUTE = PermissibleValue(
+        text="SUBACUTE",
+        description="Repeated exposure over weeks")
+    SUBCHRONIC = PermissibleValue(
+        text="SUBCHRONIC",
+        description="Repeated exposure over months")
+    CHRONIC = PermissibleValue(
+        text="CHRONIC",
+        description="Long-term exposure over years")
+    LIFETIME = PermissibleValue(
+        text="LIFETIME",
+        description="Exposure over entire lifetime")
+    PRENATAL = PermissibleValue(
+        text="PRENATAL",
+        description="Exposure during pregnancy")
+    POSTNATAL = PermissibleValue(
+        text="POSTNATAL",
+        description="Exposure after birth")
+    DEVELOPMENTAL = PermissibleValue(
+        text="DEVELOPMENTAL",
+        description="Exposure during critical developmental periods")
+
+    _defn = EnumDefinition(
+        name="ExposureDurationEnum",
+        description="Duration categories for environmental exposures",
+    )
+
+class CountryCodeISO2Enum(EnumDefinitionImpl):
+    """
+    ISO 3166-1 alpha-2 country codes (2-letter codes)
+    """
+    US = PermissibleValue(
+        text="US",
+        description="United States of America")
+    CA = PermissibleValue(
+        text="CA",
+        description="Canada")
+    MX = PermissibleValue(
+        text="MX",
+        description="Mexico")
+    GB = PermissibleValue(
+        text="GB",
+        description="United Kingdom")
+    FR = PermissibleValue(
+        text="FR",
+        description="France")
+    DE = PermissibleValue(
+        text="DE",
+        description="Germany")
+    IT = PermissibleValue(
+        text="IT",
+        description="Italy")
+    ES = PermissibleValue(
+        text="ES",
+        description="Spain")
+    PT = PermissibleValue(
+        text="PT",
+        description="Portugal")
+    NL = PermissibleValue(
+        text="NL",
+        description="Netherlands")
+    BE = PermissibleValue(
+        text="BE",
+        description="Belgium")
+    CH = PermissibleValue(
+        text="CH",
+        description="Switzerland")
+    AT = PermissibleValue(
+        text="AT",
+        description="Austria")
+    SE = PermissibleValue(
+        text="SE",
+        description="Sweden")
+    DK = PermissibleValue(
+        text="DK",
+        description="Denmark")
+    FI = PermissibleValue(
+        text="FI",
+        description="Finland")
+    PL = PermissibleValue(
+        text="PL",
+        description="Poland")
+    RU = PermissibleValue(
+        text="RU",
+        description="Russian Federation")
+    UA = PermissibleValue(
+        text="UA",
+        description="Ukraine")
+    CN = PermissibleValue(
+        text="CN",
+        description="China")
+    JP = PermissibleValue(
+        text="JP",
+        description="Japan")
+    KR = PermissibleValue(
+        text="KR",
+        description="South Korea")
+    IN = PermissibleValue(
+        text="IN",
+        description="India")
+    AU = PermissibleValue(
+        text="AU",
+        description="Australia")
+    NZ = PermissibleValue(
+        text="NZ",
+        description="New Zealand")
+    BR = PermissibleValue(
+        text="BR",
+        description="Brazil")
+    AR = PermissibleValue(
+        text="AR",
+        description="Argentina")
+    CL = PermissibleValue(
+        text="CL",
+        description="Chile")
+    CO = PermissibleValue(
+        text="CO",
+        description="Colombia")
+    PE = PermissibleValue(
+        text="PE",
+        description="Peru")
+    VE = PermissibleValue(
+        text="VE",
+        description="Venezuela")
+    ZA = PermissibleValue(
+        text="ZA",
+        description="South Africa")
+    EG = PermissibleValue(
+        text="EG",
+        description="Egypt")
+    NG = PermissibleValue(
+        text="NG",
+        description="Nigeria")
+    KE = PermissibleValue(
+        text="KE",
+        description="Kenya")
+    IL = PermissibleValue(
+        text="IL",
+        description="Israel")
+    SA = PermissibleValue(
+        text="SA",
+        description="Saudi Arabia")
+    AE = PermissibleValue(
+        text="AE",
+        description="United Arab Emirates")
+    TR = PermissibleValue(
+        text="TR",
+        description="Turkey")
+    GR = PermissibleValue(
+        text="GR",
+        description="Greece")
+    IE = PermissibleValue(
+        text="IE",
+        description="Ireland")
+    SG = PermissibleValue(
+        text="SG",
+        description="Singapore")
+    MY = PermissibleValue(
+        text="MY",
+        description="Malaysia")
+    TH = PermissibleValue(
+        text="TH",
+        description="Thailand")
+    ID = PermissibleValue(
+        text="ID",
+        description="Indonesia")
+    PH = PermissibleValue(
+        text="PH",
+        description="Philippines")
+    VN = PermissibleValue(
+        text="VN",
+        description="Vietnam")
+    PK = PermissibleValue(
+        text="PK",
+        description="Pakistan")
+    BD = PermissibleValue(
+        text="BD",
+        description="Bangladesh")
+
+    _defn = EnumDefinition(
+        name="CountryCodeISO2Enum",
+        description="ISO 3166-1 alpha-2 country codes (2-letter codes)",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "False",
+            PermissibleValue(
+                text="False",
+                description="Norway"))
+
+class CountryCodeISO3Enum(EnumDefinitionImpl):
+    """
+    ISO 3166-1 alpha-3 country codes (3-letter codes)
+    """
+    USA = PermissibleValue(
+        text="USA",
+        description="United States of America")
+    CAN = PermissibleValue(
+        text="CAN",
+        description="Canada")
+    MEX = PermissibleValue(
+        text="MEX",
+        description="Mexico")
+    GBR = PermissibleValue(
+        text="GBR",
+        description="United Kingdom")
+    FRA = PermissibleValue(
+        text="FRA",
+        description="France")
+    DEU = PermissibleValue(
+        text="DEU",
+        description="Germany")
+    ITA = PermissibleValue(
+        text="ITA",
+        description="Italy")
+    ESP = PermissibleValue(
+        text="ESP",
+        description="Spain")
+    PRT = PermissibleValue(
+        text="PRT",
+        description="Portugal")
+    NLD = PermissibleValue(
+        text="NLD",
+        description="Netherlands")
+    BEL = PermissibleValue(
+        text="BEL",
+        description="Belgium")
+    CHE = PermissibleValue(
+        text="CHE",
+        description="Switzerland")
+    AUT = PermissibleValue(
+        text="AUT",
+        description="Austria")
+    SWE = PermissibleValue(
+        text="SWE",
+        description="Sweden")
+    NOR = PermissibleValue(
+        text="NOR",
+        description="Norway")
+    DNK = PermissibleValue(
+        text="DNK",
+        description="Denmark")
+    FIN = PermissibleValue(
+        text="FIN",
+        description="Finland")
+    POL = PermissibleValue(
+        text="POL",
+        description="Poland")
+    RUS = PermissibleValue(
+        text="RUS",
+        description="Russian Federation")
+    UKR = PermissibleValue(
+        text="UKR",
+        description="Ukraine")
+    CHN = PermissibleValue(
+        text="CHN",
+        description="China")
+    JPN = PermissibleValue(
+        text="JPN",
+        description="Japan")
+    KOR = PermissibleValue(
+        text="KOR",
+        description="South Korea")
+    IND = PermissibleValue(
+        text="IND",
+        description="India")
+    AUS = PermissibleValue(
+        text="AUS",
+        description="Australia")
+    NZL = PermissibleValue(
+        text="NZL",
+        description="New Zealand")
+    BRA = PermissibleValue(
+        text="BRA",
+        description="Brazil")
+    ARG = PermissibleValue(
+        text="ARG",
+        description="Argentina")
+    CHL = PermissibleValue(
+        text="CHL",
+        description="Chile")
+    COL = PermissibleValue(
+        text="COL",
+        description="Colombia")
+
+    _defn = EnumDefinition(
+        name="CountryCodeISO3Enum",
+        description="ISO 3166-1 alpha-3 country codes (3-letter codes)",
+    )
+
+class USStateCodeEnum(EnumDefinitionImpl):
+    """
+    United States state and territory codes
+    """
+    AL = PermissibleValue(
+        text="AL",
+        description="Alabama")
+    AK = PermissibleValue(
+        text="AK",
+        description="Alaska")
+    AZ = PermissibleValue(
+        text="AZ",
+        description="Arizona")
+    AR = PermissibleValue(
+        text="AR",
+        description="Arkansas")
+    CA = PermissibleValue(
+        text="CA",
+        description="California")
+    CO = PermissibleValue(
+        text="CO",
+        description="Colorado")
+    CT = PermissibleValue(
+        text="CT",
+        description="Connecticut")
+    DE = PermissibleValue(
+        text="DE",
+        description="Delaware")
+    FL = PermissibleValue(
+        text="FL",
+        description="Florida")
+    GA = PermissibleValue(
+        text="GA",
+        description="Georgia")
+    HI = PermissibleValue(
+        text="HI",
+        description="Hawaii")
+    ID = PermissibleValue(
+        text="ID",
+        description="Idaho")
+    IL = PermissibleValue(
+        text="IL",
+        description="Illinois")
+    IN = PermissibleValue(
+        text="IN",
+        description="Indiana")
+    IA = PermissibleValue(
+        text="IA",
+        description="Iowa")
+    KS = PermissibleValue(
+        text="KS",
+        description="Kansas")
+    KY = PermissibleValue(
+        text="KY",
+        description="Kentucky")
+    LA = PermissibleValue(
+        text="LA",
+        description="Louisiana")
+    ME = PermissibleValue(
+        text="ME",
+        description="Maine")
+    MD = PermissibleValue(
+        text="MD",
+        description="Maryland")
+    MA = PermissibleValue(
+        text="MA",
+        description="Massachusetts")
+    MI = PermissibleValue(
+        text="MI",
+        description="Michigan")
+    MN = PermissibleValue(
+        text="MN",
+        description="Minnesota")
+    MS = PermissibleValue(
+        text="MS",
+        description="Mississippi")
+    MO = PermissibleValue(
+        text="MO",
+        description="Missouri")
+    MT = PermissibleValue(
+        text="MT",
+        description="Montana")
+    NE = PermissibleValue(
+        text="NE",
+        description="Nebraska")
+    NV = PermissibleValue(
+        text="NV",
+        description="Nevada")
+    NH = PermissibleValue(
+        text="NH",
+        description="New Hampshire")
+    NJ = PermissibleValue(
+        text="NJ",
+        description="New Jersey")
+    NM = PermissibleValue(
+        text="NM",
+        description="New Mexico")
+    NY = PermissibleValue(
+        text="NY",
+        description="New York")
+    NC = PermissibleValue(
+        text="NC",
+        description="North Carolina")
+    ND = PermissibleValue(
+        text="ND",
+        description="North Dakota")
+    OH = PermissibleValue(
+        text="OH",
+        description="Ohio")
+    OK = PermissibleValue(
+        text="OK",
+        description="Oklahoma")
+    OR = PermissibleValue(
+        text="OR",
+        description="Oregon")
+    PA = PermissibleValue(
+        text="PA",
+        description="Pennsylvania")
+    RI = PermissibleValue(
+        text="RI",
+        description="Rhode Island")
+    SC = PermissibleValue(
+        text="SC",
+        description="South Carolina")
+    SD = PermissibleValue(
+        text="SD",
+        description="South Dakota")
+    TN = PermissibleValue(
+        text="TN",
+        description="Tennessee")
+    TX = PermissibleValue(
+        text="TX",
+        description="Texas")
+    UT = PermissibleValue(
+        text="UT",
+        description="Utah")
+    VT = PermissibleValue(
+        text="VT",
+        description="Vermont")
+    VA = PermissibleValue(
+        text="VA",
+        description="Virginia")
+    WA = PermissibleValue(
+        text="WA",
+        description="Washington")
+    WV = PermissibleValue(
+        text="WV",
+        description="West Virginia")
+    WI = PermissibleValue(
+        text="WI",
+        description="Wisconsin")
+    WY = PermissibleValue(
+        text="WY",
+        description="Wyoming")
+    DC = PermissibleValue(
+        text="DC",
+        description="District of Columbia")
+    PR = PermissibleValue(
+        text="PR",
+        description="Puerto Rico")
+    VI = PermissibleValue(
+        text="VI",
+        description="U.S. Virgin Islands")
+    GU = PermissibleValue(
+        text="GU",
+        description="Guam")
+    AS = PermissibleValue(
+        text="AS",
+        description="American Samoa")
+    MP = PermissibleValue(
+        text="MP",
+        description="Northern Mariana Islands")
+
+    _defn = EnumDefinition(
+        name="USStateCodeEnum",
+        description="United States state and territory codes",
+    )
+
+class CanadianProvinceCodeEnum(EnumDefinitionImpl):
+    """
+    Canadian province and territory codes
+    """
+    AB = PermissibleValue(
+        text="AB",
+        description="Alberta")
+    BC = PermissibleValue(
+        text="BC",
+        description="British Columbia")
+    MB = PermissibleValue(
+        text="MB",
+        description="Manitoba")
+    NB = PermissibleValue(
+        text="NB",
+        description="New Brunswick")
+    NL = PermissibleValue(
+        text="NL",
+        description="Newfoundland and Labrador")
+    NS = PermissibleValue(
+        text="NS",
+        description="Nova Scotia")
+    NT = PermissibleValue(
+        text="NT",
+        description="Northwest Territories")
+    NU = PermissibleValue(
+        text="NU",
+        description="Nunavut")
+    PE = PermissibleValue(
+        text="PE",
+        description="Prince Edward Island")
+    QC = PermissibleValue(
+        text="QC",
+        description="Quebec")
+    SK = PermissibleValue(
+        text="SK",
+        description="Saskatchewan")
+    YT = PermissibleValue(
+        text="YT",
+        description="Yukon")
+
+    _defn = EnumDefinition(
+        name="CanadianProvinceCodeEnum",
+        description="Canadian province and territory codes",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "True",
+            PermissibleValue(
+                text="True",
+                description="Ontario"))
+
+class CompassDirection(EnumDefinitionImpl):
+    """
+    Cardinal and intercardinal compass directions
+    """
+    NORTH = PermissibleValue(
+        text="NORTH",
+        description="North (0°/360°)")
+    EAST = PermissibleValue(
+        text="EAST",
+        description="East (90°)")
+    SOUTH = PermissibleValue(
+        text="SOUTH",
+        description="South (180°)")
+    WEST = PermissibleValue(
+        text="WEST",
+        description="West (270°)")
+    NORTHEAST = PermissibleValue(
+        text="NORTHEAST",
+        description="Northeast (45°)")
+    SOUTHEAST = PermissibleValue(
+        text="SOUTHEAST",
+        description="Southeast (135°)")
+    SOUTHWEST = PermissibleValue(
+        text="SOUTHWEST",
+        description="Southwest (225°)")
+    NORTHWEST = PermissibleValue(
+        text="NORTHWEST",
+        description="Northwest (315°)")
+    NORTH_NORTHEAST = PermissibleValue(
+        text="NORTH_NORTHEAST",
+        description="North-northeast (22.5°)")
+    EAST_NORTHEAST = PermissibleValue(
+        text="EAST_NORTHEAST",
+        description="East-northeast (67.5°)")
+    EAST_SOUTHEAST = PermissibleValue(
+        text="EAST_SOUTHEAST",
+        description="East-southeast (112.5°)")
+    SOUTH_SOUTHEAST = PermissibleValue(
+        text="SOUTH_SOUTHEAST",
+        description="South-southeast (157.5°)")
+    SOUTH_SOUTHWEST = PermissibleValue(
+        text="SOUTH_SOUTHWEST",
+        description="South-southwest (202.5°)")
+    WEST_SOUTHWEST = PermissibleValue(
+        text="WEST_SOUTHWEST",
+        description="West-southwest (247.5°)")
+    WEST_NORTHWEST = PermissibleValue(
+        text="WEST_NORTHWEST",
+        description="West-northwest (292.5°)")
+    NORTH_NORTHWEST = PermissibleValue(
+        text="NORTH_NORTHWEST",
+        description="North-northwest (337.5°)")
+
+    _defn = EnumDefinition(
+        name="CompassDirection",
+        description="Cardinal and intercardinal compass directions",
+    )
+
+class RelativeDirection(EnumDefinitionImpl):
+    """
+    Relative directional terms
+    """
+    FORWARD = PermissibleValue(
+        text="FORWARD",
+        description="Forward/Ahead")
+    BACKWARD = PermissibleValue(
+        text="BACKWARD",
+        description="Backward/Behind")
+    LEFT = PermissibleValue(
+        text="LEFT",
+        description="Left")
+    RIGHT = PermissibleValue(
+        text="RIGHT",
+        description="Right")
+    UP = PermissibleValue(
+        text="UP",
+        description="Up/Above")
+    DOWN = PermissibleValue(
+        text="DOWN",
+        description="Down/Below")
+    INWARD = PermissibleValue(
+        text="INWARD",
+        description="Inward/Toward center")
+    OUTWARD = PermissibleValue(
+        text="OUTWARD",
+        description="Outward/Away from center")
+    CLOCKWISE = PermissibleValue(
+        text="CLOCKWISE",
+        description="Clockwise rotation")
+    COUNTERCLOCKWISE = PermissibleValue(
+        text="COUNTERCLOCKWISE",
+        description="Counterclockwise rotation")
+
+    _defn = EnumDefinition(
+        name="RelativeDirection",
+        description="Relative directional terms",
+    )
+
+class WindDirection(EnumDefinitionImpl):
+    """
+    Wind direction nomenclature (named for where wind comes FROM)
+    """
+    NORTHERLY = PermissibleValue(
+        text="NORTHERLY",
+        description="Wind from the north")
+    NORTHEASTERLY = PermissibleValue(
+        text="NORTHEASTERLY",
+        description="Wind from the northeast")
+    EASTERLY = PermissibleValue(
+        text="EASTERLY",
+        description="Wind from the east")
+    SOUTHEASTERLY = PermissibleValue(
+        text="SOUTHEASTERLY",
+        description="Wind from the southeast")
+    SOUTHERLY = PermissibleValue(
+        text="SOUTHERLY",
+        description="Wind from the south")
+    SOUTHWESTERLY = PermissibleValue(
+        text="SOUTHWESTERLY",
+        description="Wind from the southwest")
+    WESTERLY = PermissibleValue(
+        text="WESTERLY",
+        description="Wind from the west")
+    NORTHWESTERLY = PermissibleValue(
+        text="NORTHWESTERLY",
+        description="Wind from the northwest")
+    VARIABLE = PermissibleValue(
+        text="VARIABLE",
+        description="Variable wind direction")
+
+    _defn = EnumDefinition(
+        name="WindDirection",
+        description="Wind direction nomenclature (named for where wind comes FROM)",
+    )
+
+class ContinentEnum(EnumDefinitionImpl):
+    """
+    Continental regions
+    """
+    AFRICA = PermissibleValue(
+        text="AFRICA",
+        description="Africa")
+    ANTARCTICA = PermissibleValue(
+        text="ANTARCTICA",
+        description="Antarctica")
+    ASIA = PermissibleValue(
+        text="ASIA",
+        description="Asia")
+    EUROPE = PermissibleValue(
+        text="EUROPE",
+        description="Europe")
+    NORTH_AMERICA = PermissibleValue(
+        text="NORTH_AMERICA",
+        description="North America")
+    OCEANIA = PermissibleValue(
+        text="OCEANIA",
+        description="Oceania (including Australia)")
+    SOUTH_AMERICA = PermissibleValue(
+        text="SOUTH_AMERICA",
+        description="South America")
+
+    _defn = EnumDefinition(
+        name="ContinentEnum",
+        description="Continental regions",
+    )
+
+class UNRegionEnum(EnumDefinitionImpl):
+    """
+    United Nations regional classifications
+    """
+    EASTERN_AFRICA = PermissibleValue(
+        text="EASTERN_AFRICA",
+        description="Eastern Africa")
+    MIDDLE_AFRICA = PermissibleValue(
+        text="MIDDLE_AFRICA",
+        description="Middle Africa")
+    NORTHERN_AFRICA = PermissibleValue(
+        text="NORTHERN_AFRICA",
+        description="Northern Africa")
+    SOUTHERN_AFRICA = PermissibleValue(
+        text="SOUTHERN_AFRICA",
+        description="Southern Africa")
+    WESTERN_AFRICA = PermissibleValue(
+        text="WESTERN_AFRICA",
+        description="Western Africa")
+    CARIBBEAN = PermissibleValue(
+        text="CARIBBEAN",
+        description="Caribbean")
+    CENTRAL_AMERICA = PermissibleValue(
+        text="CENTRAL_AMERICA",
+        description="Central America")
+    NORTHERN_AMERICA = PermissibleValue(
+        text="NORTHERN_AMERICA",
+        description="Northern America")
+    SOUTH_AMERICA = PermissibleValue(
+        text="SOUTH_AMERICA",
+        description="South America")
+    CENTRAL_ASIA = PermissibleValue(
+        text="CENTRAL_ASIA",
+        description="Central Asia")
+    EASTERN_ASIA = PermissibleValue(
+        text="EASTERN_ASIA",
+        description="Eastern Asia")
+    SOUTHERN_ASIA = PermissibleValue(
+        text="SOUTHERN_ASIA",
+        description="Southern Asia")
+    SOUTH_EASTERN_ASIA = PermissibleValue(
+        text="SOUTH_EASTERN_ASIA",
+        description="South-Eastern Asia")
+    WESTERN_ASIA = PermissibleValue(
+        text="WESTERN_ASIA",
+        description="Western Asia")
+    EASTERN_EUROPE = PermissibleValue(
+        text="EASTERN_EUROPE",
+        description="Eastern Europe")
+    NORTHERN_EUROPE = PermissibleValue(
+        text="NORTHERN_EUROPE",
+        description="Northern Europe")
+    SOUTHERN_EUROPE = PermissibleValue(
+        text="SOUTHERN_EUROPE",
+        description="Southern Europe")
+    WESTERN_EUROPE = PermissibleValue(
+        text="WESTERN_EUROPE",
+        description="Western Europe")
+    AUSTRALIA_NEW_ZEALAND = PermissibleValue(
+        text="AUSTRALIA_NEW_ZEALAND",
+        description="Australia and New Zealand")
+    MELANESIA = PermissibleValue(
+        text="MELANESIA",
+        description="Melanesia")
+    MICRONESIA = PermissibleValue(
+        text="MICRONESIA",
+        description="Micronesia")
+    POLYNESIA = PermissibleValue(
+        text="POLYNESIA",
+        description="Polynesia")
+
+    _defn = EnumDefinition(
+        name="UNRegionEnum",
+        description="United Nations regional classifications",
+    )
+
+class LanguageCodeISO6391Enum(EnumDefinitionImpl):
+    """
+    ISO 639-1 two-letter language codes
+    """
+    EN = PermissibleValue(
+        text="EN",
+        description="English")
+    ES = PermissibleValue(
+        text="ES",
+        description="Spanish")
+    FR = PermissibleValue(
+        text="FR",
+        description="French")
+    DE = PermissibleValue(
+        text="DE",
+        description="German")
+    IT = PermissibleValue(
+        text="IT",
+        description="Italian")
+    PT = PermissibleValue(
+        text="PT",
+        description="Portuguese")
+    RU = PermissibleValue(
+        text="RU",
+        description="Russian")
+    ZH = PermissibleValue(
+        text="ZH",
+        description="Chinese")
+    JA = PermissibleValue(
+        text="JA",
+        description="Japanese")
+    KO = PermissibleValue(
+        text="KO",
+        description="Korean")
+    AR = PermissibleValue(
+        text="AR",
+        description="Arabic")
+    HI = PermissibleValue(
+        text="HI",
+        description="Hindi")
+    BN = PermissibleValue(
+        text="BN",
+        description="Bengali")
+    PA = PermissibleValue(
+        text="PA",
+        description="Punjabi")
+    UR = PermissibleValue(
+        text="UR",
+        description="Urdu")
+    NL = PermissibleValue(
+        text="NL",
+        description="Dutch")
+    PL = PermissibleValue(
+        text="PL",
+        description="Polish")
+    TR = PermissibleValue(
+        text="TR",
+        description="Turkish")
+    VI = PermissibleValue(
+        text="VI",
+        description="Vietnamese")
+    TH = PermissibleValue(
+        text="TH",
+        description="Thai")
+    SV = PermissibleValue(
+        text="SV",
+        description="Swedish")
+    DA = PermissibleValue(
+        text="DA",
+        description="Danish")
+    FI = PermissibleValue(
+        text="FI",
+        description="Finnish")
+    EL = PermissibleValue(
+        text="EL",
+        description="Greek")
+    HE = PermissibleValue(
+        text="HE",
+        description="Hebrew")
+    CS = PermissibleValue(
+        text="CS",
+        description="Czech")
+    HU = PermissibleValue(
+        text="HU",
+        description="Hungarian")
+    RO = PermissibleValue(
+        text="RO",
+        description="Romanian")
+    UK = PermissibleValue(
+        text="UK",
+        description="Ukrainian")
+
+    _defn = EnumDefinition(
+        name="LanguageCodeISO6391Enum",
+        description="ISO 639-1 two-letter language codes",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "False",
+            PermissibleValue(
+                text="False",
+                description="Norwegian"))
+
+class TimeZoneEnum(EnumDefinitionImpl):
+    """
+    Common time zones
+    """
+    UTC = PermissibleValue(
+        text="UTC",
+        description="Coordinated Universal Time")
+    EST = PermissibleValue(
+        text="EST",
+        description="Eastern Standard Time (UTC-5)")
+    EDT = PermissibleValue(
+        text="EDT",
+        description="Eastern Daylight Time (UTC-4)")
+    CST = PermissibleValue(
+        text="CST",
+        description="Central Standard Time (UTC-6)")
+    CDT = PermissibleValue(
+        text="CDT",
+        description="Central Daylight Time (UTC-5)")
+    MST = PermissibleValue(
+        text="MST",
+        description="Mountain Standard Time (UTC-7)")
+    MDT = PermissibleValue(
+        text="MDT",
+        description="Mountain Daylight Time (UTC-6)")
+    PST = PermissibleValue(
+        text="PST",
+        description="Pacific Standard Time (UTC-8)")
+    PDT = PermissibleValue(
+        text="PDT",
+        description="Pacific Daylight Time (UTC-7)")
+    GMT = PermissibleValue(
+        text="GMT",
+        description="Greenwich Mean Time (UTC+0)")
+    BST = PermissibleValue(
+        text="BST",
+        description="British Summer Time (UTC+1)")
+    CET = PermissibleValue(
+        text="CET",
+        description="Central European Time (UTC+1)")
+    CEST = PermissibleValue(
+        text="CEST",
+        description="Central European Summer Time (UTC+2)")
+    EET = PermissibleValue(
+        text="EET",
+        description="Eastern European Time (UTC+2)")
+    EEST = PermissibleValue(
+        text="EEST",
+        description="Eastern European Summer Time (UTC+3)")
+    JST = PermissibleValue(
+        text="JST",
+        description="Japan Standard Time (UTC+9)")
+    CST_CHINA = PermissibleValue(
+        text="CST_CHINA",
+        description="China Standard Time (UTC+8)")
+    IST = PermissibleValue(
+        text="IST",
+        description="India Standard Time (UTC+5:30)")
+    AEST = PermissibleValue(
+        text="AEST",
+        description="Australian Eastern Standard Time (UTC+10)")
+    AEDT = PermissibleValue(
+        text="AEDT",
+        description="Australian Eastern Daylight Time (UTC+11)")
+    NZST = PermissibleValue(
+        text="NZST",
+        description="New Zealand Standard Time (UTC+12)")
+    NZDT = PermissibleValue(
+        text="NZDT",
+        description="New Zealand Daylight Time (UTC+13)")
+
+    _defn = EnumDefinition(
+        name="TimeZoneEnum",
+        description="Common time zones",
+    )
+
+class CurrencyCodeISO4217Enum(EnumDefinitionImpl):
+    """
+    ISO 4217 currency codes
+    """
+    USD = PermissibleValue(
+        text="USD",
+        description="United States Dollar")
+    EUR = PermissibleValue(
+        text="EUR",
+        description="Euro")
+    GBP = PermissibleValue(
+        text="GBP",
+        description="British Pound Sterling")
+    JPY = PermissibleValue(
+        text="JPY",
+        description="Japanese Yen")
+    CNY = PermissibleValue(
+        text="CNY",
+        description="Chinese Yuan Renminbi")
+    CHF = PermissibleValue(
+        text="CHF",
+        description="Swiss Franc")
+    CAD = PermissibleValue(
+        text="CAD",
+        description="Canadian Dollar")
+    AUD = PermissibleValue(
+        text="AUD",
+        description="Australian Dollar")
+    NZD = PermissibleValue(
+        text="NZD",
+        description="New Zealand Dollar")
+    SEK = PermissibleValue(
+        text="SEK",
+        description="Swedish Krona")
+    NOK = PermissibleValue(
+        text="NOK",
+        description="Norwegian Krone")
+    DKK = PermissibleValue(
+        text="DKK",
+        description="Danish Krone")
+    PLN = PermissibleValue(
+        text="PLN",
+        description="Polish Zloty")
+    RUB = PermissibleValue(
+        text="RUB",
+        description="Russian Ruble")
+    INR = PermissibleValue(
+        text="INR",
+        description="Indian Rupee")
+    BRL = PermissibleValue(
+        text="BRL",
+        description="Brazilian Real")
+    MXN = PermissibleValue(
+        text="MXN",
+        description="Mexican Peso")
+    ZAR = PermissibleValue(
+        text="ZAR",
+        description="South African Rand")
+    KRW = PermissibleValue(
+        text="KRW",
+        description="South Korean Won")
+    SGD = PermissibleValue(
+        text="SGD",
+        description="Singapore Dollar")
+    HKD = PermissibleValue(
+        text="HKD",
+        description="Hong Kong Dollar")
+    TWD = PermissibleValue(
+        text="TWD",
+        description="Taiwan Dollar")
+    THB = PermissibleValue(
+        text="THB",
+        description="Thai Baht")
+    MYR = PermissibleValue(
+        text="MYR",
+        description="Malaysian Ringgit")
+    IDR = PermissibleValue(
+        text="IDR",
+        description="Indonesian Rupiah")
+    PHP = PermissibleValue(
+        text="PHP",
+        description="Philippine Peso")
+    VND = PermissibleValue(
+        text="VND",
+        description="Vietnamese Dong")
+    TRY = PermissibleValue(
+        text="TRY",
+        description="Turkish Lira")
+    AED = PermissibleValue(
+        text="AED",
+        description="UAE Dirham")
+    SAR = PermissibleValue(
+        text="SAR",
+        description="Saudi Riyal")
+    ILS = PermissibleValue(
+        text="ILS",
+        description="Israeli Shekel")
+    EGP = PermissibleValue(
+        text="EGP",
+        description="Egyptian Pound")
+
+    _defn = EnumDefinition(
+        name="CurrencyCodeISO4217Enum",
+        description="ISO 4217 currency codes",
+    )
+
+class SentimentClassificationEnum(EnumDefinitionImpl):
+    """
+    Standard labels for sentiment analysis classification tasks
+    """
+    POSITIVE = PermissibleValue(
+        text="POSITIVE",
+        title="Positive Finding",
+        description="Positive sentiment or opinion",
+        meaning=NCIT["C38758"])
+    NEGATIVE = PermissibleValue(
+        text="NEGATIVE",
+        title="Negative Test Result",
+        description="Negative sentiment or opinion",
+        meaning=NCIT["C35681"])
+    NEUTRAL = PermissibleValue(
+        text="NEUTRAL",
+        title="Normal",
+        description="Neutral sentiment, neither positive nor negative",
+        meaning=NCIT["C14165"])
+
+    _defn = EnumDefinition(
+        name="SentimentClassificationEnum",
+        description="Standard labels for sentiment analysis classification tasks",
+    )
+
+class FineSentimentClassificationEnum(EnumDefinitionImpl):
+    """
+    Fine-grained sentiment analysis labels with intensity levels
+    """
+    VERY_POSITIVE = PermissibleValue(
+        text="VERY_POSITIVE",
+        title="Positive Finding",
+        description="Strongly positive sentiment",
+        meaning=NCIT["C38758"])
+    POSITIVE = PermissibleValue(
+        text="POSITIVE",
+        title="Positive Finding",
+        description="Positive sentiment",
+        meaning=NCIT["C38758"])
+    NEUTRAL = PermissibleValue(
+        text="NEUTRAL",
+        title="Normal",
+        description="Neutral sentiment",
+        meaning=NCIT["C14165"])
+    NEGATIVE = PermissibleValue(
+        text="NEGATIVE",
+        title="Negative Test Result",
+        description="Negative sentiment",
+        meaning=NCIT["C35681"])
+    VERY_NEGATIVE = PermissibleValue(
+        text="VERY_NEGATIVE",
+        title="Negative Test Result",
+        description="Strongly negative sentiment",
+        meaning=NCIT["C35681"])
+
+    _defn = EnumDefinition(
+        name="FineSentimentClassificationEnum",
+        description="Fine-grained sentiment analysis labels with intensity levels",
+    )
+
+class BinaryClassificationEnum(EnumDefinitionImpl):
+    """
+    Generic binary classification labels
+    """
+    POSITIVE = PermissibleValue(
+        text="POSITIVE",
+        title="Positive Finding",
+        description="Positive class",
+        meaning=NCIT["C38758"])
+    NEGATIVE = PermissibleValue(
+        text="NEGATIVE",
+        title="Negative Test Result",
+        description="Negative class",
+        meaning=NCIT["C35681"])
+
+    _defn = EnumDefinition(
+        name="BinaryClassificationEnum",
+        description="Generic binary classification labels",
+    )
+
+class SpamClassificationEnum(EnumDefinitionImpl):
+    """
+    Standard labels for spam/ham email classification
+    """
+    SPAM = PermissibleValue(
+        text="SPAM",
+        description="Unwanted or unsolicited message")
+    HAM = PermissibleValue(
+        text="HAM",
+        description="Legitimate, wanted message")
+
+    _defn = EnumDefinition(
+        name="SpamClassificationEnum",
+        description="Standard labels for spam/ham email classification",
+    )
+
+class AnomalyDetectionEnum(EnumDefinitionImpl):
+    """
+    Labels for anomaly detection tasks
+    """
+    NORMAL = PermissibleValue(
+        text="NORMAL",
+        title="Normal",
+        description="Normal, expected behavior or pattern",
+        meaning=NCIT["C14165"])
+    ANOMALY = PermissibleValue(
+        text="ANOMALY",
+        title="Anomaly",
+        description="Abnormal, unexpected behavior or pattern",
+        meaning=STATO["0000036"])
+
+    _defn = EnumDefinition(
+        name="AnomalyDetectionEnum",
+        description="Labels for anomaly detection tasks",
+    )
+
+class ChurnClassificationEnum(EnumDefinitionImpl):
+    """
+    Customer churn prediction labels
+    """
+    RETAINED = PermissibleValue(
+        text="RETAINED",
+        description="Customer continues using the service")
+    CHURNED = PermissibleValue(
+        text="CHURNED",
+        description="Customer stopped using the service")
+
+    _defn = EnumDefinition(
+        name="ChurnClassificationEnum",
+        description="Customer churn prediction labels",
+    )
+
+class FraudDetectionEnum(EnumDefinitionImpl):
+    """
+    Fraud detection classification labels
+    """
+    LEGITIMATE = PermissibleValue(
+        text="LEGITIMATE",
+        title="Normal",
+        description="Legitimate, non-fraudulent transaction or activity",
+        meaning=NCIT["C14165"])
+    FRAUDULENT = PermissibleValue(
+        text="FRAUDULENT",
+        title="Fraudulently Obtained Product",
+        description="Fraudulent transaction or activity",
+        meaning=NCIT["C121839"])
+
+    _defn = EnumDefinition(
+        name="FraudDetectionEnum",
+        description="Fraud detection classification labels",
+    )
+
+class QualityControlEnum(EnumDefinitionImpl):
+    """
+    Quality control classification labels
+    """
+    PASS = PermissibleValue(
+        text="PASS",
+        title="Pass",
+        description="Item meets quality standards",
+        meaning=NCIT["C81275"])
+    FAIL = PermissibleValue(
+        text="FAIL",
+        title="Fail",
+        description="Item does not meet quality standards",
+        meaning=NCIT["C44281"])
+
+    _defn = EnumDefinition(
+        name="QualityControlEnum",
+        description="Quality control classification labels",
+    )
+
+class DefectClassificationEnum(EnumDefinitionImpl):
+    """
+    Manufacturing defect classification
+    """
+    NO_DEFECT = PermissibleValue(
+        text="NO_DEFECT",
+        title="No Defect",
+        description="No defect detected",
+        meaning=NCIT["C14165"])
+    MINOR_DEFECT = PermissibleValue(
+        text="MINOR_DEFECT",
+        title="Minor Defect",
+        description="Minor defect that doesn't affect functionality")
+    MAJOR_DEFECT = PermissibleValue(
+        text="MAJOR_DEFECT",
+        title="Major Defect",
+        description="Major defect affecting functionality")
+    CRITICAL_DEFECT = PermissibleValue(
+        text="CRITICAL_DEFECT",
+        title="Critical Defect",
+        description="Critical defect rendering item unusable or unsafe")
+
+    _defn = EnumDefinition(
+        name="DefectClassificationEnum",
+        description="Manufacturing defect classification",
+    )
+
+class BasicEmotionEnum(EnumDefinitionImpl):
+    """
+    Ekman's six basic emotions commonly used in emotion recognition
+    """
+    ANGER = PermissibleValue(
+        text="ANGER",
+        title="Anger",
+        description="Feeling of displeasure or hostility",
+        meaning=MFOEM["000009"])
+    DISGUST = PermissibleValue(
+        text="DISGUST",
+        title="Disgust",
+        description="Feeling of revulsion or strong disapproval",
+        meaning=MFOEM["000019"])
+    FEAR = PermissibleValue(
+        text="FEAR",
+        title="Fear",
+        description="Feeling of anxiety or apprehension",
+        meaning=MFOEM["000026"])
+    HAPPINESS = PermissibleValue(
+        text="HAPPINESS",
+        title="Happiness",
+        description="Feeling of pleasure or contentment",
+        meaning=MFOEM["000042"])
+    SADNESS = PermissibleValue(
+        text="SADNESS",
+        title="Sadness",
+        description="Feeling of sorrow or unhappiness",
+        meaning=MFOEM["000056"])
+    SURPRISE = PermissibleValue(
+        text="SURPRISE",
+        title="Surprise",
+        description="Feeling of mild astonishment or shock",
+        meaning=MFOEM["000032"])
+
+    _defn = EnumDefinition(
+        name="BasicEmotionEnum",
+        description="Ekman's six basic emotions commonly used in emotion recognition",
+    )
+
+class ExtendedEmotionEnum(EnumDefinitionImpl):
+    """
+    Extended emotion set including complex emotions
+    """
+    ANGER = PermissibleValue(
+        text="ANGER",
+        title="Anger",
+        description="Feeling of displeasure or hostility",
+        meaning=MFOEM["000009"])
+    DISGUST = PermissibleValue(
+        text="DISGUST",
+        title="Disgust",
+        description="Feeling of revulsion",
+        meaning=MFOEM["000019"])
+    FEAR = PermissibleValue(
+        text="FEAR",
+        title="Fear",
+        description="Feeling of anxiety",
+        meaning=MFOEM["000026"])
+    HAPPINESS = PermissibleValue(
+        text="HAPPINESS",
+        title="Happiness",
+        description="Feeling of pleasure",
+        meaning=MFOEM["000042"])
+    SADNESS = PermissibleValue(
+        text="SADNESS",
+        title="Sadness",
+        description="Feeling of sorrow",
+        meaning=MFOEM["000056"])
+    SURPRISE = PermissibleValue(
+        text="SURPRISE",
+        title="Surprise",
+        description="Feeling of astonishment",
+        meaning=MFOEM["000032"])
+    CONTEMPT = PermissibleValue(
+        text="CONTEMPT",
+        title="Contempt",
+        description="Feeling that something is worthless",
+        meaning=MFOEM["000018"])
+    ANTICIPATION = PermissibleValue(
+        text="ANTICIPATION",
+        title="Erwartung",
+        description="Feeling of excitement about something that will happen",
+        meaning=MFOEM["000175"])
+    TRUST = PermissibleValue(
+        text="TRUST",
+        title="Trust",
+        description="Feeling of confidence in someone or something",
+        meaning=MFOEM["000224"])
+    LOVE = PermissibleValue(
+        text="LOVE",
+        title="Love",
+        description="Feeling of deep affection",
+        meaning=MFOEM["000048"])
+
+    _defn = EnumDefinition(
+        name="ExtendedEmotionEnum",
+        description="Extended emotion set including complex emotions",
+    )
+
+class PriorityLevelEnum(EnumDefinitionImpl):
+    """
+    Standard priority levels for task/issue classification
+    """
+    CRITICAL = PermissibleValue(
+        text="CRITICAL",
+        title="Critical",
+        description="Highest priority, requires immediate attention")
+    HIGH = PermissibleValue(
+        text="HIGH",
+        title="High",
+        description="High priority, should be addressed soon")
+    MEDIUM = PermissibleValue(
+        text="MEDIUM",
+        title="Medium",
+        description="Medium priority, normal workflow")
+    LOW = PermissibleValue(
+        text="LOW",
+        title="Low",
+        description="Low priority, can be deferred")
+    TRIVIAL = PermissibleValue(
+        text="TRIVIAL",
+        title="Trivial",
+        description="Lowest priority, nice to have")
+
+    _defn = EnumDefinition(
+        name="PriorityLevelEnum",
+        description="Standard priority levels for task/issue classification",
+    )
+
+class SeverityLevelEnum(EnumDefinitionImpl):
+    """
+    Severity levels for incident/bug classification
+    """
+    CRITICAL = PermissibleValue(
+        text="CRITICAL",
+        title="Critical",
+        description="System is unusable, data loss possible")
+    MAJOR = PermissibleValue(
+        text="MAJOR",
+        title="Major",
+        description="Major functionality impaired")
+    MINOR = PermissibleValue(
+        text="MINOR",
+        title="Minor",
+        description="Minor functionality impaired")
+    TRIVIAL = PermissibleValue(
+        text="TRIVIAL",
+        title="Trivial",
+        description="Cosmetic issue, minimal impact")
+
+    _defn = EnumDefinition(
+        name="SeverityLevelEnum",
+        description="Severity levels for incident/bug classification",
+    )
+
+class ConfidenceLevelEnum(EnumDefinitionImpl):
+    """
+    Confidence levels for predictions and classifications
+    """
+    VERY_HIGH = PermissibleValue(
+        text="VERY_HIGH",
+        title="Very High",
+        description="Very high confidence (>95%)")
+    HIGH = PermissibleValue(
+        text="HIGH",
+        title="High",
+        description="High confidence (80-95%)")
+    MEDIUM = PermissibleValue(
+        text="MEDIUM",
+        title="Medium",
+        description="Medium confidence (60-80%)")
+    LOW = PermissibleValue(
+        text="LOW",
+        title="Low",
+        description="Low confidence (40-60%)")
+    VERY_LOW = PermissibleValue(
+        text="VERY_LOW",
+        title="Very Low",
+        description="Very low confidence (<40%)")
+
+    _defn = EnumDefinition(
+        name="ConfidenceLevelEnum",
+        description="Confidence levels for predictions and classifications",
+    )
+
+class NewsTopicCategoryEnum(EnumDefinitionImpl):
+    """
+    Common news article topic categories
+    """
+    POLITICS = PermissibleValue(
+        text="POLITICS",
+        title="Politics",
+        description="Political news and government affairs")
+    BUSINESS = PermissibleValue(
+        text="BUSINESS",
+        title="Business",
+        description="Business, finance, and economic news")
+    TECHNOLOGY = PermissibleValue(
+        text="TECHNOLOGY",
+        title="Technology",
+        description="Technology and computing news")
+    SPORTS = PermissibleValue(
+        text="SPORTS",
+        title="Sports",
+        description="Sports news and events")
+    ENTERTAINMENT = PermissibleValue(
+        text="ENTERTAINMENT",
+        title="Entertainment",
+        description="Entertainment and celebrity news")
+    SCIENCE = PermissibleValue(
+        text="SCIENCE",
+        title="Science",
+        description="Scientific discoveries and research")
+    HEALTH = PermissibleValue(
+        text="HEALTH",
+        title="Health",
+        description="Health, medicine, and wellness news")
+    WORLD = PermissibleValue(
+        text="WORLD",
+        title="World",
+        description="International news and events")
+    LOCAL = PermissibleValue(
+        text="LOCAL",
+        title="Local",
+        description="Local and regional news")
+
+    _defn = EnumDefinition(
+        name="NewsTopicCategoryEnum",
+        description="Common news article topic categories",
+    )
+
+class ToxicityClassificationEnum(EnumDefinitionImpl):
+    """
+    Text toxicity classification labels
+    """
+    NON_TOXIC = PermissibleValue(
+        text="NON_TOXIC",
+        title="Non-Toxic",
+        description="Text is appropriate and non-harmful",
+        meaning=SIO["001010"])
+    TOXIC = PermissibleValue(
+        text="TOXIC",
+        title="Toxic",
+        description="Text contains harmful or inappropriate content")
+    SEVERE_TOXIC = PermissibleValue(
+        text="SEVERE_TOXIC",
+        title="Severe Toxic",
+        description="Text contains severely harmful content")
+    OBSCENE = PermissibleValue(
+        text="OBSCENE",
+        title="Obscene",
+        description="Text contains obscene content")
+    THREAT = PermissibleValue(
+        text="THREAT",
+        title="Threat",
+        description="Text contains threatening content")
+    INSULT = PermissibleValue(
+        text="INSULT",
+        title="Insult",
+        description="Text contains insulting content")
+    IDENTITY_HATE = PermissibleValue(
+        text="IDENTITY_HATE",
+        title="Identity Hate",
+        description="Text contains identity-based hate")
+
+    _defn = EnumDefinition(
+        name="ToxicityClassificationEnum",
+        description="Text toxicity classification labels",
+    )
+
+class IntentClassificationEnum(EnumDefinitionImpl):
+    """
+    Common chatbot/NLU intent categories
+    """
+    GREETING = PermissibleValue(
+        text="GREETING",
+        title="Greeting",
+        description="User greeting or hello")
+    GOODBYE = PermissibleValue(
+        text="GOODBYE",
+        title="Goodbye",
+        description="User saying goodbye")
+    THANKS = PermissibleValue(
+        text="THANKS",
+        title="Thanks",
+        description="User expressing gratitude")
+    HELP = PermissibleValue(
+        text="HELP",
+        title="Help",
+        description="User requesting help or assistance")
+    INFORMATION = PermissibleValue(
+        text="INFORMATION",
+        title="Information",
+        description="User requesting information")
+    COMPLAINT = PermissibleValue(
+        text="COMPLAINT",
+        title="Complaint",
+        description="User expressing dissatisfaction")
+    FEEDBACK = PermissibleValue(
+        text="FEEDBACK",
+        title="Feedback",
+        description="User providing feedback")
+    PURCHASE = PermissibleValue(
+        text="PURCHASE",
+        title="Purchase",
+        description="User intent to buy or purchase")
+    CANCEL = PermissibleValue(
+        text="CANCEL",
+        title="Cancel",
+        description="User intent to cancel")
+    REFUND = PermissibleValue(
+        text="REFUND",
+        title="Refund",
+        description="User requesting refund")
+
+    _defn = EnumDefinition(
+        name="IntentClassificationEnum",
+        description="Common chatbot/NLU intent categories",
+    )
+
+class SimpleSpatialDirection(EnumDefinitionImpl):
+    """
+    Basic spatial directional terms for general use
+    """
+    LEFT = PermissibleValue(
+        text="LEFT",
+        description="To the left side")
+    RIGHT = PermissibleValue(
+        text="RIGHT",
+        description="To the right side")
+    FORWARD = PermissibleValue(
+        text="FORWARD",
+        description="In the forward direction")
+    BACKWARD = PermissibleValue(
+        text="BACKWARD",
+        description="In the backward direction")
+    UP = PermissibleValue(
+        text="UP",
+        description="In the upward direction")
+    DOWN = PermissibleValue(
+        text="DOWN",
+        description="In the downward direction")
+    INWARD = PermissibleValue(
+        text="INWARD",
+        description="Toward the center or interior")
+    OUTWARD = PermissibleValue(
+        text="OUTWARD",
+        description="Away from the center or exterior")
+    TOP = PermissibleValue(
+        text="TOP",
+        description="At or toward the top")
+    BOTTOM = PermissibleValue(
+        text="BOTTOM",
+        description="At or toward the bottom")
+    MIDDLE = PermissibleValue(
+        text="MIDDLE",
+        description="At or toward the middle")
+
+    _defn = EnumDefinition(
+        name="SimpleSpatialDirection",
+        description="Basic spatial directional terms for general use",
+    )
+
+class AnatomicalSide(EnumDefinitionImpl):
+    """
+    Anatomical sides as defined in the Biological Spatial Ontology (BSPO).
+    An anatomical region bounded by a plane perpendicular to an axis through the middle.
+    """
+    LEFT = PermissibleValue(
+        text="LEFT",
+        title="Left side of a bilaterally symmetric organism",
+        meaning=BSPO["0000000"])
+    RIGHT = PermissibleValue(
+        text="RIGHT",
+        title="Right side of a bilaterally symmetric organism",
+        meaning=BSPO["0000007"])
+    ANTERIOR = PermissibleValue(
+        text="ANTERIOR",
+        title="Front/ventral side in most animals, toward the head",
+        meaning=BSPO["0000055"])
+    POSTERIOR = PermissibleValue(
+        text="POSTERIOR",
+        title="Back/dorsal side in most animals, toward the tail",
+        meaning=BSPO["0000056"])
+    DORSAL = PermissibleValue(
+        text="DORSAL",
+        title="Back side of organism (top in humans when standing)",
+        meaning=BSPO["0000063"])
+    VENTRAL = PermissibleValue(
+        text="VENTRAL",
+        title="Belly side of organism (front in humans when standing)",
+        meaning=BSPO["0000068"])
+    LATERAL = PermissibleValue(
+        text="LATERAL",
+        title="Away from the midline",
+        meaning=BSPO["0000066"])
+    MEDIAL = PermissibleValue(
+        text="MEDIAL",
+        title="Toward the midline",
+        meaning=BSPO["0000067"])
+    PROXIMAL = PermissibleValue(
+        text="PROXIMAL",
+        title="Closer to the point of attachment or origin",
+        meaning=BSPO["0000061"])
+    DISTAL = PermissibleValue(
+        text="DISTAL",
+        title="Further from the point of attachment or origin",
+        meaning=BSPO["0000062"])
+    APICAL = PermissibleValue(
+        text="APICAL",
+        title="At or toward the apex or tip",
+        meaning=BSPO["0000057"])
+    BASAL = PermissibleValue(
+        text="BASAL",
+        title="At or toward the base",
+        meaning=BSPO["0000058"])
+    SUPERFICIAL = PermissibleValue(
+        text="SUPERFICIAL",
+        title="Near the surface",
+        meaning=BSPO["0000004"])
+    DEEP = PermissibleValue(
+        text="DEEP",
+        title="Away from the surface",
+        meaning=BSPO["0000003"])
+    SUPERIOR = PermissibleValue(
+        text="SUPERIOR",
+        title="Above or upper (in standard anatomical position)",
+        meaning=BSPO["0000022"])
+    INFERIOR = PermissibleValue(
+        text="INFERIOR",
+        title="Below or lower (in standard anatomical position)",
+        meaning=BSPO["0000025"])
+    IPSILATERAL = PermissibleValue(
+        text="IPSILATERAL",
+        title="On the same side",
+        meaning=BSPO["0000065"])
+    CONTRALATERAL = PermissibleValue(
+        text="CONTRALATERAL",
+        title="On the opposite side",
+        meaning=BSPO["0000060"])
+    CENTRAL = PermissibleValue(
+        text="CENTRAL",
+        title="At or near the center",
+        meaning=BSPO["0000059"])
+
+    _defn = EnumDefinition(
+        name="AnatomicalSide",
+        description="""Anatomical sides as defined in the Biological Spatial Ontology (BSPO).
+An anatomical region bounded by a plane perpendicular to an axis through the middle.""",
+    )
+
+class AnatomicalRegion(EnumDefinitionImpl):
+    """
+    Anatomical regions based on spatial position
+    """
+    ANTERIOR_REGION = PermissibleValue(
+        text="ANTERIOR_REGION",
+        title="Region in the anterior portion",
+        meaning=BSPO["0000071"])
+    POSTERIOR_REGION = PermissibleValue(
+        text="POSTERIOR_REGION",
+        title="Region in the posterior portion",
+        meaning=BSPO["0000072"])
+    DORSAL_REGION = PermissibleValue(
+        text="DORSAL_REGION",
+        title="Region in the dorsal portion",
+        meaning=BSPO["0000079"])
+    VENTRAL_REGION = PermissibleValue(
+        text="VENTRAL_REGION",
+        title="Region in the ventral portion",
+        meaning=BSPO["0000084"])
+    LATERAL_REGION = PermissibleValue(
+        text="LATERAL_REGION",
+        title="Region in the lateral portion",
+        meaning=BSPO["0000082"])
+    MEDIAL_REGION = PermissibleValue(
+        text="MEDIAL_REGION",
+        title="Region in the medial portion",
+        meaning=BSPO["0000083"])
+    PROXIMAL_REGION = PermissibleValue(
+        text="PROXIMAL_REGION",
+        title="Region in the proximal portion",
+        meaning=BSPO["0000077"])
+    DISTAL_REGION = PermissibleValue(
+        text="DISTAL_REGION",
+        title="Region in the distal portion",
+        meaning=BSPO["0000078"])
+    APICAL_REGION = PermissibleValue(
+        text="APICAL_REGION",
+        title="Region in the apical portion",
+        meaning=BSPO["0000073"])
+    BASAL_REGION = PermissibleValue(
+        text="BASAL_REGION",
+        title="Region in the basal portion",
+        meaning=BSPO["0000074"])
+    CENTRAL_REGION = PermissibleValue(
+        text="CENTRAL_REGION",
+        title="Region in the central portion",
+        meaning=BSPO["0000075"])
+    PERIPHERAL_REGION = PermissibleValue(
+        text="PERIPHERAL_REGION",
+        title="Region in the peripheral portion",
+        meaning=BSPO["0000127"])
+
+    _defn = EnumDefinition(
+        name="AnatomicalRegion",
+        description="Anatomical regions based on spatial position",
+    )
+
+class AnatomicalAxis(EnumDefinitionImpl):
+    """
+    Anatomical axes defining spatial organization
+    """
+    ANTERIOR_POSTERIOR = PermissibleValue(
+        text="ANTERIOR_POSTERIOR",
+        title="Anterior-posterior axis (head-tail axis)",
+        meaning=BSPO["0000013"])
+    DORSAL_VENTRAL = PermissibleValue(
+        text="DORSAL_VENTRAL",
+        title="Dorsal-ventral axis (back-belly axis)",
+        meaning=BSPO["0000016"])
+    LEFT_RIGHT = PermissibleValue(
+        text="LEFT_RIGHT",
+        title="Left-right axis (lateral axis)",
+        meaning=BSPO["0000017"])
+    PROXIMAL_DISTAL = PermissibleValue(
+        text="PROXIMAL_DISTAL",
+        title="Proximal-distal axis",
+        meaning=BSPO["0000018"])
+    APICAL_BASAL = PermissibleValue(
+        text="APICAL_BASAL",
+        title="Apical-basal axis",
+        meaning=BSPO["0000023"])
+
+    _defn = EnumDefinition(
+        name="AnatomicalAxis",
+        description="Anatomical axes defining spatial organization",
+    )
+
+class AnatomicalPlane(EnumDefinitionImpl):
+    """
+    Standard anatomical planes for sectioning
+    """
+    SAGITTAL = PermissibleValue(
+        text="SAGITTAL",
+        title="Vertical plane dividing body into left and right",
+        meaning=BSPO["0000417"])
+    MIDSAGITTAL = PermissibleValue(
+        text="MIDSAGITTAL",
+        title="Sagittal plane through the midline",
+        meaning=BSPO["0000009"])
+    PARASAGITTAL = PermissibleValue(
+        text="PARASAGITTAL",
+        title="Sagittal plane parallel to midline",
+        meaning=BSPO["0000008"])
+    CORONAL = PermissibleValue(
+        text="CORONAL",
+        title="Vertical plane dividing body into anterior and posterior",
+        meaning=BSPO["0000019"])
+    TRANSVERSE = PermissibleValue(
+        text="TRANSVERSE",
+        title="Horizontal plane dividing body into superior and inferior",
+        meaning=BSPO["0000018"])
+    OBLIQUE = PermissibleValue(
+        text="OBLIQUE",
+        description="Any plane not parallel to sagittal, coronal, or transverse planes")
+
+    _defn = EnumDefinition(
+        name="AnatomicalPlane",
+        description="Standard anatomical planes for sectioning",
+    )
+
+class SpatialRelationship(EnumDefinitionImpl):
+    """
+    Spatial relationships between anatomical structures
+    """
+    ADJACENT_TO = PermissibleValue(
+        text="ADJACENT_TO",
+        title="Next to or adjoining",
+        meaning=RO["0002220"])
+    ANTERIOR_TO = PermissibleValue(
+        text="ANTERIOR_TO",
+        title="In front of",
+        meaning=BSPO["0000096"])
+    POSTERIOR_TO = PermissibleValue(
+        text="POSTERIOR_TO",
+        title="Behind",
+        meaning=BSPO["0000099"])
+    DORSAL_TO = PermissibleValue(
+        text="DORSAL_TO",
+        title="Above/on the back side of",
+        meaning=BSPO["0000098"])
+    VENTRAL_TO = PermissibleValue(
+        text="VENTRAL_TO",
+        title="Below/on the belly side of",
+        meaning=BSPO["0000102"])
+    LATERAL_TO = PermissibleValue(
+        text="LATERAL_TO",
+        title="To the side of",
+        meaning=BSPO["0000114"])
+    MEDIAL_TO = PermissibleValue(
+        text="MEDIAL_TO",
+        title="Toward the midline from",
+        meaning=BSPO["0000115"])
+    PROXIMAL_TO = PermissibleValue(
+        text="PROXIMAL_TO",
+        title="Closer to the origin than",
+        meaning=BSPO["0000100"])
+    DISTAL_TO = PermissibleValue(
+        text="DISTAL_TO",
+        title="Further from the origin than",
+        meaning=BSPO["0000097"])
+    SUPERFICIAL_TO = PermissibleValue(
+        text="SUPERFICIAL_TO",
+        title="Closer to the surface than",
+        meaning=BSPO["0000108"])
+    DEEP_TO = PermissibleValue(
+        text="DEEP_TO",
+        title="Further from the surface than",
+        meaning=BSPO["0000107"])
+    SURROUNDS = PermissibleValue(
+        text="SURROUNDS",
+        title="Encircles or encompasses",
+        meaning=RO["0002221"])
+    WITHIN = PermissibleValue(
+        text="WITHIN",
+        description="Inside or contained by")
+    BETWEEN = PermissibleValue(
+        text="BETWEEN",
+        description="In the space separating two structures")
+
+    _defn = EnumDefinition(
+        name="SpatialRelationship",
+        description="Spatial relationships between anatomical structures",
+    )
+
+class CellPolarity(EnumDefinitionImpl):
+    """
+    Spatial polarity in cells and tissues
+    """
+    APICAL = PermissibleValue(
+        text="APICAL",
+        description="The free surface of an epithelial cell")
+    BASAL = PermissibleValue(
+        text="BASAL",
+        description="The attached surface of an epithelial cell")
+    LATERAL = PermissibleValue(
+        text="LATERAL",
+        description="The sides of an epithelial cell")
+    APICAL_LATERAL = PermissibleValue(
+        text="APICAL_LATERAL",
+        description="Junction between apical and lateral surfaces")
+    BASAL_LATERAL = PermissibleValue(
+        text="BASAL_LATERAL",
+        description="Junction between basal and lateral surfaces")
+    LEADING_EDGE = PermissibleValue(
+        text="LEADING_EDGE",
+        description="Front of a migrating cell")
+    TRAILING_EDGE = PermissibleValue(
+        text="TRAILING_EDGE",
+        description="Rear of a migrating cell")
+    PROXIMAL_POLE = PermissibleValue(
+        text="PROXIMAL_POLE",
+        description="Pole closer to the cell body")
+    DISTAL_POLE = PermissibleValue(
+        text="DISTAL_POLE",
+        description="Pole further from the cell body")
+
+    _defn = EnumDefinition(
+        name="CellPolarity",
+        description="Spatial polarity in cells and tissues",
+    )
+
+class CrystalSystemEnum(EnumDefinitionImpl):
+    """
+    The seven crystal systems in crystallography
+    """
+    TRICLINIC = PermissibleValue(
+        text="TRICLINIC",
+        title="Triclinic",
+        description="Crystal system with no symmetry constraints (a≠b≠c, α≠β≠γ≠90°)",
+        meaning=ENM["9000022"])
+    MONOCLINIC = PermissibleValue(
+        text="MONOCLINIC",
+        title="Monoclinic",
+        description="Crystal system with one twofold axis of symmetry (a≠b≠c, α=γ=90°≠β)",
+        meaning=ENM["9000029"])
+    ORTHORHOMBIC = PermissibleValue(
+        text="ORTHORHOMBIC",
+        title="Orthorhombic",
+        description="Crystal system with three mutually perpendicular axes (a≠b≠c, α=β=γ=90°)",
+        meaning=ENM["9000031"])
+    TETRAGONAL = PermissibleValue(
+        text="TETRAGONAL",
+        title="Tetragonal",
+        description="Crystal system with one fourfold axis (a=b≠c, α=β=γ=90°)",
+        meaning=ENM["9000032"])
+    TRIGONAL = PermissibleValue(
+        text="TRIGONAL",
+        title="Trigonal",
+        description="Crystal system with one threefold axis (a=b=c, α=β=γ≠90°)",
+        meaning=ENM["9000054"])
+    HEXAGONAL = PermissibleValue(
+        text="HEXAGONAL",
+        title="Hexagonal",
+        description="Crystal system with one sixfold axis (a=b≠c, α=β=90°, γ=120°)",
+        meaning=PATO["0002509"])
+    CUBIC = PermissibleValue(
+        text="CUBIC",
+        title="Cubic",
+        description="Crystal system with four threefold axes (a=b=c, α=β=γ=90°)",
+        meaning=ENM["9000035"])
+
+    _defn = EnumDefinition(
+        name="CrystalSystemEnum",
+        description="The seven crystal systems in crystallography",
+    )
+
+class BravaisLatticeEnum(EnumDefinitionImpl):
+    """
+    The 14 Bravais lattices describing all possible crystal lattices
+    """
+    PRIMITIVE_TRICLINIC = PermissibleValue(
+        text="PRIMITIVE_TRICLINIC",
+        title="Primitive Triclinic",
+        description="Primitive triclinic lattice (aP)")
+    PRIMITIVE_MONOCLINIC = PermissibleValue(
+        text="PRIMITIVE_MONOCLINIC",
+        title="Primitive Monoclinic",
+        description="Primitive monoclinic lattice (mP)")
+    BASE_CENTERED_MONOCLINIC = PermissibleValue(
+        text="BASE_CENTERED_MONOCLINIC",
+        title="Base-Centered Monoclinic",
+        description="Base-centered monoclinic lattice (mC)")
+    PRIMITIVE_ORTHORHOMBIC = PermissibleValue(
+        text="PRIMITIVE_ORTHORHOMBIC",
+        title="Primitive Orthorhombic",
+        description="Primitive orthorhombic lattice (oP)")
+    BASE_CENTERED_ORTHORHOMBIC = PermissibleValue(
+        text="BASE_CENTERED_ORTHORHOMBIC",
+        title="Base-Centered Orthorhombic",
+        description="Base-centered orthorhombic lattice (oC)")
+    BODY_CENTERED_ORTHORHOMBIC = PermissibleValue(
+        text="BODY_CENTERED_ORTHORHOMBIC",
+        title="Body-Centered Orthorhombic",
+        description="Body-centered orthorhombic lattice (oI)")
+    FACE_CENTERED_ORTHORHOMBIC = PermissibleValue(
+        text="FACE_CENTERED_ORTHORHOMBIC",
+        title="Face-Centered Orthorhombic",
+        description="Face-centered orthorhombic lattice (oF)")
+    PRIMITIVE_TETRAGONAL = PermissibleValue(
+        text="PRIMITIVE_TETRAGONAL",
+        title="Primitive Tetragonal",
+        description="Primitive tetragonal lattice (tP)")
+    BODY_CENTERED_TETRAGONAL = PermissibleValue(
+        text="BODY_CENTERED_TETRAGONAL",
+        title="Body-Centered Tetragonal",
+        description="Body-centered tetragonal lattice (tI)")
+    PRIMITIVE_TRIGONAL = PermissibleValue(
+        text="PRIMITIVE_TRIGONAL",
+        title="Primitive Trigonal",
+        description="Primitive trigonal/rhombohedral lattice (hR)")
+    PRIMITIVE_HEXAGONAL = PermissibleValue(
+        text="PRIMITIVE_HEXAGONAL",
+        title="Primitive Hexagonal",
+        description="Primitive hexagonal lattice (hP)")
+    PRIMITIVE_CUBIC = PermissibleValue(
+        text="PRIMITIVE_CUBIC",
+        title="Primitive Cubic",
+        description="Simple cubic lattice (cP)")
+    BODY_CENTERED_CUBIC = PermissibleValue(
+        text="BODY_CENTERED_CUBIC",
+        title="Body-Centered Cubic",
+        description="Body-centered cubic lattice (cI)")
+    FACE_CENTERED_CUBIC = PermissibleValue(
+        text="FACE_CENTERED_CUBIC",
+        title="Face-Centered Cubic",
+        description="Face-centered cubic lattice (cF)")
+
+    _defn = EnumDefinition(
+        name="BravaisLatticeEnum",
+        description="The 14 Bravais lattices describing all possible crystal lattices",
+    )
+
+class ElectricalConductivityEnum(EnumDefinitionImpl):
+    """
+    Classification of materials by electrical conductivity
+    """
+    CONDUCTOR = PermissibleValue(
+        text="CONDUCTOR",
+        title="Conductor",
+        description="Material with high electrical conductivity (resistivity < 10^-5 Ω·m)")
+    SEMICONDUCTOR = PermissibleValue(
+        text="SEMICONDUCTOR",
+        title="Semiconductor",
+        description="Material with intermediate electrical conductivity (10^-5 to 10^8 Ω·m)",
+        meaning=NCIT["C172788"])
+    INSULATOR = PermissibleValue(
+        text="INSULATOR",
+        title="Insulator",
+        description="Material with very low electrical conductivity (resistivity > 10^8 Ω·m)")
+    SUPERCONDUCTOR = PermissibleValue(
+        text="SUPERCONDUCTOR",
+        title="Superconductor",
+        description="Material with zero electrical resistance below critical temperature")
+
+    _defn = EnumDefinition(
+        name="ElectricalConductivityEnum",
+        description="Classification of materials by electrical conductivity",
+    )
+
+class MagneticPropertyEnum(EnumDefinitionImpl):
+    """
+    Classification of materials by magnetic properties
+    """
+    DIAMAGNETIC = PermissibleValue(
+        text="DIAMAGNETIC",
+        title="Diamagnetic",
+        description="Weakly repelled by magnetic fields")
+    PARAMAGNETIC = PermissibleValue(
+        text="PARAMAGNETIC",
+        title="Paramagnetic",
+        description="Weakly attracted to magnetic fields")
+    FERROMAGNETIC = PermissibleValue(
+        text="FERROMAGNETIC",
+        title="Ferromagnetic",
+        description="Strongly attracted to magnetic fields, can be permanently magnetized")
+    FERRIMAGNETIC = PermissibleValue(
+        text="FERRIMAGNETIC",
+        title="Ferrimagnetic",
+        description="Similar to ferromagnetic but with opposing magnetic moments")
+    ANTIFERROMAGNETIC = PermissibleValue(
+        text="ANTIFERROMAGNETIC",
+        title="Antiferromagnetic",
+        description="Adjacent magnetic moments cancel each other")
+
+    _defn = EnumDefinition(
+        name="MagneticPropertyEnum",
+        description="Classification of materials by magnetic properties",
+    )
+
+class OpticalPropertyEnum(EnumDefinitionImpl):
+    """
+    Optical properties of materials
+    """
+    TRANSPARENT = PermissibleValue(
+        text="TRANSPARENT",
+        title="Transparent",
+        description="Allows light to pass through with minimal scattering",
+        meaning=PATO["0000964"])
+    TRANSLUCENT = PermissibleValue(
+        text="TRANSLUCENT",
+        title="Translucent",
+        description="Allows light to pass through but with significant scattering")
+    OPAQUE = PermissibleValue(
+        text="OPAQUE",
+        title="Opaque",
+        description="Does not allow light to pass through",
+        meaning=PATO["0000963"])
+    REFLECTIVE = PermissibleValue(
+        text="REFLECTIVE",
+        title="Reflective",
+        description="Reflects most incident light")
+    ABSORBING = PermissibleValue(
+        text="ABSORBING",
+        title="Absorbing",
+        description="Absorbs most incident light")
+    FLUORESCENT = PermissibleValue(
+        text="FLUORESCENT",
+        title="Fluorescent",
+        description="Emits light when excited by radiation")
+    PHOSPHORESCENT = PermissibleValue(
+        text="PHOSPHORESCENT",
+        title="Phosphorescent",
+        description="Continues to emit light after excitation stops")
+
+    _defn = EnumDefinition(
+        name="OpticalPropertyEnum",
+        description="Optical properties of materials",
+    )
+
+class ThermalConductivityEnum(EnumDefinitionImpl):
+    """
+    Classification by thermal conductivity
+    """
+    HIGH_THERMAL_CONDUCTOR = PermissibleValue(
+        text="HIGH_THERMAL_CONDUCTOR",
+        title="High Thermal Conductor",
+        description="High thermal conductivity (>100 W/m·K)")
+    MODERATE_THERMAL_CONDUCTOR = PermissibleValue(
+        text="MODERATE_THERMAL_CONDUCTOR",
+        title="Moderate Thermal Conductor",
+        description="Moderate thermal conductivity (1-100 W/m·K)")
+    THERMAL_INSULATOR = PermissibleValue(
+        text="THERMAL_INSULATOR",
+        title="Thermal Insulator",
+        description="Low thermal conductivity (<1 W/m·K)")
+
+    _defn = EnumDefinition(
+        name="ThermalConductivityEnum",
+        description="Classification by thermal conductivity",
+    )
+
+class MechanicalBehaviorEnum(EnumDefinitionImpl):
+    """
+    Mechanical behavior of materials under stress
+    """
+    ELASTIC = PermissibleValue(
+        text="ELASTIC",
+        title="Elastic",
+        description="Returns to original shape after stress removal",
+        meaning=PATO["0001171"])
+    PLASTIC = PermissibleValue(
+        text="PLASTIC",
+        title="inelastic",
+        description="Undergoes permanent deformation under stress",
+        meaning=PATO["0001172"])
+    BRITTLE = PermissibleValue(
+        text="BRITTLE",
+        title="Brittle",
+        description="Breaks without significant plastic deformation",
+        meaning=PATO["0002477"])
+    DUCTILE = PermissibleValue(
+        text="DUCTILE",
+        title="Ductile",
+        description="Can be drawn into wires, undergoes large plastic deformation")
+    MALLEABLE = PermissibleValue(
+        text="MALLEABLE",
+        title="Malleable",
+        description="Can be hammered into sheets")
+    TOUGH = PermissibleValue(
+        text="TOUGH",
+        title="Tough",
+        description="High resistance to fracture")
+    VISCOELASTIC = PermissibleValue(
+        text="VISCOELASTIC",
+        title="Viscoelastic",
+        description="Exhibits both viscous and elastic characteristics")
+
+    _defn = EnumDefinition(
+        name="MechanicalBehaviorEnum",
+        description="Mechanical behavior of materials under stress",
+    )
+
+class MicroscopyMethodEnum(EnumDefinitionImpl):
+    """
+    Microscopy techniques for material characterization
+    """
+    SEM = PermissibleValue(
+        text="SEM",
+        title="scanning electron microscopy",
+        description="Scanning Electron Microscopy",
+        meaning=CHMO["0000073"])
+    TEM = PermissibleValue(
+        text="TEM",
+        title="transmission electron microscopy",
+        description="Transmission Electron Microscopy",
+        meaning=CHMO["0000080"])
+    STEM = PermissibleValue(
+        text="STEM",
+        title="STEM",
+        description="Scanning Transmission Electron Microscopy")
+    AFM = PermissibleValue(
+        text="AFM",
+        title="atomic force microscopy",
+        description="Atomic Force Microscopy",
+        meaning=CHMO["0000113"])
+    STM = PermissibleValue(
+        text="STM",
+        title="scanning tunnelling microscopy",
+        description="Scanning Tunneling Microscopy",
+        meaning=CHMO["0000132"])
+    OPTICAL = PermissibleValue(
+        text="OPTICAL",
+        title="light microscopy assay",
+        description="Optical/Light Microscopy",
+        meaning=CHMO["0000102"])
+    CONFOCAL = PermissibleValue(
+        text="CONFOCAL",
+        title="confocal fluorescence microscopy assay",
+        description="Confocal Laser Scanning Microscopy",
+        meaning=CHMO["0000089"])
+
+    _defn = EnumDefinition(
+        name="MicroscopyMethodEnum",
+        description="Microscopy techniques for material characterization",
+    )
+
+class SpectroscopyMethodEnum(EnumDefinitionImpl):
+    """
+    Spectroscopy techniques for material analysis
+    """
+    XRD = PermissibleValue(
+        text="XRD",
+        title="XRD",
+        description="X-ray Diffraction",
+        meaning=CHMO["0000156"])
+    XPS = PermissibleValue(
+        text="XPS",
+        title="XPS",
+        description="X-ray Photoelectron Spectroscopy",
+        meaning=CHMO["0000404"])
+    EDS = PermissibleValue(
+        text="EDS",
+        title="energy-dispersive X-ray emission spectroscopy",
+        description="Energy Dispersive X-ray Spectroscopy",
+        meaning=CHMO["0000309"])
+    FTIR = PermissibleValue(
+        text="FTIR",
+        title="Fourier transform infrared spectroscopy",
+        description="Fourier Transform Infrared Spectroscopy",
+        meaning=CHMO["0000636"])
+    RAMAN = PermissibleValue(
+        text="RAMAN",
+        title="Raman",
+        description="Raman Spectroscopy",
+        meaning=CHMO["0000656"])
+    UV_VIS = PermissibleValue(
+        text="UV_VIS",
+        title="ultraviolet-visible spectrophotometry",
+        description="Ultraviolet-Visible Spectroscopy",
+        meaning=CHMO["0000292"])
+    NMR = PermissibleValue(
+        text="NMR",
+        title="nuclear magnetic resonance spectroscopy",
+        description="Nuclear Magnetic Resonance Spectroscopy",
+        meaning=CHMO["0000591"])
+    XRF = PermissibleValue(
+        text="XRF",
+        title="X-ray emission spectroscopy",
+        description="X-ray Fluorescence Spectroscopy",
+        meaning=CHMO["0000307"])
+
+    _defn = EnumDefinition(
+        name="SpectroscopyMethodEnum",
+        description="Spectroscopy techniques for material analysis",
+    )
+
+class ThermalAnalysisMethodEnum(EnumDefinitionImpl):
+    """
+    Thermal analysis techniques
+    """
+    DSC = PermissibleValue(
+        text="DSC",
+        title="DSC",
+        description="Differential Scanning Calorimetry",
+        meaning=CHMO["0000684"])
+    TGA = PermissibleValue(
+        text="TGA",
+        title="thermogravimetry",
+        description="Thermogravimetric Analysis",
+        meaning=CHMO["0000690"])
+    DTA = PermissibleValue(
+        text="DTA",
+        title="DTA",
+        description="Differential Thermal Analysis",
+        meaning=CHMO["0000687"])
+    TMA = PermissibleValue(
+        text="TMA",
+        title="TMA",
+        description="Thermomechanical Analysis")
+    DMTA = PermissibleValue(
+        text="DMTA",
+        title="DMTA",
+        description="Dynamic Mechanical Thermal Analysis")
+
+    _defn = EnumDefinition(
+        name="ThermalAnalysisMethodEnum",
+        description="Thermal analysis techniques",
+    )
+
+class MechanicalTestingMethodEnum(EnumDefinitionImpl):
+    """
+    Mechanical testing methods
+    """
+    TENSILE = PermissibleValue(
+        text="TENSILE",
+        title="Tensile Test",
+        description="Tensile strength testing")
+    COMPRESSION = PermissibleValue(
+        text="COMPRESSION",
+        title="Compression Test",
+        description="Compression strength testing")
+    HARDNESS = PermissibleValue(
+        text="HARDNESS",
+        title="Hardness Test",
+        description="Hardness testing (Vickers, Rockwell, Brinell)")
+    IMPACT = PermissibleValue(
+        text="IMPACT",
+        title="Impact Test",
+        description="Impact resistance testing (Charpy, Izod)")
+    FATIGUE = PermissibleValue(
+        text="FATIGUE",
+        title="Fatigue Test",
+        description="Fatigue testing under cyclic loading")
+    CREEP = PermissibleValue(
+        text="CREEP",
+        title="Creep Test",
+        description="Creep testing under sustained load")
+    FRACTURE_TOUGHNESS = PermissibleValue(
+        text="FRACTURE_TOUGHNESS",
+        title="Fracture Toughness",
+        description="Fracture toughness testing")
+    NANOINDENTATION = PermissibleValue(
+        text="NANOINDENTATION",
+        title="Nanoindentation",
+        description="Nanoindentation for nanoscale mechanical properties")
+
+    _defn = EnumDefinition(
+        name="MechanicalTestingMethodEnum",
+        description="Mechanical testing methods",
+    )
+
+class MaterialClassEnum(EnumDefinitionImpl):
+    """
+    Major classes of materials
+    """
+    METAL = PermissibleValue(
+        text="METAL",
+        title="metallic material",
+        description="Metallic materials with metallic bonding",
+        meaning=ENVO["01001069"])
+    CERAMIC = PermissibleValue(
+        text="CERAMIC",
+        title="Ceramic",
+        description="Inorganic non-metallic materials",
+        meaning=ENVO["03501307"])
+    POLYMER = PermissibleValue(
+        text="POLYMER",
+        title="Polymer",
+        description="Large molecules composed of repeating units",
+        meaning=CHEBI["60027"])
+    COMPOSITE = PermissibleValue(
+        text="COMPOSITE",
+        title="Composite",
+        description="Materials made from two or more constituent materials",
+        meaning=NCIT["C61520"])
+    SEMICONDUCTOR = PermissibleValue(
+        text="SEMICONDUCTOR",
+        title="Semiconductor",
+        description="Materials with electrical conductivity between conductors and insulators",
+        meaning=NCIT["C172788"])
+    BIOMATERIAL = PermissibleValue(
+        text="BIOMATERIAL",
+        title="Biomedical Material",
+        description="Materials designed to interact with biological systems",
+        meaning=NCIT["C16338"])
+    NANOMATERIAL = PermissibleValue(
+        text="NANOMATERIAL",
+        title="Nanomaterial",
+        description="Materials with at least one dimension in nanoscale (1-100 nm)",
+        meaning=NCIT["C62371"])
+
+    _defn = EnumDefinition(
+        name="MaterialClassEnum",
+        description="Major classes of materials",
+    )
+
+class PolymerTypeEnum(EnumDefinitionImpl):
+    """
+    Types of polymer materials
+    """
+    THERMOPLASTIC = PermissibleValue(
+        text="THERMOPLASTIC",
+        title="Thermoplastic",
+        description="Polymer that becomes moldable above specific temperature",
+        meaning=PATO["0040070"])
+    THERMOSET = PermissibleValue(
+        text="THERMOSET",
+        title="thermoset polymer",
+        description="Polymer that irreversibly hardens when cured",
+        meaning=ENVO["06105005"])
+    ELASTOMER = PermissibleValue(
+        text="ELASTOMER",
+        title="Elastomer",
+        description="Polymer with elastic properties",
+        meaning=SNOMED["261777007"])
+    BIOPOLYMER = PermissibleValue(
+        text="BIOPOLYMER",
+        title="Biopolymer",
+        description="Polymer produced by living organisms",
+        meaning=NCIT["C73478"])
+    CONDUCTING_POLYMER = PermissibleValue(
+        text="CONDUCTING_POLYMER",
+        title="Conducting Polymer",
+        description="Polymer that conducts electricity")
+
+    _defn = EnumDefinition(
+        name="PolymerTypeEnum",
+        description="Types of polymer materials",
+    )
+
+class MetalTypeEnum(EnumDefinitionImpl):
+    """
+    Types of metallic materials
+    """
+    FERROUS = PermissibleValue(
+        text="FERROUS",
+        title="Ferrous Metal",
+        description="Iron-based metals and alloys",
+        meaning=SNOMED["264354006"])
+    NON_FERROUS = PermissibleValue(
+        text="NON_FERROUS",
+        title="Non-Ferrous Metal",
+        description="Metals and alloys not containing iron",
+        meaning=SNOMED["264879001"])
+    NOBLE_METAL = PermissibleValue(
+        text="NOBLE_METAL",
+        title="Noble Metal",
+        description="Metals resistant to corrosion and oxidation")
+    REFRACTORY_METAL = PermissibleValue(
+        text="REFRACTORY_METAL",
+        title="Refractory Metal",
+        description="Metals with very high melting points (>2000°C)")
+    LIGHT_METAL = PermissibleValue(
+        text="LIGHT_METAL",
+        title="Light Metal",
+        description="Low density metals (density < 5 g/cm³)",
+        meaning=SNOMED["65436002"])
+    HEAVY_METAL = PermissibleValue(
+        text="HEAVY_METAL",
+        title="Heavy Metal",
+        description="High density metals (density > 5 g/cm³)",
+        meaning=CHEBI["5631"])
+
+    _defn = EnumDefinition(
+        name="MetalTypeEnum",
+        description="Types of metallic materials",
+    )
+
+class CompositeTypeEnum(EnumDefinitionImpl):
+    """
+    Types of composite materials
+    """
+    FIBER_REINFORCED = PermissibleValue(
+        text="FIBER_REINFORCED",
+        title="Fiber-Reinforced Composite",
+        description="Composite with fiber reinforcement")
+    PARTICLE_REINFORCED = PermissibleValue(
+        text="PARTICLE_REINFORCED",
+        title="Particle-Reinforced Composite",
+        description="Composite with particle reinforcement")
+    LAMINAR_COMPOSITE = PermissibleValue(
+        text="LAMINAR_COMPOSITE",
+        title="Laminar Composite",
+        description="Composite with layered structure")
+    METAL_MATRIX_COMPOSITE = PermissibleValue(
+        text="METAL_MATRIX_COMPOSITE",
+        title="Metal Matrix Composite",
+        description="Composite with metal matrix")
+    CERAMIC_MATRIX_COMPOSITE = PermissibleValue(
+        text="CERAMIC_MATRIX_COMPOSITE",
+        title="Ceramic Matrix Composite",
+        description="Composite with ceramic matrix")
+    POLYMER_MATRIX_COMPOSITE = PermissibleValue(
+        text="POLYMER_MATRIX_COMPOSITE",
+        title="Polymer Matrix Composite",
+        description="Composite with polymer matrix")
+
+    _defn = EnumDefinition(
+        name="CompositeTypeEnum",
+        description="Types of composite materials",
+    )
+
+class SynthesisMethodEnum(EnumDefinitionImpl):
+    """
+    Common material synthesis and processing methods
+    """
+    SOL_GEL = PermissibleValue(
+        text="SOL_GEL",
+        title="Sol-Gel",
+        description="Synthesis from solution through gel formation")
+    HYDROTHERMAL = PermissibleValue(
+        text="HYDROTHERMAL",
+        title="Hydrothermal",
+        description="Synthesis using high temperature aqueous solutions")
+    SOLVOTHERMAL = PermissibleValue(
+        text="SOLVOTHERMAL",
+        title="Solvothermal",
+        description="Synthesis using non-aqueous solvents at high temperature/pressure")
+    CVD = PermissibleValue(
+        text="CVD",
+        title="chemical vapour deposition",
+        description="Chemical Vapor Deposition",
+        meaning=CHMO["0001314"])
+    PVD = PermissibleValue(
+        text="PVD",
+        title="physical vapour deposition",
+        description="Physical Vapor Deposition",
+        meaning=CHMO["0001356"])
+    ALD = PermissibleValue(
+        text="ALD",
+        title="ALD",
+        description="Atomic Layer Deposition")
+    ELECTRODEPOSITION = PermissibleValue(
+        text="ELECTRODEPOSITION",
+        title="electrochemical deposition",
+        description="Deposition using electric current",
+        meaning=CHMO["0001331"])
+    BALL_MILLING = PermissibleValue(
+        text="BALL_MILLING",
+        title="Ball Milling",
+        description="Mechanical alloying using ball mill")
+    PRECIPITATION = PermissibleValue(
+        text="PRECIPITATION",
+        title="precipitation",
+        description="Formation of solid from solution",
+        meaning=CHMO["0001688"])
+    SINTERING = PermissibleValue(
+        text="SINTERING",
+        title="Sintering",
+        description="Compacting and forming solid mass by heat/pressure")
+    MELT_PROCESSING = PermissibleValue(
+        text="MELT_PROCESSING",
+        title="Melt Processing",
+        description="Processing from molten state")
+    SOLUTION_CASTING = PermissibleValue(
+        text="SOLUTION_CASTING",
+        title="Solution Casting",
+        description="Casting from solution")
+    SPIN_COATING = PermissibleValue(
+        text="SPIN_COATING",
+        title="Spin Coating",
+        description="Coating by spinning substrate",
+        meaning=CHMO["0001472"])
+    DIP_COATING = PermissibleValue(
+        text="DIP_COATING",
+        title="Dip Coating",
+        description="Coating by dipping in solution",
+        meaning=CHMO["0001471"])
+    SPRAY_COATING = PermissibleValue(
+        text="SPRAY_COATING",
+        title="Spray Coating",
+        description="Coating by spraying")
+
+    _defn = EnumDefinition(
+        name="SynthesisMethodEnum",
+        description="Common material synthesis and processing methods",
+    )
+
+class CrystalGrowthMethodEnum(EnumDefinitionImpl):
+    """
+    Methods for growing single crystals
+    """
+    CZOCHRALSKI = PermissibleValue(
+        text="CZOCHRALSKI",
+        title="Czochralski Method",
+        description="Crystal pulling from melt")
+    BRIDGMAN = PermissibleValue(
+        text="BRIDGMAN",
+        title="Bridgman Method",
+        description="Directional solidification method")
+    FLOAT_ZONE = PermissibleValue(
+        text="FLOAT_ZONE",
+        title="Float Zone",
+        description="Zone melting without crucible")
+    FLUX_GROWTH = PermissibleValue(
+        text="FLUX_GROWTH",
+        title="Flux Growth",
+        description="Crystal growth from high temperature solution")
+    VAPOR_TRANSPORT = PermissibleValue(
+        text="VAPOR_TRANSPORT",
+        title="Vapor Transport",
+        description="Crystal growth via vapor phase transport")
+    HYDROTHERMAL_GROWTH = PermissibleValue(
+        text="HYDROTHERMAL_GROWTH",
+        title="Hydrothermal Growth",
+        description="Crystal growth in aqueous solution under pressure")
+    LPE = PermissibleValue(
+        text="LPE",
+        title="LPE",
+        description="Liquid Phase Epitaxy")
+    MBE = PermissibleValue(
+        text="MBE",
+        title="molecular beam epitaxy",
+        description="Molecular Beam Epitaxy",
+        meaning=CHMO["0001341"])
+    MOCVD = PermissibleValue(
+        text="MOCVD",
+        title="MOCVD",
+        description="Metal-Organic Chemical Vapor Deposition")
+
+    _defn = EnumDefinition(
+        name="CrystalGrowthMethodEnum",
+        description="Methods for growing single crystals",
+    )
+
+class AdditiveManufacturingEnum(EnumDefinitionImpl):
+    """
+    3D printing and additive manufacturing methods
+    """
+    FDM = PermissibleValue(
+        text="FDM",
+        title="FDM",
+        description="Fused Deposition Modeling")
+    SLA = PermissibleValue(
+        text="SLA",
+        title="SLA",
+        description="Stereolithography")
+    SLS = PermissibleValue(
+        text="SLS",
+        title="SLS",
+        description="Selective Laser Sintering")
+    SLM = PermissibleValue(
+        text="SLM",
+        title="SLM",
+        description="Selective Laser Melting")
+    EBM = PermissibleValue(
+        text="EBM",
+        title="EBM",
+        description="Electron Beam Melting")
+    BINDER_JETTING = PermissibleValue(
+        text="BINDER_JETTING",
+        title="Binder Jetting",
+        description="Powder bed with liquid binder")
+    MATERIAL_JETTING = PermissibleValue(
+        text="MATERIAL_JETTING",
+        title="Material Jetting",
+        description="Droplet deposition of materials")
+    DED = PermissibleValue(
+        text="DED",
+        title="DED",
+        description="Directed Energy Deposition")
+
+    _defn = EnumDefinition(
+        name="AdditiveManufacturingEnum",
+        description="3D printing and additive manufacturing methods",
+    )
+
+class TraditionalPigmentEnum(EnumDefinitionImpl):
+    """
+    Traditional artist pigments and their colors
+    """
+    TITANIUM_WHITE = PermissibleValue(
+        text="TITANIUM_WHITE",
+        title="titanium dioxide nanoparticle",
+        description="Titanium white (Titanium dioxide)",
+        meaning=CHEBI["51050"])
+    ZINC_WHITE = PermissibleValue(
+        text="ZINC_WHITE",
+        title="zinc oxide",
+        description="Zinc white (Zinc oxide)",
+        meaning=CHEBI["36560"])
+    LEAD_WHITE = PermissibleValue(
+        text="LEAD_WHITE",
+        description="Lead white (Basic lead carbonate) - toxic")
+    CADMIUM_YELLOW = PermissibleValue(
+        text="CADMIUM_YELLOW",
+        title="cadmium selenide",
+        description="Cadmium yellow (Cadmium sulfide)",
+        meaning=CHEBI["50834"])
+    CHROME_YELLOW = PermissibleValue(
+        text="CHROME_YELLOW",
+        description="Chrome yellow (Lead chromate) - toxic")
+    NAPLES_YELLOW = PermissibleValue(
+        text="NAPLES_YELLOW",
+        description="Naples yellow (Lead antimonate)")
+    YELLOW_OCHRE = PermissibleValue(
+        text="YELLOW_OCHRE",
+        description="Yellow ochre (Iron oxide hydroxide)")
+    CADMIUM_ORANGE = PermissibleValue(
+        text="CADMIUM_ORANGE",
+        description="Cadmium orange (Cadmium selenide)")
+    CADMIUM_RED = PermissibleValue(
+        text="CADMIUM_RED",
+        title="cadmium selenide nanoparticle",
+        description="Cadmium red (Cadmium selenide)",
+        meaning=CHEBI["50835"])
+    VERMILION = PermissibleValue(
+        text="VERMILION",
+        description="Vermilion/Cinnabar (Mercury sulfide)")
+    ALIZARIN_CRIMSON = PermissibleValue(
+        text="ALIZARIN_CRIMSON",
+        title="alizarin",
+        description="Alizarin crimson (synthetic)",
+        meaning=CHEBI["16866"])
+    CARMINE = PermissibleValue(
+        text="CARMINE",
+        description="Carmine (from cochineal insects)")
+    BURNT_SIENNA = PermissibleValue(
+        text="BURNT_SIENNA",
+        description="Burnt sienna (heated iron oxide)")
+    RAW_SIENNA = PermissibleValue(
+        text="RAW_SIENNA",
+        description="Raw sienna (Iron oxide with clay)")
+    BURNT_UMBER = PermissibleValue(
+        text="BURNT_UMBER",
+        description="Burnt umber (heated iron/manganese oxide)")
+    RAW_UMBER = PermissibleValue(
+        text="RAW_UMBER",
+        description="Raw umber (Iron/manganese oxide)")
+    VAN_DYKE_BROWN = PermissibleValue(
+        text="VAN_DYKE_BROWN",
+        description="Van Dyke brown (organic earth)")
+    PRUSSIAN_BLUE = PermissibleValue(
+        text="PRUSSIAN_BLUE",
+        title="ferric ferrocyanide",
+        description="Prussian blue (Ferric ferrocyanide)",
+        meaning=CHEBI["30069"])
+    ULTRAMARINE = PermissibleValue(
+        text="ULTRAMARINE",
+        description="Ultramarine blue (originally lapis lazuli)")
+    COBALT_BLUE = PermissibleValue(
+        text="COBALT_BLUE",
+        description="Cobalt blue (Cobalt aluminate)")
+    CERULEAN_BLUE = PermissibleValue(
+        text="CERULEAN_BLUE",
+        description="Cerulean blue (Cobalt stannate)")
+    PHTHALO_BLUE = PermissibleValue(
+        text="PHTHALO_BLUE",
+        description="Phthalocyanine blue")
+    VIRIDIAN = PermissibleValue(
+        text="VIRIDIAN",
+        description="Viridian (Chromium oxide green)")
+    CHROME_GREEN = PermissibleValue(
+        text="CHROME_GREEN",
+        description="Chrome oxide green")
+    PHTHALO_GREEN = PermissibleValue(
+        text="PHTHALO_GREEN",
+        description="Phthalocyanine green")
+    TERRE_VERTE = PermissibleValue(
+        text="TERRE_VERTE",
+        description="Terre verte/Green earth")
+    TYRIAN_PURPLE = PermissibleValue(
+        text="TYRIAN_PURPLE",
+        description="Tyrian purple (from murex snails)")
+    MANGANESE_VIOLET = PermissibleValue(
+        text="MANGANESE_VIOLET",
+        description="Manganese violet")
+    MARS_BLACK = PermissibleValue(
+        text="MARS_BLACK",
+        description="Mars black (Synthetic iron oxide)")
+    IVORY_BLACK = PermissibleValue(
+        text="IVORY_BLACK",
+        description="Ivory black (Bone char)")
+    LAMP_BLACK = PermissibleValue(
+        text="LAMP_BLACK",
+        description="Lamp black (Carbon black)")
+
+    _defn = EnumDefinition(
+        name="TraditionalPigmentEnum",
+        description="Traditional artist pigments and their colors",
+    )
+
+class IndustrialDyeEnum(EnumDefinitionImpl):
+    """
+    Industrial and textile dyes
+    """
+    INDIGO = PermissibleValue(
+        text="INDIGO",
+        description="Indigo dye")
+    ANILINE_BLACK = PermissibleValue(
+        text="ANILINE_BLACK",
+        description="Aniline black")
+    METHYLENE_BLUE = PermissibleValue(
+        text="METHYLENE_BLUE",
+        description="Methylene blue")
+    CONGO_RED = PermissibleValue(
+        text="CONGO_RED",
+        description="Congo red",
+        meaning=CHEBI["34653"])
+    MALACHITE_GREEN = PermissibleValue(
+        text="MALACHITE_GREEN",
+        description="Malachite green",
+        meaning=CHEBI["11174"])
+    CRYSTAL_VIOLET = PermissibleValue(
+        text="CRYSTAL_VIOLET",
+        description="Crystal violet/Gentian violet",
+        meaning=CHEBI["41688"])
+    EOSIN = PermissibleValue(
+        text="EOSIN",
+        description="Eosin Y",
+        meaning=CHEBI["87199"])
+    SAFRANIN = PermissibleValue(
+        text="SAFRANIN",
+        description="Safranin O")
+    ACID_ORANGE_7 = PermissibleValue(
+        text="ACID_ORANGE_7",
+        description="Acid Orange 7 (Orange II)")
+    REACTIVE_BLACK_5 = PermissibleValue(
+        text="REACTIVE_BLACK_5",
+        description="Reactive Black 5")
+    DISPERSE_BLUE_1 = PermissibleValue(
+        text="DISPERSE_BLUE_1",
+        description="Disperse Blue 1")
+    VAT_BLUE_1 = PermissibleValue(
+        text="VAT_BLUE_1",
+        description="Vat Blue 1 (Indanthrene blue)")
+
+    _defn = EnumDefinition(
+        name="IndustrialDyeEnum",
+        description="Industrial and textile dyes",
+    )
+
+class FoodColoringEnum(EnumDefinitionImpl):
+    """
+    Food coloring and natural food dyes
+    """
+    FD_C_RED_40 = PermissibleValue(
+        text="FD_C_RED_40",
+        description="FD&C Red No. 40 (Allura Red)")
+    FD_C_YELLOW_5 = PermissibleValue(
+        text="FD_C_YELLOW_5",
+        description="FD&C Yellow No. 5 (Tartrazine)")
+    FD_C_YELLOW_6 = PermissibleValue(
+        text="FD_C_YELLOW_6",
+        description="FD&C Yellow No. 6 (Sunset Yellow)")
+    FD_C_BLUE_1 = PermissibleValue(
+        text="FD_C_BLUE_1",
+        title="Brilliant Blue",
+        description="FD&C Blue No. 1 (Brilliant Blue)",
+        meaning=CHEBI["82411"])
+    FD_C_BLUE_2 = PermissibleValue(
+        text="FD_C_BLUE_2",
+        description="FD&C Blue No. 2 (Indigo Carmine)")
+    FD_C_GREEN_3 = PermissibleValue(
+        text="FD_C_GREEN_3",
+        description="FD&C Green No. 3 (Fast Green)")
+    CARAMEL_COLOR = PermissibleValue(
+        text="CARAMEL_COLOR",
+        description="Caramel coloring")
+    ANNATTO = PermissibleValue(
+        text="ANNATTO",
+        description="Annatto (natural orange)",
+        meaning=CHEBI["3150"])
+    TURMERIC = PermissibleValue(
+        text="TURMERIC",
+        title="curcumin",
+        description="Turmeric/Curcumin (natural yellow)",
+        meaning=CHEBI["3962"])
+    BEETROOT_RED = PermissibleValue(
+        text="BEETROOT_RED",
+        description="Beetroot red/Betanin",
+        meaning=CHEBI["15060"])
+    CHLOROPHYLL = PermissibleValue(
+        text="CHLOROPHYLL",
+        description="Chlorophyll (natural green)",
+        meaning=CHEBI["28966"])
+    ANTHOCYANINS = PermissibleValue(
+        text="ANTHOCYANINS",
+        description="Anthocyanins (natural purple/red)")
+    PAPRIKA_EXTRACT = PermissibleValue(
+        text="PAPRIKA_EXTRACT",
+        description="Paprika extract")
+    SPIRULINA_BLUE = PermissibleValue(
+        text="SPIRULINA_BLUE",
+        description="Spirulina extract (phycocyanin)")
+
+    _defn = EnumDefinition(
+        name="FoodColoringEnum",
+        description="Food coloring and natural food dyes",
+    )
+
+class AutomobilePaintColorEnum(EnumDefinitionImpl):
+    """
+    Common automobile paint colors
+    """
+    ARCTIC_WHITE = PermissibleValue(
+        text="ARCTIC_WHITE",
+        description="Arctic White",
+        meaning=HEX["FFFFFF"])
+    MIDNIGHT_BLACK = PermissibleValue(
+        text="MIDNIGHT_BLACK",
+        description="Midnight Black",
+        meaning=HEX["000000"])
+    SILVER_METALLIC = PermissibleValue(
+        text="SILVER_METALLIC",
+        description="Silver Metallic",
+        meaning=HEX["C0C0C0"])
+    GUNMETAL_GRAY = PermissibleValue(
+        text="GUNMETAL_GRAY",
+        description="Gunmetal Gray",
+        meaning=HEX["2A3439"])
+    RACING_RED = PermissibleValue(
+        text="RACING_RED",
+        description="Racing Red",
+        meaning=HEX["CE1620"])
+    CANDY_APPLE_RED = PermissibleValue(
+        text="CANDY_APPLE_RED",
+        description="Candy Apple Red",
+        meaning=HEX["FF0800"])
+    ELECTRIC_BLUE = PermissibleValue(
+        text="ELECTRIC_BLUE",
+        description="Electric Blue",
+        meaning=HEX["7DF9FF"])
+    BRITISH_RACING_GREEN = PermissibleValue(
+        text="BRITISH_RACING_GREEN",
+        description="British Racing Green",
+        meaning=HEX["004225"])
+    PEARL_WHITE = PermissibleValue(
+        text="PEARL_WHITE",
+        description="Pearl White",
+        meaning=HEX["F8F8FF"])
+    CHAMPAGNE_GOLD = PermissibleValue(
+        text="CHAMPAGNE_GOLD",
+        description="Champagne Gold",
+        meaning=HEX["D4AF37"])
+    COPPER_BRONZE = PermissibleValue(
+        text="COPPER_BRONZE",
+        description="Copper Bronze",
+        meaning=HEX["B87333"])
+    MIAMI_BLUE = PermissibleValue(
+        text="MIAMI_BLUE",
+        description="Miami Blue",
+        meaning=HEX["00BFFF"])
+
+    _defn = EnumDefinition(
+        name="AutomobilePaintColorEnum",
+        description="Common automobile paint colors",
+    )
+
+class BasicColorEnum(EnumDefinitionImpl):
+    """
+    Basic color names commonly used in everyday language
+    """
+    RED = PermissibleValue(
+        text="RED",
+        description="Primary red color",
+        meaning=HEX["FF0000"])
+    GREEN = PermissibleValue(
+        text="GREEN",
+        description="Primary green color",
+        meaning=HEX["008000"])
+    BLUE = PermissibleValue(
+        text="BLUE",
+        description="Primary blue color",
+        meaning=HEX["0000FF"])
+    YELLOW = PermissibleValue(
+        text="YELLOW",
+        description="Secondary yellow color",
+        meaning=HEX["FFFF00"])
+    ORANGE = PermissibleValue(
+        text="ORANGE",
+        description="Secondary orange color",
+        meaning=HEX["FFA500"])
+    PURPLE = PermissibleValue(
+        text="PURPLE",
+        description="Secondary purple color",
+        meaning=HEX["800080"])
+    BLACK = PermissibleValue(
+        text="BLACK",
+        description="Absence of color",
+        meaning=HEX["000000"])
+    WHITE = PermissibleValue(
+        text="WHITE",
+        description="All colors combined",
+        meaning=HEX["FFFFFF"])
+    GRAY = PermissibleValue(
+        text="GRAY",
+        description="Neutral gray",
+        meaning=HEX["808080"])
+    BROWN = PermissibleValue(
+        text="BROWN",
+        description="Brown color",
+        meaning=HEX["A52A2A"])
+    PINK = PermissibleValue(
+        text="PINK",
+        description="Light red/pink color",
+        meaning=HEX["FFC0CB"])
+    CYAN = PermissibleValue(
+        text="CYAN",
+        description="Cyan/aqua color",
+        meaning=HEX["00FFFF"])
+    MAGENTA = PermissibleValue(
+        text="MAGENTA",
+        description="Magenta color",
+        meaning=HEX["FF00FF"])
+
+    _defn = EnumDefinition(
+        name="BasicColorEnum",
+        description="Basic color names commonly used in everyday language",
+    )
+
+class WebColorEnum(EnumDefinitionImpl):
+    """
+    Standard HTML/CSS named colors (147 colors)
+    """
+    INDIAN_RED = PermissibleValue(
+        text="INDIAN_RED",
+        description="Indian red",
+        meaning=HEX["CD5C5C"])
+    LIGHT_CORAL = PermissibleValue(
+        text="LIGHT_CORAL",
+        description="Light coral",
+        meaning=HEX["F08080"])
+    SALMON = PermissibleValue(
+        text="SALMON",
+        description="Salmon",
+        meaning=HEX["FA8072"])
+    DARK_SALMON = PermissibleValue(
+        text="DARK_SALMON",
+        description="Dark salmon",
+        meaning=HEX["E9967A"])
+    CRIMSON = PermissibleValue(
+        text="CRIMSON",
+        description="Crimson",
+        meaning=HEX["DC143C"])
+    FIREBRICK = PermissibleValue(
+        text="FIREBRICK",
+        description="Firebrick",
+        meaning=HEX["B22222"])
+    DARK_RED = PermissibleValue(
+        text="DARK_RED",
+        description="Dark red",
+        meaning=HEX["8B0000"])
+    HOT_PINK = PermissibleValue(
+        text="HOT_PINK",
+        description="Hot pink",
+        meaning=HEX["FF69B4"])
+    DEEP_PINK = PermissibleValue(
+        text="DEEP_PINK",
+        description="Deep pink",
+        meaning=HEX["FF1493"])
+    LIGHT_PINK = PermissibleValue(
+        text="LIGHT_PINK",
+        description="Light pink",
+        meaning=HEX["FFB6C1"])
+    PALE_VIOLET_RED = PermissibleValue(
+        text="PALE_VIOLET_RED",
+        description="Pale violet red",
+        meaning=HEX["DB7093"])
+    CORAL = PermissibleValue(
+        text="CORAL",
+        description="Coral",
+        meaning=HEX["FF7F50"])
+    TOMATO = PermissibleValue(
+        text="TOMATO",
+        description="Tomato",
+        meaning=HEX["FF6347"])
+    ORANGE_RED = PermissibleValue(
+        text="ORANGE_RED",
+        description="Orange red",
+        meaning=HEX["FF4500"])
+    DARK_ORANGE = PermissibleValue(
+        text="DARK_ORANGE",
+        description="Dark orange",
+        meaning=HEX["FF8C00"])
+    GOLD = PermissibleValue(
+        text="GOLD",
+        description="Gold",
+        meaning=HEX["FFD700"])
+    LIGHT_YELLOW = PermissibleValue(
+        text="LIGHT_YELLOW",
+        description="Light yellow",
+        meaning=HEX["FFFFE0"])
+    LEMON_CHIFFON = PermissibleValue(
+        text="LEMON_CHIFFON",
+        description="Lemon chiffon",
+        meaning=HEX["FFFACD"])
+    PAPAYA_WHIP = PermissibleValue(
+        text="PAPAYA_WHIP",
+        description="Papaya whip",
+        meaning=HEX["FFEFD5"])
+    MOCCASIN = PermissibleValue(
+        text="MOCCASIN",
+        description="Moccasin",
+        meaning=HEX["FFE4B5"])
+    PEACH_PUFF = PermissibleValue(
+        text="PEACH_PUFF",
+        description="Peach puff",
+        meaning=HEX["FFDAB9"])
+    KHAKI = PermissibleValue(
+        text="KHAKI",
+        description="Khaki",
+        meaning=HEX["F0E68C"])
+    LAVENDER = PermissibleValue(
+        text="LAVENDER",
+        description="Lavender",
+        meaning=HEX["E6E6FA"])
+    THISTLE = PermissibleValue(
+        text="THISTLE",
+        description="Thistle",
+        meaning=HEX["D8BFD8"])
+    PLUM = PermissibleValue(
+        text="PLUM",
+        description="Plum",
+        meaning=HEX["DDA0DD"])
+    VIOLET = PermissibleValue(
+        text="VIOLET",
+        description="Violet",
+        meaning=HEX["EE82EE"])
+    ORCHID = PermissibleValue(
+        text="ORCHID",
+        description="Orchid",
+        meaning=HEX["DA70D6"])
+    FUCHSIA = PermissibleValue(
+        text="FUCHSIA",
+        description="Fuchsia",
+        meaning=HEX["FF00FF"])
+    MEDIUM_ORCHID = PermissibleValue(
+        text="MEDIUM_ORCHID",
+        description="Medium orchid",
+        meaning=HEX["BA55D3"])
+    MEDIUM_PURPLE = PermissibleValue(
+        text="MEDIUM_PURPLE",
+        description="Medium purple",
+        meaning=HEX["9370DB"])
+    BLUE_VIOLET = PermissibleValue(
+        text="BLUE_VIOLET",
+        description="Blue violet",
+        meaning=HEX["8A2BE2"])
+    DARK_VIOLET = PermissibleValue(
+        text="DARK_VIOLET",
+        description="Dark violet",
+        meaning=HEX["9400D3"])
+    DARK_ORCHID = PermissibleValue(
+        text="DARK_ORCHID",
+        description="Dark orchid",
+        meaning=HEX["9932CC"])
+    DARK_MAGENTA = PermissibleValue(
+        text="DARK_MAGENTA",
+        description="Dark magenta",
+        meaning=HEX["8B008B"])
+    INDIGO = PermissibleValue(
+        text="INDIGO",
+        description="Indigo",
+        meaning=HEX["4B0082"])
+    GREEN_YELLOW = PermissibleValue(
+        text="GREEN_YELLOW",
+        description="Green yellow",
+        meaning=HEX["ADFF2F"])
+    CHARTREUSE = PermissibleValue(
+        text="CHARTREUSE",
+        description="Chartreuse",
+        meaning=HEX["7FFF00"])
+    LAWN_GREEN = PermissibleValue(
+        text="LAWN_GREEN",
+        description="Lawn green",
+        meaning=HEX["7CFC00"])
+    LIME = PermissibleValue(
+        text="LIME",
+        description="Lime",
+        meaning=HEX["00FF00"])
+    LIME_GREEN = PermissibleValue(
+        text="LIME_GREEN",
+        description="Lime green",
+        meaning=HEX["32CD32"])
+    PALE_GREEN = PermissibleValue(
+        text="PALE_GREEN",
+        description="Pale green",
+        meaning=HEX["98FB98"])
+    LIGHT_GREEN = PermissibleValue(
+        text="LIGHT_GREEN",
+        description="Light green",
+        meaning=HEX["90EE90"])
+    MEDIUM_SPRING_GREEN = PermissibleValue(
+        text="MEDIUM_SPRING_GREEN",
+        description="Medium spring green",
+        meaning=HEX["00FA9A"])
+    SPRING_GREEN = PermissibleValue(
+        text="SPRING_GREEN",
+        description="Spring green",
+        meaning=HEX["00FF7F"])
+    MEDIUM_SEA_GREEN = PermissibleValue(
+        text="MEDIUM_SEA_GREEN",
+        description="Medium sea green",
+        meaning=HEX["3CB371"])
+    SEA_GREEN = PermissibleValue(
+        text="SEA_GREEN",
+        description="Sea green",
+        meaning=HEX["2E8B57"])
+    FOREST_GREEN = PermissibleValue(
+        text="FOREST_GREEN",
+        description="Forest green",
+        meaning=HEX["228B22"])
+    DARK_GREEN = PermissibleValue(
+        text="DARK_GREEN",
+        description="Dark green",
+        meaning=HEX["006400"])
+    YELLOW_GREEN = PermissibleValue(
+        text="YELLOW_GREEN",
+        description="Yellow green",
+        meaning=HEX["9ACD32"])
+    OLIVE_DRAB = PermissibleValue(
+        text="OLIVE_DRAB",
+        description="Olive drab",
+        meaning=HEX["6B8E23"])
+    OLIVE = PermissibleValue(
+        text="OLIVE",
+        description="Olive",
+        meaning=HEX["808000"])
+    DARK_OLIVE_GREEN = PermissibleValue(
+        text="DARK_OLIVE_GREEN",
+        description="Dark olive green",
+        meaning=HEX["556B2F"])
+    AQUA = PermissibleValue(
+        text="AQUA",
+        description="Aqua",
+        meaning=HEX["00FFFF"])
+    CYAN = PermissibleValue(
+        text="CYAN",
+        description="Cyan",
+        meaning=HEX["00FFFF"])
+    LIGHT_CYAN = PermissibleValue(
+        text="LIGHT_CYAN",
+        description="Light cyan",
+        meaning=HEX["E0FFFF"])
+    PALE_TURQUOISE = PermissibleValue(
+        text="PALE_TURQUOISE",
+        description="Pale turquoise",
+        meaning=HEX["AFEEEE"])
+    AQUAMARINE = PermissibleValue(
+        text="AQUAMARINE",
+        description="Aquamarine",
+        meaning=HEX["7FFFD4"])
+    TURQUOISE = PermissibleValue(
+        text="TURQUOISE",
+        description="Turquoise",
+        meaning=HEX["40E0D0"])
+    MEDIUM_TURQUOISE = PermissibleValue(
+        text="MEDIUM_TURQUOISE",
+        description="Medium turquoise",
+        meaning=HEX["48D1CC"])
+    DARK_TURQUOISE = PermissibleValue(
+        text="DARK_TURQUOISE",
+        description="Dark turquoise",
+        meaning=HEX["00CED1"])
+    LIGHT_SEA_GREEN = PermissibleValue(
+        text="LIGHT_SEA_GREEN",
+        description="Light sea green",
+        meaning=HEX["20B2AA"])
+    CADET_BLUE = PermissibleValue(
+        text="CADET_BLUE",
+        description="Cadet blue",
+        meaning=HEX["5F9EA0"])
+    DARK_CYAN = PermissibleValue(
+        text="DARK_CYAN",
+        description="Dark cyan",
+        meaning=HEX["008B8B"])
+    TEAL = PermissibleValue(
+        text="TEAL",
+        description="Teal",
+        meaning=HEX["008080"])
+    LIGHT_STEEL_BLUE = PermissibleValue(
+        text="LIGHT_STEEL_BLUE",
+        description="Light steel blue",
+        meaning=HEX["B0C4DE"])
+    POWDER_BLUE = PermissibleValue(
+        text="POWDER_BLUE",
+        description="Powder blue",
+        meaning=HEX["B0E0E6"])
+    LIGHT_BLUE = PermissibleValue(
+        text="LIGHT_BLUE",
+        description="Light blue",
+        meaning=HEX["ADD8E6"])
+    SKY_BLUE = PermissibleValue(
+        text="SKY_BLUE",
+        description="Sky blue",
+        meaning=HEX["87CEEB"])
+    LIGHT_SKY_BLUE = PermissibleValue(
+        text="LIGHT_SKY_BLUE",
+        description="Light sky blue",
+        meaning=HEX["87CEFA"])
+    DEEP_SKY_BLUE = PermissibleValue(
+        text="DEEP_SKY_BLUE",
+        description="Deep sky blue",
+        meaning=HEX["00BFFF"])
+    DODGER_BLUE = PermissibleValue(
+        text="DODGER_BLUE",
+        description="Dodger blue",
+        meaning=HEX["1E90FF"])
+    CORNFLOWER_BLUE = PermissibleValue(
+        text="CORNFLOWER_BLUE",
+        description="Cornflower blue",
+        meaning=HEX["6495ED"])
+    STEEL_BLUE = PermissibleValue(
+        text="STEEL_BLUE",
+        description="Steel blue",
+        meaning=HEX["4682B4"])
+    ROYAL_BLUE = PermissibleValue(
+        text="ROYAL_BLUE",
+        description="Royal blue",
+        meaning=HEX["4169E1"])
+    MEDIUM_BLUE = PermissibleValue(
+        text="MEDIUM_BLUE",
+        description="Medium blue",
+        meaning=HEX["0000CD"])
+    DARK_BLUE = PermissibleValue(
+        text="DARK_BLUE",
+        description="Dark blue",
+        meaning=HEX["00008B"])
+    NAVY = PermissibleValue(
+        text="NAVY",
+        description="Navy",
+        meaning=HEX["000080"])
+    MIDNIGHT_BLUE = PermissibleValue(
+        text="MIDNIGHT_BLUE",
+        description="Midnight blue",
+        meaning=HEX["191970"])
+    CORNSILK = PermissibleValue(
+        text="CORNSILK",
+        description="Cornsilk",
+        meaning=HEX["FFF8DC"])
+    BLANCHED_ALMOND = PermissibleValue(
+        text="BLANCHED_ALMOND",
+        description="Blanched almond",
+        meaning=HEX["FFEBCD"])
+    BISQUE = PermissibleValue(
+        text="BISQUE",
+        description="Bisque",
+        meaning=HEX["FFE4C4"])
+    NAVAJO_WHITE = PermissibleValue(
+        text="NAVAJO_WHITE",
+        description="Navajo white",
+        meaning=HEX["FFDEAD"])
+    WHEAT = PermissibleValue(
+        text="WHEAT",
+        description="Wheat",
+        meaning=HEX["F5DEB3"])
+    BURLYWOOD = PermissibleValue(
+        text="BURLYWOOD",
+        description="Burlywood",
+        meaning=HEX["DEB887"])
+    TAN = PermissibleValue(
+        text="TAN",
+        description="Tan",
+        meaning=HEX["D2B48C"])
+    ROSY_BROWN = PermissibleValue(
+        text="ROSY_BROWN",
+        description="Rosy brown",
+        meaning=HEX["BC8F8F"])
+    SANDY_BROWN = PermissibleValue(
+        text="SANDY_BROWN",
+        description="Sandy brown",
+        meaning=HEX["F4A460"])
+    GOLDENROD = PermissibleValue(
+        text="GOLDENROD",
+        description="Goldenrod",
+        meaning=HEX["DAA520"])
+    DARK_GOLDENROD = PermissibleValue(
+        text="DARK_GOLDENROD",
+        description="Dark goldenrod",
+        meaning=HEX["B8860B"])
+    PERU = PermissibleValue(
+        text="PERU",
+        description="Peru",
+        meaning=HEX["CD853F"])
+    CHOCOLATE = PermissibleValue(
+        text="CHOCOLATE",
+        description="Chocolate",
+        meaning=HEX["D2691E"])
+    SADDLE_BROWN = PermissibleValue(
+        text="SADDLE_BROWN",
+        description="Saddle brown",
+        meaning=HEX["8B4513"])
+    SIENNA = PermissibleValue(
+        text="SIENNA",
+        description="Sienna",
+        meaning=HEX["A0522D"])
+    MAROON = PermissibleValue(
+        text="MAROON",
+        description="Maroon",
+        meaning=HEX["800000"])
+    SNOW = PermissibleValue(
+        text="SNOW",
+        description="Snow",
+        meaning=HEX["FFFAFA"])
+    HONEYDEW = PermissibleValue(
+        text="HONEYDEW",
+        description="Honeydew",
+        meaning=HEX["F0FFF0"])
+    MINT_CREAM = PermissibleValue(
+        text="MINT_CREAM",
+        description="Mint cream",
+        meaning=HEX["F5FFFA"])
+    AZURE = PermissibleValue(
+        text="AZURE",
+        description="Azure",
+        meaning=HEX["F0FFFF"])
+    ALICE_BLUE = PermissibleValue(
+        text="ALICE_BLUE",
+        description="Alice blue",
+        meaning=HEX["F0F8FF"])
+    GHOST_WHITE = PermissibleValue(
+        text="GHOST_WHITE",
+        description="Ghost white",
+        meaning=HEX["F8F8FF"])
+    WHITE_SMOKE = PermissibleValue(
+        text="WHITE_SMOKE",
+        description="White smoke",
+        meaning=HEX["F5F5F5"])
+    SEASHELL = PermissibleValue(
+        text="SEASHELL",
+        description="Seashell",
+        meaning=HEX["FFF5EE"])
+    BEIGE = PermissibleValue(
+        text="BEIGE",
+        description="Beige",
+        meaning=HEX["F5F5DC"])
+    OLD_LACE = PermissibleValue(
+        text="OLD_LACE",
+        description="Old lace",
+        meaning=HEX["FDF5E6"])
+    FLORAL_WHITE = PermissibleValue(
+        text="FLORAL_WHITE",
+        description="Floral white",
+        meaning=HEX["FFFAF0"])
+    IVORY = PermissibleValue(
+        text="IVORY",
+        description="Ivory",
+        meaning=HEX["FFFFF0"])
+    ANTIQUE_WHITE = PermissibleValue(
+        text="ANTIQUE_WHITE",
+        description="Antique white",
+        meaning=HEX["FAEBD7"])
+    LINEN = PermissibleValue(
+        text="LINEN",
+        description="Linen",
+        meaning=HEX["FAF0E6"])
+    LAVENDER_BLUSH = PermissibleValue(
+        text="LAVENDER_BLUSH",
+        description="Lavender blush",
+        meaning=HEX["FFF0F5"])
+    MISTY_ROSE = PermissibleValue(
+        text="MISTY_ROSE",
+        description="Misty rose",
+        meaning=HEX["FFE4E1"])
+    GAINSBORO = PermissibleValue(
+        text="GAINSBORO",
+        description="Gainsboro",
+        meaning=HEX["DCDCDC"])
+    LIGHT_GRAY = PermissibleValue(
+        text="LIGHT_GRAY",
+        description="Light gray",
+        meaning=HEX["D3D3D3"])
+    SILVER = PermissibleValue(
+        text="SILVER",
+        description="Silver",
+        meaning=HEX["C0C0C0"])
+    DARK_GRAY = PermissibleValue(
+        text="DARK_GRAY",
+        description="Dark gray",
+        meaning=HEX["A9A9A9"])
+    DIM_GRAY = PermissibleValue(
+        text="DIM_GRAY",
+        description="Dim gray",
+        meaning=HEX["696969"])
+    LIGHT_SLATE_GRAY = PermissibleValue(
+        text="LIGHT_SLATE_GRAY",
+        description="Light slate gray",
+        meaning=HEX["778899"])
+    SLATE_GRAY = PermissibleValue(
+        text="SLATE_GRAY",
+        description="Slate gray",
+        meaning=HEX["708090"])
+    DARK_SLATE_GRAY = PermissibleValue(
+        text="DARK_SLATE_GRAY",
+        description="Dark slate gray",
+        meaning=HEX["2F4F4F"])
+
+    _defn = EnumDefinition(
+        name="WebColorEnum",
+        description="Standard HTML/CSS named colors (147 colors)",
+    )
+
+class X11ColorEnum(EnumDefinitionImpl):
+    """
+    X11/Unix system colors (extended set)
+    """
+    X11_AQUA = PermissibleValue(
+        text="X11_AQUA",
+        description="X11 Aqua",
+        meaning=HEX["00FFFF"])
+    X11_GRAY0 = PermissibleValue(
+        text="X11_GRAY0",
+        description="X11 Gray 0 (black)",
+        meaning=HEX["000000"])
+    X11_GRAY25 = PermissibleValue(
+        text="X11_GRAY25",
+        description="X11 Gray 25%",
+        meaning=HEX["404040"])
+    X11_GRAY50 = PermissibleValue(
+        text="X11_GRAY50",
+        description="X11 Gray 50%",
+        meaning=HEX["808080"])
+    X11_GRAY75 = PermissibleValue(
+        text="X11_GRAY75",
+        description="X11 Gray 75%",
+        meaning=HEX["BFBFBF"])
+    X11_GRAY100 = PermissibleValue(
+        text="X11_GRAY100",
+        description="X11 Gray 100 (white)",
+        meaning=HEX["FFFFFF"])
+    X11_GREEN1 = PermissibleValue(
+        text="X11_GREEN1",
+        description="X11 Green 1",
+        meaning=HEX["00FF00"])
+    X11_GREEN2 = PermissibleValue(
+        text="X11_GREEN2",
+        description="X11 Green 2",
+        meaning=HEX["00EE00"])
+    X11_GREEN3 = PermissibleValue(
+        text="X11_GREEN3",
+        description="X11 Green 3",
+        meaning=HEX["00CD00"])
+    X11_GREEN4 = PermissibleValue(
+        text="X11_GREEN4",
+        description="X11 Green 4",
+        meaning=HEX["008B00"])
+    X11_BLUE1 = PermissibleValue(
+        text="X11_BLUE1",
+        description="X11 Blue 1",
+        meaning=HEX["0000FF"])
+    X11_BLUE2 = PermissibleValue(
+        text="X11_BLUE2",
+        description="X11 Blue 2",
+        meaning=HEX["0000EE"])
+    X11_BLUE3 = PermissibleValue(
+        text="X11_BLUE3",
+        description="X11 Blue 3",
+        meaning=HEX["0000CD"])
+    X11_BLUE4 = PermissibleValue(
+        text="X11_BLUE4",
+        description="X11 Blue 4",
+        meaning=HEX["00008B"])
+    X11_RED1 = PermissibleValue(
+        text="X11_RED1",
+        description="X11 Red 1",
+        meaning=HEX["FF0000"])
+    X11_RED2 = PermissibleValue(
+        text="X11_RED2",
+        description="X11 Red 2",
+        meaning=HEX["EE0000"])
+    X11_RED3 = PermissibleValue(
+        text="X11_RED3",
+        description="X11 Red 3",
+        meaning=HEX["CD0000"])
+    X11_RED4 = PermissibleValue(
+        text="X11_RED4",
+        description="X11 Red 4",
+        meaning=HEX["8B0000"])
+
+    _defn = EnumDefinition(
+        name="X11ColorEnum",
+        description="X11/Unix system colors (extended set)",
+    )
+
+class ColorSpaceEnum(EnumDefinitionImpl):
+    """
+    Color space and model types
+    """
+    RGB = PermissibleValue(
+        text="RGB",
+        description="Red Green Blue color model")
+    CMYK = PermissibleValue(
+        text="CMYK",
+        description="Cyan Magenta Yellow Key (black) color model")
+    HSL = PermissibleValue(
+        text="HSL",
+        description="Hue Saturation Lightness color model")
+    HSV = PermissibleValue(
+        text="HSV",
+        description="Hue Saturation Value color model")
+    LAB = PermissibleValue(
+        text="LAB",
+        description="CIELAB color space")
+    PANTONE = PermissibleValue(
+        text="PANTONE",
+        description="Pantone Matching System")
+    RAL = PermissibleValue(
+        text="RAL",
+        description="RAL color standard")
+    NCS = PermissibleValue(
+        text="NCS",
+        description="Natural Color System")
+    MUNSELL = PermissibleValue(
+        text="MUNSELL",
+        description="Munsell color system")
+
+    _defn = EnumDefinition(
+        name="ColorSpaceEnum",
+        description="Color space and model types",
+    )
+
+class EyeColorEnum(EnumDefinitionImpl):
+    """
+    Human eye color phenotypes
+    """
+    BROWN = PermissibleValue(
+        text="BROWN",
+        description="Brown eyes")
+    BLUE = PermissibleValue(
+        text="BLUE",
+        title="Blue irides",
+        description="Blue eyes",
+        meaning=HP["0000635"])
+    GREEN = PermissibleValue(
+        text="GREEN",
+        description="Green eyes")
+    HAZEL = PermissibleValue(
+        text="HAZEL",
+        description="Hazel eyes (brown-green mix)")
+    AMBER = PermissibleValue(
+        text="AMBER",
+        description="Amber/golden eyes")
+    GRAY = PermissibleValue(
+        text="GRAY",
+        title="Iris hypopigmentation",
+        description="Gray eyes",
+        meaning=HP["0007730"])
+    HETEROCHROMIA = PermissibleValue(
+        text="HETEROCHROMIA",
+        title="Heterochromia iridis",
+        description="Different colored eyes",
+        meaning=HP["0001100"])
+    RED_PINK = PermissibleValue(
+        text="RED_PINK",
+        description="Red/pink eyes (albinism)")
+    VIOLET = PermissibleValue(
+        text="VIOLET",
+        description="Violet eyes (extremely rare)")
+
+    _defn = EnumDefinition(
+        name="EyeColorEnum",
+        description="Human eye color phenotypes",
+    )
+
+class HairColorEnum(EnumDefinitionImpl):
+    """
+    Human hair color phenotypes
+    """
+    BLACK = PermissibleValue(
+        text="BLACK",
+        description="Black hair")
+    BROWN = PermissibleValue(
+        text="BROWN",
+        description="Brown hair")
+    DARK_BROWN = PermissibleValue(
+        text="DARK_BROWN",
+        description="Dark brown hair")
+    LIGHT_BROWN = PermissibleValue(
+        text="LIGHT_BROWN",
+        description="Light brown hair")
+    BLONDE = PermissibleValue(
+        text="BLONDE",
+        title="Fair hair",
+        description="Blonde/blond hair",
+        meaning=HP["0002286"])
+    DARK_BLONDE = PermissibleValue(
+        text="DARK_BLONDE",
+        description="Dark blonde hair")
+    LIGHT_BLONDE = PermissibleValue(
+        text="LIGHT_BLONDE",
+        description="Light blonde hair")
+    PLATINUM_BLONDE = PermissibleValue(
+        text="PLATINUM_BLONDE",
+        description="Platinum blonde hair")
+    STRAWBERRY_BLONDE = PermissibleValue(
+        text="STRAWBERRY_BLONDE",
+        description="Strawberry blonde hair")
+    RED = PermissibleValue(
+        text="RED",
+        title="Red hair",
+        description="Red hair",
+        meaning=HP["0002297"])
+    AUBURN = PermissibleValue(
+        text="AUBURN",
+        description="Auburn hair (reddish-brown)")
+    GINGER = PermissibleValue(
+        text="GINGER",
+        description="Ginger hair (orange-red)")
+    GRAY = PermissibleValue(
+        text="GRAY",
+        title="Premature graying of hair",
+        description="Gray hair",
+        meaning=HP["0002216"])
+    WHITE = PermissibleValue(
+        text="WHITE",
+        title="White hair",
+        description="White hair",
+        meaning=HP["0011364"])
+    SILVER = PermissibleValue(
+        text="SILVER",
+        description="Silver hair")
+
+    _defn = EnumDefinition(
+        name="HairColorEnum",
+        description="Human hair color phenotypes",
+    )
+
+class FlowerColorEnum(EnumDefinitionImpl):
+    """
+    Common flower colors
+    """
+    RED = PermissibleValue(
+        text="RED",
+        description="Red flowers")
+    PINK = PermissibleValue(
+        text="PINK",
+        description="Pink flowers")
+    ORANGE = PermissibleValue(
+        text="ORANGE",
+        description="Orange flowers")
+    YELLOW = PermissibleValue(
+        text="YELLOW",
+        description="Yellow flowers")
+    WHITE = PermissibleValue(
+        text="WHITE",
+        description="White flowers")
+    PURPLE = PermissibleValue(
+        text="PURPLE",
+        description="Purple flowers")
+    VIOLET = PermissibleValue(
+        text="VIOLET",
+        description="Violet flowers")
+    BLUE = PermissibleValue(
+        text="BLUE",
+        description="Blue flowers")
+    LAVENDER = PermissibleValue(
+        text="LAVENDER",
+        description="Lavender flowers")
+    MAGENTA = PermissibleValue(
+        text="MAGENTA",
+        description="Magenta flowers")
+    BURGUNDY = PermissibleValue(
+        text="BURGUNDY",
+        description="Burgundy/deep red flowers")
+    CORAL = PermissibleValue(
+        text="CORAL",
+        description="Coral flowers")
+    PEACH = PermissibleValue(
+        text="PEACH",
+        description="Peach flowers")
+    CREAM = PermissibleValue(
+        text="CREAM",
+        description="Cream flowers")
+    BICOLOR = PermissibleValue(
+        text="BICOLOR",
+        description="Two-colored flowers")
+    MULTICOLOR = PermissibleValue(
+        text="MULTICOLOR",
+        description="Multi-colored flowers")
+
+    _defn = EnumDefinition(
+        name="FlowerColorEnum",
+        description="Common flower colors",
+    )
+
+class AnimalCoatColorEnum(EnumDefinitionImpl):
+    """
+    Animal coat/fur colors
+    """
+    BLACK = PermissibleValue(
+        text="BLACK",
+        description="Black coat")
+    WHITE = PermissibleValue(
+        text="WHITE",
+        description="White coat")
+    BROWN = PermissibleValue(
+        text="BROWN",
+        description="Brown coat")
+    TAN = PermissibleValue(
+        text="TAN",
+        description="Tan coat")
+    CREAM = PermissibleValue(
+        text="CREAM",
+        description="Cream coat")
+    GRAY = PermissibleValue(
+        text="GRAY",
+        description="Gray coat")
+    RED = PermissibleValue(
+        text="RED",
+        description="Red/rust coat")
+    GOLDEN = PermissibleValue(
+        text="GOLDEN",
+        description="Golden coat")
+    FAWN = PermissibleValue(
+        text="FAWN",
+        description="Fawn coat")
+    BRINDLE = PermissibleValue(
+        text="BRINDLE",
+        description="Brindle pattern (striped)")
+    SPOTTED = PermissibleValue(
+        text="SPOTTED",
+        description="Spotted pattern")
+    MERLE = PermissibleValue(
+        text="MERLE",
+        description="Merle pattern (mottled)")
+    PIEBALD = PermissibleValue(
+        text="PIEBALD",
+        description="Piebald pattern (patches)")
+    CALICO = PermissibleValue(
+        text="CALICO",
+        description="Calico pattern (tri-color)")
+    TABBY = PermissibleValue(
+        text="TABBY",
+        description="Tabby pattern (striped)")
+    TORTOISESHELL = PermissibleValue(
+        text="TORTOISESHELL",
+        description="Tortoiseshell pattern")
+    ROAN = PermissibleValue(
+        text="ROAN",
+        description="Roan pattern (mixed white)")
+    PALOMINO = PermissibleValue(
+        text="PALOMINO",
+        description="Palomino (golden with white mane)")
+    CHESTNUT = PermissibleValue(
+        text="CHESTNUT",
+        description="Chestnut/sorrel")
+    BAY = PermissibleValue(
+        text="BAY",
+        description="Bay (brown with black points)")
+
+    _defn = EnumDefinition(
+        name="AnimalCoatColorEnum",
+        description="Animal coat/fur colors",
+    )
+
+class SkinToneEnum(EnumDefinitionImpl):
+    """
+    Human skin tone classifications (Fitzpatrick scale based)
+    """
+    TYPE_I = PermissibleValue(
+        text="TYPE_I",
+        description="Very pale white skin")
+    TYPE_II = PermissibleValue(
+        text="TYPE_II",
+        description="Fair white skin")
+    TYPE_III = PermissibleValue(
+        text="TYPE_III",
+        description="Light brown skin")
+    TYPE_IV = PermissibleValue(
+        text="TYPE_IV",
+        description="Moderate brown skin")
+    TYPE_V = PermissibleValue(
+        text="TYPE_V",
+        description="Dark brown skin")
+    TYPE_VI = PermissibleValue(
+        text="TYPE_VI",
+        description="Very dark brown to black skin")
+
+    _defn = EnumDefinition(
+        name="SkinToneEnum",
+        description="Human skin tone classifications (Fitzpatrick scale based)",
+    )
+
+class PlantLeafColorEnum(EnumDefinitionImpl):
+    """
+    Plant leaf colors (including seasonal changes)
+    """
+    GREEN = PermissibleValue(
+        text="GREEN",
+        description="Green leaves (healthy/summer)",
+        meaning=PATO["0000320"])
+    DARK_GREEN = PermissibleValue(
+        text="DARK_GREEN",
+        description="Dark green leaves")
+    LIGHT_GREEN = PermissibleValue(
+        text="LIGHT_GREEN",
+        description="Light green leaves")
+    YELLOW_GREEN = PermissibleValue(
+        text="YELLOW_GREEN",
+        description="Yellow-green leaves")
+    YELLOW = PermissibleValue(
+        text="YELLOW",
+        description="Yellow leaves (autumn or chlorosis)",
+        meaning=PATO["0000324"])
+    ORANGE = PermissibleValue(
+        text="ORANGE",
+        description="Orange leaves (autumn)")
+    RED = PermissibleValue(
+        text="RED",
+        description="Red leaves (autumn or certain species)",
+        meaning=PATO["0000322"])
+    PURPLE = PermissibleValue(
+        text="PURPLE",
+        description="Purple leaves (certain species)")
+    BRONZE = PermissibleValue(
+        text="BRONZE",
+        description="Bronze leaves")
+    SILVER = PermissibleValue(
+        text="SILVER",
+        description="Silver/gray leaves")
+    VARIEGATED = PermissibleValue(
+        text="VARIEGATED",
+        description="Variegated leaves (multiple colors)")
+    BROWN = PermissibleValue(
+        text="BROWN",
+        description="Brown leaves (dead/dying)")
+
+    _defn = EnumDefinition(
+        name="PlantLeafColorEnum",
+        description="Plant leaf colors (including seasonal changes)",
+    )
+
+class DNABaseEnum(EnumDefinitionImpl):
+    """
+    Standard DNA nucleotide bases (canonical)
+    """
+    A = PermissibleValue(
+        text="A",
+        title="Adenine",
+        meaning=CHEBI["16708"])
+    C = PermissibleValue(
+        text="C",
+        title="Cytosine",
+        meaning=CHEBI["16040"])
+    G = PermissibleValue(
+        text="G",
+        title="Guanine",
+        meaning=CHEBI["16235"])
+    T = PermissibleValue(
+        text="T",
+        title="Thymine",
+        meaning=CHEBI["17821"])
+
+    _defn = EnumDefinition(
+        name="DNABaseEnum",
+        description="Standard DNA nucleotide bases (canonical)",
+    )
+
+class DNABaseExtendedEnum(EnumDefinitionImpl):
+    """
+    Extended DNA alphabet with IUPAC ambiguity codes
+    """
+    A = PermissibleValue(
+        text="A",
+        title="Adenine",
+        meaning=CHEBI["16708"])
+    C = PermissibleValue(
+        text="C",
+        title="Cytosine",
+        meaning=CHEBI["16040"])
+    G = PermissibleValue(
+        text="G",
+        title="Guanine",
+        meaning=CHEBI["16235"])
+    T = PermissibleValue(
+        text="T",
+        title="Thymine",
+        meaning=CHEBI["17821"])
+    R = PermissibleValue(
+        text="R",
+        title="Purine (A or G)")
+    Y = PermissibleValue(
+        text="Y",
+        title="Pyrimidine (C or T)")
+    S = PermissibleValue(
+        text="S",
+        title="Strong (G or C)")
+    W = PermissibleValue(
+        text="W",
+        title="Weak (A or T)")
+    K = PermissibleValue(
+        text="K",
+        title="Keto (G or T)")
+    M = PermissibleValue(
+        text="M",
+        title="Amino (A or C)")
+    B = PermissibleValue(
+        text="B",
+        title="Not A (C, G, or T)")
+    D = PermissibleValue(
+        text="D",
+        title="Not C (A, G, or T)")
+    H = PermissibleValue(
+        text="H",
+        title="Not G (A, C, or T)")
+    V = PermissibleValue(
+        text="V",
+        title="Not T (A, C, or G)")
+    N = PermissibleValue(
+        text="N",
+        title="Any nucleotide (A, C, G, or T)")
+    GAP = PermissibleValue(
+        text="GAP",
+        title="Gap character")
+
+    _defn = EnumDefinition(
+        name="DNABaseExtendedEnum",
+        description="Extended DNA alphabet with IUPAC ambiguity codes",
+    )
+
+class RNABaseEnum(EnumDefinitionImpl):
+    """
+    Standard RNA nucleotide bases (canonical)
+    """
+    A = PermissibleValue(
+        text="A",
+        title="Adenine",
+        meaning=CHEBI["16708"])
+    C = PermissibleValue(
+        text="C",
+        title="Cytosine",
+        meaning=CHEBI["16040"])
+    G = PermissibleValue(
+        text="G",
+        title="Guanine",
+        meaning=CHEBI["16235"])
+    U = PermissibleValue(
+        text="U",
+        title="Uracil",
+        meaning=CHEBI["17568"])
+
+    _defn = EnumDefinition(
+        name="RNABaseEnum",
+        description="Standard RNA nucleotide bases (canonical)",
+    )
+
+class RNABaseExtendedEnum(EnumDefinitionImpl):
+    """
+    Extended RNA alphabet with IUPAC ambiguity codes
+    """
+    A = PermissibleValue(
+        text="A",
+        title="Adenine",
+        meaning=CHEBI["16708"])
+    C = PermissibleValue(
+        text="C",
+        title="Cytosine",
+        meaning=CHEBI["16040"])
+    G = PermissibleValue(
+        text="G",
+        title="Guanine",
+        meaning=CHEBI["16235"])
+    U = PermissibleValue(
+        text="U",
+        title="Uracil",
+        meaning=CHEBI["17568"])
+    R = PermissibleValue(
+        text="R",
+        title="Purine (A or G)")
+    Y = PermissibleValue(
+        text="Y",
+        title="Pyrimidine (C or U)")
+    S = PermissibleValue(
+        text="S",
+        title="Strong (G or C)")
+    W = PermissibleValue(
+        text="W",
+        title="Weak (A or U)")
+    K = PermissibleValue(
+        text="K",
+        title="Keto (G or U)")
+    M = PermissibleValue(
+        text="M",
+        title="Amino (A or C)")
+    B = PermissibleValue(
+        text="B",
+        title="Not A (C, G, or U)")
+    D = PermissibleValue(
+        text="D",
+        title="Not C (A, G, or U)")
+    H = PermissibleValue(
+        text="H",
+        title="Not G (A, C, or U)")
+    V = PermissibleValue(
+        text="V",
+        title="Not U (A, C, or G)")
+    N = PermissibleValue(
+        text="N",
+        title="Any nucleotide (A, C, G, or U)")
+    GAP = PermissibleValue(
+        text="GAP",
+        title="Gap character")
+
+    _defn = EnumDefinition(
+        name="RNABaseExtendedEnum",
+        description="Extended RNA alphabet with IUPAC ambiguity codes",
+    )
+
+class AminoAcidEnum(EnumDefinitionImpl):
+    """
+    Standard amino acid single letter codes
+    """
+    A = PermissibleValue(
+        text="A",
+        title="Alanine",
+        meaning=CHEBI["16449"])
+    C = PermissibleValue(
+        text="C",
+        title="Cysteine",
+        meaning=CHEBI["17561"])
+    D = PermissibleValue(
+        text="D",
+        title="Aspartic acid",
+        meaning=CHEBI["17053"])
+    E = PermissibleValue(
+        text="E",
+        title="Glutamic acid",
+        meaning=CHEBI["16015"])
+    F = PermissibleValue(
+        text="F",
+        title="Phenylalanine",
+        meaning=CHEBI["17295"])
+    G = PermissibleValue(
+        text="G",
+        title="Glycine",
+        meaning=CHEBI["15428"])
+    H = PermissibleValue(
+        text="H",
+        title="Histidine",
+        meaning=CHEBI["15971"])
+    I = PermissibleValue(
+        text="I",
+        title="Isoleucine",
+        meaning=CHEBI["17191"])
+    K = PermissibleValue(
+        text="K",
+        title="Lysine",
+        meaning=CHEBI["18019"])
+    L = PermissibleValue(
+        text="L",
+        title="Leucine",
+        meaning=CHEBI["15603"])
+    M = PermissibleValue(
+        text="M",
+        title="Methionine",
+        meaning=CHEBI["16643"])
+    N = PermissibleValue(
+        text="N",
+        title="Asparagine",
+        meaning=CHEBI["17196"])
+    P = PermissibleValue(
+        text="P",
+        title="Proline",
+        meaning=CHEBI["17203"])
+    Q = PermissibleValue(
+        text="Q",
+        title="Glutamine",
+        meaning=CHEBI["18050"])
+    R = PermissibleValue(
+        text="R",
+        title="Arginine",
+        meaning=CHEBI["16467"])
+    S = PermissibleValue(
+        text="S",
+        title="Serine",
+        meaning=CHEBI["17115"])
+    T = PermissibleValue(
+        text="T",
+        title="Threonine",
+        meaning=CHEBI["16857"])
+    V = PermissibleValue(
+        text="V",
+        title="Valine",
+        meaning=CHEBI["16414"])
+    W = PermissibleValue(
+        text="W",
+        title="Tryptophan",
+        meaning=CHEBI["16828"])
+    Y = PermissibleValue(
+        text="Y",
+        title="Tyrosine",
+        meaning=CHEBI["17895"])
+
+    _defn = EnumDefinition(
+        name="AminoAcidEnum",
+        description="Standard amino acid single letter codes",
+    )
+
+class AminoAcidExtendedEnum(EnumDefinitionImpl):
+    """
+    Extended amino acid alphabet with ambiguity codes and special characters
+    """
+    A = PermissibleValue(
+        text="A",
+        title="Alanine",
+        meaning=CHEBI["16449"])
+    C = PermissibleValue(
+        text="C",
+        title="Cysteine",
+        meaning=CHEBI["17561"])
+    D = PermissibleValue(
+        text="D",
+        title="Aspartic acid",
+        meaning=CHEBI["17053"])
+    E = PermissibleValue(
+        text="E",
+        title="Glutamic acid",
+        meaning=CHEBI["16015"])
+    F = PermissibleValue(
+        text="F",
+        title="Phenylalanine",
+        meaning=CHEBI["17295"])
+    G = PermissibleValue(
+        text="G",
+        title="Glycine",
+        meaning=CHEBI["15428"])
+    H = PermissibleValue(
+        text="H",
+        title="Histidine",
+        meaning=CHEBI["15971"])
+    I = PermissibleValue(
+        text="I",
+        title="Isoleucine",
+        meaning=CHEBI["17191"])
+    K = PermissibleValue(
+        text="K",
+        title="Lysine",
+        meaning=CHEBI["18019"])
+    L = PermissibleValue(
+        text="L",
+        title="Leucine",
+        meaning=CHEBI["15603"])
+    M = PermissibleValue(
+        text="M",
+        title="Methionine",
+        meaning=CHEBI["16643"])
+    N = PermissibleValue(
+        text="N",
+        title="Asparagine",
+        meaning=CHEBI["17196"])
+    P = PermissibleValue(
+        text="P",
+        title="Proline",
+        meaning=CHEBI["17203"])
+    Q = PermissibleValue(
+        text="Q",
+        title="Glutamine",
+        meaning=CHEBI["18050"])
+    R = PermissibleValue(
+        text="R",
+        title="Arginine",
+        meaning=CHEBI["16467"])
+    S = PermissibleValue(
+        text="S",
+        title="Serine",
+        meaning=CHEBI["17115"])
+    T = PermissibleValue(
+        text="T",
+        title="Threonine",
+        meaning=CHEBI["16857"])
+    V = PermissibleValue(
+        text="V",
+        title="Valine",
+        meaning=CHEBI["16414"])
+    W = PermissibleValue(
+        text="W",
+        title="Tryptophan",
+        meaning=CHEBI["16828"])
+    Y = PermissibleValue(
+        text="Y",
+        title="Tyrosine",
+        meaning=CHEBI["17895"])
+    B = PermissibleValue(
+        text="B",
+        title="Aspartic acid")
+    Z = PermissibleValue(
+        text="Z",
+        title="Glutamic acid")
+    J = PermissibleValue(
+        text="J",
+        title="Leucine")
+    X = PermissibleValue(
+        text="X",
+        title="Any amino acid")
+    STOP = PermissibleValue(
+        text="STOP",
+        title="Translation stop/termination")
+    GAP = PermissibleValue(
+        text="GAP",
+        title="Gap character")
+    U = PermissibleValue(
+        text="U",
+        title="Selenocysteine",
+        meaning=CHEBI["16633"])
+    O = PermissibleValue(
+        text="O",
+        title="Pyrrolysine (22nd amino acid)",
+        meaning=CHEBI["21786"])
+
+    _defn = EnumDefinition(
+        name="AminoAcidExtendedEnum",
+        description="Extended amino acid alphabet with ambiguity codes and special characters",
+    )
+
+class CodonEnum(EnumDefinitionImpl):
+    """
+    Standard genetic code codons (DNA)
+    """
+    TTT = PermissibleValue(
+        text="TTT",
+        title="Phenylalanine codon")
+    TTC = PermissibleValue(
+        text="TTC",
+        title="Phenylalanine codon")
+    TTA = PermissibleValue(
+        text="TTA",
+        title="Leucine codon")
+    TTG = PermissibleValue(
+        text="TTG",
+        title="Leucine codon")
+    CTT = PermissibleValue(
+        text="CTT",
+        title="Leucine codon")
+    CTC = PermissibleValue(
+        text="CTC",
+        title="Leucine codon")
+    CTA = PermissibleValue(
+        text="CTA",
+        title="Leucine codon")
+    CTG = PermissibleValue(
+        text="CTG",
+        title="Leucine codon")
+    ATT = PermissibleValue(
+        text="ATT",
+        title="Isoleucine codon")
+    ATC = PermissibleValue(
+        text="ATC",
+        title="Isoleucine codon")
+    ATA = PermissibleValue(
+        text="ATA",
+        title="Isoleucine codon")
+    ATG = PermissibleValue(
+        text="ATG",
+        title="Methionine codon (start codon)")
+    GTT = PermissibleValue(
+        text="GTT",
+        title="Valine codon")
+    GTC = PermissibleValue(
+        text="GTC",
+        title="Valine codon")
+    GTA = PermissibleValue(
+        text="GTA",
+        title="Valine codon")
+    GTG = PermissibleValue(
+        text="GTG",
+        title="Valine codon")
+    TCT = PermissibleValue(
+        text="TCT",
+        title="Serine codon")
+    TCC = PermissibleValue(
+        text="TCC",
+        title="Serine codon")
+    TCA = PermissibleValue(
+        text="TCA",
+        title="Serine codon")
+    TCG = PermissibleValue(
+        text="TCG",
+        title="Serine codon")
+    AGT = PermissibleValue(
+        text="AGT",
+        title="Serine codon")
+    AGC = PermissibleValue(
+        text="AGC",
+        title="Serine codon")
+    CCT = PermissibleValue(
+        text="CCT",
+        title="Proline codon")
+    CCC = PermissibleValue(
+        text="CCC",
+        title="Proline codon")
+    CCA = PermissibleValue(
+        text="CCA",
+        title="Proline codon")
+    CCG = PermissibleValue(
+        text="CCG",
+        title="Proline codon")
+    ACT = PermissibleValue(
+        text="ACT",
+        title="Threonine codon")
+    ACC = PermissibleValue(
+        text="ACC",
+        title="Threonine codon")
+    ACA = PermissibleValue(
+        text="ACA",
+        title="Threonine codon")
+    ACG = PermissibleValue(
+        text="ACG",
+        title="Threonine codon")
+    GCT = PermissibleValue(
+        text="GCT",
+        title="Alanine codon")
+    GCC = PermissibleValue(
+        text="GCC",
+        title="Alanine codon")
+    GCA = PermissibleValue(
+        text="GCA",
+        title="Alanine codon")
+    GCG = PermissibleValue(
+        text="GCG",
+        title="Alanine codon")
+    TAT = PermissibleValue(
+        text="TAT",
+        title="Tyrosine codon")
+    TAC = PermissibleValue(
+        text="TAC",
+        title="Tyrosine codon")
+    TAA = PermissibleValue(
+        text="TAA",
+        title="Stop codon (ochre)")
+    TAG = PermissibleValue(
+        text="TAG",
+        title="Stop codon (amber)")
+    TGA = PermissibleValue(
+        text="TGA",
+        title="Stop codon (opal/umber)")
+    CAT = PermissibleValue(
+        text="CAT",
+        title="Histidine codon")
+    CAC = PermissibleValue(
+        text="CAC",
+        title="Histidine codon")
+    CAA = PermissibleValue(
+        text="CAA",
+        title="Glutamine codon")
+    CAG = PermissibleValue(
+        text="CAG",
+        title="Glutamine codon")
+    AAT = PermissibleValue(
+        text="AAT",
+        title="Asparagine codon")
+    AAC = PermissibleValue(
+        text="AAC",
+        title="Asparagine codon")
+    AAA = PermissibleValue(
+        text="AAA",
+        title="Lysine codon")
+    AAG = PermissibleValue(
+        text="AAG",
+        title="Lysine codon")
+    GAT = PermissibleValue(
+        text="GAT",
+        title="Aspartic acid codon")
+    GAC = PermissibleValue(
+        text="GAC",
+        title="Aspartic acid codon")
+    GAA = PermissibleValue(
+        text="GAA",
+        title="Glutamic acid codon")
+    GAG = PermissibleValue(
+        text="GAG",
+        title="Glutamic acid codon")
+    TGT = PermissibleValue(
+        text="TGT",
+        title="Cysteine codon")
+    TGC = PermissibleValue(
+        text="TGC",
+        title="Cysteine codon")
+    TGG = PermissibleValue(
+        text="TGG",
+        title="Tryptophan codon")
+    CGT = PermissibleValue(
+        text="CGT",
+        title="Arginine codon")
+    CGC = PermissibleValue(
+        text="CGC",
+        title="Arginine codon")
+    CGA = PermissibleValue(
+        text="CGA",
+        title="Arginine codon")
+    CGG = PermissibleValue(
+        text="CGG",
+        title="Arginine codon")
+    AGA = PermissibleValue(
+        text="AGA",
+        title="Arginine codon")
+    AGG = PermissibleValue(
+        text="AGG",
+        title="Arginine codon")
+    GGT = PermissibleValue(
+        text="GGT",
+        title="Glycine codon")
+    GGC = PermissibleValue(
+        text="GGC",
+        title="Glycine codon")
+    GGA = PermissibleValue(
+        text="GGA",
+        title="Glycine codon")
+    GGG = PermissibleValue(
+        text="GGG",
+        title="Glycine codon")
+
+    _defn = EnumDefinition(
+        name="CodonEnum",
+        description="Standard genetic code codons (DNA)",
+    )
+
+class NucleotideModificationEnum(EnumDefinitionImpl):
+    """
+    Common nucleotide modifications
+    """
+    FIVE_METHYL_C = PermissibleValue(
+        text="FIVE_METHYL_C",
+        title="5-methylcytosine",
+        description="5-methylcytosine",
+        meaning=CHEBI["27551"])
+    SIX_METHYL_A = PermissibleValue(
+        text="SIX_METHYL_A",
+        title="N(6)-methyladenosine",
+        description="N6-methyladenosine",
+        meaning=CHEBI["21891"])
+    PSEUDOURIDINE = PermissibleValue(
+        text="PSEUDOURIDINE",
+        description="Pseudouridine",
+        meaning=CHEBI["17802"])
+    INOSINE = PermissibleValue(
+        text="INOSINE",
+        description="Inosine",
+        meaning=CHEBI["17596"])
+    DIHYDROURIDINE = PermissibleValue(
+        text="DIHYDROURIDINE",
+        title="dihydrouridine",
+        description="Dihydrouridine",
+        meaning=CHEBI["23774"])
+    SEVEN_METHYL_G = PermissibleValue(
+        text="SEVEN_METHYL_G",
+        title="7-methylguanosine",
+        description="7-methylguanosine",
+        meaning=CHEBI["20794"])
+    FIVE_HYDROXY_METHYL_C = PermissibleValue(
+        text="FIVE_HYDROXY_METHYL_C",
+        title="5-(hydroxymethyl)cytosine",
+        description="5-hydroxymethylcytosine",
+        meaning=CHEBI["76792"])
+    EIGHT_OXO_G = PermissibleValue(
+        text="EIGHT_OXO_G",
+        title="8-oxoguanine",
+        description="8-oxoguanine",
+        meaning=CHEBI["44605"])
+
+    _defn = EnumDefinition(
+        name="NucleotideModificationEnum",
+        description="Common nucleotide modifications",
+    )
+
+class SequenceQualityEnum(EnumDefinitionImpl):
+    """
+    Sequence quality indicators (Phred scores)
+    """
+    Q0 = PermissibleValue(
+        text="Q0",
+        description="Phred quality 0 (100% error probability)")
+    Q10 = PermissibleValue(
+        text="Q10",
+        description="Phred quality 10 (10% error probability)")
+    Q20 = PermissibleValue(
+        text="Q20",
+        description="Phred quality 20 (1% error probability)")
+    Q30 = PermissibleValue(
+        text="Q30",
+        description="Phred quality 30 (0.1% error probability)")
+    Q40 = PermissibleValue(
+        text="Q40",
+        description="Phred quality 40 (0.01% error probability)")
+    Q50 = PermissibleValue(
+        text="Q50",
+        description="Phred quality 50 (0.001% error probability)")
+    Q60 = PermissibleValue(
+        text="Q60",
+        description="Phred quality 60 (0.0001% error probability)")
+
+    _defn = EnumDefinition(
+        name="SequenceQualityEnum",
+        description="Sequence quality indicators (Phred scores)",
+    )
+
+class SubatomicParticleEnum(EnumDefinitionImpl):
+    """
+    Fundamental and composite subatomic particles
+    """
+    ELECTRON = PermissibleValue(
+        text="ELECTRON",
+        description="Elementary particle with -1 charge, spin 1/2",
+        meaning=CHEBI["10545"])
+    POSITRON = PermissibleValue(
+        text="POSITRON",
+        description="Antiparticle of electron with +1 charge",
+        meaning=CHEBI["30225"])
+    MUON = PermissibleValue(
+        text="MUON",
+        description="Heavy lepton with -1 charge",
+        meaning=CHEBI["36356"])
+    TAU_LEPTON = PermissibleValue(
+        text="TAU_LEPTON",
+        description="Heaviest lepton with -1 charge",
+        meaning=CHEBI["36355"])
+    ELECTRON_NEUTRINO = PermissibleValue(
+        text="ELECTRON_NEUTRINO",
+        description="Electron neutrino, nearly massless",
+        meaning=CHEBI["30223"])
+    MUON_NEUTRINO = PermissibleValue(
+        text="MUON_NEUTRINO",
+        description="Muon neutrino",
+        meaning=CHEBI["36353"])
+    TAU_NEUTRINO = PermissibleValue(
+        text="TAU_NEUTRINO",
+        description="Tau neutrino",
+        meaning=CHEBI["36354"])
+    UP_QUARK = PermissibleValue(
+        text="UP_QUARK",
+        title="up quark",
+        description="First generation quark with +2/3 charge",
+        meaning=CHEBI["36366"])
+    DOWN_QUARK = PermissibleValue(
+        text="DOWN_QUARK",
+        description="First generation quark with -1/3 charge",
+        meaning=CHEBI["36367"])
+    CHARM_QUARK = PermissibleValue(
+        text="CHARM_QUARK",
+        title="charm quark",
+        description="Second generation quark with +2/3 charge",
+        meaning=CHEBI["36369"])
+    STRANGE_QUARK = PermissibleValue(
+        text="STRANGE_QUARK",
+        title="strange quark",
+        description="Second generation quark with -1/3 charge",
+        meaning=CHEBI["36368"])
+    TOP_QUARK = PermissibleValue(
+        text="TOP_QUARK",
+        description="Third generation quark with +2/3 charge",
+        meaning=CHEBI["36371"])
+    BOTTOM_QUARK = PermissibleValue(
+        text="BOTTOM_QUARK",
+        title="bottom quark",
+        description="Third generation quark with -1/3 charge",
+        meaning=CHEBI["36370"])
+    PHOTON = PermissibleValue(
+        text="PHOTON",
+        description="Force carrier for electromagnetic interaction",
+        meaning=CHEBI["30212"])
+    W_BOSON = PermissibleValue(
+        text="W_BOSON",
+        title="composite particle",
+        description="Force carrier for weak interaction",
+        meaning=CHEBI["36343"])
+    Z_BOSON = PermissibleValue(
+        text="Z_BOSON",
+        title="hadron",
+        description="Force carrier for weak interaction",
+        meaning=CHEBI["36344"])
+    GLUON = PermissibleValue(
+        text="GLUON",
+        description="Force carrier for strong interaction")
+    HIGGS_BOSON = PermissibleValue(
+        text="HIGGS_BOSON",
+        description="Scalar boson responsible for mass",
+        meaning=CHEBI["146278"])
+    PROTON = PermissibleValue(
+        text="PROTON",
+        description="Positively charged nucleon",
+        meaning=CHEBI["24636"])
+    NEUTRON = PermissibleValue(
+        text="NEUTRON",
+        description="Neutral nucleon",
+        meaning=CHEBI["33254"])
+    ALPHA_PARTICLE = PermissibleValue(
+        text="ALPHA_PARTICLE",
+        description="Helium-4 nucleus",
+        meaning=CHEBI["30216"])
+    DEUTERON = PermissibleValue(
+        text="DEUTERON",
+        description="Hydrogen-2 nucleus",
+        meaning=CHEBI["29233"])
+    TRITON = PermissibleValue(
+        text="TRITON",
+        description="Hydrogen-3 nucleus",
+        meaning=CHEBI["29234"])
+
+    _defn = EnumDefinition(
+        name="SubatomicParticleEnum",
+        description="Fundamental and composite subatomic particles",
+    )
+
+class BondTypeEnum(EnumDefinitionImpl):
+    """
+    Types of chemical bonds
+    """
+    SINGLE = PermissibleValue(
+        text="SINGLE",
+        description="Single covalent bond",
+        meaning=GC["Single"])
+    DOUBLE = PermissibleValue(
+        text="DOUBLE",
+        description="Double covalent bond",
+        meaning=GC["Double"])
+    TRIPLE = PermissibleValue(
+        text="TRIPLE",
+        description="Triple covalent bond",
+        meaning=GC["Triple"])
+    QUADRUPLE = PermissibleValue(
+        text="QUADRUPLE",
+        description="Quadruple bond (rare, in transition metals)",
+        meaning=GC["Quadruple"])
+    AROMATIC = PermissibleValue(
+        text="AROMATIC",
+        description="Aromatic bond",
+        meaning=GC["AromaticBond"])
+    IONIC = PermissibleValue(
+        text="IONIC",
+        title="organic molecular entity",
+        description="Ionic bond",
+        meaning=CHEBI["50860"])
+    HYDROGEN = PermissibleValue(
+        text="HYDROGEN",
+        description="Hydrogen bond",
+        meaning=CHEBI["50839"])
+    METALLIC = PermissibleValue(
+        text="METALLIC",
+        description="Metallic bond")
+    VAN_DER_WAALS = PermissibleValue(
+        text="VAN_DER_WAALS",
+        description="Van der Waals interaction")
+    COORDINATE = PermissibleValue(
+        text="COORDINATE",
+        title="coordination entity",
+        description="Coordinate/dative covalent bond",
+        meaning=CHEBI["33240"])
+    PI = PermissibleValue(
+        text="PI",
+        description="Pi bond")
+    SIGMA = PermissibleValue(
+        text="SIGMA",
+        description="Sigma bond")
+
+    _defn = EnumDefinition(
+        name="BondTypeEnum",
+        description="Types of chemical bonds",
+    )
+
+class PeriodicTableBlockEnum(EnumDefinitionImpl):
+    """
+    Blocks of the periodic table
+    """
+    S_BLOCK = PermissibleValue(
+        text="S_BLOCK",
+        title="s-block molecular entity",
+        description="s-block elements (groups 1 and 2)",
+        meaning=CHEBI["33674"])
+    P_BLOCK = PermissibleValue(
+        text="P_BLOCK",
+        title="p-block molecular entity",
+        description="p-block elements (groups 13-18)",
+        meaning=CHEBI["33675"])
+    D_BLOCK = PermissibleValue(
+        text="D_BLOCK",
+        title="d-block element atom",
+        description="d-block elements (transition metals)",
+        meaning=CHEBI["33561"])
+    F_BLOCK = PermissibleValue(
+        text="F_BLOCK",
+        title="f-block element atom",
+        description="f-block elements (lanthanides and actinides)",
+        meaning=CHEBI["33562"])
+
+    _defn = EnumDefinition(
+        name="PeriodicTableBlockEnum",
+        description="Blocks of the periodic table",
+    )
+
+class ElementFamilyEnum(EnumDefinitionImpl):
+    """
+    Chemical element families/groups
+    """
+    ALKALI_METALS = PermissibleValue(
+        text="ALKALI_METALS",
+        title="alkali metal atom",
+        description="Group 1 elements (except hydrogen)",
+        meaning=CHEBI["22314"])
+    ALKALINE_EARTH_METALS = PermissibleValue(
+        text="ALKALINE_EARTH_METALS",
+        title="alkaloid",
+        description="Group 2 elements",
+        meaning=CHEBI["22315"])
+    TRANSITION_METALS = PermissibleValue(
+        text="TRANSITION_METALS",
+        title="transition element atom",
+        description="d-block elements",
+        meaning=CHEBI["27081"])
+    LANTHANIDES = PermissibleValue(
+        text="LANTHANIDES",
+        title="titanium group molecular entity",
+        description="Lanthanide series",
+        meaning=CHEBI["33768"])
+    ACTINIDES = PermissibleValue(
+        text="ACTINIDES",
+        title="fuconates",
+        description="Actinide series",
+        meaning=CHEBI["33769"])
+    CHALCOGENS = PermissibleValue(
+        text="CHALCOGENS",
+        title="chalcogen",
+        description="Group 16 elements",
+        meaning=CHEBI["33303"])
+    HALOGENS = PermissibleValue(
+        text="HALOGENS",
+        title="idopyranuronic acid",
+        description="Group 17 elements",
+        meaning=CHEBI["47902"])
+    NOBLE_GASES = PermissibleValue(
+        text="NOBLE_GASES",
+        title="neon atom",
+        description="Group 18 elements",
+        meaning=CHEBI["33310"])
+    METALLOIDS = PermissibleValue(
+        text="METALLOIDS",
+        title="s-block element atom",
+        description="Elements with intermediate properties",
+        meaning=CHEBI["33559"])
+    POST_TRANSITION_METALS = PermissibleValue(
+        text="POST_TRANSITION_METALS",
+        description="Metals after the transition series")
+    NONMETALS = PermissibleValue(
+        text="NONMETALS",
+        title="nonmetal atom",
+        description="Non-metallic elements",
+        meaning=CHEBI["25585"])
+
+    _defn = EnumDefinition(
+        name="ElementFamilyEnum",
+        description="Chemical element families/groups",
+    )
+
+class ElementMetallicClassificationEnum(EnumDefinitionImpl):
+    """
+    Metallic character classification
+    """
+    METALLIC = PermissibleValue(
+        text="METALLIC",
+        description="Metallic elements",
+        meaning=DAMLPT["Metallic"])
+    NON_METALLIC = PermissibleValue(
+        text="NON_METALLIC",
+        description="Non-metallic elements",
+        meaning=DAMLPT["Non-Metallic"])
+    SEMI_METALLIC = PermissibleValue(
+        text="SEMI_METALLIC",
+        description="Semi-metallic/metalloid elements",
+        meaning=DAMLPT["Semi-Metallic"])
+
+    _defn = EnumDefinition(
+        name="ElementMetallicClassificationEnum",
+        description="Metallic character classification",
+    )
+
+class HardOrSoftEnum(EnumDefinitionImpl):
+    """
+    HSAB (Hard Soft Acid Base) classification
+    """
+    HARD = PermissibleValue(
+        text="HARD",
+        description="Hard acids/bases (small, high charge density)")
+    SOFT = PermissibleValue(
+        text="SOFT",
+        description="Soft acids/bases (large, low charge density)")
+    BORDERLINE = PermissibleValue(
+        text="BORDERLINE",
+        description="Borderline acids/bases")
+
+    _defn = EnumDefinition(
+        name="HardOrSoftEnum",
+        description="HSAB (Hard Soft Acid Base) classification",
+    )
+
+class BronstedAcidBaseRoleEnum(EnumDefinitionImpl):
+    """
+    Brønsted-Lowry acid-base roles
+    """
+    ACID = PermissibleValue(
+        text="ACID",
+        title="Bronsted acid",
+        description="Proton donor",
+        meaning=CHEBI["39141"])
+    BASE = PermissibleValue(
+        text="BASE",
+        title="Bronsted base",
+        description="Proton acceptor",
+        meaning=CHEBI["39142"])
+    AMPHOTERIC = PermissibleValue(
+        text="AMPHOTERIC",
+        description="Can act as both acid and base")
+
+    _defn = EnumDefinition(
+        name="BronstedAcidBaseRoleEnum",
+        description="Brønsted-Lowry acid-base roles",
+    )
+
+class LewisAcidBaseRoleEnum(EnumDefinitionImpl):
+    """
+    Lewis acid-base roles
+    """
+    LEWIS_ACID = PermissibleValue(
+        text="LEWIS_ACID",
+        description="Electron pair acceptor")
+    LEWIS_BASE = PermissibleValue(
+        text="LEWIS_BASE",
+        description="Electron pair donor")
+
+    _defn = EnumDefinition(
+        name="LewisAcidBaseRoleEnum",
+        description="Lewis acid-base roles",
+    )
+
+class OxidationStateEnum(EnumDefinitionImpl):
+    """
+    Common oxidation states
+    """
+    MINUS_4 = PermissibleValue(
+        text="MINUS_4",
+        description="Oxidation state -4")
+    MINUS_3 = PermissibleValue(
+        text="MINUS_3",
+        description="Oxidation state -3")
+    MINUS_2 = PermissibleValue(
+        text="MINUS_2",
+        description="Oxidation state -2")
+    MINUS_1 = PermissibleValue(
+        text="MINUS_1",
+        description="Oxidation state -1")
+    ZERO = PermissibleValue(
+        text="ZERO",
+        description="Oxidation state 0")
+    PLUS_1 = PermissibleValue(
+        text="PLUS_1",
+        description="Oxidation state +1")
+    PLUS_2 = PermissibleValue(
+        text="PLUS_2",
+        description="Oxidation state +2")
+    PLUS_3 = PermissibleValue(
+        text="PLUS_3",
+        description="Oxidation state +3")
+    PLUS_4 = PermissibleValue(
+        text="PLUS_4",
+        description="Oxidation state +4")
+    PLUS_5 = PermissibleValue(
+        text="PLUS_5",
+        description="Oxidation state +5")
+    PLUS_6 = PermissibleValue(
+        text="PLUS_6",
+        description="Oxidation state +6")
+    PLUS_7 = PermissibleValue(
+        text="PLUS_7",
+        description="Oxidation state +7")
+    PLUS_8 = PermissibleValue(
+        text="PLUS_8",
+        description="Oxidation state +8")
+
+    _defn = EnumDefinition(
+        name="OxidationStateEnum",
+        description="Common oxidation states",
+    )
+
+class ChiralityEnum(EnumDefinitionImpl):
+    """
+    Chirality/stereochemistry descriptors
+    """
+    R = PermissibleValue(
+        text="R",
+        description="Rectus (right) configuration")
+    S = PermissibleValue(
+        text="S",
+        description="Sinister (left) configuration")
+    D = PermissibleValue(
+        text="D",
+        description="Dextrorotatory")
+    L = PermissibleValue(
+        text="L",
+        description="Levorotatory")
+    RACEMIC = PermissibleValue(
+        text="RACEMIC",
+        description="Racemic mixture (50:50 of enantiomers)")
+    MESO = PermissibleValue(
+        text="MESO",
+        description="Meso compound (achiral despite stereocenters)")
+    E = PermissibleValue(
+        text="E",
+        description="Entgegen (opposite) configuration")
+    Z = PermissibleValue(
+        text="Z",
+        description="Zusammen (together) configuration")
+
+    _defn = EnumDefinition(
+        name="ChiralityEnum",
+        description="Chirality/stereochemistry descriptors",
+    )
+
+class NanostructureMorphologyEnum(EnumDefinitionImpl):
+    """
+    Types of nanostructure morphologies
+    """
+    NANOTUBE = PermissibleValue(
+        text="NANOTUBE",
+        description="Cylindrical nanostructure",
+        meaning=CHEBI["50796"])
+    NANOPARTICLE = PermissibleValue(
+        text="NANOPARTICLE",
+        description="Particle with nanoscale dimensions",
+        meaning=CHEBI["50803"])
+    NANOROD = PermissibleValue(
+        text="NANOROD",
+        description="Rod-shaped nanostructure",
+        meaning=CHEBI["50805"])
+    QUANTUM_DOT = PermissibleValue(
+        text="QUANTUM_DOT",
+        description="Semiconductor nanocrystal",
+        meaning=CHEBI["50853"])
+    NANOWIRE = PermissibleValue(
+        text="NANOWIRE",
+        description="Wire with nanoscale diameter")
+    NANOSHEET = PermissibleValue(
+        text="NANOSHEET",
+        description="Two-dimensional nanostructure")
+    NANOFIBER = PermissibleValue(
+        text="NANOFIBER",
+        description="Fiber with nanoscale diameter")
+
+    _defn = EnumDefinition(
+        name="NanostructureMorphologyEnum",
+        description="Types of nanostructure morphologies",
+    )
+
+class ReactionTypeEnum(EnumDefinitionImpl):
+    """
+    Types of chemical reactions
+    """
+    SYNTHESIS = PermissibleValue(
+        text="SYNTHESIS",
+        description="Combination reaction (A + B → AB)")
+    DECOMPOSITION = PermissibleValue(
+        text="DECOMPOSITION",
+        description="Breakdown reaction (AB → A + B)")
+    SINGLE_DISPLACEMENT = PermissibleValue(
+        text="SINGLE_DISPLACEMENT",
+        description="Single replacement reaction (A + BC → AC + B)")
+    DOUBLE_DISPLACEMENT = PermissibleValue(
+        text="DOUBLE_DISPLACEMENT",
+        description="Double replacement reaction (AB + CD → AD + CB)")
+    COMBUSTION = PermissibleValue(
+        text="COMBUSTION",
+        description="Reaction with oxygen producing heat and light")
+    SUBSTITUTION = PermissibleValue(
+        text="SUBSTITUTION",
+        title="substitution reaction",
+        description="Replacement of one group by another",
+        meaning=MOP["0000790"])
+    ELIMINATION = PermissibleValue(
+        text="ELIMINATION",
+        title="elimination reaction",
+        description="Removal of atoms/groups forming double bond",
+        meaning=MOP["0000656"])
+    ADDITION = PermissibleValue(
+        text="ADDITION",
+        title="addition reaction",
+        description="Addition to multiple bond",
+        meaning=MOP["0000642"])
+    REARRANGEMENT = PermissibleValue(
+        text="REARRANGEMENT",
+        description="Reorganization of molecular structure")
+    OXIDATION = PermissibleValue(
+        text="OXIDATION",
+        description="Loss of electrons or increase in oxidation state")
+    REDUCTION = PermissibleValue(
+        text="REDUCTION",
+        description="Gain of electrons or decrease in oxidation state")
+    DIELS_ALDER = PermissibleValue(
+        text="DIELS_ALDER",
+        title="Diels-Alder reaction",
+        description="[4+2] cycloaddition reaction",
+        meaning=RXNO["0000006"])
+    FRIEDEL_CRAFTS = PermissibleValue(
+        text="FRIEDEL_CRAFTS",
+        title="Friedel-Crafts reaction",
+        description="Electrophilic aromatic substitution",
+        meaning=RXNO["0000369"])
+    GRIGNARD = PermissibleValue(
+        text="GRIGNARD",
+        title="Grignard reaction",
+        description="Organometallic addition reaction",
+        meaning=RXNO["0000014"])
+    WITTIG = PermissibleValue(
+        text="WITTIG",
+        title="Wittig reaction",
+        description="Alkene formation from phosphonium ylide",
+        meaning=RXNO["0000015"])
+    ALDOL = PermissibleValue(
+        text="ALDOL",
+        title="aldol condensation",
+        description="Condensation forming β-hydroxy carbonyl",
+        meaning=RXNO["0000017"])
+    MICHAEL_ADDITION = PermissibleValue(
+        text="MICHAEL_ADDITION",
+        title="Michael addition",
+        description="1,4-addition to α,β-unsaturated carbonyl",
+        meaning=RXNO["0000009"])
+
+    _defn = EnumDefinition(
+        name="ReactionTypeEnum",
+        description="Types of chemical reactions",
+    )
+
+class ReactionMechanismEnum(EnumDefinitionImpl):
+    """
+    Reaction mechanism types
+    """
+    SN1 = PermissibleValue(
+        text="SN1",
+        description="Unimolecular nucleophilic substitution")
+    SN2 = PermissibleValue(
+        text="SN2",
+        description="Bimolecular nucleophilic substitution")
+    E1 = PermissibleValue(
+        text="E1",
+        description="Unimolecular elimination")
+    E2 = PermissibleValue(
+        text="E2",
+        description="Bimolecular elimination")
+    E1CB = PermissibleValue(
+        text="E1CB",
+        description="Elimination via conjugate base")
+    RADICAL = PermissibleValue(
+        text="RADICAL",
+        description="Free radical mechanism")
+    PERICYCLIC = PermissibleValue(
+        text="PERICYCLIC",
+        description="Concerted cyclic electron reorganization")
+    ELECTROPHILIC_AROMATIC = PermissibleValue(
+        text="ELECTROPHILIC_AROMATIC",
+        description="Electrophilic aromatic substitution")
+    NUCLEOPHILIC_AROMATIC = PermissibleValue(
+        text="NUCLEOPHILIC_AROMATIC",
+        description="Nucleophilic aromatic substitution")
+    ADDITION_ELIMINATION = PermissibleValue(
+        text="ADDITION_ELIMINATION",
+        description="Addition followed by elimination")
+
+    _defn = EnumDefinition(
+        name="ReactionMechanismEnum",
+        description="Reaction mechanism types",
+    )
+
+class CatalystTypeEnum(EnumDefinitionImpl):
+    """
+    Types of catalysts
+    """
+    HOMOGENEOUS = PermissibleValue(
+        text="HOMOGENEOUS",
+        description="Catalyst in same phase as reactants")
+    HETEROGENEOUS = PermissibleValue(
+        text="HETEROGENEOUS",
+        description="Catalyst in different phase from reactants")
+    ENZYME = PermissibleValue(
+        text="ENZYME",
+        title="cofactor",
+        description="Biological catalyst",
+        meaning=CHEBI["23357"])
+    ORGANOCATALYST = PermissibleValue(
+        text="ORGANOCATALYST",
+        description="Small organic molecule catalyst")
+    PHOTOCATALYST = PermissibleValue(
+        text="PHOTOCATALYST",
+        description="Light-activated catalyst")
+    PHASE_TRANSFER = PermissibleValue(
+        text="PHASE_TRANSFER",
+        description="Catalyst facilitating reaction between phases")
+    ACID = PermissibleValue(
+        text="ACID",
+        description="Acid catalyst")
+    BASE = PermissibleValue(
+        text="BASE",
+        description="Base catalyst")
+    METAL = PermissibleValue(
+        text="METAL",
+        description="Metal catalyst")
+    BIFUNCTIONAL = PermissibleValue(
+        text="BIFUNCTIONAL",
+        description="Catalyst with two active sites")
+
+    _defn = EnumDefinition(
+        name="CatalystTypeEnum",
+        description="Types of catalysts",
+    )
+
+class ReactionConditionEnum(EnumDefinitionImpl):
+    """
+    Reaction conditions
+    """
+    ROOM_TEMPERATURE = PermissibleValue(
+        text="ROOM_TEMPERATURE",
+        description="Standard room temperature (20-25°C)")
+    REFLUX = PermissibleValue(
+        text="REFLUX",
+        description="Boiling with condensation return")
+    CRYOGENIC = PermissibleValue(
+        text="CRYOGENIC",
+        description="Very low temperature conditions")
+    HIGH_PRESSURE = PermissibleValue(
+        text="HIGH_PRESSURE",
+        description="Elevated pressure conditions")
+    VACUUM = PermissibleValue(
+        text="VACUUM",
+        description="Reduced pressure conditions")
+    INERT_ATMOSPHERE = PermissibleValue(
+        text="INERT_ATMOSPHERE",
+        description="Non-reactive gas atmosphere")
+    MICROWAVE = PermissibleValue(
+        text="MICROWAVE",
+        description="Microwave heating")
+    ULTRASOUND = PermissibleValue(
+        text="ULTRASOUND",
+        description="Ultrasonic conditions")
+    PHOTOCHEMICAL = PermissibleValue(
+        text="PHOTOCHEMICAL",
+        description="Light-induced conditions")
+    ELECTROCHEMICAL = PermissibleValue(
+        text="ELECTROCHEMICAL",
+        description="Electrically driven conditions")
+    FLOW = PermissibleValue(
+        text="FLOW",
+        description="Continuous flow conditions")
+    BATCH = PermissibleValue(
+        text="BATCH",
+        description="Batch reaction conditions")
+
+    _defn = EnumDefinition(
+        name="ReactionConditionEnum",
+        description="Reaction conditions",
+    )
+
+class ReactionRateOrderEnum(EnumDefinitionImpl):
+    """
+    Reaction rate orders
+    """
+    ZERO_ORDER = PermissibleValue(
+        text="ZERO_ORDER",
+        description="Rate independent of concentration")
+    FIRST_ORDER = PermissibleValue(
+        text="FIRST_ORDER",
+        description="Rate proportional to concentration")
+    SECOND_ORDER = PermissibleValue(
+        text="SECOND_ORDER",
+        description="Rate proportional to concentration squared")
+    PSEUDO_FIRST_ORDER = PermissibleValue(
+        text="PSEUDO_FIRST_ORDER",
+        description="Apparent first order (excess reagent)")
+    FRACTIONAL_ORDER = PermissibleValue(
+        text="FRACTIONAL_ORDER",
+        description="Non-integer order")
+    MIXED_ORDER = PermissibleValue(
+        text="MIXED_ORDER",
+        description="Different orders for different reactants")
+
+    _defn = EnumDefinition(
+        name="ReactionRateOrderEnum",
+        description="Reaction rate orders",
+    )
+
+class EnzymeClassEnum(EnumDefinitionImpl):
+    """
+    EC enzyme classification
+    """
+    OXIDOREDUCTASE = PermissibleValue(
+        text="OXIDOREDUCTASE",
+        title="Oxidoreductases",
+        description="Catalyzes oxidation-reduction reactions",
+        meaning=EC["1"])
+    TRANSFERASE = PermissibleValue(
+        text="TRANSFERASE",
+        title="Transferases",
+        description="Catalyzes group transfer reactions",
+        meaning=EC["2"])
+    HYDROLASE = PermissibleValue(
+        text="HYDROLASE",
+        title="Hydrolases",
+        description="Catalyzes hydrolysis reactions",
+        meaning=EC["3"])
+    LYASE = PermissibleValue(
+        text="LYASE",
+        title="Lyases",
+        description="Catalyzes non-hydrolytic additions/removals",
+        meaning=EC["4"])
+    ISOMERASE = PermissibleValue(
+        text="ISOMERASE",
+        title="Isomerases",
+        description="Catalyzes isomerization reactions",
+        meaning=EC["5"])
+    LIGASE = PermissibleValue(
+        text="LIGASE",
+        title="Ligases",
+        description="Catalyzes formation of bonds with ATP",
+        meaning=EC["6"])
+    TRANSLOCASE = PermissibleValue(
+        text="TRANSLOCASE",
+        title="Translocases",
+        description="Catalyzes movement across membranes",
+        meaning=EC["7"])
+
+    _defn = EnumDefinition(
+        name="EnzymeClassEnum",
+        description="EC enzyme classification",
+    )
+
+class SolventClassEnum(EnumDefinitionImpl):
+    """
+    Classes of solvents
+    """
+    PROTIC = PermissibleValue(
+        text="PROTIC",
+        description="Solvents with acidic hydrogen")
+    APROTIC_POLAR = PermissibleValue(
+        text="APROTIC_POLAR",
+        description="Polar solvents without acidic H")
+    APROTIC_NONPOLAR = PermissibleValue(
+        text="APROTIC_NONPOLAR",
+        description="Nonpolar solvents")
+    IONIC_LIQUID = PermissibleValue(
+        text="IONIC_LIQUID",
+        description="Room temperature ionic liquids")
+    SUPERCRITICAL = PermissibleValue(
+        text="SUPERCRITICAL",
+        description="Supercritical fluids")
+    AQUEOUS = PermissibleValue(
+        text="AQUEOUS",
+        description="Water-based solvents")
+    ORGANIC = PermissibleValue(
+        text="ORGANIC",
+        description="Organic solvents")
+    GREEN = PermissibleValue(
+        text="GREEN",
+        description="Environmentally friendly solvents")
+
+    _defn = EnumDefinition(
+        name="SolventClassEnum",
+        description="Classes of solvents",
+    )
+
+class ThermodynamicParameterEnum(EnumDefinitionImpl):
+    """
+    Thermodynamic parameters
+    """
+    ENTHALPY = PermissibleValue(
+        text="ENTHALPY",
+        description="Heat content (ΔH)")
+    ENTROPY = PermissibleValue(
+        text="ENTROPY",
+        description="Disorder (ΔS)")
+    GIBBS_ENERGY = PermissibleValue(
+        text="GIBBS_ENERGY",
+        description="Free energy (ΔG)")
+    ACTIVATION_ENERGY = PermissibleValue(
+        text="ACTIVATION_ENERGY",
+        description="Energy barrier (Ea)")
+    HEAT_CAPACITY = PermissibleValue(
+        text="HEAT_CAPACITY",
+        description="Heat capacity (Cp)")
+    INTERNAL_ENERGY = PermissibleValue(
+        text="INTERNAL_ENERGY",
+        description="Internal energy (ΔU)")
+
+    _defn = EnumDefinition(
+        name="ThermodynamicParameterEnum",
+        description="Thermodynamic parameters",
+    )
+
+class SafetyColorEnum(EnumDefinitionImpl):
+    """
+    ANSI/ISO standard safety colors
+    """
+    SAFETY_RED = PermissibleValue(
+        text="SAFETY_RED",
+        description="Safety red - danger, stop, prohibition",
+        meaning=HEX["C8102E"])
+    SAFETY_ORANGE = PermissibleValue(
+        text="SAFETY_ORANGE",
+        description="Safety orange - warning of dangerous parts",
+        meaning=HEX["FF6900"])
+    SAFETY_YELLOW = PermissibleValue(
+        text="SAFETY_YELLOW",
+        description="Safety yellow - caution, physical hazards",
+        meaning=HEX["F6D04D"])
+    SAFETY_GREEN = PermissibleValue(
+        text="SAFETY_GREEN",
+        description="Safety green - safety, first aid, emergency egress",
+        meaning=HEX["00843D"])
+    SAFETY_BLUE = PermissibleValue(
+        text="SAFETY_BLUE",
+        description="Safety blue - mandatory, information",
+        meaning=HEX["005EB8"])
+    SAFETY_PURPLE = PermissibleValue(
+        text="SAFETY_PURPLE",
+        description="Safety purple - radiation hazards",
+        meaning=HEX["652D90"])
+    SAFETY_BLACK = PermissibleValue(
+        text="SAFETY_BLACK",
+        description="Safety black - traffic/housekeeping markings",
+        meaning=HEX["000000"])
+    SAFETY_WHITE = PermissibleValue(
+        text="SAFETY_WHITE",
+        description="Safety white - traffic/housekeeping markings",
+        meaning=HEX["FFFFFF"])
+    SAFETY_GRAY = PermissibleValue(
+        text="SAFETY_GRAY",
+        description="Safety gray - inactive/out of service",
+        meaning=HEX["919191"])
+    SAFETY_BROWN = PermissibleValue(
+        text="SAFETY_BROWN",
+        description="Safety brown - no special hazard (background)",
+        meaning=HEX["795548"])
+
+    _defn = EnumDefinition(
+        name="SafetyColorEnum",
+        description="ANSI/ISO standard safety colors",
+    )
+
+class TrafficLightColorEnum(EnumDefinitionImpl):
+    """
+    Traffic signal colors (international)
+    """
+    RED = PermissibleValue(
+        text="RED",
+        description="Red - stop",
+        meaning=HEX["FF0000"])
+    AMBER = PermissibleValue(
+        text="AMBER",
+        description="Amber/yellow - caution",
+        meaning=HEX["FFBF00"])
+    GREEN = PermissibleValue(
+        text="GREEN",
+        description="Green - go",
+        meaning=HEX["00FF00"])
+    FLASHING_RED = PermissibleValue(
+        text="FLASHING_RED",
+        description="Flashing red - stop then proceed",
+        meaning=HEX["FF0000"])
+    FLASHING_AMBER = PermissibleValue(
+        text="FLASHING_AMBER",
+        description="Flashing amber - proceed with caution",
+        meaning=HEX["FFBF00"])
+    WHITE = PermissibleValue(
+        text="WHITE",
+        description="White - special situations (transit)",
+        meaning=HEX["FFFFFF"])
+
+    _defn = EnumDefinition(
+        name="TrafficLightColorEnum",
+        description="Traffic signal colors (international)",
+    )
+
+class HazmatColorEnum(EnumDefinitionImpl):
+    """
+    Hazardous materials placarding colors (DOT/UN)
+    """
+    ORANGE = PermissibleValue(
+        text="ORANGE",
+        description="Orange - explosives (Class 1)",
+        meaning=HEX["FF6600"])
+    RED = PermissibleValue(
+        text="RED",
+        description="Red - flammable (Classes 2.1, 3)",
+        meaning=HEX["FF0000"])
+    GREEN = PermissibleValue(
+        text="GREEN",
+        description="Green - non-flammable gas (Class 2.2)",
+        meaning=HEX["00FF00"])
+    YELLOW = PermissibleValue(
+        text="YELLOW",
+        description="Yellow - oxidizer, organic peroxide (Classes 5.1, 5.2)",
+        meaning=HEX["FFFF00"])
+    WHITE = PermissibleValue(
+        text="WHITE",
+        description="White - poison/toxic (Class 6.1)",
+        meaning=HEX["FFFFFF"])
+    BLACK_WHITE_STRIPES = PermissibleValue(
+        text="BLACK_WHITE_STRIPES",
+        description="Black and white stripes - corrosive (Class 8)")
+    BLUE = PermissibleValue(
+        text="BLUE",
+        description="Blue - dangerous when wet (Class 4.3)",
+        meaning=HEX["0000FF"])
+    WHITE_RED_STRIPES = PermissibleValue(
+        text="WHITE_RED_STRIPES",
+        description="White with red stripes - flammable solid (Class 4.1)")
+
+    _defn = EnumDefinition(
+        name="HazmatColorEnum",
+        description="Hazardous materials placarding colors (DOT/UN)",
+    )
+
+class FireSafetyColorEnum(EnumDefinitionImpl):
+    """
+    Fire safety equipment and signage colors
+    """
+    FIRE_RED = PermissibleValue(
+        text="FIRE_RED",
+        description="Fire red - fire equipment",
+        meaning=HEX["C8102E"])
+    PHOTOLUMINESCENT_GREEN = PermissibleValue(
+        text="PHOTOLUMINESCENT_GREEN",
+        description="Photoluminescent green - emergency escape",
+        meaning=HEX["7FFF00"])
+    YELLOW_BLACK_STRIPES = PermissibleValue(
+        text="YELLOW_BLACK_STRIPES",
+        description="Yellow with black stripes - fire hazard area")
+    WHITE = PermissibleValue(
+        text="WHITE",
+        description="White - fire protection water",
+        meaning=HEX["FFFFFF"])
+    BLUE = PermissibleValue(
+        text="BLUE",
+        description="Blue - mandatory fire safety",
+        meaning=HEX["005EB8"])
+
+    _defn = EnumDefinition(
+        name="FireSafetyColorEnum",
+        description="Fire safety equipment and signage colors",
+    )
+
+class MaritimeSignalColorEnum(EnumDefinitionImpl):
+    """
+    Maritime signal and navigation colors
+    """
+    PORT_RED = PermissibleValue(
+        text="PORT_RED",
+        description="Port (left) red light",
+        meaning=HEX["FF0000"])
+    STARBOARD_GREEN = PermissibleValue(
+        text="STARBOARD_GREEN",
+        description="Starboard (right) green light",
+        meaning=HEX["00FF00"])
+    STERN_WHITE = PermissibleValue(
+        text="STERN_WHITE",
+        description="Stern white light",
+        meaning=HEX["FFFFFF"])
+    MASTHEAD_WHITE = PermissibleValue(
+        text="MASTHEAD_WHITE",
+        description="Masthead white light",
+        meaning=HEX["FFFFFF"])
+    ALL_ROUND_WHITE = PermissibleValue(
+        text="ALL_ROUND_WHITE",
+        description="All-round white light",
+        meaning=HEX["FFFFFF"])
+    YELLOW_TOWING = PermissibleValue(
+        text="YELLOW_TOWING",
+        description="Yellow towing light",
+        meaning=HEX["FFFF00"])
+    BLUE_FLASHING = PermissibleValue(
+        text="BLUE_FLASHING",
+        description="Blue flashing light",
+        meaning=HEX["0000FF"])
+
+    _defn = EnumDefinition(
+        name="MaritimeSignalColorEnum",
+        description="Maritime signal and navigation colors",
+    )
+
+class AviationLightColorEnum(EnumDefinitionImpl):
+    """
+    Aviation lighting colors
+    """
+    RED_BEACON = PermissibleValue(
+        text="RED_BEACON",
+        description="Red obstruction light",
+        meaning=HEX["FF0000"])
+    WHITE_STROBE = PermissibleValue(
+        text="WHITE_STROBE",
+        description="White anti-collision strobe",
+        meaning=HEX["FFFFFF"])
+    GREEN_NAVIGATION = PermissibleValue(
+        text="GREEN_NAVIGATION",
+        description="Green navigation light (right wing)",
+        meaning=HEX["00FF00"])
+    RED_NAVIGATION = PermissibleValue(
+        text="RED_NAVIGATION",
+        description="Red navigation light (left wing)",
+        meaning=HEX["FF0000"])
+    WHITE_NAVIGATION = PermissibleValue(
+        text="WHITE_NAVIGATION",
+        description="White navigation light (tail)",
+        meaning=HEX["FFFFFF"])
+    BLUE_TAXIWAY = PermissibleValue(
+        text="BLUE_TAXIWAY",
+        description="Blue taxiway edge lights",
+        meaning=HEX["0000FF"])
+    YELLOW_RUNWAY = PermissibleValue(
+        text="YELLOW_RUNWAY",
+        description="Yellow runway markings",
+        meaning=HEX["FFFF00"])
+    GREEN_THRESHOLD = PermissibleValue(
+        text="GREEN_THRESHOLD",
+        description="Green runway threshold lights",
+        meaning=HEX["00FF00"])
+    RED_RUNWAY_END = PermissibleValue(
+        text="RED_RUNWAY_END",
+        description="Red runway end lights",
+        meaning=HEX["FF0000"])
+
+    _defn = EnumDefinition(
+        name="AviationLightColorEnum",
+        description="Aviation lighting colors",
+    )
+
+class ElectricalWireColorEnum(EnumDefinitionImpl):
+    """
+    Electrical wire color codes (US/International)
+    """
+    BLACK_HOT = PermissibleValue(
+        text="BLACK_HOT",
+        description="Black - hot/live wire (US)",
+        meaning=HEX["000000"])
+    RED_HOT = PermissibleValue(
+        text="RED_HOT",
+        description="Red - hot/live wire (US secondary)",
+        meaning=HEX["FF0000"])
+    BLUE_HOT = PermissibleValue(
+        text="BLUE_HOT",
+        description="Blue - hot/live wire (US tertiary)",
+        meaning=HEX["0000FF"])
+    WHITE_NEUTRAL = PermissibleValue(
+        text="WHITE_NEUTRAL",
+        description="White - neutral wire (US)",
+        meaning=HEX["FFFFFF"])
+    GREEN_GROUND = PermissibleValue(
+        text="GREEN_GROUND",
+        description="Green - ground/earth wire",
+        meaning=HEX["00FF00"])
+    GREEN_YELLOW_GROUND = PermissibleValue(
+        text="GREEN_YELLOW_GROUND",
+        description="Green with yellow stripe - ground/earth (International)")
+    BROWN_LIVE = PermissibleValue(
+        text="BROWN_LIVE",
+        description="Brown - live wire (EU/IEC)",
+        meaning=HEX["964B00"])
+    BLUE_NEUTRAL = PermissibleValue(
+        text="BLUE_NEUTRAL",
+        description="Blue - neutral wire (EU/IEC)",
+        meaning=HEX["0000FF"])
+    GRAY_NEUTRAL = PermissibleValue(
+        text="GRAY_NEUTRAL",
+        description="Gray - neutral wire (alternative)",
+        meaning=HEX["808080"])
+
+    _defn = EnumDefinition(
+        name="ElectricalWireColorEnum",
+        description="Electrical wire color codes (US/International)",
+    )
+
+class BloodTypeEnum(EnumDefinitionImpl):
+    """
+    ABO and Rh blood group classifications
+    """
+    A_POSITIVE = PermissibleValue(
+        text="A_POSITIVE",
+        description="Blood type A, Rh positive",
+        meaning=SNOMED["278149003"])
+    A_NEGATIVE = PermissibleValue(
+        text="A_NEGATIVE",
+        description="Blood type A, Rh negative",
+        meaning=SNOMED["278152006"])
+    B_POSITIVE = PermissibleValue(
+        text="B_POSITIVE",
+        description="Blood type B, Rh positive",
+        meaning=SNOMED["278150003"])
+    B_NEGATIVE = PermissibleValue(
+        text="B_NEGATIVE",
+        description="Blood type B, Rh negative",
+        meaning=SNOMED["278153001"])
+    AB_POSITIVE = PermissibleValue(
+        text="AB_POSITIVE",
+        description="Blood type AB, Rh positive (universal recipient)",
+        meaning=SNOMED["278151004"])
+    AB_NEGATIVE = PermissibleValue(
+        text="AB_NEGATIVE",
+        description="Blood type AB, Rh negative",
+        meaning=SNOMED["278154007"])
+    O_POSITIVE = PermissibleValue(
+        text="O_POSITIVE",
+        description="Blood type O, Rh positive",
+        meaning=SNOMED["278147001"])
+    O_NEGATIVE = PermissibleValue(
+        text="O_NEGATIVE",
+        description="Blood type O, Rh negative (universal donor)",
+        meaning=SNOMED["278148006"])
+
+    _defn = EnumDefinition(
+        name="BloodTypeEnum",
+        description="ABO and Rh blood group classifications",
+    )
+
+class AnatomicalSystemEnum(EnumDefinitionImpl):
+    """
+    Major anatomical systems of the body
+    """
+    CARDIOVASCULAR = PermissibleValue(
+        text="CARDIOVASCULAR",
+        title="Heart and blood vessels",
+        meaning=UBERON["0004535"])
+    RESPIRATORY = PermissibleValue(
+        text="RESPIRATORY",
+        title="Lungs and airways",
+        meaning=UBERON["0001004"])
+    NERVOUS = PermissibleValue(
+        text="NERVOUS",
+        title="Brain, spinal cord, and nerves",
+        meaning=UBERON["0001016"])
+    DIGESTIVE = PermissibleValue(
+        text="DIGESTIVE",
+        title="GI tract and accessory organs",
+        meaning=UBERON["0001007"])
+    MUSCULOSKELETAL = PermissibleValue(
+        text="MUSCULOSKELETAL",
+        title="Bones, muscles, and connective tissue",
+        meaning=UBERON["0002204"])
+    INTEGUMENTARY = PermissibleValue(
+        text="INTEGUMENTARY",
+        title="Skin and related structures",
+        meaning=UBERON["0002416"])
+    ENDOCRINE = PermissibleValue(
+        text="ENDOCRINE",
+        title="Hormone-producing glands",
+        meaning=UBERON["0000949"])
+    URINARY = PermissibleValue(
+        text="URINARY",
+        title="Kidneys and urinary tract",
+        meaning=UBERON["0001008"])
+    REPRODUCTIVE = PermissibleValue(
+        text="REPRODUCTIVE",
+        title="Reproductive organs",
+        meaning=UBERON["0000990"])
+    IMMUNE = PermissibleValue(
+        text="IMMUNE",
+        title="Immune and lymphatic system",
+        meaning=UBERON["0002405"])
+    HEMATOLOGIC = PermissibleValue(
+        text="HEMATOLOGIC",
+        title="Blood and blood-forming organs",
+        meaning=UBERON["0002390"])
+
+    _defn = EnumDefinition(
+        name="AnatomicalSystemEnum",
+        description="Major anatomical systems of the body",
+    )
+
+class MedicalSpecialtyEnum(EnumDefinitionImpl):
+
+    ANESTHESIOLOGY = PermissibleValue(
+        text="ANESTHESIOLOGY",
+        title="Anesthesia and perioperative medicine")
+    CARDIOLOGY = PermissibleValue(
+        text="CARDIOLOGY",
+        title="Heart and cardiovascular diseases")
+    DERMATOLOGY = PermissibleValue(
+        text="DERMATOLOGY",
+        title="Skin diseases")
+    EMERGENCY_MEDICINE = PermissibleValue(
+        text="EMERGENCY_MEDICINE",
+        title="Emergency and acute care")
+    ENDOCRINOLOGY = PermissibleValue(
+        text="ENDOCRINOLOGY",
+        title="Hormonal and metabolic disorders")
+    FAMILY_MEDICINE = PermissibleValue(
+        text="FAMILY_MEDICINE",
+        title="Primary care for all ages")
+    GASTROENTEROLOGY = PermissibleValue(
+        text="GASTROENTEROLOGY",
+        title="Digestive system disorders")
+    HEMATOLOGY = PermissibleValue(
+        text="HEMATOLOGY",
+        title="Blood disorders")
+    INFECTIOUS_DISEASE = PermissibleValue(
+        text="INFECTIOUS_DISEASE",
+        title="Infectious diseases")
+    INTERNAL_MEDICINE = PermissibleValue(
+        text="INTERNAL_MEDICINE",
+        title="Adult internal medicine")
+    NEPHROLOGY = PermissibleValue(
+        text="NEPHROLOGY",
+        title="Kidney diseases")
+    NEUROLOGY = PermissibleValue(
+        text="NEUROLOGY",
+        title="Nervous system disorders")
+    OBSTETRICS_GYNECOLOGY = PermissibleValue(
+        text="OBSTETRICS_GYNECOLOGY",
+        title="Women's health and childbirth")
+    ONCOLOGY = PermissibleValue(
+        text="ONCOLOGY",
+        title="Cancer treatment")
+    OPHTHALMOLOGY = PermissibleValue(
+        text="OPHTHALMOLOGY",
+        title="Eye diseases")
+    ORTHOPEDICS = PermissibleValue(
+        text="ORTHOPEDICS",
+        title="Musculoskeletal disorders")
+    OTOLARYNGOLOGY = PermissibleValue(
+        text="OTOLARYNGOLOGY",
+        title="Ear, nose, and throat")
+    PATHOLOGY = PermissibleValue(
+        text="PATHOLOGY",
+        title="Disease diagnosis through lab analysis")
+    PEDIATRICS = PermissibleValue(
+        text="PEDIATRICS",
+        title="Children's health")
+    PSYCHIATRY = PermissibleValue(
+        text="PSYCHIATRY",
+        title="Mental health disorders")
+    PULMONOLOGY = PermissibleValue(
+        text="PULMONOLOGY",
+        title="Lung and respiratory diseases")
+    RADIOLOGY = PermissibleValue(
+        text="RADIOLOGY",
+        title="Medical imaging")
+    RHEUMATOLOGY = PermissibleValue(
+        text="RHEUMATOLOGY",
+        title="Joint and autoimmune diseases")
+    SURGERY = PermissibleValue(
+        text="SURGERY",
+        title="Surgical procedures")
+    UROLOGY = PermissibleValue(
+        text="UROLOGY",
+        title="Urinary and male reproductive system")
+
+    _defn = EnumDefinition(
+        name="MedicalSpecialtyEnum",
+    )
+
+class DrugRouteEnum(EnumDefinitionImpl):
+
+    ORAL = PermissibleValue(
+        text="ORAL",
+        title="By mouth",
+        meaning=NCIT["C38288"])
+    INTRAVENOUS = PermissibleValue(
+        text="INTRAVENOUS",
+        title="Into a vein",
+        meaning=NCIT["C38276"])
+    INTRAMUSCULAR = PermissibleValue(
+        text="INTRAMUSCULAR",
+        title="Into muscle",
+        meaning=NCIT["C28161"])
+    SUBCUTANEOUS = PermissibleValue(
+        text="SUBCUTANEOUS",
+        title="Under the skin",
+        meaning=NCIT["C38299"])
+    TOPICAL = PermissibleValue(
+        text="TOPICAL",
+        title="On the skin surface",
+        meaning=NCIT["C38304"])
+    INHALATION = PermissibleValue(
+        text="INHALATION",
+        title="By breathing in",
+        meaning=NCIT["C38216"])
+    RECTAL = PermissibleValue(
+        text="RECTAL",
+        title="Into the rectum",
+        meaning=NCIT["C38295"])
+    INTRANASAL = PermissibleValue(
+        text="INTRANASAL",
+        title="Into the nose",
+        meaning=NCIT["C38284"])
+    TRANSDERMAL = PermissibleValue(
+        text="TRANSDERMAL",
+        title="Through the skin",
+        meaning=NCIT["C38305"])
+    SUBLINGUAL = PermissibleValue(
+        text="SUBLINGUAL",
+        title="Under the tongue",
+        meaning=NCIT["C38300"])
+    EPIDURAL = PermissibleValue(
+        text="EPIDURAL",
+        title="Into epidural space",
+        meaning=NCIT["C38243"])
+    INTRATHECAL = PermissibleValue(
+        text="INTRATHECAL",
+        title="Into spinal fluid",
+        meaning=NCIT["C38277"])
+    OPHTHALMIC = PermissibleValue(
+        text="OPHTHALMIC",
+        title="Into the eye",
+        meaning=NCIT["C38287"])
+    OTIC = PermissibleValue(
+        text="OTIC",
+        title="Into the ear",
+        meaning=NCIT["C38192"])
+
+    _defn = EnumDefinition(
+        name="DrugRouteEnum",
+    )
+
+class VitalSignEnum(EnumDefinitionImpl):
+
+    HEART_RATE = PermissibleValue(
+        text="HEART_RATE",
+        title="Heart beats per minute",
+        meaning=LOINC["8867-4"])
+    BLOOD_PRESSURE_SYSTOLIC = PermissibleValue(
+        text="BLOOD_PRESSURE_SYSTOLIC",
+        title="Systolic blood pressure",
+        meaning=LOINC["8480-6"])
+    BLOOD_PRESSURE_DIASTOLIC = PermissibleValue(
+        text="BLOOD_PRESSURE_DIASTOLIC",
+        title="Diastolic blood pressure",
+        meaning=LOINC["8462-4"])
+    RESPIRATORY_RATE = PermissibleValue(
+        text="RESPIRATORY_RATE",
+        title="Breaths per minute",
+        meaning=LOINC["9279-1"])
+    TEMPERATURE = PermissibleValue(
+        text="TEMPERATURE",
+        title="Body temperature",
+        meaning=LOINC["8310-5"])
+    OXYGEN_SATURATION = PermissibleValue(
+        text="OXYGEN_SATURATION",
+        title="Blood oxygen saturation",
+        meaning=LOINC["2708-6"])
+    PAIN_SCALE = PermissibleValue(
+        text="PAIN_SCALE",
+        title="Pain level (0-10)",
+        meaning=LOINC["38208-5"])
+
+    _defn = EnumDefinition(
+        name="VitalSignEnum",
+    )
+
+class DiagnosticTestTypeEnum(EnumDefinitionImpl):
+
+    BLOOD_TEST = PermissibleValue(
+        text="BLOOD_TEST",
+        title="Blood sample analysis",
+        meaning=NCIT["C15189"])
+    URINE_TEST = PermissibleValue(
+        text="URINE_TEST",
+        title="Urine sample analysis")
+    IMAGING_XRAY = PermissibleValue(
+        text="IMAGING_XRAY",
+        title="X-ray imaging",
+        meaning=NCIT["C17262"])
+    IMAGING_CT = PermissibleValue(
+        text="IMAGING_CT",
+        title="Computed tomography scan",
+        meaning=NCIT["C17204"])
+    IMAGING_MRI = PermissibleValue(
+        text="IMAGING_MRI",
+        title="Magnetic resonance imaging",
+        meaning=NCIT["C16809"])
+    IMAGING_ULTRASOUND = PermissibleValue(
+        text="IMAGING_ULTRASOUND",
+        title="Ultrasound imaging",
+        meaning=NCIT["C17230"])
+    IMAGING_PET = PermissibleValue(
+        text="IMAGING_PET",
+        title="Positron emission tomography",
+        meaning=NCIT["C17007"])
+    ECG = PermissibleValue(
+        text="ECG",
+        title="Electrocardiogram",
+        meaning=NCIT["C38054"])
+    EEG = PermissibleValue(
+        text="EEG",
+        title="Electroencephalogram")
+    BIOPSY = PermissibleValue(
+        text="BIOPSY",
+        title="Tissue sample analysis",
+        meaning=NCIT["C15189"])
+    ENDOSCOPY = PermissibleValue(
+        text="ENDOSCOPY",
+        title="Internal visualization",
+        meaning=NCIT["C16546"])
+    GENETIC_TEST = PermissibleValue(
+        text="GENETIC_TEST",
+        title="DNA/RNA analysis",
+        meaning=NCIT["C15709"])
+
+    _defn = EnumDefinition(
+        name="DiagnosticTestTypeEnum",
+    )
+
+class SymptomSeverityEnum(EnumDefinitionImpl):
+
+    ABSENT = PermissibleValue(
+        text="ABSENT",
+        title="No symptoms")
+    MILD = PermissibleValue(
+        text="MILD",
+        title="Mild symptoms, minimal impact",
+        meaning=HP["0012825"])
+    MODERATE = PermissibleValue(
+        text="MODERATE",
+        title="Moderate symptoms, some limitation",
+        meaning=HP["0012826"])
+    SEVERE = PermissibleValue(
+        text="SEVERE",
+        title="Severe symptoms, significant limitation",
+        meaning=HP["0012828"])
+    LIFE_THREATENING = PermissibleValue(
+        text="LIFE_THREATENING",
+        title="Life-threatening symptoms")
+
+    _defn = EnumDefinition(
+        name="SymptomSeverityEnum",
+    )
+
+class AllergyTypeEnum(EnumDefinitionImpl):
+
+    DRUG = PermissibleValue(
+        text="DRUG",
+        title="Drug allergy",
+        meaning=NCIT["C3114"])
+    FOOD = PermissibleValue(
+        text="FOOD",
+        title="Food allergy")
+    ENVIRONMENTAL = PermissibleValue(
+        text="ENVIRONMENTAL",
+        title="Environmental allergy")
+    CONTACT = PermissibleValue(
+        text="CONTACT",
+        title="Contact dermatitis")
+    INSECT = PermissibleValue(
+        text="INSECT",
+        title="Insect sting allergy")
+    ANAPHYLAXIS = PermissibleValue(
+        text="ANAPHYLAXIS",
+        title="Severe systemic reaction")
+
+    _defn = EnumDefinition(
+        name="AllergyTypeEnum",
+    )
+
+class VaccineTypeEnum(EnumDefinitionImpl):
+
+    LIVE_ATTENUATED = PermissibleValue(
+        text="LIVE_ATTENUATED",
+        title="Weakened live pathogen")
+    INACTIVATED = PermissibleValue(
+        text="INACTIVATED",
+        title="Killed pathogen")
+    SUBUNIT = PermissibleValue(
+        text="SUBUNIT",
+        title="Pathogen pieces")
+    TOXOID = PermissibleValue(
+        text="TOXOID",
+        title="Inactivated toxin")
+    MRNA = PermissibleValue(
+        text="MRNA",
+        title="mRNA vaccine")
+    VIRAL_VECTOR = PermissibleValue(
+        text="VIRAL_VECTOR",
+        title="Modified virus carrier")
+
+    _defn = EnumDefinition(
+        name="VaccineTypeEnum",
+    )
+
+class BMIClassificationEnum(EnumDefinitionImpl):
+
+    UNDERWEIGHT = PermissibleValue(
+        text="UNDERWEIGHT",
+        title="BMI less than 18.5")
+    NORMAL_WEIGHT = PermissibleValue(
+        text="NORMAL_WEIGHT",
+        title="BMI 18.5-24.9")
+    OVERWEIGHT = PermissibleValue(
+        text="OVERWEIGHT",
+        title="BMI 25.0-29.9")
+    OBESE_CLASS_I = PermissibleValue(
+        text="OBESE_CLASS_I",
+        title="BMI 30.0-34.9")
+    OBESE_CLASS_II = PermissibleValue(
+        text="OBESE_CLASS_II",
+        title="BMI 35.0-39.9")
+    OBESE_CLASS_III = PermissibleValue(
+        text="OBESE_CLASS_III",
+        title="BMI 40.0 or greater")
+
+    _defn = EnumDefinition(
+        name="BMIClassificationEnum",
+    )
+
+class RaceOMB1997Enum(EnumDefinitionImpl):
+    """
+    Race categories following OMB 1997 standards used by NIH and federal agencies.
+    Respondents may select multiple races.
+    """
+    AMERICAN_INDIAN_OR_ALASKA_NATIVE = PermissibleValue(
+        text="AMERICAN_INDIAN_OR_ALASKA_NATIVE",
+        description="""A person having origins in any of the original peoples of North and South America (including Central America), and who maintains tribal affiliation or community attachment""",
+        meaning=NCIT["C41259"])
+    ASIAN = PermissibleValue(
+        text="ASIAN",
+        description="""A person having origins in any of the original peoples of the Far East, Southeast Asia, or the Indian subcontinent""",
+        meaning=NCIT["C41260"])
+    BLACK_OR_AFRICAN_AMERICAN = PermissibleValue(
+        text="BLACK_OR_AFRICAN_AMERICAN",
+        description="A person having origins in any of the black racial groups of Africa",
+        meaning=NCIT["C16352"])
+    NATIVE_HAWAIIAN_OR_OTHER_PACIFIC_ISLANDER = PermissibleValue(
+        text="NATIVE_HAWAIIAN_OR_OTHER_PACIFIC_ISLANDER",
+        description="""A person having origins in any of the original peoples of Hawaii, Guam, Samoa, or other Pacific Islands""",
+        meaning=NCIT["C41219"])
+    WHITE = PermissibleValue(
+        text="WHITE",
+        description="""A person having origins in any of the original peoples of Europe, the Middle East, or North Africa""",
+        meaning=NCIT["C41261"])
+    MORE_THAN_ONE_RACE = PermissibleValue(
+        text="MORE_THAN_ONE_RACE",
+        title="Multiracial",
+        description="Person identifies with more than one race category",
+        meaning=NCIT["C67109"])
+    UNKNOWN_OR_NOT_REPORTED = PermissibleValue(
+        text="UNKNOWN_OR_NOT_REPORTED",
+        title="Unknown",
+        description="Race not known, not reported, or declined to answer",
+        meaning=NCIT["C17998"])
+
+    _defn = EnumDefinition(
+        name="RaceOMB1997Enum",
+        description="""Race categories following OMB 1997 standards used by NIH and federal agencies.
+Respondents may select multiple races.""",
+    )
+
+class EthnicityOMB1997Enum(EnumDefinitionImpl):
+    """
+    Ethnicity categories following OMB 1997 standards used by NIH and federal agencies
+    """
+    HISPANIC_OR_LATINO = PermissibleValue(
+        text="HISPANIC_OR_LATINO",
+        description="""A person of Cuban, Mexican, Puerto Rican, South or Central American, or other Spanish culture or origin, regardless of race""",
+        meaning=NCIT["C17459"])
+    NOT_HISPANIC_OR_LATINO = PermissibleValue(
+        text="NOT_HISPANIC_OR_LATINO",
+        description="A person not of Hispanic or Latino origin",
+        meaning=NCIT["C41222"])
+    UNKNOWN_OR_NOT_REPORTED = PermissibleValue(
+        text="UNKNOWN_OR_NOT_REPORTED",
+        title="Unknown",
+        description="Ethnicity not known, not reported, or declined to answer",
+        meaning=NCIT["C17998"])
+
+    _defn = EnumDefinition(
+        name="EthnicityOMB1997Enum",
+        description="Ethnicity categories following OMB 1997 standards used by NIH and federal agencies",
+    )
+
+class BiologicalSexEnum(EnumDefinitionImpl):
+    """
+    Biological sex assigned at birth based on anatomical and physiological traits.
+    Required by NIH as a biological variable in research.
+    """
+    MALE = PermissibleValue(
+        text="MALE",
+        description="Male sex assigned at birth",
+        meaning=PATO["0000384"])
+    FEMALE = PermissibleValue(
+        text="FEMALE",
+        description="Female sex assigned at birth",
+        meaning=PATO["0000383"])
+    INTERSEX = PermissibleValue(
+        text="INTERSEX",
+        description="""Born with reproductive or sexual anatomy that doesn't fit typical definitions of male or female""",
+        meaning=NCIT["C45908"])
+    UNKNOWN_OR_NOT_REPORTED = PermissibleValue(
+        text="UNKNOWN_OR_NOT_REPORTED",
+        title="Unknown",
+        description="Sex not known, not reported, or declined to answer",
+        meaning=NCIT["C17998"])
+
+    _defn = EnumDefinition(
+        name="BiologicalSexEnum",
+        description="""Biological sex assigned at birth based on anatomical and physiological traits.
+Required by NIH as a biological variable in research.""",
+    )
+
+class GenderIdentityEnum(EnumDefinitionImpl):
+    """
+    Current gender identity, which may differ from sex assigned at birth
+    """
+    MAN = PermissibleValue(
+        text="MAN",
+        description="Identifies as man",
+        meaning=GSSO["009292"])
+    WOMAN = PermissibleValue(
+        text="WOMAN",
+        description="Identifies as woman",
+        meaning=GSSO["009293"])
+    TRANSGENDER_MAN = PermissibleValue(
+        text="TRANSGENDER_MAN",
+        description="Identifies as transgender man/trans man/female-to-male",
+        meaning=GSSO["000372"])
+    TRANSGENDER_WOMAN = PermissibleValue(
+        text="TRANSGENDER_WOMAN",
+        description="Identifies as transgender woman/trans woman/male-to-female",
+        meaning=GSSO["000384"])
+    NON_BINARY = PermissibleValue(
+        text="NON_BINARY",
+        description="Gender identity outside the man/woman binary",
+        meaning=GSSO["002403"])
+    OTHER = PermissibleValue(
+        text="OTHER",
+        description="Other gender identity")
+    PREFER_NOT_TO_ANSWER = PermissibleValue(
+        text="PREFER_NOT_TO_ANSWER",
+        description="Prefers not to disclose gender identity",
+        meaning=NCIT["C132222"])
+
+    _defn = EnumDefinition(
+        name="GenderIdentityEnum",
+        description="Current gender identity, which may differ from sex assigned at birth",
+    )
+
+class AgeGroupEnum(EnumDefinitionImpl):
+    """
+    Standard age groups used in NIH clinical research, particularly NINDS CDEs
+    """
+    NEONATE = PermissibleValue(
+        text="NEONATE",
+        title="Newborn",
+        description="Birth to 28 days",
+        meaning=NCIT["C16731"])
+    INFANT = PermissibleValue(
+        text="INFANT",
+        description="29 days to less than 1 year",
+        meaning=NCIT["C27956"])
+    YOUNG_PEDIATRIC = PermissibleValue(
+        text="YOUNG_PEDIATRIC",
+        title="Pediatric",
+        description="0 to 5 years (NINDS CDE definition)",
+        meaning=NCIT["C39299"])
+    PEDIATRIC = PermissibleValue(
+        text="PEDIATRIC",
+        title="Child",
+        description="6 to 12 years (NINDS CDE definition)",
+        meaning=NCIT["C16423"])
+    ADOLESCENT = PermissibleValue(
+        text="ADOLESCENT",
+        description="13 to 17 years",
+        meaning=NCIT["C27954"])
+    YOUNG_ADULT = PermissibleValue(
+        text="YOUNG_ADULT",
+        description="18 to 24 years",
+        meaning=NCIT["C91107"])
+    ADULT = PermissibleValue(
+        text="ADULT",
+        description="25 to 64 years",
+        meaning=NCIT["C17600"])
+    OLDER_ADULT = PermissibleValue(
+        text="OLDER_ADULT",
+        title="Elderly",
+        description="65 years and older",
+        meaning=NCIT["C16268"])
+
+    _defn = EnumDefinition(
+        name="AgeGroupEnum",
+        description="Standard age groups used in NIH clinical research, particularly NINDS CDEs",
+    )
+
+class ParticipantVitalStatusEnum(EnumDefinitionImpl):
+    """
+    Vital status of a research participant in clinical studies
+    """
+    ALIVE = PermissibleValue(
+        text="ALIVE",
+        description="Participant is living",
+        meaning=NCIT["C37987"])
+    DECEASED = PermissibleValue(
+        text="DECEASED",
+        title="Dead",
+        description="Participant is deceased",
+        meaning=NCIT["C28554"])
+    UNKNOWN = PermissibleValue(
+        text="UNKNOWN",
+        description="Vital status unknown or lost to follow-up",
+        meaning=NCIT["C17998"])
+
+    _defn = EnumDefinition(
+        name="ParticipantVitalStatusEnum",
+        description="Vital status of a research participant in clinical studies",
+    )
+
+class RecruitmentStatusEnum(EnumDefinitionImpl):
+    """
+    Clinical trial or study recruitment status per NIH/ClinicalTrials.gov
+    """
+    NOT_YET_RECRUITING = PermissibleValue(
+        text="NOT_YET_RECRUITING",
+        title="Not Yet Enrolling",
+        description="Study has not started recruiting participants",
+        meaning=NCIT["C211610"])
+    RECRUITING = PermissibleValue(
+        text="RECRUITING",
+        title="Open To Enrollment",
+        description="Currently recruiting participants",
+        meaning=NCIT["C142621"])
+    ENROLLING_BY_INVITATION = PermissibleValue(
+        text="ENROLLING_BY_INVITATION",
+        description="Enrolling participants by invitation only",
+        meaning=NCIT["C211611"])
+    ACTIVE_NOT_RECRUITING = PermissibleValue(
+        text="ACTIVE_NOT_RECRUITING",
+        title="Study Active, Not Enrolling",
+        description="Study ongoing but not recruiting new participants",
+        meaning=NCIT["C211612"])
+    SUSPENDED = PermissibleValue(
+        text="SUSPENDED",
+        title="Study Enrollment Suspended",
+        description="Study temporarily stopped",
+        meaning=NCIT["C211613"])
+    TERMINATED = PermissibleValue(
+        text="TERMINATED",
+        title="Study Terminated",
+        description="Study stopped early and will not resume",
+        meaning=NCIT["C70757"])
+    COMPLETED = PermissibleValue(
+        text="COMPLETED",
+        title="Completed Clinical Study",
+        description="Study has ended normally",
+        meaning=NCIT["C70756"])
+    WITHDRAWN = PermissibleValue(
+        text="WITHDRAWN",
+        title="Study Withdrawn",
+        description="Study withdrawn before enrollment",
+        meaning=NCIT["C70758"])
+
+    _defn = EnumDefinition(
+        name="RecruitmentStatusEnum",
+        description="Clinical trial or study recruitment status per NIH/ClinicalTrials.gov",
+    )
+
+class StudyPhaseEnum(EnumDefinitionImpl):
+    """
+    Clinical trial phases per FDA and NIH definitions
+    """
+    EARLY_PHASE_1 = PermissibleValue(
+        text="EARLY_PHASE_1",
+        title="Phase 0 Trial",
+        description="Exploratory trials before traditional Phase 1",
+        meaning=NCIT["C54721"])
+    PHASE_1 = PermissibleValue(
+        text="PHASE_1",
+        title="Phase I Trial",
+        description="Initial safety and dosage studies",
+        meaning=NCIT["C15600"])
+    PHASE_1_2 = PermissibleValue(
+        text="PHASE_1_2",
+        title="Phase II/III Trial",
+        description="Combined Phase 1 and Phase 2 trial",
+        meaning=NCIT["C15694"])
+    PHASE_2 = PermissibleValue(
+        text="PHASE_2",
+        title="Phase II Trial",
+        description="Efficacy and side effects studies",
+        meaning=NCIT["C15601"])
+    PHASE_2_3 = PermissibleValue(
+        text="PHASE_2_3",
+        title="Phase IIa Trial",
+        description="Combined Phase 2 and Phase 3 trial",
+        meaning=NCIT["C49686"])
+    PHASE_3 = PermissibleValue(
+        text="PHASE_3",
+        title="Phase III Trial",
+        description="Efficacy comparison with standard treatment",
+        meaning=NCIT["C15602"])
+    PHASE_4 = PermissibleValue(
+        text="PHASE_4",
+        title="Phase IV Trial",
+        description="Post-marketing surveillance",
+        meaning=NCIT["C15603"])
+    NOT_APPLICABLE = PermissibleValue(
+        text="NOT_APPLICABLE",
+        description="Not a phased clinical trial",
+        meaning=NCIT["C48660"])
+
+    _defn = EnumDefinition(
+        name="StudyPhaseEnum",
+        description="Clinical trial phases per FDA and NIH definitions",
+    )
+
+class EducationLevelEnum(EnumDefinitionImpl):
+    """
+    Highest level of education completed, following NIH demographics standards
+    """
+    NO_FORMAL_EDUCATION = PermissibleValue(
+        text="NO_FORMAL_EDUCATION",
+        title="Less than High School Completion",
+        description="No formal schooling completed",
+        meaning=NCIT["C173723"])
+    ELEMENTARY = PermissibleValue(
+        text="ELEMENTARY",
+        title="Grade School",
+        description="Elementary school (grades 1-6)",
+        meaning=NCIT["C80410"])
+    MIDDLE_SCHOOL = PermissibleValue(
+        text="MIDDLE_SCHOOL",
+        title="Middle School Completion",
+        description="Middle/Junior high school (grades 7-8)",
+        meaning=NCIT["C205685"])
+    SOME_HIGH_SCHOOL = PermissibleValue(
+        text="SOME_HIGH_SCHOOL",
+        title="Some High School, No Diploma",
+        description="Some high school, no diploma",
+        meaning=NCIT["C198650"])
+    HIGH_SCHOOL_GRADUATE = PermissibleValue(
+        text="HIGH_SCHOOL_GRADUATE",
+        title="High School Completion",
+        description="High school graduate or GED",
+        meaning=NCIT["C67136"])
+    SOME_COLLEGE = PermissibleValue(
+        text="SOME_COLLEGE",
+        title="Some College Completion",
+        description="Some college credit, no degree",
+        meaning=NCIT["C67137"])
+    ASSOCIATE_DEGREE = PermissibleValue(
+        text="ASSOCIATE_DEGREE",
+        description="Associate degree (2-year)",
+        meaning=NCIT["C71340"])
+    BACHELORS_DEGREE = PermissibleValue(
+        text="BACHELORS_DEGREE",
+        title="Bachelor's Degree",
+        description="Bachelor's degree (4-year)",
+        meaning=NCIT["C39327"])
+    MASTERS_DEGREE = PermissibleValue(
+        text="MASTERS_DEGREE",
+        title="Master's Degree",
+        description="Master's degree",
+        meaning=NCIT["C39453"])
+    PROFESSIONAL_DEGREE = PermissibleValue(
+        text="PROFESSIONAL_DEGREE",
+        title="Professional Doctorate",
+        description="Professional degree (MD, JD, etc.)",
+        meaning=NCIT["C67143"])
+    DOCTORATE_DEGREE = PermissibleValue(
+        text="DOCTORATE_DEGREE",
+        description="Doctorate degree (PhD, EdD, etc.)",
+        meaning=NCIT["C39392"])
+    UNKNOWN_OR_NOT_REPORTED = PermissibleValue(
+        text="UNKNOWN_OR_NOT_REPORTED",
+        title="Unknown",
+        description="Education level not known or not reported",
+        meaning=NCIT["C17998"])
+
+    _defn = EnumDefinition(
+        name="EducationLevelEnum",
+        description="Highest level of education completed, following NIH demographics standards",
+    )
+
+class KaryotypicSexEnum(EnumDefinitionImpl):
+    """
+    Karyotypic sex of an individual based on chromosome composition
+    """
+    XX = PermissibleValue(
+        text="XX",
+        title="XX Genotype",
+        description="Female karyotype (46,XX)",
+        meaning=NCIT["C45976"])
+    XY = PermissibleValue(
+        text="XY",
+        title="XY Genotype",
+        description="Male karyotype (46,XY)",
+        meaning=NCIT["C45977"])
+    XO = PermissibleValue(
+        text="XO",
+        title="45,XO Karyotype",
+        description="Turner syndrome karyotype (45,X)",
+        meaning=NCIT["C176780"])
+    XXY = PermissibleValue(
+        text="XXY",
+        title="47,XXY Karyotype",
+        description="Klinefelter syndrome karyotype (47,XXY)",
+        meaning=NCIT["C176784"])
+    XXX = PermissibleValue(
+        text="XXX",
+        title="47,XXX Karyotype",
+        description="Triple X syndrome karyotype (47,XXX)",
+        meaning=NCIT["C176785"])
+    XXXY = PermissibleValue(
+        text="XXXY",
+        title="48,XXXY Karyotype",
+        description="XXXY syndrome karyotype (48,XXXY)",
+        meaning=NCIT["C176786"])
+    XXXX = PermissibleValue(
+        text="XXXX",
+        title="48,XXXX Karyotype",
+        description="Tetrasomy X karyotype (48,XXXX)",
+        meaning=NCIT["C176787"])
+    XXYY = PermissibleValue(
+        text="XXYY",
+        title="XXYY Syndrome",
+        description="XXYY syndrome karyotype (48,XXYY)",
+        meaning=NCIT["C89801"])
+    XYY = PermissibleValue(
+        text="XYY",
+        title="47,XYY Karyotype",
+        description="Jacob's syndrome karyotype (47,XYY)",
+        meaning=NCIT["C176782"])
+    OTHER_KARYOTYPE = PermissibleValue(
+        text="OTHER_KARYOTYPE",
+        description="Other karyotypic sex not listed")
+    UNKNOWN_KARYOTYPE = PermissibleValue(
+        text="UNKNOWN_KARYOTYPE",
+        title="Unknown",
+        description="Karyotype not determined or unknown",
+        meaning=NCIT["C17998"])
+
+    _defn = EnumDefinition(
+        name="KaryotypicSexEnum",
+        description="Karyotypic sex of an individual based on chromosome composition",
+    )
+
+class PhenotypicSexEnum(EnumDefinitionImpl):
+    """
+    Phenotypic sex of an individual based on observable characteristics.
+    FHIR mapping: AdministrativeGender
+    """
+    MALE = PermissibleValue(
+        text="MALE",
+        description="Male phenotypic sex",
+        meaning=PATO["0000384"])
+    FEMALE = PermissibleValue(
+        text="FEMALE",
+        description="Female phenotypic sex",
+        meaning=PATO["0000383"])
+    OTHER_SEX = PermissibleValue(
+        text="OTHER_SEX",
+        title="Intersex",
+        description="Sex characteristics not clearly male or female",
+        meaning=NCIT["C45908"])
+    UNKNOWN_SEX = PermissibleValue(
+        text="UNKNOWN_SEX",
+        title="Unknown",
+        description="Sex not assessed or not available",
+        meaning=NCIT["C17998"])
+
+    _defn = EnumDefinition(
+        name="PhenotypicSexEnum",
+        description="""Phenotypic sex of an individual based on observable characteristics.
+FHIR mapping: AdministrativeGender""",
+    )
+
+class AllelicStateEnum(EnumDefinitionImpl):
+    """
+    Allelic state/zygosity of a variant or genetic feature
+    """
+    HETEROZYGOUS = PermissibleValue(
+        text="HETEROZYGOUS",
+        description="Different alleles at a locus",
+        meaning=GENO["0000135"])
+    HOMOZYGOUS = PermissibleValue(
+        text="HOMOZYGOUS",
+        description="Identical alleles at a locus",
+        meaning=GENO["0000136"])
+    HEMIZYGOUS = PermissibleValue(
+        text="HEMIZYGOUS",
+        description="Only one allele present (e.g., X-linked in males)",
+        meaning=GENO["0000134"])
+    COMPOUND_HETEROZYGOUS = PermissibleValue(
+        text="COMPOUND_HETEROZYGOUS",
+        description="Two different heterozygous variants in same gene",
+        meaning=GENO["0000402"])
+    HOMOZYGOUS_REFERENCE = PermissibleValue(
+        text="HOMOZYGOUS_REFERENCE",
+        title="reference allele",
+        description="Two reference/wild-type alleles",
+        meaning=GENO["0000036"])
+    HOMOZYGOUS_ALTERNATE = PermissibleValue(
+        text="HOMOZYGOUS_ALTERNATE",
+        title="variant allele",
+        description="Two alternate/variant alleles",
+        meaning=GENO["0000002"])
+
+    _defn = EnumDefinition(
+        name="AllelicStateEnum",
+        description="Allelic state/zygosity of a variant or genetic feature",
+    )
+
+class LateralityEnum(EnumDefinitionImpl):
+    """
+    Laterality/sidedness of a finding or anatomical structure
+    """
+    RIGHT = PermissibleValue(
+        text="RIGHT",
+        description="Right side",
+        meaning=HP["0012834"])
+    LEFT = PermissibleValue(
+        text="LEFT",
+        description="Left side",
+        meaning=HP["0012835"])
+    BILATERAL = PermissibleValue(
+        text="BILATERAL",
+        description="Both sides",
+        meaning=HP["0012832"])
+    UNILATERAL = PermissibleValue(
+        text="UNILATERAL",
+        description="One side (unspecified which)",
+        meaning=HP["0012833"])
+    MIDLINE = PermissibleValue(
+        text="MIDLINE",
+        description="In the midline/center",
+        meaning=UBERON["0005231"])
+
+    _defn = EnumDefinition(
+        name="LateralityEnum",
+        description="Laterality/sidedness of a finding or anatomical structure",
+    )
+
+class OnsetTimingEnum(EnumDefinitionImpl):
+    """
+    Timing of disease or phenotype onset relative to developmental stages
+    """
+    ANTENATAL_ONSET = PermissibleValue(
+        text="ANTENATAL_ONSET",
+        description="Before birth (prenatal)",
+        meaning=HP["0030674"])
+    EMBRYONAL_ONSET = PermissibleValue(
+        text="EMBRYONAL_ONSET",
+        description="During embryonic period (0-8 weeks)",
+        meaning=HP["0011460"])
+    FETAL_ONSET = PermissibleValue(
+        text="FETAL_ONSET",
+        description="During fetal period (8 weeks to birth)",
+        meaning=HP["0011461"])
+    CONGENITAL_ONSET = PermissibleValue(
+        text="CONGENITAL_ONSET",
+        description="Present at birth",
+        meaning=HP["0003577"])
+    NEONATAL_ONSET = PermissibleValue(
+        text="NEONATAL_ONSET",
+        description="Within first 28 days of life",
+        meaning=HP["0003623"])
+    INFANTILE_ONSET = PermissibleValue(
+        text="INFANTILE_ONSET",
+        description="Between 28 days and 1 year",
+        meaning=HP["0003593"])
+    CHILDHOOD_ONSET = PermissibleValue(
+        text="CHILDHOOD_ONSET",
+        description="Between 1 year and 16 years",
+        meaning=HP["0011463"])
+    JUVENILE_ONSET = PermissibleValue(
+        text="JUVENILE_ONSET",
+        description="Between 5 years and 16 years",
+        meaning=HP["0003621"])
+    YOUNG_ADULT_ONSET = PermissibleValue(
+        text="YOUNG_ADULT_ONSET",
+        description="Between 16 years and 40 years",
+        meaning=HP["0011462"])
+    MIDDLE_AGE_ONSET = PermissibleValue(
+        text="MIDDLE_AGE_ONSET",
+        description="Between 40 years and 60 years",
+        meaning=HP["0003596"])
+    LATE_ONSET = PermissibleValue(
+        text="LATE_ONSET",
+        description="After 60 years",
+        meaning=HP["0003584"])
+
+    _defn = EnumDefinition(
+        name="OnsetTimingEnum",
+        description="Timing of disease or phenotype onset relative to developmental stages",
+    )
+
+class ACMGPathogenicityEnum(EnumDefinitionImpl):
+    """
+    ACMG/AMP variant pathogenicity classification for clinical genetics
+    """
+    PATHOGENIC = PermissibleValue(
+        text="PATHOGENIC",
+        title="Pathogenic Variant",
+        description="Pathogenic variant",
+        meaning=NCIT["C168799"])
+    LIKELY_PATHOGENIC = PermissibleValue(
+        text="LIKELY_PATHOGENIC",
+        title="Likely Pathogenic Variant",
+        description="Likely pathogenic variant",
+        meaning=NCIT["C168800"])
+    UNCERTAIN_SIGNIFICANCE = PermissibleValue(
+        text="UNCERTAIN_SIGNIFICANCE",
+        title="Variant of Unknown Significance",
+        description="Variant of uncertain significance",
+        meaning=NCIT["C94187"])
+    LIKELY_BENIGN = PermissibleValue(
+        text="LIKELY_BENIGN",
+        title="Variant Likely Benign",
+        description="Likely benign variant",
+        meaning=NCIT["C168801"])
+    BENIGN = PermissibleValue(
+        text="BENIGN",
+        title="Variant Benign",
+        description="Benign variant",
+        meaning=NCIT["C168802"])
+
+    _defn = EnumDefinition(
+        name="ACMGPathogenicityEnum",
+        description="ACMG/AMP variant pathogenicity classification for clinical genetics",
+    )
+
+class TherapeuticActionabilityEnum(EnumDefinitionImpl):
+    """
+    Clinical actionability of a genetic finding for treatment decisions
+    """
+    ACTIONABLE = PermissibleValue(
+        text="ACTIONABLE",
+        title="Actionable Variation",
+        description="Finding has direct therapeutic implications",
+        meaning=NCIT["C206303"])
+    NOT_ACTIONABLE = PermissibleValue(
+        text="NOT_ACTIONABLE",
+        title="Non-Actionable Variation",
+        description="No current therapeutic implications",
+        meaning=NCIT["C206304"])
+    UNKNOWN_ACTIONABILITY = PermissibleValue(
+        text="UNKNOWN_ACTIONABILITY",
+        title="Unknown",
+        description="Therapeutic implications unclear",
+        meaning=NCIT["C17998"])
+
+    _defn = EnumDefinition(
+        name="TherapeuticActionabilityEnum",
+        description="Clinical actionability of a genetic finding for treatment decisions",
+    )
+
+class InterpretationProgressEnum(EnumDefinitionImpl):
+    """
+    Progress status of clinical interpretation or diagnosis
+    """
+    SOLVED = PermissibleValue(
+        text="SOLVED",
+        title="Molecular Diagnosis",
+        description="Diagnosis achieved/case solved",
+        meaning=NCIT["C20826"])
+    UNSOLVED = PermissibleValue(
+        text="UNSOLVED",
+        title="Clinical Interpretation",
+        description="No diagnosis achieved",
+        meaning=NCIT["C125009"])
+    IN_PROGRESS = PermissibleValue(
+        text="IN_PROGRESS",
+        title="Progress",
+        description="Analysis ongoing",
+        meaning=NCIT["C25630"])
+    COMPLETED = PermissibleValue(
+        text="COMPLETED",
+        title="Procedure Completed",
+        description="Analysis completed",
+        meaning=NCIT["C216251"])
+    UNKNOWN_PROGRESS = PermissibleValue(
+        text="UNKNOWN_PROGRESS",
+        title="Unknown",
+        description="Progress status unknown",
+        meaning=NCIT["C17998"])
+
+    _defn = EnumDefinition(
+        name="InterpretationProgressEnum",
+        description="Progress status of clinical interpretation or diagnosis",
+    )
+
+class RegimenStatusEnum(EnumDefinitionImpl):
+    """
+    Status of a therapeutic regimen or treatment protocol
+    """
+    NOT_STARTED = PermissibleValue(
+        text="NOT_STARTED",
+        title="Device Evaluation Anticipated But Not Yet Begun",
+        description="Treatment not yet begun",
+        meaning=NCIT["C53601"])
+    STARTED = PermissibleValue(
+        text="STARTED",
+        title="Treatment Ongoing",
+        description="Treatment initiated",
+        meaning=NCIT["C165209"])
+    COMPLETED = PermissibleValue(
+        text="COMPLETED",
+        title="Treatment Completed as Prescribed",
+        description="Treatment finished as planned",
+        meaning=NCIT["C105740"])
+    DISCONTINUED_ADVERSE_EVENT = PermissibleValue(
+        text="DISCONTINUED_ADVERSE_EVENT",
+        title="Adverse Event",
+        description="Stopped due to adverse event",
+        meaning=NCIT["C41331"])
+    DISCONTINUED_LACK_OF_EFFICACY = PermissibleValue(
+        text="DISCONTINUED_LACK_OF_EFFICACY",
+        title="Drug Withdrawn",
+        description="Stopped due to lack of efficacy",
+        meaning=NCIT["C49502"])
+    DISCONTINUED_PHYSICIAN_DECISION = PermissibleValue(
+        text="DISCONTINUED_PHYSICIAN_DECISION",
+        title="Drug Withdrawn",
+        description="Stopped by physician decision",
+        meaning=NCIT["C49502"])
+    DISCONTINUED_PATIENT_DECISION = PermissibleValue(
+        text="DISCONTINUED_PATIENT_DECISION",
+        title="Consent Withdrawn",
+        description="Stopped by patient choice",
+        meaning=NCIT["C48271"])
+    UNKNOWN_STATUS = PermissibleValue(
+        text="UNKNOWN_STATUS",
+        title="Unknown",
+        description="Treatment status unknown",
+        meaning=NCIT["C17998"])
+
+    _defn = EnumDefinition(
+        name="RegimenStatusEnum",
+        description="Status of a therapeutic regimen or treatment protocol",
+    )
+
+class DrugResponseEnum(EnumDefinitionImpl):
+    """
+    Response categories for drug treatment outcomes
+    """
+    FAVORABLE = PermissibleValue(
+        text="FAVORABLE",
+        title="Favorable Response",
+        description="Favorable response to treatment",
+        meaning=NCIT["C123584"])
+    UNFAVORABLE = PermissibleValue(
+        text="UNFAVORABLE",
+        description="Unfavorable response to treatment",
+        meaning=NCIT["C102561"])
+    RESPONSIVE = PermissibleValue(
+        text="RESPONSIVE",
+        title="Responsive Disease",
+        description="Responsive to treatment",
+        meaning=NCIT["C165206"])
+    RESISTANT = PermissibleValue(
+        text="RESISTANT",
+        title="Drug Resistance Process",
+        description="Resistant to treatment",
+        meaning=NCIT["C16523"])
+    PARTIALLY_RESPONSIVE = PermissibleValue(
+        text="PARTIALLY_RESPONSIVE",
+        title="Stable Disease",
+        description="Partial response to treatment",
+        meaning=NCIT["C18213"])
+    UNKNOWN_RESPONSE = PermissibleValue(
+        text="UNKNOWN_RESPONSE",
+        title="Unknown",
+        description="Treatment response unknown",
+        meaning=NCIT["C17998"])
+
+    _defn = EnumDefinition(
+        name="DrugResponseEnum",
+        description="Response categories for drug treatment outcomes",
+    )
+
+class ProcessScaleEnum(EnumDefinitionImpl):
+    """
+    Scale of bioprocessing operations from lab bench to commercial production
+    """
+    BENCH_SCALE = PermissibleValue(
+        text="BENCH_SCALE",
+        description="Laboratory bench scale (typically < 10 L)")
+    PILOT_SCALE = PermissibleValue(
+        text="PILOT_SCALE",
+        description="Pilot plant scale (10-1000 L)")
+    DEMONSTRATION_SCALE = PermissibleValue(
+        text="DEMONSTRATION_SCALE",
+        description="Demonstration scale (1000-10000 L)")
+    PRODUCTION_SCALE = PermissibleValue(
+        text="PRODUCTION_SCALE",
+        description="Commercial production scale (>10000 L)")
+    MICROFLUIDIC_SCALE = PermissibleValue(
+        text="MICROFLUIDIC_SCALE",
+        description="Microfluidic scale (<1 mL)")
+
+    _defn = EnumDefinition(
+        name="ProcessScaleEnum",
+        description="Scale of bioprocessing operations from lab bench to commercial production",
+    )
+
+class BioreactorTypeEnum(EnumDefinitionImpl):
+    """
+    Types of bioreactors used in fermentation and cell culture
+    """
+    STIRRED_TANK = PermissibleValue(
+        text="STIRRED_TANK",
+        description="Stirred tank reactor (STR/CSTR)")
+    AIRLIFT = PermissibleValue(
+        text="AIRLIFT",
+        description="Airlift bioreactor")
+    BUBBLE_COLUMN = PermissibleValue(
+        text="BUBBLE_COLUMN",
+        description="Bubble column bioreactor")
+    PACKED_BED = PermissibleValue(
+        text="PACKED_BED",
+        description="Packed bed bioreactor")
+    FLUIDIZED_BED = PermissibleValue(
+        text="FLUIDIZED_BED",
+        description="Fluidized bed bioreactor")
+    MEMBRANE = PermissibleValue(
+        text="MEMBRANE",
+        title="membrane bioreactor",
+        description="Membrane bioreactor",
+        meaning=ENVO["03600010"])
+    WAVE_BAG = PermissibleValue(
+        text="WAVE_BAG",
+        description="Wave/rocking bioreactor")
+    HOLLOW_FIBER = PermissibleValue(
+        text="HOLLOW_FIBER",
+        description="Hollow fiber bioreactor")
+    PHOTOBIOREACTOR = PermissibleValue(
+        text="PHOTOBIOREACTOR",
+        description="Photobioreactor for photosynthetic organisms")
+
+    _defn = EnumDefinition(
+        name="BioreactorTypeEnum",
+        description="Types of bioreactors used in fermentation and cell culture",
+    )
+
+class FermentationModeEnum(EnumDefinitionImpl):
+    """
+    Modes of fermentation operation
+    """
+    BATCH = PermissibleValue(
+        text="BATCH",
+        title="batch cell culture",
+        description="Batch fermentation",
+        meaning=MSIO["0000181"])
+    FED_BATCH = PermissibleValue(
+        text="FED_BATCH",
+        description="Fed-batch fermentation")
+    CONTINUOUS = PermissibleValue(
+        text="CONTINUOUS",
+        title="continuous fermentation cell culture",
+        description="Continuous fermentation (chemostat)",
+        meaning=MSIO["0000155"])
+    PERFUSION = PermissibleValue(
+        text="PERFUSION",
+        description="Perfusion culture")
+    REPEATED_BATCH = PermissibleValue(
+        text="REPEATED_BATCH",
+        description="Repeated batch fermentation")
+    SEMI_CONTINUOUS = PermissibleValue(
+        text="SEMI_CONTINUOUS",
+        description="Semi-continuous operation")
+
+    _defn = EnumDefinition(
+        name="FermentationModeEnum",
+        description="Modes of fermentation operation",
+    )
+
+class OxygenationStrategyEnum(EnumDefinitionImpl):
+    """
+    Oxygen supply strategies for fermentation
+    """
+    AEROBIC = PermissibleValue(
+        text="AEROBIC",
+        description="Aerobic with active aeration")
+    ANAEROBIC = PermissibleValue(
+        text="ANAEROBIC",
+        description="Anaerobic (no oxygen)")
+    MICROAEROBIC = PermissibleValue(
+        text="MICROAEROBIC",
+        description="Microaerobic (limited oxygen)")
+    FACULTATIVE = PermissibleValue(
+        text="FACULTATIVE",
+        description="Facultative (with/without oxygen)")
+
+    _defn = EnumDefinition(
+        name="OxygenationStrategyEnum",
+        description="Oxygen supply strategies for fermentation",
+    )
+
+class AgitationTypeEnum(EnumDefinitionImpl):
+    """
+    Types of agitation/mixing in bioreactors
+    """
+    RUSHTON_TURBINE = PermissibleValue(
+        text="RUSHTON_TURBINE",
+        description="Rushton turbine impeller")
+    PITCHED_BLADE = PermissibleValue(
+        text="PITCHED_BLADE",
+        description="Pitched blade turbine")
+    MARINE_PROPELLER = PermissibleValue(
+        text="MARINE_PROPELLER",
+        description="Marine propeller")
+    ANCHOR = PermissibleValue(
+        text="ANCHOR",
+        description="Anchor impeller")
+    HELICAL_RIBBON = PermissibleValue(
+        text="HELICAL_RIBBON",
+        description="Helical ribbon impeller")
+    MAGNETIC_BAR = PermissibleValue(
+        text="MAGNETIC_BAR",
+        description="Magnetic stir bar")
+    ORBITAL_SHAKING = PermissibleValue(
+        text="ORBITAL_SHAKING",
+        description="Orbital shaking")
+    NO_AGITATION = PermissibleValue(
+        text="NO_AGITATION",
+        description="No mechanical agitation")
+
+    _defn = EnumDefinition(
+        name="AgitationTypeEnum",
+        description="Types of agitation/mixing in bioreactors",
+    )
+
+class DownstreamProcessEnum(EnumDefinitionImpl):
+    """
+    Downstream processing unit operations
+    """
+    CENTRIFUGATION = PermissibleValue(
+        text="CENTRIFUGATION",
+        title="analytical centrifugation",
+        description="Centrifugal separation",
+        meaning=CHMO["0002010"])
+    FILTRATION = PermissibleValue(
+        text="FILTRATION",
+        description="Filtration (micro/ultra/nano)",
+        meaning=CHMO["0001640"])
+    CHROMATOGRAPHY = PermissibleValue(
+        text="CHROMATOGRAPHY",
+        description="Chromatographic separation",
+        meaning=CHMO["0001000"])
+    EXTRACTION = PermissibleValue(
+        text="EXTRACTION",
+        description="Liquid-liquid extraction",
+        meaning=CHMO["0001577"])
+    PRECIPITATION = PermissibleValue(
+        text="PRECIPITATION",
+        description="Precipitation/crystallization",
+        meaning=CHMO["0001688"])
+    EVAPORATION = PermissibleValue(
+        text="EVAPORATION",
+        description="Evaporation/concentration",
+        meaning=CHMO["0001574"])
+    DISTILLATION = PermissibleValue(
+        text="DISTILLATION",
+        title="continuous distillation",
+        description="Distillation",
+        meaning=CHMO["0001534"])
+    DRYING = PermissibleValue(
+        text="DRYING",
+        title="direct drying",
+        description="Drying operations",
+        meaning=CHMO["0001551"])
+    HOMOGENIZATION = PermissibleValue(
+        text="HOMOGENIZATION",
+        description="Cell disruption/homogenization")
+
+    _defn = EnumDefinition(
+        name="DownstreamProcessEnum",
+        description="Downstream processing unit operations",
+    )
+
+class FeedstockTypeEnum(EnumDefinitionImpl):
+    """
+    Types of feedstocks for bioprocessing
+    """
+    GLUCOSE = PermissibleValue(
+        text="GLUCOSE",
+        description="Glucose/dextrose",
+        meaning=CHEBI["17234"])
+    SUCROSE = PermissibleValue(
+        text="SUCROSE",
+        description="Sucrose",
+        meaning=CHEBI["17992"])
+    GLYCEROL = PermissibleValue(
+        text="GLYCEROL",
+        description="Glycerol",
+        meaning=CHEBI["17754"])
+    MOLASSES = PermissibleValue(
+        text="MOLASSES",
+        description="Molasses",
+        meaning=CHEBI["83163"])
+    CORN_STEEP_LIQUOR = PermissibleValue(
+        text="CORN_STEEP_LIQUOR",
+        description="Corn steep liquor")
+    YEAST_EXTRACT = PermissibleValue(
+        text="YEAST_EXTRACT",
+        description="Yeast extract",
+        meaning=FOODON["03315426"])
+    LIGNOCELLULOSIC = PermissibleValue(
+        text="LIGNOCELLULOSIC",
+        description="Lignocellulosic biomass")
+    METHANOL = PermissibleValue(
+        text="METHANOL",
+        description="Methanol",
+        meaning=CHEBI["17790"])
+    WASTE_STREAM = PermissibleValue(
+        text="WASTE_STREAM",
+        description="Industrial waste stream")
+
+    _defn = EnumDefinition(
+        name="FeedstockTypeEnum",
+        description="Types of feedstocks for bioprocessing",
+    )
+
+class ProductTypeEnum(EnumDefinitionImpl):
+    """
+    Types of products from bioprocessing
+    """
+    BIOFUEL = PermissibleValue(
+        text="BIOFUEL",
+        title="fuel",
+        description="Biofuel (ethanol, biodiesel, etc.)",
+        meaning=CHEBI["33292"])
+    PROTEIN = PermissibleValue(
+        text="PROTEIN",
+        description="Recombinant protein",
+        meaning=NCIT["C17021"])
+    ENZYME = PermissibleValue(
+        text="ENZYME",
+        description="Industrial enzyme",
+        meaning=NCIT["C16554"])
+    ORGANIC_ACID = PermissibleValue(
+        text="ORGANIC_ACID",
+        description="Organic acid (citric, lactic, etc.)",
+        meaning=CHEBI["64709"])
+    AMINO_ACID = PermissibleValue(
+        text="AMINO_ACID",
+        description="Amino acid",
+        meaning=CHEBI["33709"])
+    ANTIBIOTIC = PermissibleValue(
+        text="ANTIBIOTIC",
+        title="antimicrobial agent",
+        description="Antibiotic",
+        meaning=CHEBI["33281"])
+    VITAMIN = PermissibleValue(
+        text="VITAMIN",
+        title="vitamin (role)",
+        description="Vitamin",
+        meaning=CHEBI["33229"])
+    BIOPOLYMER = PermissibleValue(
+        text="BIOPOLYMER",
+        title="biomacromolecule",
+        description="Biopolymer (PHA, PLA, etc.)",
+        meaning=CHEBI["33694"])
+    BIOMASS = PermissibleValue(
+        text="BIOMASS",
+        title="organic material",
+        description="Microbial biomass",
+        meaning=ENVO["01000155"])
+    SECONDARY_METABOLITE = PermissibleValue(
+        text="SECONDARY_METABOLITE",
+        title="metabolite",
+        description="Secondary metabolite",
+        meaning=CHEBI["25212"])
+
+    _defn = EnumDefinition(
+        name="ProductTypeEnum",
+        description="Types of products from bioprocessing",
+    )
+
+class SterilizationMethodEnum(EnumDefinitionImpl):
+    """
+    Methods for sterilization in bioprocessing
+    """
+    STEAM_IN_PLACE = PermissibleValue(
+        text="STEAM_IN_PLACE",
+        description="Steam in place (SIP)")
+    AUTOCLAVE = PermissibleValue(
+        text="AUTOCLAVE",
+        title="autoclaving",
+        description="Autoclave sterilization",
+        meaning=CHMO["0002846"])
+    FILTER_STERILIZATION = PermissibleValue(
+        text="FILTER_STERILIZATION",
+        description="Filter sterilization (0.2 μm)")
+    GAMMA_IRRADIATION = PermissibleValue(
+        text="GAMMA_IRRADIATION",
+        description="Gamma irradiation")
+    ETHYLENE_OXIDE = PermissibleValue(
+        text="ETHYLENE_OXIDE",
+        description="Ethylene oxide sterilization")
+    UV_STERILIZATION = PermissibleValue(
+        text="UV_STERILIZATION",
+        description="UV sterilization")
+    CHEMICAL_STERILIZATION = PermissibleValue(
+        text="CHEMICAL_STERILIZATION",
+        description="Chemical sterilization")
+
+    _defn = EnumDefinition(
+        name="SterilizationMethodEnum",
+        description="Methods for sterilization in bioprocessing",
+    )
+
+class LengthUnitEnum(EnumDefinitionImpl):
+    """
+    Units of length/distance measurement
+    """
+    METER = PermissibleValue(
+        text="METER",
+        title="meter",
+        description="Meter (SI base unit)",
+        meaning=UO["0000008"])
+    KILOMETER = PermissibleValue(
+        text="KILOMETER",
+        title="kilometer",
+        description="Kilometer (1000 meters)",
+        meaning=UO["0010066"])
+    CENTIMETER = PermissibleValue(
+        text="CENTIMETER",
+        description="Centimeter (0.01 meter)",
+        meaning=UO["0000015"])
+    MILLIMETER = PermissibleValue(
+        text="MILLIMETER",
+        description="Millimeter (0.001 meter)",
+        meaning=UO["0000016"])
+    MICROMETER = PermissibleValue(
+        text="MICROMETER",
+        description="Micrometer/micron (10^-6 meter)",
+        meaning=UO["0000017"])
+    NANOMETER = PermissibleValue(
+        text="NANOMETER",
+        description="Nanometer (10^-9 meter)",
+        meaning=UO["0000018"])
+    ANGSTROM = PermissibleValue(
+        text="ANGSTROM",
+        description="Angstrom (10^-10 meter)",
+        meaning=UO["0000019"])
+    INCH = PermissibleValue(
+        text="INCH",
+        title="inch",
+        description="Inch (imperial)",
+        meaning=UO["0010011"])
+    FOOT = PermissibleValue(
+        text="FOOT",
+        title="foot",
+        description="Foot (imperial)",
+        meaning=UO["0010013"])
+    YARD = PermissibleValue(
+        text="YARD",
+        title="yard",
+        description="Yard (imperial)",
+        meaning=UO["0010014"])
+    MILE = PermissibleValue(
+        text="MILE",
+        title="mile",
+        description="Mile (imperial)",
+        meaning=UO["0010017"])
+    NAUTICAL_MILE = PermissibleValue(
+        text="NAUTICAL_MILE",
+        title="nautical mile",
+        description="Nautical mile",
+        meaning=UO["0010022"])
+
+    _defn = EnumDefinition(
+        name="LengthUnitEnum",
+        description="Units of length/distance measurement",
+    )
+
+class MassUnitEnum(EnumDefinitionImpl):
+    """
+    Units of mass measurement
+    """
+    KILOGRAM = PermissibleValue(
+        text="KILOGRAM",
+        description="Kilogram (SI base unit)",
+        meaning=UO["0000009"])
+    GRAM = PermissibleValue(
+        text="GRAM",
+        description="Gram (0.001 kilogram)",
+        meaning=UO["0000021"])
+    MILLIGRAM = PermissibleValue(
+        text="MILLIGRAM",
+        description="Milligram (10^-6 kilogram)",
+        meaning=UO["0000022"])
+    MICROGRAM = PermissibleValue(
+        text="MICROGRAM",
+        description="Microgram (10^-9 kilogram)",
+        meaning=UO["0000023"])
+    NANOGRAM = PermissibleValue(
+        text="NANOGRAM",
+        description="Nanogram (10^-12 kilogram)",
+        meaning=UO["0000024"])
+    METRIC_TON = PermissibleValue(
+        text="METRIC_TON",
+        description="Metric ton/tonne (1000 kilograms)",
+        meaning=UO["0010038"])
+    POUND = PermissibleValue(
+        text="POUND",
+        title="pound",
+        description="Pound (imperial)",
+        meaning=UO["0010034"])
+    OUNCE = PermissibleValue(
+        text="OUNCE",
+        title="ounce",
+        description="Ounce (imperial)",
+        meaning=UO["0010033"])
+    STONE = PermissibleValue(
+        text="STONE",
+        title="stone",
+        description="Stone (imperial)",
+        meaning=UO["0010035"])
+    DALTON = PermissibleValue(
+        text="DALTON",
+        description="Dalton/atomic mass unit",
+        meaning=UO["0000221"])
+
+    _defn = EnumDefinition(
+        name="MassUnitEnum",
+        description="Units of mass measurement",
+    )
+
+class VolumeUnitEnum(EnumDefinitionImpl):
+    """
+    Units of volume measurement
+    """
+    LITER = PermissibleValue(
+        text="LITER",
+        description="Liter (SI derived)",
+        meaning=UO["0000099"])
+    MILLILITER = PermissibleValue(
+        text="MILLILITER",
+        description="Milliliter (0.001 liter)",
+        meaning=UO["0000098"])
+    MICROLITER = PermissibleValue(
+        text="MICROLITER",
+        description="Microliter (10^-6 liter)",
+        meaning=UO["0000101"])
+    CUBIC_METER = PermissibleValue(
+        text="CUBIC_METER",
+        description="Cubic meter (SI derived)",
+        meaning=UO["0000096"])
+    CUBIC_CENTIMETER = PermissibleValue(
+        text="CUBIC_CENTIMETER",
+        description="Cubic centimeter",
+        meaning=UO["0000097"])
+    GALLON_US = PermissibleValue(
+        text="GALLON_US",
+        description="US gallon")
+    GALLON_UK = PermissibleValue(
+        text="GALLON_UK",
+        title="gallon",
+        description="UK/Imperial gallon",
+        meaning=UO["0010030"])
+    FLUID_OUNCE_US = PermissibleValue(
+        text="FLUID_OUNCE_US",
+        title="fluid ounce",
+        description="US fluid ounce",
+        meaning=UO["0010026"])
+    PINT_US = PermissibleValue(
+        text="PINT_US",
+        title="pint",
+        description="US pint",
+        meaning=UO["0010028"])
+    QUART_US = PermissibleValue(
+        text="QUART_US",
+        title="quart",
+        description="US quart",
+        meaning=UO["0010029"])
+    CUP_US = PermissibleValue(
+        text="CUP_US",
+        title="united states customary cup",
+        description="US cup",
+        meaning=UO["0010046"])
+    TABLESPOON = PermissibleValue(
+        text="TABLESPOON",
+        title="united states customary tablespoon",
+        description="Tablespoon",
+        meaning=UO["0010044"])
+    TEASPOON = PermissibleValue(
+        text="TEASPOON",
+        title="united states customary teaspoon",
+        description="Teaspoon",
+        meaning=UO["0010041"])
+
+    _defn = EnumDefinition(
+        name="VolumeUnitEnum",
+        description="Units of volume measurement",
+    )
+
+class TemperatureUnitEnum(EnumDefinitionImpl):
+    """
+    Units of temperature measurement
+    """
+    KELVIN = PermissibleValue(
+        text="KELVIN",
+        description="Kelvin (SI base unit)",
+        meaning=UO["0000012"])
+    CELSIUS = PermissibleValue(
+        text="CELSIUS",
+        title="degree Celsius",
+        description="Celsius/Centigrade",
+        meaning=UO["0000027"])
+    FAHRENHEIT = PermissibleValue(
+        text="FAHRENHEIT",
+        title="degree Fahrenheit",
+        description="Fahrenheit",
+        meaning=UO["0000195"])
+    RANKINE = PermissibleValue(
+        text="RANKINE",
+        description="Rankine")
+
+    _defn = EnumDefinition(
+        name="TemperatureUnitEnum",
+        description="Units of temperature measurement",
+    )
+
+class TimeUnitEnum(EnumDefinitionImpl):
+    """
+    Units of time measurement
+    """
+    SECOND = PermissibleValue(
+        text="SECOND",
+        description="Second (SI base unit)",
+        meaning=UO["0000010"])
+    MILLISECOND = PermissibleValue(
+        text="MILLISECOND",
+        description="Millisecond (0.001 second)",
+        meaning=UO["0000028"])
+    MICROSECOND = PermissibleValue(
+        text="MICROSECOND",
+        description="Microsecond (10^-6 second)",
+        meaning=UO["0000029"])
+    NANOSECOND = PermissibleValue(
+        text="NANOSECOND",
+        title="nanosecond",
+        description="Nanosecond (10^-9 second)",
+        meaning=UO["0000150"])
+    MINUTE = PermissibleValue(
+        text="MINUTE",
+        description="Minute (60 seconds)",
+        meaning=UO["0000031"])
+    HOUR = PermissibleValue(
+        text="HOUR",
+        description="Hour (3600 seconds)",
+        meaning=UO["0000032"])
+    DAY = PermissibleValue(
+        text="DAY",
+        description="Day (86400 seconds)",
+        meaning=UO["0000033"])
+    WEEK = PermissibleValue(
+        text="WEEK",
+        description="Week (7 days)",
+        meaning=UO["0000034"])
+    MONTH = PermissibleValue(
+        text="MONTH",
+        description="Month (approximately 30 days)",
+        meaning=UO["0000035"])
+    YEAR = PermissibleValue(
+        text="YEAR",
+        description="Year (365.25 days)",
+        meaning=UO["0000036"])
+
+    _defn = EnumDefinition(
+        name="TimeUnitEnum",
+        description="Units of time measurement",
+    )
+
+class PressureUnitEnum(EnumDefinitionImpl):
+    """
+    Units of pressure measurement
+    """
+    PASCAL = PermissibleValue(
+        text="PASCAL",
+        description="Pascal (SI derived unit)",
+        meaning=UO["0000110"])
+    KILOPASCAL = PermissibleValue(
+        text="KILOPASCAL",
+        description="Kilopascal (1000 pascals)")
+    MEGAPASCAL = PermissibleValue(
+        text="MEGAPASCAL",
+        description="Megapascal (10^6 pascals)")
+    BAR = PermissibleValue(
+        text="BAR",
+        description="Bar")
+    MILLIBAR = PermissibleValue(
+        text="MILLIBAR",
+        description="Millibar")
+    ATMOSPHERE = PermissibleValue(
+        text="ATMOSPHERE",
+        description="Standard atmosphere")
+    TORR = PermissibleValue(
+        text="TORR",
+        description="Torr (millimeter of mercury)")
+    PSI = PermissibleValue(
+        text="PSI",
+        title="pounds per square inch",
+        description="Pounds per square inch",
+        meaning=UO["0010052"])
+    MM_HG = PermissibleValue(
+        text="MM_HG",
+        title="millimetres of mercury",
+        description="Millimeters of mercury",
+        meaning=UO["0000272"])
+
+    _defn = EnumDefinition(
+        name="PressureUnitEnum",
+        description="Units of pressure measurement",
+    )
+
+class ConcentrationUnitEnum(EnumDefinitionImpl):
+    """
+    Units of concentration measurement
+    """
+    MOLAR = PermissibleValue(
+        text="MOLAR",
+        description="Molar (moles per liter)",
+        meaning=UO["0000062"])
+    MILLIMOLAR = PermissibleValue(
+        text="MILLIMOLAR",
+        description="Millimolar (10^-3 molar)",
+        meaning=UO["0000063"])
+    MICROMOLAR = PermissibleValue(
+        text="MICROMOLAR",
+        description="Micromolar (10^-6 molar)",
+        meaning=UO["0000064"])
+    NANOMOLAR = PermissibleValue(
+        text="NANOMOLAR",
+        description="Nanomolar (10^-9 molar)",
+        meaning=UO["0000065"])
+    PICOMOLAR = PermissibleValue(
+        text="PICOMOLAR",
+        description="Picomolar (10^-12 molar)",
+        meaning=UO["0000066"])
+    MG_PER_ML = PermissibleValue(
+        text="MG_PER_ML",
+        title="milligram per milliliter",
+        description="Milligrams per milliliter",
+        meaning=UO["0000176"])
+    UG_PER_ML = PermissibleValue(
+        text="UG_PER_ML",
+        title="microgram per milliliter",
+        description="Micrograms per milliliter",
+        meaning=UO["0000274"])
+    NG_PER_ML = PermissibleValue(
+        text="NG_PER_ML",
+        title="nanogram per milliliter",
+        description="Nanograms per milliliter",
+        meaning=UO["0000275"])
+    PERCENT = PermissibleValue(
+        text="PERCENT",
+        description="Percent (parts per hundred)",
+        meaning=UO["0000187"])
+    PPM = PermissibleValue(
+        text="PPM",
+        title="parts per million",
+        description="Parts per million",
+        meaning=UO["0000169"])
+    PPB = PermissibleValue(
+        text="PPB",
+        title="parts per billion",
+        description="Parts per billion",
+        meaning=UO["0000170"])
+
+    _defn = EnumDefinition(
+        name="ConcentrationUnitEnum",
+        description="Units of concentration measurement",
+    )
+
+class FrequencyUnitEnum(EnumDefinitionImpl):
+    """
+    Units of frequency measurement
+    """
+    HERTZ = PermissibleValue(
+        text="HERTZ",
+        description="Hertz (cycles per second)",
+        meaning=UO["0000106"])
+    KILOHERTZ = PermissibleValue(
+        text="KILOHERTZ",
+        description="Kilohertz (1000 Hz)")
+    MEGAHERTZ = PermissibleValue(
+        text="MEGAHERTZ",
+        title="megaHertz",
+        description="Megahertz (10^6 Hz)",
+        meaning=UO["0000325"])
+    GIGAHERTZ = PermissibleValue(
+        text="GIGAHERTZ",
+        description="Gigahertz (10^9 Hz)")
+    RPM = PermissibleValue(
+        text="RPM",
+        description="Revolutions per minute")
+    BPM = PermissibleValue(
+        text="BPM",
+        description="Beats per minute")
+
+    _defn = EnumDefinition(
+        name="FrequencyUnitEnum",
+        description="Units of frequency measurement",
+    )
+
+class AngleUnitEnum(EnumDefinitionImpl):
+    """
+    Units of angle measurement
+    """
+    RADIAN = PermissibleValue(
+        text="RADIAN",
+        description="Radian (SI derived unit)",
+        meaning=UO["0000123"])
+    DEGREE = PermissibleValue(
+        text="DEGREE",
+        description="Degree",
+        meaning=UO["0000185"])
+    MINUTE_OF_ARC = PermissibleValue(
+        text="MINUTE_OF_ARC",
+        description="Minute of arc/arcminute")
+    SECOND_OF_ARC = PermissibleValue(
+        text="SECOND_OF_ARC",
+        description="Second of arc/arcsecond")
+    GRADIAN = PermissibleValue(
+        text="GRADIAN",
+        description="Gradian/gon")
+    TURN = PermissibleValue(
+        text="TURN",
+        description="Turn/revolution")
+
+    _defn = EnumDefinition(
+        name="AngleUnitEnum",
+        description="Units of angle measurement",
+    )
+
+class DataSizeUnitEnum(EnumDefinitionImpl):
+    """
+    Units of digital data size
+    """
+    BIT = PermissibleValue(
+        text="BIT",
+        description="Bit (binary digit)")
+    BYTE = PermissibleValue(
+        text="BYTE",
+        description="Byte (8 bits)",
+        meaning=UO["0000233"])
+    KILOBYTE = PermissibleValue(
+        text="KILOBYTE",
+        description="Kilobyte (1000 bytes)",
+        meaning=UO["0000234"])
+    MEGABYTE = PermissibleValue(
+        text="MEGABYTE",
+        description="Megabyte (10^6 bytes)",
+        meaning=UO["0000235"])
+    GIGABYTE = PermissibleValue(
+        text="GIGABYTE",
+        description="Gigabyte (10^9 bytes)")
+    TERABYTE = PermissibleValue(
+        text="TERABYTE",
+        description="Terabyte (10^12 bytes)")
+    PETABYTE = PermissibleValue(
+        text="PETABYTE",
+        description="Petabyte (10^15 bytes)")
+    KIBIBYTE = PermissibleValue(
+        text="KIBIBYTE",
+        description="Kibibyte (1024 bytes)")
+    MEBIBYTE = PermissibleValue(
+        text="MEBIBYTE",
+        description="Mebibyte (2^20 bytes)")
+    GIBIBYTE = PermissibleValue(
+        text="GIBIBYTE",
+        description="Gibibyte (2^30 bytes)")
+    TEBIBYTE = PermissibleValue(
+        text="TEBIBYTE",
+        description="Tebibyte (2^40 bytes)")
+
+    _defn = EnumDefinition(
+        name="DataSizeUnitEnum",
+        description="Units of digital data size",
+    )
+
+class ImageFileFormatEnum(EnumDefinitionImpl):
+    """
+    Common image file formats
+    """
+    JPEG = PermissibleValue(
+        text="JPEG",
+        title="JPEG",
+        description="Joint Photographic Experts Group",
+        meaning=EDAM["format_3579"])
+    PNG = PermissibleValue(
+        text="PNG",
+        description="Portable Network Graphics",
+        meaning=EDAM["format_3603"])
+    GIF = PermissibleValue(
+        text="GIF",
+        description="Graphics Interchange Format",
+        meaning=EDAM["format_3467"])
+    BMP = PermissibleValue(
+        text="BMP",
+        description="Bitmap Image File",
+        meaning=EDAM["format_3592"])
+    TIFF = PermissibleValue(
+        text="TIFF",
+        description="Tagged Image File Format",
+        meaning=EDAM["format_3591"])
+    SVG = PermissibleValue(
+        text="SVG",
+        description="Scalable Vector Graphics",
+        meaning=EDAM["format_3604"])
+    WEBP = PermissibleValue(
+        text="WEBP",
+        description="WebP image format")
+    HEIC = PermissibleValue(
+        text="HEIC",
+        description="High Efficiency Image Container")
+    RAW = PermissibleValue(
+        text="RAW",
+        description="Raw image format")
+    ICO = PermissibleValue(
+        text="ICO",
+        description="Icon file format")
+
+    _defn = EnumDefinition(
+        name="ImageFileFormatEnum",
+        description="Common image file formats",
+    )
+
+class DocumentFormatEnum(EnumDefinitionImpl):
+    """
+    Document and text file formats
+    """
+    PDF = PermissibleValue(
+        text="PDF",
+        description="Portable Document Format",
+        meaning=EDAM["format_3508"])
+    DOCX = PermissibleValue(
+        text="DOCX",
+        description="Microsoft Word Open XML")
+    DOC = PermissibleValue(
+        text="DOC",
+        description="Microsoft Word legacy format")
+    TXT = PermissibleValue(
+        text="TXT",
+        title="TXT",
+        description="Plain text file",
+        meaning=EDAM["format_1964"])
+    RTF = PermissibleValue(
+        text="RTF",
+        description="Rich Text Format")
+    ODT = PermissibleValue(
+        text="ODT",
+        description="OpenDocument Text")
+    LATEX = PermissibleValue(
+        text="LATEX",
+        title="LATEX",
+        description="LaTeX document",
+        meaning=EDAM["format_3817"])
+    MARKDOWN = PermissibleValue(
+        text="MARKDOWN",
+        description="Markdown formatted text")
+    HTML = PermissibleValue(
+        text="HTML",
+        description="HyperText Markup Language",
+        meaning=EDAM["format_2331"])
+    XML = PermissibleValue(
+        text="XML",
+        description="Extensible Markup Language",
+        meaning=EDAM["format_2332"])
+    EPUB = PermissibleValue(
+        text="EPUB",
+        description="Electronic Publication")
+
+    _defn = EnumDefinition(
+        name="DocumentFormatEnum",
+        description="Document and text file formats",
+    )
+
+class DataFormatEnum(EnumDefinitionImpl):
+    """
+    Structured data file formats
+    """
+    JSON = PermissibleValue(
+        text="JSON",
+        description="JavaScript Object Notation",
+        meaning=EDAM["format_3464"])
+    CSV = PermissibleValue(
+        text="CSV",
+        title="CSV",
+        description="Comma-Separated Values",
+        meaning=EDAM["format_3752"])
+    TSV = PermissibleValue(
+        text="TSV",
+        description="Tab-Separated Values",
+        meaning=EDAM["format_3475"])
+    YAML = PermissibleValue(
+        text="YAML",
+        description="YAML Ain't Markup Language",
+        meaning=EDAM["format_3750"])
+    TOML = PermissibleValue(
+        text="TOML",
+        description="Tom's Obvious Minimal Language")
+    XLSX = PermissibleValue(
+        text="XLSX",
+        description="Microsoft Excel Open XML")
+    XLS = PermissibleValue(
+        text="XLS",
+        description="Microsoft Excel legacy format")
+    ODS = PermissibleValue(
+        text="ODS",
+        description="OpenDocument Spreadsheet")
+    PARQUET = PermissibleValue(
+        text="PARQUET",
+        description="Apache Parquet columnar format")
+    AVRO = PermissibleValue(
+        text="AVRO",
+        description="Apache Avro data serialization")
+    HDF5 = PermissibleValue(
+        text="HDF5",
+        description="Hierarchical Data Format version 5",
+        meaning=EDAM["format_3590"])
+    NETCDF = PermissibleValue(
+        text="NETCDF",
+        description="Network Common Data Form",
+        meaning=EDAM["format_3650"])
+    SQLITE = PermissibleValue(
+        text="SQLITE",
+        description="SQLite database")
+
+    _defn = EnumDefinition(
+        name="DataFormatEnum",
+        description="Structured data file formats",
+    )
+
+class ArchiveFormatEnum(EnumDefinitionImpl):
+    """
+    Archive and compression formats
+    """
+    ZIP = PermissibleValue(
+        text="ZIP",
+        description="ZIP archive")
+    TAR = PermissibleValue(
+        text="TAR",
+        description="Tape Archive")
+    GZIP = PermissibleValue(
+        text="GZIP",
+        description="GNU zip")
+    TAR_GZ = PermissibleValue(
+        text="TAR_GZ",
+        description="Gzipped tar archive")
+    BZIP2 = PermissibleValue(
+        text="BZIP2",
+        description="Bzip2 compression")
+    TAR_BZ2 = PermissibleValue(
+        text="TAR_BZ2",
+        description="Bzip2 compressed tar archive")
+    XZ = PermissibleValue(
+        text="XZ",
+        description="XZ compression")
+    TAR_XZ = PermissibleValue(
+        text="TAR_XZ",
+        description="XZ compressed tar archive")
+    SEVEN_ZIP = PermissibleValue(
+        text="SEVEN_ZIP",
+        description="7-Zip archive")
+    RAR = PermissibleValue(
+        text="RAR",
+        description="RAR archive")
+
+    _defn = EnumDefinition(
+        name="ArchiveFormatEnum",
+        description="Archive and compression formats",
+    )
+
+class VideoFormatEnum(EnumDefinitionImpl):
+    """
+    Video file formats
+    """
+    MP4 = PermissibleValue(
+        text="MP4",
+        description="MPEG-4 Part 14")
+    AVI = PermissibleValue(
+        text="AVI",
+        description="Audio Video Interleave")
+    MOV = PermissibleValue(
+        text="MOV",
+        description="QuickTime Movie")
+    MKV = PermissibleValue(
+        text="MKV",
+        description="Matroska Video")
+    WEBM = PermissibleValue(
+        text="WEBM",
+        description="WebM video")
+    FLV = PermissibleValue(
+        text="FLV",
+        description="Flash Video")
+    WMV = PermissibleValue(
+        text="WMV",
+        description="Windows Media Video")
+    MPEG = PermissibleValue(
+        text="MPEG",
+        description="Moving Picture Experts Group")
+
+    _defn = EnumDefinition(
+        name="VideoFormatEnum",
+        description="Video file formats",
+    )
+
+class AudioFormatEnum(EnumDefinitionImpl):
+    """
+    Audio file formats
+    """
+    MP3 = PermissibleValue(
+        text="MP3",
+        description="MPEG Audio Layer 3")
+    WAV = PermissibleValue(
+        text="WAV",
+        description="Waveform Audio File Format")
+    FLAC = PermissibleValue(
+        text="FLAC",
+        description="Free Lossless Audio Codec")
+    AAC = PermissibleValue(
+        text="AAC",
+        description="Advanced Audio Coding")
+    OGG = PermissibleValue(
+        text="OGG",
+        description="Ogg Vorbis")
+    M4A = PermissibleValue(
+        text="M4A",
+        description="MPEG-4 Audio")
+    WMA = PermissibleValue(
+        text="WMA",
+        description="Windows Media Audio")
+    OPUS = PermissibleValue(
+        text="OPUS",
+        description="Opus Interactive Audio Codec")
+    AIFF = PermissibleValue(
+        text="AIFF",
+        description="Audio Interchange File Format")
+
+    _defn = EnumDefinition(
+        name="AudioFormatEnum",
+        description="Audio file formats",
+    )
+
+class ProgrammingLanguageFileEnum(EnumDefinitionImpl):
+    """
+    Programming language source file extensions
+    """
+    PYTHON = PermissibleValue(
+        text="PYTHON",
+        description="Python source file")
+    JAVASCRIPT = PermissibleValue(
+        text="JAVASCRIPT",
+        description="JavaScript source file")
+    TYPESCRIPT = PermissibleValue(
+        text="TYPESCRIPT",
+        description="TypeScript source file")
+    JAVA = PermissibleValue(
+        text="JAVA",
+        description="Java source file")
+    C = PermissibleValue(
+        text="C",
+        description="C source file")
+    CPP = PermissibleValue(
+        text="CPP",
+        description="C++ source file")
+    C_SHARP = PermissibleValue(
+        text="C_SHARP",
+        description="C# source file")
+    GO = PermissibleValue(
+        text="GO",
+        description="Go source file")
+    RUST = PermissibleValue(
+        text="RUST",
+        description="Rust source file")
+    RUBY = PermissibleValue(
+        text="RUBY",
+        description="Ruby source file")
+    PHP = PermissibleValue(
+        text="PHP",
+        description="PHP source file")
+    SWIFT = PermissibleValue(
+        text="SWIFT",
+        description="Swift source file")
+    KOTLIN = PermissibleValue(
+        text="KOTLIN",
+        description="Kotlin source file")
+    R = PermissibleValue(
+        text="R",
+        description="R source file")
+    MATLAB = PermissibleValue(
+        text="MATLAB",
+        description="MATLAB source file")
+    JULIA = PermissibleValue(
+        text="JULIA",
+        description="Julia source file")
+    SHELL = PermissibleValue(
+        text="SHELL",
+        description="Shell script")
+
+    _defn = EnumDefinition(
+        name="ProgrammingLanguageFileEnum",
+        description="Programming language source file extensions",
+    )
+
+class NetworkProtocolEnum(EnumDefinitionImpl):
+    """
+    Network communication protocols
+    """
+    HTTP = PermissibleValue(
+        text="HTTP",
+        description="Hypertext Transfer Protocol")
+    HTTPS = PermissibleValue(
+        text="HTTPS",
+        description="HTTP Secure")
+    FTP = PermissibleValue(
+        text="FTP",
+        description="File Transfer Protocol")
+    SFTP = PermissibleValue(
+        text="SFTP",
+        description="SSH File Transfer Protocol")
+    SSH = PermissibleValue(
+        text="SSH",
+        description="Secure Shell")
+    TELNET = PermissibleValue(
+        text="TELNET",
+        description="Telnet protocol")
+    SMTP = PermissibleValue(
+        text="SMTP",
+        description="Simple Mail Transfer Protocol")
+    POP3 = PermissibleValue(
+        text="POP3",
+        description="Post Office Protocol version 3")
+    IMAP = PermissibleValue(
+        text="IMAP",
+        description="Internet Message Access Protocol")
+    DNS = PermissibleValue(
+        text="DNS",
+        description="Domain Name System")
+    DHCP = PermissibleValue(
+        text="DHCP",
+        description="Dynamic Host Configuration Protocol")
+    TCP = PermissibleValue(
+        text="TCP",
+        description="Transmission Control Protocol")
+    UDP = PermissibleValue(
+        text="UDP",
+        description="User Datagram Protocol")
+    WEBSOCKET = PermissibleValue(
+        text="WEBSOCKET",
+        description="WebSocket protocol")
+    MQTT = PermissibleValue(
+        text="MQTT",
+        description="Message Queuing Telemetry Transport")
+    AMQP = PermissibleValue(
+        text="AMQP",
+        description="Advanced Message Queuing Protocol")
+    GRPC = PermissibleValue(
+        text="GRPC",
+        description="gRPC Remote Procedure Call")
+
+    _defn = EnumDefinition(
+        name="NetworkProtocolEnum",
+        description="Network communication protocols",
+    )
+
+# Slots
+class slots:
+    pass

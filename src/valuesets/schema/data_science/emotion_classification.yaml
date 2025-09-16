@@ -1,0 +1,102 @@
+name: emotion_classification
+id: https://w3id.org/linkml/valuesets/data_science/emotion_classification
+prefixes:
+  linkml_common: https://w3id.org/linkml-common/
+  MFOEM: http://purl.obolibrary.org/obo/MFOEM_
+default_prefix: linkml_common
+enums:
+  BasicEmotionEnum:
+    description: Ekman's six basic emotions commonly used in emotion recognition
+    conforms_to: https://en.wikipedia.org/wiki/Basic_emotions
+    permissible_values:
+      ANGER:
+        description: Feeling of displeasure or hostility
+        title: Anger
+        meaning: MFOEM:000009
+        aliases:
+          - angry
+          - mad
+      DISGUST:
+        description: Feeling of revulsion or strong disapproval
+        title: Disgust
+        meaning: MFOEM:000019
+        aliases:
+          - disgusted
+          - repulsed
+      FEAR:
+        description: Feeling of anxiety or apprehension
+        title: Fear
+        meaning: MFOEM:000026
+        aliases:
+          - afraid
+          - scared
+      HAPPINESS:
+        description: Feeling of pleasure or contentment
+        title: Happiness
+        meaning: MFOEM:000042
+        aliases:
+          - happy
+          - joy
+          - joyful
+      SADNESS:
+        description: Feeling of sorrow or unhappiness
+        title: Sadness
+        meaning: MFOEM:000056
+        aliases:
+          - sad
+          - sorrow
+      SURPRISE:
+        description: Feeling of mild astonishment or shock
+        title: Surprise
+        meaning: MFOEM:000032
+        aliases:
+          - surprised
+          - shocked
+          
+  ExtendedEmotionEnum:
+    description: Extended emotion set including complex emotions
+    conforms_to: https://en.wikipedia.org/wiki/Emotion_classification
+    permissible_values:
+      ANGER:
+        description: Feeling of displeasure or hostility
+        title: Anger
+        meaning: MFOEM:000009
+      DISGUST:
+        description: Feeling of revulsion
+        title: Disgust
+        meaning: MFOEM:000019
+      FEAR:
+        description: Feeling of anxiety
+        title: Fear
+        meaning: MFOEM:000026
+      HAPPINESS:
+        description: Feeling of pleasure
+        title: Happiness
+        meaning: MFOEM:000042
+      SADNESS:
+        description: Feeling of sorrow
+        title: Sadness
+        meaning: MFOEM:000056
+      SURPRISE:
+        description: Feeling of astonishment
+        title: Surprise
+        meaning: MFOEM:000032
+      CONTEMPT:
+        description: Feeling that something is worthless
+        title: Contempt
+        meaning: MFOEM:000018
+      ANTICIPATION:
+        description: Feeling of excitement about something that will happen
+        title: Erwartung
+        meaning: MFOEM:000175
+        aliases:
+          - expectation
+          - expectant
+      TRUST:
+        description: Feeling of confidence in someone or something
+        title: Trust
+        meaning: MFOEM:000224
+      LOVE:
+        description: Feeling of deep affection
+        title: Love
+        meaning: MFOEM:000048

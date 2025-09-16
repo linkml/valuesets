@@ -1,0 +1,140 @@
+name: material_types
+id: https://w3id.org/linkml/valuesets/materials_science/material_types
+prefixes:
+  CHEBI: http://purl.obolibrary.org/obo/CHEBI_
+  ENVO: http://purl.obolibrary.org/obo/ENVO_
+  NCIT: http://purl.obolibrary.org/obo/NCIT_
+  PATO: http://purl.obolibrary.org/obo/PATO_
+  SRAO: http://www.fairsharing.org/ontology/subject/SRAO_
+  SNOMED: http://snomed.info/id/
+  linkml_common: https://w3id.org/linkml-common/
+default_prefix: linkml_common
+enums:
+  MaterialClassEnum:
+    description: Major classes of materials
+    permissible_values:
+      METAL:
+        description: Metallic materials with metallic bonding
+        title: metallic material
+        meaning: ENVO:01001069
+        aliases:
+          - Metal
+          - METAL
+      CERAMIC:
+        description: Inorganic non-metallic materials
+        title: Ceramic
+        meaning: ENVO:03501307
+      POLYMER:
+        description: Large molecules composed of repeating units
+        title: Polymer
+        meaning: CHEBI:60027
+      COMPOSITE:
+        description: Materials made from two or more constituent materials
+        title: Composite
+        meaning: NCIT:C61520
+      SEMICONDUCTOR:
+        description: Materials with electrical conductivity between conductors and insulators
+        title: Semiconductor
+        meaning: NCIT:C172788
+      BIOMATERIAL:
+        description: Materials designed to interact with biological systems
+        title: Biomedical Material
+        meaning: NCIT:C16338
+        aliases:
+          - Biomaterial
+          - BIOMATERIAL
+      NANOMATERIAL:
+        description: Materials with at least one dimension in nanoscale (1-100 nm)
+        title: Nanomaterial
+        meaning: NCIT:C62371
+        
+  PolymerTypeEnum:
+    description: Types of polymer materials
+    permissible_values:
+      THERMOPLASTIC:
+        description: Polymer that becomes moldable above specific temperature
+        title: Thermoplastic
+        meaning: PATO:0040070
+      THERMOSET:
+        description: Polymer that irreversibly hardens when cured
+        title: thermoset polymer
+        meaning: ENVO:06105005
+        aliases:
+          - thermosetting polymer
+          - Thermoset
+          - THERMOSET
+      ELASTOMER:
+        description: Polymer with elastic properties
+        title: Elastomer
+        meaning: SNOMED:261777007
+        aliases:
+          - rubber
+      BIOPOLYMER:
+        description: Polymer produced by living organisms
+        title: Biopolymer
+        meaning: NCIT:C73478
+      CONDUCTING_POLYMER:
+        description: Polymer that conducts electricity
+        title: Conducting Polymer
+        aliases:
+          - conducting polymer
+        
+  MetalTypeEnum:
+    description: Types of metallic materials
+    permissible_values:
+      FERROUS:
+        description: Iron-based metals and alloys
+        title: Ferrous Metal
+        meaning: SNOMED:264354006
+        aliases:
+          - iron-based
+      NON_FERROUS:
+        description: Metals and alloys not containing iron
+        title: Non-Ferrous Metal
+        meaning: SNOMED:264879001
+      NOBLE_METAL:
+        description: Metals resistant to corrosion and oxidation
+        title: Noble Metal
+      REFRACTORY_METAL:
+        description: Metals with very high melting points (>2000°C)
+        title: Refractory Metal
+      LIGHT_METAL:
+        description: Low density metals (density < 5 g/cm³)
+        title: Light Metal
+        meaning: SNOMED:65436002
+      HEAVY_METAL:
+        description: High density metals (density > 5 g/cm³)
+        title: Heavy Metal
+        meaning: CHEBI:5631
+        
+  CompositeTypeEnum:
+    description: Types of composite materials
+    permissible_values:
+      FIBER_REINFORCED:
+        description: Composite with fiber reinforcement
+        title: Fiber-Reinforced Composite
+        aliases:
+          - FRC
+      PARTICLE_REINFORCED:
+        description: Composite with particle reinforcement
+        title: Particle-Reinforced Composite
+      LAMINAR_COMPOSITE:
+        description: Composite with layered structure
+        title: Laminar Composite
+        aliases:
+          - laminate
+      METAL_MATRIX_COMPOSITE:
+        description: Composite with metal matrix
+        title: Metal Matrix Composite
+        aliases:
+          - MMC
+      CERAMIC_MATRIX_COMPOSITE:
+        description: Composite with ceramic matrix
+        title: Ceramic Matrix Composite
+        aliases:
+          - CMC
+      POLYMER_MATRIX_COMPOSITE:
+        description: Composite with polymer matrix
+        title: Polymer Matrix Composite
+        aliases:
+          - PMC

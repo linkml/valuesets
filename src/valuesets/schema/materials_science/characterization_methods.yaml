@@ -1,0 +1,182 @@
+name: characterization_methods
+id: https://w3id.org/linkml/valuesets/materials_science/characterization_methods
+prefixes:
+  OBI: http://purl.obolibrary.org/obo/OBI_
+  CHMO: http://purl.obolibrary.org/obo/CHMO_
+  linkml_common: https://w3id.org/linkml-common/
+default_prefix: linkml_common
+enums:
+  MicroscopyMethodEnum:
+    description: Microscopy techniques for material characterization
+    permissible_values:
+      SEM:
+        description: Scanning Electron Microscopy
+        title: scanning electron microscopy
+        meaning: CHMO:0000073
+        aliases:
+          - Scanning Electron Microscopy
+          - SEM
+      TEM:
+        description: Transmission Electron Microscopy
+        title: transmission electron microscopy
+        meaning: CHMO:0000080
+        aliases:
+          - Transmission Electron Microscopy
+          - TEM
+      STEM:
+        description: Scanning Transmission Electron Microscopy
+        title: STEM
+        aliases:
+          - Scanning Transmission Electron Microscopy
+      AFM:
+        description: Atomic Force Microscopy
+        title: atomic force microscopy
+        meaning: CHMO:0000113
+        aliases:
+          - Atomic Force Microscopy
+          - AFM
+      STM:
+        description: Scanning Tunneling Microscopy
+        title: scanning tunnelling microscopy
+        meaning: CHMO:0000132
+        aliases:
+          - Scanning Tunneling Microscopy
+          - STM
+      OPTICAL:
+        description: Optical/Light Microscopy
+        title: light microscopy assay
+        meaning: CHMO:0000102
+        aliases:
+          - Light Microscopy
+          - Optical Microscopy
+          - OPTICAL
+      CONFOCAL:
+        description: Confocal Laser Scanning Microscopy
+        title: confocal fluorescence microscopy assay
+        meaning: CHMO:0000089
+        aliases:
+          - CLSM
+          - CONFOCAL
+          - Confocal
+          
+  SpectroscopyMethodEnum:
+    description: Spectroscopy techniques for material analysis
+    permissible_values:
+      XRD:
+        description: X-ray Diffraction
+        title: XRD
+        meaning: CHMO:0000156
+        aliases:
+          - X-ray Diffraction
+      XPS:
+        description: X-ray Photoelectron Spectroscopy
+        title: XPS
+        meaning: CHMO:0000404
+        aliases:
+          - ESCA
+          - X-ray Photoelectron Spectroscopy
+      EDS:
+        description: Energy Dispersive X-ray Spectroscopy
+        title: energy-dispersive X-ray emission spectroscopy
+        meaning: CHMO:0000309
+        aliases:
+          - EDX
+          - EDXS
+          - EDS
+      FTIR:
+        description: Fourier Transform Infrared Spectroscopy
+        title: Fourier transform infrared spectroscopy
+        meaning: CHMO:0000636
+        aliases:
+          - FT-IR
+          - FTIR
+      RAMAN:
+        description: Raman Spectroscopy
+        title: Raman
+        meaning: CHMO:0000656
+        aliases:
+          - Raman Spectroscopy
+      UV_VIS:
+        description: Ultraviolet-Visible Spectroscopy
+        title: ultraviolet-visible spectrophotometry
+        meaning: CHMO:0000292
+        aliases:
+          - UV-Visible
+          - UV-Vis
+          - UV_VIS
+      NMR:
+        description: Nuclear Magnetic Resonance Spectroscopy
+        title: nuclear magnetic resonance spectroscopy
+        meaning: CHMO:0000591
+        aliases:
+          - Nuclear Magnetic Resonance
+          - NMR
+      XRF:
+        description: X-ray Fluorescence Spectroscopy
+        title: X-ray emission spectroscopy
+        meaning: CHMO:0000307
+        aliases:
+          - X-ray Fluorescence
+          - XRF
+          
+  ThermalAnalysisMethodEnum:
+    description: Thermal analysis techniques
+    permissible_values:
+      DSC:
+        description: Differential Scanning Calorimetry
+        title: DSC
+        meaning: CHMO:0000684
+        aliases:
+          - Differential Scanning Calorimetry
+      TGA:
+        description: Thermogravimetric Analysis
+        title: thermogravimetry
+        meaning: CHMO:0000690
+        aliases:
+          - Thermogravimetric Analysis
+          - TGA
+      DTA:
+        description: Differential Thermal Analysis
+        title: DTA
+        meaning: CHMO:0000687
+        aliases:
+          - Differential Thermal Analysis
+      TMA:
+        description: Thermomechanical Analysis
+        title: TMA
+        aliases:
+          - Thermomechanical Analysis
+      DMTA:
+        description: Dynamic Mechanical Thermal Analysis
+        title: DMTA
+        aliases:
+          - DMA
+          - Dynamic Mechanical Analysis
+          
+  MechanicalTestingMethodEnum:
+    description: Mechanical testing methods
+    permissible_values:
+      TENSILE:
+        description: Tensile strength testing
+        title: Tensile Test
+      COMPRESSION:
+        description: Compression strength testing
+        title: Compression Test
+      HARDNESS:
+        description: Hardness testing (Vickers, Rockwell, Brinell)
+        title: Hardness Test
+      IMPACT:
+        description: Impact resistance testing (Charpy, Izod)
+        title: Impact Test
+      FATIGUE:
+        description: Fatigue testing under cyclic loading
+        title: Fatigue Test
+      CREEP:
+        description: Creep testing under sustained load
+        title: Creep Test
+      FRACTURE_TOUGHNESS:
+        description: Fracture toughness testing
+        title: Fracture Toughness
+      NANOINDENTATION:
+        description: Nanoindentation for nanoscale mechanical properties
+        title: Nanoindentation

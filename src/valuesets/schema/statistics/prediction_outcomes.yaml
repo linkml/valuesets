@@ -1,0 +1,21 @@
+name: prediction_outcomes
+id: https://w3id.org/linkml/valuesets/statistics/prediction_outcomes
+prefixes:
+  linkml_common: https://w3id.org/linkml-common/
+default_prefix: linkml_common
+enums:
+  OutcomeTypeEnum:
+    description: Types of prediction outcomes for classification tasks
+    permissible_values:
+      TP:
+        description: True Positive
+        title: True Positive
+      FP:
+        description: False Positive
+        title: False Positive
+      TN:
+        description: True Negative
+        title: True Negative
+      FN:
+        description: False Negative
+        title: False Negative

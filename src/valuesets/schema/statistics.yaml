@@ -1,0 +1,34 @@
+id: https://w3id.org/valuesets/statistics
+name: valuesets-statistics
+title: valuesets-statistics
+description: |-
+  Common Data Model Elements: Human and statistics activities
+license: MIT
+see_also:
+  - https://linkml.github.io/valuesets
+
+prefixes:
+  linkml_common: https://w3id.org/valuesets/
+  linkml: https://w3id.org/linkml/
+  biolink: https://w3id.org/biolink/
+  schema: http://schema.org/
+  PATO: http://purl.obolibrary.org/obo/PATO_
+  fhir: http://hl7.org/fhir/
+  prov: http://www.w3.org/ns/prov#
+  dcterms: http://purl.org/dc/terms/
+default_prefix: linkml_common
+default_range: string
+
+
+enums:
+  PredictionOutcomeType:
+    permissible_values:
+      TP:
+        description: True Positive
+      FP:
+        description: False Positive
+      TN:
+        description: True Negative
+      FN:
+        description: False Negative
+

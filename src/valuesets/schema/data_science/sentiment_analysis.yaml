@@ -1,0 +1,74 @@
+name: sentiment_analysis
+id: https://w3id.org/linkml/valuesets/data_science/sentiment_analysis
+prefixes:
+  linkml_common: https://w3id.org/linkml-common/
+  NCIT: http://purl.obolibrary.org/obo/NCIT_
+default_prefix: linkml_common
+enums:
+  SentimentClassificationEnum:
+    description: Standard labels for sentiment analysis classification tasks
+    permissible_values:
+      POSITIVE:
+        description: Positive sentiment or opinion
+        title: Positive Finding
+        meaning: NCIT:C38758
+        aliases:
+          - pos
+          - "1"
+          - "+"
+      NEGATIVE:
+        description: Negative sentiment or opinion
+        title: Negative Test Result
+        meaning: NCIT:C35681
+        aliases:
+          - neg
+          - "0"
+          - "-"
+      NEUTRAL:
+        description: Neutral sentiment, neither positive nor negative
+        title: Normal
+        meaning: NCIT:C14165
+        aliases:
+          - neu
+          - "2"
+          
+  FineSentimentClassificationEnum:
+    description: Fine-grained sentiment analysis labels with intensity levels
+    permissible_values:
+      VERY_POSITIVE:
+        description: Strongly positive sentiment
+        title: Positive Finding
+        is_a: POSITIVE
+        meaning: NCIT:C38758
+        aliases:
+          - "5"
+          - "++"
+      POSITIVE:
+        description: Positive sentiment
+        title: Positive Finding
+        meaning: NCIT:C38758
+        aliases:
+          - "4"
+          - "+"
+      NEUTRAL:
+        description: Neutral sentiment
+        title: Normal
+        meaning: NCIT:C14165
+        aliases:
+          - "3"
+          - "0"
+      NEGATIVE:
+        description: Negative sentiment
+        title: Negative Test Result
+        meaning: NCIT:C35681
+        aliases:
+          - "2"
+          - "-"
+      VERY_NEGATIVE:
+        description: Strongly negative sentiment
+        title: Negative Test Result
+        is_a: NEGATIVE
+        meaning: NCIT:C35681
+        aliases:
+          - "1"
+          - "--"

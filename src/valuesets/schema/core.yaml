@@ -1,0 +1,53 @@
+id: https://w3id.org/valuesets/core
+name: comet-core
+title: comet-core
+description: |-
+  Common Observational Model: Core
+license: MIT
+see_also:
+  - https://linkml.github.io/comet
+
+prefixes:
+  linkml_common: https://w3id.org/valuesets/
+  linkml: https://w3id.org/linkml/
+  biolink: https://w3id.org/biolink/
+  schema: http://schema.org/
+  BFO: http://purl.obolibrary.org/obo/BFO_
+  IAO: http://purl.obolibrary.org/obo/IAO_
+  fhir: http://hl7.org/fhir/
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  dcterms: http://purl.org/dc/terms/
+  bibo: http://purl.org/ontology/bibo/
+  oboe-core: http://ecoinformatics.org/oboe/oboe.1.0/oboe-core.owl#
+  omopschema: http://example.org/omop/
+  wgs84: http://www.w3.org/2003/01/geo/wgs84_pos#
+  om: http://www.opengis.net/om/2.0
+  prov: http://www.w3.org/ns/prov#
+  OBI: http://purl.obolibrary.org/obo/OBI_
+  ENVO: http://purl.obolibrary.org/obo/ENVO_
+  NCBITaxon: http://purl.obolibrary.org/obo/NCBITaxon_
+  example: http://example.org/
+  _base: http://example.org/
+  mixs: http://w3id.org/mixs/
+  ucum: http://unitsofmeasure.org/
+default_prefix: linkml_common
+
+enums:
+  RelativeTimeEnum:
+    permissible_values:
+      BEFORE:
+      AFTER:
+      AT_SAME_TIME_AS:
+
+
+  PresenceEnum:
+    permissible_values:
+      PRESENT:
+        description: The entity is present
+      ABSENT:
+        description: The entity is absent
+      BELOW_DETECTION_LIMIT:
+        description: The entity is below the detection limit
+      ABOVE_DETECTION_LIMIT:
+        description: The entity is above the detection limit

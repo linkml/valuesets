@@ -1,0 +1,177 @@
+name: synthesis_methods
+id: https://w3id.org/linkml/valuesets/materials_science/synthesis_methods
+prefixes:
+  OBI: http://purl.obolibrary.org/obo/OBI_
+  CHMO: http://purl.obolibrary.org/obo/CHMO_
+  linkml_common: https://w3id.org/linkml-common/
+default_prefix: linkml_common
+enums:
+  SynthesisMethodEnum:
+    description: Common material synthesis and processing methods
+    permissible_values:
+      SOL_GEL:
+        description: Synthesis from solution through gel formation
+        title: Sol-Gel
+        aliases:
+          - sol-gel process
+      HYDROTHERMAL:
+        description: Synthesis using high temperature aqueous solutions
+        title: Hydrothermal
+        aliases:
+          - hydrothermal synthesis
+      SOLVOTHERMAL:
+        description: Synthesis using non-aqueous solvents at high temperature/pressure
+        title: Solvothermal
+      CVD:
+        description: Chemical Vapor Deposition
+        title: chemical vapour deposition
+        meaning: CHMO:0001314
+        aliases:
+          - Chemical Vapor Deposition
+          - CVD
+      PVD:
+        description: Physical Vapor Deposition
+        title: physical vapour deposition
+        meaning: CHMO:0001356
+        aliases:
+          - Physical Vapor Deposition
+          - PVD
+      ALD:
+        description: Atomic Layer Deposition
+        title: ALD
+        aliases:
+          - Atomic Layer Deposition
+      ELECTRODEPOSITION:
+        description: Deposition using electric current
+        title: electrochemical deposition
+        meaning: CHMO:0001331
+        aliases:
+          - electroplating
+          - Electrodeposition
+          - ELECTRODEPOSITION
+      BALL_MILLING:
+        description: Mechanical alloying using ball mill
+        title: Ball Milling
+        aliases:
+          - mechanical alloying
+      PRECIPITATION:
+        description: Formation of solid from solution
+        title: precipitation
+        meaning: CHMO:0001688
+        aliases:
+          - Precipitation
+          - PRECIPITATION
+      SINTERING:
+        description: Compacting and forming solid mass by heat/pressure
+        title: Sintering
+      MELT_PROCESSING:
+        description: Processing from molten state
+        title: Melt Processing
+        aliases:
+          - melt casting
+      SOLUTION_CASTING:
+        description: Casting from solution
+        title: Solution Casting
+      SPIN_COATING:
+        description: Coating by spinning substrate
+        title: Spin Coating
+        meaning: CHMO:0001472
+      DIP_COATING:
+        description: Coating by dipping in solution
+        title: Dip Coating
+        meaning: CHMO:0001471
+      SPRAY_COATING:
+        description: Coating by spraying
+        title: Spray Coating
+        
+  CrystalGrowthMethodEnum:
+    description: Methods for growing single crystals
+    permissible_values:
+      CZOCHRALSKI:
+        description: Crystal pulling from melt
+        title: Czochralski Method
+        aliases:
+          - CZ
+          - crystal pulling
+      BRIDGMAN:
+        description: Directional solidification method
+        title: Bridgman Method
+        aliases:
+          - Bridgman-Stockbarger
+      FLOAT_ZONE:
+        description: Zone melting without crucible
+        title: Float Zone
+        aliases:
+          - FZ
+          - zone refining
+      FLUX_GROWTH:
+        description: Crystal growth from high temperature solution
+        title: Flux Growth
+      VAPOR_TRANSPORT:
+        description: Crystal growth via vapor phase transport
+        title: Vapor Transport
+        aliases:
+          - CVT
+      HYDROTHERMAL_GROWTH:
+        description: Crystal growth in aqueous solution under pressure
+        title: Hydrothermal Growth
+      LPE:
+        description: Liquid Phase Epitaxy
+        title: LPE
+        aliases:
+          - Liquid Phase Epitaxy
+      MBE:
+        description: Molecular Beam Epitaxy
+        title: molecular beam epitaxy
+        meaning: CHMO:0001341
+        aliases:
+          - Molecular Beam Epitaxy
+          - MBE
+      MOCVD:
+        description: Metal-Organic Chemical Vapor Deposition
+        title: MOCVD
+        aliases:
+          - MOVPE
+          
+  AdditiveManufacturingEnum:
+    description: 3D printing and additive manufacturing methods
+    permissible_values:
+      FDM:
+        description: Fused Deposition Modeling
+        title: FDM
+        aliases:
+          - FFF
+          - Fused Filament Fabrication
+      SLA:
+        description: Stereolithography
+        title: SLA
+        aliases:
+          - Stereolithography
+      SLS:
+        description: Selective Laser Sintering
+        title: SLS
+        aliases:
+          - Selective Laser Sintering
+      SLM:
+        description: Selective Laser Melting
+        title: SLM
+        aliases:
+          - Selective Laser Melting
+      EBM:
+        description: Electron Beam Melting
+        title: EBM
+        aliases:
+          - Electron Beam Melting
+      BINDER_JETTING:
+        description: Powder bed with liquid binder
+        title: Binder Jetting
+      MATERIAL_JETTING:
+        description: Droplet deposition of materials
+        title: Material Jetting
+        aliases:
+          - PolyJet
+      DED:
+        description: Directed Energy Deposition
+        title: DED
+        aliases:
+          - Directed Energy Deposition

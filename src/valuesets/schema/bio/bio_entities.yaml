@@ -1,0 +1,349 @@
+---
+id: https://w3id.org/linkml/valuesets/bio/bio_entities
+name: bio_entities
+title: Biological Entity Value Sets
+description: |-
+  Dynamic enumerations for biological entities including anatomical structures,
+  cell types, diseases, and chemical entities. These enums are populated
+  dynamically from ontologies.
+
+prefixes:
+  valuesets: https://w3id.org/linkml/valuesets/
+  UBERON: http://purl.obolibrary.org/obo/UBERON_
+  CL: http://purl.obolibrary.org/obo/CL_
+  MONDO: http://purl.obolibrary.org/obo/MONDO_
+  CHEBI: http://purl.obolibrary.org/obo/CHEBI_
+  HP: http://purl.obolibrary.org/obo/HP_
+  GO: http://purl.obolibrary.org/obo/GO_
+  DOID: http://purl.obolibrary.org/obo/DOID_
+  NCBITaxon: http://purl.obolibrary.org/obo/NCBITaxon_
+  ENVO: http://purl.obolibrary.org/obo/ENVO_
+  PO: http://purl.obolibrary.org/obo/PO_
+  PR: http://purl.obolibrary.org/obo/PR_
+  SO: http://purl.obolibrary.org/obo/SO_
+  PATO: http://purl.obolibrary.org/obo/PATO_
+  RO: http://purl.obolibrary.org/obo/RO_
+
+default_prefix: valuesets
+
+imports:
+  - linkml:types
+
+enums:
+
+  # Anatomical structures
+  MetazoanAnatomicalStructure:
+    description: |-
+      Any anatomical structure found in metazoan organisms,
+      including organs, tissues, and body parts
+    reachable_from:
+      source_ontology: obo:uberon
+      source_nodes:
+        - UBERON:0000061  # anatomical structure
+      include_self: true
+      relationship_types:
+        - rdfs:subClassOf
+
+  HumanAnatomicalStructure:
+    description: |-
+      Anatomical structures specific to humans (Homo sapiens)
+    reachable_from:
+      source_ontology: obo:uberon
+      source_nodes:
+        - UBERON:0000061  # anatomical structure
+      include_self: false
+      relationship_types:
+        - rdfs:subClassOf
+      # Note: This would ideally filter for human-specific structures
+      # but that requires more complex ontology queries
+
+  PlantAnatomicalStructure:
+    description: |-
+      Any anatomical structure found in plant organisms
+    reachable_from:
+      source_ontology: obo:po
+      source_nodes:
+        - PO:0025131  # plant anatomical entity
+      include_self: true
+      relationship_types:
+        - rdfs:subClassOf
+
+  # Cell types
+  CellType:
+    description: |-
+      Any cell type from the Cell Ontology (CL),
+      including native and experimentally modified cells
+    reachable_from:
+      source_ontology: obo:cl
+      source_nodes:
+        - CL:0000000  # cell
+      include_self: true
+      relationship_types:
+        - rdfs:subClassOf
+
+  NeuronType:
+    description: |-
+      Neuron cell types from the Cell Ontology
+    reachable_from:
+      source_ontology: obo:cl
+      source_nodes:
+        - CL:0000540  # neuron
+      include_self: true
+      relationship_types:
+        - rdfs:subClassOf
+
+  ImmuneCell:
+    description: |-
+      Immune system cell types (leukocytes and their subtypes)
+    reachable_from:
+      source_ontology: obo:cl
+      source_nodes:
+        - CL:0000988  # leukocyte (immune cell)
+      include_self: true
+      relationship_types:
+        - rdfs:subClassOf
+
+  StemCell:
+    description: |-
+      Stem cell types and progenitor cells
+    reachable_from:
+      source_ontology: obo:cl
+      source_nodes:
+        - CL:0000034  # stem cell
+        - CL:0000055  # non-terminally differentiated cell
+      include_self: true
+      relationship_types:
+        - rdfs:subClassOf
+
+  # Diseases
+  Disease:
+    description: |-
+      Human diseases from the Mondo Disease Ontology
+    reachable_from:
+      source_ontology: obo:mondo
+      source_nodes:
+        - MONDO:0000001  # disease or disorder
+      include_self: true
+      relationship_types:
+        - rdfs:subClassOf
+
+  InfectiousDisease:
+    description: |-
+      Infectious diseases caused by pathogenic organisms
+    reachable_from:
+      source_ontology: obo:mondo
+      source_nodes:
+        - MONDO:0005550  # infectious disease
+      include_self: true
+      relationship_types:
+        - rdfs:subClassOf
+
+  Cancer:
+    description: |-
+      Neoplastic and cancerous diseases
+    reachable_from:
+      source_ontology: obo:mondo
+      source_nodes:
+        - MONDO:0004992  # cancer
+        - MONDO:0005070  # neoplasm
+      include_self: true
+      relationship_types:
+        - rdfs:subClassOf
+
+  GeneticDisease:
+    description: |-
+      Hereditary and genetic diseases
+    reachable_from:
+      source_ontology: obo:mondo
+      source_nodes:
+        - MONDO:0003847  # hereditary disease
+        - MONDO:0021198  # genetic disorder
+      include_self: true
+      relationship_types:
+        - rdfs:subClassOf
+
+  # Chemical entities
+  ChemicalEntity:
+    description: |-
+      Any chemical entity from ChEBI ontology
+    reachable_from:
+      source_ontology: obo:chebi
+      source_nodes:
+        - CHEBI:24431  # chemical entity
+      include_self: true
+      relationship_types:
+        - rdfs:subClassOf
+
+  Drug:
+    description: |-
+      Pharmaceutical drugs and medications
+    reachable_from:
+      source_ontology: obo:chebi
+      source_nodes:
+        - CHEBI:23888  # drug
+      include_self: true
+      relationship_types:
+        - rdfs:subClassOf
+        - RO:0000087
+
+  Metabolite:
+    description: |-
+      Metabolites and metabolic intermediates
+    reachable_from:
+      source_ontology: obo:chebi
+      source_nodes:
+        - CHEBI:25212  # metabolite
+      include_self: true
+      relationship_types:
+        - rdfs:subClassOf
+
+  Protein:
+    description: |-
+      Proteins and protein complexes
+    reachable_from:
+      source_ontology: obo:pr
+      source_nodes:
+        - PR:000000001  # protein
+      include_self: true
+      relationship_types:
+        - rdfs:subClassOf
+
+  # Phenotypes
+  Phenotype:
+    description: |-
+      Phenotypic abnormalities from Human Phenotype Ontology
+    reachable_from:
+      source_ontology: obo:hp
+      source_nodes:
+        - HP:0000118  # phenotypic abnormality
+      include_self: true
+      relationship_types:
+        - rdfs:subClassOf
+
+  ClinicalFinding:
+    description: |-
+      Clinical findings and observations
+    reachable_from:
+      source_ontology: obo:hp
+      source_nodes:
+        - HP:0000118  # phenotypic abnormality
+      include_self: false
+      relationship_types:
+        - rdfs:subClassOf
+
+  # Biological processes
+  BiologicalProcess:
+    description: |-
+      Biological processes from Gene Ontology
+    reachable_from:
+      source_ontology: obo:go
+      source_nodes:
+        - GO:0008150  # biological_process
+      include_self: true
+      relationship_types:
+        - rdfs:subClassOf
+
+  MetabolicProcess:
+    description: |-
+      Metabolic processes and pathways
+    reachable_from:
+      source_ontology: obo:go
+      source_nodes:
+        - GO:0008152  # metabolic process
+      include_self: true
+      relationship_types:
+        - rdfs:subClassOf
+
+  # Molecular functions
+  MolecularFunction:
+    description: |-
+      Molecular functions from Gene Ontology
+    reachable_from:
+      source_ontology: obo:go
+      source_nodes:
+        - GO:0003674  # molecular_function
+      include_self: true
+      relationship_types:
+        - rdfs:subClassOf
+
+  # Cellular components
+  CellularComponent:
+    description: |-
+      Cellular components and locations from Gene Ontology
+    reachable_from:
+      source_ontology: obo:go
+      source_nodes:
+        - GO:0005575  # cellular_component
+      include_self: true
+      relationship_types:
+        - rdfs:subClassOf
+
+  # Sequence features
+  SequenceFeature:
+    description: |-
+      Sequence features from the Sequence Ontology
+    reachable_from:
+      source_ontology: obo:so
+      source_nodes:
+        - SO:0000110  # sequence_feature
+      include_self: true
+      relationship_types:
+        - rdfs:subClassOf
+
+  GeneFeature:
+    description: |-
+      Gene-related sequence features
+    reachable_from:
+      source_ontology: obo:so
+      source_nodes:
+        - SO:0000704  # gene
+      include_self: true
+      relationship_types:
+        - rdfs:subClassOf
+
+  # Environmental features
+  Environment:
+    description: |-
+      Environmental systems and biomes
+    reachable_from:
+      source_ontology: obo:envo
+      source_nodes:
+        - ENVO:00000428  # biome
+        - ENVO:01000254  # environmental system
+      include_self: true
+      relationship_types:
+        - rdfs:subClassOf
+
+  EnvironmentalMaterial:
+    description: |-
+      Environmental materials and substances
+    reachable_from:
+      source_ontology: obo:envo
+      source_nodes:
+        - ENVO:00010483  # environmental material
+      include_self: true
+      relationship_types:
+        - rdfs:subClassOf
+
+  # Phenotypic qualities
+  Quality:
+    description: |-
+      Phenotypic qualities and attributes from PATO
+    reachable_from:
+      source_ontology: obo:pato
+      source_nodes:
+        - PATO:0000001  # quality
+      include_self: true
+      relationship_types:
+        - rdfs:subClassOf
+
+  PhysicalQuality:
+    description: |-
+      Physical qualities like size, shape, color
+    reachable_from:
+      source_ontology: obo:pato
+      source_nodes:
+        - PATO:0001241  # physical object quality
+      include_self: true
+      relationship_types:
+        - rdfs:subClassOf

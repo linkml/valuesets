@@ -1,0 +1,111 @@
+name: person_status
+id: https://w3id.org/linkml/valuesets/social/person_status
+prefixes:
+  PATO: http://purl.obolibrary.org/obo/PATO_
+  linkml_common: https://w3id.org/linkml-common/
+  NCIT: http://purl.obolibrary.org/obo/NCIT_
+default_prefix: linkml_common
+enums:
+  PersonStatusEnum:
+    description: Vital status of a person (living or deceased)
+    permissible_values:
+      ALIVE:
+        description: The person is living
+        meaning: PATO:0001421
+        title: Alive
+      DEAD:
+        description: The person is deceased
+        meaning: PATO:0001422
+        title: Dead
+      UNKNOWN:
+        description: The vital status is not known
+        meaning: NCIT:C17998
+        title: Unknown
+
+  MaritalStatusEnum:
+    description: Marital or civil status of a person
+    permissible_values:
+      SINGLE:
+        description: Never married
+        meaning: NCIT:C51774
+        title: Never Married
+        exact_mappings:
+          - NCIT:C150721
+      MARRIED:
+        description: Currently married or in civil partnership
+        meaning: NCIT:C51773
+        title: Married
+        exact_mappings:
+          - NCIT:C150743
+      DIVORCED:
+        description: Marriage legally dissolved
+        meaning: NCIT:C51776
+        title: Divorced
+      WIDOWED:
+        description: Marriage ended due to death of spouse
+        meaning: NCIT:C51775
+        title: Widowed
+      SEPARATED:
+        description: Living apart from spouse
+        meaning: NCIT:C51777
+        title: Legally Separated
+      DOMESTIC_PARTNERSHIP:
+        description: In a domestic partnership
+        meaning: NCIT:C53262
+        title: Domestic Partnership
+      CIVIL_UNION:
+        description: In a civil union
+        meaning: NCIT:C25188
+        title: Marital Status
+      UNKNOWN:
+        description: Marital status not known
+        meaning: NCIT:C17998
+        title: Unknown
+      PREFER_NOT_TO_SAY:
+        description: Prefers not to disclose marital status
+        meaning: NCIT:C150742
+        title: Marital or Civil Status Not Disclosed
+
+  EmploymentStatusEnum:
+    description: Employment status of a person
+    permissible_values:
+      EMPLOYED_FULL_TIME:
+        description: Employed full-time
+        meaning: NCIT:C52658
+        title: Full Time Employment
+      EMPLOYED_PART_TIME:
+        description: Employed part-time
+        meaning: NCIT:C75562
+        title: Part Time Employment
+      SELF_EMPLOYED:
+        description: Self-employed
+        meaning: NCIT:C116000
+        title: Self-Employed
+      UNEMPLOYED:
+        description: Unemployed
+        meaning: NCIT:C75563
+        title: Unemployed
+      STUDENT:
+        description: Student
+        meaning: NCIT:C75561
+        title: Student
+      RETIRED:
+        description: Retired
+        meaning: NCIT:C148257
+        title: Unemployed or Retired
+      HOMEMAKER:
+        description: Homemaker
+        meaning: NCIT:C75560
+        title: Homemaker
+      DISABLED:
+        description: Unable to work due to disability
+        meaning: NCIT:C63367
+        title: Disabled
+      OTHER:
+        description: Other employment status
+        meaning: NCIT:C25172
+        title: Employed
+      UNKNOWN:
+        description: Employment status not known
+        meaning: NCIT:C17998
+        title: Unknown

@@ -1,0 +1,520 @@
+---
+id: https://w3id.org/linkml/valuesets/bioprocessing/scale_up
+name: scale_up
+title: Bioprocessing Scale-up Value Sets
+description: |-
+  Value sets for bioprocessing scale-up facilities, fermentation, and biomanufacturing
+  operations like those at ABPDU (Advanced Biofuels and Bioproducts Process Development Unit)
+
+prefixes:
+  valuesets: https://w3id.org/linkml/valuesets/
+  NCIT: http://purl.obolibrary.org/obo/NCIT_
+  OBI: http://purl.obolibrary.org/obo/OBI_
+  ENVO: http://purl.obolibrary.org/obo/ENVO_
+  CHMO: http://purl.obolibrary.org/obo/CHMO_
+  CHEBI: http://purl.obolibrary.org/obo/CHEBI_
+  UO: http://purl.obolibrary.org/obo/UO_
+  BAO: http://www.bioassayontology.org/bao#BAO_
+  SBO: http://biomodels.net/SBO/SBO_
+  MSIO: http://purl.obolibrary.org/obo/MSIO_
+  mesh: http://id.nlm.nih.gov/mesh/
+  FOODON: http://purl.obolibrary.org/obo/FOODON_
+
+default_prefix: valuesets
+
+imports:
+  - linkml:types
+
+enums:
+
+  ProcessScaleEnum:
+    description: |-
+      Scale of bioprocessing operations from lab bench to commercial production
+    permissible_values:
+
+      BENCH_SCALE:
+        description: Laboratory bench scale (typically < 10 L)
+        annotations:
+          volume_range: "0.1-10 L"
+          typical_volume: "1-5 L"
+          purpose: Initial development and screening
+
+      PILOT_SCALE:
+        description: Pilot plant scale (10-1000 L)
+        annotations:
+          volume_range: "10-1000 L"
+          typical_volume: "50-500 L"
+          purpose: Process development and optimization
+
+      DEMONSTRATION_SCALE:
+        description: Demonstration scale (1000-10000 L)
+        annotations:
+          volume_range: "1000-10000 L"
+          typical_volume: "2000-5000 L"
+          purpose: Technology demonstration and validation
+
+      PRODUCTION_SCALE:
+        description: Commercial production scale (>10000 L)
+        related_mappings:
+          - NCIT:C112927  # Production (broader term, not specific to scale)
+        annotations:
+          volume_range: ">10000 L"
+          typical_volume: "20000-200000 L"
+          purpose: Commercial manufacturing
+
+      MICROFLUIDIC_SCALE:
+        description: Microfluidic scale (<1 mL)
+        related_mappings:
+          - mesh:D044085  # Microfluidics (general concept, not specific to scale)
+        annotations:
+          volume_range: "<1 mL"
+          typical_volume: "1-1000 μL"
+          purpose: High-throughput screening
+
+  BioreactorTypeEnum:
+    description: |-
+      Types of bioreactors used in fermentation and cell culture
+    permissible_values:
+
+      STIRRED_TANK:
+        description: Stirred tank reactor (STR/CSTR)
+        related_mappings:
+          - OBI:0001046  # bioreactor (broader term)
+        annotations:
+          mixing: Mechanical agitation
+          common_volumes: "1-200000 L"
+
+      AIRLIFT:
+        description: Airlift bioreactor
+        related_mappings:
+          - ENVO:00002125  # anaerobic dechlorinating bioreactor (not exact)
+          - OBI:0001046    # bioreactor (broader term)
+        annotations:
+          mixing: Gas sparging
+          advantages: Low shear, no mechanical parts
+
+      BUBBLE_COLUMN:
+        description: Bubble column bioreactor
+        related_mappings:
+          - OBI:0001046  # bioreactor (broader term)
+        annotations:
+          mixing: Gas bubbling
+          advantages: Simple design, good mass transfer
+
+      PACKED_BED:
+        description: Packed bed bioreactor
+        annotations:
+          configuration: Fixed bed of immobilized cells/enzymes
+          flow: Continuous
+
+      FLUIDIZED_BED:
+        description: Fluidized bed bioreactor
+        annotations:
+          configuration: Suspended solid particles
+          mixing: Fluid flow
+
+      MEMBRANE:
+        title: membrane bioreactor
+        description: Membrane bioreactor
+        meaning: ENVO:03600010
+        annotations:
+          feature: Integrated membrane separation
+          application: Cell retention, product separation
+
+      WAVE_BAG:
+        description: Wave/rocking bioreactor
+        annotations:
+          mixing: Rocking motion
+          advantages: Single-use, low shear
+
+      HOLLOW_FIBER:
+        description: Hollow fiber bioreactor
+        annotations:
+          configuration: Hollow fiber membranes
+          application: High-density cell culture
+
+      PHOTOBIOREACTOR:
+        description: Photobioreactor for photosynthetic organisms
+        annotations:
+          light_source: Required
+          organisms: Algae, cyanobacteria
+
+  FermentationModeEnum:
+    description: |-
+      Modes of fermentation operation
+    permissible_values:
+
+      BATCH:
+        title: batch cell culture
+        description: Batch fermentation
+        meaning: MSIO:0000181  # batch cell culture
+        annotations:
+          operation: All nutrients added at start
+          duration: Fixed time period
+
+      FED_BATCH:
+        description: Fed-batch fermentation
+        related_mappings:
+          - MSIO:0000165  # constantly fed-batch culture reactor (specific type)
+          - MSIO:0000166  # exponentially fed-batch culture reactor (specific type)
+        annotations:
+          operation: Nutrients added during run
+          advantage: Control of growth rate
+
+      CONTINUOUS:
+        title: continuous fermentation cell culture
+        description: Continuous fermentation (chemostat)
+        meaning: MSIO:0000155  # continuous fermentation cell culture
+        annotations:
+          operation: Continuous feed and harvest
+          steady_state: true
+
+      PERFUSION:
+        description: Perfusion culture
+        annotations:
+          operation: Continuous media exchange with cell retention
+          application: High-density cell culture
+
+      REPEATED_BATCH:
+        description: Repeated batch fermentation
+        annotations:
+          operation: Sequential batches with partial harvest
+          advantage: Reduced downtime
+
+      SEMI_CONTINUOUS:
+        description: Semi-continuous operation
+        annotations:
+          operation: Periodic harvest and refill
+          advantage: Extended production
+
+  OxygenationStrategyEnum:
+    description: |-
+      Oxygen supply strategies for fermentation
+    permissible_values:
+
+      AEROBIC:
+        description: Aerobic with active aeration
+        related_mappings:
+          - ENVO:00002126  # aerobic bioreactor (broader - specific to bioreactor not condition)
+        annotations:
+          oxygen: Required
+          typical_DO: "20-80% saturation"
+
+      ANAEROBIC:
+        description: Anaerobic (no oxygen)
+        related_mappings:
+          - ENVO:00002124  # anaerobic bioreactor (broader - specific to bioreactor not condition)
+        annotations:
+          oxygen: Excluded
+          atmosphere: N2 or CO2
+
+      MICROAEROBIC:
+        description: Microaerobic (limited oxygen)
+        annotations:
+          oxygen: Limited
+          typical_DO: "<5% saturation"
+
+      FACULTATIVE:
+        description: Facultative (with/without oxygen)
+        annotations:
+          oxygen: Optional
+          flexibility: Organism-dependent
+
+  AgitationTypeEnum:
+    description: |-
+      Types of agitation/mixing in bioreactors
+    permissible_values:
+
+      RUSHTON_TURBINE:
+        description: Rushton turbine impeller
+        annotations:
+          type: Radial flow
+          power_number: "5-6"
+
+      PITCHED_BLADE:
+        description: Pitched blade turbine
+        annotations:
+          type: Axial flow
+          angle: "45 degrees"
+
+      MARINE_PROPELLER:
+        description: Marine propeller
+        annotations:
+          type: Axial flow
+          low_shear: true
+
+      ANCHOR:
+        description: Anchor impeller
+        annotations:
+          type: Close clearance
+          viscous_fluids: true
+
+      HELICAL_RIBBON:
+        description: Helical ribbon impeller
+        annotations:
+          type: Close clearance
+          high_viscosity: true
+
+      MAGNETIC_BAR:
+        description: Magnetic stir bar
+        annotations:
+          scale: Laboratory
+          volume: "<5 L"
+
+      ORBITAL_SHAKING:
+        description: Orbital shaking
+        annotations:
+          type: Platform shaker
+          application: Shake flasks
+
+      NO_AGITATION:
+        description: No mechanical agitation
+        annotations:
+          mixing: Gas sparging or static
+
+  DownstreamProcessEnum:
+    description: |-
+      Downstream processing unit operations
+    permissible_values:
+
+      CENTRIFUGATION:
+        title: analytical centrifugation
+        description: Centrifugal separation
+        meaning: CHMO:0002010
+        annotations:
+          principle: Density difference
+          types: Disk stack, tubular, decanter
+
+      FILTRATION:
+        description: Filtration (micro/ultra/nano)
+        meaning: CHMO:0001640
+        annotations:
+          types: Dead-end, crossflow, depth
+
+      CHROMATOGRAPHY:
+        description: Chromatographic separation
+        meaning: CHMO:0001000
+        annotations:
+          types: Ion exchange, affinity, size exclusion
+
+      EXTRACTION:
+        description: Liquid-liquid extraction
+        meaning: CHMO:0001577
+        annotations:
+          principle: Partitioning between phases
+
+      PRECIPITATION:
+        description: Precipitation/crystallization
+        meaning: CHMO:0001688
+        annotations:
+          agents: Salts, solvents, pH
+
+      EVAPORATION:
+        description: Evaporation/concentration
+        meaning: CHMO:0001574
+        annotations:
+          types: Falling film, MVR, TVR
+
+      DISTILLATION:
+        description: Distillation
+        meaning: CHMO:0001534
+        title: continuous distillation
+        annotations:
+          principle: Boiling point difference
+
+      DRYING:
+        description: Drying operations
+        meaning: CHMO:0001551
+        title: direct drying
+        annotations:
+          types: Spray, freeze, vacuum
+
+      HOMOGENIZATION:
+        description: Cell disruption/homogenization
+        annotations:
+          methods: High pressure, bead mill
+
+  FeedstockTypeEnum:
+    description: |-
+      Types of feedstocks for bioprocessing
+    permissible_values:
+
+      GLUCOSE:
+        description: Glucose/dextrose
+        meaning: CHEBI:17234
+        annotations:
+          source: Corn, sugarcane
+          carbon_source: true
+
+      SUCROSE:
+        description: Sucrose
+        meaning: CHEBI:17992
+        annotations:
+          source: Sugarcane, sugar beet
+          carbon_source: true
+
+      GLYCEROL:
+        description: Glycerol
+        meaning: CHEBI:17754
+        annotations:
+          source: Biodiesel byproduct
+          carbon_source: true
+
+      MOLASSES:
+        description: Molasses
+        meaning: CHEBI:83163
+        annotations:
+          source: Sugar processing byproduct
+          complex_medium: true
+
+      CORN_STEEP_LIQUOR:
+        description: Corn steep liquor
+        annotations:
+          source: Corn wet milling
+          nitrogen_source: true
+
+      YEAST_EXTRACT:
+        description: Yeast extract
+        meaning: FOODON:03315426
+        annotations:
+          source: Autolyzed yeast
+          complex_nutrient: true
+
+      LIGNOCELLULOSIC:
+        description: Lignocellulosic biomass
+        annotations:
+          source: Agricultural residues, wood
+          pretreatment: Required
+
+      METHANOL:
+        description: Methanol
+        meaning: CHEBI:17790
+        annotations:
+          carbon_source: true
+          methylotrophic: true
+
+      WASTE_STREAM:
+        description: Industrial waste stream
+        annotations:
+          variable_composition: true
+          sustainability: Circular economy
+
+  ProductTypeEnum:
+    description: |-
+      Types of products from bioprocessing
+    permissible_values:
+
+      BIOFUEL:
+        title: fuel
+        description: Biofuel (ethanol, biodiesel, etc.)
+        meaning: CHEBI:33292
+        annotations:
+          category: Energy
+
+      PROTEIN:
+        description: Recombinant protein
+        meaning: NCIT:C17021
+        annotations:
+          category: Biopharmaceutical
+
+      ENZYME:
+        description: Industrial enzyme
+        meaning: NCIT:C16554
+        annotations:
+          category: Biocatalyst
+
+      ORGANIC_ACID:
+        description: Organic acid (citric, lactic, etc.)
+        meaning: CHEBI:64709
+        annotations:
+          category: Chemical
+
+      AMINO_ACID:
+        description: Amino acid
+        meaning: CHEBI:33709
+        annotations:
+          category: Nutritional
+
+      ANTIBIOTIC:
+        description: Antibiotic
+        meaning: CHEBI:33281
+        title: antimicrobial agent
+        annotations:
+          category: Pharmaceutical
+
+      VITAMIN:
+        description: Vitamin
+        meaning: CHEBI:33229
+        title: "vitamin (role)"
+        annotations:
+          category: Nutritional
+
+      BIOPOLYMER:
+        description: Biopolymer (PHA, PLA, etc.)
+        meaning: CHEBI:33694
+        title: biomacromolecule
+        annotations:
+          category: Material
+
+      BIOMASS:
+        description: Microbial biomass
+        meaning: ENVO:01000155
+        title: organic material
+        annotations:
+          category: Feed/food
+
+      SECONDARY_METABOLITE:
+        description: Secondary metabolite
+        meaning: CHEBI:25212
+        title: metabolite
+        annotations:
+          category: Specialty chemical
+
+  SterilizationMethodEnum:
+    description: |-
+      Methods for sterilization in bioprocessing
+    permissible_values:
+
+      STEAM_IN_PLACE:
+        description: Steam in place (SIP)
+        annotations:
+          temperature: "121-134°C"
+          time: "15-30 min"
+
+      AUTOCLAVE:
+        title: autoclaving
+        description: Autoclave sterilization
+        meaning: CHMO:0002846
+        annotations:
+          temperature: "121°C"
+          pressure: "15 psi"
+
+      FILTER_STERILIZATION:
+        description: Filter sterilization (0.2 μm)
+        annotations:
+          pore_size: "0.2 μm"
+          heat_labile: true
+
+      GAMMA_IRRADIATION:
+        description: Gamma irradiation
+        annotations:
+          dose: "25-40 kGy"
+          single_use: true
+
+      ETHYLENE_OXIDE:
+        description: Ethylene oxide sterilization
+        annotations:
+          temperature: "30-60°C"
+          plastic_compatible: true
+
+      UV_STERILIZATION:
+        description: UV sterilization
+        annotations:
+          wavelength: "254 nm"
+          surface_only: true
+
+      CHEMICAL_STERILIZATION:
+        description: Chemical sterilization
+        annotations:
+          agents: "Bleach, alcohol, peroxide"
+          contact_time: Variable

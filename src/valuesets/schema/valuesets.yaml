@@ -1,0 +1,73 @@
+---
+id: https://w3id.org/linkml/valuesets
+name: valuesets
+title: valuesets
+description: |-
+  A collection of commonly used value sets
+license: Apache-2.0
+see_also:
+  - https://linkml.github.io/valuesets
+
+prefixes:
+  valuesets: https://w3id.org/linkml/valuesets/
+default_prefix: valuesets
+
+imports:
+  - core
+  - data/data_absent_reason
+  - statistics
+  - health
+  - healthcare
+  - investigation
+  - bio/go_evidence
+  - bio/taxonomy
+  - bio/cell_cycle
+  - bio/genome_features
+  - bio/bio_entities
+  - bio/structural_biology
+  - bio/insdc_missing_values
+  - bio/viral_genome_types
+  - bio/plant_sex
+  - bio/relationship_to_oxygen
+  - bio/trophic_levels
+  - time/temporal
+  - academic/research
+  - energy/energy
+  - energy/fossil_fuels
+  - industry/mining
+  - industry/extractive_industry
+  - statistics/prediction_outcomes
+  - social/person_status
+  - computing/mime_types
+  - physics/states_of_matter
+  - environmental_health/exposures
+  - geography/geographic_codes
+  - data_science/sentiment_analysis
+  - data_science/binary_classification
+  - data_science/quality_control
+  - data_science/emotion_classification
+  - data_science/priority_severity
+  - data_science/text_classification
+  - spatial/spatial_qualifiers
+  - materials_science/crystal_structures
+  - materials_science/material_properties
+  - materials_science/characterization_methods
+  - materials_science/material_types
+  - materials_science/synthesis_methods
+  - materials_science/pigments_dyes
+  - visual/colors
+  - bio/biological_colors
+  - bio/sequence_alphabets
+  - chemistry/chemical_entities
+  - chemistry/reactions
+  - industry/safety_colors
+  - medical/clinical
+  - clinical/nih_demographics
+  - clinical/phenopackets
+  - bioprocessing/scale_up
+  - units/measurements
+  - computing/file_formats
+
+classes:
+
+  Fake:

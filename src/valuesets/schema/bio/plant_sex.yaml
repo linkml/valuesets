@@ -1,0 +1,103 @@
+name: plant_sex
+id: https://w3id.org/linkml/valuesets/bio/plant_sex
+prefixes:
+  GSSO: http://purl.obolibrary.org/obo/GSSO_
+  PATO: http://purl.obolibrary.org/obo/PATO_
+  UBERON: http://purl.obolibrary.org/obo/UBERON_
+  ECOCORE: http://purl.obolibrary.org/obo/ECOCORE_
+  mixs: https://genomicsstandardsconsortium.github.io/mixs/
+default_prefix: mixs
+enums:
+  PlantSexEnum:
+    description: Plant reproductive and sexual system types
+    permissible_values:
+      ANDRODIOECIOUS:
+        description: Having male and hermaphrodite flowers on separate plants
+        title: Androdioecious
+      ANDROECIOUS:
+        description: Having only male flowers
+        title: Androecious
+      ANDROGYNOMONOECIOUS:
+        description: Having male, female, and hermaphrodite flowers on the same plant
+        title: Androgynomonoecious
+      ANDROGYNOUS:
+        description: Having both male and female reproductive organs in the same flower
+        title: Androgynous
+      ANDROMONOECIOUS:
+        description: Having male and hermaphrodite flowers on the same plant
+        title: Andromonoecious
+      BISEXUAL:
+        description: Having both male and female reproductive organs
+        title: Bisexual
+      DICHOGAMOUS:
+        description: Male and female organs mature at different times
+        title: Dichogamous
+      DICLINOUS:
+        description: Having male and female reproductive organs in separate flowers
+        title: Diclinous
+      DIOECIOUS:
+        description: Having male and female flowers on separate plants
+        meaning: GSSO:011872
+        title: Dioecious
+      GYNODIOECIOUS:
+        description: Having female and hermaphrodite flowers on separate plants
+        title: Gynodioecious
+      GYNOECIOUS:
+        description: Having only female flowers
+        title: Gynoecious
+      GYNOMONOECIOUS:
+        description: Having female and hermaphrodite flowers on the same plant
+        title: Gynomonoecious
+      HERMAPHRODITIC:
+        description: Having both male and female reproductive organs
+        meaning: UBERON:0007197
+        title: hermaphroditic organism
+      IMPERFECT:
+        description: Flower lacking either male or female reproductive organs
+        title: Imperfect
+      MONOCLINOUS:
+        description: Having both male and female reproductive organs in the same flower
+        title: Monoclinous
+      MONOECIOUS:
+        description: Having male and female flowers on the same plant
+        meaning: GSSO:011868
+        title: Monoecious
+      PERFECT:
+        description: Flower having both male and female reproductive organs
+        title: Perfect
+      POLYGAMODIOECIOUS:
+        description: Having male, female, and hermaphrodite flowers on separate plants
+        title: Polygamodioecious
+      POLYGAMOMONOECIOUS:
+        description: Having male, female, and hermaphrodite flowers on the same plant
+        title: Polygamomonoecious
+      POLYGAMOUS:
+        description: Having male, female, and hermaphrodite flowers
+        title: Polygamous
+      PROTANDROUS:
+        description: Male organs mature before female organs
+        title: Protandrous
+      PROTOGYNOUS:
+        description: Female organs mature before male organs
+        title: Protogynous
+      SUBANDROECIOUS:
+        description: Mostly male flowers with occasional hermaphrodite flowers
+        title: Subandroecious
+      SUBDIOECIOUS:
+        description: Mostly dioecious with occasional hermaphrodite flowers
+        title: Subdioecious
+      SUBGYNOECIOUS:
+        description: Mostly female flowers with occasional hermaphrodite flowers
+        title: Subgynoecious
+      SYNOECIOUS:
+        description: Having male and female organs fused together
+        title: Synoecious
+      TRIMONOECIOUS:
+        description: Having male, female, and hermaphrodite flowers on the same plant
+        title: Trimonoecious
+      TRIOECIOUS:
+        description: Having male, female, and hermaphrodite flowers on separate plants
+        title: Trioecious
+      UNISEXUAL:
+        description: Having only one sex of reproductive organs
+        title: Unisexual

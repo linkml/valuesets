@@ -1,0 +1,43 @@
+---
+site_name: "valuesets"
+theme:
+  name: material
+  # palette:
+  #  scheme: slate
+  #  primary: cyan
+  features:
+    - content.tabs.link
+
+# for adding extra css/js see https://www.mkdocs.org/user-guide/customizing-your-theme/
+
+plugins:
+  - search
+  - mknotebooks:
+      execute: false
+  - mermaid2:
+      version: 11.4.1
+  # TODO rebuild docs on schema change (https://github.com/dalito/linkml-project-copier/issues/39)
+  # - gen-files:
+  #     scripts:
+  #       - gen_pages.py  # or any other name or path
+
+watch:
+  - src/valuesets/schema
+
+nav:
+  - Home: index.md
+  - Schema: elements/index.md
+  - About: about.md
+
+exclude_docs: |
+  /templates-linkml/
+
+site_url: https://linkml.github.io/valuesets
+repo_url: https://github.com/linkml/valuesets
+
+# Uncomment this block to enable use of Google Analytics.
+# Replace the property value with your own ID.
+# extra:
+#   analytics:
+#     provider: google
+#     property: G-XXXXXXXXXX

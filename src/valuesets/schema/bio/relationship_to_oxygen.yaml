@@ -1,0 +1,41 @@
+name: relationship_to_oxygen
+id: https://w3id.org/linkml/valuesets/bio/relationship_to_oxygen
+prefixes:
+  ECOCORE: http://purl.obolibrary.org/obo/ECOCORE_
+  OMP: http://purl.obolibrary.org/obo/OMP_
+  MICRO: http://purl.obolibrary.org/obo/MICRO_
+  mixs: https://genomicsstandardsconsortium.github.io/mixs/
+default_prefix: mixs
+enums:
+  RelToOxygenEnum:
+    description: Organism's relationship to oxygen for growth and survival
+    permissible_values:
+      AEROBE:
+        description: Organism that can survive and grow in an oxygenated environment
+        meaning: ECOCORE:00000173
+        title: aerobe
+      ANAEROBE:
+        description: Organism that does not require oxygen for growth
+        meaning: ECOCORE:00000172
+        title: anaerobe
+      FACULTATIVE:
+        description: Organism that can grow with or without oxygen
+        meaning: ECOCORE:00000177
+        title: facultative anaerobe
+        annotations:
+          note: Maps to facultative anaerobe in ECOCORE
+      MICROAEROPHILIC:
+        description: Organism that requires oxygen at lower concentrations than atmospheric
+        meaning: MICRO:0000515
+        title: microaerophilic
+      MICROANAEROBE:
+        description: Organism that can tolerate very small amounts of oxygen
+        title: microanaerobe
+      OBLIGATE_AEROBE:
+        description: Organism that requires oxygen to grow
+        meaning: ECOCORE:00000179
+        title: obligate aerobe
+      OBLIGATE_ANAEROBE:
+        description: Organism that cannot grow in the presence of oxygen
+        meaning: ECOCORE:00000178
+        title: obligate anaerobe

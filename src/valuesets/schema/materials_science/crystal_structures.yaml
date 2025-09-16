@@ -1,0 +1,131 @@
+name: crystal_structures
+id: https://w3id.org/linkml/valuesets/materials_science/crystal_structures
+prefixes:
+  CHEBI: http://purl.obolibrary.org/obo/CHEBI_
+  EMMO: http://emmo.info/emmo#
+  ENM: http://purl.enanomapper.org/onto/ENM_
+  PATO: http://purl.obolibrary.org/obo/PATO_
+  PROCO: http://purl.obolibrary.org/obo/PROCO_
+  linkml_common: https://w3id.org/linkml-common/
+default_prefix: linkml_common
+enums:
+  CrystalSystemEnum:
+    description: The seven crystal systems in crystallography
+    conforms_to: https://en.wikipedia.org/wiki/Crystal_system
+    permissible_values:
+      TRICLINIC:
+        description: Crystal system with no symmetry constraints (a≠b≠c, α≠β≠γ≠90°)
+        title: Triclinic
+        meaning: ENM:9000022
+        aliases:
+          - anorthic
+      MONOCLINIC:
+        description: Crystal system with one twofold axis of symmetry (a≠b≠c, α=γ=90°≠β)
+        title: Monoclinic
+        meaning: ENM:9000029
+      ORTHORHOMBIC:
+        description: Crystal system with three mutually perpendicular axes (a≠b≠c, α=β=γ=90°)
+        title: Orthorhombic
+        meaning: ENM:9000031
+        aliases:
+          - rhombic
+      TETRAGONAL:
+        description: Crystal system with one fourfold axis (a=b≠c, α=β=γ=90°)
+        title: Tetragonal
+        meaning: ENM:9000032
+      TRIGONAL:
+        description: Crystal system with one threefold axis (a=b=c, α=β=γ≠90°)
+        title: Trigonal
+        meaning: ENM:9000054
+        aliases:
+          - rhombohedral
+      HEXAGONAL:
+        description: Crystal system with one sixfold axis (a=b≠c, α=β=90°, γ=120°)
+        title: Hexagonal
+        meaning: PATO:0002509
+      CUBIC:
+        description: Crystal system with four threefold axes (a=b=c, α=β=γ=90°)
+        title: Cubic
+        meaning: ENM:9000035
+        aliases:
+          - isometric
+          
+  BravaisLatticeEnum:
+    description: The 14 Bravais lattices describing all possible crystal lattices
+    conforms_to: https://en.wikipedia.org/wiki/Bravais_lattice
+    permissible_values:
+      PRIMITIVE_TRICLINIC:
+        description: Primitive triclinic lattice (aP)
+        title: Primitive Triclinic
+        aliases:
+          - aP
+      PRIMITIVE_MONOCLINIC:
+        description: Primitive monoclinic lattice (mP)
+        title: Primitive Monoclinic
+        aliases:
+          - mP
+      BASE_CENTERED_MONOCLINIC:
+        description: Base-centered monoclinic lattice (mC)
+        title: Base-Centered Monoclinic
+        aliases:
+          - mC
+          - mS
+      PRIMITIVE_ORTHORHOMBIC:
+        description: Primitive orthorhombic lattice (oP)
+        title: Primitive Orthorhombic
+        aliases:
+          - oP
+      BASE_CENTERED_ORTHORHOMBIC:
+        description: Base-centered orthorhombic lattice (oC)
+        title: Base-Centered Orthorhombic
+        aliases:
+          - oC
+          - oS
+      BODY_CENTERED_ORTHORHOMBIC:
+        description: Body-centered orthorhombic lattice (oI)
+        title: Body-Centered Orthorhombic
+        aliases:
+          - oI
+      FACE_CENTERED_ORTHORHOMBIC:
+        description: Face-centered orthorhombic lattice (oF)
+        title: Face-Centered Orthorhombic
+        aliases:
+          - oF
+      PRIMITIVE_TETRAGONAL:
+        description: Primitive tetragonal lattice (tP)
+        title: Primitive Tetragonal
+        aliases:
+          - tP
+      BODY_CENTERED_TETRAGONAL:
+        description: Body-centered tetragonal lattice (tI)
+        title: Body-Centered Tetragonal
+        aliases:
+          - tI
+      PRIMITIVE_TRIGONAL:
+        description: Primitive trigonal/rhombohedral lattice (hR)
+        title: Primitive Trigonal
+        aliases:
+          - hR
+      PRIMITIVE_HEXAGONAL:
+        description: Primitive hexagonal lattice (hP)
+        title: Primitive Hexagonal
+        aliases:
+          - hP
+      PRIMITIVE_CUBIC:
+        description: Simple cubic lattice (cP)
+        title: Primitive Cubic
+        aliases:
+          - cP
+          - SC
+      BODY_CENTERED_CUBIC:
+        description: Body-centered cubic lattice (cI)
+        title: Body-Centered Cubic
+        aliases:
+          - cI
+          - BCC
+      FACE_CENTERED_CUBIC:
+        description: Face-centered cubic lattice (cF)
+        title: Face-Centered Cubic
+        aliases:
+          - cF
+          - FCC

@@ -1,0 +1,36 @@
+id: https://w3id.org/valuesets/health
+name: valuesets-health
+title: valuesets-health
+description: |-
+  General health-related value sets
+license: MIT
+see_also:
+  - https://linkml.github.io/valuesets
+
+prefixes:
+  linkml_common: https://w3id.org/valuesets/
+  linkml: https://w3id.org/linkml/
+  biolink: https://w3id.org/biolink/
+  schema: http://schema.org/
+  NCIT: http://purl.obolibrary.org/obo/NCIT_
+  fhir: http://hl7.org/fhir/
+default_prefix: linkml_common
+
+enums:
+  VitalStatusEnum:
+    description: The vital status of a person or organism
+    permissible_values:
+      ALIVE:
+        description: The person is living
+        meaning: NCIT:C37987
+      DECEASED:
+        description: The person has died
+        meaning: NCIT:C28554
+        title: Dead
+      UNKNOWN:
+        description: The vital status is not known
+        meaning: NCIT:C17998
+      PRESUMED_ALIVE:
+        description: The person is presumed to be alive based on available information
+      PRESUMED_DECEASED:
+        description: The person is presumed to be deceased based on available information

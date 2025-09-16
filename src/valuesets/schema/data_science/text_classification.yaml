@@ -1,0 +1,126 @@
+name: text_classification
+id: https://w3id.org/linkml/valuesets/data_science/text_classification
+prefixes:
+  linkml_common: https://w3id.org/linkml-common/
+  NCIT: http://purl.obolibrary.org/obo/NCIT_
+  SIO: http://semanticscience.org/resource/SIO_
+default_prefix: linkml_common
+enums:
+  NewsTopicCategoryEnum:
+    description: Common news article topic categories
+    permissible_values:
+      POLITICS:
+        description: Political news and government affairs
+        title: Politics
+      BUSINESS:
+        description: Business, finance, and economic news
+        title: Business
+        aliases:
+          - finance
+          - economy
+      TECHNOLOGY:
+        description: Technology and computing news
+        title: Technology
+        aliases:
+          - tech
+          - IT
+      SPORTS:
+        description: Sports news and events
+        title: Sports
+      ENTERTAINMENT:
+        description: Entertainment and celebrity news
+        title: Entertainment
+        aliases:
+          - showbiz
+      SCIENCE:
+        description: Scientific discoveries and research
+        title: Science
+      HEALTH:
+        description: Health, medicine, and wellness news
+        title: Health
+        aliases:
+          - medical
+      WORLD:
+        description: International news and events
+        title: World
+        aliases:
+          - international
+          - global
+      LOCAL:
+        description: Local and regional news
+        title: Local
+        aliases:
+          - regional
+          
+  ToxicityClassificationEnum:
+    description: Text toxicity classification labels
+    permissible_values:
+      NON_TOXIC:
+        description: Text is appropriate and non-harmful
+        title: Non-Toxic
+        meaning: SIO:001010
+        aliases:
+          - safe
+          - clean
+          - "0"
+      TOXIC:
+        description: Text contains harmful or inappropriate content
+        title: Toxic
+        aliases:
+          - harmful
+          - inappropriate
+          - "1"
+      SEVERE_TOXIC:
+        description: Text contains severely harmful content
+        title: Severe Toxic
+        is_a: TOXIC
+      OBSCENE:
+        description: Text contains obscene content
+        title: Obscene
+        is_a: TOXIC
+      THREAT:
+        description: Text contains threatening content
+        title: Threat
+        is_a: TOXIC
+      INSULT:
+        description: Text contains insulting content
+        title: Insult
+        is_a: TOXIC
+      IDENTITY_HATE:
+        description: Text contains identity-based hate
+        title: Identity Hate
+        is_a: TOXIC
+        
+  IntentClassificationEnum:
+    description: Common chatbot/NLU intent categories
+    permissible_values:
+      GREETING:
+        description: User greeting or hello
+        title: Greeting
+      GOODBYE:
+        description: User saying goodbye
+        title: Goodbye
+      THANKS:
+        description: User expressing gratitude
+        title: Thanks
+      HELP:
+        description: User requesting help or assistance
+        title: Help
+      INFORMATION:
+        description: User requesting information
+        title: Information
+      COMPLAINT:
+        description: User expressing dissatisfaction
+        title: Complaint
+      FEEDBACK:
+        description: User providing feedback
+        title: Feedback
+      PURCHASE:
+        description: User intent to buy or purchase
+        title: Purchase
+      CANCEL:
+        description: User intent to cancel
+        title: Cancel
+      REFUND:
+        description: User requesting refund
+        title: Refund

@@ -1,0 +1,19 @@
+{
+  "mcpServers": {
+    "sequential-thinking": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-sequential-thinking"
+      ]
+    },
+    "ols": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": [
+        "ols-mcp"
+      ],
+      "env": {}
+    }
+  }
+}
