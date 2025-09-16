@@ -6,13 +6,36 @@ A comprehensive collection of standardized enumerations and value sets for data 
 
 ## 🎯 Why Common Value Sets?
 
-Data standardization is hard. Every project reinvents the wheel with custom enums, inconsistent naming, and no semantic meaning. **Common Value Sets** solves this by providing:
+Data standardization is hard. Every project reinvents the wheel with custom enums, inconsistent naming, and no semantic meaning.  
+**Common Value Sets** solves this by providing:
 
-- **📚 Rich, standardized enumerations** - Pre-defined value sets across multiple domains
-- **🧬 Semantic meaning** - Every value is linked to ontology terms (when possible)
-- **🐍 Python-first convenience** - Work with simple enums, get semantics for free
-- **🌐 Multi-language support** - Generate JSON Schema, TypeScript, and more
-- **🔗 Interoperability** - Built on LinkML standards for maximum compatibility
+- 📚 **Rich, standardized enumerations** – Pre-defined value sets across multiple domains  
+- 🧬 **Semantic meaning** – Every value is linked to ontology terms (when possible)  
+- 🐍 **Python-first convenience** – Work with simple enums, get semantics for free  
+- 🌐 **Multi-language support** – Generate JSON Schema, TypeScript, and more  
+- 🔗 **Interoperability** – Built on LinkML standards for maximum compatibility  
+
+---
+
+### 🔍 A Simple Example
+
+Different datasets often represent the same concept in incompatible ways:
+
+- `M` / `F`  
+- `male` / `female`  
+- `1` / `2`  
+
+They all mean the same thing, but they don’t interoperate.  
+With **Common Value Sets**, you can instead use a shared enum:
+
+```python
+from valuesets.enums.core import SexEnum
+
+s = SexEnum.MALE
+print(s.value)            # "MALE"
+print(s.get_meaning())    # "NCIT:C20197"
+print(s.get_description())# "Male sex"
+```
 
 ## ⚡ Quick Start
 
