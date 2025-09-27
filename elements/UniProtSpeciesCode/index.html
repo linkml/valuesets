@@ -1,0 +1,2800 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://linkml.github.io/valuesets/elements/UniProtSpeciesCode/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Enum: UniProtSpeciesCode - valuesets</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/ansi-colours.css">
+    
+      <link rel="stylesheet" href="../../css/jupyter-cells.css">
+    
+      <link rel="stylesheet" href="../../css/pandas-dataframe.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#enum-uniprotspeciescode" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="valuesets" class="md-header__button md-logo" aria-label="valuesets" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            valuesets
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Enum: UniProtSpeciesCode
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/linkml/valuesets" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="valuesets" class="md-nav__button md-logo" aria-label="valuesets" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    valuesets
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/linkml/valuesets" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Schema
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    About
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#permissible-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      Permissible Values
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#identifier-and-mapping-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      Identifier and Mapping Information
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Identifier and Mapping Information">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#schema-source" class="md-nav__link">
+    <span class="md-ellipsis">
+      Schema Source
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linkml-source" class="md-nav__link">
+    <span class="md-ellipsis">
+      LinkML Source
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="enum-uniprotspeciescode">Enum: UniProtSpeciesCode</h1>
+<p><em>UniProt species mnemonic codes for reference proteomes with associated metadata</em></p>
+<p>URI: <a href="https://w3id.org/linkml/valuesets/UniProtSpeciesCode">valuesets:UniProtSpeciesCode</a></p>
+<h2 id="permissible-values">Permissible Values</h2>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Meaning</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SP_9ABAC</td>
+<td>NCBITaxon:1642929</td>
+<td>Lambdina fiscellaria nucleopolyhedrovirus - Proteome: UP000201190</td>
+</tr>
+<tr>
+<td>SP_9ACAR</td>
+<td>NCBITaxon:418985</td>
+<td>Tropilaelaps mercedesae - Proteome: UP000192247</td>
+</tr>
+<tr>
+<td>SP_9ACTN</td>
+<td>NCBITaxon:2716812</td>
+<td>Candidatus Protofrankia datiscae - Proteome: UP000001549</td>
+</tr>
+<tr>
+<td>SP_9ACTO</td>
+<td>NCBITaxon:1125718</td>
+<td>Actinomyces massiliensis F0489 - Proteome: UP000002941</td>
+</tr>
+<tr>
+<td>SP_9ADEN</td>
+<td>NCBITaxon:556926</td>
+<td>Human adenovirus 53 - Proteome: UP000463865</td>
+</tr>
+<tr>
+<td>SP_9AGAM</td>
+<td>NCBITaxon:933084</td>
+<td>Jaapia argillacea MUCL 33604 - Proteome: UP000027265</td>
+</tr>
+<tr>
+<td>SP_9AGAR</td>
+<td>NCBITaxon:944289</td>
+<td>Collybiopsis luxurians FD-317 M1 - Proteome: UP000053593</td>
+</tr>
+<tr>
+<td>SP_9ALPC</td>
+<td>NCBITaxon:12663</td>
+<td>Feline coronavirus - Proteome: UP000141821</td>
+</tr>
+<tr>
+<td>SP_9ALPH</td>
+<td>NCBITaxon:2560801</td>
+<td>Testudinid alphaherpesvirus 3 - Proteome: UP000100290</td>
+</tr>
+<tr>
+<td>SP_9ALTE</td>
+<td>NCBITaxon:493475</td>
+<td>Paraglaciecola arctica BSs20135 - Proteome: UP000006327</td>
+</tr>
+<tr>
+<td>SP_9ALVE</td>
+<td>NCBITaxon:2494336</td>
+<td>Perkinsus sp</td>
+</tr>
+<tr>
+<td>SP_9AMPH</td>
+<td>NCBITaxon:1415580</td>
+<td>Microcaecilia unicolor - Proteome: UP000515156</td>
+</tr>
+<tr>
+<td>SP_9ANNE</td>
+<td>NCBITaxon:2664684</td>
+<td>Dimorphilus gyrociliatus - Proteome: UP000549394</td>
+</tr>
+<tr>
+<td>SP_9ANUR</td>
+<td>NCBITaxon:445787</td>
+<td>Leptobrachium leishanense (Leishan spiny toad) - Proteome: UP000694569</td>
+</tr>
+<tr>
+<td>SP_9APHY</td>
+<td>NCBITaxon:599839</td>
+<td>Fibroporia radiculosa - Proteome: UP000006352</td>
+</tr>
+<tr>
+<td>SP_9APIA</td>
+<td>NCBITaxon:360622</td>
+<td>Heracleum sosnowskyi - Proteome: UP001237642</td>
+</tr>
+<tr>
+<td>SP_9APIC</td>
+<td>NCBITaxon:462227</td>
+<td>Babesia sp</td>
+</tr>
+<tr>
+<td>SP_9AQUI</td>
+<td>NCBITaxon:432331</td>
+<td>Sulfurihydrogenibium yellowstonense SS-5 - Proteome: UP000005540</td>
+</tr>
+<tr>
+<td>SP_9ARAC</td>
+<td>NCBITaxon:2747483</td>
+<td>Trichonephila inaurata madagascariensis - Proteome: UP000886998</td>
+</tr>
+<tr>
+<td>SP_9ARCH</td>
+<td>NCBITaxon:859192</td>
+<td>Candidatus Nitrosarchaeum limnium BG20 - Proteome: UP000014065</td>
+</tr>
+<tr>
+<td>SP_9ASCO</td>
+<td>NCBITaxon:1382522</td>
+<td>Kuraishia capsulata CBS 1993 - Proteome: UP000019384</td>
+</tr>
+<tr>
+<td>SP_9ASPA</td>
+<td>NCBITaxon:906689</td>
+<td>Dendrobium catenatum - Proteome: UP000233837</td>
+</tr>
+<tr>
+<td>SP_9ASTE</td>
+<td>NCBITaxon:267555</td>
+<td>Cuscuta australis - Proteome: UP000249390</td>
+</tr>
+<tr>
+<td>SP_9ASTR</td>
+<td>NCBITaxon:192012</td>
+<td>Mikania micrantha - Proteome: UP000326396</td>
+</tr>
+<tr>
+<td>SP_9AVES</td>
+<td>NCBITaxon:132585</td>
+<td>Anser brachyrhynchus (Pink-footed goose) - Proteome: UP000694426</td>
+</tr>
+<tr>
+<td>SP_9BACE</td>
+<td>NCBITaxon:997873</td>
+<td>Bacteroides caccae CL03T12C61 - Proteome: UP000002965</td>
+</tr>
+<tr>
+<td>SP_9BACI</td>
+<td>NCBITaxon:1196324</td>
+<td>Fictibacillus macauensis ZFHKF-1 - Proteome: UP000004080</td>
+</tr>
+<tr>
+<td>SP_9BACL</td>
+<td>NCBITaxon:944559</td>
+<td>Paenibacillus sp</td>
+</tr>
+<tr>
+<td>SP_9BACT</td>
+<td>NCBITaxon:999419</td>
+<td>Parabacteroides johnsonii CL02T12C29 - Proteome: UP000001218</td>
+</tr>
+<tr>
+<td>SP_9BACU</td>
+<td>NCBITaxon:1920700</td>
+<td>Samia ricini nucleopolyhedrovirus - Proteome: UP001226138</td>
+</tr>
+<tr>
+<td>SP_9BASI</td>
+<td>NCBITaxon:77020</td>
+<td>Malassezia pachydermatis - Proteome: UP000037751</td>
+</tr>
+<tr>
+<td>SP_9BBAC</td>
+<td>NCBITaxon:98383</td>
+<td>Plutella xylostella granulovirus - Proteome: UP000201310</td>
+</tr>
+<tr>
+<td>SP_9BETA</td>
+<td>NCBITaxon:1535247</td>
+<td>Saimiriine betaherpesvirus 4 - Proteome: UP000097892</td>
+</tr>
+<tr>
+<td>SP_9BETC</td>
+<td>NCBITaxon:2591238</td>
+<td>Coronavirus BtRt-BetaCoV/GX2018 - Proteome: UP001228689</td>
+</tr>
+<tr>
+<td>SP_9BIFI</td>
+<td>NCBITaxon:857290</td>
+<td>Scardovia wiggsiae F0424 - Proteome: UP000006415</td>
+</tr>
+<tr>
+<td>SP_9BILA</td>
+<td>NCBITaxon:53326</td>
+<td>Ancylostoma ceylanicum - Proteome: UP000024635</td>
+</tr>
+<tr>
+<td>SP_9BIVA</td>
+<td>NCBITaxon:2493646</td>
+<td>Potamilus streckersoni - Proteome: UP001195483</td>
+</tr>
+<tr>
+<td>SP_9BORD</td>
+<td>NCBITaxon:1746199</td>
+<td>Bordetella sp</td>
+</tr>
+<tr>
+<td>SP_9BRAD</td>
+<td>NCBITaxon:883078</td>
+<td>Afipia broomeae ATCC 49717 - Proteome: UP000001096</td>
+</tr>
+<tr>
+<td>SP_9BRAS</td>
+<td>NCBITaxon:81985</td>
+<td>Capsella rubella - Proteome: UP000029121</td>
+</tr>
+<tr>
+<td>SP_9BROM</td>
+<td>NCBITaxon:33760</td>
+<td>Prune dwarf virus - Proteome: UP000202132</td>
+</tr>
+<tr>
+<td>SP_9BURK</td>
+<td>NCBITaxon:1055526</td>
+<td>Candidatus Paraburkholderia kirkii UZHbot1 - Proteome: UP000003511</td>
+</tr>
+<tr>
+<td>SP_9CARY</td>
+<td>NCBITaxon:171969</td>
+<td>Carnegiea gigantea - Proteome: UP001153076</td>
+</tr>
+<tr>
+<td>SP_9CAUD</td>
+<td>NCBITaxon:866889</td>
+<td>Salmonella phage Vi06 - Proteome: UP000000335</td>
+</tr>
+<tr>
+<td>SP_9CAUL</td>
+<td>NCBITaxon:1391729</td>
+<td>Brevundimonas abyssalis TAR-001 - Proteome: UP000016569</td>
+</tr>
+<tr>
+<td>SP_9CBAC</td>
+<td>NCBITaxon:111874</td>
+<td>Neodiprion sertifer nucleopolyhedrovirus - Proteome: UP000243697</td>
+</tr>
+<tr>
+<td>SP_9CELL</td>
+<td>NCBITaxon:948458</td>
+<td>Actinotalea ferrariae CF5-4 - Proteome: UP000019753</td>
+</tr>
+<tr>
+<td>SP_9CERV</td>
+<td>NCBITaxon:84702</td>
+<td>Cervus hanglu yarkandensis (Yarkand deer) - Proteome: UP000631465</td>
+</tr>
+<tr>
+<td>SP_9CETA</td>
+<td>NCBITaxon:51154</td>
+<td>Catagonus wagneri (Chacoan peccary) - Proteome: UP000694540</td>
+</tr>
+<tr>
+<td>SP_9CHAR</td>
+<td>NCBITaxon:118793</td>
+<td>Rostratula benghalensis (greater painted-snipe) - Proteome: UP000545435</td>
+</tr>
+<tr>
+<td>SP_9CHIR</td>
+<td>NCBITaxon:89673</td>
+<td>Phyllostomus discolor (pale spear-nosed bat) - Proteome: UP000504628</td>
+</tr>
+<tr>
+<td>SP_9CHLA</td>
+<td>NCBITaxon:1871323</td>
+<td>Chlamydiales bacterium SCGC AG-110-P3 - Proteome: UP000196763</td>
+</tr>
+<tr>
+<td>SP_9CHLB</td>
+<td>NCBITaxon:377431</td>
+<td>Chlorobium ferrooxidans DSM 13031 - Proteome: UP000004162</td>
+</tr>
+<tr>
+<td>SP_9CHLO</td>
+<td>NCBITaxon:1291522</td>
+<td>Helicosporidium sp</td>
+</tr>
+<tr>
+<td>SP_9CHLR</td>
+<td>NCBITaxon:872965</td>
+<td>Ardenticatena maritima - Proteome: UP000037784</td>
+</tr>
+<tr>
+<td>SP_9CHRO</td>
+<td>NCBITaxon:1173026</td>
+<td>Gloeocapsa sp</td>
+</tr>
+<tr>
+<td>SP_9CICH</td>
+<td>NCBITaxon:106582</td>
+<td>Maylandia zebra (zebra mbuna) - Proteome: UP000265160</td>
+</tr>
+<tr>
+<td>SP_9CILI</td>
+<td>NCBITaxon:5963</td>
+<td>Stentor coeruleus - Proteome: UP000187209</td>
+</tr>
+<tr>
+<td>SP_9CIRC</td>
+<td>NCBITaxon:345250</td>
+<td>Raven circovirus - Proteome: UP000097131</td>
+</tr>
+<tr>
+<td>SP_9CLOS</td>
+<td>NCBITaxon:367121</td>
+<td>Grapevine leafroll-associated virus 10 - Proteome: UP000203128</td>
+</tr>
+<tr>
+<td>SP_9CLOT</td>
+<td>NCBITaxon:1041504</td>
+<td>Candidatus Arthromitus sp</td>
+</tr>
+<tr>
+<td>SP_9CNID</td>
+<td>NCBITaxon:252671</td>
+<td>Clytia hemisphaerica - Proteome: UP000594262</td>
+</tr>
+<tr>
+<td>SP_9COLU</td>
+<td>NCBITaxon:2953425</td>
+<td>Pampusana beccarii (Western bronze ground-dove) - Proteome: UP000541332</td>
+</tr>
+<tr>
+<td>SP_9CORV</td>
+<td>NCBITaxon:254448</td>
+<td>Cnemophilus loriae (Loria's bird-of-paradise) - Proteome: UP000517678</td>
+</tr>
+<tr>
+<td>SP_9CORY</td>
+<td>NCBITaxon:585529</td>
+<td>Corynebacterium genitalium ATCC 33030 - Proteome: UP000004208</td>
+</tr>
+<tr>
+<td>SP_9COXI</td>
+<td>NCBITaxon:325775</td>
+<td>Coxiella endosymbiont of Amblyomma americanum - Proteome: UP000059222</td>
+</tr>
+<tr>
+<td>SP_9CREN</td>
+<td>NCBITaxon:671065</td>
+<td>Metallosphaera yellowstonensis MK1 - Proteome: UP000003980</td>
+</tr>
+<tr>
+<td>SP_9CRUS</td>
+<td>NCBITaxon:35525</td>
+<td>Daphnia magna - Proteome: UP000076858</td>
+</tr>
+<tr>
+<td>SP_9CUCU</td>
+<td>NCBITaxon:467358</td>
+<td>Ceutorhynchus assimilis (cabbage seed weevil) - Proteome: UP001152799</td>
+</tr>
+<tr>
+<td>SP_9CYAN</td>
+<td>NCBITaxon:864702</td>
+<td>Leptolyngbyaceae cyanobacterium JSC-12 - Proteome: UP000001332</td>
+</tr>
+<tr>
+<td>SP_9DEIN</td>
+<td>NCBITaxon:2058095</td>
+<td>Meiothermus sp</td>
+</tr>
+<tr>
+<td>SP_9DEIO</td>
+<td>NCBITaxon:1489678</td>
+<td>Deinococcus sp</td>
+</tr>
+<tr>
+<td>SP_9DELA</td>
+<td>NCBITaxon:11908</td>
+<td>Human T-cell leukemia virus type I - Proteome: UP000108043</td>
+</tr>
+<tr>
+<td>SP_9DELT</td>
+<td>NCBITaxon:2211119</td>
+<td>Lujinxingia litoralis - Proteome: UP000249169</td>
+</tr>
+<tr>
+<td>SP_9DEND</td>
+<td>NCBITaxon:269412</td>
+<td>Xiphorhynchus elegans (elegant woodcreeper) - Proteome: UP000551443</td>
+</tr>
+<tr>
+<td>SP_9DINO</td>
+<td>NCBITaxon:1628268</td>
+<td>Symbiodinium necroappetens - Proteome: UP000601435</td>
+</tr>
+<tr>
+<td>SP_9DIPT</td>
+<td>NCBITaxon:568069</td>
+<td>Clunio marinus - Proteome: UP000183832</td>
+</tr>
+<tr>
+<td>SP_9EIME</td>
+<td>NCBITaxon:51316</td>
+<td>Eimeria praecox - Proteome: UP000018201</td>
+</tr>
+<tr>
+<td>SP_9EMBE</td>
+<td>NCBITaxon:337179</td>
+<td>Emberiza fucata - Proteome: UP000580681</td>
+</tr>
+<tr>
+<td>SP_9ENTE</td>
+<td>NCBITaxon:1158606</td>
+<td>Enterococcus asini ATCC 700915 - Proteome: UP000013777</td>
+</tr>
+<tr>
+<td>SP_9ENTR</td>
+<td>NCBITaxon:134287</td>
+<td>secondary endosymbiont of Heteropsylla cubana - Proteome: UP000003937</td>
+</tr>
+<tr>
+<td>SP_9ERIC</td>
+<td>NCBITaxon:262921</td>
+<td>Rhododendron williamsianum - Proteome: UP000428333</td>
+</tr>
+<tr>
+<td>SP_9EUCA</td>
+<td>NCBITaxon:1843537</td>
+<td>Petrolisthes manimaculis - Proteome: UP001292094</td>
+</tr>
+<tr>
+<td>SP_9EUGL</td>
+<td>NCBITaxon:1314962</td>
+<td>Perkinsela sp</td>
+</tr>
+<tr>
+<td>SP_9EUKA</td>
+<td>NCBITaxon:1460289</td>
+<td>Chrysochromulina tobinii - Proteome: UP000037460</td>
+</tr>
+<tr>
+<td>SP_9EUPU</td>
+<td>NCBITaxon:100452</td>
+<td>Candidula unifasciata - Proteome: UP000678393</td>
+</tr>
+<tr>
+<td>SP_9EURO</td>
+<td>NCBITaxon:1182543</td>
+<td>Cladophialophora psammophila CBS 110553 - Proteome: UP000019471</td>
+</tr>
+<tr>
+<td>SP_9EURY</td>
+<td>NCBITaxon:937775</td>
+<td>Methanoplanus limicola DSM 2279 - Proteome: UP000005741</td>
+</tr>
+<tr>
+<td>SP_9FABA</td>
+<td>NCBITaxon:362788</td>
+<td>Senna tora - Proteome: UP000634136</td>
+</tr>
+<tr>
+<td>SP_9FIRM</td>
+<td>NCBITaxon:552398</td>
+<td>Ruminococcaceae bacterium D16 - Proteome: UP000002801</td>
+</tr>
+<tr>
+<td>SP_9FLAO</td>
+<td>NCBITaxon:888059</td>
+<td>Capnocytophaga sp</td>
+</tr>
+<tr>
+<td>SP_9FLAV</td>
+<td>NCBITaxon:3071305</td>
+<td>Tunisian sheep-like pestivirus - Proteome: UP001157330</td>
+</tr>
+<tr>
+<td>SP_9FLOR</td>
+<td>NCBITaxon:448386</td>
+<td>Gracilariopsis chorda - Proteome: UP000247409</td>
+</tr>
+<tr>
+<td>SP_9FRIN</td>
+<td>NCBITaxon:571890</td>
+<td>Urocynchramus pylzowi - Proteome: UP000524542</td>
+</tr>
+<tr>
+<td>SP_9FUNG</td>
+<td>NCBITaxon:1263082</td>
+<td>Lichtheimia corymbifera JMRC:FSU:9682 - Proteome: UP000027586</td>
+</tr>
+<tr>
+<td>SP_9FURN</td>
+<td>NCBITaxon:463165</td>
+<td>Furnarius figulus - Proteome: UP000529852</td>
+</tr>
+<tr>
+<td>SP_9FUSO</td>
+<td>NCBITaxon:469605</td>
+<td>Fusobacterium gonidiaformans 3-1-5R - Proteome: UP000002975</td>
+</tr>
+<tr>
+<td>SP_9GALL</td>
+<td>NCBITaxon:886794</td>
+<td>Odontophorus gujanensis (marbled wood quail) - Proteome: UP000522663</td>
+</tr>
+<tr>
+<td>SP_9GAMA</td>
+<td>NCBITaxon:1504288</td>
+<td>Bovine gammaherpesvirus 6 - Proteome: UP000121539</td>
+</tr>
+<tr>
+<td>SP_9GAMC</td>
+<td>NCBITaxon:2860474</td>
+<td>Anser fabalis coronavirus NCN2 - Proteome: UP001251675</td>
+</tr>
+<tr>
+<td>SP_9GAMM</td>
+<td>NCBITaxon:261317</td>
+<td>Buchnera aphidicola (Cinara tujafilina) - Proteome: UP000006811</td>
+</tr>
+<tr>
+<td>SP_9GAST</td>
+<td>NCBITaxon:231223</td>
+<td>Elysia crispata (lettuce slug) - Proteome: UP001283361</td>
+</tr>
+<tr>
+<td>SP_9GEMI</td>
+<td>NCBITaxon:223275</td>
+<td>East African cassava mosaic Zanzibar virus - Proteome: UP000201107</td>
+</tr>
+<tr>
+<td>SP_9GLOM</td>
+<td>NCBITaxon:144539</td>
+<td>Paraglomus occultum - Proteome: UP000789572</td>
+</tr>
+<tr>
+<td>SP_9GOBI</td>
+<td>NCBITaxon:47308</td>
+<td>Neogobius melanostomus (round goby) - Proteome: UP000694523</td>
+</tr>
+<tr>
+<td>SP_9GRUI</td>
+<td>NCBITaxon:2478892</td>
+<td>Atlantisia rogersi (Inaccessible Island rail) - Proteome: UP000518911</td>
+</tr>
+<tr>
+<td>SP_9HELI</td>
+<td>NCBITaxon:613026</td>
+<td>Helicobacter bilis ATCC 43879 - Proteome: UP000005085</td>
+</tr>
+<tr>
+<td>SP_9HELO</td>
+<td>NCBITaxon:2792576</td>
+<td>Rhynchosporium graminicola - Proteome: UP000178129</td>
+</tr>
+<tr>
+<td>SP_9HEMI</td>
+<td>NCBITaxon:506608</td>
+<td>Cinara cedri - Proteome: UP000325440</td>
+</tr>
+<tr>
+<td>SP_9HEPA</td>
+<td>NCBITaxon:12639</td>
+<td>Duck hepatitis B virus - Proteome: UP000137229</td>
+</tr>
+<tr>
+<td>SP_9HEXA</td>
+<td>NCBITaxon:39272</td>
+<td>Allacma fusca - Proteome: UP000708208</td>
+</tr>
+<tr>
+<td>SP_9HYME</td>
+<td>NCBITaxon:166423</td>
+<td>Melipona quadrifasciata - Proteome: UP000053105</td>
+</tr>
+<tr>
+<td>SP_9HYPH</td>
+<td>NCBITaxon:1082933</td>
+<td>Mesorhizobium amorphae CCNWGS0123 - Proteome: UP000002949</td>
+</tr>
+<tr>
+<td>SP_9HYPO</td>
+<td>NCBITaxon:1531966</td>
+<td>[Torrubiella] hemipterigena - Proteome: UP000039046</td>
+</tr>
+<tr>
+<td>SP_9INFA</td>
+<td>NCBITaxon:1049605</td>
+<td>Influenza A virus (A/California/VRDL364/2009 (mixed) - Proteome: UP000109975</td>
+</tr>
+<tr>
+<td>SP_9INSE</td>
+<td>NCBITaxon:197152</td>
+<td>Cloeon dipterum - Proteome: UP000494165</td>
+</tr>
+<tr>
+<td>SP_9LABR</td>
+<td>NCBITaxon:56723</td>
+<td>Labrus bergylta (ballan wrasse) - Proteome: UP000261660</td>
+</tr>
+</tbody>
+</table>
+<h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
+<h3 id="schema-source">Schema Source</h3>
+<ul>
+<li>from schema: https://w3id.org/linkml/valuesets</li>
+</ul>
+<h2 id="linkml-source">LinkML Source</h2>
+<details>
+
+<pre><code class="language-yaml">name: UniProtSpeciesCode
+description: UniProt species mnemonic codes for reference proteomes with associated
+  metadata
+from_schema: https://w3id.org/linkml/valuesets
+rank: 1000
+permissible_values:
+  SP_9ABAC:
+    text: SP_9ABAC
+    description: 'Lambdina fiscellaria nucleopolyhedrovirus - Proteome: UP000201190'
+    meaning: NCBITaxon:1642929
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000201190
+      tax_id:
+        tag: tax_id
+        value: '1642929'
+      code:
+        tag: code
+        value: 9ABAC
+    title: Lambdina fiscellaria nucleopolyhedrovirus
+  SP_9ACAR:
+    text: SP_9ACAR
+    description: 'Tropilaelaps mercedesae - Proteome: UP000192247'
+    meaning: NCBITaxon:418985
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000192247
+      tax_id:
+        tag: tax_id
+        value: '418985'
+      code:
+        tag: code
+        value: 9ACAR
+    title: Tropilaelaps mercedesae
+  SP_9ACTN:
+    text: SP_9ACTN
+    description: 'Candidatus Protofrankia datiscae - Proteome: UP000001549'
+    meaning: NCBITaxon:2716812
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000001549
+      tax_id:
+        tag: tax_id
+        value: '2716812'
+      code:
+        tag: code
+        value: 9ACTN
+    title: Candidatus Protofrankia datiscae
+  SP_9ACTO:
+    text: SP_9ACTO
+    description: 'Actinomyces massiliensis F0489 - Proteome: UP000002941'
+    meaning: NCBITaxon:1125718
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000002941
+      tax_id:
+        tag: tax_id
+        value: '1125718'
+      code:
+        tag: code
+        value: 9ACTO
+    title: Actinomyces massiliensis F0489
+  SP_9ADEN:
+    text: SP_9ADEN
+    description: 'Human adenovirus 53 - Proteome: UP000463865'
+    meaning: NCBITaxon:556926
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000463865
+      tax_id:
+        tag: tax_id
+        value: '556926'
+      code:
+        tag: code
+        value: 9ADEN
+    title: Human adenovirus 53
+  SP_9AGAM:
+    text: SP_9AGAM
+    description: 'Jaapia argillacea MUCL 33604 - Proteome: UP000027265'
+    meaning: NCBITaxon:933084
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000027265
+      tax_id:
+        tag: tax_id
+        value: '933084'
+      code:
+        tag: code
+        value: 9AGAM
+    title: Jaapia argillacea MUCL 33604
+  SP_9AGAR:
+    text: SP_9AGAR
+    description: 'Collybiopsis luxurians FD-317 M1 - Proteome: UP000053593'
+    meaning: NCBITaxon:944289
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000053593
+      tax_id:
+        tag: tax_id
+        value: '944289'
+      code:
+        tag: code
+        value: 9AGAR
+    title: Collybiopsis luxurians FD-317 M1
+  SP_9ALPC:
+    text: SP_9ALPC
+    description: 'Feline coronavirus - Proteome: UP000141821'
+    meaning: NCBITaxon:12663
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000141821
+      tax_id:
+        tag: tax_id
+        value: '12663'
+      code:
+        tag: code
+        value: 9ALPC
+    title: Feline coronavirus
+  SP_9ALPH:
+    text: SP_9ALPH
+    description: 'Testudinid alphaherpesvirus 3 - Proteome: UP000100290'
+    meaning: NCBITaxon:2560801
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000100290
+      tax_id:
+        tag: tax_id
+        value: '2560801'
+      code:
+        tag: code
+        value: 9ALPH
+    title: Testudinid alphaherpesvirus 3
+  SP_9ALTE:
+    text: SP_9ALTE
+    description: 'Paraglaciecola arctica BSs20135 - Proteome: UP000006327'
+    meaning: NCBITaxon:493475
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000006327
+      tax_id:
+        tag: tax_id
+        value: '493475'
+      code:
+        tag: code
+        value: 9ALTE
+    title: Paraglaciecola arctica BSs20135
+  SP_9ALVE:
+    text: SP_9ALVE
+    description: 'Perkinsus sp. BL_2016 - Proteome: UP000298064'
+    meaning: NCBITaxon:2494336
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000298064
+      tax_id:
+        tag: tax_id
+        value: '2494336'
+      code:
+        tag: code
+        value: 9ALVE
+    title: Perkinsus sp. BL_2016
+  SP_9AMPH:
+    text: SP_9AMPH
+    description: 'Microcaecilia unicolor - Proteome: UP000515156'
+    meaning: NCBITaxon:1415580
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000515156
+      tax_id:
+        tag: tax_id
+        value: '1415580'
+      code:
+        tag: code
+        value: 9AMPH
+    title: Microcaecilia unicolor
+  SP_9ANNE:
+    text: SP_9ANNE
+    description: 'Dimorphilus gyrociliatus - Proteome: UP000549394'
+    meaning: NCBITaxon:2664684
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000549394
+      tax_id:
+        tag: tax_id
+        value: '2664684'
+      code:
+        tag: code
+        value: 9ANNE
+    title: Dimorphilus gyrociliatus
+  SP_9ANUR:
+    text: SP_9ANUR
+    description: 'Leptobrachium leishanense (Leishan spiny toad) - Proteome: UP000694569'
+    meaning: NCBITaxon:445787
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000694569
+      tax_id:
+        tag: tax_id
+        value: '445787'
+      code:
+        tag: code
+        value: 9ANUR
+    title: Leptobrachium leishanense
+  SP_9APHY:
+    text: SP_9APHY
+    description: 'Fibroporia radiculosa - Proteome: UP000006352'
+    meaning: NCBITaxon:599839
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000006352
+      tax_id:
+        tag: tax_id
+        value: '599839'
+      code:
+        tag: code
+        value: 9APHY
+    title: Fibroporia radiculosa
+  SP_9APIA:
+    text: SP_9APIA
+    description: 'Heracleum sosnowskyi - Proteome: UP001237642'
+    meaning: NCBITaxon:360622
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP001237642
+      tax_id:
+        tag: tax_id
+        value: '360622'
+      code:
+        tag: code
+        value: 9APIA
+    title: Heracleum sosnowskyi
+  SP_9APIC:
+    text: SP_9APIC
+    description: 'Babesia sp. Xinjiang - Proteome: UP000193856'
+    meaning: NCBITaxon:462227
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000193856
+      tax_id:
+        tag: tax_id
+        value: '462227'
+      code:
+        tag: code
+        value: 9APIC
+    title: Babesia sp. Xinjiang
+  SP_9AQUI:
+    text: SP_9AQUI
+    description: 'Sulfurihydrogenibium yellowstonense SS-5 - Proteome: UP000005540'
+    meaning: NCBITaxon:432331
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000005540
+      tax_id:
+        tag: tax_id
+        value: '432331'
+      code:
+        tag: code
+        value: 9AQUI
+    title: Sulfurihydrogenibium yellowstonense SS-5
+  SP_9ARAC:
+    text: SP_9ARAC
+    description: 'Trichonephila inaurata madagascariensis - Proteome: UP000886998'
+    meaning: NCBITaxon:2747483
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000886998
+      tax_id:
+        tag: tax_id
+        value: '2747483'
+      code:
+        tag: code
+        value: 9ARAC
+    title: Trichonephila inaurata madagascariensis
+  SP_9ARCH:
+    text: SP_9ARCH
+    description: 'Candidatus Nitrosarchaeum limnium BG20 - Proteome: UP000014065'
+    meaning: NCBITaxon:859192
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000014065
+      tax_id:
+        tag: tax_id
+        value: '859192'
+      code:
+        tag: code
+        value: 9ARCH
+    title: Candidatus Nitrosarchaeum limnium BG20
+  SP_9ASCO:
+    text: SP_9ASCO
+    description: 'Kuraishia capsulata CBS 1993 - Proteome: UP000019384'
+    meaning: NCBITaxon:1382522
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000019384
+      tax_id:
+        tag: tax_id
+        value: '1382522'
+      code:
+        tag: code
+        value: 9ASCO
+    title: Kuraishia capsulata CBS 1993
+  SP_9ASPA:
+    text: SP_9ASPA
+    description: 'Dendrobium catenatum - Proteome: UP000233837'
+    meaning: NCBITaxon:906689
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000233837
+      tax_id:
+        tag: tax_id
+        value: '906689'
+      code:
+        tag: code
+        value: 9ASPA
+    title: Dendrobium catenatum
+  SP_9ASTE:
+    text: SP_9ASTE
+    description: 'Cuscuta australis - Proteome: UP000249390'
+    meaning: NCBITaxon:267555
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000249390
+      tax_id:
+        tag: tax_id
+        value: '267555'
+      code:
+        tag: code
+        value: 9ASTE
+    title: Cuscuta australis
+  SP_9ASTR:
+    text: SP_9ASTR
+    description: 'Mikania micrantha - Proteome: UP000326396'
+    meaning: NCBITaxon:192012
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000326396
+      tax_id:
+        tag: tax_id
+        value: '192012'
+      code:
+        tag: code
+        value: 9ASTR
+    title: Mikania micrantha
+  SP_9AVES:
+    text: SP_9AVES
+    description: 'Anser brachyrhynchus (Pink-footed goose) - Proteome: UP000694426'
+    meaning: NCBITaxon:132585
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000694426
+      tax_id:
+        tag: tax_id
+        value: '132585'
+      code:
+        tag: code
+        value: 9AVES
+    title: Anser brachyrhynchus
+  SP_9BACE:
+    text: SP_9BACE
+    description: 'Bacteroides caccae CL03T12C61 - Proteome: UP000002965'
+    meaning: NCBITaxon:997873
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000002965
+      tax_id:
+        tag: tax_id
+        value: '997873'
+      code:
+        tag: code
+        value: 9BACE
+    title: Bacteroides caccae CL03T12C61
+  SP_9BACI:
+    text: SP_9BACI
+    description: 'Fictibacillus macauensis ZFHKF-1 - Proteome: UP000004080'
+    meaning: NCBITaxon:1196324
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000004080
+      tax_id:
+        tag: tax_id
+        value: '1196324'
+      code:
+        tag: code
+        value: 9BACI
+    title: Fictibacillus macauensis ZFHKF-1
+  SP_9BACL:
+    text: SP_9BACL
+    description: 'Paenibacillus sp. HGF7 - Proteome: UP000003445'
+    meaning: NCBITaxon:944559
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000003445
+      tax_id:
+        tag: tax_id
+        value: '944559'
+      code:
+        tag: code
+        value: 9BACL
+    title: Paenibacillus sp. HGF7
+  SP_9BACT:
+    text: SP_9BACT
+    description: 'Parabacteroides johnsonii CL02T12C29 - Proteome: UP000001218'
+    meaning: NCBITaxon:999419
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000001218
+      tax_id:
+        tag: tax_id
+        value: '999419'
+      code:
+        tag: code
+        value: 9BACT
+    title: Parabacteroides johnsonii CL02T12C29
+  SP_9BACU:
+    text: SP_9BACU
+    description: 'Samia ricini nucleopolyhedrovirus - Proteome: UP001226138'
+    meaning: NCBITaxon:1920700
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP001226138
+      tax_id:
+        tag: tax_id
+        value: '1920700'
+      code:
+        tag: code
+        value: 9BACU
+    title: Samia ricini nucleopolyhedrovirus
+  SP_9BASI:
+    text: SP_9BASI
+    description: 'Malassezia pachydermatis - Proteome: UP000037751'
+    meaning: NCBITaxon:77020
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000037751
+      tax_id:
+        tag: tax_id
+        value: '77020'
+      code:
+        tag: code
+        value: 9BASI
+    title: Malassezia pachydermatis
+  SP_9BBAC:
+    text: SP_9BBAC
+    description: 'Plutella xylostella granulovirus - Proteome: UP000201310'
+    meaning: NCBITaxon:98383
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000201310
+      tax_id:
+        tag: tax_id
+        value: '98383'
+      code:
+        tag: code
+        value: 9BBAC
+    title: Plutella xylostella granulovirus
+  SP_9BETA:
+    text: SP_9BETA
+    description: 'Saimiriine betaherpesvirus 4 - Proteome: UP000097892'
+    meaning: NCBITaxon:1535247
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000097892
+      tax_id:
+        tag: tax_id
+        value: '1535247'
+      code:
+        tag: code
+        value: 9BETA
+    title: Saimiriine betaherpesvirus 4
+  SP_9BETC:
+    text: SP_9BETC
+    description: 'Coronavirus BtRt-BetaCoV/GX2018 - Proteome: UP001228689'
+    meaning: NCBITaxon:2591238
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP001228689
+      tax_id:
+        tag: tax_id
+        value: '2591238'
+      code:
+        tag: code
+        value: 9BETC
+    title: Coronavirus BtRt-BetaCoV/GX2018
+  SP_9BIFI:
+    text: SP_9BIFI
+    description: 'Scardovia wiggsiae F0424 - Proteome: UP000006415'
+    meaning: NCBITaxon:857290
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000006415
+      tax_id:
+        tag: tax_id
+        value: '857290'
+      code:
+        tag: code
+        value: 9BIFI
+    title: Scardovia wiggsiae F0424
+  SP_9BILA:
+    text: SP_9BILA
+    description: 'Ancylostoma ceylanicum - Proteome: UP000024635'
+    meaning: NCBITaxon:53326
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000024635
+      tax_id:
+        tag: tax_id
+        value: '53326'
+      code:
+        tag: code
+        value: 9BILA
+    title: Ancylostoma ceylanicum
+  SP_9BIVA:
+    text: SP_9BIVA
+    description: 'Potamilus streckersoni - Proteome: UP001195483'
+    meaning: NCBITaxon:2493646
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP001195483
+      tax_id:
+        tag: tax_id
+        value: '2493646'
+      code:
+        tag: code
+        value: 9BIVA
+    title: Potamilus streckersoni
+  SP_9BORD:
+    text: SP_9BORD
+    description: 'Bordetella sp. N - Proteome: UP000064621'
+    meaning: NCBITaxon:1746199
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000064621
+      tax_id:
+        tag: tax_id
+        value: '1746199'
+      code:
+        tag: code
+        value: 9BORD
+    title: Bordetella sp. N
+  SP_9BRAD:
+    text: SP_9BRAD
+    description: 'Afipia broomeae ATCC 49717 - Proteome: UP000001096'
+    meaning: NCBITaxon:883078
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000001096
+      tax_id:
+        tag: tax_id
+        value: '883078'
+      code:
+        tag: code
+        value: 9BRAD
+    title: Afipia broomeae ATCC 49717
+  SP_9BRAS:
+    text: SP_9BRAS
+    description: 'Capsella rubella - Proteome: UP000029121'
+    meaning: NCBITaxon:81985
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000029121
+      tax_id:
+        tag: tax_id
+        value: '81985'
+      code:
+        tag: code
+        value: 9BRAS
+    title: Capsella rubella
+  SP_9BROM:
+    text: SP_9BROM
+    description: 'Prune dwarf virus - Proteome: UP000202132'
+    meaning: NCBITaxon:33760
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000202132
+      tax_id:
+        tag: tax_id
+        value: '33760'
+      code:
+        tag: code
+        value: 9BROM
+    title: Prune dwarf virus
+  SP_9BURK:
+    text: SP_9BURK
+    description: 'Candidatus Paraburkholderia kirkii UZHbot1 - Proteome: UP000003511'
+    meaning: NCBITaxon:1055526
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000003511
+      tax_id:
+        tag: tax_id
+        value: '1055526'
+      code:
+        tag: code
+        value: 9BURK
+    title: Candidatus Paraburkholderia kirkii UZHbot1
+  SP_9CARY:
+    text: SP_9CARY
+    description: 'Carnegiea gigantea - Proteome: UP001153076'
+    meaning: NCBITaxon:171969
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP001153076
+      tax_id:
+        tag: tax_id
+        value: '171969'
+      code:
+        tag: code
+        value: 9CARY
+    title: Carnegiea gigantea
+  SP_9CAUD:
+    text: SP_9CAUD
+    description: 'Salmonella phage Vi06 - Proteome: UP000000335'
+    meaning: NCBITaxon:866889
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000000335
+      tax_id:
+        tag: tax_id
+        value: '866889'
+      code:
+        tag: code
+        value: 9CAUD
+    title: Salmonella phage Vi06
+  SP_9CAUL:
+    text: SP_9CAUL
+    description: 'Brevundimonas abyssalis TAR-001 - Proteome: UP000016569'
+    meaning: NCBITaxon:1391729
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000016569
+      tax_id:
+        tag: tax_id
+        value: '1391729'
+      code:
+        tag: code
+        value: 9CAUL
+    title: Brevundimonas abyssalis TAR-001
+  SP_9CBAC:
+    text: SP_9CBAC
+    description: 'Neodiprion sertifer nucleopolyhedrovirus - Proteome: UP000243697'
+    meaning: NCBITaxon:111874
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000243697
+      tax_id:
+        tag: tax_id
+        value: '111874'
+      code:
+        tag: code
+        value: 9CBAC
+    title: Neodiprion sertifer nucleopolyhedrovirus
+  SP_9CELL:
+    text: SP_9CELL
+    description: 'Actinotalea ferrariae CF5-4 - Proteome: UP000019753'
+    meaning: NCBITaxon:948458
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000019753
+      tax_id:
+        tag: tax_id
+        value: '948458'
+      code:
+        tag: code
+        value: 9CELL
+    title: Actinotalea ferrariae CF5-4
+  SP_9CERV:
+    text: SP_9CERV
+    description: 'Cervus hanglu yarkandensis (Yarkand deer) - Proteome: UP000631465'
+    meaning: NCBITaxon:84702
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000631465
+      tax_id:
+        tag: tax_id
+        value: '84702'
+      code:
+        tag: code
+        value: 9CERV
+    title: Cervus hanglu yarkandensis
+  SP_9CETA:
+    text: SP_9CETA
+    description: 'Catagonus wagneri (Chacoan peccary) - Proteome: UP000694540'
+    meaning: NCBITaxon:51154
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000694540
+      tax_id:
+        tag: tax_id
+        value: '51154'
+      code:
+        tag: code
+        value: 9CETA
+    title: Catagonus wagneri
+  SP_9CHAR:
+    text: SP_9CHAR
+    description: 'Rostratula benghalensis (greater painted-snipe) - Proteome: UP000545435'
+    meaning: NCBITaxon:118793
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000545435
+      tax_id:
+        tag: tax_id
+        value: '118793'
+      code:
+        tag: code
+        value: 9CHAR
+    title: Rostratula benghalensis
+  SP_9CHIR:
+    text: SP_9CHIR
+    description: 'Phyllostomus discolor (pale spear-nosed bat) - Proteome: UP000504628'
+    meaning: NCBITaxon:89673
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000504628
+      tax_id:
+        tag: tax_id
+        value: '89673'
+      code:
+        tag: code
+        value: 9CHIR
+    title: Phyllostomus discolor
+  SP_9CHLA:
+    text: SP_9CHLA
+    description: 'Chlamydiales bacterium SCGC AG-110-P3 - Proteome: UP000196763'
+    meaning: NCBITaxon:1871323
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000196763
+      tax_id:
+        tag: tax_id
+        value: '1871323'
+      code:
+        tag: code
+        value: 9CHLA
+    title: Chlamydiales bacterium SCGC AG-110-P3
+  SP_9CHLB:
+    text: SP_9CHLB
+    description: 'Chlorobium ferrooxidans DSM 13031 - Proteome: UP000004162'
+    meaning: NCBITaxon:377431
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000004162
+      tax_id:
+        tag: tax_id
+        value: '377431'
+      code:
+        tag: code
+        value: 9CHLB
+    title: Chlorobium ferrooxidans DSM 13031
+  SP_9CHLO:
+    text: SP_9CHLO
+    description: 'Helicosporidium sp. ATCC 50920 - Proteome: UP000026042'
+    meaning: NCBITaxon:1291522
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000026042
+      tax_id:
+        tag: tax_id
+        value: '1291522'
+      code:
+        tag: code
+        value: 9CHLO
+    title: Helicosporidium sp. ATCC 50920
+  SP_9CHLR:
+    text: SP_9CHLR
+    description: 'Ardenticatena maritima - Proteome: UP000037784'
+    meaning: NCBITaxon:872965
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000037784
+      tax_id:
+        tag: tax_id
+        value: '872965'
+      code:
+        tag: code
+        value: 9CHLR
+    title: Ardenticatena maritima
+  SP_9CHRO:
+    text: SP_9CHRO
+    description: 'Gloeocapsa sp. PCC 7428 - Proteome: UP000010476'
+    meaning: NCBITaxon:1173026
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000010476
+      tax_id:
+        tag: tax_id
+        value: '1173026'
+      code:
+        tag: code
+        value: 9CHRO
+    title: Gloeocapsa sp. PCC 7428
+  SP_9CICH:
+    text: SP_9CICH
+    description: 'Maylandia zebra (zebra mbuna) - Proteome: UP000265160'
+    meaning: NCBITaxon:106582
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000265160
+      tax_id:
+        tag: tax_id
+        value: '106582'
+      code:
+        tag: code
+        value: 9CICH
+    title: Maylandia zebra
+  SP_9CILI:
+    text: SP_9CILI
+    description: 'Stentor coeruleus - Proteome: UP000187209'
+    meaning: NCBITaxon:5963
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000187209
+      tax_id:
+        tag: tax_id
+        value: '5963'
+      code:
+        tag: code
+        value: 9CILI
+    title: Stentor coeruleus
+  SP_9CIRC:
+    text: SP_9CIRC
+    description: 'Raven circovirus - Proteome: UP000097131'
+    meaning: NCBITaxon:345250
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000097131
+      tax_id:
+        tag: tax_id
+        value: '345250'
+      code:
+        tag: code
+        value: 9CIRC
+    title: Raven circovirus
+  SP_9CLOS:
+    text: SP_9CLOS
+    description: 'Grapevine leafroll-associated virus 10 - Proteome: UP000203128'
+    meaning: NCBITaxon:367121
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000203128
+      tax_id:
+        tag: tax_id
+        value: '367121'
+      code:
+        tag: code
+        value: 9CLOS
+    title: Grapevine leafroll-associated virus 10
+  SP_9CLOT:
+    text: SP_9CLOT
+    description: 'Candidatus Arthromitus sp. SFB-rat-Yit - Proteome: UP000001273'
+    meaning: NCBITaxon:1041504
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000001273
+      tax_id:
+        tag: tax_id
+        value: '1041504'
+      code:
+        tag: code
+        value: 9CLOT
+    title: Candidatus Arthromitus sp. SFB-rat-Yit
+  SP_9CNID:
+    text: SP_9CNID
+    description: 'Clytia hemisphaerica - Proteome: UP000594262'
+    meaning: NCBITaxon:252671
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000594262
+      tax_id:
+        tag: tax_id
+        value: '252671'
+      code:
+        tag: code
+        value: 9CNID
+    title: Clytia hemisphaerica
+  SP_9COLU:
+    text: SP_9COLU
+    description: 'Pampusana beccarii (Western bronze ground-dove) - Proteome: UP000541332'
+    meaning: NCBITaxon:2953425
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000541332
+      tax_id:
+        tag: tax_id
+        value: '2953425'
+      code:
+        tag: code
+        value: 9COLU
+    title: Pampusana beccarii
+  SP_9CORV:
+    text: SP_9CORV
+    description: 'Cnemophilus loriae (Loria''s bird-of-paradise) - Proteome: UP000517678'
+    meaning: NCBITaxon:254448
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000517678
+      tax_id:
+        tag: tax_id
+        value: '254448'
+      code:
+        tag: code
+        value: 9CORV
+    title: Cnemophilus loriae
+  SP_9CORY:
+    text: SP_9CORY
+    description: 'Corynebacterium genitalium ATCC 33030 - Proteome: UP000004208'
+    meaning: NCBITaxon:585529
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000004208
+      tax_id:
+        tag: tax_id
+        value: '585529'
+      code:
+        tag: code
+        value: 9CORY
+    title: Corynebacterium genitalium ATCC 33030
+  SP_9COXI:
+    text: SP_9COXI
+    description: 'Coxiella endosymbiont of Amblyomma americanum - Proteome: UP000059222'
+    meaning: NCBITaxon:325775
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000059222
+      tax_id:
+        tag: tax_id
+        value: '325775'
+      code:
+        tag: code
+        value: 9COXI
+    title: Coxiella endosymbiont of Amblyomma americanum
+  SP_9CREN:
+    text: SP_9CREN
+    description: 'Metallosphaera yellowstonensis MK1 - Proteome: UP000003980'
+    meaning: NCBITaxon:671065
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000003980
+      tax_id:
+        tag: tax_id
+        value: '671065'
+      code:
+        tag: code
+        value: 9CREN
+    title: Metallosphaera yellowstonensis MK1
+  SP_9CRUS:
+    text: SP_9CRUS
+    description: 'Daphnia magna - Proteome: UP000076858'
+    meaning: NCBITaxon:35525
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000076858
+      tax_id:
+        tag: tax_id
+        value: '35525'
+      code:
+        tag: code
+        value: 9CRUS
+    title: Daphnia magna
+  SP_9CUCU:
+    text: SP_9CUCU
+    description: 'Ceutorhynchus assimilis (cabbage seed weevil) - Proteome: UP001152799'
+    meaning: NCBITaxon:467358
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP001152799
+      tax_id:
+        tag: tax_id
+        value: '467358'
+      code:
+        tag: code
+        value: 9CUCU
+    title: Ceutorhynchus assimilis
+  SP_9CYAN:
+    text: SP_9CYAN
+    description: 'Leptolyngbyaceae cyanobacterium JSC-12 - Proteome: UP000001332'
+    meaning: NCBITaxon:864702
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000001332
+      tax_id:
+        tag: tax_id
+        value: '864702'
+      code:
+        tag: code
+        value: 9CYAN
+    title: Leptolyngbyaceae cyanobacterium JSC-12
+  SP_9DEIN:
+    text: SP_9DEIN
+    description: 'Meiothermus sp. QL-1 - Proteome: UP000255346'
+    meaning: NCBITaxon:2058095
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000255346
+      tax_id:
+        tag: tax_id
+        value: '2058095'
+      code:
+        tag: code
+        value: 9DEIN
+    title: Meiothermus sp. QL-1
+  SP_9DEIO:
+    text: SP_9DEIO
+    description: 'Deinococcus sp. RL - Proteome: UP000027898'
+    meaning: NCBITaxon:1489678
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000027898
+      tax_id:
+        tag: tax_id
+        value: '1489678'
+      code:
+        tag: code
+        value: 9DEIO
+    title: Deinococcus sp. RL
+  SP_9DELA:
+    text: SP_9DELA
+    description: 'Human T-cell leukemia virus type I - Proteome: UP000108043'
+    meaning: NCBITaxon:11908
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000108043
+      tax_id:
+        tag: tax_id
+        value: '11908'
+      code:
+        tag: code
+        value: 9DELA
+    title: Human T-cell leukemia virus type I
+  SP_9DELT:
+    text: SP_9DELT
+    description: 'Lujinxingia litoralis - Proteome: UP000249169'
+    meaning: NCBITaxon:2211119
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000249169
+      tax_id:
+        tag: tax_id
+        value: '2211119'
+      code:
+        tag: code
+        value: 9DELT
+    title: Lujinxingia litoralis
+  SP_9DEND:
+    text: SP_9DEND
+    description: 'Xiphorhynchus elegans (elegant woodcreeper) - Proteome: UP000551443'
+    meaning: NCBITaxon:269412
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000551443
+      tax_id:
+        tag: tax_id
+        value: '269412'
+      code:
+        tag: code
+        value: 9DEND
+    title: Xiphorhynchus elegans
+  SP_9DINO:
+    text: SP_9DINO
+    description: 'Symbiodinium necroappetens - Proteome: UP000601435'
+    meaning: NCBITaxon:1628268
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000601435
+      tax_id:
+        tag: tax_id
+        value: '1628268'
+      code:
+        tag: code
+        value: 9DINO
+    title: Symbiodinium necroappetens
+  SP_9DIPT:
+    text: SP_9DIPT
+    description: 'Clunio marinus - Proteome: UP000183832'
+    meaning: NCBITaxon:568069
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000183832
+      tax_id:
+        tag: tax_id
+        value: '568069'
+      code:
+        tag: code
+        value: 9DIPT
+    title: Clunio marinus
+  SP_9EIME:
+    text: SP_9EIME
+    description: 'Eimeria praecox - Proteome: UP000018201'
+    meaning: NCBITaxon:51316
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000018201
+      tax_id:
+        tag: tax_id
+        value: '51316'
+      code:
+        tag: code
+        value: 9EIME
+    title: Eimeria praecox
+  SP_9EMBE:
+    text: SP_9EMBE
+    description: 'Emberiza fucata - Proteome: UP000580681'
+    meaning: NCBITaxon:337179
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000580681
+      tax_id:
+        tag: tax_id
+        value: '337179'
+      code:
+        tag: code
+        value: 9EMBE
+    title: Emberiza fucata
+  SP_9ENTE:
+    text: SP_9ENTE
+    description: 'Enterococcus asini ATCC 700915 - Proteome: UP000013777'
+    meaning: NCBITaxon:1158606
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000013777
+      tax_id:
+        tag: tax_id
+        value: '1158606'
+      code:
+        tag: code
+        value: 9ENTE
+    title: Enterococcus asini ATCC 700915
+  SP_9ENTR:
+    text: SP_9ENTR
+    description: 'secondary endosymbiont of Heteropsylla cubana - Proteome: UP000003937'
+    meaning: NCBITaxon:134287
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000003937
+      tax_id:
+        tag: tax_id
+        value: '134287'
+      code:
+        tag: code
+        value: 9ENTR
+    title: secondary endosymbiont of Heteropsylla cubana
+  SP_9ERIC:
+    text: SP_9ERIC
+    description: 'Rhododendron williamsianum - Proteome: UP000428333'
+    meaning: NCBITaxon:262921
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000428333
+      tax_id:
+        tag: tax_id
+        value: '262921'
+      code:
+        tag: code
+        value: 9ERIC
+    title: Rhododendron williamsianum
+  SP_9EUCA:
+    text: SP_9EUCA
+    description: 'Petrolisthes manimaculis - Proteome: UP001292094'
+    meaning: NCBITaxon:1843537
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP001292094
+      tax_id:
+        tag: tax_id
+        value: '1843537'
+      code:
+        tag: code
+        value: 9EUCA
+    title: Petrolisthes manimaculis
+  SP_9EUGL:
+    text: SP_9EUGL
+    description: 'Perkinsela sp. CCAP 1560/4 - Proteome: UP000036983'
+    meaning: NCBITaxon:1314962
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000036983
+      tax_id:
+        tag: tax_id
+        value: '1314962'
+      code:
+        tag: code
+        value: 9EUGL
+    title: Perkinsela sp. CCAP 1560/4
+  SP_9EUKA:
+    text: SP_9EUKA
+    description: 'Chrysochromulina tobinii - Proteome: UP000037460'
+    meaning: NCBITaxon:1460289
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000037460
+      tax_id:
+        tag: tax_id
+        value: '1460289'
+      code:
+        tag: code
+        value: 9EUKA
+    title: Chrysochromulina tobinii
+  SP_9EUPU:
+    text: SP_9EUPU
+    description: 'Candidula unifasciata - Proteome: UP000678393'
+    meaning: NCBITaxon:100452
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000678393
+      tax_id:
+        tag: tax_id
+        value: '100452'
+      code:
+        tag: code
+        value: 9EUPU
+    title: Candidula unifasciata
+  SP_9EURO:
+    text: SP_9EURO
+    description: 'Cladophialophora psammophila CBS 110553 - Proteome: UP000019471'
+    meaning: NCBITaxon:1182543
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000019471
+      tax_id:
+        tag: tax_id
+        value: '1182543'
+      code:
+        tag: code
+        value: 9EURO
+    title: Cladophialophora psammophila CBS 110553
+  SP_9EURY:
+    text: SP_9EURY
+    description: 'Methanoplanus limicola DSM 2279 - Proteome: UP000005741'
+    meaning: NCBITaxon:937775
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000005741
+      tax_id:
+        tag: tax_id
+        value: '937775'
+      code:
+        tag: code
+        value: 9EURY
+    title: Methanoplanus limicola DSM 2279
+  SP_9FABA:
+    text: SP_9FABA
+    description: 'Senna tora - Proteome: UP000634136'
+    meaning: NCBITaxon:362788
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000634136
+      tax_id:
+        tag: tax_id
+        value: '362788'
+      code:
+        tag: code
+        value: 9FABA
+    title: Senna tora
+  SP_9FIRM:
+    text: SP_9FIRM
+    description: 'Ruminococcaceae bacterium D16 - Proteome: UP000002801'
+    meaning: NCBITaxon:552398
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000002801
+      tax_id:
+        tag: tax_id
+        value: '552398'
+      code:
+        tag: code
+        value: 9FIRM
+    title: Ruminococcaceae bacterium D16
+  SP_9FLAO:
+    text: SP_9FLAO
+    description: 'Capnocytophaga sp. oral taxon 338 str. F0234 - Proteome: UP000003023'
+    meaning: NCBITaxon:888059
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000003023
+      tax_id:
+        tag: tax_id
+        value: '888059'
+      code:
+        tag: code
+        value: 9FLAO
+    title: Capnocytophaga sp. oral taxon 338 str. F0234
+  SP_9FLAV:
+    text: SP_9FLAV
+    description: 'Tunisian sheep-like pestivirus - Proteome: UP001157330'
+    meaning: NCBITaxon:3071305
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP001157330
+      tax_id:
+        tag: tax_id
+        value: '3071305'
+      code:
+        tag: code
+        value: 9FLAV
+    title: Tunisian sheep-like pestivirus
+  SP_9FLOR:
+    text: SP_9FLOR
+    description: 'Gracilariopsis chorda - Proteome: UP000247409'
+    meaning: NCBITaxon:448386
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000247409
+      tax_id:
+        tag: tax_id
+        value: '448386'
+      code:
+        tag: code
+        value: 9FLOR
+    title: Gracilariopsis chorda
+  SP_9FRIN:
+    text: SP_9FRIN
+    description: 'Urocynchramus pylzowi - Proteome: UP000524542'
+    meaning: NCBITaxon:571890
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000524542
+      tax_id:
+        tag: tax_id
+        value: '571890'
+      code:
+        tag: code
+        value: 9FRIN
+    title: Urocynchramus pylzowi
+  SP_9FUNG:
+    text: SP_9FUNG
+    description: 'Lichtheimia corymbifera JMRC:FSU:9682 - Proteome: UP000027586'
+    meaning: NCBITaxon:1263082
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000027586
+      tax_id:
+        tag: tax_id
+        value: '1263082'
+      code:
+        tag: code
+        value: 9FUNG
+    title: Lichtheimia corymbifera JMRC:FSU:9682
+  SP_9FURN:
+    text: SP_9FURN
+    description: 'Furnarius figulus - Proteome: UP000529852'
+    meaning: NCBITaxon:463165
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000529852
+      tax_id:
+        tag: tax_id
+        value: '463165'
+      code:
+        tag: code
+        value: 9FURN
+    title: Furnarius figulus
+  SP_9FUSO:
+    text: SP_9FUSO
+    description: 'Fusobacterium gonidiaformans 3-1-5R - Proteome: UP000002975'
+    meaning: NCBITaxon:469605
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000002975
+      tax_id:
+        tag: tax_id
+        value: '469605'
+      code:
+        tag: code
+        value: 9FUSO
+    title: Fusobacterium gonidiaformans 3-1-5R
+  SP_9GALL:
+    text: SP_9GALL
+    description: 'Odontophorus gujanensis (marbled wood quail) - Proteome: UP000522663'
+    meaning: NCBITaxon:886794
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000522663
+      tax_id:
+        tag: tax_id
+        value: '886794'
+      code:
+        tag: code
+        value: 9GALL
+    title: Odontophorus gujanensis
+  SP_9GAMA:
+    text: SP_9GAMA
+    description: 'Bovine gammaherpesvirus 6 - Proteome: UP000121539'
+    meaning: NCBITaxon:1504288
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000121539
+      tax_id:
+        tag: tax_id
+        value: '1504288'
+      code:
+        tag: code
+        value: 9GAMA
+    title: Bovine gammaherpesvirus 6
+  SP_9GAMC:
+    text: SP_9GAMC
+    description: 'Anser fabalis coronavirus NCN2 - Proteome: UP001251675'
+    meaning: NCBITaxon:2860474
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP001251675
+      tax_id:
+        tag: tax_id
+        value: '2860474'
+      code:
+        tag: code
+        value: 9GAMC
+    title: Anser fabalis coronavirus NCN2
+  SP_9GAMM:
+    text: SP_9GAMM
+    description: 'Buchnera aphidicola (Cinara tujafilina) - Proteome: UP000006811'
+    meaning: NCBITaxon:261317
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000006811
+      tax_id:
+        tag: tax_id
+        value: '261317'
+      code:
+        tag: code
+        value: 9GAMM
+    title: Buchnera aphidicola
+    aliases:
+    - Buchnera aphidicola (Cinara tujafilina)
+  SP_9GAST:
+    text: SP_9GAST
+    description: 'Elysia crispata (lettuce slug) - Proteome: UP001283361'
+    meaning: NCBITaxon:231223
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP001283361
+      tax_id:
+        tag: tax_id
+        value: '231223'
+      code:
+        tag: code
+        value: 9GAST
+    title: Elysia crispata
+  SP_9GEMI:
+    text: SP_9GEMI
+    description: 'East African cassava mosaic Zanzibar virus - Proteome: UP000201107'
+    meaning: NCBITaxon:223275
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000201107
+      tax_id:
+        tag: tax_id
+        value: '223275'
+      code:
+        tag: code
+        value: 9GEMI
+    title: East African cassava mosaic Zanzibar virus
+  SP_9GLOM:
+    text: SP_9GLOM
+    description: 'Paraglomus occultum - Proteome: UP000789572'
+    meaning: NCBITaxon:144539
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000789572
+      tax_id:
+        tag: tax_id
+        value: '144539'
+      code:
+        tag: code
+        value: 9GLOM
+    title: Paraglomus occultum
+  SP_9GOBI:
+    text: SP_9GOBI
+    description: 'Neogobius melanostomus (round goby) - Proteome: UP000694523'
+    meaning: NCBITaxon:47308
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000694523
+      tax_id:
+        tag: tax_id
+        value: '47308'
+      code:
+        tag: code
+        value: 9GOBI
+    title: Neogobius melanostomus
+  SP_9GRUI:
+    text: SP_9GRUI
+    description: 'Atlantisia rogersi (Inaccessible Island rail) - Proteome: UP000518911'
+    meaning: NCBITaxon:2478892
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000518911
+      tax_id:
+        tag: tax_id
+        value: '2478892'
+      code:
+        tag: code
+        value: 9GRUI
+    title: Atlantisia rogersi
+  SP_9HELI:
+    text: SP_9HELI
+    description: 'Helicobacter bilis ATCC 43879 - Proteome: UP000005085'
+    meaning: NCBITaxon:613026
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000005085
+      tax_id:
+        tag: tax_id
+        value: '613026'
+      code:
+        tag: code
+        value: 9HELI
+    title: Helicobacter bilis ATCC 43879
+  SP_9HELO:
+    text: SP_9HELO
+    description: 'Rhynchosporium graminicola - Proteome: UP000178129'
+    meaning: NCBITaxon:2792576
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000178129
+      tax_id:
+        tag: tax_id
+        value: '2792576'
+      code:
+        tag: code
+        value: 9HELO
+    title: Rhynchosporium graminicola
+  SP_9HEMI:
+    text: SP_9HEMI
+    description: 'Cinara cedri - Proteome: UP000325440'
+    meaning: NCBITaxon:506608
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000325440
+      tax_id:
+        tag: tax_id
+        value: '506608'
+      code:
+        tag: code
+        value: 9HEMI
+    title: Cinara cedri
+  SP_9HEPA:
+    text: SP_9HEPA
+    description: 'Duck hepatitis B virus - Proteome: UP000137229'
+    meaning: NCBITaxon:12639
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000137229
+      tax_id:
+        tag: tax_id
+        value: '12639'
+      code:
+        tag: code
+        value: 9HEPA
+    title: Duck hepatitis B virus
+  SP_9HEXA:
+    text: SP_9HEXA
+    description: 'Allacma fusca - Proteome: UP000708208'
+    meaning: NCBITaxon:39272
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000708208
+      tax_id:
+        tag: tax_id
+        value: '39272'
+      code:
+        tag: code
+        value: 9HEXA
+    title: Allacma fusca
+  SP_9HYME:
+    text: SP_9HYME
+    description: 'Melipona quadrifasciata - Proteome: UP000053105'
+    meaning: NCBITaxon:166423
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000053105
+      tax_id:
+        tag: tax_id
+        value: '166423'
+      code:
+        tag: code
+        value: 9HYME
+    title: Melipona quadrifasciata
+  SP_9HYPH:
+    text: SP_9HYPH
+    description: 'Mesorhizobium amorphae CCNWGS0123 - Proteome: UP000002949'
+    meaning: NCBITaxon:1082933
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000002949
+      tax_id:
+        tag: tax_id
+        value: '1082933'
+      code:
+        tag: code
+        value: 9HYPH
+    title: Mesorhizobium amorphae CCNWGS0123
+  SP_9HYPO:
+    text: SP_9HYPO
+    description: '[Torrubiella] hemipterigena - Proteome: UP000039046'
+    meaning: NCBITaxon:1531966
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000039046
+      tax_id:
+        tag: tax_id
+        value: '1531966'
+      code:
+        tag: code
+        value: 9HYPO
+    title: '[Torrubiella] hemipterigena'
+  SP_9INFA:
+    text: SP_9INFA
+    description: 'Influenza A virus (A/California/VRDL364/2009 (mixed) - Proteome:
+      UP000109975'
+    meaning: NCBITaxon:1049605
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000109975
+      tax_id:
+        tag: tax_id
+        value: '1049605'
+      code:
+        tag: code
+        value: 9INFA
+    title: Influenza A virus (A/California/VRDL364/2009
+    aliases:
+    - Influenza A virus (A/California/VRDL364/2009(mixed))
+  SP_9INSE:
+    text: SP_9INSE
+    description: 'Cloeon dipterum - Proteome: UP000494165'
+    meaning: NCBITaxon:197152
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000494165
+      tax_id:
+        tag: tax_id
+        value: '197152'
+      code:
+        tag: code
+        value: 9INSE
+    title: Cloeon dipterum
+  SP_9LABR:
+    text: SP_9LABR
+    description: 'Labrus bergylta (ballan wrasse) - Proteome: UP000261660'
+    meaning: NCBITaxon:56723
+    annotations:
+      proteome_id:
+        tag: proteome_id
+        value: UP000261660
+    title: Labrus bergylta
+
+</code></pre>
+
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.tabs.link"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>
