@@ -1,8 +1,14 @@
+# Ignore the old location of merged hierarchy (now in src/valuesets/merged/)
+# merged_hierarchy.yaml
 *.bak
 *.bak2
 *.bak3
 *.bak4
 *.backup
+
+# may be too large
+src/valuesets/expanded/
+expanded/
 
 # generated part of documentation
 /docs/elements/*.md

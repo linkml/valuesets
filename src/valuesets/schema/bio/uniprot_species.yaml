@@ -1,0 +1,960 @@
+id: https://w3id.org/common-value-sets/uniprot_species
+name: uniprot_species
+title: UniProt Species Codes Value Sets
+description: Value sets for UniProt species mnemonic codes with associated proteome
+  IDs
+imports:
+- linkml:types
+prefixes:
+  CVS: https://w3id.org/common-value-sets/
+  linkml: https://w3id.org/linkml/
+  NCBITaxon: http://purl.obolibrary.org/obo/NCBITaxon_
+  UniProt: http://purl.uniprot.org/proteomes/
+default_prefix: CVS
+default_range: string
+enums:
+  UniProtSpeciesCode:
+    description: UniProt species mnemonic codes for reference proteomes with associated
+      metadata
+    permissible_values:
+      SP_9ABAC:
+        description: 'Lambdina fiscellaria nucleopolyhedrovirus - Proteome: UP000201190'
+        meaning: NCBITaxon:1642929
+        title: Lambdina fiscellaria nucleopolyhedrovirus
+        annotations:
+          proteome_id: UP000201190
+          tax_id: '1642929'
+          code: 9ABAC
+      SP_9ACAR:
+        description: 'Tropilaelaps mercedesae - Proteome: UP000192247'
+        meaning: NCBITaxon:418985
+        title: Tropilaelaps mercedesae
+        annotations:
+          proteome_id: UP000192247
+          tax_id: '418985'
+          code: 9ACAR
+      SP_9ACTN:
+        description: 'Candidatus Protofrankia datiscae - Proteome: UP000001549'
+        meaning: NCBITaxon:2716812
+        title: Candidatus Protofrankia datiscae
+        annotations:
+          proteome_id: UP000001549
+          tax_id: '2716812'
+          code: 9ACTN
+      SP_9ACTO:
+        description: 'Actinomyces massiliensis F0489 - Proteome: UP000002941'
+        meaning: NCBITaxon:1125718
+        title: Actinomyces massiliensis F0489
+        annotations:
+          proteome_id: UP000002941
+          tax_id: '1125718'
+          code: 9ACTO
+      SP_9ADEN:
+        description: 'Human adenovirus 53 - Proteome: UP000463865'
+        meaning: NCBITaxon:556926
+        title: Human adenovirus 53
+        annotations:
+          proteome_id: UP000463865
+          tax_id: '556926'
+          code: 9ADEN
+      SP_9AGAM:
+        description: 'Jaapia argillacea MUCL 33604 - Proteome: UP000027265'
+        meaning: NCBITaxon:933084
+        title: Jaapia argillacea MUCL 33604
+        annotations:
+          proteome_id: UP000027265
+          tax_id: '933084'
+          code: 9AGAM
+      SP_9AGAR:
+        description: 'Collybiopsis luxurians FD-317 M1 - Proteome: UP000053593'
+        meaning: NCBITaxon:944289
+        title: Collybiopsis luxurians FD-317 M1
+        annotations:
+          proteome_id: UP000053593
+          tax_id: '944289'
+          code: 9AGAR
+      SP_9ALPC:
+        description: 'Feline coronavirus - Proteome: UP000141821'
+        meaning: NCBITaxon:12663
+        title: Feline coronavirus
+        annotations:
+          proteome_id: UP000141821
+          tax_id: '12663'
+          code: 9ALPC
+      SP_9ALPH:
+        description: 'Testudinid alphaherpesvirus 3 - Proteome: UP000100290'
+        meaning: NCBITaxon:2560801
+        title: Testudinid alphaherpesvirus 3
+        annotations:
+          proteome_id: UP000100290
+          tax_id: '2560801'
+          code: 9ALPH
+      SP_9ALTE:
+        description: 'Paraglaciecola arctica BSs20135 - Proteome: UP000006327'
+        meaning: NCBITaxon:493475
+        title: Paraglaciecola arctica BSs20135
+        annotations:
+          proteome_id: UP000006327
+          tax_id: '493475'
+          code: 9ALTE
+      SP_9ALVE:
+        description: 'Perkinsus sp. BL_2016 - Proteome: UP000298064'
+        meaning: NCBITaxon:2494336
+        title: Perkinsus sp. BL_2016
+        annotations:
+          proteome_id: UP000298064
+          tax_id: '2494336'
+          code: 9ALVE
+      SP_9AMPH:
+        description: 'Microcaecilia unicolor - Proteome: UP000515156'
+        meaning: NCBITaxon:1415580
+        title: Microcaecilia unicolor
+        annotations:
+          proteome_id: UP000515156
+          tax_id: '1415580'
+          code: 9AMPH
+      SP_9ANNE:
+        description: 'Dimorphilus gyrociliatus - Proteome: UP000549394'
+        meaning: NCBITaxon:2664684
+        title: Dimorphilus gyrociliatus
+        annotations:
+          proteome_id: UP000549394
+          tax_id: '2664684'
+          code: 9ANNE
+      SP_9ANUR:
+        description: 'Leptobrachium leishanense (Leishan spiny toad) - Proteome: UP000694569'
+        meaning: NCBITaxon:445787
+        title: Leptobrachium leishanense
+        annotations:
+          proteome_id: UP000694569
+          tax_id: '445787'
+          code: 9ANUR
+      SP_9APHY:
+        description: 'Fibroporia radiculosa - Proteome: UP000006352'
+        meaning: NCBITaxon:599839
+        title: Fibroporia radiculosa
+        annotations:
+          proteome_id: UP000006352
+          tax_id: '599839'
+          code: 9APHY
+      SP_9APIA:
+        description: 'Heracleum sosnowskyi - Proteome: UP001237642'
+        meaning: NCBITaxon:360622
+        title: Heracleum sosnowskyi
+        annotations:
+          proteome_id: UP001237642
+          tax_id: '360622'
+          code: 9APIA
+      SP_9APIC:
+        description: 'Babesia sp. Xinjiang - Proteome: UP000193856'
+        meaning: NCBITaxon:462227
+        title: Babesia sp. Xinjiang
+        annotations:
+          proteome_id: UP000193856
+          tax_id: '462227'
+          code: 9APIC
+      SP_9AQUI:
+        description: 'Sulfurihydrogenibium yellowstonense SS-5 - Proteome: UP000005540'
+        meaning: NCBITaxon:432331
+        title: Sulfurihydrogenibium yellowstonense SS-5
+        annotations:
+          proteome_id: UP000005540
+          tax_id: '432331'
+          code: 9AQUI
+      SP_9ARAC:
+        description: 'Trichonephila inaurata madagascariensis - Proteome: UP000886998'
+        meaning: NCBITaxon:2747483
+        title: Trichonephila inaurata madagascariensis
+        annotations:
+          proteome_id: UP000886998
+          tax_id: '2747483'
+          code: 9ARAC
+      SP_9ARCH:
+        description: 'Candidatus Nitrosarchaeum limnium BG20 - Proteome: UP000014065'
+        meaning: NCBITaxon:859192
+        title: Candidatus Nitrosarchaeum limnium BG20
+        annotations:
+          proteome_id: UP000014065
+          tax_id: '859192'
+          code: 9ARCH
+      SP_9ASCO:
+        description: 'Kuraishia capsulata CBS 1993 - Proteome: UP000019384'
+        meaning: NCBITaxon:1382522
+        title: Kuraishia capsulata CBS 1993
+        annotations:
+          proteome_id: UP000019384
+          tax_id: '1382522'
+          code: 9ASCO
+      SP_9ASPA:
+        description: 'Dendrobium catenatum - Proteome: UP000233837'
+        meaning: NCBITaxon:906689
+        title: Dendrobium catenatum
+        annotations:
+          proteome_id: UP000233837
+          tax_id: '906689'
+          code: 9ASPA
+      SP_9ASTE:
+        description: 'Cuscuta australis - Proteome: UP000249390'
+        meaning: NCBITaxon:267555
+        title: Cuscuta australis
+        annotations:
+          proteome_id: UP000249390
+          tax_id: '267555'
+          code: 9ASTE
+      SP_9ASTR:
+        description: 'Mikania micrantha - Proteome: UP000326396'
+        meaning: NCBITaxon:192012
+        title: Mikania micrantha
+        annotations:
+          proteome_id: UP000326396
+          tax_id: '192012'
+          code: 9ASTR
+      SP_9AVES:
+        description: 'Anser brachyrhynchus (Pink-footed goose) - Proteome: UP000694426'
+        meaning: NCBITaxon:132585
+        title: Anser brachyrhynchus
+        annotations:
+          proteome_id: UP000694426
+          tax_id: '132585'
+          code: 9AVES
+      SP_9BACE:
+        description: 'Bacteroides caccae CL03T12C61 - Proteome: UP000002965'
+        meaning: NCBITaxon:997873
+        title: Bacteroides caccae CL03T12C61
+        annotations:
+          proteome_id: UP000002965
+          tax_id: '997873'
+          code: 9BACE
+      SP_9BACI:
+        description: 'Fictibacillus macauensis ZFHKF-1 - Proteome: UP000004080'
+        meaning: NCBITaxon:1196324
+        title: Fictibacillus macauensis ZFHKF-1
+        annotations:
+          proteome_id: UP000004080
+          tax_id: '1196324'
+          code: 9BACI
+      SP_9BACL:
+        description: 'Paenibacillus sp. HGF7 - Proteome: UP000003445'
+        meaning: NCBITaxon:944559
+        title: Paenibacillus sp. HGF7
+        annotations:
+          proteome_id: UP000003445
+          tax_id: '944559'
+          code: 9BACL
+      SP_9BACT:
+        description: 'Parabacteroides johnsonii CL02T12C29 - Proteome: UP000001218'
+        meaning: NCBITaxon:999419
+        title: Parabacteroides johnsonii CL02T12C29
+        annotations:
+          proteome_id: UP000001218
+          tax_id: '999419'
+          code: 9BACT
+      SP_9BACU:
+        description: 'Samia ricini nucleopolyhedrovirus - Proteome: UP001226138'
+        meaning: NCBITaxon:1920700
+        title: Samia ricini nucleopolyhedrovirus
+        annotations:
+          proteome_id: UP001226138
+          tax_id: '1920700'
+          code: 9BACU
+      SP_9BASI:
+        description: 'Malassezia pachydermatis - Proteome: UP000037751'
+        meaning: NCBITaxon:77020
+        title: Malassezia pachydermatis
+        annotations:
+          proteome_id: UP000037751
+          tax_id: '77020'
+          code: 9BASI
+      SP_9BBAC:
+        description: 'Plutella xylostella granulovirus - Proteome: UP000201310'
+        meaning: NCBITaxon:98383
+        title: Plutella xylostella granulovirus
+        annotations:
+          proteome_id: UP000201310
+          tax_id: '98383'
+          code: 9BBAC
+      SP_9BETA:
+        description: 'Saimiriine betaherpesvirus 4 - Proteome: UP000097892'
+        meaning: NCBITaxon:1535247
+        title: Saimiriine betaherpesvirus 4
+        annotations:
+          proteome_id: UP000097892
+          tax_id: '1535247'
+          code: 9BETA
+      SP_9BETC:
+        description: 'Coronavirus BtRt-BetaCoV/GX2018 - Proteome: UP001228689'
+        meaning: NCBITaxon:2591238
+        title: Coronavirus BtRt-BetaCoV/GX2018
+        annotations:
+          proteome_id: UP001228689
+          tax_id: '2591238'
+          code: 9BETC
+      SP_9BIFI:
+        description: 'Scardovia wiggsiae F0424 - Proteome: UP000006415'
+        meaning: NCBITaxon:857290
+        title: Scardovia wiggsiae F0424
+        annotations:
+          proteome_id: UP000006415
+          tax_id: '857290'
+          code: 9BIFI
+      SP_9BILA:
+        description: 'Ancylostoma ceylanicum - Proteome: UP000024635'
+        meaning: NCBITaxon:53326
+        title: Ancylostoma ceylanicum
+        annotations:
+          proteome_id: UP000024635
+          tax_id: '53326'
+          code: 9BILA
+      SP_9BIVA:
+        description: 'Potamilus streckersoni - Proteome: UP001195483'
+        meaning: NCBITaxon:2493646
+        title: Potamilus streckersoni
+        annotations:
+          proteome_id: UP001195483
+          tax_id: '2493646'
+          code: 9BIVA
+      SP_9BORD:
+        description: 'Bordetella sp. N - Proteome: UP000064621'
+        meaning: NCBITaxon:1746199
+        title: Bordetella sp. N
+        annotations:
+          proteome_id: UP000064621
+          tax_id: '1746199'
+          code: 9BORD
+      SP_9BRAD:
+        description: 'Afipia broomeae ATCC 49717 - Proteome: UP000001096'
+        meaning: NCBITaxon:883078
+        title: Afipia broomeae ATCC 49717
+        annotations:
+          proteome_id: UP000001096
+          tax_id: '883078'
+          code: 9BRAD
+      SP_9BRAS:
+        description: 'Capsella rubella - Proteome: UP000029121'
+        meaning: NCBITaxon:81985
+        title: Capsella rubella
+        annotations:
+          proteome_id: UP000029121
+          tax_id: '81985'
+          code: 9BRAS
+      SP_9BROM:
+        description: 'Prune dwarf virus - Proteome: UP000202132'
+        meaning: NCBITaxon:33760
+        title: Prune dwarf virus
+        annotations:
+          proteome_id: UP000202132
+          tax_id: '33760'
+          code: 9BROM
+      SP_9BURK:
+        description: 'Candidatus Paraburkholderia kirkii UZHbot1 - Proteome: UP000003511'
+        meaning: NCBITaxon:1055526
+        title: Candidatus Paraburkholderia kirkii UZHbot1
+        annotations:
+          proteome_id: UP000003511
+          tax_id: '1055526'
+          code: 9BURK
+      SP_9CARY:
+        description: 'Carnegiea gigantea - Proteome: UP001153076'
+        meaning: NCBITaxon:171969
+        title: Carnegiea gigantea
+        annotations:
+          proteome_id: UP001153076
+          tax_id: '171969'
+          code: 9CARY
+      SP_9CAUD:
+        description: 'Salmonella phage Vi06 - Proteome: UP000000335'
+        meaning: NCBITaxon:866889
+        title: Salmonella phage Vi06
+        annotations:
+          proteome_id: UP000000335
+          tax_id: '866889'
+          code: 9CAUD
+      SP_9CAUL:
+        description: 'Brevundimonas abyssalis TAR-001 - Proteome: UP000016569'
+        meaning: NCBITaxon:1391729
+        title: Brevundimonas abyssalis TAR-001
+        annotations:
+          proteome_id: UP000016569
+          tax_id: '1391729'
+          code: 9CAUL
+      SP_9CBAC:
+        description: 'Neodiprion sertifer nucleopolyhedrovirus - Proteome: UP000243697'
+        meaning: NCBITaxon:111874
+        title: Neodiprion sertifer nucleopolyhedrovirus
+        annotations:
+          proteome_id: UP000243697
+          tax_id: '111874'
+          code: 9CBAC
+      SP_9CELL:
+        description: 'Actinotalea ferrariae CF5-4 - Proteome: UP000019753'
+        meaning: NCBITaxon:948458
+        title: Actinotalea ferrariae CF5-4
+        annotations:
+          proteome_id: UP000019753
+          tax_id: '948458'
+          code: 9CELL
+      SP_9CERV:
+        description: 'Cervus hanglu yarkandensis (Yarkand deer) - Proteome: UP000631465'
+        meaning: NCBITaxon:84702
+        title: Cervus hanglu yarkandensis
+        annotations:
+          proteome_id: UP000631465
+          tax_id: '84702'
+          code: 9CERV
+      SP_9CETA:
+        description: 'Catagonus wagneri (Chacoan peccary) - Proteome: UP000694540'
+        meaning: NCBITaxon:51154
+        title: Catagonus wagneri
+        annotations:
+          proteome_id: UP000694540
+          tax_id: '51154'
+          code: 9CETA
+      SP_9CHAR:
+        description: 'Rostratula benghalensis (greater painted-snipe) - Proteome:
+          UP000545435'
+        meaning: NCBITaxon:118793
+        title: Rostratula benghalensis
+        annotations:
+          proteome_id: UP000545435
+          tax_id: '118793'
+          code: 9CHAR
+      SP_9CHIR:
+        description: 'Phyllostomus discolor (pale spear-nosed bat) - Proteome: UP000504628'
+        meaning: NCBITaxon:89673
+        title: Phyllostomus discolor
+        annotations:
+          proteome_id: UP000504628
+          tax_id: '89673'
+          code: 9CHIR
+      SP_9CHLA:
+        description: 'Chlamydiales bacterium SCGC AG-110-P3 - Proteome: UP000196763'
+        meaning: NCBITaxon:1871323
+        title: Chlamydiales bacterium SCGC AG-110-P3
+        annotations:
+          proteome_id: UP000196763
+          tax_id: '1871323'
+          code: 9CHLA
+      SP_9CHLB:
+        description: 'Chlorobium ferrooxidans DSM 13031 - Proteome: UP000004162'
+        meaning: NCBITaxon:377431
+        title: Chlorobium ferrooxidans DSM 13031
+        annotations:
+          proteome_id: UP000004162
+          tax_id: '377431'
+          code: 9CHLB
+      SP_9CHLO:
+        description: 'Helicosporidium sp. ATCC 50920 - Proteome: UP000026042'
+        meaning: NCBITaxon:1291522
+        title: Helicosporidium sp. ATCC 50920
+        annotations:
+          proteome_id: UP000026042
+          tax_id: '1291522'
+          code: 9CHLO
+      SP_9CHLR:
+        description: 'Ardenticatena maritima - Proteome: UP000037784'
+        meaning: NCBITaxon:872965
+        title: Ardenticatena maritima
+        annotations:
+          proteome_id: UP000037784
+          tax_id: '872965'
+          code: 9CHLR
+      SP_9CHRO:
+        description: 'Gloeocapsa sp. PCC 7428 - Proteome: UP000010476'
+        meaning: NCBITaxon:1173026
+        title: Gloeocapsa sp. PCC 7428
+        annotations:
+          proteome_id: UP000010476
+          tax_id: '1173026'
+          code: 9CHRO
+      SP_9CICH:
+        description: 'Maylandia zebra (zebra mbuna) - Proteome: UP000265160'
+        meaning: NCBITaxon:106582
+        title: Maylandia zebra
+        annotations:
+          proteome_id: UP000265160
+          tax_id: '106582'
+          code: 9CICH
+      SP_9CILI:
+        description: 'Stentor coeruleus - Proteome: UP000187209'
+        meaning: NCBITaxon:5963
+        title: Stentor coeruleus
+        annotations:
+          proteome_id: UP000187209
+          tax_id: '5963'
+          code: 9CILI
+      SP_9CIRC:
+        description: 'Raven circovirus - Proteome: UP000097131'
+        meaning: NCBITaxon:345250
+        title: Raven circovirus
+        annotations:
+          proteome_id: UP000097131
+          tax_id: '345250'
+          code: 9CIRC
+      SP_9CLOS:
+        description: 'Grapevine leafroll-associated virus 10 - Proteome: UP000203128'
+        meaning: NCBITaxon:367121
+        title: Grapevine leafroll-associated virus 10
+        annotations:
+          proteome_id: UP000203128
+          tax_id: '367121'
+          code: 9CLOS
+      SP_9CLOT:
+        description: 'Candidatus Arthromitus sp. SFB-rat-Yit - Proteome: UP000001273'
+        meaning: NCBITaxon:1041504
+        title: Candidatus Arthromitus sp. SFB-rat-Yit
+        annotations:
+          proteome_id: UP000001273
+          tax_id: '1041504'
+          code: 9CLOT
+      SP_9CNID:
+        description: 'Clytia hemisphaerica - Proteome: UP000594262'
+        meaning: NCBITaxon:252671
+        title: Clytia hemisphaerica
+        annotations:
+          proteome_id: UP000594262
+          tax_id: '252671'
+          code: 9CNID
+      SP_9COLU:
+        description: 'Pampusana beccarii (Western bronze ground-dove) - Proteome:
+          UP000541332'
+        meaning: NCBITaxon:2953425
+        title: Pampusana beccarii
+        annotations:
+          proteome_id: UP000541332
+          tax_id: '2953425'
+          code: 9COLU
+      SP_9CORV:
+        description: 'Cnemophilus loriae (Loria''s bird-of-paradise) - Proteome: UP000517678'
+        meaning: NCBITaxon:254448
+        title: Cnemophilus loriae
+        annotations:
+          proteome_id: UP000517678
+          tax_id: '254448'
+          code: 9CORV
+      SP_9CORY:
+        description: 'Corynebacterium genitalium ATCC 33030 - Proteome: UP000004208'
+        meaning: NCBITaxon:585529
+        title: Corynebacterium genitalium ATCC 33030
+        annotations:
+          proteome_id: UP000004208
+          tax_id: '585529'
+          code: 9CORY
+      SP_9COXI:
+        description: 'Coxiella endosymbiont of Amblyomma americanum - Proteome: UP000059222'
+        meaning: NCBITaxon:325775
+        title: Coxiella endosymbiont of Amblyomma americanum
+        annotations:
+          proteome_id: UP000059222
+          tax_id: '325775'
+          code: 9COXI
+      SP_9CREN:
+        description: 'Metallosphaera yellowstonensis MK1 - Proteome: UP000003980'
+        meaning: NCBITaxon:671065
+        title: Metallosphaera yellowstonensis MK1
+        annotations:
+          proteome_id: UP000003980
+          tax_id: '671065'
+          code: 9CREN
+      SP_9CRUS:
+        description: 'Daphnia magna - Proteome: UP000076858'
+        meaning: NCBITaxon:35525
+        title: Daphnia magna
+        annotations:
+          proteome_id: UP000076858
+          tax_id: '35525'
+          code: 9CRUS
+      SP_9CUCU:
+        description: 'Ceutorhynchus assimilis (cabbage seed weevil) - Proteome: UP001152799'
+        meaning: NCBITaxon:467358
+        title: Ceutorhynchus assimilis
+        annotations:
+          proteome_id: UP001152799
+          tax_id: '467358'
+          code: 9CUCU
+      SP_9CYAN:
+        description: 'Leptolyngbyaceae cyanobacterium JSC-12 - Proteome: UP000001332'
+        meaning: NCBITaxon:864702
+        title: Leptolyngbyaceae cyanobacterium JSC-12
+        annotations:
+          proteome_id: UP000001332
+          tax_id: '864702'
+          code: 9CYAN
+      SP_9DEIN:
+        description: 'Meiothermus sp. QL-1 - Proteome: UP000255346'
+        meaning: NCBITaxon:2058095
+        title: Meiothermus sp. QL-1
+        annotations:
+          proteome_id: UP000255346
+          tax_id: '2058095'
+          code: 9DEIN
+      SP_9DEIO:
+        description: 'Deinococcus sp. RL - Proteome: UP000027898'
+        meaning: NCBITaxon:1489678
+        title: Deinococcus sp. RL
+        annotations:
+          proteome_id: UP000027898
+          tax_id: '1489678'
+          code: 9DEIO
+      SP_9DELA:
+        description: 'Human T-cell leukemia virus type I - Proteome: UP000108043'
+        meaning: NCBITaxon:11908
+        title: Human T-cell leukemia virus type I
+        annotations:
+          proteome_id: UP000108043
+          tax_id: '11908'
+          code: 9DELA
+      SP_9DELT:
+        description: 'Lujinxingia litoralis - Proteome: UP000249169'
+        meaning: NCBITaxon:2211119
+        title: Lujinxingia litoralis
+        annotations:
+          proteome_id: UP000249169
+          tax_id: '2211119'
+          code: 9DELT
+      SP_9DEND:
+        description: 'Xiphorhynchus elegans (elegant woodcreeper) - Proteome: UP000551443'
+        meaning: NCBITaxon:269412
+        title: Xiphorhynchus elegans
+        annotations:
+          proteome_id: UP000551443
+          tax_id: '269412'
+          code: 9DEND
+      SP_9DINO:
+        description: 'Symbiodinium necroappetens - Proteome: UP000601435'
+        meaning: NCBITaxon:1628268
+        title: Symbiodinium necroappetens
+        annotations:
+          proteome_id: UP000601435
+          tax_id: '1628268'
+          code: 9DINO
+      SP_9DIPT:
+        description: 'Clunio marinus - Proteome: UP000183832'
+        meaning: NCBITaxon:568069
+        title: Clunio marinus
+        annotations:
+          proteome_id: UP000183832
+          tax_id: '568069'
+          code: 9DIPT
+      SP_9EIME:
+        description: 'Eimeria praecox - Proteome: UP000018201'
+        meaning: NCBITaxon:51316
+        title: Eimeria praecox
+        annotations:
+          proteome_id: UP000018201
+          tax_id: '51316'
+          code: 9EIME
+      SP_9EMBE:
+        description: 'Emberiza fucata - Proteome: UP000580681'
+        meaning: NCBITaxon:337179
+        title: Emberiza fucata
+        annotations:
+          proteome_id: UP000580681
+          tax_id: '337179'
+          code: 9EMBE
+      SP_9ENTE:
+        description: 'Enterococcus asini ATCC 700915 - Proteome: UP000013777'
+        meaning: NCBITaxon:1158606
+        title: Enterococcus asini ATCC 700915
+        annotations:
+          proteome_id: UP000013777
+          tax_id: '1158606'
+          code: 9ENTE
+      SP_9ENTR:
+        description: 'secondary endosymbiont of Heteropsylla cubana - Proteome: UP000003937'
+        meaning: NCBITaxon:134287
+        title: secondary endosymbiont of Heteropsylla cubana
+        annotations:
+          proteome_id: UP000003937
+          tax_id: '134287'
+          code: 9ENTR
+      SP_9ERIC:
+        description: 'Rhododendron williamsianum - Proteome: UP000428333'
+        meaning: NCBITaxon:262921
+        title: Rhododendron williamsianum
+        annotations:
+          proteome_id: UP000428333
+          tax_id: '262921'
+          code: 9ERIC
+      SP_9EUCA:
+        description: 'Petrolisthes manimaculis - Proteome: UP001292094'
+        meaning: NCBITaxon:1843537
+        title: Petrolisthes manimaculis
+        annotations:
+          proteome_id: UP001292094
+          tax_id: '1843537'
+          code: 9EUCA
+      SP_9EUGL:
+        description: 'Perkinsela sp. CCAP 1560/4 - Proteome: UP000036983'
+        meaning: NCBITaxon:1314962
+        title: Perkinsela sp. CCAP 1560/4
+        annotations:
+          proteome_id: UP000036983
+          tax_id: '1314962'
+          code: 9EUGL
+      SP_9EUKA:
+        description: 'Chrysochromulina tobinii - Proteome: UP000037460'
+        meaning: NCBITaxon:1460289
+        title: Chrysochromulina tobinii
+        annotations:
+          proteome_id: UP000037460
+          tax_id: '1460289'
+          code: 9EUKA
+      SP_9EUPU:
+        description: 'Candidula unifasciata - Proteome: UP000678393'
+        meaning: NCBITaxon:100452
+        title: Candidula unifasciata
+        annotations:
+          proteome_id: UP000678393
+          tax_id: '100452'
+          code: 9EUPU
+      SP_9EURO:
+        description: 'Cladophialophora psammophila CBS 110553 - Proteome: UP000019471'
+        meaning: NCBITaxon:1182543
+        title: Cladophialophora psammophila CBS 110553
+        annotations:
+          proteome_id: UP000019471
+          tax_id: '1182543'
+          code: 9EURO
+      SP_9EURY:
+        description: 'Methanoplanus limicola DSM 2279 - Proteome: UP000005741'
+        meaning: NCBITaxon:937775
+        title: Methanoplanus limicola DSM 2279
+        annotations:
+          proteome_id: UP000005741
+          tax_id: '937775'
+          code: 9EURY
+      SP_9FABA:
+        description: 'Senna tora - Proteome: UP000634136'
+        meaning: NCBITaxon:362788
+        title: Senna tora
+        annotations:
+          proteome_id: UP000634136
+          tax_id: '362788'
+          code: 9FABA
+      SP_9FIRM:
+        description: 'Ruminococcaceae bacterium D16 - Proteome: UP000002801'
+        meaning: NCBITaxon:552398
+        title: Ruminococcaceae bacterium D16
+        annotations:
+          proteome_id: UP000002801
+          tax_id: '552398'
+          code: 9FIRM
+      SP_9FLAO:
+        description: 'Capnocytophaga sp. oral taxon 338 str. F0234 - Proteome: UP000003023'
+        meaning: NCBITaxon:888059
+        title: Capnocytophaga sp. oral taxon 338 str. F0234
+        annotations:
+          proteome_id: UP000003023
+          tax_id: '888059'
+          code: 9FLAO
+      SP_9FLAV:
+        description: 'Tunisian sheep-like pestivirus - Proteome: UP001157330'
+        meaning: NCBITaxon:3071305
+        title: Tunisian sheep-like pestivirus
+        annotations:
+          proteome_id: UP001157330
+          tax_id: '3071305'
+          code: 9FLAV
+      SP_9FLOR:
+        description: 'Gracilariopsis chorda - Proteome: UP000247409'
+        meaning: NCBITaxon:448386
+        title: Gracilariopsis chorda
+        annotations:
+          proteome_id: UP000247409
+          tax_id: '448386'
+          code: 9FLOR
+      SP_9FRIN:
+        description: 'Urocynchramus pylzowi - Proteome: UP000524542'
+        meaning: NCBITaxon:571890
+        title: Urocynchramus pylzowi
+        annotations:
+          proteome_id: UP000524542
+          tax_id: '571890'
+          code: 9FRIN
+      SP_9FUNG:
+        description: 'Lichtheimia corymbifera JMRC:FSU:9682 - Proteome: UP000027586'
+        meaning: NCBITaxon:1263082
+        title: Lichtheimia corymbifera JMRC:FSU:9682
+        annotations:
+          proteome_id: UP000027586
+          tax_id: '1263082'
+          code: 9FUNG
+      SP_9FURN:
+        description: 'Furnarius figulus - Proteome: UP000529852'
+        meaning: NCBITaxon:463165
+        title: Furnarius figulus
+        annotations:
+          proteome_id: UP000529852
+          tax_id: '463165'
+          code: 9FURN
+      SP_9FUSO:
+        description: 'Fusobacterium gonidiaformans 3-1-5R - Proteome: UP000002975'
+        meaning: NCBITaxon:469605
+        title: Fusobacterium gonidiaformans 3-1-5R
+        annotations:
+          proteome_id: UP000002975
+          tax_id: '469605'
+          code: 9FUSO
+      SP_9GALL:
+        description: 'Odontophorus gujanensis (marbled wood quail) - Proteome: UP000522663'
+        meaning: NCBITaxon:886794
+        title: Odontophorus gujanensis
+        annotations:
+          proteome_id: UP000522663
+          tax_id: '886794'
+          code: 9GALL
+      SP_9GAMA:
+        description: 'Bovine gammaherpesvirus 6 - Proteome: UP000121539'
+        meaning: NCBITaxon:1504288
+        title: Bovine gammaherpesvirus 6
+        annotations:
+          proteome_id: UP000121539
+          tax_id: '1504288'
+          code: 9GAMA
+      SP_9GAMC:
+        description: 'Anser fabalis coronavirus NCN2 - Proteome: UP001251675'
+        meaning: NCBITaxon:2860474
+        title: Anser fabalis coronavirus NCN2
+        annotations:
+          proteome_id: UP001251675
+          tax_id: '2860474'
+          code: 9GAMC
+      SP_9GAMM:
+        description: 'Buchnera aphidicola (Cinara tujafilina) - Proteome: UP000006811'
+        meaning: NCBITaxon:261317
+        title: Buchnera aphidicola
+        annotations:
+          proteome_id: UP000006811
+          tax_id: '261317'
+          code: 9GAMM
+        aliases:
+        - Buchnera aphidicola (Cinara tujafilina)
+      SP_9GAST:
+        description: 'Elysia crispata (lettuce slug) - Proteome: UP001283361'
+        meaning: NCBITaxon:231223
+        title: Elysia crispata
+        annotations:
+          proteome_id: UP001283361
+          tax_id: '231223'
+          code: 9GAST
+      SP_9GEMI:
+        description: 'East African cassava mosaic Zanzibar virus - Proteome: UP000201107'
+        meaning: NCBITaxon:223275
+        title: East African cassava mosaic Zanzibar virus
+        annotations:
+          proteome_id: UP000201107
+          tax_id: '223275'
+          code: 9GEMI
+      SP_9GLOM:
+        description: 'Paraglomus occultum - Proteome: UP000789572'
+        meaning: NCBITaxon:144539
+        title: Paraglomus occultum
+        annotations:
+          proteome_id: UP000789572
+          tax_id: '144539'
+          code: 9GLOM
+      SP_9GOBI:
+        description: 'Neogobius melanostomus (round goby) - Proteome: UP000694523'
+        meaning: NCBITaxon:47308
+        title: Neogobius melanostomus
+        annotations:
+          proteome_id: UP000694523
+          tax_id: '47308'
+          code: 9GOBI
+      SP_9GRUI:
+        description: 'Atlantisia rogersi (Inaccessible Island rail) - Proteome: UP000518911'
+        meaning: NCBITaxon:2478892
+        title: Atlantisia rogersi
+        annotations:
+          proteome_id: UP000518911
+          tax_id: '2478892'
+          code: 9GRUI
+      SP_9HELI:
+        description: 'Helicobacter bilis ATCC 43879 - Proteome: UP000005085'
+        meaning: NCBITaxon:613026
+        title: Helicobacter bilis ATCC 43879
+        annotations:
+          proteome_id: UP000005085
+          tax_id: '613026'
+          code: 9HELI
+      SP_9HELO:
+        description: 'Rhynchosporium graminicola - Proteome: UP000178129'
+        meaning: NCBITaxon:2792576
+        title: Rhynchosporium graminicola
+        annotations:
+          proteome_id: UP000178129
+          tax_id: '2792576'
+          code: 9HELO
+      SP_9HEMI:
+        description: 'Cinara cedri - Proteome: UP000325440'
+        meaning: NCBITaxon:506608
+        title: Cinara cedri
+        annotations:
+          proteome_id: UP000325440
+          tax_id: '506608'
+          code: 9HEMI
+      SP_9HEPA:
+        description: 'Duck hepatitis B virus - Proteome: UP000137229'
+        meaning: NCBITaxon:12639
+        title: Duck hepatitis B virus
+        annotations:
+          proteome_id: UP000137229
+          tax_id: '12639'
+          code: 9HEPA
+      SP_9HEXA:
+        description: 'Allacma fusca - Proteome: UP000708208'
+        meaning: NCBITaxon:39272
+        title: Allacma fusca
+        annotations:
+          proteome_id: UP000708208
+          tax_id: '39272'
+          code: 9HEXA
+      SP_9HYME:
+        description: 'Melipona quadrifasciata - Proteome: UP000053105'
+        meaning: NCBITaxon:166423
+        title: Melipona quadrifasciata
+        annotations:
+          proteome_id: UP000053105
+          tax_id: '166423'
+          code: 9HYME
+      SP_9HYPH:
+        description: 'Mesorhizobium amorphae CCNWGS0123 - Proteome: UP000002949'
+        meaning: NCBITaxon:1082933
+        title: Mesorhizobium amorphae CCNWGS0123
+        annotations:
+          proteome_id: UP000002949
+          tax_id: '1082933'
+          code: 9HYPH
+      SP_9HYPO:
+        description: '[Torrubiella] hemipterigena - Proteome: UP000039046'
+        meaning: NCBITaxon:1531966
+        title: '[Torrubiella] hemipterigena'
+        annotations:
+          proteome_id: UP000039046
+          tax_id: '1531966'
+          code: 9HYPO
+      SP_9INFA:
+        description: 'Influenza A virus (A/California/VRDL364/2009 (mixed) - Proteome:
+          UP000109975'
+        meaning: NCBITaxon:1049605
+        title: Influenza A virus (A/California/VRDL364/2009
+        annotations:
+          proteome_id: UP000109975
+          tax_id: '1049605'
+          code: 9INFA
+        aliases:
+        - Influenza A virus (A/California/VRDL364/2009(mixed))
+      SP_9INSE:
+        description: 'Cloeon dipterum - Proteome: UP000494165'
+        meaning: NCBITaxon:197152
+        title: Cloeon dipterum
+        annotations:
+          proteome_id: UP000494165
+          tax_id: '197152'
+          code: 9INSE
+      SP_9LABR:
+        description: 'Labrus bergylta (ballan wrasse) - Proteome: UP000261660'
+        meaning: NCBITaxon:56723
+        title: Labrus bergylta
+        annotations:
+          proteome_id: UP000261660

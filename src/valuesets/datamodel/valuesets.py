@@ -79,6 +79,20 @@ PresenceEnum._metadata = {
     "ABOVE_DETECTION_LIMIT": {'description': 'The entity is above the detection limit'},
 }
 
+class ContributorType(RichEnum):
+    """
+    The type of contributor being represented.
+    """
+    # Enum members
+    PERSON = "PERSON"
+    ORGANIZATION = "ORGANIZATION"
+
+# Set metadata after class creation to avoid it becoming an enum member
+ContributorType._metadata = {
+    "PERSON": {'description': 'A person.', 'meaning': 'schema:Person'},
+    "ORGANIZATION": {'description': 'An organization.', 'meaning': 'schema:Organization'},
+}
+
 class DataAbsentEnum(RichEnum):
     """
     Used to specify why the normally expected content of the data element is missing.
@@ -1176,6 +1190,578 @@ InsdcMissingValueEnum._metadata = {
     "MISSING_HUMAN_IDENTIFIABLE": {'description': 'Information can not be reported due to identifiable human data concerns', 'annotations': {'note': 'No specific ontology term for data withheld due to human identifiability'}},
 }
 
+class InsdcGeographicLocationEnum(RichEnum):
+    """
+    INSDC controlled vocabulary for geographic locations of collected samples.
+Includes countries, oceans, seas, and other geographic regions as defined by INSDC.
+Countries use ISO 3166-1 alpha-2 codes from Library of Congress as canonical identifiers.
+    """
+    # Enum members
+    AFGHANISTAN = "AFGHANISTAN"
+    ALBANIA = "ALBANIA"
+    ALGERIA = "ALGERIA"
+    AMERICAN_SAMOA = "AMERICAN_SAMOA"
+    ANDORRA = "ANDORRA"
+    ANGOLA = "ANGOLA"
+    ANGUILLA = "ANGUILLA"
+    ANTARCTICA = "ANTARCTICA"
+    ANTIGUA_AND_BARBUDA = "ANTIGUA_AND_BARBUDA"
+    ARCTIC_OCEAN = "ARCTIC_OCEAN"
+    ARGENTINA = "ARGENTINA"
+    ARMENIA = "ARMENIA"
+    ARUBA = "ARUBA"
+    ASHMORE_AND_CARTIER_ISLANDS = "ASHMORE_AND_CARTIER_ISLANDS"
+    ATLANTIC_OCEAN = "ATLANTIC_OCEAN"
+    AUSTRALIA = "AUSTRALIA"
+    AUSTRIA = "AUSTRIA"
+    AZERBAIJAN = "AZERBAIJAN"
+    BAHAMAS = "BAHAMAS"
+    BAHRAIN = "BAHRAIN"
+    BALTIC_SEA = "BALTIC_SEA"
+    BAKER_ISLAND = "BAKER_ISLAND"
+    BANGLADESH = "BANGLADESH"
+    BARBADOS = "BARBADOS"
+    BASSAS_DA_INDIA = "BASSAS_DA_INDIA"
+    BELARUS = "BELARUS"
+    BELGIUM = "BELGIUM"
+    BELIZE = "BELIZE"
+    BENIN = "BENIN"
+    BERMUDA = "BERMUDA"
+    BHUTAN = "BHUTAN"
+    BOLIVIA = "BOLIVIA"
+    BORNEO = "BORNEO"
+    BOSNIA_AND_HERZEGOVINA = "BOSNIA_AND_HERZEGOVINA"
+    BOTSWANA = "BOTSWANA"
+    BOUVET_ISLAND = "BOUVET_ISLAND"
+    BRAZIL = "BRAZIL"
+    BRITISH_VIRGIN_ISLANDS = "BRITISH_VIRGIN_ISLANDS"
+    BRUNEI = "BRUNEI"
+    BULGARIA = "BULGARIA"
+    BURKINA_FASO = "BURKINA_FASO"
+    BURUNDI = "BURUNDI"
+    CAMBODIA = "CAMBODIA"
+    CAMEROON = "CAMEROON"
+    CANADA = "CANADA"
+    CAPE_VERDE = "CAPE_VERDE"
+    CAYMAN_ISLANDS = "CAYMAN_ISLANDS"
+    CENTRAL_AFRICAN_REPUBLIC = "CENTRAL_AFRICAN_REPUBLIC"
+    CHAD = "CHAD"
+    CHILE = "CHILE"
+    CHINA = "CHINA"
+    CHRISTMAS_ISLAND = "CHRISTMAS_ISLAND"
+    CLIPPERTON_ISLAND = "CLIPPERTON_ISLAND"
+    COCOS_ISLANDS = "COCOS_ISLANDS"
+    COLOMBIA = "COLOMBIA"
+    COMOROS = "COMOROS"
+    COOK_ISLANDS = "COOK_ISLANDS"
+    CORAL_SEA_ISLANDS = "CORAL_SEA_ISLANDS"
+    COSTA_RICA = "COSTA_RICA"
+    COTE_DIVOIRE = "COTE_DIVOIRE"
+    CROATIA = "CROATIA"
+    CUBA = "CUBA"
+    CURACAO = "CURACAO"
+    CYPRUS = "CYPRUS"
+    CZECHIA = "CZECHIA"
+    DEMOCRATIC_REPUBLIC_OF_THE_CONGO = "DEMOCRATIC_REPUBLIC_OF_THE_CONGO"
+    DENMARK = "DENMARK"
+    DJIBOUTI = "DJIBOUTI"
+    DOMINICA = "DOMINICA"
+    DOMINICAN_REPUBLIC = "DOMINICAN_REPUBLIC"
+    ECUADOR = "ECUADOR"
+    EGYPT = "EGYPT"
+    EL_SALVADOR = "EL_SALVADOR"
+    EQUATORIAL_GUINEA = "EQUATORIAL_GUINEA"
+    ERITREA = "ERITREA"
+    ESTONIA = "ESTONIA"
+    ESWATINI = "ESWATINI"
+    ETHIOPIA = "ETHIOPIA"
+    EUROPA_ISLAND = "EUROPA_ISLAND"
+    FALKLAND_ISLANDS = "FALKLAND_ISLANDS"
+    FAROE_ISLANDS = "FAROE_ISLANDS"
+    FIJI = "FIJI"
+    FINLAND = "FINLAND"
+    FRANCE = "FRANCE"
+    FRENCH_GUIANA = "FRENCH_GUIANA"
+    FRENCH_POLYNESIA = "FRENCH_POLYNESIA"
+    FRENCH_SOUTHERN_AND_ANTARCTIC_LANDS = "FRENCH_SOUTHERN_AND_ANTARCTIC_LANDS"
+    GABON = "GABON"
+    GAMBIA = "GAMBIA"
+    GAZA_STRIP = "GAZA_STRIP"
+    GEORGIA = "GEORGIA"
+    GERMANY = "GERMANY"
+    GHANA = "GHANA"
+    GIBRALTAR = "GIBRALTAR"
+    GLORIOSO_ISLANDS = "GLORIOSO_ISLANDS"
+    GREECE = "GREECE"
+    GREENLAND = "GREENLAND"
+    GRENADA = "GRENADA"
+    GUADELOUPE = "GUADELOUPE"
+    GUAM = "GUAM"
+    GUATEMALA = "GUATEMALA"
+    GUERNSEY = "GUERNSEY"
+    GUINEA = "GUINEA"
+    GUINEA_BISSAU = "GUINEA_BISSAU"
+    GUYANA = "GUYANA"
+    HAITI = "HAITI"
+    HEARD_ISLAND_AND_MCDONALD_ISLANDS = "HEARD_ISLAND_AND_MCDONALD_ISLANDS"
+    HONDURAS = "HONDURAS"
+    HONG_KONG = "HONG_KONG"
+    HOWLAND_ISLAND = "HOWLAND_ISLAND"
+    HUNGARY = "HUNGARY"
+    ICELAND = "ICELAND"
+    INDIA = "INDIA"
+    INDIAN_OCEAN = "INDIAN_OCEAN"
+    INDONESIA = "INDONESIA"
+    IRAN = "IRAN"
+    IRAQ = "IRAQ"
+    IRELAND = "IRELAND"
+    ISLE_OF_MAN = "ISLE_OF_MAN"
+    ISRAEL = "ISRAEL"
+    ITALY = "ITALY"
+    JAMAICA = "JAMAICA"
+    JAN_MAYEN = "JAN_MAYEN"
+    JAPAN = "JAPAN"
+    JARVIS_ISLAND = "JARVIS_ISLAND"
+    JERSEY = "JERSEY"
+    JOHNSTON_ATOLL = "JOHNSTON_ATOLL"
+    JORDAN = "JORDAN"
+    JUAN_DE_NOVA_ISLAND = "JUAN_DE_NOVA_ISLAND"
+    KAZAKHSTAN = "KAZAKHSTAN"
+    KENYA = "KENYA"
+    KERGUELEN_ARCHIPELAGO = "KERGUELEN_ARCHIPELAGO"
+    KINGMAN_REEF = "KINGMAN_REEF"
+    KIRIBATI = "KIRIBATI"
+    KOSOVO = "KOSOVO"
+    KUWAIT = "KUWAIT"
+    KYRGYZSTAN = "KYRGYZSTAN"
+    LAOS = "LAOS"
+    LATVIA = "LATVIA"
+    LEBANON = "LEBANON"
+    LESOTHO = "LESOTHO"
+    LIBERIA = "LIBERIA"
+    LIBYA = "LIBYA"
+    LIECHTENSTEIN = "LIECHTENSTEIN"
+    LINE_ISLANDS = "LINE_ISLANDS"
+    LITHUANIA = "LITHUANIA"
+    LUXEMBOURG = "LUXEMBOURG"
+    MACAU = "MACAU"
+    MADAGASCAR = "MADAGASCAR"
+    MALAWI = "MALAWI"
+    MALAYSIA = "MALAYSIA"
+    MALDIVES = "MALDIVES"
+    MALI = "MALI"
+    MALTA = "MALTA"
+    MARSHALL_ISLANDS = "MARSHALL_ISLANDS"
+    MARTINIQUE = "MARTINIQUE"
+    MAURITANIA = "MAURITANIA"
+    MAURITIUS = "MAURITIUS"
+    MAYOTTE = "MAYOTTE"
+    MEDITERRANEAN_SEA = "MEDITERRANEAN_SEA"
+    MEXICO = "MEXICO"
+    MICRONESIA_FEDERATED_STATES_OF = "MICRONESIA_FEDERATED_STATES_OF"
+    MIDWAY_ISLANDS = "MIDWAY_ISLANDS"
+    MOLDOVA = "MOLDOVA"
+    MONACO = "MONACO"
+    MONGOLIA = "MONGOLIA"
+    MONTENEGRO = "MONTENEGRO"
+    MONTSERRAT = "MONTSERRAT"
+    MOROCCO = "MOROCCO"
+    MOZAMBIQUE = "MOZAMBIQUE"
+    MYANMAR = "MYANMAR"
+    NAMIBIA = "NAMIBIA"
+    NAURU = "NAURU"
+    NAVASSA_ISLAND = "NAVASSA_ISLAND"
+    NEPAL = "NEPAL"
+    NETHERLANDS = "NETHERLANDS"
+    NEW_CALEDONIA = "NEW_CALEDONIA"
+    NEW_ZEALAND = "NEW_ZEALAND"
+    NICARAGUA = "NICARAGUA"
+    NIGER = "NIGER"
+    NIGERIA = "NIGERIA"
+    NIUE = "NIUE"
+    NORFOLK_ISLAND = "NORFOLK_ISLAND"
+    NORTH_KOREA = "NORTH_KOREA"
+    NORTH_MACEDONIA = "NORTH_MACEDONIA"
+    NORTH_SEA = "NORTH_SEA"
+    NORTHERN_MARIANA_ISLANDS = "NORTHERN_MARIANA_ISLANDS"
+    NORWAY = "NORWAY"
+    OMAN = "OMAN"
+    PACIFIC_OCEAN = "PACIFIC_OCEAN"
+    PAKISTAN = "PAKISTAN"
+    PALAU = "PALAU"
+    PALMYRA_ATOLL = "PALMYRA_ATOLL"
+    PANAMA = "PANAMA"
+    PAPUA_NEW_GUINEA = "PAPUA_NEW_GUINEA"
+    PARACEL_ISLANDS = "PARACEL_ISLANDS"
+    PARAGUAY = "PARAGUAY"
+    PERU = "PERU"
+    PHILIPPINES = "PHILIPPINES"
+    PITCAIRN_ISLANDS = "PITCAIRN_ISLANDS"
+    POLAND = "POLAND"
+    PORTUGAL = "PORTUGAL"
+    PUERTO_RICO = "PUERTO_RICO"
+    QATAR = "QATAR"
+    REPUBLIC_OF_THE_CONGO = "REPUBLIC_OF_THE_CONGO"
+    REUNION = "REUNION"
+    ROMANIA = "ROMANIA"
+    ROSS_SEA = "ROSS_SEA"
+    RUSSIA = "RUSSIA"
+    RWANDA = "RWANDA"
+    SAINT_BARTHELEMY = "SAINT_BARTHELEMY"
+    SAINT_HELENA = "SAINT_HELENA"
+    SAINT_KITTS_AND_NEVIS = "SAINT_KITTS_AND_NEVIS"
+    SAINT_LUCIA = "SAINT_LUCIA"
+    SAINT_MARTIN = "SAINT_MARTIN"
+    SAINT_PIERRE_AND_MIQUELON = "SAINT_PIERRE_AND_MIQUELON"
+    SAINT_VINCENT_AND_THE_GRENADINES = "SAINT_VINCENT_AND_THE_GRENADINES"
+    SAMOA = "SAMOA"
+    SAN_MARINO = "SAN_MARINO"
+    SAO_TOME_AND_PRINCIPE = "SAO_TOME_AND_PRINCIPE"
+    SAUDI_ARABIA = "SAUDI_ARABIA"
+    SENEGAL = "SENEGAL"
+    SERBIA = "SERBIA"
+    SEYCHELLES = "SEYCHELLES"
+    SIERRA_LEONE = "SIERRA_LEONE"
+    SINGAPORE = "SINGAPORE"
+    SINT_MAARTEN = "SINT_MAARTEN"
+    SLOVAKIA = "SLOVAKIA"
+    SLOVENIA = "SLOVENIA"
+    SOLOMON_ISLANDS = "SOLOMON_ISLANDS"
+    SOMALIA = "SOMALIA"
+    SOUTH_AFRICA = "SOUTH_AFRICA"
+    SOUTH_GEORGIA_AND_THE_SOUTH_SANDWICH_ISLANDS = "SOUTH_GEORGIA_AND_THE_SOUTH_SANDWICH_ISLANDS"
+    SOUTH_KOREA = "SOUTH_KOREA"
+    SOUTH_SUDAN = "SOUTH_SUDAN"
+    SOUTHERN_OCEAN = "SOUTHERN_OCEAN"
+    SPAIN = "SPAIN"
+    SPRATLY_ISLANDS = "SPRATLY_ISLANDS"
+    SRI_LANKA = "SRI_LANKA"
+    STATE_OF_PALESTINE = "STATE_OF_PALESTINE"
+    SUDAN = "SUDAN"
+    SURINAME = "SURINAME"
+    SVALBARD = "SVALBARD"
+    SWEDEN = "SWEDEN"
+    SWITZERLAND = "SWITZERLAND"
+    SYRIA = "SYRIA"
+    TAIWAN = "TAIWAN"
+    TAJIKISTAN = "TAJIKISTAN"
+    TANZANIA = "TANZANIA"
+    TASMAN_SEA = "TASMAN_SEA"
+    THAILAND = "THAILAND"
+    TIMOR_LESTE = "TIMOR_LESTE"
+    TOGO = "TOGO"
+    TOKELAU = "TOKELAU"
+    TONGA = "TONGA"
+    TRINIDAD_AND_TOBAGO = "TRINIDAD_AND_TOBAGO"
+    TROMELIN_ISLAND = "TROMELIN_ISLAND"
+    TUNISIA = "TUNISIA"
+    TURKEY = "TURKEY"
+    TURKMENISTAN = "TURKMENISTAN"
+    TURKS_AND_CAICOS_ISLANDS = "TURKS_AND_CAICOS_ISLANDS"
+    TUVALU = "TUVALU"
+    UGANDA = "UGANDA"
+    UKRAINE = "UKRAINE"
+    UNITED_ARAB_EMIRATES = "UNITED_ARAB_EMIRATES"
+    UNITED_KINGDOM = "UNITED_KINGDOM"
+    URUGUAY = "URUGUAY"
+    USA = "USA"
+    UZBEKISTAN = "UZBEKISTAN"
+    VANUATU = "VANUATU"
+    VENEZUELA = "VENEZUELA"
+    VIET_NAM = "VIET_NAM"
+    VIRGIN_ISLANDS = "VIRGIN_ISLANDS"
+    WAKE_ISLAND = "WAKE_ISLAND"
+    WALLIS_AND_FUTUNA = "WALLIS_AND_FUTUNA"
+    WEST_BANK = "WEST_BANK"
+    WESTERN_SAHARA = "WESTERN_SAHARA"
+    YEMEN = "YEMEN"
+    ZAMBIA = "ZAMBIA"
+    ZIMBABWE = "ZIMBABWE"
+
+# Set metadata after class creation to avoid it becoming an enum member
+InsdcGeographicLocationEnum._metadata = {
+    "AFGHANISTAN": {'description': 'Afghanistan', 'meaning': 'iso3166loc:af'},
+    "ALBANIA": {'description': 'Albania', 'meaning': 'iso3166loc:al'},
+    "ALGERIA": {'description': 'Algeria', 'meaning': 'iso3166loc:dz'},
+    "AMERICAN_SAMOA": {'description': 'American Samoa', 'meaning': 'iso3166loc:as'},
+    "ANDORRA": {'description': 'Andorra', 'meaning': 'iso3166loc:ad'},
+    "ANGOLA": {'description': 'Angola', 'meaning': 'iso3166loc:ao'},
+    "ANGUILLA": {'description': 'Anguilla', 'meaning': 'iso3166loc:ai'},
+    "ANTARCTICA": {'description': 'Antarctica', 'meaning': 'iso3166loc:aq'},
+    "ANTIGUA_AND_BARBUDA": {'description': 'Antigua and Barbuda', 'meaning': 'iso3166loc:ag'},
+    "ARCTIC_OCEAN": {'description': 'Arctic Ocean', 'meaning': 'geonames:3371123/'},
+    "ARGENTINA": {'description': 'Argentina', 'meaning': 'iso3166loc:ar'},
+    "ARMENIA": {'description': 'Armenia', 'meaning': 'iso3166loc:am'},
+    "ARUBA": {'description': 'Aruba', 'meaning': 'iso3166loc:aw'},
+    "ASHMORE_AND_CARTIER_ISLANDS": {'description': 'Ashmore and Cartier Islands', 'annotations': {'note': 'Australian external territory'}},
+    "ATLANTIC_OCEAN": {'description': 'Atlantic Ocean', 'meaning': 'geonames:3411923/'},
+    "AUSTRALIA": {'description': 'Australia', 'meaning': 'iso3166loc:au'},
+    "AUSTRIA": {'description': 'Austria', 'meaning': 'iso3166loc:at'},
+    "AZERBAIJAN": {'description': 'Azerbaijan', 'meaning': 'iso3166loc:az'},
+    "BAHAMAS": {'description': 'Bahamas', 'meaning': 'iso3166loc:bs'},
+    "BAHRAIN": {'description': 'Bahrain', 'meaning': 'iso3166loc:bh'},
+    "BALTIC_SEA": {'description': 'Baltic Sea', 'meaning': 'geonames:2673730/'},
+    "BAKER_ISLAND": {'description': 'Baker Island', 'meaning': 'iso3166loc:um', 'annotations': {'note': 'US Minor Outlying Islands'}},
+    "BANGLADESH": {'description': 'Bangladesh', 'meaning': 'iso3166loc:bd'},
+    "BARBADOS": {'description': 'Barbados', 'meaning': 'iso3166loc:bb'},
+    "BASSAS_DA_INDIA": {'description': 'Bassas da India', 'annotations': {'note': 'French Southern and Antarctic Lands territory'}},
+    "BELARUS": {'description': 'Belarus', 'meaning': 'iso3166loc:by'},
+    "BELGIUM": {'description': 'Belgium', 'meaning': 'iso3166loc:be'},
+    "BELIZE": {'description': 'Belize', 'meaning': 'iso3166loc:bz'},
+    "BENIN": {'description': 'Benin', 'meaning': 'iso3166loc:bj'},
+    "BERMUDA": {'description': 'Bermuda', 'meaning': 'iso3166loc:bm'},
+    "BHUTAN": {'description': 'Bhutan', 'meaning': 'iso3166loc:bt'},
+    "BOLIVIA": {'description': 'Bolivia', 'meaning': 'iso3166loc:bo'},
+    "BORNEO": {'description': 'Borneo', 'meaning': 'geonames:1642188/', 'annotations': {'note': 'Island shared by Brunei, Indonesia, and Malaysia'}},
+    "BOSNIA_AND_HERZEGOVINA": {'description': 'Bosnia and Herzegovina', 'meaning': 'iso3166loc:ba'},
+    "BOTSWANA": {'description': 'Botswana', 'meaning': 'iso3166loc:bw'},
+    "BOUVET_ISLAND": {'description': 'Bouvet Island', 'meaning': 'iso3166loc:bv'},
+    "BRAZIL": {'description': 'Brazil', 'meaning': 'iso3166loc:br'},
+    "BRITISH_VIRGIN_ISLANDS": {'description': 'British Virgin Islands', 'meaning': 'iso3166loc:vg'},
+    "BRUNEI": {'description': 'Brunei', 'meaning': 'iso3166loc:bn'},
+    "BULGARIA": {'description': 'Bulgaria', 'meaning': 'iso3166loc:bg'},
+    "BURKINA_FASO": {'description': 'Burkina Faso', 'meaning': 'iso3166loc:bf'},
+    "BURUNDI": {'description': 'Burundi', 'meaning': 'iso3166loc:bi'},
+    "CAMBODIA": {'description': 'Cambodia', 'meaning': 'iso3166loc:kh'},
+    "CAMEROON": {'description': 'Cameroon', 'meaning': 'iso3166loc:cm'},
+    "CANADA": {'description': 'Canada', 'meaning': 'iso3166loc:ca'},
+    "CAPE_VERDE": {'description': 'Cape Verde', 'meaning': 'iso3166loc:cv'},
+    "CAYMAN_ISLANDS": {'description': 'Cayman Islands', 'meaning': 'iso3166loc:ky'},
+    "CENTRAL_AFRICAN_REPUBLIC": {'description': 'Central African Republic', 'meaning': 'iso3166loc:cf'},
+    "CHAD": {'description': 'Chad', 'meaning': 'iso3166loc:td'},
+    "CHILE": {'description': 'Chile', 'meaning': 'iso3166loc:cl'},
+    "CHINA": {'description': 'China', 'meaning': 'iso3166loc:cn'},
+    "CHRISTMAS_ISLAND": {'description': 'Christmas Island', 'meaning': 'iso3166loc:cx'},
+    "CLIPPERTON_ISLAND": {'description': 'Clipperton Island', 'annotations': {'note': 'French overseas territory'}},
+    "COCOS_ISLANDS": {'description': 'Cocos Islands', 'meaning': 'iso3166loc:cc'},
+    "COLOMBIA": {'description': 'Colombia', 'meaning': 'iso3166loc:co'},
+    "COMOROS": {'description': 'Comoros', 'meaning': 'iso3166loc:km'},
+    "COOK_ISLANDS": {'description': 'Cook Islands', 'meaning': 'iso3166loc:ck'},
+    "CORAL_SEA_ISLANDS": {'description': 'Coral Sea Islands', 'annotations': {'note': 'Australian external territory'}},
+    "COSTA_RICA": {'description': 'Costa Rica', 'meaning': 'iso3166loc:cr'},
+    "COTE_DIVOIRE": {'description': "Cote d'Ivoire", 'meaning': 'iso3166loc:ci'},
+    "CROATIA": {'description': 'Croatia', 'meaning': 'iso3166loc:hr'},
+    "CUBA": {'description': 'Cuba', 'meaning': 'iso3166loc:cu'},
+    "CURACAO": {'description': 'Curacao', 'meaning': 'iso3166loc:cw'},
+    "CYPRUS": {'description': 'Cyprus', 'meaning': 'iso3166loc:cy'},
+    "CZECHIA": {'description': 'Czechia', 'meaning': 'iso3166loc:cz'},
+    "DEMOCRATIC_REPUBLIC_OF_THE_CONGO": {'description': 'Democratic Republic of the Congo', 'meaning': 'iso3166loc:cd'},
+    "DENMARK": {'description': 'Denmark', 'meaning': 'iso3166loc:dk'},
+    "DJIBOUTI": {'description': 'Djibouti', 'meaning': 'iso3166loc:dj'},
+    "DOMINICA": {'description': 'Dominica', 'meaning': 'iso3166loc:dm'},
+    "DOMINICAN_REPUBLIC": {'description': 'Dominican Republic', 'meaning': 'iso3166loc:do'},
+    "ECUADOR": {'description': 'Ecuador', 'meaning': 'iso3166loc:ec'},
+    "EGYPT": {'description': 'Egypt', 'meaning': 'iso3166loc:eg'},
+    "EL_SALVADOR": {'description': 'El Salvador', 'meaning': 'iso3166loc:sv'},
+    "EQUATORIAL_GUINEA": {'description': 'Equatorial Guinea', 'meaning': 'iso3166loc:gq'},
+    "ERITREA": {'description': 'Eritrea', 'meaning': 'iso3166loc:er'},
+    "ESTONIA": {'description': 'Estonia', 'meaning': 'iso3166loc:ee'},
+    "ESWATINI": {'description': 'Eswatini', 'meaning': 'iso3166loc:sz'},
+    "ETHIOPIA": {'description': 'Ethiopia', 'meaning': 'iso3166loc:et'},
+    "EUROPA_ISLAND": {'description': 'Europa Island', 'annotations': {'note': 'French Southern and Antarctic Lands territory'}},
+    "FALKLAND_ISLANDS": {'description': 'Falkland Islands (Islas Malvinas)', 'meaning': 'iso3166loc:fk'},
+    "FAROE_ISLANDS": {'description': 'Faroe Islands', 'meaning': 'iso3166loc:fo'},
+    "FIJI": {'description': 'Fiji', 'meaning': 'iso3166loc:fj'},
+    "FINLAND": {'description': 'Finland', 'meaning': 'iso3166loc:fi'},
+    "FRANCE": {'description': 'France', 'meaning': 'iso3166loc:fr'},
+    "FRENCH_GUIANA": {'description': 'French Guiana', 'meaning': 'iso3166loc:gf'},
+    "FRENCH_POLYNESIA": {'description': 'French Polynesia', 'meaning': 'iso3166loc:pf'},
+    "FRENCH_SOUTHERN_AND_ANTARCTIC_LANDS": {'description': 'French Southern and Antarctic Lands', 'meaning': 'iso3166loc:tf'},
+    "GABON": {'description': 'Gabon', 'meaning': 'iso3166loc:ga'},
+    "GAMBIA": {'description': 'Gambia', 'meaning': 'iso3166loc:gm'},
+    "GAZA_STRIP": {'description': 'Gaza Strip', 'annotations': {'note': 'Palestinian territory'}},
+    "GEORGIA": {'description': 'Georgia', 'meaning': 'iso3166loc:ge'},
+    "GERMANY": {'description': 'Germany', 'meaning': 'iso3166loc:de'},
+    "GHANA": {'description': 'Ghana', 'meaning': 'iso3166loc:gh'},
+    "GIBRALTAR": {'description': 'Gibraltar', 'meaning': 'iso3166loc:gi'},
+    "GLORIOSO_ISLANDS": {'description': 'Glorioso Islands', 'annotations': {'note': 'French Southern and Antarctic Lands territory'}},
+    "GREECE": {'description': 'Greece', 'meaning': 'iso3166loc:gr'},
+    "GREENLAND": {'description': 'Greenland', 'meaning': 'iso3166loc:gl'},
+    "GRENADA": {'description': 'Grenada', 'meaning': 'iso3166loc:gd'},
+    "GUADELOUPE": {'description': 'Guadeloupe', 'meaning': 'iso3166loc:gp'},
+    "GUAM": {'description': 'Guam', 'meaning': 'iso3166loc:gu'},
+    "GUATEMALA": {'description': 'Guatemala', 'meaning': 'iso3166loc:gt'},
+    "GUERNSEY": {'description': 'Guernsey', 'meaning': 'iso3166loc:gg'},
+    "GUINEA": {'description': 'Guinea', 'meaning': 'iso3166loc:gn'},
+    "GUINEA_BISSAU": {'description': 'Guinea-Bissau', 'meaning': 'iso3166loc:gw'},
+    "GUYANA": {'description': 'Guyana', 'meaning': 'iso3166loc:gy'},
+    "HAITI": {'description': 'Haiti', 'meaning': 'iso3166loc:ht'},
+    "HEARD_ISLAND_AND_MCDONALD_ISLANDS": {'description': 'Heard Island and McDonald Islands', 'meaning': 'iso3166loc:hm'},
+    "HONDURAS": {'description': 'Honduras', 'meaning': 'iso3166loc:hn'},
+    "HONG_KONG": {'description': 'Hong Kong', 'meaning': 'iso3166loc:hk'},
+    "HOWLAND_ISLAND": {'description': 'Howland Island', 'meaning': 'iso3166loc:um', 'annotations': {'note': 'US Minor Outlying Islands'}},
+    "HUNGARY": {'description': 'Hungary', 'meaning': 'iso3166loc:hu'},
+    "ICELAND": {'description': 'Iceland', 'meaning': 'iso3166loc:is'},
+    "INDIA": {'description': 'India', 'meaning': 'iso3166loc:in'},
+    "INDIAN_OCEAN": {'description': 'Indian Ocean', 'meaning': 'geonames:1545739/'},
+    "INDONESIA": {'description': 'Indonesia', 'meaning': 'iso3166loc:id'},
+    "IRAN": {'description': 'Iran', 'meaning': 'iso3166loc:ir'},
+    "IRAQ": {'description': 'Iraq', 'meaning': 'iso3166loc:iq'},
+    "IRELAND": {'description': 'Ireland', 'meaning': 'iso3166loc:ie'},
+    "ISLE_OF_MAN": {'description': 'Isle of Man', 'meaning': 'iso3166loc:im'},
+    "ISRAEL": {'description': 'Israel', 'meaning': 'iso3166loc:il'},
+    "ITALY": {'description': 'Italy', 'meaning': 'iso3166loc:it'},
+    "JAMAICA": {'description': 'Jamaica', 'meaning': 'iso3166loc:jm'},
+    "JAN_MAYEN": {'description': 'Jan Mayen', 'annotations': {'note': 'Norwegian territory'}},
+    "JAPAN": {'description': 'Japan', 'meaning': 'iso3166loc:jp'},
+    "JARVIS_ISLAND": {'description': 'Jarvis Island', 'meaning': 'iso3166loc:um', 'annotations': {'note': 'US Minor Outlying Islands'}},
+    "JERSEY": {'description': 'Jersey', 'meaning': 'iso3166loc:je'},
+    "JOHNSTON_ATOLL": {'description': 'Johnston Atoll', 'meaning': 'iso3166loc:um', 'annotations': {'note': 'US Minor Outlying Islands'}},
+    "JORDAN": {'description': 'Jordan', 'meaning': 'iso3166loc:jo'},
+    "JUAN_DE_NOVA_ISLAND": {'description': 'Juan de Nova Island', 'annotations': {'note': 'French Southern and Antarctic Lands territory'}},
+    "KAZAKHSTAN": {'description': 'Kazakhstan', 'meaning': 'iso3166loc:kz'},
+    "KENYA": {'description': 'Kenya', 'meaning': 'iso3166loc:ke'},
+    "KERGUELEN_ARCHIPELAGO": {'description': 'Kerguelen Archipelago', 'annotations': {'note': 'French Southern and Antarctic Lands territory'}},
+    "KINGMAN_REEF": {'description': 'Kingman Reef', 'meaning': 'iso3166loc:um', 'annotations': {'note': 'US Minor Outlying Islands'}},
+    "KIRIBATI": {'description': 'Kiribati', 'meaning': 'iso3166loc:ki'},
+    "KOSOVO": {'description': 'Kosovo', 'meaning': 'iso3166loc:xk', 'annotations': {'note': 'Provisional ISO 3166 code'}},
+    "KUWAIT": {'description': 'Kuwait', 'meaning': 'iso3166loc:kw'},
+    "KYRGYZSTAN": {'description': 'Kyrgyzstan', 'meaning': 'iso3166loc:kg'},
+    "LAOS": {'description': 'Laos', 'meaning': 'iso3166loc:la'},
+    "LATVIA": {'description': 'Latvia', 'meaning': 'iso3166loc:lv'},
+    "LEBANON": {'description': 'Lebanon', 'meaning': 'iso3166loc:lb'},
+    "LESOTHO": {'description': 'Lesotho', 'meaning': 'iso3166loc:ls'},
+    "LIBERIA": {'description': 'Liberia', 'meaning': 'iso3166loc:lr'},
+    "LIBYA": {'description': 'Libya', 'meaning': 'iso3166loc:ly'},
+    "LIECHTENSTEIN": {'description': 'Liechtenstein', 'meaning': 'iso3166loc:li'},
+    "LINE_ISLANDS": {'description': 'Line Islands', 'annotations': {'note': 'Island group in Pacific Ocean (part of Kiribati)'}},
+    "LITHUANIA": {'description': 'Lithuania', 'meaning': 'iso3166loc:lt'},
+    "LUXEMBOURG": {'description': 'Luxembourg', 'meaning': 'iso3166loc:lu'},
+    "MACAU": {'description': 'Macau', 'meaning': 'iso3166loc:mo'},
+    "MADAGASCAR": {'description': 'Madagascar', 'meaning': 'iso3166loc:mg'},
+    "MALAWI": {'description': 'Malawi', 'meaning': 'iso3166loc:mw'},
+    "MALAYSIA": {'description': 'Malaysia', 'meaning': 'iso3166loc:my'},
+    "MALDIVES": {'description': 'Maldives', 'meaning': 'iso3166loc:mv'},
+    "MALI": {'description': 'Mali', 'meaning': 'iso3166loc:ml'},
+    "MALTA": {'description': 'Malta', 'meaning': 'iso3166loc:mt'},
+    "MARSHALL_ISLANDS": {'description': 'Marshall Islands', 'meaning': 'iso3166loc:mh'},
+    "MARTINIQUE": {'description': 'Martinique', 'meaning': 'iso3166loc:mq'},
+    "MAURITANIA": {'description': 'Mauritania', 'meaning': 'iso3166loc:mr'},
+    "MAURITIUS": {'description': 'Mauritius', 'meaning': 'iso3166loc:mu'},
+    "MAYOTTE": {'description': 'Mayotte', 'meaning': 'iso3166loc:yt'},
+    "MEDITERRANEAN_SEA": {'description': 'Mediterranean Sea', 'meaning': 'geonames:2593778/'},
+    "MEXICO": {'description': 'Mexico', 'meaning': 'iso3166loc:mx'},
+    "MICRONESIA_FEDERATED_STATES_OF": {'description': 'Micronesia, Federated States of', 'meaning': 'iso3166loc:fm'},
+    "MIDWAY_ISLANDS": {'description': 'Midway Islands', 'meaning': 'iso3166loc:um', 'annotations': {'note': 'US Minor Outlying Islands'}},
+    "MOLDOVA": {'description': 'Moldova', 'meaning': 'iso3166loc:md'},
+    "MONACO": {'description': 'Monaco', 'meaning': 'iso3166loc:mc'},
+    "MONGOLIA": {'description': 'Mongolia', 'meaning': 'iso3166loc:mn'},
+    "MONTENEGRO": {'description': 'Montenegro', 'meaning': 'iso3166loc:me'},
+    "MONTSERRAT": {'description': 'Montserrat', 'meaning': 'iso3166loc:ms'},
+    "MOROCCO": {'description': 'Morocco', 'meaning': 'iso3166loc:ma'},
+    "MOZAMBIQUE": {'description': 'Mozambique', 'meaning': 'iso3166loc:mz'},
+    "MYANMAR": {'description': 'Myanmar', 'meaning': 'iso3166loc:mm'},
+    "NAMIBIA": {'description': 'Namibia', 'meaning': 'iso3166loc:na'},
+    "NAURU": {'description': 'Nauru', 'meaning': 'iso3166loc:nr'},
+    "NAVASSA_ISLAND": {'description': 'Navassa Island', 'meaning': 'iso3166loc:um', 'annotations': {'note': 'US Minor Outlying Islands'}},
+    "NEPAL": {'description': 'Nepal', 'meaning': 'iso3166loc:np'},
+    "NETHERLANDS": {'description': 'Netherlands', 'meaning': 'iso3166loc:nl'},
+    "NEW_CALEDONIA": {'description': 'New Caledonia', 'meaning': 'iso3166loc:nc'},
+    "NEW_ZEALAND": {'description': 'New Zealand', 'meaning': 'iso3166loc:nz'},
+    "NICARAGUA": {'description': 'Nicaragua', 'meaning': 'iso3166loc:ni'},
+    "NIGER": {'description': 'Niger', 'meaning': 'iso3166loc:ne'},
+    "NIGERIA": {'description': 'Nigeria', 'meaning': 'iso3166loc:ng'},
+    "NIUE": {'description': 'Niue', 'meaning': 'iso3166loc:nu'},
+    "NORFOLK_ISLAND": {'description': 'Norfolk Island', 'meaning': 'iso3166loc:nf'},
+    "NORTH_KOREA": {'description': 'North Korea', 'meaning': 'iso3166loc:kp'},
+    "NORTH_MACEDONIA": {'description': 'North Macedonia', 'meaning': 'iso3166loc:mk'},
+    "NORTH_SEA": {'description': 'North Sea', 'meaning': 'geonames:2960848/'},
+    "NORTHERN_MARIANA_ISLANDS": {'description': 'Northern Mariana Islands', 'meaning': 'iso3166loc:mp'},
+    "NORWAY": {'description': 'Norway', 'meaning': 'iso3166loc:no'},
+    "OMAN": {'description': 'Oman', 'meaning': 'iso3166loc:om'},
+    "PACIFIC_OCEAN": {'description': 'Pacific Ocean', 'meaning': 'geonames:2363254/'},
+    "PAKISTAN": {'description': 'Pakistan', 'meaning': 'iso3166loc:pk'},
+    "PALAU": {'description': 'Palau', 'meaning': 'iso3166loc:pw'},
+    "PALMYRA_ATOLL": {'description': 'Palmyra Atoll', 'meaning': 'iso3166loc:um', 'annotations': {'note': 'US Minor Outlying Islands'}},
+    "PANAMA": {'description': 'Panama', 'meaning': 'iso3166loc:pa'},
+    "PAPUA_NEW_GUINEA": {'description': 'Papua New Guinea', 'meaning': 'iso3166loc:pg'},
+    "PARACEL_ISLANDS": {'description': 'Paracel Islands', 'annotations': {'note': 'Disputed territory in South China Sea'}},
+    "PARAGUAY": {'description': 'Paraguay', 'meaning': 'iso3166loc:py'},
+    "PERU": {'description': 'Peru', 'meaning': 'iso3166loc:pe'},
+    "PHILIPPINES": {'description': 'Philippines', 'meaning': 'iso3166loc:ph'},
+    "PITCAIRN_ISLANDS": {'description': 'Pitcairn Islands', 'meaning': 'iso3166loc:pn'},
+    "POLAND": {'description': 'Poland', 'meaning': 'iso3166loc:pl'},
+    "PORTUGAL": {'description': 'Portugal', 'meaning': 'iso3166loc:pt'},
+    "PUERTO_RICO": {'description': 'Puerto Rico', 'meaning': 'iso3166loc:pr'},
+    "QATAR": {'description': 'Qatar', 'meaning': 'iso3166loc:qa'},
+    "REPUBLIC_OF_THE_CONGO": {'description': 'Republic of the Congo', 'meaning': 'iso3166loc:cg'},
+    "REUNION": {'description': 'Reunion', 'meaning': 'iso3166loc:re'},
+    "ROMANIA": {'description': 'Romania', 'meaning': 'iso3166loc:ro'},
+    "ROSS_SEA": {'description': 'Ross Sea', 'meaning': 'geonames:4036621/'},
+    "RUSSIA": {'description': 'Russia', 'meaning': 'iso3166loc:ru'},
+    "RWANDA": {'description': 'Rwanda', 'meaning': 'iso3166loc:rw'},
+    "SAINT_BARTHELEMY": {'description': 'Saint Barthelemy', 'meaning': 'iso3166loc:bl'},
+    "SAINT_HELENA": {'description': 'Saint Helena', 'meaning': 'iso3166loc:sh'},
+    "SAINT_KITTS_AND_NEVIS": {'description': 'Saint Kitts and Nevis', 'meaning': 'iso3166loc:kn'},
+    "SAINT_LUCIA": {'description': 'Saint Lucia', 'meaning': 'iso3166loc:lc'},
+    "SAINT_MARTIN": {'description': 'Saint Martin', 'meaning': 'iso3166loc:mf'},
+    "SAINT_PIERRE_AND_MIQUELON": {'description': 'Saint Pierre and Miquelon', 'meaning': 'iso3166loc:pm'},
+    "SAINT_VINCENT_AND_THE_GRENADINES": {'description': 'Saint Vincent and the Grenadines', 'meaning': 'iso3166loc:vc'},
+    "SAMOA": {'description': 'Samoa', 'meaning': 'iso3166loc:ws'},
+    "SAN_MARINO": {'description': 'San Marino', 'meaning': 'iso3166loc:sm'},
+    "SAO_TOME_AND_PRINCIPE": {'description': 'Sao Tome and Principe', 'meaning': 'iso3166loc:st'},
+    "SAUDI_ARABIA": {'description': 'Saudi Arabia', 'meaning': 'iso3166loc:sa'},
+    "SENEGAL": {'description': 'Senegal', 'meaning': 'iso3166loc:sn'},
+    "SERBIA": {'description': 'Serbia', 'meaning': 'iso3166loc:rs'},
+    "SEYCHELLES": {'description': 'Seychelles', 'meaning': 'iso3166loc:sc'},
+    "SIERRA_LEONE": {'description': 'Sierra Leone', 'meaning': 'iso3166loc:sl'},
+    "SINGAPORE": {'description': 'Singapore', 'meaning': 'iso3166loc:sg'},
+    "SINT_MAARTEN": {'description': 'Sint Maarten', 'meaning': 'iso3166loc:sx'},
+    "SLOVAKIA": {'description': 'Slovakia', 'meaning': 'iso3166loc:sk'},
+    "SLOVENIA": {'description': 'Slovenia', 'meaning': 'iso3166loc:si'},
+    "SOLOMON_ISLANDS": {'description': 'Solomon Islands', 'meaning': 'iso3166loc:sb'},
+    "SOMALIA": {'description': 'Somalia', 'meaning': 'iso3166loc:so'},
+    "SOUTH_AFRICA": {'description': 'South Africa', 'meaning': 'iso3166loc:za'},
+    "SOUTH_GEORGIA_AND_THE_SOUTH_SANDWICH_ISLANDS": {'description': 'South Georgia and the South Sandwich Islands', 'meaning': 'iso3166loc:gs'},
+    "SOUTH_KOREA": {'description': 'South Korea', 'meaning': 'iso3166loc:kr'},
+    "SOUTH_SUDAN": {'description': 'South Sudan', 'meaning': 'iso3166loc:ss'},
+    "SOUTHERN_OCEAN": {'description': 'Southern Ocean', 'meaning': 'geonames:4036776/'},
+    "SPAIN": {'description': 'Spain', 'meaning': 'iso3166loc:es'},
+    "SPRATLY_ISLANDS": {'description': 'Spratly Islands', 'annotations': {'note': 'Disputed territory in South China Sea'}},
+    "SRI_LANKA": {'description': 'Sri Lanka', 'meaning': 'iso3166loc:lk'},
+    "STATE_OF_PALESTINE": {'description': 'State of Palestine', 'meaning': 'iso3166loc:ps'},
+    "SUDAN": {'description': 'Sudan', 'meaning': 'iso3166loc:sd'},
+    "SURINAME": {'description': 'Suriname', 'meaning': 'iso3166loc:sr'},
+    "SVALBARD": {'description': 'Svalbard', 'annotations': {'note': 'Norwegian territory (part of Svalbard and Jan Mayen - SJ)'}},
+    "SWEDEN": {'description': 'Sweden', 'meaning': 'iso3166loc:se'},
+    "SWITZERLAND": {'description': 'Switzerland', 'meaning': 'iso3166loc:ch'},
+    "SYRIA": {'description': 'Syria', 'meaning': 'iso3166loc:sy'},
+    "TAIWAN": {'description': 'Taiwan', 'meaning': 'iso3166loc:tw'},
+    "TAJIKISTAN": {'description': 'Tajikistan', 'meaning': 'iso3166loc:tj'},
+    "TANZANIA": {'description': 'Tanzania', 'meaning': 'iso3166loc:tz'},
+    "TASMAN_SEA": {'description': 'Tasman Sea', 'meaning': 'geonames:2363247/'},
+    "THAILAND": {'description': 'Thailand', 'meaning': 'iso3166loc:th'},
+    "TIMOR_LESTE": {'description': 'Timor-Leste', 'meaning': 'iso3166loc:tl'},
+    "TOGO": {'description': 'Togo', 'meaning': 'iso3166loc:tg'},
+    "TOKELAU": {'description': 'Tokelau', 'meaning': 'iso3166loc:tk'},
+    "TONGA": {'description': 'Tonga', 'meaning': 'iso3166loc:to'},
+    "TRINIDAD_AND_TOBAGO": {'description': 'Trinidad and Tobago', 'meaning': 'iso3166loc:tt'},
+    "TROMELIN_ISLAND": {'description': 'Tromelin Island', 'annotations': {'note': 'French Southern and Antarctic Lands territory'}},
+    "TUNISIA": {'description': 'Tunisia', 'meaning': 'iso3166loc:tn'},
+    "TURKEY": {'description': 'Turkey', 'meaning': 'iso3166loc:tr'},
+    "TURKMENISTAN": {'description': 'Turkmenistan', 'meaning': 'iso3166loc:tm'},
+    "TURKS_AND_CAICOS_ISLANDS": {'description': 'Turks and Caicos Islands', 'meaning': 'iso3166loc:tc'},
+    "TUVALU": {'description': 'Tuvalu', 'meaning': 'iso3166loc:tv'},
+    "UGANDA": {'description': 'Uganda', 'meaning': 'iso3166loc:ug'},
+    "UKRAINE": {'description': 'Ukraine', 'meaning': 'iso3166loc:ua'},
+    "UNITED_ARAB_EMIRATES": {'description': 'United Arab Emirates', 'meaning': 'iso3166loc:ae'},
+    "UNITED_KINGDOM": {'description': 'United Kingdom', 'meaning': 'iso3166loc:gb'},
+    "URUGUAY": {'description': 'Uruguay', 'meaning': 'iso3166loc:uy'},
+    "USA": {'description': 'USA', 'meaning': 'iso3166loc:us'},
+    "UZBEKISTAN": {'description': 'Uzbekistan', 'meaning': 'iso3166loc:uz'},
+    "VANUATU": {'description': 'Vanuatu', 'meaning': 'iso3166loc:vu'},
+    "VENEZUELA": {'description': 'Venezuela', 'meaning': 'iso3166loc:ve'},
+    "VIET_NAM": {'description': 'Viet Nam', 'meaning': 'iso3166loc:vn'},
+    "VIRGIN_ISLANDS": {'description': 'Virgin Islands', 'meaning': 'iso3166loc:vi'},
+    "WAKE_ISLAND": {'description': 'Wake Island', 'meaning': 'iso3166loc:um', 'annotations': {'note': 'US Minor Outlying Islands'}},
+    "WALLIS_AND_FUTUNA": {'description': 'Wallis and Futuna', 'meaning': 'iso3166loc:wf'},
+    "WEST_BANK": {'description': 'West Bank', 'annotations': {'note': 'Palestinian territory'}},
+    "WESTERN_SAHARA": {'description': 'Western Sahara', 'meaning': 'iso3166loc:eh'},
+    "YEMEN": {'description': 'Yemen', 'meaning': 'iso3166loc:ye'},
+    "ZAMBIA": {'description': 'Zambia', 'meaning': 'iso3166loc:zm'},
+    "ZIMBABWE": {'description': 'Zimbabwe', 'meaning': 'iso3166loc:zw'},
+}
+
 class ViralGenomeTypeEnum(RichEnum):
     """
     Types of viral genomes based on Baltimore classification
@@ -1372,6 +1958,92 @@ TrophicLevelEnum._metadata = {
     "PHOTOLITHOTROPH": {'description': 'Organism that uses light energy and inorganic electron donors'},
     "PHOTOSYNTHETIC": {'description': 'Relating to organisms that produce organic matter through photosynthesis'},
     "PHOTOTROPH": {'description': 'Organism that obtains energy from light'},
+}
+
+class HumanDevelopmentalStage(RichEnum):
+    # Enum members
+    ZYGOTE_STAGE = "ZYGOTE_STAGE"
+    CLEAVAGE_STAGE = "CLEAVAGE_STAGE"
+    MORULA_STAGE = "MORULA_STAGE"
+    BLASTOCYST_STAGE = "BLASTOCYST_STAGE"
+    GASTRULA_STAGE = "GASTRULA_STAGE"
+    NEURULA_STAGE = "NEURULA_STAGE"
+    ORGANOGENESIS_STAGE = "ORGANOGENESIS_STAGE"
+    FETAL_STAGE = "FETAL_STAGE"
+    NEONATAL_STAGE = "NEONATAL_STAGE"
+    INFANT_STAGE = "INFANT_STAGE"
+    TODDLER_STAGE = "TODDLER_STAGE"
+    CHILD_STAGE = "CHILD_STAGE"
+    ADOLESCENT_STAGE = "ADOLESCENT_STAGE"
+    ADULT_STAGE = "ADULT_STAGE"
+    AGED_STAGE = "AGED_STAGE"
+    EMBRYONIC_STAGE = "EMBRYONIC_STAGE"
+    PRENATAL_STAGE = "PRENATAL_STAGE"
+    POSTNATAL_STAGE = "POSTNATAL_STAGE"
+
+# Set metadata after class creation to avoid it becoming an enum member
+HumanDevelopmentalStage._metadata = {
+    "ZYGOTE_STAGE": {'description': 'Embryonic stage defined by a fertilized oocyte and presence of pronuclei. Starts at day 1 post-fertilization.', 'meaning': 'HsapDv:0000003'},
+    "CLEAVAGE_STAGE": {'description': 'Embryonic stage during which cell division occurs with reduction in cytoplasmic volume, and formation of inner and outer cell mass. 2-8 cells. Usually starts between day 2-3 post-fertilization.', 'meaning': 'HsapDv:0000005'},
+    "MORULA_STAGE": {'description': 'The later part of Carnegie stage 02 when the cells have coalesced into a mass but the blastocystic cavity has not formed.', 'meaning': 'HsapDv:0000205'},
+    "BLASTOCYST_STAGE": {'description': 'Blastula stage with the loss of the zona pellucida and the definition of a free blastocyst. Usually starts between day 4-5 post-fertilization.', 'meaning': 'HsapDv:0000007'},
+    "GASTRULA_STAGE": {'description': 'Embryonic stage defined by a complex and coordinated series of cellular movements that occurs at the end of cleavage.', 'meaning': 'HsapDv:0000010'},
+    "NEURULA_STAGE": {'description': 'Embryonic stage defined by the formation of a tube from the flat layer of ectodermal cells known as the neural plate. This stage starts the emergence of the central nervous system.', 'meaning': 'HsapDv:0000012'},
+    "ORGANOGENESIS_STAGE": {'description': 'Embryonic stage at which the ectoderm, endoderm, and mesoderm develop into the internal organs of the organism.', 'meaning': 'HsapDv:0000015'},
+    "FETAL_STAGE": {'description': 'Prenatal stage that starts with the fully formed embryo and ends at birth. Generally from 8 weeks post-fertilization until birth.', 'meaning': 'HsapDv:0000037'},
+    "NEONATAL_STAGE": {'description': 'Immature stage that refers to a human newborn within the first 28 days of life.', 'meaning': 'HsapDv:0000262'},
+    "INFANT_STAGE": {'description': 'Immature stage that refers to an infant who is over 28 days and is under 12 months old.', 'meaning': 'HsapDv:0000261'},
+    "TODDLER_STAGE": {'description': 'Human stage that refers to a child who is over 12 months and under 5 years old. Often divided into early toddler (1-2 years) and late toddler (2-3 years).', 'meaning': 'HsapDv:0000265'},
+    "CHILD_STAGE": {'description': 'Pediatric stage that refers to a human who is over 5 and under 15 years old. Covers elementary and middle school ages.', 'meaning': 'HsapDv:0000271'},
+    "ADOLESCENT_STAGE": {'description': 'A young adult stage that refers to an individual who is over 15 and under 20 years old. Period of transition from childhood to adulthood.', 'meaning': 'HsapDv:0000268'},
+    "ADULT_STAGE": {'description': 'Human developmental stage that refers to a sexually mature human. Starts at approximately 15 years according to HPO definitions.', 'meaning': 'HsapDv:0000258'},
+    "AGED_STAGE": {'description': 'Late adult stage that refers to an individual who is over 60 and starts to have some age-related impairments. Often subdivided into young-old (60-79) and old-old (80+).', 'meaning': 'HsapDv:0000227'},
+    "EMBRYONIC_STAGE": {'description': 'Prenatal stage that starts with fertilization and ends with a fully formed embryo, before undergoing last development during the fetal stage. Up to 8 weeks post-fertilization.', 'meaning': 'HsapDv:0000002'},
+    "PRENATAL_STAGE": {'description': 'Prenatal stage that starts with fertilization and ends at birth. Encompasses both embryonic and fetal stages.', 'meaning': 'HsapDv:0000045'},
+    "POSTNATAL_STAGE": {'description': 'Human developmental stage that covers the whole of human life post birth.', 'meaning': 'HsapDv:0010000'},
+}
+
+class MouseDevelopmentalStage(RichEnum):
+    # Enum members
+    ZYGOTE_STAGE = "ZYGOTE_STAGE"
+    TWO_CELL_STAGE = "TWO_CELL_STAGE"
+    FOUR_CELL_STAGE = "FOUR_CELL_STAGE"
+    EIGHT_CELL_STAGE = "EIGHT_CELL_STAGE"
+    MORULA_STAGE = "MORULA_STAGE"
+    BLASTOCYST_STAGE = "BLASTOCYST_STAGE"
+    GASTRULA_STAGE = "GASTRULA_STAGE"
+    NEURULA_STAGE = "NEURULA_STAGE"
+    ORGANOGENESIS_STAGE = "ORGANOGENESIS_STAGE"
+    E0_5 = "E0_5"
+    E9_5 = "E9_5"
+    E14_5 = "E14_5"
+    P0_NEWBORN = "P0_NEWBORN"
+    P21_WEANING = "P21_WEANING"
+    P42_JUVENILE = "P42_JUVENILE"
+    P56_ADULT = "P56_ADULT"
+    AGED_12_MONTHS = "AGED_12_MONTHS"
+    THEILER_STAGE = "THEILER_STAGE"
+
+# Set metadata after class creation to avoid it becoming an enum member
+MouseDevelopmentalStage._metadata = {
+    "ZYGOTE_STAGE": {'description': 'Embryonic stage defined by a one-cell embryo (fertilised egg) with zona pellucida present. Embryonic age 0-0.9 dpc (days post coitum).', 'meaning': 'MmusDv:0000003'},
+    "TWO_CELL_STAGE": {'description': 'Embryonic cleavage stage defined by a dividing 2-4 cells egg. Embryonic age 1 dpc.', 'meaning': 'MmusDv:0000005'},
+    "FOUR_CELL_STAGE": {'description': 'Part of Theiler stage 02 - dividing egg with 4 cells. Embryonic age approximately 1 dpc.', 'meaning': 'MmusDv:0000005'},
+    "EIGHT_CELL_STAGE": {'description': 'Part of early morula stage - dividing egg with 8 cells. Embryonic age approximately 2 dpc.', 'meaning': 'MmusDv:0000006'},
+    "MORULA_STAGE": {'description': 'Embryonic cleavage stage defined by a dividing 4-16 cells egg, early to fully compacted morula. Embryonic age 2 dpc.', 'meaning': 'MmusDv:0000006'},
+    "BLASTOCYST_STAGE": {'description': 'Embryonic blastula stage defined by a zona free blastocyst (zona pellucida absent). Embryonic age 4 dpc.', 'meaning': 'MmusDv:0000009'},
+    "GASTRULA_STAGE": {'description': 'Embryonic stage defined by complex and coordinated series of cellular movements that occurs at the end of cleavage.', 'meaning': 'MmusDv:0000013'},
+    "NEURULA_STAGE": {'description': 'Embryonic stage called presomite stage and defined by the formation of the neural plate. This stage starts the emergence of the central nervous system at embryonic age 7.5 dpc.', 'meaning': 'MmusDv:0000017'},
+    "ORGANOGENESIS_STAGE": {'description': 'Embryonic stage at which the ectoderm, endoderm, and mesoderm develop into the internal organs of the organism.', 'meaning': 'MmusDv:0000018'},
+    "E0_5": {'description': 'Embryonic day 0.5 - one-cell embryo stage. Corresponds to Theiler stage 01.', 'meaning': 'MmusDv:0000003'},
+    "E9_5": {'description': 'Embryonic day 9.5 - organogenesis stage with visible hind limb buds. Between Theiler stages 15 and 16.', 'meaning': 'MmusDv:0000023'},
+    "E14_5": {'description': 'Embryonic day 14.5 - late organogenesis with clearly visible fingers and long bones of the limbs present.', 'meaning': 'MmusDv:0000029'},
+    "P0_NEWBORN": {'description': 'Stage that refers to the newborn mouse, aged E19-20, P0. Used for postnatal days 0 through 3.', 'meaning': 'MmusDv:0000036'},
+    "P21_WEANING": {'description': 'Weaning stage at approximately 21-22 days old. Transition from nursing to independent feeding.', 'meaning': 'MmusDv:0000141'},
+    "P42_JUVENILE": {'description': 'Prime adult stage at 6 weeks (42 days) old. Commonly considered the milestone for sexual maturity.', 'meaning': 'MmusDv:0000151'},
+    "P56_ADULT": {'description': 'Adult stage at 8 weeks (56 days) old. Fully mature adult mouse.', 'meaning': 'MmusDv:0000154'},
+    "AGED_12_MONTHS": {'description': 'Middle aged stage for mice over 10 and under 18 months old. Shows progressive age-related changes.', 'meaning': 'MmusDv:0000135'},
+    "THEILER_STAGE": {'description': 'Reference to any Theiler stage (TS1-TS28) which provides standardized morphological staging for mouse development.'},
 }
 
 class DayOfWeek(RichEnum):
@@ -3580,56 +4252,56 @@ class CountryCodeISO2Enum(RichEnum):
 
 # Set metadata after class creation to avoid it becoming an enum member
 CountryCodeISO2Enum._metadata = {
-    "US": {'description': 'United States of America'},
-    "CA": {'description': 'Canada'},
-    "MX": {'description': 'Mexico'},
-    "GB": {'description': 'United Kingdom'},
-    "FR": {'description': 'France'},
-    "DE": {'description': 'Germany'},
-    "IT": {'description': 'Italy'},
-    "ES": {'description': 'Spain'},
-    "PT": {'description': 'Portugal'},
-    "NL": {'description': 'Netherlands'},
-    "BE": {'description': 'Belgium'},
-    "CH": {'description': 'Switzerland'},
-    "AT": {'description': 'Austria'},
-    "SE": {'description': 'Sweden'},
-    "FALSE": {'description': 'Norway'},
-    "DK": {'description': 'Denmark'},
-    "FI": {'description': 'Finland'},
-    "PL": {'description': 'Poland'},
-    "RU": {'description': 'Russian Federation'},
-    "UA": {'description': 'Ukraine'},
-    "CN": {'description': 'China'},
-    "JP": {'description': 'Japan'},
-    "KR": {'description': 'South Korea'},
-    "IN": {'description': 'India'},
-    "AU": {'description': 'Australia'},
-    "NZ": {'description': 'New Zealand'},
-    "BR": {'description': 'Brazil'},
-    "AR": {'description': 'Argentina'},
-    "CL": {'description': 'Chile'},
-    "CO": {'description': 'Colombia'},
-    "PE": {'description': 'Peru'},
-    "VE": {'description': 'Venezuela'},
-    "ZA": {'description': 'South Africa'},
-    "EG": {'description': 'Egypt'},
-    "NG": {'description': 'Nigeria'},
-    "KE": {'description': 'Kenya'},
-    "IL": {'description': 'Israel'},
-    "SA": {'description': 'Saudi Arabia'},
-    "AE": {'description': 'United Arab Emirates'},
-    "TR": {'description': 'Turkey'},
-    "GR": {'description': 'Greece'},
-    "IE": {'description': 'Ireland'},
-    "SG": {'description': 'Singapore'},
-    "MY": {'description': 'Malaysia'},
-    "TH": {'description': 'Thailand'},
-    "ID": {'description': 'Indonesia'},
-    "PH": {'description': 'Philippines'},
-    "VN": {'description': 'Vietnam'},
-    "PK": {'description': 'Pakistan'},
-    "BD": {'description': 'Bangladesh'},
+    "US": {'description': 'United States of America', 'meaning': 'iso3166loc:us'},
+    "CA": {'description': 'Canada', 'meaning': 'iso3166loc:ca'},
+    "MX": {'description': 'Mexico', 'meaning': 'iso3166loc:mx'},
+    "GB": {'description': 'United Kingdom', 'meaning': 'iso3166loc:gb'},
+    "FR": {'description': 'France', 'meaning': 'iso3166loc:fr'},
+    "DE": {'description': 'Germany', 'meaning': 'iso3166loc:de'},
+    "IT": {'description': 'Italy', 'meaning': 'iso3166loc:it'},
+    "ES": {'description': 'Spain', 'meaning': 'iso3166loc:es'},
+    "PT": {'description': 'Portugal', 'meaning': 'iso3166loc:pt'},
+    "NL": {'description': 'Netherlands', 'meaning': 'iso3166loc:nl'},
+    "BE": {'description': 'Belgium', 'meaning': 'iso3166loc:be'},
+    "CH": {'description': 'Switzerland', 'meaning': 'iso3166loc:ch'},
+    "AT": {'description': 'Austria', 'meaning': 'iso3166loc:at'},
+    "SE": {'description': 'Sweden', 'meaning': 'iso3166loc:se'},
+    "FALSE": {'description': 'Norway', 'meaning': 'iso3166loc:no'},
+    "DK": {'description': 'Denmark', 'meaning': 'iso3166loc:dk'},
+    "FI": {'description': 'Finland', 'meaning': 'iso3166loc:fi'},
+    "PL": {'description': 'Poland', 'meaning': 'iso3166loc:pl'},
+    "RU": {'description': 'Russian Federation', 'meaning': 'iso3166loc:ru'},
+    "UA": {'description': 'Ukraine', 'meaning': 'iso3166loc:ua'},
+    "CN": {'description': 'China', 'meaning': 'iso3166loc:cn'},
+    "JP": {'description': 'Japan', 'meaning': 'iso3166loc:jp'},
+    "KR": {'description': 'South Korea', 'meaning': 'iso3166loc:kr'},
+    "IN": {'description': 'India', 'meaning': 'iso3166loc:in'},
+    "AU": {'description': 'Australia', 'meaning': 'iso3166loc:au'},
+    "NZ": {'description': 'New Zealand', 'meaning': 'iso3166loc:nz'},
+    "BR": {'description': 'Brazil', 'meaning': 'iso3166loc:br'},
+    "AR": {'description': 'Argentina', 'meaning': 'iso3166loc:ar'},
+    "CL": {'description': 'Chile', 'meaning': 'iso3166loc:cl'},
+    "CO": {'description': 'Colombia', 'meaning': 'iso3166loc:co'},
+    "PE": {'description': 'Peru', 'meaning': 'iso3166loc:pe'},
+    "VE": {'description': 'Venezuela', 'meaning': 'iso3166loc:ve'},
+    "ZA": {'description': 'South Africa', 'meaning': 'iso3166loc:za'},
+    "EG": {'description': 'Egypt', 'meaning': 'iso3166loc:eg'},
+    "NG": {'description': 'Nigeria', 'meaning': 'iso3166loc:ng'},
+    "KE": {'description': 'Kenya', 'meaning': 'iso3166loc:ke'},
+    "IL": {'description': 'Israel', 'meaning': 'iso3166loc:il'},
+    "SA": {'description': 'Saudi Arabia', 'meaning': 'iso3166loc:sa'},
+    "AE": {'description': 'United Arab Emirates', 'meaning': 'iso3166loc:ae'},
+    "TR": {'description': 'Turkey', 'meaning': 'iso3166loc:tr'},
+    "GR": {'description': 'Greece', 'meaning': 'iso3166loc:gr'},
+    "IE": {'description': 'Ireland', 'meaning': 'iso3166loc:ie'},
+    "SG": {'description': 'Singapore', 'meaning': 'iso3166loc:sg'},
+    "MY": {'description': 'Malaysia', 'meaning': 'iso3166loc:my'},
+    "TH": {'description': 'Thailand', 'meaning': 'iso3166loc:th'},
+    "ID": {'description': 'Indonesia', 'meaning': 'iso3166loc:id'},
+    "PH": {'description': 'Philippines', 'meaning': 'iso3166loc:ph'},
+    "VN": {'description': 'Vietnam', 'meaning': 'iso3166loc:vn'},
+    "PK": {'description': 'Pakistan', 'meaning': 'iso3166loc:pk'},
+    "BD": {'description': 'Bangladesh', 'meaning': 'iso3166loc:bd'},
 }
 
 class CountryCodeISO3Enum(RichEnum):
@@ -3670,36 +4342,36 @@ class CountryCodeISO3Enum(RichEnum):
 
 # Set metadata after class creation to avoid it becoming an enum member
 CountryCodeISO3Enum._metadata = {
-    "USA": {'description': 'United States of America'},
-    "CAN": {'description': 'Canada'},
-    "MEX": {'description': 'Mexico'},
-    "GBR": {'description': 'United Kingdom'},
-    "FRA": {'description': 'France'},
-    "DEU": {'description': 'Germany'},
-    "ITA": {'description': 'Italy'},
-    "ESP": {'description': 'Spain'},
-    "PRT": {'description': 'Portugal'},
-    "NLD": {'description': 'Netherlands'},
-    "BEL": {'description': 'Belgium'},
-    "CHE": {'description': 'Switzerland'},
-    "AUT": {'description': 'Austria'},
-    "SWE": {'description': 'Sweden'},
-    "NOR": {'description': 'Norway'},
-    "DNK": {'description': 'Denmark'},
-    "FIN": {'description': 'Finland'},
-    "POL": {'description': 'Poland'},
-    "RUS": {'description': 'Russian Federation'},
-    "UKR": {'description': 'Ukraine'},
-    "CHN": {'description': 'China'},
-    "JPN": {'description': 'Japan'},
-    "KOR": {'description': 'South Korea'},
-    "IND": {'description': 'India'},
-    "AUS": {'description': 'Australia'},
-    "NZL": {'description': 'New Zealand'},
-    "BRA": {'description': 'Brazil'},
-    "ARG": {'description': 'Argentina'},
-    "CHL": {'description': 'Chile'},
-    "COL": {'description': 'Colombia'},
+    "USA": {'description': 'United States of America', 'meaning': 'iso3166loc:us'},
+    "CAN": {'description': 'Canada', 'meaning': 'iso3166loc:ca'},
+    "MEX": {'description': 'Mexico', 'meaning': 'iso3166loc:mx'},
+    "GBR": {'description': 'United Kingdom', 'meaning': 'iso3166loc:gb'},
+    "FRA": {'description': 'France', 'meaning': 'iso3166loc:fr'},
+    "DEU": {'description': 'Germany', 'meaning': 'iso3166loc:de'},
+    "ITA": {'description': 'Italy', 'meaning': 'iso3166loc:it'},
+    "ESP": {'description': 'Spain', 'meaning': 'iso3166loc:es'},
+    "PRT": {'description': 'Portugal', 'meaning': 'iso3166loc:pt'},
+    "NLD": {'description': 'Netherlands', 'meaning': 'iso3166loc:nl'},
+    "BEL": {'description': 'Belgium', 'meaning': 'iso3166loc:be'},
+    "CHE": {'description': 'Switzerland', 'meaning': 'iso3166loc:ch'},
+    "AUT": {'description': 'Austria', 'meaning': 'iso3166loc:at'},
+    "SWE": {'description': 'Sweden', 'meaning': 'iso3166loc:se'},
+    "NOR": {'description': 'Norway', 'meaning': 'iso3166loc:no'},
+    "DNK": {'description': 'Denmark', 'meaning': 'iso3166loc:dk'},
+    "FIN": {'description': 'Finland', 'meaning': 'iso3166loc:fi'},
+    "POL": {'description': 'Poland', 'meaning': 'iso3166loc:pl'},
+    "RUS": {'description': 'Russian Federation', 'meaning': 'iso3166loc:ru'},
+    "UKR": {'description': 'Ukraine', 'meaning': 'iso3166loc:ua'},
+    "CHN": {'description': 'China', 'meaning': 'iso3166loc:cn'},
+    "JPN": {'description': 'Japan', 'meaning': 'iso3166loc:jp'},
+    "KOR": {'description': 'South Korea', 'meaning': 'iso3166loc:kr'},
+    "IND": {'description': 'India', 'meaning': 'iso3166loc:in'},
+    "AUS": {'description': 'Australia', 'meaning': 'iso3166loc:au'},
+    "NZL": {'description': 'New Zealand', 'meaning': 'iso3166loc:nz'},
+    "BRA": {'description': 'Brazil', 'meaning': 'iso3166loc:br'},
+    "ARG": {'description': 'Argentina', 'meaning': 'iso3166loc:ar'},
+    "CHL": {'description': 'Chile', 'meaning': 'iso3166loc:cl'},
+    "COL": {'description': 'Colombia', 'meaning': 'iso3166loc:co'},
 }
 
 class USStateCodeEnum(RichEnum):
@@ -6405,6 +7077,1472 @@ SequenceQualityEnum._metadata = {
     "Q60": {'description': 'Phred quality 60 (0.0001% error probability)', 'annotations': {'phred_score': '60', 'error_probability': '0.000001', 'ascii_char': ']'}},
 }
 
+class DNABase(RichEnum):
+    """
+    Standard DNA nucleotide bases (A, T, G, C) as defined by IUPAC
+    """
+    # Enum members
+    A = "A"
+    T = "T"
+    G = "G"
+    C = "C"
+
+# Set metadata after class creation to avoid it becoming an enum member
+DNABase._metadata = {
+    "A": {'description': 'Adenine', 'meaning': 'CHEBI:16708'},
+    "T": {'description': 'Thymine', 'meaning': 'CHEBI:17821'},
+    "G": {'description': 'Guanine', 'meaning': 'CHEBI:16235'},
+    "C": {'description': 'Cytosine', 'meaning': 'CHEBI:16040'},
+}
+
+class RNABase(RichEnum):
+    """
+    Standard RNA nucleotide bases (A, U, G, C) as defined by IUPAC
+    """
+    # Enum members
+    A = "A"
+    U = "U"
+    G = "G"
+    C = "C"
+
+# Set metadata after class creation to avoid it becoming an enum member
+RNABase._metadata = {
+    "A": {'description': 'Adenine', 'meaning': 'CHEBI:16708'},
+    "U": {'description': 'Uracil', 'meaning': 'CHEBI:17568'},
+    "G": {'description': 'Guanine', 'meaning': 'CHEBI:16235'},
+    "C": {'description': 'Cytosine', 'meaning': 'CHEBI:16040'},
+}
+
+class IUPACNucleotideCode(RichEnum):
+    """
+    Complete IUPAC nucleotide codes including ambiguous bases for DNA/RNA sequences.
+Used in FASTA and other sequence formats to represent uncertain nucleotides.
+    """
+    # Enum members
+    A = "A"
+    T = "T"
+    U = "U"
+    G = "G"
+    C = "C"
+    R = "R"
+    Y = "Y"
+    S = "S"
+    W = "W"
+    K = "K"
+    M = "M"
+    B = "B"
+    D = "D"
+    H = "H"
+    V = "V"
+    N = "N"
+    GAP = "GAP"
+
+# Set metadata after class creation to avoid it becoming an enum member
+IUPACNucleotideCode._metadata = {
+    "A": {'description': 'Adenine', 'meaning': 'CHEBI:16708'},
+    "T": {'description': 'Thymine (DNA)', 'meaning': 'CHEBI:17821'},
+    "U": {'description': 'Uracil (RNA)', 'meaning': 'CHEBI:17568'},
+    "G": {'description': 'Guanine', 'meaning': 'CHEBI:16235'},
+    "C": {'description': 'Cytosine', 'meaning': 'CHEBI:16040'},
+    "R": {'description': 'Purine (A or G)', 'meaning': 'CHEBI:26401'},
+    "Y": {'description': 'Pyrimidine (C or T/U)', 'meaning': 'CHEBI:39447'},
+    "S": {'description': 'Strong interaction (G or C)'},
+    "W": {'description': 'Weak interaction (A or T/U)'},
+    "K": {'description': 'Keto (G or T/U)'},
+    "M": {'description': 'Amino (A or C)'},
+    "B": {'description': 'Not A (C or G or T/U)'},
+    "D": {'description': 'Not C (A or G or T/U)'},
+    "H": {'description': 'Not G (A or C or T/U)'},
+    "V": {'description': 'Not T/U (A or C or G)'},
+    "N": {'description': 'Any nucleotide (A or C or G or T/U)'},
+    "GAP": {'description': 'Gap or deletion in alignment'},
+}
+
+class StandardAminoAcid(RichEnum):
+    """
+    The 20 standard proteinogenic amino acids with IUPAC single-letter codes
+    """
+    # Enum members
+    A = "A"
+    R = "R"
+    N = "N"
+    D = "D"
+    C = "C"
+    E = "E"
+    Q = "Q"
+    G = "G"
+    H = "H"
+    I = "I"
+    L = "L"
+    K = "K"
+    M = "M"
+    F = "F"
+    P = "P"
+    S = "S"
+    T = "T"
+    W = "W"
+    Y = "Y"
+    V = "V"
+
+# Set metadata after class creation to avoid it becoming an enum member
+StandardAminoAcid._metadata = {
+    "A": {'description': 'Alanine', 'meaning': 'CHEBI:16977'},
+    "R": {'description': 'Arginine', 'meaning': 'CHEBI:16467'},
+    "N": {'description': 'Asparagine', 'meaning': 'CHEBI:17196'},
+    "D": {'description': 'Aspartic acid', 'meaning': 'CHEBI:17053'},
+    "C": {'description': 'Cysteine', 'meaning': 'CHEBI:17561'},
+    "E": {'description': 'Glutamic acid', 'meaning': 'CHEBI:16015'},
+    "Q": {'description': 'Glutamine', 'meaning': 'CHEBI:18050'},
+    "G": {'description': 'Glycine', 'meaning': 'CHEBI:15428'},
+    "H": {'description': 'Histidine', 'meaning': 'CHEBI:15971'},
+    "I": {'description': 'Isoleucine', 'meaning': 'CHEBI:17191'},
+    "L": {'description': 'Leucine', 'meaning': 'CHEBI:15603'},
+    "K": {'description': 'Lysine', 'meaning': 'CHEBI:18019'},
+    "M": {'description': 'Methionine', 'meaning': 'CHEBI:16811'},
+    "F": {'description': 'Phenylalanine', 'meaning': 'CHEBI:17295'},
+    "P": {'description': 'Proline', 'meaning': 'CHEBI:17203'},
+    "S": {'description': 'Serine', 'meaning': 'CHEBI:17115'},
+    "T": {'description': 'Threonine', 'meaning': 'CHEBI:16857'},
+    "W": {'description': 'Tryptophan', 'meaning': 'CHEBI:16828'},
+    "Y": {'description': 'Tyrosine', 'meaning': 'CHEBI:18186'},
+    "V": {'description': 'Valine', 'meaning': 'CHEBI:16414'},
+}
+
+class IUPACAminoAcidCode(RichEnum):
+    """
+    Complete IUPAC amino acid codes including standard amino acids,
+rare amino acids, and ambiguity codes
+    """
+    # Enum members
+    A = "A"
+    R = "R"
+    N = "N"
+    D = "D"
+    C = "C"
+    E = "E"
+    Q = "Q"
+    G = "G"
+    H = "H"
+    I = "I"
+    L = "L"
+    K = "K"
+    M = "M"
+    F = "F"
+    P = "P"
+    S = "S"
+    T = "T"
+    W = "W"
+    Y = "Y"
+    V = "V"
+    U = "U"
+    O = "O"
+    B = "B"
+    Z = "Z"
+    J = "J"
+    X = "X"
+    STOP = "STOP"
+    GAP = "GAP"
+
+# Set metadata after class creation to avoid it becoming an enum member
+IUPACAminoAcidCode._metadata = {
+    "A": {'description': 'Alanine', 'meaning': 'CHEBI:16977'},
+    "R": {'description': 'Arginine', 'meaning': 'CHEBI:16467'},
+    "N": {'description': 'Asparagine', 'meaning': 'CHEBI:17196'},
+    "D": {'description': 'Aspartic acid', 'meaning': 'CHEBI:17053'},
+    "C": {'description': 'Cysteine', 'meaning': 'CHEBI:17561'},
+    "E": {'description': 'Glutamic acid', 'meaning': 'CHEBI:16015'},
+    "Q": {'description': 'Glutamine', 'meaning': 'CHEBI:18050'},
+    "G": {'description': 'Glycine', 'meaning': 'CHEBI:15428'},
+    "H": {'description': 'Histidine', 'meaning': 'CHEBI:15971'},
+    "I": {'description': 'Isoleucine', 'meaning': 'CHEBI:17191'},
+    "L": {'description': 'Leucine', 'meaning': 'CHEBI:15603'},
+    "K": {'description': 'Lysine', 'meaning': 'CHEBI:18019'},
+    "M": {'description': 'Methionine', 'meaning': 'CHEBI:16811'},
+    "F": {'description': 'Phenylalanine', 'meaning': 'CHEBI:17295'},
+    "P": {'description': 'Proline', 'meaning': 'CHEBI:17203'},
+    "S": {'description': 'Serine', 'meaning': 'CHEBI:17115'},
+    "T": {'description': 'Threonine', 'meaning': 'CHEBI:16857'},
+    "W": {'description': 'Tryptophan', 'meaning': 'CHEBI:16828'},
+    "Y": {'description': 'Tyrosine', 'meaning': 'CHEBI:18186'},
+    "V": {'description': 'Valine', 'meaning': 'CHEBI:16414'},
+    "U": {'description': 'Selenocysteine (21st amino acid)', 'meaning': 'CHEBI:16811', 'aliases': ['Sec']},
+    "O": {'description': 'Pyrrolysine (22nd amino acid)', 'meaning': 'CHEBI:18295', 'aliases': ['Pyl']},
+    "B": {'description': 'Asparagine or Aspartic acid (N or D)'},
+    "Z": {'description': 'Glutamine or Glutamic acid (Q or E)'},
+    "J": {'description': 'Leucine or Isoleucine (L or I)'},
+    "X": {'description': 'Any amino acid'},
+    "STOP": {'description': 'Translation stop codon'},
+    "GAP": {'description': 'Gap or deletion in alignment'},
+}
+
+class SequenceAlphabet(RichEnum):
+    """
+    Types of sequence alphabets used in bioinformatics
+    """
+    # Enum members
+    DNA = "DNA"
+    RNA = "RNA"
+    PROTEIN = "PROTEIN"
+    IUPAC_DNA = "IUPAC_DNA"
+    IUPAC_RNA = "IUPAC_RNA"
+    IUPAC_PROTEIN = "IUPAC_PROTEIN"
+    RESTRICTED_DNA = "RESTRICTED_DNA"
+    RESTRICTED_RNA = "RESTRICTED_RNA"
+    BINARY = "BINARY"
+
+# Set metadata after class creation to avoid it becoming an enum member
+SequenceAlphabet._metadata = {
+    "DNA": {'description': 'Deoxyribonucleic acid alphabet (A, T, G, C)'},
+    "RNA": {'description': 'Ribonucleic acid alphabet (A, U, G, C)'},
+    "PROTEIN": {'description': 'Protein/amino acid alphabet (20 standard AAs)'},
+    "IUPAC_DNA": {'description': 'Extended DNA with IUPAC ambiguity codes'},
+    "IUPAC_RNA": {'description': 'Extended RNA with IUPAC ambiguity codes'},
+    "IUPAC_PROTEIN": {'description': 'Extended protein with ambiguity codes and rare AAs'},
+    "RESTRICTED_DNA": {'description': 'Unambiguous DNA bases only (A, T, G, C)'},
+    "RESTRICTED_RNA": {'description': 'Unambiguous RNA bases only (A, U, G, C)'},
+    "BINARY": {'description': 'Binary encoding of sequences'},
+}
+
+class SequenceQualityEncoding(RichEnum):
+    """
+    Quality score encoding standards used in FASTQ files and sequencing data.
+Different platforms and software versions use different ASCII offsets.
+    """
+    # Enum members
+    SANGER = "SANGER"
+    SOLEXA = "SOLEXA"
+    ILLUMINA_1_3 = "ILLUMINA_1_3"
+    ILLUMINA_1_5 = "ILLUMINA_1_5"
+    ILLUMINA_1_8 = "ILLUMINA_1_8"
+
+# Set metadata after class creation to avoid it becoming an enum member
+SequenceQualityEncoding._metadata = {
+    "SANGER": {'description': 'Sanger/Phred+33 (PHRED scores, ASCII offset 33)', 'annotations': {'ascii_offset': 33, 'score_range': '0-93', 'platforms': 'NCBI SRA, Illumina 1.8+'}},
+    "SOLEXA": {'description': 'Solexa+64 (Solexa scores, ASCII offset 64)', 'annotations': {'ascii_offset': 64, 'score_range': '-5-62', 'platforms': 'Early Solexa/Illumina'}},
+    "ILLUMINA_1_3": {'description': 'Illumina 1.3+ (PHRED+64, ASCII offset 64)', 'annotations': {'ascii_offset': 64, 'score_range': '0-62', 'platforms': 'Illumina 1.3-1.7'}},
+    "ILLUMINA_1_5": {'description': 'Illumina 1.5+ (PHRED+64, special handling for 0-2)', 'annotations': {'ascii_offset': 64, 'score_range': '3-62', 'platforms': 'Illumina 1.5-1.7'}},
+    "ILLUMINA_1_8": {'description': 'Illumina 1.8+ (PHRED+33, modern standard)', 'annotations': {'ascii_offset': 33, 'score_range': '0-41', 'platforms': 'Illumina 1.8+, modern sequencers'}},
+}
+
+class GeneticCodeTable(RichEnum):
+    """
+    NCBI genetic code translation tables for different organisms.
+Table 1 is the universal genetic code used by most organisms.
+    """
+    # Enum members
+    TABLE_1 = "TABLE_1"
+    TABLE_2 = "TABLE_2"
+    TABLE_3 = "TABLE_3"
+    TABLE_4 = "TABLE_4"
+    TABLE_5 = "TABLE_5"
+    TABLE_6 = "TABLE_6"
+    TABLE_9 = "TABLE_9"
+    TABLE_10 = "TABLE_10"
+    TABLE_11 = "TABLE_11"
+    TABLE_12 = "TABLE_12"
+    TABLE_13 = "TABLE_13"
+    TABLE_14 = "TABLE_14"
+    TABLE_16 = "TABLE_16"
+    TABLE_21 = "TABLE_21"
+    TABLE_22 = "TABLE_22"
+    TABLE_23 = "TABLE_23"
+    TABLE_24 = "TABLE_24"
+    TABLE_25 = "TABLE_25"
+    TABLE_26 = "TABLE_26"
+    TABLE_27 = "TABLE_27"
+    TABLE_28 = "TABLE_28"
+    TABLE_29 = "TABLE_29"
+    TABLE_30 = "TABLE_30"
+    TABLE_31 = "TABLE_31"
+
+# Set metadata after class creation to avoid it becoming an enum member
+GeneticCodeTable._metadata = {
+    "TABLE_1": {'description': 'Standard genetic code (universal)', 'annotations': {'ncbi_id': 1, 'name': 'Standard'}},
+    "TABLE_2": {'description': 'Vertebrate mitochondrial code', 'annotations': {'ncbi_id': 2, 'name': 'Vertebrate Mitochondrial'}},
+    "TABLE_3": {'description': 'Yeast mitochondrial code', 'annotations': {'ncbi_id': 3, 'name': 'Yeast Mitochondrial'}},
+    "TABLE_4": {'description': 'Mold, protozoan, coelenterate mitochondrial', 'annotations': {'ncbi_id': 4, 'name': 'Mold Mitochondrial'}},
+    "TABLE_5": {'description': 'Invertebrate mitochondrial code', 'annotations': {'ncbi_id': 5, 'name': 'Invertebrate Mitochondrial'}},
+    "TABLE_6": {'description': 'Ciliate, dasycladacean, hexamita nuclear code', 'annotations': {'ncbi_id': 6, 'name': 'Ciliate Nuclear'}},
+    "TABLE_9": {'description': 'Echinoderm and flatworm mitochondrial code', 'annotations': {'ncbi_id': 9, 'name': 'Echinoderm Mitochondrial'}},
+    "TABLE_10": {'description': 'Euplotid nuclear code', 'annotations': {'ncbi_id': 10, 'name': 'Euplotid Nuclear'}},
+    "TABLE_11": {'description': 'Bacterial, archaeal and plant plastid code', 'annotations': {'ncbi_id': 11, 'name': 'Bacterial'}},
+    "TABLE_12": {'description': 'Alternative yeast nuclear code', 'annotations': {'ncbi_id': 12, 'name': 'Alternative Yeast Nuclear'}},
+    "TABLE_13": {'description': 'Ascidian mitochondrial code', 'annotations': {'ncbi_id': 13, 'name': 'Ascidian Mitochondrial'}},
+    "TABLE_14": {'description': 'Alternative flatworm mitochondrial code', 'annotations': {'ncbi_id': 14, 'name': 'Alternative Flatworm Mitochondrial'}},
+    "TABLE_16": {'description': 'Chlorophycean mitochondrial code', 'annotations': {'ncbi_id': 16, 'name': 'Chlorophycean Mitochondrial'}},
+    "TABLE_21": {'description': 'Trematode mitochondrial code', 'annotations': {'ncbi_id': 21, 'name': 'Trematode Mitochondrial'}},
+    "TABLE_22": {'description': 'Scenedesmus obliquus mitochondrial code', 'annotations': {'ncbi_id': 22, 'name': 'Scenedesmus Mitochondrial'}},
+    "TABLE_23": {'description': 'Thraustochytrium mitochondrial code', 'annotations': {'ncbi_id': 23, 'name': 'Thraustochytrium Mitochondrial'}},
+    "TABLE_24": {'description': 'Rhabdopleuridae mitochondrial code', 'annotations': {'ncbi_id': 24, 'name': 'Rhabdopleuridae Mitochondrial'}},
+    "TABLE_25": {'description': 'Candidate division SR1 and gracilibacteria code', 'annotations': {'ncbi_id': 25, 'name': 'Candidate Division SR1'}},
+    "TABLE_26": {'description': 'Pachysolen tannophilus nuclear code', 'annotations': {'ncbi_id': 26, 'name': 'Pachysolen Nuclear'}},
+    "TABLE_27": {'description': 'Karyorelict nuclear code', 'annotations': {'ncbi_id': 27, 'name': 'Karyorelict Nuclear'}},
+    "TABLE_28": {'description': 'Condylostoma nuclear code', 'annotations': {'ncbi_id': 28, 'name': 'Condylostoma Nuclear'}},
+    "TABLE_29": {'description': 'Mesodinium nuclear code', 'annotations': {'ncbi_id': 29, 'name': 'Mesodinium Nuclear'}},
+    "TABLE_30": {'description': 'Peritrich nuclear code', 'annotations': {'ncbi_id': 30, 'name': 'Peritrich Nuclear'}},
+    "TABLE_31": {'description': 'Blastocrithidia nuclear code', 'annotations': {'ncbi_id': 31, 'name': 'Blastocrithidia Nuclear'}},
+}
+
+class SequenceStrand(RichEnum):
+    """
+    Strand orientation for nucleic acid sequences
+    """
+    # Enum members
+    PLUS = "PLUS"
+    MINUS = "MINUS"
+    BOTH = "BOTH"
+    UNKNOWN = "UNKNOWN"
+
+# Set metadata after class creation to avoid it becoming an enum member
+SequenceStrand._metadata = {
+    "PLUS": {'description': "Plus/forward/sense strand (5' to 3')", 'meaning': 'SO:0000402'},
+    "MINUS": {'description': "Minus/reverse/antisense strand (3' to 5')", 'meaning': 'SO:0000404'},
+    "BOTH": {'description': 'Both strands'},
+    "UNKNOWN": {'description': 'Strand not specified or unknown'},
+}
+
+class SequenceTopology(RichEnum):
+    """
+    Topological structure of nucleic acid molecules
+    """
+    # Enum members
+    LINEAR = "LINEAR"
+    CIRCULAR = "CIRCULAR"
+    BRANCHED = "BRANCHED"
+    UNKNOWN = "UNKNOWN"
+
+# Set metadata after class creation to avoid it becoming an enum member
+SequenceTopology._metadata = {
+    "LINEAR": {'description': 'Linear sequence molecule', 'meaning': 'SO:0000987'},
+    "CIRCULAR": {'description': 'Circular sequence molecule', 'meaning': 'SO:0000988'},
+    "BRANCHED": {'description': 'Branched sequence structure'},
+    "UNKNOWN": {'description': 'Topology not specified'},
+}
+
+class SequenceModality(RichEnum):
+    """
+    Types of sequence data based on experimental method
+    """
+    # Enum members
+    SINGLE_CELL = "SINGLE_CELL"
+    BULK = "BULK"
+    SPATIAL = "SPATIAL"
+    LONG_READ = "LONG_READ"
+    SHORT_READ = "SHORT_READ"
+    PAIRED_END = "PAIRED_END"
+    SINGLE_END = "SINGLE_END"
+    MATE_PAIR = "MATE_PAIR"
+
+# Set metadata after class creation to avoid it becoming an enum member
+SequenceModality._metadata = {
+    "SINGLE_CELL": {'description': 'Single-cell sequencing data'},
+    "BULK": {'description': 'Bulk/population sequencing data'},
+    "SPATIAL": {'description': 'Spatially-resolved sequencing'},
+    "LONG_READ": {'description': 'Long-read sequencing (PacBio, Oxford Nanopore)'},
+    "SHORT_READ": {'description': 'Short-read sequencing (Illumina)'},
+    "PAIRED_END": {'description': 'Paired-end sequencing reads'},
+    "SINGLE_END": {'description': 'Single-end sequencing reads'},
+    "MATE_PAIR": {'description': 'Mate-pair sequencing libraries'},
+}
+
+class SequencingPlatform(RichEnum):
+    """
+    Major DNA/RNA sequencing platforms and instruments used in genomics research
+    """
+    # Enum members
+    ILLUMINA_HISEQ_2000 = "ILLUMINA_HISEQ_2000"
+    ILLUMINA_HISEQ_2500 = "ILLUMINA_HISEQ_2500"
+    ILLUMINA_HISEQ_3000 = "ILLUMINA_HISEQ_3000"
+    ILLUMINA_HISEQ_4000 = "ILLUMINA_HISEQ_4000"
+    ILLUMINA_HISEQ_X = "ILLUMINA_HISEQ_X"
+    ILLUMINA_NOVASEQ_6000 = "ILLUMINA_NOVASEQ_6000"
+    ILLUMINA_NEXTSEQ_500 = "ILLUMINA_NEXTSEQ_500"
+    ILLUMINA_NEXTSEQ_550 = "ILLUMINA_NEXTSEQ_550"
+    ILLUMINA_NEXTSEQ_1000 = "ILLUMINA_NEXTSEQ_1000"
+    ILLUMINA_NEXTSEQ_2000 = "ILLUMINA_NEXTSEQ_2000"
+    ILLUMINA_MISEQ = "ILLUMINA_MISEQ"
+    ILLUMINA_ISEQ_100 = "ILLUMINA_ISEQ_100"
+    PACBIO_RS = "PACBIO_RS"
+    PACBIO_RS_II = "PACBIO_RS_II"
+    PACBIO_SEQUEL = "PACBIO_SEQUEL"
+    PACBIO_SEQUEL_II = "PACBIO_SEQUEL_II"
+    PACBIO_REVIO = "PACBIO_REVIO"
+    NANOPORE_MINION = "NANOPORE_MINION"
+    NANOPORE_GRIDION = "NANOPORE_GRIDION"
+    NANOPORE_PROMETHION = "NANOPORE_PROMETHION"
+    NANOPORE_FLONGLE = "NANOPORE_FLONGLE"
+    ELEMENT_AVITI = "ELEMENT_AVITI"
+    MGI_DNBSEQ_T7 = "MGI_DNBSEQ_T7"
+    MGI_DNBSEQ_G400 = "MGI_DNBSEQ_G400"
+    MGI_DNBSEQ_G50 = "MGI_DNBSEQ_G50"
+    SANGER_SEQUENCING = "SANGER_SEQUENCING"
+    ROCHE_454_GS = "ROCHE_454_GS"
+    LIFE_TECHNOLOGIES_ION_TORRENT = "LIFE_TECHNOLOGIES_ION_TORRENT"
+    ABI_SOLID = "ABI_SOLID"
+
+# Set metadata after class creation to avoid it becoming an enum member
+SequencingPlatform._metadata = {
+    "ILLUMINA_HISEQ_2000": {'description': 'Illumina HiSeq 2000', 'annotations': {'manufacturer': 'Illumina', 'read_type': 'short', 'chemistry': 'sequencing by synthesis'}},
+    "ILLUMINA_HISEQ_2500": {'description': 'Illumina HiSeq 2500', 'annotations': {'manufacturer': 'Illumina', 'read_type': 'short', 'chemistry': 'sequencing by synthesis'}},
+    "ILLUMINA_HISEQ_3000": {'description': 'Illumina HiSeq 3000', 'annotations': {'manufacturer': 'Illumina', 'read_type': 'short', 'chemistry': 'sequencing by synthesis'}},
+    "ILLUMINA_HISEQ_4000": {'description': 'Illumina HiSeq 4000', 'annotations': {'manufacturer': 'Illumina', 'read_type': 'short', 'chemistry': 'sequencing by synthesis'}},
+    "ILLUMINA_HISEQ_X": {'description': 'Illumina HiSeq X', 'annotations': {'manufacturer': 'Illumina', 'read_type': 'short', 'chemistry': 'sequencing by synthesis'}},
+    "ILLUMINA_NOVASEQ_6000": {'description': 'Illumina NovaSeq 6000', 'annotations': {'manufacturer': 'Illumina', 'read_type': 'short', 'chemistry': 'sequencing by synthesis'}},
+    "ILLUMINA_NEXTSEQ_500": {'description': 'Illumina NextSeq 500', 'annotations': {'manufacturer': 'Illumina', 'read_type': 'short', 'chemistry': 'sequencing by synthesis'}},
+    "ILLUMINA_NEXTSEQ_550": {'description': 'Illumina NextSeq 550', 'annotations': {'manufacturer': 'Illumina', 'read_type': 'short', 'chemistry': 'sequencing by synthesis'}},
+    "ILLUMINA_NEXTSEQ_1000": {'description': 'Illumina NextSeq 1000', 'annotations': {'manufacturer': 'Illumina', 'read_type': 'short', 'chemistry': 'sequencing by synthesis'}},
+    "ILLUMINA_NEXTSEQ_2000": {'description': 'Illumina NextSeq 2000', 'annotations': {'manufacturer': 'Illumina', 'read_type': 'short', 'chemistry': 'sequencing by synthesis'}},
+    "ILLUMINA_MISEQ": {'description': 'Illumina MiSeq', 'annotations': {'manufacturer': 'Illumina', 'read_type': 'short', 'chemistry': 'sequencing by synthesis'}},
+    "ILLUMINA_ISEQ_100": {'description': 'Illumina iSeq 100', 'annotations': {'manufacturer': 'Illumina', 'read_type': 'short', 'chemistry': 'sequencing by synthesis'}},
+    "PACBIO_RS": {'description': 'PacBio RS', 'annotations': {'manufacturer': 'Pacific Biosciences', 'read_type': 'long', 'chemistry': 'single molecule real time'}},
+    "PACBIO_RS_II": {'description': 'PacBio RS II', 'annotations': {'manufacturer': 'Pacific Biosciences', 'read_type': 'long', 'chemistry': 'single molecule real time'}},
+    "PACBIO_SEQUEL": {'description': 'PacBio Sequel', 'annotations': {'manufacturer': 'Pacific Biosciences', 'read_type': 'long', 'chemistry': 'single molecule real time'}},
+    "PACBIO_SEQUEL_II": {'description': 'PacBio Sequel II', 'annotations': {'manufacturer': 'Pacific Biosciences', 'read_type': 'long', 'chemistry': 'single molecule real time'}},
+    "PACBIO_REVIO": {'description': 'PacBio Revio', 'annotations': {'manufacturer': 'Pacific Biosciences', 'read_type': 'long', 'chemistry': 'single molecule real time'}},
+    "NANOPORE_MINION": {'description': 'Oxford Nanopore MinION', 'annotations': {'manufacturer': 'Oxford Nanopore Technologies', 'read_type': 'long', 'chemistry': 'nanopore sequencing'}},
+    "NANOPORE_GRIDION": {'description': 'Oxford Nanopore GridION', 'annotations': {'manufacturer': 'Oxford Nanopore Technologies', 'read_type': 'long', 'chemistry': 'nanopore sequencing'}},
+    "NANOPORE_PROMETHION": {'description': 'Oxford Nanopore PromethION', 'annotations': {'manufacturer': 'Oxford Nanopore Technologies', 'read_type': 'long', 'chemistry': 'nanopore sequencing'}},
+    "NANOPORE_FLONGLE": {'description': 'Oxford Nanopore Flongle', 'annotations': {'manufacturer': 'Oxford Nanopore Technologies', 'read_type': 'long', 'chemistry': 'nanopore sequencing'}},
+    "ELEMENT_AVITI": {'description': 'Element Biosciences AVITI', 'annotations': {'manufacturer': 'Element Biosciences', 'read_type': 'short', 'chemistry': 'sequencing by avidity'}},
+    "MGI_DNBSEQ_T7": {'description': 'MGI DNBSEQ-T7', 'annotations': {'manufacturer': 'MGI/BGI', 'read_type': 'short', 'chemistry': 'DNA nanoball sequencing'}},
+    "MGI_DNBSEQ_G400": {'description': 'MGI DNBSEQ-G400', 'annotations': {'manufacturer': 'MGI/BGI', 'read_type': 'short', 'chemistry': 'DNA nanoball sequencing'}},
+    "MGI_DNBSEQ_G50": {'description': 'MGI DNBSEQ-G50', 'annotations': {'manufacturer': 'MGI/BGI', 'read_type': 'short', 'chemistry': 'DNA nanoball sequencing'}},
+    "SANGER_SEQUENCING": {'description': 'Sanger chain termination sequencing', 'annotations': {'manufacturer': 'Various', 'read_type': 'short', 'chemistry': 'chain termination'}},
+    "ROCHE_454_GS": {'description': 'Roche 454 Genome Sequencer', 'annotations': {'manufacturer': 'Roche/454', 'read_type': 'short', 'chemistry': 'pyrosequencing', 'status': 'discontinued'}},
+    "LIFE_TECHNOLOGIES_ION_TORRENT": {'description': 'Life Technologies Ion Torrent', 'annotations': {'manufacturer': 'Life Technologies/Thermo Fisher', 'read_type': 'short', 'chemistry': 'semiconductor sequencing'}},
+    "ABI_SOLID": {'description': 'ABI SOLiD', 'annotations': {'manufacturer': 'Life Technologies/Applied Biosystems', 'read_type': 'short', 'chemistry': 'sequencing by ligation', 'status': 'discontinued'}},
+}
+
+class SequencingChemistry(RichEnum):
+    """
+    Fundamental chemical methods used for DNA/RNA sequencing
+    """
+    # Enum members
+    SEQUENCING_BY_SYNTHESIS = "SEQUENCING_BY_SYNTHESIS"
+    SINGLE_MOLECULE_REAL_TIME = "SINGLE_MOLECULE_REAL_TIME"
+    NANOPORE_SEQUENCING = "NANOPORE_SEQUENCING"
+    PYROSEQUENCING = "PYROSEQUENCING"
+    SEQUENCING_BY_LIGATION = "SEQUENCING_BY_LIGATION"
+    CHAIN_TERMINATION = "CHAIN_TERMINATION"
+    SEMICONDUCTOR_SEQUENCING = "SEMICONDUCTOR_SEQUENCING"
+    DNA_NANOBALL_SEQUENCING = "DNA_NANOBALL_SEQUENCING"
+    SEQUENCING_BY_AVIDITY = "SEQUENCING_BY_AVIDITY"
+
+# Set metadata after class creation to avoid it becoming an enum member
+SequencingChemistry._metadata = {
+    "SEQUENCING_BY_SYNTHESIS": {'description': 'Sequencing by synthesis (Illumina)', 'meaning': 'OBI:0000626'},
+    "SINGLE_MOLECULE_REAL_TIME": {'description': 'Single molecule real-time sequencing (PacBio)', 'meaning': 'OBI:0002763'},
+    "NANOPORE_SEQUENCING": {'description': 'Nanopore sequencing (Oxford Nanopore)', 'meaning': 'OBI:0002754'},
+    "PYROSEQUENCING": {'description': 'Pyrosequencing (454)', 'meaning': 'OBI:0000628'},
+    "SEQUENCING_BY_LIGATION": {'description': 'Sequencing by ligation (SOLiD)', 'meaning': 'OBI:0000629'},
+    "CHAIN_TERMINATION": {'description': 'Chain termination method (Sanger)', 'meaning': 'OBI:0000632'},
+    "SEMICONDUCTOR_SEQUENCING": {'description': 'Semiconductor/Ion semiconductor sequencing'},
+    "DNA_NANOBALL_SEQUENCING": {'description': 'DNA nanoball sequencing (MGI/BGI)'},
+    "SEQUENCING_BY_AVIDITY": {'description': 'Sequencing by avidity (Element Biosciences)'},
+}
+
+class LibraryPreparation(RichEnum):
+    """
+    Methods for preparing sequencing libraries from nucleic acid samples
+    """
+    # Enum members
+    GENOMIC_DNA = "GENOMIC_DNA"
+    WHOLE_GENOME_AMPLIFICATION = "WHOLE_GENOME_AMPLIFICATION"
+    PCR_AMPLICON = "PCR_AMPLICON"
+    RNA_SEQ = "RNA_SEQ"
+    SMALL_RNA_SEQ = "SMALL_RNA_SEQ"
+    SINGLE_CELL_RNA_SEQ = "SINGLE_CELL_RNA_SEQ"
+    ATAC_SEQ = "ATAC_SEQ"
+    CHIP_SEQ = "CHIP_SEQ"
+    BISULFITE_SEQ = "BISULFITE_SEQ"
+    HI_C = "HI_C"
+    CUT_AND_RUN = "CUT_AND_RUN"
+    CUT_AND_TAG = "CUT_AND_TAG"
+    CAPTURE_SEQUENCING = "CAPTURE_SEQUENCING"
+    EXOME_SEQUENCING = "EXOME_SEQUENCING"
+    METAGENOMICS = "METAGENOMICS"
+    AMPLICON_SEQUENCING = "AMPLICON_SEQUENCING"
+    DIRECT_RNA = "DIRECT_RNA"
+    CDNA_SEQUENCING = "CDNA_SEQUENCING"
+    RIBOSOME_PROFILING = "RIBOSOME_PROFILING"
+
+# Set metadata after class creation to avoid it becoming an enum member
+LibraryPreparation._metadata = {
+    "GENOMIC_DNA": {'description': 'Genomic DNA library preparation'},
+    "WHOLE_GENOME_AMPLIFICATION": {'description': 'Whole genome amplification (WGA)'},
+    "PCR_AMPLICON": {'description': 'PCR amplicon sequencing'},
+    "RNA_SEQ": {'description': 'RNA sequencing library prep'},
+    "SMALL_RNA_SEQ": {'description': 'Small RNA sequencing'},
+    "SINGLE_CELL_RNA_SEQ": {'description': 'Single-cell RNA sequencing'},
+    "ATAC_SEQ": {'description': 'ATAC-seq (chromatin accessibility)'},
+    "CHIP_SEQ": {'description': 'ChIP-seq (chromatin immunoprecipitation)'},
+    "BISULFITE_SEQ": {'description': 'Bisulfite sequencing (methylation)'},
+    "HI_C": {'description': 'Hi-C (chromosome conformation capture)'},
+    "CUT_AND_RUN": {'description': 'CUT&RUN (chromatin profiling)'},
+    "CUT_AND_TAG": {'description': 'CUT&Tag (chromatin profiling)'},
+    "CAPTURE_SEQUENCING": {'description': 'Target capture/enrichment sequencing'},
+    "EXOME_SEQUENCING": {'description': 'Whole exome sequencing'},
+    "METAGENOMICS": {'description': 'Metagenomic sequencing'},
+    "AMPLICON_SEQUENCING": {'description': '16S/ITS amplicon sequencing'},
+    "DIRECT_RNA": {'description': 'Direct RNA sequencing (nanopore)'},
+    "CDNA_SEQUENCING": {'description': 'cDNA sequencing'},
+    "RIBOSOME_PROFILING": {'description': 'Ribosome profiling (Ribo-seq)'},
+}
+
+class SequencingApplication(RichEnum):
+    """
+    Primary applications or assays using DNA/RNA sequencing
+    """
+    # Enum members
+    WHOLE_GENOME_SEQUENCING = "WHOLE_GENOME_SEQUENCING"
+    WHOLE_EXOME_SEQUENCING = "WHOLE_EXOME_SEQUENCING"
+    TRANSCRIPTOME_SEQUENCING = "TRANSCRIPTOME_SEQUENCING"
+    TARGETED_SEQUENCING = "TARGETED_SEQUENCING"
+    EPIGENOMICS = "EPIGENOMICS"
+    METAGENOMICS = "METAGENOMICS"
+    SINGLE_CELL_GENOMICS = "SINGLE_CELL_GENOMICS"
+    SINGLE_CELL_TRANSCRIPTOMICS = "SINGLE_CELL_TRANSCRIPTOMICS"
+    CHROMATIN_IMMUNOPRECIPITATION = "CHROMATIN_IMMUNOPRECIPITATION"
+    CHROMATIN_ACCESSIBILITY = "CHROMATIN_ACCESSIBILITY"
+    DNA_METHYLATION = "DNA_METHYLATION"
+    CHROMOSOME_CONFORMATION = "CHROMOSOME_CONFORMATION"
+    VARIANT_CALLING = "VARIANT_CALLING"
+    PHARMACOGENOMICS = "PHARMACOGENOMICS"
+    CLINICAL_DIAGNOSTICS = "CLINICAL_DIAGNOSTICS"
+    POPULATION_GENOMICS = "POPULATION_GENOMICS"
+
+# Set metadata after class creation to avoid it becoming an enum member
+SequencingApplication._metadata = {
+    "WHOLE_GENOME_SEQUENCING": {'description': 'Whole genome sequencing (WGS)', 'meaning': 'OBI:0002117'},
+    "WHOLE_EXOME_SEQUENCING": {'description': 'Whole exome sequencing (WES)', 'meaning': 'OBI:0002118'},
+    "TRANSCRIPTOME_SEQUENCING": {'description': 'RNA sequencing (RNA-seq)', 'meaning': 'OBI:0001271'},
+    "TARGETED_SEQUENCING": {'description': 'Targeted gene panel sequencing'},
+    "EPIGENOMICS": {'description': 'Epigenomic profiling'},
+    "METAGENOMICS": {'description': 'Metagenomic sequencing', 'meaning': 'OBI:0002044'},
+    "SINGLE_CELL_GENOMICS": {'description': 'Single-cell genomics'},
+    "SINGLE_CELL_TRANSCRIPTOMICS": {'description': 'Single-cell transcriptomics', 'meaning': 'OBI:0002571'},
+    "CHROMATIN_IMMUNOPRECIPITATION": {'description': 'ChIP-seq', 'meaning': 'OBI:0000716'},
+    "CHROMATIN_ACCESSIBILITY": {'description': 'ATAC-seq/FAIRE-seq'},
+    "DNA_METHYLATION": {'description': 'Bisulfite/methylation sequencing'},
+    "CHROMOSOME_CONFORMATION": {'description': 'Hi-C/3C-seq'},
+    "VARIANT_CALLING": {'description': 'Genetic variant discovery'},
+    "PHARMACOGENOMICS": {'description': 'Pharmacogenomic sequencing'},
+    "CLINICAL_DIAGNOSTICS": {'description': 'Clinical diagnostic sequencing'},
+    "POPULATION_GENOMICS": {'description': 'Population-scale genomics'},
+}
+
+class ReadType(RichEnum):
+    """
+    Configuration of sequencing reads generated by different platforms
+    """
+    # Enum members
+    SINGLE_END = "SINGLE_END"
+    PAIRED_END = "PAIRED_END"
+    MATE_PAIR = "MATE_PAIR"
+    LONG_READ = "LONG_READ"
+    ULTRA_LONG_READ = "ULTRA_LONG_READ"
+    CONTINUOUS_LONG_READ = "CONTINUOUS_LONG_READ"
+
+# Set metadata after class creation to avoid it becoming an enum member
+ReadType._metadata = {
+    "SINGLE_END": {'description': 'Single-end reads', 'meaning': 'SO:0000999'},
+    "PAIRED_END": {'description': 'Paired-end reads', 'meaning': 'SO:0001000'},
+    "MATE_PAIR": {'description': 'Mate-pair reads (large insert)'},
+    "LONG_READ": {'description': 'Long reads (>1kb typical)'},
+    "ULTRA_LONG_READ": {'description': 'Ultra-long reads (>10kb)'},
+    "CONTINUOUS_LONG_READ": {'description': 'Continuous long reads (nanopore)'},
+}
+
+class SequenceFileFormat(RichEnum):
+    """
+    Standard file formats used for storing sequence data
+    """
+    # Enum members
+    FASTA = "FASTA"
+    FASTQ = "FASTQ"
+    SAM = "SAM"
+    BAM = "BAM"
+    CRAM = "CRAM"
+    VCF = "VCF"
+    BCF = "BCF"
+    GFF3 = "GFF3"
+    GTF = "GTF"
+    BED = "BED"
+    BIGWIG = "BIGWIG"
+    BIGBED = "BIGBED"
+    HDF5 = "HDF5"
+    SFF = "SFF"
+    FAST5 = "FAST5"
+    POD5 = "POD5"
+
+# Set metadata after class creation to avoid it becoming an enum member
+SequenceFileFormat._metadata = {
+    "FASTA": {'description': 'FASTA sequence format', 'annotations': {'extensions': '.fa, .fasta, .fna, .ffn, .faa, .frn', 'content': 'sequences only'}},
+    "FASTQ": {'description': 'FASTQ sequence with quality format', 'annotations': {'extensions': '.fq, .fastq', 'content': 'sequences and quality scores'}},
+    "SAM": {'description': 'Sequence Alignment Map format', 'annotations': {'extensions': '.sam', 'content': 'aligned sequences (text)'}},
+    "BAM": {'description': 'Binary Alignment Map format', 'annotations': {'extensions': '.bam', 'content': 'aligned sequences (binary)'}},
+    "CRAM": {'description': 'Compressed Reference-oriented Alignment Map', 'annotations': {'extensions': '.cram', 'content': 'compressed aligned sequences'}},
+    "VCF": {'description': 'Variant Call Format', 'annotations': {'extensions': '.vcf', 'content': 'genetic variants'}},
+    "BCF": {'description': 'Binary Variant Call Format', 'annotations': {'extensions': '.bcf', 'content': 'genetic variants (binary)'}},
+    "GFF3": {'description': 'Generic Feature Format version 3', 'annotations': {'extensions': '.gff, .gff3', 'content': 'genomic annotations'}},
+    "GTF": {'description': 'Gene Transfer Format', 'annotations': {'extensions': '.gtf', 'content': 'gene annotations'}},
+    "BED": {'description': 'Browser Extensible Data format', 'annotations': {'extensions': '.bed', 'content': 'genomic intervals'}},
+    "BIGWIG": {'description': 'BigWig format for continuous data', 'annotations': {'extensions': '.bw, .bigwig', 'content': 'continuous genomic data'}},
+    "BIGBED": {'description': 'BigBed format for interval data', 'annotations': {'extensions': '.bb, .bigbed', 'content': 'genomic intervals (indexed)'}},
+    "HDF5": {'description': 'Hierarchical Data Format 5', 'annotations': {'extensions': '.h5, .hdf5', 'content': 'multi-dimensional arrays'}},
+    "SFF": {'description': 'Standard Flowgram Format (454)', 'annotations': {'extensions': '.sff', 'content': '454 sequencing data', 'status': 'legacy'}},
+    "FAST5": {'description': 'Fast5 format (Oxford Nanopore)', 'annotations': {'extensions': '.fast5', 'content': 'nanopore raw signal data'}},
+    "POD5": {'description': 'POD5 format (Oxford Nanopore, newer)', 'annotations': {'extensions': '.pod5', 'content': 'nanopore raw signal data (compressed)'}},
+}
+
+class DataProcessingLevel(RichEnum):
+    """
+    Levels of processing applied to raw sequencing data
+    """
+    # Enum members
+    RAW = "RAW"
+    QUALITY_FILTERED = "QUALITY_FILTERED"
+    TRIMMED = "TRIMMED"
+    ALIGNED = "ALIGNED"
+    DEDUPLICATED = "DEDUPLICATED"
+    RECALIBRATED = "RECALIBRATED"
+    VARIANT_CALLED = "VARIANT_CALLED"
+    NORMALIZED = "NORMALIZED"
+    ASSEMBLED = "ASSEMBLED"
+    ANNOTATED = "ANNOTATED"
+
+# Set metadata after class creation to avoid it becoming an enum member
+DataProcessingLevel._metadata = {
+    "RAW": {'description': 'Raw unprocessed sequencing reads'},
+    "QUALITY_FILTERED": {'description': 'Quality filtered reads'},
+    "TRIMMED": {'description': 'Adapter/quality trimmed reads'},
+    "ALIGNED": {'description': 'Aligned to reference genome'},
+    "DEDUPLICATED": {'description': 'PCR duplicates removed'},
+    "RECALIBRATED": {'description': 'Base quality score recalibrated'},
+    "VARIANT_CALLED": {'description': 'Variants called from alignments'},
+    "NORMALIZED": {'description': 'Expression normalized (RNA-seq)'},
+    "ASSEMBLED": {'description': 'De novo assembled sequences'},
+    "ANNOTATED": {'description': 'Functionally annotated sequences'},
+}
+
+class CdsPhaseType(RichEnum):
+    """
+    For features of type CDS (coding sequence), the phase indicates where the feature begins with reference to the reading frame. The phase is one of the integers 0, 1, or 2, indicating the number of bases that should be removed from the beginning of this feature to reach the first base of the next codon.
+    """
+    # Enum members
+    PHASE_0 = "PHASE_0"
+    PHASE_1 = "PHASE_1"
+    PHASE_2 = "PHASE_2"
+
+# Set metadata after class creation to avoid it becoming an enum member
+CdsPhaseType._metadata = {
+    "PHASE_0": {'description': 'Zero bases from reading frame to feature start.'},
+    "PHASE_1": {'description': 'One base from reading frame to feature start.'},
+    "PHASE_2": {'description': 'Two bases from reading frame to feature start.'},
+}
+
+class ContigCollectionType(RichEnum):
+    """
+    The type of the contig set; the type of the 'omics data set. Terms are taken from the Genomics Standards Consortium where possible. See the GSC checklists at https://genomicsstandardsconsortium.github.io/mixs/ for the controlled vocabularies used.
+    """
+    # Enum members
+    ISOLATE = "ISOLATE"
+    MAG = "MAG"
+    METAGENOME = "METAGENOME"
+    METATRANSCRIPTOME = "METATRANSCRIPTOME"
+    SAG = "SAG"
+    VIRUS = "VIRUS"
+    MARKER = "MARKER"
+
+# Set metadata after class creation to avoid it becoming an enum member
+ContigCollectionType._metadata = {
+    "ISOLATE": {'description': 'Sequences assembled from DNA of isolated organism. Bacteria/Archaea: https://genomicsstandardsconsortium.github.io/mixs/0010003/ Euk: https://genomicsstandardsconsortium.github.io/mixs/0010002/ Virus: https://genomicsstandardsconsortium.github.io/mixs/0010005/ Organelle: https://genomicsstandardsconsortium.github.io/mixs/0010006/ Plasmid: https://genomicsstandardsconsortium.github.io/mixs/0010004/'},
+    "MAG": {'description': 'Sequences assembled from DNA of mixed community and binned. MAGs are likely to represent a single taxonomic origin. See checkm2 scores for quality assessment.', 'meaning': 'mixs:0010011', 'aliases': ['Mimag']},
+    "METAGENOME": {'description': 'Sequences assembled from DNA of mixed community.', 'meaning': 'mixs:0010007', 'aliases': ['Mims']},
+    "METATRANSCRIPTOME": {'description': 'Sequences assembled from RNA of mixed community. Currently not represented by GSC.'},
+    "SAG": {'description': 'Sequences assembled from DNA of single cell.', 'meaning': 'mixs:0010010', 'aliases': ['Misag']},
+    "VIRUS": {'description': 'Sequences assembled from uncultivated virus genome (DNA/RNA).', 'meaning': 'mixs:0010012', 'aliases': ['Miuvig']},
+    "MARKER": {'description': 'Sequences from targeted region of DNA; see protocol for information on targeted region. specimen: https://genomicsstandardsconsortium.github.io/mixs/0010009/ survey: https://genomicsstandardsconsortium.github.io/mixs/0010008/'},
+}
+
+class StrandType(RichEnum):
+    """
+    The strand that a feature appears on relative to a landmark. Also encompasses unknown or irrelevant strandedness.
+    """
+    # Enum members
+    NEGATIVE = "NEGATIVE"
+    POSITIVE = "POSITIVE"
+    UNKNOWN = "UNKNOWN"
+    UNSTRANDED = "UNSTRANDED"
+
+# Set metadata after class creation to avoid it becoming an enum member
+StrandType._metadata = {
+    "NEGATIVE": {'description': 'Represented by "-" in a GFF file; the strand is negative wrt the landmark.'},
+    "POSITIVE": {'description': 'Represented by "+" in a GFF file; the strand is positive with relation to the landmark.'},
+    "UNKNOWN": {'description': 'Represented by "?" in a GFF file. The strandedness is relevant but unknown.'},
+    "UNSTRANDED": {'description': 'Represented by "." in a GFF file; the feature is not stranded.'},
+}
+
+class SequenceType(RichEnum):
+    """
+    The type of sequence being represented.
+    """
+    # Enum members
+    NUCLEIC_ACID = "NUCLEIC_ACID"
+    AMINO_ACID = "AMINO_ACID"
+
+# Set metadata after class creation to avoid it becoming an enum member
+SequenceType._metadata = {
+    "NUCLEIC_ACID": {'description': 'A nucleic acid sequence, as found in an FNA file.'},
+    "AMINO_ACID": {'description': 'An amino acid sequence, as would be found in an FAA file.'},
+}
+
+class ProteinEvidenceForExistence(RichEnum):
+    """
+    The evidence for the existence of a biological entity. See https://www.uniprot.org/help/protein_existence and https://www.ncbi.nlm.nih.gov/genbank/evidence/.
+    """
+    # Enum members
+    EXPERIMENTAL_EVIDENCE_AT_PROTEIN_LEVEL = "EXPERIMENTAL_EVIDENCE_AT_PROTEIN_LEVEL"
+    EXPERIMENTAL_EVIDENCE_AT_TRANSCRIPT_LEVEL = "EXPERIMENTAL_EVIDENCE_AT_TRANSCRIPT_LEVEL"
+    PROTEIN_INFERRED_BY_HOMOLOGY = "PROTEIN_INFERRED_BY_HOMOLOGY"
+    PROTEIN_PREDICTED = "PROTEIN_PREDICTED"
+    PROTEIN_UNCERTAIN = "PROTEIN_UNCERTAIN"
+
+# Set metadata after class creation to avoid it becoming an enum member
+ProteinEvidenceForExistence._metadata = {
+    "EXPERIMENTAL_EVIDENCE_AT_PROTEIN_LEVEL": {'description': 'Indicates that there is clear experimental evidence for the existence of the protein. The criteria include partial or complete Edman sequencing, clear identification by mass spectrometry, X-ray or NMR structure, good quality protein-protein interaction or detection of the protein by antibodies.'},
+    "EXPERIMENTAL_EVIDENCE_AT_TRANSCRIPT_LEVEL": {'description': 'Indicates that the existence of a protein has not been strictly proven but that expression data (such as existence of cDNA(s), RT-PCR or Northern blots) indicate the existence of a transcript.'},
+    "PROTEIN_INFERRED_BY_HOMOLOGY": {'description': 'Indicates that the existence of a protein is probable because clear orthologs exist in closely related species.'},
+    "PROTEIN_PREDICTED": {'description': 'Used for entries without evidence at protein, transcript, or homology levels.'},
+    "PROTEIN_UNCERTAIN": {'description': 'Indicates that the existence of the protein is unsure.'},
+}
+
+class RefSeqStatusType(RichEnum):
+    """
+    RefSeq status codes, taken from https://www.ncbi.nlm.nih.gov/genbank/evidence/.
+    """
+    # Enum members
+    MODEL = "MODEL"
+    INFERRED = "INFERRED"
+    PREDICTED = "PREDICTED"
+    PROVISIONAL = "PROVISIONAL"
+    REVIEWED = "REVIEWED"
+    VALIDATED = "VALIDATED"
+    WGS = "WGS"
+
+# Set metadata after class creation to avoid it becoming an enum member
+RefSeqStatusType._metadata = {
+    "MODEL": {'description': 'The RefSeq record is provided by the NCBI Genome Annotation pipeline and is not subject to individual review or revision between annotation runs.'},
+    "INFERRED": {'description': 'The RefSeq record has been predicted by genome sequence analysis, but it is not yet supported by experimental evidence. The record may be partially supported by homology data.'},
+    "PREDICTED": {'description': 'The RefSeq record has not yet been subject to individual review, and some aspect of the RefSeq record is predicted.'},
+    "PROVISIONAL": {'description': 'The RefSeq record has not yet been subject to individual review. The initial sequence-to-gene association has been established by outside collaborators or NCBI staff.'},
+    "REVIEWED": {'description': 'The RefSeq record has been reviewed by NCBI staff or by a collaborator. The NCBI review process includes assessing available sequence data and the literature. Some RefSeq records may incorporate expanded sequence and annotation information.'},
+    "VALIDATED": {'description': 'The RefSeq record has undergone an initial review to provide the preferred sequence standard. The record has not yet been subject to final review at which time additional functional information may be provided.'},
+    "WGS": {'description': 'The RefSeq record is provided to represent a collection of whole genome shotgun sequences. These records are not subject to individual review or revisions between genome updates.'},
+}
+
+class CurrencyChemical(RichEnum):
+    """
+    Common metabolic currency molecules and cofactors that serve as energy carriers, electron donors/acceptors, and group transfer agents in cellular metabolism.
+    """
+    # Enum members
+    ATP = "ATP"
+    ADP = "ADP"
+    AMP = "AMP"
+    GTP = "GTP"
+    GDP = "GDP"
+    NAD_PLUS = "NAD_PLUS"
+    NADH = "NADH"
+    NADP_PLUS = "NADP_PLUS"
+    NADPH = "NADPH"
+    FAD = "FAD"
+    FADH2 = "FADH2"
+    COA = "COA"
+    ACETYL_COA = "ACETYL_COA"
+
+# Set metadata after class creation to avoid it becoming an enum member
+CurrencyChemical._metadata = {
+    "ATP": {'description': 'Adenosine triphosphate - primary energy currency molecule in cells', 'meaning': 'CHEBI:15422'},
+    "ADP": {'description': 'Adenosine diphosphate - product of ATP hydrolysis, energy acceptor', 'meaning': 'CHEBI:16761'},
+    "AMP": {'description': 'Adenosine monophosphate - nucleotide, product of ADP hydrolysis', 'meaning': 'CHEBI:16027', 'aliases': ["adenosine 5'-monophosphate"]},
+    "GTP": {'description': 'Guanosine triphosphate - energy molecule, protein synthesis and signaling', 'meaning': 'CHEBI:15996'},
+    "GDP": {'description': 'Guanosine diphosphate - product of GTP hydrolysis', 'meaning': 'CHEBI:17552'},
+    "NAD_PLUS": {'description': 'Nicotinamide adenine dinucleotide (oxidized) - electron acceptor in catabolism', 'meaning': 'CHEBI:15846'},
+    "NADH": {'description': 'Nicotinamide adenine dinucleotide (reduced) - electron donor, reducing agent', 'meaning': 'CHEBI:16908'},
+    "NADP_PLUS": {'description': 'Nicotinamide adenine dinucleotide phosphate (oxidized) - electron acceptor', 'meaning': 'CHEBI:18009'},
+    "NADPH": {'description': 'Nicotinamide adenine dinucleotide phosphate (reduced) - anabolic reducing agent', 'meaning': 'CHEBI:16474'},
+    "FAD": {'description': 'Flavin adenine dinucleotide (oxidized) - electron acceptor in oxidation reactions', 'meaning': 'CHEBI:16238'},
+    "FADH2": {'description': 'Flavin adenine dinucleotide (reduced) - electron donor in electron transport chain', 'meaning': 'CHEBI:17877'},
+    "COA": {'description': 'Coenzyme A - acyl group carrier in fatty acid metabolism', 'meaning': 'CHEBI:15346', 'aliases': ['coenzyme A']},
+    "ACETYL_COA": {'description': 'Acetyl coenzyme A - central metabolic intermediate, links glycolysis to citric acid cycle', 'meaning': 'CHEBI:15351'},
+}
+
+class PlantDevelopmentalStage(RichEnum):
+    """
+    Major developmental stages in the plant life cycle, from seed germination through senescence. Based on the Plant Ontology (PO) standardized stages.
+    """
+    # Enum members
+    SEED_GERMINATION_STAGE = "SEED_GERMINATION_STAGE"
+    SEEDLING_STAGE = "SEEDLING_STAGE"
+    VEGETATIVE_GROWTH_STAGE = "VEGETATIVE_GROWTH_STAGE"
+    FLOWERING_STAGE = "FLOWERING_STAGE"
+    FRUIT_DEVELOPMENT_STAGE = "FRUIT_DEVELOPMENT_STAGE"
+    SEED_DEVELOPMENT_STAGE = "SEED_DEVELOPMENT_STAGE"
+    SENESCENCE_STAGE = "SENESCENCE_STAGE"
+    DORMANCY_STAGE = "DORMANCY_STAGE"
+    EMBRYO_DEVELOPMENT_STAGE = "EMBRYO_DEVELOPMENT_STAGE"
+    ROOT_DEVELOPMENT_STAGE = "ROOT_DEVELOPMENT_STAGE"
+    LEAF_DEVELOPMENT_STAGE = "LEAF_DEVELOPMENT_STAGE"
+    REPRODUCTIVE_STAGE = "REPRODUCTIVE_STAGE"
+    MATURITY_STAGE = "MATURITY_STAGE"
+    POST_HARVEST_STAGE = "POST_HARVEST_STAGE"
+
+# Set metadata after class creation to avoid it becoming an enum member
+PlantDevelopmentalStage._metadata = {
+    "SEED_GERMINATION_STAGE": {'description': 'Stage beginning with seed imbibition and ending with radicle emergence', 'meaning': 'PO:0007057'},
+    "SEEDLING_STAGE": {'description': 'Stage from germination until development of first adult vascular leaf', 'meaning': 'PO:0007131', 'aliases': ['seedling development stage']},
+    "VEGETATIVE_GROWTH_STAGE": {'description': 'Stage of growth before reproductive structure formation', 'meaning': 'PO:0007134', 'aliases': ['sporophyte vegetative stage']},
+    "FLOWERING_STAGE": {'description': 'Stage when flowers open with pollen release and/or receptive stigma', 'meaning': 'PO:0007616'},
+    "FRUIT_DEVELOPMENT_STAGE": {'description': 'Stage of fruit formation through ripening', 'meaning': 'PO:0001002'},
+    "SEED_DEVELOPMENT_STAGE": {'description': 'Stage from fertilization to mature seed', 'meaning': 'PO:0001170'},
+    "SENESCENCE_STAGE": {'description': 'Stage of aging with loss of function and organ deterioration', 'meaning': 'PO:0007017', 'aliases': ['sporophyte senescent stage']},
+    "DORMANCY_STAGE": {'description': 'Stage of suspended physiological activity and growth', 'meaning': 'PO:0007132', 'aliases': ['sporophyte dormant stage']},
+    "EMBRYO_DEVELOPMENT_STAGE": {'description': 'Stage from zygote first division to seed germination initiation', 'meaning': 'PO:0007631', 'aliases': ['plant embryo development stage']},
+    "ROOT_DEVELOPMENT_STAGE": {'description': 'Stages in root growth and development', 'meaning': 'PO:0007520'},
+    "LEAF_DEVELOPMENT_STAGE": {'description': 'Stages in leaf formation and expansion', 'meaning': 'PO:0001050'},
+    "REPRODUCTIVE_STAGE": {'description': 'Stage from reproductive structure initiation to senescence onset', 'meaning': 'PO:0007130', 'aliases': ['sporophyte reproductive stage']},
+    "MATURITY_STAGE": {'description': 'Stage when plant or plant embryo reaches full development', 'meaning': 'PO:0001081', 'aliases': ['mature plant embryo stage']},
+    "POST_HARVEST_STAGE": {'description': 'Stage after harvest when plant parts are detached from parent plant'},
+}
+
+class UniProtSpeciesCode(RichEnum):
+    """
+    UniProt species mnemonic codes for reference proteomes with associated metadata
+    """
+    # Enum members
+    SP_9ABAC = "SP_9ABAC"
+    SP_9ACAR = "SP_9ACAR"
+    SP_9ACTN = "SP_9ACTN"
+    SP_9ACTO = "SP_9ACTO"
+    SP_9ADEN = "SP_9ADEN"
+    SP_9AGAM = "SP_9AGAM"
+    SP_9AGAR = "SP_9AGAR"
+    SP_9ALPC = "SP_9ALPC"
+    SP_9ALPH = "SP_9ALPH"
+    SP_9ALTE = "SP_9ALTE"
+    SP_9ALVE = "SP_9ALVE"
+    SP_9AMPH = "SP_9AMPH"
+    SP_9ANNE = "SP_9ANNE"
+    SP_9ANUR = "SP_9ANUR"
+    SP_9APHY = "SP_9APHY"
+    SP_9APIA = "SP_9APIA"
+    SP_9APIC = "SP_9APIC"
+    SP_9AQUI = "SP_9AQUI"
+    SP_9ARAC = "SP_9ARAC"
+    SP_9ARCH = "SP_9ARCH"
+    SP_9ASCO = "SP_9ASCO"
+    SP_9ASPA = "SP_9ASPA"
+    SP_9ASTE = "SP_9ASTE"
+    SP_9ASTR = "SP_9ASTR"
+    SP_9AVES = "SP_9AVES"
+    SP_9BACE = "SP_9BACE"
+    SP_9BACI = "SP_9BACI"
+    SP_9BACL = "SP_9BACL"
+    SP_9BACT = "SP_9BACT"
+    SP_9BACU = "SP_9BACU"
+    SP_9BASI = "SP_9BASI"
+    SP_9BBAC = "SP_9BBAC"
+    SP_9BETA = "SP_9BETA"
+    SP_9BETC = "SP_9BETC"
+    SP_9BIFI = "SP_9BIFI"
+    SP_9BILA = "SP_9BILA"
+    SP_9BIVA = "SP_9BIVA"
+    SP_9BORD = "SP_9BORD"
+    SP_9BRAD = "SP_9BRAD"
+    SP_9BRAS = "SP_9BRAS"
+    SP_9BROM = "SP_9BROM"
+    SP_9BURK = "SP_9BURK"
+    SP_9CARY = "SP_9CARY"
+    SP_9CAUD = "SP_9CAUD"
+    SP_9CAUL = "SP_9CAUL"
+    SP_9CBAC = "SP_9CBAC"
+    SP_9CELL = "SP_9CELL"
+    SP_9CERV = "SP_9CERV"
+    SP_9CETA = "SP_9CETA"
+    SP_9CHAR = "SP_9CHAR"
+    SP_9CHIR = "SP_9CHIR"
+    SP_9CHLA = "SP_9CHLA"
+    SP_9CHLB = "SP_9CHLB"
+    SP_9CHLO = "SP_9CHLO"
+    SP_9CHLR = "SP_9CHLR"
+    SP_9CHRO = "SP_9CHRO"
+    SP_9CICH = "SP_9CICH"
+    SP_9CILI = "SP_9CILI"
+    SP_9CIRC = "SP_9CIRC"
+    SP_9CLOS = "SP_9CLOS"
+    SP_9CLOT = "SP_9CLOT"
+    SP_9CNID = "SP_9CNID"
+    SP_9COLU = "SP_9COLU"
+    SP_9CORV = "SP_9CORV"
+    SP_9CORY = "SP_9CORY"
+    SP_9COXI = "SP_9COXI"
+    SP_9CREN = "SP_9CREN"
+    SP_9CRUS = "SP_9CRUS"
+    SP_9CUCU = "SP_9CUCU"
+    SP_9CYAN = "SP_9CYAN"
+    SP_9DEIN = "SP_9DEIN"
+    SP_9DEIO = "SP_9DEIO"
+    SP_9DELA = "SP_9DELA"
+    SP_9DELT = "SP_9DELT"
+    SP_9DEND = "SP_9DEND"
+    SP_9DINO = "SP_9DINO"
+    SP_9DIPT = "SP_9DIPT"
+    SP_9EIME = "SP_9EIME"
+    SP_9EMBE = "SP_9EMBE"
+    SP_9ENTE = "SP_9ENTE"
+    SP_9ENTR = "SP_9ENTR"
+    SP_9ERIC = "SP_9ERIC"
+    SP_9EUCA = "SP_9EUCA"
+    SP_9EUGL = "SP_9EUGL"
+    SP_9EUKA = "SP_9EUKA"
+    SP_9EUPU = "SP_9EUPU"
+    SP_9EURO = "SP_9EURO"
+    SP_9EURY = "SP_9EURY"
+    SP_9FABA = "SP_9FABA"
+    SP_9FIRM = "SP_9FIRM"
+    SP_9FLAO = "SP_9FLAO"
+    SP_9FLAV = "SP_9FLAV"
+    SP_9FLOR = "SP_9FLOR"
+    SP_9FRIN = "SP_9FRIN"
+    SP_9FUNG = "SP_9FUNG"
+    SP_9FURN = "SP_9FURN"
+    SP_9FUSO = "SP_9FUSO"
+    SP_9GALL = "SP_9GALL"
+    SP_9GAMA = "SP_9GAMA"
+    SP_9GAMC = "SP_9GAMC"
+    SP_9GAMM = "SP_9GAMM"
+    SP_9GAST = "SP_9GAST"
+    SP_9GEMI = "SP_9GEMI"
+    SP_9GLOM = "SP_9GLOM"
+    SP_9GOBI = "SP_9GOBI"
+    SP_9GRUI = "SP_9GRUI"
+    SP_9HELI = "SP_9HELI"
+    SP_9HELO = "SP_9HELO"
+    SP_9HEMI = "SP_9HEMI"
+    SP_9HEPA = "SP_9HEPA"
+    SP_9HEXA = "SP_9HEXA"
+    SP_9HYME = "SP_9HYME"
+    SP_9HYPH = "SP_9HYPH"
+    SP_9HYPO = "SP_9HYPO"
+    SP_9INFA = "SP_9INFA"
+    SP_9INSE = "SP_9INSE"
+    SP_9LABR = "SP_9LABR"
+
+# Set metadata after class creation to avoid it becoming an enum member
+UniProtSpeciesCode._metadata = {
+    "SP_9ABAC": {'description': 'Lambdina fiscellaria nucleopolyhedrovirus - Proteome: UP000201190', 'meaning': 'NCBITaxon:1642929', 'annotations': {'proteome_id': 'UP000201190', 'tax_id': '1642929', 'code': '9ABAC'}},
+    "SP_9ACAR": {'description': 'Tropilaelaps mercedesae - Proteome: UP000192247', 'meaning': 'NCBITaxon:418985', 'annotations': {'proteome_id': 'UP000192247', 'tax_id': '418985', 'code': '9ACAR'}},
+    "SP_9ACTN": {'description': 'Candidatus Protofrankia datiscae - Proteome: UP000001549', 'meaning': 'NCBITaxon:2716812', 'annotations': {'proteome_id': 'UP000001549', 'tax_id': '2716812', 'code': '9ACTN'}},
+    "SP_9ACTO": {'description': 'Actinomyces massiliensis F0489 - Proteome: UP000002941', 'meaning': 'NCBITaxon:1125718', 'annotations': {'proteome_id': 'UP000002941', 'tax_id': '1125718', 'code': '9ACTO'}},
+    "SP_9ADEN": {'description': 'Human adenovirus 53 - Proteome: UP000463865', 'meaning': 'NCBITaxon:556926', 'annotations': {'proteome_id': 'UP000463865', 'tax_id': '556926', 'code': '9ADEN'}},
+    "SP_9AGAM": {'description': 'Jaapia argillacea MUCL 33604 - Proteome: UP000027265', 'meaning': 'NCBITaxon:933084', 'annotations': {'proteome_id': 'UP000027265', 'tax_id': '933084', 'code': '9AGAM'}},
+    "SP_9AGAR": {'description': 'Collybiopsis luxurians FD-317 M1 - Proteome: UP000053593', 'meaning': 'NCBITaxon:944289', 'annotations': {'proteome_id': 'UP000053593', 'tax_id': '944289', 'code': '9AGAR'}},
+    "SP_9ALPC": {'description': 'Feline coronavirus - Proteome: UP000141821', 'meaning': 'NCBITaxon:12663', 'annotations': {'proteome_id': 'UP000141821', 'tax_id': '12663', 'code': '9ALPC'}},
+    "SP_9ALPH": {'description': 'Testudinid alphaherpesvirus 3 - Proteome: UP000100290', 'meaning': 'NCBITaxon:2560801', 'annotations': {'proteome_id': 'UP000100290', 'tax_id': '2560801', 'code': '9ALPH'}},
+    "SP_9ALTE": {'description': 'Paraglaciecola arctica BSs20135 - Proteome: UP000006327', 'meaning': 'NCBITaxon:493475', 'annotations': {'proteome_id': 'UP000006327', 'tax_id': '493475', 'code': '9ALTE'}},
+    "SP_9ALVE": {'description': 'Perkinsus sp. BL_2016 - Proteome: UP000298064', 'meaning': 'NCBITaxon:2494336', 'annotations': {'proteome_id': 'UP000298064', 'tax_id': '2494336', 'code': '9ALVE'}},
+    "SP_9AMPH": {'description': 'Microcaecilia unicolor - Proteome: UP000515156', 'meaning': 'NCBITaxon:1415580', 'annotations': {'proteome_id': 'UP000515156', 'tax_id': '1415580', 'code': '9AMPH'}},
+    "SP_9ANNE": {'description': 'Dimorphilus gyrociliatus - Proteome: UP000549394', 'meaning': 'NCBITaxon:2664684', 'annotations': {'proteome_id': 'UP000549394', 'tax_id': '2664684', 'code': '9ANNE'}},
+    "SP_9ANUR": {'description': 'Leptobrachium leishanense (Leishan spiny toad) - Proteome: UP000694569', 'meaning': 'NCBITaxon:445787', 'annotations': {'proteome_id': 'UP000694569', 'tax_id': '445787', 'code': '9ANUR'}},
+    "SP_9APHY": {'description': 'Fibroporia radiculosa - Proteome: UP000006352', 'meaning': 'NCBITaxon:599839', 'annotations': {'proteome_id': 'UP000006352', 'tax_id': '599839', 'code': '9APHY'}},
+    "SP_9APIA": {'description': 'Heracleum sosnowskyi - Proteome: UP001237642', 'meaning': 'NCBITaxon:360622', 'annotations': {'proteome_id': 'UP001237642', 'tax_id': '360622', 'code': '9APIA'}},
+    "SP_9APIC": {'description': 'Babesia sp. Xinjiang - Proteome: UP000193856', 'meaning': 'NCBITaxon:462227', 'annotations': {'proteome_id': 'UP000193856', 'tax_id': '462227', 'code': '9APIC'}},
+    "SP_9AQUI": {'description': 'Sulfurihydrogenibium yellowstonense SS-5 - Proteome: UP000005540', 'meaning': 'NCBITaxon:432331', 'annotations': {'proteome_id': 'UP000005540', 'tax_id': '432331', 'code': '9AQUI'}},
+    "SP_9ARAC": {'description': 'Trichonephila inaurata madagascariensis - Proteome: UP000886998', 'meaning': 'NCBITaxon:2747483', 'annotations': {'proteome_id': 'UP000886998', 'tax_id': '2747483', 'code': '9ARAC'}},
+    "SP_9ARCH": {'description': 'Candidatus Nitrosarchaeum limnium BG20 - Proteome: UP000014065', 'meaning': 'NCBITaxon:859192', 'annotations': {'proteome_id': 'UP000014065', 'tax_id': '859192', 'code': '9ARCH'}},
+    "SP_9ASCO": {'description': 'Kuraishia capsulata CBS 1993 - Proteome: UP000019384', 'meaning': 'NCBITaxon:1382522', 'annotations': {'proteome_id': 'UP000019384', 'tax_id': '1382522', 'code': '9ASCO'}},
+    "SP_9ASPA": {'description': 'Dendrobium catenatum - Proteome: UP000233837', 'meaning': 'NCBITaxon:906689', 'annotations': {'proteome_id': 'UP000233837', 'tax_id': '906689', 'code': '9ASPA'}},
+    "SP_9ASTE": {'description': 'Cuscuta australis - Proteome: UP000249390', 'meaning': 'NCBITaxon:267555', 'annotations': {'proteome_id': 'UP000249390', 'tax_id': '267555', 'code': '9ASTE'}},
+    "SP_9ASTR": {'description': 'Mikania micrantha - Proteome: UP000326396', 'meaning': 'NCBITaxon:192012', 'annotations': {'proteome_id': 'UP000326396', 'tax_id': '192012', 'code': '9ASTR'}},
+    "SP_9AVES": {'description': 'Anser brachyrhynchus (Pink-footed goose) - Proteome: UP000694426', 'meaning': 'NCBITaxon:132585', 'annotations': {'proteome_id': 'UP000694426', 'tax_id': '132585', 'code': '9AVES'}},
+    "SP_9BACE": {'description': 'Bacteroides caccae CL03T12C61 - Proteome: UP000002965', 'meaning': 'NCBITaxon:997873', 'annotations': {'proteome_id': 'UP000002965', 'tax_id': '997873', 'code': '9BACE'}},
+    "SP_9BACI": {'description': 'Fictibacillus macauensis ZFHKF-1 - Proteome: UP000004080', 'meaning': 'NCBITaxon:1196324', 'annotations': {'proteome_id': 'UP000004080', 'tax_id': '1196324', 'code': '9BACI'}},
+    "SP_9BACL": {'description': 'Paenibacillus sp. HGF7 - Proteome: UP000003445', 'meaning': 'NCBITaxon:944559', 'annotations': {'proteome_id': 'UP000003445', 'tax_id': '944559', 'code': '9BACL'}},
+    "SP_9BACT": {'description': 'Parabacteroides johnsonii CL02T12C29 - Proteome: UP000001218', 'meaning': 'NCBITaxon:999419', 'annotations': {'proteome_id': 'UP000001218', 'tax_id': '999419', 'code': '9BACT'}},
+    "SP_9BACU": {'description': 'Samia ricini nucleopolyhedrovirus - Proteome: UP001226138', 'meaning': 'NCBITaxon:1920700', 'annotations': {'proteome_id': 'UP001226138', 'tax_id': '1920700', 'code': '9BACU'}},
+    "SP_9BASI": {'description': 'Malassezia pachydermatis - Proteome: UP000037751', 'meaning': 'NCBITaxon:77020', 'annotations': {'proteome_id': 'UP000037751', 'tax_id': '77020', 'code': '9BASI'}},
+    "SP_9BBAC": {'description': 'Plutella xylostella granulovirus - Proteome: UP000201310', 'meaning': 'NCBITaxon:98383', 'annotations': {'proteome_id': 'UP000201310', 'tax_id': '98383', 'code': '9BBAC'}},
+    "SP_9BETA": {'description': 'Saimiriine betaherpesvirus 4 - Proteome: UP000097892', 'meaning': 'NCBITaxon:1535247', 'annotations': {'proteome_id': 'UP000097892', 'tax_id': '1535247', 'code': '9BETA'}},
+    "SP_9BETC": {'description': 'Coronavirus BtRt-BetaCoV/GX2018 - Proteome: UP001228689', 'meaning': 'NCBITaxon:2591238', 'annotations': {'proteome_id': 'UP001228689', 'tax_id': '2591238', 'code': '9BETC'}},
+    "SP_9BIFI": {'description': 'Scardovia wiggsiae F0424 - Proteome: UP000006415', 'meaning': 'NCBITaxon:857290', 'annotations': {'proteome_id': 'UP000006415', 'tax_id': '857290', 'code': '9BIFI'}},
+    "SP_9BILA": {'description': 'Ancylostoma ceylanicum - Proteome: UP000024635', 'meaning': 'NCBITaxon:53326', 'annotations': {'proteome_id': 'UP000024635', 'tax_id': '53326', 'code': '9BILA'}},
+    "SP_9BIVA": {'description': 'Potamilus streckersoni - Proteome: UP001195483', 'meaning': 'NCBITaxon:2493646', 'annotations': {'proteome_id': 'UP001195483', 'tax_id': '2493646', 'code': '9BIVA'}},
+    "SP_9BORD": {'description': 'Bordetella sp. N - Proteome: UP000064621', 'meaning': 'NCBITaxon:1746199', 'annotations': {'proteome_id': 'UP000064621', 'tax_id': '1746199', 'code': '9BORD'}},
+    "SP_9BRAD": {'description': 'Afipia broomeae ATCC 49717 - Proteome: UP000001096', 'meaning': 'NCBITaxon:883078', 'annotations': {'proteome_id': 'UP000001096', 'tax_id': '883078', 'code': '9BRAD'}},
+    "SP_9BRAS": {'description': 'Capsella rubella - Proteome: UP000029121', 'meaning': 'NCBITaxon:81985', 'annotations': {'proteome_id': 'UP000029121', 'tax_id': '81985', 'code': '9BRAS'}},
+    "SP_9BROM": {'description': 'Prune dwarf virus - Proteome: UP000202132', 'meaning': 'NCBITaxon:33760', 'annotations': {'proteome_id': 'UP000202132', 'tax_id': '33760', 'code': '9BROM'}},
+    "SP_9BURK": {'description': 'Candidatus Paraburkholderia kirkii UZHbot1 - Proteome: UP000003511', 'meaning': 'NCBITaxon:1055526', 'annotations': {'proteome_id': 'UP000003511', 'tax_id': '1055526', 'code': '9BURK'}},
+    "SP_9CARY": {'description': 'Carnegiea gigantea - Proteome: UP001153076', 'meaning': 'NCBITaxon:171969', 'annotations': {'proteome_id': 'UP001153076', 'tax_id': '171969', 'code': '9CARY'}},
+    "SP_9CAUD": {'description': 'Salmonella phage Vi06 - Proteome: UP000000335', 'meaning': 'NCBITaxon:866889', 'annotations': {'proteome_id': 'UP000000335', 'tax_id': '866889', 'code': '9CAUD'}},
+    "SP_9CAUL": {'description': 'Brevundimonas abyssalis TAR-001 - Proteome: UP000016569', 'meaning': 'NCBITaxon:1391729', 'annotations': {'proteome_id': 'UP000016569', 'tax_id': '1391729', 'code': '9CAUL'}},
+    "SP_9CBAC": {'description': 'Neodiprion sertifer nucleopolyhedrovirus - Proteome: UP000243697', 'meaning': 'NCBITaxon:111874', 'annotations': {'proteome_id': 'UP000243697', 'tax_id': '111874', 'code': '9CBAC'}},
+    "SP_9CELL": {'description': 'Actinotalea ferrariae CF5-4 - Proteome: UP000019753', 'meaning': 'NCBITaxon:948458', 'annotations': {'proteome_id': 'UP000019753', 'tax_id': '948458', 'code': '9CELL'}},
+    "SP_9CERV": {'description': 'Cervus hanglu yarkandensis (Yarkand deer) - Proteome: UP000631465', 'meaning': 'NCBITaxon:84702', 'annotations': {'proteome_id': 'UP000631465', 'tax_id': '84702', 'code': '9CERV'}},
+    "SP_9CETA": {'description': 'Catagonus wagneri (Chacoan peccary) - Proteome: UP000694540', 'meaning': 'NCBITaxon:51154', 'annotations': {'proteome_id': 'UP000694540', 'tax_id': '51154', 'code': '9CETA'}},
+    "SP_9CHAR": {'description': 'Rostratula benghalensis (greater painted-snipe) - Proteome: UP000545435', 'meaning': 'NCBITaxon:118793', 'annotations': {'proteome_id': 'UP000545435', 'tax_id': '118793', 'code': '9CHAR'}},
+    "SP_9CHIR": {'description': 'Phyllostomus discolor (pale spear-nosed bat) - Proteome: UP000504628', 'meaning': 'NCBITaxon:89673', 'annotations': {'proteome_id': 'UP000504628', 'tax_id': '89673', 'code': '9CHIR'}},
+    "SP_9CHLA": {'description': 'Chlamydiales bacterium SCGC AG-110-P3 - Proteome: UP000196763', 'meaning': 'NCBITaxon:1871323', 'annotations': {'proteome_id': 'UP000196763', 'tax_id': '1871323', 'code': '9CHLA'}},
+    "SP_9CHLB": {'description': 'Chlorobium ferrooxidans DSM 13031 - Proteome: UP000004162', 'meaning': 'NCBITaxon:377431', 'annotations': {'proteome_id': 'UP000004162', 'tax_id': '377431', 'code': '9CHLB'}},
+    "SP_9CHLO": {'description': 'Helicosporidium sp. ATCC 50920 - Proteome: UP000026042', 'meaning': 'NCBITaxon:1291522', 'annotations': {'proteome_id': 'UP000026042', 'tax_id': '1291522', 'code': '9CHLO'}},
+    "SP_9CHLR": {'description': 'Ardenticatena maritima - Proteome: UP000037784', 'meaning': 'NCBITaxon:872965', 'annotations': {'proteome_id': 'UP000037784', 'tax_id': '872965', 'code': '9CHLR'}},
+    "SP_9CHRO": {'description': 'Gloeocapsa sp. PCC 7428 - Proteome: UP000010476', 'meaning': 'NCBITaxon:1173026', 'annotations': {'proteome_id': 'UP000010476', 'tax_id': '1173026', 'code': '9CHRO'}},
+    "SP_9CICH": {'description': 'Maylandia zebra (zebra mbuna) - Proteome: UP000265160', 'meaning': 'NCBITaxon:106582', 'annotations': {'proteome_id': 'UP000265160', 'tax_id': '106582', 'code': '9CICH'}},
+    "SP_9CILI": {'description': 'Stentor coeruleus - Proteome: UP000187209', 'meaning': 'NCBITaxon:5963', 'annotations': {'proteome_id': 'UP000187209', 'tax_id': '5963', 'code': '9CILI'}},
+    "SP_9CIRC": {'description': 'Raven circovirus - Proteome: UP000097131', 'meaning': 'NCBITaxon:345250', 'annotations': {'proteome_id': 'UP000097131', 'tax_id': '345250', 'code': '9CIRC'}},
+    "SP_9CLOS": {'description': 'Grapevine leafroll-associated virus 10 - Proteome: UP000203128', 'meaning': 'NCBITaxon:367121', 'annotations': {'proteome_id': 'UP000203128', 'tax_id': '367121', 'code': '9CLOS'}},
+    "SP_9CLOT": {'description': 'Candidatus Arthromitus sp. SFB-rat-Yit - Proteome: UP000001273', 'meaning': 'NCBITaxon:1041504', 'annotations': {'proteome_id': 'UP000001273', 'tax_id': '1041504', 'code': '9CLOT'}},
+    "SP_9CNID": {'description': 'Clytia hemisphaerica - Proteome: UP000594262', 'meaning': 'NCBITaxon:252671', 'annotations': {'proteome_id': 'UP000594262', 'tax_id': '252671', 'code': '9CNID'}},
+    "SP_9COLU": {'description': 'Pampusana beccarii (Western bronze ground-dove) - Proteome: UP000541332', 'meaning': 'NCBITaxon:2953425', 'annotations': {'proteome_id': 'UP000541332', 'tax_id': '2953425', 'code': '9COLU'}},
+    "SP_9CORV": {'description': "Cnemophilus loriae (Loria's bird-of-paradise) - Proteome: UP000517678", 'meaning': 'NCBITaxon:254448', 'annotations': {'proteome_id': 'UP000517678', 'tax_id': '254448', 'code': '9CORV'}},
+    "SP_9CORY": {'description': 'Corynebacterium genitalium ATCC 33030 - Proteome: UP000004208', 'meaning': 'NCBITaxon:585529', 'annotations': {'proteome_id': 'UP000004208', 'tax_id': '585529', 'code': '9CORY'}},
+    "SP_9COXI": {'description': 'Coxiella endosymbiont of Amblyomma americanum - Proteome: UP000059222', 'meaning': 'NCBITaxon:325775', 'annotations': {'proteome_id': 'UP000059222', 'tax_id': '325775', 'code': '9COXI'}},
+    "SP_9CREN": {'description': 'Metallosphaera yellowstonensis MK1 - Proteome: UP000003980', 'meaning': 'NCBITaxon:671065', 'annotations': {'proteome_id': 'UP000003980', 'tax_id': '671065', 'code': '9CREN'}},
+    "SP_9CRUS": {'description': 'Daphnia magna - Proteome: UP000076858', 'meaning': 'NCBITaxon:35525', 'annotations': {'proteome_id': 'UP000076858', 'tax_id': '35525', 'code': '9CRUS'}},
+    "SP_9CUCU": {'description': 'Ceutorhynchus assimilis (cabbage seed weevil) - Proteome: UP001152799', 'meaning': 'NCBITaxon:467358', 'annotations': {'proteome_id': 'UP001152799', 'tax_id': '467358', 'code': '9CUCU'}},
+    "SP_9CYAN": {'description': 'Leptolyngbyaceae cyanobacterium JSC-12 - Proteome: UP000001332', 'meaning': 'NCBITaxon:864702', 'annotations': {'proteome_id': 'UP000001332', 'tax_id': '864702', 'code': '9CYAN'}},
+    "SP_9DEIN": {'description': 'Meiothermus sp. QL-1 - Proteome: UP000255346', 'meaning': 'NCBITaxon:2058095', 'annotations': {'proteome_id': 'UP000255346', 'tax_id': '2058095', 'code': '9DEIN'}},
+    "SP_9DEIO": {'description': 'Deinococcus sp. RL - Proteome: UP000027898', 'meaning': 'NCBITaxon:1489678', 'annotations': {'proteome_id': 'UP000027898', 'tax_id': '1489678', 'code': '9DEIO'}},
+    "SP_9DELA": {'description': 'Human T-cell leukemia virus type I - Proteome: UP000108043', 'meaning': 'NCBITaxon:11908', 'annotations': {'proteome_id': 'UP000108043', 'tax_id': '11908', 'code': '9DELA'}},
+    "SP_9DELT": {'description': 'Lujinxingia litoralis - Proteome: UP000249169', 'meaning': 'NCBITaxon:2211119', 'annotations': {'proteome_id': 'UP000249169', 'tax_id': '2211119', 'code': '9DELT'}},
+    "SP_9DEND": {'description': 'Xiphorhynchus elegans (elegant woodcreeper) - Proteome: UP000551443', 'meaning': 'NCBITaxon:269412', 'annotations': {'proteome_id': 'UP000551443', 'tax_id': '269412', 'code': '9DEND'}},
+    "SP_9DINO": {'description': 'Symbiodinium necroappetens - Proteome: UP000601435', 'meaning': 'NCBITaxon:1628268', 'annotations': {'proteome_id': 'UP000601435', 'tax_id': '1628268', 'code': '9DINO'}},
+    "SP_9DIPT": {'description': 'Clunio marinus - Proteome: UP000183832', 'meaning': 'NCBITaxon:568069', 'annotations': {'proteome_id': 'UP000183832', 'tax_id': '568069', 'code': '9DIPT'}},
+    "SP_9EIME": {'description': 'Eimeria praecox - Proteome: UP000018201', 'meaning': 'NCBITaxon:51316', 'annotations': {'proteome_id': 'UP000018201', 'tax_id': '51316', 'code': '9EIME'}},
+    "SP_9EMBE": {'description': 'Emberiza fucata - Proteome: UP000580681', 'meaning': 'NCBITaxon:337179', 'annotations': {'proteome_id': 'UP000580681', 'tax_id': '337179', 'code': '9EMBE'}},
+    "SP_9ENTE": {'description': 'Enterococcus asini ATCC 700915 - Proteome: UP000013777', 'meaning': 'NCBITaxon:1158606', 'annotations': {'proteome_id': 'UP000013777', 'tax_id': '1158606', 'code': '9ENTE'}},
+    "SP_9ENTR": {'description': 'secondary endosymbiont of Heteropsylla cubana - Proteome: UP000003937', 'meaning': 'NCBITaxon:134287', 'annotations': {'proteome_id': 'UP000003937', 'tax_id': '134287', 'code': '9ENTR'}},
+    "SP_9ERIC": {'description': 'Rhododendron williamsianum - Proteome: UP000428333', 'meaning': 'NCBITaxon:262921', 'annotations': {'proteome_id': 'UP000428333', 'tax_id': '262921', 'code': '9ERIC'}},
+    "SP_9EUCA": {'description': 'Petrolisthes manimaculis - Proteome: UP001292094', 'meaning': 'NCBITaxon:1843537', 'annotations': {'proteome_id': 'UP001292094', 'tax_id': '1843537', 'code': '9EUCA'}},
+    "SP_9EUGL": {'description': 'Perkinsela sp. CCAP 1560/4 - Proteome: UP000036983', 'meaning': 'NCBITaxon:1314962', 'annotations': {'proteome_id': 'UP000036983', 'tax_id': '1314962', 'code': '9EUGL'}},
+    "SP_9EUKA": {'description': 'Chrysochromulina tobinii - Proteome: UP000037460', 'meaning': 'NCBITaxon:1460289', 'annotations': {'proteome_id': 'UP000037460', 'tax_id': '1460289', 'code': '9EUKA'}},
+    "SP_9EUPU": {'description': 'Candidula unifasciata - Proteome: UP000678393', 'meaning': 'NCBITaxon:100452', 'annotations': {'proteome_id': 'UP000678393', 'tax_id': '100452', 'code': '9EUPU'}},
+    "SP_9EURO": {'description': 'Cladophialophora psammophila CBS 110553 - Proteome: UP000019471', 'meaning': 'NCBITaxon:1182543', 'annotations': {'proteome_id': 'UP000019471', 'tax_id': '1182543', 'code': '9EURO'}},
+    "SP_9EURY": {'description': 'Methanoplanus limicola DSM 2279 - Proteome: UP000005741', 'meaning': 'NCBITaxon:937775', 'annotations': {'proteome_id': 'UP000005741', 'tax_id': '937775', 'code': '9EURY'}},
+    "SP_9FABA": {'description': 'Senna tora - Proteome: UP000634136', 'meaning': 'NCBITaxon:362788', 'annotations': {'proteome_id': 'UP000634136', 'tax_id': '362788', 'code': '9FABA'}},
+    "SP_9FIRM": {'description': 'Ruminococcaceae bacterium D16 - Proteome: UP000002801', 'meaning': 'NCBITaxon:552398', 'annotations': {'proteome_id': 'UP000002801', 'tax_id': '552398', 'code': '9FIRM'}},
+    "SP_9FLAO": {'description': 'Capnocytophaga sp. oral taxon 338 str. F0234 - Proteome: UP000003023', 'meaning': 'NCBITaxon:888059', 'annotations': {'proteome_id': 'UP000003023', 'tax_id': '888059', 'code': '9FLAO'}},
+    "SP_9FLAV": {'description': 'Tunisian sheep-like pestivirus - Proteome: UP001157330', 'meaning': 'NCBITaxon:3071305', 'annotations': {'proteome_id': 'UP001157330', 'tax_id': '3071305', 'code': '9FLAV'}},
+    "SP_9FLOR": {'description': 'Gracilariopsis chorda - Proteome: UP000247409', 'meaning': 'NCBITaxon:448386', 'annotations': {'proteome_id': 'UP000247409', 'tax_id': '448386', 'code': '9FLOR'}},
+    "SP_9FRIN": {'description': 'Urocynchramus pylzowi - Proteome: UP000524542', 'meaning': 'NCBITaxon:571890', 'annotations': {'proteome_id': 'UP000524542', 'tax_id': '571890', 'code': '9FRIN'}},
+    "SP_9FUNG": {'description': 'Lichtheimia corymbifera JMRC:FSU:9682 - Proteome: UP000027586', 'meaning': 'NCBITaxon:1263082', 'annotations': {'proteome_id': 'UP000027586', 'tax_id': '1263082', 'code': '9FUNG'}},
+    "SP_9FURN": {'description': 'Furnarius figulus - Proteome: UP000529852', 'meaning': 'NCBITaxon:463165', 'annotations': {'proteome_id': 'UP000529852', 'tax_id': '463165', 'code': '9FURN'}},
+    "SP_9FUSO": {'description': 'Fusobacterium gonidiaformans 3-1-5R - Proteome: UP000002975', 'meaning': 'NCBITaxon:469605', 'annotations': {'proteome_id': 'UP000002975', 'tax_id': '469605', 'code': '9FUSO'}},
+    "SP_9GALL": {'description': 'Odontophorus gujanensis (marbled wood quail) - Proteome: UP000522663', 'meaning': 'NCBITaxon:886794', 'annotations': {'proteome_id': 'UP000522663', 'tax_id': '886794', 'code': '9GALL'}},
+    "SP_9GAMA": {'description': 'Bovine gammaherpesvirus 6 - Proteome: UP000121539', 'meaning': 'NCBITaxon:1504288', 'annotations': {'proteome_id': 'UP000121539', 'tax_id': '1504288', 'code': '9GAMA'}},
+    "SP_9GAMC": {'description': 'Anser fabalis coronavirus NCN2 - Proteome: UP001251675', 'meaning': 'NCBITaxon:2860474', 'annotations': {'proteome_id': 'UP001251675', 'tax_id': '2860474', 'code': '9GAMC'}},
+    "SP_9GAMM": {'description': 'Buchnera aphidicola (Cinara tujafilina) - Proteome: UP000006811', 'meaning': 'NCBITaxon:261317', 'annotations': {'proteome_id': 'UP000006811', 'tax_id': '261317', 'code': '9GAMM'}, 'aliases': ['Buchnera aphidicola (Cinara tujafilina)']},
+    "SP_9GAST": {'description': 'Elysia crispata (lettuce slug) - Proteome: UP001283361', 'meaning': 'NCBITaxon:231223', 'annotations': {'proteome_id': 'UP001283361', 'tax_id': '231223', 'code': '9GAST'}},
+    "SP_9GEMI": {'description': 'East African cassava mosaic Zanzibar virus - Proteome: UP000201107', 'meaning': 'NCBITaxon:223275', 'annotations': {'proteome_id': 'UP000201107', 'tax_id': '223275', 'code': '9GEMI'}},
+    "SP_9GLOM": {'description': 'Paraglomus occultum - Proteome: UP000789572', 'meaning': 'NCBITaxon:144539', 'annotations': {'proteome_id': 'UP000789572', 'tax_id': '144539', 'code': '9GLOM'}},
+    "SP_9GOBI": {'description': 'Neogobius melanostomus (round goby) - Proteome: UP000694523', 'meaning': 'NCBITaxon:47308', 'annotations': {'proteome_id': 'UP000694523', 'tax_id': '47308', 'code': '9GOBI'}},
+    "SP_9GRUI": {'description': 'Atlantisia rogersi (Inaccessible Island rail) - Proteome: UP000518911', 'meaning': 'NCBITaxon:2478892', 'annotations': {'proteome_id': 'UP000518911', 'tax_id': '2478892', 'code': '9GRUI'}},
+    "SP_9HELI": {'description': 'Helicobacter bilis ATCC 43879 - Proteome: UP000005085', 'meaning': 'NCBITaxon:613026', 'annotations': {'proteome_id': 'UP000005085', 'tax_id': '613026', 'code': '9HELI'}},
+    "SP_9HELO": {'description': 'Rhynchosporium graminicola - Proteome: UP000178129', 'meaning': 'NCBITaxon:2792576', 'annotations': {'proteome_id': 'UP000178129', 'tax_id': '2792576', 'code': '9HELO'}},
+    "SP_9HEMI": {'description': 'Cinara cedri - Proteome: UP000325440', 'meaning': 'NCBITaxon:506608', 'annotations': {'proteome_id': 'UP000325440', 'tax_id': '506608', 'code': '9HEMI'}},
+    "SP_9HEPA": {'description': 'Duck hepatitis B virus - Proteome: UP000137229', 'meaning': 'NCBITaxon:12639', 'annotations': {'proteome_id': 'UP000137229', 'tax_id': '12639', 'code': '9HEPA'}},
+    "SP_9HEXA": {'description': 'Allacma fusca - Proteome: UP000708208', 'meaning': 'NCBITaxon:39272', 'annotations': {'proteome_id': 'UP000708208', 'tax_id': '39272', 'code': '9HEXA'}},
+    "SP_9HYME": {'description': 'Melipona quadrifasciata - Proteome: UP000053105', 'meaning': 'NCBITaxon:166423', 'annotations': {'proteome_id': 'UP000053105', 'tax_id': '166423', 'code': '9HYME'}},
+    "SP_9HYPH": {'description': 'Mesorhizobium amorphae CCNWGS0123 - Proteome: UP000002949', 'meaning': 'NCBITaxon:1082933', 'annotations': {'proteome_id': 'UP000002949', 'tax_id': '1082933', 'code': '9HYPH'}},
+    "SP_9HYPO": {'description': '[Torrubiella] hemipterigena - Proteome: UP000039046', 'meaning': 'NCBITaxon:1531966', 'annotations': {'proteome_id': 'UP000039046', 'tax_id': '1531966', 'code': '9HYPO'}},
+    "SP_9INFA": {'description': 'Influenza A virus (A/California/VRDL364/2009 (mixed) - Proteome: UP000109975', 'meaning': 'NCBITaxon:1049605', 'annotations': {'proteome_id': 'UP000109975', 'tax_id': '1049605', 'code': '9INFA'}, 'aliases': ['Influenza A virus (A/California/VRDL364/2009(mixed))']},
+    "SP_9INSE": {'description': 'Cloeon dipterum - Proteome: UP000494165', 'meaning': 'NCBITaxon:197152', 'annotations': {'proteome_id': 'UP000494165', 'tax_id': '197152', 'code': '9INSE'}},
+    "SP_9LABR": {'description': 'Labrus bergylta (ballan wrasse) - Proteome: UP000261660', 'meaning': 'NCBITaxon:56723', 'annotations': {'proteome_id': 'UP000261660'}},
+}
+
+class LipidCategory(RichEnum):
+    """
+    Major categories of lipids based on SwissLipids classification
+    """
+    # Enum members
+    LIPID = "LIPID"
+    FATTY_ACYLS_AND_DERIVATIVES = "FATTY_ACYLS_AND_DERIVATIVES"
+    GLYCEROLIPIDS = "GLYCEROLIPIDS"
+    GLYCEROPHOSPHOLIPIDS = "GLYCEROPHOSPHOLIPIDS"
+    SPHINGOLIPIDS = "SPHINGOLIPIDS"
+    STEROIDS_AND_DERIVATIVES = "STEROIDS_AND_DERIVATIVES"
+    PRENOL_LIPIDS = "PRENOL_LIPIDS"
+
+# Set metadata after class creation to avoid it becoming an enum member
+LipidCategory._metadata = {
+    "LIPID": {'description': 'Lipid', 'meaning': 'swisslipids:SLM_000389145'},
+    "FATTY_ACYLS_AND_DERIVATIVES": {'description': 'Fatty acyls and derivatives', 'meaning': 'swisslipids:SLM_000390054'},
+    "GLYCEROLIPIDS": {'description': 'Glycerolipids', 'meaning': 'swisslipids:SLM_000117142'},
+    "GLYCEROPHOSPHOLIPIDS": {'description': 'Glycerophospholipids', 'meaning': 'swisslipids:SLM_000001193'},
+    "SPHINGOLIPIDS": {'description': 'Sphingolipids', 'meaning': 'swisslipids:SLM_000000525'},
+    "STEROIDS_AND_DERIVATIVES": {'description': 'Steroids and derivatives', 'meaning': 'swisslipids:SLM_000500463'},
+    "PRENOL_LIPIDS": {'description': 'Prenol Lipids', 'meaning': 'swisslipids:SLM_000508860'},
+}
+
+class PeakAnnotationSeriesLabel(RichEnum):
+    """
+    Types of peak annotations in mass spectrometry data
+    """
+    # Enum members
+    PEPTIDE = "PEPTIDE"
+    INTERNAL = "INTERNAL"
+    PRECURSOR = "PRECURSOR"
+    IMMONIUM = "IMMONIUM"
+    REFERENCE = "REFERENCE"
+    NAMED_COMPOUND = "NAMED_COMPOUND"
+    FORMULA = "FORMULA"
+    SMILES = "SMILES"
+    UNANNOTATED = "UNANNOTATED"
+
+# Set metadata after class creation to avoid it becoming an enum member
+PeakAnnotationSeriesLabel._metadata = {
+    "PEPTIDE": {'description': 'Peptide fragment ion'},
+    "INTERNAL": {'description': 'Internal fragment ion'},
+    "PRECURSOR": {'description': 'Precursor ion'},
+    "IMMONIUM": {'description': 'Immonium ion'},
+    "REFERENCE": {'description': 'Reference peak or calibrant'},
+    "NAMED_COMPOUND": {'description': 'Named chemical compound'},
+    "FORMULA": {'description': 'Chemical formula'},
+    "SMILES": {'description': 'SMILES structure notation'},
+    "UNANNOTATED": {'description': 'Unannotated peak'},
+}
+
+class PeptideIonSeries(RichEnum):
+    """
+    Types of peptide fragment ion series in mass spectrometry
+    """
+    # Enum members
+    B = "B"
+    Y = "Y"
+    A = "A"
+    X = "X"
+    C = "C"
+    Z = "Z"
+    D = "D"
+    V = "V"
+    W = "W"
+    DA = "DA"
+    DB = "DB"
+    WA = "WA"
+    WB = "WB"
+
+# Set metadata after class creation to avoid it becoming an enum member
+PeptideIonSeries._metadata = {
+    "B": {'description': 'B ion series - N-terminal fragment with CO'},
+    "Y": {'description': 'Y ion series - C-terminal fragment with H'},
+    "A": {'description': 'A ion series - N-terminal fragment minus CO'},
+    "X": {'description': 'X ion series - C-terminal fragment plus CO'},
+    "C": {'description': 'C ion series - N-terminal fragment with NH3'},
+    "Z": {'description': 'Z ion series - C-terminal fragment minus NH'},
+    "D": {'description': 'D ion series - partial side chain cleavage'},
+    "V": {'description': 'V ion series - side chain loss from y ion'},
+    "W": {'description': 'W ion series - side chain loss from z ion'},
+    "DA": {'description': 'DA ion series - a ion with side chain loss'},
+    "DB": {'description': 'DB ion series - b ion with side chain loss'},
+    "WA": {'description': 'WA ion series - a ion with tryptophan side chain loss'},
+    "WB": {'description': 'WB ion series - b ion with tryptophan side chain loss'},
+}
+
+class MassErrorUnit(RichEnum):
+    """
+    Units for expressing mass error in mass spectrometry
+    """
+    # Enum members
+    PPM = "PPM"
+    DA = "DA"
+
+# Set metadata after class creation to avoid it becoming an enum member
+MassErrorUnit._metadata = {
+    "PPM": {'description': 'Parts per million - relative mass error'},
+    "DA": {'description': 'Dalton - absolute mass error', 'aliases': ['Dalton', 'u', 'amu']},
+}
+
+class InteractionDetectionMethod(RichEnum):
+    """
+    Methods used to detect molecular interactions
+    """
+    # Enum members
+    TWO_HYBRID = "TWO_HYBRID"
+    COIMMUNOPRECIPITATION = "COIMMUNOPRECIPITATION"
+    PULL_DOWN = "PULL_DOWN"
+    TANDEM_AFFINITY_PURIFICATION = "TANDEM_AFFINITY_PURIFICATION"
+    FLUORESCENCE_RESONANCE_ENERGY_TRANSFER = "FLUORESCENCE_RESONANCE_ENERGY_TRANSFER"
+    SURFACE_PLASMON_RESONANCE = "SURFACE_PLASMON_RESONANCE"
+    CROSS_LINKING = "CROSS_LINKING"
+    X_RAY_CRYSTALLOGRAPHY = "X_RAY_CRYSTALLOGRAPHY"
+    NMR = "NMR"
+    ELECTRON_MICROSCOPY = "ELECTRON_MICROSCOPY"
+    MASS_SPECTROMETRY = "MASS_SPECTROMETRY"
+    PROXIMITY_LIGATION_ASSAY = "PROXIMITY_LIGATION_ASSAY"
+    BIMOLECULAR_FLUORESCENCE_COMPLEMENTATION = "BIMOLECULAR_FLUORESCENCE_COMPLEMENTATION"
+    YEAST_TWO_HYBRID = "YEAST_TWO_HYBRID"
+    MAMMALIAN_TWO_HYBRID = "MAMMALIAN_TWO_HYBRID"
+
+# Set metadata after class creation to avoid it becoming an enum member
+InteractionDetectionMethod._metadata = {
+    "TWO_HYBRID": {'description': 'Classical two-hybrid system using transcriptional activity', 'meaning': 'MI:0018'},
+    "COIMMUNOPRECIPITATION": {'description': 'Using antibody to capture bait and its ligands', 'meaning': 'MI:0019'},
+    "PULL_DOWN": {'description': 'Affinity capture using immobilized bait', 'meaning': 'MI:0096'},
+    "TANDEM_AFFINITY_PURIFICATION": {'description': 'TAP tagging for protein complex purification', 'meaning': 'MI:0676'},
+    "FLUORESCENCE_RESONANCE_ENERGY_TRANSFER": {'description': 'FRET for detecting proximity between molecules', 'meaning': 'MI:0055', 'aliases': ['fluorescent resonance energy transfer']},
+    "SURFACE_PLASMON_RESONANCE": {'description': 'SPR for real-time binding analysis', 'meaning': 'MI:0107'},
+    "CROSS_LINKING": {'description': 'Chemical cross-linking of interacting proteins', 'meaning': 'MI:0030', 'aliases': ['cross-linking study']},
+    "X_RAY_CRYSTALLOGRAPHY": {'description': 'Crystal structure determination', 'meaning': 'MI:0114'},
+    "NMR": {'description': 'Nuclear magnetic resonance spectroscopy', 'meaning': 'MI:0077', 'aliases': ['nuclear magnetic resonance']},
+    "ELECTRON_MICROSCOPY": {'description': 'EM for structural determination', 'meaning': 'MI:0040'},
+    "MASS_SPECTROMETRY": {'description': 'MS-based interaction detection', 'meaning': 'MI:0943', 'aliases': ['detection by mass spectrometry']},
+    "PROXIMITY_LIGATION_ASSAY": {'description': 'PLA for detecting protein proximity', 'meaning': 'MI:0813'},
+    "BIMOLECULAR_FLUORESCENCE_COMPLEMENTATION": {'description': 'BiFC split fluorescent protein assay', 'meaning': 'MI:0809'},
+    "YEAST_TWO_HYBRID": {'description': 'Y2H screening in yeast', 'meaning': 'MI:0018', 'aliases': ['two hybrid']},
+    "MAMMALIAN_TWO_HYBRID": {'description': 'Two-hybrid in mammalian cells', 'meaning': 'MI:2413', 'aliases': ['mammalian membrane two hybrid']},
+}
+
+class InteractionType(RichEnum):
+    """
+    Types of molecular interactions
+    """
+    # Enum members
+    PHYSICAL_ASSOCIATION = "PHYSICAL_ASSOCIATION"
+    DIRECT_INTERACTION = "DIRECT_INTERACTION"
+    ASSOCIATION = "ASSOCIATION"
+    COLOCALIZATION = "COLOCALIZATION"
+    FUNCTIONAL_ASSOCIATION = "FUNCTIONAL_ASSOCIATION"
+    ENZYMATIC_REACTION = "ENZYMATIC_REACTION"
+    PHOSPHORYLATION_REACTION = "PHOSPHORYLATION_REACTION"
+    UBIQUITINATION_REACTION = "UBIQUITINATION_REACTION"
+    ACETYLATION_REACTION = "ACETYLATION_REACTION"
+    METHYLATION_REACTION = "METHYLATION_REACTION"
+    CLEAVAGE_REACTION = "CLEAVAGE_REACTION"
+    GENETIC_INTERACTION = "GENETIC_INTERACTION"
+    SELF_INTERACTION = "SELF_INTERACTION"
+
+# Set metadata after class creation to avoid it becoming an enum member
+InteractionType._metadata = {
+    "PHYSICAL_ASSOCIATION": {'description': 'Molecules within the same physical complex', 'meaning': 'MI:0915'},
+    "DIRECT_INTERACTION": {'description': 'Direct physical contact between molecules', 'meaning': 'MI:0407'},
+    "ASSOCIATION": {'description': 'May form one or more physical complexes', 'meaning': 'MI:0914'},
+    "COLOCALIZATION": {'description': 'Coincident occurrence in subcellular location', 'meaning': 'MI:0403'},
+    "FUNCTIONAL_ASSOCIATION": {'description': 'Functional modulation without direct contact', 'meaning': 'MI:2286'},
+    "ENZYMATIC_REACTION": {'description': 'Enzyme-substrate relationship', 'meaning': 'MI:0414'},
+    "PHOSPHORYLATION_REACTION": {'description': 'Kinase-substrate phosphorylation', 'meaning': 'MI:0217'},
+    "UBIQUITINATION_REACTION": {'description': 'Ubiquitin ligase-substrate relationship', 'meaning': 'MI:0220'},
+    "ACETYLATION_REACTION": {'description': 'Acetyltransferase-substrate relationship', 'meaning': 'MI:0192'},
+    "METHYLATION_REACTION": {'description': 'Methyltransferase-substrate relationship', 'meaning': 'MI:0213'},
+    "CLEAVAGE_REACTION": {'description': 'Protease-substrate relationship', 'meaning': 'MI:0194'},
+    "GENETIC_INTERACTION": {'description': 'Genetic epistatic relationship', 'meaning': 'MI:0208', 'aliases': ['genetic interaction (sensu unexpected)']},
+    "SELF_INTERACTION": {'description': 'Intra-molecular interaction', 'meaning': 'MI:1126'},
+}
+
+class ExperimentalRole(RichEnum):
+    """
+    Role played by a participant in the experiment
+    """
+    # Enum members
+    BAIT = "BAIT"
+    PREY = "PREY"
+    NEUTRAL_COMPONENT = "NEUTRAL_COMPONENT"
+    ENZYME = "ENZYME"
+    ENZYME_TARGET = "ENZYME_TARGET"
+    SELF = "SELF"
+    PUTATIVE_SELF = "PUTATIVE_SELF"
+    ANCILLARY = "ANCILLARY"
+    COFACTOR = "COFACTOR"
+    INHIBITOR = "INHIBITOR"
+    STIMULATOR = "STIMULATOR"
+    COMPETITOR = "COMPETITOR"
+
+# Set metadata after class creation to avoid it becoming an enum member
+ExperimentalRole._metadata = {
+    "BAIT": {'description': 'Molecule used to capture interacting partners', 'meaning': 'MI:0496'},
+    "PREY": {'description': 'Molecule captured by the bait', 'meaning': 'MI:0498'},
+    "NEUTRAL_COMPONENT": {'description': 'Participant with no specific role', 'meaning': 'MI:0497'},
+    "ENZYME": {'description': 'Catalytically active participant', 'meaning': 'MI:0501'},
+    "ENZYME_TARGET": {'description': 'Target of enzymatic activity', 'meaning': 'MI:0502'},
+    "SELF": {'description': 'Self-interaction participant', 'meaning': 'MI:0503'},
+    "PUTATIVE_SELF": {'description': 'Potentially self-interacting', 'meaning': 'MI:0898'},
+    "ANCILLARY": {'description': 'Supporting but not directly interacting', 'meaning': 'MI:0684'},
+    "COFACTOR": {'description': 'Required cofactor for interaction', 'meaning': 'MI:0682'},
+    "INHIBITOR": {'description': 'Inhibitor of the interaction', 'meaning': 'MI:0586'},
+    "STIMULATOR": {'description': 'Enhancer of the interaction', 'meaning': 'MI:0840'},
+    "COMPETITOR": {'description': 'Competitive inhibitor', 'meaning': 'MI:0941'},
+}
+
+class BiologicalRole(RichEnum):
+    """
+    Physiological role of an interactor
+    """
+    # Enum members
+    ENZYME = "ENZYME"
+    ENZYME_TARGET = "ENZYME_TARGET"
+    ELECTRON_DONOR = "ELECTRON_DONOR"
+    ELECTRON_ACCEPTOR = "ELECTRON_ACCEPTOR"
+    INHIBITOR = "INHIBITOR"
+    COFACTOR = "COFACTOR"
+    LIGAND = "LIGAND"
+    AGONIST = "AGONIST"
+    ANTAGONIST = "ANTAGONIST"
+    PHOSPHATE_DONOR = "PHOSPHATE_DONOR"
+    PHOSPHATE_ACCEPTOR = "PHOSPHATE_ACCEPTOR"
+
+# Set metadata after class creation to avoid it becoming an enum member
+BiologicalRole._metadata = {
+    "ENZYME": {'description': 'Catalytically active molecule', 'meaning': 'MI:0501'},
+    "ENZYME_TARGET": {'description': 'Substrate of enzymatic activity', 'meaning': 'MI:0502'},
+    "ELECTRON_DONOR": {'description': 'Donates electrons in reaction', 'meaning': 'MI:0579'},
+    "ELECTRON_ACCEPTOR": {'description': 'Accepts electrons in reaction', 'meaning': 'MI:0580'},
+    "INHIBITOR": {'description': 'Inhibits activity or interaction', 'meaning': 'MI:0586'},
+    "COFACTOR": {'description': 'Required for activity', 'meaning': 'MI:0682'},
+    "LIGAND": {'description': 'Small molecule binding partner'},
+    "AGONIST": {'description': 'Activates receptor', 'meaning': 'MI:0625'},
+    "ANTAGONIST": {'description': 'Blocks receptor activation', 'meaning': 'MI:0626'},
+    "PHOSPHATE_DONOR": {'description': 'Provides phosphate group', 'meaning': 'MI:0842'},
+    "PHOSPHATE_ACCEPTOR": {'description': 'Receives phosphate group', 'meaning': 'MI:0843'},
+}
+
+class ParticipantIdentificationMethod(RichEnum):
+    """
+    Methods to identify interaction participants
+    """
+    # Enum members
+    MASS_SPECTROMETRY = "MASS_SPECTROMETRY"
+    WESTERN_BLOT = "WESTERN_BLOT"
+    SEQUENCE_TAG_IDENTIFICATION = "SEQUENCE_TAG_IDENTIFICATION"
+    ANTIBODY_DETECTION = "ANTIBODY_DETECTION"
+    PREDETERMINED = "PREDETERMINED"
+    NUCLEIC_ACID_SEQUENCING = "NUCLEIC_ACID_SEQUENCING"
+    PROTEIN_SEQUENCING = "PROTEIN_SEQUENCING"
+
+# Set metadata after class creation to avoid it becoming an enum member
+ParticipantIdentificationMethod._metadata = {
+    "MASS_SPECTROMETRY": {'description': 'MS-based protein identification', 'meaning': 'MI:0943', 'aliases': ['detection by mass spectrometry']},
+    "WESTERN_BLOT": {'description': 'Antibody-based detection', 'meaning': 'MI:0113'},
+    "SEQUENCE_TAG_IDENTIFICATION": {'description': 'Using affinity tags', 'meaning': 'MI:0102'},
+    "ANTIBODY_DETECTION": {'description': 'Direct antibody recognition', 'meaning': 'MI:0678', 'aliases': ['antibody array']},
+    "PREDETERMINED": {'description': 'Known from experimental design', 'meaning': 'MI:0396', 'aliases': ['predetermined participant']},
+    "NUCLEIC_ACID_SEQUENCING": {'description': 'DNA/RNA sequencing', 'meaning': 'MI:0078', 'aliases': ['nucleotide sequence identification']},
+    "PROTEIN_SEQUENCING": {'description': 'Direct protein sequencing'},
+}
+
+class FeatureType(RichEnum):
+    """
+    Molecular features affecting interactions
+    """
+    # Enum members
+    BINDING_SITE = "BINDING_SITE"
+    MUTATION = "MUTATION"
+    POST_TRANSLATIONAL_MODIFICATION = "POST_TRANSLATIONAL_MODIFICATION"
+    TAG = "TAG"
+    CROSS_LINK = "CROSS_LINK"
+    LIPIDATION_SITE = "LIPIDATION_SITE"
+    PHOSPHORYLATION_SITE = "PHOSPHORYLATION_SITE"
+    UBIQUITINATION_SITE = "UBIQUITINATION_SITE"
+    METHYLATION_SITE = "METHYLATION_SITE"
+    ACETYLATION_SITE = "ACETYLATION_SITE"
+    SUMOYLATION_SITE = "SUMOYLATION_SITE"
+    NECESSARY_BINDING_REGION = "NECESSARY_BINDING_REGION"
+    SUFFICIENT_BINDING_REGION = "SUFFICIENT_BINDING_REGION"
+
+# Set metadata after class creation to avoid it becoming an enum member
+FeatureType._metadata = {
+    "BINDING_SITE": {'description': 'Region involved in binding', 'meaning': 'MI:0117', 'aliases': ['binding-associated region']},
+    "MUTATION": {'description': 'Sequence alteration', 'meaning': 'MI:0118'},
+    "POST_TRANSLATIONAL_MODIFICATION": {'description': 'PTM site', 'meaning': 'MI:0121', 'aliases': ['acetylated residue']},
+    "TAG": {'description': 'Affinity or epitope tag', 'meaning': 'MI:0507'},
+    "CROSS_LINK": {'description': 'Cross-linking site'},
+    "LIPIDATION_SITE": {'description': 'Lipid modification site'},
+    "PHOSPHORYLATION_SITE": {'description': 'Phosphorylated residue', 'meaning': 'MI:0170', 'aliases': ['phosphorylated residue']},
+    "UBIQUITINATION_SITE": {'description': 'Ubiquitinated residue'},
+    "METHYLATION_SITE": {'description': 'Methylated residue'},
+    "ACETYLATION_SITE": {'description': 'Acetylated residue'},
+    "SUMOYLATION_SITE": {'description': 'SUMOylated residue'},
+    "NECESSARY_BINDING_REGION": {'description': 'Required for binding', 'meaning': 'MI:0429'},
+    "SUFFICIENT_BINDING_REGION": {'description': 'Sufficient for binding', 'meaning': 'MI:0442'},
+}
+
+class InteractorType(RichEnum):
+    """
+    Types of molecular species in interactions
+    """
+    # Enum members
+    PROTEIN = "PROTEIN"
+    PEPTIDE = "PEPTIDE"
+    SMALL_MOLECULE = "SMALL_MOLECULE"
+    DNA = "DNA"
+    RNA = "RNA"
+    PROTEIN_COMPLEX = "PROTEIN_COMPLEX"
+    GENE = "GENE"
+    BIOPOLYMER = "BIOPOLYMER"
+    POLYSACCHARIDE = "POLYSACCHARIDE"
+    LIPID = "LIPID"
+    NUCLEIC_ACID = "NUCLEIC_ACID"
+    SYNTHETIC_POLYMER = "SYNTHETIC_POLYMER"
+    METAL_ION = "METAL_ION"
+
+# Set metadata after class creation to avoid it becoming an enum member
+InteractorType._metadata = {
+    "PROTEIN": {'description': 'Polypeptide molecule', 'meaning': 'MI:0326'},
+    "PEPTIDE": {'description': 'Short polypeptide', 'meaning': 'MI:0327'},
+    "SMALL_MOLECULE": {'description': 'Small chemical compound', 'meaning': 'MI:0328'},
+    "DNA": {'description': 'Deoxyribonucleic acid', 'meaning': 'MI:0319', 'aliases': ['deoxyribonucleic acid']},
+    "RNA": {'description': 'Ribonucleic acid', 'meaning': 'MI:0320', 'aliases': ['ribonucleic acid']},
+    "PROTEIN_COMPLEX": {'description': 'Multi-protein assembly', 'meaning': 'MI:0314', 'aliases': ['complex']},
+    "GENE": {'description': 'Gene locus', 'meaning': 'MI:0250'},
+    "BIOPOLYMER": {'description': 'Biological polymer', 'meaning': 'MI:0383'},
+    "POLYSACCHARIDE": {'description': 'Carbohydrate polymer', 'meaning': 'MI:0904'},
+    "LIPID": {'description': 'Lipid molecule'},
+    "NUCLEIC_ACID": {'description': 'DNA or RNA', 'meaning': 'MI:0318'},
+    "SYNTHETIC_POLYMER": {'description': 'Artificial polymer'},
+    "METAL_ION": {'description': 'Metal ion cofactor'},
+}
+
+class ConfidenceScore(RichEnum):
+    """
+    Types of confidence scoring methods
+    """
+    # Enum members
+    INTACT_MISCORE = "INTACT_MISCORE"
+    AUTHOR_CONFIDENCE = "AUTHOR_CONFIDENCE"
+    INTACT_CONFIDENCE = "INTACT_CONFIDENCE"
+    MINT_SCORE = "MINT_SCORE"
+    MATRIXDB_SCORE = "MATRIXDB_SCORE"
+
+# Set metadata after class creation to avoid it becoming an enum member
+ConfidenceScore._metadata = {
+    "INTACT_MISCORE": {'description': 'IntAct molecular interaction score'},
+    "AUTHOR_CONFIDENCE": {'description': 'Author-provided confidence', 'meaning': 'MI:0621'},
+    "INTACT_CONFIDENCE": {'description': 'IntAct curation confidence'},
+    "MINT_SCORE": {'description': 'MINT database score'},
+    "MATRIXDB_SCORE": {'description': 'MatrixDB confidence score'},
+}
+
+class ExperimentalPreparation(RichEnum):
+    """
+    Sample preparation methods
+    """
+    # Enum members
+    RECOMBINANT_EXPRESSION = "RECOMBINANT_EXPRESSION"
+    NATIVE_SOURCE = "NATIVE_SOURCE"
+    IN_VITRO_EXPRESSION = "IN_VITRO_EXPRESSION"
+    OVEREXPRESSION = "OVEREXPRESSION"
+    KNOCKDOWN = "KNOCKDOWN"
+    KNOCKOUT = "KNOCKOUT"
+    ENDOGENOUS_LEVEL = "ENDOGENOUS_LEVEL"
+
+# Set metadata after class creation to avoid it becoming an enum member
+ExperimentalPreparation._metadata = {
+    "RECOMBINANT_EXPRESSION": {'description': 'Expressed in heterologous system'},
+    "NATIVE_SOURCE": {'description': 'From original organism'},
+    "IN_VITRO_EXPRESSION": {'description': 'Cell-free expression'},
+    "OVEREXPRESSION": {'description': 'Above physiological levels', 'meaning': 'MI:0506', 'aliases': ['over expressed level']},
+    "KNOCKDOWN": {'description': 'Reduced expression'},
+    "KNOCKOUT": {'description': 'Gene deletion', 'meaning': 'MI:0788', 'aliases': ['knock out']},
+    "ENDOGENOUS_LEVEL": {'description': 'Physiological expression'},
+}
+
 class SubatomicParticleEnum(RichEnum):
     """
     Fundamental and composite subatomic particles
@@ -6923,6 +9061,28 @@ ThermodynamicParameterEnum._metadata = {
     "ACTIVATION_ENERGY": {'description': 'Energy barrier (Ea)', 'annotations': {'symbol': 'Ea', 'units': 'kJ/mol'}},
     "HEAT_CAPACITY": {'description': 'Heat capacity (Cp)', 'annotations': {'symbol': 'Cp', 'units': 'J/mol·K'}},
     "INTERNAL_ENERGY": {'description': 'Internal energy (ΔU)', 'annotations': {'symbol': 'ΔU', 'units': 'kJ/mol'}},
+}
+
+class ReactionDirectionality(RichEnum):
+    """
+    The directionality of a chemical reaction or process
+    """
+    # Enum members
+    LEFT_TO_RIGHT = "LEFT_TO_RIGHT"
+    RIGHT_TO_LEFT = "RIGHT_TO_LEFT"
+    BIDIRECTIONAL = "BIDIRECTIONAL"
+    AGNOSTIC = "AGNOSTIC"
+    IRREVERSIBLE_LEFT_TO_RIGHT = "IRREVERSIBLE_LEFT_TO_RIGHT"
+    IRREVERSIBLE_RIGHT_TO_LEFT = "IRREVERSIBLE_RIGHT_TO_LEFT"
+
+# Set metadata after class creation to avoid it becoming an enum member
+ReactionDirectionality._metadata = {
+    "LEFT_TO_RIGHT": {'description': 'Reaction proceeds from left to right (forward direction)', 'aliases': ['LR', 'forward', '-->']},
+    "RIGHT_TO_LEFT": {'description': 'Reaction proceeds from right to left (reverse direction)', 'aliases': ['RL', 'reverse', 'backward', '<--']},
+    "BIDIRECTIONAL": {'description': 'Reaction can proceed in both directions', 'aliases': ['BIDI', 'reversible', '<-->']},
+    "AGNOSTIC": {'description': 'Direction is unknown or not specified', 'aliases': ['unknown', 'unspecified']},
+    "IRREVERSIBLE_LEFT_TO_RIGHT": {'description': 'Reaction proceeds only from left to right and cannot be reversed', 'aliases': ['irreversible forward', '->>']},
+    "IRREVERSIBLE_RIGHT_TO_LEFT": {'description': 'Reaction proceeds only from right to left and cannot be reversed', 'aliases': ['irreversible reverse', '<<-']},
 }
 
 class SafetyColorEnum(RichEnum):
@@ -8571,6 +10731,180 @@ NetworkProtocolEnum._metadata = {
     "MQTT": {'description': 'Message Queuing Telemetry Transport', 'annotations': {'port': '1883, 8883', 'layer': 'application', 'use': 'IoT messaging'}},
     "AMQP": {'description': 'Advanced Message Queuing Protocol', 'annotations': {'port': '5672', 'layer': 'application', 'use': 'message queuing'}},
     "GRPC": {'description': 'gRPC Remote Procedure Call', 'annotations': {'transport': 'HTTP/2', 'use': 'RPC framework'}},
+}
+
+class TechnologyReadinessLevel(RichEnum):
+    """
+    NASA's Technology Readiness Level scale for assessing the maturity of technologies from basic research through operational deployment
+    """
+    # Enum members
+    TRL_1 = "TRL_1"
+    TRL_2 = "TRL_2"
+    TRL_3 = "TRL_3"
+    TRL_4 = "TRL_4"
+    TRL_5 = "TRL_5"
+    TRL_6 = "TRL_6"
+    TRL_7 = "TRL_7"
+    TRL_8 = "TRL_8"
+    TRL_9 = "TRL_9"
+
+# Set metadata after class creation to avoid it becoming an enum member
+TechnologyReadinessLevel._metadata = {
+    "TRL_1": {'description': 'Basic principles observed and reported'},
+    "TRL_2": {'description': 'Technology concept and/or application formulated'},
+    "TRL_3": {'description': 'Analytical and experimental critical function and/or characteristic proof of concept'},
+    "TRL_4": {'description': 'Component and/or breadboard validation in laboratory environment'},
+    "TRL_5": {'description': 'Component and/or breadboard validation in relevant environment'},
+    "TRL_6": {'description': 'System/subsystem model or prototype demonstration in a relevant environment'},
+    "TRL_7": {'description': 'System prototype demonstration in an operational environment'},
+    "TRL_8": {'description': 'Actual system completed and qualified through test and demonstration'},
+    "TRL_9": {'description': 'Actual system proven through successful mission operations'},
+}
+
+class SoftwareMaturityLevel(RichEnum):
+    """
+    General software maturity assessment levels
+    """
+    # Enum members
+    ALPHA = "ALPHA"
+    BETA = "BETA"
+    RELEASE_CANDIDATE = "RELEASE_CANDIDATE"
+    STABLE = "STABLE"
+    MATURE = "MATURE"
+    LEGACY = "LEGACY"
+    DEPRECATED = "DEPRECATED"
+    OBSOLETE = "OBSOLETE"
+
+# Set metadata after class creation to avoid it becoming an enum member
+SoftwareMaturityLevel._metadata = {
+    "ALPHA": {'description': 'Early development stage with basic functionality, may be unstable'},
+    "BETA": {'description': 'Feature-complete but may contain bugs, ready for testing'},
+    "RELEASE_CANDIDATE": {'description': 'Stable version ready for final testing before release'},
+    "STABLE": {'description': 'Production-ready with proven stability and reliability'},
+    "MATURE": {'description': 'Well-established with extensive usage and proven track record'},
+    "LEGACY": {'description': 'Older version still in use but no longer actively developed'},
+    "DEPRECATED": {'description': 'No longer recommended for use, superseded by newer versions'},
+    "OBSOLETE": {'description': 'No longer supported or maintained'},
+}
+
+class CapabilityMaturityLevel(RichEnum):
+    """
+    CMMI levels for assessing organizational process maturity in software development
+    """
+    # Enum members
+    LEVEL_1 = "LEVEL_1"
+    LEVEL_2 = "LEVEL_2"
+    LEVEL_3 = "LEVEL_3"
+    LEVEL_4 = "LEVEL_4"
+    LEVEL_5 = "LEVEL_5"
+
+# Set metadata after class creation to avoid it becoming an enum member
+CapabilityMaturityLevel._metadata = {
+    "LEVEL_1": {'description': 'Initial - Processes are unpredictable, poorly controlled, and reactive'},
+    "LEVEL_2": {'description': 'Managed - Processes are characterized for projects and reactive'},
+    "LEVEL_3": {'description': 'Defined - Processes are characterized for the organization and proactive'},
+    "LEVEL_4": {'description': 'Quantitatively Managed - Processes are measured and controlled'},
+    "LEVEL_5": {'description': 'Optimizing - Focus on continuous process improvement'},
+}
+
+class StandardsMaturityLevel(RichEnum):
+    """
+    Maturity levels for standards and specifications
+    """
+    # Enum members
+    DRAFT = "DRAFT"
+    WORKING_DRAFT = "WORKING_DRAFT"
+    COMMITTEE_DRAFT = "COMMITTEE_DRAFT"
+    CANDIDATE_RECOMMENDATION = "CANDIDATE_RECOMMENDATION"
+    PROPOSED_STANDARD = "PROPOSED_STANDARD"
+    STANDARD = "STANDARD"
+    MATURE_STANDARD = "MATURE_STANDARD"
+    SUPERSEDED = "SUPERSEDED"
+    WITHDRAWN = "WITHDRAWN"
+
+# Set metadata after class creation to avoid it becoming an enum member
+StandardsMaturityLevel._metadata = {
+    "DRAFT": {'description': 'Initial draft under development'},
+    "WORKING_DRAFT": {'description': 'Work in progress by working group'},
+    "COMMITTEE_DRAFT": {'description': 'Draft reviewed by committee'},
+    "CANDIDATE_RECOMMENDATION": {'description': 'Mature draft ready for implementation testing'},
+    "PROPOSED_STANDARD": {'description': 'Stable specification ready for adoption'},
+    "STANDARD": {'description': 'Approved and published standard'},
+    "MATURE_STANDARD": {'description': 'Well-established standard with wide adoption'},
+    "SUPERSEDED": {'description': 'Replaced by a newer version'},
+    "WITHDRAWN": {'description': 'No longer valid or recommended'},
+}
+
+class ProjectMaturityLevel(RichEnum):
+    """
+    General project development maturity assessment
+    """
+    # Enum members
+    CONCEPT = "CONCEPT"
+    PLANNING = "PLANNING"
+    DEVELOPMENT = "DEVELOPMENT"
+    TESTING = "TESTING"
+    PILOT = "PILOT"
+    PRODUCTION = "PRODUCTION"
+    MAINTENANCE = "MAINTENANCE"
+    END_OF_LIFE = "END_OF_LIFE"
+
+# Set metadata after class creation to avoid it becoming an enum member
+ProjectMaturityLevel._metadata = {
+    "CONCEPT": {'description': 'Initial idea or concept stage'},
+    "PLANNING": {'description': 'Project planning and design phase'},
+    "DEVELOPMENT": {'description': 'Active development in progress'},
+    "TESTING": {'description': 'Testing and quality assurance phase'},
+    "PILOT": {'description': 'Limited deployment or pilot testing'},
+    "PRODUCTION": {'description': 'Full production deployment'},
+    "MAINTENANCE": {'description': 'Maintenance and support mode'},
+    "END_OF_LIFE": {'description': 'Project reaching end of lifecycle'},
+}
+
+class DataMaturityLevel(RichEnum):
+    """
+    Levels of data quality, governance, and organizational maturity
+    """
+    # Enum members
+    RAW = "RAW"
+    CLEANED = "CLEANED"
+    STANDARDIZED = "STANDARDIZED"
+    INTEGRATED = "INTEGRATED"
+    CURATED = "CURATED"
+    PUBLISHED = "PUBLISHED"
+    ARCHIVED = "ARCHIVED"
+
+# Set metadata after class creation to avoid it becoming an enum member
+DataMaturityLevel._metadata = {
+    "RAW": {'description': 'Unprocessed, uncleaned data'},
+    "CLEANED": {'description': 'Basic cleaning and validation applied'},
+    "STANDARDIZED": {'description': 'Conforms to defined standards and formats'},
+    "INTEGRATED": {'description': 'Combined with other data sources'},
+    "CURATED": {'description': 'Expert-reviewed and validated'},
+    "PUBLISHED": {'description': 'Publicly available with proper metadata'},
+    "ARCHIVED": {'description': 'Long-term preservation with access controls'},
+}
+
+class OpenSourceMaturityLevel(RichEnum):
+    """
+    Maturity assessment for open source projects
+    """
+    # Enum members
+    EXPERIMENTAL = "EXPERIMENTAL"
+    EMERGING = "EMERGING"
+    ESTABLISHED = "ESTABLISHED"
+    MATURE = "MATURE"
+    DECLINING = "DECLINING"
+    ARCHIVED = "ARCHIVED"
+
+# Set metadata after class creation to avoid it becoming an enum member
+OpenSourceMaturityLevel._metadata = {
+    "EXPERIMENTAL": {'description': 'Early experimental project'},
+    "EMERGING": {'description': 'Gaining traction and contributors'},
+    "ESTABLISHED": {'description': 'Stable with active community'},
+    "MATURE": {'description': 'Well-established with proven governance'},
+    "DECLINING": {'description': 'Decreasing activity and maintenance'},
+    "ARCHIVED": {'description': 'No longer actively maintained'},
 }
 
 class Fake(ConfiguredBaseModel):

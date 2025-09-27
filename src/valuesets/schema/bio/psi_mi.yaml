@@ -1,0 +1,384 @@
+id: https://w3id.org/common-value-sets/bio/psi_mi
+name: psi_mi
+title: PSI-MI (Molecular Interactions) Value Sets
+description: >-
+  Common value sets from the PSI-MI (Molecular Interactions) controlled vocabulary
+  used for annotating protein-protein interaction experiments.
+
+license: MIT
+see_also:
+  - https://www.ebi.ac.uk/ols/ontologies/mi
+
+prefixes:
+  MI: http://purl.obolibrary.org/obo/MI_
+  linkml: https://w3id.org/linkml/
+  OBI: http://purl.obolibrary.org/obo/OBI_
+
+default_prefix: psi_mi
+default_range: string
+
+imports:
+  - linkml:types
+
+enums:
+  InteractionDetectionMethod:
+    title: Interaction Detection Method
+    description: Methods used to detect molecular interactions
+    source: http://purl.obolibrary.org/obo/mi.owl
+    conforms_to: HUPO-PSI
+    annotations:
+      standard: "PSI-MI 2.5"
+      maintainer: "HUPO Proteomics Standards Initiative"
+    permissible_values:
+      TWO_HYBRID:
+        description: Classical two-hybrid system using transcriptional activity
+        meaning: MI:0018
+      COIMMUNOPRECIPITATION:
+        description: Using antibody to capture bait and its ligands
+        meaning: MI:0019
+      PULL_DOWN:
+        description: Affinity capture using immobilized bait
+        meaning: MI:0096
+      TANDEM_AFFINITY_PURIFICATION:
+        description: TAP tagging for protein complex purification
+        meaning: MI:0676
+      FLUORESCENCE_RESONANCE_ENERGY_TRANSFER:
+        description: FRET for detecting proximity between molecules
+        meaning: MI:0055
+        aliases:
+          - fluorescent resonance energy transfer
+      SURFACE_PLASMON_RESONANCE:
+        description: SPR for real-time binding analysis
+        meaning: MI:0107
+      CROSS_LINKING:
+        description: Chemical cross-linking of interacting proteins
+        meaning: MI:0030
+        aliases:
+          - cross-linking study
+      X_RAY_CRYSTALLOGRAPHY:
+        description: Crystal structure determination
+        meaning: MI:0114
+      NMR:
+        description: Nuclear magnetic resonance spectroscopy
+        meaning: MI:0077
+        aliases:
+          - nuclear magnetic resonance
+      ELECTRON_MICROSCOPY:
+        description: EM for structural determination
+        meaning: MI:0040
+      MASS_SPECTROMETRY:
+        description: MS-based interaction detection
+        meaning: MI:0943
+        aliases:
+          - detection by mass spectrometry
+      PROXIMITY_LIGATION_ASSAY:
+        description: PLA for detecting protein proximity
+        meaning: MI:0813
+      BIMOLECULAR_FLUORESCENCE_COMPLEMENTATION:
+        description: BiFC split fluorescent protein assay
+        meaning: MI:0809
+      YEAST_TWO_HYBRID:
+        description: Y2H screening in yeast
+        meaning: MI:0018
+        aliases:
+          - two hybrid
+      MAMMALIAN_TWO_HYBRID:
+        description: Two-hybrid in mammalian cells
+        meaning: MI:2413
+        aliases:
+          - mammalian membrane two hybrid
+
+  InteractionType:
+    title: Interaction Type
+    description: Types of molecular interactions
+    source: http://purl.obolibrary.org/obo/mi.owl
+    conforms_to: HUPO-PSI
+    permissible_values:
+      PHYSICAL_ASSOCIATION:
+        description: Molecules within the same physical complex
+        meaning: MI:0915
+      DIRECT_INTERACTION:
+        description: Direct physical contact between molecules
+        meaning: MI:0407
+      ASSOCIATION:
+        description: May form one or more physical complexes
+        meaning: MI:0914
+      COLOCALIZATION:
+        description: Coincident occurrence in subcellular location
+        meaning: MI:0403
+      FUNCTIONAL_ASSOCIATION:
+        description: Functional modulation without direct contact
+        meaning: MI:2286
+      ENZYMATIC_REACTION:
+        description: Enzyme-substrate relationship
+        meaning: MI:0414
+      PHOSPHORYLATION_REACTION:
+        description: Kinase-substrate phosphorylation
+        meaning: MI:0217
+      UBIQUITINATION_REACTION:
+        description: Ubiquitin ligase-substrate relationship
+        meaning: MI:0220
+      ACETYLATION_REACTION:
+        description: Acetyltransferase-substrate relationship
+        meaning: MI:0192
+      METHYLATION_REACTION:
+        description: Methyltransferase-substrate relationship
+        meaning: MI:0213
+      CLEAVAGE_REACTION:
+        description: Protease-substrate relationship
+        meaning: MI:0194
+      GENETIC_INTERACTION:
+        description: Genetic epistatic relationship
+        meaning: MI:0208
+        aliases:
+          - genetic interaction (sensu unexpected)
+      SELF_INTERACTION:
+        description: Intra-molecular interaction
+        meaning: MI:1126
+
+  ExperimentalRole:
+    title: Experimental Role
+    description: Role played by a participant in the experiment
+    source: http://purl.obolibrary.org/obo/mi.owl
+    conforms_to: HUPO-PSI
+    permissible_values:
+      BAIT:
+        description: Molecule used to capture interacting partners
+        meaning: MI:0496
+      PREY:
+        description: Molecule captured by the bait
+        meaning: MI:0498
+      NEUTRAL_COMPONENT:
+        description: Participant with no specific role
+        meaning: MI:0497
+      ENZYME:
+        description: Catalytically active participant
+        meaning: MI:0501
+      ENZYME_TARGET:
+        description: Target of enzymatic activity
+        meaning: MI:0502
+      SELF:
+        description: Self-interaction participant
+        meaning: MI:0503
+      PUTATIVE_SELF:
+        description: Potentially self-interacting
+        meaning: MI:0898
+      ANCILLARY:
+        description: Supporting but not directly interacting
+        meaning: MI:0684
+      COFACTOR:
+        description: Required cofactor for interaction
+        meaning: MI:0682
+      INHIBITOR:
+        description: Inhibitor of the interaction
+        meaning: MI:0586
+      STIMULATOR:
+        description: Enhancer of the interaction
+        meaning: MI:0840
+      COMPETITOR:
+        description: Competitive inhibitor
+        meaning: MI:0941
+
+  BiologicalRole:
+    title: Biological Role
+    description: Physiological role of an interactor
+    source: http://purl.obolibrary.org/obo/mi.owl
+    conforms_to: HUPO-PSI
+    permissible_values:
+      ENZYME:
+        description: Catalytically active molecule
+        meaning: MI:0501
+      ENZYME_TARGET:
+        description: Substrate of enzymatic activity
+        meaning: MI:0502
+      ELECTRON_DONOR:
+        description: Donates electrons in reaction
+        meaning: MI:0579
+      ELECTRON_ACCEPTOR:
+        description: Accepts electrons in reaction
+        meaning: MI:0580
+      INHIBITOR:
+        description: Inhibits activity or interaction
+        meaning: MI:0586
+      COFACTOR:
+        description: Required for activity
+        meaning: MI:0682
+      LIGAND:
+        description: Small molecule binding partner
+      AGONIST:
+        description: Activates receptor
+        meaning: MI:0625
+      ANTAGONIST:
+        description: Blocks receptor activation
+        meaning: MI:0626
+      PHOSPHATE_DONOR:
+        description: Provides phosphate group
+        meaning: MI:0842
+      PHOSPHATE_ACCEPTOR:
+        description: Receives phosphate group
+        meaning: MI:0843
+
+  ParticipantIdentificationMethod:
+    title: Participant Identification Method
+    description: Methods to identify interaction participants
+    permissible_values:
+      MASS_SPECTROMETRY:
+        description: MS-based protein identification
+        meaning: MI:0943
+        aliases:
+          - detection by mass spectrometry
+      WESTERN_BLOT:
+        description: Antibody-based detection
+        meaning: MI:0113
+      SEQUENCE_TAG_IDENTIFICATION:
+        description: Using affinity tags
+        meaning: MI:0102
+      ANTIBODY_DETECTION:
+        description: Direct antibody recognition
+        meaning: MI:0678
+        aliases:
+          - antibody array
+      PREDETERMINED:
+        description: Known from experimental design
+        meaning: MI:0396
+        aliases:
+          - predetermined participant
+      NUCLEIC_ACID_SEQUENCING:
+        description: DNA/RNA sequencing
+        meaning: MI:0078
+        aliases:
+          - nucleotide sequence identification
+      PROTEIN_SEQUENCING:
+        description: Direct protein sequencing
+
+  FeatureType:
+    title: Feature Type
+    description: Molecular features affecting interactions
+    permissible_values:
+      BINDING_SITE:
+        description: Region involved in binding
+        meaning: MI:0117
+        aliases:
+          - binding-associated region
+      MUTATION:
+        description: Sequence alteration
+        meaning: MI:0118
+      POST_TRANSLATIONAL_MODIFICATION:
+        description: PTM site
+        meaning: MI:0121
+        aliases:
+          - acetylated residue
+      TAG:
+        description: Affinity or epitope tag
+        meaning: MI:0507
+      CROSS_LINK:
+        description: Cross-linking site
+      LIPIDATION_SITE:
+        description: Lipid modification site
+      PHOSPHORYLATION_SITE:
+        description: Phosphorylated residue
+        meaning: MI:0170
+        aliases:
+          - phosphorylated residue
+      UBIQUITINATION_SITE:
+        description: Ubiquitinated residue
+      METHYLATION_SITE:
+        description: Methylated residue
+      ACETYLATION_SITE:
+        description: Acetylated residue
+      SUMOYLATION_SITE:
+        description: SUMOylated residue
+      NECESSARY_BINDING_REGION:
+        description: Required for binding
+        meaning: MI:0429
+      SUFFICIENT_BINDING_REGION:
+        description: Sufficient for binding
+        meaning: MI:0442
+
+  InteractorType:
+    title: Interactor Type
+    description: Types of molecular species in interactions
+    permissible_values:
+      PROTEIN:
+        description: Polypeptide molecule
+        meaning: MI:0326
+      PEPTIDE:
+        description: Short polypeptide
+        meaning: MI:0327
+      SMALL_MOLECULE:
+        description: Small chemical compound
+        meaning: MI:0328
+      DNA:
+        description: Deoxyribonucleic acid
+        meaning: MI:0319
+        aliases:
+          - deoxyribonucleic acid
+      RNA:
+        description: Ribonucleic acid
+        meaning: MI:0320
+        aliases:
+          - ribonucleic acid
+      PROTEIN_COMPLEX:
+        description: Multi-protein assembly
+        meaning: MI:0314
+        aliases:
+          - complex
+      GENE:
+        description: Gene locus
+        meaning: MI:0250
+      BIOPOLYMER:
+        description: Biological polymer
+        meaning: MI:0383
+      POLYSACCHARIDE:
+        description: Carbohydrate polymer
+        meaning: MI:0904
+      LIPID:
+        description: Lipid molecule
+      NUCLEIC_ACID:
+        description: DNA or RNA
+        meaning: MI:0318
+      SYNTHETIC_POLYMER:
+        description: Artificial polymer
+      METAL_ION:
+        description: Metal ion cofactor
+
+  ConfidenceScore:
+    title: Confidence Score Types
+    description: Types of confidence scoring methods
+    permissible_values:
+      INTACT_MISCORE:
+        description: IntAct molecular interaction score
+      AUTHOR_CONFIDENCE:
+        description: Author-provided confidence
+        meaning: MI:0621
+      INTACT_CONFIDENCE:
+        description: IntAct curation confidence
+      MINT_SCORE:
+        description: MINT database score
+      MATRIXDB_SCORE:
+        description: MatrixDB confidence score
+
+  ExperimentalPreparation:
+    title: Experimental Preparation
+    description: Sample preparation methods
+    permissible_values:
+      RECOMBINANT_EXPRESSION:
+        description: Expressed in heterologous system
+      NATIVE_SOURCE:
+        description: From original organism
+      IN_VITRO_EXPRESSION:
+        description: Cell-free expression
+      OVEREXPRESSION:
+        description: Above physiological levels
+        meaning: MI:0506
+        aliases:
+          - over expressed level
+      KNOCKDOWN:
+        description: Reduced expression
+      KNOCKOUT:
+        description: Gene deletion
+        meaning: MI:0788
+        aliases:
+          - knock out
+      ENDOGENOUS_LEVEL:
+        description: Physiological expression

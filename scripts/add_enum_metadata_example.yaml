@@ -1,0 +1,82 @@
+# Example of enhanced enum metadata pattern for common-value-sets
+
+# Example 1: Enhanced PSI-MI enum with full metadata
+enums:
+  InteractionDetectionMethod:
+    title: Interaction Detection Method
+    description: Methods used to detect molecular interactions
+
+    # Provenance and source information
+    source: https://www.ebi.ac.uk/ols/ontologies/mi
+    conforms_to:
+      - PSI-MI-2.5
+      - HUPO-PSI
+
+    # Additional metadata through annotations
+    annotations:
+      version: "2.5.4"
+      last_updated: "2024-01"
+      curator: "HUPO Proteomics Standards Initiative"
+      ontology_uri: "http://purl.obolibrary.org/obo/mi.owl"
+      extraction_method: "OLS API query"
+      extraction_date: "2024-09-24"
+
+    # Standard metadata
+    see_also:
+      - https://www.ebi.ac.uk/ols/ontologies/mi
+      - https://github.com/HUPO-PSI/psi-mi-CV
+      - https://psidev.info/
+
+    # Could also add:
+    contributors:
+      - HUPO-PSI Working Group
+
+    permissible_values:
+      TWO_HYBRID:
+        description: Classical two-hybrid system using transcriptional activity
+        meaning: MI:0018
+
+# Example 2: TRL with standards metadata
+  TechnologyReadinessLevel:
+    title: Technology Readiness Level (TRL)
+    description: >-
+      NASA's Technology Readiness Level scale for assessing the maturity of
+      technologies from basic research through operational deployment
+
+    source: https://www.nasa.gov/directorates/heo/scan/engineering/technology/technology_readiness_level
+
+    conforms_to:
+      - NASA/SP-2007-6105  # NASA Systems Engineering Handbook
+      - ISO-16290:2013     # Space systems — Definition of TRL
+
+    annotations:
+      origin: "NASA (National Aeronautics and Space Administration)"
+      first_published: "1995"
+      adopted_by: ["DoD", "ESA", "EU Horizon 2020"]
+      domain: ["aerospace", "technology_assessment", "project_management"]
+
+    see_also:
+      - https://www.nasa.gov/directorates/heo/scan/engineering/technology/technology_readiness_level
+      - https://www.iso.org/standard/56064.html
+
+# Example 3: NCBI Taxonomy-based enum with version tracking
+  UniProtSpeciesCode:
+    title: UniProt Species Codes
+    description: UniProt species mnemonic codes for reference proteomes
+
+    source: https://www.uniprot.org/proteomes
+
+    conforms_to:
+      - UniProt-2024.01
+      - NCBI-Taxonomy-2024
+
+    annotations:
+      data_version: "2024_01"
+      proteome_count: 3850
+      extraction_pipeline: "uniprot_api_v2"
+      validation_status: "validated"
+      quality_score: 0.98
+
+    see_also:
+      - https://www.uniprot.org/help/species_codes
+      - https://www.ncbi.nlm.nih.gov/taxonomy

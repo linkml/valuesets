@@ -1,0 +1,67 @@
+"""
+Lipid Categories
+
+Major lipid categories from SwissLipids classification
+
+Generated from: bio/lipid_categories.yaml
+"""
+
+from __future__ import annotations
+
+from typing import Dict, Any, Optional
+from valuesets.generators.rich_enum import RichEnum
+
+class RelativeTimeEnum(RichEnum):
+    # Enum members
+    BEFORE = "BEFORE"
+    AFTER = "AFTER"
+    AT_SAME_TIME_AS = "AT_SAME_TIME_AS"
+
+# Set metadata after class creation
+RelativeTimeEnum._metadata = {
+}
+
+class PresenceEnum(RichEnum):
+    # Enum members
+    PRESENT = "PRESENT"
+    ABSENT = "ABSENT"
+    BELOW_DETECTION_LIMIT = "BELOW_DETECTION_LIMIT"
+    ABOVE_DETECTION_LIMIT = "ABOVE_DETECTION_LIMIT"
+
+# Set metadata after class creation
+PresenceEnum._metadata = {
+    "PRESENT": {'description': 'The entity is present'},
+    "ABSENT": {'description': 'The entity is absent'},
+    "BELOW_DETECTION_LIMIT": {'description': 'The entity is below the detection limit'},
+    "ABOVE_DETECTION_LIMIT": {'description': 'The entity is above the detection limit'},
+}
+
+class LipidCategory(RichEnum):
+    """
+    Major categories of lipids based on SwissLipids classification
+    """
+    # Enum members
+    LIPID = "LIPID"
+    FATTY_ACYLS_AND_DERIVATIVES = "FATTY_ACYLS_AND_DERIVATIVES"
+    GLYCEROLIPIDS = "GLYCEROLIPIDS"
+    GLYCEROPHOSPHOLIPIDS = "GLYCEROPHOSPHOLIPIDS"
+    SPHINGOLIPIDS = "SPHINGOLIPIDS"
+    STEROIDS_AND_DERIVATIVES = "STEROIDS_AND_DERIVATIVES"
+    PRENOL_LIPIDS = "PRENOL_LIPIDS"
+
+# Set metadata after class creation
+LipidCategory._metadata = {
+    "LIPID": {'description': 'Lipid', 'meaning': 'swisslipids:SLM_000389145'},
+    "FATTY_ACYLS_AND_DERIVATIVES": {'description': 'Fatty acyls and derivatives', 'meaning': 'swisslipids:SLM_000390054'},
+    "GLYCEROLIPIDS": {'description': 'Glycerolipids', 'meaning': 'swisslipids:SLM_000117142'},
+    "GLYCEROPHOSPHOLIPIDS": {'description': 'Glycerophospholipids', 'meaning': 'swisslipids:SLM_000001193'},
+    "SPHINGOLIPIDS": {'description': 'Sphingolipids', 'meaning': 'swisslipids:SLM_000000525'},
+    "STEROIDS_AND_DERIVATIVES": {'description': 'Steroids and derivatives', 'meaning': 'swisslipids:SLM_000500463'},
+    "PRENOL_LIPIDS": {'description': 'Prenol Lipids', 'meaning': 'swisslipids:SLM_000508860'},
+}
+
+__all__ = [
+    "RelativeTimeEnum",
+    "PresenceEnum",
+    "LipidCategory",
+]

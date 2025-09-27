@@ -26,6 +26,7 @@ imports:
 enums:
 
   PublicationType:
+    title: Publication Type
     description: |-
       Types of academic and research publications
     permissible_values:

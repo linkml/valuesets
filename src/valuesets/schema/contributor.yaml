@@ -1,0 +1,27 @@
+id: https://w3id.org/common-value-sets/contributor
+name: contributor
+title: Contributor Value Sets
+description: Value sets related to contributors and their roles
+
+imports:
+  - linkml:types
+
+prefixes:
+  CVS: https://w3id.org/common-value-sets/
+  linkml: https://w3id.org/linkml/
+  schema: http://schema.org/
+  DataCite: https://purl.org/datacite/
+
+default_prefix: CVS
+default_range: string
+
+enums:
+  ContributorType:
+    description: The type of contributor being represented.
+    permissible_values:
+      PERSON:
+        description: A person.
+        meaning: schema:Person
+      ORGANIZATION:
+        description: An organization.
+        meaning: schema:Organization

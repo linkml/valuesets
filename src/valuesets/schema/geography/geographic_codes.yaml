@@ -11,6 +11,8 @@ prefixes:
   linkml_common: https://w3id.org/valuesets/
   linkml: https://w3id.org/linkml/
   ISO: http://purl.org/iso/
+  iso3166loc: http://id.loc.gov/vocabulary/countries/
+  geonames: http://sws.geonames.org/
 default_prefix: linkml_common
 
 enums:
@@ -19,168 +21,408 @@ enums:
     permissible_values:
       US:
         description: United States of America
+        meaning: iso3166loc:us
+        exact_mappings:
+          - GAZ:00002459
       CA:
         description: Canada
+        meaning: iso3166loc:ca
+        exact_mappings:
+          - GAZ:00002560
       MX:
         description: Mexico
+        meaning: iso3166loc:mx
+        exact_mappings:
+          - GAZ:00002852
       GB:
         description: United Kingdom
+        meaning: iso3166loc:gb
+        exact_mappings:
+          - GAZ:00002637
       FR:
         description: France
+        meaning: iso3166loc:fr
+        exact_mappings:
+          - GAZ:00002940
       DE:
         description: Germany
+        meaning: iso3166loc:de
+        exact_mappings:
+          - GAZ:00002646
       IT:
         description: Italy
+        meaning: iso3166loc:it
+        exact_mappings:
+          - GAZ:00002650
       ES:
         description: Spain
+        meaning: iso3166loc:es
+        exact_mappings:
+          - GAZ:00000591
       PT:
         description: Portugal
+        meaning: iso3166loc:pt
+        exact_mappings:
+          - GAZ:00002944
       NL:
         description: Netherlands
+        meaning: iso3166loc:nl
+        exact_mappings:
+          - GAZ:00002946
       BE:
         description: Belgium
+        meaning: iso3166loc:be
+        exact_mappings:
+          - GAZ:00002938
       CH:
         description: Switzerland
+        meaning: iso3166loc:ch
+        exact_mappings:
+          - GAZ:00002941
       AT:
         description: Austria
+        meaning: iso3166loc:at
+        exact_mappings:
+          - GAZ:00002942
       SE:
         description: Sweden
+        meaning: iso3166loc:se
+        exact_mappings:
+          - GAZ:00002729
       NO:
         description: Norway
+        meaning: iso3166loc:no
+        exact_mappings:
+          - GAZ:00002699
       DK:
         description: Denmark
+        meaning: iso3166loc:dk
+        exact_mappings:
+          - GAZ:00002635
       FI:
         description: Finland
+        meaning: iso3166loc:fi
+        exact_mappings:
+          - GAZ:00002937
       PL:
         description: Poland
+        meaning: iso3166loc:pl
+        exact_mappings:
+          - GAZ:00002939
       RU:
         description: Russian Federation
+        meaning: iso3166loc:ru
+        exact_mappings:
+          - GAZ:00002721
       UA:
         description: Ukraine
+        meaning: iso3166loc:ua
+        exact_mappings:
+          - GAZ:00002724
       CN:
         description: China
+        meaning: iso3166loc:cn
+        exact_mappings:
+          - GAZ:00002845
       JP:
         description: Japan
+        meaning: iso3166loc:jp
+        exact_mappings:
+          - GAZ:00002747
       KR:
         description: South Korea
+        meaning: iso3166loc:kr
+        exact_mappings:
+          - GAZ:00002802
       IN:
         description: India
+        meaning: iso3166loc:in
+        exact_mappings:
+          - GAZ:00002839
       AU:
         description: Australia
+        meaning: iso3166loc:au
+        exact_mappings:
+          - GAZ:00000463
       NZ:
         description: New Zealand
+        meaning: iso3166loc:nz
+        exact_mappings:
+          - GAZ:00000469
       BR:
         description: Brazil
+        meaning: iso3166loc:br
+        exact_mappings:
+          - GAZ:00002828
       AR:
         description: Argentina
+        meaning: iso3166loc:ar
+        exact_mappings:
+          - GAZ:00002928
       CL:
         description: Chile
+        meaning: iso3166loc:cl
+        exact_mappings:
+          - GAZ:00002825
       CO:
         description: Colombia
+        meaning: iso3166loc:co
+        exact_mappings:
+          - GAZ:00002929
       PE:
         description: Peru
+        meaning: iso3166loc:pe
+        exact_mappings:
+          - GAZ:00002932
       VE:
         description: Venezuela
+        meaning: iso3166loc:ve
+        exact_mappings:
+          - GAZ:00002931
       ZA:
         description: South Africa
+        meaning: iso3166loc:za
+        exact_mappings:
+          - GAZ:00001094
       EG:
         description: Egypt
+        meaning: iso3166loc:eg
+        exact_mappings:
+          - GAZ:00003934
       NG:
         description: Nigeria
+        meaning: iso3166loc:ng
+        exact_mappings:
+          - GAZ:00000912
       KE:
         description: Kenya
+        meaning: iso3166loc:ke
+        exact_mappings:
+          - GAZ:00001101
       IL:
         description: Israel
+        meaning: iso3166loc:il
+        exact_mappings:
+          - GAZ:00002476
       SA:
         description: Saudi Arabia
+        meaning: iso3166loc:sa
+        exact_mappings:
+          - GAZ:00005279
       AE:
         description: United Arab Emirates
+        meaning: iso3166loc:ae
+        exact_mappings:
+          - GAZ:00005282
       TR:
         description: Turkey
+        meaning: iso3166loc:tr
+        exact_mappings:
+          - GAZ:00000558
       GR:
         description: Greece
+        meaning: iso3166loc:gr
+        exact_mappings:
+          - GAZ:00002945
       IE:
         description: Ireland
+        meaning: iso3166loc:ie
+        exact_mappings:
+          - GAZ:00004018
       SG:
         description: Singapore
+        meaning: iso3166loc:sg
+        exact_mappings:
+          - GAZ:00003923
       MY:
         description: Malaysia
+        meaning: iso3166loc:my
+        exact_mappings:
+          - GAZ:00003902
       TH:
         description: Thailand
+        meaning: iso3166loc:th
+        exact_mappings:
+          - GAZ:00003744
       ID:
         description: Indonesia
+        meaning: iso3166loc:id
+        exact_mappings:
+          - GAZ:00003727
       PH:
         description: Philippines
+        meaning: iso3166loc:ph
+        exact_mappings:
+          - GAZ:00004525
       VN:
         description: Vietnam
+        meaning: iso3166loc:vn
+        exact_mappings:
+          - GAZ:00003756
       PK:
         description: Pakistan
+        meaning: iso3166loc:pk
+        exact_mappings:
+          - GAZ:00005246
       BD:
         description: Bangladesh
+        meaning: iso3166loc:bd
+        exact_mappings:
+          - GAZ:00003750
 
   CountryCodeISO3Enum:
     description: ISO 3166-1 alpha-3 country codes (3-letter codes)
     permissible_values:
       USA:
         description: United States of America
+        meaning: iso3166loc:us
+        exact_mappings:
+          - GAZ:00002459
       CAN:
         description: Canada
+        meaning: iso3166loc:ca
+        exact_mappings:
+          - GAZ:00002560
       MEX:
         description: Mexico
+        meaning: iso3166loc:mx
+        exact_mappings:
+          - GAZ:00002852
       GBR:
         description: United Kingdom
+        meaning: iso3166loc:gb
+        exact_mappings:
+          - GAZ:00002637
       FRA:
         description: France
+        meaning: iso3166loc:fr
+        exact_mappings:
+          - GAZ:00002940
       DEU:
         description: Germany
+        meaning: iso3166loc:de
+        exact_mappings:
+          - GAZ:00002646
       ITA:
         description: Italy
+        meaning: iso3166loc:it
+        exact_mappings:
+          - GAZ:00002650
       ESP:
         description: Spain
+        meaning: iso3166loc:es
+        exact_mappings:
+          - GAZ:00000591
       PRT:
         description: Portugal
+        meaning: iso3166loc:pt
+        exact_mappings:
+          - GAZ:00002944
       NLD:
         description: Netherlands
+        meaning: iso3166loc:nl
+        exact_mappings:
+          - GAZ:00002946
       BEL:
         description: Belgium
+        meaning: iso3166loc:be
+        exact_mappings:
+          - GAZ:00002938
       CHE:
         description: Switzerland
+        meaning: iso3166loc:ch
+        exact_mappings:
+          - GAZ:00002941
       AUT:
         description: Austria
+        meaning: iso3166loc:at
+        exact_mappings:
+          - GAZ:00002942
       SWE:
         description: Sweden
+        meaning: iso3166loc:se
+        exact_mappings:
+          - GAZ:00002729
       NOR:
         description: Norway
+        meaning: iso3166loc:no
+        exact_mappings:
+          - GAZ:00002699
       DNK:
         description: Denmark
+        meaning: iso3166loc:dk
+        exact_mappings:
+          - GAZ:00002635
       FIN:
         description: Finland
+        meaning: iso3166loc:fi
+        exact_mappings:
+          - GAZ:00002937
       POL:
         description: Poland
+        meaning: iso3166loc:pl
+        exact_mappings:
+          - GAZ:00002939
       RUS:
         description: Russian Federation
+        meaning: iso3166loc:ru
+        exact_mappings:
+          - GAZ:00002721
       UKR:
         description: Ukraine
+        meaning: iso3166loc:ua
+        exact_mappings:
+          - GAZ:00002724
       CHN:
         description: China
+        meaning: iso3166loc:cn
+        exact_mappings:
+          - GAZ:00002845
       JPN:
         description: Japan
+        meaning: iso3166loc:jp
+        exact_mappings:
+          - GAZ:00002747
       KOR:
         description: South Korea
+        meaning: iso3166loc:kr
+        exact_mappings:
+          - GAZ:00002802
       IND:
         description: India
+        meaning: iso3166loc:in
+        exact_mappings:
+          - GAZ:00002839
       AUS:
         description: Australia
+        meaning: iso3166loc:au
+        exact_mappings:
+          - GAZ:00000463
       NZL:
         description: New Zealand
+        meaning: iso3166loc:nz
+        exact_mappings:
+          - GAZ:00000469
       BRA:
         description: Brazil
+        meaning: iso3166loc:br
+        exact_mappings:
+          - GAZ:00002828
       ARG:
         description: Argentina
+        meaning: iso3166loc:ar
+        exact_mappings:
+          - GAZ:00002928
       CHL:
         description: Chile
+        meaning: iso3166loc:cl
+        exact_mappings:
+          - GAZ:00002825
       COL:
         description: Colombia
+        meaning: iso3166loc:co
+        exact_mappings:
+          - GAZ:00002929
 
   USStateCodeEnum:
     description: United States state and territory codes

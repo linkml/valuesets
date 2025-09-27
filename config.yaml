@@ -6,12 +6,9 @@
 # By default all generators are run. Specify here the ones to skip.
 excludes:
   - markdown
-
-# Alternatively only specify the generators to run
-# (comment out the above "excludes" section)
-# includes:
-#   - markdown
-#   - excel
+  - excel
+  - python
+  - pydantic
 
 # Set the arguments for the generators (no matter if they run or not)
 generator_args:
@@ -19,8 +16,10 @@ generator_args:
     mergeimports: true
   owl:
     mergeimports: true
-    metaclasses: true
-    type_objects: true
+    metaclasses: false
+    type_objects: false
+    add_root_classes: true
+    mixins_as_expressions: true
     # throws 'Cannot handle metadata profile: rdfs'
     # metadata_profile: rdfs
   markdown:

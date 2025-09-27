@@ -1,0 +1,67 @@
+id: https://w3id.org/common-value-sets/currency_chemicals
+name: currency_chemicals
+title: Currency Chemicals Value Sets
+description: Value sets for metabolic currency molecules and cofactors used in energy transfer and redox reactions
+
+imports:
+  - linkml:types
+
+prefixes:
+  CVS: https://w3id.org/common-value-sets/
+  linkml: https://w3id.org/linkml/
+  CHEBI: http://purl.obolibrary.org/obo/CHEBI_
+
+default_prefix: CVS
+default_range: string
+
+enums:
+  CurrencyChemical:
+    description: >-
+      Common metabolic currency molecules and cofactors that serve as energy carriers,
+      electron donors/acceptors, and group transfer agents in cellular metabolism.
+    permissible_values:
+      ATP:
+        description: Adenosine triphosphate - primary energy currency molecule in cells
+        meaning: CHEBI:15422
+      ADP:
+        description: Adenosine diphosphate - product of ATP hydrolysis, energy acceptor
+        meaning: CHEBI:16761
+      AMP:
+        description: Adenosine monophosphate - nucleotide, product of ADP hydrolysis
+        meaning: CHEBI:16027
+        aliases: ["adenosine 5'-monophosphate"]
+      GTP:
+        description: Guanosine triphosphate - energy molecule, protein synthesis and signaling
+        meaning: CHEBI:15996
+      GDP:
+        description: Guanosine diphosphate - product of GTP hydrolysis
+        meaning: CHEBI:17552
+      NAD_PLUS:
+        description: Nicotinamide adenine dinucleotide (oxidized) - electron acceptor in catabolism
+        meaning: CHEBI:15846
+        title: NAD+
+      NADH:
+        description: Nicotinamide adenine dinucleotide (reduced) - electron donor, reducing agent
+        meaning: CHEBI:16908
+      NADP_PLUS:
+        description: Nicotinamide adenine dinucleotide phosphate (oxidized) - electron acceptor
+        meaning: CHEBI:18009
+        title: NADP+
+      NADPH:
+        description: Nicotinamide adenine dinucleotide phosphate (reduced) - anabolic reducing agent
+        meaning: CHEBI:16474
+      FAD:
+        description: Flavin adenine dinucleotide (oxidized) - electron acceptor in oxidation reactions
+        meaning: CHEBI:16238
+      FADH2:
+        description: Flavin adenine dinucleotide (reduced) - electron donor in electron transport chain
+        meaning: CHEBI:17877
+      COA:
+        description: Coenzyme A - acyl group carrier in fatty acid metabolism
+        meaning: CHEBI:15346
+        title: CoA
+        aliases: ["coenzyme A"]
+      ACETYL_COA:
+        description: Acetyl coenzyme A - central metabolic intermediate, links glycolysis to citric acid cycle
+        meaning: CHEBI:15351
+        title: Acetyl-CoA

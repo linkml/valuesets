@@ -14,6 +14,7 @@ default_prefix: valuesets
 
 imports:
   - core
+  - contributor
   - data/data_absent_reason
   - statistics
   - health
@@ -26,10 +27,12 @@ imports:
   - bio/bio_entities
   - bio/structural_biology
   - bio/insdc_missing_values
+  - bio/insdc_geographic_locations
   - bio/viral_genome_types
   - bio/plant_sex
   - bio/relationship_to_oxygen
   - bio/trophic_levels
+  - bio/developmental_stages
   - time/temporal
   - academic/research
   - energy/energy
@@ -58,8 +61,19 @@ imports:
   - visual/colors
   - bio/biological_colors
   - bio/sequence_alphabets
+  - bio/sequence_chemistry
+  - bio/sequencing_platforms
+  - bio/genomics
+  - bio/protein_evidence
+  - bio/currency_chemicals
+  - bio/plant_developmental_stages
+  - bio/uniprot_species
+  - bio/lipid_categories
+  - bio/proteomics_standards
+  - bio/psi_mi
   - chemistry/chemical_entities
   - chemistry/reactions
+  - chemistry/reaction_directionality
   - industry/safety_colors
   - medical/clinical
   - clinical/nih_demographics
@@ -67,6 +81,7 @@ imports:
   - bioprocessing/scale_up
   - units/measurements
   - computing/file_formats
+  - computing/maturity_levels
 
 classes:
 

@@ -1,0 +1,109 @@
+id: https://w3id.org/common-value-sets/bio/proteomics_standards
+name: proteomics_standards
+title: Proteomics Standards
+description: Controlled vocabularies for mass spectrometry and proteomics data annotation from HUPO-PSI standards
+
+imports:
+  - linkml:types
+  - ../core
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+  MS: http://purl.obolibrary.org/obo/MS_
+  PRIDE: http://purl.obolibrary.org/obo/PRIDE_
+  UO: http://purl.obolibrary.org/obo/UO_
+  cvs: https://w3id.org/common-value-sets/
+
+enums:
+  PeakAnnotationSeriesLabel:
+    title: Peak Annotation Series Label
+    description: Types of peak annotations in mass spectrometry data
+    permissible_values:
+      PEPTIDE:
+        description: Peptide fragment ion
+        exact_mappings:
+          - PRIDE:0000187  # Fragment Ion Annotation
+      INTERNAL:
+        description: Internal fragment ion
+      PRECURSOR:
+        description: Precursor ion
+        exact_mappings:
+          - PRIDE:0000263  # precursor ion
+          - MS:1001523  # frag: precursor ion
+      IMMONIUM:
+        description: Immonium ion
+        exact_mappings:
+          - PRIDE:0000239  # immonium ion
+          - MS:1001239  # frag: immonium ion
+      REFERENCE:
+        description: Reference peak or calibrant
+      NAMED_COMPOUND:
+        description: Named chemical compound
+      FORMULA:
+        description: Chemical formula
+      SMILES:
+        description: SMILES structure notation
+      UNANNOTATED:
+        description: Unannotated peak
+
+  PeptideIonSeries:
+    title: Peptide Ion Series
+    description: Types of peptide fragment ion series in mass spectrometry
+    permissible_values:
+      B:
+        description: B ion series - N-terminal fragment with CO
+        exact_mappings:
+          - PRIDE:0000194  # b ion
+      Y:
+        description: Y ion series - C-terminal fragment with H
+        exact_mappings:
+          - PRIDE:0000193  # y ion
+          - MS:1001220  # frag: y ion
+      A:
+        description: A ion series - N-terminal fragment minus CO
+        exact_mappings:
+          - PRIDE:0000233  # a ion
+      X:
+        description: X ion series - C-terminal fragment plus CO
+        exact_mappings:
+          - PRIDE:0000227  # x ion
+      C:
+        description: C ion series - N-terminal fragment with NH3
+        exact_mappings:
+          - PRIDE:0000236  # c ion
+      Z:
+        description: Z ion series - C-terminal fragment minus NH
+        exact_mappings:
+          - PRIDE:0000230  # z ion
+          - MS:1001230  # frag: z ion
+      D:
+        description: D ion series - partial side chain cleavage
+      V:
+        description: V ion series - side chain loss from y ion
+      W:
+        description: W ion series - side chain loss from z ion
+      DA:
+        description: DA ion series - a ion with side chain loss
+      DB:
+        description: DB ion series - b ion with side chain loss
+      WA:
+        description: WA ion series - a ion with tryptophan side chain loss
+      WB:
+        description: WB ion series - b ion with tryptophan side chain loss
+
+  MassErrorUnit:
+    title: Mass Error Unit
+    description: Units for expressing mass error in mass spectrometry
+    permissible_values:
+      PPM:
+        description: Parts per million - relative mass error
+        exact_mappings:
+          - UO:0000169  # parts per million
+      DA:
+        description: Dalton - absolute mass error
+        aliases:
+          - Dalton
+          - u
+          - amu
+        exact_mappings:
+          - UO:0000221  # dalton

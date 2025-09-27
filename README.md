@@ -276,7 +276,13 @@ cell_types = CellTypeEnum.expand_from_ontology()
 
 ## 📖 Documentation
 
-[**Full Documentation Website →**](https://linkml.github.io/valuesets)
+[**Full Documentation Website →**](https://linkml.io/valuesets/)
+
+### OWL Ontology
+
+**TODO**: The OWL artifact generated from these value sets will be available soon on:
+- [BioPortal](https://bioportal.bioontology.org/)
+- [Ontology Lookup Service (OLS)](https://www.ebi.ac.uk/ols/)
 
 ## 🚀 Future Directions
 

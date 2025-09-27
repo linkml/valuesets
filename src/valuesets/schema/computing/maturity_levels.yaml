@@ -1,0 +1,219 @@
+id: https://w3id.org/common-value-sets/computing/maturity_levels
+name: maturity_levels
+title: Software and Technology Maturity Levels
+description: >-
+  Value sets for assessing maturity levels of software, technology, and standards
+  across different frameworks and domains.
+
+license: MIT
+see_also:
+  - https://en.wikipedia.org/wiki/Technology_readiness_level
+  - https://en.wikipedia.org/wiki/Capability_Maturity_Model
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+
+default_prefix: maturity_levels
+default_range: string
+
+imports:
+  - linkml:types
+
+enums:
+  TechnologyReadinessLevel:
+    title: Technology Readiness Level (TRL)
+    description: >-
+      NASA's Technology Readiness Level scale for assessing the maturity of
+      technologies from basic research through operational deployment
+    source: https://www.nasa.gov/directorates/heo/scan/engineering/technology/technology_readiness_level
+    conforms_to: ISO-16290:2013
+    permissible_values:
+      TRL_1:
+        description: Basic principles observed and reported
+        title: TRL 1 - Basic Principles
+      TRL_2:
+        description: Technology concept and/or application formulated
+        title: TRL 2 - Technology Concept
+      TRL_3:
+        description: Analytical and experimental critical function and/or characteristic proof of concept
+        title: TRL 3 - Experimental Proof of Concept
+      TRL_4:
+        description: Component and/or breadboard validation in laboratory environment
+        title: TRL 4 - Lab Validation
+      TRL_5:
+        description: Component and/or breadboard validation in relevant environment
+        title: TRL 5 - Relevant Environment Validation
+      TRL_6:
+        description: System/subsystem model or prototype demonstration in a relevant environment
+        title: TRL 6 - Prototype Demonstration
+      TRL_7:
+        description: System prototype demonstration in an operational environment
+        title: TRL 7 - Operational Prototype
+      TRL_8:
+        description: Actual system completed and qualified through test and demonstration
+        title: TRL 8 - System Complete
+      TRL_9:
+        description: Actual system proven through successful mission operations
+        title: TRL 9 - Mission Proven
+
+  SoftwareMaturityLevel:
+    title: Software Maturity Level
+    description: General software maturity assessment levels
+    permissible_values:
+      ALPHA:
+        description: Early development stage with basic functionality, may be unstable
+        title: Alpha
+      BETA:
+        description: Feature-complete but may contain bugs, ready for testing
+        title: Beta
+      RELEASE_CANDIDATE:
+        description: Stable version ready for final testing before release
+        title: Release Candidate
+      STABLE:
+        description: Production-ready with proven stability and reliability
+        title: Stable
+      MATURE:
+        description: Well-established with extensive usage and proven track record
+        title: Mature
+      LEGACY:
+        description: Older version still in use but no longer actively developed
+        title: Legacy
+      DEPRECATED:
+        description: No longer recommended for use, superseded by newer versions
+        title: Deprecated
+      OBSOLETE:
+        description: No longer supported or maintained
+        title: Obsolete
+
+  CapabilityMaturityLevel:
+    title: Capability Maturity Model Integration (CMMI) Level
+    description: >-
+      CMMI levels for assessing organizational process maturity in software development
+    source: https://cmmiinstitute.com/
+    conforms_to: "CMMI Version 2.0"
+    permissible_values:
+      LEVEL_1:
+        description: Initial - Processes are unpredictable, poorly controlled, and reactive
+        title: Level 1 - Initial
+      LEVEL_2:
+        description: Managed - Processes are characterized for projects and reactive
+        title: Level 2 - Managed
+      LEVEL_3:
+        description: Defined - Processes are characterized for the organization and proactive
+        title: Level 3 - Defined
+      LEVEL_4:
+        description: Quantitatively Managed - Processes are measured and controlled
+        title: Level 4 - Quantitatively Managed
+      LEVEL_5:
+        description: Optimizing - Focus on continuous process improvement
+        title: Level 5 - Optimizing
+
+  StandardsMaturityLevel:
+    title: Standards Development Maturity Level
+    description: Maturity levels for standards and specifications
+    permissible_values:
+      DRAFT:
+        description: Initial draft under development
+        title: Draft
+      WORKING_DRAFT:
+        description: Work in progress by working group
+        title: Working Draft
+      COMMITTEE_DRAFT:
+        description: Draft reviewed by committee
+        title: Committee Draft
+      CANDIDATE_RECOMMENDATION:
+        description: Mature draft ready for implementation testing
+        title: Candidate Recommendation
+      PROPOSED_STANDARD:
+        description: Stable specification ready for adoption
+        title: Proposed Standard
+      STANDARD:
+        description: Approved and published standard
+        title: Standard
+      MATURE_STANDARD:
+        description: Well-established standard with wide adoption
+        title: Mature Standard
+      SUPERSEDED:
+        description: Replaced by a newer version
+        title: Superseded
+      WITHDRAWN:
+        description: No longer valid or recommended
+        title: Withdrawn
+
+  ProjectMaturityLevel:
+    title: Project Maturity Level
+    description: General project development maturity assessment
+    permissible_values:
+      CONCEPT:
+        description: Initial idea or concept stage
+        title: Concept
+      PLANNING:
+        description: Project planning and design phase
+        title: Planning
+      DEVELOPMENT:
+        description: Active development in progress
+        title: Development
+      TESTING:
+        description: Testing and quality assurance phase
+        title: Testing
+      PILOT:
+        description: Limited deployment or pilot testing
+        title: Pilot
+      PRODUCTION:
+        description: Full production deployment
+        title: Production
+      MAINTENANCE:
+        description: Maintenance and support mode
+        title: Maintenance
+      END_OF_LIFE:
+        description: Project reaching end of lifecycle
+        title: End of Life
+
+  DataMaturityLevel:
+    title: Data Maturity Level
+    description: Levels of data quality, governance, and organizational maturity
+    permissible_values:
+      RAW:
+        description: Unprocessed, uncleaned data
+        title: Raw Data
+      CLEANED:
+        description: Basic cleaning and validation applied
+        title: Cleaned Data
+      STANDARDIZED:
+        description: Conforms to defined standards and formats
+        title: Standardized Data
+      INTEGRATED:
+        description: Combined with other data sources
+        title: Integrated Data
+      CURATED:
+        description: Expert-reviewed and validated
+        title: Curated Data
+      PUBLISHED:
+        description: Publicly available with proper metadata
+        title: Published Data
+      ARCHIVED:
+        description: Long-term preservation with access controls
+        title: Archived Data
+
+  OpenSourceMaturityLevel:
+    title: Open Source Project Maturity
+    description: Maturity assessment for open source projects
+    permissible_values:
+      EXPERIMENTAL:
+        description: Early experimental project
+        title: Experimental
+      EMERGING:
+        description: Gaining traction and contributors
+        title: Emerging
+      ESTABLISHED:
+        description: Stable with active community
+        title: Established
+      MATURE:
+        description: Well-established with proven governance
+        title: Mature
+      DECLINING:
+        description: Decreasing activity and maintenance
+        title: Declining
+      ARCHIVED:
+        description: No longer actively maintained
+        title: Archived
