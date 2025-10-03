@@ -317,6 +317,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#slots" class="md-nav__link">
+    <span class="md-ellipsis">
+      Slots
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#identifier-and-mapping-information" class="md-nav__link">
     <span class="md-ellipsis">
       Identifier and Mapping Information
@@ -370,7 +379,7 @@
 
 <h1 id="enum-sequencestrand">Enum: SequenceStrand</h1>
 <p><em>Strand orientation for nucleic acid sequences</em></p>
-<p>URI: <a href="https://w3id.org/linkml/valuesets/SequenceStrand">valuesets:SequenceStrand</a></p>
+<p>URI: <a href="https://w3id.org/valuesets/SequenceStrand">valuesets:SequenceStrand</a></p>
 <h2 id="permissible-values">Permissible Values</h2>
 <table>
 <thead>
@@ -383,12 +392,12 @@
 <tbody>
 <tr>
 <td>PLUS</td>
-<td>SO:0000402</td>
+<td>None</td>
 <td>Plus/forward/sense strand (5' to 3')</td>
 </tr>
 <tr>
 <td>MINUS</td>
-<td>SO:0000404</td>
+<td>None</td>
 <td>Minus/reverse/antisense strand (3' to 5')</td>
 </tr>
 <tr>
@@ -400,6 +409,21 @@
 <td>UNKNOWN</td>
 <td>None</td>
 <td>Strand not specified or unknown</td>
+</tr>
+</tbody>
+</table>
+<h2 id="slots">Slots</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../sequence_strand/">sequence_strand</a></td>
+<td>Strand orientation for nucleic acid sequences</td>
 </tr>
 </tbody>
 </table>
@@ -420,13 +444,11 @@ permissible_values:
   PLUS:
     text: PLUS
     description: Plus/forward/sense strand (5' to 3')
-    meaning: SO:0000402
-    title: +
+    title: PLUS
   MINUS:
     text: MINUS
     description: Minus/reverse/antisense strand (3' to 5')
-    meaning: SO:0000404
-    title: '-'
+    title: MINUS
   BOTH:
     text: BOTH
     description: Both strands

@@ -317,6 +317,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#slots" class="md-nav__link">
+    <span class="md-ellipsis">
+      Slots
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#identifier-and-mapping-information" class="md-nav__link">
     <span class="md-ellipsis">
       Identifier and Mapping Information
@@ -370,7 +379,7 @@
 
 <h1 id="enum-sequencingapplication">Enum: SequencingApplication</h1>
 <p><em>Primary applications or assays using DNA/RNA sequencing</em></p>
-<p>URI: <a href="https://w3id.org/linkml/valuesets/SequencingApplication">valuesets:SequencingApplication</a></p>
+<p>URI: <a href="https://w3id.org/valuesets/SequencingApplication">valuesets:SequencingApplication</a></p>
 <h2 id="permissible-values">Permissible Values</h2>
 <table>
 <thead>
@@ -383,17 +392,17 @@
 <tbody>
 <tr>
 <td>WHOLE_GENOME_SEQUENCING</td>
-<td>OBI:0002117</td>
+<td>None</td>
 <td>Whole genome sequencing (WGS)</td>
 </tr>
 <tr>
 <td>WHOLE_EXOME_SEQUENCING</td>
-<td>OBI:0002118</td>
+<td>None</td>
 <td>Whole exome sequencing (WES)</td>
 </tr>
 <tr>
 <td>TRANSCRIPTOME_SEQUENCING</td>
-<td>OBI:0001271</td>
+<td>None</td>
 <td>RNA sequencing (RNA-seq)</td>
 </tr>
 <tr>
@@ -408,7 +417,7 @@
 </tr>
 <tr>
 <td>METAGENOMICS</td>
-<td>OBI:0002044</td>
+<td>None</td>
 <td>Metagenomic sequencing</td>
 </tr>
 <tr>
@@ -418,12 +427,12 @@
 </tr>
 <tr>
 <td>SINGLE_CELL_TRANSCRIPTOMICS</td>
-<td>OBI:0002571</td>
+<td>None</td>
 <td>Single-cell transcriptomics</td>
 </tr>
 <tr>
 <td>CHROMATIN_IMMUNOPRECIPITATION</td>
-<td>OBI:0000716</td>
+<td>None</td>
 <td>ChIP-seq</td>
 </tr>
 <tr>
@@ -463,6 +472,21 @@
 </tr>
 </tbody>
 </table>
+<h2 id="slots">Slots</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../sequencing_application/">sequencing_application</a></td>
+<td>Primary applications or assays using DNA/RNA sequencing</td>
+</tr>
+</tbody>
+</table>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
@@ -480,15 +504,15 @@ permissible_values:
   WHOLE_GENOME_SEQUENCING:
     text: WHOLE_GENOME_SEQUENCING
     description: Whole genome sequencing (WGS)
-    meaning: OBI:0002117
+    title: WHOLE_GENOME_SEQUENCING
   WHOLE_EXOME_SEQUENCING:
     text: WHOLE_EXOME_SEQUENCING
     description: Whole exome sequencing (WES)
-    meaning: OBI:0002118
+    title: WHOLE_EXOME_SEQUENCING
   TRANSCRIPTOME_SEQUENCING:
     text: TRANSCRIPTOME_SEQUENCING
     description: RNA sequencing (RNA-seq)
-    meaning: OBI:0001271
+    title: TRANSCRIPTOME_SEQUENCING
   TARGETED_SEQUENCING:
     text: TARGETED_SEQUENCING
     description: Targeted gene panel sequencing
@@ -498,18 +522,18 @@ permissible_values:
   METAGENOMICS:
     text: METAGENOMICS
     description: Metagenomic sequencing
-    meaning: OBI:0002044
+    title: METAGENOMICS
   SINGLE_CELL_GENOMICS:
     text: SINGLE_CELL_GENOMICS
     description: Single-cell genomics
   SINGLE_CELL_TRANSCRIPTOMICS:
     text: SINGLE_CELL_TRANSCRIPTOMICS
     description: Single-cell transcriptomics
-    meaning: OBI:0002571
+    title: SINGLE_CELL_TRANSCRIPTOMICS
   CHROMATIN_IMMUNOPRECIPITATION:
     text: CHROMATIN_IMMUNOPRECIPITATION
     description: ChIP-seq
-    meaning: OBI:0000716
+    title: CHROMATIN_IMMUNOPRECIPITATION
   CHROMATIN_ACCESSIBILITY:
     text: CHROMATIN_ACCESSIBILITY
     description: ATAC-seq/FAIRE-seq

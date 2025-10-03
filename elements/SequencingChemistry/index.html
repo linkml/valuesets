@@ -317,6 +317,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#slots" class="md-nav__link">
+    <span class="md-ellipsis">
+      Slots
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#identifier-and-mapping-information" class="md-nav__link">
     <span class="md-ellipsis">
       Identifier and Mapping Information
@@ -370,7 +379,7 @@
 
 <h1 id="enum-sequencingchemistry">Enum: SequencingChemistry</h1>
 <p><em>Fundamental chemical methods used for DNA/RNA sequencing</em></p>
-<p>URI: <a href="https://w3id.org/linkml/valuesets/SequencingChemistry">valuesets:SequencingChemistry</a></p>
+<p>URI: <a href="https://w3id.org/valuesets/SequencingChemistry">valuesets:SequencingChemistry</a></p>
 <h2 id="permissible-values">Permissible Values</h2>
 <table>
 <thead>
@@ -383,32 +392,32 @@
 <tbody>
 <tr>
 <td>SEQUENCING_BY_SYNTHESIS</td>
-<td>OBI:0000626</td>
+<td>None</td>
 <td>Sequencing by synthesis (Illumina)</td>
 </tr>
 <tr>
 <td>SINGLE_MOLECULE_REAL_TIME</td>
-<td>OBI:0002763</td>
+<td>None</td>
 <td>Single molecule real-time sequencing (PacBio)</td>
 </tr>
 <tr>
 <td>NANOPORE_SEQUENCING</td>
-<td>OBI:0002754</td>
+<td>None</td>
 <td>Nanopore sequencing (Oxford Nanopore)</td>
 </tr>
 <tr>
 <td>PYROSEQUENCING</td>
-<td>OBI:0000628</td>
+<td>None</td>
 <td>Pyrosequencing (454)</td>
 </tr>
 <tr>
 <td>SEQUENCING_BY_LIGATION</td>
-<td>OBI:0000629</td>
+<td>None</td>
 <td>Sequencing by ligation (SOLiD)</td>
 </tr>
 <tr>
 <td>CHAIN_TERMINATION</td>
-<td>OBI:0000632</td>
+<td>None</td>
 <td>Chain termination method (Sanger)</td>
 </tr>
 <tr>
@@ -425,6 +434,21 @@
 <td>SEQUENCING_BY_AVIDITY</td>
 <td>None</td>
 <td>Sequencing by avidity (Element Biosciences)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="slots">Slots</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../sequencing_chemistry/">sequencing_chemistry</a></td>
+<td>Fundamental chemical methods used for DNA/RNA sequencing</td>
 </tr>
 </tbody>
 </table>
@@ -445,27 +469,27 @@ permissible_values:
   SEQUENCING_BY_SYNTHESIS:
     text: SEQUENCING_BY_SYNTHESIS
     description: Sequencing by synthesis (Illumina)
-    meaning: OBI:0000626
+    title: SEQUENCING_BY_SYNTHESIS
   SINGLE_MOLECULE_REAL_TIME:
     text: SINGLE_MOLECULE_REAL_TIME
     description: Single molecule real-time sequencing (PacBio)
-    meaning: OBI:0002763
+    title: SINGLE_MOLECULE_REAL_TIME
   NANOPORE_SEQUENCING:
     text: NANOPORE_SEQUENCING
     description: Nanopore sequencing (Oxford Nanopore)
-    meaning: OBI:0002754
+    title: NANOPORE_SEQUENCING
   PYROSEQUENCING:
     text: PYROSEQUENCING
     description: Pyrosequencing (454)
-    meaning: OBI:0000628
+    title: PYROSEQUENCING
   SEQUENCING_BY_LIGATION:
     text: SEQUENCING_BY_LIGATION
     description: Sequencing by ligation (SOLiD)
-    meaning: OBI:0000629
+    title: SEQUENCING_BY_LIGATION
   CHAIN_TERMINATION:
     text: CHAIN_TERMINATION
     description: Chain termination method (Sanger)
-    meaning: OBI:0000632
+    title: CHAIN_TERMINATION
   SEMICONDUCTOR_SEQUENCING:
     text: SEMICONDUCTOR_SEQUENCING
     description: Semiconductor/Ion semiconductor sequencing

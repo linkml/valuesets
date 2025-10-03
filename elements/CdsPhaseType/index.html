@@ -317,6 +317,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#slots" class="md-nav__link">
+    <span class="md-ellipsis">
+      Slots
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#identifier-and-mapping-information" class="md-nav__link">
     <span class="md-ellipsis">
       Identifier and Mapping Information
@@ -370,7 +379,7 @@
 
 <h1 id="enum-cdsphasetype">Enum: CdsPhaseType</h1>
 <p><em>For features of type CDS (coding sequence), the phase indicates where the feature begins with reference to the reading frame. The phase is one of the integers 0, 1, or 2, indicating the number of bases that should be removed from the beginning of this feature to reach the first base of the next codon.</em></p>
-<p>URI: <a href="https://w3id.org/linkml/valuesets/CdsPhaseType">valuesets:CdsPhaseType</a></p>
+<p>URI: <a href="https://w3id.org/valuesets/CdsPhaseType">valuesets:CdsPhaseType</a></p>
 <h2 id="permissible-values">Permissible Values</h2>
 <table>
 <thead>
@@ -395,6 +404,21 @@
 <td>PHASE_2</td>
 <td>None</td>
 <td>Two bases from reading frame to feature start</td>
+</tr>
+</tbody>
+</table>
+<h2 id="slots">Slots</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../cds_phase/">cds_phase</a></td>
+<td>For features of type CDS (coding sequence), the phase indicates where the fea...</td>
 </tr>
 </tbody>
 </table>

@@ -317,6 +317,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#slots" class="md-nav__link">
+    <span class="md-ellipsis">
+      Slots
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#identifier-and-mapping-information" class="md-nav__link">
     <span class="md-ellipsis">
       Identifier and Mapping Information
@@ -371,7 +380,7 @@
 <h1 id="enum-iupacnucleotidecode">Enum: IUPACNucleotideCode</h1>
 <p><em>Complete IUPAC nucleotide codes including ambiguous bases for DNA/RNA sequences.</em></p>
 <p><em>Used in FASTA and other sequence formats to represent uncertain nucleotides.</em></p>
-<p>URI: <a href="https://w3id.org/linkml/valuesets/IUPACNucleotideCode">valuesets:IUPACNucleotideCode</a></p>
+<p>URI: <a href="https://w3id.org/valuesets/IUPACNucleotideCode">valuesets:IUPACNucleotideCode</a></p>
 <h2 id="permissible-values">Permissible Values</h2>
 <table>
 <thead>
@@ -384,37 +393,37 @@
 <tbody>
 <tr>
 <td>A</td>
-<td>CHEBI:16708</td>
+<td>None</td>
 <td>Adenine</td>
 </tr>
 <tr>
 <td>T</td>
-<td>CHEBI:17821</td>
+<td>None</td>
 <td>Thymine (DNA)</td>
 </tr>
 <tr>
 <td>U</td>
-<td>CHEBI:17568</td>
+<td>None</td>
 <td>Uracil (RNA)</td>
 </tr>
 <tr>
 <td>G</td>
-<td>CHEBI:16235</td>
+<td>None</td>
 <td>Guanine</td>
 </tr>
 <tr>
 <td>C</td>
-<td>CHEBI:16040</td>
+<td>None</td>
 <td>Cytosine</td>
 </tr>
 <tr>
 <td>R</td>
-<td>CHEBI:26401</td>
+<td>None</td>
 <td>Purine (A or G)</td>
 </tr>
 <tr>
 <td>Y</td>
-<td>CHEBI:39447</td>
+<td>None</td>
 <td>Pyrimidine (C or T/U)</td>
 </tr>
 <tr>
@@ -469,6 +478,21 @@
 </tr>
 </tbody>
 </table>
+<h2 id="slots">Slots</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../iupac_nucleotide/">iupac_nucleotide</a></td>
+<td>Complete IUPAC nucleotide codes including ambiguous bases for DNA/RNA sequenc...</td>
+</tr>
+</tbody>
+</table>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
@@ -489,31 +513,31 @@ permissible_values:
   A:
     text: A
     description: Adenine
-    meaning: CHEBI:16708
+    title: A
   T:
     text: T
     description: Thymine (DNA)
-    meaning: CHEBI:17821
+    title: T
   U:
     text: U
     description: Uracil (RNA)
-    meaning: CHEBI:17568
+    title: U
   G:
     text: G
     description: Guanine
-    meaning: CHEBI:16235
+    title: G
   C:
     text: C
     description: Cytosine
-    meaning: CHEBI:16040
+    title: C
   R:
     text: R
     description: Purine (A or G)
-    meaning: CHEBI:26401
+    title: R
   Y:
     text: Y
     description: Pyrimidine (C or T/U)
-    meaning: CHEBI:39447
+    title: Y
   S:
     text: S
     description: Strong interaction (G or C)
