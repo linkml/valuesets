@@ -1,18 +1,19 @@
-id: https://w3id.org/common-value-sets/bio/lipid_categories
 name: lipid_categories
 title: Lipid Categories
 description: Major lipid categories from SwissLipids classification
-
+id: https://w3id.org/valuesets/bio/lipid_categories
 imports:
-  - linkml:types
-  - ../core
-
+- ../core
 prefixes:
   linkml: https://w3id.org/linkml/
   swisslipids: https://swisslipids.org/rdf/
   CHEBI: http://purl.obolibrary.org/obo/CHEBI_
-  cvs: https://w3id.org/common-value-sets/
-
+  valuesets: https://w3id.org/valuesets/
+default_prefix: valuesets
+slots:
+  lipid_category:
+    description: Major categories of lipids based on SwissLipids classification
+    range: LipidCategory
 enums:
   LipidCategory:
     title: Lipid Category
@@ -22,38 +23,38 @@ enums:
         description: Lipid
         meaning: swisslipids:SLM_000389145
         exact_mappings:
-          - CHEBI:18059
+        - CHEBI:18059
       FATTY_ACYLS_AND_DERIVATIVES:
         description: Fatty acyls and derivatives
         meaning: swisslipids:SLM_000390054
         broad_mappings:
-          - CHEBI:24027  # fatty-acyl group (structural component)
+        - CHEBI:24027
       GLYCEROLIPIDS:
         description: Glycerolipids
         meaning: swisslipids:SLM_000117142
         exact_mappings:
-          - CHEBI:35741
+        - CHEBI:35741
       GLYCEROPHOSPHOLIPIDS:
         description: Glycerophospholipids
         meaning: swisslipids:SLM_000001193
         exact_mappings:
-          - CHEBI:37739
+        - CHEBI:37739
       SPHINGOLIPIDS:
         description: Sphingolipids
         meaning: swisslipids:SLM_000000525
         exact_mappings:
-          - CHEBI:26739
+        - CHEBI:26739
       STEROIDS_AND_DERIVATIVES:
         description: Steroids and derivatives
         meaning: swisslipids:SLM_000500463
         exact_mappings:
-          - CHEBI:35341  # steroid
+        - CHEBI:35341
         narrow_mappings:
-          - CHEBI:15889  # sterol (subclass of steroids)
+        - CHEBI:15889
       PRENOL_LIPIDS:
         description: Prenol Lipids
         meaning: swisslipids:SLM_000508860
         exact_mappings:
-          - CHEBI:24913  # isoprenoid
+        - CHEBI:24913
         narrow_mappings:
-          - CHEBI:16019  # prenol
+        - CHEBI:16019

@@ -1,12 +1,11 @@
----
-id: https://w3id.org/linkml/valuesets/clinical/phenopackets
 name: phenopackets
 title: Phenopackets Clinical Value Sets
-description: |-
-  Value sets derived from GA4GH Phenopackets Schema for clinical genomics and phenotyping
-
+description: Value sets derived from GA4GH Phenopackets Schema for clinical genomics and phenotyping
+id: https://w3id.org/linkml/valuesets/clinical/phenopackets
+imports:
+- linkml:types
 prefixes:
-  valuesets: https://w3id.org/linkml/valuesets/
+  valuesets: https://w3id.org/valuesets/
   NCIT: http://purl.obolibrary.org/obo/NCIT_
   GENO: http://purl.obolibrary.org/obo/GENO_
   HP: http://purl.obolibrary.org/obo/HP_
@@ -14,19 +13,42 @@ prefixes:
   UBERON: http://purl.obolibrary.org/obo/UBERON_
   UCUM: http://unitsofmeasure.org/
   PATO: http://purl.obolibrary.org/obo/PATO_
-
 default_prefix: valuesets
-
-imports:
-  - linkml:types
-
+slots:
+  karyotypic_sex:
+    description: Karyotypic sex of an individual based on chromosome composition
+    range: KaryotypicSexEnum
+  phenotypic_sex:
+    description: Phenotypic sex of an individual based on observable characteristics
+    range: PhenotypicSexEnum
+  allelic_state:
+    description: Allelic state/zygosity of a variant or genetic feature
+    range: AllelicStateEnum
+  laterality:
+    description: Laterality/sidedness of a finding or anatomical structure
+    range: LateralityEnum
+  onset_timing:
+    description: Timing of disease or phenotype onset relative to developmental stages
+    range: OnsetTimingEnum
+  acmg_pathogenicity:
+    description: ACMG/AMP variant pathogenicity classification for clinical genetics
+    range: ACMGPathogenicityEnum
+  therapeutic_actionability:
+    description: Clinical actionability of a genetic finding for treatment decisions
+    range: TherapeuticActionabilityEnum
+  interpretation_progress:
+    description: Progress status of clinical interpretation or diagnosis
+    range: InterpretationProgressEnum
+  regimen_status:
+    description: Status of a therapeutic regimen or treatment protocol
+    range: RegimenStatusEnum
+  drug_response:
+    description: Response categories for drug treatment outcomes
+    range: DrugResponseEnum
 enums:
-
   KaryotypicSexEnum:
-    description: |-
-      Karyotypic sex of an individual based on chromosome composition
+    description: Karyotypic sex of an individual based on chromosome composition
     permissible_values:
-
       XX:
         description: Female karyotype (46,XX)
         meaning: NCIT:C45976
@@ -34,7 +56,6 @@ enums:
         annotations:
           chromosome_count: 46
           typical_phenotypic_sex: female
-
       XY:
         description: Male karyotype (46,XY)
         meaning: NCIT:C45977
@@ -42,7 +63,6 @@ enums:
         annotations:
           chromosome_count: 46
           typical_phenotypic_sex: male
-
       XO:
         description: Turner syndrome karyotype (45,X)
         meaning: NCIT:C176780
@@ -50,7 +70,6 @@ enums:
         annotations:
           chromosome_count: 45
           condition: Turner syndrome
-
       XXY:
         description: Klinefelter syndrome karyotype (47,XXY)
         meaning: NCIT:C176784
@@ -58,7 +77,6 @@ enums:
         annotations:
           chromosome_count: 47
           condition: Klinefelter syndrome
-
       XXX:
         description: Triple X syndrome karyotype (47,XXX)
         meaning: NCIT:C176785
@@ -66,7 +84,6 @@ enums:
         annotations:
           chromosome_count: 47
           condition: Triple X syndrome
-
       XXXY:
         description: XXXY syndrome karyotype (48,XXXY)
         meaning: NCIT:C176786
@@ -74,7 +91,6 @@ enums:
         annotations:
           chromosome_count: 48
           condition: XXXY syndrome
-
       XXXX:
         description: Tetrasomy X karyotype (48,XXXX)
         meaning: NCIT:C176787
@@ -82,7 +98,6 @@ enums:
         annotations:
           chromosome_count: 48
           condition: Tetrasomy X
-
       XXYY:
         description: XXYY syndrome karyotype (48,XXYY)
         meaning: NCIT:C89801
@@ -90,7 +105,6 @@ enums:
         annotations:
           chromosome_count: 48
           condition: XXYY syndrome
-
       XYY:
         description: Jacob's syndrome karyotype (47,XYY)
         meaning: NCIT:C176782
@@ -98,202 +112,164 @@ enums:
         annotations:
           chromosome_count: 47
           condition: Jacob's syndrome
-
       OTHER_KARYOTYPE:
         description: Other karyotypic sex not listed
         annotations:
           note: May include complex chromosomal arrangements
-
       UNKNOWN_KARYOTYPE:
         description: Karyotype not determined or unknown
         meaning: NCIT:C17998
         title: Unknown
-
   PhenotypicSexEnum:
-    description: |-
-      Phenotypic sex of an individual based on observable characteristics.
-      FHIR mapping: AdministrativeGender
-    permissible_values:
+    description: 'Phenotypic sex of an individual based on observable characteristics.
 
+      FHIR mapping: AdministrativeGender'
+    permissible_values:
       MALE:
         description: Male phenotypic sex
         meaning: PATO:0000384
         exact_mappings:
-          - NCIT:C20197
-
+        - NCIT:C20197
       FEMALE:
         description: Female phenotypic sex
         meaning: PATO:0000383
         exact_mappings:
-          - NCIT:C16576
-
+        - NCIT:C16576
       OTHER_SEX:
         description: Sex characteristics not clearly male or female
         meaning: NCIT:C45908
         title: Intersex
         annotations:
           note: Includes differences of sex development (DSD)
-
       UNKNOWN_SEX:
         description: Sex not assessed or not available
         meaning: NCIT:C17998
         title: Unknown
-
   AllelicStateEnum:
-    description: |-
-      Allelic state/zygosity of a variant or genetic feature
+    description: Allelic state/zygosity of a variant or genetic feature
     permissible_values:
-
       HETEROZYGOUS:
         description: Different alleles at a locus
         meaning: GENO:0000135
         annotations:
           symbol: het
-
       HOMOZYGOUS:
         description: Identical alleles at a locus
         meaning: GENO:0000136
         annotations:
           symbol: hom
-
       HEMIZYGOUS:
         description: Only one allele present (e.g., X-linked in males)
         meaning: GENO:0000134
         annotations:
           symbol: hemi
           note: Common for X-linked genes in males
-
       COMPOUND_HETEROZYGOUS:
         description: Two different heterozygous variants in same gene
         meaning: GENO:0000402
         annotations:
           symbol: comp het
-
       HOMOZYGOUS_REFERENCE:
         description: Two reference/wild-type alleles
         meaning: GENO:0000036
         title: reference allele
         annotations:
           symbol: hom ref
-
       HOMOZYGOUS_ALTERNATE:
         description: Two alternate/variant alleles
         meaning: GENO:0000002
         title: variant allele
         annotations:
           symbol: hom alt
-
   LateralityEnum:
-    description: |-
-      Laterality/sidedness of a finding or anatomical structure
+    description: Laterality/sidedness of a finding or anatomical structure
     permissible_values:
-
       RIGHT:
         description: Right side
         meaning: HP:0012834
         annotations:
           anatomical_term: dexter
-
       LEFT:
         description: Left side
         meaning: HP:0012835
         annotations:
           anatomical_term: sinister
-
       BILATERAL:
         description: Both sides
         meaning: HP:0012832
         annotations:
           note: Affecting both left and right
-
       UNILATERAL:
         description: One side (unspecified which)
         meaning: HP:0012833
         annotations:
           note: Affecting only one side
-
       MIDLINE:
         description: In the midline/center
         meaning: UBERON:0005231
         annotations:
           note: Along the body's central axis
-
   OnsetTimingEnum:
-    description: |-
-      Timing of disease or phenotype onset relative to developmental stages
+    description: Timing of disease or phenotype onset relative to developmental stages
     permissible_values:
-
       ANTENATAL_ONSET:
         description: Before birth (prenatal)
         meaning: HP:0030674
         annotations:
           period: Before birth
-
       EMBRYONAL_ONSET:
         description: During embryonic period (0-8 weeks)
         meaning: HP:0011460
         annotations:
           period: 0-8 weeks gestation
-
       FETAL_ONSET:
         description: During fetal period (8 weeks to birth)
         meaning: HP:0011461
         annotations:
           period: 8 weeks to birth
-
       CONGENITAL_ONSET:
         description: Present at birth
         meaning: HP:0003577
         annotations:
           period: At birth
-
       NEONATAL_ONSET:
         description: Within first 28 days of life
         meaning: HP:0003623
         annotations:
           period: 0-28 days
-
       INFANTILE_ONSET:
         description: Between 28 days and 1 year
         meaning: HP:0003593
         annotations:
           period: 28 days to 1 year
-
       CHILDHOOD_ONSET:
         description: Between 1 year and 16 years
         meaning: HP:0011463
         annotations:
           period: 1-16 years
-
       JUVENILE_ONSET:
         description: Between 5 years and 16 years
         meaning: HP:0003621
         annotations:
           period: 5-16 years
-
       YOUNG_ADULT_ONSET:
         description: Between 16 years and 40 years
         meaning: HP:0011462
         annotations:
           period: 16-40 years
-
       MIDDLE_AGE_ONSET:
         description: Between 40 years and 60 years
         meaning: HP:0003596
         annotations:
           period: 40-60 years
-
       LATE_ONSET:
         description: After 60 years
         meaning: HP:0003584
         annotations:
-          period: ">60 years"
-
+          period: '>60 years'
   ACMGPathogenicityEnum:
-    description: |-
-      ACMG/AMP variant pathogenicity classification for clinical genetics
+    description: ACMG/AMP variant pathogenicity classification for clinical genetics
     permissible_values:
-
       PATHOGENIC:
         description: Pathogenic variant
         meaning: NCIT:C168799
@@ -301,15 +277,13 @@ enums:
         annotations:
           abbreviation: P
           clinical_significance: Disease-causing
-
       LIKELY_PATHOGENIC:
         description: Likely pathogenic variant
         meaning: NCIT:C168800
         title: Likely Pathogenic Variant
         annotations:
           abbreviation: LP
-          probability: ">90% certain"
-
+          probability: '>90% certain'
       UNCERTAIN_SIGNIFICANCE:
         description: Variant of uncertain significance
         meaning: NCIT:C94187
@@ -317,15 +291,13 @@ enums:
         annotations:
           abbreviation: VUS
           note: Insufficient evidence
-
       LIKELY_BENIGN:
         description: Likely benign variant
         meaning: NCIT:C168801
         title: Variant Likely Benign
         annotations:
           abbreviation: LB
-          probability: ">90% certain benign"
-
+          probability: '>90% certain benign'
       BENIGN:
         description: Benign variant
         meaning: NCIT:C168802
@@ -333,155 +305,125 @@ enums:
         annotations:
           abbreviation: B
           clinical_significance: Not disease-causing
-
   TherapeuticActionabilityEnum:
-    description: |-
-      Clinical actionability of a genetic finding for treatment decisions
+    description: Clinical actionability of a genetic finding for treatment decisions
     permissible_values:
-
       ACTIONABLE:
         description: Finding has direct therapeutic implications
         meaning: NCIT:C206303
         title: Actionable Variation
         annotations:
           note: Can guide treatment selection
-
       NOT_ACTIONABLE:
         description: No current therapeutic implications
         meaning: NCIT:C206304
         title: Non-Actionable Variation
         annotations:
           note: No treatment changes indicated
-
       UNKNOWN_ACTIONABILITY:
         description: Therapeutic implications unclear
         meaning: NCIT:C17998
         title: Unknown
-
   InterpretationProgressEnum:
-    description: |-
-      Progress status of clinical interpretation or diagnosis
+    description: Progress status of clinical interpretation or diagnosis
     permissible_values:
-
       SOLVED:
         description: Diagnosis achieved/case solved
         meaning: NCIT:C20826
         title: Molecular Diagnosis
         annotations:
           note: Molecular cause identified
-
       UNSOLVED:
         description: No diagnosis achieved
         meaning: NCIT:C125009
         title: Clinical Interpretation
         annotations:
           note: Molecular cause not identified
-
       IN_PROGRESS:
         description: Analysis ongoing
         meaning: NCIT:C25630
         title: Progress
-
       COMPLETED:
         description: Analysis completed
         meaning: NCIT:C216251
         title: Procedure Completed
         annotations:
           note: May be solved or unsolved
-
       UNKNOWN_PROGRESS:
         description: Progress status unknown
         meaning: NCIT:C17998
         title: Unknown
-
   RegimenStatusEnum:
-    description: |-
-      Status of a therapeutic regimen or treatment protocol
+    description: Status of a therapeutic regimen or treatment protocol
     permissible_values:
-
       NOT_STARTED:
         description: Treatment not yet begun
         meaning: NCIT:C53601
         title: Device Evaluation Anticipated But Not Yet Begun
-
       STARTED:
         description: Treatment initiated
         meaning: NCIT:C165209
         title: Treatment Ongoing
-
       COMPLETED:
         description: Treatment finished as planned
         meaning: NCIT:C105740
         title: Treatment Completed as Prescribed
-
       DISCONTINUED_ADVERSE_EVENT:
         description: Stopped due to adverse event
         meaning: NCIT:C41331
         title: Adverse Event
         annotations:
           reason: Toxicity or side effects
-
       DISCONTINUED_LACK_OF_EFFICACY:
         description: Stopped due to lack of efficacy
         meaning: NCIT:C49502
         title: Drug Withdrawn
         annotations:
           reason: Treatment not effective
-
       DISCONTINUED_PHYSICIAN_DECISION:
         description: Stopped by physician decision
         meaning: NCIT:C49502
         title: Drug Withdrawn
-
       DISCONTINUED_PATIENT_DECISION:
         description: Stopped by patient choice
         meaning: NCIT:C48271
         title: Consent Withdrawn
-
       UNKNOWN_STATUS:
         description: Treatment status unknown
         meaning: NCIT:C17998
         title: Unknown
-
   DrugResponseEnum:
-    description: |-
-      Response categories for drug treatment outcomes
+    description: Response categories for drug treatment outcomes
     permissible_values:
-
       FAVORABLE:
         description: Favorable response to treatment
         meaning: NCIT:C123584
         title: Favorable Response
         annotations:
           note: Better than expected response
-
       UNFAVORABLE:
         description: Unfavorable response to treatment
         meaning: NCIT:C102561
         annotations:
           note: Worse than expected response
-
       RESPONSIVE:
         description: Responsive to treatment
         meaning: NCIT:C165206
         title: Responsive Disease
         annotations:
           note: Shows expected response
-
       RESISTANT:
         description: Resistant to treatment
         meaning: NCIT:C16523
         title: Drug Resistance Process
         annotations:
           note: No response to treatment
-
       PARTIALLY_RESPONSIVE:
         description: Partial response to treatment
         meaning: NCIT:C18213
         title: Stable Disease
         annotations:
           note: Some but not complete response
-
       UNKNOWN_RESPONSE:
         description: Treatment response unknown
         meaning: NCIT:C17998

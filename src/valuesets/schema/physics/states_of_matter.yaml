@@ -1,19 +1,18 @@
-id: https://w3id.org/valuesets/physics/states-of-matter
 name: valuesets-physics-states-of-matter
 title: valuesets-physics-states-of-matter
-description: |-
-  Physics-related value sets for states of matter
-license: MIT
-see_also:
-  - https://linkml.github.io/valuesets
-
+description: Physics-related value sets for states of matter
+id: https://w3id.org/valuesets/physics/states-of-matter
 prefixes:
-  linkml_common: https://w3id.org/valuesets/
+  # linkml_common: https://w3id.org/valuesets/
   linkml: https://w3id.org/linkml/
   AFO: http://purl.allotrope.org/ontologies/quality#
   SNOMED: http://snomed.info/id/
-default_prefix: linkml_common
-
+  valuesets: https://w3id.org/valuesets/
+default_prefix: valuesets
+slots:
+  state_of_matter:
+    description: The physical state or phase of matter
+    range: StateOfMatterEnum
 enums:
   StateOfMatterEnum:
     description: The physical state or phase of matter
@@ -42,3 +41,6 @@ enums:
         description: A spatially ordered material with superfluid properties
       QUARK_GLUON_PLASMA:
         description: An extremely hot phase where quarks and gluons are not confined
+license: MIT
+see_also:
+- https://linkml.github.io/valuesets

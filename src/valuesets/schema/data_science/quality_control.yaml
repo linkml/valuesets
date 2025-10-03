@@ -1,9 +1,17 @@
 name: quality_control
 id: https://w3id.org/linkml/valuesets/data_science/quality_control
 prefixes:
-  linkml_common: https://w3id.org/linkml-common/
+  # linkml_common: https://w3id.org/linkml-common/
   NCIT: http://purl.obolibrary.org/obo/NCIT_
-default_prefix: linkml_common
+  valuesets: https://w3id.org/valuesets/
+default_prefix: valuesets
+slots:
+  quality_control:
+    description: Quality control classification labels
+    range: QualityControlEnum
+  defect_classification:
+    description: Manufacturing defect classification
+    range: DefectClassificationEnum
 enums:
   QualityControlEnum:
     description: Quality control classification labels
@@ -13,20 +21,19 @@ enums:
         title: Pass
         meaning: NCIT:C81275
         aliases:
-          - passed
-          - acceptable
-          - ok
-          - "1"
+        - passed
+        - acceptable
+        - ok
+        - '1'
       FAIL:
         description: Item does not meet quality standards
         title: Fail
         meaning: NCIT:C44281
         aliases:
-          - failed
-          - reject
-          - defective
-          - "0"
-          
+        - failed
+        - reject
+        - defective
+        - '0'
   DefectClassificationEnum:
     description: Manufacturing defect classification
     permissible_values:
@@ -35,27 +42,27 @@ enums:
         title: No Defect
         meaning: NCIT:C14165
         aliases:
-          - good
-          - normal
-          - "0"
+        - good
+        - normal
+        - '0'
       MINOR_DEFECT:
         description: Minor defect that doesn't affect functionality
         title: Minor Defect
         aliases:
-          - minor
-          - cosmetic
-          - "1"
+        - minor
+        - cosmetic
+        - '1'
       MAJOR_DEFECT:
         description: Major defect affecting functionality
         title: Major Defect
         aliases:
-          - major
-          - functional
-          - "2"
+        - major
+        - functional
+        - '2'
       CRITICAL_DEFECT:
         description: Critical defect rendering item unusable or unsafe
         title: Critical Defect
         aliases:
-          - critical
-          - severe
-          - "3"
+        - critical
+        - severe
+        - '3'

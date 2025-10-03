@@ -4,8 +4,25 @@ prefixes:
   CHEBI: http://purl.obolibrary.org/obo/CHEBI_
   NCIT: http://purl.obolibrary.org/obo/NCIT_
   PATO: http://purl.obolibrary.org/obo/PATO_
-  linkml_common: https://w3id.org/linkml-common/
-default_prefix: linkml_common
+  # linkml_common: https://w3id.org/linkml-common/
+  valuesets: https://w3id.org/valuesets/
+default_prefix: valuesets
+slots:
+  electrical_conductivity:
+    description: Classification of materials by electrical conductivity
+    range: ElectricalConductivityEnum
+  magnetic_property:
+    description: Classification of materials by magnetic properties
+    range: MagneticPropertyEnum
+  optical_property:
+    description: Optical properties of materials
+    range: OpticalPropertyEnum
+  thermal_conductivity:
+    description: Classification by thermal conductivity
+    range: ThermalConductivityEnum
+  mechanical_behavior:
+    description: Mechanical behavior of materials under stress
+    range: MechanicalBehaviorEnum
 enums:
   ElectricalConductivityEnum:
     description: Classification of materials by electrical conductivity
@@ -14,22 +31,21 @@ enums:
         description: Material with high electrical conductivity (resistivity < 10^-5 Ω·m)
         title: Conductor
         aliases:
-          - metal
+        - metal
       SEMICONDUCTOR:
         description: Material with intermediate electrical conductivity (10^-5 to 10^8 Ω·m)
         title: Semiconductor
         meaning: NCIT:C172788
         aliases:
-          - semi
+        - semi
       INSULATOR:
         description: Material with very low electrical conductivity (resistivity > 10^8 Ω·m)
         title: Insulator
         aliases:
-          - dielectric
+        - dielectric
       SUPERCONDUCTOR:
         description: Material with zero electrical resistance below critical temperature
         title: Superconductor
-        
   MagneticPropertyEnum:
     description: Classification of materials by magnetic properties
     permissible_values:
@@ -48,7 +64,6 @@ enums:
       ANTIFERROMAGNETIC:
         description: Adjacent magnetic moments cancel each other
         title: Antiferromagnetic
-        
   OpticalPropertyEnum:
     description: Optical properties of materials
     permissible_values:
@@ -75,7 +90,6 @@ enums:
       PHOSPHORESCENT:
         description: Continues to emit light after excitation stops
         title: Phosphorescent
-        
   ThermalConductivityEnum:
     description: Classification by thermal conductivity
     permissible_values:
@@ -83,7 +97,7 @@ enums:
         description: High thermal conductivity (>100 W/m·K)
         title: High Thermal Conductor
         aliases:
-          - thermal conductor
+        - thermal conductor
       MODERATE_THERMAL_CONDUCTOR:
         description: Moderate thermal conductivity (1-100 W/m·K)
         title: Moderate Thermal Conductor
@@ -91,8 +105,7 @@ enums:
         description: Low thermal conductivity (<1 W/m·K)
         title: Thermal Insulator
         aliases:
-          - thermal barrier
-          
+        - thermal barrier
   MechanicalBehaviorEnum:
     description: Mechanical behavior of materials under stress
     permissible_values:

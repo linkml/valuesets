@@ -1,30 +1,42 @@
-id: https://w3id.org/common-value-sets/computing/maturity_levels
 name: maturity_levels
 title: Software and Technology Maturity Levels
-description: >-
-  Value sets for assessing maturity levels of software, technology, and standards
-  across different frameworks and domains.
-
-license: MIT
-see_also:
-  - https://en.wikipedia.org/wiki/Technology_readiness_level
-  - https://en.wikipedia.org/wiki/Capability_Maturity_Model
-
+description: Value sets for assessing maturity levels of software, technology, and standards across different frameworks and
+  domains.
+id: https://w3id.org/common-value-sets/computing/maturity_levels
+imports:
+- linkml:types
 prefixes:
   linkml: https://w3id.org/linkml/
-
-default_prefix: maturity_levels
-default_range: string
-
-imports:
-  - linkml:types
-
+  valuesets: https://w3id.org/valuesets/
+default_prefix: valuesets
+slots:
+  technology_readiness_level:
+    description: NASA's Technology Readiness Level scale for assessing the maturity of technologies from basic research through
+      operational deployment
+    range: TechnologyReadinessLevel
+  software_maturity_level:
+    description: General software maturity assessment levels
+    range: SoftwareMaturityLevel
+  capability_maturity_level:
+    description: CMMI levels for assessing organizational process maturity in software development
+    range: CapabilityMaturityLevel
+  standards_maturity_level:
+    description: Maturity levels for standards and specifications
+    range: StandardsMaturityLevel
+  project_maturity_level:
+    description: General project development maturity assessment
+    range: ProjectMaturityLevel
+  data_maturity_level:
+    description: Levels of data quality, governance, and organizational maturity
+    range: DataMaturityLevel
+  open_source_maturity_level:
+    description: Maturity assessment for open source projects
+    range: OpenSourceMaturityLevel
 enums:
   TechnologyReadinessLevel:
     title: Technology Readiness Level (TRL)
-    description: >-
-      NASA's Technology Readiness Level scale for assessing the maturity of
-      technologies from basic research through operational deployment
+    description: NASA's Technology Readiness Level scale for assessing the maturity of technologies from basic research through
+      operational deployment
     source: https://www.nasa.gov/directorates/heo/scan/engineering/technology/technology_readiness_level
     conforms_to: ISO-16290:2013
     permissible_values:
@@ -55,7 +67,6 @@ enums:
       TRL_9:
         description: Actual system proven through successful mission operations
         title: TRL 9 - Mission Proven
-
   SoftwareMaturityLevel:
     title: Software Maturity Level
     description: General software maturity assessment levels
@@ -84,13 +95,11 @@ enums:
       OBSOLETE:
         description: No longer supported or maintained
         title: Obsolete
-
   CapabilityMaturityLevel:
     title: Capability Maturity Model Integration (CMMI) Level
-    description: >-
-      CMMI levels for assessing organizational process maturity in software development
+    description: CMMI levels for assessing organizational process maturity in software development
     source: https://cmmiinstitute.com/
-    conforms_to: "CMMI Version 2.0"
+    conforms_to: CMMI Version 2.0
     permissible_values:
       LEVEL_1:
         description: Initial - Processes are unpredictable, poorly controlled, and reactive
@@ -107,7 +116,6 @@ enums:
       LEVEL_5:
         description: Optimizing - Focus on continuous process improvement
         title: Level 5 - Optimizing
-
   StandardsMaturityLevel:
     title: Standards Development Maturity Level
     description: Maturity levels for standards and specifications
@@ -139,7 +147,6 @@ enums:
       WITHDRAWN:
         description: No longer valid or recommended
         title: Withdrawn
-
   ProjectMaturityLevel:
     title: Project Maturity Level
     description: General project development maturity assessment
@@ -168,7 +175,6 @@ enums:
       END_OF_LIFE:
         description: Project reaching end of lifecycle
         title: End of Life
-
   DataMaturityLevel:
     title: Data Maturity Level
     description: Levels of data quality, governance, and organizational maturity
@@ -194,7 +200,6 @@ enums:
       ARCHIVED:
         description: Long-term preservation with access controls
         title: Archived Data
-
   OpenSourceMaturityLevel:
     title: Open Source Project Maturity
     description: Maturity assessment for open source projects
@@ -217,3 +222,8 @@ enums:
       ARCHIVED:
         description: No longer actively maintained
         title: Archived
+license: MIT
+see_also:
+- https://en.wikipedia.org/wiki/Technology_readiness_level
+- https://en.wikipedia.org/wiki/Capability_Maturity_Model
+default_range: string

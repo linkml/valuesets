@@ -1,0 +1,1828 @@
+name: generated_slots
+title: Auto-generated Slots for Value Sets
+description: Automatically generated slot definitions for all enums in the value sets collection.
+id: https://w3id.org/valuesets/generated-slots
+version: 1.0.0
+status: release
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  # cval: https://w3id.org/linkml-common/
+  valuesets: https://w3id.org/valuesets/
+default_prefix: valuesets
+default_curi_maps:
+- semweb_context
+slots:
+  education_level:
+    description: Highest level of education completed, following NIH demographics standards
+    range: EducationLevelEnum
+    comments:
+    - 'Defined in module: nih_demographics'
+  marital_status:
+    description: Marital or civil status of a person
+    range: MaritalStatusEnum
+    comments:
+    - 'Defined in module: person_status'
+  employment_status:
+    description: Employment status of a person
+    range: EmploymentStatusEnum
+    comments:
+    - 'Defined in module: person_status'
+  housing_status:
+    description: Housing status of patients per UDS Plus HRSA standards
+    range: HousingStatus
+    comments:
+    - 'Defined in module: valuesets-demographics'
+  gender_identity:
+    description: Current gender identity, which may differ from sex assigned at birth
+    range: GenderIdentityEnum
+    comments:
+    - 'Defined in module: nih_demographics'
+  omb_race_category:
+    description: Office of Management and Budget (OMB) race category codes
+    range: OmbRaceCategory
+    comments:
+    - 'Defined in module: valuesets-demographics'
+  omb_ethnicity_category:
+    description: Office of Management and Budget (OMB) ethnicity category codes
+    range: OmbEthnicityCategory
+    comments:
+    - 'Defined in module: valuesets-demographics'
+  biotic_interaction:
+    description: Types of biotic interactions between organisms, based on RO:0002437 (biotically interacts with)
+    range: BioticInteractionType
+    comments:
+    - 'Defined in module: ecological_interactions'
+  prediction_outcome:
+    description: The prediction outcome classification
+    range: PredictionOutcomeType
+    comments:
+    - 'Defined in module: valuesets-statistics'
+  vital_status:
+    description: The vital status of a person or organism
+    range: VitalStatusEnum
+    comments:
+    - 'Defined in module: valuesets-health'
+  healthcare_encounter_classification:
+    description: The healthcare encounter classification classification
+    range: HealthcareEncounterClassification
+    comments:
+    - 'Defined in module: valuesets-healthcare'
+  confidence_level:
+    description: Confidence levels for predictions and classifications
+    range: ConfidenceLevelEnum
+    comments:
+    - 'Defined in module: priority_severity'
+  cio_confidence_level:
+    description: Confidence levels from the Confidence Information Ontology (CIO), representing different levels of trust
+      in evidence
+    range: CIOConfidenceLevel
+    comments:
+    - 'Defined in module: confidence_levels'
+  obcs_certainty_level:
+    description: Certainty levels from the Ontology of Biological and Clinical Statistics (OBCS)
+    range: OBCSCertaintyLevel
+    comments:
+    - 'Defined in module: confidence_levels'
+  ipcc_likelihood_scale:
+    description: IPCC (Intergovernmental Panel on Climate Change) standardized likelihood scale used to communicate the assessed
+      probability of an outcome or result
+    range: IPCCLikelihoodScale
+    comments:
+    - 'Defined in module: confidence_levels'
+  ipcc_confidence_level:
+    description: IPCC confidence qualifiers used to express the degree of confidence in a finding based on the type, amount,
+      quality, and consistency of evidence and the degree of agreement
+    range: IPCCConfidenceLevel
+    comments:
+    - 'Defined in module: confidence_levels'
+  ncit_five_point_confidence_scale:
+    description: NCIT 5-point subjective confidence scale ranging from "Not at all confident" (1) to "Very confident" (5)
+    range: NCITFivePointConfidenceScale
+    comments:
+    - 'Defined in module: confidence_levels'
+  contributor:
+    description: The type of contributor being represented
+    range: ContributorType
+    comments:
+    - 'Defined in module: contributor'
+  case_or_control:
+    description: The case or control classification
+    range: CaseOrControlEnum
+    comments:
+    - 'Defined in module: valuesets-investigation'
+  study_design:
+    description: The study design classification
+    range: StudyDesignEnum
+    comments:
+    - 'Defined in module: valuesets-investigation'
+  investigative_protocol:
+    description: The investigative protocol classification
+    range: InvestigativeProtocolEnum
+    comments:
+    - 'Defined in module: valuesets-investigation'
+  sample_processing:
+    description: The sample processing classification
+    range: SampleProcessingEnum
+    comments:
+    - 'Defined in module: valuesets-investigation'
+  relative_time:
+    description: The relative time classification
+    range: RelativeTimeEnum
+    comments:
+    - 'Defined in module: comet-core'
+  presence:
+    description: The presence classification
+    range: PresenceEnum
+    comments:
+    - 'Defined in module: comet-core'
+  mineralogy_feedstock:
+    description: Types of mineral feedstock sources for extraction and processing operations, including primary and secondary
+      sources
+    range: MineralogyFeedstockClass
+    comments:
+    - 'Defined in module: mining_processing'
+  beneficiation_pathway:
+    description: Methods for mineral separation and concentration aligned with advanced ore processing initiatives (AOI-2)
+    range: BeneficiationPathway
+    comments:
+    - 'Defined in module: mining_processing'
+  in_situ_chemistry_regime:
+    description: Chemical leaching systems for in-situ extraction with associated parameters including pH, Eh, temperature,
+      and ionic strength
+    range: InSituChemistryRegime
+    comments:
+    - 'Defined in module: mining_processing'
+  extractable_target_element:
+    description: Target elements for extraction, particularly rare earth elements (REE) and critical minerals
+    range: ExtractableTargetElement
+    multivalued: true
+    comments:
+    - Multiple extractable target elements may apply
+    - 'Defined in module: mining_processing'
+  sensor_while_drilling_feature:
+    description: Measurement while drilling (MWD) and logging while drilling (LWD) features for orebody ML and geosteering
+      applications
+    range: SensorWhileDrillingFeature
+    multivalued: true
+    comments:
+    - Multiple sensor while drilling features may apply
+    - 'Defined in module: mining_processing'
+  process_performance_metric:
+    description: Key performance indicators for mining and processing operations tied to SMART milestones and sustainability
+      goals
+    range: ProcessPerformanceMetric
+    multivalued: true
+    comments:
+    - Multiple process performance metrics may apply
+    - 'Defined in module: mining_processing'
+  bioleach_organism:
+    description: Microorganisms used in bioleaching and biomining operations, including engineered strains
+    range: BioleachOrganism
+    comments:
+    - 'Defined in module: mining_processing'
+  bioleach_mode:
+    description: Mechanisms of bioleaching including indirect and direct bacterial action
+    range: BioleachMode
+    comments:
+    - 'Defined in module: mining_processing'
+  autonomy_level:
+    description: Levels of autonomy for mining systems including drilling, hauling, and sorting robots (relevant for Topic
+      1 initiatives)
+    range: AutonomyLevel
+    comments:
+    - 'Defined in module: mining_processing'
+  regulatory_constraint:
+    description: Regulatory and community constraints affecting mining operations, particularly for in-situ extraction and
+      community engagement
+    range: RegulatoryConstraint
+    multivalued: true
+    comments:
+    - Multiple regulatory constraints may apply
+    - 'Defined in module: mining_processing'
+  outcome_type:
+    description: Types of prediction outcomes for classification tasks
+    range: OutcomeTypeEnum
+    comments:
+    - 'Defined in module: prediction_outcomes'
+  process_scale:
+    description: Scale of bioprocessing operations from lab bench to commercial production
+    range: ProcessScaleEnum
+    comments:
+    - 'Defined in module: scale_up'
+  bioreactor_type:
+    description: Types of bioreactors used in fermentation and cell culture
+    range: BioreactorTypeEnum
+    comments:
+    - 'Defined in module: scale_up'
+  fermentation_mode:
+    description: Modes of fermentation operation
+    range: FermentationModeEnum
+    comments:
+    - 'Defined in module: scale_up'
+  oxygenation_strategy:
+    description: Oxygen supply strategies for fermentation
+    range: OxygenationStrategyEnum
+    comments:
+    - 'Defined in module: scale_up'
+  agitation_type:
+    description: Types of agitation/mixing in bioreactors
+    range: AgitationTypeEnum
+    comments:
+    - 'Defined in module: scale_up'
+  downstream_process:
+    description: Downstream processing unit operations
+    range: DownstreamProcessEnum
+    comments:
+    - 'Defined in module: scale_up'
+  feedstock_type:
+    description: Types of feedstocks for bioprocessing
+    range: FeedstockTypeEnum
+    comments:
+    - 'Defined in module: scale_up'
+  product_type:
+    description: Types of products from bioprocessing
+    range: ProductTypeEnum
+    comments:
+    - 'Defined in module: scale_up'
+  sterilization_method:
+    description: Methods for sterilization in bioprocessing
+    range: SterilizationMethodEnum
+    comments:
+    - 'Defined in module: scale_up'
+  human_developmental_stage:
+    description: The human developmental stage classification
+    range: HumanDevelopmentalStage
+    comments:
+    - 'Defined in module: developmental_stages'
+  mouse_developmental_stage:
+    description: The mouse developmental stage classification
+    range: MouseDevelopmentalStage
+    comments:
+    - 'Defined in module: developmental_stages'
+  genome_feature:
+    description: Genome feature types from SOFA (Sequence Ontology Feature Annotation)
+    range: GenomeFeatureType
+    multivalued: true
+    comments:
+    - Multiple genome features may apply
+    - 'Defined in module: genome_features'
+  sample:
+    description: Types of biological samples used in structural biology
+    range: SampleType
+    comments:
+    - 'Defined in module: structural_biology'
+  structural_biology_technique:
+    description: Structural biology experimental techniques
+    range: StructuralBiologyTechnique
+    comments:
+    - 'Defined in module: structural_biology'
+  cryo_em_preparation:
+    description: Types of cryo-EM sample preparation
+    range: CryoEMPreparationType
+    comments:
+    - 'Defined in module: structural_biology'
+  cryo_em_grid:
+    description: Types of electron microscopy grids
+    range: CryoEMGridType
+    comments:
+    - 'Defined in module: structural_biology'
+  vitrification_method:
+    description: Methods for sample vitrification
+    range: VitrificationMethod
+    comments:
+    - 'Defined in module: structural_biology'
+  crystallization_method:
+    description: Methods for protein crystallization
+    range: CrystallizationMethod
+    comments:
+    - 'Defined in module: structural_biology'
+  x_ray_source:
+    description: Types of X-ray sources
+    range: XRaySource
+    comments:
+    - 'Defined in module: structural_biology'
+  detector:
+    description: Types of detectors for structural biology
+    range: Detector
+    comments:
+    - 'Defined in module: structural_biology'
+  workflow:
+    description: Types of computational processing workflows
+    range: WorkflowType
+    comments:
+    - 'Defined in module: structural_biology'
+  file_format:
+    description: File formats used in structural biology
+    range: FileFormat
+    comments:
+    - 'Defined in module: structural_biology'
+  data:
+    description: Types of structural biology data
+    range: DataType
+    comments:
+    - 'Defined in module: structural_biology'
+  processing_status:
+    description: Status of data processing workflows
+    range: ProcessingStatus
+    comments:
+    - 'Defined in module: structural_biology'
+  go_evidence:
+    description: Gene Ontology evidence codes mapped to Evidence and Conclusion Ontology (ECO) terms
+    range: GOEvidenceCode
+    comments:
+    - 'Defined in module: go_evidence'
+  go_electronic_methods:
+    description: Electronic annotation methods used in Gene Ontology, identified by GO_REF codes
+    range: GOElectronicMethods
+    comments:
+    - 'Defined in module: go_evidence'
+  metazoan_anatomical_structure:
+    description: Any anatomical structure found in metazoan organisms, including organs, tissues, and body parts
+    range: MetazoanAnatomicalStructure
+    comments:
+    - 'Defined in module: bio_entities'
+  human_anatomical_structure:
+    description: Anatomical structures specific to humans (Homo sapiens)
+    range: HumanAnatomicalStructure
+    comments:
+    - 'Defined in module: bio_entities'
+  plant_anatomical_structure:
+    description: Any anatomical structure found in plant organisms
+    range: PlantAnatomicalStructure
+    comments:
+    - 'Defined in module: bio_entities'
+  cell:
+    description: Any cell type from the Cell Ontology (CL), including native and experimentally modified cells
+    range: CellType
+    comments:
+    - 'Defined in module: bio_entities'
+  neuron:
+    description: Neuron cell types from the Cell Ontology
+    range: NeuronType
+    comments:
+    - 'Defined in module: bio_entities'
+  immune_cell:
+    description: Immune system cell types (leukocytes and their subtypes)
+    range: ImmuneCell
+    comments:
+    - 'Defined in module: bio_entities'
+  stem_cell:
+    description: Stem cell types and progenitor cells
+    range: StemCell
+    comments:
+    - 'Defined in module: bio_entities'
+  disease:
+    description: Human diseases from the Mondo Disease Ontology
+    range: Disease
+    comments:
+    - 'Defined in module: bio_entities'
+  infectious_disease:
+    description: Infectious diseases caused by pathogenic organisms
+    range: InfectiousDisease
+    comments:
+    - 'Defined in module: bio_entities'
+  cancer:
+    description: Neoplastic and cancerous diseases
+    range: Cancer
+    comments:
+    - 'Defined in module: bio_entities'
+  genetic_disease:
+    description: Hereditary and genetic diseases
+    range: GeneticDisease
+    comments:
+    - 'Defined in module: bio_entities'
+  chemical_entity:
+    description: Any chemical entity from ChEBI ontology
+    range: ChemicalEntity
+    comments:
+    - 'Defined in module: bio_entities'
+  drug:
+    description: Pharmaceutical drugs and medications
+    range: Drug
+    comments:
+    - 'Defined in module: bio_entities'
+  metabolite:
+    description: Metabolites and metabolic intermediates
+    range: Metabolite
+    comments:
+    - 'Defined in module: bio_entities'
+  protein:
+    description: Proteins and protein complexes
+    range: Protein
+    comments:
+    - 'Defined in module: bio_entities'
+  phenotype:
+    description: Phenotypic abnormalities from Human Phenotype Ontology
+    range: Phenotype
+    comments:
+    - 'Defined in module: bio_entities'
+  clinical_finding:
+    description: Clinical findings and observations
+    range: ClinicalFinding
+    comments:
+    - 'Defined in module: bio_entities'
+  biological_process:
+    description: Biological processes from Gene Ontology
+    range: BiologicalProcess
+    comments:
+    - 'Defined in module: bio_entities'
+  metabolic_process:
+    description: Metabolic processes and pathways
+    range: MetabolicProcess
+    comments:
+    - 'Defined in module: bio_entities'
+  molecular_function:
+    description: Molecular functions from Gene Ontology
+    range: MolecularFunction
+    comments:
+    - 'Defined in module: bio_entities'
+  cellular_component:
+    description: Cellular components and locations from Gene Ontology
+    range: CellularComponent
+    comments:
+    - 'Defined in module: bio_entities'
+  sequence_feature:
+    description: Sequence features from the Sequence Ontology
+    range: SequenceFeature
+    comments:
+    - 'Defined in module: bio_entities'
+  gene_feature:
+    description: Gene-related sequence features
+    range: GeneFeature
+    comments:
+    - 'Defined in module: bio_entities'
+  environment:
+    description: Environmental systems and biomes
+    range: Environment
+    comments:
+    - 'Defined in module: bio_entities'
+  environmental_material:
+    description: Environmental materials and substances
+    range: EnvironmentalMaterial
+    comments:
+    - 'Defined in module: bio_entities'
+  quality:
+    description: Phenotypic qualities and attributes from PATO
+    range: Quality
+    comments:
+    - 'Defined in module: bio_entities'
+  physical_quality:
+    description: Physical qualities like size, shape, color
+    range: PhysicalQuality
+    comments:
+    - 'Defined in module: bio_entities'
+  rel_to_oxygen:
+    description: Organism's relationship to oxygen for growth and survival
+    range: RelToOxygenEnum
+    comments:
+    - 'Defined in module: relationship_to_oxygen'
+  organism_taxon:
+    description: The organism taxon classification
+    range: OrganismTaxonEnum
+    comments:
+    - 'Defined in module: taxonomy'
+  common_organism_taxa:
+    description: Common model organisms used in biological research, mapped to NCBI Taxonomy IDs
+    range: CommonOrganismTaxaEnum
+    comments:
+    - 'Defined in module: taxonomy'
+  taxonomic_rank:
+    description: Standard taxonomic ranks used in biological classification
+    range: TaxonomicRank
+    comments:
+    - 'Defined in module: taxonomy'
+  biological_kingdom:
+    description: Major kingdoms/domains of life
+    range: BiologicalKingdom
+    comments:
+    - 'Defined in module: taxonomy'
+  interaction_detection_method:
+    description: Methods used to detect molecular interactions
+    range: InteractionDetectionMethod
+    comments:
+    - 'Defined in module: psi_mi'
+  interaction:
+    description: Types of molecular interactions
+    range: InteractionType
+    comments:
+    - 'Defined in module: psi_mi'
+  experimental_role:
+    description: Role played by a participant in the experiment
+    range: ExperimentalRole
+    comments:
+    - 'Defined in module: psi_mi'
+  biological_role:
+    description: Physiological role of an interactor
+    range: BiologicalRole
+    comments:
+    - 'Defined in module: psi_mi'
+  participant_identification_method:
+    description: Methods to identify interaction participants
+    range: ParticipantIdentificationMethod
+    comments:
+    - 'Defined in module: psi_mi'
+  feature:
+    description: Molecular features affecting interactions
+    range: FeatureType
+    multivalued: true
+    comments:
+    - Multiple features may apply
+    - 'Defined in module: psi_mi'
+  interactor:
+    description: Types of molecular species in interactions
+    range: InteractorType
+    comments:
+    - 'Defined in module: psi_mi'
+  confidence_score:
+    description: Types of confidence scoring methods
+    range: ConfidenceScore
+    comments:
+    - 'Defined in module: psi_mi'
+  experimental_preparation:
+    description: Sample preparation methods
+    range: ExperimentalPreparation
+    comments:
+    - 'Defined in module: psi_mi'
+  plant_sex:
+    description: Plant reproductive and sexual system types
+    range: PlantSexEnum
+    comments:
+    - 'Defined in module: plant_sex'
+  cell_cycle_phase:
+    description: Major phases of the eukaryotic cell cycle
+    range: CellCyclePhase
+    comments:
+    - 'Defined in module: cell_cycle'
+  mitotic_phase:
+    description: Stages of mitosis (M phase)
+    range: MitoticPhase
+    comments:
+    - 'Defined in module: cell_cycle'
+  cell_cycle_checkpoint:
+    description: Cell cycle checkpoints that regulate progression
+    range: CellCycleCheckpoint
+    comments:
+    - 'Defined in module: cell_cycle'
+  meiotic_phase:
+    description: Phases specific to meiotic cell division
+    range: MeioticPhase
+    comments:
+    - 'Defined in module: cell_cycle'
+  cell_cycle_regulator:
+    description: Types of cell cycle regulatory molecules
+    range: CellCycleRegulator
+    comments:
+    - 'Defined in module: cell_cycle'
+  cell_proliferation_state:
+    description: Cell proliferation and growth states
+    range: CellProliferationState
+    comments:
+    - 'Defined in module: cell_cycle'
+  dna_damage_response:
+    description: DNA damage response pathways during cell cycle
+    range: DNADamageResponse
+    comments:
+    - 'Defined in module: cell_cycle'
+  dna_base:
+    description: Standard DNA nucleotide bases (canonical)
+    range: DNABaseEnum
+    comments:
+    - 'Defined in module: sequence_alphabets'
+  rna_base:
+    description: Standard RNA nucleotide bases (canonical)
+    range: RNABaseEnum
+    comments:
+    - 'Defined in module: sequence_alphabets'
+  iupac_nucleotide:
+    description: Complete IUPAC nucleotide codes including ambiguous bases for DNA/RNA sequences
+    range: IUPACNucleotideCode
+    comments:
+    - 'Defined in module: sequence_chemistry'
+  standard_amino_acid:
+    description: The 20 standard proteinogenic amino acids with IUPAC single-letter codes
+    range: StandardAminoAcid
+    comments:
+    - 'Defined in module: sequence_chemistry'
+  iupac_amino_acid:
+    description: Complete IUPAC amino acid codes including standard amino acids, rare amino acids, and ambiguity codes
+    range: IUPACAminoAcidCode
+    comments:
+    - 'Defined in module: sequence_chemistry'
+  sequence_alphabet:
+    description: Types of sequence alphabets used in bioinformatics
+    range: SequenceAlphabet
+    comments:
+    - 'Defined in module: sequence_chemistry'
+  sequence_quality_encoding:
+    description: Quality score encoding standards used in FASTQ files and sequencing data
+    range: SequenceQualityEncoding
+    comments:
+    - 'Defined in module: sequence_chemistry'
+  genetic_code_table:
+    description: NCBI genetic code translation tables for different organisms
+    range: GeneticCodeTable
+    comments:
+    - 'Defined in module: sequence_chemistry'
+  sequence_strand:
+    description: Strand orientation for nucleic acid sequences
+    range: SequenceStrand
+    comments:
+    - 'Defined in module: sequence_chemistry'
+  sequence_topology:
+    description: Topological structure of nucleic acid molecules
+    range: SequenceTopology
+    comments:
+    - 'Defined in module: sequence_chemistry'
+  sequence_modality:
+    description: Types of sequence data based on experimental method
+    range: SequenceModality
+    comments:
+    - 'Defined in module: sequence_chemistry'
+  eye_color:
+    description: Human eye color phenotypes
+    range: EyeColorEnum
+    comments:
+    - 'Defined in module: biological_colors'
+  hair_color:
+    description: Human hair color phenotypes
+    range: HairColorEnum
+    comments:
+    - 'Defined in module: biological_colors'
+  flower_color:
+    description: Common flower colors
+    range: FlowerColorEnum
+    comments:
+    - 'Defined in module: biological_colors'
+  animal_coat_color:
+    description: Animal coat/fur colors
+    range: AnimalCoatColorEnum
+    comments:
+    - 'Defined in module: biological_colors'
+  skin_tone:
+    description: Human skin tone classifications (Fitzpatrick scale based)
+    range: SkinToneEnum
+    comments:
+    - 'Defined in module: biological_colors'
+  plant_leaf_color:
+    description: Plant leaf colors (including seasonal changes)
+    range: PlantLeafColorEnum
+    comments:
+    - 'Defined in module: biological_colors'
+  plant_developmental_stage:
+    description: Major developmental stages in the plant life cycle, from seed germination through senescence
+    range: PlantDevelopmentalStage
+    comments:
+    - 'Defined in module: plant_developmental_stages'
+  cds_phase:
+    description: For features of type CDS (coding sequence), the phase indicates where the feature begins with reference to
+      the reading frame
+    range: CdsPhaseType
+    comments:
+    - 'Defined in module: genomics'
+  contig_collection:
+    description: The type of the contig set; the type of the 'omics data set
+    range: ContigCollectionType
+    comments:
+    - 'Defined in module: genomics'
+  strand:
+    description: The strand that a feature appears on relative to a landmark
+    range: StrandType
+    comments:
+    - 'Defined in module: genomics'
+  sequence:
+    description: The type of sequence being represented
+    range: SequenceType
+    comments:
+    - 'Defined in module: genomics'
+  viral_genome_type:
+    description: Types of viral genomes based on Baltimore classification
+    range: ViralGenomeTypeEnum
+    comments:
+    - 'Defined in module: viral_genome_types'
+  trophic_level:
+    description: Trophic levels are the feeding position in a food chain
+    range: TrophicLevelEnum
+    comments:
+    - 'Defined in module: trophic_levels'
+  uni_prot_species:
+    description: UniProt species mnemonic codes for reference proteomes with associated metadata
+    range: UniProtSpeciesCode
+    comments:
+    - 'Defined in module: uniprot_species'
+  currency_chemical:
+    description: Common metabolic currency molecules and cofactors that serve as energy carriers, electron donors/acceptors,
+      and group transfer agents in cellular metabolism
+    range: CurrencyChemical
+    comments:
+    - 'Defined in module: currency_chemicals'
+  lipid_category:
+    description: Major categories of lipids based on SwissLipids classification
+    range: LipidCategory
+    comments:
+    - 'Defined in module: lipid_categories'
+  plant_sexual_system:
+    description: Sexual systems in plants, describing the distribution and types of reproductive organs (flowers) within and
+      among individual plants
+    range: PlantSexualSystem
+    comments:
+    - 'Defined in module: plant_biology'
+  insdc_geographic_location:
+    description: INSDC controlled vocabulary for geographic locations of collected samples
+    range: InsdcGeographicLocationEnum
+    comments:
+    - 'Defined in module: insdc_geographic_locations'
+  peak_annotation_series_label:
+    description: Types of peak annotations in mass spectrometry data
+    range: PeakAnnotationSeriesLabel
+    comments:
+    - 'Defined in module: proteomics_standards'
+  peptide_ion_series:
+    description: Types of peptide fragment ion series in mass spectrometry
+    range: PeptideIonSeries
+    comments:
+    - 'Defined in module: proteomics_standards'
+  mass_error_unit:
+    description: Units for expressing mass error in mass spectrometry
+    range: MassErrorUnit
+    comments:
+    - 'Defined in module: proteomics_standards'
+  dna_base_extended:
+    description: Extended DNA alphabet with IUPAC ambiguity codes
+    range: DNABaseExtendedEnum
+    comments:
+    - 'Defined in module: sequence_alphabets'
+  rna_base_extended:
+    description: Extended RNA alphabet with IUPAC ambiguity codes
+    range: RNABaseExtendedEnum
+    comments:
+    - 'Defined in module: sequence_alphabets'
+  amino_acid:
+    description: Standard amino acid single letter codes
+    range: AminoAcidEnum
+    comments:
+    - 'Defined in module: sequence_alphabets'
+  amino_acid_extended:
+    description: Extended amino acid alphabet with ambiguity codes and special characters
+    range: AminoAcidExtendedEnum
+    comments:
+    - 'Defined in module: sequence_alphabets'
+  codon:
+    description: Standard genetic code codons (DNA)
+    range: CodonEnum
+    comments:
+    - 'Defined in module: sequence_alphabets'
+  nucleotide_modification:
+    description: Common nucleotide modifications
+    range: NucleotideModificationEnum
+    comments:
+    - 'Defined in module: sequence_alphabets'
+  sequence_quality:
+    description: Sequence quality indicators (Phred scores)
+    range: SequenceQualityEnum
+    comments:
+    - 'Defined in module: sequence_alphabets'
+  insdc_missing_value:
+    description: INSDC (International Nucleotide Sequence Database Collaboration) controlled vocabulary for missing values
+      in sequence records
+    range: InsdcMissingValueEnum
+    comments:
+    - 'Defined in module: insdc_missing_values'
+  protein_evidence_for_existence:
+    description: The evidence for the existence of a biological entity
+    range: ProteinEvidenceForExistence
+    comments:
+    - 'Defined in module: protein_evidence'
+  ref_seq_status:
+    description: RefSeq status codes, taken from https://www
+    range: RefSeqStatusType
+    comments:
+    - 'Defined in module: protein_evidence'
+  sequencing_platform:
+    description: Major DNA/RNA sequencing platforms and instruments used in genomics research
+    range: SequencingPlatform
+    comments:
+    - 'Defined in module: sequencing_platforms'
+  sequencing_chemistry:
+    description: Fundamental chemical methods used for DNA/RNA sequencing
+    range: SequencingChemistry
+    comments:
+    - 'Defined in module: sequencing_platforms'
+  library_preparation:
+    description: Methods for preparing sequencing libraries from nucleic acid samples
+    range: LibraryPreparation
+    comments:
+    - 'Defined in module: sequencing_platforms'
+  sequencing_application:
+    description: Primary applications or assays using DNA/RNA sequencing
+    range: SequencingApplication
+    comments:
+    - 'Defined in module: sequencing_platforms'
+  read:
+    description: Configuration of sequencing reads generated by different platforms
+    range: ReadType
+    comments:
+    - 'Defined in module: sequencing_platforms'
+  sequence_file_format:
+    description: Standard file formats used for storing sequence data
+    range: SequenceFileFormat
+    comments:
+    - 'Defined in module: sequencing_platforms'
+  data_processing_level:
+    description: Levels of processing applied to raw sequencing data
+    range: DataProcessingLevel
+    comments:
+    - 'Defined in module: sequencing_platforms'
+  energy_source:
+    description: Types of energy sources and generation methods
+    range: EnergySource
+    comments:
+    - 'Defined in module: energy'
+  energy_unit:
+    description: Units for measuring energy
+    range: EnergyUnit
+    comments:
+    - 'Defined in module: energy'
+  power_unit:
+    description: Units for measuring power (energy per time)
+    range: PowerUnit
+    comments:
+    - 'Defined in module: energy'
+  energy_efficiency_rating:
+    description: Energy efficiency ratings and standards
+    range: EnergyEfficiencyRating
+    comments:
+    - 'Defined in module: energy'
+  building_energy_standard:
+    description: Building energy efficiency standards and certifications
+    range: BuildingEnergyStandard
+    comments:
+    - 'Defined in module: energy'
+  grid:
+    description: Types of electrical grid systems
+    range: GridType
+    comments:
+    - 'Defined in module: energy'
+  energy_storage:
+    description: Types of energy storage systems
+    range: EnergyStorageType
+    comments:
+    - 'Defined in module: energy'
+  emission_scope:
+    description: Greenhouse gas emission scopes (GHG Protocol)
+    range: EmissionScope
+    comments:
+    - 'Defined in module: energy'
+  carbon_intensity:
+    description: Carbon intensity levels for energy sources
+    range: CarbonIntensity
+    comments:
+    - 'Defined in module: energy'
+  electricity_market:
+    description: Types of electricity markets and pricing
+    range: ElectricityMarket
+    comments:
+    - 'Defined in module: energy'
+  fossil_fuel_type:
+    description: Types of fossil fuels used for energy generation
+    range: FossilFuelTypeEnum
+    comments:
+    - 'Defined in module: fossil_fuels'
+  reaction_directionality:
+    description: The directionality of a chemical reaction or process
+    range: ReactionDirectionality
+    comments:
+    - 'Defined in module: reaction_directionality'
+  reaction_type:
+    description: Types of chemical reactions
+    range: ReactionTypeEnum
+    comments:
+    - 'Defined in module: reactions'
+  reaction_mechanism:
+    description: Reaction mechanism types
+    range: ReactionMechanismEnum
+    comments:
+    - 'Defined in module: reactions'
+  catalyst_type:
+    description: Types of catalysts
+    range: CatalystTypeEnum
+    comments:
+    - 'Defined in module: reactions'
+  reaction_condition:
+    description: Reaction conditions
+    range: ReactionConditionEnum
+    comments:
+    - 'Defined in module: reactions'
+  reaction_rate_order:
+    description: Reaction rate orders
+    range: ReactionRateOrderEnum
+    comments:
+    - 'Defined in module: reactions'
+  enzyme_class:
+    description: EC enzyme classification
+    range: EnzymeClassEnum
+    comments:
+    - 'Defined in module: reactions'
+  solvent_class:
+    description: Classes of solvents
+    range: SolventClassEnum
+    comments:
+    - 'Defined in module: reactions'
+  thermodynamic_parameter:
+    description: Thermodynamic parameters
+    range: ThermodynamicParameterEnum
+    comments:
+    - 'Defined in module: reactions'
+  subatomic_particle:
+    description: Fundamental and composite subatomic particles
+    range: SubatomicParticleEnum
+    comments:
+    - 'Defined in module: chemical_entities'
+  bond_type:
+    description: Types of chemical bonds
+    range: BondTypeEnum
+    comments:
+    - 'Defined in module: chemical_entities'
+  periodic_table_block:
+    description: Blocks of the periodic table
+    range: PeriodicTableBlockEnum
+    comments:
+    - 'Defined in module: chemical_entities'
+  element_family:
+    description: Chemical element families/groups
+    range: ElementFamilyEnum
+    comments:
+    - 'Defined in module: chemical_entities'
+  element_metallic_classification:
+    description: Metallic character classification
+    range: ElementMetallicClassificationEnum
+    comments:
+    - 'Defined in module: chemical_entities'
+  hard_or_soft:
+    description: HSAB (Hard Soft Acid Base) classification
+    range: HardOrSoftEnum
+    comments:
+    - 'Defined in module: chemical_entities'
+  bronsted_acid_base_role:
+    description: Brønsted-Lowry acid-base roles
+    range: BronstedAcidBaseRoleEnum
+    comments:
+    - 'Defined in module: chemical_entities'
+  lewis_acid_base_role:
+    description: Lewis acid-base roles
+    range: LewisAcidBaseRoleEnum
+    comments:
+    - 'Defined in module: chemical_entities'
+  oxidation_state:
+    description: Common oxidation states
+    range: OxidationStateEnum
+    comments:
+    - 'Defined in module: chemical_entities'
+  chirality:
+    description: Chirality/stereochemistry descriptors
+    range: ChiralityEnum
+    comments:
+    - 'Defined in module: chemical_entities'
+  nanostructure_morphology:
+    description: Types of nanostructure morphologies
+    range: NanostructureMorphologyEnum
+    comments:
+    - 'Defined in module: chemical_entities'
+  sentiment_classification:
+    description: Standard labels for sentiment analysis classification tasks
+    range: SentimentClassificationEnum
+    comments:
+    - 'Defined in module: sentiment_analysis'
+  fine_sentiment_classification:
+    description: Fine-grained sentiment analysis labels with intensity levels
+    range: FineSentimentClassificationEnum
+    comments:
+    - 'Defined in module: sentiment_analysis'
+  basic_emotion:
+    description: Ekman's six basic emotions commonly used in emotion recognition
+    range: BasicEmotionEnum
+    comments:
+    - 'Defined in module: emotion_classification'
+  extended_emotion:
+    description: Extended emotion set including complex emotions
+    range: ExtendedEmotionEnum
+    comments:
+    - 'Defined in module: emotion_classification'
+  news_topic_category:
+    description: Common news article topic categories
+    range: NewsTopicCategoryEnum
+    comments:
+    - 'Defined in module: text_classification'
+  toxicity_classification:
+    description: Text toxicity classification labels
+    range: ToxicityClassificationEnum
+    comments:
+    - 'Defined in module: text_classification'
+  intent_classification:
+    description: Common chatbot/NLU intent categories
+    range: IntentClassificationEnum
+    comments:
+    - 'Defined in module: text_classification'
+  quality_control:
+    description: Quality control classification labels
+    range: QualityControlEnum
+    comments:
+    - 'Defined in module: quality_control'
+  defect_classification:
+    description: Manufacturing defect classification
+    range: DefectClassificationEnum
+    comments:
+    - 'Defined in module: quality_control'
+  priority_level:
+    description: Standard priority levels for task/issue classification
+    range: PriorityLevelEnum
+    comments:
+    - 'Defined in module: priority_severity'
+  severity_level:
+    description: Severity levels for incident/bug classification
+    range: SeverityLevelEnum
+    comments:
+    - 'Defined in module: priority_severity'
+  binary_classification:
+    description: Generic binary classification labels
+    range: BinaryClassificationEnum
+    comments:
+    - 'Defined in module: binary_classification'
+  spam_classification:
+    description: Standard labels for spam/ham email classification
+    range: SpamClassificationEnum
+    comments:
+    - 'Defined in module: binary_classification'
+  anomaly_detection:
+    description: Labels for anomaly detection tasks
+    range: AnomalyDetectionEnum
+    comments:
+    - 'Defined in module: binary_classification'
+  churn_classification:
+    description: Customer churn prediction labels
+    range: ChurnClassificationEnum
+    comments:
+    - 'Defined in module: binary_classification'
+  fraud_detection:
+    description: Fraud detection classification labels
+    range: FraudDetectionEnum
+    comments:
+    - 'Defined in module: binary_classification'
+  air_pollutant:
+    description: Common air pollutants and air quality indicators
+    range: AirPollutantEnum
+    comments:
+    - 'Defined in module: valuesets-environmental-health-exposures'
+  pesticide_type:
+    description: Categories of pesticides by target organism or chemical class
+    range: PesticideTypeEnum
+    comments:
+    - 'Defined in module: valuesets-environmental-health-exposures'
+  heavy_metal:
+    description: Heavy metals of environmental health concern
+    range: HeavyMetalEnum
+    comments:
+    - 'Defined in module: valuesets-environmental-health-exposures'
+  exposure_route:
+    description: Routes by which exposure to environmental agents occurs
+    range: ExposureRouteEnum
+    comments:
+    - 'Defined in module: valuesets-environmental-health-exposures'
+  exposure_source:
+    description: Common sources of environmental exposures
+    range: ExposureSourceEnum
+    comments:
+    - 'Defined in module: valuesets-environmental-health-exposures'
+  water_contaminant:
+    description: Common water contaminants
+    range: WaterContaminantEnum
+    comments:
+    - 'Defined in module: valuesets-environmental-health-exposures'
+  endocrine_disruptor:
+    description: Common endocrine disrupting chemicals
+    range: EndocrineDisruptorEnum
+    comments:
+    - 'Defined in module: valuesets-environmental-health-exposures'
+  exposure_duration:
+    description: Duration categories for environmental exposures
+    range: ExposureDurationEnum
+    comments:
+    - 'Defined in module: valuesets-environmental-health-exposures'
+  synthesis_method:
+    description: Common material synthesis and processing methods
+    range: SynthesisMethodEnum
+    comments:
+    - 'Defined in module: synthesis_methods'
+  crystal_growth_method:
+    description: Methods for growing single crystals
+    range: CrystalGrowthMethodEnum
+    comments:
+    - 'Defined in module: synthesis_methods'
+  additive_manufacturing:
+    description: 3D printing and additive manufacturing methods
+    range: AdditiveManufacturingEnum
+    comments:
+    - 'Defined in module: synthesis_methods'
+  material_class:
+    description: Major classes of materials
+    range: MaterialClassEnum
+    comments:
+    - 'Defined in module: material_types'
+  polymer_type:
+    description: Types of polymer materials
+    range: PolymerTypeEnum
+    comments:
+    - 'Defined in module: material_types'
+  metal_type:
+    description: Types of metallic materials
+    range: MetalTypeEnum
+    comments:
+    - 'Defined in module: material_types'
+  composite_type:
+    description: Types of composite materials
+    range: CompositeTypeEnum
+    comments:
+    - 'Defined in module: material_types'
+  crystal_system:
+    description: The seven crystal systems in crystallography
+    range: CrystalSystemEnum
+    comments:
+    - 'Defined in module: crystal_structures'
+  bravais_lattice:
+    description: The 14 Bravais lattices describing all possible crystal lattices
+    range: BravaisLatticeEnum
+    comments:
+    - 'Defined in module: crystal_structures'
+  microscopy_method:
+    description: Microscopy techniques for material characterization
+    range: MicroscopyMethodEnum
+    comments:
+    - 'Defined in module: characterization_methods'
+  spectroscopy_method:
+    description: Spectroscopy techniques for material analysis
+    range: SpectroscopyMethodEnum
+    comments:
+    - 'Defined in module: characterization_methods'
+  thermal_analysis_method:
+    description: Thermal analysis techniques
+    range: ThermalAnalysisMethodEnum
+    comments:
+    - 'Defined in module: characterization_methods'
+  mechanical_testing_method:
+    description: Mechanical testing methods
+    range: MechanicalTestingMethodEnum
+    comments:
+    - 'Defined in module: characterization_methods'
+  traditional_pigment:
+    description: Traditional artist pigments and their colors
+    range: TraditionalPigmentEnum
+    comments:
+    - 'Defined in module: pigments_dyes'
+  industrial_dye:
+    description: Industrial and textile dyes
+    range: IndustrialDyeEnum
+    comments:
+    - 'Defined in module: pigments_dyes'
+  food_coloring:
+    description: Food coloring and natural food dyes
+    range: FoodColoringEnum
+    comments:
+    - 'Defined in module: pigments_dyes'
+  automobile_paint_color:
+    description: Common automobile paint colors
+    range: AutomobilePaintColorEnum
+    comments:
+    - 'Defined in module: pigments_dyes'
+  electrical_conductivity:
+    description: Classification of materials by electrical conductivity
+    range: ElectricalConductivityEnum
+    comments:
+    - 'Defined in module: material_properties'
+  magnetic_property:
+    description: Classification of materials by magnetic properties
+    range: MagneticPropertyEnum
+    comments:
+    - 'Defined in module: material_properties'
+  optical_property:
+    description: Optical properties of materials
+    range: OpticalPropertyEnum
+    comments:
+    - 'Defined in module: material_properties'
+  thermal_conductivity:
+    description: Classification by thermal conductivity
+    range: ThermalConductivityEnum
+    comments:
+    - 'Defined in module: material_properties'
+  mechanical_behavior:
+    description: Mechanical behavior of materials under stress
+    range: MechanicalBehaviorEnum
+    comments:
+    - 'Defined in module: material_properties'
+  publication:
+    description: Types of academic and research publications
+    range: PublicationType
+    comments:
+    - 'Defined in module: research'
+  peer_review_status:
+    description: Status of peer review process
+    range: PeerReviewStatus
+    comments:
+    - 'Defined in module: research'
+  academic_degree:
+    description: Academic degrees and qualifications
+    range: AcademicDegree
+    comments:
+    - 'Defined in module: research'
+  license:
+    description: Common software and content licenses
+    range: LicenseType
+    comments:
+    - 'Defined in module: research'
+  research_field:
+    description: Major research fields and disciplines
+    range: ResearchField
+    comments:
+    - 'Defined in module: research'
+  funding:
+    description: Types of research funding
+    range: FundingType
+    comments:
+    - 'Defined in module: research'
+  manuscript_section:
+    description: Sections of a scientific manuscript or publication
+    range: ManuscriptSection
+    comments:
+    - 'Defined in module: research'
+  research_role:
+    description: Roles in research and authorship
+    range: ResearchRole
+    comments:
+    - 'Defined in module: research'
+  open_access:
+    description: Types of open access publishing
+    range: OpenAccessType
+    comments:
+    - 'Defined in module: research'
+  citation_style:
+    description: Common citation and reference styles
+    range: CitationStyle
+    comments:
+    - 'Defined in module: research'
+  day_of_week:
+    description: Days of the week following ISO 8601 standard (Monday = 1)
+    range: DayOfWeek
+    comments:
+    - 'Defined in module: temporal'
+  month:
+    description: Months of the year
+    range: Month
+    comments:
+    - 'Defined in module: temporal'
+  quarter:
+    description: Calendar quarters
+    range: Quarter
+    comments:
+    - 'Defined in module: temporal'
+  season:
+    description: Seasons of the year (Northern Hemisphere)
+    range: Season
+    comments:
+    - 'Defined in module: temporal'
+  time_period:
+    description: Common time periods and intervals
+    range: TimePeriod
+    comments:
+    - 'Defined in module: temporal'
+  time_unit:
+    description: Units of time measurement
+    range: TimeUnitEnum
+    comments:
+    - 'Defined in module: measurements'
+  time_of_day:
+    description: Common times of day
+    range: TimeOfDay
+    comments:
+    - 'Defined in module: temporal'
+  business_time_frame:
+    description: Common business and financial time frames
+    range: BusinessTimeFrame
+    comments:
+    - 'Defined in module: temporal'
+  geological_era:
+    description: Major geological eras
+    range: GeologicalEra
+    comments:
+    - 'Defined in module: temporal'
+  historical_period:
+    description: Major historical periods
+    range: HistoricalPeriod
+    comments:
+    - 'Defined in module: temporal'
+  length_unit:
+    description: Units of length/distance measurement
+    range: LengthUnitEnum
+    comments:
+    - 'Defined in module: measurements'
+  mass_unit:
+    description: Units of mass measurement
+    range: MassUnitEnum
+    comments:
+    - 'Defined in module: measurements'
+  volume_unit:
+    description: Units of volume measurement
+    range: VolumeUnitEnum
+    comments:
+    - 'Defined in module: measurements'
+  temperature_unit:
+    description: Units of temperature measurement
+    range: TemperatureUnitEnum
+    comments:
+    - 'Defined in module: measurements'
+  pressure_unit:
+    description: Units of pressure measurement
+    range: PressureUnitEnum
+    comments:
+    - 'Defined in module: measurements'
+  concentration_unit:
+    description: Units of concentration measurement
+    range: ConcentrationUnitEnum
+    comments:
+    - 'Defined in module: measurements'
+  frequency_unit:
+    description: Units of frequency measurement
+    range: FrequencyUnitEnum
+    comments:
+    - 'Defined in module: measurements'
+  angle_unit:
+    description: Units of angle measurement
+    range: AngleUnitEnum
+    comments:
+    - 'Defined in module: measurements'
+  data_size_unit:
+    description: Units of digital data size
+    range: DataSizeUnitEnum
+    comments:
+    - 'Defined in module: measurements'
+  person_status:
+    description: Vital status of a person (living or deceased)
+    range: PersonStatusEnum
+    comments:
+    - 'Defined in module: person_status'
+  basic_color:
+    description: Basic color names commonly used in everyday language
+    range: BasicColorEnum
+    comments:
+    - 'Defined in module: colors'
+  web_color:
+    description: Standard HTML/CSS named colors (147 colors)
+    range: WebColorEnum
+    comments:
+    - 'Defined in module: colors'
+  x11_color:
+    description: X11/Unix system colors (extended set)
+    range: X11ColorEnum
+    comments:
+    - 'Defined in module: colors'
+  color_space:
+    description: Color space and model types
+    range: ColorSpaceEnum
+    comments:
+    - 'Defined in module: colors'
+  blood_type:
+    description: ABO and Rh blood group classifications
+    range: BloodTypeEnum
+    comments:
+    - 'Defined in module: clinical'
+  anatomical_system:
+    description: Major anatomical systems of the body
+    range: AnatomicalSystemEnum
+    comments:
+    - 'Defined in module: clinical'
+  medical_specialty:
+    description: The medical specialty classification
+    range: MedicalSpecialtyEnum
+    comments:
+    - 'Defined in module: clinical'
+  drug_route:
+    description: The drug route classification
+    range: DrugRouteEnum
+    comments:
+    - 'Defined in module: clinical'
+  vital_sign:
+    description: The vital sign classification
+    range: VitalSignEnum
+    comments:
+    - 'Defined in module: clinical'
+  diagnostic_test_type:
+    description: The diagnostic test type classification
+    range: DiagnosticTestTypeEnum
+    comments:
+    - 'Defined in module: clinical'
+  symptom_severity:
+    description: The symptom severity classification
+    range: SymptomSeverityEnum
+    comments:
+    - 'Defined in module: clinical'
+  allergy_type:
+    description: The allergy type classification
+    range: AllergyTypeEnum
+    comments:
+    - 'Defined in module: clinical'
+  vaccine_type:
+    description: The vaccine type classification
+    range: VaccineTypeEnum
+    comments:
+    - 'Defined in module: clinical'
+  bmi_classification:
+    description: The bmi classification classification
+    range: BMIClassificationEnum
+    comments:
+    - 'Defined in module: clinical'
+  mining:
+    description: Types of mining operations
+    range: MiningType
+    comments:
+    - 'Defined in module: mining'
+  mineral_category:
+    description: Categories of minerals and materials
+    range: MineralCategory
+    comments:
+    - 'Defined in module: mining'
+  critical_mineral:
+    description: Critical minerals essential for economic and national security, particularly for clean energy, defense, and
+      technology applications
+    range: CriticalMineral
+    comments:
+    - 'Defined in module: mining'
+  common_mineral:
+    description: Common minerals extracted through mining
+    range: CommonMineral
+    comments:
+    - 'Defined in module: mining'
+  mining_equipment:
+    description: Types of mining equipment
+    range: MiningEquipment
+    comments:
+    - 'Defined in module: mining'
+  ore_grade:
+    description: Classification of ore grades
+    range: OreGrade
+    comments:
+    - 'Defined in module: mining'
+  mining_phase:
+    description: Phases of mining operations
+    range: MiningPhase
+    comments:
+    - 'Defined in module: mining'
+  mining_hazard:
+    description: Mining-related hazards and risks
+    range: MiningHazard
+    comments:
+    - 'Defined in module: mining'
+  environmental_impact:
+    description: Environmental impacts of mining
+    range: EnvironmentalImpact
+    comments:
+    - 'Defined in module: mining'
+  extractive_industry_facility_type:
+    description: Types of extractive industry facilities
+    range: ExtractiveIndustryFacilityTypeEnum
+    comments:
+    - 'Defined in module: extractive_industry'
+  extractive_industry_product_type:
+    description: Types of products extracted from extractive industry facilities
+    range: ExtractiveIndustryProductTypeEnum
+    comments:
+    - 'Defined in module: extractive_industry'
+  mining_method:
+    description: Methods used for extracting minerals from the earth
+    range: MiningMethodEnum
+    comments:
+    - 'Defined in module: extractive_industry'
+  well_type:
+    description: Types of wells used for extracting fluid resources
+    range: WellTypeEnum
+    comments:
+    - 'Defined in module: extractive_industry'
+  safety_color:
+    description: ANSI/ISO standard safety colors
+    range: SafetyColorEnum
+    comments:
+    - 'Defined in module: safety_colors'
+  traffic_light_color:
+    description: Traffic signal colors (international)
+    range: TrafficLightColorEnum
+    comments:
+    - 'Defined in module: safety_colors'
+  hazmat_color:
+    description: Hazardous materials placarding colors (DOT/UN)
+    range: HazmatColorEnum
+    comments:
+    - 'Defined in module: safety_colors'
+  fire_safety_color:
+    description: Fire safety equipment and signage colors
+    range: FireSafetyColorEnum
+    comments:
+    - 'Defined in module: safety_colors'
+  maritime_signal_color:
+    description: Maritime signal and navigation colors
+    range: MaritimeSignalColorEnum
+    comments:
+    - 'Defined in module: safety_colors'
+  aviation_light_color:
+    description: Aviation lighting colors
+    range: AviationLightColorEnum
+    comments:
+    - 'Defined in module: safety_colors'
+  electrical_wire_color:
+    description: Electrical wire color codes (US/International)
+    range: ElectricalWireColorEnum
+    comments:
+    - 'Defined in module: safety_colors'
+  karyotypic_sex:
+    description: Karyotypic sex of an individual based on chromosome composition
+    range: KaryotypicSexEnum
+    comments:
+    - 'Defined in module: phenopackets'
+  phenotypic_sex:
+    description: Phenotypic sex of an individual based on observable characteristics
+    range: PhenotypicSexEnum
+    comments:
+    - 'Defined in module: phenopackets'
+  allelic_state:
+    description: Allelic state/zygosity of a variant or genetic feature
+    range: AllelicStateEnum
+    comments:
+    - 'Defined in module: phenopackets'
+  laterality:
+    description: Laterality/sidedness of a finding or anatomical structure
+    range: LateralityEnum
+    comments:
+    - 'Defined in module: phenopackets'
+  onset_timing:
+    description: Timing of disease or phenotype onset relative to developmental stages
+    range: OnsetTimingEnum
+    comments:
+    - 'Defined in module: phenopackets'
+  acmg_pathogenicity:
+    description: ACMG/AMP variant pathogenicity classification for clinical genetics
+    range: ACMGPathogenicityEnum
+    comments:
+    - 'Defined in module: phenopackets'
+  therapeutic_actionability:
+    description: Clinical actionability of a genetic finding for treatment decisions
+    range: TherapeuticActionabilityEnum
+    comments:
+    - 'Defined in module: phenopackets'
+  interpretation_progress:
+    description: Progress status of clinical interpretation or diagnosis
+    range: InterpretationProgressEnum
+    comments:
+    - 'Defined in module: phenopackets'
+  regimen_status:
+    description: Status of a therapeutic regimen or treatment protocol
+    range: RegimenStatusEnum
+    comments:
+    - 'Defined in module: phenopackets'
+  drug_response:
+    description: Response categories for drug treatment outcomes
+    range: DrugResponseEnum
+    comments:
+    - 'Defined in module: phenopackets'
+  race_omb1997:
+    description: Race categories following OMB 1997 standards used by NIH and federal agencies
+    range: RaceOMB1997Enum
+    comments:
+    - 'Defined in module: nih_demographics'
+  ethnicity_omb1997:
+    description: Ethnicity categories following OMB 1997 standards used by NIH and federal agencies
+    range: EthnicityOMB1997Enum
+    comments:
+    - 'Defined in module: nih_demographics'
+  biological_sex:
+    description: Biological sex assigned at birth based on anatomical and physiological traits
+    range: BiologicalSexEnum
+    comments:
+    - 'Defined in module: nih_demographics'
+  age_group:
+    description: Standard age groups used in NIH clinical research, particularly NINDS CDEs
+    range: AgeGroupEnum
+    comments:
+    - 'Defined in module: nih_demographics'
+  participant_vital_status:
+    description: Vital status of a research participant in clinical studies
+    range: ParticipantVitalStatusEnum
+    comments:
+    - 'Defined in module: nih_demographics'
+  recruitment_status:
+    description: Clinical trial or study recruitment status per NIH/ClinicalTrials
+    range: RecruitmentStatusEnum
+    comments:
+    - 'Defined in module: nih_demographics'
+  study_phase:
+    description: Clinical trial phases per FDA and NIH definitions
+    range: StudyPhaseEnum
+    comments:
+    - 'Defined in module: nih_demographics'
+  image_file_format:
+    description: Common image file formats
+    range: ImageFileFormatEnum
+    comments:
+    - 'Defined in module: file_formats'
+  document_format:
+    description: Document and text file formats
+    range: DocumentFormatEnum
+    comments:
+    - 'Defined in module: file_formats'
+  data_format:
+    description: Structured data file formats
+    range: DataFormatEnum
+    comments:
+    - 'Defined in module: file_formats'
+  archive_format:
+    description: Archive and compression formats
+    range: ArchiveFormatEnum
+    comments:
+    - 'Defined in module: file_formats'
+  video_format:
+    description: Video file formats
+    range: VideoFormatEnum
+    comments:
+    - 'Defined in module: file_formats'
+  audio_format:
+    description: Audio file formats
+    range: AudioFormatEnum
+    comments:
+    - 'Defined in module: file_formats'
+  programming_language_file:
+    description: Programming language source file extensions
+    range: ProgrammingLanguageFileEnum
+    comments:
+    - 'Defined in module: file_formats'
+  network_protocol:
+    description: Network communication protocols
+    range: NetworkProtocolEnum
+    comments:
+    - 'Defined in module: file_formats'
+  mime:
+    description: Common MIME types for various file formats
+    range: MimeType
+    comments:
+    - 'Defined in module: mime_types'
+  mime_type_category:
+    description: Categories of MIME types
+    range: MimeTypeCategory
+    comments:
+    - 'Defined in module: mime_types'
+  text_charset:
+    description: Character encodings for text content
+    range: TextCharset
+    comments:
+    - 'Defined in module: mime_types'
+  compression:
+    description: Compression types used with Content-Encoding
+    range: CompressionType
+    comments:
+    - 'Defined in module: mime_types'
+  technology_readiness_level:
+    description: NASA's Technology Readiness Level scale for assessing the maturity of technologies from basic research through
+      operational deployment
+    range: TechnologyReadinessLevel
+    comments:
+    - 'Defined in module: maturity_levels'
+  software_maturity_level:
+    description: General software maturity assessment levels
+    range: SoftwareMaturityLevel
+    comments:
+    - 'Defined in module: maturity_levels'
+  capability_maturity_level:
+    description: CMMI levels for assessing organizational process maturity in software development
+    range: CapabilityMaturityLevel
+    comments:
+    - 'Defined in module: maturity_levels'
+  standards_maturity_level:
+    description: Maturity levels for standards and specifications
+    range: StandardsMaturityLevel
+    comments:
+    - 'Defined in module: maturity_levels'
+  project_maturity_level:
+    description: General project development maturity assessment
+    range: ProjectMaturityLevel
+    comments:
+    - 'Defined in module: maturity_levels'
+  data_maturity_level:
+    description: Levels of data quality, governance, and organizational maturity
+    range: DataMaturityLevel
+    comments:
+    - 'Defined in module: maturity_levels'
+  open_source_maturity_level:
+    description: Maturity assessment for open source projects
+    range: OpenSourceMaturityLevel
+    comments:
+    - 'Defined in module: maturity_levels'
+  state_of_matter:
+    description: The physical state or phase of matter
+    range: StateOfMatterEnum
+    comments:
+    - 'Defined in module: valuesets-physics-states-of-matter'
+  simple_spatial_direction:
+    description: Basic spatial directional terms for general use
+    range: SimpleSpatialDirection
+    comments:
+    - 'Defined in module: spatial_qualifiers'
+  anatomical_side:
+    description: Anatomical sides as defined in the Biological Spatial Ontology (BSPO)
+    range: AnatomicalSide
+    comments:
+    - 'Defined in module: spatial_qualifiers'
+  anatomical_region:
+    description: Anatomical regions based on spatial position
+    range: AnatomicalRegion
+    comments:
+    - 'Defined in module: spatial_qualifiers'
+  anatomical_axis:
+    description: Anatomical axes defining spatial organization
+    range: AnatomicalAxis
+    comments:
+    - 'Defined in module: spatial_qualifiers'
+  anatomical_plane:
+    description: Standard anatomical planes for sectioning
+    range: AnatomicalPlane
+    comments:
+    - 'Defined in module: spatial_qualifiers'
+  spatial_relationship:
+    description: Spatial relationships between anatomical structures
+    range: SpatialRelationship
+    comments:
+    - 'Defined in module: spatial_qualifiers'
+  cell_polarity:
+    description: Spatial polarity in cells and tissues
+    range: CellPolarity
+    comments:
+    - 'Defined in module: spatial_qualifiers'
+  data_absent:
+    description: Used to specify why the normally expected content of the data element is missing
+    range: DataAbsentEnum
+    comments:
+    - 'Defined in module: data_absent_reason'
+  country_code_iso2:
+    description: ISO 3166-1 alpha-2 country codes (2-letter codes)
+    range: CountryCodeISO2Enum
+    comments:
+    - 'Defined in module: valuesets-geography-geographic-codes'
+  country_code_iso3:
+    description: ISO 3166-1 alpha-3 country codes (3-letter codes)
+    range: CountryCodeISO3Enum
+    comments:
+    - 'Defined in module: valuesets-geography-geographic-codes'
+  us_state_code:
+    description: United States state and territory codes
+    range: USStateCodeEnum
+    comments:
+    - 'Defined in module: valuesets-geography-geographic-codes'
+  canadian_province_code:
+    description: Canadian province and territory codes
+    range: CanadianProvinceCodeEnum
+    comments:
+    - 'Defined in module: valuesets-geography-geographic-codes'
+  compass_direction:
+    description: Cardinal and intercardinal compass directions
+    range: CompassDirection
+    comments:
+    - 'Defined in module: valuesets-geography-geographic-codes'
+  relative_direction:
+    description: Relative directional terms
+    range: RelativeDirection
+    comments:
+    - 'Defined in module: valuesets-geography-geographic-codes'
+  wind_direction:
+    description: Wind direction nomenclature (named for where wind comes FROM)
+    range: WindDirection
+    comments:
+    - 'Defined in module: valuesets-geography-geographic-codes'
+  continent:
+    description: Continental regions
+    range: ContinentEnum
+    comments:
+    - 'Defined in module: valuesets-geography-geographic-codes'
+  un_region:
+    description: United Nations regional classifications
+    range: UNRegionEnum
+    comments:
+    - 'Defined in module: valuesets-geography-geographic-codes'
+  language_code_iso639_1:
+    description: ISO 639-1 two-letter language codes
+    range: LanguageCodeISO639_1Enum
+    comments:
+    - 'Defined in module: valuesets-geography-geographic-codes'
+  time_zone:
+    description: Common time zones
+    range: TimeZoneEnum
+    comments:
+    - 'Defined in module: valuesets-geography-geographic-codes'
+  currency_code_iso4217:
+    description: ISO 4217 currency codes
+    range: CurrencyCodeISO4217Enum
+    comments:
+    - 'Defined in module: valuesets-geography-geographic-codes'

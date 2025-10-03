@@ -1,271 +1,215 @@
----
-id: https://w3id.org/linkml/valuesets/bio/go_evidence
 name: go_evidence
 title: Gene Ontology Evidence Codes
-description: |-
-  Value sets for Gene Ontology evidence codes and electronic annotation methods
-
+description: Value sets for Gene Ontology evidence codes and electronic annotation methods
+id: https://w3id.org/linkml/valuesets/bio/go_evidence
+imports:
+- linkml:types
 prefixes:
-  valuesets: https://w3id.org/linkml/valuesets/
+  valuesets: https://w3id.org/valuesets/
   ECO: http://purl.obolibrary.org/obo/ECO_
   GO_REF: http://purl.obolibrary.org/obo/GO_REF_
-
 default_prefix: valuesets
-
-imports:
-  - linkml:types
-
+slots:
+  go_evidence:
+    description: Gene Ontology evidence codes mapped to Evidence and Conclusion Ontology (ECO) terms
+    range: GOEvidenceCode
+  go_electronic_methods:
+    description: Electronic annotation methods used in Gene Ontology, identified by GO_REF codes
+    range: GOElectronicMethods
 enums:
-
   GOEvidenceCode:
-    description: |-
-      Gene Ontology evidence codes mapped to Evidence and Conclusion Ontology (ECO) terms
+    description: Gene Ontology evidence codes mapped to Evidence and Conclusion Ontology (ECO) terms
     permissible_values:
-
-      # Experimental Evidence Codes
       EXP:
         title: Inferred from Experiment
         aliases:
-          - experimental evidence used in manual assertion
+        - experimental evidence used in manual assertion
         meaning: ECO:0000269
-
       IDA:
         title: Inferred from Direct Assay
         aliases:
-          - direct assay evidence used in manual assertion
+        - direct assay evidence used in manual assertion
         meaning: ECO:0000314
-
       IPI:
         title: Inferred from Physical Interaction
         aliases:
-          - physical interaction evidence used in manual assertion
+        - physical interaction evidence used in manual assertion
         meaning: ECO:0000353
-
       IMP:
         title: Inferred from Mutant Phenotype
         aliases:
-          - mutant phenotype evidence used in manual assertion
+        - mutant phenotype evidence used in manual assertion
         meaning: ECO:0000315
-
       IGI:
         title: Inferred from Genetic Interaction
         aliases:
-          - genetic interaction evidence used in manual assertion
+        - genetic interaction evidence used in manual assertion
         meaning: ECO:0000316
-
       IEP:
         title: Inferred from Expression Pattern
         aliases:
-          - expression pattern evidence used in manual assertion
+        - expression pattern evidence used in manual assertion
         meaning: ECO:0000270
-
-      # High Throughput Experimental Evidence Codes
       HTP:
         title: Inferred from High Throughput Experiment
         aliases:
-          - high throughput evidence used in manual assertion
+        - high throughput evidence used in manual assertion
         meaning: ECO:0006056
-
       HDA:
         title: Inferred from High Throughput Direct Assay
         aliases:
-          - high throughput direct assay evidence used in manual assertion
+        - high throughput direct assay evidence used in manual assertion
         meaning: ECO:0007005
-
       HMP:
         title: Inferred from High Throughput Mutant Phenotype
         aliases:
-          - high throughput mutant phenotypic evidence used in manual assertion
+        - high throughput mutant phenotypic evidence used in manual assertion
         meaning: ECO:0007001
-
       HGI:
         title: Inferred from High Throughput Genetic Interaction
         aliases:
-          - high throughput genetic interaction phenotypic evidence used in manual assertion
+        - high throughput genetic interaction phenotypic evidence used in manual assertion
         meaning: ECO:0007003
-
       HEP:
         title: Inferred from High Throughput Expression Pattern
         aliases:
-          - high throughput expression pattern evidence used in manual assertion
+        - high throughput expression pattern evidence used in manual assertion
         meaning: ECO:0007007
-
-      # Phylogenetically-inferred annotations
       IBA:
         title: Inferred from Biological aspect of Ancestor
         aliases:
-          - biological aspect of ancestor evidence used in manual assertion
+        - biological aspect of ancestor evidence used in manual assertion
         meaning: ECO:0000318
-
       IBD:
         title: Inferred from Biological aspect of Descendant
         aliases:
-          - biological aspect of descendant evidence used in manual assertion
+        - biological aspect of descendant evidence used in manual assertion
         meaning: ECO:0000319
-
       IKR:
         title: Inferred from Key Residues
         aliases:
-          - phylogenetic determination of loss of key residues evidence used in manual assertion
+        - phylogenetic determination of loss of key residues evidence used in manual assertion
         meaning: ECO:0000320
-
       IRD:
         title: Inferred from Rapid Divergence
         aliases:
-          - rapid divergence from ancestral sequence evidence used in manual assertion
+        - rapid divergence from ancestral sequence evidence used in manual assertion
         meaning: ECO:0000321
-
-      # Computational Analysis Evidence Codes
       ISS:
         title: Inferred from Sequence or structural Similarity
         aliases:
-          - sequence similarity evidence used in manual assertion
+        - sequence similarity evidence used in manual assertion
         meaning: ECO:0000250
-
       ISO:
         title: Inferred from Sequence Orthology
         aliases:
-          - sequence orthology evidence used in manual assertion
+        - sequence orthology evidence used in manual assertion
         meaning: ECO:0000266
-
       ISA:
         title: Inferred from Sequence Alignment
         aliases:
-          - sequence alignment evidence used in manual assertion
+        - sequence alignment evidence used in manual assertion
         meaning: ECO:0000247
-
       ISM:
         title: Inferred from Sequence Model
         aliases:
-          - match to sequence model evidence used in manual assertion
+        - match to sequence model evidence used in manual assertion
         meaning: ECO:0000255
-
       IGC:
         title: Inferred from Genomic Context
         aliases:
-          - genomic context evidence used in manual assertion
+        - genomic context evidence used in manual assertion
         meaning: ECO:0000317
-
       RCA:
         title: Inferred from Reviewed Computational Analysis
         aliases:
-          - automatically integrated combinatorial evidence used in manual assertion
+        - automatically integrated combinatorial evidence used in manual assertion
         meaning: ECO:0000245
-
-      # Author Statement Evidence Codes
       TAS:
         title: Traceable Author Statement
         aliases:
-          - author statement supported by traceable reference used in manual assertion
+        - author statement supported by traceable reference used in manual assertion
         meaning: ECO:0000304
-
       NAS:
         title: Non-traceable Author Statement
         aliases:
-          - author statement without traceable support used in manual assertion
+        - author statement without traceable support used in manual assertion
         meaning: ECO:0000303
-
-      # Curator Statement Evidence Codes
       IC:
         title: Inferred by Curator
         aliases:
-          - curator inference used in manual assertion
+        - curator inference used in manual assertion
         meaning: ECO:0000305
-
       ND:
         title: No biological Data available
         aliases:
-          - no evidence data found used in manual assertion
+        - no evidence data found used in manual assertion
         meaning: ECO:0000307
-
-      # Electronic Annotation Evidence Code
       IEA:
         title: Inferred from Electronic Annotation
         aliases:
-          - evidence used in automatic assertion
+        - evidence used in automatic assertion
         meaning: ECO:0000501
-
   GOElectronicMethods:
-    description: |-
-      Electronic annotation methods used in Gene Ontology, identified by GO_REF codes
+    description: Electronic annotation methods used in Gene Ontology, identified by GO_REF codes
     permissible_values:
-
       INTERPRO2GO:
         title: Gene Ontology annotation based on InterPro classification
         meaning: GO_REF:0000002
-
       EC2GO:
         title: Gene Ontology annotation based on Enzyme Commission mapping
         meaning: GO_REF:0000003
-
       UNIPROTKB_KW2GO:
         title: Gene Ontology annotation based on UniProtKB keywords
         meaning: GO_REF:0000004
-
       UNIPROTKB_SUBCELL2GO:
         title: Gene Ontology annotation based on UniProtKB Subcellular Location vocabulary
         meaning: GO_REF:0000023
-
       HAMAP_RULE2GO:
         title: Gene Ontology annotation based on HAMAP family rules
         meaning: GO_REF:0000020
-
       UNIPATHWAY2GO:
         title: Gene Ontology annotation based on UniPathway vocabulary
         meaning: GO_REF:0000041
-
       UNIRULE2GO:
         title: Gene Ontology annotation based on UniRule rules
         meaning: GO_REF:0000104
-
       RHEA2GO:
         title: Gene Ontology annotation based on Rhea mapping
         meaning: GO_REF:0000116
-
       ENSEMBL_COMPARA:
         title: Gene Ontology annotation based on Ensembl Compara orthology
         meaning: GO_REF:0000107
-
       PANTHER:
         title: Gene Ontology annotation based on PANTHER phylogenetic trees
         meaning: GO_REF:0000033
-
       REACTOME:
         title: Gene Ontology annotation based on Reactome pathways
         meaning: GO_REF:0000018
-
       RFAM2GO:
         title: Gene Ontology annotation based on Rfam classification
         meaning: GO_REF:0000115
-
       DICTYBASE:
         title: Gene Ontology annotation by DictyBase
         meaning: GO_REF:0000015
-
       MGI:
         title: Gene Ontology annotation by Mouse Genome Informatics
         meaning: GO_REF:0000096
-
       ZFIN:
         title: Gene Ontology annotation by Zebrafish Information Network
         meaning: GO_REF:0000031
-
       FLYBASE:
         title: Gene Ontology annotation by FlyBase
         meaning: GO_REF:0000047
-
       WORMBASE:
         title: Gene Ontology annotation by WormBase
         meaning: GO_REF:0000003
-
       SGD:
         title: Gene Ontology annotation by Saccharomyces Genome Database
         meaning: GO_REF:0000100
-
       POMBASE:
         title: Gene Ontology annotation by PomBase
         meaning: GO_REF:0000024
-
       METACYC2GO:
         title: Gene Ontology annotation based on MetaCyc pathways
         meaning: GO_REF:0000112

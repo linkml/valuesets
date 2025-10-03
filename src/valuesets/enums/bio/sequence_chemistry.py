@@ -12,42 +12,6 @@ from __future__ import annotations
 from typing import Dict, Any, Optional
 from valuesets.generators.rich_enum import RichEnum
 
-class DNABase(RichEnum):
-    """
-    Standard DNA nucleotide bases (A, T, G, C) as defined by IUPAC
-    """
-    # Enum members
-    A = "A"
-    T = "T"
-    G = "G"
-    C = "C"
-
-# Set metadata after class creation
-DNABase._metadata = {
-    "A": {'description': 'Adenine', 'meaning': 'CHEBI:16708'},
-    "T": {'description': 'Thymine', 'meaning': 'CHEBI:17821'},
-    "G": {'description': 'Guanine', 'meaning': 'CHEBI:16235'},
-    "C": {'description': 'Cytosine', 'meaning': 'CHEBI:16040'},
-}
-
-class RNABase(RichEnum):
-    """
-    Standard RNA nucleotide bases (A, U, G, C) as defined by IUPAC
-    """
-    # Enum members
-    A = "A"
-    U = "U"
-    G = "G"
-    C = "C"
-
-# Set metadata after class creation
-RNABase._metadata = {
-    "A": {'description': 'Adenine', 'meaning': 'CHEBI:16708'},
-    "U": {'description': 'Uracil', 'meaning': 'CHEBI:17568'},
-    "G": {'description': 'Guanine', 'meaning': 'CHEBI:16235'},
-    "C": {'description': 'Cytosine', 'meaning': 'CHEBI:16040'},
-}
-
 class IUPACNucleotideCode(RichEnum):
     """
     Complete IUPAC nucleotide codes including ambiguous bases for DNA/RNA sequences.
@@ -74,13 +38,13 @@ class IUPACNucleotideCode(RichEnum):
 
 # Set metadata after class creation
 IUPACNucleotideCode._metadata = {
-    "A": {'description': 'Adenine', 'meaning': 'CHEBI:16708'},
-    "T": {'description': 'Thymine (DNA)', 'meaning': 'CHEBI:17821'},
-    "U": {'description': 'Uracil (RNA)', 'meaning': 'CHEBI:17568'},
-    "G": {'description': 'Guanine', 'meaning': 'CHEBI:16235'},
-    "C": {'description': 'Cytosine', 'meaning': 'CHEBI:16040'},
-    "R": {'description': 'Purine (A or G)', 'meaning': 'CHEBI:26401'},
-    "Y": {'description': 'Pyrimidine (C or T/U)', 'meaning': 'CHEBI:39447'},
+    "A": {'description': 'Adenine'},
+    "T": {'description': 'Thymine (DNA)'},
+    "U": {'description': 'Uracil (RNA)'},
+    "G": {'description': 'Guanine'},
+    "C": {'description': 'Cytosine'},
+    "R": {'description': 'Purine (A or G)'},
+    "Y": {'description': 'Pyrimidine (C or T/U)'},
     "S": {'description': 'Strong interaction (G or C)'},
     "W": {'description': 'Weak interaction (A or T/U)'},
     "K": {'description': 'Keto (G or T/U)'},
@@ -121,26 +85,26 @@ class StandardAminoAcid(RichEnum):
 
 # Set metadata after class creation
 StandardAminoAcid._metadata = {
-    "A": {'description': 'Alanine', 'meaning': 'CHEBI:16977'},
-    "R": {'description': 'Arginine', 'meaning': 'CHEBI:16467'},
-    "N": {'description': 'Asparagine', 'meaning': 'CHEBI:17196'},
-    "D": {'description': 'Aspartic acid', 'meaning': 'CHEBI:17053'},
-    "C": {'description': 'Cysteine', 'meaning': 'CHEBI:17561'},
-    "E": {'description': 'Glutamic acid', 'meaning': 'CHEBI:16015'},
-    "Q": {'description': 'Glutamine', 'meaning': 'CHEBI:18050'},
-    "G": {'description': 'Glycine', 'meaning': 'CHEBI:15428'},
-    "H": {'description': 'Histidine', 'meaning': 'CHEBI:15971'},
-    "I": {'description': 'Isoleucine', 'meaning': 'CHEBI:17191'},
-    "L": {'description': 'Leucine', 'meaning': 'CHEBI:15603'},
-    "K": {'description': 'Lysine', 'meaning': 'CHEBI:18019'},
-    "M": {'description': 'Methionine', 'meaning': 'CHEBI:16811'},
-    "F": {'description': 'Phenylalanine', 'meaning': 'CHEBI:17295'},
-    "P": {'description': 'Proline', 'meaning': 'CHEBI:17203'},
-    "S": {'description': 'Serine', 'meaning': 'CHEBI:17115'},
-    "T": {'description': 'Threonine', 'meaning': 'CHEBI:16857'},
-    "W": {'description': 'Tryptophan', 'meaning': 'CHEBI:16828'},
-    "Y": {'description': 'Tyrosine', 'meaning': 'CHEBI:18186'},
-    "V": {'description': 'Valine', 'meaning': 'CHEBI:16414'},
+    "A": {'description': 'Alanine'},
+    "R": {'description': 'Arginine'},
+    "N": {'description': 'Asparagine'},
+    "D": {'description': 'Aspartic acid'},
+    "C": {'description': 'Cysteine'},
+    "E": {'description': 'Glutamic acid'},
+    "Q": {'description': 'Glutamine'},
+    "G": {'description': 'Glycine'},
+    "H": {'description': 'Histidine'},
+    "I": {'description': 'Isoleucine'},
+    "L": {'description': 'Leucine'},
+    "K": {'description': 'Lysine'},
+    "M": {'description': 'Methionine'},
+    "F": {'description': 'Phenylalanine'},
+    "P": {'description': 'Proline'},
+    "S": {'description': 'Serine'},
+    "T": {'description': 'Threonine'},
+    "W": {'description': 'Tryptophan'},
+    "Y": {'description': 'Tyrosine'},
+    "V": {'description': 'Valine'},
 }
 
 class IUPACAminoAcidCode(RichEnum):
@@ -180,28 +144,28 @@ class IUPACAminoAcidCode(RichEnum):
 
 # Set metadata after class creation
 IUPACAminoAcidCode._metadata = {
-    "A": {'description': 'Alanine', 'meaning': 'CHEBI:16977'},
-    "R": {'description': 'Arginine', 'meaning': 'CHEBI:16467'},
-    "N": {'description': 'Asparagine', 'meaning': 'CHEBI:17196'},
-    "D": {'description': 'Aspartic acid', 'meaning': 'CHEBI:17053'},
-    "C": {'description': 'Cysteine', 'meaning': 'CHEBI:17561'},
-    "E": {'description': 'Glutamic acid', 'meaning': 'CHEBI:16015'},
-    "Q": {'description': 'Glutamine', 'meaning': 'CHEBI:18050'},
-    "G": {'description': 'Glycine', 'meaning': 'CHEBI:15428'},
-    "H": {'description': 'Histidine', 'meaning': 'CHEBI:15971'},
-    "I": {'description': 'Isoleucine', 'meaning': 'CHEBI:17191'},
-    "L": {'description': 'Leucine', 'meaning': 'CHEBI:15603'},
-    "K": {'description': 'Lysine', 'meaning': 'CHEBI:18019'},
-    "M": {'description': 'Methionine', 'meaning': 'CHEBI:16811'},
-    "F": {'description': 'Phenylalanine', 'meaning': 'CHEBI:17295'},
-    "P": {'description': 'Proline', 'meaning': 'CHEBI:17203'},
-    "S": {'description': 'Serine', 'meaning': 'CHEBI:17115'},
-    "T": {'description': 'Threonine', 'meaning': 'CHEBI:16857'},
-    "W": {'description': 'Tryptophan', 'meaning': 'CHEBI:16828'},
-    "Y": {'description': 'Tyrosine', 'meaning': 'CHEBI:18186'},
-    "V": {'description': 'Valine', 'meaning': 'CHEBI:16414'},
-    "U": {'description': 'Selenocysteine (21st amino acid)', 'meaning': 'CHEBI:16811', 'aliases': ['Sec']},
-    "O": {'description': 'Pyrrolysine (22nd amino acid)', 'meaning': 'CHEBI:18295', 'aliases': ['Pyl']},
+    "A": {'description': 'Alanine'},
+    "R": {'description': 'Arginine'},
+    "N": {'description': 'Asparagine'},
+    "D": {'description': 'Aspartic acid'},
+    "C": {'description': 'Cysteine'},
+    "E": {'description': 'Glutamic acid'},
+    "Q": {'description': 'Glutamine'},
+    "G": {'description': 'Glycine'},
+    "H": {'description': 'Histidine'},
+    "I": {'description': 'Isoleucine'},
+    "L": {'description': 'Leucine'},
+    "K": {'description': 'Lysine'},
+    "M": {'description': 'Methionine'},
+    "F": {'description': 'Phenylalanine'},
+    "P": {'description': 'Proline'},
+    "S": {'description': 'Serine'},
+    "T": {'description': 'Threonine'},
+    "W": {'description': 'Tryptophan'},
+    "Y": {'description': 'Tyrosine'},
+    "V": {'description': 'Valine'},
+    "U": {'description': 'Selenocysteine (21st amino acid)', 'aliases': ['Sec']},
+    "O": {'description': 'Pyrrolysine (22nd amino acid)', 'aliases': ['Pyl']},
     "B": {'description': 'Asparagine or Aspartic acid (N or D)'},
     "Z": {'description': 'Glutamine or Glutamic acid (Q or E)'},
     "J": {'description': 'Leucine or Isoleucine (L or I)'},
@@ -330,8 +294,8 @@ class SequenceStrand(RichEnum):
 
 # Set metadata after class creation
 SequenceStrand._metadata = {
-    "PLUS": {'description': "Plus/forward/sense strand (5' to 3')", 'meaning': 'SO:0000402'},
-    "MINUS": {'description': "Minus/reverse/antisense strand (3' to 5')", 'meaning': 'SO:0000404'},
+    "PLUS": {'description': "Plus/forward/sense strand (5' to 3')"},
+    "MINUS": {'description': "Minus/reverse/antisense strand (3' to 5')"},
     "BOTH": {'description': 'Both strands'},
     "UNKNOWN": {'description': 'Strand not specified or unknown'},
 }
@@ -381,8 +345,6 @@ SequenceModality._metadata = {
 }
 
 __all__ = [
-    "DNABase",
-    "RNABase",
     "IUPACNucleotideCode",
     "StandardAminoAcid",
     "IUPACAminoAcidCode",

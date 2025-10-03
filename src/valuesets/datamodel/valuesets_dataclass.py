@@ -1,5 +1,5 @@
 # Auto generated from valuesets.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-09-26T18:48:23
+# Generation date: 2025-10-02T17:02:53
 # Schema: valuesets
 #
 # id: https://w3id.org/linkml/valuesets
@@ -62,7 +62,7 @@ metamodel_version = "1.7.0"
 version = None
 
 # Namespaces
-VALUESETS = CurieNamespace('valuesets', 'https://w3id.org/linkml/valuesets/')
+VALUESETS = CurieNamespace('valuesets', 'https://w3id.org/valuesets/')
 DEFAULT_ = VALUESETS
 
 
@@ -328,6 +328,304 @@ class HealthcareEncounterClassification(EnumDefinitionImpl):
             PermissibleValue(
                 text="Case Management Visit",
                 description="""Person interacting with healthcare system, without a Care Site, within a day, with no Providers involved, for administrative purposes"""))
+
+class EducationLevel(EnumDefinitionImpl):
+    """
+    Years of education that a person has completed
+    """
+    ELEM = PermissibleValue(
+        text="ELEM",
+        description="Elementary School",
+        meaning=HL7["v3-EducationLevel#ELEM"])
+    SEC = PermissibleValue(
+        text="SEC",
+        description="Some secondary or high school education",
+        meaning=HL7["v3-EducationLevel#SEC"])
+    HS = PermissibleValue(
+        text="HS",
+        description="High School or secondary school degree complete",
+        meaning=HL7["v3-EducationLevel#HS"])
+    SCOL = PermissibleValue(
+        text="SCOL",
+        description="Some College education",
+        meaning=HL7["v3-EducationLevel#SCOL"])
+    ASSOC = PermissibleValue(
+        text="ASSOC",
+        description="Associate's or technical degree complete",
+        meaning=HL7["v3-EducationLevel#ASSOC"])
+    BD = PermissibleValue(
+        text="BD",
+        description="College or baccalaureate degree complete",
+        meaning=HL7["v3-EducationLevel#BD"])
+    PB = PermissibleValue(
+        text="PB",
+        description="Some post-baccalaureate education",
+        meaning=HL7["v3-EducationLevel#PB"])
+    GD = PermissibleValue(
+        text="GD",
+        description="Graduate or professional Degree complete",
+        meaning=HL7["v3-EducationLevel#GD"])
+    POSTG = PermissibleValue(
+        text="POSTG",
+        description="Doctoral or post graduate education",
+        meaning=HL7["v3-EducationLevel#POSTG"])
+
+    _defn = EnumDefinition(
+        name="EducationLevel",
+        description="Years of education that a person has completed",
+    )
+
+class MaritalStatus(EnumDefinitionImpl):
+    """
+    The domestic partnership status of a person
+    """
+    ANNULLED = PermissibleValue(
+        text="ANNULLED",
+        description="Marriage contract has been declared null and to not have existed",
+        meaning=HL7["marital-status#A"])
+    DIVORCED = PermissibleValue(
+        text="DIVORCED",
+        description="Marriage contract has been declared dissolved and inactive",
+        meaning=HL7["marital-status#D"])
+    INTERLOCUTORY = PermissibleValue(
+        text="INTERLOCUTORY",
+        description="Subject to an Interlocutory Decree",
+        meaning=HL7["marital-status#I"])
+    LEGALLY_SEPARATED = PermissibleValue(
+        text="LEGALLY_SEPARATED",
+        description="Legally Separated",
+        meaning=HL7["marital-status#L"])
+    MARRIED = PermissibleValue(
+        text="MARRIED",
+        description="A current marriage contract is active",
+        meaning=HL7["marital-status#M"])
+    COMMON_LAW = PermissibleValue(
+        text="COMMON_LAW",
+        description="Marriage recognized in some jurisdictions based on parties' agreement",
+        meaning=HL7["marital-status#C"])
+    POLYGAMOUS = PermissibleValue(
+        text="POLYGAMOUS",
+        description="More than 1 current spouse",
+        meaning=HL7["marital-status#P"])
+    DOMESTIC_PARTNER = PermissibleValue(
+        text="DOMESTIC_PARTNER",
+        description="Person declares that a domestic partner relationship exists",
+        meaning=HL7["marital-status#T"])
+    UNMARRIED = PermissibleValue(
+        text="UNMARRIED",
+        description="Currently not in a marriage contract",
+        meaning=HL7["marital-status#U"])
+    NEVER_MARRIED = PermissibleValue(
+        text="NEVER_MARRIED",
+        description="No marriage contract has ever been entered",
+        meaning=HL7["marital-status#S"])
+    WIDOWED = PermissibleValue(
+        text="WIDOWED",
+        description="The spouse has died",
+        meaning=HL7["marital-status#W"])
+    UNKNOWN = PermissibleValue(
+        text="UNKNOWN",
+        description="A proper value is applicable, but not known",
+        meaning=HL7["marital-status#UNK"])
+
+    _defn = EnumDefinition(
+        name="MaritalStatus",
+        description="The domestic partnership status of a person",
+    )
+
+class EmploymentStatus(EnumDefinitionImpl):
+    """
+    Employment status of a person
+    """
+    FULL_TIME_EMPLOYED = PermissibleValue(
+        text="FULL_TIME_EMPLOYED",
+        description="Full time employed",
+        meaning=HL7["v2-0066#1"])
+    PART_TIME_EMPLOYED = PermissibleValue(
+        text="PART_TIME_EMPLOYED",
+        description="Part time employed",
+        meaning=HL7["v2-0066#2"])
+    UNEMPLOYED = PermissibleValue(
+        text="UNEMPLOYED",
+        description="Unemployed",
+        meaning=HL7["v2-0066#3"])
+    SELF_EMPLOYED = PermissibleValue(
+        text="SELF_EMPLOYED",
+        description="Self-employed",
+        meaning=HL7["v2-0066#4"])
+    RETIRED = PermissibleValue(
+        text="RETIRED",
+        description="Retired",
+        meaning=HL7["v2-0066#5"])
+    ACTIVE_MILITARY = PermissibleValue(
+        text="ACTIVE_MILITARY",
+        description="On active military duty",
+        meaning=HL7["v2-0066#6"])
+    CONTRACT = PermissibleValue(
+        text="CONTRACT",
+        description="Contract, per diem",
+        meaning=HL7["v2-0066#C"])
+    PER_DIEM = PermissibleValue(
+        text="PER_DIEM",
+        description="Per Diem",
+        meaning=HL7["v2-0066#D"])
+    LEAVE_OF_ABSENCE = PermissibleValue(
+        text="LEAVE_OF_ABSENCE",
+        description="Leave of absence",
+        meaning=HL7["v2-0066#L"])
+    OTHER = PermissibleValue(
+        text="OTHER",
+        description="Other",
+        meaning=HL7["v2-0066#O"])
+    TEMPORARILY_UNEMPLOYED = PermissibleValue(
+        text="TEMPORARILY_UNEMPLOYED",
+        description="Temporarily unemployed",
+        meaning=HL7["v2-0066#T"])
+    UNKNOWN = PermissibleValue(
+        text="UNKNOWN",
+        description="Unknown",
+        meaning=HL7["v2-0066#9"])
+
+    _defn = EnumDefinition(
+        name="EmploymentStatus",
+        description="Employment status of a person",
+    )
+
+class HousingStatus(EnumDefinitionImpl):
+    """
+    Housing status of patients per UDS Plus HRSA standards
+    """
+    HOMELESS_SHELTER = PermissibleValue(
+        text="HOMELESS_SHELTER",
+        description="Patients who are living in a homeless shelter",
+        meaning=HL7["udsplus-housing-status-codes#homeless-shelter"])
+    TRANSITIONAL = PermissibleValue(
+        text="TRANSITIONAL",
+        description="Patients who do not have a house and are in a transitional state",
+        meaning=HL7["udsplus-housing-status-codes#transitional"])
+    DOUBLING_UP = PermissibleValue(
+        text="DOUBLING_UP",
+        description="Patients who are doubling up with others",
+        meaning=HL7["udsplus-housing-status-codes#doubling-up"])
+    STREET = PermissibleValue(
+        text="STREET",
+        description="Patients who do not have a house and are living on the streets",
+        meaning=HL7["udsplus-housing-status-codes#street"])
+    PERMANENT_SUPPORTIVE_HOUSING = PermissibleValue(
+        text="PERMANENT_SUPPORTIVE_HOUSING",
+        description="Patients who are living in a permanent supportive housing",
+        meaning=HL7["udsplus-housing-status-codes#permanent-supportive-housing"])
+    OTHER = PermissibleValue(
+        text="OTHER",
+        description="Patients who have other kinds of accommodation",
+        meaning=HL7["udsplus-housing-status-codes#other"])
+    UNKNOWN = PermissibleValue(
+        text="UNKNOWN",
+        description="Patients with Unknown accommodation",
+        meaning=HL7["udsplus-housing-status-codes#unknown"])
+
+    _defn = EnumDefinition(
+        name="HousingStatus",
+        description="Housing status of patients per UDS Plus HRSA standards",
+    )
+
+class GenderIdentity(EnumDefinitionImpl):
+    """
+    Gender identity codes indicating an individual's personal sense of gender
+    """
+    FEMALE = PermissibleValue(
+        text="FEMALE",
+        description="Identifies as female gender (finding)",
+        meaning=SNOMED["446141000124107"])
+    MALE = PermissibleValue(
+        text="MALE",
+        description="Identifies as male gender (finding)",
+        meaning=SNOMED["446151000124109"])
+    NON_BINARY = PermissibleValue(
+        text="NON_BINARY",
+        description="Identifies as gender nonbinary",
+        meaning=SNOMED["33791000087105"])
+    ASKED_DECLINED = PermissibleValue(
+        text="ASKED_DECLINED",
+        description="Asked But Declined",
+        meaning=HL7["asked-declined"])
+    UNKNOWN = PermissibleValue(
+        text="UNKNOWN",
+        description="A proper value is applicable, but not known",
+        meaning=HL7["UNK"])
+
+    _defn = EnumDefinition(
+        name="GenderIdentity",
+        description="Gender identity codes indicating an individual's personal sense of gender",
+    )
+
+class OmbRaceCategory(EnumDefinitionImpl):
+    """
+    Office of Management and Budget (OMB) race category codes
+    """
+    AMERICAN_INDIAN_OR_ALASKA_NATIVE = PermissibleValue(
+        text="AMERICAN_INDIAN_OR_ALASKA_NATIVE",
+        description="American Indian or Alaska Native",
+        meaning=HL7["CDCREC#1002-5"])
+    ASIAN = PermissibleValue(
+        text="ASIAN",
+        description="Asian",
+        meaning=HL7["CDCREC#2028-9"])
+    BLACK_OR_AFRICAN_AMERICAN = PermissibleValue(
+        text="BLACK_OR_AFRICAN_AMERICAN",
+        description="Black or African American",
+        meaning=HL7["CDCREC#2054-5"])
+    NATIVE_HAWAIIAN_OR_OTHER_PACIFIC_ISLANDER = PermissibleValue(
+        text="NATIVE_HAWAIIAN_OR_OTHER_PACIFIC_ISLANDER",
+        description="Native Hawaiian or Other Pacific Islander",
+        meaning=HL7["CDCREC#2076-8"])
+    WHITE = PermissibleValue(
+        text="WHITE",
+        description="White",
+        meaning=HL7["CDCREC#2106-3"])
+    OTHER_RACE = PermissibleValue(
+        text="OTHER_RACE",
+        description="Other Race (discouraged for statistical analysis)",
+        meaning=HL7["CDCREC#2131-1"])
+    ASKED_BUT_UNKNOWN = PermissibleValue(
+        text="ASKED_BUT_UNKNOWN",
+        description="asked but unknown",
+        meaning=HL7["ASKU"])
+    UNKNOWN = PermissibleValue(
+        text="UNKNOWN",
+        description="unknown",
+        meaning=HL7["UNK"])
+
+    _defn = EnumDefinition(
+        name="OmbRaceCategory",
+        description="Office of Management and Budget (OMB) race category codes",
+    )
+
+class OmbEthnicityCategory(EnumDefinitionImpl):
+    """
+    Office of Management and Budget (OMB) ethnicity category codes
+    """
+    HISPANIC_OR_LATINO = PermissibleValue(
+        text="HISPANIC_OR_LATINO",
+        description="Hispanic or Latino",
+        meaning=HL7["CDCREC#2135-2"])
+    NOT_HISPANIC_OR_LATINO = PermissibleValue(
+        text="NOT_HISPANIC_OR_LATINO",
+        description="Not Hispanic or Latino",
+        meaning=HL7["CDCREC#2186-5"])
+    ASKED_BUT_UNKNOWN = PermissibleValue(
+        text="ASKED_BUT_UNKNOWN",
+        description="asked but unknown",
+        meaning=HL7["ASKU"])
+    UNKNOWN = PermissibleValue(
+        text="UNKNOWN",
+        description="unknown",
+        meaning=HL7["UNK"])
+
+    _defn = EnumDefinition(
+        name="OmbEthnicityCategory",
+        description="Office of Management and Budget (OMB) ethnicity category codes",
+    )
 
 class CaseOrControlEnum(EnumDefinitionImpl):
 
@@ -4211,65 +4509,6 @@ class TimePeriod(EnumDefinitionImpl):
         description="Common time periods and intervals",
     )
 
-class TimeUnit(EnumDefinitionImpl):
-    """
-    Units of time measurement
-    """
-    NANOSECOND = PermissibleValue(
-        text="NANOSECOND",
-        description="Nanosecond (10^-9 seconds)")
-    MICROSECOND = PermissibleValue(
-        text="MICROSECOND",
-        description="Microsecond (10^-6 seconds)")
-    MILLISECOND = PermissibleValue(
-        text="MILLISECOND",
-        description="Millisecond (10^-3 seconds)")
-    SECOND = PermissibleValue(
-        text="SECOND",
-        description="Second (SI base unit)",
-        meaning=TIME["unitSecond"])
-    MINUTE = PermissibleValue(
-        text="MINUTE",
-        description="Minute (60 seconds)",
-        meaning=TIME["unitMinute"])
-    HOUR = PermissibleValue(
-        text="HOUR",
-        description="Hour (60 minutes)",
-        meaning=TIME["unitHour"])
-    DAY = PermissibleValue(
-        text="DAY",
-        description="Day (24 hours)",
-        meaning=TIME["unitDay"])
-    WEEK = PermissibleValue(
-        text="WEEK",
-        description="Week (7 days)",
-        meaning=TIME["unitWeek"])
-    MONTH = PermissibleValue(
-        text="MONTH",
-        description="Month (approximately 30.44 days)",
-        meaning=TIME["unitMonth"])
-    YEAR = PermissibleValue(
-        text="YEAR",
-        description="Year (365.25 days)",
-        meaning=TIME["unitYear"])
-    DECADE = PermissibleValue(
-        text="DECADE",
-        description="Decade (10 years)",
-        meaning=TIME["unitDecade"])
-    CENTURY = PermissibleValue(
-        text="CENTURY",
-        description="Century (100 years)",
-        meaning=TIME["unitCentury"])
-    MILLENNIUM = PermissibleValue(
-        text="MILLENNIUM",
-        description="Millennium (1000 years)",
-        meaning=TIME["unitMillennium"])
-
-    _defn = EnumDefinition(
-        name="TimeUnit",
-        description="Units of time measurement",
-    )
-
 class TimeOfDay(EnumDefinitionImpl):
     """
     Common times of day
@@ -6612,121 +6851,6 @@ class PersonStatusEnum(EnumDefinitionImpl):
     _defn = EnumDefinition(
         name="PersonStatusEnum",
         description="Vital status of a person (living or deceased)",
-    )
-
-class MaritalStatusEnum(EnumDefinitionImpl):
-    """
-    Marital or civil status of a person
-    """
-    SINGLE = PermissibleValue(
-        text="SINGLE",
-        title="Never Married",
-        description="Never married",
-        meaning=NCIT["C51774"])
-    MARRIED = PermissibleValue(
-        text="MARRIED",
-        title="Married",
-        description="Currently married or in civil partnership",
-        meaning=NCIT["C51773"])
-    DIVORCED = PermissibleValue(
-        text="DIVORCED",
-        title="Divorced",
-        description="Marriage legally dissolved",
-        meaning=NCIT["C51776"])
-    WIDOWED = PermissibleValue(
-        text="WIDOWED",
-        title="Widowed",
-        description="Marriage ended due to death of spouse",
-        meaning=NCIT["C51775"])
-    SEPARATED = PermissibleValue(
-        text="SEPARATED",
-        title="Legally Separated",
-        description="Living apart from spouse",
-        meaning=NCIT["C51777"])
-    DOMESTIC_PARTNERSHIP = PermissibleValue(
-        text="DOMESTIC_PARTNERSHIP",
-        title="Domestic Partnership",
-        description="In a domestic partnership",
-        meaning=NCIT["C53262"])
-    CIVIL_UNION = PermissibleValue(
-        text="CIVIL_UNION",
-        title="Marital Status",
-        description="In a civil union",
-        meaning=NCIT["C25188"])
-    UNKNOWN = PermissibleValue(
-        text="UNKNOWN",
-        title="Unknown",
-        description="Marital status not known",
-        meaning=NCIT["C17998"])
-    PREFER_NOT_TO_SAY = PermissibleValue(
-        text="PREFER_NOT_TO_SAY",
-        title="Marital or Civil Status Not Disclosed",
-        description="Prefers not to disclose marital status",
-        meaning=NCIT["C150742"])
-
-    _defn = EnumDefinition(
-        name="MaritalStatusEnum",
-        description="Marital or civil status of a person",
-    )
-
-class EmploymentStatusEnum(EnumDefinitionImpl):
-    """
-    Employment status of a person
-    """
-    EMPLOYED_FULL_TIME = PermissibleValue(
-        text="EMPLOYED_FULL_TIME",
-        title="Full Time Employment",
-        description="Employed full-time",
-        meaning=NCIT["C52658"])
-    EMPLOYED_PART_TIME = PermissibleValue(
-        text="EMPLOYED_PART_TIME",
-        title="Part Time Employment",
-        description="Employed part-time",
-        meaning=NCIT["C75562"])
-    SELF_EMPLOYED = PermissibleValue(
-        text="SELF_EMPLOYED",
-        title="Self-Employed",
-        description="Self-employed",
-        meaning=NCIT["C116000"])
-    UNEMPLOYED = PermissibleValue(
-        text="UNEMPLOYED",
-        title="Unemployed",
-        description="Unemployed",
-        meaning=NCIT["C75563"])
-    STUDENT = PermissibleValue(
-        text="STUDENT",
-        title="Student",
-        description="Student",
-        meaning=NCIT["C75561"])
-    RETIRED = PermissibleValue(
-        text="RETIRED",
-        title="Unemployed or Retired",
-        description="Retired",
-        meaning=NCIT["C148257"])
-    HOMEMAKER = PermissibleValue(
-        text="HOMEMAKER",
-        title="Homemaker",
-        description="Homemaker",
-        meaning=NCIT["C75560"])
-    DISABLED = PermissibleValue(
-        text="DISABLED",
-        title="Disabled",
-        description="Unable to work due to disability",
-        meaning=NCIT["C63367"])
-    OTHER = PermissibleValue(
-        text="OTHER",
-        title="Employed",
-        description="Other employment status",
-        meaning=NCIT["C25172"])
-    UNKNOWN = PermissibleValue(
-        text="UNKNOWN",
-        title="Unknown",
-        description="Employment status not known",
-        meaning=NCIT["C17998"])
-
-    _defn = EnumDefinition(
-        name="EmploymentStatusEnum",
-        description="Employment status of a person",
     )
 
 class MimeType(EnumDefinitionImpl):
@@ -12201,58 +12325,6 @@ class SequenceQualityEnum(EnumDefinitionImpl):
         description="Sequence quality indicators (Phred scores)",
     )
 
-class DNABase(EnumDefinitionImpl):
-    """
-    Standard DNA nucleotide bases (A, T, G, C) as defined by IUPAC
-    """
-    A = PermissibleValue(
-        text="A",
-        description="Adenine",
-        meaning=CHEBI["16708"])
-    T = PermissibleValue(
-        text="T",
-        description="Thymine",
-        meaning=CHEBI["17821"])
-    G = PermissibleValue(
-        text="G",
-        description="Guanine",
-        meaning=CHEBI["16235"])
-    C = PermissibleValue(
-        text="C",
-        description="Cytosine",
-        meaning=CHEBI["16040"])
-
-    _defn = EnumDefinition(
-        name="DNABase",
-        description="Standard DNA nucleotide bases (A, T, G, C) as defined by IUPAC",
-    )
-
-class RNABase(EnumDefinitionImpl):
-    """
-    Standard RNA nucleotide bases (A, U, G, C) as defined by IUPAC
-    """
-    A = PermissibleValue(
-        text="A",
-        description="Adenine",
-        meaning=CHEBI["16708"])
-    U = PermissibleValue(
-        text="U",
-        description="Uracil",
-        meaning=CHEBI["17568"])
-    G = PermissibleValue(
-        text="G",
-        description="Guanine",
-        meaning=CHEBI["16235"])
-    C = PermissibleValue(
-        text="C",
-        description="Cytosine",
-        meaning=CHEBI["16040"])
-
-    _defn = EnumDefinition(
-        name="RNABase",
-        description="Standard RNA nucleotide bases (A, U, G, C) as defined by IUPAC",
-    )
-
 class IUPACNucleotideCode(EnumDefinitionImpl):
     """
     Complete IUPAC nucleotide codes including ambiguous bases for DNA/RNA sequences.
@@ -14649,6 +14721,557 @@ class ExperimentalPreparation(EnumDefinitionImpl):
         description="Sample preparation methods",
     )
 
+class BioticInteractionType(EnumDefinitionImpl):
+    """
+    Types of biotic interactions between organisms, based on RO:0002437 (biotically interacts with). These represent
+    ecological relationships where at least one partner is an organism.
+    """
+    BIOTICALLY_INTERACTS_WITH = PermissibleValue(
+        text="BIOTICALLY_INTERACTS_WITH",
+        description="""An interaction relationship in which at least one of the partners is an organism and the other is either an organism or an abiotic entity with which the organism interacts.""",
+        meaning=RO["0002437"])
+    TROPHICALLY_INTERACTS_WITH = PermissibleValue(
+        text="TROPHICALLY_INTERACTS_WITH",
+        description="An interaction relationship in which the partners are related via a feeding relationship.",
+        meaning=RO["0002438"])
+    PREYS_ON = PermissibleValue(
+        text="PREYS_ON",
+        description="""An interaction relationship involving a predation process, where the subject kills the target in order to eat it or to feed to siblings, offspring or group members.""",
+        meaning=RO["0002439"])
+    PREYED_UPON_BY = PermissibleValue(
+        text="PREYED_UPON_BY",
+        description="Inverse of preys on",
+        meaning=RO["0002458"])
+    EATS = PermissibleValue(
+        text="EATS",
+        description="""A biotic interaction where one organism consumes a material entity through a type of mouth or other oral opening.""",
+        meaning=RO["0002470"])
+    IS_EATEN_BY = PermissibleValue(
+        text="IS_EATEN_BY",
+        description="Inverse of eats",
+        meaning=RO["0002471"])
+    ACQUIRES_NUTRIENTS_FROM = PermissibleValue(
+        text="ACQUIRES_NUTRIENTS_FROM",
+        description="Inverse of provides nutrients for",
+        meaning=RO["0002457"])
+    PROVIDES_NUTRIENTS_FOR = PermissibleValue(
+        text="PROVIDES_NUTRIENTS_FOR",
+        description="A biotic interaction where a material entity provides nutrition for an organism.",
+        meaning=RO["0002469"])
+    SYMBIOTICALLY_INTERACTS_WITH = PermissibleValue(
+        text="SYMBIOTICALLY_INTERACTS_WITH",
+        description="""A biotic interaction in which the two organisms live together in more or less intimate association.""",
+        meaning=RO["0002440"])
+    COMMENSUALLY_INTERACTS_WITH = PermissibleValue(
+        text="COMMENSUALLY_INTERACTS_WITH",
+        description="""An interaction relationship between two organisms living together in more or less intimate association in a relationship in which one benefits and the other is unaffected.""",
+        meaning=RO["0002441"])
+    MUTUALISTICALLY_INTERACTS_WITH = PermissibleValue(
+        text="MUTUALISTICALLY_INTERACTS_WITH",
+        description="""An interaction relationship between two organisms living together in more or less intimate association in a relationship in which both organisms benefit from each other.""",
+        meaning=RO["0002442"])
+    INTERACTS_VIA_PARASITE_HOST = PermissibleValue(
+        text="INTERACTS_VIA_PARASITE_HOST",
+        description="""An interaction relationship between two organisms living together in more or less intimate association in a relationship in which association is disadvantageous or destructive to one of the organisms.""",
+        meaning=RO["0002443"])
+    SYMBIOTROPHICALLY_INTERACTS_WITH = PermissibleValue(
+        text="SYMBIOTROPHICALLY_INTERACTS_WITH",
+        description="""A trophic interaction in which one organism acquires nutrients through a symbiotic relationship with another organism.""",
+        meaning=RO["0008510"])
+    PARASITE_OF = PermissibleValue(
+        text="PARASITE_OF",
+        description="A parasite-host relationship where an organism benefits at the expense of another.",
+        meaning=RO["0002444"])
+    HOST_OF = PermissibleValue(
+        text="HOST_OF",
+        description="Inverse of has host",
+        meaning=RO["0002453"])
+    HAS_HOST = PermissibleValue(
+        text="HAS_HOST",
+        description="""X 'has host' y if and only if: x is an organism, y is an organism, and x can live on the surface of or within the body of y.""",
+        meaning=RO["0002454"])
+    PARASITOID_OF = PermissibleValue(
+        text="PARASITOID_OF",
+        description="A parasite that kills or sterilizes its host",
+        meaning=RO["0002208"])
+    ECTOPARASITE_OF = PermissibleValue(
+        text="ECTOPARASITE_OF",
+        description="""A sub-relation of parasite-of in which the parasite lives on or in the integumental system of the host.""",
+        meaning=RO["0002632"])
+    ENDOPARASITE_OF = PermissibleValue(
+        text="ENDOPARASITE_OF",
+        description="A parasite that lives inside its host",
+        meaning=RO["0002634"])
+    INTRACELLULAR_ENDOPARASITE_OF = PermissibleValue(
+        text="INTRACELLULAR_ENDOPARASITE_OF",
+        description="A sub-relation of endoparasite-of in which the parasite inhabits host cells.",
+        meaning=RO["0002640"])
+    INTERCELLULAR_ENDOPARASITE_OF = PermissibleValue(
+        text="INTERCELLULAR_ENDOPARASITE_OF",
+        description="""A sub-relation of endoparasite-of in which the parasite inhabits the spaces between host cells.""",
+        meaning=RO["0002638"])
+    HEMIPARASITE_OF = PermissibleValue(
+        text="HEMIPARASITE_OF",
+        description="""A sub-relation of parasite-of in which the parasite is a plant, and the parasite is parasitic under natural conditions and is also photosynthetic to some degree.""",
+        meaning=RO["0002237"])
+    STEM_PARASITE_OF = PermissibleValue(
+        text="STEM_PARASITE_OF",
+        description="""A parasite-of relationship in which the host is a plant and the parasite that attaches to the host stem.""",
+        meaning=RO["0002235"])
+    ROOT_PARASITE_OF = PermissibleValue(
+        text="ROOT_PARASITE_OF",
+        description="""A parasite-of relationship in which the host is a plant and the parasite that attaches to the host root.""",
+        meaning=RO["0002236"])
+    OBLIGATE_PARASITE_OF = PermissibleValue(
+        text="OBLIGATE_PARASITE_OF",
+        description="""A sub-relation of parasite-of in which the parasite that cannot complete its life cycle without a host.""",
+        meaning=RO["0002227"])
+    FACULTATIVE_PARASITE_OF = PermissibleValue(
+        text="FACULTATIVE_PARASITE_OF",
+        description="""A sub-relations of parasite-of in which the parasite that can complete its life cycle independent of a host.""",
+        meaning=RO["0002228"])
+    TROPHIC_PARASITE_OF = PermissibleValue(
+        text="TROPHIC_PARASITE_OF",
+        description="""A symbiotrophic interaction in which one organism acquires nutrients through a parasitic relationship with another organism.""",
+        meaning=RO["0008511"])
+    PATHOGEN_OF = PermissibleValue(
+        text="PATHOGEN_OF",
+        description="Inverse of has pathogen",
+        meaning=RO["0002556"])
+    HAS_PATHOGEN = PermissibleValue(
+        text="HAS_PATHOGEN",
+        description="""A host interaction where the smaller of the two members of a symbiosis causes a disease in the larger member.""",
+        meaning=RO["0002557"])
+    RESERVOIR_HOST_OF = PermissibleValue(
+        text="RESERVOIR_HOST_OF",
+        description="""A relation between a host organism and a hosted organism in which the hosted organism naturally occurs in an indefinitely maintained reservoir provided by the host.""",
+        meaning=RO["0002802"])
+    HAS_RESERVOIR_HOST = PermissibleValue(
+        text="HAS_RESERVOIR_HOST",
+        description="Inverse of reservoir host of",
+        meaning=RO["0002803"])
+    IS_VECTOR_FOR = PermissibleValue(
+        text="IS_VECTOR_FOR",
+        description="Organism acts as a vector for transmitting another organism",
+        meaning=RO["0002459"])
+    POLLINATES = PermissibleValue(
+        text="POLLINATES",
+        description="An interaction where an organism transfers pollen to a plant",
+        meaning=RO["0002455"])
+    PARTICIPATES_IN_ABIOTIC_BIOTIC_INTERACTION_WITH = PermissibleValue(
+        text="PARTICIPATES_IN_ABIOTIC_BIOTIC_INTERACTION_WITH",
+        description="""A biotic interaction relationship in which one partner is an organism and the other partner is inorganic. For example, the relationship between a sponge and the substrate to which is it anchored.""",
+        meaning=RO["0002446"])
+    ECOLOGICALLY_CO_OCCURS_WITH = PermissibleValue(
+        text="ECOLOGICALLY_CO_OCCURS_WITH",
+        description="""An interaction relationship describing organisms that often occur together at the same time and space or in the same environment.""",
+        meaning=RO["0008506"])
+    HYPERPARASITE_OF = PermissibleValue(
+        text="HYPERPARASITE_OF",
+        description="x is a hyperparasite of y iff x is a parasite of a parasite of the target organism y",
+        meaning=RO["0002553"])
+    MESOPARASITE_OF = PermissibleValue(
+        text="MESOPARASITE_OF",
+        description="""A sub-relation of parasite-of in which the parasite is partially an endoparasite and partially an ectoparasite.""",
+        meaning=RO["0002636"])
+    KLEPTOPARASITE_OF = PermissibleValue(
+        text="KLEPTOPARASITE_OF",
+        description="""A sub-relation of parasite of in which a parasite steals resources from another organism, usually food or nest material.""",
+        meaning=RO["0008503"])
+    EPIPHYTE_OF = PermissibleValue(
+        text="EPIPHYTE_OF",
+        description="""An interaction relationship wherein a plant or algae is living on the outside surface of another plant.""",
+        meaning=RO["0008501"])
+    ALLELOPATH_OF = PermissibleValue(
+        text="ALLELOPATH_OF",
+        description="""A relationship between organisms where one organism is influenced by the biochemicals produced by another. Allelopathy is a phenomenon in which one organism releases chemicals to positively or negatively influence the growth, survival or reproduction of other organisms in its vicinity.""",
+        meaning=RO["0002555"])
+    VISITS = PermissibleValue(
+        text="VISITS",
+        description="An interaction where an organism visits another organism or location",
+        meaning=RO["0002618"])
+    VISITS_FLOWERS_OF = PermissibleValue(
+        text="VISITS_FLOWERS_OF",
+        description="An interaction where an organism visits the flowers of a plant",
+        meaning=RO["0002622"])
+    HAS_FLOWERS_VISITED_BY = PermissibleValue(
+        text="HAS_FLOWERS_VISITED_BY",
+        description="Inverse of visits flowers of",
+        meaning=RO["0002623"])
+    LAYS_EGGS_IN = PermissibleValue(
+        text="LAYS_EGGS_IN",
+        description="An interaction where an organism deposits eggs inside another organism",
+        meaning=RO["0002624"])
+    HAS_EGGS_LAID_IN_BY = PermissibleValue(
+        text="HAS_EGGS_LAID_IN_BY",
+        description="Inverse of lays eggs in",
+        meaning=RO["0002625"])
+    LAYS_EGGS_ON = PermissibleValue(
+        text="LAYS_EGGS_ON",
+        description="""An interaction relationship in which organism a lays eggs on the outside surface of organism b. Organism b is neither helped nor harmed in the process of egg laying or incubation.""",
+        meaning=RO["0008507"])
+    HAS_EGGS_LAID_ON_BY = PermissibleValue(
+        text="HAS_EGGS_LAID_ON_BY",
+        description="Inverse of lays eggs on",
+        meaning=RO["0008508"])
+    CREATES_HABITAT_FOR = PermissibleValue(
+        text="CREATES_HABITAT_FOR",
+        description="""An interaction relationship wherein one organism creates a structure or environment that is lived in by another organism.""",
+        meaning=RO["0008505"])
+
+    _defn = EnumDefinition(
+        name="BioticInteractionType",
+        description="""Types of biotic interactions between organisms, based on RO:0002437 (biotically interacts with). These represent ecological relationships where at least one partner is an organism.""",
+    )
+
+class MineralogyFeedstockClass(EnumDefinitionImpl):
+    """
+    Types of mineral feedstock sources for extraction and processing operations, including primary and secondary
+    sources.
+    """
+    HARDROCK_PRIMARY = PermissibleValue(
+        text="HARDROCK_PRIMARY",
+        description="Primary ore from hardrock mining operations",
+        meaning=ENVO["01001850"])
+    TAILINGS_LEGACY = PermissibleValue(
+        text="TAILINGS_LEGACY",
+        description="Historical mine tailings available for reprocessing",
+        meaning=ENVO["00002044"])
+    WASTE_PILES = PermissibleValue(
+        text="WASTE_PILES",
+        description="Accumulated mining waste materials",
+        meaning=ENVO["00002267"])
+    COAL_BYPRODUCT = PermissibleValue(
+        text="COAL_BYPRODUCT",
+        description="Byproducts from coal mining and processing",
+        meaning=ENVO["02000092"])
+    E_WASTE = PermissibleValue(
+        text="E_WASTE",
+        description="Electronic waste containing recoverable metals",
+        meaning=ENVO["00002271"])
+    BRINES = PermissibleValue(
+        text="BRINES",
+        description="Saline water sources containing dissolved minerals",
+        meaning=ENVO["00002019"])
+
+    _defn = EnumDefinition(
+        name="MineralogyFeedstockClass",
+        description="""Types of mineral feedstock sources for extraction and processing operations, including primary and secondary sources.""",
+    )
+
+class BeneficiationPathway(EnumDefinitionImpl):
+    """
+    Methods for mineral separation and concentration aligned with advanced ore processing initiatives (AOI-2).
+    """
+    ORE_SORTING = PermissibleValue(
+        text="ORE_SORTING",
+        description="Sensor-based sorting of ore particles")
+    DENSE_MEDIUM_SEPARATION = PermissibleValue(
+        text="DENSE_MEDIUM_SEPARATION",
+        description="Gravity separation using dense media")
+    MICROWAVE_PREWEAKENING = PermissibleValue(
+        text="MICROWAVE_PREWEAKENING",
+        description="Microwave treatment to weaken ore structure")
+    ELECTRIC_PULSE_PREWEAKENING = PermissibleValue(
+        text="ELECTRIC_PULSE_PREWEAKENING",
+        description="High-voltage electric pulse fragmentation")
+    GRINDING_DYNAMIC = PermissibleValue(
+        text="GRINDING_DYNAMIC",
+        description="Dynamic grinding optimization systems")
+    ELECTROSTATIC_SEP = PermissibleValue(
+        text="ELECTROSTATIC_SEP",
+        description="Electrostatic separation of minerals")
+    MAGNETIC_SEP = PermissibleValue(
+        text="MAGNETIC_SEP",
+        description="Magnetic separation of ferromagnetic minerals")
+    FLOTATION_LOW_H2O = PermissibleValue(
+        text="FLOTATION_LOW_H2O",
+        description="Low-water flotation processes")
+    BIO_BENEFICIATION = PermissibleValue(
+        text="BIO_BENEFICIATION",
+        description="Biological methods for mineral beneficiation")
+
+    _defn = EnumDefinition(
+        name="BeneficiationPathway",
+        description="""Methods for mineral separation and concentration aligned with advanced ore processing initiatives (AOI-2).""",
+    )
+
+class InSituChemistryRegime(EnumDefinitionImpl):
+    """
+    Chemical leaching systems for in-situ extraction with associated parameters including pH, Eh, temperature, and
+    ionic strength.
+    """
+    ACIDIC_SULFATE = PermissibleValue(
+        text="ACIDIC_SULFATE",
+        description="Sulfuric acid-based leaching system",
+        meaning=CHEBI["26836"])
+    ACIDIC_CHLORIDE = PermissibleValue(
+        text="ACIDIC_CHLORIDE",
+        description="Hydrochloric acid or chloride-based leaching",
+        meaning=CHEBI["17883"])
+    AMMONIA_BASED = PermissibleValue(
+        text="AMMONIA_BASED",
+        description="Ammonia or ammonium-based leaching system",
+        meaning=CHEBI["16134"])
+    ORGANIC_ACID = PermissibleValue(
+        text="ORGANIC_ACID",
+        description="Organic acid leaching (citric, oxalic, etc.)",
+        meaning=CHEBI["64709"])
+    BIOLEACH_SULFUR_OXIDIZING = PermissibleValue(
+        text="BIOLEACH_SULFUR_OXIDIZING",
+        description="Bioleaching using sulfur-oxidizing bacteria")
+    BIOLEACH_IRON_OXIDIZING = PermissibleValue(
+        text="BIOLEACH_IRON_OXIDIZING",
+        description="Bioleaching using iron-oxidizing bacteria")
+
+    _defn = EnumDefinition(
+        name="InSituChemistryRegime",
+        description="""Chemical leaching systems for in-situ extraction with associated parameters including pH, Eh, temperature, and ionic strength.""",
+    )
+
+class ExtractableTargetElement(EnumDefinitionImpl):
+    """
+    Target elements for extraction, particularly rare earth elements (REE) and critical minerals.
+    """
+    REE_LA = PermissibleValue(
+        text="REE_LA",
+        description="Lanthanum",
+        meaning=CHEBI["33336"])
+    REE_CE = PermissibleValue(
+        text="REE_CE",
+        description="Cerium",
+        meaning=CHEBI["33369"])
+    REE_PR = PermissibleValue(
+        text="REE_PR",
+        description="Praseodymium",
+        meaning=CHEBI["49828"])
+    REE_ND = PermissibleValue(
+        text="REE_ND",
+        description="Neodymium",
+        meaning=CHEBI["33372"])
+    REE_PM = PermissibleValue(
+        text="REE_PM",
+        description="Promethium",
+        meaning=CHEBI["33373"])
+    REE_SM = PermissibleValue(
+        text="REE_SM",
+        description="Samarium",
+        meaning=CHEBI["33374"])
+    REE_EU = PermissibleValue(
+        text="REE_EU",
+        description="Europium",
+        meaning=CHEBI["32999"])
+    REE_GD = PermissibleValue(
+        text="REE_GD",
+        description="Gadolinium",
+        meaning=CHEBI["33375"])
+    REE_TB = PermissibleValue(
+        text="REE_TB",
+        description="Terbium",
+        meaning=CHEBI["33376"])
+    REE_DY = PermissibleValue(
+        text="REE_DY",
+        description="Dysprosium",
+        meaning=CHEBI["33377"])
+    REE_HO = PermissibleValue(
+        text="REE_HO",
+        description="Holmium",
+        meaning=CHEBI["49648"])
+    REE_ER = PermissibleValue(
+        text="REE_ER",
+        description="Erbium",
+        meaning=CHEBI["33379"])
+    REE_TM = PermissibleValue(
+        text="REE_TM",
+        description="Thulium",
+        meaning=CHEBI["33380"])
+    REE_YB = PermissibleValue(
+        text="REE_YB",
+        description="Ytterbium",
+        meaning=CHEBI["33381"])
+    REE_LU = PermissibleValue(
+        text="REE_LU",
+        description="Lutetium",
+        meaning=CHEBI["33382"])
+    SC = PermissibleValue(
+        text="SC",
+        description="Scandium",
+        meaning=CHEBI["33330"])
+    CO = PermissibleValue(
+        text="CO",
+        description="Cobalt",
+        meaning=CHEBI["27638"])
+    NI = PermissibleValue(
+        text="NI",
+        description="Nickel",
+        meaning=CHEBI["28112"])
+    LI = PermissibleValue(
+        text="LI",
+        description="Lithium",
+        meaning=CHEBI["30145"])
+
+    _defn = EnumDefinition(
+        name="ExtractableTargetElement",
+        description="""Target elements for extraction, particularly rare earth elements (REE) and critical minerals.""",
+    )
+
+class SensorWhileDrillingFeature(EnumDefinitionImpl):
+    """
+    Measurement while drilling (MWD) and logging while drilling (LWD) features for orebody ML and geosteering
+    applications.
+    """
+    WOB = PermissibleValue(
+        text="WOB",
+        description="Weight on bit measurement")
+    ROP = PermissibleValue(
+        text="ROP",
+        description="Rate of penetration")
+    TORQUE = PermissibleValue(
+        text="TORQUE",
+        description="Rotational torque measurement")
+    MWD_GAMMA = PermissibleValue(
+        text="MWD_GAMMA",
+        description="Gamma ray logging while drilling")
+    MWD_RESISTIVITY = PermissibleValue(
+        text="MWD_RESISTIVITY",
+        description="Resistivity logging while drilling")
+    MUD_LOSS = PermissibleValue(
+        text="MUD_LOSS",
+        description="Drilling mud loss measurement")
+    VIBRATION = PermissibleValue(
+        text="VIBRATION",
+        description="Drill string vibration monitoring")
+    RSS_ANGLE = PermissibleValue(
+        text="RSS_ANGLE",
+        description="Rotary steerable system angle")
+
+    _defn = EnumDefinition(
+        name="SensorWhileDrillingFeature",
+        description="""Measurement while drilling (MWD) and logging while drilling (LWD) features for orebody ML and geosteering applications.""",
+    )
+
+class ProcessPerformanceMetric(EnumDefinitionImpl):
+    """
+    Key performance indicators for mining and processing operations tied to SMART milestones and sustainability goals.
+    """
+    RECOVERY_PCT = PermissibleValue(
+        text="RECOVERY_PCT",
+        description="Percentage recovery of target material")
+    SELECTIVITY_INDEX = PermissibleValue(
+        text="SELECTIVITY_INDEX",
+        description="Selectivity index for separation processes")
+    SPECIFIC_ENERGY_KWH_T = PermissibleValue(
+        text="SPECIFIC_ENERGY_KWH_T",
+        description="Specific energy consumption in kWh per tonne")
+    WATER_INTENSITY_L_T = PermissibleValue(
+        text="WATER_INTENSITY_L_T",
+        description="Water usage intensity in liters per tonne")
+    REAGENT_INTENSITY_KG_T = PermissibleValue(
+        text="REAGENT_INTENSITY_KG_T",
+        description="Reagent consumption in kg per tonne")
+    CO2E_KG_T = PermissibleValue(
+        text="CO2E_KG_T",
+        description="CO2 equivalent emissions in kg per tonne")
+    TAILINGS_MASS_REDUCTION_PCT = PermissibleValue(
+        text="TAILINGS_MASS_REDUCTION_PCT",
+        description="Percentage reduction in tailings mass")
+
+    _defn = EnumDefinition(
+        name="ProcessPerformanceMetric",
+        description="""Key performance indicators for mining and processing operations tied to SMART milestones and sustainability goals.""",
+    )
+
+class BioleachOrganism(EnumDefinitionImpl):
+    """
+    Microorganisms used in bioleaching and biomining operations, including engineered strains.
+    """
+    ACIDITHIOBACILLUS_FERROOXIDANS = PermissibleValue(
+        text="ACIDITHIOBACILLUS_FERROOXIDANS",
+        description="Iron and sulfur oxidizing bacterium",
+        meaning=NCBITAXON["920"])
+    LEPTOSPIRILLUM_FERROOXIDANS = PermissibleValue(
+        text="LEPTOSPIRILLUM_FERROOXIDANS",
+        description="Iron oxidizing bacterium",
+        meaning=NCBITAXON["2705"])
+    ASPERGILLUS_NIGER = PermissibleValue(
+        text="ASPERGILLUS_NIGER",
+        description="Organic acid producing fungus",
+        meaning=NCBITAXON["5061"])
+    ENGINEERED_STRAIN = PermissibleValue(
+        text="ENGINEERED_STRAIN",
+        description="Genetically modified organism for enhanced bioleaching")
+
+    _defn = EnumDefinition(
+        name="BioleachOrganism",
+        description="""Microorganisms used in bioleaching and biomining operations, including engineered strains.""",
+    )
+
+class BioleachMode(EnumDefinitionImpl):
+    """
+    Mechanisms of bioleaching including indirect and direct bacterial action.
+    """
+    INDIRECT_BIOLEACH_ORGANIC_ACIDS = PermissibleValue(
+        text="INDIRECT_BIOLEACH_ORGANIC_ACIDS",
+        description="Indirect bioleaching through organic acid production")
+    SULFUR_OXIDATION = PermissibleValue(
+        text="SULFUR_OXIDATION",
+        description="Direct bacterial oxidation of sulfur compounds")
+    IRON_OXIDATION = PermissibleValue(
+        text="IRON_OXIDATION",
+        description="Direct bacterial oxidation of iron compounds")
+
+    _defn = EnumDefinition(
+        name="BioleachMode",
+        description="""Mechanisms of bioleaching including indirect and direct bacterial action.""",
+    )
+
+class AutonomyLevel(EnumDefinitionImpl):
+    """
+    Levels of autonomy for mining systems including drilling, hauling, and sorting robots (relevant for Topic 1
+    initiatives).
+    """
+    ASSISTIVE = PermissibleValue(
+        text="ASSISTIVE",
+        description="Human operator with assistive technologies")
+    SUPERVISED_AUTONOMY = PermissibleValue(
+        text="SUPERVISED_AUTONOMY",
+        description="Autonomous operation with human supervision")
+    SEMI_AUTONOMOUS = PermissibleValue(
+        text="SEMI_AUTONOMOUS",
+        description="Partial autonomy with human intervention capability")
+    FULLY_AUTONOMOUS = PermissibleValue(
+        text="FULLY_AUTONOMOUS",
+        description="Complete autonomous operation without human intervention")
+
+    _defn = EnumDefinition(
+        name="AutonomyLevel",
+        description="""Levels of autonomy for mining systems including drilling, hauling, and sorting robots (relevant for Topic 1 initiatives).""",
+    )
+
+class RegulatoryConstraint(EnumDefinitionImpl):
+    """
+    Regulatory and community constraints affecting mining operations, particularly for in-situ extraction and
+    community engagement.
+    """
+    AQUIFER_PROTECTION = PermissibleValue(
+        text="AQUIFER_PROTECTION",
+        description="Requirements for groundwater and aquifer protection",
+        meaning=ENVO["00012408"])
+    EMISSIONS_CAP = PermissibleValue(
+        text="EMISSIONS_CAP",
+        description="Limits on atmospheric emissions")
+    CULTURAL_HERITAGE_ZONE = PermissibleValue(
+        text="CULTURAL_HERITAGE_ZONE",
+        description="Protection of cultural heritage sites")
+    WATER_RIGHTS_LIMIT = PermissibleValue(
+        text="WATER_RIGHTS_LIMIT",
+        description="Restrictions based on water usage rights")
+
+    _defn = EnumDefinition(
+        name="RegulatoryConstraint",
+        description="""Regulatory and community constraints affecting mining operations, particularly for in-situ extraction and community engagement.""",
+    )
+
 class SubatomicParticleEnum(EnumDefinitionImpl):
     """
     Fundamental and composite subatomic particles
@@ -16279,43 +16902,6 @@ class BiologicalSexEnum(EnumDefinitionImpl):
 Required by NIH as a biological variable in research.""",
     )
 
-class GenderIdentityEnum(EnumDefinitionImpl):
-    """
-    Current gender identity, which may differ from sex assigned at birth
-    """
-    MAN = PermissibleValue(
-        text="MAN",
-        description="Identifies as man",
-        meaning=GSSO["009292"])
-    WOMAN = PermissibleValue(
-        text="WOMAN",
-        description="Identifies as woman",
-        meaning=GSSO["009293"])
-    TRANSGENDER_MAN = PermissibleValue(
-        text="TRANSGENDER_MAN",
-        description="Identifies as transgender man/trans man/female-to-male",
-        meaning=GSSO["000372"])
-    TRANSGENDER_WOMAN = PermissibleValue(
-        text="TRANSGENDER_WOMAN",
-        description="Identifies as transgender woman/trans woman/male-to-female",
-        meaning=GSSO["000384"])
-    NON_BINARY = PermissibleValue(
-        text="NON_BINARY",
-        description="Gender identity outside the man/woman binary",
-        meaning=GSSO["002403"])
-    OTHER = PermissibleValue(
-        text="OTHER",
-        description="Other gender identity")
-    PREFER_NOT_TO_ANSWER = PermissibleValue(
-        text="PREFER_NOT_TO_ANSWER",
-        description="Prefers not to disclose gender identity",
-        meaning=NCIT["C132222"])
-
-    _defn = EnumDefinition(
-        name="GenderIdentityEnum",
-        description="Current gender identity, which may differ from sex assigned at birth",
-    )
-
 class AgeGroupEnum(EnumDefinitionImpl):
     """
     Standard age groups used in NIH clinical research, particularly NINDS CDEs
@@ -16481,74 +17067,6 @@ class StudyPhaseEnum(EnumDefinitionImpl):
     _defn = EnumDefinition(
         name="StudyPhaseEnum",
         description="Clinical trial phases per FDA and NIH definitions",
-    )
-
-class EducationLevelEnum(EnumDefinitionImpl):
-    """
-    Highest level of education completed, following NIH demographics standards
-    """
-    NO_FORMAL_EDUCATION = PermissibleValue(
-        text="NO_FORMAL_EDUCATION",
-        title="Less than High School Completion",
-        description="No formal schooling completed",
-        meaning=NCIT["C173723"])
-    ELEMENTARY = PermissibleValue(
-        text="ELEMENTARY",
-        title="Grade School",
-        description="Elementary school (grades 1-6)",
-        meaning=NCIT["C80410"])
-    MIDDLE_SCHOOL = PermissibleValue(
-        text="MIDDLE_SCHOOL",
-        title="Middle School Completion",
-        description="Middle/Junior high school (grades 7-8)",
-        meaning=NCIT["C205685"])
-    SOME_HIGH_SCHOOL = PermissibleValue(
-        text="SOME_HIGH_SCHOOL",
-        title="Some High School, No Diploma",
-        description="Some high school, no diploma",
-        meaning=NCIT["C198650"])
-    HIGH_SCHOOL_GRADUATE = PermissibleValue(
-        text="HIGH_SCHOOL_GRADUATE",
-        title="High School Completion",
-        description="High school graduate or GED",
-        meaning=NCIT["C67136"])
-    SOME_COLLEGE = PermissibleValue(
-        text="SOME_COLLEGE",
-        title="Some College Completion",
-        description="Some college credit, no degree",
-        meaning=NCIT["C67137"])
-    ASSOCIATE_DEGREE = PermissibleValue(
-        text="ASSOCIATE_DEGREE",
-        description="Associate degree (2-year)",
-        meaning=NCIT["C71340"])
-    BACHELORS_DEGREE = PermissibleValue(
-        text="BACHELORS_DEGREE",
-        title="Bachelor's Degree",
-        description="Bachelor's degree (4-year)",
-        meaning=NCIT["C39327"])
-    MASTERS_DEGREE = PermissibleValue(
-        text="MASTERS_DEGREE",
-        title="Master's Degree",
-        description="Master's degree",
-        meaning=NCIT["C39453"])
-    PROFESSIONAL_DEGREE = PermissibleValue(
-        text="PROFESSIONAL_DEGREE",
-        title="Professional Doctorate",
-        description="Professional degree (MD, JD, etc.)",
-        meaning=NCIT["C67143"])
-    DOCTORATE_DEGREE = PermissibleValue(
-        text="DOCTORATE_DEGREE",
-        description="Doctorate degree (PhD, EdD, etc.)",
-        meaning=NCIT["C39392"])
-    UNKNOWN_OR_NOT_REPORTED = PermissibleValue(
-        text="UNKNOWN_OR_NOT_REPORTED",
-        title="Unknown",
-        description="Education level not known or not reported",
-        meaning=NCIT["C17998"])
-
-    _defn = EnumDefinition(
-        name="EducationLevelEnum",
-        description="Highest level of education completed, following NIH demographics standards",
     )
 
 class KaryotypicSexEnum(EnumDefinitionImpl):
@@ -18420,3 +18938,1056 @@ class OpenSourceMaturityLevel(EnumDefinitionImpl):
 # Slots
 class slots:
     pass
+
+slots.relative_time = Slot(uri=VALUESETS.relative_time, name="relative_time", curie=VALUESETS.curie('relative_time'),
+                   model_uri=VALUESETS.relative_time, domain=None, range=Optional[Union[str, "RelativeTimeEnum"]])
+
+slots.presence = Slot(uri=VALUESETS.presence, name="presence", curie=VALUESETS.curie('presence'),
+                   model_uri=VALUESETS.presence, domain=None, range=Optional[Union[str, "PresenceEnum"]])
+
+slots.contributor = Slot(uri=VALUESETS.contributor, name="contributor", curie=VALUESETS.curie('contributor'),
+                   model_uri=VALUESETS.contributor, domain=None, range=Optional[Union[str, "ContributorType"]])
+
+slots.data_absent = Slot(uri=VALUESETS.data_absent, name="data_absent", curie=VALUESETS.curie('data_absent'),
+                   model_uri=VALUESETS.data_absent, domain=None, range=Optional[Union[str, "DataAbsentEnum"]])
+
+slots.prediction_outcome = Slot(uri=VALUESETS.prediction_outcome, name="prediction_outcome", curie=VALUESETS.curie('prediction_outcome'),
+                   model_uri=VALUESETS.prediction_outcome, domain=None, range=Optional[Union[str, "PredictionOutcomeType"]])
+
+slots.vital_status = Slot(uri=VALUESETS.vital_status, name="vital_status", curie=VALUESETS.curie('vital_status'),
+                   model_uri=VALUESETS.vital_status, domain=None, range=Optional[Union[str, "VitalStatusEnum"]])
+
+slots.healthcare_encounter_classification = Slot(uri=VALUESETS.healthcare_encounter_classification, name="healthcare_encounter_classification", curie=VALUESETS.curie('healthcare_encounter_classification'),
+                   model_uri=VALUESETS.healthcare_encounter_classification, domain=None, range=Optional[Union[str, "HealthcareEncounterClassification"]])
+
+slots.education_level = Slot(uri=VALUESETS.education_level, name="education_level", curie=VALUESETS.curie('education_level'),
+                   model_uri=VALUESETS.education_level, domain=None, range=Optional[Union[str, "EducationLevel"]])
+
+slots.marital_status = Slot(uri=VALUESETS.marital_status, name="marital_status", curie=VALUESETS.curie('marital_status'),
+                   model_uri=VALUESETS.marital_status, domain=None, range=Optional[Union[str, "MaritalStatus"]])
+
+slots.employment_status = Slot(uri=VALUESETS.employment_status, name="employment_status", curie=VALUESETS.curie('employment_status'),
+                   model_uri=VALUESETS.employment_status, domain=None, range=Optional[Union[str, "EmploymentStatus"]])
+
+slots.housing_status = Slot(uri=VALUESETS.housing_status, name="housing_status", curie=VALUESETS.curie('housing_status'),
+                   model_uri=VALUESETS.housing_status, domain=None, range=Optional[Union[str, "HousingStatus"]])
+
+slots.gender_identity = Slot(uri=VALUESETS.gender_identity, name="gender_identity", curie=VALUESETS.curie('gender_identity'),
+                   model_uri=VALUESETS.gender_identity, domain=None, range=Optional[Union[str, "GenderIdentity"]])
+
+slots.omb_race_category = Slot(uri=VALUESETS.omb_race_category, name="omb_race_category", curie=VALUESETS.curie('omb_race_category'),
+                   model_uri=VALUESETS.omb_race_category, domain=None, range=Optional[Union[str, "OmbRaceCategory"]])
+
+slots.omb_ethnicity_category = Slot(uri=VALUESETS.omb_ethnicity_category, name="omb_ethnicity_category", curie=VALUESETS.curie('omb_ethnicity_category'),
+                   model_uri=VALUESETS.omb_ethnicity_category, domain=None, range=Optional[Union[str, "OmbEthnicityCategory"]])
+
+slots.case_or_control = Slot(uri=VALUESETS.case_or_control, name="case_or_control", curie=VALUESETS.curie('case_or_control'),
+                   model_uri=VALUESETS.case_or_control, domain=None, range=Optional[Union[str, "CaseOrControlEnum"]])
+
+slots.study_design = Slot(uri=VALUESETS.study_design, name="study_design", curie=VALUESETS.curie('study_design'),
+                   model_uri=VALUESETS.study_design, domain=None, range=Optional[Union[str, "StudyDesignEnum"]])
+
+slots.investigative_protocol = Slot(uri=VALUESETS.investigative_protocol, name="investigative_protocol", curie=VALUESETS.curie('investigative_protocol'),
+                   model_uri=VALUESETS.investigative_protocol, domain=None, range=Optional[Union[str, "InvestigativeProtocolEnum"]])
+
+slots.sample_processing = Slot(uri=VALUESETS.sample_processing, name="sample_processing", curie=VALUESETS.curie('sample_processing'),
+                   model_uri=VALUESETS.sample_processing, domain=None, range=Optional[Union[str, "SampleProcessingEnum"]])
+
+slots.go_evidence = Slot(uri=VALUESETS.go_evidence, name="go_evidence", curie=VALUESETS.curie('go_evidence'),
+                   model_uri=VALUESETS.go_evidence, domain=None, range=Optional[Union[str, "GOEvidenceCode"]])
+
+slots.go_electronic_methods = Slot(uri=VALUESETS.go_electronic_methods, name="go_electronic_methods", curie=VALUESETS.curie('go_electronic_methods'),
+                   model_uri=VALUESETS.go_electronic_methods, domain=None, range=Optional[Union[str, "GOElectronicMethods"]])
+
+slots.organism_taxon = Slot(uri=VALUESETS.organism_taxon, name="organism_taxon", curie=VALUESETS.curie('organism_taxon'),
+                   model_uri=VALUESETS.organism_taxon, domain=None, range=Optional[Union[str, "OrganismTaxonEnum"]])
+
+slots.common_organism_taxa = Slot(uri=VALUESETS.common_organism_taxa, name="common_organism_taxa", curie=VALUESETS.curie('common_organism_taxa'),
+                   model_uri=VALUESETS.common_organism_taxa, domain=None, range=Optional[Union[str, "CommonOrganismTaxaEnum"]])
+
+slots.taxonomic_rank = Slot(uri=VALUESETS.taxonomic_rank, name="taxonomic_rank", curie=VALUESETS.curie('taxonomic_rank'),
+                   model_uri=VALUESETS.taxonomic_rank, domain=None, range=Optional[Union[str, "TaxonomicRank"]])
+
+slots.biological_kingdom = Slot(uri=VALUESETS.biological_kingdom, name="biological_kingdom", curie=VALUESETS.curie('biological_kingdom'),
+                   model_uri=VALUESETS.biological_kingdom, domain=None, range=Optional[Union[str, "BiologicalKingdom"]])
+
+slots.cell_cycle_phase = Slot(uri=VALUESETS.cell_cycle_phase, name="cell_cycle_phase", curie=VALUESETS.curie('cell_cycle_phase'),
+                   model_uri=VALUESETS.cell_cycle_phase, domain=None, range=Optional[Union[str, "CellCyclePhase"]])
+
+slots.mitotic_phase = Slot(uri=VALUESETS.mitotic_phase, name="mitotic_phase", curie=VALUESETS.curie('mitotic_phase'),
+                   model_uri=VALUESETS.mitotic_phase, domain=None, range=Optional[Union[str, "MitoticPhase"]])
+
+slots.cell_cycle_checkpoint = Slot(uri=VALUESETS.cell_cycle_checkpoint, name="cell_cycle_checkpoint", curie=VALUESETS.curie('cell_cycle_checkpoint'),
+                   model_uri=VALUESETS.cell_cycle_checkpoint, domain=None, range=Optional[Union[str, "CellCycleCheckpoint"]])
+
+slots.meiotic_phase = Slot(uri=VALUESETS.meiotic_phase, name="meiotic_phase", curie=VALUESETS.curie('meiotic_phase'),
+                   model_uri=VALUESETS.meiotic_phase, domain=None, range=Optional[Union[str, "MeioticPhase"]])
+
+slots.cell_cycle_regulator = Slot(uri=VALUESETS.cell_cycle_regulator, name="cell_cycle_regulator", curie=VALUESETS.curie('cell_cycle_regulator'),
+                   model_uri=VALUESETS.cell_cycle_regulator, domain=None, range=Optional[Union[str, "CellCycleRegulator"]])
+
+slots.cell_proliferation_state = Slot(uri=VALUESETS.cell_proliferation_state, name="cell_proliferation_state", curie=VALUESETS.curie('cell_proliferation_state'),
+                   model_uri=VALUESETS.cell_proliferation_state, domain=None, range=Optional[Union[str, "CellProliferationState"]])
+
+slots.dna_damage_response = Slot(uri=VALUESETS.dna_damage_response, name="dna_damage_response", curie=VALUESETS.curie('dna_damage_response'),
+                   model_uri=VALUESETS.dna_damage_response, domain=None, range=Optional[Union[str, "DNADamageResponse"]])
+
+slots.genome_feature = Slot(uri=VALUESETS.genome_feature, name="genome_feature", curie=VALUESETS.curie('genome_feature'),
+                   model_uri=VALUESETS.genome_feature, domain=None, range=Optional[Union[Union[str, "GenomeFeatureType"], list[Union[str, "GenomeFeatureType"]]]])
+
+slots.metazoan_anatomical_structure = Slot(uri=VALUESETS.metazoan_anatomical_structure, name="metazoan_anatomical_structure", curie=VALUESETS.curie('metazoan_anatomical_structure'),
+                   model_uri=VALUESETS.metazoan_anatomical_structure, domain=None, range=Optional[Union[str, "MetazoanAnatomicalStructure"]])
+
+slots.human_anatomical_structure = Slot(uri=VALUESETS.human_anatomical_structure, name="human_anatomical_structure", curie=VALUESETS.curie('human_anatomical_structure'),
+                   model_uri=VALUESETS.human_anatomical_structure, domain=None, range=Optional[Union[str, "HumanAnatomicalStructure"]])
+
+slots.plant_anatomical_structure = Slot(uri=VALUESETS.plant_anatomical_structure, name="plant_anatomical_structure", curie=VALUESETS.curie('plant_anatomical_structure'),
+                   model_uri=VALUESETS.plant_anatomical_structure, domain=None, range=Optional[Union[str, "PlantAnatomicalStructure"]])
+
+slots.cell = Slot(uri=VALUESETS.cell, name="cell", curie=VALUESETS.curie('cell'),
+                   model_uri=VALUESETS.cell, domain=None, range=Optional[Union[str, "CellType"]])
+
+slots.neuron = Slot(uri=VALUESETS.neuron, name="neuron", curie=VALUESETS.curie('neuron'),
+                   model_uri=VALUESETS.neuron, domain=None, range=Optional[Union[str, "NeuronType"]])
+
+slots.immune_cell = Slot(uri=VALUESETS.immune_cell, name="immune_cell", curie=VALUESETS.curie('immune_cell'),
+                   model_uri=VALUESETS.immune_cell, domain=None, range=Optional[Union[str, "ImmuneCell"]])
+
+slots.stem_cell = Slot(uri=VALUESETS.stem_cell, name="stem_cell", curie=VALUESETS.curie('stem_cell'),
+                   model_uri=VALUESETS.stem_cell, domain=None, range=Optional[Union[str, "StemCell"]])
+
+slots.disease = Slot(uri=VALUESETS.disease, name="disease", curie=VALUESETS.curie('disease'),
+                   model_uri=VALUESETS.disease, domain=None, range=Optional[Union[str, "Disease"]])
+
+slots.infectious_disease = Slot(uri=VALUESETS.infectious_disease, name="infectious_disease", curie=VALUESETS.curie('infectious_disease'),
+                   model_uri=VALUESETS.infectious_disease, domain=None, range=Optional[Union[str, "InfectiousDisease"]])
+
+slots.cancer = Slot(uri=VALUESETS.cancer, name="cancer", curie=VALUESETS.curie('cancer'),
+                   model_uri=VALUESETS.cancer, domain=None, range=Optional[Union[str, "Cancer"]])
+
+slots.genetic_disease = Slot(uri=VALUESETS.genetic_disease, name="genetic_disease", curie=VALUESETS.curie('genetic_disease'),
+                   model_uri=VALUESETS.genetic_disease, domain=None, range=Optional[Union[str, "GeneticDisease"]])
+
+slots.chemical_entity = Slot(uri=VALUESETS.chemical_entity, name="chemical_entity", curie=VALUESETS.curie('chemical_entity'),
+                   model_uri=VALUESETS.chemical_entity, domain=None, range=Optional[Union[str, "ChemicalEntity"]])
+
+slots.drug = Slot(uri=VALUESETS.drug, name="drug", curie=VALUESETS.curie('drug'),
+                   model_uri=VALUESETS.drug, domain=None, range=Optional[Union[str, "Drug"]])
+
+slots.metabolite = Slot(uri=VALUESETS.metabolite, name="metabolite", curie=VALUESETS.curie('metabolite'),
+                   model_uri=VALUESETS.metabolite, domain=None, range=Optional[Union[str, "Metabolite"]])
+
+slots.protein = Slot(uri=VALUESETS.protein, name="protein", curie=VALUESETS.curie('protein'),
+                   model_uri=VALUESETS.protein, domain=None, range=Optional[Union[str, "Protein"]])
+
+slots.phenotype = Slot(uri=VALUESETS.phenotype, name="phenotype", curie=VALUESETS.curie('phenotype'),
+                   model_uri=VALUESETS.phenotype, domain=None, range=Optional[Union[str, "Phenotype"]])
+
+slots.clinical_finding = Slot(uri=VALUESETS.clinical_finding, name="clinical_finding", curie=VALUESETS.curie('clinical_finding'),
+                   model_uri=VALUESETS.clinical_finding, domain=None, range=Optional[Union[str, "ClinicalFinding"]])
+
+slots.biological_process = Slot(uri=VALUESETS.biological_process, name="biological_process", curie=VALUESETS.curie('biological_process'),
+                   model_uri=VALUESETS.biological_process, domain=None, range=Optional[Union[str, "BiologicalProcess"]])
+
+slots.metabolic_process = Slot(uri=VALUESETS.metabolic_process, name="metabolic_process", curie=VALUESETS.curie('metabolic_process'),
+                   model_uri=VALUESETS.metabolic_process, domain=None, range=Optional[Union[str, "MetabolicProcess"]])
+
+slots.molecular_function = Slot(uri=VALUESETS.molecular_function, name="molecular_function", curie=VALUESETS.curie('molecular_function'),
+                   model_uri=VALUESETS.molecular_function, domain=None, range=Optional[Union[str, "MolecularFunction"]])
+
+slots.cellular_component = Slot(uri=VALUESETS.cellular_component, name="cellular_component", curie=VALUESETS.curie('cellular_component'),
+                   model_uri=VALUESETS.cellular_component, domain=None, range=Optional[Union[str, "CellularComponent"]])
+
+slots.sequence_feature = Slot(uri=VALUESETS.sequence_feature, name="sequence_feature", curie=VALUESETS.curie('sequence_feature'),
+                   model_uri=VALUESETS.sequence_feature, domain=None, range=Optional[Union[Union[str, "SequenceFeature"], list[Union[str, "SequenceFeature"]]]])
+
+slots.gene_feature = Slot(uri=VALUESETS.gene_feature, name="gene_feature", curie=VALUESETS.curie('gene_feature'),
+                   model_uri=VALUESETS.gene_feature, domain=None, range=Optional[Union[Union[str, "GeneFeature"], list[Union[str, "GeneFeature"]]]])
+
+slots.environment = Slot(uri=VALUESETS.environment, name="environment", curie=VALUESETS.curie('environment'),
+                   model_uri=VALUESETS.environment, domain=None, range=Optional[Union[str, "Environment"]])
+
+slots.environmental_material = Slot(uri=VALUESETS.environmental_material, name="environmental_material", curie=VALUESETS.curie('environmental_material'),
+                   model_uri=VALUESETS.environmental_material, domain=None, range=Optional[Union[str, "EnvironmentalMaterial"]])
+
+slots.quality = Slot(uri=VALUESETS.quality, name="quality", curie=VALUESETS.curie('quality'),
+                   model_uri=VALUESETS.quality, domain=None, range=Optional[Union[str, "Quality"]])
+
+slots.physical_quality = Slot(uri=VALUESETS.physical_quality, name="physical_quality", curie=VALUESETS.curie('physical_quality'),
+                   model_uri=VALUESETS.physical_quality, domain=None, range=Optional[Union[str, "PhysicalQuality"]])
+
+slots.sample = Slot(uri=VALUESETS.sample, name="sample", curie=VALUESETS.curie('sample'),
+                   model_uri=VALUESETS.sample, domain=None, range=Optional[Union[str, "SampleType"]])
+
+slots.structural_biology_technique = Slot(uri=VALUESETS.structural_biology_technique, name="structural_biology_technique", curie=VALUESETS.curie('structural_biology_technique'),
+                   model_uri=VALUESETS.structural_biology_technique, domain=None, range=Optional[Union[str, "StructuralBiologyTechnique"]])
+
+slots.cryo_em_preparation = Slot(uri=VALUESETS.cryo_em_preparation, name="cryo_em_preparation", curie=VALUESETS.curie('cryo_em_preparation'),
+                   model_uri=VALUESETS.cryo_em_preparation, domain=None, range=Optional[Union[str, "CryoEMPreparationType"]])
+
+slots.cryo_em_grid = Slot(uri=VALUESETS.cryo_em_grid, name="cryo_em_grid", curie=VALUESETS.curie('cryo_em_grid'),
+                   model_uri=VALUESETS.cryo_em_grid, domain=None, range=Optional[Union[str, "CryoEMGridType"]])
+
+slots.vitrification_method = Slot(uri=VALUESETS.vitrification_method, name="vitrification_method", curie=VALUESETS.curie('vitrification_method'),
+                   model_uri=VALUESETS.vitrification_method, domain=None, range=Optional[Union[str, "VitrificationMethod"]])
+
+slots.crystallization_method = Slot(uri=VALUESETS.crystallization_method, name="crystallization_method", curie=VALUESETS.curie('crystallization_method'),
+                   model_uri=VALUESETS.crystallization_method, domain=None, range=Optional[Union[str, "CrystallizationMethod"]])
+
+slots.x_ray_source = Slot(uri=VALUESETS.x_ray_source, name="x_ray_source", curie=VALUESETS.curie('x_ray_source'),
+                   model_uri=VALUESETS.x_ray_source, domain=None, range=Optional[Union[str, "XRaySource"]])
+
+slots.detector = Slot(uri=VALUESETS.detector, name="detector", curie=VALUESETS.curie('detector'),
+                   model_uri=VALUESETS.detector, domain=None, range=Optional[Union[str, "Detector"]])
+
+slots.workflow = Slot(uri=VALUESETS.workflow, name="workflow", curie=VALUESETS.curie('workflow'),
+                   model_uri=VALUESETS.workflow, domain=None, range=Optional[Union[str, "WorkflowType"]])
+
+slots.file_format = Slot(uri=VALUESETS.file_format, name="file_format", curie=VALUESETS.curie('file_format'),
+                   model_uri=VALUESETS.file_format, domain=None, range=Optional[Union[str, "FileFormat"]])
+
+slots.data = Slot(uri=VALUESETS.data, name="data", curie=VALUESETS.curie('data'),
+                   model_uri=VALUESETS.data, domain=None, range=Optional[Union[str, "DataType"]])
+
+slots.processing_status = Slot(uri=VALUESETS.processing_status, name="processing_status", curie=VALUESETS.curie('processing_status'),
+                   model_uri=VALUESETS.processing_status, domain=None, range=Optional[Union[str, "ProcessingStatus"]])
+
+slots.insdc_missing_value = Slot(uri=VALUESETS.insdc_missing_value, name="insdc_missing_value", curie=VALUESETS.curie('insdc_missing_value'),
+                   model_uri=VALUESETS.insdc_missing_value, domain=None, range=Optional[Union[str, "InsdcMissingValueEnum"]])
+
+slots.insdc_geographic_location = Slot(uri=VALUESETS.insdc_geographic_location, name="insdc_geographic_location", curie=VALUESETS.curie('insdc_geographic_location'),
+                   model_uri=VALUESETS.insdc_geographic_location, domain=None, range=Optional[Union[str, "InsdcGeographicLocationEnum"]])
+
+slots.viral_genome_type = Slot(uri=VALUESETS.viral_genome_type, name="viral_genome_type", curie=VALUESETS.curie('viral_genome_type'),
+                   model_uri=VALUESETS.viral_genome_type, domain=None, range=Optional[Union[str, "ViralGenomeTypeEnum"]])
+
+slots.plant_sex = Slot(uri=VALUESETS.plant_sex, name="plant_sex", curie=VALUESETS.curie('plant_sex'),
+                   model_uri=VALUESETS.plant_sex, domain=None, range=Optional[Union[str, "PlantSexEnum"]])
+
+slots.rel_to_oxygen = Slot(uri=VALUESETS.rel_to_oxygen, name="rel_to_oxygen", curie=VALUESETS.curie('rel_to_oxygen'),
+                   model_uri=VALUESETS.rel_to_oxygen, domain=None, range=Optional[Union[str, "RelToOxygenEnum"]])
+
+slots.trophic_level = Slot(uri=VALUESETS.trophic_level, name="trophic_level", curie=VALUESETS.curie('trophic_level'),
+                   model_uri=VALUESETS.trophic_level, domain=None, range=Optional[Union[str, "TrophicLevelEnum"]])
+
+slots.human_developmental_stage = Slot(uri=VALUESETS.human_developmental_stage, name="human_developmental_stage", curie=VALUESETS.curie('human_developmental_stage'),
+                   model_uri=VALUESETS.human_developmental_stage, domain=None, range=Optional[Union[str, "HumanDevelopmentalStage"]])
+
+slots.mouse_developmental_stage = Slot(uri=VALUESETS.mouse_developmental_stage, name="mouse_developmental_stage", curie=VALUESETS.curie('mouse_developmental_stage'),
+                   model_uri=VALUESETS.mouse_developmental_stage, domain=None, range=Optional[Union[str, "MouseDevelopmentalStage"]])
+
+slots.day_of_week = Slot(uri=VALUESETS.day_of_week, name="day_of_week", curie=VALUESETS.curie('day_of_week'),
+                   model_uri=VALUESETS.day_of_week, domain=None, range=Optional[Union[str, "DayOfWeek"]])
+
+slots.month = Slot(uri=VALUESETS.month, name="month", curie=VALUESETS.curie('month'),
+                   model_uri=VALUESETS.month, domain=None, range=Optional[Union[str, "Month"]])
+
+slots.quarter = Slot(uri=VALUESETS.quarter, name="quarter", curie=VALUESETS.curie('quarter'),
+                   model_uri=VALUESETS.quarter, domain=None, range=Optional[Union[str, "Quarter"]])
+
+slots.season = Slot(uri=VALUESETS.season, name="season", curie=VALUESETS.curie('season'),
+                   model_uri=VALUESETS.season, domain=None, range=Optional[Union[str, "Season"]])
+
+slots.time_period = Slot(uri=VALUESETS.time_period, name="time_period", curie=VALUESETS.curie('time_period'),
+                   model_uri=VALUESETS.time_period, domain=None, range=Optional[Union[str, "TimePeriod"]])
+
+slots.time_of_day = Slot(uri=VALUESETS.time_of_day, name="time_of_day", curie=VALUESETS.curie('time_of_day'),
+                   model_uri=VALUESETS.time_of_day, domain=None, range=Optional[Union[str, "TimeOfDay"]])
+
+slots.business_time_frame = Slot(uri=VALUESETS.business_time_frame, name="business_time_frame", curie=VALUESETS.curie('business_time_frame'),
+                   model_uri=VALUESETS.business_time_frame, domain=None, range=Optional[Union[str, "BusinessTimeFrame"]])
+
+slots.geological_era = Slot(uri=VALUESETS.geological_era, name="geological_era", curie=VALUESETS.curie('geological_era'),
+                   model_uri=VALUESETS.geological_era, domain=None, range=Optional[Union[str, "GeologicalEra"]])
+
+slots.historical_period = Slot(uri=VALUESETS.historical_period, name="historical_period", curie=VALUESETS.curie('historical_period'),
+                   model_uri=VALUESETS.historical_period, domain=None, range=Optional[Union[str, "HistoricalPeriod"]])
+
+slots.publication = Slot(uri=VALUESETS.publication, name="publication", curie=VALUESETS.curie('publication'),
+                   model_uri=VALUESETS.publication, domain=None, range=Optional[Union[str, "PublicationType"]])
+
+slots.peer_review_status = Slot(uri=VALUESETS.peer_review_status, name="peer_review_status", curie=VALUESETS.curie('peer_review_status'),
+                   model_uri=VALUESETS.peer_review_status, domain=None, range=Optional[Union[str, "PeerReviewStatus"]])
+
+slots.academic_degree = Slot(uri=VALUESETS.academic_degree, name="academic_degree", curie=VALUESETS.curie('academic_degree'),
+                   model_uri=VALUESETS.academic_degree, domain=None, range=Optional[Union[str, "AcademicDegree"]])
+
+slots.license = Slot(uri=VALUESETS.license, name="license", curie=VALUESETS.curie('license'),
+                   model_uri=VALUESETS.license, domain=None, range=Optional[Union[str, "LicenseType"]])
+
+slots.research_field = Slot(uri=VALUESETS.research_field, name="research_field", curie=VALUESETS.curie('research_field'),
+                   model_uri=VALUESETS.research_field, domain=None, range=Optional[Union[str, "ResearchField"]])
+
+slots.funding = Slot(uri=VALUESETS.funding, name="funding", curie=VALUESETS.curie('funding'),
+                   model_uri=VALUESETS.funding, domain=None, range=Optional[Union[str, "FundingType"]])
+
+slots.manuscript_section = Slot(uri=VALUESETS.manuscript_section, name="manuscript_section", curie=VALUESETS.curie('manuscript_section'),
+                   model_uri=VALUESETS.manuscript_section, domain=None, range=Optional[Union[str, "ManuscriptSection"]])
+
+slots.research_role = Slot(uri=VALUESETS.research_role, name="research_role", curie=VALUESETS.curie('research_role'),
+                   model_uri=VALUESETS.research_role, domain=None, range=Optional[Union[str, "ResearchRole"]])
+
+slots.open_access = Slot(uri=VALUESETS.open_access, name="open_access", curie=VALUESETS.curie('open_access'),
+                   model_uri=VALUESETS.open_access, domain=None, range=Optional[Union[str, "OpenAccessType"]])
+
+slots.citation_style = Slot(uri=VALUESETS.citation_style, name="citation_style", curie=VALUESETS.curie('citation_style'),
+                   model_uri=VALUESETS.citation_style, domain=None, range=Optional[Union[str, "CitationStyle"]])
+
+slots.energy_source = Slot(uri=VALUESETS.energy_source, name="energy_source", curie=VALUESETS.curie('energy_source'),
+                   model_uri=VALUESETS.energy_source, domain=None, range=Optional[Union[str, "EnergySource"]])
+
+slots.energy_unit = Slot(uri=VALUESETS.energy_unit, name="energy_unit", curie=VALUESETS.curie('energy_unit'),
+                   model_uri=VALUESETS.energy_unit, domain=None, range=Optional[Union[str, "EnergyUnit"]])
+
+slots.power_unit = Slot(uri=VALUESETS.power_unit, name="power_unit", curie=VALUESETS.curie('power_unit'),
+                   model_uri=VALUESETS.power_unit, domain=None, range=Optional[Union[str, "PowerUnit"]])
+
+slots.energy_efficiency_rating = Slot(uri=VALUESETS.energy_efficiency_rating, name="energy_efficiency_rating", curie=VALUESETS.curie('energy_efficiency_rating'),
+                   model_uri=VALUESETS.energy_efficiency_rating, domain=None, range=Optional[Union[str, "EnergyEfficiencyRating"]])
+
+slots.building_energy_standard = Slot(uri=VALUESETS.building_energy_standard, name="building_energy_standard", curie=VALUESETS.curie('building_energy_standard'),
+                   model_uri=VALUESETS.building_energy_standard, domain=None, range=Optional[Union[str, "BuildingEnergyStandard"]])
+
+slots.grid = Slot(uri=VALUESETS.grid, name="grid", curie=VALUESETS.curie('grid'),
+                   model_uri=VALUESETS.grid, domain=None, range=Optional[Union[str, "GridType"]])
+
+slots.energy_storage = Slot(uri=VALUESETS.energy_storage, name="energy_storage", curie=VALUESETS.curie('energy_storage'),
+                   model_uri=VALUESETS.energy_storage, domain=None, range=Optional[Union[str, "EnergyStorageType"]])
+
+slots.emission_scope = Slot(uri=VALUESETS.emission_scope, name="emission_scope", curie=VALUESETS.curie('emission_scope'),
+                   model_uri=VALUESETS.emission_scope, domain=None, range=Optional[Union[str, "EmissionScope"]])
+
+slots.carbon_intensity = Slot(uri=VALUESETS.carbon_intensity, name="carbon_intensity", curie=VALUESETS.curie('carbon_intensity'),
+                   model_uri=VALUESETS.carbon_intensity, domain=None, range=Optional[Union[str, "CarbonIntensity"]])
+
+slots.electricity_market = Slot(uri=VALUESETS.electricity_market, name="electricity_market", curie=VALUESETS.curie('electricity_market'),
+                   model_uri=VALUESETS.electricity_market, domain=None, range=Optional[Union[str, "ElectricityMarket"]])
+
+slots.fossil_fuel_type = Slot(uri=VALUESETS.fossil_fuel_type, name="fossil_fuel_type", curie=VALUESETS.curie('fossil_fuel_type'),
+                   model_uri=VALUESETS.fossil_fuel_type, domain=None, range=Optional[Union[str, "FossilFuelTypeEnum"]])
+
+slots.mining = Slot(uri=VALUESETS.mining, name="mining", curie=VALUESETS.curie('mining'),
+                   model_uri=VALUESETS.mining, domain=None, range=Optional[Union[str, "MiningType"]])
+
+slots.mineral_category = Slot(uri=VALUESETS.mineral_category, name="mineral_category", curie=VALUESETS.curie('mineral_category'),
+                   model_uri=VALUESETS.mineral_category, domain=None, range=Optional[Union[str, "MineralCategory"]])
+
+slots.critical_mineral = Slot(uri=VALUESETS.critical_mineral, name="critical_mineral", curie=VALUESETS.curie('critical_mineral'),
+                   model_uri=VALUESETS.critical_mineral, domain=None, range=Optional[Union[str, "CriticalMineral"]])
+
+slots.common_mineral = Slot(uri=VALUESETS.common_mineral, name="common_mineral", curie=VALUESETS.curie('common_mineral'),
+                   model_uri=VALUESETS.common_mineral, domain=None, range=Optional[Union[str, "CommonMineral"]])
+
+slots.mining_equipment = Slot(uri=VALUESETS.mining_equipment, name="mining_equipment", curie=VALUESETS.curie('mining_equipment'),
+                   model_uri=VALUESETS.mining_equipment, domain=None, range=Optional[Union[str, "MiningEquipment"]])
+
+slots.ore_grade = Slot(uri=VALUESETS.ore_grade, name="ore_grade", curie=VALUESETS.curie('ore_grade'),
+                   model_uri=VALUESETS.ore_grade, domain=None, range=Optional[Union[str, "OreGrade"]])
+
+slots.mining_phase = Slot(uri=VALUESETS.mining_phase, name="mining_phase", curie=VALUESETS.curie('mining_phase'),
+                   model_uri=VALUESETS.mining_phase, domain=None, range=Optional[Union[str, "MiningPhase"]])
+
+slots.mining_hazard = Slot(uri=VALUESETS.mining_hazard, name="mining_hazard", curie=VALUESETS.curie('mining_hazard'),
+                   model_uri=VALUESETS.mining_hazard, domain=None, range=Optional[Union[str, "MiningHazard"]])
+
+slots.environmental_impact = Slot(uri=VALUESETS.environmental_impact, name="environmental_impact", curie=VALUESETS.curie('environmental_impact'),
+                   model_uri=VALUESETS.environmental_impact, domain=None, range=Optional[Union[str, "EnvironmentalImpact"]])
+
+slots.extractive_industry_facility_type = Slot(uri=VALUESETS.extractive_industry_facility_type, name="extractive_industry_facility_type", curie=VALUESETS.curie('extractive_industry_facility_type'),
+                   model_uri=VALUESETS.extractive_industry_facility_type, domain=None, range=Optional[Union[str, "ExtractiveIndustryFacilityTypeEnum"]])
+
+slots.extractive_industry_product_type = Slot(uri=VALUESETS.extractive_industry_product_type, name="extractive_industry_product_type", curie=VALUESETS.curie('extractive_industry_product_type'),
+                   model_uri=VALUESETS.extractive_industry_product_type, domain=None, range=Optional[Union[str, "ExtractiveIndustryProductTypeEnum"]])
+
+slots.mining_method = Slot(uri=VALUESETS.mining_method, name="mining_method", curie=VALUESETS.curie('mining_method'),
+                   model_uri=VALUESETS.mining_method, domain=None, range=Optional[Union[str, "MiningMethodEnum"]])
+
+slots.well_type = Slot(uri=VALUESETS.well_type, name="well_type", curie=VALUESETS.curie('well_type'),
+                   model_uri=VALUESETS.well_type, domain=None, range=Optional[Union[str, "WellTypeEnum"]])
+
+slots.outcome_type = Slot(uri=VALUESETS.outcome_type, name="outcome_type", curie=VALUESETS.curie('outcome_type'),
+                   model_uri=VALUESETS.outcome_type, domain=None, range=Optional[Union[str, "OutcomeTypeEnum"]])
+
+slots.person_status = Slot(uri=VALUESETS.person_status, name="person_status", curie=VALUESETS.curie('person_status'),
+                   model_uri=VALUESETS.person_status, domain=None, range=Optional[Union[str, "PersonStatusEnum"]])
+
+slots.mime = Slot(uri=VALUESETS.mime, name="mime", curie=VALUESETS.curie('mime'),
+                   model_uri=VALUESETS.mime, domain=None, range=Optional[Union[str, "MimeType"]])
+
+slots.mime_type_category = Slot(uri=VALUESETS.mime_type_category, name="mime_type_category", curie=VALUESETS.curie('mime_type_category'),
+                   model_uri=VALUESETS.mime_type_category, domain=None, range=Optional[Union[str, "MimeTypeCategory"]])
+
+slots.text_charset = Slot(uri=VALUESETS.text_charset, name="text_charset", curie=VALUESETS.curie('text_charset'),
+                   model_uri=VALUESETS.text_charset, domain=None, range=Optional[Union[str, "TextCharset"]])
+
+slots.compression = Slot(uri=VALUESETS.compression, name="compression", curie=VALUESETS.curie('compression'),
+                   model_uri=VALUESETS.compression, domain=None, range=Optional[Union[str, "CompressionType"]])
+
+slots.state_of_matter = Slot(uri=VALUESETS.state_of_matter, name="state_of_matter", curie=VALUESETS.curie('state_of_matter'),
+                   model_uri=VALUESETS.state_of_matter, domain=None, range=Optional[Union[str, "StateOfMatterEnum"]])
+
+slots.air_pollutant = Slot(uri=VALUESETS.air_pollutant, name="air_pollutant", curie=VALUESETS.curie('air_pollutant'),
+                   model_uri=VALUESETS.air_pollutant, domain=None, range=Optional[Union[str, "AirPollutantEnum"]])
+
+slots.pesticide_type = Slot(uri=VALUESETS.pesticide_type, name="pesticide_type", curie=VALUESETS.curie('pesticide_type'),
+                   model_uri=VALUESETS.pesticide_type, domain=None, range=Optional[Union[str, "PesticideTypeEnum"]])
+
+slots.heavy_metal = Slot(uri=VALUESETS.heavy_metal, name="heavy_metal", curie=VALUESETS.curie('heavy_metal'),
+                   model_uri=VALUESETS.heavy_metal, domain=None, range=Optional[Union[str, "HeavyMetalEnum"]])
+
+slots.exposure_route = Slot(uri=VALUESETS.exposure_route, name="exposure_route", curie=VALUESETS.curie('exposure_route'),
+                   model_uri=VALUESETS.exposure_route, domain=None, range=Optional[Union[str, "ExposureRouteEnum"]])
+
+slots.exposure_source = Slot(uri=VALUESETS.exposure_source, name="exposure_source", curie=VALUESETS.curie('exposure_source'),
+                   model_uri=VALUESETS.exposure_source, domain=None, range=Optional[Union[str, "ExposureSourceEnum"]])
+
+slots.water_contaminant = Slot(uri=VALUESETS.water_contaminant, name="water_contaminant", curie=VALUESETS.curie('water_contaminant'),
+                   model_uri=VALUESETS.water_contaminant, domain=None, range=Optional[Union[str, "WaterContaminantEnum"]])
+
+slots.endocrine_disruptor = Slot(uri=VALUESETS.endocrine_disruptor, name="endocrine_disruptor", curie=VALUESETS.curie('endocrine_disruptor'),
+                   model_uri=VALUESETS.endocrine_disruptor, domain=None, range=Optional[Union[str, "EndocrineDisruptorEnum"]])
+
+slots.exposure_duration = Slot(uri=VALUESETS.exposure_duration, name="exposure_duration", curie=VALUESETS.curie('exposure_duration'),
+                   model_uri=VALUESETS.exposure_duration, domain=None, range=Optional[Union[str, "ExposureDurationEnum"]])
+
+slots.country_code_iso2 = Slot(uri=VALUESETS.country_code_iso2, name="country_code_iso2", curie=VALUESETS.curie('country_code_iso2'),
+                   model_uri=VALUESETS.country_code_iso2, domain=None, range=Optional[Union[str, "CountryCodeISO2Enum"]])
+
+slots.country_code_iso3 = Slot(uri=VALUESETS.country_code_iso3, name="country_code_iso3", curie=VALUESETS.curie('country_code_iso3'),
+                   model_uri=VALUESETS.country_code_iso3, domain=None, range=Optional[Union[str, "CountryCodeISO3Enum"]])
+
+slots.us_state_code = Slot(uri=VALUESETS.us_state_code, name="us_state_code", curie=VALUESETS.curie('us_state_code'),
+                   model_uri=VALUESETS.us_state_code, domain=None, range=Optional[Union[str, "USStateCodeEnum"]])
+
+slots.canadian_province_code = Slot(uri=VALUESETS.canadian_province_code, name="canadian_province_code", curie=VALUESETS.curie('canadian_province_code'),
+                   model_uri=VALUESETS.canadian_province_code, domain=None, range=Optional[Union[str, "CanadianProvinceCodeEnum"]])
+
+slots.compass_direction = Slot(uri=VALUESETS.compass_direction, name="compass_direction", curie=VALUESETS.curie('compass_direction'),
+                   model_uri=VALUESETS.compass_direction, domain=None, range=Optional[Union[str, "CompassDirection"]])
+
+slots.relative_direction = Slot(uri=VALUESETS.relative_direction, name="relative_direction", curie=VALUESETS.curie('relative_direction'),
+                   model_uri=VALUESETS.relative_direction, domain=None, range=Optional[Union[str, "RelativeDirection"]])
+
+slots.wind_direction = Slot(uri=VALUESETS.wind_direction, name="wind_direction", curie=VALUESETS.curie('wind_direction'),
+                   model_uri=VALUESETS.wind_direction, domain=None, range=Optional[Union[str, "WindDirection"]])
+
+slots.continent = Slot(uri=VALUESETS.continent, name="continent", curie=VALUESETS.curie('continent'),
+                   model_uri=VALUESETS.continent, domain=None, range=Optional[Union[str, "ContinentEnum"]])
+
+slots.un_region = Slot(uri=VALUESETS.un_region, name="un_region", curie=VALUESETS.curie('un_region'),
+                   model_uri=VALUESETS.un_region, domain=None, range=Optional[Union[str, "UNRegionEnum"]])
+
+slots.language_code_iso639_1 = Slot(uri=VALUESETS.language_code_iso639_1, name="language_code_iso639_1", curie=VALUESETS.curie('language_code_iso639_1'),
+                   model_uri=VALUESETS.language_code_iso639_1, domain=None, range=Optional[Union[str, "LanguageCodeISO6391Enum"]])
+
+slots.time_zone = Slot(uri=VALUESETS.time_zone, name="time_zone", curie=VALUESETS.curie('time_zone'),
+                   model_uri=VALUESETS.time_zone, domain=None, range=Optional[Union[str, "TimeZoneEnum"]])
+
+slots.currency_code_iso4217 = Slot(uri=VALUESETS.currency_code_iso4217, name="currency_code_iso4217", curie=VALUESETS.curie('currency_code_iso4217'),
+                   model_uri=VALUESETS.currency_code_iso4217, domain=None, range=Optional[Union[str, "CurrencyCodeISO4217Enum"]])
+
+slots.sentiment_classification = Slot(uri=VALUESETS.sentiment_classification, name="sentiment_classification", curie=VALUESETS.curie('sentiment_classification'),
+                   model_uri=VALUESETS.sentiment_classification, domain=None, range=Optional[Union[str, "SentimentClassificationEnum"]])
+
+slots.fine_sentiment_classification = Slot(uri=VALUESETS.fine_sentiment_classification, name="fine_sentiment_classification", curie=VALUESETS.curie('fine_sentiment_classification'),
+                   model_uri=VALUESETS.fine_sentiment_classification, domain=None, range=Optional[Union[str, "FineSentimentClassificationEnum"]])
+
+slots.binary_classification = Slot(uri=VALUESETS.binary_classification, name="binary_classification", curie=VALUESETS.curie('binary_classification'),
+                   model_uri=VALUESETS.binary_classification, domain=None, range=Optional[Union[str, "BinaryClassificationEnum"]])
+
+slots.spam_classification = Slot(uri=VALUESETS.spam_classification, name="spam_classification", curie=VALUESETS.curie('spam_classification'),
+                   model_uri=VALUESETS.spam_classification, domain=None, range=Optional[Union[str, "SpamClassificationEnum"]])
+
+slots.anomaly_detection = Slot(uri=VALUESETS.anomaly_detection, name="anomaly_detection", curie=VALUESETS.curie('anomaly_detection'),
+                   model_uri=VALUESETS.anomaly_detection, domain=None, range=Optional[Union[str, "AnomalyDetectionEnum"]])
+
+slots.churn_classification = Slot(uri=VALUESETS.churn_classification, name="churn_classification", curie=VALUESETS.curie('churn_classification'),
+                   model_uri=VALUESETS.churn_classification, domain=None, range=Optional[Union[str, "ChurnClassificationEnum"]])
+
+slots.fraud_detection = Slot(uri=VALUESETS.fraud_detection, name="fraud_detection", curie=VALUESETS.curie('fraud_detection'),
+                   model_uri=VALUESETS.fraud_detection, domain=None, range=Optional[Union[str, "FraudDetectionEnum"]])
+
+slots.quality_control = Slot(uri=VALUESETS.quality_control, name="quality_control", curie=VALUESETS.curie('quality_control'),
+                   model_uri=VALUESETS.quality_control, domain=None, range=Optional[Union[str, "QualityControlEnum"]])
+
+slots.defect_classification = Slot(uri=VALUESETS.defect_classification, name="defect_classification", curie=VALUESETS.curie('defect_classification'),
+                   model_uri=VALUESETS.defect_classification, domain=None, range=Optional[Union[str, "DefectClassificationEnum"]])
+
+slots.basic_emotion = Slot(uri=VALUESETS.basic_emotion, name="basic_emotion", curie=VALUESETS.curie('basic_emotion'),
+                   model_uri=VALUESETS.basic_emotion, domain=None, range=Optional[Union[str, "BasicEmotionEnum"]])
+
+slots.extended_emotion = Slot(uri=VALUESETS.extended_emotion, name="extended_emotion", curie=VALUESETS.curie('extended_emotion'),
+                   model_uri=VALUESETS.extended_emotion, domain=None, range=Optional[Union[str, "ExtendedEmotionEnum"]])
+
+slots.priority_level = Slot(uri=VALUESETS.priority_level, name="priority_level", curie=VALUESETS.curie('priority_level'),
+                   model_uri=VALUESETS.priority_level, domain=None, range=Optional[Union[str, "PriorityLevelEnum"]])
+
+slots.severity_level = Slot(uri=VALUESETS.severity_level, name="severity_level", curie=VALUESETS.curie('severity_level'),
+                   model_uri=VALUESETS.severity_level, domain=None, range=Optional[Union[str, "SeverityLevelEnum"]])
+
+slots.confidence_level = Slot(uri=VALUESETS.confidence_level, name="confidence_level", curie=VALUESETS.curie('confidence_level'),
+                   model_uri=VALUESETS.confidence_level, domain=None, range=Optional[Union[str, "ConfidenceLevelEnum"]])
+
+slots.news_topic_category = Slot(uri=VALUESETS.news_topic_category, name="news_topic_category", curie=VALUESETS.curie('news_topic_category'),
+                   model_uri=VALUESETS.news_topic_category, domain=None, range=Optional[Union[str, "NewsTopicCategoryEnum"]])
+
+slots.toxicity_classification = Slot(uri=VALUESETS.toxicity_classification, name="toxicity_classification", curie=VALUESETS.curie('toxicity_classification'),
+                   model_uri=VALUESETS.toxicity_classification, domain=None, range=Optional[Union[str, "ToxicityClassificationEnum"]])
+
+slots.intent_classification = Slot(uri=VALUESETS.intent_classification, name="intent_classification", curie=VALUESETS.curie('intent_classification'),
+                   model_uri=VALUESETS.intent_classification, domain=None, range=Optional[Union[str, "IntentClassificationEnum"]])
+
+slots.simple_spatial_direction = Slot(uri=VALUESETS.simple_spatial_direction, name="simple_spatial_direction", curie=VALUESETS.curie('simple_spatial_direction'),
+                   model_uri=VALUESETS.simple_spatial_direction, domain=None, range=Optional[Union[str, "SimpleSpatialDirection"]])
+
+slots.anatomical_side = Slot(uri=VALUESETS.anatomical_side, name="anatomical_side", curie=VALUESETS.curie('anatomical_side'),
+                   model_uri=VALUESETS.anatomical_side, domain=None, range=Optional[Union[str, "AnatomicalSide"]])
+
+slots.anatomical_region = Slot(uri=VALUESETS.anatomical_region, name="anatomical_region", curie=VALUESETS.curie('anatomical_region'),
+                   model_uri=VALUESETS.anatomical_region, domain=None, range=Optional[Union[str, "AnatomicalRegion"]])
+
+slots.anatomical_axis = Slot(uri=VALUESETS.anatomical_axis, name="anatomical_axis", curie=VALUESETS.curie('anatomical_axis'),
+                   model_uri=VALUESETS.anatomical_axis, domain=None, range=Optional[Union[str, "AnatomicalAxis"]])
+
+slots.anatomical_plane = Slot(uri=VALUESETS.anatomical_plane, name="anatomical_plane", curie=VALUESETS.curie('anatomical_plane'),
+                   model_uri=VALUESETS.anatomical_plane, domain=None, range=Optional[Union[str, "AnatomicalPlane"]])
+
+slots.spatial_relationship = Slot(uri=VALUESETS.spatial_relationship, name="spatial_relationship", curie=VALUESETS.curie('spatial_relationship'),
+                   model_uri=VALUESETS.spatial_relationship, domain=None, range=Optional[Union[str, "SpatialRelationship"]])
+
+slots.cell_polarity = Slot(uri=VALUESETS.cell_polarity, name="cell_polarity", curie=VALUESETS.curie('cell_polarity'),
+                   model_uri=VALUESETS.cell_polarity, domain=None, range=Optional[Union[str, "CellPolarity"]])
+
+slots.crystal_system = Slot(uri=VALUESETS.crystal_system, name="crystal_system", curie=VALUESETS.curie('crystal_system'),
+                   model_uri=VALUESETS.crystal_system, domain=None, range=Optional[Union[str, "CrystalSystemEnum"]])
+
+slots.bravais_lattice = Slot(uri=VALUESETS.bravais_lattice, name="bravais_lattice", curie=VALUESETS.curie('bravais_lattice'),
+                   model_uri=VALUESETS.bravais_lattice, domain=None, range=Optional[Union[str, "BravaisLatticeEnum"]])
+
+slots.electrical_conductivity = Slot(uri=VALUESETS.electrical_conductivity, name="electrical_conductivity", curie=VALUESETS.curie('electrical_conductivity'),
+                   model_uri=VALUESETS.electrical_conductivity, domain=None, range=Optional[Union[str, "ElectricalConductivityEnum"]])
+
+slots.magnetic_property = Slot(uri=VALUESETS.magnetic_property, name="magnetic_property", curie=VALUESETS.curie('magnetic_property'),
+                   model_uri=VALUESETS.magnetic_property, domain=None, range=Optional[Union[str, "MagneticPropertyEnum"]])
+
+slots.optical_property = Slot(uri=VALUESETS.optical_property, name="optical_property", curie=VALUESETS.curie('optical_property'),
+                   model_uri=VALUESETS.optical_property, domain=None, range=Optional[Union[str, "OpticalPropertyEnum"]])
+
+slots.thermal_conductivity = Slot(uri=VALUESETS.thermal_conductivity, name="thermal_conductivity", curie=VALUESETS.curie('thermal_conductivity'),
+                   model_uri=VALUESETS.thermal_conductivity, domain=None, range=Optional[Union[str, "ThermalConductivityEnum"]])
+
+slots.mechanical_behavior = Slot(uri=VALUESETS.mechanical_behavior, name="mechanical_behavior", curie=VALUESETS.curie('mechanical_behavior'),
+                   model_uri=VALUESETS.mechanical_behavior, domain=None, range=Optional[Union[str, "MechanicalBehaviorEnum"]])
+
+slots.microscopy_method = Slot(uri=VALUESETS.microscopy_method, name="microscopy_method", curie=VALUESETS.curie('microscopy_method'),
+                   model_uri=VALUESETS.microscopy_method, domain=None, range=Optional[Union[str, "MicroscopyMethodEnum"]])
+
+slots.spectroscopy_method = Slot(uri=VALUESETS.spectroscopy_method, name="spectroscopy_method", curie=VALUESETS.curie('spectroscopy_method'),
+                   model_uri=VALUESETS.spectroscopy_method, domain=None, range=Optional[Union[str, "SpectroscopyMethodEnum"]])
+
+slots.thermal_analysis_method = Slot(uri=VALUESETS.thermal_analysis_method, name="thermal_analysis_method", curie=VALUESETS.curie('thermal_analysis_method'),
+                   model_uri=VALUESETS.thermal_analysis_method, domain=None, range=Optional[Union[str, "ThermalAnalysisMethodEnum"]])
+
+slots.mechanical_testing_method = Slot(uri=VALUESETS.mechanical_testing_method, name="mechanical_testing_method", curie=VALUESETS.curie('mechanical_testing_method'),
+                   model_uri=VALUESETS.mechanical_testing_method, domain=None, range=Optional[Union[str, "MechanicalTestingMethodEnum"]])
+
+slots.material_class = Slot(uri=VALUESETS.material_class, name="material_class", curie=VALUESETS.curie('material_class'),
+                   model_uri=VALUESETS.material_class, domain=None, range=Optional[Union[str, "MaterialClassEnum"]])
+
+slots.polymer_type = Slot(uri=VALUESETS.polymer_type, name="polymer_type", curie=VALUESETS.curie('polymer_type'),
+                   model_uri=VALUESETS.polymer_type, domain=None, range=Optional[Union[str, "PolymerTypeEnum"]])
+
+slots.metal_type = Slot(uri=VALUESETS.metal_type, name="metal_type", curie=VALUESETS.curie('metal_type'),
+                   model_uri=VALUESETS.metal_type, domain=None, range=Optional[Union[str, "MetalTypeEnum"]])
+
+slots.composite_type = Slot(uri=VALUESETS.composite_type, name="composite_type", curie=VALUESETS.curie('composite_type'),
+                   model_uri=VALUESETS.composite_type, domain=None, range=Optional[Union[str, "CompositeTypeEnum"]])
+
+slots.synthesis_method = Slot(uri=VALUESETS.synthesis_method, name="synthesis_method", curie=VALUESETS.curie('synthesis_method'),
+                   model_uri=VALUESETS.synthesis_method, domain=None, range=Optional[Union[str, "SynthesisMethodEnum"]])
+
+slots.crystal_growth_method = Slot(uri=VALUESETS.crystal_growth_method, name="crystal_growth_method", curie=VALUESETS.curie('crystal_growth_method'),
+                   model_uri=VALUESETS.crystal_growth_method, domain=None, range=Optional[Union[str, "CrystalGrowthMethodEnum"]])
+
+slots.additive_manufacturing = Slot(uri=VALUESETS.additive_manufacturing, name="additive_manufacturing", curie=VALUESETS.curie('additive_manufacturing'),
+                   model_uri=VALUESETS.additive_manufacturing, domain=None, range=Optional[Union[str, "AdditiveManufacturingEnum"]])
+
+slots.traditional_pigment = Slot(uri=VALUESETS.traditional_pigment, name="traditional_pigment", curie=VALUESETS.curie('traditional_pigment'),
+                   model_uri=VALUESETS.traditional_pigment, domain=None, range=Optional[Union[str, "TraditionalPigmentEnum"]])
+
+slots.industrial_dye = Slot(uri=VALUESETS.industrial_dye, name="industrial_dye", curie=VALUESETS.curie('industrial_dye'),
+                   model_uri=VALUESETS.industrial_dye, domain=None, range=Optional[Union[str, "IndustrialDyeEnum"]])
+
+slots.food_coloring = Slot(uri=VALUESETS.food_coloring, name="food_coloring", curie=VALUESETS.curie('food_coloring'),
+                   model_uri=VALUESETS.food_coloring, domain=None, range=Optional[Union[str, "FoodColoringEnum"]])
+
+slots.automobile_paint_color = Slot(uri=VALUESETS.automobile_paint_color, name="automobile_paint_color", curie=VALUESETS.curie('automobile_paint_color'),
+                   model_uri=VALUESETS.automobile_paint_color, domain=None, range=Optional[Union[str, "AutomobilePaintColorEnum"]])
+
+slots.basic_color = Slot(uri=VALUESETS.basic_color, name="basic_color", curie=VALUESETS.curie('basic_color'),
+                   model_uri=VALUESETS.basic_color, domain=None, range=Optional[Union[str, "BasicColorEnum"]])
+
+slots.web_color = Slot(uri=VALUESETS.web_color, name="web_color", curie=VALUESETS.curie('web_color'),
+                   model_uri=VALUESETS.web_color, domain=None, range=Optional[Union[str, "WebColorEnum"]])
+
+slots.x11_color = Slot(uri=VALUESETS.x11_color, name="x11_color", curie=VALUESETS.curie('x11_color'),
+                   model_uri=VALUESETS.x11_color, domain=None, range=Optional[Union[str, "X11ColorEnum"]])
+
+slots.color_space = Slot(uri=VALUESETS.color_space, name="color_space", curie=VALUESETS.curie('color_space'),
+                   model_uri=VALUESETS.color_space, domain=None, range=Optional[Union[str, "ColorSpaceEnum"]])
+
+slots.eye_color = Slot(uri=VALUESETS.eye_color, name="eye_color", curie=VALUESETS.curie('eye_color'),
+                   model_uri=VALUESETS.eye_color, domain=None, range=Optional[Union[str, "EyeColorEnum"]])
+
+slots.hair_color = Slot(uri=VALUESETS.hair_color, name="hair_color", curie=VALUESETS.curie('hair_color'),
+                   model_uri=VALUESETS.hair_color, domain=None, range=Optional[Union[str, "HairColorEnum"]])
+
+slots.flower_color = Slot(uri=VALUESETS.flower_color, name="flower_color", curie=VALUESETS.curie('flower_color'),
+                   model_uri=VALUESETS.flower_color, domain=None, range=Optional[Union[str, "FlowerColorEnum"]])
+
+slots.animal_coat_color = Slot(uri=VALUESETS.animal_coat_color, name="animal_coat_color", curie=VALUESETS.curie('animal_coat_color'),
+                   model_uri=VALUESETS.animal_coat_color, domain=None, range=Optional[Union[str, "AnimalCoatColorEnum"]])
+
+slots.skin_tone = Slot(uri=VALUESETS.skin_tone, name="skin_tone", curie=VALUESETS.curie('skin_tone'),
+                   model_uri=VALUESETS.skin_tone, domain=None, range=Optional[Union[str, "SkinToneEnum"]])
+
+slots.plant_leaf_color = Slot(uri=VALUESETS.plant_leaf_color, name="plant_leaf_color", curie=VALUESETS.curie('plant_leaf_color'),
+                   model_uri=VALUESETS.plant_leaf_color, domain=None, range=Optional[Union[str, "PlantLeafColorEnum"]])
+
+slots.dna_base = Slot(uri=VALUESETS.dna_base, name="dna_base", curie=VALUESETS.curie('dna_base'),
+                   model_uri=VALUESETS.dna_base, domain=None, range=Optional[Union[str, "DNABaseEnum"]])
+
+slots.dna_base_extended = Slot(uri=VALUESETS.dna_base_extended, name="dna_base_extended", curie=VALUESETS.curie('dna_base_extended'),
+                   model_uri=VALUESETS.dna_base_extended, domain=None, range=Optional[Union[str, "DNABaseExtendedEnum"]])
+
+slots.rna_base = Slot(uri=VALUESETS.rna_base, name="rna_base", curie=VALUESETS.curie('rna_base'),
+                   model_uri=VALUESETS.rna_base, domain=None, range=Optional[Union[str, "RNABaseEnum"]])
+
+slots.rna_base_extended = Slot(uri=VALUESETS.rna_base_extended, name="rna_base_extended", curie=VALUESETS.curie('rna_base_extended'),
+                   model_uri=VALUESETS.rna_base_extended, domain=None, range=Optional[Union[str, "RNABaseExtendedEnum"]])
+
+slots.amino_acid = Slot(uri=VALUESETS.amino_acid, name="amino_acid", curie=VALUESETS.curie('amino_acid'),
+                   model_uri=VALUESETS.amino_acid, domain=None, range=Optional[Union[str, "AminoAcidEnum"]])
+
+slots.amino_acid_extended = Slot(uri=VALUESETS.amino_acid_extended, name="amino_acid_extended", curie=VALUESETS.curie('amino_acid_extended'),
+                   model_uri=VALUESETS.amino_acid_extended, domain=None, range=Optional[Union[str, "AminoAcidExtendedEnum"]])
+
+slots.codon = Slot(uri=VALUESETS.codon, name="codon", curie=VALUESETS.curie('codon'),
+                   model_uri=VALUESETS.codon, domain=None, range=Optional[Union[str, "CodonEnum"]])
+
+slots.nucleotide_modification = Slot(uri=VALUESETS.nucleotide_modification, name="nucleotide_modification", curie=VALUESETS.curie('nucleotide_modification'),
+                   model_uri=VALUESETS.nucleotide_modification, domain=None, range=Optional[Union[str, "NucleotideModificationEnum"]])
+
+slots.sequence_quality = Slot(uri=VALUESETS.sequence_quality, name="sequence_quality", curie=VALUESETS.curie('sequence_quality'),
+                   model_uri=VALUESETS.sequence_quality, domain=None, range=Optional[Union[str, "SequenceQualityEnum"]])
+
+slots.iupac_nucleotide = Slot(uri=VALUESETS.iupac_nucleotide, name="iupac_nucleotide", curie=VALUESETS.curie('iupac_nucleotide'),
+                   model_uri=VALUESETS.iupac_nucleotide, domain=None, range=Optional[Union[str, "IUPACNucleotideCode"]])
+
+slots.standard_amino_acid = Slot(uri=VALUESETS.standard_amino_acid, name="standard_amino_acid", curie=VALUESETS.curie('standard_amino_acid'),
+                   model_uri=VALUESETS.standard_amino_acid, domain=None, range=Optional[Union[str, "StandardAminoAcid"]])
+
+slots.iupac_amino_acid = Slot(uri=VALUESETS.iupac_amino_acid, name="iupac_amino_acid", curie=VALUESETS.curie('iupac_amino_acid'),
+                   model_uri=VALUESETS.iupac_amino_acid, domain=None, range=Optional[Union[str, "IUPACAminoAcidCode"]])
+
+slots.sequence_alphabet = Slot(uri=VALUESETS.sequence_alphabet, name="sequence_alphabet", curie=VALUESETS.curie('sequence_alphabet'),
+                   model_uri=VALUESETS.sequence_alphabet, domain=None, range=Optional[Union[str, "SequenceAlphabet"]])
+
+slots.sequence_quality_encoding = Slot(uri=VALUESETS.sequence_quality_encoding, name="sequence_quality_encoding", curie=VALUESETS.curie('sequence_quality_encoding'),
+                   model_uri=VALUESETS.sequence_quality_encoding, domain=None, range=Optional[Union[str, "SequenceQualityEncoding"]])
+
+slots.genetic_code_table = Slot(uri=VALUESETS.genetic_code_table, name="genetic_code_table", curie=VALUESETS.curie('genetic_code_table'),
+                   model_uri=VALUESETS.genetic_code_table, domain=None, range=Optional[Union[str, "GeneticCodeTable"]])
+
+slots.sequence_strand = Slot(uri=VALUESETS.sequence_strand, name="sequence_strand", curie=VALUESETS.curie('sequence_strand'),
+                   model_uri=VALUESETS.sequence_strand, domain=None, range=Optional[Union[str, "SequenceStrand"]])
+
+slots.sequence_topology = Slot(uri=VALUESETS.sequence_topology, name="sequence_topology", curie=VALUESETS.curie('sequence_topology'),
+                   model_uri=VALUESETS.sequence_topology, domain=None, range=Optional[Union[str, "SequenceTopology"]])
+
+slots.sequence_modality = Slot(uri=VALUESETS.sequence_modality, name="sequence_modality", curie=VALUESETS.curie('sequence_modality'),
+                   model_uri=VALUESETS.sequence_modality, domain=None, range=Optional[Union[str, "SequenceModality"]])
+
+slots.sequencing_platform = Slot(uri=VALUESETS.sequencing_platform, name="sequencing_platform", curie=VALUESETS.curie('sequencing_platform'),
+                   model_uri=VALUESETS.sequencing_platform, domain=None, range=Optional[Union[str, "SequencingPlatform"]])
+
+slots.sequencing_chemistry = Slot(uri=VALUESETS.sequencing_chemistry, name="sequencing_chemistry", curie=VALUESETS.curie('sequencing_chemistry'),
+                   model_uri=VALUESETS.sequencing_chemistry, domain=None, range=Optional[Union[str, "SequencingChemistry"]])
+
+slots.library_preparation = Slot(uri=VALUESETS.library_preparation, name="library_preparation", curie=VALUESETS.curie('library_preparation'),
+                   model_uri=VALUESETS.library_preparation, domain=None, range=Optional[Union[str, "LibraryPreparation"]])
+
+slots.sequencing_application = Slot(uri=VALUESETS.sequencing_application, name="sequencing_application", curie=VALUESETS.curie('sequencing_application'),
+                   model_uri=VALUESETS.sequencing_application, domain=None, range=Optional[Union[str, "SequencingApplication"]])
+
+slots.read = Slot(uri=VALUESETS.read, name="read", curie=VALUESETS.curie('read'),
+                   model_uri=VALUESETS.read, domain=None, range=Optional[Union[str, "ReadType"]])
+
+slots.sequence_file_format = Slot(uri=VALUESETS.sequence_file_format, name="sequence_file_format", curie=VALUESETS.curie('sequence_file_format'),
+                   model_uri=VALUESETS.sequence_file_format, domain=None, range=Optional[Union[str, "SequenceFileFormat"]])
+
+slots.data_processing_level = Slot(uri=VALUESETS.data_processing_level, name="data_processing_level", curie=VALUESETS.curie('data_processing_level'),
+                   model_uri=VALUESETS.data_processing_level, domain=None, range=Optional[Union[str, "DataProcessingLevel"]])
+
+slots.cds_phase = Slot(uri=VALUESETS.cds_phase, name="cds_phase", curie=VALUESETS.curie('cds_phase'),
+                   model_uri=VALUESETS.cds_phase, domain=None, range=Optional[Union[str, "CdsPhaseType"]])
+
+slots.contig_collection = Slot(uri=VALUESETS.contig_collection, name="contig_collection", curie=VALUESETS.curie('contig_collection'),
+                   model_uri=VALUESETS.contig_collection, domain=None, range=Optional[Union[str, "ContigCollectionType"]])
+
+slots.strand = Slot(uri=VALUESETS.strand, name="strand", curie=VALUESETS.curie('strand'),
+                   model_uri=VALUESETS.strand, domain=None, range=Optional[Union[str, "StrandType"]])
+
+slots.sequence = Slot(uri=VALUESETS.sequence, name="sequence", curie=VALUESETS.curie('sequence'),
+                   model_uri=VALUESETS.sequence, domain=None, range=Optional[Union[str, "SequenceType"]])
+
+slots.protein_evidence_for_existence = Slot(uri=VALUESETS.protein_evidence_for_existence, name="protein_evidence_for_existence", curie=VALUESETS.curie('protein_evidence_for_existence'),
+                   model_uri=VALUESETS.protein_evidence_for_existence, domain=None, range=Optional[Union[str, "ProteinEvidenceForExistence"]])
+
+slots.ref_seq_status = Slot(uri=VALUESETS.ref_seq_status, name="ref_seq_status", curie=VALUESETS.curie('ref_seq_status'),
+                   model_uri=VALUESETS.ref_seq_status, domain=None, range=Optional[Union[str, "RefSeqStatusType"]])
+
+slots.currency_chemical = Slot(uri=VALUESETS.currency_chemical, name="currency_chemical", curie=VALUESETS.curie('currency_chemical'),
+                   model_uri=VALUESETS.currency_chemical, domain=None, range=Optional[Union[str, "CurrencyChemical"]])
+
+slots.plant_developmental_stage = Slot(uri=VALUESETS.plant_developmental_stage, name="plant_developmental_stage", curie=VALUESETS.curie('plant_developmental_stage'),
+                   model_uri=VALUESETS.plant_developmental_stage, domain=None, range=Optional[Union[str, "PlantDevelopmentalStage"]])
+
+slots.uni_prot_species = Slot(uri=VALUESETS.uni_prot_species, name="uni_prot_species", curie=VALUESETS.curie('uni_prot_species'),
+                   model_uri=VALUESETS.uni_prot_species, domain=None, range=Optional[Union[str, "UniProtSpeciesCode"]])
+
+slots.lipid_category = Slot(uri=VALUESETS.lipid_category, name="lipid_category", curie=VALUESETS.curie('lipid_category'),
+                   model_uri=VALUESETS.lipid_category, domain=None, range=Optional[Union[str, "LipidCategory"]])
+
+slots.peak_annotation_series_label = Slot(uri=VALUESETS.peak_annotation_series_label, name="peak_annotation_series_label", curie=VALUESETS.curie('peak_annotation_series_label'),
+                   model_uri=VALUESETS.peak_annotation_series_label, domain=None, range=Optional[Union[str, "PeakAnnotationSeriesLabel"]])
+
+slots.peptide_ion_series = Slot(uri=VALUESETS.peptide_ion_series, name="peptide_ion_series", curie=VALUESETS.curie('peptide_ion_series'),
+                   model_uri=VALUESETS.peptide_ion_series, domain=None, range=Optional[Union[str, "PeptideIonSeries"]])
+
+slots.mass_error_unit = Slot(uri=VALUESETS.mass_error_unit, name="mass_error_unit", curie=VALUESETS.curie('mass_error_unit'),
+                   model_uri=VALUESETS.mass_error_unit, domain=None, range=Optional[Union[str, "MassErrorUnit"]])
+
+slots.interaction_detection_method = Slot(uri=VALUESETS.interaction_detection_method, name="interaction_detection_method", curie=VALUESETS.curie('interaction_detection_method'),
+                   model_uri=VALUESETS.interaction_detection_method, domain=None, range=Optional[Union[str, "InteractionDetectionMethod"]])
+
+slots.interaction = Slot(uri=VALUESETS.interaction, name="interaction", curie=VALUESETS.curie('interaction'),
+                   model_uri=VALUESETS.interaction, domain=None, range=Optional[Union[str, "InteractionType"]])
+
+slots.experimental_role = Slot(uri=VALUESETS.experimental_role, name="experimental_role", curie=VALUESETS.curie('experimental_role'),
+                   model_uri=VALUESETS.experimental_role, domain=None, range=Optional[Union[str, "ExperimentalRole"]])
+
+slots.biological_role = Slot(uri=VALUESETS.biological_role, name="biological_role", curie=VALUESETS.curie('biological_role'),
+                   model_uri=VALUESETS.biological_role, domain=None, range=Optional[Union[str, "BiologicalRole"]])
+
+slots.participant_identification_method = Slot(uri=VALUESETS.participant_identification_method, name="participant_identification_method", curie=VALUESETS.curie('participant_identification_method'),
+                   model_uri=VALUESETS.participant_identification_method, domain=None, range=Optional[Union[str, "ParticipantIdentificationMethod"]])
+
+slots.feature = Slot(uri=VALUESETS.feature, name="feature", curie=VALUESETS.curie('feature'),
+                   model_uri=VALUESETS.feature, domain=None, range=Optional[Union[Union[str, "FeatureType"], list[Union[str, "FeatureType"]]]])
+
+slots.interactor = Slot(uri=VALUESETS.interactor, name="interactor", curie=VALUESETS.curie('interactor'),
+                   model_uri=VALUESETS.interactor, domain=None, range=Optional[Union[str, "InteractorType"]])
+
+slots.confidence_score = Slot(uri=VALUESETS.confidence_score, name="confidence_score", curie=VALUESETS.curie('confidence_score'),
+                   model_uri=VALUESETS.confidence_score, domain=None, range=Optional[Union[str, "ConfidenceScore"]])
+
+slots.experimental_preparation = Slot(uri=VALUESETS.experimental_preparation, name="experimental_preparation", curie=VALUESETS.curie('experimental_preparation'),
+                   model_uri=VALUESETS.experimental_preparation, domain=None, range=Optional[Union[str, "ExperimentalPreparation"]])
+
+slots.biotic_interaction = Slot(uri=VALUESETS.biotic_interaction, name="biotic_interaction", curie=VALUESETS.curie('biotic_interaction'),
+                   model_uri=VALUESETS.biotic_interaction, domain=None, range=Optional[Union[str, "BioticInteractionType"]])
+
+slots.mineralogy_feedstock = Slot(uri=VALUESETS.mineralogy_feedstock, name="mineralogy_feedstock", curie=VALUESETS.curie('mineralogy_feedstock'),
+                   model_uri=VALUESETS.mineralogy_feedstock, domain=None, range=Union[str, "MineralogyFeedstockClass"])
+
+slots.beneficiation_pathway = Slot(uri=VALUESETS.beneficiation_pathway, name="beneficiation_pathway", curie=VALUESETS.curie('beneficiation_pathway'),
+                   model_uri=VALUESETS.beneficiation_pathway, domain=None, range=Optional[Union[str, "BeneficiationPathway"]])
+
+slots.in_situ_chemistry_regime = Slot(uri=VALUESETS.in_situ_chemistry_regime, name="in_situ_chemistry_regime", curie=VALUESETS.curie('in_situ_chemistry_regime'),
+                   model_uri=VALUESETS.in_situ_chemistry_regime, domain=None, range=Optional[Union[str, "InSituChemistryRegime"]])
+
+slots.extractable_target_element = Slot(uri=VALUESETS.extractable_target_element, name="extractable_target_element", curie=VALUESETS.curie('extractable_target_element'),
+                   model_uri=VALUESETS.extractable_target_element, domain=None, range=Optional[Union[Union[str, "ExtractableTargetElement"], list[Union[str, "ExtractableTargetElement"]]]])
+
+slots.sensor_while_drilling_feature = Slot(uri=VALUESETS.sensor_while_drilling_feature, name="sensor_while_drilling_feature", curie=VALUESETS.curie('sensor_while_drilling_feature'),
+                   model_uri=VALUESETS.sensor_while_drilling_feature, domain=None, range=Optional[Union[Union[str, "SensorWhileDrillingFeature"], list[Union[str, "SensorWhileDrillingFeature"]]]])
+
+slots.process_performance_metric = Slot(uri=VALUESETS.process_performance_metric, name="process_performance_metric", curie=VALUESETS.curie('process_performance_metric'),
+                   model_uri=VALUESETS.process_performance_metric, domain=None, range=Optional[Union[Union[str, "ProcessPerformanceMetric"], list[Union[str, "ProcessPerformanceMetric"]]]])
+
+slots.bioleach_organism = Slot(uri=VALUESETS.bioleach_organism, name="bioleach_organism", curie=VALUESETS.curie('bioleach_organism'),
+                   model_uri=VALUESETS.bioleach_organism, domain=None, range=Optional[Union[str, "BioleachOrganism"]])
+
+slots.bioleach_mode = Slot(uri=VALUESETS.bioleach_mode, name="bioleach_mode", curie=VALUESETS.curie('bioleach_mode'),
+                   model_uri=VALUESETS.bioleach_mode, domain=None, range=Optional[Union[str, "BioleachMode"]])
+
+slots.autonomy_level = Slot(uri=VALUESETS.autonomy_level, name="autonomy_level", curie=VALUESETS.curie('autonomy_level'),
+                   model_uri=VALUESETS.autonomy_level, domain=None, range=Optional[Union[str, "AutonomyLevel"]])
+
+slots.regulatory_constraint = Slot(uri=VALUESETS.regulatory_constraint, name="regulatory_constraint", curie=VALUESETS.curie('regulatory_constraint'),
+                   model_uri=VALUESETS.regulatory_constraint, domain=None, range=Optional[Union[Union[str, "RegulatoryConstraint"], list[Union[str, "RegulatoryConstraint"]]]])
+
+slots.subatomic_particle = Slot(uri=VALUESETS.subatomic_particle, name="subatomic_particle", curie=VALUESETS.curie('subatomic_particle'),
+                   model_uri=VALUESETS.subatomic_particle, domain=None, range=Optional[Union[str, "SubatomicParticleEnum"]])
+
+slots.bond_type = Slot(uri=VALUESETS.bond_type, name="bond_type", curie=VALUESETS.curie('bond_type'),
+                   model_uri=VALUESETS.bond_type, domain=None, range=Optional[Union[str, "BondTypeEnum"]])
+
+slots.periodic_table_block = Slot(uri=VALUESETS.periodic_table_block, name="periodic_table_block", curie=VALUESETS.curie('periodic_table_block'),
+                   model_uri=VALUESETS.periodic_table_block, domain=None, range=Optional[Union[str, "PeriodicTableBlockEnum"]])
+
+slots.element_family = Slot(uri=VALUESETS.element_family, name="element_family", curie=VALUESETS.curie('element_family'),
+                   model_uri=VALUESETS.element_family, domain=None, range=Optional[Union[str, "ElementFamilyEnum"]])
+
+slots.element_metallic_classification = Slot(uri=VALUESETS.element_metallic_classification, name="element_metallic_classification", curie=VALUESETS.curie('element_metallic_classification'),
+                   model_uri=VALUESETS.element_metallic_classification, domain=None, range=Optional[Union[str, "ElementMetallicClassificationEnum"]])
+
+slots.hard_or_soft = Slot(uri=VALUESETS.hard_or_soft, name="hard_or_soft", curie=VALUESETS.curie('hard_or_soft'),
+                   model_uri=VALUESETS.hard_or_soft, domain=None, range=Optional[Union[str, "HardOrSoftEnum"]])
+
+slots.bronsted_acid_base_role = Slot(uri=VALUESETS.bronsted_acid_base_role, name="bronsted_acid_base_role", curie=VALUESETS.curie('bronsted_acid_base_role'),
+                   model_uri=VALUESETS.bronsted_acid_base_role, domain=None, range=Optional[Union[str, "BronstedAcidBaseRoleEnum"]])
+
+slots.lewis_acid_base_role = Slot(uri=VALUESETS.lewis_acid_base_role, name="lewis_acid_base_role", curie=VALUESETS.curie('lewis_acid_base_role'),
+                   model_uri=VALUESETS.lewis_acid_base_role, domain=None, range=Optional[Union[str, "LewisAcidBaseRoleEnum"]])
+
+slots.oxidation_state = Slot(uri=VALUESETS.oxidation_state, name="oxidation_state", curie=VALUESETS.curie('oxidation_state'),
+                   model_uri=VALUESETS.oxidation_state, domain=None, range=Optional[Union[str, "OxidationStateEnum"]])
+
+slots.chirality = Slot(uri=VALUESETS.chirality, name="chirality", curie=VALUESETS.curie('chirality'),
+                   model_uri=VALUESETS.chirality, domain=None, range=Optional[Union[str, "ChiralityEnum"]])
+
+slots.nanostructure_morphology = Slot(uri=VALUESETS.nanostructure_morphology, name="nanostructure_morphology", curie=VALUESETS.curie('nanostructure_morphology'),
+                   model_uri=VALUESETS.nanostructure_morphology, domain=None, range=Optional[Union[str, "NanostructureMorphologyEnum"]])
+
+slots.reaction_type = Slot(uri=VALUESETS.reaction_type, name="reaction_type", curie=VALUESETS.curie('reaction_type'),
+                   model_uri=VALUESETS.reaction_type, domain=None, range=Optional[Union[str, "ReactionTypeEnum"]])
+
+slots.reaction_mechanism = Slot(uri=VALUESETS.reaction_mechanism, name="reaction_mechanism", curie=VALUESETS.curie('reaction_mechanism'),
+                   model_uri=VALUESETS.reaction_mechanism, domain=None, range=Optional[Union[str, "ReactionMechanismEnum"]])
+
+slots.catalyst_type = Slot(uri=VALUESETS.catalyst_type, name="catalyst_type", curie=VALUESETS.curie('catalyst_type'),
+                   model_uri=VALUESETS.catalyst_type, domain=None, range=Optional[Union[str, "CatalystTypeEnum"]])
+
+slots.reaction_condition = Slot(uri=VALUESETS.reaction_condition, name="reaction_condition", curie=VALUESETS.curie('reaction_condition'),
+                   model_uri=VALUESETS.reaction_condition, domain=None, range=Optional[Union[str, "ReactionConditionEnum"]])
+
+slots.reaction_rate_order = Slot(uri=VALUESETS.reaction_rate_order, name="reaction_rate_order", curie=VALUESETS.curie('reaction_rate_order'),
+                   model_uri=VALUESETS.reaction_rate_order, domain=None, range=Optional[Union[str, "ReactionRateOrderEnum"]])
+
+slots.enzyme_class = Slot(uri=VALUESETS.enzyme_class, name="enzyme_class", curie=VALUESETS.curie('enzyme_class'),
+                   model_uri=VALUESETS.enzyme_class, domain=None, range=Optional[Union[str, "EnzymeClassEnum"]])
+
+slots.solvent_class = Slot(uri=VALUESETS.solvent_class, name="solvent_class", curie=VALUESETS.curie('solvent_class'),
+                   model_uri=VALUESETS.solvent_class, domain=None, range=Optional[Union[str, "SolventClassEnum"]])
+
+slots.thermodynamic_parameter = Slot(uri=VALUESETS.thermodynamic_parameter, name="thermodynamic_parameter", curie=VALUESETS.curie('thermodynamic_parameter'),
+                   model_uri=VALUESETS.thermodynamic_parameter, domain=None, range=Optional[Union[str, "ThermodynamicParameterEnum"]])
+
+slots.reaction_directionality = Slot(uri=VALUESETS.reaction_directionality, name="reaction_directionality", curie=VALUESETS.curie('reaction_directionality'),
+                   model_uri=VALUESETS.reaction_directionality, domain=None, range=Optional[Union[str, "ReactionDirectionality"]])
+
+slots.safety_color = Slot(uri=VALUESETS.safety_color, name="safety_color", curie=VALUESETS.curie('safety_color'),
+                   model_uri=VALUESETS.safety_color, domain=None, range=Optional[Union[str, "SafetyColorEnum"]])
+
+slots.traffic_light_color = Slot(uri=VALUESETS.traffic_light_color, name="traffic_light_color", curie=VALUESETS.curie('traffic_light_color'),
+                   model_uri=VALUESETS.traffic_light_color, domain=None, range=Optional[Union[str, "TrafficLightColorEnum"]])
+
+slots.hazmat_color = Slot(uri=VALUESETS.hazmat_color, name="hazmat_color", curie=VALUESETS.curie('hazmat_color'),
+                   model_uri=VALUESETS.hazmat_color, domain=None, range=Optional[Union[str, "HazmatColorEnum"]])
+
+slots.fire_safety_color = Slot(uri=VALUESETS.fire_safety_color, name="fire_safety_color", curie=VALUESETS.curie('fire_safety_color'),
+                   model_uri=VALUESETS.fire_safety_color, domain=None, range=Optional[Union[str, "FireSafetyColorEnum"]])
+
+slots.maritime_signal_color = Slot(uri=VALUESETS.maritime_signal_color, name="maritime_signal_color", curie=VALUESETS.curie('maritime_signal_color'),
+                   model_uri=VALUESETS.maritime_signal_color, domain=None, range=Optional[Union[str, "MaritimeSignalColorEnum"]])
+
+slots.aviation_light_color = Slot(uri=VALUESETS.aviation_light_color, name="aviation_light_color", curie=VALUESETS.curie('aviation_light_color'),
+                   model_uri=VALUESETS.aviation_light_color, domain=None, range=Optional[Union[str, "AviationLightColorEnum"]])
+
+slots.electrical_wire_color = Slot(uri=VALUESETS.electrical_wire_color, name="electrical_wire_color", curie=VALUESETS.curie('electrical_wire_color'),
+                   model_uri=VALUESETS.electrical_wire_color, domain=None, range=Optional[Union[str, "ElectricalWireColorEnum"]])
+
+slots.blood_type = Slot(uri=VALUESETS.blood_type, name="blood_type", curie=VALUESETS.curie('blood_type'),
+                   model_uri=VALUESETS.blood_type, domain=None, range=Optional[Union[str, "BloodTypeEnum"]])
+
+slots.anatomical_system = Slot(uri=VALUESETS.anatomical_system, name="anatomical_system", curie=VALUESETS.curie('anatomical_system'),
+                   model_uri=VALUESETS.anatomical_system, domain=None, range=Optional[Union[str, "AnatomicalSystemEnum"]])
+
+slots.medical_specialty = Slot(uri=VALUESETS.medical_specialty, name="medical_specialty", curie=VALUESETS.curie('medical_specialty'),
+                   model_uri=VALUESETS.medical_specialty, domain=None, range=Optional[Union[str, "MedicalSpecialtyEnum"]])
+
+slots.drug_route = Slot(uri=VALUESETS.drug_route, name="drug_route", curie=VALUESETS.curie('drug_route'),
+                   model_uri=VALUESETS.drug_route, domain=None, range=Optional[Union[str, "DrugRouteEnum"]])
+
+slots.vital_sign = Slot(uri=VALUESETS.vital_sign, name="vital_sign", curie=VALUESETS.curie('vital_sign'),
+                   model_uri=VALUESETS.vital_sign, domain=None, range=Optional[Union[str, "VitalSignEnum"]])
+
+slots.diagnostic_test_type = Slot(uri=VALUESETS.diagnostic_test_type, name="diagnostic_test_type", curie=VALUESETS.curie('diagnostic_test_type'),
+                   model_uri=VALUESETS.diagnostic_test_type, domain=None, range=Optional[Union[str, "DiagnosticTestTypeEnum"]])
+
+slots.symptom_severity = Slot(uri=VALUESETS.symptom_severity, name="symptom_severity", curie=VALUESETS.curie('symptom_severity'),
+                   model_uri=VALUESETS.symptom_severity, domain=None, range=Optional[Union[str, "SymptomSeverityEnum"]])
+
+slots.allergy_type = Slot(uri=VALUESETS.allergy_type, name="allergy_type", curie=VALUESETS.curie('allergy_type'),
+                   model_uri=VALUESETS.allergy_type, domain=None, range=Optional[Union[str, "AllergyTypeEnum"]])
+
+slots.vaccine_type = Slot(uri=VALUESETS.vaccine_type, name="vaccine_type", curie=VALUESETS.curie('vaccine_type'),
+                   model_uri=VALUESETS.vaccine_type, domain=None, range=Optional[Union[str, "VaccineTypeEnum"]])
+
+slots.bmi_classification = Slot(uri=VALUESETS.bmi_classification, name="bmi_classification", curie=VALUESETS.curie('bmi_classification'),
+                   model_uri=VALUESETS.bmi_classification, domain=None, range=Optional[Union[str, "BMIClassificationEnum"]])
+
+slots.race_omb1997 = Slot(uri=VALUESETS.race_omb1997, name="race_omb1997", curie=VALUESETS.curie('race_omb1997'),
+                   model_uri=VALUESETS.race_omb1997, domain=None, range=Optional[Union[str, "RaceOMB1997Enum"]])
+
+slots.ethnicity_omb1997 = Slot(uri=VALUESETS.ethnicity_omb1997, name="ethnicity_omb1997", curie=VALUESETS.curie('ethnicity_omb1997'),
+                   model_uri=VALUESETS.ethnicity_omb1997, domain=None, range=Optional[Union[str, "EthnicityOMB1997Enum"]])
+
+slots.biological_sex = Slot(uri=VALUESETS.biological_sex, name="biological_sex", curie=VALUESETS.curie('biological_sex'),
+                   model_uri=VALUESETS.biological_sex, domain=None, range=Optional[Union[str, "BiologicalSexEnum"]])
+
+slots.age_group = Slot(uri=VALUESETS.age_group, name="age_group", curie=VALUESETS.curie('age_group'),
+                   model_uri=VALUESETS.age_group, domain=None, range=Optional[Union[str, "AgeGroupEnum"]])
+
+slots.participant_vital_status = Slot(uri=VALUESETS.participant_vital_status, name="participant_vital_status", curie=VALUESETS.curie('participant_vital_status'),
+                   model_uri=VALUESETS.participant_vital_status, domain=None, range=Optional[Union[str, "ParticipantVitalStatusEnum"]])
+
+slots.recruitment_status = Slot(uri=VALUESETS.recruitment_status, name="recruitment_status", curie=VALUESETS.curie('recruitment_status'),
+                   model_uri=VALUESETS.recruitment_status, domain=None, range=Optional[Union[str, "RecruitmentStatusEnum"]])
+
+slots.study_phase = Slot(uri=VALUESETS.study_phase, name="study_phase", curie=VALUESETS.curie('study_phase'),
+                   model_uri=VALUESETS.study_phase, domain=None, range=Optional[Union[str, "StudyPhaseEnum"]])
+
+slots.karyotypic_sex = Slot(uri=VALUESETS.karyotypic_sex, name="karyotypic_sex", curie=VALUESETS.curie('karyotypic_sex'),
+                   model_uri=VALUESETS.karyotypic_sex, domain=None, range=Optional[Union[str, "KaryotypicSexEnum"]])
+
+slots.phenotypic_sex = Slot(uri=VALUESETS.phenotypic_sex, name="phenotypic_sex", curie=VALUESETS.curie('phenotypic_sex'),
+                   model_uri=VALUESETS.phenotypic_sex, domain=None, range=Optional[Union[str, "PhenotypicSexEnum"]])
+
+slots.allelic_state = Slot(uri=VALUESETS.allelic_state, name="allelic_state", curie=VALUESETS.curie('allelic_state'),
+                   model_uri=VALUESETS.allelic_state, domain=None, range=Optional[Union[str, "AllelicStateEnum"]])
+
+slots.laterality = Slot(uri=VALUESETS.laterality, name="laterality", curie=VALUESETS.curie('laterality'),
+                   model_uri=VALUESETS.laterality, domain=None, range=Optional[Union[str, "LateralityEnum"]])
+
+slots.onset_timing = Slot(uri=VALUESETS.onset_timing, name="onset_timing", curie=VALUESETS.curie('onset_timing'),
+                   model_uri=VALUESETS.onset_timing, domain=None, range=Optional[Union[str, "OnsetTimingEnum"]])
+
+slots.acmg_pathogenicity = Slot(uri=VALUESETS.acmg_pathogenicity, name="acmg_pathogenicity", curie=VALUESETS.curie('acmg_pathogenicity'),
+                   model_uri=VALUESETS.acmg_pathogenicity, domain=None, range=Optional[Union[str, "ACMGPathogenicityEnum"]])
+
+slots.therapeutic_actionability = Slot(uri=VALUESETS.therapeutic_actionability, name="therapeutic_actionability", curie=VALUESETS.curie('therapeutic_actionability'),
+                   model_uri=VALUESETS.therapeutic_actionability, domain=None, range=Optional[Union[str, "TherapeuticActionabilityEnum"]])
+
+slots.interpretation_progress = Slot(uri=VALUESETS.interpretation_progress, name="interpretation_progress", curie=VALUESETS.curie('interpretation_progress'),
+                   model_uri=VALUESETS.interpretation_progress, domain=None, range=Optional[Union[str, "InterpretationProgressEnum"]])
+
+slots.regimen_status = Slot(uri=VALUESETS.regimen_status, name="regimen_status", curie=VALUESETS.curie('regimen_status'),
+                   model_uri=VALUESETS.regimen_status, domain=None, range=Optional[Union[str, "RegimenStatusEnum"]])
+
+slots.drug_response = Slot(uri=VALUESETS.drug_response, name="drug_response", curie=VALUESETS.curie('drug_response'),
+                   model_uri=VALUESETS.drug_response, domain=None, range=Optional[Union[str, "DrugResponseEnum"]])
+
+slots.process_scale = Slot(uri=VALUESETS.process_scale, name="process_scale", curie=VALUESETS.curie('process_scale'),
+                   model_uri=VALUESETS.process_scale, domain=None, range=Optional[Union[str, "ProcessScaleEnum"]])
+
+slots.bioreactor_type = Slot(uri=VALUESETS.bioreactor_type, name="bioreactor_type", curie=VALUESETS.curie('bioreactor_type'),
+                   model_uri=VALUESETS.bioreactor_type, domain=None, range=Optional[Union[str, "BioreactorTypeEnum"]])
+
+slots.fermentation_mode = Slot(uri=VALUESETS.fermentation_mode, name="fermentation_mode", curie=VALUESETS.curie('fermentation_mode'),
+                   model_uri=VALUESETS.fermentation_mode, domain=None, range=Optional[Union[str, "FermentationModeEnum"]])
+
+slots.oxygenation_strategy = Slot(uri=VALUESETS.oxygenation_strategy, name="oxygenation_strategy", curie=VALUESETS.curie('oxygenation_strategy'),
+                   model_uri=VALUESETS.oxygenation_strategy, domain=None, range=Optional[Union[str, "OxygenationStrategyEnum"]])
+
+slots.agitation_type = Slot(uri=VALUESETS.agitation_type, name="agitation_type", curie=VALUESETS.curie('agitation_type'),
+                   model_uri=VALUESETS.agitation_type, domain=None, range=Optional[Union[str, "AgitationTypeEnum"]])
+
+slots.downstream_process = Slot(uri=VALUESETS.downstream_process, name="downstream_process", curie=VALUESETS.curie('downstream_process'),
+                   model_uri=VALUESETS.downstream_process, domain=None, range=Optional[Union[str, "DownstreamProcessEnum"]])
+
+slots.feedstock_type = Slot(uri=VALUESETS.feedstock_type, name="feedstock_type", curie=VALUESETS.curie('feedstock_type'),
+                   model_uri=VALUESETS.feedstock_type, domain=None, range=Optional[Union[str, "FeedstockTypeEnum"]])
+
+slots.product_type = Slot(uri=VALUESETS.product_type, name="product_type", curie=VALUESETS.curie('product_type'),
+                   model_uri=VALUESETS.product_type, domain=None, range=Optional[Union[str, "ProductTypeEnum"]])
+
+slots.sterilization_method = Slot(uri=VALUESETS.sterilization_method, name="sterilization_method", curie=VALUESETS.curie('sterilization_method'),
+                   model_uri=VALUESETS.sterilization_method, domain=None, range=Optional[Union[str, "SterilizationMethodEnum"]])
+
+slots.length_unit = Slot(uri=VALUESETS.length_unit, name="length_unit", curie=VALUESETS.curie('length_unit'),
+                   model_uri=VALUESETS.length_unit, domain=None, range=Optional[Union[str, "LengthUnitEnum"]])
+
+slots.mass_unit = Slot(uri=VALUESETS.mass_unit, name="mass_unit", curie=VALUESETS.curie('mass_unit'),
+                   model_uri=VALUESETS.mass_unit, domain=None, range=Optional[Union[str, "MassUnitEnum"]])
+
+slots.volume_unit = Slot(uri=VALUESETS.volume_unit, name="volume_unit", curie=VALUESETS.curie('volume_unit'),
+                   model_uri=VALUESETS.volume_unit, domain=None, range=Optional[Union[str, "VolumeUnitEnum"]])
+
+slots.temperature_unit = Slot(uri=VALUESETS.temperature_unit, name="temperature_unit", curie=VALUESETS.curie('temperature_unit'),
+                   model_uri=VALUESETS.temperature_unit, domain=None, range=Optional[Union[str, "TemperatureUnitEnum"]])
+
+slots.time_unit = Slot(uri=VALUESETS.time_unit, name="time_unit", curie=VALUESETS.curie('time_unit'),
+                   model_uri=VALUESETS.time_unit, domain=None, range=Optional[Union[str, "TimeUnitEnum"]])
+
+slots.pressure_unit = Slot(uri=VALUESETS.pressure_unit, name="pressure_unit", curie=VALUESETS.curie('pressure_unit'),
+                   model_uri=VALUESETS.pressure_unit, domain=None, range=Optional[Union[str, "PressureUnitEnum"]])
+
+slots.concentration_unit = Slot(uri=VALUESETS.concentration_unit, name="concentration_unit", curie=VALUESETS.curie('concentration_unit'),
+                   model_uri=VALUESETS.concentration_unit, domain=None, range=Optional[Union[str, "ConcentrationUnitEnum"]])
+
+slots.frequency_unit = Slot(uri=VALUESETS.frequency_unit, name="frequency_unit", curie=VALUESETS.curie('frequency_unit'),
+                   model_uri=VALUESETS.frequency_unit, domain=None, range=Optional[Union[str, "FrequencyUnitEnum"]])
+
+slots.angle_unit = Slot(uri=VALUESETS.angle_unit, name="angle_unit", curie=VALUESETS.curie('angle_unit'),
+                   model_uri=VALUESETS.angle_unit, domain=None, range=Optional[Union[str, "AngleUnitEnum"]])
+
+slots.data_size_unit = Slot(uri=VALUESETS.data_size_unit, name="data_size_unit", curie=VALUESETS.curie('data_size_unit'),
+                   model_uri=VALUESETS.data_size_unit, domain=None, range=Optional[Union[str, "DataSizeUnitEnum"]])
+
+slots.image_file_format = Slot(uri=VALUESETS.image_file_format, name="image_file_format", curie=VALUESETS.curie('image_file_format'),
+                   model_uri=VALUESETS.image_file_format, domain=None, range=Optional[Union[str, "ImageFileFormatEnum"]])
+
+slots.document_format = Slot(uri=VALUESETS.document_format, name="document_format", curie=VALUESETS.curie('document_format'),
+                   model_uri=VALUESETS.document_format, domain=None, range=Optional[Union[str, "DocumentFormatEnum"]])
+
+slots.data_format = Slot(uri=VALUESETS.data_format, name="data_format", curie=VALUESETS.curie('data_format'),
+                   model_uri=VALUESETS.data_format, domain=None, range=Optional[Union[str, "DataFormatEnum"]])
+
+slots.archive_format = Slot(uri=VALUESETS.archive_format, name="archive_format", curie=VALUESETS.curie('archive_format'),
+                   model_uri=VALUESETS.archive_format, domain=None, range=Optional[Union[str, "ArchiveFormatEnum"]])
+
+slots.video_format = Slot(uri=VALUESETS.video_format, name="video_format", curie=VALUESETS.curie('video_format'),
+                   model_uri=VALUESETS.video_format, domain=None, range=Optional[Union[str, "VideoFormatEnum"]])
+
+slots.audio_format = Slot(uri=VALUESETS.audio_format, name="audio_format", curie=VALUESETS.curie('audio_format'),
+                   model_uri=VALUESETS.audio_format, domain=None, range=Optional[Union[str, "AudioFormatEnum"]])
+
+slots.programming_language_file = Slot(uri=VALUESETS.programming_language_file, name="programming_language_file", curie=VALUESETS.curie('programming_language_file'),
+                   model_uri=VALUESETS.programming_language_file, domain=None, range=Optional[Union[str, "ProgrammingLanguageFileEnum"]])
+
+slots.network_protocol = Slot(uri=VALUESETS.network_protocol, name="network_protocol", curie=VALUESETS.curie('network_protocol'),
+                   model_uri=VALUESETS.network_protocol, domain=None, range=Optional[Union[str, "NetworkProtocolEnum"]])
+
+slots.technology_readiness_level = Slot(uri=VALUESETS.technology_readiness_level, name="technology_readiness_level", curie=VALUESETS.curie('technology_readiness_level'),
+                   model_uri=VALUESETS.technology_readiness_level, domain=None, range=Optional[Union[str, "TechnologyReadinessLevel"]])
+
+slots.software_maturity_level = Slot(uri=VALUESETS.software_maturity_level, name="software_maturity_level", curie=VALUESETS.curie('software_maturity_level'),
+                   model_uri=VALUESETS.software_maturity_level, domain=None, range=Optional[Union[str, "SoftwareMaturityLevel"]])
+
+slots.capability_maturity_level = Slot(uri=VALUESETS.capability_maturity_level, name="capability_maturity_level", curie=VALUESETS.curie('capability_maturity_level'),
+                   model_uri=VALUESETS.capability_maturity_level, domain=None, range=Optional[Union[str, "CapabilityMaturityLevel"]])
+
+slots.standards_maturity_level = Slot(uri=VALUESETS.standards_maturity_level, name="standards_maturity_level", curie=VALUESETS.curie('standards_maturity_level'),
+                   model_uri=VALUESETS.standards_maturity_level, domain=None, range=Optional[Union[str, "StandardsMaturityLevel"]])
+
+slots.project_maturity_level = Slot(uri=VALUESETS.project_maturity_level, name="project_maturity_level", curie=VALUESETS.curie('project_maturity_level'),
+                   model_uri=VALUESETS.project_maturity_level, domain=None, range=Optional[Union[str, "ProjectMaturityLevel"]])
+
+slots.data_maturity_level = Slot(uri=VALUESETS.data_maturity_level, name="data_maturity_level", curie=VALUESETS.curie('data_maturity_level'),
+                   model_uri=VALUESETS.data_maturity_level, domain=None, range=Optional[Union[str, "DataMaturityLevel"]])
+
+slots.open_source_maturity_level = Slot(uri=VALUESETS.open_source_maturity_level, name="open_source_maturity_level", curie=VALUESETS.curie('open_source_maturity_level'),
+                   model_uri=VALUESETS.open_source_maturity_level, domain=None, range=Optional[Union[str, "OpenSourceMaturityLevel"]])

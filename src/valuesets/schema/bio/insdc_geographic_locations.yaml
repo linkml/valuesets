@@ -1,29 +1,31 @@
 name: insdc_geographic_locations
-id: https://w3id.org/linkml/valuesets/bio/insdc_geographic_locations
 title: INSDC Geographic Location Vocabulary
-description: |-
-  INSDC controlled vocabulary for geographic locations used in sequence records.
-  This vocabulary is used for the /geo_loc_name qualifier in INSDC databases (GenBank, ENA, DDBJ).
-  Countries are mapped to ISO 3166-1 alpha-2 codes using Library of Congress URIs.
-  Source: https://www.insdc.org/submitting-standards/geo_loc_name-qualifier-vocabulary/
-license: MIT
-see_also:
-  - https://www.insdc.org/submitting-standards/geo_loc_name-qualifier-vocabulary/
-  - http://id.loc.gov/vocabulary/countries.html
+description: 'INSDC controlled vocabulary for geographic locations used in sequence records.
 
+  This vocabulary is used for the /geo_loc_name qualifier in INSDC databases (GenBank, ENA, DDBJ).
+
+  Countries are mapped to ISO 3166-1 alpha-2 codes using Library of Congress URIs.
+
+  Source: https://www.insdc.org/submitting-standards/geo_loc_name-qualifier-vocabulary/'
+id: https://w3id.org/linkml/valuesets/bio/insdc_geographic_locations
 prefixes:
-  linkml_common: https://w3id.org/valuesets/
+  # linkml_common: https://w3id.org/valuesets/
   insdc: https://www.insdc.org/controlled-vocabulary/geographic-location/
   iso3166loc: http://id.loc.gov/vocabulary/countries/
   geonames: http://sws.geonames.org/
-default_prefix: linkml_common
-
+  valuesets: https://w3id.org/valuesets/
+default_prefix: valuesets
+slots:
+  insdc_geographic_location:
+    description: INSDC controlled vocabulary for geographic locations of collected samples
+    range: InsdcGeographicLocationEnum
 enums:
   InsdcGeographicLocationEnum:
-    description: |-
-      INSDC controlled vocabulary for geographic locations of collected samples.
+    description: 'INSDC controlled vocabulary for geographic locations of collected samples.
+
       Includes countries, oceans, seas, and other geographic regions as defined by INSDC.
-      Countries use ISO 3166-1 alpha-2 codes from Library of Congress as canonical identifiers.
+
+      Countries use ISO 3166-1 alpha-2 codes from Library of Congress as canonical identifiers.'
     permissible_values:
       AFGHANISTAN:
         description: Afghanistan
@@ -903,3 +905,7 @@ enums:
       ZIMBABWE:
         description: Zimbabwe
         meaning: iso3166loc:zw
+license: MIT
+see_also:
+- https://www.insdc.org/submitting-standards/geo_loc_name-qualifier-vocabulary/
+- http://id.loc.gov/vocabulary/countries.html

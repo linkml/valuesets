@@ -1,10 +1,15 @@
 name: fossil_fuels
 id: https://w3id.org/linkml/valuesets/energy/fossil_fuels
 prefixes:
-  linkml_common: https://w3id.org/linkml-common/
+  # linkml_common: https://w3id.org/linkml-common/
   ENVO: http://purl.obolibrary.org/obo/ENVO_
   CHEBI: http://purl.obolibrary.org/obo/CHEBI_
-default_prefix: linkml_common
+  valuesets: https://w3id.org/valuesets/
+default_prefix: valuesets
+slots:
+  fossil_fuel_type:
+    description: Types of fossil fuels used for energy generation
+    range: FossilFuelTypeEnum
 enums:
   FossilFuelTypeEnum:
     description: Types of fossil fuels used for energy generation

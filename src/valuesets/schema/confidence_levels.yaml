@@ -1,32 +1,46 @@
-id: https://w3id.org/linkml-common/valuesets/confidence_levels
 name: confidence_levels
 title: Confidence Level Value Sets
-description: >-
-  Value sets for expressing levels of confidence, certainty, and evidence strength
-  in various contexts including research, clinical, and data quality assessments.
-
+description: Value sets for expressing levels of confidence, certainty, and evidence strength in various contexts including
+  research, clinical, and data quality assessments.
+id: https://w3id.org/valuesets/valuesets/confidence_levels
 imports:
-  - linkml:types
-  - core
-
+- linkml:types
+- core
 prefixes:
   linkml: https://w3id.org/linkml/
-  valuesets: https://w3id.org/linkml-common/valuesets/
+  valuesets: https://w3id.org/valuesets/
   NCIT: http://purl.obolibrary.org/obo/NCIT_
   CIO: http://purl.obolibrary.org/obo/CIO_
   OBCS: http://purl.obolibrary.org/obo/OBCS_
-
 default_prefix: valuesets
-default_range: string
-
+slots:
+  confidence_level:
+    description: Standard confidence levels based on NCIT (NCI Thesaurus) definitions
+    range: ConfidenceLevel
+  cio_confidence_level:
+    description: Confidence levels from the Confidence Information Ontology (CIO), representing different levels of trust
+      in evidence
+    range: CIOConfidenceLevel
+  obcs_certainty_level:
+    description: Certainty levels from the Ontology of Biological and Clinical Statistics (OBCS)
+    range: OBCSCertaintyLevel
+  ipcc_likelihood_scale:
+    description: IPCC (Intergovernmental Panel on Climate Change) standardized likelihood scale used to communicate the assessed
+      probability of an outcome or result
+    range: IPCCLikelihoodScale
+  ipcc_confidence_level:
+    description: IPCC confidence qualifiers used to express the degree of confidence in a finding based on the type, amount,
+      quality, and consistency of evidence and the degree of agreement
+    range: IPCCConfidenceLevel
+  ncit_five_point_confidence_scale:
+    description: NCIT 5-point subjective confidence scale ranging from "Not at all confident" (1) to "Very confident" (5)
+    range: NCITFivePointConfidenceScale
 enums:
-
   ConfidenceLevel:
-    description: >-
-      Standard confidence levels based on NCIT (NCI Thesaurus) definitions.
-      Used to express the degree of confidence in evidence, data, or assertions.
+    description: Standard confidence levels based on NCIT (NCI Thesaurus) definitions. Used to express the degree of confidence
+      in evidence, data, or assertions.
     source: http://purl.obolibrary.org/obo/ncit.owl
-    conforms_to: "NCI Thesaurus"
+    conforms_to: NCI Thesaurus
     permissible_values:
       HIGH_CONFIDENCE:
         description: A response indicating a high level of confidence.
@@ -41,67 +55,60 @@ enums:
         description: A response indicating a very low level of confidence or an absence.
         meaning: NCIT:C129482
         aliases:
-          - Very Low Confidence or No Confidence
-
+        - Very Low Confidence or No Confidence
   CIOConfidenceLevel:
-    description: >-
-      Confidence levels from the Confidence Information Ontology (CIO),
-      representing different levels of trust in evidence.
+    description: Confidence levels from the Confidence Information Ontology (CIO), representing different levels of trust
+      in evidence.
     permissible_values:
       HIGH:
         description: A confidence level representing a high trust in an evidence.
         meaning: CIO:0000029
         aliases:
-          - high confidence level
+        - high confidence level
         exact_mappings:
-          - NCIT:C129479
+        - NCIT:C129479
       MEDIUM:
         description: A confidence level representing a moderate trust in an evidence.
         meaning: CIO:0000030
         aliases:
-          - medium confidence level
+        - medium confidence level
         exact_mappings:
-          - NCIT:C129480
+        - NCIT:C129480
       LOW:
         description: A confidence level representing an absence of trust in an evidence.
         meaning: CIO:0000031
         aliases:
-          - low confidence level
+        - low confidence level
         exact_mappings:
-          - NCIT:C129481
-
+        - NCIT:C129481
   OBCSCertaintyLevel:
-    description: >-
-      Certainty levels from the Ontology of Biological and Clinical Statistics (OBCS).
-      These terms are used to express degrees of certainty in statistical and clinical contexts.
+    description: Certainty levels from the Ontology of Biological and Clinical Statistics (OBCS). These terms are used to
+      express degrees of certainty in statistical and clinical contexts.
     permissible_values:
       DEFINITIVE:
         description: Definitive certainty level - the highest degree of certainty.
         meaning: OBCS:0000368
         aliases:
-          - definitive certainty level
+        - definitive certainty level
         close_mappings:
-          - NCIT:C129479
+        - NCIT:C129479
       HIGH:
         description: High certainty level - strong confidence but not absolute.
         meaning: OBCS:0000369
         aliases:
-          - high certainty level
+        - high certainty level
         exact_mappings:
-          - NCIT:C129479
+        - NCIT:C129479
       INTERMEDIATE:
         description: Intermediate certainty level - moderate degree of certainty.
         meaning: OBCS:0000370
         aliases:
-          - intermediate certainty level
+        - intermediate certainty level
         exact_mappings:
-          - NCIT:C129480
-
+        - NCIT:C129480
   IPCCLikelihoodScale:
-    description: >-
-      IPCC (Intergovernmental Panel on Climate Change) standardized likelihood scale
-      used to communicate the assessed probability of an outcome or result.
-      Widely used in climate science and environmental assessments.
+    description: IPCC (Intergovernmental Panel on Climate Change) standardized likelihood scale used to communicate the assessed
+      probability of an outcome or result. Widely used in climate science and environmental assessments.
     permissible_values:
       VIRTUALLY_CERTAIN:
         description: 99-100% probability of occurrence/truth.
@@ -143,62 +150,57 @@ enums:
         description: 0-1% probability of occurrence/truth.
         annotations:
           probability_range: 0.00-0.01
-
   IPCCConfidenceLevel:
-    description: >-
-      IPCC confidence qualifiers used to express the degree of confidence
-      in a finding based on the type, amount, quality, and consistency of evidence
-      and the degree of agreement.
+    description: IPCC confidence qualifiers used to express the degree of confidence in a finding based on the type, amount,
+      quality, and consistency of evidence and the degree of agreement.
     permissible_values:
       VERY_HIGH_CONFIDENCE:
         description: Very high confidence in the validity of a finding.
         close_mappings:
-          - NCIT:C129479
+        - NCIT:C129479
       HIGH_CONFIDENCE:
         description: High confidence in the validity of a finding.
         exact_mappings:
-          - NCIT:C129479
+        - NCIT:C129479
       MEDIUM_CONFIDENCE:
         description: Medium confidence in the validity of a finding.
         exact_mappings:
-          - NCIT:C129480
+        - NCIT:C129480
       LOW_CONFIDENCE:
         description: Low confidence in the validity of a finding.
         exact_mappings:
-          - NCIT:C129481
+        - NCIT:C129481
       VERY_LOW_CONFIDENCE:
         description: Very low confidence in the validity of a finding.
         exact_mappings:
-          - NCIT:C129482
-
+        - NCIT:C129482
   NCITFivePointConfidenceScale:
-    description: >-
-      NCIT 5-point subjective confidence scale ranging from
-      "Not at all confident" (1) to "Very confident" (5).
+    description: NCIT 5-point subjective confidence scale ranging from "Not at all confident" (1) to "Very confident" (5).
       Used in clinical assessments and questionnaires.
     permissible_values:
       NOT_AT_ALL_CONFIDENT:
         description: A subjective score of 1 - Not at all confident.
         meaning: NCIT:C153491
         aliases:
-          - Confidence 1
+        - Confidence 1
       SLIGHTLY_CONFIDENT:
         description: A subjective score of 2 - Slightly confident.
         meaning: NCIT:C153492
         aliases:
-          - Confidence 2
+        - Confidence 2
       SOMEWHAT_CONFIDENT:
         description: A subjective score of 3 - Somewhat confident.
         meaning: NCIT:C153493
         aliases:
-          - Confidence 3
+        - Confidence 3
       MODERATELY_CONFIDENT:
         description: A subjective score of 4 - Moderately confident.
         meaning: NCIT:C153494
         aliases:
-          - Confidence 4
+        - Confidence 4
       VERY_CONFIDENT:
         description: A subjective score of 5 - Very confident.
         meaning: NCIT:C153495
         aliases:
-          - Confidence 5
+        - Confidence 5
+default_range: string

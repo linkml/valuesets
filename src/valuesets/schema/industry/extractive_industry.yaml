@@ -1,8 +1,22 @@
 name: extractive_industry
 id: https://w3id.org/linkml/valuesets/industry/extractive_industry
 prefixes:
-  linkml_common: https://w3id.org/linkml-common/
-default_prefix: linkml_common
+  # linkml_common: https://w3id.org/linkml-common/
+  valuesets: https://w3id.org/valuesets/
+default_prefix: valuesets
+slots:
+  extractive_industry_facility_type:
+    description: Types of extractive industry facilities
+    range: ExtractiveIndustryFacilityTypeEnum
+  extractive_industry_product_type:
+    description: Types of products extracted from extractive industry facilities
+    range: ExtractiveIndustryProductTypeEnum
+  mining_method:
+    description: Methods used for extracting minerals from the earth
+    range: MiningMethodEnum
+  well_type:
+    description: Types of wells used for extracting fluid resources
+    range: WellTypeEnum
 enums:
   ExtractiveIndustryFacilityTypeEnum:
     description: Types of extractive industry facilities
@@ -16,7 +30,6 @@ enums:
       QUARRY_FACILITY:
         description: A facility where stone, sand, or gravel are extracted
         title: Quarry Facility
-
   ExtractiveIndustryProductTypeEnum:
     description: Types of products extracted from extractive industry facilities
     permissible_values:
@@ -44,7 +57,6 @@ enums:
       GRAVEL:
         description: A loose aggregation of rock fragments
         title: Gravel
-
   MiningMethodEnum:
     description: Methods used for extracting minerals from the earth
     permissible_values:
@@ -60,7 +72,6 @@ enums:
       IN_SITU:
         description: Extraction without removing the ore from its original location
         title: In Situ
-
   WellTypeEnum:
     description: Types of wells used for extracting fluid resources
     permissible_values:

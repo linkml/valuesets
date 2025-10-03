@@ -1,9 +1,17 @@
 name: emotion_classification
 id: https://w3id.org/linkml/valuesets/data_science/emotion_classification
 prefixes:
-  linkml_common: https://w3id.org/linkml-common/
+  # linkml_common: https://w3id.org/linkml-common/
   MFOEM: http://purl.obolibrary.org/obo/MFOEM_
-default_prefix: linkml_common
+  valuesets: https://w3id.org/valuesets/
+default_prefix: valuesets
+slots:
+  basic_emotion:
+    description: Ekman's six basic emotions commonly used in emotion recognition
+    range: BasicEmotionEnum
+  extended_emotion:
+    description: Extended emotion set including complex emotions
+    range: ExtendedEmotionEnum
 enums:
   BasicEmotionEnum:
     description: Ekman's six basic emotions commonly used in emotion recognition
@@ -14,45 +22,44 @@ enums:
         title: Anger
         meaning: MFOEM:000009
         aliases:
-          - angry
-          - mad
+        - angry
+        - mad
       DISGUST:
         description: Feeling of revulsion or strong disapproval
         title: Disgust
         meaning: MFOEM:000019
         aliases:
-          - disgusted
-          - repulsed
+        - disgusted
+        - repulsed
       FEAR:
         description: Feeling of anxiety or apprehension
         title: Fear
         meaning: MFOEM:000026
         aliases:
-          - afraid
-          - scared
+        - afraid
+        - scared
       HAPPINESS:
         description: Feeling of pleasure or contentment
         title: Happiness
         meaning: MFOEM:000042
         aliases:
-          - happy
-          - joy
-          - joyful
+        - happy
+        - joy
+        - joyful
       SADNESS:
         description: Feeling of sorrow or unhappiness
         title: Sadness
         meaning: MFOEM:000056
         aliases:
-          - sad
-          - sorrow
+        - sad
+        - sorrow
       SURPRISE:
         description: Feeling of mild astonishment or shock
         title: Surprise
         meaning: MFOEM:000032
         aliases:
-          - surprised
-          - shocked
-          
+        - surprised
+        - shocked
   ExtendedEmotionEnum:
     description: Extended emotion set including complex emotions
     conforms_to: https://en.wikipedia.org/wiki/Emotion_classification
@@ -90,8 +97,8 @@ enums:
         title: Erwartung
         meaning: MFOEM:000175
         aliases:
-          - expectation
-          - expectant
+        - expectation
+        - expectant
       TRUST:
         description: Feeling of confidence in someone or something
         title: Trust

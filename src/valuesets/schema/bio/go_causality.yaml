@@ -1,0 +1,119 @@
+name: go_causality
+title: Gene Ontology Causality Value Sets
+description: Value sets for GO causal relationships and predicates used in gene ontology annotations and pathway analysis
+id: https://w3id.org/valuesets/bio/go_causality
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  RO: http://purl.obolibrary.org/obo/RO_
+  valuesets: https://w3id.org/valuesets/
+default_prefix: valuesets
+slots:
+  causal_predicate:
+    description: A term describing the causal relationship between two activities drawn from the Relation Ontology
+    range: CausalPredicateEnum
+enums:
+  CausalPredicateEnum:
+    description: A term describing the causal relationship between two activities. All terms are drawn from
+      the "causally upstream or within" (RO:0002418) branch of the Relation Ontology (RO).
+    permissible_values:
+      CONSTITUTIVELY_UPSTREAM_OF:
+        title: constitutively upstream of
+        meaning: RO:0012009
+      PROVIDES_INPUT_FOR:
+        title: provides input for
+        meaning: RO:0002413
+      REMOVES_INPUT_FOR:
+        title: removes input for
+        meaning: RO:0012010
+      CAUSALLY_UPSTREAM_OF:
+        title: causally upstream of
+        meaning: RO:0002411
+        aliases:
+        - undetermined
+        comments:
+        - Abstract parent class for causal relationships
+      CAUSALLY_UPSTREAM_OF_POSITIVE_EFFECT:
+        title: causally upstream of, positive effect
+        is_a: CAUSALLY_UPSTREAM_OF
+        meaning: RO:0002304
+        annotations:
+          symbol: "+"
+          direction: POSITIVE
+      CAUSALLY_UPSTREAM_OF_NEGATIVE_EFFECT:
+        title: causally upstream of, negative effect
+        is_a: CAUSALLY_UPSTREAM_OF
+        meaning: RO:0002305
+        annotations:
+          symbol: "-"
+          direction: NEGATIVE
+      REGULATES:
+        title: regulates
+        is_a: CAUSALLY_UPSTREAM_OF
+        meaning: RO:0002211
+        annotations:
+          symbol: "R"
+        comments:
+        - Abstract parent class for regulation relationships
+      NEGATIVELY_REGULATES:
+        title: negatively regulates
+        is_a: REGULATES
+        meaning: RO:0002212
+        annotations:
+          symbol: "-R"
+          direction: NEGATIVE
+        comments:
+        - Abstract parent class for negative regulation relationships
+      POSITIVELY_REGULATES:
+        title: positively regulates
+        is_a: REGULATES
+        meaning: RO:0002213
+        annotations:
+          symbol: "+R"
+          direction: POSITIVE
+        comments:
+        - Abstract parent class for positive regulation relationships
+      DIRECTLY_NEGATIVELY_REGULATES:
+        title: directly negatively regulates
+        is_a: NEGATIVELY_REGULATES
+        meaning: RO:0002630
+        annotations:
+          directness: DIRECT
+          direction: NEGATIVE
+      INDIRECTLY_NEGATIVELY_REGULATES:
+        title: indirectly negatively regulates
+        is_a: NEGATIVELY_REGULATES
+        meaning: RO:0002409
+        annotations:
+          directness: INDIRECT
+          direction: NEGATIVE
+      DIRECTLY_POSITIVELY_REGULATES:
+        title: directly positively regulates
+        is_a: POSITIVELY_REGULATES
+        meaning: RO:0002629
+        annotations:
+          directness: DIRECT
+          direction: POSITIVE
+      INDIRECTLY_POSITIVELY_REGULATES:
+        title: indirectly positively regulates
+        is_a: POSITIVELY_REGULATES
+        meaning: RO:0002407
+        annotations:
+          directness: INDIRECT
+          direction: POSITIVE
+      IS_SMALL_MOLECULE_REGULATOR_OF:
+        title: is small molecule regulator of
+        meaning: RO:0012004
+      IS_SMALL_MOLECULE_ACTIVATOR_OF:
+        title: is small molecule activator of
+        is_a: IS_SMALL_MOLECULE_REGULATOR_OF
+        meaning: RO:0012005
+        annotations:
+          direction: POSITIVE
+      IS_SMALL_MOLECULE_INHIBITOR_OF:
+        title: is small molecule inhibitor of
+        is_a: IS_SMALL_MOLECULE_REGULATOR_OF
+        meaning: RO:0012006
+        annotations:
+          direction: NEGATIVE

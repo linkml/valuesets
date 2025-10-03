@@ -1,10 +1,12 @@
-id: https://w3id.org/valuesets/chemistry/chemical_entities
 name: chemical_entities
 title: Chemical Entities Value Sets
-description: >
-  Value sets for chemical entities including subatomic particles, chemical elements,
-  bond types, and chemical classifications. Based on the ChemROF ontological framework.
+description: 'Value sets for chemical entities including subatomic particles, chemical elements, bond types, and chemical
+  classifications. Based on the ChemROF ontological framework.
 
+  '
+id: https://w3id.org/valuesets/chemistry/chemical_entities
+imports:
+- linkml:types
 prefixes:
   linkml: https://w3id.org/linkml/
   CHEBI: http://purl.obolibrary.org/obo/CHEBI_
@@ -14,217 +16,241 @@ prefixes:
   gc: http://purl.org/gc/
   damlpt: http://www.daml.org/2003/01/periodictable/PeriodicTable#
   pdg: https://pdgapi.lbl.gov/summaries/
-
-imports:
-  - linkml:types
-
+  valuesets: https://w3id.org/valuesets/
+default_prefix: valuesets
+slots:
+  subatomic_particle:
+    description: Fundamental and composite subatomic particles
+    range: SubatomicParticleEnum
+  bond_type:
+    description: Types of chemical bonds
+    range: BondTypeEnum
+  periodic_table_block:
+    description: Blocks of the periodic table
+    range: PeriodicTableBlockEnum
+  element_family:
+    description: Chemical element families/groups
+    range: ElementFamilyEnum
+  element_metallic_classification:
+    description: Metallic character classification
+    range: ElementMetallicClassificationEnum
+  hard_or_soft:
+    description: HSAB (Hard Soft Acid Base) classification
+    range: HardOrSoftEnum
+  bronsted_acid_base_role:
+    description: Brønsted-Lowry acid-base roles
+    range: BronstedAcidBaseRoleEnum
+  lewis_acid_base_role:
+    description: Lewis acid-base roles
+    range: LewisAcidBaseRoleEnum
+  oxidation_state:
+    description: Common oxidation states
+    range: OxidationStateEnum
+  chirality:
+    description: Chirality/stereochemistry descriptors
+    range: ChiralityEnum
+  nanostructure_morphology:
+    description: Types of nanostructure morphologies
+    range: NanostructureMorphologyEnum
 enums:
   SubatomicParticleEnum:
     description: Fundamental and composite subatomic particles
     permissible_values:
-      # Leptons
       ELECTRON:
         description: Elementary particle with -1 charge, spin 1/2
         meaning: CHEBI:10545
         annotations:
-          mass: "0.51099895 MeV/c²"
-          charge: "-1"
-          spin: "1/2"
-          type: "lepton"
+          mass: 0.51099895 MeV/c²
+          charge: '-1'
+          spin: 1/2
+          type: lepton
       POSITRON:
         description: Antiparticle of electron with +1 charge
         meaning: CHEBI:30225
         annotations:
-          mass: "0.51099895 MeV/c²"
-          charge: "+1"
-          spin: "1/2"
-          type: "lepton"
+          mass: 0.51099895 MeV/c²
+          charge: '+1'
+          spin: 1/2
+          type: lepton
       MUON:
         description: Heavy lepton with -1 charge
         meaning: CHEBI:36356
         annotations:
-          mass: "105.658 MeV/c²"
-          charge: "-1"
-          spin: "1/2"
-          type: "lepton"
+          mass: 105.658 MeV/c²
+          charge: '-1'
+          spin: 1/2
+          type: lepton
       TAU_LEPTON:
         description: Heaviest lepton with -1 charge
         meaning: CHEBI:36355
         annotations:
-          mass: "1777.05 MeV/c²"
-          charge: "-1"
-          spin: "1/2"
-          type: "lepton"
+          mass: 1777.05 MeV/c²
+          charge: '-1'
+          spin: 1/2
+          type: lepton
       ELECTRON_NEUTRINO:
         description: Electron neutrino, nearly massless
         meaning: CHEBI:30223
         annotations:
-          mass: "<2.2 eV/c²"
-          charge: "0"
-          spin: "1/2"
-          type: "lepton"
+          mass: <2.2 eV/c²
+          charge: '0'
+          spin: 1/2
+          type: lepton
       MUON_NEUTRINO:
         description: Muon neutrino
         meaning: CHEBI:36353
         annotations:
-          mass: "<0.17 MeV/c²"
-          charge: "0"
-          spin: "1/2"
-          type: "lepton"
+          mass: <0.17 MeV/c²
+          charge: '0'
+          spin: 1/2
+          type: lepton
       TAU_NEUTRINO:
         description: Tau neutrino
         meaning: CHEBI:36354
         annotations:
-          mass: "<15.5 MeV/c²"
-          charge: "0"
-          spin: "1/2"
-          type: "lepton"
-      
-      # Quarks
+          mass: <15.5 MeV/c²
+          charge: '0'
+          spin: 1/2
+          type: lepton
       UP_QUARK:
         title: up quark
         description: First generation quark with +2/3 charge
         meaning: CHEBI:36366
         annotations:
-          mass: "2.16 MeV/c²"
-          charge: "+2/3"
-          spin: "1/2"
-          type: "quark"
-          generation: "1"
+          mass: 2.16 MeV/c²
+          charge: +2/3
+          spin: 1/2
+          type: quark
+          generation: '1'
       DOWN_QUARK:
         description: First generation quark with -1/3 charge
         meaning: CHEBI:36367
         annotations:
-          mass: "4.67 MeV/c²"
-          charge: "-1/3"
-          spin: "1/2"
-          type: "quark"
-          generation: "1"
+          mass: 4.67 MeV/c²
+          charge: -1/3
+          spin: 1/2
+          type: quark
+          generation: '1'
       CHARM_QUARK:
         title: charm quark
         description: Second generation quark with +2/3 charge
         meaning: CHEBI:36369
         annotations:
-          mass: "1.27 GeV/c²"
-          charge: "+2/3"
-          spin: "1/2"
-          type: "quark"
-          generation: "2"
+          mass: 1.27 GeV/c²
+          charge: +2/3
+          spin: 1/2
+          type: quark
+          generation: '2'
       STRANGE_QUARK:
         title: strange quark
         description: Second generation quark with -1/3 charge
         meaning: CHEBI:36368
         annotations:
-          mass: "93.4 MeV/c²"
-          charge: "-1/3"
-          spin: "1/2"
-          type: "quark"
-          generation: "2"
+          mass: 93.4 MeV/c²
+          charge: -1/3
+          spin: 1/2
+          type: quark
+          generation: '2'
       TOP_QUARK:
         description: Third generation quark with +2/3 charge
         meaning: CHEBI:36371
         annotations:
-          mass: "172.76 GeV/c²"
-          charge: "+2/3"
-          spin: "1/2"
-          type: "quark"
-          generation: "3"
+          mass: 172.76 GeV/c²
+          charge: +2/3
+          spin: 1/2
+          type: quark
+          generation: '3'
       BOTTOM_QUARK:
         title: bottom quark
         description: Third generation quark with -1/3 charge
         meaning: CHEBI:36370
         annotations:
-          mass: "4.18 GeV/c²"
-          charge: "-1/3"
-          spin: "1/2"
-          type: "quark"
-          generation: "3"
-      
-      # Bosons
+          mass: 4.18 GeV/c²
+          charge: -1/3
+          spin: 1/2
+          type: quark
+          generation: '3'
       PHOTON:
         description: Force carrier for electromagnetic interaction
         meaning: CHEBI:30212
         annotations:
-          mass: "0"
-          charge: "0"
-          spin: "1"
-          type: "gauge boson"
+          mass: '0'
+          charge: '0'
+          spin: '1'
+          type: gauge boson
       W_BOSON:
         title: composite particle
         description: Force carrier for weak interaction
         meaning: CHEBI:36343
         annotations:
-          mass: "80.379 GeV/c²"
-          charge: "±1"
-          spin: "1"
-          type: "gauge boson"
+          mass: 80.379 GeV/c²
+          charge: ±1
+          spin: '1'
+          type: gauge boson
       Z_BOSON:
         title: hadron
         description: Force carrier for weak interaction
         meaning: CHEBI:36344
         annotations:
-          mass: "91.1876 GeV/c²"
-          charge: "0"
-          spin: "1"
-          type: "gauge boson"
+          mass: 91.1876 GeV/c²
+          charge: '0'
+          spin: '1'
+          type: gauge boson
       GLUON:
         description: Force carrier for strong interaction
         annotations:
-          mass: "0"
-          charge: "0"
-          spin: "1"
-          type: "gauge boson"
-          color_charge: "yes"
+          mass: '0'
+          charge: '0'
+          spin: '1'
+          type: gauge boson
+          color_charge: 'yes'
       HIGGS_BOSON:
         description: Scalar boson responsible for mass
         meaning: CHEBI:146278
         annotations:
-          mass: "125.25 GeV/c²"
-          charge: "0"
-          spin: "0"
-          type: "scalar boson"
-      
-      # Composite particles
+          mass: 125.25 GeV/c²
+          charge: '0'
+          spin: '0'
+          type: scalar boson
       PROTON:
         description: Positively charged nucleon
         meaning: CHEBI:24636
         annotations:
-          mass: "938.272 MeV/c²"
-          charge: "+1"
-          spin: "1/2"
-          type: "baryon"
-          composition: "uud"
+          mass: 938.272 MeV/c²
+          charge: '+1'
+          spin: 1/2
+          type: baryon
+          composition: uud
       NEUTRON:
         description: Neutral nucleon
         meaning: CHEBI:33254
         annotations:
-          mass: "939.565 MeV/c²"
-          charge: "0"
-          spin: "1/2"
-          type: "baryon"
-          composition: "udd"
+          mass: 939.565 MeV/c²
+          charge: '0'
+          spin: 1/2
+          type: baryon
+          composition: udd
       ALPHA_PARTICLE:
         description: Helium-4 nucleus
         meaning: CHEBI:30216
         annotations:
-          mass: "3727.379 MeV/c²"
-          charge: "+2"
-          composition: "2 protons, 2 neutrons"
+          mass: 3727.379 MeV/c²
+          charge: '+2'
+          composition: 2 protons, 2 neutrons
       DEUTERON:
         description: Hydrogen-2 nucleus
         meaning: CHEBI:29233
         annotations:
-          mass: "1875.613 MeV/c²"
-          charge: "+1"
-          composition: "1 proton, 1 neutron"
+          mass: 1875.613 MeV/c²
+          charge: '+1'
+          composition: 1 proton, 1 neutron
       TRITON:
         description: Hydrogen-3 nucleus
         meaning: CHEBI:29234
         annotations:
-          mass: "2808.921 MeV/c²"
-          charge: "+1"
-          composition: "1 proton, 2 neutrons"
-
+          mass: 2808.921 MeV/c²
+          charge: '+1'
+          composition: 1 proton, 2 neutrons
   BondTypeEnum:
     description: Types of chemical bonds
     permissible_values:
@@ -232,68 +258,67 @@ enums:
         description: Single covalent bond
         meaning: gc:Single
         annotations:
-          bond_order: "1"
-          electrons_shared: "2"
+          bond_order: '1'
+          electrons_shared: '2'
       DOUBLE:
         description: Double covalent bond
         meaning: gc:Double
         annotations:
-          bond_order: "2"
-          electrons_shared: "4"
+          bond_order: '2'
+          electrons_shared: '4'
       TRIPLE:
         description: Triple covalent bond
         meaning: gc:Triple
         annotations:
-          bond_order: "3"
-          electrons_shared: "6"
+          bond_order: '3'
+          electrons_shared: '6'
       QUADRUPLE:
         description: Quadruple bond (rare, in transition metals)
         meaning: gc:Quadruple
         annotations:
-          bond_order: "4"
-          electrons_shared: "8"
+          bond_order: '4'
+          electrons_shared: '8'
       AROMATIC:
         description: Aromatic bond
         meaning: gc:AromaticBond
         annotations:
-          bond_order: "1.5"
-          delocalized: "true"
+          bond_order: '1.5'
+          delocalized: 'true'
       IONIC:
         title: organic molecular entity
         description: Ionic bond
         meaning: CHEBI:50860
         annotations:
-          type: "electrostatic"
+          type: electrostatic
       HYDROGEN:
         description: Hydrogen bond
         meaning: CHEBI:50839
         annotations:
-          type: "weak interaction"
-          energy: "5-30 kJ/mol"
+          type: weak interaction
+          energy: 5-30 kJ/mol
       METALLIC:
         description: Metallic bond
         annotations:
-          type: "delocalized electrons"
+          type: delocalized electrons
       VAN_DER_WAALS:
         description: Van der Waals interaction
         annotations:
-          type: "weak interaction"
-          energy: "0.4-4 kJ/mol"
+          type: weak interaction
+          energy: 0.4-4 kJ/mol
       COORDINATE:
         title: coordination entity
         description: Coordinate/dative covalent bond
         meaning: CHEBI:33240
         annotations:
-          electrons_from: "one atom"
+          electrons_from: one atom
       PI:
         description: Pi bond
         annotations:
-          orbital_overlap: "side-to-side"
+          orbital_overlap: side-to-side
       SIGMA:
         description: Sigma bond
         annotations:
-          orbital_overlap: "head-to-head"
-
+          orbital_overlap: head-to-head
   PeriodicTableBlockEnum:
     description: Blocks of the periodic table
     permissible_values:
@@ -302,30 +327,29 @@ enums:
         description: s-block elements (groups 1 and 2)
         meaning: CHEBI:33674
         annotations:
-          valence_orbital: "s"
-          groups: "1,2"
+          valence_orbital: s
+          groups: 1,2
       P_BLOCK:
         title: p-block molecular entity
         description: p-block elements (groups 13-18)
         meaning: CHEBI:33675
         annotations:
-          valence_orbital: "p"
-          groups: "13,14,15,16,17,18"
+          valence_orbital: p
+          groups: 13,14,15,16,17,18
       D_BLOCK:
         title: d-block element atom
         description: d-block elements (transition metals)
         meaning: CHEBI:33561
         annotations:
-          valence_orbital: "d"
-          groups: "3-12"
+          valence_orbital: d
+          groups: 3-12
       F_BLOCK:
         title: f-block element atom
         description: f-block elements (lanthanides and actinides)
         meaning: CHEBI:33562
         annotations:
-          valence_orbital: "f"
-          series: "lanthanides, actinides"
-
+          valence_orbital: f
+          series: lanthanides, actinides
   ElementFamilyEnum:
     description: Chemical element families/groups
     permissible_values:
@@ -334,71 +358,70 @@ enums:
         description: Group 1 elements (except hydrogen)
         meaning: CHEBI:22314
         annotations:
-          group: "1"
-          elements: "Li, Na, K, Rb, Cs, Fr"
+          group: '1'
+          elements: Li, Na, K, Rb, Cs, Fr
       ALKALINE_EARTH_METALS:
         title: alkaloid
         description: Group 2 elements
         meaning: CHEBI:22315
         annotations:
-          group: "2"
-          elements: "Be, Mg, Ca, Sr, Ba, Ra"
+          group: '2'
+          elements: Be, Mg, Ca, Sr, Ba, Ra
       TRANSITION_METALS:
         title: transition element atom
         description: d-block elements
         meaning: CHEBI:27081
         annotations:
-          groups: "3-12"
+          groups: 3-12
       LANTHANIDES:
         title: titanium group molecular entity
         description: Lanthanide series
         meaning: CHEBI:33768
         annotations:
-          atomic_numbers: "57-71"
+          atomic_numbers: 57-71
       ACTINIDES:
         title: fuconates
         description: Actinide series
         meaning: CHEBI:33769
         annotations:
-          atomic_numbers: "89-103"
+          atomic_numbers: 89-103
       CHALCOGENS:
         title: chalcogen
         description: Group 16 elements
         meaning: CHEBI:33303
         annotations:
-          group: "16"
-          elements: "O, S, Se, Te, Po"
+          group: '16'
+          elements: O, S, Se, Te, Po
       HALOGENS:
         title: idopyranuronic acid
         description: Group 17 elements
         meaning: CHEBI:47902
         annotations:
-          group: "17"
-          elements: "F, Cl, Br, I, At"
+          group: '17'
+          elements: F, Cl, Br, I, At
       NOBLE_GASES:
         title: neon atom
         description: Group 18 elements
         meaning: CHEBI:33310
         annotations:
-          group: "18"
-          elements: "He, Ne, Ar, Kr, Xe, Rn"
+          group: '18'
+          elements: He, Ne, Ar, Kr, Xe, Rn
       METALLOIDS:
         title: s-block element atom
         description: Elements with intermediate properties
         meaning: CHEBI:33559
         annotations:
-          elements: "B, Si, Ge, As, Sb, Te, Po"
+          elements: B, Si, Ge, As, Sb, Te, Po
       POST_TRANSITION_METALS:
         description: Metals after the transition series
         annotations:
-          elements: "Al, Ga, In, Tl, Sn, Pb, Bi"
+          elements: Al, Ga, In, Tl, Sn, Pb, Bi
       NONMETALS:
         title: nonmetal atom
         description: Non-metallic elements
         meaning: CHEBI:25585
         annotations:
-          elements: "H, C, N, O, F, P, S, Cl, Se, Br, I"
-
+          elements: H, C, N, O, F, P, S, Cl, Se, Br, I
   ElementMetallicClassificationEnum:
     description: Metallic character classification
     permissible_values:
@@ -406,37 +429,35 @@ enums:
         description: Metallic elements
         meaning: damlpt:Metallic
         annotations:
-          properties: "conductive, malleable, ductile"
+          properties: conductive, malleable, ductile
       NON_METALLIC:
         description: Non-metallic elements
         meaning: damlpt:Non-Metallic
         annotations:
-          properties: "poor conductors, brittle"
+          properties: poor conductors, brittle
       SEMI_METALLIC:
         description: Semi-metallic/metalloid elements
         meaning: damlpt:Semi-Metallic
         annotations:
-          properties: "intermediate properties"
-
+          properties: intermediate properties
   HardOrSoftEnum:
     description: HSAB (Hard Soft Acid Base) classification
     permissible_values:
       HARD:
         description: Hard acids/bases (small, high charge density)
         annotations:
-          examples: "H+, Li+, Mg2+, Al3+, F-, OH-"
-          polarizability: "low"
+          examples: H+, Li+, Mg2+, Al3+, F-, OH-
+          polarizability: low
       SOFT:
         description: Soft acids/bases (large, low charge density)
         annotations:
-          examples: "Cu+, Ag+, Au+, I-, S2-"
-          polarizability: "high"
+          examples: Cu+, Ag+, Au+, I-, S2-
+          polarizability: high
       BORDERLINE:
         description: Borderline acids/bases
         annotations:
-          examples: "Fe2+, Co2+, Ni2+, Cu2+, Zn2+"
-          polarizability: "intermediate"
-
+          examples: Fe2+, Co2+, Ni2+, Cu2+, Zn2+
+          polarizability: intermediate
   BronstedAcidBaseRoleEnum:
     description: Brønsted-Lowry acid-base roles
     permissible_values:
@@ -445,140 +466,136 @@ enums:
         description: Proton donor
         meaning: CHEBI:39141
         annotations:
-          definition: "species that donates H+"
+          definition: species that donates H+
       BASE:
         title: Bronsted base
         description: Proton acceptor
         meaning: CHEBI:39142
         annotations:
-          definition: "species that accepts H+"
+          definition: species that accepts H+
       AMPHOTERIC:
         description: Can act as both acid and base
         annotations:
-          definition: "species that can donate or accept H+"
-          examples: "H2O, HSO4-, H2PO4-"
-
+          definition: species that can donate or accept H+
+          examples: H2O, HSO4-, H2PO4-
   LewisAcidBaseRoleEnum:
     description: Lewis acid-base roles
     permissible_values:
       LEWIS_ACID:
         description: Electron pair acceptor
         annotations:
-          definition: "species that accepts electron pair"
-          examples: "BF3, AlCl3, H+"
+          definition: species that accepts electron pair
+          examples: BF3, AlCl3, H+
       LEWIS_BASE:
         description: Electron pair donor
         annotations:
-          definition: "species that donates electron pair"
-          examples: "NH3, OH-, H2O"
-
+          definition: species that donates electron pair
+          examples: NH3, OH-, H2O
   OxidationStateEnum:
     description: Common oxidation states
     permissible_values:
       MINUS_4:
         description: Oxidation state -4
         annotations:
-          value: "-4"
-          example: "C in CH4"
+          value: '-4'
+          example: C in CH4
       MINUS_3:
         description: Oxidation state -3
         annotations:
-          value: "-3"
-          example: "N in NH3"
+          value: '-3'
+          example: N in NH3
       MINUS_2:
         description: Oxidation state -2
         annotations:
-          value: "-2"
-          example: "O in H2O"
+          value: '-2'
+          example: O in H2O
       MINUS_1:
         description: Oxidation state -1
         annotations:
-          value: "-1"
-          example: "Cl in NaCl"
+          value: '-1'
+          example: Cl in NaCl
       ZERO:
         description: Oxidation state 0
         annotations:
-          value: "0"
-          example: "elemental forms"
+          value: '0'
+          example: elemental forms
       PLUS_1:
         description: Oxidation state +1
         annotations:
-          value: "+1"
-          example: "Na in NaCl"
+          value: '+1'
+          example: Na in NaCl
       PLUS_2:
         description: Oxidation state +2
         annotations:
-          value: "+2"
-          example: "Ca in CaCl2"
+          value: '+2'
+          example: Ca in CaCl2
       PLUS_3:
         description: Oxidation state +3
         annotations:
-          value: "+3"
-          example: "Al in Al2O3"
+          value: '+3'
+          example: Al in Al2O3
       PLUS_4:
         description: Oxidation state +4
         annotations:
-          value: "+4"
-          example: "C in CO2"
+          value: '+4'
+          example: C in CO2
       PLUS_5:
         description: Oxidation state +5
         annotations:
-          value: "+5"
-          example: "P in PO4³⁻"
+          value: '+5'
+          example: P in PO4³⁻
       PLUS_6:
         description: Oxidation state +6
         annotations:
-          value: "+6"
-          example: "S in SO4²⁻"
+          value: '+6'
+          example: S in SO4²⁻
       PLUS_7:
         description: Oxidation state +7
         annotations:
-          value: "+7"
-          example: "Mn in MnO4⁻"
+          value: '+7'
+          example: Mn in MnO4⁻
       PLUS_8:
         description: Oxidation state +8
         annotations:
-          value: "+8"
-          example: "Os in OsO4"
-
+          value: '+8'
+          example: Os in OsO4
   ChiralityEnum:
     description: Chirality/stereochemistry descriptors
     permissible_values:
       R:
         description: Rectus (right) configuration
         annotations:
-          cahn_ingold_prelog: "true"
+          cahn_ingold_prelog: 'true'
       S:
         description: Sinister (left) configuration
         annotations:
-          cahn_ingold_prelog: "true"
+          cahn_ingold_prelog: 'true'
       D:
         description: Dextrorotatory
         annotations:
-          fischer_projection: "true"
-          optical_rotation: "positive"
+          fischer_projection: 'true'
+          optical_rotation: positive
       L:
         description: Levorotatory
         annotations:
-          fischer_projection: "true"
-          optical_rotation: "negative"
+          fischer_projection: 'true'
+          optical_rotation: negative
       RACEMIC:
         description: Racemic mixture (50:50 of enantiomers)
         annotations:
-          optical_rotation: "zero"
+          optical_rotation: zero
       MESO:
         description: Meso compound (achiral despite stereocenters)
         annotations:
-          internal_symmetry: "true"
+          internal_symmetry: 'true'
       E:
         description: Entgegen (opposite) configuration
         annotations:
-          geometric_isomer: "true"
+          geometric_isomer: 'true'
       Z:
         description: Zusammen (together) configuration
         annotations:
-          geometric_isomer: "true"
-
+          geometric_isomer: 'true'
   NanostructureMorphologyEnum:
     description: Types of nanostructure morphologies
     permissible_values:
@@ -586,38 +603,38 @@ enums:
         description: Cylindrical nanostructure
         meaning: CHEBI:50796
         annotations:
-          dimensions: "1D"
-          examples: "carbon nanotubes"
+          dimensions: 1D
+          examples: carbon nanotubes
       NANOPARTICLE:
         description: Particle with nanoscale dimensions
         meaning: CHEBI:50803
         annotations:
-          dimensions: "0D"
-          size_range: "1-100 nm"
+          dimensions: 0D
+          size_range: 1-100 nm
       NANOROD:
         description: Rod-shaped nanostructure
         meaning: CHEBI:50805
         annotations:
-          dimensions: "1D"
-          aspect_ratio: "3-20"
+          dimensions: 1D
+          aspect_ratio: 3-20
       QUANTUM_DOT:
         description: Semiconductor nanocrystal
         meaning: CHEBI:50853
         annotations:
-          dimensions: "0D"
-          property: "quantum confinement"
+          dimensions: 0D
+          property: quantum confinement
       NANOWIRE:
         description: Wire with nanoscale diameter
         annotations:
-          dimensions: "1D"
-          diameter: "<100 nm"
+          dimensions: 1D
+          diameter: <100 nm
       NANOSHEET:
         description: Two-dimensional nanostructure
         annotations:
-          dimensions: "2D"
-          thickness: "<100 nm"
+          dimensions: 2D
+          thickness: <100 nm
       NANOFIBER:
         description: Fiber with nanoscale diameter
         annotations:
-          dimensions: "1D"
-          diameter: "<1000 nm"
+          dimensions: 1D
+          diameter: <1000 nm

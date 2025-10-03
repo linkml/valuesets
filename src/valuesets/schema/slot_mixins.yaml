@@ -1,0 +1,143 @@
+name: slot_mixins
+title: Slot Mixins for Value Sets
+description: 'Mixin classes and slot definitions that can be used with value set enums. This provides a pattern for creating
+  slots that reference the enums defined in other schema modules.
+
+  '
+id: https://w3id.org/valuesets/slot-mixins
+version: 1.0.0
+status: release
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  # cval: https://w3id.org/linkml-common/
+  valuesets: https://w3id.org/valuesets/
+default_prefix: valuesets
+default_curi_maps:
+- semweb_context
+slots:
+  status:
+    description: The status or state of an entity
+    range: string
+  confidence_level:
+    description: The level of confidence in a measurement, observation or assertion
+    range: string
+  gender_identity:
+    description: The gender identity of a person
+    range: string
+  sex_at_birth:
+    description: The sex assigned at birth
+    range: string
+  race:
+    description: The race classification
+    range: string
+  ethnicity:
+    description: The ethnicity classification
+    range: string
+  diagnosis_type:
+    description: The type or classification of a diagnosis
+    range: string
+  procedure_type:
+    description: The type or classification of a medical procedure
+    range: string
+  medication_route:
+    description: The route of medication administration
+    range: string
+  study_design:
+    description: The design methodology of a study
+    range: string
+  statistical_test:
+    description: The statistical test applied
+    range: string
+  biotic_interaction_type:
+    description: The type of biotic interaction between organisms
+    range: string
+  mineralogy_feedstock_class:
+    description: The classification of mineral feedstock source
+    range: string
+  beneficiation_pathway:
+    description: The mineral separation and concentration method
+    range: string
+  in_situ_chemistry_regime:
+    description: The chemical leaching system for in-situ extraction
+    range: string
+  extractable_target_element:
+    description: The target element for extraction
+    multivalued: true
+    range: string
+  sensor_while_drilling_feature:
+    description: The MWD/LWD measurement feature
+    multivalued: true
+    range: string
+  process_performance_metric:
+    description: The key performance indicator for mining/processing
+    multivalued: true
+    range: string
+  bioleach_organism:
+    description: The microorganism used in bioleaching
+    range: string
+  bioleach_mode:
+    description: The mechanism of bioleaching
+    range: string
+  autonomy_level:
+    description: The level of autonomy for mining systems
+    range: string
+  regulatory_constraint:
+    description: The regulatory or community constraint
+    multivalued: true
+    range: string
+classes:
+  DemographicsMixin:
+    mixin: true
+    description: Mixin providing demographic-related slots
+    slots:
+    - gender_identity
+    - sex_at_birth
+    - race
+    - ethnicity
+  HealthcareMixin:
+    mixin: true
+    description: Mixin providing healthcare-related slots
+    slots:
+    - diagnosis_type
+    - procedure_type
+    - medication_route
+  StudyMixin:
+    mixin: true
+    description: Mixin providing study/investigation-related slots
+    slots:
+    - study_design
+    - statistical_test
+    - confidence_level
+  MiningProcessMixin:
+    mixin: true
+    description: Mixin providing mining and processing-related slots
+    slots:
+    - mineralogy_feedstock_class
+    - beneficiation_pathway
+    - extractable_target_element
+    - process_performance_metric
+  BioleachingMixin:
+    mixin: true
+    description: Mixin providing bioleaching-specific slots
+    slots:
+    - bioleach_organism
+    - bioleach_mode
+    - in_situ_chemistry_regime
+  MiningAutomationMixin:
+    mixin: true
+    description: Mixin providing mining automation-related slots
+    slots:
+    - autonomy_level
+    - sensor_while_drilling_feature
+  RegulatoryMixin:
+    mixin: true
+    description: Mixin providing regulatory and compliance slots
+    slots:
+    - regulatory_constraint
+  EcologicalInteractionMixin:
+    mixin: true
+    description: Mixin providing ecological interaction slots
+    slots:
+    - biotic_interaction_type

@@ -1,8 +1,7 @@
-id: https://w3id.org/common-value-sets/uniprot_species
 name: uniprot_species
 title: UniProt Species Codes Value Sets
-description: Value sets for UniProt species mnemonic codes with associated proteome
-  IDs
+description: Value sets for UniProt species mnemonic codes with associated proteome IDs
+id: https://w3id.org/common-value-sets/uniprot_species
 imports:
 - linkml:types
 prefixes:
@@ -10,12 +9,15 @@ prefixes:
   linkml: https://w3id.org/linkml/
   NCBITaxon: http://purl.obolibrary.org/obo/NCBITaxon_
   UniProt: http://purl.uniprot.org/proteomes/
-default_prefix: CVS
-default_range: string
+  valuesets: https://w3id.org/valuesets/
+default_prefix: valuesets
+slots:
+  uni_prot_species:
+    description: UniProt species mnemonic codes for reference proteomes with associated metadata
+    range: UniProtSpeciesCode
 enums:
   UniProtSpeciesCode:
-    description: UniProt species mnemonic codes for reference proteomes with associated
-      metadata
+    description: UniProt species mnemonic codes for reference proteomes with associated metadata
     permissible_values:
       SP_9ABAC:
         description: 'Lambdina fiscellaria nucleopolyhedrovirus - Proteome: UP000201190'
@@ -410,8 +412,7 @@ enums:
           tax_id: '51154'
           code: 9CETA
       SP_9CHAR:
-        description: 'Rostratula benghalensis (greater painted-snipe) - Proteome:
-          UP000545435'
+        description: 'Rostratula benghalensis (greater painted-snipe) - Proteome: UP000545435'
         meaning: NCBITaxon:118793
         title: Rostratula benghalensis
         annotations:
@@ -515,8 +516,7 @@ enums:
           tax_id: '252671'
           code: 9CNID
       SP_9COLU:
-        description: 'Pampusana beccarii (Western bronze ground-dove) - Proteome:
-          UP000541332'
+        description: 'Pampusana beccarii (Western bronze ground-dove) - Proteome: UP000541332'
         meaning: NCBITaxon:2953425
         title: Pampusana beccarii
         annotations:
@@ -934,8 +934,7 @@ enums:
           tax_id: '1531966'
           code: 9HYPO
       SP_9INFA:
-        description: 'Influenza A virus (A/California/VRDL364/2009 (mixed) - Proteome:
-          UP000109975'
+        description: 'Influenza A virus (A/California/VRDL364/2009 (mixed) - Proteome: UP000109975'
         meaning: NCBITaxon:1049605
         title: Influenza A virus (A/California/VRDL364/2009
         annotations:
@@ -958,3 +957,4 @@ enums:
         title: Labrus bergylta
         annotations:
           proteome_id: UP000261660
+default_range: string

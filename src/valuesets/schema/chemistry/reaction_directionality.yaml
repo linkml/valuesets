@@ -1,17 +1,20 @@
-id: https://w3id.org/common-value-sets/chemistry/reaction_directionality
 name: reaction_directionality
 title: Reaction Directionality
 description: Directionality of chemical reactions and processes
-
+id: https://w3id.org/common-value-sets/chemistry/reaction_directionality
 imports:
-  - linkml:types
-  - ../core
-
+- linkml:types
+- ../core
 prefixes:
   linkml: https://w3id.org/linkml/
   SBO: http://biomodels.net/SBO/
   cvs: https://w3id.org/common-value-sets/
-
+  valuesets: https://w3id.org/valuesets/
+default_prefix: valuesets
+slots:
+  reaction_directionality:
+    description: The directionality of a chemical reaction or process
+    range: ReactionDirectionality
 enums:
   ReactionDirectionality:
     title: Reaction Directionality
@@ -20,38 +23,38 @@ enums:
       LEFT_TO_RIGHT:
         description: Reaction proceeds from left to right (forward direction)
         aliases:
-          - LR
-          - forward
-          - -->
+        - LR
+        - forward
+        - -->
       RIGHT_TO_LEFT:
         description: Reaction proceeds from right to left (reverse direction)
         aliases:
-          - RL
-          - reverse
-          - backward
-          - <--
+        - RL
+        - reverse
+        - backward
+        - <--
       BIDIRECTIONAL:
         description: Reaction can proceed in both directions
         aliases:
-          - BIDI
-          - reversible
-          - <-->
+        - BIDI
+        - reversible
+        - <-->
         exact_mappings:
-          - SBO:0000650  # reversible process
+        - SBO:0000650
       AGNOSTIC:
         description: Direction is unknown or not specified
         aliases:
-          - unknown
-          - unspecified
+        - unknown
+        - unspecified
       IRREVERSIBLE_LEFT_TO_RIGHT:
         description: Reaction proceeds only from left to right and cannot be reversed
         aliases:
-          - irreversible forward
-          - ->>
+        - irreversible forward
+        - ->>
         exact_mappings:
-          - SBO:0000651  # irreversible process
+        - SBO:0000651
       IRREVERSIBLE_RIGHT_TO_LEFT:
         description: Reaction proceeds only from right to left and cannot be reversed
         aliases:
-          - irreversible reverse
-          - <<-
+        - irreversible reverse
+        - <<-

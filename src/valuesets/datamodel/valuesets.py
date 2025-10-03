@@ -197,6 +197,190 @@ HealthcareEncounterClassification._metadata = {
     "CASE_MANAGEMENT_VISIT": {'description': 'Person interacting with healthcare system, without a Care Site, within a day, with no Providers involved, for administrative purposes'},
 }
 
+class EducationLevel(RichEnum):
+    """
+    Years of education that a person has completed
+    """
+    # Enum members
+    ELEM = "ELEM"
+    SEC = "SEC"
+    HS = "HS"
+    SCOL = "SCOL"
+    ASSOC = "ASSOC"
+    BD = "BD"
+    PB = "PB"
+    GD = "GD"
+    POSTG = "POSTG"
+
+# Set metadata after class creation to avoid it becoming an enum member
+EducationLevel._metadata = {
+    "ELEM": {'description': 'Elementary School', 'meaning': 'HL7:v3-EducationLevel#ELEM'},
+    "SEC": {'description': 'Some secondary or high school education', 'meaning': 'HL7:v3-EducationLevel#SEC'},
+    "HS": {'description': 'High School or secondary school degree complete', 'meaning': 'HL7:v3-EducationLevel#HS'},
+    "SCOL": {'description': 'Some College education', 'meaning': 'HL7:v3-EducationLevel#SCOL'},
+    "ASSOC": {'description': "Associate's or technical degree complete", 'meaning': 'HL7:v3-EducationLevel#ASSOC'},
+    "BD": {'description': 'College or baccalaureate degree complete', 'meaning': 'HL7:v3-EducationLevel#BD'},
+    "PB": {'description': 'Some post-baccalaureate education', 'meaning': 'HL7:v3-EducationLevel#PB'},
+    "GD": {'description': 'Graduate or professional Degree complete', 'meaning': 'HL7:v3-EducationLevel#GD'},
+    "POSTG": {'description': 'Doctoral or post graduate education', 'meaning': 'HL7:v3-EducationLevel#POSTG'},
+}
+
+class MaritalStatus(RichEnum):
+    """
+    The domestic partnership status of a person
+    """
+    # Enum members
+    ANNULLED = "ANNULLED"
+    DIVORCED = "DIVORCED"
+    INTERLOCUTORY = "INTERLOCUTORY"
+    LEGALLY_SEPARATED = "LEGALLY_SEPARATED"
+    MARRIED = "MARRIED"
+    COMMON_LAW = "COMMON_LAW"
+    POLYGAMOUS = "POLYGAMOUS"
+    DOMESTIC_PARTNER = "DOMESTIC_PARTNER"
+    UNMARRIED = "UNMARRIED"
+    NEVER_MARRIED = "NEVER_MARRIED"
+    WIDOWED = "WIDOWED"
+    UNKNOWN = "UNKNOWN"
+
+# Set metadata after class creation to avoid it becoming an enum member
+MaritalStatus._metadata = {
+    "ANNULLED": {'description': 'Marriage contract has been declared null and to not have existed', 'meaning': 'HL7:marital-status#A'},
+    "DIVORCED": {'description': 'Marriage contract has been declared dissolved and inactive', 'meaning': 'HL7:marital-status#D'},
+    "INTERLOCUTORY": {'description': 'Subject to an Interlocutory Decree', 'meaning': 'HL7:marital-status#I'},
+    "LEGALLY_SEPARATED": {'description': 'Legally Separated', 'meaning': 'HL7:marital-status#L'},
+    "MARRIED": {'description': 'A current marriage contract is active', 'meaning': 'HL7:marital-status#M'},
+    "COMMON_LAW": {'description': "Marriage recognized in some jurisdictions based on parties' agreement", 'meaning': 'HL7:marital-status#C'},
+    "POLYGAMOUS": {'description': 'More than 1 current spouse', 'meaning': 'HL7:marital-status#P'},
+    "DOMESTIC_PARTNER": {'description': 'Person declares that a domestic partner relationship exists', 'meaning': 'HL7:marital-status#T'},
+    "UNMARRIED": {'description': 'Currently not in a marriage contract', 'meaning': 'HL7:marital-status#U'},
+    "NEVER_MARRIED": {'description': 'No marriage contract has ever been entered', 'meaning': 'HL7:marital-status#S'},
+    "WIDOWED": {'description': 'The spouse has died', 'meaning': 'HL7:marital-status#W'},
+    "UNKNOWN": {'description': 'A proper value is applicable, but not known', 'meaning': 'HL7:marital-status#UNK'},
+}
+
+class EmploymentStatus(RichEnum):
+    """
+    Employment status of a person
+    """
+    # Enum members
+    FULL_TIME_EMPLOYED = "FULL_TIME_EMPLOYED"
+    PART_TIME_EMPLOYED = "PART_TIME_EMPLOYED"
+    UNEMPLOYED = "UNEMPLOYED"
+    SELF_EMPLOYED = "SELF_EMPLOYED"
+    RETIRED = "RETIRED"
+    ACTIVE_MILITARY = "ACTIVE_MILITARY"
+    CONTRACT = "CONTRACT"
+    PER_DIEM = "PER_DIEM"
+    LEAVE_OF_ABSENCE = "LEAVE_OF_ABSENCE"
+    OTHER = "OTHER"
+    TEMPORARILY_UNEMPLOYED = "TEMPORARILY_UNEMPLOYED"
+    UNKNOWN = "UNKNOWN"
+
+# Set metadata after class creation to avoid it becoming an enum member
+EmploymentStatus._metadata = {
+    "FULL_TIME_EMPLOYED": {'description': 'Full time employed', 'meaning': 'HL7:v2-0066#1'},
+    "PART_TIME_EMPLOYED": {'description': 'Part time employed', 'meaning': 'HL7:v2-0066#2'},
+    "UNEMPLOYED": {'description': 'Unemployed', 'meaning': 'HL7:v2-0066#3'},
+    "SELF_EMPLOYED": {'description': 'Self-employed', 'meaning': 'HL7:v2-0066#4'},
+    "RETIRED": {'description': 'Retired', 'meaning': 'HL7:v2-0066#5'},
+    "ACTIVE_MILITARY": {'description': 'On active military duty', 'meaning': 'HL7:v2-0066#6'},
+    "CONTRACT": {'description': 'Contract, per diem', 'meaning': 'HL7:v2-0066#C'},
+    "PER_DIEM": {'description': 'Per Diem', 'meaning': 'HL7:v2-0066#D'},
+    "LEAVE_OF_ABSENCE": {'description': 'Leave of absence', 'meaning': 'HL7:v2-0066#L'},
+    "OTHER": {'description': 'Other', 'meaning': 'HL7:v2-0066#O'},
+    "TEMPORARILY_UNEMPLOYED": {'description': 'Temporarily unemployed', 'meaning': 'HL7:v2-0066#T'},
+    "UNKNOWN": {'description': 'Unknown', 'meaning': 'HL7:v2-0066#9'},
+}
+
+class HousingStatus(RichEnum):
+    """
+    Housing status of patients per UDS Plus HRSA standards
+    """
+    # Enum members
+    HOMELESS_SHELTER = "HOMELESS_SHELTER"
+    TRANSITIONAL = "TRANSITIONAL"
+    DOUBLING_UP = "DOUBLING_UP"
+    STREET = "STREET"
+    PERMANENT_SUPPORTIVE_HOUSING = "PERMANENT_SUPPORTIVE_HOUSING"
+    OTHER = "OTHER"
+    UNKNOWN = "UNKNOWN"
+
+# Set metadata after class creation to avoid it becoming an enum member
+HousingStatus._metadata = {
+    "HOMELESS_SHELTER": {'description': 'Patients who are living in a homeless shelter', 'meaning': 'HL7:udsplus-housing-status-codes#homeless-shelter'},
+    "TRANSITIONAL": {'description': 'Patients who do not have a house and are in a transitional state', 'meaning': 'HL7:udsplus-housing-status-codes#transitional'},
+    "DOUBLING_UP": {'description': 'Patients who are doubling up with others', 'meaning': 'HL7:udsplus-housing-status-codes#doubling-up'},
+    "STREET": {'description': 'Patients who do not have a house and are living on the streets', 'meaning': 'HL7:udsplus-housing-status-codes#street'},
+    "PERMANENT_SUPPORTIVE_HOUSING": {'description': 'Patients who are living in a permanent supportive housing', 'meaning': 'HL7:udsplus-housing-status-codes#permanent-supportive-housing'},
+    "OTHER": {'description': 'Patients who have other kinds of accommodation', 'meaning': 'HL7:udsplus-housing-status-codes#other'},
+    "UNKNOWN": {'description': 'Patients with Unknown accommodation', 'meaning': 'HL7:udsplus-housing-status-codes#unknown'},
+}
+
+class GenderIdentity(RichEnum):
+    """
+    Gender identity codes indicating an individual's personal sense of gender
+    """
+    # Enum members
+    FEMALE = "FEMALE"
+    MALE = "MALE"
+    NON_BINARY = "NON_BINARY"
+    ASKED_DECLINED = "ASKED_DECLINED"
+    UNKNOWN = "UNKNOWN"
+
+# Set metadata after class creation to avoid it becoming an enum member
+GenderIdentity._metadata = {
+    "FEMALE": {'description': 'Identifies as female gender (finding)', 'meaning': 'SNOMED:446141000124107'},
+    "MALE": {'description': 'Identifies as male gender (finding)', 'meaning': 'SNOMED:446151000124109'},
+    "NON_BINARY": {'description': 'Identifies as gender nonbinary', 'meaning': 'SNOMED:33791000087105'},
+    "ASKED_DECLINED": {'description': 'Asked But Declined', 'meaning': 'HL7:asked-declined'},
+    "UNKNOWN": {'description': 'A proper value is applicable, but not known', 'meaning': 'HL7:UNK'},
+}
+
+class OmbRaceCategory(RichEnum):
+    """
+    Office of Management and Budget (OMB) race category codes
+    """
+    # Enum members
+    AMERICAN_INDIAN_OR_ALASKA_NATIVE = "AMERICAN_INDIAN_OR_ALASKA_NATIVE"
+    ASIAN = "ASIAN"
+    BLACK_OR_AFRICAN_AMERICAN = "BLACK_OR_AFRICAN_AMERICAN"
+    NATIVE_HAWAIIAN_OR_OTHER_PACIFIC_ISLANDER = "NATIVE_HAWAIIAN_OR_OTHER_PACIFIC_ISLANDER"
+    WHITE = "WHITE"
+    OTHER_RACE = "OTHER_RACE"
+    ASKED_BUT_UNKNOWN = "ASKED_BUT_UNKNOWN"
+    UNKNOWN = "UNKNOWN"
+
+# Set metadata after class creation to avoid it becoming an enum member
+OmbRaceCategory._metadata = {
+    "AMERICAN_INDIAN_OR_ALASKA_NATIVE": {'description': 'American Indian or Alaska Native', 'meaning': 'HL7:CDCREC#1002-5'},
+    "ASIAN": {'description': 'Asian', 'meaning': 'HL7:CDCREC#2028-9'},
+    "BLACK_OR_AFRICAN_AMERICAN": {'description': 'Black or African American', 'meaning': 'HL7:CDCREC#2054-5'},
+    "NATIVE_HAWAIIAN_OR_OTHER_PACIFIC_ISLANDER": {'description': 'Native Hawaiian or Other Pacific Islander', 'meaning': 'HL7:CDCREC#2076-8'},
+    "WHITE": {'description': 'White', 'meaning': 'HL7:CDCREC#2106-3'},
+    "OTHER_RACE": {'description': 'Other Race (discouraged for statistical analysis)', 'meaning': 'HL7:CDCREC#2131-1'},
+    "ASKED_BUT_UNKNOWN": {'description': 'asked but unknown', 'meaning': 'HL7:ASKU'},
+    "UNKNOWN": {'description': 'unknown', 'meaning': 'HL7:UNK'},
+}
+
+class OmbEthnicityCategory(RichEnum):
+    """
+    Office of Management and Budget (OMB) ethnicity category codes
+    """
+    # Enum members
+    HISPANIC_OR_LATINO = "HISPANIC_OR_LATINO"
+    NOT_HISPANIC_OR_LATINO = "NOT_HISPANIC_OR_LATINO"
+    ASKED_BUT_UNKNOWN = "ASKED_BUT_UNKNOWN"
+    UNKNOWN = "UNKNOWN"
+
+# Set metadata after class creation to avoid it becoming an enum member
+OmbEthnicityCategory._metadata = {
+    "HISPANIC_OR_LATINO": {'description': 'Hispanic or Latino', 'meaning': 'HL7:CDCREC#2135-2'},
+    "NOT_HISPANIC_OR_LATINO": {'description': 'Not Hispanic or Latino', 'meaning': 'HL7:CDCREC#2186-5'},
+    "ASKED_BUT_UNKNOWN": {'description': 'asked but unknown', 'meaning': 'HL7:ASKU'},
+    "UNKNOWN": {'description': 'unknown', 'meaning': 'HL7:UNK'},
+}
+
 class CaseOrControlEnum(RichEnum):
     # Enum members
     CASE = "CASE"
@@ -2168,42 +2352,6 @@ TimePeriod._metadata = {
     "BIANNUALLY": {'description': 'Every two years', 'annotations': {'ucum': '2.a'}},
 }
 
-class TimeUnit(RichEnum):
-    """
-    Units of time measurement
-    """
-    # Enum members
-    NANOSECOND = "NANOSECOND"
-    MICROSECOND = "MICROSECOND"
-    MILLISECOND = "MILLISECOND"
-    SECOND = "SECOND"
-    MINUTE = "MINUTE"
-    HOUR = "HOUR"
-    DAY = "DAY"
-    WEEK = "WEEK"
-    MONTH = "MONTH"
-    YEAR = "YEAR"
-    DECADE = "DECADE"
-    CENTURY = "CENTURY"
-    MILLENNIUM = "MILLENNIUM"
-
-# Set metadata after class creation to avoid it becoming an enum member
-TimeUnit._metadata = {
-    "NANOSECOND": {'description': 'Nanosecond (10^-9 seconds)', 'annotations': {'symbol': 'ns', 'ucum': 'ns', 'seconds': '1e-9'}},
-    "MICROSECOND": {'description': 'Microsecond (10^-6 seconds)', 'annotations': {'symbol': 'μs', 'ucum': 'us', 'seconds': '1e-6'}},
-    "MILLISECOND": {'description': 'Millisecond (10^-3 seconds)', 'annotations': {'symbol': 'ms', 'ucum': 'ms', 'seconds': 0.001}},
-    "SECOND": {'description': 'Second (SI base unit)', 'meaning': 'TIME:unitSecond', 'annotations': {'symbol': 's', 'ucum': 's', 'seconds': 1}},
-    "MINUTE": {'description': 'Minute (60 seconds)', 'meaning': 'TIME:unitMinute', 'annotations': {'symbol': 'min', 'ucum': 'min', 'seconds': 60}},
-    "HOUR": {'description': 'Hour (60 minutes)', 'meaning': 'TIME:unitHour', 'annotations': {'symbol': 'h', 'ucum': 'h', 'seconds': 3600}},
-    "DAY": {'description': 'Day (24 hours)', 'meaning': 'TIME:unitDay', 'annotations': {'symbol': 'd', 'ucum': 'd', 'seconds': 86400}},
-    "WEEK": {'description': 'Week (7 days)', 'meaning': 'TIME:unitWeek', 'annotations': {'symbol': 'wk', 'ucum': 'wk', 'seconds': 604800}},
-    "MONTH": {'description': 'Month (approximately 30.44 days)', 'meaning': 'TIME:unitMonth', 'annotations': {'symbol': 'mo', 'ucum': 'mo', 'seconds': '~2629800'}},
-    "YEAR": {'description': 'Year (365.25 days)', 'meaning': 'TIME:unitYear', 'annotations': {'symbol': 'yr', 'ucum': 'a', 'seconds': 31557600}},
-    "DECADE": {'description': 'Decade (10 years)', 'meaning': 'TIME:unitDecade', 'annotations': {'ucum': '10.a', 'years': 10}},
-    "CENTURY": {'description': 'Century (100 years)', 'meaning': 'TIME:unitCentury', 'annotations': {'ucum': '100.a', 'years': 100}},
-    "MILLENNIUM": {'description': 'Millennium (1000 years)', 'meaning': 'TIME:unitMillennium', 'annotations': {'ucum': '1000.a', 'years': 1000}},
-}
-
 class TimeOfDay(RichEnum):
     """
     Common times of day
@@ -3654,64 +3802,6 @@ PersonStatusEnum._metadata = {
     "ALIVE": {'description': 'The person is living', 'meaning': 'PATO:0001421'},
     "DEAD": {'description': 'The person is deceased', 'meaning': 'PATO:0001422'},
     "UNKNOWN": {'description': 'The vital status is not known', 'meaning': 'NCIT:C17998'},
-}
-
-class MaritalStatusEnum(RichEnum):
-    """
-    Marital or civil status of a person
-    """
-    # Enum members
-    SINGLE = "SINGLE"
-    MARRIED = "MARRIED"
-    DIVORCED = "DIVORCED"
-    WIDOWED = "WIDOWED"
-    SEPARATED = "SEPARATED"
-    DOMESTIC_PARTNERSHIP = "DOMESTIC_PARTNERSHIP"
-    CIVIL_UNION = "CIVIL_UNION"
-    UNKNOWN = "UNKNOWN"
-    PREFER_NOT_TO_SAY = "PREFER_NOT_TO_SAY"
-
-# Set metadata after class creation to avoid it becoming an enum member
-MaritalStatusEnum._metadata = {
-    "SINGLE": {'description': 'Never married', 'meaning': 'NCIT:C51774'},
-    "MARRIED": {'description': 'Currently married or in civil partnership', 'meaning': 'NCIT:C51773'},
-    "DIVORCED": {'description': 'Marriage legally dissolved', 'meaning': 'NCIT:C51776'},
-    "WIDOWED": {'description': 'Marriage ended due to death of spouse', 'meaning': 'NCIT:C51775'},
-    "SEPARATED": {'description': 'Living apart from spouse', 'meaning': 'NCIT:C51777'},
-    "DOMESTIC_PARTNERSHIP": {'description': 'In a domestic partnership', 'meaning': 'NCIT:C53262'},
-    "CIVIL_UNION": {'description': 'In a civil union', 'meaning': 'NCIT:C25188'},
-    "UNKNOWN": {'description': 'Marital status not known', 'meaning': 'NCIT:C17998'},
-    "PREFER_NOT_TO_SAY": {'description': 'Prefers not to disclose marital status', 'meaning': 'NCIT:C150742'},
-}
-
-class EmploymentStatusEnum(RichEnum):
-    """
-    Employment status of a person
-    """
-    # Enum members
-    EMPLOYED_FULL_TIME = "EMPLOYED_FULL_TIME"
-    EMPLOYED_PART_TIME = "EMPLOYED_PART_TIME"
-    SELF_EMPLOYED = "SELF_EMPLOYED"
-    UNEMPLOYED = "UNEMPLOYED"
-    STUDENT = "STUDENT"
-    RETIRED = "RETIRED"
-    HOMEMAKER = "HOMEMAKER"
-    DISABLED = "DISABLED"
-    OTHER = "OTHER"
-    UNKNOWN = "UNKNOWN"
-
-# Set metadata after class creation to avoid it becoming an enum member
-EmploymentStatusEnum._metadata = {
-    "EMPLOYED_FULL_TIME": {'description': 'Employed full-time', 'meaning': 'NCIT:C52658'},
-    "EMPLOYED_PART_TIME": {'description': 'Employed part-time', 'meaning': 'NCIT:C75562'},
-    "SELF_EMPLOYED": {'description': 'Self-employed', 'meaning': 'NCIT:C116000'},
-    "UNEMPLOYED": {'description': 'Unemployed', 'meaning': 'NCIT:C75563'},
-    "STUDENT": {'description': 'Student', 'meaning': 'NCIT:C75561'},
-    "RETIRED": {'description': 'Retired', 'meaning': 'NCIT:C148257'},
-    "HOMEMAKER": {'description': 'Homemaker', 'meaning': 'NCIT:C75560'},
-    "DISABLED": {'description': 'Unable to work due to disability', 'meaning': 'NCIT:C63367'},
-    "OTHER": {'description': 'Other employment status', 'meaning': 'NCIT:C25172'},
-    "UNKNOWN": {'description': 'Employment status not known', 'meaning': 'NCIT:C17998'},
 }
 
 class MimeType(RichEnum):
@@ -7077,42 +7167,6 @@ SequenceQualityEnum._metadata = {
     "Q60": {'description': 'Phred quality 60 (0.0001% error probability)', 'annotations': {'phred_score': '60', 'error_probability': '0.000001', 'ascii_char': ']'}},
 }
 
-class DNABase(RichEnum):
-    """
-    Standard DNA nucleotide bases (A, T, G, C) as defined by IUPAC
-    """
-    # Enum members
-    A = "A"
-    T = "T"
-    G = "G"
-    C = "C"
-
-# Set metadata after class creation to avoid it becoming an enum member
-DNABase._metadata = {
-    "A": {'description': 'Adenine', 'meaning': 'CHEBI:16708'},
-    "T": {'description': 'Thymine', 'meaning': 'CHEBI:17821'},
-    "G": {'description': 'Guanine', 'meaning': 'CHEBI:16235'},
-    "C": {'description': 'Cytosine', 'meaning': 'CHEBI:16040'},
-}
-
-class RNABase(RichEnum):
-    """
-    Standard RNA nucleotide bases (A, U, G, C) as defined by IUPAC
-    """
-    # Enum members
-    A = "A"
-    U = "U"
-    G = "G"
-    C = "C"
-
-# Set metadata after class creation to avoid it becoming an enum member
-RNABase._metadata = {
-    "A": {'description': 'Adenine', 'meaning': 'CHEBI:16708'},
-    "U": {'description': 'Uracil', 'meaning': 'CHEBI:17568'},
-    "G": {'description': 'Guanine', 'meaning': 'CHEBI:16235'},
-    "C": {'description': 'Cytosine', 'meaning': 'CHEBI:16040'},
-}
-
 class IUPACNucleotideCode(RichEnum):
     """
     Complete IUPAC nucleotide codes including ambiguous bases for DNA/RNA sequences.
@@ -7139,13 +7193,13 @@ Used in FASTA and other sequence formats to represent uncertain nucleotides.
 
 # Set metadata after class creation to avoid it becoming an enum member
 IUPACNucleotideCode._metadata = {
-    "A": {'description': 'Adenine', 'meaning': 'CHEBI:16708'},
-    "T": {'description': 'Thymine (DNA)', 'meaning': 'CHEBI:17821'},
-    "U": {'description': 'Uracil (RNA)', 'meaning': 'CHEBI:17568'},
-    "G": {'description': 'Guanine', 'meaning': 'CHEBI:16235'},
-    "C": {'description': 'Cytosine', 'meaning': 'CHEBI:16040'},
-    "R": {'description': 'Purine (A or G)', 'meaning': 'CHEBI:26401'},
-    "Y": {'description': 'Pyrimidine (C or T/U)', 'meaning': 'CHEBI:39447'},
+    "A": {'description': 'Adenine'},
+    "T": {'description': 'Thymine (DNA)'},
+    "U": {'description': 'Uracil (RNA)'},
+    "G": {'description': 'Guanine'},
+    "C": {'description': 'Cytosine'},
+    "R": {'description': 'Purine (A or G)'},
+    "Y": {'description': 'Pyrimidine (C or T/U)'},
     "S": {'description': 'Strong interaction (G or C)'},
     "W": {'description': 'Weak interaction (A or T/U)'},
     "K": {'description': 'Keto (G or T/U)'},
@@ -7186,26 +7240,26 @@ class StandardAminoAcid(RichEnum):
 
 # Set metadata after class creation to avoid it becoming an enum member
 StandardAminoAcid._metadata = {
-    "A": {'description': 'Alanine', 'meaning': 'CHEBI:16977'},
-    "R": {'description': 'Arginine', 'meaning': 'CHEBI:16467'},
-    "N": {'description': 'Asparagine', 'meaning': 'CHEBI:17196'},
-    "D": {'description': 'Aspartic acid', 'meaning': 'CHEBI:17053'},
-    "C": {'description': 'Cysteine', 'meaning': 'CHEBI:17561'},
-    "E": {'description': 'Glutamic acid', 'meaning': 'CHEBI:16015'},
-    "Q": {'description': 'Glutamine', 'meaning': 'CHEBI:18050'},
-    "G": {'description': 'Glycine', 'meaning': 'CHEBI:15428'},
-    "H": {'description': 'Histidine', 'meaning': 'CHEBI:15971'},
-    "I": {'description': 'Isoleucine', 'meaning': 'CHEBI:17191'},
-    "L": {'description': 'Leucine', 'meaning': 'CHEBI:15603'},
-    "K": {'description': 'Lysine', 'meaning': 'CHEBI:18019'},
-    "M": {'description': 'Methionine', 'meaning': 'CHEBI:16811'},
-    "F": {'description': 'Phenylalanine', 'meaning': 'CHEBI:17295'},
-    "P": {'description': 'Proline', 'meaning': 'CHEBI:17203'},
-    "S": {'description': 'Serine', 'meaning': 'CHEBI:17115'},
-    "T": {'description': 'Threonine', 'meaning': 'CHEBI:16857'},
-    "W": {'description': 'Tryptophan', 'meaning': 'CHEBI:16828'},
-    "Y": {'description': 'Tyrosine', 'meaning': 'CHEBI:18186'},
-    "V": {'description': 'Valine', 'meaning': 'CHEBI:16414'},
+    "A": {'description': 'Alanine'},
+    "R": {'description': 'Arginine'},
+    "N": {'description': 'Asparagine'},
+    "D": {'description': 'Aspartic acid'},
+    "C": {'description': 'Cysteine'},
+    "E": {'description': 'Glutamic acid'},
+    "Q": {'description': 'Glutamine'},
+    "G": {'description': 'Glycine'},
+    "H": {'description': 'Histidine'},
+    "I": {'description': 'Isoleucine'},
+    "L": {'description': 'Leucine'},
+    "K": {'description': 'Lysine'},
+    "M": {'description': 'Methionine'},
+    "F": {'description': 'Phenylalanine'},
+    "P": {'description': 'Proline'},
+    "S": {'description': 'Serine'},
+    "T": {'description': 'Threonine'},
+    "W": {'description': 'Tryptophan'},
+    "Y": {'description': 'Tyrosine'},
+    "V": {'description': 'Valine'},
 }
 
 class IUPACAminoAcidCode(RichEnum):
@@ -7245,28 +7299,28 @@ rare amino acids, and ambiguity codes
 
 # Set metadata after class creation to avoid it becoming an enum member
 IUPACAminoAcidCode._metadata = {
-    "A": {'description': 'Alanine', 'meaning': 'CHEBI:16977'},
-    "R": {'description': 'Arginine', 'meaning': 'CHEBI:16467'},
-    "N": {'description': 'Asparagine', 'meaning': 'CHEBI:17196'},
-    "D": {'description': 'Aspartic acid', 'meaning': 'CHEBI:17053'},
-    "C": {'description': 'Cysteine', 'meaning': 'CHEBI:17561'},
-    "E": {'description': 'Glutamic acid', 'meaning': 'CHEBI:16015'},
-    "Q": {'description': 'Glutamine', 'meaning': 'CHEBI:18050'},
-    "G": {'description': 'Glycine', 'meaning': 'CHEBI:15428'},
-    "H": {'description': 'Histidine', 'meaning': 'CHEBI:15971'},
-    "I": {'description': 'Isoleucine', 'meaning': 'CHEBI:17191'},
-    "L": {'description': 'Leucine', 'meaning': 'CHEBI:15603'},
-    "K": {'description': 'Lysine', 'meaning': 'CHEBI:18019'},
-    "M": {'description': 'Methionine', 'meaning': 'CHEBI:16811'},
-    "F": {'description': 'Phenylalanine', 'meaning': 'CHEBI:17295'},
-    "P": {'description': 'Proline', 'meaning': 'CHEBI:17203'},
-    "S": {'description': 'Serine', 'meaning': 'CHEBI:17115'},
-    "T": {'description': 'Threonine', 'meaning': 'CHEBI:16857'},
-    "W": {'description': 'Tryptophan', 'meaning': 'CHEBI:16828'},
-    "Y": {'description': 'Tyrosine', 'meaning': 'CHEBI:18186'},
-    "V": {'description': 'Valine', 'meaning': 'CHEBI:16414'},
-    "U": {'description': 'Selenocysteine (21st amino acid)', 'meaning': 'CHEBI:16811', 'aliases': ['Sec']},
-    "O": {'description': 'Pyrrolysine (22nd amino acid)', 'meaning': 'CHEBI:18295', 'aliases': ['Pyl']},
+    "A": {'description': 'Alanine'},
+    "R": {'description': 'Arginine'},
+    "N": {'description': 'Asparagine'},
+    "D": {'description': 'Aspartic acid'},
+    "C": {'description': 'Cysteine'},
+    "E": {'description': 'Glutamic acid'},
+    "Q": {'description': 'Glutamine'},
+    "G": {'description': 'Glycine'},
+    "H": {'description': 'Histidine'},
+    "I": {'description': 'Isoleucine'},
+    "L": {'description': 'Leucine'},
+    "K": {'description': 'Lysine'},
+    "M": {'description': 'Methionine'},
+    "F": {'description': 'Phenylalanine'},
+    "P": {'description': 'Proline'},
+    "S": {'description': 'Serine'},
+    "T": {'description': 'Threonine'},
+    "W": {'description': 'Tryptophan'},
+    "Y": {'description': 'Tyrosine'},
+    "V": {'description': 'Valine'},
+    "U": {'description': 'Selenocysteine (21st amino acid)', 'aliases': ['Sec']},
+    "O": {'description': 'Pyrrolysine (22nd amino acid)', 'aliases': ['Pyl']},
     "B": {'description': 'Asparagine or Aspartic acid (N or D)'},
     "Z": {'description': 'Glutamine or Glutamic acid (Q or E)'},
     "J": {'description': 'Leucine or Isoleucine (L or I)'},
@@ -7395,8 +7449,8 @@ class SequenceStrand(RichEnum):
 
 # Set metadata after class creation to avoid it becoming an enum member
 SequenceStrand._metadata = {
-    "PLUS": {'description': "Plus/forward/sense strand (5' to 3')", 'meaning': 'SO:0000402'},
-    "MINUS": {'description': "Minus/reverse/antisense strand (3' to 5')", 'meaning': 'SO:0000404'},
+    "PLUS": {'description': "Plus/forward/sense strand (5' to 3')"},
+    "MINUS": {'description': "Minus/reverse/antisense strand (3' to 5')"},
     "BOTH": {'description': 'Both strands'},
     "UNKNOWN": {'description': 'Strand not specified or unknown'},
 }
@@ -7530,12 +7584,12 @@ class SequencingChemistry(RichEnum):
 
 # Set metadata after class creation to avoid it becoming an enum member
 SequencingChemistry._metadata = {
-    "SEQUENCING_BY_SYNTHESIS": {'description': 'Sequencing by synthesis (Illumina)', 'meaning': 'OBI:0000626'},
-    "SINGLE_MOLECULE_REAL_TIME": {'description': 'Single molecule real-time sequencing (PacBio)', 'meaning': 'OBI:0002763'},
-    "NANOPORE_SEQUENCING": {'description': 'Nanopore sequencing (Oxford Nanopore)', 'meaning': 'OBI:0002754'},
-    "PYROSEQUENCING": {'description': 'Pyrosequencing (454)', 'meaning': 'OBI:0000628'},
-    "SEQUENCING_BY_LIGATION": {'description': 'Sequencing by ligation (SOLiD)', 'meaning': 'OBI:0000629'},
-    "CHAIN_TERMINATION": {'description': 'Chain termination method (Sanger)', 'meaning': 'OBI:0000632'},
+    "SEQUENCING_BY_SYNTHESIS": {'description': 'Sequencing by synthesis (Illumina)'},
+    "SINGLE_MOLECULE_REAL_TIME": {'description': 'Single molecule real-time sequencing (PacBio)'},
+    "NANOPORE_SEQUENCING": {'description': 'Nanopore sequencing (Oxford Nanopore)'},
+    "PYROSEQUENCING": {'description': 'Pyrosequencing (454)'},
+    "SEQUENCING_BY_LIGATION": {'description': 'Sequencing by ligation (SOLiD)'},
+    "CHAIN_TERMINATION": {'description': 'Chain termination method (Sanger)'},
     "SEMICONDUCTOR_SEQUENCING": {'description': 'Semiconductor/Ion semiconductor sequencing'},
     "DNA_NANOBALL_SEQUENCING": {'description': 'DNA nanoball sequencing (MGI/BGI)'},
     "SEQUENCING_BY_AVIDITY": {'description': 'Sequencing by avidity (Element Biosciences)'},
@@ -7613,15 +7667,15 @@ class SequencingApplication(RichEnum):
 
 # Set metadata after class creation to avoid it becoming an enum member
 SequencingApplication._metadata = {
-    "WHOLE_GENOME_SEQUENCING": {'description': 'Whole genome sequencing (WGS)', 'meaning': 'OBI:0002117'},
-    "WHOLE_EXOME_SEQUENCING": {'description': 'Whole exome sequencing (WES)', 'meaning': 'OBI:0002118'},
-    "TRANSCRIPTOME_SEQUENCING": {'description': 'RNA sequencing (RNA-seq)', 'meaning': 'OBI:0001271'},
+    "WHOLE_GENOME_SEQUENCING": {'description': 'Whole genome sequencing (WGS)'},
+    "WHOLE_EXOME_SEQUENCING": {'description': 'Whole exome sequencing (WES)'},
+    "TRANSCRIPTOME_SEQUENCING": {'description': 'RNA sequencing (RNA-seq)'},
     "TARGETED_SEQUENCING": {'description': 'Targeted gene panel sequencing'},
     "EPIGENOMICS": {'description': 'Epigenomic profiling'},
-    "METAGENOMICS": {'description': 'Metagenomic sequencing', 'meaning': 'OBI:0002044'},
+    "METAGENOMICS": {'description': 'Metagenomic sequencing'},
     "SINGLE_CELL_GENOMICS": {'description': 'Single-cell genomics'},
-    "SINGLE_CELL_TRANSCRIPTOMICS": {'description': 'Single-cell transcriptomics', 'meaning': 'OBI:0002571'},
-    "CHROMATIN_IMMUNOPRECIPITATION": {'description': 'ChIP-seq', 'meaning': 'OBI:0000716'},
+    "SINGLE_CELL_TRANSCRIPTOMICS": {'description': 'Single-cell transcriptomics'},
+    "CHROMATIN_IMMUNOPRECIPITATION": {'description': 'ChIP-seq'},
     "CHROMATIN_ACCESSIBILITY": {'description': 'ATAC-seq/FAIRE-seq'},
     "DNA_METHYLATION": {'description': 'Bisulfite/methylation sequencing'},
     "CHROMOSOME_CONFORMATION": {'description': 'Hi-C/3C-seq'},
@@ -7645,8 +7699,8 @@ class ReadType(RichEnum):
 
 # Set metadata after class creation to avoid it becoming an enum member
 ReadType._metadata = {
-    "SINGLE_END": {'description': 'Single-end reads', 'meaning': 'SO:0000999'},
-    "PAIRED_END": {'description': 'Paired-end reads', 'meaning': 'SO:0001000'},
+    "SINGLE_END": {'description': 'Single-end reads'},
+    "PAIRED_END": {'description': 'Paired-end reads'},
     "MATE_PAIR": {'description': 'Mate-pair reads (large insert)'},
     "LONG_READ": {'description': 'Long reads (>1kb typical)'},
     "ULTRA_LONG_READ": {'description': 'Ultra-long reads (>10kb)'},
@@ -8541,6 +8595,363 @@ ExperimentalPreparation._metadata = {
     "KNOCKDOWN": {'description': 'Reduced expression'},
     "KNOCKOUT": {'description': 'Gene deletion', 'meaning': 'MI:0788', 'aliases': ['knock out']},
     "ENDOGENOUS_LEVEL": {'description': 'Physiological expression'},
+}
+
+class BioticInteractionType(RichEnum):
+    """
+    Types of biotic interactions between organisms, based on RO:0002437 (biotically interacts with). These represent ecological relationships where at least one partner is an organism.
+
+    """
+    # Enum members
+    BIOTICALLY_INTERACTS_WITH = "BIOTICALLY_INTERACTS_WITH"
+    TROPHICALLY_INTERACTS_WITH = "TROPHICALLY_INTERACTS_WITH"
+    PREYS_ON = "PREYS_ON"
+    PREYED_UPON_BY = "PREYED_UPON_BY"
+    EATS = "EATS"
+    IS_EATEN_BY = "IS_EATEN_BY"
+    ACQUIRES_NUTRIENTS_FROM = "ACQUIRES_NUTRIENTS_FROM"
+    PROVIDES_NUTRIENTS_FOR = "PROVIDES_NUTRIENTS_FOR"
+    SYMBIOTICALLY_INTERACTS_WITH = "SYMBIOTICALLY_INTERACTS_WITH"
+    COMMENSUALLY_INTERACTS_WITH = "COMMENSUALLY_INTERACTS_WITH"
+    MUTUALISTICALLY_INTERACTS_WITH = "MUTUALISTICALLY_INTERACTS_WITH"
+    INTERACTS_VIA_PARASITE_HOST = "INTERACTS_VIA_PARASITE_HOST"
+    SYMBIOTROPHICALLY_INTERACTS_WITH = "SYMBIOTROPHICALLY_INTERACTS_WITH"
+    PARASITE_OF = "PARASITE_OF"
+    HOST_OF = "HOST_OF"
+    HAS_HOST = "HAS_HOST"
+    PARASITOID_OF = "PARASITOID_OF"
+    ECTOPARASITE_OF = "ECTOPARASITE_OF"
+    ENDOPARASITE_OF = "ENDOPARASITE_OF"
+    INTRACELLULAR_ENDOPARASITE_OF = "INTRACELLULAR_ENDOPARASITE_OF"
+    INTERCELLULAR_ENDOPARASITE_OF = "INTERCELLULAR_ENDOPARASITE_OF"
+    HEMIPARASITE_OF = "HEMIPARASITE_OF"
+    STEM_PARASITE_OF = "STEM_PARASITE_OF"
+    ROOT_PARASITE_OF = "ROOT_PARASITE_OF"
+    OBLIGATE_PARASITE_OF = "OBLIGATE_PARASITE_OF"
+    FACULTATIVE_PARASITE_OF = "FACULTATIVE_PARASITE_OF"
+    TROPHIC_PARASITE_OF = "TROPHIC_PARASITE_OF"
+    PATHOGEN_OF = "PATHOGEN_OF"
+    HAS_PATHOGEN = "HAS_PATHOGEN"
+    RESERVOIR_HOST_OF = "RESERVOIR_HOST_OF"
+    HAS_RESERVOIR_HOST = "HAS_RESERVOIR_HOST"
+    IS_VECTOR_FOR = "IS_VECTOR_FOR"
+    POLLINATES = "POLLINATES"
+    PARTICIPATES_IN_ABIOTIC_BIOTIC_INTERACTION_WITH = "PARTICIPATES_IN_ABIOTIC_BIOTIC_INTERACTION_WITH"
+    ECOLOGICALLY_CO_OCCURS_WITH = "ECOLOGICALLY_CO_OCCURS_WITH"
+    HYPERPARASITE_OF = "HYPERPARASITE_OF"
+    MESOPARASITE_OF = "MESOPARASITE_OF"
+    KLEPTOPARASITE_OF = "KLEPTOPARASITE_OF"
+    EPIPHYTE_OF = "EPIPHYTE_OF"
+    ALLELOPATH_OF = "ALLELOPATH_OF"
+    VISITS = "VISITS"
+    VISITS_FLOWERS_OF = "VISITS_FLOWERS_OF"
+    HAS_FLOWERS_VISITED_BY = "HAS_FLOWERS_VISITED_BY"
+    LAYS_EGGS_IN = "LAYS_EGGS_IN"
+    HAS_EGGS_LAID_IN_BY = "HAS_EGGS_LAID_IN_BY"
+    LAYS_EGGS_ON = "LAYS_EGGS_ON"
+    HAS_EGGS_LAID_ON_BY = "HAS_EGGS_LAID_ON_BY"
+    CREATES_HABITAT_FOR = "CREATES_HABITAT_FOR"
+
+# Set metadata after class creation to avoid it becoming an enum member
+BioticInteractionType._metadata = {
+    "BIOTICALLY_INTERACTS_WITH": {'description': 'An interaction relationship in which at least one of the partners is an organism and the other is either an organism or an abiotic entity with which the organism interacts.\n', 'meaning': 'RO:0002437'},
+    "TROPHICALLY_INTERACTS_WITH": {'description': 'An interaction relationship in which the partners are related via a feeding relationship.', 'meaning': 'RO:0002438'},
+    "PREYS_ON": {'description': 'An interaction relationship involving a predation process, where the subject kills the target in order to eat it or to feed to siblings, offspring or group members.\n', 'meaning': 'RO:0002439'},
+    "PREYED_UPON_BY": {'description': 'Inverse of preys on', 'meaning': 'RO:0002458'},
+    "EATS": {'description': 'A biotic interaction where one organism consumes a material entity through a type of mouth or other oral opening.\n', 'meaning': 'RO:0002470'},
+    "IS_EATEN_BY": {'description': 'Inverse of eats', 'meaning': 'RO:0002471'},
+    "ACQUIRES_NUTRIENTS_FROM": {'description': 'Inverse of provides nutrients for', 'meaning': 'RO:0002457'},
+    "PROVIDES_NUTRIENTS_FOR": {'description': 'A biotic interaction where a material entity provides nutrition for an organism.', 'meaning': 'RO:0002469'},
+    "SYMBIOTICALLY_INTERACTS_WITH": {'description': 'A biotic interaction in which the two organisms live together in more or less intimate association.\n', 'meaning': 'RO:0002440'},
+    "COMMENSUALLY_INTERACTS_WITH": {'description': 'An interaction relationship between two organisms living together in more or less intimate association in a relationship in which one benefits and the other is unaffected.\n', 'meaning': 'RO:0002441'},
+    "MUTUALISTICALLY_INTERACTS_WITH": {'description': 'An interaction relationship between two organisms living together in more or less intimate association in a relationship in which both organisms benefit from each other.\n', 'meaning': 'RO:0002442'},
+    "INTERACTS_VIA_PARASITE_HOST": {'description': 'An interaction relationship between two organisms living together in more or less intimate association in a relationship in which association is disadvantageous or destructive to one of the organisms.\n', 'meaning': 'RO:0002443'},
+    "SYMBIOTROPHICALLY_INTERACTS_WITH": {'description': 'A trophic interaction in which one organism acquires nutrients through a symbiotic relationship with another organism.\n', 'meaning': 'RO:0008510'},
+    "PARASITE_OF": {'description': 'A parasite-host relationship where an organism benefits at the expense of another.', 'meaning': 'RO:0002444'},
+    "HOST_OF": {'description': 'Inverse of has host', 'meaning': 'RO:0002453'},
+    "HAS_HOST": {'description': "X 'has host' y if and only if: x is an organism, y is an organism, and x can live on the surface of or within the body of y.\n", 'meaning': 'RO:0002454'},
+    "PARASITOID_OF": {'description': 'A parasite that kills or sterilizes its host', 'meaning': 'RO:0002208'},
+    "ECTOPARASITE_OF": {'description': 'A sub-relation of parasite-of in which the parasite lives on or in the integumental system of the host.\n', 'meaning': 'RO:0002632'},
+    "ENDOPARASITE_OF": {'description': 'A parasite that lives inside its host', 'meaning': 'RO:0002634'},
+    "INTRACELLULAR_ENDOPARASITE_OF": {'description': 'A sub-relation of endoparasite-of in which the parasite inhabits host cells.', 'meaning': 'RO:0002640'},
+    "INTERCELLULAR_ENDOPARASITE_OF": {'description': 'A sub-relation of endoparasite-of in which the parasite inhabits the spaces between host cells.\n', 'meaning': 'RO:0002638'},
+    "HEMIPARASITE_OF": {'description': 'A sub-relation of parasite-of in which the parasite is a plant, and the parasite is parasitic under natural conditions and is also photosynthetic to some degree.\n', 'meaning': 'RO:0002237'},
+    "STEM_PARASITE_OF": {'description': 'A parasite-of relationship in which the host is a plant and the parasite that attaches to the host stem.\n', 'meaning': 'RO:0002235'},
+    "ROOT_PARASITE_OF": {'description': 'A parasite-of relationship in which the host is a plant and the parasite that attaches to the host root.\n', 'meaning': 'RO:0002236'},
+    "OBLIGATE_PARASITE_OF": {'description': 'A sub-relation of parasite-of in which the parasite that cannot complete its life cycle without a host.\n', 'meaning': 'RO:0002227'},
+    "FACULTATIVE_PARASITE_OF": {'description': 'A sub-relations of parasite-of in which the parasite that can complete its life cycle independent of a host.\n', 'meaning': 'RO:0002228'},
+    "TROPHIC_PARASITE_OF": {'description': 'A symbiotrophic interaction in which one organism acquires nutrients through a parasitic relationship with another organism.\n', 'meaning': 'RO:0008511'},
+    "PATHOGEN_OF": {'description': 'Inverse of has pathogen', 'meaning': 'RO:0002556'},
+    "HAS_PATHOGEN": {'description': 'A host interaction where the smaller of the two members of a symbiosis causes a disease in the larger member.\n', 'meaning': 'RO:0002557'},
+    "RESERVOIR_HOST_OF": {'description': 'A relation between a host organism and a hosted organism in which the hosted organism naturally occurs in an indefinitely maintained reservoir provided by the host.\n', 'meaning': 'RO:0002802'},
+    "HAS_RESERVOIR_HOST": {'description': 'Inverse of reservoir host of', 'meaning': 'RO:0002803'},
+    "IS_VECTOR_FOR": {'description': 'Organism acts as a vector for transmitting another organism', 'meaning': 'RO:0002459'},
+    "POLLINATES": {'description': 'An interaction where an organism transfers pollen to a plant', 'meaning': 'RO:0002455'},
+    "PARTICIPATES_IN_ABIOTIC_BIOTIC_INTERACTION_WITH": {'description': 'A biotic interaction relationship in which one partner is an organism and the other partner is inorganic. For example, the relationship between a sponge and the substrate to which is it anchored.\n', 'meaning': 'RO:0002446'},
+    "ECOLOGICALLY_CO_OCCURS_WITH": {'description': 'An interaction relationship describing organisms that often occur together at the same time and space or in the same environment.\n', 'meaning': 'RO:0008506'},
+    "HYPERPARASITE_OF": {'description': 'x is a hyperparasite of y iff x is a parasite of a parasite of the target organism y', 'meaning': 'RO:0002553'},
+    "MESOPARASITE_OF": {'description': 'A sub-relation of parasite-of in which the parasite is partially an endoparasite and partially an ectoparasite.\n', 'meaning': 'RO:0002636'},
+    "KLEPTOPARASITE_OF": {'description': 'A sub-relation of parasite of in which a parasite steals resources from another organism, usually food or nest material.\n', 'meaning': 'RO:0008503'},
+    "EPIPHYTE_OF": {'description': 'An interaction relationship wherein a plant or algae is living on the outside surface of another plant.\n', 'meaning': 'RO:0008501'},
+    "ALLELOPATH_OF": {'description': 'A relationship between organisms where one organism is influenced by the biochemicals produced by another. Allelopathy is a phenomenon in which one organism releases chemicals to positively or negatively influence the growth, survival or reproduction of other organisms in its vicinity.\n', 'meaning': 'RO:0002555'},
+    "VISITS": {'description': 'An interaction where an organism visits another organism or location', 'meaning': 'RO:0002618'},
+    "VISITS_FLOWERS_OF": {'description': 'An interaction where an organism visits the flowers of a plant', 'meaning': 'RO:0002622'},
+    "HAS_FLOWERS_VISITED_BY": {'description': 'Inverse of visits flowers of', 'meaning': 'RO:0002623'},
+    "LAYS_EGGS_IN": {'description': 'An interaction where an organism deposits eggs inside another organism', 'meaning': 'RO:0002624'},
+    "HAS_EGGS_LAID_IN_BY": {'description': 'Inverse of lays eggs in', 'meaning': 'RO:0002625'},
+    "LAYS_EGGS_ON": {'description': 'An interaction relationship in which organism a lays eggs on the outside surface of organism b. Organism b is neither helped nor harmed in the process of egg laying or incubation.\n', 'meaning': 'RO:0008507'},
+    "HAS_EGGS_LAID_ON_BY": {'description': 'Inverse of lays eggs on', 'meaning': 'RO:0008508'},
+    "CREATES_HABITAT_FOR": {'description': 'An interaction relationship wherein one organism creates a structure or environment that is lived in by another organism.\n', 'meaning': 'RO:0008505'},
+}
+
+class MineralogyFeedstockClass(RichEnum):
+    """
+    Types of mineral feedstock sources for extraction and processing operations, including primary and secondary sources.
+
+    """
+    # Enum members
+    HARDROCK_PRIMARY = "HARDROCK_PRIMARY"
+    TAILINGS_LEGACY = "TAILINGS_LEGACY"
+    WASTE_PILES = "WASTE_PILES"
+    COAL_BYPRODUCT = "COAL_BYPRODUCT"
+    E_WASTE = "E_WASTE"
+    BRINES = "BRINES"
+
+# Set metadata after class creation to avoid it becoming an enum member
+MineralogyFeedstockClass._metadata = {
+    "HARDROCK_PRIMARY": {'description': 'Primary ore from hardrock mining operations'},
+    "TAILINGS_LEGACY": {'description': 'Historical mine tailings available for reprocessing'},
+    "WASTE_PILES": {'description': 'Accumulated mining waste materials'},
+    "COAL_BYPRODUCT": {'description': 'Byproducts from coal mining and processing'},
+    "E_WASTE": {'description': 'Electronic waste containing recoverable metals'},
+    "BRINES": {'description': 'Saline water sources containing dissolved minerals'},
+}
+
+class BeneficiationPathway(RichEnum):
+    """
+    Methods for mineral separation and concentration aligned with advanced ore processing initiatives (AOI-2).
+
+    """
+    # Enum members
+    ORE_SORTING = "ORE_SORTING"
+    DENSE_MEDIUM_SEPARATION = "DENSE_MEDIUM_SEPARATION"
+    MICROWAVE_PREWEAKENING = "MICROWAVE_PREWEAKENING"
+    ELECTRIC_PULSE_PREWEAKENING = "ELECTRIC_PULSE_PREWEAKENING"
+    GRINDING_DYNAMIC = "GRINDING_DYNAMIC"
+    ELECTROSTATIC_SEP = "ELECTROSTATIC_SEP"
+    MAGNETIC_SEP = "MAGNETIC_SEP"
+    FLOTATION_LOW_H2O = "FLOTATION_LOW_H2O"
+    BIO_BENEFICIATION = "BIO_BENEFICIATION"
+
+# Set metadata after class creation to avoid it becoming an enum member
+BeneficiationPathway._metadata = {
+    "ORE_SORTING": {'description': 'Sensor-based sorting of ore particles'},
+    "DENSE_MEDIUM_SEPARATION": {'description': 'Gravity separation using dense media'},
+    "MICROWAVE_PREWEAKENING": {'description': 'Microwave treatment to weaken ore structure'},
+    "ELECTRIC_PULSE_PREWEAKENING": {'description': 'High-voltage electric pulse fragmentation'},
+    "GRINDING_DYNAMIC": {'description': 'Dynamic grinding optimization systems'},
+    "ELECTROSTATIC_SEP": {'description': 'Electrostatic separation of minerals'},
+    "MAGNETIC_SEP": {'description': 'Magnetic separation of ferromagnetic minerals'},
+    "FLOTATION_LOW_H2O": {'description': 'Low-water flotation processes'},
+    "BIO_BENEFICIATION": {'description': 'Biological methods for mineral beneficiation'},
+}
+
+class InSituChemistryRegime(RichEnum):
+    """
+    Chemical leaching systems for in-situ extraction with associated parameters including pH, Eh, temperature, and ionic strength.
+
+    """
+    # Enum members
+    ACIDIC_SULFATE = "ACIDIC_SULFATE"
+    ACIDIC_CHLORIDE = "ACIDIC_CHLORIDE"
+    AMMONIA_BASED = "AMMONIA_BASED"
+    ORGANIC_ACID = "ORGANIC_ACID"
+    BIOLEACH_SULFUR_OXIDIZING = "BIOLEACH_SULFUR_OXIDIZING"
+    BIOLEACH_IRON_OXIDIZING = "BIOLEACH_IRON_OXIDIZING"
+
+# Set metadata after class creation to avoid it becoming an enum member
+InSituChemistryRegime._metadata = {
+    "ACIDIC_SULFATE": {'description': 'Sulfuric acid-based leaching system'},
+    "ACIDIC_CHLORIDE": {'description': 'Hydrochloric acid or chloride-based leaching'},
+    "AMMONIA_BASED": {'description': 'Ammonia or ammonium-based leaching system'},
+    "ORGANIC_ACID": {'description': 'Organic acid leaching (citric, oxalic, etc.)'},
+    "BIOLEACH_SULFUR_OXIDIZING": {'description': 'Bioleaching using sulfur-oxidizing bacteria'},
+    "BIOLEACH_IRON_OXIDIZING": {'description': 'Bioleaching using iron-oxidizing bacteria'},
+}
+
+class ExtractableTargetElement(RichEnum):
+    """
+    Target elements for extraction, particularly rare earth elements (REE) and critical minerals.
+
+    """
+    # Enum members
+    REE_LA = "REE_LA"
+    REE_CE = "REE_CE"
+    REE_PR = "REE_PR"
+    REE_ND = "REE_ND"
+    REE_PM = "REE_PM"
+    REE_SM = "REE_SM"
+    REE_EU = "REE_EU"
+    REE_GD = "REE_GD"
+    REE_TB = "REE_TB"
+    REE_DY = "REE_DY"
+    REE_HO = "REE_HO"
+    REE_ER = "REE_ER"
+    REE_TM = "REE_TM"
+    REE_YB = "REE_YB"
+    REE_LU = "REE_LU"
+    SC = "SC"
+    CO = "CO"
+    NI = "NI"
+    LI = "LI"
+
+# Set metadata after class creation to avoid it becoming an enum member
+ExtractableTargetElement._metadata = {
+    "REE_LA": {'description': 'Lanthanum'},
+    "REE_CE": {'description': 'Cerium'},
+    "REE_PR": {'description': 'Praseodymium'},
+    "REE_ND": {'description': 'Neodymium'},
+    "REE_PM": {'description': 'Promethium'},
+    "REE_SM": {'description': 'Samarium'},
+    "REE_EU": {'description': 'Europium'},
+    "REE_GD": {'description': 'Gadolinium'},
+    "REE_TB": {'description': 'Terbium'},
+    "REE_DY": {'description': 'Dysprosium'},
+    "REE_HO": {'description': 'Holmium'},
+    "REE_ER": {'description': 'Erbium'},
+    "REE_TM": {'description': 'Thulium'},
+    "REE_YB": {'description': 'Ytterbium'},
+    "REE_LU": {'description': 'Lutetium'},
+    "SC": {'description': 'Scandium'},
+    "CO": {'description': 'Cobalt'},
+    "NI": {'description': 'Nickel'},
+    "LI": {'description': 'Lithium'},
+}
+
+class SensorWhileDrillingFeature(RichEnum):
+    """
+    Measurement while drilling (MWD) and logging while drilling (LWD) features for orebody ML and geosteering applications.
+
+    """
+    # Enum members
+    WOB = "WOB"
+    ROP = "ROP"
+    TORQUE = "TORQUE"
+    MWD_GAMMA = "MWD_GAMMA"
+    MWD_RESISTIVITY = "MWD_RESISTIVITY"
+    MUD_LOSS = "MUD_LOSS"
+    VIBRATION = "VIBRATION"
+    RSS_ANGLE = "RSS_ANGLE"
+
+# Set metadata after class creation to avoid it becoming an enum member
+SensorWhileDrillingFeature._metadata = {
+    "WOB": {'description': 'Weight on bit measurement'},
+    "ROP": {'description': 'Rate of penetration'},
+    "TORQUE": {'description': 'Rotational torque measurement'},
+    "MWD_GAMMA": {'description': 'Gamma ray logging while drilling'},
+    "MWD_RESISTIVITY": {'description': 'Resistivity logging while drilling'},
+    "MUD_LOSS": {'description': 'Drilling mud loss measurement'},
+    "VIBRATION": {'description': 'Drill string vibration monitoring'},
+    "RSS_ANGLE": {'description': 'Rotary steerable system angle'},
+}
+
+class ProcessPerformanceMetric(RichEnum):
+    """
+    Key performance indicators for mining and processing operations tied to SMART milestones and sustainability goals.
+
+    """
+    # Enum members
+    RECOVERY_PCT = "RECOVERY_PCT"
+    SELECTIVITY_INDEX = "SELECTIVITY_INDEX"
+    SPECIFIC_ENERGY_KWH_T = "SPECIFIC_ENERGY_KWH_T"
+    WATER_INTENSITY_L_T = "WATER_INTENSITY_L_T"
+    REAGENT_INTENSITY_KG_T = "REAGENT_INTENSITY_KG_T"
+    CO2E_KG_T = "CO2E_KG_T"
+    TAILINGS_MASS_REDUCTION_PCT = "TAILINGS_MASS_REDUCTION_PCT"
+
+# Set metadata after class creation to avoid it becoming an enum member
+ProcessPerformanceMetric._metadata = {
+    "RECOVERY_PCT": {'description': 'Percentage recovery of target material'},
+    "SELECTIVITY_INDEX": {'description': 'Selectivity index for separation processes'},
+    "SPECIFIC_ENERGY_KWH_T": {'description': 'Specific energy consumption in kWh per tonne'},
+    "WATER_INTENSITY_L_T": {'description': 'Water usage intensity in liters per tonne'},
+    "REAGENT_INTENSITY_KG_T": {'description': 'Reagent consumption in kg per tonne'},
+    "CO2E_KG_T": {'description': 'CO2 equivalent emissions in kg per tonne'},
+    "TAILINGS_MASS_REDUCTION_PCT": {'description': 'Percentage reduction in tailings mass'},
+}
+
+class BioleachOrganism(RichEnum):
+    """
+    Microorganisms used in bioleaching and biomining operations, including engineered strains.
+
+    """
+    # Enum members
+    ACIDITHIOBACILLUS_FERROOXIDANS = "ACIDITHIOBACILLUS_FERROOXIDANS"
+    LEPTOSPIRILLUM_FERROOXIDANS = "LEPTOSPIRILLUM_FERROOXIDANS"
+    ASPERGILLUS_NIGER = "ASPERGILLUS_NIGER"
+    ENGINEERED_STRAIN = "ENGINEERED_STRAIN"
+
+# Set metadata after class creation to avoid it becoming an enum member
+BioleachOrganism._metadata = {
+    "ACIDITHIOBACILLUS_FERROOXIDANS": {'description': 'Iron and sulfur oxidizing bacterium', 'meaning': 'NCBITaxon:920'},
+    "LEPTOSPIRILLUM_FERROOXIDANS": {'description': 'Iron oxidizing bacterium', 'meaning': 'NCBITaxon:2705'},
+    "ASPERGILLUS_NIGER": {'description': 'Organic acid producing fungus', 'meaning': 'NCBITaxon:5061'},
+    "ENGINEERED_STRAIN": {'description': 'Genetically modified organism for enhanced bioleaching'},
+}
+
+class BioleachMode(RichEnum):
+    """
+    Mechanisms of bioleaching including indirect and direct bacterial action.
+
+    """
+    # Enum members
+    INDIRECT_BIOLEACH_ORGANIC_ACIDS = "INDIRECT_BIOLEACH_ORGANIC_ACIDS"
+    SULFUR_OXIDATION = "SULFUR_OXIDATION"
+    IRON_OXIDATION = "IRON_OXIDATION"
+
+# Set metadata after class creation to avoid it becoming an enum member
+BioleachMode._metadata = {
+    "INDIRECT_BIOLEACH_ORGANIC_ACIDS": {'description': 'Indirect bioleaching through organic acid production'},
+    "SULFUR_OXIDATION": {'description': 'Direct bacterial oxidation of sulfur compounds'},
+    "IRON_OXIDATION": {'description': 'Direct bacterial oxidation of iron compounds'},
+}
+
+class AutonomyLevel(RichEnum):
+    """
+    Levels of autonomy for mining systems including drilling, hauling, and sorting robots (relevant for Topic 1 initiatives).
+
+    """
+    # Enum members
+    ASSISTIVE = "ASSISTIVE"
+    SUPERVISED_AUTONOMY = "SUPERVISED_AUTONOMY"
+    SEMI_AUTONOMOUS = "SEMI_AUTONOMOUS"
+    FULLY_AUTONOMOUS = "FULLY_AUTONOMOUS"
+
+# Set metadata after class creation to avoid it becoming an enum member
+AutonomyLevel._metadata = {
+    "ASSISTIVE": {'description': 'Human operator with assistive technologies'},
+    "SUPERVISED_AUTONOMY": {'description': 'Autonomous operation with human supervision'},
+    "SEMI_AUTONOMOUS": {'description': 'Partial autonomy with human intervention capability'},
+    "FULLY_AUTONOMOUS": {'description': 'Complete autonomous operation without human intervention'},
+}
+
+class RegulatoryConstraint(RichEnum):
+    """
+    Regulatory and community constraints affecting mining operations, particularly for in-situ extraction and community engagement.
+
+    """
+    # Enum members
+    AQUIFER_PROTECTION = "AQUIFER_PROTECTION"
+    EMISSIONS_CAP = "EMISSIONS_CAP"
+    CULTURAL_HERITAGE_ZONE = "CULTURAL_HERITAGE_ZONE"
+    WATER_RIGHTS_LIMIT = "WATER_RIGHTS_LIMIT"
+
+# Set metadata after class creation to avoid it becoming an enum member
+RegulatoryConstraint._metadata = {
+    "AQUIFER_PROTECTION": {'description': 'Requirements for groundwater and aquifer protection'},
+    "EMISSIONS_CAP": {'description': 'Limits on atmospheric emissions'},
+    "CULTURAL_HERITAGE_ZONE": {'description': 'Protection of cultural heritage sites'},
+    "WATER_RIGHTS_LIMIT": {'description': 'Restrictions based on water usage rights'},
 }
 
 class SubatomicParticleEnum(RichEnum):
@@ -9574,30 +9985,6 @@ BiologicalSexEnum._metadata = {
     "UNKNOWN_OR_NOT_REPORTED": {'description': 'Sex not known, not reported, or declined to answer', 'meaning': 'NCIT:C17998'},
 }
 
-class GenderIdentityEnum(RichEnum):
-    """
-    Current gender identity, which may differ from sex assigned at birth
-    """
-    # Enum members
-    MAN = "MAN"
-    WOMAN = "WOMAN"
-    TRANSGENDER_MAN = "TRANSGENDER_MAN"
-    TRANSGENDER_WOMAN = "TRANSGENDER_WOMAN"
-    NON_BINARY = "NON_BINARY"
-    OTHER = "OTHER"
-    PREFER_NOT_TO_ANSWER = "PREFER_NOT_TO_ANSWER"
-
-# Set metadata after class creation to avoid it becoming an enum member
-GenderIdentityEnum._metadata = {
-    "MAN": {'description': 'Identifies as man', 'meaning': 'GSSO:009292', 'annotations': {'aliases': 'Male'}},
-    "WOMAN": {'description': 'Identifies as woman', 'meaning': 'GSSO:009293', 'annotations': {'aliases': 'Female'}},
-    "TRANSGENDER_MAN": {'description': 'Identifies as transgender man/trans man/female-to-male', 'meaning': 'GSSO:000372', 'annotations': {'definition': 'Assigned female at birth but identifies as man'}},
-    "TRANSGENDER_WOMAN": {'description': 'Identifies as transgender woman/trans woman/male-to-female', 'meaning': 'GSSO:000384', 'annotations': {'definition': 'Assigned male at birth but identifies as woman'}},
-    "NON_BINARY": {'description': 'Gender identity outside the man/woman binary', 'meaning': 'GSSO:002403', 'annotations': {'aliases': 'Genderqueer, Gender non-conforming'}},
-    "OTHER": {'description': 'Other gender identity', 'annotations': {'note': 'Free text may be collected'}},
-    "PREFER_NOT_TO_ANSWER": {'description': 'Prefers not to disclose gender identity', 'meaning': 'NCIT:C132222'},
-}
-
 class AgeGroupEnum(RichEnum):
     """
     Standard age groups used in NIH clinical research, particularly NINDS CDEs
@@ -9690,40 +10077,6 @@ StudyPhaseEnum._metadata = {
     "PHASE_3": {'description': 'Efficacy comparison with standard treatment', 'meaning': 'NCIT:C15602', 'annotations': {'participants': '300-3000'}},
     "PHASE_4": {'description': 'Post-marketing surveillance', 'meaning': 'NCIT:C15603', 'annotations': {'note': 'After FDA approval'}},
     "NOT_APPLICABLE": {'description': 'Not a phased clinical trial', 'meaning': 'NCIT:C48660', 'annotations': {'note': 'For observational studies, device trials, etc.'}},
-}
-
-class EducationLevelEnum(RichEnum):
-    """
-    Highest level of education completed, following NIH demographics standards
-    """
-    # Enum members
-    NO_FORMAL_EDUCATION = "NO_FORMAL_EDUCATION"
-    ELEMENTARY = "ELEMENTARY"
-    MIDDLE_SCHOOL = "MIDDLE_SCHOOL"
-    SOME_HIGH_SCHOOL = "SOME_HIGH_SCHOOL"
-    HIGH_SCHOOL_GRADUATE = "HIGH_SCHOOL_GRADUATE"
-    SOME_COLLEGE = "SOME_COLLEGE"
-    ASSOCIATE_DEGREE = "ASSOCIATE_DEGREE"
-    BACHELORS_DEGREE = "BACHELORS_DEGREE"
-    MASTERS_DEGREE = "MASTERS_DEGREE"
-    PROFESSIONAL_DEGREE = "PROFESSIONAL_DEGREE"
-    DOCTORATE_DEGREE = "DOCTORATE_DEGREE"
-    UNKNOWN_OR_NOT_REPORTED = "UNKNOWN_OR_NOT_REPORTED"
-
-# Set metadata after class creation to avoid it becoming an enum member
-EducationLevelEnum._metadata = {
-    "NO_FORMAL_EDUCATION": {'description': 'No formal schooling completed', 'meaning': 'NCIT:C173723'},
-    "ELEMENTARY": {'description': 'Elementary school (grades 1-6)', 'meaning': 'NCIT:C80410', 'annotations': {'grades': '1-6'}},
-    "MIDDLE_SCHOOL": {'description': 'Middle/Junior high school (grades 7-8)', 'meaning': 'NCIT:C205685', 'annotations': {'grades': '7-8'}},
-    "SOME_HIGH_SCHOOL": {'description': 'Some high school, no diploma', 'meaning': 'NCIT:C198650', 'annotations': {'grades': '9-11'}},
-    "HIGH_SCHOOL_GRADUATE": {'description': 'High school graduate or GED', 'meaning': 'NCIT:C67136', 'annotations': {'includes': 'GED, High school diploma'}},
-    "SOME_COLLEGE": {'description': 'Some college credit, no degree', 'meaning': 'NCIT:C67137'},
-    "ASSOCIATE_DEGREE": {'description': 'Associate degree (2-year)', 'meaning': 'NCIT:C71340', 'annotations': {'duration': '2 years'}},
-    "BACHELORS_DEGREE": {'description': "Bachelor's degree (4-year)", 'meaning': 'NCIT:C39327', 'annotations': {'duration': '4 years'}},
-    "MASTERS_DEGREE": {'description': "Master's degree", 'meaning': 'NCIT:C39453'},
-    "PROFESSIONAL_DEGREE": {'description': 'Professional degree (MD, JD, etc.)', 'meaning': 'NCIT:C67143', 'annotations': {'examples': 'MD, JD, DDS, DVM'}},
-    "DOCTORATE_DEGREE": {'description': 'Doctorate degree (PhD, EdD, etc.)', 'meaning': 'NCIT:C39392', 'annotations': {'examples': 'PhD, EdD, DrPH'}},
-    "UNKNOWN_OR_NOT_REPORTED": {'description': 'Education level not known or not reported', 'meaning': 'NCIT:C17998'},
 }
 
 class KaryotypicSexEnum(RichEnum):

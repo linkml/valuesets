@@ -1,30 +1,29 @@
----
-id: https://w3id.org/linkml/valuesets/bio/plant_biology
 name: plant_biology
 title: Plant Biology Value Sets
-description: |-
-  Value sets related to plant biology, including reproductive systems,
-  breeding systems, and other plant-specific characteristics.
+description: 'Value sets related to plant biology, including reproductive systems,
 
+  breeding systems, and other plant-specific characteristics.'
+id: https://w3id.org/linkml/valuesets/bio/plant_biology
+imports:
+- linkml:types
 prefixes:
-  valuesets: https://w3id.org/linkml/valuesets/
+  valuesets: https://w3id.org/valuesets/
   GSSO: http://purl.obolibrary.org/obo/GSSO_
   PATO: http://purl.obolibrary.org/obo/PATO_
   PO: http://purl.obolibrary.org/obo/PO_
   TO: http://purl.obolibrary.org/obo/TO_
   ECOCORE: http://purl.obolibrary.org/obo/ECOCORE_
-
 default_prefix: valuesets
-
-imports:
-  - linkml:types
-
+slots:
+  plant_sexual_system:
+    description: Sexual systems in plants, describing the distribution and types of reproductive organs (flowers) within and
+      among individual plants
+    range: PlantSexualSystem
 enums:
-
   PlantSexualSystem:
-    description: |-
-      Sexual systems in plants, describing the distribution and types of
-      reproductive organs (flowers) within and among individual plants.
+    description: 'Sexual systems in plants, describing the distribution and types of
+
+      reproductive organs (flowers) within and among individual plants.'
     permissible_values:
       ANDRODIOECIOUS:
         text: ANDRODIOECIOUS
@@ -33,15 +32,12 @@ enums:
       ANDROECIOUS:
         text: ANDROECIOUS
         description: Having only male flowers (staminate flowers)
-        # Note: Could not find specific ontology term for androecious alone
       ANDROGYNOMONOECIOUS:
         text: ANDROGYNOMONOECIOUS
         description: Having male, female, and bisexual flowers on the same plant
-        # Note: Could not find specific ontology term
       ANDROGYNOUS:
         text: ANDROGYNOUS
         description: Having both male and female reproductive organs; hermaphroditic
-        # Note: Similar to hermaphroditic but distinct botanical term
       ANDROMONOECIOUS:
         text: ANDROMONOECIOUS
         meaning: GSSO:011870
@@ -49,15 +45,12 @@ enums:
       BISEXUAL:
         text: BISEXUAL
         description: Having both male and female reproductive organs in the same flower
-        # Note: Botanical term for flowers with both stamens and pistils
       DICHOGAMOUS:
         text: DICHOGAMOUS
         description: Having male and female organs that mature at different times
-        # Note: Could not find specific ontology term for dichogamous
       DICLINOUS:
         text: DICLINOUS
         description: Having unisexual flowers (either male or female, not both)
-        # Note: Could not find specific ontology term
       DIOECIOUS:
         text: DIOECIOUS
         meaning: GSSO:011872
@@ -69,7 +62,6 @@ enums:
       GYNOECIOUS:
         text: GYNOECIOUS
         description: Having only female flowers (pistillate flowers)
-        # Note: Could not find specific ontology term for gynoecious alone
       GYNOMONOECIOUS:
         text: GYNOMONOECIOUS
         meaning: GSSO:011869
@@ -82,11 +74,9 @@ enums:
       IMPERFECT:
         text: IMPERFECT
         description: Flowers lacking either stamens or pistils (unisexual)
-        # Note: Could not find specific ontology term
       MONOCLINOUS:
         text: MONOCLINOUS
         description: Having bisexual flowers (both male and female organs)
-        # Note: Synonym for bisexual/perfect flowers in botanical terminology
       MONOECIOUS:
         text: MONOECIOUS
         meaning: GSSO:011868
@@ -94,19 +84,15 @@ enums:
       PERFECT:
         text: PERFECT
         description: Flowers having both stamens and pistils (bisexual)
-        # Note: Botanical term for complete flowers with both reproductive organs
       POLYGAMODIOECIOUS:
         text: POLYGAMODIOECIOUS
         description: Having male, female, and bisexual flowers on separate plants
-        # Note: Could not find specific ontology term
       POLYGAMOMONOECIOUS:
         text: POLYGAMOMONOECIOUS
         description: Having male, female, and bisexual flowers on the same plant
-        # Note: Could not find specific ontology term
       POLYGAMOUS:
         text: POLYGAMOUS
         description: Having male, female, and bisexual flowers
-        # Note: GSSO has polygamous for relationships, not plant breeding systems
       PROTANDROUS:
         text: PROTANDROUS
         meaning: PATO:0040053
@@ -118,23 +104,18 @@ enums:
       SUBANDROECIOUS:
         text: SUBANDROECIOUS
         description: Predominantly male plants with occasional hermaphroditic flowers
-        # Note: Could not find specific ontology term
       SUBDIOECIOUS:
         text: SUBDIOECIOUS
         description: Predominantly dioecious with occasional hermaphroditic individuals
-        # Note: Could not find specific ontology term
       SUBGYNOECIOUS:
         text: SUBGYNOECIOUS
         description: Predominantly female plants with occasional hermaphroditic flowers
-        # Note: Could not find specific ontology term
       SYNOECIOUS:
         text: SYNOECIOUS
         description: Having male and female organs in the same structure
-        # Note: Botanical term, similar to hermaphroditic but specific usage
       TRIMONOECIOUS:
         text: TRIMONOECIOUS
         description: Having male, female, and bisexual flowers on the same plant
-        # Note: Similar to polygamomonoecious, could not find specific term
       TRIOECIOUS:
         text: TRIOECIOUS
         meaning: GSSO:011875
@@ -142,4 +123,3 @@ enums:
       UNISEXUAL:
         text: UNISEXUAL
         description: Having only one sex (either male or female reproductive organs)
-        # Note: Could not find specific ontology term for unisexual flowers

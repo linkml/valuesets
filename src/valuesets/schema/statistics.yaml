@@ -1,14 +1,9 @@
-id: https://w3id.org/valuesets/statistics
 name: valuesets-statistics
 title: valuesets-statistics
-description: |-
-  Common Data Model Elements: Human and statistics activities
-license: MIT
-see_also:
-  - https://linkml.github.io/valuesets
-
+description: 'Common Data Model Elements: Human and statistics activities'
+id: https://w3id.org/valuesets/statistics
 prefixes:
-  linkml_common: https://w3id.org/valuesets/
+  # linkml_common: https://w3id.org/valuesets/
   linkml: https://w3id.org/linkml/
   biolink: https://w3id.org/biolink/
   schema: http://schema.org/
@@ -16,10 +11,12 @@ prefixes:
   fhir: http://hl7.org/fhir/
   prov: http://www.w3.org/ns/prov#
   dcterms: http://purl.org/dc/terms/
-default_prefix: linkml_common
-default_range: string
-
-
+  valuesets: https://w3id.org/valuesets/
+default_prefix: valuesets
+slots:
+  prediction_outcome:
+    description: The prediction outcome classification
+    range: PredictionOutcomeType
 enums:
   PredictionOutcomeType:
     permissible_values:
@@ -31,4 +28,7 @@ enums:
         description: True Negative
       FN:
         description: False Negative
-
+license: MIT
+see_also:
+- https://linkml.github.io/valuesets
+default_range: string

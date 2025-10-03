@@ -1,10 +1,12 @@
-id: https://w3id.org/valuesets/medical/clinical
 name: clinical
 title: Clinical and Medical Value Sets
-description: >
-  Value sets for clinical and medical domains including blood types, anatomical systems,
-  medical specialties, drug routes, and diagnostic categories.
+description: 'Value sets for clinical and medical domains including blood types, anatomical systems, medical specialties,
+  drug routes, and diagnostic categories.
 
+  '
+id: https://w3id.org/valuesets/medical/clinical
+imports:
+- linkml:types
 prefixes:
   linkml: https://w3id.org/linkml/
   NCIT: http://purl.obolibrary.org/obo/NCIT_
@@ -16,10 +18,39 @@ prefixes:
   LOINC: http://loinc.org/
   ICD10: http://purl.bioontology.org/ontology/ICD10/
   RxNorm: http://purl.bioontology.org/ontology/RXNORM/
-
-imports:
-  - linkml:types
-
+  valuesets: https://w3id.org/valuesets/
+default_prefix: valuesets
+slots:
+  blood_type:
+    description: ABO and Rh blood group classifications
+    range: BloodTypeEnum
+  anatomical_system:
+    description: Major anatomical systems of the body
+    range: AnatomicalSystemEnum
+  medical_specialty:
+    description: The medical specialty classification
+    range: MedicalSpecialtyEnum
+  drug_route:
+    description: The drug route classification
+    range: DrugRouteEnum
+  vital_sign:
+    description: The vital sign classification
+    range: VitalSignEnum
+  diagnostic_test_type:
+    description: The diagnostic test type classification
+    range: DiagnosticTestTypeEnum
+  symptom_severity:
+    description: The symptom severity classification
+    range: SymptomSeverityEnum
+  allergy_type:
+    description: The allergy type classification
+    range: AllergyTypeEnum
+  vaccine_type:
+    description: The vaccine type classification
+    range: VaccineTypeEnum
+  bmi_classification:
+    description: The bmi classification classification
+    range: BMIClassificationEnum
 enums:
   BloodTypeEnum:
     description: ABO and Rh blood group classifications
@@ -28,150 +59,148 @@ enums:
         description: Blood type A, Rh positive
         meaning: SNOMED:278149003
         annotations:
-          abo: "A"
-          rh: "positive"
-          can_receive: "A+, A-, O+, O-"
-          can_donate: "A+, AB+"
+          abo: A
+          rh: positive
+          can_receive: A+, A-, O+, O-
+          can_donate: A+, AB+
       A_NEGATIVE:
         description: Blood type A, Rh negative
         meaning: SNOMED:278152006
         annotations:
-          abo: "A"
-          rh: "negative"
-          can_receive: "A-, O-"
-          can_donate: "A+, A-, AB+, AB-"
+          abo: A
+          rh: negative
+          can_receive: A-, O-
+          can_donate: A+, A-, AB+, AB-
       B_POSITIVE:
         description: Blood type B, Rh positive
         meaning: SNOMED:278150003
         annotations:
-          abo: "B"
-          rh: "positive"
-          can_receive: "B+, B-, O+, O-"
-          can_donate: "B+, AB+"
+          abo: B
+          rh: positive
+          can_receive: B+, B-, O+, O-
+          can_donate: B+, AB+
       B_NEGATIVE:
         description: Blood type B, Rh negative
         meaning: SNOMED:278153001
         annotations:
-          abo: "B"
-          rh: "negative"
-          can_receive: "B-, O-"
-          can_donate: "B+, B-, AB+, AB-"
+          abo: B
+          rh: negative
+          can_receive: B-, O-
+          can_donate: B+, B-, AB+, AB-
       AB_POSITIVE:
         description: Blood type AB, Rh positive (universal recipient)
         meaning: SNOMED:278151004
         annotations:
-          abo: "AB"
-          rh: "positive"
-          can_receive: "all types"
-          can_donate: "AB+"
-          special: "universal recipient"
+          abo: AB
+          rh: positive
+          can_receive: all types
+          can_donate: AB+
+          special: universal recipient
       AB_NEGATIVE:
         description: Blood type AB, Rh negative
         meaning: SNOMED:278154007
         annotations:
-          abo: "AB"
-          rh: "negative"
-          can_receive: "A-, B-, AB-, O-"
-          can_donate: "AB+, AB-"
+          abo: AB
+          rh: negative
+          can_receive: A-, B-, AB-, O-
+          can_donate: AB+, AB-
       O_POSITIVE:
         description: Blood type O, Rh positive
         meaning: SNOMED:278147001
         annotations:
-          abo: "O"
-          rh: "positive"
-          can_receive: "O+, O-"
-          can_donate: "A+, B+, AB+, O+"
+          abo: O
+          rh: positive
+          can_receive: O+, O-
+          can_donate: A+, B+, AB+, O+
       O_NEGATIVE:
         description: Blood type O, Rh negative (universal donor)
         meaning: SNOMED:278148006
         annotations:
-          abo: "O"
-          rh: "negative"
-          can_receive: "O-"
-          can_donate: "all types"
-          special: "universal donor"
-
+          abo: O
+          rh: negative
+          can_receive: O-
+          can_donate: all types
+          special: universal donor
   AnatomicalSystemEnum:
     description: Major anatomical systems of the body
     permissible_values:
       CARDIOVASCULAR:
         title: Heart and blood vessels
         aliases:
-          - cardiovascular system
+        - cardiovascular system
         meaning: UBERON:0004535
         annotations:
-          components: "heart, arteries, veins, capillaries"
+          components: heart, arteries, veins, capillaries
       RESPIRATORY:
         title: Lungs and airways
         aliases:
-          - respiratory system
+        - respiratory system
         meaning: UBERON:0001004
         annotations:
-          components: "lungs, trachea, bronchi, diaphragm"
+          components: lungs, trachea, bronchi, diaphragm
       NERVOUS:
         title: Brain, spinal cord, and nerves
         aliases:
-          - nervous system
+        - nervous system
         meaning: UBERON:0001016
         annotations:
-          components: "brain, spinal cord, nerves"
+          components: brain, spinal cord, nerves
       DIGESTIVE:
         title: GI tract and accessory organs
         aliases:
-          - digestive system
+        - digestive system
         meaning: UBERON:0001007
         annotations:
-          components: "mouth, esophagus, stomach, intestines, liver, pancreas"
+          components: mouth, esophagus, stomach, intestines, liver, pancreas
       MUSCULOSKELETAL:
         title: Bones, muscles, and connective tissue
         aliases:
-          - musculoskeletal system
+        - musculoskeletal system
         meaning: UBERON:0002204
         annotations:
-          components: "bones, muscles, tendons, ligaments, cartilage"
+          components: bones, muscles, tendons, ligaments, cartilage
       INTEGUMENTARY:
         title: Skin and related structures
         aliases:
-          - integumental system
+        - integumental system
         meaning: UBERON:0002416
         annotations:
-          components: "skin, hair, nails, glands"
+          components: skin, hair, nails, glands
       ENDOCRINE:
         title: Hormone-producing glands
         aliases:
-          - endocrine system
+        - endocrine system
         meaning: UBERON:0000949
         annotations:
-          components: "pituitary, thyroid, adrenals, pancreas"
+          components: pituitary, thyroid, adrenals, pancreas
       URINARY:
         title: Kidneys and urinary tract
         aliases:
-          - renal system
+        - renal system
         meaning: UBERON:0001008
         annotations:
-          components: "kidneys, ureters, bladder, urethra"
+          components: kidneys, ureters, bladder, urethra
       REPRODUCTIVE:
         title: Reproductive organs
         aliases:
-          - reproductive system
+        - reproductive system
         meaning: UBERON:0000990
         annotations:
-          components: "gonads, ducts, external genitalia"
+          components: gonads, ducts, external genitalia
       IMMUNE:
         title: Immune and lymphatic system
         aliases:
-          - immune system
+        - immune system
         meaning: UBERON:0002405
         annotations:
-          components: "lymph nodes, spleen, thymus, bone marrow"
+          components: lymph nodes, spleen, thymus, bone marrow
       HEMATOLOGIC:
         title: Blood and blood-forming organs
         aliases:
-          - hematopoietic system
+        - hematopoietic system
         meaning: UBERON:0002390
         annotations:
-          components: "blood, bone marrow, spleen"
-
+          components: blood, bone marrow, spleen
   MedicalSpecialtyEnum:
     title: Medical specialties and subspecialties
     permissible_values:
@@ -225,113 +254,111 @@ enums:
         title: Surgical procedures
       UROLOGY:
         title: Urinary and male reproductive system
-
   DrugRouteEnum:
     title: Routes of drug administration
     permissible_values:
       ORAL:
         title: By mouth
         aliases:
-          - Oral Route of Administration
+        - Oral Route of Administration
         meaning: NCIT:C38288
         annotations:
-          abbreviation: "PO"
-          absorption: "GI tract"
+          abbreviation: PO
+          absorption: GI tract
       INTRAVENOUS:
         title: Into a vein
         aliases:
-          - Intravenous Route of Administration
+        - Intravenous Route of Administration
         meaning: NCIT:C38276
         annotations:
-          abbreviation: "IV"
-          onset: "immediate"
+          abbreviation: IV
+          onset: immediate
       INTRAMUSCULAR:
         title: Into muscle
         aliases:
-          - Intramuscular Route of Administration
+        - Intramuscular Route of Administration
         meaning: NCIT:C28161
         annotations:
-          abbreviation: "IM"
-          sites: "deltoid, gluteus, vastus lateralis"
+          abbreviation: IM
+          sites: deltoid, gluteus, vastus lateralis
       SUBCUTANEOUS:
         title: Under the skin
         aliases:
-          - Subcutaneous Route of Administration
+        - Subcutaneous Route of Administration
         meaning: NCIT:C38299
         annotations:
-          abbreviation: "SC, SubQ"
-          absorption: "slow"
+          abbreviation: SC, SubQ
+          absorption: slow
       TOPICAL:
         title: On the skin surface
         aliases:
-          - Topical Route of Administration
+        - Topical Route of Administration
         meaning: NCIT:C38304
         annotations:
-          forms: "cream, ointment, gel"
+          forms: cream, ointment, gel
       INHALATION:
         title: By breathing in
         aliases:
-          - Inhalation Route of Administration
+        - Inhalation Route of Administration
         meaning: NCIT:C38216
         annotations:
-          devices: "inhaler, nebulizer"
+          devices: inhaler, nebulizer
       RECTAL:
         title: Into the rectum
         aliases:
-          - Rectal Route of Administration
+        - Rectal Route of Administration
         meaning: NCIT:C38295
         annotations:
-          forms: "suppository, enema"
+          forms: suppository, enema
       INTRANASAL:
         title: Into the nose
         aliases:
-          - Nasal Route of Administration
+        - Nasal Route of Administration
         meaning: NCIT:C38284
         annotations:
-          forms: "spray, drops"
+          forms: spray, drops
       TRANSDERMAL:
         title: Through the skin
         aliases:
-          - Transdermal Route of Administration
+        - Transdermal Route of Administration
         meaning: NCIT:C38305
         annotations:
-          forms: "patch"
+          forms: patch
       SUBLINGUAL:
         title: Under the tongue
         aliases:
-          - Sublingual Route of Administration
+        - Sublingual Route of Administration
         meaning: NCIT:C38300
         annotations:
-          absorption: "rapid"
+          absorption: rapid
       EPIDURAL:
         title: Into epidural space
         aliases:
-          - Intraepidermal Route of Administration
+        - Intraepidermal Route of Administration
         meaning: NCIT:C38243
         annotations:
-          use: "anesthesia, analgesia"
+          use: anesthesia, analgesia
       INTRATHECAL:
         title: Into spinal fluid
         aliases:
-          - Intraventricular Route of Administration
+        - Intraventricular Route of Administration
         meaning: NCIT:C38277
         annotations:
-          use: "CNS drugs"
+          use: CNS drugs
       OPHTHALMIC:
         title: Into the eye
         aliases:
-          - Ophthalmic Route of Administration
+        - Ophthalmic Route of Administration
         meaning: NCIT:C38287
         annotations:
-          forms: "drops, ointment"
+          forms: drops, ointment
       OTIC:
         title: Into the ear
         aliases:
-          - Auricular Route of Administration
+        - Auricular Route of Administration
         meaning: NCIT:C38192
         annotations:
-          forms: "drops"
-
+          forms: drops
   VitalSignEnum:
     title: Standard vital signs
     permissible_values:
@@ -339,250 +366,245 @@ enums:
         title: Heart beats per minute
         meaning: LOINC:8867-4
         annotations:
-          normal_range: "60-100 bpm"
-          units: "beats/min"
+          normal_range: 60-100 bpm
+          units: beats/min
       BLOOD_PRESSURE_SYSTOLIC:
         title: Systolic blood pressure
         meaning: LOINC:8480-6
         annotations:
-          normal_range: "<120 mmHg"
-          units: "mmHg"
+          normal_range: <120 mmHg
+          units: mmHg
       BLOOD_PRESSURE_DIASTOLIC:
         title: Diastolic blood pressure
         meaning: LOINC:8462-4
         annotations:
-          normal_range: "<80 mmHg"
-          units: "mmHg"
+          normal_range: <80 mmHg
+          units: mmHg
       RESPIRATORY_RATE:
         title: Breaths per minute
         meaning: LOINC:9279-1
         annotations:
-          normal_range: "12-20 breaths/min"
-          units: "breaths/min"
+          normal_range: 12-20 breaths/min
+          units: breaths/min
       TEMPERATURE:
         title: Body temperature
         meaning: LOINC:8310-5
         annotations:
-          normal_range: "36.5-37.5°C"
-          units: "°C or °F"
+          normal_range: 36.5-37.5°C
+          units: °C or °F
       OXYGEN_SATURATION:
         title: Blood oxygen saturation
         meaning: LOINC:2708-6
         annotations:
-          normal_range: "95-100%"
-          units: "%"
+          normal_range: 95-100%
+          units: '%'
       PAIN_SCALE:
         title: Pain level (0-10)
         meaning: LOINC:38208-5
         annotations:
-          scale: "0-10"
-          type: "subjective"
-
+          scale: 0-10
+          type: subjective
   DiagnosticTestTypeEnum:
     title: Types of diagnostic tests
     permissible_values:
       BLOOD_TEST:
         title: Blood sample analysis
         aliases:
-          - Biopsy Procedure
+        - Biopsy Procedure
         meaning: NCIT:C15189
         annotations:
-          samples: "serum, plasma, whole blood"
+          samples: serum, plasma, whole blood
       URINE_TEST:
         title: Urine sample analysis
         aliases:
-          - Tissue Factor
+        - Tissue Factor
         annotations:
-          types: "urinalysis, culture, drug screen"
+          types: urinalysis, culture, drug screen
       IMAGING_XRAY:
         title: X-ray imaging
         aliases:
-          - X-Ray
+        - X-Ray
         meaning: NCIT:C17262
         annotations:
-          radiation: "yes"
+          radiation: 'yes'
       IMAGING_CT:
         title: Computed tomography scan
         aliases:
-          - Computed Tomography
+        - Computed Tomography
         meaning: NCIT:C17204
         annotations:
-          radiation: "yes"
+          radiation: 'yes'
       IMAGING_MRI:
         title: Magnetic resonance imaging
         aliases:
-          - Magnetic Resonance Imaging
+        - Magnetic Resonance Imaging
         meaning: NCIT:C16809
         annotations:
-          radiation: "no"
+          radiation: 'no'
       IMAGING_ULTRASOUND:
         title: Ultrasound imaging
         aliases:
-          - Ultrasound Imaging
+        - Ultrasound Imaging
         meaning: NCIT:C17230
         annotations:
-          radiation: "no"
+          radiation: 'no'
       IMAGING_PET:
         title: Positron emission tomography
         aliases:
-          - Positron Emission Tomography
+        - Positron Emission Tomography
         meaning: NCIT:C17007
         annotations:
-          uses: "radiotracer"
+          uses: radiotracer
       ECG:
         title: Electrocardiogram
         aliases:
-          - Electroencephalography
+        - Electroencephalography
         meaning: NCIT:C38054
         annotations:
-          measures: "heart electrical activity"
+          measures: heart electrical activity
       EEG:
         title: Electroencephalogram
         aliases:
-          - Djibouti
+        - Djibouti
         annotations:
-          measures: "brain electrical activity"
+          measures: brain electrical activity
       BIOPSY:
         title: Tissue sample analysis
         aliases:
-          - Biopsy Procedure
+        - Biopsy Procedure
         meaning: NCIT:C15189
         annotations:
-          invasive: "yes"
+          invasive: 'yes'
       ENDOSCOPY:
         title: Internal visualization
         aliases:
-          - Endoscopic Procedure
+        - Endoscopic Procedure
         meaning: NCIT:C16546
         annotations:
-          types: "colonoscopy, gastroscopy, bronchoscopy"
+          types: colonoscopy, gastroscopy, bronchoscopy
       GENETIC_TEST:
         title: DNA/RNA analysis
         aliases:
-          - Genetic Testing
+        - Genetic Testing
         meaning: NCIT:C15709
         annotations:
-          types: "karyotype, sequencing, PCR"
-
+          types: karyotype, sequencing, PCR
   SymptomSeverityEnum:
     title: Severity levels for symptoms
     permissible_values:
       ABSENT:
         title: No symptoms
         aliases:
-          - Blood group B
+        - Blood group B
         annotations:
-          grade: "0"
+          grade: '0'
       MILD:
         title: Mild symptoms, minimal impact
         meaning: HP:0012825
         annotations:
-          grade: "1"
-          impact: "minimal daily activity limitation"
+          grade: '1'
+          impact: minimal daily activity limitation
       MODERATE:
         title: Moderate symptoms, some limitation
         meaning: HP:0012826
         annotations:
-          grade: "2"
-          impact: "some daily activity limitation"
+          grade: '2'
+          impact: some daily activity limitation
       SEVERE:
         title: Severe symptoms, significant limitation
         meaning: HP:0012828
         annotations:
-          grade: "3"
-          impact: "significant daily activity limitation"
+          grade: '3'
+          impact: significant daily activity limitation
       LIFE_THREATENING:
         title: Life-threatening symptoms
         aliases:
-          - Profound
+        - Profound
         annotations:
-          grade: "4"
-          impact: "urgent intervention required"
-
+          grade: '4'
+          impact: urgent intervention required
   AllergyTypeEnum:
     title: Types of allergic reactions
     permissible_values:
       DRUG:
         title: Drug allergy
         aliases:
-          - Hypersensitivity
+        - Hypersensitivity
         meaning: NCIT:C3114
         annotations:
-          examples: "penicillin, sulfa drugs"
+          examples: penicillin, sulfa drugs
       FOOD:
         title: Food allergy
         annotations:
-          common: "nuts, shellfish, eggs, milk"
+          common: nuts, shellfish, eggs, milk
       ENVIRONMENTAL:
         title: Environmental allergy
         annotations:
-          examples: "pollen, dust, mold"
+          examples: pollen, dust, mold
       CONTACT:
         title: Contact dermatitis
         annotations:
-          examples: "latex, nickel, poison ivy"
+          examples: latex, nickel, poison ivy
       INSECT:
         title: Insect sting allergy
         annotations:
-          examples: "bee, wasp, hornet"
+          examples: bee, wasp, hornet
       ANAPHYLAXIS:
         title: Severe systemic reaction
         annotations:
-          severity: "life-threatening"
-
+          severity: life-threatening
   VaccineTypeEnum:
     title: Types of vaccines
     permissible_values:
       LIVE_ATTENUATED:
         title: Weakened live pathogen
         annotations:
-          examples: "MMR, varicella, yellow fever"
+          examples: MMR, varicella, yellow fever
       INACTIVATED:
         title: Killed pathogen
         annotations:
-          examples: "flu shot, hepatitis A, rabies"
+          examples: flu shot, hepatitis A, rabies
       SUBUNIT:
         title: Pathogen pieces
         annotations:
-          examples: "hepatitis B, HPV, pertussis"
+          examples: hepatitis B, HPV, pertussis
       TOXOID:
         title: Inactivated toxin
         annotations:
-          examples: "diphtheria, tetanus"
+          examples: diphtheria, tetanus
       MRNA:
         title: mRNA vaccine
         annotations:
-          examples: "COVID-19 (Pfizer, Moderna)"
+          examples: COVID-19 (Pfizer, Moderna)
       VIRAL_VECTOR:
         title: Modified virus carrier
         annotations:
-          examples: "COVID-19 (J&J, AstraZeneca)"
-
+          examples: COVID-19 (J&J, AstraZeneca)
   BMIClassificationEnum:
     title: Body Mass Index classifications
     permissible_values:
       UNDERWEIGHT:
         title: BMI less than 18.5
         annotations:
-          bmi_range: "<18.5"
+          bmi_range: <18.5
       NORMAL_WEIGHT:
         title: BMI 18.5-24.9
         annotations:
-          bmi_range: "18.5-24.9"
+          bmi_range: 18.5-24.9
       OVERWEIGHT:
         title: BMI 25.0-29.9
         annotations:
-          bmi_range: "25.0-29.9"
+          bmi_range: 25.0-29.9
       OBESE_CLASS_I:
         title: BMI 30.0-34.9
         annotations:
-          bmi_range: "30.0-34.9"
+          bmi_range: 30.0-34.9
       OBESE_CLASS_II:
         title: BMI 35.0-39.9
         annotations:
-          bmi_range: "35.0-39.9"
+          bmi_range: 35.0-39.9
       OBESE_CLASS_III:
         title: BMI 40.0 or greater
         annotations:
-          bmi_range: "≥40.0"
-          aliases: "morbid obesity"
+          bmi_range: ≥40.0
+          aliases: morbid obesity

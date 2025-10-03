@@ -5,7 +5,12 @@ prefixes:
   MICRO: http://purl.obolibrary.org/obo/MICRO_
   BTO: http://purl.obolibrary.org/obo/BTO_
   mixs: https://genomicsstandardsconsortium.github.io/mixs/
-default_prefix: mixs
+  valuesets: https://w3id.org/valuesets/
+default_prefix: valuesets
+slots:
+  trophic_level:
+    description: Trophic levels are the feeding position in a food chain
+    range: TrophicLevelEnum
 enums:
   TrophicLevelEnum:
     description: Trophic levels are the feeding position in a food chain

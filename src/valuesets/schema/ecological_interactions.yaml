@@ -1,0 +1,298 @@
+name: ecological_interactions
+title: Ecological Interactions Value Sets
+description: 'Value sets for ecological and biological interactions, based on the Relations Ontology (RO) biotically interacts
+  with (RO:0002437) hierarchy.
+
+  '
+id: https://w3id.org/valuesets/ecological-interactions
+version: 1.0.0
+status: release
+imports:
+- linkml:types
+- ./core
+prefixes:
+  linkml: https://w3id.org/linkml/
+  # cval: https://w3id.org/linkml-common/
+  RO: http://purl.obolibrary.org/obo/RO_
+  valuesets: https://w3id.org/valuesets/
+default_prefix: valuesets
+default_curi_maps:
+- semweb_context
+slots:
+  biotic_interaction:
+    description: Types of biotic interactions between organisms, based on RO:0002437 (biotically interacts with)
+    range: BioticInteractionType
+enums:
+  BioticInteractionType:
+    description: 'Types of biotic interactions between organisms, based on RO:0002437 (biotically interacts with). These represent
+      ecological relationships where at least one partner is an organism.
+
+      '
+    permissible_values:
+      BIOTICALLY_INTERACTS_WITH:
+        description: 'An interaction relationship in which at least one of the partners is an organism and the other is either
+          an organism or an abiotic entity with which the organism interacts.
+
+          '
+        meaning: RO:0002437
+      TROPHICALLY_INTERACTS_WITH:
+        description: An interaction relationship in which the partners are related via a feeding relationship.
+        meaning: RO:0002438
+        is_a: BIOTICALLY_INTERACTS_WITH
+      PREYS_ON:
+        description: 'An interaction relationship involving a predation process, where the subject kills the target in order
+          to eat it or to feed to siblings, offspring or group members.
+
+          '
+        meaning: RO:0002439
+        is_a: TROPHICALLY_INTERACTS_WITH
+      PREYED_UPON_BY:
+        description: Inverse of preys on
+        meaning: RO:0002458
+        is_a: TROPHICALLY_INTERACTS_WITH
+      EATS:
+        description: 'A biotic interaction where one organism consumes a material entity through a type of mouth or other
+          oral opening.
+
+          '
+        meaning: RO:0002470
+        is_a: BIOTICALLY_INTERACTS_WITH
+      IS_EATEN_BY:
+        description: Inverse of eats
+        meaning: RO:0002471
+        is_a: BIOTICALLY_INTERACTS_WITH
+      ACQUIRES_NUTRIENTS_FROM:
+        description: Inverse of provides nutrients for
+        meaning: RO:0002457
+        is_a: BIOTICALLY_INTERACTS_WITH
+      PROVIDES_NUTRIENTS_FOR:
+        description: A biotic interaction where a material entity provides nutrition for an organism.
+        meaning: RO:0002469
+        is_a: BIOTICALLY_INTERACTS_WITH
+      SYMBIOTICALLY_INTERACTS_WITH:
+        description: 'A biotic interaction in which the two organisms live together in more or less intimate association.
+
+          '
+        meaning: RO:0002440
+        is_a: BIOTICALLY_INTERACTS_WITH
+      COMMENSUALLY_INTERACTS_WITH:
+        description: 'An interaction relationship between two organisms living together in more or less intimate association
+          in a relationship in which one benefits and the other is unaffected.
+
+          '
+        meaning: RO:0002441
+        is_a: SYMBIOTICALLY_INTERACTS_WITH
+      MUTUALISTICALLY_INTERACTS_WITH:
+        description: 'An interaction relationship between two organisms living together in more or less intimate association
+          in a relationship in which both organisms benefit from each other.
+
+          '
+        meaning: RO:0002442
+        is_a: SYMBIOTICALLY_INTERACTS_WITH
+      INTERACTS_VIA_PARASITE_HOST:
+        title: interacts with via parasite-host interaction
+        description: 'An interaction relationship between two organisms living together in more or less intimate association
+          in a relationship in which association is disadvantageous or destructive to one of the organisms.
+
+          '
+        meaning: RO:0002443
+        is_a: SYMBIOTICALLY_INTERACTS_WITH
+      SYMBIOTROPHICALLY_INTERACTS_WITH:
+        description: 'A trophic interaction in which one organism acquires nutrients through a symbiotic relationship with
+          another organism.
+
+          '
+        meaning: RO:0008510
+        is_a: SYMBIOTICALLY_INTERACTS_WITH
+      PARASITE_OF:
+        description: A parasite-host relationship where an organism benefits at the expense of another.
+        meaning: RO:0002444
+        is_a: INTERACTS_VIA_PARASITE_HOST
+      HOST_OF:
+        description: Inverse of has host
+        meaning: RO:0002453
+        is_a: INTERACTS_VIA_PARASITE_HOST
+      HAS_HOST:
+        description: 'X ''has host'' y if and only if: x is an organism, y is an organism, and x can live on the surface of
+          or within the body of y.
+
+          '
+        meaning: RO:0002454
+        is_a: INTERACTS_VIA_PARASITE_HOST
+      PARASITOID_OF:
+        description: A parasite that kills or sterilizes its host
+        meaning: RO:0002208
+        is_a: PARASITE_OF
+      ECTOPARASITE_OF:
+        description: 'A sub-relation of parasite-of in which the parasite lives on or in the integumental system of the host.
+
+          '
+        meaning: RO:0002632
+        is_a: PARASITE_OF
+      ENDOPARASITE_OF:
+        description: A parasite that lives inside its host
+        meaning: RO:0002634
+        is_a: PARASITE_OF
+      INTRACELLULAR_ENDOPARASITE_OF:
+        description: A sub-relation of endoparasite-of in which the parasite inhabits host cells.
+        meaning: RO:0002640
+        is_a: ENDOPARASITE_OF
+      INTERCELLULAR_ENDOPARASITE_OF:
+        description: 'A sub-relation of endoparasite-of in which the parasite inhabits the spaces between host cells.
+
+          '
+        meaning: RO:0002638
+        is_a: ENDOPARASITE_OF
+      HEMIPARASITE_OF:
+        description: 'A sub-relation of parasite-of in which the parasite is a plant, and the parasite is parasitic under
+          natural conditions and is also photosynthetic to some degree.
+
+          '
+        meaning: RO:0002237
+        is_a: PARASITE_OF
+      STEM_PARASITE_OF:
+        description: 'A parasite-of relationship in which the host is a plant and the parasite that attaches to the host stem.
+
+          '
+        meaning: RO:0002235
+        is_a: PARASITE_OF
+      ROOT_PARASITE_OF:
+        description: 'A parasite-of relationship in which the host is a plant and the parasite that attaches to the host root.
+
+          '
+        meaning: RO:0002236
+        is_a: PARASITE_OF
+      OBLIGATE_PARASITE_OF:
+        description: 'A sub-relation of parasite-of in which the parasite that cannot complete its life cycle without a host.
+
+          '
+        meaning: RO:0002227
+        is_a: PARASITE_OF
+      FACULTATIVE_PARASITE_OF:
+        description: 'A sub-relations of parasite-of in which the parasite that can complete its life cycle independent of
+          a host.
+
+          '
+        meaning: RO:0002228
+        is_a: PARASITE_OF
+      TROPHIC_PARASITE_OF:
+        description: 'A symbiotrophic interaction in which one organism acquires nutrients through a parasitic relationship
+          with another organism.
+
+          '
+        meaning: RO:0008511
+        is_a: PARASITE_OF
+      PATHOGEN_OF:
+        description: Inverse of has pathogen
+        meaning: RO:0002556
+        is_a: BIOTICALLY_INTERACTS_WITH
+      HAS_PATHOGEN:
+        description: 'A host interaction where the smaller of the two members of a symbiosis causes a disease in the larger
+          member.
+
+          '
+        meaning: RO:0002557
+        is_a: BIOTICALLY_INTERACTS_WITH
+      RESERVOIR_HOST_OF:
+        description: 'A relation between a host organism and a hosted organism in which the hosted organism naturally occurs
+          in an indefinitely maintained reservoir provided by the host.
+
+          '
+        meaning: RO:0002802
+        is_a: HOST_OF
+      HAS_RESERVOIR_HOST:
+        description: Inverse of reservoir host of
+        meaning: RO:0002803
+        is_a: HAS_HOST
+      IS_VECTOR_FOR:
+        description: Organism acts as a vector for transmitting another organism
+        meaning: RO:0002459
+        is_a: BIOTICALLY_INTERACTS_WITH
+      POLLINATES:
+        description: An interaction where an organism transfers pollen to a plant
+        meaning: RO:0002455
+        is_a: BIOTICALLY_INTERACTS_WITH
+      PARTICIPATES_IN_ABIOTIC_BIOTIC_INTERACTION_WITH:
+        title: participates in a abiotic-biotic interaction with
+        description: 'A biotic interaction relationship in which one partner is an organism and the other partner is inorganic.
+          For example, the relationship between a sponge and the substrate to which is it anchored.
+
+          '
+        meaning: RO:0002446
+        is_a: BIOTICALLY_INTERACTS_WITH
+      ECOLOGICALLY_CO_OCCURS_WITH:
+        description: 'An interaction relationship describing organisms that often occur together at the same time and space
+          or in the same environment.
+
+          '
+        meaning: RO:0008506
+        is_a: BIOTICALLY_INTERACTS_WITH
+      HYPERPARASITE_OF:
+        description: x is a hyperparasite of y iff x is a parasite of a parasite of the target organism y
+        meaning: RO:0002553
+        is_a: PARASITE_OF
+      MESOPARASITE_OF:
+        description: 'A sub-relation of parasite-of in which the parasite is partially an endoparasite and partially an ectoparasite.
+
+          '
+        meaning: RO:0002636
+        is_a: PARASITE_OF
+      KLEPTOPARASITE_OF:
+        description: 'A sub-relation of parasite of in which a parasite steals resources from another organism, usually food
+          or nest material.
+
+          '
+        meaning: RO:0008503
+        is_a: PARASITE_OF
+      EPIPHYTE_OF:
+        description: 'An interaction relationship wherein a plant or algae is living on the outside surface of another plant.
+
+          '
+        meaning: RO:0008501
+        is_a: BIOTICALLY_INTERACTS_WITH
+      ALLELOPATH_OF:
+        description: 'A relationship between organisms where one organism is influenced by the biochemicals produced by another.
+          Allelopathy is a phenomenon in which one organism releases chemicals to positively or negatively influence the growth,
+          survival or reproduction of other organisms in its vicinity.
+
+          '
+        meaning: RO:0002555
+        is_a: BIOTICALLY_INTERACTS_WITH
+      VISITS:
+        description: An interaction where an organism visits another organism or location
+        meaning: RO:0002618
+        is_a: BIOTICALLY_INTERACTS_WITH
+      VISITS_FLOWERS_OF:
+        description: An interaction where an organism visits the flowers of a plant
+        meaning: RO:0002622
+        is_a: VISITS
+      HAS_FLOWERS_VISITED_BY:
+        description: Inverse of visits flowers of
+        meaning: RO:0002623
+        is_a: BIOTICALLY_INTERACTS_WITH
+      LAYS_EGGS_IN:
+        description: An interaction where an organism deposits eggs inside another organism
+        meaning: RO:0002624
+        is_a: BIOTICALLY_INTERACTS_WITH
+      HAS_EGGS_LAID_IN_BY:
+        description: Inverse of lays eggs in
+        meaning: RO:0002625
+        is_a: BIOTICALLY_INTERACTS_WITH
+      LAYS_EGGS_ON:
+        description: 'An interaction relationship in which organism a lays eggs on the outside surface of organism b. Organism
+          b is neither helped nor harmed in the process of egg laying or incubation.
+
+          '
+        meaning: RO:0008507
+        is_a: BIOTICALLY_INTERACTS_WITH
+      HAS_EGGS_LAID_ON_BY:
+        description: Inverse of lays eggs on
+        meaning: RO:0008508
+        is_a: BIOTICALLY_INTERACTS_WITH
+      CREATES_HABITAT_FOR:
+        description: 'An interaction relationship wherein one organism creates a structure or environment that is lived in
+          by another organism.
+
+          '
+        meaning: RO:0008505
+        is_a: BIOTICALLY_INTERACTS_WITH

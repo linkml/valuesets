@@ -246,6 +246,63 @@ _ensure_examples_output:  # Ensure a clean examples/output directory exists
   -mkdir -p examples/output
   -rm -rf examples/output/*.*
 
+# ============== Slot Generation Recipes ==============
+
+# Generate slots for a single schema file
+[group('slot generation')]
+gen-slots file:
+  uv run python src/valuesets/generators/smart_slot_syncer.py {{file}} --in-place -v
+
+# Preview slot generation for a single schema file
+[group('slot generation')]
+preview-slots file:
+  uv run python src/valuesets/generators/smart_slot_syncer.py {{file}} --dry-run -v
+
+# Generate slots for ALL schemas in the project
+[group('slot generation')]
+gen-all-slots:
+  uv run python src/valuesets/generators/smart_slot_syncer.py src/valuesets/schema --batch --in-place
+
+# Sync slots for all schemas in the project (alias for gen-all-slots)
+[group('slot generation')]
+sync-all-slots:
+  uv run python src/valuesets/generators/smart_slot_syncer.py src/valuesets/schema --batch --in-place
+
+# Preview slot sync for all schemas
+[group('slot generation')]
+preview-all-slots:
+  uv run python src/valuesets/generators/smart_slot_syncer.py src/valuesets/schema --batch --dry-run
+
+# Generate comprehensive slots file from all enums
+[group('slot generation')]
+gen-slots-file:
+  uv run python src/valuesets/generators/auto_slot_injector.py src/valuesets/schema --mode generate --output src/valuesets/schema/generated_slots.yaml
+
+# Refresh all slots (regenerate from scratch, losing customizations)
+[group('slot generation')]
+refresh-slots file:
+  uv run python src/valuesets/generators/smart_slot_syncer.py {{file}} --in-place --mode refresh -v
+
+# Conservative slot sync (only add new, never modify existing)
+[group('slot generation')]
+conservative-slots file:
+  uv run python src/valuesets/generators/smart_slot_syncer.py {{file}} --in-place --mode conservative -v
+
+# Clean up orphaned slots (remove slots for deleted enums)
+[group('slot generation')]
+cleanup-slots file:
+  uv run python src/valuesets/generators/smart_slot_syncer.py {{file}} --in-place --remove-orphans -v
+
+# Standardize prefixes across all schemas
+[group('slot generation')]
+standardize-prefixes:
+  uv run python src/valuesets/generators/prefix_standardizer.py src/valuesets/schema
+
+# Preview prefix standardization changes
+[group('slot generation')]
+preview-prefix-changes:
+  uv run python src/valuesets/generators/prefix_standardizer.py src/valuesets/schema --dry-run
+
 # ============== Include project-specific recipes ==============
 
 import "python.justfile"

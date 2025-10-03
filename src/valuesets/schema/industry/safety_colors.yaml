@@ -1,20 +1,42 @@
-id: https://w3id.org/valuesets/industry/safety_colors
 name: safety_colors
 title: Safety and Warning Color Value Sets
-description: >
-  Color value sets for safety, warning, and signaling purposes based on
-  international standards like ANSI, ISO, and OSHA.
+description: 'Color value sets for safety, warning, and signaling purposes based on international standards like ANSI, ISO,
+  and OSHA.
 
+  '
+id: https://w3id.org/valuesets/industry/safety_colors
+imports:
+- linkml:types
 prefixes:
   linkml: https://w3id.org/linkml/
   HEX: https://www.color-hex.com/color/
   ISO: https://www.iso.org/standard/
   ANSI: https://www.ansi.org/
   OSHA: https://www.osha.gov/
-
-imports:
-  - linkml:types
-
+  valuesets: https://w3id.org/valuesets/
+default_prefix: valuesets
+slots:
+  safety_color:
+    description: ANSI/ISO standard safety colors
+    range: SafetyColorEnum
+  traffic_light_color:
+    description: Traffic signal colors (international)
+    range: TrafficLightColorEnum
+  hazmat_color:
+    description: Hazardous materials placarding colors (DOT/UN)
+    range: HazmatColorEnum
+  fire_safety_color:
+    description: Fire safety equipment and signage colors
+    range: FireSafetyColorEnum
+  maritime_signal_color:
+    description: Maritime signal and navigation colors
+    range: MaritimeSignalColorEnum
+  aviation_light_color:
+    description: Aviation lighting colors
+    range: AviationLightColorEnum
+  electrical_wire_color:
+    description: Electrical wire color codes (US/International)
+    range: ElectricalWireColorEnum
 enums:
   SafetyColorEnum:
     description: ANSI/ISO standard safety colors
@@ -23,68 +45,67 @@ enums:
         description: Safety red - danger, stop, prohibition
         meaning: HEX:C8102E
         annotations:
-          standard: "ANSI Z535.1"
-          pantone: "PMS 186 C"
-          usage: "fire equipment, stop signs, danger signs"
+          standard: ANSI Z535.1
+          pantone: PMS 186 C
+          usage: fire equipment, stop signs, danger signs
       SAFETY_ORANGE:
         description: Safety orange - warning of dangerous parts
         meaning: HEX:FF6900
         annotations:
-          standard: "ANSI Z535.1"
-          pantone: "PMS 151 C"
-          usage: "machine parts, exposed edges"
+          standard: ANSI Z535.1
+          pantone: PMS 151 C
+          usage: machine parts, exposed edges
       SAFETY_YELLOW:
         description: Safety yellow - caution, physical hazards
         meaning: HEX:F6D04D
         annotations:
-          standard: "ANSI Z535.1"
-          pantone: "PMS 116 C"
-          usage: "caution signs, physical hazards, stumbling"
+          standard: ANSI Z535.1
+          pantone: PMS 116 C
+          usage: caution signs, physical hazards, stumbling
       SAFETY_GREEN:
         description: Safety green - safety, first aid, emergency egress
         meaning: HEX:00843D
         annotations:
-          standard: "ANSI Z535.1"
-          pantone: "PMS 355 C"
-          usage: "first aid, safety equipment, emergency exits"
+          standard: ANSI Z535.1
+          pantone: PMS 355 C
+          usage: first aid, safety equipment, emergency exits
       SAFETY_BLUE:
         description: Safety blue - mandatory, information
         meaning: HEX:005EB8
         annotations:
-          standard: "ANSI Z535.1"
-          pantone: "PMS 285 C"
-          usage: "mandatory signs, information signs"
+          standard: ANSI Z535.1
+          pantone: PMS 285 C
+          usage: mandatory signs, information signs
       SAFETY_PURPLE:
         description: Safety purple - radiation hazards
         meaning: HEX:652D90
         annotations:
-          standard: "ANSI Z535.1"
-          pantone: "PMS 2685 C"
-          usage: "radiation hazards, x-ray equipment"
+          standard: ANSI Z535.1
+          pantone: PMS 2685 C
+          usage: radiation hazards, x-ray equipment
       SAFETY_BLACK:
         description: Safety black - traffic/housekeeping markings
         meaning: HEX:000000
         annotations:
-          standard: "ANSI Z535.1"
-          usage: "traffic control, housekeeping markers"
+          standard: ANSI Z535.1
+          usage: traffic control, housekeeping markers
       SAFETY_WHITE:
         description: Safety white - traffic/housekeeping markings
         meaning: HEX:FFFFFF
         annotations:
-          standard: "ANSI Z535.1"
-          usage: "traffic lanes, housekeeping boundaries"
+          standard: ANSI Z535.1
+          usage: traffic lanes, housekeeping boundaries
       SAFETY_GRAY:
         description: Safety gray - inactive/out of service
         meaning: HEX:919191
         annotations:
-          standard: "ANSI Z535.1"
-          usage: "out of service equipment"
+          standard: ANSI Z535.1
+          usage: out of service equipment
       SAFETY_BROWN:
         description: Safety brown - no special hazard (background)
         meaning: HEX:795548
         annotations:
-          usage: "background color for signs"
-
+          usage: background color for signs
   TrafficLightColorEnum:
     description: Traffic signal colors (international)
     permissible_values:
@@ -92,38 +113,37 @@ enums:
         description: Red - stop
         meaning: HEX:FF0000
         annotations:
-          wavelength: "630-700 nm"
-          meaning_universal: "stop, do not proceed"
+          wavelength: 630-700 nm
+          meaning_universal: stop, do not proceed
       AMBER:
         description: Amber/yellow - caution
         meaning: HEX:FFBF00
         annotations:
-          wavelength: "590 nm"
-          meaning_universal: "prepare to stop, caution"
+          wavelength: 590 nm
+          meaning_universal: prepare to stop, caution
       GREEN:
         description: Green - go
         meaning: HEX:00FF00
         annotations:
-          wavelength: "510-570 nm"
-          meaning_universal: "proceed, safe to go"
+          wavelength: 510-570 nm
+          meaning_universal: proceed, safe to go
       FLASHING_RED:
         description: Flashing red - stop then proceed
         meaning: HEX:FF0000
         annotations:
-          pattern: "flashing"
-          meaning_universal: "stop, then proceed when safe"
+          pattern: flashing
+          meaning_universal: stop, then proceed when safe
       FLASHING_AMBER:
         description: Flashing amber - proceed with caution
         meaning: HEX:FFBF00
         annotations:
-          pattern: "flashing"
-          meaning_universal: "proceed with caution"
+          pattern: flashing
+          meaning_universal: proceed with caution
       WHITE:
         description: White - special situations (transit)
         meaning: HEX:FFFFFF
         annotations:
-          usage: "transit priority signals"
-
+          usage: transit priority signals
   HazmatColorEnum:
     description: Hazardous materials placarding colors (DOT/UN)
     permissible_values:
@@ -131,51 +151,50 @@ enums:
         description: Orange - explosives (Class 1)
         meaning: HEX:FF6600
         annotations:
-          class: "1"
-          hazard: "explosives"
+          class: '1'
+          hazard: explosives
       RED:
         description: Red - flammable (Classes 2.1, 3)
         meaning: HEX:FF0000
         annotations:
-          class: "2.1, 3"
-          hazard: "flammable gas, flammable liquid"
+          class: 2.1, 3
+          hazard: flammable gas, flammable liquid
       GREEN:
         description: Green - non-flammable gas (Class 2.2)
         meaning: HEX:00FF00
         annotations:
-          class: "2.2"
-          hazard: "non-flammable gas"
+          class: '2.2'
+          hazard: non-flammable gas
       YELLOW:
         description: Yellow - oxidizer, organic peroxide (Classes 5.1, 5.2)
         meaning: HEX:FFFF00
         annotations:
-          class: "5.1, 5.2"
-          hazard: "oxidizing substances, organic peroxides"
+          class: 5.1, 5.2
+          hazard: oxidizing substances, organic peroxides
       WHITE:
         description: White - poison/toxic (Class 6.1)
         meaning: HEX:FFFFFF
         annotations:
-          class: "6.1"
-          hazard: "toxic/poisonous substances"
+          class: '6.1'
+          hazard: toxic/poisonous substances
       BLACK_WHITE_STRIPES:
         description: Black and white stripes - corrosive (Class 8)
         annotations:
-          class: "8"
-          hazard: "corrosive substances"
-          pattern: "black and white vertical stripes"
+          class: '8'
+          hazard: corrosive substances
+          pattern: black and white vertical stripes
       BLUE:
         description: Blue - dangerous when wet (Class 4.3)
         meaning: HEX:0000FF
         annotations:
-          class: "4.3"
-          hazard: "dangerous when wet"
+          class: '4.3'
+          hazard: dangerous when wet
       WHITE_RED_STRIPES:
         description: White with red stripes - flammable solid (Class 4.1)
         annotations:
-          class: "4.1"
-          hazard: "flammable solid"
-          pattern: "white with red vertical stripes"
-
+          class: '4.1'
+          hazard: flammable solid
+          pattern: white with red vertical stripes
   FireSafetyColorEnum:
     description: Fire safety equipment and signage colors
     permissible_values:
@@ -183,30 +202,29 @@ enums:
         description: Fire red - fire equipment
         meaning: HEX:C8102E
         annotations:
-          usage: "fire extinguishers, alarms, hose reels"
-          standard: "ISO 7010"
+          usage: fire extinguishers, alarms, hose reels
+          standard: ISO 7010
       PHOTOLUMINESCENT_GREEN:
         description: Photoluminescent green - emergency escape
         meaning: HEX:7FFF00
         annotations:
-          usage: "emergency exit signs, escape routes"
-          property: "glows in dark"
+          usage: emergency exit signs, escape routes
+          property: glows in dark
       YELLOW_BLACK_STRIPES:
         description: Yellow with black stripes - fire hazard area
         annotations:
-          pattern: "diagonal stripes"
-          usage: "fire hazard zones"
+          pattern: diagonal stripes
+          usage: fire hazard zones
       WHITE:
         description: White - fire protection water
         meaning: HEX:FFFFFF
         annotations:
-          usage: "water for fire protection"
+          usage: water for fire protection
       BLUE:
         description: Blue - mandatory fire safety
         meaning: HEX:005EB8
         annotations:
-          usage: "mandatory fire safety equipment"
-
+          usage: mandatory fire safety equipment
   MaritimeSignalColorEnum:
     description: Maritime signal and navigation colors
     permissible_values:
@@ -214,41 +232,40 @@ enums:
         description: Port (left) red light
         meaning: HEX:FF0000
         annotations:
-          side: "port (left)"
-          wavelength: "625-740 nm"
+          side: port (left)
+          wavelength: 625-740 nm
       STARBOARD_GREEN:
         description: Starboard (right) green light
         meaning: HEX:00FF00
         annotations:
-          side: "starboard (right)"
-          wavelength: "500-565 nm"
+          side: starboard (right)
+          wavelength: 500-565 nm
       STERN_WHITE:
         description: Stern white light
         meaning: HEX:FFFFFF
         annotations:
-          position: "stern (rear)"
+          position: stern (rear)
       MASTHEAD_WHITE:
         description: Masthead white light
         meaning: HEX:FFFFFF
         annotations:
-          position: "masthead (forward)"
+          position: masthead (forward)
       ALL_ROUND_WHITE:
         description: All-round white light
         meaning: HEX:FFFFFF
         annotations:
-          visibility: "360 degrees"
+          visibility: 360 degrees
       YELLOW_TOWING:
         description: Yellow towing light
         meaning: HEX:FFFF00
         annotations:
-          usage: "vessel towing"
+          usage: vessel towing
       BLUE_FLASHING:
         description: Blue flashing light
         meaning: HEX:0000FF
         annotations:
-          usage: "law enforcement vessels"
-          pattern: "flashing"
-
+          usage: law enforcement vessels
+          pattern: flashing
   AviationLightColorEnum:
     description: Aviation lighting colors
     permissible_values:
@@ -256,50 +273,49 @@ enums:
         description: Red obstruction light
         meaning: HEX:FF0000
         annotations:
-          usage: "obstruction marking"
-          intensity: "high intensity"
+          usage: obstruction marking
+          intensity: high intensity
       WHITE_STROBE:
         description: White anti-collision strobe
         meaning: HEX:FFFFFF
         annotations:
-          usage: "anti-collision"
-          pattern: "strobe"
+          usage: anti-collision
+          pattern: strobe
       GREEN_NAVIGATION:
         description: Green navigation light (right wing)
         meaning: HEX:00FF00
         annotations:
-          position: "right wing tip"
+          position: right wing tip
       RED_NAVIGATION:
         description: Red navigation light (left wing)
         meaning: HEX:FF0000
         annotations:
-          position: "left wing tip"
+          position: left wing tip
       WHITE_NAVIGATION:
         description: White navigation light (tail)
         meaning: HEX:FFFFFF
         annotations:
-          position: "tail"
+          position: tail
       BLUE_TAXIWAY:
         description: Blue taxiway edge lights
         meaning: HEX:0000FF
         annotations:
-          usage: "taxiway edges"
+          usage: taxiway edges
       YELLOW_RUNWAY:
         description: Yellow runway markings
         meaning: HEX:FFFF00
         annotations:
-          usage: "runway centerline, hold positions"
+          usage: runway centerline, hold positions
       GREEN_THRESHOLD:
         description: Green runway threshold lights
         meaning: HEX:00FF00
         annotations:
-          usage: "runway threshold"
+          usage: runway threshold
       RED_RUNWAY_END:
         description: Red runway end lights
         meaning: HEX:FF0000
         annotations:
-          usage: "runway end"
-
+          usage: runway end
   ElectricalWireColorEnum:
     description: Electrical wire color codes (US/International)
     permissible_values:
@@ -307,53 +323,53 @@ enums:
         description: Black - hot/live wire (US)
         meaning: HEX:000000
         annotations:
-          voltage: "120/240V"
-          region: "North America"
+          voltage: 120/240V
+          region: North America
       RED_HOT:
         description: Red - hot/live wire (US secondary)
         meaning: HEX:FF0000
         annotations:
-          voltage: "120/240V"
-          region: "North America"
+          voltage: 120/240V
+          region: North America
       BLUE_HOT:
         description: Blue - hot/live wire (US tertiary)
         meaning: HEX:0000FF
         annotations:
-          voltage: "120/240V"
-          region: "North America"
+          voltage: 120/240V
+          region: North America
       WHITE_NEUTRAL:
         description: White - neutral wire (US)
         meaning: HEX:FFFFFF
         annotations:
-          function: "neutral"
-          region: "North America"
+          function: neutral
+          region: North America
       GREEN_GROUND:
         description: Green - ground/earth wire
         meaning: HEX:00FF00
         annotations:
-          function: "ground/earth"
-          region: "universal"
+          function: ground/earth
+          region: universal
       GREEN_YELLOW_GROUND:
         description: Green with yellow stripe - ground/earth (International)
         annotations:
-          function: "ground/earth"
-          region: "IEC standard"
-          pattern: "green with yellow stripe"
+          function: ground/earth
+          region: IEC standard
+          pattern: green with yellow stripe
       BROWN_LIVE:
         description: Brown - live wire (EU/IEC)
         meaning: HEX:964B00
         annotations:
-          voltage: "230V"
-          region: "Europe/IEC"
+          voltage: 230V
+          region: Europe/IEC
       BLUE_NEUTRAL:
         description: Blue - neutral wire (EU/IEC)
         meaning: HEX:0000FF
         annotations:
-          function: "neutral"
-          region: "Europe/IEC"
+          function: neutral
+          region: Europe/IEC
       GRAY_NEUTRAL:
         description: Gray - neutral wire (alternative)
         meaning: HEX:808080
         annotations:
-          function: "neutral"
-          region: "some installations"
+          function: neutral
+          region: some installations

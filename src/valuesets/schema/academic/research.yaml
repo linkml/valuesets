@@ -1,12 +1,11 @@
----
-id: https://w3id.org/linkml/valuesets/academic/research
 name: research
 title: Academic and Research Value Sets
-description: |-
-  Value sets for academic publishing, research, and scholarly communication
-
+description: Value sets for academic publishing, research, and scholarly communication
+id: https://w3id.org/linkml/valuesets/academic/research
+imports:
+- linkml:types
 prefixes:
-  valuesets: https://w3id.org/linkml/valuesets/
+  valuesets: https://w3id.org/valuesets/
   DCMITYPE: http://purl.org/dc/dcmitype/
   FABIO: http://purl.org/spar/fabio/
   SPDX: https://spdx.org/licenses/
@@ -17,752 +16,592 @@ prefixes:
   SIO: http://semanticscience.org/resource/SIO_
   CRediT: https://credit.niso.org/contributor-roles/
   MS: http://purl.obolibrary.org/obo/MS_
-
 default_prefix: valuesets
-
-imports:
-  - linkml:types
-
+slots:
+  publication:
+    description: Types of academic and research publications
+    range: PublicationType
+  peer_review_status:
+    description: Status of peer review process
+    range: PeerReviewStatus
+  academic_degree:
+    description: Academic degrees and qualifications
+    range: AcademicDegree
+  license:
+    description: Common software and content licenses
+    range: LicenseType
+  research_field:
+    description: Major research fields and disciplines
+    range: ResearchField
+  funding:
+    description: Types of research funding
+    range: FundingType
+  manuscript_section:
+    description: Sections of a scientific manuscript or publication
+    range: ManuscriptSection
+  research_role:
+    description: Roles in research and authorship
+    range: ResearchRole
+  open_access:
+    description: Types of open access publishing
+    range: OpenAccessType
+  citation_style:
+    description: Common citation and reference styles
+    range: CitationStyle
 enums:
-
   PublicationType:
     title: Publication Type
-    description: |-
-      Types of academic and research publications
+    description: Types of academic and research publications
     permissible_values:
-
-      # Journal Publications
       JOURNAL_ARTICLE:
         description: Peer-reviewed journal article
         meaning: FABIO:JournalArticle
         exact_mappings:
-          - IAO:0000013  # journal article
-
+        - IAO:0000013
       REVIEW_ARTICLE:
         description: Review article synthesizing existing research
         meaning: FABIO:ReviewArticle
         close_mappings:
-          - IAO:0000013  # journal article (broader)
-
+        - IAO:0000013
       RESEARCH_ARTICLE:
         description: Original research article
         meaning: FABIO:ResearchPaper
         close_mappings:
-          - IAO:0000312  # publication about an investigation
-
+        - IAO:0000312
       SHORT_COMMUNICATION:
         description: Brief communication or short report
         meaning: FABIO:BriefCommunication
         close_mappings:
-          - IAO:0000088  # report
-
+        - IAO:0000088
       EDITORIAL:
         description: Editorial or opinion piece
         meaning: FABIO:Editorial
-
       LETTER:
         description: Letter to the editor
         meaning: FABIO:Letter
-
       COMMENTARY:
         description: Commentary on existing work
         meaning: FABIO:Comment
-
       PERSPECTIVE:
         description: Perspective or viewpoint article
         meaning: FABIO:Comment
-
       CASE_REPORT:
         description: Clinical or scientific case report
         meaning: FABIO:CaseReport
         close_mappings:
-          - IAO:0000088  # report
-          - IAO:0000613  # case report section
-
+        - IAO:0000088
+        - IAO:0000613
       TECHNICAL_NOTE:
         description: Technical or methodological note
         meaning: FABIO:BriefCommunication
-
-      # Books and Chapters
       BOOK:
         description: Complete book or monograph
         meaning: FABIO:Book
         close_mappings:
-          - IAO:0000310  # document
-
+        - IAO:0000310
       BOOK_CHAPTER:
         description: Chapter in an edited book
         meaning: FABIO:BookChapter
-
       EDITED_BOOK:
         description: Edited collection or anthology
         meaning: FABIO:EditedBook
-
       REFERENCE_BOOK:
         description: Reference work or encyclopedia
         meaning: FABIO:ReferenceBook
-
       TEXTBOOK:
         description: Educational textbook
         meaning: FABIO:Textbook
-
-      # Conference Materials
       CONFERENCE_PAPER:
         description: Full conference paper
         meaning: FABIO:ConferencePaper
-
       CONFERENCE_ABSTRACT:
         description: Conference abstract
         meaning: FABIO:ConferenceAbstract
-
       CONFERENCE_POSTER:
         description: Conference poster
         meaning: FABIO:ConferencePoster
-
       CONFERENCE_PROCEEDINGS:
         description: Complete conference proceedings
         meaning: FABIO:ConferenceProceedings
-
-      # Theses and Dissertations
       PHD_THESIS:
         description: Doctoral dissertation
         meaning: FABIO:DoctoralThesis
-
       MASTERS_THESIS:
         description: Master's thesis
         meaning: FABIO:MastersThesis
-
       BACHELORS_THESIS:
         description: Bachelor's or undergraduate thesis
         meaning: FABIO:BachelorsThesis
-
-      # Reports and Working Papers
       TECHNICAL_REPORT:
         description: Technical or research report
         meaning: FABIO:TechnicalReport
         exact_mappings:
-          - IAO:0000088  # report
-
+        - IAO:0000088
       WORKING_PAPER:
         description: Working paper or discussion paper
         meaning: FABIO:WorkingPaper
         close_mappings:
-          - IAO:0000445  # document in preparation for publication
-
+        - IAO:0000445
       WHITE_PAPER:
         description: White paper or position paper
         meaning: FABIO:WhitePaper
-
       POLICY_BRIEF:
         description: Policy brief or recommendation
         meaning: FABIO:PolicyBrief
         exact_mappings:
-          - IAO:0000088  # report
-
-      # Data and Software
+        - IAO:0000088
       DATASET:
         description: Research dataset
         meaning: DCMITYPE:Dataset
-
       SOFTWARE:
         description: Research software or code
         meaning: DCMITYPE:Software
-
       DATA_PAPER:
         description: Data descriptor or data paper
         meaning: FABIO:DataPaper
-
       SOFTWARE_PAPER:
         description: Software or tools paper
         meaning: FABIO:ResearchPaper
-
       PROTOCOL:
         description: Research protocol or methodology
         meaning: FABIO:Protocol
-
-      # Preprints and Versions
       PREPRINT:
         description: Preprint or unrefereed manuscript
         meaning: FABIO:Preprint
-
       POSTPRINT:
         description: Accepted manuscript after peer review
         meaning: FABIO:Preprint
-
       PUBLISHED_VERSION:
         title: publication
         description: Final published version
         meaning: IAO:0000311
         exact_mappings:
-          - FABIO:PublishedVersion
-
-      # Other Types
+        - FABIO:PublishedVersion
       PATENT:
         description: Patent or patent application
         meaning: FABIO:Patent
         exact_mappings:
-          - IAO:0000313  # patent
-
+        - IAO:0000313
       STANDARD:
         description: Technical standard or specification
         meaning: FABIO:Standard
         close_mappings:
-          - IAO:0000104  # plan specification
-
+        - IAO:0000104
       BLOG_POST:
         description: Academic blog post
         meaning: FABIO:BlogPost
-
       PRESENTATION:
         description: Presentation slides or talk
         meaning: FABIO:Presentation
-
       LECTURE:
         description: Lecture or educational material
         meaning: FABIO:Presentation
-
       ANNOTATION:
         description: Annotation or scholarly note
         meaning: FABIO:Annotation
-
   PeerReviewStatus:
-    description: |-
-      Status of peer review process
+    description: Status of peer review process
     permissible_values:
-
       NOT_PEER_REVIEWED:
         description: Not peer reviewed
-
       SUBMITTED:
         description: Submitted for review
-
       UNDER_REVIEW:
         title: ongoing
         description: Currently under peer review
         meaning: SIO:000035
-
       REVIEW_COMPLETE:
         title: completed
         description: Peer review complete
         meaning: SIO:000034
-
       MAJOR_REVISION:
         description: Major revisions requested
-
       MINOR_REVISION:
         description: Minor revisions requested
-
       ACCEPTED:
         description: Accepted for publication
-
       ACCEPTED_WITH_REVISIONS:
         description: Conditionally accepted pending revisions
-
       REJECTED:
         description: Rejected after review
-
       WITHDRAWN:
         description: Withdrawn by authors
-
       PUBLISHED:
         title: publication
         description: Published after review
         meaning: IAO:0000311
-
   AcademicDegree:
-    description: |-
-      Academic degrees and qualifications
+    description: Academic degrees and qualifications
     permissible_values:
-
-      # Undergraduate
       BA:
         title: Bachelor of Arts
         meaning: NCIT:C71345
         annotations:
           level: undergraduate
-
       BS:
         description: Bachelor of Science
         meaning: NCIT:C71351
         annotations:
           level: undergraduate
         aliases:
-          - Bachelor of Science
-
+        - Bachelor of Science
       BSC:
         description: Bachelor of Science (British)
         meaning: NCIT:C71351
         annotations:
           level: undergraduate
         aliases:
-          - Bachelor of Science
-
+        - Bachelor of Science
       BENG:
         description: Bachelor of Engineering
         meaning: NCIT:C71347
         annotations:
           level: undergraduate
         aliases:
-          - Bachelor of Engineering
-
+        - Bachelor of Engineering
       BFA:
         description: Bachelor of Fine Arts
         meaning: NCIT:C71349
         annotations:
           level: undergraduate
         aliases:
-          - Bachelor of Fine Arts
-
+        - Bachelor of Fine Arts
       LLB:
         description: Bachelor of Laws
         meaning: NCIT:C71352
         annotations:
           level: undergraduate
         aliases:
-          - Bachelor of Science in Law
-
+        - Bachelor of Science in Law
       MBBS:
         description: Bachelor of Medicine, Bachelor of Surgery
         meaning: NCIT:C39383
         annotations:
           level: undergraduate
         aliases:
-          - Doctor of Medicine
-
-      # Graduate - Master's
+        - Doctor of Medicine
       MA:
         description: Master of Arts
         meaning: NCIT:C71364
         annotations:
           level: graduate
         aliases:
-          - Master of Arts
-
+        - Master of Arts
       MS:
         description: Master of Science
         meaning: NCIT:C39452
         annotations:
           level: graduate
         aliases:
-          - Master of Science
-
+        - Master of Science
       MSC:
         description: Master of Science (British)
         meaning: NCIT:C39452
         annotations:
           level: graduate
         aliases:
-          - Master of Science
-
+        - Master of Science
       MBA:
         description: Master of Business Administration
         meaning: NCIT:C39449
         aliases:
-          - Master of Business Administration
+        - Master of Business Administration
         annotations:
           level: graduate
-
       MFA:
         description: Master of Fine Arts
         annotations:
           level: graduate
-
       MPH:
         description: Master of Public Health
         meaning: NCIT:C39451
         annotations:
           level: graduate
         aliases:
-          - Master of Public Health
-
+        - Master of Public Health
       MENG:
         description: Master of Engineering
         meaning: NCIT:C71368
         annotations:
           level: graduate
         aliases:
-          - Master of Engineering
-
+        - Master of Engineering
       MED:
         description: Master of Education
         meaning: NCIT:C71369
         annotations:
           level: graduate
         aliases:
-          - Master of Education
-
+        - Master of Education
       LLM:
         description: Master of Laws
         meaning: NCIT:C71363
         annotations:
           level: graduate
         aliases:
-          - Master of Law
-
+        - Master of Law
       MPHIL:
         description: Master of Philosophy
         annotations:
           level: graduate
-
-      # Doctoral
       PHD:
         description: Doctor of Philosophy
         meaning: NCIT:C39387
         annotations:
           level: doctoral
         aliases:
-          - Doctor of Philosophy
-
+        - Doctor of Philosophy
       MD:
         description: Doctor of Medicine
         meaning: NCIT:C39383
         annotations:
           level: doctoral
         aliases:
-          - Doctor of Medicine
-
+        - Doctor of Medicine
       JD:
         description: Juris Doctor
         meaning: NCIT:C71361
         annotations:
           level: doctoral
         aliases:
-          - Doctor of Law
-
+        - Doctor of Law
       EDD:
         description: Doctor of Education
         meaning: NCIT:C71359
         annotations:
           level: doctoral
         aliases:
-          - Doctor of Education
-
+        - Doctor of Education
       PSYD:
         description: Doctor of Psychology
         annotations:
           level: doctoral
-
       DBA:
         description: Doctor of Business Administration
         annotations:
           level: doctoral
-
       DPHIL:
         description: Doctor of Philosophy (Oxford/Sussex)
         meaning: NCIT:C39387
         annotations:
           level: doctoral
         aliases:
-          - Doctor of Philosophy
-
+        - Doctor of Philosophy
       SCD:
         description: Doctor of Science
         meaning: NCIT:C71379
         annotations:
           level: doctoral
         aliases:
-          - Doctor of Science
-
-      # Professional
+        - Doctor of Science
       POSTDOC:
         description: Postdoctoral researcher
         annotations:
           level: postdoctoral
-
   LicenseType:
-    description: |-
-      Common software and content licenses
+    description: Common software and content licenses
     permissible_values:
-
-      # Permissive Open Source
       MIT:
         description: MIT License
         meaning: SPDX:MIT
-
       APACHE_2_0:
         description: Apache License 2.0
         meaning: SPDX:Apache-2.0
-
       BSD_3_CLAUSE:
         description: BSD 3-Clause License
         meaning: SPDX:BSD-3-Clause
-
       BSD_2_CLAUSE:
         description: BSD 2-Clause License
         meaning: SPDX:BSD-2-Clause
-
       ISC:
         description: ISC License
         meaning: SPDX:ISC
-
-      # Copyleft
       GPL_3_0:
         description: GNU General Public License v3.0
         meaning: SPDX:GPL-3.0
-
       GPL_2_0:
         description: GNU General Public License v2.0
         meaning: SPDX:GPL-2.0
-
       LGPL_3_0:
         description: GNU Lesser General Public License v3.0
         meaning: SPDX:LGPL-3.0
-
       LGPL_2_1:
         description: GNU Lesser General Public License v2.1
         meaning: SPDX:LGPL-2.1
-
       AGPL_3_0:
         description: GNU Affero General Public License v3.0
         meaning: SPDX:AGPL-3.0
-
       MPL_2_0:
         description: Mozilla Public License 2.0
         meaning: SPDX:MPL-2.0
-
-      # Creative Commons
       CC_BY_4_0:
         description: Creative Commons Attribution 4.0
         meaning: SPDX:CC-BY-4.0
-
       CC_BY_SA_4_0:
         description: Creative Commons Attribution-ShareAlike 4.0
         meaning: SPDX:CC-BY-SA-4.0
-
       CC_BY_NC_4_0:
         description: Creative Commons Attribution-NonCommercial 4.0
         meaning: SPDX:CC-BY-NC-4.0
-
       CC_BY_NC_SA_4_0:
         description: Creative Commons Attribution-NonCommercial-ShareAlike 4.0
         meaning: SPDX:CC-BY-NC-SA-4.0
-
       CC_BY_ND_4_0:
         description: Creative Commons Attribution-NoDerivatives 4.0
         meaning: SPDX:CC-BY-ND-4.0
-
       CC0_1_0:
         description: Creative Commons Zero v1.0 Universal
         meaning: SPDX:CC0-1.0
-
-      # Other
       UNLICENSE:
         description: The Unlicense
         meaning: SPDX:Unlicense
-
       PROPRIETARY:
         description: Proprietary/All rights reserved
-
       CUSTOM:
         description: Custom license terms
-
   ResearchField:
-    description: |-
-      Major research fields and disciplines
+    description: Major research fields and disciplines
     permissible_values:
-
-      # Natural Sciences
       PHYSICS:
         description: Physics
         meaning: NCIT:C16989
-
       CHEMISTRY:
         description: Chemistry
         meaning: NCIT:C16414
-
       BIOLOGY:
         description: Biology
         meaning: NCIT:C16345
-
       MATHEMATICS:
         description: Mathematics
         meaning: NCIT:C16825
-
       EARTH_SCIENCES:
         description: Earth sciences and geology
-
       ASTRONOMY:
         description: Astronomy and astrophysics
-
-      # Life Sciences
       MEDICINE:
         description: Medicine and health sciences
         meaning: NCIT:C16833
-
       NEUROSCIENCE:
         title: Neuroscience and Neuropsychiatric Research
         description: Neuroscience
         meaning: NCIT:C15817
-
       GENETICS:
         description: Genetics and genomics
         meaning: NCIT:C16624
-
       ECOLOGY:
         title: Ecology
         description: Ecology and environmental science
         meaning: NCIT:C16526
-
       MICROBIOLOGY:
         title: Microbiology
         meaning: NCIT:C16851
-
       BIOCHEMISTRY:
         title: Biochemistry
         meaning: NCIT:C16337
-
-      # Engineering and Technology
       COMPUTER_SCIENCE:
         description: Computer science
-
       ENGINEERING:
         description: Engineering
-
       MATERIALS_SCIENCE:
         description: Materials science
-
       ARTIFICIAL_INTELLIGENCE:
         description: Artificial intelligence and machine learning
-
       ROBOTICS:
         description: Robotics
-
-      # Social Sciences
       PSYCHOLOGY:
         description: Psychology
-
       SOCIOLOGY:
         description: Sociology
-
       ECONOMICS:
         description: Economics
-
       POLITICAL_SCIENCE:
         description: Political science
-
       ANTHROPOLOGY:
         description: Anthropology
-
       EDUCATION:
         description: Education
-
-      # Humanities
       HISTORY:
         description: History
-
       PHILOSOPHY:
         description: Philosophy
-
       LITERATURE:
         description: Literature
-
       LINGUISTICS:
         description: Linguistics
-
       ART:
         description: Art and art history
-
       MUSIC:
         description: Music and musicology
-
-      # Interdisciplinary
       BIOINFORMATICS:
         description: Bioinformatics
-
       COMPUTATIONAL_BIOLOGY:
         description: Computational biology
-
       DATA_SCIENCE:
         description: Data science
-
       COGNITIVE_SCIENCE:
         description: Cognitive science
-
       ENVIRONMENTAL_SCIENCE:
         description: Environmental science
-
       PUBLIC_HEALTH:
         description: Public health
-
   FundingType:
-    description: |-
-      Types of research funding
+    description: Types of research funding
     permissible_values:
-
       GRANT:
         description: Research grant
-
       CONTRACT:
         description: Research contract
-
       FELLOWSHIP:
         title: Fellowship Program
         description: Fellowship or scholarship
         meaning: NCIT:C20003
-
       AWARD:
         description: Prize or award
-
       GIFT:
         description: Gift or donation
-
       INTERNAL:
         description: Internal/institutional funding
-
       INDUSTRY:
         description: Industry sponsorship
-
       GOVERNMENT:
         description: Government funding
-
       FOUNDATION:
         description: Foundation or charity funding
-
       CROWDFUNDING:
         description: Crowdfunded research
-
   ManuscriptSection:
-    description: |-
-      Sections of a scientific manuscript or publication
+    description: Sections of a scientific manuscript or publication
     permissible_values:
-
-      # Front Matter
       TITLE:
         title: document title
         meaning: IAO:0000305
         annotations:
           order: 1
-
       AUTHORS:
         title: author list
         description: Authors and affiliations
         meaning: IAO:0000321
         annotations:
           order: 2
-
       ABSTRACT:
         description: Abstract
-        meaning: IAO:0000315  # abstract
+        meaning: IAO:0000315
         annotations:
           order: 3
           typical_length: 150-300 words
-
       KEYWORDS:
         title: keywords section
         meaning: IAO:0000630
         annotations:
           order: 4
-
-      # Main Text
       INTRODUCTION:
         title: introduction to a publication about an investigation
         description: Introduction/Background
         meaning: IAO:0000316
         aliases:
-          - Background
+        - Background
         annotations:
           order: 5
-
       LITERATURE_REVIEW:
         title: related work section
         description: Literature review
@@ -770,89 +609,77 @@ enums:
         annotations:
           order: 6
           optional: true
-
       METHODS:
         title: methods section
         description: Methods/Materials and Methods
         meaning: IAO:0000317
         aliases:
-          - Materials and Methods
-          - Methodology
-          - Experimental
+        - Materials and Methods
+        - Methodology
+        - Experimental
         annotations:
           order: 7
-
       RESULTS:
         title: results section
         meaning: IAO:0000318
         aliases:
-          - Findings
+        - Findings
         annotations:
           order: 8
-
       DISCUSSION:
         title: discussion section of a publication about an investigation
         meaning: IAO:0000319
         annotations:
           order: 9
-
       CONCLUSIONS:
         title: conclusion section
         description: Conclusions
         meaning: IAO:0000615
         aliases:
-          - Conclusion
+        - Conclusion
         annotations:
           order: 10
-
       RESULTS_AND_DISCUSSION:
         description: Combined Results and Discussion
         annotations:
           order: 8
           note: alternative to separate sections
-
-      # Back Matter
       ACKNOWLEDGMENTS:
         title: acknowledgements section
         description: Acknowledgments
         meaning: IAO:0000324
         aliases:
-          - Acknowledgements
+        - Acknowledgements
         annotations:
           order: 11
-
       REFERENCES:
         title: references section
         description: References/Bibliography
         meaning: IAO:0000320
         aliases:
-          - Bibliography
-          - Literature Cited
-          - Works Cited
+        - Bibliography
+        - Literature Cited
+        - Works Cited
         annotations:
           order: 12
-
       APPENDICES:
         title: supplementary material to a document
         description: Appendices
         meaning: IAO:0000326
         aliases:
-          - Appendix
+        - Appendix
         annotations:
           order: 13
-
       SUPPLEMENTARY_MATERIAL:
         title: supplementary material to a document
         description: Supplementary material
         meaning: IAO:0000326
         aliases:
-          - Supporting Information
-          - Supplemental Data
+        - Supporting Information
+        - Supplemental Data
         annotations:
           order: 14
           location: often online-only
-
-      # Special Sections
       DATA_AVAILABILITY:
         title: availability section
         description: Data availability statement
@@ -860,86 +687,71 @@ enums:
         annotations:
           order: 11.1
           required_by: many journals
-
       CODE_AVAILABILITY:
         title: availability section
         description: Code availability statement
         meaning: IAO:0000611
         annotations:
           order: 11.2
-
       AUTHOR_CONTRIBUTIONS:
         title: author contributions section
         description: Author contributions
         meaning: IAO:0000323
         aliases:
-          - CRediT statement
+        - CRediT statement
         annotations:
           order: 11.3
-
       CONFLICT_OF_INTEREST:
         title: conflict of interest section
         description: Conflict of interest statement
         meaning: IAO:0000616
         aliases:
-          - Competing Interests
-          - Declaration of Interests
+        - Competing Interests
+        - Declaration of Interests
         annotations:
           order: 11.4
-
       FUNDING:
         title: funding source declaration section
         description: Funding information
         meaning: IAO:0000623
         aliases:
-          - Financial Support
-          - Grant Information
+        - Financial Support
+        - Grant Information
         annotations:
           order: 11.5
-
       ETHICS_STATEMENT:
         title: ethical approval section
         description: Ethics approval statement
         meaning: IAO:0000620
         annotations:
           order: 11.6
-
-      # Review-specific
       SYSTEMATIC_REVIEW_METHODS:
         description: Systematic review methodology (PRISMA)
         annotations:
           specific_to: systematic reviews
-
       META_ANALYSIS:
         description: Meta-analysis section
         annotations:
           specific_to: meta-analyses
-
-      # Clinical Trial-specific
       STUDY_PROTOCOL:
         description: Study protocol
         annotations:
           specific_to: clinical trials
-
       CONSORT_FLOW_DIAGRAM:
         description: CONSORT flow diagram
         annotations:
           specific_to: randomized trials
-
-      # Other
       HIGHLIGHTS:
         description: Highlights/Key points
         annotations:
           order: 3.5
           typical_length: 3-5 bullet points
-
       GRAPHICAL_ABSTRACT:
         description: Graphical abstract
-        meaning: IAO:0000707  # graphical abstract
+        meaning: IAO:0000707
         annotations:
           order: 3.6
           format: visual
-
       LAY_SUMMARY:
         title: author summary section
         description: Lay summary/Plain language summary
@@ -947,208 +759,153 @@ enums:
         annotations:
           order: 3.7
           audience: general public
-
       BOX:
         description: Box/Sidebar with supplementary information
         annotations:
           placement: variable
-
       CASE_PRESENTATION:
         title: case report section
         description: Case presentation (for case reports)
         meaning: IAO:0000613
         annotations:
           specific_to: case reports
-
       LIMITATIONS:
         title: study limitations section
         description: Limitations section
         meaning: IAO:0000631
         annotations:
           often_part_of: Discussion
-
       FUTURE_DIRECTIONS:
         title: future directions section
         description: Future directions/Future work
         meaning: IAO:0000625
         annotations:
           often_part_of: Discussion or Conclusions
-
       GLOSSARY:
         description: Glossary of terms
         annotations:
           placement: front or back matter
-
       ABBREVIATIONS:
         title: abbreviations section
         description: List of abbreviations
         meaning: IAO:0000606
         annotations:
           placement: front matter
-
       OTHER_MAIN_TEXT:
         description: Other main text section
         annotations:
           catch_all: true
-
       OTHER_SUPPLEMENTARY:
         description: Other supplementary section
         annotations:
           catch_all: true
-
   ResearchRole:
-    description: |-
-      Roles in research and authorship
+    description: Roles in research and authorship
     permissible_values:
-
-      # CRediT Taxonomy Roles
       CONCEPTUALIZATION:
         description: Ideas; formulation of research goals
         meaning: CRediT:conceptualization
-
       DATA_CURATION:
         description: Data management and annotation
         meaning: CRediT:data-curation
-
       FORMAL_ANALYSIS:
         description: Statistical and mathematical analysis
         meaning: CRediT:formal-analysis
-
       FUNDING_ACQUISITION:
         description: Acquisition of financial support
         meaning: CRediT:funding-acquisition
-
       INVESTIGATION:
         description: Conducting research and data collection
         meaning: CRediT:investigation
-
       METHODOLOGY:
         description: Development of methodology
         meaning: CRediT:methodology
-
       PROJECT_ADMINISTRATION:
         description: Project management and coordination
         meaning: CRediT:project-administration
-
       RESOURCES:
         description: Provision of materials and tools
         meaning: CRediT:resources
-
       SOFTWARE:
         description: Programming and software development
         meaning: CRediT:software
-
       SUPERVISION:
         description: Oversight and mentorship
         meaning: CRediT:supervision
-
       VALIDATION:
         description: Verification of results
         meaning: CRediT:validation
-
       VISUALIZATION:
         description: Data presentation and visualization
         meaning: CRediT:visualization
-
       WRITING_ORIGINAL:
         description: Writing - original draft
         meaning: CRediT:writing-original-draft
-
       WRITING_REVIEW:
         description: Writing - review and editing
         meaning: CRediT:writing-review-editing
-
-      # Traditional Roles
       FIRST_AUTHOR:
         description: First/lead author
         meaning: MS:1002034
-
       CORRESPONDING_AUTHOR:
         title: Corresponding Author indicator
         meaning: NCIT:C164481
-
       SENIOR_AUTHOR:
         description: Senior/last author
         annotations:
           note: Often the PI or lab head
-
       CO_AUTHOR:
         title: Author
         description: Co-author
         meaning: NCIT:C42781
-
       PRINCIPAL_INVESTIGATOR:
         description: Principal investigator (PI)
         meaning: NCIT:C19924
-
       CO_INVESTIGATOR:
         title: Co-Investigator
         meaning: NCIT:C51812
-
       COLLABORATOR:
         title: Collaborator
         meaning: NCIT:C84336
-
   OpenAccessType:
-    description: |-
-      Types of open access publishing
+    description: Types of open access publishing
     permissible_values:
-
       GOLD:
         description: Gold open access (published OA)
-
       GREEN:
         description: Green open access (self-archived)
-
       HYBRID:
         description: Hybrid journal with OA option
-
       DIAMOND:
         description: Diamond/platinum OA (no fees)
-
       BRONZE:
         description: Free to read but no license
-
       CLOSED:
         description: Closed access/subscription only
-
       EMBARGO:
         description: Under embargo period
-
   CitationStyle:
-    description: |-
-      Common citation and reference styles
+    description: Common citation and reference styles
     permissible_values:
-
       APA:
         description: American Psychological Association
-
       MLA:
         description: Modern Language Association
-
       CHICAGO:
         description: Chicago Manual of Style
-
       HARVARD:
         description: Harvard referencing
-
       VANCOUVER:
         description: Vancouver style (biomedical)
-
       IEEE:
         description: Institute of Electrical and Electronics Engineers
-
       ACS:
         description: American Chemical Society
-
       AMA:
         description: American Medical Association
-
       NATURE:
         description: Nature style
-
       SCIENCE:
         description: Science style
-
       CELL:
         description: Cell Press style

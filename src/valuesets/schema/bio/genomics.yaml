@@ -1,66 +1,65 @@
-id: https://w3id.org/common-value-sets/genomics
 name: genomics
 title: Genomics Value Sets
 description: Value sets related to genomics and sequencing
-
+id: https://w3id.org/common-value-sets/genomics
 imports:
-  - linkml:types
-
+- linkml:types
 prefixes:
   CVS: https://w3id.org/common-value-sets/
   linkml: https://w3id.org/linkml/
   mixs: https://genomicsstandardsconsortium.github.io/mixs/
-
-default_prefix: CVS
-default_range: string
-
+  valuesets: https://w3id.org/valuesets/
+default_prefix: valuesets
+slots:
+  cds_phase:
+    description: For features of type CDS (coding sequence), the phase indicates where the feature begins with reference to
+      the reading frame
+    range: CdsPhaseType
+  contig_collection:
+    description: The type of the contig set; the type of the 'omics data set
+    range: ContigCollectionType
+  strand:
+    description: The strand that a feature appears on relative to a landmark
+    range: StrandType
+  sequence:
+    description: The type of sequence being represented
+    range: SequenceType
 enums:
   CdsPhaseType:
-    description: >-
-      For features of type CDS (coding sequence), the phase indicates where the feature begins
-      with reference to the reading frame. The phase is one of the integers 0, 1, or 2,
-      indicating the number of bases that should be removed from the beginning of this feature
-      to reach the first base of the next codon.
+    description: For features of type CDS (coding sequence), the phase indicates where the feature begins with reference to
+      the reading frame. The phase is one of the integers 0, 1, or 2, indicating the number of bases that should be removed
+      from the beginning of this feature to reach the first base of the next codon.
     permissible_values:
       PHASE_0:
         description: Zero bases from reading frame to feature start.
-        title: "0"
+        title: '0'
       PHASE_1:
         description: One base from reading frame to feature start.
-        title: "1"
+        title: '1'
       PHASE_2:
         description: Two bases from reading frame to feature start.
-        title: "2"
-
+        title: '2'
   ContigCollectionType:
-    description: >-
-      The type of the contig set; the type of the 'omics data set.
-      Terms are taken from the Genomics Standards Consortium where possible.
-      See the GSC checklists at https://genomicsstandardsconsortium.github.io/mixs/
-      for the controlled vocabularies used.
+    description: The type of the contig set; the type of the 'omics data set. Terms are taken from the Genomics Standards
+      Consortium where possible. See the GSC checklists at https://genomicsstandardsconsortium.github.io/mixs/ for the controlled
+      vocabularies used.
     permissible_values:
       ISOLATE:
-        description: >-
-          Sequences assembled from DNA of isolated organism.
-          Bacteria/Archaea: https://genomicsstandardsconsortium.github.io/mixs/0010003/
-          Euk: https://genomicsstandardsconsortium.github.io/mixs/0010002/
-          Virus: https://genomicsstandardsconsortium.github.io/mixs/0010005/
-          Organelle: https://genomicsstandardsconsortium.github.io/mixs/0010006/
-          Plasmid: https://genomicsstandardsconsortium.github.io/mixs/0010004/
+        description: 'Sequences assembled from DNA of isolated organism. Bacteria/Archaea: https://genomicsstandardsconsortium.github.io/mixs/0010003/
+          Euk: https://genomicsstandardsconsortium.github.io/mixs/0010002/ Virus: https://genomicsstandardsconsortium.github.io/mixs/0010005/
+          Organelle: https://genomicsstandardsconsortium.github.io/mixs/0010006/ Plasmid: https://genomicsstandardsconsortium.github.io/mixs/0010004/'
       MAG:
-        description: >-
-          Sequences assembled from DNA of mixed community and binned.
-          MAGs are likely to represent a single taxonomic origin.
-          See checkm2 scores for quality assessment.
+        description: Sequences assembled from DNA of mixed community and binned. MAGs are likely to represent a single taxonomic
+          origin. See checkm2 scores for quality assessment.
         meaning: mixs:0010011
         title: Metagenome-Assembled Genome
         aliases:
-          - Mimag
+        - Mimag
       METAGENOME:
         description: Sequences assembled from DNA of mixed community.
         meaning: mixs:0010007
         aliases:
-          - Mims
+        - Mims
       METATRANSCRIPTOME:
         description: Sequences assembled from RNA of mixed community. Currently not represented by GSC.
       SAG:
@@ -68,36 +67,30 @@ enums:
         meaning: mixs:0010010
         title: Single Amplified Genome
         aliases:
-          - Misag
+        - Misag
       VIRUS:
         description: Sequences assembled from uncultivated virus genome (DNA/RNA).
         meaning: mixs:0010012
         aliases:
-          - Miuvig
+        - Miuvig
       MARKER:
-        description: >-
-          Sequences from targeted region of DNA; see protocol for information on targeted region.
-          specimen: https://genomicsstandardsconsortium.github.io/mixs/0010009/
-          survey: https://genomicsstandardsconsortium.github.io/mixs/0010008/
-
+        description: 'Sequences from targeted region of DNA; see protocol for information on targeted region. specimen: https://genomicsstandardsconsortium.github.io/mixs/0010009/
+          survey: https://genomicsstandardsconsortium.github.io/mixs/0010008/'
   StrandType:
-    description: >-
-      The strand that a feature appears on relative to a landmark.
-      Also encompasses unknown or irrelevant strandedness.
+    description: The strand that a feature appears on relative to a landmark. Also encompasses unknown or irrelevant strandedness.
     permissible_values:
       NEGATIVE:
         description: Represented by "-" in a GFF file; the strand is negative wrt the landmark.
-        title: "negative"
+        title: negative
       POSITIVE:
         description: Represented by "+" in a GFF file; the strand is positive with relation to the landmark.
-        title: "positive"
+        title: positive
       UNKNOWN:
         description: Represented by "?" in a GFF file. The strandedness is relevant but unknown.
-        title: "unknown"
+        title: unknown
       UNSTRANDED:
         description: Represented by "." in a GFF file; the feature is not stranded.
-        title: "unstranded"
-
+        title: unstranded
   SequenceType:
     description: The type of sequence being represented.
     permissible_values:
@@ -105,3 +98,4 @@ enums:
         description: A nucleic acid sequence, as found in an FNA file.
       AMINO_ACID:
         description: An amino acid sequence, as would be found in an FAA file.
+default_range: string

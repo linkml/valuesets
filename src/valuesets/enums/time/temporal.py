@@ -133,42 +133,6 @@ TimePeriod._metadata = {
     "BIANNUALLY": {'description': 'Every two years', 'annotations': {'ucum': '2.a'}},
 }
 
-class TimeUnit(RichEnum):
-    """
-    Units of time measurement
-    """
-    # Enum members
-    NANOSECOND = "NANOSECOND"
-    MICROSECOND = "MICROSECOND"
-    MILLISECOND = "MILLISECOND"
-    SECOND = "SECOND"
-    MINUTE = "MINUTE"
-    HOUR = "HOUR"
-    DAY = "DAY"
-    WEEK = "WEEK"
-    MONTH = "MONTH"
-    YEAR = "YEAR"
-    DECADE = "DECADE"
-    CENTURY = "CENTURY"
-    MILLENNIUM = "MILLENNIUM"
-
-# Set metadata after class creation
-TimeUnit._metadata = {
-    "NANOSECOND": {'description': 'Nanosecond (10^-9 seconds)', 'annotations': {'symbol': 'ns', 'ucum': 'ns', 'seconds': '1e-9'}},
-    "MICROSECOND": {'description': 'Microsecond (10^-6 seconds)', 'annotations': {'symbol': 'μs', 'ucum': 'us', 'seconds': '1e-6'}},
-    "MILLISECOND": {'description': 'Millisecond (10^-3 seconds)', 'annotations': {'symbol': 'ms', 'ucum': 'ms', 'seconds': 0.001}},
-    "SECOND": {'description': 'Second (SI base unit)', 'meaning': 'TIME:unitSecond', 'annotations': {'symbol': 's', 'ucum': 's', 'seconds': 1}},
-    "MINUTE": {'description': 'Minute (60 seconds)', 'meaning': 'TIME:unitMinute', 'annotations': {'symbol': 'min', 'ucum': 'min', 'seconds': 60}},
-    "HOUR": {'description': 'Hour (60 minutes)', 'meaning': 'TIME:unitHour', 'annotations': {'symbol': 'h', 'ucum': 'h', 'seconds': 3600}},
-    "DAY": {'description': 'Day (24 hours)', 'meaning': 'TIME:unitDay', 'annotations': {'symbol': 'd', 'ucum': 'd', 'seconds': 86400}},
-    "WEEK": {'description': 'Week (7 days)', 'meaning': 'TIME:unitWeek', 'annotations': {'symbol': 'wk', 'ucum': 'wk', 'seconds': 604800}},
-    "MONTH": {'description': 'Month (approximately 30.44 days)', 'meaning': 'TIME:unitMonth', 'annotations': {'symbol': 'mo', 'ucum': 'mo', 'seconds': '~2629800'}},
-    "YEAR": {'description': 'Year (365.25 days)', 'meaning': 'TIME:unitYear', 'annotations': {'symbol': 'yr', 'ucum': 'a', 'seconds': 31557600}},
-    "DECADE": {'description': 'Decade (10 years)', 'meaning': 'TIME:unitDecade', 'annotations': {'ucum': '10.a', 'years': 10}},
-    "CENTURY": {'description': 'Century (100 years)', 'meaning': 'TIME:unitCentury', 'annotations': {'ucum': '100.a', 'years': 100}},
-    "MILLENNIUM": {'description': 'Millennium (1000 years)', 'meaning': 'TIME:unitMillennium', 'annotations': {'ucum': '1000.a', 'years': 1000}},
-}
-
 class TimeOfDay(RichEnum):
     """
     Common times of day
@@ -283,7 +247,6 @@ __all__ = [
     "Quarter",
     "Season",
     "TimePeriod",
-    "TimeUnit",
     "TimeOfDay",
     "BusinessTimeFrame",
     "GeologicalEra",

@@ -72,30 +72,6 @@ BiologicalSexEnum._metadata = {
     "UNKNOWN_OR_NOT_REPORTED": {'description': 'Sex not known, not reported, or declined to answer', 'meaning': 'NCIT:C17998'},
 }
 
-class GenderIdentityEnum(RichEnum):
-    """
-    Current gender identity, which may differ from sex assigned at birth
-    """
-    # Enum members
-    MAN = "MAN"
-    WOMAN = "WOMAN"
-    TRANSGENDER_MAN = "TRANSGENDER_MAN"
-    TRANSGENDER_WOMAN = "TRANSGENDER_WOMAN"
-    NON_BINARY = "NON_BINARY"
-    OTHER = "OTHER"
-    PREFER_NOT_TO_ANSWER = "PREFER_NOT_TO_ANSWER"
-
-# Set metadata after class creation
-GenderIdentityEnum._metadata = {
-    "MAN": {'description': 'Identifies as man', 'meaning': 'GSSO:009292', 'annotations': {'aliases': 'Male'}},
-    "WOMAN": {'description': 'Identifies as woman', 'meaning': 'GSSO:009293', 'annotations': {'aliases': 'Female'}},
-    "TRANSGENDER_MAN": {'description': 'Identifies as transgender man/trans man/female-to-male', 'meaning': 'GSSO:000372', 'annotations': {'definition': 'Assigned female at birth but identifies as man'}},
-    "TRANSGENDER_WOMAN": {'description': 'Identifies as transgender woman/trans woman/male-to-female', 'meaning': 'GSSO:000384', 'annotations': {'definition': 'Assigned male at birth but identifies as woman'}},
-    "NON_BINARY": {'description': 'Gender identity outside the man/woman binary', 'meaning': 'GSSO:002403', 'annotations': {'aliases': 'Genderqueer, Gender non-conforming'}},
-    "OTHER": {'description': 'Other gender identity', 'annotations': {'note': 'Free text may be collected'}},
-    "PREFER_NOT_TO_ANSWER": {'description': 'Prefers not to disclose gender identity', 'meaning': 'NCIT:C132222'},
-}
-
 class AgeGroupEnum(RichEnum):
     """
     Standard age groups used in NIH clinical research, particularly NINDS CDEs
@@ -190,48 +166,12 @@ StudyPhaseEnum._metadata = {
     "NOT_APPLICABLE": {'description': 'Not a phased clinical trial', 'meaning': 'NCIT:C48660', 'annotations': {'note': 'For observational studies, device trials, etc.'}},
 }
 
-class EducationLevelEnum(RichEnum):
-    """
-    Highest level of education completed, following NIH demographics standards
-    """
-    # Enum members
-    NO_FORMAL_EDUCATION = "NO_FORMAL_EDUCATION"
-    ELEMENTARY = "ELEMENTARY"
-    MIDDLE_SCHOOL = "MIDDLE_SCHOOL"
-    SOME_HIGH_SCHOOL = "SOME_HIGH_SCHOOL"
-    HIGH_SCHOOL_GRADUATE = "HIGH_SCHOOL_GRADUATE"
-    SOME_COLLEGE = "SOME_COLLEGE"
-    ASSOCIATE_DEGREE = "ASSOCIATE_DEGREE"
-    BACHELORS_DEGREE = "BACHELORS_DEGREE"
-    MASTERS_DEGREE = "MASTERS_DEGREE"
-    PROFESSIONAL_DEGREE = "PROFESSIONAL_DEGREE"
-    DOCTORATE_DEGREE = "DOCTORATE_DEGREE"
-    UNKNOWN_OR_NOT_REPORTED = "UNKNOWN_OR_NOT_REPORTED"
-
-# Set metadata after class creation
-EducationLevelEnum._metadata = {
-    "NO_FORMAL_EDUCATION": {'description': 'No formal schooling completed', 'meaning': 'NCIT:C173723'},
-    "ELEMENTARY": {'description': 'Elementary school (grades 1-6)', 'meaning': 'NCIT:C80410', 'annotations': {'grades': '1-6'}},
-    "MIDDLE_SCHOOL": {'description': 'Middle/Junior high school (grades 7-8)', 'meaning': 'NCIT:C205685', 'annotations': {'grades': '7-8'}},
-    "SOME_HIGH_SCHOOL": {'description': 'Some high school, no diploma', 'meaning': 'NCIT:C198650', 'annotations': {'grades': '9-11'}},
-    "HIGH_SCHOOL_GRADUATE": {'description': 'High school graduate or GED', 'meaning': 'NCIT:C67136', 'annotations': {'includes': 'GED, High school diploma'}},
-    "SOME_COLLEGE": {'description': 'Some college credit, no degree', 'meaning': 'NCIT:C67137'},
-    "ASSOCIATE_DEGREE": {'description': 'Associate degree (2-year)', 'meaning': 'NCIT:C71340', 'annotations': {'duration': '2 years'}},
-    "BACHELORS_DEGREE": {'description': "Bachelor's degree (4-year)", 'meaning': 'NCIT:C39327', 'annotations': {'duration': '4 years'}},
-    "MASTERS_DEGREE": {'description': "Master's degree", 'meaning': 'NCIT:C39453'},
-    "PROFESSIONAL_DEGREE": {'description': 'Professional degree (MD, JD, etc.)', 'meaning': 'NCIT:C67143', 'annotations': {'examples': 'MD, JD, DDS, DVM'}},
-    "DOCTORATE_DEGREE": {'description': 'Doctorate degree (PhD, EdD, etc.)', 'meaning': 'NCIT:C39392', 'annotations': {'examples': 'PhD, EdD, DrPH'}},
-    "UNKNOWN_OR_NOT_REPORTED": {'description': 'Education level not known or not reported', 'meaning': 'NCIT:C17998'},
-}
-
 __all__ = [
     "RaceOMB1997Enum",
     "EthnicityOMB1997Enum",
     "BiologicalSexEnum",
-    "GenderIdentityEnum",
     "AgeGroupEnum",
     "ParticipantVitalStatusEnum",
     "RecruitmentStatusEnum",
     "StudyPhaseEnum",
-    "EducationLevelEnum",
 ]

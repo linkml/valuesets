@@ -1,12 +1,29 @@
 name: binary_classification
 id: https://w3id.org/linkml/valuesets/data_science/binary_classification
 prefixes:
-  linkml_common: https://w3id.org/linkml-common/
+  # linkml_common: https://w3id.org/linkml-common/
   STATO: http://purl.obolibrary.org/obo/STATO_
   NCIT: http://purl.obolibrary.org/obo/NCIT_
   PATO: http://purl.obolibrary.org/obo/PATO_
   GSSO: http://purl.obolibrary.org/obo/GSSO_
-default_prefix: linkml_common
+  valuesets: https://w3id.org/valuesets/
+default_prefix: valuesets
+slots:
+  binary_classification:
+    description: Generic binary classification labels
+    range: BinaryClassificationEnum
+  spam_classification:
+    description: Standard labels for spam/ham email classification
+    range: SpamClassificationEnum
+  anomaly_detection:
+    description: Labels for anomaly detection tasks
+    range: AnomalyDetectionEnum
+  churn_classification:
+    description: Customer churn prediction labels
+    range: ChurnClassificationEnum
+  fraud_detection:
+    description: Fraud detection classification labels
+    range: FraudDetectionEnum
 enums:
   BinaryClassificationEnum:
     description: Generic binary classification labels
@@ -16,20 +33,19 @@ enums:
         title: Positive Finding
         meaning: NCIT:C38758
         aliases:
-          - "1"
-          - "true"
-          - "yes"
-          - "T"
+        - '1'
+        - 'true'
+        - 'yes'
+        - T
       NEGATIVE:
         description: Negative class
         title: Negative Test Result
         meaning: NCIT:C35681
         aliases:
-          - "0"
-          - "false"
-          - "no"
-          - "F"
-          
+        - '0'
+        - 'false'
+        - 'no'
+        - F
   SpamClassificationEnum:
     description: Standard labels for spam/ham email classification
     permissible_values:
@@ -38,17 +54,16 @@ enums:
         annotations:
           note: No appropriate ontology term found for spam concept
         aliases:
-          - junk
-          - "1"
+        - junk
+        - '1'
       HAM:
         description: Legitimate, wanted message
         annotations:
           note: No appropriate ontology term found for ham concept
         aliases:
-          - not_spam
-          - legitimate
-          - "0"
-          
+        - not_spam
+        - legitimate
+        - '0'
   AnomalyDetectionEnum:
     description: Labels for anomaly detection tasks
     permissible_values:
@@ -57,19 +72,18 @@ enums:
         title: Normal
         meaning: NCIT:C14165
         aliases:
-          - inlier
-          - regular
-          - "0"
+        - inlier
+        - regular
+        - '0'
       ANOMALY:
         description: Abnormal, unexpected behavior or pattern
         title: Anomaly
         meaning: STATO:0000036
         aliases:
-          - outlier
-          - abnormal
-          - irregular
-          - "1"
-          
+        - outlier
+        - abnormal
+        - irregular
+        - '1'
   ChurnClassificationEnum:
     description: Customer churn prediction labels
     permissible_values:
@@ -78,19 +92,18 @@ enums:
         annotations:
           note: No appropriate ontology term found for customer retention
         aliases:
-          - active
-          - staying
-          - "0"
+        - active
+        - staying
+        - '0'
       CHURNED:
         description: Customer stopped using the service
         annotations:
           note: No appropriate ontology term found for customer churn
         aliases:
-          - lost
-          - inactive
-          - attrited
-          - "1"
-          
+        - lost
+        - inactive
+        - attrited
+        - '1'
   FraudDetectionEnum:
     description: Fraud detection classification labels
     permissible_values:
@@ -99,14 +112,14 @@ enums:
         title: Normal
         meaning: NCIT:C14165
         aliases:
-          - genuine
-          - valid
-          - "0"
+        - genuine
+        - valid
+        - '0'
       FRAUDULENT:
         description: Fraudulent transaction or activity
         title: Fraudulently Obtained Product
         meaning: NCIT:C121839
         aliases:
-          - fraud
-          - invalid
-          - "1"
+        - fraud
+        - invalid
+        - '1'

@@ -1,20 +1,40 @@
-id: https://w3id.org/valuesets/environmental-health/exposures
 name: valuesets-environmental-health-exposures
 title: valuesets-environmental-health-exposures
-description: |-
-  Environmental health and exposure-related value sets
-license: MIT
-see_also:
-  - https://linkml.github.io/valuesets
-
+description: Environmental health and exposure-related value sets
+id: https://w3id.org/valuesets/environmental-health/exposures
 prefixes:
-  linkml_common: https://w3id.org/valuesets/
+  # linkml_common: https://w3id.org/valuesets/
   linkml: https://w3id.org/linkml/
   ENVO: http://purl.obolibrary.org/obo/ENVO_
   NCIT: http://purl.obolibrary.org/obo/NCIT_
   CHEBI: http://purl.obolibrary.org/obo/CHEBI_
-default_prefix: linkml_common
-
+  valuesets: https://w3id.org/valuesets/
+default_prefix: valuesets
+slots:
+  air_pollutant:
+    description: Common air pollutants and air quality indicators
+    range: AirPollutantEnum
+  pesticide_type:
+    description: Categories of pesticides by target organism or chemical class
+    range: PesticideTypeEnum
+  heavy_metal:
+    description: Heavy metals of environmental health concern
+    range: HeavyMetalEnum
+  exposure_route:
+    description: Routes by which exposure to environmental agents occurs
+    range: ExposureRouteEnum
+  exposure_source:
+    description: Common sources of environmental exposures
+    range: ExposureSourceEnum
+  water_contaminant:
+    description: Common water contaminants
+    range: WaterContaminantEnum
+  endocrine_disruptor:
+    description: Common endocrine disrupting chemicals
+    range: EndocrineDisruptorEnum
+  exposure_duration:
+    description: Duration categories for environmental exposures
+    range: ExposureDurationEnum
 enums:
   AirPollutantEnum:
     description: Common air pollutants and air quality indicators
@@ -61,7 +81,6 @@ enums:
         description: Polycyclic aromatic hydrocarbons (PAHs)
         meaning: CHEBI:33848
         title: polycyclic arene
-
   PesticideTypeEnum:
     description: Categories of pesticides by target organism or chemical class
     permissible_values:
@@ -100,7 +119,6 @@ enums:
       GLYPHOSATE:
         description: Glyphosate herbicide
         meaning: CHEBI:27744
-
   HeavyMetalEnum:
     description: Heavy metals of environmental health concern
     permissible_values:
@@ -140,7 +158,6 @@ enums:
         description: Cobalt (Co)
         meaning: CHEBI:27638
         title: cobalt atom
-
   ExposureRouteEnum:
     description: Routes by which exposure to environmental agents occurs
     permissible_values:
@@ -170,23 +187,22 @@ enums:
         title: Ophthalmic Route of Administration
       MULTIPLE_ROUTES:
         description: Exposure through multiple pathways
-
   ExposureSourceEnum:
     description: Common sources of environmental exposures
     permissible_values:
       AMBIENT_AIR:
         description: Outdoor air pollution
         related_mappings:
-          - ENVO:01000676
+        - ENVO:01000676
       INDOOR_AIR:
         description: Indoor air pollution
         related_mappings:
-          - ENVO:01000676
+        - ENVO:01000676
       DRINKING_WATER:
         description: Contaminated drinking water
         related_mappings:
-          - ENVO:00003064
-          - ENVO:00002186
+        - ENVO:00003064
+        - ENVO:00002186
       SOIL:
         description: Contaminated soil
         meaning: ENVO:00002116
@@ -194,7 +210,7 @@ enums:
       FOOD:
         description: Contaminated food
         related_mappings:
-          - CHEBI:33290
+        - CHEBI:33290
       OCCUPATIONAL:
         description: Workplace exposure
         meaning: ENVO:03501332
@@ -202,23 +218,23 @@ enums:
       CONSUMER_PRODUCTS:
         description: Household and consumer products
         related_mappings:
-          - ENVO:00003074
-          - ENVO:03501339
+        - ENVO:00003074
+        - ENVO:03501339
       INDUSTRIAL_EMISSIONS:
         description: Industrial facility emissions
         related_mappings:
-          - ENVO:03000092
-          - ENVO:00003861
+        - ENVO:03000092
+        - ENVO:00003861
       AGRICULTURAL:
         description: Agricultural activities
         related_mappings:
-          - ENVO:00000077
-          - ENVO:01000311
+        - ENVO:00000077
+        - ENVO:01000311
       TRAFFIC:
         description: Traffic-related pollution
         related_mappings:
-          - ENVO:00000064
-          - ENVO:01000601
+        - ENVO:00000064
+        - ENVO:01000601
       TOBACCO_SMOKE:
         description: Active or passive tobacco smoke exposure
         meaning: NCIT:C17140
@@ -226,12 +242,11 @@ enums:
       CONSTRUCTION:
         description: Construction-related exposure
         related_mappings:
-          - ENVO:01000996
+        - ENVO:01000996
       MINING:
         description: Mining-related exposure
         related_mappings:
-          - ENVO:01001437
-
+        - ENVO:01001437
   WaterContaminantEnum:
     description: Common water contaminants
     permissible_values:
@@ -279,7 +294,6 @@ enums:
         description: Pesticide residues
         meaning: CHEBI:25944
         title: pesticide
-
   EndocrineDisruptorEnum:
     description: Common endocrine disrupting chemicals
     permissible_values:
@@ -317,7 +331,6 @@ enums:
         description: Brominated flame retardants
         meaning: CHEBI:172368
         title: brominated flame retardant
-
   ExposureDurationEnum:
     description: Duration categories for environmental exposures
     permissible_values:
@@ -337,3 +350,6 @@ enums:
         description: Exposure after birth
       DEVELOPMENTAL:
         description: Exposure during critical developmental periods
+license: MIT
+see_also:
+- https://linkml.github.io/valuesets

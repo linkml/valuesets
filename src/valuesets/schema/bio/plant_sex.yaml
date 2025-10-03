@@ -6,7 +6,12 @@ prefixes:
   UBERON: http://purl.obolibrary.org/obo/UBERON_
   ECOCORE: http://purl.obolibrary.org/obo/ECOCORE_
   mixs: https://genomicsstandardsconsortium.github.io/mixs/
-default_prefix: mixs
+  valuesets: https://w3id.org/valuesets/
+default_prefix: valuesets
+slots:
+  plant_sex:
+    description: Plant reproductive and sexual system types
+    range: PlantSexEnum
 enums:
   PlantSexEnum:
     description: Plant reproductive and sexual system types

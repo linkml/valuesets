@@ -1,25 +1,45 @@
-id: https://w3id.org/common-value-sets/bio/psi_mi
 name: psi_mi
 title: PSI-MI (Molecular Interactions) Value Sets
-description: >-
-  Common value sets from the PSI-MI (Molecular Interactions) controlled vocabulary
-  used for annotating protein-protein interaction experiments.
-
-license: MIT
-see_also:
-  - https://www.ebi.ac.uk/ols/ontologies/mi
-
+description: Common value sets from the PSI-MI (Molecular Interactions) controlled vocabulary used for annotating protein-protein
+  interaction experiments.
+id: https://w3id.org/common-value-sets/bio/psi_mi
+imports:
+- linkml:types
 prefixes:
   MI: http://purl.obolibrary.org/obo/MI_
   linkml: https://w3id.org/linkml/
   OBI: http://purl.obolibrary.org/obo/OBI_
-
-default_prefix: psi_mi
-default_range: string
-
-imports:
-  - linkml:types
-
+  valuesets: https://w3id.org/valuesets/
+default_prefix: valuesets
+slots:
+  interaction_detection_method:
+    description: Methods used to detect molecular interactions
+    range: InteractionDetectionMethod
+  interaction:
+    description: Types of molecular interactions
+    range: InteractionType
+  experimental_role:
+    description: Role played by a participant in the experiment
+    range: ExperimentalRole
+  biological_role:
+    description: Physiological role of an interactor
+    range: BiologicalRole
+  participant_identification_method:
+    description: Methods to identify interaction participants
+    range: ParticipantIdentificationMethod
+  feature:
+    description: Molecular features affecting interactions
+    range: FeatureType
+    multivalued: true
+  interactor:
+    description: Types of molecular species in interactions
+    range: InteractorType
+  confidence_score:
+    description: Types of confidence scoring methods
+    range: ConfidenceScore
+  experimental_preparation:
+    description: Sample preparation methods
+    range: ExperimentalPreparation
 enums:
   InteractionDetectionMethod:
     title: Interaction Detection Method
@@ -27,8 +47,8 @@ enums:
     source: http://purl.obolibrary.org/obo/mi.owl
     conforms_to: HUPO-PSI
     annotations:
-      standard: "PSI-MI 2.5"
-      maintainer: "HUPO Proteomics Standards Initiative"
+      standard: PSI-MI 2.5
+      maintainer: HUPO Proteomics Standards Initiative
     permissible_values:
       TWO_HYBRID:
         description: Classical two-hybrid system using transcriptional activity
@@ -46,7 +66,7 @@ enums:
         description: FRET for detecting proximity between molecules
         meaning: MI:0055
         aliases:
-          - fluorescent resonance energy transfer
+        - fluorescent resonance energy transfer
       SURFACE_PLASMON_RESONANCE:
         description: SPR for real-time binding analysis
         meaning: MI:0107
@@ -54,7 +74,7 @@ enums:
         description: Chemical cross-linking of interacting proteins
         meaning: MI:0030
         aliases:
-          - cross-linking study
+        - cross-linking study
       X_RAY_CRYSTALLOGRAPHY:
         description: Crystal structure determination
         meaning: MI:0114
@@ -62,7 +82,7 @@ enums:
         description: Nuclear magnetic resonance spectroscopy
         meaning: MI:0077
         aliases:
-          - nuclear magnetic resonance
+        - nuclear magnetic resonance
       ELECTRON_MICROSCOPY:
         description: EM for structural determination
         meaning: MI:0040
@@ -70,7 +90,7 @@ enums:
         description: MS-based interaction detection
         meaning: MI:0943
         aliases:
-          - detection by mass spectrometry
+        - detection by mass spectrometry
       PROXIMITY_LIGATION_ASSAY:
         description: PLA for detecting protein proximity
         meaning: MI:0813
@@ -81,13 +101,12 @@ enums:
         description: Y2H screening in yeast
         meaning: MI:0018
         aliases:
-          - two hybrid
+        - two hybrid
       MAMMALIAN_TWO_HYBRID:
         description: Two-hybrid in mammalian cells
         meaning: MI:2413
         aliases:
-          - mammalian membrane two hybrid
-
+        - mammalian membrane two hybrid
   InteractionType:
     title: Interaction Type
     description: Types of molecular interactions
@@ -131,11 +150,10 @@ enums:
         description: Genetic epistatic relationship
         meaning: MI:0208
         aliases:
-          - genetic interaction (sensu unexpected)
+        - genetic interaction (sensu unexpected)
       SELF_INTERACTION:
         description: Intra-molecular interaction
         meaning: MI:1126
-
   ExperimentalRole:
     title: Experimental Role
     description: Role played by a participant in the experiment
@@ -178,7 +196,6 @@ enums:
       COMPETITOR:
         description: Competitive inhibitor
         meaning: MI:0941
-
   BiologicalRole:
     title: Biological Role
     description: Physiological role of an interactor
@@ -217,7 +234,6 @@ enums:
       PHOSPHATE_ACCEPTOR:
         description: Receives phosphate group
         meaning: MI:0843
-
   ParticipantIdentificationMethod:
     title: Participant Identification Method
     description: Methods to identify interaction participants
@@ -226,7 +242,7 @@ enums:
         description: MS-based protein identification
         meaning: MI:0943
         aliases:
-          - detection by mass spectrometry
+        - detection by mass spectrometry
       WESTERN_BLOT:
         description: Antibody-based detection
         meaning: MI:0113
@@ -237,20 +253,19 @@ enums:
         description: Direct antibody recognition
         meaning: MI:0678
         aliases:
-          - antibody array
+        - antibody array
       PREDETERMINED:
         description: Known from experimental design
         meaning: MI:0396
         aliases:
-          - predetermined participant
+        - predetermined participant
       NUCLEIC_ACID_SEQUENCING:
         description: DNA/RNA sequencing
         meaning: MI:0078
         aliases:
-          - nucleotide sequence identification
+        - nucleotide sequence identification
       PROTEIN_SEQUENCING:
         description: Direct protein sequencing
-
   FeatureType:
     title: Feature Type
     description: Molecular features affecting interactions
@@ -259,7 +274,7 @@ enums:
         description: Region involved in binding
         meaning: MI:0117
         aliases:
-          - binding-associated region
+        - binding-associated region
       MUTATION:
         description: Sequence alteration
         meaning: MI:0118
@@ -267,7 +282,7 @@ enums:
         description: PTM site
         meaning: MI:0121
         aliases:
-          - acetylated residue
+        - acetylated residue
       TAG:
         description: Affinity or epitope tag
         meaning: MI:0507
@@ -279,7 +294,7 @@ enums:
         description: Phosphorylated residue
         meaning: MI:0170
         aliases:
-          - phosphorylated residue
+        - phosphorylated residue
       UBIQUITINATION_SITE:
         description: Ubiquitinated residue
       METHYLATION_SITE:
@@ -294,7 +309,6 @@ enums:
       SUFFICIENT_BINDING_REGION:
         description: Sufficient for binding
         meaning: MI:0442
-
   InteractorType:
     title: Interactor Type
     description: Types of molecular species in interactions
@@ -312,17 +326,17 @@ enums:
         description: Deoxyribonucleic acid
         meaning: MI:0319
         aliases:
-          - deoxyribonucleic acid
+        - deoxyribonucleic acid
       RNA:
         description: Ribonucleic acid
         meaning: MI:0320
         aliases:
-          - ribonucleic acid
+        - ribonucleic acid
       PROTEIN_COMPLEX:
         description: Multi-protein assembly
         meaning: MI:0314
         aliases:
-          - complex
+        - complex
       GENE:
         description: Gene locus
         meaning: MI:0250
@@ -341,7 +355,6 @@ enums:
         description: Artificial polymer
       METAL_ION:
         description: Metal ion cofactor
-
   ConfidenceScore:
     title: Confidence Score Types
     description: Types of confidence scoring methods
@@ -357,7 +370,6 @@ enums:
         description: MINT database score
       MATRIXDB_SCORE:
         description: MatrixDB confidence score
-
   ExperimentalPreparation:
     title: Experimental Preparation
     description: Sample preparation methods
@@ -372,13 +384,17 @@ enums:
         description: Above physiological levels
         meaning: MI:0506
         aliases:
-          - over expressed level
+        - over expressed level
       KNOCKDOWN:
         description: Reduced expression
       KNOCKOUT:
         description: Gene deletion
         meaning: MI:0788
         aliases:
-          - knock out
+        - knock out
       ENDOGENOUS_LEVEL:
         description: Physiological expression
+license: MIT
+see_also:
+- https://www.ebi.ac.uk/ols/ontologies/mi
+default_range: string

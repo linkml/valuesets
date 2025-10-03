@@ -5,7 +5,12 @@ prefixes:
   OMP: http://purl.obolibrary.org/obo/OMP_
   MICRO: http://purl.obolibrary.org/obo/MICRO_
   mixs: https://genomicsstandardsconsortium.github.io/mixs/
-default_prefix: mixs
+  valuesets: https://w3id.org/valuesets/
+default_prefix: valuesets
+slots:
+  rel_to_oxygen:
+    description: Organism's relationship to oxygen for growth and survival
+    range: RelToOxygenEnum
 enums:
   RelToOxygenEnum:
     description: Organism's relationship to oxygen for growth and survival

@@ -1,24 +1,24 @@
-id: https://w3id.org/common-value-sets/currency_chemicals
 name: currency_chemicals
 title: Currency Chemicals Value Sets
 description: Value sets for metabolic currency molecules and cofactors used in energy transfer and redox reactions
-
+id: https://w3id.org/common-value-sets/currency_chemicals
 imports:
-  - linkml:types
-
+- linkml:types
 prefixes:
   CVS: https://w3id.org/common-value-sets/
   linkml: https://w3id.org/linkml/
   CHEBI: http://purl.obolibrary.org/obo/CHEBI_
-
-default_prefix: CVS
-default_range: string
-
+  valuesets: https://w3id.org/valuesets/
+default_prefix: valuesets
+slots:
+  currency_chemical:
+    description: Common metabolic currency molecules and cofactors that serve as energy carriers, electron donors/acceptors,
+      and group transfer agents in cellular metabolism
+    range: CurrencyChemical
 enums:
   CurrencyChemical:
-    description: >-
-      Common metabolic currency molecules and cofactors that serve as energy carriers,
-      electron donors/acceptors, and group transfer agents in cellular metabolism.
+    description: Common metabolic currency molecules and cofactors that serve as energy carriers, electron donors/acceptors,
+      and group transfer agents in cellular metabolism.
     permissible_values:
       ATP:
         description: Adenosine triphosphate - primary energy currency molecule in cells
@@ -29,7 +29,8 @@ enums:
       AMP:
         description: Adenosine monophosphate - nucleotide, product of ADP hydrolysis
         meaning: CHEBI:16027
-        aliases: ["adenosine 5'-monophosphate"]
+        aliases:
+        - adenosine 5'-monophosphate
       GTP:
         description: Guanosine triphosphate - energy molecule, protein synthesis and signaling
         meaning: CHEBI:15996
@@ -60,8 +61,10 @@ enums:
         description: Coenzyme A - acyl group carrier in fatty acid metabolism
         meaning: CHEBI:15346
         title: CoA
-        aliases: ["coenzyme A"]
+        aliases:
+        - coenzyme A
       ACETYL_COA:
         description: Acetyl coenzyme A - central metabolic intermediate, links glycolysis to citric acid cycle
         meaning: CHEBI:15351
         title: Acetyl-CoA
+default_range: string

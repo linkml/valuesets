@@ -1,20 +1,52 @@
-id: https://w3id.org/valuesets/geography/geographic-codes
 name: valuesets-geography-geographic-codes
 title: valuesets-geography-geographic-codes
-description: |-
-  Geographic codes and regional value sets
-license: MIT
-see_also:
-  - https://linkml.github.io/valuesets
-
+description: Geographic codes and regional value sets
+id: https://w3id.org/valuesets/geography/geographic-codes
 prefixes:
-  linkml_common: https://w3id.org/valuesets/
+  # linkml_common: https://w3id.org/valuesets/
   linkml: https://w3id.org/linkml/
   ISO: http://purl.org/iso/
   iso3166loc: http://id.loc.gov/vocabulary/countries/
   geonames: http://sws.geonames.org/
-default_prefix: linkml_common
-
+  valuesets: https://w3id.org/valuesets/
+default_prefix: valuesets
+slots:
+  country_code_iso2:
+    description: ISO 3166-1 alpha-2 country codes (2-letter codes)
+    range: CountryCodeISO2Enum
+  country_code_iso3:
+    description: ISO 3166-1 alpha-3 country codes (3-letter codes)
+    range: CountryCodeISO3Enum
+  us_state_code:
+    description: United States state and territory codes
+    range: USStateCodeEnum
+  canadian_province_code:
+    description: Canadian province and territory codes
+    range: CanadianProvinceCodeEnum
+  compass_direction:
+    description: Cardinal and intercardinal compass directions
+    range: CompassDirection
+  relative_direction:
+    description: Relative directional terms
+    range: RelativeDirection
+  wind_direction:
+    description: Wind direction nomenclature (named for where wind comes FROM)
+    range: WindDirection
+  continent:
+    description: Continental regions
+    range: ContinentEnum
+  un_region:
+    description: United Nations regional classifications
+    range: UNRegionEnum
+  language_code_iso639_1:
+    description: ISO 639-1 two-letter language codes
+    range: LanguageCodeISO639_1Enum
+  time_zone:
+    description: Common time zones
+    range: TimeZoneEnum
+  currency_code_iso4217:
+    description: ISO 4217 currency codes
+    range: CurrencyCodeISO4217Enum
 enums:
   CountryCodeISO2Enum:
     description: ISO 3166-1 alpha-2 country codes (2-letter codes)
@@ -23,253 +55,252 @@ enums:
         description: United States of America
         meaning: iso3166loc:us
         exact_mappings:
-          - GAZ:00002459
+        - GAZ:00002459
       CA:
         description: Canada
         meaning: iso3166loc:ca
         exact_mappings:
-          - GAZ:00002560
+        - GAZ:00002560
       MX:
         description: Mexico
         meaning: iso3166loc:mx
         exact_mappings:
-          - GAZ:00002852
+        - GAZ:00002852
       GB:
         description: United Kingdom
         meaning: iso3166loc:gb
         exact_mappings:
-          - GAZ:00002637
+        - GAZ:00002637
       FR:
         description: France
         meaning: iso3166loc:fr
         exact_mappings:
-          - GAZ:00002940
+        - GAZ:00002940
       DE:
         description: Germany
         meaning: iso3166loc:de
         exact_mappings:
-          - GAZ:00002646
+        - GAZ:00002646
       IT:
         description: Italy
         meaning: iso3166loc:it
         exact_mappings:
-          - GAZ:00002650
+        - GAZ:00002650
       ES:
         description: Spain
         meaning: iso3166loc:es
         exact_mappings:
-          - GAZ:00000591
+        - GAZ:00000591
       PT:
         description: Portugal
         meaning: iso3166loc:pt
         exact_mappings:
-          - GAZ:00002944
+        - GAZ:00002944
       NL:
         description: Netherlands
         meaning: iso3166loc:nl
         exact_mappings:
-          - GAZ:00002946
+        - GAZ:00002946
       BE:
         description: Belgium
         meaning: iso3166loc:be
         exact_mappings:
-          - GAZ:00002938
+        - GAZ:00002938
       CH:
         description: Switzerland
         meaning: iso3166loc:ch
         exact_mappings:
-          - GAZ:00002941
+        - GAZ:00002941
       AT:
         description: Austria
         meaning: iso3166loc:at
         exact_mappings:
-          - GAZ:00002942
+        - GAZ:00002942
       SE:
         description: Sweden
         meaning: iso3166loc:se
         exact_mappings:
-          - GAZ:00002729
-      NO:
+        - GAZ:00002729
+      false:
         description: Norway
         meaning: iso3166loc:no
         exact_mappings:
-          - GAZ:00002699
+        - GAZ:00002699
       DK:
         description: Denmark
         meaning: iso3166loc:dk
         exact_mappings:
-          - GAZ:00002635
+        - GAZ:00002635
       FI:
         description: Finland
         meaning: iso3166loc:fi
         exact_mappings:
-          - GAZ:00002937
+        - GAZ:00002937
       PL:
         description: Poland
         meaning: iso3166loc:pl
         exact_mappings:
-          - GAZ:00002939
+        - GAZ:00002939
       RU:
         description: Russian Federation
         meaning: iso3166loc:ru
         exact_mappings:
-          - GAZ:00002721
+        - GAZ:00002721
       UA:
         description: Ukraine
         meaning: iso3166loc:ua
         exact_mappings:
-          - GAZ:00002724
+        - GAZ:00002724
       CN:
         description: China
         meaning: iso3166loc:cn
         exact_mappings:
-          - GAZ:00002845
+        - GAZ:00002845
       JP:
         description: Japan
         meaning: iso3166loc:jp
         exact_mappings:
-          - GAZ:00002747
+        - GAZ:00002747
       KR:
         description: South Korea
         meaning: iso3166loc:kr
         exact_mappings:
-          - GAZ:00002802
+        - GAZ:00002802
       IN:
         description: India
         meaning: iso3166loc:in
         exact_mappings:
-          - GAZ:00002839
+        - GAZ:00002839
       AU:
         description: Australia
         meaning: iso3166loc:au
         exact_mappings:
-          - GAZ:00000463
+        - GAZ:00000463
       NZ:
         description: New Zealand
         meaning: iso3166loc:nz
         exact_mappings:
-          - GAZ:00000469
+        - GAZ:00000469
       BR:
         description: Brazil
         meaning: iso3166loc:br
         exact_mappings:
-          - GAZ:00002828
+        - GAZ:00002828
       AR:
         description: Argentina
         meaning: iso3166loc:ar
         exact_mappings:
-          - GAZ:00002928
+        - GAZ:00002928
       CL:
         description: Chile
         meaning: iso3166loc:cl
         exact_mappings:
-          - GAZ:00002825
+        - GAZ:00002825
       CO:
         description: Colombia
         meaning: iso3166loc:co
         exact_mappings:
-          - GAZ:00002929
+        - GAZ:00002929
       PE:
         description: Peru
         meaning: iso3166loc:pe
         exact_mappings:
-          - GAZ:00002932
+        - GAZ:00002932
       VE:
         description: Venezuela
         meaning: iso3166loc:ve
         exact_mappings:
-          - GAZ:00002931
+        - GAZ:00002931
       ZA:
         description: South Africa
         meaning: iso3166loc:za
         exact_mappings:
-          - GAZ:00001094
+        - GAZ:00001094
       EG:
         description: Egypt
         meaning: iso3166loc:eg
         exact_mappings:
-          - GAZ:00003934
+        - GAZ:00003934
       NG:
         description: Nigeria
         meaning: iso3166loc:ng
         exact_mappings:
-          - GAZ:00000912
+        - GAZ:00000912
       KE:
         description: Kenya
         meaning: iso3166loc:ke
         exact_mappings:
-          - GAZ:00001101
+        - GAZ:00001101
       IL:
         description: Israel
         meaning: iso3166loc:il
         exact_mappings:
-          - GAZ:00002476
+        - GAZ:00002476
       SA:
         description: Saudi Arabia
         meaning: iso3166loc:sa
         exact_mappings:
-          - GAZ:00005279
+        - GAZ:00005279
       AE:
         description: United Arab Emirates
         meaning: iso3166loc:ae
         exact_mappings:
-          - GAZ:00005282
+        - GAZ:00005282
       TR:
         description: Turkey
         meaning: iso3166loc:tr
         exact_mappings:
-          - GAZ:00000558
+        - GAZ:00000558
       GR:
         description: Greece
         meaning: iso3166loc:gr
         exact_mappings:
-          - GAZ:00002945
+        - GAZ:00002945
       IE:
         description: Ireland
         meaning: iso3166loc:ie
         exact_mappings:
-          - GAZ:00004018
+        - GAZ:00004018
       SG:
         description: Singapore
         meaning: iso3166loc:sg
         exact_mappings:
-          - GAZ:00003923
+        - GAZ:00003923
       MY:
         description: Malaysia
         meaning: iso3166loc:my
         exact_mappings:
-          - GAZ:00003902
+        - GAZ:00003902
       TH:
         description: Thailand
         meaning: iso3166loc:th
         exact_mappings:
-          - GAZ:00003744
+        - GAZ:00003744
       ID:
         description: Indonesia
         meaning: iso3166loc:id
         exact_mappings:
-          - GAZ:00003727
+        - GAZ:00003727
       PH:
         description: Philippines
         meaning: iso3166loc:ph
         exact_mappings:
-          - GAZ:00004525
+        - GAZ:00004525
       VN:
         description: Vietnam
         meaning: iso3166loc:vn
         exact_mappings:
-          - GAZ:00003756
+        - GAZ:00003756
       PK:
         description: Pakistan
         meaning: iso3166loc:pk
         exact_mappings:
-          - GAZ:00005246
+        - GAZ:00005246
       BD:
         description: Bangladesh
         meaning: iso3166loc:bd
         exact_mappings:
-          - GAZ:00003750
-
+        - GAZ:00003750
   CountryCodeISO3Enum:
     description: ISO 3166-1 alpha-3 country codes (3-letter codes)
     permissible_values:
@@ -277,153 +308,152 @@ enums:
         description: United States of America
         meaning: iso3166loc:us
         exact_mappings:
-          - GAZ:00002459
+        - GAZ:00002459
       CAN:
         description: Canada
         meaning: iso3166loc:ca
         exact_mappings:
-          - GAZ:00002560
+        - GAZ:00002560
       MEX:
         description: Mexico
         meaning: iso3166loc:mx
         exact_mappings:
-          - GAZ:00002852
+        - GAZ:00002852
       GBR:
         description: United Kingdom
         meaning: iso3166loc:gb
         exact_mappings:
-          - GAZ:00002637
+        - GAZ:00002637
       FRA:
         description: France
         meaning: iso3166loc:fr
         exact_mappings:
-          - GAZ:00002940
+        - GAZ:00002940
       DEU:
         description: Germany
         meaning: iso3166loc:de
         exact_mappings:
-          - GAZ:00002646
+        - GAZ:00002646
       ITA:
         description: Italy
         meaning: iso3166loc:it
         exact_mappings:
-          - GAZ:00002650
+        - GAZ:00002650
       ESP:
         description: Spain
         meaning: iso3166loc:es
         exact_mappings:
-          - GAZ:00000591
+        - GAZ:00000591
       PRT:
         description: Portugal
         meaning: iso3166loc:pt
         exact_mappings:
-          - GAZ:00002944
+        - GAZ:00002944
       NLD:
         description: Netherlands
         meaning: iso3166loc:nl
         exact_mappings:
-          - GAZ:00002946
+        - GAZ:00002946
       BEL:
         description: Belgium
         meaning: iso3166loc:be
         exact_mappings:
-          - GAZ:00002938
+        - GAZ:00002938
       CHE:
         description: Switzerland
         meaning: iso3166loc:ch
         exact_mappings:
-          - GAZ:00002941
+        - GAZ:00002941
       AUT:
         description: Austria
         meaning: iso3166loc:at
         exact_mappings:
-          - GAZ:00002942
+        - GAZ:00002942
       SWE:
         description: Sweden
         meaning: iso3166loc:se
         exact_mappings:
-          - GAZ:00002729
+        - GAZ:00002729
       NOR:
         description: Norway
         meaning: iso3166loc:no
         exact_mappings:
-          - GAZ:00002699
+        - GAZ:00002699
       DNK:
         description: Denmark
         meaning: iso3166loc:dk
         exact_mappings:
-          - GAZ:00002635
+        - GAZ:00002635
       FIN:
         description: Finland
         meaning: iso3166loc:fi
         exact_mappings:
-          - GAZ:00002937
+        - GAZ:00002937
       POL:
         description: Poland
         meaning: iso3166loc:pl
         exact_mappings:
-          - GAZ:00002939
+        - GAZ:00002939
       RUS:
         description: Russian Federation
         meaning: iso3166loc:ru
         exact_mappings:
-          - GAZ:00002721
+        - GAZ:00002721
       UKR:
         description: Ukraine
         meaning: iso3166loc:ua
         exact_mappings:
-          - GAZ:00002724
+        - GAZ:00002724
       CHN:
         description: China
         meaning: iso3166loc:cn
         exact_mappings:
-          - GAZ:00002845
+        - GAZ:00002845
       JPN:
         description: Japan
         meaning: iso3166loc:jp
         exact_mappings:
-          - GAZ:00002747
+        - GAZ:00002747
       KOR:
         description: South Korea
         meaning: iso3166loc:kr
         exact_mappings:
-          - GAZ:00002802
+        - GAZ:00002802
       IND:
         description: India
         meaning: iso3166loc:in
         exact_mappings:
-          - GAZ:00002839
+        - GAZ:00002839
       AUS:
         description: Australia
         meaning: iso3166loc:au
         exact_mappings:
-          - GAZ:00000463
+        - GAZ:00000463
       NZL:
         description: New Zealand
         meaning: iso3166loc:nz
         exact_mappings:
-          - GAZ:00000469
+        - GAZ:00000469
       BRA:
         description: Brazil
         meaning: iso3166loc:br
         exact_mappings:
-          - GAZ:00002828
+        - GAZ:00002828
       ARG:
         description: Argentina
         meaning: iso3166loc:ar
         exact_mappings:
-          - GAZ:00002928
+        - GAZ:00002928
       CHL:
         description: Chile
         meaning: iso3166loc:cl
         exact_mappings:
-          - GAZ:00002825
+        - GAZ:00002825
       COL:
         description: Colombia
         meaning: iso3166loc:co
         exact_mappings:
-          - GAZ:00002929
-
+        - GAZ:00002929
   USStateCodeEnum:
     description: United States state and territory codes
     permissible_values:
@@ -539,7 +569,6 @@ enums:
         description: American Samoa
       MP:
         description: Northern Mariana Islands
-
   CanadianProvinceCodeEnum:
     description: Canadian province and territory codes
     permissible_values:
@@ -559,7 +588,7 @@ enums:
         description: Northwest Territories
       NU:
         description: Nunavut
-      ON:
+      true:
         description: Ontario
       PE:
         description: Prince Edward Island
@@ -569,225 +598,180 @@ enums:
         description: Saskatchewan
       YT:
         description: Yukon
-
   CompassDirection:
-    description: |-
-      Cardinal and intercardinal compass directions
+    description: Cardinal and intercardinal compass directions
     permissible_values:
-      
-      # Cardinal directions
       NORTH:
         description: North (0°/360°)
         annotations:
           abbreviation: N
           degrees: 0
-          
       EAST:
         description: East (90°)
         annotations:
           abbreviation: E
           degrees: 90
-          
       SOUTH:
         description: South (180°)
         annotations:
           abbreviation: S
           degrees: 180
-          
       WEST:
         description: West (270°)
         annotations:
           abbreviation: W
           degrees: 270
-          
-      # Intercardinal directions
       NORTHEAST:
         description: Northeast (45°)
         annotations:
           abbreviation: NE
           degrees: 45
-          
       SOUTHEAST:
         description: Southeast (135°)
         annotations:
           abbreviation: SE
           degrees: 135
-          
       SOUTHWEST:
         description: Southwest (225°)
         annotations:
           abbreviation: SW
           degrees: 225
-          
       NORTHWEST:
         description: Northwest (315°)
         annotations:
           abbreviation: NW
           degrees: 315
-          
-      # Secondary intercardinal directions
       NORTH_NORTHEAST:
         description: North-northeast (22.5°)
         annotations:
           abbreviation: NNE
           degrees: 22.5
-          
       EAST_NORTHEAST:
         description: East-northeast (67.5°)
         annotations:
           abbreviation: ENE
           degrees: 67.5
-          
       EAST_SOUTHEAST:
         description: East-southeast (112.5°)
         annotations:
           abbreviation: ESE
           degrees: 112.5
-          
       SOUTH_SOUTHEAST:
         description: South-southeast (157.5°)
         annotations:
           abbreviation: SSE
           degrees: 157.5
-          
       SOUTH_SOUTHWEST:
         description: South-southwest (202.5°)
         annotations:
           abbreviation: SSW
           degrees: 202.5
-          
       WEST_SOUTHWEST:
         description: West-southwest (247.5°)
         annotations:
           abbreviation: WSW
           degrees: 247.5
-          
       WEST_NORTHWEST:
         description: West-northwest (292.5°)
         annotations:
           abbreviation: WNW
           degrees: 292.5
-          
       NORTH_NORTHWEST:
         description: North-northwest (337.5°)
         annotations:
           abbreviation: NNW
           degrees: 337.5
-
   RelativeDirection:
-    description: |-
-      Relative directional terms
+    description: Relative directional terms
     permissible_values:
-      
       FORWARD:
         description: Forward/Ahead
         annotations:
           aliases: ahead, front
-          
       BACKWARD:
         description: Backward/Behind
         annotations:
           aliases: behind, back, rear
-          
       LEFT:
         description: Left
         annotations:
           aliases: port (nautical)
-          
       RIGHT:
         description: Right
         annotations:
           aliases: starboard (nautical)
-          
       UP:
         description: Up/Above
         annotations:
           aliases: above, upward
-          
       DOWN:
         description: Down/Below
         annotations:
           aliases: below, downward
-          
       INWARD:
         description: Inward/Toward center
         annotations:
           aliases: toward center, centripetal
-          
       OUTWARD:
         description: Outward/Away from center
         annotations:
           aliases: away from center, centrifugal
-          
       CLOCKWISE:
         description: Clockwise rotation
         annotations:
           abbreviation: CW
-          
       COUNTERCLOCKWISE:
         description: Counterclockwise rotation
         annotations:
           abbreviation: CCW
           aliases: anticlockwise
-
   WindDirection:
-    description: |-
-      Wind direction nomenclature (named for where wind comes FROM)
+    description: Wind direction nomenclature (named for where wind comes FROM)
     permissible_values:
-      
       NORTHERLY:
         description: Wind from the north
         annotations:
           from_direction: north
           toward_direction: south
-          
       NORTHEASTERLY:
         description: Wind from the northeast
         annotations:
           from_direction: northeast
           toward_direction: southwest
-          
       EASTERLY:
         description: Wind from the east
         annotations:
           from_direction: east
           toward_direction: west
-          
       SOUTHEASTERLY:
         description: Wind from the southeast
         annotations:
           from_direction: southeast
           toward_direction: northwest
-          
       SOUTHERLY:
         description: Wind from the south
         annotations:
           from_direction: south
           toward_direction: north
-          
       SOUTHWESTERLY:
         description: Wind from the southwest
         annotations:
           from_direction: southwest
           toward_direction: northeast
-          
       WESTERLY:
         description: Wind from the west
         annotations:
           from_direction: west
           toward_direction: east
-          
       NORTHWESTERLY:
         description: Wind from the northwest
         annotations:
           from_direction: northwest
           toward_direction: southeast
-          
       VARIABLE:
         description: Variable wind direction
         annotations:
           note: changing or inconsistent direction
-
   ContinentEnum:
     description: Continental regions
     permissible_values:
@@ -805,7 +789,6 @@ enums:
         description: Oceania (including Australia)
       SOUTH_AMERICA:
         description: South America
-
   UNRegionEnum:
     description: United Nations regional classifications
     permissible_values:
@@ -853,7 +836,6 @@ enums:
         description: Micronesia
       POLYNESIA:
         description: Polynesia
-
   LanguageCodeISO639_1Enum:
     description: ISO 639-1 two-letter language codes
     permissible_values:
@@ -901,7 +883,7 @@ enums:
         description: Swedish
       DA:
         description: Danish
-      NO:
+      false:
         description: Norwegian
       FI:
         description: Finnish
@@ -917,7 +899,6 @@ enums:
         description: Romanian
       UK:
         description: Ukrainian
-
   TimeZoneEnum:
     description: Common time zones
     permissible_values:
@@ -965,7 +946,6 @@ enums:
         description: New Zealand Standard Time (UTC+12)
       NZDT:
         description: New Zealand Daylight Time (UTC+13)
-
   CurrencyCodeISO4217Enum:
     description: ISO 4217 currency codes
     permissible_values:
@@ -1033,3 +1013,6 @@ enums:
         description: Israeli Shekel
       EGP:
         description: Egyptian Pound
+license: MIT
+see_also:
+- https://linkml.github.io/valuesets

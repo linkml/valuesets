@@ -1,35 +1,39 @@
-id: https://w3id.org/valuesets/healthcare
 name: valuesets-healthcare
 title: valuesets-healthcare
-description: |-
-  Common Data Model Elements
-license: MIT
-see_also:
-  - https://linkml.github.io/valuesets
-
+description: Common Data Model Elements
+id: https://w3id.org/valuesets/healthcare
 prefixes:
-  linkml_common: https://w3id.org/valuesets/
+  # linkml_common: https://w3id.org/valuesets/
   linkml: https://w3id.org/linkml/
   biolink: https://w3id.org/biolink/
   schema: http://schema.org/
   PATO: http://purl.obolibrary.org/obo/PATO_
   fhir: http://hl7.org/fhir/
   omopschema: http://example.org/omop/
-default_prefix: linkml_common
-
+  valuesets: https://w3id.org/valuesets/
+default_prefix: valuesets
+slots:
+  healthcare_encounter_classification:
+    description: The healthcare encounter classification classification
+    range: HealthcareEncounterClassification
 enums:
   HealthcareEncounterClassification:
     permissible_values:
       Inpatient Visit:
-        description: Person visiting hospital, at a Care Site, in bed, for duration of more than one day, with physicians and other Providers permanently available to deliver service around the clock
+        description: Person visiting hospital, at a Care Site, in bed, for duration of more than one day, with physicians
+          and other Providers permanently available to deliver service around the clock
       Emergency Room Visit:
-        description: Person visiting dedicated healthcare institution for treating emergencies, at a Care Site, within one day, with physicians and Providers permanently available to deliver service around the clock
+        description: Person visiting dedicated healthcare institution for treating emergencies, at a Care Site, within one
+          day, with physicians and Providers permanently available to deliver service around the clock
       Emergency Room and Inpatient Visit:
-        description: Person visiting ER followed by a subsequent Inpatient Visit, where Emergency department is part of hospital, and transition from the ER to other hospital departments is undefined
+        description: Person visiting ER followed by a subsequent Inpatient Visit, where Emergency department is part of hospital,
+          and transition from the ER to other hospital departments is undefined
       Non-hospital institution Visit:
-        description: Person visiting dedicated institution for reasons of poor health, at a Care Site, long-term or permanently, with no physician but possibly other Providers permanently available to deliver service around the clock
+        description: Person visiting dedicated institution for reasons of poor health, at a Care Site, long-term or permanently,
+          with no physician but possibly other Providers permanently available to deliver service around the clock
       Outpatient Visit:
-        description: Person visiting dedicated ambulatory healthcare institution, at a Care Site, within one day, without bed, with physicians or medical Providers delivering service during Visit
+        description: Person visiting dedicated ambulatory healthcare institution, at a Care Site, within one day, without
+          bed, with physicians or medical Providers delivering service during Visit
       Home Visit:
         description: Provider visiting Person, without a Care Site, within one day, delivering service
       Telehealth Visit:
@@ -39,6 +43,11 @@ enums:
       Laboratory Visit:
         description: Patient visiting dedicated institution, at a Care Site, within one day, for the purpose of a Measurement.
       Ambulance Visit:
-        description: Person using transportation service for the purpose of initiating one of the other Visits, without a Care Site, within one day, potentially with Providers accompanying the Visit and delivering service
+        description: Person using transportation service for the purpose of initiating one of the other Visits, without a
+          Care Site, within one day, potentially with Providers accompanying the Visit and delivering service
       Case Management Visit:
-        description: Person interacting with healthcare system, without a Care Site, within a day, with no Providers involved, for administrative purposes
+        description: Person interacting with healthcare system, without a Care Site, within a day, with no Providers involved,
+          for administrative purposes
+license: MIT
+see_also:
+- https://linkml.github.io/valuesets

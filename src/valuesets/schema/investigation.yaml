@@ -1,14 +1,9 @@
-id: https://w3id.org/valuesets/investigation
 name: valuesets-investigation
 title: valuesets-investigation
-description: |-
-  Common Data Model Elements: Human and investigation activities
-license: MIT
-see_also:
-  - https://linkml.github.io/valuesets
-
+description: 'Common Data Model Elements: Human and investigation activities'
+id: https://w3id.org/valuesets/investigation
 prefixes:
-  linkml_common: https://w3id.org/valuesets/
+  # linkml_common: https://w3id.org/valuesets/
   linkml: https://w3id.org/linkml/
   biolink: https://w3id.org/biolink/
   schema: http://schema.org/
@@ -18,10 +13,21 @@ prefixes:
   prov: http://www.w3.org/ns/prov#
   dcterms: http://purl.org/dc/terms/
   fibo.commons.PartiesAndSituations: https://spec.edmcouncil.org/fibo/ontology/FBC/ommons/PartiesAndSituations/
-default_prefix: linkml_common
-default_range: string
-
-
+  valuesets: https://w3id.org/valuesets/
+default_prefix: valuesets
+slots:
+  case_or_control:
+    description: The case or control classification
+    range: CaseOrControlEnum
+  study_design:
+    description: The study design classification
+    range: StudyDesignEnum
+  investigative_protocol:
+    description: The investigative protocol classification
+    range: InvestigativeProtocolEnum
+  sample_processing:
+    description: The sample processing classification
+    range: SampleProcessingEnum
 enums:
   CaseOrControlEnum:
     permissible_values:
@@ -31,27 +37,28 @@ enums:
       CONTROL:
         title: control role in case-control study
         meaning: OBI:0002493
-
   StudyDesignEnum:
     reachable_from:
       source_nodes:
-        - OBI:0500000
+      - OBI:0500000
       is_direct: false
       relationship_types:
-        - rdfs:subClassOf
-
+      - rdfs:subClassOf
   InvestigativeProtocolEnum:
     reachable_from:
       source_nodes:
-        - OBI:0000272
+      - OBI:0000272
       is_direct: false
       relationship_types:
-        - rdfs:subClassOf
-
+      - rdfs:subClassOf
   SampleProcessingEnum:
     reachable_from:
       source_nodes:
-        - OBI:0000094
+      - OBI:0000094
       is_direct: false
       relationship_types:
-        - rdfs:subClassOf
+      - rdfs:subClassOf
+license: MIT
+see_also:
+- https://linkml.github.io/valuesets
+default_range: string

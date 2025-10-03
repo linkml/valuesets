@@ -1,21 +1,20 @@
-id: https://w3id.org/valuesets/health
 name: valuesets-health
 title: valuesets-health
-description: |-
-  General health-related value sets
-license: MIT
-see_also:
-  - https://linkml.github.io/valuesets
-
+description: General health-related value sets
+id: https://w3id.org/valuesets/health
 prefixes:
-  linkml_common: https://w3id.org/valuesets/
+  # linkml_common: https://w3id.org/valuesets/
   linkml: https://w3id.org/linkml/
   biolink: https://w3id.org/biolink/
   schema: http://schema.org/
   NCIT: http://purl.obolibrary.org/obo/NCIT_
   fhir: http://hl7.org/fhir/
-default_prefix: linkml_common
-
+  valuesets: https://w3id.org/valuesets/
+default_prefix: valuesets
+slots:
+  vital_status:
+    description: The vital status of a person or organism
+    range: VitalStatusEnum
 enums:
   VitalStatusEnum:
     description: The vital status of a person or organism
@@ -34,3 +33,6 @@ enums:
         description: The person is presumed to be alive based on available information
       PRESUMED_DECEASED:
         description: The person is presumed to be deceased based on available information
+license: MIT
+see_also:
+- https://linkml.github.io/valuesets

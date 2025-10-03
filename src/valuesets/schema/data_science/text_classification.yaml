@@ -1,10 +1,21 @@
 name: text_classification
 id: https://w3id.org/linkml/valuesets/data_science/text_classification
 prefixes:
-  linkml_common: https://w3id.org/linkml-common/
+  # linkml_common: https://w3id.org/linkml-common/
   NCIT: http://purl.obolibrary.org/obo/NCIT_
   SIO: http://semanticscience.org/resource/SIO_
-default_prefix: linkml_common
+  valuesets: https://w3id.org/valuesets/
+default_prefix: valuesets
+slots:
+  news_topic_category:
+    description: Common news article topic categories
+    range: NewsTopicCategoryEnum
+  toxicity_classification:
+    description: Text toxicity classification labels
+    range: ToxicityClassificationEnum
+  intent_classification:
+    description: Common chatbot/NLU intent categories
+    range: IntentClassificationEnum
 enums:
   NewsTopicCategoryEnum:
     description: Common news article topic categories
@@ -16,14 +27,14 @@ enums:
         description: Business, finance, and economic news
         title: Business
         aliases:
-          - finance
-          - economy
+        - finance
+        - economy
       TECHNOLOGY:
         description: Technology and computing news
         title: Technology
         aliases:
-          - tech
-          - IT
+        - tech
+        - IT
       SPORTS:
         description: Sports news and events
         title: Sports
@@ -31,7 +42,7 @@ enums:
         description: Entertainment and celebrity news
         title: Entertainment
         aliases:
-          - showbiz
+        - showbiz
       SCIENCE:
         description: Scientific discoveries and research
         title: Science
@@ -39,19 +50,18 @@ enums:
         description: Health, medicine, and wellness news
         title: Health
         aliases:
-          - medical
+        - medical
       WORLD:
         description: International news and events
         title: World
         aliases:
-          - international
-          - global
+        - international
+        - global
       LOCAL:
         description: Local and regional news
         title: Local
         aliases:
-          - regional
-          
+        - regional
   ToxicityClassificationEnum:
     description: Text toxicity classification labels
     permissible_values:
@@ -60,16 +70,16 @@ enums:
         title: Non-Toxic
         meaning: SIO:001010
         aliases:
-          - safe
-          - clean
-          - "0"
+        - safe
+        - clean
+        - '0'
       TOXIC:
         description: Text contains harmful or inappropriate content
         title: Toxic
         aliases:
-          - harmful
-          - inappropriate
-          - "1"
+        - harmful
+        - inappropriate
+        - '1'
       SEVERE_TOXIC:
         description: Text contains severely harmful content
         title: Severe Toxic
@@ -90,7 +100,6 @@ enums:
         description: Text contains identity-based hate
         title: Identity Hate
         is_a: TOXIC
-        
   IntentClassificationEnum:
     description: Common chatbot/NLU intent categories
     permissible_values:

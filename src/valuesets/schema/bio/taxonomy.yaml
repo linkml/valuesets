@@ -1,561 +1,453 @@
----
-id: https://w3id.org/linkml/valuesets/bio/taxonomy
 name: taxonomy
 title: Taxonomic Classifications
-description: |-
-  Value sets for taxonomic classifications and model organisms
-
+description: Value sets for taxonomic classifications and model organisms
+id: https://w3id.org/linkml/valuesets/bio/taxonomy
+imports:
+- linkml:types
 prefixes:
-  valuesets: https://w3id.org/linkml/valuesets/
+  valuesets: https://w3id.org/valuesets/
   NCBITaxon: http://purl.obolibrary.org/obo/NCBITaxon_
   TAXRANK: http://purl.obolibrary.org/obo/TAXRANK_
-
 default_prefix: valuesets
-
-imports:
-  - linkml:types
-
+slots:
+  organism_taxon:
+    description: The organism taxon classification
+    range: OrganismTaxonEnum
+  common_organism_taxa:
+    description: Common model organisms used in biological research, mapped to NCBI Taxonomy IDs
+    range: CommonOrganismTaxaEnum
+  taxonomic_rank:
+    description: Standard taxonomic ranks used in biological classification
+    range: TaxonomicRank
+  biological_kingdom:
+    description: Major kingdoms/domains of life
+    range: BiologicalKingdom
 enums:
-
   OrganismTaxonEnum:
     reachable_from:
       source_nodes:
-        - NCBITaxon:1
+      - NCBITaxon:1
       is_direct: false
       relationship_types:
-        - rdfs:subClassOf
-
+      - rdfs:subClassOf
   CommonOrganismTaxaEnum:
-    description: |-
-      Common model organisms used in biological research, mapped to NCBI Taxonomy IDs
+    description: Common model organisms used in biological research, mapped to NCBI Taxonomy IDs
     permissible_values:
-
-      # High-level groupings (monophyletic)
-      # Domains
       BACTERIA:
         description: Bacteria domain
         meaning: NCBITaxon:2
         instantiates:
-          - taxon:Domain
-
+        - taxon:Domain
       ARCHAEA:
         description: Archaea domain
         meaning: NCBITaxon:2157
-
       EUKARYOTA:
         description: Eukaryota domain
         meaning: NCBITaxon:2759
-
       VIRUSES:
         description: Viruses (not a true domain)
         meaning: NCBITaxon:10239
-
       VERTEBRATA:
         title: Vertebrata <vertebrates>
         description: Vertebrates
         meaning: NCBITaxon:7742
         is_a: EUKARYOTA
-
       MAMMALIA:
         description: Mammals
         meaning: NCBITaxon:40674
         is_a: VERTEBRATA
-
       PRIMATES:
         description: Primates
         meaning: NCBITaxon:9443
         is_a: MAMMALIA
-
       RODENTIA:
         description: Rodents
         meaning: NCBITaxon:9989
         is_a: MAMMALIA
-
       CARNIVORA:
         description: Carnivores
         meaning: NCBITaxon:33554
         is_a: MAMMALIA
-
       ARTIODACTYLA:
         description: Even-toed ungulates
         meaning: NCBITaxon:91561
         is_a: MAMMALIA
-
       AVES:
         description: Birds
         meaning: NCBITaxon:8782
         is_a: VERTEBRATA
-
       ACTINOPTERYGII:
         description: Ray-finned fishes
         meaning: NCBITaxon:7898
         is_a: VERTEBRATA
-
       AMPHIBIA:
         description: Amphibians
         meaning: NCBITaxon:8292
         is_a: VERTEBRATA
-
       ARTHROPODA:
         description: Arthropods
         meaning: NCBITaxon:6656
         is_a: EUKARYOTA
-
       INSECTA:
         description: Insects
         meaning: NCBITaxon:50557
         is_a: ARTHROPODA
-
       NEMATODA:
         description: Roundworms
         meaning: NCBITaxon:6231
         is_a: EUKARYOTA
-
       FUNGI:
         description: Fungal kingdom
         meaning: NCBITaxon:4751
         is_a: EUKARYOTA
-
       ASCOMYCOTA:
         description: Sac fungi
         meaning: NCBITaxon:4890
         is_a: FUNGI
-
       VIRIDIPLANTAE:
         description: Green plants
         meaning: NCBITaxon:33090
         is_a: EUKARYOTA
-
       MAGNOLIOPHYTA:
         title: Magnoliopsida
         description: Flowering plants
         meaning: NCBITaxon:3398
         is_a: VIRIDIPLANTAE
-
       PROTEOBACTERIA:
         title: Pseudomonadota
         description: Proteobacteria
         meaning: NCBITaxon:1224
         is_a: BACTERIA
-
       GAMMAPROTEOBACTERIA:
         description: Gamma proteobacteria
         meaning: NCBITaxon:1236
         is_a: PROTEOBACTERIA
-
       FIRMICUTES:
         title: Bacillota
         description: Firmicutes (Gram-positive bacteria)
         meaning: NCBITaxon:1239
         is_a: BACTERIA
-
       ACTINOBACTERIA:
         title: Actinomycetota
         description: Actinobacteria
         meaning: NCBITaxon:201174
         is_a: BACTERIA
-
       EURYARCHAEOTA:
         title: Methanobacteriota
         description: Euryarchaeota
         meaning: NCBITaxon:28890
         is_a: ARCHAEA
-
       APICOMPLEXA:
         description: Apicomplexan parasites
         meaning: NCBITaxon:5794
         is_a: EUKARYOTA
-
-      # Specific organisms
       HUMAN:
         title: Homo sapiens
         description: Homo sapiens (human)
         meaning: NCBITaxon:9606
         is_a: PRIMATES
-
       MOUSE:
         title: Mus musculus
         description: Mus musculus (house mouse)
         meaning: NCBITaxon:10090
         is_a: RODENTIA
-
       RAT:
         title: Rattus norvegicus
         description: Rattus norvegicus (Norway rat)
         meaning: NCBITaxon:10116
         is_a: RODENTIA
-
       RHESUS:
         title: Macaca mulatta
         description: Macaca mulatta (rhesus macaque)
         meaning: NCBITaxon:9544
         is_a: PRIMATES
-
       CHIMP:
         title: Pan troglodytes
         description: Pan troglodytes (chimpanzee)
         meaning: NCBITaxon:9598
         is_a: PRIMATES
-
       DOG:
         title: Canis lupus familiaris
         description: Canis lupus familiaris (dog)
         meaning: NCBITaxon:9615
         is_a: CARNIVORA
-
       COW:
         title: Bos taurus
         description: Bos taurus (cattle)
         meaning: NCBITaxon:9913
         is_a: ARTIODACTYLA
-
       PIG:
         title: Sus scrofa
         description: Sus scrofa (pig)
         meaning: NCBITaxon:9823
         is_a: ARTIODACTYLA
-
-      # Birds
       CHICKEN:
         title: Gallus gallus
         description: Gallus gallus (chicken)
         meaning: NCBITaxon:9031
         is_a: AVES
-
-      # Fish
       ZEBRAFISH:
         title: Danio rerio
         description: Danio rerio (zebrafish)
         meaning: NCBITaxon:7955
         is_a: ACTINOPTERYGII
-
       MEDAKA:
         title: Oryzias latipes
         description: Oryzias latipes (Japanese medaka)
         meaning: NCBITaxon:8090
         is_a: ACTINOPTERYGII
-
       PUFFERFISH:
         title: Takifugu rubripes
         description: Takifugu rubripes (torafugu)
         meaning: NCBITaxon:31033
         is_a: ACTINOPTERYGII
-
-      # Amphibians
       XENOPUS_TROPICALIS:
         description: Xenopus tropicalis (western clawed frog)
         meaning: NCBITaxon:8364
         is_a: AMPHIBIA
-
       XENOPUS_LAEVIS:
         description: Xenopus laevis (African clawed frog)
         meaning: NCBITaxon:8355
         is_a: AMPHIBIA
-
-      # Invertebrates
       DROSOPHILA:
         title: Drosophila melanogaster
         description: Drosophila melanogaster (fruit fly)
         meaning: NCBITaxon:7227
         is_a: INSECTA
-
       C_ELEGANS:
         title: Caenorhabditis elegans
         description: Caenorhabditis elegans (roundworm)
         meaning: NCBITaxon:6239
         is_a: NEMATODA
-
-      # Fungi
       S_CEREVISIAE:
         title: Saccharomyces cerevisiae
         description: Saccharomyces cerevisiae (baker's yeast)
         meaning: NCBITaxon:4932
         is_a: ASCOMYCOTA
-
       S_CEREVISIAE_S288C:
         title: Saccharomyces cerevisiae S288C
         description: Saccharomyces cerevisiae S288C (reference strain)
         meaning: NCBITaxon:559292
         is_a: S_CEREVISIAE
-
       S_POMBE:
         title: Schizosaccharomyces pombe
         description: Schizosaccharomyces pombe (fission yeast)
         meaning: NCBITaxon:4896
         is_a: ASCOMYCOTA
-
       C_ALBICANS:
         title: Candida albicans
         description: Candida albicans (pathogenic yeast)
         meaning: NCBITaxon:5476
         is_a: ASCOMYCOTA
-
       A_NIDULANS:
         title: Aspergillus nidulans
         description: Aspergillus nidulans (filamentous fungus)
         meaning: NCBITaxon:162425
         is_a: ASCOMYCOTA
-
       N_CRASSA:
         title: Neurospora crassa
         description: Neurospora crassa (red bread mold)
         meaning: NCBITaxon:5141
         is_a: ASCOMYCOTA
-
-      # Plants
       ARABIDOPSIS:
         title: Arabidopsis thaliana
         description: Arabidopsis thaliana (thale cress)
         meaning: NCBITaxon:3702
         is_a: MAGNOLIOPHYTA
-
       RICE:
         title: Oryza sativa
         description: Oryza sativa (rice)
         meaning: NCBITaxon:4530
         is_a: MAGNOLIOPHYTA
-
       MAIZE:
         title: Zea mays
         description: Zea mays (corn)
         meaning: NCBITaxon:4577
         is_a: MAGNOLIOPHYTA
-
       TOMATO:
         title: Solanum lycopersicum
         description: Solanum lycopersicum (tomato)
         meaning: NCBITaxon:4081
         is_a: MAGNOLIOPHYTA
-
       TOBACCO:
         title: Nicotiana tabacum
         description: Nicotiana tabacum (tobacco)
         meaning: NCBITaxon:4097
         is_a: MAGNOLIOPHYTA
-
-      # Bacteria
       E_COLI:
         title: Escherichia coli
         description: Escherichia coli
         meaning: NCBITaxon:562
         is_a: GAMMAPROTEOBACTERIA
-
       E_COLI_K12:
         title: Escherichia coli K-12
         description: Escherichia coli str. K-12
         meaning: NCBITaxon:83333
         is_a: E_COLI
-
       B_SUBTILIS:
         title: Bacillus subtilis
         description: Bacillus subtilis
         meaning: NCBITaxon:1423
         is_a: FIRMICUTES
-
       M_TUBERCULOSIS:
         title: Mycobacterium tuberculosis
         description: Mycobacterium tuberculosis
         meaning: NCBITaxon:1773
         is_a: ACTINOBACTERIA
-
       P_AERUGINOSA:
         title: Pseudomonas aeruginosa
         description: Pseudomonas aeruginosa
         meaning: NCBITaxon:287
         is_a: GAMMAPROTEOBACTERIA
-
       S_AUREUS:
         title: Staphylococcus aureus
         description: Staphylococcus aureus
         meaning: NCBITaxon:1280
         is_a: FIRMICUTES
-
       S_PNEUMONIAE:
         title: Streptococcus pneumoniae
         description: Streptococcus pneumoniae
         meaning: NCBITaxon:1313
         is_a: FIRMICUTES
-
       H_PYLORI:
         title: Helicobacter pylori
         description: Helicobacter pylori
         meaning: NCBITaxon:210
         is_a: PROTEOBACTERIA
-
-      # Archaea
       M_JANNASCHII:
         title: Methanocaldococcus jannaschii
         description: Methanocaldococcus jannaschii
         meaning: NCBITaxon:2190
         is_a: EURYARCHAEOTA
-
       H_SALINARUM:
         title: Halobacterium salinarum
         description: Halobacterium salinarum
         meaning: NCBITaxon:2242
         is_a: EURYARCHAEOTA
-
-      # Protists
       P_FALCIPARUM:
         title: Plasmodium falciparum
         description: Plasmodium falciparum (malaria parasite)
         meaning: NCBITaxon:5833
         is_a: APICOMPLEXA
-
       T_GONDII:
         title: Toxoplasma gondii
         description: Toxoplasma gondii
         meaning: NCBITaxon:5811
         is_a: APICOMPLEXA
-
       T_BRUCEI:
         title: Trypanosoma brucei
         description: Trypanosoma brucei
         meaning: NCBITaxon:5691
         is_a: EUKARYOTA
-
       DICTYOSTELIUM:
         title: Dictyostelium discoideum
         description: Dictyostelium discoideum (slime mold)
         meaning: NCBITaxon:44689
         is_a: EUKARYOTA
-
       TETRAHYMENA:
         title: Tetrahymena thermophila
         description: Tetrahymena thermophila
         meaning: NCBITaxon:5911
         is_a: EUKARYOTA
-
       PARAMECIUM:
         title: Paramecium tetraurelia
         description: Paramecium tetraurelia
         meaning: NCBITaxon:5888
         is_a: EUKARYOTA
-
       CHLAMYDOMONAS:
         title: Chlamydomonas reinhardtii
         description: Chlamydomonas reinhardtii (green alga)
         meaning: NCBITaxon:3055
         is_a: VIRIDIPLANTAE
-
-      # Viruses (for completeness)
       PHAGE_LAMBDA:
         title: Lambdavirus lambda
         description: Escherichia phage lambda
         meaning: NCBITaxon:10710
         is_a: VIRUSES
-
       HIV1:
         title: Human immunodeficiency virus 1
         description: Human immunodeficiency virus 1
         meaning: NCBITaxon:11676
         is_a: VIRUSES
-
       INFLUENZA_A:
         title: Influenza A virus
         description: Influenza A virus
         meaning: NCBITaxon:11320
         is_a: VIRUSES
-
       SARS_COV_2:
         title: Severe acute respiratory syndrome coronavirus 2
         description: Severe acute respiratory syndrome coronavirus 2
         meaning: NCBITaxon:2697049
         is_a: VIRUSES
-
   TaxonomicRank:
-    description: |-
-      Standard taxonomic ranks used in biological classification
+    description: Standard taxonomic ranks used in biological classification
     permissible_values:
-
       DOMAIN:
         description: Domain (highest rank)
         meaning: TAXRANK:0000037
-
       KINGDOM:
         description: Kingdom
         meaning: TAXRANK:0000017
-
       PHYLUM:
         description: Phylum (animals, plants, fungi) or Division (plants)
         meaning: TAXRANK:0000001
-
       CLASS:
         description: Class
         meaning: TAXRANK:0000002
-
       ORDER:
         description: Order
         meaning: TAXRANK:0000003
-
       FAMILY:
         description: Family
         meaning: TAXRANK:0000004
-
       GENUS:
         description: Genus
         meaning: TAXRANK:0000005
-
       SPECIES:
         description: Species
         meaning: TAXRANK:0000006
-
       SUBSPECIES:
         description: Subspecies
         meaning: TAXRANK:0000023
-
       STRAIN:
         description: Strain (especially for microorganisms)
         meaning: TAXRANK:0001001
-
       VARIETY:
         title: varietas
         description: Variety (mainly plants)
         meaning: TAXRANK:0000016
-
       FORM:
         title: forma
         description: Form (mainly plants)
         meaning: TAXRANK:0000026
-
       CULTIVAR:
         description: Cultivar (cultivated variety)
         meaning: TAXRANK:0000034
-
   BiologicalKingdom:
-    description: |-
-      Major kingdoms/domains of life
+    description: Major kingdoms/domains of life
     permissible_values:
-
       BACTERIA:
         description: Bacteria domain
         meaning: NCBITaxon:2
-
       ARCHAEA:
         description: Archaea domain
         meaning: NCBITaxon:2157
-
       EUKARYOTA:
         description: Eukaryota domain
         meaning: NCBITaxon:2759
-
       ANIMALIA:
         title: Metazoa
         description: Animal kingdom
         meaning: NCBITaxon:33208
-
       PLANTAE:
         title: Viridiplantae
         description: Plant kingdom (Viridiplantae)
         meaning: NCBITaxon:33090
-
       FUNGI:
         description: Fungal kingdom
         meaning: NCBITaxon:4751
-
       PROTISTA:
         description: Protist kingdom (polyphyletic group)
-
       VIRUSES:
         description: Viruses (not a true kingdom)
         meaning: NCBITaxon:10239

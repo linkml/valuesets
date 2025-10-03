@@ -1,8 +1,13 @@
 name: prediction_outcomes
 id: https://w3id.org/linkml/valuesets/statistics/prediction_outcomes
 prefixes:
-  linkml_common: https://w3id.org/linkml-common/
-default_prefix: linkml_common
+  # linkml_common: https://w3id.org/linkml-common/
+  valuesets: https://w3id.org/valuesets/
+default_prefix: valuesets
+slots:
+  outcome_type:
+    description: Types of prediction outcomes for classification tasks
+    range: OutcomeTypeEnum
 enums:
   OutcomeTypeEnum:
     description: Types of prediction outcomes for classification tasks

@@ -1,24 +1,23 @@
-id: https://w3id.org/common-value-sets/plant_developmental_stages
 name: plant_developmental_stages
 title: Plant Developmental Stages Value Sets
 description: Value sets for plant developmental stages from germination through senescence
-
+id: https://w3id.org/common-value-sets/plant_developmental_stages
 imports:
-  - linkml:types
-
+- linkml:types
 prefixes:
   CVS: https://w3id.org/common-value-sets/
   linkml: https://w3id.org/linkml/
   PO: http://purl.obolibrary.org/obo/PO_
-
-default_prefix: CVS
-default_range: string
-
+  valuesets: https://w3id.org/valuesets/
+default_prefix: valuesets
+slots:
+  plant_developmental_stage:
+    description: Major developmental stages in the plant life cycle, from seed germination through senescence
+    range: PlantDevelopmentalStage
 enums:
   PlantDevelopmentalStage:
-    description: >-
-      Major developmental stages in the plant life cycle, from seed germination through
-      senescence. Based on the Plant Ontology (PO) standardized stages.
+    description: Major developmental stages in the plant life cycle, from seed germination through senescence. Based on the
+      Plant Ontology (PO) standardized stages.
     permissible_values:
       SEED_GERMINATION_STAGE:
         description: Stage beginning with seed imbibition and ending with radicle emergence
@@ -26,11 +25,13 @@ enums:
       SEEDLING_STAGE:
         description: Stage from germination until development of first adult vascular leaf
         meaning: PO:0007131
-        aliases: ["seedling development stage"]
+        aliases:
+        - seedling development stage
       VEGETATIVE_GROWTH_STAGE:
         description: Stage of growth before reproductive structure formation
         meaning: PO:0007134
-        aliases: ["sporophyte vegetative stage"]
+        aliases:
+        - sporophyte vegetative stage
       FLOWERING_STAGE:
         description: Stage when flowers open with pollen release and/or receptive stigma
         meaning: PO:0007616
@@ -43,15 +44,18 @@ enums:
       SENESCENCE_STAGE:
         description: Stage of aging with loss of function and organ deterioration
         meaning: PO:0007017
-        aliases: ["sporophyte senescent stage"]
+        aliases:
+        - sporophyte senescent stage
       DORMANCY_STAGE:
         description: Stage of suspended physiological activity and growth
         meaning: PO:0007132
-        aliases: ["sporophyte dormant stage"]
+        aliases:
+        - sporophyte dormant stage
       EMBRYO_DEVELOPMENT_STAGE:
         description: Stage from zygote first division to seed germination initiation
         meaning: PO:0007631
-        aliases: ["plant embryo development stage"]
+        aliases:
+        - plant embryo development stage
       ROOT_DEVELOPMENT_STAGE:
         description: Stages in root growth and development
         meaning: PO:0007520
@@ -61,10 +65,13 @@ enums:
       REPRODUCTIVE_STAGE:
         description: Stage from reproductive structure initiation to senescence onset
         meaning: PO:0007130
-        aliases: ["sporophyte reproductive stage"]
+        aliases:
+        - sporophyte reproductive stage
       MATURITY_STAGE:
         description: Stage when plant or plant embryo reaches full development
         meaning: PO:0001081
-        aliases: ["mature plant embryo stage"]
+        aliases:
+        - mature plant embryo stage
       POST_HARVEST_STAGE:
         description: Stage after harvest when plant parts are detached from parent plant
+default_range: string

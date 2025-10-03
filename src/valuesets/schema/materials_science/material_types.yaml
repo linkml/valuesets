@@ -7,8 +7,22 @@ prefixes:
   PATO: http://purl.obolibrary.org/obo/PATO_
   SRAO: http://www.fairsharing.org/ontology/subject/SRAO_
   SNOMED: http://snomed.info/id/
-  linkml_common: https://w3id.org/linkml-common/
-default_prefix: linkml_common
+  # linkml_common: https://w3id.org/linkml-common/
+  valuesets: https://w3id.org/valuesets/
+default_prefix: valuesets
+slots:
+  material_class:
+    description: Major classes of materials
+    range: MaterialClassEnum
+  polymer_type:
+    description: Types of polymer materials
+    range: PolymerTypeEnum
+  metal_type:
+    description: Types of metallic materials
+    range: MetalTypeEnum
+  composite_type:
+    description: Types of composite materials
+    range: CompositeTypeEnum
 enums:
   MaterialClassEnum:
     description: Major classes of materials
@@ -18,8 +32,8 @@ enums:
         title: metallic material
         meaning: ENVO:01001069
         aliases:
-          - Metal
-          - METAL
+        - Metal
+        - METAL
       CERAMIC:
         description: Inorganic non-metallic materials
         title: Ceramic
@@ -41,13 +55,12 @@ enums:
         title: Biomedical Material
         meaning: NCIT:C16338
         aliases:
-          - Biomaterial
-          - BIOMATERIAL
+        - Biomaterial
+        - BIOMATERIAL
       NANOMATERIAL:
         description: Materials with at least one dimension in nanoscale (1-100 nm)
         title: Nanomaterial
         meaning: NCIT:C62371
-        
   PolymerTypeEnum:
     description: Types of polymer materials
     permissible_values:
@@ -60,15 +73,15 @@ enums:
         title: thermoset polymer
         meaning: ENVO:06105005
         aliases:
-          - thermosetting polymer
-          - Thermoset
-          - THERMOSET
+        - thermosetting polymer
+        - Thermoset
+        - THERMOSET
       ELASTOMER:
         description: Polymer with elastic properties
         title: Elastomer
         meaning: SNOMED:261777007
         aliases:
-          - rubber
+        - rubber
       BIOPOLYMER:
         description: Polymer produced by living organisms
         title: Biopolymer
@@ -77,8 +90,7 @@ enums:
         description: Polymer that conducts electricity
         title: Conducting Polymer
         aliases:
-          - conducting polymer
-        
+        - conducting polymer
   MetalTypeEnum:
     description: Types of metallic materials
     permissible_values:
@@ -87,7 +99,7 @@ enums:
         title: Ferrous Metal
         meaning: SNOMED:264354006
         aliases:
-          - iron-based
+        - iron-based
       NON_FERROUS:
         description: Metals and alloys not containing iron
         title: Non-Ferrous Metal
@@ -106,7 +118,6 @@ enums:
         description: High density metals (density > 5 g/cm³)
         title: Heavy Metal
         meaning: CHEBI:5631
-        
   CompositeTypeEnum:
     description: Types of composite materials
     permissible_values:
@@ -114,7 +125,7 @@ enums:
         description: Composite with fiber reinforcement
         title: Fiber-Reinforced Composite
         aliases:
-          - FRC
+        - FRC
       PARTICLE_REINFORCED:
         description: Composite with particle reinforcement
         title: Particle-Reinforced Composite
@@ -122,19 +133,19 @@ enums:
         description: Composite with layered structure
         title: Laminar Composite
         aliases:
-          - laminate
+        - laminate
       METAL_MATRIX_COMPOSITE:
         description: Composite with metal matrix
         title: Metal Matrix Composite
         aliases:
-          - MMC
+        - MMC
       CERAMIC_MATRIX_COMPOSITE:
         description: Composite with ceramic matrix
         title: Ceramic Matrix Composite
         aliases:
-          - CMC
+        - CMC
       POLYMER_MATRIX_COMPOSITE:
         description: Composite with polymer matrix
         title: Polymer Matrix Composite
         aliases:
-          - PMC
+        - PMC

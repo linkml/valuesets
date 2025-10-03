@@ -96,12 +96,12 @@ class SequencingChemistry(RichEnum):
 
 # Set metadata after class creation
 SequencingChemistry._metadata = {
-    "SEQUENCING_BY_SYNTHESIS": {'description': 'Sequencing by synthesis (Illumina)', 'meaning': 'OBI:0000626'},
-    "SINGLE_MOLECULE_REAL_TIME": {'description': 'Single molecule real-time sequencing (PacBio)', 'meaning': 'OBI:0002763'},
-    "NANOPORE_SEQUENCING": {'description': 'Nanopore sequencing (Oxford Nanopore)', 'meaning': 'OBI:0002754'},
-    "PYROSEQUENCING": {'description': 'Pyrosequencing (454)', 'meaning': 'OBI:0000628'},
-    "SEQUENCING_BY_LIGATION": {'description': 'Sequencing by ligation (SOLiD)', 'meaning': 'OBI:0000629'},
-    "CHAIN_TERMINATION": {'description': 'Chain termination method (Sanger)', 'meaning': 'OBI:0000632'},
+    "SEQUENCING_BY_SYNTHESIS": {'description': 'Sequencing by synthesis (Illumina)'},
+    "SINGLE_MOLECULE_REAL_TIME": {'description': 'Single molecule real-time sequencing (PacBio)'},
+    "NANOPORE_SEQUENCING": {'description': 'Nanopore sequencing (Oxford Nanopore)'},
+    "PYROSEQUENCING": {'description': 'Pyrosequencing (454)'},
+    "SEQUENCING_BY_LIGATION": {'description': 'Sequencing by ligation (SOLiD)'},
+    "CHAIN_TERMINATION": {'description': 'Chain termination method (Sanger)'},
     "SEMICONDUCTOR_SEQUENCING": {'description': 'Semiconductor/Ion semiconductor sequencing'},
     "DNA_NANOBALL_SEQUENCING": {'description': 'DNA nanoball sequencing (MGI/BGI)'},
     "SEQUENCING_BY_AVIDITY": {'description': 'Sequencing by avidity (Element Biosciences)'},
@@ -179,15 +179,15 @@ class SequencingApplication(RichEnum):
 
 # Set metadata after class creation
 SequencingApplication._metadata = {
-    "WHOLE_GENOME_SEQUENCING": {'description': 'Whole genome sequencing (WGS)', 'meaning': 'OBI:0002117'},
-    "WHOLE_EXOME_SEQUENCING": {'description': 'Whole exome sequencing (WES)', 'meaning': 'OBI:0002118'},
-    "TRANSCRIPTOME_SEQUENCING": {'description': 'RNA sequencing (RNA-seq)', 'meaning': 'OBI:0001271'},
+    "WHOLE_GENOME_SEQUENCING": {'description': 'Whole genome sequencing (WGS)'},
+    "WHOLE_EXOME_SEQUENCING": {'description': 'Whole exome sequencing (WES)'},
+    "TRANSCRIPTOME_SEQUENCING": {'description': 'RNA sequencing (RNA-seq)'},
     "TARGETED_SEQUENCING": {'description': 'Targeted gene panel sequencing'},
     "EPIGENOMICS": {'description': 'Epigenomic profiling'},
-    "METAGENOMICS": {'description': 'Metagenomic sequencing', 'meaning': 'OBI:0002044'},
+    "METAGENOMICS": {'description': 'Metagenomic sequencing'},
     "SINGLE_CELL_GENOMICS": {'description': 'Single-cell genomics'},
-    "SINGLE_CELL_TRANSCRIPTOMICS": {'description': 'Single-cell transcriptomics', 'meaning': 'OBI:0002571'},
-    "CHROMATIN_IMMUNOPRECIPITATION": {'description': 'ChIP-seq', 'meaning': 'OBI:0000716'},
+    "SINGLE_CELL_TRANSCRIPTOMICS": {'description': 'Single-cell transcriptomics'},
+    "CHROMATIN_IMMUNOPRECIPITATION": {'description': 'ChIP-seq'},
     "CHROMATIN_ACCESSIBILITY": {'description': 'ATAC-seq/FAIRE-seq'},
     "DNA_METHYLATION": {'description': 'Bisulfite/methylation sequencing'},
     "CHROMOSOME_CONFORMATION": {'description': 'Hi-C/3C-seq'},
@@ -211,8 +211,8 @@ class ReadType(RichEnum):
 
 # Set metadata after class creation
 ReadType._metadata = {
-    "SINGLE_END": {'description': 'Single-end reads', 'meaning': 'SO:0000999'},
-    "PAIRED_END": {'description': 'Paired-end reads', 'meaning': 'SO:0001000'},
+    "SINGLE_END": {'description': 'Single-end reads'},
+    "PAIRED_END": {'description': 'Paired-end reads'},
     "MATE_PAIR": {'description': 'Mate-pair reads (large insert)'},
     "LONG_READ": {'description': 'Long reads (>1kb typical)'},
     "ULTRA_LONG_READ": {'description': 'Ultra-long reads (>10kb)'},

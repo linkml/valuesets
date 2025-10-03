@@ -1,0 +1,295 @@
+name: mining_processing
+title: Mining and Mineral Processing Value Sets
+description: Value sets for mining operations, mineral processing, beneficiation, and in-situ extraction, including bioleaching
+  and autonomous mining systems.
+id: https://w3id.org/valuesets/mining-processing
+version: 1.0.0
+status: release
+imports:
+- linkml:types
+- ./core
+prefixes:
+  linkml: https://w3id.org/linkml/
+  ENVO: http://purl.obolibrary.org/obo/ENVO_
+  CHEBI: http://purl.obolibrary.org/obo/CHEBI_
+  NCBITaxon: http://purl.obolibrary.org/obo/NCBITaxon_
+  OBI: http://purl.obolibrary.org/obo/OBI_
+  PATO: http://purl.obolibrary.org/obo/PATO_
+  valuesets: https://w3id.org/valuesets/
+default_prefix: valuesets
+default_curi_maps:
+- semweb_context
+slots:
+  mineralogy_feedstock:
+    description: Types of mineral feedstock sources for extraction and processing operations, including primary and secondary
+      sources
+    range: MineralogyFeedstockClass
+    required: true
+    comments:
+    - Required field for mining operation records
+    - Manual customization - do not modify
+  beneficiation_pathway:
+    description: Methods for mineral separation and concentration aligned with advanced ore processing initiatives (AOI-2)
+    range: BeneficiationPathway
+  in_situ_chemistry_regime:
+    description: Chemical leaching systems for in-situ extraction with associated parameters including pH, Eh, temperature,
+      and ionic strength
+    range: InSituChemistryRegime
+  extractable_target_element:
+    description: Target elements for extraction, particularly rare earth elements (REE) and critical minerals
+    range: ExtractableTargetElement
+    multivalued: true
+  sensor_while_drilling_feature:
+    description: Measurement while drilling (MWD) and logging while drilling (LWD) features for orebody ML and geosteering
+      applications
+    range: SensorWhileDrillingFeature
+    multivalued: true
+  process_performance_metric:
+    description: Key performance indicators for mining and processing operations tied to SMART milestones and sustainability
+      goals
+    range: ProcessPerformanceMetric
+    multivalued: true
+  bioleach_organism:
+    description: Microorganisms used in bioleaching and biomining operations, including engineered strains
+    range: BioleachOrganism
+  bioleach_mode:
+    description: Mechanisms of bioleaching including indirect and direct bacterial action
+    range: BioleachMode
+  autonomy_level:
+    description: Levels of autonomy for mining systems including drilling, hauling, and sorting robots (relevant for Topic
+      1 initiatives)
+    range: AutonomyLevel
+  regulatory_constraint:
+    description: Regulatory and community constraints affecting mining operations, particularly for in-situ extraction and
+      community engagement
+    range: RegulatoryConstraint
+    multivalued: true
+enums:
+  MineralogyFeedstockClass:
+    description: 'Types of mineral feedstock sources for extraction and processing operations, including primary and secondary
+      sources.
+
+      '
+    permissible_values:
+      HARDROCK_PRIMARY:
+        title: HARDROCK_PRIMARY
+        description: Primary ore from hardrock mining operations
+      TAILINGS_LEGACY:
+        title: TAILINGS_LEGACY
+        description: Historical mine tailings available for reprocessing
+      WASTE_PILES:
+        title: WASTE_PILES
+        description: Accumulated mining waste materials
+      COAL_BYPRODUCT:
+        title: COAL_BYPRODUCT
+        description: Byproducts from coal mining and processing
+      E_WASTE:
+        title: E_WASTE
+        description: Electronic waste containing recoverable metals
+      BRINES:
+        title: BRINES
+        description: Saline water sources containing dissolved minerals
+  BeneficiationPathway:
+    description: 'Methods for mineral separation and concentration aligned with advanced ore processing initiatives (AOI-2).
+
+      '
+    permissible_values:
+      ORE_SORTING:
+        description: Sensor-based sorting of ore particles
+      DENSE_MEDIUM_SEPARATION:
+        description: Gravity separation using dense media
+      MICROWAVE_PREWEAKENING:
+        description: Microwave treatment to weaken ore structure
+      ELECTRIC_PULSE_PREWEAKENING:
+        description: High-voltage electric pulse fragmentation
+      GRINDING_DYNAMIC:
+        description: Dynamic grinding optimization systems
+      ELECTROSTATIC_SEP:
+        description: Electrostatic separation of minerals
+      MAGNETIC_SEP:
+        description: Magnetic separation of ferromagnetic minerals
+      FLOTATION_LOW_H2O:
+        description: Low-water flotation processes
+      BIO_BENEFICIATION:
+        description: Biological methods for mineral beneficiation
+  InSituChemistryRegime:
+    description: 'Chemical leaching systems for in-situ extraction with associated parameters including pH, Eh, temperature,
+      and ionic strength.
+
+      '
+    permissible_values:
+      ACIDIC_SULFATE:
+        title: ACIDIC_SULFATE
+        description: Sulfuric acid-based leaching system
+      ACIDIC_CHLORIDE:
+        title: ACIDIC_CHLORIDE
+        description: Hydrochloric acid or chloride-based leaching
+      AMMONIA_BASED:
+        title: AMMONIA_BASED
+        description: Ammonia or ammonium-based leaching system
+      ORGANIC_ACID:
+        description: Organic acid leaching (citric, oxalic, etc.)
+      BIOLEACH_SULFUR_OXIDIZING:
+        description: Bioleaching using sulfur-oxidizing bacteria
+      BIOLEACH_IRON_OXIDIZING:
+        description: Bioleaching using iron-oxidizing bacteria
+  ExtractableTargetElement:
+    description: 'Target elements for extraction, particularly rare earth elements (REE) and critical minerals.
+
+      '
+    permissible_values:
+      REE_LA:
+        title: REE_LA
+        description: Lanthanum
+      REE_CE:
+        title: REE_CE
+        description: Cerium
+      REE_PR:
+        title: REE_PR
+        description: Praseodymium
+      REE_ND:
+        title: REE_ND
+        description: Neodymium
+      REE_PM:
+        title: REE_PM
+        description: Promethium
+      REE_SM:
+        title: REE_SM
+        description: Samarium
+      REE_EU:
+        title: REE_EU
+        description: Europium
+      REE_GD:
+        title: REE_GD
+        description: Gadolinium
+      REE_TB:
+        title: REE_TB
+        description: Terbium
+      REE_DY:
+        title: REE_DY
+        description: Dysprosium
+      REE_HO:
+        title: REE_HO
+        description: Holmium
+      REE_ER:
+        title: REE_ER
+        description: Erbium
+      REE_TM:
+        title: REE_TM
+        description: Thulium
+      REE_YB:
+        title: REE_YB
+        description: Ytterbium
+      REE_LU:
+        title: REE_LU
+        description: Lutetium
+      SC:
+        title: SC
+        description: Scandium
+      CO:
+        title: CO
+        description: Cobalt
+      NI:
+        title: NI
+        description: Nickel
+      LI:
+        title: LI
+        description: Lithium
+  SensorWhileDrillingFeature:
+    description: 'Measurement while drilling (MWD) and logging while drilling (LWD) features for orebody ML and geosteering
+      applications.
+
+      '
+    permissible_values:
+      WOB:
+        description: Weight on bit measurement
+      ROP:
+        description: Rate of penetration
+      TORQUE:
+        description: Rotational torque measurement
+      MWD_GAMMA:
+        description: Gamma ray logging while drilling
+      MWD_RESISTIVITY:
+        description: Resistivity logging while drilling
+      MUD_LOSS:
+        description: Drilling mud loss measurement
+      VIBRATION:
+        description: Drill string vibration monitoring
+      RSS_ANGLE:
+        description: Rotary steerable system angle
+  ProcessPerformanceMetric:
+    description: 'Key performance indicators for mining and processing operations tied to SMART milestones and sustainability
+      goals.
+
+      '
+    permissible_values:
+      RECOVERY_PCT:
+        description: Percentage recovery of target material
+      SELECTIVITY_INDEX:
+        description: Selectivity index for separation processes
+      SPECIFIC_ENERGY_KWH_T:
+        description: Specific energy consumption in kWh per tonne
+      WATER_INTENSITY_L_T:
+        description: Water usage intensity in liters per tonne
+      REAGENT_INTENSITY_KG_T:
+        description: Reagent consumption in kg per tonne
+      CO2E_KG_T:
+        description: CO2 equivalent emissions in kg per tonne
+      TAILINGS_MASS_REDUCTION_PCT:
+        description: Percentage reduction in tailings mass
+  BioleachOrganism:
+    description: 'Microorganisms used in bioleaching and biomining operations, including engineered strains.
+
+      '
+    permissible_values:
+      ACIDITHIOBACILLUS_FERROOXIDANS:
+        description: Iron and sulfur oxidizing bacterium
+        meaning: NCBITaxon:920
+      LEPTOSPIRILLUM_FERROOXIDANS:
+        description: Iron oxidizing bacterium
+        meaning: NCBITaxon:2705
+      ASPERGILLUS_NIGER:
+        description: Organic acid producing fungus
+        meaning: NCBITaxon:5061
+      ENGINEERED_STRAIN:
+        description: Genetically modified organism for enhanced bioleaching
+  BioleachMode:
+    description: 'Mechanisms of bioleaching including indirect and direct bacterial action.
+
+      '
+    permissible_values:
+      INDIRECT_BIOLEACH_ORGANIC_ACIDS:
+        description: Indirect bioleaching through organic acid production
+      SULFUR_OXIDATION:
+        description: Direct bacterial oxidation of sulfur compounds
+      IRON_OXIDATION:
+        description: Direct bacterial oxidation of iron compounds
+  AutonomyLevel:
+    description: 'Levels of autonomy for mining systems including drilling, hauling, and sorting robots (relevant for Topic
+      1 initiatives).
+
+      '
+    permissible_values:
+      ASSISTIVE:
+        description: Human operator with assistive technologies
+      SUPERVISED_AUTONOMY:
+        description: Autonomous operation with human supervision
+      SEMI_AUTONOMOUS:
+        description: Partial autonomy with human intervention capability
+      FULLY_AUTONOMOUS:
+        description: Complete autonomous operation without human intervention
+  RegulatoryConstraint:
+    description: 'Regulatory and community constraints affecting mining operations, particularly for in-situ extraction and
+      community engagement.
+
+      '
+    permissible_values:
+      AQUIFER_PROTECTION:
+        title: AQUIFER_PROTECTION
+        description: Requirements for groundwater and aquifer protection
+      EMISSIONS_CAP:
+        description: Limits on atmospheric emissions
+      CULTURAL_HERITAGE_ZONE:
+        description: Protection of cultural heritage sites
+      WATER_RIGHTS_LIMIT:
+        description: Restrictions based on water usage rights

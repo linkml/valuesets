@@ -1,19 +1,50 @@
-id: https://w3id.org/valuesets/units/measurements
 name: measurements
 title: Units and Measurements Value Sets
-description: >
-  Value sets for units of measurement including length, mass, volume, temperature,
-  and other physical quantities following SI and common standards.
+description: 'Value sets for units of measurement including length, mass, volume, temperature, and other physical quantities
+  following SI and common standards.
 
+  '
+id: https://w3id.org/valuesets/units/measurements
+imports:
+- linkml:types
 prefixes:
   linkml: https://w3id.org/linkml/
   UO: http://purl.obolibrary.org/obo/UO_
   QUDT: http://qudt.org/schema/qudt/
   SI: http://www.bipm.org/en/si/
-
-imports:
-  - linkml:types
-
+  valuesets: https://w3id.org/valuesets/
+default_prefix: valuesets
+slots:
+  length_unit:
+    description: Units of length/distance measurement
+    range: LengthUnitEnum
+  mass_unit:
+    description: Units of mass measurement
+    range: MassUnitEnum
+  volume_unit:
+    description: Units of volume measurement
+    range: VolumeUnitEnum
+  temperature_unit:
+    description: Units of temperature measurement
+    range: TemperatureUnitEnum
+  time_unit:
+    description: Units of time measurement
+    range: TimeUnitEnum
+  pressure_unit:
+    description: Units of pressure measurement
+    range: PressureUnitEnum
+  concentration_unit:
+    description: Units of concentration measurement
+    range: ConcentrationUnitEnum
+  frequency_unit:
+    description: Units of frequency measurement
+    range: FrequencyUnitEnum
+  angle_unit:
+    description: Units of angle measurement
+    range: AngleUnitEnum
+  data_size_unit:
+    description: Units of digital data size
+    range: DataSizeUnitEnum
 enums:
   LengthUnitEnum:
     description: Units of length/distance measurement
@@ -23,85 +54,84 @@ enums:
         description: Meter (SI base unit)
         meaning: UO:0000008
         annotations:
-          symbol: "m"
-          system: "SI"
+          symbol: m
+          system: SI
       KILOMETER:
         title: kilometer
         description: Kilometer (1000 meters)
         meaning: UO:0010066
         annotations:
-          symbol: "km"
-          conversion_to_meter: "1000"
+          symbol: km
+          conversion_to_meter: '1000'
       CENTIMETER:
         description: Centimeter (0.01 meter)
         meaning: UO:0000015
         annotations:
-          symbol: "cm"
-          conversion_to_meter: "0.01"
+          symbol: cm
+          conversion_to_meter: '0.01'
       MILLIMETER:
         description: Millimeter (0.001 meter)
         meaning: UO:0000016
         annotations:
-          symbol: "mm"
-          conversion_to_meter: "0.001"
+          symbol: mm
+          conversion_to_meter: '0.001'
       MICROMETER:
         description: Micrometer/micron (10^-6 meter)
         meaning: UO:0000017
         annotations:
-          symbol: "μm"
-          conversion_to_meter: "1e-6"
+          symbol: μm
+          conversion_to_meter: 1e-6
       NANOMETER:
         description: Nanometer (10^-9 meter)
         meaning: UO:0000018
         annotations:
-          symbol: "nm"
-          conversion_to_meter: "1e-9"
+          symbol: nm
+          conversion_to_meter: 1e-9
       ANGSTROM:
         description: Angstrom (10^-10 meter)
         meaning: UO:0000019
         annotations:
-          symbol: "Å"
-          conversion_to_meter: "1e-10"
+          symbol: Å
+          conversion_to_meter: 1e-10
       INCH:
         title: inch
         description: Inch (imperial)
         meaning: UO:0010011
         annotations:
-          symbol: "in"
-          conversion_to_meter: "0.0254"
-          system: "imperial"
+          symbol: in
+          conversion_to_meter: '0.0254'
+          system: imperial
       FOOT:
         title: foot
         description: Foot (imperial)
         meaning: UO:0010013
         annotations:
-          symbol: "ft"
-          conversion_to_meter: "0.3048"
-          system: "imperial"
+          symbol: ft
+          conversion_to_meter: '0.3048'
+          system: imperial
       YARD:
         title: yard
         description: Yard (imperial)
         meaning: UO:0010014
         annotations:
-          symbol: "yd"
-          conversion_to_meter: "0.9144"
-          system: "imperial"
+          symbol: yd
+          conversion_to_meter: '0.9144'
+          system: imperial
       MILE:
         title: mile
         description: Mile (imperial)
         meaning: UO:0010017
         annotations:
-          symbol: "mi"
-          conversion_to_meter: "1609.344"
-          system: "imperial"
+          symbol: mi
+          conversion_to_meter: '1609.344'
+          system: imperial
       NAUTICAL_MILE:
         title: nautical mile
         description: Nautical mile
         meaning: UO:0010022
         annotations:
-          symbol: "nmi"
-          conversion_to_meter: "1852"
-
+          symbol: nmi
+          conversion_to_meter: '1852'
   MassUnitEnum:
     description: Units of mass measurement
     permissible_values:
@@ -109,72 +139,71 @@ enums:
         description: Kilogram (SI base unit)
         meaning: UO:0000009
         annotations:
-          symbol: "kg"
-          system: "SI"
+          symbol: kg
+          system: SI
       GRAM:
         description: Gram (0.001 kilogram)
         meaning: UO:0000021
         annotations:
-          symbol: "g"
-          conversion_to_kg: "0.001"
+          symbol: g
+          conversion_to_kg: '0.001'
       MILLIGRAM:
         description: Milligram (10^-6 kilogram)
         meaning: UO:0000022
         annotations:
-          symbol: "mg"
-          conversion_to_kg: "1e-6"
+          symbol: mg
+          conversion_to_kg: 1e-6
       MICROGRAM:
         description: Microgram (10^-9 kilogram)
         meaning: UO:0000023
         annotations:
-          symbol: "μg"
-          conversion_to_kg: "1e-9"
+          symbol: μg
+          conversion_to_kg: 1e-9
       NANOGRAM:
         description: Nanogram (10^-12 kilogram)
         meaning: UO:0000024
         annotations:
-          symbol: "ng"
-          conversion_to_kg: "1e-12"
+          symbol: ng
+          conversion_to_kg: 1e-12
       METRIC_TON:
         description: Metric ton/tonne (1000 kilograms)
         meaning: UO:0010038
         aliases:
-          - ton
+        - ton
         annotations:
-          symbol: "t"
-          conversion_to_kg: "1000"
+          symbol: t
+          conversion_to_kg: '1000'
       POUND:
         title: pound
         description: Pound (imperial)
         meaning: UO:0010034
         annotations:
-          symbol: "lb"
-          conversion_to_kg: "0.453592"
-          system: "imperial"
+          symbol: lb
+          conversion_to_kg: '0.453592'
+          system: imperial
       OUNCE:
         title: ounce
         description: Ounce (imperial)
         meaning: UO:0010033
         annotations:
-          symbol: "oz"
-          conversion_to_kg: "0.0283495"
-          system: "imperial"
+          symbol: oz
+          conversion_to_kg: '0.0283495'
+          system: imperial
       STONE:
         title: stone
         description: Stone (imperial)
         meaning: UO:0010035
         annotations:
-          symbol: "st"
-          conversion_to_kg: "6.35029"
-          system: "imperial"
+          symbol: st
+          conversion_to_kg: '6.35029'
+          system: imperial
       DALTON:
         description: Dalton/atomic mass unit
         meaning: UO:0000221
         annotations:
-          symbol: "Da"
-          conversion_to_kg: "1.66054e-27"
-          use: "molecular mass"
-
+          symbol: Da
+          conversion_to_kg: '1.66054e-27'
+          use: molecular mass
   VolumeUnitEnum:
     description: Units of volume measurement
     permissible_values:
@@ -182,101 +211,100 @@ enums:
         description: Liter (SI derived)
         meaning: UO:0000099
         annotations:
-          symbol: "L"
-          conversion_to_m3: "0.001"
+          symbol: L
+          conversion_to_m3: '0.001'
       MILLILITER:
         description: Milliliter (0.001 liter)
         meaning: UO:0000098
         annotations:
-          symbol: "mL"
-          conversion_to_m3: "1e-6"
+          symbol: mL
+          conversion_to_m3: 1e-6
       MICROLITER:
         description: Microliter (10^-6 liter)
         meaning: UO:0000101
         annotations:
-          symbol: "μL"
-          conversion_to_m3: "1e-9"
+          symbol: μL
+          conversion_to_m3: 1e-9
       CUBIC_METER:
         description: Cubic meter (SI derived)
         meaning: UO:0000096
         annotations:
-          symbol: "m³"
-          system: "SI"
+          symbol: m³
+          system: SI
       CUBIC_CENTIMETER:
         description: Cubic centimeter
         meaning: UO:0000097
         annotations:
-          symbol: "cm³"
-          conversion_to_m3: "1e-6"
+          symbol: cm³
+          conversion_to_m3: 1e-6
       GALLON_US:
         description: US gallon
         annotations:
-          symbol: "gal"
-          conversion_to_m3: "0.00378541"
-          system: "US"
+          symbol: gal
+          conversion_to_m3: '0.00378541'
+          system: US
       GALLON_UK:
         title: gallon
         description: UK/Imperial gallon
         meaning: UO:0010030
         aliases:
-          - imperial gallon
+        - imperial gallon
         annotations:
-          symbol: "gal"
-          conversion_to_m3: "0.00454609"
-          system: "imperial"
+          symbol: gal
+          conversion_to_m3: '0.00454609'
+          system: imperial
       FLUID_OUNCE_US:
         title: fluid ounce
         description: US fluid ounce
         meaning: UO:0010026
         aliases:
-          - imperial fluid ounce
+        - imperial fluid ounce
         annotations:
-          symbol: "fl oz"
-          conversion_to_m3: "2.95735e-5"
-          system: "US"
+          symbol: fl oz
+          conversion_to_m3: '2.95735e-5'
+          system: US
       PINT_US:
         title: pint
         description: US pint
         meaning: UO:0010028
         aliases:
-          - imperial pint
+        - imperial pint
         annotations:
-          symbol: "pt"
-          conversion_to_m3: "0.000473176"
-          system: "US"
+          symbol: pt
+          conversion_to_m3: '0.000473176'
+          system: US
       QUART_US:
         title: quart
         description: US quart
         meaning: UO:0010029
         aliases:
-          - imperial quart
+        - imperial quart
         annotations:
-          symbol: "qt"
-          conversion_to_m3: "0.000946353"
-          system: "US"
+          symbol: qt
+          conversion_to_m3: '0.000946353'
+          system: US
       CUP_US:
         title: united states customary cup
         description: US cup
         meaning: UO:0010046
         annotations:
-          symbol: "cup"
-          conversion_to_m3: "0.000236588"
-          system: "US"
+          symbol: cup
+          conversion_to_m3: '0.000236588'
+          system: US
       TABLESPOON:
         title: united states customary tablespoon
         description: Tablespoon
         meaning: UO:0010044
         annotations:
-          symbol: "tbsp"
-          conversion_to_m3: "1.47868e-5"
+          symbol: tbsp
+          conversion_to_m3: '1.47868e-5'
       TEASPOON:
         title: united states customary teaspoon
         description: Teaspoon
         meaning: UO:0010041
         annotations:
-          symbol: "tsp"
-          conversion_to_m3: "4.92892e-6"
-
+          symbol: tsp
+          conversion_to_m3: '4.92892e-6'
   TemperatureUnitEnum:
     description: Units of temperature measurement
     permissible_values:
@@ -284,31 +312,30 @@ enums:
         description: Kelvin (SI base unit)
         meaning: UO:0000012
         annotations:
-          symbol: "K"
-          system: "SI"
-          absolute: "true"
+          symbol: K
+          system: SI
+          absolute: 'true'
       CELSIUS:
         title: degree Celsius
         description: Celsius/Centigrade
         meaning: UO:0000027
         annotations:
-          symbol: "°C"
-          conversion: "K - 273.15"
+          symbol: °C
+          conversion: K - 273.15
       FAHRENHEIT:
         title: degree Fahrenheit
         description: Fahrenheit
         meaning: UO:0000195
         annotations:
-          symbol: "°F"
-          conversion: "(K - 273.15) * 9/5 + 32"
-          system: "imperial"
+          symbol: °F
+          conversion: (K - 273.15) * 9/5 + 32
+          system: imperial
       RANKINE:
         description: Rankine
         annotations:
-          symbol: "°R"
-          conversion: "K * 9/5"
-          absolute: "true"
-
+          symbol: °R
+          conversion: K * 9/5
+          absolute: 'true'
   TimeUnitEnum:
     description: Units of time measurement
     permissible_values:
@@ -316,66 +343,65 @@ enums:
         description: Second (SI base unit)
         meaning: UO:0000010
         annotations:
-          symbol: "s"
-          system: "SI"
+          symbol: s
+          system: SI
       MILLISECOND:
         description: Millisecond (0.001 second)
         meaning: UO:0000028
         annotations:
-          symbol: "ms"
-          conversion_to_second: "0.001"
+          symbol: ms
+          conversion_to_second: '0.001'
       MICROSECOND:
         description: Microsecond (10^-6 second)
         meaning: UO:0000029
         annotations:
-          symbol: "μs"
-          conversion_to_second: "1e-6"
+          symbol: μs
+          conversion_to_second: 1e-6
       NANOSECOND:
         title: nanosecond
         description: Nanosecond (10^-9 second)
         meaning: UO:0000150
         annotations:
-          symbol: "ns"
-          conversion_to_second: "1e-9"
+          symbol: ns
+          conversion_to_second: 1e-9
       MINUTE:
         description: Minute (60 seconds)
         meaning: UO:0000031
         annotations:
-          symbol: "min"
-          conversion_to_second: "60"
+          symbol: min
+          conversion_to_second: '60'
       HOUR:
         description: Hour (3600 seconds)
         meaning: UO:0000032
         annotations:
-          symbol: "h"
-          conversion_to_second: "3600"
+          symbol: h
+          conversion_to_second: '3600'
       DAY:
         description: Day (86400 seconds)
         meaning: UO:0000033
         annotations:
-          symbol: "d"
-          conversion_to_second: "86400"
+          symbol: d
+          conversion_to_second: '86400'
       WEEK:
         description: Week (7 days)
         meaning: UO:0000034
         annotations:
-          symbol: "wk"
-          conversion_to_second: "604800"
+          symbol: wk
+          conversion_to_second: '604800'
       MONTH:
         description: Month (approximately 30 days)
         meaning: UO:0000035
         annotations:
-          symbol: "mo"
-          conversion_to_second: "2592000"
-          note: "approximate, varies by month"
+          symbol: mo
+          conversion_to_second: '2592000'
+          note: approximate, varies by month
       YEAR:
         description: Year (365.25 days)
         meaning: UO:0000036
         annotations:
-          symbol: "yr"
-          conversion_to_second: "31557600"
-          note: "accounts for leap years"
-
+          symbol: yr
+          conversion_to_second: '31557600'
+          note: accounts for leap years
   PressureUnitEnum:
     description: Units of pressure measurement
     permissible_values:
@@ -383,58 +409,57 @@ enums:
         description: Pascal (SI derived unit)
         meaning: UO:0000110
         annotations:
-          symbol: "Pa"
-          system: "SI"
-          definition: "N/m²"
+          symbol: Pa
+          system: SI
+          definition: N/m²
       KILOPASCAL:
         description: Kilopascal (1000 pascals)
         annotations:
-          symbol: "kPa"
-          conversion_to_pascal: "1000"
+          symbol: kPa
+          conversion_to_pascal: '1000'
       MEGAPASCAL:
         description: Megapascal (10^6 pascals)
         annotations:
-          symbol: "MPa"
-          conversion_to_pascal: "1e6"
+          symbol: MPa
+          conversion_to_pascal: 1e6
       BAR:
         description: Bar
         annotations:
-          symbol: "bar"
-          conversion_to_pascal: "100000"
+          symbol: bar
+          conversion_to_pascal: '100000'
       MILLIBAR:
         description: Millibar
         annotations:
-          symbol: "mbar"
-          conversion_to_pascal: "100"
+          symbol: mbar
+          conversion_to_pascal: '100'
       ATMOSPHERE:
         description: Standard atmosphere
         annotations:
-          symbol: "atm"
-          conversion_to_pascal: "101325"
+          symbol: atm
+          conversion_to_pascal: '101325'
       TORR:
         description: Torr (millimeter of mercury)
         annotations:
-          symbol: "Torr"
-          conversion_to_pascal: "133.322"
+          symbol: Torr
+          conversion_to_pascal: '133.322'
       PSI:
         title: pounds per square inch
         description: Pounds per square inch
         meaning: UO:0010052
         aliases:
-          - pound-force per square inch
+        - pound-force per square inch
         annotations:
-          symbol: "psi"
-          conversion_to_pascal: "6894.76"
-          system: "imperial"
+          symbol: psi
+          conversion_to_pascal: '6894.76'
+          system: imperial
       MM_HG:
         title: millimetres of mercury
         description: Millimeters of mercury
         meaning: UO:0000272
         annotations:
-          symbol: "mmHg"
-          conversion_to_pascal: "133.322"
-          use: "medical blood pressure"
-
+          symbol: mmHg
+          conversion_to_pascal: '133.322'
+          use: medical blood pressure
   ConcentrationUnitEnum:
     description: Units of concentration measurement
     permissible_values:
@@ -442,71 +467,70 @@ enums:
         description: Molar (moles per liter)
         meaning: UO:0000062
         annotations:
-          symbol: "M"
-          definition: "mol/L"
+          symbol: M
+          definition: mol/L
       MILLIMOLAR:
         description: Millimolar (10^-3 molar)
         meaning: UO:0000063
         annotations:
-          symbol: "mM"
-          conversion_to_molar: "0.001"
+          symbol: mM
+          conversion_to_molar: '0.001'
       MICROMOLAR:
         description: Micromolar (10^-6 molar)
         meaning: UO:0000064
         annotations:
-          symbol: "μM"
-          conversion_to_molar: "1e-6"
+          symbol: μM
+          conversion_to_molar: 1e-6
       NANOMOLAR:
         description: Nanomolar (10^-9 molar)
         meaning: UO:0000065
         annotations:
-          symbol: "nM"
-          conversion_to_molar: "1e-9"
+          symbol: nM
+          conversion_to_molar: 1e-9
       PICOMOLAR:
         description: Picomolar (10^-12 molar)
         meaning: UO:0000066
         annotations:
-          symbol: "pM"
-          conversion_to_molar: "1e-12"
+          symbol: pM
+          conversion_to_molar: 1e-12
       MG_PER_ML:
         title: milligram per milliliter
         description: Milligrams per milliliter
         meaning: UO:0000176
         annotations:
-          symbol: "mg/mL"
+          symbol: mg/mL
       UG_PER_ML:
         title: microgram per milliliter
         description: Micrograms per milliliter
         meaning: UO:0000274
         annotations:
-          symbol: "μg/mL"
+          symbol: μg/mL
       NG_PER_ML:
         title: nanogram per milliliter
         description: Nanograms per milliliter
         meaning: UO:0000275
         annotations:
-          symbol: "ng/mL"
+          symbol: ng/mL
       PERCENT:
         description: Percent (parts per hundred)
         meaning: UO:0000187
         annotations:
-          symbol: "%"
-          conversion_to_fraction: "0.01"
+          symbol: '%'
+          conversion_to_fraction: '0.01'
       PPM:
         title: parts per million
         description: Parts per million
         meaning: UO:0000169
         annotations:
-          symbol: "ppm"
-          conversion_to_fraction: "1e-6"
+          symbol: ppm
+          conversion_to_fraction: 1e-6
       PPB:
         title: parts per billion
         description: Parts per billion
         meaning: UO:0000170
         annotations:
-          symbol: "ppb"
-          conversion_to_fraction: "1e-9"
-
+          symbol: ppb
+          conversion_to_fraction: 1e-9
   FrequencyUnitEnum:
     description: Units of frequency measurement
     permissible_values:
@@ -514,37 +538,36 @@ enums:
         description: Hertz (cycles per second)
         meaning: UO:0000106
         annotations:
-          symbol: "Hz"
-          system: "SI"
+          symbol: Hz
+          system: SI
       KILOHERTZ:
         description: Kilohertz (1000 Hz)
         annotations:
-          symbol: "kHz"
-          conversion_to_hz: "1000"
+          symbol: kHz
+          conversion_to_hz: '1000'
       MEGAHERTZ:
         title: megaHertz
         description: Megahertz (10^6 Hz)
         meaning: UO:0000325
         annotations:
-          symbol: "MHz"
-          conversion_to_hz: "1e6"
+          symbol: MHz
+          conversion_to_hz: 1e6
       GIGAHERTZ:
         description: Gigahertz (10^9 Hz)
         annotations:
-          symbol: "GHz"
-          conversion_to_hz: "1e9"
+          symbol: GHz
+          conversion_to_hz: 1e9
       RPM:
         description: Revolutions per minute
         annotations:
-          symbol: "rpm"
-          conversion_to_hz: "0.0166667"
+          symbol: rpm
+          conversion_to_hz: '0.0166667'
       BPM:
         description: Beats per minute
         annotations:
-          symbol: "bpm"
-          conversion_to_hz: "0.0166667"
-          use: "heart rate"
-
+          symbol: bpm
+          conversion_to_hz: '0.0166667'
+          use: heart rate
   AngleUnitEnum:
     description: Units of angle measurement
     permissible_values:
@@ -552,102 +575,101 @@ enums:
         description: Radian (SI derived unit)
         meaning: UO:0000123
         annotations:
-          symbol: "rad"
-          system: "SI"
+          symbol: rad
+          system: SI
       DEGREE:
         description: Degree
         meaning: UO:0000185
         annotations:
-          symbol: "°"
-          conversion_to_radian: "0.0174533"
+          symbol: °
+          conversion_to_radian: '0.0174533'
       MINUTE_OF_ARC:
         description: Minute of arc/arcminute
         annotations:
-          symbol: "'"
-          conversion_to_degree: "0.0166667"
+          symbol: ''''
+          conversion_to_degree: '0.0166667'
       SECOND_OF_ARC:
         description: Second of arc/arcsecond
         annotations:
           symbol: '"'
-          conversion_to_degree: "0.000277778"
+          conversion_to_degree: '0.000277778'
       GRADIAN:
         description: Gradian/gon
         annotations:
-          symbol: "gon"
-          conversion_to_degree: "0.9"
+          symbol: gon
+          conversion_to_degree: '0.9'
       TURN:
         description: Turn/revolution
         annotations:
-          symbol: "turn"
-          conversion_to_radian: "6.28319"
-
+          symbol: turn
+          conversion_to_radian: '6.28319'
   DataSizeUnitEnum:
     description: Units of digital data size
     permissible_values:
       BIT:
         description: Bit (binary digit)
         annotations:
-          symbol: "bit"
-          base: "binary"
+          symbol: bit
+          base: binary
       BYTE:
         description: Byte (8 bits)
         meaning: UO:0000233
         annotations:
-          symbol: "B"
-          conversion_to_bit: "8"
+          symbol: B
+          conversion_to_bit: '8'
       KILOBYTE:
         description: Kilobyte (1000 bytes)
         meaning: UO:0000234
         annotations:
-          symbol: "KB"
-          conversion_to_byte: "1000"
-          standard: "decimal"
+          symbol: KB
+          conversion_to_byte: '1000'
+          standard: decimal
       MEGABYTE:
         description: Megabyte (10^6 bytes)
         meaning: UO:0000235
         annotations:
-          symbol: "MB"
-          conversion_to_byte: "1e6"
-          standard: "decimal"
+          symbol: MB
+          conversion_to_byte: 1e6
+          standard: decimal
       GIGABYTE:
         description: Gigabyte (10^9 bytes)
         annotations:
-          symbol: "GB"
-          conversion_to_byte: "1e9"
-          standard: "decimal"
+          symbol: GB
+          conversion_to_byte: 1e9
+          standard: decimal
       TERABYTE:
         description: Terabyte (10^12 bytes)
         annotations:
-          symbol: "TB"
-          conversion_to_byte: "1e12"
-          standard: "decimal"
+          symbol: TB
+          conversion_to_byte: 1e12
+          standard: decimal
       PETABYTE:
         description: Petabyte (10^15 bytes)
         annotations:
-          symbol: "PB"
-          conversion_to_byte: "1e15"
-          standard: "decimal"
+          symbol: PB
+          conversion_to_byte: 1e15
+          standard: decimal
       KIBIBYTE:
         description: Kibibyte (1024 bytes)
         annotations:
-          symbol: "KiB"
-          conversion_to_byte: "1024"
-          standard: "binary"
+          symbol: KiB
+          conversion_to_byte: '1024'
+          standard: binary
       MEBIBYTE:
         description: Mebibyte (2^20 bytes)
         annotations:
-          symbol: "MiB"
-          conversion_to_byte: "1048576"
-          standard: "binary"
+          symbol: MiB
+          conversion_to_byte: '1048576'
+          standard: binary
       GIBIBYTE:
         description: Gibibyte (2^30 bytes)
         annotations:
-          symbol: "GiB"
-          conversion_to_byte: "1073741824"
-          standard: "binary"
+          symbol: GiB
+          conversion_to_byte: '1073741824'
+          standard: binary
       TEBIBYTE:
         description: Tebibyte (2^40 bytes)
         annotations:
-          symbol: "TiB"
-          conversion_to_byte: "1099511627776"
-          standard: "binary"
+          symbol: TiB
+          conversion_to_byte: '1099511627776'
+          standard: binary

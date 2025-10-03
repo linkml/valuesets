@@ -1,14 +1,9 @@
-id: https://w3id.org/valuesets/core
 name: comet-core
 title: comet-core
-description: |-
-  Common Observational Model: Core
-license: MIT
-see_also:
-  - https://linkml.github.io/comet
-
+description: 'Common Observational Model: Core'
+id: https://w3id.org/valuesets/core
 prefixes:
-  linkml_common: https://w3id.org/valuesets/
+  valuesets: https://w3id.org/valuesets/
   linkml: https://w3id.org/linkml/
   biolink: https://w3id.org/biolink/
   schema: http://schema.org/
@@ -31,16 +26,20 @@ prefixes:
   _base: http://example.org/
   mixs: http://w3id.org/mixs/
   ucum: http://unitsofmeasure.org/
-default_prefix: linkml_common
-
+default_prefix: valuesets
+slots:
+  relative_time:
+    description: The relative time classification
+    range: RelativeTimeEnum
+  presence:
+    description: The presence classification
+    range: PresenceEnum
 enums:
   RelativeTimeEnum:
     permissible_values:
-      BEFORE:
-      AFTER:
-      AT_SAME_TIME_AS:
-
-
+      BEFORE: null
+      AFTER: null
+      AT_SAME_TIME_AS: null
   PresenceEnum:
     permissible_values:
       PRESENT:
@@ -51,3 +50,6 @@ enums:
         description: The entity is below the detection limit
       ABOVE_DETECTION_LIMIT:
         description: The entity is above the detection limit
+license: MIT
+see_also:
+- https://linkml.github.io/comet
