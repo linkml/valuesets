@@ -3328,6 +3328,924 @@ FossilFuelTypeEnum._metadata = {
     "PETROLEUM": {'description': 'Petroleum', 'meaning': 'ENVO:00002984'},
 }
 
+class ReactorTypeEnum(RichEnum):
+    """
+    Nuclear reactor types based on design and operational characteristics
+    """
+    # Enum members
+    PWR = "PWR"
+    BWR = "BWR"
+    PHWR = "PHWR"
+    LWGR = "LWGR"
+    AGR = "AGR"
+    GCR = "GCR"
+    FBR = "FBR"
+    HTGR = "HTGR"
+    MSR = "MSR"
+    SMR = "SMR"
+    VHTR = "VHTR"
+    SFR = "SFR"
+    LFR = "LFR"
+    GFR = "GFR"
+    SCWR = "SCWR"
+
+# Set metadata after class creation to avoid it becoming an enum member
+ReactorTypeEnum._metadata = {
+    "PWR": {'description': 'Most common reactor type using light water under pressure', 'annotations': {'coolant': 'light water', 'moderator': 'light water', 'pressure': 'high', 'steam_generation': 'indirect', 'worldwide_count': '~300', 'fuel_enrichment': '3-5%'}, 'aliases': ['Pressurized Water Reactor']},
+    "BWR": {'description': 'Light water reactor where water boils directly in core', 'annotations': {'coolant': 'light water', 'moderator': 'light water', 'pressure': 'medium', 'steam_generation': 'direct', 'worldwide_count': '~60', 'fuel_enrichment': '3-5%'}, 'aliases': ['Boiling Water Reactor']},
+    "PHWR": {'description': 'Heavy water moderated and cooled reactor (CANDU type)', 'annotations': {'coolant': 'heavy water', 'moderator': 'heavy water', 'pressure': 'high', 'steam_generation': 'indirect', 'worldwide_count': '~47', 'fuel_enrichment': 'natural uranium'}, 'aliases': ['CANDU', 'Pressurized Heavy Water Reactor']},
+    "LWGR": {'description': 'Graphite moderated, light water cooled reactor (RBMK type)', 'annotations': {'coolant': 'light water', 'moderator': 'graphite', 'pressure': 'medium', 'steam_generation': 'direct', 'worldwide_count': '~10', 'fuel_enrichment': '1.8-2.4%'}, 'aliases': ['RBMK', 'Light Water Graphite Reactor']},
+    "AGR": {'description': 'Graphite moderated, CO2 gas cooled reactor', 'annotations': {'coolant': 'carbon dioxide', 'moderator': 'graphite', 'pressure': 'high', 'steam_generation': 'indirect', 'worldwide_count': '~8', 'fuel_enrichment': '2.5-3.5%'}, 'aliases': ['Advanced Gas-Cooled Reactor']},
+    "GCR": {'description': 'Early gas-cooled reactor design (Magnox type)', 'annotations': {'coolant': 'carbon dioxide', 'moderator': 'graphite', 'pressure': 'low', 'fuel_enrichment': 'natural uranium'}, 'aliases': ['Magnox', 'Gas-Cooled Reactor']},
+    "FBR": {'description': 'Fast neutron reactor that breeds fissile material', 'annotations': {'coolant': 'liquid metal', 'moderator': 'none', 'neutron_spectrum': 'fast', 'worldwide_count': '~2', 'fuel_enrichment': '15-20%'}, 'aliases': ['Fast Breeder Reactor', 'Liquid Metal Fast Breeder Reactor']},
+    "HTGR": {'description': 'Helium-cooled reactor with TRISO fuel', 'annotations': {'coolant': 'helium', 'moderator': 'graphite', 'temperature': 'very high', 'fuel_type': 'TRISO'}, 'aliases': ['High Temperature Gas-Cooled Reactor']},
+    "MSR": {'description': 'Reactor using molten salt as coolant and/or fuel', 'annotations': {'coolant': 'molten salt', 'fuel_form': 'liquid', 'generation': 'IV'}, 'aliases': ['Molten Salt Reactor']},
+    "SMR": {'description': 'Small reactors designed for modular construction', 'annotations': {'power_output': '<300 MWe', 'modularity': 'high', 'generation': 'III+/IV'}, 'aliases': ['Small Modular Reactor']},
+    "VHTR": {'description': 'Generation IV reactor for very high temperature applications', 'annotations': {'temperature': '>950°C', 'generation': 'IV', 'coolant': 'helium'}, 'aliases': ['Very High Temperature Reactor']},
+    "SFR": {'description': 'Fast reactor cooled by liquid sodium', 'annotations': {'coolant': 'liquid sodium', 'neutron_spectrum': 'fast', 'generation': 'IV'}, 'aliases': ['Sodium-Cooled Fast Reactor']},
+    "LFR": {'description': 'Fast reactor cooled by liquid lead or lead-bismuth', 'annotations': {'coolant': 'liquid lead', 'neutron_spectrum': 'fast', 'generation': 'IV'}, 'aliases': ['Lead-Cooled Fast Reactor']},
+    "GFR": {'description': 'Fast reactor with gas cooling', 'annotations': {'coolant': 'helium', 'neutron_spectrum': 'fast', 'generation': 'IV'}, 'aliases': ['Gas-Cooled Fast Reactor']},
+    "SCWR": {'description': 'Reactor using supercritical water as coolant', 'annotations': {'coolant': 'supercritical water', 'generation': 'IV'}, 'aliases': ['Supercritical Water-Cooled Reactor']},
+}
+
+class ReactorGenerationEnum(RichEnum):
+    """
+    Nuclear reactor generational classifications
+    """
+    # Enum members
+    GENERATION_I = "GENERATION_I"
+    GENERATION_II = "GENERATION_II"
+    GENERATION_III = "GENERATION_III"
+    GENERATION_III_PLUS = "GENERATION_III_PLUS"
+    GENERATION_IV = "GENERATION_IV"
+
+# Set metadata after class creation to avoid it becoming an enum member
+ReactorGenerationEnum._metadata = {
+    "GENERATION_I": {'description': 'Early commercial reactors (1950s-1960s)', 'annotations': {'period': '1950s-1960s', 'status': 'retired', 'examples': 'Shippingport, Dresden-1'}},
+    "GENERATION_II": {'description': 'Current operating commercial reactors', 'annotations': {'period': '1970s-1990s', 'status': 'operating', 'examples': 'PWR, BWR, CANDU', 'design_life': '40 years'}},
+    "GENERATION_III": {'description': 'Advanced reactors with enhanced safety', 'annotations': {'period': '1990s-2010s', 'status': 'some operating', 'improvements': 'passive safety, standardization', 'examples': 'AP1000, EPR, ABWR'}},
+    "GENERATION_III_PLUS": {'description': 'Evolutionary improvements to Generation III', 'annotations': {'period': '2000s-present', 'status': 'deployment', 'improvements': 'enhanced passive safety', 'examples': 'AP1000, APR1400'}},
+    "GENERATION_IV": {'description': 'Next generation advanced reactor concepts', 'annotations': {'period': '2030s and beyond', 'status': 'development', 'goals': 'sustainability, economics, safety, proliferation resistance', 'examples': 'VHTR, SFR, LFR, GFR, SCWR, MSR'}},
+}
+
+class ReactorCoolantEnum(RichEnum):
+    """
+    Primary coolant types used in nuclear reactors
+    """
+    # Enum members
+    LIGHT_WATER = "LIGHT_WATER"
+    HEAVY_WATER = "HEAVY_WATER"
+    CARBON_DIOXIDE = "CARBON_DIOXIDE"
+    HELIUM = "HELIUM"
+    LIQUID_SODIUM = "LIQUID_SODIUM"
+    LIQUID_LEAD = "LIQUID_LEAD"
+    MOLTEN_SALT = "MOLTEN_SALT"
+    SUPERCRITICAL_WATER = "SUPERCRITICAL_WATER"
+
+# Set metadata after class creation to avoid it becoming an enum member
+ReactorCoolantEnum._metadata = {
+    "LIGHT_WATER": {'description': 'Ordinary water as primary coolant', 'annotations': {'chemical_formula': 'H2O', 'density': '1.0 g/cm³', 'neutron_absorption': 'moderate'}},
+    "HEAVY_WATER": {'description': 'Deuterium oxide as primary coolant', 'annotations': {'chemical_formula': 'D2O', 'density': '1.1 g/cm³', 'neutron_absorption': 'low'}},
+    "CARBON_DIOXIDE": {'description': 'CO2 gas as primary coolant', 'annotations': {'chemical_formula': 'CO2', 'phase': 'gas', 'pressure': 'high'}},
+    "HELIUM": {'description': 'Helium gas as primary coolant', 'annotations': {'chemical_formula': 'He', 'phase': 'gas', 'neutron_absorption': 'very low', 'temperature_capability': 'very high'}},
+    "LIQUID_SODIUM": {'description': 'Molten sodium metal as coolant', 'annotations': {'chemical_formula': 'Na', 'phase': 'liquid', 'melting_point': '98°C', 'neutron_absorption': 'low'}},
+    "LIQUID_LEAD": {'description': 'Molten lead or lead-bismuth as coolant', 'annotations': {'chemical_formula': 'Pb', 'phase': 'liquid', 'melting_point': '327°C', 'neutron_absorption': 'low'}},
+    "MOLTEN_SALT": {'description': 'Molten fluoride or chloride salts', 'annotations': {'phase': 'liquid', 'temperature_capability': 'very high', 'neutron_absorption': 'variable'}},
+    "SUPERCRITICAL_WATER": {'description': 'Water above critical point', 'annotations': {'chemical_formula': 'H2O', 'pressure': '>221 bar', 'temperature': '>374°C'}},
+}
+
+class ReactorModeratorEnum(RichEnum):
+    """
+    Neutron moderator types used in nuclear reactors
+    """
+    # Enum members
+    LIGHT_WATER = "LIGHT_WATER"
+    HEAVY_WATER = "HEAVY_WATER"
+    GRAPHITE = "GRAPHITE"
+    BERYLLIUM = "BERYLLIUM"
+    NONE = "NONE"
+
+# Set metadata after class creation to avoid it becoming an enum member
+ReactorModeratorEnum._metadata = {
+    "LIGHT_WATER": {'description': 'Ordinary water as neutron moderator', 'annotations': {'chemical_formula': 'H2O', 'moderation_effectiveness': 'good', 'neutron_absorption': 'moderate'}},
+    "HEAVY_WATER": {'description': 'Deuterium oxide as neutron moderator', 'annotations': {'chemical_formula': 'D2O', 'moderation_effectiveness': 'excellent', 'neutron_absorption': 'very low'}},
+    "GRAPHITE": {'description': 'Carbon graphite as neutron moderator', 'annotations': {'chemical_formula': 'C', 'moderation_effectiveness': 'good', 'neutron_absorption': 'low', 'temperature_resistance': 'high'}},
+    "BERYLLIUM": {'description': 'Beryllium metal as neutron moderator', 'annotations': {'chemical_formula': 'Be', 'moderation_effectiveness': 'good', 'neutron_absorption': 'very low'}},
+    "NONE": {'description': 'Fast reactors with no neutron moderation', 'annotations': {'neutron_spectrum': 'fast', 'moderation': 'none'}},
+}
+
+class ReactorNeutronSpectrumEnum(RichEnum):
+    """
+    Neutron energy spectrum classifications
+    """
+    # Enum members
+    THERMAL = "THERMAL"
+    EPITHERMAL = "EPITHERMAL"
+    FAST = "FAST"
+
+# Set metadata after class creation to avoid it becoming an enum member
+ReactorNeutronSpectrumEnum._metadata = {
+    "THERMAL": {'description': 'Low energy neutrons in thermal equilibrium', 'annotations': {'energy_range': '<1 eV', 'temperature_equivalent': 'room temperature', 'fission_probability': 'high for U-235'}},
+    "EPITHERMAL": {'description': 'Intermediate energy neutrons', 'annotations': {'energy_range': '1 eV - 1 keV', 'temperature_equivalent': 'elevated'}},
+    "FAST": {'description': 'High energy neutrons from fission', 'annotations': {'energy_range': '>1 keV', 'moderation': 'minimal or none', 'breeding_capability': 'high'}},
+}
+
+class ReactorSizeCategoryEnum(RichEnum):
+    """
+    Nuclear reactor size classifications
+    """
+    # Enum members
+    LARGE = "LARGE"
+    MEDIUM = "MEDIUM"
+    SMALL = "SMALL"
+    MICRO = "MICRO"
+    RESEARCH = "RESEARCH"
+
+# Set metadata after class creation to avoid it becoming an enum member
+ReactorSizeCategoryEnum._metadata = {
+    "LARGE": {'description': 'Traditional large-scale commercial reactors', 'annotations': {'power_output': '>700 MWe', 'construction': 'custom on-site'}},
+    "MEDIUM": {'description': 'Mid-scale reactors', 'annotations': {'power_output': '300-700 MWe', 'construction': 'semi-modular'}},
+    "SMALL": {'description': 'Small modular reactors', 'annotations': {'power_output': '50-300 MWe', 'construction': 'modular', 'transport': 'potentially transportable'}},
+    "MICRO": {'description': 'Very small reactors for remote applications', 'annotations': {'power_output': '<50 MWe', 'construction': 'factory-built', 'transport': 'transportable'}},
+    "RESEARCH": {'description': 'Small reactors for research and isotope production', 'annotations': {'power_output': '<100 MWt', 'primary_use': 'research, isotopes, training'}},
+}
+
+class NuclearFuelTypeEnum(RichEnum):
+    """
+    Types of nuclear fuel materials and compositions
+    """
+    # Enum members
+    NATURAL_URANIUM = "NATURAL_URANIUM"
+    LOW_ENRICHED_URANIUM = "LOW_ENRICHED_URANIUM"
+    HIGH_ASSAY_LEU = "HIGH_ASSAY_LEU"
+    HIGHLY_ENRICHED_URANIUM = "HIGHLY_ENRICHED_URANIUM"
+    WEAPONS_GRADE_URANIUM = "WEAPONS_GRADE_URANIUM"
+    REACTOR_GRADE_PLUTONIUM = "REACTOR_GRADE_PLUTONIUM"
+    WEAPONS_GRADE_PLUTONIUM = "WEAPONS_GRADE_PLUTONIUM"
+    MOX_FUEL = "MOX_FUEL"
+    THORIUM_FUEL = "THORIUM_FUEL"
+    TRISO_FUEL = "TRISO_FUEL"
+    LIQUID_FUEL = "LIQUID_FUEL"
+    METALLIC_FUEL = "METALLIC_FUEL"
+    CARBIDE_FUEL = "CARBIDE_FUEL"
+    NITRIDE_FUEL = "NITRIDE_FUEL"
+
+# Set metadata after class creation to avoid it becoming an enum member
+NuclearFuelTypeEnum._metadata = {
+    "NATURAL_URANIUM": {'description': 'Uranium as found in nature (0.711% U-235)', 'meaning': 'CHEBI:27214', 'annotations': {'u235_content': '0.711%', 'u238_content': '99.289%', 'enrichment_required': False, 'typical_use': 'PHWR, some research reactors'}, 'aliases': ['Natural U', 'Unat']},
+    "LOW_ENRICHED_URANIUM": {'description': 'Uranium enriched to 0.7%-20% U-235', 'annotations': {'u235_content': '0.7-20%', 'proliferation_risk': 'low', 'typical_use': 'commercial power reactors', 'iaea_category': 'indirect use material'}, 'aliases': ['LEU']},
+    "HIGH_ASSAY_LEU": {'description': 'Uranium enriched to 5%-20% U-235', 'annotations': {'u235_content': '5-20%', 'typical_use': 'advanced reactors, SMRs', 'proliferation_risk': 'moderate'}, 'aliases': ['HALEU', 'LEU+']},
+    "HIGHLY_ENRICHED_URANIUM": {'description': 'Uranium enriched to 20% or more U-235', 'annotations': {'u235_content': '≥20%', 'proliferation_risk': 'high', 'typical_use': 'research reactors, naval propulsion', 'iaea_category': 'direct use material'}, 'aliases': ['HEU']},
+    "WEAPONS_GRADE_URANIUM": {'description': 'Uranium enriched to 90% or more U-235', 'annotations': {'u235_content': '≥90%', 'proliferation_risk': 'very high', 'typical_use': 'nuclear weapons, some naval reactors'}, 'aliases': ['WGU']},
+    "REACTOR_GRADE_PLUTONIUM": {'description': 'Plutonium with high Pu-240 content from spent fuel', 'annotations': {'pu239_content': '<93%', 'pu240_content': '>7%', 'source': 'spent nuclear fuel', 'typical_use': 'MOX fuel'}, 'aliases': ['RGPu']},
+    "WEAPONS_GRADE_PLUTONIUM": {'description': 'Plutonium with low Pu-240 content', 'annotations': {'pu239_content': '≥93%', 'pu240_content': '<7%', 'proliferation_risk': 'very high'}, 'aliases': ['WGPu']},
+    "MOX_FUEL": {'description': 'Mixture of plutonium and uranium oxides', 'annotations': {'composition': 'UO2 + PuO2', 'plutonium_content': '3-10%', 'typical_use': 'thermal reactors', 'recycling': 'enables plutonium recycling'}, 'aliases': ['MOX', 'Mixed Oxide']},
+    "THORIUM_FUEL": {'description': 'Fuel containing thorium-232 as fertile material', 'meaning': 'CHEBI:33385', 'annotations': {'fertile_isotope': 'Th-232', 'fissile_product': 'U-233', 'abundance': 'more abundant than uranium', 'proliferation_resistance': 'high'}, 'aliases': ['Thorium fuel']},
+    "TRISO_FUEL": {'description': 'Coated particle fuel with multiple containment layers', 'annotations': {'form': 'coated particles', 'containment_layers': 4, 'meltdown_resistance': 'very high', 'typical_use': 'HTGR, some SMRs'}, 'aliases': ['TRISO']},
+    "LIQUID_FUEL": {'description': 'Fuel dissolved in liquid medium', 'annotations': {'phase': 'liquid', 'typical_use': 'molten salt reactors', 'reprocessing': 'online'}},
+    "METALLIC_FUEL": {'description': 'Fuel in metallic form', 'annotations': {'form': 'metal alloy', 'typical_use': 'fast reactors', 'thermal_conductivity': 'high'}},
+    "CARBIDE_FUEL": {'description': 'Uranium or plutonium carbide fuel', 'annotations': {'chemical_form': 'carbide', 'melting_point': 'very high', 'typical_use': 'advanced reactors'}},
+    "NITRIDE_FUEL": {'description': 'Uranium or plutonium nitride fuel', 'annotations': {'chemical_form': 'nitride', 'density': 'high', 'typical_use': 'fast reactors'}},
+}
+
+class UraniumEnrichmentLevelEnum(RichEnum):
+    """
+    Standard uranium-235 enrichment level classifications
+    """
+    # Enum members
+    NATURAL = "NATURAL"
+    SLIGHTLY_ENRICHED = "SLIGHTLY_ENRICHED"
+    LOW_ENRICHED = "LOW_ENRICHED"
+    HIGH_ASSAY_LOW_ENRICHED = "HIGH_ASSAY_LOW_ENRICHED"
+    HIGHLY_ENRICHED = "HIGHLY_ENRICHED"
+    WEAPONS_GRADE = "WEAPONS_GRADE"
+
+# Set metadata after class creation to avoid it becoming an enum member
+UraniumEnrichmentLevelEnum._metadata = {
+    "NATURAL": {'description': 'Natural uranium enrichment (0.711% U-235)', 'annotations': {'u235_percentage': 0.711, 'category': 'natural', 'separative_work': 0}},
+    "SLIGHTLY_ENRICHED": {'description': 'Minimal enrichment above natural levels', 'annotations': {'u235_percentage': '0.8-2.0', 'category': 'SEU', 'typical_use': 'some heavy water reactors'}},
+    "LOW_ENRICHED": {'description': 'Standard commercial reactor enrichment', 'annotations': {'u235_percentage': '2.0-5.0', 'category': 'LEU', 'typical_use': 'PWR, BWR commercial reactors'}},
+    "HIGH_ASSAY_LOW_ENRICHED": {'description': 'Higher enrichment for advanced reactors', 'annotations': {'u235_percentage': '5.0-20.0', 'category': 'HALEU', 'typical_use': 'advanced reactors, SMRs'}},
+    "HIGHLY_ENRICHED": {'description': 'High enrichment for research and naval reactors', 'annotations': {'u235_percentage': '20.0-90.0', 'category': 'HEU', 'typical_use': 'research reactors, naval propulsion'}},
+    "WEAPONS_GRADE": {'description': 'Very high enrichment for weapons', 'annotations': {'u235_percentage': '90.0+', 'category': 'WGU', 'proliferation_concern': 'extreme'}},
+}
+
+class FuelFormEnum(RichEnum):
+    """
+    Physical forms of nuclear fuel
+    """
+    # Enum members
+    OXIDE_PELLETS = "OXIDE_PELLETS"
+    METAL_SLUGS = "METAL_SLUGS"
+    COATED_PARTICLES = "COATED_PARTICLES"
+    LIQUID_SOLUTION = "LIQUID_SOLUTION"
+    DISPERSION_FUEL = "DISPERSION_FUEL"
+    CERMET_FUEL = "CERMET_FUEL"
+    PLATE_FUEL = "PLATE_FUEL"
+    ROD_FUEL = "ROD_FUEL"
+
+# Set metadata after class creation to avoid it becoming an enum member
+FuelFormEnum._metadata = {
+    "OXIDE_PELLETS": {'description': 'Ceramic uranium dioxide pellets', 'annotations': {'chemical_form': 'UO2', 'shape': 'cylindrical pellets', 'typical_use': 'PWR, BWR fuel rods'}},
+    "METAL_SLUGS": {'description': 'Metallic uranium fuel elements', 'annotations': {'chemical_form': 'metallic uranium', 'shape': 'cylindrical slugs', 'typical_use': 'production reactors'}},
+    "COATED_PARTICLES": {'description': 'Microspheres with protective coatings', 'annotations': {'structure': 'TRISO or BISO coated', 'size': 'microscopic spheres', 'typical_use': 'HTGR'}},
+    "LIQUID_SOLUTION": {'description': 'Fuel dissolved in liquid carrier', 'annotations': {'phase': 'liquid', 'typical_use': 'molten salt reactors'}},
+    "DISPERSION_FUEL": {'description': 'Fuel particles dispersed in matrix', 'annotations': {'structure': 'particles in matrix', 'typical_use': 'research reactors'}},
+    "CERMET_FUEL": {'description': 'Ceramic-metal composite fuel', 'annotations': {'structure': 'ceramic in metal matrix', 'typical_use': 'advanced reactors'}},
+    "PLATE_FUEL": {'description': 'Flat plate fuel elements', 'annotations': {'geometry': 'flat plates', 'typical_use': 'research reactors'}},
+    "ROD_FUEL": {'description': 'Cylindrical fuel rods', 'annotations': {'geometry': 'long cylinders', 'typical_use': 'commercial power reactors'}},
+}
+
+class FuelAssemblyTypeEnum(RichEnum):
+    """
+    Types of fuel assembly configurations
+    """
+    # Enum members
+    PWR_ASSEMBLY = "PWR_ASSEMBLY"
+    BWR_ASSEMBLY = "BWR_ASSEMBLY"
+    CANDU_BUNDLE = "CANDU_BUNDLE"
+    RBMK_ASSEMBLY = "RBMK_ASSEMBLY"
+    AGR_ASSEMBLY = "AGR_ASSEMBLY"
+    HTGR_BLOCK = "HTGR_BLOCK"
+    FAST_REACTOR_ASSEMBLY = "FAST_REACTOR_ASSEMBLY"
+
+# Set metadata after class creation to avoid it becoming an enum member
+FuelAssemblyTypeEnum._metadata = {
+    "PWR_ASSEMBLY": {'description': 'Square array fuel assembly for PWR', 'annotations': {'geometry': 'square array', 'rod_count': '264-289 typical', 'control_method': 'control rod clusters'}},
+    "BWR_ASSEMBLY": {'description': 'Square array fuel assembly for BWR', 'annotations': {'geometry': 'square array with channel', 'rod_count': '49-100 typical', 'control_method': 'control blades'}},
+    "CANDU_BUNDLE": {'description': 'Cylindrical fuel bundle for PHWR', 'annotations': {'geometry': 'cylindrical bundle', 'rod_count': '28-43 typical', 'length': '~50 cm'}},
+    "RBMK_ASSEMBLY": {'description': 'Fuel assembly for RBMK reactors', 'annotations': {'geometry': '18-rod bundle', 'length': '~3.5 m', 'control_method': 'control rods'}},
+    "AGR_ASSEMBLY": {'description': 'Fuel stringer for AGR', 'annotations': {'geometry': 'stacked pins', 'cladding': 'stainless steel'}},
+    "HTGR_BLOCK": {'description': 'Graphite block with TRISO fuel', 'annotations': {'geometry': 'hexagonal or cylindrical blocks', 'fuel_form': 'TRISO particles'}},
+    "FAST_REACTOR_ASSEMBLY": {'description': 'Fuel assembly for fast reactors', 'annotations': {'geometry': 'hexagonal wrapper', 'coolant_flow': 'axial'}},
+}
+
+class FuelCycleStageEnum(RichEnum):
+    """
+    Stages in the nuclear fuel cycle
+    """
+    # Enum members
+    MINING = "MINING"
+    CONVERSION = "CONVERSION"
+    ENRICHMENT = "ENRICHMENT"
+    FUEL_FABRICATION = "FUEL_FABRICATION"
+    REACTOR_OPERATION = "REACTOR_OPERATION"
+    INTERIM_STORAGE = "INTERIM_STORAGE"
+    REPROCESSING = "REPROCESSING"
+    DISPOSAL = "DISPOSAL"
+
+# Set metadata after class creation to avoid it becoming an enum member
+FuelCycleStageEnum._metadata = {
+    "MINING": {'description': 'Extraction of uranium ore from deposits', 'annotations': {'process': 'mining and milling', 'product': 'uranium ore concentrate (yellowcake)'}},
+    "CONVERSION": {'description': 'Conversion of uranium concentrate to UF6', 'annotations': {'input': 'U3O8 yellowcake', 'output': 'uranium hexafluoride (UF6)'}},
+    "ENRICHMENT": {'description': 'Increase of U-235 concentration', 'annotations': {'input': 'natural UF6', 'output': 'enriched UF6', 'waste': 'depleted uranium tails'}},
+    "FUEL_FABRICATION": {'description': 'Manufacturing of fuel assemblies', 'annotations': {'input': 'enriched UF6', 'output': 'fuel assemblies', 'process': 'pellet and rod manufacturing'}},
+    "REACTOR_OPERATION": {'description': 'Power generation in nuclear reactor', 'annotations': {'input': 'fresh fuel assemblies', 'output': 'electricity and spent fuel', 'duration': '12-24 months per cycle'}},
+    "INTERIM_STORAGE": {'description': 'Temporary storage of spent fuel', 'annotations': {'purpose': 'cooling and decay', 'duration': '5-40+ years', 'location': 'reactor pools or dry casks'}},
+    "REPROCESSING": {'description': 'Chemical separation of spent fuel components', 'annotations': {'input': 'spent nuclear fuel', 'output': 'uranium, plutonium, waste', 'status': 'practiced in some countries'}},
+    "DISPOSAL": {'description': 'Permanent disposal of nuclear waste', 'annotations': {'method': 'geological repository', 'duration': 'permanent', 'status': 'under development globally'}},
+}
+
+class FissileIsotopeEnum(RichEnum):
+    """
+    Fissile isotopes used in nuclear fuel
+    """
+    # Enum members
+    URANIUM_233 = "URANIUM_233"
+    URANIUM_235 = "URANIUM_235"
+    PLUTONIUM_239 = "PLUTONIUM_239"
+    PLUTONIUM_241 = "PLUTONIUM_241"
+
+# Set metadata after class creation to avoid it becoming an enum member
+FissileIsotopeEnum._metadata = {
+    "URANIUM_233": {'description': 'Fissile isotope produced from thorium', 'annotations': {'mass_number': 233, 'half_life': '159,200 years', 'thermal_fission': True, 'breeding_from': 'Th-232'}, 'aliases': ['U-233']},
+    "URANIUM_235": {'description': 'Naturally occurring fissile uranium isotope', 'annotations': {'mass_number': 235, 'half_life': '703,800,000 years', 'natural_abundance': '0.711%', 'thermal_fission': True}, 'aliases': ['U-235']},
+    "PLUTONIUM_239": {'description': 'Fissile plutonium isotope from U-238 breeding', 'annotations': {'mass_number': 239, 'half_life': '24,110 years', 'thermal_fission': True, 'breeding_from': 'U-238'}, 'aliases': ['Pu-239']},
+    "PLUTONIUM_241": {'description': 'Fissile plutonium isotope with short half-life', 'annotations': {'mass_number': 241, 'half_life': '14.3 years', 'thermal_fission': True, 'decay_product': 'Am-241'}, 'aliases': ['Pu-241']},
+}
+
+class IAEAWasteClassificationEnum(RichEnum):
+    """
+    IAEA General Safety Requirements radioactive waste classification scheme
+    """
+    # Enum members
+    EXEMPT_WASTE = "EXEMPT_WASTE"
+    VERY_SHORT_LIVED_WASTE = "VERY_SHORT_LIVED_WASTE"
+    VERY_LOW_LEVEL_WASTE = "VERY_LOW_LEVEL_WASTE"
+    LOW_LEVEL_WASTE = "LOW_LEVEL_WASTE"
+    INTERMEDIATE_LEVEL_WASTE = "INTERMEDIATE_LEVEL_WASTE"
+    HIGH_LEVEL_WASTE = "HIGH_LEVEL_WASTE"
+
+# Set metadata after class creation to avoid it becoming an enum member
+IAEAWasteClassificationEnum._metadata = {
+    "EXEMPT_WASTE": {'description': 'Waste with negligible radioactivity requiring no regulatory control', 'annotations': {'regulatory_control': 'none required', 'clearance': 'can be cleared from regulatory control', 'disposal': 'as ordinary waste', 'activity_level': 'negligible'}, 'aliases': ['EW']},
+    "VERY_SHORT_LIVED_WASTE": {'description': 'Waste stored for decay to exempt levels within few years', 'annotations': {'storage_period': 'up to few years', 'decay_strategy': 'storage for decay', 'clearance': 'after decay period', 'typical_sources': 'medical, research isotopes'}, 'aliases': ['VSLW']},
+    "VERY_LOW_LEVEL_WASTE": {'description': 'Waste requiring limited containment and isolation', 'annotations': {'containment_requirement': 'limited', 'disposal': 'near-surface landfill-type', 'activity_level': 'very low but above exempt', 'isolation_period': 'limited'}, 'aliases': ['VLLW']},
+    "LOW_LEVEL_WASTE": {'description': 'Waste requiring containment for up to hundreds of years', 'annotations': {'containment_period': 'up to few hundred years', 'disposal': 'near-surface disposal', 'activity_level': 'low', 'heat_generation': 'negligible'}, 'aliases': ['LLW']},
+    "INTERMEDIATE_LEVEL_WASTE": {'description': 'Waste requiring containment for thousands of years', 'annotations': {'containment_period': 'up to thousands of years', 'disposal': 'geological disposal', 'activity_level': 'intermediate', 'heat_generation': 'low (<2 kW/m³)', 'shielding': 'required'}, 'aliases': ['ILW']},
+    "HIGH_LEVEL_WASTE": {'description': 'Waste requiring containment for thousands to hundreds of thousands of years', 'annotations': {'containment_period': 'thousands to hundreds of thousands of years', 'disposal': 'geological disposal', 'activity_level': 'high', 'heat_generation': 'significant (>2 kW/m³)', 'cooling': 'required', 'shielding': 'heavy shielding required'}, 'aliases': ['HLW']},
+}
+
+class NRCWasteClassEnum(RichEnum):
+    """
+    US NRC 10 CFR 61 low-level radioactive waste classification
+    """
+    # Enum members
+    CLASS_A = "CLASS_A"
+    CLASS_B = "CLASS_B"
+    CLASS_C = "CLASS_C"
+    GREATER_THAN_CLASS_C = "GREATER_THAN_CLASS_C"
+
+# Set metadata after class creation to avoid it becoming an enum member
+NRCWasteClassEnum._metadata = {
+    "CLASS_A": {'description': 'Lowest radioactivity waste suitable for shallow land burial', 'annotations': {'disposal_method': 'shallow land burial', 'segregation_requirements': 'minimal', 'waste_form_requirements': 'none', 'typical_sources': 'medical, industrial, power plants', 'concentration_limits': 'lowest of three classes'}},
+    "CLASS_B": {'description': 'Intermediate radioactivity requiring waste form stability', 'annotations': {'disposal_method': 'shallow land burial', 'segregation_requirements': 'from Class A', 'waste_form_requirements': 'structural stability', 'institutional_control': '100 years minimum', 'concentration_limits': 'intermediate'}},
+    "CLASS_C": {'description': 'Highest concentration suitable for shallow land burial', 'annotations': {'disposal_method': 'shallow land burial', 'segregation_requirements': 'enhanced', 'waste_form_requirements': 'structural stability', 'institutional_control': '100 years minimum', 'intruder_barriers': 'required', 'concentration_limits': 'highest for shallow burial'}},
+    "GREATER_THAN_CLASS_C": {'description': 'Waste exceeding Class C limits, generally unsuitable for shallow burial', 'annotations': {'disposal_method': 'case-by-case evaluation', 'shallow_burial': 'generally not acceptable', 'deep_disposal': 'may be required', 'nrc_evaluation': 'required', 'concentration_limits': 'exceeds Class C'}, 'aliases': ['GTCC']},
+}
+
+class WasteHeatGenerationEnum(RichEnum):
+    """
+    Heat generation categories for radioactive waste
+    """
+    # Enum members
+    NEGLIGIBLE_HEAT = "NEGLIGIBLE_HEAT"
+    LOW_HEAT = "LOW_HEAT"
+    HIGH_HEAT = "HIGH_HEAT"
+
+# Set metadata after class creation to avoid it becoming an enum member
+WasteHeatGenerationEnum._metadata = {
+    "NEGLIGIBLE_HEAT": {'description': 'Waste generating negligible heat', 'annotations': {'heat_output': '<0.1 kW/m³', 'cooling_required': False, 'thermal_consideration': 'minimal'}},
+    "LOW_HEAT": {'description': 'Waste generating low but measurable heat', 'annotations': {'heat_output': '0.1-2 kW/m³', 'cooling_required': 'minimal', 'thermal_consideration': 'some design consideration'}},
+    "HIGH_HEAT": {'description': 'Waste generating significant heat requiring thermal management', 'annotations': {'heat_output': '>2 kW/m³', 'cooling_required': True, 'thermal_consideration': 'major design factor', 'typical_waste': 'spent nuclear fuel, HLW glass'}},
+}
+
+class WasteHalfLifeCategoryEnum(RichEnum):
+    """
+    Half-life categories for radioactive waste classification
+    """
+    # Enum members
+    VERY_SHORT_LIVED = "VERY_SHORT_LIVED"
+    SHORT_LIVED = "SHORT_LIVED"
+    LONG_LIVED = "LONG_LIVED"
+
+# Set metadata after class creation to avoid it becoming an enum member
+WasteHalfLifeCategoryEnum._metadata = {
+    "VERY_SHORT_LIVED": {'description': 'Radionuclides with very short half-lives', 'annotations': {'half_life_range': 'seconds to days', 'decay_strategy': 'storage for decay', 'typical_examples': 'medical isotopes, some activation products'}},
+    "SHORT_LIVED": {'description': 'Radionuclides with short half-lives', 'annotations': {'half_life_range': '<30 years', 'containment_period': 'hundreds of years', 'decay_significance': 'significant over containment period'}},
+    "LONG_LIVED": {'description': 'Radionuclides with long half-lives', 'annotations': {'half_life_range': '>30 years', 'containment_period': 'thousands to millions of years', 'decay_significance': 'minimal over human timescales', 'examples': 'actinides, some fission products'}},
+}
+
+class WasteDisposalMethodEnum(RichEnum):
+    """
+    Methods for radioactive waste disposal
+    """
+    # Enum members
+    CLEARANCE = "CLEARANCE"
+    DECAY_STORAGE = "DECAY_STORAGE"
+    NEAR_SURFACE_DISPOSAL = "NEAR_SURFACE_DISPOSAL"
+    GEOLOGICAL_DISPOSAL = "GEOLOGICAL_DISPOSAL"
+    BOREHOLE_DISPOSAL = "BOREHOLE_DISPOSAL"
+    TRANSMUTATION = "TRANSMUTATION"
+
+# Set metadata after class creation to avoid it becoming an enum member
+WasteDisposalMethodEnum._metadata = {
+    "CLEARANCE": {'description': 'Release from regulatory control as ordinary waste', 'annotations': {'regulatory_oversight': 'none after clearance', 'waste_category': 'exempt waste', 'disposal_location': 'conventional facilities'}},
+    "DECAY_STORAGE": {'description': 'Storage for radioactive decay to exempt levels', 'annotations': {'storage_duration': 'typically <10 years', 'waste_category': 'very short-lived waste', 'final_disposal': 'as ordinary waste after decay'}},
+    "NEAR_SURFACE_DISPOSAL": {'description': 'Disposal in engineered near-surface facilities', 'annotations': {'depth': 'typically <30 meters', 'waste_categories': 'VLLW, LLW, some ILW', 'institutional_control': '100-300 years', 'barriers': 'engineered barriers'}},
+    "GEOLOGICAL_DISPOSAL": {'description': 'Deep underground disposal in stable geological formations', 'annotations': {'depth': 'typically >300 meters', 'waste_categories': 'HLW, long-lived ILW, spent fuel', 'containment_period': 'thousands to millions of years', 'barriers': 'multiple barriers including geology'}},
+    "BOREHOLE_DISPOSAL": {'description': 'Disposal in deep boreholes', 'annotations': {'depth': '1-5 kilometers', 'waste_categories': 'disused sealed sources, some HLW', 'isolation': 'extreme depth isolation'}},
+    "TRANSMUTATION": {'description': 'Nuclear transformation to shorter-lived or stable isotopes', 'annotations': {'method': 'accelerator-driven systems or fast reactors', 'waste_categories': 'long-lived actinides', 'status': 'research and development'}},
+}
+
+class WasteSourceEnum(RichEnum):
+    """
+    Sources of radioactive waste generation
+    """
+    # Enum members
+    NUCLEAR_POWER_PLANTS = "NUCLEAR_POWER_PLANTS"
+    MEDICAL_APPLICATIONS = "MEDICAL_APPLICATIONS"
+    INDUSTRIAL_APPLICATIONS = "INDUSTRIAL_APPLICATIONS"
+    RESEARCH_FACILITIES = "RESEARCH_FACILITIES"
+    NUCLEAR_WEAPONS_PROGRAM = "NUCLEAR_WEAPONS_PROGRAM"
+    DECOMMISSIONING = "DECOMMISSIONING"
+    URANIUM_MINING = "URANIUM_MINING"
+    FUEL_CYCLE_FACILITIES = "FUEL_CYCLE_FACILITIES"
+
+# Set metadata after class creation to avoid it becoming an enum member
+WasteSourceEnum._metadata = {
+    "NUCLEAR_POWER_PLANTS": {'description': 'Waste from commercial nuclear power generation', 'annotations': {'waste_types': 'spent fuel, operational waste, decommissioning waste', 'volume_fraction': 'largest single source', 'waste_classes': 'all classes including HLW'}},
+    "MEDICAL_APPLICATIONS": {'description': 'Waste from nuclear medicine and radiotherapy', 'annotations': {'waste_types': 'short-lived medical isotopes, sealed sources', 'typical_classification': 'Class A, VSLW', 'decay_strategy': 'often storage for decay'}},
+    "INDUSTRIAL_APPLICATIONS": {'description': 'Waste from industrial use of radioactive materials', 'annotations': {'applications': 'gauging, radiography, sterilization', 'waste_types': 'sealed sources, contaminated equipment', 'typical_classification': 'Class A and B'}},
+    "RESEARCH_FACILITIES": {'description': 'Waste from research reactors and laboratories', 'annotations': {'waste_types': 'activation products, contaminated materials', 'typical_classification': 'Class A, B, and C', 'fuel_type': 'often HEU spent fuel'}},
+    "NUCLEAR_WEAPONS_PROGRAM": {'description': 'Waste from defense nuclear activities', 'annotations': {'waste_types': 'TRU waste, HLW, contaminated equipment', 'legacy_waste': 'significant volumes from past activities', 'classification': 'all classes including TRU'}},
+    "DECOMMISSIONING": {'description': 'Waste from dismantling nuclear facilities', 'annotations': {'waste_types': 'activated concrete, contaminated metal', 'volume': 'large volumes of VLLW and LLW', 'activity_level': 'generally low level'}},
+    "URANIUM_MINING": {'description': 'Waste from uranium extraction and processing', 'annotations': {'waste_types': 'tailings, contaminated equipment', 'volume': 'very large volumes', 'activity_level': 'naturally occurring radioactivity'}},
+    "FUEL_CYCLE_FACILITIES": {'description': 'Waste from fuel fabrication, enrichment, and reprocessing', 'annotations': {'waste_types': 'contaminated equipment, process waste', 'classification': 'variable depending on process', 'uranium_content': 'often contains enriched uranium'}},
+}
+
+class TransuranicWasteCategoryEnum(RichEnum):
+    """
+    Transuranic waste classifications (US system)
+    """
+    # Enum members
+    CONTACT_HANDLED_TRU = "CONTACT_HANDLED_TRU"
+    REMOTE_HANDLED_TRU = "REMOTE_HANDLED_TRU"
+    TRU_MIXED_WASTE = "TRU_MIXED_WASTE"
+
+# Set metadata after class creation to avoid it becoming an enum member
+TransuranicWasteCategoryEnum._metadata = {
+    "CONTACT_HANDLED_TRU": {'description': 'TRU waste with surface dose rate ≤200 mrem/hr', 'annotations': {'dose_rate': '≤200 mrem/hr at surface', 'handling': 'direct contact possible with protection', 'disposal': 'geological repository (WIPP)', 'plutonium_content': '>100 nCi/g'}, 'aliases': ['CH-TRU']},
+    "REMOTE_HANDLED_TRU": {'description': 'TRU waste with surface dose rate >200 mrem/hr', 'annotations': {'dose_rate': '>200 mrem/hr at surface', 'handling': 'remote handling required', 'disposal': 'geological repository with additional shielding', 'plutonium_content': '>100 nCi/g'}, 'aliases': ['RH-TRU']},
+    "TRU_MIXED_WASTE": {'description': 'TRU waste also containing hazardous chemical components', 'annotations': {'regulation': 'both radiological and chemical hazard regulations', 'treatment': 'may require chemical treatment before disposal', 'disposal': 'geological repository after treatment', 'complexity': 'dual regulatory framework'}},
+}
+
+class INESLevelEnum(RichEnum):
+    """
+    International Nuclear and Radiological Event Scale (INES) levels
+    """
+    # Enum members
+    LEVEL_0 = "LEVEL_0"
+    LEVEL_1 = "LEVEL_1"
+    LEVEL_2 = "LEVEL_2"
+    LEVEL_3 = "LEVEL_3"
+    LEVEL_4 = "LEVEL_4"
+    LEVEL_5 = "LEVEL_5"
+    LEVEL_6 = "LEVEL_6"
+    LEVEL_7 = "LEVEL_7"
+
+# Set metadata after class creation to avoid it becoming an enum member
+INESLevelEnum._metadata = {
+    "LEVEL_0": {'description': 'Events without safety significance', 'annotations': {'scale_position': 'below scale', 'safety_significance': 'no safety significance', 'public_impact': 'none', 'examples': 'minor technical issues'}},
+    "LEVEL_1": {'description': 'Anomaly beyond authorized operating regime', 'annotations': {'scale_position': 'incidents', 'safety_significance': 'minor', 'public_impact': 'none', 'examples': 'minor contamination, minor safety system failure'}},
+    "LEVEL_2": {'description': 'Incident with significant defenses remaining', 'annotations': {'scale_position': 'incidents', 'safety_significance': 'minor', 'public_impact': 'none', 'radiation_dose': '<10 mSv to workers'}},
+    "LEVEL_3": {'description': 'Serious incident with some defense degradation', 'annotations': {'scale_position': 'incidents', 'safety_significance': 'minor', 'public_impact': 'very minor', 'radiation_dose': '<100 mSv to workers', 'examples': 'near accident, serious contamination'}},
+    "LEVEL_4": {'description': 'Accident with minor off-site releases', 'annotations': {'scale_position': 'accidents', 'safety_significance': 'moderate', 'public_impact': 'minor local impact', 'evacuation': 'not required', 'examples': 'partial core damage'}},
+    "LEVEL_5": {'description': 'Accident with limited off-site releases', 'annotations': {'scale_position': 'accidents', 'safety_significance': 'moderate to major', 'public_impact': 'limited wider impact', 'protective_actions': 'limited evacuation', 'examples': 'Three Mile Island (1979)'}},
+    "LEVEL_6": {'description': 'Serious accident with significant releases', 'annotations': {'scale_position': 'accidents', 'safety_significance': 'major', 'public_impact': 'significant', 'protective_actions': 'extensive evacuation and countermeasures'}},
+    "LEVEL_7": {'description': 'Major accident with widespread health and environmental effects', 'annotations': {'scale_position': 'accidents', 'safety_significance': 'major', 'public_impact': 'widespread', 'examples': 'Chernobyl (1986), Fukushima (2011)', 'consequences': 'long-term environmental contamination'}},
+}
+
+class EmergencyClassificationEnum(RichEnum):
+    """
+    Nuclear emergency action levels and classifications
+    """
+    # Enum members
+    NOTIFICATION_UNUSUAL_EVENT = "NOTIFICATION_UNUSUAL_EVENT"
+    ALERT = "ALERT"
+    SITE_AREA_EMERGENCY = "SITE_AREA_EMERGENCY"
+    GENERAL_EMERGENCY = "GENERAL_EMERGENCY"
+
+# Set metadata after class creation to avoid it becoming an enum member
+EmergencyClassificationEnum._metadata = {
+    "NOTIFICATION_UNUSUAL_EVENT": {'description': 'Events that are in process or have occurred which indicate potential degradation', 'annotations': {'severity': 'lowest emergency level', 'off_site_response': 'notification only', 'public_protective_actions': 'none required', 'emergency_response': 'minimal activation'}, 'aliases': ['NOUE', 'Unusual Event']},
+    "ALERT": {'description': 'Events involving actual or potential substantial degradation of plant safety', 'annotations': {'severity': 'second emergency level', 'off_site_response': 'notification and standby', 'public_protective_actions': 'none required, but preparation', 'emergency_response': 'partial activation', 'plant_status': 'substantial safety degradation possible'}},
+    "SITE_AREA_EMERGENCY": {'description': 'Events with actual or likely major failures of plant protective systems', 'annotations': {'severity': 'third emergency level', 'off_site_response': 'offsite centers activated', 'public_protective_actions': 'may be required near site', 'emergency_response': 'full activation', 'plant_status': 'major plant safety systems failure'}, 'aliases': ['SAE']},
+    "GENERAL_EMERGENCY": {'description': 'Events involving actual or imminent substantial core degradation', 'annotations': {'severity': 'highest emergency level', 'off_site_response': 'full activation', 'public_protective_actions': 'implementation likely', 'emergency_response': 'maximum response', 'plant_status': 'core degradation or containment failure'}},
+}
+
+class NuclearSecurityCategoryEnum(RichEnum):
+    """
+    IAEA nuclear material security categories (INFCIRC/225)
+    """
+    # Enum members
+    CATEGORY_I = "CATEGORY_I"
+    CATEGORY_II = "CATEGORY_II"
+    CATEGORY_III = "CATEGORY_III"
+    CATEGORY_IV = "CATEGORY_IV"
+
+# Set metadata after class creation to avoid it becoming an enum member
+NuclearSecurityCategoryEnum._metadata = {
+    "CATEGORY_I": {'description': 'Material that can be used directly to manufacture nuclear explosive devices', 'annotations': {'direct_use': True, 'proliferation_risk': 'highest', 'protection_requirements': 'maximum', 'examples': 'HEU ≥20%, Pu ≥2kg, U-233 ≥2kg', 'physical_protection': 'multiple independent physical barriers'}},
+    "CATEGORY_II": {'description': 'Material requiring further processing to manufacture nuclear explosive devices', 'annotations': {'direct_use': 'requires processing', 'proliferation_risk': 'moderate', 'protection_requirements': 'substantial', 'examples': 'HEU <20% but >5%, natural uranium >500kg', 'physical_protection': 'significant barriers required'}},
+    "CATEGORY_III": {'description': 'Material posing radiation hazard but minimal proliferation risk', 'annotations': {'direct_use': False, 'proliferation_risk': 'low', 'protection_requirements': 'basic', 'examples': 'natural uranium 10-500kg, depleted uranium', 'physical_protection': 'basic measures sufficient'}},
+    "CATEGORY_IV": {'description': 'Material with minimal security significance', 'annotations': {'direct_use': False, 'proliferation_risk': 'minimal', 'protection_requirements': 'administrative', 'examples': 'small quantities of natural uranium'}},
+}
+
+class SafetySystemClassEnum(RichEnum):
+    """
+    Nuclear safety system classifications (based on IEEE and ASME standards)
+    """
+    # Enum members
+    CLASS_1E = "CLASS_1E"
+    SAFETY_RELATED = "SAFETY_RELATED"
+    SAFETY_SIGNIFICANT = "SAFETY_SIGNIFICANT"
+    NON_SAFETY_RELATED = "NON_SAFETY_RELATED"
+
+# Set metadata after class creation to avoid it becoming an enum member
+SafetySystemClassEnum._metadata = {
+    "CLASS_1E": {'description': 'Safety systems essential to emergency reactor shutdown and core cooling', 'annotations': {'safety_function': 'essential to safety', 'redundancy': 'required', 'independence': 'required', 'power_supply': 'independent emergency power', 'seismic_qualification': 'required', 'examples': 'reactor protection system, emergency core cooling'}},
+    "SAFETY_RELATED": {'description': 'Systems important to safety but not classified as Class 1E', 'annotations': {'safety_function': 'important to safety', 'quality_requirements': 'enhanced', 'testing_requirements': 'extensive', 'examples': 'some support systems, barriers'}},
+    "SAFETY_SIGNIFICANT": {'description': 'Systems with risk significance but not safety-related', 'annotations': {'safety_function': 'risk-significant', 'quality_requirements': 'graded approach', 'risk_informed': 'classification based on risk assessment'}},
+    "NON_SAFETY_RELATED": {'description': 'Systems not required for nuclear safety functions', 'annotations': {'safety_function': 'not required for safety', 'quality_requirements': 'commercial standards', 'failure_impact': 'minimal safety impact'}},
+}
+
+class ReactorSafetyFunctionEnum(RichEnum):
+    """
+    Fundamental nuclear reactor safety functions
+    """
+    # Enum members
+    REACTIVITY_CONTROL = "REACTIVITY_CONTROL"
+    HEAT_REMOVAL = "HEAT_REMOVAL"
+    CONTAINMENT_INTEGRITY = "CONTAINMENT_INTEGRITY"
+    CORE_COOLING = "CORE_COOLING"
+    SHUTDOWN_CAPABILITY = "SHUTDOWN_CAPABILITY"
+
+# Set metadata after class creation to avoid it becoming an enum member
+ReactorSafetyFunctionEnum._metadata = {
+    "REACTIVITY_CONTROL": {'description': 'Control of nuclear chain reaction', 'annotations': {'function': 'maintain reactor subcritical when required', 'systems': 'control rods, neutron absorbers', 'failure_consequence': 'criticality accident', 'defense_category': 'prevent accidents'}},
+    "HEAT_REMOVAL": {'description': 'Removal of decay heat from reactor core', 'annotations': {'function': 'prevent fuel overheating', 'systems': 'cooling systems, heat exchangers', 'failure_consequence': 'core damage, meltdown', 'defense_category': 'mitigate consequences'}},
+    "CONTAINMENT_INTEGRITY": {'description': 'Confinement of radioactive materials', 'annotations': {'function': 'prevent radioactive release', 'systems': 'containment structure, isolation systems', 'failure_consequence': 'environmental contamination', 'defense_category': 'mitigate consequences'}},
+    "CORE_COOLING": {'description': 'Maintenance of adequate core cooling', 'annotations': {'function': 'prevent fuel damage', 'systems': 'primary cooling, emergency cooling', 'failure_consequence': 'fuel damage', 'time_sensitivity': 'immediate to long-term'}},
+    "SHUTDOWN_CAPABILITY": {'description': 'Ability to shut down and maintain shutdown', 'annotations': {'function': 'terminate power operation safely', 'systems': 'control systems, shutdown systems', 'time_requirement': 'rapid response capability'}},
+}
+
+class DefenseInDepthLevelEnum(RichEnum):
+    """
+    Defense in depth barrier levels for nuclear safety
+    """
+    # Enum members
+    LEVEL_1 = "LEVEL_1"
+    LEVEL_2 = "LEVEL_2"
+    LEVEL_3 = "LEVEL_3"
+    LEVEL_4 = "LEVEL_4"
+    LEVEL_5 = "LEVEL_5"
+
+# Set metadata after class creation to avoid it becoming an enum member
+DefenseInDepthLevelEnum._metadata = {
+    "LEVEL_1": {'description': 'Conservative design and high quality in construction and operation', 'annotations': {'objective': 'prevent deviations from normal operation', 'approach': 'conservative design, quality assurance', 'examples': 'design margins, quality construction'}},
+    "LEVEL_2": {'description': 'Control of abnormal operation and detection of failures', 'annotations': {'objective': 'control abnormal operation and failures', 'approach': 'control systems, protection systems', 'examples': 'reactor protection systems, safety systems'}},
+    "LEVEL_3": {'description': 'Control of accidents to prevent progression to severe conditions', 'annotations': {'objective': 'control design basis accidents', 'approach': 'engineered safety features', 'examples': 'emergency core cooling, containment systems'}},
+    "LEVEL_4": {'description': 'Control of severe accidents including prevention of core melt progression', 'annotations': {'objective': 'control severe accidents', 'approach': 'severe accident management', 'examples': 'cavity flooding, filtered venting'}},
+    "LEVEL_5": {'description': 'Mitigation of off-site radiological consequences', 'annotations': {'objective': 'protect public and environment', 'approach': 'emergency planning and response', 'examples': 'evacuation plans, protective actions'}},
+}
+
+class RadiationProtectionZoneEnum(RichEnum):
+    """
+    Radiation protection zone classifications for nuclear facilities
+    """
+    # Enum members
+    EXCLUSION_AREA = "EXCLUSION_AREA"
+    LOW_POPULATION_ZONE = "LOW_POPULATION_ZONE"
+    EMERGENCY_PLANNING_ZONE = "EMERGENCY_PLANNING_ZONE"
+    INGESTION_PATHWAY_ZONE = "INGESTION_PATHWAY_ZONE"
+    CONTROLLED_AREA = "CONTROLLED_AREA"
+    SUPERVISED_AREA = "SUPERVISED_AREA"
+
+# Set metadata after class creation to avoid it becoming an enum member
+RadiationProtectionZoneEnum._metadata = {
+    "EXCLUSION_AREA": {'description': 'Area under control of reactor operator with restricted access', 'annotations': {'control': 'reactor operator', 'public_access': 'restricted', 'size': 'typically few hundred meters radius', 'purpose': 'immediate accident response control'}},
+    "LOW_POPULATION_ZONE": {'description': 'Area with low population density surrounding exclusion area', 'annotations': {'population_density': 'low', 'evacuation': 'feasible if needed', 'size': 'typically few kilometers radius', 'dose_limit': 'design basis for accident consequences'}},
+    "EMERGENCY_PLANNING_ZONE": {'description': 'Area for which emergency planning is conducted', 'annotations': {'planning_required': 'comprehensive emergency plans', 'size': 'typically 10-mile (16 km) radius', 'protective_actions': 'evacuation and sheltering plans'}},
+    "INGESTION_PATHWAY_ZONE": {'description': 'Area for controlling food and water contamination', 'annotations': {'contamination_control': 'food and water supplies', 'size': 'typically 50-mile (80 km) radius', 'monitoring': 'food chain monitoring required'}},
+    "CONTROLLED_AREA": {'description': 'Area within facility boundary with access control', 'annotations': {'access_control': 'personnel monitoring required', 'radiation_monitoring': 'continuous monitoring', 'training_required': 'radiation safety training'}},
+    "SUPERVISED_AREA": {'description': 'Area with potential for radiation exposure but lower than controlled', 'annotations': {'monitoring': 'periodic monitoring', 'access_control': 'limited restrictions', 'training_required': 'basic radiation awareness'}},
+}
+
+class NuclearFacilityTypeEnum(RichEnum):
+    """
+    Types of nuclear facilities and infrastructure
+    """
+    # Enum members
+    COMMERCIAL_POWER_PLANT = "COMMERCIAL_POWER_PLANT"
+    RESEARCH_REACTOR = "RESEARCH_REACTOR"
+    TEST_REACTOR = "TEST_REACTOR"
+    PROTOTYPE_REACTOR = "PROTOTYPE_REACTOR"
+    NAVAL_REACTOR = "NAVAL_REACTOR"
+    SPACE_REACTOR = "SPACE_REACTOR"
+    PRODUCTION_REACTOR = "PRODUCTION_REACTOR"
+    URANIUM_MINE = "URANIUM_MINE"
+    URANIUM_MILL = "URANIUM_MILL"
+    CONVERSION_FACILITY = "CONVERSION_FACILITY"
+    ENRICHMENT_FACILITY = "ENRICHMENT_FACILITY"
+    FUEL_FABRICATION_FACILITY = "FUEL_FABRICATION_FACILITY"
+    REPROCESSING_FACILITY = "REPROCESSING_FACILITY"
+    INTERIM_STORAGE_FACILITY = "INTERIM_STORAGE_FACILITY"
+    GEOLOGICAL_REPOSITORY = "GEOLOGICAL_REPOSITORY"
+    DECOMMISSIONING_SITE = "DECOMMISSIONING_SITE"
+    NUCLEAR_LABORATORY = "NUCLEAR_LABORATORY"
+    RADIOISOTOPE_PRODUCTION_FACILITY = "RADIOISOTOPE_PRODUCTION_FACILITY"
+
+# Set metadata after class creation to avoid it becoming an enum member
+NuclearFacilityTypeEnum._metadata = {
+    "COMMERCIAL_POWER_PLANT": {'description': 'Large-scale commercial reactor for electricity generation', 'annotations': {'primary_purpose': 'electricity generation', 'power_output': 'typically 300-1600 MWe', 'operator_type': 'utility company', 'regulatory_oversight': 'extensive'}},
+    "RESEARCH_REACTOR": {'description': 'Reactor designed for research, training, and isotope production', 'annotations': {'primary_purpose': 'research, training, isotope production', 'power_output': 'typically <100 MWt', 'neutron_flux': 'optimized for research needs', 'fuel_type': 'various, often HEU or LEU'}},
+    "TEST_REACTOR": {'description': 'Reactor for testing materials and components', 'annotations': {'primary_purpose': 'materials and component testing', 'test_capabilities': 'irradiation testing', 'neutron_spectrum': 'variable for testing needs'}},
+    "PROTOTYPE_REACTOR": {'description': 'Reactor for demonstrating new technology', 'annotations': {'primary_purpose': 'technology demonstration', 'scale': 'smaller than commercial', 'innovation_focus': 'new reactor concepts'}},
+    "NAVAL_REACTOR": {'description': 'Reactor for ship or submarine propulsion', 'annotations': {'primary_purpose': 'vessel propulsion', 'compactness': 'highly compact design', 'fuel_enrichment': 'typically HEU', 'operation_mode': 'mobile platform'}},
+    "SPACE_REACTOR": {'description': 'Reactor designed for space applications', 'annotations': {'primary_purpose': 'space power or propulsion', 'mass_constraints': 'extremely lightweight', 'cooling': 'radiative cooling', 'power_output': 'typically <10 MWt'}},
+    "PRODUCTION_REACTOR": {'description': 'Reactor for producing nuclear materials', 'annotations': {'primary_purpose': 'isotope or material production', 'products': 'tritium, plutonium, medical isotopes', 'operation_mode': 'specialized for production'}},
+    "URANIUM_MINE": {'description': 'Facility for extracting uranium ore', 'annotations': {'extraction_method': 'underground or open pit', 'product': 'uranium ore', 'processing': 'may include milling'}},
+    "URANIUM_MILL": {'description': 'Facility for processing uranium ore into yellowcake', 'annotations': {'input_material': 'uranium ore', 'output_product': 'uranium concentrate (U3O8)', 'process': 'chemical extraction and purification'}},
+    "CONVERSION_FACILITY": {'description': 'Facility for converting yellowcake to UF6', 'annotations': {'input_material': 'uranium concentrate (U3O8)', 'output_product': 'uranium hexafluoride (UF6)', 'process': 'chemical conversion'}},
+    "ENRICHMENT_FACILITY": {'description': 'Facility for increasing U-235 concentration', 'annotations': {'input_material': 'natural UF6', 'output_product': 'enriched UF6', 'process': 'isotope separation (centrifuge, diffusion)', 'sensitive_technology': 'proliferation-sensitive'}},
+    "FUEL_FABRICATION_FACILITY": {'description': 'Facility for manufacturing nuclear fuel assemblies', 'annotations': {'input_material': 'enriched UF6', 'output_product': 'fuel assemblies', 'process': 'pellet and rod manufacturing'}},
+    "REPROCESSING_FACILITY": {'description': 'Facility for separating spent fuel components', 'annotations': {'input_material': 'spent nuclear fuel', 'output_products': 'uranium, plutonium, waste', 'process': 'chemical separation (PUREX, UREX+)', 'proliferation_sensitivity': 'high'}},
+    "INTERIM_STORAGE_FACILITY": {'description': 'Facility for temporary storage of nuclear materials', 'annotations': {'storage_duration': 'intermediate term (5-100 years)', 'storage_medium': 'pools, dry casks', 'typical_materials': 'spent fuel, waste'}},
+    "GEOLOGICAL_REPOSITORY": {'description': 'Deep underground facility for permanent waste disposal', 'annotations': {'storage_duration': 'permanent (thousands of years)', 'depth': 'typically >300 meters underground', 'waste_types': 'high-level waste, spent fuel'}},
+    "DECOMMISSIONING_SITE": {'description': 'Nuclear facility undergoing dismantlement', 'annotations': {'facility_status': 'being dismantled', 'activities': 'decontamination, demolition', 'duration': 'typically 10-50 years'}},
+    "NUCLEAR_LABORATORY": {'description': 'Laboratory facility handling radioactive materials', 'annotations': {'activities': 'research, analysis, small-scale production', 'materials': 'various radioactive substances', 'scale': 'laboratory scale'}},
+    "RADIOISOTOPE_PRODUCTION_FACILITY": {'description': 'Facility for producing medical and industrial isotopes', 'annotations': {'products': 'medical isotopes, industrial tracers', 'production_methods': 'reactor irradiation, accelerator', 'market': 'medical and industrial applications'}},
+}
+
+class PowerPlantStatusEnum(RichEnum):
+    """
+    Operational status of nuclear power plants
+    """
+    # Enum members
+    UNDER_CONSTRUCTION = "UNDER_CONSTRUCTION"
+    COMMISSIONING = "COMMISSIONING"
+    COMMERCIAL_OPERATION = "COMMERCIAL_OPERATION"
+    REFUELING_OUTAGE = "REFUELING_OUTAGE"
+    EXTENDED_OUTAGE = "EXTENDED_OUTAGE"
+    PERMANENTLY_SHUTDOWN = "PERMANENTLY_SHUTDOWN"
+    DECOMMISSIONING = "DECOMMISSIONING"
+    DECOMMISSIONED = "DECOMMISSIONED"
+
+# Set metadata after class creation to avoid it becoming an enum member
+PowerPlantStatusEnum._metadata = {
+    "UNDER_CONSTRUCTION": {'description': 'Plant currently being built', 'annotations': {'construction_phase': 'civil and mechanical work ongoing', 'licensing_status': 'construction permit issued', 'commercial_operation': 'not yet started'}},
+    "COMMISSIONING": {'description': 'Plant undergoing testing before commercial operation', 'annotations': {'testing_phase': 'systems testing and startup', 'fuel_loading': 'may have occurred', 'commercial_operation': 'not yet achieved'}},
+    "COMMERCIAL_OPERATION": {'description': 'Plant operating commercially for electricity generation', 'annotations': {'operational_status': 'fully operational', 'power_generation': 'commercial electricity production', 'licensing_status': 'operating license active'}},
+    "REFUELING_OUTAGE": {'description': 'Plant temporarily shut down for fuel replacement and maintenance', 'annotations': {'shutdown_reason': 'scheduled refueling', 'duration': 'typically 30-60 days', 'activities': 'fuel replacement, maintenance, inspection'}},
+    "EXTENDED_OUTAGE": {'description': 'Plant shut down for extended period for major work', 'annotations': {'shutdown_duration': 'months to years', 'work_scope': 'major modifications or repairs', 'return_to_service': 'planned'}},
+    "PERMANENTLY_SHUTDOWN": {'description': 'Plant permanently ceased operation', 'annotations': {'operational_status': 'permanently ceased', 'fuel_removal': 'may be ongoing or completed', 'decommissioning': 'may be planned or ongoing'}},
+    "DECOMMISSIONING": {'description': 'Plant undergoing dismantlement', 'annotations': {'decommissioning_phase': 'active dismantlement', 'radioactive_cleanup': 'ongoing', 'site_restoration': 'planned'}},
+    "DECOMMISSIONED": {'description': 'Plant completely dismantled and site restored', 'annotations': {'dismantlement_status': 'completed', 'site_condition': 'restored for unrestricted use', 'radioactive_materials': 'removed'}},
+}
+
+class ResearchReactorTypeEnum(RichEnum):
+    """
+    Types of research reactors
+    """
+    # Enum members
+    POOL_TYPE = "POOL_TYPE"
+    TANK_TYPE = "TANK_TYPE"
+    HOMOGENEOUS = "HOMOGENEOUS"
+    FAST_RESEARCH_REACTOR = "FAST_RESEARCH_REACTOR"
+    PULSED_REACTOR = "PULSED_REACTOR"
+    CRITICAL_ASSEMBLY = "CRITICAL_ASSEMBLY"
+    SUBCRITICAL_ASSEMBLY = "SUBCRITICAL_ASSEMBLY"
+
+# Set metadata after class creation to avoid it becoming an enum member
+ResearchReactorTypeEnum._metadata = {
+    "POOL_TYPE": {'description': 'Reactor with fuel in open pool of water', 'annotations': {'design': 'open pool with underwater fuel', 'power_level': 'typically 1-20 MW', 'applications': 'neutron beam experiments, training'}},
+    "TANK_TYPE": {'description': 'Reactor with fuel in enclosed tank', 'annotations': {'design': 'fuel in pressurized or unpressurized tank', 'power_level': 'variable', 'containment': 'more enclosed than pool type'}},
+    "HOMOGENEOUS": {'description': 'Reactor with fuel in liquid form', 'annotations': {'fuel_form': 'aqueous solution', 'design': 'fuel dissolved in moderator', 'power_level': 'typically low'}},
+    "FAST_RESEARCH_REACTOR": {'description': 'Research reactor using fast neutrons', 'annotations': {'neutron_spectrum': 'fast neutrons', 'moderator': 'none or minimal', 'applications': 'fast neutron research'}},
+    "PULSED_REACTOR": {'description': 'Reactor designed for pulsed operation', 'annotations': {'operation_mode': 'short intense pulses', 'power_level': 'very high peak power', 'applications': 'transient testing, physics research'}},
+    "CRITICAL_ASSEMBLY": {'description': 'Minimal reactor for criticality studies', 'annotations': {'power_level': 'essentially zero', 'purpose': 'criticality experiments, training', 'design': 'minimal critical configuration'}},
+    "SUBCRITICAL_ASSEMBLY": {'description': 'Neutron source-driven subcritical system', 'annotations': {'criticality': 'subcritical', 'neutron_source': 'external source required', 'applications': 'research, training, transmutation studies'}},
+}
+
+class FuelCycleFacilityTypeEnum(RichEnum):
+    """
+    Types of nuclear fuel cycle facilities
+    """
+    # Enum members
+    IN_SITU_LEACH_MINE = "IN_SITU_LEACH_MINE"
+    CONVENTIONAL_MINE = "CONVENTIONAL_MINE"
+    HEAP_LEACH_FACILITY = "HEAP_LEACH_FACILITY"
+    GASEOUS_DIFFUSION_PLANT = "GASEOUS_DIFFUSION_PLANT"
+    GAS_CENTRIFUGE_PLANT = "GAS_CENTRIFUGE_PLANT"
+    LASER_ENRICHMENT_FACILITY = "LASER_ENRICHMENT_FACILITY"
+    MOX_FUEL_FABRICATION = "MOX_FUEL_FABRICATION"
+    AQUEOUS_REPROCESSING = "AQUEOUS_REPROCESSING"
+    PYROPROCESSING_FACILITY = "PYROPROCESSING_FACILITY"
+
+# Set metadata after class creation to avoid it becoming an enum member
+FuelCycleFacilityTypeEnum._metadata = {
+    "IN_SITU_LEACH_MINE": {'description': 'Uranium extraction by solution mining', 'annotations': {'extraction_method': 'chemical leaching in ground', 'environmental_impact': 'lower surface disturbance', 'geology_requirement': 'permeable ore deposits'}},
+    "CONVENTIONAL_MINE": {'description': 'Traditional underground or open-pit uranium mining', 'annotations': {'extraction_method': 'physical excavation', 'mine_types': 'underground or open pit', 'ore_grade': 'variable'}},
+    "HEAP_LEACH_FACILITY": {'description': 'Uranium extraction from low-grade ores by heap leaching', 'annotations': {'ore_grade': 'low-grade ores', 'process': 'chemical leaching of ore piles', 'economics': 'cost-effective for low grades'}},
+    "GASEOUS_DIFFUSION_PLANT": {'description': 'Uranium enrichment using gaseous diffusion', 'annotations': {'enrichment_method': 'gaseous diffusion', 'energy_consumption': 'very high', 'status': 'mostly retired technology'}},
+    "GAS_CENTRIFUGE_PLANT": {'description': 'Uranium enrichment using centrifuge technology', 'annotations': {'enrichment_method': 'gas centrifuge', 'energy_consumption': 'lower than diffusion', 'technology_status': 'current standard technology'}},
+    "LASER_ENRICHMENT_FACILITY": {'description': 'Uranium enrichment using laser isotope separation', 'annotations': {'enrichment_method': 'laser isotope separation', 'technology_status': 'under development', 'energy_consumption': 'potentially lower'}},
+    "MOX_FUEL_FABRICATION": {'description': 'Facility for manufacturing mixed oxide fuel', 'annotations': {'fuel_type': 'mixed oxide (uranium and plutonium)', 'input_materials': 'plutonium dioxide, uranium dioxide', 'special_handling': 'plutonium handling required'}},
+    "AQUEOUS_REPROCESSING": {'description': 'Spent fuel reprocessing using aqueous methods', 'annotations': {'process_type': 'PUREX or similar aqueous process', 'separation_products': 'uranium, plutonium, waste', 'technology_maturity': 'commercially proven'}},
+    "PYROPROCESSING_FACILITY": {'description': 'Spent fuel reprocessing using electrochemical methods', 'annotations': {'process_type': 'electrochemical separation', 'temperature': 'high temperature operation', 'technology_status': 'under development'}},
+}
+
+class WasteFacilityTypeEnum(RichEnum):
+    """
+    Types of nuclear waste management facilities
+    """
+    # Enum members
+    SPENT_FUEL_POOL = "SPENT_FUEL_POOL"
+    DRY_CASK_STORAGE = "DRY_CASK_STORAGE"
+    CENTRALIZED_INTERIM_STORAGE = "CENTRALIZED_INTERIM_STORAGE"
+    LOW_LEVEL_WASTE_DISPOSAL = "LOW_LEVEL_WASTE_DISPOSAL"
+    GREATER_THAN_CLASS_C_STORAGE = "GREATER_THAN_CLASS_C_STORAGE"
+    TRANSURANIC_WASTE_REPOSITORY = "TRANSURANIC_WASTE_REPOSITORY"
+    HIGH_LEVEL_WASTE_REPOSITORY = "HIGH_LEVEL_WASTE_REPOSITORY"
+    WASTE_TREATMENT_FACILITY = "WASTE_TREATMENT_FACILITY"
+    DECONTAMINATION_FACILITY = "DECONTAMINATION_FACILITY"
+
+# Set metadata after class creation to avoid it becoming an enum member
+WasteFacilityTypeEnum._metadata = {
+    "SPENT_FUEL_POOL": {'description': 'Water-filled pool for cooling spent fuel', 'annotations': {'cooling_medium': 'water', 'location': 'typically at reactor site', 'storage_duration': '5-10 years typical'}},
+    "DRY_CASK_STORAGE": {'description': 'Air-cooled storage in sealed containers', 'annotations': {'cooling_medium': 'air circulation', 'storage_duration': '20-100 years', 'location': 'on-site or centralized'}},
+    "CENTRALIZED_INTERIM_STORAGE": {'description': 'Large-scale interim storage away from reactor sites', 'annotations': {'scale': "multiple reactor's worth of fuel", 'storage_duration': 'decades', 'transportation': 'rail or truck access required'}},
+    "LOW_LEVEL_WASTE_DISPOSAL": {'description': 'Near-surface disposal for low-level waste', 'annotations': {'waste_category': 'Class A, B, C low-level waste', 'disposal_depth': 'near-surface (<30 meters)', 'institutional_control': '100 years minimum'}},
+    "GREATER_THAN_CLASS_C_STORAGE": {'description': 'Storage for waste exceeding Class C limits', 'annotations': {'waste_category': 'greater than Class C waste', 'storage_type': 'interim storage pending disposal', 'disposal_requirements': 'deep disposal likely required'}},
+    "TRANSURANIC_WASTE_REPOSITORY": {'description': 'Deep geological repository for TRU waste', 'annotations': {'waste_category': 'transuranic waste', 'disposal_depth': 'deep underground', 'example': 'Waste Isolation Pilot Plant (WIPP)'}},
+    "HIGH_LEVEL_WASTE_REPOSITORY": {'description': 'Deep geological repository for high-level waste', 'annotations': {'waste_category': 'high-level waste, spent fuel', 'disposal_depth': 'typically >300 meters', 'containment_period': 'thousands of years'}},
+    "WASTE_TREATMENT_FACILITY": {'description': 'Facility for processing and conditioning waste', 'annotations': {'purpose': 'volume reduction, stabilization', 'processes': 'incineration, compaction, solidification', 'output': 'treated waste for disposal'}},
+    "DECONTAMINATION_FACILITY": {'description': 'Facility for cleaning contaminated materials', 'annotations': {'purpose': 'remove radioactive contamination', 'materials': 'equipment, clothing, tools', 'methods': 'chemical, physical decontamination'}},
+}
+
+class NuclearShipTypeEnum(RichEnum):
+    """
+    Types of nuclear-powered vessels
+    """
+    # Enum members
+    AIRCRAFT_CARRIER = "AIRCRAFT_CARRIER"
+    SUBMARINE = "SUBMARINE"
+    CRUISER = "CRUISER"
+    ICEBREAKER = "ICEBREAKER"
+    MERCHANT_SHIP = "MERCHANT_SHIP"
+    RESEARCH_VESSEL = "RESEARCH_VESSEL"
+
+# Set metadata after class creation to avoid it becoming an enum member
+NuclearShipTypeEnum._metadata = {
+    "AIRCRAFT_CARRIER": {'description': 'Large naval vessel with nuclear propulsion and aircraft operations', 'annotations': {'propulsion': 'nuclear steam turbine', 'size': 'very large (>80,000 tons)', 'mission': 'power projection, aircraft operations', 'reactor_count': 'typically 2'}},
+    "SUBMARINE": {'description': 'Underwater vessel with nuclear propulsion', 'annotations': {'propulsion': 'nuclear steam turbine', 'operational_environment': 'submerged', 'mission': 'various (attack, ballistic missile, cruise missile)', 'reactor_count': 'typically 1'}},
+    "CRUISER": {'description': 'Large surface combatant with nuclear propulsion', 'annotations': {'propulsion': 'nuclear steam turbine', 'mission': 'escort, surface warfare', 'size': 'large surface vessel', 'status': 'mostly retired'}},
+    "ICEBREAKER": {'description': 'Vessel designed to break ice using nuclear power', 'annotations': {'propulsion': 'nuclear steam turbine or electric', 'mission': 'ice breaking, Arctic operations', 'operational_environment': 'polar regions', 'reactor_count': '1-3'}},
+    "MERCHANT_SHIP": {'description': 'Commercial cargo vessel with nuclear propulsion', 'annotations': {'propulsion': 'nuclear steam turbine', 'mission': 'cargo transport', 'commercial_viability': 'limited due to costs', 'examples': 'NS Savannah, few others'}},
+    "RESEARCH_VESSEL": {'description': 'Ship designed for oceanographic research with nuclear power', 'annotations': {'propulsion': 'nuclear', 'mission': 'scientific research', 'duration': 'extended operations without refueling', 'examples': 'limited number built'}},
+}
+
+class ReactorOperatingStateEnum(RichEnum):
+    """
+    Operational states of nuclear reactors
+    """
+    # Enum members
+    STARTUP = "STARTUP"
+    CRITICAL = "CRITICAL"
+    POWER_ESCALATION = "POWER_ESCALATION"
+    FULL_POWER_OPERATION = "FULL_POWER_OPERATION"
+    LOAD_FOLLOWING = "LOAD_FOLLOWING"
+    REDUCED_POWER = "REDUCED_POWER"
+    HOT_STANDBY = "HOT_STANDBY"
+    COLD_SHUTDOWN = "COLD_SHUTDOWN"
+    REFUELING = "REFUELING"
+    REACTOR_TRIP = "REACTOR_TRIP"
+    SCRAM = "SCRAM"
+    EMERGENCY_SHUTDOWN = "EMERGENCY_SHUTDOWN"
+
+# Set metadata after class creation to avoid it becoming an enum member
+ReactorOperatingStateEnum._metadata = {
+    "STARTUP": {'description': 'Reactor transitioning from shutdown to power operation', 'annotations': {'neutron_level': 'increasing', 'control_rod_position': 'withdrawing', 'power_level': 'rising from zero', 'duration': 'hours to days', 'operator_attention': 'high'}},
+    "CRITICAL": {'description': 'Reactor achieving self-sustaining chain reaction', 'annotations': {'neutron_multiplication': 'k-effective = 1.0', 'power_level': 'minimal but self-sustaining', 'control_rod_position': 'critical position', 'milestone': 'first criticality achievement'}},
+    "POWER_ESCALATION": {'description': 'Reactor increasing power toward full power operation', 'annotations': {'power_level': 'increasing incrementally', 'testing': 'ongoing at each power level', 'duration': 'days to weeks', 'procedures': 'systematic power increases'}},
+    "FULL_POWER_OPERATION": {'description': 'Reactor operating at rated thermal power', 'annotations': {'power_level': '100% rated power', 'operation_mode': 'commercial electricity generation', 'duration': 'typically 12-24 months', 'fuel_burnup': 'accumulating'}},
+    "LOAD_FOLLOWING": {'description': 'Reactor adjusting power to match electrical demand', 'annotations': {'power_level': 'variable based on demand', 'control_mode': 'automatic load following', 'flexibility': 'grid demand responsive', 'frequency': 'daily power variations'}},
+    "REDUCED_POWER": {'description': 'Reactor operating below rated power', 'annotations': {'power_level': '<100% rated power', 'reasons': 'maintenance, grid demand, testing', 'control_rod_position': 'partially inserted'}},
+    "HOT_STANDBY": {'description': 'Reactor subcritical but at operating temperature', 'annotations': {'criticality': 'subcritical', 'temperature': 'operating temperature maintained', 'pressure': 'operating pressure maintained', 'ready_time': 'rapid return to power possible'}},
+    "COLD_SHUTDOWN": {'description': 'Reactor subcritical and cooled below operating temperature', 'annotations': {'criticality': 'subcritical with margin', 'temperature': '<200°F (93°C) typically', 'refueling': 'possible in this state', 'maintenance': 'major maintenance possible'}},
+    "REFUELING": {'description': 'Reactor shut down for fuel replacement', 'annotations': {'reactor_head': 'removed', 'fuel_handling': 'active fuel movement', 'criticality_control': 'strict procedures', 'duration': 'typically 30-60 days'}},
+    "REACTOR_TRIP": {'description': 'Rapid automatic shutdown due to safety system actuation', 'annotations': {'shutdown_speed': 'seconds', 'cause': 'safety system activation', 'control_rods': 'fully inserted rapidly', 'investigation': 'cause determination required'}},
+    "SCRAM": {'description': 'Emergency rapid shutdown of reactor', 'annotations': {'shutdown_type': 'emergency shutdown', 'control_rod_insertion': 'fastest possible', 'operator_action': 'manual or automatic', 'follow_up': 'immediate safety assessment'}},
+    "EMERGENCY_SHUTDOWN": {'description': 'Shutdown due to emergency conditions', 'annotations': {'urgency': 'immediate shutdown required', 'safety_systems': 'may be activated', 'investigation': 'extensive post-event analysis', 'recovery': 'detailed restart procedures'}},
+}
+
+class MaintenanceTypeEnum(RichEnum):
+    """
+    Types of nuclear facility maintenance activities
+    """
+    # Enum members
+    PREVENTIVE_MAINTENANCE = "PREVENTIVE_MAINTENANCE"
+    CORRECTIVE_MAINTENANCE = "CORRECTIVE_MAINTENANCE"
+    PREDICTIVE_MAINTENANCE = "PREDICTIVE_MAINTENANCE"
+    CONDITION_BASED_MAINTENANCE = "CONDITION_BASED_MAINTENANCE"
+    REFUELING_OUTAGE_MAINTENANCE = "REFUELING_OUTAGE_MAINTENANCE"
+    FORCED_OUTAGE_MAINTENANCE = "FORCED_OUTAGE_MAINTENANCE"
+    IN_SERVICE_INSPECTION = "IN_SERVICE_INSPECTION"
+    MODIFICATION_WORK = "MODIFICATION_WORK"
+
+# Set metadata after class creation to avoid it becoming an enum member
+MaintenanceTypeEnum._metadata = {
+    "PREVENTIVE_MAINTENANCE": {'description': 'Scheduled maintenance to prevent equipment failure', 'annotations': {'schedule': 'predetermined intervals', 'purpose': 'prevent failures', 'planning': 'extensive advance planning', 'outage_type': 'planned outage'}},
+    "CORRECTIVE_MAINTENANCE": {'description': 'Maintenance to repair failed or degraded equipment', 'annotations': {'trigger': 'equipment failure or degradation', 'urgency': 'varies by safety significance', 'planning': 'may be immediate', 'schedule': 'unplanned'}},
+    "PREDICTIVE_MAINTENANCE": {'description': 'Maintenance based on condition monitoring', 'annotations': {'basis': 'condition monitoring data', 'timing': 'based on predicted failure', 'efficiency': 'optimized maintenance timing', 'technology': 'condition monitoring systems'}},
+    "CONDITION_BASED_MAINTENANCE": {'description': 'Maintenance triggered by equipment condition assessment', 'annotations': {'assessment': 'continuous condition monitoring', 'trigger': 'condition degradation', 'optimization': 'resource optimization', 'safety': 'maintains safety margins'}},
+    "REFUELING_OUTAGE_MAINTENANCE": {'description': 'Major maintenance during scheduled refueling', 'annotations': {'frequency': 'every 12-24 months', 'scope': 'major equipment inspection and repair', 'duration': '30-60 days typical', 'access': 'full plant access available'}},
+    "FORCED_OUTAGE_MAINTENANCE": {'description': 'Unplanned maintenance due to equipment failure', 'annotations': {'cause': 'unexpected equipment failure', 'urgency': 'immediate attention required', 'duration': 'variable', 'safety_significance': 'may affect safety systems'}},
+    "IN_SERVICE_INSPECTION": {'description': 'Required inspection of safety-related components', 'annotations': {'regulatory_requirement': 'mandated by regulations', 'frequency': 'specified intervals (typically 10 years)', 'scope': 'pressure vessels, piping, supports', 'techniques': 'non-destructive testing'}},
+    "MODIFICATION_WORK": {'description': 'Changes to plant design or configuration', 'annotations': {'purpose': 'plant improvement or regulatory compliance', 'approval': 'requires design change approval', 'testing': 'extensive post-modification testing', 'documentation': 'comprehensive documentation updates'}},
+}
+
+class LicensingStageEnum(RichEnum):
+    """
+    Nuclear facility licensing stages
+    """
+    # Enum members
+    SITE_PERMIT = "SITE_PERMIT"
+    DESIGN_CERTIFICATION = "DESIGN_CERTIFICATION"
+    CONSTRUCTION_PERMIT = "CONSTRUCTION_PERMIT"
+    OPERATING_LICENSE = "OPERATING_LICENSE"
+    LICENSE_RENEWAL = "LICENSE_RENEWAL"
+    COMBINED_LICENSE = "COMBINED_LICENSE"
+    DECOMMISSIONING_PLAN = "DECOMMISSIONING_PLAN"
+    LICENSE_TERMINATION = "LICENSE_TERMINATION"
+
+# Set metadata after class creation to avoid it becoming an enum member
+LicensingStageEnum._metadata = {
+    "SITE_PERMIT": {'description': 'Early site permit for nuclear facility', 'annotations': {'scope': 'site suitability evaluation', 'duration': '10-20 years typically', 'flexibility': 'technology-neutral', 'advantage': 'reduced licensing risk'}},
+    "DESIGN_CERTIFICATION": {'description': 'Certification of standardized reactor design', 'annotations': {'scope': 'reactor design approval', 'duration': '15-20 years typically', 'advantage': 'reduced construction licensing time', 'standardization': 'enables multiple deployments'}},
+    "CONSTRUCTION_PERMIT": {'description': 'Authorization to begin nuclear facility construction', 'annotations': {'authorization': 'construction activities', 'requirements': 'detailed design and safety analysis', 'oversight': 'construction inspection program', 'milestone': 'major licensing milestone'}},
+    "OPERATING_LICENSE": {'description': 'Authorization for commercial reactor operation', 'annotations': {'authorization': 'power operation and fuel loading', 'duration': 'initially 40 years', 'renewal': 'possible for additional 20 years', 'testing': 'extensive pre-operational testing'}},
+    "LICENSE_RENEWAL": {'description': 'Extension of operating license beyond initial term', 'annotations': {'extension': 'additional 20 years typical', 'review': 'aging management program review', 'basis': 'demonstrated safe operation', 'economics': 'enables continued operation'}},
+    "COMBINED_LICENSE": {'description': 'Combined construction and operating license', 'annotations': {'scope': 'construction and operation authorization', 'advantage': 'single licensing process', 'requirements': 'complete design and safety analysis', 'efficiency': 'streamlined licensing approach'}},
+    "DECOMMISSIONING_PLAN": {'description': 'Approval of facility decommissioning plan', 'annotations': {'scope': 'facility dismantlement plan', 'funding': 'decommissioning funding assurance', 'schedule': 'decommissioning timeline', 'end_state': 'final site condition'}},
+    "LICENSE_TERMINATION": {'description': 'Final termination of nuclear facility license', 'annotations': {'completion': 'decommissioning completion', 'survey': 'final radiological survey', 'release': 'site release for unrestricted use', 'finality': 'end of regulatory oversight'}},
+}
+
+class FuelCycleOperationEnum(RichEnum):
+    """
+    Nuclear fuel cycle operational activities
+    """
+    # Enum members
+    URANIUM_EXPLORATION = "URANIUM_EXPLORATION"
+    URANIUM_EXTRACTION = "URANIUM_EXTRACTION"
+    URANIUM_MILLING = "URANIUM_MILLING"
+    URANIUM_CONVERSION = "URANIUM_CONVERSION"
+    URANIUM_ENRICHMENT = "URANIUM_ENRICHMENT"
+    FUEL_FABRICATION = "FUEL_FABRICATION"
+    REACTOR_FUEL_LOADING = "REACTOR_FUEL_LOADING"
+    REACTOR_OPERATION = "REACTOR_OPERATION"
+    SPENT_FUEL_DISCHARGE = "SPENT_FUEL_DISCHARGE"
+    SPENT_FUEL_STORAGE = "SPENT_FUEL_STORAGE"
+    SPENT_FUEL_REPROCESSING = "SPENT_FUEL_REPROCESSING"
+    WASTE_CONDITIONING = "WASTE_CONDITIONING"
+    WASTE_DISPOSAL = "WASTE_DISPOSAL"
+
+# Set metadata after class creation to avoid it becoming an enum member
+FuelCycleOperationEnum._metadata = {
+    "URANIUM_EXPLORATION": {'description': 'Search and evaluation of uranium deposits', 'annotations': {'activities': 'geological surveys, drilling, sampling', 'purpose': 'locate economically viable deposits', 'methods': 'airborne surveys, ground exploration'}},
+    "URANIUM_EXTRACTION": {'description': 'Mining and extraction of uranium ore', 'annotations': {'methods': 'open pit, underground, in-situ leaching', 'output': 'uranium ore', 'processing': 'crushing and grinding'}},
+    "URANIUM_MILLING": {'description': 'Processing of uranium ore to produce yellowcake', 'annotations': {'input': 'uranium ore', 'output': 'uranium concentrate (U3O8)', 'process': 'acid or alkaline leaching'}},
+    "URANIUM_CONVERSION": {'description': 'Conversion of yellowcake to uranium hexafluoride', 'annotations': {'input': 'uranium concentrate (U3O8)', 'output': 'uranium hexafluoride (UF6)', 'purpose': 'prepare for enrichment'}},
+    "URANIUM_ENRICHMENT": {'description': 'Increase U-235 concentration in uranium', 'annotations': {'input': 'natural uranium (0.711% U-235)', 'output': 'enriched uranium (3-5% typical)', 'waste': 'depleted uranium tails', 'methods': 'gas centrifuge, gaseous diffusion'}},
+    "FUEL_FABRICATION": {'description': 'Manufacturing of nuclear fuel assemblies', 'annotations': {'input': 'enriched uranium', 'output': 'fuel assemblies', 'process': 'pellet production, rod assembly'}},
+    "REACTOR_FUEL_LOADING": {'description': 'Installation of fresh fuel in reactor', 'annotations': {'frequency': 'every 12-24 months', 'procedure': 'careful criticality control', 'configuration': 'specific loading pattern'}},
+    "REACTOR_OPERATION": {'description': 'Power generation and fuel burnup', 'annotations': {'duration': '12-24 months typical cycle', 'burnup': 'fuel depletion over time', 'output': 'electricity and fission products'}},
+    "SPENT_FUEL_DISCHARGE": {'description': 'Removal of used fuel from reactor', 'annotations': {'timing': 'end of fuel cycle', 'handling': 'underwater fuel handling', 'destination': 'spent fuel pool storage'}},
+    "SPENT_FUEL_STORAGE": {'description': 'Interim storage of discharged fuel', 'annotations': {'cooling': 'decay heat removal', 'duration': '5-100+ years', 'methods': 'pools, dry casks'}},
+    "SPENT_FUEL_REPROCESSING": {'description': 'Chemical separation of spent fuel components', 'annotations': {'separation': 'uranium, plutonium, waste', 'recovery': 'recovers usable materials', 'waste': 'high-level waste production'}},
+    "WASTE_CONDITIONING": {'description': 'Preparation of waste for storage or disposal', 'annotations': {'treatment': 'solidification, encapsulation', 'purpose': 'stable waste form', 'standards': 'waste acceptance criteria'}},
+    "WASTE_DISPOSAL": {'description': 'Permanent disposal of nuclear waste', 'annotations': {'method': 'geological repository', 'isolation': 'long-term containment', 'safety': 'protect public and environment'}},
+}
+
+class ReactorControlModeEnum(RichEnum):
+    """
+    Reactor control and safety system operational modes
+    """
+    # Enum members
+    MANUAL_CONTROL = "MANUAL_CONTROL"
+    AUTOMATIC_CONTROL = "AUTOMATIC_CONTROL"
+    REACTOR_PROTECTION_SYSTEM = "REACTOR_PROTECTION_SYSTEM"
+    ENGINEERED_SAFEGUARDS = "ENGINEERED_SAFEGUARDS"
+    EMERGENCY_OPERATING_PROCEDURES = "EMERGENCY_OPERATING_PROCEDURES"
+    SEVERE_ACCIDENT_MANAGEMENT = "SEVERE_ACCIDENT_MANAGEMENT"
+
+# Set metadata after class creation to avoid it becoming an enum member
+ReactorControlModeEnum._metadata = {
+    "MANUAL_CONTROL": {'description': 'Direct operator control of reactor systems', 'annotations': {'operator_role': 'direct manual operation', 'automation': 'minimal automation', 'response_time': 'depends on operator', 'application': 'startup, shutdown, testing'}},
+    "AUTOMATIC_CONTROL": {'description': 'Automated reactor control systems', 'annotations': {'automation': 'high level automation', 'operator_role': 'supervisory', 'response_time': 'rapid automatic response', 'application': 'normal power operation'}},
+    "REACTOR_PROTECTION_SYSTEM": {'description': 'Safety system monitoring for trip conditions', 'annotations': {'function': 'automatic reactor trip on unsafe conditions', 'redundancy': 'multiple independent channels', 'response_time': 'milliseconds to seconds', 'priority': 'overrides operator actions'}},
+    "ENGINEERED_SAFEGUARDS": {'description': 'Safety systems for accident mitigation', 'annotations': {'function': 'mitigate consequences of accidents', 'activation': 'automatic on accident conditions', 'systems': 'emergency core cooling, containment', 'redundancy': 'multiple trains'}},
+    "EMERGENCY_OPERATING_PROCEDURES": {'description': 'Operator actions for emergency conditions', 'annotations': {'guidance': 'symptom-based procedures', 'training': 'extensive operator training', 'decision_making': 'structured approach', 'coordination': 'with emergency response'}},
+    "SEVERE_ACCIDENT_MANAGEMENT": {'description': 'Procedures for beyond design basis accidents', 'annotations': {'scope': 'core damage mitigation', 'guidance': 'severe accident management guidelines', 'equipment': 'portable emergency equipment', 'coordination': 'multi-unit considerations'}},
+}
+
+class OperationalProcedureEnum(RichEnum):
+    """
+    Standard nuclear facility operational procedures
+    """
+    # Enum members
+    STARTUP_PROCEDURE = "STARTUP_PROCEDURE"
+    SHUTDOWN_PROCEDURE = "SHUTDOWN_PROCEDURE"
+    REFUELING_PROCEDURE = "REFUELING_PROCEDURE"
+    SURVEILLANCE_TESTING = "SURVEILLANCE_TESTING"
+    MAINTENANCE_PROCEDURE = "MAINTENANCE_PROCEDURE"
+    EMERGENCY_RESPONSE = "EMERGENCY_RESPONSE"
+    RADIOLOGICAL_PROTECTION = "RADIOLOGICAL_PROTECTION"
+    SECURITY_PROCEDURE = "SECURITY_PROCEDURE"
+
+# Set metadata after class creation to avoid it becoming an enum member
+OperationalProcedureEnum._metadata = {
+    "STARTUP_PROCEDURE": {'description': 'Systematic procedure for bringing reactor to power', 'annotations': {'phases': 'multiple phases with hold points', 'testing': 'system testing at each phase', 'authorization': 'management authorization required', 'duration': 'hours to days'}},
+    "SHUTDOWN_PROCEDURE": {'description': 'Systematic procedure for shutting down reactor', 'annotations': {'control_rod_insertion': 'gradual or rapid', 'cooling': 'controlled cooldown', 'systems': 'systematic system shutdown', 'verification': 'shutdown margin verification'}},
+    "REFUELING_PROCEDURE": {'description': 'Procedure for fuel handling and replacement', 'annotations': {'criticality_control': 'strict criticality prevention', 'handling': 'underwater fuel handling', 'documentation': 'detailed records', 'verification': 'independent verification'}},
+    "SURVEILLANCE_TESTING": {'description': 'Regular testing of safety systems', 'annotations': {'frequency': 'specified by technical specifications', 'scope': 'functionality verification', 'documentation': 'test result documentation', 'corrective_action': 'if performance degraded'}},
+    "MAINTENANCE_PROCEDURE": {'description': 'Systematic approach to equipment maintenance', 'annotations': {'work_control': 'work order control process', 'safety_tagging': 'equipment isolation', 'testing': 'post-maintenance testing', 'documentation': 'maintenance records'}},
+    "EMERGENCY_RESPONSE": {'description': 'Response to emergency conditions', 'annotations': {'classification': 'event classification', 'notification': 'offsite notification', 'mitigation': 'protective action implementation', 'coordination': 'with offsite authorities'}},
+    "RADIOLOGICAL_PROTECTION": {'description': 'Procedures for radiation protection', 'annotations': {'monitoring': 'radiation monitoring', 'contamination_control': 'contamination prevention', 'dose_control': 'personnel dose limits', 'emergency': 'radiological emergency response'}},
+    "SECURITY_PROCEDURE": {'description': 'Physical security and access control procedures', 'annotations': {'access_control': 'personnel access authorization', 'detection': 'intrusion detection systems', 'response': 'security force response', 'coordination': 'with law enforcement'}},
+}
+
 class MiningType(RichEnum):
     """
     Types of mining operations
@@ -8091,126 +9009,210 @@ class UniProtSpeciesCode(RichEnum):
     SP_9INFA = "SP_9INFA"
     SP_9INSE = "SP_9INSE"
     SP_9LABR = "SP_9LABR"
+    SP_ARATH = "SP_ARATH"
+    SP_BACSU = "SP_BACSU"
+    SP_BOVIN = "SP_BOVIN"
+    SP_CAEEL = "SP_CAEEL"
+    SP_CANLF = "SP_CANLF"
+    SP_CHICK = "SP_CHICK"
+    SP_DANRE = "SP_DANRE"
+    SP_DROME = "SP_DROME"
+    SP_ECOLI = "SP_ECOLI"
+    SP_FELCA = "SP_FELCA"
+    SP_GORGO = "SP_GORGO"
+    SP_HORSE = "SP_HORSE"
+    SP_HUMAN = "SP_HUMAN"
+    SP_MACMU = "SP_MACMU"
+    SP_MAIZE = "SP_MAIZE"
+    SP_MOUSE = "SP_MOUSE"
+    SP_ORYSJ = "SP_ORYSJ"
+    SP_PANTR = "SP_PANTR"
+    SP_PIG = "SP_PIG"
+    SP_RABIT = "SP_RABIT"
+    SP_RAT = "SP_RAT"
+    SP_SCHPO = "SP_SCHPO"
+    SP_SHEEP = "SP_SHEEP"
+    SP_XENLA = "SP_XENLA"
+    SP_XENTR = "SP_XENTR"
+    SP_YEAST = "SP_YEAST"
+    SP_DICDI = "SP_DICDI"
+    SP_HELPY = "SP_HELPY"
+    SP_LEIMA = "SP_LEIMA"
+    SP_MEDTR = "SP_MEDTR"
+    SP_MYCTU = "SP_MYCTU"
+    SP_NEIME = "SP_NEIME"
+    SP_PLAF7 = "SP_PLAF7"
+    SP_PSEAE = "SP_PSEAE"
+    SP_SOYBN = "SP_SOYBN"
+    SP_STAAU = "SP_STAAU"
+    SP_STRPN = "SP_STRPN"
+    SP_TOXGO = "SP_TOXGO"
+    SP_TRYB2 = "SP_TRYB2"
+    SP_WHEAT = "SP_WHEAT"
+    SP_PEA = "SP_PEA"
+    SP_TOBAC = "SP_TOBAC"
 
 # Set metadata after class creation to avoid it becoming an enum member
 UniProtSpeciesCode._metadata = {
-    "SP_9ABAC": {'description': 'Lambdina fiscellaria nucleopolyhedrovirus - Proteome: UP000201190', 'meaning': 'NCBITaxon:1642929', 'annotations': {'proteome_id': 'UP000201190', 'tax_id': '1642929', 'code': '9ABAC'}},
-    "SP_9ACAR": {'description': 'Tropilaelaps mercedesae - Proteome: UP000192247', 'meaning': 'NCBITaxon:418985', 'annotations': {'proteome_id': 'UP000192247', 'tax_id': '418985', 'code': '9ACAR'}},
-    "SP_9ACTN": {'description': 'Candidatus Protofrankia datiscae - Proteome: UP000001549', 'meaning': 'NCBITaxon:2716812', 'annotations': {'proteome_id': 'UP000001549', 'tax_id': '2716812', 'code': '9ACTN'}},
-    "SP_9ACTO": {'description': 'Actinomyces massiliensis F0489 - Proteome: UP000002941', 'meaning': 'NCBITaxon:1125718', 'annotations': {'proteome_id': 'UP000002941', 'tax_id': '1125718', 'code': '9ACTO'}},
-    "SP_9ADEN": {'description': 'Human adenovirus 53 - Proteome: UP000463865', 'meaning': 'NCBITaxon:556926', 'annotations': {'proteome_id': 'UP000463865', 'tax_id': '556926', 'code': '9ADEN'}},
-    "SP_9AGAM": {'description': 'Jaapia argillacea MUCL 33604 - Proteome: UP000027265', 'meaning': 'NCBITaxon:933084', 'annotations': {'proteome_id': 'UP000027265', 'tax_id': '933084', 'code': '9AGAM'}},
-    "SP_9AGAR": {'description': 'Collybiopsis luxurians FD-317 M1 - Proteome: UP000053593', 'meaning': 'NCBITaxon:944289', 'annotations': {'proteome_id': 'UP000053593', 'tax_id': '944289', 'code': '9AGAR'}},
-    "SP_9ALPC": {'description': 'Feline coronavirus - Proteome: UP000141821', 'meaning': 'NCBITaxon:12663', 'annotations': {'proteome_id': 'UP000141821', 'tax_id': '12663', 'code': '9ALPC'}},
-    "SP_9ALPH": {'description': 'Testudinid alphaherpesvirus 3 - Proteome: UP000100290', 'meaning': 'NCBITaxon:2560801', 'annotations': {'proteome_id': 'UP000100290', 'tax_id': '2560801', 'code': '9ALPH'}},
-    "SP_9ALTE": {'description': 'Paraglaciecola arctica BSs20135 - Proteome: UP000006327', 'meaning': 'NCBITaxon:493475', 'annotations': {'proteome_id': 'UP000006327', 'tax_id': '493475', 'code': '9ALTE'}},
-    "SP_9ALVE": {'description': 'Perkinsus sp. BL_2016 - Proteome: UP000298064', 'meaning': 'NCBITaxon:2494336', 'annotations': {'proteome_id': 'UP000298064', 'tax_id': '2494336', 'code': '9ALVE'}},
-    "SP_9AMPH": {'description': 'Microcaecilia unicolor - Proteome: UP000515156', 'meaning': 'NCBITaxon:1415580', 'annotations': {'proteome_id': 'UP000515156', 'tax_id': '1415580', 'code': '9AMPH'}},
-    "SP_9ANNE": {'description': 'Dimorphilus gyrociliatus - Proteome: UP000549394', 'meaning': 'NCBITaxon:2664684', 'annotations': {'proteome_id': 'UP000549394', 'tax_id': '2664684', 'code': '9ANNE'}},
-    "SP_9ANUR": {'description': 'Leptobrachium leishanense (Leishan spiny toad) - Proteome: UP000694569', 'meaning': 'NCBITaxon:445787', 'annotations': {'proteome_id': 'UP000694569', 'tax_id': '445787', 'code': '9ANUR'}},
-    "SP_9APHY": {'description': 'Fibroporia radiculosa - Proteome: UP000006352', 'meaning': 'NCBITaxon:599839', 'annotations': {'proteome_id': 'UP000006352', 'tax_id': '599839', 'code': '9APHY'}},
-    "SP_9APIA": {'description': 'Heracleum sosnowskyi - Proteome: UP001237642', 'meaning': 'NCBITaxon:360622', 'annotations': {'proteome_id': 'UP001237642', 'tax_id': '360622', 'code': '9APIA'}},
-    "SP_9APIC": {'description': 'Babesia sp. Xinjiang - Proteome: UP000193856', 'meaning': 'NCBITaxon:462227', 'annotations': {'proteome_id': 'UP000193856', 'tax_id': '462227', 'code': '9APIC'}},
-    "SP_9AQUI": {'description': 'Sulfurihydrogenibium yellowstonense SS-5 - Proteome: UP000005540', 'meaning': 'NCBITaxon:432331', 'annotations': {'proteome_id': 'UP000005540', 'tax_id': '432331', 'code': '9AQUI'}},
-    "SP_9ARAC": {'description': 'Trichonephila inaurata madagascariensis - Proteome: UP000886998', 'meaning': 'NCBITaxon:2747483', 'annotations': {'proteome_id': 'UP000886998', 'tax_id': '2747483', 'code': '9ARAC'}},
-    "SP_9ARCH": {'description': 'Candidatus Nitrosarchaeum limnium BG20 - Proteome: UP000014065', 'meaning': 'NCBITaxon:859192', 'annotations': {'proteome_id': 'UP000014065', 'tax_id': '859192', 'code': '9ARCH'}},
-    "SP_9ASCO": {'description': 'Kuraishia capsulata CBS 1993 - Proteome: UP000019384', 'meaning': 'NCBITaxon:1382522', 'annotations': {'proteome_id': 'UP000019384', 'tax_id': '1382522', 'code': '9ASCO'}},
-    "SP_9ASPA": {'description': 'Dendrobium catenatum - Proteome: UP000233837', 'meaning': 'NCBITaxon:906689', 'annotations': {'proteome_id': 'UP000233837', 'tax_id': '906689', 'code': '9ASPA'}},
-    "SP_9ASTE": {'description': 'Cuscuta australis - Proteome: UP000249390', 'meaning': 'NCBITaxon:267555', 'annotations': {'proteome_id': 'UP000249390', 'tax_id': '267555', 'code': '9ASTE'}},
-    "SP_9ASTR": {'description': 'Mikania micrantha - Proteome: UP000326396', 'meaning': 'NCBITaxon:192012', 'annotations': {'proteome_id': 'UP000326396', 'tax_id': '192012', 'code': '9ASTR'}},
-    "SP_9AVES": {'description': 'Anser brachyrhynchus (Pink-footed goose) - Proteome: UP000694426', 'meaning': 'NCBITaxon:132585', 'annotations': {'proteome_id': 'UP000694426', 'tax_id': '132585', 'code': '9AVES'}},
-    "SP_9BACE": {'description': 'Bacteroides caccae CL03T12C61 - Proteome: UP000002965', 'meaning': 'NCBITaxon:997873', 'annotations': {'proteome_id': 'UP000002965', 'tax_id': '997873', 'code': '9BACE'}},
-    "SP_9BACI": {'description': 'Fictibacillus macauensis ZFHKF-1 - Proteome: UP000004080', 'meaning': 'NCBITaxon:1196324', 'annotations': {'proteome_id': 'UP000004080', 'tax_id': '1196324', 'code': '9BACI'}},
-    "SP_9BACL": {'description': 'Paenibacillus sp. HGF7 - Proteome: UP000003445', 'meaning': 'NCBITaxon:944559', 'annotations': {'proteome_id': 'UP000003445', 'tax_id': '944559', 'code': '9BACL'}},
-    "SP_9BACT": {'description': 'Parabacteroides johnsonii CL02T12C29 - Proteome: UP000001218', 'meaning': 'NCBITaxon:999419', 'annotations': {'proteome_id': 'UP000001218', 'tax_id': '999419', 'code': '9BACT'}},
-    "SP_9BACU": {'description': 'Samia ricini nucleopolyhedrovirus - Proteome: UP001226138', 'meaning': 'NCBITaxon:1920700', 'annotations': {'proteome_id': 'UP001226138', 'tax_id': '1920700', 'code': '9BACU'}},
-    "SP_9BASI": {'description': 'Malassezia pachydermatis - Proteome: UP000037751', 'meaning': 'NCBITaxon:77020', 'annotations': {'proteome_id': 'UP000037751', 'tax_id': '77020', 'code': '9BASI'}},
-    "SP_9BBAC": {'description': 'Plutella xylostella granulovirus - Proteome: UP000201310', 'meaning': 'NCBITaxon:98383', 'annotations': {'proteome_id': 'UP000201310', 'tax_id': '98383', 'code': '9BBAC'}},
-    "SP_9BETA": {'description': 'Saimiriine betaherpesvirus 4 - Proteome: UP000097892', 'meaning': 'NCBITaxon:1535247', 'annotations': {'proteome_id': 'UP000097892', 'tax_id': '1535247', 'code': '9BETA'}},
-    "SP_9BETC": {'description': 'Coronavirus BtRt-BetaCoV/GX2018 - Proteome: UP001228689', 'meaning': 'NCBITaxon:2591238', 'annotations': {'proteome_id': 'UP001228689', 'tax_id': '2591238', 'code': '9BETC'}},
-    "SP_9BIFI": {'description': 'Scardovia wiggsiae F0424 - Proteome: UP000006415', 'meaning': 'NCBITaxon:857290', 'annotations': {'proteome_id': 'UP000006415', 'tax_id': '857290', 'code': '9BIFI'}},
-    "SP_9BILA": {'description': 'Ancylostoma ceylanicum - Proteome: UP000024635', 'meaning': 'NCBITaxon:53326', 'annotations': {'proteome_id': 'UP000024635', 'tax_id': '53326', 'code': '9BILA'}},
-    "SP_9BIVA": {'description': 'Potamilus streckersoni - Proteome: UP001195483', 'meaning': 'NCBITaxon:2493646', 'annotations': {'proteome_id': 'UP001195483', 'tax_id': '2493646', 'code': '9BIVA'}},
-    "SP_9BORD": {'description': 'Bordetella sp. N - Proteome: UP000064621', 'meaning': 'NCBITaxon:1746199', 'annotations': {'proteome_id': 'UP000064621', 'tax_id': '1746199', 'code': '9BORD'}},
-    "SP_9BRAD": {'description': 'Afipia broomeae ATCC 49717 - Proteome: UP000001096', 'meaning': 'NCBITaxon:883078', 'annotations': {'proteome_id': 'UP000001096', 'tax_id': '883078', 'code': '9BRAD'}},
-    "SP_9BRAS": {'description': 'Capsella rubella - Proteome: UP000029121', 'meaning': 'NCBITaxon:81985', 'annotations': {'proteome_id': 'UP000029121', 'tax_id': '81985', 'code': '9BRAS'}},
-    "SP_9BROM": {'description': 'Prune dwarf virus - Proteome: UP000202132', 'meaning': 'NCBITaxon:33760', 'annotations': {'proteome_id': 'UP000202132', 'tax_id': '33760', 'code': '9BROM'}},
-    "SP_9BURK": {'description': 'Candidatus Paraburkholderia kirkii UZHbot1 - Proteome: UP000003511', 'meaning': 'NCBITaxon:1055526', 'annotations': {'proteome_id': 'UP000003511', 'tax_id': '1055526', 'code': '9BURK'}},
-    "SP_9CARY": {'description': 'Carnegiea gigantea - Proteome: UP001153076', 'meaning': 'NCBITaxon:171969', 'annotations': {'proteome_id': 'UP001153076', 'tax_id': '171969', 'code': '9CARY'}},
-    "SP_9CAUD": {'description': 'Salmonella phage Vi06 - Proteome: UP000000335', 'meaning': 'NCBITaxon:866889', 'annotations': {'proteome_id': 'UP000000335', 'tax_id': '866889', 'code': '9CAUD'}},
-    "SP_9CAUL": {'description': 'Brevundimonas abyssalis TAR-001 - Proteome: UP000016569', 'meaning': 'NCBITaxon:1391729', 'annotations': {'proteome_id': 'UP000016569', 'tax_id': '1391729', 'code': '9CAUL'}},
-    "SP_9CBAC": {'description': 'Neodiprion sertifer nucleopolyhedrovirus - Proteome: UP000243697', 'meaning': 'NCBITaxon:111874', 'annotations': {'proteome_id': 'UP000243697', 'tax_id': '111874', 'code': '9CBAC'}},
-    "SP_9CELL": {'description': 'Actinotalea ferrariae CF5-4 - Proteome: UP000019753', 'meaning': 'NCBITaxon:948458', 'annotations': {'proteome_id': 'UP000019753', 'tax_id': '948458', 'code': '9CELL'}},
-    "SP_9CERV": {'description': 'Cervus hanglu yarkandensis (Yarkand deer) - Proteome: UP000631465', 'meaning': 'NCBITaxon:84702', 'annotations': {'proteome_id': 'UP000631465', 'tax_id': '84702', 'code': '9CERV'}},
-    "SP_9CETA": {'description': 'Catagonus wagneri (Chacoan peccary) - Proteome: UP000694540', 'meaning': 'NCBITaxon:51154', 'annotations': {'proteome_id': 'UP000694540', 'tax_id': '51154', 'code': '9CETA'}},
-    "SP_9CHAR": {'description': 'Rostratula benghalensis (greater painted-snipe) - Proteome: UP000545435', 'meaning': 'NCBITaxon:118793', 'annotations': {'proteome_id': 'UP000545435', 'tax_id': '118793', 'code': '9CHAR'}},
-    "SP_9CHIR": {'description': 'Phyllostomus discolor (pale spear-nosed bat) - Proteome: UP000504628', 'meaning': 'NCBITaxon:89673', 'annotations': {'proteome_id': 'UP000504628', 'tax_id': '89673', 'code': '9CHIR'}},
-    "SP_9CHLA": {'description': 'Chlamydiales bacterium SCGC AG-110-P3 - Proteome: UP000196763', 'meaning': 'NCBITaxon:1871323', 'annotations': {'proteome_id': 'UP000196763', 'tax_id': '1871323', 'code': '9CHLA'}},
-    "SP_9CHLB": {'description': 'Chlorobium ferrooxidans DSM 13031 - Proteome: UP000004162', 'meaning': 'NCBITaxon:377431', 'annotations': {'proteome_id': 'UP000004162', 'tax_id': '377431', 'code': '9CHLB'}},
-    "SP_9CHLO": {'description': 'Helicosporidium sp. ATCC 50920 - Proteome: UP000026042', 'meaning': 'NCBITaxon:1291522', 'annotations': {'proteome_id': 'UP000026042', 'tax_id': '1291522', 'code': '9CHLO'}},
-    "SP_9CHLR": {'description': 'Ardenticatena maritima - Proteome: UP000037784', 'meaning': 'NCBITaxon:872965', 'annotations': {'proteome_id': 'UP000037784', 'tax_id': '872965', 'code': '9CHLR'}},
-    "SP_9CHRO": {'description': 'Gloeocapsa sp. PCC 7428 - Proteome: UP000010476', 'meaning': 'NCBITaxon:1173026', 'annotations': {'proteome_id': 'UP000010476', 'tax_id': '1173026', 'code': '9CHRO'}},
-    "SP_9CICH": {'description': 'Maylandia zebra (zebra mbuna) - Proteome: UP000265160', 'meaning': 'NCBITaxon:106582', 'annotations': {'proteome_id': 'UP000265160', 'tax_id': '106582', 'code': '9CICH'}},
-    "SP_9CILI": {'description': 'Stentor coeruleus - Proteome: UP000187209', 'meaning': 'NCBITaxon:5963', 'annotations': {'proteome_id': 'UP000187209', 'tax_id': '5963', 'code': '9CILI'}},
-    "SP_9CIRC": {'description': 'Raven circovirus - Proteome: UP000097131', 'meaning': 'NCBITaxon:345250', 'annotations': {'proteome_id': 'UP000097131', 'tax_id': '345250', 'code': '9CIRC'}},
-    "SP_9CLOS": {'description': 'Grapevine leafroll-associated virus 10 - Proteome: UP000203128', 'meaning': 'NCBITaxon:367121', 'annotations': {'proteome_id': 'UP000203128', 'tax_id': '367121', 'code': '9CLOS'}},
-    "SP_9CLOT": {'description': 'Candidatus Arthromitus sp. SFB-rat-Yit - Proteome: UP000001273', 'meaning': 'NCBITaxon:1041504', 'annotations': {'proteome_id': 'UP000001273', 'tax_id': '1041504', 'code': '9CLOT'}},
-    "SP_9CNID": {'description': 'Clytia hemisphaerica - Proteome: UP000594262', 'meaning': 'NCBITaxon:252671', 'annotations': {'proteome_id': 'UP000594262', 'tax_id': '252671', 'code': '9CNID'}},
-    "SP_9COLU": {'description': 'Pampusana beccarii (Western bronze ground-dove) - Proteome: UP000541332', 'meaning': 'NCBITaxon:2953425', 'annotations': {'proteome_id': 'UP000541332', 'tax_id': '2953425', 'code': '9COLU'}},
-    "SP_9CORV": {'description': "Cnemophilus loriae (Loria's bird-of-paradise) - Proteome: UP000517678", 'meaning': 'NCBITaxon:254448', 'annotations': {'proteome_id': 'UP000517678', 'tax_id': '254448', 'code': '9CORV'}},
-    "SP_9CORY": {'description': 'Corynebacterium genitalium ATCC 33030 - Proteome: UP000004208', 'meaning': 'NCBITaxon:585529', 'annotations': {'proteome_id': 'UP000004208', 'tax_id': '585529', 'code': '9CORY'}},
-    "SP_9COXI": {'description': 'Coxiella endosymbiont of Amblyomma americanum - Proteome: UP000059222', 'meaning': 'NCBITaxon:325775', 'annotations': {'proteome_id': 'UP000059222', 'tax_id': '325775', 'code': '9COXI'}},
-    "SP_9CREN": {'description': 'Metallosphaera yellowstonensis MK1 - Proteome: UP000003980', 'meaning': 'NCBITaxon:671065', 'annotations': {'proteome_id': 'UP000003980', 'tax_id': '671065', 'code': '9CREN'}},
-    "SP_9CRUS": {'description': 'Daphnia magna - Proteome: UP000076858', 'meaning': 'NCBITaxon:35525', 'annotations': {'proteome_id': 'UP000076858', 'tax_id': '35525', 'code': '9CRUS'}},
-    "SP_9CUCU": {'description': 'Ceutorhynchus assimilis (cabbage seed weevil) - Proteome: UP001152799', 'meaning': 'NCBITaxon:467358', 'annotations': {'proteome_id': 'UP001152799', 'tax_id': '467358', 'code': '9CUCU'}},
-    "SP_9CYAN": {'description': 'Leptolyngbyaceae cyanobacterium JSC-12 - Proteome: UP000001332', 'meaning': 'NCBITaxon:864702', 'annotations': {'proteome_id': 'UP000001332', 'tax_id': '864702', 'code': '9CYAN'}},
-    "SP_9DEIN": {'description': 'Meiothermus sp. QL-1 - Proteome: UP000255346', 'meaning': 'NCBITaxon:2058095', 'annotations': {'proteome_id': 'UP000255346', 'tax_id': '2058095', 'code': '9DEIN'}},
-    "SP_9DEIO": {'description': 'Deinococcus sp. RL - Proteome: UP000027898', 'meaning': 'NCBITaxon:1489678', 'annotations': {'proteome_id': 'UP000027898', 'tax_id': '1489678', 'code': '9DEIO'}},
-    "SP_9DELA": {'description': 'Human T-cell leukemia virus type I - Proteome: UP000108043', 'meaning': 'NCBITaxon:11908', 'annotations': {'proteome_id': 'UP000108043', 'tax_id': '11908', 'code': '9DELA'}},
-    "SP_9DELT": {'description': 'Lujinxingia litoralis - Proteome: UP000249169', 'meaning': 'NCBITaxon:2211119', 'annotations': {'proteome_id': 'UP000249169', 'tax_id': '2211119', 'code': '9DELT'}},
-    "SP_9DEND": {'description': 'Xiphorhynchus elegans (elegant woodcreeper) - Proteome: UP000551443', 'meaning': 'NCBITaxon:269412', 'annotations': {'proteome_id': 'UP000551443', 'tax_id': '269412', 'code': '9DEND'}},
-    "SP_9DINO": {'description': 'Symbiodinium necroappetens - Proteome: UP000601435', 'meaning': 'NCBITaxon:1628268', 'annotations': {'proteome_id': 'UP000601435', 'tax_id': '1628268', 'code': '9DINO'}},
-    "SP_9DIPT": {'description': 'Clunio marinus - Proteome: UP000183832', 'meaning': 'NCBITaxon:568069', 'annotations': {'proteome_id': 'UP000183832', 'tax_id': '568069', 'code': '9DIPT'}},
-    "SP_9EIME": {'description': 'Eimeria praecox - Proteome: UP000018201', 'meaning': 'NCBITaxon:51316', 'annotations': {'proteome_id': 'UP000018201', 'tax_id': '51316', 'code': '9EIME'}},
-    "SP_9EMBE": {'description': 'Emberiza fucata - Proteome: UP000580681', 'meaning': 'NCBITaxon:337179', 'annotations': {'proteome_id': 'UP000580681', 'tax_id': '337179', 'code': '9EMBE'}},
-    "SP_9ENTE": {'description': 'Enterococcus asini ATCC 700915 - Proteome: UP000013777', 'meaning': 'NCBITaxon:1158606', 'annotations': {'proteome_id': 'UP000013777', 'tax_id': '1158606', 'code': '9ENTE'}},
-    "SP_9ENTR": {'description': 'secondary endosymbiont of Heteropsylla cubana - Proteome: UP000003937', 'meaning': 'NCBITaxon:134287', 'annotations': {'proteome_id': 'UP000003937', 'tax_id': '134287', 'code': '9ENTR'}},
-    "SP_9ERIC": {'description': 'Rhododendron williamsianum - Proteome: UP000428333', 'meaning': 'NCBITaxon:262921', 'annotations': {'proteome_id': 'UP000428333', 'tax_id': '262921', 'code': '9ERIC'}},
-    "SP_9EUCA": {'description': 'Petrolisthes manimaculis - Proteome: UP001292094', 'meaning': 'NCBITaxon:1843537', 'annotations': {'proteome_id': 'UP001292094', 'tax_id': '1843537', 'code': '9EUCA'}},
-    "SP_9EUGL": {'description': 'Perkinsela sp. CCAP 1560/4 - Proteome: UP000036983', 'meaning': 'NCBITaxon:1314962', 'annotations': {'proteome_id': 'UP000036983', 'tax_id': '1314962', 'code': '9EUGL'}},
-    "SP_9EUKA": {'description': 'Chrysochromulina tobinii - Proteome: UP000037460', 'meaning': 'NCBITaxon:1460289', 'annotations': {'proteome_id': 'UP000037460', 'tax_id': '1460289', 'code': '9EUKA'}},
-    "SP_9EUPU": {'description': 'Candidula unifasciata - Proteome: UP000678393', 'meaning': 'NCBITaxon:100452', 'annotations': {'proteome_id': 'UP000678393', 'tax_id': '100452', 'code': '9EUPU'}},
-    "SP_9EURO": {'description': 'Cladophialophora psammophila CBS 110553 - Proteome: UP000019471', 'meaning': 'NCBITaxon:1182543', 'annotations': {'proteome_id': 'UP000019471', 'tax_id': '1182543', 'code': '9EURO'}},
-    "SP_9EURY": {'description': 'Methanoplanus limicola DSM 2279 - Proteome: UP000005741', 'meaning': 'NCBITaxon:937775', 'annotations': {'proteome_id': 'UP000005741', 'tax_id': '937775', 'code': '9EURY'}},
-    "SP_9FABA": {'description': 'Senna tora - Proteome: UP000634136', 'meaning': 'NCBITaxon:362788', 'annotations': {'proteome_id': 'UP000634136', 'tax_id': '362788', 'code': '9FABA'}},
-    "SP_9FIRM": {'description': 'Ruminococcaceae bacterium D16 - Proteome: UP000002801', 'meaning': 'NCBITaxon:552398', 'annotations': {'proteome_id': 'UP000002801', 'tax_id': '552398', 'code': '9FIRM'}},
-    "SP_9FLAO": {'description': 'Capnocytophaga sp. oral taxon 338 str. F0234 - Proteome: UP000003023', 'meaning': 'NCBITaxon:888059', 'annotations': {'proteome_id': 'UP000003023', 'tax_id': '888059', 'code': '9FLAO'}},
-    "SP_9FLAV": {'description': 'Tunisian sheep-like pestivirus - Proteome: UP001157330', 'meaning': 'NCBITaxon:3071305', 'annotations': {'proteome_id': 'UP001157330', 'tax_id': '3071305', 'code': '9FLAV'}},
-    "SP_9FLOR": {'description': 'Gracilariopsis chorda - Proteome: UP000247409', 'meaning': 'NCBITaxon:448386', 'annotations': {'proteome_id': 'UP000247409', 'tax_id': '448386', 'code': '9FLOR'}},
-    "SP_9FRIN": {'description': 'Urocynchramus pylzowi - Proteome: UP000524542', 'meaning': 'NCBITaxon:571890', 'annotations': {'proteome_id': 'UP000524542', 'tax_id': '571890', 'code': '9FRIN'}},
-    "SP_9FUNG": {'description': 'Lichtheimia corymbifera JMRC:FSU:9682 - Proteome: UP000027586', 'meaning': 'NCBITaxon:1263082', 'annotations': {'proteome_id': 'UP000027586', 'tax_id': '1263082', 'code': '9FUNG'}},
-    "SP_9FURN": {'description': 'Furnarius figulus - Proteome: UP000529852', 'meaning': 'NCBITaxon:463165', 'annotations': {'proteome_id': 'UP000529852', 'tax_id': '463165', 'code': '9FURN'}},
-    "SP_9FUSO": {'description': 'Fusobacterium gonidiaformans 3-1-5R - Proteome: UP000002975', 'meaning': 'NCBITaxon:469605', 'annotations': {'proteome_id': 'UP000002975', 'tax_id': '469605', 'code': '9FUSO'}},
-    "SP_9GALL": {'description': 'Odontophorus gujanensis (marbled wood quail) - Proteome: UP000522663', 'meaning': 'NCBITaxon:886794', 'annotations': {'proteome_id': 'UP000522663', 'tax_id': '886794', 'code': '9GALL'}},
-    "SP_9GAMA": {'description': 'Bovine gammaherpesvirus 6 - Proteome: UP000121539', 'meaning': 'NCBITaxon:1504288', 'annotations': {'proteome_id': 'UP000121539', 'tax_id': '1504288', 'code': '9GAMA'}},
-    "SP_9GAMC": {'description': 'Anser fabalis coronavirus NCN2 - Proteome: UP001251675', 'meaning': 'NCBITaxon:2860474', 'annotations': {'proteome_id': 'UP001251675', 'tax_id': '2860474', 'code': '9GAMC'}},
-    "SP_9GAMM": {'description': 'Buchnera aphidicola (Cinara tujafilina) - Proteome: UP000006811', 'meaning': 'NCBITaxon:261317', 'annotations': {'proteome_id': 'UP000006811', 'tax_id': '261317', 'code': '9GAMM'}, 'aliases': ['Buchnera aphidicola (Cinara tujafilina)']},
-    "SP_9GAST": {'description': 'Elysia crispata (lettuce slug) - Proteome: UP001283361', 'meaning': 'NCBITaxon:231223', 'annotations': {'proteome_id': 'UP001283361', 'tax_id': '231223', 'code': '9GAST'}},
-    "SP_9GEMI": {'description': 'East African cassava mosaic Zanzibar virus - Proteome: UP000201107', 'meaning': 'NCBITaxon:223275', 'annotations': {'proteome_id': 'UP000201107', 'tax_id': '223275', 'code': '9GEMI'}},
-    "SP_9GLOM": {'description': 'Paraglomus occultum - Proteome: UP000789572', 'meaning': 'NCBITaxon:144539', 'annotations': {'proteome_id': 'UP000789572', 'tax_id': '144539', 'code': '9GLOM'}},
-    "SP_9GOBI": {'description': 'Neogobius melanostomus (round goby) - Proteome: UP000694523', 'meaning': 'NCBITaxon:47308', 'annotations': {'proteome_id': 'UP000694523', 'tax_id': '47308', 'code': '9GOBI'}},
-    "SP_9GRUI": {'description': 'Atlantisia rogersi (Inaccessible Island rail) - Proteome: UP000518911', 'meaning': 'NCBITaxon:2478892', 'annotations': {'proteome_id': 'UP000518911', 'tax_id': '2478892', 'code': '9GRUI'}},
-    "SP_9HELI": {'description': 'Helicobacter bilis ATCC 43879 - Proteome: UP000005085', 'meaning': 'NCBITaxon:613026', 'annotations': {'proteome_id': 'UP000005085', 'tax_id': '613026', 'code': '9HELI'}},
-    "SP_9HELO": {'description': 'Rhynchosporium graminicola - Proteome: UP000178129', 'meaning': 'NCBITaxon:2792576', 'annotations': {'proteome_id': 'UP000178129', 'tax_id': '2792576', 'code': '9HELO'}},
-    "SP_9HEMI": {'description': 'Cinara cedri - Proteome: UP000325440', 'meaning': 'NCBITaxon:506608', 'annotations': {'proteome_id': 'UP000325440', 'tax_id': '506608', 'code': '9HEMI'}},
-    "SP_9HEPA": {'description': 'Duck hepatitis B virus - Proteome: UP000137229', 'meaning': 'NCBITaxon:12639', 'annotations': {'proteome_id': 'UP000137229', 'tax_id': '12639', 'code': '9HEPA'}},
-    "SP_9HEXA": {'description': 'Allacma fusca - Proteome: UP000708208', 'meaning': 'NCBITaxon:39272', 'annotations': {'proteome_id': 'UP000708208', 'tax_id': '39272', 'code': '9HEXA'}},
-    "SP_9HYME": {'description': 'Melipona quadrifasciata - Proteome: UP000053105', 'meaning': 'NCBITaxon:166423', 'annotations': {'proteome_id': 'UP000053105', 'tax_id': '166423', 'code': '9HYME'}},
-    "SP_9HYPH": {'description': 'Mesorhizobium amorphae CCNWGS0123 - Proteome: UP000002949', 'meaning': 'NCBITaxon:1082933', 'annotations': {'proteome_id': 'UP000002949', 'tax_id': '1082933', 'code': '9HYPH'}},
-    "SP_9HYPO": {'description': '[Torrubiella] hemipterigena - Proteome: UP000039046', 'meaning': 'NCBITaxon:1531966', 'annotations': {'proteome_id': 'UP000039046', 'tax_id': '1531966', 'code': '9HYPO'}},
-    "SP_9INFA": {'description': 'Influenza A virus (A/California/VRDL364/2009 (mixed) - Proteome: UP000109975', 'meaning': 'NCBITaxon:1049605', 'annotations': {'proteome_id': 'UP000109975', 'tax_id': '1049605', 'code': '9INFA'}, 'aliases': ['Influenza A virus (A/California/VRDL364/2009(mixed))']},
-    "SP_9INSE": {'description': 'Cloeon dipterum - Proteome: UP000494165', 'meaning': 'NCBITaxon:197152', 'annotations': {'proteome_id': 'UP000494165', 'tax_id': '197152', 'code': '9INSE'}},
-    "SP_9LABR": {'description': 'Labrus bergylta (ballan wrasse) - Proteome: UP000261660', 'meaning': 'NCBITaxon:56723', 'annotations': {'proteome_id': 'UP000261660'}},
+    "SP_9ABAC": {'description': 'Lambdina fiscellaria nucleopolyhedrovirus - Proteome: UP000201190', 'meaning': 'NCBITaxon:1642929'},
+    "SP_9ACAR": {'description': 'Tropilaelaps mercedesae - Proteome: UP000192247', 'meaning': 'NCBITaxon:418985'},
+    "SP_9ACTN": {'description': 'Candidatus Protofrankia datiscae - Proteome: UP000001549', 'meaning': 'NCBITaxon:2716812'},
+    "SP_9ACTO": {'description': 'Actinomyces massiliensis F0489 - Proteome: UP000002941', 'meaning': 'NCBITaxon:1125718'},
+    "SP_9ADEN": {'description': 'Human adenovirus 53 - Proteome: UP000463865', 'meaning': 'NCBITaxon:556926'},
+    "SP_9AGAM": {'description': 'Jaapia argillacea MUCL 33604 - Proteome: UP000027265', 'meaning': 'NCBITaxon:933084'},
+    "SP_9AGAR": {'description': 'Collybiopsis luxurians FD-317 M1 - Proteome: UP000053593', 'meaning': 'NCBITaxon:944289'},
+    "SP_9ALPC": {'description': 'Feline coronavirus - Proteome: UP000141821', 'meaning': 'NCBITaxon:12663'},
+    "SP_9ALPH": {'description': 'Testudinid alphaherpesvirus 3 - Proteome: UP000100290', 'meaning': 'NCBITaxon:2560801'},
+    "SP_9ALTE": {'description': 'Paraglaciecola arctica BSs20135 - Proteome: UP000006327', 'meaning': 'NCBITaxon:493475'},
+    "SP_9ALVE": {'description': 'Perkinsus sp. BL_2016 - Proteome: UP000298064', 'meaning': 'NCBITaxon:2494336'},
+    "SP_9AMPH": {'description': 'Microcaecilia unicolor - Proteome: UP000515156', 'meaning': 'NCBITaxon:1415580'},
+    "SP_9ANNE": {'description': 'Dimorphilus gyrociliatus - Proteome: UP000549394', 'meaning': 'NCBITaxon:2664684'},
+    "SP_9ANUR": {'description': 'Leptobrachium leishanense (Leishan spiny toad) - Proteome: UP000694569', 'meaning': 'NCBITaxon:445787'},
+    "SP_9APHY": {'description': 'Fibroporia radiculosa - Proteome: UP000006352', 'meaning': 'NCBITaxon:599839'},
+    "SP_9APIA": {'description': 'Heracleum sosnowskyi - Proteome: UP001237642', 'meaning': 'NCBITaxon:360622'},
+    "SP_9APIC": {'description': 'Babesia sp. Xinjiang - Proteome: UP000193856', 'meaning': 'NCBITaxon:462227'},
+    "SP_9AQUI": {'description': 'Sulfurihydrogenibium yellowstonense SS-5 - Proteome: UP000005540', 'meaning': 'NCBITaxon:432331'},
+    "SP_9ARAC": {'description': 'Trichonephila inaurata madagascariensis - Proteome: UP000886998', 'meaning': 'NCBITaxon:2747483'},
+    "SP_9ARCH": {'description': 'Candidatus Nitrosarchaeum limnium BG20 - Proteome: UP000014065', 'meaning': 'NCBITaxon:859192'},
+    "SP_9ASCO": {'description': 'Kuraishia capsulata CBS 1993 - Proteome: UP000019384', 'meaning': 'NCBITaxon:1382522'},
+    "SP_9ASPA": {'description': 'Dendrobium catenatum - Proteome: UP000233837', 'meaning': 'NCBITaxon:906689'},
+    "SP_9ASTE": {'description': 'Cuscuta australis - Proteome: UP000249390', 'meaning': 'NCBITaxon:267555'},
+    "SP_9ASTR": {'description': 'Mikania micrantha - Proteome: UP000326396', 'meaning': 'NCBITaxon:192012'},
+    "SP_9AVES": {'description': 'Anser brachyrhynchus (Pink-footed goose) - Proteome: UP000694426', 'meaning': 'NCBITaxon:132585'},
+    "SP_9BACE": {'description': 'Bacteroides caccae CL03T12C61 - Proteome: UP000002965', 'meaning': 'NCBITaxon:997873'},
+    "SP_9BACI": {'description': 'Fictibacillus macauensis ZFHKF-1 - Proteome: UP000004080', 'meaning': 'NCBITaxon:1196324'},
+    "SP_9BACL": {'description': 'Paenibacillus sp. HGF7 - Proteome: UP000003445', 'meaning': 'NCBITaxon:944559'},
+    "SP_9BACT": {'description': 'Parabacteroides johnsonii CL02T12C29 - Proteome: UP000001218', 'meaning': 'NCBITaxon:999419'},
+    "SP_9BACU": {'description': 'Samia ricini nucleopolyhedrovirus - Proteome: UP001226138', 'meaning': 'NCBITaxon:1920700'},
+    "SP_9BASI": {'description': 'Malassezia pachydermatis - Proteome: UP000037751', 'meaning': 'NCBITaxon:77020'},
+    "SP_9BBAC": {'description': 'Plutella xylostella granulovirus - Proteome: UP000201310', 'meaning': 'NCBITaxon:98383'},
+    "SP_9BETA": {'description': 'Saimiriine betaherpesvirus 4 - Proteome: UP000097892', 'meaning': 'NCBITaxon:1535247'},
+    "SP_9BETC": {'description': 'Coronavirus BtRt-BetaCoV/GX2018 - Proteome: UP001228689', 'meaning': 'NCBITaxon:2591238'},
+    "SP_9BIFI": {'description': 'Scardovia wiggsiae F0424 - Proteome: UP000006415', 'meaning': 'NCBITaxon:857290'},
+    "SP_9BILA": {'description': 'Ancylostoma ceylanicum - Proteome: UP000024635', 'meaning': 'NCBITaxon:53326'},
+    "SP_9BIVA": {'description': 'Potamilus streckersoni - Proteome: UP001195483', 'meaning': 'NCBITaxon:2493646'},
+    "SP_9BORD": {'description': 'Bordetella sp. N - Proteome: UP000064621', 'meaning': 'NCBITaxon:1746199'},
+    "SP_9BRAD": {'description': 'Afipia broomeae ATCC 49717 - Proteome: UP000001096', 'meaning': 'NCBITaxon:883078'},
+    "SP_9BRAS": {'description': 'Capsella rubella - Proteome: UP000029121', 'meaning': 'NCBITaxon:81985'},
+    "SP_9BROM": {'description': 'Prune dwarf virus - Proteome: UP000202132', 'meaning': 'NCBITaxon:33760'},
+    "SP_9BURK": {'description': 'Candidatus Paraburkholderia kirkii UZHbot1 - Proteome: UP000003511', 'meaning': 'NCBITaxon:1055526'},
+    "SP_9CARY": {'description': 'Carnegiea gigantea - Proteome: UP001153076', 'meaning': 'NCBITaxon:171969'},
+    "SP_9CAUD": {'description': 'Salmonella phage Vi06 - Proteome: UP000000335', 'meaning': 'NCBITaxon:866889'},
+    "SP_9CAUL": {'description': 'Brevundimonas abyssalis TAR-001 - Proteome: UP000016569', 'meaning': 'NCBITaxon:1391729'},
+    "SP_9CBAC": {'description': 'Neodiprion sertifer nucleopolyhedrovirus - Proteome: UP000243697', 'meaning': 'NCBITaxon:111874'},
+    "SP_9CELL": {'description': 'Actinotalea ferrariae CF5-4 - Proteome: UP000019753', 'meaning': 'NCBITaxon:948458'},
+    "SP_9CERV": {'description': 'Cervus hanglu yarkandensis (Yarkand deer) - Proteome: UP000631465', 'meaning': 'NCBITaxon:84702'},
+    "SP_9CETA": {'description': 'Catagonus wagneri (Chacoan peccary) - Proteome: UP000694540', 'meaning': 'NCBITaxon:51154'},
+    "SP_9CHAR": {'description': 'Rostratula benghalensis (greater painted-snipe) - Proteome: UP000545435', 'meaning': 'NCBITaxon:118793'},
+    "SP_9CHIR": {'description': 'Phyllostomus discolor (pale spear-nosed bat) - Proteome: UP000504628', 'meaning': 'NCBITaxon:89673'},
+    "SP_9CHLA": {'description': 'Chlamydiales bacterium SCGC AG-110-P3 - Proteome: UP000196763', 'meaning': 'NCBITaxon:1871323'},
+    "SP_9CHLB": {'description': 'Chlorobium ferrooxidans DSM 13031 - Proteome: UP000004162', 'meaning': 'NCBITaxon:377431'},
+    "SP_9CHLO": {'description': 'Helicosporidium sp. ATCC 50920 - Proteome: UP000026042', 'meaning': 'NCBITaxon:1291522'},
+    "SP_9CHLR": {'description': 'Ardenticatena maritima - Proteome: UP000037784', 'meaning': 'NCBITaxon:872965'},
+    "SP_9CHRO": {'description': 'Gloeocapsa sp. PCC 7428 - Proteome: UP000010476', 'meaning': 'NCBITaxon:1173026'},
+    "SP_9CICH": {'description': 'Maylandia zebra (zebra mbuna) - Proteome: UP000265160', 'meaning': 'NCBITaxon:106582'},
+    "SP_9CILI": {'description': 'Stentor coeruleus - Proteome: UP000187209', 'meaning': 'NCBITaxon:5963'},
+    "SP_9CIRC": {'description': 'Raven circovirus - Proteome: UP000097131', 'meaning': 'NCBITaxon:345250'},
+    "SP_9CLOS": {'description': 'Grapevine leafroll-associated virus 10 - Proteome: UP000203128', 'meaning': 'NCBITaxon:367121'},
+    "SP_9CLOT": {'description': 'Candidatus Arthromitus sp. SFB-rat-Yit - Proteome: UP000001273', 'meaning': 'NCBITaxon:1041504'},
+    "SP_9CNID": {'description': 'Clytia hemisphaerica - Proteome: UP000594262', 'meaning': 'NCBITaxon:252671'},
+    "SP_9COLU": {'description': 'Pampusana beccarii (Western bronze ground-dove) - Proteome: UP000541332', 'meaning': 'NCBITaxon:2953425'},
+    "SP_9CORV": {'description': "Cnemophilus loriae (Loria's bird-of-paradise) - Proteome: UP000517678", 'meaning': 'NCBITaxon:254448'},
+    "SP_9CORY": {'description': 'Corynebacterium genitalium ATCC 33030 - Proteome: UP000004208', 'meaning': 'NCBITaxon:585529'},
+    "SP_9COXI": {'description': 'Coxiella endosymbiont of Amblyomma americanum - Proteome: UP000059222', 'meaning': 'NCBITaxon:325775'},
+    "SP_9CREN": {'description': 'Metallosphaera yellowstonensis MK1 - Proteome: UP000003980', 'meaning': 'NCBITaxon:671065'},
+    "SP_9CRUS": {'description': 'Daphnia magna - Proteome: UP000076858', 'meaning': 'NCBITaxon:35525'},
+    "SP_9CUCU": {'description': 'Ceutorhynchus assimilis (cabbage seed weevil) - Proteome: UP001152799', 'meaning': 'NCBITaxon:467358'},
+    "SP_9CYAN": {'description': 'Leptolyngbyaceae cyanobacterium JSC-12 - Proteome: UP000001332', 'meaning': 'NCBITaxon:864702'},
+    "SP_9DEIN": {'description': 'Meiothermus sp. QL-1 - Proteome: UP000255346', 'meaning': 'NCBITaxon:2058095'},
+    "SP_9DEIO": {'description': 'Deinococcus sp. RL - Proteome: UP000027898', 'meaning': 'NCBITaxon:1489678'},
+    "SP_9DELA": {'description': 'Human T-cell leukemia virus type I - Proteome: UP000108043', 'meaning': 'NCBITaxon:11908'},
+    "SP_9DELT": {'description': 'Lujinxingia litoralis - Proteome: UP000249169', 'meaning': 'NCBITaxon:2211119'},
+    "SP_9DEND": {'description': 'Xiphorhynchus elegans (elegant woodcreeper) - Proteome: UP000551443', 'meaning': 'NCBITaxon:269412'},
+    "SP_9DINO": {'description': 'Symbiodinium necroappetens - Proteome: UP000601435', 'meaning': 'NCBITaxon:1628268'},
+    "SP_9DIPT": {'description': 'Clunio marinus - Proteome: UP000183832', 'meaning': 'NCBITaxon:568069'},
+    "SP_9EIME": {'description': 'Eimeria praecox - Proteome: UP000018201', 'meaning': 'NCBITaxon:51316'},
+    "SP_9EMBE": {'description': 'Emberiza fucata - Proteome: UP000580681', 'meaning': 'NCBITaxon:337179'},
+    "SP_9ENTE": {'description': 'Enterococcus asini ATCC 700915 - Proteome: UP000013777', 'meaning': 'NCBITaxon:1158606'},
+    "SP_9ENTR": {'description': 'secondary endosymbiont of Heteropsylla cubana - Proteome: UP000003937', 'meaning': 'NCBITaxon:134287'},
+    "SP_9ERIC": {'description': 'Rhododendron williamsianum - Proteome: UP000428333', 'meaning': 'NCBITaxon:262921'},
+    "SP_9EUCA": {'description': 'Petrolisthes manimaculis - Proteome: UP001292094', 'meaning': 'NCBITaxon:1843537'},
+    "SP_9EUGL": {'description': 'Perkinsela sp. CCAP 1560/4 - Proteome: UP000036983', 'meaning': 'NCBITaxon:1314962'},
+    "SP_9EUKA": {'description': 'Chrysochromulina tobinii - Proteome: UP000037460', 'meaning': 'NCBITaxon:1460289'},
+    "SP_9EUPU": {'description': 'Candidula unifasciata - Proteome: UP000678393', 'meaning': 'NCBITaxon:100452'},
+    "SP_9EURO": {'description': 'Cladophialophora psammophila CBS 110553 - Proteome: UP000019471', 'meaning': 'NCBITaxon:1182543'},
+    "SP_9EURY": {'description': 'Methanoplanus limicola DSM 2279 - Proteome: UP000005741', 'meaning': 'NCBITaxon:937775'},
+    "SP_9FABA": {'description': 'Senna tora - Proteome: UP000634136', 'meaning': 'NCBITaxon:362788'},
+    "SP_9FIRM": {'description': 'Ruminococcaceae bacterium D16 - Proteome: UP000002801', 'meaning': 'NCBITaxon:552398'},
+    "SP_9FLAO": {'description': 'Capnocytophaga sp. oral taxon 338 str. F0234 - Proteome: UP000003023', 'meaning': 'NCBITaxon:888059'},
+    "SP_9FLAV": {'description': 'Tunisian sheep-like pestivirus - Proteome: UP001157330', 'meaning': 'NCBITaxon:3071305'},
+    "SP_9FLOR": {'description': 'Gracilariopsis chorda - Proteome: UP000247409', 'meaning': 'NCBITaxon:448386'},
+    "SP_9FRIN": {'description': 'Urocynchramus pylzowi - Proteome: UP000524542', 'meaning': 'NCBITaxon:571890'},
+    "SP_9FUNG": {'description': 'Lichtheimia corymbifera JMRC:FSU:9682 - Proteome: UP000027586', 'meaning': 'NCBITaxon:1263082'},
+    "SP_9FURN": {'description': 'Furnarius figulus - Proteome: UP000529852', 'meaning': 'NCBITaxon:463165'},
+    "SP_9FUSO": {'description': 'Fusobacterium gonidiaformans 3-1-5R - Proteome: UP000002975', 'meaning': 'NCBITaxon:469605'},
+    "SP_9GALL": {'description': 'Odontophorus gujanensis (marbled wood quail) - Proteome: UP000522663', 'meaning': 'NCBITaxon:886794'},
+    "SP_9GAMA": {'description': 'Bovine gammaherpesvirus 6 - Proteome: UP000121539', 'meaning': 'NCBITaxon:1504288'},
+    "SP_9GAMC": {'description': 'Anser fabalis coronavirus NCN2 - Proteome: UP001251675', 'meaning': 'NCBITaxon:2860474'},
+    "SP_9GAMM": {'description': 'Buchnera aphidicola (Cinara tujafilina) - Proteome: UP000006811', 'meaning': 'NCBITaxon:261317', 'aliases': ['Buchnera aphidicola (Cinara tujafilina)']},
+    "SP_9GAST": {'description': 'Elysia crispata (lettuce slug) - Proteome: UP001283361', 'meaning': 'NCBITaxon:231223'},
+    "SP_9GEMI": {'description': 'East African cassava mosaic Zanzibar virus - Proteome: UP000201107', 'meaning': 'NCBITaxon:223275'},
+    "SP_9GLOM": {'description': 'Paraglomus occultum - Proteome: UP000789572', 'meaning': 'NCBITaxon:144539'},
+    "SP_9GOBI": {'description': 'Neogobius melanostomus (round goby) - Proteome: UP000694523', 'meaning': 'NCBITaxon:47308'},
+    "SP_9GRUI": {'description': 'Atlantisia rogersi (Inaccessible Island rail) - Proteome: UP000518911', 'meaning': 'NCBITaxon:2478892'},
+    "SP_9HELI": {'description': 'Helicobacter bilis ATCC 43879 - Proteome: UP000005085', 'meaning': 'NCBITaxon:613026'},
+    "SP_9HELO": {'description': 'Rhynchosporium graminicola - Proteome: UP000178129', 'meaning': 'NCBITaxon:2792576'},
+    "SP_9HEMI": {'description': 'Cinara cedri - Proteome: UP000325440', 'meaning': 'NCBITaxon:506608'},
+    "SP_9HEPA": {'description': 'Duck hepatitis B virus - Proteome: UP000137229', 'meaning': 'NCBITaxon:12639'},
+    "SP_9HEXA": {'description': 'Allacma fusca - Proteome: UP000708208', 'meaning': 'NCBITaxon:39272'},
+    "SP_9HYME": {'description': 'Melipona quadrifasciata - Proteome: UP000053105', 'meaning': 'NCBITaxon:166423'},
+    "SP_9HYPH": {'description': 'Mesorhizobium amorphae CCNWGS0123 - Proteome: UP000002949', 'meaning': 'NCBITaxon:1082933'},
+    "SP_9HYPO": {'description': '[Torrubiella] hemipterigena - Proteome: UP000039046', 'meaning': 'NCBITaxon:1531966'},
+    "SP_9INFA": {'description': 'Influenza A virus (A/California/VRDL364/2009 (mixed) - Proteome: UP000109975', 'meaning': 'NCBITaxon:1049605', 'aliases': ['Influenza A virus (A/California/VRDL364/2009(mixed))']},
+    "SP_9INSE": {'description': 'Cloeon dipterum - Proteome: UP000494165', 'meaning': 'NCBITaxon:197152'},
+    "SP_9LABR": {'description': 'Labrus bergylta (ballan wrasse) - Proteome: UP000261660', 'meaning': 'NCBITaxon:56723'},
+    "SP_ARATH": {'description': 'Arabidopsis thaliana (Thale cress) - Proteome: UP000006548', 'meaning': 'NCBITaxon:3702', 'aliases': ['Thale cress']},
+    "SP_BACSU": {'description': 'Bacillus subtilis subsp. subtilis str. 168 - Proteome: UP000001570', 'meaning': 'NCBITaxon:224308'},
+    "SP_BOVIN": {'description': 'Bos taurus (Cattle) - Proteome: UP000009136', 'meaning': 'NCBITaxon:9913', 'aliases': ['Cattle']},
+    "SP_CAEEL": {'description': 'Caenorhabditis elegans - Proteome: UP000001940', 'meaning': 'NCBITaxon:6239'},
+    "SP_CANLF": {'description': 'Canis lupus familiaris (Dog) - Proteome: UP000805418', 'meaning': 'NCBITaxon:9615', 'aliases': ['Dog']},
+    "SP_CHICK": {'description': 'Gallus gallus (Chicken) - Proteome: UP000000539', 'meaning': 'NCBITaxon:9031', 'aliases': ['Chicken']},
+    "SP_DANRE": {'description': 'Danio rerio (Zebrafish) - Proteome: UP000000437', 'meaning': 'NCBITaxon:7955', 'aliases': ['Zebrafish']},
+    "SP_DROME": {'description': 'Drosophila melanogaster (Fruit fly) - Proteome: UP000000803', 'meaning': 'NCBITaxon:7227', 'aliases': ['Fruit fly']},
+    "SP_ECOLI": {'description': 'Escherichia coli K-12 - Proteome: UP000000625', 'meaning': 'NCBITaxon:83333'},
+    "SP_FELCA": {'description': 'Felis catus (Cat) - Proteome: UP000011712', 'meaning': 'NCBITaxon:9685', 'aliases': ['Cat']},
+    "SP_GORGO": {'description': 'Gorilla gorilla gorilla (Western lowland gorilla) - Proteome: UP000001519', 'meaning': 'NCBITaxon:9593', 'aliases': ['Western lowland gorilla']},
+    "SP_HORSE": {'description': 'Equus caballus (Horse) - Proteome: UP000002281', 'meaning': 'NCBITaxon:9796', 'aliases': ['Horse']},
+    "SP_HUMAN": {'description': 'Homo sapiens (Human) - Proteome: UP000005640', 'meaning': 'NCBITaxon:9606', 'aliases': ['Human']},
+    "SP_MACMU": {'description': 'Macaca mulatta (Rhesus macaque) - Proteome: UP000006718', 'meaning': 'NCBITaxon:9544', 'aliases': ['Rhesus macaque']},
+    "SP_MAIZE": {'description': 'Zea mays (Maize) - Proteome: UP000007305', 'meaning': 'NCBITaxon:4577', 'aliases': ['Maize']},
+    "SP_MOUSE": {'description': 'Mus musculus (Mouse) - Proteome: UP000000589', 'meaning': 'NCBITaxon:10090', 'aliases': ['Mouse']},
+    "SP_ORYSJ": {'description': 'Oryza sativa subsp. japonica (Rice) - Proteome: UP000059680', 'meaning': 'NCBITaxon:39947', 'aliases': ['Rice']},
+    "SP_PANTR": {'description': 'Pan troglodytes (Chimpanzee) - Proteome: UP000002277', 'meaning': 'NCBITaxon:9598', 'aliases': ['Chimpanzee']},
+    "SP_PIG": {'description': 'Sus scrofa (Pig) - Proteome: UP000008227', 'meaning': 'NCBITaxon:9823', 'aliases': ['Pig']},
+    "SP_RABIT": {'description': 'Oryctolagus cuniculus (Rabbit) - Proteome: UP000001811', 'meaning': 'NCBITaxon:9986', 'aliases': ['Rabbit']},
+    "SP_RAT": {'description': 'Rattus norvegicus (Rat) - Proteome: UP000002494', 'meaning': 'NCBITaxon:10116', 'aliases': ['Rat']},
+    "SP_SCHPO": {'description': 'Schizosaccharomyces pombe 972h- (Fission yeast) - Proteome: UP000002485', 'meaning': 'NCBITaxon:284812', 'aliases': ['Fission yeast']},
+    "SP_SHEEP": {'description': 'Ovis aries (Sheep) - Proteome: UP000002356', 'meaning': 'NCBITaxon:9940', 'aliases': ['Sheep']},
+    "SP_XENLA": {'description': 'Xenopus laevis (African clawed frog) - Proteome: UP000186698', 'meaning': 'NCBITaxon:8355', 'aliases': ['African clawed frog']},
+    "SP_XENTR": {'description': 'Xenopus tropicalis (Western clawed frog) - Proteome: UP000008143', 'meaning': 'NCBITaxon:8364', 'aliases': ['Western clawed frog']},
+    "SP_YEAST": {'description': "Saccharomyces cerevisiae S288C (Baker's yeast) - Proteome: UP000002311", 'meaning': 'NCBITaxon:559292', 'aliases': ["Baker's yeast"]},
+    "SP_DICDI": {'description': 'Dictyostelium discoideum (Slime mold) - Proteome: UP000002195', 'meaning': 'NCBITaxon:44689', 'aliases': ['Slime mold']},
+    "SP_HELPY": {'description': 'Helicobacter pylori 26695 - Proteome: UP000000429', 'meaning': 'NCBITaxon:85962'},
+    "SP_LEIMA": {'description': 'Leishmania major strain Friedlin', 'meaning': 'NCBITaxon:347515'},
+    "SP_MEDTR": {'description': 'Medicago truncatula (Barrel medic) - Proteome: UP000002051', 'meaning': 'NCBITaxon:3880', 'aliases': ['Barrel medic']},
+    "SP_MYCTU": {'description': 'Mycobacterium tuberculosis H37Rv - Proteome: UP000001584', 'meaning': 'NCBITaxon:83332'},
+    "SP_NEIME": {'description': 'Neisseria meningitidis MC58 - Proteome: UP000000425', 'meaning': 'NCBITaxon:122586'},
+    "SP_PLAF7": {'description': 'Plasmodium falciparum 3D7 (Malaria parasite) - Proteome: UP000001450', 'meaning': 'NCBITaxon:36329', 'aliases': ['Malaria parasite']},
+    "SP_PSEAE": {'description': 'Pseudomonas aeruginosa PAO1 - Proteome: UP000002438', 'meaning': 'NCBITaxon:208964'},
+    "SP_SOYBN": {'description': 'Glycine max (Soybean) - Proteome: UP000008827', 'meaning': 'NCBITaxon:3847', 'aliases': ['Soybean']},
+    "SP_STAAU": {'description': 'Staphylococcus aureus subsp. aureus NCTC 8325 - Proteome: UP000008816', 'meaning': 'NCBITaxon:93061'},
+    "SP_STRPN": {'description': 'Streptococcus pneumoniae R6 - Proteome: UP000000586', 'meaning': 'NCBITaxon:171101'},
+    "SP_TOXGO": {'description': 'Toxoplasma gondii ME49 - Proteome: UP000001529', 'meaning': 'NCBITaxon:508771'},
+    "SP_TRYB2": {'description': 'Trypanosoma brucei brucei TREU927 - Proteome: UP000008524', 'meaning': 'NCBITaxon:185431'},
+    "SP_WHEAT": {'description': 'Triticum aestivum (Wheat) - Proteome: UP000019116', 'meaning': 'NCBITaxon:4565', 'aliases': ['Wheat']},
+    "SP_PEA": {'description': 'Pisum sativum (Garden pea) - Proteome: UP001058974', 'meaning': 'NCBITaxon:3888', 'aliases': ['Garden pea']},
+    "SP_TOBAC": {'description': 'Nicotiana tabacum (Common tobacco) - Proteome: UP000084051', 'meaning': 'NCBITaxon:4097', 'aliases': ['Common tobacco']},
 }
 
 class LipidCategory(RichEnum):
@@ -9925,6 +10927,106 @@ BMIClassificationEnum._metadata = {
     "OBESE_CLASS_III": {'annotations': {'bmi_range': '≥40.0', 'aliases': 'morbid obesity'}},
 }
 
+class MRIModalityEnum(RichEnum):
+    """
+    MRI imaging modalities and techniques
+    """
+    # Enum members
+    STRUCTURAL_T1 = "STRUCTURAL_T1"
+    STRUCTURAL_T2 = "STRUCTURAL_T2"
+    FLAIR = "FLAIR"
+    BOLD_FMRI = "BOLD_FMRI"
+    ASL = "ASL"
+    DWI = "DWI"
+    DTI = "DTI"
+    PERFUSION_DSC = "PERFUSION_DSC"
+    PERFUSION_DCE = "PERFUSION_DCE"
+    SWI = "SWI"
+    TASK_FMRI = "TASK_FMRI"
+    RESTING_STATE_FMRI = "RESTING_STATE_FMRI"
+    FUNCTIONAL_CONNECTIVITY = "FUNCTIONAL_CONNECTIVITY"
+
+# Set metadata after class creation to avoid it becoming an enum member
+MRIModalityEnum._metadata = {
+    "STRUCTURAL_T1": {'description': 'High-resolution anatomical imaging with T1 contrast', 'meaning': 'NCIT:C116455', 'annotations': {'contrast_mechanism': 'T1 relaxation', 'typical_use': 'anatomical reference, volumetric analysis', 'tissue_contrast': 'good gray/white matter contrast'}},
+    "STRUCTURAL_T2": {'description': 'Structural imaging with T2 contrast', 'meaning': 'NCIT:C116456', 'annotations': {'contrast_mechanism': 'T2 relaxation', 'typical_use': 'pathology detection, CSF visualization', 'tissue_contrast': 'good fluid contrast'}},
+    "FLAIR": {'description': 'T2-weighted sequence with CSF signal suppressed', 'meaning': 'NCIT:C82392', 'annotations': {'contrast_mechanism': 'T2 with fluid suppression', 'typical_use': 'lesion detection, periventricular pathology', 'advantage': 'suppresses CSF signal'}},
+    "BOLD_FMRI": {'description': 'Functional MRI based on blood oxygenation changes', 'meaning': 'NCIT:C17958', 'annotations': {'contrast_mechanism': 'BOLD signal', 'typical_use': 'brain activation mapping', 'temporal_resolution': 'seconds'}},
+    "ASL": {'description': 'Perfusion imaging using magnetically labeled blood', 'meaning': 'NCIT:C116450', 'annotations': {'contrast_mechanism': 'arterial blood labeling', 'typical_use': 'cerebral blood flow measurement', 'advantage': 'no contrast agent required'}},
+    "DWI": {'description': 'Imaging sensitive to water molecule diffusion', 'meaning': 'mesh:D038524', 'annotations': {'contrast_mechanism': 'water diffusion', 'typical_use': 'stroke detection, fiber tracking', 'parameter': 'apparent diffusion coefficient'}},
+    "DTI": {'description': 'Advanced diffusion imaging with directional information', 'meaning': 'NCIT:C64862', 'annotations': {'contrast_mechanism': 'directional diffusion', 'typical_use': 'white matter tractography', 'parameters': 'fractional anisotropy, mean diffusivity'}},
+    "PERFUSION_DSC": {'description': 'Perfusion imaging using contrast agent bolus', 'meaning': 'NCIT:C116459', 'annotations': {'contrast_mechanism': 'contrast agent dynamics', 'typical_use': 'cerebral blood flow, blood volume', 'requires': 'gadolinium contrast'}},
+    "PERFUSION_DCE": {'description': 'Perfusion imaging with pharmacokinetic modeling', 'meaning': 'NCIT:C116458', 'annotations': {'contrast_mechanism': 'contrast enhancement kinetics', 'typical_use': 'blood-brain barrier permeability', 'analysis': 'pharmacokinetic modeling'}},
+    "SWI": {'description': 'High-resolution venography and iron detection', 'meaning': 'NCIT:C121377', 'annotations': {'contrast_mechanism': 'magnetic susceptibility', 'typical_use': 'venography, microbleeds, iron deposits', 'strength': 'high field preferred'}},
+    "TASK_FMRI": {'description': 'fMRI during specific cognitive or motor tasks', 'meaning': 'NCIT:C178023', 'annotations': {'paradigm': 'stimulus-response', 'typical_use': 'localization of brain functions', 'analysis': 'statistical parametric mapping'}},
+    "RESTING_STATE_FMRI": {'description': 'fMRI acquired at rest without explicit tasks', 'meaning': 'NCIT:C178024', 'annotations': {'paradigm': 'no task', 'typical_use': 'functional connectivity analysis', 'networks': 'default mode, attention, executive'}},
+    "FUNCTIONAL_CONNECTIVITY": {'description': 'Analysis of temporal correlations between brain regions', 'meaning': 'NCIT:C116454', 'annotations': {'analysis_type': 'connectivity mapping', 'typical_use': 'network analysis', 'metric': 'correlation coefficients'}},
+}
+
+class MRISequenceTypeEnum(RichEnum):
+    """
+    MRI pulse sequence types
+    """
+    # Enum members
+    GRADIENT_ECHO = "GRADIENT_ECHO"
+    SPIN_ECHO = "SPIN_ECHO"
+    EPI = "EPI"
+    MPRAGE = "MPRAGE"
+    SPACE = "SPACE"
+    TRUFI = "TRUFI"
+
+# Set metadata after class creation to avoid it becoming an enum member
+MRISequenceTypeEnum._metadata = {
+    "GRADIENT_ECHO": {'description': 'Fast imaging sequence using gradient reversal', 'annotations': {'speed': 'fast', 'typical_use': 'T2*, functional imaging', 'artifact_sensitivity': 'susceptible to magnetic field inhomogeneity'}},
+    "SPIN_ECHO": {'description': 'Sequence using 180-degree refocusing pulse', 'annotations': {'speed': 'slower', 'typical_use': 'T2 imaging, reduced artifacts', 'artifact_resistance': 'good'}},
+    "EPI": {'description': 'Ultrafast imaging sequence', 'annotations': {'speed': 'very fast', 'typical_use': 'functional MRI, diffusion imaging', 'temporal_resolution': 'subsecond'}},
+    "MPRAGE": {'description': 'T1-weighted 3D sequence with preparation pulse', 'annotations': {'image_type': 'T1-weighted', 'typical_use': 'high-resolution anatomical imaging', 'dimension': '3D'}},
+    "SPACE": {'description': '3D turbo spin echo sequence', 'annotations': {'image_type': 'T2-weighted', 'typical_use': 'high-resolution T2 imaging', 'dimension': '3D'}},
+    "TRUFI": {'description': 'Balanced steady-state free precession sequence', 'annotations': {'contrast': 'mixed T1/T2', 'typical_use': 'cardiac imaging, fast scanning', 'signal': 'high'}},
+}
+
+class MRIContrastTypeEnum(RichEnum):
+    """
+    MRI image contrast mechanisms
+    """
+    # Enum members
+    T1_WEIGHTED = "T1_WEIGHTED"
+    T2_WEIGHTED = "T2_WEIGHTED"
+    T2_STAR = "T2_STAR"
+    PROTON_DENSITY = "PROTON_DENSITY"
+    DIFFUSION_WEIGHTED = "DIFFUSION_WEIGHTED"
+    PERFUSION_WEIGHTED = "PERFUSION_WEIGHTED"
+
+# Set metadata after class creation to avoid it becoming an enum member
+MRIContrastTypeEnum._metadata = {
+    "T1_WEIGHTED": {'description': 'Image contrast based on T1 relaxation times', 'annotations': {'tissue_contrast': 'gray matter darker than white matter', 'typical_use': 'anatomical structure'}},
+    "T2_WEIGHTED": {'description': 'Image contrast based on T2 relaxation times', 'annotations': {'tissue_contrast': 'CSF bright, gray matter brighter than white', 'typical_use': 'pathology detection'}},
+    "T2_STAR": {'description': 'Image contrast sensitive to magnetic susceptibility', 'annotations': {'sensitivity': 'blood, iron, air-tissue interfaces', 'typical_use': 'functional imaging, venography'}},
+    "PROTON_DENSITY": {'description': 'Image contrast based on hydrogen density', 'annotations': {'tissue_contrast': 'proportional to water content', 'typical_use': 'joint imaging, some brain pathology'}},
+    "DIFFUSION_WEIGHTED": {'description': 'Image contrast based on water diffusion', 'annotations': {'sensitivity': 'molecular motion', 'typical_use': 'stroke, tumor cellularity'}},
+    "PERFUSION_WEIGHTED": {'description': 'Image contrast based on blood flow dynamics', 'annotations': {'measurement': 'cerebral blood flow/volume', 'typical_use': 'stroke, tumor vascularity'}},
+}
+
+class FMRIParadigmTypeEnum(RichEnum):
+    """
+    fMRI experimental paradigm types
+    """
+    # Enum members
+    BLOCK_DESIGN = "BLOCK_DESIGN"
+    EVENT_RELATED = "EVENT_RELATED"
+    MIXED_DESIGN = "MIXED_DESIGN"
+    RESTING_STATE = "RESTING_STATE"
+    NATURALISTIC = "NATURALISTIC"
+
+# Set metadata after class creation to avoid it becoming an enum member
+FMRIParadigmTypeEnum._metadata = {
+    "BLOCK_DESIGN": {'description': 'Alternating blocks of task and rest conditions', 'annotations': {'duration': 'typically 15-30 seconds per block', 'advantage': 'high statistical power', 'typical_use': 'robust activation detection'}},
+    "EVENT_RELATED": {'description': 'Brief stimuli presented at varying intervals', 'annotations': {'duration': 'single events (seconds)', 'advantage': 'flexible timing, event separation', 'typical_use': 'studying cognitive processes'}},
+    "MIXED_DESIGN": {'description': 'Combination of block and event-related elements', 'annotations': {'flexibility': 'high', 'advantage': 'sustained and transient responses', 'complexity': 'high'}},
+    "RESTING_STATE": {'description': 'No explicit task, spontaneous brain activity', 'annotations': {'instruction': 'rest, eyes open/closed', 'duration': 'typically 5-10 minutes', 'analysis': 'functional connectivity'}},
+    "NATURALISTIC": {'description': 'Ecologically valid stimuli (movies, stories)', 'annotations': {'stimulus_type': 'complex, realistic', 'advantage': 'ecological validity', 'analysis': 'inter-subject correlation'}},
+}
+
 class RaceOMB1997Enum(RichEnum):
     """
     Race categories following OMB 1997 standards used by NIH and federal agencies.
@@ -11258,6 +12360,1206 @@ OpenSourceMaturityLevel._metadata = {
     "MATURE": {'description': 'Well-established with proven governance'},
     "DECLINING": {'description': 'Decreasing activity and maintenance'},
     "ARCHIVED": {'description': 'No longer actively maintained'},
+}
+
+class LegalEntityTypeEnum(RichEnum):
+    """
+    Legal entity types for business organizations
+    """
+    # Enum members
+    SOLE_PROPRIETORSHIP = "SOLE_PROPRIETORSHIP"
+    GENERAL_PARTNERSHIP = "GENERAL_PARTNERSHIP"
+    LIMITED_PARTNERSHIP = "LIMITED_PARTNERSHIP"
+    LIMITED_LIABILITY_PARTNERSHIP = "LIMITED_LIABILITY_PARTNERSHIP"
+    LIMITED_LIABILITY_COMPANY = "LIMITED_LIABILITY_COMPANY"
+    SINGLE_MEMBER_LLC = "SINGLE_MEMBER_LLC"
+    MULTI_MEMBER_LLC = "MULTI_MEMBER_LLC"
+    C_CORPORATION = "C_CORPORATION"
+    S_CORPORATION = "S_CORPORATION"
+    B_CORPORATION = "B_CORPORATION"
+    PUBLIC_CORPORATION = "PUBLIC_CORPORATION"
+    PRIVATE_CORPORATION = "PRIVATE_CORPORATION"
+    NONPROFIT_CORPORATION = "NONPROFIT_CORPORATION"
+    COOPERATIVE = "COOPERATIVE"
+    JOINT_VENTURE = "JOINT_VENTURE"
+    HOLDING_COMPANY = "HOLDING_COMPANY"
+    SUBSIDIARY = "SUBSIDIARY"
+    FRANCHISE = "FRANCHISE"
+    GOVERNMENT_ENTITY = "GOVERNMENT_ENTITY"
+
+# Set metadata after class creation to avoid it becoming an enum member
+LegalEntityTypeEnum._metadata = {
+    "SOLE_PROPRIETORSHIP": {'description': 'Business owned and operated by single individual', 'annotations': {'legal_separation': 'no separation from owner', 'liability': 'unlimited personal liability', 'taxation': 'pass-through to personal returns', 'complexity': 'simplest structure', 'registration': 'minimal requirements'}},
+    "GENERAL_PARTNERSHIP": {'description': 'Business owned by two or more partners sharing responsibilities', 'annotations': {'ownership': 'shared among general partners', 'liability': 'unlimited personal liability for all partners', 'taxation': 'pass-through to partners', 'management': 'shared management responsibilities'}},
+    "LIMITED_PARTNERSHIP": {'description': 'Partnership with general and limited partners', 'annotations': {'partner_types': 'general partners and limited partners', 'liability': 'general partners have unlimited liability', 'limited_liability': 'limited partners have liability protection', 'management': 'general partners manage operations'}},
+    "LIMITED_LIABILITY_PARTNERSHIP": {'description': 'Partnership providing liability protection to all partners', 'annotations': {'liability': 'limited liability for all partners', 'professional_use': 'often used by professional services', 'taxation': 'pass-through taxation', 'management': 'flexible management structure'}},
+    "LIMITED_LIABILITY_COMPANY": {'description': 'Hybrid entity combining corporation and partnership features', 'annotations': {'liability': 'limited liability protection', 'taxation': 'flexible tax election options', 'management': 'flexible management structure', 'formality': 'fewer formal requirements than corporations'}},
+    "SINGLE_MEMBER_LLC": {'description': 'LLC with only one owner/member', 'annotations': {'ownership': 'single member', 'liability': 'limited liability protection', 'taxation': 'disregarded entity for tax purposes', 'simplicity': 'simpler than multi-member LLC'}},
+    "MULTI_MEMBER_LLC": {'description': 'LLC with multiple owners/members', 'annotations': {'ownership': 'multiple members', 'liability': 'limited liability protection', 'taxation': 'partnership taxation by default', 'operating_agreement': 'recommended operating agreement'}},
+    "C_CORPORATION": {'description': 'Traditional corporation with double taxation', 'annotations': {'legal_status': 'separate legal entity', 'liability': 'limited liability for shareholders', 'taxation': 'double taxation (corporate and dividend)', 'governance': 'formal board and officer structure', 'stock': 'can issue multiple classes of stock'}},
+    "S_CORPORATION": {'description': 'Corporation electing pass-through taxation', 'annotations': {'taxation': 'pass-through to shareholders', 'shareholders': 'limited to 100 shareholders', 'stock_types': 'single class of stock only', 'eligibility': 'restrictions on shareholder types'}},
+    "B_CORPORATION": {'description': 'Corporation with social and environmental mission', 'annotations': {'purpose': 'profit and public benefit', 'accountability': 'stakeholder governance requirements', 'transparency': 'annual benefit reporting', 'certification': 'optional third-party certification'}},
+    "PUBLIC_CORPORATION": {'description': 'Corporation with publicly traded shares', 'annotations': {'shares': 'publicly traded on stock exchanges', 'regulation': 'SEC reporting requirements', 'governance': 'extensive governance requirements', 'liquidity': 'high share liquidity'}},
+    "PRIVATE_CORPORATION": {'description': 'Corporation with privately held shares', 'annotations': {'shares': 'privately held shares', 'shareholders': 'limited number of shareholders', 'regulation': 'fewer regulatory requirements', 'liquidity': 'limited share liquidity'}},
+    "NONPROFIT_CORPORATION": {'description': 'Corporation organized for charitable or public purposes', 'annotations': {'purpose': 'charitable, educational, or public benefit', 'taxation': 'tax-exempt status possible', 'profit_distribution': 'no profit distribution to members', 'governance': 'board of directors governance'}},
+    "COOPERATIVE": {'description': 'Member-owned and democratically controlled organization', 'annotations': {'ownership': 'member ownership', 'control': 'democratic member control', 'benefits': 'benefits proportional to participation', 'purpose': 'mutual benefit of members'}},
+    "JOINT_VENTURE": {'description': 'Temporary partnership for specific project or purpose', 'annotations': {'duration': 'temporary or project-specific', 'purpose': 'specific business objective', 'ownership': 'shared ownership of venture', 'liability': 'depends on structure chosen'}},
+    "HOLDING_COMPANY": {'description': 'Company that owns controlling interests in other companies', 'annotations': {'purpose': 'own and control subsidiary companies', 'operations': 'minimal direct operations', 'structure': 'parent-subsidiary relationships', 'control': 'controls subsidiaries through ownership'}},
+    "SUBSIDIARY": {'description': 'Company controlled by another company (parent)', 'annotations': {'control': 'controlled by parent company', 'ownership': 'majority owned by parent', 'operations': 'may operate independently', 'liability': 'separate legal entity'}},
+    "FRANCHISE": {'description': "Business operating under franchisor's brand and system", 'annotations': {'relationship': 'franchisor-franchisee relationship', 'brand': 'operates under established brand', 'system': "follows franchisor's business system", 'fees': 'pays franchise fees and royalties'}},
+    "GOVERNMENT_ENTITY": {'description': 'Entity owned and operated by government', 'annotations': {'ownership': 'government ownership', 'purpose': 'public service or policy implementation', 'regulation': 'government regulations and oversight', 'funding': 'government funding sources'}},
+}
+
+class OrganizationalStructureEnum(RichEnum):
+    """
+    Types of organizational hierarchy and reporting structures
+    """
+    # Enum members
+    HIERARCHICAL = "HIERARCHICAL"
+    FLAT = "FLAT"
+    MATRIX = "MATRIX"
+    FUNCTIONAL = "FUNCTIONAL"
+    DIVISIONAL = "DIVISIONAL"
+    NETWORK = "NETWORK"
+    TEAM_BASED = "TEAM_BASED"
+    VIRTUAL = "VIRTUAL"
+    HYBRID = "HYBRID"
+
+# Set metadata after class creation to avoid it becoming an enum member
+OrganizationalStructureEnum._metadata = {
+    "HIERARCHICAL": {'description': 'Traditional pyramid structure with clear chain of command', 'annotations': {'authority_flow': 'top-down authority', 'communication': 'vertical communication channels', 'levels': 'multiple management levels', 'control': 'centralized control', 'decision_making': 'centralized decision making'}},
+    "FLAT": {'description': 'Minimal hierarchical levels with broader spans of control', 'annotations': {'levels': 'few hierarchical levels', 'span_of_control': 'broad spans of control', 'communication': 'direct communication', 'decision_making': 'decentralized decision making', 'flexibility': 'high flexibility'}},
+    "MATRIX": {'description': 'Dual reporting relationships combining functional and project lines', 'annotations': {'reporting': 'dual reporting relationships', 'authority': 'shared authority between managers', 'flexibility': 'high project flexibility', 'complexity': 'increased complexity', 'communication': 'multidirectional communication'}},
+    "FUNCTIONAL": {'description': 'Organization by business functions or departments', 'annotations': {'grouping': 'by business function', 'specialization': 'functional specialization', 'efficiency': 'operational efficiency', 'coordination': 'vertical coordination', 'expertise': 'concentrated expertise'}},
+    "DIVISIONAL": {'description': 'Organization by product lines, markets, or geography', 'annotations': {'grouping': 'by products, markets, or geography', 'autonomy': 'divisional autonomy', 'focus': 'market or product focus', 'coordination': 'horizontal coordination', 'responsibility': 'profit center responsibility'}},
+    "NETWORK": {'description': 'Flexible structure with interconnected relationships', 'annotations': {'relationships': 'network of relationships', 'flexibility': 'high flexibility', 'boundaries': 'blurred organizational boundaries', 'collaboration': 'extensive collaboration', 'adaptability': 'high adaptability'}},
+    "TEAM_BASED": {'description': 'Organization around self-managing teams', 'annotations': {'unit': 'teams as basic organizational unit', 'management': 'self-managing teams', 'collaboration': 'high collaboration', 'decision_making': 'team-based decision making', 'flexibility': 'operational flexibility'}},
+    "VIRTUAL": {'description': 'Geographically dispersed organization connected by technology', 'annotations': {'location': 'geographically dispersed', 'technology': 'technology-enabled communication', 'flexibility': 'location flexibility', 'coordination': 'virtual coordination', 'boundaries': 'minimal physical boundaries'}},
+    "HYBRID": {'description': 'Combination of multiple organizational structures', 'annotations': {'combination': 'multiple structure types', 'flexibility': 'structural flexibility', 'adaptation': 'adaptable to different needs', 'complexity': 'increased structural complexity', 'customization': 'customized to organization needs'}},
+}
+
+class ManagementLevelEnum(RichEnum):
+    """
+    Hierarchical levels within organizational management structure
+    """
+    # Enum members
+    BOARD_OF_DIRECTORS = "BOARD_OF_DIRECTORS"
+    C_SUITE = "C_SUITE"
+    SENIOR_EXECUTIVE = "SENIOR_EXECUTIVE"
+    VICE_PRESIDENT = "VICE_PRESIDENT"
+    DIRECTOR = "DIRECTOR"
+    MANAGER = "MANAGER"
+    SUPERVISOR = "SUPERVISOR"
+    TEAM_LEAD = "TEAM_LEAD"
+    SENIOR_INDIVIDUAL_CONTRIBUTOR = "SENIOR_INDIVIDUAL_CONTRIBUTOR"
+    INDIVIDUAL_CONTRIBUTOR = "INDIVIDUAL_CONTRIBUTOR"
+    ENTRY_LEVEL = "ENTRY_LEVEL"
+
+# Set metadata after class creation to avoid it becoming an enum member
+ManagementLevelEnum._metadata = {
+    "BOARD_OF_DIRECTORS": {'description': 'Governing body elected by shareholders', 'annotations': {'authority': 'highest governance authority', 'responsibility': 'fiduciary responsibility to shareholders', 'oversight': 'strategic oversight and control', 'composition': 'independent and inside directors'}},
+    "C_SUITE": {'description': 'Top executive leadership team', 'annotations': {'level': 'top executive level', 'scope': 'organization-wide responsibility', 'titles': 'CEO, CFO, COO, CTO, etc.', 'accountability': 'accountable to board of directors'}},
+    "SENIOR_EXECUTIVE": {'description': 'Senior leadership below C-suite level', 'annotations': {'level': 'senior leadership', 'scope': 'major business unit or function', 'titles': 'EVP, SVP, General Manager', 'reporting': 'reports to C-suite'}},
+    "VICE_PRESIDENT": {'description': 'Senior management responsible for major divisions', 'annotations': {'level': 'senior management', 'scope': 'division or major function', 'authority': 'significant decision-making authority', 'titles': 'VP, Assistant VP'}},
+    "DIRECTOR": {'description': 'Management responsible for departments or major programs', 'annotations': {'level': 'middle management', 'scope': 'department or program', 'responsibility': 'departmental leadership', 'oversight': 'manages multiple managers'}},
+    "MANAGER": {'description': 'Supervisory role managing teams or operations', 'annotations': {'level': 'middle management', 'scope': 'team or operational unit', 'responsibility': 'day-to-day operations', 'supervision': 'manages individual contributors'}},
+    "SUPERVISOR": {'description': 'First-line management overseeing frontline employees', 'annotations': {'level': 'first-line management', 'scope': 'small team or shift', 'responsibility': 'direct supervision', 'interface': 'employee-management interface'}},
+    "TEAM_LEAD": {'description': 'Lead role within team without formal management authority', 'annotations': {'level': 'senior individual contributor', 'authority': 'informal authority', 'responsibility': 'team coordination', 'expertise': 'technical or project leadership'}},
+    "SENIOR_INDIVIDUAL_CONTRIBUTOR": {'description': 'Experienced professional without management responsibilities', 'annotations': {'level': 'senior professional', 'expertise': 'specialized expertise', 'mentoring': 'may mentor junior staff', 'projects': 'leads complex projects'}},
+    "INDIVIDUAL_CONTRIBUTOR": {'description': 'Professional or specialist role', 'annotations': {'level': 'professional', 'responsibility': 'individual work output', 'specialization': 'functional specialization', 'career_path': 'professional career track'}},
+    "ENTRY_LEVEL": {'description': 'Beginning professional or support roles', 'annotations': {'experience': 'minimal professional experience', 'development': 'learning and development focus', 'supervision': 'close supervision', 'growth_potential': 'career growth opportunities'}},
+}
+
+class CorporateGovernanceRoleEnum(RichEnum):
+    """
+    Roles within corporate governance structure
+    """
+    # Enum members
+    CHAIRMAN_OF_BOARD = "CHAIRMAN_OF_BOARD"
+    LEAD_INDEPENDENT_DIRECTOR = "LEAD_INDEPENDENT_DIRECTOR"
+    INDEPENDENT_DIRECTOR = "INDEPENDENT_DIRECTOR"
+    INSIDE_DIRECTOR = "INSIDE_DIRECTOR"
+    AUDIT_COMMITTEE_CHAIR = "AUDIT_COMMITTEE_CHAIR"
+    COMPENSATION_COMMITTEE_CHAIR = "COMPENSATION_COMMITTEE_CHAIR"
+    NOMINATING_COMMITTEE_CHAIR = "NOMINATING_COMMITTEE_CHAIR"
+    CHIEF_EXECUTIVE_OFFICER = "CHIEF_EXECUTIVE_OFFICER"
+    CHIEF_FINANCIAL_OFFICER = "CHIEF_FINANCIAL_OFFICER"
+    CHIEF_OPERATING_OFFICER = "CHIEF_OPERATING_OFFICER"
+    CORPORATE_SECRETARY = "CORPORATE_SECRETARY"
+
+# Set metadata after class creation to avoid it becoming an enum member
+CorporateGovernanceRoleEnum._metadata = {
+    "CHAIRMAN_OF_BOARD": {'description': 'Leader of board of directors', 'annotations': {'leadership': 'board leadership', 'meetings': 'chairs board meetings', 'interface': 'shareholder interface', 'governance': 'governance oversight'}},
+    "LEAD_INDEPENDENT_DIRECTOR": {'description': 'Senior independent director when chairman is not independent', 'annotations': {'independence': 'independent from management', 'leadership': 'leads independent directors', 'oversight': 'additional oversight role', 'communication': 'shareholder communication'}},
+    "INDEPENDENT_DIRECTOR": {'description': 'Board member independent from company management', 'annotations': {'independence': 'independent from management', 'objectivity': 'objective oversight', 'committees': 'serves on key committees', 'governance': 'independent governance perspective'}},
+    "INSIDE_DIRECTOR": {'description': 'Board member who is also company employee or has material relationship', 'annotations': {'relationship': 'material relationship with company', 'expertise': 'insider knowledge', 'perspective': 'management perspective', 'potential_conflicts': 'potential conflicts of interest'}},
+    "AUDIT_COMMITTEE_CHAIR": {'description': "Chair of board's audit committee", 'annotations': {'committee': 'audit committee leadership', 'oversight': 'financial oversight', 'independence': 'must be independent', 'expertise': 'financial expertise required'}},
+    "COMPENSATION_COMMITTEE_CHAIR": {'description': "Chair of board's compensation committee", 'annotations': {'committee': 'compensation committee leadership', 'responsibility': 'executive compensation oversight', 'independence': 'must be independent', 'alignment': 'shareholder interest alignment'}},
+    "NOMINATING_COMMITTEE_CHAIR": {'description': "Chair of board's nominating and governance committee", 'annotations': {'committee': 'nominating committee leadership', 'responsibility': 'board composition and governance', 'succession': 'leadership succession planning', 'governance': 'governance best practices'}},
+    "CHIEF_EXECUTIVE_OFFICER": {'description': 'Highest-ranking executive officer', 'annotations': {'authority': 'highest executive authority', 'strategy': 'strategic leadership', 'accountability': 'accountable to board', 'representation': 'company representation'}},
+    "CHIEF_FINANCIAL_OFFICER": {'description': 'Senior executive responsible for financial management', 'annotations': {'responsibility': 'financial management', 'reporting': 'financial reporting oversight', 'compliance': 'financial compliance', 'strategy': 'financial strategy'}},
+    "CHIEF_OPERATING_OFFICER": {'description': 'Senior executive responsible for operations', 'annotations': {'responsibility': 'operational management', 'execution': 'strategy execution', 'efficiency': 'operational efficiency', 'coordination': 'cross-functional coordination'}},
+    "CORPORATE_SECRETARY": {'description': 'Officer responsible for corporate records and governance compliance', 'annotations': {'records': 'corporate records maintenance', 'compliance': 'governance compliance', 'meetings': 'board meeting coordination', 'legal': 'legal compliance oversight'}},
+}
+
+class BusinessOwnershipTypeEnum(RichEnum):
+    """
+    Types of business ownership structures
+    """
+    # Enum members
+    PRIVATE_OWNERSHIP = "PRIVATE_OWNERSHIP"
+    PUBLIC_OWNERSHIP = "PUBLIC_OWNERSHIP"
+    FAMILY_OWNERSHIP = "FAMILY_OWNERSHIP"
+    EMPLOYEE_OWNERSHIP = "EMPLOYEE_OWNERSHIP"
+    INSTITUTIONAL_OWNERSHIP = "INSTITUTIONAL_OWNERSHIP"
+    GOVERNMENT_OWNERSHIP = "GOVERNMENT_OWNERSHIP"
+    FOREIGN_OWNERSHIP = "FOREIGN_OWNERSHIP"
+    JOINT_OWNERSHIP = "JOINT_OWNERSHIP"
+
+# Set metadata after class creation to avoid it becoming an enum member
+BusinessOwnershipTypeEnum._metadata = {
+    "PRIVATE_OWNERSHIP": {'description': 'Business owned by private individuals or entities', 'annotations': {'ownership': 'private individuals or entities', 'control': 'private control', 'capital': 'private capital sources', 'disclosure': 'limited disclosure requirements'}},
+    "PUBLIC_OWNERSHIP": {'description': 'Business with publicly traded ownership shares', 'annotations': {'ownership': 'public shareholders', 'trading': 'publicly traded shares', 'regulation': 'extensive regulatory requirements', 'disclosure': 'public disclosure requirements'}},
+    "FAMILY_OWNERSHIP": {'description': 'Business owned and controlled by family members', 'annotations': {'ownership': 'family members', 'succession': 'family succession planning', 'values': 'family values integration', 'long_term': 'long-term orientation'}},
+    "EMPLOYEE_OWNERSHIP": {'description': 'Business owned by employees through stock or cooperative structure', 'annotations': {'ownership': 'employee owners', 'participation': 'employee participation', 'alignment': 'ownership-management alignment', 'structure': 'ESOP or cooperative structure'}},
+    "INSTITUTIONAL_OWNERSHIP": {'description': 'Business owned by institutional investors', 'annotations': {'ownership': 'institutional investors', 'professional': 'professional management', 'capital': 'institutional capital', 'governance': 'institutional governance'}},
+    "GOVERNMENT_OWNERSHIP": {'description': 'Business owned by government entities', 'annotations': {'ownership': 'government entities', 'purpose': 'public policy objectives', 'regulation': 'government oversight', 'funding': 'public funding'}},
+    "FOREIGN_OWNERSHIP": {'description': 'Business owned by foreign individuals or entities', 'annotations': {'ownership': 'foreign entities', 'regulation': 'foreign investment regulations', 'capital': 'foreign capital', 'compliance': 'international compliance'}},
+    "JOINT_OWNERSHIP": {'description': 'Business owned jointly by multiple parties', 'annotations': {'ownership': 'multiple ownership parties', 'agreements': 'joint ownership agreements', 'governance': 'shared governance', 'coordination': 'ownership coordination'}},
+}
+
+class BusinessSizeClassificationEnum(RichEnum):
+    """
+    Size classifications for business entities
+    """
+    # Enum members
+    MICRO_BUSINESS = "MICRO_BUSINESS"
+    SMALL_BUSINESS = "SMALL_BUSINESS"
+    MEDIUM_BUSINESS = "MEDIUM_BUSINESS"
+    LARGE_BUSINESS = "LARGE_BUSINESS"
+    MULTINATIONAL_CORPORATION = "MULTINATIONAL_CORPORATION"
+    FORTUNE_500 = "FORTUNE_500"
+
+# Set metadata after class creation to avoid it becoming an enum member
+BusinessSizeClassificationEnum._metadata = {
+    "MICRO_BUSINESS": {'description': 'Very small business with minimal employees and revenue', 'annotations': {'employees': 'typically 1-9 employees', 'revenue': 'very low revenue', 'characteristics': 'home-based or small office', 'support': 'minimal administrative support'}},
+    "SMALL_BUSINESS": {'description': 'Small business as defined by SBA standards', 'annotations': {'employees': 'varies by industry (typically <500)', 'revenue': 'varies by industry', 'sba_definition': 'meets SBA size standards', 'characteristics': 'independently owned and operated'}},
+    "MEDIUM_BUSINESS": {'description': 'Mid-sized business between small and large classifications', 'annotations': {'employees': 'typically 500-1500 employees', 'revenue': 'moderate revenue levels', 'characteristics': 'regional or specialized market presence', 'structure': 'more formal organizational structure'}},
+    "LARGE_BUSINESS": {'description': 'Major corporation with significant operations', 'annotations': {'employees': '>1500 employees', 'revenue': 'high revenue levels', 'market_presence': 'national or international presence', 'structure': 'complex organizational structure'}},
+    "MULTINATIONAL_CORPORATION": {'description': 'Large corporation operating in multiple countries', 'annotations': {'geographic_scope': 'multiple countries', 'complexity': 'high operational complexity', 'structure': 'global organizational structure', 'coordination': 'international coordination'}},
+    "FORTUNE_500": {'description': 'Among the 500 largest US corporations by revenue', 'annotations': {'ranking': 'Fortune 500 list', 'revenue': 'highest revenue levels', 'market_position': 'market leadership positions', 'recognition': 'prestigious business recognition'}},
+}
+
+class BusinessLifecycleStageEnum(RichEnum):
+    """
+    Stages in business development lifecycle
+    """
+    # Enum members
+    CONCEPT_STAGE = "CONCEPT_STAGE"
+    STARTUP_STAGE = "STARTUP_STAGE"
+    GROWTH_STAGE = "GROWTH_STAGE"
+    EXPANSION_STAGE = "EXPANSION_STAGE"
+    MATURITY_STAGE = "MATURITY_STAGE"
+    DECLINE_STAGE = "DECLINE_STAGE"
+    TURNAROUND_STAGE = "TURNAROUND_STAGE"
+    EXIT_STAGE = "EXIT_STAGE"
+
+# Set metadata after class creation to avoid it becoming an enum member
+BusinessLifecycleStageEnum._metadata = {
+    "CONCEPT_STAGE": {'description': 'Initial business idea development and validation', 'annotations': {'focus': 'idea development and validation', 'activities': 'market research, business planning', 'funding': 'personal or angel funding', 'risk': 'highest risk level'}},
+    "STARTUP_STAGE": {'description': 'Business launch and early operations', 'annotations': {'focus': 'product development and market entry', 'activities': 'building initial customer base', 'funding': 'seed funding, early investments', 'growth': 'rapid learning and adaptation'}},
+    "GROWTH_STAGE": {'description': 'Rapid expansion and scaling operations', 'annotations': {'focus': 'scaling operations and market expansion', 'activities': 'increasing market share', 'funding': 'venture capital, growth financing', 'challenges': 'scaling challenges'}},
+    "EXPANSION_STAGE": {'description': 'Market expansion and diversification', 'annotations': {'focus': 'market expansion and diversification', 'activities': 'new markets, products, or services', 'funding': 'growth capital, strategic investments', 'sophistication': 'increased operational sophistication'}},
+    "MATURITY_STAGE": {'description': 'Stable operations with established market position', 'annotations': {'focus': 'operational efficiency and market defense', 'activities': 'defending market position', 'funding': 'self-funding, debt financing', 'stability': 'stable cash flows'}},
+    "DECLINE_STAGE": {'description': 'Decreasing market relevance or performance', 'annotations': {'focus': 'cost reduction and restructuring', 'activities': 'turnaround efforts or exit planning', 'challenges': 'declining revenues or relevance', 'options': 'restructuring, sale, or closure'}},
+    "TURNAROUND_STAGE": {'description': 'Recovery efforts from decline or crisis', 'annotations': {'focus': 'crisis management and recovery', 'activities': 'restructuring and repositioning', 'leadership': 'turnaround management', 'urgency': 'urgent transformation needs'}},
+    "EXIT_STAGE": {'description': 'Business sale, merger, or closure', 'annotations': {'focus': 'exit strategy execution', 'activities': 'sale, merger, or liquidation', 'valuation': 'business valuation', 'transition': 'ownership transition'}},
+}
+
+class NAICSSectorEnum(RichEnum):
+    """
+    NAICS two-digit sector codes (North American Industry Classification System)
+    """
+    # Enum members
+    SECTOR_11 = "SECTOR_11"
+    SECTOR_21 = "SECTOR_21"
+    SECTOR_22 = "SECTOR_22"
+    SECTOR_23 = "SECTOR_23"
+    SECTOR_31_33 = "SECTOR_31_33"
+    SECTOR_42 = "SECTOR_42"
+    SECTOR_44_45 = "SECTOR_44_45"
+    SECTOR_48_49 = "SECTOR_48_49"
+    SECTOR_51 = "SECTOR_51"
+    SECTOR_52 = "SECTOR_52"
+    SECTOR_53 = "SECTOR_53"
+    SECTOR_54 = "SECTOR_54"
+    SECTOR_55 = "SECTOR_55"
+    SECTOR_56 = "SECTOR_56"
+    SECTOR_61 = "SECTOR_61"
+    SECTOR_62 = "SECTOR_62"
+    SECTOR_71 = "SECTOR_71"
+    SECTOR_72 = "SECTOR_72"
+    SECTOR_81 = "SECTOR_81"
+    SECTOR_92 = "SECTOR_92"
+
+# Set metadata after class creation to avoid it becoming an enum member
+NAICSSectorEnum._metadata = {
+    "SECTOR_11": {'description': 'Establishments engaged in agriculture, forestry, fishing, and hunting', 'annotations': {'naics_code': '11', 'activities': 'crop production, animal production, forestry, fishing', 'economic_base': 'natural resource extraction and production'}},
+    "SECTOR_21": {'description': 'Establishments engaged in extracting natural resources', 'annotations': {'naics_code': '21', 'activities': 'oil and gas extraction, mining, support activities', 'economic_base': 'natural resource extraction'}},
+    "SECTOR_22": {'description': 'Establishments engaged in providing utilities', 'annotations': {'naics_code': '22', 'activities': 'electric power, natural gas, water, sewage, waste management', 'regulation': 'heavily regulated'}},
+    "SECTOR_23": {'description': 'Establishments engaged in construction activities', 'annotations': {'naics_code': '23', 'activities': 'building construction, heavy construction, specialty trade contractors', 'cyclical': 'highly cyclical industry'}},
+    "SECTOR_31_33": {'description': 'Establishments engaged in manufacturing goods', 'annotations': {'naics_code': '31-33', 'activities': 'food, chemicals, machinery, transportation equipment', 'value_added': 'transforms materials into finished goods'}},
+    "SECTOR_42": {'description': 'Establishments engaged in wholesale distribution', 'annotations': {'naics_code': '42', 'activities': 'merchant wholesalers, agents and brokers', 'function': 'intermediary between manufacturers and retailers'}},
+    "SECTOR_44_45": {'description': 'Establishments engaged in retail sales to consumers', 'annotations': {'naics_code': '44-45', 'activities': 'motor vehicle dealers, food stores, general merchandise', 'customer': 'sells to final consumers'}},
+    "SECTOR_48_49": {'description': 'Establishments providing transportation and warehousing services', 'annotations': {'naics_code': '48-49', 'activities': 'air, rail, water, truck transportation, warehousing', 'infrastructure': 'transportation infrastructure dependent'}},
+    "SECTOR_51": {'description': 'Establishments in information industries', 'annotations': {'naics_code': '51', 'activities': 'publishing, broadcasting, telecommunications, data processing', 'technology': 'information technology and content'}},
+    "SECTOR_52": {'description': 'Establishments providing financial services', 'annotations': {'naics_code': '52', 'activities': 'banking, securities, insurance, funds and trusts', 'regulation': 'highly regulated financial sector'}},
+    "SECTOR_53": {'description': 'Establishments engaged in real estate and rental activities', 'annotations': {'naics_code': '53', 'activities': 'real estate, rental and leasing services', 'asset_type': 'real and personal property'}},
+    "SECTOR_54": {'description': 'Establishments providing professional services', 'annotations': {'naics_code': '54', 'activities': 'legal, accounting, engineering, consulting, research', 'knowledge_based': 'knowledge and skill intensive'}},
+    "SECTOR_55": {'description': 'Establishments serving as holding companies or managing enterprises', 'annotations': {'naics_code': '55', 'activities': 'holding companies, corporate management', 'function': 'corporate ownership and management'}},
+    "SECTOR_56": {'description': 'Establishments providing administrative and support services', 'annotations': {'naics_code': '56', 'activities': 'administrative services, waste management, remediation', 'support_function': 'business support services'}},
+    "SECTOR_61": {'description': 'Establishments providing educational instruction', 'annotations': {'naics_code': '61', 'activities': 'schools, colleges, training programs', 'public_private': 'public and private education'}},
+    "SECTOR_62": {'description': 'Establishments providing health care and social assistance', 'annotations': {'naics_code': '62', 'activities': 'hospitals, medical practices, social assistance', 'essential_services': 'essential public services'}},
+    "SECTOR_71": {'description': 'Establishments in arts, entertainment, and recreation', 'annotations': {'naics_code': '71', 'activities': 'performing arts, spectator sports, museums, recreation', 'discretionary': 'discretionary consumer spending'}},
+    "SECTOR_72": {'description': 'Establishments providing accommodation and food services', 'annotations': {'naics_code': '72', 'activities': 'hotels, restaurants, food services', 'consumer_services': 'consumer hospitality services'}},
+    "SECTOR_81": {'description': 'Establishments providing other services', 'annotations': {'naics_code': '81', 'activities': 'repair, personal care, religious organizations', 'diverse': 'diverse service activities'}},
+    "SECTOR_92": {'description': 'Government establishments', 'annotations': {'naics_code': '92', 'activities': 'executive, legislative, judicial, public safety', 'sector': 'government sector'}},
+}
+
+class EconomicSectorEnum(RichEnum):
+    """
+    Broad economic sector classifications
+    """
+    # Enum members
+    PRIMARY_SECTOR = "PRIMARY_SECTOR"
+    SECONDARY_SECTOR = "SECONDARY_SECTOR"
+    TERTIARY_SECTOR = "TERTIARY_SECTOR"
+    QUATERNARY_SECTOR = "QUATERNARY_SECTOR"
+    QUINARY_SECTOR = "QUINARY_SECTOR"
+
+# Set metadata after class creation to avoid it becoming an enum member
+EconomicSectorEnum._metadata = {
+    "PRIMARY_SECTOR": {'description': 'Economic activities extracting natural resources', 'annotations': {'activities': 'agriculture, mining, forestry, fishing', 'output': 'raw materials and natural resources', 'employment': 'typically lower employment share in developed economies', 'development_stage': 'dominant in early economic development'}},
+    "SECONDARY_SECTOR": {'description': 'Economic activities manufacturing and processing goods', 'annotations': {'activities': 'manufacturing, construction, utilities', 'output': 'processed and manufactured goods', 'value_added': 'transforms raw materials into finished products', 'employment': 'historically significant in industrial economies'}},
+    "TERTIARY_SECTOR": {'description': 'Economic activities providing services', 'annotations': {'activities': 'retail, hospitality, transportation, finance, healthcare', 'output': 'services to consumers and businesses', 'growth': 'largest and fastest growing sector in developed economies', 'employment': 'dominant employment sector'}},
+    "QUATERNARY_SECTOR": {'description': 'Knowledge-based economic activities', 'annotations': {'activities': 'research, education, information technology, consulting', 'output': 'knowledge, information, and intellectual services', 'characteristics': 'high skill and education requirements', 'growth': 'rapidly growing in knowledge economies'}},
+    "QUINARY_SECTOR": {'description': 'High-level decision-making and policy services', 'annotations': {'activities': 'top-level government, healthcare, education, culture', 'output': 'highest level services and decision-making', 'characteristics': 'elite services and leadership roles', 'scope': 'limited to highest level activities'}},
+}
+
+class BusinessActivityTypeEnum(RichEnum):
+    """
+    Types of primary business activities
+    """
+    # Enum members
+    PRODUCTION = "PRODUCTION"
+    DISTRIBUTION = "DISTRIBUTION"
+    SERVICES = "SERVICES"
+    TECHNOLOGY = "TECHNOLOGY"
+    FINANCE = "FINANCE"
+    INFORMATION = "INFORMATION"
+    EDUCATION = "EDUCATION"
+    HEALTHCARE = "HEALTHCARE"
+    ENTERTAINMENT = "ENTERTAINMENT"
+    PROFESSIONAL_SERVICES = "PROFESSIONAL_SERVICES"
+
+# Set metadata after class creation to avoid it becoming an enum member
+BusinessActivityTypeEnum._metadata = {
+    "PRODUCTION": {'description': 'Creating or manufacturing physical goods', 'annotations': {'output': 'physical products and goods', 'process': 'transformation of materials', 'assets': 'physical assets and equipment intensive', 'examples': 'factories, farms, mines'}},
+    "DISTRIBUTION": {'description': 'Moving goods from producers to consumers', 'annotations': {'function': 'intermediary between producers and consumers', 'value_added': 'place and time utility', 'examples': 'wholesalers, retailers, logistics companies', 'efficiency': 'improves market efficiency'}},
+    "SERVICES": {'description': 'Providing intangible services to customers', 'annotations': {'output': 'intangible services', 'characteristics': 'labor intensive, customized', 'examples': 'consulting, healthcare, hospitality', 'customer_interaction': 'high customer interaction'}},
+    "TECHNOLOGY": {'description': 'Developing and applying technology solutions', 'annotations': {'focus': 'technology development and application', 'innovation': 'research and development intensive', 'examples': 'software companies, biotech, engineering', 'intellectual_property': 'high intellectual property content'}},
+    "FINANCE": {'description': 'Providing financial and investment services', 'annotations': {'function': 'financial intermediation and services', 'regulation': 'highly regulated', 'examples': 'banks, insurance, investment firms', 'capital': 'capital intensive'}},
+    "INFORMATION": {'description': 'Creating, processing, and distributing information', 'annotations': {'output': 'information and content', 'channels': 'various distribution channels', 'examples': 'media companies, publishers, data processors', 'technology_dependent': 'technology platform dependent'}},
+    "EDUCATION": {'description': 'Providing educational and training services', 'annotations': {'function': 'knowledge and skill development', 'public_private': 'public and private providers', 'examples': 'schools, universities, training companies', 'social_impact': 'high social impact'}},
+    "HEALTHCARE": {'description': 'Providing health and medical services', 'annotations': {'function': 'health and medical care', 'regulation': 'highly regulated', 'examples': 'hospitals, clinics, pharmaceutical companies', 'essential': 'essential service'}},
+    "ENTERTAINMENT": {'description': 'Providing entertainment and recreational services', 'annotations': {'output': 'entertainment and leisure experiences', 'discretionary': 'discretionary consumer spending', 'examples': 'media, sports, tourism, gaming', 'experience_based': 'experience and emotion based'}},
+    "PROFESSIONAL_SERVICES": {'description': 'Providing specialized professional expertise', 'annotations': {'characteristics': 'high skill and knowledge requirements', 'customization': 'highly customized services', 'examples': 'law firms, consulting, accounting', 'expertise': 'specialized professional expertise'}},
+}
+
+class IndustryMaturityEnum(RichEnum):
+    """
+    Industry lifecycle and maturity stages
+    """
+    # Enum members
+    EMERGING = "EMERGING"
+    GROWTH = "GROWTH"
+    MATURE = "MATURE"
+    DECLINING = "DECLINING"
+    TRANSFORMING = "TRANSFORMING"
+
+# Set metadata after class creation to avoid it becoming an enum member
+IndustryMaturityEnum._metadata = {
+    "EMERGING": {'description': 'New industry in early development stage', 'annotations': {'characteristics': 'high uncertainty, rapid change', 'growth': 'high growth potential', 'technology': 'new or evolving technology', 'competition': 'few competitors, unclear standards', 'investment': 'high investment requirements'}},
+    "GROWTH": {'description': 'Industry experiencing rapid expansion', 'annotations': {'characteristics': 'rapid market expansion', 'competition': 'increasing competition', 'standardization': 'emerging standards', 'investment': 'significant investment opportunities', 'profitability': 'improving profitability'}},
+    "MATURE": {'description': 'Established industry with stable growth', 'annotations': {'characteristics': 'stable market conditions', 'growth': 'slower, steady growth', 'competition': 'established competitive structure', 'efficiency': 'focus on operational efficiency', 'consolidation': 'potential for consolidation'}},
+    "DECLINING": {'description': 'Industry experiencing contraction', 'annotations': {'characteristics': 'decreasing demand', 'competition': 'intensifying competition for shrinking market', 'cost_focus': 'focus on cost reduction', 'consolidation': 'significant consolidation', 'exit': 'companies exiting industry'}},
+    "TRANSFORMING": {'description': 'Industry undergoing fundamental change', 'annotations': {'characteristics': 'disruptive change and innovation', 'technology': 'technology-driven transformation', 'business_models': 'evolving business models', 'uncertainty': 'high uncertainty about future structure', 'opportunity': 'opportunities for innovation and disruption'}},
+}
+
+class MarketStructureEnum(RichEnum):
+    """
+    Competitive structure of industry markets
+    """
+    # Enum members
+    PERFECT_COMPETITION = "PERFECT_COMPETITION"
+    MONOPOLISTIC_COMPETITION = "MONOPOLISTIC_COMPETITION"
+    OLIGOPOLY = "OLIGOPOLY"
+    MONOPOLY = "MONOPOLY"
+    DUOPOLY = "DUOPOLY"
+
+# Set metadata after class creation to avoid it becoming an enum member
+MarketStructureEnum._metadata = {
+    "PERFECT_COMPETITION": {'description': 'Many small firms with identical products', 'annotations': {'competitors': 'many small competitors', 'products': 'homogeneous products', 'barriers': 'no barriers to entry', 'pricing': 'price takers', 'examples': 'agricultural commodities'}},
+    "MONOPOLISTIC_COMPETITION": {'description': 'Many firms with differentiated products', 'annotations': {'competitors': 'many competitors', 'products': 'differentiated products', 'barriers': 'low barriers to entry', 'pricing': 'some pricing power', 'examples': 'restaurants, retail clothing'}},
+    "OLIGOPOLY": {'description': 'Few large firms dominating the market', 'annotations': {'competitors': 'few large competitors', 'concentration': 'high market concentration', 'barriers': 'significant barriers to entry', 'interdependence': 'strategic interdependence', 'examples': 'automobiles, telecommunications'}},
+    "MONOPOLY": {'description': 'Single firm controlling the market', 'annotations': {'competitors': 'single market leader', 'barriers': 'very high barriers to entry', 'pricing': 'price maker', 'regulation': 'often regulated', 'examples': 'utilities, patented products'}},
+    "DUOPOLY": {'description': 'Two firms dominating the market', 'annotations': {'competitors': 'two dominant competitors', 'competition': 'head-to-head competition', 'barriers': 'high barriers to entry', 'strategy': 'strategic competition', 'examples': 'aircraft manufacturing, some software markets'}},
+}
+
+class IndustryRegulationLevelEnum(RichEnum):
+    """
+    Level of government regulation in different industries
+    """
+    # Enum members
+    HIGHLY_REGULATED = "HIGHLY_REGULATED"
+    MODERATELY_REGULATED = "MODERATELY_REGULATED"
+    LIGHTLY_REGULATED = "LIGHTLY_REGULATED"
+    SELF_REGULATED = "SELF_REGULATED"
+    DEREGULATED = "DEREGULATED"
+
+# Set metadata after class creation to avoid it becoming an enum member
+IndustryRegulationLevelEnum._metadata = {
+    "HIGHLY_REGULATED": {'description': 'Industries subject to extensive government oversight', 'annotations': {'oversight': 'extensive government oversight', 'compliance': 'complex compliance requirements', 'barriers': 'regulatory barriers to entry', 'examples': 'banking, healthcare, utilities, pharmaceuticals', 'reason': 'public safety, market power, or systemic risk'}},
+    "MODERATELY_REGULATED": {'description': 'Industries with significant but focused regulation', 'annotations': {'oversight': 'focused regulatory oversight', 'compliance': 'specific compliance requirements', 'areas': 'targeted regulatory areas', 'examples': 'food service, transportation, insurance', 'balance': 'balance between oversight and flexibility'}},
+    "LIGHTLY_REGULATED": {'description': 'Industries with minimal regulatory oversight', 'annotations': {'oversight': 'minimal regulatory oversight', 'compliance': 'basic compliance requirements', 'flexibility': 'high operational flexibility', 'examples': 'technology, consulting, retail', 'approach': 'market-based approach'}},
+    "SELF_REGULATED": {'description': 'Industries primarily regulated by industry organizations', 'annotations': {'oversight': 'industry self-regulation', 'standards': 'industry-developed standards', 'compliance': 'voluntary compliance', 'examples': 'professional services, trade associations', 'effectiveness': 'varies by industry'}},
+    "DEREGULATED": {'description': 'Industries formerly regulated but now market-based', 'annotations': {'history': 'formerly regulated industries', 'competition': 'market-based competition', 'transition': 'transition from regulation to competition', 'examples': 'airlines, telecommunications, energy', 'benefits': 'increased competition and efficiency'}},
+}
+
+class ManagementMethodologyEnum(RichEnum):
+    """
+    Management approaches and methodologies
+    """
+    # Enum members
+    TRADITIONAL_MANAGEMENT = "TRADITIONAL_MANAGEMENT"
+    AGILE_MANAGEMENT = "AGILE_MANAGEMENT"
+    LEAN_MANAGEMENT = "LEAN_MANAGEMENT"
+    PARTICIPATIVE_MANAGEMENT = "PARTICIPATIVE_MANAGEMENT"
+    MATRIX_MANAGEMENT = "MATRIX_MANAGEMENT"
+    PROJECT_MANAGEMENT = "PROJECT_MANAGEMENT"
+    RESULTS_ORIENTED_MANAGEMENT = "RESULTS_ORIENTED_MANAGEMENT"
+    SERVANT_LEADERSHIP = "SERVANT_LEADERSHIP"
+    TRANSFORMATIONAL_MANAGEMENT = "TRANSFORMATIONAL_MANAGEMENT"
+    DEMOCRATIC_MANAGEMENT = "DEMOCRATIC_MANAGEMENT"
+
+# Set metadata after class creation to avoid it becoming an enum member
+ManagementMethodologyEnum._metadata = {
+    "TRADITIONAL_MANAGEMENT": {'description': 'Hierarchical command-and-control management approach', 'annotations': {'structure': 'hierarchical structure', 'authority': 'centralized authority', 'communication': 'top-down communication', 'control': 'direct supervision and control'}},
+    "AGILE_MANAGEMENT": {'description': 'Flexible, iterative management approach', 'annotations': {'flexibility': 'adaptive and flexible', 'iteration': 'iterative approach', 'collaboration': 'cross-functional collaboration', 'customer_focus': 'customer-centric'}},
+    "LEAN_MANAGEMENT": {'description': 'Waste elimination and value optimization approach', 'annotations': {'focus': 'waste elimination', 'value': 'value stream optimization', 'continuous_improvement': 'kaizen and continuous improvement', 'efficiency': 'operational efficiency'}},
+    "PARTICIPATIVE_MANAGEMENT": {'description': 'Employee involvement in decision-making', 'annotations': {'involvement': 'employee participation', 'decision_making': 'shared decision-making', 'empowerment': 'employee empowerment', 'engagement': 'increased employee engagement'}},
+    "MATRIX_MANAGEMENT": {'description': 'Dual reporting relationships and shared authority', 'annotations': {'structure': 'matrix reporting structure', 'authority': 'shared authority', 'flexibility': 'organizational flexibility', 'complexity': 'increased complexity'}},
+    "PROJECT_MANAGEMENT": {'description': 'Structured approach to managing projects', 'annotations': {'methodology': 'project management methodology', 'lifecycle': 'project lifecycle management', 'deliverables': 'deliverable-focused', 'temporary': 'temporary organizational structure'}},
+    "RESULTS_ORIENTED_MANAGEMENT": {'description': 'Focus on outcomes and performance results', 'annotations': {'focus': 'results and outcomes', 'measurement': 'performance measurement', 'accountability': 'accountability for results', 'goals': 'goal-oriented approach'}},
+    "SERVANT_LEADERSHIP": {'description': 'Leader serves and supports team members', 'annotations': {'philosophy': 'service-oriented leadership', 'support': 'leader supports team', 'development': 'people development focus', 'empowerment': 'team empowerment'}},
+    "TRANSFORMATIONAL_MANAGEMENT": {'description': 'Change-oriented and inspirational management', 'annotations': {'change': 'transformation and change focus', 'inspiration': 'inspirational leadership', 'vision': 'vision-driven', 'development': 'follower development'}},
+    "DEMOCRATIC_MANAGEMENT": {'description': 'Collaborative and consensus-building approach', 'annotations': {'participation': 'democratic participation', 'consensus': 'consensus-building', 'equality': 'equal voice in decisions', 'transparency': 'transparent processes'}},
+}
+
+class StrategicFrameworkEnum(RichEnum):
+    """
+    Strategic planning and analysis frameworks
+    """
+    # Enum members
+    SWOT_ANALYSIS = "SWOT_ANALYSIS"
+    PORTERS_FIVE_FORCES = "PORTERS_FIVE_FORCES"
+    BALANCED_SCORECARD = "BALANCED_SCORECARD"
+    BLUE_OCEAN_STRATEGY = "BLUE_OCEAN_STRATEGY"
+    ANSOFF_MATRIX = "ANSOFF_MATRIX"
+    BCG_MATRIX = "BCG_MATRIX"
+    VALUE_CHAIN_ANALYSIS = "VALUE_CHAIN_ANALYSIS"
+    SCENARIO_PLANNING = "SCENARIO_PLANNING"
+    STRATEGIC_CANVAS = "STRATEGIC_CANVAS"
+    CORE_COMPETENCY_ANALYSIS = "CORE_COMPETENCY_ANALYSIS"
+
+# Set metadata after class creation to avoid it becoming an enum member
+StrategicFrameworkEnum._metadata = {
+    "SWOT_ANALYSIS": {'description': 'Strengths, Weaknesses, Opportunities, Threats analysis', 'annotations': {'components': 'strengths, weaknesses, opportunities, threats', 'purpose': 'strategic positioning analysis', 'simplicity': 'simple and widely used', 'application': 'strategic planning and decision-making'}},
+    "PORTERS_FIVE_FORCES": {'description': 'Industry competitiveness analysis framework', 'annotations': {'forces': 'competitive rivalry, supplier power, buyer power, substitutes, barriers', 'purpose': 'industry attractiveness analysis', 'competition': 'competitive strategy framework', 'application': 'industry analysis and strategy formulation'}},
+    "BALANCED_SCORECARD": {'description': 'Performance measurement from multiple perspectives', 'annotations': {'perspectives': 'financial, customer, internal process, learning', 'purpose': 'strategic performance measurement', 'balance': 'balanced view of performance', 'alignment': 'strategy alignment tool'}},
+    "BLUE_OCEAN_STRATEGY": {'description': 'Creating uncontested market space strategy', 'annotations': {'concept': 'value innovation and market creation', 'competition': 'competition avoidance', 'differentiation': 'differentiation and low cost', 'innovation': 'strategic innovation'}},
+    "ANSOFF_MATRIX": {'description': 'Product and market growth strategy framework', 'annotations': {'dimensions': 'products and markets', 'strategies': 'market penetration, development, diversification', 'growth': 'growth strategy framework', 'risk': 'risk assessment of growth options'}},
+    "BCG_MATRIX": {'description': 'Portfolio analysis of business units', 'annotations': {'dimensions': 'market growth and market share', 'categories': 'stars, cash cows, question marks, dogs', 'portfolio': 'business portfolio analysis', 'resource_allocation': 'resource allocation decisions'}},
+    "VALUE_CHAIN_ANALYSIS": {'description': 'Analysis of value-creating activities', 'annotations': {'activities': 'primary and support activities', 'value': 'value creation analysis', 'advantage': 'competitive advantage source identification', 'optimization': 'value chain optimization'}},
+    "SCENARIO_PLANNING": {'description': 'Multiple future scenario development and planning', 'annotations': {'scenarios': 'multiple future scenarios', 'uncertainty': 'uncertainty management', 'planning': 'strategic contingency planning', 'flexibility': 'strategic flexibility'}},
+    "STRATEGIC_CANVAS": {'description': 'Visual representation of competitive factors', 'annotations': {'visualization': 'visual strategy representation', 'factors': 'competitive factors analysis', 'comparison': 'competitor comparison', 'innovation': 'value innovation identification'}},
+    "CORE_COMPETENCY_ANALYSIS": {'description': 'Identification and development of core competencies', 'annotations': {'competencies': 'unique organizational capabilities', 'advantage': 'sustainable competitive advantage', 'focus': 'competency-based strategy', 'development': 'capability development'}},
+}
+
+class OperationalModelEnum(RichEnum):
+    """
+    Business operational models and approaches
+    """
+    # Enum members
+    CENTRALIZED_OPERATIONS = "CENTRALIZED_OPERATIONS"
+    DECENTRALIZED_OPERATIONS = "DECENTRALIZED_OPERATIONS"
+    HYBRID_OPERATIONS = "HYBRID_OPERATIONS"
+    OUTSOURCED_OPERATIONS = "OUTSOURCED_OPERATIONS"
+    SHARED_SERVICES = "SHARED_SERVICES"
+    NETWORK_OPERATIONS = "NETWORK_OPERATIONS"
+    PLATFORM_OPERATIONS = "PLATFORM_OPERATIONS"
+    AGILE_OPERATIONS = "AGILE_OPERATIONS"
+    LEAN_OPERATIONS = "LEAN_OPERATIONS"
+    DIGITAL_OPERATIONS = "DIGITAL_OPERATIONS"
+
+# Set metadata after class creation to avoid it becoming an enum member
+OperationalModelEnum._metadata = {
+    "CENTRALIZED_OPERATIONS": {'description': 'Centralized operational control and decision-making', 'annotations': {'control': 'centralized control', 'efficiency': 'operational efficiency', 'standardization': 'standardized processes', 'coordination': 'central coordination'}},
+    "DECENTRALIZED_OPERATIONS": {'description': 'Distributed operational control and autonomy', 'annotations': {'autonomy': 'local autonomy', 'responsiveness': 'market responsiveness', 'flexibility': 'operational flexibility', 'empowerment': 'local empowerment'}},
+    "HYBRID_OPERATIONS": {'description': 'Combination of centralized and decentralized elements', 'annotations': {'combination': 'mixed centralized and decentralized', 'balance': 'balance between control and flexibility', 'optimization': 'situational optimization', 'complexity': 'increased complexity'}},
+    "OUTSOURCED_OPERATIONS": {'description': 'External service provider operational model', 'annotations': {'provider': 'external service providers', 'focus': 'core competency focus', 'cost': 'cost optimization', 'expertise': 'specialized expertise'}},
+    "SHARED_SERVICES": {'description': 'Centralized services shared across business units', 'annotations': {'sharing': 'shared service delivery', 'efficiency': 'scale efficiency', 'standardization': 'service standardization', 'cost_effectiveness': 'cost-effective service delivery'}},
+    "NETWORK_OPERATIONS": {'description': 'Collaborative network of partners and suppliers', 'annotations': {'network': 'partner and supplier network', 'collaboration': 'collaborative operations', 'flexibility': 'network flexibility', 'coordination': 'network coordination'}},
+    "PLATFORM_OPERATIONS": {'description': 'Platform-based business operational model', 'annotations': {'platform': 'platform-based operations', 'ecosystem': 'business ecosystem', 'scalability': 'scalable operations', 'network_effects': 'network effects'}},
+    "AGILE_OPERATIONS": {'description': 'Flexible and responsive operational approach', 'annotations': {'agility': 'operational agility', 'responsiveness': 'market responsiveness', 'adaptation': 'rapid adaptation', 'iteration': 'iterative improvement'}},
+    "LEAN_OPERATIONS": {'description': 'Waste elimination and value-focused operations', 'annotations': {'waste': 'waste elimination', 'value': 'value stream focus', 'efficiency': 'operational efficiency', 'continuous_improvement': 'continuous improvement'}},
+    "DIGITAL_OPERATIONS": {'description': 'Technology-enabled and digital-first operations', 'annotations': {'technology': 'digital technology enabled', 'automation': 'process automation', 'data_driven': 'data-driven operations', 'scalability': 'digital scalability'}},
+}
+
+class PerformanceMeasurementEnum(RichEnum):
+    """
+    Performance measurement systems and approaches
+    """
+    # Enum members
+    KEY_PERFORMANCE_INDICATORS = "KEY_PERFORMANCE_INDICATORS"
+    OBJECTIVES_KEY_RESULTS = "OBJECTIVES_KEY_RESULTS"
+    BALANCED_SCORECARD_MEASUREMENT = "BALANCED_SCORECARD_MEASUREMENT"
+    RETURN_ON_INVESTMENT = "RETURN_ON_INVESTMENT"
+    ECONOMIC_VALUE_ADDED = "ECONOMIC_VALUE_ADDED"
+    CUSTOMER_SATISFACTION_METRICS = "CUSTOMER_SATISFACTION_METRICS"
+    EMPLOYEE_ENGAGEMENT_METRICS = "EMPLOYEE_ENGAGEMENT_METRICS"
+    OPERATIONAL_EFFICIENCY_METRICS = "OPERATIONAL_EFFICIENCY_METRICS"
+    INNOVATION_METRICS = "INNOVATION_METRICS"
+    SUSTAINABILITY_METRICS = "SUSTAINABILITY_METRICS"
+
+# Set metadata after class creation to avoid it becoming an enum member
+PerformanceMeasurementEnum._metadata = {
+    "KEY_PERFORMANCE_INDICATORS": {'description': 'Specific metrics measuring critical performance areas', 'annotations': {'specificity': 'specific performance metrics', 'critical': 'critical success factors', 'measurement': 'quantitative measurement', 'tracking': 'performance tracking'}},
+    "OBJECTIVES_KEY_RESULTS": {'description': 'Goal-setting framework with measurable outcomes', 'annotations': {'objectives': 'qualitative objectives', 'results': 'quantitative key results', 'alignment': 'organizational alignment', 'transparency': 'transparent goal setting'}},
+    "BALANCED_SCORECARD_MEASUREMENT": {'description': 'Multi-perspective performance measurement system', 'annotations': {'perspectives': 'multiple performance perspectives', 'balance': 'balanced performance view', 'strategy': 'strategy-linked measurement', 'cause_effect': 'cause-and-effect relationships'}},
+    "RETURN_ON_INVESTMENT": {'description': 'Financial return measurement relative to investment', 'annotations': {'financial': 'financial performance measure', 'investment': 'investment-based measurement', 'efficiency': 'capital efficiency', 'comparison': 'investment comparison'}},
+    "ECONOMIC_VALUE_ADDED": {'description': 'Value creation measurement after cost of capital', 'annotations': {'value': 'economic value creation', 'capital_cost': 'cost of capital consideration', 'shareholder': 'shareholder value focus', 'performance': 'true economic performance'}},
+    "CUSTOMER_SATISFACTION_METRICS": {'description': 'Customer experience and satisfaction measurement', 'annotations': {'customer': 'customer-focused measurement', 'satisfaction': 'satisfaction and loyalty', 'experience': 'customer experience', 'retention': 'customer retention'}},
+    "EMPLOYEE_ENGAGEMENT_METRICS": {'description': 'Employee satisfaction and engagement measurement', 'annotations': {'engagement': 'employee engagement', 'satisfaction': 'employee satisfaction', 'retention': 'employee retention', 'productivity': 'employee productivity'}},
+    "OPERATIONAL_EFFICIENCY_METRICS": {'description': 'Operational performance and efficiency measurement', 'annotations': {'efficiency': 'operational efficiency', 'productivity': 'process productivity', 'quality': 'quality metrics', 'cost': 'cost efficiency'}},
+    "INNOVATION_METRICS": {'description': 'Innovation performance and capability measurement', 'annotations': {'innovation': 'innovation performance', 'development': 'new product development', 'improvement': 'process improvement', 'creativity': 'organizational creativity'}},
+    "SUSTAINABILITY_METRICS": {'description': 'Environmental and social sustainability measurement', 'annotations': {'sustainability': 'sustainability performance', 'environmental': 'environmental impact', 'social': 'social responsibility', 'governance': 'governance effectiveness'}},
+}
+
+class DecisionMakingStyleEnum(RichEnum):
+    """
+    Decision-making approaches and styles
+    """
+    # Enum members
+    AUTOCRATIC = "AUTOCRATIC"
+    DEMOCRATIC = "DEMOCRATIC"
+    CONSULTATIVE = "CONSULTATIVE"
+    CONSENSUS = "CONSENSUS"
+    DELEGATED = "DELEGATED"
+    DATA_DRIVEN = "DATA_DRIVEN"
+    INTUITIVE = "INTUITIVE"
+    COMMITTEE = "COMMITTEE"
+    COLLABORATIVE = "COLLABORATIVE"
+    CRISIS = "CRISIS"
+
+# Set metadata after class creation to avoid it becoming an enum member
+DecisionMakingStyleEnum._metadata = {
+    "AUTOCRATIC": {'description': 'Single decision-maker with full authority', 'annotations': {'authority': 'centralized decision authority', 'speed': 'fast decision making', 'control': 'complete control', 'input': 'limited input from others'}},
+    "DEMOCRATIC": {'description': 'Group participation in decision-making process', 'annotations': {'participation': 'group participation', 'consensus': 'consensus building', 'input': 'diverse input and perspectives', 'ownership': 'shared ownership of decisions'}},
+    "CONSULTATIVE": {'description': 'Leader consults others before deciding', 'annotations': {'consultation': 'stakeholder consultation', 'input': 'seeks input and advice', 'authority': 'leader retains decision authority', 'informed': 'informed decision making'}},
+    "CONSENSUS": {'description': 'Agreement reached through group discussion', 'annotations': {'agreement': 'group agreement required', 'discussion': 'extensive group discussion', 'unanimous': 'unanimous or near-unanimous agreement', 'time': 'time-intensive process'}},
+    "DELEGATED": {'description': 'Decision authority delegated to others', 'annotations': {'delegation': 'decision authority delegation', 'empowerment': 'employee empowerment', 'autonomy': 'decision autonomy', 'accountability': 'delegated accountability'}},
+    "DATA_DRIVEN": {'description': 'Decisions based on data analysis and evidence', 'annotations': {'data': 'data and analytics based', 'evidence': 'evidence-based decisions', 'objectivity': 'objective decision making', 'analysis': 'analytical approach'}},
+    "INTUITIVE": {'description': 'Decisions based on experience and gut feeling', 'annotations': {'intuition': 'intuition and experience based', 'speed': 'rapid decision making', 'experience': 'leverages experience', 'creativity': 'creative and innovative'}},
+    "COMMITTEE": {'description': 'Formal group decision-making structure', 'annotations': {'structure': 'formal committee structure', 'representation': 'stakeholder representation', 'process': 'structured decision process', 'accountability': 'shared accountability'}},
+    "COLLABORATIVE": {'description': 'Joint decision-making with shared responsibility', 'annotations': {'collaboration': 'collaborative approach', 'shared': 'shared responsibility', 'teamwork': 'team-based decisions', 'synergy': 'collective wisdom'}},
+    "CRISIS": {'description': 'Rapid decision-making under crisis conditions', 'annotations': {'urgency': 'urgent decision making', 'limited_info': 'limited information available', 'speed': 'rapid response required', 'risk': 'high-risk decision making'}},
+}
+
+class LeadershipStyleEnum(RichEnum):
+    """
+    Leadership approaches and styles
+    """
+    # Enum members
+    TRANSFORMATIONAL = "TRANSFORMATIONAL"
+    TRANSACTIONAL = "TRANSACTIONAL"
+    SERVANT = "SERVANT"
+    AUTHENTIC = "AUTHENTIC"
+    CHARISMATIC = "CHARISMATIC"
+    SITUATIONAL = "SITUATIONAL"
+    DEMOCRATIC = "DEMOCRATIC"
+    AUTOCRATIC = "AUTOCRATIC"
+    LAISSEZ_FAIRE = "LAISSEZ_FAIRE"
+    COACHING = "COACHING"
+
+# Set metadata after class creation to avoid it becoming an enum member
+LeadershipStyleEnum._metadata = {
+    "TRANSFORMATIONAL": {'description': 'Inspirational leadership that motivates change', 'annotations': {'inspiration': 'inspirational motivation', 'vision': 'visionary leadership', 'development': 'follower development', 'change': 'change-oriented'}},
+    "TRANSACTIONAL": {'description': 'Exchange-based leadership with rewards and consequences', 'annotations': {'exchange': 'reward and consequence based', 'structure': 'structured approach', 'performance': 'performance-based', 'management': 'management by exception'}},
+    "SERVANT": {'description': 'Leader serves followers and facilitates their growth', 'annotations': {'service': 'service to followers', 'empowerment': 'follower empowerment', 'development': 'personal development focus', 'humility': 'humble leadership approach'}},
+    "AUTHENTIC": {'description': 'Genuine and self-aware leadership approach', 'annotations': {'authenticity': 'genuine and authentic', 'self_awareness': 'high self-awareness', 'values': 'values-based leadership', 'integrity': 'personal integrity'}},
+    "CHARISMATIC": {'description': 'Inspiring leadership through personal charisma', 'annotations': {'charisma': 'personal charisma', 'inspiration': 'inspirational influence', 'emotion': 'emotional appeal', 'following': 'devoted following'}},
+    "SITUATIONAL": {'description': 'Adaptive leadership based on situation requirements', 'annotations': {'adaptation': 'situational adaptation', 'flexibility': 'flexible approach', 'assessment': 'situation assessment', 'style_variation': 'varying leadership styles'}},
+    "DEMOCRATIC": {'description': 'Participative leadership with shared decision-making', 'annotations': {'participation': 'follower participation', 'shared': 'shared decision making', 'empowerment': 'team empowerment', 'collaboration': 'collaborative approach'}},
+    "AUTOCRATIC": {'description': 'Directive leadership with centralized control', 'annotations': {'control': 'centralized control', 'directive': 'directive approach', 'authority': 'strong authority', 'efficiency': 'decision efficiency'}},
+    "LAISSEZ_FAIRE": {'description': 'Hands-off leadership with minimal interference', 'annotations': {'autonomy': 'high follower autonomy', 'minimal': 'minimal leadership intervention', 'freedom': 'freedom to operate', 'self_direction': 'self-directed teams'}},
+    "COACHING": {'description': 'Development-focused leadership approach', 'annotations': {'development': 'skill and capability development', 'guidance': 'mentoring and guidance', 'growth': 'personal and professional growth', 'support': 'supportive leadership'}},
+}
+
+class BusinessProcessTypeEnum(RichEnum):
+    """
+    Types of business processes
+    """
+    # Enum members
+    CORE_PROCESS = "CORE_PROCESS"
+    SUPPORT_PROCESS = "SUPPORT_PROCESS"
+    MANAGEMENT_PROCESS = "MANAGEMENT_PROCESS"
+    OPERATIONAL_PROCESS = "OPERATIONAL_PROCESS"
+    STRATEGIC_PROCESS = "STRATEGIC_PROCESS"
+    INNOVATION_PROCESS = "INNOVATION_PROCESS"
+    CUSTOMER_PROCESS = "CUSTOMER_PROCESS"
+    FINANCIAL_PROCESS = "FINANCIAL_PROCESS"
+
+# Set metadata after class creation to avoid it becoming an enum member
+BusinessProcessTypeEnum._metadata = {
+    "CORE_PROCESS": {'description': 'Primary processes that create customer value', 'annotations': {'value': 'direct customer value creation', 'primary': 'primary business activities', 'competitive': 'competitive advantage source', 'strategic': 'strategic importance'}},
+    "SUPPORT_PROCESS": {'description': 'Processes that enable core business activities', 'annotations': {'support': 'supports core processes', 'enabling': 'enabling activities', 'infrastructure': 'business infrastructure', 'indirect': 'indirect value contribution'}},
+    "MANAGEMENT_PROCESS": {'description': 'Processes for planning, controlling, and improving', 'annotations': {'management': 'management and governance', 'planning': 'planning and control', 'improvement': 'process improvement', 'oversight': 'organizational oversight'}},
+    "OPERATIONAL_PROCESS": {'description': 'Day-to-day operational activities', 'annotations': {'operations': 'daily operations', 'routine': 'routine activities', 'execution': 'operational execution', 'efficiency': 'operational efficiency'}},
+    "STRATEGIC_PROCESS": {'description': 'Long-term planning and strategic activities', 'annotations': {'strategy': 'strategic planning', 'long_term': 'long-term focus', 'direction': 'organizational direction', 'competitive': 'competitive positioning'}},
+    "INNOVATION_PROCESS": {'description': 'Processes for developing new products or services', 'annotations': {'innovation': 'innovation and development', 'creativity': 'creative processes', 'new_development': 'new product/service development', 'competitive': 'competitive innovation'}},
+    "CUSTOMER_PROCESS": {'description': 'Processes focused on customer interaction and service', 'annotations': {'customer': 'customer-facing processes', 'service': 'customer service', 'relationship': 'customer relationship', 'satisfaction': 'customer satisfaction'}},
+    "FINANCIAL_PROCESS": {'description': 'Processes related to financial management', 'annotations': {'financial': 'financial management', 'accounting': 'accounting and reporting', 'control': 'financial control', 'compliance': 'financial compliance'}},
+}
+
+class QualityStandardEnum(RichEnum):
+    """
+    Quality management standards and frameworks
+    """
+    # Enum members
+    ISO_9001 = "ISO_9001"
+    ISO_14001 = "ISO_14001"
+    ISO_45001 = "ISO_45001"
+    ISO_27001 = "ISO_27001"
+    TQM = "TQM"
+    EFQM = "EFQM"
+    MALCOLM_BALDRIGE = "MALCOLM_BALDRIGE"
+    SIX_SIGMA = "SIX_SIGMA"
+    LEAN_QUALITY = "LEAN_QUALITY"
+    AS9100 = "AS9100"
+    TS16949 = "TS16949"
+    ISO_13485 = "ISO_13485"
+
+# Set metadata after class creation to avoid it becoming an enum member
+QualityStandardEnum._metadata = {
+    "ISO_9001": {'description': 'International standard for quality management systems', 'annotations': {'standard': 'ISO 9001:2015', 'focus': 'quality management systems', 'approach': 'process-based approach', 'certification': 'third-party certification available', 'scope': 'applicable to all organizations'}},
+    "ISO_14001": {'description': 'International standard for environmental management systems', 'annotations': {'standard': 'ISO 14001:2015', 'focus': 'environmental management', 'integration': 'integrates with quality management', 'compliance': 'environmental compliance', 'sustainability': 'environmental sustainability'}},
+    "ISO_45001": {'description': 'International standard for occupational health and safety', 'annotations': {'standard': 'ISO 45001:2018', 'focus': 'occupational health and safety', 'integration': 'integrates with other management systems', 'prevention': 'injury and illness prevention', 'workplace': 'workplace safety'}},
+    "ISO_27001": {'description': 'International standard for information security management', 'annotations': {'standard': 'ISO 27001:2013', 'focus': 'information security', 'risk': 'risk-based approach', 'confidentiality': 'confidentiality, integrity, availability', 'compliance': 'regulatory compliance'}},
+    "TQM": {'description': 'Comprehensive quality management philosophy', 'annotations': {'philosophy': 'total quality philosophy', 'scope': 'organization-wide approach', 'customer': 'customer focus', 'improvement': 'continuous improvement', 'involvement': 'total employee involvement'}},
+    "EFQM": {'description': 'European excellence model for organizational performance', 'annotations': {'model': 'excellence model', 'assessment': 'self-assessment framework', 'improvement': 'organizational improvement', 'excellence': 'business excellence', 'europe': 'European standard'}},
+    "MALCOLM_BALDRIGE": {'description': 'US national quality framework and award', 'annotations': {'framework': 'performance excellence framework', 'award': 'national quality award', 'assessment': 'organizational assessment', 'excellence': 'performance excellence', 'united_states': 'US standard'}},
+    "SIX_SIGMA": {'description': 'Data-driven quality improvement methodology', 'annotations': {'methodology': 'statistical quality improvement', 'data_driven': 'data and measurement focused', 'defect_reduction': 'defect and variation reduction', 'belt_system': 'belt certification system', 'tools': 'statistical tools and techniques'}},
+    "LEAN_QUALITY": {'description': 'Waste elimination and value-focused quality approach', 'annotations': {'philosophy': 'lean philosophy', 'waste': 'waste elimination', 'value': 'value stream focus', 'efficiency': 'operational efficiency', 'improvement': 'continuous improvement'}},
+    "AS9100": {'description': 'Quality standard for aerospace industry', 'annotations': {'industry': 'aerospace and defense', 'based_on': 'based on ISO 9001', 'requirements': 'additional aerospace requirements', 'certification': 'aerospace certification', 'safety': 'safety and reliability focus'}},
+    "TS16949": {'description': 'Quality standard for automotive industry', 'annotations': {'industry': 'automotive industry', 'based_on': 'based on ISO 9001', 'requirements': 'automotive-specific requirements', 'supply_chain': 'automotive supply chain', 'defect_prevention': 'defect prevention focus'}},
+    "ISO_13485": {'description': 'Quality standard for medical device industry', 'annotations': {'industry': 'medical device industry', 'regulatory': 'regulatory compliance', 'safety': 'patient safety focus', 'design_controls': 'design controls', 'risk_management': 'risk management'}},
+}
+
+class QualityMethodologyEnum(RichEnum):
+    """
+    Quality improvement methodologies and approaches
+    """
+    # Enum members
+    DMAIC = "DMAIC"
+    DMADV = "DMADV"
+    PDCA = "PDCA"
+    KAIZEN = "KAIZEN"
+    LEAN_SIX_SIGMA = "LEAN_SIX_SIGMA"
+    FIVE_S = "FIVE_S"
+    ROOT_CAUSE_ANALYSIS = "ROOT_CAUSE_ANALYSIS"
+    STATISTICAL_PROCESS_CONTROL = "STATISTICAL_PROCESS_CONTROL"
+    FAILURE_MODE_ANALYSIS = "FAILURE_MODE_ANALYSIS"
+    BENCHMARKING = "BENCHMARKING"
+
+# Set metadata after class creation to avoid it becoming an enum member
+QualityMethodologyEnum._metadata = {
+    "DMAIC": {'description': 'Six Sigma problem-solving methodology', 'annotations': {'phases': 'Define, Measure, Analyze, Improve, Control', 'approach': 'data-driven problem solving', 'structured': 'structured improvement process', 'statistical': 'statistical analysis', 'six_sigma': 'Six Sigma methodology'}},
+    "DMADV": {'description': 'Six Sigma design methodology for new processes', 'annotations': {'phases': 'Define, Measure, Analyze, Design, Verify', 'purpose': 'new process or product design', 'design': 'design for Six Sigma', 'verification': 'design verification', 'prevention': 'defect prevention'}},
+    "PDCA": {'description': 'Continuous improvement cycle methodology', 'annotations': {'cycle': 'Plan, Do, Check, Act', 'continuous': 'continuous improvement', 'iterative': 'iterative process', 'deming': 'Deming cycle', 'simple': 'simple and versatile'}},
+    "KAIZEN": {'description': 'Japanese philosophy of continuous improvement', 'annotations': {'philosophy': 'continuous improvement philosophy', 'incremental': 'small incremental improvements', 'employee': 'employee-driven improvement', 'culture': 'improvement culture', 'daily': 'daily improvement activities'}},
+    "LEAN_SIX_SIGMA": {'description': 'Combined methodology integrating Lean and Six Sigma', 'annotations': {'combination': 'Lean and Six Sigma integration', 'waste': 'waste elimination', 'variation': 'variation reduction', 'speed': 'speed and quality', 'comprehensive': 'comprehensive improvement'}},
+    "FIVE_S": {'description': 'Workplace organization and standardization methodology', 'annotations': {'components': 'Sort, Set in Order, Shine, Standardize, Sustain', 'workplace': 'workplace organization', 'visual': 'visual management', 'foundation': 'improvement foundation', 'safety': 'safety and efficiency'}},
+    "ROOT_CAUSE_ANALYSIS": {'description': 'Systematic approach to identifying problem root causes', 'annotations': {'systematic': 'systematic problem analysis', 'causes': 'root cause identification', 'prevention': 'problem prevention', 'tools': 'various analytical tools', 'thorough': 'thorough investigation'}},
+    "STATISTICAL_PROCESS_CONTROL": {'description': 'Statistical methods for process monitoring and control', 'annotations': {'statistical': 'statistical monitoring', 'control_charts': 'control charts', 'variation': 'variation monitoring', 'prevention': 'problem prevention', 'real_time': 'real-time monitoring'}},
+    "FAILURE_MODE_ANALYSIS": {'description': 'Systematic analysis of potential failure modes', 'annotations': {'analysis': 'failure mode analysis', 'prevention': 'failure prevention', 'risk': 'risk assessment', 'systematic': 'systematic approach', 'design': 'design and process FMEA'}},
+    "BENCHMARKING": {'description': 'Performance comparison with best practices', 'annotations': {'comparison': 'performance comparison', 'best_practices': 'best practice identification', 'improvement': 'improvement opportunities', 'external': 'external benchmarking', 'internal': 'internal benchmarking'}},
+}
+
+class QualityControlTechniqueEnum(RichEnum):
+    """
+    Quality control techniques and tools
+    """
+    # Enum members
+    CONTROL_CHARTS = "CONTROL_CHARTS"
+    PARETO_ANALYSIS = "PARETO_ANALYSIS"
+    FISHBONE_DIAGRAM = "FISHBONE_DIAGRAM"
+    HISTOGRAM = "HISTOGRAM"
+    SCATTER_DIAGRAM = "SCATTER_DIAGRAM"
+    CHECK_SHEET = "CHECK_SHEET"
+    FLOW_CHART = "FLOW_CHART"
+    DESIGN_OF_EXPERIMENTS = "DESIGN_OF_EXPERIMENTS"
+    SAMPLING_PLANS = "SAMPLING_PLANS"
+    GAUGE_R_AND_R = "GAUGE_R_AND_R"
+
+# Set metadata after class creation to avoid it becoming an enum member
+QualityControlTechniqueEnum._metadata = {
+    "CONTROL_CHARTS": {'description': 'Statistical charts for monitoring process variation', 'annotations': {'statistical': 'statistical process monitoring', 'variation': 'variation tracking', 'limits': 'control limits', 'trends': 'trend identification', 'real_time': 'real-time monitoring'}},
+    "PARETO_ANALYSIS": {'description': '80/20 rule analysis for problem prioritization', 'annotations': {'prioritization': 'problem prioritization', 'rule': '80/20 rule', 'focus': 'focus on vital few', 'impact': 'impact analysis', 'resources': 'resource allocation'}},
+    "FISHBONE_DIAGRAM": {'description': 'Cause-and-effect analysis diagram', 'annotations': {'cause_effect': 'cause and effect analysis', 'brainstorming': 'structured brainstorming', 'categories': 'cause categories', 'visual': 'visual analysis tool', 'team': 'team analysis tool'}},
+    "HISTOGRAM": {'description': 'Frequency distribution chart for data analysis', 'annotations': {'distribution': 'data distribution', 'frequency': 'frequency analysis', 'patterns': 'pattern identification', 'visual': 'visual data representation', 'analysis': 'statistical analysis'}},
+    "SCATTER_DIAGRAM": {'description': 'Correlation analysis between two variables', 'annotations': {'correlation': 'correlation analysis', 'relationship': 'variable relationship', 'pattern': 'pattern identification', 'statistical': 'statistical relationship', 'visual': 'visual correlation'}},
+    "CHECK_SHEET": {'description': 'Data collection and recording tool', 'annotations': {'collection': 'data collection', 'recording': 'systematic recording', 'tracking': 'problem tracking', 'simple': 'simple data tool', 'standardized': 'standardized format'}},
+    "FLOW_CHART": {'description': 'Process flow visualization and analysis', 'annotations': {'process': 'process visualization', 'flow': 'workflow analysis', 'steps': 'process steps', 'improvement': 'process improvement', 'understanding': 'process understanding'}},
+    "DESIGN_OF_EXPERIMENTS": {'description': 'Statistical method for process optimization', 'annotations': {'statistical': 'statistical experimentation', 'optimization': 'process optimization', 'factors': 'factor analysis', 'interaction': 'interaction effects', 'efficiency': 'experimental efficiency'}},
+    "SAMPLING_PLANS": {'description': 'Systematic approach to quality sampling', 'annotations': {'sampling': 'statistical sampling', 'plans': 'sampling plans', 'acceptance': 'acceptance sampling', 'risk': 'risk control', 'efficiency': 'sampling efficiency'}},
+    "GAUGE_R_AND_R": {'description': 'Measurement system analysis technique', 'annotations': {'measurement': 'measurement system analysis', 'repeatability': 'measurement repeatability', 'reproducibility': 'measurement reproducibility', 'variation': 'measurement variation', 'capability': 'measurement capability'}},
+}
+
+class QualityAssuranceLevelEnum(RichEnum):
+    """
+    Levels of quality assurance implementation
+    """
+    # Enum members
+    BASIC_QA = "BASIC_QA"
+    INTERMEDIATE_QA = "INTERMEDIATE_QA"
+    ADVANCED_QA = "ADVANCED_QA"
+    WORLD_CLASS_QA = "WORLD_CLASS_QA"
+    TOTAL_QUALITY = "TOTAL_QUALITY"
+
+# Set metadata after class creation to avoid it becoming an enum member
+QualityAssuranceLevelEnum._metadata = {
+    "BASIC_QA": {'description': 'Fundamental quality assurance practices', 'annotations': {'level': 'basic implementation', 'practices': 'fundamental QA practices', 'inspection': 'inspection-based approach', 'reactive': 'reactive quality approach', 'compliance': 'basic compliance'}},
+    "INTERMEDIATE_QA": {'description': 'Systematic quality assurance with documented processes', 'annotations': {'level': 'intermediate implementation', 'systematic': 'systematic approach', 'documentation': 'documented processes', 'prevention': 'some prevention focus', 'training': 'quality training programs'}},
+    "ADVANCED_QA": {'description': 'Comprehensive quality management system', 'annotations': {'level': 'advanced implementation', 'comprehensive': 'comprehensive QMS', 'integration': 'integrated approach', 'prevention': 'prevention-focused', 'measurement': 'quality measurement systems'}},
+    "WORLD_CLASS_QA": {'description': 'Excellence-oriented quality management', 'annotations': {'level': 'world-class implementation', 'excellence': 'quality excellence', 'innovation': 'quality innovation', 'leadership': 'quality leadership', 'benchmarking': 'best practice benchmarking'}},
+    "TOTAL_QUALITY": {'description': 'Organization-wide quality culture and commitment', 'annotations': {'level': 'total quality implementation', 'culture': 'quality culture', 'organization_wide': 'entire organization', 'customer': 'customer-focused', 'continuous': 'continuous improvement'}},
+}
+
+class ProcessImprovementApproachEnum(RichEnum):
+    """
+    Process improvement methodologies and approaches
+    """
+    # Enum members
+    BUSINESS_PROCESS_REENGINEERING = "BUSINESS_PROCESS_REENGINEERING"
+    CONTINUOUS_IMPROVEMENT = "CONTINUOUS_IMPROVEMENT"
+    PROCESS_STANDARDIZATION = "PROCESS_STANDARDIZATION"
+    AUTOMATION = "AUTOMATION"
+    DIGITALIZATION = "DIGITALIZATION"
+    OUTSOURCING = "OUTSOURCING"
+    SHARED_SERVICES = "SHARED_SERVICES"
+    AGILE_PROCESS_IMPROVEMENT = "AGILE_PROCESS_IMPROVEMENT"
+
+# Set metadata after class creation to avoid it becoming an enum member
+ProcessImprovementApproachEnum._metadata = {
+    "BUSINESS_PROCESS_REENGINEERING": {'description': 'Radical redesign of business processes', 'annotations': {'approach': 'radical process redesign', 'dramatic': 'dramatic improvement', 'technology': 'technology-enabled', 'fundamental': 'fundamental rethinking', 'breakthrough': 'breakthrough performance'}},
+    "CONTINUOUS_IMPROVEMENT": {'description': 'Ongoing incremental process improvement', 'annotations': {'approach': 'incremental improvement', 'ongoing': 'continuous effort', 'culture': 'improvement culture', 'employee': 'employee involvement', 'sustainable': 'sustainable improvement'}},
+    "PROCESS_STANDARDIZATION": {'description': 'Establishing consistent process standards', 'annotations': {'standardization': 'process standardization', 'consistency': 'consistent execution', 'documentation': 'process documentation', 'training': 'standard training', 'compliance': 'standard compliance'}},
+    "AUTOMATION": {'description': 'Technology-driven process automation', 'annotations': {'technology': 'automation technology', 'efficiency': 'operational efficiency', 'consistency': 'consistent execution', 'cost': 'cost reduction', 'quality': 'quality improvement'}},
+    "DIGITALIZATION": {'description': 'Digital technology-enabled process transformation', 'annotations': {'digital': 'digital transformation', 'technology': 'digital technology', 'data': 'data-driven processes', 'integration': 'system integration', 'innovation': 'digital innovation'}},
+    "OUTSOURCING": {'description': 'External provider process management', 'annotations': {'external': 'external process management', 'specialization': 'specialized providers', 'cost': 'cost optimization', 'focus': 'core competency focus', 'expertise': 'external expertise'}},
+    "SHARED_SERVICES": {'description': 'Centralized shared process delivery', 'annotations': {'centralization': 'centralized delivery', 'sharing': 'shared across units', 'efficiency': 'scale efficiency', 'standardization': 'service standardization', 'optimization': 'cost optimization'}},
+    "AGILE_PROCESS_IMPROVEMENT": {'description': 'Flexible and iterative process improvement', 'annotations': {'agile': 'agile methodology', 'iterative': 'iterative improvement', 'flexible': 'flexible approach', 'responsive': 'responsive to change', 'collaboration': 'collaborative improvement'}},
+}
+
+class QualityMaturityLevelEnum(RichEnum):
+    """
+    Organizational quality maturity levels
+    """
+    # Enum members
+    AD_HOC = "AD_HOC"
+    DEFINED = "DEFINED"
+    MANAGED = "MANAGED"
+    OPTIMIZED = "OPTIMIZED"
+    WORLD_CLASS = "WORLD_CLASS"
+
+# Set metadata after class creation to avoid it becoming an enum member
+QualityMaturityLevelEnum._metadata = {
+    "AD_HOC": {'description': 'Informal and unstructured quality practices', 'annotations': {'maturity': 'initial maturity level', 'structure': 'unstructured approach', 'informal': 'informal practices', 'reactive': 'reactive quality', 'inconsistent': 'inconsistent results'}},
+    "DEFINED": {'description': 'Documented and standardized quality processes', 'annotations': {'maturity': 'defined maturity level', 'documentation': 'documented processes', 'standardization': 'standardized approach', 'training': 'process training', 'consistency': 'consistent execution'}},
+    "MANAGED": {'description': 'Measured and controlled quality management', 'annotations': {'maturity': 'managed maturity level', 'measurement': 'quality measurement', 'control': 'process control', 'monitoring': 'performance monitoring', 'improvement': 'targeted improvement'}},
+    "OPTIMIZED": {'description': 'Continuously improving quality excellence', 'annotations': {'maturity': 'optimized maturity level', 'optimization': 'continuous optimization', 'innovation': 'quality innovation', 'excellence': 'quality excellence', 'benchmarking': 'best practice adoption'}},
+    "WORLD_CLASS": {'description': 'Industry-leading quality performance and innovation', 'annotations': {'maturity': 'world-class maturity level', 'leadership': 'industry leadership', 'innovation': 'quality innovation', 'excellence': 'sustained excellence', 'recognition': 'external recognition'}},
+}
+
+class ProcurementTypeEnum(RichEnum):
+    """
+    Types of procurement activities and approaches
+    """
+    # Enum members
+    DIRECT_PROCUREMENT = "DIRECT_PROCUREMENT"
+    INDIRECT_PROCUREMENT = "INDIRECT_PROCUREMENT"
+    SERVICES_PROCUREMENT = "SERVICES_PROCUREMENT"
+    CAPITAL_PROCUREMENT = "CAPITAL_PROCUREMENT"
+    STRATEGIC_PROCUREMENT = "STRATEGIC_PROCUREMENT"
+    TACTICAL_PROCUREMENT = "TACTICAL_PROCUREMENT"
+    EMERGENCY_PROCUREMENT = "EMERGENCY_PROCUREMENT"
+    FRAMEWORK_PROCUREMENT = "FRAMEWORK_PROCUREMENT"
+    E_PROCUREMENT = "E_PROCUREMENT"
+    SUSTAINABLE_PROCUREMENT = "SUSTAINABLE_PROCUREMENT"
+
+# Set metadata after class creation to avoid it becoming an enum member
+ProcurementTypeEnum._metadata = {
+    "DIRECT_PROCUREMENT": {'description': 'Procurement of materials directly used in production', 'annotations': {'category': 'direct materials', 'purpose': 'production input', 'impact': 'direct impact on product', 'examples': 'raw materials, components, subassemblies', 'strategic': 'strategically important'}},
+    "INDIRECT_PROCUREMENT": {'description': 'Procurement of goods and services supporting operations', 'annotations': {'category': 'indirect materials and services', 'purpose': 'operational support', 'impact': 'indirect impact on product', 'examples': 'office supplies, maintenance, professional services', 'cost_focus': 'cost optimization focus'}},
+    "SERVICES_PROCUREMENT": {'description': 'Procurement of professional and business services', 'annotations': {'category': 'services', 'intangible': 'intangible deliverables', 'examples': 'consulting, IT services, maintenance', 'relationship': 'relationship-based', 'management': 'service level management'}},
+    "CAPITAL_PROCUREMENT": {'description': 'Procurement of capital equipment and assets', 'annotations': {'category': 'capital expenditure', 'long_term': 'long-term assets', 'high_value': 'high value purchases', 'examples': 'machinery, equipment, facilities', 'approval': 'capital approval process'}},
+    "STRATEGIC_PROCUREMENT": {'description': 'Procurement of strategically important items', 'annotations': {'importance': 'strategic importance', 'risk': 'high business risk', 'value': 'high value impact', 'partnership': 'strategic partnerships', 'long_term': 'long-term relationships'}},
+    "TACTICAL_PROCUREMENT": {'description': 'Routine procurement of standard items', 'annotations': {'routine': 'routine purchases', 'standard': 'standardized items', 'efficiency': 'efficiency focused', 'transactional': 'transactional approach', 'volume': 'volume-based'}},
+    "EMERGENCY_PROCUREMENT": {'description': 'Urgent procurement due to immediate needs', 'annotations': {'urgency': 'urgent requirements', 'expedited': 'expedited process', 'higher_cost': 'potentially higher costs', 'risk_mitigation': 'business continuity', 'limited_sourcing': 'limited supplier options'}},
+    "FRAMEWORK_PROCUREMENT": {'description': 'Pre-negotiated procurement agreements', 'annotations': {'agreement': 'pre-negotiated terms', 'efficiency': 'procurement efficiency', 'compliance': 'standardized compliance', 'multiple_suppliers': 'multiple approved suppliers', 'call_off': 'call-off contracts'}},
+    "E_PROCUREMENT": {'description': 'Technology-enabled procurement processes', 'annotations': {'technology': 'electronic platforms', 'automation': 'process automation', 'efficiency': 'operational efficiency', 'transparency': 'process transparency', 'data': 'procurement data analytics'}},
+    "SUSTAINABLE_PROCUREMENT": {'description': 'Environmentally and socially responsible procurement', 'annotations': {'sustainability': 'environmental and social criteria', 'responsibility': 'corporate responsibility', 'lifecycle': 'lifecycle considerations', 'certification': 'sustainability certifications', 'stakeholder': 'stakeholder value'}},
+}
+
+class VendorCategoryEnum(RichEnum):
+    """
+    Vendor classification categories
+    """
+    # Enum members
+    STRATEGIC_SUPPLIER = "STRATEGIC_SUPPLIER"
+    PREFERRED_SUPPLIER = "PREFERRED_SUPPLIER"
+    APPROVED_SUPPLIER = "APPROVED_SUPPLIER"
+    TRANSACTIONAL_SUPPLIER = "TRANSACTIONAL_SUPPLIER"
+    SINGLE_SOURCE = "SINGLE_SOURCE"
+    SOLE_SOURCE = "SOLE_SOURCE"
+    MINORITY_SUPPLIER = "MINORITY_SUPPLIER"
+    LOCAL_SUPPLIER = "LOCAL_SUPPLIER"
+    GLOBAL_SUPPLIER = "GLOBAL_SUPPLIER"
+    SPOT_SUPPLIER = "SPOT_SUPPLIER"
+
+# Set metadata after class creation to avoid it becoming an enum member
+VendorCategoryEnum._metadata = {
+    "STRATEGIC_SUPPLIER": {'description': 'Critical suppliers with strategic importance', 'annotations': {'importance': 'strategic business importance', 'relationship': 'partnership relationship', 'risk': 'high business risk if disrupted', 'collaboration': 'collaborative planning', 'long_term': 'long-term agreements'}},
+    "PREFERRED_SUPPLIER": {'description': 'Suppliers with proven performance and preferred status', 'annotations': {'performance': 'proven performance history', 'preferred': 'preferred supplier status', 'reliability': 'reliable delivery', 'quality': 'consistent quality', 'relationship': 'ongoing relationship'}},
+    "APPROVED_SUPPLIER": {'description': 'Suppliers meeting qualification requirements', 'annotations': {'qualification': 'meets qualification criteria', 'approved': 'approved for business', 'standards': 'meets quality standards', 'compliance': 'regulatory compliance', 'monitoring': 'performance monitoring'}},
+    "TRANSACTIONAL_SUPPLIER": {'description': 'Suppliers for routine, low-risk purchases', 'annotations': {'routine': 'routine transactions', 'low_risk': 'low business risk', 'standard': 'standard products/services', 'efficiency': 'cost and efficiency focus', 'limited_relationship': 'limited relationship'}},
+    "SINGLE_SOURCE": {'description': 'Only available supplier for specific requirement', 'annotations': {'uniqueness': 'unique product or service', 'monopoly': 'single source situation', 'dependency': 'high dependency', 'risk': 'supply risk concentration', 'relationship': 'close relationship management'}},
+    "SOLE_SOURCE": {'description': 'Deliberately chosen single supplier', 'annotations': {'choice': 'deliberate single supplier choice', 'partnership': 'strategic partnership', 'specialization': 'specialized capability', 'integration': 'integrated operations', 'exclusive': 'exclusive relationship'}},
+    "MINORITY_SUPPLIER": {'description': 'Suppliers meeting diversity criteria', 'annotations': {'diversity': 'supplier diversity program', 'certification': 'diversity certification', 'inclusion': 'supplier inclusion', 'social_responsibility': 'corporate social responsibility', 'development': 'supplier development'}},
+    "LOCAL_SUPPLIER": {'description': 'Geographically local suppliers', 'annotations': {'geography': 'local geographic proximity', 'community': 'local community support', 'logistics': 'reduced logistics costs', 'responsiveness': 'quick response capability', 'sustainability': 'reduced carbon footprint'}},
+    "GLOBAL_SUPPLIER": {'description': 'Suppliers with global capabilities', 'annotations': {'global': 'global presence and capability', 'scale': 'economies of scale', 'standardization': 'global standardization', 'complexity': 'complex management', 'risk': 'global supply chain risk'}},
+    "SPOT_SUPPLIER": {'description': 'Suppliers for one-time or spot purchases', 'annotations': {'spot_market': 'spot market transactions', 'one_time': 'one-time purchases', 'price_driven': 'price-driven selection', 'no_relationship': 'no ongoing relationship', 'market_based': 'market-based pricing'}},
+}
+
+class SupplyChainStrategyEnum(RichEnum):
+    """
+    Supply chain strategic approaches
+    """
+    # Enum members
+    LEAN_SUPPLY_CHAIN = "LEAN_SUPPLY_CHAIN"
+    AGILE_SUPPLY_CHAIN = "AGILE_SUPPLY_CHAIN"
+    RESILIENT_SUPPLY_CHAIN = "RESILIENT_SUPPLY_CHAIN"
+    SUSTAINABLE_SUPPLY_CHAIN = "SUSTAINABLE_SUPPLY_CHAIN"
+    GLOBAL_SUPPLY_CHAIN = "GLOBAL_SUPPLY_CHAIN"
+    LOCAL_SUPPLY_CHAIN = "LOCAL_SUPPLY_CHAIN"
+    DIGITAL_SUPPLY_CHAIN = "DIGITAL_SUPPLY_CHAIN"
+    COLLABORATIVE_SUPPLY_CHAIN = "COLLABORATIVE_SUPPLY_CHAIN"
+    COST_FOCUSED_SUPPLY_CHAIN = "COST_FOCUSED_SUPPLY_CHAIN"
+    CUSTOMER_FOCUSED_SUPPLY_CHAIN = "CUSTOMER_FOCUSED_SUPPLY_CHAIN"
+
+# Set metadata after class creation to avoid it becoming an enum member
+SupplyChainStrategyEnum._metadata = {
+    "LEAN_SUPPLY_CHAIN": {'description': 'Waste elimination and efficiency-focused supply chain', 'annotations': {'philosophy': 'lean philosophy', 'waste': 'waste elimination', 'efficiency': 'operational efficiency', 'flow': 'smooth material flow', 'inventory': 'minimal inventory'}},
+    "AGILE_SUPPLY_CHAIN": {'description': 'Flexible and responsive supply chain', 'annotations': {'flexibility': 'high flexibility', 'responsiveness': 'rapid response capability', 'adaptation': 'quick adaptation', 'variability': 'handles demand variability', 'customer': 'customer responsiveness'}},
+    "RESILIENT_SUPPLY_CHAIN": {'description': 'Risk-resistant and robust supply chain', 'annotations': {'resilience': 'supply chain resilience', 'risk_management': 'comprehensive risk management', 'redundancy': 'built-in redundancy', 'recovery': 'quick recovery capability', 'continuity': 'business continuity focus'}},
+    "SUSTAINABLE_SUPPLY_CHAIN": {'description': 'Environmentally and socially responsible supply chain', 'annotations': {'sustainability': 'environmental and social sustainability', 'responsibility': 'corporate responsibility', 'lifecycle': 'lifecycle assessment', 'circular': 'circular economy principles', 'stakeholder': 'stakeholder value'}},
+    "GLOBAL_SUPPLY_CHAIN": {'description': 'Internationally distributed supply chain', 'annotations': {'global': 'global geographic distribution', 'scale': 'economies of scale', 'complexity': 'increased complexity', 'risk': 'global risks', 'coordination': 'global coordination'}},
+    "LOCAL_SUPPLY_CHAIN": {'description': 'Geographically concentrated supply chain', 'annotations': {'local': 'local or regional focus', 'proximity': 'geographic proximity', 'responsiveness': 'local responsiveness', 'community': 'community support', 'sustainability': 'reduced transportation'}},
+    "DIGITAL_SUPPLY_CHAIN": {'description': 'Technology-enabled and data-driven supply chain', 'annotations': {'digital': 'digital transformation', 'technology': 'advanced technology', 'data': 'data-driven decisions', 'automation': 'process automation', 'visibility': 'end-to-end visibility'}},
+    "COLLABORATIVE_SUPPLY_CHAIN": {'description': 'Partnership-based collaborative supply chain', 'annotations': {'collaboration': 'supply chain collaboration', 'partnership': 'strategic partnerships', 'integration': 'process integration', 'sharing': 'information sharing', 'joint_planning': 'collaborative planning'}},
+    "COST_FOCUSED_SUPPLY_CHAIN": {'description': 'Cost optimization-focused supply chain', 'annotations': {'cost': 'cost optimization', 'efficiency': 'cost efficiency', 'standardization': 'process standardization', 'scale': 'economies of scale', 'procurement': 'cost-focused procurement'}},
+    "CUSTOMER_FOCUSED_SUPPLY_CHAIN": {'description': 'Customer service-oriented supply chain', 'annotations': {'customer': 'customer-centric', 'service': 'customer service focus', 'customization': 'product customization', 'responsiveness': 'customer responsiveness', 'satisfaction': 'customer satisfaction'}},
+}
+
+class LogisticsOperationEnum(RichEnum):
+    """
+    Types of logistics operations
+    """
+    # Enum members
+    INBOUND_LOGISTICS = "INBOUND_LOGISTICS"
+    OUTBOUND_LOGISTICS = "OUTBOUND_LOGISTICS"
+    REVERSE_LOGISTICS = "REVERSE_LOGISTICS"
+    THIRD_PARTY_LOGISTICS = "THIRD_PARTY_LOGISTICS"
+    FOURTH_PARTY_LOGISTICS = "FOURTH_PARTY_LOGISTICS"
+    WAREHOUSING = "WAREHOUSING"
+    TRANSPORTATION = "TRANSPORTATION"
+    CROSS_DOCKING = "CROSS_DOCKING"
+    DISTRIBUTION = "DISTRIBUTION"
+    FREIGHT_FORWARDING = "FREIGHT_FORWARDING"
+
+# Set metadata after class creation to avoid it becoming an enum member
+LogisticsOperationEnum._metadata = {
+    "INBOUND_LOGISTICS": {'description': 'Management of incoming materials and supplies', 'annotations': {'direction': 'inbound to organization', 'materials': 'raw materials and supplies', 'suppliers': 'supplier coordination', 'receiving': 'receiving operations', 'quality': 'incoming quality control'}},
+    "OUTBOUND_LOGISTICS": {'description': 'Management of finished goods distribution', 'annotations': {'direction': 'outbound from organization', 'products': 'finished goods', 'customers': 'customer delivery', 'distribution': 'distribution management', 'service': 'customer service'}},
+    "REVERSE_LOGISTICS": {'description': 'Management of product returns and recycling', 'annotations': {'direction': 'reverse flow', 'returns': 'product returns', 'recycling': 'recycling and disposal', 'recovery': 'value recovery', 'sustainability': 'environmental responsibility'}},
+    "THIRD_PARTY_LOGISTICS": {'description': 'Outsourced logistics services', 'annotations': {'outsourcing': 'logistics outsourcing', 'service_provider': 'third-party provider', 'specialization': 'logistics specialization', 'cost': 'cost optimization', 'expertise': 'logistics expertise'}},
+    "FOURTH_PARTY_LOGISTICS": {'description': 'Supply chain integration and management services', 'annotations': {'integration': 'supply chain integration', 'management': 'end-to-end management', 'coordination': 'multi-provider coordination', 'strategy': 'strategic logistics', 'technology': 'technology integration'}},
+    "WAREHOUSING": {'description': 'Storage and inventory management operations', 'annotations': {'storage': 'product storage', 'inventory': 'inventory management', 'handling': 'material handling', 'distribution': 'distribution center', 'automation': 'warehouse automation'}},
+    "TRANSPORTATION": {'description': 'Movement of goods between locations', 'annotations': {'movement': 'goods movement', 'modes': 'transportation modes', 'routing': 'route optimization', 'scheduling': 'delivery scheduling', 'cost': 'transportation cost'}},
+    "CROSS_DOCKING": {'description': 'Direct transfer without storage', 'annotations': {'transfer': 'direct transfer', 'minimal_storage': 'minimal inventory storage', 'efficiency': 'operational efficiency', 'speed': 'fast throughput', 'consolidation': 'shipment consolidation'}},
+    "DISTRIBUTION": {'description': 'Product distribution and delivery operations', 'annotations': {'distribution': 'product distribution', 'network': 'distribution network', 'delivery': 'customer delivery', 'service': 'delivery service', 'coverage': 'market coverage'}},
+    "FREIGHT_FORWARDING": {'description': 'International shipping and customs management', 'annotations': {'international': 'international shipping', 'customs': 'customs clearance', 'documentation': 'shipping documentation', 'coordination': 'multi-modal coordination', 'compliance': 'regulatory compliance'}},
+}
+
+class SourcingStrategyEnum(RichEnum):
+    """
+    Sourcing strategy approaches
+    """
+    # Enum members
+    SINGLE_SOURCING = "SINGLE_SOURCING"
+    MULTIPLE_SOURCING = "MULTIPLE_SOURCING"
+    DUAL_SOURCING = "DUAL_SOURCING"
+    GLOBAL_SOURCING = "GLOBAL_SOURCING"
+    DOMESTIC_SOURCING = "DOMESTIC_SOURCING"
+    NEAR_SOURCING = "NEAR_SOURCING"
+    VERTICAL_INTEGRATION = "VERTICAL_INTEGRATION"
+    OUTSOURCING = "OUTSOURCING"
+    INSOURCING = "INSOURCING"
+    CONSORTIUM_SOURCING = "CONSORTIUM_SOURCING"
+
+# Set metadata after class creation to avoid it becoming an enum member
+SourcingStrategyEnum._metadata = {
+    "SINGLE_SOURCING": {'description': 'Deliberate use of one supplier for strategic reasons', 'annotations': {'suppliers': 'single supplier', 'strategic': 'strategic decision', 'partnership': 'close partnership', 'risk': 'supply concentration risk', 'benefits': 'economies of scale'}},
+    "MULTIPLE_SOURCING": {'description': 'Use of multiple suppliers for risk mitigation', 'annotations': {'suppliers': 'multiple suppliers', 'risk_mitigation': 'supply risk mitigation', 'competition': 'supplier competition', 'flexibility': 'sourcing flexibility', 'management': 'complex supplier management'}},
+    "DUAL_SOURCING": {'description': 'Use of two suppliers for balance of risk and efficiency', 'annotations': {'suppliers': 'two suppliers', 'balance': 'risk and efficiency balance', 'backup': 'backup supply capability', 'competition': 'limited competition', 'management': 'manageable complexity'}},
+    "GLOBAL_SOURCING": {'description': 'Worldwide sourcing for best value', 'annotations': {'geographic': 'global geographic scope', 'cost': 'cost optimization', 'capability': 'access to capabilities', 'complexity': 'increased complexity', 'risk': 'global supply risks'}},
+    "DOMESTIC_SOURCING": {'description': 'Sourcing within domestic market', 'annotations': {'geographic': 'domestic market only', 'proximity': 'geographic proximity', 'responsiveness': 'local responsiveness', 'compliance': 'regulatory compliance', 'support': 'domestic economy support'}},
+    "NEAR_SOURCING": {'description': 'Sourcing from nearby geographic regions', 'annotations': {'geographic': 'nearby regions', 'balance': 'cost and proximity balance', 'risk': 'reduced supply chain risk', 'responsiveness': 'improved responsiveness', 'cost': 'moderate cost advantage'}},
+    "VERTICAL_INTEGRATION": {'description': 'Internal production instead of external sourcing', 'annotations': {'internal': 'internal production', 'control': 'direct control', 'capability': 'internal capability development', 'investment': 'significant investment', 'flexibility': 'reduced flexibility'}},
+    "OUTSOURCING": {'description': 'External sourcing of non-core activities', 'annotations': {'external': 'external providers', 'focus': 'core competency focus', 'cost': 'cost optimization', 'expertise': 'access to expertise', 'dependency': 'external dependency'}},
+    "INSOURCING": {'description': 'Bringing previously outsourced activities internal', 'annotations': {'internal': 'bring activities internal', 'control': 'increased control', 'capability': 'internal capability building', 'cost': 'potential cost increase', 'strategic': 'strategic importance'}},
+    "CONSORTIUM_SOURCING": {'description': 'Collaborative sourcing with other organizations', 'annotations': {'collaboration': 'multi-organization collaboration', 'leverage': 'increased buying leverage', 'cost': 'cost reduction through scale', 'complexity': 'coordination complexity', 'relationships': 'multi-party relationships'}},
+}
+
+class SupplierRelationshipTypeEnum(RichEnum):
+    """
+    Types of supplier relationship management
+    """
+    # Enum members
+    TRANSACTIONAL = "TRANSACTIONAL"
+    PREFERRED_SUPPLIER = "PREFERRED_SUPPLIER"
+    STRATEGIC_PARTNERSHIP = "STRATEGIC_PARTNERSHIP"
+    ALLIANCE = "ALLIANCE"
+    JOINT_VENTURE = "JOINT_VENTURE"
+    VENDOR_MANAGED_INVENTORY = "VENDOR_MANAGED_INVENTORY"
+    CONSIGNMENT = "CONSIGNMENT"
+    COLLABORATIVE_PLANNING = "COLLABORATIVE_PLANNING"
+    DEVELOPMENT_PARTNERSHIP = "DEVELOPMENT_PARTNERSHIP"
+    RISK_SHARING = "RISK_SHARING"
+
+# Set metadata after class creation to avoid it becoming an enum member
+SupplierRelationshipTypeEnum._metadata = {
+    "TRANSACTIONAL": {'description': 'Arms-length, price-focused supplier relationship', 'annotations': {'focus': 'price and terms focus', 'interaction': 'minimal interaction', 'duration': 'short-term orientation', 'switching': 'easy supplier switching', 'competition': 'competitive bidding'}},
+    "PREFERRED_SUPPLIER": {'description': 'Ongoing relationship with proven suppliers', 'annotations': {'status': 'preferred supplier status', 'performance': 'proven performance', 'priority': 'priority consideration', 'benefits': 'preferential treatment', 'stability': 'stable relationship'}},
+    "STRATEGIC_PARTNERSHIP": {'description': 'Collaborative long-term strategic relationship', 'annotations': {'collaboration': 'strategic collaboration', 'integration': 'business integration', 'planning': 'joint planning', 'development': 'joint development', 'mutual_benefit': 'mutual value creation'}},
+    "ALLIANCE": {'description': 'Formal alliance with shared objectives', 'annotations': {'formal': 'formal alliance agreement', 'objectives': 'shared strategic objectives', 'resources': 'shared resources', 'risks': 'shared risks and rewards', 'governance': 'joint governance'}},
+    "JOINT_VENTURE": {'description': 'Separate entity created with supplier', 'annotations': {'entity': 'separate legal entity', 'ownership': 'shared ownership', 'investment': 'joint investment', 'control': 'shared control', 'separate': 'separate business unit'}},
+    "VENDOR_MANAGED_INVENTORY": {'description': 'Supplier manages customer inventory', 'annotations': {'management': 'supplier manages inventory', 'visibility': 'demand visibility', 'responsibility': 'supplier responsibility', 'efficiency': 'inventory efficiency', 'integration': 'systems integration'}},
+    "CONSIGNMENT": {'description': 'Supplier owns inventory until consumption', 'annotations': {'ownership': 'supplier retains ownership', 'location': 'customer location', 'payment': 'payment on consumption', 'cash_flow': 'improved customer cash flow', 'risk': 'supplier inventory risk'}},
+    "COLLABORATIVE_PLANNING": {'description': 'Joint planning and forecasting relationship', 'annotations': {'planning': 'collaborative planning', 'forecasting': 'joint forecasting', 'information': 'information sharing', 'coordination': 'demand coordination', 'efficiency': 'supply chain efficiency'}},
+    "DEVELOPMENT_PARTNERSHIP": {'description': 'Investment in supplier capability development', 'annotations': {'development': 'supplier capability development', 'investment': 'customer investment', 'improvement': 'supplier improvement', 'capability': 'capability building', 'long_term': 'long-term commitment'}},
+    "RISK_SHARING": {'description': 'Shared risk and reward relationship', 'annotations': {'risk': 'shared risk and reward', 'incentives': 'aligned incentives', 'performance': 'performance-based', 'outcomes': 'shared outcomes', 'collaboration': 'collaborative approach'}},
+}
+
+class InventoryManagementApproachEnum(RichEnum):
+    """
+    Inventory management methodologies
+    """
+    # Enum members
+    JUST_IN_TIME = "JUST_IN_TIME"
+    ECONOMIC_ORDER_QUANTITY = "ECONOMIC_ORDER_QUANTITY"
+    ABC_ANALYSIS = "ABC_ANALYSIS"
+    SAFETY_STOCK = "SAFETY_STOCK"
+    VENDOR_MANAGED_INVENTORY = "VENDOR_MANAGED_INVENTORY"
+    CONSIGNMENT_INVENTORY = "CONSIGNMENT_INVENTORY"
+    KANBAN = "KANBAN"
+    TWO_BIN_SYSTEM = "TWO_BIN_SYSTEM"
+    CONTINUOUS_REVIEW = "CONTINUOUS_REVIEW"
+    PERIODIC_REVIEW = "PERIODIC_REVIEW"
+
+# Set metadata after class creation to avoid it becoming an enum member
+InventoryManagementApproachEnum._metadata = {
+    "JUST_IN_TIME": {'description': 'Minimal inventory with precise timing', 'annotations': {'timing': 'precise delivery timing', 'waste': 'inventory waste elimination', 'flow': 'continuous flow', 'supplier': 'supplier integration', 'quality': 'zero defect requirement'}},
+    "ECONOMIC_ORDER_QUANTITY": {'description': 'Optimal order quantity calculation', 'annotations': {'optimization': 'cost optimization', 'calculation': 'mathematical calculation', 'trade_off': 'ordering vs holding cost trade-off', 'static': 'static demand assumption', 'classical': 'classical inventory model'}},
+    "ABC_ANALYSIS": {'description': 'Inventory classification by value importance', 'annotations': {'classification': 'value-based classification', 'focus': 'priority focus on high-value items', 'management': 'differentiated management', 'efficiency': 'resource allocation efficiency', 'pareto': 'Pareto principle application'}},
+    "SAFETY_STOCK": {'description': 'Buffer inventory for demand/supply uncertainty', 'annotations': {'buffer': 'inventory buffer', 'uncertainty': 'demand and supply uncertainty', 'service_level': 'service level protection', 'cost': 'additional holding cost', 'risk': 'stockout risk mitigation'}},
+    "VENDOR_MANAGED_INVENTORY": {'description': 'Supplier-controlled inventory management', 'annotations': {'control': 'supplier inventory control', 'visibility': 'demand visibility', 'automation': 'automated replenishment', 'efficiency': 'inventory efficiency', 'partnership': 'supplier partnership'}},
+    "CONSIGNMENT_INVENTORY": {'description': 'Supplier-owned inventory at customer location', 'annotations': {'ownership': 'supplier ownership', 'location': 'customer location', 'cash_flow': 'improved cash flow', 'availability': 'immediate availability', 'risk': 'supplier risk'}},
+    "KANBAN": {'description': 'Visual pull-based inventory system', 'annotations': {'visual': 'visual control system', 'pull': 'pull-based replenishment', 'lean': 'lean methodology', 'signals': 'kanban signals', 'flow': 'smooth material flow'}},
+    "TWO_BIN_SYSTEM": {'description': 'Simple reorder point system using two bins', 'annotations': {'simplicity': 'simple reorder system', 'visual': 'visual reorder point', 'bins': 'two-bin methodology', 'automatic': 'automatic reordering', 'low_cost': 'low-cost implementation'}},
+    "CONTINUOUS_REVIEW": {'description': 'Continuous monitoring with fixed reorder point', 'annotations': {'monitoring': 'continuous inventory monitoring', 'reorder_point': 'fixed reorder point', 'quantity': 'fixed order quantity', 'responsiveness': 'responsive to demand', 'cost': 'higher monitoring cost'}},
+    "PERIODIC_REVIEW": {'description': 'Periodic inventory review with variable order quantity', 'annotations': {'periodic': 'periodic review intervals', 'variable': 'variable order quantity', 'target': 'target inventory level', 'aggregation': 'order aggregation', 'efficiency': 'administrative efficiency'}},
+}
+
+class EmploymentTypeEnum(RichEnum):
+    """
+    Types of employment arrangements and contracts
+    """
+    # Enum members
+    FULL_TIME = "FULL_TIME"
+    PART_TIME = "PART_TIME"
+    CONTRACT = "CONTRACT"
+    TEMPORARY = "TEMPORARY"
+    FREELANCE = "FREELANCE"
+    INTERN = "INTERN"
+    SEASONAL = "SEASONAL"
+    CONSULTANT = "CONSULTANT"
+    VOLUNTEER = "VOLUNTEER"
+
+# Set metadata after class creation to avoid it becoming an enum member
+EmploymentTypeEnum._metadata = {
+    "FULL_TIME": {'description': 'Regular full-time employment status', 'annotations': {'hours': 'typically 40 hours per week', 'benefits': 'full benefits package', 'classification': 'exempt or non-exempt', 'stability': 'permanent position', 'commitment': 'full organizational commitment'}},
+    "PART_TIME": {'description': 'Regular part-time employment status', 'annotations': {'hours': 'less than full-time hours', 'benefits': 'limited or prorated benefits', 'flexibility': 'flexible scheduling', 'classification': 'typically non-exempt', 'commitment': 'ongoing but reduced hours'}},
+    "CONTRACT": {'description': 'Fixed-term contractual employment', 'annotations': {'duration': 'defined contract period', 'relationship': 'contractual relationship', 'benefits': 'limited benefits', 'termination': 'defined end date', 'purpose': 'specific project or duration'}},
+    "TEMPORARY": {'description': 'Short-term temporary employment', 'annotations': {'duration': 'short-term assignment', 'agency': 'often through staffing agency', 'benefits': 'minimal benefits', 'purpose': 'seasonal or project work', 'flexibility': 'high flexibility'}},
+    "FREELANCE": {'description': 'Independent contractor or freelance work', 'annotations': {'relationship': 'independent contractor', 'benefits': 'no traditional benefits', 'control': 'high work autonomy', 'taxes': 'responsible for own taxes', 'projects': 'project-based work'}},
+    "INTERN": {'description': 'Student or entry-level internship program', 'annotations': {'purpose': 'learning and experience', 'duration': 'limited duration', 'compensation': 'may be paid or unpaid', 'education': 'educational component', 'supervision': 'mentorship and guidance'}},
+    "SEASONAL": {'description': 'Employment tied to seasonal business needs', 'annotations': {'pattern': 'recurring seasonal pattern', 'duration': 'specific seasons', 'industry': 'retail, agriculture, tourism', 'return': 'potential for seasonal return', 'benefits': 'limited benefits'}},
+    "CONSULTANT": {'description': 'Professional consulting services', 'annotations': {'expertise': 'specialized expertise', 'relationship': 'advisory relationship', 'independence': 'independent professional', 'project': 'project or retainer basis', 'value': 'strategic value-add'}},
+    "VOLUNTEER": {'description': 'Unpaid volunteer service', 'annotations': {'compensation': 'unpaid service', 'motivation': 'altruistic motivation', 'commitment': 'voluntary commitment', 'purpose': 'mission-driven work', 'recognition': 'non-monetary recognition'}},
+}
+
+class JobLevelEnum(RichEnum):
+    """
+    Organizational job levels and career progression
+    """
+    # Enum members
+    ENTRY_LEVEL = "ENTRY_LEVEL"
+    JUNIOR = "JUNIOR"
+    MID_LEVEL = "MID_LEVEL"
+    SENIOR = "SENIOR"
+    LEAD = "LEAD"
+    MANAGER = "MANAGER"
+    DIRECTOR = "DIRECTOR"
+    VP = "VP"
+    C_LEVEL = "C_LEVEL"
+
+# Set metadata after class creation to avoid it becoming an enum member
+JobLevelEnum._metadata = {
+    "ENTRY_LEVEL": {'description': 'Beginning career level positions', 'annotations': {'experience': '0-2 years experience', 'responsibilities': 'basic operational tasks', 'supervision': 'high supervision required', 'development': 'learning and development focus', 'career_stage': 'career beginning'}},
+    "JUNIOR": {'description': 'Junior professional level', 'annotations': {'experience': '2-4 years experience', 'responsibilities': 'routine professional tasks', 'independence': 'some independence', 'mentorship': 'receiving mentorship', 'skill_building': 'skill development phase'}},
+    "MID_LEVEL": {'description': 'Experienced professional level', 'annotations': {'experience': '4-8 years experience', 'responsibilities': 'complex project work', 'independence': 'high independence', 'mentorship': 'providing and receiving mentorship', 'expertise': 'developing expertise'}},
+    "SENIOR": {'description': 'Senior professional level', 'annotations': {'experience': '8+ years experience', 'responsibilities': 'strategic project leadership', 'expertise': 'subject matter expertise', 'mentorship': 'mentoring others', 'influence': 'organizational influence'}},
+    "LEAD": {'description': 'Team leadership role', 'annotations': {'responsibility': 'team leadership', 'people_management': 'direct reports', 'coordination': 'team coordination', 'accountability': 'team results', 'development': 'team development'}},
+    "MANAGER": {'description': 'Management level position', 'annotations': {'scope': 'departmental management', 'people_management': 'multiple direct reports', 'budget': 'budget responsibility', 'strategy': 'tactical strategy', 'operations': 'operational management'}},
+    "DIRECTOR": {'description': 'Director level executive', 'annotations': {'scope': 'multi-departmental oversight', 'strategy': 'strategic planning', 'leadership': 'organizational leadership', 'stakeholders': 'senior stakeholder management', 'results': 'business results accountability'}},
+    "VP": {'description': 'Vice President executive level', 'annotations': {'scope': 'business unit or functional area', 'strategy': 'strategic leadership', 'board': 'board interaction', 'organization': 'organizational impact', 'succession': 'succession planning'}},
+    "C_LEVEL": {'description': 'Chief executive level', 'annotations': {'scope': 'enterprise-wide responsibility', 'governance': 'corporate governance', 'vision': 'organizational vision', 'stakeholders': 'external stakeholder management', 'fiduciary': 'fiduciary responsibility'}},
+}
+
+class HRFunctionEnum(RichEnum):
+    """
+    Human resources functional areas and specializations
+    """
+    # Enum members
+    TALENT_ACQUISITION = "TALENT_ACQUISITION"
+    EMPLOYEE_RELATIONS = "EMPLOYEE_RELATIONS"
+    COMPENSATION_BENEFITS = "COMPENSATION_BENEFITS"
+    PERFORMANCE_MANAGEMENT = "PERFORMANCE_MANAGEMENT"
+    LEARNING_DEVELOPMENT = "LEARNING_DEVELOPMENT"
+    HR_ANALYTICS = "HR_ANALYTICS"
+    ORGANIZATIONAL_DEVELOPMENT = "ORGANIZATIONAL_DEVELOPMENT"
+    HR_COMPLIANCE = "HR_COMPLIANCE"
+    HRIS_TECHNOLOGY = "HRIS_TECHNOLOGY"
+
+# Set metadata after class creation to avoid it becoming an enum member
+HRFunctionEnum._metadata = {
+    "TALENT_ACQUISITION": {'description': 'Recruitment and hiring functions', 'annotations': {'activities': 'sourcing, screening, interviewing, hiring', 'focus': 'attracting and selecting talent', 'metrics': 'time to hire, quality of hire', 'strategy': 'workforce planning', 'technology': 'ATS and recruitment tools'}},
+    "EMPLOYEE_RELATIONS": {'description': 'Managing employee relationships and workplace issues', 'annotations': {'activities': 'conflict resolution, grievance handling', 'focus': 'positive employee relations', 'communication': 'employee communication', 'culture': 'workplace culture', 'mediation': 'dispute resolution'}},
+    "COMPENSATION_BENEFITS": {'description': 'Managing compensation and benefits programs', 'annotations': {'activities': 'salary administration, benefits design', 'analysis': 'market analysis and benchmarking', 'compliance': 'regulatory compliance', 'cost': 'cost management', 'competitiveness': 'market competitiveness'}},
+    "PERFORMANCE_MANAGEMENT": {'description': 'Employee performance evaluation and improvement', 'annotations': {'activities': 'performance reviews, goal setting', 'development': 'performance improvement', 'measurement': 'performance metrics', 'feedback': 'continuous feedback', 'coaching': 'performance coaching'}},
+    "LEARNING_DEVELOPMENT": {'description': 'Employee training and development programs', 'annotations': {'activities': 'training design, skill development', 'career': 'career development', 'leadership': 'leadership development', 'compliance': 'compliance training', 'technology': 'learning management systems'}},
+    "HR_ANALYTICS": {'description': 'HR data analysis and workforce metrics', 'annotations': {'activities': 'data analysis, metrics reporting', 'insights': 'workforce insights', 'predictive': 'predictive analytics', 'dashboard': 'HR dashboards', 'decision_support': 'data-driven decisions'}},
+    "ORGANIZATIONAL_DEVELOPMENT": {'description': 'Organizational design and change management', 'annotations': {'activities': 'change management, culture transformation', 'design': 'organizational design', 'effectiveness': 'organizational effectiveness', 'culture': 'culture development', 'transformation': 'business transformation'}},
+    "HR_COMPLIANCE": {'description': 'Employment law compliance and risk management', 'annotations': {'activities': 'policy development, compliance monitoring', 'legal': 'employment law compliance', 'risk': 'HR risk management', 'auditing': 'compliance auditing', 'documentation': 'record keeping'}},
+    "HRIS_TECHNOLOGY": {'description': 'HR information systems and technology', 'annotations': {'activities': 'system administration, data management', 'systems': 'HRIS implementation', 'automation': 'process automation', 'integration': 'system integration', 'security': 'data security'}},
+}
+
+class CompensationTypeEnum(RichEnum):
+    """
+    Types of employee compensation structures
+    """
+    # Enum members
+    BASE_SALARY = "BASE_SALARY"
+    HOURLY_WAGE = "HOURLY_WAGE"
+    COMMISSION = "COMMISSION"
+    BONUS = "BONUS"
+    STOCK_OPTIONS = "STOCK_OPTIONS"
+    PROFIT_SHARING = "PROFIT_SHARING"
+    PIECE_RATE = "PIECE_RATE"
+    STIPEND = "STIPEND"
+
+# Set metadata after class creation to avoid it becoming an enum member
+CompensationTypeEnum._metadata = {
+    "BASE_SALARY": {'description': 'Fixed annual salary compensation', 'annotations': {'structure': 'fixed annual amount', 'payment': 'regular pay periods', 'exemption': 'often exempt from overtime', 'predictability': 'predictable income', 'market': 'market benchmarked'}},
+    "HOURLY_WAGE": {'description': 'Compensation paid per hour worked', 'annotations': {'structure': 'rate per hour', 'overtime': 'overtime eligible', 'tracking': 'time tracking required', 'variability': 'variable based on hours', 'classification': 'non-exempt employees'}},
+    "COMMISSION": {'description': 'Performance-based sales commission', 'annotations': {'structure': 'percentage of sales', 'performance': 'performance-based', 'variability': 'highly variable', 'motivation': 'sales motivation', 'risk': 'income risk'}},
+    "BONUS": {'description': 'Additional compensation for performance', 'annotations': {'timing': 'annual or periodic', 'criteria': 'performance criteria', 'discretionary': 'may be discretionary', 'recognition': 'performance recognition', 'retention': 'retention tool'}},
+    "STOCK_OPTIONS": {'description': 'Equity compensation through stock options', 'annotations': {'equity': 'equity participation', 'vesting': 'vesting schedule', 'retention': 'long-term retention', 'upside': 'company growth upside', 'risk': 'market risk'}},
+    "PROFIT_SHARING": {'description': 'Sharing of company profits with employees', 'annotations': {'structure': 'percentage of profits', 'performance': 'company performance based', 'culture': 'ownership culture', 'variability': 'variable based on profits', 'alignment': 'interest alignment'}},
+    "PIECE_RATE": {'description': 'Compensation based on units produced', 'annotations': {'structure': 'rate per unit produced', 'productivity': 'productivity-based', 'manufacturing': 'common in manufacturing', 'measurement': 'output measurement', 'efficiency': 'efficiency incentive'}},
+    "STIPEND": {'description': 'Fixed regular allowance or payment', 'annotations': {'purpose': 'specific purpose payment', 'amount': 'modest fixed amount', 'regularity': 'regular payment', 'supplemental': 'supplemental income', 'categories': 'interns, volunteers, board members'}},
+}
+
+class PerformanceRatingEnum(RichEnum):
+    """
+    Employee performance evaluation ratings
+    """
+    # Enum members
+    EXCEEDS_EXPECTATIONS = "EXCEEDS_EXPECTATIONS"
+    MEETS_EXPECTATIONS = "MEETS_EXPECTATIONS"
+    PARTIALLY_MEETS = "PARTIALLY_MEETS"
+    DOES_NOT_MEET = "DOES_NOT_MEET"
+    OUTSTANDING = "OUTSTANDING"
+
+# Set metadata after class creation to avoid it becoming an enum member
+PerformanceRatingEnum._metadata = {
+    "EXCEEDS_EXPECTATIONS": {'description': 'Performance significantly above expected standards', 'annotations': {'level': 'top performance tier', 'impact': 'significant business impact', 'recognition': 'high recognition', 'development': 'stretch assignments', 'percentage': 'typically 10-20% of population'}},
+    "MEETS_EXPECTATIONS": {'description': 'Performance meets all expected standards', 'annotations': {'level': 'satisfactory performance', 'standards': 'meets all job requirements', 'competency': 'demonstrates required competencies', 'consistency': 'consistent performance', 'percentage': 'typically 60-70% of population'}},
+    "PARTIALLY_MEETS": {'description': 'Performance meets some but not all standards', 'annotations': {'level': 'below standard performance', 'improvement': 'improvement needed', 'support': 'additional support required', 'development': 'focused development plan', 'percentage': 'typically 10-15% of population'}},
+    "DOES_NOT_MEET": {'description': 'Performance below acceptable standards', 'annotations': {'level': 'unsatisfactory performance', 'action': 'performance improvement plan', 'timeline': 'improvement timeline', 'consequences': 'potential consequences', 'percentage': 'typically 5-10% of population'}},
+    "OUTSTANDING": {'description': 'Exceptional performance far exceeding standards', 'annotations': {'level': 'exceptional performance', 'impact': 'transformational impact', 'leadership': 'demonstrates leadership', 'innovation': 'innovation and excellence', 'rarity': 'rare rating'}},
+}
+
+class RecruitmentSourceEnum(RichEnum):
+    """
+    Sources for candidate recruitment and sourcing
+    """
+    # Enum members
+    INTERNAL_REFERRAL = "INTERNAL_REFERRAL"
+    JOB_BOARDS = "JOB_BOARDS"
+    COMPANY_WEBSITE = "COMPANY_WEBSITE"
+    SOCIAL_MEDIA = "SOCIAL_MEDIA"
+    RECRUITMENT_AGENCIES = "RECRUITMENT_AGENCIES"
+    CAMPUS_RECRUITING = "CAMPUS_RECRUITING"
+    PROFESSIONAL_NETWORKS = "PROFESSIONAL_NETWORKS"
+    HEADHUNTERS = "HEADHUNTERS"
+
+# Set metadata after class creation to avoid it becoming an enum member
+RecruitmentSourceEnum._metadata = {
+    "INTERNAL_REFERRAL": {'description': 'Candidates referred by current employees', 'annotations': {'source': 'employee networks', 'quality': 'typically high quality', 'cost': 'low cost per hire', 'cultural_fit': 'good cultural fit', 'retention': 'higher retention rates'}},
+    "JOB_BOARDS": {'description': 'Candidates from online job posting sites', 'annotations': {'reach': 'broad candidate reach', 'cost': 'moderate cost', 'volume': 'high application volume', 'screening': 'requires screening', 'examples': 'Indeed, LinkedIn, Monster'}},
+    "COMPANY_WEBSITE": {'description': 'Candidates applying through company website', 'annotations': {'interest': 'high company interest', 'brand': 'employer brand driven', 'quality': 'targeted candidates', 'direct': 'direct application', 'cost': 'low incremental cost'}},
+    "SOCIAL_MEDIA": {'description': 'Candidates sourced through social media platforms', 'annotations': {'platforms': 'LinkedIn, Facebook, Twitter', 'active': 'active sourcing', 'networking': 'professional networking', 'targeting': 'targeted approach', 'engagement': 'relationship building'}},
+    "RECRUITMENT_AGENCIES": {'description': 'Candidates sourced through recruitment firms', 'annotations': {'expertise': 'specialized expertise', 'cost': 'higher cost', 'speed': 'faster time to hire', 'screening': 'pre-screened candidates', 'specialization': 'industry specialization'}},
+    "CAMPUS_RECRUITING": {'description': 'Recruitment from educational institutions', 'annotations': {'target': 'students and new graduates', 'programs': 'internship and graduate programs', 'relationships': 'university relationships', 'pipeline': 'talent pipeline', 'early_career': 'early career focus'}},
+    "PROFESSIONAL_NETWORKS": {'description': 'Recruitment through professional associations', 'annotations': {'industry': 'industry-specific networks', 'expertise': 'specialized expertise', 'relationships': 'professional relationships', 'credibility': 'professional credibility', 'targeted': 'targeted recruitment'}},
+    "HEADHUNTERS": {'description': 'Executive-level recruitment specialists', 'annotations': {'level': 'senior and executive roles', 'expertise': 'specialized search expertise', 'network': 'extensive professional networks', 'confidential': 'confidential searches', 'cost': 'premium cost'}},
+}
+
+class TrainingTypeEnum(RichEnum):
+    """
+    Types of employee training and development programs
+    """
+    # Enum members
+    ONBOARDING = "ONBOARDING"
+    TECHNICAL_SKILLS = "TECHNICAL_SKILLS"
+    LEADERSHIP_DEVELOPMENT = "LEADERSHIP_DEVELOPMENT"
+    COMPLIANCE_TRAINING = "COMPLIANCE_TRAINING"
+    SOFT_SKILLS = "SOFT_SKILLS"
+    SAFETY_TRAINING = "SAFETY_TRAINING"
+    DIVERSITY_INCLUSION = "DIVERSITY_INCLUSION"
+    CROSS_TRAINING = "CROSS_TRAINING"
+
+# Set metadata after class creation to avoid it becoming an enum member
+TrainingTypeEnum._metadata = {
+    "ONBOARDING": {'description': 'Orientation and integration training for new hires', 'annotations': {'timing': 'first days/weeks of employment', 'purpose': 'integration and orientation', 'content': 'company culture, policies, role basics', 'delivery': 'structured program', 'outcome': 'successful integration'}},
+    "TECHNICAL_SKILLS": {'description': 'Job-specific technical competency development', 'annotations': {'focus': 'technical competencies', 'relevance': 'job-specific skills', 'methods': 'hands-on training', 'certification': 'may include certification', 'updating': 'continuous skill updates'}},
+    "LEADERSHIP_DEVELOPMENT": {'description': 'Management and leadership capability building', 'annotations': {'target': 'managers and high-potential employees', 'skills': 'leadership and management skills', 'development': 'long-term development', 'mentorship': 'coaching and mentorship', 'succession': 'succession planning'}},
+    "COMPLIANCE_TRAINING": {'description': 'Required training for regulatory compliance', 'annotations': {'requirement': 'mandatory training', 'regulation': 'regulatory compliance', 'documentation': 'completion tracking', 'frequency': 'periodic updates', 'risk': 'risk mitigation'}},
+    "SOFT_SKILLS": {'description': 'Communication and interpersonal skills training', 'annotations': {'skills': 'communication, teamwork, problem-solving', 'application': 'broadly applicable', 'development': 'personal development', 'effectiveness': 'workplace effectiveness', 'collaboration': 'collaboration skills'}},
+    "SAFETY_TRAINING": {'description': 'Workplace safety and health training', 'annotations': {'focus': 'safety procedures and practices', 'compliance': 'OSHA compliance', 'prevention': 'accident prevention', 'emergency': 'emergency procedures', 'culture': 'safety culture'}},
+    "DIVERSITY_INCLUSION": {'description': 'Training on diversity, equity, and inclusion', 'annotations': {'awareness': 'cultural awareness', 'bias': 'unconscious bias training', 'inclusion': 'inclusive practices', 'culture': 'inclusive culture', 'behavior': 'behavior change'}},
+    "CROSS_TRAINING": {'description': 'Training in multiple roles or departments', 'annotations': {'flexibility': 'workforce flexibility', 'coverage': 'backup coverage', 'development': 'career development', 'understanding': 'broader understanding', 'collaboration': 'improved collaboration'}},
+}
+
+class EmployeeStatusEnum(RichEnum):
+    """
+    Current employment status classifications
+    """
+    # Enum members
+    ACTIVE = "ACTIVE"
+    ON_LEAVE = "ON_LEAVE"
+    PROBATIONARY = "PROBATIONARY"
+    SUSPENDED = "SUSPENDED"
+    TERMINATED = "TERMINATED"
+    RETIRED = "RETIRED"
+
+# Set metadata after class creation to avoid it becoming an enum member
+EmployeeStatusEnum._metadata = {
+    "ACTIVE": {'description': 'Currently employed and working', 'annotations': {'status': 'actively working', 'benefits': 'receiving full benefits', 'responsibilities': 'fulfilling job responsibilities', 'engagement': 'expected engagement', 'performance': 'subject to performance management'}},
+    "ON_LEAVE": {'description': 'Temporarily away from work on approved leave', 'annotations': {'temporary': 'temporary absence', 'approval': 'approved leave', 'return': 'expected return date', 'benefits': 'may retain benefits', 'types': 'medical, family, personal leave'}},
+    "PROBATIONARY": {'description': 'New employee in probationary period', 'annotations': {'duration': 'defined probationary period', 'evaluation': 'ongoing evaluation', 'benefits': 'limited or delayed benefits', 'termination': 'easier termination', 'assessment': 'performance assessment'}},
+    "SUSPENDED": {'description': 'Temporarily suspended from work', 'annotations': {'disciplinary': 'disciplinary action', 'investigation': 'pending investigation', 'pay': 'with or without pay', 'temporary': 'temporary status', 'review': 'pending review'}},
+    "TERMINATED": {'description': 'Employment has been terminated', 'annotations': {'end': 'employment ended', 'voluntary': 'voluntary or involuntary', 'benefits': 'benefits cessation', 'final': 'final status', 'documentation': 'termination documentation'}},
+    "RETIRED": {'description': 'Retired from employment', 'annotations': {'voluntary': 'voluntary departure', 'age': 'retirement age', 'benefits': 'retirement benefits', 'service': 'completed service', 'transition': 'career transition'}},
+}
+
+class WorkArrangementEnum(RichEnum):
+    """
+    Work location and arrangement types
+    """
+    # Enum members
+    ON_SITE = "ON_SITE"
+    REMOTE = "REMOTE"
+    HYBRID = "HYBRID"
+    FIELD_WORK = "FIELD_WORK"
+    TELECOMMUTE = "TELECOMMUTE"
+
+# Set metadata after class creation to avoid it becoming an enum member
+WorkArrangementEnum._metadata = {
+    "ON_SITE": {'description': 'Work performed at company facilities', 'annotations': {'location': 'company premises', 'collaboration': 'in-person collaboration', 'supervision': 'direct supervision', 'equipment': 'company-provided equipment', 'culture': 'office culture participation'}},
+    "REMOTE": {'description': 'Work performed away from company facilities', 'annotations': {'location': 'home or remote location', 'technology': 'technology-enabled work', 'flexibility': 'location flexibility', 'independence': 'high independence', 'communication': 'virtual communication'}},
+    "HYBRID": {'description': 'Combination of on-site and remote work', 'annotations': {'flexibility': 'location flexibility', 'balance': 'office and remote balance', 'collaboration': 'mixed collaboration modes', 'scheduling': 'flexible scheduling', 'adaptation': 'adaptive work style'}},
+    "FIELD_WORK": {'description': 'Work performed at client or field locations', 'annotations': {'location': 'customer or field locations', 'travel': 'travel requirements', 'independence': 'field independence', 'client': 'client interaction', 'mobility': 'mobile work style'}},
+    "TELECOMMUTE": {'description': 'Regular remote work arrangement', 'annotations': {'arrangement': 'formal remote arrangement', 'technology': 'telecommunication technology', 'productivity': 'productivity focus', 'work_life': 'work-life integration', 'communication': 'virtual team communication'}},
+}
+
+class BenefitsCategoryEnum(RichEnum):
+    """
+    Categories of employee benefits and compensation
+    """
+    # Enum members
+    HEALTH_INSURANCE = "HEALTH_INSURANCE"
+    RETIREMENT_BENEFITS = "RETIREMENT_BENEFITS"
+    PAID_TIME_OFF = "PAID_TIME_OFF"
+    LIFE_INSURANCE = "LIFE_INSURANCE"
+    FLEXIBLE_BENEFITS = "FLEXIBLE_BENEFITS"
+    WELLNESS_PROGRAMS = "WELLNESS_PROGRAMS"
+    PROFESSIONAL_DEVELOPMENT = "PROFESSIONAL_DEVELOPMENT"
+    WORK_LIFE_BALANCE = "WORK_LIFE_BALANCE"
+
+# Set metadata after class creation to avoid it becoming an enum member
+BenefitsCategoryEnum._metadata = {
+    "HEALTH_INSURANCE": {'description': 'Medical, dental, and vision insurance coverage', 'annotations': {'coverage': 'medical coverage', 'family': 'family coverage options', 'cost_sharing': 'employer contribution', 'networks': 'provider networks', 'essential': 'essential benefit'}},
+    "RETIREMENT_BENEFITS": {'description': 'Retirement savings and pension plans', 'annotations': {'savings': '401(k) or retirement savings', 'matching': 'employer matching', 'vesting': 'vesting schedules', 'planning': 'retirement planning', 'long_term': 'long-term benefit'}},
+    "PAID_TIME_OFF": {'description': 'Vacation, sick leave, and personal time', 'annotations': {'vacation': 'vacation time', 'sick': 'sick leave', 'personal': 'personal days', 'accrual': 'accrual systems', 'work_life': 'work-life balance'}},
+    "LIFE_INSURANCE": {'description': 'Life and disability insurance coverage', 'annotations': {'protection': 'financial protection', 'beneficiaries': 'beneficiary designation', 'disability': 'disability coverage', 'group': 'group coverage', 'peace_of_mind': 'financial security'}},
+    "FLEXIBLE_BENEFITS": {'description': 'Flexible spending and benefit choice options', 'annotations': {'choice': 'benefit choice', 'spending': 'flexible spending accounts', 'customization': 'personalized benefits', 'tax_advantage': 'tax advantages', 'lifestyle': 'lifestyle accommodation'}},
+    "WELLNESS_PROGRAMS": {'description': 'Employee health and wellness initiatives', 'annotations': {'health': 'health promotion', 'fitness': 'fitness programs', 'mental_health': 'mental health support', 'prevention': 'preventive care', 'culture': 'wellness culture'}},
+    "PROFESSIONAL_DEVELOPMENT": {'description': 'Training, education, and career development benefits', 'annotations': {'education': 'continuing education', 'training': 'professional training', 'career': 'career development', 'skill': 'skill enhancement', 'growth': 'professional growth'}},
+    "WORK_LIFE_BALANCE": {'description': 'Benefits supporting work-life integration', 'annotations': {'flexibility': 'work flexibility', 'family': 'family support', 'childcare': 'childcare assistance', 'elder_care': 'elder care support', 'balance': 'life balance'}},
 }
 
 class Fake(ConfiguredBaseModel):

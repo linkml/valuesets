@@ -1,0 +1,394 @@
+name: nuclear_reactor_types
+title: Nuclear Reactor Types and Classifications
+description: 'Classifications of nuclear reactor types based on coolant, moderator, neutron spectrum,
+  and generational designs. Based on World Nuclear Association classifications, IAEA reactor types,
+  and industry standards.'
+id: https://w3id.org/linkml/valuesets/energy/nuclear/reactor_types
+imports:
+- linkml:types
+prefixes:
+  valuesets: https://w3id.org/valuesets/
+  IAEA: https://www.iaea.org/
+  WNA: https://world-nuclear.org/
+  IEEE: https://standards.ieee.org/
+default_prefix: valuesets
+slots:
+  reactor_type:
+    description: Nuclear reactor classification by design type
+    range: ReactorTypeEnum
+  reactor_generation:
+    description: Reactor generation classification (I, II, III, III+, IV)
+    range: ReactorGenerationEnum
+  reactor_coolant:
+    description: Primary coolant type used in reactor
+    range: ReactorCoolantEnum
+  reactor_moderator:
+    description: Neutron moderator type used in reactor
+    range: ReactorModeratorEnum
+  reactor_neutron_spectrum:
+    description: Neutron energy spectrum classification
+    range: ReactorNeutronSpectrumEnum
+  reactor_size_category:
+    description: Reactor size classification
+    range: ReactorSizeCategoryEnum
+enums:
+  ReactorTypeEnum:
+    description: Nuclear reactor types based on design and operational characteristics
+    permissible_values:
+      PWR:
+        title: Pressurized Water Reactor
+        description: Most common reactor type using light water under pressure
+        aliases:
+        - Pressurized Water Reactor
+        annotations:
+          coolant: light water
+          moderator: light water
+          pressure: high
+          steam_generation: indirect
+          worldwide_count: ~300
+          fuel_enrichment: 3-5%
+      BWR:
+        title: Boiling Water Reactor
+        description: Light water reactor where water boils directly in core
+        aliases:
+        - Boiling Water Reactor
+        annotations:
+          coolant: light water
+          moderator: light water
+          pressure: medium
+          steam_generation: direct
+          worldwide_count: ~60
+          fuel_enrichment: 3-5%
+      PHWR:
+        title: Pressurized Heavy Water Reactor
+        description: Heavy water moderated and cooled reactor (CANDU type)
+        aliases:
+        - CANDU
+        - Pressurized Heavy Water Reactor
+        annotations:
+          coolant: heavy water
+          moderator: heavy water
+          pressure: high
+          steam_generation: indirect
+          worldwide_count: ~47
+          fuel_enrichment: natural uranium
+      LWGR:
+        title: Light Water Graphite Reactor
+        description: Graphite moderated, light water cooled reactor (RBMK type)
+        aliases:
+        - RBMK
+        - Light Water Graphite Reactor
+        annotations:
+          coolant: light water
+          moderator: graphite
+          pressure: medium
+          steam_generation: direct
+          worldwide_count: ~10
+          fuel_enrichment: 1.8-2.4%
+      AGR:
+        title: Advanced Gas-Cooled Reactor
+        description: Graphite moderated, CO2 gas cooled reactor
+        aliases:
+        - Advanced Gas-Cooled Reactor
+        annotations:
+          coolant: carbon dioxide
+          moderator: graphite
+          pressure: high
+          steam_generation: indirect
+          worldwide_count: ~8
+          fuel_enrichment: 2.5-3.5%
+      GCR:
+        title: Gas-Cooled Reactor
+        description: Early gas-cooled reactor design (Magnox type)
+        aliases:
+        - Magnox
+        - Gas-Cooled Reactor
+        annotations:
+          coolant: carbon dioxide
+          moderator: graphite
+          pressure: low
+          fuel_enrichment: natural uranium
+      FBR:
+        title: Fast Breeder Reactor
+        description: Fast neutron reactor that breeds fissile material
+        aliases:
+        - Fast Breeder Reactor
+        - Liquid Metal Fast Breeder Reactor
+        annotations:
+          coolant: liquid metal
+          moderator: none
+          neutron_spectrum: fast
+          worldwide_count: ~2
+          fuel_enrichment: 15-20%
+      HTGR:
+        title: High Temperature Gas-Cooled Reactor
+        description: Helium-cooled reactor with TRISO fuel
+        aliases:
+        - High Temperature Gas-Cooled Reactor
+        annotations:
+          coolant: helium
+          moderator: graphite
+          temperature: very high
+          fuel_type: TRISO
+      MSR:
+        title: Molten Salt Reactor
+        description: Reactor using molten salt as coolant and/or fuel
+        aliases:
+        - Molten Salt Reactor
+        annotations:
+          coolant: molten salt
+          fuel_form: liquid
+          generation: IV
+      SMR:
+        title: Small Modular Reactor
+        description: Small reactors designed for modular construction
+        aliases:
+        - Small Modular Reactor
+        annotations:
+          power_output: "<300 MWe"
+          modularity: high
+          generation: III+/IV
+      VHTR:
+        title: Very High Temperature Reactor
+        description: Generation IV reactor for very high temperature applications
+        aliases:
+        - Very High Temperature Reactor
+        annotations:
+          temperature: ">950°C"
+          generation: IV
+          coolant: helium
+      SFR:
+        title: Sodium-Cooled Fast Reactor
+        description: Fast reactor cooled by liquid sodium
+        aliases:
+        - Sodium-Cooled Fast Reactor
+        annotations:
+          coolant: liquid sodium
+          neutron_spectrum: fast
+          generation: IV
+      LFR:
+        title: Lead-Cooled Fast Reactor
+        description: Fast reactor cooled by liquid lead or lead-bismuth
+        aliases:
+        - Lead-Cooled Fast Reactor
+        annotations:
+          coolant: liquid lead
+          neutron_spectrum: fast
+          generation: IV
+      GFR:
+        title: Gas-Cooled Fast Reactor
+        description: Fast reactor with gas cooling
+        aliases:
+        - Gas-Cooled Fast Reactor
+        annotations:
+          coolant: helium
+          neutron_spectrum: fast
+          generation: IV
+      SCWR:
+        title: Supercritical Water-Cooled Reactor
+        description: Reactor using supercritical water as coolant
+        aliases:
+        - Supercritical Water-Cooled Reactor
+        annotations:
+          coolant: supercritical water
+          generation: IV
+  ReactorGenerationEnum:
+    description: Nuclear reactor generational classifications
+    permissible_values:
+      GENERATION_I:
+        title: Generation I
+        description: Early commercial reactors (1950s-1960s)
+        annotations:
+          period: 1950s-1960s
+          status: retired
+          examples: Shippingport, Dresden-1
+      GENERATION_II:
+        title: Generation II
+        description: Current operating commercial reactors
+        annotations:
+          period: 1970s-1990s
+          status: operating
+          examples: PWR, BWR, CANDU
+          design_life: 40 years
+      GENERATION_III:
+        title: Generation III
+        description: Advanced reactors with enhanced safety
+        annotations:
+          period: 1990s-2010s
+          status: some operating
+          improvements: passive safety, standardization
+          examples: AP1000, EPR, ABWR
+      GENERATION_III_PLUS:
+        title: Generation III+
+        description: Evolutionary improvements to Generation III
+        annotations:
+          period: 2000s-present
+          status: deployment
+          improvements: enhanced passive safety
+          examples: AP1000, APR1400
+      GENERATION_IV:
+        title: Generation IV
+        description: Next generation advanced reactor concepts
+        annotations:
+          period: 2030s and beyond
+          status: development
+          goals: sustainability, economics, safety, proliferation resistance
+          examples: VHTR, SFR, LFR, GFR, SCWR, MSR
+  ReactorCoolantEnum:
+    description: Primary coolant types used in nuclear reactors
+    permissible_values:
+      LIGHT_WATER:
+        title: Light Water (H2O)
+        description: Ordinary water as primary coolant
+        annotations:
+          chemical_formula: H2O
+          density: 1.0 g/cm³
+          neutron_absorption: moderate
+      HEAVY_WATER:
+        title: Heavy Water (D2O)
+        description: Deuterium oxide as primary coolant
+        annotations:
+          chemical_formula: D2O
+          density: 1.1 g/cm³
+          neutron_absorption: low
+      CARBON_DIOXIDE:
+        title: Carbon Dioxide
+        description: CO2 gas as primary coolant
+        annotations:
+          chemical_formula: CO2
+          phase: gas
+          pressure: high
+      HELIUM:
+        title: Helium
+        description: Helium gas as primary coolant
+        annotations:
+          chemical_formula: He
+          phase: gas
+          neutron_absorption: very low
+          temperature_capability: very high
+      LIQUID_SODIUM:
+        title: Liquid Sodium
+        description: Molten sodium metal as coolant
+        annotations:
+          chemical_formula: Na
+          phase: liquid
+          melting_point: 98°C
+          neutron_absorption: low
+      LIQUID_LEAD:
+        title: Liquid Lead
+        description: Molten lead or lead-bismuth as coolant
+        annotations:
+          chemical_formula: Pb
+          phase: liquid
+          melting_point: 327°C
+          neutron_absorption: low
+      MOLTEN_SALT:
+        title: Molten Salt
+        description: Molten fluoride or chloride salts
+        annotations:
+          phase: liquid
+          temperature_capability: very high
+          neutron_absorption: variable
+      SUPERCRITICAL_WATER:
+        title: Supercritical Water
+        description: Water above critical point
+        annotations:
+          chemical_formula: H2O
+          pressure: ">221 bar"
+          temperature: ">374°C"
+  ReactorModeratorEnum:
+    description: Neutron moderator types used in nuclear reactors
+    permissible_values:
+      LIGHT_WATER:
+        title: Light Water (H2O)
+        description: Ordinary water as neutron moderator
+        annotations:
+          chemical_formula: H2O
+          moderation_effectiveness: good
+          neutron_absorption: moderate
+      HEAVY_WATER:
+        title: Heavy Water (D2O)
+        description: Deuterium oxide as neutron moderator
+        annotations:
+          chemical_formula: D2O
+          moderation_effectiveness: excellent
+          neutron_absorption: very low
+      GRAPHITE:
+        title: Graphite
+        description: Carbon graphite as neutron moderator
+        annotations:
+          chemical_formula: C
+          moderation_effectiveness: good
+          neutron_absorption: low
+          temperature_resistance: high
+      BERYLLIUM:
+        title: Beryllium
+        description: Beryllium metal as neutron moderator
+        annotations:
+          chemical_formula: Be
+          moderation_effectiveness: good
+          neutron_absorption: very low
+      NONE:
+        title: No Moderator
+        description: Fast reactors with no neutron moderation
+        annotations:
+          neutron_spectrum: fast
+          moderation: none
+  ReactorNeutronSpectrumEnum:
+    description: Neutron energy spectrum classifications
+    permissible_values:
+      THERMAL:
+        title: Thermal Neutron Spectrum
+        description: Low energy neutrons in thermal equilibrium
+        annotations:
+          energy_range: "<1 eV"
+          temperature_equivalent: room temperature
+          fission_probability: high for U-235
+      EPITHERMAL:
+        title: Epithermal Neutron Spectrum
+        description: Intermediate energy neutrons
+        annotations:
+          energy_range: 1 eV - 1 keV
+          temperature_equivalent: elevated
+      FAST:
+        title: Fast Neutron Spectrum
+        description: High energy neutrons from fission
+        annotations:
+          energy_range: ">1 keV"
+          moderation: minimal or none
+          breeding_capability: high
+  ReactorSizeCategoryEnum:
+    description: Nuclear reactor size classifications
+    permissible_values:
+      LARGE:
+        title: Large Reactor
+        description: Traditional large-scale commercial reactors
+        annotations:
+          power_output: ">700 MWe"
+          construction: custom on-site
+      MEDIUM:
+        title: Medium Reactor
+        description: Mid-scale reactors
+        annotations:
+          power_output: 300-700 MWe
+          construction: semi-modular
+      SMALL:
+        title: Small Reactor
+        description: Small modular reactors
+        annotations:
+          power_output: 50-300 MWe
+          construction: modular
+          transport: potentially transportable
+      MICRO:
+        title: Micro Reactor
+        description: Very small reactors for remote applications
+        annotations:
+          power_output: "<50 MWe"
+          construction: factory-built
+          transport: transportable
+      RESEARCH:
+        title: Research Reactor
+        description: Small reactors for research and isotope production
+        annotations:
+          power_output: "<100 MWt"
+          primary_use: research, isotopes, training

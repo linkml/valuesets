@@ -1,0 +1,352 @@
+name: nuclear_safety
+title: Nuclear Safety Classifications and Emergency Levels
+description: 'Nuclear safety classifications including INES scale, emergency action levels,
+  nuclear security categories, and safety system classifications. Based on IAEA standards,
+  NRC regulations, and international nuclear safety frameworks.'
+id: https://w3id.org/linkml/valuesets/energy/nuclear/nuclear_safety
+imports:
+- linkml:types
+prefixes:
+  valuesets: https://w3id.org/valuesets/
+  IAEA: https://www.iaea.org/
+  NRC: https://www.nrc.gov/
+  INES: https://www.iaea.org/resources/databases/ines
+  IEEE: https://standards.ieee.org/
+default_prefix: valuesets
+slots:
+  ines_level:
+    description: International Nuclear Event Scale level
+    range: INESLevelEnum
+  emergency_classification:
+    description: Nuclear emergency action level
+    range: EmergencyClassificationEnum
+  nuclear_security_category:
+    description: IAEA nuclear material security category
+    range: NuclearSecurityCategoryEnum
+  safety_system_class:
+    description: Nuclear safety system classification
+    range: SafetySystemClassEnum
+  reactor_safety_function:
+    description: Nuclear reactor safety function classification
+    range: ReactorSafetyFunctionEnum
+  defense_in_depth_level:
+    description: Defense in depth barrier level
+    range: DefenseInDepthLevelEnum
+  radiation_protection_zone:
+    description: Radiation protection zone classification
+    range: RadiationProtectionZoneEnum
+enums:
+  INESLevelEnum:
+    description: International Nuclear and Radiological Event Scale (INES) levels
+    permissible_values:
+      LEVEL_0:
+        title: Level 0 - Below Scale/Deviation
+        description: Events without safety significance
+        annotations:
+          scale_position: below scale
+          safety_significance: no safety significance
+          public_impact: none
+          examples: minor technical issues
+      LEVEL_1:
+        title: Level 1 - Anomaly
+        description: Anomaly beyond authorized operating regime
+        annotations:
+          scale_position: incidents
+          safety_significance: minor
+          public_impact: none
+          examples: minor contamination, minor safety system failure
+      LEVEL_2:
+        title: Level 2 - Incident
+        description: Incident with significant defenses remaining
+        annotations:
+          scale_position: incidents
+          safety_significance: minor
+          public_impact: none
+          radiation_dose: "<10 mSv to workers"
+      LEVEL_3:
+        title: Level 3 - Serious Incident
+        description: Serious incident with some defense degradation
+        annotations:
+          scale_position: incidents
+          safety_significance: minor
+          public_impact: very minor
+          radiation_dose: "<100 mSv to workers"
+          examples: near accident, serious contamination
+      LEVEL_4:
+        title: Level 4 - Accident with Local Consequences
+        description: Accident with minor off-site releases
+        annotations:
+          scale_position: accidents
+          safety_significance: moderate
+          public_impact: minor local impact
+          evacuation: not required
+          examples: partial core damage
+      LEVEL_5:
+        title: Level 5 - Accident with Wider Consequences
+        description: Accident with limited off-site releases
+        annotations:
+          scale_position: accidents
+          safety_significance: moderate to major
+          public_impact: limited wider impact
+          protective_actions: limited evacuation
+          examples: Three Mile Island (1979)
+      LEVEL_6:
+        title: Level 6 - Serious Accident
+        description: Serious accident with significant releases
+        annotations:
+          scale_position: accidents
+          safety_significance: major
+          public_impact: significant
+          protective_actions: extensive evacuation and countermeasures
+      LEVEL_7:
+        title: Level 7 - Major Accident
+        description: Major accident with widespread health and environmental effects
+        annotations:
+          scale_position: accidents
+          safety_significance: major
+          public_impact: widespread
+          examples: Chernobyl (1986), Fukushima (2011)
+          consequences: long-term environmental contamination
+  EmergencyClassificationEnum:
+    description: Nuclear emergency action levels and classifications
+    permissible_values:
+      NOTIFICATION_UNUSUAL_EVENT:
+        title: Notification of Unusual Event (NOUE)
+        description: Events that are in process or have occurred which indicate potential degradation
+        aliases:
+        - NOUE
+        - Unusual Event
+        annotations:
+          severity: lowest emergency level
+          off_site_response: notification only
+          public_protective_actions: none required
+          emergency_response: minimal activation
+      ALERT:
+        title: Alert
+        description: Events involving actual or potential substantial degradation of plant safety
+        annotations:
+          severity: second emergency level
+          off_site_response: notification and standby
+          public_protective_actions: none required, but preparation
+          emergency_response: partial activation
+          plant_status: substantial safety degradation possible
+      SITE_AREA_EMERGENCY:
+        title: Site Area Emergency (SAE)
+        description: Events with actual or likely major failures of plant protective systems
+        aliases:
+        - SAE
+        annotations:
+          severity: third emergency level
+          off_site_response: offsite centers activated
+          public_protective_actions: may be required near site
+          emergency_response: full activation
+          plant_status: major plant safety systems failure
+      GENERAL_EMERGENCY:
+        title: General Emergency
+        description: Events involving actual or imminent substantial core degradation
+        annotations:
+          severity: highest emergency level
+          off_site_response: full activation
+          public_protective_actions: implementation likely
+          emergency_response: maximum response
+          plant_status: core degradation or containment failure
+  NuclearSecurityCategoryEnum:
+    description: IAEA nuclear material security categories (INFCIRC/225)
+    permissible_values:
+      CATEGORY_I:
+        title: Category I Nuclear Material
+        description: Material that can be used directly to manufacture nuclear explosive devices
+        annotations:
+          direct_use: yes
+          proliferation_risk: highest
+          protection_requirements: maximum
+          examples: HEU ≥20%, Pu ≥2kg, U-233 ≥2kg
+          physical_protection: multiple independent physical barriers
+      CATEGORY_II:
+        title: Category II Nuclear Material
+        description: Material requiring further processing to manufacture nuclear explosive devices
+        annotations:
+          direct_use: requires processing
+          proliferation_risk: moderate
+          protection_requirements: substantial
+          examples: HEU <20% but >5%, natural uranium >500kg
+          physical_protection: significant barriers required
+      CATEGORY_III:
+        title: Category III Nuclear Material
+        description: Material posing radiation hazard but minimal proliferation risk
+        annotations:
+          direct_use: no
+          proliferation_risk: low
+          protection_requirements: basic
+          examples: natural uranium 10-500kg, depleted uranium
+          physical_protection: basic measures sufficient
+      CATEGORY_IV:
+        title: Category IV Nuclear Material
+        description: Material with minimal security significance
+        annotations:
+          direct_use: no
+          proliferation_risk: minimal
+          protection_requirements: administrative
+          examples: small quantities of natural uranium
+  SafetySystemClassEnum:
+    description: Nuclear safety system classifications (based on IEEE and ASME standards)
+    permissible_values:
+      CLASS_1E:
+        title: Class 1E Safety Systems
+        description: Safety systems essential to emergency reactor shutdown and core cooling
+        annotations:
+          safety_function: essential to safety
+          redundancy: required
+          independence: required
+          power_supply: independent emergency power
+          seismic_qualification: required
+          examples: reactor protection system, emergency core cooling
+      SAFETY_RELATED:
+        title: Safety-Related Systems
+        description: Systems important to safety but not classified as Class 1E
+        annotations:
+          safety_function: important to safety
+          quality_requirements: enhanced
+          testing_requirements: extensive
+          examples: some support systems, barriers
+      SAFETY_SIGNIFICANT:
+        title: Safety-Significant Systems
+        description: Systems with risk significance but not safety-related
+        annotations:
+          safety_function: risk-significant
+          quality_requirements: graded approach
+          risk_informed: classification based on risk assessment
+      NON_SAFETY_RELATED:
+        title: Non-Safety-Related Systems
+        description: Systems not required for nuclear safety functions
+        annotations:
+          safety_function: not required for safety
+          quality_requirements: commercial standards
+          failure_impact: minimal safety impact
+  ReactorSafetyFunctionEnum:
+    description: Fundamental nuclear reactor safety functions
+    permissible_values:
+      REACTIVITY_CONTROL:
+        title: Reactivity Control
+        description: Control of nuclear chain reaction
+        annotations:
+          function: maintain reactor subcritical when required
+          systems: control rods, neutron absorbers
+          failure_consequence: criticality accident
+          defense_category: prevent accidents
+      HEAT_REMOVAL:
+        title: Heat Removal
+        description: Removal of decay heat from reactor core
+        annotations:
+          function: prevent fuel overheating
+          systems: cooling systems, heat exchangers
+          failure_consequence: core damage, meltdown
+          defense_category: mitigate consequences
+      CONTAINMENT_INTEGRITY:
+        title: Containment Integrity
+        description: Confinement of radioactive materials
+        annotations:
+          function: prevent radioactive release
+          systems: containment structure, isolation systems
+          failure_consequence: environmental contamination
+          defense_category: mitigate consequences
+      CORE_COOLING:
+        title: Core Cooling
+        description: Maintenance of adequate core cooling
+        annotations:
+          function: prevent fuel damage
+          systems: primary cooling, emergency cooling
+          failure_consequence: fuel damage
+          time_sensitivity: immediate to long-term
+      SHUTDOWN_CAPABILITY:
+        title: Shutdown Capability
+        description: Ability to shut down and maintain shutdown
+        annotations:
+          function: terminate power operation safely
+          systems: control systems, shutdown systems
+          time_requirement: rapid response capability
+  DefenseInDepthLevelEnum:
+    description: Defense in depth barrier levels for nuclear safety
+    permissible_values:
+      LEVEL_1:
+        title: Level 1 - Prevention of Abnormal Operation
+        description: Conservative design and high quality in construction and operation
+        annotations:
+          objective: prevent deviations from normal operation
+          approach: conservative design, quality assurance
+          examples: design margins, quality construction
+      LEVEL_2:
+        title: Level 2 - Control of Abnormal Operation
+        description: Control of abnormal operation and detection of failures
+        annotations:
+          objective: control abnormal operation and failures
+          approach: control systems, protection systems
+          examples: reactor protection systems, safety systems
+      LEVEL_3:
+        title: Level 3 - Control of Accidents Within Design Basis
+        description: Control of accidents to prevent progression to severe conditions
+        annotations:
+          objective: control design basis accidents
+          approach: engineered safety features
+          examples: emergency core cooling, containment systems
+      LEVEL_4:
+        title: Level 4 - Control of Severe Plant Conditions
+        description: Control of severe accidents including prevention of core melt progression
+        annotations:
+          objective: control severe accidents
+          approach: severe accident management
+          examples: cavity flooding, filtered venting
+      LEVEL_5:
+        title: Level 5 - Mitigation of Radiological Consequences
+        description: Mitigation of off-site radiological consequences
+        annotations:
+          objective: protect public and environment
+          approach: emergency planning and response
+          examples: evacuation plans, protective actions
+  RadiationProtectionZoneEnum:
+    description: Radiation protection zone classifications for nuclear facilities
+    permissible_values:
+      EXCLUSION_AREA:
+        title: Exclusion Area
+        description: Area under control of reactor operator with restricted access
+        annotations:
+          control: reactor operator
+          public_access: restricted
+          size: typically few hundred meters radius
+          purpose: immediate accident response control
+      LOW_POPULATION_ZONE:
+        title: Low Population Zone (LPZ)
+        description: Area with low population density surrounding exclusion area
+        annotations:
+          population_density: low
+          evacuation: feasible if needed
+          size: typically few kilometers radius
+          dose_limit: design basis for accident consequences
+      EMERGENCY_PLANNING_ZONE:
+        title: Emergency Planning Zone (EPZ)
+        description: Area for which emergency planning is conducted
+        annotations:
+          planning_required: comprehensive emergency plans
+          size: typically 10-mile (16 km) radius
+          protective_actions: evacuation and sheltering plans
+      INGESTION_PATHWAY_ZONE:
+        title: Ingestion Pathway Zone
+        description: Area for controlling food and water contamination
+        annotations:
+          contamination_control: food and water supplies
+          size: typically 50-mile (80 km) radius
+          monitoring: food chain monitoring required
+      CONTROLLED_AREA:
+        title: Controlled Area
+        description: Area within facility boundary with access control
+        annotations:
+          access_control: personnel monitoring required
+          radiation_monitoring: continuous monitoring
+          training_required: radiation safety training
+      SUPERVISED_AREA:
+        title: Supervised Area
+        description: Area with potential for radiation exposure but lower than controlled
+        annotations:
+          monitoring: periodic monitoring
+          access_control: limited restrictions
+          training_required: basic radiation awareness
