@@ -32,19 +32,19 @@ class NuclearRegulatoryBodyEnum(RichEnum):
 
 # Set metadata after class creation
 NuclearRegulatoryBodyEnum._metadata = {
-    "IAEA": {'description': 'International Atomic Energy Agency', 'meaning': 'CVS:regulatory_iaea'},
-    "NRC": {'description': 'US Nuclear Regulatory Commission', 'meaning': 'CVS:regulatory_nrc'},
-    "ONR": {'description': 'Office for Nuclear Regulation (UK)', 'meaning': 'CVS:regulatory_onr'},
-    "ASN": {'description': 'Autorité de sûreté nucléaire (France)', 'meaning': 'CVS:regulatory_asn'},
-    "NISA": {'description': 'Nuclear and Industrial Safety Agency (Japan)', 'meaning': 'CVS:regulatory_nisa'},
-    "CNSC": {'description': 'Canadian Nuclear Safety Commission', 'meaning': 'CVS:regulatory_cnsc'},
-    "STUK": {'description': 'Radiation and Nuclear Safety Authority (Finland)', 'meaning': 'CVS:regulatory_stuk'},
-    "SKI": {'description': 'Swedish Nuclear Power Inspectorate', 'meaning': 'CVS:regulatory_ski'},
-    "ENSI": {'description': 'Swiss Federal Nuclear Safety Inspectorate', 'meaning': 'CVS:regulatory_ensi'},
-    "ROSATOM": {'description': 'State Atomic Energy Corporation (Russia)', 'meaning': 'CVS:regulatory_rosatom'},
-    "CNNC": {'description': 'China National Nuclear Corporation', 'meaning': 'CVS:regulatory_cnnc'},
-    "KAERI": {'description': 'Korea Atomic Energy Research Institute', 'meaning': 'CVS:regulatory_kaeri'},
-    "AERB": {'description': 'Atomic Energy Regulatory Board (India)', 'meaning': 'CVS:regulatory_aerb'},
+    "IAEA": {'description': 'International Atomic Energy Agency'},
+    "NRC": {'description': 'US Nuclear Regulatory Commission'},
+    "ONR": {'description': 'Office for Nuclear Regulation (UK)'},
+    "ASN": {'description': 'Autorité de sûreté nucléaire (France)'},
+    "NISA": {'description': 'Nuclear and Industrial Safety Agency (Japan)'},
+    "CNSC": {'description': 'Canadian Nuclear Safety Commission'},
+    "STUK": {'description': 'Radiation and Nuclear Safety Authority (Finland)'},
+    "SKI": {'description': 'Swedish Nuclear Power Inspectorate'},
+    "ENSI": {'description': 'Swiss Federal Nuclear Safety Inspectorate'},
+    "ROSATOM": {'description': 'State Atomic Energy Corporation (Russia)'},
+    "CNNC": {'description': 'China National Nuclear Corporation'},
+    "KAERI": {'description': 'Korea Atomic Energy Research Institute'},
+    "AERB": {'description': 'Atomic Energy Regulatory Board (India)'},
 }
 
 class RegulatoryFrameworkEnum(RichEnum):
@@ -66,17 +66,17 @@ class RegulatoryFrameworkEnum(RichEnum):
 
 # Set metadata after class creation
 RegulatoryFrameworkEnum._metadata = {
-    "NPT": {'description': 'Nuclear Non-Proliferation Treaty', 'meaning': 'CVS:framework_npt'},
-    "COMPREHENSIVE_SAFEGUARDS": {'description': 'IAEA Comprehensive Safeguards Agreements', 'meaning': 'CVS:framework_comprehensive_safeguards'},
-    "ADDITIONAL_PROTOCOL": {'description': 'IAEA Additional Protocol', 'meaning': 'CVS:framework_additional_protocol'},
-    "CONVENTION_NUCLEAR_SAFETY": {'description': 'Convention on Nuclear Safety', 'meaning': 'CVS:framework_convention_nuclear_safety'},
-    "JOINT_CONVENTION": {'description': 'Joint Convention on the Safety of Spent Fuel Management and Radioactive Waste', 'meaning': 'CVS:framework_joint_convention'},
-    "PARIS_CONVENTION": {'description': 'Paris Convention on Third Party Liability in the Field of Nuclear Energy', 'meaning': 'CVS:framework_paris_convention'},
-    "VIENNA_CONVENTION": {'description': 'Vienna Convention on Civil Liability for Nuclear Damage', 'meaning': 'CVS:framework_vienna_convention'},
-    "CPPNM": {'description': 'Convention on the Physical Protection of Nuclear Material', 'meaning': 'CVS:framework_cppnm'},
-    "ICSANT": {'description': 'International Convention for the Suppression of Acts of Nuclear Terrorism', 'meaning': 'CVS:framework_icsant'},
-    "SAFETY_STANDARDS": {'description': 'IAEA Safety Standards Series', 'meaning': 'CVS:framework_safety_standards'},
-    "SECURITY_SERIES": {'description': 'IAEA Nuclear Security Series', 'meaning': 'CVS:framework_security_series'},
+    "NPT": {'description': 'Nuclear Non-Proliferation Treaty'},
+    "COMPREHENSIVE_SAFEGUARDS": {'description': 'IAEA Comprehensive Safeguards Agreements'},
+    "ADDITIONAL_PROTOCOL": {'description': 'IAEA Additional Protocol'},
+    "CONVENTION_NUCLEAR_SAFETY": {'description': 'Convention on Nuclear Safety'},
+    "JOINT_CONVENTION": {'description': 'Joint Convention on the Safety of Spent Fuel Management and Radioactive Waste'},
+    "PARIS_CONVENTION": {'description': 'Paris Convention on Third Party Liability in the Field of Nuclear Energy'},
+    "VIENNA_CONVENTION": {'description': 'Vienna Convention on Civil Liability for Nuclear Damage'},
+    "CPPNM": {'description': 'Convention on the Physical Protection of Nuclear Material'},
+    "ICSANT": {'description': 'International Convention for the Suppression of Acts of Nuclear Terrorism'},
+    "SAFETY_STANDARDS": {'description': 'IAEA Safety Standards Series'},
+    "SECURITY_SERIES": {'description': 'IAEA Nuclear Security Series'},
 }
 
 class LicensingStageEnum(RichEnum):
@@ -97,16 +97,16 @@ class LicensingStageEnum(RichEnum):
 
 # Set metadata after class creation
 LicensingStageEnum._metadata = {
-    "PRE_APPLICATION": {'description': 'Pre-application consultation and preparation', 'meaning': 'CVS:licensing_pre_application'},
-    "CONSTRUCTION_PERMIT": {'description': 'Construction permit application and review', 'meaning': 'CVS:licensing_construction_permit'},
-    "OPERATING_LICENSE": {'description': 'Operating license application and review', 'meaning': 'CVS:licensing_operating_license'},
-    "LICENSE_RENEWAL": {'description': 'License renewal application and review', 'meaning': 'CVS:licensing_license_renewal'},
-    "POWER_UPRATE": {'description': 'Power uprate license amendment', 'meaning': 'CVS:licensing_power_uprate'},
-    "DECOMMISSIONING_PLAN": {'description': 'Decommissioning plan approval', 'meaning': 'CVS:licensing_decommissioning_plan'},
-    "LICENSE_TERMINATION": {'description': 'License termination and site release', 'meaning': 'CVS:licensing_license_termination'},
-    "DESIGN_CERTIFICATION": {'description': 'Standard design certification', 'meaning': 'CVS:licensing_design_certification'},
-    "EARLY_SITE_PERMIT": {'description': 'Early site permit for future construction', 'meaning': 'CVS:licensing_early_site_permit'},
-    "COMBINED_LICENSE": {'description': 'Combined construction and operating license', 'meaning': 'CVS:licensing_combined_license'},
+    "PRE_APPLICATION": {'description': 'Pre-application consultation and preparation'},
+    "CONSTRUCTION_PERMIT": {'description': 'Construction permit application and review'},
+    "OPERATING_LICENSE": {'description': 'Operating license application and review'},
+    "LICENSE_RENEWAL": {'description': 'License renewal application and review'},
+    "POWER_UPRATE": {'description': 'Power uprate license amendment'},
+    "DECOMMISSIONING_PLAN": {'description': 'Decommissioning plan approval'},
+    "LICENSE_TERMINATION": {'description': 'License termination and site release'},
+    "DESIGN_CERTIFICATION": {'description': 'Standard design certification'},
+    "EARLY_SITE_PERMIT": {'description': 'Early site permit for future construction'},
+    "COMBINED_LICENSE": {'description': 'Combined construction and operating license'},
 }
 
 class ComplianceStandardEnum(RichEnum):
@@ -127,16 +127,16 @@ class ComplianceStandardEnum(RichEnum):
 
 # Set metadata after class creation
 ComplianceStandardEnum._metadata = {
-    "ISO_14001": {'description': 'Environmental Management Systems', 'meaning': 'CVS:standard_iso_14001'},
-    "ISO_9001": {'description': 'Quality Management Systems', 'meaning': 'CVS:standard_iso_9001'},
-    "ASME_NQA_1": {'description': 'Quality Assurance Requirements for Nuclear Facility Applications', 'meaning': 'CVS:standard_asme_nqa_1'},
-    "IEEE_603": {'description': 'IEEE Standard Criteria for Safety Systems for Nuclear Power Generating Stations', 'meaning': 'CVS:standard_ieee_603'},
-    "IEC_61513": {'description': 'Nuclear power plants - Instrumentation and control systems', 'meaning': 'CVS:standard_iec_61513'},
-    "ANSI_N45_2": {'description': 'Quality Assurance Program Requirements for Nuclear Power Plants', 'meaning': 'CVS:standard_ansi_n45_2'},
-    "NUREG_0800": {'description': 'Standard Review Plan for the Review of Safety Analysis Reports', 'meaning': 'CVS:standard_nureg_0800'},
-    "IAEA_GSR": {'description': 'IAEA General Safety Requirements', 'meaning': 'CVS:standard_iaea_gsr'},
-    "IAEA_NSS": {'description': 'IAEA Nuclear Security Series', 'meaning': 'CVS:standard_iaea_nss'},
-    "WENRA_RL": {'description': 'Western European Nuclear Regulators Association Reference Levels', 'meaning': 'CVS:standard_wenra_rl'},
+    "ISO_14001": {'description': 'Environmental Management Systems'},
+    "ISO_9001": {'description': 'Quality Management Systems'},
+    "ASME_NQA_1": {'description': 'Quality Assurance Requirements for Nuclear Facility Applications'},
+    "IEEE_603": {'description': 'IEEE Standard Criteria for Safety Systems for Nuclear Power Generating Stations'},
+    "IEC_61513": {'description': 'Nuclear power plants - Instrumentation and control systems'},
+    "ANSI_N45_2": {'description': 'Quality Assurance Program Requirements for Nuclear Power Plants'},
+    "NUREG_0800": {'description': 'Standard Review Plan for the Review of Safety Analysis Reports'},
+    "IAEA_GSR": {'description': 'IAEA General Safety Requirements'},
+    "IAEA_NSS": {'description': 'IAEA Nuclear Security Series'},
+    "WENRA_RL": {'description': 'Western European Nuclear Regulators Association Reference Levels'},
 }
 
 class InspectionTypeEnum(RichEnum):
@@ -162,21 +162,21 @@ class InspectionTypeEnum(RichEnum):
 
 # Set metadata after class creation
 InspectionTypeEnum._metadata = {
-    "ROUTINE_INSPECTION": {'description': 'Regularly scheduled inspection activities', 'meaning': 'CVS:inspection_routine'},
-    "REACTIVE_INSPECTION": {'description': 'Event-driven or follow-up inspections', 'meaning': 'CVS:inspection_reactive'},
-    "TEAM_INSPECTION": {'description': 'Multi-disciplinary team inspections', 'meaning': 'CVS:inspection_team'},
-    "TRIENNIAL_INSPECTION": {'description': 'Three-year cycle comprehensive inspections', 'meaning': 'CVS:inspection_triennial'},
-    "CONSTRUCTION_INSPECTION": {'description': 'Construction phase inspections', 'meaning': 'CVS:inspection_construction'},
-    "PRE_OPERATIONAL_TESTING": {'description': 'Pre-operational testing and commissioning inspections', 'meaning': 'CVS:inspection_pre_operational'},
-    "STARTUP_TESTING": {'description': 'Initial startup and power ascension inspections', 'meaning': 'CVS:inspection_startup'},
-    "PERIODIC_SAFETY_REVIEW": {'description': 'Comprehensive periodic safety reviews', 'meaning': 'CVS:inspection_periodic_safety_review'},
-    "INTEGRATED_INSPECTION": {'description': 'Integrated inspection program', 'meaning': 'CVS:inspection_integrated'},
-    "FORCE_ON_FORCE": {'description': 'Security force-on-force exercises', 'meaning': 'CVS:inspection_force_on_force'},
-    "EMERGENCY_PREPAREDNESS": {'description': 'Emergency preparedness and response inspections', 'meaning': 'CVS:inspection_emergency_preparedness'},
-    "SPECIAL_INSPECTION": {'description': 'Special inspections for significant events', 'meaning': 'CVS:inspection_special'},
-    "VENDOR_INSPECTION": {'description': 'Nuclear vendor and supplier inspections', 'meaning': 'CVS:inspection_vendor'},
-    "CYBER_SECURITY": {'description': 'Cybersecurity program inspections', 'meaning': 'CVS:inspection_cyber_security'},
-    "DECOMMISSIONING_INSPECTION": {'description': 'Decommissioning activities inspections', 'meaning': 'CVS:inspection_decommissioning'},
+    "ROUTINE_INSPECTION": {'description': 'Regularly scheduled inspection activities'},
+    "REACTIVE_INSPECTION": {'description': 'Event-driven or follow-up inspections'},
+    "TEAM_INSPECTION": {'description': 'Multi-disciplinary team inspections'},
+    "TRIENNIAL_INSPECTION": {'description': 'Three-year cycle comprehensive inspections'},
+    "CONSTRUCTION_INSPECTION": {'description': 'Construction phase inspections'},
+    "PRE_OPERATIONAL_TESTING": {'description': 'Pre-operational testing and commissioning inspections'},
+    "STARTUP_TESTING": {'description': 'Initial startup and power ascension inspections'},
+    "PERIODIC_SAFETY_REVIEW": {'description': 'Comprehensive periodic safety reviews'},
+    "INTEGRATED_INSPECTION": {'description': 'Integrated inspection program'},
+    "FORCE_ON_FORCE": {'description': 'Security force-on-force exercises'},
+    "EMERGENCY_PREPAREDNESS": {'description': 'Emergency preparedness and response inspections'},
+    "SPECIAL_INSPECTION": {'description': 'Special inspections for significant events'},
+    "VENDOR_INSPECTION": {'description': 'Nuclear vendor and supplier inspections'},
+    "CYBER_SECURITY": {'description': 'Cybersecurity program inspections'},
+    "DECOMMISSIONING_INSPECTION": {'description': 'Decommissioning activities inspections'},
 }
 
 __all__ = [
