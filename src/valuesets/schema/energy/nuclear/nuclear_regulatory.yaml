@@ -5,7 +5,6 @@ id: https://w3id.org/common-value-sets/nuclear_regulatory
 imports:
   - linkml:types
 prefixes:
-  CVS: https://w3id.org/common-value-sets/
   linkml: https://w3id.org/linkml/
   valuesets: https://w3id.org/valuesets/
 default_prefix: valuesets
