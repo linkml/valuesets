@@ -1,0 +1,260 @@
+name: nuclear_regulatory
+title: Nuclear Regulatory Frameworks Value Sets
+description: Value sets for nuclear regulatory bodies, frameworks, and compliance standards
+id: https://w3id.org/common-value-sets/nuclear_regulatory
+imports:
+  - linkml:types
+prefixes:
+  CVS: https://w3id.org/common-value-sets/
+  linkml: https://w3id.org/linkml/
+  valuesets: https://w3id.org/valuesets/
+default_prefix: valuesets
+
+slots:
+  nuclear_regulatory_body:
+    description: Nuclear regulatory authorities and organizations
+    range: NuclearRegulatoryBodyEnum
+  regulatory_framework:
+    description: Nuclear regulatory frameworks and standards
+    range: RegulatoryFrameworkEnum
+  licensing_stage:
+    description: Nuclear facility licensing stages
+    range: LicensingStageEnum
+  compliance_standard:
+    description: Nuclear safety and security compliance standards
+    range: ComplianceStandardEnum
+  inspection_type:
+    description: Types of nuclear regulatory inspections
+    range: InspectionTypeEnum
+
+enums:
+  NuclearRegulatoryBodyEnum:
+    description: Nuclear regulatory authorities and international organizations
+    permissible_values:
+      IAEA:
+        description: International Atomic Energy Agency
+        meaning: CVS:regulatory_iaea
+        title: International Atomic Energy Agency
+      NRC:
+        description: US Nuclear Regulatory Commission
+        meaning: CVS:regulatory_nrc
+        title: Nuclear Regulatory Commission (US)
+      ONR:
+        description: Office for Nuclear Regulation (UK)
+        meaning: CVS:regulatory_onr
+        title: Office for Nuclear Regulation (UK)
+      ASN:
+        description: Autorité de sûreté nucléaire (France)
+        meaning: CVS:regulatory_asn
+        title: Nuclear Safety Authority (France)
+      NISA:
+        description: Nuclear and Industrial Safety Agency (Japan)
+        meaning: CVS:regulatory_nisa
+        title: Nuclear and Industrial Safety Agency (Japan)
+      CNSC:
+        description: Canadian Nuclear Safety Commission
+        meaning: CVS:regulatory_cnsc
+        title: Canadian Nuclear Safety Commission
+      STUK:
+        description: Radiation and Nuclear Safety Authority (Finland)
+        meaning: CVS:regulatory_stuk
+        title: Radiation and Nuclear Safety Authority (Finland)
+      SKI:
+        description: Swedish Nuclear Power Inspectorate
+        meaning: CVS:regulatory_ski
+        title: Swedish Nuclear Power Inspectorate
+      ENSI:
+        description: Swiss Federal Nuclear Safety Inspectorate
+        meaning: CVS:regulatory_ensi
+        title: Swiss Federal Nuclear Safety Inspectorate
+      ROSATOM:
+        description: State Atomic Energy Corporation (Russia)
+        meaning: CVS:regulatory_rosatom
+        title: State Atomic Energy Corporation (Russia)
+      CNNC:
+        description: China National Nuclear Corporation
+        meaning: CVS:regulatory_cnnc
+        title: China National Nuclear Corporation
+      KAERI:
+        description: Korea Atomic Energy Research Institute
+        meaning: CVS:regulatory_kaeri
+        title: Korea Atomic Energy Research Institute
+      AERB:
+        description: Atomic Energy Regulatory Board (India)
+        meaning: CVS:regulatory_aerb
+        title: Atomic Energy Regulatory Board (India)
+
+  RegulatoryFrameworkEnum:
+    description: Nuclear regulatory frameworks and international conventions
+    permissible_values:
+      NPT:
+        description: Nuclear Non-Proliferation Treaty
+        meaning: CVS:framework_npt
+        title: Nuclear Non-Proliferation Treaty
+      COMPREHENSIVE_SAFEGUARDS:
+        description: IAEA Comprehensive Safeguards Agreements
+        meaning: CVS:framework_comprehensive_safeguards
+        title: IAEA Comprehensive Safeguards Agreement
+      ADDITIONAL_PROTOCOL:
+        description: IAEA Additional Protocol
+        meaning: CVS:framework_additional_protocol
+        title: IAEA Additional Protocol
+      CONVENTION_NUCLEAR_SAFETY:
+        description: Convention on Nuclear Safety
+        meaning: CVS:framework_convention_nuclear_safety
+        title: Convention on Nuclear Safety
+      JOINT_CONVENTION:
+        description: Joint Convention on the Safety of Spent Fuel Management and Radioactive Waste
+        meaning: CVS:framework_joint_convention
+        title: Joint Convention on Radioactive Waste Safety
+      PARIS_CONVENTION:
+        description: Paris Convention on Third Party Liability in the Field of Nuclear Energy
+        meaning: CVS:framework_paris_convention
+        title: Paris Convention on Nuclear Liability
+      VIENNA_CONVENTION:
+        description: Vienna Convention on Civil Liability for Nuclear Damage
+        meaning: CVS:framework_vienna_convention
+        title: Vienna Convention on Nuclear Liability
+      CPPNM:
+        description: Convention on the Physical Protection of Nuclear Material
+        meaning: CVS:framework_cppnm
+        title: Convention on Physical Protection of Nuclear Material
+      ICSANT:
+        description: International Convention for the Suppression of Acts of Nuclear Terrorism
+        meaning: CVS:framework_icsant
+        title: International Convention for Suppression of Nuclear Terrorism
+      SAFETY_STANDARDS:
+        description: IAEA Safety Standards Series
+        meaning: CVS:framework_safety_standards
+        title: IAEA Safety Standards
+      SECURITY_SERIES:
+        description: IAEA Nuclear Security Series
+        meaning: CVS:framework_security_series
+        title: IAEA Nuclear Security Series
+
+  LicensingStageEnum:
+    description: Stages in nuclear facility licensing process
+    permissible_values:
+      PRE_APPLICATION:
+        description: Pre-application consultation and preparation
+        meaning: CVS:licensing_pre_application
+      CONSTRUCTION_PERMIT:
+        description: Construction permit application and review
+        meaning: CVS:licensing_construction_permit
+      OPERATING_LICENSE:
+        description: Operating license application and review
+        meaning: CVS:licensing_operating_license
+      LICENSE_RENEWAL:
+        description: License renewal application and review
+        meaning: CVS:licensing_license_renewal
+      POWER_UPRATE:
+        description: Power uprate license amendment
+        meaning: CVS:licensing_power_uprate
+      DECOMMISSIONING_PLAN:
+        description: Decommissioning plan approval
+        meaning: CVS:licensing_decommissioning_plan
+      LICENSE_TERMINATION:
+        description: License termination and site release
+        meaning: CVS:licensing_license_termination
+      DESIGN_CERTIFICATION:
+        description: Standard design certification
+        meaning: CVS:licensing_design_certification
+      EARLY_SITE_PERMIT:
+        description: Early site permit for future construction
+        meaning: CVS:licensing_early_site_permit
+      COMBINED_LICENSE:
+        description: Combined construction and operating license
+        meaning: CVS:licensing_combined_license
+
+  ComplianceStandardEnum:
+    description: Nuclear safety and security compliance standards
+    permissible_values:
+      ISO_14001:
+        description: Environmental Management Systems
+        meaning: CVS:standard_iso_14001
+        title: ISO 14001 Environmental Management
+      ISO_9001:
+        description: Quality Management Systems
+        meaning: CVS:standard_iso_9001
+        title: ISO 9001 Quality Management
+      ASME_NQA_1:
+        description: Quality Assurance Requirements for Nuclear Facility Applications
+        meaning: CVS:standard_asme_nqa_1
+        title: ASME NQA-1 Quality Assurance
+      IEEE_603:
+        description: IEEE Standard Criteria for Safety Systems for Nuclear Power Generating Stations
+        meaning: CVS:standard_ieee_603
+        title: IEEE 603 Safety Systems Criteria
+      IEC_61513:
+        description: Nuclear power plants - Instrumentation and control systems
+        meaning: CVS:standard_iec_61513
+        title: IEC 61513 I&C Systems
+      ANSI_N45_2:
+        description: Quality Assurance Program Requirements for Nuclear Power Plants
+        meaning: CVS:standard_ansi_n45_2
+        title: ANSI N45.2 Quality Assurance
+      NUREG_0800:
+        description: Standard Review Plan for the Review of Safety Analysis Reports
+        meaning: CVS:standard_nureg_0800
+        title: NUREG-0800 Standard Review Plan
+      IAEA_GSR:
+        description: IAEA General Safety Requirements
+        meaning: CVS:standard_iaea_gsr
+        title: IAEA General Safety Requirements
+      IAEA_NSS:
+        description: IAEA Nuclear Security Series
+        meaning: CVS:standard_iaea_nss
+        title: IAEA Nuclear Security Series
+      WENRA_RL:
+        description: Western European Nuclear Regulators Association Reference Levels
+        meaning: CVS:standard_wenra_rl
+        title: WENRA Reference Levels
+
+  InspectionTypeEnum:
+    description: Types of nuclear regulatory inspections and assessments
+    permissible_values:
+      ROUTINE_INSPECTION:
+        description: Regularly scheduled inspection activities
+        meaning: CVS:inspection_routine
+      REACTIVE_INSPECTION:
+        description: Event-driven or follow-up inspections
+        meaning: CVS:inspection_reactive
+      TEAM_INSPECTION:
+        description: Multi-disciplinary team inspections
+        meaning: CVS:inspection_team
+      TRIENNIAL_INSPECTION:
+        description: Three-year cycle comprehensive inspections
+        meaning: CVS:inspection_triennial
+      CONSTRUCTION_INSPECTION:
+        description: Construction phase inspections
+        meaning: CVS:inspection_construction
+      PRE_OPERATIONAL_TESTING:
+        description: Pre-operational testing and commissioning inspections
+        meaning: CVS:inspection_pre_operational
+      STARTUP_TESTING:
+        description: Initial startup and power ascension inspections
+        meaning: CVS:inspection_startup
+      PERIODIC_SAFETY_REVIEW:
+        description: Comprehensive periodic safety reviews
+        meaning: CVS:inspection_periodic_safety_review
+      INTEGRATED_INSPECTION:
+        description: Integrated inspection program
+        meaning: CVS:inspection_integrated
+      FORCE_ON_FORCE:
+        description: Security force-on-force exercises
+        meaning: CVS:inspection_force_on_force
+      EMERGENCY_PREPAREDNESS:
+        description: Emergency preparedness and response inspections
+        meaning: CVS:inspection_emergency_preparedness
+      SPECIAL_INSPECTION:
+        description: Special inspections for significant events
+        meaning: CVS:inspection_special
+      VENDOR_INSPECTION:
+        description: Nuclear vendor and supplier inspections
+        meaning: CVS:inspection_vendor
+      CYBER_SECURITY:
+        description: Cybersecurity program inspections
+        meaning: CVS:inspection_cyber_security
+      DECOMMISSIONING_INSPECTION:
+        description: Decommissioning activities inspections
+        meaning: CVS:inspection_decommissioning

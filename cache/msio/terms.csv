@@ -1,0 +1,19 @@
+curie,label,retrieved_at
+MSIO:0000147,gas chromatography,2025-10-19T12:01:54.819357
+MSIO:0000148,high performance liquid chromatography,2025-10-19T12:01:54.819665
+MSIO:0000117,silylation,2025-10-19T12:01:54.824361
+MSIO:0000115,methylation,2025-10-19T12:01:54.824549
+MSIO:0000112,acetylation,2025-10-19T12:01:54.824740
+MSIO:0000113,trifluoroacetylation,2025-10-19T12:01:54.824917
+MSIO:0000114,alkylation,2025-10-19T12:01:54.825081
+MSIO:0000116,oximation,2025-10-19T12:01:54.825238
+MSIO:0000100,targeted metabolite profiling,2025-10-19T12:01:54.825399
+MSIO:0000101,untargeted metabolite profiling,2025-10-19T12:01:54.825560
+MSIO:0000099,metabolite quantitation using high performance liquid chromatography,2025-10-19T12:01:54.825724
+MSIO:0000005,internal standard role,2025-10-19T12:01:54.826181
+MSIO:0000004,external standard role,2025-10-19T12:01:54.826376
+MSIO:0000008,positive control role,2025-10-19T12:01:54.826558
+MSIO:0000007,negative control role,2025-10-19T12:01:54.826731
+MSIO:0000006,long term reference role,2025-10-19T12:01:54.826899
+MSIO:0000181,batch cell culture,2025-10-19T12:01:55.456481
+MSIO:0000155,continuous fermentation cell culture,2025-10-19T12:01:55.456806
