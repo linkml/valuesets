@@ -150,7 +150,7 @@ enums:
     permissible_values:
       MEIOSIS_I:
         description: Meiosis I (reductional division)
-        meaning: GO:0007126
+        meaning: GO:0007127
         annotations:
           result: reduction from diploid to haploid
       PROPHASE_I:
@@ -288,13 +288,17 @@ enums:
     permissible_values:
       CELL_CYCLE_ARREST:
         description: Cell cycle arrest
-        meaning: GO:0007050
+        meaning: GO:0051726
+        aliases:
+        - regulation of cell cycle
       DNA_REPAIR:
         description: DNA repair
         meaning: GO:0006281
       APOPTOSIS_INDUCTION:
         description: Induction of apoptosis
-        meaning: GO:0006917
+        meaning: GO:0043065
+        aliases:
+        - positive regulation of apoptotic process
       SENESCENCE_INDUCTION:
         description: Induction of senescence
         meaning: GO:0090400

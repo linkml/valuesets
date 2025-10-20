@@ -1,0 +1,602 @@
+name: management_operations
+title: Business Management and Operations
+description: 'Business management methodologies, operational frameworks, strategic planning
+  approaches, and performance management systems. Based on management theory, business
+  strategy frameworks, and operational excellence practices.'
+id: https://w3id.org/linkml/valuesets/business/management_operations
+imports:
+- linkml:types
+prefixes:
+  valuesets: https://w3id.org/valuesets/
+  ISO: https://www.iso.org/
+  PMI: https://www.pmi.org/
+  ITIL: https://www.itil-officialsite.com/
+default_prefix: valuesets
+slots:
+  management_methodology:
+    description: Management approach or methodology
+    range: ManagementMethodologyEnum
+  strategic_framework:
+    description: Strategic planning and analysis framework
+    range: StrategicFrameworkEnum
+  operational_model:
+    description: Business operational model or approach
+    range: OperationalModelEnum
+  performance_measurement:
+    description: Performance measurement system or approach
+    range: PerformanceMeasurementEnum
+  decision_making_style:
+    description: Decision-making approach or style
+    range: DecisionMakingStyleEnum
+  leadership_style:
+    description: Leadership approach or style
+    range: LeadershipStyleEnum
+  business_process_type:
+    description: Type of business process
+    range: BusinessProcessTypeEnum
+enums:
+  ManagementMethodologyEnum:
+    description: Management approaches and methodologies
+    permissible_values:
+      TRADITIONAL_MANAGEMENT:
+        title: Traditional Management
+        description: Hierarchical command-and-control management approach
+        annotations:
+          structure: "hierarchical structure"
+          authority: "centralized authority"
+          communication: "top-down communication"
+          control: "direct supervision and control"
+      AGILE_MANAGEMENT:
+        title: Agile Management
+        description: Flexible, iterative management approach
+        annotations:
+          flexibility: "adaptive and flexible"
+          iteration: "iterative approach"
+          collaboration: "cross-functional collaboration"
+          customer_focus: "customer-centric"
+      LEAN_MANAGEMENT:
+        title: Lean Management
+        description: Waste elimination and value optimization approach
+        annotations:
+          focus: "waste elimination"
+          value: "value stream optimization"
+          continuous_improvement: "kaizen and continuous improvement"
+          efficiency: "operational efficiency"
+      PARTICIPATIVE_MANAGEMENT:
+        title: Participative Management
+        description: Employee involvement in decision-making
+        annotations:
+          involvement: "employee participation"
+          decision_making: "shared decision-making"
+          empowerment: "employee empowerment"
+          engagement: "increased employee engagement"
+      MATRIX_MANAGEMENT:
+        title: Matrix Management
+        description: Dual reporting relationships and shared authority
+        annotations:
+          structure: "matrix reporting structure"
+          authority: "shared authority"
+          flexibility: "organizational flexibility"
+          complexity: "increased complexity"
+      PROJECT_MANAGEMENT:
+        title: Project Management
+        description: Structured approach to managing projects
+        annotations:
+          methodology: "project management methodology"
+          lifecycle: "project lifecycle management"
+          deliverables: "deliverable-focused"
+          temporary: "temporary organizational structure"
+      RESULTS_ORIENTED_MANAGEMENT:
+        title: Results-Oriented Management
+        description: Focus on outcomes and performance results
+        annotations:
+          focus: "results and outcomes"
+          measurement: "performance measurement"
+          accountability: "accountability for results"
+          goals: "goal-oriented approach"
+      SERVANT_LEADERSHIP:
+        title: Servant Leadership
+        description: Leader serves and supports team members
+        annotations:
+          philosophy: "service-oriented leadership"
+          support: "leader supports team"
+          development: "people development focus"
+          empowerment: "team empowerment"
+      TRANSFORMATIONAL_MANAGEMENT:
+        title: Transformational Management
+        description: Change-oriented and inspirational management
+        annotations:
+          change: "transformation and change focus"
+          inspiration: "inspirational leadership"
+          vision: "vision-driven"
+          development: "follower development"
+      DEMOCRATIC_MANAGEMENT:
+        title: Democratic Management
+        description: Collaborative and consensus-building approach
+        annotations:
+          participation: "democratic participation"
+          consensus: "consensus-building"
+          equality: "equal voice in decisions"
+          transparency: "transparent processes"
+  StrategicFrameworkEnum:
+    description: Strategic planning and analysis frameworks
+    permissible_values:
+      SWOT_ANALYSIS:
+        title: SWOT Analysis
+        description: Strengths, Weaknesses, Opportunities, Threats analysis
+        annotations:
+          components: "strengths, weaknesses, opportunities, threats"
+          purpose: "strategic positioning analysis"
+          simplicity: "simple and widely used"
+          application: "strategic planning and decision-making"
+      PORTERS_FIVE_FORCES:
+        title: Porter's Five Forces
+        description: Industry competitiveness analysis framework
+        annotations:
+          forces: "competitive rivalry, supplier power, buyer power, substitutes, barriers"
+          purpose: "industry attractiveness analysis"
+          competition: "competitive strategy framework"
+          application: "industry analysis and strategy formulation"
+      BALANCED_SCORECARD:
+        title: Balanced Scorecard
+        description: Performance measurement from multiple perspectives
+        annotations:
+          perspectives: "financial, customer, internal process, learning"
+          purpose: "strategic performance measurement"
+          balance: "balanced view of performance"
+          alignment: "strategy alignment tool"
+      BLUE_OCEAN_STRATEGY:
+        title: Blue Ocean Strategy
+        description: Creating uncontested market space strategy
+        annotations:
+          concept: "value innovation and market creation"
+          competition: "competition avoidance"
+          differentiation: "differentiation and low cost"
+          innovation: "strategic innovation"
+      ANSOFF_MATRIX:
+        title: Ansoff Matrix
+        description: Product and market growth strategy framework
+        annotations:
+          dimensions: "products and markets"
+          strategies: "market penetration, development, diversification"
+          growth: "growth strategy framework"
+          risk: "risk assessment of growth options"
+      BCG_MATRIX:
+        title: BCG Matrix
+        description: Portfolio analysis of business units
+        annotations:
+          dimensions: "market growth and market share"
+          categories: "stars, cash cows, question marks, dogs"
+          portfolio: "business portfolio analysis"
+          resource_allocation: "resource allocation decisions"
+      VALUE_CHAIN_ANALYSIS:
+        title: Value Chain Analysis
+        description: Analysis of value-creating activities
+        annotations:
+          activities: "primary and support activities"
+          value: "value creation analysis"
+          advantage: "competitive advantage source identification"
+          optimization: "value chain optimization"
+      SCENARIO_PLANNING:
+        title: Scenario Planning
+        description: Multiple future scenario development and planning
+        annotations:
+          scenarios: "multiple future scenarios"
+          uncertainty: "uncertainty management"
+          planning: "strategic contingency planning"
+          flexibility: "strategic flexibility"
+      STRATEGIC_CANVAS:
+        title: Strategy Canvas
+        description: Visual representation of competitive factors
+        annotations:
+          visualization: "visual strategy representation"
+          factors: "competitive factors analysis"
+          comparison: "competitor comparison"
+          innovation: "value innovation identification"
+      CORE_COMPETENCY_ANALYSIS:
+        title: Core Competency Analysis
+        description: Identification and development of core competencies
+        annotations:
+          competencies: "unique organizational capabilities"
+          advantage: "sustainable competitive advantage"
+          focus: "competency-based strategy"
+          development: "capability development"
+  OperationalModelEnum:
+    description: Business operational models and approaches
+    permissible_values:
+      CENTRALIZED_OPERATIONS:
+        title: Centralized Operations
+        description: Centralized operational control and decision-making
+        annotations:
+          control: "centralized control"
+          efficiency: "operational efficiency"
+          standardization: "standardized processes"
+          coordination: "central coordination"
+      DECENTRALIZED_OPERATIONS:
+        title: Decentralized Operations
+        description: Distributed operational control and autonomy
+        annotations:
+          autonomy: "local autonomy"
+          responsiveness: "market responsiveness"
+          flexibility: "operational flexibility"
+          empowerment: "local empowerment"
+      HYBRID_OPERATIONS:
+        title: Hybrid Operations
+        description: Combination of centralized and decentralized elements
+        annotations:
+          combination: "mixed centralized and decentralized"
+          balance: "balance between control and flexibility"
+          optimization: "situational optimization"
+          complexity: "increased complexity"
+      OUTSOURCED_OPERATIONS:
+        title: Outsourced Operations
+        description: External service provider operational model
+        annotations:
+          provider: "external service providers"
+          focus: "core competency focus"
+          cost: "cost optimization"
+          expertise: "specialized expertise"
+      SHARED_SERVICES:
+        title: Shared Services
+        description: Centralized services shared across business units
+        annotations:
+          sharing: "shared service delivery"
+          efficiency: "scale efficiency"
+          standardization: "service standardization"
+          cost_effectiveness: "cost-effective service delivery"
+      NETWORK_OPERATIONS:
+        title: Network Operations
+        description: Collaborative network of partners and suppliers
+        annotations:
+          network: "partner and supplier network"
+          collaboration: "collaborative operations"
+          flexibility: "network flexibility"
+          coordination: "network coordination"
+      PLATFORM_OPERATIONS:
+        title: Platform Operations
+        description: Platform-based business operational model
+        annotations:
+          platform: "platform-based operations"
+          ecosystem: "business ecosystem"
+          scalability: "scalable operations"
+          network_effects: "network effects"
+      AGILE_OPERATIONS:
+        title: Agile Operations
+        description: Flexible and responsive operational approach
+        annotations:
+          agility: "operational agility"
+          responsiveness: "market responsiveness"
+          adaptation: "rapid adaptation"
+          iteration: "iterative improvement"
+      LEAN_OPERATIONS:
+        title: Lean Operations
+        description: Waste elimination and value-focused operations
+        annotations:
+          waste: "waste elimination"
+          value: "value stream focus"
+          efficiency: "operational efficiency"
+          continuous_improvement: "continuous improvement"
+      DIGITAL_OPERATIONS:
+        title: Digital Operations
+        description: Technology-enabled and digital-first operations
+        annotations:
+          technology: "digital technology enabled"
+          automation: "process automation"
+          data_driven: "data-driven operations"
+          scalability: "digital scalability"
+  PerformanceMeasurementEnum:
+    description: Performance measurement systems and approaches
+    permissible_values:
+      KEY_PERFORMANCE_INDICATORS:
+        title: Key Performance Indicators (KPIs)
+        description: Specific metrics measuring critical performance areas
+        annotations:
+          specificity: "specific performance metrics"
+          critical: "critical success factors"
+          measurement: "quantitative measurement"
+          tracking: "performance tracking"
+      OBJECTIVES_KEY_RESULTS:
+        title: Objectives and Key Results (OKRs)
+        description: Goal-setting framework with measurable outcomes
+        annotations:
+          objectives: "qualitative objectives"
+          results: "quantitative key results"
+          alignment: "organizational alignment"
+          transparency: "transparent goal setting"
+      BALANCED_SCORECARD_MEASUREMENT:
+        title: Balanced Scorecard Measurement
+        description: Multi-perspective performance measurement system
+        annotations:
+          perspectives: "multiple performance perspectives"
+          balance: "balanced performance view"
+          strategy: "strategy-linked measurement"
+          cause_effect: "cause-and-effect relationships"
+      RETURN_ON_INVESTMENT:
+        title: Return on Investment (ROI)
+        description: Financial return measurement relative to investment
+        annotations:
+          financial: "financial performance measure"
+          investment: "investment-based measurement"
+          efficiency: "capital efficiency"
+          comparison: "investment comparison"
+      ECONOMIC_VALUE_ADDED:
+        title: Economic Value Added (EVA)
+        description: Value creation measurement after cost of capital
+        annotations:
+          value: "economic value creation"
+          capital_cost: "cost of capital consideration"
+          shareholder: "shareholder value focus"
+          performance: "true economic performance"
+      CUSTOMER_SATISFACTION_METRICS:
+        title: Customer Satisfaction Metrics
+        description: Customer experience and satisfaction measurement
+        annotations:
+          customer: "customer-focused measurement"
+          satisfaction: "satisfaction and loyalty"
+          experience: "customer experience"
+          retention: "customer retention"
+      EMPLOYEE_ENGAGEMENT_METRICS:
+        title: Employee Engagement Metrics
+        description: Employee satisfaction and engagement measurement
+        annotations:
+          engagement: "employee engagement"
+          satisfaction: "employee satisfaction"
+          retention: "employee retention"
+          productivity: "employee productivity"
+      OPERATIONAL_EFFICIENCY_METRICS:
+        title: Operational Efficiency Metrics
+        description: Operational performance and efficiency measurement
+        annotations:
+          efficiency: "operational efficiency"
+          productivity: "process productivity"
+          quality: "quality metrics"
+          cost: "cost efficiency"
+      INNOVATION_METRICS:
+        title: Innovation Metrics
+        description: Innovation performance and capability measurement
+        annotations:
+          innovation: "innovation performance"
+          development: "new product development"
+          improvement: "process improvement"
+          creativity: "organizational creativity"
+      SUSTAINABILITY_METRICS:
+        title: Sustainability Metrics
+        description: Environmental and social sustainability measurement
+        annotations:
+          sustainability: "sustainability performance"
+          environmental: "environmental impact"
+          social: "social responsibility"
+          governance: "governance effectiveness"
+  DecisionMakingStyleEnum:
+    description: Decision-making approaches and styles
+    permissible_values:
+      AUTOCRATIC:
+        title: Autocratic Decision Making
+        description: Single decision-maker with full authority
+        annotations:
+          authority: "centralized decision authority"
+          speed: "fast decision making"
+          control: "complete control"
+          input: "limited input from others"
+      DEMOCRATIC:
+        title: Democratic Decision Making
+        description: Group participation in decision-making process
+        annotations:
+          participation: "group participation"
+          consensus: "consensus building"
+          input: "diverse input and perspectives"
+          ownership: "shared ownership of decisions"
+      CONSULTATIVE:
+        title: Consultative Decision Making
+        description: Leader consults others before deciding
+        annotations:
+          consultation: "stakeholder consultation"
+          input: "seeks input and advice"
+          authority: "leader retains decision authority"
+          informed: "informed decision making"
+      CONSENSUS:
+        title: Consensus Decision Making
+        description: Agreement reached through group discussion
+        annotations:
+          agreement: "group agreement required"
+          discussion: "extensive group discussion"
+          unanimous: "unanimous or near-unanimous agreement"
+          time: "time-intensive process"
+      DELEGATED:
+        title: Delegated Decision Making
+        description: Decision authority delegated to others
+        annotations:
+          delegation: "decision authority delegation"
+          empowerment: "employee empowerment"
+          autonomy: "decision autonomy"
+          accountability: "delegated accountability"
+      DATA_DRIVEN:
+        title: Data-Driven Decision Making
+        description: Decisions based on data analysis and evidence
+        annotations:
+          data: "data and analytics based"
+          evidence: "evidence-based decisions"
+          objectivity: "objective decision making"
+          analysis: "analytical approach"
+      INTUITIVE:
+        title: Intuitive Decision Making
+        description: Decisions based on experience and gut feeling
+        annotations:
+          intuition: "intuition and experience based"
+          speed: "rapid decision making"
+          experience: "leverages experience"
+          creativity: "creative and innovative"
+      COMMITTEE:
+        title: Committee Decision Making
+        description: Formal group decision-making structure
+        annotations:
+          structure: "formal committee structure"
+          representation: "stakeholder representation"
+          process: "structured decision process"
+          accountability: "shared accountability"
+      COLLABORATIVE:
+        title: Collaborative Decision Making
+        description: Joint decision-making with shared responsibility
+        annotations:
+          collaboration: "collaborative approach"
+          shared: "shared responsibility"
+          teamwork: "team-based decisions"
+          synergy: "collective wisdom"
+      CRISIS:
+        title: Crisis Decision Making
+        description: Rapid decision-making under crisis conditions
+        annotations:
+          urgency: "urgent decision making"
+          limited_info: "limited information available"
+          speed: "rapid response required"
+          risk: "high-risk decision making"
+  LeadershipStyleEnum:
+    description: Leadership approaches and styles
+    permissible_values:
+      TRANSFORMATIONAL:
+        title: Transformational Leadership
+        description: Inspirational leadership that motivates change
+        annotations:
+          inspiration: "inspirational motivation"
+          vision: "visionary leadership"
+          development: "follower development"
+          change: "change-oriented"
+      TRANSACTIONAL:
+        title: Transactional Leadership
+        description: Exchange-based leadership with rewards and consequences
+        annotations:
+          exchange: "reward and consequence based"
+          structure: "structured approach"
+          performance: "performance-based"
+          management: "management by exception"
+      SERVANT:
+        title: Servant Leadership
+        description: Leader serves followers and facilitates their growth
+        annotations:
+          service: "service to followers"
+          empowerment: "follower empowerment"
+          development: "personal development focus"
+          humility: "humble leadership approach"
+      AUTHENTIC:
+        title: Authentic Leadership
+        description: Genuine and self-aware leadership approach
+        annotations:
+          authenticity: "genuine and authentic"
+          self_awareness: "high self-awareness"
+          values: "values-based leadership"
+          integrity: "personal integrity"
+      CHARISMATIC:
+        title: Charismatic Leadership
+        description: Inspiring leadership through personal charisma
+        annotations:
+          charisma: "personal charisma"
+          inspiration: "inspirational influence"
+          emotion: "emotional appeal"
+          following: "devoted following"
+      SITUATIONAL:
+        title: Situational Leadership
+        description: Adaptive leadership based on situation requirements
+        annotations:
+          adaptation: "situational adaptation"
+          flexibility: "flexible approach"
+          assessment: "situation assessment"
+          style_variation: "varying leadership styles"
+      DEMOCRATIC:
+        title: Democratic Leadership
+        description: Participative leadership with shared decision-making
+        annotations:
+          participation: "follower participation"
+          shared: "shared decision making"
+          empowerment: "team empowerment"
+          collaboration: "collaborative approach"
+      AUTOCRATIC:
+        title: Autocratic Leadership
+        description: Directive leadership with centralized control
+        annotations:
+          control: "centralized control"
+          directive: "directive approach"
+          authority: "strong authority"
+          efficiency: "decision efficiency"
+      LAISSEZ_FAIRE:
+        title: Laissez-Faire Leadership
+        description: Hands-off leadership with minimal interference
+        annotations:
+          autonomy: "high follower autonomy"
+          minimal: "minimal leadership intervention"
+          freedom: "freedom to operate"
+          self_direction: "self-directed teams"
+      COACHING:
+        title: Coaching Leadership
+        description: Development-focused leadership approach
+        annotations:
+          development: "skill and capability development"
+          guidance: "mentoring and guidance"
+          growth: "personal and professional growth"
+          support: "supportive leadership"
+  BusinessProcessTypeEnum:
+    description: Types of business processes
+    permissible_values:
+      CORE_PROCESS:
+        title: Core Business Process
+        description: Primary processes that create customer value
+        annotations:
+          value: "direct customer value creation"
+          primary: "primary business activities"
+          competitive: "competitive advantage source"
+          strategic: "strategic importance"
+      SUPPORT_PROCESS:
+        title: Support Process
+        description: Processes that enable core business activities
+        annotations:
+          support: "supports core processes"
+          enabling: "enabling activities"
+          infrastructure: "business infrastructure"
+          indirect: "indirect value contribution"
+      MANAGEMENT_PROCESS:
+        title: Management Process
+        description: Processes for planning, controlling, and improving
+        annotations:
+          management: "management and governance"
+          planning: "planning and control"
+          improvement: "process improvement"
+          oversight: "organizational oversight"
+      OPERATIONAL_PROCESS:
+        title: Operational Process
+        description: Day-to-day operational activities
+        annotations:
+          operations: "daily operations"
+          routine: "routine activities"
+          execution: "operational execution"
+          efficiency: "operational efficiency"
+      STRATEGIC_PROCESS:
+        title: Strategic Process
+        description: Long-term planning and strategic activities
+        annotations:
+          strategy: "strategic planning"
+          long_term: "long-term focus"
+          direction: "organizational direction"
+          competitive: "competitive positioning"
+      INNOVATION_PROCESS:
+        title: Innovation Process
+        description: Processes for developing new products or services
+        annotations:
+          innovation: "innovation and development"
+          creativity: "creative processes"
+          new_development: "new product/service development"
+          competitive: "competitive innovation"
+      CUSTOMER_PROCESS:
+        title: Customer Process
+        description: Processes focused on customer interaction and service
+        annotations:
+          customer: "customer-facing processes"
+          service: "customer service"
+          relationship: "customer relationship"
+          satisfaction: "customer satisfaction"
+      FINANCIAL_PROCESS:
+        title: Financial Process
+        description: Processes related to financial management
+        annotations:
+          financial: "financial management"
+          accounting: "accounting and reporting"
+          control: "financial control"
+          compliance: "financial compliance"

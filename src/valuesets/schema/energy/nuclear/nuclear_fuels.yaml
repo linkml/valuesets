@@ -1,0 +1,421 @@
+name: nuclear_fuels
+title: Nuclear Fuel Types and Classifications
+description: 'Classifications of nuclear fuel types including uranium enrichment levels,
+  fuel forms, and alternative fuel cycles. Based on IAEA classifications, nuclear
+  fuel cycle standards, and industry specifications.'
+id: https://w3id.org/linkml/valuesets/energy/nuclear/nuclear_fuels
+imports:
+- linkml:types
+prefixes:
+  valuesets: https://w3id.org/valuesets/
+  IAEA: https://www.iaea.org/
+  WNA: https://world-nuclear.org/
+  CHEBI: http://purl.obolibrary.org/obo/CHEBI_
+default_prefix: valuesets
+slots:
+  nuclear_fuel_type:
+    description: Type of nuclear fuel material
+    range: NuclearFuelTypeEnum
+  uranium_enrichment_level:
+    description: Uranium-235 enrichment classification
+    range: UraniumEnrichmentLevelEnum
+  fuel_form:
+    description: Physical form of nuclear fuel
+    range: FuelFormEnum
+  fuel_assembly_type:
+    description: Type of fuel assembly configuration
+    range: FuelAssemblyTypeEnum
+  fuel_cycle_stage:
+    description: Stage in the nuclear fuel cycle
+    range: FuelCycleStageEnum
+  fissile_material:
+    description: Fissile isotope used in nuclear fuel
+    range: FissileIsotopeEnum
+enums:
+  NuclearFuelTypeEnum:
+    description: Types of nuclear fuel materials and compositions
+    permissible_values:
+      NATURAL_URANIUM:
+        title: Natural Uranium
+        description: Uranium as found in nature (0.711% U-235)
+        aliases:
+        - Natural U
+        - Unat
+        - uranium atom
+        meaning: CHEBI:27214
+        annotations:
+          u235_content: 0.711%
+          u238_content: 99.289%
+          enrichment_required: false
+          typical_use: PHWR, some research reactors
+      LOW_ENRICHED_URANIUM:
+        title: Low Enriched Uranium (LEU)
+        description: Uranium enriched to 0.7%-20% U-235
+        aliases:
+        - LEU
+        annotations:
+          u235_content: 0.7-20%
+          proliferation_risk: low
+          typical_use: commercial power reactors
+          iaea_category: indirect use material
+      HIGH_ASSAY_LEU:
+        title: High-Assay Low Enriched Uranium (HALEU)
+        description: Uranium enriched to 5%-20% U-235
+        aliases:
+        - HALEU
+        - LEU+
+        annotations:
+          u235_content: 5-20%
+          typical_use: advanced reactors, SMRs
+          proliferation_risk: moderate
+      HIGHLY_ENRICHED_URANIUM:
+        title: Highly Enriched Uranium (HEU)
+        description: Uranium enriched to 20% or more U-235
+        aliases:
+        - HEU
+        annotations:
+          u235_content: ≥20%
+          proliferation_risk: high
+          typical_use: research reactors, naval propulsion
+          iaea_category: direct use material
+      WEAPONS_GRADE_URANIUM:
+        title: Weapons-Grade Uranium
+        description: Uranium enriched to 90% or more U-235
+        aliases:
+        - WGU
+        annotations:
+          u235_content: ≥90%
+          proliferation_risk: very high
+          typical_use: nuclear weapons, some naval reactors
+      REACTOR_GRADE_PLUTONIUM:
+        title: Reactor-Grade Plutonium
+        description: Plutonium with high Pu-240 content from spent fuel
+        aliases:
+        - RGPu
+        annotations:
+          pu239_content: "<93%"
+          pu240_content: ">7%"
+          source: spent nuclear fuel
+          typical_use: MOX fuel
+      WEAPONS_GRADE_PLUTONIUM:
+        title: Weapons-Grade Plutonium
+        description: Plutonium with low Pu-240 content
+        aliases:
+        - WGPu
+        annotations:
+          pu239_content: "≥93%"
+          pu240_content: "<7%"
+          proliferation_risk: very high
+      MOX_FUEL:
+        title: Mixed Oxide Fuel
+        description: Mixture of plutonium and uranium oxides
+        aliases:
+        - MOX
+        - Mixed Oxide
+        annotations:
+          composition: UO2 + PuO2
+          plutonium_content: 3-10%
+          typical_use: thermal reactors
+          recycling: enables plutonium recycling
+      THORIUM_FUEL:
+        title: Thorium-Based Fuel
+        description: Fuel containing thorium-232 as fertile material
+        aliases:
+        - Thorium fuel
+        - thorium
+        meaning: CHEBI:33385
+        annotations:
+          fertile_isotope: Th-232
+          fissile_product: U-233
+          abundance: more abundant than uranium
+          proliferation_resistance: high
+      TRISO_FUEL:
+        title: Tri-structural Isotropic Fuel
+        description: Coated particle fuel with multiple containment layers
+        aliases:
+        - TRISO
+        annotations:
+          form: coated particles
+          containment_layers: 4
+          meltdown_resistance: very high
+          typical_use: HTGR, some SMRs
+      LIQUID_FUEL:
+        title: Liquid Nuclear Fuel
+        description: Fuel dissolved in liquid medium
+        annotations:
+          phase: liquid
+          typical_use: molten salt reactors
+          reprocessing: online
+      METALLIC_FUEL:
+        title: Metallic Nuclear Fuel
+        description: Fuel in metallic form
+        annotations:
+          form: metal alloy
+          typical_use: fast reactors
+          thermal_conductivity: high
+      CARBIDE_FUEL:
+        title: Carbide Nuclear Fuel
+        description: Uranium or plutonium carbide fuel
+        annotations:
+          chemical_form: carbide
+          melting_point: very high
+          typical_use: advanced reactors
+      NITRIDE_FUEL:
+        title: Nitride Nuclear Fuel
+        description: Uranium or plutonium nitride fuel
+        annotations:
+          chemical_form: nitride
+          density: high
+          typical_use: fast reactors
+  UraniumEnrichmentLevelEnum:
+    description: Standard uranium-235 enrichment level classifications
+    permissible_values:
+      NATURAL:
+        title: Natural Uranium
+        description: Natural uranium enrichment (0.711% U-235)
+        annotations:
+          u235_percentage: 0.711
+          category: natural
+          separative_work: 0
+      SLIGHTLY_ENRICHED:
+        title: Slightly Enriched Uranium
+        description: Minimal enrichment above natural levels
+        annotations:
+          u235_percentage: 0.8-2.0
+          category: SEU
+          typical_use: some heavy water reactors
+      LOW_ENRICHED:
+        title: Low Enriched Uranium
+        description: Standard commercial reactor enrichment
+        annotations:
+          u235_percentage: 2.0-5.0
+          category: LEU
+          typical_use: PWR, BWR commercial reactors
+      HIGH_ASSAY_LOW_ENRICHED:
+        title: High-Assay Low Enriched Uranium
+        description: Higher enrichment for advanced reactors
+        annotations:
+          u235_percentage: 5.0-20.0
+          category: HALEU
+          typical_use: advanced reactors, SMRs
+      HIGHLY_ENRICHED:
+        title: Highly Enriched Uranium
+        description: High enrichment for research and naval reactors
+        annotations:
+          u235_percentage: 20.0-90.0
+          category: HEU
+          typical_use: research reactors, naval propulsion
+      WEAPONS_GRADE:
+        title: Weapons-Grade Uranium
+        description: Very high enrichment for weapons
+        annotations:
+          u235_percentage: 90.0+
+          category: WGU
+          proliferation_concern: extreme
+  FuelFormEnum:
+    description: Physical forms of nuclear fuel
+    permissible_values:
+      OXIDE_PELLETS:
+        title: Oxide Pellets
+        description: Ceramic uranium dioxide pellets
+        annotations:
+          chemical_form: UO2
+          shape: cylindrical pellets
+          typical_use: PWR, BWR fuel rods
+      METAL_SLUGS:
+        title: Metal Slugs
+        description: Metallic uranium fuel elements
+        annotations:
+          chemical_form: metallic uranium
+          shape: cylindrical slugs
+          typical_use: production reactors
+      COATED_PARTICLES:
+        title: Coated Particles
+        description: Microspheres with protective coatings
+        annotations:
+          structure: TRISO or BISO coated
+          size: microscopic spheres
+          typical_use: HTGR
+      LIQUID_SOLUTION:
+        title: Liquid Solution
+        description: Fuel dissolved in liquid carrier
+        annotations:
+          phase: liquid
+          typical_use: molten salt reactors
+      DISPERSION_FUEL:
+        title: Dispersion Fuel
+        description: Fuel particles dispersed in matrix
+        annotations:
+          structure: particles in matrix
+          typical_use: research reactors
+      CERMET_FUEL:
+        title: Cermet Fuel
+        description: Ceramic-metal composite fuel
+        annotations:
+          structure: ceramic in metal matrix
+          typical_use: advanced reactors
+      PLATE_FUEL:
+        title: Plate Fuel
+        description: Flat plate fuel elements
+        annotations:
+          geometry: flat plates
+          typical_use: research reactors
+      ROD_FUEL:
+        title: Rod Fuel
+        description: Cylindrical fuel rods
+        annotations:
+          geometry: long cylinders
+          typical_use: commercial power reactors
+  FuelAssemblyTypeEnum:
+    description: Types of fuel assembly configurations
+    permissible_values:
+      PWR_ASSEMBLY:
+        title: PWR Fuel Assembly
+        description: Square array fuel assembly for PWR
+        annotations:
+          geometry: square array
+          rod_count: 264-289 typical
+          control_method: control rod clusters
+      BWR_ASSEMBLY:
+        title: BWR Fuel Assembly
+        description: Square array fuel assembly for BWR
+        annotations:
+          geometry: square array with channel
+          rod_count: 49-100 typical
+          control_method: control blades
+      CANDU_BUNDLE:
+        title: CANDU Fuel Bundle
+        description: Cylindrical fuel bundle for PHWR
+        annotations:
+          geometry: cylindrical bundle
+          rod_count: 28-43 typical
+          length: ~50 cm
+      RBMK_ASSEMBLY:
+        title: RBMK Fuel Assembly
+        description: Fuel assembly for RBMK reactors
+        annotations:
+          geometry: 18-rod bundle
+          length: ~3.5 m
+          control_method: control rods
+      AGR_ASSEMBLY:
+        title: AGR Fuel Assembly
+        description: Fuel stringer for AGR
+        annotations:
+          geometry: stacked pins
+          cladding: stainless steel
+      HTGR_BLOCK:
+        title: HTGR Fuel Block
+        description: Graphite block with TRISO fuel
+        annotations:
+          geometry: hexagonal or cylindrical blocks
+          fuel_form: TRISO particles
+      FAST_REACTOR_ASSEMBLY:
+        title: Fast Reactor Assembly
+        description: Fuel assembly for fast reactors
+        annotations:
+          geometry: hexagonal wrapper
+          coolant_flow: axial
+  FuelCycleStageEnum:
+    description: Stages in the nuclear fuel cycle
+    permissible_values:
+      MINING:
+        title: Uranium Mining
+        description: Extraction of uranium ore from deposits
+        annotations:
+          process: mining and milling
+          product: uranium ore concentrate (yellowcake)
+      CONVERSION:
+        title: Conversion
+        description: Conversion of uranium concentrate to UF6
+        annotations:
+          input: U3O8 yellowcake
+          output: uranium hexafluoride (UF6)
+      ENRICHMENT:
+        title: Enrichment
+        description: Increase of U-235 concentration
+        annotations:
+          input: natural UF6
+          output: enriched UF6
+          waste: depleted uranium tails
+      FUEL_FABRICATION:
+        title: Fuel Fabrication
+        description: Manufacturing of fuel assemblies
+        annotations:
+          input: enriched UF6
+          output: fuel assemblies
+          process: pellet and rod manufacturing
+      REACTOR_OPERATION:
+        title: Reactor Operation
+        description: Power generation in nuclear reactor
+        annotations:
+          input: fresh fuel assemblies
+          output: electricity and spent fuel
+          duration: 12-24 months per cycle
+      INTERIM_STORAGE:
+        title: Interim Storage
+        description: Temporary storage of spent fuel
+        annotations:
+          purpose: cooling and decay
+          duration: 5-40+ years
+          location: reactor pools or dry casks
+      REPROCESSING:
+        title: Reprocessing
+        description: Chemical separation of spent fuel components
+        annotations:
+          input: spent nuclear fuel
+          output: uranium, plutonium, waste
+          status: practiced in some countries
+      DISPOSAL:
+        title: Disposal
+        description: Permanent disposal of nuclear waste
+        annotations:
+          method: geological repository
+          duration: permanent
+          status: under development globally
+  FissileIsotopeEnum:
+    description: Fissile isotopes used in nuclear fuel
+    permissible_values:
+      URANIUM_233:
+        title: Uranium-233
+        description: Fissile isotope produced from thorium
+        aliases:
+        - U-233
+        # No specific CHEBI ID for U-233 isotope
+        annotations:
+          mass_number: 233
+          half_life: 159,200 years
+          thermal_fission: yes
+          breeding_from: Th-232
+      URANIUM_235:
+        title: Uranium-235
+        description: Naturally occurring fissile uranium isotope
+        aliases:
+        - U-235
+        # No specific CHEBI ID for U-235 isotope
+        annotations:
+          mass_number: 235
+          half_life: 703,800,000 years
+          natural_abundance: 0.711%
+          thermal_fission: yes
+      PLUTONIUM_239:
+        title: Plutonium-239
+        description: Fissile plutonium isotope from U-238 breeding
+        aliases:
+        - Pu-239
+        # No specific CHEBI ID for Pu-239 isotope
+        annotations:
+          mass_number: 239
+          half_life: 24,110 years
+          thermal_fission: yes
+          breeding_from: U-238
+      PLUTONIUM_241:
+        title: Plutonium-241
+        description: Fissile plutonium isotope with short half-life
+        aliases:
+        - Pu-241
+        # No specific CHEBI ID for Pu-241 isotope
+        annotations:
+          mass_number: 241
+          half_life: 14.3 years
+          thermal_fission: yes
+          decay_product: Am-241

@@ -245,7 +245,7 @@ AminoAcidExtendedEnum._metadata = {
     "STOP": {'annotations': {'symbol': '*', 'three_letter': 'Ter', 'represents': 'stop codon'}},
     "GAP": {'annotations': {'symbol': '-', 'represents': 'gap'}},
     "U": {'meaning': 'CHEBI:16633', 'annotations': {'three_letter': 'Sec', 'special': '21st amino acid', 'codon': 'UGA with SECIS element'}, 'aliases': ['L-selenocysteine']},
-    "O": {'meaning': 'CHEBI:21786', 'annotations': {'three_letter': 'Pyl', 'special': '22nd amino acid', 'codon': 'UAG in certain archaea/bacteria'}},
+    "O": {'meaning': 'CHEBI:21860', 'annotations': {'three_letter': 'Pyl', 'special': '22nd amino acid', 'codon': 'UAG in certain archaea/bacteria'}, 'aliases': ['L-pyrrolysine']},
 }
 
 class CodonEnum(RichEnum):

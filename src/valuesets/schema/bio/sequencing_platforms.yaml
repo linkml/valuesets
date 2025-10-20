@@ -8,6 +8,7 @@ prefixes:
   valuesets: https://w3id.org/valuesets/
   OBI: http://purl.obolibrary.org/obo/OBI_
   SO: http://purl.obolibrary.org/obo/SO_
+  EDAM: http://edamontology.org/
 default_prefix: valuesets
 slots:
   sequencing_platform:
@@ -38,48 +39,58 @@ enums:
     permissible_values:
       ILLUMINA_HISEQ_2000:
         description: Illumina HiSeq 2000
+        meaning: OBI:0002001
         annotations:
           manufacturer: Illumina
           read_type: short
           chemistry: sequencing by synthesis
       ILLUMINA_HISEQ_2500:
         description: Illumina HiSeq 2500
+        meaning: OBI:0002002
         annotations:
           manufacturer: Illumina
           read_type: short
           chemistry: sequencing by synthesis
       ILLUMINA_HISEQ_3000:
         description: Illumina HiSeq 3000
+        meaning: OBI:0002048
         annotations:
           manufacturer: Illumina
           read_type: short
           chemistry: sequencing by synthesis
       ILLUMINA_HISEQ_4000:
         description: Illumina HiSeq 4000
+        meaning: OBI:0002049
         annotations:
           manufacturer: Illumina
           read_type: short
           chemistry: sequencing by synthesis
       ILLUMINA_HISEQ_X:
         description: Illumina HiSeq X
+        meaning: OBI:0002129
+        aliases:
+        - Illumina HiSeq X Ten
         annotations:
           manufacturer: Illumina
           read_type: short
           chemistry: sequencing by synthesis
       ILLUMINA_NOVASEQ_6000:
         description: Illumina NovaSeq 6000
+        meaning: OBI:0002630
         annotations:
           manufacturer: Illumina
           read_type: short
           chemistry: sequencing by synthesis
       ILLUMINA_NEXTSEQ_500:
         description: Illumina NextSeq 500
+        meaning: OBI:0002021
         annotations:
           manufacturer: Illumina
           read_type: short
           chemistry: sequencing by synthesis
       ILLUMINA_NEXTSEQ_550:
         description: Illumina NextSeq 550
+        meaning: OBI:0003387
         annotations:
           manufacturer: Illumina
           read_type: short
@@ -98,6 +109,7 @@ enums:
           chemistry: sequencing by synthesis
       ILLUMINA_MISEQ:
         description: Illumina MiSeq
+        meaning: OBI:0002003
         annotations:
           manufacturer: Illumina
           read_type: short
@@ -116,18 +128,21 @@ enums:
           chemistry: single molecule real time
       PACBIO_RS_II:
         description: PacBio RS II
+        meaning: OBI:0002012
         annotations:
           manufacturer: Pacific Biosciences
           read_type: long
           chemistry: single molecule real time
       PACBIO_SEQUEL:
         description: PacBio Sequel
+        meaning: OBI:0002632
         annotations:
           manufacturer: Pacific Biosciences
           read_type: long
           chemistry: single molecule real time
       PACBIO_SEQUEL_II:
         description: PacBio Sequel II
+        meaning: OBI:0002633
         annotations:
           manufacturer: Pacific Biosciences
           read_type: long
@@ -140,18 +155,27 @@ enums:
           chemistry: single molecule real time
       NANOPORE_MINION:
         description: Oxford Nanopore MinION
+        meaning: OBI:0002750
+        aliases:
+        - Oxford Nanopore MinION
         annotations:
           manufacturer: Oxford Nanopore Technologies
           read_type: long
           chemistry: nanopore sequencing
       NANOPORE_GRIDION:
         description: Oxford Nanopore GridION
+        meaning: OBI:0002751
+        aliases:
+        - Oxford Nanopore GridION Mk1
         annotations:
           manufacturer: Oxford Nanopore Technologies
           read_type: long
           chemistry: nanopore sequencing
       NANOPORE_PROMETHION:
         description: Oxford Nanopore PromethION
+        meaning: OBI:0002752
+        aliases:
+        - Oxford Nanopore PromethION
         annotations:
           manufacturer: Oxford Nanopore Technologies
           read_type: long
@@ -188,12 +212,18 @@ enums:
           chemistry: DNA nanoball sequencing
       SANGER_SEQUENCING:
         description: Sanger chain termination sequencing
+        meaning: OBI:0000695
+        aliases:
+        - chain termination sequencing assay
         annotations:
           manufacturer: Various
           read_type: short
           chemistry: chain termination
       ROCHE_454_GS:
         description: Roche 454 Genome Sequencer
+        meaning: OBI:0000702
+        aliases:
+        - 454 Genome Sequencer FLX
         annotations:
           manufacturer: Roche/454
           read_type: short
@@ -219,6 +249,9 @@ enums:
       SEQUENCING_BY_SYNTHESIS:
         title: SEQUENCING_BY_SYNTHESIS
         description: Sequencing by synthesis (Illumina)
+        meaning: OBI:0000734
+        aliases:
+        - DNA sequencing by synthesis assay
       SINGLE_MOLECULE_REAL_TIME:
         title: SINGLE_MOLECULE_REAL_TIME
         description: Single molecule real-time sequencing (PacBio)
@@ -231,9 +264,15 @@ enums:
       SEQUENCING_BY_LIGATION:
         title: SEQUENCING_BY_LIGATION
         description: Sequencing by ligation (SOLiD)
+        meaning: OBI:0000723
+        aliases:
+        - DNA sequencing by ligation assay
       CHAIN_TERMINATION:
         title: CHAIN_TERMINATION
         description: Chain termination method (Sanger)
+        meaning: OBI:0000695
+        aliases:
+        - chain termination sequencing assay
       SEMICONDUCTOR_SEQUENCING:
         description: Semiconductor/Ion semiconductor sequencing
       DNA_NANOBALL_SEQUENCING:
@@ -289,12 +328,19 @@ enums:
       WHOLE_GENOME_SEQUENCING:
         title: WHOLE_GENOME_SEQUENCING
         description: Whole genome sequencing (WGS)
+        meaning: EDAM:topic_3673
       WHOLE_EXOME_SEQUENCING:
         title: WHOLE_EXOME_SEQUENCING
         description: Whole exome sequencing (WES)
+        meaning: EDAM:topic_3676
+        aliases:
+        - Exome sequencing
       TRANSCRIPTOME_SEQUENCING:
         title: TRANSCRIPTOME_SEQUENCING
         description: RNA sequencing (RNA-seq)
+        meaning: EDAM:topic_3170
+        aliases:
+        - RNA-Seq
       TARGETED_SEQUENCING:
         description: Targeted gene panel sequencing
       EPIGENOMICS:
@@ -302,14 +348,23 @@ enums:
       METAGENOMICS:
         title: METAGENOMICS
         description: Metagenomic sequencing
+        meaning: EDAM:topic_3837
+        aliases:
+        - Metagenomic sequencing
       SINGLE_CELL_GENOMICS:
         description: Single-cell genomics
       SINGLE_CELL_TRANSCRIPTOMICS:
         title: SINGLE_CELL_TRANSCRIPTOMICS
         description: Single-cell transcriptomics
+        meaning: EDAM:topic_4028
+        aliases:
+        - Single-cell sequencing
       CHROMATIN_IMMUNOPRECIPITATION:
         title: CHROMATIN_IMMUNOPRECIPITATION
         description: ChIP-seq
+        meaning: EDAM:topic_3656
+        aliases:
+        - Immunoprecipitation experiment
       CHROMATIN_ACCESSIBILITY:
         description: ATAC-seq/FAIRE-seq
       DNA_METHYLATION:
@@ -348,21 +403,25 @@ enums:
     permissible_values:
       FASTA:
         description: FASTA sequence format
+        meaning: EDAM:format_1929
         annotations:
           extensions: .fa, .fasta, .fna, .ffn, .faa, .frn
           content: sequences only
       FASTQ:
         description: FASTQ sequence with quality format
+        meaning: EDAM:format_1930
         annotations:
           extensions: .fq, .fastq
           content: sequences and quality scores
       SAM:
         description: Sequence Alignment Map format
+        meaning: EDAM:format_2573
         annotations:
           extensions: .sam
           content: aligned sequences (text)
       BAM:
         description: Binary Alignment Map format
+        meaning: EDAM:format_2572
         annotations:
           extensions: .bam
           content: aligned sequences (binary)
@@ -373,11 +432,13 @@ enums:
           content: compressed aligned sequences
       VCF:
         description: Variant Call Format
+        meaning: EDAM:format_3016
         annotations:
           extensions: .vcf
           content: genetic variants
       BCF:
         description: Binary Variant Call Format
+        meaning: EDAM:format_3020
         annotations:
           extensions: .bcf
           content: genetic variants (binary)
@@ -413,6 +474,7 @@ enums:
           content: multi-dimensional arrays
       SFF:
         description: Standard Flowgram Format (454)
+        meaning: EDAM:format_3284
         annotations:
           extensions: .sff
           content: 454 sequencing data

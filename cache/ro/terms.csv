@@ -1,0 +1,67 @@
+curie,label,retrieved_at
+RO:0012009,constitutively upstream of,2025-10-19T07:20:41.406487
+RO:0002413,provides input for,2025-10-19T07:20:41.407109
+RO:0012010,removes input for,2025-10-19T07:20:41.407316
+RO:0002411,causally upstream of,2025-10-19T07:20:41.407502
+RO:0002304,"causally upstream of, positive effect",2025-10-19T07:20:41.407945
+RO:0002305,"causally upstream of, negative effect",2025-10-19T07:20:41.408148
+RO:0002211,regulates,2025-10-19T07:20:41.408466
+RO:0002212,negatively regulates,2025-10-19T07:20:41.408637
+RO:0002213,positively regulates,2025-10-19T07:20:41.408813
+RO:0002630,directly negatively regulates,2025-10-19T07:20:41.408978
+RO:0002409,indirectly negatively regulates,2025-10-19T07:20:41.409139
+RO:0002629,directly positively regulates,2025-10-19T07:20:41.409294
+RO:0002407,indirectly positively regulates,2025-10-19T07:20:41.409459
+RO:0012004,is small molecule regulator of,2025-10-19T07:20:41.409666
+RO:0012005,is small molecule activator of,2025-10-19T07:20:41.409838
+RO:0012006,is small molecule inhibitor of,2025-10-19T07:20:41.410009
+RO:0002437,biotically interacts with,2025-10-19T07:20:48.098804
+RO:0002438,trophically interacts with,2025-10-19T07:20:48.099192
+RO:0002439,preys on,2025-10-19T07:20:48.099435
+RO:0002458,preyed upon by,2025-10-19T07:20:48.099902
+RO:0002470,eats,2025-10-19T07:20:48.100283
+RO:0002471,is eaten by,2025-10-19T07:20:48.100510
+RO:0002457,acquires nutrients from,2025-10-19T07:20:48.100714
+RO:0002469,provides nutrients for,2025-10-19T07:20:48.100907
+RO:0002440,symbiotically interacts with,2025-10-19T07:20:48.101093
+RO:0002441,commensually interacts with,2025-10-19T07:20:48.101328
+RO:0002442,mutualistically interacts with,2025-10-19T07:20:48.101737
+RO:0002443,interacts with via parasite-host interaction,2025-10-19T07:20:48.102067
+RO:0008510,symbiotrophically interacts with,2025-10-19T07:20:48.102634
+RO:0002444,parasite of,2025-10-19T07:20:48.103018
+RO:0002453,host of,2025-10-19T07:20:48.103275
+RO:0002454,has host,2025-10-19T07:20:48.103493
+RO:0002208,parasitoid of,2025-10-19T07:20:48.103702
+RO:0002632,ectoparasite of,2025-10-19T07:20:48.103891
+RO:0002634,endoparasite of,2025-10-19T07:20:48.104190
+RO:0002640,intracellular endoparasite of,2025-10-19T07:20:48.104519
+RO:0002638,intercellular endoparasite of,2025-10-19T07:20:48.104727
+RO:0002237,hemiparasite of,2025-10-19T07:20:48.105166
+RO:0002235,stem parasite of,2025-10-19T07:20:48.105534
+RO:0002236,root parasite of,2025-10-19T07:20:48.105971
+RO:0002227,obligate parasite of,2025-10-19T07:20:48.106334
+RO:0002228,facultative parasite of,2025-10-19T07:20:48.106593
+RO:0008511,trophic parasite of,2025-10-19T07:20:48.106819
+RO:0002556,pathogen of,2025-10-19T07:20:48.107248
+RO:0002557,has pathogen,2025-10-19T07:20:48.107737
+RO:0002802,reservoir host of,2025-10-19T07:20:48.108181
+RO:0002803,has reservoir host,2025-10-19T07:20:48.108633
+RO:0002459,is vector for,2025-10-19T07:20:48.109013
+RO:0002455,pollinates,2025-10-19T07:20:48.109254
+RO:0002446,participates in a abiotic-biotic interaction with,2025-10-19T07:20:48.109479
+RO:0008506,ecologically co-occurs with,2025-10-19T07:20:48.109980
+RO:0002553,hyperparasite of,2025-10-19T07:20:48.110480
+RO:0002636,mesoparasite of,2025-10-19T07:20:48.110829
+RO:0008503,kleptoparasite of,2025-10-19T07:20:48.111061
+RO:0008501,epiphyte of,2025-10-19T07:20:48.111261
+RO:0002555,allelopath of,2025-10-19T07:20:48.111455
+RO:0002618,visits,2025-10-19T07:20:48.111899
+RO:0002622,visits flowers of,2025-10-19T07:20:48.112403
+RO:0002623,has flowers visited by,2025-10-19T07:20:48.112764
+RO:0002624,lays eggs in,2025-10-19T07:20:48.113010
+RO:0002625,has eggs laid in by,2025-10-19T07:20:48.113233
+RO:0008507,lays eggs on,2025-10-19T07:20:48.113447
+RO:0008508,has eggs laid on by,2025-10-19T07:20:48.113656
+RO:0008505,creates habitat for,2025-10-19T07:20:48.113858
+RO:0002220,adjacent to,2025-10-19T07:20:51.299381
+RO:0002221,surrounds,2025-10-19T07:20:51.300977

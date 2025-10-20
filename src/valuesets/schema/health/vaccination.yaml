@@ -1,0 +1,102 @@
+name: valuesets-vaccination
+title: valuesets-vaccination
+description: Vaccination-related value sets
+# Test comment to trigger validation hook
+id: https://w3id.org/valuesets/health/vaccination
+prefixes:
+  # linkml_common: https://w3id.org/valuesets/
+  linkml: https://w3id.org/linkml/
+  biolink: https://w3id.org/biolink/
+  schema: http://schema.org/
+  NCIT: http://purl.obolibrary.org/obo/NCIT_
+  VO: http://purl.obolibrary.org/obo/VO_
+  valuesets: https://w3id.org/valuesets/
+default_prefix: valuesets
+slots:
+  vaccination_status:
+    description: The vaccination status of an individual
+    range: VaccinationStatusEnum
+  vaccination_periodicity:
+    description: The periodicity or frequency of vaccination
+    range: VaccinationPeriodicityEnum
+  vaccine_category:
+    description: The broad category or type of vaccine
+    range: VaccineCategoryEnum
+enums:
+  VaccinationStatusEnum:
+    description: The vaccination status of an individual
+    permissible_values:
+      VACCINATED:
+        description: A status indicating that an individual has received a vaccination
+        meaning: NCIT:C28385
+      NOT_VACCINATED:
+        description: A status indicating that an individual has not received any of the required vaccinations
+        meaning: NCIT:C183125
+      FULLY_VACCINATED:
+        description: A status indicating that an individual has received all the required vaccinations
+        meaning: NCIT:C183123
+      PARTIALLY_VACCINATED:
+        description: A status indicating that an individual has received some of the required vaccinations
+        meaning: NCIT:C183124
+      BOOSTER:
+        description: A status indicating that an individual has received a booster vaccination
+        meaning: NCIT:C28320
+      UNVACCINATED:
+        description: An organismal quality that indicates an organism is unvaccinated with any vaccine
+        meaning: VO:0001377
+      UNKNOWN:
+        description: The vaccination status is not known
+        meaning: NCIT:C17998
+  VaccinationPeriodicityEnum:
+    description: The periodicity or frequency of vaccination
+    permissible_values:
+      SINGLE_DOSE:
+        description: A vaccination regimen requiring only one dose
+      ANNUAL:
+        description: Vaccination occurring once per year
+        meaning: NCIT:C54647
+      SEASONAL:
+        description: Vaccination occurring seasonally (e.g., for influenza)
+      BOOSTER:
+        description: A second or later vaccine dose to maintain immune response
+        meaning: NCIT:C28320
+      PRIMARY_SERIES:
+        description: The initial series of vaccine doses
+      PERIODIC:
+        description: Vaccination occurring at regular intervals
+      ONE_TIME:
+        description: A vaccination given only once in a lifetime
+      AS_NEEDED:
+        description: Vaccination given as needed based on exposure risk or other factors
+  VaccineCategoryEnum:
+    description: The broad category or type of vaccine
+    permissible_values:
+      LIVE_ATTENUATED_VACCINE:
+        description: A vaccine made from microbes that have been weakened in the laboratory
+        meaning: VO:0000367
+      INACTIVATED_VACCINE:
+        description: A preparation of killed microorganisms intended to prevent infectious disease
+        meaning: NCIT:C29694
+      CONJUGATE_VACCINE:
+        description: A vaccine created by covalently attaching an antigen to a carrier protein
+        meaning: NCIT:C1455
+      MRNA_VACCINE:
+        description: A vaccine based on mRNA that encodes the antigen of interest
+        meaning: NCIT:C172787
+      DNA_VACCINE:
+        description: A vaccine using DNA to produce protein that promotes immune responses
+        meaning: NCIT:C39619
+      PEPTIDE_VACCINE:
+        description: A vaccine based on synthetic peptides
+        meaning: NCIT:C1752
+      VIRAL_VECTOR:
+        description: A vaccine using a modified virus as a delivery system
+      SUBUNIT:
+        description: A vaccine containing purified pieces of the pathogen
+      TOXOID:
+        description: A vaccine made from a toxin that has been made harmless
+      RECOMBINANT:
+        description: A vaccine produced using recombinant DNA technology
+license: MIT
+see_also:
+- https://linkml.github.io/valuesets

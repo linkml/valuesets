@@ -1,0 +1,502 @@
+name: quality_management
+title: Quality Management Systems and Standards
+description: 'Quality management frameworks, ISO standards, process improvement methodologies,
+  and quality assurance systems. Based on international quality standards, continuous
+  improvement methodologies, and quality management best practices.'
+id: https://w3id.org/linkml/valuesets/business/quality_management
+imports:
+- linkml:types
+prefixes:
+  valuesets: https://w3id.org/valuesets/
+  ISO: https://www.iso.org/
+  TQM: https://www.asq.org/
+  LEAN: https://www.lean.org/
+default_prefix: valuesets
+slots:
+  quality_standard:
+    description: Quality management standard or framework
+    range: QualityStandardEnum
+  quality_methodology:
+    description: Quality improvement methodology
+    range: QualityMethodologyEnum
+  quality_control_technique:
+    description: Quality control technique or tool
+    range: QualityControlTechniqueEnum
+  quality_assurance_level:
+    description: Level of quality assurance implementation
+    range: QualityAssuranceLevelEnum
+  process_improvement_approach:
+    description: Process improvement methodology
+    range: ProcessImprovementApproachEnum
+  quality_maturity_level:
+    description: Organizational quality maturity level
+    range: QualityMaturityLevelEnum
+enums:
+  QualityStandardEnum:
+    description: Quality management standards and frameworks
+    permissible_values:
+      ISO_9001:
+        title: ISO 9001 Quality Management Systems
+        description: International standard for quality management systems
+        annotations:
+          standard: "ISO 9001:2015"
+          focus: "quality management systems"
+          approach: "process-based approach"
+          certification: "third-party certification available"
+          scope: "applicable to all organizations"
+      ISO_14001:
+        title: ISO 14001 Environmental Management
+        description: International standard for environmental management systems
+        annotations:
+          standard: "ISO 14001:2015"
+          focus: "environmental management"
+          integration: "integrates with quality management"
+          compliance: "environmental compliance"
+          sustainability: "environmental sustainability"
+      ISO_45001:
+        title: ISO 45001 Occupational Health and Safety
+        description: International standard for occupational health and safety
+        annotations:
+          standard: "ISO 45001:2018"
+          focus: "occupational health and safety"
+          integration: "integrates with other management systems"
+          prevention: "injury and illness prevention"
+          workplace: "workplace safety"
+      ISO_27001:
+        title: ISO 27001 Information Security Management
+        description: International standard for information security management
+        annotations:
+          standard: "ISO 27001:2013"
+          focus: "information security"
+          risk: "risk-based approach"
+          confidentiality: "confidentiality, integrity, availability"
+          compliance: "regulatory compliance"
+      TQM:
+        title: Total Quality Management
+        description: Comprehensive quality management philosophy
+        annotations:
+          philosophy: "total quality philosophy"
+          scope: "organization-wide approach"
+          customer: "customer focus"
+          improvement: "continuous improvement"
+          involvement: "total employee involvement"
+      EFQM:
+        title: European Foundation for Quality Management
+        description: European excellence model for organizational performance
+        annotations:
+          model: "excellence model"
+          assessment: "self-assessment framework"
+          improvement: "organizational improvement"
+          excellence: "business excellence"
+          europe: "European standard"
+      MALCOLM_BALDRIGE:
+        title: Malcolm Baldrige National Quality Award
+        description: US national quality framework and award
+        annotations:
+          framework: "performance excellence framework"
+          award: "national quality award"
+          assessment: "organizational assessment"
+          excellence: "performance excellence"
+          united_states: "US standard"
+      SIX_SIGMA:
+        title: Six Sigma Quality Management
+        description: Data-driven quality improvement methodology
+        annotations:
+          methodology: "statistical quality improvement"
+          data_driven: "data and measurement focused"
+          defect_reduction: "defect and variation reduction"
+          belt_system: "belt certification system"
+          tools: "statistical tools and techniques"
+      LEAN_QUALITY:
+        title: Lean Quality Management
+        description: Waste elimination and value-focused quality approach
+        annotations:
+          philosophy: "lean philosophy"
+          waste: "waste elimination"
+          value: "value stream focus"
+          efficiency: "operational efficiency"
+          improvement: "continuous improvement"
+      AS9100:
+        title: AS9100 Aerospace Quality Standard
+        description: Quality standard for aerospace industry
+        annotations:
+          industry: "aerospace and defense"
+          based_on: "based on ISO 9001"
+          requirements: "additional aerospace requirements"
+          certification: "aerospace certification"
+          safety: "safety and reliability focus"
+      TS16949:
+        title: TS 16949 Automotive Quality Standard
+        description: Quality standard for automotive industry
+        annotations:
+          industry: "automotive industry"
+          based_on: "based on ISO 9001"
+          requirements: "automotive-specific requirements"
+          supply_chain: "automotive supply chain"
+          defect_prevention: "defect prevention focus"
+      ISO_13485:
+        title: ISO 13485 Medical Device Quality
+        description: Quality standard for medical device industry
+        annotations:
+          industry: "medical device industry"
+          regulatory: "regulatory compliance"
+          safety: "patient safety focus"
+          design_controls: "design controls"
+          risk_management: "risk management"
+  QualityMethodologyEnum:
+    description: Quality improvement methodologies and approaches
+    permissible_values:
+      DMAIC:
+        title: DMAIC (Define, Measure, Analyze, Improve, Control)
+        description: Six Sigma problem-solving methodology
+        annotations:
+          phases: "Define, Measure, Analyze, Improve, Control"
+          approach: "data-driven problem solving"
+          structured: "structured improvement process"
+          statistical: "statistical analysis"
+          six_sigma: "Six Sigma methodology"
+      DMADV:
+        title: DMADV (Define, Measure, Analyze, Design, Verify)
+        description: Six Sigma design methodology for new processes
+        annotations:
+          phases: "Define, Measure, Analyze, Design, Verify"
+          purpose: "new process or product design"
+          design: "design for Six Sigma"
+          verification: "design verification"
+          prevention: "defect prevention"
+      PDCA:
+        title: PDCA (Plan, Do, Check, Act)
+        description: Continuous improvement cycle methodology
+        annotations:
+          cycle: "Plan, Do, Check, Act"
+          continuous: "continuous improvement"
+          iterative: "iterative process"
+          deming: "Deming cycle"
+          simple: "simple and versatile"
+      KAIZEN:
+        title: Kaizen Continuous Improvement
+        description: Japanese philosophy of continuous improvement
+        annotations:
+          philosophy: "continuous improvement philosophy"
+          incremental: "small incremental improvements"
+          employee: "employee-driven improvement"
+          culture: "improvement culture"
+          daily: "daily improvement activities"
+      LEAN_SIX_SIGMA:
+        title: Lean Six Sigma
+        description: Combined methodology integrating Lean and Six Sigma
+        annotations:
+          combination: "Lean and Six Sigma integration"
+          waste: "waste elimination"
+          variation: "variation reduction"
+          speed: "speed and quality"
+          comprehensive: "comprehensive improvement"
+      FIVE_S:
+        title: 5S Workplace Organization
+        description: Workplace organization and standardization methodology
+        annotations:
+          components: "Sort, Set in Order, Shine, Standardize, Sustain"
+          workplace: "workplace organization"
+          visual: "visual management"
+          foundation: "improvement foundation"
+          safety: "safety and efficiency"
+      ROOT_CAUSE_ANALYSIS:
+        title: Root Cause Analysis
+        description: Systematic approach to identifying problem root causes
+        annotations:
+          systematic: "systematic problem analysis"
+          causes: "root cause identification"
+          prevention: "problem prevention"
+          tools: "various analytical tools"
+          thorough: "thorough investigation"
+      STATISTICAL_PROCESS_CONTROL:
+        title: Statistical Process Control (SPC)
+        description: Statistical methods for process monitoring and control
+        annotations:
+          statistical: "statistical monitoring"
+          control_charts: "control charts"
+          variation: "variation monitoring"
+          prevention: "problem prevention"
+          real_time: "real-time monitoring"
+      FAILURE_MODE_ANALYSIS:
+        title: Failure Mode and Effects Analysis (FMEA)
+        description: Systematic analysis of potential failure modes
+        annotations:
+          analysis: "failure mode analysis"
+          prevention: "failure prevention"
+          risk: "risk assessment"
+          systematic: "systematic approach"
+          design: "design and process FMEA"
+      BENCHMARKING:
+        title: Benchmarking
+        description: Performance comparison with best practices
+        annotations:
+          comparison: "performance comparison"
+          best_practices: "best practice identification"
+          improvement: "improvement opportunities"
+          external: "external benchmarking"
+          internal: "internal benchmarking"
+  QualityControlTechniqueEnum:
+    description: Quality control techniques and tools
+    permissible_values:
+      CONTROL_CHARTS:
+        title: Control Charts
+        description: Statistical charts for monitoring process variation
+        annotations:
+          statistical: "statistical process monitoring"
+          variation: "variation tracking"
+          limits: "control limits"
+          trends: "trend identification"
+          real_time: "real-time monitoring"
+      PARETO_ANALYSIS:
+        title: Pareto Analysis
+        description: 80/20 rule analysis for problem prioritization
+        annotations:
+          prioritization: "problem prioritization"
+          rule: "80/20 rule"
+          focus: "focus on vital few"
+          impact: "impact analysis"
+          resources: "resource allocation"
+      FISHBONE_DIAGRAM:
+        title: Fishbone Diagram (Ishikawa)
+        description: Cause-and-effect analysis diagram
+        annotations:
+          cause_effect: "cause and effect analysis"
+          brainstorming: "structured brainstorming"
+          categories: "cause categories"
+          visual: "visual analysis tool"
+          team: "team analysis tool"
+      HISTOGRAM:
+        title: Histogram
+        description: Frequency distribution chart for data analysis
+        annotations:
+          distribution: "data distribution"
+          frequency: "frequency analysis"
+          patterns: "pattern identification"
+          visual: "visual data representation"
+          analysis: "statistical analysis"
+      SCATTER_DIAGRAM:
+        title: Scatter Diagram
+        description: Correlation analysis between two variables
+        annotations:
+          correlation: "correlation analysis"
+          relationship: "variable relationship"
+          pattern: "pattern identification"
+          statistical: "statistical relationship"
+          visual: "visual correlation"
+      CHECK_SHEET:
+        title: Check Sheet
+        description: Data collection and recording tool
+        annotations:
+          collection: "data collection"
+          recording: "systematic recording"
+          tracking: "problem tracking"
+          simple: "simple data tool"
+          standardized: "standardized format"
+      FLOW_CHART:
+        title: Flow Chart
+        description: Process flow visualization and analysis
+        annotations:
+          process: "process visualization"
+          flow: "workflow analysis"
+          steps: "process steps"
+          improvement: "process improvement"
+          understanding: "process understanding"
+      DESIGN_OF_EXPERIMENTS:
+        title: Design of Experiments (DOE)
+        description: Statistical method for process optimization
+        annotations:
+          statistical: "statistical experimentation"
+          optimization: "process optimization"
+          factors: "factor analysis"
+          interaction: "interaction effects"
+          efficiency: "experimental efficiency"
+      SAMPLING_PLANS:
+        title: Statistical Sampling Plans
+        description: Systematic approach to quality sampling
+        annotations:
+          sampling: "statistical sampling"
+          plans: "sampling plans"
+          acceptance: "acceptance sampling"
+          risk: "risk control"
+          efficiency: "sampling efficiency"
+      GAUGE_R_AND_R:
+        title: Gauge R&R (Repeatability and Reproducibility)
+        description: Measurement system analysis technique
+        annotations:
+          measurement: "measurement system analysis"
+          repeatability: "measurement repeatability"
+          reproducibility: "measurement reproducibility"
+          variation: "measurement variation"
+          capability: "measurement capability"
+  QualityAssuranceLevelEnum:
+    description: Levels of quality assurance implementation
+    permissible_values:
+      BASIC_QA:
+        title: Basic Quality Assurance
+        description: Fundamental quality assurance practices
+        annotations:
+          level: "basic implementation"
+          practices: "fundamental QA practices"
+          inspection: "inspection-based approach"
+          reactive: "reactive quality approach"
+          compliance: "basic compliance"
+      INTERMEDIATE_QA:
+        title: Intermediate Quality Assurance
+        description: Systematic quality assurance with documented processes
+        annotations:
+          level: "intermediate implementation"
+          systematic: "systematic approach"
+          documentation: "documented processes"
+          prevention: "some prevention focus"
+          training: "quality training programs"
+      ADVANCED_QA:
+        title: Advanced Quality Assurance
+        description: Comprehensive quality management system
+        annotations:
+          level: "advanced implementation"
+          comprehensive: "comprehensive QMS"
+          integration: "integrated approach"
+          prevention: "prevention-focused"
+          measurement: "quality measurement systems"
+      WORLD_CLASS_QA:
+        title: World-Class Quality Assurance
+        description: Excellence-oriented quality management
+        annotations:
+          level: "world-class implementation"
+          excellence: "quality excellence"
+          innovation: "quality innovation"
+          leadership: "quality leadership"
+          benchmarking: "best practice benchmarking"
+      TOTAL_QUALITY:
+        title: Total Quality Management
+        description: Organization-wide quality culture and commitment
+        annotations:
+          level: "total quality implementation"
+          culture: "quality culture"
+          organization_wide: "entire organization"
+          customer: "customer-focused"
+          continuous: "continuous improvement"
+  ProcessImprovementApproachEnum:
+    description: Process improvement methodologies and approaches
+    permissible_values:
+      BUSINESS_PROCESS_REENGINEERING:
+        title: Business Process Reengineering (BPR)
+        description: Radical redesign of business processes
+        annotations:
+          approach: "radical process redesign"
+          dramatic: "dramatic improvement"
+          technology: "technology-enabled"
+          fundamental: "fundamental rethinking"
+          breakthrough: "breakthrough performance"
+      CONTINUOUS_IMPROVEMENT:
+        title: Continuous Improvement
+        description: Ongoing incremental process improvement
+        annotations:
+          approach: "incremental improvement"
+          ongoing: "continuous effort"
+          culture: "improvement culture"
+          employee: "employee involvement"
+          sustainable: "sustainable improvement"
+      PROCESS_STANDARDIZATION:
+        title: Process Standardization
+        description: Establishing consistent process standards
+        annotations:
+          standardization: "process standardization"
+          consistency: "consistent execution"
+          documentation: "process documentation"
+          training: "standard training"
+          compliance: "standard compliance"
+      AUTOMATION:
+        title: Process Automation
+        description: Technology-driven process automation
+        annotations:
+          technology: "automation technology"
+          efficiency: "operational efficiency"
+          consistency: "consistent execution"
+          cost: "cost reduction"
+          quality: "quality improvement"
+      DIGITALIZATION:
+        title: Digital Process Transformation
+        description: Digital technology-enabled process transformation
+        annotations:
+          digital: "digital transformation"
+          technology: "digital technology"
+          data: "data-driven processes"
+          integration: "system integration"
+          innovation: "digital innovation"
+      OUTSOURCING:
+        title: Process Outsourcing
+        description: External provider process management
+        annotations:
+          external: "external process management"
+          specialization: "specialized providers"
+          cost: "cost optimization"
+          focus: "core competency focus"
+          expertise: "external expertise"
+      SHARED_SERVICES:
+        title: Shared Services Model
+        description: Centralized shared process delivery
+        annotations:
+          centralization: "centralized delivery"
+          sharing: "shared across units"
+          efficiency: "scale efficiency"
+          standardization: "service standardization"
+          optimization: "cost optimization"
+      AGILE_PROCESS_IMPROVEMENT:
+        title: Agile Process Improvement
+        description: Flexible and iterative process improvement
+        annotations:
+          agile: "agile methodology"
+          iterative: "iterative improvement"
+          flexible: "flexible approach"
+          responsive: "responsive to change"
+          collaboration: "collaborative improvement"
+  QualityMaturityLevelEnum:
+    description: Organizational quality maturity levels
+    permissible_values:
+      AD_HOC:
+        title: Ad Hoc Quality Approach
+        description: Informal and unstructured quality practices
+        annotations:
+          maturity: "initial maturity level"
+          structure: "unstructured approach"
+          informal: "informal practices"
+          reactive: "reactive quality"
+          inconsistent: "inconsistent results"
+      DEFINED:
+        title: Defined Quality Processes
+        description: Documented and standardized quality processes
+        annotations:
+          maturity: "defined maturity level"
+          documentation: "documented processes"
+          standardization: "standardized approach"
+          training: "process training"
+          consistency: "consistent execution"
+      MANAGED:
+        title: Managed Quality System
+        description: Measured and controlled quality management
+        annotations:
+          maturity: "managed maturity level"
+          measurement: "quality measurement"
+          control: "process control"
+          monitoring: "performance monitoring"
+          improvement: "targeted improvement"
+      OPTIMIZED:
+        title: Optimized Quality Performance
+        description: Continuously improving quality excellence
+        annotations:
+          maturity: "optimized maturity level"
+          optimization: "continuous optimization"
+          innovation: "quality innovation"
+          excellence: "quality excellence"
+          benchmarking: "best practice adoption"
+      WORLD_CLASS:
+        title: World-Class Quality Leadership
+        description: Industry-leading quality performance and innovation
+        annotations:
+          maturity: "world-class maturity level"
+          leadership: "industry leadership"
+          innovation: "quality innovation"
+          excellence: "sustained excellence"
+          recognition: "external recognition"

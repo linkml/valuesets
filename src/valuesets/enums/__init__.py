@@ -17,6 +17,9 @@ Usage:
 # Academic domain
 from .academic.research import PublicationType, PeerReviewStatus, AcademicDegree, LicenseType, ResearchField, FundingType, ManuscriptSection, ResearchRole, OpenAccessType, CitationStyle
 
+# Analytical_Chemistry domain
+from .analytical_chemistry.mass_spectrometry import RelativeTimeEnum, PresenceEnum, MassSpectrometerFileFormat, MassSpectrometerVendor, ChromatographyType, DerivatizationMethod, MetabolomicsAssayType, AnalyticalControlType
+
 # Bio domain
 from .bio.biological_colors import EyeColorEnum, HairColorEnum, FlowerColorEnum, AnimalCoatColorEnum, SkinToneEnum, PlantLeafColorEnum
 from .bio.cell_cycle import CellCyclePhase, MitoticPhase, CellCycleCheckpoint, MeioticPhase, CellCycleRegulator, CellProliferationState, DNADamageResponse
@@ -24,6 +27,7 @@ from .bio.currency_chemicals import CurrencyChemical
 from .bio.developmental_stages import HumanDevelopmentalStage, MouseDevelopmentalStage
 from .bio.genome_features import GenomeFeatureType
 from .bio.genomics import CdsPhaseType, ContigCollectionType, StrandType, SequenceType
+from .bio.go_aspect import GOAspect
 from .bio.go_causality import CausalPredicateEnum
 from .bio.go_evidence import GOEvidenceCode, GOElectronicMethods
 from .bio.insdc_geographic_locations import InsdcGeographicLocationEnum
@@ -47,6 +51,14 @@ from .bio.viral_genome_types import ViralGenomeTypeEnum
 
 # Bioprocessing domain
 from .bioprocessing.scale_up import ProcessScaleEnum, BioreactorTypeEnum, FermentationModeEnum, OxygenationStrategyEnum, AgitationTypeEnum, DownstreamProcessEnum, FeedstockTypeEnum, ProductTypeEnum, SterilizationMethodEnum
+
+# Business domain
+from .business.human_resources import EmploymentTypeEnum, JobLevelEnum, HRFunctionEnum, CompensationTypeEnum, PerformanceRatingEnum, RecruitmentSourceEnum, TrainingTypeEnum, EmployeeStatusEnum, WorkArrangementEnum, BenefitsCategoryEnum
+from .business.industry_classifications import NAICSSectorEnum, EconomicSectorEnum, BusinessActivityTypeEnum, IndustryMaturityEnum, MarketStructureEnum, IndustryRegulationLevelEnum
+from .business.management_operations import ManagementMethodologyEnum, StrategicFrameworkEnum, OperationalModelEnum, PerformanceMeasurementEnum, DecisionMakingStyleEnum, LeadershipStyleEnum, BusinessProcessTypeEnum
+from .business.organizational_structures import LegalEntityTypeEnum, OrganizationalStructureEnum, ManagementLevelEnum, CorporateGovernanceRoleEnum, BusinessOwnershipTypeEnum, BusinessSizeClassificationEnum, BusinessLifecycleStageEnum
+from .business.quality_management import QualityStandardEnum, QualityMethodologyEnum, QualityControlTechniqueEnum, QualityAssuranceLevelEnum, ProcessImprovementApproachEnum, QualityMaturityLevelEnum
+from .business.supply_chain import ProcurementTypeEnum, VendorCategoryEnum, SupplyChainStrategyEnum, LogisticsOperationEnum, SourcingStrategyEnum, SupplierRelationshipTypeEnum, InventoryManagementApproachEnum
 
 # Chemistry domain
 from .chemistry.chemical_entities import SubatomicParticleEnum, BondTypeEnum, PeriodicTableBlockEnum, ElementFamilyEnum, ElementMetallicClassificationEnum, HardOrSoftEnum, BronstedAcidBaseRoleEnum, LewisAcidBaseRoleEnum, OxidationStateEnum, ChiralityEnum, NanostructureMorphologyEnum
@@ -88,12 +100,23 @@ from .data_science.text_classification import NewsTopicCategoryEnum, ToxicityCla
 # Energy domain
 from .energy.energy import EnergySource, EnergyUnit, PowerUnit, EnergyEfficiencyRating, BuildingEnergyStandard, GridType, EnergyStorageType, EmissionScope, CarbonIntensity, ElectricityMarket
 from .energy.fossil_fuels import FossilFuelTypeEnum
+from .energy.nuclear.nuclear_facilities import NuclearFacilityTypeEnum, PowerPlantStatusEnum, ResearchReactorTypeEnum, FuelCycleFacilityTypeEnum, WasteFacilityTypeEnum, NuclearShipTypeEnum
+from .energy.nuclear.nuclear_fuel_cycle import NuclearFuelCycleStageEnum, NuclearFuelFormEnum, EnrichmentProcessEnum
+from .energy.nuclear.nuclear_fuels import NuclearFuelTypeEnum, UraniumEnrichmentLevelEnum, FuelFormEnum, FuelAssemblyTypeEnum, FuelCycleStageEnum, FissileIsotopeEnum
+from .energy.nuclear.nuclear_operations import ReactorOperatingStateEnum, MaintenanceTypeEnum, LicensingStageEnum, FuelCycleOperationEnum, ReactorControlModeEnum, OperationalProcedureEnum
+from .energy.nuclear.nuclear_regulatory import NuclearRegulatoryBodyEnum, RegulatoryFrameworkEnum, LicensingStageEnum, ComplianceStandardEnum, InspectionTypeEnum
+from .energy.nuclear.nuclear_safety import INESLevelEnum, EmergencyClassificationEnum, NuclearSecurityCategoryEnum, SafetySystemClassEnum, ReactorSafetyFunctionEnum, DefenseInDepthLevelEnum, RadiationProtectionZoneEnum
+from .energy.nuclear.nuclear_waste import IAEAWasteClassificationEnum, NRCWasteClassEnum, WasteHeatGenerationEnum, WasteHalfLifeCategoryEnum, WasteDisposalMethodEnum, WasteSourceEnum, TransuranicWasteCategoryEnum
+from .energy.nuclear.reactor_types import ReactorTypeEnum, ReactorGenerationEnum, ReactorCoolantEnum, ReactorModeratorEnum, ReactorNeutronSpectrumEnum, ReactorSizeCategoryEnum
 
 # Environmental_Health domain
 from .environmental_health.exposures import AirPollutantEnum, PesticideTypeEnum, HeavyMetalEnum, ExposureRouteEnum, ExposureSourceEnum, WaterContaminantEnum, EndocrineDisruptorEnum, ExposureDurationEnum
 
 # Geography domain
 from .geography.geographic_codes import CountryCodeISO2Enum, CountryCodeISO3Enum, USStateCodeEnum, CanadianProvinceCodeEnum, CompassDirection, RelativeDirection, WindDirection, ContinentEnum, UNRegionEnum, LanguageCodeISO6391enum, TimeZoneEnum, CurrencyCodeISO4217Enum
+
+# Health domain
+from .health.vaccination import VaccinationStatusEnum, VaccinationPeriodicityEnum, VaccineCategoryEnum
 
 # Industry domain
 from .industry.extractive_industry import ExtractiveIndustryFacilityTypeEnum, ExtractiveIndustryProductTypeEnum, MiningMethodEnum, WellTypeEnum
@@ -110,6 +133,7 @@ from .materials_science.synthesis_methods import SynthesisMethodEnum, CrystalGro
 
 # Medical domain
 from .medical.clinical import BloodTypeEnum, AnatomicalSystemEnum, MedicalSpecialtyEnum, DrugRouteEnum, VitalSignEnum, DiagnosticTestTypeEnum, SymptomSeverityEnum, AllergyTypeEnum, VaccineTypeEnum, BMIClassificationEnum
+from .medical.neuroimaging import MRIModalityEnum, MRISequenceTypeEnum, MRIContrastTypeEnum, FMRIParadigmTypeEnum
 
 # Physics domain
 from .physics.states_of_matter import StateOfMatterEnum
@@ -143,6 +167,7 @@ __all__ = [
     "AllergyTypeEnum",
     "AminoAcidEnum",
     "AminoAcidExtendedEnum",
+    "AnalyticalControlType",
     "AnatomicalAxis",
     "AnatomicalPlane",
     "AnatomicalRegion",
@@ -160,6 +185,7 @@ __all__ = [
     "BasicColorEnum",
     "BasicEmotionEnum",
     "BeneficiationPathway",
+    "BenefitsCategoryEnum",
     "BinaryClassificationEnum",
     "BioleachMode",
     "BioleachOrganism",
@@ -173,6 +199,11 @@ __all__ = [
     "BravaisLatticeEnum",
     "BronstedAcidBaseRoleEnum",
     "BuildingEnergyStandard",
+    "BusinessActivityTypeEnum",
+    "BusinessLifecycleStageEnum",
+    "BusinessOwnershipTypeEnum",
+    "BusinessProcessTypeEnum",
+    "BusinessSizeClassificationEnum",
     "BusinessTimeFrame",
     "CIOConfidenceLevel",
     "CanadianProvinceCodeEnum",
@@ -188,6 +219,7 @@ __all__ = [
     "CellPolarity",
     "CellProliferationState",
     "ChiralityEnum",
+    "ChromatographyType",
     "ChurnClassificationEnum",
     "CitationStyle",
     "CodonEnum",
@@ -195,6 +227,8 @@ __all__ = [
     "CommonMineral",
     "CommonOrganismTaxaEnum",
     "CompassDirection",
+    "CompensationTypeEnum",
+    "ComplianceStandardEnum",
     "CompositeTypeEnum",
     "CompressionType",
     "ConcentrationUnitEnum",
@@ -204,6 +238,7 @@ __all__ = [
     "ContigCollectionType",
     "ContinentEnum",
     "ContributorType",
+    "CorporateGovernanceRoleEnum",
     "CountryCodeISO2Enum",
     "CountryCodeISO3Enum",
     "CriticalMineral",
@@ -224,26 +259,34 @@ __all__ = [
     "DataSizeUnitEnum",
     "DataType",
     "DayOfWeek",
+    "DecisionMakingStyleEnum",
     "DefectClassificationEnum",
+    "DefenseInDepthLevelEnum",
+    "DerivatizationMethod",
     "Detector",
     "DiagnosticTestTypeEnum",
     "DocumentFormatEnum",
     "DownstreamProcessEnum",
     "DrugResponseEnum",
     "DrugRouteEnum",
+    "EconomicSectorEnum",
     "EducationLevel",
     "ElectricalConductivityEnum",
     "ElectricalWireColorEnum",
     "ElectricityMarket",
     "ElementFamilyEnum",
     "ElementMetallicClassificationEnum",
+    "EmergencyClassificationEnum",
     "EmissionScope",
+    "EmployeeStatusEnum",
     "EmploymentStatus",
+    "EmploymentTypeEnum",
     "EndocrineDisruptorEnum",
     "EnergyEfficiencyRating",
     "EnergySource",
     "EnergyStorageType",
     "EnergyUnit",
+    "EnrichmentProcessEnum",
     "EnvironmentalImpact",
     "EnzymeClassEnum",
     "EthnicityOMB1997Enum",
@@ -257,18 +300,26 @@ __all__ = [
     "ExtractiveIndustryFacilityTypeEnum",
     "ExtractiveIndustryProductTypeEnum",
     "EyeColorEnum",
+    "FMRIParadigmTypeEnum",
     "FeatureType",
     "FeedstockTypeEnum",
     "FermentationModeEnum",
     "FileFormat",
     "FineSentimentClassificationEnum",
     "FireSafetyColorEnum",
+    "FissileIsotopeEnum",
     "FlowerColorEnum",
     "FoodColoringEnum",
     "FossilFuelTypeEnum",
     "FraudDetectionEnum",
     "FrequencyUnitEnum",
+    "FuelAssemblyTypeEnum",
+    "FuelCycleFacilityTypeEnum",
+    "FuelCycleOperationEnum",
+    "FuelCycleStageEnum",
+    "FuelFormEnum",
     "FundingType",
+    "GOAspect",
     "GOElectronicMethods",
     "GOEvidenceCode",
     "GenderIdentity",
@@ -276,6 +327,7 @@ __all__ = [
     "GenomeFeatureType",
     "GeologicalEra",
     "GridType",
+    "HRFunctionEnum",
     "HairColorEnum",
     "HardOrSoftEnum",
     "HazmatColorEnum",
@@ -284,6 +336,8 @@ __all__ = [
     "HistoricalPeriod",
     "HousingStatus",
     "HumanDevelopmentalStage",
+    "IAEAWasteClassificationEnum",
+    "INESLevelEnum",
     "IPCCConfidenceLevel",
     "IPCCLikelihoodScale",
     "IUPACAminoAcidCode",
@@ -291,32 +345,51 @@ __all__ = [
     "ImageFileFormatEnum",
     "InSituChemistryRegime",
     "IndustrialDyeEnum",
+    "IndustryMaturityEnum",
+    "IndustryRegulationLevelEnum",
     "InsdcGeographicLocationEnum",
     "InsdcMissingValueEnum",
+    "InspectionTypeEnum",
     "IntentClassificationEnum",
     "InteractionDetectionMethod",
     "InteractionType",
     "InteractorType",
     "InterpretationProgressEnum",
+    "InventoryManagementApproachEnum",
+    "JobLevelEnum",
     "KaryotypicSexEnum",
     "LanguageCodeISO6391enum",
     "LateralityEnum",
+    "LeadershipStyleEnum",
+    "LegalEntityTypeEnum",
     "LengthUnitEnum",
     "LewisAcidBaseRoleEnum",
     "LibraryPreparation",
     "LicenseType",
+    "LicensingStageEnum",
     "LipidCategory",
+    "LogisticsOperationEnum",
+    "MRIContrastTypeEnum",
+    "MRIModalityEnum",
+    "MRISequenceTypeEnum",
     "MagneticPropertyEnum",
+    "MaintenanceTypeEnum",
+    "ManagementLevelEnum",
+    "ManagementMethodologyEnum",
     "ManuscriptSection",
     "MaritalStatus",
     "MaritimeSignalColorEnum",
+    "MarketStructureEnum",
     "MassErrorUnit",
+    "MassSpectrometerFileFormat",
+    "MassSpectrometerVendor",
     "MassUnitEnum",
     "MaterialClassEnum",
     "MechanicalBehaviorEnum",
     "MechanicalTestingMethodEnum",
     "MedicalSpecialtyEnum",
     "MeioticPhase",
+    "MetabolomicsAssayType",
     "MetalTypeEnum",
     "MicroscopyMethodEnum",
     "MimeType",
@@ -331,10 +404,19 @@ __all__ = [
     "MitoticPhase",
     "Month",
     "MouseDevelopmentalStage",
+    "NAICSSectorEnum",
     "NCITFivePointConfidenceScale",
+    "NRCWasteClassEnum",
     "NanostructureMorphologyEnum",
     "NetworkProtocolEnum",
     "NewsTopicCategoryEnum",
+    "NuclearFacilityTypeEnum",
+    "NuclearFuelCycleStageEnum",
+    "NuclearFuelFormEnum",
+    "NuclearFuelTypeEnum",
+    "NuclearRegulatoryBodyEnum",
+    "NuclearSecurityCategoryEnum",
+    "NuclearShipTypeEnum",
     "NucleotideModificationEnum",
     "OBCSCertaintyLevel",
     "OmbEthnicityCategory",
@@ -342,8 +424,11 @@ __all__ = [
     "OnsetTimingEnum",
     "OpenAccessType",
     "OpenSourceMaturityLevel",
+    "OperationalModelEnum",
+    "OperationalProcedureEnum",
     "OpticalPropertyEnum",
     "OreGrade",
+    "OrganizationalStructureEnum",
     "OutcomeTypeEnum",
     "OxidationStateEnum",
     "OxygenationStrategyEnum",
@@ -352,6 +437,8 @@ __all__ = [
     "PeakAnnotationSeriesLabel",
     "PeerReviewStatus",
     "PeptideIonSeries",
+    "PerformanceMeasurementEnum",
+    "PerformanceRatingEnum",
     "PeriodicTableBlockEnum",
     "PersonStatusEnum",
     "PesticideTypeEnum",
@@ -361,40 +448,62 @@ __all__ = [
     "PlantSexEnum",
     "PlantSexualSystem",
     "PolymerTypeEnum",
+    "PowerPlantStatusEnum",
     "PowerUnit",
     "PredictionOutcomeType",
     "PresenceEnum",
     "PressureUnitEnum",
     "PriorityLevelEnum",
+    "ProcessImprovementApproachEnum",
     "ProcessPerformanceMetric",
     "ProcessScaleEnum",
     "ProcessingStatus",
+    "ProcurementTypeEnum",
     "ProductTypeEnum",
     "ProgrammingLanguageFileEnum",
     "ProjectMaturityLevel",
     "ProteinEvidenceForExistence",
     "PublicationType",
+    "QualityAssuranceLevelEnum",
     "QualityControlEnum",
+    "QualityControlTechniqueEnum",
+    "QualityMaturityLevelEnum",
+    "QualityMethodologyEnum",
+    "QualityStandardEnum",
     "Quarter",
     "RNABaseEnum",
     "RNABaseExtendedEnum",
     "RaceOMB1997Enum",
+    "RadiationProtectionZoneEnum",
     "ReactionConditionEnum",
     "ReactionDirectionality",
     "ReactionMechanismEnum",
     "ReactionRateOrderEnum",
     "ReactionTypeEnum",
+    "ReactorControlModeEnum",
+    "ReactorCoolantEnum",
+    "ReactorGenerationEnum",
+    "ReactorModeratorEnum",
+    "ReactorNeutronSpectrumEnum",
+    "ReactorOperatingStateEnum",
+    "ReactorSafetyFunctionEnum",
+    "ReactorSizeCategoryEnum",
+    "ReactorTypeEnum",
     "ReadType",
+    "RecruitmentSourceEnum",
     "RecruitmentStatusEnum",
     "RefSeqStatusType",
     "RegimenStatusEnum",
     "RegulatoryConstraint",
+    "RegulatoryFrameworkEnum",
     "RelToOxygenEnum",
     "RelativeDirection",
     "RelativeTimeEnum",
     "ResearchField",
+    "ResearchReactorTypeEnum",
     "ResearchRole",
     "SafetyColorEnum",
+    "SafetySystemClassEnum",
     "SampleType",
     "Season",
     "SensorWhileDrillingFeature",
@@ -415,6 +524,7 @@ __all__ = [
     "SkinToneEnum",
     "SoftwareMaturityLevel",
     "SolventClassEnum",
+    "SourcingStrategyEnum",
     "SpamClassificationEnum",
     "SpatialRelationship",
     "SpectroscopyMethodEnum",
@@ -423,9 +533,12 @@ __all__ = [
     "StateOfMatterEnum",
     "SterilizationMethodEnum",
     "StrandType",
+    "StrategicFrameworkEnum",
     "StructuralBiologyTechnique",
     "StudyPhaseEnum",
     "SubatomicParticleEnum",
+    "SupplierRelationshipTypeEnum",
+    "SupplyChainStrategyEnum",
     "SymptomSeverityEnum",
     "SynthesisMethodEnum",
     "TaxonomicRank",
@@ -443,21 +556,34 @@ __all__ = [
     "ToxicityClassificationEnum",
     "TraditionalPigmentEnum",
     "TrafficLightColorEnum",
+    "TrainingTypeEnum",
+    "TransuranicWasteCategoryEnum",
     "TrophicLevelEnum",
     "UNRegionEnum",
     "USStateCodeEnum",
     "UniProtSpeciesCode",
+    "UraniumEnrichmentLevelEnum",
+    "VaccinationPeriodicityEnum",
+    "VaccinationStatusEnum",
+    "VaccineCategoryEnum",
     "VaccineTypeEnum",
+    "VendorCategoryEnum",
     "VideoFormatEnum",
     "ViralGenomeTypeEnum",
     "VitalSignEnum",
     "VitalStatusEnum",
     "VitrificationMethod",
     "VolumeUnitEnum",
+    "WasteDisposalMethodEnum",
+    "WasteFacilityTypeEnum",
+    "WasteHalfLifeCategoryEnum",
+    "WasteHeatGenerationEnum",
+    "WasteSourceEnum",
     "WaterContaminantEnum",
     "WebColorEnum",
     "WellTypeEnum",
     "WindDirection",
+    "WorkArrangementEnum",
     "WorkflowType",
     "X11ColorEnum",
     "XRaySource",

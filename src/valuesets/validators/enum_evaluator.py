@@ -12,6 +12,9 @@ import logging
 import sys
 import os
 import warnings
+import csv
+import yaml
+from datetime import datetime
 from pathlib import Path
 from typing import List, Optional, Dict, Set
 from pydantic import BaseModel, Field, ConfigDict
@@ -45,6 +48,14 @@ class ValidationConfig(BaseModel):
     cache_labels: bool = Field(
         default=True,
         description="Cache ontology labels to avoid redundant lookups"
+    )
+    oak_config_path: Optional[Path] = Field(
+        default=None,
+        description="Path to OAK configuration YAML file"
+    )
+    cache_dir: Path = Field(
+        default=Path("cache"),
+        description="Directory for storing cached terms"
     )
 
 
@@ -108,7 +119,95 @@ class EnumEvaluator:
         self.config = config or ValidationConfig()
         self._label_cache = {} if self.config.cache_labels else None
         self._per_prefix_adapters = {}  # Cache of per-ontology adapters
+        self._oak_config = self._load_oak_config()
+        self._prefix_caches = {}  # Initialize here to avoid AttributeError
+        self._warned_prefixes = set()  # Track prefixes we've already warned about
         self._initialize_oak()
+
+    def _load_oak_config(self) -> Dict[str, str]:
+        """Load OAK configuration from YAML file."""
+        config_path = self.config.oak_config_path
+        if not config_path:
+            # Default to config file next to this module
+            config_path = Path(__file__).parent / "oak_config.yaml"
+
+        if not config_path.exists():
+            logger.warning(f"OAK config file not found: {config_path}")
+            return {}
+
+        try:
+            with open(config_path, 'r') as f:
+                config_data = yaml.safe_load(f)
+                adapters = config_data.get('ontology_adapters', {})
+                # Convert keys to lowercase for case-insensitive lookup
+                return {k.lower(): v for k, v in adapters.items()}
+        except Exception as e:
+            logger.warning(f"Could not load OAK config: {e}")
+            return {}
+
+    def _get_cache_file(self, prefix: str) -> Path:
+        """Get the cache file path for a given prefix."""
+        cache_dir = self.config.cache_dir / prefix.lower()
+        cache_dir.mkdir(parents=True, exist_ok=True)
+        return cache_dir / "terms.csv"
+
+    def _load_cache(self, prefix: str) -> Dict[str, str]:
+        """Load cached terms for a prefix."""
+        cache_file = self._get_cache_file(prefix)
+        cache = {}
+
+        if cache_file.exists():
+            try:
+                with open(cache_file, 'r', newline='') as f:
+                    reader = csv.reader(f)
+                    next(reader)  # Skip header
+                    for row in reader:
+                        if len(row) >= 2:
+                            cache[row[0]] = row[1]  # curie -> label
+            except Exception as e:
+                logger.warning(f"Could not load cache for {prefix}: {e}")
+
+        return cache
+
+    def _save_to_cache(self, prefix: str, curie: str, label: Optional[str]):
+        """Save a term to cache."""
+        if prefix.lower() not in self._oak_config:
+            return  # Only cache for configured prefixes
+
+        cache_file = self._get_cache_file(prefix)
+
+        # Read existing cache
+        existing_cache = set()
+        if cache_file.exists():
+            try:
+                with open(cache_file, 'r', newline='') as f:
+                    reader = csv.reader(f)
+                    next(reader)  # Skip header
+                    for row in reader:
+                        if len(row) >= 1:
+                            existing_cache.add(row[0])
+            except Exception:
+                pass
+
+        # Don't add if already exists
+        if curie in existing_cache:
+            return
+
+        # Append new entry
+        try:
+            # Create file with header if it doesn't exist
+            if not cache_file.exists():
+                with open(cache_file, 'w', newline='') as f:
+                    writer = csv.writer(f)
+                    writer.writerow(['curie', 'label', 'retrieved_at'])
+
+            # Append new row
+            with open(cache_file, 'a', newline='') as f:
+                writer = csv.writer(f)
+                timestamp = datetime.now().isoformat()
+                writer.writerow([curie, label or '', timestamp])
+        except Exception as e:
+            logger.warning(f"Could not save to cache for {prefix}: {e}")
 
     def _initialize_oak(self):
         """Initialize OAK adapters dynamically based on usage."""
@@ -133,37 +232,65 @@ class EnumEvaluator:
         """
         Get the label for an ontology term using OAK.
 
-        Dynamically creates per-ontology adapters when using sqlite:obo:
+        Checks local cache first, then tries OAK lookup, then saves to cache.
         """
-        # Check cache first
+        # Check in-memory cache first
         if self._label_cache is not None and curie in self._label_cache:
             return self._label_cache[curie]
+
+        # Parse the CURIE to get the prefix
+        prefix = curie.split(":")[0] if ":" in curie else None
+        if not prefix:
+            return None
+
+        prefix_lower = prefix.lower()
+
+        # Check file cache for configured prefixes
+        if prefix_lower in self._prefix_caches:
+            if curie in self._prefix_caches[prefix_lower]:
+                label = self._prefix_caches[prefix_lower][curie]
+                # Also cache in memory
+                if self._label_cache is not None:
+                    self._label_cache[curie] = label
+                return label if label else None
 
         label = None
         adapter = None
 
-        # Parse the CURIE to get the prefix
-        prefix = curie.split(":")[0].lower() if ":" in curie else None
+        # Try configured adapter first for this prefix
+        if prefix_lower in self._oak_config:
+            adapter_string = self._oak_config[prefix_lower]
 
-        # Determine which adapter to use
-        if self.config.oak_adapter_string == "sqlite:obo:" and prefix:
-            # Dynamic mode: create per-ontology adapter on demand
-            if prefix not in self._per_prefix_adapters:
+            # If adapter string is empty or None, skip validation entirely
+            if not adapter_string:
+                logger.debug(f"Skipping validation for {prefix} (empty adapter string in config)")
+                self._per_prefix_adapters[prefix_lower] = None
+                return None
+
+            if prefix_lower not in self._per_prefix_adapters:
                 try:
-                    adapter_string = f"sqlite:obo:{prefix}"
-                    self._per_prefix_adapters[prefix] = get_adapter(adapter_string)
+                    self._per_prefix_adapters[prefix_lower] = get_adapter(adapter_string)
+                    logger.info(f"Created configured adapter for {prefix} ontology")
+                except Exception as e:
+                    logger.warning(f"Could not create configured adapter for {prefix}: {e}")
+                    self._per_prefix_adapters[prefix_lower] = None
+
+            adapter = self._per_prefix_adapters.get(prefix_lower)
+        elif self.config.oak_adapter_string == "sqlite:obo:" and prefix:
+            # Dynamic mode: create per-ontology adapter on demand
+            if prefix_lower not in self._per_prefix_adapters:
+                try:
+                    adapter_string = f"sqlite:obo:{prefix_lower}"
+                    self._per_prefix_adapters[prefix_lower] = get_adapter(adapter_string)
                     logger.info(f"Created adapter for {prefix} ontology")
                 except Exception as e:
                     logger.debug(f"Could not create adapter for {prefix}: {e}")
-                    # Try merged as fallback
-                    try:
-                        self._per_prefix_adapters[prefix] = get_adapter("sqlite:obo:merged")
-                        logger.info(f"Using merged database for {prefix}")
-                    except Exception as e2:
-                        logger.warning(f"Could not create any adapter for {prefix}: {e2}")
-                        self._per_prefix_adapters[prefix] = None
+                    # Track unknown prefix for end-of-run reporting
+                    if prefix_lower not in self._warned_prefixes:
+                        self._warned_prefixes.add(prefix_lower)
+                    self._per_prefix_adapters[prefix_lower] = None
 
-            adapter = self._per_prefix_adapters.get(prefix)
+            adapter = self._per_prefix_adapters.get(prefix_lower)
         else:
             # Use default adapter for other configurations
             adapter = self._per_prefix_adapters.get('_default')
@@ -175,11 +302,24 @@ class EnumEvaluator:
             except Exception as e:
                 logger.debug(f"Could not get label for {curie}: {e}")
 
-        # Cache the result
+        # Cache the result in memory
         if self._label_cache is not None:
             self._label_cache[curie] = label
 
+        # Save to file cache for configured prefixes
+        if prefix_lower in self._oak_config:
+            self._save_to_cache(prefix, curie, label)
+            # Also update in-memory cache
+            if prefix_lower in self._prefix_caches:
+                self._prefix_caches[prefix_lower][curie] = label or ''
+
         return label
+
+    def is_prefix_configured(self, prefix: str) -> bool:
+        """Check if a prefix is configured for strict validation."""
+        prefix_lower = prefix.lower()
+        return (prefix_lower in self._oak_config and
+                bool(self._oak_config[prefix_lower]))
 
     def normalize_string(self, s: str) -> str:
         """
@@ -245,6 +385,12 @@ class EnumEvaluator:
             if not meaning:
                 continue
 
+            # Check if this prefix has an empty adapter string (skip validation)
+            prefix = meaning.split(":")[0] if ":" in meaning else None
+            if prefix and prefix.lower() in self._oak_config and not self._oak_config[prefix.lower()]:
+                logger.debug(f"Skipping validation for {meaning} (empty adapter string in config)")
+                continue
+
             # Get the actual label from ontology
             actual_label = self.get_ontology_label(meaning)
 
@@ -257,18 +403,30 @@ class EnumEvaluator:
 
             # Check if actual label matches any expected label
             if actual_label is None:
-                # Could not retrieve label
+                # Could not retrieve label - severity depends on whether prefix is configured
+                prefix = meaning.split(":")[0] if ":" in meaning else None
+                if prefix and self.is_prefix_configured(prefix):
+                    # Strict mode for configured prefixes
+                    severity = "ERROR"
+                    message = f"Could not retrieve label for configured ontology term {meaning}"
+                else:
+                    # Lenient mode for unconfigured prefixes
+                    severity = "INFO"
+                    message = f"Could not retrieve label for {meaning}"
+
                 issue = ValidationIssue(
                     enum_name=enum_name,
                     value_name=value_name,
-                    severity="INFO",
-                    message=f"Could not retrieve label for {meaning}",
+                    severity=severity,
+                    message=message,
                     meaning=meaning
                 )
                 issues.append(issue)
             elif normalized_actual not in normalized_expected:
-                # Label mismatch
-                severity = "ERROR" if self.config.strict_mode else "WARNING"
+                # Label mismatch - treat as ERROR for configured prefixes or in strict mode
+                prefix = meaning.split(":")[0] if ":" in meaning else None
+                is_configured = prefix and self.is_prefix_configured(prefix)
+                severity = "ERROR" if (self.config.strict_mode or is_configured) else "WARNING"
                 issue = ValidationIssue(
                     enum_name=enum_name,
                     value_name=value_name,
@@ -320,6 +478,15 @@ class EnumEvaluator:
             result.issues.append(issue)
 
         return result
+
+    def report_unknown_prefixes(self) -> None:
+        """Report unknown ontology prefixes that were encountered during validation."""
+        if self._warned_prefixes:
+            print(f"\n📋 Unknown ontology prefixes encountered:")
+            print("   Consider adding these to oak_config.yaml if they are valid ontologies:")
+            for prefix in sorted(self._warned_prefixes):
+                print(f"   • {prefix.upper()}: sqlite:obo:{prefix}")
+            print(f"   Or remove the 'meaning:' mappings if these are not valid ontology terms.")
 
 
 def main():
@@ -374,6 +541,9 @@ def main():
                 result.print_summary()
             else:
                 print("✅")  # Just a checkmark for success
+
+            # Report unknown prefixes even on success
+            evaluator.report_unknown_prefixes()
             return 0
         else:
             # Always show errors and warnings, but format differently based on verbosity
@@ -405,6 +575,9 @@ def main():
                         print(f"  • {issue.enum_name}.{issue.value_name}{id_info}: {issue.message}")
                     if len(warnings) > LIMIT:
                         print(f"  ... and {len(warnings) - LIMIT} more warnings")
+
+            # Report unknown prefixes
+            evaluator.report_unknown_prefixes()
 
             return 1 if result.has_errors() or (args.strict and result.has_warnings()) else 0
 
@@ -439,6 +612,9 @@ def main():
                 print(f"✅ All {len(schema_files)} schemas validated successfully!")
             else:
                 print("✅")  # Just a checkmark for complete success
+
+            # Report unknown prefixes even on success
+            evaluator.report_unknown_prefixes()
             return 0
         else:
             # Show errors and warnings
@@ -478,6 +654,9 @@ def main():
                 # Verbose output
                 print(f"\n{'='*60}")
                 print(f"Overall: {total_errors} errors, {total_warnings} warnings in {len(schema_files)} files")
+
+            # Report unknown prefixes
+            evaluator.report_unknown_prefixes()
 
             return 1 if total_errors > 0 or (args.strict and total_warnings > 0) else 0
     else:

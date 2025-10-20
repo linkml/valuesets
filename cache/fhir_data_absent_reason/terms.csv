@@ -1,0 +1,16 @@
+curie,label,retrieved_at
+fhir_data_absent_reason:unknown,,2025-10-19T08:02:32.811466
+fhir_data_absent_reason:asked-unknown,,2025-10-19T08:02:32.811601
+fhir_data_absent_reason:temp-unknown,,2025-10-19T08:02:32.811687
+fhir_data_absent_reason:not-asked,,2025-10-19T08:02:32.811844
+fhir_data_absent_reason:asked-declined,,2025-10-19T08:02:32.812015
+fhir_data_absent_reason:masked,,2025-10-19T08:02:32.812105
+fhir_data_absent_reason:not-applicable,,2025-10-19T08:02:32.812189
+fhir_data_absent_reason:unsupported,,2025-10-19T08:02:32.812265
+fhir_data_absent_reason:as-text,,2025-10-19T08:02:32.812336
+fhir_data_absent_reason:error,,2025-10-19T08:02:32.812404
+fhir_data_absent_reason:not-a-number,,2025-10-19T08:02:32.812473
+fhir_data_absent_reason:negative-infinity,,2025-10-19T08:02:32.812542
+fhir_data_absent_reason:positive-infinity,,2025-10-19T08:02:32.812613
+fhir_data_absent_reason:not-performed,,2025-10-19T08:02:32.812682
+fhir_data_absent_reason:not-permitted,,2025-10-19T08:02:32.812751

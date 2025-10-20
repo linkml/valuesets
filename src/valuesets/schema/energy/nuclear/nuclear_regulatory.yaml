@@ -1,0 +1,200 @@
+name: nuclear_regulatory
+title: Nuclear Regulatory Frameworks Value Sets
+description: Value sets for nuclear regulatory bodies, frameworks, and compliance standards
+id: https://w3id.org/common-value-sets/nuclear_regulatory
+imports:
+  - linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  valuesets: https://w3id.org/valuesets/
+default_prefix: valuesets
+
+slots:
+  nuclear_regulatory_body:
+    description: Nuclear regulatory authorities and organizations
+    range: NuclearRegulatoryBodyEnum
+  regulatory_framework:
+    description: Nuclear regulatory frameworks and standards
+    range: RegulatoryFrameworkEnum
+  licensing_stage:
+    description: Nuclear facility licensing stages
+    range: LicensingStageEnum
+  compliance_standard:
+    description: Nuclear safety and security compliance standards
+    range: ComplianceStandardEnum
+  inspection_type:
+    description: Types of nuclear regulatory inspections
+    range: InspectionTypeEnum
+
+enums:
+  NuclearRegulatoryBodyEnum:
+    description: Nuclear regulatory authorities and international organizations
+    permissible_values:
+      IAEA:
+        description: International Atomic Energy Agency
+        title: International Atomic Energy Agency
+      NRC:
+        description: US Nuclear Regulatory Commission
+        title: Nuclear Regulatory Commission (US)
+      ONR:
+        description: Office for Nuclear Regulation (UK)
+        title: Office for Nuclear Regulation (UK)
+      ASN:
+        description: Autorité de sûreté nucléaire (France)
+        title: Nuclear Safety Authority (France)
+      NISA:
+        description: Nuclear and Industrial Safety Agency (Japan)
+        title: Nuclear and Industrial Safety Agency (Japan)
+      CNSC:
+        description: Canadian Nuclear Safety Commission
+        title: Canadian Nuclear Safety Commission
+      STUK:
+        description: Radiation and Nuclear Safety Authority (Finland)
+        title: Radiation and Nuclear Safety Authority (Finland)
+      SKI:
+        description: Swedish Nuclear Power Inspectorate
+        title: Swedish Nuclear Power Inspectorate
+      ENSI:
+        description: Swiss Federal Nuclear Safety Inspectorate
+        title: Swiss Federal Nuclear Safety Inspectorate
+      ROSATOM:
+        description: State Atomic Energy Corporation (Russia)
+        title: State Atomic Energy Corporation (Russia)
+      CNNC:
+        description: China National Nuclear Corporation
+        title: China National Nuclear Corporation
+      KAERI:
+        description: Korea Atomic Energy Research Institute
+        title: Korea Atomic Energy Research Institute
+      AERB:
+        description: Atomic Energy Regulatory Board (India)
+        title: Atomic Energy Regulatory Board (India)
+
+  RegulatoryFrameworkEnum:
+    description: Nuclear regulatory frameworks and international conventions
+    permissible_values:
+      NPT:
+        description: Nuclear Non-Proliferation Treaty
+        title: Nuclear Non-Proliferation Treaty
+      COMPREHENSIVE_SAFEGUARDS:
+        description: IAEA Comprehensive Safeguards Agreements
+        title: IAEA Comprehensive Safeguards Agreement
+      ADDITIONAL_PROTOCOL:
+        description: IAEA Additional Protocol
+        title: IAEA Additional Protocol
+      CONVENTION_NUCLEAR_SAFETY:
+        description: Convention on Nuclear Safety
+        title: Convention on Nuclear Safety
+      JOINT_CONVENTION:
+        description: Joint Convention on the Safety of Spent Fuel Management and Radioactive Waste
+        title: Joint Convention on Radioactive Waste Safety
+      PARIS_CONVENTION:
+        description: Paris Convention on Third Party Liability in the Field of Nuclear Energy
+        title: Paris Convention on Nuclear Liability
+      VIENNA_CONVENTION:
+        description: Vienna Convention on Civil Liability for Nuclear Damage
+        title: Vienna Convention on Nuclear Liability
+      CPPNM:
+        description: Convention on the Physical Protection of Nuclear Material
+        title: Convention on Physical Protection of Nuclear Material
+      ICSANT:
+        description: International Convention for the Suppression of Acts of Nuclear Terrorism
+        title: International Convention for Suppression of Nuclear Terrorism
+      SAFETY_STANDARDS:
+        description: IAEA Safety Standards Series
+        title: IAEA Safety Standards
+      SECURITY_SERIES:
+        description: IAEA Nuclear Security Series
+        title: IAEA Nuclear Security Series
+
+  LicensingStageEnum:
+    description: Stages in nuclear facility licensing process
+    permissible_values:
+      PRE_APPLICATION:
+        description: Pre-application consultation and preparation
+      CONSTRUCTION_PERMIT:
+        description: Construction permit application and review
+      OPERATING_LICENSE:
+        description: Operating license application and review
+      LICENSE_RENEWAL:
+        description: License renewal application and review
+      POWER_UPRATE:
+        description: Power uprate license amendment
+      DECOMMISSIONING_PLAN:
+        description: Decommissioning plan approval
+      LICENSE_TERMINATION:
+        description: License termination and site release
+      DESIGN_CERTIFICATION:
+        description: Standard design certification
+      EARLY_SITE_PERMIT:
+        description: Early site permit for future construction
+      COMBINED_LICENSE:
+        description: Combined construction and operating license
+
+  ComplianceStandardEnum:
+    description: Nuclear safety and security compliance standards
+    permissible_values:
+      ISO_14001:
+        description: Environmental Management Systems
+        title: ISO 14001 Environmental Management
+      ISO_9001:
+        description: Quality Management Systems
+        title: ISO 9001 Quality Management
+      ASME_NQA_1:
+        description: Quality Assurance Requirements for Nuclear Facility Applications
+        title: ASME NQA-1 Quality Assurance
+      IEEE_603:
+        description: IEEE Standard Criteria for Safety Systems for Nuclear Power Generating Stations
+        title: IEEE 603 Safety Systems Criteria
+      IEC_61513:
+        description: Nuclear power plants - Instrumentation and control systems
+        title: IEC 61513 I&C Systems
+      ANSI_N45_2:
+        description: Quality Assurance Program Requirements for Nuclear Power Plants
+        title: ANSI N45.2 Quality Assurance
+      NUREG_0800:
+        description: Standard Review Plan for the Review of Safety Analysis Reports
+        title: NUREG-0800 Standard Review Plan
+      IAEA_GSR:
+        description: IAEA General Safety Requirements
+        title: IAEA General Safety Requirements
+      IAEA_NSS:
+        description: IAEA Nuclear Security Series
+        title: IAEA Nuclear Security Series
+      WENRA_RL:
+        description: Western European Nuclear Regulators Association Reference Levels
+        title: WENRA Reference Levels
+
+  InspectionTypeEnum:
+    description: Types of nuclear regulatory inspections and assessments
+    permissible_values:
+      ROUTINE_INSPECTION:
+        description: Regularly scheduled inspection activities
+      REACTIVE_INSPECTION:
+        description: Event-driven or follow-up inspections
+      TEAM_INSPECTION:
+        description: Multi-disciplinary team inspections
+      TRIENNIAL_INSPECTION:
+        description: Three-year cycle comprehensive inspections
+      CONSTRUCTION_INSPECTION:
+        description: Construction phase inspections
+      PRE_OPERATIONAL_TESTING:
+        description: Pre-operational testing and commissioning inspections
+      STARTUP_TESTING:
+        description: Initial startup and power ascension inspections
+      PERIODIC_SAFETY_REVIEW:
+        description: Comprehensive periodic safety reviews
+      INTEGRATED_INSPECTION:
+        description: Integrated inspection program
+      FORCE_ON_FORCE:
+        description: Security force-on-force exercises
+      EMERGENCY_PREPAREDNESS:
+        description: Emergency preparedness and response inspections
+      SPECIAL_INSPECTION:
+        description: Special inspections for significant events
+      VENDOR_INSPECTION:
+        description: Nuclear vendor and supplier inspections
+      CYBER_SECURITY:
+        description: Cybersecurity program inspections
+      DECOMMISSIONING_INSPECTION:
+        description: Decommissioning activities inspections

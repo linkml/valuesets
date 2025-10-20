@@ -137,3 +137,28 @@ expand-enums-schema SCHEMA_PATH OUTPUT_DIR="src/valuesets/expanded" WORKERS="4":
     --output-dir {{OUTPUT_DIR}} \
     --workers {{WORKERS}}
   @echo "✅ Expanded enums saved to {{OUTPUT_DIR}}/"
+
+# ============== UniProt Data Sync ==============
+
+# Sync UniProt species data from the UniProt API
+[group('data sync')]
+sync-uniprot-species:
+  @echo "🔄 Syncing UniProt species data..."
+  uv run python scripts/sync_uniprot_species.py
+  @echo "✅ UniProt species data synced to src/valuesets/schema/bio/uniprot_species.yaml"
+
+# Sync all UniProt reference proteomes (~500 organisms)
+[group('data sync')]
+sync-uniprot-reference:
+  @echo "🔄 Syncing all UniProt reference proteomes..."
+  uv run python scripts/sync_uniprot_species.py --extended
+  @echo "✅ All UniProt reference proteomes synced (~500 organisms)"
+
+# Preview UniProt sync without making changes
+[group('data sync')]
+preview-uniprot-sync:
+  @echo "👀 Previewing UniProt species sync (dry run)..."
+  @cp src/valuesets/schema/bio/uniprot_species.yaml /tmp/uniprot_species_preview.yaml
+  uv run python scripts/sync_uniprot_species.py --output /tmp/uniprot_species_preview.yaml
+  @echo "Preview saved to /tmp/uniprot_species_preview.yaml"
+  @echo "Run 'diff src/valuesets/schema/bio/uniprot_species.yaml /tmp/uniprot_species_preview.yaml' to see changes"

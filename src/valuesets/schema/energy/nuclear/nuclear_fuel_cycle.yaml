@@ -1,0 +1,82 @@
+name: nuclear_fuel_cycle
+title: Nuclear Fuel Cycle Value Sets
+description: Value sets for nuclear fuel cycle processes and stages
+id: https://w3id.org/common-value-sets/nuclear_fuel_cycle
+imports:
+  - linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  valuesets: https://w3id.org/valuesets/
+default_prefix: valuesets
+
+slots:
+  nuclear_fuel_cycle_stage:
+    description: Stages in the nuclear fuel cycle
+    range: NuclearFuelCycleStageEnum
+  nuclear_fuel_form:
+    description: Forms of nuclear fuel at different stages
+    range: NuclearFuelFormEnum
+  enrichment_process:
+    description: Uranium enrichment processes
+    range: EnrichmentProcessEnum
+
+enums:
+  NuclearFuelCycleStageEnum:
+    description: Stages in the nuclear fuel cycle from mining to disposal
+    permissible_values:
+      MINING:
+        description: Uranium ore mining and extraction
+      MILLING:
+        description: Processing uranium ore into yellowcake (U3O8)
+      CONVERSION:
+        description: Converting yellowcake to uranium hexafluoride (UF6)
+      ENRICHMENT:
+        description: Increasing U-235 concentration in uranium
+      FUEL_FABRICATION:
+        description: Manufacturing nuclear fuel assemblies
+      REACTOR_OPERATION:
+        description: Nuclear fission in reactor core
+      INTERIM_STORAGE:
+        description: Temporary storage of spent nuclear fuel
+      REPROCESSING:
+        description: Chemical separation of useful materials from spent fuel
+      FINAL_DISPOSAL:
+        description: Permanent disposal of nuclear waste
+
+  NuclearFuelFormEnum:
+    description: Different forms of nuclear fuel throughout the cycle
+    permissible_values:
+      URANIUM_ORE:
+        description: Natural uranium ore containing uranium minerals
+      YELLOWCAKE:
+        description: Uranium oxide concentrate (U3O8)
+      URANIUM_HEXAFLUORIDE:
+        description: Gaseous uranium compound (UF6) used for enrichment
+      ENRICHED_URANIUM:
+        description: Uranium with increased U-235 concentration
+      URANIUM_DIOXIDE:
+        description: Ceramic uranium fuel pellets (UO2)
+      FUEL_PELLETS:
+        description: Sintered uranium dioxide pellets
+      FUEL_RODS:
+        description: Zircaloy tubes containing fuel pellets
+      FUEL_ASSEMBLIES:
+        description: Bundled fuel rods ready for reactor loading
+      SPENT_FUEL:
+        description: Used nuclear fuel removed from reactor
+      MIXED_OXIDE_FUEL:
+        description: MOX fuel containing plutonium and uranium oxides
+
+  EnrichmentProcessEnum:
+    description: Methods for enriching uranium to increase U-235 concentration
+    permissible_values:
+      GAS_DIFFUSION:
+        description: Gaseous diffusion enrichment process
+      GAS_CENTRIFUGE:
+        description: Gas centrifuge enrichment process
+      LASER_ISOTOPE_SEPARATION:
+        description: Laser-based uranium isotope separation
+      ELECTROMAGNETIC_SEPARATION:
+        description: Electromagnetic isotope separation (EMIS)
+      AERODYNAMIC_SEPARATION:
+        description: Aerodynamic enrichment processes

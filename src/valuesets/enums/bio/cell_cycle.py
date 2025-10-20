@@ -91,7 +91,7 @@ class MeioticPhase(RichEnum):
 
 # Set metadata after class creation
 MeioticPhase._metadata = {
-    "MEIOSIS_I": {'description': 'Meiosis I (reductional division)', 'meaning': 'GO:0007126', 'annotations': {'result': 'reduction from diploid to haploid'}},
+    "MEIOSIS_I": {'description': 'Meiosis I (reductional division)', 'meaning': 'GO:0007127', 'annotations': {'result': 'reduction from diploid to haploid'}},
     "PROPHASE_I": {'description': 'Prophase I', 'meaning': 'GO:0007128', 'annotations': {'substages': 'leptotene, zygotene, pachytene, diplotene, diakinesis'}},
     "METAPHASE_I": {'description': 'Metaphase I', 'meaning': 'GO:0007132', 'annotations': {'feature': 'homologous pairs align'}},
     "ANAPHASE_I": {'description': 'Anaphase I', 'meaning': 'GO:0007133', 'annotations': {'feature': 'homologous chromosomes separate'}},
@@ -162,9 +162,9 @@ class DNADamageResponse(RichEnum):
 
 # Set metadata after class creation
 DNADamageResponse._metadata = {
-    "CELL_CYCLE_ARREST": {'description': 'Cell cycle arrest', 'meaning': 'GO:0007050'},
+    "CELL_CYCLE_ARREST": {'description': 'Cell cycle arrest', 'meaning': 'GO:0051726', 'aliases': ['regulation of cell cycle']},
     "DNA_REPAIR": {'description': 'DNA repair', 'meaning': 'GO:0006281'},
-    "APOPTOSIS_INDUCTION": {'description': 'Induction of apoptosis', 'meaning': 'GO:0006917'},
+    "APOPTOSIS_INDUCTION": {'description': 'Induction of apoptosis', 'meaning': 'GO:0043065', 'aliases': ['positive regulation of apoptotic process']},
     "SENESCENCE_INDUCTION": {'description': 'Induction of senescence', 'meaning': 'GO:0090400'},
     "CHECKPOINT_ADAPTATION": {'description': 'Checkpoint adaptation', 'annotations': {'description': 'override of checkpoint despite damage'}},
 }

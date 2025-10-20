@@ -8,6 +8,7 @@ imports:
 - data/data_absent_reason
 - statistics
 - health
+- health/vaccination
 - healthcare
 - demographics
 - investigation
@@ -28,6 +29,12 @@ imports:
 - academic/research
 - energy/energy
 - energy/fossil_fuels
+- energy/nuclear/reactor_types
+- energy/nuclear/nuclear_fuels
+- energy/nuclear/nuclear_waste
+- energy/nuclear/nuclear_safety
+- energy/nuclear/nuclear_facilities
+- energy/nuclear/nuclear_operations
 - industry/mining
 - industry/extractive_industry
 - statistics/prediction_outcomes
@@ -69,12 +76,20 @@ imports:
 - chemistry/reaction_directionality
 - industry/safety_colors
 - medical/clinical
+- medical/neuroimaging
 - clinical/nih_demographics
 - clinical/phenopackets
 - bioprocessing/scale_up
 - units/measurements
 - computing/file_formats
 - computing/maturity_levels
+- business/organizational_structures
+- business/industry_classifications
+- business/management_operations
+- business/quality_management
+- business/supply_chain
+- business/human_resources
+- analytical_chemistry/mass_spectrometry
 prefixes:
   valuesets: https://w3id.org/valuesets/
 default_prefix: valuesets

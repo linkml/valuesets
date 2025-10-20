@@ -101,7 +101,7 @@ LateralityEnum._metadata = {
     "LEFT": {'description': 'Left side', 'meaning': 'HP:0012835', 'annotations': {'anatomical_term': 'sinister'}},
     "BILATERAL": {'description': 'Both sides', 'meaning': 'HP:0012832', 'annotations': {'note': 'Affecting both left and right'}},
     "UNILATERAL": {'description': 'One side (unspecified which)', 'meaning': 'HP:0012833', 'annotations': {'note': 'Affecting only one side'}},
-    "MIDLINE": {'description': 'In the midline/center', 'meaning': 'UBERON:0005231', 'annotations': {'note': "Along the body's central axis"}},
+    "MIDLINE": {'description': 'In the midline/center', 'annotations': {'note': "Along the body's central axis"}},
 }
 
 class OnsetTimingEnum(RichEnum):

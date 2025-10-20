@@ -1,0 +1,325 @@
+name: neuroimaging
+title: Neuroimaging Value Sets
+description: 'Value sets for neuroimaging including MRI modalities, fMRI paradigms, acquisition parameters, and image analysis methods.'
+id: https://w3id.org/valuesets/medical/neuroimaging
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  NCIT: http://purl.obolibrary.org/obo/NCIT_
+  DICOM: http://dicom.nema.org/dcm/
+  MMO: http://purl.obolibrary.org/obo/MMO_
+  mesh: http://id.nlm.nih.gov/mesh/
+  EDAM: http://edamontology.org/
+  CHMO: http://purl.obolibrary.org/obo/CHMO_
+  STATO: http://purl.obolibrary.org/obo/STATO_
+  valuesets: https://w3id.org/valuesets/
+default_prefix: valuesets
+
+slots:
+  mri_modality:
+    description: MRI imaging modality type
+    range: MRIModalityEnum
+  mri_sequence_type:
+    description: MRI pulse sequence type
+    range: MRISequenceTypeEnum
+  mri_contrast_type:
+    description: MRI contrast mechanism
+    range: MRIContrastTypeEnum
+  fmri_paradigm_type:
+    description: fMRI experimental paradigm type
+    range: FMRIParadigmTypeEnum
+
+enums:
+  MRIModalityEnum:
+    description: MRI imaging modalities and techniques
+    permissible_values:
+      STRUCTURAL_T1:
+        title: T1-weighted structural MRI
+        description: High-resolution anatomical imaging with T1 contrast
+        meaning: NCIT:C116455
+        aliases:
+        - High Field Strength Magnetic Resonance Imaging
+        annotations:
+          contrast_mechanism: T1 relaxation
+          typical_use: anatomical reference, volumetric analysis
+          tissue_contrast: good gray/white matter contrast
+      STRUCTURAL_T2:
+        title: T2-weighted structural MRI
+        description: Structural imaging with T2 contrast
+        meaning: NCIT:C116456
+        aliases:
+        - Low Field Strength Magnetic Resonance Imaging
+        annotations:
+          contrast_mechanism: T2 relaxation
+          typical_use: pathology detection, CSF visualization
+          tissue_contrast: good fluid contrast
+      FLAIR:
+        title: Fluid-attenuated inversion recovery
+        description: T2-weighted sequence with CSF signal suppressed
+        meaning: NCIT:C82392
+        annotations:
+          contrast_mechanism: T2 with fluid suppression
+          typical_use: lesion detection, periventricular pathology
+          advantage: suppresses CSF signal
+      BOLD_FMRI:
+        title: Blood oxygen level dependent fMRI
+        description: Functional MRI based on blood oxygenation changes
+        meaning: NCIT:C17958
+        aliases:
+        - Functional Magnetic Resonance Imaging
+        annotations:
+          contrast_mechanism: BOLD signal
+          typical_use: brain activation mapping
+          temporal_resolution: seconds
+      ASL:
+        title: Arterial spin labeling
+        description: Perfusion imaging using magnetically labeled blood
+        meaning: NCIT:C116450
+        aliases:
+        - Arterial Spin Labeling Magnetic Resonance Imaging
+        annotations:
+          contrast_mechanism: arterial blood labeling
+          typical_use: cerebral blood flow measurement
+          advantage: no contrast agent required
+      DWI:
+        title: Diffusion-weighted imaging
+        description: Imaging sensitive to water molecule diffusion
+        meaning: mesh:D038524
+        annotations:
+          contrast_mechanism: water diffusion
+          typical_use: stroke detection, fiber tracking
+          parameter: apparent diffusion coefficient
+      DTI:
+        title: Diffusion tensor imaging
+        description: Advanced diffusion imaging with directional information
+        meaning: NCIT:C64862
+        annotations:
+          contrast_mechanism: directional diffusion
+          typical_use: white matter tractography
+          parameters: fractional anisotropy, mean diffusivity
+      PERFUSION_DSC:
+        title: Dynamic susceptibility contrast perfusion
+        description: Perfusion imaging using contrast agent bolus
+        meaning: NCIT:C116459
+        aliases:
+        - Secretin-Enhanced Magnetic Resonance Imaging
+        annotations:
+          contrast_mechanism: contrast agent dynamics
+          typical_use: cerebral blood flow, blood volume
+          requires: gadolinium contrast
+      PERFUSION_DCE:
+        title: Dynamic contrast-enhanced perfusion
+        description: Perfusion imaging with pharmacokinetic modeling
+        meaning: NCIT:C116458
+        aliases:
+        - Multiparametric Magnetic Resonance Imaging
+        annotations:
+          contrast_mechanism: contrast enhancement kinetics
+          typical_use: blood-brain barrier permeability
+          analysis: pharmacokinetic modeling
+      SWI:
+        title: Susceptibility-weighted imaging
+        description: High-resolution venography and iron detection
+        meaning: NCIT:C121377
+        annotations:
+          contrast_mechanism: magnetic susceptibility
+          typical_use: venography, microbleeds, iron deposits
+          strength: high field preferred
+      TASK_FMRI:
+        title: Task-based functional MRI
+        description: fMRI during specific cognitive or motor tasks
+        meaning: NCIT:C178023
+        aliases:
+        - Task Functional Magnetic Resonance Imaging
+        annotations:
+          paradigm: stimulus-response
+          typical_use: localization of brain functions
+          analysis: statistical parametric mapping
+      RESTING_STATE_FMRI:
+        title: Resting-state functional MRI
+        description: fMRI acquired at rest without explicit tasks
+        meaning: NCIT:C178024
+        aliases:
+        - Resting Functional Magnetic Resonance Imaging
+        annotations:
+          paradigm: no task
+          typical_use: functional connectivity analysis
+          networks: default mode, attention, executive
+      FUNCTIONAL_CONNECTIVITY:
+        title: Functional connectivity MRI
+        description: Analysis of temporal correlations between brain regions
+        meaning: NCIT:C116454
+        aliases:
+        - Functional Connectivity Magnetic Resonance Imaging
+        annotations:
+          analysis_type: connectivity mapping
+          typical_use: network analysis
+          metric: correlation coefficients
+
+  MRISequenceTypeEnum:
+    description: MRI pulse sequence types
+    permissible_values:
+      GRADIENT_ECHO:
+        title: Gradient echo sequence
+        description: Fast imaging sequence using gradient reversal
+        meaning: NCIT:C154542
+        aliases:
+        - Gradient Echo MRI
+        annotations:
+          speed: fast
+          typical_use: T2*, functional imaging
+          artifact_sensitivity: susceptible to magnetic field inhomogeneity
+      SPIN_ECHO:
+        title: Spin echo sequence
+        description: Sequence using 180-degree refocusing pulse
+        meaning: CHMO:0001868
+        aliases:
+        - spin echo pulse sequence
+        annotations:
+          speed: slower
+          typical_use: T2 imaging, reduced artifacts
+          artifact_resistance: good
+      EPI:
+        title: Echo planar imaging
+        description: Ultrafast imaging sequence
+        meaning: NCIT:C17558
+        annotations:
+          speed: very fast
+          typical_use: functional MRI, diffusion imaging
+          temporal_resolution: subsecond
+      MPRAGE:
+        title: Magnetization prepared rapid gradient echo
+        description: T1-weighted 3D sequence with preparation pulse
+        meaning: NCIT:C118462
+        aliases:
+        - Magnetization-Prepared Rapid Gradient Echo MRI
+        annotations:
+          image_type: T1-weighted
+          typical_use: high-resolution anatomical imaging
+          dimension: 3D
+      SPACE:
+        title: Sampling perfection with application optimized contrasts
+        description: 3D turbo spin echo sequence
+        annotations:
+          image_type: T2-weighted
+          typical_use: high-resolution T2 imaging
+          dimension: 3D
+      TRUFI:
+        title: True fast imaging with steady-state precession
+        description: Balanced steady-state free precession sequence
+        meaning: NCIT:C200534
+        aliases:
+        - Constructive Interference In Steady State
+        annotations:
+          contrast: mixed T1/T2
+          typical_use: cardiac imaging, fast scanning
+          signal: high
+
+  MRIContrastTypeEnum:
+    description: MRI image contrast mechanisms
+    permissible_values:
+      T1_WEIGHTED:
+        title: T1-weighted contrast
+        description: Image contrast based on T1 relaxation times
+        meaning: NCIT:C180727
+        aliases:
+        - T1-Weighted Magnetic Resonance Imaging
+        annotations:
+          tissue_contrast: gray matter darker than white matter
+          typical_use: anatomical structure
+      T2_WEIGHTED:
+        title: T2-weighted contrast
+        description: Image contrast based on T2 relaxation times
+        meaning: NCIT:C180729
+        aliases:
+        - T2-Weighted Magnetic Resonance Imaging
+        annotations:
+          tissue_contrast: CSF bright, gray matter brighter than white
+          typical_use: pathology detection
+      T2_STAR:
+        title: T2*-weighted contrast
+        description: Image contrast sensitive to magnetic susceptibility
+        meaning: NCIT:C156447
+        aliases:
+        - T2 (Observed)-Weighted Imaging
+        annotations:
+          sensitivity: blood, iron, air-tissue interfaces
+          typical_use: functional imaging, venography
+      PROTON_DENSITY:
+        title: Proton density weighted
+        description: Image contrast based on hydrogen density
+        meaning: NCIT:C170797
+        aliases:
+        - Proton Density MRI
+        annotations:
+          tissue_contrast: proportional to water content
+          typical_use: joint imaging, some brain pathology
+      DIFFUSION_WEIGHTED:
+        title: Diffusion-weighted contrast
+        description: Image contrast based on water diffusion
+        meaning: NCIT:C111116
+        aliases:
+        - Diffusion Weighted Imaging
+        annotations:
+          sensitivity: molecular motion
+          typical_use: stroke, tumor cellularity
+      PERFUSION_WEIGHTED:
+        title: Perfusion-weighted contrast
+        description: Image contrast based on blood flow dynamics
+        meaning: mesh:D000098642
+        annotations:
+          measurement: cerebral blood flow/volume
+          typical_use: stroke, tumor vascularity
+
+  FMRIParadigmTypeEnum:
+    description: fMRI experimental paradigm types
+    permissible_values:
+      BLOCK_DESIGN:
+        title: Block design paradigm
+        description: Alternating blocks of task and rest conditions
+        meaning: STATO:0000046
+        annotations:
+          duration: typically 15-30 seconds per block
+          advantage: high statistical power
+          typical_use: robust activation detection
+      EVENT_RELATED:
+        title: Event-related design
+        description: Brief stimuli presented at varying intervals
+        meaning: EDAM:topic_3678
+        aliases:
+        - Experimental design and studies
+        annotations:
+          duration: single events (seconds)
+          advantage: flexible timing, event separation
+          typical_use: studying cognitive processes
+      MIXED_DESIGN:
+        title: Mixed block and event-related design
+        description: Combination of block and event-related elements
+        meaning: EDAM:topic_3678
+        aliases:
+        - Experimental design and studies
+        annotations:
+          flexibility: high
+          advantage: sustained and transient responses
+          complexity: high
+      RESTING_STATE:
+        title: Resting state paradigm
+        description: No explicit task, spontaneous brain activity
+        meaning: NCIT:C178024
+        aliases:
+        - Resting Functional Magnetic Resonance Imaging
+        annotations:
+          instruction: rest, eyes open/closed
+          duration: typically 5-10 minutes
+          analysis: functional connectivity
+      NATURALISTIC:
+        title: Naturalistic paradigm
+        description: Ecologically valid stimuli (movies, stories)
+        meaning: EDAM:topic_3678
+        aliases:
+        - Experimental design and studies
+        annotations:
+          stimulus_type: complex, realistic
+          advantage: ecological validity
+          analysis: inter-subject correlation

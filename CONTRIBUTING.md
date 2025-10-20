@@ -51,6 +51,23 @@ Please use our [Discussions forum][discussions] to ask general questions or cont
 
 Please submit a [Pull Request][pulls] to submit a new term for consideration.
 
+#### Term Caching System
+
+This project uses an ontology term caching system to improve validation performance and reduce external API calls. When you contribute new ontology mappings:
+
+1. **Cache Updates**: Adding new ontology mappings may result in changes to the cache files in the `cache/` directory
+2. **Include Cache Changes**: These cache updates should be included in your Pull Request
+3. **Validation Process**: Run `just validate` before submitting to ensure all ontology mappings are valid
+4. **Cache Structure**: The cache organizes terms by ontology prefix (e.g., `cache/ncit/`, `cache/vo/`) for efficient lookup
+
+**Standard Operating Procedure for Contributors:**
+
+- When adding enums with `meaning:` annotations pointing to ontology terms:
+  - Run validation locally with `just validate`
+  - Include any generated cache files in your commit
+  - Ensure all ontology IDs are correct (never guess - use [OLS](https://www.ebi.ac.uk/ols4/) to verify)
+  - Follow the project's naming conventions (e.g., `UPPER_CASE` for enum values)
+
 <a id="best-practices"></a>
 
 ## Best Practices

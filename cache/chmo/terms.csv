@@ -1,0 +1,42 @@
+curie,label,retrieved_at
+CHMO:0000524,liquid chromatography-mass spectrometry,2025-10-19T12:01:54.823171
+CHMO:0000497,gas chromatography-mass spectrometry,2025-10-19T12:01:54.823479
+CHMO:0000575,tandem mass spectrometry,2025-10-19T12:01:54.823826
+CHMO:0000506,isotope ratio mass spectrometry,2025-10-19T12:01:54.824036
+CHMO:0002413,cryogenic electron microscopy,2025-10-19T12:01:55.269378
+CHMO:0000159,single crystal X-ray diffraction,2025-10-19T12:01:55.269917
+CHMO:0000204,small-angle X-ray scattering,2025-10-19T12:01:55.270285
+CHMO:0000591,nuclear magnetic resonance spectroscopy,2025-10-19T12:01:55.270628
+CHMO:0000470,mass spectrometry,2025-10-19T12:01:55.271003
+CHMO:0002010,analytical centrifugation,2025-10-19T12:01:55.457077
+CHMO:0001640,filtration,2025-10-19T12:01:55.457589
+CHMO:0001000,chromatography,2025-10-19T12:01:55.459757
+CHMO:0001577,extraction,2025-10-19T12:01:55.460163
+CHMO:0001688,precipitation,2025-10-19T12:01:55.460756
+CHMO:0001574,evaporation,2025-10-19T12:01:55.461024
+CHMO:0001534,continuous distillation,2025-10-19T12:01:55.461445
+CHMO:0001551,direct drying,2025-10-19T12:01:55.461788
+CHMO:0002846,autoclaving,2025-10-19T12:01:55.474747
+CHMO:0000073,scanning electron microscopy,2025-10-19T12:01:56.161883
+CHMO:0000080,transmission electron microscopy,2025-10-19T12:01:56.162128
+CHMO:0000113,atomic force microscopy,2025-10-19T12:01:56.162325
+CHMO:0000132,scanning tunnelling microscopy,2025-10-19T12:01:56.162649
+CHMO:0000102,light microscopy assay,2025-10-19T12:01:56.162947
+CHMO:0000089,confocal fluorescence microscopy assay,2025-10-19T12:01:56.163128
+CHMO:0000156,X-ray diffraction,2025-10-19T12:01:56.163317
+CHMO:0000404,X-ray photoelectron spectroscopy,2025-10-19T12:01:56.163780
+CHMO:0000309,energy-dispersive X-ray emission spectroscopy,2025-10-19T12:01:56.164033
+CHMO:0000636,Fourier transform infrared spectroscopy,2025-10-19T12:01:56.164354
+CHMO:0000656,Raman spectroscopy,2025-10-19T12:01:56.164678
+CHMO:0000292,ultraviolet-visible spectrophotometry,2025-10-19T12:01:56.164893
+CHMO:0000307,X-ray emission spectroscopy,2025-10-19T12:01:56.165081
+CHMO:0000684,differential scanning calorimetry,2025-10-19T12:01:56.165297
+CHMO:0000690,thermogravimetry,2025-10-19T12:01:56.165467
+CHMO:0000687,differential thermal analysis,2025-10-19T12:01:56.165642
+CHMO:0001314,chemical vapour deposition,2025-10-19T12:01:56.207860
+CHMO:0001356,physical vapour deposition,2025-10-19T12:01:56.208232
+CHMO:0001331,electrochemical deposition,2025-10-19T12:01:56.208445
+CHMO:0001472,spin coating,2025-10-19T12:01:56.208781
+CHMO:0001471,dip coating,2025-10-19T12:01:56.208968
+CHMO:0001341,molecular beam epitaxy,2025-10-19T12:01:56.209164
+CHMO:0001868,spin echo pulse sequence,2025-10-19T12:01:56.343815

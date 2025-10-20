@@ -6,7 +6,7 @@ imports:
 - ../core
 prefixes:
   linkml: https://w3id.org/linkml/
-  swisslipids: https://swisslipids.org/rdf/
+  SLM: https://swisslipids.org/rdf/SLM_
   CHEBI: http://purl.obolibrary.org/obo/CHEBI_
   valuesets: https://w3id.org/valuesets/
 default_prefix: valuesets
@@ -21,40 +21,52 @@ enums:
     permissible_values:
       LIPID:
         description: Lipid
-        meaning: swisslipids:SLM_000389145
-        exact_mappings:
-        - CHEBI:18059
+        meaning: CHEBI:18059
+        broad_mappings:
+        - SLM:000389145
       FATTY_ACYLS_AND_DERIVATIVES:
         description: Fatty acyls and derivatives
-        meaning: swisslipids:SLM_000390054
+        meaning: CHEBI:24027
+        aliases:
+        - fatty-acyl group
         broad_mappings:
-        - CHEBI:24027
+        - SLM:000390054
       GLYCEROLIPIDS:
         description: Glycerolipids
-        meaning: swisslipids:SLM_000117142
+        meaning: CHEBI:35741
+        aliases:
+        - glycerolipid
         exact_mappings:
-        - CHEBI:35741
+        - SLM:000117142
       GLYCEROPHOSPHOLIPIDS:
         description: Glycerophospholipids
-        meaning: swisslipids:SLM_000001193
+        meaning: CHEBI:37739
+        aliases:
+        - glycerophospholipid
         exact_mappings:
-        - CHEBI:37739
+        - SLM:000001193
       SPHINGOLIPIDS:
         description: Sphingolipids
-        meaning: swisslipids:SLM_000000525
+        meaning: CHEBI:26739
+        aliases:
+        - sphingolipid
         exact_mappings:
-        - CHEBI:26739
+        - SLM:000000525
       STEROIDS_AND_DERIVATIVES:
         description: Steroids and derivatives
-        meaning: swisslipids:SLM_000500463
+        meaning: CHEBI:35341
+        aliases:
+        - steroid
         exact_mappings:
-        - CHEBI:35341
+        - SLM:000500463
         narrow_mappings:
         - CHEBI:15889
       PRENOL_LIPIDS:
         description: Prenol Lipids
-        meaning: swisslipids:SLM_000508860
+        meaning: CHEBI:24913
+        aliases:
+        - isoprenoid
         exact_mappings:
-        - CHEBI:24913
+        - SLM:000508860
         narrow_mappings:
         - CHEBI:16019
