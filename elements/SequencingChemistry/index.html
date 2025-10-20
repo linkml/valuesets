@@ -392,7 +392,7 @@
 <tbody>
 <tr>
 <td>SEQUENCING_BY_SYNTHESIS</td>
-<td>None</td>
+<td>OBI:0000734</td>
 <td>Sequencing by synthesis (Illumina)</td>
 </tr>
 <tr>
@@ -412,12 +412,12 @@
 </tr>
 <tr>
 <td>SEQUENCING_BY_LIGATION</td>
-<td>None</td>
+<td>OBI:0000723</td>
 <td>Sequencing by ligation (SOLiD)</td>
 </tr>
 <tr>
 <td>CHAIN_TERMINATION</td>
-<td>None</td>
+<td>OBI:0000695</td>
 <td>Chain termination method (Sanger)</td>
 </tr>
 <tr>
@@ -469,7 +469,10 @@ permissible_values:
   SEQUENCING_BY_SYNTHESIS:
     text: SEQUENCING_BY_SYNTHESIS
     description: Sequencing by synthesis (Illumina)
+    meaning: OBI:0000734
     title: SEQUENCING_BY_SYNTHESIS
+    aliases:
+    - DNA sequencing by synthesis assay
   SINGLE_MOLECULE_REAL_TIME:
     text: SINGLE_MOLECULE_REAL_TIME
     description: Single molecule real-time sequencing (PacBio)
@@ -485,11 +488,17 @@ permissible_values:
   SEQUENCING_BY_LIGATION:
     text: SEQUENCING_BY_LIGATION
     description: Sequencing by ligation (SOLiD)
+    meaning: OBI:0000723
     title: SEQUENCING_BY_LIGATION
+    aliases:
+    - DNA sequencing by ligation assay
   CHAIN_TERMINATION:
     text: CHAIN_TERMINATION
     description: Chain termination method (Sanger)
+    meaning: OBI:0000695
     title: CHAIN_TERMINATION
+    aliases:
+    - chain termination sequencing assay
   SEMICONDUCTOR_SEQUENCING:
     text: SEMICONDUCTOR_SEQUENCING
     description: Semiconductor/Ion semiconductor sequencing

@@ -392,17 +392,17 @@
 <tbody>
 <tr>
 <td>WHOLE_GENOME_SEQUENCING</td>
-<td>None</td>
+<td>EDAM:topic_3673</td>
 <td>Whole genome sequencing (WGS)</td>
 </tr>
 <tr>
 <td>WHOLE_EXOME_SEQUENCING</td>
-<td>None</td>
+<td>EDAM:topic_3676</td>
 <td>Whole exome sequencing (WES)</td>
 </tr>
 <tr>
 <td>TRANSCRIPTOME_SEQUENCING</td>
-<td>None</td>
+<td>EDAM:topic_3170</td>
 <td>RNA sequencing (RNA-seq)</td>
 </tr>
 <tr>
@@ -417,7 +417,7 @@
 </tr>
 <tr>
 <td>METAGENOMICS</td>
-<td>None</td>
+<td>EDAM:topic_3837</td>
 <td>Metagenomic sequencing</td>
 </tr>
 <tr>
@@ -427,12 +427,12 @@
 </tr>
 <tr>
 <td>SINGLE_CELL_TRANSCRIPTOMICS</td>
-<td>None</td>
+<td>EDAM:topic_4028</td>
 <td>Single-cell transcriptomics</td>
 </tr>
 <tr>
 <td>CHROMATIN_IMMUNOPRECIPITATION</td>
-<td>None</td>
+<td>EDAM:topic_3656</td>
 <td>ChIP-seq</td>
 </tr>
 <tr>
@@ -504,15 +504,22 @@ permissible_values:
   WHOLE_GENOME_SEQUENCING:
     text: WHOLE_GENOME_SEQUENCING
     description: Whole genome sequencing (WGS)
+    meaning: EDAM:topic_3673
     title: WHOLE_GENOME_SEQUENCING
   WHOLE_EXOME_SEQUENCING:
     text: WHOLE_EXOME_SEQUENCING
     description: Whole exome sequencing (WES)
+    meaning: EDAM:topic_3676
     title: WHOLE_EXOME_SEQUENCING
+    aliases:
+    - Exome sequencing
   TRANSCRIPTOME_SEQUENCING:
     text: TRANSCRIPTOME_SEQUENCING
     description: RNA sequencing (RNA-seq)
+    meaning: EDAM:topic_3170
     title: TRANSCRIPTOME_SEQUENCING
+    aliases:
+    - RNA-Seq
   TARGETED_SEQUENCING:
     text: TARGETED_SEQUENCING
     description: Targeted gene panel sequencing
@@ -522,18 +529,27 @@ permissible_values:
   METAGENOMICS:
     text: METAGENOMICS
     description: Metagenomic sequencing
+    meaning: EDAM:topic_3837
     title: METAGENOMICS
+    aliases:
+    - Metagenomic sequencing
   SINGLE_CELL_GENOMICS:
     text: SINGLE_CELL_GENOMICS
     description: Single-cell genomics
   SINGLE_CELL_TRANSCRIPTOMICS:
     text: SINGLE_CELL_TRANSCRIPTOMICS
     description: Single-cell transcriptomics
+    meaning: EDAM:topic_4028
     title: SINGLE_CELL_TRANSCRIPTOMICS
+    aliases:
+    - Single-cell sequencing
   CHROMATIN_IMMUNOPRECIPITATION:
     text: CHROMATIN_IMMUNOPRECIPITATION
     description: ChIP-seq
+    meaning: EDAM:topic_3656
     title: CHROMATIN_IMMUNOPRECIPITATION
+    aliases:
+    - Immunoprecipitation experiment
   CHROMATIN_ACCESSIBILITY:
     text: CHROMATIN_ACCESSIBILITY
     description: ATAC-seq/FAIRE-seq

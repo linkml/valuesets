@@ -392,42 +392,42 @@
 <tbody>
 <tr>
 <td>ILLUMINA_HISEQ_2000</td>
-<td>None</td>
+<td>OBI:0002001</td>
 <td>Illumina HiSeq 2000</td>
 </tr>
 <tr>
 <td>ILLUMINA_HISEQ_2500</td>
-<td>None</td>
+<td>OBI:0002002</td>
 <td>Illumina HiSeq 2500</td>
 </tr>
 <tr>
 <td>ILLUMINA_HISEQ_3000</td>
-<td>None</td>
+<td>OBI:0002048</td>
 <td>Illumina HiSeq 3000</td>
 </tr>
 <tr>
 <td>ILLUMINA_HISEQ_4000</td>
-<td>None</td>
+<td>OBI:0002049</td>
 <td>Illumina HiSeq 4000</td>
 </tr>
 <tr>
 <td>ILLUMINA_HISEQ_X</td>
-<td>None</td>
+<td>OBI:0002129</td>
 <td>Illumina HiSeq X</td>
 </tr>
 <tr>
 <td>ILLUMINA_NOVASEQ_6000</td>
-<td>None</td>
+<td>OBI:0002630</td>
 <td>Illumina NovaSeq 6000</td>
 </tr>
 <tr>
 <td>ILLUMINA_NEXTSEQ_500</td>
-<td>None</td>
+<td>OBI:0002021</td>
 <td>Illumina NextSeq 500</td>
 </tr>
 <tr>
 <td>ILLUMINA_NEXTSEQ_550</td>
-<td>None</td>
+<td>OBI:0003387</td>
 <td>Illumina NextSeq 550</td>
 </tr>
 <tr>
@@ -442,7 +442,7 @@
 </tr>
 <tr>
 <td>ILLUMINA_MISEQ</td>
-<td>None</td>
+<td>OBI:0002003</td>
 <td>Illumina MiSeq</td>
 </tr>
 <tr>
@@ -457,17 +457,17 @@
 </tr>
 <tr>
 <td>PACBIO_RS_II</td>
-<td>None</td>
+<td>OBI:0002012</td>
 <td>PacBio RS II</td>
 </tr>
 <tr>
 <td>PACBIO_SEQUEL</td>
-<td>None</td>
+<td>OBI:0002632</td>
 <td>PacBio Sequel</td>
 </tr>
 <tr>
 <td>PACBIO_SEQUEL_II</td>
-<td>None</td>
+<td>OBI:0002633</td>
 <td>PacBio Sequel II</td>
 </tr>
 <tr>
@@ -477,17 +477,17 @@
 </tr>
 <tr>
 <td>NANOPORE_MINION</td>
-<td>None</td>
+<td>OBI:0002750</td>
 <td>Oxford Nanopore MinION</td>
 </tr>
 <tr>
 <td>NANOPORE_GRIDION</td>
-<td>None</td>
+<td>OBI:0002751</td>
 <td>Oxford Nanopore GridION</td>
 </tr>
 <tr>
 <td>NANOPORE_PROMETHION</td>
-<td>None</td>
+<td>OBI:0002752</td>
 <td>Oxford Nanopore PromethION</td>
 </tr>
 <tr>
@@ -517,12 +517,12 @@
 </tr>
 <tr>
 <td>SANGER_SEQUENCING</td>
-<td>None</td>
+<td>OBI:0000695</td>
 <td>Sanger chain termination sequencing</td>
 </tr>
 <tr>
 <td>ROCHE_454_GS</td>
-<td>None</td>
+<td>OBI:0000702</td>
 <td>Roche 454 Genome Sequencer</td>
 </tr>
 <tr>
@@ -569,6 +569,7 @@ permissible_values:
   ILLUMINA_HISEQ_2000:
     text: ILLUMINA_HISEQ_2000
     description: Illumina HiSeq 2000
+    meaning: OBI:0002001
     annotations:
       manufacturer:
         tag: manufacturer
@@ -582,6 +583,7 @@ permissible_values:
   ILLUMINA_HISEQ_2500:
     text: ILLUMINA_HISEQ_2500
     description: Illumina HiSeq 2500
+    meaning: OBI:0002002
     annotations:
       manufacturer:
         tag: manufacturer
@@ -595,6 +597,7 @@ permissible_values:
   ILLUMINA_HISEQ_3000:
     text: ILLUMINA_HISEQ_3000
     description: Illumina HiSeq 3000
+    meaning: OBI:0002048
     annotations:
       manufacturer:
         tag: manufacturer
@@ -608,6 +611,7 @@ permissible_values:
   ILLUMINA_HISEQ_4000:
     text: ILLUMINA_HISEQ_4000
     description: Illumina HiSeq 4000
+    meaning: OBI:0002049
     annotations:
       manufacturer:
         tag: manufacturer
@@ -621,6 +625,7 @@ permissible_values:
   ILLUMINA_HISEQ_X:
     text: ILLUMINA_HISEQ_X
     description: Illumina HiSeq X
+    meaning: OBI:0002129
     annotations:
       manufacturer:
         tag: manufacturer
@@ -631,9 +636,12 @@ permissible_values:
       chemistry:
         tag: chemistry
         value: sequencing by synthesis
+    aliases:
+    - Illumina HiSeq X Ten
   ILLUMINA_NOVASEQ_6000:
     text: ILLUMINA_NOVASEQ_6000
     description: Illumina NovaSeq 6000
+    meaning: OBI:0002630
     annotations:
       manufacturer:
         tag: manufacturer
@@ -647,6 +655,7 @@ permissible_values:
   ILLUMINA_NEXTSEQ_500:
     text: ILLUMINA_NEXTSEQ_500
     description: Illumina NextSeq 500
+    meaning: OBI:0002021
     annotations:
       manufacturer:
         tag: manufacturer
@@ -660,6 +669,7 @@ permissible_values:
   ILLUMINA_NEXTSEQ_550:
     text: ILLUMINA_NEXTSEQ_550
     description: Illumina NextSeq 550
+    meaning: OBI:0003387
     annotations:
       manufacturer:
         tag: manufacturer
@@ -699,6 +709,7 @@ permissible_values:
   ILLUMINA_MISEQ:
     text: ILLUMINA_MISEQ
     description: Illumina MiSeq
+    meaning: OBI:0002003
     annotations:
       manufacturer:
         tag: manufacturer
@@ -738,6 +749,7 @@ permissible_values:
   PACBIO_RS_II:
     text: PACBIO_RS_II
     description: PacBio RS II
+    meaning: OBI:0002012
     annotations:
       manufacturer:
         tag: manufacturer
@@ -751,6 +763,7 @@ permissible_values:
   PACBIO_SEQUEL:
     text: PACBIO_SEQUEL
     description: PacBio Sequel
+    meaning: OBI:0002632
     annotations:
       manufacturer:
         tag: manufacturer
@@ -764,6 +777,7 @@ permissible_values:
   PACBIO_SEQUEL_II:
     text: PACBIO_SEQUEL_II
     description: PacBio Sequel II
+    meaning: OBI:0002633
     annotations:
       manufacturer:
         tag: manufacturer
@@ -790,6 +804,7 @@ permissible_values:
   NANOPORE_MINION:
     text: NANOPORE_MINION
     description: Oxford Nanopore MinION
+    meaning: OBI:0002750
     annotations:
       manufacturer:
         tag: manufacturer
@@ -800,9 +815,12 @@ permissible_values:
       chemistry:
         tag: chemistry
         value: nanopore sequencing
+    aliases:
+    - Oxford Nanopore MinION
   NANOPORE_GRIDION:
     text: NANOPORE_GRIDION
     description: Oxford Nanopore GridION
+    meaning: OBI:0002751
     annotations:
       manufacturer:
         tag: manufacturer
@@ -813,9 +831,12 @@ permissible_values:
       chemistry:
         tag: chemistry
         value: nanopore sequencing
+    aliases:
+    - Oxford Nanopore GridION Mk1
   NANOPORE_PROMETHION:
     text: NANOPORE_PROMETHION
     description: Oxford Nanopore PromethION
+    meaning: OBI:0002752
     annotations:
       manufacturer:
         tag: manufacturer
@@ -826,6 +847,8 @@ permissible_values:
       chemistry:
         tag: chemistry
         value: nanopore sequencing
+    aliases:
+    - Oxford Nanopore PromethION
   NANOPORE_FLONGLE:
     text: NANOPORE_FLONGLE
     description: Oxford Nanopore Flongle
@@ -894,6 +917,7 @@ permissible_values:
   SANGER_SEQUENCING:
     text: SANGER_SEQUENCING
     description: Sanger chain termination sequencing
+    meaning: OBI:0000695
     annotations:
       manufacturer:
         tag: manufacturer
@@ -904,9 +928,12 @@ permissible_values:
       chemistry:
         tag: chemistry
         value: chain termination
+    aliases:
+    - chain termination sequencing assay
   ROCHE_454_GS:
     text: ROCHE_454_GS
     description: Roche 454 Genome Sequencer
+    meaning: OBI:0000702
     annotations:
       manufacturer:
         tag: manufacturer
@@ -920,6 +947,8 @@ permissible_values:
       status:
         tag: status
         value: discontinued
+    aliases:
+    - 454 Genome Sequencer FLX
   LIFE_TECHNOLOGIES_ION_TORRENT:
     text: LIFE_TECHNOLOGIES_ION_TORRENT
     description: Life Technologies Ion Torrent
