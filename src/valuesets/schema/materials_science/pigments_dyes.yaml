@@ -251,7 +251,7 @@ enums:
           use: pH indicator, textile
       MALACHITE_GREEN:
         description: Malachite green
-        meaning: CHEBI:11174
+        meaning: CHEBI:72449
         annotations:
           hex: 0BDA51
           chemical: C23H25ClN2
@@ -265,7 +265,9 @@ enums:
           use: gram staining
       EOSIN:
         description: Eosin Y
-        meaning: CHEBI:87199
+        meaning: CHEBI:52053
+        aliases:
+        - eosin YS dye
         annotations:
           hex: FF6B6B
           chemical: C20H6Br4Na2O5
@@ -346,7 +348,9 @@ enums:
           use: cola, sauces
       ANNATTO:
         description: Annatto (natural orange)
-        meaning: CHEBI:3150
+        meaning: CHEBI:3136
+        aliases:
+        - bixin
         annotations:
           hex: FF6600
           E_number: E160b
@@ -361,7 +365,9 @@ enums:
           source: turmeric root
       BEETROOT_RED:
         description: Beetroot red/Betanin
-        meaning: CHEBI:15060
+        meaning: CHEBI:3080
+        aliases:
+        - Betanin
         annotations:
           hex: BC2A4D
           E_number: E162

@@ -223,7 +223,7 @@ enums:
           composition: uud
       NEUTRON:
         description: Neutral nucleon
-        meaning: CHEBI:33254
+        meaning: CHEBI:30222
         annotations:
           mass: 939.565 MeV/c²
           charge: '0'
@@ -292,7 +292,6 @@ enums:
           type: electrostatic
       HYDROGEN:
         description: Hydrogen bond
-        meaning: CHEBI:50839
         annotations:
           type: weak interaction
           energy: 5-30 kJ/mol

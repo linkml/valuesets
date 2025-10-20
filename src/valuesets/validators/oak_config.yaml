@@ -1,0 +1,70 @@
+# OAK adapter configuration for ontology validation
+# Prefixes listed here will use strict validation mode
+# - Missing terms will be treated as errors (not just INFO)
+# - Terms will be cached locally for consistency
+
+ontology_adapters:
+  # Core biological ontologies
+  GO: sqlite:obo:go
+  SO: sqlite:obo:so
+  CHEBI: sqlite:obo:chebi
+  CL: sqlite:obo:cl
+  UBERON: sqlite:obo:uberon
+  PATO: sqlite:obo:pato
+
+  # Investigations, experiments, and protocols
+  OBI: sqlite:obo:obi
+  MS: sqlite:obo:ms
+  MIXS: sqlite:obo:mixs
+  #ALLOTROPE: sqlite:obo:allotrope
+  AFO: 
+  SIO: sqlite:obo:sio
+  MSIO: sqlite:obo:msio
+  GENO: sqlite:obo:geno
+  CHMO: sqlite:obo:chmo
+
+  # Data format and computation ontologies
+  EDAM: sqlite:obo:edam
+
+  MI: sqlite:obo:mi
+
+  # Medical/clinical ontologies
+  MONDO: sqlite:obo:mondo
+  HP: sqlite:obo:hp
+  NCIT: sqlite:obo:ncit
+  VO: sqlite:obo:vo
+
+  # Organism taxonomies
+  NCBITaxon: sqlite:obo:ncbitaxon
+
+  # Units and measurements
+  UO: sqlite:obo:uo
+
+  # Additional common prefixes
+  ENVO: sqlite:obo:envo
+  RO: sqlite:obo:ro
+  BFO: sqlite:obo:bfo
+  IAO: sqlite:obo:iao
+  PROV: 
+
+  # Nulls
+  FHIR_DATA_ABSENT_REASON:
+  ENM: sqlite:obo:enanomapper
+  FABIO: 
+  GC: 
+  GEONAMES: 
+  GO_REF: 
+  GREG: 
+  HEX: 
+  HL7: 
+  IANA: 
+  ISO3166LOC: 
+  LOINC: 
+  QUDT: 
+  SCHEMA: sqlite:obo:schema
+  SNOMED: 
+  SPDX: 
+  SLM: sqlite:obo:swisslipid
+  TIME: 
+  DAMLPT:
+  DCMITYPE: 

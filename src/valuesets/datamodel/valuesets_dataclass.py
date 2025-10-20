@@ -1,5 +1,5 @@
 # Auto generated from valuesets.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-10-02T17:02:53
+# Generation date: 2025-10-20T11:32:19
 # Schema: valuesets
 #
 # id: https://w3id.org/linkml/valuesets
@@ -118,11 +118,11 @@ class ContributorType(EnumDefinitionImpl):
     PERSON = PermissibleValue(
         text="PERSON",
         description="A person.",
-        meaning=SCHEMA["Person"])
+        meaning=NCIT["C25190"])
     ORGANIZATION = PermissibleValue(
         text="ORGANIZATION",
         description="An organization.",
-        meaning=SCHEMA["Organization"])
+        meaning=NCIT["C41206"])
 
     _defn = EnumDefinition(
         name="ContributorType",
@@ -274,6 +274,126 @@ class VitalStatusEnum(EnumDefinitionImpl):
     _defn = EnumDefinition(
         name="VitalStatusEnum",
         description="The vital status of a person or organism",
+    )
+
+class VaccinationStatusEnum(EnumDefinitionImpl):
+    """
+    The vaccination status of an individual
+    """
+    VACCINATED = PermissibleValue(
+        text="VACCINATED",
+        description="A status indicating that an individual has received a vaccination",
+        meaning=NCIT["C28385"])
+    NOT_VACCINATED = PermissibleValue(
+        text="NOT_VACCINATED",
+        description="A status indicating that an individual has not received any of the required vaccinations",
+        meaning=NCIT["C183125"])
+    FULLY_VACCINATED = PermissibleValue(
+        text="FULLY_VACCINATED",
+        description="A status indicating that an individual has received all the required vaccinations",
+        meaning=NCIT["C183123"])
+    PARTIALLY_VACCINATED = PermissibleValue(
+        text="PARTIALLY_VACCINATED",
+        description="A status indicating that an individual has received some of the required vaccinations",
+        meaning=NCIT["C183124"])
+    BOOSTER = PermissibleValue(
+        text="BOOSTER",
+        description="A status indicating that an individual has received a booster vaccination",
+        meaning=NCIT["C28320"])
+    UNVACCINATED = PermissibleValue(
+        text="UNVACCINATED",
+        description="An organismal quality that indicates an organism is unvaccinated with any vaccine",
+        meaning=VO["0001377"])
+    UNKNOWN = PermissibleValue(
+        text="UNKNOWN",
+        description="The vaccination status is not known",
+        meaning=NCIT["C17998"])
+
+    _defn = EnumDefinition(
+        name="VaccinationStatusEnum",
+        description="The vaccination status of an individual",
+    )
+
+class VaccinationPeriodicityEnum(EnumDefinitionImpl):
+    """
+    The periodicity or frequency of vaccination
+    """
+    SINGLE_DOSE = PermissibleValue(
+        text="SINGLE_DOSE",
+        description="A vaccination regimen requiring only one dose")
+    ANNUAL = PermissibleValue(
+        text="ANNUAL",
+        description="Vaccination occurring once per year",
+        meaning=NCIT["C54647"])
+    SEASONAL = PermissibleValue(
+        text="SEASONAL",
+        description="Vaccination occurring seasonally (e.g., for influenza)")
+    BOOSTER = PermissibleValue(
+        text="BOOSTER",
+        description="A second or later vaccine dose to maintain immune response",
+        meaning=NCIT["C28320"])
+    PRIMARY_SERIES = PermissibleValue(
+        text="PRIMARY_SERIES",
+        description="The initial series of vaccine doses")
+    PERIODIC = PermissibleValue(
+        text="PERIODIC",
+        description="Vaccination occurring at regular intervals")
+    ONE_TIME = PermissibleValue(
+        text="ONE_TIME",
+        description="A vaccination given only once in a lifetime")
+    AS_NEEDED = PermissibleValue(
+        text="AS_NEEDED",
+        description="Vaccination given as needed based on exposure risk or other factors")
+
+    _defn = EnumDefinition(
+        name="VaccinationPeriodicityEnum",
+        description="The periodicity or frequency of vaccination",
+    )
+
+class VaccineCategoryEnum(EnumDefinitionImpl):
+    """
+    The broad category or type of vaccine
+    """
+    LIVE_ATTENUATED_VACCINE = PermissibleValue(
+        text="LIVE_ATTENUATED_VACCINE",
+        description="A vaccine made from microbes that have been weakened in the laboratory",
+        meaning=VO["0000367"])
+    INACTIVATED_VACCINE = PermissibleValue(
+        text="INACTIVATED_VACCINE",
+        description="A preparation of killed microorganisms intended to prevent infectious disease",
+        meaning=NCIT["C29694"])
+    CONJUGATE_VACCINE = PermissibleValue(
+        text="CONJUGATE_VACCINE",
+        description="A vaccine created by covalently attaching an antigen to a carrier protein",
+        meaning=NCIT["C1455"])
+    MRNA_VACCINE = PermissibleValue(
+        text="MRNA_VACCINE",
+        description="A vaccine based on mRNA that encodes the antigen of interest",
+        meaning=NCIT["C172787"])
+    DNA_VACCINE = PermissibleValue(
+        text="DNA_VACCINE",
+        description="A vaccine using DNA to produce protein that promotes immune responses",
+        meaning=NCIT["C39619"])
+    PEPTIDE_VACCINE = PermissibleValue(
+        text="PEPTIDE_VACCINE",
+        description="A vaccine based on synthetic peptides",
+        meaning=NCIT["C1752"])
+    VIRAL_VECTOR = PermissibleValue(
+        text="VIRAL_VECTOR",
+        description="A vaccine using a modified virus as a delivery system")
+    SUBUNIT = PermissibleValue(
+        text="SUBUNIT",
+        description="A vaccine containing purified pieces of the pathogen")
+    TOXOID = PermissibleValue(
+        text="TOXOID",
+        description="A vaccine made from a toxin that has been made harmless")
+    RECOMBINANT = PermissibleValue(
+        text="RECOMBINANT",
+        description="A vaccine produced using recombinant DNA technology")
+
+    _defn = EnumDefinition(
+        name="VaccineCategoryEnum",
+        description="The broad category or type of vaccine",
     )
 
 class HealthcareEncounterClassification(EnumDefinitionImpl):
@@ -1446,7 +1566,7 @@ class MeioticPhase(EnumDefinitionImpl):
     MEIOSIS_I = PermissibleValue(
         text="MEIOSIS_I",
         description="Meiosis I (reductional division)",
-        meaning=GO["0007126"])
+        meaning=GO["0007127"])
     PROPHASE_I = PermissibleValue(
         text="PROPHASE_I",
         title="meiotic prophase I",
@@ -1589,7 +1709,7 @@ class DNADamageResponse(EnumDefinitionImpl):
     CELL_CYCLE_ARREST = PermissibleValue(
         text="CELL_CYCLE_ARREST",
         description="Cell cycle arrest",
-        meaning=GO["0007050"])
+        meaning=GO["0051726"])
     DNA_REPAIR = PermissibleValue(
         text="DNA_REPAIR",
         description="DNA repair",
@@ -1597,7 +1717,7 @@ class DNADamageResponse(EnumDefinitionImpl):
     APOPTOSIS_INDUCTION = PermissibleValue(
         text="APOPTOSIS_INDUCTION",
         description="Induction of apoptosis",
-        meaning=GO["0006917"])
+        meaning=GO["0043065"])
     SENESCENCE_INDUCTION = PermissibleValue(
         text="SENESCENCE_INDUCTION",
         title="stress-induced premature senescence",
@@ -6048,6 +6168,1464 @@ class FossilFuelTypeEnum(EnumDefinitionImpl):
     _defn = EnumDefinition(
         name="FossilFuelTypeEnum",
         description="Types of fossil fuels used for energy generation",
+    )
+
+class ReactorTypeEnum(EnumDefinitionImpl):
+    """
+    Nuclear reactor types based on design and operational characteristics
+    """
+    PWR = PermissibleValue(
+        text="PWR",
+        title="Pressurized Water Reactor",
+        description="Most common reactor type using light water under pressure")
+    BWR = PermissibleValue(
+        text="BWR",
+        title="Boiling Water Reactor",
+        description="Light water reactor where water boils directly in core")
+    PHWR = PermissibleValue(
+        text="PHWR",
+        title="Pressurized Heavy Water Reactor",
+        description="Heavy water moderated and cooled reactor (CANDU type)")
+    LWGR = PermissibleValue(
+        text="LWGR",
+        title="Light Water Graphite Reactor",
+        description="Graphite moderated, light water cooled reactor (RBMK type)")
+    AGR = PermissibleValue(
+        text="AGR",
+        title="Advanced Gas-Cooled Reactor",
+        description="Graphite moderated, CO2 gas cooled reactor")
+    GCR = PermissibleValue(
+        text="GCR",
+        title="Gas-Cooled Reactor",
+        description="Early gas-cooled reactor design (Magnox type)")
+    FBR = PermissibleValue(
+        text="FBR",
+        title="Fast Breeder Reactor",
+        description="Fast neutron reactor that breeds fissile material")
+    HTGR = PermissibleValue(
+        text="HTGR",
+        title="High Temperature Gas-Cooled Reactor",
+        description="Helium-cooled reactor with TRISO fuel")
+    MSR = PermissibleValue(
+        text="MSR",
+        title="Molten Salt Reactor",
+        description="Reactor using molten salt as coolant and/or fuel")
+    SMR = PermissibleValue(
+        text="SMR",
+        title="Small Modular Reactor",
+        description="Small reactors designed for modular construction")
+    VHTR = PermissibleValue(
+        text="VHTR",
+        title="Very High Temperature Reactor",
+        description="Generation IV reactor for very high temperature applications")
+    SFR = PermissibleValue(
+        text="SFR",
+        title="Sodium-Cooled Fast Reactor",
+        description="Fast reactor cooled by liquid sodium")
+    LFR = PermissibleValue(
+        text="LFR",
+        title="Lead-Cooled Fast Reactor",
+        description="Fast reactor cooled by liquid lead or lead-bismuth")
+    GFR = PermissibleValue(
+        text="GFR",
+        title="Gas-Cooled Fast Reactor",
+        description="Fast reactor with gas cooling")
+    SCWR = PermissibleValue(
+        text="SCWR",
+        title="Supercritical Water-Cooled Reactor",
+        description="Reactor using supercritical water as coolant")
+
+    _defn = EnumDefinition(
+        name="ReactorTypeEnum",
+        description="Nuclear reactor types based on design and operational characteristics",
+    )
+
+class ReactorGenerationEnum(EnumDefinitionImpl):
+    """
+    Nuclear reactor generational classifications
+    """
+    GENERATION_I = PermissibleValue(
+        text="GENERATION_I",
+        title="Generation I",
+        description="Early commercial reactors (1950s-1960s)")
+    GENERATION_II = PermissibleValue(
+        text="GENERATION_II",
+        title="Generation II",
+        description="Current operating commercial reactors")
+    GENERATION_III = PermissibleValue(
+        text="GENERATION_III",
+        title="Generation III",
+        description="Advanced reactors with enhanced safety")
+    GENERATION_III_PLUS = PermissibleValue(
+        text="GENERATION_III_PLUS",
+        title="Generation III+",
+        description="Evolutionary improvements to Generation III")
+    GENERATION_IV = PermissibleValue(
+        text="GENERATION_IV",
+        title="Generation IV",
+        description="Next generation advanced reactor concepts")
+
+    _defn = EnumDefinition(
+        name="ReactorGenerationEnum",
+        description="Nuclear reactor generational classifications",
+    )
+
+class ReactorCoolantEnum(EnumDefinitionImpl):
+    """
+    Primary coolant types used in nuclear reactors
+    """
+    LIGHT_WATER = PermissibleValue(
+        text="LIGHT_WATER",
+        title="Light Water (H2O)",
+        description="Ordinary water as primary coolant")
+    HEAVY_WATER = PermissibleValue(
+        text="HEAVY_WATER",
+        title="Heavy Water (D2O)",
+        description="Deuterium oxide as primary coolant")
+    CARBON_DIOXIDE = PermissibleValue(
+        text="CARBON_DIOXIDE",
+        title="Carbon Dioxide",
+        description="CO2 gas as primary coolant")
+    HELIUM = PermissibleValue(
+        text="HELIUM",
+        title="Helium",
+        description="Helium gas as primary coolant")
+    LIQUID_SODIUM = PermissibleValue(
+        text="LIQUID_SODIUM",
+        title="Liquid Sodium",
+        description="Molten sodium metal as coolant")
+    LIQUID_LEAD = PermissibleValue(
+        text="LIQUID_LEAD",
+        title="Liquid Lead",
+        description="Molten lead or lead-bismuth as coolant")
+    MOLTEN_SALT = PermissibleValue(
+        text="MOLTEN_SALT",
+        title="Molten Salt",
+        description="Molten fluoride or chloride salts")
+    SUPERCRITICAL_WATER = PermissibleValue(
+        text="SUPERCRITICAL_WATER",
+        title="Supercritical Water",
+        description="Water above critical point")
+
+    _defn = EnumDefinition(
+        name="ReactorCoolantEnum",
+        description="Primary coolant types used in nuclear reactors",
+    )
+
+class ReactorModeratorEnum(EnumDefinitionImpl):
+    """
+    Neutron moderator types used in nuclear reactors
+    """
+    LIGHT_WATER = PermissibleValue(
+        text="LIGHT_WATER",
+        title="Light Water (H2O)",
+        description="Ordinary water as neutron moderator")
+    HEAVY_WATER = PermissibleValue(
+        text="HEAVY_WATER",
+        title="Heavy Water (D2O)",
+        description="Deuterium oxide as neutron moderator")
+    GRAPHITE = PermissibleValue(
+        text="GRAPHITE",
+        title="Graphite",
+        description="Carbon graphite as neutron moderator")
+    BERYLLIUM = PermissibleValue(
+        text="BERYLLIUM",
+        title="Beryllium",
+        description="Beryllium metal as neutron moderator")
+    NONE = PermissibleValue(
+        text="NONE",
+        title="No Moderator",
+        description="Fast reactors with no neutron moderation")
+
+    _defn = EnumDefinition(
+        name="ReactorModeratorEnum",
+        description="Neutron moderator types used in nuclear reactors",
+    )
+
+class ReactorNeutronSpectrumEnum(EnumDefinitionImpl):
+    """
+    Neutron energy spectrum classifications
+    """
+    THERMAL = PermissibleValue(
+        text="THERMAL",
+        title="Thermal Neutron Spectrum",
+        description="Low energy neutrons in thermal equilibrium")
+    EPITHERMAL = PermissibleValue(
+        text="EPITHERMAL",
+        title="Epithermal Neutron Spectrum",
+        description="Intermediate energy neutrons")
+    FAST = PermissibleValue(
+        text="FAST",
+        title="Fast Neutron Spectrum",
+        description="High energy neutrons from fission")
+
+    _defn = EnumDefinition(
+        name="ReactorNeutronSpectrumEnum",
+        description="Neutron energy spectrum classifications",
+    )
+
+class ReactorSizeCategoryEnum(EnumDefinitionImpl):
+    """
+    Nuclear reactor size classifications
+    """
+    LARGE = PermissibleValue(
+        text="LARGE",
+        title="Large Reactor",
+        description="Traditional large-scale commercial reactors")
+    MEDIUM = PermissibleValue(
+        text="MEDIUM",
+        title="Medium Reactor",
+        description="Mid-scale reactors")
+    SMALL = PermissibleValue(
+        text="SMALL",
+        title="Small Reactor",
+        description="Small modular reactors")
+    MICRO = PermissibleValue(
+        text="MICRO",
+        title="Micro Reactor",
+        description="Very small reactors for remote applications")
+    RESEARCH = PermissibleValue(
+        text="RESEARCH",
+        title="Research Reactor",
+        description="Small reactors for research and isotope production")
+
+    _defn = EnumDefinition(
+        name="ReactorSizeCategoryEnum",
+        description="Nuclear reactor size classifications",
+    )
+
+class NuclearFuelTypeEnum(EnumDefinitionImpl):
+    """
+    Types of nuclear fuel materials and compositions
+    """
+    NATURAL_URANIUM = PermissibleValue(
+        text="NATURAL_URANIUM",
+        title="Natural Uranium",
+        description="Uranium as found in nature (0.711% U-235)",
+        meaning=CHEBI["27214"])
+    LOW_ENRICHED_URANIUM = PermissibleValue(
+        text="LOW_ENRICHED_URANIUM",
+        title="Low Enriched Uranium (LEU)",
+        description="Uranium enriched to 0.7%-20% U-235")
+    HIGH_ASSAY_LEU = PermissibleValue(
+        text="HIGH_ASSAY_LEU",
+        title="High-Assay Low Enriched Uranium (HALEU)",
+        description="Uranium enriched to 5%-20% U-235")
+    HIGHLY_ENRICHED_URANIUM = PermissibleValue(
+        text="HIGHLY_ENRICHED_URANIUM",
+        title="Highly Enriched Uranium (HEU)",
+        description="Uranium enriched to 20% or more U-235")
+    WEAPONS_GRADE_URANIUM = PermissibleValue(
+        text="WEAPONS_GRADE_URANIUM",
+        title="Weapons-Grade Uranium",
+        description="Uranium enriched to 90% or more U-235")
+    REACTOR_GRADE_PLUTONIUM = PermissibleValue(
+        text="REACTOR_GRADE_PLUTONIUM",
+        title="Reactor-Grade Plutonium",
+        description="Plutonium with high Pu-240 content from spent fuel")
+    WEAPONS_GRADE_PLUTONIUM = PermissibleValue(
+        text="WEAPONS_GRADE_PLUTONIUM",
+        title="Weapons-Grade Plutonium",
+        description="Plutonium with low Pu-240 content")
+    MOX_FUEL = PermissibleValue(
+        text="MOX_FUEL",
+        title="Mixed Oxide Fuel",
+        description="Mixture of plutonium and uranium oxides")
+    THORIUM_FUEL = PermissibleValue(
+        text="THORIUM_FUEL",
+        title="Thorium-Based Fuel",
+        description="Fuel containing thorium-232 as fertile material",
+        meaning=CHEBI["33385"])
+    TRISO_FUEL = PermissibleValue(
+        text="TRISO_FUEL",
+        title="Tri-structural Isotropic Fuel",
+        description="Coated particle fuel with multiple containment layers")
+    LIQUID_FUEL = PermissibleValue(
+        text="LIQUID_FUEL",
+        title="Liquid Nuclear Fuel",
+        description="Fuel dissolved in liquid medium")
+    METALLIC_FUEL = PermissibleValue(
+        text="METALLIC_FUEL",
+        title="Metallic Nuclear Fuel",
+        description="Fuel in metallic form")
+    CARBIDE_FUEL = PermissibleValue(
+        text="CARBIDE_FUEL",
+        title="Carbide Nuclear Fuel",
+        description="Uranium or plutonium carbide fuel")
+    NITRIDE_FUEL = PermissibleValue(
+        text="NITRIDE_FUEL",
+        title="Nitride Nuclear Fuel",
+        description="Uranium or plutonium nitride fuel")
+
+    _defn = EnumDefinition(
+        name="NuclearFuelTypeEnum",
+        description="Types of nuclear fuel materials and compositions",
+    )
+
+class UraniumEnrichmentLevelEnum(EnumDefinitionImpl):
+    """
+    Standard uranium-235 enrichment level classifications
+    """
+    NATURAL = PermissibleValue(
+        text="NATURAL",
+        title="Natural Uranium",
+        description="Natural uranium enrichment (0.711% U-235)")
+    SLIGHTLY_ENRICHED = PermissibleValue(
+        text="SLIGHTLY_ENRICHED",
+        title="Slightly Enriched Uranium",
+        description="Minimal enrichment above natural levels")
+    LOW_ENRICHED = PermissibleValue(
+        text="LOW_ENRICHED",
+        title="Low Enriched Uranium",
+        description="Standard commercial reactor enrichment")
+    HIGH_ASSAY_LOW_ENRICHED = PermissibleValue(
+        text="HIGH_ASSAY_LOW_ENRICHED",
+        title="High-Assay Low Enriched Uranium",
+        description="Higher enrichment for advanced reactors")
+    HIGHLY_ENRICHED = PermissibleValue(
+        text="HIGHLY_ENRICHED",
+        title="Highly Enriched Uranium",
+        description="High enrichment for research and naval reactors")
+    WEAPONS_GRADE = PermissibleValue(
+        text="WEAPONS_GRADE",
+        title="Weapons-Grade Uranium",
+        description="Very high enrichment for weapons")
+
+    _defn = EnumDefinition(
+        name="UraniumEnrichmentLevelEnum",
+        description="Standard uranium-235 enrichment level classifications",
+    )
+
+class FuelFormEnum(EnumDefinitionImpl):
+    """
+    Physical forms of nuclear fuel
+    """
+    OXIDE_PELLETS = PermissibleValue(
+        text="OXIDE_PELLETS",
+        title="Oxide Pellets",
+        description="Ceramic uranium dioxide pellets")
+    METAL_SLUGS = PermissibleValue(
+        text="METAL_SLUGS",
+        title="Metal Slugs",
+        description="Metallic uranium fuel elements")
+    COATED_PARTICLES = PermissibleValue(
+        text="COATED_PARTICLES",
+        title="Coated Particles",
+        description="Microspheres with protective coatings")
+    LIQUID_SOLUTION = PermissibleValue(
+        text="LIQUID_SOLUTION",
+        title="Liquid Solution",
+        description="Fuel dissolved in liquid carrier")
+    DISPERSION_FUEL = PermissibleValue(
+        text="DISPERSION_FUEL",
+        title="Dispersion Fuel",
+        description="Fuel particles dispersed in matrix")
+    CERMET_FUEL = PermissibleValue(
+        text="CERMET_FUEL",
+        title="Cermet Fuel",
+        description="Ceramic-metal composite fuel")
+    PLATE_FUEL = PermissibleValue(
+        text="PLATE_FUEL",
+        title="Plate Fuel",
+        description="Flat plate fuel elements")
+    ROD_FUEL = PermissibleValue(
+        text="ROD_FUEL",
+        title="Rod Fuel",
+        description="Cylindrical fuel rods")
+
+    _defn = EnumDefinition(
+        name="FuelFormEnum",
+        description="Physical forms of nuclear fuel",
+    )
+
+class FuelAssemblyTypeEnum(EnumDefinitionImpl):
+    """
+    Types of fuel assembly configurations
+    """
+    PWR_ASSEMBLY = PermissibleValue(
+        text="PWR_ASSEMBLY",
+        title="PWR Fuel Assembly",
+        description="Square array fuel assembly for PWR")
+    BWR_ASSEMBLY = PermissibleValue(
+        text="BWR_ASSEMBLY",
+        title="BWR Fuel Assembly",
+        description="Square array fuel assembly for BWR")
+    CANDU_BUNDLE = PermissibleValue(
+        text="CANDU_BUNDLE",
+        title="CANDU Fuel Bundle",
+        description="Cylindrical fuel bundle for PHWR")
+    RBMK_ASSEMBLY = PermissibleValue(
+        text="RBMK_ASSEMBLY",
+        title="RBMK Fuel Assembly",
+        description="Fuel assembly for RBMK reactors")
+    AGR_ASSEMBLY = PermissibleValue(
+        text="AGR_ASSEMBLY",
+        title="AGR Fuel Assembly",
+        description="Fuel stringer for AGR")
+    HTGR_BLOCK = PermissibleValue(
+        text="HTGR_BLOCK",
+        title="HTGR Fuel Block",
+        description="Graphite block with TRISO fuel")
+    FAST_REACTOR_ASSEMBLY = PermissibleValue(
+        text="FAST_REACTOR_ASSEMBLY",
+        title="Fast Reactor Assembly",
+        description="Fuel assembly for fast reactors")
+
+    _defn = EnumDefinition(
+        name="FuelAssemblyTypeEnum",
+        description="Types of fuel assembly configurations",
+    )
+
+class FuelCycleStageEnum(EnumDefinitionImpl):
+    """
+    Stages in the nuclear fuel cycle
+    """
+    MINING = PermissibleValue(
+        text="MINING",
+        title="Uranium Mining",
+        description="Extraction of uranium ore from deposits")
+    CONVERSION = PermissibleValue(
+        text="CONVERSION",
+        title="Conversion",
+        description="Conversion of uranium concentrate to UF6")
+    ENRICHMENT = PermissibleValue(
+        text="ENRICHMENT",
+        title="Enrichment",
+        description="Increase of U-235 concentration")
+    FUEL_FABRICATION = PermissibleValue(
+        text="FUEL_FABRICATION",
+        title="Fuel Fabrication",
+        description="Manufacturing of fuel assemblies")
+    REACTOR_OPERATION = PermissibleValue(
+        text="REACTOR_OPERATION",
+        title="Reactor Operation",
+        description="Power generation in nuclear reactor")
+    INTERIM_STORAGE = PermissibleValue(
+        text="INTERIM_STORAGE",
+        title="Interim Storage",
+        description="Temporary storage of spent fuel")
+    REPROCESSING = PermissibleValue(
+        text="REPROCESSING",
+        title="Reprocessing",
+        description="Chemical separation of spent fuel components")
+    DISPOSAL = PermissibleValue(
+        text="DISPOSAL",
+        title="Disposal",
+        description="Permanent disposal of nuclear waste")
+
+    _defn = EnumDefinition(
+        name="FuelCycleStageEnum",
+        description="Stages in the nuclear fuel cycle",
+    )
+
+class FissileIsotopeEnum(EnumDefinitionImpl):
+    """
+    Fissile isotopes used in nuclear fuel
+    """
+    URANIUM_233 = PermissibleValue(
+        text="URANIUM_233",
+        title="Uranium-233",
+        description="Fissile isotope produced from thorium")
+    URANIUM_235 = PermissibleValue(
+        text="URANIUM_235",
+        title="Uranium-235",
+        description="Naturally occurring fissile uranium isotope")
+    PLUTONIUM_239 = PermissibleValue(
+        text="PLUTONIUM_239",
+        title="Plutonium-239",
+        description="Fissile plutonium isotope from U-238 breeding")
+    PLUTONIUM_241 = PermissibleValue(
+        text="PLUTONIUM_241",
+        title="Plutonium-241",
+        description="Fissile plutonium isotope with short half-life")
+
+    _defn = EnumDefinition(
+        name="FissileIsotopeEnum",
+        description="Fissile isotopes used in nuclear fuel",
+    )
+
+class IAEAWasteClassificationEnum(EnumDefinitionImpl):
+    """
+    IAEA General Safety Requirements radioactive waste classification scheme
+    """
+    EXEMPT_WASTE = PermissibleValue(
+        text="EXEMPT_WASTE",
+        title="Exempt Waste (EW)",
+        description="Waste with negligible radioactivity requiring no regulatory control")
+    VERY_SHORT_LIVED_WASTE = PermissibleValue(
+        text="VERY_SHORT_LIVED_WASTE",
+        title="Very Short-Lived Waste (VSLW)",
+        description="Waste stored for decay to exempt levels within few years")
+    VERY_LOW_LEVEL_WASTE = PermissibleValue(
+        text="VERY_LOW_LEVEL_WASTE",
+        title="Very Low Level Waste (VLLW)",
+        description="Waste requiring limited containment and isolation")
+    LOW_LEVEL_WASTE = PermissibleValue(
+        text="LOW_LEVEL_WASTE",
+        title="Low Level Waste (LLW)",
+        description="Waste requiring containment for up to hundreds of years")
+    INTERMEDIATE_LEVEL_WASTE = PermissibleValue(
+        text="INTERMEDIATE_LEVEL_WASTE",
+        title="Intermediate Level Waste (ILW)",
+        description="Waste requiring containment for thousands of years")
+    HIGH_LEVEL_WASTE = PermissibleValue(
+        text="HIGH_LEVEL_WASTE",
+        title="High Level Waste (HLW)",
+        description="Waste requiring containment for thousands to hundreds of thousands of years")
+
+    _defn = EnumDefinition(
+        name="IAEAWasteClassificationEnum",
+        description="IAEA General Safety Requirements radioactive waste classification scheme",
+    )
+
+class NRCWasteClassEnum(EnumDefinitionImpl):
+    """
+    US NRC 10 CFR 61 low-level radioactive waste classification
+    """
+    CLASS_A = PermissibleValue(
+        text="CLASS_A",
+        title="Class A Low-Level Waste",
+        description="Lowest radioactivity waste suitable for shallow land burial")
+    CLASS_B = PermissibleValue(
+        text="CLASS_B",
+        title="Class B Low-Level Waste",
+        description="Intermediate radioactivity requiring waste form stability")
+    CLASS_C = PermissibleValue(
+        text="CLASS_C",
+        title="Class C Low-Level Waste",
+        description="Highest concentration suitable for shallow land burial")
+    GREATER_THAN_CLASS_C = PermissibleValue(
+        text="GREATER_THAN_CLASS_C",
+        title="Greater Than Class C Waste (GTCC)",
+        description="Waste exceeding Class C limits, generally unsuitable for shallow burial")
+
+    _defn = EnumDefinition(
+        name="NRCWasteClassEnum",
+        description="US NRC 10 CFR 61 low-level radioactive waste classification",
+    )
+
+class WasteHeatGenerationEnum(EnumDefinitionImpl):
+    """
+    Heat generation categories for radioactive waste
+    """
+    NEGLIGIBLE_HEAT = PermissibleValue(
+        text="NEGLIGIBLE_HEAT",
+        title="Negligible Heat Generation",
+        description="Waste generating negligible heat")
+    LOW_HEAT = PermissibleValue(
+        text="LOW_HEAT",
+        title="Low Heat Generation",
+        description="Waste generating low but measurable heat")
+    HIGH_HEAT = PermissibleValue(
+        text="HIGH_HEAT",
+        title="High Heat Generation",
+        description="Waste generating significant heat requiring thermal management")
+
+    _defn = EnumDefinition(
+        name="WasteHeatGenerationEnum",
+        description="Heat generation categories for radioactive waste",
+    )
+
+class WasteHalfLifeCategoryEnum(EnumDefinitionImpl):
+    """
+    Half-life categories for radioactive waste classification
+    """
+    VERY_SHORT_LIVED = PermissibleValue(
+        text="VERY_SHORT_LIVED",
+        title="Very Short-Lived",
+        description="Radionuclides with very short half-lives")
+    SHORT_LIVED = PermissibleValue(
+        text="SHORT_LIVED",
+        title="Short-Lived",
+        description="Radionuclides with short half-lives")
+    LONG_LIVED = PermissibleValue(
+        text="LONG_LIVED",
+        title="Long-Lived",
+        description="Radionuclides with long half-lives")
+
+    _defn = EnumDefinition(
+        name="WasteHalfLifeCategoryEnum",
+        description="Half-life categories for radioactive waste classification",
+    )
+
+class WasteDisposalMethodEnum(EnumDefinitionImpl):
+    """
+    Methods for radioactive waste disposal
+    """
+    CLEARANCE = PermissibleValue(
+        text="CLEARANCE",
+        title="Clearance for Unrestricted Use",
+        description="Release from regulatory control as ordinary waste")
+    DECAY_STORAGE = PermissibleValue(
+        text="DECAY_STORAGE",
+        title="Decay Storage",
+        description="Storage for radioactive decay to exempt levels")
+    NEAR_SURFACE_DISPOSAL = PermissibleValue(
+        text="NEAR_SURFACE_DISPOSAL",
+        title="Near-Surface Disposal",
+        description="Disposal in engineered near-surface facilities")
+    GEOLOGICAL_DISPOSAL = PermissibleValue(
+        text="GEOLOGICAL_DISPOSAL",
+        title="Geological Disposal",
+        description="Deep underground disposal in stable geological formations")
+    BOREHOLE_DISPOSAL = PermissibleValue(
+        text="BOREHOLE_DISPOSAL",
+        title="Borehole Disposal",
+        description="Disposal in deep boreholes")
+    TRANSMUTATION = PermissibleValue(
+        text="TRANSMUTATION",
+        title="Transmutation",
+        description="Nuclear transformation to shorter-lived or stable isotopes")
+
+    _defn = EnumDefinition(
+        name="WasteDisposalMethodEnum",
+        description="Methods for radioactive waste disposal",
+    )
+
+class WasteSourceEnum(EnumDefinitionImpl):
+    """
+    Sources of radioactive waste generation
+    """
+    NUCLEAR_POWER_PLANTS = PermissibleValue(
+        text="NUCLEAR_POWER_PLANTS",
+        title="Nuclear Power Plants",
+        description="Waste from commercial nuclear power generation")
+    MEDICAL_APPLICATIONS = PermissibleValue(
+        text="MEDICAL_APPLICATIONS",
+        title="Medical Applications",
+        description="Waste from nuclear medicine and radiotherapy")
+    INDUSTRIAL_APPLICATIONS = PermissibleValue(
+        text="INDUSTRIAL_APPLICATIONS",
+        title="Industrial Applications",
+        description="Waste from industrial use of radioactive materials")
+    RESEARCH_FACILITIES = PermissibleValue(
+        text="RESEARCH_FACILITIES",
+        title="Research Facilities",
+        description="Waste from research reactors and laboratories")
+    NUCLEAR_WEAPONS_PROGRAM = PermissibleValue(
+        text="NUCLEAR_WEAPONS_PROGRAM",
+        title="Nuclear Weapons Program",
+        description="Waste from defense nuclear activities")
+    DECOMMISSIONING = PermissibleValue(
+        text="DECOMMISSIONING",
+        title="Facility Decommissioning",
+        description="Waste from dismantling nuclear facilities")
+    URANIUM_MINING = PermissibleValue(
+        text="URANIUM_MINING",
+        title="Uranium Mining and Milling",
+        description="Waste from uranium extraction and processing")
+    FUEL_CYCLE_FACILITIES = PermissibleValue(
+        text="FUEL_CYCLE_FACILITIES",
+        title="Fuel Cycle Facilities",
+        description="Waste from fuel fabrication, enrichment, and reprocessing")
+
+    _defn = EnumDefinition(
+        name="WasteSourceEnum",
+        description="Sources of radioactive waste generation",
+    )
+
+class TransuranicWasteCategoryEnum(EnumDefinitionImpl):
+    """
+    Transuranic waste classifications (US system)
+    """
+    CONTACT_HANDLED_TRU = PermissibleValue(
+        text="CONTACT_HANDLED_TRU",
+        title="Contact-Handled Transuranic Waste",
+        description="TRU waste with surface dose rate ≤200 mrem/hr")
+    REMOTE_HANDLED_TRU = PermissibleValue(
+        text="REMOTE_HANDLED_TRU",
+        title="Remote-Handled Transuranic Waste",
+        description="TRU waste with surface dose rate >200 mrem/hr")
+    TRU_MIXED_WASTE = PermissibleValue(
+        text="TRU_MIXED_WASTE",
+        title="TRU Mixed Waste",
+        description="TRU waste also containing hazardous chemical components")
+
+    _defn = EnumDefinition(
+        name="TransuranicWasteCategoryEnum",
+        description="Transuranic waste classifications (US system)",
+    )
+
+class INESLevelEnum(EnumDefinitionImpl):
+    """
+    International Nuclear and Radiological Event Scale (INES) levels
+    """
+    LEVEL_0 = PermissibleValue(
+        text="LEVEL_0",
+        title="Level 0 - Below Scale/Deviation",
+        description="Events without safety significance")
+    LEVEL_1 = PermissibleValue(
+        text="LEVEL_1",
+        title="Level 1 - Anomaly",
+        description="Anomaly beyond authorized operating regime")
+    LEVEL_2 = PermissibleValue(
+        text="LEVEL_2",
+        title="Level 2 - Incident",
+        description="Incident with significant defenses remaining")
+    LEVEL_3 = PermissibleValue(
+        text="LEVEL_3",
+        title="Level 3 - Serious Incident",
+        description="Serious incident with some defense degradation")
+    LEVEL_4 = PermissibleValue(
+        text="LEVEL_4",
+        title="Level 4 - Accident with Local Consequences",
+        description="Accident with minor off-site releases")
+    LEVEL_5 = PermissibleValue(
+        text="LEVEL_5",
+        title="Level 5 - Accident with Wider Consequences",
+        description="Accident with limited off-site releases")
+    LEVEL_6 = PermissibleValue(
+        text="LEVEL_6",
+        title="Level 6 - Serious Accident",
+        description="Serious accident with significant releases")
+    LEVEL_7 = PermissibleValue(
+        text="LEVEL_7",
+        title="Level 7 - Major Accident",
+        description="Major accident with widespread health and environmental effects")
+
+    _defn = EnumDefinition(
+        name="INESLevelEnum",
+        description="International Nuclear and Radiological Event Scale (INES) levels",
+    )
+
+class EmergencyClassificationEnum(EnumDefinitionImpl):
+    """
+    Nuclear emergency action levels and classifications
+    """
+    NOTIFICATION_UNUSUAL_EVENT = PermissibleValue(
+        text="NOTIFICATION_UNUSUAL_EVENT",
+        title="Notification of Unusual Event (NOUE)",
+        description="Events that are in process or have occurred which indicate potential degradation")
+    ALERT = PermissibleValue(
+        text="ALERT",
+        title="Alert",
+        description="Events involving actual or potential substantial degradation of plant safety")
+    SITE_AREA_EMERGENCY = PermissibleValue(
+        text="SITE_AREA_EMERGENCY",
+        title="Site Area Emergency (SAE)",
+        description="Events with actual or likely major failures of plant protective systems")
+    GENERAL_EMERGENCY = PermissibleValue(
+        text="GENERAL_EMERGENCY",
+        title="General Emergency",
+        description="Events involving actual or imminent substantial core degradation")
+
+    _defn = EnumDefinition(
+        name="EmergencyClassificationEnum",
+        description="Nuclear emergency action levels and classifications",
+    )
+
+class NuclearSecurityCategoryEnum(EnumDefinitionImpl):
+    """
+    IAEA nuclear material security categories (INFCIRC/225)
+    """
+    CATEGORY_I = PermissibleValue(
+        text="CATEGORY_I",
+        title="Category I Nuclear Material",
+        description="Material that can be used directly to manufacture nuclear explosive devices")
+    CATEGORY_II = PermissibleValue(
+        text="CATEGORY_II",
+        title="Category II Nuclear Material",
+        description="Material requiring further processing to manufacture nuclear explosive devices")
+    CATEGORY_III = PermissibleValue(
+        text="CATEGORY_III",
+        title="Category III Nuclear Material",
+        description="Material posing radiation hazard but minimal proliferation risk")
+    CATEGORY_IV = PermissibleValue(
+        text="CATEGORY_IV",
+        title="Category IV Nuclear Material",
+        description="Material with minimal security significance")
+
+    _defn = EnumDefinition(
+        name="NuclearSecurityCategoryEnum",
+        description="IAEA nuclear material security categories (INFCIRC/225)",
+    )
+
+class SafetySystemClassEnum(EnumDefinitionImpl):
+    """
+    Nuclear safety system classifications (based on IEEE and ASME standards)
+    """
+    CLASS_1E = PermissibleValue(
+        text="CLASS_1E",
+        title="Class 1E Safety Systems",
+        description="Safety systems essential to emergency reactor shutdown and core cooling")
+    SAFETY_RELATED = PermissibleValue(
+        text="SAFETY_RELATED",
+        title="Safety-Related Systems",
+        description="Systems important to safety but not classified as Class 1E")
+    SAFETY_SIGNIFICANT = PermissibleValue(
+        text="SAFETY_SIGNIFICANT",
+        title="Safety-Significant Systems",
+        description="Systems with risk significance but not safety-related")
+    NON_SAFETY_RELATED = PermissibleValue(
+        text="NON_SAFETY_RELATED",
+        title="Non-Safety-Related Systems",
+        description="Systems not required for nuclear safety functions")
+
+    _defn = EnumDefinition(
+        name="SafetySystemClassEnum",
+        description="Nuclear safety system classifications (based on IEEE and ASME standards)",
+    )
+
+class ReactorSafetyFunctionEnum(EnumDefinitionImpl):
+    """
+    Fundamental nuclear reactor safety functions
+    """
+    REACTIVITY_CONTROL = PermissibleValue(
+        text="REACTIVITY_CONTROL",
+        title="Reactivity Control",
+        description="Control of nuclear chain reaction")
+    HEAT_REMOVAL = PermissibleValue(
+        text="HEAT_REMOVAL",
+        title="Heat Removal",
+        description="Removal of decay heat from reactor core")
+    CONTAINMENT_INTEGRITY = PermissibleValue(
+        text="CONTAINMENT_INTEGRITY",
+        title="Containment Integrity",
+        description="Confinement of radioactive materials")
+    CORE_COOLING = PermissibleValue(
+        text="CORE_COOLING",
+        title="Core Cooling",
+        description="Maintenance of adequate core cooling")
+    SHUTDOWN_CAPABILITY = PermissibleValue(
+        text="SHUTDOWN_CAPABILITY",
+        title="Shutdown Capability",
+        description="Ability to shut down and maintain shutdown")
+
+    _defn = EnumDefinition(
+        name="ReactorSafetyFunctionEnum",
+        description="Fundamental nuclear reactor safety functions",
+    )
+
+class DefenseInDepthLevelEnum(EnumDefinitionImpl):
+    """
+    Defense in depth barrier levels for nuclear safety
+    """
+    LEVEL_1 = PermissibleValue(
+        text="LEVEL_1",
+        title="Level 1 - Prevention of Abnormal Operation",
+        description="Conservative design and high quality in construction and operation")
+    LEVEL_2 = PermissibleValue(
+        text="LEVEL_2",
+        title="Level 2 - Control of Abnormal Operation",
+        description="Control of abnormal operation and detection of failures")
+    LEVEL_3 = PermissibleValue(
+        text="LEVEL_3",
+        title="Level 3 - Control of Accidents Within Design Basis",
+        description="Control of accidents to prevent progression to severe conditions")
+    LEVEL_4 = PermissibleValue(
+        text="LEVEL_4",
+        title="Level 4 - Control of Severe Plant Conditions",
+        description="Control of severe accidents including prevention of core melt progression")
+    LEVEL_5 = PermissibleValue(
+        text="LEVEL_5",
+        title="Level 5 - Mitigation of Radiological Consequences",
+        description="Mitigation of off-site radiological consequences")
+
+    _defn = EnumDefinition(
+        name="DefenseInDepthLevelEnum",
+        description="Defense in depth barrier levels for nuclear safety",
+    )
+
+class RadiationProtectionZoneEnum(EnumDefinitionImpl):
+    """
+    Radiation protection zone classifications for nuclear facilities
+    """
+    EXCLUSION_AREA = PermissibleValue(
+        text="EXCLUSION_AREA",
+        title="Exclusion Area",
+        description="Area under control of reactor operator with restricted access")
+    LOW_POPULATION_ZONE = PermissibleValue(
+        text="LOW_POPULATION_ZONE",
+        title="Low Population Zone (LPZ)",
+        description="Area with low population density surrounding exclusion area")
+    EMERGENCY_PLANNING_ZONE = PermissibleValue(
+        text="EMERGENCY_PLANNING_ZONE",
+        title="Emergency Planning Zone (EPZ)",
+        description="Area for which emergency planning is conducted")
+    INGESTION_PATHWAY_ZONE = PermissibleValue(
+        text="INGESTION_PATHWAY_ZONE",
+        title="Ingestion Pathway Zone",
+        description="Area for controlling food and water contamination")
+    CONTROLLED_AREA = PermissibleValue(
+        text="CONTROLLED_AREA",
+        title="Controlled Area",
+        description="Area within facility boundary with access control")
+    SUPERVISED_AREA = PermissibleValue(
+        text="SUPERVISED_AREA",
+        title="Supervised Area",
+        description="Area with potential for radiation exposure but lower than controlled")
+
+    _defn = EnumDefinition(
+        name="RadiationProtectionZoneEnum",
+        description="Radiation protection zone classifications for nuclear facilities",
+    )
+
+class NuclearFacilityTypeEnum(EnumDefinitionImpl):
+    """
+    Types of nuclear facilities and infrastructure
+    """
+    COMMERCIAL_POWER_PLANT = PermissibleValue(
+        text="COMMERCIAL_POWER_PLANT",
+        title="Commercial Nuclear Power Plant",
+        description="Large-scale commercial reactor for electricity generation")
+    RESEARCH_REACTOR = PermissibleValue(
+        text="RESEARCH_REACTOR",
+        title="Research Reactor",
+        description="Reactor designed for research, training, and isotope production")
+    TEST_REACTOR = PermissibleValue(
+        text="TEST_REACTOR",
+        title="Test Reactor",
+        description="Reactor for testing materials and components")
+    PROTOTYPE_REACTOR = PermissibleValue(
+        text="PROTOTYPE_REACTOR",
+        title="Prototype Reactor",
+        description="Reactor for demonstrating new technology")
+    NAVAL_REACTOR = PermissibleValue(
+        text="NAVAL_REACTOR",
+        title="Naval Reactor",
+        description="Reactor for ship or submarine propulsion")
+    SPACE_REACTOR = PermissibleValue(
+        text="SPACE_REACTOR",
+        title="Space Nuclear Reactor",
+        description="Reactor designed for space applications")
+    PRODUCTION_REACTOR = PermissibleValue(
+        text="PRODUCTION_REACTOR",
+        title="Production Reactor",
+        description="Reactor for producing nuclear materials")
+    URANIUM_MINE = PermissibleValue(
+        text="URANIUM_MINE",
+        title="Uranium Mine",
+        description="Facility for extracting uranium ore")
+    URANIUM_MILL = PermissibleValue(
+        text="URANIUM_MILL",
+        title="Uranium Mill",
+        description="Facility for processing uranium ore into yellowcake")
+    CONVERSION_FACILITY = PermissibleValue(
+        text="CONVERSION_FACILITY",
+        title="Conversion Facility",
+        description="Facility for converting yellowcake to UF6")
+    ENRICHMENT_FACILITY = PermissibleValue(
+        text="ENRICHMENT_FACILITY",
+        title="Enrichment Facility",
+        description="Facility for increasing U-235 concentration")
+    FUEL_FABRICATION_FACILITY = PermissibleValue(
+        text="FUEL_FABRICATION_FACILITY",
+        title="Fuel Fabrication Facility",
+        description="Facility for manufacturing nuclear fuel assemblies")
+    REPROCESSING_FACILITY = PermissibleValue(
+        text="REPROCESSING_FACILITY",
+        title="Reprocessing Facility",
+        description="Facility for separating spent fuel components")
+    INTERIM_STORAGE_FACILITY = PermissibleValue(
+        text="INTERIM_STORAGE_FACILITY",
+        title="Interim Storage Facility",
+        description="Facility for temporary storage of nuclear materials")
+    GEOLOGICAL_REPOSITORY = PermissibleValue(
+        text="GEOLOGICAL_REPOSITORY",
+        title="Geological Repository",
+        description="Deep underground facility for permanent waste disposal")
+    DECOMMISSIONING_SITE = PermissibleValue(
+        text="DECOMMISSIONING_SITE",
+        title="Decommissioning Site",
+        description="Nuclear facility undergoing dismantlement")
+    NUCLEAR_LABORATORY = PermissibleValue(
+        text="NUCLEAR_LABORATORY",
+        title="Nuclear Laboratory",
+        description="Laboratory facility handling radioactive materials")
+    RADIOISOTOPE_PRODUCTION_FACILITY = PermissibleValue(
+        text="RADIOISOTOPE_PRODUCTION_FACILITY",
+        title="Radioisotope Production Facility",
+        description="Facility for producing medical and industrial isotopes")
+
+    _defn = EnumDefinition(
+        name="NuclearFacilityTypeEnum",
+        description="Types of nuclear facilities and infrastructure",
+    )
+
+class PowerPlantStatusEnum(EnumDefinitionImpl):
+    """
+    Operational status of nuclear power plants
+    """
+    UNDER_CONSTRUCTION = PermissibleValue(
+        text="UNDER_CONSTRUCTION",
+        title="Under Construction",
+        description="Plant currently being built")
+    COMMISSIONING = PermissibleValue(
+        text="COMMISSIONING",
+        title="Commissioning",
+        description="Plant undergoing testing before commercial operation")
+    COMMERCIAL_OPERATION = PermissibleValue(
+        text="COMMERCIAL_OPERATION",
+        title="Commercial Operation",
+        description="Plant operating commercially for electricity generation")
+    REFUELING_OUTAGE = PermissibleValue(
+        text="REFUELING_OUTAGE",
+        title="Refueling Outage",
+        description="Plant temporarily shut down for fuel replacement and maintenance")
+    EXTENDED_OUTAGE = PermissibleValue(
+        text="EXTENDED_OUTAGE",
+        title="Extended Outage",
+        description="Plant shut down for extended period for major work")
+    PERMANENTLY_SHUTDOWN = PermissibleValue(
+        text="PERMANENTLY_SHUTDOWN",
+        title="Permanently Shutdown",
+        description="Plant permanently ceased operation")
+    DECOMMISSIONING = PermissibleValue(
+        text="DECOMMISSIONING",
+        title="Decommissioning",
+        description="Plant undergoing dismantlement")
+    DECOMMISSIONED = PermissibleValue(
+        text="DECOMMISSIONED",
+        title="Decommissioned",
+        description="Plant completely dismantled and site restored")
+
+    _defn = EnumDefinition(
+        name="PowerPlantStatusEnum",
+        description="Operational status of nuclear power plants",
+    )
+
+class ResearchReactorTypeEnum(EnumDefinitionImpl):
+    """
+    Types of research reactors
+    """
+    POOL_TYPE = PermissibleValue(
+        text="POOL_TYPE",
+        title="Pool-Type Research Reactor",
+        description="Reactor with fuel in open pool of water")
+    TANK_TYPE = PermissibleValue(
+        text="TANK_TYPE",
+        title="Tank-Type Research Reactor",
+        description="Reactor with fuel in enclosed tank")
+    HOMOGENEOUS = PermissibleValue(
+        text="HOMOGENEOUS",
+        title="Homogeneous Research Reactor",
+        description="Reactor with fuel in liquid form")
+    FAST_RESEARCH_REACTOR = PermissibleValue(
+        text="FAST_RESEARCH_REACTOR",
+        title="Fast Research Reactor",
+        description="Research reactor using fast neutrons")
+    PULSED_REACTOR = PermissibleValue(
+        text="PULSED_REACTOR",
+        title="Pulsed Research Reactor",
+        description="Reactor designed for pulsed operation")
+    CRITICAL_ASSEMBLY = PermissibleValue(
+        text="CRITICAL_ASSEMBLY",
+        title="Critical Assembly",
+        description="Minimal reactor for criticality studies")
+    SUBCRITICAL_ASSEMBLY = PermissibleValue(
+        text="SUBCRITICAL_ASSEMBLY",
+        title="Subcritical Assembly",
+        description="Neutron source-driven subcritical system")
+
+    _defn = EnumDefinition(
+        name="ResearchReactorTypeEnum",
+        description="Types of research reactors",
+    )
+
+class FuelCycleFacilityTypeEnum(EnumDefinitionImpl):
+    """
+    Types of nuclear fuel cycle facilities
+    """
+    IN_SITU_LEACH_MINE = PermissibleValue(
+        text="IN_SITU_LEACH_MINE",
+        title="In-Situ Leach Mine",
+        description="Uranium extraction by solution mining")
+    CONVENTIONAL_MINE = PermissibleValue(
+        text="CONVENTIONAL_MINE",
+        title="Conventional Mine",
+        description="Traditional underground or open-pit uranium mining")
+    HEAP_LEACH_FACILITY = PermissibleValue(
+        text="HEAP_LEACH_FACILITY",
+        title="Heap Leach Facility",
+        description="Uranium extraction from low-grade ores by heap leaching")
+    GASEOUS_DIFFUSION_PLANT = PermissibleValue(
+        text="GASEOUS_DIFFUSION_PLANT",
+        title="Gaseous Diffusion Enrichment Plant",
+        description="Uranium enrichment using gaseous diffusion")
+    GAS_CENTRIFUGE_PLANT = PermissibleValue(
+        text="GAS_CENTRIFUGE_PLANT",
+        title="Gas Centrifuge Enrichment Plant",
+        description="Uranium enrichment using centrifuge technology")
+    LASER_ENRICHMENT_FACILITY = PermissibleValue(
+        text="LASER_ENRICHMENT_FACILITY",
+        title="Laser Enrichment Facility",
+        description="Uranium enrichment using laser isotope separation")
+    MOX_FUEL_FABRICATION = PermissibleValue(
+        text="MOX_FUEL_FABRICATION",
+        title="MOX Fuel Fabrication Facility",
+        description="Facility for manufacturing mixed oxide fuel")
+    AQUEOUS_REPROCESSING = PermissibleValue(
+        text="AQUEOUS_REPROCESSING",
+        title="Aqueous Reprocessing Plant",
+        description="Spent fuel reprocessing using aqueous methods")
+    PYROPROCESSING_FACILITY = PermissibleValue(
+        text="PYROPROCESSING_FACILITY",
+        title="Pyroprocessing Facility",
+        description="Spent fuel reprocessing using electrochemical methods")
+
+    _defn = EnumDefinition(
+        name="FuelCycleFacilityTypeEnum",
+        description="Types of nuclear fuel cycle facilities",
+    )
+
+class WasteFacilityTypeEnum(EnumDefinitionImpl):
+    """
+    Types of nuclear waste management facilities
+    """
+    SPENT_FUEL_POOL = PermissibleValue(
+        text="SPENT_FUEL_POOL",
+        title="Spent Fuel Pool",
+        description="Water-filled pool for cooling spent fuel")
+    DRY_CASK_STORAGE = PermissibleValue(
+        text="DRY_CASK_STORAGE",
+        title="Dry Cask Storage",
+        description="Air-cooled storage in sealed containers")
+    CENTRALIZED_INTERIM_STORAGE = PermissibleValue(
+        text="CENTRALIZED_INTERIM_STORAGE",
+        title="Centralized Interim Storage Facility",
+        description="Large-scale interim storage away from reactor sites")
+    LOW_LEVEL_WASTE_DISPOSAL = PermissibleValue(
+        text="LOW_LEVEL_WASTE_DISPOSAL",
+        title="Low-Level Waste Disposal Site",
+        description="Near-surface disposal for low-level waste")
+    GREATER_THAN_CLASS_C_STORAGE = PermissibleValue(
+        text="GREATER_THAN_CLASS_C_STORAGE",
+        title="Greater Than Class C Storage",
+        description="Storage for waste exceeding Class C limits")
+    TRANSURANIC_WASTE_REPOSITORY = PermissibleValue(
+        text="TRANSURANIC_WASTE_REPOSITORY",
+        title="Transuranic Waste Repository",
+        description="Deep geological repository for TRU waste")
+    HIGH_LEVEL_WASTE_REPOSITORY = PermissibleValue(
+        text="HIGH_LEVEL_WASTE_REPOSITORY",
+        title="High-Level Waste Repository",
+        description="Deep geological repository for high-level waste")
+    WASTE_TREATMENT_FACILITY = PermissibleValue(
+        text="WASTE_TREATMENT_FACILITY",
+        title="Waste Treatment Facility",
+        description="Facility for processing and conditioning waste")
+    DECONTAMINATION_FACILITY = PermissibleValue(
+        text="DECONTAMINATION_FACILITY",
+        title="Decontamination Facility",
+        description="Facility for cleaning contaminated materials")
+
+    _defn = EnumDefinition(
+        name="WasteFacilityTypeEnum",
+        description="Types of nuclear waste management facilities",
+    )
+
+class NuclearShipTypeEnum(EnumDefinitionImpl):
+    """
+    Types of nuclear-powered vessels
+    """
+    AIRCRAFT_CARRIER = PermissibleValue(
+        text="AIRCRAFT_CARRIER",
+        title="Nuclear Aircraft Carrier",
+        description="Large naval vessel with nuclear propulsion and aircraft operations")
+    SUBMARINE = PermissibleValue(
+        text="SUBMARINE",
+        title="Nuclear Submarine",
+        description="Underwater vessel with nuclear propulsion")
+    CRUISER = PermissibleValue(
+        text="CRUISER",
+        title="Nuclear Cruiser",
+        description="Large surface combatant with nuclear propulsion")
+    ICEBREAKER = PermissibleValue(
+        text="ICEBREAKER",
+        title="Nuclear Icebreaker",
+        description="Vessel designed to break ice using nuclear power")
+    MERCHANT_SHIP = PermissibleValue(
+        text="MERCHANT_SHIP",
+        title="Nuclear Merchant Ship",
+        description="Commercial cargo vessel with nuclear propulsion")
+    RESEARCH_VESSEL = PermissibleValue(
+        text="RESEARCH_VESSEL",
+        title="Nuclear Research Vessel",
+        description="Ship designed for oceanographic research with nuclear power")
+
+    _defn = EnumDefinition(
+        name="NuclearShipTypeEnum",
+        description="Types of nuclear-powered vessels",
+    )
+
+class ReactorOperatingStateEnum(EnumDefinitionImpl):
+    """
+    Operational states of nuclear reactors
+    """
+    STARTUP = PermissibleValue(
+        text="STARTUP",
+        title="Startup",
+        description="Reactor transitioning from shutdown to power operation")
+    CRITICAL = PermissibleValue(
+        text="CRITICAL",
+        title="Critical",
+        description="Reactor achieving self-sustaining chain reaction")
+    POWER_ESCALATION = PermissibleValue(
+        text="POWER_ESCALATION",
+        title="Power Escalation",
+        description="Reactor increasing power toward full power operation")
+    FULL_POWER_OPERATION = PermissibleValue(
+        text="FULL_POWER_OPERATION",
+        title="Full Power Operation",
+        description="Reactor operating at rated thermal power")
+    LOAD_FOLLOWING = PermissibleValue(
+        text="LOAD_FOLLOWING",
+        title="Load Following",
+        description="Reactor adjusting power to match electrical demand")
+    REDUCED_POWER = PermissibleValue(
+        text="REDUCED_POWER",
+        title="Reduced Power Operation",
+        description="Reactor operating below rated power")
+    HOT_STANDBY = PermissibleValue(
+        text="HOT_STANDBY",
+        title="Hot Standby",
+        description="Reactor subcritical but at operating temperature")
+    COLD_SHUTDOWN = PermissibleValue(
+        text="COLD_SHUTDOWN",
+        title="Cold Shutdown",
+        description="Reactor subcritical and cooled below operating temperature")
+    REFUELING = PermissibleValue(
+        text="REFUELING",
+        title="Refueling",
+        description="Reactor shut down for fuel replacement")
+    REACTOR_TRIP = PermissibleValue(
+        text="REACTOR_TRIP",
+        title="Reactor Trip",
+        description="Rapid automatic shutdown due to safety system actuation")
+    SCRAM = PermissibleValue(
+        text="SCRAM",
+        title="Scram",
+        description="Emergency rapid shutdown of reactor")
+    EMERGENCY_SHUTDOWN = PermissibleValue(
+        text="EMERGENCY_SHUTDOWN",
+        title="Emergency Shutdown",
+        description="Shutdown due to emergency conditions")
+
+    _defn = EnumDefinition(
+        name="ReactorOperatingStateEnum",
+        description="Operational states of nuclear reactors",
+    )
+
+class MaintenanceTypeEnum(EnumDefinitionImpl):
+    """
+    Types of nuclear facility maintenance activities
+    """
+    PREVENTIVE_MAINTENANCE = PermissibleValue(
+        text="PREVENTIVE_MAINTENANCE",
+        title="Preventive Maintenance",
+        description="Scheduled maintenance to prevent equipment failure")
+    CORRECTIVE_MAINTENANCE = PermissibleValue(
+        text="CORRECTIVE_MAINTENANCE",
+        title="Corrective Maintenance",
+        description="Maintenance to repair failed or degraded equipment")
+    PREDICTIVE_MAINTENANCE = PermissibleValue(
+        text="PREDICTIVE_MAINTENANCE",
+        title="Predictive Maintenance",
+        description="Maintenance based on condition monitoring")
+    CONDITION_BASED_MAINTENANCE = PermissibleValue(
+        text="CONDITION_BASED_MAINTENANCE",
+        title="Condition-Based Maintenance",
+        description="Maintenance triggered by equipment condition assessment")
+    REFUELING_OUTAGE_MAINTENANCE = PermissibleValue(
+        text="REFUELING_OUTAGE_MAINTENANCE",
+        title="Refueling Outage Maintenance",
+        description="Major maintenance during scheduled refueling")
+    FORCED_OUTAGE_MAINTENANCE = PermissibleValue(
+        text="FORCED_OUTAGE_MAINTENANCE",
+        title="Forced Outage Maintenance",
+        description="Unplanned maintenance due to equipment failure")
+    IN_SERVICE_INSPECTION = PermissibleValue(
+        text="IN_SERVICE_INSPECTION",
+        title="In-Service Inspection",
+        description="Required inspection of safety-related components")
+    MODIFICATION_WORK = PermissibleValue(
+        text="MODIFICATION_WORK",
+        title="Modification Work",
+        description="Changes to plant design or configuration")
+
+    _defn = EnumDefinition(
+        name="MaintenanceTypeEnum",
+        description="Types of nuclear facility maintenance activities",
+    )
+
+class LicensingStageEnum(EnumDefinitionImpl):
+    """
+    Nuclear facility licensing stages
+    """
+    SITE_PERMIT = PermissibleValue(
+        text="SITE_PERMIT",
+        title="Site Permit",
+        description="Early site permit for nuclear facility")
+    DESIGN_CERTIFICATION = PermissibleValue(
+        text="DESIGN_CERTIFICATION",
+        title="Design Certification",
+        description="Certification of standardized reactor design")
+    CONSTRUCTION_PERMIT = PermissibleValue(
+        text="CONSTRUCTION_PERMIT",
+        title="Construction Permit",
+        description="Authorization to begin nuclear facility construction")
+    OPERATING_LICENSE = PermissibleValue(
+        text="OPERATING_LICENSE",
+        title="Operating License",
+        description="Authorization for commercial reactor operation")
+    LICENSE_RENEWAL = PermissibleValue(
+        text="LICENSE_RENEWAL",
+        title="License Renewal",
+        description="Extension of operating license beyond initial term")
+    COMBINED_LICENSE = PermissibleValue(
+        text="COMBINED_LICENSE",
+        title="Combined License (COL)",
+        description="Combined construction and operating license")
+    DECOMMISSIONING_PLAN = PermissibleValue(
+        text="DECOMMISSIONING_PLAN",
+        title="Decommissioning Plan Approval",
+        description="Approval of facility decommissioning plan")
+    LICENSE_TERMINATION = PermissibleValue(
+        text="LICENSE_TERMINATION",
+        title="License Termination",
+        description="Final termination of nuclear facility license")
+
+    _defn = EnumDefinition(
+        name="LicensingStageEnum",
+        description="Nuclear facility licensing stages",
+    )
+
+class FuelCycleOperationEnum(EnumDefinitionImpl):
+    """
+    Nuclear fuel cycle operational activities
+    """
+    URANIUM_EXPLORATION = PermissibleValue(
+        text="URANIUM_EXPLORATION",
+        title="Uranium Exploration",
+        description="Search and evaluation of uranium deposits")
+    URANIUM_EXTRACTION = PermissibleValue(
+        text="URANIUM_EXTRACTION",
+        title="Uranium Extraction",
+        description="Mining and extraction of uranium ore")
+    URANIUM_MILLING = PermissibleValue(
+        text="URANIUM_MILLING",
+        title="Uranium Milling",
+        description="Processing of uranium ore to produce yellowcake")
+    URANIUM_CONVERSION = PermissibleValue(
+        text="URANIUM_CONVERSION",
+        title="Uranium Conversion",
+        description="Conversion of yellowcake to uranium hexafluoride")
+    URANIUM_ENRICHMENT = PermissibleValue(
+        text="URANIUM_ENRICHMENT",
+        title="Uranium Enrichment",
+        description="Increase U-235 concentration in uranium")
+    FUEL_FABRICATION = PermissibleValue(
+        text="FUEL_FABRICATION",
+        title="Fuel Fabrication",
+        description="Manufacturing of nuclear fuel assemblies")
+    REACTOR_FUEL_LOADING = PermissibleValue(
+        text="REACTOR_FUEL_LOADING",
+        title="Reactor Fuel Loading",
+        description="Installation of fresh fuel in reactor")
+    REACTOR_OPERATION = PermissibleValue(
+        text="REACTOR_OPERATION",
+        title="Reactor Operation",
+        description="Power generation and fuel burnup")
+    SPENT_FUEL_DISCHARGE = PermissibleValue(
+        text="SPENT_FUEL_DISCHARGE",
+        title="Spent Fuel Discharge",
+        description="Removal of used fuel from reactor")
+    SPENT_FUEL_STORAGE = PermissibleValue(
+        text="SPENT_FUEL_STORAGE",
+        title="Spent Fuel Storage",
+        description="Interim storage of discharged fuel")
+    SPENT_FUEL_REPROCESSING = PermissibleValue(
+        text="SPENT_FUEL_REPROCESSING",
+        title="Spent Fuel Reprocessing",
+        description="Chemical separation of spent fuel components")
+    WASTE_CONDITIONING = PermissibleValue(
+        text="WASTE_CONDITIONING",
+        title="Waste Conditioning",
+        description="Preparation of waste for storage or disposal")
+    WASTE_DISPOSAL = PermissibleValue(
+        text="WASTE_DISPOSAL",
+        title="Waste Disposal",
+        description="Permanent disposal of nuclear waste")
+
+    _defn = EnumDefinition(
+        name="FuelCycleOperationEnum",
+        description="Nuclear fuel cycle operational activities",
+    )
+
+class ReactorControlModeEnum(EnumDefinitionImpl):
+    """
+    Reactor control and safety system operational modes
+    """
+    MANUAL_CONTROL = PermissibleValue(
+        text="MANUAL_CONTROL",
+        title="Manual Control",
+        description="Direct operator control of reactor systems")
+    AUTOMATIC_CONTROL = PermissibleValue(
+        text="AUTOMATIC_CONTROL",
+        title="Automatic Control",
+        description="Automated reactor control systems")
+    REACTOR_PROTECTION_SYSTEM = PermissibleValue(
+        text="REACTOR_PROTECTION_SYSTEM",
+        title="Reactor Protection System Active",
+        description="Safety system monitoring for trip conditions")
+    ENGINEERED_SAFEGUARDS = PermissibleValue(
+        text="ENGINEERED_SAFEGUARDS",
+        title="Engineered Safeguards Active",
+        description="Safety systems for accident mitigation")
+    EMERGENCY_OPERATING_PROCEDURES = PermissibleValue(
+        text="EMERGENCY_OPERATING_PROCEDURES",
+        title="Emergency Operating Procedures",
+        description="Operator actions for emergency conditions")
+    SEVERE_ACCIDENT_MANAGEMENT = PermissibleValue(
+        text="SEVERE_ACCIDENT_MANAGEMENT",
+        title="Severe Accident Management",
+        description="Procedures for beyond design basis accidents")
+
+    _defn = EnumDefinition(
+        name="ReactorControlModeEnum",
+        description="Reactor control and safety system operational modes",
+    )
+
+class OperationalProcedureEnum(EnumDefinitionImpl):
+    """
+    Standard nuclear facility operational procedures
+    """
+    STARTUP_PROCEDURE = PermissibleValue(
+        text="STARTUP_PROCEDURE",
+        title="Reactor Startup Procedure",
+        description="Systematic procedure for bringing reactor to power")
+    SHUTDOWN_PROCEDURE = PermissibleValue(
+        text="SHUTDOWN_PROCEDURE",
+        title="Reactor Shutdown Procedure",
+        description="Systematic procedure for shutting down reactor")
+    REFUELING_PROCEDURE = PermissibleValue(
+        text="REFUELING_PROCEDURE",
+        title="Refueling Procedure",
+        description="Procedure for fuel handling and replacement")
+    SURVEILLANCE_TESTING = PermissibleValue(
+        text="SURVEILLANCE_TESTING",
+        title="Surveillance Testing",
+        description="Regular testing of safety systems")
+    MAINTENANCE_PROCEDURE = PermissibleValue(
+        text="MAINTENANCE_PROCEDURE",
+        title="Maintenance Procedure",
+        description="Systematic approach to equipment maintenance")
+    EMERGENCY_RESPONSE = PermissibleValue(
+        text="EMERGENCY_RESPONSE",
+        title="Emergency Response Procedure",
+        description="Response to emergency conditions")
+    RADIOLOGICAL_PROTECTION = PermissibleValue(
+        text="RADIOLOGICAL_PROTECTION",
+        title="Radiological Protection Procedure",
+        description="Procedures for radiation protection")
+    SECURITY_PROCEDURE = PermissibleValue(
+        text="SECURITY_PROCEDURE",
+        title="Security Procedure",
+        description="Physical security and access control procedures")
+
+    _defn = EnumDefinition(
+        name="OperationalProcedureEnum",
+        description="Standard nuclear facility operational procedures",
     )
 
 class MiningType(EnumDefinitionImpl):
@@ -10541,7 +12119,7 @@ class IndustrialDyeEnum(EnumDefinitionImpl):
     MALACHITE_GREEN = PermissibleValue(
         text="MALACHITE_GREEN",
         description="Malachite green",
-        meaning=CHEBI["11174"])
+        meaning=CHEBI["72449"])
     CRYSTAL_VIOLET = PermissibleValue(
         text="CRYSTAL_VIOLET",
         description="Crystal violet/Gentian violet",
@@ -10549,7 +12127,7 @@ class IndustrialDyeEnum(EnumDefinitionImpl):
     EOSIN = PermissibleValue(
         text="EOSIN",
         description="Eosin Y",
-        meaning=CHEBI["87199"])
+        meaning=CHEBI["52053"])
     SAFRANIN = PermissibleValue(
         text="SAFRANIN",
         description="Safranin O")
@@ -10601,7 +12179,7 @@ class FoodColoringEnum(EnumDefinitionImpl):
     ANNATTO = PermissibleValue(
         text="ANNATTO",
         description="Annatto (natural orange)",
-        meaning=CHEBI["3150"])
+        meaning=CHEBI["3136"])
     TURMERIC = PermissibleValue(
         text="TURMERIC",
         title="curcumin",
@@ -10610,7 +12188,7 @@ class FoodColoringEnum(EnumDefinitionImpl):
     BEETROOT_RED = PermissibleValue(
         text="BEETROOT_RED",
         description="Beetroot red/Betanin",
-        meaning=CHEBI["15060"])
+        meaning=CHEBI["3080"])
     CHLOROPHYLL = PermissibleValue(
         text="CHLOROPHYLL",
         description="Chlorophyll (natural green)",
@@ -12037,7 +13615,7 @@ class AminoAcidExtendedEnum(EnumDefinitionImpl):
     O = PermissibleValue(
         text="O",
         title="Pyrrolysine (22nd amino acid)",
-        meaning=CHEBI["21786"])
+        meaning=CHEBI["21860"])
 
     _defn = EnumDefinition(
         name="AminoAcidExtendedEnum",
@@ -12332,32 +13910,32 @@ class IUPACNucleotideCode(EnumDefinitionImpl):
     """
     A = PermissibleValue(
         text="A",
-        description="Adenine",
-        meaning=CHEBI["16708"])
+        title="A",
+        description="Adenine")
     T = PermissibleValue(
         text="T",
-        description="Thymine (DNA)",
-        meaning=CHEBI["17821"])
+        title="T",
+        description="Thymine (DNA)")
     U = PermissibleValue(
         text="U",
-        description="Uracil (RNA)",
-        meaning=CHEBI["17568"])
+        title="U",
+        description="Uracil (RNA)")
     G = PermissibleValue(
         text="G",
-        description="Guanine",
-        meaning=CHEBI["16235"])
+        title="G",
+        description="Guanine")
     C = PermissibleValue(
         text="C",
-        description="Cytosine",
-        meaning=CHEBI["16040"])
+        title="C",
+        description="Cytosine")
     R = PermissibleValue(
         text="R",
-        description="Purine (A or G)",
-        meaning=CHEBI["26401"])
+        title="R",
+        description="Purine (A or G)")
     Y = PermissibleValue(
         text="Y",
-        description="Pyrimidine (C or T/U)",
-        meaning=CHEBI["39447"])
+        title="Y",
+        description="Pyrimidine (C or T/U)")
     S = PermissibleValue(
         text="S",
         description="Strong interaction (G or C)")
@@ -12402,84 +13980,84 @@ class StandardAminoAcid(EnumDefinitionImpl):
     """
     A = PermissibleValue(
         text="A",
-        description="Alanine",
-        meaning=CHEBI["16977"])
+        title="A",
+        description="Alanine")
     R = PermissibleValue(
         text="R",
-        description="Arginine",
-        meaning=CHEBI["16467"])
+        title="R",
+        description="Arginine")
     N = PermissibleValue(
         text="N",
-        description="Asparagine",
-        meaning=CHEBI["17196"])
+        title="N",
+        description="Asparagine")
     D = PermissibleValue(
         text="D",
-        description="Aspartic acid",
-        meaning=CHEBI["17053"])
+        title="D",
+        description="Aspartic acid")
     C = PermissibleValue(
         text="C",
-        description="Cysteine",
-        meaning=CHEBI["17561"])
+        title="C",
+        description="Cysteine")
     E = PermissibleValue(
         text="E",
-        description="Glutamic acid",
-        meaning=CHEBI["16015"])
+        title="E",
+        description="Glutamic acid")
     Q = PermissibleValue(
         text="Q",
-        description="Glutamine",
-        meaning=CHEBI["18050"])
+        title="Q",
+        description="Glutamine")
     G = PermissibleValue(
         text="G",
-        description="Glycine",
-        meaning=CHEBI["15428"])
+        title="G",
+        description="Glycine")
     H = PermissibleValue(
         text="H",
-        description="Histidine",
-        meaning=CHEBI["15971"])
+        title="H",
+        description="Histidine")
     I = PermissibleValue(
         text="I",
-        description="Isoleucine",
-        meaning=CHEBI["17191"])
+        title="I",
+        description="Isoleucine")
     L = PermissibleValue(
         text="L",
-        description="Leucine",
-        meaning=CHEBI["15603"])
+        title="L",
+        description="Leucine")
     K = PermissibleValue(
         text="K",
-        description="Lysine",
-        meaning=CHEBI["18019"])
+        title="K",
+        description="Lysine")
     M = PermissibleValue(
         text="M",
-        description="Methionine",
-        meaning=CHEBI["16811"])
+        title="M",
+        description="Methionine")
     F = PermissibleValue(
         text="F",
-        description="Phenylalanine",
-        meaning=CHEBI["17295"])
+        title="F",
+        description="Phenylalanine")
     P = PermissibleValue(
         text="P",
-        description="Proline",
-        meaning=CHEBI["17203"])
+        title="P",
+        description="Proline")
     S = PermissibleValue(
         text="S",
-        description="Serine",
-        meaning=CHEBI["17115"])
+        title="S",
+        description="Serine")
     T = PermissibleValue(
         text="T",
-        description="Threonine",
-        meaning=CHEBI["16857"])
+        title="T",
+        description="Threonine")
     W = PermissibleValue(
         text="W",
-        description="Tryptophan",
-        meaning=CHEBI["16828"])
+        title="W",
+        description="Tryptophan")
     Y = PermissibleValue(
         text="Y",
-        description="Tyrosine",
-        meaning=CHEBI["18186"])
+        title="Y",
+        description="Tyrosine")
     V = PermissibleValue(
         text="V",
-        description="Valine",
-        meaning=CHEBI["16414"])
+        title="V",
+        description="Valine")
 
     _defn = EnumDefinition(
         name="StandardAminoAcid",
@@ -12493,92 +14071,92 @@ class IUPACAminoAcidCode(EnumDefinitionImpl):
     """
     A = PermissibleValue(
         text="A",
-        description="Alanine",
-        meaning=CHEBI["16977"])
+        title="A",
+        description="Alanine")
     R = PermissibleValue(
         text="R",
-        description="Arginine",
-        meaning=CHEBI["16467"])
+        title="R",
+        description="Arginine")
     N = PermissibleValue(
         text="N",
-        description="Asparagine",
-        meaning=CHEBI["17196"])
+        title="N",
+        description="Asparagine")
     D = PermissibleValue(
         text="D",
-        description="Aspartic acid",
-        meaning=CHEBI["17053"])
+        title="D",
+        description="Aspartic acid")
     C = PermissibleValue(
         text="C",
-        description="Cysteine",
-        meaning=CHEBI["17561"])
+        title="C",
+        description="Cysteine")
     E = PermissibleValue(
         text="E",
-        description="Glutamic acid",
-        meaning=CHEBI["16015"])
+        title="E",
+        description="Glutamic acid")
     Q = PermissibleValue(
         text="Q",
-        description="Glutamine",
-        meaning=CHEBI["18050"])
+        title="Q",
+        description="Glutamine")
     G = PermissibleValue(
         text="G",
-        description="Glycine",
-        meaning=CHEBI["15428"])
+        title="G",
+        description="Glycine")
     H = PermissibleValue(
         text="H",
-        description="Histidine",
-        meaning=CHEBI["15971"])
+        title="H",
+        description="Histidine")
     I = PermissibleValue(
         text="I",
-        description="Isoleucine",
-        meaning=CHEBI["17191"])
+        title="I",
+        description="Isoleucine")
     L = PermissibleValue(
         text="L",
-        description="Leucine",
-        meaning=CHEBI["15603"])
+        title="L",
+        description="Leucine")
     K = PermissibleValue(
         text="K",
-        description="Lysine",
-        meaning=CHEBI["18019"])
+        title="K",
+        description="Lysine")
     M = PermissibleValue(
         text="M",
-        description="Methionine",
-        meaning=CHEBI["16811"])
+        title="M",
+        description="Methionine")
     F = PermissibleValue(
         text="F",
-        description="Phenylalanine",
-        meaning=CHEBI["17295"])
+        title="F",
+        description="Phenylalanine")
     P = PermissibleValue(
         text="P",
-        description="Proline",
-        meaning=CHEBI["17203"])
+        title="P",
+        description="Proline")
     S = PermissibleValue(
         text="S",
-        description="Serine",
-        meaning=CHEBI["17115"])
+        title="S",
+        description="Serine")
     T = PermissibleValue(
         text="T",
-        description="Threonine",
-        meaning=CHEBI["16857"])
+        title="T",
+        description="Threonine")
     W = PermissibleValue(
         text="W",
-        description="Tryptophan",
-        meaning=CHEBI["16828"])
+        title="W",
+        description="Tryptophan")
     Y = PermissibleValue(
         text="Y",
-        description="Tyrosine",
-        meaning=CHEBI["18186"])
+        title="Y",
+        description="Tyrosine")
     V = PermissibleValue(
         text="V",
-        description="Valine",
-        meaning=CHEBI["16414"])
+        title="V",
+        description="Valine")
     U = PermissibleValue(
         text="U",
-        description="Selenocysteine (21st amino acid)",
-        meaning=CHEBI["16811"])
+        title="U",
+        description="Selenocysteine (21st amino acid)")
     O = PermissibleValue(
         text="O",
-        description="Pyrrolysine (22nd amino acid)",
-        meaning=CHEBI["18295"])
+        title="O",
+        description="Pyrrolysine (22nd amino acid)")
     B = PermissibleValue(
         text="B",
         description="Asparagine or Aspartic acid (N or D)")
@@ -12760,14 +14338,12 @@ class SequenceStrand(EnumDefinitionImpl):
     """
     PLUS = PermissibleValue(
         text="PLUS",
-        title="+",
-        description="Plus/forward/sense strand (5' to 3')",
-        meaning=SO["0000402"])
+        title="PLUS",
+        description="Plus/forward/sense strand (5' to 3')")
     MINUS = PermissibleValue(
         text="MINUS",
-        title="-",
-        description="Minus/reverse/antisense strand (3' to 5')",
-        meaning=SO["0000404"])
+        title="MINUS",
+        description="Minus/reverse/antisense strand (3' to 5')")
     BOTH = PermissibleValue(
         text="BOTH",
         description="Both strands")
@@ -12844,28 +14420,36 @@ class SequencingPlatform(EnumDefinitionImpl):
     """
     ILLUMINA_HISEQ_2000 = PermissibleValue(
         text="ILLUMINA_HISEQ_2000",
-        description="Illumina HiSeq 2000")
+        description="Illumina HiSeq 2000",
+        meaning=OBI["0002001"])
     ILLUMINA_HISEQ_2500 = PermissibleValue(
         text="ILLUMINA_HISEQ_2500",
-        description="Illumina HiSeq 2500")
+        description="Illumina HiSeq 2500",
+        meaning=OBI["0002002"])
     ILLUMINA_HISEQ_3000 = PermissibleValue(
         text="ILLUMINA_HISEQ_3000",
-        description="Illumina HiSeq 3000")
+        description="Illumina HiSeq 3000",
+        meaning=OBI["0002048"])
     ILLUMINA_HISEQ_4000 = PermissibleValue(
         text="ILLUMINA_HISEQ_4000",
-        description="Illumina HiSeq 4000")
+        description="Illumina HiSeq 4000",
+        meaning=OBI["0002049"])
     ILLUMINA_HISEQ_X = PermissibleValue(
         text="ILLUMINA_HISEQ_X",
-        description="Illumina HiSeq X")
+        description="Illumina HiSeq X",
+        meaning=OBI["0002129"])
     ILLUMINA_NOVASEQ_6000 = PermissibleValue(
         text="ILLUMINA_NOVASEQ_6000",
-        description="Illumina NovaSeq 6000")
+        description="Illumina NovaSeq 6000",
+        meaning=OBI["0002630"])
     ILLUMINA_NEXTSEQ_500 = PermissibleValue(
         text="ILLUMINA_NEXTSEQ_500",
-        description="Illumina NextSeq 500")
+        description="Illumina NextSeq 500",
+        meaning=OBI["0002021"])
     ILLUMINA_NEXTSEQ_550 = PermissibleValue(
         text="ILLUMINA_NEXTSEQ_550",
-        description="Illumina NextSeq 550")
+        description="Illumina NextSeq 550",
+        meaning=OBI["0003387"])
     ILLUMINA_NEXTSEQ_1000 = PermissibleValue(
         text="ILLUMINA_NEXTSEQ_1000",
         description="Illumina NextSeq 1000")
@@ -12874,7 +14458,8 @@ class SequencingPlatform(EnumDefinitionImpl):
         description="Illumina NextSeq 2000")
     ILLUMINA_MISEQ = PermissibleValue(
         text="ILLUMINA_MISEQ",
-        description="Illumina MiSeq")
+        description="Illumina MiSeq",
+        meaning=OBI["0002003"])
     ILLUMINA_ISEQ_100 = PermissibleValue(
         text="ILLUMINA_ISEQ_100",
         description="Illumina iSeq 100")
@@ -12883,25 +14468,31 @@ class SequencingPlatform(EnumDefinitionImpl):
         description="PacBio RS")
     PACBIO_RS_II = PermissibleValue(
         text="PACBIO_RS_II",
-        description="PacBio RS II")
+        description="PacBio RS II",
+        meaning=OBI["0002012"])
     PACBIO_SEQUEL = PermissibleValue(
         text="PACBIO_SEQUEL",
-        description="PacBio Sequel")
+        description="PacBio Sequel",
+        meaning=OBI["0002632"])
     PACBIO_SEQUEL_II = PermissibleValue(
         text="PACBIO_SEQUEL_II",
-        description="PacBio Sequel II")
+        description="PacBio Sequel II",
+        meaning=OBI["0002633"])
     PACBIO_REVIO = PermissibleValue(
         text="PACBIO_REVIO",
         description="PacBio Revio")
     NANOPORE_MINION = PermissibleValue(
         text="NANOPORE_MINION",
-        description="Oxford Nanopore MinION")
+        description="Oxford Nanopore MinION",
+        meaning=OBI["0002750"])
     NANOPORE_GRIDION = PermissibleValue(
         text="NANOPORE_GRIDION",
-        description="Oxford Nanopore GridION")
+        description="Oxford Nanopore GridION",
+        meaning=OBI["0002751"])
     NANOPORE_PROMETHION = PermissibleValue(
         text="NANOPORE_PROMETHION",
-        description="Oxford Nanopore PromethION")
+        description="Oxford Nanopore PromethION",
+        meaning=OBI["0002752"])
     NANOPORE_FLONGLE = PermissibleValue(
         text="NANOPORE_FLONGLE",
         description="Oxford Nanopore Flongle")
@@ -12919,10 +14510,12 @@ class SequencingPlatform(EnumDefinitionImpl):
         description="MGI DNBSEQ-G50")
     SANGER_SEQUENCING = PermissibleValue(
         text="SANGER_SEQUENCING",
-        description="Sanger chain termination sequencing")
+        description="Sanger chain termination sequencing",
+        meaning=OBI["0000695"])
     ROCHE_454_GS = PermissibleValue(
         text="ROCHE_454_GS",
-        description="Roche 454 Genome Sequencer")
+        description="Roche 454 Genome Sequencer",
+        meaning=OBI["0000702"])
     LIFE_TECHNOLOGIES_ION_TORRENT = PermissibleValue(
         text="LIFE_TECHNOLOGIES_ION_TORRENT",
         description="Life Technologies Ion Torrent")
@@ -12941,28 +14534,31 @@ class SequencingChemistry(EnumDefinitionImpl):
     """
     SEQUENCING_BY_SYNTHESIS = PermissibleValue(
         text="SEQUENCING_BY_SYNTHESIS",
+        title="SEQUENCING_BY_SYNTHESIS",
         description="Sequencing by synthesis (Illumina)",
-        meaning=OBI["0000626"])
+        meaning=OBI["0000734"])
     SINGLE_MOLECULE_REAL_TIME = PermissibleValue(
         text="SINGLE_MOLECULE_REAL_TIME",
-        description="Single molecule real-time sequencing (PacBio)",
-        meaning=OBI["0002763"])
+        title="SINGLE_MOLECULE_REAL_TIME",
+        description="Single molecule real-time sequencing (PacBio)")
     NANOPORE_SEQUENCING = PermissibleValue(
         text="NANOPORE_SEQUENCING",
-        description="Nanopore sequencing (Oxford Nanopore)",
-        meaning=OBI["0002754"])
+        title="NANOPORE_SEQUENCING",
+        description="Nanopore sequencing (Oxford Nanopore)")
     PYROSEQUENCING = PermissibleValue(
         text="PYROSEQUENCING",
-        description="Pyrosequencing (454)",
-        meaning=OBI["0000628"])
+        title="PYROSEQUENCING",
+        description="Pyrosequencing (454)")
     SEQUENCING_BY_LIGATION = PermissibleValue(
         text="SEQUENCING_BY_LIGATION",
+        title="SEQUENCING_BY_LIGATION",
         description="Sequencing by ligation (SOLiD)",
-        meaning=OBI["0000629"])
+        meaning=OBI["0000723"])
     CHAIN_TERMINATION = PermissibleValue(
         text="CHAIN_TERMINATION",
+        title="CHAIN_TERMINATION",
         description="Chain termination method (Sanger)",
-        meaning=OBI["0000632"])
+        meaning=OBI["0000695"])
     SEMICONDUCTOR_SEQUENCING = PermissibleValue(
         text="SEMICONDUCTOR_SEQUENCING",
         description="Semiconductor/Ion semiconductor sequencing")
@@ -13051,16 +14647,19 @@ class SequencingApplication(EnumDefinitionImpl):
     """
     WHOLE_GENOME_SEQUENCING = PermissibleValue(
         text="WHOLE_GENOME_SEQUENCING",
+        title="WHOLE_GENOME_SEQUENCING",
         description="Whole genome sequencing (WGS)",
-        meaning=OBI["0002117"])
+        meaning=EDAM["topic_3673"])
     WHOLE_EXOME_SEQUENCING = PermissibleValue(
         text="WHOLE_EXOME_SEQUENCING",
+        title="WHOLE_EXOME_SEQUENCING",
         description="Whole exome sequencing (WES)",
-        meaning=OBI["0002118"])
+        meaning=EDAM["topic_3676"])
     TRANSCRIPTOME_SEQUENCING = PermissibleValue(
         text="TRANSCRIPTOME_SEQUENCING",
+        title="TRANSCRIPTOME_SEQUENCING",
         description="RNA sequencing (RNA-seq)",
-        meaning=OBI["0001271"])
+        meaning=EDAM["topic_3170"])
     TARGETED_SEQUENCING = PermissibleValue(
         text="TARGETED_SEQUENCING",
         description="Targeted gene panel sequencing")
@@ -13069,19 +14668,22 @@ class SequencingApplication(EnumDefinitionImpl):
         description="Epigenomic profiling")
     METAGENOMICS = PermissibleValue(
         text="METAGENOMICS",
+        title="METAGENOMICS",
         description="Metagenomic sequencing",
-        meaning=OBI["0002044"])
+        meaning=EDAM["topic_3837"])
     SINGLE_CELL_GENOMICS = PermissibleValue(
         text="SINGLE_CELL_GENOMICS",
         description="Single-cell genomics")
     SINGLE_CELL_TRANSCRIPTOMICS = PermissibleValue(
         text="SINGLE_CELL_TRANSCRIPTOMICS",
+        title="SINGLE_CELL_TRANSCRIPTOMICS",
         description="Single-cell transcriptomics",
-        meaning=OBI["0002571"])
+        meaning=EDAM["topic_4028"])
     CHROMATIN_IMMUNOPRECIPITATION = PermissibleValue(
         text="CHROMATIN_IMMUNOPRECIPITATION",
+        title="CHROMATIN_IMMUNOPRECIPITATION",
         description="ChIP-seq",
-        meaning=OBI["0000716"])
+        meaning=EDAM["topic_3656"])
     CHROMATIN_ACCESSIBILITY = PermissibleValue(
         text="CHROMATIN_ACCESSIBILITY",
         description="ATAC-seq/FAIRE-seq")
@@ -13115,12 +14717,12 @@ class ReadType(EnumDefinitionImpl):
     """
     SINGLE_END = PermissibleValue(
         text="SINGLE_END",
-        description="Single-end reads",
-        meaning=SO["0000999"])
+        title="SINGLE_END",
+        description="Single-end reads")
     PAIRED_END = PermissibleValue(
         text="PAIRED_END",
-        description="Paired-end reads",
-        meaning=SO["0001000"])
+        title="PAIRED_END",
+        description="Paired-end reads")
     MATE_PAIR = PermissibleValue(
         text="MATE_PAIR",
         description="Mate-pair reads (large insert)")
@@ -13145,25 +14747,31 @@ class SequenceFileFormat(EnumDefinitionImpl):
     """
     FASTA = PermissibleValue(
         text="FASTA",
-        description="FASTA sequence format")
+        description="FASTA sequence format",
+        meaning=EDAM["format_1929"])
     FASTQ = PermissibleValue(
         text="FASTQ",
-        description="FASTQ sequence with quality format")
+        description="FASTQ sequence with quality format",
+        meaning=EDAM["format_1930"])
     SAM = PermissibleValue(
         text="SAM",
-        description="Sequence Alignment Map format")
+        description="Sequence Alignment Map format",
+        meaning=EDAM["format_2573"])
     BAM = PermissibleValue(
         text="BAM",
-        description="Binary Alignment Map format")
+        description="Binary Alignment Map format",
+        meaning=EDAM["format_2572"])
     CRAM = PermissibleValue(
         text="CRAM",
         description="Compressed Reference-oriented Alignment Map")
     VCF = PermissibleValue(
         text="VCF",
-        description="Variant Call Format")
+        description="Variant Call Format",
+        meaning=EDAM["format_3016"])
     BCF = PermissibleValue(
         text="BCF",
-        description="Binary Variant Call Format")
+        description="Binary Variant Call Format",
+        meaning=EDAM["format_3020"])
     GFF3 = PermissibleValue(
         text="GFF3",
         description="Generic Feature Format version 3")
@@ -13184,7 +14792,8 @@ class SequenceFileFormat(EnumDefinitionImpl):
         description="Hierarchical Data Format 5")
     SFF = PermissibleValue(
         text="SFF",
-        description="Standard Flowgram Format (454)")
+        description="Standard Flowgram Format (454)",
+        meaning=EDAM["format_3284"])
     FAST5 = PermissibleValue(
         text="FAST5",
         description="Fast5 format (Oxford Nanopore)")
@@ -14121,6 +15730,216 @@ class UniProtSpeciesCode(EnumDefinitionImpl):
         title="Labrus bergylta",
         description="Labrus bergylta (ballan wrasse) - Proteome: UP000261660",
         meaning=NCBITAXON["56723"])
+    SP_ARATH = PermissibleValue(
+        text="SP_ARATH",
+        title="Arabidopsis thaliana",
+        description="Arabidopsis thaliana (Thale cress) - Proteome: UP000006548",
+        meaning=NCBITAXON["3702"])
+    SP_BACSU = PermissibleValue(
+        text="SP_BACSU",
+        title="Bacillus subtilis subsp. subtilis str. 168",
+        description="Bacillus subtilis subsp. subtilis str. 168 - Proteome: UP000001570",
+        meaning=NCBITAXON["224308"])
+    SP_BOVIN = PermissibleValue(
+        text="SP_BOVIN",
+        title="Bos taurus",
+        description="Bos taurus (Cattle) - Proteome: UP000009136",
+        meaning=NCBITAXON["9913"])
+    SP_CAEEL = PermissibleValue(
+        text="SP_CAEEL",
+        title="Caenorhabditis elegans",
+        description="Caenorhabditis elegans - Proteome: UP000001940",
+        meaning=NCBITAXON["6239"])
+    SP_CANLF = PermissibleValue(
+        text="SP_CANLF",
+        title="Canis lupus familiaris",
+        description="Canis lupus familiaris (Dog) - Proteome: UP000805418",
+        meaning=NCBITAXON["9615"])
+    SP_CHICK = PermissibleValue(
+        text="SP_CHICK",
+        title="Gallus gallus",
+        description="Gallus gallus (Chicken) - Proteome: UP000000539",
+        meaning=NCBITAXON["9031"])
+    SP_DANRE = PermissibleValue(
+        text="SP_DANRE",
+        title="Danio rerio",
+        description="Danio rerio (Zebrafish) - Proteome: UP000000437",
+        meaning=NCBITAXON["7955"])
+    SP_DROME = PermissibleValue(
+        text="SP_DROME",
+        title="Drosophila melanogaster",
+        description="Drosophila melanogaster (Fruit fly) - Proteome: UP000000803",
+        meaning=NCBITAXON["7227"])
+    SP_ECOLI = PermissibleValue(
+        text="SP_ECOLI",
+        title="Escherichia coli K-12",
+        description="Escherichia coli K-12 - Proteome: UP000000625",
+        meaning=NCBITAXON["83333"])
+    SP_FELCA = PermissibleValue(
+        text="SP_FELCA",
+        title="Felis catus",
+        description="Felis catus (Cat) - Proteome: UP000011712",
+        meaning=NCBITAXON["9685"])
+    SP_GORGO = PermissibleValue(
+        text="SP_GORGO",
+        title="Gorilla gorilla gorilla",
+        description="Gorilla gorilla gorilla (Western lowland gorilla) - Proteome: UP000001519",
+        meaning=NCBITAXON["9593"])
+    SP_HORSE = PermissibleValue(
+        text="SP_HORSE",
+        title="Equus caballus",
+        description="Equus caballus (Horse) - Proteome: UP000002281",
+        meaning=NCBITAXON["9796"])
+    SP_HUMAN = PermissibleValue(
+        text="SP_HUMAN",
+        title="Homo sapiens",
+        description="Homo sapiens (Human) - Proteome: UP000005640",
+        meaning=NCBITAXON["9606"])
+    SP_MACMU = PermissibleValue(
+        text="SP_MACMU",
+        title="Macaca mulatta",
+        description="Macaca mulatta (Rhesus macaque) - Proteome: UP000006718",
+        meaning=NCBITAXON["9544"])
+    SP_MAIZE = PermissibleValue(
+        text="SP_MAIZE",
+        title="Zea mays",
+        description="Zea mays (Maize) - Proteome: UP000007305",
+        meaning=NCBITAXON["4577"])
+    SP_MOUSE = PermissibleValue(
+        text="SP_MOUSE",
+        title="Mus musculus",
+        description="Mus musculus (Mouse) - Proteome: UP000000589",
+        meaning=NCBITAXON["10090"])
+    SP_ORYSJ = PermissibleValue(
+        text="SP_ORYSJ",
+        title="Oryza sativa subsp. japonica",
+        description="Oryza sativa subsp. japonica (Rice) - Proteome: UP000059680",
+        meaning=NCBITAXON["39947"])
+    SP_PANTR = PermissibleValue(
+        text="SP_PANTR",
+        title="Pan troglodytes",
+        description="Pan troglodytes (Chimpanzee) - Proteome: UP000002277",
+        meaning=NCBITAXON["9598"])
+    SP_PIG = PermissibleValue(
+        text="SP_PIG",
+        title="Sus scrofa",
+        description="Sus scrofa (Pig) - Proteome: UP000008227",
+        meaning=NCBITAXON["9823"])
+    SP_RABIT = PermissibleValue(
+        text="SP_RABIT",
+        title="Oryctolagus cuniculus",
+        description="Oryctolagus cuniculus (Rabbit) - Proteome: UP000001811",
+        meaning=NCBITAXON["9986"])
+    SP_RAT = PermissibleValue(
+        text="SP_RAT",
+        title="Rattus norvegicus",
+        description="Rattus norvegicus (Rat) - Proteome: UP000002494",
+        meaning=NCBITAXON["10116"])
+    SP_SCHPO = PermissibleValue(
+        text="SP_SCHPO",
+        title="Schizosaccharomyces pombe 972h-",
+        description="Schizosaccharomyces pombe 972h- (Fission yeast) - Proteome: UP000002485",
+        meaning=NCBITAXON["284812"])
+    SP_SHEEP = PermissibleValue(
+        text="SP_SHEEP",
+        title="Ovis aries",
+        description="Ovis aries (Sheep) - Proteome: UP000002356",
+        meaning=NCBITAXON["9940"])
+    SP_XENLA = PermissibleValue(
+        text="SP_XENLA",
+        title="Xenopus laevis",
+        description="Xenopus laevis (African clawed frog) - Proteome: UP000186698",
+        meaning=NCBITAXON["8355"])
+    SP_XENTR = PermissibleValue(
+        text="SP_XENTR",
+        title="Xenopus tropicalis",
+        description="Xenopus tropicalis (Western clawed frog) - Proteome: UP000008143",
+        meaning=NCBITAXON["8364"])
+    SP_YEAST = PermissibleValue(
+        text="SP_YEAST",
+        title="Saccharomyces cerevisiae S288C",
+        description="Saccharomyces cerevisiae S288C (Baker's yeast) - Proteome: UP000002311",
+        meaning=NCBITAXON["559292"])
+    SP_DICDI = PermissibleValue(
+        text="SP_DICDI",
+        title="Dictyostelium discoideum",
+        description="Dictyostelium discoideum (Slime mold) - Proteome: UP000002195",
+        meaning=NCBITAXON["44689"])
+    SP_HELPY = PermissibleValue(
+        text="SP_HELPY",
+        title="Helicobacter pylori 26695",
+        description="Helicobacter pylori 26695 - Proteome: UP000000429",
+        meaning=NCBITAXON["85962"])
+    SP_LEIMA = PermissibleValue(
+        text="SP_LEIMA",
+        title="Leishmania major strain Friedlin",
+        description="Leishmania major strain Friedlin",
+        meaning=NCBITAXON["347515"])
+    SP_MEDTR = PermissibleValue(
+        text="SP_MEDTR",
+        title="Medicago truncatula",
+        description="Medicago truncatula (Barrel medic) - Proteome: UP000002051",
+        meaning=NCBITAXON["3880"])
+    SP_MYCTU = PermissibleValue(
+        text="SP_MYCTU",
+        title="Mycobacterium tuberculosis H37Rv",
+        description="Mycobacterium tuberculosis H37Rv - Proteome: UP000001584",
+        meaning=NCBITAXON["83332"])
+    SP_NEIME = PermissibleValue(
+        text="SP_NEIME",
+        title="Neisseria meningitidis MC58",
+        description="Neisseria meningitidis MC58 - Proteome: UP000000425",
+        meaning=NCBITAXON["122586"])
+    SP_PLAF7 = PermissibleValue(
+        text="SP_PLAF7",
+        title="Plasmodium falciparum 3D7",
+        description="Plasmodium falciparum 3D7 (Malaria parasite) - Proteome: UP000001450",
+        meaning=NCBITAXON["36329"])
+    SP_PSEAE = PermissibleValue(
+        text="SP_PSEAE",
+        title="Pseudomonas aeruginosa PAO1",
+        description="Pseudomonas aeruginosa PAO1 - Proteome: UP000002438",
+        meaning=NCBITAXON["208964"])
+    SP_SOYBN = PermissibleValue(
+        text="SP_SOYBN",
+        title="Glycine max",
+        description="Glycine max (Soybean) - Proteome: UP000008827",
+        meaning=NCBITAXON["3847"])
+    SP_STAAU = PermissibleValue(
+        text="SP_STAAU",
+        title="Staphylococcus aureus subsp. aureus NCTC 8325",
+        description="Staphylococcus aureus subsp. aureus NCTC 8325 - Proteome: UP000008816",
+        meaning=NCBITAXON["93061"])
+    SP_STRPN = PermissibleValue(
+        text="SP_STRPN",
+        title="Streptococcus pneumoniae R6",
+        description="Streptococcus pneumoniae R6 - Proteome: UP000000586",
+        meaning=NCBITAXON["171101"])
+    SP_TOXGO = PermissibleValue(
+        text="SP_TOXGO",
+        title="Toxoplasma gondii ME49",
+        description="Toxoplasma gondii ME49 - Proteome: UP000001529",
+        meaning=NCBITAXON["508771"])
+    SP_TRYB2 = PermissibleValue(
+        text="SP_TRYB2",
+        title="Trypanosoma brucei brucei TREU927",
+        description="Trypanosoma brucei brucei TREU927 - Proteome: UP000008524",
+        meaning=NCBITAXON["185431"])
+    SP_WHEAT = PermissibleValue(
+        text="SP_WHEAT",
+        title="Triticum aestivum",
+        description="Triticum aestivum (Wheat) - Proteome: UP000019116",
+        meaning=NCBITAXON["4565"])
+    SP_PEA = PermissibleValue(
+        text="SP_PEA",
+        title="Pisum sativum",
+        description="Pisum sativum (Garden pea) - Proteome: UP001058974",
+        meaning=NCBITAXON["3888"])
+    SP_TOBAC = PermissibleValue(
+        text="SP_TOBAC",
+        title="Nicotiana tabacum",
+        description="Nicotiana tabacum (Common tobacco) - Proteome: UP000084051",
+        meaning=NCBITAXON["4097"])
 
     _defn = EnumDefinition(
         name="UniProtSpeciesCode",
@@ -14134,31 +15953,31 @@ class LipidCategory(EnumDefinitionImpl):
     LIPID = PermissibleValue(
         text="LIPID",
         description="Lipid",
-        meaning=SWISSLIPIDS["SLM_000389145"])
+        meaning=CHEBI["18059"])
     FATTY_ACYLS_AND_DERIVATIVES = PermissibleValue(
         text="FATTY_ACYLS_AND_DERIVATIVES",
         description="Fatty acyls and derivatives",
-        meaning=SWISSLIPIDS["SLM_000390054"])
+        meaning=CHEBI["24027"])
     GLYCEROLIPIDS = PermissibleValue(
         text="GLYCEROLIPIDS",
         description="Glycerolipids",
-        meaning=SWISSLIPIDS["SLM_000117142"])
+        meaning=CHEBI["35741"])
     GLYCEROPHOSPHOLIPIDS = PermissibleValue(
         text="GLYCEROPHOSPHOLIPIDS",
         description="Glycerophospholipids",
-        meaning=SWISSLIPIDS["SLM_000001193"])
+        meaning=CHEBI["37739"])
     SPHINGOLIPIDS = PermissibleValue(
         text="SPHINGOLIPIDS",
         description="Sphingolipids",
-        meaning=SWISSLIPIDS["SLM_000000525"])
+        meaning=CHEBI["26739"])
     STEROIDS_AND_DERIVATIVES = PermissibleValue(
         text="STEROIDS_AND_DERIVATIVES",
         description="Steroids and derivatives",
-        meaning=SWISSLIPIDS["SLM_000500463"])
+        meaning=CHEBI["35341"])
     PRENOL_LIPIDS = PermissibleValue(
         text="PRENOL_LIPIDS",
         description="Prenol Lipids",
-        meaning=SWISSLIPIDS["SLM_000508860"])
+        meaning=CHEBI["24913"])
 
     _defn = EnumDefinition(
         name="LipidCategory",
@@ -14772,6 +16591,7 @@ class BioticInteractionType(EnumDefinitionImpl):
         meaning=RO["0002442"])
     INTERACTS_VIA_PARASITE_HOST = PermissibleValue(
         text="INTERACTS_VIA_PARASITE_HOST",
+        title="interacts with via parasite-host interaction",
         description="""An interaction relationship between two organisms living together in more or less intimate association in a relationship in which association is disadvantageous or destructive to one of the organisms.""",
         meaning=RO["0002443"])
     SYMBIOTROPHICALLY_INTERACTS_WITH = PermissibleValue(
@@ -14860,6 +16680,7 @@ class BioticInteractionType(EnumDefinitionImpl):
         meaning=RO["0002455"])
     PARTICIPATES_IN_ABIOTIC_BIOTIC_INTERACTION_WITH = PermissibleValue(
         text="PARTICIPATES_IN_ABIOTIC_BIOTIC_INTERACTION_WITH",
+        title="participates in a abiotic-biotic interaction with",
         description="""A biotic interaction relationship in which one partner is an organism and the other partner is inorganic. For example, the relationship between a sponge and the substrate to which is it anchored.""",
         meaning=RO["0002446"])
     ECOLOGICALLY_CO_OCCURS_WITH = PermissibleValue(
@@ -14931,28 +16752,28 @@ class MineralogyFeedstockClass(EnumDefinitionImpl):
     """
     HARDROCK_PRIMARY = PermissibleValue(
         text="HARDROCK_PRIMARY",
-        description="Primary ore from hardrock mining operations",
-        meaning=ENVO["01001850"])
+        title="HARDROCK_PRIMARY",
+        description="Primary ore from hardrock mining operations")
     TAILINGS_LEGACY = PermissibleValue(
         text="TAILINGS_LEGACY",
-        description="Historical mine tailings available for reprocessing",
-        meaning=ENVO["00002044"])
+        title="TAILINGS_LEGACY",
+        description="Historical mine tailings available for reprocessing")
     WASTE_PILES = PermissibleValue(
         text="WASTE_PILES",
-        description="Accumulated mining waste materials",
-        meaning=ENVO["00002267"])
+        title="WASTE_PILES",
+        description="Accumulated mining waste materials")
     COAL_BYPRODUCT = PermissibleValue(
         text="COAL_BYPRODUCT",
-        description="Byproducts from coal mining and processing",
-        meaning=ENVO["02000092"])
+        title="COAL_BYPRODUCT",
+        description="Byproducts from coal mining and processing")
     E_WASTE = PermissibleValue(
         text="E_WASTE",
-        description="Electronic waste containing recoverable metals",
-        meaning=ENVO["00002271"])
+        title="E_WASTE",
+        description="Electronic waste containing recoverable metals")
     BRINES = PermissibleValue(
         text="BRINES",
-        description="Saline water sources containing dissolved minerals",
-        meaning=ENVO["00002019"])
+        title="BRINES",
+        description="Saline water sources containing dissolved minerals")
 
     _defn = EnumDefinition(
         name="MineralogyFeedstockClass",
@@ -15003,20 +16824,19 @@ class InSituChemistryRegime(EnumDefinitionImpl):
     """
     ACIDIC_SULFATE = PermissibleValue(
         text="ACIDIC_SULFATE",
-        description="Sulfuric acid-based leaching system",
-        meaning=CHEBI["26836"])
+        title="ACIDIC_SULFATE",
+        description="Sulfuric acid-based leaching system")
     ACIDIC_CHLORIDE = PermissibleValue(
         text="ACIDIC_CHLORIDE",
-        description="Hydrochloric acid or chloride-based leaching",
-        meaning=CHEBI["17883"])
+        title="ACIDIC_CHLORIDE",
+        description="Hydrochloric acid or chloride-based leaching")
     AMMONIA_BASED = PermissibleValue(
         text="AMMONIA_BASED",
-        description="Ammonia or ammonium-based leaching system",
-        meaning=CHEBI["16134"])
+        title="AMMONIA_BASED",
+        description="Ammonia or ammonium-based leaching system")
     ORGANIC_ACID = PermissibleValue(
         text="ORGANIC_ACID",
-        description="Organic acid leaching (citric, oxalic, etc.)",
-        meaning=CHEBI["64709"])
+        description="Organic acid leaching (citric, oxalic, etc.)")
     BIOLEACH_SULFUR_OXIDIZING = PermissibleValue(
         text="BIOLEACH_SULFUR_OXIDIZING",
         description="Bioleaching using sulfur-oxidizing bacteria")
@@ -15035,80 +16855,80 @@ class ExtractableTargetElement(EnumDefinitionImpl):
     """
     REE_LA = PermissibleValue(
         text="REE_LA",
-        description="Lanthanum",
-        meaning=CHEBI["33336"])
+        title="REE_LA",
+        description="Lanthanum")
     REE_CE = PermissibleValue(
         text="REE_CE",
-        description="Cerium",
-        meaning=CHEBI["33369"])
+        title="REE_CE",
+        description="Cerium")
     REE_PR = PermissibleValue(
         text="REE_PR",
-        description="Praseodymium",
-        meaning=CHEBI["49828"])
+        title="REE_PR",
+        description="Praseodymium")
     REE_ND = PermissibleValue(
         text="REE_ND",
-        description="Neodymium",
-        meaning=CHEBI["33372"])
+        title="REE_ND",
+        description="Neodymium")
     REE_PM = PermissibleValue(
         text="REE_PM",
-        description="Promethium",
-        meaning=CHEBI["33373"])
+        title="REE_PM",
+        description="Promethium")
     REE_SM = PermissibleValue(
         text="REE_SM",
-        description="Samarium",
-        meaning=CHEBI["33374"])
+        title="REE_SM",
+        description="Samarium")
     REE_EU = PermissibleValue(
         text="REE_EU",
-        description="Europium",
-        meaning=CHEBI["32999"])
+        title="REE_EU",
+        description="Europium")
     REE_GD = PermissibleValue(
         text="REE_GD",
-        description="Gadolinium",
-        meaning=CHEBI["33375"])
+        title="REE_GD",
+        description="Gadolinium")
     REE_TB = PermissibleValue(
         text="REE_TB",
-        description="Terbium",
-        meaning=CHEBI["33376"])
+        title="REE_TB",
+        description="Terbium")
     REE_DY = PermissibleValue(
         text="REE_DY",
-        description="Dysprosium",
-        meaning=CHEBI["33377"])
+        title="REE_DY",
+        description="Dysprosium")
     REE_HO = PermissibleValue(
         text="REE_HO",
-        description="Holmium",
-        meaning=CHEBI["49648"])
+        title="REE_HO",
+        description="Holmium")
     REE_ER = PermissibleValue(
         text="REE_ER",
-        description="Erbium",
-        meaning=CHEBI["33379"])
+        title="REE_ER",
+        description="Erbium")
     REE_TM = PermissibleValue(
         text="REE_TM",
-        description="Thulium",
-        meaning=CHEBI["33380"])
+        title="REE_TM",
+        description="Thulium")
     REE_YB = PermissibleValue(
         text="REE_YB",
-        description="Ytterbium",
-        meaning=CHEBI["33381"])
+        title="REE_YB",
+        description="Ytterbium")
     REE_LU = PermissibleValue(
         text="REE_LU",
-        description="Lutetium",
-        meaning=CHEBI["33382"])
+        title="REE_LU",
+        description="Lutetium")
     SC = PermissibleValue(
         text="SC",
-        description="Scandium",
-        meaning=CHEBI["33330"])
+        title="SC",
+        description="Scandium")
     CO = PermissibleValue(
         text="CO",
-        description="Cobalt",
-        meaning=CHEBI["27638"])
+        title="CO",
+        description="Cobalt")
     NI = PermissibleValue(
         text="NI",
-        description="Nickel",
-        meaning=CHEBI["28112"])
+        title="NI",
+        description="Nickel")
     LI = PermissibleValue(
         text="LI",
-        description="Lithium",
-        meaning=CHEBI["30145"])
+        title="LI",
+        description="Lithium")
 
     _defn = EnumDefinition(
         name="ExtractableTargetElement",
@@ -15192,7 +17012,7 @@ class BioleachOrganism(EnumDefinitionImpl):
     LEPTOSPIRILLUM_FERROOXIDANS = PermissibleValue(
         text="LEPTOSPIRILLUM_FERROOXIDANS",
         description="Iron oxidizing bacterium",
-        meaning=NCBITAXON["2705"])
+        meaning=NCBITAXON["180"])
     ASPERGILLUS_NIGER = PermissibleValue(
         text="ASPERGILLUS_NIGER",
         description="Organic acid producing fungus",
@@ -15255,8 +17075,8 @@ class RegulatoryConstraint(EnumDefinitionImpl):
     """
     AQUIFER_PROTECTION = PermissibleValue(
         text="AQUIFER_PROTECTION",
-        description="Requirements for groundwater and aquifer protection",
-        meaning=ENVO["00012408"])
+        title="AQUIFER_PROTECTION",
+        description="Requirements for groundwater and aquifer protection")
     EMISSIONS_CAP = PermissibleValue(
         text="EMISSIONS_CAP",
         description="Limits on atmospheric emissions")
@@ -15360,7 +17180,7 @@ class SubatomicParticleEnum(EnumDefinitionImpl):
     NEUTRON = PermissibleValue(
         text="NEUTRON",
         description="Neutral nucleon",
-        meaning=CHEBI["33254"])
+        meaning=CHEBI["30222"])
     ALPHA_PARTICLE = PermissibleValue(
         text="ALPHA_PARTICLE",
         description="Helium-4 nucleus",
@@ -15410,8 +17230,7 @@ class BondTypeEnum(EnumDefinitionImpl):
         meaning=CHEBI["50860"])
     HYDROGEN = PermissibleValue(
         text="HYDROGEN",
-        description="Hydrogen bond",
-        meaning=CHEBI["50839"])
+        description="Hydrogen bond")
     METALLIC = PermissibleValue(
         text="METALLIC",
         description="Metallic bond")
@@ -16808,6 +18627,195 @@ class BMIClassificationEnum(EnumDefinitionImpl):
         name="BMIClassificationEnum",
     )
 
+class MRIModalityEnum(EnumDefinitionImpl):
+    """
+    MRI imaging modalities and techniques
+    """
+    STRUCTURAL_T1 = PermissibleValue(
+        text="STRUCTURAL_T1",
+        title="T1-weighted structural MRI",
+        description="High-resolution anatomical imaging with T1 contrast",
+        meaning=NCIT["C116455"])
+    STRUCTURAL_T2 = PermissibleValue(
+        text="STRUCTURAL_T2",
+        title="T2-weighted structural MRI",
+        description="Structural imaging with T2 contrast",
+        meaning=NCIT["C116456"])
+    FLAIR = PermissibleValue(
+        text="FLAIR",
+        title="Fluid-attenuated inversion recovery",
+        description="T2-weighted sequence with CSF signal suppressed",
+        meaning=NCIT["C82392"])
+    BOLD_FMRI = PermissibleValue(
+        text="BOLD_FMRI",
+        title="Blood oxygen level dependent fMRI",
+        description="Functional MRI based on blood oxygenation changes",
+        meaning=NCIT["C17958"])
+    ASL = PermissibleValue(
+        text="ASL",
+        title="Arterial spin labeling",
+        description="Perfusion imaging using magnetically labeled blood",
+        meaning=NCIT["C116450"])
+    DWI = PermissibleValue(
+        text="DWI",
+        title="Diffusion-weighted imaging",
+        description="Imaging sensitive to water molecule diffusion",
+        meaning=MESH["D038524"])
+    DTI = PermissibleValue(
+        text="DTI",
+        title="Diffusion tensor imaging",
+        description="Advanced diffusion imaging with directional information",
+        meaning=NCIT["C64862"])
+    PERFUSION_DSC = PermissibleValue(
+        text="PERFUSION_DSC",
+        title="Dynamic susceptibility contrast perfusion",
+        description="Perfusion imaging using contrast agent bolus",
+        meaning=NCIT["C116459"])
+    PERFUSION_DCE = PermissibleValue(
+        text="PERFUSION_DCE",
+        title="Dynamic contrast-enhanced perfusion",
+        description="Perfusion imaging with pharmacokinetic modeling",
+        meaning=NCIT["C116458"])
+    SWI = PermissibleValue(
+        text="SWI",
+        title="Susceptibility-weighted imaging",
+        description="High-resolution venography and iron detection",
+        meaning=NCIT["C121377"])
+    TASK_FMRI = PermissibleValue(
+        text="TASK_FMRI",
+        title="Task-based functional MRI",
+        description="fMRI during specific cognitive or motor tasks",
+        meaning=NCIT["C178023"])
+    RESTING_STATE_FMRI = PermissibleValue(
+        text="RESTING_STATE_FMRI",
+        title="Resting-state functional MRI",
+        description="fMRI acquired at rest without explicit tasks",
+        meaning=NCIT["C178024"])
+    FUNCTIONAL_CONNECTIVITY = PermissibleValue(
+        text="FUNCTIONAL_CONNECTIVITY",
+        title="Functional connectivity MRI",
+        description="Analysis of temporal correlations between brain regions",
+        meaning=NCIT["C116454"])
+
+    _defn = EnumDefinition(
+        name="MRIModalityEnum",
+        description="MRI imaging modalities and techniques",
+    )
+
+class MRISequenceTypeEnum(EnumDefinitionImpl):
+    """
+    MRI pulse sequence types
+    """
+    GRADIENT_ECHO = PermissibleValue(
+        text="GRADIENT_ECHO",
+        title="Gradient echo sequence",
+        description="Fast imaging sequence using gradient reversal",
+        meaning=NCIT["C154542"])
+    SPIN_ECHO = PermissibleValue(
+        text="SPIN_ECHO",
+        title="Spin echo sequence",
+        description="Sequence using 180-degree refocusing pulse",
+        meaning=CHMO["0001868"])
+    EPI = PermissibleValue(
+        text="EPI",
+        title="Echo planar imaging",
+        description="Ultrafast imaging sequence",
+        meaning=NCIT["C17558"])
+    MPRAGE = PermissibleValue(
+        text="MPRAGE",
+        title="Magnetization prepared rapid gradient echo",
+        description="T1-weighted 3D sequence with preparation pulse",
+        meaning=NCIT["C118462"])
+    SPACE = PermissibleValue(
+        text="SPACE",
+        title="Sampling perfection with application optimized contrasts",
+        description="3D turbo spin echo sequence")
+    TRUFI = PermissibleValue(
+        text="TRUFI",
+        title="True fast imaging with steady-state precession",
+        description="Balanced steady-state free precession sequence",
+        meaning=NCIT["C200534"])
+
+    _defn = EnumDefinition(
+        name="MRISequenceTypeEnum",
+        description="MRI pulse sequence types",
+    )
+
+class MRIContrastTypeEnum(EnumDefinitionImpl):
+    """
+    MRI image contrast mechanisms
+    """
+    T1_WEIGHTED = PermissibleValue(
+        text="T1_WEIGHTED",
+        title="T1-weighted contrast",
+        description="Image contrast based on T1 relaxation times",
+        meaning=NCIT["C180727"])
+    T2_WEIGHTED = PermissibleValue(
+        text="T2_WEIGHTED",
+        title="T2-weighted contrast",
+        description="Image contrast based on T2 relaxation times",
+        meaning=NCIT["C180729"])
+    T2_STAR = PermissibleValue(
+        text="T2_STAR",
+        title="T2*-weighted contrast",
+        description="Image contrast sensitive to magnetic susceptibility",
+        meaning=NCIT["C156447"])
+    PROTON_DENSITY = PermissibleValue(
+        text="PROTON_DENSITY",
+        title="Proton density weighted",
+        description="Image contrast based on hydrogen density",
+        meaning=NCIT["C170797"])
+    DIFFUSION_WEIGHTED = PermissibleValue(
+        text="DIFFUSION_WEIGHTED",
+        title="Diffusion-weighted contrast",
+        description="Image contrast based on water diffusion",
+        meaning=NCIT["C111116"])
+    PERFUSION_WEIGHTED = PermissibleValue(
+        text="PERFUSION_WEIGHTED",
+        title="Perfusion-weighted contrast",
+        description="Image contrast based on blood flow dynamics",
+        meaning=MESH["D000098642"])
+
+    _defn = EnumDefinition(
+        name="MRIContrastTypeEnum",
+        description="MRI image contrast mechanisms",
+    )
+
+class FMRIParadigmTypeEnum(EnumDefinitionImpl):
+    """
+    fMRI experimental paradigm types
+    """
+    BLOCK_DESIGN = PermissibleValue(
+        text="BLOCK_DESIGN",
+        title="Block design paradigm",
+        description="Alternating blocks of task and rest conditions",
+        meaning=STATO["0000046"])
+    EVENT_RELATED = PermissibleValue(
+        text="EVENT_RELATED",
+        title="Event-related design",
+        description="Brief stimuli presented at varying intervals",
+        meaning=EDAM["topic_3678"])
+    MIXED_DESIGN = PermissibleValue(
+        text="MIXED_DESIGN",
+        title="Mixed block and event-related design",
+        description="Combination of block and event-related elements",
+        meaning=EDAM["topic_3678"])
+    RESTING_STATE = PermissibleValue(
+        text="RESTING_STATE",
+        title="Resting state paradigm",
+        description="No explicit task, spontaneous brain activity",
+        meaning=NCIT["C178024"])
+    NATURALISTIC = PermissibleValue(
+        text="NATURALISTIC",
+        title="Naturalistic paradigm",
+        description="Ecologically valid stimuli (movies, stories)",
+        meaning=EDAM["topic_3678"])
+
+    _defn = EnumDefinition(
+        name="FMRIParadigmTypeEnum",
+        description="fMRI experimental paradigm types",
+    )
+
 class RaceOMB1997Enum(EnumDefinitionImpl):
     """
     Race categories following OMB 1997 standards used by NIH and federal agencies.
@@ -17220,8 +19228,7 @@ class LateralityEnum(EnumDefinitionImpl):
         meaning=HP["0012833"])
     MIDLINE = PermissibleValue(
         text="MIDLINE",
-        description="In the midline/center",
-        meaning=UBERON["0005231"])
+        description="In the midline/center")
 
     _defn = EnumDefinition(
         name="LateralityEnum",
@@ -18935,6 +20942,2245 @@ class OpenSourceMaturityLevel(EnumDefinitionImpl):
         description="Maturity assessment for open source projects",
     )
 
+class LegalEntityTypeEnum(EnumDefinitionImpl):
+    """
+    Legal entity types for business organizations
+    """
+    SOLE_PROPRIETORSHIP = PermissibleValue(
+        text="SOLE_PROPRIETORSHIP",
+        title="Sole Proprietorship",
+        description="Business owned and operated by single individual")
+    GENERAL_PARTNERSHIP = PermissibleValue(
+        text="GENERAL_PARTNERSHIP",
+        title="General Partnership",
+        description="Business owned by two or more partners sharing responsibilities")
+    LIMITED_PARTNERSHIP = PermissibleValue(
+        text="LIMITED_PARTNERSHIP",
+        title="Limited Partnership (LP)",
+        description="Partnership with general and limited partners")
+    LIMITED_LIABILITY_PARTNERSHIP = PermissibleValue(
+        text="LIMITED_LIABILITY_PARTNERSHIP",
+        title="Limited Liability Partnership (LLP)",
+        description="Partnership providing liability protection to all partners")
+    LIMITED_LIABILITY_COMPANY = PermissibleValue(
+        text="LIMITED_LIABILITY_COMPANY",
+        title="Limited Liability Company (LLC)",
+        description="Hybrid entity combining corporation and partnership features")
+    SINGLE_MEMBER_LLC = PermissibleValue(
+        text="SINGLE_MEMBER_LLC",
+        title="Single Member LLC",
+        description="LLC with only one owner/member")
+    MULTI_MEMBER_LLC = PermissibleValue(
+        text="MULTI_MEMBER_LLC",
+        title="Multi-Member LLC",
+        description="LLC with multiple owners/members")
+    C_CORPORATION = PermissibleValue(
+        text="C_CORPORATION",
+        title="C Corporation",
+        description="Traditional corporation with double taxation")
+    S_CORPORATION = PermissibleValue(
+        text="S_CORPORATION",
+        title="S Corporation",
+        description="Corporation electing pass-through taxation")
+    B_CORPORATION = PermissibleValue(
+        text="B_CORPORATION",
+        title="Benefit Corporation (B-Corp)",
+        description="Corporation with social and environmental mission")
+    PUBLIC_CORPORATION = PermissibleValue(
+        text="PUBLIC_CORPORATION",
+        title="Public Corporation",
+        description="Corporation with publicly traded shares")
+    PRIVATE_CORPORATION = PermissibleValue(
+        text="PRIVATE_CORPORATION",
+        title="Private Corporation",
+        description="Corporation with privately held shares")
+    NONPROFIT_CORPORATION = PermissibleValue(
+        text="NONPROFIT_CORPORATION",
+        title="Nonprofit Corporation",
+        description="Corporation organized for charitable or public purposes")
+    COOPERATIVE = PermissibleValue(
+        text="COOPERATIVE",
+        title="Cooperative",
+        description="Member-owned and democratically controlled organization")
+    JOINT_VENTURE = PermissibleValue(
+        text="JOINT_VENTURE",
+        title="Joint Venture",
+        description="Temporary partnership for specific project or purpose")
+    HOLDING_COMPANY = PermissibleValue(
+        text="HOLDING_COMPANY",
+        title="Holding Company",
+        description="Company that owns controlling interests in other companies")
+    SUBSIDIARY = PermissibleValue(
+        text="SUBSIDIARY",
+        title="Subsidiary",
+        description="Company controlled by another company (parent)")
+    FRANCHISE = PermissibleValue(
+        text="FRANCHISE",
+        title="Franchise",
+        description="Business operating under franchisor's brand and system")
+    GOVERNMENT_ENTITY = PermissibleValue(
+        text="GOVERNMENT_ENTITY",
+        title="Government Entity",
+        description="Entity owned and operated by government")
+
+    _defn = EnumDefinition(
+        name="LegalEntityTypeEnum",
+        description="Legal entity types for business organizations",
+    )
+
+class OrganizationalStructureEnum(EnumDefinitionImpl):
+    """
+    Types of organizational hierarchy and reporting structures
+    """
+    HIERARCHICAL = PermissibleValue(
+        text="HIERARCHICAL",
+        title="Hierarchical Structure",
+        description="Traditional pyramid structure with clear chain of command")
+    FLAT = PermissibleValue(
+        text="FLAT",
+        title="Flat Structure",
+        description="Minimal hierarchical levels with broader spans of control")
+    MATRIX = PermissibleValue(
+        text="MATRIX",
+        title="Matrix Structure",
+        description="Dual reporting relationships combining functional and project lines")
+    FUNCTIONAL = PermissibleValue(
+        text="FUNCTIONAL",
+        title="Functional Structure",
+        description="Organization by business functions or departments")
+    DIVISIONAL = PermissibleValue(
+        text="DIVISIONAL",
+        title="Divisional Structure",
+        description="Organization by product lines, markets, or geography")
+    NETWORK = PermissibleValue(
+        text="NETWORK",
+        title="Network Structure",
+        description="Flexible structure with interconnected relationships")
+    TEAM_BASED = PermissibleValue(
+        text="TEAM_BASED",
+        title="Team-Based Structure",
+        description="Organization around self-managing teams")
+    VIRTUAL = PermissibleValue(
+        text="VIRTUAL",
+        title="Virtual Structure",
+        description="Geographically dispersed organization connected by technology")
+    HYBRID = PermissibleValue(
+        text="HYBRID",
+        title="Hybrid Structure",
+        description="Combination of multiple organizational structures")
+
+    _defn = EnumDefinition(
+        name="OrganizationalStructureEnum",
+        description="Types of organizational hierarchy and reporting structures",
+    )
+
+class ManagementLevelEnum(EnumDefinitionImpl):
+    """
+    Hierarchical levels within organizational management structure
+    """
+    BOARD_OF_DIRECTORS = PermissibleValue(
+        text="BOARD_OF_DIRECTORS",
+        title="Board of Directors",
+        description="Governing body elected by shareholders")
+    C_SUITE = PermissibleValue(
+        text="C_SUITE",
+        title="C-Suite/Chief Officers",
+        description="Top executive leadership team")
+    SENIOR_EXECUTIVE = PermissibleValue(
+        text="SENIOR_EXECUTIVE",
+        title="Senior Executive",
+        description="Senior leadership below C-suite level")
+    VICE_PRESIDENT = PermissibleValue(
+        text="VICE_PRESIDENT",
+        title="Vice President",
+        description="Senior management responsible for major divisions")
+    DIRECTOR = PermissibleValue(
+        text="DIRECTOR",
+        title="Director",
+        description="Management responsible for departments or major programs")
+    MANAGER = PermissibleValue(
+        text="MANAGER",
+        title="Manager",
+        description="Supervisory role managing teams or operations")
+    SUPERVISOR = PermissibleValue(
+        text="SUPERVISOR",
+        title="Supervisor",
+        description="First-line management overseeing frontline employees")
+    TEAM_LEAD = PermissibleValue(
+        text="TEAM_LEAD",
+        title="Team Lead",
+        description="Lead role within team without formal management authority")
+    SENIOR_INDIVIDUAL_CONTRIBUTOR = PermissibleValue(
+        text="SENIOR_INDIVIDUAL_CONTRIBUTOR",
+        title="Senior Individual Contributor",
+        description="Experienced professional without management responsibilities")
+    INDIVIDUAL_CONTRIBUTOR = PermissibleValue(
+        text="INDIVIDUAL_CONTRIBUTOR",
+        title="Individual Contributor",
+        description="Professional or specialist role")
+    ENTRY_LEVEL = PermissibleValue(
+        text="ENTRY_LEVEL",
+        title="Entry Level",
+        description="Beginning professional or support roles")
+
+    _defn = EnumDefinition(
+        name="ManagementLevelEnum",
+        description="Hierarchical levels within organizational management structure",
+    )
+
+class CorporateGovernanceRoleEnum(EnumDefinitionImpl):
+    """
+    Roles within corporate governance structure
+    """
+    CHAIRMAN_OF_BOARD = PermissibleValue(
+        text="CHAIRMAN_OF_BOARD",
+        title="Chairman of the Board",
+        description="Leader of board of directors")
+    LEAD_INDEPENDENT_DIRECTOR = PermissibleValue(
+        text="LEAD_INDEPENDENT_DIRECTOR",
+        title="Lead Independent Director",
+        description="Senior independent director when chairman is not independent")
+    INDEPENDENT_DIRECTOR = PermissibleValue(
+        text="INDEPENDENT_DIRECTOR",
+        title="Independent Director",
+        description="Board member independent from company management")
+    INSIDE_DIRECTOR = PermissibleValue(
+        text="INSIDE_DIRECTOR",
+        title="Inside Director",
+        description="Board member who is also company employee or has material relationship")
+    AUDIT_COMMITTEE_CHAIR = PermissibleValue(
+        text="AUDIT_COMMITTEE_CHAIR",
+        title="Audit Committee Chair",
+        description="Chair of board's audit committee")
+    COMPENSATION_COMMITTEE_CHAIR = PermissibleValue(
+        text="COMPENSATION_COMMITTEE_CHAIR",
+        title="Compensation Committee Chair",
+        description="Chair of board's compensation committee")
+    NOMINATING_COMMITTEE_CHAIR = PermissibleValue(
+        text="NOMINATING_COMMITTEE_CHAIR",
+        title="Nominating Committee Chair",
+        description="Chair of board's nominating and governance committee")
+    CHIEF_EXECUTIVE_OFFICER = PermissibleValue(
+        text="CHIEF_EXECUTIVE_OFFICER",
+        title="Chief Executive Officer (CEO)",
+        description="Highest-ranking executive officer")
+    CHIEF_FINANCIAL_OFFICER = PermissibleValue(
+        text="CHIEF_FINANCIAL_OFFICER",
+        title="Chief Financial Officer (CFO)",
+        description="Senior executive responsible for financial management")
+    CHIEF_OPERATING_OFFICER = PermissibleValue(
+        text="CHIEF_OPERATING_OFFICER",
+        title="Chief Operating Officer (COO)",
+        description="Senior executive responsible for operations")
+    CORPORATE_SECRETARY = PermissibleValue(
+        text="CORPORATE_SECRETARY",
+        title="Corporate Secretary",
+        description="Officer responsible for corporate records and governance compliance")
+
+    _defn = EnumDefinition(
+        name="CorporateGovernanceRoleEnum",
+        description="Roles within corporate governance structure",
+    )
+
+class BusinessOwnershipTypeEnum(EnumDefinitionImpl):
+    """
+    Types of business ownership structures
+    """
+    PRIVATE_OWNERSHIP = PermissibleValue(
+        text="PRIVATE_OWNERSHIP",
+        title="Private Ownership",
+        description="Business owned by private individuals or entities")
+    PUBLIC_OWNERSHIP = PermissibleValue(
+        text="PUBLIC_OWNERSHIP",
+        title="Public Ownership",
+        description="Business with publicly traded ownership shares")
+    FAMILY_OWNERSHIP = PermissibleValue(
+        text="FAMILY_OWNERSHIP",
+        title="Family Ownership",
+        description="Business owned and controlled by family members")
+    EMPLOYEE_OWNERSHIP = PermissibleValue(
+        text="EMPLOYEE_OWNERSHIP",
+        title="Employee Ownership",
+        description="Business owned by employees through stock or cooperative structure")
+    INSTITUTIONAL_OWNERSHIP = PermissibleValue(
+        text="INSTITUTIONAL_OWNERSHIP",
+        title="Institutional Ownership",
+        description="Business owned by institutional investors")
+    GOVERNMENT_OWNERSHIP = PermissibleValue(
+        text="GOVERNMENT_OWNERSHIP",
+        title="Government Ownership",
+        description="Business owned by government entities")
+    FOREIGN_OWNERSHIP = PermissibleValue(
+        text="FOREIGN_OWNERSHIP",
+        title="Foreign Ownership",
+        description="Business owned by foreign individuals or entities")
+    JOINT_OWNERSHIP = PermissibleValue(
+        text="JOINT_OWNERSHIP",
+        title="Joint Ownership",
+        description="Business owned jointly by multiple parties")
+
+    _defn = EnumDefinition(
+        name="BusinessOwnershipTypeEnum",
+        description="Types of business ownership structures",
+    )
+
+class BusinessSizeClassificationEnum(EnumDefinitionImpl):
+    """
+    Size classifications for business entities
+    """
+    MICRO_BUSINESS = PermissibleValue(
+        text="MICRO_BUSINESS",
+        title="Micro Business",
+        description="Very small business with minimal employees and revenue")
+    SMALL_BUSINESS = PermissibleValue(
+        text="SMALL_BUSINESS",
+        title="Small Business",
+        description="Small business as defined by SBA standards")
+    MEDIUM_BUSINESS = PermissibleValue(
+        text="MEDIUM_BUSINESS",
+        title="Medium Business",
+        description="Mid-sized business between small and large classifications")
+    LARGE_BUSINESS = PermissibleValue(
+        text="LARGE_BUSINESS",
+        title="Large Business",
+        description="Major corporation with significant operations")
+    MULTINATIONAL_CORPORATION = PermissibleValue(
+        text="MULTINATIONAL_CORPORATION",
+        title="Multinational Corporation",
+        description="Large corporation operating in multiple countries")
+    FORTUNE_500 = PermissibleValue(
+        text="FORTUNE_500",
+        title="Fortune 500 Company",
+        description="Among the 500 largest US corporations by revenue")
+
+    _defn = EnumDefinition(
+        name="BusinessSizeClassificationEnum",
+        description="Size classifications for business entities",
+    )
+
+class BusinessLifecycleStageEnum(EnumDefinitionImpl):
+    """
+    Stages in business development lifecycle
+    """
+    CONCEPT_STAGE = PermissibleValue(
+        text="CONCEPT_STAGE",
+        title="Concept Stage",
+        description="Initial business idea development and validation")
+    STARTUP_STAGE = PermissibleValue(
+        text="STARTUP_STAGE",
+        title="Startup Stage",
+        description="Business launch and early operations")
+    GROWTH_STAGE = PermissibleValue(
+        text="GROWTH_STAGE",
+        title="Growth Stage",
+        description="Rapid expansion and scaling operations")
+    EXPANSION_STAGE = PermissibleValue(
+        text="EXPANSION_STAGE",
+        title="Expansion Stage",
+        description="Market expansion and diversification")
+    MATURITY_STAGE = PermissibleValue(
+        text="MATURITY_STAGE",
+        title="Maturity Stage",
+        description="Stable operations with established market position")
+    DECLINE_STAGE = PermissibleValue(
+        text="DECLINE_STAGE",
+        title="Decline Stage",
+        description="Decreasing market relevance or performance")
+    TURNAROUND_STAGE = PermissibleValue(
+        text="TURNAROUND_STAGE",
+        title="Turnaround Stage",
+        description="Recovery efforts from decline or crisis")
+    EXIT_STAGE = PermissibleValue(
+        text="EXIT_STAGE",
+        title="Exit Stage",
+        description="Business sale, merger, or closure")
+
+    _defn = EnumDefinition(
+        name="BusinessLifecycleStageEnum",
+        description="Stages in business development lifecycle",
+    )
+
+class NAICSSectorEnum(EnumDefinitionImpl):
+    """
+    NAICS two-digit sector codes (North American Industry Classification System)
+    """
+    SECTOR_11 = PermissibleValue(
+        text="SECTOR_11",
+        title="Agriculture, Forestry, Fishing and Hunting",
+        description="Establishments engaged in agriculture, forestry, fishing, and hunting")
+    SECTOR_21 = PermissibleValue(
+        text="SECTOR_21",
+        title="Mining, Quarrying, and Oil and Gas Extraction",
+        description="Establishments engaged in extracting natural resources")
+    SECTOR_22 = PermissibleValue(
+        text="SECTOR_22",
+        title="Utilities",
+        description="Establishments engaged in providing utilities")
+    SECTOR_23 = PermissibleValue(
+        text="SECTOR_23",
+        title="Construction",
+        description="Establishments engaged in construction activities")
+    SECTOR_31_33 = PermissibleValue(
+        text="SECTOR_31_33",
+        title="Manufacturing",
+        description="Establishments engaged in manufacturing goods")
+    SECTOR_42 = PermissibleValue(
+        text="SECTOR_42",
+        title="Wholesale Trade",
+        description="Establishments engaged in wholesale distribution")
+    SECTOR_44_45 = PermissibleValue(
+        text="SECTOR_44_45",
+        title="Retail Trade",
+        description="Establishments engaged in retail sales to consumers")
+    SECTOR_48_49 = PermissibleValue(
+        text="SECTOR_48_49",
+        title="Transportation and Warehousing",
+        description="Establishments providing transportation and warehousing services")
+    SECTOR_51 = PermissibleValue(
+        text="SECTOR_51",
+        title="Information",
+        description="Establishments in information industries")
+    SECTOR_52 = PermissibleValue(
+        text="SECTOR_52",
+        title="Finance and Insurance",
+        description="Establishments providing financial services")
+    SECTOR_53 = PermissibleValue(
+        text="SECTOR_53",
+        title="Real Estate and Rental and Leasing",
+        description="Establishments engaged in real estate and rental activities")
+    SECTOR_54 = PermissibleValue(
+        text="SECTOR_54",
+        title="Professional, Scientific, and Technical Services",
+        description="Establishments providing professional services")
+    SECTOR_55 = PermissibleValue(
+        text="SECTOR_55",
+        title="Management of Companies and Enterprises",
+        description="Establishments serving as holding companies or managing enterprises")
+    SECTOR_56 = PermissibleValue(
+        text="SECTOR_56",
+        title="Administrative and Support and Waste Management",
+        description="Establishments providing administrative and support services")
+    SECTOR_61 = PermissibleValue(
+        text="SECTOR_61",
+        title="Educational Services",
+        description="Establishments providing educational instruction")
+    SECTOR_62 = PermissibleValue(
+        text="SECTOR_62",
+        title="Health Care and Social Assistance",
+        description="Establishments providing health care and social assistance")
+    SECTOR_71 = PermissibleValue(
+        text="SECTOR_71",
+        title="Arts, Entertainment, and Recreation",
+        description="Establishments in arts, entertainment, and recreation")
+    SECTOR_72 = PermissibleValue(
+        text="SECTOR_72",
+        title="Accommodation and Food Services",
+        description="Establishments providing accommodation and food services")
+    SECTOR_81 = PermissibleValue(
+        text="SECTOR_81",
+        title="Other Services (except Public Administration)",
+        description="Establishments providing other services")
+    SECTOR_92 = PermissibleValue(
+        text="SECTOR_92",
+        title="Public Administration",
+        description="Government establishments")
+
+    _defn = EnumDefinition(
+        name="NAICSSectorEnum",
+        description="NAICS two-digit sector codes (North American Industry Classification System)",
+    )
+
+class EconomicSectorEnum(EnumDefinitionImpl):
+    """
+    Broad economic sector classifications
+    """
+    PRIMARY_SECTOR = PermissibleValue(
+        text="PRIMARY_SECTOR",
+        title="Primary Sector",
+        description="Economic activities extracting natural resources")
+    SECONDARY_SECTOR = PermissibleValue(
+        text="SECONDARY_SECTOR",
+        title="Secondary Sector",
+        description="Economic activities manufacturing and processing goods")
+    TERTIARY_SECTOR = PermissibleValue(
+        text="TERTIARY_SECTOR",
+        title="Tertiary Sector",
+        description="Economic activities providing services")
+    QUATERNARY_SECTOR = PermissibleValue(
+        text="QUATERNARY_SECTOR",
+        title="Quaternary Sector",
+        description="Knowledge-based economic activities")
+    QUINARY_SECTOR = PermissibleValue(
+        text="QUINARY_SECTOR",
+        title="Quinary Sector",
+        description="High-level decision-making and policy services")
+
+    _defn = EnumDefinition(
+        name="EconomicSectorEnum",
+        description="Broad economic sector classifications",
+    )
+
+class BusinessActivityTypeEnum(EnumDefinitionImpl):
+    """
+    Types of primary business activities
+    """
+    PRODUCTION = PermissibleValue(
+        text="PRODUCTION",
+        title="Production/Manufacturing",
+        description="Creating or manufacturing physical goods")
+    DISTRIBUTION = PermissibleValue(
+        text="DISTRIBUTION",
+        title="Distribution/Trade",
+        description="Moving goods from producers to consumers")
+    SERVICES = PermissibleValue(
+        text="SERVICES",
+        title="Service Provision",
+        description="Providing intangible services to customers")
+    TECHNOLOGY = PermissibleValue(
+        text="TECHNOLOGY",
+        title="Technology/Innovation",
+        description="Developing and applying technology solutions")
+    FINANCE = PermissibleValue(
+        text="FINANCE",
+        title="Financial Services",
+        description="Providing financial and investment services")
+    INFORMATION = PermissibleValue(
+        text="INFORMATION",
+        title="Information/Media",
+        description="Creating, processing, and distributing information")
+    EDUCATION = PermissibleValue(
+        text="EDUCATION",
+        title="Education/Training",
+        description="Providing educational and training services")
+    HEALTHCARE = PermissibleValue(
+        text="HEALTHCARE",
+        title="Healthcare/Medical",
+        description="Providing health and medical services")
+    ENTERTAINMENT = PermissibleValue(
+        text="ENTERTAINMENT",
+        title="Entertainment/Recreation",
+        description="Providing entertainment and recreational services")
+    PROFESSIONAL_SERVICES = PermissibleValue(
+        text="PROFESSIONAL_SERVICES",
+        title="Professional Services",
+        description="Providing specialized professional expertise")
+
+    _defn = EnumDefinition(
+        name="BusinessActivityTypeEnum",
+        description="Types of primary business activities",
+    )
+
+class IndustryMaturityEnum(EnumDefinitionImpl):
+    """
+    Industry lifecycle and maturity stages
+    """
+    EMERGING = PermissibleValue(
+        text="EMERGING",
+        title="Emerging Industry",
+        description="New industry in early development stage")
+    GROWTH = PermissibleValue(
+        text="GROWTH",
+        title="Growth Industry",
+        description="Industry experiencing rapid expansion")
+    MATURE = PermissibleValue(
+        text="MATURE",
+        title="Mature Industry",
+        description="Established industry with stable growth")
+    DECLINING = PermissibleValue(
+        text="DECLINING",
+        title="Declining Industry",
+        description="Industry experiencing contraction")
+    TRANSFORMING = PermissibleValue(
+        text="TRANSFORMING",
+        title="Transforming Industry",
+        description="Industry undergoing fundamental change")
+
+    _defn = EnumDefinition(
+        name="IndustryMaturityEnum",
+        description="Industry lifecycle and maturity stages",
+    )
+
+class MarketStructureEnum(EnumDefinitionImpl):
+    """
+    Competitive structure of industry markets
+    """
+    PERFECT_COMPETITION = PermissibleValue(
+        text="PERFECT_COMPETITION",
+        title="Perfect Competition",
+        description="Many small firms with identical products")
+    MONOPOLISTIC_COMPETITION = PermissibleValue(
+        text="MONOPOLISTIC_COMPETITION",
+        title="Monopolistic Competition",
+        description="Many firms with differentiated products")
+    OLIGOPOLY = PermissibleValue(
+        text="OLIGOPOLY",
+        title="Oligopoly",
+        description="Few large firms dominating the market")
+    MONOPOLY = PermissibleValue(
+        text="MONOPOLY",
+        title="Monopoly",
+        description="Single firm controlling the market")
+    DUOPOLY = PermissibleValue(
+        text="DUOPOLY",
+        title="Duopoly",
+        description="Two firms dominating the market")
+
+    _defn = EnumDefinition(
+        name="MarketStructureEnum",
+        description="Competitive structure of industry markets",
+    )
+
+class IndustryRegulationLevelEnum(EnumDefinitionImpl):
+    """
+    Level of government regulation in different industries
+    """
+    HIGHLY_REGULATED = PermissibleValue(
+        text="HIGHLY_REGULATED",
+        title="Highly Regulated",
+        description="Industries subject to extensive government oversight")
+    MODERATELY_REGULATED = PermissibleValue(
+        text="MODERATELY_REGULATED",
+        title="Moderately Regulated",
+        description="Industries with significant but focused regulation")
+    LIGHTLY_REGULATED = PermissibleValue(
+        text="LIGHTLY_REGULATED",
+        title="Lightly Regulated",
+        description="Industries with minimal regulatory oversight")
+    SELF_REGULATED = PermissibleValue(
+        text="SELF_REGULATED",
+        title="Self-Regulated",
+        description="Industries primarily regulated by industry organizations")
+    DEREGULATED = PermissibleValue(
+        text="DEREGULATED",
+        title="Deregulated",
+        description="Industries formerly regulated but now market-based")
+
+    _defn = EnumDefinition(
+        name="IndustryRegulationLevelEnum",
+        description="Level of government regulation in different industries",
+    )
+
+class ManagementMethodologyEnum(EnumDefinitionImpl):
+    """
+    Management approaches and methodologies
+    """
+    TRADITIONAL_MANAGEMENT = PermissibleValue(
+        text="TRADITIONAL_MANAGEMENT",
+        title="Traditional Management",
+        description="Hierarchical command-and-control management approach")
+    AGILE_MANAGEMENT = PermissibleValue(
+        text="AGILE_MANAGEMENT",
+        title="Agile Management",
+        description="Flexible, iterative management approach")
+    LEAN_MANAGEMENT = PermissibleValue(
+        text="LEAN_MANAGEMENT",
+        title="Lean Management",
+        description="Waste elimination and value optimization approach")
+    PARTICIPATIVE_MANAGEMENT = PermissibleValue(
+        text="PARTICIPATIVE_MANAGEMENT",
+        title="Participative Management",
+        description="Employee involvement in decision-making")
+    MATRIX_MANAGEMENT = PermissibleValue(
+        text="MATRIX_MANAGEMENT",
+        title="Matrix Management",
+        description="Dual reporting relationships and shared authority")
+    PROJECT_MANAGEMENT = PermissibleValue(
+        text="PROJECT_MANAGEMENT",
+        title="Project Management",
+        description="Structured approach to managing projects")
+    RESULTS_ORIENTED_MANAGEMENT = PermissibleValue(
+        text="RESULTS_ORIENTED_MANAGEMENT",
+        title="Results-Oriented Management",
+        description="Focus on outcomes and performance results")
+    SERVANT_LEADERSHIP = PermissibleValue(
+        text="SERVANT_LEADERSHIP",
+        title="Servant Leadership",
+        description="Leader serves and supports team members")
+    TRANSFORMATIONAL_MANAGEMENT = PermissibleValue(
+        text="TRANSFORMATIONAL_MANAGEMENT",
+        title="Transformational Management",
+        description="Change-oriented and inspirational management")
+    DEMOCRATIC_MANAGEMENT = PermissibleValue(
+        text="DEMOCRATIC_MANAGEMENT",
+        title="Democratic Management",
+        description="Collaborative and consensus-building approach")
+
+    _defn = EnumDefinition(
+        name="ManagementMethodologyEnum",
+        description="Management approaches and methodologies",
+    )
+
+class StrategicFrameworkEnum(EnumDefinitionImpl):
+    """
+    Strategic planning and analysis frameworks
+    """
+    SWOT_ANALYSIS = PermissibleValue(
+        text="SWOT_ANALYSIS",
+        title="SWOT Analysis",
+        description="Strengths, Weaknesses, Opportunities, Threats analysis")
+    PORTERS_FIVE_FORCES = PermissibleValue(
+        text="PORTERS_FIVE_FORCES",
+        title="Porter's Five Forces",
+        description="Industry competitiveness analysis framework")
+    BALANCED_SCORECARD = PermissibleValue(
+        text="BALANCED_SCORECARD",
+        title="Balanced Scorecard",
+        description="Performance measurement from multiple perspectives")
+    BLUE_OCEAN_STRATEGY = PermissibleValue(
+        text="BLUE_OCEAN_STRATEGY",
+        title="Blue Ocean Strategy",
+        description="Creating uncontested market space strategy")
+    ANSOFF_MATRIX = PermissibleValue(
+        text="ANSOFF_MATRIX",
+        title="Ansoff Matrix",
+        description="Product and market growth strategy framework")
+    BCG_MATRIX = PermissibleValue(
+        text="BCG_MATRIX",
+        title="BCG Matrix",
+        description="Portfolio analysis of business units")
+    VALUE_CHAIN_ANALYSIS = PermissibleValue(
+        text="VALUE_CHAIN_ANALYSIS",
+        title="Value Chain Analysis",
+        description="Analysis of value-creating activities")
+    SCENARIO_PLANNING = PermissibleValue(
+        text="SCENARIO_PLANNING",
+        title="Scenario Planning",
+        description="Multiple future scenario development and planning")
+    STRATEGIC_CANVAS = PermissibleValue(
+        text="STRATEGIC_CANVAS",
+        title="Strategy Canvas",
+        description="Visual representation of competitive factors")
+    CORE_COMPETENCY_ANALYSIS = PermissibleValue(
+        text="CORE_COMPETENCY_ANALYSIS",
+        title="Core Competency Analysis",
+        description="Identification and development of core competencies")
+
+    _defn = EnumDefinition(
+        name="StrategicFrameworkEnum",
+        description="Strategic planning and analysis frameworks",
+    )
+
+class OperationalModelEnum(EnumDefinitionImpl):
+    """
+    Business operational models and approaches
+    """
+    CENTRALIZED_OPERATIONS = PermissibleValue(
+        text="CENTRALIZED_OPERATIONS",
+        title="Centralized Operations",
+        description="Centralized operational control and decision-making")
+    DECENTRALIZED_OPERATIONS = PermissibleValue(
+        text="DECENTRALIZED_OPERATIONS",
+        title="Decentralized Operations",
+        description="Distributed operational control and autonomy")
+    HYBRID_OPERATIONS = PermissibleValue(
+        text="HYBRID_OPERATIONS",
+        title="Hybrid Operations",
+        description="Combination of centralized and decentralized elements")
+    OUTSOURCED_OPERATIONS = PermissibleValue(
+        text="OUTSOURCED_OPERATIONS",
+        title="Outsourced Operations",
+        description="External service provider operational model")
+    SHARED_SERVICES = PermissibleValue(
+        text="SHARED_SERVICES",
+        title="Shared Services",
+        description="Centralized services shared across business units")
+    NETWORK_OPERATIONS = PermissibleValue(
+        text="NETWORK_OPERATIONS",
+        title="Network Operations",
+        description="Collaborative network of partners and suppliers")
+    PLATFORM_OPERATIONS = PermissibleValue(
+        text="PLATFORM_OPERATIONS",
+        title="Platform Operations",
+        description="Platform-based business operational model")
+    AGILE_OPERATIONS = PermissibleValue(
+        text="AGILE_OPERATIONS",
+        title="Agile Operations",
+        description="Flexible and responsive operational approach")
+    LEAN_OPERATIONS = PermissibleValue(
+        text="LEAN_OPERATIONS",
+        title="Lean Operations",
+        description="Waste elimination and value-focused operations")
+    DIGITAL_OPERATIONS = PermissibleValue(
+        text="DIGITAL_OPERATIONS",
+        title="Digital Operations",
+        description="Technology-enabled and digital-first operations")
+
+    _defn = EnumDefinition(
+        name="OperationalModelEnum",
+        description="Business operational models and approaches",
+    )
+
+class PerformanceMeasurementEnum(EnumDefinitionImpl):
+    """
+    Performance measurement systems and approaches
+    """
+    KEY_PERFORMANCE_INDICATORS = PermissibleValue(
+        text="KEY_PERFORMANCE_INDICATORS",
+        title="Key Performance Indicators (KPIs)",
+        description="Specific metrics measuring critical performance areas")
+    OBJECTIVES_KEY_RESULTS = PermissibleValue(
+        text="OBJECTIVES_KEY_RESULTS",
+        title="Objectives and Key Results (OKRs)",
+        description="Goal-setting framework with measurable outcomes")
+    BALANCED_SCORECARD_MEASUREMENT = PermissibleValue(
+        text="BALANCED_SCORECARD_MEASUREMENT",
+        title="Balanced Scorecard Measurement",
+        description="Multi-perspective performance measurement system")
+    RETURN_ON_INVESTMENT = PermissibleValue(
+        text="RETURN_ON_INVESTMENT",
+        title="Return on Investment (ROI)",
+        description="Financial return measurement relative to investment")
+    ECONOMIC_VALUE_ADDED = PermissibleValue(
+        text="ECONOMIC_VALUE_ADDED",
+        title="Economic Value Added (EVA)",
+        description="Value creation measurement after cost of capital")
+    CUSTOMER_SATISFACTION_METRICS = PermissibleValue(
+        text="CUSTOMER_SATISFACTION_METRICS",
+        title="Customer Satisfaction Metrics",
+        description="Customer experience and satisfaction measurement")
+    EMPLOYEE_ENGAGEMENT_METRICS = PermissibleValue(
+        text="EMPLOYEE_ENGAGEMENT_METRICS",
+        title="Employee Engagement Metrics",
+        description="Employee satisfaction and engagement measurement")
+    OPERATIONAL_EFFICIENCY_METRICS = PermissibleValue(
+        text="OPERATIONAL_EFFICIENCY_METRICS",
+        title="Operational Efficiency Metrics",
+        description="Operational performance and efficiency measurement")
+    INNOVATION_METRICS = PermissibleValue(
+        text="INNOVATION_METRICS",
+        title="Innovation Metrics",
+        description="Innovation performance and capability measurement")
+    SUSTAINABILITY_METRICS = PermissibleValue(
+        text="SUSTAINABILITY_METRICS",
+        title="Sustainability Metrics",
+        description="Environmental and social sustainability measurement")
+
+    _defn = EnumDefinition(
+        name="PerformanceMeasurementEnum",
+        description="Performance measurement systems and approaches",
+    )
+
+class DecisionMakingStyleEnum(EnumDefinitionImpl):
+    """
+    Decision-making approaches and styles
+    """
+    AUTOCRATIC = PermissibleValue(
+        text="AUTOCRATIC",
+        title="Autocratic Decision Making",
+        description="Single decision-maker with full authority")
+    DEMOCRATIC = PermissibleValue(
+        text="DEMOCRATIC",
+        title="Democratic Decision Making",
+        description="Group participation in decision-making process")
+    CONSULTATIVE = PermissibleValue(
+        text="CONSULTATIVE",
+        title="Consultative Decision Making",
+        description="Leader consults others before deciding")
+    CONSENSUS = PermissibleValue(
+        text="CONSENSUS",
+        title="Consensus Decision Making",
+        description="Agreement reached through group discussion")
+    DELEGATED = PermissibleValue(
+        text="DELEGATED",
+        title="Delegated Decision Making",
+        description="Decision authority delegated to others")
+    DATA_DRIVEN = PermissibleValue(
+        text="DATA_DRIVEN",
+        title="Data-Driven Decision Making",
+        description="Decisions based on data analysis and evidence")
+    INTUITIVE = PermissibleValue(
+        text="INTUITIVE",
+        title="Intuitive Decision Making",
+        description="Decisions based on experience and gut feeling")
+    COMMITTEE = PermissibleValue(
+        text="COMMITTEE",
+        title="Committee Decision Making",
+        description="Formal group decision-making structure")
+    COLLABORATIVE = PermissibleValue(
+        text="COLLABORATIVE",
+        title="Collaborative Decision Making",
+        description="Joint decision-making with shared responsibility")
+    CRISIS = PermissibleValue(
+        text="CRISIS",
+        title="Crisis Decision Making",
+        description="Rapid decision-making under crisis conditions")
+
+    _defn = EnumDefinition(
+        name="DecisionMakingStyleEnum",
+        description="Decision-making approaches and styles",
+    )
+
+class LeadershipStyleEnum(EnumDefinitionImpl):
+    """
+    Leadership approaches and styles
+    """
+    TRANSFORMATIONAL = PermissibleValue(
+        text="TRANSFORMATIONAL",
+        title="Transformational Leadership",
+        description="Inspirational leadership that motivates change")
+    TRANSACTIONAL = PermissibleValue(
+        text="TRANSACTIONAL",
+        title="Transactional Leadership",
+        description="Exchange-based leadership with rewards and consequences")
+    SERVANT = PermissibleValue(
+        text="SERVANT",
+        title="Servant Leadership",
+        description="Leader serves followers and facilitates their growth")
+    AUTHENTIC = PermissibleValue(
+        text="AUTHENTIC",
+        title="Authentic Leadership",
+        description="Genuine and self-aware leadership approach")
+    CHARISMATIC = PermissibleValue(
+        text="CHARISMATIC",
+        title="Charismatic Leadership",
+        description="Inspiring leadership through personal charisma")
+    SITUATIONAL = PermissibleValue(
+        text="SITUATIONAL",
+        title="Situational Leadership",
+        description="Adaptive leadership based on situation requirements")
+    DEMOCRATIC = PermissibleValue(
+        text="DEMOCRATIC",
+        title="Democratic Leadership",
+        description="Participative leadership with shared decision-making")
+    AUTOCRATIC = PermissibleValue(
+        text="AUTOCRATIC",
+        title="Autocratic Leadership",
+        description="Directive leadership with centralized control")
+    LAISSEZ_FAIRE = PermissibleValue(
+        text="LAISSEZ_FAIRE",
+        title="Laissez-Faire Leadership",
+        description="Hands-off leadership with minimal interference")
+    COACHING = PermissibleValue(
+        text="COACHING",
+        title="Coaching Leadership",
+        description="Development-focused leadership approach")
+
+    _defn = EnumDefinition(
+        name="LeadershipStyleEnum",
+        description="Leadership approaches and styles",
+    )
+
+class BusinessProcessTypeEnum(EnumDefinitionImpl):
+    """
+    Types of business processes
+    """
+    CORE_PROCESS = PermissibleValue(
+        text="CORE_PROCESS",
+        title="Core Business Process",
+        description="Primary processes that create customer value")
+    SUPPORT_PROCESS = PermissibleValue(
+        text="SUPPORT_PROCESS",
+        title="Support Process",
+        description="Processes that enable core business activities")
+    MANAGEMENT_PROCESS = PermissibleValue(
+        text="MANAGEMENT_PROCESS",
+        title="Management Process",
+        description="Processes for planning, controlling, and improving")
+    OPERATIONAL_PROCESS = PermissibleValue(
+        text="OPERATIONAL_PROCESS",
+        title="Operational Process",
+        description="Day-to-day operational activities")
+    STRATEGIC_PROCESS = PermissibleValue(
+        text="STRATEGIC_PROCESS",
+        title="Strategic Process",
+        description="Long-term planning and strategic activities")
+    INNOVATION_PROCESS = PermissibleValue(
+        text="INNOVATION_PROCESS",
+        title="Innovation Process",
+        description="Processes for developing new products or services")
+    CUSTOMER_PROCESS = PermissibleValue(
+        text="CUSTOMER_PROCESS",
+        title="Customer Process",
+        description="Processes focused on customer interaction and service")
+    FINANCIAL_PROCESS = PermissibleValue(
+        text="FINANCIAL_PROCESS",
+        title="Financial Process",
+        description="Processes related to financial management")
+
+    _defn = EnumDefinition(
+        name="BusinessProcessTypeEnum",
+        description="Types of business processes",
+    )
+
+class QualityStandardEnum(EnumDefinitionImpl):
+    """
+    Quality management standards and frameworks
+    """
+    ISO_9001 = PermissibleValue(
+        text="ISO_9001",
+        title="ISO 9001 Quality Management Systems",
+        description="International standard for quality management systems")
+    ISO_14001 = PermissibleValue(
+        text="ISO_14001",
+        title="ISO 14001 Environmental Management",
+        description="International standard for environmental management systems")
+    ISO_45001 = PermissibleValue(
+        text="ISO_45001",
+        title="ISO 45001 Occupational Health and Safety",
+        description="International standard for occupational health and safety")
+    ISO_27001 = PermissibleValue(
+        text="ISO_27001",
+        title="ISO 27001 Information Security Management",
+        description="International standard for information security management")
+    TQM = PermissibleValue(
+        text="TQM",
+        title="Total Quality Management",
+        description="Comprehensive quality management philosophy")
+    EFQM = PermissibleValue(
+        text="EFQM",
+        title="European Foundation for Quality Management",
+        description="European excellence model for organizational performance")
+    MALCOLM_BALDRIGE = PermissibleValue(
+        text="MALCOLM_BALDRIGE",
+        title="Malcolm Baldrige National Quality Award",
+        description="US national quality framework and award")
+    SIX_SIGMA = PermissibleValue(
+        text="SIX_SIGMA",
+        title="Six Sigma Quality Management",
+        description="Data-driven quality improvement methodology")
+    LEAN_QUALITY = PermissibleValue(
+        text="LEAN_QUALITY",
+        title="Lean Quality Management",
+        description="Waste elimination and value-focused quality approach")
+    AS9100 = PermissibleValue(
+        text="AS9100",
+        title="AS9100 Aerospace Quality Standard",
+        description="Quality standard for aerospace industry")
+    TS16949 = PermissibleValue(
+        text="TS16949",
+        title="TS 16949 Automotive Quality Standard",
+        description="Quality standard for automotive industry")
+    ISO_13485 = PermissibleValue(
+        text="ISO_13485",
+        title="ISO 13485 Medical Device Quality",
+        description="Quality standard for medical device industry")
+
+    _defn = EnumDefinition(
+        name="QualityStandardEnum",
+        description="Quality management standards and frameworks",
+    )
+
+class QualityMethodologyEnum(EnumDefinitionImpl):
+    """
+    Quality improvement methodologies and approaches
+    """
+    DMAIC = PermissibleValue(
+        text="DMAIC",
+        title="DMAIC (Define, Measure, Analyze, Improve, Control)",
+        description="Six Sigma problem-solving methodology")
+    DMADV = PermissibleValue(
+        text="DMADV",
+        title="DMADV (Define, Measure, Analyze, Design, Verify)",
+        description="Six Sigma design methodology for new processes")
+    PDCA = PermissibleValue(
+        text="PDCA",
+        title="PDCA (Plan, Do, Check, Act)",
+        description="Continuous improvement cycle methodology")
+    KAIZEN = PermissibleValue(
+        text="KAIZEN",
+        title="Kaizen Continuous Improvement",
+        description="Japanese philosophy of continuous improvement")
+    LEAN_SIX_SIGMA = PermissibleValue(
+        text="LEAN_SIX_SIGMA",
+        title="Lean Six Sigma",
+        description="Combined methodology integrating Lean and Six Sigma")
+    FIVE_S = PermissibleValue(
+        text="FIVE_S",
+        title="5S Workplace Organization",
+        description="Workplace organization and standardization methodology")
+    ROOT_CAUSE_ANALYSIS = PermissibleValue(
+        text="ROOT_CAUSE_ANALYSIS",
+        title="Root Cause Analysis",
+        description="Systematic approach to identifying problem root causes")
+    STATISTICAL_PROCESS_CONTROL = PermissibleValue(
+        text="STATISTICAL_PROCESS_CONTROL",
+        title="Statistical Process Control (SPC)",
+        description="Statistical methods for process monitoring and control")
+    FAILURE_MODE_ANALYSIS = PermissibleValue(
+        text="FAILURE_MODE_ANALYSIS",
+        title="Failure Mode and Effects Analysis (FMEA)",
+        description="Systematic analysis of potential failure modes")
+    BENCHMARKING = PermissibleValue(
+        text="BENCHMARKING",
+        title="Benchmarking",
+        description="Performance comparison with best practices")
+
+    _defn = EnumDefinition(
+        name="QualityMethodologyEnum",
+        description="Quality improvement methodologies and approaches",
+    )
+
+class QualityControlTechniqueEnum(EnumDefinitionImpl):
+    """
+    Quality control techniques and tools
+    """
+    CONTROL_CHARTS = PermissibleValue(
+        text="CONTROL_CHARTS",
+        title="Control Charts",
+        description="Statistical charts for monitoring process variation")
+    PARETO_ANALYSIS = PermissibleValue(
+        text="PARETO_ANALYSIS",
+        title="Pareto Analysis",
+        description="80/20 rule analysis for problem prioritization")
+    FISHBONE_DIAGRAM = PermissibleValue(
+        text="FISHBONE_DIAGRAM",
+        title="Fishbone Diagram (Ishikawa)",
+        description="Cause-and-effect analysis diagram")
+    HISTOGRAM = PermissibleValue(
+        text="HISTOGRAM",
+        title="Histogram",
+        description="Frequency distribution chart for data analysis")
+    SCATTER_DIAGRAM = PermissibleValue(
+        text="SCATTER_DIAGRAM",
+        title="Scatter Diagram",
+        description="Correlation analysis between two variables")
+    CHECK_SHEET = PermissibleValue(
+        text="CHECK_SHEET",
+        title="Check Sheet",
+        description="Data collection and recording tool")
+    FLOW_CHART = PermissibleValue(
+        text="FLOW_CHART",
+        title="Flow Chart",
+        description="Process flow visualization and analysis")
+    DESIGN_OF_EXPERIMENTS = PermissibleValue(
+        text="DESIGN_OF_EXPERIMENTS",
+        title="Design of Experiments (DOE)",
+        description="Statistical method for process optimization")
+    SAMPLING_PLANS = PermissibleValue(
+        text="SAMPLING_PLANS",
+        title="Statistical Sampling Plans",
+        description="Systematic approach to quality sampling")
+    GAUGE_R_AND_R = PermissibleValue(
+        text="GAUGE_R_AND_R",
+        title="Gauge R&R (Repeatability and Reproducibility)",
+        description="Measurement system analysis technique")
+
+    _defn = EnumDefinition(
+        name="QualityControlTechniqueEnum",
+        description="Quality control techniques and tools",
+    )
+
+class QualityAssuranceLevelEnum(EnumDefinitionImpl):
+    """
+    Levels of quality assurance implementation
+    """
+    BASIC_QA = PermissibleValue(
+        text="BASIC_QA",
+        title="Basic Quality Assurance",
+        description="Fundamental quality assurance practices")
+    INTERMEDIATE_QA = PermissibleValue(
+        text="INTERMEDIATE_QA",
+        title="Intermediate Quality Assurance",
+        description="Systematic quality assurance with documented processes")
+    ADVANCED_QA = PermissibleValue(
+        text="ADVANCED_QA",
+        title="Advanced Quality Assurance",
+        description="Comprehensive quality management system")
+    WORLD_CLASS_QA = PermissibleValue(
+        text="WORLD_CLASS_QA",
+        title="World-Class Quality Assurance",
+        description="Excellence-oriented quality management")
+    TOTAL_QUALITY = PermissibleValue(
+        text="TOTAL_QUALITY",
+        title="Total Quality Management",
+        description="Organization-wide quality culture and commitment")
+
+    _defn = EnumDefinition(
+        name="QualityAssuranceLevelEnum",
+        description="Levels of quality assurance implementation",
+    )
+
+class ProcessImprovementApproachEnum(EnumDefinitionImpl):
+    """
+    Process improvement methodologies and approaches
+    """
+    BUSINESS_PROCESS_REENGINEERING = PermissibleValue(
+        text="BUSINESS_PROCESS_REENGINEERING",
+        title="Business Process Reengineering (BPR)",
+        description="Radical redesign of business processes")
+    CONTINUOUS_IMPROVEMENT = PermissibleValue(
+        text="CONTINUOUS_IMPROVEMENT",
+        title="Continuous Improvement",
+        description="Ongoing incremental process improvement")
+    PROCESS_STANDARDIZATION = PermissibleValue(
+        text="PROCESS_STANDARDIZATION",
+        title="Process Standardization",
+        description="Establishing consistent process standards")
+    AUTOMATION = PermissibleValue(
+        text="AUTOMATION",
+        title="Process Automation",
+        description="Technology-driven process automation")
+    DIGITALIZATION = PermissibleValue(
+        text="DIGITALIZATION",
+        title="Digital Process Transformation",
+        description="Digital technology-enabled process transformation")
+    OUTSOURCING = PermissibleValue(
+        text="OUTSOURCING",
+        title="Process Outsourcing",
+        description="External provider process management")
+    SHARED_SERVICES = PermissibleValue(
+        text="SHARED_SERVICES",
+        title="Shared Services Model",
+        description="Centralized shared process delivery")
+    AGILE_PROCESS_IMPROVEMENT = PermissibleValue(
+        text="AGILE_PROCESS_IMPROVEMENT",
+        title="Agile Process Improvement",
+        description="Flexible and iterative process improvement")
+
+    _defn = EnumDefinition(
+        name="ProcessImprovementApproachEnum",
+        description="Process improvement methodologies and approaches",
+    )
+
+class QualityMaturityLevelEnum(EnumDefinitionImpl):
+    """
+    Organizational quality maturity levels
+    """
+    AD_HOC = PermissibleValue(
+        text="AD_HOC",
+        title="Ad Hoc Quality Approach",
+        description="Informal and unstructured quality practices")
+    DEFINED = PermissibleValue(
+        text="DEFINED",
+        title="Defined Quality Processes",
+        description="Documented and standardized quality processes")
+    MANAGED = PermissibleValue(
+        text="MANAGED",
+        title="Managed Quality System",
+        description="Measured and controlled quality management")
+    OPTIMIZED = PermissibleValue(
+        text="OPTIMIZED",
+        title="Optimized Quality Performance",
+        description="Continuously improving quality excellence")
+    WORLD_CLASS = PermissibleValue(
+        text="WORLD_CLASS",
+        title="World-Class Quality Leadership",
+        description="Industry-leading quality performance and innovation")
+
+    _defn = EnumDefinition(
+        name="QualityMaturityLevelEnum",
+        description="Organizational quality maturity levels",
+    )
+
+class ProcurementTypeEnum(EnumDefinitionImpl):
+    """
+    Types of procurement activities and approaches
+    """
+    DIRECT_PROCUREMENT = PermissibleValue(
+        text="DIRECT_PROCUREMENT",
+        title="Direct Procurement",
+        description="Procurement of materials directly used in production")
+    INDIRECT_PROCUREMENT = PermissibleValue(
+        text="INDIRECT_PROCUREMENT",
+        title="Indirect Procurement",
+        description="Procurement of goods and services supporting operations")
+    SERVICES_PROCUREMENT = PermissibleValue(
+        text="SERVICES_PROCUREMENT",
+        title="Services Procurement",
+        description="Procurement of professional and business services")
+    CAPITAL_PROCUREMENT = PermissibleValue(
+        text="CAPITAL_PROCUREMENT",
+        title="Capital Procurement",
+        description="Procurement of capital equipment and assets")
+    STRATEGIC_PROCUREMENT = PermissibleValue(
+        text="STRATEGIC_PROCUREMENT",
+        title="Strategic Procurement",
+        description="Procurement of strategically important items")
+    TACTICAL_PROCUREMENT = PermissibleValue(
+        text="TACTICAL_PROCUREMENT",
+        title="Tactical Procurement",
+        description="Routine procurement of standard items")
+    EMERGENCY_PROCUREMENT = PermissibleValue(
+        text="EMERGENCY_PROCUREMENT",
+        title="Emergency Procurement",
+        description="Urgent procurement due to immediate needs")
+    FRAMEWORK_PROCUREMENT = PermissibleValue(
+        text="FRAMEWORK_PROCUREMENT",
+        title="Framework Procurement",
+        description="Pre-negotiated procurement agreements")
+    E_PROCUREMENT = PermissibleValue(
+        text="E_PROCUREMENT",
+        title="Electronic Procurement",
+        description="Technology-enabled procurement processes")
+    SUSTAINABLE_PROCUREMENT = PermissibleValue(
+        text="SUSTAINABLE_PROCUREMENT",
+        title="Sustainable Procurement",
+        description="Environmentally and socially responsible procurement")
+
+    _defn = EnumDefinition(
+        name="ProcurementTypeEnum",
+        description="Types of procurement activities and approaches",
+    )
+
+class VendorCategoryEnum(EnumDefinitionImpl):
+    """
+    Vendor classification categories
+    """
+    STRATEGIC_SUPPLIER = PermissibleValue(
+        text="STRATEGIC_SUPPLIER",
+        title="Strategic Supplier",
+        description="Critical suppliers with strategic importance")
+    PREFERRED_SUPPLIER = PermissibleValue(
+        text="PREFERRED_SUPPLIER",
+        title="Preferred Supplier",
+        description="Suppliers with proven performance and preferred status")
+    APPROVED_SUPPLIER = PermissibleValue(
+        text="APPROVED_SUPPLIER",
+        title="Approved Supplier",
+        description="Suppliers meeting qualification requirements")
+    TRANSACTIONAL_SUPPLIER = PermissibleValue(
+        text="TRANSACTIONAL_SUPPLIER",
+        title="Transactional Supplier",
+        description="Suppliers for routine, low-risk purchases")
+    SINGLE_SOURCE = PermissibleValue(
+        text="SINGLE_SOURCE",
+        title="Single Source Supplier",
+        description="Only available supplier for specific requirement")
+    SOLE_SOURCE = PermissibleValue(
+        text="SOLE_SOURCE",
+        title="Sole Source Supplier",
+        description="Deliberately chosen single supplier")
+    MINORITY_SUPPLIER = PermissibleValue(
+        text="MINORITY_SUPPLIER",
+        title="Minority/Diverse Supplier",
+        description="Suppliers meeting diversity criteria")
+    LOCAL_SUPPLIER = PermissibleValue(
+        text="LOCAL_SUPPLIER",
+        title="Local Supplier",
+        description="Geographically local suppliers")
+    GLOBAL_SUPPLIER = PermissibleValue(
+        text="GLOBAL_SUPPLIER",
+        title="Global Supplier",
+        description="Suppliers with global capabilities")
+    SPOT_SUPPLIER = PermissibleValue(
+        text="SPOT_SUPPLIER",
+        title="Spot Market Supplier",
+        description="Suppliers for one-time or spot purchases")
+
+    _defn = EnumDefinition(
+        name="VendorCategoryEnum",
+        description="Vendor classification categories",
+    )
+
+class SupplyChainStrategyEnum(EnumDefinitionImpl):
+    """
+    Supply chain strategic approaches
+    """
+    LEAN_SUPPLY_CHAIN = PermissibleValue(
+        text="LEAN_SUPPLY_CHAIN",
+        title="Lean Supply Chain",
+        description="Waste elimination and efficiency-focused supply chain")
+    AGILE_SUPPLY_CHAIN = PermissibleValue(
+        text="AGILE_SUPPLY_CHAIN",
+        title="Agile Supply Chain",
+        description="Flexible and responsive supply chain")
+    RESILIENT_SUPPLY_CHAIN = PermissibleValue(
+        text="RESILIENT_SUPPLY_CHAIN",
+        title="Resilient Supply Chain",
+        description="Risk-resistant and robust supply chain")
+    SUSTAINABLE_SUPPLY_CHAIN = PermissibleValue(
+        text="SUSTAINABLE_SUPPLY_CHAIN",
+        title="Sustainable Supply Chain",
+        description="Environmentally and socially responsible supply chain")
+    GLOBAL_SUPPLY_CHAIN = PermissibleValue(
+        text="GLOBAL_SUPPLY_CHAIN",
+        title="Global Supply Chain",
+        description="Internationally distributed supply chain")
+    LOCAL_SUPPLY_CHAIN = PermissibleValue(
+        text="LOCAL_SUPPLY_CHAIN",
+        title="Local/Regional Supply Chain",
+        description="Geographically concentrated supply chain")
+    DIGITAL_SUPPLY_CHAIN = PermissibleValue(
+        text="DIGITAL_SUPPLY_CHAIN",
+        title="Digital Supply Chain",
+        description="Technology-enabled and data-driven supply chain")
+    COLLABORATIVE_SUPPLY_CHAIN = PermissibleValue(
+        text="COLLABORATIVE_SUPPLY_CHAIN",
+        title="Collaborative Supply Chain",
+        description="Partnership-based collaborative supply chain")
+    COST_FOCUSED_SUPPLY_CHAIN = PermissibleValue(
+        text="COST_FOCUSED_SUPPLY_CHAIN",
+        title="Cost-Focused Supply Chain",
+        description="Cost optimization-focused supply chain")
+    CUSTOMER_FOCUSED_SUPPLY_CHAIN = PermissibleValue(
+        text="CUSTOMER_FOCUSED_SUPPLY_CHAIN",
+        title="Customer-Focused Supply Chain",
+        description="Customer service-oriented supply chain")
+
+    _defn = EnumDefinition(
+        name="SupplyChainStrategyEnum",
+        description="Supply chain strategic approaches",
+    )
+
+class LogisticsOperationEnum(EnumDefinitionImpl):
+    """
+    Types of logistics operations
+    """
+    INBOUND_LOGISTICS = PermissibleValue(
+        text="INBOUND_LOGISTICS",
+        title="Inbound Logistics",
+        description="Management of incoming materials and supplies")
+    OUTBOUND_LOGISTICS = PermissibleValue(
+        text="OUTBOUND_LOGISTICS",
+        title="Outbound Logistics",
+        description="Management of finished goods distribution")
+    REVERSE_LOGISTICS = PermissibleValue(
+        text="REVERSE_LOGISTICS",
+        title="Reverse Logistics",
+        description="Management of product returns and recycling")
+    THIRD_PARTY_LOGISTICS = PermissibleValue(
+        text="THIRD_PARTY_LOGISTICS",
+        title="Third-Party Logistics (3PL)",
+        description="Outsourced logistics services")
+    FOURTH_PARTY_LOGISTICS = PermissibleValue(
+        text="FOURTH_PARTY_LOGISTICS",
+        title="Fourth-Party Logistics (4PL)",
+        description="Supply chain integration and management services")
+    WAREHOUSING = PermissibleValue(
+        text="WAREHOUSING",
+        title="Warehousing Operations",
+        description="Storage and inventory management operations")
+    TRANSPORTATION = PermissibleValue(
+        text="TRANSPORTATION",
+        title="Transportation Management",
+        description="Movement of goods between locations")
+    CROSS_DOCKING = PermissibleValue(
+        text="CROSS_DOCKING",
+        title="Cross-Docking Operations",
+        description="Direct transfer without storage")
+    DISTRIBUTION = PermissibleValue(
+        text="DISTRIBUTION",
+        title="Distribution Management",
+        description="Product distribution and delivery operations")
+    FREIGHT_FORWARDING = PermissibleValue(
+        text="FREIGHT_FORWARDING",
+        title="Freight Forwarding",
+        description="International shipping and customs management")
+
+    _defn = EnumDefinition(
+        name="LogisticsOperationEnum",
+        description="Types of logistics operations",
+    )
+
+class SourcingStrategyEnum(EnumDefinitionImpl):
+    """
+    Sourcing strategy approaches
+    """
+    SINGLE_SOURCING = PermissibleValue(
+        text="SINGLE_SOURCING",
+        title="Single Sourcing",
+        description="Deliberate use of one supplier for strategic reasons")
+    MULTIPLE_SOURCING = PermissibleValue(
+        text="MULTIPLE_SOURCING",
+        title="Multiple Sourcing",
+        description="Use of multiple suppliers for risk mitigation")
+    DUAL_SOURCING = PermissibleValue(
+        text="DUAL_SOURCING",
+        title="Dual Sourcing",
+        description="Use of two suppliers for balance of risk and efficiency")
+    GLOBAL_SOURCING = PermissibleValue(
+        text="GLOBAL_SOURCING",
+        title="Global Sourcing",
+        description="Worldwide sourcing for best value")
+    DOMESTIC_SOURCING = PermissibleValue(
+        text="DOMESTIC_SOURCING",
+        title="Domestic Sourcing",
+        description="Sourcing within domestic market")
+    NEAR_SOURCING = PermissibleValue(
+        text="NEAR_SOURCING",
+        title="Near Sourcing",
+        description="Sourcing from nearby geographic regions")
+    VERTICAL_INTEGRATION = PermissibleValue(
+        text="VERTICAL_INTEGRATION",
+        title="Vertical Integration",
+        description="Internal production instead of external sourcing")
+    OUTSOURCING = PermissibleValue(
+        text="OUTSOURCING",
+        title="Outsourcing",
+        description="External sourcing of non-core activities")
+    INSOURCING = PermissibleValue(
+        text="INSOURCING",
+        title="Insourcing",
+        description="Bringing previously outsourced activities internal")
+    CONSORTIUM_SOURCING = PermissibleValue(
+        text="CONSORTIUM_SOURCING",
+        title="Consortium Sourcing",
+        description="Collaborative sourcing with other organizations")
+
+    _defn = EnumDefinition(
+        name="SourcingStrategyEnum",
+        description="Sourcing strategy approaches",
+    )
+
+class SupplierRelationshipTypeEnum(EnumDefinitionImpl):
+    """
+    Types of supplier relationship management
+    """
+    TRANSACTIONAL = PermissibleValue(
+        text="TRANSACTIONAL",
+        title="Transactional Relationship",
+        description="Arms-length, price-focused supplier relationship")
+    PREFERRED_SUPPLIER = PermissibleValue(
+        text="PREFERRED_SUPPLIER",
+        title="Preferred Supplier Relationship",
+        description="Ongoing relationship with proven suppliers")
+    STRATEGIC_PARTNERSHIP = PermissibleValue(
+        text="STRATEGIC_PARTNERSHIP",
+        title="Strategic Partnership",
+        description="Collaborative long-term strategic relationship")
+    ALLIANCE = PermissibleValue(
+        text="ALLIANCE",
+        title="Strategic Alliance",
+        description="Formal alliance with shared objectives")
+    JOINT_VENTURE = PermissibleValue(
+        text="JOINT_VENTURE",
+        title="Joint Venture",
+        description="Separate entity created with supplier")
+    VENDOR_MANAGED_INVENTORY = PermissibleValue(
+        text="VENDOR_MANAGED_INVENTORY",
+        title="Vendor Managed Inventory (VMI)",
+        description="Supplier manages customer inventory")
+    CONSIGNMENT = PermissibleValue(
+        text="CONSIGNMENT",
+        title="Consignment Relationship",
+        description="Supplier owns inventory until consumption")
+    COLLABORATIVE_PLANNING = PermissibleValue(
+        text="COLLABORATIVE_PLANNING",
+        title="Collaborative Planning Relationship",
+        description="Joint planning and forecasting relationship")
+    DEVELOPMENT_PARTNERSHIP = PermissibleValue(
+        text="DEVELOPMENT_PARTNERSHIP",
+        title="Supplier Development Partnership",
+        description="Investment in supplier capability development")
+    RISK_SHARING = PermissibleValue(
+        text="RISK_SHARING",
+        title="Risk Sharing Partnership",
+        description="Shared risk and reward relationship")
+
+    _defn = EnumDefinition(
+        name="SupplierRelationshipTypeEnum",
+        description="Types of supplier relationship management",
+    )
+
+class InventoryManagementApproachEnum(EnumDefinitionImpl):
+    """
+    Inventory management methodologies
+    """
+    JUST_IN_TIME = PermissibleValue(
+        text="JUST_IN_TIME",
+        title="Just-in-Time (JIT)",
+        description="Minimal inventory with precise timing")
+    ECONOMIC_ORDER_QUANTITY = PermissibleValue(
+        text="ECONOMIC_ORDER_QUANTITY",
+        title="Economic Order Quantity (EOQ)",
+        description="Optimal order quantity calculation")
+    ABC_ANALYSIS = PermissibleValue(
+        text="ABC_ANALYSIS",
+        title="ABC Analysis",
+        description="Inventory classification by value importance")
+    SAFETY_STOCK = PermissibleValue(
+        text="SAFETY_STOCK",
+        title="Safety Stock Management",
+        description="Buffer inventory for demand/supply uncertainty")
+    VENDOR_MANAGED_INVENTORY = PermissibleValue(
+        text="VENDOR_MANAGED_INVENTORY",
+        title="Vendor Managed Inventory (VMI)",
+        description="Supplier-controlled inventory management")
+    CONSIGNMENT_INVENTORY = PermissibleValue(
+        text="CONSIGNMENT_INVENTORY",
+        title="Consignment Inventory",
+        description="Supplier-owned inventory at customer location")
+    KANBAN = PermissibleValue(
+        text="KANBAN",
+        title="Kanban System",
+        description="Visual pull-based inventory system")
+    TWO_BIN_SYSTEM = PermissibleValue(
+        text="TWO_BIN_SYSTEM",
+        title="Two-Bin System",
+        description="Simple reorder point system using two bins")
+    CONTINUOUS_REVIEW = PermissibleValue(
+        text="CONTINUOUS_REVIEW",
+        title="Continuous Review System",
+        description="Continuous monitoring with fixed reorder point")
+    PERIODIC_REVIEW = PermissibleValue(
+        text="PERIODIC_REVIEW",
+        title="Periodic Review System",
+        description="Periodic inventory review with variable order quantity")
+
+    _defn = EnumDefinition(
+        name="InventoryManagementApproachEnum",
+        description="Inventory management methodologies",
+    )
+
+class EmploymentTypeEnum(EnumDefinitionImpl):
+    """
+    Types of employment arrangements and contracts
+    """
+    FULL_TIME = PermissibleValue(
+        text="FULL_TIME",
+        title="Full-Time Employment",
+        description="Regular full-time employment status")
+    PART_TIME = PermissibleValue(
+        text="PART_TIME",
+        title="Part-Time Employment",
+        description="Regular part-time employment status")
+    CONTRACT = PermissibleValue(
+        text="CONTRACT",
+        title="Contract Employment",
+        description="Fixed-term contractual employment")
+    TEMPORARY = PermissibleValue(
+        text="TEMPORARY",
+        title="Temporary Employment",
+        description="Short-term temporary employment")
+    FREELANCE = PermissibleValue(
+        text="FREELANCE",
+        title="Freelance/Independent Contractor",
+        description="Independent contractor or freelance work")
+    INTERN = PermissibleValue(
+        text="INTERN",
+        title="Internship",
+        description="Student or entry-level internship program")
+    SEASONAL = PermissibleValue(
+        text="SEASONAL",
+        title="Seasonal Employment",
+        description="Employment tied to seasonal business needs")
+    CONSULTANT = PermissibleValue(
+        text="CONSULTANT",
+        title="Consultant",
+        description="Professional consulting services")
+    VOLUNTEER = PermissibleValue(
+        text="VOLUNTEER",
+        title="Volunteer",
+        description="Unpaid volunteer service")
+
+    _defn = EnumDefinition(
+        name="EmploymentTypeEnum",
+        description="Types of employment arrangements and contracts",
+    )
+
+class JobLevelEnum(EnumDefinitionImpl):
+    """
+    Organizational job levels and career progression
+    """
+    ENTRY_LEVEL = PermissibleValue(
+        text="ENTRY_LEVEL",
+        title="Entry Level",
+        description="Beginning career level positions")
+    JUNIOR = PermissibleValue(
+        text="JUNIOR",
+        title="Junior Level",
+        description="Junior professional level")
+    MID_LEVEL = PermissibleValue(
+        text="MID_LEVEL",
+        title="Mid-Level",
+        description="Experienced professional level")
+    SENIOR = PermissibleValue(
+        text="SENIOR",
+        title="Senior Level",
+        description="Senior professional level")
+    LEAD = PermissibleValue(
+        text="LEAD",
+        title="Team Lead",
+        description="Team leadership role")
+    MANAGER = PermissibleValue(
+        text="MANAGER",
+        title="Manager",
+        description="Management level position")
+    DIRECTOR = PermissibleValue(
+        text="DIRECTOR",
+        title="Director",
+        description="Director level executive")
+    VP = PermissibleValue(
+        text="VP",
+        title="Vice President",
+        description="Vice President executive level")
+    C_LEVEL = PermissibleValue(
+        text="C_LEVEL",
+        title="C-Level Executive",
+        description="Chief executive level")
+
+    _defn = EnumDefinition(
+        name="JobLevelEnum",
+        description="Organizational job levels and career progression",
+    )
+
+class HRFunctionEnum(EnumDefinitionImpl):
+    """
+    Human resources functional areas and specializations
+    """
+    TALENT_ACQUISITION = PermissibleValue(
+        text="TALENT_ACQUISITION",
+        title="Talent Acquisition",
+        description="Recruitment and hiring functions")
+    EMPLOYEE_RELATIONS = PermissibleValue(
+        text="EMPLOYEE_RELATIONS",
+        title="Employee Relations",
+        description="Managing employee relationships and workplace issues")
+    COMPENSATION_BENEFITS = PermissibleValue(
+        text="COMPENSATION_BENEFITS",
+        title="Compensation and Benefits",
+        description="Managing compensation and benefits programs")
+    PERFORMANCE_MANAGEMENT = PermissibleValue(
+        text="PERFORMANCE_MANAGEMENT",
+        title="Performance Management",
+        description="Employee performance evaluation and improvement")
+    LEARNING_DEVELOPMENT = PermissibleValue(
+        text="LEARNING_DEVELOPMENT",
+        title="Learning and Development",
+        description="Employee training and development programs")
+    HR_ANALYTICS = PermissibleValue(
+        text="HR_ANALYTICS",
+        title="HR Analytics",
+        description="HR data analysis and workforce metrics")
+    ORGANIZATIONAL_DEVELOPMENT = PermissibleValue(
+        text="ORGANIZATIONAL_DEVELOPMENT",
+        title="Organizational Development",
+        description="Organizational design and change management")
+    HR_COMPLIANCE = PermissibleValue(
+        text="HR_COMPLIANCE",
+        title="HR Compliance",
+        description="Employment law compliance and risk management")
+    HRIS_TECHNOLOGY = PermissibleValue(
+        text="HRIS_TECHNOLOGY",
+        title="HRIS and Technology",
+        description="HR information systems and technology")
+
+    _defn = EnumDefinition(
+        name="HRFunctionEnum",
+        description="Human resources functional areas and specializations",
+    )
+
+class CompensationTypeEnum(EnumDefinitionImpl):
+    """
+    Types of employee compensation structures
+    """
+    BASE_SALARY = PermissibleValue(
+        text="BASE_SALARY",
+        title="Base Salary",
+        description="Fixed annual salary compensation")
+    HOURLY_WAGE = PermissibleValue(
+        text="HOURLY_WAGE",
+        title="Hourly Wage",
+        description="Compensation paid per hour worked")
+    COMMISSION = PermissibleValue(
+        text="COMMISSION",
+        title="Commission",
+        description="Performance-based sales commission")
+    BONUS = PermissibleValue(
+        text="BONUS",
+        title="Performance Bonus",
+        description="Additional compensation for performance")
+    STOCK_OPTIONS = PermissibleValue(
+        text="STOCK_OPTIONS",
+        title="Stock Options",
+        description="Equity compensation through stock options")
+    PROFIT_SHARING = PermissibleValue(
+        text="PROFIT_SHARING",
+        title="Profit Sharing",
+        description="Sharing of company profits with employees")
+    PIECE_RATE = PermissibleValue(
+        text="PIECE_RATE",
+        title="Piece Rate",
+        description="Compensation based on units produced")
+    STIPEND = PermissibleValue(
+        text="STIPEND",
+        title="Stipend",
+        description="Fixed regular allowance or payment")
+
+    _defn = EnumDefinition(
+        name="CompensationTypeEnum",
+        description="Types of employee compensation structures",
+    )
+
+class PerformanceRatingEnum(EnumDefinitionImpl):
+    """
+    Employee performance evaluation ratings
+    """
+    EXCEEDS_EXPECTATIONS = PermissibleValue(
+        text="EXCEEDS_EXPECTATIONS",
+        title="Exceeds Expectations",
+        description="Performance significantly above expected standards")
+    MEETS_EXPECTATIONS = PermissibleValue(
+        text="MEETS_EXPECTATIONS",
+        title="Meets Expectations",
+        description="Performance meets all expected standards")
+    PARTIALLY_MEETS = PermissibleValue(
+        text="PARTIALLY_MEETS",
+        title="Partially Meets Expectations",
+        description="Performance meets some but not all standards")
+    DOES_NOT_MEET = PermissibleValue(
+        text="DOES_NOT_MEET",
+        title="Does Not Meet Expectations",
+        description="Performance below acceptable standards")
+    OUTSTANDING = PermissibleValue(
+        text="OUTSTANDING",
+        title="Outstanding",
+        description="Exceptional performance far exceeding standards")
+
+    _defn = EnumDefinition(
+        name="PerformanceRatingEnum",
+        description="Employee performance evaluation ratings",
+    )
+
+class RecruitmentSourceEnum(EnumDefinitionImpl):
+    """
+    Sources for candidate recruitment and sourcing
+    """
+    INTERNAL_REFERRAL = PermissibleValue(
+        text="INTERNAL_REFERRAL",
+        title="Internal Employee Referral",
+        description="Candidates referred by current employees")
+    JOB_BOARDS = PermissibleValue(
+        text="JOB_BOARDS",
+        title="Online Job Boards",
+        description="Candidates from online job posting sites")
+    COMPANY_WEBSITE = PermissibleValue(
+        text="COMPANY_WEBSITE",
+        title="Company Career Website",
+        description="Candidates applying through company website")
+    SOCIAL_MEDIA = PermissibleValue(
+        text="SOCIAL_MEDIA",
+        title="Social Media Recruiting",
+        description="Candidates sourced through social media platforms")
+    RECRUITMENT_AGENCIES = PermissibleValue(
+        text="RECRUITMENT_AGENCIES",
+        title="External Recruitment Agencies",
+        description="Candidates sourced through recruitment firms")
+    CAMPUS_RECRUITING = PermissibleValue(
+        text="CAMPUS_RECRUITING",
+        title="Campus and University Recruiting",
+        description="Recruitment from educational institutions")
+    PROFESSIONAL_NETWORKS = PermissibleValue(
+        text="PROFESSIONAL_NETWORKS",
+        title="Professional Networks",
+        description="Recruitment through professional associations")
+    HEADHUNTERS = PermissibleValue(
+        text="HEADHUNTERS",
+        title="Executive Search/Headhunters",
+        description="Executive-level recruitment specialists")
+
+    _defn = EnumDefinition(
+        name="RecruitmentSourceEnum",
+        description="Sources for candidate recruitment and sourcing",
+    )
+
+class TrainingTypeEnum(EnumDefinitionImpl):
+    """
+    Types of employee training and development programs
+    """
+    ONBOARDING = PermissibleValue(
+        text="ONBOARDING",
+        title="New Employee Onboarding",
+        description="Orientation and integration training for new hires")
+    TECHNICAL_SKILLS = PermissibleValue(
+        text="TECHNICAL_SKILLS",
+        title="Technical Skills Training",
+        description="Job-specific technical competency development")
+    LEADERSHIP_DEVELOPMENT = PermissibleValue(
+        text="LEADERSHIP_DEVELOPMENT",
+        title="Leadership Development",
+        description="Management and leadership capability building")
+    COMPLIANCE_TRAINING = PermissibleValue(
+        text="COMPLIANCE_TRAINING",
+        title="Compliance Training",
+        description="Required training for regulatory compliance")
+    SOFT_SKILLS = PermissibleValue(
+        text="SOFT_SKILLS",
+        title="Soft Skills Development",
+        description="Communication and interpersonal skills training")
+    SAFETY_TRAINING = PermissibleValue(
+        text="SAFETY_TRAINING",
+        title="Safety Training",
+        description="Workplace safety and health training")
+    DIVERSITY_INCLUSION = PermissibleValue(
+        text="DIVERSITY_INCLUSION",
+        title="Diversity and Inclusion Training",
+        description="Training on diversity, equity, and inclusion")
+    CROSS_TRAINING = PermissibleValue(
+        text="CROSS_TRAINING",
+        title="Cross-Training",
+        description="Training in multiple roles or departments")
+
+    _defn = EnumDefinition(
+        name="TrainingTypeEnum",
+        description="Types of employee training and development programs",
+    )
+
+class EmployeeStatusEnum(EnumDefinitionImpl):
+    """
+    Current employment status classifications
+    """
+    ACTIVE = PermissibleValue(
+        text="ACTIVE",
+        title="Active Employment",
+        description="Currently employed and working")
+    ON_LEAVE = PermissibleValue(
+        text="ON_LEAVE",
+        title="On Leave",
+        description="Temporarily away from work on approved leave")
+    PROBATIONARY = PermissibleValue(
+        text="PROBATIONARY",
+        title="Probationary Period",
+        description="New employee in probationary period")
+    SUSPENDED = PermissibleValue(
+        text="SUSPENDED",
+        title="Suspended",
+        description="Temporarily suspended from work")
+    TERMINATED = PermissibleValue(
+        text="TERMINATED",
+        title="Terminated",
+        description="Employment has been terminated")
+    RETIRED = PermissibleValue(
+        text="RETIRED",
+        title="Retired",
+        description="Retired from employment")
+
+    _defn = EnumDefinition(
+        name="EmployeeStatusEnum",
+        description="Current employment status classifications",
+    )
+
+class WorkArrangementEnum(EnumDefinitionImpl):
+    """
+    Work location and arrangement types
+    """
+    ON_SITE = PermissibleValue(
+        text="ON_SITE",
+        title="On-Site Work",
+        description="Work performed at company facilities")
+    REMOTE = PermissibleValue(
+        text="REMOTE",
+        title="Remote Work",
+        description="Work performed away from company facilities")
+    HYBRID = PermissibleValue(
+        text="HYBRID",
+        title="Hybrid Work",
+        description="Combination of on-site and remote work")
+    FIELD_WORK = PermissibleValue(
+        text="FIELD_WORK",
+        title="Field Work",
+        description="Work performed at client or field locations")
+    TELECOMMUTE = PermissibleValue(
+        text="TELECOMMUTE",
+        title="Telecommuting",
+        description="Regular remote work arrangement")
+
+    _defn = EnumDefinition(
+        name="WorkArrangementEnum",
+        description="Work location and arrangement types",
+    )
+
+class BenefitsCategoryEnum(EnumDefinitionImpl):
+    """
+    Categories of employee benefits and compensation
+    """
+    HEALTH_INSURANCE = PermissibleValue(
+        text="HEALTH_INSURANCE",
+        title="Health Insurance",
+        description="Medical, dental, and vision insurance coverage")
+    RETIREMENT_BENEFITS = PermissibleValue(
+        text="RETIREMENT_BENEFITS",
+        title="Retirement Benefits",
+        description="Retirement savings and pension plans")
+    PAID_TIME_OFF = PermissibleValue(
+        text="PAID_TIME_OFF",
+        title="Paid Time Off",
+        description="Vacation, sick leave, and personal time")
+    LIFE_INSURANCE = PermissibleValue(
+        text="LIFE_INSURANCE",
+        title="Life Insurance",
+        description="Life and disability insurance coverage")
+    FLEXIBLE_BENEFITS = PermissibleValue(
+        text="FLEXIBLE_BENEFITS",
+        title="Flexible Benefits",
+        description="Flexible spending and benefit choice options")
+    WELLNESS_PROGRAMS = PermissibleValue(
+        text="WELLNESS_PROGRAMS",
+        title="Wellness Programs",
+        description="Employee health and wellness initiatives")
+    PROFESSIONAL_DEVELOPMENT = PermissibleValue(
+        text="PROFESSIONAL_DEVELOPMENT",
+        title="Professional Development",
+        description="Training, education, and career development benefits")
+    WORK_LIFE_BALANCE = PermissibleValue(
+        text="WORK_LIFE_BALANCE",
+        title="Work-Life Balance Benefits",
+        description="Benefits supporting work-life integration")
+
+    _defn = EnumDefinition(
+        name="BenefitsCategoryEnum",
+        description="Categories of employee benefits and compensation",
+    )
+
+class MassSpectrometerFileFormat(EnumDefinitionImpl):
+    """
+    Standard file formats used in mass spectrometry
+    """
+    MZML = PermissibleValue(
+        text="MZML",
+        title="mzML format",
+        description="mzML format - PSI standard for mass spectrometry data",
+        meaning=MS["1000584"])
+    MZXML = PermissibleValue(
+        text="MZXML",
+        title="ISB mzXML format",
+        description="ISB mzXML format",
+        meaning=MS["1000566"])
+    MGF = PermissibleValue(
+        text="MGF",
+        title="Mascot MGF format",
+        description="Mascot Generic Format",
+        meaning=MS["1001062"])
+    THERMO_RAW = PermissibleValue(
+        text="THERMO_RAW",
+        title="Thermo RAW format",
+        description="Thermo RAW format",
+        meaning=MS["1000563"])
+    WATERS_RAW = PermissibleValue(
+        text="WATERS_RAW",
+        title="Waters raw format",
+        description="Waters raw format",
+        meaning=MS["1000526"])
+    WIFF = PermissibleValue(
+        text="WIFF",
+        title="ABI WIFF format",
+        description="ABI WIFF format",
+        meaning=MS["1000562"])
+    MZDATA = PermissibleValue(
+        text="MZDATA",
+        title="PSI mzData format",
+        description="PSI mzData format",
+        meaning=MS["1000564"])
+    PKL = PermissibleValue(
+        text="PKL",
+        title="Micromass PKL format",
+        description="Micromass PKL format",
+        meaning=MS["1000565"])
+    DTA = PermissibleValue(
+        text="DTA",
+        title="DTA format",
+        description="DTA format",
+        meaning=MS["1000613"])
+    MS2 = PermissibleValue(
+        text="MS2",
+        title="MS2 format",
+        description="MS2 format",
+        meaning=MS["1001466"])
+    BRUKER_BAF = PermissibleValue(
+        text="BRUKER_BAF",
+        title="Bruker BAF format",
+        description="Bruker BAF format",
+        meaning=MS["1000815"])
+    BRUKER_TDF = PermissibleValue(
+        text="BRUKER_TDF",
+        title="Bruker TDF format",
+        description="Bruker TDF format",
+        meaning=MS["1002817"])
+    BRUKER_TSF = PermissibleValue(
+        text="BRUKER_TSF",
+        title="Bruker TSF format",
+        description="Bruker TSF format",
+        meaning=MS["1003282"])
+    MZ5 = PermissibleValue(
+        text="MZ5",
+        title="mz5 format",
+        description="mz5 format",
+        meaning=MS["1001881"])
+    MZMLB = PermissibleValue(
+        text="MZMLB",
+        title="mzMLb format",
+        description="mzMLb format",
+        meaning=MS["1002838"])
+    UIMF = PermissibleValue(
+        text="UIMF",
+        title="UIMF format",
+        description="UIMF format",
+        meaning=MS["1002531"])
+
+    _defn = EnumDefinition(
+        name="MassSpectrometerFileFormat",
+        description="Standard file formats used in mass spectrometry",
+    )
+
+class MassSpectrometerVendor(EnumDefinitionImpl):
+    """
+    Major mass spectrometer manufacturers
+    """
+    THERMO_FISHER_SCIENTIFIC = PermissibleValue(
+        text="THERMO_FISHER_SCIENTIFIC",
+        title="Thermo Fisher Scientific instrument model",
+        description="Thermo Fisher Scientific",
+        meaning=MS["1000483"])
+    WATERS = PermissibleValue(
+        text="WATERS",
+        title="Waters instrument model",
+        description="Waters Corporation",
+        meaning=MS["1000126"])
+    BRUKER_DALTONICS = PermissibleValue(
+        text="BRUKER_DALTONICS",
+        title="Bruker Daltonics instrument model",
+        description="Bruker Daltonics",
+        meaning=MS["1000122"])
+    SCIEX = PermissibleValue(
+        text="SCIEX",
+        title="SCIEX instrument model",
+        description="SCIEX (formerly Applied Biosystems)",
+        meaning=MS["1000121"])
+    AGILENT = PermissibleValue(
+        text="AGILENT",
+        title="Agilent instrument model",
+        description="Agilent Technologies",
+        meaning=MS["1000490"])
+    SHIMADZU = PermissibleValue(
+        text="SHIMADZU",
+        title="Shimadzu instrument model",
+        description="Shimadzu Corporation",
+        meaning=MS["1000124"])
+    LECO = PermissibleValue(
+        text="LECO",
+        title="LECO instrument model",
+        description="LECO Corporation",
+        meaning=MS["1001800"])
+
+    _defn = EnumDefinition(
+        name="MassSpectrometerVendor",
+        description="Major mass spectrometer manufacturers",
+    )
+
+class ChromatographyType(EnumDefinitionImpl):
+    """
+    Types of chromatographic separation methods
+    """
+    GAS_CHROMATOGRAPHY = PermissibleValue(
+        text="GAS_CHROMATOGRAPHY",
+        description="Gas chromatography",
+        meaning=MSIO["0000147"])
+    HIGH_PERFORMANCE_LIQUID_CHROMATOGRAPHY = PermissibleValue(
+        text="HIGH_PERFORMANCE_LIQUID_CHROMATOGRAPHY",
+        description="High performance liquid chromatography",
+        meaning=MSIO["0000148"])
+    LIQUID_CHROMATOGRAPHY_MASS_SPECTROMETRY = PermissibleValue(
+        text="LIQUID_CHROMATOGRAPHY_MASS_SPECTROMETRY",
+        description="Liquid chromatography-mass spectrometry",
+        meaning=CHMO["0000524"])
+    GAS_CHROMATOGRAPHY_MASS_SPECTROMETRY = PermissibleValue(
+        text="GAS_CHROMATOGRAPHY_MASS_SPECTROMETRY",
+        description="Gas chromatography-mass spectrometry",
+        meaning=CHMO["0000497"])
+    TANDEM_MASS_SPECTROMETRY = PermissibleValue(
+        text="TANDEM_MASS_SPECTROMETRY",
+        description="Tandem mass spectrometry",
+        meaning=CHMO["0000575"])
+    ISOTOPE_RATIO_MASS_SPECTROMETRY = PermissibleValue(
+        text="ISOTOPE_RATIO_MASS_SPECTROMETRY",
+        description="Isotope ratio mass spectrometry",
+        meaning=CHMO["0000506"])
+
+    _defn = EnumDefinition(
+        name="ChromatographyType",
+        description="Types of chromatographic separation methods",
+    )
+
+class DerivatizationMethod(EnumDefinitionImpl):
+    """
+    Chemical derivatization methods for sample preparation
+    """
+    SILYLATION = PermissibleValue(
+        text="SILYLATION",
+        description="Addition of silyl groups for improved volatility",
+        meaning=MSIO["0000117"])
+    METHYLATION = PermissibleValue(
+        text="METHYLATION",
+        description="Addition of methyl groups",
+        meaning=MSIO["0000115"])
+    ACETYLATION = PermissibleValue(
+        text="ACETYLATION",
+        description="Addition of acetyl groups",
+        meaning=MSIO["0000112"])
+    TRIFLUOROACETYLATION = PermissibleValue(
+        text="TRIFLUOROACETYLATION",
+        description="Addition of trifluoroacetyl groups",
+        meaning=MSIO["0000113"])
+    ALKYLATION = PermissibleValue(
+        text="ALKYLATION",
+        description="Addition of alkyl groups",
+        meaning=MSIO["0000114"])
+    OXIMATION = PermissibleValue(
+        text="OXIMATION",
+        description="Addition of oxime groups",
+        meaning=MSIO["0000116"])
+
+    _defn = EnumDefinition(
+        name="DerivatizationMethod",
+        description="Chemical derivatization methods for sample preparation",
+    )
+
+class MetabolomicsAssayType(EnumDefinitionImpl):
+    """
+    Types of metabolomics assays and profiling approaches
+    """
+    TARGETED_METABOLITE_PROFILING = PermissibleValue(
+        text="TARGETED_METABOLITE_PROFILING",
+        title="targeted metabolite profiling",
+        description="Assay targeting specific known metabolites",
+        meaning=MSIO["0000100"])
+    UNTARGETED_METABOLITE_PROFILING = PermissibleValue(
+        text="UNTARGETED_METABOLITE_PROFILING",
+        title="untargeted metabolite profiling",
+        description="Assay profiling all detectable metabolites",
+        meaning=MSIO["0000101"])
+    METABOLITE_QUANTITATION_HPLC = PermissibleValue(
+        text="METABOLITE_QUANTITATION_HPLC",
+        title="metabolite quantitation using high performance liquid chromatography",
+        description="Metabolite quantitation using HPLC",
+        meaning=MSIO["0000099"])
+
+    _defn = EnumDefinition(
+        name="MetabolomicsAssayType",
+        description="Types of metabolomics assays and profiling approaches",
+    )
+
+class AnalyticalControlType(EnumDefinitionImpl):
+    """
+    Types of control samples used in analytical chemistry
+    """
+    INTERNAL_STANDARD = PermissibleValue(
+        text="INTERNAL_STANDARD",
+        title="internal standard role",
+        description="Known amount of standard added to analytical sample",
+        meaning=MSIO["0000005"])
+    EXTERNAL_STANDARD = PermissibleValue(
+        text="EXTERNAL_STANDARD",
+        title="external standard role",
+        description="Reference standard used as external reference point",
+        meaning=MSIO["0000004"])
+    POSITIVE_CONTROL = PermissibleValue(
+        text="POSITIVE_CONTROL",
+        title="positive control role",
+        description="Control providing known positive signal",
+        meaning=MSIO["0000008"])
+    NEGATIVE_CONTROL = PermissibleValue(
+        text="NEGATIVE_CONTROL",
+        title="negative control role",
+        description="Control providing baseline/no signal reference",
+        meaning=MSIO["0000007"])
+    LONG_TERM_REFERENCE = PermissibleValue(
+        text="LONG_TERM_REFERENCE",
+        title="long term reference role",
+        description="Stable reference for cross-batch comparisons",
+        meaning=MSIO["0000006"])
+    BLANK = PermissibleValue(
+        text="BLANK",
+        description="Sample containing only solvent/matrix without analyte")
+    QUALITY_CONTROL = PermissibleValue(
+        text="QUALITY_CONTROL",
+        description="Sample with known composition for system performance monitoring")
+
+    _defn = EnumDefinition(
+        name="AnalyticalControlType",
+        description="Types of control samples used in analytical chemistry",
+    )
+
 # Slots
 class slots:
     pass
@@ -18956,6 +23202,15 @@ slots.prediction_outcome = Slot(uri=VALUESETS.prediction_outcome, name="predicti
 
 slots.vital_status = Slot(uri=VALUESETS.vital_status, name="vital_status", curie=VALUESETS.curie('vital_status'),
                    model_uri=VALUESETS.vital_status, domain=None, range=Optional[Union[str, "VitalStatusEnum"]])
+
+slots.vaccination_status = Slot(uri=VALUESETS.vaccination_status, name="vaccination_status", curie=VALUESETS.curie('vaccination_status'),
+                   model_uri=VALUESETS.vaccination_status, domain=None, range=Optional[Union[str, "VaccinationStatusEnum"]])
+
+slots.vaccination_periodicity = Slot(uri=VALUESETS.vaccination_periodicity, name="vaccination_periodicity", curie=VALUESETS.curie('vaccination_periodicity'),
+                   model_uri=VALUESETS.vaccination_periodicity, domain=None, range=Optional[Union[str, "VaccinationPeriodicityEnum"]])
+
+slots.vaccine_category = Slot(uri=VALUESETS.vaccine_category, name="vaccine_category", curie=VALUESETS.curie('vaccine_category'),
+                   model_uri=VALUESETS.vaccine_category, domain=None, range=Optional[Union[str, "VaccineCategoryEnum"]])
 
 slots.healthcare_encounter_classification = Slot(uri=VALUESETS.healthcare_encounter_classification, name="healthcare_encounter_classification", curie=VALUESETS.curie('healthcare_encounter_classification'),
                    model_uri=VALUESETS.healthcare_encounter_classification, domain=None, range=Optional[Union[str, "HealthcareEncounterClassification"]])
@@ -19265,6 +23520,120 @@ slots.electricity_market = Slot(uri=VALUESETS.electricity_market, name="electric
 
 slots.fossil_fuel_type = Slot(uri=VALUESETS.fossil_fuel_type, name="fossil_fuel_type", curie=VALUESETS.curie('fossil_fuel_type'),
                    model_uri=VALUESETS.fossil_fuel_type, domain=None, range=Optional[Union[str, "FossilFuelTypeEnum"]])
+
+slots.reactor_type = Slot(uri=VALUESETS.reactor_type, name="reactor_type", curie=VALUESETS.curie('reactor_type'),
+                   model_uri=VALUESETS.reactor_type, domain=None, range=Optional[Union[str, "ReactorTypeEnum"]])
+
+slots.reactor_generation = Slot(uri=VALUESETS.reactor_generation, name="reactor_generation", curie=VALUESETS.curie('reactor_generation'),
+                   model_uri=VALUESETS.reactor_generation, domain=None, range=Optional[Union[str, "ReactorGenerationEnum"]])
+
+slots.reactor_coolant = Slot(uri=VALUESETS.reactor_coolant, name="reactor_coolant", curie=VALUESETS.curie('reactor_coolant'),
+                   model_uri=VALUESETS.reactor_coolant, domain=None, range=Optional[Union[str, "ReactorCoolantEnum"]])
+
+slots.reactor_moderator = Slot(uri=VALUESETS.reactor_moderator, name="reactor_moderator", curie=VALUESETS.curie('reactor_moderator'),
+                   model_uri=VALUESETS.reactor_moderator, domain=None, range=Optional[Union[str, "ReactorModeratorEnum"]])
+
+slots.reactor_neutron_spectrum = Slot(uri=VALUESETS.reactor_neutron_spectrum, name="reactor_neutron_spectrum", curie=VALUESETS.curie('reactor_neutron_spectrum'),
+                   model_uri=VALUESETS.reactor_neutron_spectrum, domain=None, range=Optional[Union[str, "ReactorNeutronSpectrumEnum"]])
+
+slots.reactor_size_category = Slot(uri=VALUESETS.reactor_size_category, name="reactor_size_category", curie=VALUESETS.curie('reactor_size_category'),
+                   model_uri=VALUESETS.reactor_size_category, domain=None, range=Optional[Union[str, "ReactorSizeCategoryEnum"]])
+
+slots.nuclear_fuel_type = Slot(uri=VALUESETS.nuclear_fuel_type, name="nuclear_fuel_type", curie=VALUESETS.curie('nuclear_fuel_type'),
+                   model_uri=VALUESETS.nuclear_fuel_type, domain=None, range=Optional[Union[str, "NuclearFuelTypeEnum"]])
+
+slots.uranium_enrichment_level = Slot(uri=VALUESETS.uranium_enrichment_level, name="uranium_enrichment_level", curie=VALUESETS.curie('uranium_enrichment_level'),
+                   model_uri=VALUESETS.uranium_enrichment_level, domain=None, range=Optional[Union[str, "UraniumEnrichmentLevelEnum"]])
+
+slots.fuel_form = Slot(uri=VALUESETS.fuel_form, name="fuel_form", curie=VALUESETS.curie('fuel_form'),
+                   model_uri=VALUESETS.fuel_form, domain=None, range=Optional[Union[str, "FuelFormEnum"]])
+
+slots.fuel_assembly_type = Slot(uri=VALUESETS.fuel_assembly_type, name="fuel_assembly_type", curie=VALUESETS.curie('fuel_assembly_type'),
+                   model_uri=VALUESETS.fuel_assembly_type, domain=None, range=Optional[Union[str, "FuelAssemblyTypeEnum"]])
+
+slots.fuel_cycle_stage = Slot(uri=VALUESETS.fuel_cycle_stage, name="fuel_cycle_stage", curie=VALUESETS.curie('fuel_cycle_stage'),
+                   model_uri=VALUESETS.fuel_cycle_stage, domain=None, range=Optional[Union[str, "FuelCycleStageEnum"]])
+
+slots.fissile_material = Slot(uri=VALUESETS.fissile_material, name="fissile_material", curie=VALUESETS.curie('fissile_material'),
+                   model_uri=VALUESETS.fissile_material, domain=None, range=Optional[Union[str, "FissileIsotopeEnum"]])
+
+slots.waste_classification = Slot(uri=VALUESETS.waste_classification, name="waste_classification", curie=VALUESETS.curie('waste_classification'),
+                   model_uri=VALUESETS.waste_classification, domain=None, range=Optional[Union[str, "IAEAWasteClassificationEnum"]])
+
+slots.nrc_waste_class = Slot(uri=VALUESETS.nrc_waste_class, name="nrc_waste_class", curie=VALUESETS.curie('nrc_waste_class'),
+                   model_uri=VALUESETS.nrc_waste_class, domain=None, range=Optional[Union[str, "NRCWasteClassEnum"]])
+
+slots.waste_heat_generation = Slot(uri=VALUESETS.waste_heat_generation, name="waste_heat_generation", curie=VALUESETS.curie('waste_heat_generation'),
+                   model_uri=VALUESETS.waste_heat_generation, domain=None, range=Optional[Union[str, "WasteHeatGenerationEnum"]])
+
+slots.waste_half_life_category = Slot(uri=VALUESETS.waste_half_life_category, name="waste_half_life_category", curie=VALUESETS.curie('waste_half_life_category'),
+                   model_uri=VALUESETS.waste_half_life_category, domain=None, range=Optional[Union[str, "WasteHalfLifeCategoryEnum"]])
+
+slots.waste_disposal_method = Slot(uri=VALUESETS.waste_disposal_method, name="waste_disposal_method", curie=VALUESETS.curie('waste_disposal_method'),
+                   model_uri=VALUESETS.waste_disposal_method, domain=None, range=Optional[Union[str, "WasteDisposalMethodEnum"]])
+
+slots.waste_source = Slot(uri=VALUESETS.waste_source, name="waste_source", curie=VALUESETS.curie('waste_source'),
+                   model_uri=VALUESETS.waste_source, domain=None, range=Optional[Union[str, "WasteSourceEnum"]])
+
+slots.transuranic_category = Slot(uri=VALUESETS.transuranic_category, name="transuranic_category", curie=VALUESETS.curie('transuranic_category'),
+                   model_uri=VALUESETS.transuranic_category, domain=None, range=Optional[Union[str, "TransuranicWasteCategoryEnum"]])
+
+slots.ines_level = Slot(uri=VALUESETS.ines_level, name="ines_level", curie=VALUESETS.curie('ines_level'),
+                   model_uri=VALUESETS.ines_level, domain=None, range=Optional[Union[str, "INESLevelEnum"]])
+
+slots.emergency_classification = Slot(uri=VALUESETS.emergency_classification, name="emergency_classification", curie=VALUESETS.curie('emergency_classification'),
+                   model_uri=VALUESETS.emergency_classification, domain=None, range=Optional[Union[str, "EmergencyClassificationEnum"]])
+
+slots.nuclear_security_category = Slot(uri=VALUESETS.nuclear_security_category, name="nuclear_security_category", curie=VALUESETS.curie('nuclear_security_category'),
+                   model_uri=VALUESETS.nuclear_security_category, domain=None, range=Optional[Union[str, "NuclearSecurityCategoryEnum"]])
+
+slots.safety_system_class = Slot(uri=VALUESETS.safety_system_class, name="safety_system_class", curie=VALUESETS.curie('safety_system_class'),
+                   model_uri=VALUESETS.safety_system_class, domain=None, range=Optional[Union[str, "SafetySystemClassEnum"]])
+
+slots.reactor_safety_function = Slot(uri=VALUESETS.reactor_safety_function, name="reactor_safety_function", curie=VALUESETS.curie('reactor_safety_function'),
+                   model_uri=VALUESETS.reactor_safety_function, domain=None, range=Optional[Union[str, "ReactorSafetyFunctionEnum"]])
+
+slots.defense_in_depth_level = Slot(uri=VALUESETS.defense_in_depth_level, name="defense_in_depth_level", curie=VALUESETS.curie('defense_in_depth_level'),
+                   model_uri=VALUESETS.defense_in_depth_level, domain=None, range=Optional[Union[str, "DefenseInDepthLevelEnum"]])
+
+slots.radiation_protection_zone = Slot(uri=VALUESETS.radiation_protection_zone, name="radiation_protection_zone", curie=VALUESETS.curie('radiation_protection_zone'),
+                   model_uri=VALUESETS.radiation_protection_zone, domain=None, range=Optional[Union[str, "RadiationProtectionZoneEnum"]])
+
+slots.nuclear_facility_type = Slot(uri=VALUESETS.nuclear_facility_type, name="nuclear_facility_type", curie=VALUESETS.curie('nuclear_facility_type'),
+                   model_uri=VALUESETS.nuclear_facility_type, domain=None, range=Optional[Union[str, "NuclearFacilityTypeEnum"]])
+
+slots.power_plant_status = Slot(uri=VALUESETS.power_plant_status, name="power_plant_status", curie=VALUESETS.curie('power_plant_status'),
+                   model_uri=VALUESETS.power_plant_status, domain=None, range=Optional[Union[str, "PowerPlantStatusEnum"]])
+
+slots.research_reactor_type = Slot(uri=VALUESETS.research_reactor_type, name="research_reactor_type", curie=VALUESETS.curie('research_reactor_type'),
+                   model_uri=VALUESETS.research_reactor_type, domain=None, range=Optional[Union[str, "ResearchReactorTypeEnum"]])
+
+slots.fuel_cycle_facility_type = Slot(uri=VALUESETS.fuel_cycle_facility_type, name="fuel_cycle_facility_type", curie=VALUESETS.curie('fuel_cycle_facility_type'),
+                   model_uri=VALUESETS.fuel_cycle_facility_type, domain=None, range=Optional[Union[str, "FuelCycleFacilityTypeEnum"]])
+
+slots.waste_facility_type = Slot(uri=VALUESETS.waste_facility_type, name="waste_facility_type", curie=VALUESETS.curie('waste_facility_type'),
+                   model_uri=VALUESETS.waste_facility_type, domain=None, range=Optional[Union[str, "WasteFacilityTypeEnum"]])
+
+slots.nuclear_ship_type = Slot(uri=VALUESETS.nuclear_ship_type, name="nuclear_ship_type", curie=VALUESETS.curie('nuclear_ship_type'),
+                   model_uri=VALUESETS.nuclear_ship_type, domain=None, range=Optional[Union[str, "NuclearShipTypeEnum"]])
+
+slots.reactor_operating_state = Slot(uri=VALUESETS.reactor_operating_state, name="reactor_operating_state", curie=VALUESETS.curie('reactor_operating_state'),
+                   model_uri=VALUESETS.reactor_operating_state, domain=None, range=Optional[Union[str, "ReactorOperatingStateEnum"]])
+
+slots.maintenance_type = Slot(uri=VALUESETS.maintenance_type, name="maintenance_type", curie=VALUESETS.curie('maintenance_type'),
+                   model_uri=VALUESETS.maintenance_type, domain=None, range=Optional[Union[str, "MaintenanceTypeEnum"]])
+
+slots.licensing_stage = Slot(uri=VALUESETS.licensing_stage, name="licensing_stage", curie=VALUESETS.curie('licensing_stage'),
+                   model_uri=VALUESETS.licensing_stage, domain=None, range=Optional[Union[str, "LicensingStageEnum"]])
+
+slots.fuel_cycle_operation = Slot(uri=VALUESETS.fuel_cycle_operation, name="fuel_cycle_operation", curie=VALUESETS.curie('fuel_cycle_operation'),
+                   model_uri=VALUESETS.fuel_cycle_operation, domain=None, range=Optional[Union[str, "FuelCycleOperationEnum"]])
+
+slots.reactor_control_mode = Slot(uri=VALUESETS.reactor_control_mode, name="reactor_control_mode", curie=VALUESETS.curie('reactor_control_mode'),
+                   model_uri=VALUESETS.reactor_control_mode, domain=None, range=Optional[Union[str, "ReactorControlModeEnum"]])
+
+slots.operational_procedure = Slot(uri=VALUESETS.operational_procedure, name="operational_procedure", curie=VALUESETS.curie('operational_procedure'),
+                   model_uri=VALUESETS.operational_procedure, domain=None, range=Optional[Union[str, "OperationalProcedureEnum"]])
 
 slots.mining = Slot(uri=VALUESETS.mining, name="mining", curie=VALUESETS.curie('mining'),
                    model_uri=VALUESETS.mining, domain=None, range=Optional[Union[str, "MiningType"]])
@@ -19839,6 +24208,18 @@ slots.vaccine_type = Slot(uri=VALUESETS.vaccine_type, name="vaccine_type", curie
 slots.bmi_classification = Slot(uri=VALUESETS.bmi_classification, name="bmi_classification", curie=VALUESETS.curie('bmi_classification'),
                    model_uri=VALUESETS.bmi_classification, domain=None, range=Optional[Union[str, "BMIClassificationEnum"]])
 
+slots.mri_modality = Slot(uri=VALUESETS.mri_modality, name="mri_modality", curie=VALUESETS.curie('mri_modality'),
+                   model_uri=VALUESETS.mri_modality, domain=None, range=Optional[Union[str, "MRIModalityEnum"]])
+
+slots.mri_sequence_type = Slot(uri=VALUESETS.mri_sequence_type, name="mri_sequence_type", curie=VALUESETS.curie('mri_sequence_type'),
+                   model_uri=VALUESETS.mri_sequence_type, domain=None, range=Optional[Union[str, "MRISequenceTypeEnum"]])
+
+slots.mri_contrast_type = Slot(uri=VALUESETS.mri_contrast_type, name="mri_contrast_type", curie=VALUESETS.curie('mri_contrast_type'),
+                   model_uri=VALUESETS.mri_contrast_type, domain=None, range=Optional[Union[str, "MRIContrastTypeEnum"]])
+
+slots.fmri_paradigm_type = Slot(uri=VALUESETS.fmri_paradigm_type, name="fmri_paradigm_type", curie=VALUESETS.curie('fmri_paradigm_type'),
+                   model_uri=VALUESETS.fmri_paradigm_type, domain=None, range=Optional[Union[str, "FMRIParadigmTypeEnum"]])
+
 slots.race_omb1997 = Slot(uri=VALUESETS.race_omb1997, name="race_omb1997", curie=VALUESETS.curie('race_omb1997'),
                    model_uri=VALUESETS.race_omb1997, domain=None, range=Optional[Union[str, "RaceOMB1997Enum"]])
 
@@ -19991,3 +24372,132 @@ slots.data_maturity_level = Slot(uri=VALUESETS.data_maturity_level, name="data_m
 
 slots.open_source_maturity_level = Slot(uri=VALUESETS.open_source_maturity_level, name="open_source_maturity_level", curie=VALUESETS.curie('open_source_maturity_level'),
                    model_uri=VALUESETS.open_source_maturity_level, domain=None, range=Optional[Union[str, "OpenSourceMaturityLevel"]])
+
+slots.legal_entity_type = Slot(uri=VALUESETS.legal_entity_type, name="legal_entity_type", curie=VALUESETS.curie('legal_entity_type'),
+                   model_uri=VALUESETS.legal_entity_type, domain=None, range=Optional[Union[str, "LegalEntityTypeEnum"]])
+
+slots.organizational_structure = Slot(uri=VALUESETS.organizational_structure, name="organizational_structure", curie=VALUESETS.curie('organizational_structure'),
+                   model_uri=VALUESETS.organizational_structure, domain=None, range=Optional[Union[str, "OrganizationalStructureEnum"]])
+
+slots.management_level = Slot(uri=VALUESETS.management_level, name="management_level", curie=VALUESETS.curie('management_level'),
+                   model_uri=VALUESETS.management_level, domain=None, range=Optional[Union[str, "ManagementLevelEnum"]])
+
+slots.corporate_governance_role = Slot(uri=VALUESETS.corporate_governance_role, name="corporate_governance_role", curie=VALUESETS.curie('corporate_governance_role'),
+                   model_uri=VALUESETS.corporate_governance_role, domain=None, range=Optional[Union[str, "CorporateGovernanceRoleEnum"]])
+
+slots.business_ownership_type = Slot(uri=VALUESETS.business_ownership_type, name="business_ownership_type", curie=VALUESETS.curie('business_ownership_type'),
+                   model_uri=VALUESETS.business_ownership_type, domain=None, range=Optional[Union[str, "BusinessOwnershipTypeEnum"]])
+
+slots.business_size_classification = Slot(uri=VALUESETS.business_size_classification, name="business_size_classification", curie=VALUESETS.curie('business_size_classification'),
+                   model_uri=VALUESETS.business_size_classification, domain=None, range=Optional[Union[str, "BusinessSizeClassificationEnum"]])
+
+slots.business_lifecycle_stage = Slot(uri=VALUESETS.business_lifecycle_stage, name="business_lifecycle_stage", curie=VALUESETS.curie('business_lifecycle_stage'),
+                   model_uri=VALUESETS.business_lifecycle_stage, domain=None, range=Optional[Union[str, "BusinessLifecycleStageEnum"]])
+
+slots.naics_sector = Slot(uri=VALUESETS.naics_sector, name="naics_sector", curie=VALUESETS.curie('naics_sector'),
+                   model_uri=VALUESETS.naics_sector, domain=None, range=Optional[Union[str, "NAICSSectorEnum"]])
+
+slots.economic_sector = Slot(uri=VALUESETS.economic_sector, name="economic_sector", curie=VALUESETS.curie('economic_sector'),
+                   model_uri=VALUESETS.economic_sector, domain=None, range=Optional[Union[str, "EconomicSectorEnum"]])
+
+slots.business_activity_type = Slot(uri=VALUESETS.business_activity_type, name="business_activity_type", curie=VALUESETS.curie('business_activity_type'),
+                   model_uri=VALUESETS.business_activity_type, domain=None, range=Optional[Union[str, "BusinessActivityTypeEnum"]])
+
+slots.industry_maturity = Slot(uri=VALUESETS.industry_maturity, name="industry_maturity", curie=VALUESETS.curie('industry_maturity'),
+                   model_uri=VALUESETS.industry_maturity, domain=None, range=Optional[Union[str, "IndustryMaturityEnum"]])
+
+slots.market_structure = Slot(uri=VALUESETS.market_structure, name="market_structure", curie=VALUESETS.curie('market_structure'),
+                   model_uri=VALUESETS.market_structure, domain=None, range=Optional[Union[str, "MarketStructureEnum"]])
+
+slots.industry_regulation_level = Slot(uri=VALUESETS.industry_regulation_level, name="industry_regulation_level", curie=VALUESETS.curie('industry_regulation_level'),
+                   model_uri=VALUESETS.industry_regulation_level, domain=None, range=Optional[Union[str, "IndustryRegulationLevelEnum"]])
+
+slots.management_methodology = Slot(uri=VALUESETS.management_methodology, name="management_methodology", curie=VALUESETS.curie('management_methodology'),
+                   model_uri=VALUESETS.management_methodology, domain=None, range=Optional[Union[str, "ManagementMethodologyEnum"]])
+
+slots.strategic_framework = Slot(uri=VALUESETS.strategic_framework, name="strategic_framework", curie=VALUESETS.curie('strategic_framework'),
+                   model_uri=VALUESETS.strategic_framework, domain=None, range=Optional[Union[str, "StrategicFrameworkEnum"]])
+
+slots.operational_model = Slot(uri=VALUESETS.operational_model, name="operational_model", curie=VALUESETS.curie('operational_model'),
+                   model_uri=VALUESETS.operational_model, domain=None, range=Optional[Union[str, "OperationalModelEnum"]])
+
+slots.performance_measurement = Slot(uri=VALUESETS.performance_measurement, name="performance_measurement", curie=VALUESETS.curie('performance_measurement'),
+                   model_uri=VALUESETS.performance_measurement, domain=None, range=Optional[Union[str, "PerformanceMeasurementEnum"]])
+
+slots.decision_making_style = Slot(uri=VALUESETS.decision_making_style, name="decision_making_style", curie=VALUESETS.curie('decision_making_style'),
+                   model_uri=VALUESETS.decision_making_style, domain=None, range=Optional[Union[str, "DecisionMakingStyleEnum"]])
+
+slots.leadership_style = Slot(uri=VALUESETS.leadership_style, name="leadership_style", curie=VALUESETS.curie('leadership_style'),
+                   model_uri=VALUESETS.leadership_style, domain=None, range=Optional[Union[str, "LeadershipStyleEnum"]])
+
+slots.business_process_type = Slot(uri=VALUESETS.business_process_type, name="business_process_type", curie=VALUESETS.curie('business_process_type'),
+                   model_uri=VALUESETS.business_process_type, domain=None, range=Optional[Union[str, "BusinessProcessTypeEnum"]])
+
+slots.quality_standard = Slot(uri=VALUESETS.quality_standard, name="quality_standard", curie=VALUESETS.curie('quality_standard'),
+                   model_uri=VALUESETS.quality_standard, domain=None, range=Optional[Union[str, "QualityStandardEnum"]])
+
+slots.quality_methodology = Slot(uri=VALUESETS.quality_methodology, name="quality_methodology", curie=VALUESETS.curie('quality_methodology'),
+                   model_uri=VALUESETS.quality_methodology, domain=None, range=Optional[Union[str, "QualityMethodologyEnum"]])
+
+slots.quality_control_technique = Slot(uri=VALUESETS.quality_control_technique, name="quality_control_technique", curie=VALUESETS.curie('quality_control_technique'),
+                   model_uri=VALUESETS.quality_control_technique, domain=None, range=Optional[Union[str, "QualityControlTechniqueEnum"]])
+
+slots.quality_assurance_level = Slot(uri=VALUESETS.quality_assurance_level, name="quality_assurance_level", curie=VALUESETS.curie('quality_assurance_level'),
+                   model_uri=VALUESETS.quality_assurance_level, domain=None, range=Optional[Union[str, "QualityAssuranceLevelEnum"]])
+
+slots.process_improvement_approach = Slot(uri=VALUESETS.process_improvement_approach, name="process_improvement_approach", curie=VALUESETS.curie('process_improvement_approach'),
+                   model_uri=VALUESETS.process_improvement_approach, domain=None, range=Optional[Union[str, "ProcessImprovementApproachEnum"]])
+
+slots.quality_maturity_level = Slot(uri=VALUESETS.quality_maturity_level, name="quality_maturity_level", curie=VALUESETS.curie('quality_maturity_level'),
+                   model_uri=VALUESETS.quality_maturity_level, domain=None, range=Optional[Union[str, "QualityMaturityLevelEnum"]])
+
+slots.procurement_type = Slot(uri=VALUESETS.procurement_type, name="procurement_type", curie=VALUESETS.curie('procurement_type'),
+                   model_uri=VALUESETS.procurement_type, domain=None, range=Optional[Union[str, "ProcurementTypeEnum"]])
+
+slots.vendor_category = Slot(uri=VALUESETS.vendor_category, name="vendor_category", curie=VALUESETS.curie('vendor_category'),
+                   model_uri=VALUESETS.vendor_category, domain=None, range=Optional[Union[str, "VendorCategoryEnum"]])
+
+slots.supply_chain_strategy = Slot(uri=VALUESETS.supply_chain_strategy, name="supply_chain_strategy", curie=VALUESETS.curie('supply_chain_strategy'),
+                   model_uri=VALUESETS.supply_chain_strategy, domain=None, range=Optional[Union[str, "SupplyChainStrategyEnum"]])
+
+slots.logistics_operation = Slot(uri=VALUESETS.logistics_operation, name="logistics_operation", curie=VALUESETS.curie('logistics_operation'),
+                   model_uri=VALUESETS.logistics_operation, domain=None, range=Optional[Union[str, "LogisticsOperationEnum"]])
+
+slots.sourcing_strategy = Slot(uri=VALUESETS.sourcing_strategy, name="sourcing_strategy", curie=VALUESETS.curie('sourcing_strategy'),
+                   model_uri=VALUESETS.sourcing_strategy, domain=None, range=Optional[Union[str, "SourcingStrategyEnum"]])
+
+slots.supplier_relationship_type = Slot(uri=VALUESETS.supplier_relationship_type, name="supplier_relationship_type", curie=VALUESETS.curie('supplier_relationship_type'),
+                   model_uri=VALUESETS.supplier_relationship_type, domain=None, range=Optional[Union[str, "SupplierRelationshipTypeEnum"]])
+
+slots.inventory_management_approach = Slot(uri=VALUESETS.inventory_management_approach, name="inventory_management_approach", curie=VALUESETS.curie('inventory_management_approach'),
+                   model_uri=VALUESETS.inventory_management_approach, domain=None, range=Optional[Union[str, "InventoryManagementApproachEnum"]])
+
+slots.employment_type = Slot(uri=VALUESETS.employment_type, name="employment_type", curie=VALUESETS.curie('employment_type'),
+                   model_uri=VALUESETS.employment_type, domain=None, range=Optional[Union[str, "EmploymentTypeEnum"]])
+
+slots.job_level = Slot(uri=VALUESETS.job_level, name="job_level", curie=VALUESETS.curie('job_level'),
+                   model_uri=VALUESETS.job_level, domain=None, range=Optional[Union[str, "JobLevelEnum"]])
+
+slots.hr_function = Slot(uri=VALUESETS.hr_function, name="hr_function", curie=VALUESETS.curie('hr_function'),
+                   model_uri=VALUESETS.hr_function, domain=None, range=Optional[Union[str, "HRFunctionEnum"]])
+
+slots.compensation_type = Slot(uri=VALUESETS.compensation_type, name="compensation_type", curie=VALUESETS.curie('compensation_type'),
+                   model_uri=VALUESETS.compensation_type, domain=None, range=Optional[Union[str, "CompensationTypeEnum"]])
+
+slots.performance_rating = Slot(uri=VALUESETS.performance_rating, name="performance_rating", curie=VALUESETS.curie('performance_rating'),
+                   model_uri=VALUESETS.performance_rating, domain=None, range=Optional[Union[str, "PerformanceRatingEnum"]])
+
+slots.recruitment_source = Slot(uri=VALUESETS.recruitment_source, name="recruitment_source", curie=VALUESETS.curie('recruitment_source'),
+                   model_uri=VALUESETS.recruitment_source, domain=None, range=Optional[Union[str, "RecruitmentSourceEnum"]])
+
+slots.training_type = Slot(uri=VALUESETS.training_type, name="training_type", curie=VALUESETS.curie('training_type'),
+                   model_uri=VALUESETS.training_type, domain=None, range=Optional[Union[str, "TrainingTypeEnum"]])
+
+slots.employee_status = Slot(uri=VALUESETS.employee_status, name="employee_status", curie=VALUESETS.curie('employee_status'),
+                   model_uri=VALUESETS.employee_status, domain=None, range=Optional[Union[str, "EmployeeStatusEnum"]])
+
+slots.work_arrangement = Slot(uri=VALUESETS.work_arrangement, name="work_arrangement", curie=VALUESETS.curie('work_arrangement'),
+                   model_uri=VALUESETS.work_arrangement, domain=None, range=Optional[Union[str, "WorkArrangementEnum"]])
+
+slots.benefits_category = Slot(uri=VALUESETS.benefits_category, name="benefits_category", curie=VALUESETS.curie('benefits_category'),
+                   model_uri=VALUESETS.benefits_category, domain=None, range=Optional[Union[str, "BenefitsCategoryEnum"]])

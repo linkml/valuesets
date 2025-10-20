@@ -1,0 +1,688 @@
+name: supply_chain
+title: Supply Chain Management and Procurement
+description: 'Supply chain management classifications including procurement types, vendor
+  management, logistics operations, and supply chain strategies. Based on supply chain
+  management best practices, procurement standards, and logistics frameworks.'
+id: https://w3id.org/linkml/valuesets/business/supply_chain
+imports:
+- linkml:types
+prefixes:
+  valuesets: https://w3id.org/valuesets/
+  SCOR: https://www.apics.org/apics-for-business/frameworks/scor
+  CSCMP: https://cscmp.org/
+  ISM: https://www.ismworld.org/
+default_prefix: valuesets
+slots:
+  procurement_type:
+    description: Type of procurement activity or approach
+    range: ProcurementTypeEnum
+  vendor_category:
+    description: Vendor classification category
+    range: VendorCategoryEnum
+  supply_chain_strategy:
+    description: Supply chain strategic approach
+    range: SupplyChainStrategyEnum
+  logistics_operation:
+    description: Type of logistics operation
+    range: LogisticsOperationEnum
+  sourcing_strategy:
+    description: Sourcing strategy approach
+    range: SourcingStrategyEnum
+  supplier_relationship_type:
+    description: Type of supplier relationship management
+    range: SupplierRelationshipTypeEnum
+  inventory_management_approach:
+    description: Inventory management methodology
+    range: InventoryManagementApproachEnum
+enums:
+  ProcurementTypeEnum:
+    description: Types of procurement activities and approaches
+    permissible_values:
+      DIRECT_PROCUREMENT:
+        title: Direct Procurement
+        description: Procurement of materials directly used in production
+        annotations:
+          category: "direct materials"
+          purpose: "production input"
+          impact: "direct impact on product"
+          examples: "raw materials, components, subassemblies"
+          strategic: "strategically important"
+      INDIRECT_PROCUREMENT:
+        title: Indirect Procurement
+        description: Procurement of goods and services supporting operations
+        annotations:
+          category: "indirect materials and services"
+          purpose: "operational support"
+          impact: "indirect impact on product"
+          examples: "office supplies, maintenance, professional services"
+          cost_focus: "cost optimization focus"
+      SERVICES_PROCUREMENT:
+        title: Services Procurement
+        description: Procurement of professional and business services
+        annotations:
+          category: "services"
+          intangible: "intangible deliverables"
+          examples: "consulting, IT services, maintenance"
+          relationship: "relationship-based"
+          management: "service level management"
+      CAPITAL_PROCUREMENT:
+        title: Capital Procurement
+        description: Procurement of capital equipment and assets
+        annotations:
+          category: "capital expenditure"
+          long_term: "long-term assets"
+          high_value: "high value purchases"
+          examples: "machinery, equipment, facilities"
+          approval: "capital approval process"
+      STRATEGIC_PROCUREMENT:
+        title: Strategic Procurement
+        description: Procurement of strategically important items
+        annotations:
+          importance: "strategic importance"
+          risk: "high business risk"
+          value: "high value impact"
+          partnership: "strategic partnerships"
+          long_term: "long-term relationships"
+      TACTICAL_PROCUREMENT:
+        title: Tactical Procurement
+        description: Routine procurement of standard items
+        annotations:
+          routine: "routine purchases"
+          standard: "standardized items"
+          efficiency: "efficiency focused"
+          transactional: "transactional approach"
+          volume: "volume-based"
+      EMERGENCY_PROCUREMENT:
+        title: Emergency Procurement
+        description: Urgent procurement due to immediate needs
+        annotations:
+          urgency: "urgent requirements"
+          expedited: "expedited process"
+          higher_cost: "potentially higher costs"
+          risk_mitigation: "business continuity"
+          limited_sourcing: "limited supplier options"
+      FRAMEWORK_PROCUREMENT:
+        title: Framework Procurement
+        description: Pre-negotiated procurement agreements
+        annotations:
+          agreement: "pre-negotiated terms"
+          efficiency: "procurement efficiency"
+          compliance: "standardized compliance"
+          multiple_suppliers: "multiple approved suppliers"
+          call_off: "call-off contracts"
+      E_PROCUREMENT:
+        title: Electronic Procurement
+        description: Technology-enabled procurement processes
+        annotations:
+          technology: "electronic platforms"
+          automation: "process automation"
+          efficiency: "operational efficiency"
+          transparency: "process transparency"
+          data: "procurement data analytics"
+      SUSTAINABLE_PROCUREMENT:
+        title: Sustainable Procurement
+        description: Environmentally and socially responsible procurement
+        annotations:
+          sustainability: "environmental and social criteria"
+          responsibility: "corporate responsibility"
+          lifecycle: "lifecycle considerations"
+          certification: "sustainability certifications"
+          stakeholder: "stakeholder value"
+  VendorCategoryEnum:
+    description: Vendor classification categories
+    permissible_values:
+      STRATEGIC_SUPPLIER:
+        title: Strategic Supplier
+        description: Critical suppliers with strategic importance
+        annotations:
+          importance: "strategic business importance"
+          relationship: "partnership relationship"
+          risk: "high business risk if disrupted"
+          collaboration: "collaborative planning"
+          long_term: "long-term agreements"
+      PREFERRED_SUPPLIER:
+        title: Preferred Supplier
+        description: Suppliers with proven performance and preferred status
+        annotations:
+          performance: "proven performance history"
+          preferred: "preferred supplier status"
+          reliability: "reliable delivery"
+          quality: "consistent quality"
+          relationship: "ongoing relationship"
+      APPROVED_SUPPLIER:
+        title: Approved Supplier
+        description: Suppliers meeting qualification requirements
+        annotations:
+          qualification: "meets qualification criteria"
+          approved: "approved for business"
+          standards: "meets quality standards"
+          compliance: "regulatory compliance"
+          monitoring: "performance monitoring"
+      TRANSACTIONAL_SUPPLIER:
+        title: Transactional Supplier
+        description: Suppliers for routine, low-risk purchases
+        annotations:
+          routine: "routine transactions"
+          low_risk: "low business risk"
+          standard: "standard products/services"
+          efficiency: "cost and efficiency focus"
+          limited_relationship: "limited relationship"
+      SINGLE_SOURCE:
+        title: Single Source Supplier
+        description: Only available supplier for specific requirement
+        annotations:
+          uniqueness: "unique product or service"
+          monopoly: "single source situation"
+          dependency: "high dependency"
+          risk: "supply risk concentration"
+          relationship: "close relationship management"
+      SOLE_SOURCE:
+        title: Sole Source Supplier
+        description: Deliberately chosen single supplier
+        annotations:
+          choice: "deliberate single supplier choice"
+          partnership: "strategic partnership"
+          specialization: "specialized capability"
+          integration: "integrated operations"
+          exclusive: "exclusive relationship"
+      MINORITY_SUPPLIER:
+        title: Minority/Diverse Supplier
+        description: Suppliers meeting diversity criteria
+        annotations:
+          diversity: "supplier diversity program"
+          certification: "diversity certification"
+          inclusion: "supplier inclusion"
+          social_responsibility: "corporate social responsibility"
+          development: "supplier development"
+      LOCAL_SUPPLIER:
+        title: Local Supplier
+        description: Geographically local suppliers
+        annotations:
+          geography: "local geographic proximity"
+          community: "local community support"
+          logistics: "reduced logistics costs"
+          responsiveness: "quick response capability"
+          sustainability: "reduced carbon footprint"
+      GLOBAL_SUPPLIER:
+        title: Global Supplier
+        description: Suppliers with global capabilities
+        annotations:
+          global: "global presence and capability"
+          scale: "economies of scale"
+          standardization: "global standardization"
+          complexity: "complex management"
+          risk: "global supply chain risk"
+      SPOT_SUPPLIER:
+        title: Spot Market Supplier
+        description: Suppliers for one-time or spot purchases
+        annotations:
+          spot_market: "spot market transactions"
+          one_time: "one-time purchases"
+          price_driven: "price-driven selection"
+          no_relationship: "no ongoing relationship"
+          market_based: "market-based pricing"
+  SupplyChainStrategyEnum:
+    description: Supply chain strategic approaches
+    permissible_values:
+      LEAN_SUPPLY_CHAIN:
+        title: Lean Supply Chain
+        description: Waste elimination and efficiency-focused supply chain
+        annotations:
+          philosophy: "lean philosophy"
+          waste: "waste elimination"
+          efficiency: "operational efficiency"
+          flow: "smooth material flow"
+          inventory: "minimal inventory"
+      AGILE_SUPPLY_CHAIN:
+        title: Agile Supply Chain
+        description: Flexible and responsive supply chain
+        annotations:
+          flexibility: "high flexibility"
+          responsiveness: "rapid response capability"
+          adaptation: "quick adaptation"
+          variability: "handles demand variability"
+          customer: "customer responsiveness"
+      RESILIENT_SUPPLY_CHAIN:
+        title: Resilient Supply Chain
+        description: Risk-resistant and robust supply chain
+        annotations:
+          resilience: "supply chain resilience"
+          risk_management: "comprehensive risk management"
+          redundancy: "built-in redundancy"
+          recovery: "quick recovery capability"
+          continuity: "business continuity focus"
+      SUSTAINABLE_SUPPLY_CHAIN:
+        title: Sustainable Supply Chain
+        description: Environmentally and socially responsible supply chain
+        annotations:
+          sustainability: "environmental and social sustainability"
+          responsibility: "corporate responsibility"
+          lifecycle: "lifecycle assessment"
+          circular: "circular economy principles"
+          stakeholder: "stakeholder value"
+      GLOBAL_SUPPLY_CHAIN:
+        title: Global Supply Chain
+        description: Internationally distributed supply chain
+        annotations:
+          global: "global geographic distribution"
+          scale: "economies of scale"
+          complexity: "increased complexity"
+          risk: "global risks"
+          coordination: "global coordination"
+      LOCAL_SUPPLY_CHAIN:
+        title: Local/Regional Supply Chain
+        description: Geographically concentrated supply chain
+        annotations:
+          local: "local or regional focus"
+          proximity: "geographic proximity"
+          responsiveness: "local responsiveness"
+          community: "community support"
+          sustainability: "reduced transportation"
+      DIGITAL_SUPPLY_CHAIN:
+        title: Digital Supply Chain
+        description: Technology-enabled and data-driven supply chain
+        annotations:
+          digital: "digital transformation"
+          technology: "advanced technology"
+          data: "data-driven decisions"
+          automation: "process automation"
+          visibility: "end-to-end visibility"
+      COLLABORATIVE_SUPPLY_CHAIN:
+        title: Collaborative Supply Chain
+        description: Partnership-based collaborative supply chain
+        annotations:
+          collaboration: "supply chain collaboration"
+          partnership: "strategic partnerships"
+          integration: "process integration"
+          sharing: "information sharing"
+          joint_planning: "collaborative planning"
+      COST_FOCUSED_SUPPLY_CHAIN:
+        title: Cost-Focused Supply Chain
+        description: Cost optimization-focused supply chain
+        annotations:
+          cost: "cost optimization"
+          efficiency: "cost efficiency"
+          standardization: "process standardization"
+          scale: "economies of scale"
+          procurement: "cost-focused procurement"
+      CUSTOMER_FOCUSED_SUPPLY_CHAIN:
+        title: Customer-Focused Supply Chain
+        description: Customer service-oriented supply chain
+        annotations:
+          customer: "customer-centric"
+          service: "customer service focus"
+          customization: "product customization"
+          responsiveness: "customer responsiveness"
+          satisfaction: "customer satisfaction"
+  LogisticsOperationEnum:
+    description: Types of logistics operations
+    permissible_values:
+      INBOUND_LOGISTICS:
+        title: Inbound Logistics
+        description: Management of incoming materials and supplies
+        annotations:
+          direction: "inbound to organization"
+          materials: "raw materials and supplies"
+          suppliers: "supplier coordination"
+          receiving: "receiving operations"
+          quality: "incoming quality control"
+      OUTBOUND_LOGISTICS:
+        title: Outbound Logistics
+        description: Management of finished goods distribution
+        annotations:
+          direction: "outbound from organization"
+          products: "finished goods"
+          customers: "customer delivery"
+          distribution: "distribution management"
+          service: "customer service"
+      REVERSE_LOGISTICS:
+        title: Reverse Logistics
+        description: Management of product returns and recycling
+        annotations:
+          direction: "reverse flow"
+          returns: "product returns"
+          recycling: "recycling and disposal"
+          recovery: "value recovery"
+          sustainability: "environmental responsibility"
+      THIRD_PARTY_LOGISTICS:
+        title: Third-Party Logistics (3PL)
+        description: Outsourced logistics services
+        annotations:
+          outsourcing: "logistics outsourcing"
+          service_provider: "third-party provider"
+          specialization: "logistics specialization"
+          cost: "cost optimization"
+          expertise: "logistics expertise"
+      FOURTH_PARTY_LOGISTICS:
+        title: Fourth-Party Logistics (4PL)
+        description: Supply chain integration and management services
+        annotations:
+          integration: "supply chain integration"
+          management: "end-to-end management"
+          coordination: "multi-provider coordination"
+          strategy: "strategic logistics"
+          technology: "technology integration"
+      WAREHOUSING:
+        title: Warehousing Operations
+        description: Storage and inventory management operations
+        annotations:
+          storage: "product storage"
+          inventory: "inventory management"
+          handling: "material handling"
+          distribution: "distribution center"
+          automation: "warehouse automation"
+      TRANSPORTATION:
+        title: Transportation Management
+        description: Movement of goods between locations
+        annotations:
+          movement: "goods movement"
+          modes: "transportation modes"
+          routing: "route optimization"
+          scheduling: "delivery scheduling"
+          cost: "transportation cost"
+      CROSS_DOCKING:
+        title: Cross-Docking Operations
+        description: Direct transfer without storage
+        annotations:
+          transfer: "direct transfer"
+          minimal_storage: "minimal inventory storage"
+          efficiency: "operational efficiency"
+          speed: "fast throughput"
+          consolidation: "shipment consolidation"
+      DISTRIBUTION:
+        title: Distribution Management
+        description: Product distribution and delivery operations
+        annotations:
+          distribution: "product distribution"
+          network: "distribution network"
+          delivery: "customer delivery"
+          service: "delivery service"
+          coverage: "market coverage"
+      FREIGHT_FORWARDING:
+        title: Freight Forwarding
+        description: International shipping and customs management
+        annotations:
+          international: "international shipping"
+          customs: "customs clearance"
+          documentation: "shipping documentation"
+          coordination: "multi-modal coordination"
+          compliance: "regulatory compliance"
+  SourcingStrategyEnum:
+    description: Sourcing strategy approaches
+    permissible_values:
+      SINGLE_SOURCING:
+        title: Single Sourcing
+        description: Deliberate use of one supplier for strategic reasons
+        annotations:
+          suppliers: "single supplier"
+          strategic: "strategic decision"
+          partnership: "close partnership"
+          risk: "supply concentration risk"
+          benefits: "economies of scale"
+      MULTIPLE_SOURCING:
+        title: Multiple Sourcing
+        description: Use of multiple suppliers for risk mitigation
+        annotations:
+          suppliers: "multiple suppliers"
+          risk_mitigation: "supply risk mitigation"
+          competition: "supplier competition"
+          flexibility: "sourcing flexibility"
+          management: "complex supplier management"
+      DUAL_SOURCING:
+        title: Dual Sourcing
+        description: Use of two suppliers for balance of risk and efficiency
+        annotations:
+          suppliers: "two suppliers"
+          balance: "risk and efficiency balance"
+          backup: "backup supply capability"
+          competition: "limited competition"
+          management: "manageable complexity"
+      GLOBAL_SOURCING:
+        title: Global Sourcing
+        description: Worldwide sourcing for best value
+        annotations:
+          geographic: "global geographic scope"
+          cost: "cost optimization"
+          capability: "access to capabilities"
+          complexity: "increased complexity"
+          risk: "global supply risks"
+      DOMESTIC_SOURCING:
+        title: Domestic Sourcing
+        description: Sourcing within domestic market
+        annotations:
+          geographic: "domestic market only"
+          proximity: "geographic proximity"
+          responsiveness: "local responsiveness"
+          compliance: "regulatory compliance"
+          support: "domestic economy support"
+      NEAR_SOURCING:
+        title: Near Sourcing
+        description: Sourcing from nearby geographic regions
+        annotations:
+          geographic: "nearby regions"
+          balance: "cost and proximity balance"
+          risk: "reduced supply chain risk"
+          responsiveness: "improved responsiveness"
+          cost: "moderate cost advantage"
+      VERTICAL_INTEGRATION:
+        title: Vertical Integration
+        description: Internal production instead of external sourcing
+        annotations:
+          internal: "internal production"
+          control: "direct control"
+          capability: "internal capability development"
+          investment: "significant investment"
+          flexibility: "reduced flexibility"
+      OUTSOURCING:
+        title: Outsourcing
+        description: External sourcing of non-core activities
+        annotations:
+          external: "external providers"
+          focus: "core competency focus"
+          cost: "cost optimization"
+          expertise: "access to expertise"
+          dependency: "external dependency"
+      INSOURCING:
+        title: Insourcing
+        description: Bringing previously outsourced activities internal
+        annotations:
+          internal: "bring activities internal"
+          control: "increased control"
+          capability: "internal capability building"
+          cost: "potential cost increase"
+          strategic: "strategic importance"
+      CONSORTIUM_SOURCING:
+        title: Consortium Sourcing
+        description: Collaborative sourcing with other organizations
+        annotations:
+          collaboration: "multi-organization collaboration"
+          leverage: "increased buying leverage"
+          cost: "cost reduction through scale"
+          complexity: "coordination complexity"
+          relationships: "multi-party relationships"
+  SupplierRelationshipTypeEnum:
+    description: Types of supplier relationship management
+    permissible_values:
+      TRANSACTIONAL:
+        title: Transactional Relationship
+        description: Arms-length, price-focused supplier relationship
+        annotations:
+          focus: "price and terms focus"
+          interaction: "minimal interaction"
+          duration: "short-term orientation"
+          switching: "easy supplier switching"
+          competition: "competitive bidding"
+      PREFERRED_SUPPLIER:
+        title: Preferred Supplier Relationship
+        description: Ongoing relationship with proven suppliers
+        annotations:
+          status: "preferred supplier status"
+          performance: "proven performance"
+          priority: "priority consideration"
+          benefits: "preferential treatment"
+          stability: "stable relationship"
+      STRATEGIC_PARTNERSHIP:
+        title: Strategic Partnership
+        description: Collaborative long-term strategic relationship
+        annotations:
+          collaboration: "strategic collaboration"
+          integration: "business integration"
+          planning: "joint planning"
+          development: "joint development"
+          mutual_benefit: "mutual value creation"
+      ALLIANCE:
+        title: Strategic Alliance
+        description: Formal alliance with shared objectives
+        annotations:
+          formal: "formal alliance agreement"
+          objectives: "shared strategic objectives"
+          resources: "shared resources"
+          risks: "shared risks and rewards"
+          governance: "joint governance"
+      JOINT_VENTURE:
+        title: Joint Venture
+        description: Separate entity created with supplier
+        annotations:
+          entity: "separate legal entity"
+          ownership: "shared ownership"
+          investment: "joint investment"
+          control: "shared control"
+          separate: "separate business unit"
+      VENDOR_MANAGED_INVENTORY:
+        title: Vendor Managed Inventory (VMI)
+        description: Supplier manages customer inventory
+        annotations:
+          management: "supplier manages inventory"
+          visibility: "demand visibility"
+          responsibility: "supplier responsibility"
+          efficiency: "inventory efficiency"
+          integration: "systems integration"
+      CONSIGNMENT:
+        title: Consignment Relationship
+        description: Supplier owns inventory until consumption
+        annotations:
+          ownership: "supplier retains ownership"
+          location: "customer location"
+          payment: "payment on consumption"
+          cash_flow: "improved customer cash flow"
+          risk: "supplier inventory risk"
+      COLLABORATIVE_PLANNING:
+        title: Collaborative Planning Relationship
+        description: Joint planning and forecasting relationship
+        annotations:
+          planning: "collaborative planning"
+          forecasting: "joint forecasting"
+          information: "information sharing"
+          coordination: "demand coordination"
+          efficiency: "supply chain efficiency"
+      DEVELOPMENT_PARTNERSHIP:
+        title: Supplier Development Partnership
+        description: Investment in supplier capability development
+        annotations:
+          development: "supplier capability development"
+          investment: "customer investment"
+          improvement: "supplier improvement"
+          capability: "capability building"
+          long_term: "long-term commitment"
+      RISK_SHARING:
+        title: Risk Sharing Partnership
+        description: Shared risk and reward relationship
+        annotations:
+          risk: "shared risk and reward"
+          incentives: "aligned incentives"
+          performance: "performance-based"
+          outcomes: "shared outcomes"
+          collaboration: "collaborative approach"
+  InventoryManagementApproachEnum:
+    description: Inventory management methodologies
+    permissible_values:
+      JUST_IN_TIME:
+        title: Just-in-Time (JIT)
+        description: Minimal inventory with precise timing
+        annotations:
+          timing: "precise delivery timing"
+          waste: "inventory waste elimination"
+          flow: "continuous flow"
+          supplier: "supplier integration"
+          quality: "zero defect requirement"
+      ECONOMIC_ORDER_QUANTITY:
+        title: Economic Order Quantity (EOQ)
+        description: Optimal order quantity calculation
+        annotations:
+          optimization: "cost optimization"
+          calculation: "mathematical calculation"
+          trade_off: "ordering vs holding cost trade-off"
+          static: "static demand assumption"
+          classical: "classical inventory model"
+      ABC_ANALYSIS:
+        title: ABC Analysis
+        description: Inventory classification by value importance
+        annotations:
+          classification: "value-based classification"
+          focus: "priority focus on high-value items"
+          management: "differentiated management"
+          efficiency: "resource allocation efficiency"
+          pareto: "Pareto principle application"
+      SAFETY_STOCK:
+        title: Safety Stock Management
+        description: Buffer inventory for demand/supply uncertainty
+        annotations:
+          buffer: "inventory buffer"
+          uncertainty: "demand and supply uncertainty"
+          service_level: "service level protection"
+          cost: "additional holding cost"
+          risk: "stockout risk mitigation"
+      VENDOR_MANAGED_INVENTORY:
+        title: Vendor Managed Inventory (VMI)
+        description: Supplier-controlled inventory management
+        annotations:
+          control: "supplier inventory control"
+          visibility: "demand visibility"
+          automation: "automated replenishment"
+          efficiency: "inventory efficiency"
+          partnership: "supplier partnership"
+      CONSIGNMENT_INVENTORY:
+        title: Consignment Inventory
+        description: Supplier-owned inventory at customer location
+        annotations:
+          ownership: "supplier ownership"
+          location: "customer location"
+          cash_flow: "improved cash flow"
+          availability: "immediate availability"
+          risk: "supplier risk"
+      KANBAN:
+        title: Kanban System
+        description: Visual pull-based inventory system
+        annotations:
+          visual: "visual control system"
+          pull: "pull-based replenishment"
+          lean: "lean methodology"
+          signals: "kanban signals"
+          flow: "smooth material flow"
+      TWO_BIN_SYSTEM:
+        title: Two-Bin System
+        description: Simple reorder point system using two bins
+        annotations:
+          simplicity: "simple reorder system"
+          visual: "visual reorder point"
+          bins: "two-bin methodology"
+          automatic: "automatic reordering"
+          low_cost: "low-cost implementation"
+      CONTINUOUS_REVIEW:
+        title: Continuous Review System
+        description: Continuous monitoring with fixed reorder point
+        annotations:
+          monitoring: "continuous inventory monitoring"
+          reorder_point: "fixed reorder point"
+          quantity: "fixed order quantity"
+          responsiveness: "responsive to demand"
+          cost: "higher monitoring cost"
+      PERIODIC_REVIEW:
+        title: Periodic Review System
+        description: Periodic inventory review with variable order quantity
+        annotations:
+          periodic: "periodic review intervals"
+          variable: "variable order quantity"
+          target: "target inventory level"
+          aggregation: "order aggregation"
+          efficiency: "administrative efficiency"

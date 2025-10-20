@@ -723,7 +723,9 @@ enums:
           codon: UGA with SECIS element
       O:
         title: Pyrrolysine (22nd amino acid)
-        meaning: CHEBI:21786
+        meaning: CHEBI:21860
+        aliases:
+        - L-pyrrolysine
         annotations:
           three_letter: Pyl
           special: 22nd amino acid

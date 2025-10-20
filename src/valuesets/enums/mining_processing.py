@@ -226,7 +226,7 @@ class BioleachOrganism(RichEnum):
 # Set metadata after class creation
 BioleachOrganism._metadata = {
     "ACIDITHIOBACILLUS_FERROOXIDANS": {'description': 'Iron and sulfur oxidizing bacterium', 'meaning': 'NCBITaxon:920'},
-    "LEPTOSPIRILLUM_FERROOXIDANS": {'description': 'Iron oxidizing bacterium', 'meaning': 'NCBITaxon:2705'},
+    "LEPTOSPIRILLUM_FERROOXIDANS": {'description': 'Iron oxidizing bacterium', 'meaning': 'NCBITaxon:180'},
     "ASPERGILLUS_NIGER": {'description': 'Organic acid producing fungus', 'meaning': 'NCBITaxon:5061'},
     "ENGINEERED_STRAIN": {'description': 'Genetically modified organism for enhanced bioleaching'},
 }

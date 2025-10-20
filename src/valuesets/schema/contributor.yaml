@@ -7,7 +7,7 @@ imports:
 prefixes:
   CVS: https://w3id.org/common-value-sets/
   linkml: https://w3id.org/linkml/
-  schema: http://schema.org/
+  NCIT: http://purl.obolibrary.org/obo/NCIT_
   DataCite: https://purl.org/datacite/
   valuesets: https://w3id.org/valuesets/
 default_prefix: valuesets
@@ -21,8 +21,10 @@ enums:
     permissible_values:
       PERSON:
         description: A person.
-        meaning: schema:Person
+        meaning: NCIT:C25190
       ORGANIZATION:
         description: An organization.
-        meaning: schema:Organization
+        meaning: NCIT:C41206
+        aliases:
+        - Institution
 default_range: string

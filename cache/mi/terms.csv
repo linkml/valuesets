@@ -1,0 +1,71 @@
+curie,label,retrieved_at
+MI:0018,two hybrid,2025-10-19T08:27:58.613843
+MI:0019,coimmunoprecipitation,2025-10-19T08:27:58.614075
+MI:0096,pull down,2025-10-19T08:27:58.614319
+MI:0676,tandem affinity purification,2025-10-19T08:27:58.614738
+MI:0055,fluorescent resonance energy transfer,2025-10-19T08:27:58.614931
+MI:0107,surface plasmon resonance,2025-10-19T08:27:58.615092
+MI:0030,cross-linking study,2025-10-19T08:27:58.615273
+MI:0114,x-ray crystallography,2025-10-19T08:27:58.615569
+MI:0077,nuclear magnetic resonance,2025-10-19T08:27:58.615723
+MI:0040,electron microscopy,2025-10-19T08:27:58.615876
+MI:0943,detection by mass spectrometry,2025-10-19T08:27:58.616156
+MI:0813,proximity ligation assay,2025-10-19T08:27:58.616438
+MI:0809,bimolecular fluorescence complementation,2025-10-19T08:27:58.616586
+MI:2413,mammalian membrane two hybrid,2025-10-19T08:27:58.616968
+MI:0915,physical association,2025-10-19T08:27:58.617260
+MI:0407,direct interaction,2025-10-19T08:27:58.617660
+MI:0914,association,2025-10-19T08:27:58.617817
+MI:0403,colocalization,2025-10-19T08:27:58.617972
+MI:2286,functional association,2025-10-19T08:27:58.618377
+MI:0414,enzymatic reaction,2025-10-19T08:27:58.618533
+MI:0217,phosphorylation reaction,2025-10-19T08:27:58.618813
+MI:0220,ubiquitination reaction,2025-10-19T08:27:58.618962
+MI:0192,acetylation reaction,2025-10-19T08:27:58.619264
+MI:0213,methylation reaction,2025-10-19T08:27:58.619451
+MI:0194,cleavage reaction,2025-10-19T08:27:58.619617
+MI:0208,genetic interaction (sensu unexpected),2025-10-19T08:27:58.619783
+MI:1126,self interaction,2025-10-19T08:27:58.620051
+MI:0496,bait,2025-10-19T08:27:58.620330
+MI:0498,prey,2025-10-19T08:27:58.620479
+MI:0497,neutral component,2025-10-19T08:27:58.620628
+MI:0501,enzyme,2025-10-19T08:27:58.620790
+MI:0502,enzyme target,2025-10-19T08:27:58.620944
+MI:0503,self,2025-10-19T08:27:58.621099
+MI:0898,putative self,2025-10-19T08:27:58.621366
+MI:0684,ancillary,2025-10-19T08:27:58.621521
+MI:0682,cofactor,2025-10-19T08:27:58.621684
+MI:0586,inhibitor,2025-10-19T08:27:58.621853
+MI:0840,stimulator,2025-10-19T08:27:58.622139
+MI:0941,competitor,2025-10-19T08:27:58.622296
+MI:0579,electron donor,2025-10-19T08:27:58.622463
+MI:0580,electron acceptor,2025-10-19T08:27:58.622621
+MI:0625,agonist,2025-10-19T08:27:58.622816
+MI:0626,antagonist,2025-10-19T08:27:58.622975
+MI:0842,phosphate donor,2025-10-19T08:27:58.623130
+MI:0843,phosphate acceptor,2025-10-19T08:27:58.623292
+MI:0113,western blot,2025-10-19T08:27:58.623470
+MI:0102,sequence tag identification,2025-10-19T08:27:58.623637
+MI:0678,antibody array,2025-10-19T08:27:58.623799
+MI:0396,predetermined participant,2025-10-19T08:27:58.623968
+MI:0078,nucleotide sequence identification,2025-10-19T08:27:58.624136
+MI:0117,binding-associated region,2025-10-19T08:27:58.624308
+MI:0118,mutation,2025-10-19T08:27:58.624470
+MI:0121,acetylated residue,2025-10-19T08:27:58.624637
+MI:0507,tag,2025-10-19T08:27:58.624804
+MI:0170,phosphorylated residue,2025-10-19T08:27:58.624973
+MI:0429,necessary binding region,2025-10-19T08:27:58.625249
+MI:0442,sufficient binding region,2025-10-19T08:27:58.625416
+MI:0326,protein,2025-10-19T08:27:58.625595
+MI:0327,peptide,2025-10-19T08:27:58.625765
+MI:0328,small molecule,2025-10-19T08:27:58.625941
+MI:0319,deoxyribonucleic acid,2025-10-19T08:27:58.626213
+MI:0320,ribonucleic acid,2025-10-19T08:27:58.626483
+MI:0314,complex,2025-10-19T08:27:58.626707
+MI:0250,gene,2025-10-19T08:27:58.627110
+MI:0383,biopolymer,2025-10-19T08:27:58.627622
+MI:0904,polysaccharide,2025-10-19T08:27:58.627883
+MI:0318,nucleic acid,2025-10-19T08:27:58.628081
+MI:0621,author-confidence,2025-10-19T08:27:58.628346
+MI:0506,over expressed level,2025-10-19T08:27:58.628577
+MI:0788,knock out,2025-10-19T08:27:58.628800

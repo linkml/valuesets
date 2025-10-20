@@ -10,5 +10,18 @@
         "WebSearch",
         "Write"
     ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|MultiEdit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$CLAUDE_PROJECT_DIR/.claude/hooks/validate_schema_hook.py"
+          }
+        ]
+      }
+    ]
   }
 }

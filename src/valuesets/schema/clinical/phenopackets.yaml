@@ -206,7 +206,6 @@ enums:
           note: Affecting only one side
       MIDLINE:
         description: In the midline/center
-        meaning: UBERON:0005231
         annotations:
           note: Along the body's central axis
   OnsetTimingEnum:

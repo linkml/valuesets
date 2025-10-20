@@ -131,23 +131,37 @@ def test_extract_aliases():
 
 def test_oak_label_lookup():
     """Test OAK label lookup with mock."""
-    # Create mock adapter
+    # Create mock adapter that returns our test label
     mock_adapter = Mock()
     mock_adapter.label = Mock(return_value="Blood group A Rh(D) positive")
 
-    config = ValidationConfig(oak_adapter_string="ols:")
+    # Create evaluator with a dummy config to avoid creating real adapters
+    config = ValidationConfig(oak_adapter_string="dummy:")
     evaluator = EnumEvaluator(config=config)
-    # Inject mock adapter
+
+    # The dummy adapter creation should fail, so _default should be None or missing
+    assert '_default' not in evaluator._per_prefix_adapters or evaluator._per_prefix_adapters['_default'] is None
+
+    # Inject mock adapter - this simulates having a working adapter connection
     evaluator._per_prefix_adapters['_default'] = mock_adapter
 
-    label = evaluator.get_ontology_label("SNOMED:278149003")
-    assert label == "Blood group A Rh(D) positive"
-    mock_adapter.label.assert_called_with("SNOMED:278149003")
+    # Verify injection worked
+    assert evaluator._per_prefix_adapters['_default'] is mock_adapter
 
-    # Test with no results (returns None)
+    # Test successful lookup
+    label = evaluator.get_ontology_label("TESTONT:278149003")
+    assert label == "Blood group A Rh(D) positive"
+    mock_adapter.label.assert_called_with("TESTONT:278149003")
+
+    # Test with no results (adapter returns None)
     mock_adapter.label.return_value = None
-    label = evaluator.get_ontology_label("INVALID:123")
+    # Clear the cache first to ensure we hit the adapter
+    if evaluator._label_cache is not None:
+        evaluator._label_cache.clear()
+
+    label = evaluator.get_ontology_label("TESTONT:123")
     assert label is None
+    mock_adapter.label.assert_called_with("TESTONT:123")
 
 
 def test_evaluator_creation():

@@ -1,0 +1,332 @@
+name: nuclear_waste
+title: Nuclear Waste Classifications
+description: 'Classifications of radioactive waste based on IAEA standards, NRC 10 CFR 61
+  classifications, and international waste management standards. Includes activity levels,
+  disposal requirements, and time scales.'
+id: https://w3id.org/linkml/valuesets/energy/nuclear/nuclear_waste
+imports:
+- linkml:types
+prefixes:
+  valuesets: https://w3id.org/valuesets/
+  IAEA: https://www.iaea.org/
+  NRC: https://www.nrc.gov/
+  CFR: https://www.ecfr.gov/
+default_prefix: valuesets
+slots:
+  waste_classification:
+    description: International radioactive waste classification
+    range: IAEAWasteClassificationEnum
+  nrc_waste_class:
+    description: US NRC waste classification (10 CFR 61)
+    range: NRCWasteClassEnum
+  waste_heat_generation:
+    description: Heat generation category of radioactive waste
+    range: WasteHeatGenerationEnum
+  waste_half_life_category:
+    description: Half-life category for radioactive waste
+    range: WasteHalfLifeCategoryEnum
+  waste_disposal_method:
+    description: Disposal method for radioactive waste
+    range: WasteDisposalMethodEnum
+  waste_source:
+    description: Source of radioactive waste generation
+    range: WasteSourceEnum
+  transuranic_category:
+    description: Transuranic waste classification
+    range: TransuranicWasteCategoryEnum
+enums:
+  IAEAWasteClassificationEnum:
+    description: IAEA General Safety Requirements radioactive waste classification scheme
+    permissible_values:
+      EXEMPT_WASTE:
+        title: Exempt Waste (EW)
+        description: Waste with negligible radioactivity requiring no regulatory control
+        aliases:
+        - EW
+        annotations:
+          regulatory_control: none required
+          clearance: can be cleared from regulatory control
+          disposal: as ordinary waste
+          activity_level: negligible
+      VERY_SHORT_LIVED_WASTE:
+        title: Very Short-Lived Waste (VSLW)
+        description: Waste stored for decay to exempt levels within few years
+        aliases:
+        - VSLW
+        annotations:
+          storage_period: up to few years
+          decay_strategy: storage for decay
+          clearance: after decay period
+          typical_sources: medical, research isotopes
+      VERY_LOW_LEVEL_WASTE:
+        title: Very Low Level Waste (VLLW)
+        description: Waste requiring limited containment and isolation
+        aliases:
+        - VLLW
+        annotations:
+          containment_requirement: limited
+          disposal: near-surface landfill-type
+          activity_level: very low but above exempt
+          isolation_period: limited
+      LOW_LEVEL_WASTE:
+        title: Low Level Waste (LLW)
+        description: Waste requiring containment for up to hundreds of years
+        aliases:
+        - LLW
+        annotations:
+          containment_period: up to few hundred years
+          disposal: near-surface disposal
+          activity_level: low
+          heat_generation: negligible
+      INTERMEDIATE_LEVEL_WASTE:
+        title: Intermediate Level Waste (ILW)
+        description: Waste requiring containment for thousands of years
+        aliases:
+        - ILW
+        annotations:
+          containment_period: up to thousands of years
+          disposal: geological disposal
+          activity_level: intermediate
+          heat_generation: low (<2 kW/m³)
+          shielding: required
+      HIGH_LEVEL_WASTE:
+        title: High Level Waste (HLW)
+        description: Waste requiring containment for thousands to hundreds of thousands of years
+        aliases:
+        - HLW
+        annotations:
+          containment_period: thousands to hundreds of thousands of years
+          disposal: geological disposal
+          activity_level: high
+          heat_generation: significant (>2 kW/m³)
+          cooling: required
+          shielding: heavy shielding required
+  NRCWasteClassEnum:
+    description: US NRC 10 CFR 61 low-level radioactive waste classification
+    permissible_values:
+      CLASS_A:
+        title: Class A Low-Level Waste
+        description: Lowest radioactivity waste suitable for shallow land burial
+        annotations:
+          disposal_method: shallow land burial
+          segregation_requirements: minimal
+          waste_form_requirements: none
+          typical_sources: medical, industrial, power plants
+          concentration_limits: lowest of three classes
+      CLASS_B:
+        title: Class B Low-Level Waste
+        description: Intermediate radioactivity requiring waste form stability
+        annotations:
+          disposal_method: shallow land burial
+          segregation_requirements: from Class A
+          waste_form_requirements: structural stability
+          institutional_control: 100 years minimum
+          concentration_limits: intermediate
+      CLASS_C:
+        title: Class C Low-Level Waste
+        description: Highest concentration suitable for shallow land burial
+        annotations:
+          disposal_method: shallow land burial
+          segregation_requirements: enhanced
+          waste_form_requirements: structural stability
+          institutional_control: 100 years minimum
+          intruder_barriers: required
+          concentration_limits: highest for shallow burial
+      GREATER_THAN_CLASS_C:
+        title: Greater Than Class C Waste (GTCC)
+        description: Waste exceeding Class C limits, generally unsuitable for shallow burial
+        aliases:
+        - GTCC
+        annotations:
+          disposal_method: case-by-case evaluation
+          shallow_burial: generally not acceptable
+          deep_disposal: may be required
+          nrc_evaluation: required
+          concentration_limits: exceeds Class C
+  WasteHeatGenerationEnum:
+    description: Heat generation categories for radioactive waste
+    permissible_values:
+      NEGLIGIBLE_HEAT:
+        title: Negligible Heat Generation
+        description: Waste generating negligible heat
+        annotations:
+          heat_output: "<0.1 kW/m³"
+          cooling_required: no
+          thermal_consideration: minimal
+      LOW_HEAT:
+        title: Low Heat Generation
+        description: Waste generating low but measurable heat
+        annotations:
+          heat_output: 0.1-2 kW/m³
+          cooling_required: minimal
+          thermal_consideration: some design consideration
+      HIGH_HEAT:
+        title: High Heat Generation
+        description: Waste generating significant heat requiring thermal management
+        annotations:
+          heat_output: ">2 kW/m³"
+          cooling_required: yes
+          thermal_consideration: major design factor
+          typical_waste: spent nuclear fuel, HLW glass
+  WasteHalfLifeCategoryEnum:
+    description: Half-life categories for radioactive waste classification
+    permissible_values:
+      VERY_SHORT_LIVED:
+        title: Very Short-Lived
+        description: Radionuclides with very short half-lives
+        annotations:
+          half_life_range: seconds to days
+          decay_strategy: storage for decay
+          typical_examples: medical isotopes, some activation products
+      SHORT_LIVED:
+        title: Short-Lived
+        description: Radionuclides with short half-lives
+        annotations:
+          half_life_range: "<30 years"
+          containment_period: hundreds of years
+          decay_significance: significant over containment period
+      LONG_LIVED:
+        title: Long-Lived
+        description: Radionuclides with long half-lives
+        annotations:
+          half_life_range: ">30 years"
+          containment_period: thousands to millions of years
+          decay_significance: minimal over human timescales
+          examples: actinides, some fission products
+  WasteDisposalMethodEnum:
+    description: Methods for radioactive waste disposal
+    permissible_values:
+      CLEARANCE:
+        title: Clearance for Unrestricted Use
+        description: Release from regulatory control as ordinary waste
+        annotations:
+          regulatory_oversight: none after clearance
+          waste_category: exempt waste
+          disposal_location: conventional facilities
+      DECAY_STORAGE:
+        title: Decay Storage
+        description: Storage for radioactive decay to exempt levels
+        annotations:
+          storage_duration: typically <10 years
+          waste_category: very short-lived waste
+          final_disposal: as ordinary waste after decay
+      NEAR_SURFACE_DISPOSAL:
+        title: Near-Surface Disposal
+        description: Disposal in engineered near-surface facilities
+        annotations:
+          depth: typically <30 meters
+          waste_categories: VLLW, LLW, some ILW
+          institutional_control: 100-300 years
+          barriers: engineered barriers
+      GEOLOGICAL_DISPOSAL:
+        title: Geological Disposal
+        description: Deep underground disposal in stable geological formations
+        annotations:
+          depth: typically >300 meters
+          waste_categories: HLW, long-lived ILW, spent fuel
+          containment_period: thousands to millions of years
+          barriers: multiple barriers including geology
+      BOREHOLE_DISPOSAL:
+        title: Borehole Disposal
+        description: Disposal in deep boreholes
+        annotations:
+          depth: 1-5 kilometers
+          waste_categories: disused sealed sources, some HLW
+          isolation: extreme depth isolation
+      TRANSMUTATION:
+        title: Transmutation
+        description: Nuclear transformation to shorter-lived or stable isotopes
+        annotations:
+          method: accelerator-driven systems or fast reactors
+          waste_categories: long-lived actinides
+          status: research and development
+  WasteSourceEnum:
+    description: Sources of radioactive waste generation
+    permissible_values:
+      NUCLEAR_POWER_PLANTS:
+        title: Nuclear Power Plants
+        description: Waste from commercial nuclear power generation
+        annotations:
+          waste_types: spent fuel, operational waste, decommissioning waste
+          volume_fraction: largest single source
+          waste_classes: all classes including HLW
+      MEDICAL_APPLICATIONS:
+        title: Medical Applications
+        description: Waste from nuclear medicine and radiotherapy
+        annotations:
+          waste_types: short-lived medical isotopes, sealed sources
+          typical_classification: Class A, VSLW
+          decay_strategy: often storage for decay
+      INDUSTRIAL_APPLICATIONS:
+        title: Industrial Applications
+        description: Waste from industrial use of radioactive materials
+        annotations:
+          applications: gauging, radiography, sterilization
+          waste_types: sealed sources, contaminated equipment
+          typical_classification: Class A and B
+      RESEARCH_FACILITIES:
+        title: Research Facilities
+        description: Waste from research reactors and laboratories
+        annotations:
+          waste_types: activation products, contaminated materials
+          typical_classification: Class A, B, and C
+          fuel_type: often HEU spent fuel
+      NUCLEAR_WEAPONS_PROGRAM:
+        title: Nuclear Weapons Program
+        description: Waste from defense nuclear activities
+        annotations:
+          waste_types: TRU waste, HLW, contaminated equipment
+          legacy_waste: significant volumes from past activities
+          classification: all classes including TRU
+      DECOMMISSIONING:
+        title: Facility Decommissioning
+        description: Waste from dismantling nuclear facilities
+        annotations:
+          waste_types: activated concrete, contaminated metal
+          volume: large volumes of VLLW and LLW
+          activity_level: generally low level
+      URANIUM_MINING:
+        title: Uranium Mining and Milling
+        description: Waste from uranium extraction and processing
+        annotations:
+          waste_types: tailings, contaminated equipment
+          volume: very large volumes
+          activity_level: naturally occurring radioactivity
+      FUEL_CYCLE_FACILITIES:
+        title: Fuel Cycle Facilities
+        description: Waste from fuel fabrication, enrichment, and reprocessing
+        annotations:
+          waste_types: contaminated equipment, process waste
+          classification: variable depending on process
+          uranium_content: often contains enriched uranium
+  TransuranicWasteCategoryEnum:
+    description: Transuranic waste classifications (US system)
+    permissible_values:
+      CONTACT_HANDLED_TRU:
+        title: Contact-Handled Transuranic Waste
+        description: TRU waste with surface dose rate ≤200 mrem/hr
+        aliases:
+        - CH-TRU
+        annotations:
+          dose_rate: ≤200 mrem/hr at surface
+          handling: direct contact possible with protection
+          disposal: geological repository (WIPP)
+          plutonium_content: ">100 nCi/g"
+      REMOTE_HANDLED_TRU:
+        title: Remote-Handled Transuranic Waste
+        description: TRU waste with surface dose rate >200 mrem/hr
+        aliases:
+        - RH-TRU
+        annotations:
+          dose_rate: ">200 mrem/hr at surface"
+          handling: remote handling required
+          disposal: geological repository with additional shielding
+          plutonium_content: ">100 nCi/g"
+      TRU_MIXED_WASTE:
+        title: TRU Mixed Waste
+        description: TRU waste also containing hazardous chemical components
+        annotations:
+          regulation: both radiological and chemical hazard regulations
+          treatment: may require chemical treatment before disposal
+          disposal: geological repository after treatment
+          complexity: dual regulatory framework

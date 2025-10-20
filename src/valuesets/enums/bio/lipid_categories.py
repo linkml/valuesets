@@ -51,13 +51,13 @@ class LipidCategory(RichEnum):
 
 # Set metadata after class creation
 LipidCategory._metadata = {
-    "LIPID": {'description': 'Lipid', 'meaning': 'swisslipids:SLM_000389145'},
-    "FATTY_ACYLS_AND_DERIVATIVES": {'description': 'Fatty acyls and derivatives', 'meaning': 'swisslipids:SLM_000390054'},
-    "GLYCEROLIPIDS": {'description': 'Glycerolipids', 'meaning': 'swisslipids:SLM_000117142'},
-    "GLYCEROPHOSPHOLIPIDS": {'description': 'Glycerophospholipids', 'meaning': 'swisslipids:SLM_000001193'},
-    "SPHINGOLIPIDS": {'description': 'Sphingolipids', 'meaning': 'swisslipids:SLM_000000525'},
-    "STEROIDS_AND_DERIVATIVES": {'description': 'Steroids and derivatives', 'meaning': 'swisslipids:SLM_000500463'},
-    "PRENOL_LIPIDS": {'description': 'Prenol Lipids', 'meaning': 'swisslipids:SLM_000508860'},
+    "LIPID": {'description': 'Lipid', 'meaning': 'CHEBI:18059'},
+    "FATTY_ACYLS_AND_DERIVATIVES": {'description': 'Fatty acyls and derivatives', 'meaning': 'CHEBI:24027', 'aliases': ['fatty-acyl group']},
+    "GLYCEROLIPIDS": {'description': 'Glycerolipids', 'meaning': 'CHEBI:35741', 'aliases': ['glycerolipid']},
+    "GLYCEROPHOSPHOLIPIDS": {'description': 'Glycerophospholipids', 'meaning': 'CHEBI:37739', 'aliases': ['glycerophospholipid']},
+    "SPHINGOLIPIDS": {'description': 'Sphingolipids', 'meaning': 'CHEBI:26739', 'aliases': ['sphingolipid']},
+    "STEROIDS_AND_DERIVATIVES": {'description': 'Steroids and derivatives', 'meaning': 'CHEBI:35341', 'aliases': ['steroid']},
+    "PRENOL_LIPIDS": {'description': 'Prenol Lipids', 'meaning': 'CHEBI:24913', 'aliases': ['isoprenoid']},
 }
 
 __all__ = [

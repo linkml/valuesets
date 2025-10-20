@@ -197,6 +197,20 @@
             "title": "AminoAcidExtendedEnum",
             "type": "string"
         },
+        "AnalyticalControlType": {
+            "description": "Types of control samples used in analytical chemistry",
+            "enum": [
+                "INTERNAL_STANDARD",
+                "EXTERNAL_STANDARD",
+                "POSITIVE_CONTROL",
+                "NEGATIVE_CONTROL",
+                "LONG_TERM_REFERENCE",
+                "BLANK",
+                "QUALITY_CONTROL"
+            ],
+            "title": "AnalyticalControlType",
+            "type": "string"
+        },
         "AnatomicalAxis": {
             "description": "Anatomical axes defining spatial organization",
             "enum": [
@@ -475,6 +489,21 @@
             "title": "BeneficiationPathway",
             "type": "string"
         },
+        "BenefitsCategoryEnum": {
+            "description": "Categories of employee benefits and compensation",
+            "enum": [
+                "HEALTH_INSURANCE",
+                "RETIREMENT_BENEFITS",
+                "PAID_TIME_OFF",
+                "LIFE_INSURANCE",
+                "FLEXIBLE_BENEFITS",
+                "WELLNESS_PROGRAMS",
+                "PROFESSIONAL_DEVELOPMENT",
+                "WORK_LIFE_BALANCE"
+            ],
+            "title": "BenefitsCategoryEnum",
+            "type": "string"
+        },
         "BinaryClassificationEnum": {
             "description": "Generic binary classification labels",
             "enum": [
@@ -710,6 +739,81 @@
             "title": "BuildingEnergyStandard",
             "type": "string"
         },
+        "BusinessActivityTypeEnum": {
+            "description": "Types of primary business activities",
+            "enum": [
+                "PRODUCTION",
+                "DISTRIBUTION",
+                "SERVICES",
+                "TECHNOLOGY",
+                "FINANCE",
+                "INFORMATION",
+                "EDUCATION",
+                "HEALTHCARE",
+                "ENTERTAINMENT",
+                "PROFESSIONAL_SERVICES"
+            ],
+            "title": "BusinessActivityTypeEnum",
+            "type": "string"
+        },
+        "BusinessLifecycleStageEnum": {
+            "description": "Stages in business development lifecycle",
+            "enum": [
+                "CONCEPT_STAGE",
+                "STARTUP_STAGE",
+                "GROWTH_STAGE",
+                "EXPANSION_STAGE",
+                "MATURITY_STAGE",
+                "DECLINE_STAGE",
+                "TURNAROUND_STAGE",
+                "EXIT_STAGE"
+            ],
+            "title": "BusinessLifecycleStageEnum",
+            "type": "string"
+        },
+        "BusinessOwnershipTypeEnum": {
+            "description": "Types of business ownership structures",
+            "enum": [
+                "PRIVATE_OWNERSHIP",
+                "PUBLIC_OWNERSHIP",
+                "FAMILY_OWNERSHIP",
+                "EMPLOYEE_OWNERSHIP",
+                "INSTITUTIONAL_OWNERSHIP",
+                "GOVERNMENT_OWNERSHIP",
+                "FOREIGN_OWNERSHIP",
+                "JOINT_OWNERSHIP"
+            ],
+            "title": "BusinessOwnershipTypeEnum",
+            "type": "string"
+        },
+        "BusinessProcessTypeEnum": {
+            "description": "Types of business processes",
+            "enum": [
+                "CORE_PROCESS",
+                "SUPPORT_PROCESS",
+                "MANAGEMENT_PROCESS",
+                "OPERATIONAL_PROCESS",
+                "STRATEGIC_PROCESS",
+                "INNOVATION_PROCESS",
+                "CUSTOMER_PROCESS",
+                "FINANCIAL_PROCESS"
+            ],
+            "title": "BusinessProcessTypeEnum",
+            "type": "string"
+        },
+        "BusinessSizeClassificationEnum": {
+            "description": "Size classifications for business entities",
+            "enum": [
+                "MICRO_BUSINESS",
+                "SMALL_BUSINESS",
+                "MEDIUM_BUSINESS",
+                "LARGE_BUSINESS",
+                "MULTINATIONAL_CORPORATION",
+                "FORTUNE_500"
+            ],
+            "title": "BusinessSizeClassificationEnum",
+            "type": "string"
+        },
         "BusinessTimeFrame": {
             "description": "Common business and financial time frames",
             "enum": [
@@ -911,6 +1015,19 @@
                 "Z"
             ],
             "title": "ChiralityEnum",
+            "type": "string"
+        },
+        "ChromatographyType": {
+            "description": "Types of chromatographic separation methods",
+            "enum": [
+                "GAS_CHROMATOGRAPHY",
+                "HIGH_PERFORMANCE_LIQUID_CHROMATOGRAPHY",
+                "LIQUID_CHROMATOGRAPHY_MASS_SPECTROMETRY",
+                "GAS_CHROMATOGRAPHY_MASS_SPECTROMETRY",
+                "TANDEM_MASS_SPECTROMETRY",
+                "ISOTOPE_RATIO_MASS_SPECTROMETRY"
+            ],
+            "title": "ChromatographyType",
             "type": "string"
         },
         "ChurnClassificationEnum": {
@@ -1162,6 +1279,21 @@
             "title": "CompassDirection",
             "type": "string"
         },
+        "CompensationTypeEnum": {
+            "description": "Types of employee compensation structures",
+            "enum": [
+                "BASE_SALARY",
+                "HOURLY_WAGE",
+                "COMMISSION",
+                "BONUS",
+                "STOCK_OPTIONS",
+                "PROFIT_SHARING",
+                "PIECE_RATE",
+                "STIPEND"
+            ],
+            "title": "CompensationTypeEnum",
+            "type": "string"
+        },
         "CompositeTypeEnum": {
             "description": "Types of composite materials",
             "enum": [
@@ -1264,6 +1396,24 @@
                 "ORGANIZATION"
             ],
             "title": "ContributorType",
+            "type": "string"
+        },
+        "CorporateGovernanceRoleEnum": {
+            "description": "Roles within corporate governance structure",
+            "enum": [
+                "CHAIRMAN_OF_BOARD",
+                "LEAD_INDEPENDENT_DIRECTOR",
+                "INDEPENDENT_DIRECTOR",
+                "INSIDE_DIRECTOR",
+                "AUDIT_COMMITTEE_CHAIR",
+                "COMPENSATION_COMMITTEE_CHAIR",
+                "NOMINATING_COMMITTEE_CHAIR",
+                "CHIEF_EXECUTIVE_OFFICER",
+                "CHIEF_FINANCIAL_OFFICER",
+                "CHIEF_OPERATING_OFFICER",
+                "CORPORATE_SECRETARY"
+            ],
+            "title": "CorporateGovernanceRoleEnum",
             "type": "string"
         },
         "CountryCodeISO2Enum": {
@@ -1704,6 +1854,23 @@
             "title": "DayOfWeek",
             "type": "string"
         },
+        "DecisionMakingStyleEnum": {
+            "description": "Decision-making approaches and styles",
+            "enum": [
+                "AUTOCRATIC",
+                "DEMOCRATIC",
+                "CONSULTATIVE",
+                "CONSENSUS",
+                "DELEGATED",
+                "DATA_DRIVEN",
+                "INTUITIVE",
+                "COMMITTEE",
+                "COLLABORATIVE",
+                "CRISIS"
+            ],
+            "title": "DecisionMakingStyleEnum",
+            "type": "string"
+        },
         "DefectClassificationEnum": {
             "description": "Manufacturing defect classification",
             "enum": [
@@ -1713,6 +1880,31 @@
                 "CRITICAL_DEFECT"
             ],
             "title": "DefectClassificationEnum",
+            "type": "string"
+        },
+        "DefenseInDepthLevelEnum": {
+            "description": "Defense in depth barrier levels for nuclear safety",
+            "enum": [
+                "LEVEL_1",
+                "LEVEL_2",
+                "LEVEL_3",
+                "LEVEL_4",
+                "LEVEL_5"
+            ],
+            "title": "DefenseInDepthLevelEnum",
+            "type": "string"
+        },
+        "DerivatizationMethod": {
+            "description": "Chemical derivatization methods for sample preparation",
+            "enum": [
+                "SILYLATION",
+                "METHYLATION",
+                "ACETYLATION",
+                "TRIFLUOROACETYLATION",
+                "ALKYLATION",
+                "OXIMATION"
+            ],
+            "title": "DerivatizationMethod",
             "type": "string"
         },
         "Detector": {
@@ -1824,6 +2016,18 @@
             "title": "DrugRouteEnum",
             "type": "string"
         },
+        "EconomicSectorEnum": {
+            "description": "Broad economic sector classifications",
+            "enum": [
+                "PRIMARY_SECTOR",
+                "SECONDARY_SECTOR",
+                "TERTIARY_SECTOR",
+                "QUATERNARY_SECTOR",
+                "QUINARY_SECTOR"
+            ],
+            "title": "EconomicSectorEnum",
+            "type": "string"
+        },
         "EducationLevel": {
             "description": "Years of education that a person has completed",
             "enum": [
@@ -1912,6 +2116,17 @@
             "title": "ElementMetallicClassificationEnum",
             "type": "string"
         },
+        "EmergencyClassificationEnum": {
+            "description": "Nuclear emergency action levels and classifications",
+            "enum": [
+                "NOTIFICATION_UNUSUAL_EVENT",
+                "ALERT",
+                "SITE_AREA_EMERGENCY",
+                "GENERAL_EMERGENCY"
+            ],
+            "title": "EmergencyClassificationEnum",
+            "type": "string"
+        },
         "EmissionScope": {
             "description": "Greenhouse gas emission scopes (GHG Protocol)",
             "enum": [
@@ -1922,6 +2137,19 @@
                 "SCOPE_3_DOWNSTREAM"
             ],
             "title": "EmissionScope",
+            "type": "string"
+        },
+        "EmployeeStatusEnum": {
+            "description": "Current employment status classifications",
+            "enum": [
+                "ACTIVE",
+                "ON_LEAVE",
+                "PROBATIONARY",
+                "SUSPENDED",
+                "TERMINATED",
+                "RETIRED"
+            ],
+            "title": "EmployeeStatusEnum",
             "type": "string"
         },
         "EmploymentStatus": {
@@ -1941,6 +2169,22 @@
                 "UNKNOWN"
             ],
             "title": "EmploymentStatus",
+            "type": "string"
+        },
+        "EmploymentTypeEnum": {
+            "description": "Types of employment arrangements and contracts",
+            "enum": [
+                "FULL_TIME",
+                "PART_TIME",
+                "CONTRACT",
+                "TEMPORARY",
+                "FREELANCE",
+                "INTERN",
+                "SEASONAL",
+                "CONSULTANT",
+                "VOLUNTEER"
+            ],
+            "title": "EmploymentTypeEnum",
             "type": "string"
         },
         "EndocrineDisruptorEnum": {
@@ -2266,6 +2510,18 @@
             "title": "EyeColorEnum",
             "type": "string"
         },
+        "FMRIParadigmTypeEnum": {
+            "description": "fMRI experimental paradigm types",
+            "enum": [
+                "BLOCK_DESIGN",
+                "EVENT_RELATED",
+                "MIXED_DESIGN",
+                "RESTING_STATE",
+                "NATURALISTIC"
+            ],
+            "title": "FMRIParadigmTypeEnum",
+            "type": "string"
+        },
         "Fake": {
             "additionalProperties": false,
             "description": "",
@@ -2362,6 +2618,17 @@
             "title": "FireSafetyColorEnum",
             "type": "string"
         },
+        "FissileIsotopeEnum": {
+            "description": "Fissile isotopes used in nuclear fuel",
+            "enum": [
+                "URANIUM_233",
+                "URANIUM_235",
+                "PLUTONIUM_239",
+                "PLUTONIUM_241"
+            ],
+            "title": "FissileIsotopeEnum",
+            "type": "string"
+        },
         "FlowerColorEnum": {
             "description": "Common flower colors",
             "enum": [
@@ -2436,6 +2703,86 @@
                 "BPM"
             ],
             "title": "FrequencyUnitEnum",
+            "type": "string"
+        },
+        "FuelAssemblyTypeEnum": {
+            "description": "Types of fuel assembly configurations",
+            "enum": [
+                "PWR_ASSEMBLY",
+                "BWR_ASSEMBLY",
+                "CANDU_BUNDLE",
+                "RBMK_ASSEMBLY",
+                "AGR_ASSEMBLY",
+                "HTGR_BLOCK",
+                "FAST_REACTOR_ASSEMBLY"
+            ],
+            "title": "FuelAssemblyTypeEnum",
+            "type": "string"
+        },
+        "FuelCycleFacilityTypeEnum": {
+            "description": "Types of nuclear fuel cycle facilities",
+            "enum": [
+                "IN_SITU_LEACH_MINE",
+                "CONVENTIONAL_MINE",
+                "HEAP_LEACH_FACILITY",
+                "GASEOUS_DIFFUSION_PLANT",
+                "GAS_CENTRIFUGE_PLANT",
+                "LASER_ENRICHMENT_FACILITY",
+                "MOX_FUEL_FABRICATION",
+                "AQUEOUS_REPROCESSING",
+                "PYROPROCESSING_FACILITY"
+            ],
+            "title": "FuelCycleFacilityTypeEnum",
+            "type": "string"
+        },
+        "FuelCycleOperationEnum": {
+            "description": "Nuclear fuel cycle operational activities",
+            "enum": [
+                "URANIUM_EXPLORATION",
+                "URANIUM_EXTRACTION",
+                "URANIUM_MILLING",
+                "URANIUM_CONVERSION",
+                "URANIUM_ENRICHMENT",
+                "FUEL_FABRICATION",
+                "REACTOR_FUEL_LOADING",
+                "REACTOR_OPERATION",
+                "SPENT_FUEL_DISCHARGE",
+                "SPENT_FUEL_STORAGE",
+                "SPENT_FUEL_REPROCESSING",
+                "WASTE_CONDITIONING",
+                "WASTE_DISPOSAL"
+            ],
+            "title": "FuelCycleOperationEnum",
+            "type": "string"
+        },
+        "FuelCycleStageEnum": {
+            "description": "Stages in the nuclear fuel cycle",
+            "enum": [
+                "MINING",
+                "CONVERSION",
+                "ENRICHMENT",
+                "FUEL_FABRICATION",
+                "REACTOR_OPERATION",
+                "INTERIM_STORAGE",
+                "REPROCESSING",
+                "DISPOSAL"
+            ],
+            "title": "FuelCycleStageEnum",
+            "type": "string"
+        },
+        "FuelFormEnum": {
+            "description": "Physical forms of nuclear fuel",
+            "enum": [
+                "OXIDE_PELLETS",
+                "METAL_SLUGS",
+                "COATED_PARTICLES",
+                "LIQUID_SOLUTION",
+                "DISPERSION_FUEL",
+                "CERMET_FUEL",
+                "PLATE_FUEL",
+                "ROD_FUEL"
+            ],
+            "title": "FuelFormEnum",
             "type": "string"
         },
         "FundingType": {
@@ -2675,6 +3022,22 @@
             "title": "GridType",
             "type": "string"
         },
+        "HRFunctionEnum": {
+            "description": "Human resources functional areas and specializations",
+            "enum": [
+                "TALENT_ACQUISITION",
+                "EMPLOYEE_RELATIONS",
+                "COMPENSATION_BENEFITS",
+                "PERFORMANCE_MANAGEMENT",
+                "LEARNING_DEVELOPMENT",
+                "HR_ANALYTICS",
+                "ORGANIZATIONAL_DEVELOPMENT",
+                "HR_COMPLIANCE",
+                "HRIS_TECHNOLOGY"
+            ],
+            "title": "HRFunctionEnum",
+            "type": "string"
+        },
         "HairColorEnum": {
             "description": "Human hair color phenotypes",
             "enum": [
@@ -2818,6 +3181,34 @@
             "title": "HumanDevelopmentalStage",
             "type": "string"
         },
+        "IAEAWasteClassificationEnum": {
+            "description": "IAEA General Safety Requirements radioactive waste classification scheme",
+            "enum": [
+                "EXEMPT_WASTE",
+                "VERY_SHORT_LIVED_WASTE",
+                "VERY_LOW_LEVEL_WASTE",
+                "LOW_LEVEL_WASTE",
+                "INTERMEDIATE_LEVEL_WASTE",
+                "HIGH_LEVEL_WASTE"
+            ],
+            "title": "IAEAWasteClassificationEnum",
+            "type": "string"
+        },
+        "INESLevelEnum": {
+            "description": "International Nuclear and Radiological Event Scale (INES) levels",
+            "enum": [
+                "LEVEL_0",
+                "LEVEL_1",
+                "LEVEL_2",
+                "LEVEL_3",
+                "LEVEL_4",
+                "LEVEL_5",
+                "LEVEL_6",
+                "LEVEL_7"
+            ],
+            "title": "INESLevelEnum",
+            "type": "string"
+        },
         "IUPACAminoAcidCode": {
             "description": "Complete IUPAC amino acid codes including standard amino acids,\nrare amino acids, and ambiguity codes",
             "enum": [
@@ -2929,6 +3320,30 @@
                 "VAT_BLUE_1"
             ],
             "title": "IndustrialDyeEnum",
+            "type": "string"
+        },
+        "IndustryMaturityEnum": {
+            "description": "Industry lifecycle and maturity stages",
+            "enum": [
+                "EMERGING",
+                "GROWTH",
+                "MATURE",
+                "DECLINING",
+                "TRANSFORMING"
+            ],
+            "title": "IndustryMaturityEnum",
+            "type": "string"
+        },
+        "IndustryRegulationLevelEnum": {
+            "description": "Level of government regulation in different industries",
+            "enum": [
+                "HIGHLY_REGULATED",
+                "MODERATELY_REGULATED",
+                "LIGHTLY_REGULATED",
+                "SELF_REGULATED",
+                "DEREGULATED"
+            ],
+            "title": "IndustryRegulationLevelEnum",
             "type": "string"
         },
         "InfectiousDisease": {
@@ -3334,9 +3749,42 @@
             "title": "InterpretationProgressEnum",
             "type": "string"
         },
+        "InventoryManagementApproachEnum": {
+            "description": "Inventory management methodologies",
+            "enum": [
+                "JUST_IN_TIME",
+                "ECONOMIC_ORDER_QUANTITY",
+                "ABC_ANALYSIS",
+                "SAFETY_STOCK",
+                "VENDOR_MANAGED_INVENTORY",
+                "CONSIGNMENT_INVENTORY",
+                "KANBAN",
+                "TWO_BIN_SYSTEM",
+                "CONTINUOUS_REVIEW",
+                "PERIODIC_REVIEW"
+            ],
+            "title": "InventoryManagementApproachEnum",
+            "type": "string"
+        },
         "InvestigativeProtocolEnum": {
             "description": "",
             "title": "InvestigativeProtocolEnum",
+            "type": "string"
+        },
+        "JobLevelEnum": {
+            "description": "Organizational job levels and career progression",
+            "enum": [
+                "ENTRY_LEVEL",
+                "JUNIOR",
+                "MID_LEVEL",
+                "SENIOR",
+                "LEAD",
+                "MANAGER",
+                "DIRECTOR",
+                "VP",
+                "C_LEVEL"
+            ],
+            "title": "JobLevelEnum",
             "type": "string"
         },
         "KaryotypicSexEnum": {
@@ -3404,6 +3852,49 @@
                 "MIDLINE"
             ],
             "title": "LateralityEnum",
+            "type": "string"
+        },
+        "LeadershipStyleEnum": {
+            "description": "Leadership approaches and styles",
+            "enum": [
+                "TRANSFORMATIONAL",
+                "TRANSACTIONAL",
+                "SERVANT",
+                "AUTHENTIC",
+                "CHARISMATIC",
+                "SITUATIONAL",
+                "DEMOCRATIC",
+                "AUTOCRATIC",
+                "LAISSEZ_FAIRE",
+                "COACHING"
+            ],
+            "title": "LeadershipStyleEnum",
+            "type": "string"
+        },
+        "LegalEntityTypeEnum": {
+            "description": "Legal entity types for business organizations",
+            "enum": [
+                "SOLE_PROPRIETORSHIP",
+                "GENERAL_PARTNERSHIP",
+                "LIMITED_PARTNERSHIP",
+                "LIMITED_LIABILITY_PARTNERSHIP",
+                "LIMITED_LIABILITY_COMPANY",
+                "SINGLE_MEMBER_LLC",
+                "MULTI_MEMBER_LLC",
+                "C_CORPORATION",
+                "S_CORPORATION",
+                "B_CORPORATION",
+                "PUBLIC_CORPORATION",
+                "PRIVATE_CORPORATION",
+                "NONPROFIT_CORPORATION",
+                "COOPERATIVE",
+                "JOINT_VENTURE",
+                "HOLDING_COMPANY",
+                "SUBSIDIARY",
+                "FRANCHISE",
+                "GOVERNMENT_ENTITY"
+            ],
+            "title": "LegalEntityTypeEnum",
             "type": "string"
         },
         "LengthUnitEnum": {
@@ -3487,6 +3978,21 @@
             "title": "LicenseType",
             "type": "string"
         },
+        "LicensingStageEnum": {
+            "description": "Nuclear facility licensing stages",
+            "enum": [
+                "SITE_PERMIT",
+                "DESIGN_CERTIFICATION",
+                "CONSTRUCTION_PERMIT",
+                "OPERATING_LICENSE",
+                "LICENSE_RENEWAL",
+                "COMBINED_LICENSE",
+                "DECOMMISSIONING_PLAN",
+                "LICENSE_TERMINATION"
+            ],
+            "title": "LicensingStageEnum",
+            "type": "string"
+        },
         "LipidCategory": {
             "description": "Major categories of lipids based on SwissLipids classification",
             "enum": [
@@ -3501,6 +4007,69 @@
             "title": "LipidCategory",
             "type": "string"
         },
+        "LogisticsOperationEnum": {
+            "description": "Types of logistics operations",
+            "enum": [
+                "INBOUND_LOGISTICS",
+                "OUTBOUND_LOGISTICS",
+                "REVERSE_LOGISTICS",
+                "THIRD_PARTY_LOGISTICS",
+                "FOURTH_PARTY_LOGISTICS",
+                "WAREHOUSING",
+                "TRANSPORTATION",
+                "CROSS_DOCKING",
+                "DISTRIBUTION",
+                "FREIGHT_FORWARDING"
+            ],
+            "title": "LogisticsOperationEnum",
+            "type": "string"
+        },
+        "MRIContrastTypeEnum": {
+            "description": "MRI image contrast mechanisms",
+            "enum": [
+                "T1_WEIGHTED",
+                "T2_WEIGHTED",
+                "T2_STAR",
+                "PROTON_DENSITY",
+                "DIFFUSION_WEIGHTED",
+                "PERFUSION_WEIGHTED"
+            ],
+            "title": "MRIContrastTypeEnum",
+            "type": "string"
+        },
+        "MRIModalityEnum": {
+            "description": "MRI imaging modalities and techniques",
+            "enum": [
+                "STRUCTURAL_T1",
+                "STRUCTURAL_T2",
+                "FLAIR",
+                "BOLD_FMRI",
+                "ASL",
+                "DWI",
+                "DTI",
+                "PERFUSION_DSC",
+                "PERFUSION_DCE",
+                "SWI",
+                "TASK_FMRI",
+                "RESTING_STATE_FMRI",
+                "FUNCTIONAL_CONNECTIVITY"
+            ],
+            "title": "MRIModalityEnum",
+            "type": "string"
+        },
+        "MRISequenceTypeEnum": {
+            "description": "MRI pulse sequence types",
+            "enum": [
+                "GRADIENT_ECHO",
+                "SPIN_ECHO",
+                "EPI",
+                "MPRAGE",
+                "SPACE",
+                "TRUFI"
+            ],
+            "title": "MRISequenceTypeEnum",
+            "type": "string"
+        },
         "MagneticPropertyEnum": {
             "description": "Classification of materials by magnetic properties",
             "enum": [
@@ -3511,6 +4080,56 @@
                 "ANTIFERROMAGNETIC"
             ],
             "title": "MagneticPropertyEnum",
+            "type": "string"
+        },
+        "MaintenanceTypeEnum": {
+            "description": "Types of nuclear facility maintenance activities",
+            "enum": [
+                "PREVENTIVE_MAINTENANCE",
+                "CORRECTIVE_MAINTENANCE",
+                "PREDICTIVE_MAINTENANCE",
+                "CONDITION_BASED_MAINTENANCE",
+                "REFUELING_OUTAGE_MAINTENANCE",
+                "FORCED_OUTAGE_MAINTENANCE",
+                "IN_SERVICE_INSPECTION",
+                "MODIFICATION_WORK"
+            ],
+            "title": "MaintenanceTypeEnum",
+            "type": "string"
+        },
+        "ManagementLevelEnum": {
+            "description": "Hierarchical levels within organizational management structure",
+            "enum": [
+                "BOARD_OF_DIRECTORS",
+                "C_SUITE",
+                "SENIOR_EXECUTIVE",
+                "VICE_PRESIDENT",
+                "DIRECTOR",
+                "MANAGER",
+                "SUPERVISOR",
+                "TEAM_LEAD",
+                "SENIOR_INDIVIDUAL_CONTRIBUTOR",
+                "INDIVIDUAL_CONTRIBUTOR",
+                "ENTRY_LEVEL"
+            ],
+            "title": "ManagementLevelEnum",
+            "type": "string"
+        },
+        "ManagementMethodologyEnum": {
+            "description": "Management approaches and methodologies",
+            "enum": [
+                "TRADITIONAL_MANAGEMENT",
+                "AGILE_MANAGEMENT",
+                "LEAN_MANAGEMENT",
+                "PARTICIPATIVE_MANAGEMENT",
+                "MATRIX_MANAGEMENT",
+                "PROJECT_MANAGEMENT",
+                "RESULTS_ORIENTED_MANAGEMENT",
+                "SERVANT_LEADERSHIP",
+                "TRANSFORMATIONAL_MANAGEMENT",
+                "DEMOCRATIC_MANAGEMENT"
+            ],
+            "title": "ManagementMethodologyEnum",
             "type": "string"
         },
         "ManuscriptSection": {
@@ -3589,6 +4208,18 @@
             "title": "MaritimeSignalColorEnum",
             "type": "string"
         },
+        "MarketStructureEnum": {
+            "description": "Competitive structure of industry markets",
+            "enum": [
+                "PERFECT_COMPETITION",
+                "MONOPOLISTIC_COMPETITION",
+                "OLIGOPOLY",
+                "MONOPOLY",
+                "DUOPOLY"
+            ],
+            "title": "MarketStructureEnum",
+            "type": "string"
+        },
         "MassErrorUnit": {
             "description": "Units for expressing mass error in mass spectrometry",
             "enum": [
@@ -3596,6 +4227,43 @@
                 "DA"
             ],
             "title": "MassErrorUnit",
+            "type": "string"
+        },
+        "MassSpectrometerFileFormat": {
+            "description": "Standard file formats used in mass spectrometry",
+            "enum": [
+                "MZML",
+                "MZXML",
+                "MGF",
+                "THERMO_RAW",
+                "WATERS_RAW",
+                "WIFF",
+                "MZDATA",
+                "PKL",
+                "DTA",
+                "MS2",
+                "BRUKER_BAF",
+                "BRUKER_TDF",
+                "BRUKER_TSF",
+                "MZ5",
+                "MZMLB",
+                "UIMF"
+            ],
+            "title": "MassSpectrometerFileFormat",
+            "type": "string"
+        },
+        "MassSpectrometerVendor": {
+            "description": "Major mass spectrometer manufacturers",
+            "enum": [
+                "THERMO_FISHER_SCIENTIFIC",
+                "WATERS",
+                "BRUKER_DALTONICS",
+                "SCIEX",
+                "AGILENT",
+                "SHIMADZU",
+                "LECO"
+            ],
+            "title": "MassSpectrometerVendor",
             "type": "string"
         },
         "MassUnitEnum": {
@@ -3715,6 +4383,16 @@
         "Metabolite": {
             "description": "Metabolites and metabolic intermediates",
             "title": "Metabolite",
+            "type": "string"
+        },
+        "MetabolomicsAssayType": {
+            "description": "Types of metabolomics assays and profiling approaches",
+            "enum": [
+                "TARGETED_METABOLITE_PROFILING",
+                "UNTARGETED_METABOLITE_PROFILING",
+                "METABOLITE_QUANTITATION_HPLC"
+            ],
+            "title": "MetabolomicsAssayType",
             "type": "string"
         },
         "MetalTypeEnum": {
@@ -4009,6 +4687,44 @@
             "title": "MouseDevelopmentalStage",
             "type": "string"
         },
+        "NAICSSectorEnum": {
+            "description": "NAICS two-digit sector codes (North American Industry Classification System)",
+            "enum": [
+                "SECTOR_11",
+                "SECTOR_21",
+                "SECTOR_22",
+                "SECTOR_23",
+                "SECTOR_31_33",
+                "SECTOR_42",
+                "SECTOR_44_45",
+                "SECTOR_48_49",
+                "SECTOR_51",
+                "SECTOR_52",
+                "SECTOR_53",
+                "SECTOR_54",
+                "SECTOR_55",
+                "SECTOR_56",
+                "SECTOR_61",
+                "SECTOR_62",
+                "SECTOR_71",
+                "SECTOR_72",
+                "SECTOR_81",
+                "SECTOR_92"
+            ],
+            "title": "NAICSSectorEnum",
+            "type": "string"
+        },
+        "NRCWasteClassEnum": {
+            "description": "US NRC 10 CFR 61 low-level radioactive waste classification",
+            "enum": [
+                "CLASS_A",
+                "CLASS_B",
+                "CLASS_C",
+                "GREATER_THAN_CLASS_C"
+            ],
+            "title": "NRCWasteClassEnum",
+            "type": "string"
+        },
         "NanostructureMorphologyEnum": {
             "description": "Types of nanostructure morphologies",
             "enum": [
@@ -4066,6 +4782,76 @@
                 "LOCAL"
             ],
             "title": "NewsTopicCategoryEnum",
+            "type": "string"
+        },
+        "NuclearFacilityTypeEnum": {
+            "description": "Types of nuclear facilities and infrastructure",
+            "enum": [
+                "COMMERCIAL_POWER_PLANT",
+                "RESEARCH_REACTOR",
+                "TEST_REACTOR",
+                "PROTOTYPE_REACTOR",
+                "NAVAL_REACTOR",
+                "SPACE_REACTOR",
+                "PRODUCTION_REACTOR",
+                "URANIUM_MINE",
+                "URANIUM_MILL",
+                "CONVERSION_FACILITY",
+                "ENRICHMENT_FACILITY",
+                "FUEL_FABRICATION_FACILITY",
+                "REPROCESSING_FACILITY",
+                "INTERIM_STORAGE_FACILITY",
+                "GEOLOGICAL_REPOSITORY",
+                "DECOMMISSIONING_SITE",
+                "NUCLEAR_LABORATORY",
+                "RADIOISOTOPE_PRODUCTION_FACILITY"
+            ],
+            "title": "NuclearFacilityTypeEnum",
+            "type": "string"
+        },
+        "NuclearFuelTypeEnum": {
+            "description": "Types of nuclear fuel materials and compositions",
+            "enum": [
+                "NATURAL_URANIUM",
+                "LOW_ENRICHED_URANIUM",
+                "HIGH_ASSAY_LEU",
+                "HIGHLY_ENRICHED_URANIUM",
+                "WEAPONS_GRADE_URANIUM",
+                "REACTOR_GRADE_PLUTONIUM",
+                "WEAPONS_GRADE_PLUTONIUM",
+                "MOX_FUEL",
+                "THORIUM_FUEL",
+                "TRISO_FUEL",
+                "LIQUID_FUEL",
+                "METALLIC_FUEL",
+                "CARBIDE_FUEL",
+                "NITRIDE_FUEL"
+            ],
+            "title": "NuclearFuelTypeEnum",
+            "type": "string"
+        },
+        "NuclearSecurityCategoryEnum": {
+            "description": "IAEA nuclear material security categories (INFCIRC/225)",
+            "enum": [
+                "CATEGORY_I",
+                "CATEGORY_II",
+                "CATEGORY_III",
+                "CATEGORY_IV"
+            ],
+            "title": "NuclearSecurityCategoryEnum",
+            "type": "string"
+        },
+        "NuclearShipTypeEnum": {
+            "description": "Types of nuclear-powered vessels",
+            "enum": [
+                "AIRCRAFT_CARRIER",
+                "SUBMARINE",
+                "CRUISER",
+                "ICEBREAKER",
+                "MERCHANT_SHIP",
+                "RESEARCH_VESSEL"
+            ],
+            "title": "NuclearShipTypeEnum",
             "type": "string"
         },
         "NucleotideModificationEnum": {
@@ -4154,6 +4940,38 @@
             "title": "OpenSourceMaturityLevel",
             "type": "string"
         },
+        "OperationalModelEnum": {
+            "description": "Business operational models and approaches",
+            "enum": [
+                "CENTRALIZED_OPERATIONS",
+                "DECENTRALIZED_OPERATIONS",
+                "HYBRID_OPERATIONS",
+                "OUTSOURCED_OPERATIONS",
+                "SHARED_SERVICES",
+                "NETWORK_OPERATIONS",
+                "PLATFORM_OPERATIONS",
+                "AGILE_OPERATIONS",
+                "LEAN_OPERATIONS",
+                "DIGITAL_OPERATIONS"
+            ],
+            "title": "OperationalModelEnum",
+            "type": "string"
+        },
+        "OperationalProcedureEnum": {
+            "description": "Standard nuclear facility operational procedures",
+            "enum": [
+                "STARTUP_PROCEDURE",
+                "SHUTDOWN_PROCEDURE",
+                "REFUELING_PROCEDURE",
+                "SURVEILLANCE_TESTING",
+                "MAINTENANCE_PROCEDURE",
+                "EMERGENCY_RESPONSE",
+                "RADIOLOGICAL_PROTECTION",
+                "SECURITY_PROCEDURE"
+            ],
+            "title": "OperationalProcedureEnum",
+            "type": "string"
+        },
         "OpticalPropertyEnum": {
             "description": "Optical properties of materials",
             "enum": [
@@ -4184,6 +5002,22 @@
         "OrganismTaxonEnum": {
             "description": "",
             "title": "OrganismTaxonEnum",
+            "type": "string"
+        },
+        "OrganizationalStructureEnum": {
+            "description": "Types of organizational hierarchy and reporting structures",
+            "enum": [
+                "HIERARCHICAL",
+                "FLAT",
+                "MATRIX",
+                "FUNCTIONAL",
+                "DIVISIONAL",
+                "NETWORK",
+                "TEAM_BASED",
+                "VIRTUAL",
+                "HYBRID"
+            ],
+            "title": "OrganizationalStructureEnum",
             "type": "string"
         },
         "OutcomeTypeEnum": {
@@ -4304,6 +5138,35 @@
                 "WB"
             ],
             "title": "PeptideIonSeries",
+            "type": "string"
+        },
+        "PerformanceMeasurementEnum": {
+            "description": "Performance measurement systems and approaches",
+            "enum": [
+                "KEY_PERFORMANCE_INDICATORS",
+                "OBJECTIVES_KEY_RESULTS",
+                "BALANCED_SCORECARD_MEASUREMENT",
+                "RETURN_ON_INVESTMENT",
+                "ECONOMIC_VALUE_ADDED",
+                "CUSTOMER_SATISFACTION_METRICS",
+                "EMPLOYEE_ENGAGEMENT_METRICS",
+                "OPERATIONAL_EFFICIENCY_METRICS",
+                "INNOVATION_METRICS",
+                "SUSTAINABILITY_METRICS"
+            ],
+            "title": "PerformanceMeasurementEnum",
+            "type": "string"
+        },
+        "PerformanceRatingEnum": {
+            "description": "Employee performance evaluation ratings",
+            "enum": [
+                "EXCEEDS_EXPECTATIONS",
+                "MEETS_EXPECTATIONS",
+                "PARTIALLY_MEETS",
+                "DOES_NOT_MEET",
+                "OUTSTANDING"
+            ],
+            "title": "PerformanceRatingEnum",
             "type": "string"
         },
         "PeriodicTableBlockEnum": {
@@ -4458,6 +5321,21 @@
             "title": "PolymerTypeEnum",
             "type": "string"
         },
+        "PowerPlantStatusEnum": {
+            "description": "Operational status of nuclear power plants",
+            "enum": [
+                "UNDER_CONSTRUCTION",
+                "COMMISSIONING",
+                "COMMERCIAL_OPERATION",
+                "REFUELING_OUTAGE",
+                "EXTENDED_OUTAGE",
+                "PERMANENTLY_SHUTDOWN",
+                "DECOMMISSIONING",
+                "DECOMMISSIONED"
+            ],
+            "title": "PowerPlantStatusEnum",
+            "type": "string"
+        },
         "PowerUnit": {
             "description": "Units for measuring power (energy per time)",
             "enum": [
@@ -4522,6 +5400,21 @@
             "title": "PriorityLevelEnum",
             "type": "string"
         },
+        "ProcessImprovementApproachEnum": {
+            "description": "Process improvement methodologies and approaches",
+            "enum": [
+                "BUSINESS_PROCESS_REENGINEERING",
+                "CONTINUOUS_IMPROVEMENT",
+                "PROCESS_STANDARDIZATION",
+                "AUTOMATION",
+                "DIGITALIZATION",
+                "OUTSOURCING",
+                "SHARED_SERVICES",
+                "AGILE_PROCESS_IMPROVEMENT"
+            ],
+            "title": "ProcessImprovementApproachEnum",
+            "type": "string"
+        },
         "ProcessPerformanceMetric": {
             "description": "Key performance indicators for mining and processing operations tied to SMART milestones and sustainability goals.",
             "enum": [
@@ -4561,6 +5454,23 @@
                 "CANCELLED"
             ],
             "title": "ProcessingStatus",
+            "type": "string"
+        },
+        "ProcurementTypeEnum": {
+            "description": "Types of procurement activities and approaches",
+            "enum": [
+                "DIRECT_PROCUREMENT",
+                "INDIRECT_PROCUREMENT",
+                "SERVICES_PROCUREMENT",
+                "CAPITAL_PROCUREMENT",
+                "STRATEGIC_PROCUREMENT",
+                "TACTICAL_PROCUREMENT",
+                "EMERGENCY_PROCUREMENT",
+                "FRAMEWORK_PROCUREMENT",
+                "E_PROCUREMENT",
+                "SUSTAINABLE_PROCUREMENT"
+            ],
+            "title": "ProcurementTypeEnum",
             "type": "string"
         },
         "ProductTypeEnum": {
@@ -4688,6 +5598,18 @@
             "title": "Quality",
             "type": "string"
         },
+        "QualityAssuranceLevelEnum": {
+            "description": "Levels of quality assurance implementation",
+            "enum": [
+                "BASIC_QA",
+                "INTERMEDIATE_QA",
+                "ADVANCED_QA",
+                "WORLD_CLASS_QA",
+                "TOTAL_QUALITY"
+            ],
+            "title": "QualityAssuranceLevelEnum",
+            "type": "string"
+        },
         "QualityControlEnum": {
             "description": "Quality control classification labels",
             "enum": [
@@ -4695,6 +5617,71 @@
                 "FAIL"
             ],
             "title": "QualityControlEnum",
+            "type": "string"
+        },
+        "QualityControlTechniqueEnum": {
+            "description": "Quality control techniques and tools",
+            "enum": [
+                "CONTROL_CHARTS",
+                "PARETO_ANALYSIS",
+                "FISHBONE_DIAGRAM",
+                "HISTOGRAM",
+                "SCATTER_DIAGRAM",
+                "CHECK_SHEET",
+                "FLOW_CHART",
+                "DESIGN_OF_EXPERIMENTS",
+                "SAMPLING_PLANS",
+                "GAUGE_R_AND_R"
+            ],
+            "title": "QualityControlTechniqueEnum",
+            "type": "string"
+        },
+        "QualityMaturityLevelEnum": {
+            "description": "Organizational quality maturity levels",
+            "enum": [
+                "AD_HOC",
+                "DEFINED",
+                "MANAGED",
+                "OPTIMIZED",
+                "WORLD_CLASS"
+            ],
+            "title": "QualityMaturityLevelEnum",
+            "type": "string"
+        },
+        "QualityMethodologyEnum": {
+            "description": "Quality improvement methodologies and approaches",
+            "enum": [
+                "DMAIC",
+                "DMADV",
+                "PDCA",
+                "KAIZEN",
+                "LEAN_SIX_SIGMA",
+                "FIVE_S",
+                "ROOT_CAUSE_ANALYSIS",
+                "STATISTICAL_PROCESS_CONTROL",
+                "FAILURE_MODE_ANALYSIS",
+                "BENCHMARKING"
+            ],
+            "title": "QualityMethodologyEnum",
+            "type": "string"
+        },
+        "QualityStandardEnum": {
+            "description": "Quality management standards and frameworks",
+            "enum": [
+                "ISO_9001",
+                "ISO_14001",
+                "ISO_45001",
+                "ISO_27001",
+                "TQM",
+                "EFQM",
+                "MALCOLM_BALDRIGE",
+                "SIX_SIGMA",
+                "LEAN_QUALITY",
+                "AS9100",
+                "TS16949",
+                "ISO_13485"
+            ],
+            "title": "QualityStandardEnum",
             "type": "string"
         },
         "Quarter": {
@@ -4754,6 +5741,19 @@
                 "UNKNOWN_OR_NOT_REPORTED"
             ],
             "title": "RaceOMB1997Enum",
+            "type": "string"
+        },
+        "RadiationProtectionZoneEnum": {
+            "description": "Radiation protection zone classifications for nuclear facilities",
+            "enum": [
+                "EXCLUSION_AREA",
+                "LOW_POPULATION_ZONE",
+                "EMERGENCY_PLANNING_ZONE",
+                "INGESTION_PATHWAY_ZONE",
+                "CONTROLLED_AREA",
+                "SUPERVISED_AREA"
+            ],
+            "title": "RadiationProtectionZoneEnum",
             "type": "string"
         },
         "ReactionConditionEnum": {
@@ -4842,6 +5842,133 @@
             "title": "ReactionTypeEnum",
             "type": "string"
         },
+        "ReactorControlModeEnum": {
+            "description": "Reactor control and safety system operational modes",
+            "enum": [
+                "MANUAL_CONTROL",
+                "AUTOMATIC_CONTROL",
+                "REACTOR_PROTECTION_SYSTEM",
+                "ENGINEERED_SAFEGUARDS",
+                "EMERGENCY_OPERATING_PROCEDURES",
+                "SEVERE_ACCIDENT_MANAGEMENT"
+            ],
+            "title": "ReactorControlModeEnum",
+            "type": "string"
+        },
+        "ReactorCoolantEnum": {
+            "description": "Primary coolant types used in nuclear reactors",
+            "enum": [
+                "LIGHT_WATER",
+                "HEAVY_WATER",
+                "CARBON_DIOXIDE",
+                "HELIUM",
+                "LIQUID_SODIUM",
+                "LIQUID_LEAD",
+                "MOLTEN_SALT",
+                "SUPERCRITICAL_WATER"
+            ],
+            "title": "ReactorCoolantEnum",
+            "type": "string"
+        },
+        "ReactorGenerationEnum": {
+            "description": "Nuclear reactor generational classifications",
+            "enum": [
+                "GENERATION_I",
+                "GENERATION_II",
+                "GENERATION_III",
+                "GENERATION_III_PLUS",
+                "GENERATION_IV"
+            ],
+            "title": "ReactorGenerationEnum",
+            "type": "string"
+        },
+        "ReactorModeratorEnum": {
+            "description": "Neutron moderator types used in nuclear reactors",
+            "enum": [
+                "LIGHT_WATER",
+                "HEAVY_WATER",
+                "GRAPHITE",
+                "BERYLLIUM",
+                "NONE"
+            ],
+            "title": "ReactorModeratorEnum",
+            "type": "string"
+        },
+        "ReactorNeutronSpectrumEnum": {
+            "description": "Neutron energy spectrum classifications",
+            "enum": [
+                "THERMAL",
+                "EPITHERMAL",
+                "FAST"
+            ],
+            "title": "ReactorNeutronSpectrumEnum",
+            "type": "string"
+        },
+        "ReactorOperatingStateEnum": {
+            "description": "Operational states of nuclear reactors",
+            "enum": [
+                "STARTUP",
+                "CRITICAL",
+                "POWER_ESCALATION",
+                "FULL_POWER_OPERATION",
+                "LOAD_FOLLOWING",
+                "REDUCED_POWER",
+                "HOT_STANDBY",
+                "COLD_SHUTDOWN",
+                "REFUELING",
+                "REACTOR_TRIP",
+                "SCRAM",
+                "EMERGENCY_SHUTDOWN"
+            ],
+            "title": "ReactorOperatingStateEnum",
+            "type": "string"
+        },
+        "ReactorSafetyFunctionEnum": {
+            "description": "Fundamental nuclear reactor safety functions",
+            "enum": [
+                "REACTIVITY_CONTROL",
+                "HEAT_REMOVAL",
+                "CONTAINMENT_INTEGRITY",
+                "CORE_COOLING",
+                "SHUTDOWN_CAPABILITY"
+            ],
+            "title": "ReactorSafetyFunctionEnum",
+            "type": "string"
+        },
+        "ReactorSizeCategoryEnum": {
+            "description": "Nuclear reactor size classifications",
+            "enum": [
+                "LARGE",
+                "MEDIUM",
+                "SMALL",
+                "MICRO",
+                "RESEARCH"
+            ],
+            "title": "ReactorSizeCategoryEnum",
+            "type": "string"
+        },
+        "ReactorTypeEnum": {
+            "description": "Nuclear reactor types based on design and operational characteristics",
+            "enum": [
+                "PWR",
+                "BWR",
+                "PHWR",
+                "LWGR",
+                "AGR",
+                "GCR",
+                "FBR",
+                "HTGR",
+                "MSR",
+                "SMR",
+                "VHTR",
+                "SFR",
+                "LFR",
+                "GFR",
+                "SCWR"
+            ],
+            "title": "ReactorTypeEnum",
+            "type": "string"
+        },
         "ReadType": {
             "description": "Configuration of sequencing reads generated by different platforms",
             "enum": [
@@ -4853,6 +5980,21 @@
                 "CONTINUOUS_LONG_READ"
             ],
             "title": "ReadType",
+            "type": "string"
+        },
+        "RecruitmentSourceEnum": {
+            "description": "Sources for candidate recruitment and sourcing",
+            "enum": [
+                "INTERNAL_REFERRAL",
+                "JOB_BOARDS",
+                "COMPANY_WEBSITE",
+                "SOCIAL_MEDIA",
+                "RECRUITMENT_AGENCIES",
+                "CAMPUS_RECRUITING",
+                "PROFESSIONAL_NETWORKS",
+                "HEADHUNTERS"
+            ],
+            "title": "RecruitmentSourceEnum",
             "type": "string"
         },
         "RecruitmentStatusEnum": {
@@ -4993,6 +6135,20 @@
             "title": "ResearchField",
             "type": "string"
         },
+        "ResearchReactorTypeEnum": {
+            "description": "Types of research reactors",
+            "enum": [
+                "POOL_TYPE",
+                "TANK_TYPE",
+                "HOMOGENEOUS",
+                "FAST_RESEARCH_REACTOR",
+                "PULSED_REACTOR",
+                "CRITICAL_ASSEMBLY",
+                "SUBCRITICAL_ASSEMBLY"
+            ],
+            "title": "ResearchReactorTypeEnum",
+            "type": "string"
+        },
         "ResearchRole": {
             "description": "Roles in research and authorship",
             "enum": [
@@ -5036,6 +6192,17 @@
                 "SAFETY_BROWN"
             ],
             "title": "SafetyColorEnum",
+            "type": "string"
+        },
+        "SafetySystemClassEnum": {
+            "description": "Nuclear safety system classifications (based on IEEE and ASME standards)",
+            "enum": [
+                "CLASS_1E",
+                "SAFETY_RELATED",
+                "SAFETY_SIGNIFICANT",
+                "NON_SAFETY_RELATED"
+            ],
+            "title": "SafetySystemClassEnum",
             "type": "string"
         },
         "SampleProcessingEnum": {
@@ -5357,6 +6524,23 @@
             "title": "SolventClassEnum",
             "type": "string"
         },
+        "SourcingStrategyEnum": {
+            "description": "Sourcing strategy approaches",
+            "enum": [
+                "SINGLE_SOURCING",
+                "MULTIPLE_SOURCING",
+                "DUAL_SOURCING",
+                "GLOBAL_SOURCING",
+                "DOMESTIC_SOURCING",
+                "NEAR_SOURCING",
+                "VERTICAL_INTEGRATION",
+                "OUTSOURCING",
+                "INSOURCING",
+                "CONSORTIUM_SOURCING"
+            ],
+            "title": "SourcingStrategyEnum",
+            "type": "string"
+        },
         "SpamClassificationEnum": {
             "description": "Standard labels for spam/ham email classification",
             "enum": [
@@ -5492,6 +6676,23 @@
             "title": "StrandType",
             "type": "string"
         },
+        "StrategicFrameworkEnum": {
+            "description": "Strategic planning and analysis frameworks",
+            "enum": [
+                "SWOT_ANALYSIS",
+                "PORTERS_FIVE_FORCES",
+                "BALANCED_SCORECARD",
+                "BLUE_OCEAN_STRATEGY",
+                "ANSOFF_MATRIX",
+                "BCG_MATRIX",
+                "VALUE_CHAIN_ANALYSIS",
+                "SCENARIO_PLANNING",
+                "STRATEGIC_CANVAS",
+                "CORE_COMPETENCY_ANALYSIS"
+            ],
+            "title": "StrategicFrameworkEnum",
+            "type": "string"
+        },
         "StructuralBiologyTechnique": {
             "description": "Structural biology experimental techniques",
             "enum": [
@@ -5557,6 +6758,40 @@
                 "TRITON"
             ],
             "title": "SubatomicParticleEnum",
+            "type": "string"
+        },
+        "SupplierRelationshipTypeEnum": {
+            "description": "Types of supplier relationship management",
+            "enum": [
+                "TRANSACTIONAL",
+                "PREFERRED_SUPPLIER",
+                "STRATEGIC_PARTNERSHIP",
+                "ALLIANCE",
+                "JOINT_VENTURE",
+                "VENDOR_MANAGED_INVENTORY",
+                "CONSIGNMENT",
+                "COLLABORATIVE_PLANNING",
+                "DEVELOPMENT_PARTNERSHIP",
+                "RISK_SHARING"
+            ],
+            "title": "SupplierRelationshipTypeEnum",
+            "type": "string"
+        },
+        "SupplyChainStrategyEnum": {
+            "description": "Supply chain strategic approaches",
+            "enum": [
+                "LEAN_SUPPLY_CHAIN",
+                "AGILE_SUPPLY_CHAIN",
+                "RESILIENT_SUPPLY_CHAIN",
+                "SUSTAINABLE_SUPPLY_CHAIN",
+                "GLOBAL_SUPPLY_CHAIN",
+                "LOCAL_SUPPLY_CHAIN",
+                "DIGITAL_SUPPLY_CHAIN",
+                "COLLABORATIVE_SUPPLY_CHAIN",
+                "COST_FOCUSED_SUPPLY_CHAIN",
+                "CUSTOMER_FOCUSED_SUPPLY_CHAIN"
+            ],
+            "title": "SupplyChainStrategyEnum",
             "type": "string"
         },
         "SymptomSeverityEnum": {
@@ -5844,6 +7079,31 @@
             "title": "TrafficLightColorEnum",
             "type": "string"
         },
+        "TrainingTypeEnum": {
+            "description": "Types of employee training and development programs",
+            "enum": [
+                "ONBOARDING",
+                "TECHNICAL_SKILLS",
+                "LEADERSHIP_DEVELOPMENT",
+                "COMPLIANCE_TRAINING",
+                "SOFT_SKILLS",
+                "SAFETY_TRAINING",
+                "DIVERSITY_INCLUSION",
+                "CROSS_TRAINING"
+            ],
+            "title": "TrainingTypeEnum",
+            "type": "string"
+        },
+        "TransuranicWasteCategoryEnum": {
+            "description": "Transuranic waste classifications (US system)",
+            "enum": [
+                "CONTACT_HANDLED_TRU",
+                "REMOTE_HANDLED_TRU",
+                "TRU_MIXED_WASTE"
+            ],
+            "title": "TransuranicWasteCategoryEnum",
+            "type": "string"
+        },
         "TrophicLevelEnum": {
             "description": "Trophic levels are the feeding position in a food chain",
             "enum": [
@@ -6093,9 +7353,110 @@
                 "SP_9HYPO",
                 "SP_9INFA",
                 "SP_9INSE",
-                "SP_9LABR"
+                "SP_9LABR",
+                "SP_ARATH",
+                "SP_BACSU",
+                "SP_BOVIN",
+                "SP_CAEEL",
+                "SP_CANLF",
+                "SP_CHICK",
+                "SP_DANRE",
+                "SP_DROME",
+                "SP_ECOLI",
+                "SP_FELCA",
+                "SP_GORGO",
+                "SP_HORSE",
+                "SP_HUMAN",
+                "SP_MACMU",
+                "SP_MAIZE",
+                "SP_MOUSE",
+                "SP_ORYSJ",
+                "SP_PANTR",
+                "SP_PIG",
+                "SP_RABIT",
+                "SP_RAT",
+                "SP_SCHPO",
+                "SP_SHEEP",
+                "SP_XENLA",
+                "SP_XENTR",
+                "SP_YEAST",
+                "SP_DICDI",
+                "SP_HELPY",
+                "SP_LEIMA",
+                "SP_MEDTR",
+                "SP_MYCTU",
+                "SP_NEIME",
+                "SP_PLAF7",
+                "SP_PSEAE",
+                "SP_SOYBN",
+                "SP_STAAU",
+                "SP_STRPN",
+                "SP_TOXGO",
+                "SP_TRYB2",
+                "SP_WHEAT",
+                "SP_PEA",
+                "SP_TOBAC"
             ],
             "title": "UniProtSpeciesCode",
+            "type": "string"
+        },
+        "UraniumEnrichmentLevelEnum": {
+            "description": "Standard uranium-235 enrichment level classifications",
+            "enum": [
+                "NATURAL",
+                "SLIGHTLY_ENRICHED",
+                "LOW_ENRICHED",
+                "HIGH_ASSAY_LOW_ENRICHED",
+                "HIGHLY_ENRICHED",
+                "WEAPONS_GRADE"
+            ],
+            "title": "UraniumEnrichmentLevelEnum",
+            "type": "string"
+        },
+        "VaccinationPeriodicityEnum": {
+            "description": "The periodicity or frequency of vaccination",
+            "enum": [
+                "SINGLE_DOSE",
+                "ANNUAL",
+                "SEASONAL",
+                "BOOSTER",
+                "PRIMARY_SERIES",
+                "PERIODIC",
+                "ONE_TIME",
+                "AS_NEEDED"
+            ],
+            "title": "VaccinationPeriodicityEnum",
+            "type": "string"
+        },
+        "VaccinationStatusEnum": {
+            "description": "The vaccination status of an individual",
+            "enum": [
+                "VACCINATED",
+                "NOT_VACCINATED",
+                "FULLY_VACCINATED",
+                "PARTIALLY_VACCINATED",
+                "BOOSTER",
+                "UNVACCINATED",
+                "UNKNOWN"
+            ],
+            "title": "VaccinationStatusEnum",
+            "type": "string"
+        },
+        "VaccineCategoryEnum": {
+            "description": "The broad category or type of vaccine",
+            "enum": [
+                "LIVE_ATTENUATED_VACCINE",
+                "INACTIVATED_VACCINE",
+                "CONJUGATE_VACCINE",
+                "MRNA_VACCINE",
+                "DNA_VACCINE",
+                "PEPTIDE_VACCINE",
+                "VIRAL_VECTOR",
+                "SUBUNIT",
+                "TOXOID",
+                "RECOMBINANT"
+            ],
+            "title": "VaccineCategoryEnum",
             "type": "string"
         },
         "VaccineTypeEnum": {
@@ -6109,6 +7470,23 @@
                 "VIRAL_VECTOR"
             ],
             "title": "VaccineTypeEnum",
+            "type": "string"
+        },
+        "VendorCategoryEnum": {
+            "description": "Vendor classification categories",
+            "enum": [
+                "STRATEGIC_SUPPLIER",
+                "PREFERRED_SUPPLIER",
+                "APPROVED_SUPPLIER",
+                "TRANSACTIONAL_SUPPLIER",
+                "SINGLE_SOURCE",
+                "SOLE_SOURCE",
+                "MINORITY_SUPPLIER",
+                "LOCAL_SUPPLIER",
+                "GLOBAL_SUPPLIER",
+                "SPOT_SUPPLIER"
+            ],
+            "title": "VendorCategoryEnum",
             "type": "string"
         },
         "VideoFormatEnum": {
@@ -6200,6 +7578,70 @@
                 "TEASPOON"
             ],
             "title": "VolumeUnitEnum",
+            "type": "string"
+        },
+        "WasteDisposalMethodEnum": {
+            "description": "Methods for radioactive waste disposal",
+            "enum": [
+                "CLEARANCE",
+                "DECAY_STORAGE",
+                "NEAR_SURFACE_DISPOSAL",
+                "GEOLOGICAL_DISPOSAL",
+                "BOREHOLE_DISPOSAL",
+                "TRANSMUTATION"
+            ],
+            "title": "WasteDisposalMethodEnum",
+            "type": "string"
+        },
+        "WasteFacilityTypeEnum": {
+            "description": "Types of nuclear waste management facilities",
+            "enum": [
+                "SPENT_FUEL_POOL",
+                "DRY_CASK_STORAGE",
+                "CENTRALIZED_INTERIM_STORAGE",
+                "LOW_LEVEL_WASTE_DISPOSAL",
+                "GREATER_THAN_CLASS_C_STORAGE",
+                "TRANSURANIC_WASTE_REPOSITORY",
+                "HIGH_LEVEL_WASTE_REPOSITORY",
+                "WASTE_TREATMENT_FACILITY",
+                "DECONTAMINATION_FACILITY"
+            ],
+            "title": "WasteFacilityTypeEnum",
+            "type": "string"
+        },
+        "WasteHalfLifeCategoryEnum": {
+            "description": "Half-life categories for radioactive waste classification",
+            "enum": [
+                "VERY_SHORT_LIVED",
+                "SHORT_LIVED",
+                "LONG_LIVED"
+            ],
+            "title": "WasteHalfLifeCategoryEnum",
+            "type": "string"
+        },
+        "WasteHeatGenerationEnum": {
+            "description": "Heat generation categories for radioactive waste",
+            "enum": [
+                "NEGLIGIBLE_HEAT",
+                "LOW_HEAT",
+                "HIGH_HEAT"
+            ],
+            "title": "WasteHeatGenerationEnum",
+            "type": "string"
+        },
+        "WasteSourceEnum": {
+            "description": "Sources of radioactive waste generation",
+            "enum": [
+                "NUCLEAR_POWER_PLANTS",
+                "MEDICAL_APPLICATIONS",
+                "INDUSTRIAL_APPLICATIONS",
+                "RESEARCH_FACILITIES",
+                "NUCLEAR_WEAPONS_PROGRAM",
+                "DECOMMISSIONING",
+                "URANIUM_MINING",
+                "FUEL_CYCLE_FACILITIES"
+            ],
+            "title": "WasteSourceEnum",
             "type": "string"
         },
         "WaterContaminantEnum": {
@@ -6371,6 +7813,18 @@
                 "VARIABLE"
             ],
             "title": "WindDirection",
+            "type": "string"
+        },
+        "WorkArrangementEnum": {
+            "description": "Work location and arrangement types",
+            "enum": [
+                "ON_SITE",
+                "REMOTE",
+                "HYBRID",
+                "FIELD_WORK",
+                "TELECOMMUTE"
+            ],
+            "title": "WorkArrangementEnum",
             "type": "string"
         },
         "WorkflowType": {

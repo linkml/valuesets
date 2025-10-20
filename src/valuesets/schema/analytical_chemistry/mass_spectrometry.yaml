@@ -1,0 +1,206 @@
+id: https://w3id.org/valuesets/analytical_chemistry/mass_spectrometry
+name: mass_spectrometry
+title: Mass Spectrometry Value Sets
+description: |-
+  Value sets for mass spectrometry and analytical chemistry, derived from MS and MSIO ontologies.
+license: https://creativecommons.org/publicdomain/zero/1.0/
+version: 0.1.0
+prefixes:
+  valuesets: https://w3id.org/valuesets/
+  linkml: https://w3id.org/linkml/
+  MS: http://purl.obolibrary.org/obo/MS_
+  MSIO: http://purl.obolibrary.org/obo/MSIO_
+  CHMO: http://purl.obolibrary.org/obo/CHMO_
+default_prefix: valuesets
+imports:
+  - linkml:types
+  - ../core
+
+enums:
+  MassSpectrometerFileFormat:
+    description: Standard file formats used in mass spectrometry
+    permissible_values:
+      MZML:
+        title: mzML format
+        description: mzML format - PSI standard for mass spectrometry data
+        meaning: MS:1000584
+      MZXML:
+        title: ISB mzXML format
+        description: ISB mzXML format
+        meaning: MS:1000566
+      MGF:
+        title: Mascot MGF format
+        description: Mascot Generic Format
+        meaning: MS:1001062
+      THERMO_RAW:
+        title: Thermo RAW format
+        description: Thermo RAW format
+        meaning: MS:1000563
+      WATERS_RAW:
+        title: Waters raw format
+        description: Waters raw format
+        meaning: MS:1000526
+      WIFF:
+        title: ABI WIFF format
+        description: ABI WIFF format
+        meaning: MS:1000562
+      MZDATA:
+        title: PSI mzData format
+        description: PSI mzData format
+        meaning: MS:1000564
+      PKL:
+        title: Micromass PKL format
+        description: Micromass PKL format
+        meaning: MS:1000565
+      DTA:
+        title: DTA format
+        description: DTA format
+        meaning: MS:1000613
+      MS2:
+        title: MS2 format
+        description: MS2 format
+        meaning: MS:1001466
+      BRUKER_BAF:
+        title: Bruker BAF format
+        description: Bruker BAF format
+        meaning: MS:1000815
+      BRUKER_TDF:
+        title: Bruker TDF format
+        description: Bruker TDF format
+        meaning: MS:1002817
+      BRUKER_TSF:
+        title: Bruker TSF format
+        description: Bruker TSF format
+        meaning: MS:1003282
+      MZ5:
+        title: mz5 format
+        description: mz5 format
+        meaning: MS:1001881
+      MZMLB:
+        title: mzMLb format
+        description: mzMLb format
+        meaning: MS:1002838
+      UIMF:
+        title: UIMF format
+        description: UIMF format
+        meaning: MS:1002531
+
+  MassSpectrometerVendor:
+    description: Major mass spectrometer manufacturers
+    permissible_values:
+      THERMO_FISHER_SCIENTIFIC:
+        title: Thermo Fisher Scientific instrument model
+        description: Thermo Fisher Scientific
+        meaning: MS:1000483
+      WATERS:
+        title: Waters instrument model
+        description: Waters Corporation
+        meaning: MS:1000126
+      BRUKER_DALTONICS:
+        title: Bruker Daltonics instrument model
+        description: Bruker Daltonics
+        meaning: MS:1000122
+      SCIEX:
+        title: SCIEX instrument model
+        description: SCIEX (formerly Applied Biosystems)
+        meaning: MS:1000121
+      AGILENT:
+        title: Agilent instrument model
+        description: Agilent Technologies
+        meaning: MS:1000490
+      SHIMADZU:
+        title: Shimadzu instrument model
+        description: Shimadzu Corporation
+        meaning: MS:1000124
+      LECO:
+        title: LECO instrument model
+        description: LECO Corporation
+        meaning: MS:1001800
+
+  ChromatographyType:
+    description: Types of chromatographic separation methods
+    permissible_values:
+      GAS_CHROMATOGRAPHY:
+        description: Gas chromatography
+        meaning: MSIO:0000147
+      HIGH_PERFORMANCE_LIQUID_CHROMATOGRAPHY:
+        description: High performance liquid chromatography
+        meaning: MSIO:0000148
+      LIQUID_CHROMATOGRAPHY_MASS_SPECTROMETRY:
+        description: Liquid chromatography-mass spectrometry
+        meaning: CHMO:0000524
+      GAS_CHROMATOGRAPHY_MASS_SPECTROMETRY:
+        description: Gas chromatography-mass spectrometry
+        meaning: CHMO:0000497
+      TANDEM_MASS_SPECTROMETRY:
+        description: Tandem mass spectrometry
+        meaning: CHMO:0000575
+      ISOTOPE_RATIO_MASS_SPECTROMETRY:
+        description: Isotope ratio mass spectrometry
+        meaning: CHMO:0000506
+
+  DerivatizationMethod:
+    description: Chemical derivatization methods for sample preparation
+    permissible_values:
+      SILYLATION:
+        description: Addition of silyl groups for improved volatility
+        meaning: MSIO:0000117
+      METHYLATION:
+        description: Addition of methyl groups
+        meaning: MSIO:0000115
+      ACETYLATION:
+        description: Addition of acetyl groups
+        meaning: MSIO:0000112
+      TRIFLUOROACETYLATION:
+        description: Addition of trifluoroacetyl groups
+        meaning: MSIO:0000113
+      ALKYLATION:
+        description: Addition of alkyl groups
+        meaning: MSIO:0000114
+      OXIMATION:
+        description: Addition of oxime groups
+        meaning: MSIO:0000116
+
+  MetabolomicsAssayType:
+    description: Types of metabolomics assays and profiling approaches
+    permissible_values:
+      TARGETED_METABOLITE_PROFILING:
+        title: targeted metabolite profiling
+        description: Assay targeting specific known metabolites
+        meaning: MSIO:0000100
+      UNTARGETED_METABOLITE_PROFILING:
+        title: untargeted metabolite profiling
+        description: Assay profiling all detectable metabolites
+        meaning: MSIO:0000101
+      METABOLITE_QUANTITATION_HPLC:
+        title: metabolite quantitation using high performance liquid chromatography
+        description: Metabolite quantitation using HPLC
+        meaning: MSIO:0000099
+
+  AnalyticalControlType:
+    description: Types of control samples used in analytical chemistry
+    permissible_values:
+      INTERNAL_STANDARD:
+        title: internal standard role
+        description: Known amount of standard added to analytical sample
+        meaning: MSIO:0000005
+      EXTERNAL_STANDARD:
+        title: external standard role
+        description: Reference standard used as external reference point
+        meaning: MSIO:0000004
+      POSITIVE_CONTROL:
+        title: positive control role
+        description: Control providing known positive signal
+        meaning: MSIO:0000008
+      NEGATIVE_CONTROL:
+        title: negative control role
+        description: Control providing baseline/no signal reference
+        meaning: MSIO:0000007
+      LONG_TERM_REFERENCE:
+        title: long term reference role
+        description: Stable reference for cross-batch comparisons
+        meaning: MSIO:0000006
+      BLANK:
+        description: Sample containing only solvent/matrix without analyte
+      QUALITY_CONTROL:
+        description: Sample with known composition for system performance monitoring

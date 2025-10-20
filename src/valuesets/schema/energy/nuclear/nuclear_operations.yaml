@@ -1,0 +1,480 @@
+name: nuclear_operations
+title: Nuclear Operations and Reactor States
+description: 'Classifications for nuclear reactor operational states, maintenance activities,
+  licensing stages, and operational procedures. Based on nuclear industry standards
+  and regulatory frameworks.'
+id: https://w3id.org/linkml/valuesets/energy/nuclear/nuclear_operations
+imports:
+- linkml:types
+prefixes:
+  valuesets: https://w3id.org/valuesets/
+  IAEA: https://www.iaea.org/
+  NRC: https://www.nrc.gov/
+  WNA: https://world-nuclear.org/
+default_prefix: valuesets
+slots:
+  reactor_operating_state:
+    description: Current operational state of nuclear reactor
+    range: ReactorOperatingStateEnum
+  maintenance_type:
+    description: Type of nuclear facility maintenance activity
+    range: MaintenanceTypeEnum
+  licensing_stage:
+    description: Nuclear facility licensing stage
+    range: LicensingStageEnum
+  fuel_cycle_operation:
+    description: Nuclear fuel cycle operational activity
+    range: FuelCycleOperationEnum
+  reactor_control_mode:
+    description: Reactor control and safety system mode
+    range: ReactorControlModeEnum
+  operational_procedure:
+    description: Standard nuclear operational procedure
+    range: OperationalProcedureEnum
+enums:
+  ReactorOperatingStateEnum:
+    description: Operational states of nuclear reactors
+    permissible_values:
+      STARTUP:
+        title: Startup
+        description: Reactor transitioning from shutdown to power operation
+        annotations:
+          neutron_level: increasing
+          control_rod_position: withdrawing
+          power_level: rising from zero
+          duration: hours to days
+          operator_attention: high
+      CRITICAL:
+        title: Critical
+        description: Reactor achieving self-sustaining chain reaction
+        annotations:
+          neutron_multiplication: k-effective = 1.0
+          power_level: minimal but self-sustaining
+          control_rod_position: critical position
+          milestone: first criticality achievement
+      POWER_ESCALATION:
+        title: Power Escalation
+        description: Reactor increasing power toward full power operation
+        annotations:
+          power_level: increasing incrementally
+          testing: ongoing at each power level
+          duration: days to weeks
+          procedures: systematic power increases
+      FULL_POWER_OPERATION:
+        title: Full Power Operation
+        description: Reactor operating at rated thermal power
+        annotations:
+          power_level: 100% rated power
+          operation_mode: commercial electricity generation
+          duration: typically 12-24 months
+          fuel_burnup: accumulating
+      LOAD_FOLLOWING:
+        title: Load Following
+        description: Reactor adjusting power to match electrical demand
+        annotations:
+          power_level: variable based on demand
+          control_mode: automatic load following
+          flexibility: grid demand responsive
+          frequency: daily power variations
+      REDUCED_POWER:
+        title: Reduced Power Operation
+        description: Reactor operating below rated power
+        annotations:
+          power_level: "<100% rated power"
+          reasons: maintenance, grid demand, testing
+          control_rod_position: partially inserted
+      HOT_STANDBY:
+        title: Hot Standby
+        description: Reactor subcritical but at operating temperature
+        annotations:
+          criticality: subcritical
+          temperature: operating temperature maintained
+          pressure: operating pressure maintained
+          ready_time: rapid return to power possible
+      COLD_SHUTDOWN:
+        title: Cold Shutdown
+        description: Reactor subcritical and cooled below operating temperature
+        annotations:
+          criticality: subcritical with margin
+          temperature: "<200°F (93°C) typically"
+          refueling: possible in this state
+          maintenance: major maintenance possible
+      REFUELING:
+        title: Refueling
+        description: Reactor shut down for fuel replacement
+        annotations:
+          reactor_head: removed
+          fuel_handling: active fuel movement
+          criticality_control: strict procedures
+          duration: typically 30-60 days
+      REACTOR_TRIP:
+        title: Reactor Trip
+        description: Rapid automatic shutdown due to safety system actuation
+        annotations:
+          shutdown_speed: seconds
+          cause: safety system activation
+          control_rods: fully inserted rapidly
+          investigation: cause determination required
+      SCRAM:
+        title: Scram
+        description: Emergency rapid shutdown of reactor
+        annotations:
+          shutdown_type: emergency shutdown
+          control_rod_insertion: fastest possible
+          operator_action: manual or automatic
+          follow_up: immediate safety assessment
+      EMERGENCY_SHUTDOWN:
+        title: Emergency Shutdown
+        description: Shutdown due to emergency conditions
+        annotations:
+          urgency: immediate shutdown required
+          safety_systems: may be activated
+          investigation: extensive post-event analysis
+          recovery: detailed restart procedures
+  MaintenanceTypeEnum:
+    description: Types of nuclear facility maintenance activities
+    permissible_values:
+      PREVENTIVE_MAINTENANCE:
+        title: Preventive Maintenance
+        description: Scheduled maintenance to prevent equipment failure
+        annotations:
+          schedule: predetermined intervals
+          purpose: prevent failures
+          planning: extensive advance planning
+          outage_type: planned outage
+      CORRECTIVE_MAINTENANCE:
+        title: Corrective Maintenance
+        description: Maintenance to repair failed or degraded equipment
+        annotations:
+          trigger: equipment failure or degradation
+          urgency: varies by safety significance
+          planning: may be immediate
+          schedule: unplanned
+      PREDICTIVE_MAINTENANCE:
+        title: Predictive Maintenance
+        description: Maintenance based on condition monitoring
+        annotations:
+          basis: condition monitoring data
+          timing: based on predicted failure
+          efficiency: optimized maintenance timing
+          technology: condition monitoring systems
+      CONDITION_BASED_MAINTENANCE:
+        title: Condition-Based Maintenance
+        description: Maintenance triggered by equipment condition assessment
+        annotations:
+          assessment: continuous condition monitoring
+          trigger: condition degradation
+          optimization: resource optimization
+          safety: maintains safety margins
+      REFUELING_OUTAGE_MAINTENANCE:
+        title: Refueling Outage Maintenance
+        description: Major maintenance during scheduled refueling
+        annotations:
+          frequency: every 12-24 months
+          scope: major equipment inspection and repair
+          duration: 30-60 days typical
+          access: full plant access available
+      FORCED_OUTAGE_MAINTENANCE:
+        title: Forced Outage Maintenance
+        description: Unplanned maintenance due to equipment failure
+        annotations:
+          cause: unexpected equipment failure
+          urgency: immediate attention required
+          duration: variable
+          safety_significance: may affect safety systems
+      IN_SERVICE_INSPECTION:
+        title: In-Service Inspection
+        description: Required inspection of safety-related components
+        annotations:
+          regulatory_requirement: mandated by regulations
+          frequency: specified intervals (typically 10 years)
+          scope: pressure vessels, piping, supports
+          techniques: non-destructive testing
+      MODIFICATION_WORK:
+        title: Modification Work
+        description: Changes to plant design or configuration
+        annotations:
+          purpose: plant improvement or regulatory compliance
+          approval: requires design change approval
+          testing: extensive post-modification testing
+          documentation: comprehensive documentation updates
+  LicensingStageEnum:
+    description: Nuclear facility licensing stages
+    permissible_values:
+      SITE_PERMIT:
+        title: Site Permit
+        description: Early site permit for nuclear facility
+        annotations:
+          scope: site suitability evaluation
+          duration: 10-20 years typically
+          flexibility: technology-neutral
+          advantage: reduced licensing risk
+      DESIGN_CERTIFICATION:
+        title: Design Certification
+        description: Certification of standardized reactor design
+        annotations:
+          scope: reactor design approval
+          duration: 15-20 years typically
+          advantage: reduced construction licensing time
+          standardization: enables multiple deployments
+      CONSTRUCTION_PERMIT:
+        title: Construction Permit
+        description: Authorization to begin nuclear facility construction
+        annotations:
+          authorization: construction activities
+          requirements: detailed design and safety analysis
+          oversight: construction inspection program
+          milestone: major licensing milestone
+      OPERATING_LICENSE:
+        title: Operating License
+        description: Authorization for commercial reactor operation
+        annotations:
+          authorization: power operation and fuel loading
+          duration: initially 40 years
+          renewal: possible for additional 20 years
+          testing: extensive pre-operational testing
+      LICENSE_RENEWAL:
+        title: License Renewal
+        description: Extension of operating license beyond initial term
+        annotations:
+          extension: additional 20 years typical
+          review: aging management program review
+          basis: demonstrated safe operation
+          economics: enables continued operation
+      COMBINED_LICENSE:
+        title: Combined License (COL)
+        description: Combined construction and operating license
+        annotations:
+          scope: construction and operation authorization
+          advantage: single licensing process
+          requirements: complete design and safety analysis
+          efficiency: streamlined licensing approach
+      DECOMMISSIONING_PLAN:
+        title: Decommissioning Plan Approval
+        description: Approval of facility decommissioning plan
+        annotations:
+          scope: facility dismantlement plan
+          funding: decommissioning funding assurance
+          schedule: decommissioning timeline
+          end_state: final site condition
+      LICENSE_TERMINATION:
+        title: License Termination
+        description: Final termination of nuclear facility license
+        annotations:
+          completion: decommissioning completion
+          survey: final radiological survey
+          release: site release for unrestricted use
+          finality: end of regulatory oversight
+  FuelCycleOperationEnum:
+    description: Nuclear fuel cycle operational activities
+    permissible_values:
+      URANIUM_EXPLORATION:
+        title: Uranium Exploration
+        description: Search and evaluation of uranium deposits
+        annotations:
+          activities: geological surveys, drilling, sampling
+          purpose: locate economically viable deposits
+          methods: airborne surveys, ground exploration
+      URANIUM_EXTRACTION:
+        title: Uranium Extraction
+        description: Mining and extraction of uranium ore
+        annotations:
+          methods: open pit, underground, in-situ leaching
+          output: uranium ore
+          processing: crushing and grinding
+      URANIUM_MILLING:
+        title: Uranium Milling
+        description: Processing of uranium ore to produce yellowcake
+        annotations:
+          input: uranium ore
+          output: uranium concentrate (U3O8)
+          process: acid or alkaline leaching
+      URANIUM_CONVERSION:
+        title: Uranium Conversion
+        description: Conversion of yellowcake to uranium hexafluoride
+        annotations:
+          input: uranium concentrate (U3O8)
+          output: uranium hexafluoride (UF6)
+          purpose: prepare for enrichment
+      URANIUM_ENRICHMENT:
+        title: Uranium Enrichment
+        description: Increase U-235 concentration in uranium
+        annotations:
+          input: natural uranium (0.711% U-235)
+          output: enriched uranium (3-5% typical)
+          waste: depleted uranium tails
+          methods: gas centrifuge, gaseous diffusion
+      FUEL_FABRICATION:
+        title: Fuel Fabrication
+        description: Manufacturing of nuclear fuel assemblies
+        annotations:
+          input: enriched uranium
+          output: fuel assemblies
+          process: pellet production, rod assembly
+      REACTOR_FUEL_LOADING:
+        title: Reactor Fuel Loading
+        description: Installation of fresh fuel in reactor
+        annotations:
+          frequency: every 12-24 months
+          procedure: careful criticality control
+          configuration: specific loading pattern
+      REACTOR_OPERATION:
+        title: Reactor Operation
+        description: Power generation and fuel burnup
+        annotations:
+          duration: 12-24 months typical cycle
+          burnup: fuel depletion over time
+          output: electricity and fission products
+      SPENT_FUEL_DISCHARGE:
+        title: Spent Fuel Discharge
+        description: Removal of used fuel from reactor
+        annotations:
+          timing: end of fuel cycle
+          handling: underwater fuel handling
+          destination: spent fuel pool storage
+      SPENT_FUEL_STORAGE:
+        title: Spent Fuel Storage
+        description: Interim storage of discharged fuel
+        annotations:
+          cooling: decay heat removal
+          duration: 5-100+ years
+          methods: pools, dry casks
+      SPENT_FUEL_REPROCESSING:
+        title: Spent Fuel Reprocessing
+        description: Chemical separation of spent fuel components
+        annotations:
+          separation: uranium, plutonium, waste
+          recovery: recovers usable materials
+          waste: high-level waste production
+      WASTE_CONDITIONING:
+        title: Waste Conditioning
+        description: Preparation of waste for storage or disposal
+        annotations:
+          treatment: solidification, encapsulation
+          purpose: stable waste form
+          standards: waste acceptance criteria
+      WASTE_DISPOSAL:
+        title: Waste Disposal
+        description: Permanent disposal of nuclear waste
+        annotations:
+          method: geological repository
+          isolation: long-term containment
+          safety: protect public and environment
+  ReactorControlModeEnum:
+    description: Reactor control and safety system operational modes
+    permissible_values:
+      MANUAL_CONTROL:
+        title: Manual Control
+        description: Direct operator control of reactor systems
+        annotations:
+          operator_role: direct manual operation
+          automation: minimal automation
+          response_time: depends on operator
+          application: startup, shutdown, testing
+      AUTOMATIC_CONTROL:
+        title: Automatic Control
+        description: Automated reactor control systems
+        annotations:
+          automation: high level automation
+          operator_role: supervisory
+          response_time: rapid automatic response
+          application: normal power operation
+      REACTOR_PROTECTION_SYSTEM:
+        title: Reactor Protection System Active
+        description: Safety system monitoring for trip conditions
+        annotations:
+          function: automatic reactor trip on unsafe conditions
+          redundancy: multiple independent channels
+          response_time: milliseconds to seconds
+          priority: overrides operator actions
+      ENGINEERED_SAFEGUARDS:
+        title: Engineered Safeguards Active
+        description: Safety systems for accident mitigation
+        annotations:
+          function: mitigate consequences of accidents
+          activation: automatic on accident conditions
+          systems: emergency core cooling, containment
+          redundancy: multiple trains
+      EMERGENCY_OPERATING_PROCEDURES:
+        title: Emergency Operating Procedures
+        description: Operator actions for emergency conditions
+        annotations:
+          guidance: symptom-based procedures
+          training: extensive operator training
+          decision_making: structured approach
+          coordination: with emergency response
+      SEVERE_ACCIDENT_MANAGEMENT:
+        title: Severe Accident Management
+        description: Procedures for beyond design basis accidents
+        annotations:
+          scope: core damage mitigation
+          guidance: severe accident management guidelines
+          equipment: portable emergency equipment
+          coordination: multi-unit considerations
+  OperationalProcedureEnum:
+    description: Standard nuclear facility operational procedures
+    permissible_values:
+      STARTUP_PROCEDURE:
+        title: Reactor Startup Procedure
+        description: Systematic procedure for bringing reactor to power
+        annotations:
+          phases: multiple phases with hold points
+          testing: system testing at each phase
+          authorization: management authorization required
+          duration: hours to days
+      SHUTDOWN_PROCEDURE:
+        title: Reactor Shutdown Procedure
+        description: Systematic procedure for shutting down reactor
+        annotations:
+          control_rod_insertion: gradual or rapid
+          cooling: controlled cooldown
+          systems: systematic system shutdown
+          verification: shutdown margin verification
+      REFUELING_PROCEDURE:
+        title: Refueling Procedure
+        description: Procedure for fuel handling and replacement
+        annotations:
+          criticality_control: strict criticality prevention
+          handling: underwater fuel handling
+          documentation: detailed records
+          verification: independent verification
+      SURVEILLANCE_TESTING:
+        title: Surveillance Testing
+        description: Regular testing of safety systems
+        annotations:
+          frequency: specified by technical specifications
+          scope: functionality verification
+          documentation: test result documentation
+          corrective_action: if performance degraded
+      MAINTENANCE_PROCEDURE:
+        title: Maintenance Procedure
+        description: Systematic approach to equipment maintenance
+        annotations:
+          work_control: work order control process
+          safety_tagging: equipment isolation
+          testing: post-maintenance testing
+          documentation: maintenance records
+      EMERGENCY_RESPONSE:
+        title: Emergency Response Procedure
+        description: Response to emergency conditions
+        annotations:
+          classification: event classification
+          notification: offsite notification
+          mitigation: protective action implementation
+          coordination: with offsite authorities
+      RADIOLOGICAL_PROTECTION:
+        title: Radiological Protection Procedure
+        description: Procedures for radiation protection
+        annotations:
+          monitoring: radiation monitoring
+          contamination_control: contamination prevention
+          dose_control: personnel dose limits
+          emergency: radiological emergency response
+      SECURITY_PROCEDURE:
+        title: Security Procedure
+        description: Physical security and access control procedures
+        annotations:
+          access_control: personnel access authorization
+          detection: intrusion detection systems
+          response: security force response
+          coordination: with law enforcement

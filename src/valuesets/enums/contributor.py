@@ -21,8 +21,8 @@ class ContributorType(RichEnum):
 
 # Set metadata after class creation
 ContributorType._metadata = {
-    "PERSON": {'description': 'A person.', 'meaning': 'schema:Person'},
-    "ORGANIZATION": {'description': 'An organization.', 'meaning': 'schema:Organization'},
+    "PERSON": {'description': 'A person.', 'meaning': 'NCIT:C25190'},
+    "ORGANIZATION": {'description': 'An organization.', 'meaning': 'NCIT:C41206', 'aliases': ['Institution']},
 }
 
 __all__ = [

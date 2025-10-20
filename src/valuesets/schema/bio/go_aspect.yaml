@@ -1,0 +1,39 @@
+name: go_aspect
+title: Gene Ontology Aspects
+description: The three main aspects of Gene Ontology - Molecular Function, Biological Process, and Cellular Component
+id: https://w3id.org/linkml/valuesets/bio/go_aspect
+imports:
+- linkml:types
+prefixes:
+  valuesets: https://w3id.org/valuesets/
+  GO: http://purl.obolibrary.org/obo/GO_
+default_prefix: valuesets
+slots:
+  go_aspect:
+    description: Gene Ontology aspect (namespace) - one of molecular function, biological process, or cellular component
+    range: GOAspect
+enums:
+  GOAspect:
+    description: The three main aspects (namespaces) of Gene Ontology
+    permissible_values:
+      F:
+        title: Molecular Function
+        description: The activities that occur at the molecular level, such as catalysis or binding
+        aliases:
+        - molecular_function
+        - MF
+        meaning: GO:0003674
+      P:
+        title: Biological Process
+        description: The larger processes accomplished by multiple molecular activities
+        aliases:
+        - biological_process
+        - BP
+        meaning: GO:0008150
+      C:
+        title: Cellular Component
+        description: The locations relative to cellular structures in which a gene product performs a function
+        aliases:
+        - cellular_component
+        - CC
+        meaning: GO:0005575

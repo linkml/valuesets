@@ -1,0 +1,48 @@
+curie,label,retrieved_at
+GO:0044838,cell quiescence,2025-10-19T07:20:41.192586
+GO:0051318,G1 phase,2025-10-19T07:20:41.193335
+GO:0051320,S phase,2025-10-19T07:20:41.193582
+GO:0051319,G2 phase,2025-10-19T07:20:41.193783
+GO:0000279,M phase,2025-10-19T07:20:41.196032
+GO:0051325,interphase,2025-10-19T07:20:41.196290
+GO:0051324,prophase,2025-10-19T07:20:41.196486
+GO:0007080,mitotic metaphase chromosome alignment,2025-10-19T07:20:41.197022
+GO:0051323,metaphase,2025-10-19T07:20:41.197204
+GO:0051322,anaphase,2025-10-19T07:20:41.197372
+GO:0051326,telophase,2025-10-19T07:20:41.197538
+GO:0000910,cytokinesis,2025-10-19T07:20:41.197932
+GO:0000082,G1/S transition of mitotic cell cycle,2025-10-19T07:20:41.198245
+GO:0031573,mitotic intra-S DNA damage checkpoint signaling,2025-10-19T07:20:41.198807
+GO:0031571,mitotic G1 DNA damage checkpoint signaling,2025-10-19T07:20:41.198980
+GO:0031577,spindle checkpoint signaling,2025-10-19T07:20:41.199146
+GO:0007126,,2025-10-19T07:20:41.199462
+GO:0007128,meiotic prophase I,2025-10-19T07:20:41.199793
+GO:0007132,meiotic metaphase I,2025-10-19T07:20:41.200163
+GO:0007133,meiotic anaphase I,2025-10-19T07:20:41.200374
+GO:0007134,meiotic telophase I,2025-10-19T07:20:41.200568
+GO:0007135,meiosis II,2025-10-19T07:20:41.200745
+GO:0007136,meiotic prophase II,2025-10-19T07:20:41.200919
+GO:0007137,meiotic metaphase II,2025-10-19T07:20:41.201092
+GO:0007138,meiotic anaphase II,2025-10-19T07:20:41.201293
+GO:0007139,meiotic telophase II,2025-10-19T07:20:41.201727
+GO:0016538,cyclin-dependent protein serine/threonine kinase regulator activity,2025-10-19T07:20:41.202609
+GO:0004693,cyclin-dependent protein serine/threonine kinase activity,2025-10-19T07:20:41.203434
+GO:0004861,cyclin-dependent protein serine/threonine kinase inhibitor activity,2025-10-19T07:20:41.204237
+GO:0000077,DNA damage checkpoint signaling,2025-10-19T07:20:41.204803
+GO:0051726,regulation of cell cycle,2025-10-19T07:20:41.205495
+GO:0051437,obsolete positive regulation of ubiquitin-protein ligase activity involved in regulation of mitotic cell cycle transition,2025-10-19T07:20:41.208298
+GO:0004721,phosphoprotein phosphatase activity,2025-10-19T07:20:41.210288
+GO:0008283,cell population proliferation,2025-10-19T07:20:41.211282
+GO:0090398,cellular senescence,2025-10-19T07:20:41.214882
+GO:0030154,cell differentiation,2025-10-19T07:20:41.218921
+GO:0006915,apoptotic process,2025-10-19T07:20:41.223527
+GO:0070265,obsolete necrotic cell death,2025-10-19T07:20:41.237642
+GO:0007050,,2025-10-19T07:20:41.249908
+GO:0006281,DNA repair,2025-10-19T07:20:41.253190
+GO:0006917,,2025-10-19T07:20:41.253549
+GO:0090400,stress-induced premature senescence,2025-10-19T07:20:41.254156
+GO:0003674,molecular_function,2025-10-19T07:20:41.341233
+GO:0008150,biological_process,2025-10-19T07:20:41.341696
+GO:0005575,cellular_component,2025-10-19T07:20:41.342186
+GO:0007127,meiosis I,2025-10-19T07:42:21.101984
+GO:0043065,positive regulation of apoptotic process,2025-10-19T07:42:21.110811
