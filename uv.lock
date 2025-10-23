@@ -1596,7 +1596,7 @@ wheels = [
 
 [[package]]
 name = "linkml"
-version = "1.9.4"
+version = "1.9.5rc2"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "antlr4-python3-runtime" },
@@ -1626,9 +1626,9 @@ dependencies = [
     { name = "typing-extensions", marker = "python_full_version < '3.12'" },
     { name = "watchdog" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/9d/7c/ea1548762bf9098d7a50925579318d1f773a97b2666c8eaa397321afe242/linkml-1.9.4.tar.gz", hash = "sha256:b5075a697bfdb6ef829e19e15046f6efc11a946352eb7f5024e89f710ebd96ca", size = 42799474 }
+sdist = { url = "https://files.pythonhosted.org/packages/05/17/74da56a51f1f9dd8ebf870165d04c1bde3e32f2e38da7e4586a772edf859/linkml-1.9.5rc2.tar.gz", hash = "sha256:4211201888a63501b97b84bef43c6f9a9610d6e9ab3e04f77a99f60d3504bb2e", size = 42955884 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/a8/bd/e46587d1c99334c708d485c7a357ee58de13e2348881917829001d7a11ac/linkml-1.9.4-py3-none-any.whl", hash = "sha256:ecc5cb73669da7d48340f689ae6ed8076b6b15099aef472668345fc9b5931b11", size = 337157 },
+    { url = "https://files.pythonhosted.org/packages/13/3e/a8c45baaf7fc1a68da48fbfede480a7af8e97f063d8b4941960679179fec/linkml-1.9.5rc2-py3-none-any.whl", hash = "sha256:8431ea20f7efc6c9b631cbe654ac216dc7f6101b29351277d8c273294a59a5f5", size = 397628 },
 ]
 
 [[package]]
@@ -4382,7 +4382,7 @@ requires-dist = [
 [package.metadata.requires-dev]
 dev = [
     { name = "jupyter", specifier = ">=1.0.0" },
-    { name = "linkml", specifier = ">=1.9.3" },
+    { name = "linkml", specifier = ">=1.9.5rc2" },
     { name = "mkdocs-material", specifier = ">=8.2.8" },
     { name = "mkdocs-mermaid2-plugin", specifier = ">=1.1.1" },
     { name = "mknotebooks", specifier = ">=0.8.0" },

@@ -1,6 +1,9 @@
-<a href="https://github.com/dalito/linkml-project-copier"><img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/copier-org/copier/master/img/badge/badge-grayscale-inverted-border-teal.json" alt="Copier Badge" style="max-width:100%;"/></a>
-
 # Common Value Sets
+
+[![PyPI version](https://badge.fury.io/py/valuesets.svg)](https://badge.fury.io/py/valuesets)
+[![LinkML](https://img.shields.io/badge/LinkML-1.9+-orange.svg)](https://linkml.io/)
+[![Documentation](https://img.shields.io/badge/docs-linkml.io-green.svg)](https://linkml.io/valuesets/)
+[![OWL/RDF](https://img.shields.io/badge/OWL-RDF-purple.svg)](https://w3id.org/valuesets/valuesets.owl.ttl)
 
 A comprehensive collection of standardized enumerations and value sets for data science, bioinformatics, materials science, and beyond.
 
@@ -168,15 +171,16 @@ if same_meaning_as(blood_type, patient_blood):
 
 ### 4. **Multi-language Interoperability**
 Generate schemas and types for any language:
+
 ```bash
 # Generate JSON Schema for web apps
-linkml-convert schema.yaml -t json-schema
+gen-jsonschema schema.yaml
 
 # Generate TypeScript definitions  
-linkml-convert schema.yaml -t typescript
+gen-typescript schema.yaml -t typescript
 
-# Generate SQL DDL
-linkml-convert schema.yaml -t sql
+# Generate JSON-LD
+gen-jsonld schema.yaml
 ```
 
 ### 5. **Integration & Tooling**
@@ -247,11 +251,6 @@ Some enums in this collection are **dynamic enums** that can be expanded at runt
 ```yaml
 # Example: A dynamic enum that pulls values from an ontology
 CellTypeEnum:
-  permissible_values:
-    NEURON:
-      meaning: CL:0000540
-    ASTROCYTE:
-      meaning: CL:0002585
   # Dynamic expansion from Cell Ontology
   reachable_from:
     source_ontology: obo:cl
@@ -278,11 +277,19 @@ cell_types = CellTypeEnum.expand_from_ontology()
 
 [**Full Documentation Website →**](https://linkml.io/valuesets/)
 
-### OWL Ontology
+### OWL/RDF Representation
 
-**TODO**: The OWL artifact generated from these value sets will be available soon on:
-- [BioPortal](https://bioportal.bioontology.org/)
-- [Ontology Lookup Service (OLS)](https://www.ebi.ac.uk/ols/)
+The value sets are also available as an OWL ontology for semantic web applications and ontology browsers:
+
+- **Direct Download**: [https://w3id.org/valuesets/valuesets.owl.ttl](https://w3id.org/valuesets/valuesets.owl.ttl)
+- **BioPortal**: Available at [BioPortal](https://bioportal.bioontology.org/ontologies/VALUESETS)
+- **Ontology Lookup Service (OLS)**: Submission planned for [OLS](https://www.ebi.ac.uk/ols/)
+
+The OWL representation allows you to:
+- Browse value sets in ontology browsers
+- Perform SPARQL queries
+- Integrate with semantic web applications
+- Link to other biomedical ontologies
 
 ## 🚀 Future Directions
 

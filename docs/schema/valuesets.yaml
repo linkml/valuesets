@@ -585,11 +585,11 @@ enums:
         description: A status indicating that an individual has received some of the
           required vaccinations
         meaning: NCIT:C183124
-      VACCINATED_WITH_BOOSTER:
-        text: VACCINATED_WITH_BOOSTER
+      BOOSTER:
+        text: BOOSTER
         description: A status indicating that an individual has received a booster
           vaccination
-        meaning: NCIT:C189189
+        meaning: NCIT:C28320
       UNVACCINATED:
         text: UNVACCINATED
         description: An organismal quality that indicates an organism is unvaccinated
@@ -637,30 +637,30 @@ enums:
     description: The broad category or type of vaccine
     from_schema: https://w3id.org/valuesets/health/vaccination
     permissible_values:
-      LIVE_ATTENUATED:
-        text: LIVE_ATTENUATED
+      LIVE_ATTENUATED_VACCINE:
+        text: LIVE_ATTENUATED_VACCINE
         description: A vaccine made from microbes that have been weakened in the laboratory
         meaning: VO:0000367
-      INACTIVATED:
-        text: INACTIVATED
+      INACTIVATED_VACCINE:
+        text: INACTIVATED_VACCINE
         description: A preparation of killed microorganisms intended to prevent infectious
           disease
         meaning: NCIT:C29694
-      CONJUGATE:
-        text: CONJUGATE
+      CONJUGATE_VACCINE:
+        text: CONJUGATE_VACCINE
         description: A vaccine created by covalently attaching an antigen to a carrier
           protein
         meaning: NCIT:C1455
-      MRNA:
-        text: MRNA
+      MRNA_VACCINE:
+        text: MRNA_VACCINE
         description: A vaccine based on mRNA that encodes the antigen of interest
         meaning: NCIT:C172787
-      DNA:
-        text: DNA
+      DNA_VACCINE:
+        text: DNA_VACCINE
         description: A vaccine using DNA to produce protein that promotes immune responses
         meaning: NCIT:C39619
-      PEPTIDE:
-        text: PEPTIDE
+      PEPTIDE_VACCINE:
+        text: PEPTIDE_VACCINE
         description: A vaccine based on synthetic peptides
         meaning: NCIT:C1752
       VIRAL_VECTOR:
@@ -47875,7 +47875,7 @@ classes:
     class_uri: valuesets:Fake
 metamodel_version: 1.7.0
 source_file: valuesets.yaml
-source_file_date: '2025-10-19T12:15:39'
+source_file_date: '2025-10-20T12:45:49'
 source_file_size: 2562
-generation_date: '2025-10-19T12:16:27'
+generation_date: '2025-10-23T06:42:09'
 

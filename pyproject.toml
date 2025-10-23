@@ -22,7 +22,7 @@ dependencies = [
 
 [dependency-groups]
 dev = [
-    "linkml>=1.9.3",
+    "linkml>=1.9.5rc2",
     "mkdocs-material>=8.2.8",
     "mkdocs-mermaid2-plugin>=1.1.1",
     "jupyter>=1.0.0",
