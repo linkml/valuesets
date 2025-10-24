@@ -15404,11 +15404,15 @@ enums:
         description: Exposure through breathing
         meaning: NCIT:C38284
         title: Nasal Route of Administration
+        related_mappings:
+        - ExO:0000057
       INGESTION:
         text: INGESTION
         description: Exposure through eating or drinking
         meaning: NCIT:C38288
         title: Oral Route of Administration
+        related_mappings:
+        - ExO:0000056
       DERMAL:
         text: DERMAL
         description: Exposure through skin contact
@@ -15419,11 +15423,15 @@ enums:
         description: Exposure through injection
         meaning: NCIT:C38276
         title: Intravenous Route of Administration
+        related_mappings:
+        - ExO:0000060
       TRANSPLACENTAL:
         text: TRANSPLACENTAL
         description: Exposure through placental transfer
         meaning: NCIT:C38307
         title: Transplacental Route of Administration
+        related_mappings:
+        - ExO:0000159
       OCULAR:
         text: OCULAR
         description: Exposure through the eyes
@@ -47875,7 +47883,7 @@ classes:
     class_uri: valuesets:Fake
 metamodel_version: 1.7.0
 source_file: valuesets.yaml
-source_file_date: '2025-10-23T15:26:42'
+source_file_date: '2025-10-24T23:26:32'
 source_file_size: 2562
-generation_date: '2025-10-23T15:26:54'
+generation_date: '2025-10-24T23:26:42'
 
