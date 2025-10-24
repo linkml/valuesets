@@ -1,0 +1,602 @@
+name: pain
+title: Pain-Related Value Sets
+description: 'Value sets for pain assessment and management including intensity scales, 
+  duration categories, anatomical locations, quality descriptors, interference levels,
+  psychosocial constructs, and quantitative sensory testing modalities.
+  
+  Based on OPPERA (Orofacial Pain: Prospective Evaluation and Risk Assessment) 
+  standardized measures with alignment to NIH Pain CDEs, PROMIS, and relevant ontologies.
+
+  '
+id: https://w3id.org/valuesets/medical/pain
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  NCIT: http://purl.obolibrary.org/obo/NCIT_
+  UBERON: http://purl.obolibrary.org/obo/UBERON_
+  HP: http://purl.obolibrary.org/obo/HP_
+  SNOMED: http://snomed.info/id/
+  LOINC: http://loinc.org/
+  OBI: http://purl.obolibrary.org/obo/OBI_
+  valuesets: https://w3id.org/valuesets/
+default_prefix: valuesets
+slots:
+  pain_intensity_nrs:
+    description: Numeric Rating Scale pain intensity (0-10)
+    range: PainIntensityNumericRatingScaleEnum
+  pain_intensity_category:
+    description: Categorical pain intensity classification
+    range: PainIntensityCategoryEnum
+  pain_duration:
+    description: Pain duration classification
+    range: PainDurationEnum
+  pain_location:
+    description: Anatomical location of pain
+    range: PainLocationEnum
+  pain_quality:
+    description: Qualitative pain descriptors
+    range: PainQualityEnum
+  pain_interference_level:
+    description: Pain-related disability or interference level
+    range: PainInterferenceLevelEnum
+  psychosocial_construct:
+    description: Pain-related psychosocial constructs
+    range: PsychosocialConstructEnum
+  qst_modality:
+    description: Quantitative sensory testing modality
+    range: QuantitativeSensoryTestingModalityEnum
+  startle_reflex_response:
+    description: Startle reflex response category
+    range: StartleReflexResponseEnum
+  pain_frequency:
+    description: Frequency of pain episodes
+    range: PainFrequencyEnum
+  pain_onset_pattern:
+    description: Pattern of pain onset and development
+    range: PainOnsetPatternEnum
+enums:
+  PainIntensityNumericRatingScaleEnum:
+    description: 0-10 Numeric Rating Scale for pain intensity
+    permissible_values:
+      ZERO:
+        description: No pain
+        meaning: LOINC:LA6111-4
+        annotations:
+          numeric_value: 0
+          category: none
+      ONE:
+        description: Pain level 1
+        annotations:
+          numeric_value: 1
+          category: mild
+      TWO:
+        description: Pain level 2
+        annotations:
+          numeric_value: 2
+          category: mild
+      THREE:
+        description: Pain level 3
+        annotations:
+          numeric_value: 3
+          category: mild
+      FOUR:
+        description: Pain level 4
+        annotations:
+          numeric_value: 4
+          category: moderate
+      FIVE:
+        description: Pain level 5
+        annotations:
+          numeric_value: 5
+          category: moderate
+      SIX:
+        description: Pain level 6
+        annotations:
+          numeric_value: 6
+          category: moderate
+      SEVEN:
+        description: Pain level 7
+        annotations:
+          numeric_value: 7
+          category: severe
+      EIGHT:
+        description: Pain level 8
+        annotations:
+          numeric_value: 8
+          category: severe
+      NINE:
+        description: Pain level 9
+        annotations:
+          numeric_value: 9
+          category: severe
+      TEN:
+        description: Worst possible pain
+        meaning: LOINC:LA6115-5
+        annotations:
+          numeric_value: 10
+          category: severe
+  PainIntensityCategoryEnum:
+    description: Categorical classifications of pain intensity
+    permissible_values:
+      NONE:
+        description: No pain present
+        meaning: LOINC:LA6111-4
+        annotations:
+          nrs_range: 0
+      MILD:
+        description: Mild pain that doesn't interfere with activities
+        meaning: HP:0012825
+        annotations:
+          nrs_range: 1-3
+          interference: minimal
+      MODERATE:
+        description: Moderate pain that interferes with some activities
+        meaning: HP:0012826
+        annotations:
+          nrs_range: 4-6
+          interference: some
+      SEVERE:
+        description: Severe pain that significantly interferes with activities
+        meaning: HP:0012828
+        annotations:
+          nrs_range: 7-10
+          interference: significant
+  PainDurationEnum:
+    description: Temporal categories for pain duration and chronicity
+    permissible_values:
+      ACUTE:
+        description: Pain lasting less than 3 months
+        meaning: SNOMED:373930000
+        annotations:
+          duration: <3 months
+          characteristics: typically tissue healing related
+      SUBACUTE:
+        description: Pain lasting 3-6 months
+        annotations:
+          duration: 3-6 months
+          characteristics: transition period
+      CHRONIC:
+        description: Pain persisting beyond 6 months
+        meaning: HP:0030813
+        annotations:
+          duration: >6 months
+          characteristics: persistent beyond expected healing
+      PERSISTENT:
+        description: Continuous ongoing pain
+        annotations:
+          pattern: continuous
+          characteristics: unremitting
+      INTERMITTENT:
+        description: Pain that comes and goes
+        annotations:
+          pattern: episodic
+          characteristics: periods of relief
+      RECURRENT:
+        description: Pain that returns after periods of absence
+        annotations:
+          pattern: recurring episodes
+          characteristics: predictable or unpredictable returns
+  PainLocationEnum:
+    description: Anatomical locations where pain occurs
+    permissible_values:
+      JAW:
+        description: Jaw or temporomandibular joint area
+        meaning: UBERON:0001708
+        annotations:
+          region: orofacial
+          includes: TMJ, masseter, temporalis
+      FACE:
+        description: Facial region
+        meaning: UBERON:0001456
+        annotations:
+          region: orofacial
+          includes: cheek, forehead, orbital area
+      HEAD:
+        description: Head including cranium
+        meaning: UBERON:0000033
+        annotations:
+          region: cephalic
+          includes: scalp, temporal, parietal areas
+      NECK:
+        description: Cervical region
+        meaning: UBERON:0000974
+        annotations:
+          region: cervical
+          includes: anterior, posterior, lateral neck
+      BACK:
+        description: Dorsal spine and paraspinal regions
+        meaning: UBERON:0001137
+        annotations:
+          region: axial
+          includes: lumbar, thoracic, cervical spine
+      CHEST:
+        description: Thoracic region
+        meaning: UBERON:0001443
+        annotations:
+          region: thoracic
+          includes: anterior chest wall, ribs
+      ABDOMEN:
+        description: Abdominal region
+        meaning: UBERON:0000916
+        annotations:
+          region: abdominal
+          includes: upper, lower, lateral abdomen
+      UPPER_EXTREMITY:
+        description: Arms, shoulders, hands
+        meaning: UBERON:0001460
+        annotations:
+          region: appendicular
+          includes: shoulder, arm, forearm, hand
+      LOWER_EXTREMITY:
+        description: Legs, hips, feet
+        meaning: UBERON:0001774
+        annotations:
+          region: appendicular
+          includes: hip, thigh, leg, foot
+      PELVIS:
+        description: Pelvic region
+        meaning: UBERON:0002355
+        annotations:
+          region: pelvic
+          includes: sacroiliac, pubic areas
+      SHOULDER:
+        description: Shoulder joint and surrounding area
+        meaning: UBERON:0001467
+        annotations:
+          region: appendicular
+          joint: glenohumeral
+      HIP:
+        description: Hip joint and surrounding area
+        meaning: UBERON:0001464
+        annotations:
+          region: appendicular
+          joint: coxofemoral
+      KNEE:
+        description: Knee joint and surrounding area
+        meaning: UBERON:0001465
+        annotations:
+          region: appendicular
+          joint: tibiofemoral
+      ANKLE:
+        description: Ankle joint and surrounding area
+        meaning: UBERON:0002389
+        annotations:
+          region: appendicular
+          joint: talocrural
+      WRIST:
+        description: Wrist joint and surrounding area
+        meaning: UBERON:0002388
+        annotations:
+          region: appendicular
+          joint: radiocarpal
+      GENERALIZED:
+        description: Widespread or generalized pain
+        annotations:
+          region: systemic
+          pattern: diffuse
+  PainQualityEnum:
+    description: Qualitative descriptors of pain sensation (McGill Pain Questionnaire derived)
+    permissible_values:
+      THROBBING:
+        description: Pulsating, beating pain
+        meaning: HP:0025195
+        annotations:
+          category: temporal
+          mechanism: vascular
+      ACHING:
+        description: Dull, persistent discomfort
+        annotations:
+          category: continuous
+          mechanism: deep tissue
+      STABBING:
+        description: Sharp, piercing pain
+        meaning: HP:0003781
+        annotations:
+          category: punctate
+          mechanism: neuropathic
+      BURNING:
+        description: Hot, searing sensation
+        meaning: HP:0030827
+        annotations:
+          category: thermal
+          mechanism: neuropathic
+      TINGLING:
+        description: Pins and needles sensation
+        meaning: HP:0003401
+        annotations:
+          category: paresthetic
+          mechanism: neuropathic
+      PRESSURE:
+        description: Squeezing, compressing sensation
+        annotations:
+          category: constrictive
+          mechanism: mechanical
+      CRAMPING:
+        description: Spasmodic, gripping pain
+        meaning: HP:0003394
+        annotations:
+          category: spasmodic
+          mechanism: muscular
+      SHOOTING:
+        description: Lightning-like, radiating pain
+        annotations:
+          category: radiating
+          mechanism: neuropathic
+      GNAWING:
+        description: Persistent, consuming pain
+        annotations:
+          category: continuous
+          mechanism: deep tissue
+      TEARING:
+        description: Ripping, pulling apart sensation
+        annotations:
+          category: mechanical
+          mechanism: tissue damage
+      PIERCING:
+        description: Sharp, penetrating pain
+        annotations:
+          category: punctate
+          mechanism: acute tissue injury
+      CRUSHING:
+        description: Heavy, overwhelming pressure
+        annotations:
+          category: constrictive
+          mechanism: severe compression
+      POUNDING:
+        description: Rhythmic, hammering pain
+        annotations:
+          category: temporal
+          mechanism: vascular
+      ELECTRIC:
+        description: Shock-like, electrical sensation
+        annotations:
+          category: neuralgic
+          mechanism: nerve discharge
+  PainInterferenceLevelEnum:
+    description: Levels of pain-related disability and functional interference
+    permissible_values:
+      NO_LIMITATION:
+        description: No functional limitation due to pain
+        annotations:
+          grade: 0
+          activities: all normal activities possible
+          promis_alignment: minimal interference
+      MILD_LIMITATION:
+        description: Mild functional limitation, minimal impact on daily activities
+        meaning: HP:0012825
+        annotations:
+          grade: 1
+          activities: slight difficulty with demanding activities
+          promis_alignment: mild interference
+      MODERATE_LIMITATION:
+        description: Moderate functional limitation, some impact on daily activities
+        meaning: HP:0012826
+        annotations:
+          grade: 2
+          activities: difficulty with normal activities
+          promis_alignment: moderate interference
+      SEVERE_LIMITATION:
+        description: Severe functional limitation, significant impact on daily activities
+        meaning: HP:0012828
+        annotations:
+          grade: 3
+          activities: major difficulty with basic activities
+          promis_alignment: severe interference
+      COMPLETE_LIMITATION:
+        description: Unable to perform activities due to pain
+        annotations:
+          grade: 4
+          activities: unable to perform basic functions
+          promis_alignment: very severe interference
+  PsychosocialConstructEnum:
+    description: Pain-related psychosocial constructs from OPPERA battery
+    permissible_values:
+      DEPRESSION:
+        description: Depressive symptoms and mood disorders
+        meaning: HP:0000716
+        annotations:
+          instrument: CES-D
+          domain: mood
+      ANXIETY:
+        description: Anxiety symptoms and disorders
+        meaning: HP:0000739
+        annotations:
+          instrument: STAI
+          domain: mood
+      CATASTROPHIZING:
+        description: Pain catastrophizing thoughts and behaviors
+        annotations:
+          instrument: PCS
+          domain: cognition
+          scale_range: 0-52
+      SOMATIZATION:
+        description: Somatic symptom expression
+        annotations:
+          instrument: SCL-90
+          domain: somatic
+      PERCEIVED_STRESS:
+        description: Subjective experience of stress
+        annotations:
+          instrument: PSS
+          domain: stress
+      COPING_STRATEGIES:
+        description: Pain coping mechanisms and strategies
+        annotations:
+          instrument: CSQ
+          domain: behavioral
+      SOCIAL_SUPPORT:
+        description: Perceived social support systems
+        annotations:
+          domain: social
+      SLEEP_QUALITY:
+        description: Sleep disturbance and quality
+        meaning: HP:0002360
+        annotations:
+          instrument: PSQI
+          domain: sleep
+  QuantitativeSensoryTestingModalityEnum:
+    description: Stimulus modalities used in quantitative sensory testing
+    permissible_values:
+      HEAT:
+        description: Thermal heat stimuli
+        meaning: OBI:0002044
+        annotations:
+          stimulus_type: thermal
+          equipment: thermode
+          measures: heat pain threshold, tolerance
+      COLD:
+        description: Thermal cold stimuli
+        meaning: OBI:0002045
+        annotations:
+          stimulus_type: thermal
+          equipment: thermode
+          measures: cold pain threshold, tolerance
+      PRESSURE:
+        description: Mechanical pressure stimuli
+        meaning: OBI:0002046
+        annotations:
+          stimulus_type: mechanical
+          equipment: algometer
+          measures: pressure pain threshold
+      ELECTRICAL:
+        description: Electrical stimuli
+        annotations:
+          stimulus_type: electrical
+          equipment: electrical stimulator
+          measures: electrical pain threshold
+      VIBRATION:
+        description: Vibratory stimuli
+        annotations:
+          stimulus_type: mechanical
+          equipment: vibrometer
+          measures: vibration detection threshold
+      TOUCH:
+        description: Light touch stimuli
+        annotations:
+          stimulus_type: mechanical
+          equipment: von Frey filaments
+          measures: tactile detection threshold
+      PINPRICK:
+        description: Sharp mechanical stimuli
+        annotations:
+          stimulus_type: mechanical
+          equipment: pinprick stimulator
+          measures: mechanical pain threshold
+      CHEMICAL:
+        description: Chemical stimuli (e.g., capsaicin)
+        annotations:
+          stimulus_type: chemical
+          equipment: topical application
+          measures: chemical pain sensitivity
+  StartleReflexResponseEnum:
+    description: Categories of startle reflex responses in autonomic testing
+    permissible_values:
+      NORMAL:
+        description: Normal startle response
+        meaning: HP:0031466
+        annotations:
+          magnitude: within normal range
+          latency: normal
+      EXAGGERATED:
+        description: Exaggerated startle response
+        meaning: HP:0000752
+        annotations:
+          magnitude: increased amplitude
+          clinical_significance: possible hypervigilance
+      DIMINISHED:
+        description: Diminished startle response
+        annotations:
+          magnitude: decreased amplitude
+          clinical_significance: possible habituation
+      ABSENT:
+        description: No startle response detected
+        annotations:
+          magnitude: no response
+          clinical_significance: possible dysfunction
+      DELAYED:
+        description: Delayed startle response
+        annotations:
+          latency: increased response time
+          clinical_significance: possible processing delay
+  PainFrequencyEnum:
+    description: Frequency patterns of pain episodes
+    permissible_values:
+      CONSTANT:
+        description: Continuous, unremitting pain
+        annotations:
+          pattern: no pain-free periods
+          temporal: 24/7
+      DAILY:
+        description: Pain occurring every day
+        annotations:
+          pattern: daily episodes
+          temporal: once or more per day
+      SEVERAL_TIMES_WEEKLY:
+        description: Pain occurring multiple times per week
+        annotations:
+          pattern: 3-6 times per week
+          temporal: frequent episodes
+      WEEKLY:
+        description: Pain occurring approximately once per week
+        annotations:
+          pattern: weekly episodes
+          temporal: once per week
+      MONTHLY:
+        description: Pain occurring approximately once per month
+        annotations:
+          pattern: monthly episodes
+          temporal: once per month
+      OCCASIONAL:
+        description: Infrequent, sporadic pain episodes
+        annotations:
+          pattern: irregular episodes
+          temporal: unpredictable
+      RARE:
+        description: Very infrequent pain episodes
+        annotations:
+          pattern: rare episodes
+          temporal: few times per year
+  PainOnsetPatternEnum:
+    description: Patterns of pain onset and development
+    permissible_values:
+      SUDDEN:
+        description: Abrupt, immediate onset
+        annotations:
+          onset_time: seconds to minutes
+          characteristics: acute onset
+      GRADUAL:
+        description: Slow, progressive onset
+        annotations:
+          onset_time: hours to days
+          characteristics: insidious onset
+      INSIDIOUS:
+        description: Very gradual, barely noticeable onset
+        annotations:
+          onset_time: weeks to months
+          characteristics: imperceptible onset
+      TRIGGERED:
+        description: Onset following specific trigger or event
+        annotations:
+          onset_pattern: event-related
+          characteristics: identifiable precipitant
+      SPONTANEOUS:
+        description: Onset without apparent cause
+        annotations:
+          onset_pattern: idiopathic
+          characteristics: no identifiable trigger
+      PROGRESSIVE:
+        description: Gradually worsening over time
+        annotations:
+          course: deteriorating
+          characteristics: increasing severity
+      FLUCTUATING:
+        description: Variable intensity over time
+        annotations:
+          course: variable
+          characteristics: waxing and waning
+      SEASONAL:
+        description: Onset related to seasonal patterns
+        annotations:
+          pattern: seasonal variation
+          characteristics: climate or weather related

@@ -77,6 +77,7 @@ imports:
 - industry/safety_colors
 - medical/clinical
 - medical/neuroimaging
+- medical/pain
 - clinical/nih_demographics
 - clinical/phenopackets
 - bioprocessing/scale_up
