@@ -8,6 +8,8 @@ prefixes:
   ENVO: http://purl.obolibrary.org/obo/ENVO_
   NCIT: http://purl.obolibrary.org/obo/NCIT_
   CHEBI: http://purl.obolibrary.org/obo/CHEBI_
+  ExO: http://purl.obolibrary.org/obo/ExO_
+  ECTO: http://purl.obolibrary.org/obo/ECTO_
   valuesets: https://w3id.org/valuesets/
 default_prefix: valuesets
 slots:
@@ -165,10 +167,14 @@ enums:
         description: Exposure through breathing
         meaning: NCIT:C38284
         title: Nasal Route of Administration
+        related_mappings:
+          - ExO:0000057
       INGESTION:
         description: Exposure through eating or drinking
         meaning: NCIT:C38288
         title: Oral Route of Administration
+        related_mappings:
+          - ExO:0000056
       DERMAL:
         description: Exposure through skin contact
         meaning: NCIT:C38675
@@ -177,10 +183,14 @@ enums:
         description: Exposure through injection
         meaning: NCIT:C38276
         title: Intravenous Route of Administration
+        related_mappings:
+          - ExO:0000060
       TRANSPLACENTAL:
         description: Exposure through placental transfer
         meaning: NCIT:C38307
         title: Transplacental Route of Administration
+        related_mappings:
+          - ExO:0000159
       OCULAR:
         description: Exposure through the eyes
         meaning: NCIT:C38287
@@ -193,16 +203,16 @@ enums:
       AMBIENT_AIR:
         description: Outdoor air pollution
         related_mappings:
-        - ENVO:01000676
+          - ENVO:01000676
       INDOOR_AIR:
         description: Indoor air pollution
         related_mappings:
-        - ENVO:01000676
+          - ENVO:01000676
       DRINKING_WATER:
         description: Contaminated drinking water
         related_mappings:
-        - ENVO:00003064
-        - ENVO:00002186
+          - ENVO:00003064
+          - ENVO:00002186
       SOIL:
         description: Contaminated soil
         meaning: ENVO:00002116
@@ -210,7 +220,7 @@ enums:
       FOOD:
         description: Contaminated food
         related_mappings:
-        - CHEBI:33290
+          - CHEBI:33290
       OCCUPATIONAL:
         description: Workplace exposure
         meaning: ENVO:03501332
@@ -218,23 +228,23 @@ enums:
       CONSUMER_PRODUCTS:
         description: Household and consumer products
         related_mappings:
-        - ENVO:00003074
-        - ENVO:03501339
+          - ENVO:00003074
+          - ENVO:03501339
       INDUSTRIAL_EMISSIONS:
         description: Industrial facility emissions
         related_mappings:
-        - ENVO:03000092
-        - ENVO:00003861
+          - ENVO:03000092
+          - ENVO:00003861
       AGRICULTURAL:
         description: Agricultural activities
         related_mappings:
-        - ENVO:00000077
-        - ENVO:01000311
+          - ENVO:00000077
+          - ENVO:01000311
       TRAFFIC:
         description: Traffic-related pollution
         related_mappings:
-        - ENVO:00000064
-        - ENVO:01000601
+          - ENVO:00000064
+          - ENVO:01000601
       TOBACCO_SMOKE:
         description: Active or passive tobacco smoke exposure
         meaning: NCIT:C17140
@@ -242,11 +252,11 @@ enums:
       CONSTRUCTION:
         description: Construction-related exposure
         related_mappings:
-        - ENVO:01000996
+          - ENVO:01000996
       MINING:
         description: Mining-related exposure
         related_mappings:
-        - ENVO:01001437
+          - ENVO:01001437
   WaterContaminantEnum:
     description: Common water contaminants
     permissible_values:
@@ -352,4 +362,4 @@ enums:
         description: Exposure during critical developmental periods
 license: MIT
 see_also:
-- https://linkml.github.io/valuesets
+  - https://linkml.github.io/valuesets
