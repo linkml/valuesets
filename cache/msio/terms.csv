@@ -17,3 +17,6 @@ MSIO:0000007,negative control role,2025-10-19T12:01:54.826731
 MSIO:0000006,long term reference role,2025-10-19T12:01:54.826899
 MSIO:0000181,batch cell culture,2025-10-19T12:01:55.456481
 MSIO:0000155,continuous fermentation cell culture,2025-10-19T12:01:55.456806
+MSIO:0000162,96-well microplate,2025-10-29T20:43:07.402872
+MSIO:0000164,coated microplate,2025-10-29T20:43:07.418914
+MSIO:0000170,uncoated microplate,2025-10-29T20:43:07.419384

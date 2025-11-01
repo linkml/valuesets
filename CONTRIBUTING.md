@@ -51,6 +51,189 @@ Please use our [Discussions forum][discussions] to ask general questions or cont
 
 Please submit a [Pull Request][pulls] to submit a new term for consideration.
 
+#### Adding Ontology Mappings with `meaning:`
+
+When creating or updating enums in this project, you can (and should) link permissible values to ontology terms using the `meaning:` field. This provides semantic grounding and enables interoperability.
+
+**Basic Example:**
+
+```yaml
+enums:
+  AirPollutantEnum:
+    description: Common air pollutants
+    permissible_values:
+      OZONE:
+        description: Ground-level ozone (O3)
+        meaning: CHEBI:25812
+      NITROGEN_DIOXIDE:
+        description: Nitrogen dioxide (NO2)
+        meaning: CHEBI:33101
+        title: nitrogen dioxide
+```
+
+**Best Practices:**
+
+1. **Always verify ontology IDs** - Never guess CURIEs. Use [OLS (Ontology Lookup Service)](https://www.ebi.ac.uk/ols4/) to search and verify correct ontology term IDs
+2. **Use standard OBO prefixes** - Prefer OBO Foundry ontologies (CHEBI, ENVO, NCIT, etc.) when available
+3. **Use ROR for organizations** - For research organizations and institutions, use [ROR (Research Organization Registry)](https://ror.org/) identifiers (e.g., `meaning: ROR:05gvnxz63`)
+4. **Include `title:` when labels differ** - If the ontology label differs from your enum value name, add a `title:` field with the exact ontology label
+5. **One mapping per value** - Use `meaning:` for the primary ontology mapping (not `meanings:` plural)
+6. **Declare prefixes in header** - Ensure the prefix is declared in the schema's `prefixes:` section:
+
+```yaml
+prefixes:
+  CHEBI: http://purl.obolibrary.org/obo/CHEBI_
+  ENVO: http://purl.obolibrary.org/obo/ENVO_
+```
+
+#### Ontology Validation System
+
+This project uses a two-tier validation system for ontology mappings:
+
+**1. OAK Configuration (`src/valuesets/validators/oak_config.yaml`)**
+
+This file maps ontology prefixes to [OAK (Ontology Access Kit)](https://github.com/INCATools/ontology-access-kit) adapters. Prefixes listed here undergo **strict validation**:
+
+```yaml
+ontology_adapters:
+  # Configured ontologies (strict validation)
+  CHEBI: sqlite:obo:chebi
+  ENVO: sqlite:obo:envo
+  NCIT: sqlite:obo:ncit
+
+  # Unconfigured ontologies (lenient validation)
+  SOME_CUSTOM_PREFIX:   # Empty value = skip validation
+```
+
+- **Configured prefixes** (with adapter string): Missing or mismatched labels are treated as **ERRORS**
+- **Unconfigured prefixes** (empty or not listed): Issues are reported as **INFO** only
+- **Null adapters** (blank value): Validation is skipped entirely for these prefixes
+
+**2. Validation Checks Performed**
+
+When you run `just validate`, the following checks are performed:
+
+1. **Term Existence**: Verifies the ontology term exists and can be retrieved
+2. **Label Matching**: Compares the ontology's label against:
+   - The permissible value name
+   - The `title:` field (if present)
+   - Any `aliases:` (if present)
+   - Normalized versions of all the above (case-insensitive, punctuation-removed)
+3. **Caching**: Valid terms are cached locally in `cache/<prefix>/terms.csv` for performance
+
+**Example Validation Output:**
+
+```
+✅ PASS: AirPollutantEnum.OZONE → CHEBI:25812 (ozone)
+❌ ERROR: AirPollutantEnum.PM25 → ENVO:99999999 (Could not retrieve label for configured ontology term)
+⚠️  WARNING: CustomEnum.VALUE → CUSTOM:12345 (Label mismatch: expected 'VALUE', got 'Custom Value')
+ℹ️  INFO: CustomEnum.OTHER → UNKNOWN:99999 (Could not retrieve label for UNKNOWN:99999)
+```
+
+**3. Running Validation**
+
+```bash
+# Validate all schemas
+just validate
+
+# Validate a specific schema file
+just validate-schema src/valuesets/schema/environmental_health/exposures.yaml
+
+# Validate using OLS web service (slower, no caching)
+just validate-ols
+
+# Strict mode (treat all warnings as errors)
+just validate --strict
+```
+
+**4. REST API Adapters for Non-OAK Sources**
+
+Some organization registries and identifier systems are not available through OAK but provide REST APIs. This project supports pluggable REST adapters that integrate seamlessly with the validation framework.
+
+**Currently Supported REST APIs:**
+
+- **ROR (Research Organization Registry)**: Use `ROR:` prefix for research organizations
+  - API: https://api.ror.org/v2/organizations
+  - Example: `meaning: ROR:05gvnxz63` (Argonne National Laboratory)
+  - Format: 9-character base32 identifier (e.g., `05gvnxz63`)
+
+**Configuration in `oak_config.yaml`:**
+
+```yaml
+ontology_adapters:
+  # Standard OAK adapters
+  CHEBI: sqlite:obo:chebi
+  ENVO: sqlite:obo:envo
+
+  # REST API adapters
+  ROR: "rest:ror:"
+```
+
+**How It Works:**
+
+1. When the validator encounters a `ROR:` prefix, it checks `oak_config.yaml`
+2. The `"rest:ror:"` adapter string triggers the REST adapter factory
+3. The `RORAdapter` makes API calls to validate organization names
+4. Results are cached in memory using `@lru_cache` for performance
+5. Validation follows the same strict/lenient rules as OAK adapters
+
+**Adding New REST Adapters:**
+
+To add support for a new REST API (e.g., Wikidata):
+
+1. Create a new adapter class in `src/valuesets/validators/rest_adapters.py`:
+
+```python
+class WikidataAdapter(BaseRestAdapter):
+    """Adapter for Wikidata entities."""
+
+    def label(self, curie: str) -> Optional[str]:
+        """Get label from Wikidata API."""
+        # Implement API logic here
+        ...
+```
+
+2. Register it in the `get_rest_adapter()` factory:
+
+```python
+adapters = {
+    'ror': RORAdapter,
+    'wikidata': WikidataAdapter,  # Add here
+}
+```
+
+3. Configure in `oak_config.yaml`:
+
+```yaml
+WD: "rest:wikidata:"
+```
+
+**Benefits of This Architecture:**
+
+- **Pluggable**: Easy to add new REST APIs without modifying core validation logic
+- **Consistent**: REST adapters implement the same interface as OAK adapters
+- **No Ad-hoc Scripts**: Everything runs through the standard validation workflow
+- **Cached**: API calls are cached to minimize network requests
+- **Transparent**: Users don't need to know which adapter is being used
+
+**Example Usage:**
+
+```yaml
+# In your schema
+enums:
+  USDOENationalLaboratoryEnum:
+    permissible_values:
+      ARGONNE_NATIONAL_LABORATORY:
+        title: Argonne National Laboratory
+        meaning: ROR:05gvnxz63  # Validated via ROR API
+```
+
+```bash
+# Validation automatically uses appropriate adapter
+just validate
+# ✅ ARGONNE_NATIONAL_LABORATORY → ROR:05gvnxz63 (Argonne National Laboratory)
+```
+
 #### Term Caching System
 
 This project uses an ontology term caching system to improve validation performance and reduce external API calls. When you contribute new ontology mappings:
@@ -67,6 +250,8 @@ This project uses an ontology term caching system to improve validation performa
   - Include any generated cache files in your commit
   - Ensure all ontology IDs are correct (never guess - use [OLS](https://www.ebi.ac.uk/ols4/) to verify)
   - Follow the project's naming conventions (e.g., `UPPER_CASE` for enum values)
+  - Fix any validation errors before submitting your PR
+  - If adding a new ontology prefix, consider adding it to `src/valuesets/validators/oak_config.yaml`
 
 <a id="best-practices"></a>
 

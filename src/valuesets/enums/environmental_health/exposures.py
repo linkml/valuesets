@@ -116,6 +116,17 @@ class ExposureRouteEnum(RichEnum):
     INJECTION = "INJECTION"
     TRANSPLACENTAL = "TRANSPLACENTAL"
     OCULAR = "OCULAR"
+    ABSORPTION = "ABSORPTION"
+    GASTROINTESTINAL_TRACT = "GASTROINTESTINAL_TRACT"
+    GAVAGE = "GAVAGE"
+    AMBIENT_ENVIRONMENT = "AMBIENT_ENVIRONMENT"
+    AMBIENT_AQUATIC = "AMBIENT_AQUATIC"
+    AMBIENT_TERRESTRIAL = "AMBIENT_TERRESTRIAL"
+    PASSIVE_INHALATION = "PASSIVE_INHALATION"
+    ACTIVE_INHALATION = "ACTIVE_INHALATION"
+    SUBCUTANEOUS = "SUBCUTANEOUS"
+    INTRAMUSCULAR = "INTRAMUSCULAR"
+    INTRAVASCULAR = "INTRAVASCULAR"
     MULTIPLE_ROUTES = "MULTIPLE_ROUTES"
 
 # Set metadata after class creation
@@ -126,6 +137,17 @@ ExposureRouteEnum._metadata = {
     "INJECTION": {'description': 'Exposure through injection', 'meaning': 'NCIT:C38276'},
     "TRANSPLACENTAL": {'description': 'Exposure through placental transfer', 'meaning': 'NCIT:C38307'},
     "OCULAR": {'description': 'Exposure through the eyes', 'meaning': 'NCIT:C38287'},
+    "ABSORPTION": {'description': 'Exposure through absorption (dermal or other surface)', 'meaning': 'ExO:0000058'},
+    "GASTROINTESTINAL_TRACT": {'description': 'Exposure through the gastrointestinal tract', 'meaning': 'ExO:0000165'},
+    "GAVAGE": {'description': 'Direct administration into the stomach', 'meaning': 'ExO:0000166'},
+    "AMBIENT_ENVIRONMENT": {'description': 'Exposure through contact with stressors in the ambient surroundings', 'meaning': 'ExO:0000160'},
+    "AMBIENT_AQUATIC": {'description': 'Exposure through ambient aquatic environment', 'meaning': 'ExO:0000161'},
+    "AMBIENT_TERRESTRIAL": {'description': 'Exposure through ambient terrestrial environment', 'meaning': 'ExO:0000162'},
+    "PASSIVE_INHALATION": {'description': 'Passive inhalation of ambient environment stressors', 'meaning': 'ExO:0000163'},
+    "ACTIVE_INHALATION": {'description': 'Purposeful breathing or inhaling of stressor', 'meaning': 'ExO:0000164'},
+    "SUBCUTANEOUS": {'description': 'Exposure through subcutaneous tissue'},
+    "INTRAMUSCULAR": {'description': 'Exposure through muscle tissue'},
+    "INTRAVASCULAR": {'description': 'Exposure through blood vessels'},
     "MULTIPLE_ROUTES": {'description': 'Exposure through multiple pathways'},
 }
 
@@ -253,6 +275,104 @@ ExposureDurationEnum._metadata = {
     "DEVELOPMENTAL": {'description': 'Exposure during critical developmental periods'},
 }
 
+class SmokingStatusEnum(RichEnum):
+    """
+    Tobacco and nicotine consumption status
+    """
+    # Enum members
+    CURRENT_SMOKER = "CURRENT_SMOKER"
+    FORMER_SMOKER = "FORMER_SMOKER"
+    NEVER_SMOKER = "NEVER_SMOKER"
+    NON_SMOKER = "NON_SMOKER"
+
+# Set metadata after class creation
+SmokingStatusEnum._metadata = {
+    "CURRENT_SMOKER": {'description': 'Person who is currently smoking tobacco', 'meaning': 'ExO:0000115'},
+    "FORMER_SMOKER": {'description': 'Person who has smoked at least 100 cigarettes in their life but is not currently smoking', 'meaning': 'ExO:0000116'},
+    "NEVER_SMOKER": {'description': 'Person who has smoked less than 100 cigarettes in their life', 'meaning': 'ExO:0000117'},
+    "NON_SMOKER": {'description': 'Person who is not currently smoking', 'meaning': 'ExO:0000118'},
+}
+
+class ExposureStressorTypeEnum(RichEnum):
+    """
+    Types of exposure stressors by their origin or nature
+    """
+    # Enum members
+    BIOLOGICAL_AGENT = "BIOLOGICAL_AGENT"
+    CHEMICAL_AGENT = "CHEMICAL_AGENT"
+    PHYSICAL_AGENT = "PHYSICAL_AGENT"
+    PSYCHOSOCIAL_AGENT = "PSYCHOSOCIAL_AGENT"
+    BIOMECHANICAL_AGENT = "BIOMECHANICAL_AGENT"
+    ECOLOGICAL_PERTURBATION = "ECOLOGICAL_PERTURBATION"
+
+# Set metadata after class creation
+ExposureStressorTypeEnum._metadata = {
+    "BIOLOGICAL_AGENT": {'description': 'Agent of biological origin (e.g., bacteria, viruses, allergens)', 'meaning': 'ExO:0000005'},
+    "CHEMICAL_AGENT": {'description': 'Agent of chemical origin (e.g., toxins, pollutants)', 'meaning': 'ExO:0000006'},
+    "PHYSICAL_AGENT": {'description': 'Physical source of energy that may cause injury (e.g., radiation, noise, temperature extremes)', 'meaning': 'ExO:0000008'},
+    "PSYCHOSOCIAL_AGENT": {'description': 'Agent that interferes with psychological development or social interaction', 'meaning': 'ExO:0000009'},
+    "BIOMECHANICAL_AGENT": {'description': 'Mechanical agent applied to biological systems (e.g., repetitive motion, physical strain)', 'meaning': 'ExO:0000011'},
+    "ECOLOGICAL_PERTURBATION": {'description': 'Disruption to ecological systems (e.g., habitat degradation, climate change)', 'meaning': 'ExO:0000007'},
+}
+
+class ExposureTransportPathEnum(RichEnum):
+    """
+    Transport medium through which exposure stressor reaches the recipient
+    """
+    # Enum members
+    AIR_TRANSPORT_PATH = "AIR_TRANSPORT_PATH"
+    WATER_TRANSPORT_PATH = "WATER_TRANSPORT_PATH"
+    SOIL_TRANSPORT_PATH = "SOIL_TRANSPORT_PATH"
+
+# Set metadata after class creation
+ExposureTransportPathEnum._metadata = {
+    "AIR_TRANSPORT_PATH": {'description': 'Transport path allowing stressor to interact with recipient via air', 'meaning': 'ExO:0000010'},
+    "WATER_TRANSPORT_PATH": {'description': 'Transport path involving interaction with stressor via water', 'meaning': 'ExO:0000028'},
+    "SOIL_TRANSPORT_PATH": {'description': 'Transport path involving interaction with stressor via soil', 'meaning': 'ExO:0000029'},
+}
+
+class ExposureFrequencyEnum(RichEnum):
+    """
+    Temporal pattern of exposure occurrence
+    """
+    # Enum members
+    INTERMITTENT = "INTERMITTENT"
+    CONTINUOUS = "CONTINUOUS"
+
+# Set metadata after class creation
+ExposureFrequencyEnum._metadata = {
+    "INTERMITTENT": {'description': 'Exposure occurring at irregular intervals or periodically', 'meaning': 'ExO:0000052'},
+    "CONTINUOUS": {'description': 'Exposure occurring without interruption', 'meaning': 'ExO:0000053'},
+}
+
+class StudyPopulationEnum(RichEnum):
+    """
+    Specific population groups commonly studied in exposure research
+    """
+    # Enum members
+    CHILDREN = "CHILDREN"
+    FETUSES = "FETUSES"
+    INFANTS_OR_NEWBORNS = "INFANTS_OR_NEWBORNS"
+    PREGNANT_FEMALES = "PREGNANT_FEMALES"
+    MOTHERS = "MOTHERS"
+    MILITARY_PERSONNEL = "MILITARY_PERSONNEL"
+    VETERANS = "VETERANS"
+    WORKERS = "WORKERS"
+    CONTROLS = "CONTROLS"
+
+# Set metadata after class creation
+StudyPopulationEnum._metadata = {
+    "CHILDREN": {'description': 'Human children (pediatric population)', 'meaning': 'ExO:0000119'},
+    "FETUSES": {'description': 'Human fetuses (prenatal population)', 'meaning': 'ExO:0000122'},
+    "INFANTS_OR_NEWBORNS": {'description': 'Human infants and newborns', 'meaning': 'ExO:0000123'},
+    "PREGNANT_FEMALES": {'description': 'Human females who are pregnant', 'meaning': 'ExO:0000126'},
+    "MOTHERS": {'description': 'Human mothers', 'meaning': 'ExO:0000125'},
+    "MILITARY_PERSONNEL": {'description': 'Active military personnel', 'meaning': 'ExO:0000124'},
+    "VETERANS": {'description': 'Military veterans', 'meaning': 'ExO:0000130'},
+    "WORKERS": {'description': 'Occupational workers', 'meaning': 'ExO:0000131'},
+    "CONTROLS": {'description': 'Control group participants without the disease or phenotype of interest', 'meaning': 'ExO:0000121'},
+}
+
 __all__ = [
     "AirPollutantEnum",
     "PesticideTypeEnum",
@@ -262,4 +382,9 @@ __all__ = [
     "WaterContaminantEnum",
     "EndocrineDisruptorEnum",
     "ExposureDurationEnum",
+    "SmokingStatusEnum",
+    "ExposureStressorTypeEnum",
+    "ExposureTransportPathEnum",
+    "ExposureFrequencyEnum",
+    "StudyPopulationEnum",
 ]

@@ -29,6 +29,12 @@ try:
 except ImportError:
     HAS_OAK = False
 
+try:
+    from .rest_adapters import get_rest_adapter
+    HAS_REST_ADAPTERS = True
+except ImportError:
+    HAS_REST_ADAPTERS = False
+
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
@@ -257,6 +263,10 @@ class EnumEvaluator:
         label = None
         adapter = None
 
+        # Load cache for this prefix if not already loaded
+        if prefix_lower in self._oak_config and prefix_lower not in self._prefix_caches:
+            self._prefix_caches[prefix_lower] = self._load_cache(prefix)
+
         # Try configured adapter first for this prefix
         if prefix_lower in self._oak_config:
             adapter_string = self._oak_config[prefix_lower]
@@ -269,8 +279,23 @@ class EnumEvaluator:
 
             if prefix_lower not in self._per_prefix_adapters:
                 try:
-                    self._per_prefix_adapters[prefix_lower] = get_adapter(adapter_string)
-                    logger.info(f"Created configured adapter for {prefix} ontology")
+                    # Check if this is a REST adapter (e.g., "rest:ror:")
+                    if adapter_string.startswith("rest:"):
+                        if not HAS_REST_ADAPTERS:
+                            logger.warning(f"REST adapters module not available for {prefix}")
+                            self._per_prefix_adapters[prefix_lower] = None
+                        else:
+                            adapter = get_rest_adapter(adapter_string)
+                            if adapter:
+                                self._per_prefix_adapters[prefix_lower] = adapter
+                                logger.info(f"Created REST adapter for {prefix}: {adapter_string}")
+                            else:
+                                logger.warning(f"Could not create REST adapter for {prefix}: {adapter_string}")
+                                self._per_prefix_adapters[prefix_lower] = None
+                    else:
+                        # Standard OAK adapter
+                        self._per_prefix_adapters[prefix_lower] = get_adapter(adapter_string)
+                        logger.info(f"Created configured adapter for {prefix} ontology")
                 except Exception as e:
                     logger.warning(f"Could not create configured adapter for {prefix}: {e}")
                     self._per_prefix_adapters[prefix_lower] = None

@@ -7,7 +7,7 @@ imports:
 prefixes:
   CVS: https://w3id.org/common-value-sets/
   linkml: https://w3id.org/linkml/
-  mixs: https://genomicsstandardsconsortium.github.io/mixs/
+  mixs: http://purl.obolibrary.org/obo/MIXS_
   valuesets: https://w3id.org/valuesets/
 default_prefix: valuesets
 slots:
@@ -52,27 +52,25 @@ enums:
         description: Sequences assembled from DNA of mixed community and binned. MAGs are likely to represent a single taxonomic
           origin. See checkm2 scores for quality assessment.
         meaning: mixs:0010011
-        title: Metagenome-Assembled Genome
+        title: Mimag
         aliases:
-        - Mimag
+        - Metagenome-Assembled Genome
       METAGENOME:
         description: Sequences assembled from DNA of mixed community.
         meaning: mixs:0010007
-        aliases:
-        - Mims
+        title: Mims
       METATRANSCRIPTOME:
         description: Sequences assembled from RNA of mixed community. Currently not represented by GSC.
       SAG:
         description: Sequences assembled from DNA of single cell.
         meaning: mixs:0010010
-        title: Single Amplified Genome
+        title: Misag
         aliases:
-        - Misag
+        - Single Amplified Genome
       VIRUS:
         description: Sequences assembled from uncultivated virus genome (DNA/RNA).
         meaning: mixs:0010012
-        aliases:
-        - Miuvig
+        title: Miuvig
       MARKER:
         description: 'Sequences from targeted region of DNA; see protocol for information on targeted region. specimen: https://genomicsstandardsconsortium.github.io/mixs/0010009/
           survey: https://genomicsstandardsconsortium.github.io/mixs/0010008/'

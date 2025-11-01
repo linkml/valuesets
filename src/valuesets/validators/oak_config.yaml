@@ -15,7 +15,7 @@ ontology_adapters:
   # Investigations, experiments, and protocols
   OBI: sqlite:obo:obi
   MS: sqlite:obo:ms
-  MIXS: sqlite:obo:mixs
+  mixs:
   #ALLOTROPE: sqlite:obo:allotrope
   AFO: 
   SIO: sqlite:obo:sio
@@ -45,7 +45,14 @@ ontology_adapters:
   RO: sqlite:obo:ro
   BFO: sqlite:obo:bfo
   IAO: sqlite:obo:iao
-  PROV: 
+  PROV:
+
+  # REST API adapters (not OAK-based)
+  # Syntax: "rest:api_name:"
+  ROR: "rest:ror:"
+
+  # XML Schema Definition datatypes (not real ontology terms)
+  xsd:
 
   # Nulls
   FHIR_DATA_ABSENT_REASON:
