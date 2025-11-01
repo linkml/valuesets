@@ -43,11 +43,11 @@ class ContigCollectionType(RichEnum):
 # Set metadata after class creation
 ContigCollectionType._metadata = {
     "ISOLATE": {'description': 'Sequences assembled from DNA of isolated organism. Bacteria/Archaea: https://genomicsstandardsconsortium.github.io/mixs/0010003/ Euk: https://genomicsstandardsconsortium.github.io/mixs/0010002/ Virus: https://genomicsstandardsconsortium.github.io/mixs/0010005/ Organelle: https://genomicsstandardsconsortium.github.io/mixs/0010006/ Plasmid: https://genomicsstandardsconsortium.github.io/mixs/0010004/'},
-    "MAG": {'description': 'Sequences assembled from DNA of mixed community and binned. MAGs are likely to represent a single taxonomic origin. See checkm2 scores for quality assessment.', 'meaning': 'mixs:0010011', 'aliases': ['Mimag']},
-    "METAGENOME": {'description': 'Sequences assembled from DNA of mixed community.', 'meaning': 'mixs:0010007', 'aliases': ['Mims']},
+    "MAG": {'description': 'Sequences assembled from DNA of mixed community and binned. MAGs are likely to represent a single taxonomic origin. See checkm2 scores for quality assessment.', 'meaning': 'mixs:0010011', 'aliases': ['Metagenome-Assembled Genome']},
+    "METAGENOME": {'description': 'Sequences assembled from DNA of mixed community.', 'meaning': 'mixs:0010007'},
     "METATRANSCRIPTOME": {'description': 'Sequences assembled from RNA of mixed community. Currently not represented by GSC.'},
-    "SAG": {'description': 'Sequences assembled from DNA of single cell.', 'meaning': 'mixs:0010010', 'aliases': ['Misag']},
-    "VIRUS": {'description': 'Sequences assembled from uncultivated virus genome (DNA/RNA).', 'meaning': 'mixs:0010012', 'aliases': ['Miuvig']},
+    "SAG": {'description': 'Sequences assembled from DNA of single cell.', 'meaning': 'mixs:0010010', 'aliases': ['Single Amplified Genome']},
+    "VIRUS": {'description': 'Sequences assembled from uncultivated virus genome (DNA/RNA).', 'meaning': 'mixs:0010012'},
     "MARKER": {'description': 'Sequences from targeted region of DNA; see protocol for information on targeted region. specimen: https://genomicsstandardsconsortium.github.io/mixs/0010009/ survey: https://genomicsstandardsconsortium.github.io/mixs/0010008/'},
 }
 

@@ -381,6 +381,21 @@
             "title": "AudioFormatEnum",
             "type": "string"
         },
+        "AutomationStandardEnum": {
+            "description": "Industry standards for laboratory automation systems",
+            "enum": [
+                "SILA_2",
+                "LABOP",
+                "AUTOPROTOCOL",
+                "CLSI_AUTO01",
+                "CLSI_AUTO02",
+                "CLSI_AUTO03",
+                "CLSI_AUTO04",
+                "CLSI_AUTO05"
+            ],
+            "title": "AutomationStandardEnum",
+            "type": "string"
+        },
         "AutomobilePaintColorEnum": {
             "description": "Common automobile paint colors",
             "enum": [
@@ -597,6 +612,17 @@
                 "PHOTOBIOREACTOR"
             ],
             "title": "BioreactorTypeEnum",
+            "type": "string"
+        },
+        "BiosaftyLevelEnum": {
+            "description": "Biosafety levels (BSL) defining containment requirements for biological agents",
+            "enum": [
+                "BSL1",
+                "BSL2",
+                "BSL3",
+                "BSL4"
+            ],
+            "title": "BiosaftyLevelEnum",
             "type": "string"
         },
         "BioticInteractionType": {
@@ -1256,6 +1282,22 @@
             "title": "CommonOrganismTaxaEnum",
             "type": "string"
         },
+        "CommunicationProtocolEnum": {
+            "description": "Communication protocols for laboratory automation integration",
+            "enum": [
+                "GRPC",
+                "REST_API",
+                "SOAP",
+                "OPC_UA",
+                "MODBUS",
+                "CUSTOM_API",
+                "SERIAL",
+                "TCP_IP",
+                "USB"
+            ],
+            "title": "CommunicationProtocolEnum",
+            "type": "string"
+        },
         "CompassDirection": {
             "description": "Cardinal and intercardinal compass directions",
             "enum": [
@@ -1305,6 +1347,17 @@
                 "POLYMER_MATRIX_COMPOSITE"
             ],
             "title": "CompositeTypeEnum",
+            "type": "string"
+        },
+        "CompressionFormat": {
+            "description": "Compression and archive formats commonly used for ML dataset distribution.",
+            "enum": [
+                "ZIP",
+                "TAR",
+                "GZIP",
+                "TAR_GZ"
+            ],
+            "title": "CompressionFormat",
             "type": "string"
         },
         "CompressionType": {
@@ -1359,6 +1412,24 @@
                 "MATRIXDB_SCORE"
             ],
             "title": "ConfidenceScore",
+            "type": "string"
+        },
+        "ContainerTypeEnum": {
+            "description": "Types of laboratory containers and labware",
+            "enum": [
+                "MICROPLATE",
+                "DEEP_WELL_PLATE",
+                "PCR_PLATE",
+                "TUBE_RACK",
+                "MICROTUBE",
+                "SCREW_CAP_TUBE",
+                "SNAP_CAP_TUBE",
+                "RESERVOIR",
+                "PIPETTE_TIP_BOX",
+                "SPIN_COLUMN",
+                "MICROPLATE_WELL"
+            ],
+            "title": "ContainerTypeEnum",
             "type": "string"
         },
         "ContigCollectionType": {
@@ -1840,6 +1911,35 @@
             "title": "DataType",
             "type": "string"
         },
+        "DatasetEncodingFormat": {
+            "description": "Encoding formats (MIME types) commonly used for ML dataset files in Croissant.\nThese specify how data is serialized and stored.",
+            "enum": [
+                "CSV",
+                "JSON",
+                "JSONL",
+                "PARQUET",
+                "PLAIN_TEXT",
+                "JPEG",
+                "PNG",
+                "WAV",
+                "MP4",
+                "ZIP",
+                "TAR"
+            ],
+            "title": "DatasetEncodingFormat",
+            "type": "string"
+        },
+        "DatasetSplitType": {
+            "description": "Standard dataset split types used in machine learning for training,\nvalidation, and testing. These splits are fundamental to ML model\ndevelopment and evaluation workflows.",
+            "enum": [
+                "TRAIN",
+                "VALIDATION",
+                "TEST",
+                "ALL"
+            ],
+            "title": "DatasetSplitType",
+            "type": "string"
+        },
         "DayOfWeek": {
             "description": "Days of the week following ISO 8601 standard (Monday = 1)",
             "enum": [
@@ -1905,6 +2005,20 @@
                 "OXIMATION"
             ],
             "title": "DerivatizationMethod",
+            "type": "string"
+        },
+        "DetectionModeEnum": {
+            "description": "Detection modes for real-time PCR instruments",
+            "enum": [
+                "SYBR_GREEN",
+                "TAQMAN",
+                "MOLECULAR_BEACON",
+                "FRET",
+                "SCORPION",
+                "HYBRIDIZATION_PROBE",
+                "MULTI_CHANNEL"
+            ],
+            "title": "DetectionModeEnum",
             "type": "string"
         },
         "Detector": {
@@ -2344,6 +2458,19 @@
             "title": "EthnicityOMB1997Enum",
             "type": "string"
         },
+        "ExecutionModeEnum": {
+            "description": "Modes of protocol execution",
+            "enum": [
+                "AUTOMATED",
+                "MANUAL",
+                "SEMI_AUTOMATED",
+                "SUPERVISED",
+                "SIMULATION",
+                "DRY_RUN"
+            ],
+            "title": "ExecutionModeEnum",
+            "type": "string"
+        },
         "ExperimentalPreparation": {
             "description": "Sample preparation methods",
             "enum": [
@@ -2392,6 +2519,15 @@
             "title": "ExposureDurationEnum",
             "type": "string"
         },
+        "ExposureFrequencyEnum": {
+            "description": "Temporal pattern of exposure occurrence",
+            "enum": [
+                "INTERMITTENT",
+                "CONTINUOUS"
+            ],
+            "title": "ExposureFrequencyEnum",
+            "type": "string"
+        },
         "ExposureRouteEnum": {
             "description": "Routes by which exposure to environmental agents occurs",
             "enum": [
@@ -2401,6 +2537,17 @@
                 "INJECTION",
                 "TRANSPLACENTAL",
                 "OCULAR",
+                "ABSORPTION",
+                "GASTROINTESTINAL_TRACT",
+                "GAVAGE",
+                "AMBIENT_ENVIRONMENT",
+                "AMBIENT_AQUATIC",
+                "AMBIENT_TERRESTRIAL",
+                "PASSIVE_INHALATION",
+                "ACTIVE_INHALATION",
+                "SUBCUTANEOUS",
+                "INTRAMUSCULAR",
+                "INTRAVASCULAR",
                 "MULTIPLE_ROUTES"
             ],
             "title": "ExposureRouteEnum",
@@ -2424,6 +2571,29 @@
                 "MINING"
             ],
             "title": "ExposureSourceEnum",
+            "type": "string"
+        },
+        "ExposureStressorTypeEnum": {
+            "description": "Types of exposure stressors by their origin or nature",
+            "enum": [
+                "BIOLOGICAL_AGENT",
+                "CHEMICAL_AGENT",
+                "PHYSICAL_AGENT",
+                "PSYCHOSOCIAL_AGENT",
+                "BIOMECHANICAL_AGENT",
+                "ECOLOGICAL_PERTURBATION"
+            ],
+            "title": "ExposureStressorTypeEnum",
+            "type": "string"
+        },
+        "ExposureTransportPathEnum": {
+            "description": "Transport medium through which exposure stressor reaches the recipient",
+            "enum": [
+                "AIR_TRANSPORT_PATH",
+                "WATER_TRANSPORT_PATH",
+                "SOIL_TRANSPORT_PATH"
+            ],
+            "title": "ExposureTransportPathEnum",
             "type": "string"
         },
         "ExtendedEmotionEnum": {
@@ -3658,6 +3828,34 @@
             "title": "InsdcMissingValueEnum",
             "type": "string"
         },
+        "IntegrationFeatureEnum": {
+            "description": "Integration features for laboratory automation systems",
+            "enum": [
+                "BARCODE_TRACKING",
+                "AUTOMATED_DATA_TRANSFER",
+                "CLOUD_STORAGE_INTEGRATION",
+                "SAMPLE_TRACKING",
+                "WORKFLOW_VALIDATION",
+                "ERROR_RECOVERY",
+                "AUDIT_TRAIL",
+                "ELECTRONIC_SIGNATURES"
+            ],
+            "title": "IntegrationFeatureEnum",
+            "type": "string"
+        },
+        "IntegrationSystemEnum": {
+            "description": "Types of systems integrated with laboratory automation platforms",
+            "enum": [
+                "LIMS",
+                "ELN",
+                "MES",
+                "SCADA",
+                "CLOUD_STORAGE",
+                "DATABASE"
+            ],
+            "title": "IntegrationSystemEnum",
+            "type": "string"
+        },
         "IntentClassificationEnum": {
             "description": "Common chatbot/NLU intent categories",
             "enum": [
@@ -3803,6 +4001,44 @@
                 "UNKNOWN_KARYOTYPE"
             ],
             "title": "KaryotypicSexEnum",
+            "type": "string"
+        },
+        "LaboratoryDeviceTypeEnum": {
+            "description": "Types of automated laboratory devices and equipment",
+            "enum": [
+                "LIQUID_HANDLER",
+                "LIQUID_EXTRACTION_ROBOT",
+                "CENTRIFUGE",
+                "MICROCENTRIFUGE",
+                "INCUBATOR",
+                "INCUBATOR_SHAKER",
+                "MICROPLATE_READER",
+                "ELISA_MICROPLATE_READER",
+                "MULTIMODE_MICROPLATE_READER",
+                "MICROPLATE_WASHER",
+                "ELISA_MICROPLATE_WASHER",
+                "MULTICHANNEL_PIPETTE",
+                "ROBOTIC_ARM",
+                "THERMAL_CYCLER",
+                "COLONY_PICKER",
+                "BARCODE_READER",
+                "PLATE_HANDLER",
+                "DISPENSER"
+            ],
+            "title": "LaboratoryDeviceTypeEnum",
+            "type": "string"
+        },
+        "LabwareStandardEnum": {
+            "description": "Standardization specifications for laboratory labware",
+            "enum": [
+                "ANSI_SLAS_1_2004",
+                "ANSI_SLAS_2_2004",
+                "ANSI_SLAS_3_2004",
+                "ANSI_SLAS_4_2004",
+                "ANSI_SLAS_6_2012",
+                "SBS_FOOTPRINT"
+            ],
+            "title": "LabwareStandardEnum",
             "type": "string"
         },
         "LanguageCodeISO6391Enum": {
@@ -4007,6 +4243,26 @@
             "title": "LipidCategory",
             "type": "string"
         },
+        "LiquidHandlingOperationEnum": {
+            "description": "Operations for automated liquid handling in laboratory automation",
+            "enum": [
+                "PICK_UP_TIPS",
+                "ASPIRATE",
+                "DISPENSE",
+                "RETURN_TIPS",
+                "DROP_TIPS",
+                "TRANSFER",
+                "PIPETTING",
+                "MIXING",
+                "ALIQUOTING",
+                "SERIAL_DILUTION",
+                "PLATE_STAMPING",
+                "ACOUSTIC_TRANSFER",
+                "MOUTH_PIPETTING"
+            ],
+            "title": "LiquidHandlingOperationEnum",
+            "type": "string"
+        },
         "LogisticsOperationEnum": {
             "description": "Types of logistics operations",
             "enum": [
@@ -4022,6 +4278,80 @@
                 "FREIGHT_FORWARDING"
             ],
             "title": "LogisticsOperationEnum",
+            "type": "string"
+        },
+        "MLDataType": {
+            "description": "Data types used in Croissant ML for describing field types in datasets.\nBased on XSD (XML Schema Definition) and schema.org vocabulary.",
+            "enum": [
+                "TEXT",
+                "INTEGER",
+                "FLOAT",
+                "BOOLEAN",
+                "DATE",
+                "TIME",
+                "DATETIME",
+                "URL"
+            ],
+            "title": "MLDataType",
+            "type": "string"
+        },
+        "MLFieldRole": {
+            "description": "Semantic roles that fields play in ML datasets. These roles help understand\nthe purpose and usage of different data columns or attributes.",
+            "enum": [
+                "FEATURE",
+                "LABEL",
+                "METADATA",
+                "IDENTIFIER"
+            ],
+            "title": "MLFieldRole",
+            "type": "string"
+        },
+        "MLLicenseType": {
+            "description": "Common open source and Creative Commons licenses used for ML datasets.\nThese licenses specify terms of use, redistribution, and modification.",
+            "enum": [
+                "CC_BY_4_0",
+                "CC_BY_SA_4_0",
+                "CC0_1_0",
+                "MIT",
+                "APACHE_2_0",
+                "BSD_3_CLAUSE",
+                "GPL_3_0"
+            ],
+            "title": "MLLicenseType",
+            "type": "string"
+        },
+        "MLMediaType": {
+            "description": "Media types (MIME types) for different modalities of ML data including\nimages, audio, video, and text.",
+            "enum": [
+                "IMAGE_JPEG",
+                "IMAGE_PNG",
+                "IMAGE_GIF",
+                "IMAGE_TIFF",
+                "AUDIO_WAV",
+                "AUDIO_MP3",
+                "AUDIO_FLAC",
+                "VIDEO_MP4",
+                "VIDEO_AVI",
+                "VIDEO_WEBM",
+                "TEXT_PLAIN",
+                "TEXT_HTML"
+            ],
+            "title": "MLMediaType",
+            "type": "string"
+        },
+        "MLModalityType": {
+            "description": "High-level data modalities used in machine learning. These represent\nthe fundamental types of input data that ML models process.",
+            "enum": [
+                "TEXT",
+                "IMAGE",
+                "AUDIO",
+                "VIDEO",
+                "MULTIMODAL",
+                "TABULAR",
+                "TIME_SERIES",
+                "GRAPH"
+            ],
+            "title": "MLModalityType",
             "type": "string"
         },
         "MRIContrastTypeEnum": {
@@ -4413,6 +4743,20 @@
             "title": "MetazoanAnatomicalStructure",
             "type": "string"
         },
+        "MicroplateFormatEnum": {
+            "description": "Standard microplate well configurations following ANSI/SLAS standards",
+            "enum": [
+                "WELL_6",
+                "WELL_12",
+                "WELL_24",
+                "WELL_48",
+                "WELL_96",
+                "WELL_384",
+                "WELL_1536"
+            ],
+            "title": "MicroplateFormatEnum",
+            "type": "string"
+        },
         "MicroscopyMethodEnum": {
             "description": "Microscopy techniques for material characterization",
             "enum": [
@@ -4714,6 +5058,25 @@
             "title": "NAICSSectorEnum",
             "type": "string"
         },
+        "NIHInstituteCenterEnum": {
+            "description": "National Institutes of Health (NIH) Institutes and Centers.\n\nNIH comprises 27 Institutes and Centers, each with a specific research agenda focused on particular\ndiseases or body systems. These are the major NIH ICs that fund extramural research.",
+            "enum": [
+                "NCI",
+                "NHLBI",
+                "NIAID",
+                "NIMH",
+                "NINDS",
+                "NIDDK",
+                "NHGRI",
+                "NIGMS",
+                "NIEHS",
+                "NEI",
+                "NIA",
+                "NLM"
+            ],
+            "title": "NIHInstituteCenterEnum",
+            "type": "string"
+        },
         "NRCWasteClassEnum": {
             "description": "US NRC 10 CFR 61 low-level radioactive waste classification",
             "enum": [
@@ -4867,6 +5230,18 @@
                 "EIGHT_OXO_G"
             ],
             "title": "NucleotideModificationEnum",
+            "type": "string"
+        },
+        "OWLProfileEnum": {
+            "description": "OWL 2 profiles that provide different tradeoffs between expressiveness and computational complexity",
+            "enum": [
+                "OWL_2_EL",
+                "OWL_2_QL",
+                "OWL_2_RL",
+                "OWL_2_DL",
+                "OWL_2_FULL"
+            ],
+            "title": "OWLProfileEnum",
             "type": "string"
         },
         "OmbEthnicityCategory": {
@@ -5060,6 +5435,39 @@
                 "FACULTATIVE"
             ],
             "title": "OxygenationStrategyEnum",
+            "type": "string"
+        },
+        "PCROperationTypeEnum": {
+            "description": "Types of PCR operations and techniques",
+            "enum": [
+                "STANDARD_PCR",
+                "QUANTITATIVE_PCR",
+                "REVERSE_TRANSCRIPTION_PCR",
+                "RT_QPCR",
+                "MULTIPLEX_PCR",
+                "NESTED_PCR",
+                "TOUCHDOWN_PCR",
+                "HOT_START_PCR",
+                "LONG_RANGE_PCR",
+                "COLONY_PCR",
+                "HIGH_FIDELITY_PCR",
+                "DIGITAL_PCR"
+            ],
+            "title": "PCROperationTypeEnum",
+            "type": "string"
+        },
+        "PCRPlateTypeEnum": {
+            "description": "Types of plates used for PCR applications",
+            "enum": [
+                "PCR_96_WELL",
+                "PCR_384_WELL",
+                "PCR_TUBE_STRIP",
+                "INDIVIDUAL_PCR_TUBE",
+                "LOW_PROFILE_PLATE",
+                "SKIRTED_PLATE",
+                "SEMI_SKIRTED_PLATE"
+            ],
+            "title": "PCRPlateTypeEnum",
             "type": "string"
         },
         "ParticipantIdentificationMethod": {
@@ -5309,6 +5717,27 @@
             "title": "PlantSexEnum",
             "type": "string"
         },
+        "PlateCoatingEnum": {
+            "description": "Surface treatment of microplates",
+            "enum": [
+                "COATED",
+                "UNCOATED",
+                "TISSUE_CULTURE_TREATED",
+                "PROTEIN_BINDING"
+            ],
+            "title": "PlateCoatingEnum",
+            "type": "string"
+        },
+        "PlateMaterialEnum": {
+            "description": "Material composition of laboratory microplates",
+            "enum": [
+                "POLYSTYRENE",
+                "POLYPROPYLENE",
+                "GLASS"
+            ],
+            "title": "PlateMaterialEnum",
+            "type": "string"
+        },
         "PolymerTypeEnum": {
             "description": "Types of polymer materials",
             "enum": [
@@ -5544,6 +5973,21 @@
                 "PROTEIN_UNCERTAIN"
             ],
             "title": "ProteinEvidenceForExistence",
+            "type": "string"
+        },
+        "ProtocolStateEnum": {
+            "description": "Execution states of laboratory protocols",
+            "enum": [
+                "PENDING",
+                "RUNNING",
+                "PAUSED",
+                "COMPLETED",
+                "FAILED",
+                "ABORTED",
+                "VALIDATING",
+                "WAITING_FOR_RESOURCE"
+            ],
+            "title": "ProtocolStateEnum",
             "type": "string"
         },
         "PublicationType": {
@@ -6177,6 +6621,17 @@
             "title": "ResearchRole",
             "type": "string"
         },
+        "RoboticArmTypeEnum": {
+            "description": "Types of robotic arms used in laboratory automation systems",
+            "enum": [
+                "FLEXIBLE_CHANNEL_ARM",
+                "MULTI_CHANNEL_ARM",
+                "ROBOTIC_GRIPPER_ARM",
+                "SINGLE_PROBE_ARM"
+            ],
+            "title": "RoboticArmTypeEnum",
+            "type": "string"
+        },
         "SafetyColorEnum": {
             "description": "ANSI/ISO standard safety colors",
             "enum": [
@@ -6210,6 +6665,26 @@
             "title": "SampleProcessingEnum",
             "type": "string"
         },
+        "SampleProcessingOperationEnum": {
+            "description": "General sample processing operations in automated laboratories",
+            "enum": [
+                "CENTRIFUGATION",
+                "INCUBATION",
+                "THERMAL_CYCLING",
+                "WASHING",
+                "DETECTION",
+                "MEASUREMENT",
+                "SEPARATION",
+                "EXTRACTION",
+                "HEATING",
+                "COOLING",
+                "SHAKING",
+                "PLATE_MOVEMENT",
+                "BARCODE_READING"
+            ],
+            "title": "SampleProcessingOperationEnum",
+            "type": "string"
+        },
         "SampleType": {
             "description": "Types of biological samples used in structural biology",
             "enum": [
@@ -6223,6 +6698,19 @@
                 "TISSUE"
             ],
             "title": "SampleType",
+            "type": "string"
+        },
+        "SchedulerTypeEnum": {
+            "description": "Types of scheduling algorithms for laboratory automation",
+            "enum": [
+                "STATIC_SCHEDULER",
+                "DYNAMIC_SCHEDULER",
+                "PRIORITY_BASED",
+                "FIFO",
+                "RESOURCE_AWARE",
+                "DEADLINE_DRIVEN"
+            ],
+            "title": "SchedulerTypeEnum",
             "type": "string"
         },
         "Season": {
@@ -6494,6 +6982,17 @@
             "title": "SkinToneEnum",
             "type": "string"
         },
+        "SmokingStatusEnum": {
+            "description": "Tobacco and nicotine consumption status",
+            "enum": [
+                "CURRENT_SMOKER",
+                "FORMER_SMOKER",
+                "NEVER_SMOKER",
+                "NON_SMOKER"
+            ],
+            "title": "SmokingStatusEnum",
+            "type": "string"
+        },
         "SoftwareMaturityLevel": {
             "description": "General software maturity assessment levels",
             "enum": [
@@ -6629,6 +7128,17 @@
             "title": "StandardsMaturityLevel",
             "type": "string"
         },
+        "StandardsOrganizationEnum": {
+            "description": "Major International Standards Development Organizations.\n\nThese organizations develop technical standards, specifications, and guidelines used globally\nacross various industries including information technology, healthcare, and engineering.",
+            "enum": [
+                "ISO",
+                "W3C",
+                "IEEE",
+                "HL7"
+            ],
+            "title": "StandardsOrganizationEnum",
+            "type": "string"
+        },
         "StateOfMatterEnum": {
             "description": "The physical state or phase of matter",
             "enum": [
@@ -6728,6 +7238,22 @@
                 "NOT_APPLICABLE"
             ],
             "title": "StudyPhaseEnum",
+            "type": "string"
+        },
+        "StudyPopulationEnum": {
+            "description": "Specific population groups commonly studied in exposure research",
+            "enum": [
+                "CHILDREN",
+                "FETUSES",
+                "INFANTS_OR_NEWBORNS",
+                "PREGNANT_FEMALES",
+                "MOTHERS",
+                "MILITARY_PERSONNEL",
+                "VETERANS",
+                "WORKERS",
+                "CONTROLS"
+            ],
+            "title": "StudyPopulationEnum",
             "type": "string"
         },
         "SubatomicParticleEnum": {
@@ -6923,6 +7449,35 @@
                 "THERMAL_INSULATOR"
             ],
             "title": "ThermalConductivityEnum",
+            "type": "string"
+        },
+        "ThermalCyclerTypeEnum": {
+            "description": "Types of thermal cycling instruments",
+            "enum": [
+                "STANDARD_THERMAL_CYCLER",
+                "REAL_TIME_PCR",
+                "DIGITAL_PCR",
+                "GRADIENT_THERMAL_CYCLER",
+                "FAST_THERMAL_CYCLER",
+                "AUTOMATED_THERMAL_CYCLER",
+                "IN_SITU_THERMAL_CYCLER"
+            ],
+            "title": "ThermalCyclerTypeEnum",
+            "type": "string"
+        },
+        "ThermalCyclingStepEnum": {
+            "description": "Steps in thermal cycling protocols",
+            "enum": [
+                "INITIAL_DENATURATION",
+                "DENATURATION",
+                "ANNEALING",
+                "EXTENSION",
+                "FINAL_EXTENSION",
+                "HOLD",
+                "MELT_CURVE",
+                "GRADIENT"
+            ],
+            "title": "ThermalCyclingStepEnum",
             "type": "string"
         },
         "ThermodynamicParameterEnum": {
@@ -7169,6 +7724,59 @@
                 "POLYNESIA"
             ],
             "title": "UNRegionEnum",
+            "type": "string"
+        },
+        "UNSpecializedAgencyEnum": {
+            "description": "United Nations Specialized Agencies.\n\nUN specialized agencies are autonomous international organizations that coordinate their work\nwith the UN through negotiated agreements. They address international issues in their respective fields.",
+            "enum": [
+                "WHO",
+                "UNESCO",
+                "IAEA",
+                "WMO",
+                "UNEP"
+            ],
+            "title": "UNSpecializedAgencyEnum",
+            "type": "string"
+        },
+        "USDOENationalLaboratoryEnum": {
+            "description": "United States Department of Energy National Laboratories.\n\nThe DOE operates 17 National Laboratories that serve as powerhouses of science and technology,\ntackling critical scientific challenges and conducting cutting-edge research across multiple disciplines.\n\nThese laboratories are managed by contractors and stewarded by various DOE program offices,\nwith the Office of Science stewarding 10 of the 17 laboratories.",
+            "enum": [
+                "AMES_LABORATORY",
+                "ARGONNE_NATIONAL_LABORATORY",
+                "BROOKHAVEN_NATIONAL_LABORATORY",
+                "FERMI_NATIONAL_ACCELERATOR_LABORATORY",
+                "IDAHO_NATIONAL_LABORATORY",
+                "LAWRENCE_BERKELEY_NATIONAL_LABORATORY",
+                "LAWRENCE_LIVERMORE_NATIONAL_LABORATORY",
+                "LOS_ALAMOS_NATIONAL_LABORATORY",
+                "NATIONAL_ENERGY_TECHNOLOGY_LABORATORY",
+                "NATIONAL_RENEWABLE_ENERGY_LABORATORY",
+                "OAK_RIDGE_NATIONAL_LABORATORY",
+                "PACIFIC_NORTHWEST_NATIONAL_LABORATORY",
+                "PRINCETON_PLASMA_PHYSICS_LABORATORY",
+                "SANDIA_NATIONAL_LABORATORIES",
+                "SAVANNAH_RIVER_NATIONAL_LABORATORY",
+                "SLAC_NATIONAL_ACCELERATOR_LABORATORY",
+                "THOMAS_JEFFERSON_NATIONAL_ACCELERATOR_FACILITY"
+            ],
+            "title": "USDOENationalLaboratoryEnum",
+            "type": "string"
+        },
+        "USFederalFundingAgencyEnum": {
+            "description": "Major United States Federal Research Funding Agencies.\n\nThese agencies provide funding for basic and applied research across various scientific disciplines,\nsupporting universities, national laboratories, and other research institutions.",
+            "enum": [
+                "NIH",
+                "NSF",
+                "DOE",
+                "NASA",
+                "EPA",
+                "NOAA",
+                "NIST",
+                "USDA_ARS",
+                "DOD",
+                "USGS"
+            ],
+            "title": "USFederalFundingAgencyEnum",
             "type": "string"
         },
         "USStateCodeEnum": {
@@ -7825,6 +8433,31 @@
                 "TELECOMMUTE"
             ],
             "title": "WorkArrangementEnum",
+            "type": "string"
+        },
+        "WorkflowErrorHandlingEnum": {
+            "description": "Error handling strategies in laboratory automation workflows",
+            "enum": [
+                "ABORT_ON_ERROR",
+                "RETRY",
+                "SKIP_AND_CONTINUE",
+                "NOTIFY_AND_PAUSE",
+                "ROLLBACK",
+                "FAILOVER"
+            ],
+            "title": "WorkflowErrorHandlingEnum",
+            "type": "string"
+        },
+        "WorkflowOrchestrationTypeEnum": {
+            "description": "Types of workflow orchestration in laboratory automation systems",
+            "enum": [
+                "STATIC_ORCHESTRATION",
+                "DYNAMIC_ORCHESTRATION",
+                "HYBRID_ORCHESTRATION",
+                "EVENT_DRIVEN",
+                "PARALLEL_PROCESSING"
+            ],
+            "title": "WorkflowOrchestrationTypeEnum",
             "type": "string"
         },
         "WorkflowType": {

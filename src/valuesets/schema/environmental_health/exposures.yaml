@@ -37,6 +37,21 @@ slots:
   exposure_duration:
     description: Duration categories for environmental exposures
     range: ExposureDurationEnum
+  smoking_status:
+    description: Tobacco and nicotine consumption status
+    range: SmokingStatusEnum
+  exposure_stressor_type:
+    description: Types of exposure stressors by their origin
+    range: ExposureStressorTypeEnum
+  exposure_transport_path:
+    description: Transport medium through which exposure occurs
+    range: ExposureTransportPathEnum
+  exposure_frequency:
+    description: Temporal pattern of exposure occurrence
+    range: ExposureFrequencyEnum
+  study_population:
+    description: Specific population groups in exposure studies
+    range: StudyPopulationEnum
 enums:
   AirPollutantEnum:
     description: Common air pollutants and air quality indicators
@@ -195,6 +210,49 @@ enums:
         description: Exposure through the eyes
         meaning: NCIT:C38287
         title: Ophthalmic Route of Administration
+      ABSORPTION:
+        description: Exposure through absorption (dermal or other surface)
+        meaning: ExO:0000058
+      GASTROINTESTINAL_TRACT:
+        description: Exposure through the gastrointestinal tract
+        meaning: ExO:0000165
+        title: gastrointestinal tract route
+      GAVAGE:
+        description: Direct administration into the stomach
+        meaning: ExO:0000166
+        title: gavage route
+      AMBIENT_ENVIRONMENT:
+        description: Exposure through contact with stressors in the ambient surroundings
+        meaning: ExO:0000160
+        title: ambient environment route
+      AMBIENT_AQUATIC:
+        description: Exposure through ambient aquatic environment
+        meaning: ExO:0000161
+        title: ambient acquatic environment route
+      AMBIENT_TERRESTRIAL:
+        description: Exposure through ambient terrestrial environment
+        meaning: ExO:0000162
+        title: ambient terrestrial environment route
+      PASSIVE_INHALATION:
+        description: Passive inhalation of ambient environment stressors
+        meaning: ExO:0000163
+        title: passive inhalation of the ambient environment route
+      ACTIVE_INHALATION:
+        description: Purposeful breathing or inhaling of stressor
+        meaning: ExO:0000164
+        title: active inhalation route
+      SUBCUTANEOUS:
+        description: Exposure through subcutaneous tissue
+        related_mappings:
+          - ExO:0000061
+      INTRAMUSCULAR:
+        description: Exposure through muscle tissue
+        related_mappings:
+          - ExO:0000062
+      INTRAVASCULAR:
+        description: Exposure through blood vessels
+        related_mappings:
+          - ExO:0000063
       MULTIPLE_ROUTES:
         description: Exposure through multiple pathways
   ExposureSourceEnum:
@@ -204,10 +262,12 @@ enums:
         description: Outdoor air pollution
         related_mappings:
           - ENVO:01000676
+          - ExO:0000020
       INDOOR_AIR:
         description: Indoor air pollution
         related_mappings:
           - ENVO:01000676
+          - ExO:0000019
       DRINKING_WATER:
         description: Contaminated drinking water
         related_mappings:
@@ -225,6 +285,8 @@ enums:
         description: Workplace exposure
         meaning: ENVO:03501332
         title: occupational environment
+        related_mappings:
+          - ExO:0000093
       CONSUMER_PRODUCTS:
         description: Household and consumer products
         related_mappings:
@@ -360,6 +422,94 @@ enums:
         description: Exposure after birth
       DEVELOPMENTAL:
         description: Exposure during critical developmental periods
+  SmokingStatusEnum:
+    description: Tobacco and nicotine consumption status
+    permissible_values:
+      CURRENT_SMOKER:
+        description: Person who is currently smoking tobacco
+        meaning: ExO:0000115
+      FORMER_SMOKER:
+        description: Person who has smoked at least 100 cigarettes in their life but is not currently smoking
+        meaning: ExO:0000116
+      NEVER_SMOKER:
+        description: Person who has smoked less than 100 cigarettes in their life
+        meaning: ExO:0000117
+      NON_SMOKER:
+        description: Person who is not currently smoking
+        meaning: ExO:0000118
+  ExposureStressorTypeEnum:
+    description: Types of exposure stressors by their origin or nature
+    permissible_values:
+      BIOLOGICAL_AGENT:
+        description: Agent of biological origin (e.g., bacteria, viruses, allergens)
+        meaning: ExO:0000005
+      CHEMICAL_AGENT:
+        description: Agent of chemical origin (e.g., toxins, pollutants)
+        meaning: ExO:0000006
+      PHYSICAL_AGENT:
+        description: Physical source of energy that may cause injury (e.g., radiation, noise, temperature extremes)
+        meaning: ExO:0000008
+      PSYCHOSOCIAL_AGENT:
+        description: Agent that interferes with psychological development or social interaction
+        meaning: ExO:0000009
+      BIOMECHANICAL_AGENT:
+        description: Mechanical agent applied to biological systems (e.g., repetitive motion, physical strain)
+        meaning: ExO:0000011
+      ECOLOGICAL_PERTURBATION:
+        description: Disruption to ecological systems (e.g., habitat degradation, climate change)
+        meaning: ExO:0000007
+  ExposureTransportPathEnum:
+    description: Transport medium through which exposure stressor reaches the recipient
+    permissible_values:
+      AIR_TRANSPORT_PATH:
+        description: Transport path allowing stressor to interact with recipient via air
+        meaning: ExO:0000010
+      WATER_TRANSPORT_PATH:
+        description: Transport path involving interaction with stressor via water
+        meaning: ExO:0000028
+      SOIL_TRANSPORT_PATH:
+        description: Transport path involving interaction with stressor via soil
+        meaning: ExO:0000029
+  ExposureFrequencyEnum:
+    description: Temporal pattern of exposure occurrence
+    permissible_values:
+      INTERMITTENT:
+        description: Exposure occurring at irregular intervals or periodically
+        meaning: ExO:0000052
+      CONTINUOUS:
+        description: Exposure occurring without interruption
+        meaning: ExO:0000053
+  StudyPopulationEnum:
+    description: Specific population groups commonly studied in exposure research
+    permissible_values:
+      CHILDREN:
+        description: Human children (pediatric population)
+        meaning: ExO:0000119
+      FETUSES:
+        description: Human fetuses (prenatal population)
+        meaning: ExO:0000122
+      INFANTS_OR_NEWBORNS:
+        description: Human infants and newborns
+        meaning: ExO:0000123
+      PREGNANT_FEMALES:
+        description: Human females who are pregnant
+        meaning: ExO:0000126
+      MOTHERS:
+        description: Human mothers
+        meaning: ExO:0000125
+      MILITARY_PERSONNEL:
+        description: Active military personnel
+        meaning: ExO:0000124
+      VETERANS:
+        description: Military veterans
+        meaning: ExO:0000130
+      WORKERS:
+        description: Occupational workers
+        meaning: ExO:0000131
+      CONTROLS:
+        description: Control group participants without the disease or phenotype of interest
+        meaning: ExO:0000121
+        title: controls for disease or phenotype
 license: MIT
 see_also:
   - https://linkml.github.io/valuesets

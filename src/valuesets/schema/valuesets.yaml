@@ -18,6 +18,7 @@ imports:
 - bio/genome_features
 - bio/bio_entities
 - bio/structural_biology
+- bio/biosafety
 - bio/insdc_missing_values
 - bio/insdc_geographic_locations
 - bio/viral_genome_types
@@ -27,6 +28,7 @@ imports:
 - bio/developmental_stages
 - time/temporal
 - academic/research
+- academic/organizations
 - energy/energy
 - energy/fossil_fuels
 - energy/nuclear/reactor_types
@@ -83,6 +85,8 @@ imports:
 - units/measurements
 - computing/file_formats
 - computing/maturity_levels
+- computing/ontologies
+- computing/croissant_ml
 - business/organizational_structures
 - business/industry_classifications
 - business/management_operations
@@ -90,6 +94,12 @@ imports:
 - business/supply_chain
 - business/human_resources
 - analytical_chemistry/mass_spectrometry
+- lab_automation/devices
+- lab_automation/operations
+- lab_automation/labware
+- lab_automation/protocols
+- lab_automation/standards
+- lab_automation/thermal_cycling
 prefixes:
   valuesets: https://w3id.org/valuesets/
 default_prefix: valuesets

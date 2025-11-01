@@ -14,6 +14,7 @@ prefixes:
   PATO: http://purl.obolibrary.org/obo/PATO_
   SIO: http://semanticscience.org/resource/SIO_
   HP: http://purl.obolibrary.org/obo/HP_
+  ExO: http://purl.obolibrary.org/obo/ExO_
 default_prefix: valuesets
 slots:
   race_omb1997:
@@ -49,6 +50,9 @@ enums:
         meaning: NCIT:C41259
         annotations:
           omb_code: 1002-5
+        related_mappings:
+        - ExO:0000134
+        - ExO:0000133
       ASIAN:
         description: A person having origins in any of the original peoples of the Far East, Southeast Asia, or the Indian
           subcontinent
@@ -56,21 +60,38 @@ enums:
         annotations:
           omb_code: 2028-9
           includes: Cambodia, China, India, Japan, Korea, Malaysia, Pakistan, Philippine Islands, Thailand, Vietnam
+        related_mappings:
+        - ExO:0000135
+        - ExO:0000136
+        - ExO:0000139
+        - ExO:0000143
+        - ExO:0000147
+        - ExO:0000148
+        - ExO:0000157
       BLACK_OR_AFRICAN_AMERICAN:
         description: A person having origins in any of the black racial groups of Africa
         meaning: NCIT:C16352
         annotations:
           omb_code: 2054-5
+        related_mappings:
+        - ExO:0000132
       NATIVE_HAWAIIAN_OR_OTHER_PACIFIC_ISLANDER:
         description: A person having origins in any of the original peoples of Hawaii, Guam, Samoa, or other Pacific Islands
         meaning: NCIT:C41219
         annotations:
           omb_code: 2076-8
+        related_mappings:
+        - ExO:0000152
+        - ExO:0000154
+        - ExO:0000144
+        - ExO:0000156
       WHITE:
         description: A person having origins in any of the original peoples of Europe, the Middle East, or North Africa
         meaning: NCIT:C41261
         annotations:
           omb_code: 2106-3
+        related_mappings:
+        - ExO:0000158
       MORE_THAN_ONE_RACE:
         description: Person identifies with more than one race category
         meaning: NCIT:C67109
@@ -92,6 +113,17 @@ enums:
         meaning: NCIT:C17459
         annotations:
           omb_code: 2135-2
+        related_mappings:
+        - ExO:0000145
+        - ExO:0000149
+        - ExO:0000137
+        - ExO:0000138
+        - ExO:0000140
+        - ExO:0000141
+        - ExO:0000142
+        - ExO:0000150
+        - ExO:0000151
+        - ExO:0000155
       NOT_HISPANIC_OR_LATINO:
         description: A person not of Hispanic or Latino origin
         meaning: NCIT:C41222
@@ -114,12 +146,16 @@ enums:
         exact_mappings:
         - NCIT:C20197
         - GSSO:000371
+        related_mappings:
+        - ExO:0000112
       FEMALE:
         description: Female sex assigned at birth
         meaning: PATO:0000383
         exact_mappings:
         - NCIT:C16576
         - GSSO:000369
+        related_mappings:
+        - ExO:0000111
       INTERSEX:
         description: Born with reproductive or sexual anatomy that doesn't fit typical definitions of male or female
         meaning: NCIT:C45908
