@@ -8,9 +8,9 @@ default_prefix: valuesets
 slots:
   biosafety_level:
     description: The biosafety level required for handling biological agents based on potential risk
-    range: BiosaftyLevelEnum
+    range: BiosafetySafetyLevelEnum
 enums:
-  BiosaftyLevelEnum:
+  BiosafetySafetyLevelEnum:
     description: Biosafety levels (BSL) defining containment requirements for biological agents
     permissible_values:
       BSL1:
