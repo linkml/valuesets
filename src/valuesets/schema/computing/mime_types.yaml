@@ -10,7 +10,6 @@ prefixes:
   cvs: https://w3id.org/linkml/valuesets/
   iana: https://www.iana.org/assignments/media-types/
   valuesets: https://w3id.org/valuesets/
-  gist: https://ontologies.semanticarts.com/ontology/gistMediaTypes#
 default_prefix: valuesets
 slots:
   mime:
