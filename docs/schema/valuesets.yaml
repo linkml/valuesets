@@ -20,6 +20,7 @@ imports:
 - bio/genome_features
 - bio/bio_entities
 - bio/structural_biology
+- bio/biosafety
 - bio/insdc_missing_values
 - bio/insdc_geographic_locations
 - bio/viral_genome_types
@@ -29,6 +30,7 @@ imports:
 - bio/developmental_stages
 - time/temporal
 - academic/research
+- academic/organizations
 - energy/energy
 - energy/fossil_fuels
 - energy/nuclear/reactor_types
@@ -85,6 +87,8 @@ imports:
 - units/measurements
 - computing/file_formats
 - computing/maturity_levels
+- computing/ontologies
+- computing/croissant_ml
 - business/organizational_structures
 - business/industry_classifications
 - business/management_operations
@@ -92,6 +96,12 @@ imports:
 - business/supply_chain
 - business/human_resources
 - analytical_chemistry/mass_spectrometry
+- lab_automation/devices
+- lab_automation/operations
+- lab_automation/labware
+- lab_automation/protocols
+- lab_automation/standards
+- lab_automation/thermal_cycling
 - linkml:types
 - core
 - core
@@ -3710,6 +3720,45 @@ enums:
       CANCELLED:
         text: CANCELLED
         description: Processing cancelled by user
+  BiosafetyLevelEnum:
+    name: BiosafetyLevelEnum
+    definition_uri: https://w3id.org/valuesets/BiosafetyLevelEnum
+    description: Biosafety levels (BSL) defining containment requirements for biological
+      agents
+    from_schema: https://w3id.org/linkml/valuesets/bio/biosafety
+    permissible_values:
+      BSL1:
+        text: BSL1
+        description: Suitable for well-characterized agents not known to consistently
+          cause disease in healthy adults
+        meaning: SNOMED:409600007
+        title: biosafety level 1
+        exact_mappings:
+        - METPO:1001102
+      BSL2:
+        text: BSL2
+        description: Suitable for agents that pose moderate hazards to personnel and
+          the environment
+        meaning: SNOMED:409603009
+        title: biosafety level 2
+        exact_mappings:
+        - METPO:1001103
+      BSL3:
+        text: BSL3
+        description: Suitable for indigenous or exotic agents that may cause serious
+          or potentially lethal disease through inhalation
+        meaning: SNOMED:409604003
+        title: biosafety level 3
+        exact_mappings:
+        - METPO:1001104
+      BSL4:
+        text: BSL4
+        description: Suitable for dangerous and exotic agents that pose high risk
+          of life-threatening disease
+        meaning: SNOMED:409605002
+        title: biosafety level 4
+        exact_mappings:
+        - METPO:1001105
   InsdcMissingValueEnum:
     name: InsdcMissingValueEnum
     definition_uri: https://w3id.org/valuesets/InsdcMissingValueEnum
@@ -7608,6 +7657,923 @@ enums:
       CELL:
         text: CELL
         description: Cell Press style
+  USDOENationalLaboratoryEnum:
+    name: USDOENationalLaboratoryEnum
+    definition_uri: https://w3id.org/valuesets/USDOENationalLaboratoryEnum
+    description: 'United States Department of Energy National Laboratories.
+
+
+      The DOE operates 17 National Laboratories that serve as powerhouses of science
+      and technology,
+
+      tackling critical scientific challenges and conducting cutting-edge research
+      across multiple disciplines.
+
+
+      These laboratories are managed by contractors and stewarded by various DOE program
+      offices,
+
+      with the Office of Science stewarding 10 of the 17 laboratories.
+
+      '
+    comments:
+    - All organization names mapped to ROR (Research Organization Registry) identifiers
+    - See https://www.energy.gov/national-laboratories for official information
+    from_schema: https://w3id.org/linkml/valuesets/academic/organizations
+    permissible_values:
+      AMES_LABORATORY:
+        text: AMES_LABORATORY
+        description: National laboratory focused on materials science and chemistry
+          research
+        meaning: ROR:041m9xr71
+        annotations:
+          location:
+            tag: location
+            value: Ames, Iowa
+          established:
+            tag: established
+            value: 1947
+          stewarding_office:
+            tag: stewarding_office
+            value: Office of Science
+          website:
+            tag: website
+            value: https://www.ameslab.gov/
+        title: Ames National Laboratory
+      ARGONNE_NATIONAL_LABORATORY:
+        text: ARGONNE_NATIONAL_LABORATORY
+        description: Multidisciplinary science and engineering research center
+        meaning: ROR:05gvnxz63
+        annotations:
+          location:
+            tag: location
+            value: Lemont, Illinois
+          established:
+            tag: established
+            value: 1946
+          stewarding_office:
+            tag: stewarding_office
+            value: Office of Science
+          website:
+            tag: website
+            value: https://www.anl.gov/
+        title: Argonne National Laboratory
+      BROOKHAVEN_NATIONAL_LABORATORY:
+        text: BROOKHAVEN_NATIONAL_LABORATORY
+        description: Research center for nuclear and high-energy physics
+        meaning: ROR:02ex6cf31
+        annotations:
+          location:
+            tag: location
+            value: Upton, New York
+          established:
+            tag: established
+            value: 1947
+          stewarding_office:
+            tag: stewarding_office
+            value: Office of Science
+          website:
+            tag: website
+            value: https://www.bnl.gov/
+        title: Brookhaven National Laboratory
+      FERMI_NATIONAL_ACCELERATOR_LABORATORY:
+        text: FERMI_NATIONAL_ACCELERATOR_LABORATORY
+        description: Particle physics and accelerator research laboratory
+        meaning: ROR:020hgte69
+        annotations:
+          location:
+            tag: location
+            value: Batavia, Illinois
+          established:
+            tag: established
+            value: 1967
+          stewarding_office:
+            tag: stewarding_office
+            value: Office of Science
+          website:
+            tag: website
+            value: https://www.fnal.gov/
+        title: Fermi National Accelerator Laboratory
+        aliases:
+        - Fermilab
+      IDAHO_NATIONAL_LABORATORY:
+        text: IDAHO_NATIONAL_LABORATORY
+        description: Nuclear energy research and national security laboratory
+        meaning: ROR:00ty2a548
+        annotations:
+          location:
+            tag: location
+            value: Idaho Falls, Idaho
+          established:
+            tag: established
+            value: 1949
+          stewarding_office:
+            tag: stewarding_office
+            value: Office of Nuclear Energy
+          website:
+            tag: website
+            value: https://inl.gov/
+        title: Idaho National Laboratory
+      LAWRENCE_BERKELEY_NATIONAL_LABORATORY:
+        text: LAWRENCE_BERKELEY_NATIONAL_LABORATORY
+        description: Multidisciplinary research laboratory
+        meaning: ROR:02jbv0t02
+        annotations:
+          location:
+            tag: location
+            value: Berkeley, California
+          established:
+            tag: established
+            value: 1931
+          stewarding_office:
+            tag: stewarding_office
+            value: Office of Science
+          website:
+            tag: website
+            value: https://www.lbl.gov/
+        title: Lawrence Berkeley National Laboratory
+        aliases:
+        - Berkeley Lab
+        - LBNL
+      LAWRENCE_LIVERMORE_NATIONAL_LABORATORY:
+        text: LAWRENCE_LIVERMORE_NATIONAL_LABORATORY
+        description: National security laboratory focused on nuclear weapons and advanced
+          technology
+        meaning: ROR:041nk4h53
+        annotations:
+          location:
+            tag: location
+            value: Livermore, California
+          established:
+            tag: established
+            value: 1952
+          stewarding_office:
+            tag: stewarding_office
+            value: National Nuclear Security Administration
+          website:
+            tag: website
+            value: https://www.llnl.gov/
+        title: Lawrence Livermore National Laboratory
+        aliases:
+        - LLNL
+      LOS_ALAMOS_NATIONAL_LABORATORY:
+        text: LOS_ALAMOS_NATIONAL_LABORATORY
+        description: Multidisciplinary research institution for national security
+        meaning: ROR:01e41cf67
+        annotations:
+          location:
+            tag: location
+            value: Los Alamos, New Mexico
+          established:
+            tag: established
+            value: 1943
+          stewarding_office:
+            tag: stewarding_office
+            value: National Nuclear Security Administration
+          website:
+            tag: website
+            value: https://www.lanl.gov/
+        title: Los Alamos National Laboratory
+        aliases:
+        - LANL
+      NATIONAL_ENERGY_TECHNOLOGY_LABORATORY:
+        text: NATIONAL_ENERGY_TECHNOLOGY_LABORATORY
+        description: Federal research laboratory focused on energy and environmental
+          technology
+        meaning: ROR:01x26mz03
+        annotations:
+          location:
+            tag: location
+            value: Pittsburgh, Pennsylvania and Morgantown, West Virginia
+          established:
+            tag: established
+            value: 1910
+          stewarding_office:
+            tag: stewarding_office
+            value: Office of Fossil Energy and Carbon Management
+          website:
+            tag: website
+            value: https://www.netl.doe.gov/
+        title: National Energy Technology Laboratory
+        aliases:
+        - NETL
+      NATIONAL_RENEWABLE_ENERGY_LABORATORY:
+        text: NATIONAL_RENEWABLE_ENERGY_LABORATORY
+        description: Research and development laboratory focused on renewable energy
+          and energy efficiency
+        meaning: ROR:036266993
+        annotations:
+          location:
+            tag: location
+            value: Golden, Colorado
+          established:
+            tag: established
+            value: 1977
+          stewarding_office:
+            tag: stewarding_office
+            value: Office of Energy Efficiency and Renewable Energy
+          website:
+            tag: website
+            value: https://www.nrel.gov/
+        title: National Renewable Energy Laboratory
+        aliases:
+        - NREL
+      OAK_RIDGE_NATIONAL_LABORATORY:
+        text: OAK_RIDGE_NATIONAL_LABORATORY
+        description: Multidisciplinary science and technology laboratory
+        meaning: ROR:01qz5mb56
+        annotations:
+          location:
+            tag: location
+            value: Oak Ridge, Tennessee
+          established:
+            tag: established
+            value: 1943
+          stewarding_office:
+            tag: stewarding_office
+            value: Office of Science
+          website:
+            tag: website
+            value: https://www.ornl.gov/
+        title: Oak Ridge National Laboratory
+        aliases:
+        - ORNL
+      PACIFIC_NORTHWEST_NATIONAL_LABORATORY:
+        text: PACIFIC_NORTHWEST_NATIONAL_LABORATORY
+        description: Research laboratory focused on energy, environment, and national
+          security
+        meaning: ROR:05h992307
+        annotations:
+          location:
+            tag: location
+            value: Richland, Washington
+          established:
+            tag: established
+            value: 1965
+          stewarding_office:
+            tag: stewarding_office
+            value: Office of Science
+          website:
+            tag: website
+            value: https://www.pnnl.gov/
+        title: Pacific Northwest National Laboratory
+        aliases:
+        - PNNL
+      PRINCETON_PLASMA_PHYSICS_LABORATORY:
+        text: PRINCETON_PLASMA_PHYSICS_LABORATORY
+        description: Plasma physics and fusion energy research laboratory
+        meaning: ROR:03vn1ts68
+        annotations:
+          location:
+            tag: location
+            value: Princeton, New Jersey
+          established:
+            tag: established
+            value: 1951
+          stewarding_office:
+            tag: stewarding_office
+            value: Office of Science
+          website:
+            tag: website
+            value: https://www.pppl.gov/
+        title: Princeton Plasma Physics Laboratory
+        aliases:
+        - PPPL
+      SANDIA_NATIONAL_LABORATORIES:
+        text: SANDIA_NATIONAL_LABORATORIES
+        description: Multimission laboratory for national security and technology
+          innovation
+        meaning: ROR:01apwpt12
+        annotations:
+          location:
+            tag: location
+            value: Albuquerque, New Mexico and Livermore, California
+          established:
+            tag: established
+            value: 1949
+          stewarding_office:
+            tag: stewarding_office
+            value: National Nuclear Security Administration
+          website:
+            tag: website
+            value: https://www.sandia.gov/
+        title: Sandia National Laboratories
+        aliases:
+        - Sandia
+        - SNL
+      SAVANNAH_RIVER_NATIONAL_LABORATORY:
+        text: SAVANNAH_RIVER_NATIONAL_LABORATORY
+        description: Applied research laboratory for environmental and national security
+          missions
+        meaning: ROR:05vc7qy59
+        annotations:
+          location:
+            tag: location
+            value: Aiken, South Carolina
+          established:
+            tag: established
+            value: 1951
+          stewarding_office:
+            tag: stewarding_office
+            value: Office of Environmental Management
+          website:
+            tag: website
+            value: https://www.srnl.gov/
+        title: Savannah River National Laboratory
+        aliases:
+        - SRNL
+      SLAC_NATIONAL_ACCELERATOR_LABORATORY:
+        text: SLAC_NATIONAL_ACCELERATOR_LABORATORY
+        description: Particle physics and photon science research laboratory
+        meaning: ROR:05gzmn429
+        annotations:
+          location:
+            tag: location
+            value: Menlo Park, California
+          established:
+            tag: established
+            value: 1962
+          stewarding_office:
+            tag: stewarding_office
+            value: Office of Science
+          website:
+            tag: website
+            value: https://www6.slac.stanford.edu/
+        title: SLAC National Accelerator Laboratory
+        aliases:
+        - SLAC
+      THOMAS_JEFFERSON_NATIONAL_ACCELERATOR_FACILITY:
+        text: THOMAS_JEFFERSON_NATIONAL_ACCELERATOR_FACILITY
+        description: Nuclear physics research laboratory with particle accelerator
+        meaning: ROR:02vwzrd76
+        annotations:
+          location:
+            tag: location
+            value: Newport News, Virginia
+          established:
+            tag: established
+            value: 1984
+          stewarding_office:
+            tag: stewarding_office
+            value: Office of Science
+          website:
+            tag: website
+            value: https://www.jlab.org/
+        title: Thomas Jefferson National Accelerator Facility
+        aliases:
+        - Jefferson Lab
+        - JLab
+  USFederalFundingAgencyEnum:
+    name: USFederalFundingAgencyEnum
+    definition_uri: https://w3id.org/valuesets/USFederalFundingAgencyEnum
+    description: 'Major United States Federal Research Funding Agencies.
+
+
+      These agencies provide funding for basic and applied research across various
+      scientific disciplines,
+
+      supporting universities, national laboratories, and other research institutions.
+
+      '
+    comments:
+    - All agency names mapped to ROR (Research Organization Registry) identifiers
+    - Includes primary research funding agencies
+    from_schema: https://w3id.org/linkml/valuesets/academic/organizations
+    permissible_values:
+      NIH:
+        text: NIH
+        description: Primary federal agency for biomedical and public health research
+        meaning: ROR:01cwqze88
+        annotations:
+          parent_department:
+            tag: parent_department
+            value: Department of Health and Human Services
+          website:
+            tag: website
+            value: https://www.nih.gov/
+          established:
+            tag: established
+            value: 1887
+        title: National Institutes of Health
+        aliases:
+        - National Institutes of Health
+      NSF:
+        text: NSF
+        description: Federal agency supporting fundamental research and education
+          in non-medical fields
+        meaning: ROR:021nxhr62
+        annotations:
+          website:
+            tag: website
+            value: https://www.nsf.gov/
+          established:
+            tag: established
+            value: 1950
+        title: U.S. National Science Foundation
+        aliases:
+        - National Science Foundation
+      DOE:
+        text: DOE
+        description: Federal department overseeing energy policy and nuclear weapons
+          program
+        meaning: ROR:01bj3aw27
+        annotations:
+          website:
+            tag: website
+            value: https://www.energy.gov/
+          established:
+            tag: established
+            value: 1977
+        title: United States Department of Energy
+        aliases:
+        - Department of Energy
+        - U.S. Department of Energy
+      NASA:
+        text: NASA
+        description: Federal agency responsible for civil space program and aeronautics
+          research
+        meaning: ROR:027ka1x80
+        annotations:
+          website:
+            tag: website
+            value: https://www.nasa.gov/
+          established:
+            tag: established
+            value: 1958
+        title: National Aeronautics and Space Administration
+      EPA:
+        text: EPA
+        description: Federal agency protecting human health and the environment
+        meaning: ROR:03tns0030
+        annotations:
+          website:
+            tag: website
+            value: https://www.epa.gov/
+          established:
+            tag: established
+            value: 1970
+        title: Environmental Protection Agency
+        aliases:
+        - U.S. Environmental Protection Agency
+      NOAA:
+        text: NOAA
+        description: Federal agency focused on ocean, atmosphere, and coastal research
+        meaning: ROR:02z5nhe81
+        annotations:
+          parent_department:
+            tag: parent_department
+            value: Department of Commerce
+          website:
+            tag: website
+            value: https://www.noaa.gov/
+          established:
+            tag: established
+            value: 1970
+        title: National Oceanic and Atmospheric Administration
+      NIST:
+        text: NIST
+        description: Federal agency promoting innovation and industrial competitiveness
+        meaning: ROR:05xpvk416
+        annotations:
+          parent_department:
+            tag: parent_department
+            value: Department of Commerce
+          website:
+            tag: website
+            value: https://www.nist.gov/
+          established:
+            tag: established
+            value: 1901
+        title: National Institute of Standards and Technology
+      USDA_ARS:
+        text: USDA_ARS
+        description: Principal research agency of the U.S. Department of Agriculture
+        meaning: ROR:02d2m2044
+        annotations:
+          parent_department:
+            tag: parent_department
+            value: Department of Agriculture
+          website:
+            tag: website
+            value: https://www.ars.usda.gov/
+          established:
+            tag: established
+            value: 1953
+        title: Agricultural Research Service
+        aliases:
+        - USDA ARS
+      DOD:
+        text: DOD
+        description: Federal department responsible for military research and development
+        meaning: ROR:0447fe631
+        annotations:
+          website:
+            tag: website
+            value: https://www.defense.gov/
+          established:
+            tag: established
+            value: 1947
+        title: United States Department of Defense
+        aliases:
+        - Department of Defense
+        - U.S. Department of Defense
+      USGS:
+        text: USGS
+        description: Federal agency for earth science research and monitoring
+        meaning: ROR:035a68863
+        annotations:
+          parent_department:
+            tag: parent_department
+            value: Department of the Interior
+          website:
+            tag: website
+            value: https://www.usgs.gov/
+          established:
+            tag: established
+            value: 1879
+        title: United States Geological Survey
+  NIHInstituteCenterEnum:
+    name: NIHInstituteCenterEnum
+    definition_uri: https://w3id.org/valuesets/NIHInstituteCenterEnum
+    description: 'National Institutes of Health (NIH) Institutes and Centers.
+
+
+      NIH comprises 27 Institutes and Centers, each with a specific research agenda
+      focused on particular
+
+      diseases or body systems. These are the major NIH ICs that fund extramural research.
+
+      '
+    comments:
+    - All mapped to ROR (Research Organization Registry) identifiers
+    - Focuses on major funding institutes
+    from_schema: https://w3id.org/linkml/valuesets/academic/organizations
+    permissible_values:
+      NCI:
+        text: NCI
+        description: NIH institute for cancer research and training
+        meaning: ROR:02t771148
+        annotations:
+          parent_organization:
+            tag: parent_organization
+            value: National Institutes of Health
+          website:
+            tag: website
+            value: https://www.cancer.gov/
+          established:
+            tag: established
+            value: 1937
+        title: National Cancer Institute
+        aliases:
+        - National Cancer Institute
+      NHLBI:
+        text: NHLBI
+        description: NIH institute for heart, lung, and blood diseases research
+        meaning: ROR:012pb6c26
+        annotations:
+          parent_organization:
+            tag: parent_organization
+            value: National Institutes of Health
+          website:
+            tag: website
+            value: https://www.nhlbi.nih.gov/
+          established:
+            tag: established
+            value: 1948
+        title: National Heart Lung and Blood Institute
+        aliases:
+        - National Heart, Lung, and Blood Institute
+      NIAID:
+        text: NIAID
+        description: NIH institute for infectious, immunologic, and allergic diseases
+          research
+        meaning: ROR:043z4tv69
+        annotations:
+          parent_organization:
+            tag: parent_organization
+            value: National Institutes of Health
+          website:
+            tag: website
+            value: https://www.niaid.nih.gov/
+          established:
+            tag: established
+            value: 1948
+        title: National Institute of Allergy and Infectious Diseases
+      NIMH:
+        text: NIMH
+        description: NIH institute for mental health research
+        meaning: ROR:04t0s7x83
+        annotations:
+          parent_organization:
+            tag: parent_organization
+            value: National Institutes of Health
+          website:
+            tag: website
+            value: https://www.nimh.nih.gov/
+          established:
+            tag: established
+            value: 1949
+        title: National Institute of Mental Health
+      NINDS:
+        text: NINDS
+        description: NIH institute for neurological disorders research
+        meaning: ROR:01s5ya894
+        annotations:
+          parent_organization:
+            tag: parent_organization
+            value: National Institutes of Health
+          website:
+            tag: website
+            value: https://www.ninds.nih.gov/
+          established:
+            tag: established
+            value: 1950
+        title: National Institute of Neurological Disorders and Stroke
+      NIDDK:
+        text: NIDDK
+        description: NIH institute for diabetes, digestive, and kidney diseases research
+        meaning: ROR:00adh9b73
+        annotations:
+          parent_organization:
+            tag: parent_organization
+            value: National Institutes of Health
+          website:
+            tag: website
+            value: https://www.niddk.nih.gov/
+          established:
+            tag: established
+            value: 1950
+        title: National Institute of Diabetes and Digestive and Kidney Diseases
+      NHGRI:
+        text: NHGRI
+        description: NIH institute for genomics and genetics research
+        meaning: ROR:00baak391
+        annotations:
+          parent_organization:
+            tag: parent_organization
+            value: National Institutes of Health
+          website:
+            tag: website
+            value: https://www.genome.gov/
+          established:
+            tag: established
+            value: 1989
+        title: National Human Genome Research Institute
+      NIGMS:
+        text: NIGMS
+        description: NIH institute supporting basic biomedical research
+        meaning: ROR:04q48ey07
+        annotations:
+          parent_organization:
+            tag: parent_organization
+            value: National Institutes of Health
+          website:
+            tag: website
+            value: https://www.nigms.nih.gov/
+          established:
+            tag: established
+            value: 1962
+        title: National Institute of General Medical Sciences
+      NIEHS:
+        text: NIEHS
+        description: NIH institute for environmental health sciences research
+        meaning: ROR:00j4k1h63
+        annotations:
+          parent_organization:
+            tag: parent_organization
+            value: National Institutes of Health
+          website:
+            tag: website
+            value: https://www.niehs.nih.gov/
+          established:
+            tag: established
+            value: 1966
+        title: National Institute of Environmental Health Sciences
+      NEI:
+        text: NEI
+        description: NIH institute for vision and eye disease research
+        meaning: ROR:03wkg3b53
+        annotations:
+          parent_organization:
+            tag: parent_organization
+            value: National Institutes of Health
+          website:
+            tag: website
+            value: https://www.nei.nih.gov/
+          established:
+            tag: established
+            value: 1968
+        title: National Eye Institute
+      NIA:
+        text: NIA
+        description: NIH institute for aging research
+        meaning: ROR:049v75w11
+        annotations:
+          parent_organization:
+            tag: parent_organization
+            value: National Institutes of Health
+          website:
+            tag: website
+            value: https://www.nia.nih.gov/
+          established:
+            tag: established
+            value: 1974
+        title: National Institute on Aging
+      NLM:
+        text: NLM
+        description: World's largest biomedical library and NIH component
+        meaning: ROR:0060t0j89
+        annotations:
+          parent_organization:
+            tag: parent_organization
+            value: National Institutes of Health
+          website:
+            tag: website
+            value: https://www.nlm.nih.gov/
+          established:
+            tag: established
+            value: 1956
+        title: United States National Library of Medicine
+        aliases:
+        - National Library of Medicine
+  StandardsOrganizationEnum:
+    name: StandardsOrganizationEnum
+    definition_uri: https://w3id.org/valuesets/StandardsOrganizationEnum
+    description: 'Major International Standards Development Organizations.
+
+
+      These organizations develop technical standards, specifications, and guidelines
+      used globally
+
+      across various industries including information technology, healthcare, and
+      engineering.
+
+      '
+    comments:
+    - All mapped to ROR (Research Organization Registry) identifiers where available
+    - Includes standards bodies commonly referenced in research
+    from_schema: https://w3id.org/linkml/valuesets/academic/organizations
+    permissible_values:
+      ISO:
+        text: ISO
+        description: International standard-setting body for industrial and commercial
+          standards
+        meaning: ROR:004s85t07
+        annotations:
+          website:
+            tag: website
+            value: https://www.iso.org/
+          established:
+            tag: established
+            value: 1947
+          headquarters:
+            tag: headquarters
+            value: Geneva, Switzerland
+        title: International Organization for Standardization
+      W3C:
+        text: W3C
+        description: International standards organization for World Wide Web standards
+        meaning: ROR:0059y1582
+        annotations:
+          website:
+            tag: website
+            value: https://www.w3.org/
+          established:
+            tag: established
+            value: 1994
+          headquarters:
+            tag: headquarters
+            value: Cambridge, Massachusetts
+        title: World Wide Web Consortium
+      IEEE:
+        text: IEEE
+        description: Professional association for electronic and electrical engineering
+        meaning: ROR:01n002310
+        annotations:
+          website:
+            tag: website
+            value: https://www.ieee.org/
+          established:
+            tag: established
+            value: 1963
+          headquarters:
+            tag: headquarters
+            value: New York, USA
+        title: Institute of Electrical and Electronics Engineers
+      HL7:
+        text: HL7
+        description: Standards development organization for healthcare information
+          exchange
+        meaning: ROR:029ga8k16
+        annotations:
+          website:
+            tag: website
+            value: https://www.hl7.org/
+          established:
+            tag: established
+            value: 1987
+          headquarters:
+            tag: headquarters
+            value: Ann Arbor, Michigan
+        title: Health Level Seven International
+        aliases:
+        - Health Level Seven
+  UNSpecializedAgencyEnum:
+    name: UNSpecializedAgencyEnum
+    definition_uri: https://w3id.org/valuesets/UNSpecializedAgencyEnum
+    description: 'United Nations Specialized Agencies.
+
+
+      UN specialized agencies are autonomous international organizations that coordinate
+      their work
+
+      with the UN through negotiated agreements. They address international issues
+      in their respective fields.
+
+      '
+    comments:
+    - All mapped to ROR (Research Organization Registry) identifiers
+    - Includes major UN agencies relevant to research and development
+    from_schema: https://w3id.org/linkml/valuesets/academic/organizations
+    permissible_values:
+      WHO:
+        text: WHO
+        description: UN agency for international public health
+        meaning: ROR:01f80g185
+        annotations:
+          website:
+            tag: website
+            value: https://www.who.int/
+          established:
+            tag: established
+            value: 1948
+          headquarters:
+            tag: headquarters
+            value: Geneva, Switzerland
+        title: World Health Organization
+      UNESCO:
+        text: UNESCO
+        description: UN Educational, Scientific and Cultural Organization
+        meaning: ROR:04h4z8k05
+        annotations:
+          website:
+            tag: website
+            value: https://www.unesco.org/
+          established:
+            tag: established
+            value: 1945
+          headquarters:
+            tag: headquarters
+            value: Paris, France
+        title: UNESCO
+        aliases:
+        - United Nations Educational, Scientific and Cultural Organization
+      IAEA:
+        text: IAEA
+        description: International organization promoting peaceful use of nuclear
+          energy
+        meaning: ROR:00gtfax65
+        annotations:
+          website:
+            tag: website
+            value: https://www.iaea.org/
+          established:
+            tag: established
+            value: 1957
+          headquarters:
+            tag: headquarters
+            value: Vienna, Austria
+        title: International Atomic Energy Agency
+      WMO:
+        text: WMO
+        description: UN agency for weather, climate and water resources
+        meaning: ROR:011pjwf87
+        annotations:
+          website:
+            tag: website
+            value: https://public.wmo.int/
+          established:
+            tag: established
+            value: 1950
+          headquarters:
+            tag: headquarters
+            value: Geneva, Switzerland
+        title: World Meteorological Organization
+      UNEP:
+        text: UNEP
+        description: UN program coordinating environmental activities
+        meaning: ROR:015z29x25
+        annotations:
+          website:
+            tag: website
+            value: https://www.unep.org/
+          established:
+            tag: established
+            value: 1972
+          headquarters:
+            tag: headquarters
+            value: Nairobi, Kenya
+        title: United Nations Environment Programme
   EnergySource:
     name: EnergySource
     definition_uri: https://w3id.org/valuesets/EnergySource
@@ -15404,11 +16370,15 @@ enums:
         description: Exposure through breathing
         meaning: NCIT:C38284
         title: Nasal Route of Administration
+        related_mappings:
+        - ExO:0000057
       INGESTION:
         text: INGESTION
         description: Exposure through eating or drinking
         meaning: NCIT:C38288
         title: Oral Route of Administration
+        related_mappings:
+        - ExO:0000056
       DERMAL:
         text: DERMAL
         description: Exposure through skin contact
@@ -15419,16 +16389,74 @@ enums:
         description: Exposure through injection
         meaning: NCIT:C38276
         title: Intravenous Route of Administration
+        related_mappings:
+        - ExO:0000060
       TRANSPLACENTAL:
         text: TRANSPLACENTAL
         description: Exposure through placental transfer
         meaning: NCIT:C38307
         title: Transplacental Route of Administration
+        related_mappings:
+        - ExO:0000159
       OCULAR:
         text: OCULAR
         description: Exposure through the eyes
         meaning: NCIT:C38287
         title: Ophthalmic Route of Administration
+      ABSORPTION:
+        text: ABSORPTION
+        description: Exposure through absorption (dermal or other surface)
+        meaning: ExO:0000058
+      GASTROINTESTINAL_TRACT:
+        text: GASTROINTESTINAL_TRACT
+        description: Exposure through the gastrointestinal tract
+        meaning: ExO:0000165
+        title: gastrointestinal tract route
+      GAVAGE:
+        text: GAVAGE
+        description: Direct administration into the stomach
+        meaning: ExO:0000166
+        title: gavage route
+      AMBIENT_ENVIRONMENT:
+        text: AMBIENT_ENVIRONMENT
+        description: Exposure through contact with stressors in the ambient surroundings
+        meaning: ExO:0000160
+        title: ambient environment route
+      AMBIENT_AQUATIC:
+        text: AMBIENT_AQUATIC
+        description: Exposure through ambient aquatic environment
+        meaning: ExO:0000161
+        title: ambient acquatic environment route
+      AMBIENT_TERRESTRIAL:
+        text: AMBIENT_TERRESTRIAL
+        description: Exposure through ambient terrestrial environment
+        meaning: ExO:0000162
+        title: ambient terrestrial environment route
+      PASSIVE_INHALATION:
+        text: PASSIVE_INHALATION
+        description: Passive inhalation of ambient environment stressors
+        meaning: ExO:0000163
+        title: passive inhalation of the ambient environment route
+      ACTIVE_INHALATION:
+        text: ACTIVE_INHALATION
+        description: Purposeful breathing or inhaling of stressor
+        meaning: ExO:0000164
+        title: active inhalation route
+      SUBCUTANEOUS:
+        text: SUBCUTANEOUS
+        description: Exposure through subcutaneous tissue
+        related_mappings:
+        - ExO:0000061
+      INTRAMUSCULAR:
+        text: INTRAMUSCULAR
+        description: Exposure through muscle tissue
+        related_mappings:
+        - ExO:0000062
+      INTRAVASCULAR:
+        text: INTRAVASCULAR
+        description: Exposure through blood vessels
+        related_mappings:
+        - ExO:0000063
       MULTIPLE_ROUTES:
         text: MULTIPLE_ROUTES
         description: Exposure through multiple pathways
@@ -15443,11 +16471,13 @@ enums:
         description: Outdoor air pollution
         related_mappings:
         - ENVO:01000676
+        - ExO:0000020
       INDOOR_AIR:
         text: INDOOR_AIR
         description: Indoor air pollution
         related_mappings:
         - ENVO:01000676
+        - ExO:0000019
       DRINKING_WATER:
         text: DRINKING_WATER
         description: Contaminated drinking water
@@ -15469,6 +16499,8 @@ enums:
         description: Workplace exposure
         meaning: ENVO:03501332
         title: occupational environment
+        related_mappings:
+        - ExO:0000093
       CONSUMER_PRODUCTS:
         text: CONSUMER_PRODUCTS
         description: Household and consumer products
@@ -15649,6 +16681,140 @@ enums:
       DEVELOPMENTAL:
         text: DEVELOPMENTAL
         description: Exposure during critical developmental periods
+  SmokingStatusEnum:
+    name: SmokingStatusEnum
+    definition_uri: https://w3id.org/valuesets/SmokingStatusEnum
+    description: Tobacco and nicotine consumption status
+    from_schema: https://w3id.org/valuesets/environmental-health/exposures
+    permissible_values:
+      CURRENT_SMOKER:
+        text: CURRENT_SMOKER
+        description: Person who is currently smoking tobacco
+        meaning: ExO:0000115
+      FORMER_SMOKER:
+        text: FORMER_SMOKER
+        description: Person who has smoked at least 100 cigarettes in their life but
+          is not currently smoking
+        meaning: ExO:0000116
+      NEVER_SMOKER:
+        text: NEVER_SMOKER
+        description: Person who has smoked less than 100 cigarettes in their life
+        meaning: ExO:0000117
+      NON_SMOKER:
+        text: NON_SMOKER
+        description: Person who is not currently smoking
+        meaning: ExO:0000118
+  ExposureStressorTypeEnum:
+    name: ExposureStressorTypeEnum
+    definition_uri: https://w3id.org/valuesets/ExposureStressorTypeEnum
+    description: Types of exposure stressors by their origin or nature
+    from_schema: https://w3id.org/valuesets/environmental-health/exposures
+    permissible_values:
+      BIOLOGICAL_AGENT:
+        text: BIOLOGICAL_AGENT
+        description: Agent of biological origin (e.g., bacteria, viruses, allergens)
+        meaning: ExO:0000005
+      CHEMICAL_AGENT:
+        text: CHEMICAL_AGENT
+        description: Agent of chemical origin (e.g., toxins, pollutants)
+        meaning: ExO:0000006
+      PHYSICAL_AGENT:
+        text: PHYSICAL_AGENT
+        description: Physical source of energy that may cause injury (e.g., radiation,
+          noise, temperature extremes)
+        meaning: ExO:0000008
+      PSYCHOSOCIAL_AGENT:
+        text: PSYCHOSOCIAL_AGENT
+        description: Agent that interferes with psychological development or social
+          interaction
+        meaning: ExO:0000009
+      BIOMECHANICAL_AGENT:
+        text: BIOMECHANICAL_AGENT
+        description: Mechanical agent applied to biological systems (e.g., repetitive
+          motion, physical strain)
+        meaning: ExO:0000011
+      ECOLOGICAL_PERTURBATION:
+        text: ECOLOGICAL_PERTURBATION
+        description: Disruption to ecological systems (e.g., habitat degradation,
+          climate change)
+        meaning: ExO:0000007
+  ExposureTransportPathEnum:
+    name: ExposureTransportPathEnum
+    definition_uri: https://w3id.org/valuesets/ExposureTransportPathEnum
+    description: Transport medium through which exposure stressor reaches the recipient
+    from_schema: https://w3id.org/valuesets/environmental-health/exposures
+    permissible_values:
+      AIR_TRANSPORT_PATH:
+        text: AIR_TRANSPORT_PATH
+        description: Transport path allowing stressor to interact with recipient via
+          air
+        meaning: ExO:0000010
+      WATER_TRANSPORT_PATH:
+        text: WATER_TRANSPORT_PATH
+        description: Transport path involving interaction with stressor via water
+        meaning: ExO:0000028
+      SOIL_TRANSPORT_PATH:
+        text: SOIL_TRANSPORT_PATH
+        description: Transport path involving interaction with stressor via soil
+        meaning: ExO:0000029
+  ExposureFrequencyEnum:
+    name: ExposureFrequencyEnum
+    definition_uri: https://w3id.org/valuesets/ExposureFrequencyEnum
+    description: Temporal pattern of exposure occurrence
+    from_schema: https://w3id.org/valuesets/environmental-health/exposures
+    permissible_values:
+      INTERMITTENT:
+        text: INTERMITTENT
+        description: Exposure occurring at irregular intervals or periodically
+        meaning: ExO:0000052
+      CONTINUOUS:
+        text: CONTINUOUS
+        description: Exposure occurring without interruption
+        meaning: ExO:0000053
+  StudyPopulationEnum:
+    name: StudyPopulationEnum
+    definition_uri: https://w3id.org/valuesets/StudyPopulationEnum
+    description: Specific population groups commonly studied in exposure research
+    from_schema: https://w3id.org/valuesets/environmental-health/exposures
+    permissible_values:
+      CHILDREN:
+        text: CHILDREN
+        description: Human children (pediatric population)
+        meaning: ExO:0000119
+      FETUSES:
+        text: FETUSES
+        description: Human fetuses (prenatal population)
+        meaning: ExO:0000122
+      INFANTS_OR_NEWBORNS:
+        text: INFANTS_OR_NEWBORNS
+        description: Human infants and newborns
+        meaning: ExO:0000123
+      PREGNANT_FEMALES:
+        text: PREGNANT_FEMALES
+        description: Human females who are pregnant
+        meaning: ExO:0000126
+      MOTHERS:
+        text: MOTHERS
+        description: Human mothers
+        meaning: ExO:0000125
+      MILITARY_PERSONNEL:
+        text: MILITARY_PERSONNEL
+        description: Active military personnel
+        meaning: ExO:0000124
+      VETERANS:
+        text: VETERANS
+        description: Military veterans
+        meaning: ExO:0000130
+      WORKERS:
+        text: WORKERS
+        description: Occupational workers
+        meaning: ExO:0000131
+      CONTROLS:
+        text: CONTROLS
+        description: Control group participants without the disease or phenotype of
+          interest
+        meaning: ExO:0000121
+        title: controls for disease or phenotype
   CountryCodeISO2Enum:
     name: CountryCodeISO2Enum
     definition_uri: https://w3id.org/valuesets/CountryCodeISO2Enum
@@ -25776,15 +26942,14 @@ enums:
           are likely to represent a single taxonomic origin. See checkm2 scores for
           quality assessment.
         meaning: mixs:0010011
-        title: Metagenome-Assembled Genome
+        title: Mimag
         aliases:
-        - Mimag
+        - Metagenome-Assembled Genome
       METAGENOME:
         text: METAGENOME
         description: Sequences assembled from DNA of mixed community.
         meaning: mixs:0010007
-        aliases:
-        - Mims
+        title: Mims
       METATRANSCRIPTOME:
         text: METATRANSCRIPTOME
         description: Sequences assembled from RNA of mixed community. Currently not
@@ -25793,15 +26958,14 @@ enums:
         text: SAG
         description: Sequences assembled from DNA of single cell.
         meaning: mixs:0010010
-        title: Single Amplified Genome
+        title: Misag
         aliases:
-        - Misag
+        - Single Amplified Genome
       VIRUS:
         text: VIRUS
         description: Sequences assembled from uncultivated virus genome (DNA/RNA).
         meaning: mixs:0010012
-        aliases:
-        - Miuvig
+        title: Miuvig
       MARKER:
         text: MARKER
         description: 'Sequences from targeted region of DNA; see protocol for information
@@ -32717,6 +33881,9 @@ enums:
           omb_code:
             tag: omb_code
             value: 1002-5
+        related_mappings:
+        - ExO:0000134
+        - ExO:0000133
       ASIAN:
         text: ASIAN
         description: A person having origins in any of the original peoples of the
@@ -32730,6 +33897,14 @@ enums:
             tag: includes
             value: Cambodia, China, India, Japan, Korea, Malaysia, Pakistan, Philippine
               Islands, Thailand, Vietnam
+        related_mappings:
+        - ExO:0000135
+        - ExO:0000136
+        - ExO:0000139
+        - ExO:0000143
+        - ExO:0000147
+        - ExO:0000148
+        - ExO:0000157
       BLACK_OR_AFRICAN_AMERICAN:
         text: BLACK_OR_AFRICAN_AMERICAN
         description: A person having origins in any of the black racial groups of
@@ -32739,6 +33914,8 @@ enums:
           omb_code:
             tag: omb_code
             value: 2054-5
+        related_mappings:
+        - ExO:0000132
       NATIVE_HAWAIIAN_OR_OTHER_PACIFIC_ISLANDER:
         text: NATIVE_HAWAIIAN_OR_OTHER_PACIFIC_ISLANDER
         description: A person having origins in any of the original peoples of Hawaii,
@@ -32748,6 +33925,11 @@ enums:
           omb_code:
             tag: omb_code
             value: 2076-8
+        related_mappings:
+        - ExO:0000152
+        - ExO:0000154
+        - ExO:0000144
+        - ExO:0000156
       WHITE:
         text: WHITE
         description: A person having origins in any of the original peoples of Europe,
@@ -32757,6 +33939,8 @@ enums:
           omb_code:
             tag: omb_code
             value: 2106-3
+        related_mappings:
+        - ExO:0000158
       MORE_THAN_ONE_RACE:
         text: MORE_THAN_ONE_RACE
         description: Person identifies with more than one race category
@@ -32791,6 +33975,17 @@ enums:
           omb_code:
             tag: omb_code
             value: 2135-2
+        related_mappings:
+        - ExO:0000145
+        - ExO:0000149
+        - ExO:0000137
+        - ExO:0000138
+        - ExO:0000140
+        - ExO:0000141
+        - ExO:0000142
+        - ExO:0000150
+        - ExO:0000151
+        - ExO:0000155
       NOT_HISPANIC_OR_LATINO:
         text: NOT_HISPANIC_OR_LATINO
         description: A person not of Hispanic or Latino origin
@@ -32824,6 +34019,8 @@ enums:
         exact_mappings:
         - NCIT:C20197
         - GSSO:000371
+        related_mappings:
+        - ExO:0000112
       FEMALE:
         text: FEMALE
         description: Female sex assigned at birth
@@ -32831,6 +34028,8 @@ enums:
         exact_mappings:
         - NCIT:C16576
         - GSSO:000369
+        related_mappings:
+        - ExO:0000111
       INTERSEX:
         text: INTERSEX
         description: Born with reproductive or sexual anatomy that doesn't fit typical
@@ -37090,6 +38289,695 @@ enums:
         text: ARCHIVED
         description: No longer actively maintained
         title: Archived
+  OWLProfileEnum:
+    name: OWLProfileEnum
+    definition_uri: https://w3id.org/valuesets/OWLProfileEnum
+    description: OWL 2 profiles that provide different tradeoffs between expressiveness
+      and computational complexity
+    from_schema: https://w3id.org/valuesets/computing/ontologies
+    permissible_values:
+      OWL_2_EL:
+        text: OWL_2_EL
+        description: OWL 2 EL (Existential Language) - optimized for applications
+          using very large ontologies with basic relationships. Provides polynomial
+          time reasoning.
+        annotations:
+          complexity:
+            tag: complexity
+            value: polynomial time
+          use_case:
+            tag: use_case
+            value: large biomedical ontologies, SNOMED CT
+        title: OWL 2 EL
+        see_also:
+        - https://www.w3.org/TR/owl2-profiles/#OWL_2_EL
+      OWL_2_QL:
+        text: OWL_2_QL
+        description: OWL 2 QL (Query Language) - optimized for query answering over
+          large data repositories. Based on DL-Lite family.
+        annotations:
+          complexity:
+            tag: complexity
+            value: LogSpace data complexity
+          use_case:
+            tag: use_case
+            value: ontology-based data access, database integration
+        title: OWL 2 QL
+        see_also:
+        - https://www.w3.org/TR/owl2-profiles/#OWL_2_QL
+      OWL_2_RL:
+        text: OWL_2_RL
+        description: OWL 2 RL (Rule Language) - optimized for rule-based reasoning
+          and can be implemented using rule engines. Compatible with RDF Schema.
+        annotations:
+          complexity:
+            tag: complexity
+            value: polynomial time
+          use_case:
+            tag: use_case
+            value: business rules, policy systems
+        title: OWL 2 RL
+        see_also:
+        - https://www.w3.org/TR/owl2-profiles/#OWL_2_RL
+      OWL_2_DL:
+        text: OWL_2_DL
+        description: OWL 2 DL (Description Logic) - full expressiveness while maintaining
+          computational completeness and decidability. Maximum expressiveness without
+          sacrificing decidability.
+        annotations:
+          complexity:
+            tag: complexity
+            value: NExpTime
+          use_case:
+            tag: use_case
+            value: general purpose ontologies requiring high expressiveness
+        title: OWL 2 DL
+        see_also:
+        - https://www.w3.org/TR/owl2-syntax/
+      OWL_2_FULL:
+        text: OWL_2_FULL
+        description: OWL 2 Full - maximum expressiveness with no restrictions, but
+          reasoning is undecidable. Allows full RDF capabilities.
+        annotations:
+          complexity:
+            tag: complexity
+            value: undecidable
+          use_case:
+            tag: use_case
+            value: maximum flexibility, no guaranteed reasoning
+        title: OWL 2 Full
+        see_also:
+        - https://www.w3.org/TR/owl2-syntax/
+  MLDataType:
+    name: MLDataType
+    definition_uri: https://w3id.org/valuesets/MLDataType
+    description: 'Data types used in Croissant ML for describing field types in datasets.
+
+      Based on XSD (XML Schema Definition) and schema.org vocabulary.
+
+      '
+    from_schema: https://w3id.org/valuesets/computing/croissant_ml
+    permissible_values:
+      TEXT:
+        text: TEXT
+        description: Text or string data
+        meaning: xsd:string
+        mappings:
+        - schema:Text
+        - EDAM:3671
+      INTEGER:
+        text: INTEGER
+        description: Integer numbers
+        meaning: xsd:integer
+        mappings:
+        - schema:Integer
+        - IAO:0000031
+      FLOAT:
+        text: FLOAT
+        description: Floating point numbers
+        meaning: xsd:float
+        mappings:
+        - schema:Float
+      BOOLEAN:
+        text: BOOLEAN
+        description: Boolean values (true/false)
+        meaning: xsd:boolean
+        mappings:
+        - schema:Boolean
+      DATE:
+        text: DATE
+        description: Date values
+        meaning: xsd:date
+        mappings:
+        - schema:Date
+      TIME:
+        text: TIME
+        description: Time values
+        meaning: xsd:time
+        mappings:
+        - schema:Time
+      DATETIME:
+        text: DATETIME
+        description: Combined date and time values
+        meaning: xsd:dateTime
+        mappings:
+        - schema:DateTime
+      URL:
+        text: URL
+        description: Uniform Resource Locators
+        meaning: xsd:anyURI
+        mappings:
+        - schema:URL
+  DatasetEncodingFormat:
+    name: DatasetEncodingFormat
+    definition_uri: https://w3id.org/valuesets/DatasetEncodingFormat
+    description: 'Encoding formats (MIME types) commonly used for ML dataset files
+      in Croissant.
+
+      These specify how data is serialized and stored.
+
+      '
+    from_schema: https://w3id.org/valuesets/computing/croissant_ml
+    permissible_values:
+      CSV:
+        text: CSV
+        description: Comma-separated values format for tabular data
+        meaning: EDAM:format_3752
+        annotations:
+          mime_type:
+            tag: mime_type
+            value: text/csv
+      JSON:
+        text: JSON
+        description: JavaScript Object Notation format for structured data
+        meaning: EDAM:format_3464
+        annotations:
+          mime_type:
+            tag: mime_type
+            value: application/json
+      JSONL:
+        text: JSONL
+        description: JSON Lines format (newline-delimited JSON)
+        annotations:
+          mime_type:
+            tag: mime_type
+            value: application/jsonl
+          alt_mime_type:
+            tag: alt_mime_type
+            value: application/x-ndjson
+      PARQUET:
+        text: PARQUET
+        description: Apache Parquet columnar storage format
+        annotations:
+          mime_type:
+            tag: mime_type
+            value: application/parquet
+      PLAIN_TEXT:
+        text: PLAIN_TEXT
+        description: Plain text files
+        annotations:
+          mime_type:
+            tag: mime_type
+            value: text/plain
+      JPEG:
+        text: JPEG
+        description: JPEG image format
+        meaning: EDAM:format_3579
+        annotations:
+          mime_type:
+            tag: mime_type
+            value: image/jpeg
+        title: JPG
+      PNG:
+        text: PNG
+        description: Portable Network Graphics image format
+        meaning: EDAM:format_3603
+        annotations:
+          mime_type:
+            tag: mime_type
+            value: image/png
+        title: PNG
+      WAV:
+        text: WAV
+        description: Waveform Audio File Format
+        annotations:
+          mime_type:
+            tag: mime_type
+            value: audio/wav
+      MP4:
+        text: MP4
+        description: MPEG-4 multimedia container format
+        meaning: EDAM:format_3997
+        annotations:
+          mime_type:
+            tag: mime_type
+            value: video/mp4
+        title: MPEG-4
+      ZIP:
+        text: ZIP
+        description: ZIP archive format
+        meaning: EDAM:format_3987
+        annotations:
+          mime_type:
+            tag: mime_type
+            value: application/zip
+        title: ZIP format
+      TAR:
+        text: TAR
+        description: Tape Archive format
+        meaning: EDAM:format_3981
+        annotations:
+          mime_type:
+            tag: mime_type
+            value: application/x-tar
+        title: TAR format
+  DatasetSplitType:
+    name: DatasetSplitType
+    definition_uri: https://w3id.org/valuesets/DatasetSplitType
+    description: 'Standard dataset split types used in machine learning for training,
+
+      validation, and testing. These splits are fundamental to ML model
+
+      development and evaluation workflows.
+
+      '
+    from_schema: https://w3id.org/valuesets/computing/croissant_ml
+    permissible_values:
+      TRAIN:
+        text: TRAIN
+        description: Training split used for model learning
+        annotations:
+          typical_size:
+            tag: typical_size
+            value: 60-80% of data
+          purpose:
+            tag: purpose
+            value: model training
+      VALIDATION:
+        text: VALIDATION
+        description: Validation split used for hyperparameter tuning and model selection
+        annotations:
+          typical_size:
+            tag: typical_size
+            value: 10-20% of data
+          purpose:
+            tag: purpose
+            value: model tuning
+          aliases:
+            tag: aliases
+            value: val, dev
+      TEST:
+        text: TEST
+        description: Test split used for final model evaluation
+        annotations:
+          typical_size:
+            tag: typical_size
+            value: 10-20% of data
+          purpose:
+            tag: purpose
+            value: model evaluation
+      ALL:
+        text: ALL
+        description: Complete dataset without splits
+  MLLicenseType:
+    name: MLLicenseType
+    definition_uri: https://w3id.org/valuesets/MLLicenseType
+    description: 'Common open source and Creative Commons licenses used for ML datasets.
+
+      These licenses specify terms of use, redistribution, and modification.
+
+      '
+    from_schema: https://w3id.org/valuesets/computing/croissant_ml
+    permissible_values:
+      CC_BY_4_0:
+        text: CC_BY_4_0
+        description: Creative Commons Attribution 4.0 International
+        meaning: spdx:CC-BY-4.0
+        annotations:
+          allows_commercial:
+            tag: allows_commercial
+            value: true
+          requires_attribution:
+            tag: requires_attribution
+            value: true
+        title: CC-BY-4.0
+        see_also:
+        - https://creativecommons.org/licenses/by/4.0/
+      CC_BY_SA_4_0:
+        text: CC_BY_SA_4_0
+        description: Creative Commons Attribution-ShareAlike 4.0 International
+        meaning: spdx:CC-BY-SA-4.0
+        annotations:
+          allows_commercial:
+            tag: allows_commercial
+            value: true
+          requires_attribution:
+            tag: requires_attribution
+            value: true
+          share_alike:
+            tag: share_alike
+            value: true
+        title: CC-BY-SA-4.0
+        see_also:
+        - https://creativecommons.org/licenses/by-sa/4.0/
+      CC0_1_0:
+        text: CC0_1_0
+        description: Creative Commons Zero 1.0 Universal (Public Domain Dedication)
+        meaning: spdx:CC0-1.0
+        annotations:
+          public_domain:
+            tag: public_domain
+            value: true
+        title: CC0-1.0
+        see_also:
+        - https://creativecommons.org/publicdomain/zero/1.0/
+      MIT:
+        text: MIT
+        description: MIT License
+        meaning: spdx:MIT
+        annotations:
+          osi_approved:
+            tag: osi_approved
+            value: true
+        see_also:
+        - https://opensource.org/licenses/MIT
+      APACHE_2_0:
+        text: APACHE_2_0
+        description: Apache License 2.0
+        meaning: spdx:Apache-2.0
+        annotations:
+          osi_approved:
+            tag: osi_approved
+            value: true
+          patent_grant:
+            tag: patent_grant
+            value: true
+        title: Apache-2.0
+        see_also:
+        - https://www.apache.org/licenses/LICENSE-2.0
+      BSD_3_CLAUSE:
+        text: BSD_3_CLAUSE
+        description: BSD 3-Clause "New" or "Revised" License
+        meaning: spdx:BSD-3-Clause
+        annotations:
+          osi_approved:
+            tag: osi_approved
+            value: true
+        title: BSD-3-Clause
+        see_also:
+        - https://opensource.org/licenses/BSD-3-Clause
+      GPL_3_0:
+        text: GPL_3_0
+        description: GNU General Public License v3.0
+        meaning: spdx:GPL-3.0-only
+        annotations:
+          osi_approved:
+            tag: osi_approved
+            value: true
+          copyleft:
+            tag: copyleft
+            value: true
+        title: GPL-3.0
+        see_also:
+        - https://www.gnu.org/licenses/gpl-3.0.html
+  MLFieldRole:
+    name: MLFieldRole
+    definition_uri: https://w3id.org/valuesets/MLFieldRole
+    description: 'Semantic roles that fields play in ML datasets. These roles help
+      understand
+
+      the purpose and usage of different data columns or attributes.
+
+      '
+    from_schema: https://w3id.org/valuesets/computing/croissant_ml
+    permissible_values:
+      FEATURE:
+        text: FEATURE
+        description: Input features used for model prediction
+        annotations:
+          also_known_as:
+            tag: also_known_as
+            value: input, predictor, independent variable
+      LABEL:
+        text: LABEL
+        description: Target labels or outputs for supervised learning
+        annotations:
+          also_known_as:
+            tag: also_known_as
+            value: target, output, dependent variable, ground truth
+      METADATA:
+        text: METADATA
+        description: Descriptive information about the dataset or records
+        annotations:
+          also_known_as:
+            tag: also_known_as
+            value: descriptive field, provenance
+      IDENTIFIER:
+        text: IDENTIFIER
+        description: Unique identifiers for records or entities
+        annotations:
+          also_known_as:
+            tag: also_known_as
+            value: ID, key, primary key
+  CompressionFormat:
+    name: CompressionFormat
+    definition_uri: https://w3id.org/valuesets/CompressionFormat
+    description: 'Compression and archive formats commonly used for ML dataset distribution.
+
+      '
+    from_schema: https://w3id.org/valuesets/computing/croissant_ml
+    permissible_values:
+      ZIP:
+        text: ZIP
+        description: ZIP archive format with lossless data compression
+        meaning: EDAM:format_3987
+        annotations:
+          mime_type:
+            tag: mime_type
+            value: application/zip
+          typical_extension:
+            tag: typical_extension
+            value: .zip
+        title: ZIP format
+      TAR:
+        text: TAR
+        description: Tape Archive format (typically used with compression)
+        meaning: EDAM:format_3981
+        annotations:
+          mime_type:
+            tag: mime_type
+            value: application/x-tar
+          typical_extension:
+            tag: typical_extension
+            value: .tar
+        title: TAR format
+      GZIP:
+        text: GZIP
+        description: GNU zip compression format
+        meaning: EDAM:format_3989
+        annotations:
+          mime_type:
+            tag: mime_type
+            value: application/gzip
+          typical_extension:
+            tag: typical_extension
+            value: .gz
+        title: GZIP format
+      TAR_GZ:
+        text: TAR_GZ
+        description: TAR archive compressed with GZIP
+        annotations:
+          mime_type:
+            tag: mime_type
+            value: application/gzip
+          typical_extension:
+            tag: typical_extension
+            value: .tar.gz
+  MLMediaType:
+    name: MLMediaType
+    definition_uri: https://w3id.org/valuesets/MLMediaType
+    description: 'Media types (MIME types) for different modalities of ML data including
+
+      images, audio, video, and text.
+
+      '
+    from_schema: https://w3id.org/valuesets/computing/croissant_ml
+    permissible_values:
+      IMAGE_JPEG:
+        text: IMAGE_JPEG
+        description: JPEG image format
+        meaning: EDAM:format_3579
+        annotations:
+          mime_type:
+            tag: mime_type
+            value: image/jpeg
+          modality:
+            tag: modality
+            value: image
+        title: JPG
+      IMAGE_PNG:
+        text: IMAGE_PNG
+        description: PNG image format
+        meaning: EDAM:format_3603
+        annotations:
+          mime_type:
+            tag: mime_type
+            value: image/png
+          modality:
+            tag: modality
+            value: image
+        title: PNG
+      IMAGE_GIF:
+        text: IMAGE_GIF
+        description: GIF image format
+        annotations:
+          mime_type:
+            tag: mime_type
+            value: image/gif
+          modality:
+            tag: modality
+            value: image
+      IMAGE_TIFF:
+        text: IMAGE_TIFF
+        description: TIFF image format
+        annotations:
+          mime_type:
+            tag: mime_type
+            value: image/tiff
+          modality:
+            tag: modality
+            value: image
+      AUDIO_WAV:
+        text: AUDIO_WAV
+        description: Waveform Audio File Format
+        annotations:
+          mime_type:
+            tag: mime_type
+            value: audio/wav
+          modality:
+            tag: modality
+            value: audio
+      AUDIO_MP3:
+        text: AUDIO_MP3
+        description: MP3 audio format
+        annotations:
+          mime_type:
+            tag: mime_type
+            value: audio/mpeg
+          modality:
+            tag: modality
+            value: audio
+      AUDIO_FLAC:
+        text: AUDIO_FLAC
+        description: FLAC lossless audio format
+        annotations:
+          mime_type:
+            tag: mime_type
+            value: audio/flac
+          modality:
+            tag: modality
+            value: audio
+      VIDEO_MP4:
+        text: VIDEO_MP4
+        description: MPEG-4 video format
+        meaning: EDAM:format_3997
+        annotations:
+          mime_type:
+            tag: mime_type
+            value: video/mp4
+          modality:
+            tag: modality
+            value: video
+        title: MPEG-4
+      VIDEO_AVI:
+        text: VIDEO_AVI
+        description: Audio Video Interleaved format
+        meaning: EDAM:format_3990
+        annotations:
+          mime_type:
+            tag: mime_type
+            value: video/x-msvideo
+          modality:
+            tag: modality
+            value: video
+        title: AVI
+      VIDEO_WEBM:
+        text: VIDEO_WEBM
+        description: WebM video format
+        annotations:
+          mime_type:
+            tag: mime_type
+            value: video/webm
+          modality:
+            tag: modality
+            value: video
+      TEXT_PLAIN:
+        text: TEXT_PLAIN
+        description: Plain text format
+        annotations:
+          mime_type:
+            tag: mime_type
+            value: text/plain
+          modality:
+            tag: modality
+            value: text
+      TEXT_HTML:
+        text: TEXT_HTML
+        description: HTML format
+        annotations:
+          mime_type:
+            tag: mime_type
+            value: text/html
+          modality:
+            tag: modality
+            value: text
+  MLModalityType:
+    name: MLModalityType
+    definition_uri: https://w3id.org/valuesets/MLModalityType
+    description: 'High-level data modalities used in machine learning. These represent
+
+      the fundamental types of input data that ML models process.
+
+      '
+    from_schema: https://w3id.org/valuesets/computing/croissant_ml
+    permissible_values:
+      TEXT:
+        text: TEXT
+        description: Textual data (natural language, code, etc.)
+        annotations:
+          examples:
+            tag: examples
+            value: documents, sentences, tokens
+      IMAGE:
+        text: IMAGE
+        description: Visual image data
+        meaning: EDAM:data_2968
+        annotations:
+          examples:
+            tag: examples
+            value: photographs, diagrams, scans
+      AUDIO:
+        text: AUDIO
+        description: Audio/sound data
+        annotations:
+          examples:
+            tag: examples
+            value: speech, music, sound effects
+      VIDEO:
+        text: VIDEO
+        description: Video data (sequences of images with optional audio)
+        annotations:
+          examples:
+            tag: examples
+            value: movies, recordings, animations
+      MULTIMODAL:
+        text: MULTIMODAL
+        description: Data combining multiple modalities
+        annotations:
+          examples:
+            tag: examples
+            value: image-text pairs, audio-visual data
+      TABULAR:
+        text: TABULAR
+        description: Structured tabular data
+        annotations:
+          examples:
+            tag: examples
+            value: spreadsheets, databases, CSV files
+      TIME_SERIES:
+        text: TIME_SERIES
+        description: Sequential temporal data
+        annotations:
+          examples:
+            tag: examples
+            value: sensor readings, stock prices, logs
+      GRAPH:
+        text: GRAPH
+        description: Graph-structured data with nodes and edges
+        annotations:
+          examples:
+            tag: examples
+            value: social networks, knowledge graphs, molecular structures
   LegalEntityTypeEnum:
     name: LegalEntityTypeEnum
     definition_uri: https://w3id.org/valuesets/LegalEntityTypeEnum
@@ -44745,6 +46633,1101 @@ enums:
       QUALITY_CONTROL:
         text: QUALITY_CONTROL
         description: Sample with known composition for system performance monitoring
+  LaboratoryDeviceTypeEnum:
+    name: LaboratoryDeviceTypeEnum
+    definition_uri: https://w3id.org/valuesets/LaboratoryDeviceTypeEnum
+    description: Types of automated laboratory devices and equipment
+    from_schema: https://w3id.org/linkml/valuesets/lab_automation/devices
+    permissible_values:
+      LIQUID_HANDLER:
+        text: LIQUID_HANDLER
+        description: A device that is used for automated liquid transfer and handling
+        meaning: OBI:0400112
+        title: liquid handler
+      LIQUID_EXTRACTION_ROBOT:
+        text: LIQUID_EXTRACTION_ROBOT
+        description: A liquid handling device that provides automatic liquid extraction
+        meaning: OBI:0001097
+        title: liquid extraction robot
+      CENTRIFUGE:
+        text: CENTRIFUGE
+        description: A device with a rapidly rotating container that applies centrifugal
+          force to its contents
+        meaning: OBI:0400106
+        title: centrifuge
+      MICROCENTRIFUGE:
+        text: MICROCENTRIFUGE
+        description: A type of centrifuge that is designed for small tubes (0.2 ml
+          to 2.0 ml), has a compact design, and has a small footprint
+        meaning: OBI:0001100
+        title: microcentrifuge
+      INCUBATOR:
+        text: INCUBATOR
+        description: A device in which environmental conditions (light, photoperiod,
+          temperature, humidity, etc.) can be controlled
+        meaning: OBI:0000136
+        title: incubator
+      INCUBATOR_SHAKER:
+        text: INCUBATOR_SHAKER
+        description: An incubating device that provides shaking motion for biomedical
+          applications (e.g., cell cultures)
+        meaning: OBI:0001076
+        title: incubator shaker
+      MICROPLATE_READER:
+        text: MICROPLATE_READER
+        description: A measurement device that detects biological, chemical or physical
+          events of samples in microtiter plates
+        meaning: OBI:0001058
+        title: microplate reader
+      ELISA_MICROPLATE_READER:
+        text: ELISA_MICROPLATE_READER
+        description: A microplate reader that is used for enzyme-linked immunosorbent
+          assays (ELISA)
+        meaning: OBI:0001059
+        title: ELISA microplate reader
+      MULTIMODE_MICROPLATE_READER:
+        text: MULTIMODE_MICROPLATE_READER
+        description: A microplate reader that can detect multiple types of absorbance,
+          luminescence or fluorescence
+        meaning: OBI:0001090
+        title: multimode microplate reader
+      MICROPLATE_WASHER:
+        text: MICROPLATE_WASHER
+        description: A device that is used to wash immunoassays in microwell strips
+          and plates with professional accuracy
+        meaning: OBI:0001113
+        title: microplate washer
+      ELISA_MICROPLATE_WASHER:
+        text: ELISA_MICROPLATE_WASHER
+        description: A microplate washer that is used for enzyme-linked immunosorbent
+          assays (ELISA)
+        meaning: OBI:0001115
+        title: ELISA microplate washer
+      MULTICHANNEL_PIPETTE:
+        text: MULTICHANNEL_PIPETTE
+        description: A pipetting system that has a plurality of tip fittings and is
+          used for multi-well plate applications
+        meaning: OBI:0001118
+        title: multichannel pipette
+      ROBOTIC_ARM:
+        text: ROBOTIC_ARM
+        description: A programmable mechanical arm used in laboratory automation
+        meaning: SNOMED:82830000
+        title: robotic arm
+      THERMAL_CYCLER:
+        text: THERMAL_CYCLER
+        description: A laboratory apparatus used to amplify DNA segments via the polymerase
+          chain reaction
+        title: thermal cycler
+      COLONY_PICKER:
+        text: COLONY_PICKER
+        description: An automated device for selecting and transferring individual
+          bacterial or yeast colonies
+        title: colony picker
+      BARCODE_READER:
+        text: BARCODE_READER
+        description: A device that reads barcode labels on laboratory samples and
+          containers
+        title: barcode reader
+      PLATE_HANDLER:
+        text: PLATE_HANDLER
+        description: An automated device designed to transfer microplates between
+          workstations and lab instruments
+        title: plate handler
+      DISPENSER:
+        text: DISPENSER
+        description: A device for automated dispensing of reagents or samples
+        title: dispenser
+  RoboticArmTypeEnum:
+    name: RoboticArmTypeEnum
+    definition_uri: https://w3id.org/valuesets/RoboticArmTypeEnum
+    description: Types of robotic arms used in laboratory automation systems
+    from_schema: https://w3id.org/linkml/valuesets/lab_automation/devices
+    permissible_values:
+      FLEXIBLE_CHANNEL_ARM:
+        text: FLEXIBLE_CHANNEL_ARM
+        description: Robotic arm with flexible channels for disposable tip handling
+          and liquid handling
+        annotations:
+          abbreviation:
+            tag: abbreviation
+            value: FCA
+        title: flexible channel arm
+      MULTI_CHANNEL_ARM:
+        text: MULTI_CHANNEL_ARM
+        description: Robotic arm used for high-throughput pipetting with 96 or 384
+          channels
+        annotations:
+          abbreviation:
+            tag: abbreviation
+            value: MCA
+        title: multi-channel arm
+      ROBOTIC_GRIPPER_ARM:
+        text: ROBOTIC_GRIPPER_ARM
+        description: Robotic arm used to pick and transfer objects within the working
+          area, equipped with dedicated gripper fingers
+        annotations:
+          abbreviation:
+            tag: abbreviation
+            value: RGA
+        title: robotic gripper arm
+      SINGLE_PROBE_ARM:
+        text: SINGLE_PROBE_ARM
+        description: Robotic arm with a single probe for individual sample handling
+        title: single probe arm
+  LiquidHandlingOperationEnum:
+    name: LiquidHandlingOperationEnum
+    definition_uri: https://w3id.org/valuesets/LiquidHandlingOperationEnum
+    description: Operations for automated liquid handling in laboratory automation
+    from_schema: https://w3id.org/linkml/valuesets/lab_automation/operations
+    permissible_values:
+      PICK_UP_TIPS:
+        text: PICK_UP_TIPS
+        description: Operation to pick up pipette tips from a tip rack
+        title: pick up tips
+      ASPIRATE:
+        text: ASPIRATE
+        description: Operation to draw liquid into pipette tips
+        title: aspirate
+      DISPENSE:
+        text: DISPENSE
+        description: Operation to dispense liquid from pipette tips
+        title: dispense
+      RETURN_TIPS:
+        text: RETURN_TIPS
+        description: Operation to return pipette tips to a tip rack
+        title: return tips
+      DROP_TIPS:
+        text: DROP_TIPS
+        description: Operation to drop or discard pipette tips
+        title: drop tips
+      TRANSFER:
+        text: TRANSFER
+        description: Combined operation to aspirate from source and dispense to destination
+        title: transfer
+      PIPETTING:
+        text: PIPETTING
+        description: A procedure or technique by which the size of the three dimensional
+          space occupied by a liquid substance is ascertained using a pipette
+        meaning: MMO:0000392
+        title: pipette method
+      MIXING:
+        text: MIXING
+        description: Operation to mix liquids by repeated aspiration and dispensing
+        title: mixing
+      ALIQUOTING:
+        text: ALIQUOTING
+        description: Operation to distribute a sample into multiple equal portions
+        title: aliquoting
+      SERIAL_DILUTION:
+        text: SERIAL_DILUTION
+        description: Operation to create a series of dilutions of a substance in solution
+        title: serial dilution
+      PLATE_STAMPING:
+        text: PLATE_STAMPING
+        description: Operation to transfer samples from one plate to another in the
+          same well pattern
+        title: plate stamping
+      ACOUSTIC_TRANSFER:
+        text: ACOUSTIC_TRANSFER
+        description: Acoustic liquid handling that uses acoustics to fly individual
+          droplets from a source container to a destination
+        title: acoustic transfer
+      MOUTH_PIPETTING:
+        text: MOUTH_PIPETTING
+        description: A method of using the researcher's mouth to apply small negative
+          pressure to aspirate a volume into a pipette
+        meaning: EFO:0010182
+        title: mouth pipetting
+  SampleProcessingOperationEnum:
+    name: SampleProcessingOperationEnum
+    definition_uri: https://w3id.org/valuesets/SampleProcessingOperationEnum
+    description: General sample processing operations in automated laboratories
+    from_schema: https://w3id.org/linkml/valuesets/lab_automation/operations
+    permissible_values:
+      CENTRIFUGATION:
+        text: CENTRIFUGATION
+        description: Operation to separate components of a sample using centrifugal
+          force
+        title: centrifugation
+      INCUBATION:
+        text: INCUBATION
+        description: Operation to maintain samples at controlled environmental conditions
+          over time
+        title: incubation
+      THERMAL_CYCLING:
+        text: THERMAL_CYCLING
+        description: Operation to cycle samples through different temperatures for
+          PCR or similar processes
+        title: thermal cycling
+      WASHING:
+        text: WASHING
+        description: Operation to wash samples or plates to remove unwanted material
+        title: washing
+      DETECTION:
+        text: DETECTION
+        description: Operation to detect signals from samples (absorbance, fluorescence,
+          luminescence)
+        title: detection
+      MEASUREMENT:
+        text: MEASUREMENT
+        description: Operation to measure a property or characteristic of a sample
+        title: measurement
+      SEPARATION:
+        text: SEPARATION
+        description: Operation to separate components of a sample mixture
+        title: separation
+      EXTRACTION:
+        text: EXTRACTION
+        description: Operation to extract specific components from a sample
+        title: extraction
+      HEATING:
+        text: HEATING
+        description: Operation to heat samples to a specified temperature
+        title: heating
+      COOLING:
+        text: COOLING
+        description: Operation to cool samples to a specified temperature
+        title: cooling
+      SHAKING:
+        text: SHAKING
+        description: Operation to shake samples for mixing or agitation
+        title: shaking
+      PLATE_MOVEMENT:
+        text: PLATE_MOVEMENT
+        description: Operation to move plates between different locations or devices
+        title: plate movement
+      BARCODE_READING:
+        text: BARCODE_READING
+        description: Operation to read barcode labels on samples or containers
+        title: barcode reading
+  MicroplateFormatEnum:
+    name: MicroplateFormatEnum
+    definition_uri: https://w3id.org/valuesets/MicroplateFormatEnum
+    description: Standard microplate well configurations following ANSI/SLAS standards
+    from_schema: https://w3id.org/linkml/valuesets/lab_automation/labware
+    permissible_values:
+      WELL_6:
+        text: WELL_6
+        description: Microplate with 6 wells
+        title: 6-well plate
+      WELL_12:
+        text: WELL_12
+        description: Microplate with 12 wells
+        title: 12-well plate
+      WELL_24:
+        text: WELL_24
+        description: Microplate with 24 wells
+        title: 24-well plate
+      WELL_48:
+        text: WELL_48
+        description: Microplate with 48 wells
+        title: 48-well plate
+      WELL_96:
+        text: WELL_96
+        description: Microplate with 96 wells arranged in 8 rows of 12 columns with
+          9mm well-to-well spacing
+        meaning: MSIO:0000162
+        annotations:
+          well_spacing:
+            tag: well_spacing
+            value: 9mm
+          standard:
+            tag: standard
+            value: ANSI/SLAS 4-2004
+        title: 96-well microplate
+      WELL_384:
+        text: WELL_384
+        description: Microplate with 384 wells with 4.5mm well-to-well spacing
+        annotations:
+          well_spacing:
+            tag: well_spacing
+            value: 4.5mm
+          standard:
+            tag: standard
+            value: ANSI/SLAS 4-2004
+        title: 384-well plate
+      WELL_1536:
+        text: WELL_1536
+        description: Microplate with 1536 wells with 2.25mm well-to-well spacing
+        annotations:
+          well_spacing:
+            tag: well_spacing
+            value: 2.25mm
+          standard:
+            tag: standard
+            value: ANSI/SLAS 4-2004
+        title: 1536-well plate
+  ContainerTypeEnum:
+    name: ContainerTypeEnum
+    definition_uri: https://w3id.org/valuesets/ContainerTypeEnum
+    description: Types of laboratory containers and labware
+    from_schema: https://w3id.org/linkml/valuesets/lab_automation/labware
+    permissible_values:
+      MICROPLATE:
+        text: MICROPLATE
+        description: A flat dish with multiple individual wells that are arrayed in
+          a standardized number, size, and arrangement
+        meaning: NCIT:C43377
+        title: microplate
+        exact_mappings:
+        - BAO:0000508
+      DEEP_WELL_PLATE:
+        text: DEEP_WELL_PLATE
+        description: A microplate with deeper wells for increased sample volume capacity
+        title: deep well plate
+      PCR_PLATE:
+        text: PCR_PLATE
+        description: A microplate specifically designed for PCR thermal cycling applications
+        title: PCR plate
+      TUBE_RACK:
+        text: TUBE_RACK
+        description: A rack designed to hold multiple laboratory tubes
+        title: tube rack
+      MICROTUBE:
+        text: MICROTUBE
+        description: Small laboratory tube with volume capacity from 0.2 ml to 2.0
+          ml
+        annotations:
+          volume_range:
+            tag: volume_range
+            value: 0.2-2.0 ml
+        title: microtube
+      SCREW_CAP_TUBE:
+        text: SCREW_CAP_TUBE
+        description: Laboratory tube with screw cap closure
+        title: screw cap tube
+      SNAP_CAP_TUBE:
+        text: SNAP_CAP_TUBE
+        description: Laboratory tube with snap cap closure
+        title: snap cap tube
+      RESERVOIR:
+        text: RESERVOIR
+        description: Container for holding bulk reagents for dispensing
+        title: reservoir
+      PIPETTE_TIP_BOX:
+        text: PIPETTE_TIP_BOX
+        description: Container for storing pipette tips in organized racks
+        title: pipette tip box
+      SPIN_COLUMN:
+        text: SPIN_COLUMN
+        description: A chromatography column which is suitable for putting it into
+          a centrifuge
+        meaning: OBI:0000570
+        title: spin column
+      MICROPLATE_WELL:
+        text: MICROPLATE_WELL
+        description: Any of the individual wells on a microwell plate
+        meaning: NCIT:C128793
+        title: microplate well
+  PlateMaterialEnum:
+    name: PlateMaterialEnum
+    definition_uri: https://w3id.org/valuesets/PlateMaterialEnum
+    description: Material composition of laboratory microplates
+    from_schema: https://w3id.org/linkml/valuesets/lab_automation/labware
+    permissible_values:
+      POLYSTYRENE:
+        text: POLYSTYRENE
+        description: Plates made from polystyrene, the most common material for standard
+          applications
+        title: polystyrene
+      POLYPROPYLENE:
+        text: POLYPROPYLENE
+        description: Plates made from polypropylene for chemical resistance
+        title: polypropylene
+      GLASS:
+        text: GLASS
+        description: Plates with glass inserts for samples not suitable for plastic
+          containers
+        title: glass
+  PlateCoatingEnum:
+    name: PlateCoatingEnum
+    definition_uri: https://w3id.org/valuesets/PlateCoatingEnum
+    description: Surface treatment of microplates
+    from_schema: https://w3id.org/linkml/valuesets/lab_automation/labware
+    permissible_values:
+      COATED:
+        text: COATED
+        description: A microplate whose surface has been treated, for instance by
+          covalently attaching proteins to favor cell growth
+        meaning: MSIO:0000164
+        title: coated microplate
+      UNCOATED:
+        text: UNCOATED
+        description: A microplate whose surface has not received any treatment and
+          is uniquely made of polymer
+        meaning: MSIO:0000170
+        title: uncoated microplate
+      TISSUE_CULTURE_TREATED:
+        text: TISSUE_CULTURE_TREATED
+        description: Surface treatment to enhance cell attachment and growth
+        title: tissue culture treated
+      PROTEIN_BINDING:
+        text: PROTEIN_BINDING
+        description: Surface treatment optimized for protein binding assays
+        title: protein binding
+  WorkflowOrchestrationTypeEnum:
+    name: WorkflowOrchestrationTypeEnum
+    definition_uri: https://w3id.org/valuesets/WorkflowOrchestrationTypeEnum
+    description: Types of workflow orchestration in laboratory automation systems
+    from_schema: https://w3id.org/linkml/valuesets/lab_automation/protocols
+    permissible_values:
+      STATIC_ORCHESTRATION:
+        text: STATIC_ORCHESTRATION
+        description: Pre-planned orchestration based on known constraints and fixed
+          workflow
+        title: static orchestration
+      DYNAMIC_ORCHESTRATION:
+        text: DYNAMIC_ORCHESTRATION
+        description: Real-time orchestration that adapts to changing conditions and
+          events
+        title: dynamic orchestration
+      HYBRID_ORCHESTRATION:
+        text: HYBRID_ORCHESTRATION
+        description: Combination of static planning with dynamic replanning capabilities
+        title: hybrid orchestration
+      EVENT_DRIVEN:
+        text: EVENT_DRIVEN
+        description: Orchestration triggered by specific events in the system
+        title: event-driven orchestration
+      PARALLEL_PROCESSING:
+        text: PARALLEL_PROCESSING
+        description: Orchestration that enables concurrent execution of independent
+          tasks
+        title: parallel processing
+  SchedulerTypeEnum:
+    name: SchedulerTypeEnum
+    definition_uri: https://w3id.org/valuesets/SchedulerTypeEnum
+    description: Types of scheduling algorithms for laboratory automation
+    from_schema: https://w3id.org/linkml/valuesets/lab_automation/protocols
+    permissible_values:
+      STATIC_SCHEDULER:
+        text: STATIC_SCHEDULER
+        description: Makes decisions based on known constraints requiring upfront
+          planning
+        title: static scheduler
+      DYNAMIC_SCHEDULER:
+        text: DYNAMIC_SCHEDULER
+        description: Adapts scheduling decisions in real-time based on system state
+        title: dynamic scheduler
+      PRIORITY_BASED:
+        text: PRIORITY_BASED
+        description: Schedules tasks based on assigned priority levels
+        title: priority-based scheduler
+      FIFO:
+        text: FIFO
+        description: First-in-first-out scheduling
+        title: FIFO scheduler
+      RESOURCE_AWARE:
+        text: RESOURCE_AWARE
+        description: Schedules tasks considering available resources and constraints
+        title: resource-aware scheduler
+      DEADLINE_DRIVEN:
+        text: DEADLINE_DRIVEN
+        description: Schedules tasks to meet specified deadlines
+        title: deadline-driven scheduler
+  ProtocolStateEnum:
+    name: ProtocolStateEnum
+    definition_uri: https://w3id.org/valuesets/ProtocolStateEnum
+    description: Execution states of laboratory protocols
+    from_schema: https://w3id.org/linkml/valuesets/lab_automation/protocols
+    permissible_values:
+      PENDING:
+        text: PENDING
+        description: Protocol is queued but not yet started
+        title: pending
+      RUNNING:
+        text: RUNNING
+        description: Protocol is currently executing
+        title: running
+      PAUSED:
+        text: PAUSED
+        description: Protocol execution has been temporarily suspended
+        title: paused
+      COMPLETED:
+        text: COMPLETED
+        description: Protocol has finished successfully
+        title: completed
+      FAILED:
+        text: FAILED
+        description: Protocol execution has failed
+        title: failed
+      ABORTED:
+        text: ABORTED
+        description: Protocol execution was manually aborted
+        title: aborted
+      VALIDATING:
+        text: VALIDATING
+        description: Protocol is being validated before execution
+        title: validating
+      WAITING_FOR_RESOURCE:
+        text: WAITING_FOR_RESOURCE
+        description: Protocol is waiting for required resources to become available
+        title: waiting for resource
+  ExecutionModeEnum:
+    name: ExecutionModeEnum
+    definition_uri: https://w3id.org/valuesets/ExecutionModeEnum
+    description: Modes of protocol execution
+    from_schema: https://w3id.org/linkml/valuesets/lab_automation/protocols
+    permissible_values:
+      AUTOMATED:
+        text: AUTOMATED
+        description: Fully automated execution without human intervention
+        title: automated
+      MANUAL:
+        text: MANUAL
+        description: Manual execution by human operator
+        title: manual
+      SEMI_AUTOMATED:
+        text: SEMI_AUTOMATED
+        description: Combination of automated and manual steps
+        title: semi-automated
+      SUPERVISED:
+        text: SUPERVISED
+        description: Automated execution with human supervision
+        title: supervised
+      SIMULATION:
+        text: SIMULATION
+        description: Simulated execution for testing and validation
+        title: simulation
+      DRY_RUN:
+        text: DRY_RUN
+        description: Test execution without actual operations
+        title: dry run
+  WorkflowErrorHandlingEnum:
+    name: WorkflowErrorHandlingEnum
+    definition_uri: https://w3id.org/valuesets/WorkflowErrorHandlingEnum
+    description: Error handling strategies in laboratory automation workflows
+    from_schema: https://w3id.org/linkml/valuesets/lab_automation/protocols
+    permissible_values:
+      ABORT_ON_ERROR:
+        text: ABORT_ON_ERROR
+        description: Terminate workflow immediately upon encountering an error
+        title: abort on error
+      RETRY:
+        text: RETRY
+        description: Attempt to retry the failed operation
+        title: retry
+      SKIP_AND_CONTINUE:
+        text: SKIP_AND_CONTINUE
+        description: Skip the failed operation and continue with the workflow
+        title: skip and continue
+      NOTIFY_AND_PAUSE:
+        text: NOTIFY_AND_PAUSE
+        description: Notify operator and pause workflow for intervention
+        title: notify and pause
+      ROLLBACK:
+        text: ROLLBACK
+        description: Revert to previous stable state
+        title: rollback
+      FAILOVER:
+        text: FAILOVER
+        description: Switch to backup resource or alternative execution path
+        title: failover
+  IntegrationSystemEnum:
+    name: IntegrationSystemEnum
+    definition_uri: https://w3id.org/valuesets/IntegrationSystemEnum
+    description: Types of systems integrated with laboratory automation platforms
+    from_schema: https://w3id.org/linkml/valuesets/lab_automation/protocols
+    permissible_values:
+      LIMS:
+        text: LIMS
+        description: Laboratory Information Management System
+        annotations:
+          full_name:
+            tag: full_name
+            value: Laboratory Information Management System
+        title: LIMS
+      ELN:
+        text: ELN
+        description: Electronic Laboratory Notebook
+        annotations:
+          full_name:
+            tag: full_name
+            value: Electronic Laboratory Notebook
+        title: ELN
+      MES:
+        text: MES
+        description: Manufacturing Execution System
+        annotations:
+          full_name:
+            tag: full_name
+            value: Manufacturing Execution System
+        title: MES
+      SCADA:
+        text: SCADA
+        description: Supervisory Control and Data Acquisition
+        annotations:
+          full_name:
+            tag: full_name
+            value: Supervisory Control and Data Acquisition
+        title: SCADA
+      CLOUD_STORAGE:
+        text: CLOUD_STORAGE
+        description: Cloud-based data storage systems
+        title: cloud storage
+      DATABASE:
+        text: DATABASE
+        description: Laboratory database systems
+        title: database
+  AutomationStandardEnum:
+    name: AutomationStandardEnum
+    definition_uri: https://w3id.org/valuesets/AutomationStandardEnum
+    description: Industry standards for laboratory automation systems
+    from_schema: https://w3id.org/linkml/valuesets/lab_automation/standards
+    permissible_values:
+      SILA_2:
+        text: SILA_2
+        description: Standardization in Lab Automation version 2 - international standard
+          for open connectivity in lab automation
+        annotations:
+          organization:
+            tag: organization
+            value: Society for Laboratory Automation and Screening
+          architecture:
+            tag: architecture
+            value: microservice-based
+          protocol:
+            tag: protocol
+            value: gRPC
+        title: SiLA 2
+      LABOP:
+        text: LABOP
+        description: Laboratory Open Protocol Language - open specification for laboratory
+          protocols
+        annotations:
+          format:
+            tag: format
+            value: RDF/OWL
+          organization:
+            tag: organization
+            value: Bioprotocols Working Group
+        title: LabOP
+      AUTOPROTOCOL:
+        text: AUTOPROTOCOL
+        description: JSON-based language for specifying experimental protocols
+        annotations:
+          format:
+            tag: format
+            value: JSON
+        title: Autoprotocol
+      CLSI_AUTO01:
+        text: CLSI_AUTO01
+        description: CLSI standard for Specimen Container/Specimen Carrier
+        annotations:
+          organization:
+            tag: organization
+            value: Clinical and Laboratory Standards Institute
+        title: CLSI AUTO01
+      CLSI_AUTO02:
+        text: CLSI_AUTO02
+        description: CLSI standard for Bar Codes for Specimen Container Identification
+        annotations:
+          organization:
+            tag: organization
+            value: Clinical and Laboratory Standards Institute
+        title: CLSI AUTO02
+      CLSI_AUTO03:
+        text: CLSI_AUTO03
+        description: CLSI standard for Communications with Automated Clinical Laboratory
+          Systems
+        annotations:
+          organization:
+            tag: organization
+            value: Clinical and Laboratory Standards Institute
+        title: CLSI AUTO03
+      CLSI_AUTO04:
+        text: CLSI_AUTO04
+        description: CLSI standard for Systems Operational Requirements, Characteristics,
+          and Information Elements
+        annotations:
+          organization:
+            tag: organization
+            value: Clinical and Laboratory Standards Institute
+        title: CLSI AUTO04
+      CLSI_AUTO05:
+        text: CLSI_AUTO05
+        description: CLSI standard for Electromechanical Interfaces
+        annotations:
+          organization:
+            tag: organization
+            value: Clinical and Laboratory Standards Institute
+        title: CLSI AUTO05
+  CommunicationProtocolEnum:
+    name: CommunicationProtocolEnum
+    definition_uri: https://w3id.org/valuesets/CommunicationProtocolEnum
+    description: Communication protocols for laboratory automation integration
+    from_schema: https://w3id.org/linkml/valuesets/lab_automation/standards
+    permissible_values:
+      GRPC:
+        text: GRPC
+        description: gRPC protocol used in SiLA 2
+        annotations:
+          used_by:
+            tag: used_by
+            value: SiLA 2
+        title: gRPC
+      REST_API:
+        text: REST_API
+        description: RESTful HTTP-based API
+        title: REST API
+      SOAP:
+        text: SOAP
+        description: Simple Object Access Protocol
+        title: SOAP
+      OPC_UA:
+        text: OPC_UA
+        description: OPC Unified Architecture for industrial automation
+        annotations:
+          full_name:
+            tag: full_name
+            value: OPC Unified Architecture
+        title: OPC UA
+      MODBUS:
+        text: MODBUS
+        description: Serial communication protocol for industrial devices
+        title: Modbus
+      CUSTOM_API:
+        text: CUSTOM_API
+        description: Vendor-specific custom API
+        title: custom API
+      SERIAL:
+        text: SERIAL
+        description: Serial communication protocol (RS-232, RS-485)
+        title: serial
+      TCP_IP:
+        text: TCP_IP
+        description: TCP/IP network protocol
+        title: TCP/IP
+      USB:
+        text: USB
+        description: Universal Serial Bus communication
+        title: USB
+  LabwareStandardEnum:
+    name: LabwareStandardEnum
+    definition_uri: https://w3id.org/valuesets/LabwareStandardEnum
+    description: Standardization specifications for laboratory labware
+    from_schema: https://w3id.org/linkml/valuesets/lab_automation/standards
+    permissible_values:
+      ANSI_SLAS_1_2004:
+        text: ANSI_SLAS_1_2004
+        description: Microplates - Footprint Dimensions
+        annotations:
+          reaffirmed:
+            tag: reaffirmed
+            value: 2012
+          specification:
+            tag: specification
+            value: Footprint Dimensions
+        title: ANSI/SLAS 1-2004
+      ANSI_SLAS_2_2004:
+        text: ANSI_SLAS_2_2004
+        description: Microplates - Height Dimensions
+        annotations:
+          reaffirmed:
+            tag: reaffirmed
+            value: 2012
+          specification:
+            tag: specification
+            value: Height Dimensions
+        title: ANSI/SLAS 2-2004
+      ANSI_SLAS_3_2004:
+        text: ANSI_SLAS_3_2004
+        description: Microplates - Bottom Outside Flange Dimensions
+        annotations:
+          reaffirmed:
+            tag: reaffirmed
+            value: 2012
+          specification:
+            tag: specification
+            value: Bottom Outside Flange Dimensions
+        title: ANSI/SLAS 3-2004
+      ANSI_SLAS_4_2004:
+        text: ANSI_SLAS_4_2004
+        description: Microplates - Well Positions
+        annotations:
+          reaffirmed:
+            tag: reaffirmed
+            value: 2012
+          specification:
+            tag: specification
+            value: Well Positions
+        title: ANSI/SLAS 4-2004
+      ANSI_SLAS_6_2012:
+        text: ANSI_SLAS_6_2012
+        description: Microplates - Well Bottom Elevation
+        annotations:
+          specification:
+            tag: specification
+            value: Well Bottom Elevation
+        title: ANSI/SLAS 6-2012
+      SBS_FOOTPRINT:
+        text: SBS_FOOTPRINT
+        description: Society for Biomolecular Screening standard footprint (127.76mm
+          x 85.5mm)
+        annotations:
+          dimensions:
+            tag: dimensions
+            value: 127.76mm x 85.5mm
+        title: SBS footprint
+  IntegrationFeatureEnum:
+    name: IntegrationFeatureEnum
+    definition_uri: https://w3id.org/valuesets/IntegrationFeatureEnum
+    description: Integration features for laboratory automation systems
+    from_schema: https://w3id.org/linkml/valuesets/lab_automation/standards
+    permissible_values:
+      BARCODE_TRACKING:
+        text: BARCODE_TRACKING
+        description: Integration feature for tracking samples via barcodes
+        title: barcode tracking
+      AUTOMATED_DATA_TRANSFER:
+        text: AUTOMATED_DATA_TRANSFER
+        description: Automatic transfer of data between systems
+        title: automated data transfer
+      CLOUD_STORAGE_INTEGRATION:
+        text: CLOUD_STORAGE_INTEGRATION
+        description: Integration with cloud-based storage systems
+        title: cloud storage integration
+      SAMPLE_TRACKING:
+        text: SAMPLE_TRACKING
+        description: Real-time tracking of sample location and status
+        title: sample tracking
+      WORKFLOW_VALIDATION:
+        text: WORKFLOW_VALIDATION
+        description: Automated validation of workflow definitions
+        title: workflow validation
+      ERROR_RECOVERY:
+        text: ERROR_RECOVERY
+        description: Automated error detection and recovery mechanisms
+        title: error recovery
+      AUDIT_TRAIL:
+        text: AUDIT_TRAIL
+        description: Complete logging of all operations for compliance
+        title: audit trail
+      ELECTRONIC_SIGNATURES:
+        text: ELECTRONIC_SIGNATURES
+        description: Support for electronic signatures for regulatory compliance
+        title: electronic signatures
+  ThermalCyclerTypeEnum:
+    name: ThermalCyclerTypeEnum
+    definition_uri: https://w3id.org/valuesets/ThermalCyclerTypeEnum
+    description: Types of thermal cycling instruments
+    from_schema: https://w3id.org/linkml/valuesets/lab_automation/thermal_cycling
+    permissible_values:
+      STANDARD_THERMAL_CYCLER:
+        text: STANDARD_THERMAL_CYCLER
+        description: Standard thermal cycler for endpoint PCR
+        title: standard thermal cycler
+      REAL_TIME_PCR:
+        text: REAL_TIME_PCR
+        description: Thermal cycler with real-time fluorescence detection
+        annotations:
+          abbreviation:
+            tag: abbreviation
+            value: qPCR
+        title: real-time PCR
+      DIGITAL_PCR:
+        text: DIGITAL_PCR
+        description: Thermal cycler for digital PCR applications
+        annotations:
+          abbreviation:
+            tag: abbreviation
+            value: dPCR
+        title: digital PCR
+      GRADIENT_THERMAL_CYCLER:
+        text: GRADIENT_THERMAL_CYCLER
+        description: Thermal cycler capable of running temperature gradients across
+          the block
+        title: gradient thermal cycler
+      FAST_THERMAL_CYCLER:
+        text: FAST_THERMAL_CYCLER
+        description: Thermal cycler optimized for rapid cycling
+        title: fast thermal cycler
+      AUTOMATED_THERMAL_CYCLER:
+        text: AUTOMATED_THERMAL_CYCLER
+        description: Thermal cycler with integrated automation for high-throughput
+          applications
+        annotations:
+          example:
+            tag: example
+            value: Biometra TRobot II
+        title: automated thermal cycler
+      IN_SITU_THERMAL_CYCLER:
+        text: IN_SITU_THERMAL_CYCLER
+        description: Thermal cycler designed for in situ PCR applications
+        title: in situ thermal cycler
+  PCROperationTypeEnum:
+    name: PCROperationTypeEnum
+    definition_uri: https://w3id.org/valuesets/PCROperationTypeEnum
+    description: Types of PCR operations and techniques
+    from_schema: https://w3id.org/linkml/valuesets/lab_automation/thermal_cycling
+    permissible_values:
+      STANDARD_PCR:
+        text: STANDARD_PCR
+        description: Standard endpoint PCR amplification
+        title: standard PCR
+      QUANTITATIVE_PCR:
+        text: QUANTITATIVE_PCR
+        description: Real-time quantitative PCR
+        annotations:
+          abbreviation:
+            tag: abbreviation
+            value: qPCR
+        title: quantitative PCR
+      REVERSE_TRANSCRIPTION_PCR:
+        text: REVERSE_TRANSCRIPTION_PCR
+        description: PCR with reverse transcription step for RNA amplification
+        annotations:
+          abbreviation:
+            tag: abbreviation
+            value: RT-PCR
+        title: reverse transcription PCR
+      RT_QPCR:
+        text: RT_QPCR
+        description: Real-time quantitative RT-PCR
+        title: RT-qPCR
+      MULTIPLEX_PCR:
+        text: MULTIPLEX_PCR
+        description: PCR amplifying multiple targets simultaneously
+        title: multiplex PCR
+      NESTED_PCR:
+        text: NESTED_PCR
+        description: Two-stage PCR for increased specificity
+        title: nested PCR
+      TOUCHDOWN_PCR:
+        text: TOUCHDOWN_PCR
+        description: PCR with decreasing annealing temperature
+        title: touchdown PCR
+      HOT_START_PCR:
+        text: HOT_START_PCR
+        description: PCR with heat-activated polymerase
+        title: hot start PCR
+      LONG_RANGE_PCR:
+        text: LONG_RANGE_PCR
+        description: PCR optimized for amplifying long DNA fragments
+        title: long range PCR
+      COLONY_PCR:
+        text: COLONY_PCR
+        description: PCR directly from bacterial colonies
+        title: colony PCR
+      HIGH_FIDELITY_PCR:
+        text: HIGH_FIDELITY_PCR
+        description: PCR using proofreading polymerases
+        title: high fidelity PCR
+      DIGITAL_PCR:
+        text: DIGITAL_PCR
+        description: Absolute quantification PCR using partitioning
+        title: digital PCR
+  DetectionModeEnum:
+    name: DetectionModeEnum
+    definition_uri: https://w3id.org/valuesets/DetectionModeEnum
+    description: Detection modes for real-time PCR instruments
+    from_schema: https://w3id.org/linkml/valuesets/lab_automation/thermal_cycling
+    permissible_values:
+      SYBR_GREEN:
+        text: SYBR_GREEN
+        description: DNA-binding dye detection
+        title: SYBR Green
+      TAQMAN:
+        text: TAQMAN
+        description: Hydrolysis probe-based detection
+        title: TaqMan
+      MOLECULAR_BEACON:
+        text: MOLECULAR_BEACON
+        description: Hairpin probe-based detection
+        title: molecular beacon
+      FRET:
+        text: FRET
+        description: Fluorescence resonance energy transfer detection
+        annotations:
+          full_name:
+            tag: full_name
+            value: Fluorescence Resonance Energy Transfer
+        title: FRET
+      SCORPION:
+        text: SCORPION
+        description: Unimolecular probe-based detection
+        title: Scorpion
+      HYBRIDIZATION_PROBE:
+        text: HYBRIDIZATION_PROBE
+        description: Two-probe FRET-based detection
+        title: hybridization probe
+      MULTI_CHANNEL:
+        text: MULTI_CHANNEL
+        description: Multi-channel fluorescence detection
+        title: multi-channel
+  PCRPlateTypeEnum:
+    name: PCRPlateTypeEnum
+    definition_uri: https://w3id.org/valuesets/PCRPlateTypeEnum
+    description: Types of plates used for PCR applications
+    from_schema: https://w3id.org/linkml/valuesets/lab_automation/thermal_cycling
+    permissible_values:
+      PCR_96_WELL:
+        text: PCR_96_WELL
+        description: 96-well plate for PCR
+        title: 96-well PCR plate
+      PCR_384_WELL:
+        text: PCR_384_WELL
+        description: 384-well plate for PCR
+        title: 384-well PCR plate
+      PCR_TUBE_STRIP:
+        text: PCR_TUBE_STRIP
+        description: Strip of 8 or 12 PCR tubes
+        title: PCR tube strip
+      INDIVIDUAL_PCR_TUBE:
+        text: INDIVIDUAL_PCR_TUBE
+        description: Individual PCR tube
+        title: individual PCR tube
+      LOW_PROFILE_PLATE:
+        text: LOW_PROFILE_PLATE
+        description: Low-profile PCR plate for automated systems
+        title: low profile plate
+      SKIRTED_PLATE:
+        text: SKIRTED_PLATE
+        description: PCR plate with skirted base for stability
+        title: skirted plate
+      SEMI_SKIRTED_PLATE:
+        text: SEMI_SKIRTED_PLATE
+        description: PCR plate with partial skirt
+        title: semi-skirted plate
+  ThermalCyclingStepEnum:
+    name: ThermalCyclingStepEnum
+    definition_uri: https://w3id.org/valuesets/ThermalCyclingStepEnum
+    description: Steps in thermal cycling protocols
+    from_schema: https://w3id.org/linkml/valuesets/lab_automation/thermal_cycling
+    permissible_values:
+      INITIAL_DENATURATION:
+        text: INITIAL_DENATURATION
+        description: Initial high-temperature step to denature template DNA
+        title: initial denaturation
+      DENATURATION:
+        text: DENATURATION
+        description: High-temperature step to separate DNA strands
+        title: denaturation
+      ANNEALING:
+        text: ANNEALING
+        description: Cooling step to allow primer binding
+        title: annealing
+      EXTENSION:
+        text: EXTENSION
+        description: Temperature-optimized step for polymerase activity
+        title: extension
+      FINAL_EXTENSION:
+        text: FINAL_EXTENSION
+        description: Extended final extension step
+        title: final extension
+      HOLD:
+        text: HOLD
+        description: Temperature hold step
+        title: hold
+      MELT_CURVE:
+        text: MELT_CURVE
+        description: Gradual temperature increase for melt curve analysis
+        title: melt curve
+      GRADIENT:
+        text: GRADIENT
+        description: Temperature gradient across block
+        title: gradient
 slots:
   relative_time:
     name: relative_time
@@ -45274,6 +48257,14 @@ slots:
     from_schema: https://w3id.org/valuesets/bio/structural_biology
     slot_uri: valuesets:processing_status
     range: ProcessingStatus
+  biosafety_level:
+    name: biosafety_level
+    definition_uri: https://w3id.org/valuesets/biosafety_level
+    description: The biosafety level required for handling biological agents based
+      on potential risk
+    from_schema: https://w3id.org/linkml/valuesets/bio/biosafety
+    slot_uri: valuesets:biosafety_level
+    range: BiosafetyLevelEnum
   insdc_missing_value:
     name: insdc_missing_value
     definition_uri: https://w3id.org/valuesets/insdc_missing_value
@@ -45465,6 +48456,41 @@ slots:
     from_schema: https://w3id.org/linkml/valuesets/academic/research
     slot_uri: valuesets:citation_style
     range: CitationStyle
+  us_national_laboratory:
+    name: us_national_laboratory
+    definition_uri: https://w3id.org/valuesets/us_national_laboratory
+    description: US Department of Energy National Laboratory
+    from_schema: https://w3id.org/linkml/valuesets/academic/organizations
+    slot_uri: valuesets:us_national_laboratory
+    range: USDOENationalLaboratoryEnum
+  us_federal_funding_agency:
+    name: us_federal_funding_agency
+    definition_uri: https://w3id.org/valuesets/us_federal_funding_agency
+    description: US Federal Research Funding Agency
+    from_schema: https://w3id.org/linkml/valuesets/academic/organizations
+    slot_uri: valuesets:us_federal_funding_agency
+    range: USFederalFundingAgencyEnum
+  nih_institute_center:
+    name: nih_institute_center
+    definition_uri: https://w3id.org/valuesets/nih_institute_center
+    description: NIH Institute or Center
+    from_schema: https://w3id.org/linkml/valuesets/academic/organizations
+    slot_uri: valuesets:nih_institute_center
+    range: NIHInstituteCenterEnum
+  standards_organization:
+    name: standards_organization
+    definition_uri: https://w3id.org/valuesets/standards_organization
+    description: Standards Development Organization
+    from_schema: https://w3id.org/linkml/valuesets/academic/organizations
+    slot_uri: valuesets:standards_organization
+    range: StandardsOrganizationEnum
+  un_specialized_agency:
+    name: un_specialized_agency
+    definition_uri: https://w3id.org/valuesets/un_specialized_agency
+    description: United Nations Specialized Agency
+    from_schema: https://w3id.org/linkml/valuesets/academic/organizations
+    slot_uri: valuesets:un_specialized_agency
+    range: UNSpecializedAgencyEnum
   energy_source:
     name: energy_source
     definition_uri: https://w3id.org/valuesets/energy_source
@@ -46005,6 +49031,41 @@ slots:
     from_schema: https://w3id.org/valuesets/environmental-health/exposures
     slot_uri: valuesets:exposure_duration
     range: ExposureDurationEnum
+  smoking_status:
+    name: smoking_status
+    definition_uri: https://w3id.org/valuesets/smoking_status
+    description: Tobacco and nicotine consumption status
+    from_schema: https://w3id.org/valuesets/environmental-health/exposures
+    slot_uri: valuesets:smoking_status
+    range: SmokingStatusEnum
+  exposure_stressor_type:
+    name: exposure_stressor_type
+    definition_uri: https://w3id.org/valuesets/exposure_stressor_type
+    description: Types of exposure stressors by their origin
+    from_schema: https://w3id.org/valuesets/environmental-health/exposures
+    slot_uri: valuesets:exposure_stressor_type
+    range: ExposureStressorTypeEnum
+  exposure_transport_path:
+    name: exposure_transport_path
+    definition_uri: https://w3id.org/valuesets/exposure_transport_path
+    description: Transport medium through which exposure occurs
+    from_schema: https://w3id.org/valuesets/environmental-health/exposures
+    slot_uri: valuesets:exposure_transport_path
+    range: ExposureTransportPathEnum
+  exposure_frequency:
+    name: exposure_frequency
+    definition_uri: https://w3id.org/valuesets/exposure_frequency
+    description: Temporal pattern of exposure occurrence
+    from_schema: https://w3id.org/valuesets/environmental-health/exposures
+    slot_uri: valuesets:exposure_frequency
+    range: ExposureFrequencyEnum
+  study_population:
+    name: study_population
+    definition_uri: https://w3id.org/valuesets/study_population
+    description: Specific population groups in exposure studies
+    from_schema: https://w3id.org/valuesets/environmental-health/exposures
+    slot_uri: valuesets:study_population
+    range: StudyPopulationEnum
   country_code_iso2:
     name: country_code_iso2
     definition_uri: https://w3id.org/valuesets/country_code_iso2
@@ -47566,6 +50627,13 @@ slots:
     from_schema: https://w3id.org/common-value-sets/computing/maturity_levels
     slot_uri: valuesets:open_source_maturity_level
     range: OpenSourceMaturityLevel
+  owl_profile:
+    name: owl_profile
+    definition_uri: https://w3id.org/valuesets/owl_profile
+    description: OWL 2 profile for the ontology
+    from_schema: https://w3id.org/valuesets/computing/ontologies
+    slot_uri: valuesets:owl_profile
+    range: OWLProfileEnum
   legal_entity_type:
     name: legal_entity_type
     definition_uri: https://w3id.org/valuesets/legal_entity_type
@@ -47867,6 +50935,132 @@ slots:
     from_schema: https://w3id.org/linkml/valuesets/business/human_resources
     slot_uri: valuesets:benefits_category
     range: BenefitsCategoryEnum
+  laboratory_device_type:
+    name: laboratory_device_type
+    definition_uri: https://w3id.org/valuesets/laboratory_device_type
+    description: Type of automated laboratory equipment or device
+    from_schema: https://w3id.org/linkml/valuesets/lab_automation/devices
+    slot_uri: valuesets:laboratory_device_type
+    range: LaboratoryDeviceTypeEnum
+  robotic_arm_type:
+    name: robotic_arm_type
+    definition_uri: https://w3id.org/valuesets/robotic_arm_type
+    description: Type of robotic arm used in laboratory automation
+    from_schema: https://w3id.org/linkml/valuesets/lab_automation/devices
+    slot_uri: valuesets:robotic_arm_type
+    range: RoboticArmTypeEnum
+  liquid_handling_operation:
+    name: liquid_handling_operation
+    definition_uri: https://w3id.org/valuesets/liquid_handling_operation
+    description: Type of liquid handling operation in automated laboratory workflows
+    from_schema: https://w3id.org/linkml/valuesets/lab_automation/operations
+    slot_uri: valuesets:liquid_handling_operation
+    range: LiquidHandlingOperationEnum
+  sample_processing_operation:
+    name: sample_processing_operation
+    definition_uri: https://w3id.org/valuesets/sample_processing_operation
+    description: Type of sample processing operation
+    from_schema: https://w3id.org/linkml/valuesets/lab_automation/operations
+    slot_uri: valuesets:sample_processing_operation
+    range: SampleProcessingOperationEnum
+  microplate_format:
+    name: microplate_format
+    definition_uri: https://w3id.org/valuesets/microplate_format
+    description: Standard microplate well configuration
+    from_schema: https://w3id.org/linkml/valuesets/lab_automation/labware
+    slot_uri: valuesets:microplate_format
+    range: MicroplateFormatEnum
+  container_type:
+    name: container_type
+    definition_uri: https://w3id.org/valuesets/container_type
+    description: Type of laboratory container
+    from_schema: https://w3id.org/linkml/valuesets/lab_automation/labware
+    slot_uri: valuesets:container_type
+    range: ContainerTypeEnum
+  plate_material:
+    name: plate_material
+    definition_uri: https://w3id.org/valuesets/plate_material
+    description: Material composition of laboratory plates
+    from_schema: https://w3id.org/linkml/valuesets/lab_automation/labware
+    slot_uri: valuesets:plate_material
+    range: PlateMaterialEnum
+  plate_coating:
+    name: plate_coating
+    definition_uri: https://w3id.org/valuesets/plate_coating
+    description: Surface treatment of laboratory plates
+    from_schema: https://w3id.org/linkml/valuesets/lab_automation/labware
+    slot_uri: valuesets:plate_coating
+    range: PlateCoatingEnum
+  workflow_orchestration_type:
+    name: workflow_orchestration_type
+    definition_uri: https://w3id.org/valuesets/workflow_orchestration_type
+    description: Type of workflow orchestration approach
+    from_schema: https://w3id.org/linkml/valuesets/lab_automation/protocols
+    slot_uri: valuesets:workflow_orchestration_type
+    range: WorkflowOrchestrationTypeEnum
+  scheduler_type:
+    name: scheduler_type
+    definition_uri: https://w3id.org/valuesets/scheduler_type
+    description: Type of scheduling algorithm for laboratory automation
+    from_schema: https://w3id.org/linkml/valuesets/lab_automation/protocols
+    slot_uri: valuesets:scheduler_type
+    range: SchedulerTypeEnum
+  protocol_state:
+    name: protocol_state
+    definition_uri: https://w3id.org/valuesets/protocol_state
+    description: Execution state of a laboratory protocol
+    from_schema: https://w3id.org/linkml/valuesets/lab_automation/protocols
+    slot_uri: valuesets:protocol_state
+    range: ProtocolStateEnum
+  execution_mode:
+    name: execution_mode
+    definition_uri: https://w3id.org/valuesets/execution_mode
+    description: Mode of protocol execution
+    from_schema: https://w3id.org/linkml/valuesets/lab_automation/protocols
+    slot_uri: valuesets:execution_mode
+    range: ExecutionModeEnum
+  automation_standard:
+    name: automation_standard
+    definition_uri: https://w3id.org/valuesets/automation_standard
+    description: Industry standard for laboratory automation
+    from_schema: https://w3id.org/linkml/valuesets/lab_automation/standards
+    slot_uri: valuesets:automation_standard
+    range: AutomationStandardEnum
+  communication_protocol:
+    name: communication_protocol
+    definition_uri: https://w3id.org/valuesets/communication_protocol
+    description: Communication protocol for laboratory device integration
+    from_schema: https://w3id.org/linkml/valuesets/lab_automation/standards
+    slot_uri: valuesets:communication_protocol
+    range: CommunicationProtocolEnum
+  labware_standard:
+    name: labware_standard
+    definition_uri: https://w3id.org/valuesets/labware_standard
+    description: Standardization specification for laboratory labware
+    from_schema: https://w3id.org/linkml/valuesets/lab_automation/standards
+    slot_uri: valuesets:labware_standard
+    range: LabwareStandardEnum
+  thermal_cycler_type:
+    name: thermal_cycler_type
+    definition_uri: https://w3id.org/valuesets/thermal_cycler_type
+    description: Type of thermal cycling instrument
+    from_schema: https://w3id.org/linkml/valuesets/lab_automation/thermal_cycling
+    slot_uri: valuesets:thermal_cycler_type
+    range: ThermalCyclerTypeEnum
+  pcr_operation_type:
+    name: pcr_operation_type
+    definition_uri: https://w3id.org/valuesets/pcr_operation_type
+    description: Type of PCR operation
+    from_schema: https://w3id.org/linkml/valuesets/lab_automation/thermal_cycling
+    slot_uri: valuesets:pcr_operation_type
+    range: PCROperationTypeEnum
+  detection_mode:
+    name: detection_mode
+    definition_uri: https://w3id.org/valuesets/detection_mode
+    description: Detection mode for real-time PCR
+    from_schema: https://w3id.org/linkml/valuesets/lab_automation/thermal_cycling
+    slot_uri: valuesets:detection_mode
+    range: DetectionModeEnum
 classes:
   Fake:
     name: Fake
@@ -47875,7 +51069,7 @@ classes:
     class_uri: valuesets:Fake
 metamodel_version: 1.7.0
 source_file: valuesets.yaml
-source_file_date: '2025-10-20T12:45:49'
-source_file_size: 2562
-generation_date: '2025-10-23T06:42:09'
+source_file_date: '2025-11-05T17:59:31'
+source_file_size: 2816
+generation_date: '2025-11-05T18:05:58'
 

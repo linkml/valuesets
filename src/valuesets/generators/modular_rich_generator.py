@@ -98,7 +98,6 @@ class ModularRichEnumGenerator:
         output.append('')
         output.append('from __future__ import annotations')
         output.append('')
-        output.append('from typing import Dict, Any, Optional')
         output.append('from valuesets.generators.rich_enum import RichEnum')
         output.append('')
 

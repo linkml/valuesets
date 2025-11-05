@@ -1,0 +1,161 @@
+"""
+Earth Science Physiographic Features
+
+Physiographic features for earth sample collection sites, based on SESAR (System for Earth Sample Registration) vocabulary
+
+Generated from: earth_science/physiographic_features.yaml
+"""
+
+from __future__ import annotations
+
+from valuesets.generators.rich_enum import RichEnum
+
+class SESARPhysiographicFeature(RichEnum):
+    """
+    Physiographic feature types as defined by SESAR (System for Earth Sample Registration). These describe the type of physical feature from which a sample was collected.
+    """
+    # Enum members
+    ABYSSAL_FEATURE = "ABYSSAL_FEATURE"
+    ALLUVIAL_FAN = "ALLUVIAL_FAN"
+    ANTICLINE = "ANTICLINE"
+    AQUIFER = "AQUIFER"
+    ARCH = "ARCH"
+    ARROYO = "ARROYO"
+    BADLANDS = "BADLANDS"
+    BANK = "BANK"
+    BAR = "BAR"
+    BASIN = "BASIN"
+    BAY = "BAY"
+    BEACH = "BEACH"
+    BIGHT = "BIGHT"
+    CANYON = "CANYON"
+    CAPE = "CAPE"
+    CAVE = "CAVE"
+    CHANNEL = "CHANNEL"
+    CIRQUE = "CIRQUE"
+    CLIFF = "CLIFF"
+    CONTINENTAL_DIVIDE = "CONTINENTAL_DIVIDE"
+    CONTINENTAL_MARGIN = "CONTINENTAL_MARGIN"
+    CRATER = "CRATER"
+    DELTA = "DELTA"
+    DRAINAGE_BASIN = "DRAINAGE_BASIN"
+    DRUMLIN = "DRUMLIN"
+    DUNE = "DUNE"
+    EARTHQUAKE_FEATURE = "EARTHQUAKE_FEATURE"
+    ESTUARY = "ESTUARY"
+    FAULT = "FAULT"
+    FAULT_ZONE = "FAULT_ZONE"
+    FLAT = "FLAT"
+    FLOODPLAIN = "FLOODPLAIN"
+    FOLD = "FOLD"
+    FRACTURE_ZONE = "FRACTURE_ZONE"
+    GAP = "GAP"
+    GULF = "GULF"
+    GUT = "GUT"
+    HYDROTHERMAL_VENT = "HYDROTHERMAL_VENT"
+    ICE_MASS = "ICE_MASS"
+    ISTHMUS = "ISTHMUS"
+    KARST_AREA = "KARST_AREA"
+    LAKE = "LAKE"
+    LAVA_FIELD = "LAVA_FIELD"
+    LEDGE = "LEDGE"
+    MASSIF = "MASSIF"
+    MESA = "MESA"
+    MINERAL_DEPOSIT_AREA = "MINERAL_DEPOSIT_AREA"
+    MORAINE = "MORAINE"
+    MOUNTAIN = "MOUNTAIN"
+    MOUNTAIN_RANGE = "MOUNTAIN_RANGE"
+    MOUNTAIN_SUMMIT = "MOUNTAIN_SUMMIT"
+    OCEAN_TRENCH = "OCEAN_TRENCH"
+    OUTCROP = "OUTCROP"
+    PLAIN = "PLAIN"
+    PLATEAU = "PLATEAU"
+    PLAYA = "PLAYA"
+    REEF = "REEF"
+    RIDGE = "RIDGE"
+    RIFT_ZONE = "RIFT_ZONE"
+    ROADCUT = "ROADCUT"
+    SEAMOUNT = "SEAMOUNT"
+    SEA = "SEA"
+    STREAM = "STREAM"
+    SUBMARINE_CANYON = "SUBMARINE_CANYON"
+    SYNCLINE = "SYNCLINE"
+    THERMAL_FEATURE = "THERMAL_FEATURE"
+    VALLEY = "VALLEY"
+    VOLCANO = "VOLCANO"
+
+# Set metadata after class creation
+SESARPhysiographicFeature._metadata = {
+    "ABYSSAL_FEATURE": {'description': 'Deep ocean floor feature'},
+    "ALLUVIAL_FAN": {'description': 'Fan-shaped deposit formed by flowing water'},
+    "ANTICLINE": {'description': 'Upward-folded rock formation'},
+    "AQUIFER": {'description': 'Underground layer of water-bearing rock'},
+    "ARCH": {'description': 'Natural arch formation', 'annotations': {'note': 'natural formation'}},
+    "ARROYO": {'description': 'Steep-sided gully cut by running water'},
+    "BADLANDS": {'description': 'Dry terrain with eroded sedimentary rocks'},
+    "BANK": {'description': 'Raised area of seabed or riverbed', 'annotations': {'note': 'hydrographic'}},
+    "BAR": {'description': 'Elongated landform feature', 'annotations': {'note': 'physiographic'}},
+    "BASIN": {'description': "Depression in the Earth's surface"},
+    "BAY": {'description': 'Body of water partly enclosed by land'},
+    "BEACH": {'description': 'Landform along a body of water'},
+    "BIGHT": {'description': 'Shallow bay or bend in a coastline'},
+    "CANYON": {'description': 'Deep gorge with steep sides', 'meaning': 'ENVO:00000169'},
+    "CAPE": {'description': 'Pointed land projection into water'},
+    "CAVE": {'description': 'Natural underground chamber', 'meaning': 'ENVO:00000067'},
+    "CHANNEL": {'description': 'Watercourse or strait'},
+    "CIRQUE": {'description': 'Amphitheater-like valley carved by glacial erosion'},
+    "CLIFF": {'description': 'Steep rock face'},
+    "CONTINENTAL_DIVIDE": {'description': 'Drainage divide on a continent'},
+    "CONTINENTAL_MARGIN": {'description': 'Zone between continental shelf and deep ocean'},
+    "CRATER": {'description': 'Bowl-shaped depression'},
+    "DELTA": {'description': 'Landform at river mouth', 'meaning': 'ENVO:00000101'},
+    "DRAINAGE_BASIN": {'description': 'Area drained by a river system'},
+    "DRUMLIN": {'description': 'Elongated hill formed by glacial action'},
+    "DUNE": {'description': 'Hill of sand formed by wind or water'},
+    "EARTHQUAKE_FEATURE": {'description': 'Landform created by seismic activity'},
+    "ESTUARY": {'description': 'Partially enclosed coastal body of water', 'meaning': 'ENVO:00000045'},
+    "FAULT": {'description': 'Fracture in rock with displacement'},
+    "FAULT_ZONE": {'description': 'Area containing multiple faults'},
+    "FLAT": {'description': 'Level land area'},
+    "FLOODPLAIN": {'description': 'Flat area adjacent to a river'},
+    "FOLD": {'description': 'Bend in rock layers', 'annotations': {'note': 'geologic'}},
+    "FRACTURE_ZONE": {'description': 'Area of crustal fractures'},
+    "GAP": {'description': 'Mountain pass or opening'},
+    "GULF": {'description': 'Large bay'},
+    "GUT": {'description': 'Narrow water passage'},
+    "HYDROTHERMAL_VENT": {'description': 'Fissure releasing geothermally heated water', 'meaning': 'ENVO:00000215'},
+    "ICE_MASS": {'description': 'Large accumulation of ice'},
+    "ISTHMUS": {'description': 'Narrow strip of land connecting two larger areas'},
+    "KARST_AREA": {'description': 'Landscape formed by limestone dissolution'},
+    "LAKE": {'description': 'Body of standing water', 'meaning': 'ENVO:00000020'},
+    "LAVA_FIELD": {'description': 'Area covered by lava flows'},
+    "LEDGE": {'description': 'Narrow horizontal surface projecting from rock'},
+    "MASSIF": {'description': 'Compact group of mountains'},
+    "MESA": {'description': 'Isolated flat-topped hill'},
+    "MINERAL_DEPOSIT_AREA": {'description': 'Area with concentrated mineral deposits'},
+    "MORAINE": {'description': 'Glacially formed accumulation of debris'},
+    "MOUNTAIN": {'description': 'Large natural elevation', 'meaning': 'ENVO:00000081'},
+    "MOUNTAIN_RANGE": {'description': 'Series of connected mountains', 'meaning': 'ENVO:00000080'},
+    "MOUNTAIN_SUMMIT": {'description': 'Highest point of a mountain'},
+    "OCEAN_TRENCH": {'description': 'Deep oceanic depression'},
+    "OUTCROP": {'description': 'Exposed rock formation'},
+    "PLAIN": {'description': 'Flat or gently rolling land'},
+    "PLATEAU": {'description': 'Elevated flat area'},
+    "PLAYA": {'description': 'Dried lake bed'},
+    "REEF": {'description': 'Ridge of rock or coral near water surface', 'meaning': 'ENVO:01001899'},
+    "RIDGE": {'description': 'Long narrow elevation'},
+    "RIFT_ZONE": {'description': "Area where Earth's crust is pulling apart"},
+    "ROADCUT": {'description': 'Artificial rock exposure along roadway'},
+    "SEAMOUNT": {'description': 'Underwater mountain', 'meaning': 'ENVO:00000264'},
+    "SEA": {'description': 'Large body of salt water'},
+    "STREAM": {'description': 'Flowing body of water'},
+    "SUBMARINE_CANYON": {'description': 'Steep-sided valley on seafloor', 'meaning': 'ENVO:00000267'},
+    "SYNCLINE": {'description': 'Downward-folded rock formation'},
+    "THERMAL_FEATURE": {'description': 'Geothermal feature'},
+    "VALLEY": {'description': 'Low area between hills or mountains'},
+    "VOLCANO": {'description': "Vent in Earth's crust through which lava erupts", 'meaning': 'ENVO:00000247'},
+}
+
+__all__ = [
+    "SESARPhysiographicFeature",
+]

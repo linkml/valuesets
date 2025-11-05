@@ -8,7 +8,6 @@ Generated from: bio/go_aspect.yaml
 
 from __future__ import annotations
 
-from typing import Dict, Any, Optional
 from valuesets.generators.rich_enum import RichEnum
 
 class GOAspect(RichEnum):

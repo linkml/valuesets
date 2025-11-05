@@ -8,7 +8,6 @@ Generated from: geography/geographic_codes.yaml
 
 from __future__ import annotations
 
-from typing import Dict, Any, Optional
 from valuesets.generators.rich_enum import RichEnum
 
 class CountryCodeISO2Enum(RichEnum):
