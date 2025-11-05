@@ -5,10 +5,9 @@ Generated from: bio/biosafety.yaml
 
 from __future__ import annotations
 
-from typing import Dict, Any, Optional
 from valuesets.generators.rich_enum import RichEnum
 
-class BiosaftyLevelEnum(RichEnum):
+class BiosafetyLevelEnum(RichEnum):
     """
     Biosafety levels (BSL) defining containment requirements for biological agents
     """
@@ -19,7 +18,7 @@ class BiosaftyLevelEnum(RichEnum):
     BSL4 = "BSL4"
 
 # Set metadata after class creation
-BiosaftyLevelEnum._metadata = {
+BiosafetyLevelEnum._metadata = {
     "BSL1": {'description': 'Suitable for well-characterized agents not known to consistently cause disease in healthy adults', 'meaning': 'SNOMED:409600007'},
     "BSL2": {'description': 'Suitable for agents that pose moderate hazards to personnel and the environment', 'meaning': 'SNOMED:409603009'},
     "BSL3": {'description': 'Suitable for indigenous or exotic agents that may cause serious or potentially lethal disease through inhalation', 'meaning': 'SNOMED:409604003'},
@@ -27,5 +26,5 @@ BiosaftyLevelEnum._metadata = {
 }
 
 __all__ = [
-    "BiosaftyLevelEnum",
+    "BiosafetyLevelEnum",
 ]

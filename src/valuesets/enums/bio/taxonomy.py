@@ -8,7 +8,6 @@ Generated from: bio/taxonomy.yaml
 
 from __future__ import annotations
 
-from typing import Dict, Any, Optional
 from valuesets.generators.rich_enum import RichEnum
 
 class CommonOrganismTaxaEnum(RichEnum):
