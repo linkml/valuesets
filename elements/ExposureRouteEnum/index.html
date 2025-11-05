@@ -421,6 +421,61 @@
 <td>Exposure through the eyes</td>
 </tr>
 <tr>
+<td>ABSORPTION</td>
+<td>ExO:0000058</td>
+<td>Exposure through absorption (dermal or other surface)</td>
+</tr>
+<tr>
+<td>GASTROINTESTINAL_TRACT</td>
+<td>ExO:0000165</td>
+<td>Exposure through the gastrointestinal tract</td>
+</tr>
+<tr>
+<td>GAVAGE</td>
+<td>ExO:0000166</td>
+<td>Direct administration into the stomach</td>
+</tr>
+<tr>
+<td>AMBIENT_ENVIRONMENT</td>
+<td>ExO:0000160</td>
+<td>Exposure through contact with stressors in the ambient surroundings</td>
+</tr>
+<tr>
+<td>AMBIENT_AQUATIC</td>
+<td>ExO:0000161</td>
+<td>Exposure through ambient aquatic environment</td>
+</tr>
+<tr>
+<td>AMBIENT_TERRESTRIAL</td>
+<td>ExO:0000162</td>
+<td>Exposure through ambient terrestrial environment</td>
+</tr>
+<tr>
+<td>PASSIVE_INHALATION</td>
+<td>ExO:0000163</td>
+<td>Passive inhalation of ambient environment stressors</td>
+</tr>
+<tr>
+<td>ACTIVE_INHALATION</td>
+<td>ExO:0000164</td>
+<td>Purposeful breathing or inhaling of stressor</td>
+</tr>
+<tr>
+<td>SUBCUTANEOUS</td>
+<td>None</td>
+<td>Exposure through subcutaneous tissue</td>
+</tr>
+<tr>
+<td>INTRAMUSCULAR</td>
+<td>None</td>
+<td>Exposure through muscle tissue</td>
+</tr>
+<tr>
+<td>INTRAVASCULAR</td>
+<td>None</td>
+<td>Exposure through blood vessels</td>
+</tr>
+<tr>
 <td>MULTIPLE_ROUTES</td>
 <td>None</td>
 <td>Exposure through multiple pathways</td>
@@ -493,6 +548,60 @@ permissible_values:
     description: Exposure through the eyes
     meaning: NCIT:C38287
     title: Ophthalmic Route of Administration
+  ABSORPTION:
+    text: ABSORPTION
+    description: Exposure through absorption (dermal or other surface)
+    meaning: ExO:0000058
+  GASTROINTESTINAL_TRACT:
+    text: GASTROINTESTINAL_TRACT
+    description: Exposure through the gastrointestinal tract
+    meaning: ExO:0000165
+    title: gastrointestinal tract route
+  GAVAGE:
+    text: GAVAGE
+    description: Direct administration into the stomach
+    meaning: ExO:0000166
+    title: gavage route
+  AMBIENT_ENVIRONMENT:
+    text: AMBIENT_ENVIRONMENT
+    description: Exposure through contact with stressors in the ambient surroundings
+    meaning: ExO:0000160
+    title: ambient environment route
+  AMBIENT_AQUATIC:
+    text: AMBIENT_AQUATIC
+    description: Exposure through ambient aquatic environment
+    meaning: ExO:0000161
+    title: ambient acquatic environment route
+  AMBIENT_TERRESTRIAL:
+    text: AMBIENT_TERRESTRIAL
+    description: Exposure through ambient terrestrial environment
+    meaning: ExO:0000162
+    title: ambient terrestrial environment route
+  PASSIVE_INHALATION:
+    text: PASSIVE_INHALATION
+    description: Passive inhalation of ambient environment stressors
+    meaning: ExO:0000163
+    title: passive inhalation of the ambient environment route
+  ACTIVE_INHALATION:
+    text: ACTIVE_INHALATION
+    description: Purposeful breathing or inhaling of stressor
+    meaning: ExO:0000164
+    title: active inhalation route
+  SUBCUTANEOUS:
+    text: SUBCUTANEOUS
+    description: Exposure through subcutaneous tissue
+    related_mappings:
+    - ExO:0000061
+  INTRAMUSCULAR:
+    text: INTRAMUSCULAR
+    description: Exposure through muscle tissue
+    related_mappings:
+    - ExO:0000062
+  INTRAVASCULAR:
+    text: INTRAVASCULAR
+    description: Exposure through blood vessels
+    related_mappings:
+    - ExO:0000063
   MULTIPLE_ROUTES:
     text: MULTIPLE_ROUTES
     description: Exposure through multiple pathways
