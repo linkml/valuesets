@@ -9,7 +9,6 @@ Generated from: clinical/nih_demographics.yaml
 
 from __future__ import annotations
 
-from typing import Dict, Any, Optional
 from valuesets.generators.rich_enum import RichEnum
 
 class RaceOMB1997Enum(RichEnum):
