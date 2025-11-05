@@ -614,7 +614,7 @@
             "title": "BioreactorTypeEnum",
             "type": "string"
         },
-        "BiosaftyLevelEnum": {
+        "BiosafetyLevelEnum": {
             "description": "Biosafety levels (BSL) defining containment requirements for biological agents",
             "enum": [
                 "BSL1",
@@ -622,7 +622,7 @@
                 "BSL3",
                 "BSL4"
             ],
-            "title": "BiosaftyLevelEnum",
+            "title": "BiosafetyLevelEnum",
             "type": "string"
         },
         "BioticInteractionType": {

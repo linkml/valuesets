@@ -3720,9 +3720,9 @@ enums:
       CANCELLED:
         text: CANCELLED
         description: Processing cancelled by user
-  BiosaftyLevelEnum:
-    name: BiosaftyLevelEnum
-    definition_uri: https://w3id.org/valuesets/BiosaftyLevelEnum
+  BiosafetyLevelEnum:
+    name: BiosafetyLevelEnum
+    definition_uri: https://w3id.org/valuesets/BiosafetyLevelEnum
     description: Biosafety levels (BSL) defining containment requirements for biological
       agents
     from_schema: https://w3id.org/linkml/valuesets/bio/biosafety
@@ -48264,7 +48264,7 @@ slots:
       on potential risk
     from_schema: https://w3id.org/linkml/valuesets/bio/biosafety
     slot_uri: valuesets:biosafety_level
-    range: BiosaftyLevelEnum
+    range: BiosafetyLevelEnum
   insdc_missing_value:
     name: insdc_missing_value
     definition_uri: https://w3id.org/valuesets/insdc_missing_value
@@ -51069,7 +51069,7 @@ classes:
     class_uri: valuesets:Fake
 metamodel_version: 1.7.0
 source_file: valuesets.yaml
-source_file_date: '2025-10-30T12:09:22'
+source_file_date: '2025-11-05T17:59:31'
 source_file_size: 2816
-generation_date: '2025-11-03T17:34:51'
+generation_date: '2025-11-05T18:05:58'
 

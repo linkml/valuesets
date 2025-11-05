@@ -1,5 +1,5 @@
 # Auto generated from valuesets.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-10-22T16:12:27
+# Generation date: 2025-11-05T18:03:59
 # Schema: valuesets
 #
 # id: https://w3id.org/linkml/valuesets
@@ -2689,6 +2689,36 @@ class ProcessingStatus(EnumDefinitionImpl):
     _defn = EnumDefinition(
         name="ProcessingStatus",
         description="Status of data processing workflows",
+    )
+
+class BiosafetyLevelEnum(EnumDefinitionImpl):
+    """
+    Biosafety levels (BSL) defining containment requirements for biological agents
+    """
+    BSL1 = PermissibleValue(
+        text="BSL1",
+        title="biosafety level 1",
+        description="""Suitable for well-characterized agents not known to consistently cause disease in healthy adults""",
+        meaning=SNOMED["409600007"])
+    BSL2 = PermissibleValue(
+        text="BSL2",
+        title="biosafety level 2",
+        description="Suitable for agents that pose moderate hazards to personnel and the environment",
+        meaning=SNOMED["409603009"])
+    BSL3 = PermissibleValue(
+        text="BSL3",
+        title="biosafety level 3",
+        description="""Suitable for indigenous or exotic agents that may cause serious or potentially lethal disease through inhalation""",
+        meaning=SNOMED["409604003"])
+    BSL4 = PermissibleValue(
+        text="BSL4",
+        title="biosafety level 4",
+        description="Suitable for dangerous and exotic agents that pose high risk of life-threatening disease",
+        meaning=SNOMED["409605002"])
+
+    _defn = EnumDefinition(
+        name="BiosafetyLevelEnum",
+        description="Biosafety levels (BSL) defining containment requirements for biological agents",
     )
 
 class InsdcMissingValueEnum(EnumDefinitionImpl):
@@ -5687,6 +5717,332 @@ class CitationStyle(EnumDefinitionImpl):
     _defn = EnumDefinition(
         name="CitationStyle",
         description="Common citation and reference styles",
+    )
+
+class USDOENationalLaboratoryEnum(EnumDefinitionImpl):
+    """
+    United States Department of Energy National Laboratories.
+
+    The DOE operates 17 National Laboratories that serve as powerhouses of science and technology,
+    tackling critical scientific challenges and conducting cutting-edge research across multiple disciplines.
+
+    These laboratories are managed by contractors and stewarded by various DOE program offices,
+    with the Office of Science stewarding 10 of the 17 laboratories.
+    """
+    AMES_LABORATORY = PermissibleValue(
+        text="AMES_LABORATORY",
+        title="Ames National Laboratory",
+        description="National laboratory focused on materials science and chemistry research",
+        meaning=ROR["041m9xr71"])
+    ARGONNE_NATIONAL_LABORATORY = PermissibleValue(
+        text="ARGONNE_NATIONAL_LABORATORY",
+        title="Argonne National Laboratory",
+        description="Multidisciplinary science and engineering research center",
+        meaning=ROR["05gvnxz63"])
+    BROOKHAVEN_NATIONAL_LABORATORY = PermissibleValue(
+        text="BROOKHAVEN_NATIONAL_LABORATORY",
+        title="Brookhaven National Laboratory",
+        description="Research center for nuclear and high-energy physics",
+        meaning=ROR["02ex6cf31"])
+    FERMI_NATIONAL_ACCELERATOR_LABORATORY = PermissibleValue(
+        text="FERMI_NATIONAL_ACCELERATOR_LABORATORY",
+        title="Fermi National Accelerator Laboratory",
+        description="Particle physics and accelerator research laboratory",
+        meaning=ROR["020hgte69"])
+    IDAHO_NATIONAL_LABORATORY = PermissibleValue(
+        text="IDAHO_NATIONAL_LABORATORY",
+        title="Idaho National Laboratory",
+        description="Nuclear energy research and national security laboratory",
+        meaning=ROR["00ty2a548"])
+    LAWRENCE_BERKELEY_NATIONAL_LABORATORY = PermissibleValue(
+        text="LAWRENCE_BERKELEY_NATIONAL_LABORATORY",
+        title="Lawrence Berkeley National Laboratory",
+        description="Multidisciplinary research laboratory",
+        meaning=ROR["02jbv0t02"])
+    LAWRENCE_LIVERMORE_NATIONAL_LABORATORY = PermissibleValue(
+        text="LAWRENCE_LIVERMORE_NATIONAL_LABORATORY",
+        title="Lawrence Livermore National Laboratory",
+        description="National security laboratory focused on nuclear weapons and advanced technology",
+        meaning=ROR["041nk4h53"])
+    LOS_ALAMOS_NATIONAL_LABORATORY = PermissibleValue(
+        text="LOS_ALAMOS_NATIONAL_LABORATORY",
+        title="Los Alamos National Laboratory",
+        description="Multidisciplinary research institution for national security",
+        meaning=ROR["01e41cf67"])
+    NATIONAL_ENERGY_TECHNOLOGY_LABORATORY = PermissibleValue(
+        text="NATIONAL_ENERGY_TECHNOLOGY_LABORATORY",
+        title="National Energy Technology Laboratory",
+        description="Federal research laboratory focused on energy and environmental technology",
+        meaning=ROR["01x26mz03"])
+    NATIONAL_RENEWABLE_ENERGY_LABORATORY = PermissibleValue(
+        text="NATIONAL_RENEWABLE_ENERGY_LABORATORY",
+        title="National Renewable Energy Laboratory",
+        description="Research and development laboratory focused on renewable energy and energy efficiency",
+        meaning=ROR["036266993"])
+    OAK_RIDGE_NATIONAL_LABORATORY = PermissibleValue(
+        text="OAK_RIDGE_NATIONAL_LABORATORY",
+        title="Oak Ridge National Laboratory",
+        description="Multidisciplinary science and technology laboratory",
+        meaning=ROR["01qz5mb56"])
+    PACIFIC_NORTHWEST_NATIONAL_LABORATORY = PermissibleValue(
+        text="PACIFIC_NORTHWEST_NATIONAL_LABORATORY",
+        title="Pacific Northwest National Laboratory",
+        description="Research laboratory focused on energy, environment, and national security",
+        meaning=ROR["05h992307"])
+    PRINCETON_PLASMA_PHYSICS_LABORATORY = PermissibleValue(
+        text="PRINCETON_PLASMA_PHYSICS_LABORATORY",
+        title="Princeton Plasma Physics Laboratory",
+        description="Plasma physics and fusion energy research laboratory",
+        meaning=ROR["03vn1ts68"])
+    SANDIA_NATIONAL_LABORATORIES = PermissibleValue(
+        text="SANDIA_NATIONAL_LABORATORIES",
+        title="Sandia National Laboratories",
+        description="Multimission laboratory for national security and technology innovation",
+        meaning=ROR["01apwpt12"])
+    SAVANNAH_RIVER_NATIONAL_LABORATORY = PermissibleValue(
+        text="SAVANNAH_RIVER_NATIONAL_LABORATORY",
+        title="Savannah River National Laboratory",
+        description="Applied research laboratory for environmental and national security missions",
+        meaning=ROR["05vc7qy59"])
+    SLAC_NATIONAL_ACCELERATOR_LABORATORY = PermissibleValue(
+        text="SLAC_NATIONAL_ACCELERATOR_LABORATORY",
+        title="SLAC National Accelerator Laboratory",
+        description="Particle physics and photon science research laboratory",
+        meaning=ROR["05gzmn429"])
+    THOMAS_JEFFERSON_NATIONAL_ACCELERATOR_FACILITY = PermissibleValue(
+        text="THOMAS_JEFFERSON_NATIONAL_ACCELERATOR_FACILITY",
+        title="Thomas Jefferson National Accelerator Facility",
+        description="Nuclear physics research laboratory with particle accelerator",
+        meaning=ROR["02vwzrd76"])
+
+    _defn = EnumDefinition(
+        name="USDOENationalLaboratoryEnum",
+        description="""United States Department of Energy National Laboratories.
+
+The DOE operates 17 National Laboratories that serve as powerhouses of science and technology,
+tackling critical scientific challenges and conducting cutting-edge research across multiple disciplines.
+
+These laboratories are managed by contractors and stewarded by various DOE program offices,
+with the Office of Science stewarding 10 of the 17 laboratories.""",
+    )
+
+class USFederalFundingAgencyEnum(EnumDefinitionImpl):
+    """
+    Major United States Federal Research Funding Agencies.
+
+    These agencies provide funding for basic and applied research across various scientific disciplines,
+    supporting universities, national laboratories, and other research institutions.
+    """
+    NIH = PermissibleValue(
+        text="NIH",
+        title="National Institutes of Health",
+        description="Primary federal agency for biomedical and public health research",
+        meaning=ROR["01cwqze88"])
+    NSF = PermissibleValue(
+        text="NSF",
+        title="U.S. National Science Foundation",
+        description="Federal agency supporting fundamental research and education in non-medical fields",
+        meaning=ROR["021nxhr62"])
+    DOE = PermissibleValue(
+        text="DOE",
+        title="United States Department of Energy",
+        description="Federal department overseeing energy policy and nuclear weapons program",
+        meaning=ROR["01bj3aw27"])
+    NASA = PermissibleValue(
+        text="NASA",
+        title="National Aeronautics and Space Administration",
+        description="Federal agency responsible for civil space program and aeronautics research",
+        meaning=ROR["027ka1x80"])
+    EPA = PermissibleValue(
+        text="EPA",
+        title="Environmental Protection Agency",
+        description="Federal agency protecting human health and the environment",
+        meaning=ROR["03tns0030"])
+    NOAA = PermissibleValue(
+        text="NOAA",
+        title="National Oceanic and Atmospheric Administration",
+        description="Federal agency focused on ocean, atmosphere, and coastal research",
+        meaning=ROR["02z5nhe81"])
+    NIST = PermissibleValue(
+        text="NIST",
+        title="National Institute of Standards and Technology",
+        description="Federal agency promoting innovation and industrial competitiveness",
+        meaning=ROR["05xpvk416"])
+    USDA_ARS = PermissibleValue(
+        text="USDA_ARS",
+        title="Agricultural Research Service",
+        description="Principal research agency of the U.S. Department of Agriculture",
+        meaning=ROR["02d2m2044"])
+    DOD = PermissibleValue(
+        text="DOD",
+        title="United States Department of Defense",
+        description="Federal department responsible for military research and development",
+        meaning=ROR["0447fe631"])
+    USGS = PermissibleValue(
+        text="USGS",
+        title="United States Geological Survey",
+        description="Federal agency for earth science research and monitoring",
+        meaning=ROR["035a68863"])
+
+    _defn = EnumDefinition(
+        name="USFederalFundingAgencyEnum",
+        description="""Major United States Federal Research Funding Agencies.
+
+These agencies provide funding for basic and applied research across various scientific disciplines,
+supporting universities, national laboratories, and other research institutions.""",
+    )
+
+class NIHInstituteCenterEnum(EnumDefinitionImpl):
+    """
+    National Institutes of Health (NIH) Institutes and Centers.
+
+    NIH comprises 27 Institutes and Centers, each with a specific research agenda focused on particular
+    diseases or body systems. These are the major NIH ICs that fund extramural research.
+    """
+    NCI = PermissibleValue(
+        text="NCI",
+        title="National Cancer Institute",
+        description="NIH institute for cancer research and training",
+        meaning=ROR["02t771148"])
+    NHLBI = PermissibleValue(
+        text="NHLBI",
+        title="National Heart Lung and Blood Institute",
+        description="NIH institute for heart, lung, and blood diseases research",
+        meaning=ROR["012pb6c26"])
+    NIAID = PermissibleValue(
+        text="NIAID",
+        title="National Institute of Allergy and Infectious Diseases",
+        description="NIH institute for infectious, immunologic, and allergic diseases research",
+        meaning=ROR["043z4tv69"])
+    NIMH = PermissibleValue(
+        text="NIMH",
+        title="National Institute of Mental Health",
+        description="NIH institute for mental health research",
+        meaning=ROR["04t0s7x83"])
+    NINDS = PermissibleValue(
+        text="NINDS",
+        title="National Institute of Neurological Disorders and Stroke",
+        description="NIH institute for neurological disorders research",
+        meaning=ROR["01s5ya894"])
+    NIDDK = PermissibleValue(
+        text="NIDDK",
+        title="National Institute of Diabetes and Digestive and Kidney Diseases",
+        description="NIH institute for diabetes, digestive, and kidney diseases research",
+        meaning=ROR["00adh9b73"])
+    NHGRI = PermissibleValue(
+        text="NHGRI",
+        title="National Human Genome Research Institute",
+        description="NIH institute for genomics and genetics research",
+        meaning=ROR["00baak391"])
+    NIGMS = PermissibleValue(
+        text="NIGMS",
+        title="National Institute of General Medical Sciences",
+        description="NIH institute supporting basic biomedical research",
+        meaning=ROR["04q48ey07"])
+    NIEHS = PermissibleValue(
+        text="NIEHS",
+        title="National Institute of Environmental Health Sciences",
+        description="NIH institute for environmental health sciences research",
+        meaning=ROR["00j4k1h63"])
+    NEI = PermissibleValue(
+        text="NEI",
+        title="National Eye Institute",
+        description="NIH institute for vision and eye disease research",
+        meaning=ROR["03wkg3b53"])
+    NIA = PermissibleValue(
+        text="NIA",
+        title="National Institute on Aging",
+        description="NIH institute for aging research",
+        meaning=ROR["049v75w11"])
+    NLM = PermissibleValue(
+        text="NLM",
+        title="United States National Library of Medicine",
+        description="World's largest biomedical library and NIH component",
+        meaning=ROR["0060t0j89"])
+
+    _defn = EnumDefinition(
+        name="NIHInstituteCenterEnum",
+        description="""National Institutes of Health (NIH) Institutes and Centers.
+
+NIH comprises 27 Institutes and Centers, each with a specific research agenda focused on particular
+diseases or body systems. These are the major NIH ICs that fund extramural research.""",
+    )
+
+class StandardsOrganizationEnum(EnumDefinitionImpl):
+    """
+    Major International Standards Development Organizations.
+
+    These organizations develop technical standards, specifications, and guidelines used globally
+    across various industries including information technology, healthcare, and engineering.
+    """
+    ISO = PermissibleValue(
+        text="ISO",
+        title="International Organization for Standardization",
+        description="International standard-setting body for industrial and commercial standards",
+        meaning=ROR["004s85t07"])
+    W3C = PermissibleValue(
+        text="W3C",
+        title="World Wide Web Consortium",
+        description="International standards organization for World Wide Web standards",
+        meaning=ROR["0059y1582"])
+    IEEE = PermissibleValue(
+        text="IEEE",
+        title="Institute of Electrical and Electronics Engineers",
+        description="Professional association for electronic and electrical engineering",
+        meaning=ROR["01n002310"])
+    HL7 = PermissibleValue(
+        text="HL7",
+        title="Health Level Seven International",
+        description="Standards development organization for healthcare information exchange",
+        meaning=ROR["029ga8k16"])
+
+    _defn = EnumDefinition(
+        name="StandardsOrganizationEnum",
+        description="""Major International Standards Development Organizations.
+
+These organizations develop technical standards, specifications, and guidelines used globally
+across various industries including information technology, healthcare, and engineering.""",
+    )
+
+class UNSpecializedAgencyEnum(EnumDefinitionImpl):
+    """
+    United Nations Specialized Agencies.
+
+    UN specialized agencies are autonomous international organizations that coordinate their work
+    with the UN through negotiated agreements. They address international issues in their respective fields.
+    """
+    WHO = PermissibleValue(
+        text="WHO",
+        title="World Health Organization",
+        description="UN agency for international public health",
+        meaning=ROR["01f80g185"])
+    UNESCO = PermissibleValue(
+        text="UNESCO",
+        title="UNESCO",
+        description="UN Educational, Scientific and Cultural Organization",
+        meaning=ROR["04h4z8k05"])
+    IAEA = PermissibleValue(
+        text="IAEA",
+        title="International Atomic Energy Agency",
+        description="International organization promoting peaceful use of nuclear energy",
+        meaning=ROR["00gtfax65"])
+    WMO = PermissibleValue(
+        text="WMO",
+        title="World Meteorological Organization",
+        description="UN agency for weather, climate and water resources",
+        meaning=ROR["011pjwf87"])
+    UNEP = PermissibleValue(
+        text="UNEP",
+        title="United Nations Environment Programme",
+        description="UN program coordinating environmental activities",
+        meaning=ROR["015z29x25"])
+
+    _defn = EnumDefinition(
+        name="UNSpecializedAgencyEnum",
+        description="""United Nations Specialized Agencies.
+
+UN specialized agencies are autonomous international organizations that coordinate their work
+with the UN through negotiated agreements. They address international issues in their respective fields.""",
     )
 
 class EnergySource(EnumDefinitionImpl):
@@ -9035,6 +9391,54 @@ class ExposureRouteEnum(EnumDefinitionImpl):
         title="Ophthalmic Route of Administration",
         description="Exposure through the eyes",
         meaning=NCIT["C38287"])
+    ABSORPTION = PermissibleValue(
+        text="ABSORPTION",
+        description="Exposure through absorption (dermal or other surface)",
+        meaning=EXO["0000058"])
+    GASTROINTESTINAL_TRACT = PermissibleValue(
+        text="GASTROINTESTINAL_TRACT",
+        title="gastrointestinal tract route",
+        description="Exposure through the gastrointestinal tract",
+        meaning=EXO["0000165"])
+    GAVAGE = PermissibleValue(
+        text="GAVAGE",
+        title="gavage route",
+        description="Direct administration into the stomach",
+        meaning=EXO["0000166"])
+    AMBIENT_ENVIRONMENT = PermissibleValue(
+        text="AMBIENT_ENVIRONMENT",
+        title="ambient environment route",
+        description="Exposure through contact with stressors in the ambient surroundings",
+        meaning=EXO["0000160"])
+    AMBIENT_AQUATIC = PermissibleValue(
+        text="AMBIENT_AQUATIC",
+        title="ambient acquatic environment route",
+        description="Exposure through ambient aquatic environment",
+        meaning=EXO["0000161"])
+    AMBIENT_TERRESTRIAL = PermissibleValue(
+        text="AMBIENT_TERRESTRIAL",
+        title="ambient terrestrial environment route",
+        description="Exposure through ambient terrestrial environment",
+        meaning=EXO["0000162"])
+    PASSIVE_INHALATION = PermissibleValue(
+        text="PASSIVE_INHALATION",
+        title="passive inhalation of the ambient environment route",
+        description="Passive inhalation of ambient environment stressors",
+        meaning=EXO["0000163"])
+    ACTIVE_INHALATION = PermissibleValue(
+        text="ACTIVE_INHALATION",
+        title="active inhalation route",
+        description="Purposeful breathing or inhaling of stressor",
+        meaning=EXO["0000164"])
+    SUBCUTANEOUS = PermissibleValue(
+        text="SUBCUTANEOUS",
+        description="Exposure through subcutaneous tissue")
+    INTRAMUSCULAR = PermissibleValue(
+        text="INTRAMUSCULAR",
+        description="Exposure through muscle tissue")
+    INTRAVASCULAR = PermissibleValue(
+        text="INTRAVASCULAR",
+        description="Exposure through blood vessels")
     MULTIPLE_ROUTES = PermissibleValue(
         text="MULTIPLE_ROUTES",
         description="Exposure through multiple pathways")
@@ -9250,6 +9654,153 @@ class ExposureDurationEnum(EnumDefinitionImpl):
     _defn = EnumDefinition(
         name="ExposureDurationEnum",
         description="Duration categories for environmental exposures",
+    )
+
+class SmokingStatusEnum(EnumDefinitionImpl):
+    """
+    Tobacco and nicotine consumption status
+    """
+    CURRENT_SMOKER = PermissibleValue(
+        text="CURRENT_SMOKER",
+        description="Person who is currently smoking tobacco",
+        meaning=EXO["0000115"])
+    FORMER_SMOKER = PermissibleValue(
+        text="FORMER_SMOKER",
+        description="Person who has smoked at least 100 cigarettes in their life but is not currently smoking",
+        meaning=EXO["0000116"])
+    NEVER_SMOKER = PermissibleValue(
+        text="NEVER_SMOKER",
+        description="Person who has smoked less than 100 cigarettes in their life",
+        meaning=EXO["0000117"])
+    NON_SMOKER = PermissibleValue(
+        text="NON_SMOKER",
+        description="Person who is not currently smoking",
+        meaning=EXO["0000118"])
+
+    _defn = EnumDefinition(
+        name="SmokingStatusEnum",
+        description="Tobacco and nicotine consumption status",
+    )
+
+class ExposureStressorTypeEnum(EnumDefinitionImpl):
+    """
+    Types of exposure stressors by their origin or nature
+    """
+    BIOLOGICAL_AGENT = PermissibleValue(
+        text="BIOLOGICAL_AGENT",
+        description="Agent of biological origin (e.g., bacteria, viruses, allergens)",
+        meaning=EXO["0000005"])
+    CHEMICAL_AGENT = PermissibleValue(
+        text="CHEMICAL_AGENT",
+        description="Agent of chemical origin (e.g., toxins, pollutants)",
+        meaning=EXO["0000006"])
+    PHYSICAL_AGENT = PermissibleValue(
+        text="PHYSICAL_AGENT",
+        description="Physical source of energy that may cause injury (e.g., radiation, noise, temperature extremes)",
+        meaning=EXO["0000008"])
+    PSYCHOSOCIAL_AGENT = PermissibleValue(
+        text="PSYCHOSOCIAL_AGENT",
+        description="Agent that interferes with psychological development or social interaction",
+        meaning=EXO["0000009"])
+    BIOMECHANICAL_AGENT = PermissibleValue(
+        text="BIOMECHANICAL_AGENT",
+        description="Mechanical agent applied to biological systems (e.g., repetitive motion, physical strain)",
+        meaning=EXO["0000011"])
+    ECOLOGICAL_PERTURBATION = PermissibleValue(
+        text="ECOLOGICAL_PERTURBATION",
+        description="Disruption to ecological systems (e.g., habitat degradation, climate change)",
+        meaning=EXO["0000007"])
+
+    _defn = EnumDefinition(
+        name="ExposureStressorTypeEnum",
+        description="Types of exposure stressors by their origin or nature",
+    )
+
+class ExposureTransportPathEnum(EnumDefinitionImpl):
+    """
+    Transport medium through which exposure stressor reaches the recipient
+    """
+    AIR_TRANSPORT_PATH = PermissibleValue(
+        text="AIR_TRANSPORT_PATH",
+        description="Transport path allowing stressor to interact with recipient via air",
+        meaning=EXO["0000010"])
+    WATER_TRANSPORT_PATH = PermissibleValue(
+        text="WATER_TRANSPORT_PATH",
+        description="Transport path involving interaction with stressor via water",
+        meaning=EXO["0000028"])
+    SOIL_TRANSPORT_PATH = PermissibleValue(
+        text="SOIL_TRANSPORT_PATH",
+        description="Transport path involving interaction with stressor via soil",
+        meaning=EXO["0000029"])
+
+    _defn = EnumDefinition(
+        name="ExposureTransportPathEnum",
+        description="Transport medium through which exposure stressor reaches the recipient",
+    )
+
+class ExposureFrequencyEnum(EnumDefinitionImpl):
+    """
+    Temporal pattern of exposure occurrence
+    """
+    INTERMITTENT = PermissibleValue(
+        text="INTERMITTENT",
+        description="Exposure occurring at irregular intervals or periodically",
+        meaning=EXO["0000052"])
+    CONTINUOUS = PermissibleValue(
+        text="CONTINUOUS",
+        description="Exposure occurring without interruption",
+        meaning=EXO["0000053"])
+
+    _defn = EnumDefinition(
+        name="ExposureFrequencyEnum",
+        description="Temporal pattern of exposure occurrence",
+    )
+
+class StudyPopulationEnum(EnumDefinitionImpl):
+    """
+    Specific population groups commonly studied in exposure research
+    """
+    CHILDREN = PermissibleValue(
+        text="CHILDREN",
+        description="Human children (pediatric population)",
+        meaning=EXO["0000119"])
+    FETUSES = PermissibleValue(
+        text="FETUSES",
+        description="Human fetuses (prenatal population)",
+        meaning=EXO["0000122"])
+    INFANTS_OR_NEWBORNS = PermissibleValue(
+        text="INFANTS_OR_NEWBORNS",
+        description="Human infants and newborns",
+        meaning=EXO["0000123"])
+    PREGNANT_FEMALES = PermissibleValue(
+        text="PREGNANT_FEMALES",
+        description="Human females who are pregnant",
+        meaning=EXO["0000126"])
+    MOTHERS = PermissibleValue(
+        text="MOTHERS",
+        description="Human mothers",
+        meaning=EXO["0000125"])
+    MILITARY_PERSONNEL = PermissibleValue(
+        text="MILITARY_PERSONNEL",
+        description="Active military personnel",
+        meaning=EXO["0000124"])
+    VETERANS = PermissibleValue(
+        text="VETERANS",
+        description="Military veterans",
+        meaning=EXO["0000130"])
+    WORKERS = PermissibleValue(
+        text="WORKERS",
+        description="Occupational workers",
+        meaning=EXO["0000131"])
+    CONTROLS = PermissibleValue(
+        text="CONTROLS",
+        title="controls for disease or phenotype",
+        description="Control group participants without the disease or phenotype of interest",
+        meaning=EXO["0000121"])
+
+    _defn = EnumDefinition(
+        name="StudyPopulationEnum",
+        description="Specific population groups commonly studied in exposure research",
     )
 
 class CountryCodeISO2Enum(EnumDefinitionImpl):
@@ -14881,11 +15432,12 @@ class ContigCollectionType(EnumDefinitionImpl):
         description="""Sequences assembled from DNA of isolated organism. Bacteria/Archaea: https://genomicsstandardsconsortium.github.io/mixs/0010003/ Euk: https://genomicsstandardsconsortium.github.io/mixs/0010002/ Virus: https://genomicsstandardsconsortium.github.io/mixs/0010005/ Organelle: https://genomicsstandardsconsortium.github.io/mixs/0010006/ Plasmid: https://genomicsstandardsconsortium.github.io/mixs/0010004/""")
     MAG = PermissibleValue(
         text="MAG",
-        title="Metagenome-Assembled Genome",
+        title="Mimag",
         description="""Sequences assembled from DNA of mixed community and binned. MAGs are likely to represent a single taxonomic origin. See checkm2 scores for quality assessment.""",
         meaning=MIXS["0010011"])
     METAGENOME = PermissibleValue(
         text="METAGENOME",
+        title="Mims",
         description="Sequences assembled from DNA of mixed community.",
         meaning=MIXS["0010007"])
     METATRANSCRIPTOME = PermissibleValue(
@@ -14893,11 +15445,12 @@ class ContigCollectionType(EnumDefinitionImpl):
         description="Sequences assembled from RNA of mixed community. Currently not represented by GSC.")
     SAG = PermissibleValue(
         text="SAG",
-        title="Single Amplified Genome",
+        title="Misag",
         description="Sequences assembled from DNA of single cell.",
         meaning=MIXS["0010010"])
     VIRUS = PermissibleValue(
         text="VIRUS",
+        title="Miuvig",
         description="Sequences assembled from uncultivated virus genome (DNA/RNA).",
         meaning=MIXS["0010012"])
     MARKER = PermissibleValue(
@@ -20942,6 +21495,354 @@ class OpenSourceMaturityLevel(EnumDefinitionImpl):
         description="Maturity assessment for open source projects",
     )
 
+class OWLProfileEnum(EnumDefinitionImpl):
+    """
+    OWL 2 profiles that provide different tradeoffs between expressiveness and computational complexity
+    """
+    OWL_2_EL = PermissibleValue(
+        text="OWL_2_EL",
+        title="OWL 2 EL",
+        description="""OWL 2 EL (Existential Language) - optimized for applications using very large ontologies with basic relationships. Provides polynomial time reasoning.""")
+    OWL_2_QL = PermissibleValue(
+        text="OWL_2_QL",
+        title="OWL 2 QL",
+        description="""OWL 2 QL (Query Language) - optimized for query answering over large data repositories. Based on DL-Lite family.""")
+    OWL_2_RL = PermissibleValue(
+        text="OWL_2_RL",
+        title="OWL 2 RL",
+        description="""OWL 2 RL (Rule Language) - optimized for rule-based reasoning and can be implemented using rule engines. Compatible with RDF Schema.""")
+    OWL_2_DL = PermissibleValue(
+        text="OWL_2_DL",
+        title="OWL 2 DL",
+        description="""OWL 2 DL (Description Logic) - full expressiveness while maintaining computational completeness and decidability. Maximum expressiveness without sacrificing decidability.""")
+    OWL_2_FULL = PermissibleValue(
+        text="OWL_2_FULL",
+        title="OWL 2 Full",
+        description="""OWL 2 Full - maximum expressiveness with no restrictions, but reasoning is undecidable. Allows full RDF capabilities.""")
+
+    _defn = EnumDefinition(
+        name="OWLProfileEnum",
+        description="OWL 2 profiles that provide different tradeoffs between expressiveness and computational complexity",
+    )
+
+class MLDataType(EnumDefinitionImpl):
+    """
+    Data types used in Croissant ML for describing field types in datasets.
+    Based on XSD (XML Schema Definition) and schema.org vocabulary.
+    """
+    TEXT = PermissibleValue(
+        text="TEXT",
+        description="Text or string data",
+        meaning=XSD["string"])
+    INTEGER = PermissibleValue(
+        text="INTEGER",
+        description="Integer numbers",
+        meaning=XSD["integer"])
+    FLOAT = PermissibleValue(
+        text="FLOAT",
+        description="Floating point numbers",
+        meaning=XSD["float"])
+    BOOLEAN = PermissibleValue(
+        text="BOOLEAN",
+        description="Boolean values (true/false)",
+        meaning=XSD["boolean"])
+    DATE = PermissibleValue(
+        text="DATE",
+        description="Date values",
+        meaning=XSD["date"])
+    TIME = PermissibleValue(
+        text="TIME",
+        description="Time values",
+        meaning=XSD["time"])
+    DATETIME = PermissibleValue(
+        text="DATETIME",
+        description="Combined date and time values",
+        meaning=XSD["dateTime"])
+    URL = PermissibleValue(
+        text="URL",
+        description="Uniform Resource Locators",
+        meaning=XSD["anyURI"])
+
+    _defn = EnumDefinition(
+        name="MLDataType",
+        description="""Data types used in Croissant ML for describing field types in datasets.
+Based on XSD (XML Schema Definition) and schema.org vocabulary.""",
+    )
+
+class DatasetEncodingFormat(EnumDefinitionImpl):
+    """
+    Encoding formats (MIME types) commonly used for ML dataset files in Croissant.
+    These specify how data is serialized and stored.
+    """
+    CSV = PermissibleValue(
+        text="CSV",
+        description="Comma-separated values format for tabular data",
+        meaning=EDAM["format_3752"])
+    JSON = PermissibleValue(
+        text="JSON",
+        description="JavaScript Object Notation format for structured data",
+        meaning=EDAM["format_3464"])
+    JSONL = PermissibleValue(
+        text="JSONL",
+        description="JSON Lines format (newline-delimited JSON)")
+    PARQUET = PermissibleValue(
+        text="PARQUET",
+        description="Apache Parquet columnar storage format")
+    PLAIN_TEXT = PermissibleValue(
+        text="PLAIN_TEXT",
+        description="Plain text files")
+    JPEG = PermissibleValue(
+        text="JPEG",
+        title="JPG",
+        description="JPEG image format",
+        meaning=EDAM["format_3579"])
+    PNG = PermissibleValue(
+        text="PNG",
+        title="PNG",
+        description="Portable Network Graphics image format",
+        meaning=EDAM["format_3603"])
+    WAV = PermissibleValue(
+        text="WAV",
+        description="Waveform Audio File Format")
+    MP4 = PermissibleValue(
+        text="MP4",
+        title="MPEG-4",
+        description="MPEG-4 multimedia container format",
+        meaning=EDAM["format_3997"])
+    ZIP = PermissibleValue(
+        text="ZIP",
+        title="ZIP format",
+        description="ZIP archive format",
+        meaning=EDAM["format_3987"])
+    TAR = PermissibleValue(
+        text="TAR",
+        title="TAR format",
+        description="Tape Archive format",
+        meaning=EDAM["format_3981"])
+
+    _defn = EnumDefinition(
+        name="DatasetEncodingFormat",
+        description="""Encoding formats (MIME types) commonly used for ML dataset files in Croissant.
+These specify how data is serialized and stored.""",
+    )
+
+class DatasetSplitType(EnumDefinitionImpl):
+    """
+    Standard dataset split types used in machine learning for training,
+    validation, and testing. These splits are fundamental to ML model
+    development and evaluation workflows.
+    """
+    TRAIN = PermissibleValue(
+        text="TRAIN",
+        description="Training split used for model learning")
+    VALIDATION = PermissibleValue(
+        text="VALIDATION",
+        description="Validation split used for hyperparameter tuning and model selection")
+    TEST = PermissibleValue(
+        text="TEST",
+        description="Test split used for final model evaluation")
+    ALL = PermissibleValue(
+        text="ALL",
+        description="Complete dataset without splits")
+
+    _defn = EnumDefinition(
+        name="DatasetSplitType",
+        description="""Standard dataset split types used in machine learning for training,
+validation, and testing. These splits are fundamental to ML model
+development and evaluation workflows.""",
+    )
+
+class MLLicenseType(EnumDefinitionImpl):
+    """
+    Common open source and Creative Commons licenses used for ML datasets.
+    These licenses specify terms of use, redistribution, and modification.
+    """
+    CC_BY_4_0 = PermissibleValue(
+        text="CC_BY_4_0",
+        title="CC-BY-4.0",
+        description="Creative Commons Attribution 4.0 International",
+        meaning=SPDX["CC-BY-4.0"])
+    CC_BY_SA_4_0 = PermissibleValue(
+        text="CC_BY_SA_4_0",
+        title="CC-BY-SA-4.0",
+        description="Creative Commons Attribution-ShareAlike 4.0 International",
+        meaning=SPDX["CC-BY-SA-4.0"])
+    CC0_1_0 = PermissibleValue(
+        text="CC0_1_0",
+        title="CC0-1.0",
+        description="Creative Commons Zero 1.0 Universal (Public Domain Dedication)",
+        meaning=SPDX["CC0-1.0"])
+    MIT = PermissibleValue(
+        text="MIT",
+        description="MIT License",
+        meaning=SPDX["MIT"])
+    APACHE_2_0 = PermissibleValue(
+        text="APACHE_2_0",
+        title="Apache-2.0",
+        description="Apache License 2.0",
+        meaning=SPDX["Apache-2.0"])
+    BSD_3_CLAUSE = PermissibleValue(
+        text="BSD_3_CLAUSE",
+        title="BSD-3-Clause",
+        description="BSD 3-Clause \"New\" or \"Revised\" License",
+        meaning=SPDX["BSD-3-Clause"])
+    GPL_3_0 = PermissibleValue(
+        text="GPL_3_0",
+        title="GPL-3.0",
+        description="GNU General Public License v3.0",
+        meaning=SPDX["GPL-3.0-only"])
+
+    _defn = EnumDefinition(
+        name="MLLicenseType",
+        description="""Common open source and Creative Commons licenses used for ML datasets.
+These licenses specify terms of use, redistribution, and modification.""",
+    )
+
+class MLFieldRole(EnumDefinitionImpl):
+    """
+    Semantic roles that fields play in ML datasets. These roles help understand
+    the purpose and usage of different data columns or attributes.
+    """
+    FEATURE = PermissibleValue(
+        text="FEATURE",
+        description="Input features used for model prediction")
+    LABEL = PermissibleValue(
+        text="LABEL",
+        description="Target labels or outputs for supervised learning")
+    METADATA = PermissibleValue(
+        text="METADATA",
+        description="Descriptive information about the dataset or records")
+    IDENTIFIER = PermissibleValue(
+        text="IDENTIFIER",
+        description="Unique identifiers for records or entities")
+
+    _defn = EnumDefinition(
+        name="MLFieldRole",
+        description="""Semantic roles that fields play in ML datasets. These roles help understand
+the purpose and usage of different data columns or attributes.""",
+    )
+
+class CompressionFormat(EnumDefinitionImpl):
+    """
+    Compression and archive formats commonly used for ML dataset distribution.
+    """
+    ZIP = PermissibleValue(
+        text="ZIP",
+        title="ZIP format",
+        description="ZIP archive format with lossless data compression",
+        meaning=EDAM["format_3987"])
+    TAR = PermissibleValue(
+        text="TAR",
+        title="TAR format",
+        description="Tape Archive format (typically used with compression)",
+        meaning=EDAM["format_3981"])
+    GZIP = PermissibleValue(
+        text="GZIP",
+        title="GZIP format",
+        description="GNU zip compression format",
+        meaning=EDAM["format_3989"])
+    TAR_GZ = PermissibleValue(
+        text="TAR_GZ",
+        description="TAR archive compressed with GZIP")
+
+    _defn = EnumDefinition(
+        name="CompressionFormat",
+        description="""Compression and archive formats commonly used for ML dataset distribution.""",
+    )
+
+class MLMediaType(EnumDefinitionImpl):
+    """
+    Media types (MIME types) for different modalities of ML data including
+    images, audio, video, and text.
+    """
+    IMAGE_JPEG = PermissibleValue(
+        text="IMAGE_JPEG",
+        title="JPG",
+        description="JPEG image format",
+        meaning=EDAM["format_3579"])
+    IMAGE_PNG = PermissibleValue(
+        text="IMAGE_PNG",
+        title="PNG",
+        description="PNG image format",
+        meaning=EDAM["format_3603"])
+    IMAGE_GIF = PermissibleValue(
+        text="IMAGE_GIF",
+        description="GIF image format")
+    IMAGE_TIFF = PermissibleValue(
+        text="IMAGE_TIFF",
+        description="TIFF image format")
+    AUDIO_WAV = PermissibleValue(
+        text="AUDIO_WAV",
+        description="Waveform Audio File Format")
+    AUDIO_MP3 = PermissibleValue(
+        text="AUDIO_MP3",
+        description="MP3 audio format")
+    AUDIO_FLAC = PermissibleValue(
+        text="AUDIO_FLAC",
+        description="FLAC lossless audio format")
+    VIDEO_MP4 = PermissibleValue(
+        text="VIDEO_MP4",
+        title="MPEG-4",
+        description="MPEG-4 video format",
+        meaning=EDAM["format_3997"])
+    VIDEO_AVI = PermissibleValue(
+        text="VIDEO_AVI",
+        title="AVI",
+        description="Audio Video Interleaved format",
+        meaning=EDAM["format_3990"])
+    VIDEO_WEBM = PermissibleValue(
+        text="VIDEO_WEBM",
+        description="WebM video format")
+    TEXT_PLAIN = PermissibleValue(
+        text="TEXT_PLAIN",
+        description="Plain text format")
+    TEXT_HTML = PermissibleValue(
+        text="TEXT_HTML",
+        description="HTML format")
+
+    _defn = EnumDefinition(
+        name="MLMediaType",
+        description="""Media types (MIME types) for different modalities of ML data including
+images, audio, video, and text.""",
+    )
+
+class MLModalityType(EnumDefinitionImpl):
+    """
+    High-level data modalities used in machine learning. These represent
+    the fundamental types of input data that ML models process.
+    """
+    TEXT = PermissibleValue(
+        text="TEXT",
+        description="Textual data (natural language, code, etc.)")
+    IMAGE = PermissibleValue(
+        text="IMAGE",
+        description="Visual image data",
+        meaning=EDAM["data_2968"])
+    AUDIO = PermissibleValue(
+        text="AUDIO",
+        description="Audio/sound data")
+    VIDEO = PermissibleValue(
+        text="VIDEO",
+        description="Video data (sequences of images with optional audio)")
+    MULTIMODAL = PermissibleValue(
+        text="MULTIMODAL",
+        description="Data combining multiple modalities")
+    TABULAR = PermissibleValue(
+        text="TABULAR",
+        description="Structured tabular data")
+    TIME_SERIES = PermissibleValue(
+        text="TIME_SERIES",
+        description="Sequential temporal data")
+    GRAPH = PermissibleValue(
+        text="GRAPH",
+        description="Graph-structured data with nodes and edges")
+
+    _defn = EnumDefinition(
+        name="MLModalityType",
+        description="""High-level data modalities used in machine learning. These represent
+the fundamental types of input data that ML models process.""",
+    )
+
 class LegalEntityTypeEnum(EnumDefinitionImpl):
     """
     Legal entity types for business organizations
@@ -23181,6 +24082,985 @@ class AnalyticalControlType(EnumDefinitionImpl):
         description="Types of control samples used in analytical chemistry",
     )
 
+class LaboratoryDeviceTypeEnum(EnumDefinitionImpl):
+    """
+    Types of automated laboratory devices and equipment
+    """
+    LIQUID_HANDLER = PermissibleValue(
+        text="LIQUID_HANDLER",
+        title="liquid handler",
+        description="A device that is used for automated liquid transfer and handling",
+        meaning=OBI["0400112"])
+    LIQUID_EXTRACTION_ROBOT = PermissibleValue(
+        text="LIQUID_EXTRACTION_ROBOT",
+        title="liquid extraction robot",
+        description="A liquid handling device that provides automatic liquid extraction",
+        meaning=OBI["0001097"])
+    CENTRIFUGE = PermissibleValue(
+        text="CENTRIFUGE",
+        title="centrifuge",
+        description="A device with a rapidly rotating container that applies centrifugal force to its contents",
+        meaning=OBI["0400106"])
+    MICROCENTRIFUGE = PermissibleValue(
+        text="MICROCENTRIFUGE",
+        title="microcentrifuge",
+        description="""A type of centrifuge that is designed for small tubes (0.2 ml to 2.0 ml), has a compact design, and has a small footprint""",
+        meaning=OBI["0001100"])
+    INCUBATOR = PermissibleValue(
+        text="INCUBATOR",
+        title="incubator",
+        description="""A device in which environmental conditions (light, photoperiod, temperature, humidity, etc.) can be controlled""",
+        meaning=OBI["0000136"])
+    INCUBATOR_SHAKER = PermissibleValue(
+        text="INCUBATOR_SHAKER",
+        title="incubator shaker",
+        description="""An incubating device that provides shaking motion for biomedical applications (e.g., cell cultures)""",
+        meaning=OBI["0001076"])
+    MICROPLATE_READER = PermissibleValue(
+        text="MICROPLATE_READER",
+        title="microplate reader",
+        description="""A measurement device that detects biological, chemical or physical events of samples in microtiter plates""",
+        meaning=OBI["0001058"])
+    ELISA_MICROPLATE_READER = PermissibleValue(
+        text="ELISA_MICROPLATE_READER",
+        title="ELISA microplate reader",
+        description="A microplate reader that is used for enzyme-linked immunosorbent assays (ELISA)",
+        meaning=OBI["0001059"])
+    MULTIMODE_MICROPLATE_READER = PermissibleValue(
+        text="MULTIMODE_MICROPLATE_READER",
+        title="multimode microplate reader",
+        description="A microplate reader that can detect multiple types of absorbance, luminescence or fluorescence",
+        meaning=OBI["0001090"])
+    MICROPLATE_WASHER = PermissibleValue(
+        text="MICROPLATE_WASHER",
+        title="microplate washer",
+        description="""A device that is used to wash immunoassays in microwell strips and plates with professional accuracy""",
+        meaning=OBI["0001113"])
+    ELISA_MICROPLATE_WASHER = PermissibleValue(
+        text="ELISA_MICROPLATE_WASHER",
+        title="ELISA microplate washer",
+        description="A microplate washer that is used for enzyme-linked immunosorbent assays (ELISA)",
+        meaning=OBI["0001115"])
+    MULTICHANNEL_PIPETTE = PermissibleValue(
+        text="MULTICHANNEL_PIPETTE",
+        title="multichannel pipette",
+        description="""A pipetting system that has a plurality of tip fittings and is used for multi-well plate applications""",
+        meaning=OBI["0001118"])
+    ROBOTIC_ARM = PermissibleValue(
+        text="ROBOTIC_ARM",
+        title="robotic arm",
+        description="A programmable mechanical arm used in laboratory automation",
+        meaning=SNOMED["82830000"])
+    THERMAL_CYCLER = PermissibleValue(
+        text="THERMAL_CYCLER",
+        title="thermal cycler",
+        description="A laboratory apparatus used to amplify DNA segments via the polymerase chain reaction")
+    COLONY_PICKER = PermissibleValue(
+        text="COLONY_PICKER",
+        title="colony picker",
+        description="An automated device for selecting and transferring individual bacterial or yeast colonies")
+    BARCODE_READER = PermissibleValue(
+        text="BARCODE_READER",
+        title="barcode reader",
+        description="A device that reads barcode labels on laboratory samples and containers")
+    PLATE_HANDLER = PermissibleValue(
+        text="PLATE_HANDLER",
+        title="plate handler",
+        description="An automated device designed to transfer microplates between workstations and lab instruments")
+    DISPENSER = PermissibleValue(
+        text="DISPENSER",
+        title="dispenser",
+        description="A device for automated dispensing of reagents or samples")
+
+    _defn = EnumDefinition(
+        name="LaboratoryDeviceTypeEnum",
+        description="Types of automated laboratory devices and equipment",
+    )
+
+class RoboticArmTypeEnum(EnumDefinitionImpl):
+    """
+    Types of robotic arms used in laboratory automation systems
+    """
+    FLEXIBLE_CHANNEL_ARM = PermissibleValue(
+        text="FLEXIBLE_CHANNEL_ARM",
+        title="flexible channel arm",
+        description="Robotic arm with flexible channels for disposable tip handling and liquid handling")
+    MULTI_CHANNEL_ARM = PermissibleValue(
+        text="MULTI_CHANNEL_ARM",
+        title="multi-channel arm",
+        description="Robotic arm used for high-throughput pipetting with 96 or 384 channels")
+    ROBOTIC_GRIPPER_ARM = PermissibleValue(
+        text="ROBOTIC_GRIPPER_ARM",
+        title="robotic gripper arm",
+        description="""Robotic arm used to pick and transfer objects within the working area, equipped with dedicated gripper fingers""")
+    SINGLE_PROBE_ARM = PermissibleValue(
+        text="SINGLE_PROBE_ARM",
+        title="single probe arm",
+        description="Robotic arm with a single probe for individual sample handling")
+
+    _defn = EnumDefinition(
+        name="RoboticArmTypeEnum",
+        description="Types of robotic arms used in laboratory automation systems",
+    )
+
+class LiquidHandlingOperationEnum(EnumDefinitionImpl):
+    """
+    Operations for automated liquid handling in laboratory automation
+    """
+    PICK_UP_TIPS = PermissibleValue(
+        text="PICK_UP_TIPS",
+        title="pick up tips",
+        description="Operation to pick up pipette tips from a tip rack")
+    ASPIRATE = PermissibleValue(
+        text="ASPIRATE",
+        title="aspirate",
+        description="Operation to draw liquid into pipette tips")
+    DISPENSE = PermissibleValue(
+        text="DISPENSE",
+        title="dispense",
+        description="Operation to dispense liquid from pipette tips")
+    RETURN_TIPS = PermissibleValue(
+        text="RETURN_TIPS",
+        title="return tips",
+        description="Operation to return pipette tips to a tip rack")
+    DROP_TIPS = PermissibleValue(
+        text="DROP_TIPS",
+        title="drop tips",
+        description="Operation to drop or discard pipette tips")
+    TRANSFER = PermissibleValue(
+        text="TRANSFER",
+        title="transfer",
+        description="Combined operation to aspirate from source and dispense to destination")
+    PIPETTING = PermissibleValue(
+        text="PIPETTING",
+        title="pipette method",
+        description="""A procedure or technique by which the size of the three dimensional space occupied by a liquid substance is ascertained using a pipette""",
+        meaning=MMO["0000392"])
+    MIXING = PermissibleValue(
+        text="MIXING",
+        title="mixing",
+        description="Operation to mix liquids by repeated aspiration and dispensing")
+    ALIQUOTING = PermissibleValue(
+        text="ALIQUOTING",
+        title="aliquoting",
+        description="Operation to distribute a sample into multiple equal portions")
+    SERIAL_DILUTION = PermissibleValue(
+        text="SERIAL_DILUTION",
+        title="serial dilution",
+        description="Operation to create a series of dilutions of a substance in solution")
+    PLATE_STAMPING = PermissibleValue(
+        text="PLATE_STAMPING",
+        title="plate stamping",
+        description="Operation to transfer samples from one plate to another in the same well pattern")
+    ACOUSTIC_TRANSFER = PermissibleValue(
+        text="ACOUSTIC_TRANSFER",
+        title="acoustic transfer",
+        description="""Acoustic liquid handling that uses acoustics to fly individual droplets from a source container to a destination""")
+    MOUTH_PIPETTING = PermissibleValue(
+        text="MOUTH_PIPETTING",
+        title="mouth pipetting",
+        description="""A method of using the researcher's mouth to apply small negative pressure to aspirate a volume into a pipette""",
+        meaning=EFO["0010182"])
+
+    _defn = EnumDefinition(
+        name="LiquidHandlingOperationEnum",
+        description="Operations for automated liquid handling in laboratory automation",
+    )
+
+class SampleProcessingOperationEnum(EnumDefinitionImpl):
+    """
+    General sample processing operations in automated laboratories
+    """
+    CENTRIFUGATION = PermissibleValue(
+        text="CENTRIFUGATION",
+        title="centrifugation",
+        description="Operation to separate components of a sample using centrifugal force")
+    INCUBATION = PermissibleValue(
+        text="INCUBATION",
+        title="incubation",
+        description="Operation to maintain samples at controlled environmental conditions over time")
+    THERMAL_CYCLING = PermissibleValue(
+        text="THERMAL_CYCLING",
+        title="thermal cycling",
+        description="Operation to cycle samples through different temperatures for PCR or similar processes")
+    WASHING = PermissibleValue(
+        text="WASHING",
+        title="washing",
+        description="Operation to wash samples or plates to remove unwanted material")
+    DETECTION = PermissibleValue(
+        text="DETECTION",
+        title="detection",
+        description="Operation to detect signals from samples (absorbance, fluorescence, luminescence)")
+    MEASUREMENT = PermissibleValue(
+        text="MEASUREMENT",
+        title="measurement",
+        description="Operation to measure a property or characteristic of a sample")
+    SEPARATION = PermissibleValue(
+        text="SEPARATION",
+        title="separation",
+        description="Operation to separate components of a sample mixture")
+    EXTRACTION = PermissibleValue(
+        text="EXTRACTION",
+        title="extraction",
+        description="Operation to extract specific components from a sample")
+    HEATING = PermissibleValue(
+        text="HEATING",
+        title="heating",
+        description="Operation to heat samples to a specified temperature")
+    COOLING = PermissibleValue(
+        text="COOLING",
+        title="cooling",
+        description="Operation to cool samples to a specified temperature")
+    SHAKING = PermissibleValue(
+        text="SHAKING",
+        title="shaking",
+        description="Operation to shake samples for mixing or agitation")
+    PLATE_MOVEMENT = PermissibleValue(
+        text="PLATE_MOVEMENT",
+        title="plate movement",
+        description="Operation to move plates between different locations or devices")
+    BARCODE_READING = PermissibleValue(
+        text="BARCODE_READING",
+        title="barcode reading",
+        description="Operation to read barcode labels on samples or containers")
+
+    _defn = EnumDefinition(
+        name="SampleProcessingOperationEnum",
+        description="General sample processing operations in automated laboratories",
+    )
+
+class MicroplateFormatEnum(EnumDefinitionImpl):
+    """
+    Standard microplate well configurations following ANSI/SLAS standards
+    """
+    WELL_6 = PermissibleValue(
+        text="WELL_6",
+        title="6-well plate",
+        description="Microplate with 6 wells")
+    WELL_12 = PermissibleValue(
+        text="WELL_12",
+        title="12-well plate",
+        description="Microplate with 12 wells")
+    WELL_24 = PermissibleValue(
+        text="WELL_24",
+        title="24-well plate",
+        description="Microplate with 24 wells")
+    WELL_48 = PermissibleValue(
+        text="WELL_48",
+        title="48-well plate",
+        description="Microplate with 48 wells")
+    WELL_96 = PermissibleValue(
+        text="WELL_96",
+        title="96-well microplate",
+        description="Microplate with 96 wells arranged in 8 rows of 12 columns with 9mm well-to-well spacing",
+        meaning=MSIO["0000162"])
+    WELL_384 = PermissibleValue(
+        text="WELL_384",
+        title="384-well plate",
+        description="Microplate with 384 wells with 4.5mm well-to-well spacing")
+    WELL_1536 = PermissibleValue(
+        text="WELL_1536",
+        title="1536-well plate",
+        description="Microplate with 1536 wells with 2.25mm well-to-well spacing")
+
+    _defn = EnumDefinition(
+        name="MicroplateFormatEnum",
+        description="Standard microplate well configurations following ANSI/SLAS standards",
+    )
+
+class ContainerTypeEnum(EnumDefinitionImpl):
+    """
+    Types of laboratory containers and labware
+    """
+    MICROPLATE = PermissibleValue(
+        text="MICROPLATE",
+        title="microplate",
+        description="""A flat dish with multiple individual wells that are arrayed in a standardized number, size, and arrangement""",
+        meaning=NCIT["C43377"])
+    DEEP_WELL_PLATE = PermissibleValue(
+        text="DEEP_WELL_PLATE",
+        title="deep well plate",
+        description="A microplate with deeper wells for increased sample volume capacity")
+    PCR_PLATE = PermissibleValue(
+        text="PCR_PLATE",
+        title="PCR plate",
+        description="A microplate specifically designed for PCR thermal cycling applications")
+    TUBE_RACK = PermissibleValue(
+        text="TUBE_RACK",
+        title="tube rack",
+        description="A rack designed to hold multiple laboratory tubes")
+    MICROTUBE = PermissibleValue(
+        text="MICROTUBE",
+        title="microtube",
+        description="Small laboratory tube with volume capacity from 0.2 ml to 2.0 ml")
+    SCREW_CAP_TUBE = PermissibleValue(
+        text="SCREW_CAP_TUBE",
+        title="screw cap tube",
+        description="Laboratory tube with screw cap closure")
+    SNAP_CAP_TUBE = PermissibleValue(
+        text="SNAP_CAP_TUBE",
+        title="snap cap tube",
+        description="Laboratory tube with snap cap closure")
+    RESERVOIR = PermissibleValue(
+        text="RESERVOIR",
+        title="reservoir",
+        description="Container for holding bulk reagents for dispensing")
+    PIPETTE_TIP_BOX = PermissibleValue(
+        text="PIPETTE_TIP_BOX",
+        title="pipette tip box",
+        description="Container for storing pipette tips in organized racks")
+    SPIN_COLUMN = PermissibleValue(
+        text="SPIN_COLUMN",
+        title="spin column",
+        description="A chromatography column which is suitable for putting it into a centrifuge",
+        meaning=OBI["0000570"])
+    MICROPLATE_WELL = PermissibleValue(
+        text="MICROPLATE_WELL",
+        title="microplate well",
+        description="Any of the individual wells on a microwell plate",
+        meaning=NCIT["C128793"])
+
+    _defn = EnumDefinition(
+        name="ContainerTypeEnum",
+        description="Types of laboratory containers and labware",
+    )
+
+class PlateMaterialEnum(EnumDefinitionImpl):
+    """
+    Material composition of laboratory microplates
+    """
+    POLYSTYRENE = PermissibleValue(
+        text="POLYSTYRENE",
+        title="polystyrene",
+        description="Plates made from polystyrene, the most common material for standard applications")
+    POLYPROPYLENE = PermissibleValue(
+        text="POLYPROPYLENE",
+        title="polypropylene",
+        description="Plates made from polypropylene for chemical resistance")
+    GLASS = PermissibleValue(
+        text="GLASS",
+        title="glass",
+        description="Plates with glass inserts for samples not suitable for plastic containers")
+
+    _defn = EnumDefinition(
+        name="PlateMaterialEnum",
+        description="Material composition of laboratory microplates",
+    )
+
+class PlateCoatingEnum(EnumDefinitionImpl):
+    """
+    Surface treatment of microplates
+    """
+    COATED = PermissibleValue(
+        text="COATED",
+        title="coated microplate",
+        description="""A microplate whose surface has been treated, for instance by covalently attaching proteins to favor cell growth""",
+        meaning=MSIO["0000164"])
+    UNCOATED = PermissibleValue(
+        text="UNCOATED",
+        title="uncoated microplate",
+        description="A microplate whose surface has not received any treatment and is uniquely made of polymer",
+        meaning=MSIO["0000170"])
+    TISSUE_CULTURE_TREATED = PermissibleValue(
+        text="TISSUE_CULTURE_TREATED",
+        title="tissue culture treated",
+        description="Surface treatment to enhance cell attachment and growth")
+    PROTEIN_BINDING = PermissibleValue(
+        text="PROTEIN_BINDING",
+        title="protein binding",
+        description="Surface treatment optimized for protein binding assays")
+
+    _defn = EnumDefinition(
+        name="PlateCoatingEnum",
+        description="Surface treatment of microplates",
+    )
+
+class WorkflowOrchestrationTypeEnum(EnumDefinitionImpl):
+    """
+    Types of workflow orchestration in laboratory automation systems
+    """
+    STATIC_ORCHESTRATION = PermissibleValue(
+        text="STATIC_ORCHESTRATION",
+        title="static orchestration",
+        description="Pre-planned orchestration based on known constraints and fixed workflow")
+    DYNAMIC_ORCHESTRATION = PermissibleValue(
+        text="DYNAMIC_ORCHESTRATION",
+        title="dynamic orchestration",
+        description="Real-time orchestration that adapts to changing conditions and events")
+    HYBRID_ORCHESTRATION = PermissibleValue(
+        text="HYBRID_ORCHESTRATION",
+        title="hybrid orchestration",
+        description="Combination of static planning with dynamic replanning capabilities")
+    EVENT_DRIVEN = PermissibleValue(
+        text="EVENT_DRIVEN",
+        title="event-driven orchestration",
+        description="Orchestration triggered by specific events in the system")
+    PARALLEL_PROCESSING = PermissibleValue(
+        text="PARALLEL_PROCESSING",
+        title="parallel processing",
+        description="Orchestration that enables concurrent execution of independent tasks")
+
+    _defn = EnumDefinition(
+        name="WorkflowOrchestrationTypeEnum",
+        description="Types of workflow orchestration in laboratory automation systems",
+    )
+
+class SchedulerTypeEnum(EnumDefinitionImpl):
+    """
+    Types of scheduling algorithms for laboratory automation
+    """
+    STATIC_SCHEDULER = PermissibleValue(
+        text="STATIC_SCHEDULER",
+        title="static scheduler",
+        description="Makes decisions based on known constraints requiring upfront planning")
+    DYNAMIC_SCHEDULER = PermissibleValue(
+        text="DYNAMIC_SCHEDULER",
+        title="dynamic scheduler",
+        description="Adapts scheduling decisions in real-time based on system state")
+    PRIORITY_BASED = PermissibleValue(
+        text="PRIORITY_BASED",
+        title="priority-based scheduler",
+        description="Schedules tasks based on assigned priority levels")
+    FIFO = PermissibleValue(
+        text="FIFO",
+        title="FIFO scheduler",
+        description="First-in-first-out scheduling")
+    RESOURCE_AWARE = PermissibleValue(
+        text="RESOURCE_AWARE",
+        title="resource-aware scheduler",
+        description="Schedules tasks considering available resources and constraints")
+    DEADLINE_DRIVEN = PermissibleValue(
+        text="DEADLINE_DRIVEN",
+        title="deadline-driven scheduler",
+        description="Schedules tasks to meet specified deadlines")
+
+    _defn = EnumDefinition(
+        name="SchedulerTypeEnum",
+        description="Types of scheduling algorithms for laboratory automation",
+    )
+
+class ProtocolStateEnum(EnumDefinitionImpl):
+    """
+    Execution states of laboratory protocols
+    """
+    PENDING = PermissibleValue(
+        text="PENDING",
+        title="pending",
+        description="Protocol is queued but not yet started")
+    RUNNING = PermissibleValue(
+        text="RUNNING",
+        title="running",
+        description="Protocol is currently executing")
+    PAUSED = PermissibleValue(
+        text="PAUSED",
+        title="paused",
+        description="Protocol execution has been temporarily suspended")
+    COMPLETED = PermissibleValue(
+        text="COMPLETED",
+        title="completed",
+        description="Protocol has finished successfully")
+    FAILED = PermissibleValue(
+        text="FAILED",
+        title="failed",
+        description="Protocol execution has failed")
+    ABORTED = PermissibleValue(
+        text="ABORTED",
+        title="aborted",
+        description="Protocol execution was manually aborted")
+    VALIDATING = PermissibleValue(
+        text="VALIDATING",
+        title="validating",
+        description="Protocol is being validated before execution")
+    WAITING_FOR_RESOURCE = PermissibleValue(
+        text="WAITING_FOR_RESOURCE",
+        title="waiting for resource",
+        description="Protocol is waiting for required resources to become available")
+
+    _defn = EnumDefinition(
+        name="ProtocolStateEnum",
+        description="Execution states of laboratory protocols",
+    )
+
+class ExecutionModeEnum(EnumDefinitionImpl):
+    """
+    Modes of protocol execution
+    """
+    AUTOMATED = PermissibleValue(
+        text="AUTOMATED",
+        title="automated",
+        description="Fully automated execution without human intervention")
+    MANUAL = PermissibleValue(
+        text="MANUAL",
+        title="manual",
+        description="Manual execution by human operator")
+    SEMI_AUTOMATED = PermissibleValue(
+        text="SEMI_AUTOMATED",
+        title="semi-automated",
+        description="Combination of automated and manual steps")
+    SUPERVISED = PermissibleValue(
+        text="SUPERVISED",
+        title="supervised",
+        description="Automated execution with human supervision")
+    SIMULATION = PermissibleValue(
+        text="SIMULATION",
+        title="simulation",
+        description="Simulated execution for testing and validation")
+    DRY_RUN = PermissibleValue(
+        text="DRY_RUN",
+        title="dry run",
+        description="Test execution without actual operations")
+
+    _defn = EnumDefinition(
+        name="ExecutionModeEnum",
+        description="Modes of protocol execution",
+    )
+
+class WorkflowErrorHandlingEnum(EnumDefinitionImpl):
+    """
+    Error handling strategies in laboratory automation workflows
+    """
+    ABORT_ON_ERROR = PermissibleValue(
+        text="ABORT_ON_ERROR",
+        title="abort on error",
+        description="Terminate workflow immediately upon encountering an error")
+    RETRY = PermissibleValue(
+        text="RETRY",
+        title="retry",
+        description="Attempt to retry the failed operation")
+    SKIP_AND_CONTINUE = PermissibleValue(
+        text="SKIP_AND_CONTINUE",
+        title="skip and continue",
+        description="Skip the failed operation and continue with the workflow")
+    NOTIFY_AND_PAUSE = PermissibleValue(
+        text="NOTIFY_AND_PAUSE",
+        title="notify and pause",
+        description="Notify operator and pause workflow for intervention")
+    ROLLBACK = PermissibleValue(
+        text="ROLLBACK",
+        title="rollback",
+        description="Revert to previous stable state")
+    FAILOVER = PermissibleValue(
+        text="FAILOVER",
+        title="failover",
+        description="Switch to backup resource or alternative execution path")
+
+    _defn = EnumDefinition(
+        name="WorkflowErrorHandlingEnum",
+        description="Error handling strategies in laboratory automation workflows",
+    )
+
+class IntegrationSystemEnum(EnumDefinitionImpl):
+    """
+    Types of systems integrated with laboratory automation platforms
+    """
+    LIMS = PermissibleValue(
+        text="LIMS",
+        title="LIMS",
+        description="Laboratory Information Management System")
+    ELN = PermissibleValue(
+        text="ELN",
+        title="ELN",
+        description="Electronic Laboratory Notebook")
+    MES = PermissibleValue(
+        text="MES",
+        title="MES",
+        description="Manufacturing Execution System")
+    SCADA = PermissibleValue(
+        text="SCADA",
+        title="SCADA",
+        description="Supervisory Control and Data Acquisition")
+    CLOUD_STORAGE = PermissibleValue(
+        text="CLOUD_STORAGE",
+        title="cloud storage",
+        description="Cloud-based data storage systems")
+    DATABASE = PermissibleValue(
+        text="DATABASE",
+        title="database",
+        description="Laboratory database systems")
+
+    _defn = EnumDefinition(
+        name="IntegrationSystemEnum",
+        description="Types of systems integrated with laboratory automation platforms",
+    )
+
+class AutomationStandardEnum(EnumDefinitionImpl):
+    """
+    Industry standards for laboratory automation systems
+    """
+    SILA_2 = PermissibleValue(
+        text="SILA_2",
+        title="SiLA 2",
+        description="""Standardization in Lab Automation version 2 - international standard for open connectivity in lab automation""")
+    LABOP = PermissibleValue(
+        text="LABOP",
+        title="LabOP",
+        description="Laboratory Open Protocol Language - open specification for laboratory protocols")
+    AUTOPROTOCOL = PermissibleValue(
+        text="AUTOPROTOCOL",
+        title="Autoprotocol",
+        description="JSON-based language for specifying experimental protocols")
+    CLSI_AUTO01 = PermissibleValue(
+        text="CLSI_AUTO01",
+        title="CLSI AUTO01",
+        description="CLSI standard for Specimen Container/Specimen Carrier")
+    CLSI_AUTO02 = PermissibleValue(
+        text="CLSI_AUTO02",
+        title="CLSI AUTO02",
+        description="CLSI standard for Bar Codes for Specimen Container Identification")
+    CLSI_AUTO03 = PermissibleValue(
+        text="CLSI_AUTO03",
+        title="CLSI AUTO03",
+        description="CLSI standard for Communications with Automated Clinical Laboratory Systems")
+    CLSI_AUTO04 = PermissibleValue(
+        text="CLSI_AUTO04",
+        title="CLSI AUTO04",
+        description="CLSI standard for Systems Operational Requirements, Characteristics, and Information Elements")
+    CLSI_AUTO05 = PermissibleValue(
+        text="CLSI_AUTO05",
+        title="CLSI AUTO05",
+        description="CLSI standard for Electromechanical Interfaces")
+
+    _defn = EnumDefinition(
+        name="AutomationStandardEnum",
+        description="Industry standards for laboratory automation systems",
+    )
+
+class CommunicationProtocolEnum(EnumDefinitionImpl):
+    """
+    Communication protocols for laboratory automation integration
+    """
+    GRPC = PermissibleValue(
+        text="GRPC",
+        title="gRPC",
+        description="gRPC protocol used in SiLA 2")
+    REST_API = PermissibleValue(
+        text="REST_API",
+        title="REST API",
+        description="RESTful HTTP-based API")
+    SOAP = PermissibleValue(
+        text="SOAP",
+        title="SOAP",
+        description="Simple Object Access Protocol")
+    OPC_UA = PermissibleValue(
+        text="OPC_UA",
+        title="OPC UA",
+        description="OPC Unified Architecture for industrial automation")
+    MODBUS = PermissibleValue(
+        text="MODBUS",
+        title="Modbus",
+        description="Serial communication protocol for industrial devices")
+    CUSTOM_API = PermissibleValue(
+        text="CUSTOM_API",
+        title="custom API",
+        description="Vendor-specific custom API")
+    SERIAL = PermissibleValue(
+        text="SERIAL",
+        title="serial",
+        description="Serial communication protocol (RS-232, RS-485)")
+    TCP_IP = PermissibleValue(
+        text="TCP_IP",
+        title="TCP/IP",
+        description="TCP/IP network protocol")
+    USB = PermissibleValue(
+        text="USB",
+        title="USB",
+        description="Universal Serial Bus communication")
+
+    _defn = EnumDefinition(
+        name="CommunicationProtocolEnum",
+        description="Communication protocols for laboratory automation integration",
+    )
+
+class LabwareStandardEnum(EnumDefinitionImpl):
+    """
+    Standardization specifications for laboratory labware
+    """
+    ANSI_SLAS_1_2004 = PermissibleValue(
+        text="ANSI_SLAS_1_2004",
+        title="ANSI/SLAS 1-2004",
+        description="Microplates - Footprint Dimensions")
+    ANSI_SLAS_2_2004 = PermissibleValue(
+        text="ANSI_SLAS_2_2004",
+        title="ANSI/SLAS 2-2004",
+        description="Microplates - Height Dimensions")
+    ANSI_SLAS_3_2004 = PermissibleValue(
+        text="ANSI_SLAS_3_2004",
+        title="ANSI/SLAS 3-2004",
+        description="Microplates - Bottom Outside Flange Dimensions")
+    ANSI_SLAS_4_2004 = PermissibleValue(
+        text="ANSI_SLAS_4_2004",
+        title="ANSI/SLAS 4-2004",
+        description="Microplates - Well Positions")
+    ANSI_SLAS_6_2012 = PermissibleValue(
+        text="ANSI_SLAS_6_2012",
+        title="ANSI/SLAS 6-2012",
+        description="Microplates - Well Bottom Elevation")
+    SBS_FOOTPRINT = PermissibleValue(
+        text="SBS_FOOTPRINT",
+        title="SBS footprint",
+        description="Society for Biomolecular Screening standard footprint (127.76mm x 85.5mm)")
+
+    _defn = EnumDefinition(
+        name="LabwareStandardEnum",
+        description="Standardization specifications for laboratory labware",
+    )
+
+class IntegrationFeatureEnum(EnumDefinitionImpl):
+    """
+    Integration features for laboratory automation systems
+    """
+    BARCODE_TRACKING = PermissibleValue(
+        text="BARCODE_TRACKING",
+        title="barcode tracking",
+        description="Integration feature for tracking samples via barcodes")
+    AUTOMATED_DATA_TRANSFER = PermissibleValue(
+        text="AUTOMATED_DATA_TRANSFER",
+        title="automated data transfer",
+        description="Automatic transfer of data between systems")
+    CLOUD_STORAGE_INTEGRATION = PermissibleValue(
+        text="CLOUD_STORAGE_INTEGRATION",
+        title="cloud storage integration",
+        description="Integration with cloud-based storage systems")
+    SAMPLE_TRACKING = PermissibleValue(
+        text="SAMPLE_TRACKING",
+        title="sample tracking",
+        description="Real-time tracking of sample location and status")
+    WORKFLOW_VALIDATION = PermissibleValue(
+        text="WORKFLOW_VALIDATION",
+        title="workflow validation",
+        description="Automated validation of workflow definitions")
+    ERROR_RECOVERY = PermissibleValue(
+        text="ERROR_RECOVERY",
+        title="error recovery",
+        description="Automated error detection and recovery mechanisms")
+    AUDIT_TRAIL = PermissibleValue(
+        text="AUDIT_TRAIL",
+        title="audit trail",
+        description="Complete logging of all operations for compliance")
+    ELECTRONIC_SIGNATURES = PermissibleValue(
+        text="ELECTRONIC_SIGNATURES",
+        title="electronic signatures",
+        description="Support for electronic signatures for regulatory compliance")
+
+    _defn = EnumDefinition(
+        name="IntegrationFeatureEnum",
+        description="Integration features for laboratory automation systems",
+    )
+
+class ThermalCyclerTypeEnum(EnumDefinitionImpl):
+    """
+    Types of thermal cycling instruments
+    """
+    STANDARD_THERMAL_CYCLER = PermissibleValue(
+        text="STANDARD_THERMAL_CYCLER",
+        title="standard thermal cycler",
+        description="Standard thermal cycler for endpoint PCR")
+    REAL_TIME_PCR = PermissibleValue(
+        text="REAL_TIME_PCR",
+        title="real-time PCR",
+        description="Thermal cycler with real-time fluorescence detection")
+    DIGITAL_PCR = PermissibleValue(
+        text="DIGITAL_PCR",
+        title="digital PCR",
+        description="Thermal cycler for digital PCR applications")
+    GRADIENT_THERMAL_CYCLER = PermissibleValue(
+        text="GRADIENT_THERMAL_CYCLER",
+        title="gradient thermal cycler",
+        description="Thermal cycler capable of running temperature gradients across the block")
+    FAST_THERMAL_CYCLER = PermissibleValue(
+        text="FAST_THERMAL_CYCLER",
+        title="fast thermal cycler",
+        description="Thermal cycler optimized for rapid cycling")
+    AUTOMATED_THERMAL_CYCLER = PermissibleValue(
+        text="AUTOMATED_THERMAL_CYCLER",
+        title="automated thermal cycler",
+        description="Thermal cycler with integrated automation for high-throughput applications")
+    IN_SITU_THERMAL_CYCLER = PermissibleValue(
+        text="IN_SITU_THERMAL_CYCLER",
+        title="in situ thermal cycler",
+        description="Thermal cycler designed for in situ PCR applications")
+
+    _defn = EnumDefinition(
+        name="ThermalCyclerTypeEnum",
+        description="Types of thermal cycling instruments",
+    )
+
+class PCROperationTypeEnum(EnumDefinitionImpl):
+    """
+    Types of PCR operations and techniques
+    """
+    STANDARD_PCR = PermissibleValue(
+        text="STANDARD_PCR",
+        title="standard PCR",
+        description="Standard endpoint PCR amplification")
+    QUANTITATIVE_PCR = PermissibleValue(
+        text="QUANTITATIVE_PCR",
+        title="quantitative PCR",
+        description="Real-time quantitative PCR")
+    REVERSE_TRANSCRIPTION_PCR = PermissibleValue(
+        text="REVERSE_TRANSCRIPTION_PCR",
+        title="reverse transcription PCR",
+        description="PCR with reverse transcription step for RNA amplification")
+    RT_QPCR = PermissibleValue(
+        text="RT_QPCR",
+        title="RT-qPCR",
+        description="Real-time quantitative RT-PCR")
+    MULTIPLEX_PCR = PermissibleValue(
+        text="MULTIPLEX_PCR",
+        title="multiplex PCR",
+        description="PCR amplifying multiple targets simultaneously")
+    NESTED_PCR = PermissibleValue(
+        text="NESTED_PCR",
+        title="nested PCR",
+        description="Two-stage PCR for increased specificity")
+    TOUCHDOWN_PCR = PermissibleValue(
+        text="TOUCHDOWN_PCR",
+        title="touchdown PCR",
+        description="PCR with decreasing annealing temperature")
+    HOT_START_PCR = PermissibleValue(
+        text="HOT_START_PCR",
+        title="hot start PCR",
+        description="PCR with heat-activated polymerase")
+    LONG_RANGE_PCR = PermissibleValue(
+        text="LONG_RANGE_PCR",
+        title="long range PCR",
+        description="PCR optimized for amplifying long DNA fragments")
+    COLONY_PCR = PermissibleValue(
+        text="COLONY_PCR",
+        title="colony PCR",
+        description="PCR directly from bacterial colonies")
+    HIGH_FIDELITY_PCR = PermissibleValue(
+        text="HIGH_FIDELITY_PCR",
+        title="high fidelity PCR",
+        description="PCR using proofreading polymerases")
+    DIGITAL_PCR = PermissibleValue(
+        text="DIGITAL_PCR",
+        title="digital PCR",
+        description="Absolute quantification PCR using partitioning")
+
+    _defn = EnumDefinition(
+        name="PCROperationTypeEnum",
+        description="Types of PCR operations and techniques",
+    )
+
+class DetectionModeEnum(EnumDefinitionImpl):
+    """
+    Detection modes for real-time PCR instruments
+    """
+    SYBR_GREEN = PermissibleValue(
+        text="SYBR_GREEN",
+        title="SYBR Green",
+        description="DNA-binding dye detection")
+    TAQMAN = PermissibleValue(
+        text="TAQMAN",
+        title="TaqMan",
+        description="Hydrolysis probe-based detection")
+    MOLECULAR_BEACON = PermissibleValue(
+        text="MOLECULAR_BEACON",
+        title="molecular beacon",
+        description="Hairpin probe-based detection")
+    FRET = PermissibleValue(
+        text="FRET",
+        title="FRET",
+        description="Fluorescence resonance energy transfer detection")
+    SCORPION = PermissibleValue(
+        text="SCORPION",
+        title="Scorpion",
+        description="Unimolecular probe-based detection")
+    HYBRIDIZATION_PROBE = PermissibleValue(
+        text="HYBRIDIZATION_PROBE",
+        title="hybridization probe",
+        description="Two-probe FRET-based detection")
+    MULTI_CHANNEL = PermissibleValue(
+        text="MULTI_CHANNEL",
+        title="multi-channel",
+        description="Multi-channel fluorescence detection")
+
+    _defn = EnumDefinition(
+        name="DetectionModeEnum",
+        description="Detection modes for real-time PCR instruments",
+    )
+
+class PCRPlateTypeEnum(EnumDefinitionImpl):
+    """
+    Types of plates used for PCR applications
+    """
+    PCR_96_WELL = PermissibleValue(
+        text="PCR_96_WELL",
+        title="96-well PCR plate",
+        description="96-well plate for PCR")
+    PCR_384_WELL = PermissibleValue(
+        text="PCR_384_WELL",
+        title="384-well PCR plate",
+        description="384-well plate for PCR")
+    PCR_TUBE_STRIP = PermissibleValue(
+        text="PCR_TUBE_STRIP",
+        title="PCR tube strip",
+        description="Strip of 8 or 12 PCR tubes")
+    INDIVIDUAL_PCR_TUBE = PermissibleValue(
+        text="INDIVIDUAL_PCR_TUBE",
+        title="individual PCR tube",
+        description="Individual PCR tube")
+    LOW_PROFILE_PLATE = PermissibleValue(
+        text="LOW_PROFILE_PLATE",
+        title="low profile plate",
+        description="Low-profile PCR plate for automated systems")
+    SKIRTED_PLATE = PermissibleValue(
+        text="SKIRTED_PLATE",
+        title="skirted plate",
+        description="PCR plate with skirted base for stability")
+    SEMI_SKIRTED_PLATE = PermissibleValue(
+        text="SEMI_SKIRTED_PLATE",
+        title="semi-skirted plate",
+        description="PCR plate with partial skirt")
+
+    _defn = EnumDefinition(
+        name="PCRPlateTypeEnum",
+        description="Types of plates used for PCR applications",
+    )
+
+class ThermalCyclingStepEnum(EnumDefinitionImpl):
+    """
+    Steps in thermal cycling protocols
+    """
+    INITIAL_DENATURATION = PermissibleValue(
+        text="INITIAL_DENATURATION",
+        title="initial denaturation",
+        description="Initial high-temperature step to denature template DNA")
+    DENATURATION = PermissibleValue(
+        text="DENATURATION",
+        title="denaturation",
+        description="High-temperature step to separate DNA strands")
+    ANNEALING = PermissibleValue(
+        text="ANNEALING",
+        title="annealing",
+        description="Cooling step to allow primer binding")
+    EXTENSION = PermissibleValue(
+        text="EXTENSION",
+        title="extension",
+        description="Temperature-optimized step for polymerase activity")
+    FINAL_EXTENSION = PermissibleValue(
+        text="FINAL_EXTENSION",
+        title="final extension",
+        description="Extended final extension step")
+    HOLD = PermissibleValue(
+        text="HOLD",
+        title="hold",
+        description="Temperature hold step")
+    MELT_CURVE = PermissibleValue(
+        text="MELT_CURVE",
+        title="melt curve",
+        description="Gradual temperature increase for melt curve analysis")
+    GRADIENT = PermissibleValue(
+        text="GRADIENT",
+        title="gradient",
+        description="Temperature gradient across block")
+
+    _defn = EnumDefinition(
+        name="ThermalCyclingStepEnum",
+        description="Steps in thermal cycling protocols",
+    )
+
 # Slots
 class slots:
     pass
@@ -23407,6 +25287,9 @@ slots.data = Slot(uri=VALUESETS.data, name="data", curie=VALUESETS.curie('data')
 slots.processing_status = Slot(uri=VALUESETS.processing_status, name="processing_status", curie=VALUESETS.curie('processing_status'),
                    model_uri=VALUESETS.processing_status, domain=None, range=Optional[Union[str, "ProcessingStatus"]])
 
+slots.biosafety_level = Slot(uri=VALUESETS.biosafety_level, name="biosafety_level", curie=VALUESETS.curie('biosafety_level'),
+                   model_uri=VALUESETS.biosafety_level, domain=None, range=Optional[Union[str, "BiosafetyLevelEnum"]])
+
 slots.insdc_missing_value = Slot(uri=VALUESETS.insdc_missing_value, name="insdc_missing_value", curie=VALUESETS.curie('insdc_missing_value'),
                    model_uri=VALUESETS.insdc_missing_value, domain=None, range=Optional[Union[str, "InsdcMissingValueEnum"]])
 
@@ -23487,6 +25370,21 @@ slots.open_access = Slot(uri=VALUESETS.open_access, name="open_access", curie=VA
 
 slots.citation_style = Slot(uri=VALUESETS.citation_style, name="citation_style", curie=VALUESETS.curie('citation_style'),
                    model_uri=VALUESETS.citation_style, domain=None, range=Optional[Union[str, "CitationStyle"]])
+
+slots.us_national_laboratory = Slot(uri=VALUESETS.us_national_laboratory, name="us_national_laboratory", curie=VALUESETS.curie('us_national_laboratory'),
+                   model_uri=VALUESETS.us_national_laboratory, domain=None, range=Optional[Union[str, "USDOENationalLaboratoryEnum"]])
+
+slots.us_federal_funding_agency = Slot(uri=VALUESETS.us_federal_funding_agency, name="us_federal_funding_agency", curie=VALUESETS.curie('us_federal_funding_agency'),
+                   model_uri=VALUESETS.us_federal_funding_agency, domain=None, range=Optional[Union[str, "USFederalFundingAgencyEnum"]])
+
+slots.nih_institute_center = Slot(uri=VALUESETS.nih_institute_center, name="nih_institute_center", curie=VALUESETS.curie('nih_institute_center'),
+                   model_uri=VALUESETS.nih_institute_center, domain=None, range=Optional[Union[str, "NIHInstituteCenterEnum"]])
+
+slots.standards_organization = Slot(uri=VALUESETS.standards_organization, name="standards_organization", curie=VALUESETS.curie('standards_organization'),
+                   model_uri=VALUESETS.standards_organization, domain=None, range=Optional[Union[str, "StandardsOrganizationEnum"]])
+
+slots.un_specialized_agency = Slot(uri=VALUESETS.un_specialized_agency, name="un_specialized_agency", curie=VALUESETS.curie('un_specialized_agency'),
+                   model_uri=VALUESETS.un_specialized_agency, domain=None, range=Optional[Union[str, "UNSpecializedAgencyEnum"]])
 
 slots.energy_source = Slot(uri=VALUESETS.energy_source, name="energy_source", curie=VALUESETS.curie('energy_source'),
                    model_uri=VALUESETS.energy_source, domain=None, range=Optional[Union[str, "EnergySource"]])
@@ -23718,6 +25616,21 @@ slots.endocrine_disruptor = Slot(uri=VALUESETS.endocrine_disruptor, name="endocr
 
 slots.exposure_duration = Slot(uri=VALUESETS.exposure_duration, name="exposure_duration", curie=VALUESETS.curie('exposure_duration'),
                    model_uri=VALUESETS.exposure_duration, domain=None, range=Optional[Union[str, "ExposureDurationEnum"]])
+
+slots.smoking_status = Slot(uri=VALUESETS.smoking_status, name="smoking_status", curie=VALUESETS.curie('smoking_status'),
+                   model_uri=VALUESETS.smoking_status, domain=None, range=Optional[Union[str, "SmokingStatusEnum"]])
+
+slots.exposure_stressor_type = Slot(uri=VALUESETS.exposure_stressor_type, name="exposure_stressor_type", curie=VALUESETS.curie('exposure_stressor_type'),
+                   model_uri=VALUESETS.exposure_stressor_type, domain=None, range=Optional[Union[str, "ExposureStressorTypeEnum"]])
+
+slots.exposure_transport_path = Slot(uri=VALUESETS.exposure_transport_path, name="exposure_transport_path", curie=VALUESETS.curie('exposure_transport_path'),
+                   model_uri=VALUESETS.exposure_transport_path, domain=None, range=Optional[Union[str, "ExposureTransportPathEnum"]])
+
+slots.exposure_frequency = Slot(uri=VALUESETS.exposure_frequency, name="exposure_frequency", curie=VALUESETS.curie('exposure_frequency'),
+                   model_uri=VALUESETS.exposure_frequency, domain=None, range=Optional[Union[str, "ExposureFrequencyEnum"]])
+
+slots.study_population = Slot(uri=VALUESETS.study_population, name="study_population", curie=VALUESETS.curie('study_population'),
+                   model_uri=VALUESETS.study_population, domain=None, range=Optional[Union[str, "StudyPopulationEnum"]])
 
 slots.country_code_iso2 = Slot(uri=VALUESETS.country_code_iso2, name="country_code_iso2", curie=VALUESETS.curie('country_code_iso2'),
                    model_uri=VALUESETS.country_code_iso2, domain=None, range=Optional[Union[str, "CountryCodeISO2Enum"]])
@@ -24373,6 +26286,9 @@ slots.data_maturity_level = Slot(uri=VALUESETS.data_maturity_level, name="data_m
 slots.open_source_maturity_level = Slot(uri=VALUESETS.open_source_maturity_level, name="open_source_maturity_level", curie=VALUESETS.curie('open_source_maturity_level'),
                    model_uri=VALUESETS.open_source_maturity_level, domain=None, range=Optional[Union[str, "OpenSourceMaturityLevel"]])
 
+slots.owl_profile = Slot(uri=VALUESETS.owl_profile, name="owl_profile", curie=VALUESETS.curie('owl_profile'),
+                   model_uri=VALUESETS.owl_profile, domain=None, range=Optional[Union[str, "OWLProfileEnum"]])
+
 slots.legal_entity_type = Slot(uri=VALUESETS.legal_entity_type, name="legal_entity_type", curie=VALUESETS.curie('legal_entity_type'),
                    model_uri=VALUESETS.legal_entity_type, domain=None, range=Optional[Union[str, "LegalEntityTypeEnum"]])
 
@@ -24501,3 +26417,57 @@ slots.work_arrangement = Slot(uri=VALUESETS.work_arrangement, name="work_arrange
 
 slots.benefits_category = Slot(uri=VALUESETS.benefits_category, name="benefits_category", curie=VALUESETS.curie('benefits_category'),
                    model_uri=VALUESETS.benefits_category, domain=None, range=Optional[Union[str, "BenefitsCategoryEnum"]])
+
+slots.laboratory_device_type = Slot(uri=VALUESETS.laboratory_device_type, name="laboratory_device_type", curie=VALUESETS.curie('laboratory_device_type'),
+                   model_uri=VALUESETS.laboratory_device_type, domain=None, range=Optional[Union[str, "LaboratoryDeviceTypeEnum"]])
+
+slots.robotic_arm_type = Slot(uri=VALUESETS.robotic_arm_type, name="robotic_arm_type", curie=VALUESETS.curie('robotic_arm_type'),
+                   model_uri=VALUESETS.robotic_arm_type, domain=None, range=Optional[Union[str, "RoboticArmTypeEnum"]])
+
+slots.liquid_handling_operation = Slot(uri=VALUESETS.liquid_handling_operation, name="liquid_handling_operation", curie=VALUESETS.curie('liquid_handling_operation'),
+                   model_uri=VALUESETS.liquid_handling_operation, domain=None, range=Optional[Union[str, "LiquidHandlingOperationEnum"]])
+
+slots.sample_processing_operation = Slot(uri=VALUESETS.sample_processing_operation, name="sample_processing_operation", curie=VALUESETS.curie('sample_processing_operation'),
+                   model_uri=VALUESETS.sample_processing_operation, domain=None, range=Optional[Union[str, "SampleProcessingOperationEnum"]])
+
+slots.microplate_format = Slot(uri=VALUESETS.microplate_format, name="microplate_format", curie=VALUESETS.curie('microplate_format'),
+                   model_uri=VALUESETS.microplate_format, domain=None, range=Optional[Union[str, "MicroplateFormatEnum"]])
+
+slots.container_type = Slot(uri=VALUESETS.container_type, name="container_type", curie=VALUESETS.curie('container_type'),
+                   model_uri=VALUESETS.container_type, domain=None, range=Optional[Union[str, "ContainerTypeEnum"]])
+
+slots.plate_material = Slot(uri=VALUESETS.plate_material, name="plate_material", curie=VALUESETS.curie('plate_material'),
+                   model_uri=VALUESETS.plate_material, domain=None, range=Optional[Union[str, "PlateMaterialEnum"]])
+
+slots.plate_coating = Slot(uri=VALUESETS.plate_coating, name="plate_coating", curie=VALUESETS.curie('plate_coating'),
+                   model_uri=VALUESETS.plate_coating, domain=None, range=Optional[Union[str, "PlateCoatingEnum"]])
+
+slots.workflow_orchestration_type = Slot(uri=VALUESETS.workflow_orchestration_type, name="workflow_orchestration_type", curie=VALUESETS.curie('workflow_orchestration_type'),
+                   model_uri=VALUESETS.workflow_orchestration_type, domain=None, range=Optional[Union[str, "WorkflowOrchestrationTypeEnum"]])
+
+slots.scheduler_type = Slot(uri=VALUESETS.scheduler_type, name="scheduler_type", curie=VALUESETS.curie('scheduler_type'),
+                   model_uri=VALUESETS.scheduler_type, domain=None, range=Optional[Union[str, "SchedulerTypeEnum"]])
+
+slots.protocol_state = Slot(uri=VALUESETS.protocol_state, name="protocol_state", curie=VALUESETS.curie('protocol_state'),
+                   model_uri=VALUESETS.protocol_state, domain=None, range=Optional[Union[str, "ProtocolStateEnum"]])
+
+slots.execution_mode = Slot(uri=VALUESETS.execution_mode, name="execution_mode", curie=VALUESETS.curie('execution_mode'),
+                   model_uri=VALUESETS.execution_mode, domain=None, range=Optional[Union[str, "ExecutionModeEnum"]])
+
+slots.automation_standard = Slot(uri=VALUESETS.automation_standard, name="automation_standard", curie=VALUESETS.curie('automation_standard'),
+                   model_uri=VALUESETS.automation_standard, domain=None, range=Optional[Union[str, "AutomationStandardEnum"]])
+
+slots.communication_protocol = Slot(uri=VALUESETS.communication_protocol, name="communication_protocol", curie=VALUESETS.curie('communication_protocol'),
+                   model_uri=VALUESETS.communication_protocol, domain=None, range=Optional[Union[str, "CommunicationProtocolEnum"]])
+
+slots.labware_standard = Slot(uri=VALUESETS.labware_standard, name="labware_standard", curie=VALUESETS.curie('labware_standard'),
+                   model_uri=VALUESETS.labware_standard, domain=None, range=Optional[Union[str, "LabwareStandardEnum"]])
+
+slots.thermal_cycler_type = Slot(uri=VALUESETS.thermal_cycler_type, name="thermal_cycler_type", curie=VALUESETS.curie('thermal_cycler_type'),
+                   model_uri=VALUESETS.thermal_cycler_type, domain=None, range=Optional[Union[str, "ThermalCyclerTypeEnum"]])
+
+slots.pcr_operation_type = Slot(uri=VALUESETS.pcr_operation_type, name="pcr_operation_type", curie=VALUESETS.curie('pcr_operation_type'),
+                   model_uri=VALUESETS.pcr_operation_type, domain=None, range=Optional[Union[str, "PCROperationTypeEnum"]])
+
+slots.detection_mode = Slot(uri=VALUESETS.detection_mode, name="detection_mode", curie=VALUESETS.curie('detection_mode'),
+                   model_uri=VALUESETS.detection_mode, domain=None, range=Optional[Union[str, "DetectionModeEnum"]])

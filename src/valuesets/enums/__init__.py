@@ -23,7 +23,7 @@ from .analytical_chemistry.mass_spectrometry import RelativeTimeEnum, PresenceEn
 
 # Bio domain
 from .bio.biological_colors import EyeColorEnum, HairColorEnum, FlowerColorEnum, AnimalCoatColorEnum, SkinToneEnum, PlantLeafColorEnum
-from .bio.biosafety import BiosaftyLevelEnum
+from .bio.biosafety import BiosafetyLevelEnum
 from .bio.cell_cycle import CellCyclePhase, MitoticPhase, CellCycleCheckpoint, MeioticPhase, CellCycleRegulator, CellProliferationState, DNADamageResponse
 from .bio.currency_chemicals import CurrencyChemical
 from .bio.developmental_stages import HumanDevelopmentalStage, MouseDevelopmentalStage
@@ -212,7 +212,7 @@ __all__ = [
     "BiologicalRole",
     "BiologicalSexEnum",
     "BioreactorTypeEnum",
-    "BiosaftyLevelEnum",
+    "BiosafetyLevelEnum",
     "BioticInteractionType",
     "BloodTypeEnum",
     "BondTypeEnum",

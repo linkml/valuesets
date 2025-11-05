@@ -1418,7 +1418,7 @@ ProcessingStatus._metadata = {
     "CANCELLED": {'description': 'Processing cancelled by user'},
 }
 
-class BiosaftyLevelEnum(RichEnum):
+class BiosafetyLevelEnum(RichEnum):
     """
     Biosafety levels (BSL) defining containment requirements for biological agents
     """
@@ -1429,7 +1429,7 @@ class BiosaftyLevelEnum(RichEnum):
     BSL4 = "BSL4"
 
 # Set metadata after class creation to avoid it becoming an enum member
-BiosaftyLevelEnum._metadata = {
+BiosafetyLevelEnum._metadata = {
     "BSL1": {'description': 'Suitable for well-characterized agents not known to consistently cause disease in healthy adults', 'meaning': 'SNOMED:409600007'},
     "BSL2": {'description': 'Suitable for agents that pose moderate hazards to personnel and the environment', 'meaning': 'SNOMED:409603009'},
     "BSL3": {'description': 'Suitable for indigenous or exotic agents that may cause serious or potentially lethal disease through inhalation', 'meaning': 'SNOMED:409604003'},
