@@ -146,10 +146,31 @@ class EnumEvaluator:
                 config_data = yaml.safe_load(f)
                 adapters = config_data.get('ontology_adapters', {})
                 # Convert keys to lowercase for case-insensitive lookup
-                return {k.lower(): v for k, v in adapters.items()}
+                oak_config = {k.lower(): v for k, v in adapters.items()}
+
+                # Validate REST adapter configurations
+                self._validate_oak_config(oak_config)
+
+                return oak_config
         except Exception as e:
             logger.warning(f"Could not load OAK config: {e}")
             return {}
+
+    def _validate_oak_config(self, oak_config: Dict[str, str]):
+        """
+        Validate OAK configuration for potential issues.
+
+        Checks for REST adapter configurations when REST adapters module is not available.
+        Logs warnings but does not raise exceptions to maintain graceful degradation.
+        """
+        for prefix, adapter_string in oak_config.items():
+            if adapter_string and adapter_string.startswith("rest:"):
+                if not HAS_REST_ADAPTERS:
+                    logger.error(
+                        f"Configuration error: Prefix '{prefix.upper()}' is configured to use "
+                        f"REST adapter '{adapter_string}' but REST adapters module is not available. "
+                        f"Install required dependencies or update oak_config.yaml."
+                    )
 
     def _get_cache_file(self, prefix: str) -> Path:
         """Get the cache file path for a given prefix."""

@@ -101,6 +101,12 @@ from .data_science.quality_control import QualityControlEnum, DefectClassificati
 from .data_science.sentiment_analysis import SentimentClassificationEnum, FineSentimentClassificationEnum
 from .data_science.text_classification import NewsTopicCategoryEnum, ToxicityClassificationEnum, IntentClassificationEnum
 
+# Earth_Science domain
+from .earth_science.collection_methods import SESARCollectionMethod
+from .earth_science.material_types import SESARMaterialType
+from .earth_science.physiographic_features import SESARPhysiographicFeature
+from .earth_science.sample_types import SESARSampleType
+
 # Energy domain
 from .energy.energy import EnergySource, EnergyUnit, PowerUnit, EnergyEfficiencyRating, BuildingEnergyStandard, GridType, EnergyStorageType, EmissionScope, CarbonIntensity, ElectricityMarket
 from .energy.fossil_fuels import FossilFuelTypeEnum
@@ -545,6 +551,10 @@ __all__ = [
     "ResearchReactorTypeEnum",
     "ResearchRole",
     "RoboticArmTypeEnum",
+    "SESARCollectionMethod",
+    "SESARMaterialType",
+    "SESARPhysiographicFeature",
+    "SESARSampleType",
     "SafetyColorEnum",
     "SafetySystemClassEnum",
     "SampleProcessingOperationEnum",
