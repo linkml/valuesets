@@ -2,3958 +2,3998 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://linkml.github.io/valuesets/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/about/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/slot-generation/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ACMGPathogenicityEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/AcademicDegree/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/AdditiveManufacturingEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/AgeGroupEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/AgitationTypeEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/AirPollutantEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/AllelicStateEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/AllergyTypeEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/AminoAcidEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/AminoAcidExtendedEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/AnalyticalControlType/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/AnatomicalAxis/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/AnatomicalPlane/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/AnatomicalRegion/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/AnatomicalSide/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/AnatomicalSystemEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/AngleUnitEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/AnimalCoatColorEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/AnomalyDetectionEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ArchiveFormatEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/AudioFormatEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/AutomationStandardEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/AutomobilePaintColorEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/AutonomyLevel/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/AviationLightColorEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/BMIClassificationEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/BasicColorEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/BasicEmotionEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/BeneficiationPathway/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/BenefitsCategoryEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/BinaryClassificationEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/BioleachMode/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/BioleachOrganism/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/BiologicalKingdom/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/BiologicalProcess/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/BiologicalRole/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/BiologicalSexEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/BioreactorTypeEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/BiosafetyLevelEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/BioticInteractionType/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/BloodTypeEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/BondTypeEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/Boolean/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/BravaisLatticeEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/BronstedAcidBaseRoleEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/BuildingEnergyStandard/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/BusinessActivityTypeEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/BusinessLifecycleStageEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/BusinessOwnershipTypeEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/BusinessProcessTypeEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/BusinessSizeClassificationEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/BusinessTimeFrame/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/CanadianProvinceCodeEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/Cancer/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/CapabilityMaturityLevel/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/CarbonIntensity/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/CaseOrControlEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/CatalystTypeEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/CdsPhaseType/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/CellCycleCheckpoint/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/CellCyclePhase/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/CellCycleRegulator/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/CellPolarity/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/CellProliferationState/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/CellType/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/CellularComponent/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ChemicalEntity/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ChiralityEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ChromatographyType/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ChurnClassificationEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/CitationStyle/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ClinicalFinding/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/CodonEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ColorSpaceEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/CommonMineral/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/CommonOrganismTaxaEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/CommunicationProtocolEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/CompassDirection/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/CompensationTypeEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/CompositeTypeEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/CompressionFormat/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/CompressionType/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ConcentrationUnitEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ConfidenceLevelEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ConfidenceScore/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ContainerTypeEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ContigCollectionType/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ContinentEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ContributorType/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/CoordinationGeometry/</loc>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/CorporateGovernanceRoleEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/CountryCodeISO2Enum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/CountryCodeISO3Enum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/CriticalMineral/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/CryoEMGridType/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/CryoEMPreparationType/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/CrystalGrowthMethodEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/CrystalSystemEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/CrystallizationMethod/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/Curie/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/CurrencyChemical/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/CurrencyCodeISO4217Enum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/DNABaseEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/DNABaseExtendedEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/DNADamageResponse/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/DataAbsentEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/DataFormatEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/DataMaturityLevel/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/DataProcessingLevel/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/DataSizeUnitEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/DataType/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/DatasetEncodingFormat/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/DatasetSplitType/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/Date/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/DateOrDatetime/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/Datetime/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/DayOfWeek/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/Decimal/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/DecisionMakingStyleEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/DefectClassificationEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/DefenseInDepthLevelEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/DerivatizationMethod/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/DetectionModeEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/Detector/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/DiagnosticTestTypeEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/Disease/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/DocumentFormatEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/Double/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/DownstreamProcessEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/Drug/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/DrugResponseEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/DrugRouteEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/EconomicSectorEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/EducationLevel/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ElectricalConductivityEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ElectricalWireColorEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ElectricityMarket/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ElementFamilyEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ElementMetallicClassificationEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/EmergencyClassificationEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/EmissionScope/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/EmployeeStatusEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/EmploymentStatus/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/EmploymentTypeEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/EndocrineDisruptorEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/EnergyEfficiencyRating/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/EnergySource/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/EnergyStorageType/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/EnergyUnit/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/Environment/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/EnvironmentalImpact/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/EnvironmentalMaterial/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/EnzymeClassEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/EthnicityOMB1997Enum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ExecutionModeEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ExperimentalPreparation/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ExperimentalRole/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ExposureDurationEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ExposureFrequencyEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ExposureRouteEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ExposureSourceEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ExposureStressorTypeEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ExposureTransportPathEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ExtendedEmotionEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ExtractableTargetElement/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ExtractiveIndustryFacilityTypeEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ExtractiveIndustryProductTypeEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/EyeColorEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/FMRIParadigmTypeEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/Fake/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/FamilyHistoryStatus/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/FamilyRelationship/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/FeatureType/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/FeedstockTypeEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/FermentationModeEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/FileFormat/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/FineSentimentClassificationEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/FireSafetyColorEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/FissileIsotopeEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/Float/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/FlowerColorEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/FoodColoringEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/FossilFuelTypeEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/FraudDetectionEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/FrequencyUnitEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/FuelAssemblyTypeEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/FuelCycleFacilityTypeEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/FuelCycleOperationEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/FuelCycleStageEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/FuelFormEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/FundingType/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/GOElectronicMethods/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/GOEvidenceCode/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/GenderIdentity/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/GeneFeature/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/GeneticCodeTable/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/GeneticDisease/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/GeneticRelationship/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/GenomeFeatureType/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/GeologicalEra/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/GridType/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/HRFunctionEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/HairColorEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/HardOrSoftEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/HazmatColorEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/HealthcareEncounterClassification/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/HeavyMetalEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/HistoricalPeriod/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/HousingStatus/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/HumanAnatomicalStructure/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/HumanDevelopmentalStage/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/IAEAWasteClassificationEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/INESLevelEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/IUPACAminoAcidCode/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/IUPACNucleotideCode/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ImageFileFormatEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ImmuneCell/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/InSituChemistryRegime/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/IndustrialDyeEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/IndustryMaturityEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/IndustryRegulationLevelEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/InfectiousDisease/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/InsdcGeographicLocationEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/InsdcMissingValueEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/Integer/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/IntegrationFeatureEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/IntegrationSystemEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/IntentClassificationEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/InteractionDetectionMethod/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/InteractionType/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/InteractorType/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/InterpretationProgressEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/InventoryManagementApproachEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/InvestigativeProtocolEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/JobLevelEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/Jsonpath/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/Jsonpointer/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/KaryotypicSexEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/LaboratoryDeviceTypeEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/LabwareStandardEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/LanguageCodeISO6391Enum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/LateralityEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/LeadershipStyleEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/LegalEntityTypeEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/LengthUnitEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/LewisAcidBaseRoleEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/LibraryPreparation/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/LicenseType/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/LicensingStageEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/LipidCategory/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/LiquidHandlingOperationEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/LogisticsOperationEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/MLDataType/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/MLFieldRole/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/MLLicenseType/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/MLMediaType/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/MLModalityType/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/MRIContrastTypeEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/MRIModalityEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/MRISequenceTypeEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/MagneticPropertyEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/MaintenanceTypeEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ManagementLevelEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ManagementMethodologyEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ManuscriptSection/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/MaritalStatus/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/MaritimeSignalColorEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/MarketStructureEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/MassErrorUnit/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/MassSpectrometerFileFormat/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/MassSpectrometerVendor/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/MassUnitEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/MaterialClassEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/MechanicalBehaviorEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/MechanicalTestingMethodEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/MedicalSpecialtyEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/MeioticPhase/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/MetabolicProcess/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/Metabolite/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/MetabolomicsAssayType/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/MetalLigandType/</loc>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/MetalTypeEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/MetazoanAnatomicalStructure/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/MicroplateFormatEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/MicroscopyMethodEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/MimeType/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/MimeTypeCategory/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/MineralCategory/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/MineralogyFeedstockClass/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/MiningEquipment/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/MiningHazard/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/MiningMethodEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/MiningPhase/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/MiningType/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/MitoticPhase/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/MolecularFunction/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/Month/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/MouseDevelopmentalStage/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/NAICSSectorEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/NIHInstituteCenterEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/NRCWasteClassEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/NanostructureMorphologyEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/Ncname/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/NetworkProtocolEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/NeuronType/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/NewsTopicCategoryEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/Nodeidentifier/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/NuclearFacilityTypeEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/NuclearFuelTypeEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/NuclearSecurityCategoryEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/NuclearShipTypeEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/NucleotideModificationEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/OWLProfileEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/Objectidentifier/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/OmbEthnicityCategory/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/OmbRaceCategory/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/OnsetTimingEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/OpenAccessType/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/OpenSourceMaturityLevel/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/OperationalModelEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/OperationalProcedureEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/OpticalPropertyEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/OreGrade/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/OrganismTaxonEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/OrganizationalStructureEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/OutcomeTypeEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/OxidationStateEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/OxygenationStrategyEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/PCROperationTypeEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/PCRPlateTypeEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ParticipantIdentificationMethod/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ParticipantVitalStatusEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/PeakAnnotationSeriesLabel/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/PeerReviewStatus/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/PeptideIonSeries/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/PerformanceMeasurementEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/PerformanceRatingEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/PeriodicTableBlockEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/PersonStatusEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/PesticideTypeEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/Phenotype/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/PhenotypicSexEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/PhysicalQuality/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/PlantAnatomicalStructure/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/PlantDevelopmentalStage/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/PlantLeafColorEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/PlantSexEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/PlateCoatingEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/PlateMaterialEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/PolymerTypeEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/PowerPlantStatusEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/PowerUnit/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/PredictionOutcomeType/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/PresenceEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/PressureUnitEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/PriorityLevelEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ProcessImprovementApproachEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ProcessPerformanceMetric/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ProcessScaleEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ProcessingStatus/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ProcurementTypeEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ProductTypeEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ProgrammingLanguageFileEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ProjectMaturityLevel/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/Protein/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ProteinEvidenceForExistence/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/ProteinModificationType/</loc>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ProtocolStateEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/PublicationType/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/Quality/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/QualityAssuranceLevelEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/QualityControlEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/QualityControlTechniqueEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/QualityMaturityLevelEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/QualityMethodologyEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/QualityStandardEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/Quarter/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/RNABaseEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/RNABaseExtendedEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/RaceOMB1997Enum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/RadiationProtectionZoneEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ReactionConditionEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ReactionDirectionality/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ReactionMechanismEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ReactionRateOrderEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ReactionTypeEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ReactorControlModeEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ReactorCoolantEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ReactorGenerationEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ReactorModeratorEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ReactorNeutronSpectrumEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ReactorOperatingStateEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ReactorSafetyFunctionEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ReactorSizeCategoryEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ReactorTypeEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ReadType/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/RecruitmentSourceEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/RecruitmentStatusEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/RefSeqStatusType/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/RegimenStatusEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/RegulatoryConstraint/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/RelToOxygenEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/RelativeDirection/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/RelativeTimeEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ResearchField/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ResearchReactorTypeEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ResearchRole/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/RoboticArmTypeEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/SafetyColorEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/SafetySystemClassEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/SampleProcessingEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/SampleProcessingOperationEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/SampleType/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/SchedulerTypeEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/Season/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/SensorWhileDrillingFeature/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/SentimentClassificationEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/SequenceAlphabet/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/SequenceFeature/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/SequenceFileFormat/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/SequenceModality/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/SequenceQualityEncoding/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/SequenceQualityEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/SequenceStrand/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/SequenceTopology/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/SequenceType/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/SequencingApplication/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/SequencingChemistry/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/SequencingPlatform/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/SeverityLevelEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/SimpleSpatialDirection/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/SkinToneEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/SmokingStatusEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/SoftwareMaturityLevel/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/SolventClassEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/SourcingStrategyEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/SpamClassificationEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/Sparqlpath/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/SpatialRelationship/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/SpectroscopyMethodEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/StandardAminoAcid/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/StandardsMaturityLevel/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/StandardsOrganizationEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/StateOfMatterEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/StemCell/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/SterilizationMethodEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/StrandType/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/StrategicFrameworkEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/String/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/StructuralBiologyTechnique/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/StudyDesignEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/StudyPhaseEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/StudyPopulationEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/SubatomicParticleEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/SupplierRelationshipTypeEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/SupplyChainStrategyEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/SymptomSeverityEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/SynthesisMethodEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/TaxonomicRank/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/TechnologyReadinessLevel/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/TemperatureUnitEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/TextCharset/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/TherapeuticActionabilityEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ThermalAnalysisMethodEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ThermalConductivityEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ThermalCyclerTypeEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ThermalCyclingStepEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ThermodynamicParameterEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/Time/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/TimeOfDay/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/TimePeriod/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/TimeUnitEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/TimeZoneEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ToxicityClassificationEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/TraditionalPigmentEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/TrafficLightColorEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/TrainingTypeEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/TransuranicWasteCategoryEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/TrophicLevelEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/UNRegionEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/UNSpecializedAgencyEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/USDOENationalLaboratoryEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/USFederalFundingAgencyEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/USStateCodeEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/UniProtSpeciesCode/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/UraniumEnrichmentLevelEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/Uri/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/Uriorcurie/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/VaccinationPeriodicityEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/VaccinationStatusEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/VaccineCategoryEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/VaccineTypeEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/VendorCategoryEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/VideoFormatEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ViralGenomeTypeEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/VitalSignEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/VitalStatusEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/VitrificationMethod/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/VolumeUnitEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/WasteDisposalMethodEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/WasteFacilityTypeEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/WasteHalfLifeCategoryEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/WasteHeatGenerationEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/WasteSourceEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/WaterContaminantEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/WebColorEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/WellTypeEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/WindDirection/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/WorkArrangementEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/WorkflowErrorHandlingEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/WorkflowOrchestrationTypeEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/WorkflowType/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/X11ColorEnum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/XRaySource/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/academic_degree/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/acmg_pathogenicity/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/additive_manufacturing/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/age_group/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/agitation_type/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/air_pollutant/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/allelic_state/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/allergy_type/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/amino_acid/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/amino_acid_extended/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/anatomical_axis/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/anatomical_plane/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/anatomical_region/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/anatomical_side/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/anatomical_system/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/angle_unit/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/animal_coat_color/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/anomaly_detection/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/archive_format/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/audio_format/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/automation_standard/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/automobile_paint_color/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/autonomy_level/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/aviation_light_color/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/basic_color/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/basic_emotion/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/beneficiation_pathway/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/benefits_category/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/binary_classification/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/bioleach_mode/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/bioleach_organism/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/biological_kingdom/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/biological_process/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/biological_role/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/biological_sex/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/bioreactor_type/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/biosafety_level/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/biotic_interaction/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/blood_type/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/bmi_classification/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/bond_type/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/bravais_lattice/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/bronsted_acid_base_role/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/building_energy_standard/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/business_activity_type/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/business_lifecycle_stage/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/business_ownership_type/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/business_process_type/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/business_size_classification/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/business_time_frame/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/canadian_province_code/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/cancer/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/capability_maturity_level/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/carbon_intensity/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/case_or_control/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/catalyst_type/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/cds_phase/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/cell/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/cell_cycle_checkpoint/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/cell_cycle_phase/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/cell_cycle_regulator/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/cell_polarity/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/cell_proliferation_state/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/cellular_component/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/chemical_entity/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/chirality/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/churn_classification/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/citation_style/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/clinical_finding/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/codon/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/color_space/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/common_mineral/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/common_organism_taxa/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/communication_protocol/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/compass_direction/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/compensation_type/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/composite_type/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/compression/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/concentration_unit/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/confidence_level/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/confidence_score/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/container_type/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/contig_collection/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/continent/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/contributor/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/coordination_geometry/</loc>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/corporate_governance_role/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/country_code_iso2/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/country_code_iso3/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/critical_mineral/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/cryo_em_grid/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/cryo_em_preparation/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/crystal_growth_method/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/crystal_system/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/crystallization_method/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/currency_chemical/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/currency_code_iso4217/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/data/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/data_absent/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/data_format/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/data_maturity_level/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/data_processing_level/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/data_size_unit/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/day_of_week/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/decision_making_style/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/defect_classification/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/defense_in_depth_level/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/detection_mode/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/detector/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/diagnostic_test_type/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/disease/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/dna_base/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/dna_base_extended/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/dna_damage_response/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/document_format/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/downstream_process/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/drug/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/drug_response/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/drug_route/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/economic_sector/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/education_level/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/electrical_conductivity/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/electrical_wire_color/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/electricity_market/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/element_family/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/element_metallic_classification/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/emergency_classification/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/emission_scope/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/employee_status/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/employment_status/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/employment_type/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/endocrine_disruptor/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/energy_efficiency_rating/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/energy_source/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/energy_storage/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/energy_unit/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/environment/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/environmental_impact/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/environmental_material/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/enzyme_class/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ethnicity_omb1997/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/execution_mode/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/experimental_preparation/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/experimental_role/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/exposure_duration/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/exposure_frequency/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/exposure_route/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/exposure_source/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/exposure_stressor_type/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/exposure_transport_path/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/extended_emotion/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/extractable_target_element/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/extractive_industry_facility_type/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/extractive_industry_product_type/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/eye_color/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/family_history_status/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/family_relationship/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/feature/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/feedstock_type/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/fermentation_mode/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/file_format/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/fine_sentiment_classification/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/fire_safety_color/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/fissile_material/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/flower_color/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/fmri_paradigm_type/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/food_coloring/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/fossil_fuel_type/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/fraud_detection/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/frequency_unit/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/fuel_assembly_type/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/fuel_cycle_facility_type/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/fuel_cycle_operation/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/fuel_cycle_stage/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/fuel_form/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/funding/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/gender_identity/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/gene_feature/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/genetic_code_table/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/genetic_disease/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/genetic_relationship/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/genome_feature/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/geological_era/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/go_electronic_methods/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/go_evidence/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/grid/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/hair_color/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/hard_or_soft/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/hazmat_color/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/healthcare_encounter_classification/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/heavy_metal/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/historical_period/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/housing_status/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/hr_function/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/human_anatomical_structure/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/human_developmental_stage/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/image_file_format/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/immune_cell/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/in_situ_chemistry_regime/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/industrial_dye/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/industry_maturity/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/industry_regulation_level/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ines_level/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/infectious_disease/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/insdc_geographic_location/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/insdc_missing_value/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/intent_classification/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/interaction/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/interaction_detection_method/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/interactor/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/interpretation_progress/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/inventory_management_approach/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/investigative_protocol/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/iupac_amino_acid/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/iupac_nucleotide/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/job_level/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/karyotypic_sex/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/laboratory_device_type/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/labware_standard/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/language_code_iso639_1/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/laterality/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/leadership_style/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/legal_entity_type/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/length_unit/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/lewis_acid_base_role/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/library_preparation/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/license/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/licensing_stage/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/lipid_category/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/liquid_handling_operation/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/logistics_operation/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/magnetic_property/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/maintenance_type/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/management_level/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/management_methodology/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/manuscript_section/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/marital_status/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/maritime_signal_color/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/market_structure/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/mass_error_unit/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/mass_unit/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/material_class/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/mechanical_behavior/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/mechanical_testing_method/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/medical_specialty/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/meiotic_phase/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/metabolic_process/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/metabolite/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/metal_ligand_type/</loc>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/metal_type/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/metazoan_anatomical_structure/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/microplate_format/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/microscopy_method/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/mime/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/mime_type_category/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/mineral_category/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/mineralogy_feedstock/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/mining/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/mining_equipment/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/mining_hazard/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/mining_method/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/mining_phase/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/mitotic_phase/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/molecular_function/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/month/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/mouse_developmental_stage/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/mri_contrast_type/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/mri_modality/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/mri_sequence_type/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/naics_sector/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/nanostructure_morphology/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/network_protocol/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/neuron/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/news_topic_category/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/nih_institute_center/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/nrc_waste_class/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/nuclear_facility_type/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/nuclear_fuel_type/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/nuclear_security_category/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/nuclear_ship_type/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/nucleotide_modification/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/omb_ethnicity_category/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/omb_race_category/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/onset_timing/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/open_access/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/open_source_maturity_level/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/operational_model/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/operational_procedure/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/optical_property/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ore_grade/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/organism_taxon/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/organizational_structure/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/outcome_type/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/owl_profile/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/oxidation_state/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/oxygenation_strategy/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/participant_identification_method/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/participant_vital_status/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/pcr_operation_type/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/peak_annotation_series_label/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/peer_review_status/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/peptide_ion_series/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/performance_measurement/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/performance_rating/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/periodic_table_block/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/person_status/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/pesticide_type/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/phenotype/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/phenotypic_sex/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/physical_quality/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/plant_anatomical_structure/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/plant_developmental_stage/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/plant_leaf_color/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/plant_sex/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/plate_coating/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/plate_material/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/polymer_type/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/power_plant_status/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/power_unit/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/prediction_outcome/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/presence/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/pressure_unit/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/priority_level/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/process_improvement_approach/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/process_performance_metric/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/process_scale/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/processing_status/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/procurement_type/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/product_type/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/programming_language_file/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/project_maturity_level/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/protein/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/protein_evidence_for_existence/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/protein_modification/</loc>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/protocol_state/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/publication/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/quality/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/quality_assurance_level/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/quality_control/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/quality_control_technique/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/quality_maturity_level/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/quality_methodology/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/quality_standard/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/quarter/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/race_omb1997/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/radiation_protection_zone/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/reaction_condition/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/reaction_directionality/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/reaction_mechanism/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/reaction_rate_order/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/reaction_type/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/reactor_control_mode/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/reactor_coolant/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/reactor_generation/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/reactor_moderator/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/reactor_neutron_spectrum/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/reactor_operating_state/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/reactor_safety_function/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/reactor_size_category/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/reactor_type/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/read/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/recruitment_source/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/recruitment_status/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ref_seq_status/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/regimen_status/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/regulatory_constraint/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/rel_to_oxygen/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/relative_direction/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/relative_time/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/research_field/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/research_reactor_type/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/research_role/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/rna_base/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/rna_base_extended/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/robotic_arm_type/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/safety_color/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/safety_system_class/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/sample/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/sample_processing/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/sample_processing_operation/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/scheduler_type/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/season/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/sensor_while_drilling_feature/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/sentiment_classification/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/sequence/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/sequence_alphabet/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/sequence_feature/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/sequence_file_format/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/sequence_modality/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/sequence_quality/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/sequence_quality_encoding/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/sequence_strand/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/sequence_topology/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/sequencing_application/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/sequencing_chemistry/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/sequencing_platform/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/severity_level/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/simple_spatial_direction/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/skin_tone/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/smoking_status/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/software_maturity_level/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/solvent_class/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/sourcing_strategy/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/spam_classification/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/spatial_relationship/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/spectroscopy_method/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/standard_amino_acid/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/standards_maturity_level/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/standards_organization/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/state_of_matter/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/stem_cell/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/sterilization_method/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/strand/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/strategic_framework/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/structural_biology_technique/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/study_design/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/study_phase/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/study_population/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/subatomic_particle/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/supplier_relationship_type/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/supply_chain_strategy/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/symptom_severity/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/synthesis_method/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/taxonomic_rank/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/technology_readiness_level/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/temperature_unit/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/text_charset/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/therapeutic_actionability/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/thermal_analysis_method/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/thermal_conductivity/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/thermal_cycler_type/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/thermodynamic_parameter/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/time_of_day/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/time_period/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/time_unit/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/time_zone/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/toxicity_classification/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/traditional_pigment/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/traffic_light_color/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/training_type/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/transuranic_category/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/trophic_level/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/un_region/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/un_specialized_agency/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/uni_prot_species/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/uranium_enrichment_level/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/us_federal_funding_agency/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/us_national_laboratory/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/us_state_code/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/vaccination_periodicity/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/vaccination_status/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/vaccine_category/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/vaccine_type/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/valuesets/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/vendor_category/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/video_format/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/viral_genome_type/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/vital_sign/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/vital_status/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/vitrification_method/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/volume_unit/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/waste_classification/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/waste_disposal_method/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/waste_facility_type/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/waste_half_life_category/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/waste_heat_generation/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/waste_source/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/water_contaminant/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/web_color/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/well_type/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/wind_direction/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/work_arrangement/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/workflow/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/workflow_orchestration_type/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/x11_color/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/x_ray_source/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/how-to-guides/agentic-ide-support/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/how-to-guides/sync-uniprot-species/</loc>
+         <lastmod>2025-11-12</lastmod>
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/manuscript/manuscript/</loc>
-         <lastmod>2025-11-05</lastmod>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/slides/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/slides/valuesets-slides/</loc>
+         <lastmod>2025-11-12</lastmod>
     </url>
 </urlset>

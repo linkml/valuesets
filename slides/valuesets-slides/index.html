@@ -1,0 +1,1189 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://linkml.github.io/valuesets/slides/valuesets-slides/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Valuesets slides - valuesets</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/ansi-colours.css">
+    
+      <link rel="stylesheet" href="../../css/jupyter-cells.css">
+    
+      <link rel="stylesheet" href="../../css/pandas-dataframe.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#valuesets" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="valuesets" class="md-header__button md-logo" aria-label="valuesets" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            valuesets
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Valuesets slides
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/linkml/valuesets" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="valuesets" class="md-nav__button md-logo" aria-label="valuesets" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    valuesets
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/linkml/valuesets" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../elements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Schema
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    About
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Slides
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#a-linkml-based-framework-for-standardized-enumerations-with-semantic-grounding" class="md-nav__link">
+    <span class="md-ellipsis">
+      A LinkML-based Framework for Standardized Enumerations with Semantic Grounding
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-problem-data-standardization-is-hard" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Problem: Data Standardization is Hard
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-semantic-chasm" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Semantic Chasm
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-gap-what-exists-vs-what-developers-need" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Gap: What Exists vs What Developers Need
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#valuesets-bridging-the-gap" class="md-nav__link">
+    <span class="md-ellipsis">
+      valuesets: Bridging the Gap
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stealth-semantics-in-action" class="md-nav__link">
+    <span class="md-ellipsis">
+      "Stealth Semantics" in Action
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rich-metadata-ontology-mappings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rich Metadata &amp; Ontology Mappings
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cross-domain-coverage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cross-Domain Coverage
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture-build-time-not-runtime" class="md-nav__link">
+    <span class="md-ellipsis">
+      Architecture: Build-Time not Runtime
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#progressive-semantic-enhancement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Progressive Semantic Enhancement
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparison-with-established-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comparison with Established Systems
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#design-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Design Principles
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linkml-the-foundation" class="md-nav__link">
+    <span class="md-ellipsis">
+      LinkML: The Foundation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integration-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Integration Patterns
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fair-data-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      FAIR Data Principles
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#owl-rendering-in-protege" class="md-nav__link">
+    <span class="md-ellipsis">
+      OWL Rendering in Protege
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quality-assurance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quality Assurance
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dynamic-enums-coming-soon" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dynamic Enums (Coming Soon)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#future-directions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Future Directions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sustainability-through-simplicity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sustainability Through Simplicity
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#by-the-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      By the Numbers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quick Start
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contributing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contributing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#development-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Development Commands
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resources
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-insight" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Insight
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#valuesets_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      valuesets
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="valuesets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#making-data-standardization-simple-semantic-and-scalable" class="md-nav__link">
+    <span class="md-ellipsis">
+      Making Data Standardization Simple, Semantic, and Scalable
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-example-domains" class="md-nav__link">
+    <span class="md-ellipsis">
+      Appendix: Example Domains
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-semantic-web-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Appendix: Semantic Web Integration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-multi-language-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      Appendix: Multi-Language Support
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#credits-acknowledgments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Credits &amp; Acknowledgments
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<!-- _class: lead -->
+<h1 id="valuesets">valuesets</h1>
+<h2 id="a-linkml-based-framework-for-standardized-enumerations-with-semantic-grounding">A LinkML-based Framework for Standardized Enumerations with Semantic Grounding</h2>
+<p><strong>Christopher J. Mungall</strong>
+Lawrence Berkeley National Laboratory</p>
+<hr />
+<h2 id="the-problem-data-standardization-is-hard">The Problem: Data Standardization is Hard</h2>
+<p>Every project reinvents the wheel with inconsistent representations:</p>
+<pre><code class="language-python"># Different datasets, same concept
+vital_status = &quot;alive&quot;      # Dataset A
+vital_status = &quot;LIVING&quot;     # Dataset B
+vital_status = 1            # Dataset C
+vital_status = &quot;A&quot;          # Dataset D
+</code></pre>
+<p><strong>Result:</strong> Thousands of incompatible representations blocking data integration</p>
+<hr />
+<h2 id="the-semantic-chasm">The Semantic Chasm</h2>
+<p>Despite massive infrastructure investment:
+- <strong>NLM VSAC</strong>: 1,520+ clinical value sets
+- <strong>NCI Thesaurus</strong>: 192,000 cancer concepts
+- <strong>NIH CDEs</strong>: 142,000+ common data elements
+- <strong>HL7 FHIR</strong>: Healthcare terminology standards</p>
+<p><strong>Yet:</strong> Scientific software still uses ad-hoc enumerations</p>
+<p><strong>Why?</strong> Complexity gap between terminology services and everyday programming</p>
+<hr />
+<h2 id="the-gap-what-exists-vs-what-developers-need">The Gap: What Exists vs What Developers Need</h2>
+<table>
+<thead>
+<tr>
+<th>Existing Systems Provide</th>
+<th>Developers Actually Need</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Runtime services</td>
+<td>Compile-time artifacts</td>
+</tr>
+<tr>
+<td>Comprehensive coverage</td>
+<td>Common values quickly</td>
+</tr>
+<tr>
+<td>Authentication &amp; servers</td>
+<td>Zero dependencies</td>
+</tr>
+<tr>
+<td>Healthcare-focused</td>
+<td>Cross-domain support</td>
+</tr>
+<tr>
+<td>Complex APIs</td>
+<td>Native enums with IDE support</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="valuesets-bridging-the-gap">valuesets: Bridging the Gap</h2>
+<p><strong>Core Idea:</strong> Compile semantically-grounded value sets into type-safe native code</p>
+<p>A collection of common, standardized enumerations that:
+- Link every value to ontology terms
+- Provide Python-first convenience with multi-language support
+- Built on LinkML standards
+- Have zero runtime dependencies</p>
+<hr />
+<h2 id="stealth-semantics-in-action">"Stealth Semantics" in Action</h2>
+<pre><code class="language-python">from valuesets.enums.core import VitalStatusEnum
+
+status = VitalStatusEnum.ALIVE
+print(status.value)              # &quot;ALIVE&quot;
+print(status.get_meaning())      # &quot;NCIT:C37987&quot;
+print(status.get_description())  # &quot;Living or alive&quot;
+
+# Semantic interoperability across systems
+if status1.get_meaning() == status2.get_meaning():
+    process_compatible_records()
+</code></pre>
+<p>Simple interface, semantic power when needed</p>
+<hr />
+<h2 id="rich-metadata-ontology-mappings">Rich Metadata &amp; Ontology Mappings</h2>
+<pre><code class="language-python">from valuesets.enums.bio.structural_biology import StructuralBiologyTechnique
+
+technique = StructuralBiologyTechnique.CRYO_EM
+print(technique.get_description())
+# &quot;Cryo-electron microscopy&quot;
+
+print(technique.get_meaning())
+# &quot;CHMO:0002413&quot; (Chemical Methods Ontology)
+
+print(technique.get_annotations())
+# {'resolution_range': '2-30 Å typical', ...}
+</code></pre>
+<hr />
+<h2 id="cross-domain-coverage">Cross-Domain Coverage</h2>
+<p><strong>322 enumerations across 22 domains:</strong></p>
+<ul>
+<li><strong>Biology</strong> (127): Taxonomy, cell biology, structural techniques</li>
+<li><strong>Physical Sciences</strong> (48): Chemical elements, materials, structures</li>
+<li><strong>Data Science</strong> (43): Statistical tests, ML models, quality metrics</li>
+<li><strong>Healthcare</strong> (29): Clinical findings, vital status, demographics</li>
+<li><strong>Computing</strong> (23): File formats, languages, maturity levels</li>
+<li><strong>Geographic &amp; Temporal</strong> (31): Countries, time zones, spatial relations</li>
+</ul>
+<p><strong>78% have ontology mappings</strong> → 8,743 semantic links</p>
+<hr />
+<h2 id="architecture-build-time-not-runtime">Architecture: Build-Time not Runtime</h2>
+<pre><code>┌─────────────────┐
+│  LinkML YAML    │  ← Human-editable schemas
+│   (source)      │
+└────────┬────────┘
+         │
+         ▼
+┌─────────────────┐
+│ Code Generators │  ← Transform to multiple formats
+└────────┬────────┘
+         │
+         ├──→ Python (Pydantic enums)
+         ├──→ TypeScript (type-safe enums)
+         ├──→ JSON Schema (validation)
+         ├──→ OWL (semantic web)
+         └──→ SQL DDL (database constraints)
+</code></pre>
+<hr />
+<h2 id="progressive-semantic-enhancement">Progressive Semantic Enhancement</h2>
+<p><strong>Three levels of usage:</strong></p>
+<ol>
+<li>
+<p><strong>~90% of use cases:</strong> Simple type-safe enumerations
+   <code>python
+   status = VitalStatusEnum.ALIVE  # Just works</code></p>
+</li>
+<li>
+<p><strong>~9% of use cases:</strong> Access metadata for UIs/docs
+   <code>python
+   label = status.get_description()</code></p>
+</li>
+<li>
+<p><strong>~1% of use cases:</strong> Full semantic integration
+   <code>python
+   ontology_term = status.get_meaning()  # "NCIT:C37987"</code></p>
+</li>
+</ol>
+<hr />
+<h2 id="comparison-with-established-systems">Comparison with Established Systems</h2>
+<table>
+<thead>
+<tr>
+<th>System</th>
+<th>Scope</th>
+<th>Access</th>
+<th>Size</th>
+<th>Advantage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>VSAC</strong></td>
+<td>Clinical QM</td>
+<td>API (auth)</td>
+<td>Service</td>
+<td>Cross-domain, no auth</td>
+</tr>
+<tr>
+<td><strong>NCIt</strong></td>
+<td>Cancer</td>
+<td>500MB OWL</td>
+<td>Service</td>
+<td>Lightweight, simple</td>
+</tr>
+<tr>
+<td><strong>FHIR</strong></td>
+<td>Healthcare</td>
+<td>Term. server</td>
+<td>Service</td>
+<td>Compile-time, no server</td>
+</tr>
+<tr>
+<td><strong>valuesets</strong></td>
+<td>Cross-domain</td>
+<td>Native packages</td>
+<td>&lt;50MB</td>
+<td>Developer-friendly</td>
+</tr>
+</tbody>
+</table>
+<p>valuesets <strong>complements</strong> not replaces - provides practical bridge</p>
+<hr />
+<h2 id="design-principles">Design Principles</h2>
+<ol>
+<li><strong>Semantic Grounding:</strong> Every value links to ontologies</li>
+<li><strong>Developer Ergonomics:</strong> Native enums, full IDE support</li>
+<li><strong>Modular Organization:</strong> Import only what you need</li>
+<li><strong>Extensibility:</strong> Add new enums without breaking changes</li>
+<li><strong>Multi-format:</strong> JSON Schema, OWL, SQL, native code</li>
+<li><strong>FAIR Compliance:</strong> Persistent IDs, metadata, open access</li>
+</ol>
+<hr />
+<h2 id="linkml-the-foundation">LinkML: The Foundation</h2>
+<pre><code class="language-yaml">enums:
+  VitalStatusEnum:
+    description: Status indicating whether individual is alive or deceased
+    permissible_values:
+      ALIVE:
+        description: Living or alive
+        meaning: NCIT:C37987
+      DECEASED:
+        description: Dead or deceased
+        meaning: NCIT:C28554
+      UNKNOWN:
+        description: Vital status is not known
+        meaning: NCIT:C17998
+</code></pre>
+<p>Human-readable → Machine-processable → Multiple outputs</p>
+<hr />
+<h2 id="integration-patterns">Integration Patterns</h2>
+<p><strong>Four primary adoption strategies:</strong></p>
+<ol>
+<li><strong>Direct Adoption:</strong> Greenfield projects</li>
+<li><strong>Mapping Layer:</strong> Legacy system translation</li>
+<li><strong>Hybrid Approach:</strong> Dev/test vs. production</li>
+<li><strong>Semantic Bridge:</strong> Ontology integration</li>
+</ol>
+<p>All paths support incremental adoption</p>
+<hr />
+<h2 id="fair-data-principles">FAIR Data Principles</h2>
+<p>valuesets is FAIR-compliant:</p>
+<ul>
+<li><strong>Findable:</strong> w3id.org permalinks, rich metadata</li>
+<li><strong>Accessible:</strong> Open source, multiple formats</li>
+<li><strong>Interoperable:</strong> LinkML, OWL, JSON-LD, FHIR</li>
+<li><strong>Reusable:</strong> Clear licensing, documented provenance</li>
+</ul>
+<p>Published as OWL ontology: https://w3id.org/valuesets/valuesets.owl.ttl</p>
+<hr />
+<h2 id="owl-rendering-in-protege">OWL Rendering in Protege</h2>
+<p><img alt="w:1100" src="../protege-screenshot.png" /></p>
+<p><strong>Value sets as OWL classes</strong> with rich semantic annotations:
+- Hierarchical organization (e.g., CellCycleCheckpoint &gt; SPINDLE_CHECKPOINT)
+- Ontology mappings (GO:0031577)
+- Definitions, aliases, and functional descriptions
+- Browsable in standard ontology tools (Protege, OLS, BioPortal)</p>
+<hr />
+<h2 id="quality-assurance">Quality Assurance</h2>
+<p>Automated validation on every commit:</p>
+<table>
+<thead>
+<tr>
+<th>Validation Type</th>
+<th>Coverage</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Syntax</td>
+<td>100% schemas</td>
+<td>LinkML compliance</td>
+</tr>
+<tr>
+<td>Semantic</td>
+<td>All mappings</td>
+<td>Ontology term verification</td>
+</tr>
+<tr>
+<td>Cross-reference</td>
+<td>All namespaces</td>
+<td>External reference resolution</td>
+</tr>
+<tr>
+<td>Completeness</td>
+<td>All enums</td>
+<td>Missing descriptions/mappings</td>
+</tr>
+<tr>
+<td>Consistency</td>
+<td>All values</td>
+<td>Duplicate detection</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="dynamic-enums-coming-soon">Dynamic Enums (Coming Soon)</h2>
+<p><strong>Current:</strong> Static values with ontology mappings</p>
+<p><strong>Future:</strong> Runtime expansion from ontologies</p>
+<pre><code class="language-yaml">CellTypeEnum:
+  reachable_from:
+    source_ontology: obo:cl
+    source_nodes:
+      - CL:0000540  # neuron
+    relationship_types:
+      - rdfs:subClassOf
+</code></pre>
+<p>Hybrid: static core + dynamic expansion for comprehensive coverage</p>
+<hr />
+<h2 id="future-directions">Future Directions</h2>
+<p><strong>Coverage Expansion:</strong>
+- Social sciences, engineering, humanities</p>
+<p><strong>Technical Enhancements:</strong>
+- Web-based validation APIs
+- AI-assisted mapping tools
+- Enhanced dynamic enum support</p>
+<p><strong>Governance:</strong>
+- Domain-specific editorial committees
+- Formal deprecation policies
+- Maturity level indicators</p>
+<hr />
+<h2 id="sustainability-through-simplicity">Sustainability Through Simplicity</h2>
+<p><strong>Technical Sustainability:</strong>
+- Zero runtime dependencies
+- No infrastructure costs
+- Works offline, on laptops</p>
+<p><strong>Social Sustainability:</strong>
+- Low barrier to contribution (edit YAML)
+- Community-driven development
+- Clear exit strategies</p>
+<p><strong>Economic Sustainability:</strong>
+- No hosting/licensing costs
+- Open source model</p>
+<hr />
+<h2 id="by-the-numbers">By the Numbers</h2>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Enumerations</td>
+<td>322</td>
+</tr>
+<tr>
+<td>Permissible Values</td>
+<td>7,512</td>
+</tr>
+<tr>
+<td>Ontology Namespaces</td>
+<td>117</td>
+</tr>
+<tr>
+<td>Semantic Mappings</td>
+<td>8,743</td>
+</tr>
+<tr>
+<td>Domain Modules</td>
+<td>22</td>
+</tr>
+<tr>
+<td>Schemas</td>
+<td>68</td>
+</tr>
+<tr>
+<td>Ontology Mapping Coverage</td>
+<td>78%</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="quick-start">Quick Start</h2>
+<pre><code class="language-bash"># Install
+pip install valuesets
+
+# Use immediately
+from valuesets.enums.bio.taxonomy import CommonOrganismTaxaEnum
+from valuesets.enums.core import VitalStatusEnum
+
+human = CommonOrganismTaxaEnum.HUMAN
+print(human.get_meaning())  # &quot;NCBITaxon:9606&quot;
+
+status = VitalStatusEnum.ALIVE
+print(status.get_meaning())  # &quot;NCIT:C37987&quot;
+</code></pre>
+<p><strong>5-minute experience:</strong> Value within 5 minutes of discovery</p>
+<hr />
+<h2 id="contributing">Contributing</h2>
+<p>We welcome contributions from:</p>
+<ul>
+<li><strong>Domain Experts:</strong> Add value sets for your field</li>
+<li><strong>Developers:</strong> Improve tooling, fix issues</li>
+<li><strong>Users:</strong> Report missing enums, share use cases</li>
+</ul>
+<p><strong>Process:</strong>
+1. Edit YAML schema files
+2. Add ontology mappings (use OLS)
+3. Include descriptions and examples
+4. Submit pull request</p>
+<p>See: <code>CONTRIBUTING.md</code></p>
+<hr />
+<h2 id="development-commands">Development Commands</h2>
+<pre><code class="language-bash"># Using just command runner
+just --list        # Show all commands
+just test          # Run tests
+just doctest       # Run doctests
+just validate      # Validate schemas
+just site          # Build documentation
+</code></pre>
+<p>All managed through modern development workflows</p>
+<hr />
+<h2 id="resources">Resources</h2>
+<ul>
+<li><strong>Docs:</strong> https://linkml.io/valuesets/</li>
+<li><strong>Repository:</strong> https://github.com/linkml/common-value-sets</li>
+<li><strong>PyPI:</strong> https://pypi.org/project/valuesets/</li>
+<li><strong>OWL Ontology:</strong> https://w3id.org/valuesets/valuesets.owl.ttl</li>
+<li><strong>LinkML:</strong> https://linkml.io/</li>
+</ul>
+<hr />
+<h2 id="key-insight">Key Insight</h2>
+<blockquote>
+<p>"The problem is not missing standards but mismatched abstractions"</p>
+</blockquote>
+<p><strong>valuesets bridges the gap:</strong>
+- Terminology services → Terminology artifacts
+- Runtime flexibility → Compile-time guarantees
+- Institutional deployment → Developer laptops</p>
+<p>Making semantic standards accessible to everyday programming</p>
+<hr />
+<!-- _class: lead -->
+
+<h2 id="valuesets_1">valuesets</h2>
+<h3 id="making-data-standardization-simple-semantic-and-scalable">Making Data Standardization Simple, Semantic, and Scalable</h3>
+<p><strong>Try it today:</strong></p>
+<pre><code class="language-bash">pip install valuesets
+</code></pre>
+<p><strong>Questions?</strong>
+Christopher J. Mungall • cjmungall@lbl.gov
+Lawrence Berkeley National Laboratory</p>
+<hr />
+<h2 id="appendix-example-domains">Appendix: Example Domains</h2>
+<p><strong>Biological Sciences:</strong>
+- Taxonomy (NCBI), Cell types (CL), Cell cycle (GO)
+- Gene Ontology evidence codes
+- Structural biology techniques (CHMO)
+- Model organisms</p>
+<p><strong>Data Science:</strong>
+- Statistical tests (STATO)
+- ML model types, dataset splits
+- Data quality indicators</p>
+<p><strong>Clinical/Healthcare:</strong>
+- Vital status (NCIT), blood types (SNOMED)
+- Marital status, employment status
+- Healthcare encounter types</p>
+<hr />
+<h2 id="appendix-semantic-web-integration">Appendix: Semantic Web Integration</h2>
+<pre><code class="language-python">from valuesets.enums.bio.cell_cycle import CellCyclePhase
+
+# Generate SPARQL query
+phase = CellCyclePhase.S_PHASE
+go_term = phase.get_meaning()  # &quot;GO:0000084&quot;
+
+sparql = f&quot;&quot;&quot;
+SELECT ?gene ?function
+WHERE {{
+    ?gene cellCyclePhase &lt;{go_term}&gt; .
+    ?gene hasFunction ?function .
+}}
+&quot;&quot;&quot;
+</code></pre>
+<p>Seamless integration with knowledge graphs</p>
+<hr />
+<h2 id="appendix-multi-language-support">Appendix: Multi-Language Support</h2>
+<p><strong>Current:</strong>
+- Python (Pydantic enums)
+- TypeScript (type-safe)
+- JSON Schema
+- OWL/RDF</p>
+<p><strong>Planned:</strong>
+- Java
+- R
+- Julia
+- Rust</p>
+<p>LinkML generates idiomatic code for each language</p>
+<hr />
+<h2 id="credits-acknowledgments">Credits &amp; Acknowledgments</h2>
+<p><strong>Contributors:</strong>
+- <strong>Christopher J. Mungall</strong> - Lawrence Berkeley National Laboratory
+- <strong>Justin Reese</strong> - Lawrence Berkeley National Laboratory</p>
+<p><strong>Built with:</strong>
+- <strong>LinkML</strong> - Linked Data Modeling Language
+- <strong>linkml-project-copier</strong> - Project template
+- <strong>OBO Foundry</strong> - Biological ontologies
+- <strong>OLS/BioPortal</strong> - Ontology lookup services</p>
+<p>Open source • MIT License • Community-driven</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.tabs.link"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1015 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://linkml.github.io/valuesets/how-to-guides/agentic-ide-support/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Using Common Value Sets with Agentic IDE Support via Context7 MCP - valuesets</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/ansi-colours.css">
+    
+      <link rel="stylesheet" href="../../css/jupyter-cells.css">
+    
+      <link rel="stylesheet" href="../../css/pandas-dataframe.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#using-common-value-sets-with-agentic-ide-support-via-context7-mcp" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="valuesets" class="md-header__button md-logo" aria-label="valuesets" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            valuesets
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Using Common Value Sets with Agentic IDE Support via Context7 MCP
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/linkml/valuesets" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="valuesets" class="md-nav__button md-logo" aria-label="valuesets" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    valuesets
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/linkml/valuesets" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../elements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Schema
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    About
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slides/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Slides
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-agentic-ide-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      🤖 What is Agentic IDE Support?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛠️ Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      📦 Installation &amp; Setup
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📦 Installation &amp; Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-install-context7-mcp-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Install Context7 MCP Server
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Install Context7 MCP Server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#option-a-using-smithery-cli-recommended-for-claude-desktop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Option A: Using Smithery CLI (Recommended for Claude Desktop)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-b-manual-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Option B: Manual Configuration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-install-common-value-sets" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Install Common Value Sets
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 Usage Patterns
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 Usage Patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-pattern-context-aware-code-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Pattern: Context-Aware Code Generation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-pattern-domain-specific-workflows" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Pattern: Domain-Specific Workflows
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practical-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Practical Examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎯 Practical Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1-data-science-classification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example 1: Data Science Classification
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2-bioinformatics-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example 2: Bioinformatics Integration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-agentic-workflows" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎪 Advanced Agentic Workflows
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎪 Advanced Agentic Workflows">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#multi-step-data-harmonization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multi-Step Data Harmonization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#semantic-query-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Semantic Query Generation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔧 Configuration Tips
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔧 Configuration Tips">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#optimize-context7-for-valuesets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optimize Context7 for ValueSets
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ide-specific-optimizations" class="md-nav__link">
+    <span class="md-ellipsis">
+      IDE-Specific Optimizations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IDE-Specific Optimizations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#for-cursor" class="md-nav__link">
+    <span class="md-ellipsis">
+      For Cursor:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-claude-desktop" class="md-nav__link">
+    <span class="md-ellipsis">
+      For Claude Desktop:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-vs-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      For VS Code:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔍 Troubleshooting
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔍 Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Issues
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Performance Optimization
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      🌟 Best Practices
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 Next Steps
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="using-common-value-sets-with-agentic-ide-support-via-context7-mcp">Using Common Value Sets with Agentic IDE Support via Context7 MCP</h1>
+<p>This guide shows you how to leverage Context7 MCP (Model Context Protocol) for enhanced agentic support when working with Common Value Sets in your IDE.</p>
+<h2 id="what-is-agentic-ide-support">🤖 What is Agentic IDE Support?</h2>
+<p>Agentic IDE support refers to AI assistants that can:
+- Access up-to-date documentation in real-time
+- Understand your specific codebase context
+- Provide accurate code suggestions with proper valuesets
+- Execute complex workflows with domain-specific knowledge</p>
+<p>Context7 MCP enables this by dynamically fetching current documentation and injecting it into your AI assistant's context.</p>
+<h2 id="prerequisites">🛠️ Prerequisites</h2>
+<ul>
+<li><strong>Node.js</strong> v18.0.0 or higher</li>
+<li><strong>Compatible IDE/Editor</strong> with MCP support:</li>
+<li>Claude Desktop</li>
+<li>Cursor</li>
+<li>VS Code with appropriate extensions</li>
+<li>Windsurf</li>
+<li>Zed</li>
+<li><strong>Common Value Sets</strong> installed in your project</li>
+</ul>
+<h2 id="installation-setup">📦 Installation &amp; Setup</h2>
+<h3 id="1-install-context7-mcp-server">1. Install Context7 MCP Server</h3>
+<h4 id="option-a-using-smithery-cli-recommended-for-claude-desktop">Option A: Using Smithery CLI (Recommended for Claude Desktop)</h4>
+<pre><code class="language-bash">npx -y @smithery/cli install @upstash/context7-mcp --client claude
+</code></pre>
+<h4 id="option-b-manual-configuration">Option B: Manual Configuration</h4>
+<p>For <strong>Claude Desktop</strong>, add to your <code>claude_desktop_config.json</code>:</p>
+<pre><code class="language-json">{
+  &quot;mcpServers&quot;: {
+    &quot;context7&quot;: {
+      &quot;command&quot;: &quot;npx&quot;,
+      &quot;args&quot;: [&quot;-y&quot;, &quot;@upstash/context7-mcp@latest&quot;]
+    }
+  }
+}
+</code></pre>
+<p>For <strong>Cursor</strong>, add to your MCP configuration:</p>
+<pre><code class="language-json">{
+  &quot;mcpServers&quot;: {
+    &quot;context7&quot;: {
+      &quot;command&quot;: &quot;npx&quot;,
+      &quot;args&quot;: [&quot;-y&quot;, &quot;@upstash/context7-mcp@latest&quot;]
+    }
+  }
+}
+</code></pre>
+<p>For <strong>VS Code</strong>, configure in your settings.json:</p>
+<pre><code class="language-json">{
+  &quot;mcp.servers&quot;: {
+    &quot;context7&quot;: {
+      &quot;command&quot;: &quot;npx&quot;,
+      &quot;args&quot;: [&quot;-y&quot;, &quot;@upstash/context7-mcp@latest&quot;]
+    }
+  }
+}
+</code></pre>
+<h3 id="2-install-common-value-sets">2. Install Common Value Sets</h3>
+<pre><code class="language-bash">pip install valuesets
+</code></pre>
+<p>Or add to your requirements:</p>
+<pre><code class="language-txt">valuesets&gt;=0.1.0
+</code></pre>
+<h2 id="usage-patterns">🚀 Usage Patterns</h2>
+<h3 id="basic-pattern-context-aware-code-generation">Basic Pattern: Context-Aware Code Generation</h3>
+<p>Use the <code>use context7</code> directive to get up-to-date valuesets documentation:</p>
+<p><strong>Prompt:</strong></p>
+<pre><code>Create a data validation function using Common Value Sets for binary classification. use context7
+</code></pre>
+<p><strong>AI Response will include:</strong>
+- Current API documentation for Common Value Sets
+- Accurate enum imports and usage
+- Proper semantic meaning access
+- Version-specific examples</p>
+<h3 id="advanced-pattern-domain-specific-workflows">Advanced Pattern: Domain-Specific Workflows</h3>
+<p><strong>Prompt:</strong></p>
+<pre><code>Build a bioinformatics pipeline using Common Value Sets for organism taxonomy and experimental techniques. Include validation and semantic mapping. use context7
+</code></pre>
+<p><strong>Expected AI capabilities:</strong>
+- Access to current LinkML schema documentation
+- Knowledge of available biological enumerations
+- Proper ontology term usage (NCBITaxon, OBO terms)
+- Integration patterns with semantic web standards</p>
+<h2 id="practical-examples">🎯 Practical Examples</h2>
+<h3 id="example-1-data-science-classification">Example 1: Data Science Classification</h3>
+<p><strong>Prompt:</strong></p>
+<pre><code class="language-python"># Create a machine learning model validator using Common Value Sets
+# Include binary classification, anomaly detection, and fraud detection enums
+# use context7
+</code></pre>
+<p><strong>AI will generate:</strong></p>
+<pre><code class="language-python">from valuesets.enums.data_science.binary_classification import (
+    BinaryClassificationEnum,
+    AnomalyDetectionEnum,
+    FraudDetectionEnum
+)
+from typing import Union, Dict, Any
+import pandas as pd
+
+def validate_predictions(
+    predictions: pd.Series,
+    task_type: str
+) -&gt; Dict[str, Any]:
+    &quot;&quot;&quot;
+    Validate model predictions against Common Value Sets standards.
+    &quot;&quot;&quot;
+    validation_enums = {
+        'binary': BinaryClassificationEnum,
+        'anomaly': AnomalyDetectionEnum,
+        'fraud': FraudDetectionEnum
+    }
+
+    if task_type not in validation_enums:
+        raise ValueError(f&quot;Unknown task type: {task_type}&quot;)
+
+    enum_class = validation_enums[task_type]
+    valid_values = {item.value for item in enum_class}
+
+    # Validate predictions
+    invalid_predictions = predictions[~predictions.isin(valid_values)]
+
+    return {
+        'valid_count': len(predictions) - len(invalid_predictions),
+        'invalid_count': len(invalid_predictions),
+        'invalid_values': invalid_predictions.unique().tolist(),
+        'expected_values': list(valid_values),
+        'semantic_mappings': {
+            item.value: item.get_meaning() if hasattr(item, 'get_meaning') else None
+            for item in enum_class
+        }
+    }
+
+# Example usage
+predictions = pd.Series(['POSITIVE', 'NEGATIVE', 'MAYBE'])  # 'MAYBE' is invalid
+result = validate_predictions(predictions, 'binary')
+print(f&quot;Validation result: {result}&quot;)
+</code></pre>
+<h3 id="example-2-bioinformatics-integration">Example 2: Bioinformatics Integration</h3>
+<p><strong>Prompt:</strong></p>
+<pre><code>Create a sample metadata validator for genomics experiments using Common Value Sets. Include organism taxonomy, experimental techniques, and cell cycle phases. use context7
+</code></pre>
+<p><strong>AI will generate:</strong></p>
+<pre><code class="language-python">from valuesets.enums.bio.taxonomy import CommonOrganismTaxaEnum
+from valuesets.enums.bio.cell_cycle import CellCyclePhase
+from valuesets.enums.bio.structural_biology import StructuralBiologyTechnique
+from dataclasses import dataclass
+from typing import Optional, List, Dict
+
+@dataclass
+class GenomicsExperiment:
+    &quot;&quot;&quot;
+    Standardized genomics experiment metadata using Common Value Sets.
+    &quot;&quot;&quot;
+    organism: CommonOrganismTaxaEnum
+    technique: StructuralBiologyTechnique
+    cell_phase: Optional[CellCyclePhase] = None
+
+    def validate(self) -&gt; Dict[str, any]:
+        &quot;&quot;&quot;Validate experiment metadata and return semantic information.&quot;&quot;&quot;
+        return {
+            'organism': {
+                'value': self.organism.value,
+                'meaning': self.organism.get_meaning(),
+                'description': self.organism.get_description()
+            },
+            'technique': {
+                'value': self.technique.value,
+                'meaning': self.technique.get_meaning(),
+                'description': self.technique.get_description()
+            },
+            'cell_phase': {
+                'value': self.cell_phase.value if self.cell_phase else None,
+                'meaning': self.cell_phase.get_meaning() if self.cell_phase else None,
+                'description': self.cell_phase.get_description() if self.cell_phase else None
+            } if self.cell_phase else None
+        }
+
+    def to_rdf_triples(self) -&gt; List[str]:
+        &quot;&quot;&quot;Convert to RDF triples for semantic web integration.&quot;&quot;&quot;
+        triples = []
+        base_uri = &quot;http://example.org/experiment/&quot;
+
+        # Organism triple
+        if hasattr(self.organism, 'get_meaning') and self.organism.get_meaning():
+            triples.append(f&quot;&lt;{base_uri}organism&gt; &lt;http://purl.obolibrary.org/obo/RO_0002162&gt; &lt;{self.organism.get_meaning()}&gt; .&quot;)
+
+        # Technique triple
+        if hasattr(self.technique, 'get_meaning') and self.technique.get_meaning():
+            triples.append(f&quot;&lt;{base_uri}technique&gt; &lt;http://purl.obolibrary.org/obo/BFO_0000051&gt; &lt;{self.technique.get_meaning()}&gt; .&quot;)
+
+        return triples
+
+# Example usage
+experiment = GenomicsExperiment(
+    organism=CommonOrganismTaxaEnum.MOUSE,
+    technique=StructuralBiologyTechnique.CRYO_EM,
+    cell_phase=CellCyclePhase.G1
+)
+
+print(&quot;Validation:&quot;, experiment.validate())
+print(&quot;RDF Triples:&quot;, experiment.to_rdf_triples())
+</code></pre>
+<h2 id="advanced-agentic-workflows">🎪 Advanced Agentic Workflows</h2>
+<h3 id="multi-step-data-harmonization">Multi-Step Data Harmonization</h3>
+<p><strong>Prompt:</strong></p>
+<pre><code>Create an intelligent data harmonization system that:
+1. Detects data types in CSV files
+2. Maps values to appropriate Common Value Sets enums
+3. Suggests ontology alignments
+4. Generates standardized output with semantic annotations
+use context7
+</code></pre>
+<p>With Context7, the AI will have access to:
+- Current schema documentation
+- All available enum categories
+- Ontology mapping patterns
+- Best practices for LinkML integration</p>
+<h3 id="semantic-query-generation">Semantic Query Generation</h3>
+<p><strong>Prompt:</strong></p>
+<pre><code>Build a SPARQL query generator that uses Common Value Sets semantic mappings to create complex biological queries. Include support for GO terms, taxonomy, and experimental conditions. use context7
+</code></pre>
+<p>The AI will generate code that properly leverages the ontology term mappings embedded in Common Value Sets.</p>
+<h2 id="configuration-tips">🔧 Configuration Tips</h2>
+<h3 id="optimize-context7-for-valuesets">Optimize Context7 for ValueSets</h3>
+<ol>
+<li><strong>Custom Documentation Sources</strong>: Configure Context7 to prioritize LinkML and Common Value Sets documentation</li>
+<li><strong>Version Pinning</strong>: Ensure Context7 fetches documentation for your specific valuesets version</li>
+<li><strong>Domain Focus</strong>: Use domain-specific prompts to get targeted documentation</li>
+</ol>
+<h3 id="ide-specific-optimizations">IDE-Specific Optimizations</h3>
+<h4 id="for-cursor">For Cursor:</h4>
+<ul>
+<li>Enable auto-completion for enum imports</li>
+<li>Configure semantic highlighting for ontology terms</li>
+<li>Set up code actions for value validation</li>
+</ul>
+<h4 id="for-claude-desktop">For Claude Desktop:</h4>
+<ul>
+<li>Use conversation memory for complex workflows</li>
+<li>Leverage file upload for schema validation</li>
+<li>Enable multi-turn planning for data harmonization</li>
+</ul>
+<h4 id="for-vs-code">For VS Code:</h4>
+<ul>
+<li>Install LinkML extension for schema validation</li>
+<li>Configure Python language server for enum type hints</li>
+<li>Set up debugging for semantic mapping functions</li>
+</ul>
+<h2 id="troubleshooting">🔍 Troubleshooting</h2>
+<h3 id="common-issues">Common Issues</h3>
+<ol>
+<li><strong>Context7 not responding</strong></li>
+<li>Check Node.js version (≥18.0.0)</li>
+<li>Verify MCP configuration syntax</li>
+<li>
+<p>Restart your IDE</p>
+</li>
+<li>
+<p><strong>Outdated documentation</strong></p>
+</li>
+<li>Clear Context7 cache</li>
+<li>Update to latest Context7 version</li>
+<li>
+<p>Check internet connectivity</p>
+</li>
+<li>
+<p><strong>Import errors with valuesets</strong></p>
+</li>
+<li>Ensure valuesets is installed in correct environment</li>
+<li>Check Python path configuration</li>
+<li>Verify package version compatibility</li>
+</ol>
+<h3 id="performance-optimization">Performance Optimization</h3>
+<ul>
+<li>Use specific enum imports rather than wildcard imports</li>
+<li>Cache semantic mappings for repeated lookups</li>
+<li>Batch validation operations when possible</li>
+</ul>
+<h2 id="best-practices">🌟 Best Practices</h2>
+<ol>
+<li><strong>Prompt Engineering</strong></li>
+<li>Always include "use context7" for up-to-date information</li>
+<li>Be specific about the valuesets domain you're working with</li>
+<li>
+<p>Ask for semantic mappings when working with ontology integration</p>
+</li>
+<li>
+<p><strong>Code Organization</strong></p>
+</li>
+<li>Group related enums by domain</li>
+<li>Use type hints for better IDE support</li>
+<li>
+<p>Document semantic mappings in your code</p>
+</li>
+<li>
+<p><strong>Validation Patterns</strong></p>
+</li>
+<li>Validate inputs against enum values</li>
+<li>Leverage semantic meanings for data integration</li>
+<li>
+<p>Provide clear error messages with valid options</p>
+</li>
+<li>
+<p><strong>Semantic Integration</strong></p>
+</li>
+<li>Use ontology terms for data interoperability</li>
+<li>Generate RDF when needed for knowledge graphs</li>
+<li>Preserve provenance information</li>
+</ol>
+<h2 id="next-steps">🚀 Next Steps</h2>
+<ul>
+<li>Explore the <a href="https://linkml.github.io/valuesets/">Common Value Sets documentation</a></li>
+<li>Learn about <a href="https://linkml.io/">LinkML schemas</a></li>
+<li>Check out <a href="https://modelcontextprotocol.io/">Model Context Protocol</a></li>
+<li>Contribute new enumerations to the Common Value Sets project</li>
+</ul>
+<p>With Context7 MCP and Common Value Sets, you can build intelligent, semantically-aware applications with unprecedented ease and accuracy. The AI assistant becomes your domain expert, providing up-to-date, accurate guidance for standardized data representation across scientific domains.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.tabs.link"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>
