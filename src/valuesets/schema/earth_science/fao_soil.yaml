@@ -169,7 +169,7 @@ enums:
           fao_id: 24
           color_rgb: "115,0,0"
       PODZOLS:
-        description: Podzols - soils with subsurface accumulation of humified organic matter
+        description: Podzols - soils with subsurface accumulation of aluminium and iron complexes with organic matter (spodic horizon)
         annotations:
           symbol: PZ
           fao_id: 25
