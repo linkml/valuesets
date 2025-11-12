@@ -45,7 +45,7 @@ from .bio.relationship_to_oxygen import RelToOxygenEnum
 from .bio.sequence_alphabets import DNABaseEnum, DNABaseExtendedEnum, RNABaseEnum, RNABaseExtendedEnum, AminoAcidEnum, AminoAcidExtendedEnum, CodonEnum, NucleotideModificationEnum, SequenceQualityEnum
 from .bio.sequence_chemistry import IUPACNucleotideCode, StandardAminoAcid, IUPACAminoAcidCode, SequenceAlphabet, SequenceQualityEncoding, GeneticCodeTable, SequenceStrand, SequenceTopology, SequenceModality
 from .bio.sequencing_platforms import SequencingPlatform, SequencingChemistry, LibraryPreparation, SequencingApplication, ReadType, SequenceFileFormat, DataProcessingLevel
-from .bio.structural_biology import SampleType, StructuralBiologyTechnique, CryoEMPreparationType, CryoEMGridType, VitrificationMethod, CrystallizationMethod, XRaySource, Detector, WorkflowType, FileFormat, DataType, ProcessingStatus
+from .bio.structural_biology import SampleType, StructuralBiologyTechnique, CryoEMPreparationType, CryoEMGridType, VitrificationMethod, CrystallizationMethod, XRaySource, Detector, WorkflowType, FileFormat, DataType, ProcessingStatus, CoordinationGeometry, MetalLigandType, ProteinModificationType
 from .bio.taxonomy import CommonOrganismTaxaEnum, TaxonomicRank, BiologicalKingdom
 from .bio.trophic_levels import TrophicLevelEnum
 from .bio.uniprot_species import UniProtSpeciesCode
@@ -151,6 +151,7 @@ from .materials_science.synthesis_methods import SynthesisMethodEnum, CrystalGro
 
 # Medical domain
 from .medical.clinical import BloodTypeEnum, AnatomicalSystemEnum, MedicalSpecialtyEnum, DrugRouteEnum, VitalSignEnum, DiagnosticTestTypeEnum, SymptomSeverityEnum, AllergyTypeEnum, VaccineTypeEnum, BMIClassificationEnum
+from .medical.family_history import FamilyRelationship, FamilyHistoryStatus, GeneticRelationship
 from .medical.neuroimaging import MRIModalityEnum, MRISequenceTypeEnum, MRIContrastTypeEnum, FMRIParadigmTypeEnum
 
 # Physics domain
@@ -261,6 +262,7 @@ __all__ = [
     "ContigCollectionType",
     "ContinentEnum",
     "ContributorType",
+    "CoordinationGeometry",
     "CorporateGovernanceRoleEnum",
     "CountryCodeISO2Enum",
     "CountryCodeISO3Enum",
@@ -331,6 +333,8 @@ __all__ = [
     "ExtractiveIndustryProductTypeEnum",
     "EyeColorEnum",
     "FMRIParadigmTypeEnum",
+    "FamilyHistoryStatus",
+    "FamilyRelationship",
     "FeatureType",
     "FeedstockTypeEnum",
     "FermentationModeEnum",
@@ -354,6 +358,7 @@ __all__ = [
     "GOEvidenceCode",
     "GenderIdentity",
     "GeneticCodeTable",
+    "GeneticRelationship",
     "GenomeFeatureType",
     "GeologicalEra",
     "GridType",
@@ -430,6 +435,7 @@ __all__ = [
     "MedicalSpecialtyEnum",
     "MeioticPhase",
     "MetabolomicsAssayType",
+    "MetalLigandType",
     "MetalTypeEnum",
     "MicroplateFormatEnum",
     "MicroscopyMethodEnum",
@@ -510,6 +516,7 @@ __all__ = [
     "ProgrammingLanguageFileEnum",
     "ProjectMaturityLevel",
     "ProteinEvidenceForExistence",
+    "ProteinModificationType",
     "ProtocolStateEnum",
     "PublicationType",
     "QualityAssuranceLevelEnum",

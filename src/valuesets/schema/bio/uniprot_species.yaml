@@ -29,6 +29,8 @@ enums:
         exact_mappings:
         - NCBITaxon:1642929
         - uniprot.proteome:UP000201190
+        annotations:
+          sources: existing
       SP_9ACAR:
         description: 'Tropilaelaps mercedesae - Proteome: UP000192247'
         meaning: NCBITaxon:418985
@@ -36,6 +38,8 @@ enums:
         exact_mappings:
         - NCBITaxon:418985
         - uniprot.proteome:UP000192247
+        annotations:
+          sources: existing
       SP_9ACTN:
         description: 'Candidatus Protofrankia datiscae - Proteome: UP000001549'
         meaning: NCBITaxon:2716812
@@ -43,6 +47,8 @@ enums:
         exact_mappings:
         - NCBITaxon:2716812
         - uniprot.proteome:UP000001549
+        annotations:
+          sources: existing
       SP_9ACTO:
         description: 'Actinomyces massiliensis F0489 - Proteome: UP000002941'
         meaning: NCBITaxon:1125718
@@ -50,6 +56,8 @@ enums:
         exact_mappings:
         - NCBITaxon:1125718
         - uniprot.proteome:UP000002941
+        annotations:
+          sources: existing
       SP_9ADEN:
         description: 'Human adenovirus 53 - Proteome: UP000463865'
         meaning: NCBITaxon:556926
@@ -57,6 +65,8 @@ enums:
         exact_mappings:
         - NCBITaxon:556926
         - uniprot.proteome:UP000463865
+        annotations:
+          sources: existing
       SP_9AGAM:
         description: 'Jaapia argillacea MUCL 33604 - Proteome: UP000027265'
         meaning: NCBITaxon:933084
@@ -64,6 +74,8 @@ enums:
         exact_mappings:
         - NCBITaxon:933084
         - uniprot.proteome:UP000027265
+        annotations:
+          sources: existing
       SP_9AGAR:
         description: 'Collybiopsis luxurians FD-317 M1 - Proteome: UP000053593'
         meaning: NCBITaxon:944289
@@ -71,6 +83,8 @@ enums:
         exact_mappings:
         - NCBITaxon:944289
         - uniprot.proteome:UP000053593
+        annotations:
+          sources: existing
       SP_9ALPC:
         description: 'Feline coronavirus - Proteome: UP000141821'
         meaning: NCBITaxon:12663
@@ -78,6 +92,8 @@ enums:
         exact_mappings:
         - NCBITaxon:12663
         - uniprot.proteome:UP000141821
+        annotations:
+          sources: existing
       SP_9ALPH:
         description: 'Testudinid alphaherpesvirus 3 - Proteome: UP000100290'
         meaning: NCBITaxon:2560801
@@ -85,6 +101,8 @@ enums:
         exact_mappings:
         - NCBITaxon:2560801
         - uniprot.proteome:UP000100290
+        annotations:
+          sources: existing
       SP_9ALTE:
         description: 'Paraglaciecola arctica BSs20135 - Proteome: UP000006327'
         meaning: NCBITaxon:493475
@@ -92,6 +110,8 @@ enums:
         exact_mappings:
         - NCBITaxon:493475
         - uniprot.proteome:UP000006327
+        annotations:
+          sources: existing
       SP_9ALVE:
         description: 'Perkinsus sp. BL_2016 - Proteome: UP000298064'
         meaning: NCBITaxon:2494336
@@ -99,6 +119,8 @@ enums:
         exact_mappings:
         - NCBITaxon:2494336
         - uniprot.proteome:UP000298064
+        annotations:
+          sources: existing
       SP_9AMPH:
         description: 'Microcaecilia unicolor - Proteome: UP000515156'
         meaning: NCBITaxon:1415580
@@ -106,6 +128,8 @@ enums:
         exact_mappings:
         - NCBITaxon:1415580
         - uniprot.proteome:UP000515156
+        annotations:
+          sources: existing
       SP_9ANNE:
         description: 'Dimorphilus gyrociliatus - Proteome: UP000549394'
         meaning: NCBITaxon:2664684
@@ -113,13 +137,17 @@ enums:
         exact_mappings:
         - NCBITaxon:2664684
         - uniprot.proteome:UP000549394
+        annotations:
+          sources: existing
       SP_9ANUR:
-        description: 'Leptobrachium leishanense (Leishan spiny toad) - Proteome: UP000694569'
+        description: 'Leptobrachium leishanense - Proteome: UP000694569'
         meaning: NCBITaxon:445787
         title: Leptobrachium leishanense
         exact_mappings:
         - NCBITaxon:445787
         - uniprot.proteome:UP000694569
+        annotations:
+          sources: existing
       SP_9APHY:
         description: 'Fibroporia radiculosa - Proteome: UP000006352'
         meaning: NCBITaxon:599839
@@ -127,6 +155,8 @@ enums:
         exact_mappings:
         - NCBITaxon:599839
         - uniprot.proteome:UP000006352
+        annotations:
+          sources: existing
       SP_9APIA:
         description: 'Heracleum sosnowskyi - Proteome: UP001237642'
         meaning: NCBITaxon:360622
@@ -134,6 +164,8 @@ enums:
         exact_mappings:
         - NCBITaxon:360622
         - uniprot.proteome:UP001237642
+        annotations:
+          sources: existing
       SP_9APIC:
         description: 'Babesia sp. Xinjiang - Proteome: UP000193856'
         meaning: NCBITaxon:462227
@@ -141,6 +173,8 @@ enums:
         exact_mappings:
         - NCBITaxon:462227
         - uniprot.proteome:UP000193856
+        annotations:
+          sources: existing
       SP_9AQUI:
         description: 'Sulfurihydrogenibium yellowstonense SS-5 - Proteome: UP000005540'
         meaning: NCBITaxon:432331
@@ -148,6 +182,8 @@ enums:
         exact_mappings:
         - NCBITaxon:432331
         - uniprot.proteome:UP000005540
+        annotations:
+          sources: existing
       SP_9ARAC:
         description: 'Trichonephila inaurata madagascariensis - Proteome: UP000886998'
         meaning: NCBITaxon:2747483
@@ -155,6 +191,8 @@ enums:
         exact_mappings:
         - NCBITaxon:2747483
         - uniprot.proteome:UP000886998
+        annotations:
+          sources: existing
       SP_9ARCH:
         description: 'Candidatus Nitrosarchaeum limnium BG20 - Proteome: UP000014065'
         meaning: NCBITaxon:859192
@@ -162,6 +200,8 @@ enums:
         exact_mappings:
         - NCBITaxon:859192
         - uniprot.proteome:UP000014065
+        annotations:
+          sources: existing
       SP_9ASCO:
         description: 'Kuraishia capsulata CBS 1993 - Proteome: UP000019384'
         meaning: NCBITaxon:1382522
@@ -169,6 +209,8 @@ enums:
         exact_mappings:
         - NCBITaxon:1382522
         - uniprot.proteome:UP000019384
+        annotations:
+          sources: existing
       SP_9ASPA:
         description: 'Dendrobium catenatum - Proteome: UP000233837'
         meaning: NCBITaxon:906689
@@ -176,6 +218,8 @@ enums:
         exact_mappings:
         - NCBITaxon:906689
         - uniprot.proteome:UP000233837
+        annotations:
+          sources: existing
       SP_9ASTE:
         description: 'Cuscuta australis - Proteome: UP000249390'
         meaning: NCBITaxon:267555
@@ -183,6 +227,8 @@ enums:
         exact_mappings:
         - NCBITaxon:267555
         - uniprot.proteome:UP000249390
+        annotations:
+          sources: existing
       SP_9ASTR:
         description: 'Mikania micrantha - Proteome: UP000326396'
         meaning: NCBITaxon:192012
@@ -190,13 +236,17 @@ enums:
         exact_mappings:
         - NCBITaxon:192012
         - uniprot.proteome:UP000326396
+        annotations:
+          sources: existing
       SP_9AVES:
-        description: 'Anser brachyrhynchus (Pink-footed goose) - Proteome: UP000694426'
+        description: 'Anser brachyrhynchus - Proteome: UP000694426'
         meaning: NCBITaxon:132585
         title: Anser brachyrhynchus
         exact_mappings:
         - NCBITaxon:132585
         - uniprot.proteome:UP000694426
+        annotations:
+          sources: existing
       SP_9BACE:
         description: 'Bacteroides caccae CL03T12C61 - Proteome: UP000002965'
         meaning: NCBITaxon:997873
@@ -204,6 +254,8 @@ enums:
         exact_mappings:
         - NCBITaxon:997873
         - uniprot.proteome:UP000002965
+        annotations:
+          sources: existing
       SP_9BACI:
         description: 'Fictibacillus macauensis ZFHKF-1 - Proteome: UP000004080'
         meaning: NCBITaxon:1196324
@@ -211,6 +263,8 @@ enums:
         exact_mappings:
         - NCBITaxon:1196324
         - uniprot.proteome:UP000004080
+        annotations:
+          sources: existing
       SP_9BACL:
         description: 'Paenibacillus sp. HGF7 - Proteome: UP000003445'
         meaning: NCBITaxon:944559
@@ -218,6 +272,8 @@ enums:
         exact_mappings:
         - NCBITaxon:944559
         - uniprot.proteome:UP000003445
+        annotations:
+          sources: existing
       SP_9BACT:
         description: 'Parabacteroides johnsonii CL02T12C29 - Proteome: UP000001218'
         meaning: NCBITaxon:999419
@@ -225,6 +281,8 @@ enums:
         exact_mappings:
         - NCBITaxon:999419
         - uniprot.proteome:UP000001218
+        annotations:
+          sources: existing
       SP_9BACU:
         description: 'Samia ricini nucleopolyhedrovirus - Proteome: UP001226138'
         meaning: NCBITaxon:1920700
@@ -232,6 +290,8 @@ enums:
         exact_mappings:
         - NCBITaxon:1920700
         - uniprot.proteome:UP001226138
+        annotations:
+          sources: existing
       SP_9BASI:
         description: 'Malassezia pachydermatis - Proteome: UP000037751'
         meaning: NCBITaxon:77020
@@ -239,6 +299,8 @@ enums:
         exact_mappings:
         - NCBITaxon:77020
         - uniprot.proteome:UP000037751
+        annotations:
+          sources: existing
       SP_9BBAC:
         description: 'Plutella xylostella granulovirus - Proteome: UP000201310'
         meaning: NCBITaxon:98383
@@ -246,6 +308,8 @@ enums:
         exact_mappings:
         - NCBITaxon:98383
         - uniprot.proteome:UP000201310
+        annotations:
+          sources: existing
       SP_9BETA:
         description: 'Saimiriine betaherpesvirus 4 - Proteome: UP000097892'
         meaning: NCBITaxon:1535247
@@ -253,6 +317,8 @@ enums:
         exact_mappings:
         - NCBITaxon:1535247
         - uniprot.proteome:UP000097892
+        annotations:
+          sources: existing
       SP_9BETC:
         description: 'Coronavirus BtRt-BetaCoV/GX2018 - Proteome: UP001228689'
         meaning: NCBITaxon:2591238
@@ -260,6 +326,8 @@ enums:
         exact_mappings:
         - NCBITaxon:2591238
         - uniprot.proteome:UP001228689
+        annotations:
+          sources: existing
       SP_9BIFI:
         description: 'Scardovia wiggsiae F0424 - Proteome: UP000006415'
         meaning: NCBITaxon:857290
@@ -267,6 +335,8 @@ enums:
         exact_mappings:
         - NCBITaxon:857290
         - uniprot.proteome:UP000006415
+        annotations:
+          sources: existing
       SP_9BILA:
         description: 'Ancylostoma ceylanicum - Proteome: UP000024635'
         meaning: NCBITaxon:53326
@@ -274,6 +344,8 @@ enums:
         exact_mappings:
         - NCBITaxon:53326
         - uniprot.proteome:UP000024635
+        annotations:
+          sources: existing
       SP_9BIVA:
         description: 'Potamilus streckersoni - Proteome: UP001195483'
         meaning: NCBITaxon:2493646
@@ -281,6 +353,8 @@ enums:
         exact_mappings:
         - NCBITaxon:2493646
         - uniprot.proteome:UP001195483
+        annotations:
+          sources: existing
       SP_9BORD:
         description: 'Bordetella sp. N - Proteome: UP000064621'
         meaning: NCBITaxon:1746199
@@ -288,6 +362,8 @@ enums:
         exact_mappings:
         - NCBITaxon:1746199
         - uniprot.proteome:UP000064621
+        annotations:
+          sources: existing
       SP_9BRAD:
         description: 'Afipia broomeae ATCC 49717 - Proteome: UP000001096'
         meaning: NCBITaxon:883078
@@ -295,6 +371,8 @@ enums:
         exact_mappings:
         - NCBITaxon:883078
         - uniprot.proteome:UP000001096
+        annotations:
+          sources: existing
       SP_9BRAS:
         description: 'Capsella rubella - Proteome: UP000029121'
         meaning: NCBITaxon:81985
@@ -302,6 +380,8 @@ enums:
         exact_mappings:
         - NCBITaxon:81985
         - uniprot.proteome:UP000029121
+        annotations:
+          sources: existing
       SP_9BROM:
         description: 'Prune dwarf virus - Proteome: UP000202132'
         meaning: NCBITaxon:33760
@@ -309,6 +389,8 @@ enums:
         exact_mappings:
         - NCBITaxon:33760
         - uniprot.proteome:UP000202132
+        annotations:
+          sources: existing
       SP_9BURK:
         description: 'Candidatus Paraburkholderia kirkii UZHbot1 - Proteome: UP000003511'
         meaning: NCBITaxon:1055526
@@ -316,6 +398,8 @@ enums:
         exact_mappings:
         - NCBITaxon:1055526
         - uniprot.proteome:UP000003511
+        annotations:
+          sources: existing
       SP_9CARY:
         description: 'Carnegiea gigantea - Proteome: UP001153076'
         meaning: NCBITaxon:171969
@@ -323,6 +407,8 @@ enums:
         exact_mappings:
         - NCBITaxon:171969
         - uniprot.proteome:UP001153076
+        annotations:
+          sources: existing
       SP_9CAUD:
         description: 'Salmonella phage Vi06 - Proteome: UP000000335'
         meaning: NCBITaxon:866889
@@ -330,6 +416,8 @@ enums:
         exact_mappings:
         - NCBITaxon:866889
         - uniprot.proteome:UP000000335
+        annotations:
+          sources: existing
       SP_9CAUL:
         description: 'Brevundimonas abyssalis TAR-001 - Proteome: UP000016569'
         meaning: NCBITaxon:1391729
@@ -337,6 +425,8 @@ enums:
         exact_mappings:
         - NCBITaxon:1391729
         - uniprot.proteome:UP000016569
+        annotations:
+          sources: existing
       SP_9CBAC:
         description: 'Neodiprion sertifer nucleopolyhedrovirus - Proteome: UP000243697'
         meaning: NCBITaxon:111874
@@ -344,6 +434,8 @@ enums:
         exact_mappings:
         - NCBITaxon:111874
         - uniprot.proteome:UP000243697
+        annotations:
+          sources: existing
       SP_9CELL:
         description: 'Actinotalea ferrariae CF5-4 - Proteome: UP000019753'
         meaning: NCBITaxon:948458
@@ -351,35 +443,44 @@ enums:
         exact_mappings:
         - NCBITaxon:948458
         - uniprot.proteome:UP000019753
+        annotations:
+          sources: existing
       SP_9CERV:
-        description: 'Cervus hanglu yarkandensis (Yarkand deer) - Proteome: UP000631465'
+        description: 'Cervus hanglu yarkandensis - Proteome: UP000631465'
         meaning: NCBITaxon:84702
         title: Cervus hanglu yarkandensis
         exact_mappings:
         - NCBITaxon:84702
         - uniprot.proteome:UP000631465
+        annotations:
+          sources: existing
       SP_9CETA:
-        description: 'Catagonus wagneri (Chacoan peccary) - Proteome: UP000694540'
+        description: 'Catagonus wagneri - Proteome: UP000694540'
         meaning: NCBITaxon:51154
         title: Catagonus wagneri
         exact_mappings:
         - NCBITaxon:51154
         - uniprot.proteome:UP000694540
+        annotations:
+          sources: existing
       SP_9CHAR:
-        description: 'Rostratula benghalensis (greater painted-snipe) - Proteome:
-          UP000545435'
+        description: 'Rostratula benghalensis - Proteome: UP000545435'
         meaning: NCBITaxon:118793
         title: Rostratula benghalensis
         exact_mappings:
         - NCBITaxon:118793
         - uniprot.proteome:UP000545435
+        annotations:
+          sources: existing
       SP_9CHIR:
-        description: 'Phyllostomus discolor (pale spear-nosed bat) - Proteome: UP000504628'
+        description: 'Phyllostomus discolor - Proteome: UP000504628'
         meaning: NCBITaxon:89673
         title: Phyllostomus discolor
         exact_mappings:
         - NCBITaxon:89673
         - uniprot.proteome:UP000504628
+        annotations:
+          sources: existing
       SP_9CHLA:
         description: 'Chlamydiales bacterium SCGC AG-110-P3 - Proteome: UP000196763'
         meaning: NCBITaxon:1871323
@@ -387,6 +488,8 @@ enums:
         exact_mappings:
         - NCBITaxon:1871323
         - uniprot.proteome:UP000196763
+        annotations:
+          sources: existing
       SP_9CHLB:
         description: 'Chlorobium ferrooxidans DSM 13031 - Proteome: UP000004162'
         meaning: NCBITaxon:377431
@@ -394,6 +497,8 @@ enums:
         exact_mappings:
         - NCBITaxon:377431
         - uniprot.proteome:UP000004162
+        annotations:
+          sources: existing
       SP_9CHLO:
         description: 'Helicosporidium sp. ATCC 50920 - Proteome: UP000026042'
         meaning: NCBITaxon:1291522
@@ -401,6 +506,8 @@ enums:
         exact_mappings:
         - NCBITaxon:1291522
         - uniprot.proteome:UP000026042
+        annotations:
+          sources: existing
       SP_9CHLR:
         description: 'Ardenticatena maritima - Proteome: UP000037784'
         meaning: NCBITaxon:872965
@@ -408,6 +515,8 @@ enums:
         exact_mappings:
         - NCBITaxon:872965
         - uniprot.proteome:UP000037784
+        annotations:
+          sources: existing
       SP_9CHRO:
         description: 'Gloeocapsa sp. PCC 7428 - Proteome: UP000010476'
         meaning: NCBITaxon:1173026
@@ -415,13 +524,17 @@ enums:
         exact_mappings:
         - NCBITaxon:1173026
         - uniprot.proteome:UP000010476
+        annotations:
+          sources: existing
       SP_9CICH:
-        description: 'Maylandia zebra (zebra mbuna) - Proteome: UP000265160'
+        description: 'Maylandia zebra - Proteome: UP000265160'
         meaning: NCBITaxon:106582
         title: Maylandia zebra
         exact_mappings:
         - NCBITaxon:106582
         - uniprot.proteome:UP000265160
+        annotations:
+          sources: existing
       SP_9CILI:
         description: 'Stentor coeruleus - Proteome: UP000187209'
         meaning: NCBITaxon:5963
@@ -429,6 +542,8 @@ enums:
         exact_mappings:
         - NCBITaxon:5963
         - uniprot.proteome:UP000187209
+        annotations:
+          sources: existing
       SP_9CIRC:
         description: 'Raven circovirus - Proteome: UP000097131'
         meaning: NCBITaxon:345250
@@ -436,6 +551,8 @@ enums:
         exact_mappings:
         - NCBITaxon:345250
         - uniprot.proteome:UP000097131
+        annotations:
+          sources: existing
       SP_9CLOS:
         description: 'Grapevine leafroll-associated virus 10 - Proteome: UP000203128'
         meaning: NCBITaxon:367121
@@ -443,6 +560,8 @@ enums:
         exact_mappings:
         - NCBITaxon:367121
         - uniprot.proteome:UP000203128
+        annotations:
+          sources: existing
       SP_9CLOT:
         description: 'Candidatus Arthromitus sp. SFB-rat-Yit - Proteome: UP000001273'
         meaning: NCBITaxon:1041504
@@ -450,6 +569,8 @@ enums:
         exact_mappings:
         - NCBITaxon:1041504
         - uniprot.proteome:UP000001273
+        annotations:
+          sources: existing
       SP_9CNID:
         description: 'Clytia hemisphaerica - Proteome: UP000594262'
         meaning: NCBITaxon:252671
@@ -457,21 +578,26 @@ enums:
         exact_mappings:
         - NCBITaxon:252671
         - uniprot.proteome:UP000594262
+        annotations:
+          sources: existing
       SP_9COLU:
-        description: 'Pampusana beccarii (Western bronze ground-dove) - Proteome:
-          UP000541332'
+        description: 'Pampusana beccarii - Proteome: UP000541332'
         meaning: NCBITaxon:2953425
         title: Pampusana beccarii
         exact_mappings:
         - NCBITaxon:2953425
         - uniprot.proteome:UP000541332
+        annotations:
+          sources: existing
       SP_9CORV:
-        description: 'Cnemophilus loriae (Loria''s bird-of-paradise) - Proteome: UP000517678'
+        description: 'Cnemophilus loriae - Proteome: UP000517678'
         meaning: NCBITaxon:254448
         title: Cnemophilus loriae
         exact_mappings:
         - NCBITaxon:254448
         - uniprot.proteome:UP000517678
+        annotations:
+          sources: existing
       SP_9CORY:
         description: 'Corynebacterium genitalium ATCC 33030 - Proteome: UP000004208'
         meaning: NCBITaxon:585529
@@ -479,6 +605,8 @@ enums:
         exact_mappings:
         - NCBITaxon:585529
         - uniprot.proteome:UP000004208
+        annotations:
+          sources: existing
       SP_9COXI:
         description: 'Coxiella endosymbiont of Amblyomma americanum - Proteome: UP000059222'
         meaning: NCBITaxon:325775
@@ -486,6 +614,8 @@ enums:
         exact_mappings:
         - NCBITaxon:325775
         - uniprot.proteome:UP000059222
+        annotations:
+          sources: existing
       SP_9CREN:
         description: 'Metallosphaera yellowstonensis MK1 - Proteome: UP000003980'
         meaning: NCBITaxon:671065
@@ -493,6 +623,8 @@ enums:
         exact_mappings:
         - NCBITaxon:671065
         - uniprot.proteome:UP000003980
+        annotations:
+          sources: existing
       SP_9CRUS:
         description: 'Daphnia magna - Proteome: UP000076858'
         meaning: NCBITaxon:35525
@@ -500,13 +632,17 @@ enums:
         exact_mappings:
         - NCBITaxon:35525
         - uniprot.proteome:UP000076858
+        annotations:
+          sources: existing
       SP_9CUCU:
-        description: 'Ceutorhynchus assimilis (cabbage seed weevil) - Proteome: UP001152799'
+        description: 'Ceutorhynchus assimilis - Proteome: UP001152799'
         meaning: NCBITaxon:467358
         title: Ceutorhynchus assimilis
         exact_mappings:
         - NCBITaxon:467358
         - uniprot.proteome:UP001152799
+        annotations:
+          sources: existing
       SP_9CYAN:
         description: 'Leptolyngbyaceae cyanobacterium JSC-12 - Proteome: UP000001332'
         meaning: NCBITaxon:864702
@@ -514,6 +650,8 @@ enums:
         exact_mappings:
         - NCBITaxon:864702
         - uniprot.proteome:UP000001332
+        annotations:
+          sources: existing
       SP_9DEIN:
         description: 'Meiothermus sp. QL-1 - Proteome: UP000255346'
         meaning: NCBITaxon:2058095
@@ -521,6 +659,8 @@ enums:
         exact_mappings:
         - NCBITaxon:2058095
         - uniprot.proteome:UP000255346
+        annotations:
+          sources: existing
       SP_9DEIO:
         description: 'Deinococcus sp. RL - Proteome: UP000027898'
         meaning: NCBITaxon:1489678
@@ -528,6 +668,8 @@ enums:
         exact_mappings:
         - NCBITaxon:1489678
         - uniprot.proteome:UP000027898
+        annotations:
+          sources: existing
       SP_9DELA:
         description: 'Human T-cell leukemia virus type I - Proteome: UP000108043'
         meaning: NCBITaxon:11908
@@ -535,6 +677,8 @@ enums:
         exact_mappings:
         - NCBITaxon:11908
         - uniprot.proteome:UP000108043
+        annotations:
+          sources: existing
       SP_9DELT:
         description: 'Lujinxingia litoralis - Proteome: UP000249169'
         meaning: NCBITaxon:2211119
@@ -542,13 +686,17 @@ enums:
         exact_mappings:
         - NCBITaxon:2211119
         - uniprot.proteome:UP000249169
+        annotations:
+          sources: existing
       SP_9DEND:
-        description: 'Xiphorhynchus elegans (elegant woodcreeper) - Proteome: UP000551443'
+        description: 'Xiphorhynchus elegans - Proteome: UP000551443'
         meaning: NCBITaxon:269412
         title: Xiphorhynchus elegans
         exact_mappings:
         - NCBITaxon:269412
         - uniprot.proteome:UP000551443
+        annotations:
+          sources: existing
       SP_9DINO:
         description: 'Symbiodinium necroappetens - Proteome: UP000601435'
         meaning: NCBITaxon:1628268
@@ -556,6 +704,8 @@ enums:
         exact_mappings:
         - NCBITaxon:1628268
         - uniprot.proteome:UP000601435
+        annotations:
+          sources: existing
       SP_9DIPT:
         description: 'Clunio marinus - Proteome: UP000183832'
         meaning: NCBITaxon:568069
@@ -563,6 +713,8 @@ enums:
         exact_mappings:
         - NCBITaxon:568069
         - uniprot.proteome:UP000183832
+        annotations:
+          sources: existing
       SP_9EIME:
         description: 'Eimeria praecox - Proteome: UP000018201'
         meaning: NCBITaxon:51316
@@ -570,6 +722,8 @@ enums:
         exact_mappings:
         - NCBITaxon:51316
         - uniprot.proteome:UP000018201
+        annotations:
+          sources: existing
       SP_9EMBE:
         description: 'Emberiza fucata - Proteome: UP000580681'
         meaning: NCBITaxon:337179
@@ -577,6 +731,8 @@ enums:
         exact_mappings:
         - NCBITaxon:337179
         - uniprot.proteome:UP000580681
+        annotations:
+          sources: existing
       SP_9ENTE:
         description: 'Enterococcus asini ATCC 700915 - Proteome: UP000013777'
         meaning: NCBITaxon:1158606
@@ -584,6 +740,8 @@ enums:
         exact_mappings:
         - NCBITaxon:1158606
         - uniprot.proteome:UP000013777
+        annotations:
+          sources: existing
       SP_9ENTR:
         description: 'secondary endosymbiont of Heteropsylla cubana - Proteome: UP000003937'
         meaning: NCBITaxon:134287
@@ -591,6 +749,8 @@ enums:
         exact_mappings:
         - NCBITaxon:134287
         - uniprot.proteome:UP000003937
+        annotations:
+          sources: existing
       SP_9ERIC:
         description: 'Rhododendron williamsianum - Proteome: UP000428333'
         meaning: NCBITaxon:262921
@@ -598,6 +758,8 @@ enums:
         exact_mappings:
         - NCBITaxon:262921
         - uniprot.proteome:UP000428333
+        annotations:
+          sources: existing
       SP_9EUCA:
         description: 'Petrolisthes manimaculis - Proteome: UP001292094'
         meaning: NCBITaxon:1843537
@@ -605,6 +767,8 @@ enums:
         exact_mappings:
         - NCBITaxon:1843537
         - uniprot.proteome:UP001292094
+        annotations:
+          sources: existing
       SP_9EUGL:
         description: 'Perkinsela sp. CCAP 1560/4 - Proteome: UP000036983'
         meaning: NCBITaxon:1314962
@@ -612,6 +776,8 @@ enums:
         exact_mappings:
         - NCBITaxon:1314962
         - uniprot.proteome:UP000036983
+        annotations:
+          sources: existing
       SP_9EUKA:
         description: 'Chrysochromulina tobinii - Proteome: UP000037460'
         meaning: NCBITaxon:1460289
@@ -619,6 +785,8 @@ enums:
         exact_mappings:
         - NCBITaxon:1460289
         - uniprot.proteome:UP000037460
+        annotations:
+          sources: existing
       SP_9EUPU:
         description: 'Candidula unifasciata - Proteome: UP000678393'
         meaning: NCBITaxon:100452
@@ -626,6 +794,8 @@ enums:
         exact_mappings:
         - NCBITaxon:100452
         - uniprot.proteome:UP000678393
+        annotations:
+          sources: existing
       SP_9EURO:
         description: 'Cladophialophora psammophila CBS 110553 - Proteome: UP000019471'
         meaning: NCBITaxon:1182543
@@ -633,6 +803,8 @@ enums:
         exact_mappings:
         - NCBITaxon:1182543
         - uniprot.proteome:UP000019471
+        annotations:
+          sources: existing
       SP_9EURY:
         description: 'Methanoplanus limicola DSM 2279 - Proteome: UP000005741'
         meaning: NCBITaxon:937775
@@ -640,6 +812,8 @@ enums:
         exact_mappings:
         - NCBITaxon:937775
         - uniprot.proteome:UP000005741
+        annotations:
+          sources: existing
       SP_9FABA:
         description: 'Senna tora - Proteome: UP000634136'
         meaning: NCBITaxon:362788
@@ -647,6 +821,8 @@ enums:
         exact_mappings:
         - NCBITaxon:362788
         - uniprot.proteome:UP000634136
+        annotations:
+          sources: existing
       SP_9FIRM:
         description: 'Ruminococcaceae bacterium D16 - Proteome: UP000002801'
         meaning: NCBITaxon:552398
@@ -654,6 +830,8 @@ enums:
         exact_mappings:
         - NCBITaxon:552398
         - uniprot.proteome:UP000002801
+        annotations:
+          sources: existing
       SP_9FLAO:
         description: 'Capnocytophaga sp. oral taxon 338 str. F0234 - Proteome: UP000003023'
         meaning: NCBITaxon:888059
@@ -661,6 +839,8 @@ enums:
         exact_mappings:
         - NCBITaxon:888059
         - uniprot.proteome:UP000003023
+        annotations:
+          sources: existing
       SP_9FLAV:
         description: 'Tunisian sheep-like pestivirus - Proteome: UP001157330'
         meaning: NCBITaxon:3071305
@@ -668,6 +848,8 @@ enums:
         exact_mappings:
         - NCBITaxon:3071305
         - uniprot.proteome:UP001157330
+        annotations:
+          sources: existing
       SP_9FLOR:
         description: 'Gracilariopsis chorda - Proteome: UP000247409'
         meaning: NCBITaxon:448386
@@ -675,6 +857,8 @@ enums:
         exact_mappings:
         - NCBITaxon:448386
         - uniprot.proteome:UP000247409
+        annotations:
+          sources: existing
       SP_9FRIN:
         description: 'Urocynchramus pylzowi - Proteome: UP000524542'
         meaning: NCBITaxon:571890
@@ -682,6 +866,8 @@ enums:
         exact_mappings:
         - NCBITaxon:571890
         - uniprot.proteome:UP000524542
+        annotations:
+          sources: existing
       SP_9FUNG:
         description: 'Lichtheimia corymbifera JMRC:FSU:9682 - Proteome: UP000027586'
         meaning: NCBITaxon:1263082
@@ -689,6 +875,8 @@ enums:
         exact_mappings:
         - NCBITaxon:1263082
         - uniprot.proteome:UP000027586
+        annotations:
+          sources: existing
       SP_9FURN:
         description: 'Furnarius figulus - Proteome: UP000529852'
         meaning: NCBITaxon:463165
@@ -696,6 +884,8 @@ enums:
         exact_mappings:
         - NCBITaxon:463165
         - uniprot.proteome:UP000529852
+        annotations:
+          sources: existing
       SP_9FUSO:
         description: 'Fusobacterium gonidiaformans 3-1-5R - Proteome: UP000002975'
         meaning: NCBITaxon:469605
@@ -703,13 +893,17 @@ enums:
         exact_mappings:
         - NCBITaxon:469605
         - uniprot.proteome:UP000002975
+        annotations:
+          sources: existing
       SP_9GALL:
-        description: 'Odontophorus gujanensis (marbled wood quail) - Proteome: UP000522663'
+        description: 'Odontophorus gujanensis - Proteome: UP000522663'
         meaning: NCBITaxon:886794
         title: Odontophorus gujanensis
         exact_mappings:
         - NCBITaxon:886794
         - uniprot.proteome:UP000522663
+        annotations:
+          sources: existing
       SP_9GAMA:
         description: 'Bovine gammaherpesvirus 6 - Proteome: UP000121539'
         meaning: NCBITaxon:1504288
@@ -717,6 +911,8 @@ enums:
         exact_mappings:
         - NCBITaxon:1504288
         - uniprot.proteome:UP000121539
+        annotations:
+          sources: existing
       SP_9GAMC:
         description: 'Anser fabalis coronavirus NCN2 - Proteome: UP001251675'
         meaning: NCBITaxon:2860474
@@ -724,22 +920,29 @@ enums:
         exact_mappings:
         - NCBITaxon:2860474
         - uniprot.proteome:UP001251675
+        annotations:
+          sources: existing
       SP_9GAMM:
-        description: 'Buchnera aphidicola (Cinara tujafilina) - Proteome: UP000006811'
+        description: 'Buchnera aphidicola (Buchnera aphidicola (Cinara tujafilina))
+          - Proteome: UP000006811'
         meaning: NCBITaxon:261317
         title: Buchnera aphidicola
-        aliases:
-        - Buchnera aphidicola (Cinara tujafilina)
         exact_mappings:
         - NCBITaxon:261317
         - uniprot.proteome:UP000006811
+        aliases:
+        - Buchnera aphidicola (Cinara tujafilina)
+        annotations:
+          sources: existing
       SP_9GAST:
-        description: 'Elysia crispata (lettuce slug) - Proteome: UP001283361'
+        description: 'Elysia crispata - Proteome: UP001283361'
         meaning: NCBITaxon:231223
         title: Elysia crispata
         exact_mappings:
         - NCBITaxon:231223
         - uniprot.proteome:UP001283361
+        annotations:
+          sources: existing
       SP_9GEMI:
         description: 'East African cassava mosaic Zanzibar virus - Proteome: UP000201107'
         meaning: NCBITaxon:223275
@@ -747,6 +950,8 @@ enums:
         exact_mappings:
         - NCBITaxon:223275
         - uniprot.proteome:UP000201107
+        annotations:
+          sources: existing
       SP_9GLOM:
         description: 'Paraglomus occultum - Proteome: UP000789572'
         meaning: NCBITaxon:144539
@@ -754,20 +959,26 @@ enums:
         exact_mappings:
         - NCBITaxon:144539
         - uniprot.proteome:UP000789572
+        annotations:
+          sources: existing
       SP_9GOBI:
-        description: 'Neogobius melanostomus (round goby) - Proteome: UP000694523'
+        description: 'Neogobius melanostomus - Proteome: UP000694523'
         meaning: NCBITaxon:47308
         title: Neogobius melanostomus
         exact_mappings:
         - NCBITaxon:47308
         - uniprot.proteome:UP000694523
+        annotations:
+          sources: existing
       SP_9GRUI:
-        description: 'Atlantisia rogersi (Inaccessible Island rail) - Proteome: UP000518911'
+        description: 'Atlantisia rogersi - Proteome: UP000518911'
         meaning: NCBITaxon:2478892
         title: Atlantisia rogersi
         exact_mappings:
         - NCBITaxon:2478892
         - uniprot.proteome:UP000518911
+        annotations:
+          sources: existing
       SP_9HELI:
         description: 'Helicobacter bilis ATCC 43879 - Proteome: UP000005085'
         meaning: NCBITaxon:613026
@@ -775,6 +986,8 @@ enums:
         exact_mappings:
         - NCBITaxon:613026
         - uniprot.proteome:UP000005085
+        annotations:
+          sources: existing
       SP_9HELO:
         description: 'Rhynchosporium graminicola - Proteome: UP000178129'
         meaning: NCBITaxon:2792576
@@ -782,6 +995,8 @@ enums:
         exact_mappings:
         - NCBITaxon:2792576
         - uniprot.proteome:UP000178129
+        annotations:
+          sources: existing
       SP_9HEMI:
         description: 'Cinara cedri - Proteome: UP000325440'
         meaning: NCBITaxon:506608
@@ -789,6 +1004,8 @@ enums:
         exact_mappings:
         - NCBITaxon:506608
         - uniprot.proteome:UP000325440
+        annotations:
+          sources: existing
       SP_9HEPA:
         description: 'Duck hepatitis B virus - Proteome: UP000137229'
         meaning: NCBITaxon:12639
@@ -796,6 +1013,8 @@ enums:
         exact_mappings:
         - NCBITaxon:12639
         - uniprot.proteome:UP000137229
+        annotations:
+          sources: existing
       SP_9HEXA:
         description: 'Allacma fusca - Proteome: UP000708208'
         meaning: NCBITaxon:39272
@@ -803,6 +1022,8 @@ enums:
         exact_mappings:
         - NCBITaxon:39272
         - uniprot.proteome:UP000708208
+        annotations:
+          sources: existing
       SP_9HYME:
         description: 'Melipona quadrifasciata - Proteome: UP000053105'
         meaning: NCBITaxon:166423
@@ -810,6 +1031,8 @@ enums:
         exact_mappings:
         - NCBITaxon:166423
         - uniprot.proteome:UP000053105
+        annotations:
+          sources: existing
       SP_9HYPH:
         description: 'Mesorhizobium amorphae CCNWGS0123 - Proteome: UP000002949'
         meaning: NCBITaxon:1082933
@@ -817,6 +1040,8 @@ enums:
         exact_mappings:
         - NCBITaxon:1082933
         - uniprot.proteome:UP000002949
+        annotations:
+          sources: existing
       SP_9HYPO:
         description: '[Torrubiella] hemipterigena - Proteome: UP000039046'
         meaning: NCBITaxon:1531966
@@ -824,16 +1049,20 @@ enums:
         exact_mappings:
         - NCBITaxon:1531966
         - uniprot.proteome:UP000039046
+        annotations:
+          sources: existing
       SP_9INFA:
-        description: 'Influenza A virus (A/California/VRDL364/2009 (mixed) - Proteome:
-          UP000109975'
+        description: 'Influenza A virus (A/California/VRDL364/2009 (Influenza A virus
+          (A/California/VRDL364/2009(mixed))) - Proteome: UP000109975'
         meaning: NCBITaxon:1049605
         title: Influenza A virus (A/California/VRDL364/2009
-        aliases:
-        - Influenza A virus (A/California/VRDL364/2009(mixed))
         exact_mappings:
         - NCBITaxon:1049605
         - uniprot.proteome:UP000109975
+        aliases:
+        - Influenza A virus (A/California/VRDL364/2009(mixed))
+        annotations:
+          sources: existing
       SP_9INSE:
         description: 'Cloeon dipterum - Proteome: UP000494165'
         meaning: NCBITaxon:197152
@@ -841,29 +1070,143 @@ enums:
         exact_mappings:
         - NCBITaxon:197152
         - uniprot.proteome:UP000494165
+        annotations:
+          sources: existing
       SP_9LABR:
-        description: 'Labrus bergylta (ballan wrasse) - Proteome: UP000261660'
+        description: 'Labrus bergylta - Proteome: UP000261660'
         meaning: NCBITaxon:56723
         title: Labrus bergylta
         exact_mappings:
         - NCBITaxon:56723
         - uniprot.proteome:UP000261660
+        annotations:
+          sources: existing
+      SP_ACIB2:
+        description: 'Acinetobacter baumannii (strain ATCC 19606 / DSM 30007 / JCM
+          6841 / CCUG 19606 / CIP 70.34 / NBRC 109757 / NCIMB 12457 / NCTC 12156 /
+          81) (A. baumannii ATCC 19606) - Proteome: UP000498640'
+        meaning: NCBITaxon:575584
+        title: Acinetobacter baumannii (strain ATCC 19606 / DSM 30007 / JCM 6841 /
+          CCUG 19606 / CIP 70.34 / NBRC 109757 / NCIMB 12457 / NCTC 12156 / 81)
+        exact_mappings:
+        - NCBITaxon:575584
+        - uniprot.proteome:UP000498640
+        aliases:
+        - A. baumannii ATCC 19606
+        annotations:
+          sources: GO
+      SP_ANOCA:
+        description: 'Anolis carolinensis (Green anole (American chameleon)) - Proteome:
+          UP000001646'
+        meaning: NCBITaxon:28377
+        title: Anolis carolinensis
+        exact_mappings:
+        - NCBITaxon:28377
+        - uniprot.proteome:UP000001646
+        aliases:
+        - Green anole (American chameleon)
+        annotations:
+          sources: GO
+      SP_ANOGA:
+        description: 'Anopheles gambiae (African malaria mosquito) - Proteome: UP000007062'
+        meaning: NCBITaxon:7165
+        title: Anopheles gambiae
+        exact_mappings:
+        - NCBITaxon:7165
+        - uniprot.proteome:UP000007062
+        aliases:
+        - African malaria mosquito
+        annotations:
+          sources: GO
+      SP_AQUAE:
+        description: 'Aquifex aeolicus (aquaficae bacteria) - Proteome: UP000000798'
+        meaning: NCBITaxon:224324
+        title: Aquifex aeolicus
+        exact_mappings:
+        - NCBITaxon:224324
+        - uniprot.proteome:UP000000798
+        aliases:
+        - aquaficae bacteria
+        annotations:
+          sources: GO
       SP_ARATH:
-        description: 'Arabidopsis thaliana (Thale cress) - Proteome: UP000006548'
+        description: 'Arabidopsis thaliana (Mouse-ear cress) - Proteome: UP000006548'
         meaning: NCBITaxon:3702
         title: Arabidopsis thaliana
         exact_mappings:
         - NCBITaxon:3702
         - uniprot.proteome:UP000006548
         aliases:
-        - Thale cress
+        - Mouse-ear cress
+        annotations:
+          sources: common, GO
+      SP_ASPFU:
+        description: 'Neosartorya fumigata (ascomycote fungus) - Proteome: UP000002530'
+        meaning: NCBITaxon:330879
+        title: Neosartorya fumigata
+        exact_mappings:
+        - NCBITaxon:330879
+        - uniprot.proteome:UP000002530
+        aliases:
+        - ascomycote fungus
+        annotations:
+          sources: GO
+      SP_BACAN:
+        description: 'Bacillus anthracis - Proteome: UP000000594'
+        meaning: NCBITaxon:1392
+        title: Bacillus anthracis
+        exact_mappings:
+        - NCBITaxon:1392
+        - uniprot.proteome:UP000000594
+        annotations:
+          sources: GO
+      SP_BACCR:
+        description: 'Bacillus cereus (bacillus cereus) - Proteome: UP000001417'
+        meaning: NCBITaxon:226900
+        title: Bacillus cereus
+        exact_mappings:
+        - NCBITaxon:226900
+        - uniprot.proteome:UP000001417
+        aliases:
+        - bacillus cereus
+        annotations:
+          sources: GO
       SP_BACSU:
-        description: 'Bacillus subtilis subsp. subtilis str. 168 - Proteome: UP000001570'
+        description: 'Bacillus subtilis subsp. subtilis str. 168 (b subtilis) - Proteome:
+          UP000001570'
         meaning: NCBITaxon:224308
         title: Bacillus subtilis subsp. subtilis str. 168
         exact_mappings:
         - NCBITaxon:224308
         - uniprot.proteome:UP000001570
+        aliases:
+        - b subtilis
+        annotations:
+          sources: common, GO
+      SP_BACTN:
+        description: 'Bacteroides thetaiotaomicron (bacteroidetes bacteria) - Proteome:
+          UP000001414'
+        meaning: NCBITaxon:226186
+        title: Bacteroides thetaiotaomicron
+        exact_mappings:
+        - NCBITaxon:226186
+        - uniprot.proteome:UP000001414
+        aliases:
+        - bacteroidetes bacteria
+        annotations:
+          sources: GO
+      SP_BATDJ:
+        description: 'Batrachochytrium dendrobatidis (Frog chytrid fungus) - Proteome:
+          UP000007241'
+        meaning: NCBITaxon:684364
+        title: Batrachochytrium dendrobatidis
+        exact_mappings:
+        - NCBITaxon:684364
+        - uniprot.proteome:UP000007241
+        aliases:
+        - Frog chytrid fungus
+        annotations:
+          sources: GO
       SP_BOVIN:
         description: 'Bos taurus (Cattle) - Proteome: UP000009136'
         meaning: NCBITaxon:9913
@@ -873,13 +1216,130 @@ enums:
         - uniprot.proteome:UP000009136
         aliases:
         - Cattle
+        annotations:
+          sources: common, GO
+      SP_BRACM:
+        description: 'Brassica campestris (Field mustard) - Proteome: UP000011750'
+        meaning: NCBITaxon:3711
+        title: Brassica campestris
+        exact_mappings:
+        - NCBITaxon:3711
+        - uniprot.proteome:UP000011750
+        aliases:
+        - Field mustard
+        annotations:
+          sources: GO
+      SP_BRADI:
+        description: 'Brachypodium distachyon (Purple false brome) - Proteome: UP000008810'
+        meaning: NCBITaxon:15368
+        title: Brachypodium distachyon
+        exact_mappings:
+        - NCBITaxon:15368
+        - uniprot.proteome:UP000008810
+        aliases:
+        - Purple false brome
+        annotations:
+          sources: GO
+      SP_BRADU:
+        description: 'Bradyrhizobium diazoefficiens (alphaproteobacteria) - Proteome:
+          UP000002526'
+        meaning: NCBITaxon:224911
+        title: Bradyrhizobium diazoefficiens
+        exact_mappings:
+        - NCBITaxon:224911
+        - uniprot.proteome:UP000002526
+        aliases:
+        - alphaproteobacteria
+        annotations:
+          sources: GO
+      SP_BRAFL:
+        description: 'Branchiostoma floridae (Florida lancelet (Amphioxus)) - Proteome:
+          UP000001554'
+        meaning: NCBITaxon:7739
+        title: Branchiostoma floridae
+        exact_mappings:
+        - NCBITaxon:7739
+        - uniprot.proteome:UP000001554
+        aliases:
+        - Florida lancelet (Amphioxus)
+        annotations:
+          sources: GO
+      SP_CAEBR:
+        description: 'Caenorhabditis briggsae (nematode worm) - Proteome: UP000008549'
+        meaning: NCBITaxon:6238
+        title: Caenorhabditis briggsae
+        exact_mappings:
+        - NCBITaxon:6238
+        - uniprot.proteome:UP000008549
+        aliases:
+        - nematode worm
+        annotations:
+          sources: GO
       SP_CAEEL:
-        description: 'Caenorhabditis elegans - Proteome: UP000001940'
+        description: 'Caenorhabditis elegans (nematode worm) - Proteome: UP000001940'
         meaning: NCBITaxon:6239
         title: Caenorhabditis elegans
         exact_mappings:
         - NCBITaxon:6239
         - uniprot.proteome:UP000001940
+        aliases:
+        - nematode worm
+        annotations:
+          sources: common, GO
+      SP_CAMJE:
+        description: 'Campylobacter jejuni subsp. jejuni serotype O:2 (strain ATCC
+          700819 / NCTC 11168) - Proteome: UP000000799'
+        meaning: NCBITaxon:192222
+        title: Campylobacter jejuni subsp. jejuni serotype O:2 (strain ATCC 700819
+          / NCTC 11168)
+        exact_mappings:
+        - NCBITaxon:192222
+        - uniprot.proteome:UP000000799
+        annotations:
+          sources: GO
+      SP_CANAL:
+        description: 'Candida albicans (Yeast) - Proteome: UP000000559'
+        meaning: NCBITaxon:237561
+        title: Candida albicans
+        exact_mappings:
+        - NCBITaxon:237561
+        - uniprot.proteome:UP000000559
+        aliases:
+        - Yeast
+        annotations:
+          sources: GO
+      SP_CANCO:
+        description: 'Candida orthopsilosis (strain 90-125) (Co 90-125) - Proteome:
+          UP000005018'
+        meaning: NCBITaxon:1136231
+        title: Candida orthopsilosis (strain 90-125) (Co 90-125)
+        exact_mappings:
+        - NCBITaxon:1136231
+        - uniprot.proteome:UP000005018
+        annotations:
+          sources: GO
+      SP_CANDC:
+        description: 'Candida dubliniensis (strain CD36 / ATCC MYA-646 / CBS 7987
+          / NCPF 3949 / NRRL Y-17841) - Proteome: UP000002605'
+        meaning: NCBITaxon:573826
+        title: Candida dubliniensis (strain CD36 / ATCC MYA-646 / CBS 7987 / NCPF
+          3949 / NRRL Y-17841)
+        exact_mappings:
+        - NCBITaxon:573826
+        - uniprot.proteome:UP000002605
+        annotations:
+          sources: GO
+      SP_CANGB:
+        description: 'Candida glabrata (strain ATCC 2001 / BCRC 20586 / JCM 3761 /
+          NBRC 0622 / NRRL Y-65 / CBS 138) (Nakaseomyces glabratus) - Proteome: UP000002428'
+        meaning: NCBITaxon:284593
+        title: Candida glabrata (strain ATCC 2001 / BCRC 20586 / JCM 3761 / NBRC 0622
+          / NRRL Y-65 / CBS 138) (Nakaseomyces glabratus)
+        exact_mappings:
+        - NCBITaxon:284593
+        - uniprot.proteome:UP000002428
+        annotations:
+          sources: GO
       SP_CANLF:
         description: 'Canis lupus familiaris (Dog) - Proteome: UP000805418'
         meaning: NCBITaxon:9615
@@ -889,6 +1349,27 @@ enums:
         - uniprot.proteome:UP000805418
         aliases:
         - Dog
+        annotations:
+          sources: common, GO
+      SP_CANPA:
+        description: 'Candida parapsilosis (strain CDC 317 / ATCC MYA-4646) - Proteome:
+          UP000005221'
+        meaning: NCBITaxon:578454
+        title: Candida parapsilosis (strain CDC 317 / ATCC MYA-4646)
+        exact_mappings:
+        - NCBITaxon:578454
+        - uniprot.proteome:UP000005221
+        annotations:
+          sources: GO
+      SP_CANTI:
+        description: 'Candida tropicalis (strain ATCC MYA-3404 / T1) - Proteome: UP000002037'
+        meaning: NCBITaxon:294747
+        title: Candida tropicalis (strain ATCC MYA-3404 / T1)
+        exact_mappings:
+        - NCBITaxon:294747
+        - uniprot.proteome:UP000002037
+        annotations:
+          sources: GO
       SP_CHICK:
         description: 'Gallus gallus (Chicken) - Proteome: UP000000539'
         meaning: NCBITaxon:9031
@@ -898,6 +1379,107 @@ enums:
         - uniprot.proteome:UP000000539
         aliases:
         - Chicken
+        annotations:
+          sources: common, GO
+      SP_CHLAA:
+        description: 'Chloroflexus aurantiacus (chloroflexi bacteria) - Proteome:
+          UP000002008'
+        meaning: NCBITaxon:324602
+        title: Chloroflexus aurantiacus
+        exact_mappings:
+        - NCBITaxon:324602
+        - uniprot.proteome:UP000002008
+        aliases:
+        - chloroflexi bacteria
+        annotations:
+          sources: GO
+      SP_CHLRE:
+        description: 'Chlamydomonas reinhardtii (green algae) - Proteome: UP000006906'
+        meaning: NCBITaxon:3055
+        title: Chlamydomonas reinhardtii
+        exact_mappings:
+        - NCBITaxon:3055
+        - uniprot.proteome:UP000006906
+        aliases:
+        - green algae
+        annotations:
+          sources: GO
+      SP_CHLTR:
+        description: 'Chlamydia trachomatis (chlamydia) - Proteome: UP000000431'
+        meaning: NCBITaxon:272561
+        title: Chlamydia trachomatis
+        exact_mappings:
+        - NCBITaxon:272561
+        - uniprot.proteome:UP000000431
+        aliases:
+        - chlamydia
+        annotations:
+          sources: GO
+      SP_CIOIN:
+        description: 'Ciona intestinalis (Transparent sea squirt) - Proteome: UP000008144'
+        meaning: NCBITaxon:7719
+        title: Ciona intestinalis
+        exact_mappings:
+        - NCBITaxon:7719
+        - uniprot.proteome:UP000008144
+        aliases:
+        - Transparent sea squirt
+        annotations:
+          sources: GO
+      SP_CITK8:
+        description: 'Citrobacter koseri (strain ATCC BAA-895 / CDC 4225-83 / SGSC4696)
+          - Proteome: UP000008148'
+        meaning: NCBITaxon:290338
+        title: Citrobacter koseri (strain ATCC BAA-895 / CDC 4225-83 / SGSC4696)
+        exact_mappings:
+        - NCBITaxon:290338
+        - uniprot.proteome:UP000008148
+        annotations:
+          sources: GO
+      SP_CLALU:
+        description: 'Clavispora lusitaniae (strain ATCC 42720) - Proteome: UP000007703'
+        meaning: NCBITaxon:306902
+        title: Clavispora lusitaniae (strain ATCC 42720)
+        exact_mappings:
+        - NCBITaxon:306902
+        - uniprot.proteome:UP000007703
+        annotations:
+          sources: GO
+      SP_CLOBH:
+        description: 'Clostridium botulinum (firmicutes bacteria) - Proteome: UP000001986'
+        meaning: NCBITaxon:441771
+        title: Clostridium botulinum
+        exact_mappings:
+        - NCBITaxon:441771
+        - uniprot.proteome:UP000001986
+        aliases:
+        - firmicutes bacteria
+        annotations:
+          sources: GO
+      SP_COXBU:
+        description: 'Coxiella burnetii (gammaproteobacteria) - Proteome: UP000002671'
+        meaning: NCBITaxon:227377
+        title: Coxiella burnetii
+        exact_mappings:
+        - NCBITaxon:227377
+        - uniprot.proteome:UP000002671
+        aliases:
+        - gammaproteobacteria
+        annotations:
+          sources: GO
+      SP_CRYD1:
+        description: 'Cryptococcus neoformans var. neoformans serotype D (Filobasidiella
+          neoformans) (C. neoformans) - Proteome: UP000002149'
+        meaning: NCBITaxon:214684
+        title: Cryptococcus neoformans var. neoformans serotype D (Filobasidiella
+          neoformans)
+        exact_mappings:
+        - NCBITaxon:214684
+        - uniprot.proteome:UP000002149
+        aliases:
+        - C. neoformans
+        annotations:
+          sources: GO
       SP_DANRE:
         description: 'Danio rerio (Zebrafish) - Proteome: UP000000437'
         meaning: NCBITaxon:7955
@@ -907,6 +1489,74 @@ enums:
         - uniprot.proteome:UP000000437
         aliases:
         - Zebrafish
+        annotations:
+          sources: common, GO
+      SP_DAPPU:
+        description: 'Daphnia pulex (Water flea) - Proteome: UP000000305'
+        meaning: NCBITaxon:6669
+        title: Daphnia pulex
+        exact_mappings:
+        - NCBITaxon:6669
+        - uniprot.proteome:UP000000305
+        aliases:
+        - Water flea
+        annotations:
+          sources: GO
+      SP_DEBHA:
+        description: 'Debaryomyces hansenii (strain ATCC 36239 / CBS 767 / BCRC 21394
+          / JCM 1990 / NBRC 0083 / IGC 2968) (Torulaspora hansenii) - Proteome: UP000000599'
+        meaning: NCBITaxon:284592
+        title: Debaryomyces hansenii (strain ATCC 36239 / CBS 767 / BCRC 21394 / JCM
+          1990 / NBRC 0083 / IGC 2968) (Torulaspora hansenii)
+        exact_mappings:
+        - NCBITaxon:284592
+        - uniprot.proteome:UP000000599
+        annotations:
+          sources: GO
+      SP_DEIRA:
+        description: 'Deinococcus radiodurans (deinococcus bacteria) - Proteome: UP000002524'
+        meaning: NCBITaxon:243230
+        title: Deinococcus radiodurans
+        exact_mappings:
+        - NCBITaxon:243230
+        - uniprot.proteome:UP000002524
+        aliases:
+        - deinococcus bacteria
+        annotations:
+          sources: GO
+      SP_DICDI:
+        description: 'Dictyostelium discoideum (Social amoeba) - Proteome: UP000002195'
+        meaning: NCBITaxon:44689
+        title: Dictyostelium discoideum
+        exact_mappings:
+        - NCBITaxon:44689
+        - uniprot.proteome:UP000002195
+        aliases:
+        - Social amoeba
+        annotations:
+          sources: GO
+      SP_DICPU:
+        description: 'Dictyostelium purpureum (Slime mold) - Proteome: UP000001064'
+        meaning: NCBITaxon:5786
+        title: Dictyostelium purpureum
+        exact_mappings:
+        - NCBITaxon:5786
+        - uniprot.proteome:UP000001064
+        aliases:
+        - Slime mold
+        annotations:
+          sources: GO
+      SP_DICTD:
+        description: 'Dictyoglomus turgidum (dictyoglomi bacteria) - Proteome: UP000007719'
+        meaning: NCBITaxon:515635
+        title: Dictyoglomus turgidum
+        exact_mappings:
+        - NCBITaxon:515635
+        - uniprot.proteome:UP000007719
+        aliases:
+        - dictyoglomi bacteria
+        annotations:
+          sources: GO
       SP_DROME:
         description: 'Drosophila melanogaster (Fruit fly) - Proteome: UP000000803'
         meaning: NCBITaxon:7227
@@ -916,13 +1566,89 @@ enums:
         - uniprot.proteome:UP000000803
         aliases:
         - Fruit fly
+        annotations:
+          sources: common, GO
+      SP_E. coli ECO57:
+        description: 'Escherichia coli O157:H7 - Proteome: UP000000558'
+        meaning: NCBITaxon:83334
+        title: Escherichia coli O157:H7
+        exact_mappings:
+        - NCBITaxon:83334
+        - uniprot.proteome:UP000000558
+        annotations:
+          sources: GO
       SP_ECOLI:
-        description: 'Escherichia coli K-12 - Proteome: UP000000625'
+        description: 'Escherichia coli K-12 (E. coli) - Proteome: UP000000625'
         meaning: NCBITaxon:83333
         title: Escherichia coli K-12
         exact_mappings:
         - NCBITaxon:83333
         - uniprot.proteome:UP000000625
+        aliases:
+        - E. coli
+        annotations:
+          sources: common, GO
+      SP_EMENI:
+        description: 'Emericella nidulans (ascomycote fungus) - Proteome: UP000000560'
+        meaning: NCBITaxon:227321
+        title: Emericella nidulans
+        exact_mappings:
+        - NCBITaxon:227321
+        - uniprot.proteome:UP000000560
+        aliases:
+        - ascomycote fungus
+        annotations:
+          sources: GO
+      SP_ENTCA:
+        description: 'Enterococcus casseliflavus EC20 - Proteome: UP000012675'
+        meaning: NCBITaxon:565655
+        title: Enterococcus casseliflavus EC20
+        exact_mappings:
+        - NCBITaxon:565655
+        - uniprot.proteome:UP000012675
+        annotations:
+          sources: GO
+      SP_ENTFA:
+        description: 'Enterococcus faecalis (strain ATCC 700802 / V583) - Proteome:
+          UP000001415'
+        meaning: NCBITaxon:226185
+        title: Enterococcus faecalis (strain ATCC 700802 / V583)
+        exact_mappings:
+        - NCBITaxon:226185
+        - uniprot.proteome:UP000001415
+        annotations:
+          sources: GO
+      SP_ENTGA:
+        description: 'Enterococcus gallinarum - Proteome: UP000254807'
+        meaning: NCBITaxon:1353
+        title: Enterococcus gallinarum
+        exact_mappings:
+        - NCBITaxon:1353
+        - uniprot.proteome:UP000254807
+        annotations:
+          sources: GO
+      SP_ENTH1:
+        description: 'Entamoeba histolytica (amoeba) - Proteome: UP000001926'
+        meaning: NCBITaxon:294381
+        title: Entamoeba histolytica
+        exact_mappings:
+        - NCBITaxon:294381
+        - uniprot.proteome:UP000001926
+        aliases:
+        - amoeba
+        annotations:
+          sources: GO
+      SP_EREGS:
+        description: 'Eremothecium gossypii (Yeast) - Proteome: UP000000591'
+        meaning: NCBITaxon:284811
+        title: Eremothecium gossypii
+        exact_mappings:
+        - NCBITaxon:284811
+        - uniprot.proteome:UP000000591
+        aliases:
+        - Yeast
+        annotations:
+          sources: GO
       SP_FELCA:
         description: 'Felis catus (Cat) - Proteome: UP000011712'
         meaning: NCBITaxon:9685
@@ -932,6 +1658,65 @@ enums:
         - uniprot.proteome:UP000011712
         aliases:
         - Cat
+        annotations:
+          sources: common, GO
+      SP_FMDVO:
+        description: 'Foot-and-mouth disease virus serotype O (FMDV) (FMDV) - Proteome:
+          UP000008765'
+        meaning: NCBITaxon:12118
+        title: Foot-and-mouth disease virus serotype O (FMDV)
+        exact_mappings:
+        - NCBITaxon:12118
+        - uniprot.proteome:UP000008765
+        aliases:
+        - FMDV
+        annotations:
+          sources: GO
+      SP_FUSNN:
+        description: 'Fusobacterium nucleatum (strain ATCC 25586) (F. nucleatum ATCC
+          25586) - Proteome: UP000241660'
+        meaning: NCBITaxon:190304
+        title: Fusobacterium nucleatum (strain ATCC 25586)
+        exact_mappings:
+        - NCBITaxon:190304
+        - uniprot.proteome:UP000241660
+        aliases:
+        - F. nucleatum ATCC 25586
+        annotations:
+          sources: GO
+      SP_GEOSL:
+        description: 'Geobacter sulfurreducens (deltaproteobacteria) - Proteome: UP000000577'
+        meaning: NCBITaxon:243231
+        title: Geobacter sulfurreducens
+        exact_mappings:
+        - NCBITaxon:243231
+        - uniprot.proteome:UP000000577
+        aliases:
+        - deltaproteobacteria
+        annotations:
+          sources: GO
+      SP_GIAIC:
+        description: 'Giardia intestinalis (giardia) - Proteome: UP000001548'
+        meaning: NCBITaxon:184922
+        title: Giardia intestinalis
+        exact_mappings:
+        - NCBITaxon:184922
+        - uniprot.proteome:UP000001548
+        aliases:
+        - giardia
+        annotations:
+          sources: GO
+      SP_GLOVI:
+        description: 'Gloeobacter violaceus (cyanobacteria) - Proteome: UP000000557'
+        meaning: NCBITaxon:251221
+        title: Gloeobacter violaceus
+        exact_mappings:
+        - NCBITaxon:251221
+        - uniprot.proteome:UP000000557
+        aliases:
+        - cyanobacteria
+        annotations:
+          sources: GO
       SP_GORGO:
         description: 'Gorilla gorilla gorilla (Western lowland gorilla) - Proteome:
           UP000001519'
@@ -942,7 +1727,147 @@ enums:
         - uniprot.proteome:UP000001519
         aliases:
         - Western lowland gorilla
-        - Gorilla gorilla
+        annotations:
+          sources: common, GO
+      SP_GOSHI:
+        description: 'Gossypium hirsutum (Upland cotton) - Proteome: UP000189702'
+        meaning: NCBITaxon:3635
+        title: Gossypium hirsutum
+        exact_mappings:
+        - NCBITaxon:3635
+        - uniprot.proteome:UP000189702
+        aliases:
+        - Upland cotton
+        annotations:
+          sources: GO
+      SP_HAEIN:
+        description: 'Haemophilus influenzae (strain ATCC 51907 / DSM 11121 / KW20
+          / Rd) (H. influenzae strain ATCC 51907) - Proteome: UP000000579'
+        meaning: NCBITaxon:71421
+        title: Haemophilus influenzae (strain ATCC 51907 / DSM 11121 / KW20 / Rd)
+        exact_mappings:
+        - NCBITaxon:71421
+        - uniprot.proteome:UP000000579
+        aliases:
+        - H. influenzae strain ATCC 51907
+        annotations:
+          sources: GO
+      SP_HALH5:
+        description: 'Halalkalibacterium halodurans (strain ATCC BAA-125 / DSM 18197
+          / FERM 7344 / JCM 9153 / C-125) (Bacillus halodurans) - Proteome: UP000001258'
+        meaning: NCBITaxon:272558
+        title: Halalkalibacterium halodurans (strain ATCC BAA-125 / DSM 18197 / FERM
+          7344 / JCM 9153 / C-125) (Bacillus halodurans)
+        exact_mappings:
+        - NCBITaxon:272558
+        - uniprot.proteome:UP000001258
+        annotations:
+          sources: GO
+      SP_HALSA:
+        description: 'Halobacterium salinarum (euryarchaea) - Proteome: UP000000554'
+        meaning: NCBITaxon:64091
+        title: Halobacterium salinarum
+        exact_mappings:
+        - NCBITaxon:64091
+        - uniprot.proteome:UP000000554
+        aliases:
+        - euryarchaea
+        annotations:
+          sources: GO
+      SP_HBVCJ:
+        description: 'Hepatitis B virus genotype C subtype ayr (isolate Human/Japan/Okamoto/-)
+          (HBV-C) - Proteome: UP000008591'
+        meaning: NCBITaxon:928302
+        title: Hepatitis B virus genotype C subtype ayr (isolate Human/Japan/Okamoto/-)
+        exact_mappings:
+        - NCBITaxon:928302
+        - uniprot.proteome:UP000008591
+        aliases:
+        - HBV-C
+        annotations:
+          sources: GO
+      SP_HCMVA:
+        description: 'Human cytomegalovirus (strain AD169) (Human herpesvirus 5 (HHV-5))
+          - Proteome: UP000008992'
+        meaning: NCBITaxon:10360
+        title: Human cytomegalovirus (strain AD169)
+        exact_mappings:
+        - NCBITaxon:10360
+        - uniprot.proteome:UP000008992
+        aliases:
+        - Human herpesvirus 5 (HHV-5)
+        annotations:
+          sources: GO
+      SP_HCMVM:
+        description: 'Human cytomegalovirus (Human herpesvirus 5) strain Merlin (HHV-5
+          Merlin) - Proteome: UP000000938'
+        meaning: NCBITaxon:295027
+        title: Human cytomegalovirus (Human herpesvirus 5) strain Merlin
+        exact_mappings:
+        - NCBITaxon:295027
+        - uniprot.proteome:UP000000938
+        aliases:
+        - HHV-5 Merlin
+        annotations:
+          sources: GO
+      SP_HCV77:
+        description: 'Hepatitis C virus genotype 1a (isolate H77) (HCV) - Proteome:
+          UP000000518'
+        meaning: NCBITaxon:63746
+        title: Hepatitis C virus genotype 1a (isolate H77)
+        exact_mappings:
+        - NCBITaxon:63746
+        - uniprot.proteome:UP000000518
+        aliases:
+        - HCV
+        annotations:
+          sources: GO
+      SP_HELAN:
+        description: 'Helianthus annuus (Common sunflower) - Proteome: UP000215914'
+        meaning: NCBITaxon:4232
+        title: Helianthus annuus
+        exact_mappings:
+        - NCBITaxon:4232
+        - uniprot.proteome:UP000215914
+        aliases:
+        - Common sunflower
+        annotations:
+          sources: GO
+      SP_HELPY:
+        description: 'Helicobacter pylori (Campylobacter pylori) strain ATCC 700392
+          / 26695 (H. pylori) - Proteome: UP000000429'
+        meaning: NCBITaxon:85962
+        title: Helicobacter pylori (Campylobacter pylori) strain ATCC 700392 / 26695
+        exact_mappings:
+        - NCBITaxon:85962
+        - uniprot.proteome:UP000000429
+        aliases:
+        - H. pylori
+        annotations:
+          sources: GO
+      SP_HELRO:
+        description: 'Helobdella robusta (Californian leech) - Proteome: UP000015101'
+        meaning: NCBITaxon:6412
+        title: Helobdella robusta
+        exact_mappings:
+        - NCBITaxon:6412
+        - uniprot.proteome:UP000015101
+        aliases:
+        - Californian leech
+        annotations:
+          sources: GO
+      SP_HHV11:
+        description: 'Human herpesvirus 1 (strain 17) (Human herpes simplex virus
+          1 (HHV-1)) - Proteome: UP000009294'
+        meaning: NCBITaxon:10299
+        title: Human herpesvirus 1 (strain 17)
+        exact_mappings:
+        - NCBITaxon:10299
+        - uniprot.proteome:UP000009294
+        aliases:
+        - Human herpes simplex virus 1 (HHV-1)
+        annotations:
+          sources: GO
       SP_HORSE:
         description: 'Equus caballus (Horse) - Proteome: UP000002281'
         meaning: NCBITaxon:9796
@@ -952,6 +1877,29 @@ enums:
         - uniprot.proteome:UP000002281
         aliases:
         - Horse
+        annotations:
+          sources: common, GO
+      SP_HORVV:
+        description: 'Hordeum vulgare subsp. vulgare (Domesticated barley) - Proteome:
+          UP000011116'
+        meaning: NCBITaxon:112509
+        title: Hordeum vulgare subsp. vulgare
+        exact_mappings:
+        - NCBITaxon:112509
+        - uniprot.proteome:UP000011116
+        aliases:
+        - Domesticated barley
+        annotations:
+          sources: GO
+      SP_HPV16:
+        description: 'Human papillomavirus type 16 - Proteome: UP000009251'
+        meaning: NCBITaxon:333760
+        title: Human papillomavirus type 16
+        exact_mappings:
+        - NCBITaxon:333760
+        - uniprot.proteome:UP000009251
+        annotations:
+          sources: GO
       SP_HUMAN:
         description: 'Homo sapiens (Human) - Proteome: UP000005640'
         meaning: NCBITaxon:9606
@@ -961,6 +1909,148 @@ enums:
         - uniprot.proteome:UP000005640
         aliases:
         - Human
+        annotations:
+          sources: common, GO
+      SP_HV1AN:
+        description: 'Human immunodeficiency virus type 1 group O (isolate ANT70)
+          - Proteome: UP000007689'
+        meaning: NCBITaxon:327105
+        title: Human immunodeficiency virus type 1 group O (isolate ANT70)
+        exact_mappings:
+        - NCBITaxon:327105
+        - uniprot.proteome:UP000007689
+        annotations:
+          sources: GO
+      SP_IXOSC:
+        description: 'Ixodes scapularis (Deer tick) - Proteome: UP000001555'
+        meaning: NCBITaxon:6945
+        title: Ixodes scapularis
+        exact_mappings:
+        - NCBITaxon:6945
+        - uniprot.proteome:UP000001555
+        aliases:
+        - Deer tick
+        annotations:
+          sources: GO
+      SP_JUGRE:
+        description: 'Juglans regia (English walnut) - Proteome: UP000235220'
+        meaning: NCBITaxon:51240
+        title: Juglans regia
+        exact_mappings:
+        - NCBITaxon:51240
+        - uniprot.proteome:UP000235220
+        aliases:
+        - English walnut
+        annotations:
+          sources: GO
+      SP_KLENI:
+        description: 'Klebsormidium nitens (Green alga) - Proteome: UP000054558'
+        meaning: NCBITaxon:105231
+        title: Klebsormidium nitens
+        exact_mappings:
+        - NCBITaxon:105231
+        - uniprot.proteome:UP000054558
+        aliases:
+        - Green alga
+        annotations:
+          sources: GO
+      SP_KLEPH:
+        description: 'Klebsiella pneumoniae subsp. pneumoniae (strain HS11286) - Proteome:
+          UP000007841'
+        meaning: NCBITaxon:1125630
+        title: Klebsiella pneumoniae subsp. pneumoniae (strain HS11286)
+        exact_mappings:
+        - NCBITaxon:1125630
+        - uniprot.proteome:UP000007841
+        annotations:
+          sources: GO
+      SP_KLEPO:
+        description: 'Klebsiella pneumoniae subsp. ozaenae (subspecies) - Proteome:
+          UP000255382'
+        meaning: NCBITaxon:574
+        title: Klebsiella pneumoniae subsp. ozaenae (subspecies)
+        exact_mappings:
+        - NCBITaxon:574
+        - uniprot.proteome:UP000255382
+        annotations:
+          sources: GO
+      SP_KORCO:
+        description: 'Korarchaeum cryptofilum (candidatus archaea) - Proteome: UP000001686'
+        meaning: NCBITaxon:374847
+        title: Korarchaeum cryptofilum
+        exact_mappings:
+        - NCBITaxon:374847
+        - uniprot.proteome:UP000001686
+        aliases:
+        - candidatus archaea
+        annotations:
+          sources: GO
+      SP_LACSA:
+        description: 'Lactuca sativa (Garden lettuce) - Proteome: UP000235145'
+        meaning: NCBITaxon:4236
+        title: Lactuca sativa
+        exact_mappings:
+        - NCBITaxon:4236
+        - uniprot.proteome:UP000235145
+        aliases:
+        - Garden lettuce
+        annotations:
+          sources: GO
+      SP_LEIMA:
+        description: 'Leishmania major strain Friedlin (leishmania) - Proteome: UP000000542'
+        meaning: NCBITaxon:347515
+        title: Leishmania major strain Friedlin
+        exact_mappings:
+        - NCBITaxon:347515
+        - uniprot.proteome:UP000000542
+        aliases:
+        - leishmania
+        annotations:
+          sources: GO
+      SP_LEPIN:
+        description: 'Leptospira interrogans (spirochaetes bacteria) - Proteome: UP000001408'
+        meaning: NCBITaxon:189518
+        title: Leptospira interrogans
+        exact_mappings:
+        - NCBITaxon:189518
+        - uniprot.proteome:UP000001408
+        aliases:
+        - spirochaetes bacteria
+        annotations:
+          sources: GO
+      SP_LEPOC:
+        description: 'Lepisosteus oculatus (Spotted gar) - Proteome: UP000018468'
+        meaning: NCBITaxon:7918
+        title: Lepisosteus oculatus
+        exact_mappings:
+        - NCBITaxon:7918
+        - uniprot.proteome:UP000018468
+        aliases:
+        - Spotted gar
+        annotations:
+          sources: GO
+      SP_LISMO:
+        description: 'Listeria monocytogenes serovar 1/2a (strain ATCC BAA-679 / EGD-e)
+          - Proteome: UP000000817'
+        meaning: NCBITaxon:169963
+        title: Listeria monocytogenes serovar 1/2a (strain ATCC BAA-679 / EGD-e)
+        exact_mappings:
+        - NCBITaxon:169963
+        - uniprot.proteome:UP000000817
+        annotations:
+          sources: GO
+      SP_LODEL:
+        description: 'Lodderomyces elongisporus (strain ATCC 11503 / CBS 2605 / JCM
+          1781 / NBRC 1676 / NRRL YB-4239) (Saccharomyces elongisporus) - Proteome:
+          UP000001996'
+        meaning: NCBITaxon:379508
+        title: Lodderomyces elongisporus (strain ATCC 11503 / CBS 2605 / JCM 1781
+          / NBRC 1676 / NRRL YB-4239) (Saccharomyces elongisporus)
+        exact_mappings:
+        - NCBITaxon:379508
+        - uniprot.proteome:UP000001996
+        annotations:
+          sources: GO
       SP_MACMU:
         description: 'Macaca mulatta (Rhesus macaque) - Proteome: UP000006718'
         meaning: NCBITaxon:9544
@@ -970,6 +2060,8 @@ enums:
         - uniprot.proteome:UP000006718
         aliases:
         - Rhesus macaque
+        annotations:
+          sources: common, GO
       SP_MAIZE:
         description: 'Zea mays (Maize) - Proteome: UP000007305'
         meaning: NCBITaxon:4577
@@ -979,6 +2071,99 @@ enums:
         - uniprot.proteome:UP000007305
         aliases:
         - Maize
+        annotations:
+          sources: common, GO
+      SP_MANES:
+        description: 'Manihot esculenta (Cassava) - Proteome: UP000091857'
+        meaning: NCBITaxon:3983
+        title: Manihot esculenta
+        exact_mappings:
+        - NCBITaxon:3983
+        - uniprot.proteome:UP000091857
+        aliases:
+        - Cassava
+        annotations:
+          sources: GO
+      SP_MARPO:
+        description: 'Marchantia polymorpha (Common liverwort) - Proteome: UP000244005'
+        meaning: NCBITaxon:3197
+        title: Marchantia polymorpha
+        exact_mappings:
+        - NCBITaxon:3197
+        - uniprot.proteome:UP000244005
+        aliases:
+        - Common liverwort
+        annotations:
+          sources: GO
+      SP_MEASC:
+        description: 'Measles virus (Subacute sclerose panencephalitis virus) strain
+          Ichinose-B95a (MeV strain Ichinose-B95a) - Proteome: UP000008699'
+        meaning: NCBITaxon:645098
+        title: Measles virus (Subacute sclerose panencephalitis virus) strain Ichinose-B95a
+        exact_mappings:
+        - NCBITaxon:645098
+        - uniprot.proteome:UP000008699
+        aliases:
+        - MeV strain Ichinose-B95a
+        annotations:
+          sources: GO
+      SP_MEDTR:
+        description: 'Medicago truncatula (Barrel medic) - Proteome: UP000002051'
+        meaning: NCBITaxon:3880
+        title: Medicago truncatula
+        exact_mappings:
+        - NCBITaxon:3880
+        - uniprot.proteome:UP000002051
+        aliases:
+        - Barrel medic
+        annotations:
+          sources: GO
+      SP_METAC:
+        description: 'Methanosarcina acetivorans (euryarchaea) - Proteome: UP000002487'
+        meaning: NCBITaxon:188937
+        title: Methanosarcina acetivorans
+        exact_mappings:
+        - NCBITaxon:188937
+        - uniprot.proteome:UP000002487
+        aliases:
+        - euryarchaea
+        annotations:
+          sources: GO
+      SP_METJA:
+        description: 'Methanocaldococcus jannaschii (methanococci archaea) - Proteome:
+          UP000000805'
+        meaning: NCBITaxon:243232
+        title: Methanocaldococcus jannaschii
+        exact_mappings:
+        - NCBITaxon:243232
+        - uniprot.proteome:UP000000805
+        aliases:
+        - methanococci archaea
+        annotations:
+          sources: GO
+      SP_MONBE:
+        description: 'Monosiga brevicollis (sponge) - Proteome: UP000001357'
+        meaning: NCBITaxon:81824
+        title: Monosiga brevicollis
+        exact_mappings:
+        - NCBITaxon:81824
+        - uniprot.proteome:UP000001357
+        aliases:
+        - sponge
+        annotations:
+          sources: GO
+      SP_MONDO:
+        description: 'Monodelphis domestica (Gray short-tailed opossum) - Proteome:
+          UP000002280'
+        meaning: NCBITaxon:13616
+        title: Monodelphis domestica
+        exact_mappings:
+        - NCBITaxon:13616
+        - uniprot.proteome:UP000002280
+        aliases:
+        - Gray short-tailed opossum
+        annotations:
+          sources: GO
       SP_MOUSE:
         description: 'Mus musculus (Mouse) - Proteome: UP000000589'
         meaning: NCBITaxon:10090
@@ -988,6 +2173,150 @@ enums:
         - uniprot.proteome:UP000000589
         aliases:
         - Mouse
+        annotations:
+          sources: common, GO
+      SP_MYCGE:
+        description: 'Mycoplasma genitalium (mollicutes bacteria) - Proteome: UP000000807'
+        meaning: NCBITaxon:243273
+        title: Mycoplasma genitalium
+        exact_mappings:
+        - NCBITaxon:243273
+        - uniprot.proteome:UP000000807
+        aliases:
+        - mollicutes bacteria
+        annotations:
+          sources: GO
+      SP_MYCMD:
+        description: 'Mycosarcoma maydis (Ustilago maydis) (Corn smut fungus) - Proteome:
+          UP000000561'
+        meaning: NCBITaxon:5270
+        title: Mycosarcoma maydis (Ustilago maydis)
+        exact_mappings:
+        - NCBITaxon:5270
+        - uniprot.proteome:UP000000561
+        aliases:
+        - Corn smut fungus
+        annotations:
+          sources: GO
+      SP_MYCPN:
+        description: 'Mycoplasma pneumoniae strain ATCC 29342 / M129 / Subtype 1 -
+          Proteome: UP000000808'
+        meaning: NCBITaxon:272634
+        title: Mycoplasma pneumoniae strain ATCC 29342 / M129 / Subtype 1
+        exact_mappings:
+        - NCBITaxon:272634
+        - uniprot.proteome:UP000000808
+        annotations:
+          sources: GO
+      SP_MYCTA:
+        description: 'Mycobacterium tuberculosis (strain ATCC 25177 / H37Ra) - Proteome:
+          UP000001988'
+        meaning: NCBITaxon:419947
+        title: Mycobacterium tuberculosis (strain ATCC 25177 / H37Ra)
+        exact_mappings:
+        - NCBITaxon:419947
+        - uniprot.proteome:UP000001988
+        annotations:
+          sources: GO
+      SP_MYCTU:
+        description: 'Mycobacterium tuberculosis H37Rv (actinobacteria) - Proteome:
+          UP000001584'
+        meaning: NCBITaxon:83332
+        title: Mycobacterium tuberculosis H37Rv
+        exact_mappings:
+        - NCBITaxon:83332
+        - uniprot.proteome:UP000001584
+        aliases:
+        - actinobacteria
+        annotations:
+          sources: GO
+      SP_NEIMB:
+        description: 'Neisseria meningitidis serogroup B (strain ATCC BAA-335 / MC58)
+          (betaproteobacteria) - Proteome: UP000000425'
+        meaning: NCBITaxon:122586
+        title: Neisseria meningitidis serogroup B (strain ATCC BAA-335 / MC58)
+        exact_mappings:
+        - NCBITaxon:122586
+        - uniprot.proteome:UP000000425
+        aliases:
+        - betaproteobacteria
+        annotations:
+          sources: GO
+      SP_NEIME:
+        description: 'Neisseria meningitidis MC58 - Proteome: UP000000425'
+        meaning: NCBITaxon:122586
+        title: Neisseria meningitidis MC58
+        exact_mappings:
+        - NCBITaxon:122586
+        - uniprot.proteome:UP000000425
+        annotations:
+          sources: existing
+      SP_NELNU:
+        description: 'Nelumbo nucifera (Sacred lotus) - Proteome: UP000189703'
+        meaning: NCBITaxon:4432
+        title: Nelumbo nucifera
+        exact_mappings:
+        - NCBITaxon:4432
+        - uniprot.proteome:UP000189703
+        aliases:
+        - Sacred lotus
+        annotations:
+          sources: GO
+      SP_NEMVE:
+        description: 'Nematostella vectensis (Starlet sea anemone) - Proteome: UP000001593'
+        meaning: NCBITaxon:45351
+        title: Nematostella vectensis
+        exact_mappings:
+        - NCBITaxon:45351
+        - uniprot.proteome:UP000001593
+        aliases:
+        - Starlet sea anemone
+        annotations:
+          sources: GO
+      SP_NEUCR:
+        description: 'Neurospora crassa (ascomycote fungus) - Proteome: UP000001805'
+        meaning: NCBITaxon:367110
+        title: Neurospora crassa
+        exact_mappings:
+        - NCBITaxon:367110
+        - uniprot.proteome:UP000001805
+        aliases:
+        - ascomycote fungus
+        annotations:
+          sources: GO
+      SP_NITMS:
+        description: 'Nitrosopumilus maritimus (thaumarchaea) - Proteome: UP000000792'
+        meaning: NCBITaxon:436308
+        title: Nitrosopumilus maritimus
+        exact_mappings:
+        - NCBITaxon:436308
+        - uniprot.proteome:UP000000792
+        aliases:
+        - thaumarchaea
+        annotations:
+          sources: GO
+      SP_ORNAN:
+        description: 'Ornithorhynchus anatinus (Duckbill platypus) - Proteome: UP000002279'
+        meaning: NCBITaxon:9258
+        title: Ornithorhynchus anatinus
+        exact_mappings:
+        - NCBITaxon:9258
+        - uniprot.proteome:UP000002279
+        aliases:
+        - Duckbill platypus
+        annotations:
+          sources: GO
+      SP_ORYLA:
+        description: 'Oryzias latipes (Japanese rice fish) - Proteome: UP000001038'
+        meaning: NCBITaxon:8090
+        title: Oryzias latipes
+        exact_mappings:
+        - NCBITaxon:8090
+        - uniprot.proteome:UP000001038
+        aliases:
+        - Japanese rice fish
+        annotations:
+          sources: GO
       SP_ORYSJ:
         description: 'Oryza sativa subsp. japonica (Rice) - Proteome: UP000059680'
         meaning: NCBITaxon:39947
@@ -997,7 +2326,8 @@ enums:
         - uniprot.proteome:UP000059680
         aliases:
         - Rice
-        - Oryza sativa Japonica Group
+        annotations:
+          sources: common, GO
       SP_PANTR:
         description: 'Pan troglodytes (Chimpanzee) - Proteome: UP000002277'
         meaning: NCBITaxon:9598
@@ -1007,6 +2337,76 @@ enums:
         - uniprot.proteome:UP000002277
         aliases:
         - Chimpanzee
+        annotations:
+          sources: common, GO
+      SP_PARTE:
+        description: 'Paramecium tetraurelia (alveolate) - Proteome: UP000000600'
+        meaning: NCBITaxon:5888
+        title: Paramecium tetraurelia
+        exact_mappings:
+        - NCBITaxon:5888
+        - uniprot.proteome:UP000000600
+        aliases:
+        - alveolate
+        annotations:
+          sources: GO
+      SP_PEA:
+        description: 'Pisum sativum (Garden pea) - Proteome: UP001058974'
+        meaning: NCBITaxon:3888
+        title: Pisum sativum
+        exact_mappings:
+        - NCBITaxon:3888
+        - uniprot.proteome:UP001058974
+        aliases:
+        - Garden pea
+        annotations:
+          sources: common
+      SP_PHANO:
+        description: 'Phaeosphaeria nodorum (Glume blotch fungus) - Proteome: UP000663193'
+        meaning: NCBITaxon:321614
+        title: Phaeosphaeria nodorum
+        exact_mappings:
+        - NCBITaxon:321614
+        - uniprot.proteome:UP000663193
+        aliases:
+        - Glume blotch fungus
+        annotations:
+          sources: GO
+      SP_PHYPA:
+        description: 'Physcomitrella patens (Spreading-leaved earth moss) - Proteome:
+          UP000006727'
+        meaning: NCBITaxon:3218
+        title: Physcomitrella patens
+        exact_mappings:
+        - NCBITaxon:3218
+        - uniprot.proteome:UP000006727
+        aliases:
+        - Spreading-leaved earth moss
+        annotations:
+          sources: GO
+      SP_PHYRM:
+        description: 'Phytophthora ramorum (Sudden oak death agent) - Proteome: UP000005238'
+        meaning: NCBITaxon:164328
+        title: Phytophthora ramorum
+        exact_mappings:
+        - NCBITaxon:164328
+        - uniprot.proteome:UP000005238
+        aliases:
+        - Sudden oak death agent
+        annotations:
+          sources: GO
+      SP_PICGU:
+        description: 'Meyerozyma guilliermondii (strain ATCC 6260 / CBS 566 / DSM
+          6381 / JCM 1539 / NBRC 10279 / NRRL Y-324) (Candida guilliermondii) - Proteome:
+          UP000001997'
+        meaning: NCBITaxon:294746
+        title: Meyerozyma guilliermondii (strain ATCC 6260 / CBS 566 / DSM 6381 /
+          JCM 1539 / NBRC 10279 / NRRL Y-324) (Candida guilliermondii)
+        exact_mappings:
+        - NCBITaxon:294746
+        - uniprot.proteome:UP000001997
+        annotations:
+          sources: GO
       SP_PIG:
         description: 'Sus scrofa (Pig) - Proteome: UP000008227'
         meaning: NCBITaxon:9823
@@ -1016,6 +2416,86 @@ enums:
         - uniprot.proteome:UP000008227
         aliases:
         - Pig
+        annotations:
+          sources: common, GO
+      SP_PLAF7:
+        description: 'Plasmodium falciparum 3D7 (Malaria parasite) - Proteome: UP000001450'
+        meaning: NCBITaxon:36329
+        title: Plasmodium falciparum 3D7
+        exact_mappings:
+        - NCBITaxon:36329
+        - uniprot.proteome:UP000001450
+        aliases:
+        - Malaria parasite
+        annotations:
+          sources: GO
+      SP_POPTR:
+        description: 'Populus trichocarpa (Western balsam poplar) - Proteome: UP000006729'
+        meaning: NCBITaxon:3694
+        title: Populus trichocarpa
+        exact_mappings:
+        - NCBITaxon:3694
+        - uniprot.proteome:UP000006729
+        aliases:
+        - Western balsam poplar
+        annotations:
+          sources: GO
+      SP_PRIPA:
+        description: 'Pristionchus pacificus (Parasitic nematode) - Proteome: UP000005239'
+        meaning: NCBITaxon:54126
+        title: Pristionchus pacificus
+        exact_mappings:
+        - NCBITaxon:54126
+        - uniprot.proteome:UP000005239
+        aliases:
+        - Parasitic nematode
+        annotations:
+          sources: GO
+      SP_PRUPE:
+        description: 'Prunus persica (Peach) - Proteome: UP000006882'
+        meaning: NCBITaxon:3760
+        title: Prunus persica
+        exact_mappings:
+        - NCBITaxon:3760
+        - uniprot.proteome:UP000006882
+        aliases:
+        - Peach
+        annotations:
+          sources: GO
+      SP_PSEAE:
+        description: 'Pseudomonas aeruginosa PAO1 (gammaproteobacteria) - Proteome:
+          UP000002438'
+        meaning: NCBITaxon:208964
+        title: Pseudomonas aeruginosa PAO1
+        exact_mappings:
+        - NCBITaxon:208964
+        - uniprot.proteome:UP000002438
+        aliases:
+        - gammaproteobacteria
+        annotations:
+          sources: GO
+      SP_PUCGT:
+        description: 'Puccinia graminis (Black stem rust fungus) - Proteome: UP000008783'
+        meaning: NCBITaxon:418459
+        title: Puccinia graminis
+        exact_mappings:
+        - NCBITaxon:418459
+        - uniprot.proteome:UP000008783
+        aliases:
+        - Black stem rust fungus
+        annotations:
+          sources: GO
+      SP_PYRAE:
+        description: 'Pyrobaculum aerophilum (crenarchaea) - Proteome: UP000002439'
+        meaning: NCBITaxon:178306
+        title: Pyrobaculum aerophilum
+        exact_mappings:
+        - NCBITaxon:178306
+        - uniprot.proteome:UP000002439
+        aliases:
+        - crenarchaea
+        annotations:
+          sources: GO
       SP_RABIT:
         description: 'Oryctolagus cuniculus (Rabbit) - Proteome: UP000001811'
         meaning: NCBITaxon:9986
@@ -1025,6 +2505,8 @@ enums:
         - uniprot.proteome:UP000001811
         aliases:
         - Rabbit
+        annotations:
+          sources: common
       SP_RAT:
         description: 'Rattus norvegicus (Rat) - Proteome: UP000002494'
         meaning: NCBITaxon:10116
@@ -1034,6 +2516,54 @@ enums:
         - uniprot.proteome:UP000002494
         aliases:
         - Rat
+        annotations:
+          sources: common, GO
+      SP_RHOBA:
+        description: 'Rhodopirellula baltica (planctomycetes bacteria) - Proteome:
+          UP000001025'
+        meaning: NCBITaxon:243090
+        title: Rhodopirellula baltica
+        exact_mappings:
+        - NCBITaxon:243090
+        - uniprot.proteome:UP000001025
+        aliases:
+        - planctomycetes bacteria
+        annotations:
+          sources: GO
+      SP_SACS2:
+        description: 'Sulfolobus solfataricus (crenarchaea) - Proteome: UP000001974'
+        meaning: NCBITaxon:273057
+        title: Sulfolobus solfataricus
+        exact_mappings:
+        - NCBITaxon:273057
+        - uniprot.proteome:UP000001974
+        aliases:
+        - crenarchaea
+        annotations:
+          sources: GO
+      SP_SALTY:
+        description: 'Salmonella typhimurium (strain LT2 / SGSC1412 / ATCC 700720)
+          (S. typhimurium LT2) - Proteome: UP000001014'
+        meaning: NCBITaxon:99287
+        title: Salmonella typhimurium (strain LT2 / SGSC1412 / ATCC 700720)
+        exact_mappings:
+        - NCBITaxon:99287
+        - uniprot.proteome:UP000001014
+        aliases:
+        - S. typhimurium LT2
+        annotations:
+          sources: GO
+      SP_SCHJY:
+        description: 'Schizosaccharomyces japonicus (Fission yeast) - Proteome: UP000001744'
+        meaning: NCBITaxon:402676
+        title: Schizosaccharomyces japonicus
+        exact_mappings:
+        - NCBITaxon:402676
+        - uniprot.proteome:UP000001744
+        aliases:
+        - Fission yeast
+        annotations:
+          sources: GO
       SP_SCHPO:
         description: 'Schizosaccharomyces pombe 972h- (Fission yeast) - Proteome:
           UP000002485'
@@ -1044,6 +2574,19 @@ enums:
         - uniprot.proteome:UP000002485
         aliases:
         - Fission yeast
+        annotations:
+          sources: common, GO
+      SP_SCLS1:
+        description: 'Sclerotinia sclerotiorum (White mold) - Proteome: UP000001312'
+        meaning: NCBITaxon:665079
+        title: Sclerotinia sclerotiorum
+        exact_mappings:
+        - NCBITaxon:665079
+        - uniprot.proteome:UP000001312
+        aliases:
+        - White mold
+        annotations:
+          sources: GO
       SP_SHEEP:
         description: 'Ovis aries (Sheep) - Proteome: UP000002356'
         meaning: NCBITaxon:9940
@@ -1053,6 +2596,378 @@ enums:
         - uniprot.proteome:UP000002356
         aliases:
         - Sheep
+        annotations:
+          sources: common
+      SP_SHEON:
+        description: 'Shewanella oneidensis (shewanella) - Proteome: UP000008186'
+        meaning: NCBITaxon:211586
+        title: Shewanella oneidensis
+        exact_mappings:
+        - NCBITaxon:211586
+        - uniprot.proteome:UP000008186
+        aliases:
+        - shewanella
+        annotations:
+          sources: GO
+      SP_SHIFL:
+        description: 'Shigella flexneri - Proteome: UP000001006'
+        meaning: NCBITaxon:623
+        title: Shigella flexneri
+        exact_mappings:
+        - NCBITaxon:623
+        - uniprot.proteome:UP000001006
+        annotations:
+          sources: GO
+      SP_SOLLC:
+        description: 'Solanum lycopersicum (Tomato) - Proteome: UP000004994'
+        meaning: NCBITaxon:4081
+        title: Solanum lycopersicum
+        exact_mappings:
+        - NCBITaxon:4081
+        - uniprot.proteome:UP000004994
+        aliases:
+        - Tomato
+        annotations:
+          sources: GO
+      SP_SORBI:
+        description: 'Sorghum bicolor (Sorghum) - Proteome: UP000000768'
+        meaning: NCBITaxon:4558
+        title: Sorghum bicolor
+        exact_mappings:
+        - NCBITaxon:4558
+        - uniprot.proteome:UP000000768
+        aliases:
+        - Sorghum
+        annotations:
+          sources: GO
+      SP_SOYBN:
+        description: 'Glycine max (Soybean) - Proteome: UP000008827'
+        meaning: NCBITaxon:3847
+        title: Glycine max
+        exact_mappings:
+        - NCBITaxon:3847
+        - uniprot.proteome:UP000008827
+        aliases:
+        - Soybean
+        annotations:
+          sources: GO
+      SP_SPIOL:
+        description: 'Spinacia oleracea (Spinach) - Proteome: UP001155700'
+        meaning: NCBITaxon:3562
+        title: Spinacia oleracea
+        exact_mappings:
+        - NCBITaxon:3562
+        - uniprot.proteome:UP001155700
+        aliases:
+        - Spinach
+        annotations:
+          sources: GO
+      SP_STAA8:
+        description: 'Staphylococcus aureus (strain NCTC 8325 / PS 47) (S. aureus
+          NCTC 8325) - Proteome: UP000008816'
+        meaning: NCBITaxon:93061
+        title: Staphylococcus aureus (strain NCTC 8325 / PS 47)
+        exact_mappings:
+        - NCBITaxon:93061
+        - uniprot.proteome:UP000008816
+        aliases:
+        - S. aureus NCTC 8325
+        annotations:
+          sources: GO
+      SP_STAAU:
+        description: 'Staphylococcus aureus subsp. aureus NCTC 8325 - Proteome: UP000008816'
+        meaning: NCBITaxon:93061
+        title: Staphylococcus aureus subsp. aureus NCTC 8325
+        exact_mappings:
+        - NCBITaxon:93061
+        - uniprot.proteome:UP000008816
+        annotations:
+          sources: existing
+      SP_STRCL:
+        description: 'Streptomyces clavuligerus - Proteome: UP000002357'
+        meaning: NCBITaxon:1901
+        title: Streptomyces clavuligerus
+        exact_mappings:
+        - NCBITaxon:1901
+        - uniprot.proteome:UP000002357
+        annotations:
+          sources: GO
+      SP_STRCO:
+        description: 'Streptomyces coelicolor (actinobacteria) - Proteome: UP000001973'
+        meaning: NCBITaxon:100226
+        title: Streptomyces coelicolor
+        exact_mappings:
+        - NCBITaxon:100226
+        - uniprot.proteome:UP000001973
+        aliases:
+        - actinobacteria
+        annotations:
+          sources: GO
+      SP_STRP1:
+        description: 'Streptococcus pyogenes serotype M1 (Strain: ATCC 700294 / SF370
+          / Serotype M1) - Proteome: UP000000750'
+        meaning: NCBITaxon:301447
+        title: 'Streptococcus pyogenes serotype M1 (Strain: ATCC 700294 / SF370 /
+          Serotype M1)'
+        exact_mappings:
+        - NCBITaxon:301447
+        - uniprot.proteome:UP000000750
+        annotations:
+          sources: GO
+      SP_STRP2:
+        description: 'Streptococcus pneumoniae serotype 2 (strain D39 / NCTC 7466)
+          - Proteome: UP000001452'
+        meaning: NCBITaxon:373153
+        title: Streptococcus pneumoniae serotype 2 (strain D39 / NCTC 7466)
+        exact_mappings:
+        - NCBITaxon:373153
+        - uniprot.proteome:UP000001452
+        annotations:
+          sources: GO
+      SP_STRPN:
+        description: 'Streptococcus pneumoniae serotype 4 (strain ATCC BAA-334 / TIGR4)
+          - Proteome: UP000000586'
+        meaning: NCBITaxon:171101
+        title: Streptococcus pneumoniae serotype 4 (strain ATCC BAA-334 / TIGR4)
+        exact_mappings:
+        - NCBITaxon:171101
+        - uniprot.proteome:UP000000586
+        annotations:
+          sources: GO
+      SP_STRPU:
+        description: 'Strongylocentrotus purpuratus (Purple sea urchin) - Proteome:
+          UP000007110'
+        meaning: NCBITaxon:7668
+        title: Strongylocentrotus purpuratus
+        exact_mappings:
+        - NCBITaxon:7668
+        - uniprot.proteome:UP000007110
+        aliases:
+        - Purple sea urchin
+        annotations:
+          sources: GO
+      SP_STRR6:
+        description: 'Streptococcus pneumoniae (strep) - Proteome: UP000000586'
+        meaning: NCBITaxon:171101
+        title: Streptococcus pneumoniae
+        exact_mappings:
+        - NCBITaxon:171101
+        - uniprot.proteome:UP000000586
+        aliases:
+        - strep
+        annotations:
+          sources: GO
+      SP_SYNY3:
+        description: 'Synechocystis sp. (cyanobacteria) - Proteome: UP000001425'
+        meaning: NCBITaxon:1111708
+        title: Synechocystis sp.
+        exact_mappings:
+        - NCBITaxon:1111708
+        - uniprot.proteome:UP000001425
+        aliases:
+        - cyanobacteria
+        annotations:
+          sources: GO
+      SP_THAPS:
+        description: 'Thalassiosira pseudonana (Marine diatom) - Proteome: UP000001449'
+        meaning: NCBITaxon:35128
+        title: Thalassiosira pseudonana
+        exact_mappings:
+        - NCBITaxon:35128
+        - uniprot.proteome:UP000001449
+        aliases:
+        - Marine diatom
+        annotations:
+          sources: GO
+      SP_THECC:
+        description: 'Theobroma cacao (Cacao) - Proteome: UP000026915'
+        meaning: NCBITaxon:3641
+        title: Theobroma cacao
+        exact_mappings:
+        - NCBITaxon:3641
+        - uniprot.proteome:UP000026915
+        aliases:
+        - Cacao
+        annotations:
+          sources: GO
+      SP_THEKO:
+        description: 'Thermococcus kodakaraensis (euryarchaea) - Proteome: UP000000536'
+        meaning: NCBITaxon:69014
+        title: Thermococcus kodakaraensis
+        exact_mappings:
+        - NCBITaxon:69014
+        - uniprot.proteome:UP000000536
+        aliases:
+        - euryarchaea
+        annotations:
+          sources: GO
+      SP_THEMA:
+        description: 'Thermotoga maritima (thermotogae bacteria) - Proteome: UP000008183'
+        meaning: NCBITaxon:243274
+        title: Thermotoga maritima
+        exact_mappings:
+        - NCBITaxon:243274
+        - uniprot.proteome:UP000008183
+        aliases:
+        - thermotogae bacteria
+        annotations:
+          sources: GO
+      SP_THEYD:
+        description: 'Thermodesulfovibrio yellowstonii (nitrospirae bacteria) - Proteome:
+          UP000000718'
+        meaning: NCBITaxon:289376
+        title: Thermodesulfovibrio yellowstonii
+        exact_mappings:
+        - NCBITaxon:289376
+        - uniprot.proteome:UP000000718
+        aliases:
+        - nitrospirae bacteria
+        annotations:
+          sources: GO
+      SP_TOBAC:
+        description: 'Nicotiana tabacum (Common tobacco) - Proteome: UP000084051'
+        meaning: NCBITaxon:4097
+        title: Nicotiana tabacum
+        exact_mappings:
+        - NCBITaxon:4097
+        - uniprot.proteome:UP000084051
+        aliases:
+        - Common tobacco
+        annotations:
+          sources: common, GO
+      SP_TOXGO:
+        description: 'Toxoplasma gondii ME49 - Proteome: UP000001529'
+        meaning: NCBITaxon:508771
+        title: Toxoplasma gondii ME49
+        exact_mappings:
+        - NCBITaxon:508771
+        - uniprot.proteome:UP000001529
+        annotations:
+          sources: existing
+      SP_TRIAD:
+        description: 'Trichoplax adhaerens (placozoan) - Proteome: UP000009022'
+        meaning: NCBITaxon:10228
+        title: Trichoplax adhaerens
+        exact_mappings:
+        - NCBITaxon:10228
+        - uniprot.proteome:UP000009022
+        aliases:
+        - placozoan
+        annotations:
+          sources: GO
+      SP_TRICA:
+        description: 'Tribolium castaneum (Red flour beetle) - Proteome: UP000007266'
+        meaning: NCBITaxon:7070
+        title: Tribolium castaneum
+        exact_mappings:
+        - NCBITaxon:7070
+        - uniprot.proteome:UP000007266
+        aliases:
+        - Red flour beetle
+        annotations:
+          sources: GO
+      SP_TRIV3:
+        description: 'Trichomonas vaginalis (excavate) - Proteome: UP000001542'
+        meaning: NCBITaxon:412133
+        title: Trichomonas vaginalis
+        exact_mappings:
+        - NCBITaxon:412133
+        - uniprot.proteome:UP000001542
+        aliases:
+        - excavate
+        annotations:
+          sources: GO
+      SP_TRYB2:
+        description: 'Trypanosoma brucei brucei TREU927 (excavate) - Proteome: UP000008524'
+        meaning: NCBITaxon:185431
+        title: Trypanosoma brucei brucei TREU927
+        exact_mappings:
+        - NCBITaxon:185431
+        - uniprot.proteome:UP000008524
+        aliases:
+        - excavate
+        annotations:
+          sources: GO
+      SP_VACCW:
+        description: 'Vaccinia virus (strain Western Reserve) (VACV strain WR) - Proteome:
+          UP000000344'
+        meaning: NCBITaxon:10254
+        title: Vaccinia virus (strain Western Reserve)
+        exact_mappings:
+        - NCBITaxon:10254
+        - uniprot.proteome:UP000000344
+        aliases:
+        - VACV strain WR
+        annotations:
+          sources: GO
+      SP_VAR67:
+        description: 'Variola virus (Smallpox virus) (isolate Human/India/Ind3/1967)
+          (VARV) - Proteome: UP000002060'
+        meaning: NCBITaxon:587200
+        title: Variola virus (Smallpox virus) (isolate Human/India/Ind3/1967)
+        exact_mappings:
+        - NCBITaxon:587200
+        - uniprot.proteome:UP000002060
+        aliases:
+        - VARV
+        annotations:
+          sources: GO
+      SP_VIBCH:
+        description: 'Vibrio cholerae (cholera) - Proteome: UP000000584'
+        meaning: NCBITaxon:243277
+        title: Vibrio cholerae
+        exact_mappings:
+        - NCBITaxon:243277
+        - uniprot.proteome:UP000000584
+        aliases:
+        - cholera
+        annotations:
+          sources: GO
+      SP_VITVI:
+        description: 'Vitis vinifera (Grape) - Proteome: UP000009183'
+        meaning: NCBITaxon:29760
+        title: Vitis vinifera
+        exact_mappings:
+        - NCBITaxon:29760
+        - uniprot.proteome:UP000009183
+        aliases:
+        - Grape
+        annotations:
+          sources: GO
+      SP_VZVD:
+        description: 'Varicella-zoster virus (Human herpesvirus 3) strain Dumas (HHV-3
+          strain Dumas) - Proteome: UP000002602'
+        meaning: NCBITaxon:10338
+        title: Varicella-zoster virus (Human herpesvirus 3) strain Dumas
+        exact_mappings:
+        - NCBITaxon:10338
+        - uniprot.proteome:UP000002602
+        aliases:
+        - HHV-3 strain Dumas
+        annotations:
+          sources: GO
+      SP_WHEAT:
+        description: 'Triticum aestivum (Wheat) - Proteome: UP000019116'
+        meaning: NCBITaxon:4565
+        title: Triticum aestivum
+        exact_mappings:
+        - NCBITaxon:4565
+        - uniprot.proteome:UP000019116
+        aliases:
+        - Wheat
+        annotations:
+          sources: GO
+      SP_XANCP:
+        description: 'Xanthomonas campestris (xanthomonas) - Proteome: UP000001010'
+        meaning: NCBITaxon:190485
+        title: Xanthomonas campestris
+        exact_mappings:
+        - NCBITaxon:190485
+        - uniprot.proteome:UP000001010
+        aliases:
+        - xanthomonas
+        annotations:
+          sources: GO
       SP_XENLA:
         description: 'Xenopus laevis (African clawed frog) - Proteome: UP000186698'
         meaning: NCBITaxon:8355
@@ -1062,6 +2977,8 @@ enums:
         - uniprot.proteome:UP000186698
         aliases:
         - African clawed frog
+        annotations:
+          sources: common, GO
       SP_XENTR:
         description: 'Xenopus tropicalis (Western clawed frog) - Proteome: UP000008143'
         meaning: NCBITaxon:8364
@@ -1071,6 +2988,19 @@ enums:
         - uniprot.proteome:UP000008143
         aliases:
         - Western clawed frog
+        annotations:
+          sources: common, GO
+      SP_YARLI:
+        description: 'Yarrowia lipolytica (Yeast) - Proteome: UP000001300'
+        meaning: NCBITaxon:284591
+        title: Yarrowia lipolytica
+        exact_mappings:
+        - NCBITaxon:284591
+        - uniprot.proteome:UP000001300
+        aliases:
+        - Yeast
+        annotations:
+          sources: GO
       SP_YEAST:
         description: 'Saccharomyces cerevisiae S288C (Baker''s yeast) - Proteome:
           UP000002311'
@@ -1081,129 +3011,27 @@ enums:
         - uniprot.proteome:UP000002311
         aliases:
         - Baker's yeast
-      SP_DICDI:
-        description: 'Dictyostelium discoideum (Slime mold) - Proteome: UP000002195'
-        meaning: NCBITaxon:44689
-        title: Dictyostelium discoideum
+        annotations:
+          sources: common, GO
+      SP_YERPE:
+        description: 'Yersinia pestis (plague bacteria) - Proteome: UP000000815'
+        meaning: NCBITaxon:632
+        title: Yersinia pestis
         exact_mappings:
-        - NCBITaxon:44689
-        - uniprot.proteome:UP000002195
+        - NCBITaxon:632
+        - uniprot.proteome:UP000000815
         aliases:
-        - Slime mold
-      SP_HELPY:
-        description: 'Helicobacter pylori 26695 - Proteome: UP000000429'
-        meaning: NCBITaxon:85962
-        title: Helicobacter pylori 26695
+        - plague bacteria
+        annotations:
+          sources: GO
+      SP_ZIKV:
+        description: 'Zika virus (ZIKV) - Proteome: UP000054557'
+        meaning: NCBITaxon:64320
+        title: Zika virus
         exact_mappings:
-        - NCBITaxon:85962
-        - uniprot.proteome:UP000000429
-      SP_LEIMA:
-        description: Leishmania major strain Friedlin
-        meaning: NCBITaxon:347515
-        title: Leishmania major strain Friedlin
-        exact_mappings:
-        - NCBITaxon:347515
-      SP_MEDTR:
-        description: 'Medicago truncatula (Barrel medic) - Proteome: UP000002051'
-        meaning: NCBITaxon:3880
-        title: Medicago truncatula
-        exact_mappings:
-        - NCBITaxon:3880
-        - uniprot.proteome:UP000002051
+        - NCBITaxon:64320
+        - uniprot.proteome:UP000054557
         aliases:
-        - Barrel medic
-      SP_MYCTU:
-        description: 'Mycobacterium tuberculosis H37Rv - Proteome: UP000001584'
-        meaning: NCBITaxon:83332
-        title: Mycobacterium tuberculosis H37Rv
-        exact_mappings:
-        - NCBITaxon:83332
-        - uniprot.proteome:UP000001584
-      SP_NEIME:
-        description: 'Neisseria meningitidis MC58 - Proteome: UP000000425'
-        meaning: NCBITaxon:122586
-        title: Neisseria meningitidis MC58
-        exact_mappings:
-        - NCBITaxon:122586
-        - uniprot.proteome:UP000000425
-      SP_PLAF7:
-        description: 'Plasmodium falciparum 3D7 (Malaria parasite) - Proteome: UP000001450'
-        meaning: NCBITaxon:36329
-        title: Plasmodium falciparum 3D7
-        exact_mappings:
-        - NCBITaxon:36329
-        - uniprot.proteome:UP000001450
-        aliases:
-        - Malaria parasite
-      SP_PSEAE:
-        description: 'Pseudomonas aeruginosa PAO1 - Proteome: UP000002438'
-        meaning: NCBITaxon:208964
-        title: Pseudomonas aeruginosa PAO1
-        exact_mappings:
-        - NCBITaxon:208964
-        - uniprot.proteome:UP000002438
-      SP_SOYBN:
-        description: 'Glycine max (Soybean) - Proteome: UP000008827'
-        meaning: NCBITaxon:3847
-        title: Glycine max
-        exact_mappings:
-        - NCBITaxon:3847
-        - uniprot.proteome:UP000008827
-        aliases:
-        - Soybean
-      SP_STAAU:
-        description: 'Staphylococcus aureus subsp. aureus NCTC 8325 - Proteome: UP000008816'
-        meaning: NCBITaxon:93061
-        title: Staphylococcus aureus subsp. aureus NCTC 8325
-        exact_mappings:
-        - NCBITaxon:93061
-        - uniprot.proteome:UP000008816
-      SP_STRPN:
-        description: 'Streptococcus pneumoniae R6 - Proteome: UP000000586'
-        meaning: NCBITaxon:171101
-        title: Streptococcus pneumoniae R6
-        exact_mappings:
-        - NCBITaxon:171101
-        - uniprot.proteome:UP000000586
-      SP_TOXGO:
-        description: 'Toxoplasma gondii ME49 - Proteome: UP000001529'
-        meaning: NCBITaxon:508771
-        title: Toxoplasma gondii ME49
-        exact_mappings:
-        - NCBITaxon:508771
-        - uniprot.proteome:UP000001529
-      SP_TRYB2:
-        description: 'Trypanosoma brucei brucei TREU927 - Proteome: UP000008524'
-        meaning: NCBITaxon:185431
-        title: Trypanosoma brucei brucei TREU927
-        exact_mappings:
-        - NCBITaxon:185431
-        - uniprot.proteome:UP000008524
-      SP_WHEAT:
-        description: 'Triticum aestivum (Wheat) - Proteome: UP000019116'
-        meaning: NCBITaxon:4565
-        title: Triticum aestivum
-        exact_mappings:
-        - NCBITaxon:4565
-        - uniprot.proteome:UP000019116
-        aliases:
-        - Wheat
-      SP_PEA:
-        description: 'Pisum sativum (Garden pea) - Proteome: UP001058974'
-        meaning: NCBITaxon:3888
-        title: Pisum sativum
-        exact_mappings:
-        - NCBITaxon:3888
-        - uniprot.proteome:UP001058974
-        aliases:
-        - Garden pea
-        - Lathyrus oleraceus
-      SP_TOBAC:
-        description: 'Nicotiana tabacum (Common tobacco) - Proteome: UP000084051'
-        meaning: NCBITaxon:4097
-        title: Nicotiana tabacum
-        exact_mappings:
-        - NCBITaxon:4097
-        - uniprot.proteome:UP000084051
-        aliases:
-        - Common tobacco
+        - ZIKV
+        annotations:
+          sources: GO

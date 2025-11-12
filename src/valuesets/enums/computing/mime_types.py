@@ -32,6 +32,12 @@ class MimeType(RichEnum):
     APPLICATION_SQL = "APPLICATION_SQL"
     APPLICATION_GRAPHQL = "APPLICATION_GRAPHQL"
     APPLICATION_LD_JSON = "APPLICATION_LD_JSON"
+    APPLICATION_N_QUADS = "APPLICATION_N_QUADS"
+    APPLICATION_N_TRIPLES = "APPLICATION_N_TRIPLES"
+    APPLICATION_RDF_XML = "APPLICATION_RDF_XML"
+    APPLICATION_SPARQL_RESULTS_JSON = "APPLICATION_SPARQL_RESULTS_JSON"
+    APPLICATION_SPARQL_RESULTS_XML = "APPLICATION_SPARQL_RESULTS_XML"
+    APPLICATION_TRIG = "APPLICATION_TRIG"
     APPLICATION_WASM = "APPLICATION_WASM"
     TEXT_PLAIN = "TEXT_PLAIN"
     TEXT_HTML = "TEXT_HTML"
@@ -94,6 +100,12 @@ MimeType._metadata = {
     "APPLICATION_SQL": {'description': 'SQL database format', 'meaning': 'iana:application/sql'},
     "APPLICATION_GRAPHQL": {'description': 'GraphQL query language', 'meaning': 'iana:application/graphql'},
     "APPLICATION_LD_JSON": {'description': 'JSON-LD format', 'meaning': 'iana:application/ld+json'},
+    "APPLICATION_N_QUADS": {'description': 'N-Quads RDF serialization format', 'meaning': 'iana:application/n-quads'},
+    "APPLICATION_N_TRIPLES": {'description': 'N-Triples RDF serialization format', 'meaning': 'iana:application/n-triples'},
+    "APPLICATION_RDF_XML": {'description': 'RDF/XML serialization format', 'meaning': 'iana:application/rdf+xml'},
+    "APPLICATION_SPARQL_RESULTS_JSON": {'description': 'SPARQL 1.1 Query Results JSON format', 'meaning': 'iana:application/sparql-results+json'},
+    "APPLICATION_SPARQL_RESULTS_XML": {'description': 'SPARQL 1.1 Query Results XML format', 'meaning': 'iana:application/sparql-results+xml'},
+    "APPLICATION_TRIG": {'description': 'TriG RDF serialization format', 'meaning': 'iana:application/trig'},
     "APPLICATION_WASM": {'description': 'WebAssembly binary format', 'meaning': 'iana:application/wasm'},
     "TEXT_PLAIN": {'description': 'Plain text', 'meaning': 'iana:text/plain'},
     "TEXT_HTML": {'description': 'HTML document', 'meaning': 'iana:text/html'},
