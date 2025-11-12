@@ -101,6 +101,14 @@ gen-doc: _gen-yaml
 [group('model development')]
 testdoc: gen-doc _serve
 
+# Generate presentation slides in all formats
+[group('model development')]
+gen-slides:
+  cd docs/slides && marp valuesets-slides.md --allow-local-files -o valuesets-slides.html
+  cd docs/slides && marp valuesets-slides.md --allow-local-files --pdf -o valuesets-slides.pdf
+  cd docs/slides && marp valuesets-slides.md --allow-local-files --pptx -o valuesets-slides.pptx
+  @echo "Slides generated in docs/slides/"
+
 # Generate the Python data models (dataclasses & pydantic)
 # NOTE: Overridden in project.justfile to use rich enums as default
 # gen-python:
