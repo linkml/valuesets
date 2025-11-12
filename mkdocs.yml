@@ -28,6 +28,7 @@ nav:
   - Home: index.md
   - Schema: elements/index.md
   - About: about.md
+  - Slides: slides/index.md
 
 exclude_docs: |
   /templates-linkml/

@@ -303,6 +303,98 @@ ProcessingStatus._metadata = {
     "CANCELLED": {'description': 'Processing cancelled by user'},
 }
 
+class CoordinationGeometry(RichEnum):
+    """
+    Coordination geometry of metal centers in protein structures
+    """
+    # Enum members
+    LINEAR = "LINEAR"
+    TRIGONAL_PLANAR = "TRIGONAL_PLANAR"
+    TRIGONAL_PYRAMIDAL = "TRIGONAL_PYRAMIDAL"
+    T_SHAPED = "T_SHAPED"
+    TETRAHEDRAL = "TETRAHEDRAL"
+    SQUARE_PLANAR = "SQUARE_PLANAR"
+    TRIGONAL_BIPYRAMIDAL = "TRIGONAL_BIPYRAMIDAL"
+    SQUARE_PYRAMIDAL = "SQUARE_PYRAMIDAL"
+    PENTAGONAL_PLANAR = "PENTAGONAL_PLANAR"
+    OCTAHEDRAL = "OCTAHEDRAL"
+    TRIGONAL_PRISMATIC = "TRIGONAL_PRISMATIC"
+    PENTAGONAL_BIPYRAMIDAL = "PENTAGONAL_BIPYRAMIDAL"
+    HEXAGONAL_BIPYRAMIDAL = "HEXAGONAL_BIPYRAMIDAL"
+    SQUARE_ANTIPRISMATIC = "SQUARE_ANTIPRISMATIC"
+    DODECAHEDRAL = "DODECAHEDRAL"
+    CUBIC = "CUBIC"
+    BENT = "BENT"
+    SEE_SAW = "SEE_SAW"
+
+# Set metadata after class creation
+CoordinationGeometry._metadata = {
+    "LINEAR": {'description': 'Linear coordination geometry (2 ligands at 180°)', 'annotations': {'coordination_number': '2'}},
+    "TRIGONAL_PLANAR": {'description': 'Trigonal planar coordination geometry (3 ligands, 120° angles)', 'annotations': {'coordination_number': '3'}},
+    "TRIGONAL_PYRAMIDAL": {'description': 'Trigonal pyramidal coordination geometry', 'annotations': {'coordination_number': '3'}},
+    "T_SHAPED": {'description': 'T-shaped coordination geometry', 'annotations': {'coordination_number': '3'}},
+    "TETRAHEDRAL": {'description': 'Tetrahedral coordination geometry (4 ligands, 109.5° angles)', 'meaning': 'NCIT:C103215', 'annotations': {'coordination_number': '4'}},
+    "SQUARE_PLANAR": {'description': 'Square planar coordination geometry (4 ligands in plane)', 'annotations': {'coordination_number': '4', 'ncit_variants': 'NCIT:C103211, NCIT:C103212, NCIT:C103213, NCIT:C103214'}},
+    "TRIGONAL_BIPYRAMIDAL": {'description': 'Trigonal bipyramidal coordination geometry (5 ligands)', 'annotations': {'coordination_number': '5'}},
+    "SQUARE_PYRAMIDAL": {'description': 'Square pyramidal coordination geometry (5 ligands)', 'annotations': {'coordination_number': '5'}},
+    "PENTAGONAL_PLANAR": {'description': 'Pentagonal planar coordination geometry (5 ligands in plane)', 'annotations': {'coordination_number': '5'}},
+    "OCTAHEDRAL": {'description': 'Octahedral coordination geometry (6 ligands)', 'annotations': {'coordination_number': '6', 'ncit_variants': 'NCIT:C103216, NCIT:C103217, NCIT:C103218'}},
+    "TRIGONAL_PRISMATIC": {'description': 'Trigonal prismatic coordination geometry (6 ligands)', 'annotations': {'coordination_number': '6'}},
+    "PENTAGONAL_BIPYRAMIDAL": {'description': 'Pentagonal bipyramidal coordination geometry (7 ligands)', 'annotations': {'coordination_number': '7'}},
+    "HEXAGONAL_BIPYRAMIDAL": {'description': 'Hexagonal bipyramidal coordination geometry (8 ligands)', 'annotations': {'coordination_number': '8'}},
+    "SQUARE_ANTIPRISMATIC": {'description': 'Square antiprismatic coordination geometry (8 ligands)', 'annotations': {'coordination_number': '8'}},
+    "DODECAHEDRAL": {'description': 'Dodecahedral coordination geometry (8 ligands)', 'annotations': {'coordination_number': '8'}},
+    "CUBIC": {'description': 'Cubic coordination geometry (8 ligands)', 'annotations': {'coordination_number': '8'}},
+    "BENT": {'description': 'Bent or angular coordination geometry', 'annotations': {'coordination_number': '2'}},
+    "SEE_SAW": {'description': 'See-saw coordination geometry (4 ligands)', 'annotations': {'coordination_number': '4'}},
+}
+
+class MetalLigandType(RichEnum):
+    """
+    Types of metal-containing chemical components
+    """
+    # Enum members
+    METAL_CATION = "METAL_CATION"
+    METAL_CONTAINING_LIGAND = "METAL_CONTAINING_LIGAND"
+
+# Set metadata after class creation
+MetalLigandType._metadata = {
+    "METAL_CATION": {'description': 'Metal cation (e.g., Ca2+, Mg2+, Zn2+, Fe3+)', 'annotations': {'examples': 'Ca2+, Mg2+, Zn2+, Fe2+, Fe3+, Cu2+, Mn2+'}},
+    "METAL_CONTAINING_LIGAND": {'description': 'Metal-containing ligand or cofactor', 'annotations': {'examples': 'heme, chlorophyll, cobalamin, Fe-S cluster'}},
+}
+
+class ProteinModificationType(RichEnum):
+    """
+    Types of protein modifications
+    """
+    # Enum members
+    METAL_COORDINATION = "METAL_COORDINATION"
+    PHOSPHORYLATION = "PHOSPHORYLATION"
+    GLYCOSYLATION = "GLYCOSYLATION"
+    ACETYLATION = "ACETYLATION"
+    METHYLATION = "METHYLATION"
+    UBIQUITINATION = "UBIQUITINATION"
+    SUMOYLATION = "SUMOYLATION"
+    HYDROXYLATION = "HYDROXYLATION"
+    LIPIDATION = "LIPIDATION"
+    PROTEOLYTIC_CLEAVAGE = "PROTEOLYTIC_CLEAVAGE"
+    CROSSLINKING = "CROSSLINKING"
+
+# Set metadata after class creation
+ProteinModificationType._metadata = {
+    "METAL_COORDINATION": {'description': 'Metal coordination modification', 'annotations': {'examples': 'zinc finger, iron-sulfur cluster binding'}},
+    "PHOSPHORYLATION": {'description': 'Phosphorylation modification'},
+    "GLYCOSYLATION": {'description': 'Glycosylation modification'},
+    "ACETYLATION": {'description': 'Acetylation modification'},
+    "METHYLATION": {'description': 'Methylation modification'},
+    "UBIQUITINATION": {'description': 'Ubiquitination modification'},
+    "SUMOYLATION": {'description': 'SUMOylation modification'},
+    "HYDROXYLATION": {'description': 'Hydroxylation modification'},
+    "LIPIDATION": {'description': 'Lipidation modification'},
+    "PROTEOLYTIC_CLEAVAGE": {'description': 'Proteolytic cleavage'},
+    "CROSSLINKING": {'description': 'Crosslinking modification'},
+}
+
 __all__ = [
     "SampleType",
     "StructuralBiologyTechnique",
@@ -316,4 +408,7 @@ __all__ = [
     "FileFormat",
     "DataType",
     "ProcessingStatus",
+    "CoordinationGeometry",
+    "MetalLigandType",
+    "ProteinModificationType",
 ]

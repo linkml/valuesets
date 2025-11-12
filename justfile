@@ -303,6 +303,63 @@ standardize-prefixes:
 preview-prefix-changes:
   uv run python src/valuesets/generators/prefix_standardizer.py src/valuesets/schema --dry-run
 
+# ============== UniProt Species Sync Recipes ==============
+
+# Fetch organisms from GO goex.yaml and cache to JSON
+[group('uniprot sync')]
+fetch-go-organisms:
+  uv run python scripts/fetch_from_go_goex.py --output cache/go_organisms.json
+
+# Fetch common model organisms from UniProt and cache to JSON
+[group('uniprot sync')]
+fetch-common-organisms:
+  uv run python scripts/sync_uniprot_species.py --json-output cache/common_organisms.json --output /dev/null
+
+# Fetch ALL reference proteomes from UniProt and cache to JSON (500+ organisms)
+[group('uniprot sync')]
+fetch-extended-organisms:
+  uv run python scripts/sync_uniprot_species.py --extended --json-output cache/extended_organisms.json --output /dev/null
+
+# Merge all sources into best union for uniprot_species.yaml
+[group('uniprot sync')]
+merge-uniprot: fetch-go-organisms fetch-common-organisms
+  uv run python scripts/merge_uniprot_sources.py
+
+# Full sync workflow: fetch all sources and merge into best union (includes extended)
+[group('uniprot sync')]
+sync-uniprot-full: fetch-go-organisms fetch-common-organisms fetch-extended-organisms
+  uv run python scripts/merge_uniprot_sources.py --extended-organisms cache/extended_organisms.json
+
+# Quick sync workflow: just GO and common organisms (recommended)
+[group('uniprot sync')]
+sync-uniprot: merge-uniprot
+
+# Show statistics about cached organism sources
+[group('uniprot sync')]
+uniprot-stats:
+  @echo "=== UniProt Species Cache Statistics ==="
+  @echo ""
+  @if [ -f cache/go_organisms.json ]; then \
+    echo "GO organisms: $(grep -c '"code"' cache/go_organisms.json || echo 0)"; \
+  else \
+    echo "GO organisms: [not cached]"; \
+  fi
+  @if [ -f cache/common_organisms.json ]; then \
+    echo "Common organisms: $(grep -c '"code"' cache/common_organisms.json || echo 0)"; \
+  else \
+    echo "Common organisms: [not cached]"; \
+  fi
+  @if [ -f cache/extended_organisms.json ]; then \
+    echo "Extended organisms: $(grep -c '"code"' cache/extended_organisms.json || echo 0)"; \
+  else \
+    echo "Extended organisms: [not cached]"; \
+  fi
+  @if [ -f src/valuesets/schema/bio/uniprot_species.yaml ]; then \
+    echo "Current YAML entries: $(grep -c '^      SP_' src/valuesets/schema/bio/uniprot_species.yaml || echo 0)"; \
+  else \
+    echo "Current YAML: [not found]"; \
+  fi
+
 # ============== Include project-specific recipes ==============
 
 import "python.justfile"
