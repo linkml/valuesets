@@ -33,6 +33,9 @@ slots:
   omb_ethnicity_category:
     description: Office of Management and Budget (OMB) ethnicity category codes
     range: OmbEthnicityCategory
+  family_income:
+    description: Annual household income ranges commonly used in U.S. health surveys
+    range: FamilyIncomeEnum
 enums:
   EducationLevel:
     description: Years of education that a person has completed
@@ -233,6 +236,50 @@ enums:
       UNKNOWN:
         description: unknown
         meaning: HL7:UNK
+  FamilyIncomeEnum:
+    description: Annual household income ranges commonly used in U.S. health surveys (ACS, BRFSS, NHANES, NIH CDEs)
+    comments:
+      - Income brackets are derived from commonly used ranges in U.S. health surveys
+      - Values should be considered year-specific as income brackets shift with inflation
+      - This represents a standard granularity level; coarser bins may be needed for some applications
+    source: https://www.cdc.gov/brfss/ https://www.census.gov/programs-surveys/acs/ https://www.cdc.gov/nchs/nhanes/
+    permissible_values:
+      LESS_THAN_10000:
+        title: Less than $10,000
+        description: Annual household income less than $10,000
+      TEN_TO_19999:
+        title: $10,000-$19,999
+        description: Annual household income from $10,000 to $19,999
+      TWENTY_TO_24999:
+        title: $20,000-$24,999
+        description: Annual household income from $20,000 to $24,999
+      TWENTY_FIVE_TO_29999:
+        title: $25,000-$29,999
+        description: Annual household income from $25,000 to $29,999
+      THIRTY_TO_34999:
+        title: $30,000-$34,999
+        description: Annual household income from $30,000 to $34,999
+      THIRTY_FIVE_TO_49999:
+        title: $35,000-$49,999
+        description: Annual household income from $35,000 to $49,999
+      FIFTY_TO_74999:
+        title: $50,000-$74,999
+        description: Annual household income from $50,000 to $74,999
+      SEVENTY_FIVE_TO_99999:
+        title: $75,000-$99,999
+        description: Annual household income from $75,000 to $99,999
+      ONE_HUNDRED_TO_149999:
+        title: $100,000-$149,999
+        description: Annual household income from $100,000 to $149,999
+      ONE_FIFTY_THOUSAND_OR_MORE:
+        title: $150,000 or more
+        description: Annual household income $150,000 or more
+      PREFER_NOT_TO_ANSWER:
+        title: Prefer not to answer
+        description: Respondent prefers not to disclose income information
+      DONT_KNOW:
+        title: Don't know
+        description: Respondent does not know household income
 license: MIT
 see_also:
 - https://linkml.github.io/valuesets
