@@ -34,6 +34,9 @@ slots:
   cell_polarity:
     description: Spatial polarity in cells and tissues
     range: CellPolarity
+  anatomical_orientation:
+    description: Directional orientation between anatomical positions
+    range: AnatomicalOrientation
 enums:
   SimpleSpatialDirection:
     description: Basic spatial directional terms for general use
@@ -464,3 +467,102 @@ enums:
         description: Pole further from the cell body
         annotations:
           context: neurons, polarized cells
+  AnatomicalOrientation:
+    description: Directional orientation between anatomical positions based on OME NGFF specification
+    permissible_values:
+      LEFT_TO_RIGHT:
+        title: Left to right orientation
+        description: Directional orientation from left to right lateral side of an anatomical structure
+        annotations:
+          source: OME NGFF
+      RIGHT_TO_LEFT:
+        title: Right to left orientation
+        description: Directional orientation from right to left lateral side of an anatomical structure
+        annotations:
+          source: OME NGFF
+      ANTERIOR_TO_POSTERIOR:
+        title: Anterior to posterior orientation
+        description: Directional orientation from front to back of an anatomical structure
+        annotations:
+          source: OME NGFF
+      POSTERIOR_TO_ANTERIOR:
+        title: Posterior to anterior orientation
+        description: Directional orientation from back to front of an anatomical structure
+        annotations:
+          source: OME NGFF
+      INFERIOR_TO_SUPERIOR:
+        title: Inferior to superior orientation
+        description: Directional orientation from below to above in an anatomical structure
+        annotations:
+          source: OME NGFF
+      SUPERIOR_TO_INFERIOR:
+        title: Superior to inferior orientation
+        description: Directional orientation from above to below in an anatomical structure
+        annotations:
+          source: OME NGFF
+      DORSAL_TO_VENTRAL:
+        title: Dorsal to ventral orientation
+        description: Directional orientation from top/upper to belly/lower in an anatomical structure
+        annotations:
+          source: OME NGFF
+      VENTRAL_TO_DORSAL:
+        title: Ventral to dorsal orientation
+        description: Directional orientation from belly/lower to top/upper in an anatomical structure
+        annotations:
+          source: OME NGFF
+      DORSAL_TO_PALMAR:
+        title: Dorsal to palmar orientation
+        description: Directional orientation from top/upper to palm of hand
+        annotations:
+          source: OME NGFF
+          context: hand anatomy
+      PALMAR_TO_DORSAL:
+        title: Palmar to dorsal orientation
+        description: Directional orientation from palm of hand to top/upper
+        annotations:
+          source: OME NGFF
+          context: hand anatomy
+      DORSAL_TO_PLANTAR:
+        title: Dorsal to plantar orientation
+        description: Directional orientation from top/upper to sole of foot
+        annotations:
+          source: OME NGFF
+          context: foot anatomy
+      PLANTAR_TO_DORSAL:
+        title: Plantar to dorsal orientation
+        description: Directional orientation from sole of foot to top/upper
+        annotations:
+          source: OME NGFF
+          context: foot anatomy
+      ROSTRAL_TO_CAUDAL:
+        title: Rostral to caudal orientation
+        description: Directional orientation from nasal to tail end, typically for central nervous system
+        annotations:
+          source: OME NGFF
+          context: central nervous system
+      CAUDAL_TO_ROSTRAL:
+        title: Caudal to rostral orientation
+        description: Directional orientation from tail to nasal end, typically for central nervous system
+        annotations:
+          source: OME NGFF
+          context: central nervous system
+      CRANIAL_TO_CAUDAL:
+        title: Cranial to caudal orientation
+        description: Directional orientation from head to tail end of a structure
+        annotations:
+          source: OME NGFF
+      CAUDAL_TO_CRANIAL:
+        title: Caudal to cranial orientation
+        description: Directional orientation from tail to head end of a structure
+        annotations:
+          source: OME NGFF
+      PROXIMAL_TO_DISTAL:
+        title: Proximal to distal orientation
+        description: Directional orientation from body center to periphery of a structure
+        annotations:
+          source: OME NGFF
+      DISTAL_TO_PROXIMAL:
+        title: Distal to proximal orientation
+        description: Directional orientation from periphery to body center of a structure
+        annotations:
+          source: OME NGFF
