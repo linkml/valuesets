@@ -6,6 +6,8 @@ prefixes:
   SO: http://purl.obolibrary.org/obo/SO_
   mixs: https://genomicsstandardsconsortium.github.io/mixs/
   valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   viral_genome_type:
@@ -13,7 +15,14 @@ slots:
     range: ViralGenomeTypeEnum
 enums:
   ViralGenomeTypeEnum:
+    title: Viral Genome Type
     description: Types of viral genomes based on Baltimore classification
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     conforms_to: https://en.wikipedia.org/wiki/Baltimore_classification
     permissible_values:
       DNA:
@@ -81,7 +90,8 @@ enums:
         - Group VI
         - Retroviruses
       DSDNA_RT:
-        description: Double-stranded DNA viruses that replicate through a single-stranded RNA intermediate (pararetroviruses)
+        description: Double-stranded DNA viruses that replicate through a single-stranded RNA intermediate 
+          (pararetroviruses)
         meaning: NCIT:C14349
         title: Other Virus Grouping
         is_a: DSDNA

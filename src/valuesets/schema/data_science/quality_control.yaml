@@ -4,6 +4,8 @@ prefixes:
   # linkml_common: https://w3id.org/linkml-common/
   NCIT: http://purl.obolibrary.org/obo/NCIT_
   valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   quality_control:
@@ -14,7 +16,14 @@ slots:
     range: DefectClassificationEnum
 enums:
   QualityControlEnum:
+    title: Quality Control
     description: Quality control classification labels
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       PASS:
         description: Item meets quality standards
@@ -35,7 +44,14 @@ enums:
         - defective
         - '0'
   DefectClassificationEnum:
+    title: Defect Classification
     description: Manufacturing defect classification
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       NO_DEFECT:
         description: No defect detected

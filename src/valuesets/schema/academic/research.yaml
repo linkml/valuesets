@@ -5,6 +5,7 @@ id: https://w3id.org/linkml/valuesets/academic/research
 imports:
 - linkml:types
 prefixes:
+  linkml: https://w3id.org/linkml/
   valuesets: https://w3id.org/valuesets/
   DCMITYPE: http://purl.org/dc/dcmitype/
   FABIO: http://purl.org/spar/fabio/
@@ -16,6 +17,8 @@ prefixes:
   SIO: http://semanticscience.org/resource/SIO_
   CRediT: https://credit.niso.org/contributor-roles/
   MS: http://purl.obolibrary.org/obo/MS_
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   publication:
@@ -52,6 +55,12 @@ enums:
   PublicationType:
     title: Publication Type
     description: Types of academic and research publications
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       JOURNAL_ARTICLE:
         description: Peer-reviewed journal article
@@ -200,7 +209,14 @@ enums:
         description: Annotation or scholarly note
         meaning: FABIO:Annotation
   PeerReviewStatus:
+    title: Peer Review Status
     description: Status of peer review process
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       NOT_PEER_REVIEWED:
         description: Not peer reviewed
@@ -231,7 +247,14 @@ enums:
         description: Published after review
         meaning: IAO:0000311
   AcademicDegree:
+    title: Academic Degree
     description: Academic degrees and qualifications
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       BA:
         title: Bachelor of Arts
@@ -399,7 +422,14 @@ enums:
         annotations:
           level: postdoctoral
   LicenseType:
+    title: License Type
     description: Common software and content licenses
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       MIT:
         description: MIT License
@@ -460,7 +490,14 @@ enums:
       CUSTOM:
         description: Custom license terms
   ResearchField:
+    title: Research Field
     description: Major research fields and disciplines
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       PHYSICS:
         description: Physics
@@ -545,7 +582,14 @@ enums:
       PUBLIC_HEALTH:
         description: Public health
   FundingType:
+    title: Funding Type
     description: Types of research funding
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       GRANT:
         description: Research grant
@@ -570,7 +614,14 @@ enums:
       CROWDFUNDING:
         description: Crowdfunded research
   ManuscriptSection:
+    title: Manuscript Section
     description: Sections of a scientific manuscript or publication
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       TITLE:
         title: document title
@@ -800,7 +851,14 @@ enums:
         annotations:
           catch_all: true
   ResearchRole:
+    title: Research Role
     description: Roles in research and authorship
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       CONCEPTUALIZATION:
         description: Ideas; formulation of research goals
@@ -868,7 +926,14 @@ enums:
         title: Collaborator
         meaning: NCIT:C84336
   OpenAccessType:
+    title: Open Access Type
     description: Types of open access publishing
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       GOLD:
         description: Gold open access (published OA)
@@ -885,7 +950,14 @@ enums:
       EMBARGO:
         description: Under embargo period
   CitationStyle:
+    title: Citation Style
     description: Common citation and reference styles
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       APA:
         description: American Psychological Association

@@ -6,6 +6,8 @@ prefixes:
   OBI: http://purl.obolibrary.org/obo/OBI_
   MSIO: http://purl.obolibrary.org/obo/MSIO_
   valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   microplate_format:
@@ -22,7 +24,14 @@ slots:
     range: PlateCoatingEnum
 enums:
   MicroplateFormatEnum:
+    title: Microplate Format
     description: Standard microplate well configurations following ANSI/SLAS standards
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       WELL_6:
         description: Microplate with 6 wells
@@ -56,13 +65,21 @@ enums:
           well_spacing: 2.25mm
           standard: ANSI/SLAS 4-2004
   ContainerTypeEnum:
+    title: Container Type
     description: Types of laboratory containers and labware
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       MICROPLATE:
-        description: A flat dish with multiple individual wells that are arrayed in a standardized number, size, and arrangement
+        description: A flat dish with multiple individual wells that are arrayed in a standardized number, size, and 
+          arrangement
         meaning: NCIT:C43377
         exact_mappings:
-          - BAO:0000508
+        - BAO:0000508
         title: microplate
       DEEP_WELL_PLATE:
         description: A microplate with deeper wells for increased sample volume capacity
@@ -99,7 +116,14 @@ enums:
         meaning: NCIT:C128793
         title: microplate well
   PlateMaterialEnum:
+    title: Plate Material
     description: Material composition of laboratory microplates
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       POLYSTYRENE:
         description: Plates made from polystyrene, the most common material for standard applications
@@ -111,10 +135,18 @@ enums:
         description: Plates with glass inserts for samples not suitable for plastic containers
         title: glass
   PlateCoatingEnum:
+    title: Plate Coating
     description: Surface treatment of microplates
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       COATED:
-        description: A microplate whose surface has been treated, for instance by covalently attaching proteins to favor cell growth
+        description: A microplate whose surface has been treated, for instance by covalently attaching proteins to favor
+          cell growth
         meaning: MSIO:0000164
         title: coated microplate
       UNCOATED:

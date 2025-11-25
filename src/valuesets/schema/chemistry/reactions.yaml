@@ -15,6 +15,8 @@ prefixes:
   GO: http://purl.obolibrary.org/obo/GO_
   EC: https://enzyme.expasy.org/EC/
   valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   reaction_type:
@@ -43,7 +45,14 @@ slots:
     range: ThermodynamicParameterEnum
 enums:
   ReactionTypeEnum:
+    title: Reaction Type
     description: Types of chemical reactions
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       SYNTHESIS:
         description: Combination reaction (A + B → AB)
@@ -138,7 +147,14 @@ enums:
         annotations:
           type: conjugate addition
   ReactionMechanismEnum:
+    title: Reaction Mechanism
     description: Reaction mechanism types
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       SN1:
         description: Unimolecular nucleophilic substitution
@@ -183,7 +199,14 @@ enums:
         annotations:
           intermediate: tetrahedral
   CatalystTypeEnum:
+    title: Catalyst Type
     description: Types of catalysts
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       HOMOGENEOUS:
         description: Catalyst in same phase as reactants
@@ -233,7 +256,14 @@ enums:
         annotations:
           sites: multiple
   ReactionConditionEnum:
+    title: Reaction Condition
     description: Reaction conditions
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       ROOM_TEMPERATURE:
         description: Standard room temperature (20-25°C)
@@ -285,7 +315,14 @@ enums:
         annotations:
           type: batch process
   ReactionRateOrderEnum:
+    title: Reaction Rate Order
     description: Reaction rate orders
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       ZERO_ORDER:
         description: Rate independent of concentration
@@ -315,7 +352,14 @@ enums:
         annotations:
           example: rate = k[A][B]²
   EnzymeClassEnum:
+    title: Enzyme Class
     description: EC enzyme classification
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       OXIDOREDUCTASE:
         title: Oxidoreductases
@@ -367,7 +411,14 @@ enums:
           EC_class: '7'
           examples: ATPases, ion pumps
   SolventClassEnum:
+    title: Solvent Class
     description: Classes of solvents
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       PROTIC:
         description: Solvents with acidic hydrogen
@@ -408,7 +459,14 @@ enums:
           property: low environmental impact
           examples: water, ethanol, scCO2
   ThermodynamicParameterEnum:
+    title: Thermodynamic Parameter
     description: Thermodynamic parameters
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       ENTHALPY:
         description: Heat content (ΔH)

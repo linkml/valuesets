@@ -15,6 +15,8 @@ prefixes:
   # cval: https://w3id.org/linkml-common/
   RO: http://purl.obolibrary.org/obo/RO_
   valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 default_curi_maps:
 - semweb_context
@@ -24,10 +26,17 @@ slots:
     range: BioticInteractionType
 enums:
   BioticInteractionType:
+    title: Biotic Interaction Type
     description: 'Types of biotic interactions between organisms, based on RO:0002437 (biotically interacts with). These represent
       ecological relationships where at least one partner is an organism.
 
       '
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       BIOTICALLY_INTERACTS_WITH:
         description: 'An interaction relationship in which at least one of the partners is an organism and the other is either

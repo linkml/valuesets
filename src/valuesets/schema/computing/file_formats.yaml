@@ -12,6 +12,8 @@ prefixes:
   IAO: http://purl.obolibrary.org/obo/IAO_
   SWO: http://purl.obolibrary.org/obo/SWO_
   valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   image_file_format:
@@ -40,7 +42,14 @@ slots:
     range: NetworkProtocolEnum
 enums:
   ImageFileFormatEnum:
+    title: Image File Format
     description: Common image file formats
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       JPEG:
         description: Joint Photographic Experts Group
@@ -111,7 +120,14 @@ enums:
           mime_type: image/x-icon
           use: favicons, app icons
   DocumentFormatEnum:
+    title: Document Format
     description: Document and text file formats
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       PDF:
         description: Portable Document Format
@@ -188,7 +204,14 @@ enums:
           mime_type: application/epub+zip
           use: e-books
   DataFormatEnum:
+    title: Data Format
     description: Structured data file formats
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       JSON:
         description: JavaScript Object Notation
@@ -272,7 +295,14 @@ enums:
           mime_type: application/x-sqlite3
           type: embedded database
   ArchiveFormatEnum:
+    title: Archive Format
     description: Archive and compression formats
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       ZIP:
         description: ZIP archive
@@ -333,7 +363,14 @@ enums:
           mime_type: application/vnd.rar
           proprietary: 'true'
   VideoFormatEnum:
+    title: Video Format
     description: Video file formats
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       MP4:
         description: MPEG-4 Part 14
@@ -383,7 +420,14 @@ enums:
           extension: .mpeg, .mpg
           mime_type: video/mpeg
   AudioFormatEnum:
+    title: Audio Format
     description: Audio file formats
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       MP3:
         description: MPEG Audio Layer 3
@@ -440,7 +484,14 @@ enums:
           mime_type: audio/aiff
           creator: Apple
   ProgrammingLanguageFileEnum:
+    title: Programming Language File
     description: Programming language source file extensions
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       PYTHON:
         description: Python source file
@@ -528,7 +579,14 @@ enums:
           extension: .sh, .bash
           mime_type: text/x-shellscript
   NetworkProtocolEnum:
+    title: Network Protocol
     description: Network communication protocols
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       HTTP:
         description: Hypertext Transfer Protocol

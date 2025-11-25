@@ -19,6 +19,8 @@ prefixes:
   ICD10: http://purl.bioontology.org/ontology/ICD10/
   RxNorm: http://purl.bioontology.org/ontology/RXNORM/
   valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   blood_type:
@@ -53,7 +55,14 @@ slots:
     range: BMIClassificationEnum
 enums:
   BloodTypeEnum:
+    title: Blood Type
     description: ABO and Rh blood group classifications
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       A_POSITIVE:
         description: Blood type A, Rh positive
@@ -122,7 +131,14 @@ enums:
           can_donate: all types
           special: universal donor
   AnatomicalSystemEnum:
+    title: Anatomical System
     description: Major anatomical systems of the body
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       CARDIOVASCULAR:
         title: Heart and blood vessels
@@ -203,6 +219,12 @@ enums:
           components: blood, bone marrow, spleen
   MedicalSpecialtyEnum:
     title: Medical specialties and subspecialties
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       ANESTHESIOLOGY:
         title: Anesthesia and perioperative medicine
@@ -256,6 +278,12 @@ enums:
         title: Urinary and male reproductive system
   DrugRouteEnum:
     title: Routes of drug administration
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       ORAL:
         title: By mouth
@@ -361,6 +389,12 @@ enums:
           forms: drops
   VitalSignEnum:
     title: Standard vital signs
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       HEART_RATE:
         title: Heart beats per minute
@@ -406,6 +440,12 @@ enums:
           type: subjective
   DiagnosticTestTypeEnum:
     title: Types of diagnostic tests
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       BLOOD_TEST:
         title: Blood sample analysis
@@ -491,6 +531,12 @@ enums:
           types: karyotype, sequencing, PCR
   SymptomSeverityEnum:
     title: Severity levels for symptoms
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       ABSENT:
         title: No symptoms
@@ -525,6 +571,12 @@ enums:
           impact: urgent intervention required
   AllergyTypeEnum:
     title: Types of allergic reactions
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       DRUG:
         title: Drug allergy
@@ -555,6 +607,12 @@ enums:
           severity: life-threatening
   VaccineTypeEnum:
     title: Types of vaccines
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       LIVE_ATTENUATED:
         title: Weakened live pathogen
@@ -582,6 +640,12 @@ enums:
           examples: COVID-19 (J&J, AstraZeneca)
   BMIClassificationEnum:
     title: Body Mass Index classifications
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       UNDERWEIGHT:
         title: BMI less than 18.5

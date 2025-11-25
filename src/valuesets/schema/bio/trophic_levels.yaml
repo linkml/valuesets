@@ -6,6 +6,8 @@ prefixes:
   BTO: http://purl.obolibrary.org/obo/BTO_
   mixs: https://genomicsstandardsconsortium.github.io/mixs/
   valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   trophic_level:
@@ -13,7 +15,14 @@ slots:
     range: TrophicLevelEnum
 enums:
   TrophicLevelEnum:
+    title: Trophic Level
     description: Trophic levels are the feeding position in a food chain
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       AUTOTROPH:
         description: Organism capable of synthesizing its own food from inorganic substances

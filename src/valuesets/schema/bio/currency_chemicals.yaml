@@ -9,16 +9,25 @@ prefixes:
   linkml: https://w3id.org/linkml/
   CHEBI: http://purl.obolibrary.org/obo/CHEBI_
   valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   currency_chemical:
-    description: Common metabolic currency molecules and cofactors that serve as energy carriers, electron donors/acceptors,
-      and group transfer agents in cellular metabolism
+    description: Common metabolic currency molecules and cofactors that serve as energy carriers, electron 
+      donors/acceptors, and group transfer agents in cellular metabolism
     range: CurrencyChemical
 enums:
   CurrencyChemical:
-    description: Common metabolic currency molecules and cofactors that serve as energy carriers, electron donors/acceptors,
-      and group transfer agents in cellular metabolism.
+    title: Currency Chemical
+    description: Common metabolic currency molecules and cofactors that serve as energy carriers, electron 
+      donors/acceptors, and group transfer agents in cellular metabolism.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       ATP:
         description: Adenosine triphosphate - primary energy currency molecule in cells

@@ -5,6 +5,8 @@ prefixes:
   NCIT: http://purl.obolibrary.org/obo/NCIT_
   SIO: http://semanticscience.org/resource/SIO_
   valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   news_topic_category:
@@ -18,7 +20,14 @@ slots:
     range: IntentClassificationEnum
 enums:
   NewsTopicCategoryEnum:
+    title: News Topic Category
     description: Common news article topic categories
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       POLITICS:
         description: Political news and government affairs
@@ -63,7 +72,14 @@ enums:
         aliases:
         - regional
   ToxicityClassificationEnum:
+    title: Toxicity Classification
     description: Text toxicity classification labels
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       NON_TOXIC:
         description: Text is appropriate and non-harmful
@@ -101,7 +117,14 @@ enums:
         title: Identity Hate
         is_a: TOXIC
   IntentClassificationEnum:
+    title: Intent Classification
     description: Common chatbot/NLU intent categories
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       GREETING:
         description: User greeting or hello

@@ -1,16 +1,18 @@
 name: nuclear_reactor_types
 title: Nuclear Reactor Types and Classifications
-description: 'Classifications of nuclear reactor types based on coolant, moderator, neutron spectrum,
-  and generational designs. Based on World Nuclear Association classifications, IAEA reactor types,
-  and industry standards.'
+description: 'Classifications of nuclear reactor types based on coolant, moderator, neutron spectrum, and generational designs.
+  Based on World Nuclear Association classifications, IAEA reactor types, and industry standards.'
 id: https://w3id.org/linkml/valuesets/energy/nuclear/reactor_types
 imports:
 - linkml:types
 prefixes:
+  linkml: https://w3id.org/linkml/
   valuesets: https://w3id.org/valuesets/
   IAEA: https://www.iaea.org/
   WNA: https://world-nuclear.org/
   IEEE: https://standards.ieee.org/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   reactor_type:
@@ -33,7 +35,14 @@ slots:
     range: ReactorSizeCategoryEnum
 enums:
   ReactorTypeEnum:
+    title: Reactor Type
     description: Nuclear reactor types based on design and operational characteristics
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       PWR:
         title: Pressurized Water Reactor
@@ -193,7 +202,14 @@ enums:
           coolant: supercritical water
           generation: IV
   ReactorGenerationEnum:
+    title: Reactor Generation
     description: Nuclear reactor generational classifications
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       GENERATION_I:
         title: Generation I
@@ -235,7 +251,14 @@ enums:
           goals: sustainability, economics, safety, proliferation resistance
           examples: VHTR, SFR, LFR, GFR, SCWR, MSR
   ReactorCoolantEnum:
+    title: Reactor Coolant
     description: Primary coolant types used in nuclear reactors
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       LIGHT_WATER:
         title: Light Water (H2O)
@@ -297,7 +320,14 @@ enums:
           pressure: ">221 bar"
           temperature: ">374°C"
   ReactorModeratorEnum:
+    title: Reactor Moderator
     description: Neutron moderator types used in nuclear reactors
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       LIGHT_WATER:
         title: Light Water (H2O)
@@ -335,7 +365,14 @@ enums:
           neutron_spectrum: fast
           moderation: none
   ReactorNeutronSpectrumEnum:
+    title: Reactor Neutron Spectrum
     description: Neutron energy spectrum classifications
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       THERMAL:
         title: Thermal Neutron Spectrum
@@ -358,7 +395,14 @@ enums:
           moderation: minimal or none
           breeding_capability: high
   ReactorSizeCategoryEnum:
+    title: Reactor Size Category
     description: Nuclear reactor size classifications
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       LARGE:
         title: Large Reactor

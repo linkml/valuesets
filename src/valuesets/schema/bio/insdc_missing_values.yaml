@@ -7,20 +7,32 @@ prefixes:
   SIO: http://semanticscience.org/resource/SIO_
   insdc: https://www.insdc.org/controlled-vocabulary/missing-value/
   valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   insdc_missing_value:
-    description: INSDC (International Nucleotide Sequence Database Collaboration) controlled vocabulary for missing values
-      in sequence records
+    description: INSDC (International Nucleotide Sequence Database Collaboration) controlled vocabulary for missing 
+      values in sequence records
     range: InsdcMissingValueEnum
 enums:
   InsdcMissingValueEnum:
-    description: INSDC (International Nucleotide Sequence Database Collaboration) controlled vocabulary for missing values
-      in sequence records
+    title: Insdc Missing Value
+    description: INSDC (International Nucleotide Sequence Database Collaboration) controlled vocabulary for missing
+      values in sequence records
+    status: STANDARD
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinitionWithStewardship
+    annotations:
+      stewards: https://gensc.org
+      publishers: https://www.insdc.org
     permissible_values:
       NOT_APPLICABLE:
-        description: Information is inappropriate to report, can indicate that the standard itself fails to model or represent
-          the information appropriately
+        description: Information is inappropriate to report, can indicate that the standard itself fails to model or 
+          represent the information appropriately
         meaning: NCIT:C48660
         title: not applicable
       MISSING:
@@ -46,13 +58,13 @@ enums:
         annotations:
           note: NCIT:C67110 represents Data Not Releasable due to confidentiality
       MISSING_CONTROL_SAMPLE:
-        description: Information is not applicable to control samples, negative control samples (e.g. blank sample or clear
-          sample)
+        description: Information is not applicable to control samples, negative control samples (e.g. blank sample or 
+          clear sample)
         annotations:
           note: No specific ontology term found for missing control sample data
       MISSING_SAMPLE_GROUP:
-        description: Information can not be provided for a sample group where a selection of samples is used to represent
-          a species, location or some other attribute/metric
+        description: Information can not be provided for a sample group where a selection of samples is used to 
+          represent a species, location or some other attribute/metric
         annotations:
           note: No specific ontology term found for missing sample group data
       MISSING_SYNTHETIC_CONSTRUCT:
@@ -60,8 +72,8 @@ enums:
         annotations:
           note: No specific ontology term found for missing synthetic construct data
       MISSING_LAB_STOCK:
-        description: Information is not collected for a lab stock and its cultivation, e.g. stock centers, culture collections,
-          seed banks
+        description: Information is not collected for a lab stock and its cultivation, e.g. stock centers, culture 
+          collections, seed banks
         annotations:
           note: No specific ontology term found for missing lab stock data
       MISSING_THIRD_PARTY_DATA:
@@ -71,8 +83,8 @@ enums:
         annotations:
           note: NCIT:C67329 represents Source Data Not Available
       MISSING_DATA_AGREEMENT_ESTABLISHED_PRE_2023:
-        description: Information can not be reported due to a data agreement established before metadata standards were introduced
-          in 2023
+        description: Information can not be reported due to a data agreement established before metadata standards were 
+          introduced in 2023
         annotations:
           note: No specific ontology term for data missing due to pre-2023 agreements
       MISSING_ENDANGERED_SPECIES:

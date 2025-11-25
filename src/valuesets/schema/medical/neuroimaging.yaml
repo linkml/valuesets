@@ -1,6 +1,7 @@
 name: neuroimaging
 title: Neuroimaging Value Sets
-description: 'Value sets for neuroimaging including MRI modalities, fMRI paradigms, acquisition parameters, and image analysis methods.'
+description: 'Value sets for neuroimaging including MRI modalities, fMRI paradigms, acquisition parameters, and image analysis
+  methods.'
 id: https://w3id.org/valuesets/medical/neuroimaging
 imports:
 - linkml:types
@@ -14,6 +15,8 @@ prefixes:
   CHMO: http://purl.obolibrary.org/obo/CHMO_
   STATO: http://purl.obolibrary.org/obo/STATO_
   valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 
 slots:
@@ -32,7 +35,14 @@ slots:
 
 enums:
   MRIModalityEnum:
+    title: MRI Modality
     description: MRI imaging modalities and techniques
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       STRUCTURAL_T1:
         title: T1-weighted structural MRI
@@ -158,7 +168,14 @@ enums:
           metric: correlation coefficients
 
   MRISequenceTypeEnum:
+    title: MRI Sequence Type
     description: MRI pulse sequence types
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       GRADIENT_ECHO:
         title: Gradient echo sequence
@@ -217,7 +234,14 @@ enums:
           signal: high
 
   MRIContrastTypeEnum:
+    title: MRI Contrast Type
     description: MRI image contrast mechanisms
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       T1_WEIGHTED:
         title: T1-weighted contrast
@@ -273,7 +297,14 @@ enums:
           typical_use: stroke, tumor vascularity
 
   FMRIParadigmTypeEnum:
+    title: FMRI Paradigm Type
     description: fMRI experimental paradigm types
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       BLOCK_DESIGN:
         title: Block design paradigm

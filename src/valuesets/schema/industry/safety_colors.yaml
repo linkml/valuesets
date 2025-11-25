@@ -14,6 +14,8 @@ prefixes:
   ANSI: https://www.ansi.org/
   OSHA: https://www.osha.gov/
   valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   safety_color:
@@ -39,7 +41,14 @@ slots:
     range: ElectricalWireColorEnum
 enums:
   SafetyColorEnum:
+    title: Safety Color
     description: ANSI/ISO standard safety colors
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       SAFETY_RED:
         description: Safety red - danger, stop, prohibition
@@ -107,7 +116,14 @@ enums:
         annotations:
           usage: background color for signs
   TrafficLightColorEnum:
+    title: Traffic Light Color
     description: Traffic signal colors (international)
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       RED:
         description: Red - stop
@@ -145,7 +161,14 @@ enums:
         annotations:
           usage: transit priority signals
   HazmatColorEnum:
+    title: Hazmat Color
     description: Hazardous materials placarding colors (DOT/UN)
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       ORANGE:
         description: Orange - explosives (Class 1)
@@ -196,7 +219,14 @@ enums:
           hazard: flammable solid
           pattern: white with red vertical stripes
   FireSafetyColorEnum:
+    title: Fire Safety Color
     description: Fire safety equipment and signage colors
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       FIRE_RED:
         description: Fire red - fire equipment
@@ -226,7 +256,14 @@ enums:
         annotations:
           usage: mandatory fire safety equipment
   MaritimeSignalColorEnum:
+    title: Maritime Signal Color
     description: Maritime signal and navigation colors
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       PORT_RED:
         description: Port (left) red light
@@ -267,7 +304,14 @@ enums:
           usage: law enforcement vessels
           pattern: flashing
   AviationLightColorEnum:
+    title: Aviation Light Color
     description: Aviation lighting colors
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       RED_BEACON:
         description: Red obstruction light
@@ -317,7 +361,14 @@ enums:
         annotations:
           usage: runway end
   ElectricalWireColorEnum:
+    title: Electrical Wire Color
     description: Electrical wire color codes (US/International)
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       BLACK_HOT:
         description: Black - hot/live wire (US)

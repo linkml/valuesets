@@ -1,16 +1,18 @@
 name: nuclear_fuels
 title: Nuclear Fuel Types and Classifications
-description: 'Classifications of nuclear fuel types including uranium enrichment levels,
-  fuel forms, and alternative fuel cycles. Based on IAEA classifications, nuclear
-  fuel cycle standards, and industry specifications.'
+description: 'Classifications of nuclear fuel types including uranium enrichment levels, fuel forms, and alternative fuel
+  cycles. Based on IAEA classifications, nuclear fuel cycle standards, and industry specifications.'
 id: https://w3id.org/linkml/valuesets/energy/nuclear/nuclear_fuels
 imports:
 - linkml:types
 prefixes:
+  linkml: https://w3id.org/linkml/
   valuesets: https://w3id.org/valuesets/
   IAEA: https://www.iaea.org/
   WNA: https://world-nuclear.org/
   CHEBI: http://purl.obolibrary.org/obo/CHEBI_
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   nuclear_fuel_type:
@@ -33,7 +35,14 @@ slots:
     range: FissileIsotopeEnum
 enums:
   NuclearFuelTypeEnum:
+    title: Nuclear Fuel Type
     description: Types of nuclear fuel materials and compositions
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       NATURAL_URANIUM:
         title: Natural Uranium
@@ -168,7 +177,14 @@ enums:
           density: high
           typical_use: fast reactors
   UraniumEnrichmentLevelEnum:
+    title: Uranium Enrichment Level
     description: Standard uranium-235 enrichment level classifications
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       NATURAL:
         title: Natural Uranium
@@ -213,7 +229,14 @@ enums:
           category: WGU
           proliferation_concern: extreme
   FuelFormEnum:
+    title: Fuel Form
     description: Physical forms of nuclear fuel
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       OXIDE_PELLETS:
         title: Oxide Pellets
@@ -267,7 +290,14 @@ enums:
           geometry: long cylinders
           typical_use: commercial power reactors
   FuelAssemblyTypeEnum:
+    title: Fuel Assembly Type
     description: Types of fuel assembly configurations
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       PWR_ASSEMBLY:
         title: PWR Fuel Assembly
@@ -316,7 +346,14 @@ enums:
           geometry: hexagonal wrapper
           coolant_flow: axial
   FuelCycleStageEnum:
+    title: Fuel Cycle Stage
     description: Stages in the nuclear fuel cycle
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       MINING:
         title: Uranium Mining
@@ -373,7 +410,14 @@ enums:
           duration: permanent
           status: under development globally
   FissileIsotopeEnum:
+    title: Fissile Isotope
     description: Fissile isotopes used in nuclear fuel
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       URANIUM_233:
         title: Uranium-233

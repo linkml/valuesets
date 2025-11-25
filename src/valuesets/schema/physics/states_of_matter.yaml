@@ -8,6 +8,8 @@ prefixes:
   AFO: http://purl.allotrope.org/ontologies/quality#
   SNOMED: http://snomed.info/id/
   valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   state_of_matter:
@@ -15,7 +17,14 @@ slots:
     range: StateOfMatterEnum
 enums:
   StateOfMatterEnum:
+    title: State Of Matter
     description: The physical state or phase of matter
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       SOLID:
         description: A state of matter where particles are closely packed together with fixed positions
@@ -30,7 +39,8 @@ enums:
         description: An ionized gas with freely moving charged particles
         meaning: AFO:AFQ_0000115
       BOSE_EINSTEIN_CONDENSATE:
-        description: A state of matter formed at extremely low temperatures where particles occupy the same quantum state
+        description: A state of matter formed at extremely low temperatures where particles occupy the same quantum 
+          state
       FERMIONIC_CONDENSATE:
         description: A superfluid phase formed by fermionic particles at extremely low temperatures
       SUPERCRITICAL_FLUID:

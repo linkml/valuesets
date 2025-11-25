@@ -15,6 +15,8 @@ prefixes:
   NCIT: http://purl.obolibrary.org/obo/NCIT_
   MOP: http://purl.obolibrary.org/obo/MOP_
   valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   sample:
@@ -64,7 +66,14 @@ slots:
     range: ProteinModificationType
 enums:
   SampleType:
+    title: Sample Type
     description: Types of biological samples used in structural biology
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       PROTEIN:
         description: Purified protein sample
@@ -83,7 +92,14 @@ enums:
       TISSUE:
         description: Tissue sample
   StructuralBiologyTechnique:
+    title: Structural Biology Technique
     description: Structural biology experimental techniques
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       CRYO_EM:
         title: cryogenic electron microscopy
@@ -136,7 +152,14 @@ enums:
         annotations:
           resolution_range: 15-30 Å typical
   CryoEMPreparationType:
+    title: Cryo EM Preparation Type
     description: Types of cryo-EM sample preparation
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       VITREOUS_ICE:
         description: Sample embedded in vitreous ice
@@ -147,7 +170,14 @@ enums:
       HIGH_PRESSURE_FREEZING:
         description: High-pressure frozen sample
   CryoEMGridType:
+    title: Cryo EM Grid Type
     description: Types of electron microscopy grids
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       C_FLAT:
         description: C-flat holey carbon grid
@@ -176,7 +206,14 @@ enums:
         annotations:
           advantages: atomically thin, good contrast
   VitrificationMethod:
+    title: Vitrification Method
     description: Methods for sample vitrification
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       PLUNGE_FREEZING:
         description: Plunge freezing in liquid ethane
@@ -197,7 +234,14 @@ enums:
         annotations:
           applications: large samples, tissues
   CrystallizationMethod:
+    title: Crystallization Method
     description: Methods for protein crystallization
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       VAPOR_DIFFUSION_HANGING:
         description: Vapor diffusion hanging drop method
@@ -227,7 +271,14 @@ enums:
           applications: membrane proteins
           lipid: monoolein most common
   XRaySource:
+    title: X Ray Source
     description: Types of X-ray sources
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       SYNCHROTRON:
         description: Synchrotron radiation source
@@ -250,7 +301,14 @@ enums:
           advantages: higher power density, longer lifetime
           metals: gallium, indium
   Detector:
+    title: Detector
     description: Types of detectors for structural biology
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       DIRECT_ELECTRON:
         description: Direct electron detector (DED)
@@ -275,7 +333,14 @@ enums:
         annotations:
           applications: legacy crystallography
   WorkflowType:
+    title: Workflow Type
     description: Types of computational processing workflows
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       MOTION_CORRECTION:
         description: Motion correction for cryo-EM movies
@@ -327,7 +392,14 @@ enums:
         annotations:
           software: PRIMUS, CRYSOL, FoXS
   FileFormat:
+    title: File Format
     description: File formats used in structural biology
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       MRC:
         description: MRC format for EM density maps
@@ -380,7 +452,14 @@ enums:
           extension: .ser
           applications: FEI movie stacks
   DataType:
+    title: Data Type
     description: Types of structural biology data
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       MICROGRAPH:
         description: Electron micrograph image
@@ -419,7 +498,14 @@ enums:
         annotations:
           formats: STAR, XML, JSON
   ProcessingStatus:
+    title: Processing Status
     description: Status of data processing workflows
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       RAW:
         description: Raw unprocessed data
@@ -438,7 +524,14 @@ enums:
       CANCELLED:
         description: Processing cancelled by user
   CoordinationGeometry:
+    title: Coordination Geometry
     description: Coordination geometry of metal centers in protein structures
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       LINEAR:
         description: Linear coordination geometry (2 ligands at 180°)
@@ -519,7 +612,14 @@ enums:
         annotations:
           coordination_number: '4'
   MetalLigandType:
+    title: Metal Ligand Type
     description: Types of metal-containing chemical components
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       METAL_CATION:
         description: Metal cation (e.g., Ca2+, Mg2+, Zn2+, Fe3+)
@@ -530,7 +630,14 @@ enums:
         annotations:
           examples: heme, chlorophyll, cobalamin, Fe-S cluster
   ProteinModificationType:
+    title: Protein Modification Type
     description: Types of protein modifications
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       METAL_COORDINATION:
         description: Metal coordination modification

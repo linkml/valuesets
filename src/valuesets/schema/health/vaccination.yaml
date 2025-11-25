@@ -11,6 +11,8 @@ prefixes:
   NCIT: http://purl.obolibrary.org/obo/NCIT_
   VO: http://purl.obolibrary.org/obo/VO_
   valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   vaccination_status:
@@ -24,7 +26,14 @@ slots:
     range: VaccineCategoryEnum
 enums:
   VaccinationStatusEnum:
+    title: Vaccination Status
     description: The vaccination status of an individual
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       VACCINATED:
         description: A status indicating that an individual has received a vaccination
@@ -48,7 +57,14 @@ enums:
         description: The vaccination status is not known
         meaning: NCIT:C17998
   VaccinationPeriodicityEnum:
+    title: Vaccination Periodicity
     description: The periodicity or frequency of vaccination
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       SINGLE_DOSE:
         description: A vaccination regimen requiring only one dose
@@ -69,7 +85,14 @@ enums:
       AS_NEEDED:
         description: Vaccination given as needed based on exposure risk or other factors
   VaccineCategoryEnum:
+    title: Vaccine Category
     description: The broad category or type of vaccine
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       LIVE_ATTENUATED_VACCINE:
         description: A vaccine made from microbes that have been weakened in the laboratory

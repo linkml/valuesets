@@ -18,10 +18,13 @@ id: https://w3id.org/linkml/valuesets/academic/organizations
 imports:
 - linkml:types
 prefixes:
+  linkml: https://w3id.org/linkml/
   valuesets: https://w3id.org/valuesets/
   ROR: https://ror.org/
   GRID: https://www.grid.ac/institutes/
   ISNI: https://isni.org/isni/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 
 slots:
@@ -43,6 +46,7 @@ slots:
 
 enums:
   USDOENationalLaboratoryEnum:
+    title: USDOE National Laboratory
     description: |
       United States Department of Energy National Laboratories.
 
@@ -51,9 +55,15 @@ enums:
 
       These laboratories are managed by contractors and stewarded by various DOE program offices,
       with the Office of Science stewarding 10 of the 17 laboratories.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     comments:
-      - All organization names mapped to ROR (Research Organization Registry) identifiers
-      - See https://www.energy.gov/national-laboratories for official information
+    - All organization names mapped to ROR (Research Organization Registry) identifiers
+    - See https://www.energy.gov/national-laboratories for official information
     permissible_values:
       AMES_LABORATORY:
         title: Ames National Laboratory
@@ -87,7 +97,7 @@ enums:
         description: Particle physics and accelerator research laboratory
         meaning: ROR:020hgte69
         aliases:
-          - Fermilab
+        - Fermilab
         annotations:
           location: Batavia, Illinois
           established: 1967
@@ -107,8 +117,8 @@ enums:
         description: Multidisciplinary research laboratory
         meaning: ROR:02jbv0t02
         aliases:
-          - Berkeley Lab
-          - LBNL
+        - Berkeley Lab
+        - LBNL
         annotations:
           location: Berkeley, California
           established: 1931
@@ -119,7 +129,7 @@ enums:
         description: National security laboratory focused on nuclear weapons and advanced technology
         meaning: ROR:041nk4h53
         aliases:
-          - LLNL
+        - LLNL
         annotations:
           location: Livermore, California
           established: 1952
@@ -130,7 +140,7 @@ enums:
         description: Multidisciplinary research institution for national security
         meaning: ROR:01e41cf67
         aliases:
-          - LANL
+        - LANL
         annotations:
           location: Los Alamos, New Mexico
           established: 1943
@@ -141,7 +151,7 @@ enums:
         description: Federal research laboratory focused on energy and environmental technology
         meaning: ROR:01x26mz03
         aliases:
-          - NETL
+        - NETL
         annotations:
           location: Pittsburgh, Pennsylvania and Morgantown, West Virginia
           established: 1910
@@ -152,7 +162,7 @@ enums:
         description: Research and development laboratory focused on renewable energy and energy efficiency
         meaning: ROR:036266993
         aliases:
-          - NREL
+        - NREL
         annotations:
           location: Golden, Colorado
           established: 1977
@@ -163,7 +173,7 @@ enums:
         description: Multidisciplinary science and technology laboratory
         meaning: ROR:01qz5mb56
         aliases:
-          - ORNL
+        - ORNL
         annotations:
           location: Oak Ridge, Tennessee
           established: 1943
@@ -174,7 +184,7 @@ enums:
         description: Research laboratory focused on energy, environment, and national security
         meaning: ROR:05h992307
         aliases:
-          - PNNL
+        - PNNL
         annotations:
           location: Richland, Washington
           established: 1965
@@ -185,7 +195,7 @@ enums:
         description: Plasma physics and fusion energy research laboratory
         meaning: ROR:03vn1ts68
         aliases:
-          - PPPL
+        - PPPL
         annotations:
           location: Princeton, New Jersey
           established: 1951
@@ -196,8 +206,8 @@ enums:
         description: Multimission laboratory for national security and technology innovation
         meaning: ROR:01apwpt12
         aliases:
-          - Sandia
-          - SNL
+        - Sandia
+        - SNL
         annotations:
           location: Albuquerque, New Mexico and Livermore, California
           established: 1949
@@ -208,7 +218,7 @@ enums:
         description: Applied research laboratory for environmental and national security missions
         meaning: ROR:05vc7qy59
         aliases:
-          - SRNL
+        - SRNL
         annotations:
           location: Aiken, South Carolina
           established: 1951
@@ -219,7 +229,7 @@ enums:
         description: Particle physics and photon science research laboratory
         meaning: ROR:05gzmn429
         aliases:
-          - SLAC
+        - SLAC
         annotations:
           location: Menlo Park, California
           established: 1962
@@ -230,8 +240,8 @@ enums:
         description: Nuclear physics research laboratory with particle accelerator
         meaning: ROR:02vwzrd76
         aliases:
-          - Jefferson Lab
-          - JLab
+        - Jefferson Lab
+        - JLab
         annotations:
           location: Newport News, Virginia
           established: 1984
@@ -239,21 +249,28 @@ enums:
           website: https://www.jlab.org/
 
   USFederalFundingAgencyEnum:
+    title: US Federal Funding Agency
     description: |
       Major United States Federal Research Funding Agencies.
 
       These agencies provide funding for basic and applied research across various scientific disciplines,
       supporting universities, national laboratories, and other research institutions.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     comments:
-      - All agency names mapped to ROR (Research Organization Registry) identifiers
-      - Includes primary research funding agencies
+    - All agency names mapped to ROR (Research Organization Registry) identifiers
+    - Includes primary research funding agencies
     permissible_values:
       NIH:
         title: National Institutes of Health
         description: Primary federal agency for biomedical and public health research
         meaning: ROR:01cwqze88
         aliases:
-          - National Institutes of Health
+        - National Institutes of Health
         annotations:
           parent_department: Department of Health and Human Services
           website: https://www.nih.gov/
@@ -263,7 +280,7 @@ enums:
         description: Federal agency supporting fundamental research and education in non-medical fields
         meaning: ROR:021nxhr62
         aliases:
-          - National Science Foundation
+        - National Science Foundation
         annotations:
           website: https://www.nsf.gov/
           established: 1950
@@ -272,8 +289,8 @@ enums:
         description: Federal department overseeing energy policy and nuclear weapons program
         meaning: ROR:01bj3aw27
         aliases:
-          - Department of Energy
-          - U.S. Department of Energy
+        - Department of Energy
+        - U.S. Department of Energy
         annotations:
           website: https://www.energy.gov/
           established: 1977
@@ -289,7 +306,7 @@ enums:
         description: Federal agency protecting human health and the environment
         meaning: ROR:03tns0030
         aliases:
-          - U.S. Environmental Protection Agency
+        - U.S. Environmental Protection Agency
         annotations:
           website: https://www.epa.gov/
           established: 1970
@@ -314,7 +331,7 @@ enums:
         description: Principal research agency of the U.S. Department of Agriculture
         meaning: ROR:02d2m2044
         aliases:
-          - USDA ARS
+        - USDA ARS
         annotations:
           parent_department: Department of Agriculture
           website: https://www.ars.usda.gov/
@@ -324,8 +341,8 @@ enums:
         description: Federal department responsible for military research and development
         meaning: ROR:0447fe631
         aliases:
-          - Department of Defense
-          - U.S. Department of Defense
+        - Department of Defense
+        - U.S. Department of Defense
         annotations:
           website: https://www.defense.gov/
           established: 1947
@@ -339,21 +356,28 @@ enums:
           established: 1879
 
   NIHInstituteCenterEnum:
+    title: NIH Institute Center
     description: |
       National Institutes of Health (NIH) Institutes and Centers.
 
       NIH comprises 27 Institutes and Centers, each with a specific research agenda focused on particular
       diseases or body systems. These are the major NIH ICs that fund extramural research.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     comments:
-      - All mapped to ROR (Research Organization Registry) identifiers
-      - Focuses on major funding institutes
+    - All mapped to ROR (Research Organization Registry) identifiers
+    - Focuses on major funding institutes
     permissible_values:
       NCI:
         title: National Cancer Institute
         description: NIH institute for cancer research and training
         meaning: ROR:02t771148
         aliases:
-          - National Cancer Institute
+        - National Cancer Institute
         annotations:
           parent_organization: National Institutes of Health
           website: https://www.cancer.gov/
@@ -363,7 +387,7 @@ enums:
         description: NIH institute for heart, lung, and blood diseases research
         meaning: ROR:012pb6c26
         aliases:
-          - National Heart, Lung, and Blood Institute
+        - National Heart, Lung, and Blood Institute
         annotations:
           parent_organization: National Institutes of Health
           website: https://www.nhlbi.nih.gov/
@@ -445,21 +469,28 @@ enums:
         description: World's largest biomedical library and NIH component
         meaning: ROR:0060t0j89
         aliases:
-          - National Library of Medicine
+        - National Library of Medicine
         annotations:
           parent_organization: National Institutes of Health
           website: https://www.nlm.nih.gov/
           established: 1956
 
   StandardsOrganizationEnum:
+    title: Standards Organization
     description: |
       Major International Standards Development Organizations.
 
       These organizations develop technical standards, specifications, and guidelines used globally
       across various industries including information technology, healthcare, and engineering.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     comments:
-      - All mapped to ROR (Research Organization Registry) identifiers where available
-      - Includes standards bodies commonly referenced in research
+    - All mapped to ROR (Research Organization Registry) identifiers where available
+    - Includes standards bodies commonly referenced in research
     permissible_values:
       ISO:
         title: International Organization for Standardization
@@ -490,21 +521,28 @@ enums:
         description: Standards development organization for healthcare information exchange
         meaning: ROR:029ga8k16
         aliases:
-          - Health Level Seven
+        - Health Level Seven
         annotations:
           website: https://www.hl7.org/
           established: 1987
           headquarters: Ann Arbor, Michigan
 
   UNSpecializedAgencyEnum:
+    title: UN Specialized Agency
     description: |
       United Nations Specialized Agencies.
 
       UN specialized agencies are autonomous international organizations that coordinate their work
       with the UN through negotiated agreements. They address international issues in their respective fields.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     comments:
-      - All mapped to ROR (Research Organization Registry) identifiers
-      - Includes major UN agencies relevant to research and development
+    - All mapped to ROR (Research Organization Registry) identifiers
+    - Includes major UN agencies relevant to research and development
     permissible_values:
       WHO:
         title: World Health Organization
@@ -519,7 +557,7 @@ enums:
         description: UN Educational, Scientific and Cultural Organization
         meaning: ROR:04h4z8k05
         aliases:
-          - United Nations Educational, Scientific and Cultural Organization
+        - United Nations Educational, Scientific and Cultural Organization
         annotations:
           website: https://www.unesco.org/
           established: 1945
