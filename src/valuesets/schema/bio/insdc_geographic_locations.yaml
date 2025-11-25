@@ -34,7 +34,7 @@ enums:
     - orcid:0000-0002-6601-2165
     - https://github.com/anthropics/claude-code
     instantiates:
-    - valuesets_meta:ValueSetEnumDefinitionWithStewardship
+    - valuesets_meta:ValueSetEnumDefinition
     annotations:
       stewards: https://gensc.org
       publishers: https://www.insdc.org

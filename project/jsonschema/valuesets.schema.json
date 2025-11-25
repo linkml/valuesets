@@ -5934,7 +5934,7 @@
             "type": "string"
         },
         "PresenceEnum": {
-            "description": "",
+            "description": "Classification of whether an entity is present, absent, or at detection limits",
             "enum": [
                 "PRESENT",
                 "ABSENT",
@@ -6689,7 +6689,7 @@
             "type": "string"
         },
         "RelativeTimeEnum": {
-            "description": "",
+            "description": "Temporal relationships between events or time points",
             "enum": [
                 "BEFORE",
                 "AFTER",

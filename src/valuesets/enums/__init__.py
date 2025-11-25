@@ -89,6 +89,7 @@ from .healthcare import HealthcareEncounterClassification
 from .investigation import CaseOrControlEnum
 from .mining_processing import RelativeTimeEnum, PresenceEnum, MineralogyFeedstockClass, BeneficiationPathway, InSituChemistryRegime, ExtractableTargetElement, SensorWhileDrillingFeature, ProcessPerformanceMetric, BioleachOrganism, BioleachMode, AutonomyLevel, RegulatoryConstraint
 from .statistics import PredictionOutcomeType
+from .stewardship import ValueSetStewardEnum
 
 # Data domain
 from .data.data_absent_reason import DataAbsentEnum
@@ -103,6 +104,7 @@ from .data_science.text_classification import NewsTopicCategoryEnum, ToxicityCla
 
 # Earth_Science domain
 from .earth_science.collection_methods import SESARCollectionMethod
+from .earth_science.fao_soil import FAOSoilType
 from .earth_science.material_types import SESARMaterialType
 from .earth_science.physiographic_features import SESARPhysiographicFeature
 from .earth_science.sample_types import SESARSampleType
@@ -332,6 +334,7 @@ __all__ = [
     "ExtractiveIndustryFacilityTypeEnum",
     "ExtractiveIndustryProductTypeEnum",
     "EyeColorEnum",
+    "FAOSoilType",
     "FMRIParadigmTypeEnum",
     "FamilyHistoryStatus",
     "FamilyRelationship",
@@ -637,6 +640,7 @@ __all__ = [
     "VaccinationStatusEnum",
     "VaccineCategoryEnum",
     "VaccineTypeEnum",
+    "ValueSetStewardEnum",
     "VendorCategoryEnum",
     "VideoFormatEnum",
     "ViralGenomeTypeEnum",

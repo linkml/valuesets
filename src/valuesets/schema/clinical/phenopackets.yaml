@@ -57,7 +57,7 @@ enums:
     - orcid:0000-0002-6601-2165
     - https://github.com/anthropics/claude-code
     instantiates:
-    - valuesets_meta:ValueSetEnumDefinitionWithStewardship
+    - valuesets_meta:ValueSetEnumDefinition
     annotations:
       stewards: https://phenopackets.org
       publishers: https://ga4gh.org
@@ -143,7 +143,7 @@ enums:
     - orcid:0000-0002-6601-2165
     - https://github.com/anthropics/claude-code
     instantiates:
-    - valuesets_meta:ValueSetEnumDefinitionWithStewardship
+    - valuesets_meta:ValueSetEnumDefinition
     annotations:
       stewards: https://phenopackets.org
       publishers: https://ga4gh.org
@@ -176,7 +176,7 @@ enums:
     - orcid:0000-0002-6601-2165
     - https://github.com/anthropics/claude-code
     instantiates:
-    - valuesets_meta:ValueSetEnumDefinitionWithStewardship
+    - valuesets_meta:ValueSetEnumDefinition
     annotations:
       stewards: https://phenopackets.org
       publishers: https://ga4gh.org
@@ -222,7 +222,7 @@ enums:
     - orcid:0000-0002-6601-2165
     - https://github.com/anthropics/claude-code
     instantiates:
-    - valuesets_meta:ValueSetEnumDefinitionWithStewardship
+    - valuesets_meta:ValueSetEnumDefinition
     annotations:
       stewards: https://phenopackets.org
       publishers: https://ga4gh.org
@@ -259,7 +259,7 @@ enums:
     - orcid:0000-0002-6601-2165
     - https://github.com/anthropics/claude-code
     instantiates:
-    - valuesets_meta:ValueSetEnumDefinitionWithStewardship
+    - valuesets_meta:ValueSetEnumDefinition
     annotations:
       stewards: https://phenopackets.org
       publishers: https://ga4gh.org
@@ -327,7 +327,7 @@ enums:
     - orcid:0000-0002-6601-2165
     - https://github.com/anthropics/claude-code
     instantiates:
-    - valuesets_meta:ValueSetEnumDefinitionWithStewardship
+    - valuesets_meta:ValueSetEnumDefinition
     annotations:
       stewards: https://phenopackets.org
       publishers: https://ga4gh.org
@@ -375,7 +375,7 @@ enums:
     - orcid:0000-0002-6601-2165
     - https://github.com/anthropics/claude-code
     instantiates:
-    - valuesets_meta:ValueSetEnumDefinitionWithStewardship
+    - valuesets_meta:ValueSetEnumDefinition
     annotations:
       stewards: https://phenopackets.org
       publishers: https://ga4gh.org
@@ -404,7 +404,7 @@ enums:
     - orcid:0000-0002-6601-2165
     - https://github.com/anthropics/claude-code
     instantiates:
-    - valuesets_meta:ValueSetEnumDefinitionWithStewardship
+    - valuesets_meta:ValueSetEnumDefinition
     annotations:
       stewards: https://phenopackets.org
       publishers: https://ga4gh.org
@@ -443,7 +443,7 @@ enums:
     - orcid:0000-0002-6601-2165
     - https://github.com/anthropics/claude-code
     instantiates:
-    - valuesets_meta:ValueSetEnumDefinitionWithStewardship
+    - valuesets_meta:ValueSetEnumDefinition
     annotations:
       stewards: https://phenopackets.org
       publishers: https://ga4gh.org
@@ -492,7 +492,7 @@ enums:
     - orcid:0000-0002-6601-2165
     - https://github.com/anthropics/claude-code
     instantiates:
-    - valuesets_meta:ValueSetEnumDefinitionWithStewardship
+    - valuesets_meta:ValueSetEnumDefinition
     annotations:
       stewards: https://phenopackets.org
       publishers: https://ga4gh.org
