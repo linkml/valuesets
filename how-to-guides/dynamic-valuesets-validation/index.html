@@ -1,0 +1,1080 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://linkml.github.io/valuesets/how-to-guides/dynamic-valuesets-validation/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Dynamic Value Sets and Validation - valuesets</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/ansi-colours.css">
+    
+      <link rel="stylesheet" href="../../css/jupyter-cells.css">
+    
+      <link rel="stylesheet" href="../../css/pandas-dataframe.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#dynamic-value-sets-and-validation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="valuesets" class="md-header__button md-logo" aria-label="valuesets" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            valuesets
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Dynamic Value Sets and Validation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/linkml/valuesets" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="valuesets" class="md-nav__button md-logo" aria-label="valuesets" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    valuesets
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/linkml/valuesets" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../elements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Schema
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    About
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slides/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Slides
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-dynamic-value-sets" class="md-nav__link">
+    <span class="md-ellipsis">
+      What are Dynamic Value Sets?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#available-dynamic-value-sets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Available Dynamic Value Sets
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Available Dynamic Value Sets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#biological-entities-biobio_entitiesyaml" class="md-nav__link">
+    <span class="md-ellipsis">
+      Biological Entities (bio/bio_entities.yaml)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Biological Entities (bio/bio_entities.yaml)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cell-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cell Types
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diseases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diseases
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chemical-entities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chemical Entities
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anatomical-structures" class="md-nav__link">
+    <span class="md-ellipsis">
+      Anatomical Structures
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#taxonomy-biotaxonomyyaml" class="md-nav__link">
+    <span class="md-ellipsis">
+      Taxonomy (bio/taxonomy.yaml)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#investigation-protocols-investigationyaml" class="md-nav__link">
+    <span class="md-ellipsis">
+      Investigation Protocols (investigation.yaml)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-dynamic-value-sets-in-schemas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using Dynamic Value Sets in Schemas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Using Dynamic Value Sets in Schemas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Usage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instance-data-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instance Data Validation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validation-approaches" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validation Approaches
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Validation Approaches">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-static-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Static Validation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-ontology-based-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Ontology-based Validation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-batch-validation-with-oak" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Batch Validation with OAK
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practical-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Practical Examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Practical Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1-cell-biology-study" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example 1: Cell Biology Study
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2-disease-research" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example 2: Disease Research
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-3-taxonomic-classification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example 3: Taxonomic Classification
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validation-tools-and-libraries" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validation Tools and Libraries
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Validation Tools and Libraries">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#oak-ontology-access-kit" class="md-nav__link">
+    <span class="md-ellipsis">
+      OAK (Ontology Access Kit)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-validation-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Custom Validation Functions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Best Practices
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Best Practices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-choose-appropriate-root-terms" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Choose Appropriate Root Terms
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-include-ontology-prefixes-in-schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Include Ontology Prefixes in Schema
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-validate-during-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Validate During Development
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-handle-validation-errors-gracefully" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Handle Validation Errors Gracefully
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limitations-and-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limitations and Considerations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Limitations and Considerations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#current-limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Current Limitations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Performance Considerations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#future-developments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Future Developments
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Additional Resources
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="dynamic-value-sets-and-validation">Dynamic Value Sets and Validation</h1>
+<p>Dynamic value sets are a powerful feature in LinkML that allows enums to be populated dynamically from ontologies rather than having hardcoded permissible values. This enables validation against large, evolving controlled vocabularies without manually maintaining enum lists.</p>
+<h2 id="what-are-dynamic-value-sets">What are Dynamic Value Sets?</h2>
+<p>Dynamic value sets use the <code>reachable_from</code> specification to define enums that are populated from ontology terms. Instead of listing every possible value, you specify:</p>
+<ul>
+<li><strong>Source ontology</strong>: The ontology to query</li>
+<li><strong>Source nodes</strong>: Root terms to start from  </li>
+<li><strong>Relationship types</strong>: How to traverse the ontology (e.g., subClassOf)</li>
+<li><strong>Include self</strong>: Whether to include the root terms themselves</li>
+</ul>
+<h2 id="available-dynamic-value-sets">Available Dynamic Value Sets</h2>
+<p>The <code>valuesets</code> repository contains numerous dynamic value sets across different domains:</p>
+<h3 id="biological-entities-biobio_entitiesyaml">Biological Entities (<code>bio/bio_entities.yaml</code>)</h3>
+<h4 id="cell-types">Cell Types</h4>
+<pre><code class="language-yaml">CellType:
+  description: Any cell type from the Cell Ontology (CL)
+  reachable_from:
+    source_ontology: obo:cl
+    source_nodes:
+      - CL:0000000  # cell
+    include_self: true
+    relationship_types:
+      - rdfs:subClassOf
+</code></pre>
+<h4 id="diseases">Diseases</h4>
+<pre><code class="language-yaml">Disease:
+  description: Human diseases from the Mondo Disease Ontology
+  reachable_from:
+    source_ontology: obo:mondo
+    source_nodes:
+      - MONDO:0000001  # disease
+    include_self: true
+    relationship_types:
+      - rdfs:subClassOf
+</code></pre>
+<h4 id="chemical-entities">Chemical Entities</h4>
+<pre><code class="language-yaml">ChemicalEntity:
+  description: Any chemical entity from ChEBI ontology
+  reachable_from:
+    source_ontology: obo:chebi
+    source_nodes:
+      - CHEBI:24431  # chemical entity
+    include_self: true
+    relationship_types:
+      - rdfs:subClassOf
+</code></pre>
+<h3 id="anatomical-structures">Anatomical Structures</h3>
+<pre><code class="language-yaml">MetazoanAnatomicalStructure:
+  description: Any anatomical structure found in metazoan organisms
+  reachable_from:
+    source_ontology: obo:uberon
+    source_nodes:
+      - UBERON:0000061  # anatomical structure
+    include_self: true
+    relationship_types:
+      - rdfs:subClassOf
+</code></pre>
+<h3 id="taxonomy-biotaxonomyyaml">Taxonomy (<code>bio/taxonomy.yaml</code>)</h3>
+<pre><code class="language-yaml">OrganismTaxonEnum:
+  description: All organism taxa from NCBI Taxonomy
+  reachable_from:
+    source_nodes:
+      - NCBITaxon:1  # root
+    is_direct: false
+    relationship_types:
+      - rdfs:subClassOf
+</code></pre>
+<h3 id="investigation-protocols-investigationyaml">Investigation Protocols (<code>investigation.yaml</code>)</h3>
+<pre><code class="language-yaml">StudyDesignEnum:
+  description: Study design classifications from OBI
+  reachable_from:
+    source_nodes:
+      - OBI:0500000  # study design
+    is_direct: false
+    relationship_types:
+      - rdfs:subClassOf
+</code></pre>
+<h2 id="using-dynamic-value-sets-in-schemas">Using Dynamic Value Sets in Schemas</h2>
+<h3 id="basic-usage">Basic Usage</h3>
+<pre><code class="language-yaml"># In your schema file
+slots:
+  cell_type:
+    description: Type of cell being studied
+    range: CellType  # References the dynamic enum
+
+  disease:
+    description: Disease under investigation  
+    range: Disease   # References the dynamic enum
+</code></pre>
+<h3 id="instance-data-validation">Instance Data Validation</h3>
+<pre><code class="language-yaml"># Example instance data
+person:
+  cell_type: CL:0000540  # neuron
+  disease: MONDO:0005148  # type 2 diabetes mellitus
+</code></pre>
+<h2 id="validation-approaches">Validation Approaches</h2>
+<h3 id="1-static-validation">1. Static Validation</h3>
+<p>Current LinkML validators can check that values match the ontology prefix patterns:</p>
+<pre><code class="language-python">from linkml.validators.jsonschemavalidator import JsonSchemaValidator
+
+# Validate that cell type follows CL: pattern
+validator = JsonSchemaValidator(schema=&quot;path/to/schema.yaml&quot;)
+report = validator.validate(instance_data)
+</code></pre>
+<h3 id="2-ontology-based-validation">2. Ontology-based Validation</h3>
+<p>For full dynamic validation, you can use ontology access tools:</p>
+<pre><code class="language-python">from oaklib import get_adapter
+from linkml_runtime.utils.schemaview import SchemaView
+
+# Load ontology adapter
+cl_adapter = get_adapter(&quot;obo:cl&quot;)
+
+# Check if a term is a valid cell type
+def validate_cell_type(term_id: str) -&gt; bool:
+    &quot;&quot;&quot;Validate that term_id is a subclass of cell (CL:0000000)&quot;&quot;&quot;
+    return cl_adapter.is_subclass_of(term_id, &quot;CL:0000000&quot;)
+
+# Example usage
+is_valid = validate_cell_type(&quot;CL:0000540&quot;)  # True - neuron is a cell
+</code></pre>
+<h3 id="3-batch-validation-with-oak">3. Batch Validation with OAK</h3>
+<pre><code class="language-python">from oaklib import get_adapter
+
+def validate_disease_terms(term_ids: list[str]) -&gt; dict[str, bool]:
+    &quot;&quot;&quot;Validate multiple disease terms against MONDO&quot;&quot;&quot;
+    mondo_adapter = get_adapter(&quot;obo:mondo&quot;)
+    results = {}
+
+    for term_id in term_ids:
+        try:
+            # Check if term exists and is a disease
+            is_valid = mondo_adapter.is_subclass_of(term_id, &quot;MONDO:0000001&quot;)
+            results[term_id] = is_valid
+        except Exception:
+            results[term_id] = False
+
+    return results
+
+# Example usage
+disease_terms = [&quot;MONDO:0005148&quot;, &quot;MONDO:0004992&quot;, &quot;INVALID:123&quot;]
+validation_results = validate_disease_terms(disease_terms)
+</code></pre>
+<h2 id="practical-examples">Practical Examples</h2>
+<h3 id="example-1-cell-biology-study">Example 1: Cell Biology Study</h3>
+<pre><code class="language-yaml"># Schema definition
+classes:
+  CellExperiment:
+    attributes:
+      cell_type:
+        range: CellType
+        required: true
+      treatment_compound:
+        range: ChemicalEntity
+        required: false
+
+# Instance data
+experiment_1:
+  cell_type: CL:0000540      # neuron
+  treatment_compound: CHEBI:15377  # water
+
+experiment_2:  
+  cell_type: CL:0000136      # fat cell
+  treatment_compound: CHEBI:27732  # caffeine
+</code></pre>
+<h3 id="example-2-disease-research">Example 2: Disease Research</h3>
+<pre><code class="language-yaml"># Schema definition  
+classes:
+  DiseaseStudy:
+    attributes:
+      primary_disease:
+        range: Disease
+        required: true
+      comorbidities:
+        range: Disease
+        multivalued: true
+      affected_anatomy:
+        range: MetazoanAnatomicalStructure
+        multivalued: true
+
+# Instance data
+diabetes_study:
+  primary_disease: MONDO:0005148        # type 2 diabetes
+  comorbidities:
+    - MONDO:0005267                     # heart disease  
+    - MONDO:0005147                     # type 1 diabetes
+  affected_anatomy:
+    - UBERON:0001264                    # pancreas
+    - UBERON:0004535                    # cardiovascular system
+</code></pre>
+<h3 id="example-3-taxonomic-classification">Example 3: Taxonomic Classification</h3>
+<pre><code class="language-yaml"># Schema definition
+classes:
+  OrganismSample:
+    attributes:
+      species:
+        range: OrganismTaxonEnum  
+        required: true
+      genus:
+        range: OrganismTaxonEnum
+        required: false
+
+# Instance data
+mouse_sample:
+  species: NCBITaxon:10090     # Mus musculus (house mouse)
+  genus: NCBITaxon:10088       # Mus (mouse genus)
+
+human_sample:
+  species: NCBITaxon:9606      # Homo sapiens
+  genus: NCBITaxon:9605        # Homo
+</code></pre>
+<h2 id="validation-tools-and-libraries">Validation Tools and Libraries</h2>
+<h3 id="oak-ontology-access-kit">OAK (Ontology Access Kit)</h3>
+<p>The primary tool for working with ontologies in the LinkML ecosystem:</p>
+<pre><code class="language-bash"># Install OAK
+pip install oaklib
+
+# Basic ontology queries
+runoak -i obo:cl descendants CL:0000000  # All cell types
+runoak -i obo:mondo info MONDO:0005148   # Diabetes info  
+runoak -i obo:chebi ancestors CHEBI:15377 # Water ancestors
+</code></pre>
+<h3 id="custom-validation-functions">Custom Validation Functions</h3>
+<pre><code class="language-python">from oaklib import get_adapter
+from typing import Dict, List, Optional
+
+class DynamicEnumValidator:
+    &quot;&quot;&quot;Validator for dynamic enums using ontology lookup&quot;&quot;&quot;
+
+    def __init__(self):
+        self.adapters = {
+            'cl': get_adapter('obo:cl'),
+            'mondo': get_adapter('obo:mondo'), 
+            'chebi': get_adapter('obo:chebi'),
+            'uberon': get_adapter('obo:uberon'),
+            'ncbitaxon': get_adapter('obo:ncbitaxon')
+        }
+
+    def validate_term(self, term_id: str, root_term: str) -&gt; bool:
+        &quot;&quot;&quot;Validate that term_id is reachable from root_term&quot;&quot;&quot;
+        prefix = term_id.split(':')[0].lower()
+        if prefix not in self.adapters:
+            return False
+
+        adapter = self.adapters[prefix]
+        try:
+            return adapter.is_subclass_of(term_id, root_term)
+        except Exception:
+            return False
+
+    def validate_cell_type(self, term_id: str) -&gt; bool:
+        &quot;&quot;&quot;Validate cell type against CL:0000000&quot;&quot;&quot;
+        return self.validate_term(term_id, &quot;CL:0000000&quot;)
+
+    def validate_disease(self, term_id: str) -&gt; bool:
+        &quot;&quot;&quot;Validate disease against MONDO:0000001&quot;&quot;&quot;
+        return self.validate_term(term_id, &quot;MONDO:0000001&quot;)
+
+    def validate_chemical(self, term_id: str) -&gt; bool:
+        &quot;&quot;&quot;Validate chemical against CHEBI:24431&quot;&quot;&quot;
+        return self.validate_term(term_id, &quot;CHEBI:24431&quot;)
+
+# Usage example
+validator = DynamicEnumValidator()
+print(validator.validate_cell_type(&quot;CL:0000540&quot;))    # True
+print(validator.validate_disease(&quot;MONDO:0005148&quot;))   # True  
+print(validator.validate_chemical(&quot;CHEBI:15377&quot;))    # True
+</code></pre>
+<h2 id="best-practices">Best Practices</h2>
+<h3 id="1-choose-appropriate-root-terms">1. Choose Appropriate Root Terms</h3>
+<ul>
+<li>Use specific enough root terms to avoid overly broad value sets</li>
+<li>For cell types, consider using specific cell lineages rather than the root "cell" term</li>
+<li>For diseases, use disease categories (infectious, genetic, etc.) when appropriate</li>
+</ul>
+<h3 id="2-include-ontology-prefixes-in-schema">2. Include Ontology Prefixes in Schema</h3>
+<pre><code class="language-yaml">prefixes:
+  CL: http://purl.obolibrary.org/obo/CL_
+  MONDO: http://purl.obolibrary.org/obo/MONDO_ 
+  CHEBI: http://purl.obolibrary.org/obo/CHEBI_
+  UBERON: http://purl.obolibrary.org/obo/UBERON_
+</code></pre>
+<h3 id="3-validate-during-development">3. Validate During Development</h3>
+<ul>
+<li>Test dynamic enums with representative data during schema development</li>
+<li>Use OAK to explore ontology hierarchies before choosing root terms</li>
+<li>Document expected term formats and validation requirements</li>
+</ul>
+<h3 id="4-handle-validation-errors-gracefully">4. Handle Validation Errors Gracefully</h3>
+<pre><code class="language-python">def safe_validate_term(term_id: str, validator_func) -&gt; Optional[bool]:
+    &quot;&quot;&quot;Safely validate a term with error handling&quot;&quot;&quot;
+    try:
+        return validator_func(term_id)
+    except Exception as e:
+        print(f&quot;Validation error for {term_id}: {e}&quot;)
+        return None
+</code></pre>
+<h2 id="limitations-and-considerations">Limitations and Considerations</h2>
+<h3 id="current-limitations">Current Limitations</h3>
+<ul>
+<li>Runtime enum expansion is still under development</li>
+<li>Some ontology adapters may require internet connectivity</li>
+<li>Large ontologies can make validation slow</li>
+<li>Not all ontologies may be available through OAK</li>
+</ul>
+<h3 id="performance-considerations">Performance Considerations</h3>
+<ul>
+<li>Cache ontology adapters when validating multiple terms</li>
+<li>Consider using local ontology files for better performance</li>
+<li>Batch validation calls when possible</li>
+</ul>
+<h3 id="future-developments">Future Developments</h3>
+<ul>
+<li>Automated enum materialization from ontologies</li>
+<li>Better integration with LinkML validators</li>
+<li>Support for more relationship types and boolean combinations</li>
+<li>Subset filtering capabilities</li>
+</ul>
+<h2 id="additional-resources">Additional Resources</h2>
+<ul>
+<li><a href="https://linkml.io/linkml/schemas/enums.html#dynamic-enums">LinkML Dynamic Enums Documentation</a></li>
+<li><a href="https://incatools.github.io/ontology-access-kit/">OAK (Ontology Access Kit) Documentation</a></li>
+<li><a href="https://github.com/orgs/linkml/discussions/2300">LinkML GitHub Discussion on Dynamic Enums</a></li>
+<li><a href="https://bioportal.bioontology.org/">BioPortal Ontology Repository</a></li>
+<li><a href="http://www.obofoundry.org/">OBO Foundry Ontologies</a></li>
+</ul>
+<hr />
+<p><em>This documentation covers the current state of dynamic value set validation in LinkML. As the framework continues to evolve, some features may become available that aren't yet implemented.</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.tabs.link"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>
