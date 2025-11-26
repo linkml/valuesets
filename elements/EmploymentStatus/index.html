@@ -498,9 +498,16 @@
 <details>
 
 <pre><code class="language-yaml">name: EmploymentStatus
+instantiates:
+- valuesets_meta:ValueSetEnumDefinitionWithSource
 description: Employment status of a person
+title: Employment Status
 from_schema: https://w3id.org/linkml/valuesets
 source: https://terminology.hl7.org/CodeSystem-v2-0066.html
+contributors:
+- orcid:0000-0002-6601-2165
+- https://github.com/anthropics/claude-code
+status: DRAFT
 rank: 1000
 permissible_values:
   FULL_TIME_EMPLOYED:

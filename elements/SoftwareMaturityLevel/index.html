@@ -478,9 +478,15 @@
 <details>
 
 <pre><code class="language-yaml">name: SoftwareMaturityLevel
+instantiates:
+- valuesets_meta:ReferenceEnumDefinition
 description: General software maturity assessment levels
 title: Software Maturity Level
 from_schema: https://w3id.org/linkml/valuesets
+contributors:
+- orcid:0000-0002-6601-2165
+- https://github.com/anthropics/claude-code
+status: STANDARD
 rank: 1000
 permissible_values:
   ALPHA:

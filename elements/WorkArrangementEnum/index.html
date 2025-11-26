@@ -463,8 +463,15 @@
 <details>
 
 <pre><code class="language-yaml">name: WorkArrangementEnum
+instantiates:
+- valuesets_meta:ValueSetEnumDefinition
 description: Work location and arrangement types
+title: Work Arrangement
 from_schema: https://w3id.org/linkml/valuesets
+contributors:
+- orcid:0000-0002-6601-2165
+- https://github.com/anthropics/claude-code
+status: DRAFT
 rank: 1000
 permissible_values:
   ON_SITE:

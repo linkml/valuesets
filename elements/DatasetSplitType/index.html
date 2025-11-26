@@ -437,6 +437,8 @@
 <details>
 
 <pre><code class="language-yaml">name: DatasetSplitType
+instantiates:
+- valuesets_meta:ValueSetEnumDefinition
 description: 'Standard dataset split types used in machine learning for training,
 
   validation, and testing. These splits are fundamental to ML model
@@ -444,7 +446,12 @@ description: 'Standard dataset split types used in machine learning for training
   development and evaluation workflows.
 
   '
+title: Dataset Split Type
 from_schema: https://w3id.org/linkml/valuesets
+contributors:
+- orcid:0000-0002-6601-2165
+- https://github.com/anthropics/claude-code
+status: DRAFT
 rank: 1000
 permissible_values:
   TRAIN:

@@ -516,6 +516,8 @@
 <details>
 
 <pre><code class="language-yaml">name: NIHInstituteCenterEnum
+instantiates:
+- valuesets_meta:ValueSetEnumDefinition
 description: 'National Institutes of Health (NIH) Institutes and Centers.
 
 
@@ -525,10 +527,15 @@ description: 'National Institutes of Health (NIH) Institutes and Centers.
   diseases or body systems. These are the major NIH ICs that fund extramural research.
 
   '
+title: NIH Institute Center
 comments:
 - All mapped to ROR (Research Organization Registry) identifiers
 - Focuses on major funding institutes
 from_schema: https://w3id.org/linkml/valuesets
+contributors:
+- orcid:0000-0002-6601-2165
+- https://github.com/anthropics/claude-code
+status: DRAFT
 rank: 1000
 permissible_values:
   NCI:

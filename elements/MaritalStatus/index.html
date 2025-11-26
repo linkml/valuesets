@@ -498,9 +498,16 @@
 <details>
 
 <pre><code class="language-yaml">name: MaritalStatus
+instantiates:
+- valuesets_meta:ValueSetEnumDefinitionWithSource
 description: The domestic partnership status of a person
+title: Marital Status
 from_schema: https://w3id.org/linkml/valuesets
 source: https://www.hl7.org/fhir/valueset-marital-status.html
+contributors:
+- orcid:0000-0002-6601-2165
+- https://github.com/anthropics/claude-code
+status: DRAFT
 rank: 1000
 permissible_values:
   ANNULLED:

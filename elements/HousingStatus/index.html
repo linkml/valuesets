@@ -473,9 +473,16 @@
 <details>
 
 <pre><code class="language-yaml">name: HousingStatus
+instantiates:
+- valuesets_meta:ValueSetEnumDefinitionWithSource
 description: Housing status of patients per UDS Plus HRSA standards
+title: Housing Status
 from_schema: https://w3id.org/linkml/valuesets
 source: https://www.fhir.org/guides/hrsa/uds-plus/CodeSystem-udsplus-housing-status-codes.html
+contributors:
+- orcid:0000-0002-6601-2165
+- https://github.com/anthropics/claude-code
+status: DRAFT
 rank: 1000
 permissible_values:
   HOMELESS_SHELTER:

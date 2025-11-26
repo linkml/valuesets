@@ -464,11 +464,17 @@
 
 <pre><code class="language-yaml">name: CapabilityMaturityLevel
 conforms_to: CMMI Version 2.0
+instantiates:
+- valuesets_meta:ReferenceEnumDefinition
 description: CMMI levels for assessing organizational process maturity in software
   development
 title: Capability Maturity Model Integration (CMMI) Level
 from_schema: https://w3id.org/linkml/valuesets
 source: https://cmmiinstitute.com/
+contributors:
+- orcid:0000-0002-6601-2165
+- https://github.com/anthropics/claude-code
+status: STANDARD
 rank: 1000
 permissible_values:
   LEVEL_1:

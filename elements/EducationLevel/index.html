@@ -483,9 +483,16 @@
 <details>
 
 <pre><code class="language-yaml">name: EducationLevel
+instantiates:
+- valuesets_meta:ValueSetEnumDefinitionWithSource
 description: Years of education that a person has completed
+title: Education Level
 from_schema: https://w3id.org/linkml/valuesets
 source: https://terminology.hl7.org/CodeSystem-v3-EducationLevel.html
+contributors:
+- orcid:0000-0002-6601-2165
+- https://github.com/anthropics/claude-code
+status: DRAFT
 rank: 1000
 permissible_values:
   ELEM:

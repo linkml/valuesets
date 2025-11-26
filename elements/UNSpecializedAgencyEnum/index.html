@@ -481,6 +481,8 @@
 <details>
 
 <pre><code class="language-yaml">name: UNSpecializedAgencyEnum
+instantiates:
+- valuesets_meta:ValueSetEnumDefinition
 description: 'United Nations Specialized Agencies.
 
 
@@ -491,10 +493,15 @@ description: 'United Nations Specialized Agencies.
   their respective fields.
 
   '
+title: UN Specialized Agency
 comments:
 - All mapped to ROR (Research Organization Registry) identifiers
 - Includes major UN agencies relevant to research and development
 from_schema: https://w3id.org/linkml/valuesets
+contributors:
+- orcid:0000-0002-6601-2165
+- https://github.com/anthropics/claude-code
+status: DRAFT
 rank: 1000
 permissible_values:
   WHO:

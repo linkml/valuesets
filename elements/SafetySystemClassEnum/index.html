@@ -458,8 +458,15 @@
 <details>
 
 <pre><code class="language-yaml">name: SafetySystemClassEnum
+instantiates:
+- valuesets_meta:ValueSetEnumDefinition
 description: Nuclear safety system classifications (based on IEEE and ASME standards)
+title: Safety System Class
 from_schema: https://w3id.org/linkml/valuesets
+contributors:
+- orcid:0000-0002-6601-2165
+- https://github.com/anthropics/claude-code
+status: DRAFT
 rank: 1000
 permissible_values:
   CLASS_1E:

@@ -453,11 +453,18 @@
 <details>
 
 <pre><code class="language-yaml">name: CdsPhaseType
+instantiates:
+- valuesets_meta:ValueSetEnumDefinition
 description: For features of type CDS (coding sequence), the phase indicates where
   the feature begins with reference to the reading frame. The phase is one of the
   integers 0, 1, or 2, indicating the number of bases that should be removed from
   the beginning of this feature to reach the first base of the next codon.
+title: Cds Phase Type
 from_schema: https://w3id.org/linkml/valuesets
+contributors:
+- orcid:0000-0002-6601-2165
+- https://github.com/anthropics/claude-code
+status: DRAFT
 rank: 1000
 permissible_values:
   PHASE_0:

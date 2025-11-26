@@ -513,9 +513,16 @@
 <details>
 
 <pre><code class="language-yaml">name: DataAbsentEnum
+instantiates:
+- valuesets_meta:ValueSetEnumDefinition
 description: Used to specify why the normally expected content of the data element
   is missing.
+title: Data Absent
 from_schema: https://w3id.org/linkml/valuesets
+contributors:
+- orcid:0000-0002-6601-2165
+- https://github.com/anthropics/claude-code
+status: DRAFT
 rank: 1000
 permissible_values:
   unknown:
@@ -586,14 +593,14 @@ permissible_values:
   negative-infinity:
     text: negative-infinity
     description: The numeric value is excessively low and unrepresentable due to a
-      floating point processing        error.
+      floating point processing error.
     meaning: fhir_data_absent_reason:negative-infinity
     is_a: error
     title: Negative Infinity (NINF)
   positive-infinity:
     text: positive-infinity
     description: The numeric value is excessively high and unrepresentable due to
-      a floating point processing        error.
+      a floating point processing error.
     meaning: fhir_data_absent_reason:positive-infinity
     is_a: error
     title: Positive Infinity (PINF)

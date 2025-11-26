@@ -494,10 +494,16 @@
 
 <pre><code class="language-yaml">name: BiologicalRole
 conforms_to: HUPO-PSI
+instantiates:
+- valuesets_meta:ValueSetEnumDefinitionWithConformance
 description: Physiological role of an interactor
 title: Biological Role
 from_schema: https://w3id.org/linkml/valuesets
 source: http://purl.obolibrary.org/obo/mi.owl
+contributors:
+- orcid:0000-0002-6601-2165
+- https://github.com/anthropics/claude-code
+status: DRAFT
 rank: 1000
 permissible_values:
   ENZYME:

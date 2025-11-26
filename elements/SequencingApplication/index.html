@@ -518,9 +518,15 @@
 <details>
 
 <pre><code class="language-yaml">name: SequencingApplication
+instantiates:
+- valuesets_meta:ValueSetEnumDefinition
 description: Primary applications or assays using DNA/RNA sequencing
 title: Sequencing Applications
 from_schema: https://w3id.org/linkml/valuesets
+contributors:
+- orcid:0000-0002-6601-2165
+- https://github.com/anthropics/claude-code
+status: DRAFT
 rank: 1000
 permissible_values:
   WHOLE_GENOME_SEQUENCING:

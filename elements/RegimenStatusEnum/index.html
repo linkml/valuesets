@@ -358,6 +358,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#annotations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Annotations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#schema-source" class="md-nav__link">
     <span class="md-ellipsis">
       Schema Source
@@ -470,6 +479,25 @@
 </tbody>
 </table>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
+<h3 id="annotations">Annotations</h3>
+<table>
+<thead>
+<tr>
+<th>property</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>stewards</td>
+<td>https://phenopackets.org</td>
+</tr>
+<tr>
+<td>publishers</td>
+<td>https://ga4gh.org</td>
+</tr>
+</tbody>
+</table>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
 <li>from schema: https://w3id.org/linkml/valuesets</li>
@@ -478,8 +506,22 @@
 <details>
 
 <pre><code class="language-yaml">name: RegimenStatusEnum
+instantiates:
+- valuesets_meta:ValueSetEnumDefinition
+annotations:
+  stewards:
+    tag: stewards
+    value: https://phenopackets.org
+  publishers:
+    tag: publishers
+    value: https://ga4gh.org
 description: Status of a therapeutic regimen or treatment protocol
+title: Regimen Status
 from_schema: https://w3id.org/linkml/valuesets
+contributors:
+- orcid:0000-0002-6601-2165
+- https://github.com/anthropics/claude-code
+status: STANDARD
 rank: 1000
 permissible_values:
   NOT_STARTED:

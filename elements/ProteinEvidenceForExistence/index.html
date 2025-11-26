@@ -463,9 +463,16 @@
 <details>
 
 <pre><code class="language-yaml">name: ProteinEvidenceForExistence
+instantiates:
+- valuesets_meta:ValueSetEnumDefinition
 description: The evidence for the existence of a biological entity. See https://www.uniprot.org/help/protein_existence
   and https://www.ncbi.nlm.nih.gov/genbank/evidence/.
+title: Protein Evidence For Existence
 from_schema: https://w3id.org/linkml/valuesets
+contributors:
+- orcid:0000-0002-6601-2165
+- https://github.com/anthropics/claude-code
+status: DRAFT
 rank: 1000
 permissible_values:
   EXPERIMENTAL_EVIDENCE_AT_PROTEIN_LEVEL:

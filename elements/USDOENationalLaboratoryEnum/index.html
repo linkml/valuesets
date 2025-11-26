@@ -544,6 +544,8 @@
 <details>
 
 <pre><code class="language-yaml">name: USDOENationalLaboratoryEnum
+instantiates:
+- valuesets_meta:ValueSetEnumDefinition
 description: 'United States Department of Energy National Laboratories.
 
 
@@ -560,10 +562,15 @@ description: 'United States Department of Energy National Laboratories.
   with the Office of Science stewarding 10 of the 17 laboratories.
 
   '
+title: USDOE National Laboratory
 comments:
 - All organization names mapped to ROR (Research Organization Registry) identifiers
 - See https://www.energy.gov/national-laboratories for official information
 from_schema: https://w3id.org/linkml/valuesets
+contributors:
+- orcid:0000-0002-6601-2165
+- https://github.com/anthropics/claude-code
+status: DRAFT
 rank: 1000
 permissible_values:
   AMES_LABORATORY:

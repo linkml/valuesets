@@ -436,12 +436,19 @@
 <details>
 
 <pre><code class="language-yaml">name: MLFieldRole
+instantiates:
+- valuesets_meta:ValueSetEnumDefinition
 description: 'Semantic roles that fields play in ML datasets. These roles help understand
 
   the purpose and usage of different data columns or attributes.
 
   '
+title: ML Field Role
 from_schema: https://w3id.org/linkml/valuesets
+contributors:
+- orcid:0000-0002-6601-2165
+- https://github.com/anthropics/claude-code
+status: DRAFT
 rank: 1000
 permissible_values:
   FEATURE:

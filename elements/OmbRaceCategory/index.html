@@ -478,9 +478,16 @@
 <details>
 
 <pre><code class="language-yaml">name: OmbRaceCategory
+instantiates:
+- valuesets_meta:ValueSetEnumDefinitionWithSource
 description: Office of Management and Budget (OMB) race category codes
+title: Omb Race Category
 from_schema: https://w3id.org/linkml/valuesets
 source: https://www.hl7.org/fhir/us/core/ValueSet-omb-race-category.html
+contributors:
+- orcid:0000-0002-6601-2165
+- https://github.com/anthropics/claude-code
+status: DRAFT
 rank: 1000
 permissible_values:
   AMERICAN_INDIAN_OR_ALASKA_NATIVE:

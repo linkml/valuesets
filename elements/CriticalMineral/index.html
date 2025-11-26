@@ -660,12 +660,19 @@
 <details>
 
 <pre><code class="language-yaml">name: CriticalMineral
+instantiates:
+- valuesets_meta:ValueSetEnumDefinition
 description: 'Critical minerals essential for economic and national security,
 
   particularly for clean energy, defense, and technology applications.
 
   Based on US Geological Survey and EU critical raw materials lists.'
+title: Critical Mineral
 from_schema: https://w3id.org/linkml/valuesets
+contributors:
+- orcid:0000-0002-6601-2165
+- https://github.com/anthropics/claude-code
+status: DRAFT
 rank: 1000
 permissible_values:
   LITHIUM:

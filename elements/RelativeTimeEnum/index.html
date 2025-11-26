@@ -400,6 +400,7 @@
 
 
 <h1 id="enum-relativetimeenum">Enum: RelativeTimeEnum</h1>
+<p><em>Temporal relationships between events or time points</em></p>
 <p>URI: <a href="https://w3id.org/valuesets/RelativeTimeEnum">valuesets:RelativeTimeEnum</a></p>
 <h2 id="permissible-values">Permissible Values</h2>
 <table>
@@ -414,17 +415,17 @@
 <tr>
 <td>BEFORE</td>
 <td>None</td>
-<td></td>
+<td>Occurs before the reference time point</td>
 </tr>
 <tr>
 <td>AFTER</td>
 <td>None</td>
-<td></td>
+<td>Occurs after the reference time point</td>
 </tr>
 <tr>
 <td>AT_SAME_TIME_AS</td>
 <td>None</td>
-<td></td>
+<td>Occurs at the same time as the reference time point</td>
 </tr>
 </tbody>
 </table>
@@ -452,15 +453,26 @@
 <details>
 
 <pre><code class="language-yaml">name: RelativeTimeEnum
+instantiates:
+- valuesets_meta:ValueSetEnumDefinition
+description: Temporal relationships between events or time points
+title: Relative Time
 from_schema: https://w3id.org/linkml/valuesets
+contributors:
+- orcid:0000-0002-6601-2165
+- https://github.com/anthropics/claude-code
+status: DRAFT
 rank: 1000
 permissible_values:
   BEFORE:
     text: BEFORE
+    description: Occurs before the reference time point
   AFTER:
     text: AFTER
+    description: Occurs after the reference time point
   AT_SAME_TIME_AS:
     text: AT_SAME_TIME_AS
+    description: Occurs at the same time as the reference time point
 
 </code></pre>
 

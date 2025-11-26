@@ -400,6 +400,7 @@
 
 
 <h1 id="enum-presenceenum">Enum: PresenceEnum</h1>
+<p><em>Classification of whether an entity is present, absent, or at detection limits</em></p>
 <p>URI: <a href="https://w3id.org/valuesets/PresenceEnum">valuesets:PresenceEnum</a></p>
 <h2 id="permissible-values">Permissible Values</h2>
 <table>
@@ -457,7 +458,16 @@
 <details>
 
 <pre><code class="language-yaml">name: PresenceEnum
+instantiates:
+- valuesets_meta:ValueSetEnumDefinition
+description: Classification of whether an entity is present, absent, or at detection
+  limits
+title: Presence Status
 from_schema: https://w3id.org/linkml/valuesets
+contributors:
+- orcid:0000-0002-6601-2165
+- https://github.com/anthropics/claude-code
+status: DRAFT
 rank: 1000
 permissible_values:
   PRESENT:

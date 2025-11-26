@@ -473,8 +473,15 @@
 <details>
 
 <pre><code class="language-yaml">name: DayOfWeek
+instantiates:
+- valuesets_meta:ValueSetEnumDefinition
 description: Days of the week following ISO 8601 standard (Monday = 1)
+title: Day Of Week
 from_schema: https://w3id.org/linkml/valuesets
+contributors:
+- orcid:0000-0002-6601-2165
+- https://github.com/anthropics/claude-code
+status: DRAFT
 rank: 1000
 permissible_values:
   MONDAY:

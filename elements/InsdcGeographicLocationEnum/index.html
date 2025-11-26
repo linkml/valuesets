@@ -358,6 +358,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#annotations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Annotations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#schema-source" class="md-nav__link">
     <span class="md-ellipsis">
       Schema Source
@@ -1832,6 +1841,25 @@
 </tbody>
 </table>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
+<h3 id="annotations">Annotations</h3>
+<table>
+<thead>
+<tr>
+<th>property</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>stewards</td>
+<td>https://gensc.org</td>
+</tr>
+<tr>
+<td>publishers</td>
+<td>https://www.insdc.org</td>
+</tr>
+</tbody>
+</table>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
 <li>from schema: https://w3id.org/linkml/valuesets</li>
@@ -1840,12 +1868,26 @@
 <details>
 
 <pre><code class="language-yaml">name: InsdcGeographicLocationEnum
+instantiates:
+- valuesets_meta:ValueSetEnumDefinition
+annotations:
+  stewards:
+    tag: stewards
+    value: https://gensc.org
+  publishers:
+    tag: publishers
+    value: https://www.insdc.org
 description: 'INSDC controlled vocabulary for geographic locations of collected samples.
 
   Includes countries, oceans, seas, and other geographic regions as defined by INSDC.
 
   Countries use ISO 3166-1 alpha-2 codes from Library of Congress as canonical identifiers.'
+title: Insdc Geographic Location
 from_schema: https://w3id.org/linkml/valuesets
+contributors:
+- orcid:0000-0002-6601-2165
+- https://github.com/anthropics/claude-code
+status: STANDARD
 rank: 1000
 permissible_values:
   AFGHANISTAN:

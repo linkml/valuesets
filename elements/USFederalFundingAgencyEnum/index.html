@@ -506,6 +506,8 @@
 <details>
 
 <pre><code class="language-yaml">name: USFederalFundingAgencyEnum
+instantiates:
+- valuesets_meta:ValueSetEnumDefinition
 description: 'Major United States Federal Research Funding Agencies.
 
 
@@ -515,10 +517,15 @@ description: 'Major United States Federal Research Funding Agencies.
   supporting universities, national laboratories, and other research institutions.
 
   '
+title: US Federal Funding Agency
 comments:
 - All agency names mapped to ROR (Research Organization Registry) identifiers
 - Includes primary research funding agencies
 from_schema: https://w3id.org/linkml/valuesets
+contributors:
+- orcid:0000-0002-6601-2165
+- https://github.com/anthropics/claude-code
+status: DRAFT
 rank: 1000
 permissible_values:
   NIH:

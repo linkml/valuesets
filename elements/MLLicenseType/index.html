@@ -451,12 +451,19 @@
 <details>
 
 <pre><code class="language-yaml">name: MLLicenseType
+instantiates:
+- valuesets_meta:ValueSetEnumDefinition
 description: 'Common open source and Creative Commons licenses used for ML datasets.
 
   These licenses specify terms of use, redistribution, and modification.
 
   '
+title: ML License Type
 from_schema: https://w3id.org/linkml/valuesets
+contributors:
+- orcid:0000-0002-6601-2165
+- https://github.com/anthropics/claude-code
+status: DRAFT
 rank: 1000
 permissible_values:
   CC_BY_4_0:

@@ -503,9 +503,15 @@
 <details>
 
 <pre><code class="language-yaml">name: FeatureType
+instantiates:
+- valuesets_meta:ValueSetEnumDefinition
 description: Molecular features affecting interactions
 title: Feature Type
 from_schema: https://w3id.org/linkml/valuesets
+contributors:
+- orcid:0000-0002-6601-2165
+- https://github.com/anthropics/claude-code
+status: DRAFT
 rank: 1000
 permissible_values:
   BINDING_SITE:

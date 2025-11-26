@@ -469,8 +469,15 @@
 
 <pre><code class="language-yaml">name: BasicEmotionEnum
 conforms_to: https://en.wikipedia.org/wiki/Basic_emotions
+instantiates:
+- valuesets_meta:ValueSetEnumDefinition
 description: Ekman's six basic emotions commonly used in emotion recognition
+title: Basic Emotion
 from_schema: https://w3id.org/linkml/valuesets
+contributors:
+- orcid:0000-0002-6601-2165
+- https://github.com/anthropics/claude-code
+status: DRAFT
 rank: 1000
 permissible_values:
   ANGER:

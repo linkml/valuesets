@@ -484,11 +484,17 @@
 
 <pre><code class="language-yaml">name: TechnologyReadinessLevel
 conforms_to: ISO-16290:2013
+instantiates:
+- valuesets_meta:ReferenceEnumDefinition
 description: NASA's Technology Readiness Level scale for assessing the maturity of
   technologies from basic research through operational deployment
 title: Technology Readiness Level (TRL)
 from_schema: https://w3id.org/linkml/valuesets
 source: https://www.nasa.gov/directorates/heo/scan/engineering/technology/technology_readiness_level
+contributors:
+- orcid:0000-0002-6601-2165
+- https://github.com/anthropics/claude-code
+status: STANDARD
 rank: 1000
 permissible_values:
   TRL_1:

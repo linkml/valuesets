@@ -679,12 +679,19 @@
 <details>
 
 <pre><code class="language-yaml">name: BioticInteractionType
+instantiates:
+- valuesets_meta:ValueSetEnumDefinition
 description: 'Types of biotic interactions between organisms, based on RO:0002437
   (biotically interacts with). These represent ecological relationships where at least
   one partner is an organism.
 
   '
+title: Biotic Interaction Type
 from_schema: https://w3id.org/linkml/valuesets
+contributors:
+- orcid:0000-0002-6601-2165
+- https://github.com/anthropics/claude-code
+status: DRAFT
 rank: 1000
 permissible_values:
   BIOTICALLY_INTERACTS_WITH:
