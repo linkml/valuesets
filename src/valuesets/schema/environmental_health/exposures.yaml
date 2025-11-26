@@ -11,6 +11,8 @@ prefixes:
   ExO: http://purl.obolibrary.org/obo/ExO_
   ECTO: http://purl.obolibrary.org/obo/ECTO_
   valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   air_pollutant:
@@ -54,7 +56,14 @@ slots:
     range: StudyPopulationEnum
 enums:
   AirPollutantEnum:
+    title: Air Pollutant
     description: Common air pollutants and air quality indicators
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       PM2_5:
         description: Fine particulate matter with diameter less than 2.5 micrometers
@@ -99,7 +108,14 @@ enums:
         meaning: CHEBI:33848
         title: polycyclic arene
   PesticideTypeEnum:
+    title: Pesticide Type
     description: Categories of pesticides by target organism or chemical class
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       HERBICIDE:
         description: Chemical used to kill unwanted plants
@@ -137,7 +153,14 @@ enums:
         description: Glyphosate herbicide
         meaning: CHEBI:27744
   HeavyMetalEnum:
+    title: Heavy Metal
     description: Heavy metals of environmental health concern
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       LEAD:
         description: Lead (Pb)
@@ -176,20 +199,27 @@ enums:
         meaning: CHEBI:27638
         title: cobalt atom
   ExposureRouteEnum:
+    title: Exposure Route
     description: Routes by which exposure to environmental agents occurs
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       INHALATION:
         description: Exposure through breathing
         meaning: NCIT:C38284
         title: Nasal Route of Administration
         related_mappings:
-          - ExO:0000057
+        - ExO:0000057
       INGESTION:
         description: Exposure through eating or drinking
         meaning: NCIT:C38288
         title: Oral Route of Administration
         related_mappings:
-          - ExO:0000056
+        - ExO:0000056
       DERMAL:
         description: Exposure through skin contact
         meaning: NCIT:C38675
@@ -199,13 +229,13 @@ enums:
         meaning: NCIT:C38276
         title: Intravenous Route of Administration
         related_mappings:
-          - ExO:0000060
+        - ExO:0000060
       TRANSPLACENTAL:
         description: Exposure through placental transfer
         meaning: NCIT:C38307
         title: Transplacental Route of Administration
         related_mappings:
-          - ExO:0000159
+        - ExO:0000159
       OCULAR:
         description: Exposure through the eyes
         meaning: NCIT:C38287
@@ -244,35 +274,42 @@ enums:
       SUBCUTANEOUS:
         description: Exposure through subcutaneous tissue
         related_mappings:
-          - ExO:0000061
+        - ExO:0000061
       INTRAMUSCULAR:
         description: Exposure through muscle tissue
         related_mappings:
-          - ExO:0000062
+        - ExO:0000062
       INTRAVASCULAR:
         description: Exposure through blood vessels
         related_mappings:
-          - ExO:0000063
+        - ExO:0000063
       MULTIPLE_ROUTES:
         description: Exposure through multiple pathways
   ExposureSourceEnum:
+    title: Exposure Source
     description: Common sources of environmental exposures
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       AMBIENT_AIR:
         description: Outdoor air pollution
         related_mappings:
-          - ENVO:01000676
-          - ExO:0000020
+        - ENVO:01000676
+        - ExO:0000020
       INDOOR_AIR:
         description: Indoor air pollution
         related_mappings:
-          - ENVO:01000676
-          - ExO:0000019
+        - ENVO:01000676
+        - ExO:0000019
       DRINKING_WATER:
         description: Contaminated drinking water
         related_mappings:
-          - ENVO:00003064
-          - ENVO:00002186
+        - ENVO:00003064
+        - ENVO:00002186
       SOIL:
         description: Contaminated soil
         meaning: ENVO:00002116
@@ -280,33 +317,33 @@ enums:
       FOOD:
         description: Contaminated food
         related_mappings:
-          - CHEBI:33290
+        - CHEBI:33290
       OCCUPATIONAL:
         description: Workplace exposure
         meaning: ENVO:03501332
         title: occupational environment
         related_mappings:
-          - ExO:0000093
+        - ExO:0000093
       CONSUMER_PRODUCTS:
         description: Household and consumer products
         related_mappings:
-          - ENVO:00003074
-          - ENVO:03501339
+        - ENVO:00003074
+        - ENVO:03501339
       INDUSTRIAL_EMISSIONS:
         description: Industrial facility emissions
         related_mappings:
-          - ENVO:03000092
-          - ENVO:00003861
+        - ENVO:03000092
+        - ENVO:00003861
       AGRICULTURAL:
         description: Agricultural activities
         related_mappings:
-          - ENVO:00000077
-          - ENVO:01000311
+        - ENVO:00000077
+        - ENVO:01000311
       TRAFFIC:
         description: Traffic-related pollution
         related_mappings:
-          - ENVO:00000064
-          - ENVO:01000601
+        - ENVO:00000064
+        - ENVO:01000601
       TOBACCO_SMOKE:
         description: Active or passive tobacco smoke exposure
         meaning: NCIT:C17140
@@ -314,13 +351,20 @@ enums:
       CONSTRUCTION:
         description: Construction-related exposure
         related_mappings:
-          - ENVO:01000996
+        - ENVO:01000996
       MINING:
         description: Mining-related exposure
         related_mappings:
-          - ENVO:01001437
+        - ENVO:01001437
   WaterContaminantEnum:
+    title: Water Contaminant
     description: Common water contaminants
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       LEAD:
         description: Lead contamination
@@ -367,7 +411,14 @@ enums:
         meaning: CHEBI:25944
         title: pesticide
   EndocrineDisruptorEnum:
+    title: Endocrine Disruptor
     description: Common endocrine disrupting chemicals
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       BPA:
         description: Bisphenol A
@@ -404,7 +455,14 @@ enums:
         meaning: CHEBI:172368
         title: brominated flame retardant
   ExposureDurationEnum:
+    title: Exposure Duration
     description: Duration categories for environmental exposures
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       ACUTE:
         description: Single or short-term exposure (hours to days)
@@ -423,7 +481,14 @@ enums:
       DEVELOPMENTAL:
         description: Exposure during critical developmental periods
   SmokingStatusEnum:
+    title: Smoking Status
     description: Tobacco and nicotine consumption status
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       CURRENT_SMOKER:
         description: Person who is currently smoking tobacco
@@ -438,7 +503,14 @@ enums:
         description: Person who is not currently smoking
         meaning: ExO:0000118
   ExposureStressorTypeEnum:
+    title: Exposure Stressor Type
     description: Types of exposure stressors by their origin or nature
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       BIOLOGICAL_AGENT:
         description: Agent of biological origin (e.g., bacteria, viruses, allergens)
@@ -459,7 +531,14 @@ enums:
         description: Disruption to ecological systems (e.g., habitat degradation, climate change)
         meaning: ExO:0000007
   ExposureTransportPathEnum:
+    title: Exposure Transport Path
     description: Transport medium through which exposure stressor reaches the recipient
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       AIR_TRANSPORT_PATH:
         description: Transport path allowing stressor to interact with recipient via air
@@ -471,7 +550,14 @@ enums:
         description: Transport path involving interaction with stressor via soil
         meaning: ExO:0000029
   ExposureFrequencyEnum:
+    title: Exposure Frequency
     description: Temporal pattern of exposure occurrence
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       INTERMITTENT:
         description: Exposure occurring at irregular intervals or periodically
@@ -480,7 +566,14 @@ enums:
         description: Exposure occurring without interruption
         meaning: ExO:0000053
   StudyPopulationEnum:
+    title: Study Population
     description: Specific population groups commonly studied in exposure research
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       CHILDREN:
         description: Human children (pediatric population)
@@ -512,4 +605,4 @@ enums:
         title: controls for disease or phenotype
 license: MIT
 see_also:
-  - https://linkml.github.io/valuesets
+- https://linkml.github.io/valuesets

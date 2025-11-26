@@ -1,11 +1,14 @@
 name: valuesets-earth-science-physiographic-features
 title: Earth Science Physiographic Features
-description: Physiographic features for earth sample collection sites, based on SESAR (System for Earth Sample Registration) vocabulary
+description: Physiographic features for earth sample collection sites, based on SESAR (System for Earth Sample 
+  Registration) vocabulary
 id: https://w3id.org/valuesets/earth_science/physiographic_features
 prefixes:
   linkml: https://w3id.org/linkml/
   ENVO: http://purl.obolibrary.org/obo/ENVO_
   valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 
 slots:
@@ -15,11 +18,18 @@ slots:
 
 enums:
   SESARPhysiographicFeature:
+    title: SESAR Physiographic Feature
     description: >-
       Physiographic feature types as defined by SESAR (System for Earth Sample Registration).
       These describe the type of physical feature from which a sample was collected.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     see_also:
-      - https://www.geosamples.org/vocabularies
+    - https://www.geosamples.org/vocabularies
     permissible_values:
       ABYSSAL_FEATURE:
         description: Deep ocean floor feature
@@ -180,5 +190,5 @@ enums:
 
 license: MIT
 see_also:
-  - https://linkml.github.io/valuesets
-  - https://www.geosamples.org/vocabularies
+- https://linkml.github.io/valuesets
+- https://www.geosamples.org/vocabularies

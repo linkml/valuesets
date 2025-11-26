@@ -9,6 +9,8 @@ prefixes:
   SLM: https://swisslipids.org/rdf/SLM_
   CHEBI: http://purl.obolibrary.org/obo/CHEBI_
   valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   lipid_category:
@@ -18,6 +20,12 @@ enums:
   LipidCategory:
     title: Lipid Category
     description: Major categories of lipids based on SwissLipids classification
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       LIPID:
         description: Lipid

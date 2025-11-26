@@ -1,16 +1,18 @@
 name: nuclear_facilities
 title: Nuclear Facilities and Infrastructure Types
-description: 'Classifications of nuclear facilities including power plants, research reactors,
-  fuel cycle facilities, waste management facilities, and nuclear infrastructure.
-  Based on IAEA classifications and nuclear industry standards.'
+description: 'Classifications of nuclear facilities including power plants, research reactors, fuel cycle facilities, waste
+  management facilities, and nuclear infrastructure. Based on IAEA classifications and nuclear industry standards.'
 id: https://w3id.org/linkml/valuesets/energy/nuclear/nuclear_facilities
 imports:
 - linkml:types
 prefixes:
+  linkml: https://w3id.org/linkml/
   valuesets: https://w3id.org/valuesets/
   IAEA: https://www.iaea.org/
   WNA: https://world-nuclear.org/
   NRC: https://www.nrc.gov/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   nuclear_facility_type:
@@ -33,7 +35,14 @@ slots:
     range: NuclearShipTypeEnum
 enums:
   NuclearFacilityTypeEnum:
+    title: Nuclear Facility Type
     description: Types of nuclear facilities and infrastructure
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       COMMERCIAL_POWER_PLANT:
         title: Commercial Nuclear Power Plant
@@ -168,7 +177,14 @@ enums:
           production_methods: reactor irradiation, accelerator
           market: medical and industrial applications
   PowerPlantStatusEnum:
+    title: Power Plant Status
     description: Operational status of nuclear power plants
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       UNDER_CONSTRUCTION:
         title: Under Construction
@@ -227,7 +243,14 @@ enums:
           site_condition: restored for unrestricted use
           radioactive_materials: removed
   ResearchReactorTypeEnum:
+    title: Research Reactor Type
     description: Types of research reactors
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       POOL_TYPE:
         title: Pool-Type Research Reactor
@@ -279,7 +302,14 @@ enums:
           neutron_source: external source required
           applications: research, training, transmutation studies
   FuelCycleFacilityTypeEnum:
+    title: Fuel Cycle Facility Type
     description: Types of nuclear fuel cycle facilities
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       IN_SITU_LEACH_MINE:
         title: In-Situ Leach Mine
@@ -345,7 +375,14 @@ enums:
           temperature: high temperature operation
           technology_status: under development
   WasteFacilityTypeEnum:
+    title: Waste Facility Type
     description: Types of nuclear waste management facilities
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       SPENT_FUEL_POOL:
         title: Spent Fuel Pool
@@ -411,7 +448,14 @@ enums:
           materials: equipment, clothing, tools
           methods: chemical, physical decontamination
   NuclearShipTypeEnum:
+    title: Nuclear Ship Type
     description: Types of nuclear-powered vessels
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       AIRCRAFT_CARRIER:
         title: Nuclear Aircraft Carrier

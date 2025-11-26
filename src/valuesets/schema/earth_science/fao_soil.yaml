@@ -6,6 +6,8 @@ prefixes:
   linkml: https://w3id.org/linkml/
   ENVO: http://purl.obolibrary.org/obo/ENVO_
   valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 
 slots:
@@ -15,13 +17,20 @@ slots:
 
 enums:
   FAOSoilType:
+    title: FAO Soil Type
     description: >-
       FAO World Reference Base (WRB) soil classification system.
       Based on the Harmonized World Soil Database (HWSD) version 2.
       These represent the major soil groups according to the World Reference Base for Soil Resources.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     see_also:
-      - https://www.fao.org/soils-portal/data-hub/soil-classification/world-reference-base/en/
-      - https://www.isric.org/explore/hwsd
+    - https://www.fao.org/soils-portal/data-hub/soil-classification/world-reference-base/en/
+    - https://www.isric.org/explore/hwsd
     permissible_values:
       ACRISOLS:
         description: Acrisols - soils with subsurface accumulation of low-activity clays and low base saturation
@@ -169,7 +178,8 @@ enums:
           fao_id: 24
           color_rgb: "115,0,0"
       PODZOLS:
-        description: Podzols - soils with subsurface accumulation of aluminium and iron complexes with organic matter (spodic horizon)
+        description: Podzols - soils with subsurface accumulation of aluminium and iron complexes with organic matter 
+          (spodic horizon)
         annotations:
           symbol: PZ
           fao_id: 25
@@ -240,6 +250,6 @@ enums:
 
 license: MIT
 see_also:
-  - https://linkml.github.io/valuesets
-  - https://www.fao.org/soils-portal/data-hub/soil-classification/world-reference-base/en/
-  - https://www.isric.org/explore/hwsd
+- https://linkml.github.io/valuesets
+- https://www.fao.org/soils-portal/data-hub/soil-classification/world-reference-base/en/
+- https://www.isric.org/explore/hwsd

@@ -7,6 +7,7 @@ id: https://w3id.org/linkml/valuesets/bioprocessing/scale_up
 imports:
 - linkml:types
 prefixes:
+  linkml: https://w3id.org/linkml/
   valuesets: https://w3id.org/valuesets/
   NCIT: http://purl.obolibrary.org/obo/NCIT_
   OBI: http://purl.obolibrary.org/obo/OBI_
@@ -19,6 +20,8 @@ prefixes:
   MSIO: http://purl.obolibrary.org/obo/MSIO_
   mesh: http://id.nlm.nih.gov/mesh/
   FOODON: http://purl.obolibrary.org/obo/FOODON_
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   process_scale:
@@ -50,7 +53,14 @@ slots:
     range: SterilizationMethodEnum
 enums:
   ProcessScaleEnum:
+    title: Process Scale
     description: Scale of bioprocessing operations from lab bench to commercial production
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       BENCH_SCALE:
         description: Laboratory bench scale (typically < 10 L)
@@ -87,7 +97,14 @@ enums:
           typical_volume: 1-1000 μL
           purpose: High-throughput screening
   BioreactorTypeEnum:
+    title: Bioreactor Type
     description: Types of bioreactors used in fermentation and cell culture
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       STIRRED_TANK:
         description: Stirred tank reactor (STR/CSTR)
@@ -144,7 +161,14 @@ enums:
           light_source: Required
           organisms: Algae, cyanobacteria
   FermentationModeEnum:
+    title: Fermentation Mode
     description: Modes of fermentation operation
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       BATCH:
         title: batch cell culture
@@ -184,7 +208,14 @@ enums:
           operation: Periodic harvest and refill
           advantage: Extended production
   OxygenationStrategyEnum:
+    title: Oxygenation Strategy
     description: Oxygen supply strategies for fermentation
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       AEROBIC:
         description: Aerobic with active aeration
@@ -211,7 +242,14 @@ enums:
           oxygen: Optional
           flexibility: Organism-dependent
   AgitationTypeEnum:
+    title: Agitation Type
     description: Types of agitation/mixing in bioreactors
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       RUSHTON_TURBINE:
         description: Rushton turbine impeller
@@ -253,7 +291,14 @@ enums:
         annotations:
           mixing: Gas sparging or static
   DownstreamProcessEnum:
+    title: Downstream Process
     description: Downstream processing unit operations
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       CENTRIFUGATION:
         title: analytical centrifugation
@@ -304,7 +349,14 @@ enums:
         annotations:
           methods: High pressure, bead mill
   FeedstockTypeEnum:
+    title: Feedstock Type
     description: Types of feedstocks for bioprocessing
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       GLUCOSE:
         description: Glucose/dextrose
@@ -358,7 +410,14 @@ enums:
           variable_composition: true
           sustainability: Circular economy
   ProductTypeEnum:
+    title: Product Type
     description: Types of products from bioprocessing
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       BIOFUEL:
         title: fuel
@@ -417,7 +476,14 @@ enums:
         annotations:
           category: Specialty chemical
   SterilizationMethodEnum:
+    title: Sterilization Method
     description: Methods for sterilization in bioprocessing
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       STEAM_IN_PLACE:
         description: Steam in place (SIP)

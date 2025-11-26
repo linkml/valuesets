@@ -15,6 +15,8 @@ prefixes:
   TO: http://purl.obolibrary.org/obo/TO_
   VT: http://purl.obolibrary.org/obo/VT_
   valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   eye_color:
@@ -37,7 +39,14 @@ slots:
     range: PlantLeafColorEnum
 enums:
   EyeColorEnum:
+    title: Eye Color
     description: Human eye color phenotypes
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       BROWN:
         description: Brown eyes
@@ -89,7 +98,14 @@ enums:
           hex_range: 8B7AB8-9370DB
           prevalence: extremely rare
   HairColorEnum:
+    title: Hair Color
     description: Human hair color phenotypes
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       BLACK:
         description: Black hair
@@ -162,7 +178,14 @@ enums:
         annotations:
           hex: C0C0C0
   FlowerColorEnum:
+    title: Flower Color
     description: Common flower colors
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       RED:
         description: Red flowers
@@ -243,7 +266,14 @@ enums:
         annotations:
           note: flowers with more than two colors
   AnimalCoatColorEnum:
+    title: Animal Coat Color
     description: Animal coat/fur colors
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       BLACK:
         description: Black coat
@@ -332,7 +362,14 @@ enums:
         annotations:
           species: horses
   SkinToneEnum:
+    title: Skin Tone
     description: Human skin tone classifications (Fitzpatrick scale based)
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       TYPE_I:
         description: Very pale white skin
@@ -371,7 +408,14 @@ enums:
           hex_range: 5C3A1E-3D2314
           sun_reaction: never burns, always tans darkly
   PlantLeafColorEnum:
+    title: Plant Leaf Color
     description: Plant leaf colors (including seasonal changes)
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       GREEN:
         description: Green leaves (healthy/summer)

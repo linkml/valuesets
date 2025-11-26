@@ -1,16 +1,19 @@
 name: organizational_structures
 title: Business Organizational Structures and Legal Entities
-description: 'Classifications of business organizational structures including legal entity types,
-  corporate hierarchies, management levels, and organizational frameworks. Based on business
-  law standards, corporate governance frameworks, and organizational behavior research.'
+description: 'Classifications of business organizational structures including legal entity types, corporate hierarchies, management
+  levels, and organizational frameworks. Based on business law standards, corporate governance frameworks, and organizational
+  behavior research.'
 id: https://w3id.org/linkml/valuesets/business/organizational_structures
 imports:
 - linkml:types
 prefixes:
+  linkml: https://w3id.org/linkml/
   valuesets: https://w3id.org/valuesets/
   SBA: https://www.sba.gov/
   IRS: https://www.irs.gov/
   SEC: https://www.sec.gov/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   legal_entity_type:
@@ -36,7 +39,14 @@ slots:
     range: BusinessLifecycleStageEnum
 enums:
   LegalEntityTypeEnum:
+    title: Legal Entity Type
     description: Legal entity types for business organizations
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       SOLE_PROPRIETORSHIP:
         title: Sole Proprietorship
@@ -193,7 +203,14 @@ enums:
           regulation: government regulations and oversight
           funding: government funding sources
   OrganizationalStructureEnum:
+    title: Organizational Structure
     description: Types of organizational hierarchy and reporting structures
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       HIERARCHICAL:
         title: Hierarchical Structure
@@ -277,7 +294,14 @@ enums:
           complexity: increased structural complexity
           customization: customized to organization needs
   ManagementLevelEnum:
+    title: Management Level
     description: Hierarchical levels within organizational management structure
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       BOARD_OF_DIRECTORS:
         title: Board of Directors
@@ -368,7 +392,14 @@ enums:
           supervision: close supervision
           growth_potential: career growth opportunities
   CorporateGovernanceRoleEnum:
+    title: Corporate Governance Role
     description: Roles within corporate governance structure
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       CHAIRMAN_OF_BOARD:
         title: Chairman of the Board
@@ -459,7 +490,14 @@ enums:
           meetings: board meeting coordination
           legal: legal compliance oversight
   BusinessOwnershipTypeEnum:
+    title: Business Ownership Type
     description: Types of business ownership structures
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       PRIVATE_OWNERSHIP:
         title: Private Ownership
@@ -526,7 +564,14 @@ enums:
           governance: shared governance
           coordination: ownership coordination
   BusinessSizeClassificationEnum:
+    title: Business Size Classification
     description: Size classifications for business entities
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       MICRO_BUSINESS:
         title: Micro Business
@@ -577,7 +622,14 @@ enums:
           market_position: "market leadership positions"
           recognition: "prestigious business recognition"
   BusinessLifecycleStageEnum:
+    title: Business Lifecycle Stage
     description: Stages in business development lifecycle
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       CONCEPT_STAGE:
         title: Concept Stage

@@ -103,9 +103,11 @@ imports:
 - lab_automation/thermal_cycling
 prefixes:
   valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 classes:
-  Fake: null
+  Fake:
 license: Apache-2.0
 see_also:
 - https://linkml.github.io/valuesets

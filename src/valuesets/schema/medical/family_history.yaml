@@ -11,6 +11,8 @@ prefixes:
   HL7: http://terminology.hl7.org/CodeSystem/
   SNOMED: http://snomed.info/id/
   valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 
 slots:
@@ -26,15 +28,24 @@ slots:
 
 enums:
   FamilyRelationship:
+    title: Family Relationship
     description: Family relationships used in pedigree and family history documentation
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinitionWithSource
     source: https://terminology.hl7.org/2.1.0/ValueSet-v3-FamilyMember.html
     permissible_values:
       # Core Parent Relationships
       PARENT:
-        description: The player of the role is one who begets, gives birth to, or nurtures and raises the scoping entity (child)
+        description: The player of the role is one who begets, gives birth to, or nurtures and raises the scoping entity
+          (child)
         meaning: HL7:v3-RoleCode#PRN
       MOTHER:
-        description: The player of the role is a female who conceives, gives birth to, or raises and nurtures the scoping entity (child)
+        description: The player of the role is a female who conceives, gives birth to, or raises and nurtures the 
+          scoping entity (child)
         meaning: HL7:v3-RoleCode#MTH
       FATHER:
         description: The player of the role is a male who begets or raises or nurtures the scoping entity (child)
@@ -46,30 +57,37 @@ enums:
         description: The player of the role is a male who begets the scoping entity (child)
         meaning: HL7:v3-RoleCode#NFTH
       ADOPTIVE_PARENT:
-        description: The player of the role (parent) has taken the scoper (child) into their family through legal means and raises them as his or her own child
+        description: The player of the role (parent) has taken the scoper (child) into their family through legal means 
+          and raises them as his or her own child
         meaning: HL7:v3-RoleCode#ADOPTP
       ADOPTIVE_MOTHER:
-        description: The player of the role (mother) is a female who has taken the scoper (child) into their family through legal means and raises them as her own child
+        description: The player of the role (mother) is a female who has taken the scoper (child) into their family 
+          through legal means and raises them as her own child
         meaning: HL7:v3-RoleCode#ADOPTM
       ADOPTIVE_FATHER:
-        description: The player of the role (father) is a male who has taken the scoper (child) into their family through legal means and raises them as his own child
+        description: The player of the role (father) is a male who has taken the scoper (child) into their family 
+          through legal means and raises them as his own child
         meaning: HL7:v3-RoleCode#ADOPTF
       STEP_PARENT:
-        description: The player of the role is the spouse of the scoping person's parent and not the scoping person's natural parent
+        description: The player of the role is the spouse of the scoping person's parent and not the scoping person's 
+          natural parent
         meaning: HL7:v3-RoleCode#STPPRN
       STEP_MOTHER:
-        description: The player of the role is the female spouse of the scoping person's parent and not the scoping person's natural mother
+        description: The player of the role is the female spouse of the scoping person's parent and not the scoping 
+          person's natural mother
         meaning: HL7:v3-RoleCode#STPMTH
       STEP_FATHER:
-        description: The player of the role is the male spouse of the scoping person's parent and not the scoping person's natural father
+        description: The player of the role is the male spouse of the scoping person's parent and not the scoping 
+          person's natural father
         meaning: HL7:v3-RoleCode#STPFTH
       FOSTER_PARENT:
-        description: The player of the role (parent) who is a state-certified caregiver responsible for the scoper (child)
+        description: The player of the role (parent) who is a state-certified caregiver responsible for the scoper 
+          (child)
         meaning: HL7:v3-RoleCode#PRNFOST
       GESTATIONAL_MOTHER:
         description: The player is a female whose womb carries the fetus of the scoper
         meaning: HL7:v3-RoleCode#GESTM
-      
+
       # Sibling Relationships
       SIBLING:
         description: The player of the role shares one or both parents in common with the scoping entity
@@ -81,16 +99,20 @@ enums:
         description: The player of the role is a female sharing one or both parents with the scoping entity
         meaning: HL7:v3-RoleCode#SIS
       NATURAL_BROTHER:
-        description: The player of the role is a male related to the scoping entity by sharing only the same natural parents
+        description: The player of the role is a male related to the scoping entity by sharing only the same natural 
+          parents
         meaning: HL7:v3-RoleCode#NBRO
       NATURAL_SISTER:
-        description: The player of the role is a female related to the scoping entity by sharing only the same natural parents
+        description: The player of the role is a female related to the scoping entity by sharing only the same natural 
+          parents
         meaning: HL7:v3-RoleCode#NSIS
       HALF_BROTHER:
-        description: The player of the role is a male related to the scoping entity by sharing only one biological parent
+        description: The player of the role is a male related to the scoping entity by sharing only one biological 
+          parent
         meaning: HL7:v3-RoleCode#HBRO
       HALF_SISTER:
-        description: The player of the role is a female related to the scoping entity by sharing only one biological parent
+        description: The player of the role is a female related to the scoping entity by sharing only one biological 
+          parent
         meaning: HL7:v3-RoleCode#HSIS
       STEP_BROTHER:
         description: The player of the role is a male child of the scoping person's stepparent
@@ -108,12 +130,14 @@ enums:
         description: The player of the role is a female born from the same pregnancy as the scoping entity
         meaning: HL7:v3-RoleCode#TWINSIS
       FRATERNAL_TWIN:
-        description: The player of the role is born from the same pregnancy as the scoping entity but does not share the same genotype
+        description: The player of the role is born from the same pregnancy as the scoping entity but does not share the
+          same genotype
         meaning: HL7:v3-RoleCode#FTWIN
       IDENTICAL_TWIN:
-        description: The player of the role is born from the same pregnancy as the scoping entity and shares the same genotype
+        description: The player of the role is born from the same pregnancy as the scoping entity and shares the same 
+          genotype
         meaning: HL7:v3-RoleCode#ITWIN
-      
+
       # Child Relationships
       CHILD:
         description: The player of the role is a child of the scoping entity
@@ -128,15 +152,17 @@ enums:
         description: The player of the role is an offspring of the scoping entity as determined by birth
         meaning: HL7:v3-RoleCode#NCHILD
       ADOPTIVE_CHILD:
-        description: The player of the role is a child taken into a family through legal means and raised by the scoping person (parent) as his or her own child
+        description: The player of the role is a child taken into a family through legal means and raised by the scoping
+          person (parent) as his or her own child
         meaning: HL7:v3-RoleCode#CHLDADOPT
       FOSTER_CHILD:
-        description: The player of the role is a child receiving parental care and nurture from the scoping person (parent) but not related to him or her through legal or blood relationship
+        description: The player of the role is a child receiving parental care and nurture from the scoping person 
+          (parent) but not related to him or her through legal or blood relationship
         meaning: HL7:v3-RoleCode#CHLDFOST
       STEP_CHILD:
         description: The player of the role is a child of the scoping person's spouse by a previous union
         meaning: HL7:v3-RoleCode#STPCHLD
-      
+
       # Grandparent Relationships
       GRANDPARENT:
         description: The player of the role is a parent of the scoping person's mother or father
@@ -159,7 +185,7 @@ enums:
       PATERNAL_GRANDFATHER:
         description: The player of the role is the father of the scoping person's father
         meaning: HL7:v3-RoleCode#PGRFTH
-      
+
       # Grandchild Relationships
       GRANDCHILD:
         description: The player of the role is a child of the scoping person's son or daughter
@@ -170,7 +196,7 @@ enums:
       GRANDDAUGHTER:
         description: The player of the role is a daughter of the scoping person's son or daughter
         meaning: HL7:v3-RoleCode#GRNDDAU
-      
+
       # Aunt/Uncle Relationships
       AUNT:
         description: The player of the role is a sister of the scoping person's mother or father
@@ -190,10 +216,11 @@ enums:
       PATERNAL_UNCLE:
         description: The player of the role is a brother of the scoping person's father
         meaning: HL7:v3-RoleCode#PUNCLE
-      
+
       # Cousin Relationships
       COUSIN:
-        description: The player of the role is a relative descended from a common ancestor, such as a grandparent, by two or more steps in a diverging line
+        description: The player of the role is a relative descended from a common ancestor, such as a grandparent, by 
+          two or more steps in a diverging line
         meaning: HL7:v3-RoleCode#COUSN
       MATERNAL_COUSIN:
         description: The player of the role is a child of a maternal aunt or uncle of the scoping person
@@ -201,15 +228,17 @@ enums:
       PATERNAL_COUSIN:
         description: The player of the role is a child of a paternal aunt or uncle of the scoping person
         meaning: HL7:v3-RoleCode#PCOUSN
-      
+
       # Niece/Nephew Relationships
       NIECE:
-        description: The player of the role is a daughter of the scoping person's brother or sister or of the brother or sister of the scoping person's spouse
+        description: The player of the role is a daughter of the scoping person's brother or sister or of the brother or
+          sister of the scoping person's spouse
         meaning: HL7:v3-RoleCode#NIECE
       NEPHEW:
-        description: The player of the role is a son of the scoping person's brother or sister or of the brother or sister of the scoping person's spouse
+        description: The player of the role is a son of the scoping person's brother or sister or of the brother or 
+          sister of the scoping person's spouse
         meaning: HL7:v3-RoleCode#NEPHEW
-      
+
       # Spouse/Partner Relationships
       SPOUSE:
         description: The player of the role is a marriage partner of the scoping person
@@ -223,7 +252,7 @@ enums:
       DOMESTIC_PARTNER:
         description: The player of the role cohabits with the scoping person but is not the scoping person's spouse
         meaning: HL7:v3-RoleCode#DOMPART
-      
+
       # Great-Grandparent Relationships
       GREAT_GRANDPARENT:
         description: The player of the role is a grandparent of the scoping person's mother or father
@@ -234,7 +263,7 @@ enums:
       GREAT_GRANDFATHER:
         description: The player of the role is a grandfather of the scoping person's mother or father
         meaning: HL7:v3-RoleCode#GGRFTH
-      
+
       # In-Law Relationships
       MOTHER_IN_LAW:
         description: The player of the role is the mother of the scoping person's spouse
@@ -249,12 +278,14 @@ enums:
         description: The player of the role is the husband of scoping person's daughter
         meaning: HL7:v3-RoleCode#SONINLAW
       BROTHER_IN_LAW:
-        description: The player of the role is a brother of the scoping person's spouse, or the husband of the scoping person's sister, or the husband of a sister of the scoping person's spouse
+        description: The player of the role is a brother of the scoping person's spouse, or the husband of the scoping 
+          person's sister, or the husband of a sister of the scoping person's spouse
         meaning: HL7:v3-RoleCode#BROINLAW
       SISTER_IN_LAW:
-        description: The player of the role is a sister of the scoping person's spouse, or the wife of the scoping person's brother, or the wife of a brother of the scoping person's spouse
+        description: The player of the role is a sister of the scoping person's spouse, or the wife of the scoping 
+          person's brother, or the wife of a brother of the scoping person's spouse
         meaning: HL7:v3-RoleCode#SISINLAW
-      
+
       # Extended Family
       FAMILY_MEMBER:
         description: A relationship between two people characterizing their "familial" relationship
@@ -265,9 +296,16 @@ enums:
       SIGNIFICANT_OTHER:
         description: A person who is important to one's well being; especially a spouse or one in a similar relationship
         meaning: HL7:v3-RoleCode#SIGOTHR
-      
+
   FamilyHistoryStatus:
+    title: Family History Status
     description: Status of family history information availability
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       COMPLETED:
         description: All relevant family history information has been obtained
@@ -284,9 +322,16 @@ enums:
       NOT_ASKED:
         description: Family history information was not requested
         meaning: HL7:data-absent-reason#not-asked
-      
+
   GeneticRelationship:
+    title: Genetic Relationship
     description: Genetic relationship types for pedigree analysis
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       BIOLOGICAL:
         description: Genetic relationship through biological inheritance

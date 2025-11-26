@@ -20,13 +20,22 @@ prefixes:
   schema: http://schema.org/
   xsd: http://www.w3.org/2001/XMLSchema#
   spdx: https://spdx.org/licenses/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 
 enums:
   MLDataType:
+    title: ML Data Type
     description: |
       Data types used in Croissant ML for describing field types in datasets.
       Based on XSD (XML Schema Definition) and schema.org vocabulary.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       TEXT:
         description: Text or string data
@@ -72,9 +81,16 @@ enums:
         - schema:URL
 
   DatasetEncodingFormat:
+    title: Dataset Encoding Format
     description: |
       Encoding formats (MIME types) commonly used for ML dataset files in Croissant.
       These specify how data is serialized and stored.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       CSV:
         description: Comma-separated values format for tabular data
@@ -135,10 +151,17 @@ enums:
           mime_type: application/x-tar
 
   DatasetSplitType:
+    title: Dataset Split Type
     description: |
       Standard dataset split types used in machine learning for training,
       validation, and testing. These splits are fundamental to ML model
       development and evaluation workflows.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       TRAIN:
         description: Training split used for model learning
@@ -160,9 +183,16 @@ enums:
         description: Complete dataset without splits
 
   MLLicenseType:
+    title: ML License Type
     description: |
       Common open source and Creative Commons licenses used for ML datasets.
       These licenses specify terms of use, redistribution, and modification.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       CC_BY_4_0:
         description: Creative Commons Attribution 4.0 International
@@ -226,9 +256,16 @@ enums:
           copyleft: true
 
   MLFieldRole:
+    title: ML Field Role
     description: |
       Semantic roles that fields play in ML datasets. These roles help understand
       the purpose and usage of different data columns or attributes.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       FEATURE:
         description: Input features used for model prediction
@@ -248,8 +285,15 @@ enums:
           also_known_as: ID, key, primary key
 
   CompressionFormat:
+    title: Compression Format
     description: |
       Compression and archive formats commonly used for ML dataset distribution.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       ZIP:
         description: ZIP archive format with lossless data compression
@@ -279,9 +323,16 @@ enums:
           typical_extension: .tar.gz
 
   MLMediaType:
+    title: ML Media Type
     description: |
       Media types (MIME types) for different modalities of ML data including
       images, audio, video, and text.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       # Images
       IMAGE_JPEG:
@@ -357,9 +408,16 @@ enums:
           modality: text
 
   MLModalityType:
+    title: ML Modality Type
     description: |
       High-level data modalities used in machine learning. These represent
       the fundamental types of input data that ML models process.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       TEXT:
         description: Textual data (natural language, code, etc.)

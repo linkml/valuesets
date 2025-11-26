@@ -5,9 +5,12 @@ id: https://w3id.org/linkml/valuesets/bio/taxonomy
 imports:
 - linkml:types
 prefixes:
+  linkml: https://w3id.org/linkml/
   valuesets: https://w3id.org/valuesets/
   NCBITaxon: http://purl.obolibrary.org/obo/NCBITaxon_
   TAXRANK: http://purl.obolibrary.org/obo/TAXRANK_
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   organism_taxon:
@@ -24,6 +27,13 @@ slots:
     range: BiologicalKingdom
 enums:
   OrganismTaxonEnum:
+    title: Organism Taxon
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     reachable_from:
       source_nodes:
       - NCBITaxon:1
@@ -31,7 +41,14 @@ enums:
       relationship_types:
       - rdfs:subClassOf
   CommonOrganismTaxaEnum:
+    title: Common Organism Taxa
     description: Common model organisms used in biological research, mapped to NCBI Taxonomy IDs
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       BACTERIA:
         description: Bacteria domain
@@ -380,7 +397,14 @@ enums:
         meaning: NCBITaxon:2697049
         is_a: VIRUSES
   TaxonomicRank:
+    title: Taxonomic Rank
     description: Standard taxonomic ranks used in biological classification
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       DOMAIN:
         description: Domain (highest rank)
@@ -424,7 +448,14 @@ enums:
         description: Cultivar (cultivated variety)
         meaning: TAXRANK:0000034
   BiologicalKingdom:
+    title: Biological Kingdom
     description: Major kingdoms/domains of life
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       BACTERIA:
         description: Bacteria domain

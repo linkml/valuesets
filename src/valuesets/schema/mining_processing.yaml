@@ -1,7 +1,7 @@
 name: mining_processing
 title: Mining and Mineral Processing Value Sets
-description: Value sets for mining operations, mineral processing, beneficiation, and in-situ extraction, including bioleaching
-  and autonomous mining systems.
+description: Value sets for mining operations, mineral processing, beneficiation, and in-situ extraction, including 
+  bioleaching and autonomous mining systems.
 id: https://w3id.org/valuesets/mining-processing
 version: 1.0.0
 status: release
@@ -16,37 +16,40 @@ prefixes:
   OBI: http://purl.obolibrary.org/obo/OBI_
   PATO: http://purl.obolibrary.org/obo/PATO_
   valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 default_curi_maps:
 - semweb_context
 slots:
   mineralogy_feedstock:
-    description: Types of mineral feedstock sources for extraction and processing operations, including primary and secondary
-      sources
+    description: Types of mineral feedstock sources for extraction and processing operations, including primary and 
+      secondary sources
     range: MineralogyFeedstockClass
     required: true
     comments:
     - Required field for mining operation records
     - Manual customization - do not modify
   beneficiation_pathway:
-    description: Methods for mineral separation and concentration aligned with advanced ore processing initiatives (AOI-2)
+    description: Methods for mineral separation and concentration aligned with advanced ore processing initiatives 
+      (AOI-2)
     range: BeneficiationPathway
   in_situ_chemistry_regime:
-    description: Chemical leaching systems for in-situ extraction with associated parameters including pH, Eh, temperature,
-      and ionic strength
+    description: Chemical leaching systems for in-situ extraction with associated parameters including pH, Eh, 
+      temperature, and ionic strength
     range: InSituChemistryRegime
   extractable_target_element:
     description: Target elements for extraction, particularly rare earth elements (REE) and critical minerals
     range: ExtractableTargetElement
     multivalued: true
   sensor_while_drilling_feature:
-    description: Measurement while drilling (MWD) and logging while drilling (LWD) features for orebody ML and geosteering
-      applications
+    description: Measurement while drilling (MWD) and logging while drilling (LWD) features for orebody ML and 
+      geosteering applications
     range: SensorWhileDrillingFeature
     multivalued: true
   process_performance_metric:
-    description: Key performance indicators for mining and processing operations tied to SMART milestones and sustainability
-      goals
+    description: Key performance indicators for mining and processing operations tied to SMART milestones and 
+      sustainability goals
     range: ProcessPerformanceMetric
     multivalued: true
   bioleach_organism:
@@ -56,20 +59,27 @@ slots:
     description: Mechanisms of bioleaching including indirect and direct bacterial action
     range: BioleachMode
   autonomy_level:
-    description: Levels of autonomy for mining systems including drilling, hauling, and sorting robots (relevant for Topic
-      1 initiatives)
+    description: Levels of autonomy for mining systems including drilling, hauling, and sorting robots (relevant for 
+      Topic 1 initiatives)
     range: AutonomyLevel
   regulatory_constraint:
-    description: Regulatory and community constraints affecting mining operations, particularly for in-situ extraction and
-      community engagement
+    description: Regulatory and community constraints affecting mining operations, particularly for in-situ extraction 
+      and community engagement
     range: RegulatoryConstraint
     multivalued: true
 enums:
   MineralogyFeedstockClass:
+    title: Mineralogy Feedstock Class
     description: 'Types of mineral feedstock sources for extraction and processing operations, including primary and secondary
       sources.
 
       '
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       HARDROCK_PRIMARY:
         title: HARDROCK_PRIMARY
@@ -90,9 +100,16 @@ enums:
         title: BRINES
         description: Saline water sources containing dissolved minerals
   BeneficiationPathway:
+    title: Beneficiation Pathway
     description: 'Methods for mineral separation and concentration aligned with advanced ore processing initiatives (AOI-2).
 
       '
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       ORE_SORTING:
         description: Sensor-based sorting of ore particles
@@ -113,10 +130,17 @@ enums:
       BIO_BENEFICIATION:
         description: Biological methods for mineral beneficiation
   InSituChemistryRegime:
+    title: In Situ Chemistry Regime
     description: 'Chemical leaching systems for in-situ extraction with associated parameters including pH, Eh, temperature,
       and ionic strength.
 
       '
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       ACIDIC_SULFATE:
         title: ACIDIC_SULFATE
@@ -134,9 +158,16 @@ enums:
       BIOLEACH_IRON_OXIDIZING:
         description: Bioleaching using iron-oxidizing bacteria
   ExtractableTargetElement:
+    title: Extractable Target Element
     description: 'Target elements for extraction, particularly rare earth elements (REE) and critical minerals.
 
       '
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       REE_LA:
         title: REE_LA
@@ -196,10 +227,17 @@ enums:
         title: LI
         description: Lithium
   SensorWhileDrillingFeature:
+    title: Sensor While Drilling Feature
     description: 'Measurement while drilling (MWD) and logging while drilling (LWD) features for orebody ML and geosteering
       applications.
 
       '
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       WOB:
         description: Weight on bit measurement
@@ -218,10 +256,17 @@ enums:
       RSS_ANGLE:
         description: Rotary steerable system angle
   ProcessPerformanceMetric:
+    title: Process Performance Metric
     description: 'Key performance indicators for mining and processing operations tied to SMART milestones and sustainability
       goals.
 
       '
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       RECOVERY_PCT:
         description: Percentage recovery of target material
@@ -238,9 +283,16 @@ enums:
       TAILINGS_MASS_REDUCTION_PCT:
         description: Percentage reduction in tailings mass
   BioleachOrganism:
+    title: Bioleach Organism
     description: 'Microorganisms used in bioleaching and biomining operations, including engineered strains.
 
       '
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       ACIDITHIOBACILLUS_FERROOXIDANS:
         description: Iron and sulfur oxidizing bacterium
@@ -254,9 +306,16 @@ enums:
       ENGINEERED_STRAIN:
         description: Genetically modified organism for enhanced bioleaching
   BioleachMode:
+    title: Bioleach Mode
     description: 'Mechanisms of bioleaching including indirect and direct bacterial action.
 
       '
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       INDIRECT_BIOLEACH_ORGANIC_ACIDS:
         description: Indirect bioleaching through organic acid production
@@ -265,10 +324,17 @@ enums:
       IRON_OXIDATION:
         description: Direct bacterial oxidation of iron compounds
   AutonomyLevel:
+    title: Autonomy Level
     description: 'Levels of autonomy for mining systems including drilling, hauling, and sorting robots (relevant for Topic
       1 initiatives).
 
       '
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       ASSISTIVE:
         description: Human operator with assistive technologies
@@ -279,10 +345,17 @@ enums:
       FULLY_AUTONOMOUS:
         description: Complete autonomous operation without human intervention
   RegulatoryConstraint:
+    title: Regulatory Constraint
     description: 'Regulatory and community constraints affecting mining operations, particularly for in-situ extraction and
       community engagement.
 
       '
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       AQUIFER_PROTECTION:
         title: AQUIFER_PROTECTION

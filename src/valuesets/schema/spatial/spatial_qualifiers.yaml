@@ -7,10 +7,13 @@ id: https://w3id.org/linkml/valuesets/spatial/spatial_qualifiers
 imports:
 - linkml:types
 prefixes:
+  linkml: https://w3id.org/linkml/
   valuesets: https://w3id.org/valuesets/
   BSPO: http://purl.obolibrary.org/obo/BSPO_
   PATO: http://purl.obolibrary.org/obo/PATO_
   UBERON: http://purl.obolibrary.org/obo/UBERON_
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   simple_spatial_direction:
@@ -39,7 +42,14 @@ slots:
     range: AnatomicalOrientation
 enums:
   SimpleSpatialDirection:
+    title: Simple Spatial Direction
     description: Basic spatial directional terms for general use
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       LEFT:
         description: To the left side
@@ -82,9 +92,16 @@ enums:
         annotations:
           aliases: center, central
   AnatomicalSide:
+    title: Anatomical Side
     description: 'Anatomical sides as defined in the Biological Spatial Ontology (BSPO).
 
       An anatomical region bounded by a plane perpendicular to an axis through the middle.'
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       LEFT:
         title: Left side of a bilaterally symmetric organism
@@ -216,7 +233,14 @@ enums:
         annotations:
           aliases: middle
   AnatomicalRegion:
+    title: Anatomical Region
     description: Anatomical regions based on spatial position
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       ANTERIOR_REGION:
         title: Region in the anterior portion
@@ -279,7 +303,14 @@ enums:
         - peripheral region
         meaning: BSPO:0000127
   AnatomicalAxis:
+    title: Anatomical Axis
     description: Anatomical axes defining spatial organization
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       ANTERIOR_POSTERIOR:
         title: Anterior-posterior axis (head-tail axis)
@@ -317,7 +348,14 @@ enums:
         annotations:
           context: epithelial cells, plant structures
   AnatomicalPlane:
+    title: Anatomical Plane
     description: Standard anatomical planes for sectioning
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       SAGITTAL:
         title: Vertical plane dividing body into left and right
@@ -362,7 +400,14 @@ enums:
         annotations:
           note: angled section
   SpatialRelationship:
+    title: Spatial Relationship
     description: Spatial relationships between anatomical structures
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       ADJACENT_TO:
         title: Next to or adjoining
@@ -433,7 +478,14 @@ enums:
         annotations:
           note: requires two reference points
   CellPolarity:
+    title: Cell Polarity
     description: Spatial polarity in cells and tissues
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       APICAL:
         description: The free surface of an epithelial cell

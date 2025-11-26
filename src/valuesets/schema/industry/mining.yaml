@@ -5,11 +5,14 @@ id: https://w3id.org/linkml/valuesets/industry/mining
 imports:
 - linkml:types
 prefixes:
+  linkml: https://w3id.org/linkml/
   valuesets: https://w3id.org/valuesets/
   ENVO: http://purl.obolibrary.org/obo/ENVO_
   CHEBI: http://purl.obolibrary.org/obo/CHEBI_
   ExO: http://purl.obolibrary.org/obo/ExO_
   MINMOD: https://minmod.isi.edu/resource/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   mining:
@@ -19,8 +22,8 @@ slots:
     description: Categories of minerals and materials
     range: MineralCategory
   critical_mineral:
-    description: Critical minerals essential for economic and national security, particularly for clean energy, defense, and
-      technology applications
+    description: Critical minerals essential for economic and national security, particularly for clean energy, defense,
+      and technology applications
     range: CriticalMineral
   common_mineral:
     description: Common minerals extracted through mining
@@ -42,7 +45,14 @@ slots:
     range: EnvironmentalImpact
 enums:
   MiningType:
+    title: Mining Type
     description: Types of mining operations
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       OPEN_PIT:
         description: Open-pit mining
@@ -133,7 +143,14 @@ enums:
           category: marine
           depth: ocean floor
   MineralCategory:
+    title: Mineral Category
     description: Categories of minerals and materials
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       PRECIOUS_METALS:
         description: Precious metals
@@ -177,11 +194,18 @@ enums:
         annotations:
           examples: phosphate, potash, sulfur
   CriticalMineral:
+    title: Critical Mineral
     description: 'Critical minerals essential for economic and national security,
 
       particularly for clean energy, defense, and technology applications.
 
       Based on US Geological Survey and EU critical raw materials lists.'
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       LITHIUM:
         description: Lithium (Li) - essential for batteries
@@ -539,7 +563,14 @@ enums:
           atomic_number: 38
           applications: magnets, pyrotechnics, medical
   CommonMineral:
+    title: Common Mineral
     description: Common minerals extracted through mining
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       GOLD:
         description: Gold (Au)
@@ -671,7 +702,14 @@ enums:
           formula: C
           use: gemstone, industrial
   MiningEquipment:
+    title: Mining Equipment
     description: Types of mining equipment
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       DRILL_RIG:
         description: Drilling rig
@@ -738,7 +776,14 @@ enums:
         annotations:
           category: underground transport
   OreGrade:
+    title: Ore Grade
     description: Classification of ore grades
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       HIGH_GRADE:
         description: High-grade ore
@@ -767,7 +812,14 @@ enums:
         annotations:
           concentration: below cutoff
   MiningPhase:
+    title: Mining Phase
     description: Phases of mining operations
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       EXPLORATION:
         description: Exploration phase
@@ -798,7 +850,14 @@ enums:
         annotations:
           activities: long-term monitoring
   MiningHazard:
+    title: Mining Hazard
     description: Mining-related hazards and risks
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       CAVE_IN:
         description: Cave-in/roof collapse
@@ -845,7 +904,14 @@ enums:
         annotations:
           type: mechanical
   EnvironmentalImpact:
+    title: Environmental Impact
     description: Environmental impacts of mining
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       HABITAT_DESTRUCTION:
         description: Habitat destruction

@@ -10,6 +10,8 @@ prefixes:
   SBO: http://biomodels.net/SBO/
   cvs: https://w3id.org/common-value-sets/
   valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   reaction_directionality:
@@ -19,6 +21,12 @@ enums:
   ReactionDirectionality:
     title: Reaction Directionality
     description: The directionality of a chemical reaction or process
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       LEFT_TO_RIGHT:
         description: Reaction proceeds from left to right (forward direction)

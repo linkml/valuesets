@@ -4,6 +4,8 @@ prefixes:
   # linkml_common: https://w3id.org/linkml-common/
   MFOEM: http://purl.obolibrary.org/obo/MFOEM_
   valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   basic_emotion:
@@ -14,7 +16,14 @@ slots:
     range: ExtendedEmotionEnum
 enums:
   BasicEmotionEnum:
+    title: Basic Emotion
     description: Ekman's six basic emotions commonly used in emotion recognition
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     conforms_to: https://en.wikipedia.org/wiki/Basic_emotions
     permissible_values:
       ANGER:
@@ -61,7 +70,14 @@ enums:
         - surprised
         - shocked
   ExtendedEmotionEnum:
+    title: Extended Emotion
     description: Extended emotion set including complex emotions
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     conforms_to: https://en.wikipedia.org/wiki/Emotion_classification
     permissible_values:
       ANGER:

@@ -55,6 +55,9 @@ class LinkMLMeta(RootModel):
 linkml_meta = LinkMLMeta({'default_prefix': 'valuesets', 'description': 'A collection of commonly used value sets', 'id': 'https://w3id.org/linkml/valuesets', 'name': 'valuesets', 'title': 'valuesets'})
 
 class RelativeTimeEnum(RichEnum):
+    """
+    Temporal relationships between events or time points
+    """
     # Enum members
     BEFORE = "BEFORE"
     AFTER = "AFTER"
@@ -62,9 +65,15 @@ class RelativeTimeEnum(RichEnum):
 
 # Set metadata after class creation to avoid it becoming an enum member
 RelativeTimeEnum._metadata = {
+    "BEFORE": {'description': 'Occurs before the reference time point'},
+    "AFTER": {'description': 'Occurs after the reference time point'},
+    "AT_SAME_TIME_AS": {'description': 'Occurs at the same time as the reference time point'},
 }
 
 class PresenceEnum(RichEnum):
+    """
+    Classification of whether an entity is present, absent, or at detection limits
+    """
     # Enum members
     PRESENT = "PRESENT"
     ABSENT = "ABSENT"
@@ -127,8 +136,8 @@ DataAbsentEnum._metadata = {
     "AS_TEXT": {'description': 'The content of the data is represented in the resource narrative.', 'meaning': 'fhir_data_absent_reason:as-text'},
     "ERROR": {'description': 'Some system or workflow process error means that the information is not available.', 'meaning': 'fhir_data_absent_reason:error'},
     "NOT_A_NUMBER": {'description': 'The numeric value is undefined or unrepresentable due to a floating point processing error.', 'meaning': 'fhir_data_absent_reason:not-a-number'},
-    "NEGATIVE_INFINITY": {'description': 'The numeric value is excessively low and unrepresentable due to a floating point processing        error.', 'meaning': 'fhir_data_absent_reason:negative-infinity'},
-    "POSITIVE_INFINITY": {'description': 'The numeric value is excessively high and unrepresentable due to a floating point processing        error.', 'meaning': 'fhir_data_absent_reason:positive-infinity'},
+    "NEGATIVE_INFINITY": {'description': 'The numeric value is excessively low and unrepresentable due to a floating point processing error.', 'meaning': 'fhir_data_absent_reason:negative-infinity'},
+    "POSITIVE_INFINITY": {'description': 'The numeric value is excessively high and unrepresentable due to a floating point processing error.', 'meaning': 'fhir_data_absent_reason:positive-infinity'},
     "NOT_PERFORMED": {'description': 'The value is not available because the observation procedure (test, etc.) was not performed.', 'meaning': 'fhir_data_absent_reason:not-performed'},
     "NOT_PERMITTED": {'description': 'The value is not permitted in this context (e.g. due to profiles, or the base data types).', 'meaning': 'fhir_data_absent_reason:not-permitted'},
 }

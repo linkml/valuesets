@@ -5,6 +5,7 @@ id: https://w3id.org/linkml/valuesets/clinical/phenopackets
 imports:
 - linkml:types
 prefixes:
+  linkml: https://w3id.org/linkml/
   valuesets: https://w3id.org/valuesets/
   NCIT: http://purl.obolibrary.org/obo/NCIT_
   GENO: http://purl.obolibrary.org/obo/GENO_
@@ -13,6 +14,8 @@ prefixes:
   UBERON: http://purl.obolibrary.org/obo/UBERON_
   UCUM: http://unitsofmeasure.org/
   PATO: http://purl.obolibrary.org/obo/PATO_
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   karyotypic_sex:
@@ -47,7 +50,17 @@ slots:
     range: DrugResponseEnum
 enums:
   KaryotypicSexEnum:
+    title: Karyotypic Sex
     description: Karyotypic sex of an individual based on chromosome composition
+    status: STANDARD
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    annotations:
+      stewards: https://phenopackets.org
+      publishers: https://ga4gh.org
     permissible_values:
       XX:
         description: Female karyotype (46,XX)
@@ -121,9 +134,19 @@ enums:
         meaning: NCIT:C17998
         title: Unknown
   PhenotypicSexEnum:
+    title: Phenotypic Sex
     description: 'Phenotypic sex of an individual based on observable characteristics.
 
       FHIR mapping: AdministrativeGender'
+    status: STANDARD
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    annotations:
+      stewards: https://phenopackets.org
+      publishers: https://ga4gh.org
     permissible_values:
       MALE:
         description: Male phenotypic sex
@@ -146,7 +169,17 @@ enums:
         meaning: NCIT:C17998
         title: Unknown
   AllelicStateEnum:
+    title: Allelic State
     description: Allelic state/zygosity of a variant or genetic feature
+    status: STANDARD
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    annotations:
+      stewards: https://phenopackets.org
+      publishers: https://ga4gh.org
     permissible_values:
       HETEROZYGOUS:
         description: Different alleles at a locus
@@ -182,7 +215,17 @@ enums:
         annotations:
           symbol: hom alt
   LateralityEnum:
+    title: Laterality
     description: Laterality/sidedness of a finding or anatomical structure
+    status: STANDARD
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    annotations:
+      stewards: https://phenopackets.org
+      publishers: https://ga4gh.org
     permissible_values:
       RIGHT:
         description: Right side
@@ -209,7 +252,17 @@ enums:
         annotations:
           note: Along the body's central axis
   OnsetTimingEnum:
+    title: Onset Timing
     description: Timing of disease or phenotype onset relative to developmental stages
+    status: STANDARD
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    annotations:
+      stewards: https://phenopackets.org
+      publishers: https://ga4gh.org
     permissible_values:
       ANTENATAL_ONSET:
         description: Before birth (prenatal)
@@ -267,7 +320,17 @@ enums:
         annotations:
           period: '>60 years'
   ACMGPathogenicityEnum:
+    title: ACMG Pathogenicity
     description: ACMG/AMP variant pathogenicity classification for clinical genetics
+    status: STANDARD
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    annotations:
+      stewards: https://phenopackets.org
+      publishers: https://ga4gh.org
     permissible_values:
       PATHOGENIC:
         description: Pathogenic variant
@@ -305,7 +368,17 @@ enums:
           abbreviation: B
           clinical_significance: Not disease-causing
   TherapeuticActionabilityEnum:
+    title: Therapeutic Actionability
     description: Clinical actionability of a genetic finding for treatment decisions
+    status: STANDARD
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    annotations:
+      stewards: https://phenopackets.org
+      publishers: https://ga4gh.org
     permissible_values:
       ACTIONABLE:
         description: Finding has direct therapeutic implications
@@ -324,7 +397,17 @@ enums:
         meaning: NCIT:C17998
         title: Unknown
   InterpretationProgressEnum:
+    title: Interpretation Progress
     description: Progress status of clinical interpretation or diagnosis
+    status: STANDARD
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    annotations:
+      stewards: https://phenopackets.org
+      publishers: https://ga4gh.org
     permissible_values:
       SOLVED:
         description: Diagnosis achieved/case solved
@@ -353,7 +436,17 @@ enums:
         meaning: NCIT:C17998
         title: Unknown
   RegimenStatusEnum:
+    title: Regimen Status
     description: Status of a therapeutic regimen or treatment protocol
+    status: STANDARD
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    annotations:
+      stewards: https://phenopackets.org
+      publishers: https://ga4gh.org
     permissible_values:
       NOT_STARTED:
         description: Treatment not yet begun
@@ -392,7 +485,17 @@ enums:
         meaning: NCIT:C17998
         title: Unknown
   DrugResponseEnum:
+    title: Drug Response
     description: Response categories for drug treatment outcomes
+    status: STANDARD
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    annotations:
+      stewards: https://phenopackets.org
+      publishers: https://ga4gh.org
     permissible_values:
       FAVORABLE:
         description: Favorable response to treatment

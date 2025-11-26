@@ -8,6 +8,8 @@ prefixes:
   PROCO: http://purl.obolibrary.org/obo/PROCO_
   # linkml_common: https://w3id.org/linkml-common/
   valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   crystal_system:
@@ -18,7 +20,14 @@ slots:
     range: BravaisLatticeEnum
 enums:
   CrystalSystemEnum:
+    title: Crystal System
     description: The seven crystal systems in crystallography
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     conforms_to: https://en.wikipedia.org/wiki/Crystal_system
     permissible_values:
       TRICLINIC:
@@ -58,7 +67,14 @@ enums:
         aliases:
         - isometric
   BravaisLatticeEnum:
+    title: Bravais Lattice
     description: The 14 Bravais lattices describing all possible crystal lattices
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     conforms_to: https://en.wikipedia.org/wiki/Bravais_lattice
     permissible_values:
       PRIMITIVE_TRICLINIC:

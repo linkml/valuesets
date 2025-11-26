@@ -14,6 +14,8 @@ prefixes:
   EDAM: http://edamontology.org/
   GENO: http://purl.obolibrary.org/obo/GENO_
   valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   dna_base:
@@ -45,7 +47,14 @@ slots:
     range: SequenceQualityEnum
 enums:
   DNABaseEnum:
+    title: DNA Base
     description: Standard DNA nucleotide bases (canonical)
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       A:
         title: Adenine
@@ -84,7 +93,14 @@ enums:
           pyrimidine: 'true'
           chemical_formula: C5H6N2O2
   DNABaseExtendedEnum:
+    title: DNA Base Extended
     description: Extended DNA alphabet with IUPAC ambiguity codes
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       A:
         title: Adenine
@@ -177,7 +193,14 @@ enums:
           symbol: '-'
           represents: gap
   RNABaseEnum:
+    title: RNA Base
     description: Standard RNA nucleotide bases (canonical)
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       A:
         title: Adenine
@@ -216,7 +239,14 @@ enums:
           pyrimidine: 'true'
           chemical_formula: C4H4N2O2
   RNABaseExtendedEnum:
+    title: RNA Base Extended
     description: Extended RNA alphabet with IUPAC ambiguity codes
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       A:
         title: Adenine
@@ -307,7 +337,14 @@ enums:
           symbol: '-'
           represents: gap
   AminoAcidEnum:
+    title: Amino Acid
     description: Standard amino acid single letter codes
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       A:
         title: Alanine
@@ -529,7 +566,14 @@ enums:
           aromatic: 'true'
           hydroxyl: 'true'
   AminoAcidExtendedEnum:
+    title: Amino Acid Extended
     description: Extended amino acid alphabet with ambiguity codes and special characters
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       A:
         title: Alanine
@@ -731,7 +775,14 @@ enums:
           special: 22nd amino acid
           codon: UAG in certain archaea/bacteria
   CodonEnum:
+    title: Codon
     description: Standard genetic code codons (DNA)
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       TTT:
         title: Phenylalanine codon
@@ -1058,7 +1109,14 @@ enums:
           amino_acid: G
           amino_acid_name: Glycine
   NucleotideModificationEnum:
+    title: Nucleotide Modification
     description: Common nucleotide modifications
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       FIVE_METHYL_C:
         title: 5-methylcytosine
@@ -1122,7 +1180,14 @@ enums:
           type: oxidative damage
           pairs_with: A or C
   SequenceQualityEnum:
+    title: Sequence Quality
     description: Sequence quality indicators (Phred scores)
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       Q0:
         description: Phred quality 0 (100% error probability)

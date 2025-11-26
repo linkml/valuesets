@@ -3,10 +3,12 @@ title: Nuclear Regulatory Frameworks Value Sets
 description: Value sets for nuclear regulatory bodies, frameworks, and compliance standards
 id: https://w3id.org/common-value-sets/nuclear_regulatory
 imports:
-  - linkml:types
+- linkml:types
 prefixes:
   linkml: https://w3id.org/linkml/
   valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 
 slots:
@@ -28,7 +30,14 @@ slots:
 
 enums:
   NuclearRegulatoryBodyEnum:
+    title: Nuclear Regulatory Body
     description: Nuclear regulatory authorities and international organizations
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       IAEA:
         description: International Atomic Energy Agency
@@ -71,7 +80,14 @@ enums:
         title: Atomic Energy Regulatory Board (India)
 
   RegulatoryFrameworkEnum:
+    title: Regulatory Framework
     description: Nuclear regulatory frameworks and international conventions
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       NPT:
         description: Nuclear Non-Proliferation Treaty
@@ -108,7 +124,14 @@ enums:
         title: IAEA Nuclear Security Series
 
   LicensingStageEnum:
+    title: Licensing Stage
     description: Stages in nuclear facility licensing process
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       PRE_APPLICATION:
         description: Pre-application consultation and preparation
@@ -132,7 +155,14 @@ enums:
         description: Combined construction and operating license
 
   ComplianceStandardEnum:
+    title: Compliance Standard
     description: Nuclear safety and security compliance standards
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       ISO_14001:
         description: Environmental Management Systems
@@ -166,7 +196,14 @@ enums:
         title: WENRA Reference Levels
 
   InspectionTypeEnum:
+    title: Inspection Type
     description: Types of nuclear regulatory inspections and assessments
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       ROUTINE_INSPECTION:
         description: Regularly scheduled inspection activities

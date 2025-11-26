@@ -1,16 +1,18 @@
 name: management_operations
 title: Business Management and Operations
-description: 'Business management methodologies, operational frameworks, strategic planning
-  approaches, and performance management systems. Based on management theory, business
-  strategy frameworks, and operational excellence practices.'
+description: 'Business management methodologies, operational frameworks, strategic planning approaches, and performance management
+  systems. Based on management theory, business strategy frameworks, and operational excellence practices.'
 id: https://w3id.org/linkml/valuesets/business/management_operations
 imports:
 - linkml:types
 prefixes:
+  linkml: https://w3id.org/linkml/
   valuesets: https://w3id.org/valuesets/
   ISO: https://www.iso.org/
   PMI: https://www.pmi.org/
   ITIL: https://www.itil-officialsite.com/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   management_methodology:
@@ -36,7 +38,14 @@ slots:
     range: BusinessProcessTypeEnum
 enums:
   ManagementMethodologyEnum:
+    title: Management Methodology
     description: Management approaches and methodologies
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       TRADITIONAL_MANAGEMENT:
         title: Traditional Management
@@ -119,7 +128,14 @@ enums:
           equality: "equal voice in decisions"
           transparency: "transparent processes"
   StrategicFrameworkEnum:
+    title: Strategic Framework
     description: Strategic planning and analysis frameworks
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       SWOT_ANALYSIS:
         title: SWOT Analysis
@@ -202,7 +218,14 @@ enums:
           focus: "competency-based strategy"
           development: "capability development"
   OperationalModelEnum:
+    title: Operational Model
     description: Business operational models and approaches
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       CENTRALIZED_OPERATIONS:
         title: Centralized Operations
@@ -285,7 +308,14 @@ enums:
           data_driven: "data-driven operations"
           scalability: "digital scalability"
   PerformanceMeasurementEnum:
+    title: Performance Measurement
     description: Performance measurement systems and approaches
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       KEY_PERFORMANCE_INDICATORS:
         title: Key Performance Indicators (KPIs)
@@ -368,7 +398,14 @@ enums:
           social: "social responsibility"
           governance: "governance effectiveness"
   DecisionMakingStyleEnum:
+    title: Decision Making Style
     description: Decision-making approaches and styles
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       AUTOCRATIC:
         title: Autocratic Decision Making
@@ -451,7 +488,14 @@ enums:
           speed: "rapid response required"
           risk: "high-risk decision making"
   LeadershipStyleEnum:
+    title: Leadership Style
     description: Leadership approaches and styles
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       TRANSFORMATIONAL:
         title: Transformational Leadership
@@ -534,7 +578,14 @@ enums:
           growth: "personal and professional growth"
           support: "supportive leadership"
   BusinessProcessTypeEnum:
+    title: Business Process Type
     description: Types of business processes
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       CORE_PROCESS:
         title: Core Business Process

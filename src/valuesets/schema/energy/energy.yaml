@@ -5,10 +5,13 @@ id: https://w3id.org/linkml/valuesets/energy/energy
 imports:
 - linkml:types
 prefixes:
+  linkml: https://w3id.org/linkml/
   valuesets: https://w3id.org/valuesets/
   QUDT: http://qudt.org/vocab/unit/
   ENVO: http://purl.obolibrary.org/obo/ENVO_
   CHEBI: http://purl.obolibrary.org/obo/CHEBI_
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   energy_source:
@@ -43,7 +46,14 @@ slots:
     range: ElectricityMarket
 enums:
   EnergySource:
+    title: Energy Source
     description: Types of energy sources and generation methods
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       SOLAR:
         title: Solar energy (photovoltaic and thermal)
@@ -184,7 +194,14 @@ enums:
         annotations:
           storage: true
   EnergyUnit:
+    title: Energy Unit
     description: Units for measuring energy
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       JOULE:
         description: Joule (J)
@@ -298,7 +315,14 @@ enums:
           ucum: tce
           joules: 2.93e10
   PowerUnit:
+    title: Power Unit
     description: Units for measuring power (energy per time)
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       WATT:
         description: Watt (W)
@@ -349,7 +373,14 @@ enums:
           ucum: '[Btu_IT]/h'
           watts: 0.293
   EnergyEfficiencyRating:
+    title: Energy Efficiency Rating
     description: Energy efficiency ratings and standards
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       A_PLUS_PLUS_PLUS:
         description: A+++ (highest efficiency)
@@ -410,7 +441,14 @@ enums:
         annotations:
           region: US
   BuildingEnergyStandard:
+    title: Building Energy Standard
     description: Building energy efficiency standards and certifications
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       PASSIVE_HOUSE:
         description: Passive House (Passivhaus) standard
@@ -439,7 +477,14 @@ enums:
       ZERO_CARBON:
         description: Zero Carbon Building
   GridType:
+    title: Grid Type
     description: Types of electrical grid systems
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       MAIN_GRID:
         description: Main utility grid
@@ -454,7 +499,14 @@ enums:
       VIRTUAL_POWER_PLANT:
         description: Virtual power plant
   EnergyStorageType:
+    title: Energy Storage Type
     description: Types of energy storage systems
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       LITHIUM_ION_BATTERY:
         description: Lithium-ion battery
@@ -521,7 +573,14 @@ enums:
         annotations:
           category: electrical
   EmissionScope:
+    title: Emission Scope
     description: Greenhouse gas emission scopes (GHG Protocol)
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       SCOPE_1:
         description: Direct emissions from owned or controlled sources
@@ -544,7 +603,14 @@ enums:
         annotations:
           ghg_protocol: Scope 3
   CarbonIntensity:
+    title: Carbon Intensity
     description: Carbon intensity levels for energy sources
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       ZERO_CARBON:
         description: Zero carbon emissions
@@ -571,7 +637,14 @@ enums:
         annotations:
           gCO2_per_kWh: 1000+
   ElectricityMarket:
+    title: Electricity Market
     description: Types of electricity markets and pricing
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       SPOT_MARKET:
         description: Spot market/real-time pricing

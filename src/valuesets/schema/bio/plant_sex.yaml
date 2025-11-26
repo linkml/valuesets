@@ -7,6 +7,8 @@ prefixes:
   ECOCORE: http://purl.obolibrary.org/obo/ECOCORE_
   mixs: https://genomicsstandardsconsortium.github.io/mixs/
   valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   plant_sex:
@@ -14,7 +16,14 @@ slots:
     range: PlantSexEnum
 enums:
   PlantSexEnum:
+    title: Plant Sex
     description: Plant reproductive and sexual system types
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       ANDRODIOECIOUS:
         description: Having male and hermaphrodite flowers on separate plants

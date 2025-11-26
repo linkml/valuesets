@@ -7,10 +7,13 @@ id: https://w3id.org/linkml/valuesets/bio/sequence_chemistry
 imports:
 - linkml:types
 prefixes:
+  linkml: https://w3id.org/linkml/
   valuesets: https://w3id.org/valuesets/
   IUPAC: http://purl.obolibrary.org/obo/IUPAC_
   SO: http://purl.obolibrary.org/obo/SO_
   CHEBI: http://purl.obolibrary.org/obo/CHEBI_
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   iupac_nucleotide:
@@ -46,6 +49,12 @@ enums:
     description: 'Complete IUPAC nucleotide codes including ambiguous bases for DNA/RNA sequences.
 
       Used in FASTA and other sequence formats to represent uncertain nucleotides.'
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       A:
         title: A
@@ -92,6 +101,12 @@ enums:
   StandardAminoAcid:
     title: Standard Amino Acids
     description: The 20 standard proteinogenic amino acids with IUPAC single-letter codes
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       A:
         title: A
@@ -158,6 +173,12 @@ enums:
     description: 'Complete IUPAC amino acid codes including standard amino acids,
 
       rare amino acids, and ambiguity codes'
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       A:
         title: A
@@ -246,6 +267,12 @@ enums:
   SequenceAlphabet:
     title: Sequence Alphabet Types
     description: Types of sequence alphabets used in bioinformatics
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       DNA:
         description: Deoxyribonucleic acid alphabet (A, T, G, C)
@@ -270,6 +297,12 @@ enums:
     description: 'Quality score encoding standards used in FASTQ files and sequencing data.
 
       Different platforms and software versions use different ASCII offsets.'
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       SANGER:
         description: Sanger/Phred+33 (PHRED scores, ASCII offset 33)
@@ -306,6 +339,12 @@ enums:
     description: 'NCBI genetic code translation tables for different organisms.
 
       Table 1 is the universal genetic code used by most organisms.'
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       TABLE_1:
         description: Standard genetic code (universal)
@@ -430,6 +469,12 @@ enums:
   SequenceStrand:
     title: DNA/RNA Strand Orientation
     description: Strand orientation for nucleic acid sequences
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       PLUS:
         title: PLUS
@@ -444,6 +489,12 @@ enums:
   SequenceTopology:
     title: Sequence Topology
     description: Topological structure of nucleic acid molecules
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       LINEAR:
         description: Linear sequence molecule
@@ -458,6 +509,12 @@ enums:
   SequenceModality:
     title: Sequence Data Modality
     description: Types of sequence data based on experimental method
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       SINGLE_CELL:
         description: Single-cell sequencing data

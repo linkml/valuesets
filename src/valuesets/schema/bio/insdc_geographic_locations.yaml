@@ -14,6 +14,8 @@ prefixes:
   iso3166loc: http://id.loc.gov/vocabulary/countries/
   geonames: http://sws.geonames.org/
   valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   insdc_geographic_location:
@@ -21,11 +23,21 @@ slots:
     range: InsdcGeographicLocationEnum
 enums:
   InsdcGeographicLocationEnum:
+    title: Insdc Geographic Location
     description: 'INSDC controlled vocabulary for geographic locations of collected samples.
 
       Includes countries, oceans, seas, and other geographic regions as defined by INSDC.
 
       Countries use ISO 3166-1 alpha-2 codes from Library of Congress as canonical identifiers.'
+    status: STANDARD
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    annotations:
+      stewards: https://gensc.org
+      publishers: https://www.insdc.org
     permissible_values:
       AFGHANISTAN:
         description: Afghanistan

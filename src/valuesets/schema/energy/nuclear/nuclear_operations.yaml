@@ -1,16 +1,18 @@
 name: nuclear_operations
 title: Nuclear Operations and Reactor States
-description: 'Classifications for nuclear reactor operational states, maintenance activities,
-  licensing stages, and operational procedures. Based on nuclear industry standards
-  and regulatory frameworks.'
+description: 'Classifications for nuclear reactor operational states, maintenance activities, licensing stages, and operational
+  procedures. Based on nuclear industry standards and regulatory frameworks.'
 id: https://w3id.org/linkml/valuesets/energy/nuclear/nuclear_operations
 imports:
 - linkml:types
 prefixes:
+  linkml: https://w3id.org/linkml/
   valuesets: https://w3id.org/valuesets/
   IAEA: https://www.iaea.org/
   NRC: https://www.nrc.gov/
   WNA: https://world-nuclear.org/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   reactor_operating_state:
@@ -33,7 +35,14 @@ slots:
     range: OperationalProcedureEnum
 enums:
   ReactorOperatingStateEnum:
+    title: Reactor Operating State
     description: Operational states of nuclear reactors
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       STARTUP:
         title: Startup
@@ -132,7 +141,14 @@ enums:
           investigation: extensive post-event analysis
           recovery: detailed restart procedures
   MaintenanceTypeEnum:
+    title: Maintenance Type
     description: Types of nuclear facility maintenance activities
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       PREVENTIVE_MAINTENANCE:
         title: Preventive Maintenance
@@ -199,7 +215,14 @@ enums:
           testing: extensive post-modification testing
           documentation: comprehensive documentation updates
   LicensingStageEnum:
+    title: Licensing Stage
     description: Nuclear facility licensing stages
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       SITE_PERMIT:
         title: Site Permit
@@ -266,7 +289,14 @@ enums:
           release: site release for unrestricted use
           finality: end of regulatory oversight
   FuelCycleOperationEnum:
+    title: Fuel Cycle Operation
     description: Nuclear fuel cycle operational activities
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       URANIUM_EXPLORATION:
         title: Uranium Exploration
@@ -361,7 +391,14 @@ enums:
           isolation: long-term containment
           safety: protect public and environment
   ReactorControlModeEnum:
+    title: Reactor Control Mode
     description: Reactor control and safety system operational modes
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       MANUAL_CONTROL:
         title: Manual Control
@@ -412,7 +449,14 @@ enums:
           equipment: portable emergency equipment
           coordination: multi-unit considerations
   OperationalProcedureEnum:
+    title: Operational Procedure
     description: Standard nuclear facility operational procedures
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       STARTUP_PROCEDURE:
         title: Reactor Startup Procedure

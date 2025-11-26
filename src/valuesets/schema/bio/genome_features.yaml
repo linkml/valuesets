@@ -9,8 +9,11 @@ id: https://w3id.org/linkml/valuesets/bio/genome_features
 imports:
 - linkml:types
 prefixes:
+  linkml: https://w3id.org/linkml/
   valuesets: https://w3id.org/valuesets/
   SO: http://purl.obolibrary.org/obo/SO_
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   genome_feature:
@@ -19,11 +22,18 @@ slots:
     multivalued: true
 enums:
   GenomeFeatureType:
+    title: Genome Feature Type
     description: 'Genome feature types from SOFA (Sequence Ontology Feature Annotation).
 
       This is the subset of Sequence Ontology terms used in GFF3 files.
 
       Organized hierarchically following the Sequence Ontology structure.'
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       REGION:
         description: A sequence feature with an extent greater than zero
@@ -33,7 +43,8 @@ enums:
         meaning: SO:0001411
         is_a: REGION
       GENE:
-        description: A region (or regions) that includes all of the sequence elements necessary to encode a functional transcript
+        description: A region (or regions) that includes all of the sequence elements necessary to encode a functional 
+          transcript
         meaning: SO:0000704
         is_a: BIOLOGICAL_REGION
       TRANSCRIPT:
@@ -49,16 +60,18 @@ enums:
         meaning: SO:0000234
         is_a: TRANSCRIPT
       EXON:
-        description: A region of the transcript sequence within a gene which is not removed from the primary RNA transcript
-          by RNA splicing
+        description: A region of the transcript sequence within a gene which is not removed from the primary RNA 
+          transcript by RNA splicing
         meaning: SO:0000147
         is_a: BIOLOGICAL_REGION
       CDS:
-        description: Coding sequence; sequence of nucleotides that corresponds with the sequence of amino acids in a protein
+        description: Coding sequence; sequence of nucleotides that corresponds with the sequence of amino acids in a 
+          protein
         meaning: SO:0000316
         is_a: BIOLOGICAL_REGION
       INTRON:
-        description: A region of a primary transcript that is transcribed, but removed from within the transcript by splicing
+        description: A region of a primary transcript that is transcribed, but removed from within the transcript by 
+          splicing
         meaning: SO:0000188
         is_a: BIOLOGICAL_REGION
       FIVE_PRIME_UTR:
@@ -133,8 +146,8 @@ enums:
         meaning: SO:0000625
         is_a: REGULATORY_REGION
       TERMINATOR:
-        description: The sequence of DNA located either at the end of the transcript that causes RNA polymerase to terminate
-          transcription
+        description: The sequence of DNA located either at the end of the transcript that causes RNA polymerase to 
+          terminate transcription
         meaning: SO:0000141
         is_a: REGULATORY_REGION
       ATTENUATOR:

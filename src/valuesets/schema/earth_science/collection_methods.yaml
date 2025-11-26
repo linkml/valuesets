@@ -6,6 +6,8 @@ prefixes:
   linkml: https://w3id.org/linkml/
   OBI: http://purl.obolibrary.org/obo/OBI_
   valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 
 slots:
@@ -15,11 +17,18 @@ slots:
 
 enums:
   SESARCollectionMethod:
+    title: SESAR Collection Method
     description: >-
       Sample collection methods as defined by SESAR (System for Earth Sample Registration).
       These describe the method by which a sample was collected.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     see_also:
-      - https://www.geosamples.org/vocabularies
+    - https://www.geosamples.org/vocabularies
     permissible_values:
       BLASTING:
         description: Sample collected using blasting techniques
@@ -126,5 +135,5 @@ enums:
 
 license: MIT
 see_also:
-  - https://linkml.github.io/valuesets
-  - https://www.geosamples.org/vocabularies
+- https://linkml.github.io/valuesets
+- https://www.geosamples.org/vocabularies

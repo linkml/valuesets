@@ -76,7 +76,7 @@ clean: _clean_project
 
 # (Re-)Generate project and documentation locally
 [group('model development')]
-site: gen-project gen-doc
+site: gen-project gen-doc gen-slides
 
 # Deploy documentation site to Github Pages
 [group('deployment')]

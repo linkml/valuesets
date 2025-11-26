@@ -10,6 +10,8 @@ prefixes:
   NCIT: http://purl.obolibrary.org/obo/NCIT_
   DataCite: https://purl.org/datacite/
   valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   contributor:
@@ -17,7 +19,14 @@ slots:
     range: ContributorType
 enums:
   ContributorType:
+    title: Contributor Type
     description: The type of contributor being represented.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       PERSON:
         description: A person.
