@@ -19757,6 +19757,183 @@ enums:
           context:
             tag: context
             value: neurons, polarized cells
+  AnatomicalOrientation:
+    name: AnatomicalOrientation
+    definition_uri: https://w3id.org/valuesets/AnatomicalOrientation
+    description: Directional orientation between anatomical positions based on OME
+      NGFF specification
+    from_schema: https://w3id.org/linkml/valuesets/spatial/spatial_qualifiers
+    permissible_values:
+      LEFT_TO_RIGHT:
+        text: LEFT_TO_RIGHT
+        description: Directional orientation from left to right lateral side of an
+          anatomical structure
+        annotations:
+          source:
+            tag: source
+            value: OME NGFF
+        title: Left to right orientation
+      RIGHT_TO_LEFT:
+        text: RIGHT_TO_LEFT
+        description: Directional orientation from right to left lateral side of an
+          anatomical structure
+        annotations:
+          source:
+            tag: source
+            value: OME NGFF
+        title: Right to left orientation
+      ANTERIOR_TO_POSTERIOR:
+        text: ANTERIOR_TO_POSTERIOR
+        description: Directional orientation from front to back of an anatomical structure
+        annotations:
+          source:
+            tag: source
+            value: OME NGFF
+        title: Anterior to posterior orientation
+      POSTERIOR_TO_ANTERIOR:
+        text: POSTERIOR_TO_ANTERIOR
+        description: Directional orientation from back to front of an anatomical structure
+        annotations:
+          source:
+            tag: source
+            value: OME NGFF
+        title: Posterior to anterior orientation
+      INFERIOR_TO_SUPERIOR:
+        text: INFERIOR_TO_SUPERIOR
+        description: Directional orientation from below to above in an anatomical
+          structure
+        annotations:
+          source:
+            tag: source
+            value: OME NGFF
+        title: Inferior to superior orientation
+      SUPERIOR_TO_INFERIOR:
+        text: SUPERIOR_TO_INFERIOR
+        description: Directional orientation from above to below in an anatomical
+          structure
+        annotations:
+          source:
+            tag: source
+            value: OME NGFF
+        title: Superior to inferior orientation
+      DORSAL_TO_VENTRAL:
+        text: DORSAL_TO_VENTRAL
+        description: Directional orientation from top/upper to belly/lower in an anatomical
+          structure
+        annotations:
+          source:
+            tag: source
+            value: OME NGFF
+        title: Dorsal to ventral orientation
+      VENTRAL_TO_DORSAL:
+        text: VENTRAL_TO_DORSAL
+        description: Directional orientation from belly/lower to top/upper in an anatomical
+          structure
+        annotations:
+          source:
+            tag: source
+            value: OME NGFF
+        title: Ventral to dorsal orientation
+      DORSAL_TO_PALMAR:
+        text: DORSAL_TO_PALMAR
+        description: Directional orientation from top/upper to palm of hand
+        annotations:
+          source:
+            tag: source
+            value: OME NGFF
+          context:
+            tag: context
+            value: hand anatomy
+        title: Dorsal to palmar orientation
+      PALMAR_TO_DORSAL:
+        text: PALMAR_TO_DORSAL
+        description: Directional orientation from palm of hand to top/upper
+        annotations:
+          source:
+            tag: source
+            value: OME NGFF
+          context:
+            tag: context
+            value: hand anatomy
+        title: Palmar to dorsal orientation
+      DORSAL_TO_PLANTAR:
+        text: DORSAL_TO_PLANTAR
+        description: Directional orientation from top/upper to sole of foot
+        annotations:
+          source:
+            tag: source
+            value: OME NGFF
+          context:
+            tag: context
+            value: foot anatomy
+        title: Dorsal to plantar orientation
+      PLANTAR_TO_DORSAL:
+        text: PLANTAR_TO_DORSAL
+        description: Directional orientation from sole of foot to top/upper
+        annotations:
+          source:
+            tag: source
+            value: OME NGFF
+          context:
+            tag: context
+            value: foot anatomy
+        title: Plantar to dorsal orientation
+      ROSTRAL_TO_CAUDAL:
+        text: ROSTRAL_TO_CAUDAL
+        description: Directional orientation from nasal to tail end, typically for
+          central nervous system
+        annotations:
+          source:
+            tag: source
+            value: OME NGFF
+          context:
+            tag: context
+            value: central nervous system
+        title: Rostral to caudal orientation
+      CAUDAL_TO_ROSTRAL:
+        text: CAUDAL_TO_ROSTRAL
+        description: Directional orientation from tail to nasal end, typically for
+          central nervous system
+        annotations:
+          source:
+            tag: source
+            value: OME NGFF
+          context:
+            tag: context
+            value: central nervous system
+        title: Caudal to rostral orientation
+      CRANIAL_TO_CAUDAL:
+        text: CRANIAL_TO_CAUDAL
+        description: Directional orientation from head to tail end of a structure
+        annotations:
+          source:
+            tag: source
+            value: OME NGFF
+        title: Cranial to caudal orientation
+      CAUDAL_TO_CRANIAL:
+        text: CAUDAL_TO_CRANIAL
+        description: Directional orientation from tail to head end of a structure
+        annotations:
+          source:
+            tag: source
+            value: OME NGFF
+        title: Caudal to cranial orientation
+      PROXIMAL_TO_DISTAL:
+        text: PROXIMAL_TO_DISTAL
+        description: Directional orientation from body center to periphery of a structure
+        annotations:
+          source:
+            tag: source
+            value: OME NGFF
+        title: Proximal to distal orientation
+      DISTAL_TO_PROXIMAL:
+        text: DISTAL_TO_PROXIMAL
+        description: Directional orientation from periphery to body center of a structure
+        annotations:
+          source:
+            tag: source
+            value: OME NGFF
+        title: Distal to proximal orientation
   CrystalSystemEnum:
     name: CrystalSystemEnum
     definition_uri: https://w3id.org/valuesets/CrystalSystemEnum
@@ -52535,6 +52712,13 @@ slots:
     from_schema: https://w3id.org/linkml/valuesets/spatial/spatial_qualifiers
     slot_uri: valuesets:cell_polarity
     range: CellPolarity
+  anatomical_orientation:
+    name: anatomical_orientation
+    definition_uri: https://w3id.org/valuesets/anatomical_orientation
+    description: Directional orientation between anatomical positions
+    from_schema: https://w3id.org/linkml/valuesets/spatial/spatial_qualifiers
+    slot_uri: valuesets:anatomical_orientation
+    range: AnatomicalOrientation
   crystal_system:
     name: crystal_system
     definition_uri: https://w3id.org/valuesets/crystal_system
@@ -54307,7 +54491,7 @@ classes:
     class_uri: valuesets:Fake
 metamodel_version: 1.7.0
 source_file: valuesets.yaml
-source_file_date: '2025-11-21T19:06:01'
+source_file_date: '2025-11-26T00:09:05'
 source_file_size: 2841
-generation_date: '2025-11-21T19:06:12'
+generation_date: '2025-11-26T00:09:14'
 
