@@ -37,6 +37,9 @@ imports:
 - energy/nuclear/nuclear_safety
 - energy/nuclear/nuclear_facilities
 - energy/nuclear/nuclear_operations
+- energy/renewable/geothermal
+- energy/renewable/hydrogen
+- energy/renewable/bioenergy
 - industry/mining
 - industry/extractive_industry
 - statistics/prediction_outcomes

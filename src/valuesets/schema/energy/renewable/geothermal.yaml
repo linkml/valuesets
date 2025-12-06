@@ -1,0 +1,278 @@
+name: geothermal
+title: Geothermal Energy Value Sets
+description: >-
+  Value sets for geothermal energy systems, reservoir types, well types, and technologies.
+  Based on DOE Geothermal Technologies Office terminology and the Geothermal Data Repository standards.
+id: https://w3id.org/linkml/valuesets/energy/renewable/geothermal
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  valuesets: https://w3id.org/valuesets/
+  ENVO: http://purl.obolibrary.org/obo/ENVO_
+  NCIT: http://purl.obolibrary.org/obo/NCIT_
+  sweet: http://sweetontology.net/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+default_prefix: valuesets
+slots:
+  geothermal_system_type:
+    description: Type of geothermal system
+    range: GeothermalSystemType
+  geothermal_reservoir_type:
+    description: Type of geothermal reservoir
+    range: GeothermalReservoirType
+  geothermal_well_type:
+    description: Type of geothermal well
+    range: GeothermalWellType
+  geothermal_application:
+    description: Application of geothermal energy
+    range: GeothermalApplication
+  geothermal_resource_temperature:
+    description: Temperature classification of geothermal resources
+    range: GeothermalResourceTemperature
+enums:
+  GeothermalSystemType:
+    title: Geothermal System Type
+    description: >-
+      Types of geothermal energy systems, including conventional hydrothermal
+      and enhanced/engineered geothermal systems.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    see_also:
+    - https://www.energy.gov/eere/geothermal/enhanced-geothermal-systems
+    - https://gdr.openei.org/
+    permissible_values:
+      HYDROTHERMAL:
+        title: Conventional Hydrothermal System
+        description: >-
+          Naturally occurring geothermal system with heat, fluid, and permeability
+          sufficient for energy extraction without stimulation.
+        broad_mappings:
+        - sweet:phenEnergy/Geothermal
+        annotations:
+          conventional: true
+      ENHANCED_GEOTHERMAL_SYSTEM:
+        title: Enhanced Geothermal System (EGS)
+        description: >-
+          Engineered reservoirs created to extract heat from low permeability
+          geothermal resources through stimulation methods.
+        aliases:
+        - EGS
+        - Engineered Geothermal System
+        annotations:
+          requires_stimulation: true
+      ADVANCED_GEOTHERMAL_SYSTEM:
+        title: Advanced Geothermal System (AGS)
+        description: >-
+          Closed-loop geothermal systems that circulate working fluid through
+          wellbores to extract heat conductively without reservoir stimulation.
+        aliases:
+        - AGS
+        - Closed-Loop Geothermal
+        annotations:
+          closed_loop: true
+      HOT_DRY_ROCK:
+        title: Hot Dry Rock (HDR)
+        description: >-
+          Geothermal system targeting hot basement rock lacking natural fluid
+          or permeability, requiring artificial reservoir creation.
+        aliases:
+        - HDR
+      GEOPRESSURED:
+        title: Geopressured System
+        description: >-
+          Deep sedimentary formations with abnormally high fluid pressure
+          containing hot brine and dissolved methane.
+        annotations:
+          methane_recovery: true
+      SUPERCRITICAL:
+        title: Supercritical Geothermal System
+        description: >-
+          Very high temperature systems (>374C) where water exists above
+          its critical point, offering higher energy density.
+        annotations:
+          temperature_min_c: 374
+      GROUND_SOURCE_HEAT_PUMP:
+        title: Ground Source Heat Pump (GSHP)
+        description: >-
+          Shallow geothermal system using stable ground temperatures for
+          heating and cooling buildings.
+        aliases:
+        - GSHP
+        - Geothermal Heat Pump
+        annotations:
+          direct_use: true
+  GeothermalReservoirType:
+    title: Geothermal Reservoir Type
+    description: Classification of geothermal reservoirs by geological setting and characteristics.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      VOLCANIC:
+        title: Volcanic Reservoir
+        description: >-
+          Reservoir associated with volcanic activity, typically in active
+          volcanic regions with magma heat sources.
+        related_mappings:
+        - ENVO:00000247
+        broad_mappings:
+        - sweet:realmLandVolcanic/VolcanicField
+      SEDIMENTARY:
+        title: Sedimentary Basin Reservoir
+        description: >-
+          Reservoir in sedimentary formations with elevated temperatures
+          due to depth or regional heat flow.
+        broad_mappings:
+        - sweet:realmGeolBasin/SedimentaryBasin
+      FRACTURED_BASEMENT:
+        title: Fractured Basement Reservoir
+        description: >-
+          Reservoir in fractured crystalline basement rocks, typically
+          granitic or metamorphic.
+        aliases:
+        - Hot Fractured Rock
+      FAULT_CONTROLLED:
+        title: Fault-Controlled Reservoir
+        description: >-
+          Reservoir where fluid flow is controlled by fault systems
+          providing permeability pathways.
+      MAGMATIC:
+        title: Magmatic/Near-Magmatic Reservoir
+        description: >-
+          Very high temperature reservoir near or in contact with
+          magma bodies or recent intrusions.
+        related_mappings:
+        - sweet:matrRockIgneous/Magma
+      CONDUCTION_DOMINATED:
+        title: Conduction-Dominated Reservoir
+        description: >-
+          Low permeability reservoir where heat transfer is primarily
+          through conduction rather than convection.
+  GeothermalWellType:
+    title: Geothermal Well Type
+    description: Types of wells used in geothermal energy development and production.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      PRODUCTION_WELL:
+        title: Production Well
+        description: Well used to extract geothermal fluids or steam from the reservoir.
+      INJECTION_WELL:
+        title: Injection Well
+        description: >-
+          Well used to return cooled geothermal fluids to the reservoir
+          to maintain pressure and sustainability.
+        aliases:
+        - Reinjection Well
+      EXPLORATION_WELL:
+        title: Exploration Well
+        description: Well drilled to evaluate geothermal resource characteristics.
+        aliases:
+        - Wildcat Well
+      OBSERVATION_WELL:
+        title: Observation/Monitoring Well
+        description: Well used to monitor reservoir conditions and pressure.
+        aliases:
+        - Monitoring Well
+      SLIM_HOLE:
+        title: Slim Hole
+        description: >-
+          Smaller diameter well used for initial exploration and
+          temperature gradient measurement.
+      DIRECTIONAL_WELL:
+        title: Directional/Deviated Well
+        description: >-
+          Well drilled at an angle to access reservoir from offset
+          surface location or increase reservoir contact.
+  GeothermalApplication:
+    title: Geothermal Application
+    description: Applications and uses of geothermal energy.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      ELECTRICITY_GENERATION:
+        title: Electricity Generation
+        description: >-
+          Use of geothermal resources for power generation through
+          steam turbines or binary cycle plants.
+        meaning: ENVO:2000034
+        close_mappings:
+        - sweet:humanTechEnergy/ElectricalGeneration
+      DIRECT_USE_HEATING:
+        title: Direct Use Heating
+        description: >-
+          Direct use of geothermal heat for space heating, district
+          heating, or industrial processes.
+      GREENHOUSE_HEATING:
+        title: Greenhouse Heating
+        description: Use of geothermal heat for agricultural greenhouses.
+      AQUACULTURE:
+        title: Aquaculture Heating
+        description: Use of geothermal heat for fish farming and aquaculture.
+      INDUSTRIAL_PROCESS_HEAT:
+        title: Industrial Process Heat
+        description: Use of geothermal heat for industrial manufacturing processes.
+      FOOD_PROCESSING:
+        title: Food Processing
+        description: >-
+          Use of geothermal heat for food drying, pasteurization, and processing.
+      BATHING_RECREATION:
+        title: Bathing and Recreation
+        description: Use of geothermal waters for spas, pools, and recreation.
+      LITHIUM_EXTRACTION:
+        title: Lithium Extraction
+        description: >-
+          Extraction of lithium and other minerals from geothermal brines
+          as a co-product of energy production.
+        annotations:
+          co_production: true
+  GeothermalResourceTemperature:
+    title: Geothermal Resource Temperature Classification
+    description: Classification of geothermal resources by temperature range.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      LOW_TEMPERATURE:
+        title: Low Temperature Resource
+        description: Geothermal resource below 90C, suitable for direct use applications.
+        annotations:
+          temperature_max_c: 90
+      MODERATE_TEMPERATURE:
+        title: Moderate Temperature Resource
+        description: Geothermal resource 90-150C, suitable for binary power generation.
+        annotations:
+          temperature_min_c: 90
+          temperature_max_c: 150
+      HIGH_TEMPERATURE:
+        title: High Temperature Resource
+        description: Geothermal resource above 150C, suitable for flash steam power generation.
+        annotations:
+          temperature_min_c: 150
+      SUPERCRITICAL:
+        title: Supercritical Resource
+        description: >-
+          Very high temperature resource above 374C where water exists
+          in supercritical state.
+        annotations:
+          temperature_min_c: 374

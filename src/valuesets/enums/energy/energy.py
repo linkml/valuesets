@@ -328,6 +328,26 @@ ElectricityMarket._metadata = {
     "POWER_PURCHASE_AGREEMENT": {'description': 'Power purchase agreement (PPA)'},
 }
 
+class CapabilityStatus(RichEnum):
+    """
+    Operational status of a capability, facility, or infrastructure. Applicable to energy facilities, research capabilities, and other infrastructure throughout their lifecycle.
+    """
+    # Enum members
+    OPERATIONAL = "OPERATIONAL"
+    COMING_ONLINE = "COMING_ONLINE"
+    PILOT = "PILOT"
+    UNDER_DEVELOPMENT = "UNDER_DEVELOPMENT"
+    DECOMMISSIONED = "DECOMMISSIONED"
+
+# Set metadata after class creation
+CapabilityStatus._metadata = {
+    "OPERATIONAL": {'description': 'Fully operational and available to users', 'annotations': {'wikidata_label': 'in use', 'lifecycle_phase': 'operation'}},
+    "COMING_ONLINE": {'description': 'Being commissioned, coming online soon', 'annotations': {'wikidata_label': 'building process', 'lifecycle_phase': 'commissioning', 'iaea_equivalent': 'commissioning'}},
+    "PILOT": {'description': 'In pilot phase with limited access', 'annotations': {'availability': 'limited', 'lifecycle_phase': 'testing'}},
+    "UNDER_DEVELOPMENT": {'description': 'Under development, not yet available', 'annotations': {'wikidata_label': 'proposed building or structure', 'lifecycle_phase': 'planning/construction'}},
+    "DECOMMISSIONED": {'description': 'No longer available, permanently shut down', 'annotations': {'lifecycle_phase': 'end-of-life', 'iaea_equivalent': 'decommissioned'}},
+}
+
 __all__ = [
     "EnergySource",
     "EnergyUnit",
@@ -339,4 +359,5 @@ __all__ = [
     "EmissionScope",
     "CarbonIntensity",
     "ElectricityMarket",
+    "CapabilityStatus",
 ]

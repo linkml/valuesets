@@ -10,8 +10,11 @@ prefixes:
   QUDT: http://qudt.org/vocab/unit/
   ENVO: http://purl.obolibrary.org/obo/ENVO_
   CHEBI: http://purl.obolibrary.org/obo/CHEBI_
+  sweet: http://sweetontology.net/
   orcid: https://orcid.org/
   valuesets_meta: https://w3id.org/valuesets/meta/
+  wikidata: http://www.wikidata.org/entity/
+  schema: http://schema.org/
 default_prefix: valuesets
 slots:
   energy_source:
@@ -44,6 +47,9 @@ slots:
   electricity_market:
     description: Types of electricity markets and pricing
     range: ElectricityMarket
+  capability_status:
+    description: Operational status of a capability or facility
+    range: CapabilityStatus
 enums:
   EnergySource:
     title: Energy Source
@@ -69,6 +75,8 @@ enums:
         - wind wave energy
         related_mappings:
         - ENVO:2000033
+        broad_mappings:
+        - sweet:phenAtmoWind/Wind
         annotations:
           renewable: true
           emission_free: true
@@ -86,6 +94,8 @@ enums:
         aliases:
         - geothermal energy
         meaning: ENVO:2000034
+        close_mappings:
+        - sweet:phenEnergy/Geothermal
         annotations:
           renewable: true
           emission_free: true
@@ -95,11 +105,15 @@ enums:
         - organic material
         related_mappings:
         - ENVO:01000155
+        close_mappings:
+        - sweet:matrBiomass/Biomass
         annotations:
           renewable: true
           emission_free: false
       BIOFUEL:
         title: Biofuels (ethanol, biodiesel)
+        close_mappings:
+        - sweet:matrEnergy/Biofuel
         annotations:
           renewable: true
           emission_free: false
@@ -113,12 +127,16 @@ enums:
         aliases:
         - dihydrogen
         meaning: CHEBI:18276
+        broad_mappings:
+        - sweet:matrElement/Hydrogen
         annotations:
           renewable: depends
           emission_free: true
       COAL:
         title: Coal
         meaning: ENVO:02000091
+        close_mappings:
+        - sweet:matrNaturalResource/Coal
         annotations:
           renewable: false
           emission_free: false
@@ -126,6 +144,8 @@ enums:
       NATURAL_GAS:
         title: Natural gas
         meaning: ENVO:01000552
+        close_mappings:
+        - sweet:matrNaturalResource/NaturalGas
         annotations:
           renewable: false
           emission_free: false
@@ -133,6 +153,8 @@ enums:
       PETROLEUM:
         title: Petroleum/oil
         meaning: ENVO:00002984
+        close_mappings:
+        - sweet:matrNaturalResource/Petroleum
         annotations:
           renewable: false
           emission_free: false
@@ -666,3 +688,62 @@ enums:
         description: Net metering
       POWER_PURCHASE_AGREEMENT:
         description: Power purchase agreement (PPA)
+  CapabilityStatus:
+    title: Capability Status
+    description: >-
+      Operational status of a capability, facility, or infrastructure.
+      Applicable to energy facilities, research capabilities, and other
+      infrastructure throughout their lifecycle.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    see_also:
+    - https://www.wikidata.org/wiki/Property:P5817
+    - https://www.iaea.org/topics/nuclear-power-plant-life-cycle
+    - https://schema.org/ItemAvailability
+    - https://www.iso.org/standard/83053.html
+    permissible_values:
+      OPERATIONAL:
+        title: Operational
+        description: Fully operational and available to users
+        exact_mappings:
+        - wikidata:Q55654238
+        annotations:
+          wikidata_label: in use
+          lifecycle_phase: operation
+      COMING_ONLINE:
+        title: Coming Online
+        description: Being commissioned, coming online soon
+        related_mappings:
+        - wikidata:Q811686
+        annotations:
+          wikidata_label: building process
+          lifecycle_phase: commissioning
+          iaea_equivalent: commissioning
+      PILOT:
+        title: Pilot
+        description: In pilot phase with limited access
+        related_mappings:
+        - schema:LimitedAvailability
+        annotations:
+          availability: limited
+          lifecycle_phase: testing
+      UNDER_DEVELOPMENT:
+        title: Under Development
+        description: Under development, not yet available
+        exact_mappings:
+        - wikidata:Q811683
+        annotations:
+          wikidata_label: proposed building or structure
+          lifecycle_phase: planning/construction
+      DECOMMISSIONED:
+        title: Decommissioned
+        description: No longer available, permanently shut down
+        related_mappings:
+        - schema:Discontinued
+        annotations:
+          lifecycle_phase: end-of-life
+          iaea_equivalent: decommissioned
