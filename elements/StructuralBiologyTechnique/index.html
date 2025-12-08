@@ -419,7 +419,7 @@
 </tr>
 <tr>
 <td>CRYO_ET</td>
-<td>None</td>
+<td>MI:2338</td>
 <td>Cryo-electron tomography</td>
 </tr>
 <tr>
@@ -429,7 +429,7 @@
 </tr>
 <tr>
 <td>NEUTRON_CRYSTALLOGRAPHY</td>
-<td>None</td>
+<td>CHMO:0000175</td>
 <td>Neutron crystallography</td>
 </tr>
 <tr>
@@ -439,12 +439,12 @@
 </tr>
 <tr>
 <td>SANS</td>
-<td>None</td>
+<td>CHMO:0000184</td>
 <td>Small-angle neutron scattering</td>
 </tr>
 <tr>
 <td>WAXS</td>
-<td>None</td>
+<td>CHMO:0000213</td>
 <td>Wide-angle X-ray scattering</td>
 </tr>
 <tr>
@@ -459,7 +459,7 @@
 </tr>
 <tr>
 <td>NEGATIVE_STAIN_EM</td>
-<td>None</td>
+<td>FBbi:00000568</td>
 <td>Negative stain electron microscopy</td>
 </tr>
 </tbody>
@@ -514,6 +514,7 @@ permissible_values:
   CRYO_ET:
     text: CRYO_ET
     description: Cryo-electron tomography
+    meaning: MI:2338
     annotations:
       resolution_range:
         tag: resolution_range
@@ -521,6 +522,7 @@ permissible_values:
       aliases:
         tag: aliases
         value: cryoET, electron cryo-tomography
+    title: electron tomography
   X_RAY_CRYSTALLOGRAPHY:
     text: X_RAY_CRYSTALLOGRAPHY
     description: X-ray crystallography
@@ -536,10 +538,12 @@ permissible_values:
   NEUTRON_CRYSTALLOGRAPHY:
     text: NEUTRON_CRYSTALLOGRAPHY
     description: Neutron crystallography
+    meaning: CHMO:0000175
     annotations:
       advantages:
         tag: advantages
         value: hydrogen positions, deuteration studies
+    title: neutron diffraction
   SAXS:
     text: SAXS
     description: Small-angle X-ray scattering
@@ -552,13 +556,17 @@ permissible_values:
   SANS:
     text: SANS
     description: Small-angle neutron scattering
+    meaning: CHMO:0000184
     annotations:
       advantages:
         tag: advantages
         value: contrast variation with deuteration
+    title: small-angle neutron scattering
   WAXS:
     text: WAXS
     description: Wide-angle X-ray scattering
+    meaning: CHMO:0000213
+    title: wide-angle X-ray scattering
   NMR:
     text: NMR
     description: Nuclear magnetic resonance spectroscopy
@@ -579,10 +587,12 @@ permissible_values:
   NEGATIVE_STAIN_EM:
     text: NEGATIVE_STAIN_EM
     description: Negative stain electron microscopy
+    meaning: FBbi:00000568
     annotations:
       resolution_range:
         tag: resolution_range
         value: 15-30 Å typical
+    title: negative staining electron microscopy
 
 </code></pre>
 

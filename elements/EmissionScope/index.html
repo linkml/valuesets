@@ -348,6 +348,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      See Also
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#identifier-and-mapping-information" class="md-nav__link">
     <span class="md-ellipsis">
       Identifier and Mapping Information
@@ -454,6 +463,11 @@
 </tr>
 </tbody>
 </table>
+<h2 id="see-also">See Also</h2>
+<ul>
+<li><a href="http://openenergy-platform.org/ontology/oeo/OEO_00000147">OEO:00000147</a></li>
+<li><a href="http://openenergy-platform.org/ontology/oeo/OEO_00000020">OEO:00000020</a></li>
+</ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
@@ -468,6 +482,9 @@ instantiates:
 description: Greenhouse gas emission scopes (GHG Protocol)
 title: Emission Scope
 from_schema: https://w3id.org/linkml/valuesets
+see_also:
+- OEO:00000147
+- OEO:00000020
 contributors:
 - orcid:0000-0002-6601-2165
 - https://github.com/anthropics/claude-code
@@ -481,6 +498,11 @@ permissible_values:
       ghg_protocol:
         tag: ghg_protocol
         value: Scope 1
+      oeo_label:
+        tag: oeo_label
+        value: greenhouse gas emission
+    related_mappings:
+    - OEO:00000199
   SCOPE_2:
     text: SCOPE_2
     description: Indirect emissions from purchased energy
@@ -488,6 +510,11 @@ permissible_values:
       ghg_protocol:
         tag: ghg_protocol
         value: Scope 2
+      oeo_label:
+        tag: oeo_label
+        value: greenhouse gas emission
+    related_mappings:
+    - OEO:00000199
   SCOPE_3:
     text: SCOPE_3
     description: All other indirect emissions in value chain
@@ -495,6 +522,11 @@ permissible_values:
       ghg_protocol:
         tag: ghg_protocol
         value: Scope 3
+      oeo_label:
+        tag: oeo_label
+        value: greenhouse gas emission
+    related_mappings:
+    - OEO:00000199
   SCOPE_3_UPSTREAM:
     text: SCOPE_3_UPSTREAM
     description: Upstream Scope 3 emissions
@@ -502,6 +534,11 @@ permissible_values:
       ghg_protocol:
         tag: ghg_protocol
         value: Scope 3
+      oeo_label:
+        tag: oeo_label
+        value: greenhouse gas emission
+    related_mappings:
+    - OEO:00000199
   SCOPE_3_DOWNSTREAM:
     text: SCOPE_3_DOWNSTREAM
     description: Downstream Scope 3 emissions
@@ -509,6 +546,11 @@ permissible_values:
       ghg_protocol:
         tag: ghg_protocol
         value: Scope 3
+      oeo_label:
+        tag: oeo_label
+        value: greenhouse gas emission
+    related_mappings:
+    - OEO:00000199
 
 </code></pre>
 

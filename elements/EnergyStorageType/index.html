@@ -400,7 +400,7 @@
 
 
 <h1 id="enum-energystoragetype">Enum: EnergyStorageType</h1>
-<p><em>Types of energy storage systems</em></p>
+<p><em>Types of energy storage systems (categories)</em></p>
 <p>URI: <a href="https://w3id.org/valuesets/EnergyStorageType">valuesets:EnergyStorageType</a></p>
 <h2 id="permissible-values">Permissible Values</h2>
 <table>
@@ -413,29 +413,9 @@
 </thead>
 <tbody>
 <tr>
-<td>LITHIUM_ION_BATTERY</td>
+<td>BATTERY</td>
 <td>None</td>
-<td>Lithium-ion battery</td>
-</tr>
-<tr>
-<td>LEAD_ACID_BATTERY</td>
-<td>None</td>
-<td>Lead-acid battery</td>
-</tr>
-<tr>
-<td>FLOW_BATTERY</td>
-<td>None</td>
-<td>Flow battery (e</td>
-</tr>
-<tr>
-<td>SOLID_STATE_BATTERY</td>
-<td>None</td>
-<td>Solid-state battery</td>
-</tr>
-<tr>
-<td>SODIUM_ION_BATTERY</td>
-<td>None</td>
-<td>Sodium-ion battery</td>
+<td>Battery storage (see BatteryType for specific chemistries)</td>
 </tr>
 <tr>
 <td>PUMPED_HYDRO</td>
@@ -520,7 +500,7 @@
 <pre><code class="language-yaml">name: EnergyStorageType
 instantiates:
 - valuesets_meta:ValueSetEnumDefinition
-description: Types of energy storage systems
+description: Types of energy storage systems (categories)
 title: Energy Storage Type
 from_schema: https://w3id.org/linkml/valuesets
 contributors:
@@ -529,41 +509,16 @@ contributors:
 status: DRAFT
 rank: 1000
 permissible_values:
-  LITHIUM_ION_BATTERY:
-    text: LITHIUM_ION_BATTERY
-    description: Lithium-ion battery
+  BATTERY:
+    text: BATTERY
+    description: Battery storage (see BatteryType for specific chemistries)
     annotations:
       category:
         tag: category
         value: electrochemical
-  LEAD_ACID_BATTERY:
-    text: LEAD_ACID_BATTERY
-    description: Lead-acid battery
-    annotations:
-      category:
-        tag: category
-        value: electrochemical
-  FLOW_BATTERY:
-    text: FLOW_BATTERY
-    description: Flow battery (e.g., vanadium redox)
-    annotations:
-      category:
-        tag: category
-        value: electrochemical
-  SOLID_STATE_BATTERY:
-    text: SOLID_STATE_BATTERY
-    description: Solid-state battery
-    annotations:
-      category:
-        tag: category
-        value: electrochemical
-  SODIUM_ION_BATTERY:
-    text: SODIUM_ION_BATTERY
-    description: Sodium-ion battery
-    annotations:
-      category:
-        tag: category
-        value: electrochemical
+    exact_mappings:
+    - OEO:00000068
+    - brick:Battery
   PUMPED_HYDRO:
     text: PUMPED_HYDRO
     description: Pumped hydroelectric storage
@@ -571,6 +526,11 @@ permissible_values:
       category:
         tag: category
         value: mechanical
+      oeo_label:
+        tag: oeo_label
+        value: pumped hydro storage power plant
+    exact_mappings:
+    - OEO:00010089
   COMPRESSED_AIR:
     text: COMPRESSED_AIR
     description: Compressed air energy storage (CAES)
@@ -578,6 +538,11 @@ permissible_values:
       category:
         tag: category
         value: mechanical
+      oeo_label:
+        tag: oeo_label
+        value: compressed air
+    close_mappings:
+    - OEO:00000102
   FLYWHEEL:
     text: FLYWHEEL
     description: Flywheel energy storage
@@ -620,6 +585,11 @@ permissible_values:
       category:
         tag: category
         value: chemical
+      oeo_label:
+        tag: oeo_label
+        value: hydrogen
+    close_mappings:
+    - OEO:00000220
   SYNTHETIC_FUEL:
     text: SYNTHETIC_FUEL
     description: Synthetic fuel storage
@@ -627,6 +597,11 @@ permissible_values:
       category:
         tag: category
         value: chemical
+      oeo_label:
+        tag: oeo_label
+        value: synthetic fuel
+    close_mappings:
+    - OEO:00010017
   SUPERCAPACITOR:
     text: SUPERCAPACITOR
     description: Supercapacitor

@@ -414,42 +414,42 @@
 <tbody>
 <tr>
 <td>MRC</td>
-<td>None</td>
+<td>EDAM:3842</td>
 <td>MRC format for EM density maps</td>
 </tr>
 <tr>
 <td>TIFF</td>
-<td>None</td>
+<td>EDAM:3591</td>
 <td>Tagged Image File Format</td>
 </tr>
 <tr>
 <td>HDF5</td>
-<td>None</td>
+<td>EDAM:3590</td>
 <td>Hierarchical Data Format 5</td>
 </tr>
 <tr>
 <td>STAR</td>
-<td>None</td>
+<td>EDAM:3906</td>
 <td>Self-defining Text Archival and Retrieval format</td>
 </tr>
 <tr>
 <td>PDB</td>
-<td>None</td>
+<td>EDAM:1476</td>
 <td>Protein Data Bank coordinate format</td>
 </tr>
 <tr>
 <td>MMCIF</td>
-<td>None</td>
+<td>EDAM:1477</td>
 <td>Macromolecular Crystallographic Information File</td>
 </tr>
 <tr>
 <td>MTZ</td>
-<td>None</td>
+<td>EDAM:3816</td>
 <td>MTZ reflection data format</td>
 </tr>
 <tr>
 <td>CBF</td>
-<td>None</td>
+<td>EDAM:3874</td>
 <td>Crystallographic Binary Format</td>
 </tr>
 <tr>
@@ -502,6 +502,7 @@ permissible_values:
   MRC:
     text: MRC
     description: MRC format for EM density maps
+    meaning: EDAM:3842
     annotations:
       extension:
         tag: extension
@@ -512,6 +513,7 @@ permissible_values:
   TIFF:
     text: TIFF
     description: Tagged Image File Format
+    meaning: EDAM:3591
     annotations:
       extension:
         tag: extension
@@ -522,6 +524,7 @@ permissible_values:
   HDF5:
     text: HDF5
     description: Hierarchical Data Format 5
+    meaning: EDAM:3590
     annotations:
       extension:
         tag: extension
@@ -532,6 +535,7 @@ permissible_values:
   STAR:
     text: STAR
     description: Self-defining Text Archival and Retrieval format
+    meaning: EDAM:3906
     annotations:
       extension:
         tag: extension
@@ -542,6 +546,7 @@ permissible_values:
   PDB:
     text: PDB
     description: Protein Data Bank coordinate format
+    meaning: EDAM:1476
     annotations:
       extension:
         tag: extension
@@ -549,9 +554,12 @@ permissible_values:
       applications:
         tag: applications
         value: atomic coordinates, legacy format
+    exact_mappings:
+    - OBI:0001525
   MMCIF:
     text: MMCIF
     description: Macromolecular Crystallographic Information File
+    meaning: EDAM:1477
     annotations:
       extension:
         tag: extension
@@ -559,9 +567,12 @@ permissible_values:
       applications:
         tag: applications
         value: atomic coordinates, modern PDB format
+    exact_mappings:
+    - NCIT:C133997
   MTZ:
     text: MTZ
     description: MTZ reflection data format
+    meaning: EDAM:3816
     annotations:
       extension:
         tag: extension
@@ -572,6 +583,7 @@ permissible_values:
   CBF:
     text: CBF
     description: Crystallographic Binary Format
+    meaning: EDAM:3874
     annotations:
       extension:
         tag: extension

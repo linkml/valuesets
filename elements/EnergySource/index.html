@@ -549,9 +549,19 @@ permissible_values:
       emission_free:
         tag: emission_free
         value: true
+      oeo_label:
+        tag: oeo_label
+        value: solar energy
+      brick_label:
+        tag: brick_label
+        value: Solar Thermal Collector
     title: Solar energy (photovoltaic and thermal)
     aliases:
     - Solar radiation
+    exact_mappings:
+    - OEO:00000384
+    related_mappings:
+    - brick:Solar_Thermal_Collector
   WIND:
     text: WIND
     annotations:
@@ -561,11 +571,18 @@ permissible_values:
       emission_free:
         tag: emission_free
         value: true
+      oeo_label:
+        tag: oeo_label
+        value: wind energy
     title: Wind power
     aliases:
     - wind wave energy
+    exact_mappings:
+    - OEO:00000446
     related_mappings:
     - ENVO:2000033
+    broad_mappings:
+    - sweet:phenAtmoWind/Wind
   HYDROELECTRIC:
     text: HYDROELECTRIC
     annotations:
@@ -575,9 +592,14 @@ permissible_values:
       emission_free:
         tag: emission_free
         value: true
+      oeo_label:
+        tag: oeo_label
+        value: hydro energy
     title: Hydroelectric power
     aliases:
     - hydroelectric dam
+    exact_mappings:
+    - OEO:00000218
     related_mappings:
     - ENVO:00000468
   GEOTHERMAL:
@@ -590,9 +612,16 @@ permissible_values:
       emission_free:
         tag: emission_free
         value: true
+      oeo_label:
+        tag: oeo_label
+        value: geothermal energy
     title: Geothermal energy
     aliases:
     - geothermal energy
+    exact_mappings:
+    - OEO:00000191
+    close_mappings:
+    - sweet:phenEnergy/Geothermal
   BIOMASS:
     text: BIOMASS
     annotations:
@@ -602,9 +631,16 @@ permissible_values:
       emission_free:
         tag: emission_free
         value: false
+      oeo_label:
+        tag: oeo_label
+        value: bioenergy
     title: Biomass and bioenergy
     aliases:
     - organic material
+    exact_mappings:
+    - OEO:00010258
+    close_mappings:
+    - sweet:matrBiomass/Biomass
     related_mappings:
     - ENVO:01000155
   BIOFUEL:
@@ -616,7 +652,14 @@ permissible_values:
       emission_free:
         tag: emission_free
         value: false
+      oeo_label:
+        tag: oeo_label
+        value: biofuel
     title: Biofuels (ethanol, biodiesel)
+    exact_mappings:
+    - OEO:00000072
+    close_mappings:
+    - sweet:matrEnergy/Biofuel
   TIDAL:
     text: TIDAL
     annotations:
@@ -626,7 +669,13 @@ permissible_values:
       emission_free:
         tag: emission_free
         value: true
+      oeo_label:
+        tag: oeo_label
+        value: marine tidal energy, marine wave energy
     title: Tidal and wave energy
+    close_mappings:
+    - OEO:00010100
+    - OEO:00010102
   HYDROGEN:
     text: HYDROGEN
     meaning: CHEBI:18276
@@ -637,9 +686,16 @@ permissible_values:
       emission_free:
         tag: emission_free
         value: true
+      oeo_label:
+        tag: oeo_label
+        value: hydrogen
     title: Hydrogen fuel
     aliases:
     - dihydrogen
+    exact_mappings:
+    - OEO:00000220
+    broad_mappings:
+    - sweet:matrElement/Hydrogen
   COAL:
     text: COAL
     meaning: ENVO:02000091
@@ -653,7 +709,14 @@ permissible_values:
       fossil_fuel:
         tag: fossil_fuel
         value: true
+      oeo_label:
+        tag: oeo_label
+        value: coal
     title: Coal
+    exact_mappings:
+    - OEO:00000088
+    close_mappings:
+    - sweet:matrNaturalResource/Coal
   NATURAL_GAS:
     text: NATURAL_GAS
     meaning: ENVO:01000552
@@ -667,7 +730,14 @@ permissible_values:
       fossil_fuel:
         tag: fossil_fuel
         value: true
+      oeo_label:
+        tag: oeo_label
+        value: natural gas
     title: Natural gas
+    exact_mappings:
+    - OEO:00000292
+    close_mappings:
+    - sweet:matrNaturalResource/NaturalGas
   PETROLEUM:
     text: PETROLEUM
     meaning: ENVO:00002984
@@ -681,7 +751,13 @@ permissible_values:
       fossil_fuel:
         tag: fossil_fuel
         value: true
+      oeo_label:
+        tag: oeo_label
+        value: crude oil
     title: Petroleum/oil
+    close_mappings:
+    - sweet:matrNaturalResource/Petroleum
+    - OEO:00000115
   DIESEL:
     text: DIESEL
     meaning: ENVO:03510006
@@ -695,9 +771,14 @@ permissible_values:
       fossil_fuel:
         tag: fossil_fuel
         value: true
+      oeo_label:
+        tag: oeo_label
+        value: diesel fuel
     title: Diesel fuel
     aliases:
     - diesel fuel
+    exact_mappings:
+    - OEO:00010242
   GASOLINE:
     text: GASOLINE
     annotations:
@@ -710,9 +791,14 @@ permissible_values:
       fossil_fuel:
         tag: fossil_fuel
         value: true
+      oeo_label:
+        tag: oeo_label
+        value: gasoline fuel
     title: Gasoline/petrol
     aliases:
     - fuel oil
+    exact_mappings:
+    - OEO:00010241
     related_mappings:
     - ENVO:00002983
   PROPANE:
@@ -740,11 +826,16 @@ permissible_values:
       emission_free:
         tag: emission_free
         value: true
+      oeo_label:
+        tag: oeo_label
+        value: nuclear fuel
     title: Nuclear fission
     aliases:
     - nuclear energy
     exact_mappings:
     - CHEBI:35231
+    close_mappings:
+    - OEO:00000302
     related_mappings:
     - ENVO:2000025
   NUCLEAR_FUSION:
@@ -767,7 +858,12 @@ permissible_values:
       renewable:
         tag: renewable
         value: partial
+      oeo_label:
+        tag: oeo_label
+        value: supply grid
     title: Grid electricity (mixed sources)
+    close_mappings:
+    - OEO:00000200
   BATTERY_STORAGE:
     text: BATTERY_STORAGE
     description: Battery storage systems
@@ -775,6 +871,11 @@ permissible_values:
       storage:
         tag: storage
         value: true
+      oeo_label:
+        tag: oeo_label
+        value: battery
+    close_mappings:
+    - OEO:00000068
 
 </code></pre>
 

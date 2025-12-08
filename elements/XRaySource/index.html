@@ -414,12 +414,12 @@
 <tbody>
 <tr>
 <td>SYNCHROTRON</td>
-<td>None</td>
+<td>CHMO:0001810</td>
 <td>Synchrotron radiation source</td>
 </tr>
 <tr>
 <td>ROTATING_ANODE</td>
-<td>None</td>
+<td>CHMO:0001107</td>
 <td>Rotating anode generator</td>
 </tr>
 <tr>
@@ -472,6 +472,7 @@ permissible_values:
   SYNCHROTRON:
     text: SYNCHROTRON
     description: Synchrotron radiation source
+    meaning: CHMO:0001810
     annotations:
       advantages:
         tag: advantages
@@ -479,9 +480,12 @@ permissible_values:
       brightness:
         tag: brightness
         value: 10^15-10^18 photons/s/mm²/mrad²
+    exact_mappings:
+    - NCIT:C48205
   ROTATING_ANODE:
     text: ROTATING_ANODE
     description: Rotating anode generator
+    meaning: CHMO:0001107
     annotations:
       power:
         tag: power
