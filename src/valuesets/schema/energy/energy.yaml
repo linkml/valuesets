@@ -10,6 +10,8 @@ prefixes:
   QUDT: http://qudt.org/vocab/unit/
   ENVO: http://purl.obolibrary.org/obo/ENVO_
   CHEBI: http://purl.obolibrary.org/obo/CHEBI_
+  OEO: http://openenergy-platform.org/ontology/oeo/OEO_
+  brick: https://brickschema.org/schema/Brick#
   sweet: http://sweetontology.net/
   orcid: https://orcid.org/
   valuesets_meta: https://w3id.org/valuesets/meta/
@@ -38,6 +40,15 @@ slots:
   energy_storage:
     description: Types of energy storage systems
     range: EnergyStorageType
+  battery_type:
+    description: Types of battery technologies
+    range: BatteryType
+  pv_cell_type:
+    description: Types of photovoltaic cell technologies
+    range: PVCellType
+  pv_system_type:
+    description: Types of photovoltaic system installations
+    range: PVSystemType
   emission_scope:
     description: Greenhouse gas emission scopes (GHG Protocol)
     range: EmissionScope
@@ -66,9 +77,15 @@ enums:
         aliases:
         - Solar radiation
         meaning: ENVO:01001862
+        exact_mappings:
+        - OEO:00000384
+        related_mappings:
+        - brick:Solar_Thermal_Collector
         annotations:
           renewable: true
           emission_free: true
+          oeo_label: solar energy
+          brick_label: Solar Thermal Collector
       WIND:
         title: Wind power
         aliases:
@@ -77,18 +94,24 @@ enums:
         - ENVO:2000033
         broad_mappings:
         - sweet:phenAtmoWind/Wind
+        exact_mappings:
+        - OEO:00000446
         annotations:
           renewable: true
           emission_free: true
+          oeo_label: wind energy
       HYDROELECTRIC:
         title: Hydroelectric power
         aliases:
         - hydroelectric dam
         related_mappings:
         - ENVO:00000468
+        exact_mappings:
+        - OEO:00000218
         annotations:
           renewable: true
           emission_free: true
+          oeo_label: hydro energy
       GEOTHERMAL:
         title: Geothermal energy
         aliases:
@@ -96,9 +119,12 @@ enums:
         meaning: ENVO:2000034
         close_mappings:
         - sweet:phenEnergy/Geothermal
+        exact_mappings:
+        - OEO:00000191
         annotations:
           renewable: true
           emission_free: true
+          oeo_label: geothermal energy
       BIOMASS:
         title: Biomass and bioenergy
         aliases:
@@ -107,21 +133,31 @@ enums:
         - ENVO:01000155
         close_mappings:
         - sweet:matrBiomass/Biomass
+        exact_mappings:
+        - OEO:00010258
         annotations:
           renewable: true
           emission_free: false
+          oeo_label: bioenergy
       BIOFUEL:
         title: Biofuels (ethanol, biodiesel)
         close_mappings:
         - sweet:matrEnergy/Biofuel
+        exact_mappings:
+        - OEO:00000072
         annotations:
           renewable: true
           emission_free: false
+          oeo_label: biofuel
       TIDAL:
         title: Tidal and wave energy
+        close_mappings:
+        - OEO:00010100
+        - OEO:00010102
         annotations:
           renewable: true
           emission_free: true
+          oeo_label: marine tidal energy, marine wave energy
       HYDROGEN:
         title: Hydrogen fuel
         aliases:
@@ -129,55 +165,72 @@ enums:
         meaning: CHEBI:18276
         broad_mappings:
         - sweet:matrElement/Hydrogen
+        exact_mappings:
+        - OEO:00000220
         annotations:
           renewable: depends
           emission_free: true
+          oeo_label: hydrogen
       COAL:
         title: Coal
         meaning: ENVO:02000091
         close_mappings:
         - sweet:matrNaturalResource/Coal
+        exact_mappings:
+        - OEO:00000088
         annotations:
           renewable: false
           emission_free: false
           fossil_fuel: true
+          oeo_label: coal
       NATURAL_GAS:
         title: Natural gas
         meaning: ENVO:01000552
         close_mappings:
         - sweet:matrNaturalResource/NaturalGas
+        exact_mappings:
+        - OEO:00000292
         annotations:
           renewable: false
           emission_free: false
           fossil_fuel: true
+          oeo_label: natural gas
       PETROLEUM:
         title: Petroleum/oil
         meaning: ENVO:00002984
         close_mappings:
         - sweet:matrNaturalResource/Petroleum
+        - OEO:00000115
         annotations:
           renewable: false
           emission_free: false
           fossil_fuel: true
+          oeo_label: crude oil
       DIESEL:
         title: Diesel fuel
         aliases:
         - diesel fuel
         meaning: ENVO:03510006
+        exact_mappings:
+        - OEO:00010242
         annotations:
           renewable: false
           emission_free: false
           fossil_fuel: true
+          oeo_label: diesel fuel
       GASOLINE:
         title: Gasoline/petrol
         aliases:
         - fuel oil
         related_mappings:
         - ENVO:00002983
+        exact_mappings:
+        - OEO:00010241
         annotations:
           renewable: false
           emission_free: false
           fossil_fuel: true
+          oeo_label: gasoline fuel
       PROPANE:
         title: Propane/LPG
         aliases:
@@ -195,9 +248,12 @@ enums:
         - ENVO:2000025
         exact_mappings:
         - CHEBI:35231
+        close_mappings:
+        - OEO:00000302
         annotations:
           renewable: false
           emission_free: true
+          oeo_label: nuclear fuel
       NUCLEAR_FUSION:
         title: Nuclear fusion (experimental)
         aliases:
@@ -209,12 +265,18 @@ enums:
           emission_free: true
       GRID_MIX:
         title: Grid electricity (mixed sources)
+        close_mappings:
+        - OEO:00000200
         annotations:
           renewable: partial
+          oeo_label: supply grid
       BATTERY_STORAGE:
         description: Battery storage systems
+        close_mappings:
+        - OEO:00000068
         annotations:
           storage: true
+          oeo_label: battery
   EnergyUnit:
     title: Energy Unit
     description: Units for measuring energy
@@ -510,6 +572,10 @@ enums:
     permissible_values:
       MAIN_GRID:
         description: Main utility grid
+        exact_mappings:
+        - OEO:00000200
+        annotations:
+          oeo_label: supply grid
       MICROGRID:
         description: Microgrid
       OFF_GRID:
@@ -520,9 +586,286 @@ enums:
         description: Mini-grid
       VIRTUAL_POWER_PLANT:
         description: Virtual power plant
+  BatteryType:
+    title: Battery Type
+    description: Types of battery technologies for energy storage
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    exact_mappings:
+    - OEO:00000068
+    - brick:Battery
+    permissible_values:
+      LITHIUM_ION:
+        description: Lithium-ion battery
+        aliases:
+        - Li-ion
+        - LIB
+        annotations:
+          chemistry: lithium
+      LITHIUM_IRON_PHOSPHATE:
+        description: Lithium iron phosphate (LFP) battery
+        aliases:
+        - LFP
+        - LiFePO4
+        annotations:
+          chemistry: lithium
+      LITHIUM_POLYMER:
+        description: Lithium polymer battery
+        aliases:
+        - LiPo
+        annotations:
+          chemistry: lithium
+      LEAD_ACID:
+        description: Lead-acid battery
+        aliases:
+        - Pb-acid
+        annotations:
+          chemistry: lead
+      NICKEL_METAL_HYDRIDE:
+        description: Nickel-metal hydride battery
+        aliases:
+        - NiMH
+        annotations:
+          chemistry: nickel
+      NICKEL_CADMIUM:
+        description: Nickel-cadmium battery
+        aliases:
+        - NiCd
+        annotations:
+          chemistry: nickel
+      SODIUM_ION:
+        description: Sodium-ion battery
+        aliases:
+        - Na-ion
+        annotations:
+          chemistry: sodium
+      SOLID_STATE:
+        description: Solid-state battery
+        annotations:
+          chemistry: various
+      VANADIUM_REDOX_FLOW:
+        description: Vanadium redox flow battery
+        aliases:
+        - VRB
+        - VRFB
+        annotations:
+          chemistry: vanadium
+          type: flow
+      ZINC_BROMINE_FLOW:
+        description: Zinc-bromine flow battery
+        aliases:
+        - ZnBr
+        annotations:
+          chemistry: zinc
+          type: flow
+      IRON_AIR:
+        description: Iron-air battery
+        annotations:
+          chemistry: iron
+      ZINC_AIR:
+        description: Zinc-air battery
+        annotations:
+          chemistry: zinc
+  PVCellType:
+    title: Photovoltaic Cell Type
+    description: Types of photovoltaic cell technologies
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    see_also:
+    - OEO:00000348
+    permissible_values:
+      MONOCRYSTALLINE_SILICON:
+        description: Monocrystalline silicon (mono-Si) cells
+        aliases:
+        - mono-Si
+        - single-crystal silicon
+        related_mappings:
+        - CHEBI:27573
+        annotations:
+          material: silicon
+          efficiency_range: 17-22%
+      POLYCRYSTALLINE_SILICON:
+        description: Polycrystalline silicon (poly-Si) cells
+        aliases:
+        - poly-Si
+        - multi-crystalline silicon
+        related_mappings:
+        - CHEBI:27573
+        annotations:
+          material: silicon
+          efficiency_range: 15-17%
+      PASSIVATED_EMITTER_REAR_CELL:
+        description: Passivated Emitter and Rear Cell (PERC)
+        aliases:
+        - PERC
+        annotations:
+          material: silicon
+          efficiency_range: 19-22%
+      HETEROJUNCTION:
+        description: Heterojunction (HJT) cells
+        aliases:
+        - HJT
+        - HIT
+        annotations:
+          material: silicon
+          efficiency_range: 21-24%
+      TUNNEL_OXIDE_PASSIVATED_CONTACT:
+        description: Tunnel Oxide Passivated Contact (TOPCon) cells
+        aliases:
+        - TOPCon
+        annotations:
+          material: silicon
+          efficiency_range: 22-24%
+      INTERDIGITATED_BACK_CONTACT:
+        description: Interdigitated Back Contact (IBC) cells
+        aliases:
+        - IBC
+        annotations:
+          material: silicon
+          efficiency_range: 22-24%
+      CADMIUM_TELLURIDE:
+        description: Cadmium telluride (CdTe) thin-film cells
+        aliases:
+        - CdTe
+        exact_mappings:
+        - CHEBI:232800
+        annotations:
+          material: cadmium_telluride
+          type: thin-film
+          efficiency_range: 16-18%
+      COPPER_INDIUM_GALLIUM_SELENIDE:
+        description: Copper indium gallium selenide (CIGS) thin-film cells
+        aliases:
+        - CIGS
+        - CIS
+        annotations:
+          material: CIGS
+          type: thin-film
+          efficiency_range: 15-20%
+      AMORPHOUS_SILICON:
+        description: Amorphous silicon (a-Si) thin-film cells
+        aliases:
+        - a-Si
+        related_mappings:
+        - CHEBI:27573
+        annotations:
+          material: silicon
+          type: thin-film
+          efficiency_range: 6-8%
+      GALLIUM_ARSENIDE:
+        description: Gallium arsenide (GaAs) cells
+        aliases:
+        - GaAs
+        annotations:
+          material: gallium_arsenide
+          efficiency_range: 25-30%
+          application: space, concentrator
+      PEROVSKITE:
+        description: Perovskite solar cells
+        annotations:
+          material: perovskite
+          efficiency_range: 20-25%
+          status: emerging
+      ORGANIC:
+        description: Organic photovoltaic (OPV) cells
+        aliases:
+        - OPV
+        annotations:
+          material: organic
+          type: thin-film
+          efficiency_range: 10-15%
+          status: emerging
+      TANDEM:
+        description: Tandem/multi-junction cells
+        aliases:
+        - multi-junction
+        annotations:
+          efficiency_range: 25-35%
+  PVSystemType:
+    title: Photovoltaic System Type
+    description: Types of photovoltaic system installations
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    exact_mappings:
+    - OEO:00000324
+    permissible_values:
+      ROOFTOP_RESIDENTIAL:
+        description: Residential rooftop PV system
+        broad_mappings:
+        - OEO:00000361
+        annotations:
+          scale: residential
+          mounting: rooftop
+      ROOFTOP_COMMERCIAL:
+        description: Commercial/industrial rooftop PV system
+        broad_mappings:
+        - OEO:00000361
+        annotations:
+          scale: commercial
+          mounting: rooftop
+      GROUND_MOUNTED:
+        description: Ground-mounted utility-scale PV system
+        exact_mappings:
+        - OEO:00000165
+        annotations:
+          scale: utility
+          mounting: ground
+      FLOATING:
+        description: Floating PV system (floatovoltaics)
+        aliases:
+        - floatovoltaics
+        - FPV
+        annotations:
+          scale: utility
+          mounting: floating
+      BUILDING_INTEGRATED:
+        description: Building-integrated PV (BIPV)
+        aliases:
+        - BIPV
+        annotations:
+          mounting: integrated
+      AGRIVOLTAICS:
+        description: Agrivoltaic system (dual-use with agriculture)
+        aliases:
+        - agrophotovoltaics
+        - APV
+        annotations:
+          scale: utility
+          dual_use: agriculture
+      CARPORT:
+        description: Solar carport/parking canopy
+        annotations:
+          mounting: canopy
+          dual_use: parking
+      TRACKER_SINGLE_AXIS:
+        description: Single-axis tracking system
+        annotations:
+          tracking: single_axis
+      TRACKER_DUAL_AXIS:
+        description: Dual-axis tracking system
+        annotations:
+          tracking: dual_axis
+      CONCENTRATING:
+        description: Concentrating PV (CPV) system
+        aliases:
+        - CPV
+        annotations:
+          type: concentrating
   EnergyStorageType:
     title: Energy Storage Type
-    description: Types of energy storage systems
+    description: Types of energy storage systems (categories)
     status: DRAFT
     contributors:
     - orcid:0000-0002-6601-2165
@@ -530,34 +873,27 @@ enums:
     instantiates:
     - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
-      LITHIUM_ION_BATTERY:
-        description: Lithium-ion battery
-        annotations:
-          category: electrochemical
-      LEAD_ACID_BATTERY:
-        description: Lead-acid battery
-        annotations:
-          category: electrochemical
-      FLOW_BATTERY:
-        description: Flow battery (e.g., vanadium redox)
-        annotations:
-          category: electrochemical
-      SOLID_STATE_BATTERY:
-        description: Solid-state battery
-        annotations:
-          category: electrochemical
-      SODIUM_ION_BATTERY:
-        description: Sodium-ion battery
+      BATTERY:
+        description: Battery storage (see BatteryType for specific chemistries)
+        exact_mappings:
+        - OEO:00000068
+        - brick:Battery
         annotations:
           category: electrochemical
       PUMPED_HYDRO:
         description: Pumped hydroelectric storage
+        exact_mappings:
+        - OEO:00010089
         annotations:
           category: mechanical
+          oeo_label: pumped hydro storage power plant
       COMPRESSED_AIR:
         description: Compressed air energy storage (CAES)
+        close_mappings:
+        - OEO:00000102
         annotations:
           category: mechanical
+          oeo_label: compressed air
       FLYWHEEL:
         description: Flywheel energy storage
         annotations:
@@ -580,12 +916,18 @@ enums:
           category: thermal
       HYDROGEN_STORAGE:
         description: Hydrogen storage
+        close_mappings:
+        - OEO:00000220
         annotations:
           category: chemical
+          oeo_label: hydrogen
       SYNTHETIC_FUEL:
         description: Synthetic fuel storage
+        close_mappings:
+        - OEO:00010017
         annotations:
           category: chemical
+          oeo_label: synthetic fuel
       SUPERCAPACITOR:
         description: Supercapacitor
         annotations:
@@ -603,27 +945,45 @@ enums:
     - https://github.com/anthropics/claude-code
     instantiates:
     - valuesets_meta:ValueSetEnumDefinition
+    see_also:
+    - OEO:00000147
+    - OEO:00000020
     permissible_values:
       SCOPE_1:
         description: Direct emissions from owned or controlled sources
+        related_mappings:
+        - OEO:00000199
         annotations:
           ghg_protocol: Scope 1
+          oeo_label: greenhouse gas emission
       SCOPE_2:
         description: Indirect emissions from purchased energy
+        related_mappings:
+        - OEO:00000199
         annotations:
           ghg_protocol: Scope 2
+          oeo_label: greenhouse gas emission
       SCOPE_3:
         description: All other indirect emissions in value chain
+        related_mappings:
+        - OEO:00000199
         annotations:
           ghg_protocol: Scope 3
+          oeo_label: greenhouse gas emission
       SCOPE_3_UPSTREAM:
         description: Upstream Scope 3 emissions
+        related_mappings:
+        - OEO:00000199
         annotations:
           ghg_protocol: Scope 3
+          oeo_label: greenhouse gas emission
       SCOPE_3_DOWNSTREAM:
         description: Downstream Scope 3 emissions
+        related_mappings:
+        - OEO:00000199
         annotations:
           ghg_protocol: Scope 3
+          oeo_label: greenhouse gas emission
   CarbonIntensity:
     title: Carbon Intensity
     description: Carbon intensity levels for energy sources

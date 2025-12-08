@@ -1,5 +1,5 @@
 # Auto generated from valuesets.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-11-25T10:23:04
+# Generation date: 2025-12-06T18:56:38
 # Schema: valuesets
 #
 # id: https://w3id.org/linkml/valuesets
@@ -2324,28 +2324,36 @@ class SampleType(EnumDefinitionImpl):
     """
     PROTEIN = PermissibleValue(
         text="PROTEIN",
-        description="Purified protein sample")
+        description="Purified protein sample",
+        meaning=NCIT["C17021"])
     NUCLEIC_ACID = PermissibleValue(
         text="NUCLEIC_ACID",
-        description="Nucleic acid sample (DNA or RNA)")
+        description="Nucleic acid sample (DNA or RNA)",
+        meaning=NCIT["C813"])
     PROTEIN_COMPLEX = PermissibleValue(
         text="PROTEIN_COMPLEX",
-        description="Protein-protein or protein-nucleic acid complex")
+        description="Protein-protein or protein-nucleic acid complex",
+        meaning=GO["0032991"])
     MEMBRANE_PROTEIN = PermissibleValue(
         text="MEMBRANE_PROTEIN",
-        description="Membrane-associated protein sample")
+        description="Membrane-associated protein sample",
+        meaning=NCIT["C16837"])
     VIRUS = PermissibleValue(
         text="VIRUS",
-        description="Viral particle or capsid")
+        description="Viral particle or capsid",
+        meaning=NCIT["C14283"])
     ORGANELLE = PermissibleValue(
         text="ORGANELLE",
-        description="Cellular organelle (mitochondria, chloroplast, etc.)")
+        description="Cellular organelle (mitochondria, chloroplast, etc.)",
+        meaning=GO["0043226"])
     CELL = PermissibleValue(
         text="CELL",
-        description="Whole cell sample")
+        description="Whole cell sample",
+        meaning=NCIT["C12508"])
     TISSUE = PermissibleValue(
         text="TISSUE",
-        description="Tissue sample")
+        description="Tissue sample",
+        meaning=NCIT["C12801"])
 
     _defn = EnumDefinition(
         name="SampleType",
@@ -2363,7 +2371,9 @@ class StructuralBiologyTechnique(EnumDefinitionImpl):
         meaning=CHMO["0002413"])
     CRYO_ET = PermissibleValue(
         text="CRYO_ET",
-        description="Cryo-electron tomography")
+        title="electron tomography",
+        description="Cryo-electron tomography",
+        meaning=MI["2338"])
     X_RAY_CRYSTALLOGRAPHY = PermissibleValue(
         text="X_RAY_CRYSTALLOGRAPHY",
         title="single crystal X-ray diffraction",
@@ -2371,7 +2381,9 @@ class StructuralBiologyTechnique(EnumDefinitionImpl):
         meaning=CHMO["0000159"])
     NEUTRON_CRYSTALLOGRAPHY = PermissibleValue(
         text="NEUTRON_CRYSTALLOGRAPHY",
-        description="Neutron crystallography")
+        title="neutron diffraction",
+        description="Neutron crystallography",
+        meaning=CHMO["0000175"])
     SAXS = PermissibleValue(
         text="SAXS",
         title="small-angle X-ray scattering",
@@ -2379,10 +2391,14 @@ class StructuralBiologyTechnique(EnumDefinitionImpl):
         meaning=CHMO["0000204"])
     SANS = PermissibleValue(
         text="SANS",
-        description="Small-angle neutron scattering")
+        title="small-angle neutron scattering",
+        description="Small-angle neutron scattering",
+        meaning=CHMO["0000184"])
     WAXS = PermissibleValue(
         text="WAXS",
-        description="Wide-angle X-ray scattering")
+        title="wide-angle X-ray scattering",
+        description="Wide-angle X-ray scattering",
+        meaning=CHMO["0000213"])
     NMR = PermissibleValue(
         text="NMR",
         title="nuclear magnetic resonance spectroscopy",
@@ -2394,7 +2410,9 @@ class StructuralBiologyTechnique(EnumDefinitionImpl):
         meaning=CHMO["0000470"])
     NEGATIVE_STAIN_EM = PermissibleValue(
         text="NEGATIVE_STAIN_EM",
-        description="Negative stain electron microscopy")
+        title="negative staining electron microscopy",
+        description="Negative stain electron microscopy",
+        meaning=FBBI["00000568"])
 
     _defn = EnumDefinition(
         name="StructuralBiologyTechnique",
@@ -2507,10 +2525,12 @@ class XRaySource(EnumDefinitionImpl):
     """
     SYNCHROTRON = PermissibleValue(
         text="SYNCHROTRON",
-        description="Synchrotron radiation source")
+        description="Synchrotron radiation source",
+        meaning=CHMO["0001810"])
     ROTATING_ANODE = PermissibleValue(
         text="ROTATING_ANODE",
-        description="Rotating anode generator")
+        description="Rotating anode generator",
+        meaning=CHMO["0001107"])
     MICROFOCUS = PermissibleValue(
         text="MICROFOCUS",
         description="Microfocus sealed tube")
@@ -2529,19 +2549,23 @@ class Detector(EnumDefinitionImpl):
     """
     DIRECT_ELECTRON = PermissibleValue(
         text="DIRECT_ELECTRON",
-        description="Direct electron detector (DED)")
+        description="Direct electron detector (DED)",
+        meaning=CHMO["0002837"])
     CCD = PermissibleValue(
         text="CCD",
-        description="Charge-coupled device camera")
+        description="Charge-coupled device camera",
+        meaning=CHMO["0002171"])
     CMOS = PermissibleValue(
         text="CMOS",
-        description="Complementary metal-oxide semiconductor detector")
+        description="Complementary metal-oxide semiconductor detector",
+        meaning=CHMO["0002836"])
     HYBRID_PIXEL = PermissibleValue(
         text="HYBRID_PIXEL",
         description="Hybrid pixel detector")
     PHOTOSTIMULABLE_PHOSPHOR = PermissibleValue(
         text="PHOTOSTIMULABLE_PHOSPHOR",
-        description="Photostimulable phosphor (image plate)")
+        description="Photostimulable phosphor (image plate)",
+        meaning=CHMO["0001069"])
 
     _defn = EnumDefinition(
         name="Detector",
@@ -2600,28 +2624,36 @@ class FileFormat(EnumDefinitionImpl):
     """
     MRC = PermissibleValue(
         text="MRC",
-        description="MRC format for EM density maps")
+        description="MRC format for EM density maps",
+        meaning=EDAM["3842"])
     TIFF = PermissibleValue(
         text="TIFF",
-        description="Tagged Image File Format")
+        description="Tagged Image File Format",
+        meaning=EDAM["3591"])
     HDF5 = PermissibleValue(
         text="HDF5",
-        description="Hierarchical Data Format 5")
+        description="Hierarchical Data Format 5",
+        meaning=EDAM["3590"])
     STAR = PermissibleValue(
         text="STAR",
-        description="Self-defining Text Archival and Retrieval format")
+        description="Self-defining Text Archival and Retrieval format",
+        meaning=EDAM["3906"])
     PDB = PermissibleValue(
         text="PDB",
-        description="Protein Data Bank coordinate format")
+        description="Protein Data Bank coordinate format",
+        meaning=EDAM["1476"])
     MMCIF = PermissibleValue(
         text="MMCIF",
-        description="Macromolecular Crystallographic Information File")
+        description="Macromolecular Crystallographic Information File",
+        meaning=EDAM["1477"])
     MTZ = PermissibleValue(
         text="MTZ",
-        description="MTZ reflection data format")
+        description="MTZ reflection data format",
+        meaning=EDAM["3816"])
     CBF = PermissibleValue(
         text="CBF",
-        description="Crystallographic Binary Format")
+        description="Crystallographic Binary Format",
+        meaning=EDAM["3874"])
     DM3 = PermissibleValue(
         text="DM3",
         description="Digital Micrograph format")
@@ -2729,7 +2761,8 @@ class CoordinationGeometry(EnumDefinitionImpl):
     SQUARE_PLANAR = PermissibleValue(
         text="SQUARE_PLANAR",
         title="square planar molecular geometry",
-        description="Square planar coordination geometry (4 ligands in plane)")
+        description="Square planar coordination geometry (4 ligands in plane)",
+        meaning=NCIT["C103211"])
     TRIGONAL_BIPYRAMIDAL = PermissibleValue(
         text="TRIGONAL_BIPYRAMIDAL",
         description="Trigonal bipyramidal coordination geometry (5 ligands)")
@@ -2742,7 +2775,8 @@ class CoordinationGeometry(EnumDefinitionImpl):
     OCTAHEDRAL = PermissibleValue(
         text="OCTAHEDRAL",
         title="octahedral molecular geometry",
-        description="Octahedral coordination geometry (6 ligands)")
+        description="Octahedral coordination geometry (6 ligands)",
+        meaning=NCIT["C103216"])
     TRIGONAL_PRISMATIC = PermissibleValue(
         text="TRIGONAL_PRISMATIC",
         description="Trigonal prismatic coordination geometry (6 ligands)")
@@ -2795,37 +2829,48 @@ class ProteinModificationType(EnumDefinitionImpl):
     """
     METAL_COORDINATION = PermissibleValue(
         text="METAL_COORDINATION",
-        description="Metal coordination modification")
+        description="Metal coordination modification",
+        meaning=MOD["00739"])
     PHOSPHORYLATION = PermissibleValue(
         text="PHOSPHORYLATION",
-        description="Phosphorylation modification")
+        description="Phosphorylation modification",
+        meaning=MOD["00696"])
     GLYCOSYLATION = PermissibleValue(
         text="GLYCOSYLATION",
-        description="Glycosylation modification")
+        description="Glycosylation modification",
+        meaning=MOD["00725"])
     ACETYLATION = PermissibleValue(
         text="ACETYLATION",
-        description="Acetylation modification")
+        description="Acetylation modification",
+        meaning=MOD["00394"])
     METHYLATION = PermissibleValue(
         text="METHYLATION",
-        description="Methylation modification")
+        description="Methylation modification",
+        meaning=MOD["00599"])
     UBIQUITINATION = PermissibleValue(
         text="UBIQUITINATION",
-        description="Ubiquitination modification")
+        description="Ubiquitination modification",
+        meaning=MOD["01240"])
     SUMOYLATION = PermissibleValue(
         text="SUMOYLATION",
-        description="SUMOylation modification")
+        description="SUMOylation modification",
+        meaning=MOD["01149"])
     HYDROXYLATION = PermissibleValue(
         text="HYDROXYLATION",
-        description="Hydroxylation modification")
+        description="Hydroxylation modification",
+        meaning=MOD["00677"])
     LIPIDATION = PermissibleValue(
         text="LIPIDATION",
-        description="Lipidation modification")
+        description="Lipidation modification",
+        meaning=MOD["00435"])
     PROTEOLYTIC_CLEAVAGE = PermissibleValue(
         text="PROTEOLYTIC_CLEAVAGE",
-        description="Proteolytic cleavage")
+        description="Proteolytic cleavage",
+        meaning=GO["0006508"])
     CROSSLINKING = PermissibleValue(
         text="CROSSLINKING",
-        description="Crosslinking modification")
+        description="Crosslinking modification",
+        meaning=MOD["00276"])
 
     _defn = EnumDefinition(
         name="ProteinModificationType",
@@ -6642,6 +6687,37 @@ class ElectricityMarket(EnumDefinitionImpl):
         description="Types of electricity markets and pricing",
     )
 
+class CapabilityStatus(EnumDefinitionImpl):
+    """
+    Operational status of a capability, facility, or infrastructure. Applicable to energy facilities, research
+    capabilities, and other infrastructure throughout their lifecycle.
+    """
+    OPERATIONAL = PermissibleValue(
+        text="OPERATIONAL",
+        title="Operational",
+        description="Fully operational and available to users")
+    COMING_ONLINE = PermissibleValue(
+        text="COMING_ONLINE",
+        title="Coming Online",
+        description="Being commissioned, coming online soon")
+    PILOT = PermissibleValue(
+        text="PILOT",
+        title="Pilot",
+        description="In pilot phase with limited access")
+    UNDER_DEVELOPMENT = PermissibleValue(
+        text="UNDER_DEVELOPMENT",
+        title="Under Development",
+        description="Under development, not yet available")
+    DECOMMISSIONED = PermissibleValue(
+        text="DECOMMISSIONED",
+        title="Decommissioned",
+        description="No longer available, permanently shut down")
+
+    _defn = EnumDefinition(
+        name="CapabilityStatus",
+        description="""Operational status of a capability, facility, or infrastructure. Applicable to energy facilities, research capabilities, and other infrastructure throughout their lifecycle.""",
+    )
+
 class FossilFuelTypeEnum(EnumDefinitionImpl):
     """
     Types of fossil fuels used for energy generation
@@ -8123,6 +8199,605 @@ class OperationalProcedureEnum(EnumDefinitionImpl):
     _defn = EnumDefinition(
         name="OperationalProcedureEnum",
         description="Standard nuclear facility operational procedures",
+    )
+
+class GeothermalSystemType(EnumDefinitionImpl):
+    """
+    Types of geothermal energy systems, including conventional hydrothermal and enhanced/engineered geothermal systems.
+    """
+    HYDROTHERMAL = PermissibleValue(
+        text="HYDROTHERMAL",
+        title="Conventional Hydrothermal System",
+        description="""Naturally occurring geothermal system with heat, fluid, and permeability sufficient for energy extraction without stimulation.""")
+    ENHANCED_GEOTHERMAL_SYSTEM = PermissibleValue(
+        text="ENHANCED_GEOTHERMAL_SYSTEM",
+        title="Enhanced Geothermal System (EGS)",
+        description="""Engineered reservoirs created to extract heat from low permeability geothermal resources through stimulation methods.""")
+    ADVANCED_GEOTHERMAL_SYSTEM = PermissibleValue(
+        text="ADVANCED_GEOTHERMAL_SYSTEM",
+        title="Advanced Geothermal System (AGS)",
+        description="""Closed-loop geothermal systems that circulate working fluid through wellbores to extract heat conductively without reservoir stimulation.""")
+    HOT_DRY_ROCK = PermissibleValue(
+        text="HOT_DRY_ROCK",
+        title="Hot Dry Rock (HDR)",
+        description="""Geothermal system targeting hot basement rock lacking natural fluid or permeability, requiring artificial reservoir creation.""")
+    GEOPRESSURED = PermissibleValue(
+        text="GEOPRESSURED",
+        title="Geopressured System",
+        description="""Deep sedimentary formations with abnormally high fluid pressure containing hot brine and dissolved methane.""")
+    SUPERCRITICAL = PermissibleValue(
+        text="SUPERCRITICAL",
+        title="Supercritical Geothermal System",
+        description="""Very high temperature systems (>374C) where water exists above its critical point, offering higher energy density.""")
+    GROUND_SOURCE_HEAT_PUMP = PermissibleValue(
+        text="GROUND_SOURCE_HEAT_PUMP",
+        title="Ground Source Heat Pump (GSHP)",
+        description="Shallow geothermal system using stable ground temperatures for heating and cooling buildings.")
+
+    _defn = EnumDefinition(
+        name="GeothermalSystemType",
+        description="""Types of geothermal energy systems, including conventional hydrothermal and enhanced/engineered geothermal systems.""",
+    )
+
+class GeothermalReservoirType(EnumDefinitionImpl):
+    """
+    Classification of geothermal reservoirs by geological setting and characteristics.
+    """
+    VOLCANIC = PermissibleValue(
+        text="VOLCANIC",
+        title="Volcanic Reservoir",
+        description="""Reservoir associated with volcanic activity, typically in active volcanic regions with magma heat sources.""")
+    SEDIMENTARY = PermissibleValue(
+        text="SEDIMENTARY",
+        title="Sedimentary Basin Reservoir",
+        description="""Reservoir in sedimentary formations with elevated temperatures due to depth or regional heat flow.""")
+    FRACTURED_BASEMENT = PermissibleValue(
+        text="FRACTURED_BASEMENT",
+        title="Fractured Basement Reservoir",
+        description="Reservoir in fractured crystalline basement rocks, typically granitic or metamorphic.")
+    FAULT_CONTROLLED = PermissibleValue(
+        text="FAULT_CONTROLLED",
+        title="Fault-Controlled Reservoir",
+        description="Reservoir where fluid flow is controlled by fault systems providing permeability pathways.")
+    MAGMATIC = PermissibleValue(
+        text="MAGMATIC",
+        title="Magmatic/Near-Magmatic Reservoir",
+        description="Very high temperature reservoir near or in contact with magma bodies or recent intrusions.")
+    CONDUCTION_DOMINATED = PermissibleValue(
+        text="CONDUCTION_DOMINATED",
+        title="Conduction-Dominated Reservoir",
+        description="""Low permeability reservoir where heat transfer is primarily through conduction rather than convection.""")
+
+    _defn = EnumDefinition(
+        name="GeothermalReservoirType",
+        description="Classification of geothermal reservoirs by geological setting and characteristics.",
+    )
+
+class GeothermalWellType(EnumDefinitionImpl):
+    """
+    Types of wells used in geothermal energy development and production.
+    """
+    PRODUCTION_WELL = PermissibleValue(
+        text="PRODUCTION_WELL",
+        title="Production Well",
+        description="Well used to extract geothermal fluids or steam from the reservoir.")
+    INJECTION_WELL = PermissibleValue(
+        text="INJECTION_WELL",
+        title="Injection Well",
+        description="""Well used to return cooled geothermal fluids to the reservoir to maintain pressure and sustainability.""")
+    EXPLORATION_WELL = PermissibleValue(
+        text="EXPLORATION_WELL",
+        title="Exploration Well",
+        description="Well drilled to evaluate geothermal resource characteristics.")
+    OBSERVATION_WELL = PermissibleValue(
+        text="OBSERVATION_WELL",
+        title="Observation/Monitoring Well",
+        description="Well used to monitor reservoir conditions and pressure.")
+    SLIM_HOLE = PermissibleValue(
+        text="SLIM_HOLE",
+        title="Slim Hole",
+        description="Smaller diameter well used for initial exploration and temperature gradient measurement.")
+    DIRECTIONAL_WELL = PermissibleValue(
+        text="DIRECTIONAL_WELL",
+        title="Directional/Deviated Well",
+        description="""Well drilled at an angle to access reservoir from offset surface location or increase reservoir contact.""")
+
+    _defn = EnumDefinition(
+        name="GeothermalWellType",
+        description="Types of wells used in geothermal energy development and production.",
+    )
+
+class GeothermalApplication(EnumDefinitionImpl):
+    """
+    Applications and uses of geothermal energy.
+    """
+    ELECTRICITY_GENERATION = PermissibleValue(
+        text="ELECTRICITY_GENERATION",
+        title="Electricity Generation",
+        description="""Use of geothermal resources for power generation through steam turbines or binary cycle plants.""",
+        meaning=ENVO["2000034"])
+    DIRECT_USE_HEATING = PermissibleValue(
+        text="DIRECT_USE_HEATING",
+        title="Direct Use Heating",
+        description="Direct use of geothermal heat for space heating, district heating, or industrial processes.")
+    GREENHOUSE_HEATING = PermissibleValue(
+        text="GREENHOUSE_HEATING",
+        title="Greenhouse Heating",
+        description="Use of geothermal heat for agricultural greenhouses.")
+    AQUACULTURE = PermissibleValue(
+        text="AQUACULTURE",
+        title="Aquaculture Heating",
+        description="Use of geothermal heat for fish farming and aquaculture.")
+    INDUSTRIAL_PROCESS_HEAT = PermissibleValue(
+        text="INDUSTRIAL_PROCESS_HEAT",
+        title="Industrial Process Heat",
+        description="Use of geothermal heat for industrial manufacturing processes.")
+    FOOD_PROCESSING = PermissibleValue(
+        text="FOOD_PROCESSING",
+        title="Food Processing",
+        description="Use of geothermal heat for food drying, pasteurization, and processing.")
+    BATHING_RECREATION = PermissibleValue(
+        text="BATHING_RECREATION",
+        title="Bathing and Recreation",
+        description="Use of geothermal waters for spas, pools, and recreation.")
+    LITHIUM_EXTRACTION = PermissibleValue(
+        text="LITHIUM_EXTRACTION",
+        title="Lithium Extraction",
+        description="""Extraction of lithium and other minerals from geothermal brines as a co-product of energy production.""")
+
+    _defn = EnumDefinition(
+        name="GeothermalApplication",
+        description="Applications and uses of geothermal energy.",
+    )
+
+class GeothermalResourceTemperature(EnumDefinitionImpl):
+    """
+    Classification of geothermal resources by temperature range.
+    """
+    LOW_TEMPERATURE = PermissibleValue(
+        text="LOW_TEMPERATURE",
+        title="Low Temperature Resource",
+        description="Geothermal resource below 90C, suitable for direct use applications.")
+    MODERATE_TEMPERATURE = PermissibleValue(
+        text="MODERATE_TEMPERATURE",
+        title="Moderate Temperature Resource",
+        description="Geothermal resource 90-150C, suitable for binary power generation.")
+    HIGH_TEMPERATURE = PermissibleValue(
+        text="HIGH_TEMPERATURE",
+        title="High Temperature Resource",
+        description="Geothermal resource above 150C, suitable for flash steam power generation.")
+    SUPERCRITICAL = PermissibleValue(
+        text="SUPERCRITICAL",
+        title="Supercritical Resource",
+        description="Very high temperature resource above 374C where water exists in supercritical state.")
+
+    _defn = EnumDefinition(
+        name="GeothermalResourceTemperature",
+        description="Classification of geothermal resources by temperature range.",
+    )
+
+class HydrogenType(EnumDefinitionImpl):
+    """
+    Color-coded classification of hydrogen based on production method and carbon intensity. This informal industry
+    taxonomy differentiates hydrogen by its carbon footprint and energy source.
+    """
+    GREEN_HYDROGEN = PermissibleValue(
+        text="GREEN_HYDROGEN",
+        title="Green Hydrogen",
+        description="""Hydrogen produced via electrolysis powered by renewable energy sources (solar, wind, hydro). Zero carbon emissions during production.""")
+    BLUE_HYDROGEN = PermissibleValue(
+        text="BLUE_HYDROGEN",
+        title="Blue Hydrogen",
+        description="""Hydrogen produced from natural gas via steam methane reforming (SMR) with carbon capture and storage (CCS). Low carbon intensity.""")
+    GREY_HYDROGEN = PermissibleValue(
+        text="GREY_HYDROGEN",
+        title="Grey Hydrogen",
+        description="""Hydrogen produced from natural gas via steam methane reforming without carbon capture. Most common production method currently.""")
+    BROWN_HYDROGEN = PermissibleValue(
+        text="BROWN_HYDROGEN",
+        title="Brown Hydrogen",
+        description="""Hydrogen produced from brown coal (lignite) gasification without carbon capture. High carbon intensity.""")
+    BLACK_HYDROGEN = PermissibleValue(
+        text="BLACK_HYDROGEN",
+        title="Black Hydrogen",
+        description="""Hydrogen produced from black coal (bituminous) gasification without carbon capture. High carbon intensity.""")
+    PINK_HYDROGEN = PermissibleValue(
+        text="PINK_HYDROGEN",
+        title="Pink Hydrogen",
+        description="""Hydrogen produced via electrolysis powered by nuclear energy. Zero carbon emissions during production.""")
+    TURQUOISE_HYDROGEN = PermissibleValue(
+        text="TURQUOISE_HYDROGEN",
+        title="Turquoise Hydrogen",
+        description="""Hydrogen produced via methane pyrolysis, producing solid carbon instead of CO2. Lower carbon intensity than grey hydrogen.""")
+    WHITE_HYDROGEN = PermissibleValue(
+        text="WHITE_HYDROGEN",
+        title="White Hydrogen",
+        description="""Naturally occurring geological hydrogen found in underground deposits. Zero production emissions.""")
+    YELLOW_HYDROGEN = PermissibleValue(
+        text="YELLOW_HYDROGEN",
+        title="Yellow Hydrogen",
+        description="""Hydrogen produced via electrolysis powered by solar energy specifically. A subset of green hydrogen.""")
+    ORANGE_HYDROGEN = PermissibleValue(
+        text="ORANGE_HYDROGEN",
+        title="Orange Hydrogen",
+        description="""Hydrogen produced from plastic waste gasification or pyrolysis. Emerging technology addressing both energy and waste challenges.""")
+
+    _defn = EnumDefinition(
+        name="HydrogenType",
+        description="""Color-coded classification of hydrogen based on production method and carbon intensity. This informal industry taxonomy differentiates hydrogen by its carbon footprint and energy source.""",
+    )
+
+class HydrogenProductionMethod(EnumDefinitionImpl):
+    """
+    Methods and processes for producing hydrogen.
+    """
+    STEAM_METHANE_REFORMING = PermissibleValue(
+        text="STEAM_METHANE_REFORMING",
+        title="Steam Methane Reforming (SMR)",
+        description="""High temperature steam reacts with methane to produce hydrogen, carbon monoxide, and carbon dioxide.""")
+    AUTOTHERMAL_REFORMING = PermissibleValue(
+        text="AUTOTHERMAL_REFORMING",
+        title="Autothermal Reforming (ATR)",
+        description="""Combines steam reforming and partial oxidation using oxygen and steam to produce hydrogen from hydrocarbons.""")
+    PARTIAL_OXIDATION = PermissibleValue(
+        text="PARTIAL_OXIDATION",
+        title="Partial Oxidation (POX)",
+        description="""Exothermic process reacting hydrocarbons with limited oxygen to produce hydrogen and carbon monoxide.""")
+    COAL_GASIFICATION = PermissibleValue(
+        text="COAL_GASIFICATION",
+        title="Coal Gasification",
+        description="Conversion of coal to syngas (hydrogen and carbon monoxide) using high temperature and steam.",
+        meaning=CHMO["0001501"])
+    WATER_ELECTROLYSIS = PermissibleValue(
+        text="WATER_ELECTROLYSIS",
+        title="Water Electrolysis",
+        description="""Splitting water into hydrogen and oxygen using electrical current. Can be powered by various energy sources.""")
+    ALKALINE_ELECTROLYSIS = PermissibleValue(
+        text="ALKALINE_ELECTROLYSIS",
+        title="Alkaline Electrolysis (AEL)",
+        description="""Electrolysis using alkaline solution (typically KOH) as electrolyte. Mature commercial technology.""")
+    PEM_ELECTROLYSIS = PermissibleValue(
+        text="PEM_ELECTROLYSIS",
+        title="PEM Electrolysis",
+        description="""Proton Exchange Membrane electrolysis using solid polymer electrolyte. Higher efficiency, faster response.""")
+    SOLID_OXIDE_ELECTROLYSIS = PermissibleValue(
+        text="SOLID_OXIDE_ELECTROLYSIS",
+        title="Solid Oxide Electrolysis (SOEC)",
+        description="""High temperature electrolysis using solid ceramic electrolyte. Higher efficiency when waste heat is available.""")
+    METHANE_PYROLYSIS = PermissibleValue(
+        text="METHANE_PYROLYSIS",
+        title="Methane Pyrolysis",
+        description="""Thermal decomposition of methane into hydrogen and solid carbon without oxygen. Produces no direct CO2.""")
+    BIOMASS_GASIFICATION = PermissibleValue(
+        text="BIOMASS_GASIFICATION",
+        title="Biomass Gasification",
+        description="Thermochemical conversion of biomass to hydrogen-rich syngas at high temperatures.")
+    BIOLOGICAL_PRODUCTION = PermissibleValue(
+        text="BIOLOGICAL_PRODUCTION",
+        title="Biological Hydrogen Production",
+        description="""Production of hydrogen by microorganisms through photosynthesis, fermentation, or other biological processes.""")
+    THERMOCHEMICAL_WATER_SPLITTING = PermissibleValue(
+        text="THERMOCHEMICAL_WATER_SPLITTING",
+        title="Thermochemical Water Splitting",
+        description="""Using high temperatures from concentrated solar or nuclear to drive chemical cycles that split water.""")
+    PHOTOELECTROCHEMICAL = PermissibleValue(
+        text="PHOTOELECTROCHEMICAL",
+        title="Photoelectrochemical Water Splitting",
+        description="""Direct conversion of sunlight to hydrogen using specialized semiconductor materials in contact with water.""")
+
+    _defn = EnumDefinition(
+        name="HydrogenProductionMethod",
+        description="Methods and processes for producing hydrogen.",
+    )
+
+class HydrogenStorageMethod(EnumDefinitionImpl):
+    """
+    Methods for storing hydrogen for later use or transport.
+    """
+    COMPRESSED_GAS = PermissibleValue(
+        text="COMPRESSED_GAS",
+        title="Compressed Gas Storage",
+        description="Storage of hydrogen as compressed gas at high pressure (350-700 bar) in pressure vessels.")
+    LIQUID_HYDROGEN = PermissibleValue(
+        text="LIQUID_HYDROGEN",
+        title="Liquid Hydrogen Storage",
+        description="""Storage of hydrogen in liquid form at cryogenic temperatures (-253C). Higher energy density but requires insulation.""")
+    METAL_HYDRIDE = PermissibleValue(
+        text="METAL_HYDRIDE",
+        title="Metal Hydride Storage",
+        description="""Storage of hydrogen absorbed into metal alloys forming metal hydrides. Safer but heavier than compressed gas.""")
+    CHEMICAL_HYDRIDE = PermissibleValue(
+        text="CHEMICAL_HYDRIDE",
+        title="Chemical Hydride Storage",
+        description="Storage as chemical compounds (ammonia, methanol, LOHC) that release hydrogen when processed.")
+    UNDERGROUND_STORAGE = PermissibleValue(
+        text="UNDERGROUND_STORAGE",
+        title="Underground Storage",
+        description="""Large-scale storage in salt caverns, depleted gas fields, or aquifers for grid-scale applications.""")
+    CRYO_COMPRESSED = PermissibleValue(
+        text="CRYO_COMPRESSED",
+        title="Cryo-Compressed Storage",
+        description="Hybrid approach combining cryogenic cooling with high pressure for improved density.")
+
+    _defn = EnumDefinition(
+        name="HydrogenStorageMethod",
+        description="Methods for storing hydrogen for later use or transport.",
+    )
+
+class HydrogenApplication(EnumDefinitionImpl):
+    """
+    End-use applications for hydrogen.
+    """
+    FUEL_CELL_VEHICLE = PermissibleValue(
+        text="FUEL_CELL_VEHICLE",
+        title="Fuel Cell Electric Vehicle",
+        description="Use of hydrogen in fuel cells for transportation (cars, trucks, buses).")
+    FUEL_CELL_STATIONARY = PermissibleValue(
+        text="FUEL_CELL_STATIONARY",
+        title="Stationary Fuel Cell",
+        description="Use of hydrogen in stationary fuel cells for power generation.")
+    INDUSTRIAL_FEEDSTOCK = PermissibleValue(
+        text="INDUSTRIAL_FEEDSTOCK",
+        title="Industrial Feedstock",
+        description="""Use of hydrogen as chemical feedstock for ammonia production, petroleum refining, and chemical synthesis.""",
+        meaning=CHEBI["18276"])
+    STEEL_PRODUCTION = PermissibleValue(
+        text="STEEL_PRODUCTION",
+        title="Steel Production (Direct Reduction)",
+        description="Use of hydrogen to reduce iron ore in steelmaking, replacing coal.")
+    AMMONIA_SYNTHESIS = PermissibleValue(
+        text="AMMONIA_SYNTHESIS",
+        title="Ammonia Synthesis",
+        description="Use of hydrogen with nitrogen to produce ammonia for fertilizers.")
+    METHANOL_SYNTHESIS = PermissibleValue(
+        text="METHANOL_SYNTHESIS",
+        title="Methanol Synthesis",
+        description="Use of hydrogen with CO2 to produce methanol.")
+    POWER_TO_GAS = PermissibleValue(
+        text="POWER_TO_GAS",
+        title="Power-to-Gas",
+        description="Conversion of excess renewable electricity to hydrogen for grid balancing and energy storage.")
+    BLENDING_NATURAL_GAS = PermissibleValue(
+        text="BLENDING_NATURAL_GAS",
+        title="Natural Gas Blending",
+        description="Blending hydrogen into natural gas pipelines for decarbonization of heating.")
+    SYNTHETIC_FUELS = PermissibleValue(
+        text="SYNTHETIC_FUELS",
+        title="Synthetic Fuel Production",
+        description="Use of hydrogen with captured CO2 to produce synthetic hydrocarbons (e-fuels, SAF).")
+
+    _defn = EnumDefinition(
+        name="HydrogenApplication",
+        description="End-use applications for hydrogen.",
+    )
+
+class BiomassFeedstockType(EnumDefinitionImpl):
+    """
+    Types of biomass materials used as feedstocks for bioenergy production. Includes dedicated energy crops,
+    agricultural residues, forest residues, and waste streams.
+    """
+    CORN_STOVER = PermissibleValue(
+        text="CORN_STOVER",
+        title="Corn Stover",
+        description="""Agricultural residue consisting of leaves, stalks, and cobs remaining after corn grain harvest.""")
+    WHEAT_STRAW = PermissibleValue(
+        text="WHEAT_STRAW",
+        title="Wheat Straw",
+        description="Agricultural residue remaining after wheat grain harvest.")
+    RICE_STRAW = PermissibleValue(
+        text="RICE_STRAW",
+        title="Rice Straw",
+        description="Agricultural residue remaining after rice grain harvest.")
+    SWITCHGRASS = PermissibleValue(
+        text="SWITCHGRASS",
+        title="Switchgrass",
+        description="""Perennial warm-season grass native to North America, cultivated as dedicated energy crop for cellulosic biofuel production.""")
+    MISCANTHUS = PermissibleValue(
+        text="MISCANTHUS",
+        title="Miscanthus",
+        description="High-yielding perennial grass cultivated as dedicated energy crop.")
+    ENERGY_CANE = PermissibleValue(
+        text="ENERGY_CANE",
+        title="Energy Cane",
+        description="High-fiber sugarcane varieties bred for biomass production rather than sugar content.")
+    SWEET_SORGHUM = PermissibleValue(
+        text="SWEET_SORGHUM",
+        title="Sweet Sorghum",
+        description="""Sorghum variety with high sugar content in stalks, suitable for both sugar and lignocellulosic conversion.""")
+    POPLAR = PermissibleValue(
+        text="POPLAR",
+        title="Poplar",
+        description="Fast-growing hardwood tree cultivated as short-rotation woody crop for biomass.")
+    WILLOW = PermissibleValue(
+        text="WILLOW",
+        title="Willow",
+        description="Fast-growing shrub cultivated as short-rotation woody crop.")
+    FOREST_RESIDUE = PermissibleValue(
+        text="FOREST_RESIDUE",
+        title="Forest Residue",
+        description="""Biomass from forest operations including logging residues, thinning material, and salvage timber.""")
+    WOOD_PROCESSING_RESIDUE = PermissibleValue(
+        text="WOOD_PROCESSING_RESIDUE",
+        title="Wood Processing Residue",
+        description="Byproducts from wood processing including sawdust, bark, shavings, and wood chips.")
+    MUNICIPAL_SOLID_WASTE = PermissibleValue(
+        text="MUNICIPAL_SOLID_WASTE",
+        title="Municipal Solid Waste (Organic Fraction)",
+        description="Organic portion of municipal solid waste suitable for bioenergy conversion.")
+    FOOD_WASTE = PermissibleValue(
+        text="FOOD_WASTE",
+        title="Food Waste",
+        description="Waste food from residential, commercial, and industrial sources.")
+    ANIMAL_MANURE = PermissibleValue(
+        text="ANIMAL_MANURE",
+        title="Animal Manure",
+        description="Livestock waste including cattle, swine, and poultry manure.")
+    ALGAE = PermissibleValue(
+        text="ALGAE",
+        title="Algae",
+        description="Microalgae or macroalgae cultivated for lipid or carbohydrate content for biofuel production.")
+    USED_COOKING_OIL = PermissibleValue(
+        text="USED_COOKING_OIL",
+        title="Used Cooking Oil",
+        description="Waste vegetable oils from food preparation.")
+    SOYBEAN_OIL = PermissibleValue(
+        text="SOYBEAN_OIL",
+        title="Soybean Oil",
+        description="Vegetable oil from soybean seeds, used for biodiesel.",
+        meaning=CHEBI["166975"])
+    CORN_GRAIN = PermissibleValue(
+        text="CORN_GRAIN",
+        title="Corn Grain",
+        description="Corn kernels used for starch-based ethanol production.")
+    SUGARCANE = PermissibleValue(
+        text="SUGARCANE",
+        title="Sugarcane",
+        description="Sugar-rich crop used for first-generation ethanol production.")
+
+    _defn = EnumDefinition(
+        name="BiomassFeedstockType",
+        description="""Types of biomass materials used as feedstocks for bioenergy production. Includes dedicated energy crops, agricultural residues, forest residues, and waste streams.""",
+    )
+
+class BiofuelType(EnumDefinitionImpl):
+    """
+    Types of fuels produced from biomass feedstocks.
+    """
+    ETHANOL = PermissibleValue(
+        text="ETHANOL",
+        title="Ethanol",
+        description="""Alcohol biofuel (C2H5OH) produced by fermentation of sugars or starches, or from cellulosic biomass.""",
+        meaning=CHEBI["16236"])
+    BIODIESEL = PermissibleValue(
+        text="BIODIESEL",
+        title="Biodiesel",
+        description="""Fatty acid methyl esters (FAME) produced by transesterification of vegetable oils or animal fats.""",
+        meaning=MESH["D056804"])
+    RENEWABLE_DIESEL = PermissibleValue(
+        text="RENEWABLE_DIESEL",
+        title="Renewable Diesel",
+        description="Hydrocarbon diesel produced by hydrotreating lipids. Chemically identical to petroleum diesel.")
+    SUSTAINABLE_AVIATION_FUEL = PermissibleValue(
+        text="SUSTAINABLE_AVIATION_FUEL",
+        title="Sustainable Aviation Fuel (SAF)",
+        description="Jet fuel produced from biomass or waste, meeting aviation fuel specifications.")
+    BIOGAS = PermissibleValue(
+        text="BIOGAS",
+        title="Biogas",
+        description="Gaseous mixture of methane and CO2 produced by anaerobic digestion of organic matter.")
+    BIOMETHANE = PermissibleValue(
+        text="BIOMETHANE",
+        title="Biomethane",
+        description="Purified biogas upgraded to natural gas quality (>95% methane).")
+    BIO_OIL = PermissibleValue(
+        text="BIO_OIL",
+        title="Bio-Oil",
+        description="Liquid intermediate produced by pyrolysis or hydrothermal liquefaction of biomass.")
+    SYNGAS = PermissibleValue(
+        text="SYNGAS",
+        title="Syngas (Bio-Based)",
+        description="Synthesis gas (CO + H2) produced by gasification of biomass.",
+        meaning=CHMO["0001501"])
+    BUTANOL = PermissibleValue(
+        text="BUTANOL",
+        title="Biobutanol",
+        description="Four-carbon alcohol biofuel with higher energy density than ethanol.",
+        meaning=CHEBI["28885"])
+    METHANOL = PermissibleValue(
+        text="METHANOL",
+        title="Biomethanol",
+        description="Methanol produced from biomass-derived syngas.",
+        meaning=CHEBI["17790"])
+    DIMETHYL_ETHER = PermissibleValue(
+        text="DIMETHYL_ETHER",
+        title="Bio-DME",
+        description="Dimethyl ether produced from biomass, usable as diesel substitute.",
+        meaning=CHEBI["28887"])
+
+    _defn = EnumDefinition(
+        name="BiofuelType",
+        description="Types of fuels produced from biomass feedstocks.",
+    )
+
+class BiofuelGeneration(EnumDefinitionImpl):
+    """
+    Classification of biofuels by feedstock source and technology generation.
+    """
+    FIRST_GENERATION = PermissibleValue(
+        text="FIRST_GENERATION",
+        title="First Generation Biofuel",
+        description="""Biofuels produced from food crops (sugar, starch, vegetable oils) using conventional conversion technologies.""")
+    SECOND_GENERATION = PermissibleValue(
+        text="SECOND_GENERATION",
+        title="Second Generation Biofuel",
+        description="""Biofuels produced from lignocellulosic biomass (non-food) using advanced conversion technologies.""")
+    THIRD_GENERATION = PermissibleValue(
+        text="THIRD_GENERATION",
+        title="Third Generation Biofuel",
+        description="Biofuels produced from algae or other photosynthetic microorganisms.")
+    FOURTH_GENERATION = PermissibleValue(
+        text="FOURTH_GENERATION",
+        title="Fourth Generation Biofuel",
+        description="""Biofuels from genetically engineered organisms designed for carbon capture and enhanced fuel production.""")
+
+    _defn = EnumDefinition(
+        name="BiofuelGeneration",
+        description="Classification of biofuels by feedstock source and technology generation.",
+    )
+
+class BioconversionProcess(EnumDefinitionImpl):
+    """
+    Processes for converting biomass feedstocks into biofuels and bioproducts.
+    """
+    FERMENTATION = PermissibleValue(
+        text="FERMENTATION",
+        title="Fermentation",
+        description="Biological conversion of sugars to alcohols using yeast or bacteria.")
+    ANAEROBIC_DIGESTION = PermissibleValue(
+        text="ANAEROBIC_DIGESTION",
+        title="Anaerobic Digestion",
+        description="""Biological breakdown of organic matter by microorganisms in the absence of oxygen, producing biogas.""")
+    TRANSESTERIFICATION = PermissibleValue(
+        text="TRANSESTERIFICATION",
+        title="Transesterification",
+        description="""Chemical reaction of triglycerides with alcohol to produce fatty acid esters (biodiesel) and glycerol.""")
+    HYDROTREATING = PermissibleValue(
+        text="HYDROTREATING",
+        title="Hydrotreating/Hydroprocessing",
+        description="Catalytic reaction of lipids with hydrogen to produce hydrocarbon fuels.")
+    PYROLYSIS = PermissibleValue(
+        text="PYROLYSIS",
+        title="Pyrolysis",
+        description="""Thermal decomposition of biomass in the absence of oxygen to produce bio-oil, syngas, and biochar.""")
+    GASIFICATION = PermissibleValue(
+        text="GASIFICATION",
+        title="Gasification",
+        description="""High-temperature conversion of carbonaceous materials to syngas using controlled oxygen and/or steam.""",
+        meaning=CHMO["0001501"])
+    HYDROTHERMAL_LIQUEFACTION = PermissibleValue(
+        text="HYDROTHERMAL_LIQUEFACTION",
+        title="Hydrothermal Liquefaction (HTL)",
+        description="Conversion of wet biomass to bio-crude using high temperature and pressure water.")
+    ENZYMATIC_HYDROLYSIS = PermissibleValue(
+        text="ENZYMATIC_HYDROLYSIS",
+        title="Enzymatic Hydrolysis",
+        description="Breakdown of cellulose and hemicellulose to fermentable sugars using enzymes.")
+    ACID_HYDROLYSIS = PermissibleValue(
+        text="ACID_HYDROLYSIS",
+        title="Acid Hydrolysis",
+        description="Chemical breakdown of cellulose to sugars using dilute or concentrated acid.")
+    FISCHER_TROPSCH = PermissibleValue(
+        text="FISCHER_TROPSCH",
+        title="Fischer-Tropsch Synthesis",
+        description="Catalytic conversion of syngas to liquid hydrocarbons.")
+    ALCOHOL_TO_JET = PermissibleValue(
+        text="ALCOHOL_TO_JET",
+        title="Alcohol-to-Jet (ATJ)",
+        description="""Conversion of alcohols (ethanol, isobutanol) to jet fuel through dehydration, oligomerization, and hydrogenation.""")
+
+    _defn = EnumDefinition(
+        name="BioconversionProcess",
+        description="Processes for converting biomass feedstocks into biofuels and bioproducts.",
     )
 
 class MiningType(EnumDefinitionImpl):
@@ -11942,6 +12617,88 @@ class CellPolarity(EnumDefinitionImpl):
     _defn = EnumDefinition(
         name="CellPolarity",
         description="Spatial polarity in cells and tissues",
+    )
+
+class AnatomicalOrientation(EnumDefinitionImpl):
+    """
+    Directional orientation between anatomical positions based on OME NGFF specification
+    """
+    LEFT_TO_RIGHT = PermissibleValue(
+        text="LEFT_TO_RIGHT",
+        title="Left to right orientation",
+        description="Directional orientation from left to right lateral side of an anatomical structure")
+    RIGHT_TO_LEFT = PermissibleValue(
+        text="RIGHT_TO_LEFT",
+        title="Right to left orientation",
+        description="Directional orientation from right to left lateral side of an anatomical structure")
+    ANTERIOR_TO_POSTERIOR = PermissibleValue(
+        text="ANTERIOR_TO_POSTERIOR",
+        title="Anterior to posterior orientation",
+        description="Directional orientation from front to back of an anatomical structure")
+    POSTERIOR_TO_ANTERIOR = PermissibleValue(
+        text="POSTERIOR_TO_ANTERIOR",
+        title="Posterior to anterior orientation",
+        description="Directional orientation from back to front of an anatomical structure")
+    INFERIOR_TO_SUPERIOR = PermissibleValue(
+        text="INFERIOR_TO_SUPERIOR",
+        title="Inferior to superior orientation",
+        description="Directional orientation from below to above in an anatomical structure")
+    SUPERIOR_TO_INFERIOR = PermissibleValue(
+        text="SUPERIOR_TO_INFERIOR",
+        title="Superior to inferior orientation",
+        description="Directional orientation from above to below in an anatomical structure")
+    DORSAL_TO_VENTRAL = PermissibleValue(
+        text="DORSAL_TO_VENTRAL",
+        title="Dorsal to ventral orientation",
+        description="Directional orientation from top/upper to belly/lower in an anatomical structure")
+    VENTRAL_TO_DORSAL = PermissibleValue(
+        text="VENTRAL_TO_DORSAL",
+        title="Ventral to dorsal orientation",
+        description="Directional orientation from belly/lower to top/upper in an anatomical structure")
+    DORSAL_TO_PALMAR = PermissibleValue(
+        text="DORSAL_TO_PALMAR",
+        title="Dorsal to palmar orientation",
+        description="Directional orientation from top/upper to palm of hand")
+    PALMAR_TO_DORSAL = PermissibleValue(
+        text="PALMAR_TO_DORSAL",
+        title="Palmar to dorsal orientation",
+        description="Directional orientation from palm of hand to top/upper")
+    DORSAL_TO_PLANTAR = PermissibleValue(
+        text="DORSAL_TO_PLANTAR",
+        title="Dorsal to plantar orientation",
+        description="Directional orientation from top/upper to sole of foot")
+    PLANTAR_TO_DORSAL = PermissibleValue(
+        text="PLANTAR_TO_DORSAL",
+        title="Plantar to dorsal orientation",
+        description="Directional orientation from sole of foot to top/upper")
+    ROSTRAL_TO_CAUDAL = PermissibleValue(
+        text="ROSTRAL_TO_CAUDAL",
+        title="Rostral to caudal orientation",
+        description="Directional orientation from nasal to tail end, typically for central nervous system")
+    CAUDAL_TO_ROSTRAL = PermissibleValue(
+        text="CAUDAL_TO_ROSTRAL",
+        title="Caudal to rostral orientation",
+        description="Directional orientation from tail to nasal end, typically for central nervous system")
+    CRANIAL_TO_CAUDAL = PermissibleValue(
+        text="CRANIAL_TO_CAUDAL",
+        title="Cranial to caudal orientation",
+        description="Directional orientation from head to tail end of a structure")
+    CAUDAL_TO_CRANIAL = PermissibleValue(
+        text="CAUDAL_TO_CRANIAL",
+        title="Caudal to cranial orientation",
+        description="Directional orientation from tail to head end of a structure")
+    PROXIMAL_TO_DISTAL = PermissibleValue(
+        text="PROXIMAL_TO_DISTAL",
+        title="Proximal to distal orientation",
+        description="Directional orientation from body center to periphery of a structure")
+    DISTAL_TO_PROXIMAL = PermissibleValue(
+        text="DISTAL_TO_PROXIMAL",
+        title="Distal to proximal orientation",
+        description="Directional orientation from periphery to body center of a structure")
+
+    _defn = EnumDefinition(
+        name="AnatomicalOrientation",
+        description="Directional orientation between anatomical positions based on OME NGFF specification",
     )
 
 class CrystalSystemEnum(EnumDefinitionImpl):
@@ -26627,6 +27384,9 @@ slots.carbon_intensity = Slot(uri=VALUESETS.carbon_intensity, name="carbon_inten
 slots.electricity_market = Slot(uri=VALUESETS.electricity_market, name="electricity_market", curie=VALUESETS.curie('electricity_market'),
                    model_uri=VALUESETS.electricity_market, domain=None, range=Optional[Union[str, "ElectricityMarket"]])
 
+slots.capability_status = Slot(uri=VALUESETS.capability_status, name="capability_status", curie=VALUESETS.curie('capability_status'),
+                   model_uri=VALUESETS.capability_status, domain=None, range=Optional[Union[str, "CapabilityStatus"]])
+
 slots.fossil_fuel_type = Slot(uri=VALUESETS.fossil_fuel_type, name="fossil_fuel_type", curie=VALUESETS.curie('fossil_fuel_type'),
                    model_uri=VALUESETS.fossil_fuel_type, domain=None, range=Optional[Union[str, "FossilFuelTypeEnum"]])
 
@@ -26743,6 +27503,45 @@ slots.reactor_control_mode = Slot(uri=VALUESETS.reactor_control_mode, name="reac
 
 slots.operational_procedure = Slot(uri=VALUESETS.operational_procedure, name="operational_procedure", curie=VALUESETS.curie('operational_procedure'),
                    model_uri=VALUESETS.operational_procedure, domain=None, range=Optional[Union[str, "OperationalProcedureEnum"]])
+
+slots.geothermal_system_type = Slot(uri=VALUESETS.geothermal_system_type, name="geothermal_system_type", curie=VALUESETS.curie('geothermal_system_type'),
+                   model_uri=VALUESETS.geothermal_system_type, domain=None, range=Optional[Union[str, "GeothermalSystemType"]])
+
+slots.geothermal_reservoir_type = Slot(uri=VALUESETS.geothermal_reservoir_type, name="geothermal_reservoir_type", curie=VALUESETS.curie('geothermal_reservoir_type'),
+                   model_uri=VALUESETS.geothermal_reservoir_type, domain=None, range=Optional[Union[str, "GeothermalReservoirType"]])
+
+slots.geothermal_well_type = Slot(uri=VALUESETS.geothermal_well_type, name="geothermal_well_type", curie=VALUESETS.curie('geothermal_well_type'),
+                   model_uri=VALUESETS.geothermal_well_type, domain=None, range=Optional[Union[str, "GeothermalWellType"]])
+
+slots.geothermal_application = Slot(uri=VALUESETS.geothermal_application, name="geothermal_application", curie=VALUESETS.curie('geothermal_application'),
+                   model_uri=VALUESETS.geothermal_application, domain=None, range=Optional[Union[str, "GeothermalApplication"]])
+
+slots.geothermal_resource_temperature = Slot(uri=VALUESETS.geothermal_resource_temperature, name="geothermal_resource_temperature", curie=VALUESETS.curie('geothermal_resource_temperature'),
+                   model_uri=VALUESETS.geothermal_resource_temperature, domain=None, range=Optional[Union[str, "GeothermalResourceTemperature"]])
+
+slots.hydrogen_type = Slot(uri=VALUESETS.hydrogen_type, name="hydrogen_type", curie=VALUESETS.curie('hydrogen_type'),
+                   model_uri=VALUESETS.hydrogen_type, domain=None, range=Optional[Union[str, "HydrogenType"]])
+
+slots.hydrogen_production_method = Slot(uri=VALUESETS.hydrogen_production_method, name="hydrogen_production_method", curie=VALUESETS.curie('hydrogen_production_method'),
+                   model_uri=VALUESETS.hydrogen_production_method, domain=None, range=Optional[Union[str, "HydrogenProductionMethod"]])
+
+slots.hydrogen_storage_method = Slot(uri=VALUESETS.hydrogen_storage_method, name="hydrogen_storage_method", curie=VALUESETS.curie('hydrogen_storage_method'),
+                   model_uri=VALUESETS.hydrogen_storage_method, domain=None, range=Optional[Union[str, "HydrogenStorageMethod"]])
+
+slots.hydrogen_application = Slot(uri=VALUESETS.hydrogen_application, name="hydrogen_application", curie=VALUESETS.curie('hydrogen_application'),
+                   model_uri=VALUESETS.hydrogen_application, domain=None, range=Optional[Union[str, "HydrogenApplication"]])
+
+slots.biomass_feedstock_type = Slot(uri=VALUESETS.biomass_feedstock_type, name="biomass_feedstock_type", curie=VALUESETS.curie('biomass_feedstock_type'),
+                   model_uri=VALUESETS.biomass_feedstock_type, domain=None, range=Optional[Union[str, "BiomassFeedstockType"]])
+
+slots.biofuel_type = Slot(uri=VALUESETS.biofuel_type, name="biofuel_type", curie=VALUESETS.curie('biofuel_type'),
+                   model_uri=VALUESETS.biofuel_type, domain=None, range=Optional[Union[str, "BiofuelType"]])
+
+slots.biofuel_generation = Slot(uri=VALUESETS.biofuel_generation, name="biofuel_generation", curie=VALUESETS.curie('biofuel_generation'),
+                   model_uri=VALUESETS.biofuel_generation, domain=None, range=Optional[Union[str, "BiofuelGeneration"]])
+
+slots.bioconversion_process = Slot(uri=VALUESETS.bioconversion_process, name="bioconversion_process", curie=VALUESETS.curie('bioconversion_process'),
+                   model_uri=VALUESETS.bioconversion_process, domain=None, range=Optional[Union[str, "BioconversionProcess"]])
 
 slots.mining = Slot(uri=VALUESETS.mining, name="mining", curie=VALUESETS.curie('mining'),
                    model_uri=VALUESETS.mining, domain=None, range=Optional[Union[str, "MiningType"]])
@@ -26950,6 +27749,9 @@ slots.spatial_relationship = Slot(uri=VALUESETS.spatial_relationship, name="spat
 
 slots.cell_polarity = Slot(uri=VALUESETS.cell_polarity, name="cell_polarity", curie=VALUESETS.curie('cell_polarity'),
                    model_uri=VALUESETS.cell_polarity, domain=None, range=Optional[Union[str, "CellPolarity"]])
+
+slots.anatomical_orientation = Slot(uri=VALUESETS.anatomical_orientation, name="anatomical_orientation", curie=VALUESETS.curie('anatomical_orientation'),
+                   model_uri=VALUESETS.anatomical_orientation, domain=None, range=Optional[Union[str, "AnatomicalOrientation"]])
 
 slots.crystal_system = Slot(uri=VALUESETS.crystal_system, name="crystal_system", curie=VALUESETS.curie('crystal_system'),
                    model_uri=VALUESETS.crystal_system, domain=None, range=Optional[Union[str, "CrystalSystemEnum"]])

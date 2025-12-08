@@ -9660,9 +9660,19 @@ enums:
           emission_free:
             tag: emission_free
             value: true
+          oeo_label:
+            tag: oeo_label
+            value: solar energy
+          brick_label:
+            tag: brick_label
+            value: Solar Thermal Collector
         title: Solar energy (photovoltaic and thermal)
         aliases:
         - Solar radiation
+        exact_mappings:
+        - OEO:00000384
+        related_mappings:
+        - brick:Solar_Thermal_Collector
       WIND:
         text: WIND
         annotations:
@@ -9672,9 +9682,14 @@ enums:
           emission_free:
             tag: emission_free
             value: true
+          oeo_label:
+            tag: oeo_label
+            value: wind energy
         title: Wind power
         aliases:
         - wind wave energy
+        exact_mappings:
+        - OEO:00000446
         related_mappings:
         - ENVO:2000033
         broad_mappings:
@@ -9688,9 +9703,14 @@ enums:
           emission_free:
             tag: emission_free
             value: true
+          oeo_label:
+            tag: oeo_label
+            value: hydro energy
         title: Hydroelectric power
         aliases:
         - hydroelectric dam
+        exact_mappings:
+        - OEO:00000218
         related_mappings:
         - ENVO:00000468
       GEOTHERMAL:
@@ -9703,9 +9723,14 @@ enums:
           emission_free:
             tag: emission_free
             value: true
+          oeo_label:
+            tag: oeo_label
+            value: geothermal energy
         title: Geothermal energy
         aliases:
         - geothermal energy
+        exact_mappings:
+        - OEO:00000191
         close_mappings:
         - sweet:phenEnergy/Geothermal
       BIOMASS:
@@ -9717,9 +9742,14 @@ enums:
           emission_free:
             tag: emission_free
             value: false
+          oeo_label:
+            tag: oeo_label
+            value: bioenergy
         title: Biomass and bioenergy
         aliases:
         - organic material
+        exact_mappings:
+        - OEO:00010258
         close_mappings:
         - sweet:matrBiomass/Biomass
         related_mappings:
@@ -9733,7 +9763,12 @@ enums:
           emission_free:
             tag: emission_free
             value: false
+          oeo_label:
+            tag: oeo_label
+            value: biofuel
         title: Biofuels (ethanol, biodiesel)
+        exact_mappings:
+        - OEO:00000072
         close_mappings:
         - sweet:matrEnergy/Biofuel
       TIDAL:
@@ -9745,7 +9780,13 @@ enums:
           emission_free:
             tag: emission_free
             value: true
+          oeo_label:
+            tag: oeo_label
+            value: marine tidal energy, marine wave energy
         title: Tidal and wave energy
+        close_mappings:
+        - OEO:00010100
+        - OEO:00010102
       HYDROGEN:
         text: HYDROGEN
         meaning: CHEBI:18276
@@ -9756,9 +9797,14 @@ enums:
           emission_free:
             tag: emission_free
             value: true
+          oeo_label:
+            tag: oeo_label
+            value: hydrogen
         title: Hydrogen fuel
         aliases:
         - dihydrogen
+        exact_mappings:
+        - OEO:00000220
         broad_mappings:
         - sweet:matrElement/Hydrogen
       COAL:
@@ -9774,7 +9820,12 @@ enums:
           fossil_fuel:
             tag: fossil_fuel
             value: true
+          oeo_label:
+            tag: oeo_label
+            value: coal
         title: Coal
+        exact_mappings:
+        - OEO:00000088
         close_mappings:
         - sweet:matrNaturalResource/Coal
       NATURAL_GAS:
@@ -9790,7 +9841,12 @@ enums:
           fossil_fuel:
             tag: fossil_fuel
             value: true
+          oeo_label:
+            tag: oeo_label
+            value: natural gas
         title: Natural gas
+        exact_mappings:
+        - OEO:00000292
         close_mappings:
         - sweet:matrNaturalResource/NaturalGas
       PETROLEUM:
@@ -9806,9 +9862,13 @@ enums:
           fossil_fuel:
             tag: fossil_fuel
             value: true
+          oeo_label:
+            tag: oeo_label
+            value: crude oil
         title: Petroleum/oil
         close_mappings:
         - sweet:matrNaturalResource/Petroleum
+        - OEO:00000115
       DIESEL:
         text: DIESEL
         meaning: ENVO:03510006
@@ -9822,9 +9882,14 @@ enums:
           fossil_fuel:
             tag: fossil_fuel
             value: true
+          oeo_label:
+            tag: oeo_label
+            value: diesel fuel
         title: Diesel fuel
         aliases:
         - diesel fuel
+        exact_mappings:
+        - OEO:00010242
       GASOLINE:
         text: GASOLINE
         annotations:
@@ -9837,9 +9902,14 @@ enums:
           fossil_fuel:
             tag: fossil_fuel
             value: true
+          oeo_label:
+            tag: oeo_label
+            value: gasoline fuel
         title: Gasoline/petrol
         aliases:
         - fuel oil
+        exact_mappings:
+        - OEO:00010241
         related_mappings:
         - ENVO:00002983
       PROPANE:
@@ -9867,11 +9937,16 @@ enums:
           emission_free:
             tag: emission_free
             value: true
+          oeo_label:
+            tag: oeo_label
+            value: nuclear fuel
         title: Nuclear fission
         aliases:
         - nuclear energy
         exact_mappings:
         - CHEBI:35231
+        close_mappings:
+        - OEO:00000302
         related_mappings:
         - ENVO:2000025
       NUCLEAR_FUSION:
@@ -9894,7 +9969,12 @@ enums:
           renewable:
             tag: renewable
             value: partial
+          oeo_label:
+            tag: oeo_label
+            value: supply grid
         title: Grid electricity (mixed sources)
+        close_mappings:
+        - OEO:00000200
       BATTERY_STORAGE:
         text: BATTERY_STORAGE
         description: Battery storage systems
@@ -9902,6 +9982,11 @@ enums:
           storage:
             tag: storage
             value: true
+          oeo_label:
+            tag: oeo_label
+            value: battery
+        close_mappings:
+        - OEO:00000068
   EnergyUnit:
     name: EnergyUnit
     definition_uri: https://w3id.org/valuesets/EnergyUnit
@@ -10443,6 +10528,12 @@ enums:
       MAIN_GRID:
         text: MAIN_GRID
         description: Main utility grid
+        annotations:
+          oeo_label:
+            tag: oeo_label
+            value: supply grid
+        exact_mappings:
+        - OEO:00000200
       MICROGRID:
         text: MICROGRID
         description: Microgrid
@@ -10458,12 +10549,457 @@ enums:
       VIRTUAL_POWER_PLANT:
         text: VIRTUAL_POWER_PLANT
         description: Virtual power plant
+  BatteryType:
+    name: BatteryType
+    definition_uri: https://w3id.org/valuesets/BatteryType
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Types of battery technologies for energy storage
+    title: Battery Type
+    from_schema: https://w3id.org/linkml/valuesets/energy/energy
+    exact_mappings:
+    - OEO:00000068
+    - brick:Battery
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      LITHIUM_ION:
+        text: LITHIUM_ION
+        description: Lithium-ion battery
+        annotations:
+          chemistry:
+            tag: chemistry
+            value: lithium
+        aliases:
+        - Li-ion
+        - LIB
+      LITHIUM_IRON_PHOSPHATE:
+        text: LITHIUM_IRON_PHOSPHATE
+        description: Lithium iron phosphate (LFP) battery
+        annotations:
+          chemistry:
+            tag: chemistry
+            value: lithium
+        aliases:
+        - LFP
+        - LiFePO4
+      LITHIUM_POLYMER:
+        text: LITHIUM_POLYMER
+        description: Lithium polymer battery
+        annotations:
+          chemistry:
+            tag: chemistry
+            value: lithium
+        aliases:
+        - LiPo
+      LEAD_ACID:
+        text: LEAD_ACID
+        description: Lead-acid battery
+        annotations:
+          chemistry:
+            tag: chemistry
+            value: lead
+        aliases:
+        - Pb-acid
+      NICKEL_METAL_HYDRIDE:
+        text: NICKEL_METAL_HYDRIDE
+        description: Nickel-metal hydride battery
+        annotations:
+          chemistry:
+            tag: chemistry
+            value: nickel
+        aliases:
+        - NiMH
+      NICKEL_CADMIUM:
+        text: NICKEL_CADMIUM
+        description: Nickel-cadmium battery
+        annotations:
+          chemistry:
+            tag: chemistry
+            value: nickel
+        aliases:
+        - NiCd
+      SODIUM_ION:
+        text: SODIUM_ION
+        description: Sodium-ion battery
+        annotations:
+          chemistry:
+            tag: chemistry
+            value: sodium
+        aliases:
+        - Na-ion
+      SOLID_STATE:
+        text: SOLID_STATE
+        description: Solid-state battery
+        annotations:
+          chemistry:
+            tag: chemistry
+            value: various
+      VANADIUM_REDOX_FLOW:
+        text: VANADIUM_REDOX_FLOW
+        description: Vanadium redox flow battery
+        annotations:
+          chemistry:
+            tag: chemistry
+            value: vanadium
+          type:
+            tag: type
+            value: flow
+        aliases:
+        - VRB
+        - VRFB
+      ZINC_BROMINE_FLOW:
+        text: ZINC_BROMINE_FLOW
+        description: Zinc-bromine flow battery
+        annotations:
+          chemistry:
+            tag: chemistry
+            value: zinc
+          type:
+            tag: type
+            value: flow
+        aliases:
+        - ZnBr
+      IRON_AIR:
+        text: IRON_AIR
+        description: Iron-air battery
+        annotations:
+          chemistry:
+            tag: chemistry
+            value: iron
+      ZINC_AIR:
+        text: ZINC_AIR
+        description: Zinc-air battery
+        annotations:
+          chemistry:
+            tag: chemistry
+            value: zinc
+  PVCellType:
+    name: PVCellType
+    definition_uri: https://w3id.org/valuesets/PVCellType
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Types of photovoltaic cell technologies
+    title: Photovoltaic Cell Type
+    from_schema: https://w3id.org/linkml/valuesets/energy/energy
+    see_also:
+    - OEO:00000348
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      MONOCRYSTALLINE_SILICON:
+        text: MONOCRYSTALLINE_SILICON
+        description: Monocrystalline silicon (mono-Si) cells
+        annotations:
+          material:
+            tag: material
+            value: silicon
+          efficiency_range:
+            tag: efficiency_range
+            value: 17-22%
+        aliases:
+        - mono-Si
+        - single-crystal silicon
+        related_mappings:
+        - CHEBI:27573
+      POLYCRYSTALLINE_SILICON:
+        text: POLYCRYSTALLINE_SILICON
+        description: Polycrystalline silicon (poly-Si) cells
+        annotations:
+          material:
+            tag: material
+            value: silicon
+          efficiency_range:
+            tag: efficiency_range
+            value: 15-17%
+        aliases:
+        - poly-Si
+        - multi-crystalline silicon
+        related_mappings:
+        - CHEBI:27573
+      PASSIVATED_EMITTER_REAR_CELL:
+        text: PASSIVATED_EMITTER_REAR_CELL
+        description: Passivated Emitter and Rear Cell (PERC)
+        annotations:
+          material:
+            tag: material
+            value: silicon
+          efficiency_range:
+            tag: efficiency_range
+            value: 19-22%
+        aliases:
+        - PERC
+      HETEROJUNCTION:
+        text: HETEROJUNCTION
+        description: Heterojunction (HJT) cells
+        annotations:
+          material:
+            tag: material
+            value: silicon
+          efficiency_range:
+            tag: efficiency_range
+            value: 21-24%
+        aliases:
+        - HJT
+        - HIT
+      TUNNEL_OXIDE_PASSIVATED_CONTACT:
+        text: TUNNEL_OXIDE_PASSIVATED_CONTACT
+        description: Tunnel Oxide Passivated Contact (TOPCon) cells
+        annotations:
+          material:
+            tag: material
+            value: silicon
+          efficiency_range:
+            tag: efficiency_range
+            value: 22-24%
+        aliases:
+        - TOPCon
+      INTERDIGITATED_BACK_CONTACT:
+        text: INTERDIGITATED_BACK_CONTACT
+        description: Interdigitated Back Contact (IBC) cells
+        annotations:
+          material:
+            tag: material
+            value: silicon
+          efficiency_range:
+            tag: efficiency_range
+            value: 22-24%
+        aliases:
+        - IBC
+      CADMIUM_TELLURIDE:
+        text: CADMIUM_TELLURIDE
+        description: Cadmium telluride (CdTe) thin-film cells
+        annotations:
+          material:
+            tag: material
+            value: cadmium_telluride
+          type:
+            tag: type
+            value: thin-film
+          efficiency_range:
+            tag: efficiency_range
+            value: 16-18%
+        aliases:
+        - CdTe
+        exact_mappings:
+        - CHEBI:232800
+      COPPER_INDIUM_GALLIUM_SELENIDE:
+        text: COPPER_INDIUM_GALLIUM_SELENIDE
+        description: Copper indium gallium selenide (CIGS) thin-film cells
+        annotations:
+          material:
+            tag: material
+            value: CIGS
+          type:
+            tag: type
+            value: thin-film
+          efficiency_range:
+            tag: efficiency_range
+            value: 15-20%
+        aliases:
+        - CIGS
+        - CIS
+      AMORPHOUS_SILICON:
+        text: AMORPHOUS_SILICON
+        description: Amorphous silicon (a-Si) thin-film cells
+        annotations:
+          material:
+            tag: material
+            value: silicon
+          type:
+            tag: type
+            value: thin-film
+          efficiency_range:
+            tag: efficiency_range
+            value: 6-8%
+        aliases:
+        - a-Si
+        related_mappings:
+        - CHEBI:27573
+      GALLIUM_ARSENIDE:
+        text: GALLIUM_ARSENIDE
+        description: Gallium arsenide (GaAs) cells
+        annotations:
+          material:
+            tag: material
+            value: gallium_arsenide
+          efficiency_range:
+            tag: efficiency_range
+            value: 25-30%
+          application:
+            tag: application
+            value: space, concentrator
+        aliases:
+        - GaAs
+      PEROVSKITE:
+        text: PEROVSKITE
+        description: Perovskite solar cells
+        annotations:
+          material:
+            tag: material
+            value: perovskite
+          efficiency_range:
+            tag: efficiency_range
+            value: 20-25%
+          status:
+            tag: status
+            value: emerging
+      ORGANIC:
+        text: ORGANIC
+        description: Organic photovoltaic (OPV) cells
+        annotations:
+          material:
+            tag: material
+            value: organic
+          type:
+            tag: type
+            value: thin-film
+          efficiency_range:
+            tag: efficiency_range
+            value: 10-15%
+          status:
+            tag: status
+            value: emerging
+        aliases:
+        - OPV
+      TANDEM:
+        text: TANDEM
+        description: Tandem/multi-junction cells
+        annotations:
+          efficiency_range:
+            tag: efficiency_range
+            value: 25-35%
+        aliases:
+        - multi-junction
+  PVSystemType:
+    name: PVSystemType
+    definition_uri: https://w3id.org/valuesets/PVSystemType
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Types of photovoltaic system installations
+    title: Photovoltaic System Type
+    from_schema: https://w3id.org/linkml/valuesets/energy/energy
+    exact_mappings:
+    - OEO:00000324
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      ROOFTOP_RESIDENTIAL:
+        text: ROOFTOP_RESIDENTIAL
+        description: Residential rooftop PV system
+        annotations:
+          scale:
+            tag: scale
+            value: residential
+          mounting:
+            tag: mounting
+            value: rooftop
+        broad_mappings:
+        - OEO:00000361
+      ROOFTOP_COMMERCIAL:
+        text: ROOFTOP_COMMERCIAL
+        description: Commercial/industrial rooftop PV system
+        annotations:
+          scale:
+            tag: scale
+            value: commercial
+          mounting:
+            tag: mounting
+            value: rooftop
+        broad_mappings:
+        - OEO:00000361
+      GROUND_MOUNTED:
+        text: GROUND_MOUNTED
+        description: Ground-mounted utility-scale PV system
+        annotations:
+          scale:
+            tag: scale
+            value: utility
+          mounting:
+            tag: mounting
+            value: ground
+        exact_mappings:
+        - OEO:00000165
+      FLOATING:
+        text: FLOATING
+        description: Floating PV system (floatovoltaics)
+        annotations:
+          scale:
+            tag: scale
+            value: utility
+          mounting:
+            tag: mounting
+            value: floating
+        aliases:
+        - floatovoltaics
+        - FPV
+      BUILDING_INTEGRATED:
+        text: BUILDING_INTEGRATED
+        description: Building-integrated PV (BIPV)
+        annotations:
+          mounting:
+            tag: mounting
+            value: integrated
+        aliases:
+        - BIPV
+      AGRIVOLTAICS:
+        text: AGRIVOLTAICS
+        description: Agrivoltaic system (dual-use with agriculture)
+        annotations:
+          scale:
+            tag: scale
+            value: utility
+          dual_use:
+            tag: dual_use
+            value: agriculture
+        aliases:
+        - agrophotovoltaics
+        - APV
+      CARPORT:
+        text: CARPORT
+        description: Solar carport/parking canopy
+        annotations:
+          mounting:
+            tag: mounting
+            value: canopy
+          dual_use:
+            tag: dual_use
+            value: parking
+      TRACKER_SINGLE_AXIS:
+        text: TRACKER_SINGLE_AXIS
+        description: Single-axis tracking system
+        annotations:
+          tracking:
+            tag: tracking
+            value: single_axis
+      TRACKER_DUAL_AXIS:
+        text: TRACKER_DUAL_AXIS
+        description: Dual-axis tracking system
+        annotations:
+          tracking:
+            tag: tracking
+            value: dual_axis
+      CONCENTRATING:
+        text: CONCENTRATING
+        description: Concentrating PV (CPV) system
+        annotations:
+          type:
+            tag: type
+            value: concentrating
+        aliases:
+        - CPV
   EnergyStorageType:
     name: EnergyStorageType
     definition_uri: https://w3id.org/valuesets/EnergyStorageType
     instantiates:
     - valuesets_meta:ValueSetEnumDefinition
-    description: Types of energy storage systems
+    description: Types of energy storage systems (categories)
     title: Energy Storage Type
     from_schema: https://w3id.org/linkml/valuesets/energy/energy
     contributors:
@@ -10471,41 +11007,16 @@ enums:
     - https://github.com/anthropics/claude-code
     status: DRAFT
     permissible_values:
-      LITHIUM_ION_BATTERY:
-        text: LITHIUM_ION_BATTERY
-        description: Lithium-ion battery
+      BATTERY:
+        text: BATTERY
+        description: Battery storage (see BatteryType for specific chemistries)
         annotations:
           category:
             tag: category
             value: electrochemical
-      LEAD_ACID_BATTERY:
-        text: LEAD_ACID_BATTERY
-        description: Lead-acid battery
-        annotations:
-          category:
-            tag: category
-            value: electrochemical
-      FLOW_BATTERY:
-        text: FLOW_BATTERY
-        description: Flow battery (e.g., vanadium redox)
-        annotations:
-          category:
-            tag: category
-            value: electrochemical
-      SOLID_STATE_BATTERY:
-        text: SOLID_STATE_BATTERY
-        description: Solid-state battery
-        annotations:
-          category:
-            tag: category
-            value: electrochemical
-      SODIUM_ION_BATTERY:
-        text: SODIUM_ION_BATTERY
-        description: Sodium-ion battery
-        annotations:
-          category:
-            tag: category
-            value: electrochemical
+        exact_mappings:
+        - OEO:00000068
+        - brick:Battery
       PUMPED_HYDRO:
         text: PUMPED_HYDRO
         description: Pumped hydroelectric storage
@@ -10513,6 +11024,11 @@ enums:
           category:
             tag: category
             value: mechanical
+          oeo_label:
+            tag: oeo_label
+            value: pumped hydro storage power plant
+        exact_mappings:
+        - OEO:00010089
       COMPRESSED_AIR:
         text: COMPRESSED_AIR
         description: Compressed air energy storage (CAES)
@@ -10520,6 +11036,11 @@ enums:
           category:
             tag: category
             value: mechanical
+          oeo_label:
+            tag: oeo_label
+            value: compressed air
+        close_mappings:
+        - OEO:00000102
       FLYWHEEL:
         text: FLYWHEEL
         description: Flywheel energy storage
@@ -10562,6 +11083,11 @@ enums:
           category:
             tag: category
             value: chemical
+          oeo_label:
+            tag: oeo_label
+            value: hydrogen
+        close_mappings:
+        - OEO:00000220
       SYNTHETIC_FUEL:
         text: SYNTHETIC_FUEL
         description: Synthetic fuel storage
@@ -10569,6 +11095,11 @@ enums:
           category:
             tag: category
             value: chemical
+          oeo_label:
+            tag: oeo_label
+            value: synthetic fuel
+        close_mappings:
+        - OEO:00010017
       SUPERCAPACITOR:
         text: SUPERCAPACITOR
         description: Supercapacitor
@@ -10591,6 +11122,9 @@ enums:
     description: Greenhouse gas emission scopes (GHG Protocol)
     title: Emission Scope
     from_schema: https://w3id.org/linkml/valuesets/energy/energy
+    see_also:
+    - OEO:00000147
+    - OEO:00000020
     contributors:
     - orcid:0000-0002-6601-2165
     - https://github.com/anthropics/claude-code
@@ -10603,6 +11137,11 @@ enums:
           ghg_protocol:
             tag: ghg_protocol
             value: Scope 1
+          oeo_label:
+            tag: oeo_label
+            value: greenhouse gas emission
+        related_mappings:
+        - OEO:00000199
       SCOPE_2:
         text: SCOPE_2
         description: Indirect emissions from purchased energy
@@ -10610,6 +11149,11 @@ enums:
           ghg_protocol:
             tag: ghg_protocol
             value: Scope 2
+          oeo_label:
+            tag: oeo_label
+            value: greenhouse gas emission
+        related_mappings:
+        - OEO:00000199
       SCOPE_3:
         text: SCOPE_3
         description: All other indirect emissions in value chain
@@ -10617,6 +11161,11 @@ enums:
           ghg_protocol:
             tag: ghg_protocol
             value: Scope 3
+          oeo_label:
+            tag: oeo_label
+            value: greenhouse gas emission
+        related_mappings:
+        - OEO:00000199
       SCOPE_3_UPSTREAM:
         text: SCOPE_3_UPSTREAM
         description: Upstream Scope 3 emissions
@@ -10624,6 +11173,11 @@ enums:
           ghg_protocol:
             tag: ghg_protocol
             value: Scope 3
+          oeo_label:
+            tag: oeo_label
+            value: greenhouse gas emission
+        related_mappings:
+        - OEO:00000199
       SCOPE_3_DOWNSTREAM:
         text: SCOPE_3_DOWNSTREAM
         description: Downstream Scope 3 emissions
@@ -10631,6 +11185,11 @@ enums:
           ghg_protocol:
             tag: ghg_protocol
             value: Scope 3
+          oeo_label:
+            tag: oeo_label
+            value: greenhouse gas emission
+        related_mappings:
+        - OEO:00000199
   CarbonIntensity:
     name: CarbonIntensity
     definition_uri: https://w3id.org/valuesets/CarbonIntensity
@@ -10729,6 +11288,94 @@ enums:
       POWER_PURCHASE_AGREEMENT:
         text: POWER_PURCHASE_AGREEMENT
         description: Power purchase agreement (PPA)
+  CapabilityStatus:
+    name: CapabilityStatus
+    definition_uri: https://w3id.org/valuesets/CapabilityStatus
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Operational status of a capability, facility, or infrastructure.
+      Applicable to energy facilities, research capabilities, and other infrastructure
+      throughout their lifecycle.
+    title: Capability Status
+    from_schema: https://w3id.org/linkml/valuesets/energy/energy
+    see_also:
+    - https://www.wikidata.org/wiki/Property:P5817
+    - https://www.iaea.org/topics/nuclear-power-plant-life-cycle
+    - https://schema.org/ItemAvailability
+    - https://www.iso.org/standard/83053.html
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      OPERATIONAL:
+        text: OPERATIONAL
+        description: Fully operational and available to users
+        annotations:
+          wikidata_label:
+            tag: wikidata_label
+            value: in use
+          lifecycle_phase:
+            tag: lifecycle_phase
+            value: operation
+        title: Operational
+        exact_mappings:
+        - wikidata:Q55654238
+      COMING_ONLINE:
+        text: COMING_ONLINE
+        description: Being commissioned, coming online soon
+        annotations:
+          wikidata_label:
+            tag: wikidata_label
+            value: building process
+          lifecycle_phase:
+            tag: lifecycle_phase
+            value: commissioning
+          iaea_equivalent:
+            tag: iaea_equivalent
+            value: commissioning
+        title: Coming Online
+        related_mappings:
+        - wikidata:Q811686
+      PILOT:
+        text: PILOT
+        description: In pilot phase with limited access
+        annotations:
+          availability:
+            tag: availability
+            value: limited
+          lifecycle_phase:
+            tag: lifecycle_phase
+            value: testing
+        title: Pilot
+        related_mappings:
+        - schema:LimitedAvailability
+      UNDER_DEVELOPMENT:
+        text: UNDER_DEVELOPMENT
+        description: Under development, not yet available
+        annotations:
+          wikidata_label:
+            tag: wikidata_label
+            value: proposed building or structure
+          lifecycle_phase:
+            tag: lifecycle_phase
+            value: planning/construction
+        title: Under Development
+        exact_mappings:
+        - wikidata:Q811683
+      DECOMMISSIONED:
+        text: DECOMMISSIONED
+        description: No longer available, permanently shut down
+        annotations:
+          lifecycle_phase:
+            tag: lifecycle_phase
+            value: end-of-life
+          iaea_equivalent:
+            tag: iaea_equivalent
+            value: decommissioned
+        title: Decommissioned
+        related_mappings:
+        - schema:Discontinued
   FossilFuelTypeEnum:
     name: FossilFuelTypeEnum
     definition_uri: https://w3id.org/valuesets/FossilFuelTypeEnum
@@ -56970,6 +57617,27 @@ slots:
     from_schema: https://w3id.org/linkml/valuesets/energy/energy
     slot_uri: valuesets:energy_storage
     range: EnergyStorageType
+  battery_type:
+    name: battery_type
+    definition_uri: https://w3id.org/valuesets/battery_type
+    description: Types of battery technologies
+    from_schema: https://w3id.org/linkml/valuesets/energy/energy
+    slot_uri: valuesets:battery_type
+    range: BatteryType
+  pv_cell_type:
+    name: pv_cell_type
+    definition_uri: https://w3id.org/valuesets/pv_cell_type
+    description: Types of photovoltaic cell technologies
+    from_schema: https://w3id.org/linkml/valuesets/energy/energy
+    slot_uri: valuesets:pv_cell_type
+    range: PVCellType
+  pv_system_type:
+    name: pv_system_type
+    definition_uri: https://w3id.org/valuesets/pv_system_type
+    description: Types of photovoltaic system installations
+    from_schema: https://w3id.org/linkml/valuesets/energy/energy
+    slot_uri: valuesets:pv_system_type
+    range: PVSystemType
   emission_scope:
     name: emission_scope
     definition_uri: https://w3id.org/valuesets/emission_scope
@@ -56991,6 +57659,13 @@ slots:
     from_schema: https://w3id.org/linkml/valuesets/energy/energy
     slot_uri: valuesets:electricity_market
     range: ElectricityMarket
+  capability_status:
+    name: capability_status
+    definition_uri: https://w3id.org/valuesets/capability_status
+    description: Operational status of a capability or facility
+    from_schema: https://w3id.org/linkml/valuesets/energy/energy
+    slot_uri: valuesets:capability_status
+    range: CapabilityStatus
   fossil_fuel_type:
     name: fossil_fuel_type
     definition_uri: https://w3id.org/valuesets/fossil_fuel_type
@@ -59618,7 +60293,7 @@ classes:
     class_uri: valuesets:Fake
 metamodel_version: 1.7.0
 source_file: valuesets.yaml
-source_file_date: '2025-12-04T23:15:00'
+source_file_date: '2025-12-05T22:33:14'
 source_file_size: 3002
-generation_date: '2025-12-05T14:48:54'
+generation_date: '2025-12-07T12:12:52'
 

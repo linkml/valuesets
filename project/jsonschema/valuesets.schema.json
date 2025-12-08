@@ -513,6 +513,25 @@
             "title": "BasicEmotionEnum",
             "type": "string"
         },
+        "BatteryType": {
+            "description": "Types of battery technologies for energy storage",
+            "enum": [
+                "LITHIUM_ION",
+                "LITHIUM_IRON_PHOSPHATE",
+                "LITHIUM_POLYMER",
+                "LEAD_ACID",
+                "NICKEL_METAL_HYDRIDE",
+                "NICKEL_CADMIUM",
+                "SODIUM_ION",
+                "SOLID_STATE",
+                "VANADIUM_REDOX_FLOW",
+                "ZINC_BROMINE_FLOW",
+                "IRON_AIR",
+                "ZINC_AIR"
+            ],
+            "title": "BatteryType",
+            "type": "string"
+        },
         "BeneficiationPathway": {
             "description": "Methods for mineral separation and concentration aligned with advanced ore processing initiatives (AOI-2).",
             "enum": [
@@ -2497,13 +2516,9 @@
             "type": "string"
         },
         "EnergyStorageType": {
-            "description": "Types of energy storage systems",
+            "description": "Types of energy storage systems (categories)",
             "enum": [
-                "LITHIUM_ION_BATTERY",
-                "LEAD_ACID_BATTERY",
-                "FLOW_BATTERY",
-                "SOLID_STATE_BATTERY",
-                "SODIUM_ION_BATTERY",
+                "BATTERY",
                 "PUMPED_HYDRO",
                 "COMPRESSED_AIR",
                 "FLYWHEEL",
@@ -5853,6 +5868,43 @@
                 "SEMI_SKIRTED_PLATE"
             ],
             "title": "PCRPlateTypeEnum",
+            "type": "string"
+        },
+        "PVCellType": {
+            "description": "Types of photovoltaic cell technologies",
+            "enum": [
+                "MONOCRYSTALLINE_SILICON",
+                "POLYCRYSTALLINE_SILICON",
+                "PASSIVATED_EMITTER_REAR_CELL",
+                "HETEROJUNCTION",
+                "TUNNEL_OXIDE_PASSIVATED_CONTACT",
+                "INTERDIGITATED_BACK_CONTACT",
+                "CADMIUM_TELLURIDE",
+                "COPPER_INDIUM_GALLIUM_SELENIDE",
+                "AMORPHOUS_SILICON",
+                "GALLIUM_ARSENIDE",
+                "PEROVSKITE",
+                "ORGANIC",
+                "TANDEM"
+            ],
+            "title": "PVCellType",
+            "type": "string"
+        },
+        "PVSystemType": {
+            "description": "Types of photovoltaic system installations",
+            "enum": [
+                "ROOFTOP_RESIDENTIAL",
+                "ROOFTOP_COMMERCIAL",
+                "GROUND_MOUNTED",
+                "FLOATING",
+                "BUILDING_INTEGRATED",
+                "AGRIVOLTAICS",
+                "CARPORT",
+                "TRACKER_SINGLE_AXIS",
+                "TRACKER_DUAL_AXIS",
+                "CONCENTRATING"
+            ],
+            "title": "PVSystemType",
             "type": "string"
         },
         "ParticipantIdentificationMethod": {

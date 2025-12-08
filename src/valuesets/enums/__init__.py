@@ -110,7 +110,7 @@ from .earth_science.physiographic_features import SESARPhysiographicFeature
 from .earth_science.sample_types import SESARSampleType
 
 # Energy domain
-from .energy.energy import EnergySource, EnergyUnit, PowerUnit, EnergyEfficiencyRating, BuildingEnergyStandard, GridType, EnergyStorageType, EmissionScope, CarbonIntensity, ElectricityMarket, CapabilityStatus
+from .energy.energy import EnergySource, EnergyUnit, PowerUnit, EnergyEfficiencyRating, BuildingEnergyStandard, GridType, BatteryType, PVCellType, PVSystemType, EnergyStorageType, EmissionScope, CarbonIntensity, ElectricityMarket, CapabilityStatus
 from .energy.fossil_fuels import FossilFuelTypeEnum
 from .energy.nuclear.nuclear_facilities import NuclearFacilityTypeEnum, PowerPlantStatusEnum, ResearchReactorTypeEnum, FuelCycleFacilityTypeEnum, WasteFacilityTypeEnum, NuclearShipTypeEnum
 from .energy.nuclear.nuclear_fuel_cycle import NuclearFuelCycleStageEnum, NuclearFuelFormEnum, EnrichmentProcessEnum
@@ -210,6 +210,7 @@ __all__ = [
     "BMIClassificationEnum",
     "BasicColorEnum",
     "BasicEmotionEnum",
+    "BatteryType",
     "BeneficiationPathway",
     "BenefitsCategoryEnum",
     "BinaryClassificationEnum",
@@ -504,6 +505,8 @@ __all__ = [
     "OxygenationStrategyEnum",
     "PCROperationTypeEnum",
     "PCRPlateTypeEnum",
+    "PVCellType",
+    "PVSystemType",
     "ParticipantIdentificationMethod",
     "ParticipantVitalStatusEnum",
     "PeakAnnotationSeriesLabel",
