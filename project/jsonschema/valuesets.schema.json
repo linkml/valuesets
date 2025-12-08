@@ -223,6 +223,31 @@
             "title": "AnatomicalAxis",
             "type": "string"
         },
+        "AnatomicalOrientation": {
+            "description": "Directional orientation between anatomical positions based on OME NGFF specification",
+            "enum": [
+                "LEFT_TO_RIGHT",
+                "RIGHT_TO_LEFT",
+                "ANTERIOR_TO_POSTERIOR",
+                "POSTERIOR_TO_ANTERIOR",
+                "INFERIOR_TO_SUPERIOR",
+                "SUPERIOR_TO_INFERIOR",
+                "DORSAL_TO_VENTRAL",
+                "VENTRAL_TO_DORSAL",
+                "DORSAL_TO_PALMAR",
+                "PALMAR_TO_DORSAL",
+                "DORSAL_TO_PLANTAR",
+                "PLANTAR_TO_DORSAL",
+                "ROSTRAL_TO_CAUDAL",
+                "CAUDAL_TO_ROSTRAL",
+                "CRANIAL_TO_CAUDAL",
+                "CAUDAL_TO_CRANIAL",
+                "PROXIMAL_TO_DISTAL",
+                "DISTAL_TO_PROXIMAL"
+            ],
+            "title": "AnatomicalOrientation",
+            "type": "string"
+        },
         "AnatomicalPlane": {
             "description": "Standard anatomical planes for sectioning",
             "enum": [
@@ -488,6 +513,25 @@
             "title": "BasicEmotionEnum",
             "type": "string"
         },
+        "BatteryType": {
+            "description": "Types of battery technologies for energy storage",
+            "enum": [
+                "LITHIUM_ION",
+                "LITHIUM_IRON_PHOSPHATE",
+                "LITHIUM_POLYMER",
+                "LEAD_ACID",
+                "NICKEL_METAL_HYDRIDE",
+                "NICKEL_CADMIUM",
+                "SODIUM_ION",
+                "SOLID_STATE",
+                "VANADIUM_REDOX_FLOW",
+                "ZINC_BROMINE_FLOW",
+                "IRON_AIR",
+                "ZINC_AIR"
+            ],
+            "title": "BatteryType",
+            "type": "string"
+        },
         "BeneficiationPathway": {
             "description": "Methods for mineral separation and concentration aligned with advanced ore processing initiatives (AOI-2).",
             "enum": [
@@ -526,6 +570,53 @@
                 "NEGATIVE"
             ],
             "title": "BinaryClassificationEnum",
+            "type": "string"
+        },
+        "BioconversionProcess": {
+            "description": "Processes for converting biomass feedstocks into biofuels and bioproducts.",
+            "enum": [
+                "FERMENTATION",
+                "ANAEROBIC_DIGESTION",
+                "TRANSESTERIFICATION",
+                "HYDROTREATING",
+                "PYROLYSIS",
+                "GASIFICATION",
+                "HYDROTHERMAL_LIQUEFACTION",
+                "ENZYMATIC_HYDROLYSIS",
+                "ACID_HYDROLYSIS",
+                "FISCHER_TROPSCH",
+                "ALCOHOL_TO_JET"
+            ],
+            "title": "BioconversionProcess",
+            "type": "string"
+        },
+        "BiofuelGeneration": {
+            "description": "Classification of biofuels by feedstock source and technology generation.",
+            "enum": [
+                "FIRST_GENERATION",
+                "SECOND_GENERATION",
+                "THIRD_GENERATION",
+                "FOURTH_GENERATION"
+            ],
+            "title": "BiofuelGeneration",
+            "type": "string"
+        },
+        "BiofuelType": {
+            "description": "Types of fuels produced from biomass feedstocks.",
+            "enum": [
+                "ETHANOL",
+                "BIODIESEL",
+                "RENEWABLE_DIESEL",
+                "SUSTAINABLE_AVIATION_FUEL",
+                "BIOGAS",
+                "BIOMETHANE",
+                "BIO_OIL",
+                "SYNGAS",
+                "BUTANOL",
+                "METHANOL",
+                "DIMETHYL_ETHER"
+            ],
+            "title": "BiofuelType",
             "type": "string"
         },
         "BioleachMode": {
@@ -596,6 +687,32 @@
                 "UNKNOWN_OR_NOT_REPORTED"
             ],
             "title": "BiologicalSexEnum",
+            "type": "string"
+        },
+        "BiomassFeedstockType": {
+            "description": "Types of biomass materials used as feedstocks for bioenergy production. Includes dedicated energy crops, agricultural residues, forest residues, and waste streams.",
+            "enum": [
+                "CORN_STOVER",
+                "WHEAT_STRAW",
+                "RICE_STRAW",
+                "SWITCHGRASS",
+                "MISCANTHUS",
+                "ENERGY_CANE",
+                "SWEET_SORGHUM",
+                "POPLAR",
+                "WILLOW",
+                "FOREST_RESIDUE",
+                "WOOD_PROCESSING_RESIDUE",
+                "MUNICIPAL_SOLID_WASTE",
+                "FOOD_WASTE",
+                "ANIMAL_MANURE",
+                "ALGAE",
+                "USED_COOKING_OIL",
+                "SOYBEAN_OIL",
+                "CORN_GRAIN",
+                "SUGARCANE"
+            ],
+            "title": "BiomassFeedstockType",
             "type": "string"
         },
         "BioreactorTypeEnum": {
@@ -895,6 +1012,18 @@
                 "LEVEL_5"
             ],
             "title": "CapabilityMaturityLevel",
+            "type": "string"
+        },
+        "CapabilityStatus": {
+            "description": "Operational status of a capability, facility, or infrastructure. Applicable to energy facilities, research capabilities, and other infrastructure throughout their lifecycle.",
+            "enum": [
+                "OPERATIONAL",
+                "COMING_ONLINE",
+                "PILOT",
+                "UNDER_DEVELOPMENT",
+                "DECOMMISSIONED"
+            ],
+            "title": "CapabilityStatus",
             "type": "string"
         },
         "CarbonIntensity": {
@@ -2387,13 +2516,9 @@
             "type": "string"
         },
         "EnergyStorageType": {
-            "description": "Types of energy storage systems",
+            "description": "Types of energy storage systems (categories)",
             "enum": [
-                "LITHIUM_ION_BATTERY",
-                "LEAD_ACID_BATTERY",
-                "FLOW_BATTERY",
-                "SOLID_STATE_BATTERY",
-                "SODIUM_ION_BATTERY",
+                "BATTERY",
                 "PUMPED_HYDRO",
                 "COMPRESSED_AIR",
                 "FLYWHEEL",
@@ -3307,6 +3432,72 @@
             "title": "GeologicalEra",
             "type": "string"
         },
+        "GeothermalApplication": {
+            "description": "Applications and uses of geothermal energy.",
+            "enum": [
+                "ELECTRICITY_GENERATION",
+                "DIRECT_USE_HEATING",
+                "GREENHOUSE_HEATING",
+                "AQUACULTURE",
+                "INDUSTRIAL_PROCESS_HEAT",
+                "FOOD_PROCESSING",
+                "BATHING_RECREATION",
+                "LITHIUM_EXTRACTION"
+            ],
+            "title": "GeothermalApplication",
+            "type": "string"
+        },
+        "GeothermalReservoirType": {
+            "description": "Classification of geothermal reservoirs by geological setting and characteristics.",
+            "enum": [
+                "VOLCANIC",
+                "SEDIMENTARY",
+                "FRACTURED_BASEMENT",
+                "FAULT_CONTROLLED",
+                "MAGMATIC",
+                "CONDUCTION_DOMINATED"
+            ],
+            "title": "GeothermalReservoirType",
+            "type": "string"
+        },
+        "GeothermalResourceTemperature": {
+            "description": "Classification of geothermal resources by temperature range.",
+            "enum": [
+                "LOW_TEMPERATURE",
+                "MODERATE_TEMPERATURE",
+                "HIGH_TEMPERATURE",
+                "SUPERCRITICAL"
+            ],
+            "title": "GeothermalResourceTemperature",
+            "type": "string"
+        },
+        "GeothermalSystemType": {
+            "description": "Types of geothermal energy systems, including conventional hydrothermal and enhanced/engineered geothermal systems.",
+            "enum": [
+                "HYDROTHERMAL",
+                "ENHANCED_GEOTHERMAL_SYSTEM",
+                "ADVANCED_GEOTHERMAL_SYSTEM",
+                "HOT_DRY_ROCK",
+                "GEOPRESSURED",
+                "SUPERCRITICAL",
+                "GROUND_SOURCE_HEAT_PUMP"
+            ],
+            "title": "GeothermalSystemType",
+            "type": "string"
+        },
+        "GeothermalWellType": {
+            "description": "Types of wells used in geothermal energy development and production.",
+            "enum": [
+                "PRODUCTION_WELL",
+                "INJECTION_WELL",
+                "EXPLORATION_WELL",
+                "OBSERVATION_WELL",
+                "SLIM_HOLE",
+                "DIRECTIONAL_WELL"
+            ],
+            "title": "GeothermalWellType",
+            "type": "string"
+        },
         "GridType": {
             "description": "Types of electrical grid systems",
             "enum": [
@@ -3477,6 +3668,72 @@
                 "POSTNATAL_STAGE"
             ],
             "title": "HumanDevelopmentalStage",
+            "type": "string"
+        },
+        "HydrogenApplication": {
+            "description": "End-use applications for hydrogen.",
+            "enum": [
+                "FUEL_CELL_VEHICLE",
+                "FUEL_CELL_STATIONARY",
+                "INDUSTRIAL_FEEDSTOCK",
+                "STEEL_PRODUCTION",
+                "AMMONIA_SYNTHESIS",
+                "METHANOL_SYNTHESIS",
+                "POWER_TO_GAS",
+                "BLENDING_NATURAL_GAS",
+                "SYNTHETIC_FUELS"
+            ],
+            "title": "HydrogenApplication",
+            "type": "string"
+        },
+        "HydrogenProductionMethod": {
+            "description": "Methods and processes for producing hydrogen.",
+            "enum": [
+                "STEAM_METHANE_REFORMING",
+                "AUTOTHERMAL_REFORMING",
+                "PARTIAL_OXIDATION",
+                "COAL_GASIFICATION",
+                "WATER_ELECTROLYSIS",
+                "ALKALINE_ELECTROLYSIS",
+                "PEM_ELECTROLYSIS",
+                "SOLID_OXIDE_ELECTROLYSIS",
+                "METHANE_PYROLYSIS",
+                "BIOMASS_GASIFICATION",
+                "BIOLOGICAL_PRODUCTION",
+                "THERMOCHEMICAL_WATER_SPLITTING",
+                "PHOTOELECTROCHEMICAL"
+            ],
+            "title": "HydrogenProductionMethod",
+            "type": "string"
+        },
+        "HydrogenStorageMethod": {
+            "description": "Methods for storing hydrogen for later use or transport.",
+            "enum": [
+                "COMPRESSED_GAS",
+                "LIQUID_HYDROGEN",
+                "METAL_HYDRIDE",
+                "CHEMICAL_HYDRIDE",
+                "UNDERGROUND_STORAGE",
+                "CRYO_COMPRESSED"
+            ],
+            "title": "HydrogenStorageMethod",
+            "type": "string"
+        },
+        "HydrogenType": {
+            "description": "Color-coded classification of hydrogen based on production method and carbon intensity. This informal industry taxonomy differentiates hydrogen by its carbon footprint and energy source.",
+            "enum": [
+                "GREEN_HYDROGEN",
+                "BLUE_HYDROGEN",
+                "GREY_HYDROGEN",
+                "BROWN_HYDROGEN",
+                "BLACK_HYDROGEN",
+                "PINK_HYDROGEN",
+                "TURQUOISE_HYDROGEN",
+                "WHITE_HYDROGEN",
+                "YELLOW_HYDROGEN",
+                "ORANGE_HYDROGEN"
+            ],
+            "title": "HydrogenType",
             "type": "string"
         },
         "IAEAWasteClassificationEnum": {
@@ -5611,6 +5868,43 @@
                 "SEMI_SKIRTED_PLATE"
             ],
             "title": "PCRPlateTypeEnum",
+            "type": "string"
+        },
+        "PVCellType": {
+            "description": "Types of photovoltaic cell technologies",
+            "enum": [
+                "MONOCRYSTALLINE_SILICON",
+                "POLYCRYSTALLINE_SILICON",
+                "PASSIVATED_EMITTER_REAR_CELL",
+                "HETEROJUNCTION",
+                "TUNNEL_OXIDE_PASSIVATED_CONTACT",
+                "INTERDIGITATED_BACK_CONTACT",
+                "CADMIUM_TELLURIDE",
+                "COPPER_INDIUM_GALLIUM_SELENIDE",
+                "AMORPHOUS_SILICON",
+                "GALLIUM_ARSENIDE",
+                "PEROVSKITE",
+                "ORGANIC",
+                "TANDEM"
+            ],
+            "title": "PVCellType",
+            "type": "string"
+        },
+        "PVSystemType": {
+            "description": "Types of photovoltaic system installations",
+            "enum": [
+                "ROOFTOP_RESIDENTIAL",
+                "ROOFTOP_COMMERCIAL",
+                "GROUND_MOUNTED",
+                "FLOATING",
+                "BUILDING_INTEGRATED",
+                "AGRIVOLTAICS",
+                "CARPORT",
+                "TRACKER_SINGLE_AXIS",
+                "TRACKER_DUAL_AXIS",
+                "CONCENTRATING"
+            ],
+            "title": "PVSystemType",
             "type": "string"
         },
         "ParticipantIdentificationMethod": {

@@ -1,0 +1,502 @@
+name: bioenergy
+title: Bioenergy and Biofuels Value Sets
+description: >-
+  Value sets for bioenergy feedstocks, biofuels, and conversion processes.
+  Based on DOE Bioenergy Technologies Office terminology and glossary.
+id: https://w3id.org/linkml/valuesets/energy/renewable/bioenergy
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  valuesets: https://w3id.org/valuesets/
+  CHEBI: http://purl.obolibrary.org/obo/CHEBI_
+  ENVO: http://purl.obolibrary.org/obo/ENVO_
+  AGRO: http://purl.obolibrary.org/obo/AGRO_
+  CHMO: http://purl.obolibrary.org/obo/CHMO_
+  NCIT: http://purl.obolibrary.org/obo/NCIT_
+  TO: http://purl.obolibrary.org/obo/TO_
+  MESH: http://id.nlm.nih.gov/mesh/
+  sweet: http://sweetontology.net/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+default_prefix: valuesets
+slots:
+  biomass_feedstock_type:
+    description: Type of biomass feedstock for bioenergy production
+    range: BiomassFeedstockType
+  biofuel_type:
+    description: Type of biofuel product
+    range: BiofuelType
+  biofuel_generation:
+    description: Generation classification of biofuel
+    range: BiofuelGeneration
+  bioconversion_process:
+    description: Process for converting biomass to biofuel
+    range: BioconversionProcess
+enums:
+  BiomassFeedstockType:
+    title: Biomass Feedstock Type
+    description: >-
+      Types of biomass materials used as feedstocks for bioenergy production.
+      Includes dedicated energy crops, agricultural residues, forest residues,
+      and waste streams.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    see_also:
+    - https://www.energy.gov/eere/bioenergy/feedstock-technologies
+    - https://www.energy.gov/eere/bioenergy/biomass-resources
+    permissible_values:
+      CORN_STOVER:
+        title: Corn Stover
+        description: >-
+          Agricultural residue consisting of leaves, stalks, and cobs
+          remaining after corn grain harvest.
+        aliases:
+        - Corn Residue
+        annotations:
+          category: agricultural_residue
+          lignocellulosic: true
+      WHEAT_STRAW:
+        title: Wheat Straw
+        description: Agricultural residue remaining after wheat grain harvest.
+        annotations:
+          category: agricultural_residue
+          lignocellulosic: true
+      RICE_STRAW:
+        title: Rice Straw
+        description: Agricultural residue remaining after rice grain harvest.
+        annotations:
+          category: agricultural_residue
+          lignocellulosic: true
+      SWITCHGRASS:
+        title: Switchgrass
+        description: >-
+          Perennial warm-season grass native to North America, cultivated
+          as dedicated energy crop for cellulosic biofuel production.
+        related_mappings:
+        - AGRO:00000325
+        annotations:
+          category: energy_crop
+          lignocellulosic: true
+          perennial: true
+      MISCANTHUS:
+        title: Miscanthus
+        description: >-
+          High-yielding perennial grass cultivated as dedicated energy crop.
+        aliases:
+        - Elephant Grass
+        annotations:
+          category: energy_crop
+          lignocellulosic: true
+          perennial: true
+      ENERGY_CANE:
+        title: Energy Cane
+        description: >-
+          High-fiber sugarcane varieties bred for biomass production
+          rather than sugar content.
+        annotations:
+          category: energy_crop
+          lignocellulosic: true
+      SWEET_SORGHUM:
+        title: Sweet Sorghum
+        description: >-
+          Sorghum variety with high sugar content in stalks, suitable
+          for both sugar and lignocellulosic conversion.
+        annotations:
+          category: energy_crop
+          sugar_crop: true
+      POPLAR:
+        title: Poplar
+        description: >-
+          Fast-growing hardwood tree cultivated as short-rotation
+          woody crop for biomass.
+        aliases:
+        - Hybrid Poplar
+        annotations:
+          category: woody_crop
+          lignocellulosic: true
+      WILLOW:
+        title: Willow
+        description: >-
+          Fast-growing shrub cultivated as short-rotation woody crop.
+        aliases:
+        - Shrub Willow
+        annotations:
+          category: woody_crop
+          lignocellulosic: true
+      FOREST_RESIDUE:
+        title: Forest Residue
+        description: >-
+          Biomass from forest operations including logging residues,
+          thinning material, and salvage timber.
+        aliases:
+        - Logging Residue
+        related_mappings:
+        - AGRO:00000546
+        broad_mappings:
+        - sweet:matrBiomass/Biomass
+        annotations:
+          category: forestry_residue
+          lignocellulosic: true
+      WOOD_PROCESSING_RESIDUE:
+        title: Wood Processing Residue
+        description: >-
+          Byproducts from wood processing including sawdust, bark,
+          shavings, and wood chips.
+        aliases:
+        - Mill Residue
+        annotations:
+          category: processing_residue
+          lignocellulosic: true
+      MUNICIPAL_SOLID_WASTE:
+        title: Municipal Solid Waste (Organic Fraction)
+        description: >-
+          Organic portion of municipal solid waste suitable for
+          bioenergy conversion.
+        aliases:
+        - MSW
+        related_mappings:
+        - ENVO:00002273
+        annotations:
+          category: waste
+      FOOD_WASTE:
+        title: Food Waste
+        description: Waste food from residential, commercial, and industrial sources.
+        annotations:
+          category: wet_waste
+      ANIMAL_MANURE:
+        title: Animal Manure
+        description: >-
+          Livestock waste including cattle, swine, and poultry manure.
+        related_mappings:
+        - ENVO:00003031
+        annotations:
+          category: wet_waste
+          biogas_suitable: true
+      ALGAE:
+        title: Algae
+        description: >-
+          Microalgae or macroalgae cultivated for lipid or carbohydrate
+          content for biofuel production.
+        aliases:
+        - Microalgae
+        annotations:
+          category: aquatic_biomass
+          lipid_rich: true
+      USED_COOKING_OIL:
+        title: Used Cooking Oil
+        description: Waste vegetable oils from food preparation.
+        aliases:
+        - UCO
+        - Waste Vegetable Oil
+        annotations:
+          category: waste
+          lipid_rich: true
+      SOYBEAN_OIL:
+        title: Soybean Oil
+        description: Vegetable oil from soybean seeds, used for biodiesel.
+        meaning: CHEBI:166975
+        annotations:
+          category: oil_crop
+          lipid_rich: true
+      CORN_GRAIN:
+        title: Corn Grain
+        description: Corn kernels used for starch-based ethanol production.
+        annotations:
+          category: grain
+          starch_crop: true
+      SUGARCANE:
+        title: Sugarcane
+        description: Sugar-rich crop used for first-generation ethanol production.
+        annotations:
+          category: sugar_crop
+  BiofuelType:
+    title: Biofuel Type
+    description: Types of fuels produced from biomass feedstocks.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    see_also:
+    - https://www.energy.gov/eere/bioenergy/full-text-glossary
+    permissible_values:
+      ETHANOL:
+        title: Ethanol
+        description: >-
+          Alcohol biofuel (C2H5OH) produced by fermentation of sugars
+          or starches, or from cellulosic biomass.
+        meaning: CHEBI:16236
+        aliases:
+        - Fuel Ethanol
+        - Bioethanol
+        close_mappings:
+        - sweet:matrEnergy/Ethanol
+        annotations:
+          chemical_formula: C2H5OH
+      BIODIESEL:
+        title: Biodiesel
+        description: >-
+          Fatty acid methyl esters (FAME) produced by transesterification
+          of vegetable oils or animal fats.
+        meaning: MESH:D056804
+        aliases:
+        - FAME
+        close_mappings:
+        - sweet:matrEnergy/Biodiesel
+        annotations:
+          production_method: transesterification
+      RENEWABLE_DIESEL:
+        title: Renewable Diesel
+        description: >-
+          Hydrocarbon diesel produced by hydrotreating lipids. Chemically
+          identical to petroleum diesel.
+        aliases:
+        - Green Diesel
+        - HVO
+        - Hydrotreated Vegetable Oil
+        annotations:
+          drop_in_fuel: true
+      SUSTAINABLE_AVIATION_FUEL:
+        title: Sustainable Aviation Fuel (SAF)
+        description: >-
+          Jet fuel produced from biomass or waste, meeting aviation
+          fuel specifications.
+        aliases:
+        - SAF
+        - Biojet
+        annotations:
+          drop_in_fuel: true
+      BIOGAS:
+        title: Biogas
+        description: >-
+          Gaseous mixture of methane and CO2 produced by anaerobic
+          digestion of organic matter.
+        aliases:
+        - Raw Biogas
+        annotations:
+          methane_content_percent: 50-70
+      BIOMETHANE:
+        title: Biomethane
+        description: >-
+          Purified biogas upgraded to natural gas quality (>95% methane).
+        aliases:
+        - Renewable Natural Gas
+        - RNG
+        broad_mappings:
+        - sweet:matrOrganicCompound/Methane
+        annotations:
+          methane_content_percent: 95+
+          pipeline_quality: true
+      BIO_OIL:
+        title: Bio-Oil
+        description: >-
+          Liquid intermediate produced by pyrolysis or hydrothermal
+          liquefaction of biomass.
+        aliases:
+        - Pyrolysis Oil
+        annotations:
+          intermediate: true
+      SYNGAS:
+        title: Syngas (Bio-Based)
+        description: >-
+          Synthesis gas (CO + H2) produced by gasification of biomass.
+        meaning: CHMO:0001501
+        aliases:
+        - Synthesis Gas
+        close_mappings:
+        - sweet:matrEnergy/Syngas
+        annotations:
+          intermediate: true
+      BUTANOL:
+        title: Biobutanol
+        description: >-
+          Four-carbon alcohol biofuel with higher energy density than ethanol.
+        meaning: CHEBI:28885
+        annotations:
+          chemical_formula: C4H9OH
+      METHANOL:
+        title: Biomethanol
+        description: >-
+          Methanol produced from biomass-derived syngas.
+        meaning: CHEBI:17790
+        annotations:
+          chemical_formula: CH3OH
+      DIMETHYL_ETHER:
+        title: Bio-DME
+        description: >-
+          Dimethyl ether produced from biomass, usable as diesel substitute.
+        aliases:
+        - DME
+        meaning: CHEBI:28887
+  BiofuelGeneration:
+    title: Biofuel Generation
+    description: >-
+      Classification of biofuels by feedstock source and technology generation.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      FIRST_GENERATION:
+        title: First Generation Biofuel
+        description: >-
+          Biofuels produced from food crops (sugar, starch, vegetable oils)
+          using conventional conversion technologies.
+        aliases:
+        - 1G Biofuel
+        - Conventional Biofuel
+        annotations:
+          feedstock: food_crops
+          examples: corn_ethanol,soy_biodiesel
+      SECOND_GENERATION:
+        title: Second Generation Biofuel
+        description: >-
+          Biofuels produced from lignocellulosic biomass (non-food)
+          using advanced conversion technologies.
+        aliases:
+        - 2G Biofuel
+        - Cellulosic Biofuel
+        - Advanced Biofuel
+        annotations:
+          feedstock: lignocellulosic
+          examples: cellulosic_ethanol,wood_diesel
+      THIRD_GENERATION:
+        title: Third Generation Biofuel
+        description: >-
+          Biofuels produced from algae or other photosynthetic microorganisms.
+        aliases:
+        - 3G Biofuel
+        - Algal Biofuel
+        annotations:
+          feedstock: algae
+      FOURTH_GENERATION:
+        title: Fourth Generation Biofuel
+        description: >-
+          Biofuels from genetically engineered organisms designed for
+          carbon capture and enhanced fuel production.
+        aliases:
+        - 4G Biofuel
+        annotations:
+          feedstock: engineered_organisms
+          carbon_negative: true
+  BioconversionProcess:
+    title: Bioconversion Process
+    description: >-
+      Processes for converting biomass feedstocks into biofuels
+      and bioproducts.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      FERMENTATION:
+        title: Fermentation
+        description: >-
+          Biological conversion of sugars to alcohols using yeast
+          or bacteria.
+        annotations:
+          category: biochemical
+          products: ethanol,butanol
+      ANAEROBIC_DIGESTION:
+        title: Anaerobic Digestion
+        description: >-
+          Biological breakdown of organic matter by microorganisms
+          in the absence of oxygen, producing biogas.
+        annotations:
+          category: biochemical
+          products: biogas
+      TRANSESTERIFICATION:
+        title: Transesterification
+        description: >-
+          Chemical reaction of triglycerides with alcohol to produce
+          fatty acid esters (biodiesel) and glycerol.
+        annotations:
+          category: chemical
+          products: biodiesel
+      HYDROTREATING:
+        title: Hydrotreating/Hydroprocessing
+        description: >-
+          Catalytic reaction of lipids with hydrogen to produce
+          hydrocarbon fuels.
+        aliases:
+        - Hydroprocessing
+        annotations:
+          category: thermochemical
+          products: renewable_diesel,SAF
+      PYROLYSIS:
+        title: Pyrolysis
+        description: >-
+          Thermal decomposition of biomass in the absence of oxygen
+          to produce bio-oil, syngas, and biochar.
+        annotations:
+          category: thermochemical
+          temperature_c: 400-600
+          products: bio_oil,syngas,biochar
+      GASIFICATION:
+        title: Gasification
+        description: >-
+          High-temperature conversion of carbonaceous materials to
+          syngas using controlled oxygen and/or steam.
+        meaning: CHMO:0001501
+        annotations:
+          category: thermochemical
+          temperature_c: 700-1500
+          products: syngas
+      HYDROTHERMAL_LIQUEFACTION:
+        title: Hydrothermal Liquefaction (HTL)
+        description: >-
+          Conversion of wet biomass to bio-crude using high temperature
+          and pressure water.
+        aliases:
+        - HTL
+        annotations:
+          category: thermochemical
+          temperature_c: 250-400
+          pressure_bar: 100-200
+          wet_feedstock: true
+      ENZYMATIC_HYDROLYSIS:
+        title: Enzymatic Hydrolysis
+        description: >-
+          Breakdown of cellulose and hemicellulose to fermentable
+          sugars using enzymes.
+        annotations:
+          category: biochemical
+          pretreatment_step: true
+      ACID_HYDROLYSIS:
+        title: Acid Hydrolysis
+        description: >-
+          Chemical breakdown of cellulose to sugars using dilute
+          or concentrated acid.
+        annotations:
+          category: chemical
+          pretreatment_step: true
+      FISCHER_TROPSCH:
+        title: Fischer-Tropsch Synthesis
+        description: >-
+          Catalytic conversion of syngas to liquid hydrocarbons.
+        aliases:
+        - FT Synthesis
+        annotations:
+          category: thermochemical
+          feedstock: syngas
+          products: FT_diesel,FT_jet
+      ALCOHOL_TO_JET:
+        title: Alcohol-to-Jet (ATJ)
+        description: >-
+          Conversion of alcohols (ethanol, isobutanol) to jet fuel
+          through dehydration, oligomerization, and hydrogenation.
+        aliases:
+        - ATJ
+        annotations:
+          category: chemical
+          products: SAF

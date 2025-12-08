@@ -188,8 +188,8 @@ class TestMultipleEnumTypes:
         """Test structural biology specific enums"""
         protein = SampleType.PROTEIN
         assert protein.get_description() == "Purified protein sample"
-        # SampleType.PROTEIN doesn't have a meaning in metadata
-        assert protein.get_meaning() is None
+        # SampleType.PROTEIN has NCIT mapping
+        assert protein.get_meaning() == "NCIT:C17021"
 
         cryo_em = StructuralBiologyTechnique.CRYO_EM
         annotations = cryo_em.get_annotations()

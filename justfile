@@ -368,6 +368,12 @@ uniprot-stats:
     echo "Current YAML: [not found]"; \
   fi
 
+# Generate CSV report of all enums with mapping statistics
+[group('reports')]
+enum-report:
+  uv run python scripts/generate_enum_report.py
+  @echo "Report saved to enum_report.csv"
+
 # ============== Include project-specific recipes ==============
 
 import "python.justfile"

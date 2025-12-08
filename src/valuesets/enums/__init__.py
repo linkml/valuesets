@@ -110,7 +110,7 @@ from .earth_science.physiographic_features import SESARPhysiographicFeature
 from .earth_science.sample_types import SESARSampleType
 
 # Energy domain
-from .energy.energy import EnergySource, EnergyUnit, PowerUnit, EnergyEfficiencyRating, BuildingEnergyStandard, GridType, EnergyStorageType, EmissionScope, CarbonIntensity, ElectricityMarket
+from .energy.energy import EnergySource, EnergyUnit, PowerUnit, EnergyEfficiencyRating, BuildingEnergyStandard, GridType, BatteryType, PVCellType, PVSystemType, EnergyStorageType, EmissionScope, CarbonIntensity, ElectricityMarket, CapabilityStatus
 from .energy.fossil_fuels import FossilFuelTypeEnum
 from .energy.nuclear.nuclear_facilities import NuclearFacilityTypeEnum, PowerPlantStatusEnum, ResearchReactorTypeEnum, FuelCycleFacilityTypeEnum, WasteFacilityTypeEnum, NuclearShipTypeEnum
 from .energy.nuclear.nuclear_fuel_cycle import NuclearFuelCycleStageEnum, NuclearFuelFormEnum, EnrichmentProcessEnum
@@ -120,6 +120,9 @@ from .energy.nuclear.nuclear_regulatory import NuclearRegulatoryBodyEnum, Regula
 from .energy.nuclear.nuclear_safety import INESLevelEnum, EmergencyClassificationEnum, NuclearSecurityCategoryEnum, SafetySystemClassEnum, ReactorSafetyFunctionEnum, DefenseInDepthLevelEnum, RadiationProtectionZoneEnum
 from .energy.nuclear.nuclear_waste import IAEAWasteClassificationEnum, NRCWasteClassEnum, WasteHeatGenerationEnum, WasteHalfLifeCategoryEnum, WasteDisposalMethodEnum, WasteSourceEnum, TransuranicWasteCategoryEnum
 from .energy.nuclear.reactor_types import ReactorTypeEnum, ReactorGenerationEnum, ReactorCoolantEnum, ReactorModeratorEnum, ReactorNeutronSpectrumEnum, ReactorSizeCategoryEnum
+from .energy.renewable.bioenergy import BiomassFeedstockType, BiofuelType, BiofuelGeneration, BioconversionProcess
+from .energy.renewable.geothermal import GeothermalSystemType, GeothermalReservoirType, GeothermalWellType, GeothermalApplication, GeothermalResourceTemperature
+from .energy.renewable.hydrogen import HydrogenType, HydrogenProductionMethod, HydrogenStorageMethod, HydrogenApplication
 
 # Environmental_Health domain
 from .environmental_health.exposures import AirPollutantEnum, PesticideTypeEnum, HeavyMetalEnum, ExposureRouteEnum, ExposureSourceEnum, WaterContaminantEnum, EndocrineDisruptorEnum, ExposureDurationEnum, SmokingStatusEnum, ExposureStressorTypeEnum, ExposureTransportPathEnum, ExposureFrequencyEnum, StudyPopulationEnum
@@ -163,7 +166,7 @@ from .physics.states_of_matter import StateOfMatterEnum
 from .social.person_status import PersonStatusEnum
 
 # Spatial domain
-from .spatial.spatial_qualifiers import SimpleSpatialDirection, AnatomicalSide, AnatomicalRegion, AnatomicalAxis, AnatomicalPlane, SpatialRelationship, CellPolarity
+from .spatial.spatial_qualifiers import SimpleSpatialDirection, AnatomicalSide, AnatomicalRegion, AnatomicalAxis, AnatomicalPlane, SpatialRelationship, CellPolarity, AnatomicalOrientation
 
 # Statistics domain
 from .statistics.prediction_outcomes import OutcomeTypeEnum
@@ -190,6 +193,7 @@ __all__ = [
     "AminoAcidExtendedEnum",
     "AnalyticalControlType",
     "AnatomicalAxis",
+    "AnatomicalOrientation",
     "AnatomicalPlane",
     "AnatomicalRegion",
     "AnatomicalSide",
@@ -206,14 +210,19 @@ __all__ = [
     "BMIClassificationEnum",
     "BasicColorEnum",
     "BasicEmotionEnum",
+    "BatteryType",
     "BeneficiationPathway",
     "BenefitsCategoryEnum",
     "BinaryClassificationEnum",
+    "BioconversionProcess",
+    "BiofuelGeneration",
+    "BiofuelType",
     "BioleachMode",
     "BioleachOrganism",
     "BiologicalKingdom",
     "BiologicalRole",
     "BiologicalSexEnum",
+    "BiomassFeedstockType",
     "BioreactorTypeEnum",
     "BiosafetyLevelEnum",
     "BioticInteractionType",
@@ -231,6 +240,7 @@ __all__ = [
     "CIOConfidenceLevel",
     "CanadianProvinceCodeEnum",
     "CapabilityMaturityLevel",
+    "CapabilityStatus",
     "CarbonIntensity",
     "CaseOrControlEnum",
     "CatalystTypeEnum",
@@ -364,6 +374,11 @@ __all__ = [
     "GeneticRelationship",
     "GenomeFeatureType",
     "GeologicalEra",
+    "GeothermalApplication",
+    "GeothermalReservoirType",
+    "GeothermalResourceTemperature",
+    "GeothermalSystemType",
+    "GeothermalWellType",
     "GridType",
     "HRFunctionEnum",
     "HairColorEnum",
@@ -374,6 +389,10 @@ __all__ = [
     "HistoricalPeriod",
     "HousingStatus",
     "HumanDevelopmentalStage",
+    "HydrogenApplication",
+    "HydrogenProductionMethod",
+    "HydrogenStorageMethod",
+    "HydrogenType",
     "IAEAWasteClassificationEnum",
     "INESLevelEnum",
     "IPCCConfidenceLevel",
@@ -486,6 +505,8 @@ __all__ = [
     "OxygenationStrategyEnum",
     "PCROperationTypeEnum",
     "PCRPlateTypeEnum",
+    "PVCellType",
+    "PVSystemType",
     "ParticipantIdentificationMethod",
     "ParticipantVitalStatusEnum",
     "PeakAnnotationSeriesLabel",
