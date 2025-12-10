@@ -163,7 +163,7 @@ enums:
         annotations:
           health_impacts: injuries, hypothermia, carbon monoxide poisoning
       SEVERE_THUNDERSTORM:
-        title: convective storm
+        title: Severe thunderstorm
         description: >-
           Thunderstorm producing hail >= 1 inch, wind gusts >= 58 mph, or a
           tornado. Source of lightning, flash flooding, and wind damage.
