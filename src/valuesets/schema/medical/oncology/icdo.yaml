@@ -392,6 +392,7 @@ enums:
       CHRONIC_MYELOID_LEUKEMIA:
         title: Chronic myeloid leukemia
         description: Chronic leukemia characterized by BCR-ABL1 fusion gene.
+        meaning: NCIT:C3174
         annotations:
           icdo_code: 9875
         is_a: LEUKEMIA_NOS
