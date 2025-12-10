@@ -1,0 +1,649 @@
+name: gb_edoh
+title: Geospatial-Based Environmental Determinants of Health Value Sets
+description: >-
+  Value sets supporting the NIH/NIEHS Health and Extreme Weather (HEW) Data Accelerator
+  program for standardizing geospatial-based environmental determinants of health
+  (GB-EDoH) data and metadata. These value sets support OMOP integration and
+  environmental epidemiology studies.
+id: https://w3id.org/linkml/valuesets/environmental_health/gb_edoh
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  valuesets: https://w3id.org/valuesets/
+  ENVO: http://purl.obolibrary.org/obo/ENVO_
+  NCIT: http://purl.obolibrary.org/obo/NCIT_
+  CHEBI: http://purl.obolibrary.org/obo/CHEBI_
+  ExO: http://purl.obolibrary.org/obo/ExO_
+  ECTO: http://purl.obolibrary.org/obo/ECTO_
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+default_prefix: valuesets
+slots:
+  extreme_weather_event:
+    description: Type of extreme weather event
+    range: ExtremeWeatherEventEnum
+  exposure_agent_category:
+    description: Category of environmental exposure agent
+    range: ExposureAgentCategoryEnum
+  temporal_aggregation:
+    description: Method used to aggregate exposure data over time
+    range: TemporalAggregationEnum
+  spatial_resolution:
+    description: Spatial resolution or geographic unit of exposure estimate
+    range: SpatialResolutionEnum
+enums:
+  ExtremeWeatherEventEnum:
+    title: Extreme Weather Event
+    description: >-
+      Types of extreme weather events relevant to health outcomes and environmental
+      epidemiology. Used for characterizing weather-related health impacts in the
+      NIH Health and Extreme Weather (HEW) program.
+    status: STANDARD
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    annotations:
+      program: NIH HEW Data Accelerator
+      use_case: GB-EDoH classification
+    permissible_values:
+      HEAT_WAVE:
+        title: Heat wave
+        description: >-
+          Prolonged period of excessively hot weather relative to the expected
+          conditions for a given area. Associated with increased mortality, heat
+          stroke, and cardiovascular events.
+        annotations:
+          health_impacts: heat stroke, cardiovascular events, mortality
+          nws_threshold: 2+ days of heat index >= 105F
+      COLD_WAVE:
+        title: Cold wave
+        description: >-
+          Prolonged period of excessively cold weather relative to the expected
+          conditions for a given area. Associated with hypothermia and cardiovascular
+          events.
+        annotations:
+          health_impacts: hypothermia, cardiovascular events, frostbite
+      WILDFIRE:
+        title: wildfire
+        description: >-
+          Uncontrolled fire in vegetated areas producing smoke containing particulate
+          matter and hazardous air pollutants. Major source of PM2.5 exposure.
+        meaning: ENVO:01000787
+        annotations:
+          health_impacts: respiratory illness, cardiovascular events, mental health
+          exposure_agent: PM2.5, CO, VOCs
+      FOREST_FIRE:
+        title: forest fire
+        description: >-
+          Wildfire occurring primarily in forested areas, producing dense smoke
+          plumes that can travel long distances.
+        meaning: ENVO:01000791
+        is_a: WILDFIRE
+      TROPICAL_STORM:
+        title: tropical storm
+        description: >-
+          Atmospheric storm originating over tropical waters with organized
+          circulation and sustained winds 39-73 mph. Precursor to hurricanes.
+        meaning: ENVO:01001296
+        annotations:
+          health_impacts: injuries, drowning, displacement, mental health
+      HURRICANE:
+        title: Hurricane/Typhoon/Cyclone
+        description: >-
+          Intense tropical cyclone with sustained winds of 74 mph or greater.
+          Called hurricane (Atlantic/E. Pacific), typhoon (W. Pacific), or cyclone
+          (Indian Ocean).
+        annotations:
+          saffir_simpson: Category 1-5
+          health_impacts: traumatic injuries, drowning, displacement, infectious disease
+          related: ENVO:01001297
+      TORNADO:
+        title: tornado
+        description: >-
+          Violently rotating column of air extending from a thunderstorm to the
+          ground. Characterized by extreme winds and path of destruction.
+        meaning: ENVO:01001482
+        annotations:
+          ef_scale: EF0-EF5
+          health_impacts: traumatic injuries, death, mental health
+      FLOOD:
+        title: flood
+        description: >-
+          Unusual accumulation of water above ground caused by high tide, heavy
+          rain, melting snow, or dam failure.
+        meaning: ENVO:01000710
+        annotations:
+          health_impacts: drowning, waterborne disease, injuries, displacement
+      RIVERINE_FLOOD:
+        title: riverine flood
+        description: >-
+          Flood occurring when river flow exceeds channel capacity, typically
+          developing over hours to days.
+        meaning: ENVO:01000712
+        is_a: FLOOD
+      COASTAL_FLOOD:
+        title: coastal flood
+        description: >-
+          Flood caused by storm surge, high tides, or sea level rise affecting
+          coastal areas.
+        meaning: ENVO:01000711
+        is_a: FLOOD
+      FLASH_FLOOD:
+        title: flash flood
+        description: >-
+          Rapid flooding of low-lying areas within 6 hours of heavy rainfall or
+          dam failure. Particularly dangerous due to sudden onset.
+        meaning: ENVO:01000713
+        is_a: FLOOD
+      DROUGHT:
+        title: drought
+        description: >-
+          Extended period of deficient precipitation resulting in water shortage.
+          Affects water quality, food security, and mental health.
+        meaning: ENVO:1000745
+        annotations:
+          health_impacts: water quality, food insecurity, mental health
+          indices: PDSI, SPI, USDM
+      BLIZZARD:
+        title: blizzard
+        description: >-
+          Severe snowstorm with sustained winds >= 35 mph and reduced visibility
+          for 3+ hours. Creates dangerous travel conditions and cold exposure risk.
+        meaning: ENVO:01000903
+        annotations:
+          health_impacts: hypothermia, injuries, carbon monoxide poisoning
+      WINTER_STORM:
+        title: Winter storm
+        description: >-
+          Storm producing significant snow, ice, or sleet. Includes ice storms,
+          nor'easters, and lake-effect snow events.
+        annotations:
+          health_impacts: injuries, hypothermia, carbon monoxide poisoning
+      SEVERE_THUNDERSTORM:
+        title: convective storm
+        description: >-
+          Thunderstorm producing hail >= 1 inch, wind gusts >= 58 mph, or a
+          tornado. Source of lightning, flash flooding, and wind damage.
+        meaning: ENVO:01001294
+        annotations:
+          health_impacts: lightning injuries, wind injuries, flash flooding
+      DUST_STORM:
+        title: Dust storm
+        description: >-
+          Meteorological event with strong winds lifting large amounts of sand
+          and dust into the atmosphere. Reduces visibility and air quality.
+        annotations:
+          health_impacts: respiratory illness, traffic accidents
+          related: haboob, sandstorm
+      EXTREME_PRECIPITATION:
+        title: Extreme precipitation
+        description: >-
+          Precipitation event exceeding historical norms for intensity or duration.
+          Often precedes flooding events.
+        annotations:
+          health_impacts: flooding, infrastructure damage
+      STORM_SURGE:
+        title: storm surge
+        description: >-
+          Abnormal rise in sea level during a storm, caused by wind pushing water
+          toward shore. Major cause of hurricane-related deaths.
+        meaning: ENVO:01000714
+        annotations:
+          health_impacts: drowning, injuries
+      LANDSLIDE:
+        title: Landslide
+        description: >-
+          Mass movement of rock, debris, or earth down a slope. Often triggered
+          by extreme precipitation or earthquakes.
+        annotations:
+          health_impacts: traumatic injuries, burial, displacement
+      AIR_QUALITY_EVENT:
+        title: Air quality event
+        description: >-
+          Period of degraded air quality due to pollution accumulation, typically
+          during temperature inversions or stagnant air conditions.
+        annotations:
+          health_impacts: respiratory illness, cardiovascular events
+          indices: AQI, PM2.5, ozone
+
+  ExposureAgentCategoryEnum:
+    title: Exposure Agent Category
+    description: >-
+      Categories of environmental exposure agents for GB-EDoH classification.
+      Used to categorize the type of environmental factor being measured and
+      modeled in geospatial exposure assessments.
+    status: STANDARD
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    annotations:
+      program: NIH HEW Data Accelerator
+      use_case: GB-EDoH metadata
+    permissible_values:
+      CRITERIA_AIR_POLLUTANT:
+        title: Criteria air pollutant
+        description: >-
+          EPA-regulated criteria air pollutants under the Clean Air Act: PM2.5,
+          PM10, O3, NO2, SO2, CO, and Pb.
+        annotations:
+          examples: PM2.5, PM10, O3, NO2, SO2, CO, Pb
+          regulatory: EPA NAAQS
+      HAZARDOUS_AIR_POLLUTANT:
+        title: Hazardous air pollutant
+        description: >-
+          EPA-designated hazardous air pollutants (HAPs) known to cause cancer
+          or other serious health effects.
+        annotations:
+          examples: benzene, formaldehyde, acetaldehyde
+          regulatory: EPA HAPs list (187 pollutants)
+      WILDFIRE_SMOKE:
+        title: Wildfire smoke
+        description: >-
+          Smoke from wildfires containing PM2.5, CO, VOCs, and other combustion
+          products. Distinct from anthropogenic air pollution.
+        annotations:
+          components: PM2.5, CO, VOCs, PAHs
+      WATER_CONTAMINANT:
+        title: Water contaminant
+        description: >-
+          Chemical, biological, or physical contaminants in drinking water or
+          recreational water bodies.
+        annotations:
+          examples: lead, arsenic, nitrates, PFAS, pathogens
+      SOIL_CONTAMINANT:
+        title: Soil contaminant
+        description: >-
+          Chemical contaminants in soil that may affect health through direct
+          contact, ingestion, or vapor intrusion.
+        annotations:
+          examples: lead, arsenic, petroleum, pesticides
+      RADIONUCLIDE:
+        title: Radionuclide
+        description: >-
+          Naturally occurring or anthropogenic radioactive materials in the
+          environment, including radon gas.
+        annotations:
+          examples: radon-222, uranium, radium
+      EXTREME_HEAT:
+        title: Extreme heat
+        description: >-
+          Ambient heat exposure characterized by temperature, heat index, or
+          other thermal comfort metrics.
+        annotations:
+          metrics: temperature, heat index, WBGT, apparent temperature
+      EXTREME_COLD:
+        title: Extreme cold
+        description: >-
+          Ambient cold exposure characterized by temperature or wind chill.
+        annotations:
+          metrics: temperature, wind chill
+      UV_RADIATION:
+        title: UV radiation
+        description: >-
+          Solar ultraviolet radiation exposure, particularly UVB relevant to
+          skin cancer and vitamin D synthesis.
+        annotations:
+          metrics: UV index, erythemal UV dose
+      NOISE:
+        title: Environmental noise
+        description: >-
+          Ambient noise from traffic, airports, industry, and other sources.
+          Associated with cardiovascular and mental health effects.
+        annotations:
+          metrics: Lden, Lnight, LAeq
+      LIGHT_POLLUTION:
+        title: Light pollution
+        description: >-
+          Artificial light at night from urban and industrial sources. Associated
+          with circadian disruption.
+        annotations:
+          metrics: radiance, sky brightness
+      ALLERGEN:
+        title: Aeroallergen
+        description: >-
+          Airborne allergens including pollen, mold spores, and other biological
+          particles triggering allergic responses.
+        annotations:
+          examples: tree pollen, grass pollen, ragweed, mold spores
+      VECTOR_HABITAT:
+        title: Vector habitat suitability
+        description: >-
+          Environmental conditions favoring disease vector populations (mosquitoes,
+          ticks) based on climate and land use.
+        annotations:
+          vectors: Aedes mosquitoes, Ixodes ticks
+          diseases: dengue, Zika, Lyme disease
+      GREEN_SPACE:
+        title: Green space
+        description: >-
+          Access to and amount of vegetated areas including parks, forests, and
+          urban greenery. Associated with mental and physical health benefits.
+        annotations:
+          metrics: NDVI, park access, tree canopy cover
+      BLUE_SPACE:
+        title: Blue space
+        description: >-
+          Access to and proximity to water bodies including lakes, rivers, and
+          coastal areas.
+        annotations:
+          metrics: distance to water, water body area
+      BUILT_ENVIRONMENT:
+        title: Built environment
+        description: >-
+          Characteristics of the human-made environment including walkability,
+          food access, and housing quality.
+        annotations:
+          metrics: walkability score, food desert index, housing age
+      SOCIOECONOMIC_DEPRIVATION:
+        title: Socioeconomic deprivation
+        description: >-
+          Area-level measures of socioeconomic disadvantage that modify or
+          mediate environmental health effects.
+        annotations:
+          indices: ADI, NDI, SVI
+
+  TemporalAggregationEnum:
+    title: Temporal Aggregation Method
+    description: >-
+      Methods used to aggregate environmental exposure data over time. Critical
+      metadata for GB-EDoH to ensure comparability across studies and integration
+      with health outcome data.
+    status: STANDARD
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    annotations:
+      program: NIH HEW Data Accelerator
+      use_case: GB-EDoH temporal metadata
+    permissible_values:
+      INSTANTANEOUS:
+        title: Instantaneous
+        description: >-
+          Single point-in-time measurement without temporal aggregation.
+        annotations:
+          example: hourly sensor reading
+      HOURLY_MEAN:
+        title: Hourly mean
+        description: >-
+          Arithmetic mean of measurements within a 1-hour window.
+        annotations:
+          window: 1 hour
+      DAILY_MEAN:
+        title: Daily mean (24-hour average)
+        description: >-
+          Arithmetic mean of measurements over a 24-hour period. Standard for
+          many EPA air quality standards.
+        annotations:
+          window: 24 hours
+          regulatory: EPA PM2.5 24-hour standard
+      DAILY_MAX:
+        title: Daily maximum
+        description: >-
+          Maximum value recorded during a 24-hour period.
+        annotations:
+          window: 24 hours
+      DAILY_MIN:
+        title: Daily minimum
+        description: >-
+          Minimum value recorded during a 24-hour period.
+        annotations:
+          window: 24 hours
+      DAILY_MAX_8HR:
+        title: Daily maximum 8-hour average
+        description: >-
+          Maximum of rolling 8-hour averages within a day. Standard metric for
+          ozone exposure assessment.
+        annotations:
+          window: 8-hour rolling within 24 hours
+          regulatory: EPA ozone standard
+      WEEKLY_MEAN:
+        title: Weekly mean
+        description: >-
+          Arithmetic mean of daily values over a 7-day period.
+        annotations:
+          window: 7 days
+      MONTHLY_MEAN:
+        title: Monthly mean
+        description: >-
+          Arithmetic mean of daily values over a calendar month.
+        annotations:
+          window: calendar month
+      QUARTERLY_MEAN:
+        title: Quarterly mean
+        description: >-
+          Arithmetic mean of daily values over a 3-month period.
+        annotations:
+          window: 3 months
+      ANNUAL_MEAN:
+        title: Annual mean
+        description: >-
+          Arithmetic mean of daily values over a calendar year. Standard for
+          EPA PM2.5 annual standard.
+        annotations:
+          window: calendar year
+          regulatory: EPA PM2.5 annual standard
+      CUMULATIVE:
+        title: Cumulative
+        description: >-
+          Sum of exposure values over a defined period, representing total dose.
+        annotations:
+          example: cumulative UV dose, total precipitation
+      DAYS_ABOVE_THRESHOLD:
+        title: Days above threshold
+        description: >-
+          Count of days exceeding a specified threshold value within a period.
+        annotations:
+          example: days with AQI > 100
+      PERCENTILE:
+        title: Percentile
+        description: >-
+          Specified percentile of distribution (e.g., 98th percentile of daily
+          values). Captures extreme exposure events.
+        annotations:
+          example: 98th percentile of daily PM2.5
+      MOVING_AVERAGE:
+        title: Moving average
+        description: >-
+          Rolling average over a specified window (e.g., 7-day moving average).
+          Smooths short-term variability.
+        annotations:
+          example: 7-day rolling average
+      TRIMESTER_MEAN:
+        title: Trimester mean
+        description: >-
+          Mean exposure during a pregnancy trimester. Used in birth outcomes
+          research.
+        annotations:
+          window: ~13 weeks
+          use_case: perinatal epidemiology
+      HEATING_SEASON_MEAN:
+        title: Heating season mean
+        description: >-
+          Mean during heating season (typically Oct-Mar in Northern Hemisphere).
+          Relevant for indoor air quality.
+        annotations:
+          window: heating season
+      COOLING_SEASON_MEAN:
+        title: Cooling season mean
+        description: >-
+          Mean during cooling season (typically May-Sep in Northern Hemisphere).
+          Relevant for heat exposure and ozone.
+        annotations:
+          window: cooling season
+
+  SpatialResolutionEnum:
+    title: Spatial Resolution
+    description: >-
+      Geographic units and spatial resolutions used for GB-EDoH exposure estimates.
+      Critical metadata for understanding exposure misclassification and supporting
+      OMOP geocoding requirements.
+    status: STANDARD
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    annotations:
+      program: NIH HEW Data Accelerator
+      use_case: GB-EDoH spatial metadata
+    permissible_values:
+      POINT_LOCATION:
+        title: Point location (lat/lon)
+        description: >-
+          Exact geographic coordinates. Highest spatial precision but may require
+          privacy protection measures.
+        annotations:
+          precision: exact coordinates
+          privacy: requires protection
+      ADDRESS_GEOCODED:
+        title: Geocoded address
+        description: >-
+          Address geocoded to rooftop or parcel level. Standard for linking
+          patient data to environmental exposures.
+        annotations:
+          precision: parcel level
+          use_case: patient-level exposure
+      CENSUS_BLOCK:
+        title: Census block
+        description: >-
+          US Census block, the smallest geographic unit. Typically contains
+          600-3000 people.
+        annotations:
+          typical_population: 600-3000
+          country: US
+      CENSUS_BLOCK_GROUP:
+        title: Census block group
+        description: >-
+          US Census block group, a cluster of blocks. Standard unit for many
+          socioeconomic and environmental datasets.
+        annotations:
+          typical_population: 600-3000
+          country: US
+      CENSUS_TRACT:
+        title: Census tract
+        description: >-
+          US Census tract, designed to be relatively homogeneous in population
+          characteristics. Common for health research.
+        annotations:
+          typical_population: 2500-8000
+          country: US
+      ZIP_CODE:
+        title: ZIP code
+        description: >-
+          US Postal Service ZIP code. Common in administrative health data but
+          boundaries change and may cross jurisdictions.
+        annotations:
+          typical_population: varies widely
+          country: US
+          limitations: unstable boundaries
+      ZCTA:
+        title: ZIP Code Tabulation Area
+        description: >-
+          Census Bureau generalization of ZIP codes with stable boundaries.
+          Preferred over ZIP codes for research.
+        annotations:
+          country: US
+          advantage: stable boundaries
+      COUNTY:
+        title: County/Parish
+        description: >-
+          County or parish level. Used for many public health surveillance
+          systems and vital statistics.
+        annotations:
+          country: US
+          use_case: vital statistics, surveillance
+      STATE:
+        title: State/Territory
+        description: >-
+          State or territory level. Coarsest common administrative unit.
+        annotations:
+          country: US
+      GRID_1KM:
+        title: 1 km grid cell
+        description: >-
+          1 kilometer resolution grid. Common for satellite-derived and modeled
+          air quality data.
+        annotations:
+          resolution: 1 km
+          example: EPA downscaler output
+      GRID_4KM:
+        title: 4 km grid cell
+        description: >-
+          4 kilometer resolution grid. Common for weather and some air quality
+          models.
+        annotations:
+          resolution: 4 km
+          example: HRRR weather model
+      GRID_12KM:
+        title: 12 km grid cell
+        description: >-
+          12 kilometer resolution grid. Standard CMAQ model output resolution.
+        annotations:
+          resolution: 12 km
+          example: EPA CMAQ output
+      GRID_36KM:
+        title: 36 km grid cell
+        description: >-
+          36 kilometer resolution grid. Coarse model output.
+        annotations:
+          resolution: 36 km
+      HUC8:
+        title: HUC-8 watershed
+        description: >-
+          8-digit Hydrologic Unit Code watershed. Medium-sized watershed for
+          water quality assessment.
+        annotations:
+          typical_area: 700 sq mi
+          use_case: water quality
+      HUC12:
+        title: HUC-12 subwatershed
+        description: >-
+          12-digit Hydrologic Unit Code subwatershed. Finest watershed unit.
+        annotations:
+          typical_area: 40 sq mi
+          use_case: local water quality
+      AIRSHED:
+        title: Airshed
+        description: >-
+          Geographic area defined by air pollution transport patterns. May cross
+          administrative boundaries.
+        annotations:
+          example: South Coast Air Basin
+      BUFFER_500M:
+        title: 500 meter buffer
+        description: >-
+          Circular buffer of 500 meters around a point. Common for traffic-related
+          air pollution exposure.
+        annotations:
+          radius: 500 m
+          use_case: TRAP exposure
+      BUFFER_1KM:
+        title: 1 kilometer buffer
+        description: >-
+          Circular buffer of 1 kilometer around a point.
+        annotations:
+          radius: 1 km
+      BUFFER_5KM:
+        title: 5 kilometer buffer
+        description: >-
+          Circular buffer of 5 kilometers around a point.
+        annotations:
+          radius: 5 km
+      CUSTOM_POLYGON:
+        title: Custom polygon
+        description: >-
+          User-defined geographic area. Requires specification of boundary source.
+        annotations:
+          example: school district, hospital service area
+license: MIT
+see_also:
+- https://linkml.github.io/valuesets
+- https://www.niehs.nih.gov/research/programs/geh
+- https://ohdsi.github.io/CommonDataModel/

@@ -1,0 +1,66 @@
+name: roles
+title: Chemical and Biological Roles
+description: >-
+  Value sets for chemical and biological roles that molecular entities can play,
+  based on the ChEBI ontology role hierarchy.
+id: https://w3id.org/linkml/valuesets/chemistry/roles
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  valuesets: https://w3id.org/valuesets/
+  CHEBI: http://purl.obolibrary.org/obo/CHEBI_
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+default_prefix: valuesets
+slots:
+  chemical_role:
+    description: A role played by a molecular entity within a chemical context
+    range: ChemicalRole
+  biological_role:
+    description: A role played by a molecular entity within a biological context
+    range: BiologicalRole
+enums:
+  ChemicalRole:
+    title: Chemical Role
+    description: >-
+      Roles played by molecular entities within a chemical context, dynamically
+      populated from ChEBI. Includes roles such as catalyst, reagent, solvent,
+      indicator, buffer, and other chemical functions.
+    status: STANDARD
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    annotations:
+      stewards: https://www.ebi.ac.uk/chebi
+      publishers: https://www.ebi.ac.uk/chebi
+    reachable_from:
+      source_nodes:
+      - CHEBI:51086
+      is_direct: false
+      relationship_types:
+      - rdfs:subClassOf
+  BiologicalRole:
+    title: Biological Role
+    description: >-
+      Roles played by molecular entities within a biological context, dynamically
+      populated from ChEBI. Includes biochemical roles, pharmacological roles,
+      physiological roles, and other biological functions.
+    status: STANDARD
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    annotations:
+      stewards: https://www.ebi.ac.uk/chebi
+      publishers: https://www.ebi.ac.uk/chebi
+    reachable_from:
+      source_nodes:
+      - CHEBI:24432
+      is_direct: false
+      relationship_types:
+      - rdfs:subClassOf

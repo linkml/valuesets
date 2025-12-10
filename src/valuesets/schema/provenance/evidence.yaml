@@ -1,0 +1,42 @@
+name: evidence
+title: Evidence and Provenance Value Sets
+description: >-
+  Value sets for evidence types and provenance information, based on the
+  Evidence and Conclusion Ontology (ECO).
+id: https://w3id.org/linkml/valuesets/provenance/evidence
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  valuesets: https://w3id.org/valuesets/
+  ECO: http://purl.obolibrary.org/obo/ECO_
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+default_prefix: valuesets
+slots:
+  evidence_type:
+    description: The type of evidence supporting an assertion
+    range: EvidenceType
+enums:
+  EvidenceType:
+    title: Evidence Type
+    description: >-
+      Types of evidence used to support assertions, dynamically populated from
+      the Evidence and Conclusion Ontology (ECO). Includes experimental evidence,
+      computational evidence, author statements, and other evidence types.
+    status: STANDARD
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    annotations:
+      stewards: https://evidenceontology.org
+      publishers: https://evidenceontology.org
+    reachable_from:
+      source_nodes:
+      - ECO:0000000
+      is_direct: false
+      relationship_types:
+      - rdfs:subClassOf

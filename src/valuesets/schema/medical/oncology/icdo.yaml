@@ -1,0 +1,556 @@
+name: icdo
+title: ICD-O Cancer Classification Value Sets
+description: >-
+  Value sets based on the International Classification of Diseases for Oncology
+  (ICD-O) bi-axial classification system. ICD-O uses two independent axes:
+  topography (anatomic site) and morphology (histological type and behavior).
+id: https://w3id.org/linkml/valuesets/medical/oncology/icdo
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  valuesets: https://w3id.org/valuesets/
+  NCIT: http://purl.obolibrary.org/obo/NCIT_
+  UBERON: http://purl.obolibrary.org/obo/UBERON_
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+default_prefix: valuesets
+slots:
+  tumor_topography:
+    description: Anatomic site of tumor (ICD-O topography axis)
+    range: TumorTopography
+  tumor_morphology:
+    description: Histological type of tumor (ICD-O morphology axis)
+    range: TumorMorphology
+  tumor_behavior:
+    description: Biological behavior of tumor (ICD-O behavior code)
+    range: TumorBehavior
+  tumor_grade:
+    description: Histological grade/differentiation of tumor
+    range: TumorGrade
+enums:
+  TumorTopography:
+    title: Tumor Topography
+    description: >-
+      Major anatomic sites for tumor classification based on ICD-O topography
+      codes (C00-C80). These represent primary sites where neoplasms occur.
+    status: STANDARD
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    annotations:
+      source: ICD-O-3
+      axis: topography
+    permissible_values:
+      LIP_ORAL_CAVITY_PHARYNX:
+        title: Lip, oral cavity, and pharynx
+        description: Malignant neoplasms of lip, oral cavity and pharynx (C00-C14)
+        annotations:
+          icdo_range: C00-C14
+      DIGESTIVE_ORGANS:
+        title: Digestive organs
+        description: Malignant neoplasms of digestive organs (C15-C26)
+        annotations:
+          icdo_range: C15-C26
+      ESOPHAGUS:
+        title: Esophagus
+        description: Malignant neoplasm of esophagus (C15)
+        annotations:
+          icdo_code: C15
+          uberon: UBERON:0001043
+        is_a: DIGESTIVE_ORGANS
+      STOMACH:
+        title: Stomach
+        description: Malignant neoplasm of stomach (C16)
+        annotations:
+          icdo_code: C16
+          uberon: UBERON:0000945
+        is_a: DIGESTIVE_ORGANS
+      COLON:
+        title: Colon
+        description: Malignant neoplasm of colon (C18)
+        annotations:
+          icdo_code: C18
+          uberon: UBERON:0001155
+        is_a: DIGESTIVE_ORGANS
+      RECTUM:
+        title: Rectum
+        description: Malignant neoplasm of rectum (C20)
+        annotations:
+          icdo_code: C20
+          uberon: UBERON:0001052
+        is_a: DIGESTIVE_ORGANS
+      LIVER:
+        title: Liver
+        description: Malignant neoplasm of liver and intrahepatic bile ducts (C22)
+        annotations:
+          icdo_code: C22
+          uberon: UBERON:0002107
+        is_a: DIGESTIVE_ORGANS
+      PANCREAS:
+        title: Pancreas
+        description: Malignant neoplasm of pancreas (C25)
+        annotations:
+          icdo_code: C25
+          uberon: UBERON:0001264
+        is_a: DIGESTIVE_ORGANS
+      RESPIRATORY_INTRATHORACIC:
+        title: Respiratory and intrathoracic organs
+        description: Malignant neoplasms of respiratory and intrathoracic organs (C30-C39)
+        annotations:
+          icdo_range: C30-C39
+      LUNG:
+        title: Lung
+        description: Malignant neoplasm of bronchus and lung (C34)
+        annotations:
+          icdo_code: C34
+          uberon: UBERON:0002048
+        is_a: RESPIRATORY_INTRATHORACIC
+      BONE_ARTICULAR_CARTILAGE:
+        title: Bone and articular cartilage
+        description: Malignant neoplasms of bone and articular cartilage (C40-C41)
+        annotations:
+          icdo_range: C40-C41
+      SKIN:
+        title: Skin
+        description: Melanoma and other malignant neoplasms of skin (C43-C44)
+        annotations:
+          icdo_range: C43-C44
+          uberon: UBERON:0002097
+      SOFT_TISSUE:
+        title: Mesothelial and soft tissue
+        description: Malignant neoplasms of mesothelial and soft tissues (C45-C49)
+        annotations:
+          icdo_range: C45-C49
+      BREAST:
+        title: Breast
+        description: Malignant neoplasm of breast (C50)
+        annotations:
+          icdo_code: C50
+          uberon: UBERON:0000310
+      FEMALE_GENITAL:
+        title: Female genital organs
+        description: Malignant neoplasms of female genital organs (C51-C58)
+        annotations:
+          icdo_range: C51-C58
+      CERVIX_UTERI:
+        title: Cervix uteri
+        description: Malignant neoplasm of cervix uteri (C53)
+        annotations:
+          icdo_code: C53
+        is_a: FEMALE_GENITAL
+      OVARY:
+        title: Ovary
+        description: Malignant neoplasm of ovary (C56)
+        annotations:
+          icdo_code: C56
+          uberon: UBERON:0000992
+        is_a: FEMALE_GENITAL
+      MALE_GENITAL:
+        title: Male genital organs
+        description: Malignant neoplasms of male genital organs (C60-C63)
+        annotations:
+          icdo_range: C60-C63
+      PROSTATE:
+        title: Prostate
+        description: Malignant neoplasm of prostate (C61)
+        annotations:
+          icdo_code: C61
+          uberon: UBERON:0002367
+        is_a: MALE_GENITAL
+      TESTIS:
+        title: Testis
+        description: Malignant neoplasm of testis (C62)
+        annotations:
+          icdo_code: C62
+          uberon: UBERON:0000473
+        is_a: MALE_GENITAL
+      URINARY_TRACT:
+        title: Urinary tract
+        description: Malignant neoplasms of urinary tract (C64-C68)
+        annotations:
+          icdo_range: C64-C68
+      KIDNEY:
+        title: Kidney
+        description: Malignant neoplasm of kidney (C64)
+        annotations:
+          icdo_code: C64
+          uberon: UBERON:0002113
+        is_a: URINARY_TRACT
+      BLADDER:
+        title: Bladder
+        description: Malignant neoplasm of bladder (C67)
+        annotations:
+          icdo_code: C67
+          uberon: UBERON:0001255
+        is_a: URINARY_TRACT
+      EYE_BRAIN_CNS:
+        title: Eye, brain, and CNS
+        description: Malignant neoplasms of eye, brain and other parts of CNS (C69-C72)
+        annotations:
+          icdo_range: C69-C72
+      BRAIN:
+        title: Brain
+        description: Malignant neoplasm of brain (C71)
+        annotations:
+          icdo_code: C71
+          uberon: UBERON:0000955
+        is_a: EYE_BRAIN_CNS
+      THYROID_ENDOCRINE:
+        title: Thyroid and other endocrine glands
+        description: Malignant neoplasms of thyroid and other endocrine glands (C73-C75)
+        annotations:
+          icdo_range: C73-C75
+      THYROID:
+        title: Thyroid gland
+        description: Malignant neoplasm of thyroid gland (C73)
+        annotations:
+          icdo_code: C73
+          uberon: UBERON:0002046
+        is_a: THYROID_ENDOCRINE
+      LYMPH_NODES:
+        title: Lymph nodes
+        description: Malignant neoplasms of lymph nodes (C77)
+        annotations:
+          icdo_code: C77
+      UNKNOWN_PRIMARY:
+        title: Unknown primary site
+        description: Malignant neoplasm of unknown primary site (C80)
+        annotations:
+          icdo_code: C80
+  TumorMorphology:
+    title: Tumor Morphology
+    description: >-
+      Major histological types for tumor classification based on ICD-O morphology
+      codes. These represent the cell type and histological pattern of neoplasms.
+    status: STANDARD
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    annotations:
+      source: ICD-O-3
+      axis: morphology
+    permissible_values:
+      CARCINOMA_NOS:
+        title: Carcinoma
+        description: >-
+          Malignant epithelial neoplasm, not otherwise specified. General term
+          for cancers arising from epithelial cells.
+        meaning: NCIT:C2916
+        annotations:
+          icdo_code: 8010
+      ADENOCARCINOMA_NOS:
+        title: Adenocarcinoma
+        description: >-
+          Malignant glandular epithelial neoplasm. Cancer arising from glandular
+          epithelium.
+        meaning: NCIT:C2852
+        annotations:
+          icdo_code: 8140
+        is_a: CARCINOMA_NOS
+      SQUAMOUS_CELL_CARCINOMA:
+        title: Squamous Cell Carcinoma
+        description: >-
+          Malignant neoplasm arising from squamous epithelium. Common in skin,
+          lung, esophagus, and cervix.
+        meaning: NCIT:C2929
+        annotations:
+          icdo_code: 8070
+        is_a: CARCINOMA_NOS
+      TRANSITIONAL_CELL_CARCINOMA:
+        title: Transitional Cell Carcinoma
+        description: >-
+          Malignant neoplasm arising from transitional epithelium (urothelium).
+          Most common in bladder and urinary tract.
+        meaning: NCIT:C2930
+        annotations:
+          icdo_code: 8120
+        is_a: CARCINOMA_NOS
+      SMALL_CELL_CARCINOMA:
+        title: Small Cell Neuroendocrine Carcinoma
+        description: >-
+          Highly malignant neuroendocrine carcinoma with small cells. Most common
+          in lung.
+        meaning: NCIT:C3915
+        annotations:
+          icdo_code: 8041
+        is_a: CARCINOMA_NOS
+      LARGE_CELL_CARCINOMA:
+        title: Large cell carcinoma
+        description: Undifferentiated carcinoma with large cells.
+        annotations:
+          icdo_code: 8012
+        is_a: CARCINOMA_NOS
+      SARCOMA_NOS:
+        title: Sarcoma
+        description: >-
+          Malignant mesenchymal neoplasm, not otherwise specified. Cancers arising
+          from connective tissue, bone, cartilage, fat, muscle, or blood vessels.
+        meaning: NCIT:C9118
+        annotations:
+          icdo_code: 8800
+      OSTEOSARCOMA:
+        title: Osteosarcoma
+        description: Malignant bone-forming tumor. Most common primary malignant bone tumor.
+        meaning: NCIT:C9145
+        annotations:
+          icdo_code: 9180
+        is_a: SARCOMA_NOS
+      CHONDROSARCOMA:
+        title: Chondrosarcoma
+        description: Malignant cartilage-forming tumor.
+        meaning: NCIT:C2946
+        annotations:
+          icdo_code: 9220
+        is_a: SARCOMA_NOS
+      LIPOSARCOMA:
+        title: Liposarcoma
+        description: Malignant tumor arising from adipose tissue.
+        meaning: NCIT:C3194
+        annotations:
+          icdo_code: 8850
+        is_a: SARCOMA_NOS
+      LEIOMYOSARCOMA:
+        title: Leiomyosarcoma
+        description: Malignant tumor arising from smooth muscle.
+        meaning: NCIT:C3158
+        annotations:
+          icdo_code: 8890
+        is_a: SARCOMA_NOS
+      RHABDOMYOSARCOMA:
+        title: Rhabdomyosarcoma
+        description: Malignant tumor arising from skeletal muscle.
+        meaning: NCIT:C3359
+        annotations:
+          icdo_code: 8900
+        is_a: SARCOMA_NOS
+      LYMPHOMA_NOS:
+        title: Lymphoma
+        description: >-
+          Malignant neoplasm of lymphoid tissue, not otherwise specified. Includes
+          Hodgkin and non-Hodgkin lymphomas.
+        meaning: NCIT:C3208
+        annotations:
+          icdo_code: 9590
+      HODGKIN_LYMPHOMA:
+        title: Hodgkin Lymphoma
+        description: >-
+          Lymphoma characterized by presence of Reed-Sternberg cells and specific
+          histological patterns.
+        meaning: NCIT:C9357
+        annotations:
+          icdo_code: 9650
+        is_a: LYMPHOMA_NOS
+      NON_HODGKIN_LYMPHOMA:
+        title: Non-Hodgkin Lymphoma
+        description: >-
+          All lymphomas other than Hodgkin lymphoma. Includes B-cell and T-cell
+          lymphomas.
+        meaning: NCIT:C3211
+        annotations:
+          icdo_codes: 9591, 9670-9729
+        is_a: LYMPHOMA_NOS
+      DIFFUSE_LARGE_B_CELL_LYMPHOMA:
+        title: Diffuse large B-cell lymphoma
+        description: Most common type of non-Hodgkin lymphoma.
+        meaning: NCIT:C8851
+        annotations:
+          icdo_code: 9680
+        is_a: NON_HODGKIN_LYMPHOMA
+      LEUKEMIA_NOS:
+        title: Leukemia
+        description: >-
+          Malignant neoplasm of blood-forming tissues, not otherwise specified.
+        meaning: NCIT:C3161
+        annotations:
+          icdo_code: 9800
+      ACUTE_LYMPHOBLASTIC_LEUKEMIA:
+        title: Acute lymphoblastic leukemia
+        description: Acute leukemia of lymphoid precursor cells.
+        meaning: NCIT:C3167
+        annotations:
+          icdo_code: 9811
+        is_a: LEUKEMIA_NOS
+      ACUTE_MYELOID_LEUKEMIA:
+        title: Acute myeloid leukemia
+        description: Acute leukemia of myeloid precursor cells.
+        meaning: NCIT:C3171
+        annotations:
+          icdo_code: 9861
+        is_a: LEUKEMIA_NOS
+      CHRONIC_LYMPHOCYTIC_LEUKEMIA:
+        title: Chronic lymphocytic leukemia
+        description: Chronic leukemia of mature B lymphocytes.
+        meaning: NCIT:C3163
+        annotations:
+          icdo_code: 9823
+        is_a: LEUKEMIA_NOS
+      CHRONIC_MYELOID_LEUKEMIA:
+        title: Chronic myeloid leukemia
+        description: Chronic leukemia characterized by BCR-ABL1 fusion gene.
+        meaning: NCIT:C3174
+        annotations:
+          icdo_code: 9875
+        is_a: LEUKEMIA_NOS
+      MELANOMA:
+        title: Melanoma
+        description: Malignant neoplasm arising from melanocytes.
+        meaning: NCIT:C3224
+        annotations:
+          icdo_code: 8720
+      MESOTHELIOMA:
+        title: Mesothelioma
+        description: >-
+          Malignant tumor arising from mesothelial cells lining pleura, peritoneum,
+          or pericardium. Strongly associated with asbestos exposure.
+        meaning: NCIT:C3234
+        annotations:
+          icdo_code: 9050
+      GERM_CELL_TUMOR:
+        title: Germ cell tumor
+        description: Tumor arising from germ cells. Includes seminoma, teratoma, etc.
+        meaning: NCIT:C3708
+        annotations:
+          icdo_codes: 9060-9110
+      NEUROENDOCRINE_TUMOR:
+        title: Neuroendocrine tumor
+        description: Tumor arising from neuroendocrine cells.
+        annotations:
+          icdo_codes: 8240-8249
+  TumorBehavior:
+    title: Tumor Behavior
+    description: >-
+      Biological behavior codes used in ICD-O morphology (5th digit). Indicates
+      whether a neoplasm is benign, uncertain, in situ, or malignant.
+    status: STANDARD
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    annotations:
+      source: ICD-O-3
+    permissible_values:
+      BENIGN:
+        title: Benign Neoplasm
+        description: >-
+          Non-cancerous neoplasm that does not invade surrounding tissue or
+          metastasize.
+        meaning: NCIT:C3677
+        annotations:
+          icdo_behavior: /0
+      UNCERTAIN_BORDERLINE:
+        title: Uncertain whether benign or malignant
+        description: >-
+          Neoplasm with borderline malignancy or uncertain behavior. May recur
+          but typically does not metastasize.
+        annotations:
+          icdo_behavior: /1
+      IN_SITU:
+        title: Carcinoma In Situ
+        description: >-
+          Malignant cells confined to epithelium without invasion through basement
+          membrane. Pre-invasive cancer.
+        meaning: NCIT:C2917
+        annotations:
+          icdo_behavior: /2
+      MALIGNANT_PRIMARY:
+        title: Malignant, primary site
+        description: >-
+          Invasive malignant neoplasm at primary site. Cancer that has invaded
+          through basement membrane.
+        annotations:
+          icdo_behavior: /3
+      MALIGNANT_METASTATIC:
+        title: Malignant, metastatic site
+        description: >-
+          Malignant neoplasm that has spread from primary site to secondary
+          (metastatic) site.
+        annotations:
+          icdo_behavior: /6
+      MALIGNANT_UNCERTAIN_PRIMARY_METASTATIC:
+        title: Malignant, uncertain whether primary or metastatic
+        description: >-
+          Malignant neoplasm where it is uncertain if this is the primary site
+          or a metastatic site.
+        annotations:
+          icdo_behavior: /9
+  TumorGrade:
+    title: Tumor Grade
+    description: >-
+      Histological grade/differentiation codes used in ICD-O (6th digit). Indicates
+      how abnormal the tumor cells appear compared to normal cells.
+    status: STANDARD
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    annotations:
+      source: ICD-O-3
+    permissible_values:
+      GRADE_1:
+        title: Grade I - Well differentiated
+        description: >-
+          Tumor cells closely resemble normal cells. Typically slow-growing with
+          better prognosis.
+        annotations:
+          icdo_grade: 1
+          differentiation: well differentiated
+      GRADE_2:
+        title: Grade II - Moderately differentiated
+        description: >-
+          Tumor cells show moderate resemblance to normal cells. Intermediate
+          behavior.
+        annotations:
+          icdo_grade: 2
+          differentiation: moderately differentiated
+      GRADE_3:
+        title: Grade III - Poorly differentiated
+        description: >-
+          Tumor cells show little resemblance to normal cells. More aggressive
+          with poorer prognosis.
+        annotations:
+          icdo_grade: 3
+          differentiation: poorly differentiated
+      GRADE_4:
+        title: Grade IV - Undifferentiated/Anaplastic
+        description: >-
+          Tumor cells bear no resemblance to normal cells. Most aggressive with
+          poorest prognosis.
+        annotations:
+          icdo_grade: 4
+          differentiation: undifferentiated, anaplastic
+      GRADE_NOT_DETERMINED:
+        title: Grade not determined
+        description: Histological grade has not been assessed or is not applicable.
+        annotations:
+          icdo_grade: 9
+      T_CELL:
+        title: T-cell
+        description: Lymphoma/leukemia of T-cell origin.
+        annotations:
+          icdo_grade: 5
+          use: lymphomas/leukemias
+      B_CELL:
+        title: B-cell
+        description: Lymphoma/leukemia of B-cell origin.
+        annotations:
+          icdo_grade: 6
+          use: lymphomas/leukemias
+      NULL_CELL:
+        title: Null cell (non-T, non-B)
+        description: Lymphoma/leukemia of neither T-cell nor B-cell origin.
+        annotations:
+          icdo_grade: 7
+          use: lymphomas/leukemias
+      NK_CELL:
+        title: NK cell
+        description: Lymphoma/leukemia of natural killer cell origin.
+        annotations:
+          icdo_grade: 8
+          use: lymphomas/leukemias
