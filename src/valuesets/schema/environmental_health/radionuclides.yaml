@@ -106,11 +106,11 @@ enums:
           decay_mode: beta, electron capture
           abundance: 0.012% of natural potassium
       CESIUM_137:
-        title: Cesium Cs 137
+        title: caesium-137
         description: >-
           Anthropogenic radionuclide from nuclear fission. Environmental contaminant
           from nuclear weapons testing and accidents.
-        meaning: NCIT:C68812
+        meaning: CHEBI:196959
         annotations:
           symbol: Cs-137
           half_life: 30.17 years
@@ -169,11 +169,11 @@ enums:
           half_life: 12.3 years
           decay_mode: beta (weak)
       CARBON_14:
-        title: Carbon C-14
+        title: carbon-14 atom
         description: >-
           Cosmogenic radionuclide used in radiocarbon dating. Produced by cosmic
           ray interactions in atmosphere.
-        meaning: NCIT:C1638
+        meaning: CHEBI:36927
         annotations:
           symbol: C-14
           half_life: 5730 years
@@ -190,10 +190,11 @@ enums:
           decay_mode: beta
           use: sediment dating
       POLONIUM_210:
-        title: Polonium-210
+        title: polonium-210 atom
         description: >-
           Highly radioactive alpha emitter in uranium decay series. Found in
           tobacco smoke.
+        meaning: CHEBI:37340
         annotations:
           symbol: Po-210
           half_life: 138 days
