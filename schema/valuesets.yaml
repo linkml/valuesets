@@ -85,10 +85,14 @@ imports:
 - medical/clinical
 - medical/neuroimaging
 - medical/family_history
+- medical/pediatric_oncology/diagnosis_categories
+- medical/pediatric_oncology/iccc3
+- medical/pediatric_oncology/staging/neuroblastoma
 - clinical/nih_demographics
 - clinical/phenopackets
 - bioprocessing/scale_up
 - units/measurements
+- units/quantity_kinds
 - computing/file_formats
 - computing/maturity_levels
 - computing/ontologies
@@ -41931,6 +41935,1561 @@ enums:
         text: UNKNOWN_GENETIC_RELATIONSHIP
         description: Genetic relationship status is unknown
         meaning: SNOMED:261665006
+  PediatricOncologyDiagnosisCategory:
+    name: PediatricOncologyDiagnosisCategory
+    definition_uri: https://w3id.org/valuesets/PediatricOncologyDiagnosisCategory
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    annotations:
+      caDSR_CDE:
+        tag: caDSR_CDE
+        value: '16607972'
+      source:
+        tag: source
+        value: CCDI Federation API
+      alignment:
+        tag: alignment
+        value: WHO CNS5, WHO-HAEM5, WHO Pediatric Blue Book
+    description: High-level groupings for pediatric cancer diagnoses per CCDI CDE
+      16607972. Designed for cohort aggregation across federated data resources. Each
+      diagnosis maps to a single dominant category.
+    title: Pediatric Oncology Diagnosis Category
+    from_schema: https://w3id.org/linkml/valuesets/medical/pediatric_oncology/diagnosis_categories
+    see_also:
+    - https://github.com/CBIIT/ccdi-federation-api/discussions/160
+    - https://docs.stjude.cloud/cc4k
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: RELEASED
+    permissible_values:
+      ATYPICAL_TERATOID_RHABDOID_TUMOR:
+        text: ATYPICAL_TERATOID_RHABDOID_TUMOR
+        description: Highly malignant embryonal CNS tumor characterized by loss of
+          SMARCB1 (INI1) or SMARCA4 expression. Predominantly occurs in young children.
+        meaning: NCIT:C6807
+        annotations:
+          category:
+            tag: category
+            value: brain_tumor
+          who_classification:
+            tag: who_classification
+            value: WHO CNS5
+        title: Atypical Teratoid/Rhabdoid Tumors
+      CHOROID_PLEXUS_TUMOR:
+        text: CHOROID_PLEXUS_TUMOR
+        description: Neoplasms arising from the choroid plexus epithelium, including
+          papilloma, atypical papilloma, and carcinoma.
+        meaning: NCIT:C3698
+        annotations:
+          category:
+            tag: category
+            value: brain_tumor
+          who_classification:
+            tag: who_classification
+            value: WHO CNS5
+        title: Choroid Plexus Tumors
+      CNS_GERM_CELL_TUMOR:
+        text: CNS_GERM_CELL_TUMOR
+        description: Germ cell tumors arising within the central nervous system, including
+          germinoma and non-germinomatous germ cell tumors.
+        meaning: NCIT:C6286
+        annotations:
+          category:
+            tag: category
+            value: brain_tumor
+          who_classification:
+            tag: who_classification
+            value: WHO CNS5
+        title: CNS Germ Cell Tumors
+      CNS_SARCOMA:
+        text: CNS_SARCOMA
+        description: Sarcomas arising primarily in the central nervous system, including
+          Ewing sarcoma and rhabdomyosarcoma of CNS.
+        meaning: NCIT:C121624
+        annotations:
+          category:
+            tag: category
+            value: brain_tumor
+        title: CNS Sarcomas
+      CRANIOPHARYNGIOMA:
+        text: CRANIOPHARYNGIOMA
+        description: Benign epithelial tumors arising from remnants of Rathke pouch,
+          including adamantinomatous and papillary subtypes.
+        meaning: NCIT:C2998
+        annotations:
+          category:
+            tag: category
+            value: brain_tumor
+          who_classification:
+            tag: who_classification
+            value: WHO CNS5
+        title: Craniopharyngiomas
+      EPENDYMOMA:
+        text: EPENDYMOMA
+        description: Glial tumors arising from ependymal cells lining the ventricular
+          system and central canal. Includes molecular subtypes defined by WHO CNS5.
+        meaning: NCIT:C3017
+        annotations:
+          category:
+            tag: category
+            value: brain_tumor
+          who_classification:
+            tag: who_classification
+            value: WHO CNS5
+        title: Ependymoma
+      GLIONEURONAL_AND_NEURONAL_TUMOR:
+        text: GLIONEURONAL_AND_NEURONAL_TUMOR
+        description: Tumors with neuronal differentiation including ganglioglioma,
+          dysembryoplastic neuroepithelial tumor (DNET), and central neurocytoma.
+        meaning: NCIT:C6927
+        annotations:
+          category:
+            tag: category
+            value: brain_tumor
+          who_classification:
+            tag: who_classification
+            value: WHO CNS5
+        title: Glioneuronal and Neuronal Tumors
+      HIGH_GRADE_GLIOMA:
+        text: HIGH_GRADE_GLIOMA
+        description: Aggressive glial tumors including pediatric-type diffuse high-grade
+          gliomas (H3 K27-altered, H3 G34-mutant, and H3/IDH-wildtype), as well as
+          glioblastoma.
+        meaning: NCIT:C129355
+        annotations:
+          category:
+            tag: category
+            value: brain_tumor
+          who_classification:
+            tag: who_classification
+            value: WHO CNS5
+          grade:
+            tag: grade
+            value: high
+        title: High-Grade Gliomas
+      LOW_GRADE_GLIOMA:
+        text: LOW_GRADE_GLIOMA
+        description: Indolent glial tumors including pilocytic astrocytoma and pediatric-type
+          diffuse low-grade gliomas (MYB/MYBL1-altered, MAPK pathway-altered).
+        meaning: NCIT:C129354
+        annotations:
+          category:
+            tag: category
+            value: brain_tumor
+          who_classification:
+            tag: who_classification
+            value: WHO CNS5
+          grade:
+            tag: grade
+            value: low
+        title: Low-Grade Gliomas
+      MEDULLOBLASTOMA:
+        text: MEDULLOBLASTOMA
+        description: Embryonal tumor of the cerebellum, classified by molecular subgroups
+          (WNT-activated, SHH-activated, Group 3, Group 4) per WHO CNS5.
+        meaning: NCIT:C3222
+        annotations:
+          category:
+            tag: category
+            value: brain_tumor
+          who_classification:
+            tag: who_classification
+            value: WHO CNS5
+        title: Medulloblastoma
+      OTHER_CNS_EMBRYONAL_TUMOR:
+        text: OTHER_CNS_EMBRYONAL_TUMOR
+        description: Embryonal tumors of the CNS other than medulloblastoma and ATRT,
+          including embryonal tumor with multilayered rosettes (ETMR), CNS neuroblastoma,
+          and pineoblastoma.
+        meaning: NCIT:C6774
+        annotations:
+          category:
+            tag: category
+            value: brain_tumor
+          who_classification:
+            tag: who_classification
+            value: WHO CNS5
+        title: Other CNS Embryonal Tumors
+        aliases:
+        - CNS Embryonal Tumor, NOS
+      OTHER_GLIOMA:
+        text: OTHER_GLIOMA
+        description: Glial tumors not classified as high-grade or low-grade glioma,
+          including angiocentric glioma and astroblastoma.
+        meaning: NCIT:C3059
+        annotations:
+          category:
+            tag: category
+            value: brain_tumor
+        title: Other Gliomas
+      OTHER_BRAIN_TUMOR:
+        text: OTHER_BRAIN_TUMOR
+        description: CNS tumors not fitting other brain tumor categories, including
+          meningioma, schwannoma, and hemangioblastoma.
+        meaning: NCIT:C2907
+        annotations:
+          category:
+            tag: category
+            value: brain_tumor
+        title: Other Brain Tumors
+      LYMPHOBLASTIC_LEUKEMIA:
+        text: LYMPHOBLASTIC_LEUKEMIA
+        description: Acute lymphoblastic leukemia (ALL) including B-ALL and T-ALL
+          with all molecular subtypes (BCR::ABL1, ETV6::RUNX1, KMT2A-r, DUX4, MEF2D,
+          etc.).
+        meaning: NCIT:C3167
+        annotations:
+          category:
+            tag: category
+            value: hematologic
+          who_classification:
+            tag: who_classification
+            value: WHO-HAEM5
+        title: Lymphoblastic Leukemia
+        aliases:
+        - ALL
+        - Acute Lymphoblastic Leukemia
+      MYELOID_LEUKEMIA:
+        text: MYELOID_LEUKEMIA
+        description: Acute myeloid leukemia (AML) and related myeloid neoplasms including
+          AML with defining genetic abnormalities, therapy-related AML, and juvenile
+          myelomonocytic leukemia (JMML).
+        meaning: NCIT:C3171
+        annotations:
+          category:
+            tag: category
+            value: hematologic
+          who_classification:
+            tag: who_classification
+            value: WHO-HAEM5
+        title: Myeloid Leukemia
+        aliases:
+        - AML
+        - Acute Myeloid Leukemia
+      HODGKIN_LYMPHOMA:
+        text: HODGKIN_LYMPHOMA
+        description: Lymphoid neoplasm characterized by Reed-Sternberg cells, including
+          classical Hodgkin lymphoma and nodular lymphocyte predominant Hodgkin lymphoma.
+        meaning: NCIT:C9357
+        annotations:
+          category:
+            tag: category
+            value: hematologic
+          who_classification:
+            tag: who_classification
+            value: WHO-HAEM5
+        title: Hodgkin Lymphoma
+      NON_HODGKIN_LYMPHOMA:
+        text: NON_HODGKIN_LYMPHOMA
+        description: Lymphoid neoplasms other than Hodgkin lymphoma, including Burkitt
+          lymphoma, diffuse large B-cell lymphoma, anaplastic large cell lymphoma,
+          and lymphoblastic lymphoma.
+        meaning: NCIT:C3211
+        annotations:
+          category:
+            tag: category
+            value: hematologic
+          who_classification:
+            tag: who_classification
+            value: WHO-HAEM5
+        title: Non-Hodgkin Lymphoma
+        aliases:
+        - NHL
+      LYMPHOPROLIFERATIVE_DISEASE:
+        text: LYMPHOPROLIFERATIVE_DISEASE
+        description: Disorders characterized by abnormal lymphocyte proliferation,
+          including post-transplant lymphoproliferative disorder (PTLD) and hemophagocytic
+          lymphohistiocytosis (HLH).
+        meaning: NCIT:C3138
+        annotations:
+          category:
+            tag: category
+            value: hematologic
+        title: Lymphoproliferative Diseases
+      OTHER_HEME_TUMOR:
+        text: OTHER_HEME_TUMOR
+        description: Hematologic malignancies not classified elsewhere, including
+          histiocytic disorders, myelodysplastic syndromes, and myeloproliferative
+          neoplasms.
+        meaning: NCIT:C27134
+        annotations:
+          category:
+            tag: category
+            value: hematologic
+        title: Other Heme Tumors
+      NEUROBLASTOMA:
+        text: NEUROBLASTOMA
+        description: Embryonal tumor of the peripheral sympathetic nervous system,
+          arising from neural crest cells. Includes ganglioneuroblastoma and ganglioneuroma.
+        meaning: NCIT:C3270
+        annotations:
+          category:
+            tag: category
+            value: solid_tumor
+          who_classification:
+            tag: who_classification
+            value: WHO Pediatric Blue Book
+        title: Neuroblastoma
+      OSTEOSARCOMA:
+        text: OSTEOSARCOMA
+        description: Primary malignant bone tumor characterized by osteoid production,
+          including conventional, telangiectatic, and small cell variants.
+        meaning: NCIT:C9145
+        annotations:
+          category:
+            tag: category
+            value: solid_tumor
+          who_classification:
+            tag: who_classification
+            value: WHO Bone/Soft Tissue
+        title: Osteosarcoma
+      EWING_SARCOMA:
+        text: EWING_SARCOMA
+        description: Small round cell sarcoma typically harboring EWSR1 rearrangements,
+          arising in bone or soft tissue. Includes Ewing sarcoma family of tumors.
+        meaning: NCIT:C4817
+        annotations:
+          category:
+            tag: category
+            value: solid_tumor
+          who_classification:
+            tag: who_classification
+            value: WHO Bone/Soft Tissue
+        title: Ewing Sarcoma
+      RHABDOMYOSARCOMA:
+        text: RHABDOMYOSARCOMA
+        description: Malignant soft tissue tumor with skeletal muscle differentiation,
+          including embryonal, alveolar, and spindle cell/sclerosing subtypes.
+        meaning: NCIT:C3359
+        annotations:
+          category:
+            tag: category
+            value: solid_tumor
+          who_classification:
+            tag: who_classification
+            value: WHO Bone/Soft Tissue
+        title: Rhabdomyosarcoma
+      SOFT_TISSUE_TUMOR:
+        text: SOFT_TISSUE_TUMOR
+        description: Soft tissue neoplasms other than rhabdomyosarcoma and Ewing sarcoma,
+          including synovial sarcoma, fibrosarcoma, and other sarcomas. Also includes
+          non-sarcomatous soft tissue tumors.
+        meaning: NCIT:C3399
+        annotations:
+          category:
+            tag: category
+            value: solid_tumor
+        title: Soft Tissue Tumors
+        aliases:
+        - Soft Tissue Sarcoma
+      RHABDOID_TUMOR:
+        text: RHABDOID_TUMOR
+        description: Highly aggressive tumors characterized by SMARCB1 loss, occurring
+          outside the CNS (extracranial rhabdoid tumor). Includes malignant rhabdoid
+          tumor of kidney.
+        meaning: NCIT:C3769
+        annotations:
+          category:
+            tag: category
+            value: solid_tumor
+        title: Rhabdoid Tumors
+      RENAL_TUMOR:
+        text: RENAL_TUMOR
+        description: Kidney tumors including Wilms tumor (nephroblastoma), clear cell
+          sarcoma of kidney, renal cell carcinoma, and congenital mesoblastic nephroma.
+        meaning: NCIT:C7548
+        annotations:
+          category:
+            tag: category
+            value: solid_tumor
+          who_classification:
+            tag: who_classification
+            value: WHO Pediatric Blue Book
+        title: Renal Tumors
+        aliases:
+        - Kidney Tumor
+        - Wilms Tumor
+      RETINOBLASTOMA:
+        text: RETINOBLASTOMA
+        description: Malignant neoplasm of the retina arising from developing retinal
+          cells, associated with RB1 mutations.
+        meaning: NCIT:C7541
+        annotations:
+          category:
+            tag: category
+            value: solid_tumor
+          who_classification:
+            tag: who_classification
+            value: WHO Pediatric Blue Book
+        title: Retinoblastoma
+      GERM_CELL_TUMOR:
+        text: GERM_CELL_TUMOR
+        description: Tumors arising from primordial germ cells, occurring in gonadal
+          or extragonadal sites. Includes teratoma, yolk sac tumor, germinoma, choriocarcinoma,
+          and mixed germ cell tumors. Excludes CNS germ cell tumors.
+        meaning: NCIT:C3708
+        annotations:
+          category:
+            tag: category
+            value: solid_tumor
+        title: Germ Cell Tumors
+      ENDOCRINE_AND_NEUROENDOCRINE_TUMOR:
+        text: ENDOCRINE_AND_NEUROENDOCRINE_TUMOR
+        description: Tumors of endocrine glands and neuroendocrine cells, including
+          thyroid carcinoma, adrenocortical carcinoma, pheochromocytoma, and paraganglioma.
+        meaning: NCIT:C3010
+        annotations:
+          category:
+            tag: category
+            value: solid_tumor
+        title: Endocrine and Neuroendocrine Tumors
+      OTHER_SOLID_TUMOR:
+        text: OTHER_SOLID_TUMOR
+        description: Solid tumors not classified elsewhere, including hepatoblastoma,
+          pleuropulmonary blastoma, nasopharyngeal carcinoma, melanoma, and carcinomas.
+        meaning: NCIT:C9107
+        annotations:
+          category:
+            tag: category
+            value: solid_tumor
+        title: Other Solid Tumors
+  ICCC3MainGroup:
+    name: ICCC3MainGroup
+    definition_uri: https://w3id.org/valuesets/ICCC3MainGroup
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    annotations:
+      source:
+        tag: source
+        value: SEER/IARC
+      version:
+        tag: version
+        value: ICCC-3
+      coding_system:
+        tag: coding_system
+        value: ICD-O-3
+    description: The 12 main diagnostic groups of the International Classification
+      of Childhood Cancer, Third Edition. Based on tumor morphology and primary site
+      with emphasis on morphology.
+    title: ICCC-3 Main Diagnostic Group
+    from_schema: https://w3id.org/linkml/valuesets/medical/pediatric_oncology/iccc3
+    see_also:
+    - https://seer.cancer.gov/iccc/
+    - https://seer.cancer.gov/iccc/iccc3.html
+    - https://pubmed.ncbi.nlm.nih.gov/15712273/
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: RELEASED
+    permissible_values:
+      I_LEUKEMIAS_MYELOPROLIFERATIVE_MYELODYSPLASTIC:
+        text: I_LEUKEMIAS_MYELOPROLIFERATIVE_MYELODYSPLASTIC
+        description: Includes lymphoid leukemias, acute myeloid leukemias, chronic
+          myeloproliferative diseases, myelodysplastic syndrome and other myeloproliferative
+          diseases, and unspecified and other specified leukemias.
+        meaning: NCIT:C3161
+        annotations:
+          iccc_code:
+            tag: iccc_code
+            value: I
+          subgroup_count:
+            tag: subgroup_count
+            value: 5
+        title: I. Leukemias, myeloproliferative diseases, and myelodysplastic diseases
+      II_LYMPHOMAS_RETICULOENDOTHELIAL:
+        text: II_LYMPHOMAS_RETICULOENDOTHELIAL
+        description: Includes Hodgkin lymphomas, non-Hodgkin lymphomas (except Burkitt
+          lymphoma), Burkitt lymphoma, and miscellaneous lymphoreticular neoplasms.
+        meaning: NCIT:C7058
+        annotations:
+          iccc_code:
+            tag: iccc_code
+            value: II
+          subgroup_count:
+            tag: subgroup_count
+            value: 4
+        title: II. Lymphomas and reticuloendothelial neoplasms
+      III_CNS_INTRACRANIAL_INTRASPINAL:
+        text: III_CNS_INTRACRANIAL_INTRASPINAL
+        description: Includes ependymomas and choroid plexus tumor, astrocytomas,
+          intracranial and intraspinal embryonal tumors, other gliomas, other specified
+          intracranial and intraspinal neoplasms, and unspecified intracranial and
+          intraspinal neoplasms. Also includes nonmalignant CNS tumors.
+        meaning: NCIT:C2907
+        annotations:
+          iccc_code:
+            tag: iccc_code
+            value: III
+          subgroup_count:
+            tag: subgroup_count
+            value: 6
+          includes_nonmalignant:
+            tag: includes_nonmalignant
+            value: true
+        title: III. CNS and miscellaneous intracranial and intraspinal neoplasms
+      IV_NEUROBLASTOMA_PERIPHERAL_NERVOUS:
+        text: IV_NEUROBLASTOMA_PERIPHERAL_NERVOUS
+        description: Includes neuroblastoma and ganglioneuroblastoma, and other peripheral
+          nervous cell tumors.
+        meaning: NCIT:C3270
+        annotations:
+          iccc_code:
+            tag: iccc_code
+            value: IV
+          subgroup_count:
+            tag: subgroup_count
+            value: 2
+        title: IV. Neuroblastoma and other peripheral nervous cell tumors
+      V_RETINOBLASTOMA:
+        text: V_RETINOBLASTOMA
+        description: Malignant neoplasm of the retina. Single group with no subgroups.
+        meaning: NCIT:C7541
+        annotations:
+          iccc_code:
+            tag: iccc_code
+            value: V
+          subgroup_count:
+            tag: subgroup_count
+            value: 1
+        title: V. Retinoblastoma
+      VI_RENAL_TUMORS:
+        text: VI_RENAL_TUMORS
+        description: Includes nephroblastoma and other nonepithelial renal tumors,
+          renal carcinomas, and unspecified malignant renal tumors.
+        meaning: NCIT:C7548
+        annotations:
+          iccc_code:
+            tag: iccc_code
+            value: VI
+          subgroup_count:
+            tag: subgroup_count
+            value: 3
+        title: VI. Renal tumors
+      VII_HEPATIC_TUMORS:
+        text: VII_HEPATIC_TUMORS
+        description: Includes hepatoblastoma, hepatic carcinomas, and unspecified
+          malignant hepatic tumors.
+        meaning: NCIT:C7927
+        annotations:
+          iccc_code:
+            tag: iccc_code
+            value: VII
+          subgroup_count:
+            tag: subgroup_count
+            value: 3
+        title: VII. Hepatic tumors
+      VIII_MALIGNANT_BONE_TUMORS:
+        text: VIII_MALIGNANT_BONE_TUMORS
+        description: Includes osteosarcomas, chondrosarcomas, Ewing tumor and related
+          sarcomas of bone, other specified malignant bone tumors, and unspecified
+          malignant bone tumors.
+        meaning: NCIT:C4882
+        annotations:
+          iccc_code:
+            tag: iccc_code
+            value: VIII
+          subgroup_count:
+            tag: subgroup_count
+            value: 5
+        title: VIII. Malignant bone tumors
+      IX_SOFT_TISSUE_SARCOMAS:
+        text: IX_SOFT_TISSUE_SARCOMAS
+        description: Includes rhabdomyosarcomas, fibrosarcomas/peripheral nerve sheath
+          tumors/other fibrous neoplasms, Kaposi sarcoma, other specified soft tissue
+          sarcomas, and unspecified soft tissue sarcomas.
+        meaning: NCIT:C9306
+        annotations:
+          iccc_code:
+            tag: iccc_code
+            value: IX
+          subgroup_count:
+            tag: subgroup_count
+            value: 5
+        title: IX. Soft tissue and other extraosseous sarcomas
+      X_GERM_CELL_GONADAL:
+        text: X_GERM_CELL_GONADAL
+        description: Includes intracranial and intraspinal germ cell tumors, malignant
+          extracranial and extragonadal germ cell tumors, malignant gonadal germ cell
+          tumors, gonadal carcinomas, and other and unspecified malignant gonadal
+          tumors.
+        meaning: NCIT:C3708
+        annotations:
+          iccc_code:
+            tag: iccc_code
+            value: X
+          subgroup_count:
+            tag: subgroup_count
+            value: 5
+        title: X. Germ cell tumors, trophoblastic tumors, and neoplasms of gonads
+      XI_EPITHELIAL_MELANOMA:
+        text: XI_EPITHELIAL_MELANOMA
+        description: Includes adrenocortical carcinomas, thyroid carcinomas, nasopharyngeal
+          carcinomas, malignant melanomas, skin carcinomas, and other and unspecified
+          carcinomas.
+        meaning: NCIT:C3709
+        annotations:
+          iccc_code:
+            tag: iccc_code
+            value: XI
+          subgroup_count:
+            tag: subgroup_count
+            value: 6
+        title: XI. Other malignant epithelial neoplasms and malignant melanomas
+      XII_OTHER_UNSPECIFIED:
+        text: XII_OTHER_UNSPECIFIED
+        description: Includes other specified malignant tumors and other unspecified
+          malignant tumors not classifiable in groups I-XI.
+        meaning: NCIT:C3262
+        annotations:
+          iccc_code:
+            tag: iccc_code
+            value: XII
+          subgroup_count:
+            tag: subgroup_count
+            value: 2
+        title: XII. Other and unspecified malignant neoplasms
+  ICCC3Subgroup:
+    name: ICCC3Subgroup
+    definition_uri: https://w3id.org/valuesets/ICCC3Subgroup
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    annotations:
+      source:
+        tag: source
+        value: SEER/IARC
+      version:
+        tag: version
+        value: ICCC-3
+    description: The 47 diagnostic subgroups of the International Classification of
+      Childhood Cancer, Third Edition. These provide more detailed classification
+      within each of the 12 main groups.
+    title: ICCC-3 Diagnostic Subgroup
+    from_schema: https://w3id.org/linkml/valuesets/medical/pediatric_oncology/iccc3
+    see_also:
+    - https://seer.cancer.gov/iccc/iccc3.html
+    - https://seer.cancer.gov/iccc/iccc3_ext.html
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: RELEASED
+    permissible_values:
+      Ia_LYMPHOID_LEUKEMIAS:
+        text: Ia_LYMPHOID_LEUKEMIAS
+        description: Precursor cell lymphoblastic leukemia, NOS; precursor cell lymphoblastic
+          leukemia, B-cell; precursor cell lymphoblastic leukemia, T-cell; Burkitt
+          cell leukemia; and other lymphoid leukemias.
+        meaning: NCIT:C3167
+        annotations:
+          main_group:
+            tag: main_group
+            value: I
+          icdo3_codes:
+            tag: icdo3_codes
+            value: 9820-9827, 9835-9837
+        title: Ia. Lymphoid leukemias
+      Ib_ACUTE_MYELOID_LEUKEMIAS:
+        text: Ib_ACUTE_MYELOID_LEUKEMIAS
+        description: Acute myeloid leukemia and variants including AML with maturation,
+          acute promyelocytic leukemia, acute myelomonocytic leukemia, acute monoblastic
+          leukemia, acute megakaryoblastic leukemia, etc.
+        meaning: NCIT:C3171
+        annotations:
+          main_group:
+            tag: main_group
+            value: I
+          icdo3_codes:
+            tag: icdo3_codes
+            value: 9840, 9861, 9866-9867, 9870-9874, 9891, 9895-9897, 9910, 9920,
+              9931
+        title: Ib. Acute myeloid leukemias
+      Ic_CHRONIC_MYELOPROLIFERATIVE:
+        text: Ic_CHRONIC_MYELOPROLIFERATIVE
+        description: Chronic myeloid leukemia, NOS; juvenile myelomonocytic leukemia;
+          and other chronic myeloproliferative diseases.
+        meaning: NCIT:C4345
+        annotations:
+          main_group:
+            tag: main_group
+            value: I
+          icdo3_codes:
+            tag: icdo3_codes
+            value: 9863, 9875-9876, 9945-9946, 9950, 9960-9964
+        title: Ic. Chronic myeloproliferative diseases
+      Id_MYELODYSPLASTIC_OTHER_MYELOPROLIFERATIVE:
+        text: Id_MYELODYSPLASTIC_OTHER_MYELOPROLIFERATIVE
+        description: Myelodysplastic syndrome, NOS; refractory anemia; refractory
+          anemia with ringed sideroblasts; refractory anemia with excess blasts.
+        meaning: NCIT:C3247
+        annotations:
+          main_group:
+            tag: main_group
+            value: I
+          icdo3_codes:
+            tag: icdo3_codes
+            value: 9945, 9980, 9982-9983, 9985-9989
+        title: Id. Myelodysplastic syndrome and other myeloproliferative diseases
+      Ie_UNSPECIFIED_OTHER_LEUKEMIAS:
+        text: Ie_UNSPECIFIED_OTHER_LEUKEMIAS
+        description: Leukemia, NOS and other specified leukemias not elsewhere classified.
+        meaning: NCIT:C3161
+        annotations:
+          main_group:
+            tag: main_group
+            value: I
+          icdo3_codes:
+            tag: icdo3_codes
+            value: 9800-9801, 9805-9809, 9860, 9930
+        title: Ie. Unspecified and other specified leukemias
+      IIa_HODGKIN_LYMPHOMAS:
+        text: IIa_HODGKIN_LYMPHOMAS
+        description: Classical Hodgkin lymphoma and nodular lymphocyte predominant
+          Hodgkin lymphoma.
+        meaning: NCIT:C9357
+        annotations:
+          main_group:
+            tag: main_group
+            value: II
+          icdo3_codes:
+            tag: icdo3_codes
+            value: 9650-9655, 9659, 9661-9665, 9667
+        title: IIa. Hodgkin lymphomas
+      IIb_NON_HODGKIN_LYMPHOMAS:
+        text: IIb_NON_HODGKIN_LYMPHOMAS
+        description: Diffuse large B-cell lymphoma, follicular lymphoma, peripheral
+          T-cell lymphoma, anaplastic large cell lymphoma, and other non-Hodgkin lymphomas.
+        meaning: NCIT:C3211
+        annotations:
+          main_group:
+            tag: main_group
+            value: II
+          icdo3_codes:
+            tag: icdo3_codes
+            value: 9591, 9670-9686, 9689-9691, 9695, 9698-9702, 9705, 9708-9709, 9714-9719,
+              9727-9729
+        title: IIb. Non-Hodgkin lymphomas (except Burkitt lymphoma)
+      IIc_BURKITT_LYMPHOMA:
+        text: IIc_BURKITT_LYMPHOMA
+        description: Burkitt lymphoma and Burkitt-like lymphoma.
+        meaning: NCIT:C8150
+        annotations:
+          main_group:
+            tag: main_group
+            value: II
+          icdo3_codes:
+            tag: icdo3_codes
+            value: '9687'
+        title: IIc. Burkitt lymphoma
+      IId_MISC_LYMPHORETICULAR:
+        text: IId_MISC_LYMPHORETICULAR
+        description: Lymphoreticular neoplasms not elsewhere classified including
+          lymphomatoid granulomatosis and post-transplant lymphoproliferative disorder.
+        meaning: NCIT:C27134
+        annotations:
+          main_group:
+            tag: main_group
+            value: II
+          icdo3_codes:
+            tag: icdo3_codes
+            value: 9740-9742, 9750, 9754-9758, 9930, 9970
+        title: IId. Miscellaneous lymphoreticular neoplasms
+      IIIa_EPENDYMOMAS:
+        text: IIIa_EPENDYMOMAS
+        description: Ependymoma, anaplastic ependymoma, myxopapillary ependymoma,
+          and choroid plexus papilloma and carcinoma.
+        meaning: NCIT:C3017
+        annotations:
+          main_group:
+            tag: main_group
+            value: III
+          icdo3_codes:
+            tag: icdo3_codes
+            value: 9383, 9390-9394
+        title: IIIa. Ependymomas and choroid plexus tumor
+      IIIb_ASTROCYTOMAS:
+        text: IIIb_ASTROCYTOMAS
+        description: Pilocytic astrocytoma, diffuse astrocytoma, anaplastic astrocytoma,
+          glioblastoma, and other astrocytic tumors.
+        meaning: NCIT:C60781
+        annotations:
+          main_group:
+            tag: main_group
+            value: III
+          icdo3_codes:
+            tag: icdo3_codes
+            value: 9380, 9384, 9400-9411, 9420, 9424
+        title: IIIb. Astrocytomas
+      IIIc_INTRACRANIAL_EMBRYONAL:
+        text: IIIc_INTRACRANIAL_EMBRYONAL
+        description: Medulloblastoma, primitive neuroectodermal tumor, medulloepithelioma,
+          atypical teratoid/rhabdoid tumor, and other embryonal tumors.
+        meaning: NCIT:C6774
+        annotations:
+          main_group:
+            tag: main_group
+            value: III
+          icdo3_codes:
+            tag: icdo3_codes
+            value: 9470-9474, 9480, 9490, 9500-9508
+        title: IIIc. Intracranial and intraspinal embryonal tumors
+      IIId_OTHER_GLIOMAS:
+        text: IIId_OTHER_GLIOMAS
+        description: Oligodendroglioma, anaplastic oligodendroglioma, mixed glioma,
+          and other gliomas not elsewhere classified.
+        meaning: NCIT:C3059
+        annotations:
+          main_group:
+            tag: main_group
+            value: III
+          icdo3_codes:
+            tag: icdo3_codes
+            value: 9380-9382, 9430, 9440-9460
+        title: IIId. Other gliomas
+      IIIe_OTHER_INTRACRANIAL_INTRASPINAL:
+        text: IIIe_OTHER_INTRACRANIAL_INTRASPINAL
+        description: Pituitary adenoma, craniopharyngioma, pineal tumors, and other
+          specified intracranial neoplasms.
+        meaning: NCIT:C2907
+        annotations:
+          main_group:
+            tag: main_group
+            value: III
+        title: IIIe. Other specified intracranial and intraspinal neoplasms
+      IIIf_UNSPECIFIED_INTRACRANIAL:
+        text: IIIf_UNSPECIFIED_INTRACRANIAL
+        description: Intracranial and intraspinal neoplasms, NOS.
+        meaning: NCIT:C2907
+        annotations:
+          main_group:
+            tag: main_group
+            value: III
+          icdo3_codes:
+            tag: icdo3_codes
+            value: 8000-8005
+        title: IIIf. Unspecified intracranial and intraspinal neoplasms
+      IVa_NEUROBLASTOMA_GANGLIONEUROBLASTOMA:
+        text: IVa_NEUROBLASTOMA_GANGLIONEUROBLASTOMA
+        description: Neuroblastoma, NOS and ganglioneuroblastoma.
+        meaning: NCIT:C3270
+        annotations:
+          main_group:
+            tag: main_group
+            value: IV
+          icdo3_codes:
+            tag: icdo3_codes
+            value: 9490, 9500
+        title: IVa. Neuroblastoma and ganglioneuroblastoma
+      IVb_OTHER_PERIPHERAL_NERVOUS:
+        text: IVb_OTHER_PERIPHERAL_NERVOUS
+        description: Other peripheral nerve tumors including ganglioneuroma and peripheral
+          nerve sheath tumors.
+        meaning: NCIT:C4969
+        annotations:
+          main_group:
+            tag: main_group
+            value: IV
+          icdo3_codes:
+            tag: icdo3_codes
+            value: 9501-9504, 9520-9523
+        title: IVb. Other peripheral nervous cell tumors
+      V_RETINOBLASTOMA:
+        text: V_RETINOBLASTOMA
+        description: Retinoblastoma.
+        meaning: NCIT:C7541
+        annotations:
+          main_group:
+            tag: main_group
+            value: V
+          icdo3_codes:
+            tag: icdo3_codes
+            value: 9510-9514
+        title: V. Retinoblastoma
+      VIa_NEPHROBLASTOMA:
+        text: VIa_NEPHROBLASTOMA
+        description: Wilms tumor (nephroblastoma), clear cell sarcoma of kidney, rhabdoid
+          tumor of kidney, and other nonepithelial renal tumors.
+        meaning: NCIT:C3267
+        annotations:
+          main_group:
+            tag: main_group
+            value: VI
+          icdo3_codes:
+            tag: icdo3_codes
+            value: 8960, 8963-8964
+        title: VIa. Nephroblastoma and other nonepithelial renal tumors
+      VIb_RENAL_CARCINOMAS:
+        text: VIb_RENAL_CARCINOMAS
+        description: Renal cell carcinoma and other renal carcinomas.
+        meaning: NCIT:C9385
+        annotations:
+          main_group:
+            tag: main_group
+            value: VI
+        title: VIb. Renal carcinomas
+      VIc_UNSPECIFIED_RENAL:
+        text: VIc_UNSPECIFIED_RENAL
+        description: Malignant renal tumors, NOS.
+        meaning: NCIT:C7548
+        annotations:
+          main_group:
+            tag: main_group
+            value: VI
+        title: VIc. Unspecified malignant renal tumors
+      VIIa_HEPATOBLASTOMA:
+        text: VIIa_HEPATOBLASTOMA
+        description: Hepatoblastoma.
+        meaning: NCIT:C3728
+        annotations:
+          main_group:
+            tag: main_group
+            value: VII
+          icdo3_codes:
+            tag: icdo3_codes
+            value: '8970'
+        title: VIIa. Hepatoblastoma
+      VIIb_HEPATIC_CARCINOMAS:
+        text: VIIb_HEPATIC_CARCINOMAS
+        description: Hepatocellular carcinoma, cholangiocarcinoma, and other hepatic
+          carcinomas.
+        meaning: NCIT:C3099
+        annotations:
+          main_group:
+            tag: main_group
+            value: VII
+        title: VIIb. Hepatic carcinomas
+      VIIc_UNSPECIFIED_HEPATIC:
+        text: VIIc_UNSPECIFIED_HEPATIC
+        description: Malignant hepatic tumors, NOS.
+        meaning: NCIT:C7927
+        annotations:
+          main_group:
+            tag: main_group
+            value: VII
+        title: VIIc. Unspecified malignant hepatic tumors
+      VIIIa_OSTEOSARCOMAS:
+        text: VIIIa_OSTEOSARCOMAS
+        description: Osteosarcoma, NOS and variants including chondroblastic, fibroblastic,
+          telangiectatic, and small cell osteosarcoma.
+        meaning: NCIT:C9145
+        annotations:
+          main_group:
+            tag: main_group
+            value: VIII
+          icdo3_codes:
+            tag: icdo3_codes
+            value: 9180-9187, 9191-9195
+        title: VIIIa. Osteosarcomas
+      VIIIb_CHONDROSARCOMAS:
+        text: VIIIb_CHONDROSARCOMAS
+        description: Chondrosarcoma, NOS and variants.
+        meaning: NCIT:C2946
+        annotations:
+          main_group:
+            tag: main_group
+            value: VIII
+          icdo3_codes:
+            tag: icdo3_codes
+            value: 9220-9231, 9240-9243
+        title: VIIIb. Chondrosarcomas
+      VIIIc_EWING_TUMOR_BONE:
+        text: VIIIc_EWING_TUMOR_BONE
+        description: Ewing sarcoma of bone and peripheral primitive neuroectodermal
+          tumor of bone.
+        meaning: NCIT:C4817
+        annotations:
+          main_group:
+            tag: main_group
+            value: VIII
+          icdo3_codes:
+            tag: icdo3_codes
+            value: 9260, 9364
+        title: VIIIc. Ewing tumor and related sarcomas of bone
+      VIIId_OTHER_BONE:
+        text: VIIId_OTHER_BONE
+        description: Other specified malignant bone tumors including giant cell tumor
+          of bone, malignant and adamantinoma.
+        meaning: NCIT:C4882
+        annotations:
+          main_group:
+            tag: main_group
+            value: VIII
+        title: VIIId. Other specified malignant bone tumors
+      VIIIe_UNSPECIFIED_BONE:
+        text: VIIIe_UNSPECIFIED_BONE
+        description: Malignant bone tumors, NOS.
+        meaning: NCIT:C4882
+        annotations:
+          main_group:
+            tag: main_group
+            value: VIII
+        title: VIIIe. Unspecified malignant bone tumors
+      IXa_RHABDOMYOSARCOMAS:
+        text: IXa_RHABDOMYOSARCOMAS
+        description: Rhabdomyosarcoma, NOS; embryonal rhabdomyosarcoma; alveolar rhabdomyosarcoma;
+          and other rhabdomyosarcomas.
+        meaning: NCIT:C3359
+        annotations:
+          main_group:
+            tag: main_group
+            value: IX
+          icdo3_codes:
+            tag: icdo3_codes
+            value: 8900-8905, 8910, 8912, 8920
+        title: IXa. Rhabdomyosarcomas
+      IXb_FIBROSARCOMAS:
+        text: IXb_FIBROSARCOMAS
+        description: Fibrosarcoma, NOS; infantile fibrosarcoma; dermatofibrosarcoma;
+          and malignant peripheral nerve sheath tumor.
+        meaning: NCIT:C3043
+        annotations:
+          main_group:
+            tag: main_group
+            value: IX
+          icdo3_codes:
+            tag: icdo3_codes
+            value: 8810-8815, 8820-8823, 8830, 8832-8833, 9540, 9560-9561
+        title: IXb. Fibrosarcomas, peripheral nerve sheath tumors, and other fibrous
+          neoplasms
+      IXc_KAPOSI_SARCOMA:
+        text: IXc_KAPOSI_SARCOMA
+        description: Kaposi sarcoma.
+        meaning: NCIT:C9087
+        annotations:
+          main_group:
+            tag: main_group
+            value: IX
+          icdo3_codes:
+            tag: icdo3_codes
+            value: '9140'
+        title: IXc. Kaposi sarcoma
+      IXd_OTHER_SOFT_TISSUE:
+        text: IXd_OTHER_SOFT_TISSUE
+        description: Includes liposarcoma, leiomyosarcoma, synovial sarcoma, hemangiosarcoma,
+          and other specified soft tissue sarcomas.
+        meaning: NCIT:C9306
+        annotations:
+          main_group:
+            tag: main_group
+            value: IX
+        title: IXd. Other specified soft tissue sarcomas
+      IXe_UNSPECIFIED_SOFT_TISSUE:
+        text: IXe_UNSPECIFIED_SOFT_TISSUE
+        description: Soft tissue sarcomas, NOS.
+        meaning: NCIT:C9306
+        annotations:
+          main_group:
+            tag: main_group
+            value: IX
+        title: IXe. Unspecified soft tissue sarcomas
+      Xa_INTRACRANIAL_GERM_CELL:
+        text: Xa_INTRACRANIAL_GERM_CELL
+        description: CNS germ cell tumors including germinoma, teratoma, and nongerminomatous
+          germ cell tumors.
+        meaning: NCIT:C6286
+        annotations:
+          main_group:
+            tag: main_group
+            value: X
+          icdo3_codes:
+            tag: icdo3_codes
+            value: 9060-9102
+        title: Xa. Intracranial and intraspinal germ cell tumors
+      Xb_EXTRACRANIAL_EXTRAGONADAL_GERM_CELL:
+        text: Xb_EXTRACRANIAL_EXTRAGONADAL_GERM_CELL
+        description: Extracranial germ cell tumors not involving the gonads including
+          sacrococcygeal, retroperitoneal, and mediastinal germ cell tumors.
+        meaning: NCIT:C6545
+        annotations:
+          main_group:
+            tag: main_group
+            value: X
+        title: Xb. Malignant extracranial and extragonadal germ cell tumors
+      Xc_GONADAL_GERM_CELL:
+        text: Xc_GONADAL_GERM_CELL
+        description: Germ cell tumors of the ovary and testis including dysgerminoma,
+          yolk sac tumor, embryonal carcinoma, and mixed germ cell tumors.
+        meaning: NCIT:C3708
+        annotations:
+          main_group:
+            tag: main_group
+            value: X
+        title: Xc. Malignant gonadal germ cell tumors
+      Xd_GONADAL_CARCINOMAS:
+        text: Xd_GONADAL_CARCINOMAS
+        description: Carcinomas arising in the ovary and testis.
+        meaning: NCIT:C3709
+        annotations:
+          main_group:
+            tag: main_group
+            value: X
+        title: Xd. Gonadal carcinomas
+      Xe_OTHER_GONADAL:
+        text: Xe_OTHER_GONADAL
+        description: Other specified and unspecified gonadal tumors.
+        meaning: NCIT:C3708
+        annotations:
+          main_group:
+            tag: main_group
+            value: X
+        title: Xe. Other and unspecified malignant gonadal tumors
+      XIa_ADRENOCORTICAL_CARCINOMAS:
+        text: XIa_ADRENOCORTICAL_CARCINOMAS
+        description: Adrenocortical carcinoma.
+        meaning: NCIT:C9325
+        annotations:
+          main_group:
+            tag: main_group
+            value: XI
+          icdo3_codes:
+            tag: icdo3_codes
+            value: '8370'
+        title: XIa. Adrenocortical carcinomas
+      XIb_THYROID_CARCINOMAS:
+        text: XIb_THYROID_CARCINOMAS
+        description: Papillary thyroid carcinoma, follicular thyroid carcinoma, and
+          medullary thyroid carcinoma.
+        meaning: NCIT:C7510
+        annotations:
+          main_group:
+            tag: main_group
+            value: XI
+        title: XIb. Thyroid carcinomas
+      XIc_NASOPHARYNGEAL_CARCINOMAS:
+        text: XIc_NASOPHARYNGEAL_CARCINOMAS
+        description: Nasopharyngeal carcinoma and related carcinomas.
+        meaning: NCIT:C3871
+        annotations:
+          main_group:
+            tag: main_group
+            value: XI
+        title: XIc. Nasopharyngeal carcinomas
+      XId_MALIGNANT_MELANOMAS:
+        text: XId_MALIGNANT_MELANOMAS
+        description: Cutaneous and non-cutaneous malignant melanomas.
+        meaning: NCIT:C3224
+        annotations:
+          main_group:
+            tag: main_group
+            value: XI
+        title: XId. Malignant melanomas
+      XIe_SKIN_CARCINOMAS:
+        text: XIe_SKIN_CARCINOMAS
+        description: Basal cell carcinoma, squamous cell carcinoma of skin, and other
+          skin carcinomas.
+        meaning: NCIT:C3372
+        annotations:
+          main_group:
+            tag: main_group
+            value: XI
+        title: XIe. Skin carcinomas
+      XIf_OTHER_CARCINOMAS:
+        text: XIf_OTHER_CARCINOMAS
+        description: Carcinomas at other sites and carcinomas, NOS.
+        meaning: NCIT:C3709
+        annotations:
+          main_group:
+            tag: main_group
+            value: XI
+        title: XIf. Other and unspecified carcinomas
+      XIIa_OTHER_SPECIFIED:
+        text: XIIa_OTHER_SPECIFIED
+        description: Malignant tumors not classifiable in groups I-XI but with specified
+          histology.
+        meaning: NCIT:C3262
+        annotations:
+          main_group:
+            tag: main_group
+            value: XII
+        title: XIIa. Other specified malignant tumors
+      XIIb_OTHER_UNSPECIFIED:
+        text: XIIb_OTHER_UNSPECIFIED
+        description: Malignant tumors, NOS not classifiable in groups I-XI.
+        meaning: NCIT:C3262
+        annotations:
+          main_group:
+            tag: main_group
+            value: XII
+        title: XIIb. Other unspecified malignant tumors
+  INRGSSStage:
+    name: INRGSSStage
+    definition_uri: https://w3id.org/valuesets/INRGSSStage
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    annotations:
+      source:
+        tag: source
+        value: SEER/INRG Task Force
+      effective_year:
+        tag: effective_year
+        value: 2024
+      staging_basis:
+        tag: staging_basis
+        value: imaging
+    description: International Neuroblastoma Risk Group Staging System (INRGSS) stages.
+      A clinical staging system based on imaging and image-defined risk factors (IDRFs),
+      effective for diagnosis years 2024+. Allows staging before any treatment, unlike
+      the surgical INSS system.
+    title: INRGSS Stage
+    from_schema: https://w3id.org/linkml/valuesets/medical/pediatric_oncology/staging/neuroblastoma
+    see_also:
+    - https://staging.seer.cancer.gov/pediatric/input/1.0/neuroblastoma/inrgss/
+    - https://pmc.ncbi.nlm.nih.gov/articles/PMC2650389/
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: RELEASED
+    permissible_values:
+      L1:
+        text: L1
+        description: Localized tumor not involving vital structures as defined by
+          the list of image-defined risk factors and confined to one body compartment
+          (neck, chest, abdomen, or pelvis).
+        meaning: NCIT:C133427
+        annotations:
+          localized:
+            tag: localized
+            value: true
+          idrfs_present:
+            tag: idrfs_present
+            value: false
+        title: L1 - Localized, no IDRFs
+      L2:
+        text: L2
+        description: Locoregional tumor with presence of one or more image-defined
+          risk factors. The tumor has not spread far from where it started but has
+          at least one IDRF.
+        meaning: NCIT:C133428
+        annotations:
+          localized:
+            tag: localized
+            value: true
+          idrfs_present:
+            tag: idrfs_present
+            value: true
+        title: L2 - Localized, with IDRFs
+      M:
+        text: M
+        description: Distant metastatic disease (except as defined for MS). The tumor
+          has spread (metastasized) to distant parts of the body.
+        meaning: NCIT:C133429
+        annotations:
+          metastatic:
+            tag: metastatic
+            value: true
+        title: M - Metastatic
+      MS:
+        text: MS
+        description: Metastatic disease in children younger than 18 months with metastases
+          confined to skin, liver, and/or bone marrow (bone marrow involvement limited
+          to <10% tumor cells). This stage has a favorable prognosis despite metastatic
+          disease.
+        meaning: NCIT:C133430
+        annotations:
+          metastatic:
+            tag: metastatic
+            value: true
+          special_category:
+            tag: special_category
+            value: true
+          age_restriction:
+            tag: age_restriction
+            value: <18 months
+          favorable_prognosis:
+            tag: favorable_prognosis
+            value: true
+        title: MS - Metastatic special
+        aliases:
+        - Stage 4S equivalent
+  INSSStage:
+    name: INSSStage
+    definition_uri: https://w3id.org/valuesets/INSSStage
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    annotations:
+      source:
+        tag: source
+        value: INSS Consensus Conference
+      staging_basis:
+        tag: staging_basis
+        value: surgical
+      legacy_system:
+        tag: legacy_system
+        value: true
+    description: International Neuroblastoma Staging System (INSS) stages. A post-surgical
+      staging system based on extent of tumor resection, lymph node involvement, and
+      metastatic spread. This is the legacy system; INRGSS is now preferred for diagnosis
+      years 2024+.
+    title: INSS Stage
+    from_schema: https://w3id.org/linkml/valuesets/medical/pediatric_oncology/staging/neuroblastoma
+    see_also:
+    - https://www.ncbi.nlm.nih.gov/books/NBK65747.5/table/CDR0000062786__725/
+    - https://www.cancer.org/cancer/types/neuroblastoma/detection-diagnosis-staging/staging.html
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: RELEASED
+    permissible_values:
+      STAGE_1:
+        text: STAGE_1
+        description: Localized tumor with complete gross excision, with or without
+          microscopic residual disease; representative ipsilateral lymph nodes negative
+          for tumor microscopically.
+        meaning: NCIT:C6639
+        annotations:
+          localized:
+            tag: localized
+            value: true
+          resection:
+            tag: resection
+            value: complete
+        title: Stage 1
+      STAGE_2A:
+        text: STAGE_2A
+        description: Localized tumor with incomplete gross excision; representative
+          ipsilateral nonadherent lymph nodes negative for tumor microscopically.
+        meaning: NCIT:C6640
+        annotations:
+          localized:
+            tag: localized
+            value: true
+          resection:
+            tag: resection
+            value: incomplete
+          lymph_nodes:
+            tag: lymph_nodes
+            value: negative
+        title: Stage 2A
+      STAGE_2B:
+        text: STAGE_2B
+        description: Localized tumor with or without complete gross excision, with
+          ipsilateral nonadherent lymph nodes positive for tumor. Enlarged contralateral
+          lymph nodes must be negative microscopically.
+        meaning: NCIT:C6641
+        annotations:
+          localized:
+            tag: localized
+            value: true
+          lymph_nodes:
+            tag: lymph_nodes
+            value: ipsilateral_positive
+        title: Stage 2B
+      STAGE_3:
+        text: STAGE_3
+        description: Unresectable unilateral tumor infiltrating across the midline,
+          with or without regional lymph node involvement; or localized unilateral
+          tumor with contralateral regional lymph node involvement; or midline tumor
+          with bilateral extension by infiltration (unresectable) or by lymph node
+          involvement.
+        meaning: NCIT:C6642
+        annotations:
+          localized:
+            tag: localized
+            value: false
+          crosses_midline:
+            tag: crosses_midline
+            value: true
+        title: Stage 3
+      STAGE_4:
+        text: STAGE_4
+        description: Any primary tumor with dissemination to distant lymph nodes,
+          bone, bone marrow, liver, skin, and/or other organs (except as defined for
+          stage 4S).
+        meaning: NCIT:C6643
+        annotations:
+          metastatic:
+            tag: metastatic
+            value: true
+        title: Stage 4
+      STAGE_4S:
+        text: STAGE_4S
+        description: Localized primary tumor (as defined for stage 1, 2A, or 2B) with
+          dissemination limited to skin, liver, and/or bone marrow (limited to infants
+          <1 year of age). Marrow involvement should be minimal (<10% of total nucleated
+          cells).
+        meaning: NCIT:C6644
+        annotations:
+          metastatic:
+            tag: metastatic
+            value: true
+          special_category:
+            tag: special_category
+            value: true
+          age_restriction:
+            tag: age_restriction
+            value: <12 months
+          favorable_prognosis:
+            tag: favorable_prognosis
+            value: true
+        title: Stage 4S
+        aliases:
+        - Special stage 4
+  NeuroblastomaRiskGroup:
+    name: NeuroblastomaRiskGroup
+    definition_uri: https://w3id.org/valuesets/NeuroblastomaRiskGroup
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    annotations:
+      source:
+        tag: source
+        value: INRG Task Force
+    description: International Neuroblastoma Risk Group (INRG) pretreatment risk classification
+      groups. Combines INRGSS stage with tumor histology, MYCN status, ploidy, and
+      other prognostic factors.
+    title: Neuroblastoma Risk Group
+    from_schema: https://w3id.org/linkml/valuesets/medical/pediatric_oncology/staging/neuroblastoma
+    see_also:
+    - https://pmc.ncbi.nlm.nih.gov/articles/PMC2650388/
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: RELEASED
+    permissible_values:
+      VERY_LOW:
+        text: VERY_LOW
+        description: Very low risk neuroblastoma with excellent prognosis. Typically
+          includes L1 tumors and MS without MYCN amplification.
+        meaning: NCIT:C103236
+        annotations:
+          expected_efs:
+            tag: expected_efs
+            value: '>85%'
+        title: Very Low Risk
+      LOW:
+        text: LOW
+        description: Low risk neuroblastoma with favorable prognosis. Treatment may
+          include surgery alone or observation.
+        meaning: NCIT:C103237
+        annotations:
+          expected_efs:
+            tag: expected_efs
+            value: '>75%'
+        title: Low Risk
+      INTERMEDIATE:
+        text: INTERMEDIATE
+        description: Intermediate risk neuroblastoma requiring multimodal treatment
+          including chemotherapy.
+        meaning: NCIT:C103238
+        annotations:
+          expected_efs:
+            tag: expected_efs
+            value: 50-75%
+        title: Intermediate Risk
+      HIGH:
+        text: HIGH
+        description: High risk neuroblastoma with poor prognosis. Requires intensive
+          multimodal therapy including high-dose chemotherapy with autologous stem
+          cell rescue, surgery, radiation, and immunotherapy.
+        meaning: NCIT:C103239
+        annotations:
+          expected_efs:
+            tag: expected_efs
+            value: <50%
+          mycn_amplified:
+            tag: mycn_amplified
+            value: often
+        title: High Risk
+  ImageDefinedRiskFactor:
+    name: ImageDefinedRiskFactor
+    definition_uri: https://w3id.org/valuesets/ImageDefinedRiskFactor
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    annotations:
+      source:
+        tag: source
+        value: INRG Task Force
+    description: Image-defined risk factors (IDRFs) used in INRGSS staging to determine
+      surgical risk. Presence of any IDRF upgrades a tumor from L1 to L2.
+    title: Image-Defined Risk Factor
+    from_schema: https://w3id.org/linkml/valuesets/medical/pediatric_oncology/staging/neuroblastoma
+    see_also:
+    - https://pmc.ncbi.nlm.nih.gov/articles/PMC2650389/
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: RELEASED
+    permissible_values:
+      IPSILATERAL_TUMOR_EXTENSION_TO_BODY_CAVITIES:
+        text: IPSILATERAL_TUMOR_EXTENSION_TO_BODY_CAVITIES
+        description: Tumor extension from neck to chest, chest to abdomen, or abdomen
+          to pelvis.
+        title: Ipsilateral tumor extension within two body compartments
+      NECK_ENCASING_CAROTID_OR_VERTEBRAL:
+        text: NECK_ENCASING_CAROTID_OR_VERTEBRAL
+        description: Tumor encasing carotid artery and/or vertebral artery.
+        title: Neck - Tumor encasing carotid and/or vertebral artery
+      NECK_ENCASING_JUGULAR:
+        text: NECK_ENCASING_JUGULAR
+        description: Tumor encasing internal jugular vein.
+        title: Neck - Tumor encasing internal jugular vein
+      NECK_EXTENDING_TO_SKULL_BASE:
+        text: NECK_EXTENDING_TO_SKULL_BASE
+        description: Tumor extending to base of skull.
+        title: Neck - Tumor extending to base of skull
+      NECK_COMPRESSING_TRACHEA:
+        text: NECK_COMPRESSING_TRACHEA
+        description: Tumor compressing the trachea.
+        title: Neck - Tumor compressing trachea
+      CERVICOTHORACIC_ENCASING_BRACHIAL_PLEXUS:
+        text: CERVICOTHORACIC_ENCASING_BRACHIAL_PLEXUS
+        description: Tumor encasing brachial plexus roots (C5-T1).
+        title: Cervico-thoracic junction - Tumor encasing brachial plexus roots
+      CERVICOTHORACIC_ENCASING_SUBCLAVIAN:
+        text: CERVICOTHORACIC_ENCASING_SUBCLAVIAN
+        description: Tumor encasing subclavian vessels and/or vertebral artery and/or
+          carotid artery.
+        title: Cervico-thoracic junction - Tumor encasing subclavian vessels
+      CERVICOTHORACIC_COMPRESSING_TRACHEA:
+        text: CERVICOTHORACIC_COMPRESSING_TRACHEA
+        description: Tumor compressing the trachea.
+        title: Cervico-thoracic junction - Tumor compressing trachea
+      THORAX_ENCASING_AORTA:
+        text: THORAX_ENCASING_AORTA
+        description: Tumor encasing aorta and/or major branches.
+        title: Thorax - Tumor encasing aorta and/or major branches
+      THORAX_COMPRESSING_TRACHEA_BRONCHI:
+        text: THORAX_COMPRESSING_TRACHEA_BRONCHI
+        description: Tumor compressing trachea and/or principal bronchi.
+        title: Thorax - Tumor compressing trachea and/or principal bronchi
+      THORAX_LOWER_MEDIASTINUM_INFILTRATING:
+        text: THORAX_LOWER_MEDIASTINUM_INFILTRATING
+        description: Lower mediastinal tumor infiltrating the costo-vertebral junction
+          between T9 and T12.
+        title: Thorax - Lower mediastinal tumor infiltrating costo-vertebral junction
+      THORACOABDOMINAL_ENCASING_AORTA_CELIAC:
+        text: THORACOABDOMINAL_ENCASING_AORTA_CELIAC
+        description: Tumor encasing the aorta and/or vena cava.
+        title: Thoraco-abdominal - Tumor encasing aorta and/or vena cava
+      ABDOMEN_PELVIS_ENCASING_CELIAC_SMA:
+        text: ABDOMEN_PELVIS_ENCASING_CELIAC_SMA
+        description: Tumor encasing celiac axis and/or superior mesenteric artery.
+        title: Abdomen/pelvis - Tumor encasing celiac axis and/or SMA
+      ABDOMEN_PELVIS_ENCASING_RENAL_VESSELS:
+        text: ABDOMEN_PELVIS_ENCASING_RENAL_VESSELS
+        description: Tumor encasing origin of renal vessels.
+        title: Abdomen/pelvis - Tumor encasing origin of renal vessels
+      ABDOMEN_PELVIS_ENCASING_AORTA_IVC:
+        text: ABDOMEN_PELVIS_ENCASING_AORTA_IVC
+        description: Tumor encasing aorta and/or inferior vena cava.
+        title: Abdomen/pelvis - Tumor encasing aorta and/or IVC
+      ABDOMEN_PELVIS_ENCASING_ILIAC_VESSELS:
+        text: ABDOMEN_PELVIS_ENCASING_ILIAC_VESSELS
+        description: Tumor encasing iliac vessels.
+        title: Abdomen/pelvis - Tumor encasing iliac vessels
+      ABDOMEN_PELVIS_PELVIC_CROSSING_SCIATIC_NOTCH:
+        text: ABDOMEN_PELVIS_PELVIC_CROSSING_SCIATIC_NOTCH
+        description: Pelvic tumor crossing the sciatic notch.
+        title: Abdomen/pelvis - Pelvic tumor crossing sciatic notch
+      INTRASPINAL_EXTENSION:
+        text: INTRASPINAL_EXTENSION
+        description: Intraspinal tumor extension provided that more than one third
+          of the spinal canal in the axial plane is invaded and/or the perimedullary
+          leptomeningeal spaces are not visible and/or spinal cord signal is abnormal.
+        title: Intraspinal tumor extension
+      ADJACENT_ORGAN_INFILTRATION:
+        text: ADJACENT_ORGAN_INFILTRATION
+        description: Infiltration of adjacent organs/structures such as pericardium,
+          diaphragm, kidney, liver, duodeno-pancreatic block, and mesentery.
+        title: Infiltration of adjacent organs/structures
   RaceOMB1997Enum:
     name: RaceOMB1997Enum
     definition_uri: https://w3id.org/valuesets/RaceOMB1997Enum
@@ -45198,6 +46757,557 @@ enums:
           standard:
             tag: standard
             value: binary
+  QuantityKindEnum:
+    name: QuantityKindEnum
+    definition_uri: https://w3id.org/valuesets/QuantityKindEnum
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Physical quantity kinds based on QUDT. These represent abstract types
+      of physical quantities independent of the units used to measure them.
+    title: Quantity Kind
+    from_schema: https://w3id.org/valuesets/units/quantity_kinds
+    see_also:
+    - https://www.qudt.org/doc/DOC_VOCAB-QUANTITY-KINDS.html
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      LENGTH:
+        text: LENGTH
+        description: A 1-D extent quality representing distance between two points
+        meaning: quantitykind:Length
+        annotations:
+          si_base:
+            tag: si_base
+            value: 'true'
+          dimension:
+            tag: dimension
+            value: L
+        title: length
+        exact_mappings:
+        - PATO:0000122
+      MASS:
+        text: MASS
+        description: The amount of matter in an object
+        meaning: quantitykind:Mass
+        annotations:
+          si_base:
+            tag: si_base
+            value: 'true'
+          dimension:
+            tag: dimension
+            value: M
+        title: mass
+        exact_mappings:
+        - PATO:0000125
+      TIME:
+        text: TIME
+        description: Duration or temporal extent
+        meaning: quantitykind:Time
+        annotations:
+          si_base:
+            tag: si_base
+            value: 'true'
+          dimension:
+            tag: dimension
+            value: T
+          pato_label:
+            tag: pato_label
+            value: duration
+        title: time
+        exact_mappings:
+        - PATO:0001309
+      THERMODYNAMIC_TEMPERATURE:
+        text: THERMODYNAMIC_TEMPERATURE
+        description: The thermal energy of a system
+        meaning: quantitykind:ThermodynamicTemperature
+        annotations:
+          si_base:
+            tag: si_base
+            value: 'true'
+          dimension:
+            tag: dimension
+            value: "\u0398"
+          pato_label:
+            tag: pato_label
+            value: temperature
+        title: thermodynamic temperature
+        exact_mappings:
+        - PATO:0000146
+      AMOUNT_OF_SUBSTANCE:
+        text: AMOUNT_OF_SUBSTANCE
+        description: The number of elementary entities (atoms, molecules, etc.)
+        meaning: quantitykind:AmountOfSubstance
+        annotations:
+          si_base:
+            tag: si_base
+            value: 'true'
+          dimension:
+            tag: dimension
+            value: N
+          pato_label:
+            tag: pato_label
+            value: amount
+        title: amount of substance
+        close_mappings:
+        - PATO:0000070
+      ELECTRIC_CURRENT:
+        text: ELECTRIC_CURRENT
+        description: Flow of electric charge per unit time
+        meaning: quantitykind:ElectricCurrent
+        annotations:
+          si_base:
+            tag: si_base
+            value: 'true'
+          dimension:
+            tag: dimension
+            value: I
+        title: electric current
+      LUMINOUS_INTENSITY:
+        text: LUMINOUS_INTENSITY
+        description: Luminous power per unit solid angle emitted by a point light
+          source
+        meaning: quantitykind:LuminousIntensity
+        annotations:
+          si_base:
+            tag: si_base
+            value: 'true'
+          dimension:
+            tag: dimension
+            value: J
+          pato_label:
+            tag: pato_label
+            value: luminance
+        title: luminous intensity
+        close_mappings:
+        - PATO:0001718
+      AREA:
+        text: AREA
+        description: A 2-D extent representing the size of a surface
+        meaning: quantitykind:Area
+        annotations:
+          dimension:
+            tag: dimension
+            value: "L\xB2"
+        title: area
+        exact_mappings:
+        - PATO:0001323
+      VOLUME:
+        text: VOLUME
+        description: A 3-D extent representing the amount of space occupied
+        meaning: quantitykind:Volume
+        annotations:
+          dimension:
+            tag: dimension
+            value: "L\xB3"
+        title: volume
+        exact_mappings:
+        - PATO:0000918
+      ANGLE:
+        text: ANGLE
+        description: The figure formed by two rays sharing a common endpoint
+        meaning: quantitykind:Angle
+        annotations:
+          dimension:
+            tag: dimension
+            value: dimensionless
+        title: plane angle
+        exact_mappings:
+        - PATO:0002326
+      SOLID_ANGLE:
+        text: SOLID_ANGLE
+        description: A 3-D angular measure
+        meaning: quantitykind:SolidAngle
+        annotations:
+          dimension:
+            tag: dimension
+            value: dimensionless
+        title: solid angle
+      VELOCITY:
+        text: VELOCITY
+        description: Rate of change of position with direction
+        meaning: quantitykind:Velocity
+        annotations:
+          dimension:
+            tag: dimension
+            value: "L\xB7T\u207B\xB9"
+        title: velocity
+        exact_mappings:
+        - PATO:0002242
+      SPEED:
+        text: SPEED
+        description: Scalar rate of change of position
+        meaning: quantitykind:Speed
+        annotations:
+          dimension:
+            tag: dimension
+            value: "L\xB7T\u207B\xB9"
+        title: speed
+        exact_mappings:
+        - PATO:0000008
+      ACCELERATION:
+        text: ACCELERATION
+        description: Rate of change of velocity
+        meaning: quantitykind:Acceleration
+        annotations:
+          dimension:
+            tag: dimension
+            value: "L\xB7T\u207B\xB2"
+        title: acceleration
+        exact_mappings:
+        - PATO:0001028
+      FORCE:
+        text: FORCE
+        description: Rate of change of momentum
+        meaning: quantitykind:Force
+        annotations:
+          dimension:
+            tag: dimension
+            value: "M\xB7L\xB7T\u207B\xB2"
+        title: force
+        exact_mappings:
+        - PATO:0001035
+      PRESSURE:
+        text: PRESSURE
+        description: Force per unit area
+        meaning: quantitykind:Pressure
+        annotations:
+          dimension:
+            tag: dimension
+            value: "M\xB7L\u207B\xB9\xB7T\u207B\xB2"
+        title: pressure
+        exact_mappings:
+        - PATO:0001025
+      ENERGY:
+        text: ENERGY
+        description: Capacity to do work
+        meaning: quantitykind:Energy
+        annotations:
+          dimension:
+            tag: dimension
+            value: "M\xB7L\xB2\xB7T\u207B\xB2"
+        title: energy
+        exact_mappings:
+        - PATO:0001021
+      WORK:
+        text: WORK
+        description: Energy transferred by a force
+        meaning: quantitykind:Work
+        annotations:
+          dimension:
+            tag: dimension
+            value: "M\xB7L\xB2\xB7T\u207B\xB2"
+        title: work
+        exact_mappings:
+        - PATO:0001026
+      POWER:
+        text: POWER
+        description: Rate of doing work or transferring energy
+        meaning: quantitykind:Power
+        annotations:
+          dimension:
+            tag: dimension
+            value: "M\xB7L\xB2\xB7T\u207B\xB3"
+        title: power
+        exact_mappings:
+        - PATO:0001024
+      MOMENTUM:
+        text: MOMENTUM
+        description: Product of mass and velocity
+        meaning: quantitykind:Momentum
+        annotations:
+          dimension:
+            tag: dimension
+            value: "M\xB7L\xB7T\u207B\xB9"
+        title: momentum
+        exact_mappings:
+        - PATO:0001023
+      TORQUE:
+        text: TORQUE
+        description: Rotational force or moment of force
+        meaning: quantitykind:Torque
+        annotations:
+          dimension:
+            tag: dimension
+            value: "M\xB7L\xB2\xB7T\u207B\xB2"
+        title: torque
+      ANGULAR_VELOCITY:
+        text: ANGULAR_VELOCITY
+        description: Rate of change of angular position
+        meaning: quantitykind:AngularVelocity
+        annotations:
+          dimension:
+            tag: dimension
+            value: "T\u207B\xB9"
+        title: angular velocity
+      ANGULAR_ACCELERATION:
+        text: ANGULAR_ACCELERATION
+        description: Rate of change of angular velocity
+        meaning: quantitykind:AngularAcceleration
+        annotations:
+          dimension:
+            tag: dimension
+            value: "T\u207B\xB2"
+        title: angular acceleration
+        exact_mappings:
+        - PATO:0001350
+      DENSITY:
+        text: DENSITY
+        description: Mass per unit volume
+        meaning: quantitykind:Density
+        annotations:
+          dimension:
+            tag: dimension
+            value: "M\xB7L\u207B\xB3"
+          pato_label:
+            tag: pato_label
+            value: mass density
+        title: density
+        exact_mappings:
+        - PATO:0001019
+      VISCOSITY:
+        text: VISCOSITY
+        description: Internal resistance to flow
+        meaning: quantitykind:DynamicViscosity
+        annotations:
+          dimension:
+            tag: dimension
+            value: "M\xB7L\u207B\xB9\xB7T\u207B\xB9"
+        title: dynamic viscosity
+        exact_mappings:
+        - PATO:0000992
+      KINEMATIC_VISCOSITY:
+        text: KINEMATIC_VISCOSITY
+        description: Dynamic viscosity divided by density
+        meaning: quantitykind:KinematicViscosity
+        annotations:
+          dimension:
+            tag: dimension
+            value: "L\xB2\xB7T\u207B\xB9"
+        title: kinematic viscosity
+      FREQUENCY:
+        text: FREQUENCY
+        description: Number of repetitive events per unit time
+        meaning: quantitykind:Frequency
+        annotations:
+          dimension:
+            tag: dimension
+            value: "T\u207B\xB9"
+        title: frequency
+        exact_mappings:
+        - PATO:0000044
+      MASS_CONCENTRATION:
+        text: MASS_CONCENTRATION
+        description: Mass of a substance per unit volume
+        meaning: quantitykind:MassConcentration
+        annotations:
+          dimension:
+            tag: dimension
+            value: "M\xB7L\u207B\xB3"
+          pato_label:
+            tag: pato_label
+            value: concentration of
+        title: mass concentration
+        exact_mappings:
+        - PATO:0000033
+      AMOUNT_CONCENTRATION:
+        text: AMOUNT_CONCENTRATION
+        description: Amount of substance per unit volume (molarity)
+        meaning: quantitykind:AmountConcentration
+        annotations:
+          dimension:
+            tag: dimension
+            value: "N\xB7L\u207B\xB3"
+        title: amount concentration
+        close_mappings:
+        - PATO:0000033
+      ELECTRIC_CHARGE:
+        text: ELECTRIC_CHARGE
+        description: Fundamental property of matter causing electromagnetic interaction
+        meaning: quantitykind:ElectricCharge
+        annotations:
+          dimension:
+            tag: dimension
+            value: "I\xB7T"
+        title: electric charge
+        exact_mappings:
+        - PATO:0002193
+      ELECTRIC_POTENTIAL:
+        text: ELECTRIC_POTENTIAL
+        description: Potential energy per unit charge (voltage)
+        meaning: quantitykind:ElectricPotential
+        annotations:
+          dimension:
+            tag: dimension
+            value: "M\xB7L\xB2\xB7T\u207B\xB3\xB7I\u207B\xB9"
+        title: electric potential
+        aliases:
+        - voltage
+        exact_mappings:
+        - PATO:0001464
+      ELECTRIC_RESISTANCE:
+        text: ELECTRIC_RESISTANCE
+        description: Opposition to electric current flow
+        meaning: quantitykind:Resistance
+        annotations:
+          dimension:
+            tag: dimension
+            value: "M\xB7L\xB2\xB7T\u207B\xB3\xB7I\u207B\xB2"
+        title: electric resistance
+      ELECTRICAL_CONDUCTIVITY:
+        text: ELECTRICAL_CONDUCTIVITY
+        description: Ability to conduct electric current
+        meaning: quantitykind:Conductivity
+        annotations:
+          dimension:
+            tag: dimension
+            value: "I\xB2\xB7T\xB3\xB7M\u207B\xB9\xB7L\u207B\xB3"
+        title: electrical conductivity
+        exact_mappings:
+        - PATO:0001757
+      CAPACITANCE:
+        text: CAPACITANCE
+        description: Ability to store electric charge
+        meaning: quantitykind:Capacitance
+        annotations:
+          dimension:
+            tag: dimension
+            value: "I\xB2\xB7T\u2074\xB7M\u207B\xB9\xB7L\u207B\xB2"
+        title: capacitance
+      INDUCTANCE:
+        text: INDUCTANCE
+        description: Property relating magnetic flux to electric current
+        meaning: quantitykind:Inductance
+        annotations:
+          dimension:
+            tag: dimension
+            value: "M\xB7L\xB2\xB7T\u207B\xB2\xB7I\u207B\xB2"
+        title: inductance
+      MAGNETIC_FLUX:
+        text: MAGNETIC_FLUX
+        description: Measure of total magnetic field passing through a surface
+        meaning: quantitykind:MagneticFlux
+        annotations:
+          dimension:
+            tag: dimension
+            value: "M\xB7L\xB2\xB7T\u207B\xB2\xB7I\u207B\xB9"
+        title: magnetic flux
+      MAGNETIC_FLUX_DENSITY:
+        text: MAGNETIC_FLUX_DENSITY
+        description: Magnetic flux per unit area
+        meaning: quantitykind:MagneticFluxDensity
+        annotations:
+          dimension:
+            tag: dimension
+            value: "M\xB7T\u207B\xB2\xB7I\u207B\xB9"
+        title: magnetic flux density
+      HEAT_CAPACITY:
+        text: HEAT_CAPACITY
+        description: Heat required to raise temperature by one unit
+        meaning: quantitykind:HeatCapacity
+        annotations:
+          dimension:
+            tag: dimension
+            value: "M\xB7L\xB2\xB7T\u207B\xB2\xB7\u0398\u207B\xB9"
+        title: heat capacity
+      SPECIFIC_HEAT_CAPACITY:
+        text: SPECIFIC_HEAT_CAPACITY
+        description: Heat capacity per unit mass
+        meaning: quantitykind:SpecificHeatCapacity
+        annotations:
+          dimension:
+            tag: dimension
+            value: "L\xB2\xB7T\u207B\xB2\xB7\u0398\u207B\xB9"
+        title: specific heat capacity
+      THERMAL_CONDUCTIVITY:
+        text: THERMAL_CONDUCTIVITY
+        description: Ability to conduct heat
+        meaning: quantitykind:ThermalConductivity
+        annotations:
+          dimension:
+            tag: dimension
+            value: "M\xB7L\xB7T\u207B\xB3\xB7\u0398\u207B\xB9"
+          pato_label:
+            tag: pato_label
+            value: heat conductivity
+        title: thermal conductivity
+        exact_mappings:
+        - PATO:0001756
+      LUMINOUS_FLUX:
+        text: LUMINOUS_FLUX
+        description: Total perceived light power emitted
+        meaning: quantitykind:LuminousFlux
+        annotations:
+          dimension:
+            tag: dimension
+            value: J
+        title: luminous flux
+        exact_mappings:
+        - PATO:0001296
+      ILLUMINANCE:
+        text: ILLUMINANCE
+        description: Luminous flux per unit area
+        meaning: quantitykind:Illuminance
+        annotations:
+          dimension:
+            tag: dimension
+            value: "J\xB7L\u207B\xB2"
+        title: illuminance
+      RADIANT_INTENSITY:
+        text: RADIANT_INTENSITY
+        description: Radiant power per unit solid angle
+        meaning: quantitykind:RadiantIntensity
+        annotations:
+          dimension:
+            tag: dimension
+            value: "M\xB7L\xB2\xB7T\u207B\xB3"
+        title: radiant intensity
+      ACTIVITY:
+        text: ACTIVITY
+        description: Number of nuclear disintegrations per unit time
+        meaning: quantitykind:Activity
+        annotations:
+          dimension:
+            tag: dimension
+            value: "T\u207B\xB9"
+        title: activity (radioactivity)
+      ABSORBED_DOSE:
+        text: ABSORBED_DOSE
+        description: Energy deposited per unit mass by ionizing radiation
+        meaning: quantitykind:AbsorbedDose
+        annotations:
+          dimension:
+            tag: dimension
+            value: "L\xB2\xB7T\u207B\xB2"
+        title: absorbed dose
+      DOSE_EQUIVALENT:
+        text: DOSE_EQUIVALENT
+        description: Absorbed dose weighted by radiation type
+        meaning: quantitykind:DoseEquivalent
+        annotations:
+          dimension:
+            tag: dimension
+            value: "L\xB2\xB7T\u207B\xB2"
+        title: dose equivalent
+      INFORMATION_ENTROPY:
+        text: INFORMATION_ENTROPY
+        description: Measure of information content or uncertainty
+        meaning: quantitykind:InformationEntropy
+        annotations:
+          dimension:
+            tag: dimension
+            value: dimensionless
+        title: information entropy
+      DATA_RATE:
+        text: DATA_RATE
+        description: Amount of data transferred per unit time
+        meaning: quantitykind:DataRate
+        annotations:
+          dimension:
+            tag: dimension
+            value: "T\u207B\xB9"
+        title: data rate
   ImageFileFormatEnum:
     name: ImageFileFormatEnum
     definition_uri: https://w3id.org/valuesets/ImageFileFormatEnum
@@ -59744,6 +61854,13 @@ slots:
     from_schema: https://w3id.org/valuesets/units/measurements
     slot_uri: valuesets:data_size_unit
     range: DataSizeUnitEnum
+  quantity_kind:
+    name: quantity_kind
+    definition_uri: https://w3id.org/valuesets/quantity_kind
+    description: The type of physical quantity being measured
+    from_schema: https://w3id.org/valuesets/units/quantity_kinds
+    slot_uri: valuesets:quantity_kind
+    range: QuantityKindEnum
   image_file_format:
     name: image_file_format
     definition_uri: https://w3id.org/valuesets/image_file_format
@@ -60293,7 +62410,7 @@ classes:
     class_uri: valuesets:Fake
 metamodel_version: 1.7.0
 source_file: valuesets.yaml
-source_file_date: '2025-12-13T00:56:49'
-source_file_size: 3002
-generation_date: '2025-12-13T00:56:58'
+source_file_date: '2025-12-13T02:50:40'
+source_file_size: 3161
+generation_date: '2025-12-13T02:50:50'
 

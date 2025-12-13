@@ -933,7 +933,23 @@
          <lastmod>2025-12-13</lastmod>
     </url>
     <url>
+         <loc>https://linkml.github.io/valuesets/elements/ICCC3MainGroup/</loc>
+         <lastmod>2025-12-13</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/ICCC3Subgroup/</loc>
+         <lastmod>2025-12-13</lastmod>
+    </url>
+    <url>
          <loc>https://linkml.github.io/valuesets/elements/INESLevelEnum/</loc>
+         <lastmod>2025-12-13</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/INRGSSStage/</loc>
+         <lastmod>2025-12-13</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/INSSStage/</loc>
          <lastmod>2025-12-13</lastmod>
     </url>
     <url>
@@ -942,6 +958,10 @@
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/IUPACNucleotideCode/</loc>
+         <lastmod>2025-12-13</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/ImageDefinedRiskFactor/</loc>
          <lastmod>2025-12-13</lastmod>
     </url>
     <url>
@@ -1301,6 +1321,10 @@
          <lastmod>2025-12-13</lastmod>
     </url>
     <url>
+         <loc>https://linkml.github.io/valuesets/elements/NeuroblastomaRiskGroup/</loc>
+         <lastmod>2025-12-13</lastmod>
+    </url>
+    <url>
          <loc>https://linkml.github.io/valuesets/elements/NeuronType/</loc>
          <lastmod>2025-12-13</lastmod>
     </url>
@@ -1422,6 +1446,10 @@
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/PeakAnnotationSeriesLabel/</loc>
+         <lastmod>2025-12-13</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/PediatricOncologyDiagnosisCategory/</loc>
          <lastmod>2025-12-13</lastmod>
     </url>
     <url>
@@ -1594,6 +1622,10 @@
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/QualityStandardEnum/</loc>
+         <lastmod>2025-12-13</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/QuantityKindEnum/</loc>
          <lastmod>2025-12-13</lastmod>
     </url>
     <url>
@@ -3590,6 +3622,10 @@
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/quality_standard/</loc>
+         <lastmod>2025-12-13</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/quantity_kind/</loc>
          <lastmod>2025-12-13</lastmod>
     </url>
     <url>
