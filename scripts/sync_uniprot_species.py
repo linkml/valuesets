@@ -11,6 +11,7 @@ Options:
 """
 
 import yaml
+import json
 import requests
 import sys
 import argparse
@@ -278,6 +279,11 @@ def main():
         action='store_true',
         help='Replace all existing entries instead of merging'
     )
+    parser.add_argument(
+        '--json-output',
+        type=str,
+        help='Also save raw data to JSON file for merging (e.g., cache/common_organisms.json)'
+    )
 
     args = parser.parse_args()
 
@@ -285,7 +291,7 @@ def main():
 
     # Load existing data if merging
     existing_content = None
-    if args.merge and not args.replace and Path(args.output).exists():
+    if args.merge and not args.replace and str(args.output) != '/dev/null' and Path(args.output).exists():
         logger.info(f"Loading existing data from {args.output} for merging...")
         with open(args.output, 'r') as f:
             existing_content = yaml.safe_load(f)
@@ -317,20 +323,32 @@ def main():
     # Write to file
     output_path = Path(args.output)
 
-    # Create directory if it doesn't exist
-    output_path.parent.mkdir(parents=True, exist_ok=True)
+    # Skip writing if output is /dev/null
+    if str(output_path) == '/dev/null':
+        logger.info("Skipping YAML output (output is /dev/null)")
+    else:
+        # Create directory if it doesn't exist
+        output_path.parent.mkdir(parents=True, exist_ok=True)
 
-    # Backup existing file
-    if output_path.exists():
-        backup_path = output_path.with_suffix('.yaml.bak')
-        output_path.rename(backup_path)
-        logger.info(f"Backed up existing file to {backup_path}")
+        # Backup existing file
+        if output_path.exists():
+            backup_path = output_path.with_suffix('.yaml.bak')
+            output_path.rename(backup_path)
+            logger.info(f"Backed up existing file to {backup_path}")
 
-    # Write new file
-    with open(output_path, 'w') as f:
-        yaml.dump(yaml_content, f, default_flow_style=False, sort_keys=False, allow_unicode=True)
+        # Write new file
+        with open(output_path, 'w') as f:
+            yaml.dump(yaml_content, f, default_flow_style=False, sort_keys=False, allow_unicode=True)
 
-    logger.info(f"✓ Generated {output_path} with {len(species_list)} species")
+        logger.info(f"✓ Generated {output_path} with {len(species_list)} species")
+
+    # Save JSON if requested
+    if args.json_output:
+        json_path = Path(args.json_output)
+        json_path.parent.mkdir(parents=True, exist_ok=True)
+        with open(json_path, 'w') as f:
+            json.dump(species_list, f, indent=2)
+        logger.info(f"✓ Saved raw data to {json_path}")
 
     # List the codes that were added
     codes = [s['code'] for s in species_list]

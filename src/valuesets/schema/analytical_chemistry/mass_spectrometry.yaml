@@ -11,14 +11,23 @@ prefixes:
   MS: http://purl.obolibrary.org/obo/MS_
   MSIO: http://purl.obolibrary.org/obo/MSIO_
   CHMO: http://purl.obolibrary.org/obo/CHMO_
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 imports:
-  - linkml:types
-  - ../core
+- linkml:types
+- ../core
 
 enums:
   MassSpectrometerFileFormat:
+    title: Mass Spectrometer File Format
     description: Standard file formats used in mass spectrometry
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       MZML:
         title: mzML format
@@ -86,7 +95,14 @@ enums:
         meaning: MS:1002531
 
   MassSpectrometerVendor:
+    title: Mass Spectrometer Vendor
     description: Major mass spectrometer manufacturers
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       THERMO_FISHER_SCIENTIFIC:
         title: Thermo Fisher Scientific instrument model
@@ -118,7 +134,14 @@ enums:
         meaning: MS:1001800
 
   ChromatographyType:
+    title: Chromatography Type
     description: Types of chromatographic separation methods
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       GAS_CHROMATOGRAPHY:
         description: Gas chromatography
@@ -140,7 +163,14 @@ enums:
         meaning: CHMO:0000506
 
   DerivatizationMethod:
+    title: Derivatization Method
     description: Chemical derivatization methods for sample preparation
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       SILYLATION:
         description: Addition of silyl groups for improved volatility
@@ -162,7 +192,14 @@ enums:
         meaning: MSIO:0000116
 
   MetabolomicsAssayType:
+    title: Metabolomics Assay Type
     description: Types of metabolomics assays and profiling approaches
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       TARGETED_METABOLITE_PROFILING:
         title: targeted metabolite profiling
@@ -178,7 +215,14 @@ enums:
         meaning: MSIO:0000099
 
   AnalyticalControlType:
+    title: Analytical Control Type
     description: Types of control samples used in analytical chemistry
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       INTERNAL_STANDARD:
         title: internal standard role

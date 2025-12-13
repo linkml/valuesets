@@ -1,17 +1,19 @@
 name: nuclear_safety
 title: Nuclear Safety Classifications and Emergency Levels
-description: 'Nuclear safety classifications including INES scale, emergency action levels,
-  nuclear security categories, and safety system classifications. Based on IAEA standards,
-  NRC regulations, and international nuclear safety frameworks.'
+description: 'Nuclear safety classifications including INES scale, emergency action levels, nuclear security categories, and
+  safety system classifications. Based on IAEA standards, NRC regulations, and international nuclear safety frameworks.'
 id: https://w3id.org/linkml/valuesets/energy/nuclear/nuclear_safety
 imports:
 - linkml:types
 prefixes:
+  linkml: https://w3id.org/linkml/
   valuesets: https://w3id.org/valuesets/
   IAEA: https://www.iaea.org/
   NRC: https://www.nrc.gov/
   INES: https://www.iaea.org/resources/databases/ines
   IEEE: https://standards.ieee.org/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   ines_level:
@@ -37,7 +39,14 @@ slots:
     range: RadiationProtectionZoneEnum
 enums:
   INESLevelEnum:
+    title: INES Level
     description: International Nuclear and Radiological Event Scale (INES) levels
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       LEVEL_0:
         title: Level 0 - Below Scale/Deviation
@@ -108,7 +117,14 @@ enums:
           examples: Chernobyl (1986), Fukushima (2011)
           consequences: long-term environmental contamination
   EmergencyClassificationEnum:
+    title: Emergency Classification
     description: Nuclear emergency action levels and classifications
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       NOTIFICATION_UNUSUAL_EVENT:
         title: Notification of Unusual Event (NOUE)
@@ -151,7 +167,14 @@ enums:
           emergency_response: maximum response
           plant_status: core degradation or containment failure
   NuclearSecurityCategoryEnum:
+    title: Nuclear Security Category
     description: IAEA nuclear material security categories (INFCIRC/225)
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       CATEGORY_I:
         title: Category I Nuclear Material
@@ -189,7 +212,14 @@ enums:
           protection_requirements: administrative
           examples: small quantities of natural uranium
   SafetySystemClassEnum:
+    title: Safety System Class
     description: Nuclear safety system classifications (based on IEEE and ASME standards)
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       CLASS_1E:
         title: Class 1E Safety Systems
@@ -224,7 +254,14 @@ enums:
           quality_requirements: commercial standards
           failure_impact: minimal safety impact
   ReactorSafetyFunctionEnum:
+    title: Reactor Safety Function
     description: Fundamental nuclear reactor safety functions
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       REACTIVITY_CONTROL:
         title: Reactivity Control
@@ -266,7 +303,14 @@ enums:
           systems: control systems, shutdown systems
           time_requirement: rapid response capability
   DefenseInDepthLevelEnum:
+    title: Defense In Depth Level
     description: Defense in depth barrier levels for nuclear safety
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       LEVEL_1:
         title: Level 1 - Prevention of Abnormal Operation
@@ -304,7 +348,14 @@ enums:
           approach: emergency planning and response
           examples: evacuation plans, protective actions
   RadiationProtectionZoneEnum:
+    title: Radiation Protection Zone
     description: Radiation protection zone classifications for nuclear facilities
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       EXCLUSION_AREA:
         title: Exclusion Area

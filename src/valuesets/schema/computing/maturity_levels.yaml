@@ -1,18 +1,20 @@
 name: maturity_levels
 title: Software and Technology Maturity Levels
-description: Value sets for assessing maturity levels of software, technology, and standards across different frameworks and
-  domains.
+description: Value sets for assessing maturity levels of software, technology, and standards across different frameworks
+  and domains.
 id: https://w3id.org/common-value-sets/computing/maturity_levels
 imports:
 - linkml:types
 prefixes:
   linkml: https://w3id.org/linkml/
   valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   technology_readiness_level:
-    description: NASA's Technology Readiness Level scale for assessing the maturity of technologies from basic research through
-      operational deployment
+    description: NASA's Technology Readiness Level scale for assessing the maturity of technologies from basic research 
+      through operational deployment
     range: TechnologyReadinessLevel
   software_maturity_level:
     description: General software maturity assessment levels
@@ -35,8 +37,14 @@ slots:
 enums:
   TechnologyReadinessLevel:
     title: Technology Readiness Level (TRL)
-    description: NASA's Technology Readiness Level scale for assessing the maturity of technologies from basic research through
-      operational deployment
+    description: NASA's Technology Readiness Level scale for assessing the maturity of technologies from basic research 
+      through operational deployment
+    status: STANDARD
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ReferenceEnumDefinition
     source: https://www.nasa.gov/directorates/heo/scan/engineering/technology/technology_readiness_level
     conforms_to: ISO-16290:2013
     permissible_values:
@@ -70,6 +78,12 @@ enums:
   SoftwareMaturityLevel:
     title: Software Maturity Level
     description: General software maturity assessment levels
+    status: STANDARD
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ReferenceEnumDefinition
     permissible_values:
       ALPHA:
         description: Early development stage with basic functionality, may be unstable
@@ -98,6 +112,12 @@ enums:
   CapabilityMaturityLevel:
     title: Capability Maturity Model Integration (CMMI) Level
     description: CMMI levels for assessing organizational process maturity in software development
+    status: STANDARD
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ReferenceEnumDefinition
     source: https://cmmiinstitute.com/
     conforms_to: CMMI Version 2.0
     permissible_values:
@@ -119,6 +139,12 @@ enums:
   StandardsMaturityLevel:
     title: Standards Development Maturity Level
     description: Maturity levels for standards and specifications
+    status: STANDARD
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ReferenceEnumDefinition
     permissible_values:
       DRAFT:
         description: Initial draft under development
@@ -150,6 +176,12 @@ enums:
   ProjectMaturityLevel:
     title: Project Maturity Level
     description: General project development maturity assessment
+    status: STANDARD
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ReferenceEnumDefinition
     permissible_values:
       CONCEPT:
         description: Initial idea or concept stage
@@ -178,6 +210,12 @@ enums:
   DataMaturityLevel:
     title: Data Maturity Level
     description: Levels of data quality, governance, and organizational maturity
+    status: STANDARD
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ReferenceEnumDefinition
     permissible_values:
       RAW:
         description: Unprocessed, uncleaned data
@@ -203,6 +241,12 @@ enums:
   OpenSourceMaturityLevel:
     title: Open Source Project Maturity
     description: Maturity assessment for open source projects
+    status: STANDARD
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ReferenceEnumDefinition
     permissible_values:
       EXPERIMENTAL:
         description: Early experimental project

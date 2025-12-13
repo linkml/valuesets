@@ -4,6 +4,8 @@ prefixes:
   # linkml_common: https://w3id.org/linkml-common/
   NCIT: http://purl.obolibrary.org/obo/NCIT_
   valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   sentiment_classification:
@@ -14,7 +16,14 @@ slots:
     range: FineSentimentClassificationEnum
 enums:
   SentimentClassificationEnum:
+    title: Sentiment Classification
     description: Standard labels for sentiment analysis classification tasks
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       POSITIVE:
         description: Positive sentiment or opinion
@@ -40,7 +49,14 @@ enums:
         - neu
         - '2'
   FineSentimentClassificationEnum:
+    title: Fine Sentiment Classification
     description: Fine-grained sentiment analysis labels with intensity levels
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       VERY_POSITIVE:
         description: Strongly positive sentiment

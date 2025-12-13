@@ -11,7 +11,6 @@ Generated from: bio/insdc_geographic_locations.yaml
 
 from __future__ import annotations
 
-from typing import Dict, Any, Optional
 from valuesets.generators.rich_enum import RichEnum
 
 class InsdcGeographicLocationEnum(RichEnum):

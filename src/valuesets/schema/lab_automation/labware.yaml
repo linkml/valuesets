@@ -1,0 +1,161 @@
+name: lab_automation_labware
+id: https://w3id.org/linkml/valuesets/lab_automation/labware
+prefixes:
+  NCIT: http://purl.obolibrary.org/obo/NCIT_
+  BAO: http://www.bioassayontology.org/bao#BAO_
+  OBI: http://purl.obolibrary.org/obo/OBI_
+  MSIO: http://purl.obolibrary.org/obo/MSIO_
+  valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+default_prefix: valuesets
+slots:
+  microplate_format:
+    description: Standard microplate well configuration
+    range: MicroplateFormatEnum
+  container_type:
+    description: Type of laboratory container
+    range: ContainerTypeEnum
+  plate_material:
+    description: Material composition of laboratory plates
+    range: PlateMaterialEnum
+  plate_coating:
+    description: Surface treatment of laboratory plates
+    range: PlateCoatingEnum
+enums:
+  MicroplateFormatEnum:
+    title: Microplate Format
+    description: Standard microplate well configurations following ANSI/SLAS standards
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      WELL_6:
+        description: Microplate with 6 wells
+        title: 6-well plate
+      WELL_12:
+        description: Microplate with 12 wells
+        title: 12-well plate
+      WELL_24:
+        description: Microplate with 24 wells
+        title: 24-well plate
+      WELL_48:
+        description: Microplate with 48 wells
+        title: 48-well plate
+      WELL_96:
+        description: Microplate with 96 wells arranged in 8 rows of 12 columns with 9mm well-to-well spacing
+        meaning: MSIO:0000162
+        title: 96-well microplate
+        annotations:
+          well_spacing: 9mm
+          standard: ANSI/SLAS 4-2004
+      WELL_384:
+        description: Microplate with 384 wells with 4.5mm well-to-well spacing
+        title: 384-well plate
+        annotations:
+          well_spacing: 4.5mm
+          standard: ANSI/SLAS 4-2004
+      WELL_1536:
+        description: Microplate with 1536 wells with 2.25mm well-to-well spacing
+        title: 1536-well plate
+        annotations:
+          well_spacing: 2.25mm
+          standard: ANSI/SLAS 4-2004
+  ContainerTypeEnum:
+    title: Container Type
+    description: Types of laboratory containers and labware
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      MICROPLATE:
+        description: A flat dish with multiple individual wells that are arrayed in a standardized number, size, and 
+          arrangement
+        meaning: NCIT:C43377
+        exact_mappings:
+        - BAO:0000508
+        title: microplate
+      DEEP_WELL_PLATE:
+        description: A microplate with deeper wells for increased sample volume capacity
+        title: deep well plate
+      PCR_PLATE:
+        description: A microplate specifically designed for PCR thermal cycling applications
+        title: PCR plate
+      TUBE_RACK:
+        description: A rack designed to hold multiple laboratory tubes
+        title: tube rack
+      MICROTUBE:
+        description: Small laboratory tube with volume capacity from 0.2 ml to 2.0 ml
+        title: microtube
+        annotations:
+          volume_range: 0.2-2.0 ml
+      SCREW_CAP_TUBE:
+        description: Laboratory tube with screw cap closure
+        title: screw cap tube
+      SNAP_CAP_TUBE:
+        description: Laboratory tube with snap cap closure
+        title: snap cap tube
+      RESERVOIR:
+        description: Container for holding bulk reagents for dispensing
+        title: reservoir
+      PIPETTE_TIP_BOX:
+        description: Container for storing pipette tips in organized racks
+        title: pipette tip box
+      SPIN_COLUMN:
+        description: A chromatography column which is suitable for putting it into a centrifuge
+        meaning: OBI:0000570
+        title: spin column
+      MICROPLATE_WELL:
+        description: Any of the individual wells on a microwell plate
+        meaning: NCIT:C128793
+        title: microplate well
+  PlateMaterialEnum:
+    title: Plate Material
+    description: Material composition of laboratory microplates
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      POLYSTYRENE:
+        description: Plates made from polystyrene, the most common material for standard applications
+        title: polystyrene
+      POLYPROPYLENE:
+        description: Plates made from polypropylene for chemical resistance
+        title: polypropylene
+      GLASS:
+        description: Plates with glass inserts for samples not suitable for plastic containers
+        title: glass
+  PlateCoatingEnum:
+    title: Plate Coating
+    description: Surface treatment of microplates
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      COATED:
+        description: A microplate whose surface has been treated, for instance by covalently attaching proteins to favor
+          cell growth
+        meaning: MSIO:0000164
+        title: coated microplate
+      UNCOATED:
+        description: A microplate whose surface has not received any treatment and is uniquely made of polymer
+        meaning: MSIO:0000170
+        title: uncoated microplate
+      TISSUE_CULTURE_TREATED:
+        description: Surface treatment to enhance cell attachment and growth
+        title: tissue culture treated
+      PROTEIN_BINDING:
+        description: Surface treatment optimized for protein binding assays
+        title: protein binding

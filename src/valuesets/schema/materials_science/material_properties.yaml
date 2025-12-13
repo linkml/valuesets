@@ -6,6 +6,8 @@ prefixes:
   PATO: http://purl.obolibrary.org/obo/PATO_
   # linkml_common: https://w3id.org/linkml-common/
   valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   electrical_conductivity:
@@ -25,7 +27,14 @@ slots:
     range: MechanicalBehaviorEnum
 enums:
   ElectricalConductivityEnum:
+    title: Electrical Conductivity
     description: Classification of materials by electrical conductivity
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       CONDUCTOR:
         description: Material with high electrical conductivity (resistivity < 10^-5 Ω·m)
@@ -47,7 +56,14 @@ enums:
         description: Material with zero electrical resistance below critical temperature
         title: Superconductor
   MagneticPropertyEnum:
+    title: Magnetic Property
     description: Classification of materials by magnetic properties
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       DIAMAGNETIC:
         description: Weakly repelled by magnetic fields
@@ -65,7 +81,14 @@ enums:
         description: Adjacent magnetic moments cancel each other
         title: Antiferromagnetic
   OpticalPropertyEnum:
+    title: Optical Property
     description: Optical properties of materials
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       TRANSPARENT:
         description: Allows light to pass through with minimal scattering
@@ -91,7 +114,14 @@ enums:
         description: Continues to emit light after excitation stops
         title: Phosphorescent
   ThermalConductivityEnum:
+    title: Thermal Conductivity
     description: Classification by thermal conductivity
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       HIGH_THERMAL_CONDUCTOR:
         description: High thermal conductivity (>100 W/m·K)
@@ -107,7 +137,14 @@ enums:
         aliases:
         - thermal barrier
   MechanicalBehaviorEnum:
+    title: Mechanical Behavior
     description: Mechanical behavior of materials under stress
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       ELASTIC:
         description: Returns to original shape after stress removal

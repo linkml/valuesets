@@ -1,7 +1,7 @@
 name: psi_mi
 title: PSI-MI (Molecular Interactions) Value Sets
-description: Common value sets from the PSI-MI (Molecular Interactions) controlled vocabulary used for annotating protein-protein
-  interaction experiments.
+description: Common value sets from the PSI-MI (Molecular Interactions) controlled vocabulary used for annotating 
+  protein-protein interaction experiments.
 id: https://w3id.org/common-value-sets/bio/psi_mi
 imports:
 - linkml:types
@@ -10,6 +10,8 @@ prefixes:
   linkml: https://w3id.org/linkml/
   OBI: http://purl.obolibrary.org/obo/OBI_
   valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   interaction_detection_method:
@@ -44,6 +46,12 @@ enums:
   InteractionDetectionMethod:
     title: Interaction Detection Method
     description: Methods used to detect molecular interactions
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinitionWithConformance
     source: http://purl.obolibrary.org/obo/mi.owl
     conforms_to: HUPO-PSI
     annotations:
@@ -110,6 +118,12 @@ enums:
   InteractionType:
     title: Interaction Type
     description: Types of molecular interactions
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinitionWithConformance
     source: http://purl.obolibrary.org/obo/mi.owl
     conforms_to: HUPO-PSI
     permissible_values:
@@ -157,6 +171,12 @@ enums:
   ExperimentalRole:
     title: Experimental Role
     description: Role played by a participant in the experiment
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinitionWithConformance
     source: http://purl.obolibrary.org/obo/mi.owl
     conforms_to: HUPO-PSI
     permissible_values:
@@ -199,6 +219,12 @@ enums:
   BiologicalRole:
     title: Biological Role
     description: Physiological role of an interactor
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinitionWithConformance
     source: http://purl.obolibrary.org/obo/mi.owl
     conforms_to: HUPO-PSI
     permissible_values:
@@ -237,6 +263,12 @@ enums:
   ParticipantIdentificationMethod:
     title: Participant Identification Method
     description: Methods to identify interaction participants
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       MASS_SPECTROMETRY:
         description: MS-based protein identification
@@ -269,6 +301,12 @@ enums:
   FeatureType:
     title: Feature Type
     description: Molecular features affecting interactions
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       BINDING_SITE:
         description: Region involved in binding
@@ -312,6 +350,12 @@ enums:
   InteractorType:
     title: Interactor Type
     description: Types of molecular species in interactions
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       PROTEIN:
         description: Polypeptide molecule
@@ -358,6 +402,12 @@ enums:
   ConfidenceScore:
     title: Confidence Score Types
     description: Types of confidence scoring methods
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       INTACT_MISCORE:
         description: IntAct molecular interaction score
@@ -373,6 +423,12 @@ enums:
   ExperimentalPreparation:
     title: Experimental Preparation
     description: Sample preparation methods
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       RECOMBINANT_EXPRESSION:
         description: Expressed in heterologous system

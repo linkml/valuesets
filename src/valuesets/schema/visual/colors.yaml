@@ -14,6 +14,8 @@ prefixes:
   CSS: https://www.w3.org/TR/css-color-3/#
   PATO: http://purl.obolibrary.org/obo/PATO_
   valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   basic_color:
@@ -30,7 +32,14 @@ slots:
     range: ColorSpaceEnum
 enums:
   BasicColorEnum:
+    title: Basic Color
     description: Basic color names commonly used in everyday language
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       RED:
         description: Primary red color
@@ -106,7 +115,14 @@ enums:
         annotations:
           rgb: 255,0,255
   WebColorEnum:
+    title: Web Color
     description: Standard HTML/CSS named colors (147 colors)
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       INDIAN_RED:
         description: Indian red
@@ -699,7 +715,14 @@ enums:
         annotations:
           rgb: 47,79,79
   X11ColorEnum:
+    title: X11 Color
     description: X11/Unix system colors (extended set)
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       X11_AQUA:
         description: X11 Aqua
@@ -756,7 +779,14 @@ enums:
         description: X11 Red 4
         meaning: HEX:8B0000
   ColorSpaceEnum:
+    title: Color Space
     description: Color space and model types
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       RGB:
         description: Red Green Blue color model

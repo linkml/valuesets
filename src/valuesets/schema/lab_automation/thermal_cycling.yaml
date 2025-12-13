@@ -1,0 +1,205 @@
+name: lab_automation_thermal_cycling
+id: https://w3id.org/linkml/valuesets/lab_automation/thermal_cycling
+prefixes:
+  OBI: http://purl.obolibrary.org/obo/OBI_
+  NCIT: http://purl.obolibrary.org/obo/NCIT_
+  valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+default_prefix: valuesets
+slots:
+  thermal_cycler_type:
+    description: Type of thermal cycling instrument
+    range: ThermalCyclerTypeEnum
+  pcr_operation_type:
+    description: Type of PCR operation
+    range: PCROperationTypeEnum
+  detection_mode:
+    description: Detection mode for real-time PCR
+    range: DetectionModeEnum
+enums:
+  ThermalCyclerTypeEnum:
+    title: Thermal Cycler Type
+    description: Types of thermal cycling instruments
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      STANDARD_THERMAL_CYCLER:
+        description: Standard thermal cycler for endpoint PCR
+        title: standard thermal cycler
+      REAL_TIME_PCR:
+        description: Thermal cycler with real-time fluorescence detection
+        title: real-time PCR
+        annotations:
+          abbreviation: qPCR
+      DIGITAL_PCR:
+        description: Thermal cycler for digital PCR applications
+        title: digital PCR
+        annotations:
+          abbreviation: dPCR
+      GRADIENT_THERMAL_CYCLER:
+        description: Thermal cycler capable of running temperature gradients across the block
+        title: gradient thermal cycler
+      FAST_THERMAL_CYCLER:
+        description: Thermal cycler optimized for rapid cycling
+        title: fast thermal cycler
+      AUTOMATED_THERMAL_CYCLER:
+        description: Thermal cycler with integrated automation for high-throughput applications
+        title: automated thermal cycler
+        annotations:
+          example: Biometra TRobot II
+      IN_SITU_THERMAL_CYCLER:
+        description: Thermal cycler designed for in situ PCR applications
+        title: in situ thermal cycler
+  PCROperationTypeEnum:
+    title: PCR Operation Type
+    description: Types of PCR operations and techniques
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      STANDARD_PCR:
+        description: Standard endpoint PCR amplification
+        title: standard PCR
+      QUANTITATIVE_PCR:
+        description: Real-time quantitative PCR
+        title: quantitative PCR
+        annotations:
+          abbreviation: qPCR
+      REVERSE_TRANSCRIPTION_PCR:
+        description: PCR with reverse transcription step for RNA amplification
+        title: reverse transcription PCR
+        annotations:
+          abbreviation: RT-PCR
+      RT_QPCR:
+        description: Real-time quantitative RT-PCR
+        title: RT-qPCR
+      MULTIPLEX_PCR:
+        description: PCR amplifying multiple targets simultaneously
+        title: multiplex PCR
+      NESTED_PCR:
+        description: Two-stage PCR for increased specificity
+        title: nested PCR
+      TOUCHDOWN_PCR:
+        description: PCR with decreasing annealing temperature
+        title: touchdown PCR
+      HOT_START_PCR:
+        description: PCR with heat-activated polymerase
+        title: hot start PCR
+      LONG_RANGE_PCR:
+        description: PCR optimized for amplifying long DNA fragments
+        title: long range PCR
+      COLONY_PCR:
+        description: PCR directly from bacterial colonies
+        title: colony PCR
+      HIGH_FIDELITY_PCR:
+        description: PCR using proofreading polymerases
+        title: high fidelity PCR
+      DIGITAL_PCR:
+        description: Absolute quantification PCR using partitioning
+        title: digital PCR
+  DetectionModeEnum:
+    title: Detection Mode
+    description: Detection modes for real-time PCR instruments
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      SYBR_GREEN:
+        description: DNA-binding dye detection
+        title: SYBR Green
+      TAQMAN:
+        description: Hydrolysis probe-based detection
+        title: TaqMan
+      MOLECULAR_BEACON:
+        description: Hairpin probe-based detection
+        title: molecular beacon
+      FRET:
+        description: Fluorescence resonance energy transfer detection
+        title: FRET
+        annotations:
+          full_name: Fluorescence Resonance Energy Transfer
+      SCORPION:
+        description: Unimolecular probe-based detection
+        title: Scorpion
+      HYBRIDIZATION_PROBE:
+        description: Two-probe FRET-based detection
+        title: hybridization probe
+      MULTI_CHANNEL:
+        description: Multi-channel fluorescence detection
+        title: multi-channel
+  PCRPlateTypeEnum:
+    title: PCR Plate Type
+    description: Types of plates used for PCR applications
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      PCR_96_WELL:
+        description: 96-well plate for PCR
+        title: 96-well PCR plate
+      PCR_384_WELL:
+        description: 384-well plate for PCR
+        title: 384-well PCR plate
+      PCR_TUBE_STRIP:
+        description: Strip of 8 or 12 PCR tubes
+        title: PCR tube strip
+      INDIVIDUAL_PCR_TUBE:
+        description: Individual PCR tube
+        title: individual PCR tube
+      LOW_PROFILE_PLATE:
+        description: Low-profile PCR plate for automated systems
+        title: low profile plate
+      SKIRTED_PLATE:
+        description: PCR plate with skirted base for stability
+        title: skirted plate
+      SEMI_SKIRTED_PLATE:
+        description: PCR plate with partial skirt
+        title: semi-skirted plate
+  ThermalCyclingStepEnum:
+    title: Thermal Cycling Step
+    description: Steps in thermal cycling protocols
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      INITIAL_DENATURATION:
+        description: Initial high-temperature step to denature template DNA
+        title: initial denaturation
+      DENATURATION:
+        description: High-temperature step to separate DNA strands
+        title: denaturation
+      ANNEALING:
+        description: Cooling step to allow primer binding
+        title: annealing
+      EXTENSION:
+        description: Temperature-optimized step for polymerase activity
+        title: extension
+      FINAL_EXTENSION:
+        description: Extended final extension step
+        title: final extension
+      HOLD:
+        description: Temperature hold step
+        title: hold
+      MELT_CURVE:
+        description: Gradual temperature increase for melt curve analysis
+        title: melt curve
+      GRADIENT:
+        description: Temperature gradient across block
+        title: gradient

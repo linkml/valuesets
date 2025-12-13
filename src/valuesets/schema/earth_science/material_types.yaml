@@ -1,0 +1,92 @@
+name: valuesets-earth-science-material-types
+title: Earth Science Material Types
+description: Material types for earth samples, based on SESAR (System for Earth Sample Registration) vocabulary
+id: https://w3id.org/valuesets/earth_science/material_types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  ENVO: http://purl.obolibrary.org/obo/ENVO_
+  CHEBI: http://purl.obolibrary.org/obo/CHEBI_
+  PO: http://purl.obolibrary.org/obo/PO_
+  valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+default_prefix: valuesets
+
+slots:
+  sesar_material_type:
+    description: SESAR material type classification
+    range: SESARMaterialType
+
+enums:
+  SESARMaterialType:
+    title: SESAR Material Type
+    description: >-
+      Material types as defined by SESAR (System for Earth Sample Registration).
+      These describe what a sample consists of (e.g., rock, mineral, liquid).
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    see_also:
+    - https://www.geosamples.org/vocabularies
+    permissible_values:
+      BIOLOGY:
+        description: Biological material or specimens
+        broad_mappings:
+        - ENVO:01000549
+      GAS:
+        description: Gaseous material
+        broad_mappings:
+        - ENVO:01000797
+      ICE:
+        description: Frozen water or ice samples
+        meaning: ENVO:01001125
+      LIQUID_AQUEOUS:
+        description: Aqueous (water-based) liquid
+        broad_mappings:
+        - ENVO:00002006
+        annotations:
+          sesar_label: Liquid>aqueous
+      LIQUID_ORGANIC:
+        description: Organic liquid
+        annotations:
+          sesar_label: Liquid>organic
+      MINERAL:
+        description: Mineral specimen
+        meaning: CHEBI:46662
+      NOT_APPLICABLE:
+        description: Material type not applicable
+        annotations:
+          sesar_label: NotApplicable
+      ORGANIC_MATERIAL:
+        description: Organic material (non-living)
+        meaning: ENVO:01000155
+      OTHER:
+        description: Other material type not listed
+      PARTICULATE:
+        description: Particulate matter
+        broad_mappings:
+        - ENVO:01000060
+      PLANT_STRUCTURE:
+        description: Plant structure or tissue
+        meaning: PO:0009011
+      ROCK:
+        description: Rock specimen
+        meaning: ENVO:00001995
+      SEDIMENT:
+        description: Sediment sample
+        meaning: ENVO:00002007
+      SOIL:
+        description: Soil sample
+        meaning: ENVO:00001998
+      SYNTHETIC:
+        description: Synthetic or artificial material
+        broad_mappings:
+        - ENVO:06105123
+
+license: MIT
+see_also:
+- https://linkml.github.io/valuesets
+- https://www.geosamples.org/vocabularies

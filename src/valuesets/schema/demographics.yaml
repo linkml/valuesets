@@ -10,6 +10,8 @@ prefixes:
   HL7: http://terminology.hl7.org/CodeSystem/
   SNOMED: http://snomed.info/id/
   valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   education_level:
@@ -35,7 +37,14 @@ slots:
     range: OmbEthnicityCategory
 enums:
   EducationLevel:
+    title: Education Level
     description: Years of education that a person has completed
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinitionWithSource
     source: https://terminology.hl7.org/CodeSystem-v3-EducationLevel.html
     permissible_values:
       ELEM:
@@ -66,7 +75,14 @@ enums:
         description: Doctoral or post graduate education
         meaning: HL7:v3-EducationLevel#POSTG
   MaritalStatus:
+    title: Marital Status
     description: The domestic partnership status of a person
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinitionWithSource
     source: https://www.hl7.org/fhir/valueset-marital-status.html
     permissible_values:
       ANNULLED:
@@ -106,7 +122,14 @@ enums:
         description: A proper value is applicable, but not known
         meaning: HL7:marital-status#UNK
   EmploymentStatus:
+    title: Employment Status
     description: Employment status of a person
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinitionWithSource
     source: https://terminology.hl7.org/CodeSystem-v2-0066.html
     permissible_values:
       FULL_TIME_EMPLOYED:
@@ -146,7 +169,14 @@ enums:
         description: Unknown
         meaning: HL7:v2-0066#9
   HousingStatus:
+    title: Housing Status
     description: Housing status of patients per UDS Plus HRSA standards
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinitionWithSource
     source: https://www.fhir.org/guides/hrsa/uds-plus/CodeSystem-udsplus-housing-status-codes.html
     permissible_values:
       HOMELESS_SHELTER:
@@ -171,7 +201,14 @@ enums:
         description: Patients with Unknown accommodation
         meaning: HL7:udsplus-housing-status-codes#unknown
   GenderIdentity:
+    title: Gender Identity
     description: Gender identity codes indicating an individual's personal sense of gender
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinitionWithSource
     source: https://terminology.hl7.org/ValueSet-gender-identity.html
     permissible_values:
       FEMALE:
@@ -190,7 +227,14 @@ enums:
         description: A proper value is applicable, but not known
         meaning: HL7:UNK
   OmbRaceCategory:
+    title: Omb Race Category
     description: Office of Management and Budget (OMB) race category codes
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinitionWithSource
     source: https://www.hl7.org/fhir/us/core/ValueSet-omb-race-category.html
     permissible_values:
       AMERICAN_INDIAN_OR_ALASKA_NATIVE:
@@ -218,7 +262,14 @@ enums:
         description: unknown
         meaning: HL7:UNK
   OmbEthnicityCategory:
+    title: Omb Ethnicity Category
     description: Office of Management and Budget (OMB) ethnicity category codes
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinitionWithSource
     source: https://www.hl7.org/fhir/us/core/ValueSet-omb-ethnicity-category.html
     permissible_values:
       HISPANIC_OR_LATINO:

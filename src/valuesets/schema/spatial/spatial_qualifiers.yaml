@@ -7,10 +7,13 @@ id: https://w3id.org/linkml/valuesets/spatial/spatial_qualifiers
 imports:
 - linkml:types
 prefixes:
+  linkml: https://w3id.org/linkml/
   valuesets: https://w3id.org/valuesets/
   BSPO: http://purl.obolibrary.org/obo/BSPO_
   PATO: http://purl.obolibrary.org/obo/PATO_
   UBERON: http://purl.obolibrary.org/obo/UBERON_
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   simple_spatial_direction:
@@ -34,9 +37,19 @@ slots:
   cell_polarity:
     description: Spatial polarity in cells and tissues
     range: CellPolarity
+  anatomical_orientation:
+    description: Directional orientation between anatomical positions
+    range: AnatomicalOrientation
 enums:
   SimpleSpatialDirection:
+    title: Simple Spatial Direction
     description: Basic spatial directional terms for general use
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       LEFT:
         description: To the left side
@@ -79,9 +92,16 @@ enums:
         annotations:
           aliases: center, central
   AnatomicalSide:
+    title: Anatomical Side
     description: 'Anatomical sides as defined in the Biological Spatial Ontology (BSPO).
 
       An anatomical region bounded by a plane perpendicular to an axis through the middle.'
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       LEFT:
         title: Left side of a bilaterally symmetric organism
@@ -213,7 +233,14 @@ enums:
         annotations:
           aliases: middle
   AnatomicalRegion:
+    title: Anatomical Region
     description: Anatomical regions based on spatial position
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       ANTERIOR_REGION:
         title: Region in the anterior portion
@@ -276,7 +303,14 @@ enums:
         - peripheral region
         meaning: BSPO:0000127
   AnatomicalAxis:
+    title: Anatomical Axis
     description: Anatomical axes defining spatial organization
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       ANTERIOR_POSTERIOR:
         title: Anterior-posterior axis (head-tail axis)
@@ -314,7 +348,14 @@ enums:
         annotations:
           context: epithelial cells, plant structures
   AnatomicalPlane:
+    title: Anatomical Plane
     description: Standard anatomical planes for sectioning
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       SAGITTAL:
         title: Vertical plane dividing body into left and right
@@ -359,7 +400,14 @@ enums:
         annotations:
           note: angled section
   SpatialRelationship:
+    title: Spatial Relationship
     description: Spatial relationships between anatomical structures
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       ADJACENT_TO:
         title: Next to or adjoining
@@ -430,7 +478,14 @@ enums:
         annotations:
           note: requires two reference points
   CellPolarity:
+    title: Cell Polarity
     description: Spatial polarity in cells and tissues
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       APICAL:
         description: The free surface of an epithelial cell
@@ -464,3 +519,102 @@ enums:
         description: Pole further from the cell body
         annotations:
           context: neurons, polarized cells
+  AnatomicalOrientation:
+    description: Directional orientation between anatomical positions based on OME NGFF specification
+    permissible_values:
+      LEFT_TO_RIGHT:
+        title: Left to right orientation
+        description: Directional orientation from left to right lateral side of an anatomical structure
+        annotations:
+          source: OME NGFF
+      RIGHT_TO_LEFT:
+        title: Right to left orientation
+        description: Directional orientation from right to left lateral side of an anatomical structure
+        annotations:
+          source: OME NGFF
+      ANTERIOR_TO_POSTERIOR:
+        title: Anterior to posterior orientation
+        description: Directional orientation from front to back of an anatomical structure
+        annotations:
+          source: OME NGFF
+      POSTERIOR_TO_ANTERIOR:
+        title: Posterior to anterior orientation
+        description: Directional orientation from back to front of an anatomical structure
+        annotations:
+          source: OME NGFF
+      INFERIOR_TO_SUPERIOR:
+        title: Inferior to superior orientation
+        description: Directional orientation from below to above in an anatomical structure
+        annotations:
+          source: OME NGFF
+      SUPERIOR_TO_INFERIOR:
+        title: Superior to inferior orientation
+        description: Directional orientation from above to below in an anatomical structure
+        annotations:
+          source: OME NGFF
+      DORSAL_TO_VENTRAL:
+        title: Dorsal to ventral orientation
+        description: Directional orientation from top/upper to belly/lower in an anatomical structure
+        annotations:
+          source: OME NGFF
+      VENTRAL_TO_DORSAL:
+        title: Ventral to dorsal orientation
+        description: Directional orientation from belly/lower to top/upper in an anatomical structure
+        annotations:
+          source: OME NGFF
+      DORSAL_TO_PALMAR:
+        title: Dorsal to palmar orientation
+        description: Directional orientation from top/upper to palm of hand
+        annotations:
+          source: OME NGFF
+          context: hand anatomy
+      PALMAR_TO_DORSAL:
+        title: Palmar to dorsal orientation
+        description: Directional orientation from palm of hand to top/upper
+        annotations:
+          source: OME NGFF
+          context: hand anatomy
+      DORSAL_TO_PLANTAR:
+        title: Dorsal to plantar orientation
+        description: Directional orientation from top/upper to sole of foot
+        annotations:
+          source: OME NGFF
+          context: foot anatomy
+      PLANTAR_TO_DORSAL:
+        title: Plantar to dorsal orientation
+        description: Directional orientation from sole of foot to top/upper
+        annotations:
+          source: OME NGFF
+          context: foot anatomy
+      ROSTRAL_TO_CAUDAL:
+        title: Rostral to caudal orientation
+        description: Directional orientation from nasal to tail end, typically for central nervous system
+        annotations:
+          source: OME NGFF
+          context: central nervous system
+      CAUDAL_TO_ROSTRAL:
+        title: Caudal to rostral orientation
+        description: Directional orientation from tail to nasal end, typically for central nervous system
+        annotations:
+          source: OME NGFF
+          context: central nervous system
+      CRANIAL_TO_CAUDAL:
+        title: Cranial to caudal orientation
+        description: Directional orientation from head to tail end of a structure
+        annotations:
+          source: OME NGFF
+      CAUDAL_TO_CRANIAL:
+        title: Caudal to cranial orientation
+        description: Directional orientation from tail to head end of a structure
+        annotations:
+          source: OME NGFF
+      PROXIMAL_TO_DISTAL:
+        title: Proximal to distal orientation
+        description: Directional orientation from body center to periphery of a structure
+        annotations:
+          source: OME NGFF
+      DISTAL_TO_PROXIMAL:
+        title: Distal to proximal orientation
+        description: Directional orientation from periphery to body center of a structure
+        annotations:
+          source: OME NGFF

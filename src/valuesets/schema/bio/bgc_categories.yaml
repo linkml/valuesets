@@ -1,0 +1,88 @@
+name: bgc_categories
+title: Biosynthetic Gene Cluster Categories
+description: 'Value sets for biosynthetic gene cluster (BGC) categories used in natural
+  product biosynthesis.
+
+  These categories represent the major classes of secondary metabolites produced by
+  BGCs.
+
+  Based on the MIBiG (Minimum Information about a Biosynthetic Gene cluster) standard.'
+id: https://w3id.org/linkml/valuesets/bio/bgc_categories
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  valuesets: https://w3id.org/valuesets/
+  CHEBI: http://purl.obolibrary.org/obo/CHEBI_
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+default_prefix: valuesets
+slots:
+  bgc_category:
+    description: Biosynthetic gene cluster category
+    range: BgcCategoryEnum
+enums:
+  BgcCategoryEnum:
+    title: BGC Category
+    description: 'Categories of biosynthetic gene clusters based on the type of secondary
+      metabolite produced.
+
+      These categories are used in genome mining and natural product discovery.'
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      POLYKETIDE:
+        description: Polyketide biosynthetic gene clusters
+        meaning: CHEBI:26188
+        annotations:
+          definition: Natural products containing alternating carbonyl and methylene
+            groups
+          biosynthetic_enzyme: Polyketide synthase (PKS)
+          examples: Erythromycin, lovastatin, rapamycin
+      NRP:
+        title: Non-ribosomal peptide
+        description: Non-ribosomal peptide biosynthetic gene clusters
+        annotations:
+          definition: Peptides synthesized by non-ribosomal peptide synthetases
+          biosynthetic_enzyme: Non-ribosomal peptide synthetase (NRPS)
+          examples: Penicillin, vancomycin, cyclosporin
+      RIPP:
+        title: Ribosomally synthesized and post-translationally modified peptide
+        description: RiPP biosynthetic gene clusters
+        annotations:
+          definition: Ribosomally synthesized peptides with extensive post-translational
+            modifications
+          biosynthetic_enzyme: Various modifying enzymes
+          examples: Nisin, thiopeptides, lanthipeptides
+          related_chebi: CHEBI:71629 (nisin)
+      TERPENE:
+        description: Terpene biosynthetic gene clusters
+        meaning: CHEBI:35186
+        annotations:
+          definition: Hydrocarbons derived from isoprene units
+          biosynthetic_enzyme: Terpene synthase
+          examples: Limonene, carotenoids, taxol
+      ALKALOID:
+        description: Alkaloid biosynthetic gene clusters
+        meaning: CHEBI:22315
+        annotations:
+          definition: Nitrogen-containing organic compounds with diverse structures
+          biosynthetic_enzyme: Various enzymes
+          examples: Morphine, caffeine, nicotine
+      SACCHARIDE:
+        description: Saccharide/polysaccharide biosynthetic gene clusters
+        meaning: CHEBI:18154
+        annotations:
+          definition: Carbohydrate polymers and oligomers
+          biosynthetic_enzyme: Glycosyltransferases
+          examples: Cellulose, chitin, bacterial capsular polysaccharides
+      OTHER:
+        description: Other or unclassified biosynthetic gene clusters
+        annotations:
+          definition: BGCs that do not fit into standard categories or are of unknown
+            type
+          examples: Novel or hybrid BGCs

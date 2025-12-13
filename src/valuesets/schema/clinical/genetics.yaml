@@ -1,0 +1,134 @@
+name: genetics
+title: Clinical Genetics Value Sets
+description: Value sets for clinical genetics including modes of inheritance
+id: https://w3id.org/linkml/valuesets/clinical/genetics
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  valuesets: https://w3id.org/valuesets/
+  HP: http://purl.obolibrary.org/obo/HP_
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+default_prefix: valuesets
+slots:
+  mode_of_inheritance:
+    description: The mode of inheritance for a genetic condition
+    range: ModeOfInheritance
+enums:
+  ModeOfInheritance:
+    title: Mode of Inheritance
+    description: >-
+      Patterns of genetic inheritance describing how traits or disorders are passed
+      between generations. Based on HP:0000005 (Mode of inheritance).
+    status: STANDARD
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    annotations:
+      stewards: https://hpo.jax.org
+      publishers: https://hpo.jax.org
+    permissible_values:
+      AUTOSOMAL_DOMINANT:
+        title: Autosomal dominant inheritance
+        description: >-
+          A mode of inheritance that is observed for traits related to a gene
+          encoded on one of the autosomes in which a trait manifests in heterozygotes.
+        meaning: HP:0000006
+      AUTOSOMAL_RECESSIVE:
+        title: Autosomal recessive inheritance
+        description: >-
+          A mode of inheritance that is observed for traits related to a gene
+          encoded on one of the autosomes in which a trait manifests in individuals
+          with two pathogenic alleles.
+        meaning: HP:0000007
+      X_LINKED:
+        title: X-linked inheritance
+        description: >-
+          A mode of inheritance that is observed for traits related to a gene
+          encoded on the X chromosome.
+        meaning: HP:0001417
+      X_LINKED_DOMINANT:
+        title: X-linked dominant inheritance
+        description: >-
+          A mode of inheritance that is observed for dominant traits related to
+          a gene encoded on the X chromosome.
+        meaning: HP:0001423
+        is_a: X_LINKED
+      X_LINKED_RECESSIVE:
+        title: X-linked recessive inheritance
+        description: >-
+          A mode of inheritance that is observed for recessive traits related to
+          a gene encoded on the X chromosome.
+        meaning: HP:0001419
+        is_a: X_LINKED
+      Y_LINKED:
+        title: Y-linked inheritance
+        description: >-
+          A mode of inheritance that is observed for traits related to a gene
+          encoded on the Y chromosome.
+        meaning: HP:0001450
+      MITOCHONDRIAL:
+        title: Mitochondrial inheritance
+        description: >-
+          A mode of inheritance that is observed for traits related to a gene
+          encoded on the mitochondrial genome. Maternally inherited.
+        meaning: HP:0001427
+      MENDELIAN:
+        title: Mendelian inheritance
+        description: >-
+          A mode of inheritance of diseases whose pathophysiology can be traced
+          back to deleterious variants in a single gene.
+        meaning: HP:0034345
+      NON_MENDELIAN:
+        title: Non-Mendelian inheritance
+        description: >-
+          A mode of inheritance that depends on genetic determinants in more than one gene.
+        meaning: HP:0001426
+      DIGENIC:
+        title: Digenic inheritance
+        description: >-
+          A type of multifactorial inheritance governed by the simultaneous action
+          of two gene loci.
+        meaning: HP:0010984
+        is_a: NON_MENDELIAN
+      OLIGOGENIC:
+        title: Oligogenic inheritance
+        description: >-
+          A type of multifactorial inheritance governed by the simultaneous action
+          of a few gene loci (typically three).
+        meaning: HP:0010983
+        is_a: NON_MENDELIAN
+      POLYGENIC:
+        title: Polygenic inheritance
+        description: >-
+          A mode of inheritance that depends on a mixture of major and minor genetic
+          determinants possibly together with environmental factors.
+        meaning: HP:0010982
+        is_a: NON_MENDELIAN
+      SEMIDOMINANT:
+        title: Semidominant inheritance
+        description: >-
+          A mode of inheritance for traits that can manifest in both monoallelic
+          and biallelic states, with similar or differing phenotype severity.
+        meaning: HP:0032113
+      PSEUDOAUTOSOMAL:
+        title: Pseudoautosomal inheritance
+        description: >-
+          A pattern of inheritance observed for alleles in the X-Y identical regions,
+          resembling autosomal inheritance.
+        meaning: HP:0034339
+      PSEUDOAUTOSOMAL_DOMINANT:
+        title: Pseudoautosomal dominant inheritance
+        description: >-
+          A type of pseudoautosomal inheritance that is dominant.
+        meaning: HP:0034340
+        is_a: PSEUDOAUTOSOMAL
+      PSEUDOAUTOSOMAL_RECESSIVE:
+        title: Pseudoautosomal recessive inheritance
+        description: >-
+          A type of pseudoautosomal inheritance that is recessive.
+        meaning: HP:0034341
+        is_a: PSEUDOAUTOSOMAL

@@ -4,6 +4,8 @@ prefixes:
   fhir: http://hl7.org/fhir/
   fhir_data_absent_reason: http://terminology.hl7.org/CodeSystem/data-absent-reason
   valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   data_absent:
@@ -11,7 +13,14 @@ slots:
     range: DataAbsentEnum
 enums:
   DataAbsentEnum:
+    title: Data Absent
     description: Used to specify why the normally expected content of the data element is missing.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       unknown:
         description: The value is expected to exist but is not known.
@@ -63,12 +72,12 @@ enums:
         is_a: error
         title: Not a Number (NaN)
       negative-infinity:
-        description: The numeric value is excessively low and unrepresentable due to a floating point processing        error.
+        description: The numeric value is excessively low and unrepresentable due to a floating point processing error.
         meaning: fhir_data_absent_reason:negative-infinity
         is_a: error
         title: Negative Infinity (NINF)
       positive-infinity:
-        description: The numeric value is excessively high and unrepresentable due to a floating point processing        error.
+        description: The numeric value is excessively high and unrepresentable due to a floating point processing error.
         meaning: fhir_data_absent_reason:positive-infinity
         is_a: error
         title: Positive Infinity (PINF)

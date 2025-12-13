@@ -1,0 +1,49 @@
+name: biosafety
+id: https://w3id.org/linkml/valuesets/bio/biosafety
+prefixes:
+  SNOMED: http://snomed.info/id/
+  METPO: https://w3id.org/metpo/
+  valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+default_prefix: valuesets
+slots:
+  biosafety_level:
+    description: The biosafety level required for handling biological agents based on potential risk
+    range: BiosafetyLevelEnum
+enums:
+  BiosafetyLevelEnum:
+    title: Biosafety Level
+    description: Biosafety levels (BSL) defining containment requirements for biological agents
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      BSL1:
+        description: Suitable for well-characterized agents not known to consistently cause disease in healthy adults
+        meaning: SNOMED:409600007
+        exact_mappings:
+        - METPO:1001102
+        title: biosafety level 1
+      BSL2:
+        description: Suitable for agents that pose moderate hazards to personnel and the environment
+        meaning: SNOMED:409603009
+        exact_mappings:
+        - METPO:1001103
+        title: biosafety level 2
+      BSL3:
+        description: Suitable for indigenous or exotic agents that may cause serious or potentially lethal disease 
+          through inhalation
+        meaning: SNOMED:409604003
+        exact_mappings:
+        - METPO:1001104
+        title: biosafety level 3
+      BSL4:
+        description: Suitable for dangerous and exotic agents that pose high risk of life-threatening disease
+        meaning: SNOMED:409605002
+        exact_mappings:
+        - METPO:1001105
+        title: biosafety level 4

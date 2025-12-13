@@ -223,6 +223,31 @@
             "title": "AnatomicalAxis",
             "type": "string"
         },
+        "AnatomicalOrientation": {
+            "description": "Directional orientation between anatomical positions based on OME NGFF specification",
+            "enum": [
+                "LEFT_TO_RIGHT",
+                "RIGHT_TO_LEFT",
+                "ANTERIOR_TO_POSTERIOR",
+                "POSTERIOR_TO_ANTERIOR",
+                "INFERIOR_TO_SUPERIOR",
+                "SUPERIOR_TO_INFERIOR",
+                "DORSAL_TO_VENTRAL",
+                "VENTRAL_TO_DORSAL",
+                "DORSAL_TO_PALMAR",
+                "PALMAR_TO_DORSAL",
+                "DORSAL_TO_PLANTAR",
+                "PLANTAR_TO_DORSAL",
+                "ROSTRAL_TO_CAUDAL",
+                "CAUDAL_TO_ROSTRAL",
+                "CRANIAL_TO_CAUDAL",
+                "CAUDAL_TO_CRANIAL",
+                "PROXIMAL_TO_DISTAL",
+                "DISTAL_TO_PROXIMAL"
+            ],
+            "title": "AnatomicalOrientation",
+            "type": "string"
+        },
         "AnatomicalPlane": {
             "description": "Standard anatomical planes for sectioning",
             "enum": [
@@ -381,6 +406,21 @@
             "title": "AudioFormatEnum",
             "type": "string"
         },
+        "AutomationStandardEnum": {
+            "description": "Industry standards for laboratory automation systems",
+            "enum": [
+                "SILA_2",
+                "LABOP",
+                "AUTOPROTOCOL",
+                "CLSI_AUTO01",
+                "CLSI_AUTO02",
+                "CLSI_AUTO03",
+                "CLSI_AUTO04",
+                "CLSI_AUTO05"
+            ],
+            "title": "AutomationStandardEnum",
+            "type": "string"
+        },
         "AutomobilePaintColorEnum": {
             "description": "Common automobile paint colors",
             "enum": [
@@ -473,6 +513,25 @@
             "title": "BasicEmotionEnum",
             "type": "string"
         },
+        "BatteryType": {
+            "description": "Types of battery technologies for energy storage",
+            "enum": [
+                "LITHIUM_ION",
+                "LITHIUM_IRON_PHOSPHATE",
+                "LITHIUM_POLYMER",
+                "LEAD_ACID",
+                "NICKEL_METAL_HYDRIDE",
+                "NICKEL_CADMIUM",
+                "SODIUM_ION",
+                "SOLID_STATE",
+                "VANADIUM_REDOX_FLOW",
+                "ZINC_BROMINE_FLOW",
+                "IRON_AIR",
+                "ZINC_AIR"
+            ],
+            "title": "BatteryType",
+            "type": "string"
+        },
         "BeneficiationPathway": {
             "description": "Methods for mineral separation and concentration aligned with advanced ore processing initiatives (AOI-2).",
             "enum": [
@@ -511,6 +570,53 @@
                 "NEGATIVE"
             ],
             "title": "BinaryClassificationEnum",
+            "type": "string"
+        },
+        "BioconversionProcess": {
+            "description": "Processes for converting biomass feedstocks into biofuels and bioproducts.",
+            "enum": [
+                "FERMENTATION",
+                "ANAEROBIC_DIGESTION",
+                "TRANSESTERIFICATION",
+                "HYDROTREATING",
+                "PYROLYSIS",
+                "GASIFICATION",
+                "HYDROTHERMAL_LIQUEFACTION",
+                "ENZYMATIC_HYDROLYSIS",
+                "ACID_HYDROLYSIS",
+                "FISCHER_TROPSCH",
+                "ALCOHOL_TO_JET"
+            ],
+            "title": "BioconversionProcess",
+            "type": "string"
+        },
+        "BiofuelGeneration": {
+            "description": "Classification of biofuels by feedstock source and technology generation.",
+            "enum": [
+                "FIRST_GENERATION",
+                "SECOND_GENERATION",
+                "THIRD_GENERATION",
+                "FOURTH_GENERATION"
+            ],
+            "title": "BiofuelGeneration",
+            "type": "string"
+        },
+        "BiofuelType": {
+            "description": "Types of fuels produced from biomass feedstocks.",
+            "enum": [
+                "ETHANOL",
+                "BIODIESEL",
+                "RENEWABLE_DIESEL",
+                "SUSTAINABLE_AVIATION_FUEL",
+                "BIOGAS",
+                "BIOMETHANE",
+                "BIO_OIL",
+                "SYNGAS",
+                "BUTANOL",
+                "METHANOL",
+                "DIMETHYL_ETHER"
+            ],
+            "title": "BiofuelType",
             "type": "string"
         },
         "BioleachMode": {
@@ -583,6 +689,32 @@
             "title": "BiologicalSexEnum",
             "type": "string"
         },
+        "BiomassFeedstockType": {
+            "description": "Types of biomass materials used as feedstocks for bioenergy production. Includes dedicated energy crops, agricultural residues, forest residues, and waste streams.",
+            "enum": [
+                "CORN_STOVER",
+                "WHEAT_STRAW",
+                "RICE_STRAW",
+                "SWITCHGRASS",
+                "MISCANTHUS",
+                "ENERGY_CANE",
+                "SWEET_SORGHUM",
+                "POPLAR",
+                "WILLOW",
+                "FOREST_RESIDUE",
+                "WOOD_PROCESSING_RESIDUE",
+                "MUNICIPAL_SOLID_WASTE",
+                "FOOD_WASTE",
+                "ANIMAL_MANURE",
+                "ALGAE",
+                "USED_COOKING_OIL",
+                "SOYBEAN_OIL",
+                "CORN_GRAIN",
+                "SUGARCANE"
+            ],
+            "title": "BiomassFeedstockType",
+            "type": "string"
+        },
         "BioreactorTypeEnum": {
             "description": "Types of bioreactors used in fermentation and cell culture",
             "enum": [
@@ -597,6 +729,17 @@
                 "PHOTOBIOREACTOR"
             ],
             "title": "BioreactorTypeEnum",
+            "type": "string"
+        },
+        "BiosafetyLevelEnum": {
+            "description": "Biosafety levels (BSL) defining containment requirements for biological agents",
+            "enum": [
+                "BSL1",
+                "BSL2",
+                "BSL3",
+                "BSL4"
+            ],
+            "title": "BiosafetyLevelEnum",
             "type": "string"
         },
         "BioticInteractionType": {
@@ -869,6 +1012,18 @@
                 "LEVEL_5"
             ],
             "title": "CapabilityMaturityLevel",
+            "type": "string"
+        },
+        "CapabilityStatus": {
+            "description": "Operational status of a capability, facility, or infrastructure. Applicable to energy facilities, research capabilities, and other infrastructure throughout their lifecycle.",
+            "enum": [
+                "OPERATIONAL",
+                "COMING_ONLINE",
+                "PILOT",
+                "UNDER_DEVELOPMENT",
+                "DECOMMISSIONED"
+            ],
+            "title": "CapabilityStatus",
             "type": "string"
         },
         "CarbonIntensity": {
@@ -1256,6 +1411,22 @@
             "title": "CommonOrganismTaxaEnum",
             "type": "string"
         },
+        "CommunicationProtocolEnum": {
+            "description": "Communication protocols for laboratory automation integration",
+            "enum": [
+                "GRPC",
+                "REST_API",
+                "SOAP",
+                "OPC_UA",
+                "MODBUS",
+                "CUSTOM_API",
+                "SERIAL",
+                "TCP_IP",
+                "USB"
+            ],
+            "title": "CommunicationProtocolEnum",
+            "type": "string"
+        },
         "CompassDirection": {
             "description": "Cardinal and intercardinal compass directions",
             "enum": [
@@ -1305,6 +1476,17 @@
                 "POLYMER_MATRIX_COMPOSITE"
             ],
             "title": "CompositeTypeEnum",
+            "type": "string"
+        },
+        "CompressionFormat": {
+            "description": "Compression and archive formats commonly used for ML dataset distribution.",
+            "enum": [
+                "ZIP",
+                "TAR",
+                "GZIP",
+                "TAR_GZ"
+            ],
+            "title": "CompressionFormat",
             "type": "string"
         },
         "CompressionType": {
@@ -1361,6 +1543,24 @@
             "title": "ConfidenceScore",
             "type": "string"
         },
+        "ContainerTypeEnum": {
+            "description": "Types of laboratory containers and labware",
+            "enum": [
+                "MICROPLATE",
+                "DEEP_WELL_PLATE",
+                "PCR_PLATE",
+                "TUBE_RACK",
+                "MICROTUBE",
+                "SCREW_CAP_TUBE",
+                "SNAP_CAP_TUBE",
+                "RESERVOIR",
+                "PIPETTE_TIP_BOX",
+                "SPIN_COLUMN",
+                "MICROPLATE_WELL"
+            ],
+            "title": "ContainerTypeEnum",
+            "type": "string"
+        },
         "ContigCollectionType": {
             "description": "The type of the contig set; the type of the 'omics data set. Terms are taken from the Genomics Standards Consortium where possible. See the GSC checklists at https://genomicsstandardsconsortium.github.io/mixs/ for the controlled vocabularies used.",
             "enum": [
@@ -1396,6 +1596,31 @@
                 "ORGANIZATION"
             ],
             "title": "ContributorType",
+            "type": "string"
+        },
+        "CoordinationGeometry": {
+            "description": "Coordination geometry of metal centers in protein structures",
+            "enum": [
+                "LINEAR",
+                "TRIGONAL_PLANAR",
+                "TRIGONAL_PYRAMIDAL",
+                "T_SHAPED",
+                "TETRAHEDRAL",
+                "SQUARE_PLANAR",
+                "TRIGONAL_BIPYRAMIDAL",
+                "SQUARE_PYRAMIDAL",
+                "PENTAGONAL_PLANAR",
+                "OCTAHEDRAL",
+                "TRIGONAL_PRISMATIC",
+                "PENTAGONAL_BIPYRAMIDAL",
+                "HEXAGONAL_BIPYRAMIDAL",
+                "SQUARE_ANTIPRISMATIC",
+                "DODECAHEDRAL",
+                "CUBIC",
+                "BENT",
+                "SEE_SAW"
+            ],
+            "title": "CoordinationGeometry",
             "type": "string"
         },
         "CorporateGovernanceRoleEnum": {
@@ -1840,6 +2065,35 @@
             "title": "DataType",
             "type": "string"
         },
+        "DatasetEncodingFormat": {
+            "description": "Encoding formats (MIME types) commonly used for ML dataset files in Croissant.\nThese specify how data is serialized and stored.",
+            "enum": [
+                "CSV",
+                "JSON",
+                "JSONL",
+                "PARQUET",
+                "PLAIN_TEXT",
+                "JPEG",
+                "PNG",
+                "WAV",
+                "MP4",
+                "ZIP",
+                "TAR"
+            ],
+            "title": "DatasetEncodingFormat",
+            "type": "string"
+        },
+        "DatasetSplitType": {
+            "description": "Standard dataset split types used in machine learning for training,\nvalidation, and testing. These splits are fundamental to ML model\ndevelopment and evaluation workflows.",
+            "enum": [
+                "TRAIN",
+                "VALIDATION",
+                "TEST",
+                "ALL"
+            ],
+            "title": "DatasetSplitType",
+            "type": "string"
+        },
         "DayOfWeek": {
             "description": "Days of the week following ISO 8601 standard (Monday = 1)",
             "enum": [
@@ -1905,6 +2159,20 @@
                 "OXIMATION"
             ],
             "title": "DerivatizationMethod",
+            "type": "string"
+        },
+        "DetectionModeEnum": {
+            "description": "Detection modes for real-time PCR instruments",
+            "enum": [
+                "SYBR_GREEN",
+                "TAQMAN",
+                "MOLECULAR_BEACON",
+                "FRET",
+                "SCORPION",
+                "HYBRIDIZATION_PROBE",
+                "MULTI_CHANNEL"
+            ],
+            "title": "DetectionModeEnum",
             "type": "string"
         },
         "Detector": {
@@ -2248,13 +2516,9 @@
             "type": "string"
         },
         "EnergyStorageType": {
-            "description": "Types of energy storage systems",
+            "description": "Types of energy storage systems (categories)",
             "enum": [
-                "LITHIUM_ION_BATTERY",
-                "LEAD_ACID_BATTERY",
-                "FLOW_BATTERY",
-                "SOLID_STATE_BATTERY",
-                "SODIUM_ION_BATTERY",
+                "BATTERY",
                 "PUMPED_HYDRO",
                 "COMPRESSED_AIR",
                 "FLYWHEEL",
@@ -2344,6 +2608,19 @@
             "title": "EthnicityOMB1997Enum",
             "type": "string"
         },
+        "ExecutionModeEnum": {
+            "description": "Modes of protocol execution",
+            "enum": [
+                "AUTOMATED",
+                "MANUAL",
+                "SEMI_AUTOMATED",
+                "SUPERVISED",
+                "SIMULATION",
+                "DRY_RUN"
+            ],
+            "title": "ExecutionModeEnum",
+            "type": "string"
+        },
         "ExperimentalPreparation": {
             "description": "Sample preparation methods",
             "enum": [
@@ -2392,6 +2669,15 @@
             "title": "ExposureDurationEnum",
             "type": "string"
         },
+        "ExposureFrequencyEnum": {
+            "description": "Temporal pattern of exposure occurrence",
+            "enum": [
+                "INTERMITTENT",
+                "CONTINUOUS"
+            ],
+            "title": "ExposureFrequencyEnum",
+            "type": "string"
+        },
         "ExposureRouteEnum": {
             "description": "Routes by which exposure to environmental agents occurs",
             "enum": [
@@ -2401,6 +2687,17 @@
                 "INJECTION",
                 "TRANSPLACENTAL",
                 "OCULAR",
+                "ABSORPTION",
+                "GASTROINTESTINAL_TRACT",
+                "GAVAGE",
+                "AMBIENT_ENVIRONMENT",
+                "AMBIENT_AQUATIC",
+                "AMBIENT_TERRESTRIAL",
+                "PASSIVE_INHALATION",
+                "ACTIVE_INHALATION",
+                "SUBCUTANEOUS",
+                "INTRAMUSCULAR",
+                "INTRAVASCULAR",
                 "MULTIPLE_ROUTES"
             ],
             "title": "ExposureRouteEnum",
@@ -2424,6 +2721,29 @@
                 "MINING"
             ],
             "title": "ExposureSourceEnum",
+            "type": "string"
+        },
+        "ExposureStressorTypeEnum": {
+            "description": "Types of exposure stressors by their origin or nature",
+            "enum": [
+                "BIOLOGICAL_AGENT",
+                "CHEMICAL_AGENT",
+                "PHYSICAL_AGENT",
+                "PSYCHOSOCIAL_AGENT",
+                "BIOMECHANICAL_AGENT",
+                "ECOLOGICAL_PERTURBATION"
+            ],
+            "title": "ExposureStressorTypeEnum",
+            "type": "string"
+        },
+        "ExposureTransportPathEnum": {
+            "description": "Transport medium through which exposure stressor reaches the recipient",
+            "enum": [
+                "AIR_TRANSPORT_PATH",
+                "WATER_TRANSPORT_PATH",
+                "SOIL_TRANSPORT_PATH"
+            ],
+            "title": "ExposureTransportPathEnum",
             "type": "string"
         },
         "ExtendedEmotionEnum": {
@@ -2527,6 +2847,96 @@
             "description": "",
             "title": "Fake",
             "type": "object"
+        },
+        "FamilyHistoryStatus": {
+            "description": "Status of family history information availability",
+            "enum": [
+                "COMPLETED",
+                "PARTIAL",
+                "UNKNOWN",
+                "UNABLE_TO_OBTAIN",
+                "NOT_ASKED"
+            ],
+            "title": "FamilyHistoryStatus",
+            "type": "string"
+        },
+        "FamilyRelationship": {
+            "description": "Family relationships used in pedigree and family history documentation",
+            "enum": [
+                "PARENT",
+                "MOTHER",
+                "FATHER",
+                "NATURAL_MOTHER",
+                "NATURAL_FATHER",
+                "ADOPTIVE_PARENT",
+                "ADOPTIVE_MOTHER",
+                "ADOPTIVE_FATHER",
+                "STEP_PARENT",
+                "STEP_MOTHER",
+                "STEP_FATHER",
+                "FOSTER_PARENT",
+                "GESTATIONAL_MOTHER",
+                "SIBLING",
+                "BROTHER",
+                "SISTER",
+                "NATURAL_BROTHER",
+                "NATURAL_SISTER",
+                "HALF_BROTHER",
+                "HALF_SISTER",
+                "STEP_BROTHER",
+                "STEP_SISTER",
+                "TWIN",
+                "TWIN_BROTHER",
+                "TWIN_SISTER",
+                "FRATERNAL_TWIN",
+                "IDENTICAL_TWIN",
+                "CHILD",
+                "SON",
+                "DAUGHTER",
+                "NATURAL_CHILD",
+                "ADOPTIVE_CHILD",
+                "FOSTER_CHILD",
+                "STEP_CHILD",
+                "GRANDPARENT",
+                "GRANDMOTHER",
+                "GRANDFATHER",
+                "MATERNAL_GRANDMOTHER",
+                "MATERNAL_GRANDFATHER",
+                "PATERNAL_GRANDMOTHER",
+                "PATERNAL_GRANDFATHER",
+                "GRANDCHILD",
+                "GRANDSON",
+                "GRANDDAUGHTER",
+                "AUNT",
+                "UNCLE",
+                "MATERNAL_AUNT",
+                "MATERNAL_UNCLE",
+                "PATERNAL_AUNT",
+                "PATERNAL_UNCLE",
+                "COUSIN",
+                "MATERNAL_COUSIN",
+                "PATERNAL_COUSIN",
+                "NIECE",
+                "NEPHEW",
+                "SPOUSE",
+                "HUSBAND",
+                "WIFE",
+                "DOMESTIC_PARTNER",
+                "GREAT_GRANDPARENT",
+                "GREAT_GRANDMOTHER",
+                "GREAT_GRANDFATHER",
+                "MOTHER_IN_LAW",
+                "FATHER_IN_LAW",
+                "DAUGHTER_IN_LAW",
+                "SON_IN_LAW",
+                "BROTHER_IN_LAW",
+                "SISTER_IN_LAW",
+                "FAMILY_MEMBER",
+                "EXTENDED_FAMILY_MEMBER",
+                "SIGNIFICANT_OTHER"
+            ],
+            "title": "FamilyRelationship",
+            "type": "string"
         },
         "FeatureType": {
             "description": "Molecular features affecting interactions",
@@ -2915,6 +3325,19 @@
             "title": "GeneticDisease",
             "type": "string"
         },
+        "GeneticRelationship": {
+            "description": "Genetic relationship types for pedigree analysis",
+            "enum": [
+                "BIOLOGICAL",
+                "FULL_SIBLING",
+                "HALF_SIBLING",
+                "ADOPTIVE",
+                "NO_GENETIC_RELATIONSHIP",
+                "UNKNOWN_GENETIC_RELATIONSHIP"
+            ],
+            "title": "GeneticRelationship",
+            "type": "string"
+        },
         "GenomeFeatureType": {
             "description": "Genome feature types from SOFA (Sequence Ontology Feature Annotation).\nThis is the subset of Sequence Ontology terms used in GFF3 files.\nOrganized hierarchically following the Sequence Ontology structure.",
             "enum": [
@@ -3007,6 +3430,72 @@
                 "CENOZOIC"
             ],
             "title": "GeologicalEra",
+            "type": "string"
+        },
+        "GeothermalApplication": {
+            "description": "Applications and uses of geothermal energy.",
+            "enum": [
+                "ELECTRICITY_GENERATION",
+                "DIRECT_USE_HEATING",
+                "GREENHOUSE_HEATING",
+                "AQUACULTURE",
+                "INDUSTRIAL_PROCESS_HEAT",
+                "FOOD_PROCESSING",
+                "BATHING_RECREATION",
+                "LITHIUM_EXTRACTION"
+            ],
+            "title": "GeothermalApplication",
+            "type": "string"
+        },
+        "GeothermalReservoirType": {
+            "description": "Classification of geothermal reservoirs by geological setting and characteristics.",
+            "enum": [
+                "VOLCANIC",
+                "SEDIMENTARY",
+                "FRACTURED_BASEMENT",
+                "FAULT_CONTROLLED",
+                "MAGMATIC",
+                "CONDUCTION_DOMINATED"
+            ],
+            "title": "GeothermalReservoirType",
+            "type": "string"
+        },
+        "GeothermalResourceTemperature": {
+            "description": "Classification of geothermal resources by temperature range.",
+            "enum": [
+                "LOW_TEMPERATURE",
+                "MODERATE_TEMPERATURE",
+                "HIGH_TEMPERATURE",
+                "SUPERCRITICAL"
+            ],
+            "title": "GeothermalResourceTemperature",
+            "type": "string"
+        },
+        "GeothermalSystemType": {
+            "description": "Types of geothermal energy systems, including conventional hydrothermal and enhanced/engineered geothermal systems.",
+            "enum": [
+                "HYDROTHERMAL",
+                "ENHANCED_GEOTHERMAL_SYSTEM",
+                "ADVANCED_GEOTHERMAL_SYSTEM",
+                "HOT_DRY_ROCK",
+                "GEOPRESSURED",
+                "SUPERCRITICAL",
+                "GROUND_SOURCE_HEAT_PUMP"
+            ],
+            "title": "GeothermalSystemType",
+            "type": "string"
+        },
+        "GeothermalWellType": {
+            "description": "Types of wells used in geothermal energy development and production.",
+            "enum": [
+                "PRODUCTION_WELL",
+                "INJECTION_WELL",
+                "EXPLORATION_WELL",
+                "OBSERVATION_WELL",
+                "SLIM_HOLE",
+                "DIRECTIONAL_WELL"
+            ],
+            "title": "GeothermalWellType",
             "type": "string"
         },
         "GridType": {
@@ -3179,6 +3668,72 @@
                 "POSTNATAL_STAGE"
             ],
             "title": "HumanDevelopmentalStage",
+            "type": "string"
+        },
+        "HydrogenApplication": {
+            "description": "End-use applications for hydrogen.",
+            "enum": [
+                "FUEL_CELL_VEHICLE",
+                "FUEL_CELL_STATIONARY",
+                "INDUSTRIAL_FEEDSTOCK",
+                "STEEL_PRODUCTION",
+                "AMMONIA_SYNTHESIS",
+                "METHANOL_SYNTHESIS",
+                "POWER_TO_GAS",
+                "BLENDING_NATURAL_GAS",
+                "SYNTHETIC_FUELS"
+            ],
+            "title": "HydrogenApplication",
+            "type": "string"
+        },
+        "HydrogenProductionMethod": {
+            "description": "Methods and processes for producing hydrogen.",
+            "enum": [
+                "STEAM_METHANE_REFORMING",
+                "AUTOTHERMAL_REFORMING",
+                "PARTIAL_OXIDATION",
+                "COAL_GASIFICATION",
+                "WATER_ELECTROLYSIS",
+                "ALKALINE_ELECTROLYSIS",
+                "PEM_ELECTROLYSIS",
+                "SOLID_OXIDE_ELECTROLYSIS",
+                "METHANE_PYROLYSIS",
+                "BIOMASS_GASIFICATION",
+                "BIOLOGICAL_PRODUCTION",
+                "THERMOCHEMICAL_WATER_SPLITTING",
+                "PHOTOELECTROCHEMICAL"
+            ],
+            "title": "HydrogenProductionMethod",
+            "type": "string"
+        },
+        "HydrogenStorageMethod": {
+            "description": "Methods for storing hydrogen for later use or transport.",
+            "enum": [
+                "COMPRESSED_GAS",
+                "LIQUID_HYDROGEN",
+                "METAL_HYDRIDE",
+                "CHEMICAL_HYDRIDE",
+                "UNDERGROUND_STORAGE",
+                "CRYO_COMPRESSED"
+            ],
+            "title": "HydrogenStorageMethod",
+            "type": "string"
+        },
+        "HydrogenType": {
+            "description": "Color-coded classification of hydrogen based on production method and carbon intensity. This informal industry taxonomy differentiates hydrogen by its carbon footprint and energy source.",
+            "enum": [
+                "GREEN_HYDROGEN",
+                "BLUE_HYDROGEN",
+                "GREY_HYDROGEN",
+                "BROWN_HYDROGEN",
+                "BLACK_HYDROGEN",
+                "PINK_HYDROGEN",
+                "TURQUOISE_HYDROGEN",
+                "WHITE_HYDROGEN",
+                "YELLOW_HYDROGEN",
+                "ORANGE_HYDROGEN"
+            ],
+            "title": "HydrogenType",
             "type": "string"
         },
         "IAEAWasteClassificationEnum": {
@@ -3658,6 +4213,34 @@
             "title": "InsdcMissingValueEnum",
             "type": "string"
         },
+        "IntegrationFeatureEnum": {
+            "description": "Integration features for laboratory automation systems",
+            "enum": [
+                "BARCODE_TRACKING",
+                "AUTOMATED_DATA_TRANSFER",
+                "CLOUD_STORAGE_INTEGRATION",
+                "SAMPLE_TRACKING",
+                "WORKFLOW_VALIDATION",
+                "ERROR_RECOVERY",
+                "AUDIT_TRAIL",
+                "ELECTRONIC_SIGNATURES"
+            ],
+            "title": "IntegrationFeatureEnum",
+            "type": "string"
+        },
+        "IntegrationSystemEnum": {
+            "description": "Types of systems integrated with laboratory automation platforms",
+            "enum": [
+                "LIMS",
+                "ELN",
+                "MES",
+                "SCADA",
+                "CLOUD_STORAGE",
+                "DATABASE"
+            ],
+            "title": "IntegrationSystemEnum",
+            "type": "string"
+        },
         "IntentClassificationEnum": {
             "description": "Common chatbot/NLU intent categories",
             "enum": [
@@ -3803,6 +4386,44 @@
                 "UNKNOWN_KARYOTYPE"
             ],
             "title": "KaryotypicSexEnum",
+            "type": "string"
+        },
+        "LaboratoryDeviceTypeEnum": {
+            "description": "Types of automated laboratory devices and equipment",
+            "enum": [
+                "LIQUID_HANDLER",
+                "LIQUID_EXTRACTION_ROBOT",
+                "CENTRIFUGE",
+                "MICROCENTRIFUGE",
+                "INCUBATOR",
+                "INCUBATOR_SHAKER",
+                "MICROPLATE_READER",
+                "ELISA_MICROPLATE_READER",
+                "MULTIMODE_MICROPLATE_READER",
+                "MICROPLATE_WASHER",
+                "ELISA_MICROPLATE_WASHER",
+                "MULTICHANNEL_PIPETTE",
+                "ROBOTIC_ARM",
+                "THERMAL_CYCLER",
+                "COLONY_PICKER",
+                "BARCODE_READER",
+                "PLATE_HANDLER",
+                "DISPENSER"
+            ],
+            "title": "LaboratoryDeviceTypeEnum",
+            "type": "string"
+        },
+        "LabwareStandardEnum": {
+            "description": "Standardization specifications for laboratory labware",
+            "enum": [
+                "ANSI_SLAS_1_2004",
+                "ANSI_SLAS_2_2004",
+                "ANSI_SLAS_3_2004",
+                "ANSI_SLAS_4_2004",
+                "ANSI_SLAS_6_2012",
+                "SBS_FOOTPRINT"
+            ],
+            "title": "LabwareStandardEnum",
             "type": "string"
         },
         "LanguageCodeISO6391Enum": {
@@ -4007,6 +4628,26 @@
             "title": "LipidCategory",
             "type": "string"
         },
+        "LiquidHandlingOperationEnum": {
+            "description": "Operations for automated liquid handling in laboratory automation",
+            "enum": [
+                "PICK_UP_TIPS",
+                "ASPIRATE",
+                "DISPENSE",
+                "RETURN_TIPS",
+                "DROP_TIPS",
+                "TRANSFER",
+                "PIPETTING",
+                "MIXING",
+                "ALIQUOTING",
+                "SERIAL_DILUTION",
+                "PLATE_STAMPING",
+                "ACOUSTIC_TRANSFER",
+                "MOUTH_PIPETTING"
+            ],
+            "title": "LiquidHandlingOperationEnum",
+            "type": "string"
+        },
         "LogisticsOperationEnum": {
             "description": "Types of logistics operations",
             "enum": [
@@ -4022,6 +4663,80 @@
                 "FREIGHT_FORWARDING"
             ],
             "title": "LogisticsOperationEnum",
+            "type": "string"
+        },
+        "MLDataType": {
+            "description": "Data types used in Croissant ML for describing field types in datasets.\nBased on XSD (XML Schema Definition) and schema.org vocabulary.",
+            "enum": [
+                "TEXT",
+                "INTEGER",
+                "FLOAT",
+                "BOOLEAN",
+                "DATE",
+                "TIME",
+                "DATETIME",
+                "URL"
+            ],
+            "title": "MLDataType",
+            "type": "string"
+        },
+        "MLFieldRole": {
+            "description": "Semantic roles that fields play in ML datasets. These roles help understand\nthe purpose and usage of different data columns or attributes.",
+            "enum": [
+                "FEATURE",
+                "LABEL",
+                "METADATA",
+                "IDENTIFIER"
+            ],
+            "title": "MLFieldRole",
+            "type": "string"
+        },
+        "MLLicenseType": {
+            "description": "Common open source and Creative Commons licenses used for ML datasets.\nThese licenses specify terms of use, redistribution, and modification.",
+            "enum": [
+                "CC_BY_4_0",
+                "CC_BY_SA_4_0",
+                "CC0_1_0",
+                "MIT",
+                "APACHE_2_0",
+                "BSD_3_CLAUSE",
+                "GPL_3_0"
+            ],
+            "title": "MLLicenseType",
+            "type": "string"
+        },
+        "MLMediaType": {
+            "description": "Media types (MIME types) for different modalities of ML data including\nimages, audio, video, and text.",
+            "enum": [
+                "IMAGE_JPEG",
+                "IMAGE_PNG",
+                "IMAGE_GIF",
+                "IMAGE_TIFF",
+                "AUDIO_WAV",
+                "AUDIO_MP3",
+                "AUDIO_FLAC",
+                "VIDEO_MP4",
+                "VIDEO_AVI",
+                "VIDEO_WEBM",
+                "TEXT_PLAIN",
+                "TEXT_HTML"
+            ],
+            "title": "MLMediaType",
+            "type": "string"
+        },
+        "MLModalityType": {
+            "description": "High-level data modalities used in machine learning. These represent\nthe fundamental types of input data that ML models process.",
+            "enum": [
+                "TEXT",
+                "IMAGE",
+                "AUDIO",
+                "VIDEO",
+                "MULTIMODAL",
+                "TABULAR",
+                "TIME_SERIES",
+                "GRAPH"
+            ],
+            "title": "MLModalityType",
             "type": "string"
         },
         "MRIContrastTypeEnum": {
@@ -4395,6 +5110,15 @@
             "title": "MetabolomicsAssayType",
             "type": "string"
         },
+        "MetalLigandType": {
+            "description": "Types of metal-containing chemical components",
+            "enum": [
+                "METAL_CATION",
+                "METAL_CONTAINING_LIGAND"
+            ],
+            "title": "MetalLigandType",
+            "type": "string"
+        },
         "MetalTypeEnum": {
             "description": "Types of metallic materials",
             "enum": [
@@ -4411,6 +5135,20 @@
         "MetazoanAnatomicalStructure": {
             "description": "Any anatomical structure found in metazoan organisms,\nincluding organs, tissues, and body parts",
             "title": "MetazoanAnatomicalStructure",
+            "type": "string"
+        },
+        "MicroplateFormatEnum": {
+            "description": "Standard microplate well configurations following ANSI/SLAS standards",
+            "enum": [
+                "WELL_6",
+                "WELL_12",
+                "WELL_24",
+                "WELL_48",
+                "WELL_96",
+                "WELL_384",
+                "WELL_1536"
+            ],
+            "title": "MicroplateFormatEnum",
             "type": "string"
         },
         "MicroscopyMethodEnum": {
@@ -4447,6 +5185,12 @@
                 "APPLICATION_SQL",
                 "APPLICATION_GRAPHQL",
                 "APPLICATION_LD_JSON",
+                "APPLICATION_N_QUADS",
+                "APPLICATION_N_TRIPLES",
+                "APPLICATION_RDF_XML",
+                "APPLICATION_SPARQL_RESULTS_JSON",
+                "APPLICATION_SPARQL_RESULTS_XML",
+                "APPLICATION_TRIG",
                 "APPLICATION_WASM",
                 "TEXT_PLAIN",
                 "TEXT_HTML",
@@ -4714,6 +5458,25 @@
             "title": "NAICSSectorEnum",
             "type": "string"
         },
+        "NIHInstituteCenterEnum": {
+            "description": "National Institutes of Health (NIH) Institutes and Centers.\n\nNIH comprises 27 Institutes and Centers, each with a specific research agenda focused on particular\ndiseases or body systems. These are the major NIH ICs that fund extramural research.",
+            "enum": [
+                "NCI",
+                "NHLBI",
+                "NIAID",
+                "NIMH",
+                "NINDS",
+                "NIDDK",
+                "NHGRI",
+                "NIGMS",
+                "NIEHS",
+                "NEI",
+                "NIA",
+                "NLM"
+            ],
+            "title": "NIHInstituteCenterEnum",
+            "type": "string"
+        },
         "NRCWasteClassEnum": {
             "description": "US NRC 10 CFR 61 low-level radioactive waste classification",
             "enum": [
@@ -4867,6 +5630,18 @@
                 "EIGHT_OXO_G"
             ],
             "title": "NucleotideModificationEnum",
+            "type": "string"
+        },
+        "OWLProfileEnum": {
+            "description": "OWL 2 profiles that provide different tradeoffs between expressiveness and computational complexity",
+            "enum": [
+                "OWL_2_EL",
+                "OWL_2_QL",
+                "OWL_2_RL",
+                "OWL_2_DL",
+                "OWL_2_FULL"
+            ],
+            "title": "OWLProfileEnum",
             "type": "string"
         },
         "OmbEthnicityCategory": {
@@ -5060,6 +5835,76 @@
                 "FACULTATIVE"
             ],
             "title": "OxygenationStrategyEnum",
+            "type": "string"
+        },
+        "PCROperationTypeEnum": {
+            "description": "Types of PCR operations and techniques",
+            "enum": [
+                "STANDARD_PCR",
+                "QUANTITATIVE_PCR",
+                "REVERSE_TRANSCRIPTION_PCR",
+                "RT_QPCR",
+                "MULTIPLEX_PCR",
+                "NESTED_PCR",
+                "TOUCHDOWN_PCR",
+                "HOT_START_PCR",
+                "LONG_RANGE_PCR",
+                "COLONY_PCR",
+                "HIGH_FIDELITY_PCR",
+                "DIGITAL_PCR"
+            ],
+            "title": "PCROperationTypeEnum",
+            "type": "string"
+        },
+        "PCRPlateTypeEnum": {
+            "description": "Types of plates used for PCR applications",
+            "enum": [
+                "PCR_96_WELL",
+                "PCR_384_WELL",
+                "PCR_TUBE_STRIP",
+                "INDIVIDUAL_PCR_TUBE",
+                "LOW_PROFILE_PLATE",
+                "SKIRTED_PLATE",
+                "SEMI_SKIRTED_PLATE"
+            ],
+            "title": "PCRPlateTypeEnum",
+            "type": "string"
+        },
+        "PVCellType": {
+            "description": "Types of photovoltaic cell technologies",
+            "enum": [
+                "MONOCRYSTALLINE_SILICON",
+                "POLYCRYSTALLINE_SILICON",
+                "PASSIVATED_EMITTER_REAR_CELL",
+                "HETEROJUNCTION",
+                "TUNNEL_OXIDE_PASSIVATED_CONTACT",
+                "INTERDIGITATED_BACK_CONTACT",
+                "CADMIUM_TELLURIDE",
+                "COPPER_INDIUM_GALLIUM_SELENIDE",
+                "AMORPHOUS_SILICON",
+                "GALLIUM_ARSENIDE",
+                "PEROVSKITE",
+                "ORGANIC",
+                "TANDEM"
+            ],
+            "title": "PVCellType",
+            "type": "string"
+        },
+        "PVSystemType": {
+            "description": "Types of photovoltaic system installations",
+            "enum": [
+                "ROOFTOP_RESIDENTIAL",
+                "ROOFTOP_COMMERCIAL",
+                "GROUND_MOUNTED",
+                "FLOATING",
+                "BUILDING_INTEGRATED",
+                "AGRIVOLTAICS",
+                "CARPORT",
+                "TRACKER_SINGLE_AXIS",
+                "TRACKER_DUAL_AXIS",
+                "CONCENTRATING"
+            ],
+            "title": "PVSystemType",
             "type": "string"
         },
         "ParticipantIdentificationMethod": {
@@ -5309,6 +6154,27 @@
             "title": "PlantSexEnum",
             "type": "string"
         },
+        "PlateCoatingEnum": {
+            "description": "Surface treatment of microplates",
+            "enum": [
+                "COATED",
+                "UNCOATED",
+                "TISSUE_CULTURE_TREATED",
+                "PROTEIN_BINDING"
+            ],
+            "title": "PlateCoatingEnum",
+            "type": "string"
+        },
+        "PlateMaterialEnum": {
+            "description": "Material composition of laboratory microplates",
+            "enum": [
+                "POLYSTYRENE",
+                "POLYPROPYLENE",
+                "GLASS"
+            ],
+            "title": "PlateMaterialEnum",
+            "type": "string"
+        },
         "PolymerTypeEnum": {
             "description": "Types of polymer materials",
             "enum": [
@@ -5362,7 +6228,7 @@
             "type": "string"
         },
         "PresenceEnum": {
-            "description": "",
+            "description": "Classification of whether an entity is present, absent, or at detection limits",
             "enum": [
                 "PRESENT",
                 "ABSENT",
@@ -5544,6 +6410,39 @@
                 "PROTEIN_UNCERTAIN"
             ],
             "title": "ProteinEvidenceForExistence",
+            "type": "string"
+        },
+        "ProteinModificationType": {
+            "description": "Types of protein modifications",
+            "enum": [
+                "METAL_COORDINATION",
+                "PHOSPHORYLATION",
+                "GLYCOSYLATION",
+                "ACETYLATION",
+                "METHYLATION",
+                "UBIQUITINATION",
+                "SUMOYLATION",
+                "HYDROXYLATION",
+                "LIPIDATION",
+                "PROTEOLYTIC_CLEAVAGE",
+                "CROSSLINKING"
+            ],
+            "title": "ProteinModificationType",
+            "type": "string"
+        },
+        "ProtocolStateEnum": {
+            "description": "Execution states of laboratory protocols",
+            "enum": [
+                "PENDING",
+                "RUNNING",
+                "PAUSED",
+                "COMPLETED",
+                "FAILED",
+                "ABORTED",
+                "VALIDATING",
+                "WAITING_FOR_RESOURCE"
+            ],
+            "title": "ProtocolStateEnum",
             "type": "string"
         },
         "PublicationType": {
@@ -6084,7 +6983,7 @@
             "type": "string"
         },
         "RelativeTimeEnum": {
-            "description": "",
+            "description": "Temporal relationships between events or time points",
             "enum": [
                 "BEFORE",
                 "AFTER",
@@ -6177,6 +7076,17 @@
             "title": "ResearchRole",
             "type": "string"
         },
+        "RoboticArmTypeEnum": {
+            "description": "Types of robotic arms used in laboratory automation systems",
+            "enum": [
+                "FLEXIBLE_CHANNEL_ARM",
+                "MULTI_CHANNEL_ARM",
+                "ROBOTIC_GRIPPER_ARM",
+                "SINGLE_PROBE_ARM"
+            ],
+            "title": "RoboticArmTypeEnum",
+            "type": "string"
+        },
         "SafetyColorEnum": {
             "description": "ANSI/ISO standard safety colors",
             "enum": [
@@ -6210,6 +7120,26 @@
             "title": "SampleProcessingEnum",
             "type": "string"
         },
+        "SampleProcessingOperationEnum": {
+            "description": "General sample processing operations in automated laboratories",
+            "enum": [
+                "CENTRIFUGATION",
+                "INCUBATION",
+                "THERMAL_CYCLING",
+                "WASHING",
+                "DETECTION",
+                "MEASUREMENT",
+                "SEPARATION",
+                "EXTRACTION",
+                "HEATING",
+                "COOLING",
+                "SHAKING",
+                "PLATE_MOVEMENT",
+                "BARCODE_READING"
+            ],
+            "title": "SampleProcessingOperationEnum",
+            "type": "string"
+        },
         "SampleType": {
             "description": "Types of biological samples used in structural biology",
             "enum": [
@@ -6223,6 +7153,19 @@
                 "TISSUE"
             ],
             "title": "SampleType",
+            "type": "string"
+        },
+        "SchedulerTypeEnum": {
+            "description": "Types of scheduling algorithms for laboratory automation",
+            "enum": [
+                "STATIC_SCHEDULER",
+                "DYNAMIC_SCHEDULER",
+                "PRIORITY_BASED",
+                "FIFO",
+                "RESOURCE_AWARE",
+                "DEADLINE_DRIVEN"
+            ],
+            "title": "SchedulerTypeEnum",
             "type": "string"
         },
         "Season": {
@@ -6494,6 +7437,17 @@
             "title": "SkinToneEnum",
             "type": "string"
         },
+        "SmokingStatusEnum": {
+            "description": "Tobacco and nicotine consumption status",
+            "enum": [
+                "CURRENT_SMOKER",
+                "FORMER_SMOKER",
+                "NEVER_SMOKER",
+                "NON_SMOKER"
+            ],
+            "title": "SmokingStatusEnum",
+            "type": "string"
+        },
         "SoftwareMaturityLevel": {
             "description": "General software maturity assessment levels",
             "enum": [
@@ -6629,6 +7583,17 @@
             "title": "StandardsMaturityLevel",
             "type": "string"
         },
+        "StandardsOrganizationEnum": {
+            "description": "Major International Standards Development Organizations.\n\nThese organizations develop technical standards, specifications, and guidelines used globally\nacross various industries including information technology, healthcare, and engineering.",
+            "enum": [
+                "ISO",
+                "W3C",
+                "IEEE",
+                "HL7"
+            ],
+            "title": "StandardsOrganizationEnum",
+            "type": "string"
+        },
         "StateOfMatterEnum": {
             "description": "The physical state or phase of matter",
             "enum": [
@@ -6728,6 +7693,22 @@
                 "NOT_APPLICABLE"
             ],
             "title": "StudyPhaseEnum",
+            "type": "string"
+        },
+        "StudyPopulationEnum": {
+            "description": "Specific population groups commonly studied in exposure research",
+            "enum": [
+                "CHILDREN",
+                "FETUSES",
+                "INFANTS_OR_NEWBORNS",
+                "PREGNANT_FEMALES",
+                "MOTHERS",
+                "MILITARY_PERSONNEL",
+                "VETERANS",
+                "WORKERS",
+                "CONTROLS"
+            ],
+            "title": "StudyPopulationEnum",
             "type": "string"
         },
         "SubatomicParticleEnum": {
@@ -6923,6 +7904,35 @@
                 "THERMAL_INSULATOR"
             ],
             "title": "ThermalConductivityEnum",
+            "type": "string"
+        },
+        "ThermalCyclerTypeEnum": {
+            "description": "Types of thermal cycling instruments",
+            "enum": [
+                "STANDARD_THERMAL_CYCLER",
+                "REAL_TIME_PCR",
+                "DIGITAL_PCR",
+                "GRADIENT_THERMAL_CYCLER",
+                "FAST_THERMAL_CYCLER",
+                "AUTOMATED_THERMAL_CYCLER",
+                "IN_SITU_THERMAL_CYCLER"
+            ],
+            "title": "ThermalCyclerTypeEnum",
+            "type": "string"
+        },
+        "ThermalCyclingStepEnum": {
+            "description": "Steps in thermal cycling protocols",
+            "enum": [
+                "INITIAL_DENATURATION",
+                "DENATURATION",
+                "ANNEALING",
+                "EXTENSION",
+                "FINAL_EXTENSION",
+                "HOLD",
+                "MELT_CURVE",
+                "GRADIENT"
+            ],
+            "title": "ThermalCyclingStepEnum",
             "type": "string"
         },
         "ThermodynamicParameterEnum": {
@@ -7171,6 +8181,59 @@
             "title": "UNRegionEnum",
             "type": "string"
         },
+        "UNSpecializedAgencyEnum": {
+            "description": "United Nations Specialized Agencies.\n\nUN specialized agencies are autonomous international organizations that coordinate their work\nwith the UN through negotiated agreements. They address international issues in their respective fields.",
+            "enum": [
+                "WHO",
+                "UNESCO",
+                "IAEA",
+                "WMO",
+                "UNEP"
+            ],
+            "title": "UNSpecializedAgencyEnum",
+            "type": "string"
+        },
+        "USDOENationalLaboratoryEnum": {
+            "description": "United States Department of Energy National Laboratories.\n\nThe DOE operates 17 National Laboratories that serve as powerhouses of science and technology,\ntackling critical scientific challenges and conducting cutting-edge research across multiple disciplines.\n\nThese laboratories are managed by contractors and stewarded by various DOE program offices,\nwith the Office of Science stewarding 10 of the 17 laboratories.",
+            "enum": [
+                "AMES_LABORATORY",
+                "ARGONNE_NATIONAL_LABORATORY",
+                "BROOKHAVEN_NATIONAL_LABORATORY",
+                "FERMI_NATIONAL_ACCELERATOR_LABORATORY",
+                "IDAHO_NATIONAL_LABORATORY",
+                "LAWRENCE_BERKELEY_NATIONAL_LABORATORY",
+                "LAWRENCE_LIVERMORE_NATIONAL_LABORATORY",
+                "LOS_ALAMOS_NATIONAL_LABORATORY",
+                "NATIONAL_ENERGY_TECHNOLOGY_LABORATORY",
+                "NATIONAL_RENEWABLE_ENERGY_LABORATORY",
+                "OAK_RIDGE_NATIONAL_LABORATORY",
+                "PACIFIC_NORTHWEST_NATIONAL_LABORATORY",
+                "PRINCETON_PLASMA_PHYSICS_LABORATORY",
+                "SANDIA_NATIONAL_LABORATORIES",
+                "SAVANNAH_RIVER_NATIONAL_LABORATORY",
+                "SLAC_NATIONAL_ACCELERATOR_LABORATORY",
+                "THOMAS_JEFFERSON_NATIONAL_ACCELERATOR_FACILITY"
+            ],
+            "title": "USDOENationalLaboratoryEnum",
+            "type": "string"
+        },
+        "USFederalFundingAgencyEnum": {
+            "description": "Major United States Federal Research Funding Agencies.\n\nThese agencies provide funding for basic and applied research across various scientific disciplines,\nsupporting universities, national laboratories, and other research institutions.",
+            "enum": [
+                "NIH",
+                "NSF",
+                "DOE",
+                "NASA",
+                "EPA",
+                "NOAA",
+                "NIST",
+                "USDA_ARS",
+                "DOD",
+                "USGS"
+            ],
+            "title": "USFederalFundingAgencyEnum",
+            "type": "string"
+        },
         "USStateCodeEnum": {
             "description": "United States state and territory codes",
             "enum": [
@@ -7354,48 +8417,183 @@
                 "SP_9INFA",
                 "SP_9INSE",
                 "SP_9LABR",
+                "SP_ACIB2",
+                "SP_ANOCA",
+                "SP_ANOGA",
+                "SP_AQUAE",
                 "SP_ARATH",
+                "SP_ASPFU",
+                "SP_BACAN",
+                "SP_BACCR",
                 "SP_BACSU",
+                "SP_BACTN",
+                "SP_BATDJ",
                 "SP_BOVIN",
+                "SP_BRACM",
+                "SP_BRADI",
+                "SP_BRADU",
+                "SP_BRAFL",
+                "SP_CAEBR",
                 "SP_CAEEL",
+                "SP_CAMJE",
+                "SP_CANAL",
+                "SP_CANCO",
+                "SP_CANDC",
+                "SP_CANGB",
                 "SP_CANLF",
+                "SP_CANPA",
+                "SP_CANTI",
                 "SP_CHICK",
+                "SP_CHLAA",
+                "SP_CHLRE",
+                "SP_CHLTR",
+                "SP_CIOIN",
+                "SP_CITK8",
+                "SP_CLALU",
+                "SP_CLOBH",
+                "SP_COXBU",
+                "SP_CRYD1",
                 "SP_DANRE",
+                "SP_DAPPU",
+                "SP_DEBHA",
+                "SP_DEIRA",
+                "SP_DICDI",
+                "SP_DICPU",
+                "SP_DICTD",
                 "SP_DROME",
+                "SP_E. coli ECO57",
                 "SP_ECOLI",
+                "SP_EMENI",
+                "SP_ENTCA",
+                "SP_ENTFA",
+                "SP_ENTGA",
+                "SP_ENTH1",
+                "SP_EREGS",
                 "SP_FELCA",
+                "SP_FMDVO",
+                "SP_FUSNN",
+                "SP_GEOSL",
+                "SP_GIAIC",
+                "SP_GLOVI",
                 "SP_GORGO",
+                "SP_GOSHI",
+                "SP_HAEIN",
+                "SP_HALH5",
+                "SP_HALSA",
+                "SP_HBVCJ",
+                "SP_HCMVA",
+                "SP_HCMVM",
+                "SP_HCV77",
+                "SP_HELAN",
+                "SP_HELPY",
+                "SP_HELRO",
+                "SP_HHV11",
                 "SP_HORSE",
+                "SP_HORVV",
+                "SP_HPV16",
                 "SP_HUMAN",
+                "SP_HV1AN",
+                "SP_IXOSC",
+                "SP_JUGRE",
+                "SP_KLENI",
+                "SP_KLEPH",
+                "SP_KLEPO",
+                "SP_KORCO",
+                "SP_LACSA",
+                "SP_LEIMA",
+                "SP_LEPIN",
+                "SP_LEPOC",
+                "SP_LISMO",
+                "SP_LODEL",
                 "SP_MACMU",
                 "SP_MAIZE",
+                "SP_MANES",
+                "SP_MARPO",
+                "SP_MEASC",
+                "SP_MEDTR",
+                "SP_METAC",
+                "SP_METJA",
+                "SP_MONBE",
+                "SP_MONDO",
                 "SP_MOUSE",
+                "SP_MYCGE",
+                "SP_MYCMD",
+                "SP_MYCPN",
+                "SP_MYCTA",
+                "SP_MYCTU",
+                "SP_NEIMB",
+                "SP_NEIME",
+                "SP_NELNU",
+                "SP_NEMVE",
+                "SP_NEUCR",
+                "SP_NITMS",
+                "SP_ORNAN",
+                "SP_ORYLA",
                 "SP_ORYSJ",
                 "SP_PANTR",
+                "SP_PARTE",
+                "SP_PEA",
+                "SP_PHANO",
+                "SP_PHYPA",
+                "SP_PHYRM",
+                "SP_PICGU",
                 "SP_PIG",
+                "SP_PLAF7",
+                "SP_POPTR",
+                "SP_PRIPA",
+                "SP_PRUPE",
+                "SP_PSEAE",
+                "SP_PUCGT",
+                "SP_PYRAE",
                 "SP_RABIT",
                 "SP_RAT",
+                "SP_RHOBA",
+                "SP_SACS2",
+                "SP_SALTY",
+                "SP_SCHJY",
                 "SP_SCHPO",
+                "SP_SCLS1",
                 "SP_SHEEP",
+                "SP_SHEON",
+                "SP_SHIFL",
+                "SP_SOLLC",
+                "SP_SORBI",
+                "SP_SOYBN",
+                "SP_SPIOL",
+                "SP_STAA8",
+                "SP_STAAU",
+                "SP_STRCL",
+                "SP_STRCO",
+                "SP_STRP1",
+                "SP_STRP2",
+                "SP_STRPN",
+                "SP_STRPU",
+                "SP_STRR6",
+                "SP_SYNY3",
+                "SP_THAPS",
+                "SP_THECC",
+                "SP_THEKO",
+                "SP_THEMA",
+                "SP_THEYD",
+                "SP_TOBAC",
+                "SP_TOXGO",
+                "SP_TRIAD",
+                "SP_TRICA",
+                "SP_TRIV3",
+                "SP_TRYB2",
+                "SP_VACCW",
+                "SP_VAR67",
+                "SP_VIBCH",
+                "SP_VITVI",
+                "SP_VZVD",
+                "SP_WHEAT",
+                "SP_XANCP",
                 "SP_XENLA",
                 "SP_XENTR",
+                "SP_YARLI",
                 "SP_YEAST",
-                "SP_DICDI",
-                "SP_HELPY",
-                "SP_LEIMA",
-                "SP_MEDTR",
-                "SP_MYCTU",
-                "SP_NEIME",
-                "SP_PLAF7",
-                "SP_PSEAE",
-                "SP_SOYBN",
-                "SP_STAAU",
-                "SP_STRPN",
-                "SP_TOXGO",
-                "SP_TRYB2",
-                "SP_WHEAT",
-                "SP_PEA",
-                "SP_TOBAC"
+                "SP_YERPE",
+                "SP_ZIKV"
             ],
             "title": "UniProtSpeciesCode",
             "type": "string"
@@ -7825,6 +9023,31 @@
                 "TELECOMMUTE"
             ],
             "title": "WorkArrangementEnum",
+            "type": "string"
+        },
+        "WorkflowErrorHandlingEnum": {
+            "description": "Error handling strategies in laboratory automation workflows",
+            "enum": [
+                "ABORT_ON_ERROR",
+                "RETRY",
+                "SKIP_AND_CONTINUE",
+                "NOTIFY_AND_PAUSE",
+                "ROLLBACK",
+                "FAILOVER"
+            ],
+            "title": "WorkflowErrorHandlingEnum",
+            "type": "string"
+        },
+        "WorkflowOrchestrationTypeEnum": {
+            "description": "Types of workflow orchestration in laboratory automation systems",
+            "enum": [
+                "STATIC_ORCHESTRATION",
+                "DYNAMIC_ORCHESTRATION",
+                "HYBRID_ORCHESTRATION",
+                "EVENT_DRIVEN",
+                "PARALLEL_PROCESSING"
+            ],
+            "title": "WorkflowOrchestrationTypeEnum",
             "type": "string"
         },
         "WorkflowType": {

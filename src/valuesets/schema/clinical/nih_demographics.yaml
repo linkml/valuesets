@@ -7,6 +7,7 @@ id: https://w3id.org/linkml/valuesets/clinical/nih_demographics
 imports:
 - linkml:types
 prefixes:
+  linkml: https://w3id.org/linkml/
   valuesets: https://w3id.org/valuesets/
   NCIT: http://purl.obolibrary.org/obo/NCIT_
   OMRSE: http://purl.obolibrary.org/obo/OMRSE_
@@ -14,6 +15,9 @@ prefixes:
   PATO: http://purl.obolibrary.org/obo/PATO_
   SIO: http://semanticscience.org/resource/SIO_
   HP: http://purl.obolibrary.org/obo/HP_
+  ExO: http://purl.obolibrary.org/obo/ExO_
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   race_omb1997:
@@ -39,38 +43,66 @@ slots:
     range: StudyPhaseEnum
 enums:
   RaceOMB1997Enum:
+    title: Race OMB1997
     description: 'Race categories following OMB 1997 standards used by NIH and federal agencies.
 
       Respondents may select multiple races.'
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       AMERICAN_INDIAN_OR_ALASKA_NATIVE:
-        description: A person having origins in any of the original peoples of North and South America (including Central
-          America), and who maintains tribal affiliation or community attachment
+        description: A person having origins in any of the original peoples of North and South America (including 
+          Central America), and who maintains tribal affiliation or community attachment
         meaning: NCIT:C41259
         annotations:
           omb_code: 1002-5
+        related_mappings:
+        - ExO:0000134
+        - ExO:0000133
       ASIAN:
-        description: A person having origins in any of the original peoples of the Far East, Southeast Asia, or the Indian
-          subcontinent
+        description: A person having origins in any of the original peoples of the Far East, Southeast Asia, or the 
+          Indian subcontinent
         meaning: NCIT:C41260
         annotations:
           omb_code: 2028-9
           includes: Cambodia, China, India, Japan, Korea, Malaysia, Pakistan, Philippine Islands, Thailand, Vietnam
+        related_mappings:
+        - ExO:0000135
+        - ExO:0000136
+        - ExO:0000139
+        - ExO:0000143
+        - ExO:0000147
+        - ExO:0000148
+        - ExO:0000157
       BLACK_OR_AFRICAN_AMERICAN:
         description: A person having origins in any of the black racial groups of Africa
         meaning: NCIT:C16352
         annotations:
           omb_code: 2054-5
+        related_mappings:
+        - ExO:0000132
       NATIVE_HAWAIIAN_OR_OTHER_PACIFIC_ISLANDER:
-        description: A person having origins in any of the original peoples of Hawaii, Guam, Samoa, or other Pacific Islands
+        description: A person having origins in any of the original peoples of Hawaii, Guam, Samoa, or other Pacific 
+          Islands
         meaning: NCIT:C41219
         annotations:
           omb_code: 2076-8
+        related_mappings:
+        - ExO:0000152
+        - ExO:0000154
+        - ExO:0000144
+        - ExO:0000156
       WHITE:
         description: A person having origins in any of the original peoples of Europe, the Middle East, or North Africa
         meaning: NCIT:C41261
         annotations:
           omb_code: 2106-3
+        related_mappings:
+        - ExO:0000158
       MORE_THAN_ONE_RACE:
         description: Person identifies with more than one race category
         meaning: NCIT:C67109
@@ -84,14 +116,32 @@ enums:
         annotations:
           aliases: Unknown, Not Reported, Prefer not to answer
   EthnicityOMB1997Enum:
+    title: Ethnicity OMB1997
     description: Ethnicity categories following OMB 1997 standards used by NIH and federal agencies
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       HISPANIC_OR_LATINO:
-        description: A person of Cuban, Mexican, Puerto Rican, South or Central American, or other Spanish culture or origin,
-          regardless of race
+        description: A person of Cuban, Mexican, Puerto Rican, South or Central American, or other Spanish culture or 
+          origin, regardless of race
         meaning: NCIT:C17459
         annotations:
           omb_code: 2135-2
+        related_mappings:
+        - ExO:0000145
+        - ExO:0000149
+        - ExO:0000137
+        - ExO:0000138
+        - ExO:0000140
+        - ExO:0000141
+        - ExO:0000142
+        - ExO:0000150
+        - ExO:0000151
+        - ExO:0000155
       NOT_HISPANIC_OR_LATINO:
         description: A person not of Hispanic or Latino origin
         meaning: NCIT:C41222
@@ -104,9 +154,16 @@ enums:
         annotations:
           aliases: Unknown, Not Reported, Prefer not to answer
   BiologicalSexEnum:
+    title: Biological Sex
     description: 'Biological sex assigned at birth based on anatomical and physiological traits.
 
       Required by NIH as a biological variable in research.'
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       MALE:
         description: Male sex assigned at birth
@@ -114,12 +171,16 @@ enums:
         exact_mappings:
         - NCIT:C20197
         - GSSO:000371
+        related_mappings:
+        - ExO:0000112
       FEMALE:
         description: Female sex assigned at birth
         meaning: PATO:0000383
         exact_mappings:
         - NCIT:C16576
         - GSSO:000369
+        related_mappings:
+        - ExO:0000111
       INTERSEX:
         description: Born with reproductive or sexual anatomy that doesn't fit typical definitions of male or female
         meaning: NCIT:C45908
@@ -131,7 +192,14 @@ enums:
         meaning: NCIT:C17998
         title: Unknown
   AgeGroupEnum:
+    title: Age Group
     description: Standard age groups used in NIH clinical research, particularly NINDS CDEs
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       NEONATE:
         description: Birth to 28 days
@@ -187,7 +255,14 @@ enums:
           min_age_years: 65
           aliases: Geriatric, Elderly, Senior
   ParticipantVitalStatusEnum:
+    title: Participant Vital Status
     description: Vital status of a research participant in clinical studies
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       ALIVE:
         description: Participant is living
@@ -204,7 +279,14 @@ enums:
         description: Vital status unknown or lost to follow-up
         meaning: NCIT:C17998
   RecruitmentStatusEnum:
+    title: Recruitment Status
     description: Clinical trial or study recruitment status per NIH/ClinicalTrials.gov
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       NOT_YET_RECRUITING:
         description: Study has not started recruiting participants
@@ -238,7 +320,14 @@ enums:
         meaning: NCIT:C70758
         title: Study Withdrawn
   StudyPhaseEnum:
+    title: Study Phase
     description: Clinical trial phases per FDA and NIH definitions
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       EARLY_PHASE_1:
         description: Exploratory trials before traditional Phase 1

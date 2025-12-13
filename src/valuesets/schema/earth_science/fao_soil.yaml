@@ -1,0 +1,255 @@
+name: valuesets-earth-science-fao-soil
+title: FAO Soil Classification (WRB)
+description: FAO World Reference Base (WRB) soil classification system from the Harmonized World Soil Database
+id: https://w3id.org/valuesets/earth_science/fao_soil
+prefixes:
+  linkml: https://w3id.org/linkml/
+  ENVO: http://purl.obolibrary.org/obo/ENVO_
+  valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+default_prefix: valuesets
+
+slots:
+  fao_soil_type:
+    description: FAO World Reference Base soil classification
+    range: FAOSoilType
+
+enums:
+  FAOSoilType:
+    title: FAO Soil Type
+    description: >-
+      FAO World Reference Base (WRB) soil classification system.
+      Based on the Harmonized World Soil Database (HWSD) version 2.
+      These represent the major soil groups according to the World Reference Base for Soil Resources.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    see_also:
+    - https://www.fao.org/soils-portal/data-hub/soil-classification/world-reference-base/en/
+    - https://www.isric.org/explore/hwsd
+    permissible_values:
+      ACRISOLS:
+        description: Acrisols - soils with subsurface accumulation of low-activity clays and low base saturation
+        annotations:
+          symbol: AC
+          fao_id: 1
+          color_rgb: "247,152,4"
+      ALISOLS:
+        description: Alisols - soils with high aluminium saturation and low base saturation
+        annotations:
+          symbol: AL
+          fao_id: 2
+          color_rgb: "255,255,190"
+      ANDOSOLS:
+        description: Andosols - soils developed from volcanic ash with unique physical and chemical properties
+        meaning: ENVO:00002030
+        annotations:
+          symbol: AN
+          fao_id: 3
+          color_rgb: "254,0,0"
+      ARENOSOLS:
+        description: Arenosols - sandy soils with weak horizon development
+        meaning: ENVO:00002229
+        annotations:
+          symbol: AR
+          fao_id: 4
+          color_rgb: "245,212,161"
+      ANTHROSOLS:
+        description: Anthrosols - soils strongly modified by human activities
+        annotations:
+          symbol: AT
+          fao_id: 5
+          color_rgb: "207,152,4"
+      CHERNOZEMS:
+        description: Chernozems - very dark, fertile soils with thick mollic horizon
+        annotations:
+          symbol: CH
+          fao_id: 6
+          color_rgb: "145,77,53"
+      CALCISOLS:
+        description: Calcisols - soils with secondary calcium carbonate accumulation
+        annotations:
+          symbol: CL
+          fao_id: 7
+          color_rgb: "254,244,0"
+      CAMBISOLS:
+        description: Cambisols - soils with beginning of horizon differentiation
+        annotations:
+          symbol: CM
+          fao_id: 8
+          color_rgb: "254,190,0"
+      CRYOSOLS:
+        description: Cryosols - soils formed under permafrost conditions
+        meaning: ENVO:00000134
+        annotations:
+          symbol: CR
+          fao_id: 9
+          color_rgb: "75,61,172"
+      FLUVISOLS:
+        description: Fluvisols - soils developed from recent alluvial deposits
+        meaning: ENVO:00002269
+        annotations:
+          symbol: FL
+          fao_id: 10
+          color_rgb: "0,254,253"
+      FERRALSOLS:
+        description: Ferralsols - highly weathered soils with low-activity clay minerals
+        annotations:
+          symbol: FR
+          fao_id: 11
+          color_rgb: "255,135,33"
+      GLACIERS:
+        description: Glaciers - areas covered by permanent ice
+        meaning: ENVO:00000133
+        annotations:
+          symbol: GG
+          fao_id: 12
+          color_rgb: "212,212,212"
+      GLEYSOLS:
+        description: Gleysols - soils with permanent or temporary waterlogging
+        meaning: ENVO:00002234
+        annotations:
+          symbol: GL
+          fao_id: 13
+          color_rgb: "128,131,217"
+      GYPSISOLS:
+        description: Gypsisols - soils with secondary gypsum accumulation
+        annotations:
+          symbol: GY
+          fao_id: 14
+          color_rgb: "254,246,164"
+      HISTOSOLS:
+        description: Histosols - soils formed from organic materials (peat soils)
+        meaning: ENVO:00005774
+        annotations:
+          symbol: HS
+          fao_id: 15
+          color_rgb: "112,107,102"
+      KASTANOZEMS:
+        description: Kastanozems - soils with chestnut-colored mollic horizon
+        annotations:
+          symbol: KS
+          fao_id: 17
+          color_rgb: "202,147,127"
+      LEPTOSOLS:
+        description: Leptosols - shallow soils over hard rock or highly calcareous material
+        annotations:
+          symbol: LP
+          fao_id: 18
+          color_rgb: "209,209,209"
+      LUVISOLS:
+        description: Luvisols - soils with clay illuviation and high base saturation
+        annotations:
+          symbol: LV
+          fao_id: 19
+          color_rgb: "250,132,132"
+      LIXISOLS:
+        description: Lixisols - soils with clay illuviation and low base saturation
+        annotations:
+          symbol: LX
+          fao_id: 20
+          color_rgb: "255,190,190"
+      NITISOLS:
+        description: Nitisols - soils with deep, well-structured clay horizons
+        annotations:
+          symbol: NT
+          fao_id: 21
+          color_rgb: "255,167,127"
+      PHAEOZEMS:
+        description: Phaeozems - soils with dark mollic horizon and high base saturation
+        annotations:
+          symbol: PH
+          fao_id: 22
+          color_rgb: "189,100,70"
+      PLANOSOLS:
+        description: Planosols - soils with abrupt textural change and impermeable subsoil
+        annotations:
+          symbol: PL
+          fao_id: 23
+          color_rgb: "247,125,58"
+      PLINTHOSOLS:
+        description: Plinthosols - soils with iron-rich, humus-poor mixture that hardens irreversibly
+        annotations:
+          symbol: PT
+          fao_id: 24
+          color_rgb: "115,0,0"
+      PODZOLS:
+        description: Podzols - soils with subsurface accumulation of aluminium and iron complexes with organic matter 
+          (spodic horizon)
+        annotations:
+          symbol: PZ
+          fao_id: 25
+          color_rgb: "12,217,0"
+      REGOSOLS:
+        description: Regosols - weakly developed soils without significant horizon differentiation
+        annotations:
+          symbol: RG
+          fao_id: 26
+          color_rgb: "254,227,164"
+      RETISOLS:
+        description: Retisols - soils with clay migration and tonguing of overlying material
+        annotations:
+          symbol: RT
+          fao_id: 27
+          color_rgb: "254,194,194"
+      SOLONCHAKS:
+        description: Solonchaks - soils with high salt content
+        meaning: ENVO:00005767
+        annotations:
+          symbol: SC
+          fao_id: 28
+          color_rgb: "254,0,250"
+      SOLONETZ:
+        description: Solonetz - soils with high exchangeable sodium content
+        annotations:
+          symbol: SN
+          fao_id: 29
+          color_rgb: "249,194,254"
+      STAGNOSOLS:
+        description: Stagnosols - soils with seasonal waterlogging in upper horizons
+        annotations:
+          symbol: ST
+          fao_id: 30
+          color_rgb: "64,192,233"
+      TECHNOSOLS:
+        description: Technosols - soils containing significant amounts of technical artifacts
+        annotations:
+          symbol: TC
+          fao_id: 31
+          color_rgb: "145,0,157"
+      UMBRISOLS:
+        description: Umbrisols - soils with dark acidic surface horizon
+        annotations:
+          symbol: UM
+          fao_id: 32
+          color_rgb: "115,142,127"
+      VERTISOLS:
+        description: Vertisols - clay-rich soils with shrink-swell properties
+        meaning: ENVO:00002273
+        annotations:
+          symbol: VR
+          fao_id: 33
+          color_rgb: "197,0,255"
+      OPEN_INLAND_WATER:
+        description: Open inland water - areas covered by permanent water bodies
+        meaning: ENVO:00000873
+        annotations:
+          symbol: WR
+          fao_id: 34
+          color_rgb: "0,0,255"
+      NO_DATA:
+        description: No data - areas where soil data is not available
+        annotations:
+          symbol: ND
+          fao_id: 35
+          color_rgb: "255,255,255"
+
+license: MIT
+see_also:
+- https://linkml.github.io/valuesets
+- https://www.fao.org/soils-portal/data-hub/soil-classification/world-reference-base/en/
+- https://www.isric.org/explore/hwsd

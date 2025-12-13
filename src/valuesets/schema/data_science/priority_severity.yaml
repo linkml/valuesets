@@ -5,6 +5,8 @@ prefixes:
   NCIT: http://purl.obolibrary.org/obo/NCIT_
   STATO: http://purl.obolibrary.org/obo/STATO_
   valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   priority_level:
@@ -18,7 +20,14 @@ slots:
     range: ConfidenceLevelEnum
 enums:
   PriorityLevelEnum:
+    title: Priority Level
     description: Standard priority levels for task/issue classification
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       CRITICAL:
         description: Highest priority, requires immediate attention
@@ -57,7 +66,14 @@ enums:
         - cosmetic
         - '5'
   SeverityLevelEnum:
+    title: Severity Level
     description: Severity levels for incident/bug classification
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       CRITICAL:
         description: System is unusable, data loss possible
@@ -88,7 +104,14 @@ enums:
         - cosmetic
         - low
   ConfidenceLevelEnum:
+    title: Confidence Level
     description: Confidence levels for predictions and classifications
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       VERY_HIGH:
         description: Very high confidence (>95%)

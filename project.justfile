@@ -33,10 +33,7 @@ gen-project:
   uv run python -m src.valuesets.generators.rich_pydantic_generator {{source_schema_path}} -o {{pymodel}}/{{schema_name}}_pydantic.py
   # Generate other artifacts
   uv run gen-java {{gen_java_args}} --output-directory {{dest}}/java/ {{source_schema_path}}
-  @if [ ! ${{gen_owl_args}} ]; then \
-    mkdir -p {{dest}}/owl && \
-    uv run gen-owl {{gen_owl_args}} {{source_schema_path}} > {{dest}}/owl/{{schema_name}}.owl.ttl || true ; \
-  fi
+  just gen-owl
   @if [ ! ${{gen_ts_args}} ]; then \
     uv run gen-typescript {{gen_ts_args}} {{source_schema_path}} > {{dest}}/typescript/{{schema_name}}.ts || true ; \
   fi
@@ -73,10 +70,11 @@ gen-owl:
   # Create output directory
   mkdir -p project/owl
   # Generate OWL
-  uv run gen-owl src/valuesets/merged/merged_hierarchy.yaml > project/owl/valuesets_merged.owl.ttl
-  @echo "✅ Generated OWL at project/owl/valuesets_merged.owl.ttl"
+  uv run gen-owl src/valuesets/merged/merged_hierarchy.yaml > project/owl/valuesets.owl.ttl
+  @echo "✅ Generated OWL at project/owl/valuesets.owl.ttl"
   # Get file size for verification
-  @ls -lh project/owl/valuesets_merged.owl.ttl | awk '{print "📊 File size: " $$5}'
+  @ls -lh project/owl/valuesets.owl.ttl | awk '{print "📊 File size: " $$5}'
+
 
 # Validate ontology mappings in enum definitions
 [group('model development')]

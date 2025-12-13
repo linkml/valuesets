@@ -5,6 +5,8 @@ prefixes:
   CHMO: http://purl.obolibrary.org/obo/CHMO_
   # linkml_common: https://w3id.org/linkml-common/
   valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   synthesis_method:
@@ -18,7 +20,14 @@ slots:
     range: AdditiveManufacturingEnum
 enums:
   SynthesisMethodEnum:
+    title: Synthesis Method
     description: Common material synthesis and processing methods
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       SOL_GEL:
         description: Synthesis from solution through gel formation
@@ -95,7 +104,14 @@ enums:
         description: Coating by spraying
         title: Spray Coating
   CrystalGrowthMethodEnum:
+    title: Crystal Growth Method
     description: Methods for growing single crystals
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       CZOCHRALSKI:
         description: Crystal pulling from melt
@@ -143,7 +159,14 @@ enums:
         aliases:
         - MOVPE
   AdditiveManufacturingEnum:
+    title: Additive Manufacturing
     description: 3D printing and additive manufacturing methods
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       FDM:
         description: Fused Deposition Modeling

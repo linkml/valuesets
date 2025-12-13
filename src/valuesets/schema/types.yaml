@@ -8,6 +8,8 @@ prefixes:
   linkml: https://w3id.org/linkml/
   cvs: https://w3id.org/linkml/valuesets/
   valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 types:
   CountScalar:

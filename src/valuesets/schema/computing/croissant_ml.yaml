@@ -1,0 +1,454 @@
+name: croissant_ml
+title: Croissant ML Value Sets
+description: |
+  Value sets for the Croissant ML metadata format for machine learning datasets.
+
+  Croissant is a standardized metadata format developed by MLCommons (with Google,
+  Hugging Face, and others) to make ML datasets more discoverable, accessible, and
+  interoperable. These value sets represent the controlled vocabularies and
+  enumerations used in the Croissant format.
+
+id: https://w3id.org/valuesets/computing/croissant_ml
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  valuesets: https://w3id.org/valuesets/
+  EDAM: http://edamontology.org/
+  IAO: http://purl.obolibrary.org/obo/IAO_
+  OBI: http://purl.obolibrary.org/obo/OBI_
+  schema: http://schema.org/
+  xsd: http://www.w3.org/2001/XMLSchema#
+  spdx: https://spdx.org/licenses/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+default_prefix: valuesets
+
+enums:
+  MLDataType:
+    title: ML Data Type
+    description: |
+      Data types used in Croissant ML for describing field types in datasets.
+      Based on XSD (XML Schema Definition) and schema.org vocabulary.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      TEXT:
+        description: Text or string data
+        meaning: xsd:string
+        mappings:
+        - schema:Text
+        - EDAM:3671
+      INTEGER:
+        description: Integer numbers
+        meaning: xsd:integer
+        mappings:
+        - schema:Integer
+        - IAO:0000031
+      FLOAT:
+        description: Floating point numbers
+        meaning: xsd:float
+        mappings:
+        - schema:Float
+      BOOLEAN:
+        description: Boolean values (true/false)
+        meaning: xsd:boolean
+        mappings:
+        - schema:Boolean
+      DATE:
+        description: Date values
+        meaning: xsd:date
+        mappings:
+        - schema:Date
+      TIME:
+        description: Time values
+        meaning: xsd:time
+        mappings:
+        - schema:Time
+      DATETIME:
+        description: Combined date and time values
+        meaning: xsd:dateTime
+        mappings:
+        - schema:DateTime
+      URL:
+        description: Uniform Resource Locators
+        meaning: xsd:anyURI
+        mappings:
+        - schema:URL
+
+  DatasetEncodingFormat:
+    title: Dataset Encoding Format
+    description: |
+      Encoding formats (MIME types) commonly used for ML dataset files in Croissant.
+      These specify how data is serialized and stored.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      CSV:
+        description: Comma-separated values format for tabular data
+        meaning: EDAM:format_3752
+        annotations:
+          mime_type: text/csv
+      JSON:
+        description: JavaScript Object Notation format for structured data
+        meaning: EDAM:format_3464
+        annotations:
+          mime_type: application/json
+      JSONL:
+        description: JSON Lines format (newline-delimited JSON)
+        annotations:
+          mime_type: application/jsonl
+          alt_mime_type: application/x-ndjson
+      PARQUET:
+        description: Apache Parquet columnar storage format
+        annotations:
+          mime_type: application/parquet
+      PLAIN_TEXT:
+        description: Plain text files
+        annotations:
+          mime_type: text/plain
+      JPEG:
+        description: JPEG image format
+        meaning: EDAM:format_3579
+        title: JPG
+        annotations:
+          mime_type: image/jpeg
+      PNG:
+        description: Portable Network Graphics image format
+        meaning: EDAM:format_3603
+        title: PNG
+        annotations:
+          mime_type: image/png
+      WAV:
+        description: Waveform Audio File Format
+        annotations:
+          mime_type: audio/wav
+      MP4:
+        description: MPEG-4 multimedia container format
+        meaning: EDAM:format_3997
+        title: MPEG-4
+        annotations:
+          mime_type: video/mp4
+      ZIP:
+        description: ZIP archive format
+        meaning: EDAM:format_3987
+        title: ZIP format
+        annotations:
+          mime_type: application/zip
+      TAR:
+        description: Tape Archive format
+        meaning: EDAM:format_3981
+        title: TAR format
+        annotations:
+          mime_type: application/x-tar
+
+  DatasetSplitType:
+    title: Dataset Split Type
+    description: |
+      Standard dataset split types used in machine learning for training,
+      validation, and testing. These splits are fundamental to ML model
+      development and evaluation workflows.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      TRAIN:
+        description: Training split used for model learning
+        annotations:
+          typical_size: 60-80% of data
+          purpose: model training
+      VALIDATION:
+        description: Validation split used for hyperparameter tuning and model selection
+        annotations:
+          typical_size: 10-20% of data
+          purpose: model tuning
+          aliases: val, dev
+      TEST:
+        description: Test split used for final model evaluation
+        annotations:
+          typical_size: 10-20% of data
+          purpose: model evaluation
+      ALL:
+        description: Complete dataset without splits
+
+  MLLicenseType:
+    title: ML License Type
+    description: |
+      Common open source and Creative Commons licenses used for ML datasets.
+      These licenses specify terms of use, redistribution, and modification.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      CC_BY_4_0:
+        description: Creative Commons Attribution 4.0 International
+        title: CC-BY-4.0
+        meaning: spdx:CC-BY-4.0
+        see_also:
+        - https://creativecommons.org/licenses/by/4.0/
+        annotations:
+          allows_commercial: true
+          requires_attribution: true
+      CC_BY_SA_4_0:
+        description: Creative Commons Attribution-ShareAlike 4.0 International
+        title: CC-BY-SA-4.0
+        meaning: spdx:CC-BY-SA-4.0
+        see_also:
+        - https://creativecommons.org/licenses/by-sa/4.0/
+        annotations:
+          allows_commercial: true
+          requires_attribution: true
+          share_alike: true
+      CC0_1_0:
+        description: Creative Commons Zero 1.0 Universal (Public Domain Dedication)
+        title: CC0-1.0
+        meaning: spdx:CC0-1.0
+        see_also:
+        - https://creativecommons.org/publicdomain/zero/1.0/
+        annotations:
+          public_domain: true
+      MIT:
+        description: MIT License
+        meaning: spdx:MIT
+        see_also:
+        - https://opensource.org/licenses/MIT
+        annotations:
+          osi_approved: true
+      APACHE_2_0:
+        description: Apache License 2.0
+        title: Apache-2.0
+        meaning: spdx:Apache-2.0
+        see_also:
+        - https://www.apache.org/licenses/LICENSE-2.0
+        annotations:
+          osi_approved: true
+          patent_grant: true
+      BSD_3_CLAUSE:
+        description: BSD 3-Clause "New" or "Revised" License
+        title: BSD-3-Clause
+        meaning: spdx:BSD-3-Clause
+        see_also:
+        - https://opensource.org/licenses/BSD-3-Clause
+        annotations:
+          osi_approved: true
+      GPL_3_0:
+        description: GNU General Public License v3.0
+        title: GPL-3.0
+        meaning: spdx:GPL-3.0-only
+        see_also:
+        - https://www.gnu.org/licenses/gpl-3.0.html
+        annotations:
+          osi_approved: true
+          copyleft: true
+
+  MLFieldRole:
+    title: ML Field Role
+    description: |
+      Semantic roles that fields play in ML datasets. These roles help understand
+      the purpose and usage of different data columns or attributes.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      FEATURE:
+        description: Input features used for model prediction
+        annotations:
+          also_known_as: input, predictor, independent variable
+      LABEL:
+        description: Target labels or outputs for supervised learning
+        annotations:
+          also_known_as: target, output, dependent variable, ground truth
+      METADATA:
+        description: Descriptive information about the dataset or records
+        annotations:
+          also_known_as: descriptive field, provenance
+      IDENTIFIER:
+        description: Unique identifiers for records or entities
+        annotations:
+          also_known_as: ID, key, primary key
+
+  CompressionFormat:
+    title: Compression Format
+    description: |
+      Compression and archive formats commonly used for ML dataset distribution.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      ZIP:
+        description: ZIP archive format with lossless data compression
+        meaning: EDAM:format_3987
+        title: ZIP format
+        annotations:
+          mime_type: application/zip
+          typical_extension: .zip
+      TAR:
+        description: Tape Archive format (typically used with compression)
+        meaning: EDAM:format_3981
+        title: TAR format
+        annotations:
+          mime_type: application/x-tar
+          typical_extension: .tar
+      GZIP:
+        description: GNU zip compression format
+        meaning: EDAM:format_3989
+        title: GZIP format
+        annotations:
+          mime_type: application/gzip
+          typical_extension: .gz
+      TAR_GZ:
+        description: TAR archive compressed with GZIP
+        annotations:
+          mime_type: application/gzip
+          typical_extension: .tar.gz
+
+  MLMediaType:
+    title: ML Media Type
+    description: |
+      Media types (MIME types) for different modalities of ML data including
+      images, audio, video, and text.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      # Images
+      IMAGE_JPEG:
+        description: JPEG image format
+        meaning: EDAM:format_3579
+        title: JPG
+        annotations:
+          mime_type: image/jpeg
+          modality: image
+      IMAGE_PNG:
+        description: PNG image format
+        meaning: EDAM:format_3603
+        title: PNG
+        annotations:
+          mime_type: image/png
+          modality: image
+      IMAGE_GIF:
+        description: GIF image format
+        annotations:
+          mime_type: image/gif
+          modality: image
+      IMAGE_TIFF:
+        description: TIFF image format
+        annotations:
+          mime_type: image/tiff
+          modality: image
+      # Audio
+      AUDIO_WAV:
+        description: Waveform Audio File Format
+        annotations:
+          mime_type: audio/wav
+          modality: audio
+      AUDIO_MP3:
+        description: MP3 audio format
+        annotations:
+          mime_type: audio/mpeg
+          modality: audio
+      AUDIO_FLAC:
+        description: FLAC lossless audio format
+        annotations:
+          mime_type: audio/flac
+          modality: audio
+      # Video
+      VIDEO_MP4:
+        description: MPEG-4 video format
+        meaning: EDAM:format_3997
+        title: MPEG-4
+        annotations:
+          mime_type: video/mp4
+          modality: video
+      VIDEO_AVI:
+        description: Audio Video Interleaved format
+        meaning: EDAM:format_3990
+        title: AVI
+        annotations:
+          mime_type: video/x-msvideo
+          modality: video
+      VIDEO_WEBM:
+        description: WebM video format
+        annotations:
+          mime_type: video/webm
+          modality: video
+      # Text
+      TEXT_PLAIN:
+        description: Plain text format
+        annotations:
+          mime_type: text/plain
+          modality: text
+      TEXT_HTML:
+        description: HTML format
+        annotations:
+          mime_type: text/html
+          modality: text
+
+  MLModalityType:
+    title: ML Modality Type
+    description: |
+      High-level data modalities used in machine learning. These represent
+      the fundamental types of input data that ML models process.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      TEXT:
+        description: Textual data (natural language, code, etc.)
+        annotations:
+          examples: documents, sentences, tokens
+      IMAGE:
+        description: Visual image data
+        meaning: EDAM:data_2968
+        annotations:
+          examples: photographs, diagrams, scans
+      AUDIO:
+        description: Audio/sound data
+        annotations:
+          examples: speech, music, sound effects
+      VIDEO:
+        description: Video data (sequences of images with optional audio)
+        annotations:
+          examples: movies, recordings, animations
+      MULTIMODAL:
+        description: Data combining multiple modalities
+        annotations:
+          examples: image-text pairs, audio-visual data
+      TABULAR:
+        description: Structured tabular data
+        annotations:
+          examples: spreadsheets, databases, CSV files
+      TIME_SERIES:
+        description: Sequential temporal data
+        annotations:
+          examples: sensor readings, stock prices, logs
+      GRAPH:
+        description: Graph-structured data with nodes and edges
+        annotations:
+          examples: social networks, knowledge graphs, molecular structures

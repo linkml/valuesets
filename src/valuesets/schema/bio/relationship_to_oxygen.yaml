@@ -6,6 +6,8 @@ prefixes:
   MICRO: http://purl.obolibrary.org/obo/MICRO_
   mixs: https://genomicsstandardsconsortium.github.io/mixs/
   valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   rel_to_oxygen:
@@ -13,7 +15,14 @@ slots:
     range: RelToOxygenEnum
 enums:
   RelToOxygenEnum:
+    title: Rel To Oxygen
     description: Organism's relationship to oxygen for growth and survival
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       AEROBE:
         description: Organism that can survive and grow in an oxygenated environment

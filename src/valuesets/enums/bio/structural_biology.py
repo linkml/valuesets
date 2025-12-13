@@ -9,7 +9,6 @@ Generated from: bio/structural_biology.yaml
 
 from __future__ import annotations
 
-from typing import Dict, Any, Optional
 from valuesets.generators.rich_enum import RichEnum
 
 class SampleType(RichEnum):
@@ -28,14 +27,14 @@ class SampleType(RichEnum):
 
 # Set metadata after class creation
 SampleType._metadata = {
-    "PROTEIN": {'description': 'Purified protein sample'},
-    "NUCLEIC_ACID": {'description': 'Nucleic acid sample (DNA or RNA)'},
-    "PROTEIN_COMPLEX": {'description': 'Protein-protein or protein-nucleic acid complex'},
-    "MEMBRANE_PROTEIN": {'description': 'Membrane-associated protein sample'},
-    "VIRUS": {'description': 'Viral particle or capsid'},
-    "ORGANELLE": {'description': 'Cellular organelle (mitochondria, chloroplast, etc.)'},
-    "CELL": {'description': 'Whole cell sample'},
-    "TISSUE": {'description': 'Tissue sample'},
+    "PROTEIN": {'description': 'Purified protein sample', 'meaning': 'NCIT:C17021'},
+    "NUCLEIC_ACID": {'description': 'Nucleic acid sample (DNA or RNA)', 'meaning': 'NCIT:C813'},
+    "PROTEIN_COMPLEX": {'description': 'Protein-protein or protein-nucleic acid complex', 'meaning': 'GO:0032991'},
+    "MEMBRANE_PROTEIN": {'description': 'Membrane-associated protein sample', 'meaning': 'NCIT:C16837'},
+    "VIRUS": {'description': 'Viral particle or capsid', 'meaning': 'NCIT:C14283'},
+    "ORGANELLE": {'description': 'Cellular organelle (mitochondria, chloroplast, etc.)', 'meaning': 'GO:0043226'},
+    "CELL": {'description': 'Whole cell sample', 'meaning': 'NCIT:C12508'},
+    "TISSUE": {'description': 'Tissue sample', 'meaning': 'NCIT:C12801'},
 }
 
 class StructuralBiologyTechnique(RichEnum):
@@ -57,15 +56,15 @@ class StructuralBiologyTechnique(RichEnum):
 # Set metadata after class creation
 StructuralBiologyTechnique._metadata = {
     "CRYO_EM": {'description': 'Cryo-electron microscopy', 'meaning': 'CHMO:0002413', 'annotations': {'resolution_range': '2-30 Å typical', 'aliases': 'cryoEM, electron cryo-microscopy'}},
-    "CRYO_ET": {'description': 'Cryo-electron tomography', 'annotations': {'resolution_range': '20-100 Å typical', 'aliases': 'cryoET, electron cryo-tomography'}},
+    "CRYO_ET": {'description': 'Cryo-electron tomography', 'meaning': 'MI:2338', 'annotations': {'resolution_range': '20-100 Å typical', 'aliases': 'cryoET, electron cryo-tomography'}},
     "X_RAY_CRYSTALLOGRAPHY": {'description': 'X-ray crystallography', 'meaning': 'CHMO:0000159', 'annotations': {'resolution_range': '1-4 Å typical', 'aliases': 'XRC, macromolecular crystallography'}},
-    "NEUTRON_CRYSTALLOGRAPHY": {'description': 'Neutron crystallography', 'annotations': {'advantages': 'hydrogen positions, deuteration studies'}},
+    "NEUTRON_CRYSTALLOGRAPHY": {'description': 'Neutron crystallography', 'meaning': 'CHMO:0000175', 'annotations': {'advantages': 'hydrogen positions, deuteration studies'}},
     "SAXS": {'description': 'Small-angle X-ray scattering', 'meaning': 'CHMO:0000204', 'annotations': {'information': 'low-resolution structure, conformational changes'}},
-    "SANS": {'description': 'Small-angle neutron scattering', 'annotations': {'advantages': 'contrast variation with deuteration'}},
-    "WAXS": {'description': 'Wide-angle X-ray scattering'},
+    "SANS": {'description': 'Small-angle neutron scattering', 'meaning': 'CHMO:0000184', 'annotations': {'advantages': 'contrast variation with deuteration'}},
+    "WAXS": {'description': 'Wide-angle X-ray scattering', 'meaning': 'CHMO:0000213'},
     "NMR": {'description': 'Nuclear magnetic resonance spectroscopy', 'meaning': 'CHMO:0000591', 'annotations': {'information': 'solution structure, dynamics'}},
     "MASS_SPECTROMETRY": {'description': 'Mass spectrometry', 'meaning': 'CHMO:0000470', 'annotations': {'applications': 'native MS, crosslinking, HDX'}},
-    "NEGATIVE_STAIN_EM": {'description': 'Negative stain electron microscopy', 'annotations': {'resolution_range': '15-30 Å typical'}},
+    "NEGATIVE_STAIN_EM": {'description': 'Negative stain electron microscopy', 'meaning': 'FBbi:00000568', 'annotations': {'resolution_range': '15-30 Å typical'}},
 }
 
 class CryoEMPreparationType(RichEnum):
@@ -160,8 +159,8 @@ class XRaySource(RichEnum):
 
 # Set metadata after class creation
 XRaySource._metadata = {
-    "SYNCHROTRON": {'description': 'Synchrotron radiation source', 'annotations': {'advantages': 'high intensity, tunable wavelength', 'brightness': '10^15-10^18 photons/s/mm²/mrad²'}},
-    "ROTATING_ANODE": {'description': 'Rotating anode generator', 'annotations': {'power': '3-18 kW typical', 'target': 'copper, molybdenum common'}},
+    "SYNCHROTRON": {'description': 'Synchrotron radiation source', 'meaning': 'CHMO:0001810', 'annotations': {'advantages': 'high intensity, tunable wavelength', 'brightness': '10^15-10^18 photons/s/mm²/mrad²'}},
+    "ROTATING_ANODE": {'description': 'Rotating anode generator', 'meaning': 'CHMO:0001107', 'annotations': {'power': '3-18 kW typical', 'target': 'copper, molybdenum common'}},
     "MICROFOCUS": {'description': 'Microfocus sealed tube', 'annotations': {'spot_size': '10-50 μm', 'applications': 'small crystals, in-house screening'}},
     "METAL_JET": {'description': 'Liquid metal jet source', 'annotations': {'advantages': 'higher power density, longer lifetime', 'metals': 'gallium, indium'}},
 }
@@ -179,11 +178,11 @@ class Detector(RichEnum):
 
 # Set metadata after class creation
 Detector._metadata = {
-    "DIRECT_ELECTRON": {'description': 'Direct electron detector (DED)', 'annotations': {'examples': 'K2, K3, Falcon, DE-series', 'advantages': 'high DQE, fast readout'}},
-    "CCD": {'description': 'Charge-coupled device camera', 'annotations': {'applications': 'legacy EM, some crystallography'}},
-    "CMOS": {'description': 'Complementary metal-oxide semiconductor detector', 'annotations': {'advantages': 'fast readout, low noise'}},
+    "DIRECT_ELECTRON": {'description': 'Direct electron detector (DED)', 'meaning': 'CHMO:0002837', 'annotations': {'examples': 'K2, K3, Falcon, DE-series', 'advantages': 'high DQE, fast readout'}},
+    "CCD": {'description': 'Charge-coupled device camera', 'meaning': 'CHMO:0002171', 'annotations': {'applications': 'legacy EM, some crystallography'}},
+    "CMOS": {'description': 'Complementary metal-oxide semiconductor detector', 'meaning': 'CHMO:0002836', 'annotations': {'advantages': 'fast readout, low noise'}},
     "HYBRID_PIXEL": {'description': 'Hybrid pixel detector', 'annotations': {'examples': 'Pilatus, Eiger', 'advantages': 'photon counting, zero noise'}},
-    "PHOTOSTIMULABLE_PHOSPHOR": {'description': 'Photostimulable phosphor (image plate)', 'annotations': {'applications': 'legacy crystallography'}},
+    "PHOTOSTIMULABLE_PHOSPHOR": {'description': 'Photostimulable phosphor (image plate)', 'meaning': 'CHMO:0001069', 'annotations': {'applications': 'legacy crystallography'}},
 }
 
 class WorkflowType(RichEnum):
@@ -238,14 +237,14 @@ class FileFormat(RichEnum):
 
 # Set metadata after class creation
 FileFormat._metadata = {
-    "MRC": {'description': 'MRC format for EM density maps', 'annotations': {'extension': '.mrc, .map', 'applications': 'EM volumes, tomograms'}},
-    "TIFF": {'description': 'Tagged Image File Format', 'annotations': {'extension': '.tif, .tiff', 'applications': 'micrographs, general imaging'}},
-    "HDF5": {'description': 'Hierarchical Data Format 5', 'annotations': {'extension': '.h5, .hdf5', 'applications': 'large datasets, metadata storage'}},
-    "STAR": {'description': 'Self-defining Text Archival and Retrieval format', 'annotations': {'extension': '.star', 'applications': 'RELION metadata, particle parameters'}},
-    "PDB": {'description': 'Protein Data Bank coordinate format', 'annotations': {'extension': '.pdb', 'applications': 'atomic coordinates, legacy format'}},
-    "MMCIF": {'description': 'Macromolecular Crystallographic Information File', 'annotations': {'extension': '.cif', 'applications': 'atomic coordinates, modern PDB format'}},
-    "MTZ": {'description': 'MTZ reflection data format', 'annotations': {'extension': '.mtz', 'applications': 'crystallographic reflections, phases'}},
-    "CBF": {'description': 'Crystallographic Binary Format', 'annotations': {'extension': '.cbf', 'applications': 'detector images, diffraction data'}},
+    "MRC": {'description': 'MRC format for EM density maps', 'meaning': 'EDAM:3842', 'annotations': {'extension': '.mrc, .map', 'applications': 'EM volumes, tomograms'}},
+    "TIFF": {'description': 'Tagged Image File Format', 'meaning': 'EDAM:3591', 'annotations': {'extension': '.tif, .tiff', 'applications': 'micrographs, general imaging'}},
+    "HDF5": {'description': 'Hierarchical Data Format 5', 'meaning': 'EDAM:3590', 'annotations': {'extension': '.h5, .hdf5', 'applications': 'large datasets, metadata storage'}},
+    "STAR": {'description': 'Self-defining Text Archival and Retrieval format', 'meaning': 'EDAM:3906', 'annotations': {'extension': '.star', 'applications': 'RELION metadata, particle parameters'}},
+    "PDB": {'description': 'Protein Data Bank coordinate format', 'meaning': 'EDAM:1476', 'annotations': {'extension': '.pdb', 'applications': 'atomic coordinates, legacy format'}},
+    "MMCIF": {'description': 'Macromolecular Crystallographic Information File', 'meaning': 'EDAM:1477', 'annotations': {'extension': '.cif', 'applications': 'atomic coordinates, modern PDB format'}},
+    "MTZ": {'description': 'MTZ reflection data format', 'meaning': 'EDAM:3816', 'annotations': {'extension': '.mtz', 'applications': 'crystallographic reflections, phases'}},
+    "CBF": {'description': 'Crystallographic Binary Format', 'meaning': 'EDAM:3874', 'annotations': {'extension': '.cbf', 'applications': 'detector images, diffraction data'}},
     "DM3": {'description': 'Digital Micrograph format', 'annotations': {'extension': '.dm3, .dm4', 'applications': 'FEI/Thermo Fisher EM data'}},
     "SER": {'description': 'FEI series format', 'annotations': {'extension': '.ser', 'applications': 'FEI movie stacks'}},
 }
@@ -304,6 +303,98 @@ ProcessingStatus._metadata = {
     "CANCELLED": {'description': 'Processing cancelled by user'},
 }
 
+class CoordinationGeometry(RichEnum):
+    """
+    Coordination geometry of metal centers in protein structures
+    """
+    # Enum members
+    LINEAR = "LINEAR"
+    TRIGONAL_PLANAR = "TRIGONAL_PLANAR"
+    TRIGONAL_PYRAMIDAL = "TRIGONAL_PYRAMIDAL"
+    T_SHAPED = "T_SHAPED"
+    TETRAHEDRAL = "TETRAHEDRAL"
+    SQUARE_PLANAR = "SQUARE_PLANAR"
+    TRIGONAL_BIPYRAMIDAL = "TRIGONAL_BIPYRAMIDAL"
+    SQUARE_PYRAMIDAL = "SQUARE_PYRAMIDAL"
+    PENTAGONAL_PLANAR = "PENTAGONAL_PLANAR"
+    OCTAHEDRAL = "OCTAHEDRAL"
+    TRIGONAL_PRISMATIC = "TRIGONAL_PRISMATIC"
+    PENTAGONAL_BIPYRAMIDAL = "PENTAGONAL_BIPYRAMIDAL"
+    HEXAGONAL_BIPYRAMIDAL = "HEXAGONAL_BIPYRAMIDAL"
+    SQUARE_ANTIPRISMATIC = "SQUARE_ANTIPRISMATIC"
+    DODECAHEDRAL = "DODECAHEDRAL"
+    CUBIC = "CUBIC"
+    BENT = "BENT"
+    SEE_SAW = "SEE_SAW"
+
+# Set metadata after class creation
+CoordinationGeometry._metadata = {
+    "LINEAR": {'description': 'Linear coordination geometry (2 ligands at 180°)', 'annotations': {'coordination_number': '2'}},
+    "TRIGONAL_PLANAR": {'description': 'Trigonal planar coordination geometry (3 ligands, 120° angles)', 'annotations': {'coordination_number': '3'}},
+    "TRIGONAL_PYRAMIDAL": {'description': 'Trigonal pyramidal coordination geometry', 'annotations': {'coordination_number': '3'}},
+    "T_SHAPED": {'description': 'T-shaped coordination geometry', 'annotations': {'coordination_number': '3'}},
+    "TETRAHEDRAL": {'description': 'Tetrahedral coordination geometry (4 ligands, 109.5° angles)', 'meaning': 'NCIT:C103215', 'annotations': {'coordination_number': '4'}},
+    "SQUARE_PLANAR": {'description': 'Square planar coordination geometry (4 ligands in plane)', 'meaning': 'NCIT:C103211', 'annotations': {'coordination_number': '4'}},
+    "TRIGONAL_BIPYRAMIDAL": {'description': 'Trigonal bipyramidal coordination geometry (5 ligands)', 'annotations': {'coordination_number': '5'}},
+    "SQUARE_PYRAMIDAL": {'description': 'Square pyramidal coordination geometry (5 ligands)', 'annotations': {'coordination_number': '5'}},
+    "PENTAGONAL_PLANAR": {'description': 'Pentagonal planar coordination geometry (5 ligands in plane)', 'annotations': {'coordination_number': '5'}},
+    "OCTAHEDRAL": {'description': 'Octahedral coordination geometry (6 ligands)', 'meaning': 'NCIT:C103216', 'annotations': {'coordination_number': '6'}},
+    "TRIGONAL_PRISMATIC": {'description': 'Trigonal prismatic coordination geometry (6 ligands)', 'annotations': {'coordination_number': '6'}},
+    "PENTAGONAL_BIPYRAMIDAL": {'description': 'Pentagonal bipyramidal coordination geometry (7 ligands)', 'annotations': {'coordination_number': '7'}},
+    "HEXAGONAL_BIPYRAMIDAL": {'description': 'Hexagonal bipyramidal coordination geometry (8 ligands)', 'annotations': {'coordination_number': '8'}},
+    "SQUARE_ANTIPRISMATIC": {'description': 'Square antiprismatic coordination geometry (8 ligands)', 'annotations': {'coordination_number': '8'}},
+    "DODECAHEDRAL": {'description': 'Dodecahedral coordination geometry (8 ligands)', 'annotations': {'coordination_number': '8'}},
+    "CUBIC": {'description': 'Cubic coordination geometry (8 ligands)', 'annotations': {'coordination_number': '8'}},
+    "BENT": {'description': 'Bent or angular coordination geometry', 'annotations': {'coordination_number': '2'}},
+    "SEE_SAW": {'description': 'See-saw coordination geometry (4 ligands)', 'annotations': {'coordination_number': '4'}},
+}
+
+class MetalLigandType(RichEnum):
+    """
+    Types of metal-containing chemical components
+    """
+    # Enum members
+    METAL_CATION = "METAL_CATION"
+    METAL_CONTAINING_LIGAND = "METAL_CONTAINING_LIGAND"
+
+# Set metadata after class creation
+MetalLigandType._metadata = {
+    "METAL_CATION": {'description': 'Metal cation (e.g., Ca2+, Mg2+, Zn2+, Fe3+)', 'annotations': {'examples': 'Ca2+, Mg2+, Zn2+, Fe2+, Fe3+, Cu2+, Mn2+'}},
+    "METAL_CONTAINING_LIGAND": {'description': 'Metal-containing ligand or cofactor', 'annotations': {'examples': 'heme, chlorophyll, cobalamin, Fe-S cluster'}},
+}
+
+class ProteinModificationType(RichEnum):
+    """
+    Types of protein modifications
+    """
+    # Enum members
+    METAL_COORDINATION = "METAL_COORDINATION"
+    PHOSPHORYLATION = "PHOSPHORYLATION"
+    GLYCOSYLATION = "GLYCOSYLATION"
+    ACETYLATION = "ACETYLATION"
+    METHYLATION = "METHYLATION"
+    UBIQUITINATION = "UBIQUITINATION"
+    SUMOYLATION = "SUMOYLATION"
+    HYDROXYLATION = "HYDROXYLATION"
+    LIPIDATION = "LIPIDATION"
+    PROTEOLYTIC_CLEAVAGE = "PROTEOLYTIC_CLEAVAGE"
+    CROSSLINKING = "CROSSLINKING"
+
+# Set metadata after class creation
+ProteinModificationType._metadata = {
+    "METAL_COORDINATION": {'description': 'Metal coordination modification', 'meaning': 'MOD:00739', 'annotations': {'examples': 'zinc finger, iron-sulfur cluster binding'}},
+    "PHOSPHORYLATION": {'description': 'Phosphorylation modification', 'meaning': 'MOD:00696'},
+    "GLYCOSYLATION": {'description': 'Glycosylation modification', 'meaning': 'MOD:00725'},
+    "ACETYLATION": {'description': 'Acetylation modification', 'meaning': 'MOD:00394'},
+    "METHYLATION": {'description': 'Methylation modification', 'meaning': 'MOD:00599'},
+    "UBIQUITINATION": {'description': 'Ubiquitination modification', 'meaning': 'MOD:01240'},
+    "SUMOYLATION": {'description': 'SUMOylation modification', 'meaning': 'MOD:01149'},
+    "HYDROXYLATION": {'description': 'Hydroxylation modification', 'meaning': 'MOD:00677'},
+    "LIPIDATION": {'description': 'Lipidation modification', 'meaning': 'MOD:00435'},
+    "PROTEOLYTIC_CLEAVAGE": {'description': 'Proteolytic cleavage', 'meaning': 'GO:0006508'},
+    "CROSSLINKING": {'description': 'Crosslinking modification', 'meaning': 'MOD:00276'},
+}
+
 __all__ = [
     "SampleType",
     "StructuralBiologyTechnique",
@@ -317,4 +408,7 @@ __all__ = [
     "FileFormat",
     "DataType",
     "ProcessingStatus",
+    "CoordinationGeometry",
+    "MetalLigandType",
+    "ProteinModificationType",
 ]

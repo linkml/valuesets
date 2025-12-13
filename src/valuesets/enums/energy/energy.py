@@ -8,7 +8,6 @@ Generated from: energy/energy.yaml
 
 from __future__ import annotations
 
-from typing import Dict, Any, Optional
 from valuesets.generators.rich_enum import RichEnum
 
 class EnergySource(RichEnum):
@@ -37,24 +36,24 @@ class EnergySource(RichEnum):
 
 # Set metadata after class creation
 EnergySource._metadata = {
-    "SOLAR": {'meaning': 'ENVO:01001862', 'annotations': {'renewable': True, 'emission_free': True}, 'aliases': ['Solar radiation']},
-    "WIND": {'annotations': {'renewable': True, 'emission_free': True}, 'aliases': ['wind wave energy']},
-    "HYDROELECTRIC": {'annotations': {'renewable': True, 'emission_free': True}, 'aliases': ['hydroelectric dam']},
-    "GEOTHERMAL": {'meaning': 'ENVO:2000034', 'annotations': {'renewable': True, 'emission_free': True}, 'aliases': ['geothermal energy']},
-    "BIOMASS": {'annotations': {'renewable': True, 'emission_free': False}, 'aliases': ['organic material']},
-    "BIOFUEL": {'annotations': {'renewable': True, 'emission_free': False}},
-    "TIDAL": {'annotations': {'renewable': True, 'emission_free': True}},
-    "HYDROGEN": {'meaning': 'CHEBI:18276', 'annotations': {'renewable': 'depends', 'emission_free': True}, 'aliases': ['dihydrogen']},
-    "COAL": {'meaning': 'ENVO:02000091', 'annotations': {'renewable': False, 'emission_free': False, 'fossil_fuel': True}},
-    "NATURAL_GAS": {'meaning': 'ENVO:01000552', 'annotations': {'renewable': False, 'emission_free': False, 'fossil_fuel': True}},
-    "PETROLEUM": {'meaning': 'ENVO:00002984', 'annotations': {'renewable': False, 'emission_free': False, 'fossil_fuel': True}},
-    "DIESEL": {'meaning': 'ENVO:03510006', 'annotations': {'renewable': False, 'emission_free': False, 'fossil_fuel': True}, 'aliases': ['diesel fuel']},
-    "GASOLINE": {'annotations': {'renewable': False, 'emission_free': False, 'fossil_fuel': True}, 'aliases': ['fuel oil']},
+    "SOLAR": {'meaning': 'ENVO:01001862', 'annotations': {'renewable': True, 'emission_free': True, 'oeo_label': 'solar energy', 'brick_label': 'Solar Thermal Collector'}, 'aliases': ['Solar radiation']},
+    "WIND": {'annotations': {'renewable': True, 'emission_free': True, 'oeo_label': 'wind energy'}, 'aliases': ['wind wave energy']},
+    "HYDROELECTRIC": {'annotations': {'renewable': True, 'emission_free': True, 'oeo_label': 'hydro energy'}, 'aliases': ['hydroelectric dam']},
+    "GEOTHERMAL": {'meaning': 'ENVO:2000034', 'annotations': {'renewable': True, 'emission_free': True, 'oeo_label': 'geothermal energy'}, 'aliases': ['geothermal energy']},
+    "BIOMASS": {'annotations': {'renewable': True, 'emission_free': False, 'oeo_label': 'bioenergy'}, 'aliases': ['organic material']},
+    "BIOFUEL": {'annotations': {'renewable': True, 'emission_free': False, 'oeo_label': 'biofuel'}},
+    "TIDAL": {'annotations': {'renewable': True, 'emission_free': True, 'oeo_label': 'marine tidal energy, marine wave energy'}},
+    "HYDROGEN": {'meaning': 'CHEBI:18276', 'annotations': {'renewable': 'depends', 'emission_free': True, 'oeo_label': 'hydrogen'}, 'aliases': ['dihydrogen']},
+    "COAL": {'meaning': 'ENVO:02000091', 'annotations': {'renewable': False, 'emission_free': False, 'fossil_fuel': True, 'oeo_label': 'coal'}},
+    "NATURAL_GAS": {'meaning': 'ENVO:01000552', 'annotations': {'renewable': False, 'emission_free': False, 'fossil_fuel': True, 'oeo_label': 'natural gas'}},
+    "PETROLEUM": {'meaning': 'ENVO:00002984', 'annotations': {'renewable': False, 'emission_free': False, 'fossil_fuel': True, 'oeo_label': 'crude oil'}},
+    "DIESEL": {'meaning': 'ENVO:03510006', 'annotations': {'renewable': False, 'emission_free': False, 'fossil_fuel': True, 'oeo_label': 'diesel fuel'}, 'aliases': ['diesel fuel']},
+    "GASOLINE": {'annotations': {'renewable': False, 'emission_free': False, 'fossil_fuel': True, 'oeo_label': 'gasoline fuel'}, 'aliases': ['fuel oil']},
     "PROPANE": {'meaning': 'ENVO:01000553', 'annotations': {'renewable': False, 'emission_free': False, 'fossil_fuel': True}, 'aliases': ['liquefied petroleum gas']},
-    "NUCLEAR_FISSION": {'annotations': {'renewable': False, 'emission_free': True}, 'aliases': ['nuclear energy']},
+    "NUCLEAR_FISSION": {'annotations': {'renewable': False, 'emission_free': True, 'oeo_label': 'nuclear fuel'}, 'aliases': ['nuclear energy']},
     "NUCLEAR_FUSION": {'annotations': {'renewable': False, 'emission_free': True}, 'aliases': ['nuclear energy']},
-    "GRID_MIX": {'annotations': {'renewable': 'partial'}},
-    "BATTERY_STORAGE": {'description': 'Battery storage systems', 'annotations': {'storage': True}},
+    "GRID_MIX": {'annotations': {'renewable': 'partial', 'oeo_label': 'supply grid'}},
+    "BATTERY_STORAGE": {'description': 'Battery storage systems', 'annotations': {'storage': True, 'oeo_label': 'battery'}},
 }
 
 class EnergyUnit(RichEnum):
@@ -207,7 +206,7 @@ class GridType(RichEnum):
 
 # Set metadata after class creation
 GridType._metadata = {
-    "MAIN_GRID": {'description': 'Main utility grid'},
+    "MAIN_GRID": {'description': 'Main utility grid', 'annotations': {'oeo_label': 'supply grid'}},
     "MICROGRID": {'description': 'Microgrid'},
     "OFF_GRID": {'description': 'Off-grid/standalone'},
     "SMART_GRID": {'description': 'Smart grid'},
@@ -215,16 +214,112 @@ GridType._metadata = {
     "VIRTUAL_POWER_PLANT": {'description': 'Virtual power plant'},
 }
 
-class EnergyStorageType(RichEnum):
+class BatteryType(RichEnum):
     """
-    Types of energy storage systems
+    Types of battery technologies for energy storage
     """
     # Enum members
-    LITHIUM_ION_BATTERY = "LITHIUM_ION_BATTERY"
-    LEAD_ACID_BATTERY = "LEAD_ACID_BATTERY"
-    FLOW_BATTERY = "FLOW_BATTERY"
-    SOLID_STATE_BATTERY = "SOLID_STATE_BATTERY"
-    SODIUM_ION_BATTERY = "SODIUM_ION_BATTERY"
+    LITHIUM_ION = "LITHIUM_ION"
+    LITHIUM_IRON_PHOSPHATE = "LITHIUM_IRON_PHOSPHATE"
+    LITHIUM_POLYMER = "LITHIUM_POLYMER"
+    LEAD_ACID = "LEAD_ACID"
+    NICKEL_METAL_HYDRIDE = "NICKEL_METAL_HYDRIDE"
+    NICKEL_CADMIUM = "NICKEL_CADMIUM"
+    SODIUM_ION = "SODIUM_ION"
+    SOLID_STATE = "SOLID_STATE"
+    VANADIUM_REDOX_FLOW = "VANADIUM_REDOX_FLOW"
+    ZINC_BROMINE_FLOW = "ZINC_BROMINE_FLOW"
+    IRON_AIR = "IRON_AIR"
+    ZINC_AIR = "ZINC_AIR"
+
+# Set metadata after class creation
+BatteryType._metadata = {
+    "LITHIUM_ION": {'description': 'Lithium-ion battery', 'annotations': {'chemistry': 'lithium'}, 'aliases': ['Li-ion', 'LIB']},
+    "LITHIUM_IRON_PHOSPHATE": {'description': 'Lithium iron phosphate (LFP) battery', 'annotations': {'chemistry': 'lithium'}, 'aliases': ['LFP', 'LiFePO4']},
+    "LITHIUM_POLYMER": {'description': 'Lithium polymer battery', 'annotations': {'chemistry': 'lithium'}, 'aliases': ['LiPo']},
+    "LEAD_ACID": {'description': 'Lead-acid battery', 'annotations': {'chemistry': 'lead'}, 'aliases': ['Pb-acid']},
+    "NICKEL_METAL_HYDRIDE": {'description': 'Nickel-metal hydride battery', 'annotations': {'chemistry': 'nickel'}, 'aliases': ['NiMH']},
+    "NICKEL_CADMIUM": {'description': 'Nickel-cadmium battery', 'annotations': {'chemistry': 'nickel'}, 'aliases': ['NiCd']},
+    "SODIUM_ION": {'description': 'Sodium-ion battery', 'annotations': {'chemistry': 'sodium'}, 'aliases': ['Na-ion']},
+    "SOLID_STATE": {'description': 'Solid-state battery', 'annotations': {'chemistry': 'various'}},
+    "VANADIUM_REDOX_FLOW": {'description': 'Vanadium redox flow battery', 'annotations': {'chemistry': 'vanadium', 'type': 'flow'}, 'aliases': ['VRB', 'VRFB']},
+    "ZINC_BROMINE_FLOW": {'description': 'Zinc-bromine flow battery', 'annotations': {'chemistry': 'zinc', 'type': 'flow'}, 'aliases': ['ZnBr']},
+    "IRON_AIR": {'description': 'Iron-air battery', 'annotations': {'chemistry': 'iron'}},
+    "ZINC_AIR": {'description': 'Zinc-air battery', 'annotations': {'chemistry': 'zinc'}},
+}
+
+class PVCellType(RichEnum):
+    """
+    Types of photovoltaic cell technologies
+    """
+    # Enum members
+    MONOCRYSTALLINE_SILICON = "MONOCRYSTALLINE_SILICON"
+    POLYCRYSTALLINE_SILICON = "POLYCRYSTALLINE_SILICON"
+    PASSIVATED_EMITTER_REAR_CELL = "PASSIVATED_EMITTER_REAR_CELL"
+    HETEROJUNCTION = "HETEROJUNCTION"
+    TUNNEL_OXIDE_PASSIVATED_CONTACT = "TUNNEL_OXIDE_PASSIVATED_CONTACT"
+    INTERDIGITATED_BACK_CONTACT = "INTERDIGITATED_BACK_CONTACT"
+    CADMIUM_TELLURIDE = "CADMIUM_TELLURIDE"
+    COPPER_INDIUM_GALLIUM_SELENIDE = "COPPER_INDIUM_GALLIUM_SELENIDE"
+    AMORPHOUS_SILICON = "AMORPHOUS_SILICON"
+    GALLIUM_ARSENIDE = "GALLIUM_ARSENIDE"
+    PEROVSKITE = "PEROVSKITE"
+    ORGANIC = "ORGANIC"
+    TANDEM = "TANDEM"
+
+# Set metadata after class creation
+PVCellType._metadata = {
+    "MONOCRYSTALLINE_SILICON": {'description': 'Monocrystalline silicon (mono-Si) cells', 'annotations': {'material': 'silicon', 'efficiency_range': '17-22%'}, 'aliases': ['mono-Si', 'single-crystal silicon']},
+    "POLYCRYSTALLINE_SILICON": {'description': 'Polycrystalline silicon (poly-Si) cells', 'annotations': {'material': 'silicon', 'efficiency_range': '15-17%'}, 'aliases': ['poly-Si', 'multi-crystalline silicon']},
+    "PASSIVATED_EMITTER_REAR_CELL": {'description': 'Passivated Emitter and Rear Cell (PERC)', 'annotations': {'material': 'silicon', 'efficiency_range': '19-22%'}, 'aliases': ['PERC']},
+    "HETEROJUNCTION": {'description': 'Heterojunction (HJT) cells', 'annotations': {'material': 'silicon', 'efficiency_range': '21-24%'}, 'aliases': ['HJT', 'HIT']},
+    "TUNNEL_OXIDE_PASSIVATED_CONTACT": {'description': 'Tunnel Oxide Passivated Contact (TOPCon) cells', 'annotations': {'material': 'silicon', 'efficiency_range': '22-24%'}, 'aliases': ['TOPCon']},
+    "INTERDIGITATED_BACK_CONTACT": {'description': 'Interdigitated Back Contact (IBC) cells', 'annotations': {'material': 'silicon', 'efficiency_range': '22-24%'}, 'aliases': ['IBC']},
+    "CADMIUM_TELLURIDE": {'description': 'Cadmium telluride (CdTe) thin-film cells', 'annotations': {'material': 'cadmium_telluride', 'type': 'thin-film', 'efficiency_range': '16-18%'}, 'aliases': ['CdTe']},
+    "COPPER_INDIUM_GALLIUM_SELENIDE": {'description': 'Copper indium gallium selenide (CIGS) thin-film cells', 'annotations': {'material': 'CIGS', 'type': 'thin-film', 'efficiency_range': '15-20%'}, 'aliases': ['CIGS', 'CIS']},
+    "AMORPHOUS_SILICON": {'description': 'Amorphous silicon (a-Si) thin-film cells', 'annotations': {'material': 'silicon', 'type': 'thin-film', 'efficiency_range': '6-8%'}, 'aliases': ['a-Si']},
+    "GALLIUM_ARSENIDE": {'description': 'Gallium arsenide (GaAs) cells', 'annotations': {'material': 'gallium_arsenide', 'efficiency_range': '25-30%', 'application': 'space, concentrator'}, 'aliases': ['GaAs']},
+    "PEROVSKITE": {'description': 'Perovskite solar cells', 'annotations': {'material': 'perovskite', 'efficiency_range': '20-25%', 'status': 'emerging'}},
+    "ORGANIC": {'description': 'Organic photovoltaic (OPV) cells', 'annotations': {'material': 'organic', 'type': 'thin-film', 'efficiency_range': '10-15%', 'status': 'emerging'}, 'aliases': ['OPV']},
+    "TANDEM": {'description': 'Tandem/multi-junction cells', 'annotations': {'efficiency_range': '25-35%'}, 'aliases': ['multi-junction']},
+}
+
+class PVSystemType(RichEnum):
+    """
+    Types of photovoltaic system installations
+    """
+    # Enum members
+    ROOFTOP_RESIDENTIAL = "ROOFTOP_RESIDENTIAL"
+    ROOFTOP_COMMERCIAL = "ROOFTOP_COMMERCIAL"
+    GROUND_MOUNTED = "GROUND_MOUNTED"
+    FLOATING = "FLOATING"
+    BUILDING_INTEGRATED = "BUILDING_INTEGRATED"
+    AGRIVOLTAICS = "AGRIVOLTAICS"
+    CARPORT = "CARPORT"
+    TRACKER_SINGLE_AXIS = "TRACKER_SINGLE_AXIS"
+    TRACKER_DUAL_AXIS = "TRACKER_DUAL_AXIS"
+    CONCENTRATING = "CONCENTRATING"
+
+# Set metadata after class creation
+PVSystemType._metadata = {
+    "ROOFTOP_RESIDENTIAL": {'description': 'Residential rooftop PV system', 'annotations': {'scale': 'residential', 'mounting': 'rooftop'}},
+    "ROOFTOP_COMMERCIAL": {'description': 'Commercial/industrial rooftop PV system', 'annotations': {'scale': 'commercial', 'mounting': 'rooftop'}},
+    "GROUND_MOUNTED": {'description': 'Ground-mounted utility-scale PV system', 'annotations': {'scale': 'utility', 'mounting': 'ground'}},
+    "FLOATING": {'description': 'Floating PV system (floatovoltaics)', 'annotations': {'scale': 'utility', 'mounting': 'floating'}, 'aliases': ['floatovoltaics', 'FPV']},
+    "BUILDING_INTEGRATED": {'description': 'Building-integrated PV (BIPV)', 'annotations': {'mounting': 'integrated'}, 'aliases': ['BIPV']},
+    "AGRIVOLTAICS": {'description': 'Agrivoltaic system (dual-use with agriculture)', 'annotations': {'scale': 'utility', 'dual_use': 'agriculture'}, 'aliases': ['agrophotovoltaics', 'APV']},
+    "CARPORT": {'description': 'Solar carport/parking canopy', 'annotations': {'mounting': 'canopy', 'dual_use': 'parking'}},
+    "TRACKER_SINGLE_AXIS": {'description': 'Single-axis tracking system', 'annotations': {'tracking': 'single_axis'}},
+    "TRACKER_DUAL_AXIS": {'description': 'Dual-axis tracking system', 'annotations': {'tracking': 'dual_axis'}},
+    "CONCENTRATING": {'description': 'Concentrating PV (CPV) system', 'annotations': {'type': 'concentrating'}, 'aliases': ['CPV']},
+}
+
+class EnergyStorageType(RichEnum):
+    """
+    Types of energy storage systems (categories)
+    """
+    # Enum members
+    BATTERY = "BATTERY"
     PUMPED_HYDRO = "PUMPED_HYDRO"
     COMPRESSED_AIR = "COMPRESSED_AIR"
     FLYWHEEL = "FLYWHEEL"
@@ -239,20 +334,16 @@ class EnergyStorageType(RichEnum):
 
 # Set metadata after class creation
 EnergyStorageType._metadata = {
-    "LITHIUM_ION_BATTERY": {'description': 'Lithium-ion battery', 'annotations': {'category': 'electrochemical'}},
-    "LEAD_ACID_BATTERY": {'description': 'Lead-acid battery', 'annotations': {'category': 'electrochemical'}},
-    "FLOW_BATTERY": {'description': 'Flow battery (e.g., vanadium redox)', 'annotations': {'category': 'electrochemical'}},
-    "SOLID_STATE_BATTERY": {'description': 'Solid-state battery', 'annotations': {'category': 'electrochemical'}},
-    "SODIUM_ION_BATTERY": {'description': 'Sodium-ion battery', 'annotations': {'category': 'electrochemical'}},
-    "PUMPED_HYDRO": {'description': 'Pumped hydroelectric storage', 'annotations': {'category': 'mechanical'}},
-    "COMPRESSED_AIR": {'description': 'Compressed air energy storage (CAES)', 'annotations': {'category': 'mechanical'}},
+    "BATTERY": {'description': 'Battery storage (see BatteryType for specific chemistries)', 'annotations': {'category': 'electrochemical'}},
+    "PUMPED_HYDRO": {'description': 'Pumped hydroelectric storage', 'annotations': {'category': 'mechanical', 'oeo_label': 'pumped hydro storage power plant'}},
+    "COMPRESSED_AIR": {'description': 'Compressed air energy storage (CAES)', 'annotations': {'category': 'mechanical', 'oeo_label': 'compressed air'}},
     "FLYWHEEL": {'description': 'Flywheel energy storage', 'annotations': {'category': 'mechanical'}},
     "GRAVITY_STORAGE": {'description': 'Gravity-based storage', 'annotations': {'category': 'mechanical'}},
     "MOLTEN_SALT": {'description': 'Molten salt thermal storage', 'annotations': {'category': 'thermal'}},
     "ICE_STORAGE": {'description': 'Ice thermal storage', 'annotations': {'category': 'thermal'}},
     "PHASE_CHANGE": {'description': 'Phase change materials', 'annotations': {'category': 'thermal'}},
-    "HYDROGEN_STORAGE": {'description': 'Hydrogen storage', 'annotations': {'category': 'chemical'}},
-    "SYNTHETIC_FUEL": {'description': 'Synthetic fuel storage', 'annotations': {'category': 'chemical'}},
+    "HYDROGEN_STORAGE": {'description': 'Hydrogen storage', 'annotations': {'category': 'chemical', 'oeo_label': 'hydrogen'}},
+    "SYNTHETIC_FUEL": {'description': 'Synthetic fuel storage', 'annotations': {'category': 'chemical', 'oeo_label': 'synthetic fuel'}},
     "SUPERCAPACITOR": {'description': 'Supercapacitor', 'annotations': {'category': 'electrical'}},
     "SUPERCONDUCTING": {'description': 'Superconducting magnetic energy storage (SMES)', 'annotations': {'category': 'electrical'}},
 }
@@ -270,11 +361,11 @@ class EmissionScope(RichEnum):
 
 # Set metadata after class creation
 EmissionScope._metadata = {
-    "SCOPE_1": {'description': 'Direct emissions from owned or controlled sources', 'annotations': {'ghg_protocol': 'Scope 1'}},
-    "SCOPE_2": {'description': 'Indirect emissions from purchased energy', 'annotations': {'ghg_protocol': 'Scope 2'}},
-    "SCOPE_3": {'description': 'All other indirect emissions in value chain', 'annotations': {'ghg_protocol': 'Scope 3'}},
-    "SCOPE_3_UPSTREAM": {'description': 'Upstream Scope 3 emissions', 'annotations': {'ghg_protocol': 'Scope 3'}},
-    "SCOPE_3_DOWNSTREAM": {'description': 'Downstream Scope 3 emissions', 'annotations': {'ghg_protocol': 'Scope 3'}},
+    "SCOPE_1": {'description': 'Direct emissions from owned or controlled sources', 'annotations': {'ghg_protocol': 'Scope 1', 'oeo_label': 'greenhouse gas emission'}},
+    "SCOPE_2": {'description': 'Indirect emissions from purchased energy', 'annotations': {'ghg_protocol': 'Scope 2', 'oeo_label': 'greenhouse gas emission'}},
+    "SCOPE_3": {'description': 'All other indirect emissions in value chain', 'annotations': {'ghg_protocol': 'Scope 3', 'oeo_label': 'greenhouse gas emission'}},
+    "SCOPE_3_UPSTREAM": {'description': 'Upstream Scope 3 emissions', 'annotations': {'ghg_protocol': 'Scope 3', 'oeo_label': 'greenhouse gas emission'}},
+    "SCOPE_3_DOWNSTREAM": {'description': 'Downstream Scope 3 emissions', 'annotations': {'ghg_protocol': 'Scope 3', 'oeo_label': 'greenhouse gas emission'}},
 }
 
 class CarbonIntensity(RichEnum):
@@ -329,6 +420,26 @@ ElectricityMarket._metadata = {
     "POWER_PURCHASE_AGREEMENT": {'description': 'Power purchase agreement (PPA)'},
 }
 
+class CapabilityStatus(RichEnum):
+    """
+    Operational status of a capability, facility, or infrastructure. Applicable to energy facilities, research capabilities, and other infrastructure throughout their lifecycle.
+    """
+    # Enum members
+    OPERATIONAL = "OPERATIONAL"
+    COMING_ONLINE = "COMING_ONLINE"
+    PILOT = "PILOT"
+    UNDER_DEVELOPMENT = "UNDER_DEVELOPMENT"
+    DECOMMISSIONED = "DECOMMISSIONED"
+
+# Set metadata after class creation
+CapabilityStatus._metadata = {
+    "OPERATIONAL": {'description': 'Fully operational and available to users', 'annotations': {'wikidata_label': 'in use', 'lifecycle_phase': 'operation'}},
+    "COMING_ONLINE": {'description': 'Being commissioned, coming online soon', 'annotations': {'wikidata_label': 'building process', 'lifecycle_phase': 'commissioning', 'iaea_equivalent': 'commissioning'}},
+    "PILOT": {'description': 'In pilot phase with limited access', 'annotations': {'availability': 'limited', 'lifecycle_phase': 'testing'}},
+    "UNDER_DEVELOPMENT": {'description': 'Under development, not yet available', 'annotations': {'wikidata_label': 'proposed building or structure', 'lifecycle_phase': 'planning/construction'}},
+    "DECOMMISSIONED": {'description': 'No longer available, permanently shut down', 'annotations': {'lifecycle_phase': 'end-of-life', 'iaea_equivalent': 'decommissioned'}},
+}
+
 __all__ = [
     "EnergySource",
     "EnergyUnit",
@@ -336,8 +447,12 @@ __all__ = [
     "EnergyEfficiencyRating",
     "BuildingEnergyStandard",
     "GridType",
+    "BatteryType",
+    "PVCellType",
+    "PVSystemType",
     "EnergyStorageType",
     "EmissionScope",
     "CarbonIntensity",
     "ElectricityMarket",
+    "CapabilityStatus",
 ]

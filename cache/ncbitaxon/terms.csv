@@ -217,3 +217,131 @@ NCBITaxon:920,Acidithiobacillus ferrooxidans,2025-10-19T07:20:50.733817
 NCBITaxon:2705,,2025-10-19T07:20:50.734601
 NCBITaxon:5061,Aspergillus niger,2025-10-19T07:20:50.735200
 NCBITaxon:180,Leptospirillum ferrooxidans,2025-10-19T07:42:42.936346
+NCBITaxon:575584,Acinetobacter baumannii ATCC 19606 = CIP 70.34 = JCM 6841,2025-11-25T07:58:49.063394
+NCBITaxon:28377,Anolis carolinensis,2025-11-25T07:58:49.064465
+NCBITaxon:7165,Anopheles gambiae,2025-11-25T07:58:49.065376
+NCBITaxon:224324,Aquifex aeolicus VF5,2025-11-25T07:58:49.066183
+NCBITaxon:330879,Aspergillus fumigatus Af293,2025-11-25T07:58:49.067073
+NCBITaxon:1392,Bacillus anthracis,2025-11-25T07:58:49.067983
+NCBITaxon:226900,Bacillus cereus ATCC 14579,2025-11-25T07:58:49.068706
+NCBITaxon:226186,Bacteroides thetaiotaomicron VPI-5482,2025-11-25T07:58:49.069375
+NCBITaxon:684364,Batrachochytrium dendrobatidis JAM81,2025-11-25T07:58:49.070006
+NCBITaxon:3711,Brassica rapa,2025-11-25T07:58:49.070706
+NCBITaxon:15368,Brachypodium distachyon,2025-11-25T07:58:49.071449
+NCBITaxon:224911,Bradyrhizobium diazoefficiens USDA 110,2025-11-25T07:58:49.072116
+NCBITaxon:7739,Branchiostoma floridae,2025-11-25T07:58:49.072843
+NCBITaxon:6238,Caenorhabditis briggsae,2025-11-25T07:58:49.073496
+NCBITaxon:192222,Campylobacter jejuni subsp. jejuni NCTC 11168 = ATCC 700819,2025-11-25T07:58:49.074143
+NCBITaxon:237561,Candida albicans SC5314,2025-11-25T07:58:49.074796
+NCBITaxon:1136231,Candida orthopsilosis Co 90-125,2025-11-25T07:58:49.075428
+NCBITaxon:573826,Candida dubliniensis CD36,2025-11-25T07:58:49.076012
+NCBITaxon:284593,Nakaseomyces glabratus CBS 138,2025-11-25T07:58:49.076722
+NCBITaxon:578454,Candida parapsilosis CDC317,2025-11-25T07:58:49.077472
+NCBITaxon:294747,Candida tropicalis MYA-3404,2025-11-25T07:58:49.078175
+NCBITaxon:324602,Chloroflexus aurantiacus J-10-fl,2025-11-25T07:58:49.078858
+NCBITaxon:272561,Chlamydia trachomatis D/UW-3/CX,2025-11-25T07:58:49.079602
+NCBITaxon:7719,Ciona intestinalis,2025-11-25T07:58:49.080086
+NCBITaxon:290338,Citrobacter koseri ATCC BAA-895,2025-11-25T07:58:49.080657
+NCBITaxon:306902,Clavispora lusitaniae ATCC 42720,2025-11-25T07:58:49.081298
+NCBITaxon:441771,Clostridium botulinum A str. Hall,2025-11-25T07:58:49.081986
+NCBITaxon:227377,Coxiella burnetii RSA 493,2025-11-25T07:58:49.082551
+NCBITaxon:214684,Cryptococcus deneoformans JEC21,2025-11-25T07:58:49.083203
+NCBITaxon:6669,Daphnia pulex,2025-11-25T07:58:49.083997
+NCBITaxon:284592,Debaryomyces hansenii CBS767,2025-11-25T07:58:49.084428
+NCBITaxon:243230,Deinococcus radiodurans R1 = ATCC 13939 = DSM 20539,2025-11-25T07:58:49.085143
+NCBITaxon:5786,Dictyostelium purpureum,2025-11-25T07:58:49.085676
+NCBITaxon:515635,Dictyoglomus turgidum DSM 6724,2025-11-25T07:58:49.086429
+NCBITaxon:83334,Escherichia coli O157:H7,2025-11-25T07:58:49.087039
+NCBITaxon:227321,Aspergillus nidulans FGSC A4,2025-11-25T07:58:49.087501
+NCBITaxon:565655,Enterococcus casseliflavus EC20,2025-11-25T07:58:49.088032
+NCBITaxon:226185,Enterococcus faecalis V583,2025-11-25T07:58:49.088340
+NCBITaxon:1353,Enterococcus gallinarum,2025-11-25T07:58:49.088879
+NCBITaxon:294381,Entamoeba histolytica HM-1:IMSS,2025-11-25T07:58:49.089530
+NCBITaxon:284811,Eremothecium gossypii ATCC 10895,2025-11-25T07:58:49.090373
+NCBITaxon:12118,Foot-and-mouth disease virus O,2025-11-25T07:58:49.091008
+NCBITaxon:190304,Fusobacterium nucleatum subsp. nucleatum ATCC 25586,2025-11-25T07:58:49.091581
+NCBITaxon:243231,Geobacter sulfurreducens PCA,2025-11-25T07:58:49.091903
+NCBITaxon:184922,Giardia lamblia ATCC 50803,2025-11-25T07:58:49.092617
+NCBITaxon:251221,Gloeobacter violaceus PCC 7421,2025-11-25T07:58:49.093423
+NCBITaxon:3635,Gossypium hirsutum,2025-11-25T07:58:49.094083
+NCBITaxon:71421,Haemophilus influenzae Rd KW20,2025-11-25T07:58:49.094743
+NCBITaxon:272558,Halalkalibacterium halodurans C-125,2025-11-25T07:58:49.095143
+NCBITaxon:64091,Halobacterium salinarum NRC-1,2025-11-25T07:58:49.095738
+NCBITaxon:928302,Hepatitis B virus C/ayr human/Japan/Okamoto,2025-11-25T07:58:49.096397
+NCBITaxon:10360,Human herpesvirus 5 strain AD169,2025-11-25T07:58:49.097196
+NCBITaxon:295027,Human herpesvirus 5 strain Merlin,2025-11-25T07:58:49.097940
+NCBITaxon:63746,Hepatitis C virus (isolate H77),2025-11-25T07:58:49.098677
+NCBITaxon:4232,Helianthus annuus,2025-11-25T07:58:49.099381
+NCBITaxon:6412,Helobdella robusta,2025-11-25T07:58:49.100109
+NCBITaxon:10299,Human alphaherpesvirus 1 strain 17,2025-11-25T07:58:49.100771
+NCBITaxon:112509,Hordeum vulgare subsp. vulgare,2025-11-25T07:58:49.101549
+NCBITaxon:333760,Human papillomavirus 16,2025-11-25T07:58:49.102228
+NCBITaxon:327105,HIV-1 O_ANT70,2025-11-25T07:58:49.102836
+NCBITaxon:6945,Ixodes scapularis,2025-11-25T07:58:49.103438
+NCBITaxon:51240,Juglans regia,2025-11-25T07:58:49.103912
+NCBITaxon:105231,Klebsormidium nitens,2025-11-25T07:58:49.104542
+NCBITaxon:1125630,Klebsiella pneumoniae subsp. pneumoniae HS11286,2025-11-25T07:58:49.105222
+NCBITaxon:574,Klebsiella pneumoniae subsp. ozaenae,2025-11-25T07:58:49.105835
+NCBITaxon:374847,Candidatus Korarchaeum cryptofilum OPF8,2025-11-25T07:58:49.106446
+NCBITaxon:4236,Lactuca sativa,2025-11-25T07:58:49.107041
+NCBITaxon:189518,Leptospira interrogans serovar Lai str. 56601,2025-11-25T07:58:49.107789
+NCBITaxon:7918,Lepisosteus oculatus,2025-11-25T07:58:49.108404
+NCBITaxon:169963,Listeria monocytogenes EGD-e,2025-11-25T07:58:49.109095
+NCBITaxon:379508,Lodderomyces elongisporus NRRL YB-4239,2025-11-25T07:58:49.109736
+NCBITaxon:3983,Manihot esculenta,2025-11-25T07:58:49.110502
+NCBITaxon:3197,Marchantia polymorpha,2025-11-25T07:58:49.111039
+NCBITaxon:645098,Measles virus strain Ichinose-B95a,2025-11-25T07:58:49.111673
+NCBITaxon:188937,Methanosarcina acetivorans C2A,2025-11-25T07:58:49.112292
+NCBITaxon:243232,Methanocaldococcus jannaschii DSM 2661,2025-11-25T07:58:49.112647
+NCBITaxon:81824,Monosiga brevicollis,2025-11-25T07:58:49.113261
+NCBITaxon:13616,Monodelphis domestica,2025-11-25T07:58:49.114005
+NCBITaxon:243273,Mycoplasmoides genitalium G37,2025-11-25T07:58:49.114881
+NCBITaxon:5270,Mycosarcoma maydis,2025-11-25T07:58:49.115646
+NCBITaxon:272634,Mycoplasmoides pneumoniae M129,2025-11-25T07:58:49.116197
+NCBITaxon:419947,Mycobacterium tuberculosis H37Ra,2025-11-25T07:58:49.116818
+NCBITaxon:4432,Nelumbo nucifera,2025-11-25T07:58:49.117816
+NCBITaxon:45351,Nematostella vectensis,2025-11-25T07:58:49.118616
+NCBITaxon:367110,Neurospora crassa OR74A,2025-11-25T07:58:49.119311
+NCBITaxon:436308,Nitrosopumilus maritimus SCM1,2025-11-25T07:58:49.119945
+NCBITaxon:9258,Ornithorhynchus anatinus,2025-11-25T07:58:49.120565
+NCBITaxon:321614,Parastagonospora nodorum SN15,2025-11-25T07:58:49.121253
+NCBITaxon:3218,Physcomitrium patens,2025-11-25T07:58:49.121792
+NCBITaxon:164328,Phytophthora ramorum,2025-11-25T07:58:49.122596
+NCBITaxon:294746,Meyerozyma guilliermondii ATCC 6260,2025-11-25T07:58:49.123078
+NCBITaxon:3694,Populus trichocarpa,2025-11-25T07:58:49.123867
+NCBITaxon:54126,Pristionchus pacificus,2025-11-25T07:58:49.124618
+NCBITaxon:3760,Prunus persica,2025-11-25T07:58:49.125221
+NCBITaxon:418459,Puccinia graminis f. sp. tritici CRL 75-36-700-3,2025-11-25T07:58:49.125841
+NCBITaxon:178306,Pyrobaculum aerophilum str. IM2,2025-11-25T07:58:49.126579
+NCBITaxon:243090,Rhodopirellula baltica SH 1,2025-11-25T07:58:49.127229
+NCBITaxon:273057,Saccharolobus solfataricus P2,2025-11-25T07:58:49.127891
+NCBITaxon:99287,Salmonella enterica subsp. enterica serovar Typhimurium str. LT2,2025-11-25T07:58:49.128644
+NCBITaxon:402676,Schizosaccharomyces japonicus yFS275,2025-11-25T07:58:49.129321
+NCBITaxon:665079,Sclerotinia sclerotiorum 1980 UF-70,2025-11-25T07:58:49.130029
+NCBITaxon:211586,Shewanella oneidensis MR-1,2025-11-25T07:58:49.130811
+NCBITaxon:623,Shigella flexneri,2025-11-25T07:58:49.131448
+NCBITaxon:4558,Sorghum bicolor,2025-11-25T07:58:49.132057
+NCBITaxon:3562,Spinacia oleracea,2025-11-25T07:58:49.132717
+NCBITaxon:1901,Streptomyces clavuligerus,2025-11-25T07:58:49.133461
+NCBITaxon:100226,Streptomyces coelicolor A3(2),2025-11-25T07:58:49.134176
+NCBITaxon:301447,Streptococcus pyogenes serotype M1,2025-11-25T07:58:49.135049
+NCBITaxon:373153,Streptococcus pneumoniae D39,2025-11-25T07:58:49.135791
+NCBITaxon:7668,Strongylocentrotus purpuratus,2025-11-25T07:58:49.136320
+NCBITaxon:1111708,Synechocystis sp. PCC 6803 substr. Kazusa,2025-11-25T07:58:49.136967
+NCBITaxon:35128,Thalassiosira pseudonana,2025-11-25T07:58:49.137483
+NCBITaxon:3641,Theobroma cacao,2025-11-25T07:58:49.137980
+NCBITaxon:69014,Thermococcus kodakarensis KOD1,2025-11-25T07:58:49.138585
+NCBITaxon:243274,Thermotoga maritima MSB8,2025-11-25T07:58:49.138986
+NCBITaxon:289376,Thermodesulfovibrio yellowstonii DSM 11347,2025-11-25T07:58:49.139613
+NCBITaxon:10228,Trichoplax adhaerens,2025-11-25T07:58:49.140130
+NCBITaxon:7070,Tribolium castaneum,2025-11-25T07:58:49.140719
+NCBITaxon:412133,Trichomonas vaginalis G3,2025-11-25T07:58:49.141336
+NCBITaxon:10254,Vaccinia virus WR,2025-11-25T07:58:49.141954
+NCBITaxon:587200,Variola virus human/India/Ind3/1967,2025-11-25T07:58:49.142570
+NCBITaxon:243277,Vibrio cholerae O1 biovar El Tor str. N16961,2025-11-25T07:58:49.142992
+NCBITaxon:29760,Vitis vinifera,2025-11-25T07:58:49.143594
+NCBITaxon:10338,Human herpesvirus 3 strain Dumas,2025-11-25T07:58:49.144182
+NCBITaxon:190485,Xanthomonas campestris pv. campestris str. ATCC 33913,2025-11-25T07:58:49.144783
+NCBITaxon:284591,Yarrowia lipolytica CLIB122,2025-11-25T07:58:49.145309
+NCBITaxon:632,Yersinia pestis,2025-11-25T07:58:49.145944
+NCBITaxon:64320,Zika virus,2025-11-25T07:58:49.146541

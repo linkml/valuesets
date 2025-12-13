@@ -1,0 +1,88 @@
+name: valuesets-earth-science-sample-types
+title: Earth Science Sample Types
+description: Sample object types for earth samples, based on SESAR (System for Earth Sample Registration) vocabulary
+id: https://w3id.org/valuesets/earth_science/sample_types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  ENVO: http://purl.obolibrary.org/obo/ENVO_
+  OBI: http://purl.obolibrary.org/obo/OBI_
+  valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+default_prefix: valuesets
+
+slots:
+  sesar_sample_type:
+    description: SESAR sample object type classification
+    range: SESARSampleType
+
+enums:
+  SESARSampleType:
+    title: SESAR Sample Type
+    description: >-
+      Sample object types as defined by SESAR (System for Earth Sample Registration).
+      These describe the physical form and collection context of samples.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    see_also:
+    - https://www.geosamples.org/vocabularies/sample-type-object
+    permissible_values:
+      CORE:
+        description: Long cylindrical cores
+        annotations:
+          sesar_definition: long cylindrical cores
+      CORE_CATCHER:
+        description: Material from core catcher treated as separate section
+      CORE_HALF_ROUND:
+        description: Half-cylindrical products of along-axis split of a whole round
+      CORE_PIECE:
+        description: Material occurring between unambiguous breaks in recovery
+      CORE_QUARTER_ROUND:
+        description: Quarter-cylindrical products of along-axis split of a half round
+      CORE_SECTION:
+        description: Arbitrarily cut segments of a core
+      CORE_SECTION_HALF:
+        description: Half-cylindrical products from section splits
+      CORE_SLAB:
+        description: Rectangular prism of material taken from a core with one dimension shorter
+      CORE_SUB_PIECE:
+        description: Mated portion of larger piece for curatorial management
+      CORE_U_CHANNEL:
+        description: Long rectangular prism of material for continuous measurement
+      CORE_WHOLE_ROUND:
+        description: Cylindrical segments of core or core section material
+      CTD:
+        description: A CTD (Conductivity, Temperature, and Depth) cast sample
+        annotations:
+          full_name: Conductivity Temperature Depth
+      CUTTINGS:
+        description: Loose, coarse, unconsolidated material suspended in drilling fluid
+      DREDGE:
+        description: A group of rocks collected by dragging a dredge along the seafloor
+      EXPERIMENTAL_SPECIMEN:
+        description: A synthetic material used during an experiment
+      GRAB:
+        description: Mechanically collected sample not necessarily representative
+      HOLE:
+        description: Hole cavity and walls surrounding that cavity
+      INDIVIDUAL_SAMPLE:
+        description: Single unit including rock samples or biological specimens
+      ORIENTED_CORE:
+        description: Core positioned identically to subsurface arrangement
+      OTHER:
+        description: Sample not fitting existing designations
+      ROCK_POWDER:
+        description: A sample created from pulverizing a rock to powder
+      SITE:
+        description: A place where a sample is collected
+      TERRESTRIAL_SECTION:
+        description: A sample of a section of the near-surface Earth, generally in the critical zone
+
+license: MIT
+see_also:
+- https://linkml.github.io/valuesets
+- https://www.geosamples.org/vocabularies/sample-type-object

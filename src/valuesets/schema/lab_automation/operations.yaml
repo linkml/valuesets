@@ -1,0 +1,121 @@
+name: lab_automation_operations
+id: https://w3id.org/linkml/valuesets/lab_automation/operations
+prefixes:
+  EFO: http://www.ebi.ac.uk/efo/EFO_
+  MMO: http://purl.obolibrary.org/obo/MMO_
+  OBI: http://purl.obolibrary.org/obo/OBI_
+  valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+default_prefix: valuesets
+slots:
+  liquid_handling_operation:
+    description: Type of liquid handling operation in automated laboratory workflows
+    range: LiquidHandlingOperationEnum
+  sample_processing_operation:
+    description: Type of sample processing operation
+    range: SampleProcessingOperationEnum
+enums:
+  LiquidHandlingOperationEnum:
+    title: Liquid Handling Operation
+    description: Operations for automated liquid handling in laboratory automation
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      PICK_UP_TIPS:
+        description: Operation to pick up pipette tips from a tip rack
+        title: pick up tips
+      ASPIRATE:
+        description: Operation to draw liquid into pipette tips
+        title: aspirate
+      DISPENSE:
+        description: Operation to dispense liquid from pipette tips
+        title: dispense
+      RETURN_TIPS:
+        description: Operation to return pipette tips to a tip rack
+        title: return tips
+      DROP_TIPS:
+        description: Operation to drop or discard pipette tips
+        title: drop tips
+      TRANSFER:
+        description: Combined operation to aspirate from source and dispense to destination
+        title: transfer
+      PIPETTING:
+        description: A procedure or technique by which the size of the three dimensional space occupied by a liquid 
+          substance is ascertained using a pipette
+        meaning: MMO:0000392
+        title: pipette method
+      MIXING:
+        description: Operation to mix liquids by repeated aspiration and dispensing
+        title: mixing
+      ALIQUOTING:
+        description: Operation to distribute a sample into multiple equal portions
+        title: aliquoting
+      SERIAL_DILUTION:
+        description: Operation to create a series of dilutions of a substance in solution
+        title: serial dilution
+      PLATE_STAMPING:
+        description: Operation to transfer samples from one plate to another in the same well pattern
+        title: plate stamping
+      ACOUSTIC_TRANSFER:
+        description: Acoustic liquid handling that uses acoustics to fly individual droplets from a source container to 
+          a destination
+        title: acoustic transfer
+      MOUTH_PIPETTING:
+        description: A method of using the researcher's mouth to apply small negative pressure to aspirate a volume into
+          a pipette
+        meaning: EFO:0010182
+        title: mouth pipetting
+  SampleProcessingOperationEnum:
+    title: Sample Processing Operation
+    description: General sample processing operations in automated laboratories
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      CENTRIFUGATION:
+        description: Operation to separate components of a sample using centrifugal force
+        title: centrifugation
+      INCUBATION:
+        description: Operation to maintain samples at controlled environmental conditions over time
+        title: incubation
+      THERMAL_CYCLING:
+        description: Operation to cycle samples through different temperatures for PCR or similar processes
+        title: thermal cycling
+      WASHING:
+        description: Operation to wash samples or plates to remove unwanted material
+        title: washing
+      DETECTION:
+        description: Operation to detect signals from samples (absorbance, fluorescence, luminescence)
+        title: detection
+      MEASUREMENT:
+        description: Operation to measure a property or characteristic of a sample
+        title: measurement
+      SEPARATION:
+        description: Operation to separate components of a sample mixture
+        title: separation
+      EXTRACTION:
+        description: Operation to extract specific components from a sample
+        title: extraction
+      HEATING:
+        description: Operation to heat samples to a specified temperature
+        title: heating
+      COOLING:
+        description: Operation to cool samples to a specified temperature
+        title: cooling
+      SHAKING:
+        description: Operation to shake samples for mixing or agitation
+        title: shaking
+      PLATE_MOVEMENT:
+        description: Operation to move plates between different locations or devices
+        title: plate movement
+      BARCODE_READING:
+        description: Operation to read barcode labels on samples or containers
+        title: barcode reading

@@ -7,13 +7,15 @@ imports:
 prefixes:
   CVS: https://w3id.org/common-value-sets/
   linkml: https://w3id.org/linkml/
-  mixs: https://genomicsstandardsconsortium.github.io/mixs/
+  mixs: http://purl.obolibrary.org/obo/MIXS_
   valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   cds_phase:
-    description: For features of type CDS (coding sequence), the phase indicates where the feature begins with reference to
-      the reading frame
+    description: For features of type CDS (coding sequence), the phase indicates where the feature begins with reference
+      to the reading frame
     range: CdsPhaseType
   contig_collection:
     description: The type of the contig set; the type of the 'omics data set
@@ -26,9 +28,16 @@ slots:
     range: SequenceType
 enums:
   CdsPhaseType:
-    description: For features of type CDS (coding sequence), the phase indicates where the feature begins with reference to
-      the reading frame. The phase is one of the integers 0, 1, or 2, indicating the number of bases that should be removed
-      from the beginning of this feature to reach the first base of the next codon.
+    title: Cds Phase Type
+    description: For features of type CDS (coding sequence), the phase indicates where the feature begins with reference
+      to the reading frame. The phase is one of the integers 0, 1, or 2, indicating the number of bases that should be 
+      removed from the beginning of this feature to reach the first base of the next codon.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       PHASE_0:
         description: Zero bases from reading frame to feature start.
@@ -40,44 +49,57 @@ enums:
         description: Two bases from reading frame to feature start.
         title: '2'
   ContigCollectionType:
-    description: The type of the contig set; the type of the 'omics data set. Terms are taken from the Genomics Standards
-      Consortium where possible. See the GSC checklists at https://genomicsstandardsconsortium.github.io/mixs/ for the controlled
-      vocabularies used.
+    title: Contig Collection Type
+    description: The type of the contig set; the type of the 'omics data set. Terms are taken from the Genomics 
+      Standards Consortium where possible. See the GSC checklists at https://genomicsstandardsconsortium.github.io/mixs/
+      for the controlled vocabularies used.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       ISOLATE:
         description: 'Sequences assembled from DNA of isolated organism. Bacteria/Archaea: https://genomicsstandardsconsortium.github.io/mixs/0010003/
           Euk: https://genomicsstandardsconsortium.github.io/mixs/0010002/ Virus: https://genomicsstandardsconsortium.github.io/mixs/0010005/
           Organelle: https://genomicsstandardsconsortium.github.io/mixs/0010006/ Plasmid: https://genomicsstandardsconsortium.github.io/mixs/0010004/'
       MAG:
-        description: Sequences assembled from DNA of mixed community and binned. MAGs are likely to represent a single taxonomic
-          origin. See checkm2 scores for quality assessment.
+        description: Sequences assembled from DNA of mixed community and binned. MAGs are likely to represent a single 
+          taxonomic origin. See checkm2 scores for quality assessment.
         meaning: mixs:0010011
-        title: Metagenome-Assembled Genome
+        title: Mimag
         aliases:
-        - Mimag
+        - Metagenome-Assembled Genome
       METAGENOME:
         description: Sequences assembled from DNA of mixed community.
         meaning: mixs:0010007
-        aliases:
-        - Mims
+        title: Mims
       METATRANSCRIPTOME:
         description: Sequences assembled from RNA of mixed community. Currently not represented by GSC.
       SAG:
         description: Sequences assembled from DNA of single cell.
         meaning: mixs:0010010
-        title: Single Amplified Genome
+        title: Misag
         aliases:
-        - Misag
+        - Single Amplified Genome
       VIRUS:
         description: Sequences assembled from uncultivated virus genome (DNA/RNA).
         meaning: mixs:0010012
-        aliases:
-        - Miuvig
+        title: Miuvig
       MARKER:
         description: 'Sequences from targeted region of DNA; see protocol for information on targeted region. specimen: https://genomicsstandardsconsortium.github.io/mixs/0010009/
           survey: https://genomicsstandardsconsortium.github.io/mixs/0010008/'
   StrandType:
-    description: The strand that a feature appears on relative to a landmark. Also encompasses unknown or irrelevant strandedness.
+    title: Strand Type
+    description: The strand that a feature appears on relative to a landmark. Also encompasses unknown or irrelevant 
+      strandedness.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       NEGATIVE:
         description: Represented by "-" in a GFF file; the strand is negative wrt the landmark.
@@ -92,7 +114,14 @@ enums:
         description: Represented by "." in a GFF file; the feature is not stranded.
         title: unstranded
   SequenceType:
+    title: Sequence Type
     description: The type of sequence being represented.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       NUCLEIC_ACID:
         description: A nucleic acid sequence, as found in an FNA file.

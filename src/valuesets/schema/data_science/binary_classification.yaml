@@ -7,6 +7,8 @@ prefixes:
   PATO: http://purl.obolibrary.org/obo/PATO_
   GSSO: http://purl.obolibrary.org/obo/GSSO_
   valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   binary_classification:
@@ -26,7 +28,14 @@ slots:
     range: FraudDetectionEnum
 enums:
   BinaryClassificationEnum:
+    title: Binary Classification
     description: Generic binary classification labels
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       POSITIVE:
         description: Positive class
@@ -47,7 +56,14 @@ enums:
         - 'no'
         - F
   SpamClassificationEnum:
+    title: Spam Classification
     description: Standard labels for spam/ham email classification
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       SPAM:
         description: Unwanted or unsolicited message
@@ -65,7 +81,14 @@ enums:
         - legitimate
         - '0'
   AnomalyDetectionEnum:
+    title: Anomaly Detection
     description: Labels for anomaly detection tasks
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       NORMAL:
         description: Normal, expected behavior or pattern
@@ -85,7 +108,14 @@ enums:
         - irregular
         - '1'
   ChurnClassificationEnum:
+    title: Churn Classification
     description: Customer churn prediction labels
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       RETAINED:
         description: Customer continues using the service
@@ -105,7 +135,14 @@ enums:
         - attrited
         - '1'
   FraudDetectionEnum:
+    title: Fraud Detection
     description: Fraud detection classification labels
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       LEGITIMATE:
         description: Legitimate, non-fraudulent transaction or activity

@@ -1,16 +1,18 @@
 name: supply_chain
 title: Supply Chain Management and Procurement
-description: 'Supply chain management classifications including procurement types, vendor
-  management, logistics operations, and supply chain strategies. Based on supply chain
-  management best practices, procurement standards, and logistics frameworks.'
+description: 'Supply chain management classifications including procurement types, vendor management, logistics operations,
+  and supply chain strategies. Based on supply chain management best practices, procurement standards, and logistics frameworks.'
 id: https://w3id.org/linkml/valuesets/business/supply_chain
 imports:
 - linkml:types
 prefixes:
+  linkml: https://w3id.org/linkml/
   valuesets: https://w3id.org/valuesets/
   SCOR: https://www.apics.org/apics-for-business/frameworks/scor
   CSCMP: https://cscmp.org/
   ISM: https://www.ismworld.org/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   procurement_type:
@@ -36,7 +38,14 @@ slots:
     range: InventoryManagementApproachEnum
 enums:
   ProcurementTypeEnum:
+    title: Procurement Type
     description: Types of procurement activities and approaches
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       DIRECT_PROCUREMENT:
         title: Direct Procurement
@@ -129,7 +138,14 @@ enums:
           certification: "sustainability certifications"
           stakeholder: "stakeholder value"
   VendorCategoryEnum:
+    title: Vendor Category
     description: Vendor classification categories
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       STRATEGIC_SUPPLIER:
         title: Strategic Supplier
@@ -222,7 +238,14 @@ enums:
           no_relationship: "no ongoing relationship"
           market_based: "market-based pricing"
   SupplyChainStrategyEnum:
+    title: Supply Chain Strategy
     description: Supply chain strategic approaches
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       LEAN_SUPPLY_CHAIN:
         title: Lean Supply Chain
@@ -315,7 +338,14 @@ enums:
           responsiveness: "customer responsiveness"
           satisfaction: "customer satisfaction"
   LogisticsOperationEnum:
+    title: Logistics Operation
     description: Types of logistics operations
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       INBOUND_LOGISTICS:
         title: Inbound Logistics
@@ -408,7 +438,14 @@ enums:
           coordination: "multi-modal coordination"
           compliance: "regulatory compliance"
   SourcingStrategyEnum:
+    title: Sourcing Strategy
     description: Sourcing strategy approaches
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       SINGLE_SOURCING:
         title: Single Sourcing
@@ -501,7 +538,14 @@ enums:
           complexity: "coordination complexity"
           relationships: "multi-party relationships"
   SupplierRelationshipTypeEnum:
+    title: Supplier Relationship Type
     description: Types of supplier relationship management
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       TRANSACTIONAL:
         title: Transactional Relationship
@@ -594,7 +638,14 @@ enums:
           outcomes: "shared outcomes"
           collaboration: "collaborative approach"
   InventoryManagementApproachEnum:
+    title: Inventory Management Approach
     description: Inventory management methodologies
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       JUST_IN_TIME:
         title: Just-in-Time (JIT)

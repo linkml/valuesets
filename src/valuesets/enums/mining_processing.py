@@ -8,10 +8,12 @@ Generated from: mining_processing.yaml
 
 from __future__ import annotations
 
-from typing import Dict, Any, Optional
 from valuesets.generators.rich_enum import RichEnum
 
 class RelativeTimeEnum(RichEnum):
+    """
+    Temporal relationships between events or time points
+    """
     # Enum members
     BEFORE = "BEFORE"
     AFTER = "AFTER"
@@ -19,9 +21,15 @@ class RelativeTimeEnum(RichEnum):
 
 # Set metadata after class creation
 RelativeTimeEnum._metadata = {
+    "BEFORE": {'description': 'Occurs before the reference time point'},
+    "AFTER": {'description': 'Occurs after the reference time point'},
+    "AT_SAME_TIME_AS": {'description': 'Occurs at the same time as the reference time point'},
 }
 
 class PresenceEnum(RichEnum):
+    """
+    Classification of whether an entity is present, absent, or at detection limits
+    """
     # Enum members
     PRESENT = "PRESENT"
     ABSENT = "ABSENT"

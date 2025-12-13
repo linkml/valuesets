@@ -17,6 +17,8 @@ prefixes:
   damlpt: http://www.daml.org/2003/01/periodictable/PeriodicTable#
   pdg: https://pdgapi.lbl.gov/summaries/
   valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   subatomic_particle:
@@ -54,7 +56,14 @@ slots:
     range: NanostructureMorphologyEnum
 enums:
   SubatomicParticleEnum:
+    title: Subatomic Particle
     description: Fundamental and composite subatomic particles
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       ELECTRON:
         description: Elementary particle with -1 charge, spin 1/2
@@ -252,7 +261,14 @@ enums:
           charge: '+1'
           composition: 1 proton, 2 neutrons
   BondTypeEnum:
+    title: Bond Type
     description: Types of chemical bonds
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       SINGLE:
         description: Single covalent bond
@@ -319,7 +335,14 @@ enums:
         annotations:
           orbital_overlap: head-to-head
   PeriodicTableBlockEnum:
+    title: Periodic Table Block
     description: Blocks of the periodic table
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       S_BLOCK:
         title: s-block molecular entity
@@ -350,7 +373,14 @@ enums:
           valence_orbital: f
           series: lanthanides, actinides
   ElementFamilyEnum:
+    title: Element Family
     description: Chemical element families/groups
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       ALKALI_METALS:
         title: alkali metal atom
@@ -422,7 +452,14 @@ enums:
         annotations:
           elements: H, C, N, O, F, P, S, Cl, Se, Br, I
   ElementMetallicClassificationEnum:
+    title: Element Metallic Classification
     description: Metallic character classification
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       METALLIC:
         description: Metallic elements
@@ -440,7 +477,14 @@ enums:
         annotations:
           properties: intermediate properties
   HardOrSoftEnum:
+    title: Hard Or Soft
     description: HSAB (Hard Soft Acid Base) classification
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       HARD:
         description: Hard acids/bases (small, high charge density)
@@ -458,7 +502,14 @@ enums:
           examples: Fe2+, Co2+, Ni2+, Cu2+, Zn2+
           polarizability: intermediate
   BronstedAcidBaseRoleEnum:
+    title: Bronsted Acid Base Role
     description: Brønsted-Lowry acid-base roles
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       ACID:
         title: Bronsted acid
@@ -478,7 +529,14 @@ enums:
           definition: species that can donate or accept H+
           examples: H2O, HSO4-, H2PO4-
   LewisAcidBaseRoleEnum:
+    title: Lewis Acid Base Role
     description: Lewis acid-base roles
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       LEWIS_ACID:
         description: Electron pair acceptor
@@ -491,7 +549,14 @@ enums:
           definition: species that donates electron pair
           examples: NH3, OH-, H2O
   OxidationStateEnum:
+    title: Oxidation State
     description: Common oxidation states
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       MINUS_4:
         description: Oxidation state -4
@@ -559,7 +624,14 @@ enums:
           value: '+8'
           example: Os in OsO4
   ChiralityEnum:
+    title: Chirality
     description: Chirality/stereochemistry descriptors
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       R:
         description: Rectus (right) configuration
@@ -596,7 +668,14 @@ enums:
         annotations:
           geometric_isomer: 'true'
   NanostructureMorphologyEnum:
+    title: Nanostructure Morphology
     description: Types of nanostructure morphologies
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       NANOTUBE:
         description: Cylindrical nanostructure

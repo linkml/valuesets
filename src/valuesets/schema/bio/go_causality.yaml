@@ -1,6 +1,7 @@
 name: go_causality
 title: Gene Ontology Causality Value Sets
-description: Value sets for GO causal relationships and predicates used in gene ontology annotations and pathway analysis
+description: Value sets for GO causal relationships and predicates used in gene ontology annotations and pathway 
+  analysis
 id: https://w3id.org/valuesets/bio/go_causality
 imports:
 - linkml:types
@@ -8,6 +9,8 @@ prefixes:
   linkml: https://w3id.org/linkml/
   RO: http://purl.obolibrary.org/obo/RO_
   valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   causal_predicate:
@@ -15,8 +18,18 @@ slots:
     range: CausalPredicateEnum
 enums:
   CausalPredicateEnum:
-    description: A term describing the causal relationship between two activities. All terms are drawn from
-      the "causally upstream or within" (RO:0002418) branch of the Relation Ontology (RO).
+    title: Causal Predicate
+    description: A term describing the causal relationship between two activities. All terms are drawn from the
+      "causally upstream or within" (RO:0002418) branch of the Relation Ontology (RO).
+    status: STANDARD
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    annotations:
+      stewards: https://geneontology.org
+      publishers: https://geneontology.org
     permissible_values:
       CONSTITUTIVELY_UPSTREAM_OF:
         title: constitutively upstream of

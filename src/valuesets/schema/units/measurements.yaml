@@ -13,6 +13,8 @@ prefixes:
   QUDT: http://qudt.org/schema/qudt/
   SI: http://www.bipm.org/en/si/
   valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   length_unit:
@@ -47,7 +49,14 @@ slots:
     range: DataSizeUnitEnum
 enums:
   LengthUnitEnum:
+    title: Length Unit
     description: Units of length/distance measurement
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       METER:
         title: meter
@@ -133,7 +142,14 @@ enums:
           symbol: nmi
           conversion_to_meter: '1852'
   MassUnitEnum:
+    title: Mass Unit
     description: Units of mass measurement
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       KILOGRAM:
         description: Kilogram (SI base unit)
@@ -205,7 +221,14 @@ enums:
           conversion_to_kg: '1.66054e-27'
           use: molecular mass
   VolumeUnitEnum:
+    title: Volume Unit
     description: Units of volume measurement
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       LITER:
         description: Liter (SI derived)
@@ -306,7 +329,14 @@ enums:
           symbol: tsp
           conversion_to_m3: '4.92892e-6'
   TemperatureUnitEnum:
+    title: Temperature Unit
     description: Units of temperature measurement
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       KELVIN:
         description: Kelvin (SI base unit)
@@ -337,7 +367,14 @@ enums:
           conversion: K * 9/5
           absolute: 'true'
   TimeUnitEnum:
+    title: Time Unit
     description: Units of time measurement
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       SECOND:
         description: Second (SI base unit)
@@ -403,7 +440,14 @@ enums:
           conversion_to_second: '31557600'
           note: accounts for leap years
   PressureUnitEnum:
+    title: Pressure Unit
     description: Units of pressure measurement
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       PASCAL:
         description: Pascal (SI derived unit)
@@ -461,7 +505,14 @@ enums:
           conversion_to_pascal: '133.322'
           use: medical blood pressure
   ConcentrationUnitEnum:
+    title: Concentration Unit
     description: Units of concentration measurement
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       MOLAR:
         description: Molar (moles per liter)
@@ -532,7 +583,14 @@ enums:
           symbol: ppb
           conversion_to_fraction: 1e-9
   FrequencyUnitEnum:
+    title: Frequency Unit
     description: Units of frequency measurement
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       HERTZ:
         description: Hertz (cycles per second)
@@ -569,7 +627,14 @@ enums:
           conversion_to_hz: '0.0166667'
           use: heart rate
   AngleUnitEnum:
+    title: Angle Unit
     description: Units of angle measurement
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       RADIAN:
         description: Radian (SI derived unit)
@@ -604,7 +669,14 @@ enums:
           symbol: turn
           conversion_to_radian: '6.28319'
   DataSizeUnitEnum:
+    title: Data Size Unit
     description: Units of digital data size
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       BIT:
         description: Bit (binary digit)

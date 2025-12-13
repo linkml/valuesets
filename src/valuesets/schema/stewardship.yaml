@@ -1,0 +1,248 @@
+name: stewardship
+title: Value Set Stewardship Organizations
+description: |
+  Organizations and consortia that steward value sets and terminologies.
+
+  This enum is used with the `stewards`, `publishers`, and `endorsers` slots
+  defined in the valuesets_meta metamodel to track organizational responsibility
+  for value set content.
+
+  ## Identifier Guidelines
+
+  - **ROR IDs** (https://ror.org/) are preferred for formal organizations
+  - For consortia without ROR IDs, use canonical website URLs
+  - All identifiers should be stable, persistent URIs
+
+id: https://w3id.org/valuesets/stewardship
+
+imports:
+  - linkml:types
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+  valuesets: https://w3id.org/valuesets/
+  ROR: https://ror.org/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+
+default_prefix: valuesets
+
+slots:
+  value_set_steward:
+    description: Organization responsible for stewardship of a value set
+    range: ValueSetStewardEnum
+
+enums:
+  ValueSetStewardEnum:
+    title: Value Set Steward
+    description: |
+      Organizations and consortia that may serve as stewards, publishers, or
+      endorsers for value sets. Includes standards bodies, bioinformatics
+      consortia, and data coordination centers.
+
+      Use ROR IDs where available; otherwise use canonical organization URLs.
+    status: STANDARD
+    contributors:
+      - orcid:0000-0002-6601-2165
+      - https://github.com/anthropics/claude-code
+    instantiates:
+      - valuesets_meta:ReferenceEnumDefinition
+    see_also:
+      - https://ror.org/
+      - https://build.fhir.org/metadataresource.html
+    permissible_values:
+      # =======================================================================
+      # Bioinformatics Consortia (alphabetical)
+      # =======================================================================
+      GA4GH:
+        title: Global Alliance for Genomics and Health
+        description: |
+          International consortium developing standards for responsible sharing
+          of genomic and health-related data. Develops standards including
+          Phenopackets, VRS, DRS, and Beacon.
+        meaning: https://ga4gh.org
+        aliases:
+          - Global Alliance for Genomics and Health
+        annotations:
+          established: "2013"
+          headquarters: Multiple host institutions
+          website: https://ga4gh.org
+
+      GENE_ONTOLOGY_CONSORTIUM:
+        title: Gene Ontology Consortium
+        description: |
+          International consortium developing and maintaining the Gene Ontology,
+          the world's largest source of information on gene function. Provides
+          GO annotations and the GO ontology itself.
+        meaning: https://geneontology.org
+        aliases:
+          - GO Consortium
+          - GOC
+        annotations:
+          established: "1998"
+          website: https://geneontology.org
+
+      GENOMIC_STANDARDS_CONSORTIUM:
+        title: Genomic Standards Consortium
+        description: |
+          Open-membership community developing standards for describing genomes,
+          metagenomes, and related data. Develops MIxS checklists and related
+          metadata standards.
+        meaning: https://gensc.org
+        aliases:
+          - GSC
+        annotations:
+          established: "2005"
+          website: https://gensc.org
+
+      MONARCH_INITIATIVE:
+        title: Monarch Initiative
+        description: |
+          International consortium integrating genotype-phenotype data across
+          species. Develops and maintains ontologies including HPO, Mondo,
+          and Upheno, and provides data integration services.
+        meaning: https://monarchinitiative.org
+        aliases:
+          - Monarch
+        annotations:
+          website: https://monarchinitiative.org
+
+      OBO_FOUNDRY:
+        title: OBO Foundry
+        description: |
+          Collaborative effort to develop interoperable ontologies for the
+          life sciences. Coordinates ontology development and establishes
+          principles for ontology best practices.
+        meaning: https://obofoundry.org
+        aliases:
+          - Open Biological and Biomedical Ontologies Foundry
+        annotations:
+          established: "2007"
+          website: https://obofoundry.org
+
+      OHDSI:
+        title: OHDSI
+        description: |
+          Observational Health Data Sciences and Informatics program.
+          International collaborative developing open-source analytics solutions
+          for observational health data. Maintains the OMOP Common Data Model.
+        meaning: https://ohdsi.org
+        aliases:
+          - Observational Health Data Sciences and Informatics
+        annotations:
+          established: "2014"
+          website: https://ohdsi.org
+          coordinating_center: Columbia University
+
+      PHENOPACKETS:
+        title: Phenopackets
+        description: |
+          GA4GH work stream developing standards for sharing disease and
+          phenotype information. Develops the Phenopacket Schema for
+          representing clinical and phenotypic data.
+        meaning: https://phenopackets.org
+        aliases:
+          - GA4GH Phenopackets
+        annotations:
+          parent_organization: GA4GH
+          website: https://phenopackets.org
+
+      # =======================================================================
+      # Major Research Institutions (with ROR IDs)
+      # =======================================================================
+      EMBL_EBI:
+        title: European Bioinformatics Institute
+        description: |
+          EMBL's European Bioinformatics Institute, a global leader in
+          bioinformatics services, databases, and tools. Hosts major resources
+          including UniProt, Ensembl, and the Ontology Lookup Service.
+        meaning: ROR:02catss52
+        aliases:
+          - EMBL-EBI
+          - EBI
+        annotations:
+          parent_organization: European Molecular Biology Laboratory
+          website: https://www.ebi.ac.uk/
+          location: Hinxton, UK
+
+      NCBI:
+        title: National Center for Biotechnology Information
+        description: |
+          Part of the United States National Library of Medicine. Develops
+          databases and tools for molecular biology including GenBank,
+          PubMed, and the NCBI Taxonomy.
+        meaning: ROR:02meqm098
+        aliases:
+          - National Center for Biotechnology Information
+        annotations:
+          parent_organization: National Library of Medicine
+          website: https://www.ncbi.nlm.nih.gov/
+          location: Bethesda, MD, USA
+
+      # =======================================================================
+      # Standards Development Organizations (with ROR IDs)
+      # =======================================================================
+      CDISC:
+        title: CDISC
+        description: |
+          Clinical Data Interchange Standards Consortium. Develops global
+          data standards for clinical research including CDASH, SDTM,
+          and ADaM.
+        meaning: https://cdisc.org
+        aliases:
+          - Clinical Data Interchange Standards Consortium
+        annotations:
+          established: "1997"
+          website: https://cdisc.org
+
+      HL7:
+        title: Health Level Seven International
+        description: |
+          Standards development organization for healthcare information
+          exchange. Develops FHIR, CDA, and HL7 v2 messaging standards.
+        meaning: ROR:029ga8k16
+        aliases:
+          - Health Level Seven
+          - HL7 International
+        annotations:
+          established: "1987"
+          website: https://www.hl7.org/
+          headquarters: Ann Arbor, Michigan
+
+      ISO:
+        title: International Organization for Standardization
+        description: |
+          International standard-setting body for industrial and commercial
+          standards. Develops standards across many domains including
+          terminology (ISO 704) and healthcare.
+        meaning: ROR:004s85t07
+        annotations:
+          established: "1947"
+          website: https://www.iso.org/
+          headquarters: Geneva, Switzerland
+
+      W3C:
+        title: World Wide Web Consortium
+        description: |
+          International standards organization for the World Wide Web.
+          Develops standards including RDF, OWL, SPARQL, and accessibility
+          guidelines.
+        meaning: ROR:0059y1582
+        annotations:
+          established: "1994"
+          website: https://www.w3.org/
+
+      # =======================================================================
+      # This Repository
+      # =======================================================================
+      VALUESETS_PROJECT:
+        title: Valuesets Project
+        description: |
+          The valuesets repository itself, for value sets that are community
+          contributions without a specific external steward. Use sparingly;
+          prefer identifying an appropriate domain consortium.
+        meaning: https://github.com/linkml/valuesets
+        aliases:
+          - LinkML Valuesets
+        annotations:
+          website: https://w3id.org/valuesets/

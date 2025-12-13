@@ -1,0 +1,191 @@
+name: lab_automation_standards
+id: https://w3id.org/linkml/valuesets/lab_automation/standards
+prefixes:
+  valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+default_prefix: valuesets
+slots:
+  automation_standard:
+    description: Industry standard for laboratory automation
+    range: AutomationStandardEnum
+  communication_protocol:
+    description: Communication protocol for laboratory device integration
+    range: CommunicationProtocolEnum
+  labware_standard:
+    description: Standardization specification for laboratory labware
+    range: LabwareStandardEnum
+enums:
+  AutomationStandardEnum:
+    title: Automation Standard
+    description: Industry standards for laboratory automation systems
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      SILA_2:
+        description: Standardization in Lab Automation version 2 - international standard for open connectivity in lab 
+          automation
+        title: SiLA 2
+        annotations:
+          organization: Society for Laboratory Automation and Screening
+          architecture: microservice-based
+          protocol: gRPC
+      LABOP:
+        description: Laboratory Open Protocol Language - open specification for laboratory protocols
+        title: LabOP
+        annotations:
+          format: RDF/OWL
+          organization: Bioprotocols Working Group
+      AUTOPROTOCOL:
+        description: JSON-based language for specifying experimental protocols
+        title: Autoprotocol
+        annotations:
+          format: JSON
+      CLSI_AUTO01:
+        description: CLSI standard for Specimen Container/Specimen Carrier
+        title: CLSI AUTO01
+        annotations:
+          organization: Clinical and Laboratory Standards Institute
+      CLSI_AUTO02:
+        description: CLSI standard for Bar Codes for Specimen Container Identification
+        title: CLSI AUTO02
+        annotations:
+          organization: Clinical and Laboratory Standards Institute
+      CLSI_AUTO03:
+        description: CLSI standard for Communications with Automated Clinical Laboratory Systems
+        title: CLSI AUTO03
+        annotations:
+          organization: Clinical and Laboratory Standards Institute
+      CLSI_AUTO04:
+        description: CLSI standard for Systems Operational Requirements, Characteristics, and Information Elements
+        title: CLSI AUTO04
+        annotations:
+          organization: Clinical and Laboratory Standards Institute
+      CLSI_AUTO05:
+        description: CLSI standard for Electromechanical Interfaces
+        title: CLSI AUTO05
+        annotations:
+          organization: Clinical and Laboratory Standards Institute
+  CommunicationProtocolEnum:
+    title: Communication Protocol
+    description: Communication protocols for laboratory automation integration
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      GRPC:
+        description: gRPC protocol used in SiLA 2
+        title: gRPC
+        annotations:
+          used_by: SiLA 2
+      REST_API:
+        description: RESTful HTTP-based API
+        title: REST API
+      SOAP:
+        description: Simple Object Access Protocol
+        title: SOAP
+      OPC_UA:
+        description: OPC Unified Architecture for industrial automation
+        title: OPC UA
+        annotations:
+          full_name: OPC Unified Architecture
+      MODBUS:
+        description: Serial communication protocol for industrial devices
+        title: Modbus
+      CUSTOM_API:
+        description: Vendor-specific custom API
+        title: custom API
+      SERIAL:
+        description: Serial communication protocol (RS-232, RS-485)
+        title: serial
+      TCP_IP:
+        description: TCP/IP network protocol
+        title: TCP/IP
+      USB:
+        description: Universal Serial Bus communication
+        title: USB
+  LabwareStandardEnum:
+    title: Labware Standard
+    description: Standardization specifications for laboratory labware
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      ANSI_SLAS_1_2004:
+        description: Microplates - Footprint Dimensions
+        title: ANSI/SLAS 1-2004
+        annotations:
+          reaffirmed: 2012
+          specification: Footprint Dimensions
+      ANSI_SLAS_2_2004:
+        description: Microplates - Height Dimensions
+        title: ANSI/SLAS 2-2004
+        annotations:
+          reaffirmed: 2012
+          specification: Height Dimensions
+      ANSI_SLAS_3_2004:
+        description: Microplates - Bottom Outside Flange Dimensions
+        title: ANSI/SLAS 3-2004
+        annotations:
+          reaffirmed: 2012
+          specification: Bottom Outside Flange Dimensions
+      ANSI_SLAS_4_2004:
+        description: Microplates - Well Positions
+        title: ANSI/SLAS 4-2004
+        annotations:
+          reaffirmed: 2012
+          specification: Well Positions
+      ANSI_SLAS_6_2012:
+        description: Microplates - Well Bottom Elevation
+        title: ANSI/SLAS 6-2012
+        annotations:
+          specification: Well Bottom Elevation
+      SBS_FOOTPRINT:
+        description: Society for Biomolecular Screening standard footprint (127.76mm x 85.5mm)
+        title: SBS footprint
+        annotations:
+          dimensions: 127.76mm x 85.5mm
+  IntegrationFeatureEnum:
+    title: Integration Feature
+    description: Integration features for laboratory automation systems
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      BARCODE_TRACKING:
+        description: Integration feature for tracking samples via barcodes
+        title: barcode tracking
+      AUTOMATED_DATA_TRANSFER:
+        description: Automatic transfer of data between systems
+        title: automated data transfer
+      CLOUD_STORAGE_INTEGRATION:
+        description: Integration with cloud-based storage systems
+        title: cloud storage integration
+      SAMPLE_TRACKING:
+        description: Real-time tracking of sample location and status
+        title: sample tracking
+      WORKFLOW_VALIDATION:
+        description: Automated validation of workflow definitions
+        title: workflow validation
+      ERROR_RECOVERY:
+        description: Automated error detection and recovery mechanisms
+        title: error recovery
+      AUDIT_TRAIL:
+        description: Complete logging of all operations for compliance
+        title: audit trail
+      ELECTRONIC_SIGNATURES:
+        description: Support for electronic signatures for regulatory compliance
+        title: electronic signatures

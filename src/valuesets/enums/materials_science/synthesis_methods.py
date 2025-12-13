@@ -5,7 +5,6 @@ Generated from: materials_science/synthesis_methods.yaml
 
 from __future__ import annotations
 
-from typing import Dict, Any, Optional
 from valuesets.generators.rich_enum import RichEnum
 
 class SynthesisMethodEnum(RichEnum):

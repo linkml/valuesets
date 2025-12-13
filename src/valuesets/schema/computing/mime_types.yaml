@@ -1,7 +1,7 @@
 name: mime_types
 title: MIME Types Value Sets
-description: Common MIME (Multipurpose Internet Mail Extensions) types for various file formats and content types used in
-  web and application development.
+description: Common MIME (Multipurpose Internet Mail Extensions) types for various file formats and content types used 
+  in web and application development.
 id: https://w3id.org/linkml/valuesets/computing/mime_types
 imports:
 - linkml:types
@@ -10,6 +10,8 @@ prefixes:
   cvs: https://w3id.org/linkml/valuesets/
   iana: https://www.iana.org/assignments/media-types/
   valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   mime:
@@ -26,7 +28,14 @@ slots:
     range: CompressionType
 enums:
   MimeType:
+    title: Mime Type
     description: Common MIME types for various file formats
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       APPLICATION_JSON:
         description: JSON format
@@ -79,6 +88,24 @@ enums:
       APPLICATION_LD_JSON:
         description: JSON-LD format
         meaning: iana:application/ld+json
+      APPLICATION_N_QUADS:
+        description: N-Quads RDF serialization format
+        meaning: iana:application/n-quads
+      APPLICATION_N_TRIPLES:
+        description: N-Triples RDF serialization format
+        meaning: iana:application/n-triples
+      APPLICATION_RDF_XML:
+        description: RDF/XML serialization format
+        meaning: iana:application/rdf+xml
+      APPLICATION_SPARQL_RESULTS_JSON:
+        description: SPARQL 1.1 Query Results JSON format
+        meaning: iana:application/sparql-results+json
+      APPLICATION_SPARQL_RESULTS_XML:
+        description: SPARQL 1.1 Query Results XML format
+        meaning: iana:application/sparql-results+xml
+      APPLICATION_TRIG:
+        description: TriG RDF serialization format
+        meaning: iana:application/trig
       APPLICATION_WASM:
         description: WebAssembly binary format
         meaning: iana:application/wasm
@@ -206,7 +233,14 @@ enums:
         description: Mixed multipart message
         meaning: iana:multipart/mixed
   MimeTypeCategory:
+    title: Mime Type Category
     description: Categories of MIME types
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       APPLICATION:
         description: Application data
@@ -227,7 +261,14 @@ enums:
       MODEL:
         description: 3D models and similar
   TextCharset:
+    title: Text Charset
     description: Character encodings for text content
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       UTF_8:
         description: UTF-8 Unicode encoding
@@ -252,7 +293,14 @@ enums:
       BIG5:
         description: Traditional Chinese encoding
   CompressionType:
+    title: Compression Type
     description: Compression types used with Content-Encoding
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       GZIP:
         description: GZIP compression

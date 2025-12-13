@@ -55,6 +55,9 @@ class LinkMLMeta(RootModel):
 linkml_meta = LinkMLMeta({'default_prefix': 'valuesets', 'description': 'A collection of commonly used value sets', 'id': 'https://w3id.org/linkml/valuesets', 'name': 'valuesets', 'title': 'valuesets'})
 
 class RelativeTimeEnum(RichEnum):
+    """
+    Temporal relationships between events or time points
+    """
     # Enum members
     BEFORE = "BEFORE"
     AFTER = "AFTER"
@@ -62,9 +65,15 @@ class RelativeTimeEnum(RichEnum):
 
 # Set metadata after class creation to avoid it becoming an enum member
 RelativeTimeEnum._metadata = {
+    "BEFORE": {'description': 'Occurs before the reference time point'},
+    "AFTER": {'description': 'Occurs after the reference time point'},
+    "AT_SAME_TIME_AS": {'description': 'Occurs at the same time as the reference time point'},
 }
 
 class PresenceEnum(RichEnum):
+    """
+    Classification of whether an entity is present, absent, or at detection limits
+    """
     # Enum members
     PRESENT = "PRESENT"
     ABSENT = "ABSENT"
@@ -127,8 +136,8 @@ DataAbsentEnum._metadata = {
     "AS_TEXT": {'description': 'The content of the data is represented in the resource narrative.', 'meaning': 'fhir_data_absent_reason:as-text'},
     "ERROR": {'description': 'Some system or workflow process error means that the information is not available.', 'meaning': 'fhir_data_absent_reason:error'},
     "NOT_A_NUMBER": {'description': 'The numeric value is undefined or unrepresentable due to a floating point processing error.', 'meaning': 'fhir_data_absent_reason:not-a-number'},
-    "NEGATIVE_INFINITY": {'description': 'The numeric value is excessively low and unrepresentable due to a floating point processing        error.', 'meaning': 'fhir_data_absent_reason:negative-infinity'},
-    "POSITIVE_INFINITY": {'description': 'The numeric value is excessively high and unrepresentable due to a floating point processing        error.', 'meaning': 'fhir_data_absent_reason:positive-infinity'},
+    "NEGATIVE_INFINITY": {'description': 'The numeric value is excessively low and unrepresentable due to a floating point processing error.', 'meaning': 'fhir_data_absent_reason:negative-infinity'},
+    "POSITIVE_INFINITY": {'description': 'The numeric value is excessively high and unrepresentable due to a floating point processing error.', 'meaning': 'fhir_data_absent_reason:positive-infinity'},
     "NOT_PERFORMED": {'description': 'The value is not available because the observation procedure (test, etc.) was not performed.', 'meaning': 'fhir_data_absent_reason:not-performed'},
     "NOT_PERMITTED": {'description': 'The value is not permitted in this context (e.g. due to profiles, or the base data types).', 'meaning': 'fhir_data_absent_reason:not-permitted'},
 }
@@ -1142,14 +1151,14 @@ class SampleType(RichEnum):
 
 # Set metadata after class creation to avoid it becoming an enum member
 SampleType._metadata = {
-    "PROTEIN": {'description': 'Purified protein sample'},
-    "NUCLEIC_ACID": {'description': 'Nucleic acid sample (DNA or RNA)'},
-    "PROTEIN_COMPLEX": {'description': 'Protein-protein or protein-nucleic acid complex'},
-    "MEMBRANE_PROTEIN": {'description': 'Membrane-associated protein sample'},
-    "VIRUS": {'description': 'Viral particle or capsid'},
-    "ORGANELLE": {'description': 'Cellular organelle (mitochondria, chloroplast, etc.)'},
-    "CELL": {'description': 'Whole cell sample'},
-    "TISSUE": {'description': 'Tissue sample'},
+    "PROTEIN": {'description': 'Purified protein sample', 'meaning': 'NCIT:C17021'},
+    "NUCLEIC_ACID": {'description': 'Nucleic acid sample (DNA or RNA)', 'meaning': 'NCIT:C813'},
+    "PROTEIN_COMPLEX": {'description': 'Protein-protein or protein-nucleic acid complex', 'meaning': 'GO:0032991'},
+    "MEMBRANE_PROTEIN": {'description': 'Membrane-associated protein sample', 'meaning': 'NCIT:C16837'},
+    "VIRUS": {'description': 'Viral particle or capsid', 'meaning': 'NCIT:C14283'},
+    "ORGANELLE": {'description': 'Cellular organelle (mitochondria, chloroplast, etc.)', 'meaning': 'GO:0043226'},
+    "CELL": {'description': 'Whole cell sample', 'meaning': 'NCIT:C12508'},
+    "TISSUE": {'description': 'Tissue sample', 'meaning': 'NCIT:C12801'},
 }
 
 class StructuralBiologyTechnique(RichEnum):
@@ -1171,15 +1180,15 @@ class StructuralBiologyTechnique(RichEnum):
 # Set metadata after class creation to avoid it becoming an enum member
 StructuralBiologyTechnique._metadata = {
     "CRYO_EM": {'description': 'Cryo-electron microscopy', 'meaning': 'CHMO:0002413', 'annotations': {'resolution_range': '2-30 Å typical', 'aliases': 'cryoEM, electron cryo-microscopy'}},
-    "CRYO_ET": {'description': 'Cryo-electron tomography', 'annotations': {'resolution_range': '20-100 Å typical', 'aliases': 'cryoET, electron cryo-tomography'}},
+    "CRYO_ET": {'description': 'Cryo-electron tomography', 'meaning': 'MI:2338', 'annotations': {'resolution_range': '20-100 Å typical', 'aliases': 'cryoET, electron cryo-tomography'}},
     "X_RAY_CRYSTALLOGRAPHY": {'description': 'X-ray crystallography', 'meaning': 'CHMO:0000159', 'annotations': {'resolution_range': '1-4 Å typical', 'aliases': 'XRC, macromolecular crystallography'}},
-    "NEUTRON_CRYSTALLOGRAPHY": {'description': 'Neutron crystallography', 'annotations': {'advantages': 'hydrogen positions, deuteration studies'}},
+    "NEUTRON_CRYSTALLOGRAPHY": {'description': 'Neutron crystallography', 'meaning': 'CHMO:0000175', 'annotations': {'advantages': 'hydrogen positions, deuteration studies'}},
     "SAXS": {'description': 'Small-angle X-ray scattering', 'meaning': 'CHMO:0000204', 'annotations': {'information': 'low-resolution structure, conformational changes'}},
-    "SANS": {'description': 'Small-angle neutron scattering', 'annotations': {'advantages': 'contrast variation with deuteration'}},
-    "WAXS": {'description': 'Wide-angle X-ray scattering'},
+    "SANS": {'description': 'Small-angle neutron scattering', 'meaning': 'CHMO:0000184', 'annotations': {'advantages': 'contrast variation with deuteration'}},
+    "WAXS": {'description': 'Wide-angle X-ray scattering', 'meaning': 'CHMO:0000213'},
     "NMR": {'description': 'Nuclear magnetic resonance spectroscopy', 'meaning': 'CHMO:0000591', 'annotations': {'information': 'solution structure, dynamics'}},
     "MASS_SPECTROMETRY": {'description': 'Mass spectrometry', 'meaning': 'CHMO:0000470', 'annotations': {'applications': 'native MS, crosslinking, HDX'}},
-    "NEGATIVE_STAIN_EM": {'description': 'Negative stain electron microscopy', 'annotations': {'resolution_range': '15-30 Å typical'}},
+    "NEGATIVE_STAIN_EM": {'description': 'Negative stain electron microscopy', 'meaning': 'FBbi:00000568', 'annotations': {'resolution_range': '15-30 Å typical'}},
 }
 
 class CryoEMPreparationType(RichEnum):
@@ -1274,8 +1283,8 @@ class XRaySource(RichEnum):
 
 # Set metadata after class creation to avoid it becoming an enum member
 XRaySource._metadata = {
-    "SYNCHROTRON": {'description': 'Synchrotron radiation source', 'annotations': {'advantages': 'high intensity, tunable wavelength', 'brightness': '10^15-10^18 photons/s/mm²/mrad²'}},
-    "ROTATING_ANODE": {'description': 'Rotating anode generator', 'annotations': {'power': '3-18 kW typical', 'target': 'copper, molybdenum common'}},
+    "SYNCHROTRON": {'description': 'Synchrotron radiation source', 'meaning': 'CHMO:0001810', 'annotations': {'advantages': 'high intensity, tunable wavelength', 'brightness': '10^15-10^18 photons/s/mm²/mrad²'}},
+    "ROTATING_ANODE": {'description': 'Rotating anode generator', 'meaning': 'CHMO:0001107', 'annotations': {'power': '3-18 kW typical', 'target': 'copper, molybdenum common'}},
     "MICROFOCUS": {'description': 'Microfocus sealed tube', 'annotations': {'spot_size': '10-50 μm', 'applications': 'small crystals, in-house screening'}},
     "METAL_JET": {'description': 'Liquid metal jet source', 'annotations': {'advantages': 'higher power density, longer lifetime', 'metals': 'gallium, indium'}},
 }
@@ -1293,11 +1302,11 @@ class Detector(RichEnum):
 
 # Set metadata after class creation to avoid it becoming an enum member
 Detector._metadata = {
-    "DIRECT_ELECTRON": {'description': 'Direct electron detector (DED)', 'annotations': {'examples': 'K2, K3, Falcon, DE-series', 'advantages': 'high DQE, fast readout'}},
-    "CCD": {'description': 'Charge-coupled device camera', 'annotations': {'applications': 'legacy EM, some crystallography'}},
-    "CMOS": {'description': 'Complementary metal-oxide semiconductor detector', 'annotations': {'advantages': 'fast readout, low noise'}},
+    "DIRECT_ELECTRON": {'description': 'Direct electron detector (DED)', 'meaning': 'CHMO:0002837', 'annotations': {'examples': 'K2, K3, Falcon, DE-series', 'advantages': 'high DQE, fast readout'}},
+    "CCD": {'description': 'Charge-coupled device camera', 'meaning': 'CHMO:0002171', 'annotations': {'applications': 'legacy EM, some crystallography'}},
+    "CMOS": {'description': 'Complementary metal-oxide semiconductor detector', 'meaning': 'CHMO:0002836', 'annotations': {'advantages': 'fast readout, low noise'}},
     "HYBRID_PIXEL": {'description': 'Hybrid pixel detector', 'annotations': {'examples': 'Pilatus, Eiger', 'advantages': 'photon counting, zero noise'}},
-    "PHOTOSTIMULABLE_PHOSPHOR": {'description': 'Photostimulable phosphor (image plate)', 'annotations': {'applications': 'legacy crystallography'}},
+    "PHOTOSTIMULABLE_PHOSPHOR": {'description': 'Photostimulable phosphor (image plate)', 'meaning': 'CHMO:0001069', 'annotations': {'applications': 'legacy crystallography'}},
 }
 
 class WorkflowType(RichEnum):
@@ -1352,14 +1361,14 @@ class FileFormat(RichEnum):
 
 # Set metadata after class creation to avoid it becoming an enum member
 FileFormat._metadata = {
-    "MRC": {'description': 'MRC format for EM density maps', 'annotations': {'extension': '.mrc, .map', 'applications': 'EM volumes, tomograms'}},
-    "TIFF": {'description': 'Tagged Image File Format', 'annotations': {'extension': '.tif, .tiff', 'applications': 'micrographs, general imaging'}},
-    "HDF5": {'description': 'Hierarchical Data Format 5', 'annotations': {'extension': '.h5, .hdf5', 'applications': 'large datasets, metadata storage'}},
-    "STAR": {'description': 'Self-defining Text Archival and Retrieval format', 'annotations': {'extension': '.star', 'applications': 'RELION metadata, particle parameters'}},
-    "PDB": {'description': 'Protein Data Bank coordinate format', 'annotations': {'extension': '.pdb', 'applications': 'atomic coordinates, legacy format'}},
-    "MMCIF": {'description': 'Macromolecular Crystallographic Information File', 'annotations': {'extension': '.cif', 'applications': 'atomic coordinates, modern PDB format'}},
-    "MTZ": {'description': 'MTZ reflection data format', 'annotations': {'extension': '.mtz', 'applications': 'crystallographic reflections, phases'}},
-    "CBF": {'description': 'Crystallographic Binary Format', 'annotations': {'extension': '.cbf', 'applications': 'detector images, diffraction data'}},
+    "MRC": {'description': 'MRC format for EM density maps', 'meaning': 'EDAM:3842', 'annotations': {'extension': '.mrc, .map', 'applications': 'EM volumes, tomograms'}},
+    "TIFF": {'description': 'Tagged Image File Format', 'meaning': 'EDAM:3591', 'annotations': {'extension': '.tif, .tiff', 'applications': 'micrographs, general imaging'}},
+    "HDF5": {'description': 'Hierarchical Data Format 5', 'meaning': 'EDAM:3590', 'annotations': {'extension': '.h5, .hdf5', 'applications': 'large datasets, metadata storage'}},
+    "STAR": {'description': 'Self-defining Text Archival and Retrieval format', 'meaning': 'EDAM:3906', 'annotations': {'extension': '.star', 'applications': 'RELION metadata, particle parameters'}},
+    "PDB": {'description': 'Protein Data Bank coordinate format', 'meaning': 'EDAM:1476', 'annotations': {'extension': '.pdb', 'applications': 'atomic coordinates, legacy format'}},
+    "MMCIF": {'description': 'Macromolecular Crystallographic Information File', 'meaning': 'EDAM:1477', 'annotations': {'extension': '.cif', 'applications': 'atomic coordinates, modern PDB format'}},
+    "MTZ": {'description': 'MTZ reflection data format', 'meaning': 'EDAM:3816', 'annotations': {'extension': '.mtz', 'applications': 'crystallographic reflections, phases'}},
+    "CBF": {'description': 'Crystallographic Binary Format', 'meaning': 'EDAM:3874', 'annotations': {'extension': '.cbf', 'applications': 'detector images, diffraction data'}},
     "DM3": {'description': 'Digital Micrograph format', 'annotations': {'extension': '.dm3, .dm4', 'applications': 'FEI/Thermo Fisher EM data'}},
     "SER": {'description': 'FEI series format', 'annotations': {'extension': '.ser', 'applications': 'FEI movie stacks'}},
 }
@@ -1416,6 +1425,116 @@ ProcessingStatus._metadata = {
     "QUEUED": {'description': 'Queued for processing'},
     "PAUSED": {'description': 'Processing paused by user'},
     "CANCELLED": {'description': 'Processing cancelled by user'},
+}
+
+class CoordinationGeometry(RichEnum):
+    """
+    Coordination geometry of metal centers in protein structures
+    """
+    # Enum members
+    LINEAR = "LINEAR"
+    TRIGONAL_PLANAR = "TRIGONAL_PLANAR"
+    TRIGONAL_PYRAMIDAL = "TRIGONAL_PYRAMIDAL"
+    T_SHAPED = "T_SHAPED"
+    TETRAHEDRAL = "TETRAHEDRAL"
+    SQUARE_PLANAR = "SQUARE_PLANAR"
+    TRIGONAL_BIPYRAMIDAL = "TRIGONAL_BIPYRAMIDAL"
+    SQUARE_PYRAMIDAL = "SQUARE_PYRAMIDAL"
+    PENTAGONAL_PLANAR = "PENTAGONAL_PLANAR"
+    OCTAHEDRAL = "OCTAHEDRAL"
+    TRIGONAL_PRISMATIC = "TRIGONAL_PRISMATIC"
+    PENTAGONAL_BIPYRAMIDAL = "PENTAGONAL_BIPYRAMIDAL"
+    HEXAGONAL_BIPYRAMIDAL = "HEXAGONAL_BIPYRAMIDAL"
+    SQUARE_ANTIPRISMATIC = "SQUARE_ANTIPRISMATIC"
+    DODECAHEDRAL = "DODECAHEDRAL"
+    CUBIC = "CUBIC"
+    BENT = "BENT"
+    SEE_SAW = "SEE_SAW"
+
+# Set metadata after class creation to avoid it becoming an enum member
+CoordinationGeometry._metadata = {
+    "LINEAR": {'description': 'Linear coordination geometry (2 ligands at 180°)', 'annotations': {'coordination_number': '2'}},
+    "TRIGONAL_PLANAR": {'description': 'Trigonal planar coordination geometry (3 ligands, 120° angles)', 'annotations': {'coordination_number': '3'}},
+    "TRIGONAL_PYRAMIDAL": {'description': 'Trigonal pyramidal coordination geometry', 'annotations': {'coordination_number': '3'}},
+    "T_SHAPED": {'description': 'T-shaped coordination geometry', 'annotations': {'coordination_number': '3'}},
+    "TETRAHEDRAL": {'description': 'Tetrahedral coordination geometry (4 ligands, 109.5° angles)', 'meaning': 'NCIT:C103215', 'annotations': {'coordination_number': '4'}},
+    "SQUARE_PLANAR": {'description': 'Square planar coordination geometry (4 ligands in plane)', 'meaning': 'NCIT:C103211', 'annotations': {'coordination_number': '4'}},
+    "TRIGONAL_BIPYRAMIDAL": {'description': 'Trigonal bipyramidal coordination geometry (5 ligands)', 'annotations': {'coordination_number': '5'}},
+    "SQUARE_PYRAMIDAL": {'description': 'Square pyramidal coordination geometry (5 ligands)', 'annotations': {'coordination_number': '5'}},
+    "PENTAGONAL_PLANAR": {'description': 'Pentagonal planar coordination geometry (5 ligands in plane)', 'annotations': {'coordination_number': '5'}},
+    "OCTAHEDRAL": {'description': 'Octahedral coordination geometry (6 ligands)', 'meaning': 'NCIT:C103216', 'annotations': {'coordination_number': '6'}},
+    "TRIGONAL_PRISMATIC": {'description': 'Trigonal prismatic coordination geometry (6 ligands)', 'annotations': {'coordination_number': '6'}},
+    "PENTAGONAL_BIPYRAMIDAL": {'description': 'Pentagonal bipyramidal coordination geometry (7 ligands)', 'annotations': {'coordination_number': '7'}},
+    "HEXAGONAL_BIPYRAMIDAL": {'description': 'Hexagonal bipyramidal coordination geometry (8 ligands)', 'annotations': {'coordination_number': '8'}},
+    "SQUARE_ANTIPRISMATIC": {'description': 'Square antiprismatic coordination geometry (8 ligands)', 'annotations': {'coordination_number': '8'}},
+    "DODECAHEDRAL": {'description': 'Dodecahedral coordination geometry (8 ligands)', 'annotations': {'coordination_number': '8'}},
+    "CUBIC": {'description': 'Cubic coordination geometry (8 ligands)', 'annotations': {'coordination_number': '8'}},
+    "BENT": {'description': 'Bent or angular coordination geometry', 'annotations': {'coordination_number': '2'}},
+    "SEE_SAW": {'description': 'See-saw coordination geometry (4 ligands)', 'annotations': {'coordination_number': '4'}},
+}
+
+class MetalLigandType(RichEnum):
+    """
+    Types of metal-containing chemical components
+    """
+    # Enum members
+    METAL_CATION = "METAL_CATION"
+    METAL_CONTAINING_LIGAND = "METAL_CONTAINING_LIGAND"
+
+# Set metadata after class creation to avoid it becoming an enum member
+MetalLigandType._metadata = {
+    "METAL_CATION": {'description': 'Metal cation (e.g., Ca2+, Mg2+, Zn2+, Fe3+)', 'annotations': {'examples': 'Ca2+, Mg2+, Zn2+, Fe2+, Fe3+, Cu2+, Mn2+'}},
+    "METAL_CONTAINING_LIGAND": {'description': 'Metal-containing ligand or cofactor', 'annotations': {'examples': 'heme, chlorophyll, cobalamin, Fe-S cluster'}},
+}
+
+class ProteinModificationType(RichEnum):
+    """
+    Types of protein modifications
+    """
+    # Enum members
+    METAL_COORDINATION = "METAL_COORDINATION"
+    PHOSPHORYLATION = "PHOSPHORYLATION"
+    GLYCOSYLATION = "GLYCOSYLATION"
+    ACETYLATION = "ACETYLATION"
+    METHYLATION = "METHYLATION"
+    UBIQUITINATION = "UBIQUITINATION"
+    SUMOYLATION = "SUMOYLATION"
+    HYDROXYLATION = "HYDROXYLATION"
+    LIPIDATION = "LIPIDATION"
+    PROTEOLYTIC_CLEAVAGE = "PROTEOLYTIC_CLEAVAGE"
+    CROSSLINKING = "CROSSLINKING"
+
+# Set metadata after class creation to avoid it becoming an enum member
+ProteinModificationType._metadata = {
+    "METAL_COORDINATION": {'description': 'Metal coordination modification', 'meaning': 'MOD:00739', 'annotations': {'examples': 'zinc finger, iron-sulfur cluster binding'}},
+    "PHOSPHORYLATION": {'description': 'Phosphorylation modification', 'meaning': 'MOD:00696'},
+    "GLYCOSYLATION": {'description': 'Glycosylation modification', 'meaning': 'MOD:00725'},
+    "ACETYLATION": {'description': 'Acetylation modification', 'meaning': 'MOD:00394'},
+    "METHYLATION": {'description': 'Methylation modification', 'meaning': 'MOD:00599'},
+    "UBIQUITINATION": {'description': 'Ubiquitination modification', 'meaning': 'MOD:01240'},
+    "SUMOYLATION": {'description': 'SUMOylation modification', 'meaning': 'MOD:01149'},
+    "HYDROXYLATION": {'description': 'Hydroxylation modification', 'meaning': 'MOD:00677'},
+    "LIPIDATION": {'description': 'Lipidation modification', 'meaning': 'MOD:00435'},
+    "PROTEOLYTIC_CLEAVAGE": {'description': 'Proteolytic cleavage', 'meaning': 'GO:0006508'},
+    "CROSSLINKING": {'description': 'Crosslinking modification', 'meaning': 'MOD:00276'},
+}
+
+class BiosafetyLevelEnum(RichEnum):
+    """
+    Biosafety levels (BSL) defining containment requirements for biological agents
+    """
+    # Enum members
+    BSL1 = "BSL1"
+    BSL2 = "BSL2"
+    BSL3 = "BSL3"
+    BSL4 = "BSL4"
+
+# Set metadata after class creation to avoid it becoming an enum member
+BiosafetyLevelEnum._metadata = {
+    "BSL1": {'description': 'Suitable for well-characterized agents not known to consistently cause disease in healthy adults', 'meaning': 'SNOMED:409600007'},
+    "BSL2": {'description': 'Suitable for agents that pose moderate hazards to personnel and the environment', 'meaning': 'SNOMED:409603009'},
+    "BSL3": {'description': 'Suitable for indigenous or exotic agents that may cause serious or potentially lethal disease through inhalation', 'meaning': 'SNOMED:409604003'},
+    "BSL4": {'description': 'Suitable for dangerous and exotic agents that pose high risk of life-threatening disease', 'meaning': 'SNOMED:409605002'},
 }
 
 class InsdcMissingValueEnum(RichEnum):
@@ -3074,6 +3193,175 @@ CitationStyle._metadata = {
     "CELL": {'description': 'Cell Press style'},
 }
 
+class USDOENationalLaboratoryEnum(RichEnum):
+    """
+    United States Department of Energy National Laboratories.
+
+The DOE operates 17 National Laboratories that serve as powerhouses of science and technology,
+tackling critical scientific challenges and conducting cutting-edge research across multiple disciplines.
+
+These laboratories are managed by contractors and stewarded by various DOE program offices,
+with the Office of Science stewarding 10 of the 17 laboratories.
+
+    """
+    # Enum members
+    AMES_LABORATORY = "AMES_LABORATORY"
+    ARGONNE_NATIONAL_LABORATORY = "ARGONNE_NATIONAL_LABORATORY"
+    BROOKHAVEN_NATIONAL_LABORATORY = "BROOKHAVEN_NATIONAL_LABORATORY"
+    FERMI_NATIONAL_ACCELERATOR_LABORATORY = "FERMI_NATIONAL_ACCELERATOR_LABORATORY"
+    IDAHO_NATIONAL_LABORATORY = "IDAHO_NATIONAL_LABORATORY"
+    LAWRENCE_BERKELEY_NATIONAL_LABORATORY = "LAWRENCE_BERKELEY_NATIONAL_LABORATORY"
+    LAWRENCE_LIVERMORE_NATIONAL_LABORATORY = "LAWRENCE_LIVERMORE_NATIONAL_LABORATORY"
+    LOS_ALAMOS_NATIONAL_LABORATORY = "LOS_ALAMOS_NATIONAL_LABORATORY"
+    NATIONAL_ENERGY_TECHNOLOGY_LABORATORY = "NATIONAL_ENERGY_TECHNOLOGY_LABORATORY"
+    NATIONAL_RENEWABLE_ENERGY_LABORATORY = "NATIONAL_RENEWABLE_ENERGY_LABORATORY"
+    OAK_RIDGE_NATIONAL_LABORATORY = "OAK_RIDGE_NATIONAL_LABORATORY"
+    PACIFIC_NORTHWEST_NATIONAL_LABORATORY = "PACIFIC_NORTHWEST_NATIONAL_LABORATORY"
+    PRINCETON_PLASMA_PHYSICS_LABORATORY = "PRINCETON_PLASMA_PHYSICS_LABORATORY"
+    SANDIA_NATIONAL_LABORATORIES = "SANDIA_NATIONAL_LABORATORIES"
+    SAVANNAH_RIVER_NATIONAL_LABORATORY = "SAVANNAH_RIVER_NATIONAL_LABORATORY"
+    SLAC_NATIONAL_ACCELERATOR_LABORATORY = "SLAC_NATIONAL_ACCELERATOR_LABORATORY"
+    THOMAS_JEFFERSON_NATIONAL_ACCELERATOR_FACILITY = "THOMAS_JEFFERSON_NATIONAL_ACCELERATOR_FACILITY"
+
+# Set metadata after class creation to avoid it becoming an enum member
+USDOENationalLaboratoryEnum._metadata = {
+    "AMES_LABORATORY": {'description': 'National laboratory focused on materials science and chemistry research', 'meaning': 'ROR:041m9xr71', 'annotations': {'location': 'Ames, Iowa', 'established': 1947, 'stewarding_office': 'Office of Science', 'website': 'https://www.ameslab.gov/'}},
+    "ARGONNE_NATIONAL_LABORATORY": {'description': 'Multidisciplinary science and engineering research center', 'meaning': 'ROR:05gvnxz63', 'annotations': {'location': 'Lemont, Illinois', 'established': 1946, 'stewarding_office': 'Office of Science', 'website': 'https://www.anl.gov/'}},
+    "BROOKHAVEN_NATIONAL_LABORATORY": {'description': 'Research center for nuclear and high-energy physics', 'meaning': 'ROR:02ex6cf31', 'annotations': {'location': 'Upton, New York', 'established': 1947, 'stewarding_office': 'Office of Science', 'website': 'https://www.bnl.gov/'}},
+    "FERMI_NATIONAL_ACCELERATOR_LABORATORY": {'description': 'Particle physics and accelerator research laboratory', 'meaning': 'ROR:020hgte69', 'annotations': {'location': 'Batavia, Illinois', 'established': 1967, 'stewarding_office': 'Office of Science', 'website': 'https://www.fnal.gov/'}, 'aliases': ['Fermilab']},
+    "IDAHO_NATIONAL_LABORATORY": {'description': 'Nuclear energy research and national security laboratory', 'meaning': 'ROR:00ty2a548', 'annotations': {'location': 'Idaho Falls, Idaho', 'established': 1949, 'stewarding_office': 'Office of Nuclear Energy', 'website': 'https://inl.gov/'}},
+    "LAWRENCE_BERKELEY_NATIONAL_LABORATORY": {'description': 'Multidisciplinary research laboratory', 'meaning': 'ROR:02jbv0t02', 'annotations': {'location': 'Berkeley, California', 'established': 1931, 'stewarding_office': 'Office of Science', 'website': 'https://www.lbl.gov/'}, 'aliases': ['Berkeley Lab', 'LBNL']},
+    "LAWRENCE_LIVERMORE_NATIONAL_LABORATORY": {'description': 'National security laboratory focused on nuclear weapons and advanced technology', 'meaning': 'ROR:041nk4h53', 'annotations': {'location': 'Livermore, California', 'established': 1952, 'stewarding_office': 'National Nuclear Security Administration', 'website': 'https://www.llnl.gov/'}, 'aliases': ['LLNL']},
+    "LOS_ALAMOS_NATIONAL_LABORATORY": {'description': 'Multidisciplinary research institution for national security', 'meaning': 'ROR:01e41cf67', 'annotations': {'location': 'Los Alamos, New Mexico', 'established': 1943, 'stewarding_office': 'National Nuclear Security Administration', 'website': 'https://www.lanl.gov/'}, 'aliases': ['LANL']},
+    "NATIONAL_ENERGY_TECHNOLOGY_LABORATORY": {'description': 'Federal research laboratory focused on energy and environmental technology', 'meaning': 'ROR:01x26mz03', 'annotations': {'location': 'Pittsburgh, Pennsylvania and Morgantown, West Virginia', 'established': 1910, 'stewarding_office': 'Office of Fossil Energy and Carbon Management', 'website': 'https://www.netl.doe.gov/'}, 'aliases': ['NETL']},
+    "NATIONAL_RENEWABLE_ENERGY_LABORATORY": {'description': 'Research and development laboratory focused on renewable energy and energy efficiency', 'meaning': 'ROR:036266993', 'annotations': {'location': 'Golden, Colorado', 'established': 1977, 'stewarding_office': 'Office of Energy Efficiency and Renewable Energy', 'website': 'https://www.nrel.gov/'}, 'aliases': ['NREL']},
+    "OAK_RIDGE_NATIONAL_LABORATORY": {'description': 'Multidisciplinary science and technology laboratory', 'meaning': 'ROR:01qz5mb56', 'annotations': {'location': 'Oak Ridge, Tennessee', 'established': 1943, 'stewarding_office': 'Office of Science', 'website': 'https://www.ornl.gov/'}, 'aliases': ['ORNL']},
+    "PACIFIC_NORTHWEST_NATIONAL_LABORATORY": {'description': 'Research laboratory focused on energy, environment, and national security', 'meaning': 'ROR:05h992307', 'annotations': {'location': 'Richland, Washington', 'established': 1965, 'stewarding_office': 'Office of Science', 'website': 'https://www.pnnl.gov/'}, 'aliases': ['PNNL']},
+    "PRINCETON_PLASMA_PHYSICS_LABORATORY": {'description': 'Plasma physics and fusion energy research laboratory', 'meaning': 'ROR:03vn1ts68', 'annotations': {'location': 'Princeton, New Jersey', 'established': 1951, 'stewarding_office': 'Office of Science', 'website': 'https://www.pppl.gov/'}, 'aliases': ['PPPL']},
+    "SANDIA_NATIONAL_LABORATORIES": {'description': 'Multimission laboratory for national security and technology innovation', 'meaning': 'ROR:01apwpt12', 'annotations': {'location': 'Albuquerque, New Mexico and Livermore, California', 'established': 1949, 'stewarding_office': 'National Nuclear Security Administration', 'website': 'https://www.sandia.gov/'}, 'aliases': ['Sandia', 'SNL']},
+    "SAVANNAH_RIVER_NATIONAL_LABORATORY": {'description': 'Applied research laboratory for environmental and national security missions', 'meaning': 'ROR:05vc7qy59', 'annotations': {'location': 'Aiken, South Carolina', 'established': 1951, 'stewarding_office': 'Office of Environmental Management', 'website': 'https://www.srnl.gov/'}, 'aliases': ['SRNL']},
+    "SLAC_NATIONAL_ACCELERATOR_LABORATORY": {'description': 'Particle physics and photon science research laboratory', 'meaning': 'ROR:05gzmn429', 'annotations': {'location': 'Menlo Park, California', 'established': 1962, 'stewarding_office': 'Office of Science', 'website': 'https://www6.slac.stanford.edu/'}, 'aliases': ['SLAC']},
+    "THOMAS_JEFFERSON_NATIONAL_ACCELERATOR_FACILITY": {'description': 'Nuclear physics research laboratory with particle accelerator', 'meaning': 'ROR:02vwzrd76', 'annotations': {'location': 'Newport News, Virginia', 'established': 1984, 'stewarding_office': 'Office of Science', 'website': 'https://www.jlab.org/'}, 'aliases': ['Jefferson Lab', 'JLab']},
+}
+
+class USFederalFundingAgencyEnum(RichEnum):
+    """
+    Major United States Federal Research Funding Agencies.
+
+These agencies provide funding for basic and applied research across various scientific disciplines,
+supporting universities, national laboratories, and other research institutions.
+
+    """
+    # Enum members
+    NIH = "NIH"
+    NSF = "NSF"
+    DOE = "DOE"
+    NASA = "NASA"
+    EPA = "EPA"
+    NOAA = "NOAA"
+    NIST = "NIST"
+    USDA_ARS = "USDA_ARS"
+    DOD = "DOD"
+    USGS = "USGS"
+
+# Set metadata after class creation to avoid it becoming an enum member
+USFederalFundingAgencyEnum._metadata = {
+    "NIH": {'description': 'Primary federal agency for biomedical and public health research', 'meaning': 'ROR:01cwqze88', 'annotations': {'parent_department': 'Department of Health and Human Services', 'website': 'https://www.nih.gov/', 'established': 1887}, 'aliases': ['National Institutes of Health']},
+    "NSF": {'description': 'Federal agency supporting fundamental research and education in non-medical fields', 'meaning': 'ROR:021nxhr62', 'annotations': {'website': 'https://www.nsf.gov/', 'established': 1950}, 'aliases': ['National Science Foundation']},
+    "DOE": {'description': 'Federal department overseeing energy policy and nuclear weapons program', 'meaning': 'ROR:01bj3aw27', 'annotations': {'website': 'https://www.energy.gov/', 'established': 1977}, 'aliases': ['Department of Energy', 'U.S. Department of Energy']},
+    "NASA": {'description': 'Federal agency responsible for civil space program and aeronautics research', 'meaning': 'ROR:027ka1x80', 'annotations': {'website': 'https://www.nasa.gov/', 'established': 1958}},
+    "EPA": {'description': 'Federal agency protecting human health and the environment', 'meaning': 'ROR:03tns0030', 'annotations': {'website': 'https://www.epa.gov/', 'established': 1970}, 'aliases': ['U.S. Environmental Protection Agency']},
+    "NOAA": {'description': 'Federal agency focused on ocean, atmosphere, and coastal research', 'meaning': 'ROR:02z5nhe81', 'annotations': {'parent_department': 'Department of Commerce', 'website': 'https://www.noaa.gov/', 'established': 1970}},
+    "NIST": {'description': 'Federal agency promoting innovation and industrial competitiveness', 'meaning': 'ROR:05xpvk416', 'annotations': {'parent_department': 'Department of Commerce', 'website': 'https://www.nist.gov/', 'established': 1901}},
+    "USDA_ARS": {'description': 'Principal research agency of the U.S. Department of Agriculture', 'meaning': 'ROR:02d2m2044', 'annotations': {'parent_department': 'Department of Agriculture', 'website': 'https://www.ars.usda.gov/', 'established': 1953}, 'aliases': ['USDA ARS']},
+    "DOD": {'description': 'Federal department responsible for military research and development', 'meaning': 'ROR:0447fe631', 'annotations': {'website': 'https://www.defense.gov/', 'established': 1947}, 'aliases': ['Department of Defense', 'U.S. Department of Defense']},
+    "USGS": {'description': 'Federal agency for earth science research and monitoring', 'meaning': 'ROR:035a68863', 'annotations': {'parent_department': 'Department of the Interior', 'website': 'https://www.usgs.gov/', 'established': 1879}},
+}
+
+class NIHInstituteCenterEnum(RichEnum):
+    """
+    National Institutes of Health (NIH) Institutes and Centers.
+
+NIH comprises 27 Institutes and Centers, each with a specific research agenda focused on particular
+diseases or body systems. These are the major NIH ICs that fund extramural research.
+
+    """
+    # Enum members
+    NCI = "NCI"
+    NHLBI = "NHLBI"
+    NIAID = "NIAID"
+    NIMH = "NIMH"
+    NINDS = "NINDS"
+    NIDDK = "NIDDK"
+    NHGRI = "NHGRI"
+    NIGMS = "NIGMS"
+    NIEHS = "NIEHS"
+    NEI = "NEI"
+    NIA = "NIA"
+    NLM = "NLM"
+
+# Set metadata after class creation to avoid it becoming an enum member
+NIHInstituteCenterEnum._metadata = {
+    "NCI": {'description': 'NIH institute for cancer research and training', 'meaning': 'ROR:02t771148', 'annotations': {'parent_organization': 'National Institutes of Health', 'website': 'https://www.cancer.gov/', 'established': 1937}, 'aliases': ['National Cancer Institute']},
+    "NHLBI": {'description': 'NIH institute for heart, lung, and blood diseases research', 'meaning': 'ROR:012pb6c26', 'annotations': {'parent_organization': 'National Institutes of Health', 'website': 'https://www.nhlbi.nih.gov/', 'established': 1948}, 'aliases': ['National Heart, Lung, and Blood Institute']},
+    "NIAID": {'description': 'NIH institute for infectious, immunologic, and allergic diseases research', 'meaning': 'ROR:043z4tv69', 'annotations': {'parent_organization': 'National Institutes of Health', 'website': 'https://www.niaid.nih.gov/', 'established': 1948}},
+    "NIMH": {'description': 'NIH institute for mental health research', 'meaning': 'ROR:04t0s7x83', 'annotations': {'parent_organization': 'National Institutes of Health', 'website': 'https://www.nimh.nih.gov/', 'established': 1949}},
+    "NINDS": {'description': 'NIH institute for neurological disorders research', 'meaning': 'ROR:01s5ya894', 'annotations': {'parent_organization': 'National Institutes of Health', 'website': 'https://www.ninds.nih.gov/', 'established': 1950}},
+    "NIDDK": {'description': 'NIH institute for diabetes, digestive, and kidney diseases research', 'meaning': 'ROR:00adh9b73', 'annotations': {'parent_organization': 'National Institutes of Health', 'website': 'https://www.niddk.nih.gov/', 'established': 1950}},
+    "NHGRI": {'description': 'NIH institute for genomics and genetics research', 'meaning': 'ROR:00baak391', 'annotations': {'parent_organization': 'National Institutes of Health', 'website': 'https://www.genome.gov/', 'established': 1989}},
+    "NIGMS": {'description': 'NIH institute supporting basic biomedical research', 'meaning': 'ROR:04q48ey07', 'annotations': {'parent_organization': 'National Institutes of Health', 'website': 'https://www.nigms.nih.gov/', 'established': 1962}},
+    "NIEHS": {'description': 'NIH institute for environmental health sciences research', 'meaning': 'ROR:00j4k1h63', 'annotations': {'parent_organization': 'National Institutes of Health', 'website': 'https://www.niehs.nih.gov/', 'established': 1966}},
+    "NEI": {'description': 'NIH institute for vision and eye disease research', 'meaning': 'ROR:03wkg3b53', 'annotations': {'parent_organization': 'National Institutes of Health', 'website': 'https://www.nei.nih.gov/', 'established': 1968}},
+    "NIA": {'description': 'NIH institute for aging research', 'meaning': 'ROR:049v75w11', 'annotations': {'parent_organization': 'National Institutes of Health', 'website': 'https://www.nia.nih.gov/', 'established': 1974}},
+    "NLM": {'description': "World's largest biomedical library and NIH component", 'meaning': 'ROR:0060t0j89', 'annotations': {'parent_organization': 'National Institutes of Health', 'website': 'https://www.nlm.nih.gov/', 'established': 1956}, 'aliases': ['National Library of Medicine']},
+}
+
+class StandardsOrganizationEnum(RichEnum):
+    """
+    Major International Standards Development Organizations.
+
+These organizations develop technical standards, specifications, and guidelines used globally
+across various industries including information technology, healthcare, and engineering.
+
+    """
+    # Enum members
+    ISO = "ISO"
+    W3C = "W3C"
+    IEEE = "IEEE"
+    HL7 = "HL7"
+
+# Set metadata after class creation to avoid it becoming an enum member
+StandardsOrganizationEnum._metadata = {
+    "ISO": {'description': 'International standard-setting body for industrial and commercial standards', 'meaning': 'ROR:004s85t07', 'annotations': {'website': 'https://www.iso.org/', 'established': 1947, 'headquarters': 'Geneva, Switzerland'}},
+    "W3C": {'description': 'International standards organization for World Wide Web standards', 'meaning': 'ROR:0059y1582', 'annotations': {'website': 'https://www.w3.org/', 'established': 1994, 'headquarters': 'Cambridge, Massachusetts'}},
+    "IEEE": {'description': 'Professional association for electronic and electrical engineering', 'meaning': 'ROR:01n002310', 'annotations': {'website': 'https://www.ieee.org/', 'established': 1963, 'headquarters': 'New York, USA'}},
+    "HL7": {'description': 'Standards development organization for healthcare information exchange', 'meaning': 'ROR:029ga8k16', 'annotations': {'website': 'https://www.hl7.org/', 'established': 1987, 'headquarters': 'Ann Arbor, Michigan'}, 'aliases': ['Health Level Seven']},
+}
+
+class UNSpecializedAgencyEnum(RichEnum):
+    """
+    United Nations Specialized Agencies.
+
+UN specialized agencies are autonomous international organizations that coordinate their work
+with the UN through negotiated agreements. They address international issues in their respective fields.
+
+    """
+    # Enum members
+    WHO = "WHO"
+    UNESCO = "UNESCO"
+    IAEA = "IAEA"
+    WMO = "WMO"
+    UNEP = "UNEP"
+
+# Set metadata after class creation to avoid it becoming an enum member
+UNSpecializedAgencyEnum._metadata = {
+    "WHO": {'description': 'UN agency for international public health', 'meaning': 'ROR:01f80g185', 'annotations': {'website': 'https://www.who.int/', 'established': 1948, 'headquarters': 'Geneva, Switzerland'}},
+    "UNESCO": {'description': 'UN Educational, Scientific and Cultural Organization', 'meaning': 'ROR:04h4z8k05', 'annotations': {'website': 'https://www.unesco.org/', 'established': 1945, 'headquarters': 'Paris, France'}, 'aliases': ['United Nations Educational, Scientific and Cultural Organization']},
+    "IAEA": {'description': 'International organization promoting peaceful use of nuclear energy', 'meaning': 'ROR:00gtfax65', 'annotations': {'website': 'https://www.iaea.org/', 'established': 1957, 'headquarters': 'Vienna, Austria'}},
+    "WMO": {'description': 'UN agency for weather, climate and water resources', 'meaning': 'ROR:011pjwf87', 'annotations': {'website': 'https://public.wmo.int/', 'established': 1950, 'headquarters': 'Geneva, Switzerland'}},
+    "UNEP": {'description': 'UN program coordinating environmental activities', 'meaning': 'ROR:015z29x25', 'annotations': {'website': 'https://www.unep.org/', 'established': 1972, 'headquarters': 'Nairobi, Kenya'}},
+}
+
 class EnergySource(RichEnum):
     """
     Types of energy sources and generation methods
@@ -3100,24 +3388,24 @@ class EnergySource(RichEnum):
 
 # Set metadata after class creation to avoid it becoming an enum member
 EnergySource._metadata = {
-    "SOLAR": {'meaning': 'ENVO:01001862', 'annotations': {'renewable': True, 'emission_free': True}, 'aliases': ['Solar radiation']},
-    "WIND": {'annotations': {'renewable': True, 'emission_free': True}, 'aliases': ['wind wave energy']},
-    "HYDROELECTRIC": {'annotations': {'renewable': True, 'emission_free': True}, 'aliases': ['hydroelectric dam']},
-    "GEOTHERMAL": {'meaning': 'ENVO:2000034', 'annotations': {'renewable': True, 'emission_free': True}, 'aliases': ['geothermal energy']},
-    "BIOMASS": {'annotations': {'renewable': True, 'emission_free': False}, 'aliases': ['organic material']},
-    "BIOFUEL": {'annotations': {'renewable': True, 'emission_free': False}},
-    "TIDAL": {'annotations': {'renewable': True, 'emission_free': True}},
-    "HYDROGEN": {'meaning': 'CHEBI:18276', 'annotations': {'renewable': 'depends', 'emission_free': True}, 'aliases': ['dihydrogen']},
-    "COAL": {'meaning': 'ENVO:02000091', 'annotations': {'renewable': False, 'emission_free': False, 'fossil_fuel': True}},
-    "NATURAL_GAS": {'meaning': 'ENVO:01000552', 'annotations': {'renewable': False, 'emission_free': False, 'fossil_fuel': True}},
-    "PETROLEUM": {'meaning': 'ENVO:00002984', 'annotations': {'renewable': False, 'emission_free': False, 'fossil_fuel': True}},
-    "DIESEL": {'meaning': 'ENVO:03510006', 'annotations': {'renewable': False, 'emission_free': False, 'fossil_fuel': True}, 'aliases': ['diesel fuel']},
-    "GASOLINE": {'annotations': {'renewable': False, 'emission_free': False, 'fossil_fuel': True}, 'aliases': ['fuel oil']},
+    "SOLAR": {'meaning': 'ENVO:01001862', 'annotations': {'renewable': True, 'emission_free': True, 'oeo_label': 'solar energy', 'brick_label': 'Solar Thermal Collector'}, 'aliases': ['Solar radiation']},
+    "WIND": {'annotations': {'renewable': True, 'emission_free': True, 'oeo_label': 'wind energy'}, 'aliases': ['wind wave energy']},
+    "HYDROELECTRIC": {'annotations': {'renewable': True, 'emission_free': True, 'oeo_label': 'hydro energy'}, 'aliases': ['hydroelectric dam']},
+    "GEOTHERMAL": {'meaning': 'ENVO:2000034', 'annotations': {'renewable': True, 'emission_free': True, 'oeo_label': 'geothermal energy'}, 'aliases': ['geothermal energy']},
+    "BIOMASS": {'annotations': {'renewable': True, 'emission_free': False, 'oeo_label': 'bioenergy'}, 'aliases': ['organic material']},
+    "BIOFUEL": {'annotations': {'renewable': True, 'emission_free': False, 'oeo_label': 'biofuel'}},
+    "TIDAL": {'annotations': {'renewable': True, 'emission_free': True, 'oeo_label': 'marine tidal energy, marine wave energy'}},
+    "HYDROGEN": {'meaning': 'CHEBI:18276', 'annotations': {'renewable': 'depends', 'emission_free': True, 'oeo_label': 'hydrogen'}, 'aliases': ['dihydrogen']},
+    "COAL": {'meaning': 'ENVO:02000091', 'annotations': {'renewable': False, 'emission_free': False, 'fossil_fuel': True, 'oeo_label': 'coal'}},
+    "NATURAL_GAS": {'meaning': 'ENVO:01000552', 'annotations': {'renewable': False, 'emission_free': False, 'fossil_fuel': True, 'oeo_label': 'natural gas'}},
+    "PETROLEUM": {'meaning': 'ENVO:00002984', 'annotations': {'renewable': False, 'emission_free': False, 'fossil_fuel': True, 'oeo_label': 'crude oil'}},
+    "DIESEL": {'meaning': 'ENVO:03510006', 'annotations': {'renewable': False, 'emission_free': False, 'fossil_fuel': True, 'oeo_label': 'diesel fuel'}, 'aliases': ['diesel fuel']},
+    "GASOLINE": {'annotations': {'renewable': False, 'emission_free': False, 'fossil_fuel': True, 'oeo_label': 'gasoline fuel'}, 'aliases': ['fuel oil']},
     "PROPANE": {'meaning': 'ENVO:01000553', 'annotations': {'renewable': False, 'emission_free': False, 'fossil_fuel': True}, 'aliases': ['liquefied petroleum gas']},
-    "NUCLEAR_FISSION": {'annotations': {'renewable': False, 'emission_free': True}, 'aliases': ['nuclear energy']},
+    "NUCLEAR_FISSION": {'annotations': {'renewable': False, 'emission_free': True, 'oeo_label': 'nuclear fuel'}, 'aliases': ['nuclear energy']},
     "NUCLEAR_FUSION": {'annotations': {'renewable': False, 'emission_free': True}, 'aliases': ['nuclear energy']},
-    "GRID_MIX": {'annotations': {'renewable': 'partial'}},
-    "BATTERY_STORAGE": {'description': 'Battery storage systems', 'annotations': {'storage': True}},
+    "GRID_MIX": {'annotations': {'renewable': 'partial', 'oeo_label': 'supply grid'}},
+    "BATTERY_STORAGE": {'description': 'Battery storage systems', 'annotations': {'storage': True, 'oeo_label': 'battery'}},
 }
 
 class EnergyUnit(RichEnum):
@@ -3270,7 +3558,7 @@ class GridType(RichEnum):
 
 # Set metadata after class creation to avoid it becoming an enum member
 GridType._metadata = {
-    "MAIN_GRID": {'description': 'Main utility grid'},
+    "MAIN_GRID": {'description': 'Main utility grid', 'annotations': {'oeo_label': 'supply grid'}},
     "MICROGRID": {'description': 'Microgrid'},
     "OFF_GRID": {'description': 'Off-grid/standalone'},
     "SMART_GRID": {'description': 'Smart grid'},
@@ -3278,16 +3566,112 @@ GridType._metadata = {
     "VIRTUAL_POWER_PLANT": {'description': 'Virtual power plant'},
 }
 
-class EnergyStorageType(RichEnum):
+class BatteryType(RichEnum):
     """
-    Types of energy storage systems
+    Types of battery technologies for energy storage
     """
     # Enum members
-    LITHIUM_ION_BATTERY = "LITHIUM_ION_BATTERY"
-    LEAD_ACID_BATTERY = "LEAD_ACID_BATTERY"
-    FLOW_BATTERY = "FLOW_BATTERY"
-    SOLID_STATE_BATTERY = "SOLID_STATE_BATTERY"
-    SODIUM_ION_BATTERY = "SODIUM_ION_BATTERY"
+    LITHIUM_ION = "LITHIUM_ION"
+    LITHIUM_IRON_PHOSPHATE = "LITHIUM_IRON_PHOSPHATE"
+    LITHIUM_POLYMER = "LITHIUM_POLYMER"
+    LEAD_ACID = "LEAD_ACID"
+    NICKEL_METAL_HYDRIDE = "NICKEL_METAL_HYDRIDE"
+    NICKEL_CADMIUM = "NICKEL_CADMIUM"
+    SODIUM_ION = "SODIUM_ION"
+    SOLID_STATE = "SOLID_STATE"
+    VANADIUM_REDOX_FLOW = "VANADIUM_REDOX_FLOW"
+    ZINC_BROMINE_FLOW = "ZINC_BROMINE_FLOW"
+    IRON_AIR = "IRON_AIR"
+    ZINC_AIR = "ZINC_AIR"
+
+# Set metadata after class creation to avoid it becoming an enum member
+BatteryType._metadata = {
+    "LITHIUM_ION": {'description': 'Lithium-ion battery', 'annotations': {'chemistry': 'lithium'}, 'aliases': ['Li-ion', 'LIB']},
+    "LITHIUM_IRON_PHOSPHATE": {'description': 'Lithium iron phosphate (LFP) battery', 'annotations': {'chemistry': 'lithium'}, 'aliases': ['LFP', 'LiFePO4']},
+    "LITHIUM_POLYMER": {'description': 'Lithium polymer battery', 'annotations': {'chemistry': 'lithium'}, 'aliases': ['LiPo']},
+    "LEAD_ACID": {'description': 'Lead-acid battery', 'annotations': {'chemistry': 'lead'}, 'aliases': ['Pb-acid']},
+    "NICKEL_METAL_HYDRIDE": {'description': 'Nickel-metal hydride battery', 'annotations': {'chemistry': 'nickel'}, 'aliases': ['NiMH']},
+    "NICKEL_CADMIUM": {'description': 'Nickel-cadmium battery', 'annotations': {'chemistry': 'nickel'}, 'aliases': ['NiCd']},
+    "SODIUM_ION": {'description': 'Sodium-ion battery', 'annotations': {'chemistry': 'sodium'}, 'aliases': ['Na-ion']},
+    "SOLID_STATE": {'description': 'Solid-state battery', 'annotations': {'chemistry': 'various'}},
+    "VANADIUM_REDOX_FLOW": {'description': 'Vanadium redox flow battery', 'annotations': {'chemistry': 'vanadium', 'type': 'flow'}, 'aliases': ['VRB', 'VRFB']},
+    "ZINC_BROMINE_FLOW": {'description': 'Zinc-bromine flow battery', 'annotations': {'chemistry': 'zinc', 'type': 'flow'}, 'aliases': ['ZnBr']},
+    "IRON_AIR": {'description': 'Iron-air battery', 'annotations': {'chemistry': 'iron'}},
+    "ZINC_AIR": {'description': 'Zinc-air battery', 'annotations': {'chemistry': 'zinc'}},
+}
+
+class PVCellType(RichEnum):
+    """
+    Types of photovoltaic cell technologies
+    """
+    # Enum members
+    MONOCRYSTALLINE_SILICON = "MONOCRYSTALLINE_SILICON"
+    POLYCRYSTALLINE_SILICON = "POLYCRYSTALLINE_SILICON"
+    PASSIVATED_EMITTER_REAR_CELL = "PASSIVATED_EMITTER_REAR_CELL"
+    HETEROJUNCTION = "HETEROJUNCTION"
+    TUNNEL_OXIDE_PASSIVATED_CONTACT = "TUNNEL_OXIDE_PASSIVATED_CONTACT"
+    INTERDIGITATED_BACK_CONTACT = "INTERDIGITATED_BACK_CONTACT"
+    CADMIUM_TELLURIDE = "CADMIUM_TELLURIDE"
+    COPPER_INDIUM_GALLIUM_SELENIDE = "COPPER_INDIUM_GALLIUM_SELENIDE"
+    AMORPHOUS_SILICON = "AMORPHOUS_SILICON"
+    GALLIUM_ARSENIDE = "GALLIUM_ARSENIDE"
+    PEROVSKITE = "PEROVSKITE"
+    ORGANIC = "ORGANIC"
+    TANDEM = "TANDEM"
+
+# Set metadata after class creation to avoid it becoming an enum member
+PVCellType._metadata = {
+    "MONOCRYSTALLINE_SILICON": {'description': 'Monocrystalline silicon (mono-Si) cells', 'annotations': {'material': 'silicon', 'efficiency_range': '17-22%'}, 'aliases': ['mono-Si', 'single-crystal silicon']},
+    "POLYCRYSTALLINE_SILICON": {'description': 'Polycrystalline silicon (poly-Si) cells', 'annotations': {'material': 'silicon', 'efficiency_range': '15-17%'}, 'aliases': ['poly-Si', 'multi-crystalline silicon']},
+    "PASSIVATED_EMITTER_REAR_CELL": {'description': 'Passivated Emitter and Rear Cell (PERC)', 'annotations': {'material': 'silicon', 'efficiency_range': '19-22%'}, 'aliases': ['PERC']},
+    "HETEROJUNCTION": {'description': 'Heterojunction (HJT) cells', 'annotations': {'material': 'silicon', 'efficiency_range': '21-24%'}, 'aliases': ['HJT', 'HIT']},
+    "TUNNEL_OXIDE_PASSIVATED_CONTACT": {'description': 'Tunnel Oxide Passivated Contact (TOPCon) cells', 'annotations': {'material': 'silicon', 'efficiency_range': '22-24%'}, 'aliases': ['TOPCon']},
+    "INTERDIGITATED_BACK_CONTACT": {'description': 'Interdigitated Back Contact (IBC) cells', 'annotations': {'material': 'silicon', 'efficiency_range': '22-24%'}, 'aliases': ['IBC']},
+    "CADMIUM_TELLURIDE": {'description': 'Cadmium telluride (CdTe) thin-film cells', 'annotations': {'material': 'cadmium_telluride', 'type': 'thin-film', 'efficiency_range': '16-18%'}, 'aliases': ['CdTe']},
+    "COPPER_INDIUM_GALLIUM_SELENIDE": {'description': 'Copper indium gallium selenide (CIGS) thin-film cells', 'annotations': {'material': 'CIGS', 'type': 'thin-film', 'efficiency_range': '15-20%'}, 'aliases': ['CIGS', 'CIS']},
+    "AMORPHOUS_SILICON": {'description': 'Amorphous silicon (a-Si) thin-film cells', 'annotations': {'material': 'silicon', 'type': 'thin-film', 'efficiency_range': '6-8%'}, 'aliases': ['a-Si']},
+    "GALLIUM_ARSENIDE": {'description': 'Gallium arsenide (GaAs) cells', 'annotations': {'material': 'gallium_arsenide', 'efficiency_range': '25-30%', 'application': 'space, concentrator'}, 'aliases': ['GaAs']},
+    "PEROVSKITE": {'description': 'Perovskite solar cells', 'annotations': {'material': 'perovskite', 'efficiency_range': '20-25%', 'status': 'emerging'}},
+    "ORGANIC": {'description': 'Organic photovoltaic (OPV) cells', 'annotations': {'material': 'organic', 'type': 'thin-film', 'efficiency_range': '10-15%', 'status': 'emerging'}, 'aliases': ['OPV']},
+    "TANDEM": {'description': 'Tandem/multi-junction cells', 'annotations': {'efficiency_range': '25-35%'}, 'aliases': ['multi-junction']},
+}
+
+class PVSystemType(RichEnum):
+    """
+    Types of photovoltaic system installations
+    """
+    # Enum members
+    ROOFTOP_RESIDENTIAL = "ROOFTOP_RESIDENTIAL"
+    ROOFTOP_COMMERCIAL = "ROOFTOP_COMMERCIAL"
+    GROUND_MOUNTED = "GROUND_MOUNTED"
+    FLOATING = "FLOATING"
+    BUILDING_INTEGRATED = "BUILDING_INTEGRATED"
+    AGRIVOLTAICS = "AGRIVOLTAICS"
+    CARPORT = "CARPORT"
+    TRACKER_SINGLE_AXIS = "TRACKER_SINGLE_AXIS"
+    TRACKER_DUAL_AXIS = "TRACKER_DUAL_AXIS"
+    CONCENTRATING = "CONCENTRATING"
+
+# Set metadata after class creation to avoid it becoming an enum member
+PVSystemType._metadata = {
+    "ROOFTOP_RESIDENTIAL": {'description': 'Residential rooftop PV system', 'annotations': {'scale': 'residential', 'mounting': 'rooftop'}},
+    "ROOFTOP_COMMERCIAL": {'description': 'Commercial/industrial rooftop PV system', 'annotations': {'scale': 'commercial', 'mounting': 'rooftop'}},
+    "GROUND_MOUNTED": {'description': 'Ground-mounted utility-scale PV system', 'annotations': {'scale': 'utility', 'mounting': 'ground'}},
+    "FLOATING": {'description': 'Floating PV system (floatovoltaics)', 'annotations': {'scale': 'utility', 'mounting': 'floating'}, 'aliases': ['floatovoltaics', 'FPV']},
+    "BUILDING_INTEGRATED": {'description': 'Building-integrated PV (BIPV)', 'annotations': {'mounting': 'integrated'}, 'aliases': ['BIPV']},
+    "AGRIVOLTAICS": {'description': 'Agrivoltaic system (dual-use with agriculture)', 'annotations': {'scale': 'utility', 'dual_use': 'agriculture'}, 'aliases': ['agrophotovoltaics', 'APV']},
+    "CARPORT": {'description': 'Solar carport/parking canopy', 'annotations': {'mounting': 'canopy', 'dual_use': 'parking'}},
+    "TRACKER_SINGLE_AXIS": {'description': 'Single-axis tracking system', 'annotations': {'tracking': 'single_axis'}},
+    "TRACKER_DUAL_AXIS": {'description': 'Dual-axis tracking system', 'annotations': {'tracking': 'dual_axis'}},
+    "CONCENTRATING": {'description': 'Concentrating PV (CPV) system', 'annotations': {'type': 'concentrating'}, 'aliases': ['CPV']},
+}
+
+class EnergyStorageType(RichEnum):
+    """
+    Types of energy storage systems (categories)
+    """
+    # Enum members
+    BATTERY = "BATTERY"
     PUMPED_HYDRO = "PUMPED_HYDRO"
     COMPRESSED_AIR = "COMPRESSED_AIR"
     FLYWHEEL = "FLYWHEEL"
@@ -3302,20 +3686,16 @@ class EnergyStorageType(RichEnum):
 
 # Set metadata after class creation to avoid it becoming an enum member
 EnergyStorageType._metadata = {
-    "LITHIUM_ION_BATTERY": {'description': 'Lithium-ion battery', 'annotations': {'category': 'electrochemical'}},
-    "LEAD_ACID_BATTERY": {'description': 'Lead-acid battery', 'annotations': {'category': 'electrochemical'}},
-    "FLOW_BATTERY": {'description': 'Flow battery (e.g., vanadium redox)', 'annotations': {'category': 'electrochemical'}},
-    "SOLID_STATE_BATTERY": {'description': 'Solid-state battery', 'annotations': {'category': 'electrochemical'}},
-    "SODIUM_ION_BATTERY": {'description': 'Sodium-ion battery', 'annotations': {'category': 'electrochemical'}},
-    "PUMPED_HYDRO": {'description': 'Pumped hydroelectric storage', 'annotations': {'category': 'mechanical'}},
-    "COMPRESSED_AIR": {'description': 'Compressed air energy storage (CAES)', 'annotations': {'category': 'mechanical'}},
+    "BATTERY": {'description': 'Battery storage (see BatteryType for specific chemistries)', 'annotations': {'category': 'electrochemical'}},
+    "PUMPED_HYDRO": {'description': 'Pumped hydroelectric storage', 'annotations': {'category': 'mechanical', 'oeo_label': 'pumped hydro storage power plant'}},
+    "COMPRESSED_AIR": {'description': 'Compressed air energy storage (CAES)', 'annotations': {'category': 'mechanical', 'oeo_label': 'compressed air'}},
     "FLYWHEEL": {'description': 'Flywheel energy storage', 'annotations': {'category': 'mechanical'}},
     "GRAVITY_STORAGE": {'description': 'Gravity-based storage', 'annotations': {'category': 'mechanical'}},
     "MOLTEN_SALT": {'description': 'Molten salt thermal storage', 'annotations': {'category': 'thermal'}},
     "ICE_STORAGE": {'description': 'Ice thermal storage', 'annotations': {'category': 'thermal'}},
     "PHASE_CHANGE": {'description': 'Phase change materials', 'annotations': {'category': 'thermal'}},
-    "HYDROGEN_STORAGE": {'description': 'Hydrogen storage', 'annotations': {'category': 'chemical'}},
-    "SYNTHETIC_FUEL": {'description': 'Synthetic fuel storage', 'annotations': {'category': 'chemical'}},
+    "HYDROGEN_STORAGE": {'description': 'Hydrogen storage', 'annotations': {'category': 'chemical', 'oeo_label': 'hydrogen'}},
+    "SYNTHETIC_FUEL": {'description': 'Synthetic fuel storage', 'annotations': {'category': 'chemical', 'oeo_label': 'synthetic fuel'}},
     "SUPERCAPACITOR": {'description': 'Supercapacitor', 'annotations': {'category': 'electrical'}},
     "SUPERCONDUCTING": {'description': 'Superconducting magnetic energy storage (SMES)', 'annotations': {'category': 'electrical'}},
 }
@@ -3333,11 +3713,11 @@ class EmissionScope(RichEnum):
 
 # Set metadata after class creation to avoid it becoming an enum member
 EmissionScope._metadata = {
-    "SCOPE_1": {'description': 'Direct emissions from owned or controlled sources', 'annotations': {'ghg_protocol': 'Scope 1'}},
-    "SCOPE_2": {'description': 'Indirect emissions from purchased energy', 'annotations': {'ghg_protocol': 'Scope 2'}},
-    "SCOPE_3": {'description': 'All other indirect emissions in value chain', 'annotations': {'ghg_protocol': 'Scope 3'}},
-    "SCOPE_3_UPSTREAM": {'description': 'Upstream Scope 3 emissions', 'annotations': {'ghg_protocol': 'Scope 3'}},
-    "SCOPE_3_DOWNSTREAM": {'description': 'Downstream Scope 3 emissions', 'annotations': {'ghg_protocol': 'Scope 3'}},
+    "SCOPE_1": {'description': 'Direct emissions from owned or controlled sources', 'annotations': {'ghg_protocol': 'Scope 1', 'oeo_label': 'greenhouse gas emission'}},
+    "SCOPE_2": {'description': 'Indirect emissions from purchased energy', 'annotations': {'ghg_protocol': 'Scope 2', 'oeo_label': 'greenhouse gas emission'}},
+    "SCOPE_3": {'description': 'All other indirect emissions in value chain', 'annotations': {'ghg_protocol': 'Scope 3', 'oeo_label': 'greenhouse gas emission'}},
+    "SCOPE_3_UPSTREAM": {'description': 'Upstream Scope 3 emissions', 'annotations': {'ghg_protocol': 'Scope 3', 'oeo_label': 'greenhouse gas emission'}},
+    "SCOPE_3_DOWNSTREAM": {'description': 'Downstream Scope 3 emissions', 'annotations': {'ghg_protocol': 'Scope 3', 'oeo_label': 'greenhouse gas emission'}},
 }
 
 class CarbonIntensity(RichEnum):
@@ -3390,6 +3770,26 @@ ElectricityMarket._metadata = {
     "FEED_IN_TARIFF": {'description': 'Feed-in tariff'},
     "NET_METERING": {'description': 'Net metering'},
     "POWER_PURCHASE_AGREEMENT": {'description': 'Power purchase agreement (PPA)'},
+}
+
+class CapabilityStatus(RichEnum):
+    """
+    Operational status of a capability, facility, or infrastructure. Applicable to energy facilities, research capabilities, and other infrastructure throughout their lifecycle.
+    """
+    # Enum members
+    OPERATIONAL = "OPERATIONAL"
+    COMING_ONLINE = "COMING_ONLINE"
+    PILOT = "PILOT"
+    UNDER_DEVELOPMENT = "UNDER_DEVELOPMENT"
+    DECOMMISSIONED = "DECOMMISSIONED"
+
+# Set metadata after class creation to avoid it becoming an enum member
+CapabilityStatus._metadata = {
+    "OPERATIONAL": {'description': 'Fully operational and available to users', 'annotations': {'wikidata_label': 'in use', 'lifecycle_phase': 'operation'}},
+    "COMING_ONLINE": {'description': 'Being commissioned, coming online soon', 'annotations': {'wikidata_label': 'building process', 'lifecycle_phase': 'commissioning', 'iaea_equivalent': 'commissioning'}},
+    "PILOT": {'description': 'In pilot phase with limited access', 'annotations': {'availability': 'limited', 'lifecycle_phase': 'testing'}},
+    "UNDER_DEVELOPMENT": {'description': 'Under development, not yet available', 'annotations': {'wikidata_label': 'proposed building or structure', 'lifecycle_phase': 'planning/construction'}},
+    "DECOMMISSIONED": {'description': 'No longer available, permanently shut down', 'annotations': {'lifecycle_phase': 'end-of-life', 'iaea_equivalent': 'decommissioned'}},
 }
 
 class FossilFuelTypeEnum(RichEnum):
@@ -4326,6 +4726,364 @@ OperationalProcedureEnum._metadata = {
     "SECURITY_PROCEDURE": {'description': 'Physical security and access control procedures', 'annotations': {'access_control': 'personnel access authorization', 'detection': 'intrusion detection systems', 'response': 'security force response', 'coordination': 'with law enforcement'}},
 }
 
+class GeothermalSystemType(RichEnum):
+    """
+    Types of geothermal energy systems, including conventional hydrothermal and enhanced/engineered geothermal systems.
+    """
+    # Enum members
+    HYDROTHERMAL = "HYDROTHERMAL"
+    ENHANCED_GEOTHERMAL_SYSTEM = "ENHANCED_GEOTHERMAL_SYSTEM"
+    ADVANCED_GEOTHERMAL_SYSTEM = "ADVANCED_GEOTHERMAL_SYSTEM"
+    HOT_DRY_ROCK = "HOT_DRY_ROCK"
+    GEOPRESSURED = "GEOPRESSURED"
+    SUPERCRITICAL = "SUPERCRITICAL"
+    GROUND_SOURCE_HEAT_PUMP = "GROUND_SOURCE_HEAT_PUMP"
+
+# Set metadata after class creation to avoid it becoming an enum member
+GeothermalSystemType._metadata = {
+    "HYDROTHERMAL": {'description': 'Naturally occurring geothermal system with heat, fluid, and permeability sufficient for energy extraction without stimulation.', 'annotations': {'conventional': True}},
+    "ENHANCED_GEOTHERMAL_SYSTEM": {'description': 'Engineered reservoirs created to extract heat from low permeability geothermal resources through stimulation methods.', 'annotations': {'requires_stimulation': True}, 'aliases': ['EGS', 'Engineered Geothermal System']},
+    "ADVANCED_GEOTHERMAL_SYSTEM": {'description': 'Closed-loop geothermal systems that circulate working fluid through wellbores to extract heat conductively without reservoir stimulation.', 'annotations': {'closed_loop': True}, 'aliases': ['AGS', 'Closed-Loop Geothermal']},
+    "HOT_DRY_ROCK": {'description': 'Geothermal system targeting hot basement rock lacking natural fluid or permeability, requiring artificial reservoir creation.', 'aliases': ['HDR']},
+    "GEOPRESSURED": {'description': 'Deep sedimentary formations with abnormally high fluid pressure containing hot brine and dissolved methane.', 'annotations': {'methane_recovery': True}},
+    "SUPERCRITICAL": {'description': 'Very high temperature systems (>374C) where water exists above its critical point, offering higher energy density.', 'annotations': {'temperature_min_c': 374}},
+    "GROUND_SOURCE_HEAT_PUMP": {'description': 'Shallow geothermal system using stable ground temperatures for heating and cooling buildings.', 'annotations': {'direct_use': True}, 'aliases': ['GSHP', 'Geothermal Heat Pump']},
+}
+
+class GeothermalReservoirType(RichEnum):
+    """
+    Classification of geothermal reservoirs by geological setting and characteristics.
+    """
+    # Enum members
+    VOLCANIC = "VOLCANIC"
+    SEDIMENTARY = "SEDIMENTARY"
+    FRACTURED_BASEMENT = "FRACTURED_BASEMENT"
+    FAULT_CONTROLLED = "FAULT_CONTROLLED"
+    MAGMATIC = "MAGMATIC"
+    CONDUCTION_DOMINATED = "CONDUCTION_DOMINATED"
+
+# Set metadata after class creation to avoid it becoming an enum member
+GeothermalReservoirType._metadata = {
+    "VOLCANIC": {'description': 'Reservoir associated with volcanic activity, typically in active volcanic regions with magma heat sources.'},
+    "SEDIMENTARY": {'description': 'Reservoir in sedimentary formations with elevated temperatures due to depth or regional heat flow.'},
+    "FRACTURED_BASEMENT": {'description': 'Reservoir in fractured crystalline basement rocks, typically granitic or metamorphic.', 'aliases': ['Hot Fractured Rock']},
+    "FAULT_CONTROLLED": {'description': 'Reservoir where fluid flow is controlled by fault systems providing permeability pathways.'},
+    "MAGMATIC": {'description': 'Very high temperature reservoir near or in contact with magma bodies or recent intrusions.'},
+    "CONDUCTION_DOMINATED": {'description': 'Low permeability reservoir where heat transfer is primarily through conduction rather than convection.'},
+}
+
+class GeothermalWellType(RichEnum):
+    """
+    Types of wells used in geothermal energy development and production.
+    """
+    # Enum members
+    PRODUCTION_WELL = "PRODUCTION_WELL"
+    INJECTION_WELL = "INJECTION_WELL"
+    EXPLORATION_WELL = "EXPLORATION_WELL"
+    OBSERVATION_WELL = "OBSERVATION_WELL"
+    SLIM_HOLE = "SLIM_HOLE"
+    DIRECTIONAL_WELL = "DIRECTIONAL_WELL"
+
+# Set metadata after class creation to avoid it becoming an enum member
+GeothermalWellType._metadata = {
+    "PRODUCTION_WELL": {'description': 'Well used to extract geothermal fluids or steam from the reservoir.'},
+    "INJECTION_WELL": {'description': 'Well used to return cooled geothermal fluids to the reservoir to maintain pressure and sustainability.', 'aliases': ['Reinjection Well']},
+    "EXPLORATION_WELL": {'description': 'Well drilled to evaluate geothermal resource characteristics.', 'aliases': ['Wildcat Well']},
+    "OBSERVATION_WELL": {'description': 'Well used to monitor reservoir conditions and pressure.', 'aliases': ['Monitoring Well']},
+    "SLIM_HOLE": {'description': 'Smaller diameter well used for initial exploration and temperature gradient measurement.'},
+    "DIRECTIONAL_WELL": {'description': 'Well drilled at an angle to access reservoir from offset surface location or increase reservoir contact.'},
+}
+
+class GeothermalApplication(RichEnum):
+    """
+    Applications and uses of geothermal energy.
+    """
+    # Enum members
+    ELECTRICITY_GENERATION = "ELECTRICITY_GENERATION"
+    DIRECT_USE_HEATING = "DIRECT_USE_HEATING"
+    GREENHOUSE_HEATING = "GREENHOUSE_HEATING"
+    AQUACULTURE = "AQUACULTURE"
+    INDUSTRIAL_PROCESS_HEAT = "INDUSTRIAL_PROCESS_HEAT"
+    FOOD_PROCESSING = "FOOD_PROCESSING"
+    BATHING_RECREATION = "BATHING_RECREATION"
+    LITHIUM_EXTRACTION = "LITHIUM_EXTRACTION"
+
+# Set metadata after class creation to avoid it becoming an enum member
+GeothermalApplication._metadata = {
+    "ELECTRICITY_GENERATION": {'description': 'Use of geothermal resources for power generation through steam turbines or binary cycle plants.', 'meaning': 'ENVO:2000034'},
+    "DIRECT_USE_HEATING": {'description': 'Direct use of geothermal heat for space heating, district heating, or industrial processes.'},
+    "GREENHOUSE_HEATING": {'description': 'Use of geothermal heat for agricultural greenhouses.'},
+    "AQUACULTURE": {'description': 'Use of geothermal heat for fish farming and aquaculture.'},
+    "INDUSTRIAL_PROCESS_HEAT": {'description': 'Use of geothermal heat for industrial manufacturing processes.'},
+    "FOOD_PROCESSING": {'description': 'Use of geothermal heat for food drying, pasteurization, and processing.'},
+    "BATHING_RECREATION": {'description': 'Use of geothermal waters for spas, pools, and recreation.'},
+    "LITHIUM_EXTRACTION": {'description': 'Extraction of lithium and other minerals from geothermal brines as a co-product of energy production.', 'annotations': {'co_production': True}},
+}
+
+class GeothermalResourceTemperature(RichEnum):
+    """
+    Classification of geothermal resources by temperature range.
+    """
+    # Enum members
+    LOW_TEMPERATURE = "LOW_TEMPERATURE"
+    MODERATE_TEMPERATURE = "MODERATE_TEMPERATURE"
+    HIGH_TEMPERATURE = "HIGH_TEMPERATURE"
+    SUPERCRITICAL = "SUPERCRITICAL"
+
+# Set metadata after class creation to avoid it becoming an enum member
+GeothermalResourceTemperature._metadata = {
+    "LOW_TEMPERATURE": {'description': 'Geothermal resource below 90C, suitable for direct use applications.', 'annotations': {'temperature_max_c': 90}},
+    "MODERATE_TEMPERATURE": {'description': 'Geothermal resource 90-150C, suitable for binary power generation.', 'annotations': {'temperature_min_c': 90, 'temperature_max_c': 150}},
+    "HIGH_TEMPERATURE": {'description': 'Geothermal resource above 150C, suitable for flash steam power generation.', 'annotations': {'temperature_min_c': 150}},
+    "SUPERCRITICAL": {'description': 'Very high temperature resource above 374C where water exists in supercritical state.', 'annotations': {'temperature_min_c': 374}},
+}
+
+class HydrogenType(RichEnum):
+    """
+    Color-coded classification of hydrogen based on production method and carbon intensity. This informal industry taxonomy differentiates hydrogen by its carbon footprint and energy source.
+    """
+    # Enum members
+    GREEN_HYDROGEN = "GREEN_HYDROGEN"
+    BLUE_HYDROGEN = "BLUE_HYDROGEN"
+    GREY_HYDROGEN = "GREY_HYDROGEN"
+    BROWN_HYDROGEN = "BROWN_HYDROGEN"
+    BLACK_HYDROGEN = "BLACK_HYDROGEN"
+    PINK_HYDROGEN = "PINK_HYDROGEN"
+    TURQUOISE_HYDROGEN = "TURQUOISE_HYDROGEN"
+    WHITE_HYDROGEN = "WHITE_HYDROGEN"
+    YELLOW_HYDROGEN = "YELLOW_HYDROGEN"
+    ORANGE_HYDROGEN = "ORANGE_HYDROGEN"
+
+# Set metadata after class creation to avoid it becoming an enum member
+HydrogenType._metadata = {
+    "GREEN_HYDROGEN": {'description': 'Hydrogen produced via electrolysis powered by renewable energy sources (solar, wind, hydro). Zero carbon emissions during production.', 'annotations': {'production_method': 'electrolysis', 'energy_source': 'renewable', 'carbon_intensity': 'zero'}, 'aliases': ['Renewable Hydrogen']},
+    "BLUE_HYDROGEN": {'description': 'Hydrogen produced from natural gas via steam methane reforming (SMR) with carbon capture and storage (CCS). Low carbon intensity.', 'annotations': {'production_method': 'steam_methane_reforming', 'energy_source': 'natural_gas', 'carbon_intensity': 'low', 'requires_ccs': True}},
+    "GREY_HYDROGEN": {'description': 'Hydrogen produced from natural gas via steam methane reforming without carbon capture. Most common production method currently.', 'annotations': {'production_method': 'steam_methane_reforming', 'energy_source': 'natural_gas', 'carbon_intensity': 'high', 'co2_per_kg_h2': '9-12'}, 'aliases': ['Gray Hydrogen']},
+    "BROWN_HYDROGEN": {'description': 'Hydrogen produced from brown coal (lignite) gasification without carbon capture. High carbon intensity.', 'annotations': {'production_method': 'coal_gasification', 'energy_source': 'lignite', 'carbon_intensity': 'very_high'}},
+    "BLACK_HYDROGEN": {'description': 'Hydrogen produced from black coal (bituminous) gasification without carbon capture. High carbon intensity.', 'annotations': {'production_method': 'coal_gasification', 'energy_source': 'bituminous_coal', 'carbon_intensity': 'very_high'}},
+    "PINK_HYDROGEN": {'description': 'Hydrogen produced via electrolysis powered by nuclear energy. Zero carbon emissions during production.', 'annotations': {'production_method': 'electrolysis', 'energy_source': 'nuclear', 'carbon_intensity': 'zero'}, 'aliases': ['Purple Hydrogen', 'Red Hydrogen']},
+    "TURQUOISE_HYDROGEN": {'description': 'Hydrogen produced via methane pyrolysis, producing solid carbon instead of CO2. Lower carbon intensity than grey hydrogen.', 'annotations': {'production_method': 'methane_pyrolysis', 'energy_source': 'natural_gas', 'carbon_intensity': 'low', 'byproduct': 'solid_carbon'}},
+    "WHITE_HYDROGEN": {'description': 'Naturally occurring geological hydrogen found in underground deposits. Zero production emissions.', 'annotations': {'production_method': 'geological_extraction', 'energy_source': 'natural', 'carbon_intensity': 'zero'}, 'aliases': ['Natural Hydrogen', 'Geological Hydrogen', 'Gold Hydrogen']},
+    "YELLOW_HYDROGEN": {'description': 'Hydrogen produced via electrolysis powered by solar energy specifically. A subset of green hydrogen.', 'annotations': {'production_method': 'electrolysis', 'energy_source': 'solar', 'carbon_intensity': 'zero'}},
+    "ORANGE_HYDROGEN": {'description': 'Hydrogen produced from plastic waste gasification or pyrolysis. Emerging technology addressing both energy and waste challenges.', 'annotations': {'production_method': 'waste_gasification', 'energy_source': 'plastic_waste', 'carbon_intensity': 'varies'}},
+}
+
+class HydrogenProductionMethod(RichEnum):
+    """
+    Methods and processes for producing hydrogen.
+    """
+    # Enum members
+    STEAM_METHANE_REFORMING = "STEAM_METHANE_REFORMING"
+    AUTOTHERMAL_REFORMING = "AUTOTHERMAL_REFORMING"
+    PARTIAL_OXIDATION = "PARTIAL_OXIDATION"
+    COAL_GASIFICATION = "COAL_GASIFICATION"
+    WATER_ELECTROLYSIS = "WATER_ELECTROLYSIS"
+    ALKALINE_ELECTROLYSIS = "ALKALINE_ELECTROLYSIS"
+    PEM_ELECTROLYSIS = "PEM_ELECTROLYSIS"
+    SOLID_OXIDE_ELECTROLYSIS = "SOLID_OXIDE_ELECTROLYSIS"
+    METHANE_PYROLYSIS = "METHANE_PYROLYSIS"
+    BIOMASS_GASIFICATION = "BIOMASS_GASIFICATION"
+    BIOLOGICAL_PRODUCTION = "BIOLOGICAL_PRODUCTION"
+    THERMOCHEMICAL_WATER_SPLITTING = "THERMOCHEMICAL_WATER_SPLITTING"
+    PHOTOELECTROCHEMICAL = "PHOTOELECTROCHEMICAL"
+
+# Set metadata after class creation to avoid it becoming an enum member
+HydrogenProductionMethod._metadata = {
+    "STEAM_METHANE_REFORMING": {'description': 'High temperature steam reacts with methane to produce hydrogen, carbon monoxide, and carbon dioxide.', 'annotations': {'feedstock': 'natural_gas', 'temperature_c': '700-1000', 'dominant_method': True}, 'aliases': ['SMR']},
+    "AUTOTHERMAL_REFORMING": {'description': 'Combines steam reforming and partial oxidation using oxygen and steam to produce hydrogen from hydrocarbons.', 'aliases': ['ATR']},
+    "PARTIAL_OXIDATION": {'description': 'Exothermic process reacting hydrocarbons with limited oxygen to produce hydrogen and carbon monoxide.', 'aliases': ['POX']},
+    "COAL_GASIFICATION": {'description': 'Conversion of coal to syngas (hydrogen and carbon monoxide) using high temperature and steam.', 'meaning': 'CHMO:0001501'},
+    "WATER_ELECTROLYSIS": {'description': 'Splitting water into hydrogen and oxygen using electrical current. Can be powered by various energy sources.', 'aliases': ['Electrolysis']},
+    "ALKALINE_ELECTROLYSIS": {'description': 'Electrolysis using alkaline solution (typically KOH) as electrolyte. Mature commercial technology.', 'annotations': {'electrolyte': 'alkaline', 'maturity': 'commercial'}, 'aliases': ['AEL']},
+    "PEM_ELECTROLYSIS": {'description': 'Proton Exchange Membrane electrolysis using solid polymer electrolyte. Higher efficiency, faster response.', 'annotations': {'electrolyte': 'polymer_membrane', 'maturity': 'commercial'}, 'aliases': ['PEMEC', 'Polymer Electrolyte Membrane Electrolysis']},
+    "SOLID_OXIDE_ELECTROLYSIS": {'description': 'High temperature electrolysis using solid ceramic electrolyte. Higher efficiency when waste heat is available.', 'annotations': {'electrolyte': 'solid_oxide', 'temperature_c': '700-850', 'maturity': 'emerging'}, 'aliases': ['SOEC']},
+    "METHANE_PYROLYSIS": {'description': 'Thermal decomposition of methane into hydrogen and solid carbon without oxygen. Produces no direct CO2.', 'annotations': {'feedstock': 'natural_gas', 'byproduct': 'solid_carbon'}, 'aliases': ['Thermal Cracking']},
+    "BIOMASS_GASIFICATION": {'description': 'Thermochemical conversion of biomass to hydrogen-rich syngas at high temperatures.', 'annotations': {'feedstock': 'biomass', 'renewable': True}},
+    "BIOLOGICAL_PRODUCTION": {'description': 'Production of hydrogen by microorganisms through photosynthesis, fermentation, or other biological processes.', 'annotations': {'renewable': True, 'maturity': 'research'}, 'aliases': ['Biohydrogen']},
+    "THERMOCHEMICAL_WATER_SPLITTING": {'description': 'Using high temperatures from concentrated solar or nuclear to drive chemical cycles that split water.', 'annotations': {'temperature_c': '500-2000', 'maturity': 'research'}},
+    "PHOTOELECTROCHEMICAL": {'description': 'Direct conversion of sunlight to hydrogen using specialized semiconductor materials in contact with water.', 'annotations': {'maturity': 'research'}, 'aliases': ['PEC']},
+}
+
+class HydrogenStorageMethod(RichEnum):
+    """
+    Methods for storing hydrogen for later use or transport.
+    """
+    # Enum members
+    COMPRESSED_GAS = "COMPRESSED_GAS"
+    LIQUID_HYDROGEN = "LIQUID_HYDROGEN"
+    METAL_HYDRIDE = "METAL_HYDRIDE"
+    CHEMICAL_HYDRIDE = "CHEMICAL_HYDRIDE"
+    UNDERGROUND_STORAGE = "UNDERGROUND_STORAGE"
+    CRYO_COMPRESSED = "CRYO_COMPRESSED"
+
+# Set metadata after class creation to avoid it becoming an enum member
+HydrogenStorageMethod._metadata = {
+    "COMPRESSED_GAS": {'description': 'Storage of hydrogen as compressed gas at high pressure (350-700 bar) in pressure vessels.', 'annotations': {'pressure_bar': '350-700', 'maturity': 'commercial'}, 'aliases': ['CGH2']},
+    "LIQUID_HYDROGEN": {'description': 'Storage of hydrogen in liquid form at cryogenic temperatures (-253C). Higher energy density but requires insulation.', 'annotations': {'temperature_c': -253, 'maturity': 'commercial'}, 'aliases': ['LH2']},
+    "METAL_HYDRIDE": {'description': 'Storage of hydrogen absorbed into metal alloys forming metal hydrides. Safer but heavier than compressed gas.', 'annotations': {'maturity': 'commercial'}},
+    "CHEMICAL_HYDRIDE": {'description': 'Storage as chemical compounds (ammonia, methanol, LOHC) that release hydrogen when processed.', 'aliases': ['LOHC', 'Liquid Organic Hydrogen Carrier']},
+    "UNDERGROUND_STORAGE": {'description': 'Large-scale storage in salt caverns, depleted gas fields, or aquifers for grid-scale applications.', 'annotations': {'scale': 'utility'}, 'aliases': ['Geological Storage']},
+    "CRYO_COMPRESSED": {'description': 'Hybrid approach combining cryogenic cooling with high pressure for improved density.', 'annotations': {'maturity': 'emerging'}, 'aliases': ['CcH2']},
+}
+
+class HydrogenApplication(RichEnum):
+    """
+    End-use applications for hydrogen.
+    """
+    # Enum members
+    FUEL_CELL_VEHICLE = "FUEL_CELL_VEHICLE"
+    FUEL_CELL_STATIONARY = "FUEL_CELL_STATIONARY"
+    INDUSTRIAL_FEEDSTOCK = "INDUSTRIAL_FEEDSTOCK"
+    STEEL_PRODUCTION = "STEEL_PRODUCTION"
+    AMMONIA_SYNTHESIS = "AMMONIA_SYNTHESIS"
+    METHANOL_SYNTHESIS = "METHANOL_SYNTHESIS"
+    POWER_TO_GAS = "POWER_TO_GAS"
+    BLENDING_NATURAL_GAS = "BLENDING_NATURAL_GAS"
+    SYNTHETIC_FUELS = "SYNTHETIC_FUELS"
+
+# Set metadata after class creation to avoid it becoming an enum member
+HydrogenApplication._metadata = {
+    "FUEL_CELL_VEHICLE": {'description': 'Use of hydrogen in fuel cells for transportation (cars, trucks, buses).', 'aliases': ['FCEV']},
+    "FUEL_CELL_STATIONARY": {'description': 'Use of hydrogen in stationary fuel cells for power generation.'},
+    "INDUSTRIAL_FEEDSTOCK": {'description': 'Use of hydrogen as chemical feedstock for ammonia production, petroleum refining, and chemical synthesis.', 'meaning': 'CHEBI:18276'},
+    "STEEL_PRODUCTION": {'description': 'Use of hydrogen to reduce iron ore in steelmaking, replacing coal.', 'aliases': ['Green Steel']},
+    "AMMONIA_SYNTHESIS": {'description': 'Use of hydrogen with nitrogen to produce ammonia for fertilizers.'},
+    "METHANOL_SYNTHESIS": {'description': 'Use of hydrogen with CO2 to produce methanol.'},
+    "POWER_TO_GAS": {'description': 'Conversion of excess renewable electricity to hydrogen for grid balancing and energy storage.', 'aliases': ['P2G']},
+    "BLENDING_NATURAL_GAS": {'description': 'Blending hydrogen into natural gas pipelines for decarbonization of heating.'},
+    "SYNTHETIC_FUELS": {'description': 'Use of hydrogen with captured CO2 to produce synthetic hydrocarbons (e-fuels, SAF).', 'aliases': ['E-Fuels', 'Power-to-Liquid']},
+}
+
+class BiomassFeedstockType(RichEnum):
+    """
+    Types of biomass materials used as feedstocks for bioenergy production. Includes dedicated energy crops, agricultural residues, forest residues, and waste streams.
+    """
+    # Enum members
+    CORN_STOVER = "CORN_STOVER"
+    WHEAT_STRAW = "WHEAT_STRAW"
+    RICE_STRAW = "RICE_STRAW"
+    SWITCHGRASS = "SWITCHGRASS"
+    MISCANTHUS = "MISCANTHUS"
+    ENERGY_CANE = "ENERGY_CANE"
+    SWEET_SORGHUM = "SWEET_SORGHUM"
+    POPLAR = "POPLAR"
+    WILLOW = "WILLOW"
+    FOREST_RESIDUE = "FOREST_RESIDUE"
+    WOOD_PROCESSING_RESIDUE = "WOOD_PROCESSING_RESIDUE"
+    MUNICIPAL_SOLID_WASTE = "MUNICIPAL_SOLID_WASTE"
+    FOOD_WASTE = "FOOD_WASTE"
+    ANIMAL_MANURE = "ANIMAL_MANURE"
+    ALGAE = "ALGAE"
+    USED_COOKING_OIL = "USED_COOKING_OIL"
+    SOYBEAN_OIL = "SOYBEAN_OIL"
+    CORN_GRAIN = "CORN_GRAIN"
+    SUGARCANE = "SUGARCANE"
+
+# Set metadata after class creation to avoid it becoming an enum member
+BiomassFeedstockType._metadata = {
+    "CORN_STOVER": {'description': 'Agricultural residue consisting of leaves, stalks, and cobs remaining after corn grain harvest.', 'annotations': {'category': 'agricultural_residue', 'lignocellulosic': True}, 'aliases': ['Corn Residue']},
+    "WHEAT_STRAW": {'description': 'Agricultural residue remaining after wheat grain harvest.', 'annotations': {'category': 'agricultural_residue', 'lignocellulosic': True}},
+    "RICE_STRAW": {'description': 'Agricultural residue remaining after rice grain harvest.', 'annotations': {'category': 'agricultural_residue', 'lignocellulosic': True}},
+    "SWITCHGRASS": {'description': 'Perennial warm-season grass native to North America, cultivated as dedicated energy crop for cellulosic biofuel production.', 'annotations': {'category': 'energy_crop', 'lignocellulosic': True, 'perennial': True}},
+    "MISCANTHUS": {'description': 'High-yielding perennial grass cultivated as dedicated energy crop.', 'annotations': {'category': 'energy_crop', 'lignocellulosic': True, 'perennial': True}, 'aliases': ['Elephant Grass']},
+    "ENERGY_CANE": {'description': 'High-fiber sugarcane varieties bred for biomass production rather than sugar content.', 'annotations': {'category': 'energy_crop', 'lignocellulosic': True}},
+    "SWEET_SORGHUM": {'description': 'Sorghum variety with high sugar content in stalks, suitable for both sugar and lignocellulosic conversion.', 'annotations': {'category': 'energy_crop', 'sugar_crop': True}},
+    "POPLAR": {'description': 'Fast-growing hardwood tree cultivated as short-rotation woody crop for biomass.', 'annotations': {'category': 'woody_crop', 'lignocellulosic': True}, 'aliases': ['Hybrid Poplar']},
+    "WILLOW": {'description': 'Fast-growing shrub cultivated as short-rotation woody crop.', 'annotations': {'category': 'woody_crop', 'lignocellulosic': True}, 'aliases': ['Shrub Willow']},
+    "FOREST_RESIDUE": {'description': 'Biomass from forest operations including logging residues, thinning material, and salvage timber.', 'annotations': {'category': 'forestry_residue', 'lignocellulosic': True}, 'aliases': ['Logging Residue']},
+    "WOOD_PROCESSING_RESIDUE": {'description': 'Byproducts from wood processing including sawdust, bark, shavings, and wood chips.', 'annotations': {'category': 'processing_residue', 'lignocellulosic': True}, 'aliases': ['Mill Residue']},
+    "MUNICIPAL_SOLID_WASTE": {'description': 'Organic portion of municipal solid waste suitable for bioenergy conversion.', 'annotations': {'category': 'waste'}, 'aliases': ['MSW']},
+    "FOOD_WASTE": {'description': 'Waste food from residential, commercial, and industrial sources.', 'annotations': {'category': 'wet_waste'}},
+    "ANIMAL_MANURE": {'description': 'Livestock waste including cattle, swine, and poultry manure.', 'annotations': {'category': 'wet_waste', 'biogas_suitable': True}},
+    "ALGAE": {'description': 'Microalgae or macroalgae cultivated for lipid or carbohydrate content for biofuel production.', 'annotations': {'category': 'aquatic_biomass', 'lipid_rich': True}, 'aliases': ['Microalgae']},
+    "USED_COOKING_OIL": {'description': 'Waste vegetable oils from food preparation.', 'annotations': {'category': 'waste', 'lipid_rich': True}, 'aliases': ['UCO', 'Waste Vegetable Oil']},
+    "SOYBEAN_OIL": {'description': 'Vegetable oil from soybean seeds, used for biodiesel.', 'meaning': 'CHEBI:166975', 'annotations': {'category': 'oil_crop', 'lipid_rich': True}},
+    "CORN_GRAIN": {'description': 'Corn kernels used for starch-based ethanol production.', 'annotations': {'category': 'grain', 'starch_crop': True}},
+    "SUGARCANE": {'description': 'Sugar-rich crop used for first-generation ethanol production.', 'annotations': {'category': 'sugar_crop'}},
+}
+
+class BiofuelType(RichEnum):
+    """
+    Types of fuels produced from biomass feedstocks.
+    """
+    # Enum members
+    ETHANOL = "ETHANOL"
+    BIODIESEL = "BIODIESEL"
+    RENEWABLE_DIESEL = "RENEWABLE_DIESEL"
+    SUSTAINABLE_AVIATION_FUEL = "SUSTAINABLE_AVIATION_FUEL"
+    BIOGAS = "BIOGAS"
+    BIOMETHANE = "BIOMETHANE"
+    BIO_OIL = "BIO_OIL"
+    SYNGAS = "SYNGAS"
+    BUTANOL = "BUTANOL"
+    METHANOL = "METHANOL"
+    DIMETHYL_ETHER = "DIMETHYL_ETHER"
+
+# Set metadata after class creation to avoid it becoming an enum member
+BiofuelType._metadata = {
+    "ETHANOL": {'description': 'Alcohol biofuel (C2H5OH) produced by fermentation of sugars or starches, or from cellulosic biomass.', 'meaning': 'CHEBI:16236', 'annotations': {'chemical_formula': 'C2H5OH'}, 'aliases': ['Fuel Ethanol', 'Bioethanol']},
+    "BIODIESEL": {'description': 'Fatty acid methyl esters (FAME) produced by transesterification of vegetable oils or animal fats.', 'meaning': 'MESH:D056804', 'annotations': {'production_method': 'transesterification'}, 'aliases': ['FAME']},
+    "RENEWABLE_DIESEL": {'description': 'Hydrocarbon diesel produced by hydrotreating lipids. Chemically identical to petroleum diesel.', 'annotations': {'drop_in_fuel': True}, 'aliases': ['Green Diesel', 'HVO', 'Hydrotreated Vegetable Oil']},
+    "SUSTAINABLE_AVIATION_FUEL": {'description': 'Jet fuel produced from biomass or waste, meeting aviation fuel specifications.', 'annotations': {'drop_in_fuel': True}, 'aliases': ['SAF', 'Biojet']},
+    "BIOGAS": {'description': 'Gaseous mixture of methane and CO2 produced by anaerobic digestion of organic matter.', 'annotations': {'methane_content_percent': '50-70'}, 'aliases': ['Raw Biogas']},
+    "BIOMETHANE": {'description': 'Purified biogas upgraded to natural gas quality (>95% methane).', 'annotations': {'methane_content_percent': '95+', 'pipeline_quality': True}, 'aliases': ['Renewable Natural Gas', 'RNG']},
+    "BIO_OIL": {'description': 'Liquid intermediate produced by pyrolysis or hydrothermal liquefaction of biomass.', 'annotations': {'intermediate': True}, 'aliases': ['Pyrolysis Oil']},
+    "SYNGAS": {'description': 'Synthesis gas (CO + H2) produced by gasification of biomass.', 'meaning': 'CHMO:0001501', 'annotations': {'intermediate': True}, 'aliases': ['Synthesis Gas']},
+    "BUTANOL": {'description': 'Four-carbon alcohol biofuel with higher energy density than ethanol.', 'meaning': 'CHEBI:28885', 'annotations': {'chemical_formula': 'C4H9OH'}},
+    "METHANOL": {'description': 'Methanol produced from biomass-derived syngas.', 'meaning': 'CHEBI:17790', 'annotations': {'chemical_formula': 'CH3OH'}},
+    "DIMETHYL_ETHER": {'description': 'Dimethyl ether produced from biomass, usable as diesel substitute.', 'meaning': 'CHEBI:28887', 'aliases': ['DME']},
+}
+
+class BiofuelGeneration(RichEnum):
+    """
+    Classification of biofuels by feedstock source and technology generation.
+    """
+    # Enum members
+    FIRST_GENERATION = "FIRST_GENERATION"
+    SECOND_GENERATION = "SECOND_GENERATION"
+    THIRD_GENERATION = "THIRD_GENERATION"
+    FOURTH_GENERATION = "FOURTH_GENERATION"
+
+# Set metadata after class creation to avoid it becoming an enum member
+BiofuelGeneration._metadata = {
+    "FIRST_GENERATION": {'description': 'Biofuels produced from food crops (sugar, starch, vegetable oils) using conventional conversion technologies.', 'annotations': {'feedstock': 'food_crops', 'examples': 'corn_ethanol,soy_biodiesel'}, 'aliases': ['1G Biofuel', 'Conventional Biofuel']},
+    "SECOND_GENERATION": {'description': 'Biofuels produced from lignocellulosic biomass (non-food) using advanced conversion technologies.', 'annotations': {'feedstock': 'lignocellulosic', 'examples': 'cellulosic_ethanol,wood_diesel'}, 'aliases': ['2G Biofuel', 'Cellulosic Biofuel', 'Advanced Biofuel']},
+    "THIRD_GENERATION": {'description': 'Biofuels produced from algae or other photosynthetic microorganisms.', 'annotations': {'feedstock': 'algae'}, 'aliases': ['3G Biofuel', 'Algal Biofuel']},
+    "FOURTH_GENERATION": {'description': 'Biofuels from genetically engineered organisms designed for carbon capture and enhanced fuel production.', 'annotations': {'feedstock': 'engineered_organisms', 'carbon_negative': True}, 'aliases': ['4G Biofuel']},
+}
+
+class BioconversionProcess(RichEnum):
+    """
+    Processes for converting biomass feedstocks into biofuels and bioproducts.
+    """
+    # Enum members
+    FERMENTATION = "FERMENTATION"
+    ANAEROBIC_DIGESTION = "ANAEROBIC_DIGESTION"
+    TRANSESTERIFICATION = "TRANSESTERIFICATION"
+    HYDROTREATING = "HYDROTREATING"
+    PYROLYSIS = "PYROLYSIS"
+    GASIFICATION = "GASIFICATION"
+    HYDROTHERMAL_LIQUEFACTION = "HYDROTHERMAL_LIQUEFACTION"
+    ENZYMATIC_HYDROLYSIS = "ENZYMATIC_HYDROLYSIS"
+    ACID_HYDROLYSIS = "ACID_HYDROLYSIS"
+    FISCHER_TROPSCH = "FISCHER_TROPSCH"
+    ALCOHOL_TO_JET = "ALCOHOL_TO_JET"
+
+# Set metadata after class creation to avoid it becoming an enum member
+BioconversionProcess._metadata = {
+    "FERMENTATION": {'description': 'Biological conversion of sugars to alcohols using yeast or bacteria.', 'annotations': {'category': 'biochemical', 'products': 'ethanol,butanol'}},
+    "ANAEROBIC_DIGESTION": {'description': 'Biological breakdown of organic matter by microorganisms in the absence of oxygen, producing biogas.', 'annotations': {'category': 'biochemical', 'products': 'biogas'}},
+    "TRANSESTERIFICATION": {'description': 'Chemical reaction of triglycerides with alcohol to produce fatty acid esters (biodiesel) and glycerol.', 'annotations': {'category': 'chemical', 'products': 'biodiesel'}},
+    "HYDROTREATING": {'description': 'Catalytic reaction of lipids with hydrogen to produce hydrocarbon fuels.', 'annotations': {'category': 'thermochemical', 'products': 'renewable_diesel,SAF'}, 'aliases': ['Hydroprocessing']},
+    "PYROLYSIS": {'description': 'Thermal decomposition of biomass in the absence of oxygen to produce bio-oil, syngas, and biochar.', 'annotations': {'category': 'thermochemical', 'temperature_c': '400-600', 'products': 'bio_oil,syngas,biochar'}},
+    "GASIFICATION": {'description': 'High-temperature conversion of carbonaceous materials to syngas using controlled oxygen and/or steam.', 'meaning': 'CHMO:0001501', 'annotations': {'category': 'thermochemical', 'temperature_c': '700-1500', 'products': 'syngas'}},
+    "HYDROTHERMAL_LIQUEFACTION": {'description': 'Conversion of wet biomass to bio-crude using high temperature and pressure water.', 'annotations': {'category': 'thermochemical', 'temperature_c': '250-400', 'pressure_bar': '100-200', 'wet_feedstock': True}, 'aliases': ['HTL']},
+    "ENZYMATIC_HYDROLYSIS": {'description': 'Breakdown of cellulose and hemicellulose to fermentable sugars using enzymes.', 'annotations': {'category': 'biochemical', 'pretreatment_step': True}},
+    "ACID_HYDROLYSIS": {'description': 'Chemical breakdown of cellulose to sugars using dilute or concentrated acid.', 'annotations': {'category': 'chemical', 'pretreatment_step': True}},
+    "FISCHER_TROPSCH": {'description': 'Catalytic conversion of syngas to liquid hydrocarbons.', 'annotations': {'category': 'thermochemical', 'feedstock': 'syngas', 'products': 'FT_diesel,FT_jet'}, 'aliases': ['FT Synthesis']},
+    "ALCOHOL_TO_JET": {'description': 'Conversion of alcohols (ethanol, isobutanol) to jet fuel through dehydration, oligomerization, and hydrogenation.', 'annotations': {'category': 'chemical', 'products': 'SAF'}, 'aliases': ['ATJ']},
+}
+
 class MiningType(RichEnum):
     """
     Types of mining operations
@@ -4824,6 +5582,12 @@ class MimeType(RichEnum):
     APPLICATION_SQL = "APPLICATION_SQL"
     APPLICATION_GRAPHQL = "APPLICATION_GRAPHQL"
     APPLICATION_LD_JSON = "APPLICATION_LD_JSON"
+    APPLICATION_N_QUADS = "APPLICATION_N_QUADS"
+    APPLICATION_N_TRIPLES = "APPLICATION_N_TRIPLES"
+    APPLICATION_RDF_XML = "APPLICATION_RDF_XML"
+    APPLICATION_SPARQL_RESULTS_JSON = "APPLICATION_SPARQL_RESULTS_JSON"
+    APPLICATION_SPARQL_RESULTS_XML = "APPLICATION_SPARQL_RESULTS_XML"
+    APPLICATION_TRIG = "APPLICATION_TRIG"
     APPLICATION_WASM = "APPLICATION_WASM"
     TEXT_PLAIN = "TEXT_PLAIN"
     TEXT_HTML = "TEXT_HTML"
@@ -4886,6 +5650,12 @@ MimeType._metadata = {
     "APPLICATION_SQL": {'description': 'SQL database format', 'meaning': 'iana:application/sql'},
     "APPLICATION_GRAPHQL": {'description': 'GraphQL query language', 'meaning': 'iana:application/graphql'},
     "APPLICATION_LD_JSON": {'description': 'JSON-LD format', 'meaning': 'iana:application/ld+json'},
+    "APPLICATION_N_QUADS": {'description': 'N-Quads RDF serialization format', 'meaning': 'iana:application/n-quads'},
+    "APPLICATION_N_TRIPLES": {'description': 'N-Triples RDF serialization format', 'meaning': 'iana:application/n-triples'},
+    "APPLICATION_RDF_XML": {'description': 'RDF/XML serialization format', 'meaning': 'iana:application/rdf+xml'},
+    "APPLICATION_SPARQL_RESULTS_JSON": {'description': 'SPARQL 1.1 Query Results JSON format', 'meaning': 'iana:application/sparql-results+json'},
+    "APPLICATION_SPARQL_RESULTS_XML": {'description': 'SPARQL 1.1 Query Results XML format', 'meaning': 'iana:application/sparql-results+xml'},
+    "APPLICATION_TRIG": {'description': 'TriG RDF serialization format', 'meaning': 'iana:application/trig'},
     "APPLICATION_WASM": {'description': 'WebAssembly binary format', 'meaning': 'iana:application/wasm'},
     "TEXT_PLAIN": {'description': 'Plain text', 'meaning': 'iana:text/plain'},
     "TEXT_HTML": {'description': 'HTML document', 'meaning': 'iana:text/html'},
@@ -5145,6 +5915,17 @@ class ExposureRouteEnum(RichEnum):
     INJECTION = "INJECTION"
     TRANSPLACENTAL = "TRANSPLACENTAL"
     OCULAR = "OCULAR"
+    ABSORPTION = "ABSORPTION"
+    GASTROINTESTINAL_TRACT = "GASTROINTESTINAL_TRACT"
+    GAVAGE = "GAVAGE"
+    AMBIENT_ENVIRONMENT = "AMBIENT_ENVIRONMENT"
+    AMBIENT_AQUATIC = "AMBIENT_AQUATIC"
+    AMBIENT_TERRESTRIAL = "AMBIENT_TERRESTRIAL"
+    PASSIVE_INHALATION = "PASSIVE_INHALATION"
+    ACTIVE_INHALATION = "ACTIVE_INHALATION"
+    SUBCUTANEOUS = "SUBCUTANEOUS"
+    INTRAMUSCULAR = "INTRAMUSCULAR"
+    INTRAVASCULAR = "INTRAVASCULAR"
     MULTIPLE_ROUTES = "MULTIPLE_ROUTES"
 
 # Set metadata after class creation to avoid it becoming an enum member
@@ -5155,6 +5936,17 @@ ExposureRouteEnum._metadata = {
     "INJECTION": {'description': 'Exposure through injection', 'meaning': 'NCIT:C38276'},
     "TRANSPLACENTAL": {'description': 'Exposure through placental transfer', 'meaning': 'NCIT:C38307'},
     "OCULAR": {'description': 'Exposure through the eyes', 'meaning': 'NCIT:C38287'},
+    "ABSORPTION": {'description': 'Exposure through absorption (dermal or other surface)', 'meaning': 'ExO:0000058'},
+    "GASTROINTESTINAL_TRACT": {'description': 'Exposure through the gastrointestinal tract', 'meaning': 'ExO:0000165'},
+    "GAVAGE": {'description': 'Direct administration into the stomach', 'meaning': 'ExO:0000166'},
+    "AMBIENT_ENVIRONMENT": {'description': 'Exposure through contact with stressors in the ambient surroundings', 'meaning': 'ExO:0000160'},
+    "AMBIENT_AQUATIC": {'description': 'Exposure through ambient aquatic environment', 'meaning': 'ExO:0000161'},
+    "AMBIENT_TERRESTRIAL": {'description': 'Exposure through ambient terrestrial environment', 'meaning': 'ExO:0000162'},
+    "PASSIVE_INHALATION": {'description': 'Passive inhalation of ambient environment stressors', 'meaning': 'ExO:0000163'},
+    "ACTIVE_INHALATION": {'description': 'Purposeful breathing or inhaling of stressor', 'meaning': 'ExO:0000164'},
+    "SUBCUTANEOUS": {'description': 'Exposure through subcutaneous tissue'},
+    "INTRAMUSCULAR": {'description': 'Exposure through muscle tissue'},
+    "INTRAVASCULAR": {'description': 'Exposure through blood vessels'},
     "MULTIPLE_ROUTES": {'description': 'Exposure through multiple pathways'},
 }
 
@@ -5280,6 +6072,104 @@ ExposureDurationEnum._metadata = {
     "PRENATAL": {'description': 'Exposure during pregnancy'},
     "POSTNATAL": {'description': 'Exposure after birth'},
     "DEVELOPMENTAL": {'description': 'Exposure during critical developmental periods'},
+}
+
+class SmokingStatusEnum(RichEnum):
+    """
+    Tobacco and nicotine consumption status
+    """
+    # Enum members
+    CURRENT_SMOKER = "CURRENT_SMOKER"
+    FORMER_SMOKER = "FORMER_SMOKER"
+    NEVER_SMOKER = "NEVER_SMOKER"
+    NON_SMOKER = "NON_SMOKER"
+
+# Set metadata after class creation to avoid it becoming an enum member
+SmokingStatusEnum._metadata = {
+    "CURRENT_SMOKER": {'description': 'Person who is currently smoking tobacco', 'meaning': 'ExO:0000115'},
+    "FORMER_SMOKER": {'description': 'Person who has smoked at least 100 cigarettes in their life but is not currently smoking', 'meaning': 'ExO:0000116'},
+    "NEVER_SMOKER": {'description': 'Person who has smoked less than 100 cigarettes in their life', 'meaning': 'ExO:0000117'},
+    "NON_SMOKER": {'description': 'Person who is not currently smoking', 'meaning': 'ExO:0000118'},
+}
+
+class ExposureStressorTypeEnum(RichEnum):
+    """
+    Types of exposure stressors by their origin or nature
+    """
+    # Enum members
+    BIOLOGICAL_AGENT = "BIOLOGICAL_AGENT"
+    CHEMICAL_AGENT = "CHEMICAL_AGENT"
+    PHYSICAL_AGENT = "PHYSICAL_AGENT"
+    PSYCHOSOCIAL_AGENT = "PSYCHOSOCIAL_AGENT"
+    BIOMECHANICAL_AGENT = "BIOMECHANICAL_AGENT"
+    ECOLOGICAL_PERTURBATION = "ECOLOGICAL_PERTURBATION"
+
+# Set metadata after class creation to avoid it becoming an enum member
+ExposureStressorTypeEnum._metadata = {
+    "BIOLOGICAL_AGENT": {'description': 'Agent of biological origin (e.g., bacteria, viruses, allergens)', 'meaning': 'ExO:0000005'},
+    "CHEMICAL_AGENT": {'description': 'Agent of chemical origin (e.g., toxins, pollutants)', 'meaning': 'ExO:0000006'},
+    "PHYSICAL_AGENT": {'description': 'Physical source of energy that may cause injury (e.g., radiation, noise, temperature extremes)', 'meaning': 'ExO:0000008'},
+    "PSYCHOSOCIAL_AGENT": {'description': 'Agent that interferes with psychological development or social interaction', 'meaning': 'ExO:0000009'},
+    "BIOMECHANICAL_AGENT": {'description': 'Mechanical agent applied to biological systems (e.g., repetitive motion, physical strain)', 'meaning': 'ExO:0000011'},
+    "ECOLOGICAL_PERTURBATION": {'description': 'Disruption to ecological systems (e.g., habitat degradation, climate change)', 'meaning': 'ExO:0000007'},
+}
+
+class ExposureTransportPathEnum(RichEnum):
+    """
+    Transport medium through which exposure stressor reaches the recipient
+    """
+    # Enum members
+    AIR_TRANSPORT_PATH = "AIR_TRANSPORT_PATH"
+    WATER_TRANSPORT_PATH = "WATER_TRANSPORT_PATH"
+    SOIL_TRANSPORT_PATH = "SOIL_TRANSPORT_PATH"
+
+# Set metadata after class creation to avoid it becoming an enum member
+ExposureTransportPathEnum._metadata = {
+    "AIR_TRANSPORT_PATH": {'description': 'Transport path allowing stressor to interact with recipient via air', 'meaning': 'ExO:0000010'},
+    "WATER_TRANSPORT_PATH": {'description': 'Transport path involving interaction with stressor via water', 'meaning': 'ExO:0000028'},
+    "SOIL_TRANSPORT_PATH": {'description': 'Transport path involving interaction with stressor via soil', 'meaning': 'ExO:0000029'},
+}
+
+class ExposureFrequencyEnum(RichEnum):
+    """
+    Temporal pattern of exposure occurrence
+    """
+    # Enum members
+    INTERMITTENT = "INTERMITTENT"
+    CONTINUOUS = "CONTINUOUS"
+
+# Set metadata after class creation to avoid it becoming an enum member
+ExposureFrequencyEnum._metadata = {
+    "INTERMITTENT": {'description': 'Exposure occurring at irregular intervals or periodically', 'meaning': 'ExO:0000052'},
+    "CONTINUOUS": {'description': 'Exposure occurring without interruption', 'meaning': 'ExO:0000053'},
+}
+
+class StudyPopulationEnum(RichEnum):
+    """
+    Specific population groups commonly studied in exposure research
+    """
+    # Enum members
+    CHILDREN = "CHILDREN"
+    FETUSES = "FETUSES"
+    INFANTS_OR_NEWBORNS = "INFANTS_OR_NEWBORNS"
+    PREGNANT_FEMALES = "PREGNANT_FEMALES"
+    MOTHERS = "MOTHERS"
+    MILITARY_PERSONNEL = "MILITARY_PERSONNEL"
+    VETERANS = "VETERANS"
+    WORKERS = "WORKERS"
+    CONTROLS = "CONTROLS"
+
+# Set metadata after class creation to avoid it becoming an enum member
+StudyPopulationEnum._metadata = {
+    "CHILDREN": {'description': 'Human children (pediatric population)', 'meaning': 'ExO:0000119'},
+    "FETUSES": {'description': 'Human fetuses (prenatal population)', 'meaning': 'ExO:0000122'},
+    "INFANTS_OR_NEWBORNS": {'description': 'Human infants and newborns', 'meaning': 'ExO:0000123'},
+    "PREGNANT_FEMALES": {'description': 'Human females who are pregnant', 'meaning': 'ExO:0000126'},
+    "MOTHERS": {'description': 'Human mothers', 'meaning': 'ExO:0000125'},
+    "MILITARY_PERSONNEL": {'description': 'Active military personnel', 'meaning': 'ExO:0000124'},
+    "VETERANS": {'description': 'Military veterans', 'meaning': 'ExO:0000130'},
+    "WORKERS": {'description': 'Occupational workers', 'meaning': 'ExO:0000131'},
+    "CONTROLS": {'description': 'Control group participants without the disease or phenotype of interest', 'meaning': 'ExO:0000121'},
 }
 
 class CountryCodeISO2Enum(RichEnum):
@@ -6547,6 +7437,52 @@ CellPolarity._metadata = {
     "TRAILING_EDGE": {'description': 'Rear of a migrating cell', 'annotations': {'context': 'cell migration'}},
     "PROXIMAL_POLE": {'description': 'Pole closer to the cell body', 'annotations': {'context': 'neurons, polarized cells'}},
     "DISTAL_POLE": {'description': 'Pole further from the cell body', 'annotations': {'context': 'neurons, polarized cells'}},
+}
+
+class AnatomicalOrientation(RichEnum):
+    """
+    Directional orientation between anatomical positions based on OME NGFF specification
+    """
+    # Enum members
+    LEFT_TO_RIGHT = "LEFT_TO_RIGHT"
+    RIGHT_TO_LEFT = "RIGHT_TO_LEFT"
+    ANTERIOR_TO_POSTERIOR = "ANTERIOR_TO_POSTERIOR"
+    POSTERIOR_TO_ANTERIOR = "POSTERIOR_TO_ANTERIOR"
+    INFERIOR_TO_SUPERIOR = "INFERIOR_TO_SUPERIOR"
+    SUPERIOR_TO_INFERIOR = "SUPERIOR_TO_INFERIOR"
+    DORSAL_TO_VENTRAL = "DORSAL_TO_VENTRAL"
+    VENTRAL_TO_DORSAL = "VENTRAL_TO_DORSAL"
+    DORSAL_TO_PALMAR = "DORSAL_TO_PALMAR"
+    PALMAR_TO_DORSAL = "PALMAR_TO_DORSAL"
+    DORSAL_TO_PLANTAR = "DORSAL_TO_PLANTAR"
+    PLANTAR_TO_DORSAL = "PLANTAR_TO_DORSAL"
+    ROSTRAL_TO_CAUDAL = "ROSTRAL_TO_CAUDAL"
+    CAUDAL_TO_ROSTRAL = "CAUDAL_TO_ROSTRAL"
+    CRANIAL_TO_CAUDAL = "CRANIAL_TO_CAUDAL"
+    CAUDAL_TO_CRANIAL = "CAUDAL_TO_CRANIAL"
+    PROXIMAL_TO_DISTAL = "PROXIMAL_TO_DISTAL"
+    DISTAL_TO_PROXIMAL = "DISTAL_TO_PROXIMAL"
+
+# Set metadata after class creation to avoid it becoming an enum member
+AnatomicalOrientation._metadata = {
+    "LEFT_TO_RIGHT": {'description': 'Directional orientation from left to right lateral side of an anatomical structure', 'annotations': {'source': 'OME NGFF'}},
+    "RIGHT_TO_LEFT": {'description': 'Directional orientation from right to left lateral side of an anatomical structure', 'annotations': {'source': 'OME NGFF'}},
+    "ANTERIOR_TO_POSTERIOR": {'description': 'Directional orientation from front to back of an anatomical structure', 'annotations': {'source': 'OME NGFF'}},
+    "POSTERIOR_TO_ANTERIOR": {'description': 'Directional orientation from back to front of an anatomical structure', 'annotations': {'source': 'OME NGFF'}},
+    "INFERIOR_TO_SUPERIOR": {'description': 'Directional orientation from below to above in an anatomical structure', 'annotations': {'source': 'OME NGFF'}},
+    "SUPERIOR_TO_INFERIOR": {'description': 'Directional orientation from above to below in an anatomical structure', 'annotations': {'source': 'OME NGFF'}},
+    "DORSAL_TO_VENTRAL": {'description': 'Directional orientation from top/upper to belly/lower in an anatomical structure', 'annotations': {'source': 'OME NGFF'}},
+    "VENTRAL_TO_DORSAL": {'description': 'Directional orientation from belly/lower to top/upper in an anatomical structure', 'annotations': {'source': 'OME NGFF'}},
+    "DORSAL_TO_PALMAR": {'description': 'Directional orientation from top/upper to palm of hand', 'annotations': {'source': 'OME NGFF', 'context': 'hand anatomy'}},
+    "PALMAR_TO_DORSAL": {'description': 'Directional orientation from palm of hand to top/upper', 'annotations': {'source': 'OME NGFF', 'context': 'hand anatomy'}},
+    "DORSAL_TO_PLANTAR": {'description': 'Directional orientation from top/upper to sole of foot', 'annotations': {'source': 'OME NGFF', 'context': 'foot anatomy'}},
+    "PLANTAR_TO_DORSAL": {'description': 'Directional orientation from sole of foot to top/upper', 'annotations': {'source': 'OME NGFF', 'context': 'foot anatomy'}},
+    "ROSTRAL_TO_CAUDAL": {'description': 'Directional orientation from nasal to tail end, typically for central nervous system', 'annotations': {'source': 'OME NGFF', 'context': 'central nervous system'}},
+    "CAUDAL_TO_ROSTRAL": {'description': 'Directional orientation from tail to nasal end, typically for central nervous system', 'annotations': {'source': 'OME NGFF', 'context': 'central nervous system'}},
+    "CRANIAL_TO_CAUDAL": {'description': 'Directional orientation from head to tail end of a structure', 'annotations': {'source': 'OME NGFF'}},
+    "CAUDAL_TO_CRANIAL": {'description': 'Directional orientation from tail to head end of a structure', 'annotations': {'source': 'OME NGFF'}},
+    "PROXIMAL_TO_DISTAL": {'description': 'Directional orientation from body center to periphery of a structure', 'annotations': {'source': 'OME NGFF'}},
+    "DISTAL_TO_PROXIMAL": {'description': 'Directional orientation from periphery to body center of a structure', 'annotations': {'source': 'OME NGFF'}},
 }
 
 class CrystalSystemEnum(RichEnum):
@@ -8809,11 +9745,11 @@ class ContigCollectionType(RichEnum):
 # Set metadata after class creation to avoid it becoming an enum member
 ContigCollectionType._metadata = {
     "ISOLATE": {'description': 'Sequences assembled from DNA of isolated organism. Bacteria/Archaea: https://genomicsstandardsconsortium.github.io/mixs/0010003/ Euk: https://genomicsstandardsconsortium.github.io/mixs/0010002/ Virus: https://genomicsstandardsconsortium.github.io/mixs/0010005/ Organelle: https://genomicsstandardsconsortium.github.io/mixs/0010006/ Plasmid: https://genomicsstandardsconsortium.github.io/mixs/0010004/'},
-    "MAG": {'description': 'Sequences assembled from DNA of mixed community and binned. MAGs are likely to represent a single taxonomic origin. See checkm2 scores for quality assessment.', 'meaning': 'mixs:0010011', 'aliases': ['Mimag']},
-    "METAGENOME": {'description': 'Sequences assembled from DNA of mixed community.', 'meaning': 'mixs:0010007', 'aliases': ['Mims']},
+    "MAG": {'description': 'Sequences assembled from DNA of mixed community and binned. MAGs are likely to represent a single taxonomic origin. See checkm2 scores for quality assessment.', 'meaning': 'mixs:0010011', 'aliases': ['Metagenome-Assembled Genome']},
+    "METAGENOME": {'description': 'Sequences assembled from DNA of mixed community.', 'meaning': 'mixs:0010007'},
     "METATRANSCRIPTOME": {'description': 'Sequences assembled from RNA of mixed community. Currently not represented by GSC.'},
-    "SAG": {'description': 'Sequences assembled from DNA of single cell.', 'meaning': 'mixs:0010010', 'aliases': ['Misag']},
-    "VIRUS": {'description': 'Sequences assembled from uncultivated virus genome (DNA/RNA).', 'meaning': 'mixs:0010012', 'aliases': ['Miuvig']},
+    "SAG": {'description': 'Sequences assembled from DNA of single cell.', 'meaning': 'mixs:0010010', 'aliases': ['Single Amplified Genome']},
+    "VIRUS": {'description': 'Sequences assembled from uncultivated virus genome (DNA/RNA).', 'meaning': 'mixs:0010012'},
     "MARKER": {'description': 'Sequences from targeted region of DNA; see protocol for information on targeted region. specimen: https://genomicsstandardsconsortium.github.io/mixs/0010009/ survey: https://genomicsstandardsconsortium.github.io/mixs/0010008/'},
 }
 
@@ -9089,210 +10025,480 @@ class UniProtSpeciesCode(RichEnum):
     SP_9INFA = "SP_9INFA"
     SP_9INSE = "SP_9INSE"
     SP_9LABR = "SP_9LABR"
+    SP_ACIB2 = "SP_ACIB2"
+    SP_ANOCA = "SP_ANOCA"
+    SP_ANOGA = "SP_ANOGA"
+    SP_AQUAE = "SP_AQUAE"
     SP_ARATH = "SP_ARATH"
+    SP_ASPFU = "SP_ASPFU"
+    SP_BACAN = "SP_BACAN"
+    SP_BACCR = "SP_BACCR"
     SP_BACSU = "SP_BACSU"
+    SP_BACTN = "SP_BACTN"
+    SP_BATDJ = "SP_BATDJ"
     SP_BOVIN = "SP_BOVIN"
+    SP_BRACM = "SP_BRACM"
+    SP_BRADI = "SP_BRADI"
+    SP_BRADU = "SP_BRADU"
+    SP_BRAFL = "SP_BRAFL"
+    SP_CAEBR = "SP_CAEBR"
     SP_CAEEL = "SP_CAEEL"
+    SP_CAMJE = "SP_CAMJE"
+    SP_CANAL = "SP_CANAL"
+    SP_CANCO = "SP_CANCO"
+    SP_CANDC = "SP_CANDC"
+    SP_CANGB = "SP_CANGB"
     SP_CANLF = "SP_CANLF"
+    SP_CANPA = "SP_CANPA"
+    SP_CANTI = "SP_CANTI"
     SP_CHICK = "SP_CHICK"
+    SP_CHLAA = "SP_CHLAA"
+    SP_CHLRE = "SP_CHLRE"
+    SP_CHLTR = "SP_CHLTR"
+    SP_CIOIN = "SP_CIOIN"
+    SP_CITK8 = "SP_CITK8"
+    SP_CLALU = "SP_CLALU"
+    SP_CLOBH = "SP_CLOBH"
+    SP_COXBU = "SP_COXBU"
+    SP_CRYD1 = "SP_CRYD1"
     SP_DANRE = "SP_DANRE"
+    SP_DAPPU = "SP_DAPPU"
+    SP_DEBHA = "SP_DEBHA"
+    SP_DEIRA = "SP_DEIRA"
+    SP_DICDI = "SP_DICDI"
+    SP_DICPU = "SP_DICPU"
+    SP_DICTD = "SP_DICTD"
     SP_DROME = "SP_DROME"
+    SP_E__COLI_ECO57 = "SP_E. coli ECO57"
     SP_ECOLI = "SP_ECOLI"
+    SP_EMENI = "SP_EMENI"
+    SP_ENTCA = "SP_ENTCA"
+    SP_ENTFA = "SP_ENTFA"
+    SP_ENTGA = "SP_ENTGA"
+    SP_ENTH1 = "SP_ENTH1"
+    SP_EREGS = "SP_EREGS"
     SP_FELCA = "SP_FELCA"
+    SP_FMDVO = "SP_FMDVO"
+    SP_FUSNN = "SP_FUSNN"
+    SP_GEOSL = "SP_GEOSL"
+    SP_GIAIC = "SP_GIAIC"
+    SP_GLOVI = "SP_GLOVI"
     SP_GORGO = "SP_GORGO"
+    SP_GOSHI = "SP_GOSHI"
+    SP_HAEIN = "SP_HAEIN"
+    SP_HALH5 = "SP_HALH5"
+    SP_HALSA = "SP_HALSA"
+    SP_HBVCJ = "SP_HBVCJ"
+    SP_HCMVA = "SP_HCMVA"
+    SP_HCMVM = "SP_HCMVM"
+    SP_HCV77 = "SP_HCV77"
+    SP_HELAN = "SP_HELAN"
+    SP_HELPY = "SP_HELPY"
+    SP_HELRO = "SP_HELRO"
+    SP_HHV11 = "SP_HHV11"
     SP_HORSE = "SP_HORSE"
+    SP_HORVV = "SP_HORVV"
+    SP_HPV16 = "SP_HPV16"
     SP_HUMAN = "SP_HUMAN"
+    SP_HV1AN = "SP_HV1AN"
+    SP_IXOSC = "SP_IXOSC"
+    SP_JUGRE = "SP_JUGRE"
+    SP_KLENI = "SP_KLENI"
+    SP_KLEPH = "SP_KLEPH"
+    SP_KLEPO = "SP_KLEPO"
+    SP_KORCO = "SP_KORCO"
+    SP_LACSA = "SP_LACSA"
+    SP_LEIMA = "SP_LEIMA"
+    SP_LEPIN = "SP_LEPIN"
+    SP_LEPOC = "SP_LEPOC"
+    SP_LISMO = "SP_LISMO"
+    SP_LODEL = "SP_LODEL"
     SP_MACMU = "SP_MACMU"
     SP_MAIZE = "SP_MAIZE"
+    SP_MANES = "SP_MANES"
+    SP_MARPO = "SP_MARPO"
+    SP_MEASC = "SP_MEASC"
+    SP_MEDTR = "SP_MEDTR"
+    SP_METAC = "SP_METAC"
+    SP_METJA = "SP_METJA"
+    SP_MONBE = "SP_MONBE"
+    SP_MONDO = "SP_MONDO"
     SP_MOUSE = "SP_MOUSE"
+    SP_MYCGE = "SP_MYCGE"
+    SP_MYCMD = "SP_MYCMD"
+    SP_MYCPN = "SP_MYCPN"
+    SP_MYCTA = "SP_MYCTA"
+    SP_MYCTU = "SP_MYCTU"
+    SP_NEIMB = "SP_NEIMB"
+    SP_NEIME = "SP_NEIME"
+    SP_NELNU = "SP_NELNU"
+    SP_NEMVE = "SP_NEMVE"
+    SP_NEUCR = "SP_NEUCR"
+    SP_NITMS = "SP_NITMS"
+    SP_ORNAN = "SP_ORNAN"
+    SP_ORYLA = "SP_ORYLA"
     SP_ORYSJ = "SP_ORYSJ"
     SP_PANTR = "SP_PANTR"
+    SP_PARTE = "SP_PARTE"
+    SP_PEA = "SP_PEA"
+    SP_PHANO = "SP_PHANO"
+    SP_PHYPA = "SP_PHYPA"
+    SP_PHYRM = "SP_PHYRM"
+    SP_PICGU = "SP_PICGU"
     SP_PIG = "SP_PIG"
+    SP_PLAF7 = "SP_PLAF7"
+    SP_POPTR = "SP_POPTR"
+    SP_PRIPA = "SP_PRIPA"
+    SP_PRUPE = "SP_PRUPE"
+    SP_PSEAE = "SP_PSEAE"
+    SP_PUCGT = "SP_PUCGT"
+    SP_PYRAE = "SP_PYRAE"
     SP_RABIT = "SP_RABIT"
     SP_RAT = "SP_RAT"
+    SP_RHOBA = "SP_RHOBA"
+    SP_SACS2 = "SP_SACS2"
+    SP_SALTY = "SP_SALTY"
+    SP_SCHJY = "SP_SCHJY"
     SP_SCHPO = "SP_SCHPO"
+    SP_SCLS1 = "SP_SCLS1"
     SP_SHEEP = "SP_SHEEP"
+    SP_SHEON = "SP_SHEON"
+    SP_SHIFL = "SP_SHIFL"
+    SP_SOLLC = "SP_SOLLC"
+    SP_SORBI = "SP_SORBI"
+    SP_SOYBN = "SP_SOYBN"
+    SP_SPIOL = "SP_SPIOL"
+    SP_STAA8 = "SP_STAA8"
+    SP_STAAU = "SP_STAAU"
+    SP_STRCL = "SP_STRCL"
+    SP_STRCO = "SP_STRCO"
+    SP_STRP1 = "SP_STRP1"
+    SP_STRP2 = "SP_STRP2"
+    SP_STRPN = "SP_STRPN"
+    SP_STRPU = "SP_STRPU"
+    SP_STRR6 = "SP_STRR6"
+    SP_SYNY3 = "SP_SYNY3"
+    SP_THAPS = "SP_THAPS"
+    SP_THECC = "SP_THECC"
+    SP_THEKO = "SP_THEKO"
+    SP_THEMA = "SP_THEMA"
+    SP_THEYD = "SP_THEYD"
+    SP_TOBAC = "SP_TOBAC"
+    SP_TOXGO = "SP_TOXGO"
+    SP_TRIAD = "SP_TRIAD"
+    SP_TRICA = "SP_TRICA"
+    SP_TRIV3 = "SP_TRIV3"
+    SP_TRYB2 = "SP_TRYB2"
+    SP_VACCW = "SP_VACCW"
+    SP_VAR67 = "SP_VAR67"
+    SP_VIBCH = "SP_VIBCH"
+    SP_VITVI = "SP_VITVI"
+    SP_VZVD = "SP_VZVD"
+    SP_WHEAT = "SP_WHEAT"
+    SP_XANCP = "SP_XANCP"
     SP_XENLA = "SP_XENLA"
     SP_XENTR = "SP_XENTR"
+    SP_YARLI = "SP_YARLI"
     SP_YEAST = "SP_YEAST"
-    SP_DICDI = "SP_DICDI"
-    SP_HELPY = "SP_HELPY"
-    SP_LEIMA = "SP_LEIMA"
-    SP_MEDTR = "SP_MEDTR"
-    SP_MYCTU = "SP_MYCTU"
-    SP_NEIME = "SP_NEIME"
-    SP_PLAF7 = "SP_PLAF7"
-    SP_PSEAE = "SP_PSEAE"
-    SP_SOYBN = "SP_SOYBN"
-    SP_STAAU = "SP_STAAU"
-    SP_STRPN = "SP_STRPN"
-    SP_TOXGO = "SP_TOXGO"
-    SP_TRYB2 = "SP_TRYB2"
-    SP_WHEAT = "SP_WHEAT"
-    SP_PEA = "SP_PEA"
-    SP_TOBAC = "SP_TOBAC"
+    SP_YERPE = "SP_YERPE"
+    SP_ZIKV = "SP_ZIKV"
 
 # Set metadata after class creation to avoid it becoming an enum member
 UniProtSpeciesCode._metadata = {
-    "SP_9ABAC": {'description': 'Lambdina fiscellaria nucleopolyhedrovirus - Proteome: UP000201190', 'meaning': 'NCBITaxon:1642929'},
-    "SP_9ACAR": {'description': 'Tropilaelaps mercedesae - Proteome: UP000192247', 'meaning': 'NCBITaxon:418985'},
-    "SP_9ACTN": {'description': 'Candidatus Protofrankia datiscae - Proteome: UP000001549', 'meaning': 'NCBITaxon:2716812'},
-    "SP_9ACTO": {'description': 'Actinomyces massiliensis F0489 - Proteome: UP000002941', 'meaning': 'NCBITaxon:1125718'},
-    "SP_9ADEN": {'description': 'Human adenovirus 53 - Proteome: UP000463865', 'meaning': 'NCBITaxon:556926'},
-    "SP_9AGAM": {'description': 'Jaapia argillacea MUCL 33604 - Proteome: UP000027265', 'meaning': 'NCBITaxon:933084'},
-    "SP_9AGAR": {'description': 'Collybiopsis luxurians FD-317 M1 - Proteome: UP000053593', 'meaning': 'NCBITaxon:944289'},
-    "SP_9ALPC": {'description': 'Feline coronavirus - Proteome: UP000141821', 'meaning': 'NCBITaxon:12663'},
-    "SP_9ALPH": {'description': 'Testudinid alphaherpesvirus 3 - Proteome: UP000100290', 'meaning': 'NCBITaxon:2560801'},
-    "SP_9ALTE": {'description': 'Paraglaciecola arctica BSs20135 - Proteome: UP000006327', 'meaning': 'NCBITaxon:493475'},
-    "SP_9ALVE": {'description': 'Perkinsus sp. BL_2016 - Proteome: UP000298064', 'meaning': 'NCBITaxon:2494336'},
-    "SP_9AMPH": {'description': 'Microcaecilia unicolor - Proteome: UP000515156', 'meaning': 'NCBITaxon:1415580'},
-    "SP_9ANNE": {'description': 'Dimorphilus gyrociliatus - Proteome: UP000549394', 'meaning': 'NCBITaxon:2664684'},
-    "SP_9ANUR": {'description': 'Leptobrachium leishanense (Leishan spiny toad) - Proteome: UP000694569', 'meaning': 'NCBITaxon:445787'},
-    "SP_9APHY": {'description': 'Fibroporia radiculosa - Proteome: UP000006352', 'meaning': 'NCBITaxon:599839'},
-    "SP_9APIA": {'description': 'Heracleum sosnowskyi - Proteome: UP001237642', 'meaning': 'NCBITaxon:360622'},
-    "SP_9APIC": {'description': 'Babesia sp. Xinjiang - Proteome: UP000193856', 'meaning': 'NCBITaxon:462227'},
-    "SP_9AQUI": {'description': 'Sulfurihydrogenibium yellowstonense SS-5 - Proteome: UP000005540', 'meaning': 'NCBITaxon:432331'},
-    "SP_9ARAC": {'description': 'Trichonephila inaurata madagascariensis - Proteome: UP000886998', 'meaning': 'NCBITaxon:2747483'},
-    "SP_9ARCH": {'description': 'Candidatus Nitrosarchaeum limnium BG20 - Proteome: UP000014065', 'meaning': 'NCBITaxon:859192'},
-    "SP_9ASCO": {'description': 'Kuraishia capsulata CBS 1993 - Proteome: UP000019384', 'meaning': 'NCBITaxon:1382522'},
-    "SP_9ASPA": {'description': 'Dendrobium catenatum - Proteome: UP000233837', 'meaning': 'NCBITaxon:906689'},
-    "SP_9ASTE": {'description': 'Cuscuta australis - Proteome: UP000249390', 'meaning': 'NCBITaxon:267555'},
-    "SP_9ASTR": {'description': 'Mikania micrantha - Proteome: UP000326396', 'meaning': 'NCBITaxon:192012'},
-    "SP_9AVES": {'description': 'Anser brachyrhynchus (Pink-footed goose) - Proteome: UP000694426', 'meaning': 'NCBITaxon:132585'},
-    "SP_9BACE": {'description': 'Bacteroides caccae CL03T12C61 - Proteome: UP000002965', 'meaning': 'NCBITaxon:997873'},
-    "SP_9BACI": {'description': 'Fictibacillus macauensis ZFHKF-1 - Proteome: UP000004080', 'meaning': 'NCBITaxon:1196324'},
-    "SP_9BACL": {'description': 'Paenibacillus sp. HGF7 - Proteome: UP000003445', 'meaning': 'NCBITaxon:944559'},
-    "SP_9BACT": {'description': 'Parabacteroides johnsonii CL02T12C29 - Proteome: UP000001218', 'meaning': 'NCBITaxon:999419'},
-    "SP_9BACU": {'description': 'Samia ricini nucleopolyhedrovirus - Proteome: UP001226138', 'meaning': 'NCBITaxon:1920700'},
-    "SP_9BASI": {'description': 'Malassezia pachydermatis - Proteome: UP000037751', 'meaning': 'NCBITaxon:77020'},
-    "SP_9BBAC": {'description': 'Plutella xylostella granulovirus - Proteome: UP000201310', 'meaning': 'NCBITaxon:98383'},
-    "SP_9BETA": {'description': 'Saimiriine betaherpesvirus 4 - Proteome: UP000097892', 'meaning': 'NCBITaxon:1535247'},
-    "SP_9BETC": {'description': 'Coronavirus BtRt-BetaCoV/GX2018 - Proteome: UP001228689', 'meaning': 'NCBITaxon:2591238'},
-    "SP_9BIFI": {'description': 'Scardovia wiggsiae F0424 - Proteome: UP000006415', 'meaning': 'NCBITaxon:857290'},
-    "SP_9BILA": {'description': 'Ancylostoma ceylanicum - Proteome: UP000024635', 'meaning': 'NCBITaxon:53326'},
-    "SP_9BIVA": {'description': 'Potamilus streckersoni - Proteome: UP001195483', 'meaning': 'NCBITaxon:2493646'},
-    "SP_9BORD": {'description': 'Bordetella sp. N - Proteome: UP000064621', 'meaning': 'NCBITaxon:1746199'},
-    "SP_9BRAD": {'description': 'Afipia broomeae ATCC 49717 - Proteome: UP000001096', 'meaning': 'NCBITaxon:883078'},
-    "SP_9BRAS": {'description': 'Capsella rubella - Proteome: UP000029121', 'meaning': 'NCBITaxon:81985'},
-    "SP_9BROM": {'description': 'Prune dwarf virus - Proteome: UP000202132', 'meaning': 'NCBITaxon:33760'},
-    "SP_9BURK": {'description': 'Candidatus Paraburkholderia kirkii UZHbot1 - Proteome: UP000003511', 'meaning': 'NCBITaxon:1055526'},
-    "SP_9CARY": {'description': 'Carnegiea gigantea - Proteome: UP001153076', 'meaning': 'NCBITaxon:171969'},
-    "SP_9CAUD": {'description': 'Salmonella phage Vi06 - Proteome: UP000000335', 'meaning': 'NCBITaxon:866889'},
-    "SP_9CAUL": {'description': 'Brevundimonas abyssalis TAR-001 - Proteome: UP000016569', 'meaning': 'NCBITaxon:1391729'},
-    "SP_9CBAC": {'description': 'Neodiprion sertifer nucleopolyhedrovirus - Proteome: UP000243697', 'meaning': 'NCBITaxon:111874'},
-    "SP_9CELL": {'description': 'Actinotalea ferrariae CF5-4 - Proteome: UP000019753', 'meaning': 'NCBITaxon:948458'},
-    "SP_9CERV": {'description': 'Cervus hanglu yarkandensis (Yarkand deer) - Proteome: UP000631465', 'meaning': 'NCBITaxon:84702'},
-    "SP_9CETA": {'description': 'Catagonus wagneri (Chacoan peccary) - Proteome: UP000694540', 'meaning': 'NCBITaxon:51154'},
-    "SP_9CHAR": {'description': 'Rostratula benghalensis (greater painted-snipe) - Proteome: UP000545435', 'meaning': 'NCBITaxon:118793'},
-    "SP_9CHIR": {'description': 'Phyllostomus discolor (pale spear-nosed bat) - Proteome: UP000504628', 'meaning': 'NCBITaxon:89673'},
-    "SP_9CHLA": {'description': 'Chlamydiales bacterium SCGC AG-110-P3 - Proteome: UP000196763', 'meaning': 'NCBITaxon:1871323'},
-    "SP_9CHLB": {'description': 'Chlorobium ferrooxidans DSM 13031 - Proteome: UP000004162', 'meaning': 'NCBITaxon:377431'},
-    "SP_9CHLO": {'description': 'Helicosporidium sp. ATCC 50920 - Proteome: UP000026042', 'meaning': 'NCBITaxon:1291522'},
-    "SP_9CHLR": {'description': 'Ardenticatena maritima - Proteome: UP000037784', 'meaning': 'NCBITaxon:872965'},
-    "SP_9CHRO": {'description': 'Gloeocapsa sp. PCC 7428 - Proteome: UP000010476', 'meaning': 'NCBITaxon:1173026'},
-    "SP_9CICH": {'description': 'Maylandia zebra (zebra mbuna) - Proteome: UP000265160', 'meaning': 'NCBITaxon:106582'},
-    "SP_9CILI": {'description': 'Stentor coeruleus - Proteome: UP000187209', 'meaning': 'NCBITaxon:5963'},
-    "SP_9CIRC": {'description': 'Raven circovirus - Proteome: UP000097131', 'meaning': 'NCBITaxon:345250'},
-    "SP_9CLOS": {'description': 'Grapevine leafroll-associated virus 10 - Proteome: UP000203128', 'meaning': 'NCBITaxon:367121'},
-    "SP_9CLOT": {'description': 'Candidatus Arthromitus sp. SFB-rat-Yit - Proteome: UP000001273', 'meaning': 'NCBITaxon:1041504'},
-    "SP_9CNID": {'description': 'Clytia hemisphaerica - Proteome: UP000594262', 'meaning': 'NCBITaxon:252671'},
-    "SP_9COLU": {'description': 'Pampusana beccarii (Western bronze ground-dove) - Proteome: UP000541332', 'meaning': 'NCBITaxon:2953425'},
-    "SP_9CORV": {'description': "Cnemophilus loriae (Loria's bird-of-paradise) - Proteome: UP000517678", 'meaning': 'NCBITaxon:254448'},
-    "SP_9CORY": {'description': 'Corynebacterium genitalium ATCC 33030 - Proteome: UP000004208', 'meaning': 'NCBITaxon:585529'},
-    "SP_9COXI": {'description': 'Coxiella endosymbiont of Amblyomma americanum - Proteome: UP000059222', 'meaning': 'NCBITaxon:325775'},
-    "SP_9CREN": {'description': 'Metallosphaera yellowstonensis MK1 - Proteome: UP000003980', 'meaning': 'NCBITaxon:671065'},
-    "SP_9CRUS": {'description': 'Daphnia magna - Proteome: UP000076858', 'meaning': 'NCBITaxon:35525'},
-    "SP_9CUCU": {'description': 'Ceutorhynchus assimilis (cabbage seed weevil) - Proteome: UP001152799', 'meaning': 'NCBITaxon:467358'},
-    "SP_9CYAN": {'description': 'Leptolyngbyaceae cyanobacterium JSC-12 - Proteome: UP000001332', 'meaning': 'NCBITaxon:864702'},
-    "SP_9DEIN": {'description': 'Meiothermus sp. QL-1 - Proteome: UP000255346', 'meaning': 'NCBITaxon:2058095'},
-    "SP_9DEIO": {'description': 'Deinococcus sp. RL - Proteome: UP000027898', 'meaning': 'NCBITaxon:1489678'},
-    "SP_9DELA": {'description': 'Human T-cell leukemia virus type I - Proteome: UP000108043', 'meaning': 'NCBITaxon:11908'},
-    "SP_9DELT": {'description': 'Lujinxingia litoralis - Proteome: UP000249169', 'meaning': 'NCBITaxon:2211119'},
-    "SP_9DEND": {'description': 'Xiphorhynchus elegans (elegant woodcreeper) - Proteome: UP000551443', 'meaning': 'NCBITaxon:269412'},
-    "SP_9DINO": {'description': 'Symbiodinium necroappetens - Proteome: UP000601435', 'meaning': 'NCBITaxon:1628268'},
-    "SP_9DIPT": {'description': 'Clunio marinus - Proteome: UP000183832', 'meaning': 'NCBITaxon:568069'},
-    "SP_9EIME": {'description': 'Eimeria praecox - Proteome: UP000018201', 'meaning': 'NCBITaxon:51316'},
-    "SP_9EMBE": {'description': 'Emberiza fucata - Proteome: UP000580681', 'meaning': 'NCBITaxon:337179'},
-    "SP_9ENTE": {'description': 'Enterococcus asini ATCC 700915 - Proteome: UP000013777', 'meaning': 'NCBITaxon:1158606'},
-    "SP_9ENTR": {'description': 'secondary endosymbiont of Heteropsylla cubana - Proteome: UP000003937', 'meaning': 'NCBITaxon:134287'},
-    "SP_9ERIC": {'description': 'Rhododendron williamsianum - Proteome: UP000428333', 'meaning': 'NCBITaxon:262921'},
-    "SP_9EUCA": {'description': 'Petrolisthes manimaculis - Proteome: UP001292094', 'meaning': 'NCBITaxon:1843537'},
-    "SP_9EUGL": {'description': 'Perkinsela sp. CCAP 1560/4 - Proteome: UP000036983', 'meaning': 'NCBITaxon:1314962'},
-    "SP_9EUKA": {'description': 'Chrysochromulina tobinii - Proteome: UP000037460', 'meaning': 'NCBITaxon:1460289'},
-    "SP_9EUPU": {'description': 'Candidula unifasciata - Proteome: UP000678393', 'meaning': 'NCBITaxon:100452'},
-    "SP_9EURO": {'description': 'Cladophialophora psammophila CBS 110553 - Proteome: UP000019471', 'meaning': 'NCBITaxon:1182543'},
-    "SP_9EURY": {'description': 'Methanoplanus limicola DSM 2279 - Proteome: UP000005741', 'meaning': 'NCBITaxon:937775'},
-    "SP_9FABA": {'description': 'Senna tora - Proteome: UP000634136', 'meaning': 'NCBITaxon:362788'},
-    "SP_9FIRM": {'description': 'Ruminococcaceae bacterium D16 - Proteome: UP000002801', 'meaning': 'NCBITaxon:552398'},
-    "SP_9FLAO": {'description': 'Capnocytophaga sp. oral taxon 338 str. F0234 - Proteome: UP000003023', 'meaning': 'NCBITaxon:888059'},
-    "SP_9FLAV": {'description': 'Tunisian sheep-like pestivirus - Proteome: UP001157330', 'meaning': 'NCBITaxon:3071305'},
-    "SP_9FLOR": {'description': 'Gracilariopsis chorda - Proteome: UP000247409', 'meaning': 'NCBITaxon:448386'},
-    "SP_9FRIN": {'description': 'Urocynchramus pylzowi - Proteome: UP000524542', 'meaning': 'NCBITaxon:571890'},
-    "SP_9FUNG": {'description': 'Lichtheimia corymbifera JMRC:FSU:9682 - Proteome: UP000027586', 'meaning': 'NCBITaxon:1263082'},
-    "SP_9FURN": {'description': 'Furnarius figulus - Proteome: UP000529852', 'meaning': 'NCBITaxon:463165'},
-    "SP_9FUSO": {'description': 'Fusobacterium gonidiaformans 3-1-5R - Proteome: UP000002975', 'meaning': 'NCBITaxon:469605'},
-    "SP_9GALL": {'description': 'Odontophorus gujanensis (marbled wood quail) - Proteome: UP000522663', 'meaning': 'NCBITaxon:886794'},
-    "SP_9GAMA": {'description': 'Bovine gammaherpesvirus 6 - Proteome: UP000121539', 'meaning': 'NCBITaxon:1504288'},
-    "SP_9GAMC": {'description': 'Anser fabalis coronavirus NCN2 - Proteome: UP001251675', 'meaning': 'NCBITaxon:2860474'},
-    "SP_9GAMM": {'description': 'Buchnera aphidicola (Cinara tujafilina) - Proteome: UP000006811', 'meaning': 'NCBITaxon:261317', 'aliases': ['Buchnera aphidicola (Cinara tujafilina)']},
-    "SP_9GAST": {'description': 'Elysia crispata (lettuce slug) - Proteome: UP001283361', 'meaning': 'NCBITaxon:231223'},
-    "SP_9GEMI": {'description': 'East African cassava mosaic Zanzibar virus - Proteome: UP000201107', 'meaning': 'NCBITaxon:223275'},
-    "SP_9GLOM": {'description': 'Paraglomus occultum - Proteome: UP000789572', 'meaning': 'NCBITaxon:144539'},
-    "SP_9GOBI": {'description': 'Neogobius melanostomus (round goby) - Proteome: UP000694523', 'meaning': 'NCBITaxon:47308'},
-    "SP_9GRUI": {'description': 'Atlantisia rogersi (Inaccessible Island rail) - Proteome: UP000518911', 'meaning': 'NCBITaxon:2478892'},
-    "SP_9HELI": {'description': 'Helicobacter bilis ATCC 43879 - Proteome: UP000005085', 'meaning': 'NCBITaxon:613026'},
-    "SP_9HELO": {'description': 'Rhynchosporium graminicola - Proteome: UP000178129', 'meaning': 'NCBITaxon:2792576'},
-    "SP_9HEMI": {'description': 'Cinara cedri - Proteome: UP000325440', 'meaning': 'NCBITaxon:506608'},
-    "SP_9HEPA": {'description': 'Duck hepatitis B virus - Proteome: UP000137229', 'meaning': 'NCBITaxon:12639'},
-    "SP_9HEXA": {'description': 'Allacma fusca - Proteome: UP000708208', 'meaning': 'NCBITaxon:39272'},
-    "SP_9HYME": {'description': 'Melipona quadrifasciata - Proteome: UP000053105', 'meaning': 'NCBITaxon:166423'},
-    "SP_9HYPH": {'description': 'Mesorhizobium amorphae CCNWGS0123 - Proteome: UP000002949', 'meaning': 'NCBITaxon:1082933'},
-    "SP_9HYPO": {'description': '[Torrubiella] hemipterigena - Proteome: UP000039046', 'meaning': 'NCBITaxon:1531966'},
-    "SP_9INFA": {'description': 'Influenza A virus (A/California/VRDL364/2009 (mixed) - Proteome: UP000109975', 'meaning': 'NCBITaxon:1049605', 'aliases': ['Influenza A virus (A/California/VRDL364/2009(mixed))']},
-    "SP_9INSE": {'description': 'Cloeon dipterum - Proteome: UP000494165', 'meaning': 'NCBITaxon:197152'},
-    "SP_9LABR": {'description': 'Labrus bergylta (ballan wrasse) - Proteome: UP000261660', 'meaning': 'NCBITaxon:56723'},
-    "SP_ARATH": {'description': 'Arabidopsis thaliana (Thale cress) - Proteome: UP000006548', 'meaning': 'NCBITaxon:3702', 'aliases': ['Thale cress']},
-    "SP_BACSU": {'description': 'Bacillus subtilis subsp. subtilis str. 168 - Proteome: UP000001570', 'meaning': 'NCBITaxon:224308'},
-    "SP_BOVIN": {'description': 'Bos taurus (Cattle) - Proteome: UP000009136', 'meaning': 'NCBITaxon:9913', 'aliases': ['Cattle']},
-    "SP_CAEEL": {'description': 'Caenorhabditis elegans - Proteome: UP000001940', 'meaning': 'NCBITaxon:6239'},
-    "SP_CANLF": {'description': 'Canis lupus familiaris (Dog) - Proteome: UP000805418', 'meaning': 'NCBITaxon:9615', 'aliases': ['Dog']},
-    "SP_CHICK": {'description': 'Gallus gallus (Chicken) - Proteome: UP000000539', 'meaning': 'NCBITaxon:9031', 'aliases': ['Chicken']},
-    "SP_DANRE": {'description': 'Danio rerio (Zebrafish) - Proteome: UP000000437', 'meaning': 'NCBITaxon:7955', 'aliases': ['Zebrafish']},
-    "SP_DROME": {'description': 'Drosophila melanogaster (Fruit fly) - Proteome: UP000000803', 'meaning': 'NCBITaxon:7227', 'aliases': ['Fruit fly']},
-    "SP_ECOLI": {'description': 'Escherichia coli K-12 - Proteome: UP000000625', 'meaning': 'NCBITaxon:83333'},
-    "SP_FELCA": {'description': 'Felis catus (Cat) - Proteome: UP000011712', 'meaning': 'NCBITaxon:9685', 'aliases': ['Cat']},
-    "SP_GORGO": {'description': 'Gorilla gorilla gorilla (Western lowland gorilla) - Proteome: UP000001519', 'meaning': 'NCBITaxon:9593', 'aliases': ['Western lowland gorilla', 'Gorilla gorilla']},
-    "SP_HORSE": {'description': 'Equus caballus (Horse) - Proteome: UP000002281', 'meaning': 'NCBITaxon:9796', 'aliases': ['Horse']},
-    "SP_HUMAN": {'description': 'Homo sapiens (Human) - Proteome: UP000005640', 'meaning': 'NCBITaxon:9606', 'aliases': ['Human']},
-    "SP_MACMU": {'description': 'Macaca mulatta (Rhesus macaque) - Proteome: UP000006718', 'meaning': 'NCBITaxon:9544', 'aliases': ['Rhesus macaque']},
-    "SP_MAIZE": {'description': 'Zea mays (Maize) - Proteome: UP000007305', 'meaning': 'NCBITaxon:4577', 'aliases': ['Maize']},
-    "SP_MOUSE": {'description': 'Mus musculus (Mouse) - Proteome: UP000000589', 'meaning': 'NCBITaxon:10090', 'aliases': ['Mouse']},
-    "SP_ORYSJ": {'description': 'Oryza sativa subsp. japonica (Rice) - Proteome: UP000059680', 'meaning': 'NCBITaxon:39947', 'aliases': ['Rice', 'Oryza sativa Japonica Group']},
-    "SP_PANTR": {'description': 'Pan troglodytes (Chimpanzee) - Proteome: UP000002277', 'meaning': 'NCBITaxon:9598', 'aliases': ['Chimpanzee']},
-    "SP_PIG": {'description': 'Sus scrofa (Pig) - Proteome: UP000008227', 'meaning': 'NCBITaxon:9823', 'aliases': ['Pig']},
-    "SP_RABIT": {'description': 'Oryctolagus cuniculus (Rabbit) - Proteome: UP000001811', 'meaning': 'NCBITaxon:9986', 'aliases': ['Rabbit']},
-    "SP_RAT": {'description': 'Rattus norvegicus (Rat) - Proteome: UP000002494', 'meaning': 'NCBITaxon:10116', 'aliases': ['Rat']},
-    "SP_SCHPO": {'description': 'Schizosaccharomyces pombe 972h- (Fission yeast) - Proteome: UP000002485', 'meaning': 'NCBITaxon:284812', 'aliases': ['Fission yeast']},
-    "SP_SHEEP": {'description': 'Ovis aries (Sheep) - Proteome: UP000002356', 'meaning': 'NCBITaxon:9940', 'aliases': ['Sheep']},
-    "SP_XENLA": {'description': 'Xenopus laevis (African clawed frog) - Proteome: UP000186698', 'meaning': 'NCBITaxon:8355', 'aliases': ['African clawed frog']},
-    "SP_XENTR": {'description': 'Xenopus tropicalis (Western clawed frog) - Proteome: UP000008143', 'meaning': 'NCBITaxon:8364', 'aliases': ['Western clawed frog']},
-    "SP_YEAST": {'description': "Saccharomyces cerevisiae S288C (Baker's yeast) - Proteome: UP000002311", 'meaning': 'NCBITaxon:559292', 'aliases': ["Baker's yeast"]},
-    "SP_DICDI": {'description': 'Dictyostelium discoideum (Slime mold) - Proteome: UP000002195', 'meaning': 'NCBITaxon:44689', 'aliases': ['Slime mold']},
-    "SP_HELPY": {'description': 'Helicobacter pylori 26695 - Proteome: UP000000429', 'meaning': 'NCBITaxon:85962'},
-    "SP_LEIMA": {'description': 'Leishmania major strain Friedlin', 'meaning': 'NCBITaxon:347515'},
-    "SP_MEDTR": {'description': 'Medicago truncatula (Barrel medic) - Proteome: UP000002051', 'meaning': 'NCBITaxon:3880', 'aliases': ['Barrel medic']},
-    "SP_MYCTU": {'description': 'Mycobacterium tuberculosis H37Rv - Proteome: UP000001584', 'meaning': 'NCBITaxon:83332'},
-    "SP_NEIME": {'description': 'Neisseria meningitidis MC58 - Proteome: UP000000425', 'meaning': 'NCBITaxon:122586'},
-    "SP_PLAF7": {'description': 'Plasmodium falciparum 3D7 (Malaria parasite) - Proteome: UP000001450', 'meaning': 'NCBITaxon:36329', 'aliases': ['Malaria parasite']},
-    "SP_PSEAE": {'description': 'Pseudomonas aeruginosa PAO1 - Proteome: UP000002438', 'meaning': 'NCBITaxon:208964'},
-    "SP_SOYBN": {'description': 'Glycine max (Soybean) - Proteome: UP000008827', 'meaning': 'NCBITaxon:3847', 'aliases': ['Soybean']},
-    "SP_STAAU": {'description': 'Staphylococcus aureus subsp. aureus NCTC 8325 - Proteome: UP000008816', 'meaning': 'NCBITaxon:93061'},
-    "SP_STRPN": {'description': 'Streptococcus pneumoniae R6 - Proteome: UP000000586', 'meaning': 'NCBITaxon:171101'},
-    "SP_TOXGO": {'description': 'Toxoplasma gondii ME49 - Proteome: UP000001529', 'meaning': 'NCBITaxon:508771'},
-    "SP_TRYB2": {'description': 'Trypanosoma brucei brucei TREU927 - Proteome: UP000008524', 'meaning': 'NCBITaxon:185431'},
-    "SP_WHEAT": {'description': 'Triticum aestivum (Wheat) - Proteome: UP000019116', 'meaning': 'NCBITaxon:4565', 'aliases': ['Wheat']},
-    "SP_PEA": {'description': 'Pisum sativum (Garden pea) - Proteome: UP001058974', 'meaning': 'NCBITaxon:3888', 'aliases': ['Garden pea', 'Lathyrus oleraceus']},
-    "SP_TOBAC": {'description': 'Nicotiana tabacum (Common tobacco) - Proteome: UP000084051', 'meaning': 'NCBITaxon:4097', 'aliases': ['Common tobacco']},
+    "SP_9ABAC": {'description': 'Lambdina fiscellaria nucleopolyhedrovirus - Proteome: UP000201190', 'meaning': 'NCBITaxon:1642929', 'annotations': {'sources': 'existing'}},
+    "SP_9ACAR": {'description': 'Tropilaelaps mercedesae - Proteome: UP000192247', 'meaning': 'NCBITaxon:418985', 'annotations': {'sources': 'existing'}},
+    "SP_9ACTN": {'description': 'Candidatus Protofrankia datiscae - Proteome: UP000001549', 'meaning': 'NCBITaxon:2716812', 'annotations': {'sources': 'existing'}},
+    "SP_9ACTO": {'description': 'Actinomyces massiliensis F0489 - Proteome: UP000002941', 'meaning': 'NCBITaxon:1125718', 'annotations': {'sources': 'existing'}},
+    "SP_9ADEN": {'description': 'Human adenovirus 53 - Proteome: UP000463865', 'meaning': 'NCBITaxon:556926', 'annotations': {'sources': 'existing'}},
+    "SP_9AGAM": {'description': 'Jaapia argillacea MUCL 33604 - Proteome: UP000027265', 'meaning': 'NCBITaxon:933084', 'annotations': {'sources': 'existing'}},
+    "SP_9AGAR": {'description': 'Collybiopsis luxurians FD-317 M1 - Proteome: UP000053593', 'meaning': 'NCBITaxon:944289', 'annotations': {'sources': 'existing'}},
+    "SP_9ALPC": {'description': 'Feline coronavirus - Proteome: UP000141821', 'meaning': 'NCBITaxon:12663', 'annotations': {'sources': 'existing'}},
+    "SP_9ALPH": {'description': 'Testudinid alphaherpesvirus 3 - Proteome: UP000100290', 'meaning': 'NCBITaxon:2560801', 'annotations': {'sources': 'existing'}},
+    "SP_9ALTE": {'description': 'Paraglaciecola arctica BSs20135 - Proteome: UP000006327', 'meaning': 'NCBITaxon:493475', 'annotations': {'sources': 'existing'}},
+    "SP_9ALVE": {'description': 'Perkinsus sp. BL_2016 - Proteome: UP000298064', 'meaning': 'NCBITaxon:2494336', 'annotations': {'sources': 'existing'}},
+    "SP_9AMPH": {'description': 'Microcaecilia unicolor - Proteome: UP000515156', 'meaning': 'NCBITaxon:1415580', 'annotations': {'sources': 'existing'}},
+    "SP_9ANNE": {'description': 'Dimorphilus gyrociliatus - Proteome: UP000549394', 'meaning': 'NCBITaxon:2664684', 'annotations': {'sources': 'existing'}},
+    "SP_9ANUR": {'description': 'Leptobrachium leishanense - Proteome: UP000694569', 'meaning': 'NCBITaxon:445787', 'annotations': {'sources': 'existing'}},
+    "SP_9APHY": {'description': 'Fibroporia radiculosa - Proteome: UP000006352', 'meaning': 'NCBITaxon:599839', 'annotations': {'sources': 'existing'}},
+    "SP_9APIA": {'description': 'Heracleum sosnowskyi - Proteome: UP001237642', 'meaning': 'NCBITaxon:360622', 'annotations': {'sources': 'existing'}},
+    "SP_9APIC": {'description': 'Babesia sp. Xinjiang - Proteome: UP000193856', 'meaning': 'NCBITaxon:462227', 'annotations': {'sources': 'existing'}},
+    "SP_9AQUI": {'description': 'Sulfurihydrogenibium yellowstonense SS-5 - Proteome: UP000005540', 'meaning': 'NCBITaxon:432331', 'annotations': {'sources': 'existing'}},
+    "SP_9ARAC": {'description': 'Trichonephila inaurata madagascariensis - Proteome: UP000886998', 'meaning': 'NCBITaxon:2747483', 'annotations': {'sources': 'existing'}},
+    "SP_9ARCH": {'description': 'Candidatus Nitrosarchaeum limnium BG20 - Proteome: UP000014065', 'meaning': 'NCBITaxon:859192', 'annotations': {'sources': 'existing'}},
+    "SP_9ASCO": {'description': 'Kuraishia capsulata CBS 1993 - Proteome: UP000019384', 'meaning': 'NCBITaxon:1382522', 'annotations': {'sources': 'existing'}},
+    "SP_9ASPA": {'description': 'Dendrobium catenatum - Proteome: UP000233837', 'meaning': 'NCBITaxon:906689', 'annotations': {'sources': 'existing'}},
+    "SP_9ASTE": {'description': 'Cuscuta australis - Proteome: UP000249390', 'meaning': 'NCBITaxon:267555', 'annotations': {'sources': 'existing'}},
+    "SP_9ASTR": {'description': 'Mikania micrantha - Proteome: UP000326396', 'meaning': 'NCBITaxon:192012', 'annotations': {'sources': 'existing'}},
+    "SP_9AVES": {'description': 'Anser brachyrhynchus - Proteome: UP000694426', 'meaning': 'NCBITaxon:132585', 'annotations': {'sources': 'existing'}},
+    "SP_9BACE": {'description': 'Bacteroides caccae CL03T12C61 - Proteome: UP000002965', 'meaning': 'NCBITaxon:997873', 'annotations': {'sources': 'existing'}},
+    "SP_9BACI": {'description': 'Fictibacillus macauensis ZFHKF-1 - Proteome: UP000004080', 'meaning': 'NCBITaxon:1196324', 'annotations': {'sources': 'existing'}},
+    "SP_9BACL": {'description': 'Paenibacillus sp. HGF7 - Proteome: UP000003445', 'meaning': 'NCBITaxon:944559', 'annotations': {'sources': 'existing'}},
+    "SP_9BACT": {'description': 'Parabacteroides johnsonii CL02T12C29 - Proteome: UP000001218', 'meaning': 'NCBITaxon:999419', 'annotations': {'sources': 'existing'}},
+    "SP_9BACU": {'description': 'Samia ricini nucleopolyhedrovirus - Proteome: UP001226138', 'meaning': 'NCBITaxon:1920700', 'annotations': {'sources': 'existing'}},
+    "SP_9BASI": {'description': 'Malassezia pachydermatis - Proteome: UP000037751', 'meaning': 'NCBITaxon:77020', 'annotations': {'sources': 'existing'}},
+    "SP_9BBAC": {'description': 'Plutella xylostella granulovirus - Proteome: UP000201310', 'meaning': 'NCBITaxon:98383', 'annotations': {'sources': 'existing'}},
+    "SP_9BETA": {'description': 'Saimiriine betaherpesvirus 4 - Proteome: UP000097892', 'meaning': 'NCBITaxon:1535247', 'annotations': {'sources': 'existing'}},
+    "SP_9BETC": {'description': 'Coronavirus BtRt-BetaCoV/GX2018 - Proteome: UP001228689', 'meaning': 'NCBITaxon:2591238', 'annotations': {'sources': 'existing'}},
+    "SP_9BIFI": {'description': 'Scardovia wiggsiae F0424 - Proteome: UP000006415', 'meaning': 'NCBITaxon:857290', 'annotations': {'sources': 'existing'}},
+    "SP_9BILA": {'description': 'Ancylostoma ceylanicum - Proteome: UP000024635', 'meaning': 'NCBITaxon:53326', 'annotations': {'sources': 'existing'}},
+    "SP_9BIVA": {'description': 'Potamilus streckersoni - Proteome: UP001195483', 'meaning': 'NCBITaxon:2493646', 'annotations': {'sources': 'existing'}},
+    "SP_9BORD": {'description': 'Bordetella sp. N - Proteome: UP000064621', 'meaning': 'NCBITaxon:1746199', 'annotations': {'sources': 'existing'}},
+    "SP_9BRAD": {'description': 'Afipia broomeae ATCC 49717 - Proteome: UP000001096', 'meaning': 'NCBITaxon:883078', 'annotations': {'sources': 'existing'}},
+    "SP_9BRAS": {'description': 'Capsella rubella - Proteome: UP000029121', 'meaning': 'NCBITaxon:81985', 'annotations': {'sources': 'existing'}},
+    "SP_9BROM": {'description': 'Prune dwarf virus - Proteome: UP000202132', 'meaning': 'NCBITaxon:33760', 'annotations': {'sources': 'existing'}},
+    "SP_9BURK": {'description': 'Candidatus Paraburkholderia kirkii UZHbot1 - Proteome: UP000003511', 'meaning': 'NCBITaxon:1055526', 'annotations': {'sources': 'existing'}},
+    "SP_9CARY": {'description': 'Carnegiea gigantea - Proteome: UP001153076', 'meaning': 'NCBITaxon:171969', 'annotations': {'sources': 'existing'}},
+    "SP_9CAUD": {'description': 'Salmonella phage Vi06 - Proteome: UP000000335', 'meaning': 'NCBITaxon:866889', 'annotations': {'sources': 'existing'}},
+    "SP_9CAUL": {'description': 'Brevundimonas abyssalis TAR-001 - Proteome: UP000016569', 'meaning': 'NCBITaxon:1391729', 'annotations': {'sources': 'existing'}},
+    "SP_9CBAC": {'description': 'Neodiprion sertifer nucleopolyhedrovirus - Proteome: UP000243697', 'meaning': 'NCBITaxon:111874', 'annotations': {'sources': 'existing'}},
+    "SP_9CELL": {'description': 'Actinotalea ferrariae CF5-4 - Proteome: UP000019753', 'meaning': 'NCBITaxon:948458', 'annotations': {'sources': 'existing'}},
+    "SP_9CERV": {'description': 'Cervus hanglu yarkandensis - Proteome: UP000631465', 'meaning': 'NCBITaxon:84702', 'annotations': {'sources': 'existing'}},
+    "SP_9CETA": {'description': 'Catagonus wagneri - Proteome: UP000694540', 'meaning': 'NCBITaxon:51154', 'annotations': {'sources': 'existing'}},
+    "SP_9CHAR": {'description': 'Rostratula benghalensis - Proteome: UP000545435', 'meaning': 'NCBITaxon:118793', 'annotations': {'sources': 'existing'}},
+    "SP_9CHIR": {'description': 'Phyllostomus discolor - Proteome: UP000504628', 'meaning': 'NCBITaxon:89673', 'annotations': {'sources': 'existing'}},
+    "SP_9CHLA": {'description': 'Chlamydiales bacterium SCGC AG-110-P3 - Proteome: UP000196763', 'meaning': 'NCBITaxon:1871323', 'annotations': {'sources': 'existing'}},
+    "SP_9CHLB": {'description': 'Chlorobium ferrooxidans DSM 13031 - Proteome: UP000004162', 'meaning': 'NCBITaxon:377431', 'annotations': {'sources': 'existing'}},
+    "SP_9CHLO": {'description': 'Helicosporidium sp. ATCC 50920 - Proteome: UP000026042', 'meaning': 'NCBITaxon:1291522', 'annotations': {'sources': 'existing'}},
+    "SP_9CHLR": {'description': 'Ardenticatena maritima - Proteome: UP000037784', 'meaning': 'NCBITaxon:872965', 'annotations': {'sources': 'existing'}},
+    "SP_9CHRO": {'description': 'Gloeocapsa sp. PCC 7428 - Proteome: UP000010476', 'meaning': 'NCBITaxon:1173026', 'annotations': {'sources': 'existing'}},
+    "SP_9CICH": {'description': 'Maylandia zebra - Proteome: UP000265160', 'meaning': 'NCBITaxon:106582', 'annotations': {'sources': 'existing'}},
+    "SP_9CILI": {'description': 'Stentor coeruleus - Proteome: UP000187209', 'meaning': 'NCBITaxon:5963', 'annotations': {'sources': 'existing'}},
+    "SP_9CIRC": {'description': 'Raven circovirus - Proteome: UP000097131', 'meaning': 'NCBITaxon:345250', 'annotations': {'sources': 'existing'}},
+    "SP_9CLOS": {'description': 'Grapevine leafroll-associated virus 10 - Proteome: UP000203128', 'meaning': 'NCBITaxon:367121', 'annotations': {'sources': 'existing'}},
+    "SP_9CLOT": {'description': 'Candidatus Arthromitus sp. SFB-rat-Yit - Proteome: UP000001273', 'meaning': 'NCBITaxon:1041504', 'annotations': {'sources': 'existing'}},
+    "SP_9CNID": {'description': 'Clytia hemisphaerica - Proteome: UP000594262', 'meaning': 'NCBITaxon:252671', 'annotations': {'sources': 'existing'}},
+    "SP_9COLU": {'description': 'Pampusana beccarii - Proteome: UP000541332', 'meaning': 'NCBITaxon:2953425', 'annotations': {'sources': 'existing'}},
+    "SP_9CORV": {'description': 'Cnemophilus loriae - Proteome: UP000517678', 'meaning': 'NCBITaxon:254448', 'annotations': {'sources': 'existing'}},
+    "SP_9CORY": {'description': 'Corynebacterium genitalium ATCC 33030 - Proteome: UP000004208', 'meaning': 'NCBITaxon:585529', 'annotations': {'sources': 'existing'}},
+    "SP_9COXI": {'description': 'Coxiella endosymbiont of Amblyomma americanum - Proteome: UP000059222', 'meaning': 'NCBITaxon:325775', 'annotations': {'sources': 'existing'}},
+    "SP_9CREN": {'description': 'Metallosphaera yellowstonensis MK1 - Proteome: UP000003980', 'meaning': 'NCBITaxon:671065', 'annotations': {'sources': 'existing'}},
+    "SP_9CRUS": {'description': 'Daphnia magna - Proteome: UP000076858', 'meaning': 'NCBITaxon:35525', 'annotations': {'sources': 'existing'}},
+    "SP_9CUCU": {'description': 'Ceutorhynchus assimilis - Proteome: UP001152799', 'meaning': 'NCBITaxon:467358', 'annotations': {'sources': 'existing'}},
+    "SP_9CYAN": {'description': 'Leptolyngbyaceae cyanobacterium JSC-12 - Proteome: UP000001332', 'meaning': 'NCBITaxon:864702', 'annotations': {'sources': 'existing'}},
+    "SP_9DEIN": {'description': 'Meiothermus sp. QL-1 - Proteome: UP000255346', 'meaning': 'NCBITaxon:2058095', 'annotations': {'sources': 'existing'}},
+    "SP_9DEIO": {'description': 'Deinococcus sp. RL - Proteome: UP000027898', 'meaning': 'NCBITaxon:1489678', 'annotations': {'sources': 'existing'}},
+    "SP_9DELA": {'description': 'Human T-cell leukemia virus type I - Proteome: UP000108043', 'meaning': 'NCBITaxon:11908', 'annotations': {'sources': 'existing'}},
+    "SP_9DELT": {'description': 'Lujinxingia litoralis - Proteome: UP000249169', 'meaning': 'NCBITaxon:2211119', 'annotations': {'sources': 'existing'}},
+    "SP_9DEND": {'description': 'Xiphorhynchus elegans - Proteome: UP000551443', 'meaning': 'NCBITaxon:269412', 'annotations': {'sources': 'existing'}},
+    "SP_9DINO": {'description': 'Symbiodinium necroappetens - Proteome: UP000601435', 'meaning': 'NCBITaxon:1628268', 'annotations': {'sources': 'existing'}},
+    "SP_9DIPT": {'description': 'Clunio marinus - Proteome: UP000183832', 'meaning': 'NCBITaxon:568069', 'annotations': {'sources': 'existing'}},
+    "SP_9EIME": {'description': 'Eimeria praecox - Proteome: UP000018201', 'meaning': 'NCBITaxon:51316', 'annotations': {'sources': 'existing'}},
+    "SP_9EMBE": {'description': 'Emberiza fucata - Proteome: UP000580681', 'meaning': 'NCBITaxon:337179', 'annotations': {'sources': 'existing'}},
+    "SP_9ENTE": {'description': 'Enterococcus asini ATCC 700915 - Proteome: UP000013777', 'meaning': 'NCBITaxon:1158606', 'annotations': {'sources': 'existing'}},
+    "SP_9ENTR": {'description': 'secondary endosymbiont of Heteropsylla cubana - Proteome: UP000003937', 'meaning': 'NCBITaxon:134287', 'annotations': {'sources': 'existing'}},
+    "SP_9ERIC": {'description': 'Rhododendron williamsianum - Proteome: UP000428333', 'meaning': 'NCBITaxon:262921', 'annotations': {'sources': 'existing'}},
+    "SP_9EUCA": {'description': 'Petrolisthes manimaculis - Proteome: UP001292094', 'meaning': 'NCBITaxon:1843537', 'annotations': {'sources': 'existing'}},
+    "SP_9EUGL": {'description': 'Perkinsela sp. CCAP 1560/4 - Proteome: UP000036983', 'meaning': 'NCBITaxon:1314962', 'annotations': {'sources': 'existing'}},
+    "SP_9EUKA": {'description': 'Chrysochromulina tobinii - Proteome: UP000037460', 'meaning': 'NCBITaxon:1460289', 'annotations': {'sources': 'existing'}},
+    "SP_9EUPU": {'description': 'Candidula unifasciata - Proteome: UP000678393', 'meaning': 'NCBITaxon:100452', 'annotations': {'sources': 'existing'}},
+    "SP_9EURO": {'description': 'Cladophialophora psammophila CBS 110553 - Proteome: UP000019471', 'meaning': 'NCBITaxon:1182543', 'annotations': {'sources': 'existing'}},
+    "SP_9EURY": {'description': 'Methanoplanus limicola DSM 2279 - Proteome: UP000005741', 'meaning': 'NCBITaxon:937775', 'annotations': {'sources': 'existing'}},
+    "SP_9FABA": {'description': 'Senna tora - Proteome: UP000634136', 'meaning': 'NCBITaxon:362788', 'annotations': {'sources': 'existing'}},
+    "SP_9FIRM": {'description': 'Ruminococcaceae bacterium D16 - Proteome: UP000002801', 'meaning': 'NCBITaxon:552398', 'annotations': {'sources': 'existing'}},
+    "SP_9FLAO": {'description': 'Capnocytophaga sp. oral taxon 338 str. F0234 - Proteome: UP000003023', 'meaning': 'NCBITaxon:888059', 'annotations': {'sources': 'existing'}},
+    "SP_9FLAV": {'description': 'Tunisian sheep-like pestivirus - Proteome: UP001157330', 'meaning': 'NCBITaxon:3071305', 'annotations': {'sources': 'existing'}},
+    "SP_9FLOR": {'description': 'Gracilariopsis chorda - Proteome: UP000247409', 'meaning': 'NCBITaxon:448386', 'annotations': {'sources': 'existing'}},
+    "SP_9FRIN": {'description': 'Urocynchramus pylzowi - Proteome: UP000524542', 'meaning': 'NCBITaxon:571890', 'annotations': {'sources': 'existing'}},
+    "SP_9FUNG": {'description': 'Lichtheimia corymbifera JMRC:FSU:9682 - Proteome: UP000027586', 'meaning': 'NCBITaxon:1263082', 'annotations': {'sources': 'existing'}},
+    "SP_9FURN": {'description': 'Furnarius figulus - Proteome: UP000529852', 'meaning': 'NCBITaxon:463165', 'annotations': {'sources': 'existing'}},
+    "SP_9FUSO": {'description': 'Fusobacterium gonidiaformans 3-1-5R - Proteome: UP000002975', 'meaning': 'NCBITaxon:469605', 'annotations': {'sources': 'existing'}},
+    "SP_9GALL": {'description': 'Odontophorus gujanensis - Proteome: UP000522663', 'meaning': 'NCBITaxon:886794', 'annotations': {'sources': 'existing'}},
+    "SP_9GAMA": {'description': 'Bovine gammaherpesvirus 6 - Proteome: UP000121539', 'meaning': 'NCBITaxon:1504288', 'annotations': {'sources': 'existing'}},
+    "SP_9GAMC": {'description': 'Anser fabalis coronavirus NCN2 - Proteome: UP001251675', 'meaning': 'NCBITaxon:2860474', 'annotations': {'sources': 'existing'}},
+    "SP_9GAMM": {'description': 'Buchnera aphidicola (Buchnera aphidicola (Cinara tujafilina)) - Proteome: UP000006811', 'meaning': 'NCBITaxon:261317', 'annotations': {'sources': 'existing'}, 'aliases': ['Buchnera aphidicola (Cinara tujafilina)']},
+    "SP_9GAST": {'description': 'Elysia crispata - Proteome: UP001283361', 'meaning': 'NCBITaxon:231223', 'annotations': {'sources': 'existing'}},
+    "SP_9GEMI": {'description': 'East African cassava mosaic Zanzibar virus - Proteome: UP000201107', 'meaning': 'NCBITaxon:223275', 'annotations': {'sources': 'existing'}},
+    "SP_9GLOM": {'description': 'Paraglomus occultum - Proteome: UP000789572', 'meaning': 'NCBITaxon:144539', 'annotations': {'sources': 'existing'}},
+    "SP_9GOBI": {'description': 'Neogobius melanostomus - Proteome: UP000694523', 'meaning': 'NCBITaxon:47308', 'annotations': {'sources': 'existing'}},
+    "SP_9GRUI": {'description': 'Atlantisia rogersi - Proteome: UP000518911', 'meaning': 'NCBITaxon:2478892', 'annotations': {'sources': 'existing'}},
+    "SP_9HELI": {'description': 'Helicobacter bilis ATCC 43879 - Proteome: UP000005085', 'meaning': 'NCBITaxon:613026', 'annotations': {'sources': 'existing'}},
+    "SP_9HELO": {'description': 'Rhynchosporium graminicola - Proteome: UP000178129', 'meaning': 'NCBITaxon:2792576', 'annotations': {'sources': 'existing'}},
+    "SP_9HEMI": {'description': 'Cinara cedri - Proteome: UP000325440', 'meaning': 'NCBITaxon:506608', 'annotations': {'sources': 'existing'}},
+    "SP_9HEPA": {'description': 'Duck hepatitis B virus - Proteome: UP000137229', 'meaning': 'NCBITaxon:12639', 'annotations': {'sources': 'existing'}},
+    "SP_9HEXA": {'description': 'Allacma fusca - Proteome: UP000708208', 'meaning': 'NCBITaxon:39272', 'annotations': {'sources': 'existing'}},
+    "SP_9HYME": {'description': 'Melipona quadrifasciata - Proteome: UP000053105', 'meaning': 'NCBITaxon:166423', 'annotations': {'sources': 'existing'}},
+    "SP_9HYPH": {'description': 'Mesorhizobium amorphae CCNWGS0123 - Proteome: UP000002949', 'meaning': 'NCBITaxon:1082933', 'annotations': {'sources': 'existing'}},
+    "SP_9HYPO": {'description': '[Torrubiella] hemipterigena - Proteome: UP000039046', 'meaning': 'NCBITaxon:1531966', 'annotations': {'sources': 'existing'}},
+    "SP_9INFA": {'description': 'Influenza A virus (A/California/VRDL364/2009 (Influenza A virus (A/California/VRDL364/2009(mixed))) - Proteome: UP000109975', 'meaning': 'NCBITaxon:1049605', 'annotations': {'sources': 'existing'}, 'aliases': ['Influenza A virus (A/California/VRDL364/2009(mixed))']},
+    "SP_9INSE": {'description': 'Cloeon dipterum - Proteome: UP000494165', 'meaning': 'NCBITaxon:197152', 'annotations': {'sources': 'existing'}},
+    "SP_9LABR": {'description': 'Labrus bergylta - Proteome: UP000261660', 'meaning': 'NCBITaxon:56723', 'annotations': {'sources': 'existing'}},
+    "SP_ACIB2": {'description': 'Acinetobacter baumannii (strain ATCC 19606 / DSM 30007 / JCM 6841 / CCUG 19606 / CIP 70.34 / NBRC 109757 / NCIMB 12457 / NCTC 12156 / 81) (A. baumannii ATCC 19606) - Proteome: UP000498640', 'meaning': 'NCBITaxon:575584', 'annotations': {'sources': 'GO'}, 'aliases': ['A. baumannii ATCC 19606']},
+    "SP_ANOCA": {'description': 'Anolis carolinensis (Green anole (American chameleon)) - Proteome: UP000001646', 'meaning': 'NCBITaxon:28377', 'annotations': {'sources': 'GO'}, 'aliases': ['Green anole (American chameleon)']},
+    "SP_ANOGA": {'description': 'Anopheles gambiae (African malaria mosquito) - Proteome: UP000007062', 'meaning': 'NCBITaxon:7165', 'annotations': {'sources': 'GO'}, 'aliases': ['African malaria mosquito']},
+    "SP_AQUAE": {'description': 'Aquifex aeolicus (aquaficae bacteria) - Proteome: UP000000798', 'meaning': 'NCBITaxon:224324', 'annotations': {'sources': 'GO'}, 'aliases': ['aquaficae bacteria']},
+    "SP_ARATH": {'description': 'Arabidopsis thaliana (Mouse-ear cress) - Proteome: UP000006548', 'meaning': 'NCBITaxon:3702', 'annotations': {'sources': 'common, GO'}, 'aliases': ['Mouse-ear cress']},
+    "SP_ASPFU": {'description': 'Neosartorya fumigata (ascomycote fungus) - Proteome: UP000002530', 'meaning': 'NCBITaxon:330879', 'annotations': {'sources': 'GO'}, 'aliases': ['ascomycote fungus']},
+    "SP_BACAN": {'description': 'Bacillus anthracis - Proteome: UP000000594', 'meaning': 'NCBITaxon:1392', 'annotations': {'sources': 'GO'}},
+    "SP_BACCR": {'description': 'Bacillus cereus (bacillus cereus) - Proteome: UP000001417', 'meaning': 'NCBITaxon:226900', 'annotations': {'sources': 'GO'}, 'aliases': ['bacillus cereus']},
+    "SP_BACSU": {'description': 'Bacillus subtilis subsp. subtilis str. 168 (b subtilis) - Proteome: UP000001570', 'meaning': 'NCBITaxon:224308', 'annotations': {'sources': 'common, GO'}, 'aliases': ['b subtilis']},
+    "SP_BACTN": {'description': 'Bacteroides thetaiotaomicron (bacteroidetes bacteria) - Proteome: UP000001414', 'meaning': 'NCBITaxon:226186', 'annotations': {'sources': 'GO'}, 'aliases': ['bacteroidetes bacteria']},
+    "SP_BATDJ": {'description': 'Batrachochytrium dendrobatidis (Frog chytrid fungus) - Proteome: UP000007241', 'meaning': 'NCBITaxon:684364', 'annotations': {'sources': 'GO'}, 'aliases': ['Frog chytrid fungus']},
+    "SP_BOVIN": {'description': 'Bos taurus (Cattle) - Proteome: UP000009136', 'meaning': 'NCBITaxon:9913', 'annotations': {'sources': 'common, GO'}, 'aliases': ['Cattle']},
+    "SP_BRACM": {'description': 'Brassica campestris (Field mustard) - Proteome: UP000011750', 'meaning': 'NCBITaxon:3711', 'annotations': {'sources': 'GO'}, 'aliases': ['Field mustard']},
+    "SP_BRADI": {'description': 'Brachypodium distachyon (Purple false brome) - Proteome: UP000008810', 'meaning': 'NCBITaxon:15368', 'annotations': {'sources': 'GO'}, 'aliases': ['Purple false brome']},
+    "SP_BRADU": {'description': 'Bradyrhizobium diazoefficiens (alphaproteobacteria) - Proteome: UP000002526', 'meaning': 'NCBITaxon:224911', 'annotations': {'sources': 'GO'}, 'aliases': ['alphaproteobacteria']},
+    "SP_BRAFL": {'description': 'Branchiostoma floridae (Florida lancelet (Amphioxus)) - Proteome: UP000001554', 'meaning': 'NCBITaxon:7739', 'annotations': {'sources': 'GO'}, 'aliases': ['Florida lancelet (Amphioxus)']},
+    "SP_CAEBR": {'description': 'Caenorhabditis briggsae (nematode worm) - Proteome: UP000008549', 'meaning': 'NCBITaxon:6238', 'annotations': {'sources': 'GO'}, 'aliases': ['nematode worm']},
+    "SP_CAEEL": {'description': 'Caenorhabditis elegans (nematode worm) - Proteome: UP000001940', 'meaning': 'NCBITaxon:6239', 'annotations': {'sources': 'common, GO'}, 'aliases': ['nematode worm']},
+    "SP_CAMJE": {'description': 'Campylobacter jejuni subsp. jejuni serotype O:2 (strain ATCC 700819 / NCTC 11168) - Proteome: UP000000799', 'meaning': 'NCBITaxon:192222', 'annotations': {'sources': 'GO'}},
+    "SP_CANAL": {'description': 'Candida albicans (Yeast) - Proteome: UP000000559', 'meaning': 'NCBITaxon:237561', 'annotations': {'sources': 'GO'}, 'aliases': ['Yeast']},
+    "SP_CANCO": {'description': 'Candida orthopsilosis (strain 90-125) (Co 90-125) - Proteome: UP000005018', 'meaning': 'NCBITaxon:1136231', 'annotations': {'sources': 'GO'}},
+    "SP_CANDC": {'description': 'Candida dubliniensis (strain CD36 / ATCC MYA-646 / CBS 7987 / NCPF 3949 / NRRL Y-17841) - Proteome: UP000002605', 'meaning': 'NCBITaxon:573826', 'annotations': {'sources': 'GO'}},
+    "SP_CANGB": {'description': 'Candida glabrata (strain ATCC 2001 / BCRC 20586 / JCM 3761 / NBRC 0622 / NRRL Y-65 / CBS 138) (Nakaseomyces glabratus) - Proteome: UP000002428', 'meaning': 'NCBITaxon:284593', 'annotations': {'sources': 'GO'}},
+    "SP_CANLF": {'description': 'Canis lupus familiaris (Dog) - Proteome: UP000805418', 'meaning': 'NCBITaxon:9615', 'annotations': {'sources': 'common, GO'}, 'aliases': ['Dog']},
+    "SP_CANPA": {'description': 'Candida parapsilosis (strain CDC 317 / ATCC MYA-4646) - Proteome: UP000005221', 'meaning': 'NCBITaxon:578454', 'annotations': {'sources': 'GO'}},
+    "SP_CANTI": {'description': 'Candida tropicalis (strain ATCC MYA-3404 / T1) - Proteome: UP000002037', 'meaning': 'NCBITaxon:294747', 'annotations': {'sources': 'GO'}},
+    "SP_CHICK": {'description': 'Gallus gallus (Chicken) - Proteome: UP000000539', 'meaning': 'NCBITaxon:9031', 'annotations': {'sources': 'common, GO'}, 'aliases': ['Chicken']},
+    "SP_CHLAA": {'description': 'Chloroflexus aurantiacus (chloroflexi bacteria) - Proteome: UP000002008', 'meaning': 'NCBITaxon:324602', 'annotations': {'sources': 'GO'}, 'aliases': ['chloroflexi bacteria']},
+    "SP_CHLRE": {'description': 'Chlamydomonas reinhardtii (green algae) - Proteome: UP000006906', 'meaning': 'NCBITaxon:3055', 'annotations': {'sources': 'GO'}, 'aliases': ['green algae']},
+    "SP_CHLTR": {'description': 'Chlamydia trachomatis (chlamydia) - Proteome: UP000000431', 'meaning': 'NCBITaxon:272561', 'annotations': {'sources': 'GO'}, 'aliases': ['chlamydia']},
+    "SP_CIOIN": {'description': 'Ciona intestinalis (Transparent sea squirt) - Proteome: UP000008144', 'meaning': 'NCBITaxon:7719', 'annotations': {'sources': 'GO'}, 'aliases': ['Transparent sea squirt']},
+    "SP_CITK8": {'description': 'Citrobacter koseri (strain ATCC BAA-895 / CDC 4225-83 / SGSC4696) - Proteome: UP000008148', 'meaning': 'NCBITaxon:290338', 'annotations': {'sources': 'GO'}},
+    "SP_CLALU": {'description': 'Clavispora lusitaniae (strain ATCC 42720) - Proteome: UP000007703', 'meaning': 'NCBITaxon:306902', 'annotations': {'sources': 'GO'}},
+    "SP_CLOBH": {'description': 'Clostridium botulinum (firmicutes bacteria) - Proteome: UP000001986', 'meaning': 'NCBITaxon:441771', 'annotations': {'sources': 'GO'}, 'aliases': ['firmicutes bacteria']},
+    "SP_COXBU": {'description': 'Coxiella burnetii (gammaproteobacteria) - Proteome: UP000002671', 'meaning': 'NCBITaxon:227377', 'annotations': {'sources': 'GO'}, 'aliases': ['gammaproteobacteria']},
+    "SP_CRYD1": {'description': 'Cryptococcus neoformans var. neoformans serotype D (Filobasidiella neoformans) (C. neoformans) - Proteome: UP000002149', 'meaning': 'NCBITaxon:214684', 'annotations': {'sources': 'GO'}, 'aliases': ['C. neoformans']},
+    "SP_DANRE": {'description': 'Danio rerio (Zebrafish) - Proteome: UP000000437', 'meaning': 'NCBITaxon:7955', 'annotations': {'sources': 'common, GO'}, 'aliases': ['Zebrafish']},
+    "SP_DAPPU": {'description': 'Daphnia pulex (Water flea) - Proteome: UP000000305', 'meaning': 'NCBITaxon:6669', 'annotations': {'sources': 'GO'}, 'aliases': ['Water flea']},
+    "SP_DEBHA": {'description': 'Debaryomyces hansenii (strain ATCC 36239 / CBS 767 / BCRC 21394 / JCM 1990 / NBRC 0083 / IGC 2968) (Torulaspora hansenii) - Proteome: UP000000599', 'meaning': 'NCBITaxon:284592', 'annotations': {'sources': 'GO'}},
+    "SP_DEIRA": {'description': 'Deinococcus radiodurans (deinococcus bacteria) - Proteome: UP000002524', 'meaning': 'NCBITaxon:243230', 'annotations': {'sources': 'GO'}, 'aliases': ['deinococcus bacteria']},
+    "SP_DICDI": {'description': 'Dictyostelium discoideum (Social amoeba) - Proteome: UP000002195', 'meaning': 'NCBITaxon:44689', 'annotations': {'sources': 'GO'}, 'aliases': ['Social amoeba']},
+    "SP_DICPU": {'description': 'Dictyostelium purpureum (Slime mold) - Proteome: UP000001064', 'meaning': 'NCBITaxon:5786', 'annotations': {'sources': 'GO'}, 'aliases': ['Slime mold']},
+    "SP_DICTD": {'description': 'Dictyoglomus turgidum (dictyoglomi bacteria) - Proteome: UP000007719', 'meaning': 'NCBITaxon:515635', 'annotations': {'sources': 'GO'}, 'aliases': ['dictyoglomi bacteria']},
+    "SP_DROME": {'description': 'Drosophila melanogaster (Fruit fly) - Proteome: UP000000803', 'meaning': 'NCBITaxon:7227', 'annotations': {'sources': 'common, GO'}, 'aliases': ['Fruit fly']},
+    "SP_E__COLI_ECO57": {'description': 'Escherichia coli O157:H7 - Proteome: UP000000558', 'meaning': 'NCBITaxon:83334', 'annotations': {'sources': 'GO'}},
+    "SP_ECOLI": {'description': 'Escherichia coli K-12 (E. coli) - Proteome: UP000000625', 'meaning': 'NCBITaxon:83333', 'annotations': {'sources': 'common, GO'}, 'aliases': ['E. coli']},
+    "SP_EMENI": {'description': 'Emericella nidulans (ascomycote fungus) - Proteome: UP000000560', 'meaning': 'NCBITaxon:227321', 'annotations': {'sources': 'GO'}, 'aliases': ['ascomycote fungus']},
+    "SP_ENTCA": {'description': 'Enterococcus casseliflavus EC20 - Proteome: UP000012675', 'meaning': 'NCBITaxon:565655', 'annotations': {'sources': 'GO'}},
+    "SP_ENTFA": {'description': 'Enterococcus faecalis (strain ATCC 700802 / V583) - Proteome: UP000001415', 'meaning': 'NCBITaxon:226185', 'annotations': {'sources': 'GO'}},
+    "SP_ENTGA": {'description': 'Enterococcus gallinarum - Proteome: UP000254807', 'meaning': 'NCBITaxon:1353', 'annotations': {'sources': 'GO'}},
+    "SP_ENTH1": {'description': 'Entamoeba histolytica (amoeba) - Proteome: UP000001926', 'meaning': 'NCBITaxon:294381', 'annotations': {'sources': 'GO'}, 'aliases': ['amoeba']},
+    "SP_EREGS": {'description': 'Eremothecium gossypii (Yeast) - Proteome: UP000000591', 'meaning': 'NCBITaxon:284811', 'annotations': {'sources': 'GO'}, 'aliases': ['Yeast']},
+    "SP_FELCA": {'description': 'Felis catus (Cat) - Proteome: UP000011712', 'meaning': 'NCBITaxon:9685', 'annotations': {'sources': 'common, GO'}, 'aliases': ['Cat']},
+    "SP_FMDVO": {'description': 'Foot-and-mouth disease virus serotype O (FMDV) (FMDV) - Proteome: UP000008765', 'meaning': 'NCBITaxon:12118', 'annotations': {'sources': 'GO'}, 'aliases': ['FMDV']},
+    "SP_FUSNN": {'description': 'Fusobacterium nucleatum (strain ATCC 25586) (F. nucleatum ATCC 25586) - Proteome: UP000241660', 'meaning': 'NCBITaxon:190304', 'annotations': {'sources': 'GO'}, 'aliases': ['F. nucleatum ATCC 25586']},
+    "SP_GEOSL": {'description': 'Geobacter sulfurreducens (deltaproteobacteria) - Proteome: UP000000577', 'meaning': 'NCBITaxon:243231', 'annotations': {'sources': 'GO'}, 'aliases': ['deltaproteobacteria']},
+    "SP_GIAIC": {'description': 'Giardia intestinalis (giardia) - Proteome: UP000001548', 'meaning': 'NCBITaxon:184922', 'annotations': {'sources': 'GO'}, 'aliases': ['giardia']},
+    "SP_GLOVI": {'description': 'Gloeobacter violaceus (cyanobacteria) - Proteome: UP000000557', 'meaning': 'NCBITaxon:251221', 'annotations': {'sources': 'GO'}, 'aliases': ['cyanobacteria']},
+    "SP_GORGO": {'description': 'Gorilla gorilla gorilla (Western lowland gorilla) - Proteome: UP000001519', 'meaning': 'NCBITaxon:9593', 'annotations': {'sources': 'common, GO'}, 'aliases': ['Western lowland gorilla']},
+    "SP_GOSHI": {'description': 'Gossypium hirsutum (Upland cotton) - Proteome: UP000189702', 'meaning': 'NCBITaxon:3635', 'annotations': {'sources': 'GO'}, 'aliases': ['Upland cotton']},
+    "SP_HAEIN": {'description': 'Haemophilus influenzae (strain ATCC 51907 / DSM 11121 / KW20 / Rd) (H. influenzae strain ATCC 51907) - Proteome: UP000000579', 'meaning': 'NCBITaxon:71421', 'annotations': {'sources': 'GO'}, 'aliases': ['H. influenzae strain ATCC 51907']},
+    "SP_HALH5": {'description': 'Halalkalibacterium halodurans (strain ATCC BAA-125 / DSM 18197 / FERM 7344 / JCM 9153 / C-125) (Bacillus halodurans) - Proteome: UP000001258', 'meaning': 'NCBITaxon:272558', 'annotations': {'sources': 'GO'}},
+    "SP_HALSA": {'description': 'Halobacterium salinarum (euryarchaea) - Proteome: UP000000554', 'meaning': 'NCBITaxon:64091', 'annotations': {'sources': 'GO'}, 'aliases': ['euryarchaea']},
+    "SP_HBVCJ": {'description': 'Hepatitis B virus genotype C subtype ayr (isolate Human/Japan/Okamoto/-) (HBV-C) - Proteome: UP000008591', 'meaning': 'NCBITaxon:928302', 'annotations': {'sources': 'GO'}, 'aliases': ['HBV-C']},
+    "SP_HCMVA": {'description': 'Human cytomegalovirus (strain AD169) (Human herpesvirus 5 (HHV-5)) - Proteome: UP000008992', 'meaning': 'NCBITaxon:10360', 'annotations': {'sources': 'GO'}, 'aliases': ['Human herpesvirus 5 (HHV-5)']},
+    "SP_HCMVM": {'description': 'Human cytomegalovirus (Human herpesvirus 5) strain Merlin (HHV-5 Merlin) - Proteome: UP000000938', 'meaning': 'NCBITaxon:295027', 'annotations': {'sources': 'GO'}, 'aliases': ['HHV-5 Merlin']},
+    "SP_HCV77": {'description': 'Hepatitis C virus genotype 1a (isolate H77) (HCV) - Proteome: UP000000518', 'meaning': 'NCBITaxon:63746', 'annotations': {'sources': 'GO'}, 'aliases': ['HCV']},
+    "SP_HELAN": {'description': 'Helianthus annuus (Common sunflower) - Proteome: UP000215914', 'meaning': 'NCBITaxon:4232', 'annotations': {'sources': 'GO'}, 'aliases': ['Common sunflower']},
+    "SP_HELPY": {'description': 'Helicobacter pylori (Campylobacter pylori) strain ATCC 700392 / 26695 (H. pylori) - Proteome: UP000000429', 'meaning': 'NCBITaxon:85962', 'annotations': {'sources': 'GO'}, 'aliases': ['H. pylori']},
+    "SP_HELRO": {'description': 'Helobdella robusta (Californian leech) - Proteome: UP000015101', 'meaning': 'NCBITaxon:6412', 'annotations': {'sources': 'GO'}, 'aliases': ['Californian leech']},
+    "SP_HHV11": {'description': 'Human herpesvirus 1 (strain 17) (Human herpes simplex virus 1 (HHV-1)) - Proteome: UP000009294', 'meaning': 'NCBITaxon:10299', 'annotations': {'sources': 'GO'}, 'aliases': ['Human herpes simplex virus 1 (HHV-1)']},
+    "SP_HORSE": {'description': 'Equus caballus (Horse) - Proteome: UP000002281', 'meaning': 'NCBITaxon:9796', 'annotations': {'sources': 'common, GO'}, 'aliases': ['Horse']},
+    "SP_HORVV": {'description': 'Hordeum vulgare subsp. vulgare (Domesticated barley) - Proteome: UP000011116', 'meaning': 'NCBITaxon:112509', 'annotations': {'sources': 'GO'}, 'aliases': ['Domesticated barley']},
+    "SP_HPV16": {'description': 'Human papillomavirus type 16 - Proteome: UP000009251', 'meaning': 'NCBITaxon:333760', 'annotations': {'sources': 'GO'}},
+    "SP_HUMAN": {'description': 'Homo sapiens (Human) - Proteome: UP000005640', 'meaning': 'NCBITaxon:9606', 'annotations': {'sources': 'common, GO'}, 'aliases': ['Human']},
+    "SP_HV1AN": {'description': 'Human immunodeficiency virus type 1 group O (isolate ANT70) - Proteome: UP000007689', 'meaning': 'NCBITaxon:327105', 'annotations': {'sources': 'GO'}},
+    "SP_IXOSC": {'description': 'Ixodes scapularis (Deer tick) - Proteome: UP000001555', 'meaning': 'NCBITaxon:6945', 'annotations': {'sources': 'GO'}, 'aliases': ['Deer tick']},
+    "SP_JUGRE": {'description': 'Juglans regia (English walnut) - Proteome: UP000235220', 'meaning': 'NCBITaxon:51240', 'annotations': {'sources': 'GO'}, 'aliases': ['English walnut']},
+    "SP_KLENI": {'description': 'Klebsormidium nitens (Green alga) - Proteome: UP000054558', 'meaning': 'NCBITaxon:105231', 'annotations': {'sources': 'GO'}, 'aliases': ['Green alga']},
+    "SP_KLEPH": {'description': 'Klebsiella pneumoniae subsp. pneumoniae (strain HS11286) - Proteome: UP000007841', 'meaning': 'NCBITaxon:1125630', 'annotations': {'sources': 'GO'}},
+    "SP_KLEPO": {'description': 'Klebsiella pneumoniae subsp. ozaenae (subspecies) - Proteome: UP000255382', 'meaning': 'NCBITaxon:574', 'annotations': {'sources': 'GO'}},
+    "SP_KORCO": {'description': 'Korarchaeum cryptofilum (candidatus archaea) - Proteome: UP000001686', 'meaning': 'NCBITaxon:374847', 'annotations': {'sources': 'GO'}, 'aliases': ['candidatus archaea']},
+    "SP_LACSA": {'description': 'Lactuca sativa (Garden lettuce) - Proteome: UP000235145', 'meaning': 'NCBITaxon:4236', 'annotations': {'sources': 'GO'}, 'aliases': ['Garden lettuce']},
+    "SP_LEIMA": {'description': 'Leishmania major strain Friedlin (leishmania) - Proteome: UP000000542', 'meaning': 'NCBITaxon:347515', 'annotations': {'sources': 'GO'}, 'aliases': ['leishmania']},
+    "SP_LEPIN": {'description': 'Leptospira interrogans (spirochaetes bacteria) - Proteome: UP000001408', 'meaning': 'NCBITaxon:189518', 'annotations': {'sources': 'GO'}, 'aliases': ['spirochaetes bacteria']},
+    "SP_LEPOC": {'description': 'Lepisosteus oculatus (Spotted gar) - Proteome: UP000018468', 'meaning': 'NCBITaxon:7918', 'annotations': {'sources': 'GO'}, 'aliases': ['Spotted gar']},
+    "SP_LISMO": {'description': 'Listeria monocytogenes serovar 1/2a (strain ATCC BAA-679 / EGD-e) - Proteome: UP000000817', 'meaning': 'NCBITaxon:169963', 'annotations': {'sources': 'GO'}},
+    "SP_LODEL": {'description': 'Lodderomyces elongisporus (strain ATCC 11503 / CBS 2605 / JCM 1781 / NBRC 1676 / NRRL YB-4239) (Saccharomyces elongisporus) - Proteome: UP000001996', 'meaning': 'NCBITaxon:379508', 'annotations': {'sources': 'GO'}},
+    "SP_MACMU": {'description': 'Macaca mulatta (Rhesus macaque) - Proteome: UP000006718', 'meaning': 'NCBITaxon:9544', 'annotations': {'sources': 'common, GO'}, 'aliases': ['Rhesus macaque']},
+    "SP_MAIZE": {'description': 'Zea mays (Maize) - Proteome: UP000007305', 'meaning': 'NCBITaxon:4577', 'annotations': {'sources': 'common, GO'}, 'aliases': ['Maize']},
+    "SP_MANES": {'description': 'Manihot esculenta (Cassava) - Proteome: UP000091857', 'meaning': 'NCBITaxon:3983', 'annotations': {'sources': 'GO'}, 'aliases': ['Cassava']},
+    "SP_MARPO": {'description': 'Marchantia polymorpha (Common liverwort) - Proteome: UP000244005', 'meaning': 'NCBITaxon:3197', 'annotations': {'sources': 'GO'}, 'aliases': ['Common liverwort']},
+    "SP_MEASC": {'description': 'Measles virus (Subacute sclerose panencephalitis virus) strain Ichinose-B95a (MeV strain Ichinose-B95a) - Proteome: UP000008699', 'meaning': 'NCBITaxon:645098', 'annotations': {'sources': 'GO'}, 'aliases': ['MeV strain Ichinose-B95a']},
+    "SP_MEDTR": {'description': 'Medicago truncatula (Barrel medic) - Proteome: UP000002051', 'meaning': 'NCBITaxon:3880', 'annotations': {'sources': 'GO'}, 'aliases': ['Barrel medic']},
+    "SP_METAC": {'description': 'Methanosarcina acetivorans (euryarchaea) - Proteome: UP000002487', 'meaning': 'NCBITaxon:188937', 'annotations': {'sources': 'GO'}, 'aliases': ['euryarchaea']},
+    "SP_METJA": {'description': 'Methanocaldococcus jannaschii (methanococci archaea) - Proteome: UP000000805', 'meaning': 'NCBITaxon:243232', 'annotations': {'sources': 'GO'}, 'aliases': ['methanococci archaea']},
+    "SP_MONBE": {'description': 'Monosiga brevicollis (sponge) - Proteome: UP000001357', 'meaning': 'NCBITaxon:81824', 'annotations': {'sources': 'GO'}, 'aliases': ['sponge']},
+    "SP_MONDO": {'description': 'Monodelphis domestica (Gray short-tailed opossum) - Proteome: UP000002280', 'meaning': 'NCBITaxon:13616', 'annotations': {'sources': 'GO'}, 'aliases': ['Gray short-tailed opossum']},
+    "SP_MOUSE": {'description': 'Mus musculus (Mouse) - Proteome: UP000000589', 'meaning': 'NCBITaxon:10090', 'annotations': {'sources': 'common, GO'}, 'aliases': ['Mouse']},
+    "SP_MYCGE": {'description': 'Mycoplasma genitalium (mollicutes bacteria) - Proteome: UP000000807', 'meaning': 'NCBITaxon:243273', 'annotations': {'sources': 'GO'}, 'aliases': ['mollicutes bacteria']},
+    "SP_MYCMD": {'description': 'Mycosarcoma maydis (Ustilago maydis) (Corn smut fungus) - Proteome: UP000000561', 'meaning': 'NCBITaxon:5270', 'annotations': {'sources': 'GO'}, 'aliases': ['Corn smut fungus']},
+    "SP_MYCPN": {'description': 'Mycoplasma pneumoniae strain ATCC 29342 / M129 / Subtype 1 - Proteome: UP000000808', 'meaning': 'NCBITaxon:272634', 'annotations': {'sources': 'GO'}},
+    "SP_MYCTA": {'description': 'Mycobacterium tuberculosis (strain ATCC 25177 / H37Ra) - Proteome: UP000001988', 'meaning': 'NCBITaxon:419947', 'annotations': {'sources': 'GO'}},
+    "SP_MYCTU": {'description': 'Mycobacterium tuberculosis H37Rv (actinobacteria) - Proteome: UP000001584', 'meaning': 'NCBITaxon:83332', 'annotations': {'sources': 'GO'}, 'aliases': ['actinobacteria']},
+    "SP_NEIMB": {'description': 'Neisseria meningitidis serogroup B (strain ATCC BAA-335 / MC58) (betaproteobacteria) - Proteome: UP000000425', 'meaning': 'NCBITaxon:122586', 'annotations': {'sources': 'GO'}, 'aliases': ['betaproteobacteria']},
+    "SP_NEIME": {'description': 'Neisseria meningitidis MC58 - Proteome: UP000000425', 'meaning': 'NCBITaxon:122586', 'annotations': {'sources': 'existing'}},
+    "SP_NELNU": {'description': 'Nelumbo nucifera (Sacred lotus) - Proteome: UP000189703', 'meaning': 'NCBITaxon:4432', 'annotations': {'sources': 'GO'}, 'aliases': ['Sacred lotus']},
+    "SP_NEMVE": {'description': 'Nematostella vectensis (Starlet sea anemone) - Proteome: UP000001593', 'meaning': 'NCBITaxon:45351', 'annotations': {'sources': 'GO'}, 'aliases': ['Starlet sea anemone']},
+    "SP_NEUCR": {'description': 'Neurospora crassa (ascomycote fungus) - Proteome: UP000001805', 'meaning': 'NCBITaxon:367110', 'annotations': {'sources': 'GO'}, 'aliases': ['ascomycote fungus']},
+    "SP_NITMS": {'description': 'Nitrosopumilus maritimus (thaumarchaea) - Proteome: UP000000792', 'meaning': 'NCBITaxon:436308', 'annotations': {'sources': 'GO'}, 'aliases': ['thaumarchaea']},
+    "SP_ORNAN": {'description': 'Ornithorhynchus anatinus (Duckbill platypus) - Proteome: UP000002279', 'meaning': 'NCBITaxon:9258', 'annotations': {'sources': 'GO'}, 'aliases': ['Duckbill platypus']},
+    "SP_ORYLA": {'description': 'Oryzias latipes (Japanese rice fish) - Proteome: UP000001038', 'meaning': 'NCBITaxon:8090', 'annotations': {'sources': 'GO'}, 'aliases': ['Japanese rice fish']},
+    "SP_ORYSJ": {'description': 'Oryza sativa subsp. japonica (Rice) - Proteome: UP000059680', 'meaning': 'NCBITaxon:39947', 'annotations': {'sources': 'common, GO'}, 'aliases': ['Rice']},
+    "SP_PANTR": {'description': 'Pan troglodytes (Chimpanzee) - Proteome: UP000002277', 'meaning': 'NCBITaxon:9598', 'annotations': {'sources': 'common, GO'}, 'aliases': ['Chimpanzee']},
+    "SP_PARTE": {'description': 'Paramecium tetraurelia (alveolate) - Proteome: UP000000600', 'meaning': 'NCBITaxon:5888', 'annotations': {'sources': 'GO'}, 'aliases': ['alveolate']},
+    "SP_PEA": {'description': 'Pisum sativum (Garden pea) - Proteome: UP001058974', 'meaning': 'NCBITaxon:3888', 'annotations': {'sources': 'common'}, 'aliases': ['Garden pea']},
+    "SP_PHANO": {'description': 'Phaeosphaeria nodorum (Glume blotch fungus) - Proteome: UP000663193', 'meaning': 'NCBITaxon:321614', 'annotations': {'sources': 'GO'}, 'aliases': ['Glume blotch fungus']},
+    "SP_PHYPA": {'description': 'Physcomitrella patens (Spreading-leaved earth moss) - Proteome: UP000006727', 'meaning': 'NCBITaxon:3218', 'annotations': {'sources': 'GO'}, 'aliases': ['Spreading-leaved earth moss']},
+    "SP_PHYRM": {'description': 'Phytophthora ramorum (Sudden oak death agent) - Proteome: UP000005238', 'meaning': 'NCBITaxon:164328', 'annotations': {'sources': 'GO'}, 'aliases': ['Sudden oak death agent']},
+    "SP_PICGU": {'description': 'Meyerozyma guilliermondii (strain ATCC 6260 / CBS 566 / DSM 6381 / JCM 1539 / NBRC 10279 / NRRL Y-324) (Candida guilliermondii) - Proteome: UP000001997', 'meaning': 'NCBITaxon:294746', 'annotations': {'sources': 'GO'}},
+    "SP_PIG": {'description': 'Sus scrofa (Pig) - Proteome: UP000008227', 'meaning': 'NCBITaxon:9823', 'annotations': {'sources': 'common, GO'}, 'aliases': ['Pig']},
+    "SP_PLAF7": {'description': 'Plasmodium falciparum 3D7 (Malaria parasite) - Proteome: UP000001450', 'meaning': 'NCBITaxon:36329', 'annotations': {'sources': 'GO'}, 'aliases': ['Malaria parasite']},
+    "SP_POPTR": {'description': 'Populus trichocarpa (Western balsam poplar) - Proteome: UP000006729', 'meaning': 'NCBITaxon:3694', 'annotations': {'sources': 'GO'}, 'aliases': ['Western balsam poplar']},
+    "SP_PRIPA": {'description': 'Pristionchus pacificus (Parasitic nematode) - Proteome: UP000005239', 'meaning': 'NCBITaxon:54126', 'annotations': {'sources': 'GO'}, 'aliases': ['Parasitic nematode']},
+    "SP_PRUPE": {'description': 'Prunus persica (Peach) - Proteome: UP000006882', 'meaning': 'NCBITaxon:3760', 'annotations': {'sources': 'GO'}, 'aliases': ['Peach']},
+    "SP_PSEAE": {'description': 'Pseudomonas aeruginosa PAO1 (gammaproteobacteria) - Proteome: UP000002438', 'meaning': 'NCBITaxon:208964', 'annotations': {'sources': 'GO'}, 'aliases': ['gammaproteobacteria']},
+    "SP_PUCGT": {'description': 'Puccinia graminis (Black stem rust fungus) - Proteome: UP000008783', 'meaning': 'NCBITaxon:418459', 'annotations': {'sources': 'GO'}, 'aliases': ['Black stem rust fungus']},
+    "SP_PYRAE": {'description': 'Pyrobaculum aerophilum (crenarchaea) - Proteome: UP000002439', 'meaning': 'NCBITaxon:178306', 'annotations': {'sources': 'GO'}, 'aliases': ['crenarchaea']},
+    "SP_RABIT": {'description': 'Oryctolagus cuniculus (Rabbit) - Proteome: UP000001811', 'meaning': 'NCBITaxon:9986', 'annotations': {'sources': 'common'}, 'aliases': ['Rabbit']},
+    "SP_RAT": {'description': 'Rattus norvegicus (Rat) - Proteome: UP000002494', 'meaning': 'NCBITaxon:10116', 'annotations': {'sources': 'common, GO'}, 'aliases': ['Rat']},
+    "SP_RHOBA": {'description': 'Rhodopirellula baltica (planctomycetes bacteria) - Proteome: UP000001025', 'meaning': 'NCBITaxon:243090', 'annotations': {'sources': 'GO'}, 'aliases': ['planctomycetes bacteria']},
+    "SP_SACS2": {'description': 'Sulfolobus solfataricus (crenarchaea) - Proteome: UP000001974', 'meaning': 'NCBITaxon:273057', 'annotations': {'sources': 'GO'}, 'aliases': ['crenarchaea']},
+    "SP_SALTY": {'description': 'Salmonella typhimurium (strain LT2 / SGSC1412 / ATCC 700720) (S. typhimurium LT2) - Proteome: UP000001014', 'meaning': 'NCBITaxon:99287', 'annotations': {'sources': 'GO'}, 'aliases': ['S. typhimurium LT2']},
+    "SP_SCHJY": {'description': 'Schizosaccharomyces japonicus (Fission yeast) - Proteome: UP000001744', 'meaning': 'NCBITaxon:402676', 'annotations': {'sources': 'GO'}, 'aliases': ['Fission yeast']},
+    "SP_SCHPO": {'description': 'Schizosaccharomyces pombe 972h- (Fission yeast) - Proteome: UP000002485', 'meaning': 'NCBITaxon:284812', 'annotations': {'sources': 'common, GO'}, 'aliases': ['Fission yeast']},
+    "SP_SCLS1": {'description': 'Sclerotinia sclerotiorum (White mold) - Proteome: UP000001312', 'meaning': 'NCBITaxon:665079', 'annotations': {'sources': 'GO'}, 'aliases': ['White mold']},
+    "SP_SHEEP": {'description': 'Ovis aries (Sheep) - Proteome: UP000002356', 'meaning': 'NCBITaxon:9940', 'annotations': {'sources': 'common'}, 'aliases': ['Sheep']},
+    "SP_SHEON": {'description': 'Shewanella oneidensis (shewanella) - Proteome: UP000008186', 'meaning': 'NCBITaxon:211586', 'annotations': {'sources': 'GO'}, 'aliases': ['shewanella']},
+    "SP_SHIFL": {'description': 'Shigella flexneri - Proteome: UP000001006', 'meaning': 'NCBITaxon:623', 'annotations': {'sources': 'GO'}},
+    "SP_SOLLC": {'description': 'Solanum lycopersicum (Tomato) - Proteome: UP000004994', 'meaning': 'NCBITaxon:4081', 'annotations': {'sources': 'GO'}, 'aliases': ['Tomato']},
+    "SP_SORBI": {'description': 'Sorghum bicolor (Sorghum) - Proteome: UP000000768', 'meaning': 'NCBITaxon:4558', 'annotations': {'sources': 'GO'}, 'aliases': ['Sorghum']},
+    "SP_SOYBN": {'description': 'Glycine max (Soybean) - Proteome: UP000008827', 'meaning': 'NCBITaxon:3847', 'annotations': {'sources': 'GO'}, 'aliases': ['Soybean']},
+    "SP_SPIOL": {'description': 'Spinacia oleracea (Spinach) - Proteome: UP001155700', 'meaning': 'NCBITaxon:3562', 'annotations': {'sources': 'GO'}, 'aliases': ['Spinach']},
+    "SP_STAA8": {'description': 'Staphylococcus aureus (strain NCTC 8325 / PS 47) (S. aureus NCTC 8325) - Proteome: UP000008816', 'meaning': 'NCBITaxon:93061', 'annotations': {'sources': 'GO'}, 'aliases': ['S. aureus NCTC 8325']},
+    "SP_STAAU": {'description': 'Staphylococcus aureus subsp. aureus NCTC 8325 - Proteome: UP000008816', 'meaning': 'NCBITaxon:93061', 'annotations': {'sources': 'existing'}},
+    "SP_STRCL": {'description': 'Streptomyces clavuligerus - Proteome: UP000002357', 'meaning': 'NCBITaxon:1901', 'annotations': {'sources': 'GO'}},
+    "SP_STRCO": {'description': 'Streptomyces coelicolor (actinobacteria) - Proteome: UP000001973', 'meaning': 'NCBITaxon:100226', 'annotations': {'sources': 'GO'}, 'aliases': ['actinobacteria']},
+    "SP_STRP1": {'description': 'Streptococcus pyogenes serotype M1 (Strain: ATCC 700294 / SF370 / Serotype M1) - Proteome: UP000000750', 'meaning': 'NCBITaxon:301447', 'annotations': {'sources': 'GO'}},
+    "SP_STRP2": {'description': 'Streptococcus pneumoniae serotype 2 (strain D39 / NCTC 7466) - Proteome: UP000001452', 'meaning': 'NCBITaxon:373153', 'annotations': {'sources': 'GO'}},
+    "SP_STRPN": {'description': 'Streptococcus pneumoniae serotype 4 (strain ATCC BAA-334 / TIGR4) - Proteome: UP000000586', 'meaning': 'NCBITaxon:171101', 'annotations': {'sources': 'GO'}},
+    "SP_STRPU": {'description': 'Strongylocentrotus purpuratus (Purple sea urchin) - Proteome: UP000007110', 'meaning': 'NCBITaxon:7668', 'annotations': {'sources': 'GO'}, 'aliases': ['Purple sea urchin']},
+    "SP_STRR6": {'description': 'Streptococcus pneumoniae (strep) - Proteome: UP000000586', 'meaning': 'NCBITaxon:171101', 'annotations': {'sources': 'GO'}, 'aliases': ['strep']},
+    "SP_SYNY3": {'description': 'Synechocystis sp. (cyanobacteria) - Proteome: UP000001425', 'meaning': 'NCBITaxon:1111708', 'annotations': {'sources': 'GO'}, 'aliases': ['cyanobacteria']},
+    "SP_THAPS": {'description': 'Thalassiosira pseudonana (Marine diatom) - Proteome: UP000001449', 'meaning': 'NCBITaxon:35128', 'annotations': {'sources': 'GO'}, 'aliases': ['Marine diatom']},
+    "SP_THECC": {'description': 'Theobroma cacao (Cacao) - Proteome: UP000026915', 'meaning': 'NCBITaxon:3641', 'annotations': {'sources': 'GO'}, 'aliases': ['Cacao']},
+    "SP_THEKO": {'description': 'Thermococcus kodakaraensis (euryarchaea) - Proteome: UP000000536', 'meaning': 'NCBITaxon:69014', 'annotations': {'sources': 'GO'}, 'aliases': ['euryarchaea']},
+    "SP_THEMA": {'description': 'Thermotoga maritima (thermotogae bacteria) - Proteome: UP000008183', 'meaning': 'NCBITaxon:243274', 'annotations': {'sources': 'GO'}, 'aliases': ['thermotogae bacteria']},
+    "SP_THEYD": {'description': 'Thermodesulfovibrio yellowstonii (nitrospirae bacteria) - Proteome: UP000000718', 'meaning': 'NCBITaxon:289376', 'annotations': {'sources': 'GO'}, 'aliases': ['nitrospirae bacteria']},
+    "SP_TOBAC": {'description': 'Nicotiana tabacum (Common tobacco) - Proteome: UP000084051', 'meaning': 'NCBITaxon:4097', 'annotations': {'sources': 'common, GO'}, 'aliases': ['Common tobacco']},
+    "SP_TOXGO": {'description': 'Toxoplasma gondii ME49 - Proteome: UP000001529', 'meaning': 'NCBITaxon:508771', 'annotations': {'sources': 'existing'}},
+    "SP_TRIAD": {'description': 'Trichoplax adhaerens (placozoan) - Proteome: UP000009022', 'meaning': 'NCBITaxon:10228', 'annotations': {'sources': 'GO'}, 'aliases': ['placozoan']},
+    "SP_TRICA": {'description': 'Tribolium castaneum (Red flour beetle) - Proteome: UP000007266', 'meaning': 'NCBITaxon:7070', 'annotations': {'sources': 'GO'}, 'aliases': ['Red flour beetle']},
+    "SP_TRIV3": {'description': 'Trichomonas vaginalis (excavate) - Proteome: UP000001542', 'meaning': 'NCBITaxon:412133', 'annotations': {'sources': 'GO'}, 'aliases': ['excavate']},
+    "SP_TRYB2": {'description': 'Trypanosoma brucei brucei TREU927 (excavate) - Proteome: UP000008524', 'meaning': 'NCBITaxon:185431', 'annotations': {'sources': 'GO'}, 'aliases': ['excavate']},
+    "SP_VACCW": {'description': 'Vaccinia virus (strain Western Reserve) (VACV strain WR) - Proteome: UP000000344', 'meaning': 'NCBITaxon:10254', 'annotations': {'sources': 'GO'}, 'aliases': ['VACV strain WR']},
+    "SP_VAR67": {'description': 'Variola virus (Smallpox virus) (isolate Human/India/Ind3/1967) (VARV) - Proteome: UP000002060', 'meaning': 'NCBITaxon:587200', 'annotations': {'sources': 'GO'}, 'aliases': ['VARV']},
+    "SP_VIBCH": {'description': 'Vibrio cholerae (cholera) - Proteome: UP000000584', 'meaning': 'NCBITaxon:243277', 'annotations': {'sources': 'GO'}, 'aliases': ['cholera']},
+    "SP_VITVI": {'description': 'Vitis vinifera (Grape) - Proteome: UP000009183', 'meaning': 'NCBITaxon:29760', 'annotations': {'sources': 'GO'}, 'aliases': ['Grape']},
+    "SP_VZVD": {'description': 'Varicella-zoster virus (Human herpesvirus 3) strain Dumas (HHV-3 strain Dumas) - Proteome: UP000002602', 'meaning': 'NCBITaxon:10338', 'annotations': {'sources': 'GO'}, 'aliases': ['HHV-3 strain Dumas']},
+    "SP_WHEAT": {'description': 'Triticum aestivum (Wheat) - Proteome: UP000019116', 'meaning': 'NCBITaxon:4565', 'annotations': {'sources': 'GO'}, 'aliases': ['Wheat']},
+    "SP_XANCP": {'description': 'Xanthomonas campestris (xanthomonas) - Proteome: UP000001010', 'meaning': 'NCBITaxon:190485', 'annotations': {'sources': 'GO'}, 'aliases': ['xanthomonas']},
+    "SP_XENLA": {'description': 'Xenopus laevis (African clawed frog) - Proteome: UP000186698', 'meaning': 'NCBITaxon:8355', 'annotations': {'sources': 'common, GO'}, 'aliases': ['African clawed frog']},
+    "SP_XENTR": {'description': 'Xenopus tropicalis (Western clawed frog) - Proteome: UP000008143', 'meaning': 'NCBITaxon:8364', 'annotations': {'sources': 'common, GO'}, 'aliases': ['Western clawed frog']},
+    "SP_YARLI": {'description': 'Yarrowia lipolytica (Yeast) - Proteome: UP000001300', 'meaning': 'NCBITaxon:284591', 'annotations': {'sources': 'GO'}, 'aliases': ['Yeast']},
+    "SP_YEAST": {'description': "Saccharomyces cerevisiae S288C (Baker's yeast) - Proteome: UP000002311", 'meaning': 'NCBITaxon:559292', 'annotations': {'sources': 'common, GO'}, 'aliases': ["Baker's yeast"]},
+    "SP_YERPE": {'description': 'Yersinia pestis (plague bacteria) - Proteome: UP000000815', 'meaning': 'NCBITaxon:632', 'annotations': {'sources': 'GO'}, 'aliases': ['plague bacteria']},
+    "SP_ZIKV": {'description': 'Zika virus (ZIKV) - Proteome: UP000054557', 'meaning': 'NCBITaxon:64320', 'annotations': {'sources': 'GO'}, 'aliases': ['ZIKV']},
 }
 
 class LipidCategory(RichEnum):
@@ -11107,6 +12313,200 @@ FMRIParadigmTypeEnum._metadata = {
     "NATURALISTIC": {'description': 'Ecologically valid stimuli (movies, stories)', 'meaning': 'EDAM:topic_3678', 'annotations': {'stimulus_type': 'complex, realistic', 'advantage': 'ecological validity', 'analysis': 'inter-subject correlation'}, 'aliases': ['Experimental design and studies']},
 }
 
+class FamilyRelationship(RichEnum):
+    """
+    Family relationships used in pedigree and family history documentation
+    """
+    # Enum members
+    PARENT = "PARENT"
+    MOTHER = "MOTHER"
+    FATHER = "FATHER"
+    NATURAL_MOTHER = "NATURAL_MOTHER"
+    NATURAL_FATHER = "NATURAL_FATHER"
+    ADOPTIVE_PARENT = "ADOPTIVE_PARENT"
+    ADOPTIVE_MOTHER = "ADOPTIVE_MOTHER"
+    ADOPTIVE_FATHER = "ADOPTIVE_FATHER"
+    STEP_PARENT = "STEP_PARENT"
+    STEP_MOTHER = "STEP_MOTHER"
+    STEP_FATHER = "STEP_FATHER"
+    FOSTER_PARENT = "FOSTER_PARENT"
+    GESTATIONAL_MOTHER = "GESTATIONAL_MOTHER"
+    SIBLING = "SIBLING"
+    BROTHER = "BROTHER"
+    SISTER = "SISTER"
+    NATURAL_BROTHER = "NATURAL_BROTHER"
+    NATURAL_SISTER = "NATURAL_SISTER"
+    HALF_BROTHER = "HALF_BROTHER"
+    HALF_SISTER = "HALF_SISTER"
+    STEP_BROTHER = "STEP_BROTHER"
+    STEP_SISTER = "STEP_SISTER"
+    TWIN = "TWIN"
+    TWIN_BROTHER = "TWIN_BROTHER"
+    TWIN_SISTER = "TWIN_SISTER"
+    FRATERNAL_TWIN = "FRATERNAL_TWIN"
+    IDENTICAL_TWIN = "IDENTICAL_TWIN"
+    CHILD = "CHILD"
+    SON = "SON"
+    DAUGHTER = "DAUGHTER"
+    NATURAL_CHILD = "NATURAL_CHILD"
+    ADOPTIVE_CHILD = "ADOPTIVE_CHILD"
+    FOSTER_CHILD = "FOSTER_CHILD"
+    STEP_CHILD = "STEP_CHILD"
+    GRANDPARENT = "GRANDPARENT"
+    GRANDMOTHER = "GRANDMOTHER"
+    GRANDFATHER = "GRANDFATHER"
+    MATERNAL_GRANDMOTHER = "MATERNAL_GRANDMOTHER"
+    MATERNAL_GRANDFATHER = "MATERNAL_GRANDFATHER"
+    PATERNAL_GRANDMOTHER = "PATERNAL_GRANDMOTHER"
+    PATERNAL_GRANDFATHER = "PATERNAL_GRANDFATHER"
+    GRANDCHILD = "GRANDCHILD"
+    GRANDSON = "GRANDSON"
+    GRANDDAUGHTER = "GRANDDAUGHTER"
+    AUNT = "AUNT"
+    UNCLE = "UNCLE"
+    MATERNAL_AUNT = "MATERNAL_AUNT"
+    MATERNAL_UNCLE = "MATERNAL_UNCLE"
+    PATERNAL_AUNT = "PATERNAL_AUNT"
+    PATERNAL_UNCLE = "PATERNAL_UNCLE"
+    COUSIN = "COUSIN"
+    MATERNAL_COUSIN = "MATERNAL_COUSIN"
+    PATERNAL_COUSIN = "PATERNAL_COUSIN"
+    NIECE = "NIECE"
+    NEPHEW = "NEPHEW"
+    SPOUSE = "SPOUSE"
+    HUSBAND = "HUSBAND"
+    WIFE = "WIFE"
+    DOMESTIC_PARTNER = "DOMESTIC_PARTNER"
+    GREAT_GRANDPARENT = "GREAT_GRANDPARENT"
+    GREAT_GRANDMOTHER = "GREAT_GRANDMOTHER"
+    GREAT_GRANDFATHER = "GREAT_GRANDFATHER"
+    MOTHER_IN_LAW = "MOTHER_IN_LAW"
+    FATHER_IN_LAW = "FATHER_IN_LAW"
+    DAUGHTER_IN_LAW = "DAUGHTER_IN_LAW"
+    SON_IN_LAW = "SON_IN_LAW"
+    BROTHER_IN_LAW = "BROTHER_IN_LAW"
+    SISTER_IN_LAW = "SISTER_IN_LAW"
+    FAMILY_MEMBER = "FAMILY_MEMBER"
+    EXTENDED_FAMILY_MEMBER = "EXTENDED_FAMILY_MEMBER"
+    SIGNIFICANT_OTHER = "SIGNIFICANT_OTHER"
+
+# Set metadata after class creation to avoid it becoming an enum member
+FamilyRelationship._metadata = {
+    "PARENT": {'description': 'The player of the role is one who begets, gives birth to, or nurtures and raises the scoping entity (child)', 'meaning': 'HL7:v3-RoleCode#PRN'},
+    "MOTHER": {'description': 'The player of the role is a female who conceives, gives birth to, or raises and nurtures the scoping entity (child)', 'meaning': 'HL7:v3-RoleCode#MTH'},
+    "FATHER": {'description': 'The player of the role is a male who begets or raises or nurtures the scoping entity (child)', 'meaning': 'HL7:v3-RoleCode#FTH'},
+    "NATURAL_MOTHER": {'description': 'The player of the role is a female who conceives or gives birth to the scoping entity (child)', 'meaning': 'HL7:v3-RoleCode#NMTH'},
+    "NATURAL_FATHER": {'description': 'The player of the role is a male who begets the scoping entity (child)', 'meaning': 'HL7:v3-RoleCode#NFTH'},
+    "ADOPTIVE_PARENT": {'description': 'The player of the role (parent) has taken the scoper (child) into their family through legal means and raises them as his or her own child', 'meaning': 'HL7:v3-RoleCode#ADOPTP'},
+    "ADOPTIVE_MOTHER": {'description': 'The player of the role (mother) is a female who has taken the scoper (child) into their family through legal means and raises them as her own child', 'meaning': 'HL7:v3-RoleCode#ADOPTM'},
+    "ADOPTIVE_FATHER": {'description': 'The player of the role (father) is a male who has taken the scoper (child) into their family through legal means and raises them as his own child', 'meaning': 'HL7:v3-RoleCode#ADOPTF'},
+    "STEP_PARENT": {'description': "The player of the role is the spouse of the scoping person's parent and not the scoping person's natural parent", 'meaning': 'HL7:v3-RoleCode#STPPRN'},
+    "STEP_MOTHER": {'description': "The player of the role is the female spouse of the scoping person's parent and not the scoping person's natural mother", 'meaning': 'HL7:v3-RoleCode#STPMTH'},
+    "STEP_FATHER": {'description': "The player of the role is the male spouse of the scoping person's parent and not the scoping person's natural father", 'meaning': 'HL7:v3-RoleCode#STPFTH'},
+    "FOSTER_PARENT": {'description': 'The player of the role (parent) who is a state-certified caregiver responsible for the scoper (child)', 'meaning': 'HL7:v3-RoleCode#PRNFOST'},
+    "GESTATIONAL_MOTHER": {'description': 'The player is a female whose womb carries the fetus of the scoper', 'meaning': 'HL7:v3-RoleCode#GESTM'},
+    "SIBLING": {'description': 'The player of the role shares one or both parents in common with the scoping entity', 'meaning': 'HL7:v3-RoleCode#SIB'},
+    "BROTHER": {'description': 'The player of the role is a male sharing one or both parents with the scoping entity', 'meaning': 'HL7:v3-RoleCode#BRO'},
+    "SISTER": {'description': 'The player of the role is a female sharing one or both parents with the scoping entity', 'meaning': 'HL7:v3-RoleCode#SIS'},
+    "NATURAL_BROTHER": {'description': 'The player of the role is a male related to the scoping entity by sharing only the same natural parents', 'meaning': 'HL7:v3-RoleCode#NBRO'},
+    "NATURAL_SISTER": {'description': 'The player of the role is a female related to the scoping entity by sharing only the same natural parents', 'meaning': 'HL7:v3-RoleCode#NSIS'},
+    "HALF_BROTHER": {'description': 'The player of the role is a male related to the scoping entity by sharing only one biological parent', 'meaning': 'HL7:v3-RoleCode#HBRO'},
+    "HALF_SISTER": {'description': 'The player of the role is a female related to the scoping entity by sharing only one biological parent', 'meaning': 'HL7:v3-RoleCode#HSIS'},
+    "STEP_BROTHER": {'description': "The player of the role is a male child of the scoping person's stepparent", 'meaning': 'HL7:v3-RoleCode#STPBRO'},
+    "STEP_SISTER": {'description': "The player of the role is a female child of the scoping person's stepparent", 'meaning': 'HL7:v3-RoleCode#STPSIS'},
+    "TWIN": {'description': 'The scoper and player were carried in the same womb and delivered in the same birth', 'meaning': 'HL7:v3-RoleCode#TWIN'},
+    "TWIN_BROTHER": {'description': 'The player of the role is a male born from the same pregnancy as the scoping entity', 'meaning': 'HL7:v3-RoleCode#TWINBRO'},
+    "TWIN_SISTER": {'description': 'The player of the role is a female born from the same pregnancy as the scoping entity', 'meaning': 'HL7:v3-RoleCode#TWINSIS'},
+    "FRATERNAL_TWIN": {'description': 'The player of the role is born from the same pregnancy as the scoping entity but does not share the same genotype', 'meaning': 'HL7:v3-RoleCode#FTWIN'},
+    "IDENTICAL_TWIN": {'description': 'The player of the role is born from the same pregnancy as the scoping entity and shares the same genotype', 'meaning': 'HL7:v3-RoleCode#ITWIN'},
+    "CHILD": {'description': 'The player of the role is a child of the scoping entity', 'meaning': 'HL7:v3-RoleCode#CHILD'},
+    "SON": {'description': 'The player of the role is a male offspring of the scoping entity (parent)', 'meaning': 'HL7:v3-RoleCode#SON'},
+    "DAUGHTER": {'description': 'The player of the role is a female offspring of the scoping entity (parent)', 'meaning': 'HL7:v3-RoleCode#DAU'},
+    "NATURAL_CHILD": {'description': 'The player of the role is an offspring of the scoping entity as determined by birth', 'meaning': 'HL7:v3-RoleCode#NCHILD'},
+    "ADOPTIVE_CHILD": {'description': 'The player of the role is a child taken into a family through legal means and raised by the scoping person (parent) as his or her own child', 'meaning': 'HL7:v3-RoleCode#CHLDADOPT'},
+    "FOSTER_CHILD": {'description': 'The player of the role is a child receiving parental care and nurture from the scoping person (parent) but not related to him or her through legal or blood relationship', 'meaning': 'HL7:v3-RoleCode#CHLDFOST'},
+    "STEP_CHILD": {'description': "The player of the role is a child of the scoping person's spouse by a previous union", 'meaning': 'HL7:v3-RoleCode#STPCHLD'},
+    "GRANDPARENT": {'description': "The player of the role is a parent of the scoping person's mother or father", 'meaning': 'HL7:v3-RoleCode#GRPRN'},
+    "GRANDMOTHER": {'description': "The player of the role is the mother of the scoping person's mother or father", 'meaning': 'HL7:v3-RoleCode#GRMTH'},
+    "GRANDFATHER": {'description': "The player of the role is the father of the scoping person's mother or father", 'meaning': 'HL7:v3-RoleCode#GRFTH'},
+    "MATERNAL_GRANDMOTHER": {'description': "The player of the role is the mother of the scoping person's mother", 'meaning': 'HL7:v3-RoleCode#MGRMTH'},
+    "MATERNAL_GRANDFATHER": {'description': "The player of the role is the father of the scoping person's mother", 'meaning': 'HL7:v3-RoleCode#MGRFTH'},
+    "PATERNAL_GRANDMOTHER": {'description': "The player of the role is the mother of the scoping person's father", 'meaning': 'HL7:v3-RoleCode#PGRMTH'},
+    "PATERNAL_GRANDFATHER": {'description': "The player of the role is the father of the scoping person's father", 'meaning': 'HL7:v3-RoleCode#PGRFTH'},
+    "GRANDCHILD": {'description': "The player of the role is a child of the scoping person's son or daughter", 'meaning': 'HL7:v3-RoleCode#GRNDCHILD'},
+    "GRANDSON": {'description': "The player of the role is a son of the scoping person's son or daughter", 'meaning': 'HL7:v3-RoleCode#GRNDSN'},
+    "GRANDDAUGHTER": {'description': "The player of the role is a daughter of the scoping person's son or daughter", 'meaning': 'HL7:v3-RoleCode#GRNDDAU'},
+    "AUNT": {'description': "The player of the role is a sister of the scoping person's mother or father", 'meaning': 'HL7:v3-RoleCode#AUNT'},
+    "UNCLE": {'description': "The player of the role is a brother of the scoping person's mother or father", 'meaning': 'HL7:v3-RoleCode#UNCLE'},
+    "MATERNAL_AUNT": {'description': "The player of the role is a sister of the scoping person's mother", 'meaning': 'HL7:v3-RoleCode#MAUNT'},
+    "MATERNAL_UNCLE": {'description': "The player of the role is a brother of the scoping person's mother", 'meaning': 'HL7:v3-RoleCode#MUNCLE'},
+    "PATERNAL_AUNT": {'description': "The player of the role is a sister of the scoping person's father", 'meaning': 'HL7:v3-RoleCode#PAUNT'},
+    "PATERNAL_UNCLE": {'description': "The player of the role is a brother of the scoping person's father", 'meaning': 'HL7:v3-RoleCode#PUNCLE'},
+    "COUSIN": {'description': 'The player of the role is a relative descended from a common ancestor, such as a grandparent, by two or more steps in a diverging line', 'meaning': 'HL7:v3-RoleCode#COUSN'},
+    "MATERNAL_COUSIN": {'description': 'The player of the role is a child of a maternal aunt or uncle of the scoping person', 'meaning': 'HL7:v3-RoleCode#MCOUSN'},
+    "PATERNAL_COUSIN": {'description': 'The player of the role is a child of a paternal aunt or uncle of the scoping person', 'meaning': 'HL7:v3-RoleCode#PCOUSN'},
+    "NIECE": {'description': "The player of the role is a daughter of the scoping person's brother or sister or of the brother or sister of the scoping person's spouse", 'meaning': 'HL7:v3-RoleCode#NIECE'},
+    "NEPHEW": {'description': "The player of the role is a son of the scoping person's brother or sister or of the brother or sister of the scoping person's spouse", 'meaning': 'HL7:v3-RoleCode#NEPHEW'},
+    "SPOUSE": {'description': 'The player of the role is a marriage partner of the scoping person', 'meaning': 'HL7:v3-RoleCode#SPS'},
+    "HUSBAND": {'description': 'The player of the role is a man joined to a woman (scoping person) in marriage', 'meaning': 'HL7:v3-RoleCode#HUSB'},
+    "WIFE": {'description': 'The player of the role is a woman joined to a man (scoping person) in marriage', 'meaning': 'HL7:v3-RoleCode#WIFE'},
+    "DOMESTIC_PARTNER": {'description': "The player of the role cohabits with the scoping person but is not the scoping person's spouse", 'meaning': 'HL7:v3-RoleCode#DOMPART'},
+    "GREAT_GRANDPARENT": {'description': "The player of the role is a grandparent of the scoping person's mother or father", 'meaning': 'HL7:v3-RoleCode#GGRPRN'},
+    "GREAT_GRANDMOTHER": {'description': "The player of the role is a grandmother of the scoping person's mother or father", 'meaning': 'HL7:v3-RoleCode#GGRMTH'},
+    "GREAT_GRANDFATHER": {'description': "The player of the role is a grandfather of the scoping person's mother or father", 'meaning': 'HL7:v3-RoleCode#GGRFTH'},
+    "MOTHER_IN_LAW": {'description': "The player of the role is the mother of the scoping person's spouse", 'meaning': 'HL7:v3-RoleCode#MTHINLAW'},
+    "FATHER_IN_LAW": {'description': "The player of the role is the father of the scoping person's spouse", 'meaning': 'HL7:v3-RoleCode#FTHINLAW'},
+    "DAUGHTER_IN_LAW": {'description': "The player of the role is the wife of scoping person's son", 'meaning': 'HL7:v3-RoleCode#DAUINLAW'},
+    "SON_IN_LAW": {'description': "The player of the role is the husband of scoping person's daughter", 'meaning': 'HL7:v3-RoleCode#SONINLAW'},
+    "BROTHER_IN_LAW": {'description': "The player of the role is a brother of the scoping person's spouse, or the husband of the scoping person's sister, or the husband of a sister of the scoping person's spouse", 'meaning': 'HL7:v3-RoleCode#BROINLAW'},
+    "SISTER_IN_LAW": {'description': "The player of the role is a sister of the scoping person's spouse, or the wife of the scoping person's brother, or the wife of a brother of the scoping person's spouse", 'meaning': 'HL7:v3-RoleCode#SISINLAW'},
+    "FAMILY_MEMBER": {'description': 'A relationship between two people characterizing their "familial" relationship', 'meaning': 'HL7:v3-RoleCode#FAMMEMB'},
+    "EXTENDED_FAMILY_MEMBER": {'description': 'Description of an extended family member', 'meaning': 'HL7:v3-RoleCode#EXT'},
+    "SIGNIFICANT_OTHER": {'description': "A person who is important to one's well being; especially a spouse or one in a similar relationship", 'meaning': 'HL7:v3-RoleCode#SIGOTHR'},
+}
+
+class FamilyHistoryStatus(RichEnum):
+    """
+    Status of family history information availability
+    """
+    # Enum members
+    COMPLETED = "COMPLETED"
+    PARTIAL = "PARTIAL"
+    UNKNOWN = "UNKNOWN"
+    UNABLE_TO_OBTAIN = "UNABLE_TO_OBTAIN"
+    NOT_ASKED = "NOT_ASKED"
+
+# Set metadata after class creation to avoid it becoming an enum member
+FamilyHistoryStatus._metadata = {
+    "COMPLETED": {'description': 'All relevant family history information has been obtained', 'meaning': 'HL7:observation-status#final'},
+    "PARTIAL": {'description': 'Some family history information is available but not complete', 'meaning': 'HL7:observation-status#preliminary'},
+    "UNKNOWN": {'description': 'Family history status is unknown', 'meaning': 'HL7:data-absent-reason#unknown'},
+    "UNABLE_TO_OBTAIN": {'description': 'Information could not be obtained due to patient/family constraints', 'meaning': 'HL7:data-absent-reason#patient-refused'},
+    "NOT_ASKED": {'description': 'Family history information was not requested', 'meaning': 'HL7:data-absent-reason#not-asked'},
+}
+
+class GeneticRelationship(RichEnum):
+    """
+    Genetic relationship types for pedigree analysis
+    """
+    # Enum members
+    BIOLOGICAL = "BIOLOGICAL"
+    FULL_SIBLING = "FULL_SIBLING"
+    HALF_SIBLING = "HALF_SIBLING"
+    ADOPTIVE = "ADOPTIVE"
+    NO_GENETIC_RELATIONSHIP = "NO_GENETIC_RELATIONSHIP"
+    UNKNOWN_GENETIC_RELATIONSHIP = "UNKNOWN_GENETIC_RELATIONSHIP"
+
+# Set metadata after class creation to avoid it becoming an enum member
+GeneticRelationship._metadata = {
+    "BIOLOGICAL": {'description': 'Genetic relationship through biological inheritance', 'meaning': 'SNOMED:444018008'},
+    "FULL_SIBLING": {'description': 'Siblings sharing both biological parents', 'meaning': 'SNOMED:444301002'},
+    "HALF_SIBLING": {'description': 'Siblings sharing one biological parent', 'meaning': 'SNOMED:445295006'},
+    "ADOPTIVE": {'description': 'Relationship established through adoption', 'meaning': 'SNOMED:160499008'},
+    "NO_GENETIC_RELATIONSHIP": {'description': 'No genetic relationship exists', 'meaning': 'SNOMED:373068000'},
+    "UNKNOWN_GENETIC_RELATIONSHIP": {'description': 'Genetic relationship status is unknown', 'meaning': 'SNOMED:261665006'},
+}
+
 class RaceOMB1997Enum(RichEnum):
     """
     Race categories following OMB 1997 standards used by NIH and federal agencies.
@@ -12440,6 +13840,238 @@ OpenSourceMaturityLevel._metadata = {
     "MATURE": {'description': 'Well-established with proven governance'},
     "DECLINING": {'description': 'Decreasing activity and maintenance'},
     "ARCHIVED": {'description': 'No longer actively maintained'},
+}
+
+class OWLProfileEnum(RichEnum):
+    """
+    OWL 2 profiles that provide different tradeoffs between expressiveness and computational complexity
+    """
+    # Enum members
+    OWL_2_EL = "OWL_2_EL"
+    OWL_2_QL = "OWL_2_QL"
+    OWL_2_RL = "OWL_2_RL"
+    OWL_2_DL = "OWL_2_DL"
+    OWL_2_FULL = "OWL_2_FULL"
+
+# Set metadata after class creation to avoid it becoming an enum member
+OWLProfileEnum._metadata = {
+    "OWL_2_EL": {'description': 'OWL 2 EL (Existential Language) - optimized for applications using very large ontologies with basic relationships. Provides polynomial time reasoning.', 'annotations': {'complexity': 'polynomial time', 'use_case': 'large biomedical ontologies, SNOMED CT'}},
+    "OWL_2_QL": {'description': 'OWL 2 QL (Query Language) - optimized for query answering over large data repositories. Based on DL-Lite family.', 'annotations': {'complexity': 'LogSpace data complexity', 'use_case': 'ontology-based data access, database integration'}},
+    "OWL_2_RL": {'description': 'OWL 2 RL (Rule Language) - optimized for rule-based reasoning and can be implemented using rule engines. Compatible with RDF Schema.', 'annotations': {'complexity': 'polynomial time', 'use_case': 'business rules, policy systems'}},
+    "OWL_2_DL": {'description': 'OWL 2 DL (Description Logic) - full expressiveness while maintaining computational completeness and decidability. Maximum expressiveness without sacrificing decidability.', 'annotations': {'complexity': 'NExpTime', 'use_case': 'general purpose ontologies requiring high expressiveness'}},
+    "OWL_2_FULL": {'description': 'OWL 2 Full - maximum expressiveness with no restrictions, but reasoning is undecidable. Allows full RDF capabilities.', 'annotations': {'complexity': 'undecidable', 'use_case': 'maximum flexibility, no guaranteed reasoning'}},
+}
+
+class MLDataType(RichEnum):
+    """
+    Data types used in Croissant ML for describing field types in datasets.
+Based on XSD (XML Schema Definition) and schema.org vocabulary.
+
+    """
+    # Enum members
+    TEXT = "TEXT"
+    INTEGER = "INTEGER"
+    FLOAT = "FLOAT"
+    BOOLEAN = "BOOLEAN"
+    DATE = "DATE"
+    TIME = "TIME"
+    DATETIME = "DATETIME"
+    URL = "URL"
+
+# Set metadata after class creation to avoid it becoming an enum member
+MLDataType._metadata = {
+    "TEXT": {'description': 'Text or string data', 'meaning': 'xsd:string'},
+    "INTEGER": {'description': 'Integer numbers', 'meaning': 'xsd:integer'},
+    "FLOAT": {'description': 'Floating point numbers', 'meaning': 'xsd:float'},
+    "BOOLEAN": {'description': 'Boolean values (true/false)', 'meaning': 'xsd:boolean'},
+    "DATE": {'description': 'Date values', 'meaning': 'xsd:date'},
+    "TIME": {'description': 'Time values', 'meaning': 'xsd:time'},
+    "DATETIME": {'description': 'Combined date and time values', 'meaning': 'xsd:dateTime'},
+    "URL": {'description': 'Uniform Resource Locators', 'meaning': 'xsd:anyURI'},
+}
+
+class DatasetEncodingFormat(RichEnum):
+    """
+    Encoding formats (MIME types) commonly used for ML dataset files in Croissant.
+These specify how data is serialized and stored.
+
+    """
+    # Enum members
+    CSV = "CSV"
+    JSON = "JSON"
+    JSONL = "JSONL"
+    PARQUET = "PARQUET"
+    PLAIN_TEXT = "PLAIN_TEXT"
+    JPEG = "JPEG"
+    PNG = "PNG"
+    WAV = "WAV"
+    MP4 = "MP4"
+    ZIP = "ZIP"
+    TAR = "TAR"
+
+# Set metadata after class creation to avoid it becoming an enum member
+DatasetEncodingFormat._metadata = {
+    "CSV": {'description': 'Comma-separated values format for tabular data', 'meaning': 'EDAM:format_3752', 'annotations': {'mime_type': 'text/csv'}},
+    "JSON": {'description': 'JavaScript Object Notation format for structured data', 'meaning': 'EDAM:format_3464', 'annotations': {'mime_type': 'application/json'}},
+    "JSONL": {'description': 'JSON Lines format (newline-delimited JSON)', 'annotations': {'mime_type': 'application/jsonl', 'alt_mime_type': 'application/x-ndjson'}},
+    "PARQUET": {'description': 'Apache Parquet columnar storage format', 'annotations': {'mime_type': 'application/parquet'}},
+    "PLAIN_TEXT": {'description': 'Plain text files', 'annotations': {'mime_type': 'text/plain'}},
+    "JPEG": {'description': 'JPEG image format', 'meaning': 'EDAM:format_3579', 'annotations': {'mime_type': 'image/jpeg'}},
+    "PNG": {'description': 'Portable Network Graphics image format', 'meaning': 'EDAM:format_3603', 'annotations': {'mime_type': 'image/png'}},
+    "WAV": {'description': 'Waveform Audio File Format', 'annotations': {'mime_type': 'audio/wav'}},
+    "MP4": {'description': 'MPEG-4 multimedia container format', 'meaning': 'EDAM:format_3997', 'annotations': {'mime_type': 'video/mp4'}},
+    "ZIP": {'description': 'ZIP archive format', 'meaning': 'EDAM:format_3987', 'annotations': {'mime_type': 'application/zip'}},
+    "TAR": {'description': 'Tape Archive format', 'meaning': 'EDAM:format_3981', 'annotations': {'mime_type': 'application/x-tar'}},
+}
+
+class DatasetSplitType(RichEnum):
+    """
+    Standard dataset split types used in machine learning for training,
+validation, and testing. These splits are fundamental to ML model
+development and evaluation workflows.
+
+    """
+    # Enum members
+    TRAIN = "TRAIN"
+    VALIDATION = "VALIDATION"
+    TEST = "TEST"
+    ALL = "ALL"
+
+# Set metadata after class creation to avoid it becoming an enum member
+DatasetSplitType._metadata = {
+    "TRAIN": {'description': 'Training split used for model learning', 'annotations': {'typical_size': '60-80% of data', 'purpose': 'model training'}},
+    "VALIDATION": {'description': 'Validation split used for hyperparameter tuning and model selection', 'annotations': {'typical_size': '10-20% of data', 'purpose': 'model tuning', 'aliases': 'val, dev'}},
+    "TEST": {'description': 'Test split used for final model evaluation', 'annotations': {'typical_size': '10-20% of data', 'purpose': 'model evaluation'}},
+    "ALL": {'description': 'Complete dataset without splits'},
+}
+
+class MLLicenseType(RichEnum):
+    """
+    Common open source and Creative Commons licenses used for ML datasets.
+These licenses specify terms of use, redistribution, and modification.
+
+    """
+    # Enum members
+    CC_BY_4_0 = "CC_BY_4_0"
+    CC_BY_SA_4_0 = "CC_BY_SA_4_0"
+    CC0_1_0 = "CC0_1_0"
+    MIT = "MIT"
+    APACHE_2_0 = "APACHE_2_0"
+    BSD_3_CLAUSE = "BSD_3_CLAUSE"
+    GPL_3_0 = "GPL_3_0"
+
+# Set metadata after class creation to avoid it becoming an enum member
+MLLicenseType._metadata = {
+    "CC_BY_4_0": {'description': 'Creative Commons Attribution 4.0 International', 'meaning': 'spdx:CC-BY-4.0', 'annotations': {'allows_commercial': True, 'requires_attribution': True}},
+    "CC_BY_SA_4_0": {'description': 'Creative Commons Attribution-ShareAlike 4.0 International', 'meaning': 'spdx:CC-BY-SA-4.0', 'annotations': {'allows_commercial': True, 'requires_attribution': True, 'share_alike': True}},
+    "CC0_1_0": {'description': 'Creative Commons Zero 1.0 Universal (Public Domain Dedication)', 'meaning': 'spdx:CC0-1.0', 'annotations': {'public_domain': True}},
+    "MIT": {'description': 'MIT License', 'meaning': 'spdx:MIT', 'annotations': {'osi_approved': True}},
+    "APACHE_2_0": {'description': 'Apache License 2.0', 'meaning': 'spdx:Apache-2.0', 'annotations': {'osi_approved': True, 'patent_grant': True}},
+    "BSD_3_CLAUSE": {'description': 'BSD 3-Clause "New" or "Revised" License', 'meaning': 'spdx:BSD-3-Clause', 'annotations': {'osi_approved': True}},
+    "GPL_3_0": {'description': 'GNU General Public License v3.0', 'meaning': 'spdx:GPL-3.0-only', 'annotations': {'osi_approved': True, 'copyleft': True}},
+}
+
+class MLFieldRole(RichEnum):
+    """
+    Semantic roles that fields play in ML datasets. These roles help understand
+the purpose and usage of different data columns or attributes.
+
+    """
+    # Enum members
+    FEATURE = "FEATURE"
+    LABEL = "LABEL"
+    METADATA = "METADATA"
+    IDENTIFIER = "IDENTIFIER"
+
+# Set metadata after class creation to avoid it becoming an enum member
+MLFieldRole._metadata = {
+    "FEATURE": {'description': 'Input features used for model prediction', 'annotations': {'also_known_as': 'input, predictor, independent variable'}},
+    "LABEL": {'description': 'Target labels or outputs for supervised learning', 'annotations': {'also_known_as': 'target, output, dependent variable, ground truth'}},
+    "METADATA": {'description': 'Descriptive information about the dataset or records', 'annotations': {'also_known_as': 'descriptive field, provenance'}},
+    "IDENTIFIER": {'description': 'Unique identifiers for records or entities', 'annotations': {'also_known_as': 'ID, key, primary key'}},
+}
+
+class CompressionFormat(RichEnum):
+    """
+    Compression and archive formats commonly used for ML dataset distribution.
+
+    """
+    # Enum members
+    ZIP = "ZIP"
+    TAR = "TAR"
+    GZIP = "GZIP"
+    TAR_GZ = "TAR_GZ"
+
+# Set metadata after class creation to avoid it becoming an enum member
+CompressionFormat._metadata = {
+    "ZIP": {'description': 'ZIP archive format with lossless data compression', 'meaning': 'EDAM:format_3987', 'annotations': {'mime_type': 'application/zip', 'typical_extension': '.zip'}},
+    "TAR": {'description': 'Tape Archive format (typically used with compression)', 'meaning': 'EDAM:format_3981', 'annotations': {'mime_type': 'application/x-tar', 'typical_extension': '.tar'}},
+    "GZIP": {'description': 'GNU zip compression format', 'meaning': 'EDAM:format_3989', 'annotations': {'mime_type': 'application/gzip', 'typical_extension': '.gz'}},
+    "TAR_GZ": {'description': 'TAR archive compressed with GZIP', 'annotations': {'mime_type': 'application/gzip', 'typical_extension': '.tar.gz'}},
+}
+
+class MLMediaType(RichEnum):
+    """
+    Media types (MIME types) for different modalities of ML data including
+images, audio, video, and text.
+
+    """
+    # Enum members
+    IMAGE_JPEG = "IMAGE_JPEG"
+    IMAGE_PNG = "IMAGE_PNG"
+    IMAGE_GIF = "IMAGE_GIF"
+    IMAGE_TIFF = "IMAGE_TIFF"
+    AUDIO_WAV = "AUDIO_WAV"
+    AUDIO_MP3 = "AUDIO_MP3"
+    AUDIO_FLAC = "AUDIO_FLAC"
+    VIDEO_MP4 = "VIDEO_MP4"
+    VIDEO_AVI = "VIDEO_AVI"
+    VIDEO_WEBM = "VIDEO_WEBM"
+    TEXT_PLAIN = "TEXT_PLAIN"
+    TEXT_HTML = "TEXT_HTML"
+
+# Set metadata after class creation to avoid it becoming an enum member
+MLMediaType._metadata = {
+    "IMAGE_JPEG": {'description': 'JPEG image format', 'meaning': 'EDAM:format_3579', 'annotations': {'mime_type': 'image/jpeg', 'modality': 'image'}},
+    "IMAGE_PNG": {'description': 'PNG image format', 'meaning': 'EDAM:format_3603', 'annotations': {'mime_type': 'image/png', 'modality': 'image'}},
+    "IMAGE_GIF": {'description': 'GIF image format', 'annotations': {'mime_type': 'image/gif', 'modality': 'image'}},
+    "IMAGE_TIFF": {'description': 'TIFF image format', 'annotations': {'mime_type': 'image/tiff', 'modality': 'image'}},
+    "AUDIO_WAV": {'description': 'Waveform Audio File Format', 'annotations': {'mime_type': 'audio/wav', 'modality': 'audio'}},
+    "AUDIO_MP3": {'description': 'MP3 audio format', 'annotations': {'mime_type': 'audio/mpeg', 'modality': 'audio'}},
+    "AUDIO_FLAC": {'description': 'FLAC lossless audio format', 'annotations': {'mime_type': 'audio/flac', 'modality': 'audio'}},
+    "VIDEO_MP4": {'description': 'MPEG-4 video format', 'meaning': 'EDAM:format_3997', 'annotations': {'mime_type': 'video/mp4', 'modality': 'video'}},
+    "VIDEO_AVI": {'description': 'Audio Video Interleaved format', 'meaning': 'EDAM:format_3990', 'annotations': {'mime_type': 'video/x-msvideo', 'modality': 'video'}},
+    "VIDEO_WEBM": {'description': 'WebM video format', 'annotations': {'mime_type': 'video/webm', 'modality': 'video'}},
+    "TEXT_PLAIN": {'description': 'Plain text format', 'annotations': {'mime_type': 'text/plain', 'modality': 'text'}},
+    "TEXT_HTML": {'description': 'HTML format', 'annotations': {'mime_type': 'text/html', 'modality': 'text'}},
+}
+
+class MLModalityType(RichEnum):
+    """
+    High-level data modalities used in machine learning. These represent
+the fundamental types of input data that ML models process.
+
+    """
+    # Enum members
+    TEXT = "TEXT"
+    IMAGE = "IMAGE"
+    AUDIO = "AUDIO"
+    VIDEO = "VIDEO"
+    MULTIMODAL = "MULTIMODAL"
+    TABULAR = "TABULAR"
+    TIME_SERIES = "TIME_SERIES"
+    GRAPH = "GRAPH"
+
+# Set metadata after class creation to avoid it becoming an enum member
+MLModalityType._metadata = {
+    "TEXT": {'description': 'Textual data (natural language, code, etc.)', 'annotations': {'examples': 'documents, sentences, tokens'}},
+    "IMAGE": {'description': 'Visual image data', 'meaning': 'EDAM:data_2968', 'annotations': {'examples': 'photographs, diagrams, scans'}},
+    "AUDIO": {'description': 'Audio/sound data', 'annotations': {'examples': 'speech, music, sound effects'}},
+    "VIDEO": {'description': 'Video data (sequences of images with optional audio)', 'annotations': {'examples': 'movies, recordings, animations'}},
+    "MULTIMODAL": {'description': 'Data combining multiple modalities', 'annotations': {'examples': 'image-text pairs, audio-visual data'}},
+    "TABULAR": {'description': 'Structured tabular data', 'annotations': {'examples': 'spreadsheets, databases, CSV files'}},
+    "TIME_SERIES": {'description': 'Sequential temporal data', 'annotations': {'examples': 'sensor readings, stock prices, logs'}},
+    "GRAPH": {'description': 'Graph-structured data with nodes and edges', 'annotations': {'examples': 'social networks, knowledge graphs, molecular structures'}},
 }
 
 class LegalEntityTypeEnum(RichEnum):
@@ -13790,6 +15422,600 @@ AnalyticalControlType._metadata = {
     "LONG_TERM_REFERENCE": {'description': 'Stable reference for cross-batch comparisons', 'meaning': 'MSIO:0000006'},
     "BLANK": {'description': 'Sample containing only solvent/matrix without analyte'},
     "QUALITY_CONTROL": {'description': 'Sample with known composition for system performance monitoring'},
+}
+
+class LaboratoryDeviceTypeEnum(RichEnum):
+    """
+    Types of automated laboratory devices and equipment
+    """
+    # Enum members
+    LIQUID_HANDLER = "LIQUID_HANDLER"
+    LIQUID_EXTRACTION_ROBOT = "LIQUID_EXTRACTION_ROBOT"
+    CENTRIFUGE = "CENTRIFUGE"
+    MICROCENTRIFUGE = "MICROCENTRIFUGE"
+    INCUBATOR = "INCUBATOR"
+    INCUBATOR_SHAKER = "INCUBATOR_SHAKER"
+    MICROPLATE_READER = "MICROPLATE_READER"
+    ELISA_MICROPLATE_READER = "ELISA_MICROPLATE_READER"
+    MULTIMODE_MICROPLATE_READER = "MULTIMODE_MICROPLATE_READER"
+    MICROPLATE_WASHER = "MICROPLATE_WASHER"
+    ELISA_MICROPLATE_WASHER = "ELISA_MICROPLATE_WASHER"
+    MULTICHANNEL_PIPETTE = "MULTICHANNEL_PIPETTE"
+    ROBOTIC_ARM = "ROBOTIC_ARM"
+    THERMAL_CYCLER = "THERMAL_CYCLER"
+    COLONY_PICKER = "COLONY_PICKER"
+    BARCODE_READER = "BARCODE_READER"
+    PLATE_HANDLER = "PLATE_HANDLER"
+    DISPENSER = "DISPENSER"
+
+# Set metadata after class creation to avoid it becoming an enum member
+LaboratoryDeviceTypeEnum._metadata = {
+    "LIQUID_HANDLER": {'description': 'A device that is used for automated liquid transfer and handling', 'meaning': 'OBI:0400112'},
+    "LIQUID_EXTRACTION_ROBOT": {'description': 'A liquid handling device that provides automatic liquid extraction', 'meaning': 'OBI:0001097'},
+    "CENTRIFUGE": {'description': 'A device with a rapidly rotating container that applies centrifugal force to its contents', 'meaning': 'OBI:0400106'},
+    "MICROCENTRIFUGE": {'description': 'A type of centrifuge that is designed for small tubes (0.2 ml to 2.0 ml), has a compact design, and has a small footprint', 'meaning': 'OBI:0001100'},
+    "INCUBATOR": {'description': 'A device in which environmental conditions (light, photoperiod, temperature, humidity, etc.) can be controlled', 'meaning': 'OBI:0000136'},
+    "INCUBATOR_SHAKER": {'description': 'An incubating device that provides shaking motion for biomedical applications (e.g., cell cultures)', 'meaning': 'OBI:0001076'},
+    "MICROPLATE_READER": {'description': 'A measurement device that detects biological, chemical or physical events of samples in microtiter plates', 'meaning': 'OBI:0001058'},
+    "ELISA_MICROPLATE_READER": {'description': 'A microplate reader that is used for enzyme-linked immunosorbent assays (ELISA)', 'meaning': 'OBI:0001059'},
+    "MULTIMODE_MICROPLATE_READER": {'description': 'A microplate reader that can detect multiple types of absorbance, luminescence or fluorescence', 'meaning': 'OBI:0001090'},
+    "MICROPLATE_WASHER": {'description': 'A device that is used to wash immunoassays in microwell strips and plates with professional accuracy', 'meaning': 'OBI:0001113'},
+    "ELISA_MICROPLATE_WASHER": {'description': 'A microplate washer that is used for enzyme-linked immunosorbent assays (ELISA)', 'meaning': 'OBI:0001115'},
+    "MULTICHANNEL_PIPETTE": {'description': 'A pipetting system that has a plurality of tip fittings and is used for multi-well plate applications', 'meaning': 'OBI:0001118'},
+    "ROBOTIC_ARM": {'description': 'A programmable mechanical arm used in laboratory automation', 'meaning': 'SNOMED:82830000'},
+    "THERMAL_CYCLER": {'description': 'A laboratory apparatus used to amplify DNA segments via the polymerase chain reaction'},
+    "COLONY_PICKER": {'description': 'An automated device for selecting and transferring individual bacterial or yeast colonies'},
+    "BARCODE_READER": {'description': 'A device that reads barcode labels on laboratory samples and containers'},
+    "PLATE_HANDLER": {'description': 'An automated device designed to transfer microplates between workstations and lab instruments'},
+    "DISPENSER": {'description': 'A device for automated dispensing of reagents or samples'},
+}
+
+class RoboticArmTypeEnum(RichEnum):
+    """
+    Types of robotic arms used in laboratory automation systems
+    """
+    # Enum members
+    FLEXIBLE_CHANNEL_ARM = "FLEXIBLE_CHANNEL_ARM"
+    MULTI_CHANNEL_ARM = "MULTI_CHANNEL_ARM"
+    ROBOTIC_GRIPPER_ARM = "ROBOTIC_GRIPPER_ARM"
+    SINGLE_PROBE_ARM = "SINGLE_PROBE_ARM"
+
+# Set metadata after class creation to avoid it becoming an enum member
+RoboticArmTypeEnum._metadata = {
+    "FLEXIBLE_CHANNEL_ARM": {'description': 'Robotic arm with flexible channels for disposable tip handling and liquid handling', 'annotations': {'abbreviation': 'FCA'}},
+    "MULTI_CHANNEL_ARM": {'description': 'Robotic arm used for high-throughput pipetting with 96 or 384 channels', 'annotations': {'abbreviation': 'MCA'}},
+    "ROBOTIC_GRIPPER_ARM": {'description': 'Robotic arm used to pick and transfer objects within the working area, equipped with dedicated gripper fingers', 'annotations': {'abbreviation': 'RGA'}},
+    "SINGLE_PROBE_ARM": {'description': 'Robotic arm with a single probe for individual sample handling'},
+}
+
+class LiquidHandlingOperationEnum(RichEnum):
+    """
+    Operations for automated liquid handling in laboratory automation
+    """
+    # Enum members
+    PICK_UP_TIPS = "PICK_UP_TIPS"
+    ASPIRATE = "ASPIRATE"
+    DISPENSE = "DISPENSE"
+    RETURN_TIPS = "RETURN_TIPS"
+    DROP_TIPS = "DROP_TIPS"
+    TRANSFER = "TRANSFER"
+    PIPETTING = "PIPETTING"
+    MIXING = "MIXING"
+    ALIQUOTING = "ALIQUOTING"
+    SERIAL_DILUTION = "SERIAL_DILUTION"
+    PLATE_STAMPING = "PLATE_STAMPING"
+    ACOUSTIC_TRANSFER = "ACOUSTIC_TRANSFER"
+    MOUTH_PIPETTING = "MOUTH_PIPETTING"
+
+# Set metadata after class creation to avoid it becoming an enum member
+LiquidHandlingOperationEnum._metadata = {
+    "PICK_UP_TIPS": {'description': 'Operation to pick up pipette tips from a tip rack'},
+    "ASPIRATE": {'description': 'Operation to draw liquid into pipette tips'},
+    "DISPENSE": {'description': 'Operation to dispense liquid from pipette tips'},
+    "RETURN_TIPS": {'description': 'Operation to return pipette tips to a tip rack'},
+    "DROP_TIPS": {'description': 'Operation to drop or discard pipette tips'},
+    "TRANSFER": {'description': 'Combined operation to aspirate from source and dispense to destination'},
+    "PIPETTING": {'description': 'A procedure or technique by which the size of the three dimensional space occupied by a liquid substance is ascertained using a pipette', 'meaning': 'MMO:0000392'},
+    "MIXING": {'description': 'Operation to mix liquids by repeated aspiration and dispensing'},
+    "ALIQUOTING": {'description': 'Operation to distribute a sample into multiple equal portions'},
+    "SERIAL_DILUTION": {'description': 'Operation to create a series of dilutions of a substance in solution'},
+    "PLATE_STAMPING": {'description': 'Operation to transfer samples from one plate to another in the same well pattern'},
+    "ACOUSTIC_TRANSFER": {'description': 'Acoustic liquid handling that uses acoustics to fly individual droplets from a source container to a destination'},
+    "MOUTH_PIPETTING": {'description': "A method of using the researcher's mouth to apply small negative pressure to aspirate a volume into a pipette", 'meaning': 'EFO:0010182'},
+}
+
+class SampleProcessingOperationEnum(RichEnum):
+    """
+    General sample processing operations in automated laboratories
+    """
+    # Enum members
+    CENTRIFUGATION = "CENTRIFUGATION"
+    INCUBATION = "INCUBATION"
+    THERMAL_CYCLING = "THERMAL_CYCLING"
+    WASHING = "WASHING"
+    DETECTION = "DETECTION"
+    MEASUREMENT = "MEASUREMENT"
+    SEPARATION = "SEPARATION"
+    EXTRACTION = "EXTRACTION"
+    HEATING = "HEATING"
+    COOLING = "COOLING"
+    SHAKING = "SHAKING"
+    PLATE_MOVEMENT = "PLATE_MOVEMENT"
+    BARCODE_READING = "BARCODE_READING"
+
+# Set metadata after class creation to avoid it becoming an enum member
+SampleProcessingOperationEnum._metadata = {
+    "CENTRIFUGATION": {'description': 'Operation to separate components of a sample using centrifugal force'},
+    "INCUBATION": {'description': 'Operation to maintain samples at controlled environmental conditions over time'},
+    "THERMAL_CYCLING": {'description': 'Operation to cycle samples through different temperatures for PCR or similar processes'},
+    "WASHING": {'description': 'Operation to wash samples or plates to remove unwanted material'},
+    "DETECTION": {'description': 'Operation to detect signals from samples (absorbance, fluorescence, luminescence)'},
+    "MEASUREMENT": {'description': 'Operation to measure a property or characteristic of a sample'},
+    "SEPARATION": {'description': 'Operation to separate components of a sample mixture'},
+    "EXTRACTION": {'description': 'Operation to extract specific components from a sample'},
+    "HEATING": {'description': 'Operation to heat samples to a specified temperature'},
+    "COOLING": {'description': 'Operation to cool samples to a specified temperature'},
+    "SHAKING": {'description': 'Operation to shake samples for mixing or agitation'},
+    "PLATE_MOVEMENT": {'description': 'Operation to move plates between different locations or devices'},
+    "BARCODE_READING": {'description': 'Operation to read barcode labels on samples or containers'},
+}
+
+class MicroplateFormatEnum(RichEnum):
+    """
+    Standard microplate well configurations following ANSI/SLAS standards
+    """
+    # Enum members
+    WELL_6 = "WELL_6"
+    WELL_12 = "WELL_12"
+    WELL_24 = "WELL_24"
+    WELL_48 = "WELL_48"
+    WELL_96 = "WELL_96"
+    WELL_384 = "WELL_384"
+    WELL_1536 = "WELL_1536"
+
+# Set metadata after class creation to avoid it becoming an enum member
+MicroplateFormatEnum._metadata = {
+    "WELL_6": {'description': 'Microplate with 6 wells'},
+    "WELL_12": {'description': 'Microplate with 12 wells'},
+    "WELL_24": {'description': 'Microplate with 24 wells'},
+    "WELL_48": {'description': 'Microplate with 48 wells'},
+    "WELL_96": {'description': 'Microplate with 96 wells arranged in 8 rows of 12 columns with 9mm well-to-well spacing', 'meaning': 'MSIO:0000162', 'annotations': {'well_spacing': '9mm', 'standard': 'ANSI/SLAS 4-2004'}},
+    "WELL_384": {'description': 'Microplate with 384 wells with 4.5mm well-to-well spacing', 'annotations': {'well_spacing': '4.5mm', 'standard': 'ANSI/SLAS 4-2004'}},
+    "WELL_1536": {'description': 'Microplate with 1536 wells with 2.25mm well-to-well spacing', 'annotations': {'well_spacing': '2.25mm', 'standard': 'ANSI/SLAS 4-2004'}},
+}
+
+class ContainerTypeEnum(RichEnum):
+    """
+    Types of laboratory containers and labware
+    """
+    # Enum members
+    MICROPLATE = "MICROPLATE"
+    DEEP_WELL_PLATE = "DEEP_WELL_PLATE"
+    PCR_PLATE = "PCR_PLATE"
+    TUBE_RACK = "TUBE_RACK"
+    MICROTUBE = "MICROTUBE"
+    SCREW_CAP_TUBE = "SCREW_CAP_TUBE"
+    SNAP_CAP_TUBE = "SNAP_CAP_TUBE"
+    RESERVOIR = "RESERVOIR"
+    PIPETTE_TIP_BOX = "PIPETTE_TIP_BOX"
+    SPIN_COLUMN = "SPIN_COLUMN"
+    MICROPLATE_WELL = "MICROPLATE_WELL"
+
+# Set metadata after class creation to avoid it becoming an enum member
+ContainerTypeEnum._metadata = {
+    "MICROPLATE": {'description': 'A flat dish with multiple individual wells that are arrayed in a standardized number, size, and arrangement', 'meaning': 'NCIT:C43377'},
+    "DEEP_WELL_PLATE": {'description': 'A microplate with deeper wells for increased sample volume capacity'},
+    "PCR_PLATE": {'description': 'A microplate specifically designed for PCR thermal cycling applications'},
+    "TUBE_RACK": {'description': 'A rack designed to hold multiple laboratory tubes'},
+    "MICROTUBE": {'description': 'Small laboratory tube with volume capacity from 0.2 ml to 2.0 ml', 'annotations': {'volume_range': '0.2-2.0 ml'}},
+    "SCREW_CAP_TUBE": {'description': 'Laboratory tube with screw cap closure'},
+    "SNAP_CAP_TUBE": {'description': 'Laboratory tube with snap cap closure'},
+    "RESERVOIR": {'description': 'Container for holding bulk reagents for dispensing'},
+    "PIPETTE_TIP_BOX": {'description': 'Container for storing pipette tips in organized racks'},
+    "SPIN_COLUMN": {'description': 'A chromatography column which is suitable for putting it into a centrifuge', 'meaning': 'OBI:0000570'},
+    "MICROPLATE_WELL": {'description': 'Any of the individual wells on a microwell plate', 'meaning': 'NCIT:C128793'},
+}
+
+class PlateMaterialEnum(RichEnum):
+    """
+    Material composition of laboratory microplates
+    """
+    # Enum members
+    POLYSTYRENE = "POLYSTYRENE"
+    POLYPROPYLENE = "POLYPROPYLENE"
+    GLASS = "GLASS"
+
+# Set metadata after class creation to avoid it becoming an enum member
+PlateMaterialEnum._metadata = {
+    "POLYSTYRENE": {'description': 'Plates made from polystyrene, the most common material for standard applications'},
+    "POLYPROPYLENE": {'description': 'Plates made from polypropylene for chemical resistance'},
+    "GLASS": {'description': 'Plates with glass inserts for samples not suitable for plastic containers'},
+}
+
+class PlateCoatingEnum(RichEnum):
+    """
+    Surface treatment of microplates
+    """
+    # Enum members
+    COATED = "COATED"
+    UNCOATED = "UNCOATED"
+    TISSUE_CULTURE_TREATED = "TISSUE_CULTURE_TREATED"
+    PROTEIN_BINDING = "PROTEIN_BINDING"
+
+# Set metadata after class creation to avoid it becoming an enum member
+PlateCoatingEnum._metadata = {
+    "COATED": {'description': 'A microplate whose surface has been treated, for instance by covalently attaching proteins to favor cell growth', 'meaning': 'MSIO:0000164'},
+    "UNCOATED": {'description': 'A microplate whose surface has not received any treatment and is uniquely made of polymer', 'meaning': 'MSIO:0000170'},
+    "TISSUE_CULTURE_TREATED": {'description': 'Surface treatment to enhance cell attachment and growth'},
+    "PROTEIN_BINDING": {'description': 'Surface treatment optimized for protein binding assays'},
+}
+
+class WorkflowOrchestrationTypeEnum(RichEnum):
+    """
+    Types of workflow orchestration in laboratory automation systems
+    """
+    # Enum members
+    STATIC_ORCHESTRATION = "STATIC_ORCHESTRATION"
+    DYNAMIC_ORCHESTRATION = "DYNAMIC_ORCHESTRATION"
+    HYBRID_ORCHESTRATION = "HYBRID_ORCHESTRATION"
+    EVENT_DRIVEN = "EVENT_DRIVEN"
+    PARALLEL_PROCESSING = "PARALLEL_PROCESSING"
+
+# Set metadata after class creation to avoid it becoming an enum member
+WorkflowOrchestrationTypeEnum._metadata = {
+    "STATIC_ORCHESTRATION": {'description': 'Pre-planned orchestration based on known constraints and fixed workflow'},
+    "DYNAMIC_ORCHESTRATION": {'description': 'Real-time orchestration that adapts to changing conditions and events'},
+    "HYBRID_ORCHESTRATION": {'description': 'Combination of static planning with dynamic replanning capabilities'},
+    "EVENT_DRIVEN": {'description': 'Orchestration triggered by specific events in the system'},
+    "PARALLEL_PROCESSING": {'description': 'Orchestration that enables concurrent execution of independent tasks'},
+}
+
+class SchedulerTypeEnum(RichEnum):
+    """
+    Types of scheduling algorithms for laboratory automation
+    """
+    # Enum members
+    STATIC_SCHEDULER = "STATIC_SCHEDULER"
+    DYNAMIC_SCHEDULER = "DYNAMIC_SCHEDULER"
+    PRIORITY_BASED = "PRIORITY_BASED"
+    FIFO = "FIFO"
+    RESOURCE_AWARE = "RESOURCE_AWARE"
+    DEADLINE_DRIVEN = "DEADLINE_DRIVEN"
+
+# Set metadata after class creation to avoid it becoming an enum member
+SchedulerTypeEnum._metadata = {
+    "STATIC_SCHEDULER": {'description': 'Makes decisions based on known constraints requiring upfront planning'},
+    "DYNAMIC_SCHEDULER": {'description': 'Adapts scheduling decisions in real-time based on system state'},
+    "PRIORITY_BASED": {'description': 'Schedules tasks based on assigned priority levels'},
+    "FIFO": {'description': 'First-in-first-out scheduling'},
+    "RESOURCE_AWARE": {'description': 'Schedules tasks considering available resources and constraints'},
+    "DEADLINE_DRIVEN": {'description': 'Schedules tasks to meet specified deadlines'},
+}
+
+class ProtocolStateEnum(RichEnum):
+    """
+    Execution states of laboratory protocols
+    """
+    # Enum members
+    PENDING = "PENDING"
+    RUNNING = "RUNNING"
+    PAUSED = "PAUSED"
+    COMPLETED = "COMPLETED"
+    FAILED = "FAILED"
+    ABORTED = "ABORTED"
+    VALIDATING = "VALIDATING"
+    WAITING_FOR_RESOURCE = "WAITING_FOR_RESOURCE"
+
+# Set metadata after class creation to avoid it becoming an enum member
+ProtocolStateEnum._metadata = {
+    "PENDING": {'description': 'Protocol is queued but not yet started'},
+    "RUNNING": {'description': 'Protocol is currently executing'},
+    "PAUSED": {'description': 'Protocol execution has been temporarily suspended'},
+    "COMPLETED": {'description': 'Protocol has finished successfully'},
+    "FAILED": {'description': 'Protocol execution has failed'},
+    "ABORTED": {'description': 'Protocol execution was manually aborted'},
+    "VALIDATING": {'description': 'Protocol is being validated before execution'},
+    "WAITING_FOR_RESOURCE": {'description': 'Protocol is waiting for required resources to become available'},
+}
+
+class ExecutionModeEnum(RichEnum):
+    """
+    Modes of protocol execution
+    """
+    # Enum members
+    AUTOMATED = "AUTOMATED"
+    MANUAL = "MANUAL"
+    SEMI_AUTOMATED = "SEMI_AUTOMATED"
+    SUPERVISED = "SUPERVISED"
+    SIMULATION = "SIMULATION"
+    DRY_RUN = "DRY_RUN"
+
+# Set metadata after class creation to avoid it becoming an enum member
+ExecutionModeEnum._metadata = {
+    "AUTOMATED": {'description': 'Fully automated execution without human intervention'},
+    "MANUAL": {'description': 'Manual execution by human operator'},
+    "SEMI_AUTOMATED": {'description': 'Combination of automated and manual steps'},
+    "SUPERVISED": {'description': 'Automated execution with human supervision'},
+    "SIMULATION": {'description': 'Simulated execution for testing and validation'},
+    "DRY_RUN": {'description': 'Test execution without actual operations'},
+}
+
+class WorkflowErrorHandlingEnum(RichEnum):
+    """
+    Error handling strategies in laboratory automation workflows
+    """
+    # Enum members
+    ABORT_ON_ERROR = "ABORT_ON_ERROR"
+    RETRY = "RETRY"
+    SKIP_AND_CONTINUE = "SKIP_AND_CONTINUE"
+    NOTIFY_AND_PAUSE = "NOTIFY_AND_PAUSE"
+    ROLLBACK = "ROLLBACK"
+    FAILOVER = "FAILOVER"
+
+# Set metadata after class creation to avoid it becoming an enum member
+WorkflowErrorHandlingEnum._metadata = {
+    "ABORT_ON_ERROR": {'description': 'Terminate workflow immediately upon encountering an error'},
+    "RETRY": {'description': 'Attempt to retry the failed operation'},
+    "SKIP_AND_CONTINUE": {'description': 'Skip the failed operation and continue with the workflow'},
+    "NOTIFY_AND_PAUSE": {'description': 'Notify operator and pause workflow for intervention'},
+    "ROLLBACK": {'description': 'Revert to previous stable state'},
+    "FAILOVER": {'description': 'Switch to backup resource or alternative execution path'},
+}
+
+class IntegrationSystemEnum(RichEnum):
+    """
+    Types of systems integrated with laboratory automation platforms
+    """
+    # Enum members
+    LIMS = "LIMS"
+    ELN = "ELN"
+    MES = "MES"
+    SCADA = "SCADA"
+    CLOUD_STORAGE = "CLOUD_STORAGE"
+    DATABASE = "DATABASE"
+
+# Set metadata after class creation to avoid it becoming an enum member
+IntegrationSystemEnum._metadata = {
+    "LIMS": {'description': 'Laboratory Information Management System', 'annotations': {'full_name': 'Laboratory Information Management System'}},
+    "ELN": {'description': 'Electronic Laboratory Notebook', 'annotations': {'full_name': 'Electronic Laboratory Notebook'}},
+    "MES": {'description': 'Manufacturing Execution System', 'annotations': {'full_name': 'Manufacturing Execution System'}},
+    "SCADA": {'description': 'Supervisory Control and Data Acquisition', 'annotations': {'full_name': 'Supervisory Control and Data Acquisition'}},
+    "CLOUD_STORAGE": {'description': 'Cloud-based data storage systems'},
+    "DATABASE": {'description': 'Laboratory database systems'},
+}
+
+class AutomationStandardEnum(RichEnum):
+    """
+    Industry standards for laboratory automation systems
+    """
+    # Enum members
+    SILA_2 = "SILA_2"
+    LABOP = "LABOP"
+    AUTOPROTOCOL = "AUTOPROTOCOL"
+    CLSI_AUTO01 = "CLSI_AUTO01"
+    CLSI_AUTO02 = "CLSI_AUTO02"
+    CLSI_AUTO03 = "CLSI_AUTO03"
+    CLSI_AUTO04 = "CLSI_AUTO04"
+    CLSI_AUTO05 = "CLSI_AUTO05"
+
+# Set metadata after class creation to avoid it becoming an enum member
+AutomationStandardEnum._metadata = {
+    "SILA_2": {'description': 'Standardization in Lab Automation version 2 - international standard for open connectivity in lab automation', 'annotations': {'organization': 'Society for Laboratory Automation and Screening', 'architecture': 'microservice-based', 'protocol': 'gRPC'}},
+    "LABOP": {'description': 'Laboratory Open Protocol Language - open specification for laboratory protocols', 'annotations': {'format': 'RDF/OWL', 'organization': 'Bioprotocols Working Group'}},
+    "AUTOPROTOCOL": {'description': 'JSON-based language for specifying experimental protocols', 'annotations': {'format': 'JSON'}},
+    "CLSI_AUTO01": {'description': 'CLSI standard for Specimen Container/Specimen Carrier', 'annotations': {'organization': 'Clinical and Laboratory Standards Institute'}},
+    "CLSI_AUTO02": {'description': 'CLSI standard for Bar Codes for Specimen Container Identification', 'annotations': {'organization': 'Clinical and Laboratory Standards Institute'}},
+    "CLSI_AUTO03": {'description': 'CLSI standard for Communications with Automated Clinical Laboratory Systems', 'annotations': {'organization': 'Clinical and Laboratory Standards Institute'}},
+    "CLSI_AUTO04": {'description': 'CLSI standard for Systems Operational Requirements, Characteristics, and Information Elements', 'annotations': {'organization': 'Clinical and Laboratory Standards Institute'}},
+    "CLSI_AUTO05": {'description': 'CLSI standard for Electromechanical Interfaces', 'annotations': {'organization': 'Clinical and Laboratory Standards Institute'}},
+}
+
+class CommunicationProtocolEnum(RichEnum):
+    """
+    Communication protocols for laboratory automation integration
+    """
+    # Enum members
+    GRPC = "GRPC"
+    REST_API = "REST_API"
+    SOAP = "SOAP"
+    OPC_UA = "OPC_UA"
+    MODBUS = "MODBUS"
+    CUSTOM_API = "CUSTOM_API"
+    SERIAL = "SERIAL"
+    TCP_IP = "TCP_IP"
+    USB = "USB"
+
+# Set metadata after class creation to avoid it becoming an enum member
+CommunicationProtocolEnum._metadata = {
+    "GRPC": {'description': 'gRPC protocol used in SiLA 2', 'annotations': {'used_by': 'SiLA 2'}},
+    "REST_API": {'description': 'RESTful HTTP-based API'},
+    "SOAP": {'description': 'Simple Object Access Protocol'},
+    "OPC_UA": {'description': 'OPC Unified Architecture for industrial automation', 'annotations': {'full_name': 'OPC Unified Architecture'}},
+    "MODBUS": {'description': 'Serial communication protocol for industrial devices'},
+    "CUSTOM_API": {'description': 'Vendor-specific custom API'},
+    "SERIAL": {'description': 'Serial communication protocol (RS-232, RS-485)'},
+    "TCP_IP": {'description': 'TCP/IP network protocol'},
+    "USB": {'description': 'Universal Serial Bus communication'},
+}
+
+class LabwareStandardEnum(RichEnum):
+    """
+    Standardization specifications for laboratory labware
+    """
+    # Enum members
+    ANSI_SLAS_1_2004 = "ANSI_SLAS_1_2004"
+    ANSI_SLAS_2_2004 = "ANSI_SLAS_2_2004"
+    ANSI_SLAS_3_2004 = "ANSI_SLAS_3_2004"
+    ANSI_SLAS_4_2004 = "ANSI_SLAS_4_2004"
+    ANSI_SLAS_6_2012 = "ANSI_SLAS_6_2012"
+    SBS_FOOTPRINT = "SBS_FOOTPRINT"
+
+# Set metadata after class creation to avoid it becoming an enum member
+LabwareStandardEnum._metadata = {
+    "ANSI_SLAS_1_2004": {'description': 'Microplates - Footprint Dimensions', 'annotations': {'reaffirmed': 2012, 'specification': 'Footprint Dimensions'}},
+    "ANSI_SLAS_2_2004": {'description': 'Microplates - Height Dimensions', 'annotations': {'reaffirmed': 2012, 'specification': 'Height Dimensions'}},
+    "ANSI_SLAS_3_2004": {'description': 'Microplates - Bottom Outside Flange Dimensions', 'annotations': {'reaffirmed': 2012, 'specification': 'Bottom Outside Flange Dimensions'}},
+    "ANSI_SLAS_4_2004": {'description': 'Microplates - Well Positions', 'annotations': {'reaffirmed': 2012, 'specification': 'Well Positions'}},
+    "ANSI_SLAS_6_2012": {'description': 'Microplates - Well Bottom Elevation', 'annotations': {'specification': 'Well Bottom Elevation'}},
+    "SBS_FOOTPRINT": {'description': 'Society for Biomolecular Screening standard footprint (127.76mm x 85.5mm)', 'annotations': {'dimensions': '127.76mm x 85.5mm'}},
+}
+
+class IntegrationFeatureEnum(RichEnum):
+    """
+    Integration features for laboratory automation systems
+    """
+    # Enum members
+    BARCODE_TRACKING = "BARCODE_TRACKING"
+    AUTOMATED_DATA_TRANSFER = "AUTOMATED_DATA_TRANSFER"
+    CLOUD_STORAGE_INTEGRATION = "CLOUD_STORAGE_INTEGRATION"
+    SAMPLE_TRACKING = "SAMPLE_TRACKING"
+    WORKFLOW_VALIDATION = "WORKFLOW_VALIDATION"
+    ERROR_RECOVERY = "ERROR_RECOVERY"
+    AUDIT_TRAIL = "AUDIT_TRAIL"
+    ELECTRONIC_SIGNATURES = "ELECTRONIC_SIGNATURES"
+
+# Set metadata after class creation to avoid it becoming an enum member
+IntegrationFeatureEnum._metadata = {
+    "BARCODE_TRACKING": {'description': 'Integration feature for tracking samples via barcodes'},
+    "AUTOMATED_DATA_TRANSFER": {'description': 'Automatic transfer of data between systems'},
+    "CLOUD_STORAGE_INTEGRATION": {'description': 'Integration with cloud-based storage systems'},
+    "SAMPLE_TRACKING": {'description': 'Real-time tracking of sample location and status'},
+    "WORKFLOW_VALIDATION": {'description': 'Automated validation of workflow definitions'},
+    "ERROR_RECOVERY": {'description': 'Automated error detection and recovery mechanisms'},
+    "AUDIT_TRAIL": {'description': 'Complete logging of all operations for compliance'},
+    "ELECTRONIC_SIGNATURES": {'description': 'Support for electronic signatures for regulatory compliance'},
+}
+
+class ThermalCyclerTypeEnum(RichEnum):
+    """
+    Types of thermal cycling instruments
+    """
+    # Enum members
+    STANDARD_THERMAL_CYCLER = "STANDARD_THERMAL_CYCLER"
+    REAL_TIME_PCR = "REAL_TIME_PCR"
+    DIGITAL_PCR = "DIGITAL_PCR"
+    GRADIENT_THERMAL_CYCLER = "GRADIENT_THERMAL_CYCLER"
+    FAST_THERMAL_CYCLER = "FAST_THERMAL_CYCLER"
+    AUTOMATED_THERMAL_CYCLER = "AUTOMATED_THERMAL_CYCLER"
+    IN_SITU_THERMAL_CYCLER = "IN_SITU_THERMAL_CYCLER"
+
+# Set metadata after class creation to avoid it becoming an enum member
+ThermalCyclerTypeEnum._metadata = {
+    "STANDARD_THERMAL_CYCLER": {'description': 'Standard thermal cycler for endpoint PCR'},
+    "REAL_TIME_PCR": {'description': 'Thermal cycler with real-time fluorescence detection', 'annotations': {'abbreviation': 'qPCR'}},
+    "DIGITAL_PCR": {'description': 'Thermal cycler for digital PCR applications', 'annotations': {'abbreviation': 'dPCR'}},
+    "GRADIENT_THERMAL_CYCLER": {'description': 'Thermal cycler capable of running temperature gradients across the block'},
+    "FAST_THERMAL_CYCLER": {'description': 'Thermal cycler optimized for rapid cycling'},
+    "AUTOMATED_THERMAL_CYCLER": {'description': 'Thermal cycler with integrated automation for high-throughput applications', 'annotations': {'example': 'Biometra TRobot II'}},
+    "IN_SITU_THERMAL_CYCLER": {'description': 'Thermal cycler designed for in situ PCR applications'},
+}
+
+class PCROperationTypeEnum(RichEnum):
+    """
+    Types of PCR operations and techniques
+    """
+    # Enum members
+    STANDARD_PCR = "STANDARD_PCR"
+    QUANTITATIVE_PCR = "QUANTITATIVE_PCR"
+    REVERSE_TRANSCRIPTION_PCR = "REVERSE_TRANSCRIPTION_PCR"
+    RT_QPCR = "RT_QPCR"
+    MULTIPLEX_PCR = "MULTIPLEX_PCR"
+    NESTED_PCR = "NESTED_PCR"
+    TOUCHDOWN_PCR = "TOUCHDOWN_PCR"
+    HOT_START_PCR = "HOT_START_PCR"
+    LONG_RANGE_PCR = "LONG_RANGE_PCR"
+    COLONY_PCR = "COLONY_PCR"
+    HIGH_FIDELITY_PCR = "HIGH_FIDELITY_PCR"
+    DIGITAL_PCR = "DIGITAL_PCR"
+
+# Set metadata after class creation to avoid it becoming an enum member
+PCROperationTypeEnum._metadata = {
+    "STANDARD_PCR": {'description': 'Standard endpoint PCR amplification'},
+    "QUANTITATIVE_PCR": {'description': 'Real-time quantitative PCR', 'annotations': {'abbreviation': 'qPCR'}},
+    "REVERSE_TRANSCRIPTION_PCR": {'description': 'PCR with reverse transcription step for RNA amplification', 'annotations': {'abbreviation': 'RT-PCR'}},
+    "RT_QPCR": {'description': 'Real-time quantitative RT-PCR'},
+    "MULTIPLEX_PCR": {'description': 'PCR amplifying multiple targets simultaneously'},
+    "NESTED_PCR": {'description': 'Two-stage PCR for increased specificity'},
+    "TOUCHDOWN_PCR": {'description': 'PCR with decreasing annealing temperature'},
+    "HOT_START_PCR": {'description': 'PCR with heat-activated polymerase'},
+    "LONG_RANGE_PCR": {'description': 'PCR optimized for amplifying long DNA fragments'},
+    "COLONY_PCR": {'description': 'PCR directly from bacterial colonies'},
+    "HIGH_FIDELITY_PCR": {'description': 'PCR using proofreading polymerases'},
+    "DIGITAL_PCR": {'description': 'Absolute quantification PCR using partitioning'},
+}
+
+class DetectionModeEnum(RichEnum):
+    """
+    Detection modes for real-time PCR instruments
+    """
+    # Enum members
+    SYBR_GREEN = "SYBR_GREEN"
+    TAQMAN = "TAQMAN"
+    MOLECULAR_BEACON = "MOLECULAR_BEACON"
+    FRET = "FRET"
+    SCORPION = "SCORPION"
+    HYBRIDIZATION_PROBE = "HYBRIDIZATION_PROBE"
+    MULTI_CHANNEL = "MULTI_CHANNEL"
+
+# Set metadata after class creation to avoid it becoming an enum member
+DetectionModeEnum._metadata = {
+    "SYBR_GREEN": {'description': 'DNA-binding dye detection'},
+    "TAQMAN": {'description': 'Hydrolysis probe-based detection'},
+    "MOLECULAR_BEACON": {'description': 'Hairpin probe-based detection'},
+    "FRET": {'description': 'Fluorescence resonance energy transfer detection', 'annotations': {'full_name': 'Fluorescence Resonance Energy Transfer'}},
+    "SCORPION": {'description': 'Unimolecular probe-based detection'},
+    "HYBRIDIZATION_PROBE": {'description': 'Two-probe FRET-based detection'},
+    "MULTI_CHANNEL": {'description': 'Multi-channel fluorescence detection'},
+}
+
+class PCRPlateTypeEnum(RichEnum):
+    """
+    Types of plates used for PCR applications
+    """
+    # Enum members
+    PCR_96_WELL = "PCR_96_WELL"
+    PCR_384_WELL = "PCR_384_WELL"
+    PCR_TUBE_STRIP = "PCR_TUBE_STRIP"
+    INDIVIDUAL_PCR_TUBE = "INDIVIDUAL_PCR_TUBE"
+    LOW_PROFILE_PLATE = "LOW_PROFILE_PLATE"
+    SKIRTED_PLATE = "SKIRTED_PLATE"
+    SEMI_SKIRTED_PLATE = "SEMI_SKIRTED_PLATE"
+
+# Set metadata after class creation to avoid it becoming an enum member
+PCRPlateTypeEnum._metadata = {
+    "PCR_96_WELL": {'description': '96-well plate for PCR'},
+    "PCR_384_WELL": {'description': '384-well plate for PCR'},
+    "PCR_TUBE_STRIP": {'description': 'Strip of 8 or 12 PCR tubes'},
+    "INDIVIDUAL_PCR_TUBE": {'description': 'Individual PCR tube'},
+    "LOW_PROFILE_PLATE": {'description': 'Low-profile PCR plate for automated systems'},
+    "SKIRTED_PLATE": {'description': 'PCR plate with skirted base for stability'},
+    "SEMI_SKIRTED_PLATE": {'description': 'PCR plate with partial skirt'},
+}
+
+class ThermalCyclingStepEnum(RichEnum):
+    """
+    Steps in thermal cycling protocols
+    """
+    # Enum members
+    INITIAL_DENATURATION = "INITIAL_DENATURATION"
+    DENATURATION = "DENATURATION"
+    ANNEALING = "ANNEALING"
+    EXTENSION = "EXTENSION"
+    FINAL_EXTENSION = "FINAL_EXTENSION"
+    HOLD = "HOLD"
+    MELT_CURVE = "MELT_CURVE"
+    GRADIENT = "GRADIENT"
+
+# Set metadata after class creation to avoid it becoming an enum member
+ThermalCyclingStepEnum._metadata = {
+    "INITIAL_DENATURATION": {'description': 'Initial high-temperature step to denature template DNA'},
+    "DENATURATION": {'description': 'High-temperature step to separate DNA strands'},
+    "ANNEALING": {'description': 'Cooling step to allow primer binding'},
+    "EXTENSION": {'description': 'Temperature-optimized step for polymerase activity'},
+    "FINAL_EXTENSION": {'description': 'Extended final extension step'},
+    "HOLD": {'description': 'Temperature hold step'},
+    "MELT_CURVE": {'description': 'Gradual temperature increase for melt curve analysis'},
+    "GRADIENT": {'description': 'Temperature gradient across block'},
 }
 
 class Fake(ConfiguredBaseModel):

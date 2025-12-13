@@ -1,0 +1,76 @@
+name: ontologies
+title: Ontology and Semantic Web Value Sets
+description: 'Value sets for ontologies, semantic web standards, and knowledge representation.
+
+  '
+id: https://w3id.org/valuesets/computing/ontologies
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  owl: http://www.w3.org/2002/07/owl#
+  valuesets: https://w3id.org/valuesets/
+  IAO: http://purl.obolibrary.org/obo/IAO_
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+default_prefix: valuesets
+slots:
+  owl_profile:
+    description: OWL 2 profile for the ontology
+    range: OWLProfileEnum
+enums:
+  OWLProfileEnum:
+    title: OWL Profile
+    description: OWL 2 profiles that provide different tradeoffs between expressiveness and computational complexity
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      OWL_2_EL:
+        description: OWL 2 EL (Existential Language) - optimized for applications using very large ontologies with basic
+          relationships. Provides polynomial time reasoning.
+        title: OWL 2 EL
+        see_also:
+        - https://www.w3.org/TR/owl2-profiles/#OWL_2_EL
+        annotations:
+          complexity: polynomial time
+          use_case: large biomedical ontologies, SNOMED CT
+      OWL_2_QL:
+        description: OWL 2 QL (Query Language) - optimized for query answering over large data repositories. Based on 
+          DL-Lite family.
+        title: OWL 2 QL
+        see_also:
+        - https://www.w3.org/TR/owl2-profiles/#OWL_2_QL
+        annotations:
+          complexity: LogSpace data complexity
+          use_case: ontology-based data access, database integration
+      OWL_2_RL:
+        description: OWL 2 RL (Rule Language) - optimized for rule-based reasoning and can be implemented using rule 
+          engines. Compatible with RDF Schema.
+        title: OWL 2 RL
+        see_also:
+        - https://www.w3.org/TR/owl2-profiles/#OWL_2_RL
+        annotations:
+          complexity: polynomial time
+          use_case: business rules, policy systems
+      OWL_2_DL:
+        description: OWL 2 DL (Description Logic) - full expressiveness while maintaining computational completeness and
+          decidability. Maximum expressiveness without sacrificing decidability.
+        title: OWL 2 DL
+        see_also:
+        - https://www.w3.org/TR/owl2-syntax/
+        annotations:
+          complexity: NExpTime
+          use_case: general purpose ontologies requiring high expressiveness
+      OWL_2_FULL:
+        description: OWL 2 Full - maximum expressiveness with no restrictions, but reasoning is undecidable. Allows full
+          RDF capabilities.
+        title: OWL 2 Full
+        see_also:
+        - https://www.w3.org/TR/owl2-syntax/
+        annotations:
+          complexity: undecidable
+          use_case: maximum flexibility, no guaranteed reasoning

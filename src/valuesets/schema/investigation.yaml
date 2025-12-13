@@ -14,6 +14,8 @@ prefixes:
   dcterms: http://purl.org/dc/terms/
   fibo.commons.PartiesAndSituations: https://spec.edmcouncil.org/fibo/ontology/FBC/ommons/PartiesAndSituations/
   valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   case_or_control:
@@ -30,6 +32,13 @@ slots:
     range: SampleProcessingEnum
 enums:
   CaseOrControlEnum:
+    title: Case Or Control
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       CASE:
         title: case role in case-control study
@@ -38,6 +47,13 @@ enums:
         title: control role in case-control study
         meaning: OBI:0002493
   StudyDesignEnum:
+    title: Study Design
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     reachable_from:
       source_nodes:
       - OBI:0500000
@@ -45,6 +61,13 @@ enums:
       relationship_types:
       - rdfs:subClassOf
   InvestigativeProtocolEnum:
+    title: Investigative Protocol
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     reachable_from:
       source_nodes:
       - OBI:0000272
@@ -52,6 +75,13 @@ enums:
       relationship_types:
       - rdfs:subClassOf
   SampleProcessingEnum:
+    title: Sample Processing
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     reachable_from:
       source_nodes:
       - OBI:0000094

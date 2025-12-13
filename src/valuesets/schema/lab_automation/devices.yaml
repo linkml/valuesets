@@ -1,0 +1,129 @@
+name: lab_automation_devices
+id: https://w3id.org/linkml/valuesets/lab_automation/devices
+prefixes:
+  OBI: http://purl.obolibrary.org/obo/OBI_
+  SNOMED: http://snomed.info/id/
+  NCIT: http://purl.obolibrary.org/obo/NCIT_
+  valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+default_prefix: valuesets
+slots:
+  laboratory_device_type:
+    description: Type of automated laboratory equipment or device
+    range: LaboratoryDeviceTypeEnum
+  robotic_arm_type:
+    description: Type of robotic arm used in laboratory automation
+    range: RoboticArmTypeEnum
+enums:
+  LaboratoryDeviceTypeEnum:
+    title: Laboratory Device Type
+    description: Types of automated laboratory devices and equipment
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      LIQUID_HANDLER:
+        description: A device that is used for automated liquid transfer and handling
+        meaning: OBI:0400112
+        title: liquid handler
+      LIQUID_EXTRACTION_ROBOT:
+        description: A liquid handling device that provides automatic liquid extraction
+        meaning: OBI:0001097
+        title: liquid extraction robot
+      CENTRIFUGE:
+        description: A device with a rapidly rotating container that applies centrifugal force to its contents
+        meaning: OBI:0400106
+        title: centrifuge
+      MICROCENTRIFUGE:
+        description: A type of centrifuge that is designed for small tubes (0.2 ml to 2.0 ml), has a compact design, and
+          has a small footprint
+        meaning: OBI:0001100
+        title: microcentrifuge
+      INCUBATOR:
+        description: A device in which environmental conditions (light, photoperiod, temperature, humidity, etc.) can be
+          controlled
+        meaning: OBI:0000136
+        title: incubator
+      INCUBATOR_SHAKER:
+        description: An incubating device that provides shaking motion for biomedical applications (e.g., cell cultures)
+        meaning: OBI:0001076
+        title: incubator shaker
+      MICROPLATE_READER:
+        description: A measurement device that detects biological, chemical or physical events of samples in microtiter 
+          plates
+        meaning: OBI:0001058
+        title: microplate reader
+      ELISA_MICROPLATE_READER:
+        description: A microplate reader that is used for enzyme-linked immunosorbent assays (ELISA)
+        meaning: OBI:0001059
+        title: ELISA microplate reader
+      MULTIMODE_MICROPLATE_READER:
+        description: A microplate reader that can detect multiple types of absorbance, luminescence or fluorescence
+        meaning: OBI:0001090
+        title: multimode microplate reader
+      MICROPLATE_WASHER:
+        description: A device that is used to wash immunoassays in microwell strips and plates with professional 
+          accuracy
+        meaning: OBI:0001113
+        title: microplate washer
+      ELISA_MICROPLATE_WASHER:
+        description: A microplate washer that is used for enzyme-linked immunosorbent assays (ELISA)
+        meaning: OBI:0001115
+        title: ELISA microplate washer
+      MULTICHANNEL_PIPETTE:
+        description: A pipetting system that has a plurality of tip fittings and is used for multi-well plate 
+          applications
+        meaning: OBI:0001118
+        title: multichannel pipette
+      ROBOTIC_ARM:
+        description: A programmable mechanical arm used in laboratory automation
+        meaning: SNOMED:82830000
+        title: robotic arm
+      THERMAL_CYCLER:
+        description: A laboratory apparatus used to amplify DNA segments via the polymerase chain reaction
+        title: thermal cycler
+      COLONY_PICKER:
+        description: An automated device for selecting and transferring individual bacterial or yeast colonies
+        title: colony picker
+      BARCODE_READER:
+        description: A device that reads barcode labels on laboratory samples and containers
+        title: barcode reader
+      PLATE_HANDLER:
+        description: An automated device designed to transfer microplates between workstations and lab instruments
+        title: plate handler
+      DISPENSER:
+        description: A device for automated dispensing of reagents or samples
+        title: dispenser
+  RoboticArmTypeEnum:
+    title: Robotic Arm Type
+    description: Types of robotic arms used in laboratory automation systems
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      FLEXIBLE_CHANNEL_ARM:
+        description: Robotic arm with flexible channels for disposable tip handling and liquid handling
+        title: flexible channel arm
+        annotations:
+          abbreviation: FCA
+      MULTI_CHANNEL_ARM:
+        description: Robotic arm used for high-throughput pipetting with 96 or 384 channels
+        title: multi-channel arm
+        annotations:
+          abbreviation: MCA
+      ROBOTIC_GRIPPER_ARM:
+        description: Robotic arm used to pick and transfer objects within the working area, equipped with dedicated 
+          gripper fingers
+        title: robotic gripper arm
+        annotations:
+          abbreviation: RGA
+      SINGLE_PROBE_ARM:
+        description: Robotic arm with a single probe for individual sample handling
+        title: single probe arm

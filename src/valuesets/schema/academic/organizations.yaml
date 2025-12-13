@@ -1,0 +1,588 @@
+name: organizations
+title: Research Organizations and Institutions
+description: |
+  Value sets for research organizations, institutions, and facilities.
+
+  ## Guidelines for Organization Identifiers
+
+  When mapping organization names to ontology terms, **use ROR (Research Organization Registry) as the primary source**.
+  ROR provides persistent identifiers for research organizations worldwide and is the preferred standard
+  for identifying research institutions.
+
+  - ROR Homepage: https://ror.org/
+  - ROR Search: https://ror.org/search
+  - ROR API: https://api.ror.org/organizations
+
+  ROR IDs should be used in the `meaning` field with the full URL format (e.g., https://ror.org/05gvnxz63).
+id: https://w3id.org/linkml/valuesets/academic/organizations
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  valuesets: https://w3id.org/valuesets/
+  ROR: https://ror.org/
+  GRID: https://www.grid.ac/institutes/
+  ISNI: https://isni.org/isni/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+default_prefix: valuesets
+
+slots:
+  us_national_laboratory:
+    description: US Department of Energy National Laboratory
+    range: USDOENationalLaboratoryEnum
+  us_federal_funding_agency:
+    description: US Federal Research Funding Agency
+    range: USFederalFundingAgencyEnum
+  nih_institute_center:
+    description: NIH Institute or Center
+    range: NIHInstituteCenterEnum
+  standards_organization:
+    description: Standards Development Organization
+    range: StandardsOrganizationEnum
+  un_specialized_agency:
+    description: United Nations Specialized Agency
+    range: UNSpecializedAgencyEnum
+
+enums:
+  USDOENationalLaboratoryEnum:
+    title: USDOE National Laboratory
+    description: |
+      United States Department of Energy National Laboratories.
+
+      The DOE operates 17 National Laboratories that serve as powerhouses of science and technology,
+      tackling critical scientific challenges and conducting cutting-edge research across multiple disciplines.
+
+      These laboratories are managed by contractors and stewarded by various DOE program offices,
+      with the Office of Science stewarding 10 of the 17 laboratories.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    comments:
+    - All organization names mapped to ROR (Research Organization Registry) identifiers
+    - See https://www.energy.gov/national-laboratories for official information
+    permissible_values:
+      AMES_LABORATORY:
+        title: Ames National Laboratory
+        description: National laboratory focused on materials science and chemistry research
+        meaning: ROR:041m9xr71
+        annotations:
+          location: Ames, Iowa
+          established: 1947
+          stewarding_office: Office of Science
+          website: https://www.ameslab.gov/
+      ARGONNE_NATIONAL_LABORATORY:
+        title: Argonne National Laboratory
+        description: Multidisciplinary science and engineering research center
+        meaning: ROR:05gvnxz63
+        annotations:
+          location: Lemont, Illinois
+          established: 1946
+          stewarding_office: Office of Science
+          website: https://www.anl.gov/
+      BROOKHAVEN_NATIONAL_LABORATORY:
+        title: Brookhaven National Laboratory
+        description: Research center for nuclear and high-energy physics
+        meaning: ROR:02ex6cf31
+        annotations:
+          location: Upton, New York
+          established: 1947
+          stewarding_office: Office of Science
+          website: https://www.bnl.gov/
+      FERMI_NATIONAL_ACCELERATOR_LABORATORY:
+        title: Fermi National Accelerator Laboratory
+        description: Particle physics and accelerator research laboratory
+        meaning: ROR:020hgte69
+        aliases:
+        - Fermilab
+        annotations:
+          location: Batavia, Illinois
+          established: 1967
+          stewarding_office: Office of Science
+          website: https://www.fnal.gov/
+      IDAHO_NATIONAL_LABORATORY:
+        title: Idaho National Laboratory
+        description: Nuclear energy research and national security laboratory
+        meaning: ROR:00ty2a548
+        annotations:
+          location: Idaho Falls, Idaho
+          established: 1949
+          stewarding_office: Office of Nuclear Energy
+          website: https://inl.gov/
+      LAWRENCE_BERKELEY_NATIONAL_LABORATORY:
+        title: Lawrence Berkeley National Laboratory
+        description: Multidisciplinary research laboratory
+        meaning: ROR:02jbv0t02
+        aliases:
+        - Berkeley Lab
+        - LBNL
+        annotations:
+          location: Berkeley, California
+          established: 1931
+          stewarding_office: Office of Science
+          website: https://www.lbl.gov/
+      LAWRENCE_LIVERMORE_NATIONAL_LABORATORY:
+        title: Lawrence Livermore National Laboratory
+        description: National security laboratory focused on nuclear weapons and advanced technology
+        meaning: ROR:041nk4h53
+        aliases:
+        - LLNL
+        annotations:
+          location: Livermore, California
+          established: 1952
+          stewarding_office: National Nuclear Security Administration
+          website: https://www.llnl.gov/
+      LOS_ALAMOS_NATIONAL_LABORATORY:
+        title: Los Alamos National Laboratory
+        description: Multidisciplinary research institution for national security
+        meaning: ROR:01e41cf67
+        aliases:
+        - LANL
+        annotations:
+          location: Los Alamos, New Mexico
+          established: 1943
+          stewarding_office: National Nuclear Security Administration
+          website: https://www.lanl.gov/
+      NATIONAL_ENERGY_TECHNOLOGY_LABORATORY:
+        title: National Energy Technology Laboratory
+        description: Federal research laboratory focused on energy and environmental technology
+        meaning: ROR:01x26mz03
+        aliases:
+        - NETL
+        annotations:
+          location: Pittsburgh, Pennsylvania and Morgantown, West Virginia
+          established: 1910
+          stewarding_office: Office of Fossil Energy and Carbon Management
+          website: https://www.netl.doe.gov/
+      NATIONAL_RENEWABLE_ENERGY_LABORATORY:
+        title: National Renewable Energy Laboratory
+        description: Research and development laboratory focused on renewable energy and energy efficiency
+        meaning: ROR:036266993
+        aliases:
+        - NREL
+        annotations:
+          location: Golden, Colorado
+          established: 1977
+          stewarding_office: Office of Energy Efficiency and Renewable Energy
+          website: https://www.nrel.gov/
+      OAK_RIDGE_NATIONAL_LABORATORY:
+        title: Oak Ridge National Laboratory
+        description: Multidisciplinary science and technology laboratory
+        meaning: ROR:01qz5mb56
+        aliases:
+        - ORNL
+        annotations:
+          location: Oak Ridge, Tennessee
+          established: 1943
+          stewarding_office: Office of Science
+          website: https://www.ornl.gov/
+      PACIFIC_NORTHWEST_NATIONAL_LABORATORY:
+        title: Pacific Northwest National Laboratory
+        description: Research laboratory focused on energy, environment, and national security
+        meaning: ROR:05h992307
+        aliases:
+        - PNNL
+        annotations:
+          location: Richland, Washington
+          established: 1965
+          stewarding_office: Office of Science
+          website: https://www.pnnl.gov/
+      PRINCETON_PLASMA_PHYSICS_LABORATORY:
+        title: Princeton Plasma Physics Laboratory
+        description: Plasma physics and fusion energy research laboratory
+        meaning: ROR:03vn1ts68
+        aliases:
+        - PPPL
+        annotations:
+          location: Princeton, New Jersey
+          established: 1951
+          stewarding_office: Office of Science
+          website: https://www.pppl.gov/
+      SANDIA_NATIONAL_LABORATORIES:
+        title: Sandia National Laboratories
+        description: Multimission laboratory for national security and technology innovation
+        meaning: ROR:01apwpt12
+        aliases:
+        - Sandia
+        - SNL
+        annotations:
+          location: Albuquerque, New Mexico and Livermore, California
+          established: 1949
+          stewarding_office: National Nuclear Security Administration
+          website: https://www.sandia.gov/
+      SAVANNAH_RIVER_NATIONAL_LABORATORY:
+        title: Savannah River National Laboratory
+        description: Applied research laboratory for environmental and national security missions
+        meaning: ROR:05vc7qy59
+        aliases:
+        - SRNL
+        annotations:
+          location: Aiken, South Carolina
+          established: 1951
+          stewarding_office: Office of Environmental Management
+          website: https://www.srnl.gov/
+      SLAC_NATIONAL_ACCELERATOR_LABORATORY:
+        title: SLAC National Accelerator Laboratory
+        description: Particle physics and photon science research laboratory
+        meaning: ROR:05gzmn429
+        aliases:
+        - SLAC
+        annotations:
+          location: Menlo Park, California
+          established: 1962
+          stewarding_office: Office of Science
+          website: https://www6.slac.stanford.edu/
+      THOMAS_JEFFERSON_NATIONAL_ACCELERATOR_FACILITY:
+        title: Thomas Jefferson National Accelerator Facility
+        description: Nuclear physics research laboratory with particle accelerator
+        meaning: ROR:02vwzrd76
+        aliases:
+        - Jefferson Lab
+        - JLab
+        annotations:
+          location: Newport News, Virginia
+          established: 1984
+          stewarding_office: Office of Science
+          website: https://www.jlab.org/
+
+  USFederalFundingAgencyEnum:
+    title: US Federal Funding Agency
+    description: |
+      Major United States Federal Research Funding Agencies.
+
+      These agencies provide funding for basic and applied research across various scientific disciplines,
+      supporting universities, national laboratories, and other research institutions.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    comments:
+    - All agency names mapped to ROR (Research Organization Registry) identifiers
+    - Includes primary research funding agencies
+    permissible_values:
+      NIH:
+        title: National Institutes of Health
+        description: Primary federal agency for biomedical and public health research
+        meaning: ROR:01cwqze88
+        aliases:
+        - National Institutes of Health
+        annotations:
+          parent_department: Department of Health and Human Services
+          website: https://www.nih.gov/
+          established: 1887
+      NSF:
+        title: U.S. National Science Foundation
+        description: Federal agency supporting fundamental research and education in non-medical fields
+        meaning: ROR:021nxhr62
+        aliases:
+        - National Science Foundation
+        annotations:
+          website: https://www.nsf.gov/
+          established: 1950
+      DOE:
+        title: United States Department of Energy
+        description: Federal department overseeing energy policy and nuclear weapons program
+        meaning: ROR:01bj3aw27
+        aliases:
+        - Department of Energy
+        - U.S. Department of Energy
+        annotations:
+          website: https://www.energy.gov/
+          established: 1977
+      NASA:
+        title: National Aeronautics and Space Administration
+        description: Federal agency responsible for civil space program and aeronautics research
+        meaning: ROR:027ka1x80
+        annotations:
+          website: https://www.nasa.gov/
+          established: 1958
+      EPA:
+        title: Environmental Protection Agency
+        description: Federal agency protecting human health and the environment
+        meaning: ROR:03tns0030
+        aliases:
+        - U.S. Environmental Protection Agency
+        annotations:
+          website: https://www.epa.gov/
+          established: 1970
+      NOAA:
+        title: National Oceanic and Atmospheric Administration
+        description: Federal agency focused on ocean, atmosphere, and coastal research
+        meaning: ROR:02z5nhe81
+        annotations:
+          parent_department: Department of Commerce
+          website: https://www.noaa.gov/
+          established: 1970
+      NIST:
+        title: National Institute of Standards and Technology
+        description: Federal agency promoting innovation and industrial competitiveness
+        meaning: ROR:05xpvk416
+        annotations:
+          parent_department: Department of Commerce
+          website: https://www.nist.gov/
+          established: 1901
+      USDA_ARS:
+        title: Agricultural Research Service
+        description: Principal research agency of the U.S. Department of Agriculture
+        meaning: ROR:02d2m2044
+        aliases:
+        - USDA ARS
+        annotations:
+          parent_department: Department of Agriculture
+          website: https://www.ars.usda.gov/
+          established: 1953
+      DOD:
+        title: United States Department of Defense
+        description: Federal department responsible for military research and development
+        meaning: ROR:0447fe631
+        aliases:
+        - Department of Defense
+        - U.S. Department of Defense
+        annotations:
+          website: https://www.defense.gov/
+          established: 1947
+      USGS:
+        title: United States Geological Survey
+        description: Federal agency for earth science research and monitoring
+        meaning: ROR:035a68863
+        annotations:
+          parent_department: Department of the Interior
+          website: https://www.usgs.gov/
+          established: 1879
+
+  NIHInstituteCenterEnum:
+    title: NIH Institute Center
+    description: |
+      National Institutes of Health (NIH) Institutes and Centers.
+
+      NIH comprises 27 Institutes and Centers, each with a specific research agenda focused on particular
+      diseases or body systems. These are the major NIH ICs that fund extramural research.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    comments:
+    - All mapped to ROR (Research Organization Registry) identifiers
+    - Focuses on major funding institutes
+    permissible_values:
+      NCI:
+        title: National Cancer Institute
+        description: NIH institute for cancer research and training
+        meaning: ROR:02t771148
+        aliases:
+        - National Cancer Institute
+        annotations:
+          parent_organization: National Institutes of Health
+          website: https://www.cancer.gov/
+          established: 1937
+      NHLBI:
+        title: National Heart Lung and Blood Institute
+        description: NIH institute for heart, lung, and blood diseases research
+        meaning: ROR:012pb6c26
+        aliases:
+        - National Heart, Lung, and Blood Institute
+        annotations:
+          parent_organization: National Institutes of Health
+          website: https://www.nhlbi.nih.gov/
+          established: 1948
+      NIAID:
+        title: National Institute of Allergy and Infectious Diseases
+        description: NIH institute for infectious, immunologic, and allergic diseases research
+        meaning: ROR:043z4tv69
+        annotations:
+          parent_organization: National Institutes of Health
+          website: https://www.niaid.nih.gov/
+          established: 1948
+      NIMH:
+        title: National Institute of Mental Health
+        description: NIH institute for mental health research
+        meaning: ROR:04t0s7x83
+        annotations:
+          parent_organization: National Institutes of Health
+          website: https://www.nimh.nih.gov/
+          established: 1949
+      NINDS:
+        title: National Institute of Neurological Disorders and Stroke
+        description: NIH institute for neurological disorders research
+        meaning: ROR:01s5ya894
+        annotations:
+          parent_organization: National Institutes of Health
+          website: https://www.ninds.nih.gov/
+          established: 1950
+      NIDDK:
+        title: National Institute of Diabetes and Digestive and Kidney Diseases
+        description: NIH institute for diabetes, digestive, and kidney diseases research
+        meaning: ROR:00adh9b73
+        annotations:
+          parent_organization: National Institutes of Health
+          website: https://www.niddk.nih.gov/
+          established: 1950
+      NHGRI:
+        title: National Human Genome Research Institute
+        description: NIH institute for genomics and genetics research
+        meaning: ROR:00baak391
+        annotations:
+          parent_organization: National Institutes of Health
+          website: https://www.genome.gov/
+          established: 1989
+      NIGMS:
+        title: National Institute of General Medical Sciences
+        description: NIH institute supporting basic biomedical research
+        meaning: ROR:04q48ey07
+        annotations:
+          parent_organization: National Institutes of Health
+          website: https://www.nigms.nih.gov/
+          established: 1962
+      NIEHS:
+        title: National Institute of Environmental Health Sciences
+        description: NIH institute for environmental health sciences research
+        meaning: ROR:00j4k1h63
+        annotations:
+          parent_organization: National Institutes of Health
+          website: https://www.niehs.nih.gov/
+          established: 1966
+      NEI:
+        title: National Eye Institute
+        description: NIH institute for vision and eye disease research
+        meaning: ROR:03wkg3b53
+        annotations:
+          parent_organization: National Institutes of Health
+          website: https://www.nei.nih.gov/
+          established: 1968
+      NIA:
+        title: National Institute on Aging
+        description: NIH institute for aging research
+        meaning: ROR:049v75w11
+        annotations:
+          parent_organization: National Institutes of Health
+          website: https://www.nia.nih.gov/
+          established: 1974
+      NLM:
+        title: United States National Library of Medicine
+        description: World's largest biomedical library and NIH component
+        meaning: ROR:0060t0j89
+        aliases:
+        - National Library of Medicine
+        annotations:
+          parent_organization: National Institutes of Health
+          website: https://www.nlm.nih.gov/
+          established: 1956
+
+  StandardsOrganizationEnum:
+    title: Standards Organization
+    description: |
+      Major International Standards Development Organizations.
+
+      These organizations develop technical standards, specifications, and guidelines used globally
+      across various industries including information technology, healthcare, and engineering.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    comments:
+    - All mapped to ROR (Research Organization Registry) identifiers where available
+    - Includes standards bodies commonly referenced in research
+    permissible_values:
+      ISO:
+        title: International Organization for Standardization
+        description: International standard-setting body for industrial and commercial standards
+        meaning: ROR:004s85t07
+        annotations:
+          website: https://www.iso.org/
+          established: 1947
+          headquarters: Geneva, Switzerland
+      W3C:
+        title: World Wide Web Consortium
+        description: International standards organization for World Wide Web standards
+        meaning: ROR:0059y1582
+        annotations:
+          website: https://www.w3.org/
+          established: 1994
+          headquarters: Cambridge, Massachusetts
+      IEEE:
+        title: Institute of Electrical and Electronics Engineers
+        description: Professional association for electronic and electrical engineering
+        meaning: ROR:01n002310
+        annotations:
+          website: https://www.ieee.org/
+          established: 1963
+          headquarters: New York, USA
+      HL7:
+        title: Health Level Seven International
+        description: Standards development organization for healthcare information exchange
+        meaning: ROR:029ga8k16
+        aliases:
+        - Health Level Seven
+        annotations:
+          website: https://www.hl7.org/
+          established: 1987
+          headquarters: Ann Arbor, Michigan
+
+  UNSpecializedAgencyEnum:
+    title: UN Specialized Agency
+    description: |
+      United Nations Specialized Agencies.
+
+      UN specialized agencies are autonomous international organizations that coordinate their work
+      with the UN through negotiated agreements. They address international issues in their respective fields.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    comments:
+    - All mapped to ROR (Research Organization Registry) identifiers
+    - Includes major UN agencies relevant to research and development
+    permissible_values:
+      WHO:
+        title: World Health Organization
+        description: UN agency for international public health
+        meaning: ROR:01f80g185
+        annotations:
+          website: https://www.who.int/
+          established: 1948
+          headquarters: Geneva, Switzerland
+      UNESCO:
+        title: UNESCO
+        description: UN Educational, Scientific and Cultural Organization
+        meaning: ROR:04h4z8k05
+        aliases:
+        - United Nations Educational, Scientific and Cultural Organization
+        annotations:
+          website: https://www.unesco.org/
+          established: 1945
+          headquarters: Paris, France
+      IAEA:
+        title: International Atomic Energy Agency
+        description: International organization promoting peaceful use of nuclear energy
+        meaning: ROR:00gtfax65
+        annotations:
+          website: https://www.iaea.org/
+          established: 1957
+          headquarters: Vienna, Austria
+      WMO:
+        title: World Meteorological Organization
+        description: UN agency for weather, climate and water resources
+        meaning: ROR:011pjwf87
+        annotations:
+          website: https://public.wmo.int/
+          established: 1950
+          headquarters: Geneva, Switzerland
+      UNEP:
+        title: United Nations Environment Programme
+        description: UN program coordinating environmental activities
+        meaning: ROR:015z29x25
+        annotations:
+          website: https://www.unep.org/
+          established: 1972
+          headquarters: Nairobi, Kenya

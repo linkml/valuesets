@@ -29,6 +29,12 @@ try:
 except ImportError:
     HAS_OAK = False
 
+try:
+    from .rest_adapters import get_rest_adapter
+    HAS_REST_ADAPTERS = True
+except ImportError:
+    HAS_REST_ADAPTERS = False
+
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
@@ -140,10 +146,31 @@ class EnumEvaluator:
                 config_data = yaml.safe_load(f)
                 adapters = config_data.get('ontology_adapters', {})
                 # Convert keys to lowercase for case-insensitive lookup
-                return {k.lower(): v for k, v in adapters.items()}
+                oak_config = {k.lower(): v for k, v in adapters.items()}
+
+                # Validate REST adapter configurations
+                self._validate_oak_config(oak_config)
+
+                return oak_config
         except Exception as e:
             logger.warning(f"Could not load OAK config: {e}")
             return {}
+
+    def _validate_oak_config(self, oak_config: Dict[str, str]):
+        """
+        Validate OAK configuration for potential issues.
+
+        Checks for REST adapter configurations when REST adapters module is not available.
+        Logs warnings but does not raise exceptions to maintain graceful degradation.
+        """
+        for prefix, adapter_string in oak_config.items():
+            if adapter_string and adapter_string.startswith("rest:"):
+                if not HAS_REST_ADAPTERS:
+                    logger.error(
+                        f"Configuration error: Prefix '{prefix.upper()}' is configured to use "
+                        f"REST adapter '{adapter_string}' but REST adapters module is not available. "
+                        f"Install required dependencies or update oak_config.yaml."
+                    )
 
     def _get_cache_file(self, prefix: str) -> Path:
         """Get the cache file path for a given prefix."""
@@ -257,6 +284,10 @@ class EnumEvaluator:
         label = None
         adapter = None
 
+        # Load cache for this prefix if not already loaded
+        if prefix_lower in self._oak_config and prefix_lower not in self._prefix_caches:
+            self._prefix_caches[prefix_lower] = self._load_cache(prefix)
+
         # Try configured adapter first for this prefix
         if prefix_lower in self._oak_config:
             adapter_string = self._oak_config[prefix_lower]
@@ -269,8 +300,23 @@ class EnumEvaluator:
 
             if prefix_lower not in self._per_prefix_adapters:
                 try:
-                    self._per_prefix_adapters[prefix_lower] = get_adapter(adapter_string)
-                    logger.info(f"Created configured adapter for {prefix} ontology")
+                    # Check if this is a REST adapter (e.g., "rest:ror:")
+                    if adapter_string.startswith("rest:"):
+                        if not HAS_REST_ADAPTERS:
+                            logger.warning(f"REST adapters module not available for {prefix}")
+                            self._per_prefix_adapters[prefix_lower] = None
+                        else:
+                            adapter = get_rest_adapter(adapter_string)
+                            if adapter:
+                                self._per_prefix_adapters[prefix_lower] = adapter
+                                logger.info(f"Created REST adapter for {prefix}: {adapter_string}")
+                            else:
+                                logger.warning(f"Could not create REST adapter for {prefix}: {adapter_string}")
+                                self._per_prefix_adapters[prefix_lower] = None
+                    else:
+                        # Standard OAK adapter
+                        self._per_prefix_adapters[prefix_lower] = get_adapter(adapter_string)
+                        logger.info(f"Created configured adapter for {prefix} ontology")
                 except Exception as e:
                     logger.warning(f"Could not create configured adapter for {prefix}: {e}")
                     self._per_prefix_adapters[prefix_lower] = None

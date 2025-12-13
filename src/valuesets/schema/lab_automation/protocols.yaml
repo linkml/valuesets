@@ -1,0 +1,200 @@
+name: lab_automation_protocols
+id: https://w3id.org/linkml/valuesets/lab_automation/protocols
+prefixes:
+  valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+default_prefix: valuesets
+slots:
+  workflow_orchestration_type:
+    description: Type of workflow orchestration approach
+    range: WorkflowOrchestrationTypeEnum
+  scheduler_type:
+    description: Type of scheduling algorithm for laboratory automation
+    range: SchedulerTypeEnum
+  protocol_state:
+    description: Execution state of a laboratory protocol
+    range: ProtocolStateEnum
+  execution_mode:
+    description: Mode of protocol execution
+    range: ExecutionModeEnum
+enums:
+  WorkflowOrchestrationTypeEnum:
+    title: Workflow Orchestration Type
+    description: Types of workflow orchestration in laboratory automation systems
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      STATIC_ORCHESTRATION:
+        description: Pre-planned orchestration based on known constraints and fixed workflow
+        title: static orchestration
+      DYNAMIC_ORCHESTRATION:
+        description: Real-time orchestration that adapts to changing conditions and events
+        title: dynamic orchestration
+      HYBRID_ORCHESTRATION:
+        description: Combination of static planning with dynamic replanning capabilities
+        title: hybrid orchestration
+      EVENT_DRIVEN:
+        description: Orchestration triggered by specific events in the system
+        title: event-driven orchestration
+      PARALLEL_PROCESSING:
+        description: Orchestration that enables concurrent execution of independent tasks
+        title: parallel processing
+  SchedulerTypeEnum:
+    title: Scheduler Type
+    description: Types of scheduling algorithms for laboratory automation
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      STATIC_SCHEDULER:
+        description: Makes decisions based on known constraints requiring upfront planning
+        title: static scheduler
+      DYNAMIC_SCHEDULER:
+        description: Adapts scheduling decisions in real-time based on system state
+        title: dynamic scheduler
+      PRIORITY_BASED:
+        description: Schedules tasks based on assigned priority levels
+        title: priority-based scheduler
+      FIFO:
+        description: First-in-first-out scheduling
+        title: FIFO scheduler
+      RESOURCE_AWARE:
+        description: Schedules tasks considering available resources and constraints
+        title: resource-aware scheduler
+      DEADLINE_DRIVEN:
+        description: Schedules tasks to meet specified deadlines
+        title: deadline-driven scheduler
+  ProtocolStateEnum:
+    title: Protocol State
+    description: Execution states of laboratory protocols
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      PENDING:
+        description: Protocol is queued but not yet started
+        title: pending
+      RUNNING:
+        description: Protocol is currently executing
+        title: running
+      PAUSED:
+        description: Protocol execution has been temporarily suspended
+        title: paused
+      COMPLETED:
+        description: Protocol has finished successfully
+        title: completed
+      FAILED:
+        description: Protocol execution has failed
+        title: failed
+      ABORTED:
+        description: Protocol execution was manually aborted
+        title: aborted
+      VALIDATING:
+        description: Protocol is being validated before execution
+        title: validating
+      WAITING_FOR_RESOURCE:
+        description: Protocol is waiting for required resources to become available
+        title: waiting for resource
+  ExecutionModeEnum:
+    title: Execution Mode
+    description: Modes of protocol execution
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      AUTOMATED:
+        description: Fully automated execution without human intervention
+        title: automated
+      MANUAL:
+        description: Manual execution by human operator
+        title: manual
+      SEMI_AUTOMATED:
+        description: Combination of automated and manual steps
+        title: semi-automated
+      SUPERVISED:
+        description: Automated execution with human supervision
+        title: supervised
+      SIMULATION:
+        description: Simulated execution for testing and validation
+        title: simulation
+      DRY_RUN:
+        description: Test execution without actual operations
+        title: dry run
+  WorkflowErrorHandlingEnum:
+    title: Workflow Error Handling
+    description: Error handling strategies in laboratory automation workflows
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      ABORT_ON_ERROR:
+        description: Terminate workflow immediately upon encountering an error
+        title: abort on error
+      RETRY:
+        description: Attempt to retry the failed operation
+        title: retry
+      SKIP_AND_CONTINUE:
+        description: Skip the failed operation and continue with the workflow
+        title: skip and continue
+      NOTIFY_AND_PAUSE:
+        description: Notify operator and pause workflow for intervention
+        title: notify and pause
+      ROLLBACK:
+        description: Revert to previous stable state
+        title: rollback
+      FAILOVER:
+        description: Switch to backup resource or alternative execution path
+        title: failover
+  IntegrationSystemEnum:
+    title: Integration System
+    description: Types of systems integrated with laboratory automation platforms
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      LIMS:
+        description: Laboratory Information Management System
+        title: LIMS
+        annotations:
+          full_name: Laboratory Information Management System
+      ELN:
+        description: Electronic Laboratory Notebook
+        title: ELN
+        annotations:
+          full_name: Electronic Laboratory Notebook
+      MES:
+        description: Manufacturing Execution System
+        title: MES
+        annotations:
+          full_name: Manufacturing Execution System
+      SCADA:
+        description: Supervisory Control and Data Acquisition
+        title: SCADA
+        annotations:
+          full_name: Supervisory Control and Data Acquisition
+      CLOUD_STORAGE:
+        description: Cloud-based data storage systems
+        title: cloud storage
+      DATABASE:
+        description: Laboratory database systems
+        title: database
