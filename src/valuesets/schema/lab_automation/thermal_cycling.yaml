@@ -4,6 +4,8 @@ prefixes:
   OBI: http://purl.obolibrary.org/obo/OBI_
   NCIT: http://purl.obolibrary.org/obo/NCIT_
   valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   thermal_cycler_type:
@@ -17,7 +19,14 @@ slots:
     range: DetectionModeEnum
 enums:
   ThermalCyclerTypeEnum:
+    title: Thermal Cycler Type
     description: Types of thermal cycling instruments
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       STANDARD_THERMAL_CYCLER:
         description: Standard thermal cycler for endpoint PCR
@@ -47,7 +56,14 @@ enums:
         description: Thermal cycler designed for in situ PCR applications
         title: in situ thermal cycler
   PCROperationTypeEnum:
+    title: PCR Operation Type
     description: Types of PCR operations and techniques
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       STANDARD_PCR:
         description: Standard endpoint PCR amplification
@@ -90,7 +106,14 @@ enums:
         description: Absolute quantification PCR using partitioning
         title: digital PCR
   DetectionModeEnum:
+    title: Detection Mode
     description: Detection modes for real-time PCR instruments
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       SYBR_GREEN:
         description: DNA-binding dye detection
@@ -116,7 +139,14 @@ enums:
         description: Multi-channel fluorescence detection
         title: multi-channel
   PCRPlateTypeEnum:
+    title: PCR Plate Type
     description: Types of plates used for PCR applications
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       PCR_96_WELL:
         description: 96-well plate for PCR
@@ -140,7 +170,14 @@ enums:
         description: PCR plate with partial skirt
         title: semi-skirted plate
   ThermalCyclingStepEnum:
+    title: Thermal Cycling Step
     description: Steps in thermal cycling protocols
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       INITIAL_DENATURATION:
         description: Initial high-temperature step to denature template DNA

@@ -9,6 +9,8 @@ prefixes:
   SNOMED: http://snomed.info/id/
   # linkml_common: https://w3id.org/linkml-common/
   valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   material_class:
@@ -25,7 +27,14 @@ slots:
     range: CompositeTypeEnum
 enums:
   MaterialClassEnum:
+    title: Material Class
     description: Major classes of materials
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       METAL:
         description: Metallic materials with metallic bonding
@@ -62,7 +71,14 @@ enums:
         title: Nanomaterial
         meaning: NCIT:C62371
   PolymerTypeEnum:
+    title: Polymer Type
     description: Types of polymer materials
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       THERMOPLASTIC:
         description: Polymer that becomes moldable above specific temperature
@@ -92,7 +108,14 @@ enums:
         aliases:
         - conducting polymer
   MetalTypeEnum:
+    title: Metal Type
     description: Types of metallic materials
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       FERROUS:
         description: Iron-based metals and alloys
@@ -119,7 +142,14 @@ enums:
         title: Heavy Metal
         meaning: CHEBI:5631
   CompositeTypeEnum:
+    title: Composite Type
     description: Types of composite materials
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       FIBER_REINFORCED:
         description: Composite with fiber reinforcement

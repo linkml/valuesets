@@ -5,6 +5,7 @@ id: https://w3id.org/linkml/valuesets/time/temporal
 imports:
 - linkml:types
 prefixes:
+  linkml: https://w3id.org/linkml/
   valuesets: https://w3id.org/valuesets/
   TIME: http://www.w3.org/2006/time#
   greg: http://www.w3.org/ns/time/gregorian#
@@ -12,6 +13,8 @@ prefixes:
   NCIT: http://purl.obolibrary.org/obo/NCIT_
   UO: http://purl.obolibrary.org/obo/UO_
   ENVO: http://purl.obolibrary.org/obo/ENVO_
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   day_of_week:
@@ -43,7 +46,14 @@ slots:
     range: HistoricalPeriod
 enums:
   DayOfWeek:
+    title: Day Of Week
     description: Days of the week following ISO 8601 standard (Monday = 1)
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       MONDAY:
         description: Monday (first day of week in ISO 8601)
@@ -109,7 +119,14 @@ enums:
           iso_number: 7
           abbreviation: Sun
   Month:
+    title: Month
     description: Months of the year
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       JANUARY:
         description: January
@@ -232,7 +249,14 @@ enums:
           abbreviation: Dec
           days: 31
   Quarter:
+    title: Quarter
     description: Calendar quarters
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       Q1:
         description: First quarter (January-March)
@@ -251,7 +275,14 @@ enums:
         annotations:
           months: Oct-Dec
   Season:
+    title: Season
     description: Seasons of the year (Northern Hemisphere)
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       SPRING:
         description: Spring season
@@ -279,7 +310,14 @@ enums:
           months: Dec-Feb
           astronomical_start: ~Dec 21
   TimePeriod:
+    title: Time Period
     description: Common time periods and intervals
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       HOURLY:
         description: Every hour
@@ -318,7 +356,14 @@ enums:
         annotations:
           ucum: 2.a
   TimeOfDay:
+    title: Time Of Day
     description: Common times of day
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       DAWN:
         description: Dawn (first light)
@@ -349,7 +394,14 @@ enums:
         annotations:
           typical_time: 00:00
   BusinessTimeFrame:
+    title: Business Time Frame
     description: Common business and financial time frames
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       REAL_TIME:
         description: Real-time/instantaneous
@@ -400,7 +452,14 @@ enums:
         annotations:
           abbreviation: QTD
   GeologicalEra:
+    title: Geological Era
     description: Major geological eras
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       PRECAMBRIAN:
         description: Precambrian (4.6 billion - 541 million years ago)
@@ -411,7 +470,14 @@ enums:
       CENOZOIC:
         description: Cenozoic Era (66 million years ago - present)
   HistoricalPeriod:
+    title: Historical Period
     description: Major historical periods
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       PREHISTORIC:
         description: Before written records

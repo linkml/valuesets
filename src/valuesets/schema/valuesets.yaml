@@ -37,6 +37,9 @@ imports:
 - energy/nuclear/nuclear_safety
 - energy/nuclear/nuclear_facilities
 - energy/nuclear/nuclear_operations
+- energy/renewable/geothermal
+- energy/renewable/hydrogen
+- energy/renewable/bioenergy
 - industry/mining
 - industry/extractive_industry
 - statistics/prediction_outcomes
@@ -103,9 +106,11 @@ imports:
 - lab_automation/thermal_cycling
 prefixes:
   valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 classes:
-  Fake: null
+  Fake:
 license: Apache-2.0
 see_also:
 - https://linkml.github.io/valuesets

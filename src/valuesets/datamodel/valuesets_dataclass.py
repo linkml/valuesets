@@ -1,5 +1,5 @@
 # Auto generated from valuesets.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-11-05T18:09:57
+# Generation date: 2025-12-06T18:56:38
 # Schema: valuesets
 #
 # id: https://w3id.org/linkml/valuesets
@@ -62,7 +62,9 @@ metamodel_version = "1.7.0"
 version = None
 
 # Namespaces
+ORCID = CurieNamespace('orcid', 'https://orcid.org/')
 VALUESETS = CurieNamespace('valuesets', 'https://w3id.org/valuesets/')
+VALUESETS_META = CurieNamespace('valuesets_meta', 'https://w3id.org/valuesets/meta/')
 DEFAULT_ = VALUESETS
 
 
@@ -83,17 +85,28 @@ class Fake(YAMLRoot):
 
 # Enumerations
 class RelativeTimeEnum(EnumDefinitionImpl):
-
-    BEFORE = PermissibleValue(text="BEFORE")
-    AFTER = PermissibleValue(text="AFTER")
-    AT_SAME_TIME_AS = PermissibleValue(text="AT_SAME_TIME_AS")
+    """
+    Temporal relationships between events or time points
+    """
+    BEFORE = PermissibleValue(
+        text="BEFORE",
+        description="Occurs before the reference time point")
+    AFTER = PermissibleValue(
+        text="AFTER",
+        description="Occurs after the reference time point")
+    AT_SAME_TIME_AS = PermissibleValue(
+        text="AT_SAME_TIME_AS",
+        description="Occurs at the same time as the reference time point")
 
     _defn = EnumDefinition(
         name="RelativeTimeEnum",
+        description="Temporal relationships between events or time points",
     )
 
 class PresenceEnum(EnumDefinitionImpl):
-
+    """
+    Classification of whether an entity is present, absent, or at detection limits
+    """
     PRESENT = PermissibleValue(
         text="PRESENT",
         description="The entity is present")
@@ -109,6 +122,7 @@ class PresenceEnum(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
         name="PresenceEnum",
+        description="Classification of whether an entity is present, absent, or at detection limits",
     )
 
 class ContributorType(EnumDefinitionImpl):
@@ -207,13 +221,13 @@ class DataAbsentEnum(EnumDefinitionImpl):
             PermissibleValue(
                 text="negative-infinity",
                 title="Negative Infinity (NINF)",
-                description="""The numeric value is excessively low and unrepresentable due to a floating point processing        error.""",
+                description="""The numeric value is excessively low and unrepresentable due to a floating point processing error.""",
                 meaning=FHIR_DATA_ABSENT_REASON["negative-infinity"]))
         setattr(cls, "positive-infinity",
             PermissibleValue(
                 text="positive-infinity",
                 title="Positive Infinity (PINF)",
-                description="""The numeric value is excessively high and unrepresentable due to a floating point processing        error.""",
+                description="""The numeric value is excessively high and unrepresentable due to a floating point processing error.""",
                 meaning=FHIR_DATA_ABSENT_REASON["positive-infinity"]))
         setattr(cls, "not-performed",
             PermissibleValue(
@@ -2310,28 +2324,36 @@ class SampleType(EnumDefinitionImpl):
     """
     PROTEIN = PermissibleValue(
         text="PROTEIN",
-        description="Purified protein sample")
+        description="Purified protein sample",
+        meaning=NCIT["C17021"])
     NUCLEIC_ACID = PermissibleValue(
         text="NUCLEIC_ACID",
-        description="Nucleic acid sample (DNA or RNA)")
+        description="Nucleic acid sample (DNA or RNA)",
+        meaning=NCIT["C813"])
     PROTEIN_COMPLEX = PermissibleValue(
         text="PROTEIN_COMPLEX",
-        description="Protein-protein or protein-nucleic acid complex")
+        description="Protein-protein or protein-nucleic acid complex",
+        meaning=GO["0032991"])
     MEMBRANE_PROTEIN = PermissibleValue(
         text="MEMBRANE_PROTEIN",
-        description="Membrane-associated protein sample")
+        description="Membrane-associated protein sample",
+        meaning=NCIT["C16837"])
     VIRUS = PermissibleValue(
         text="VIRUS",
-        description="Viral particle or capsid")
+        description="Viral particle or capsid",
+        meaning=NCIT["C14283"])
     ORGANELLE = PermissibleValue(
         text="ORGANELLE",
-        description="Cellular organelle (mitochondria, chloroplast, etc.)")
+        description="Cellular organelle (mitochondria, chloroplast, etc.)",
+        meaning=GO["0043226"])
     CELL = PermissibleValue(
         text="CELL",
-        description="Whole cell sample")
+        description="Whole cell sample",
+        meaning=NCIT["C12508"])
     TISSUE = PermissibleValue(
         text="TISSUE",
-        description="Tissue sample")
+        description="Tissue sample",
+        meaning=NCIT["C12801"])
 
     _defn = EnumDefinition(
         name="SampleType",
@@ -2349,7 +2371,9 @@ class StructuralBiologyTechnique(EnumDefinitionImpl):
         meaning=CHMO["0002413"])
     CRYO_ET = PermissibleValue(
         text="CRYO_ET",
-        description="Cryo-electron tomography")
+        title="electron tomography",
+        description="Cryo-electron tomography",
+        meaning=MI["2338"])
     X_RAY_CRYSTALLOGRAPHY = PermissibleValue(
         text="X_RAY_CRYSTALLOGRAPHY",
         title="single crystal X-ray diffraction",
@@ -2357,7 +2381,9 @@ class StructuralBiologyTechnique(EnumDefinitionImpl):
         meaning=CHMO["0000159"])
     NEUTRON_CRYSTALLOGRAPHY = PermissibleValue(
         text="NEUTRON_CRYSTALLOGRAPHY",
-        description="Neutron crystallography")
+        title="neutron diffraction",
+        description="Neutron crystallography",
+        meaning=CHMO["0000175"])
     SAXS = PermissibleValue(
         text="SAXS",
         title="small-angle X-ray scattering",
@@ -2365,10 +2391,14 @@ class StructuralBiologyTechnique(EnumDefinitionImpl):
         meaning=CHMO["0000204"])
     SANS = PermissibleValue(
         text="SANS",
-        description="Small-angle neutron scattering")
+        title="small-angle neutron scattering",
+        description="Small-angle neutron scattering",
+        meaning=CHMO["0000184"])
     WAXS = PermissibleValue(
         text="WAXS",
-        description="Wide-angle X-ray scattering")
+        title="wide-angle X-ray scattering",
+        description="Wide-angle X-ray scattering",
+        meaning=CHMO["0000213"])
     NMR = PermissibleValue(
         text="NMR",
         title="nuclear magnetic resonance spectroscopy",
@@ -2380,7 +2410,9 @@ class StructuralBiologyTechnique(EnumDefinitionImpl):
         meaning=CHMO["0000470"])
     NEGATIVE_STAIN_EM = PermissibleValue(
         text="NEGATIVE_STAIN_EM",
-        description="Negative stain electron microscopy")
+        title="negative staining electron microscopy",
+        description="Negative stain electron microscopy",
+        meaning=FBBI["00000568"])
 
     _defn = EnumDefinition(
         name="StructuralBiologyTechnique",
@@ -2493,10 +2525,12 @@ class XRaySource(EnumDefinitionImpl):
     """
     SYNCHROTRON = PermissibleValue(
         text="SYNCHROTRON",
-        description="Synchrotron radiation source")
+        description="Synchrotron radiation source",
+        meaning=CHMO["0001810"])
     ROTATING_ANODE = PermissibleValue(
         text="ROTATING_ANODE",
-        description="Rotating anode generator")
+        description="Rotating anode generator",
+        meaning=CHMO["0001107"])
     MICROFOCUS = PermissibleValue(
         text="MICROFOCUS",
         description="Microfocus sealed tube")
@@ -2515,19 +2549,23 @@ class Detector(EnumDefinitionImpl):
     """
     DIRECT_ELECTRON = PermissibleValue(
         text="DIRECT_ELECTRON",
-        description="Direct electron detector (DED)")
+        description="Direct electron detector (DED)",
+        meaning=CHMO["0002837"])
     CCD = PermissibleValue(
         text="CCD",
-        description="Charge-coupled device camera")
+        description="Charge-coupled device camera",
+        meaning=CHMO["0002171"])
     CMOS = PermissibleValue(
         text="CMOS",
-        description="Complementary metal-oxide semiconductor detector")
+        description="Complementary metal-oxide semiconductor detector",
+        meaning=CHMO["0002836"])
     HYBRID_PIXEL = PermissibleValue(
         text="HYBRID_PIXEL",
         description="Hybrid pixel detector")
     PHOTOSTIMULABLE_PHOSPHOR = PermissibleValue(
         text="PHOTOSTIMULABLE_PHOSPHOR",
-        description="Photostimulable phosphor (image plate)")
+        description="Photostimulable phosphor (image plate)",
+        meaning=CHMO["0001069"])
 
     _defn = EnumDefinition(
         name="Detector",
@@ -2586,28 +2624,36 @@ class FileFormat(EnumDefinitionImpl):
     """
     MRC = PermissibleValue(
         text="MRC",
-        description="MRC format for EM density maps")
+        description="MRC format for EM density maps",
+        meaning=EDAM["3842"])
     TIFF = PermissibleValue(
         text="TIFF",
-        description="Tagged Image File Format")
+        description="Tagged Image File Format",
+        meaning=EDAM["3591"])
     HDF5 = PermissibleValue(
         text="HDF5",
-        description="Hierarchical Data Format 5")
+        description="Hierarchical Data Format 5",
+        meaning=EDAM["3590"])
     STAR = PermissibleValue(
         text="STAR",
-        description="Self-defining Text Archival and Retrieval format")
+        description="Self-defining Text Archival and Retrieval format",
+        meaning=EDAM["3906"])
     PDB = PermissibleValue(
         text="PDB",
-        description="Protein Data Bank coordinate format")
+        description="Protein Data Bank coordinate format",
+        meaning=EDAM["1476"])
     MMCIF = PermissibleValue(
         text="MMCIF",
-        description="Macromolecular Crystallographic Information File")
+        description="Macromolecular Crystallographic Information File",
+        meaning=EDAM["1477"])
     MTZ = PermissibleValue(
         text="MTZ",
-        description="MTZ reflection data format")
+        description="MTZ reflection data format",
+        meaning=EDAM["3816"])
     CBF = PermissibleValue(
         text="CBF",
-        description="Crystallographic Binary Format")
+        description="Crystallographic Binary Format",
+        meaning=EDAM["3874"])
     DM3 = PermissibleValue(
         text="DM3",
         description="Digital Micrograph format")
@@ -2689,6 +2735,146 @@ class ProcessingStatus(EnumDefinitionImpl):
     _defn = EnumDefinition(
         name="ProcessingStatus",
         description="Status of data processing workflows",
+    )
+
+class CoordinationGeometry(EnumDefinitionImpl):
+    """
+    Coordination geometry of metal centers in protein structures
+    """
+    LINEAR = PermissibleValue(
+        text="LINEAR",
+        description="Linear coordination geometry (2 ligands at 180°)")
+    TRIGONAL_PLANAR = PermissibleValue(
+        text="TRIGONAL_PLANAR",
+        description="Trigonal planar coordination geometry (3 ligands, 120° angles)")
+    TRIGONAL_PYRAMIDAL = PermissibleValue(
+        text="TRIGONAL_PYRAMIDAL",
+        description="Trigonal pyramidal coordination geometry")
+    T_SHAPED = PermissibleValue(
+        text="T_SHAPED",
+        description="T-shaped coordination geometry")
+    TETRAHEDRAL = PermissibleValue(
+        text="TETRAHEDRAL",
+        title="tetrahedral molecular geometry",
+        description="Tetrahedral coordination geometry (4 ligands, 109.5° angles)",
+        meaning=NCIT["C103215"])
+    SQUARE_PLANAR = PermissibleValue(
+        text="SQUARE_PLANAR",
+        title="square planar molecular geometry",
+        description="Square planar coordination geometry (4 ligands in plane)",
+        meaning=NCIT["C103211"])
+    TRIGONAL_BIPYRAMIDAL = PermissibleValue(
+        text="TRIGONAL_BIPYRAMIDAL",
+        description="Trigonal bipyramidal coordination geometry (5 ligands)")
+    SQUARE_PYRAMIDAL = PermissibleValue(
+        text="SQUARE_PYRAMIDAL",
+        description="Square pyramidal coordination geometry (5 ligands)")
+    PENTAGONAL_PLANAR = PermissibleValue(
+        text="PENTAGONAL_PLANAR",
+        description="Pentagonal planar coordination geometry (5 ligands in plane)")
+    OCTAHEDRAL = PermissibleValue(
+        text="OCTAHEDRAL",
+        title="octahedral molecular geometry",
+        description="Octahedral coordination geometry (6 ligands)",
+        meaning=NCIT["C103216"])
+    TRIGONAL_PRISMATIC = PermissibleValue(
+        text="TRIGONAL_PRISMATIC",
+        description="Trigonal prismatic coordination geometry (6 ligands)")
+    PENTAGONAL_BIPYRAMIDAL = PermissibleValue(
+        text="PENTAGONAL_BIPYRAMIDAL",
+        description="Pentagonal bipyramidal coordination geometry (7 ligands)")
+    HEXAGONAL_BIPYRAMIDAL = PermissibleValue(
+        text="HEXAGONAL_BIPYRAMIDAL",
+        description="Hexagonal bipyramidal coordination geometry (8 ligands)")
+    SQUARE_ANTIPRISMATIC = PermissibleValue(
+        text="SQUARE_ANTIPRISMATIC",
+        description="Square antiprismatic coordination geometry (8 ligands)")
+    DODECAHEDRAL = PermissibleValue(
+        text="DODECAHEDRAL",
+        description="Dodecahedral coordination geometry (8 ligands)")
+    CUBIC = PermissibleValue(
+        text="CUBIC",
+        description="Cubic coordination geometry (8 ligands)")
+    BENT = PermissibleValue(
+        text="BENT",
+        description="Bent or angular coordination geometry")
+    SEE_SAW = PermissibleValue(
+        text="SEE_SAW",
+        description="See-saw coordination geometry (4 ligands)")
+
+    _defn = EnumDefinition(
+        name="CoordinationGeometry",
+        description="Coordination geometry of metal centers in protein structures",
+    )
+
+class MetalLigandType(EnumDefinitionImpl):
+    """
+    Types of metal-containing chemical components
+    """
+    METAL_CATION = PermissibleValue(
+        text="METAL_CATION",
+        description="Metal cation (e.g., Ca2+, Mg2+, Zn2+, Fe3+)")
+    METAL_CONTAINING_LIGAND = PermissibleValue(
+        text="METAL_CONTAINING_LIGAND",
+        description="Metal-containing ligand or cofactor")
+
+    _defn = EnumDefinition(
+        name="MetalLigandType",
+        description="Types of metal-containing chemical components",
+    )
+
+class ProteinModificationType(EnumDefinitionImpl):
+    """
+    Types of protein modifications
+    """
+    METAL_COORDINATION = PermissibleValue(
+        text="METAL_COORDINATION",
+        description="Metal coordination modification",
+        meaning=MOD["00739"])
+    PHOSPHORYLATION = PermissibleValue(
+        text="PHOSPHORYLATION",
+        description="Phosphorylation modification",
+        meaning=MOD["00696"])
+    GLYCOSYLATION = PermissibleValue(
+        text="GLYCOSYLATION",
+        description="Glycosylation modification",
+        meaning=MOD["00725"])
+    ACETYLATION = PermissibleValue(
+        text="ACETYLATION",
+        description="Acetylation modification",
+        meaning=MOD["00394"])
+    METHYLATION = PermissibleValue(
+        text="METHYLATION",
+        description="Methylation modification",
+        meaning=MOD["00599"])
+    UBIQUITINATION = PermissibleValue(
+        text="UBIQUITINATION",
+        description="Ubiquitination modification",
+        meaning=MOD["01240"])
+    SUMOYLATION = PermissibleValue(
+        text="SUMOYLATION",
+        description="SUMOylation modification",
+        meaning=MOD["01149"])
+    HYDROXYLATION = PermissibleValue(
+        text="HYDROXYLATION",
+        description="Hydroxylation modification",
+        meaning=MOD["00677"])
+    LIPIDATION = PermissibleValue(
+        text="LIPIDATION",
+        description="Lipidation modification",
+        meaning=MOD["00435"])
+    PROTEOLYTIC_CLEAVAGE = PermissibleValue(
+        text="PROTEOLYTIC_CLEAVAGE",
+        description="Proteolytic cleavage",
+        meaning=GO["0006508"])
+    CROSSLINKING = PermissibleValue(
+        text="CROSSLINKING",
+        description="Crosslinking modification",
+        meaning=MOD["00276"])
+
+    _defn = EnumDefinition(
+        name="ProteinModificationType",
+        description="Types of protein modifications",
     )
 
 class BiosafetyLevelEnum(EnumDefinitionImpl):
@@ -6501,6 +6687,37 @@ class ElectricityMarket(EnumDefinitionImpl):
         description="Types of electricity markets and pricing",
     )
 
+class CapabilityStatus(EnumDefinitionImpl):
+    """
+    Operational status of a capability, facility, or infrastructure. Applicable to energy facilities, research
+    capabilities, and other infrastructure throughout their lifecycle.
+    """
+    OPERATIONAL = PermissibleValue(
+        text="OPERATIONAL",
+        title="Operational",
+        description="Fully operational and available to users")
+    COMING_ONLINE = PermissibleValue(
+        text="COMING_ONLINE",
+        title="Coming Online",
+        description="Being commissioned, coming online soon")
+    PILOT = PermissibleValue(
+        text="PILOT",
+        title="Pilot",
+        description="In pilot phase with limited access")
+    UNDER_DEVELOPMENT = PermissibleValue(
+        text="UNDER_DEVELOPMENT",
+        title="Under Development",
+        description="Under development, not yet available")
+    DECOMMISSIONED = PermissibleValue(
+        text="DECOMMISSIONED",
+        title="Decommissioned",
+        description="No longer available, permanently shut down")
+
+    _defn = EnumDefinition(
+        name="CapabilityStatus",
+        description="""Operational status of a capability, facility, or infrastructure. Applicable to energy facilities, research capabilities, and other infrastructure throughout their lifecycle.""",
+    )
+
 class FossilFuelTypeEnum(EnumDefinitionImpl):
     """
     Types of fossil fuels used for energy generation
@@ -7984,6 +8201,605 @@ class OperationalProcedureEnum(EnumDefinitionImpl):
         description="Standard nuclear facility operational procedures",
     )
 
+class GeothermalSystemType(EnumDefinitionImpl):
+    """
+    Types of geothermal energy systems, including conventional hydrothermal and enhanced/engineered geothermal systems.
+    """
+    HYDROTHERMAL = PermissibleValue(
+        text="HYDROTHERMAL",
+        title="Conventional Hydrothermal System",
+        description="""Naturally occurring geothermal system with heat, fluid, and permeability sufficient for energy extraction without stimulation.""")
+    ENHANCED_GEOTHERMAL_SYSTEM = PermissibleValue(
+        text="ENHANCED_GEOTHERMAL_SYSTEM",
+        title="Enhanced Geothermal System (EGS)",
+        description="""Engineered reservoirs created to extract heat from low permeability geothermal resources through stimulation methods.""")
+    ADVANCED_GEOTHERMAL_SYSTEM = PermissibleValue(
+        text="ADVANCED_GEOTHERMAL_SYSTEM",
+        title="Advanced Geothermal System (AGS)",
+        description="""Closed-loop geothermal systems that circulate working fluid through wellbores to extract heat conductively without reservoir stimulation.""")
+    HOT_DRY_ROCK = PermissibleValue(
+        text="HOT_DRY_ROCK",
+        title="Hot Dry Rock (HDR)",
+        description="""Geothermal system targeting hot basement rock lacking natural fluid or permeability, requiring artificial reservoir creation.""")
+    GEOPRESSURED = PermissibleValue(
+        text="GEOPRESSURED",
+        title="Geopressured System",
+        description="""Deep sedimentary formations with abnormally high fluid pressure containing hot brine and dissolved methane.""")
+    SUPERCRITICAL = PermissibleValue(
+        text="SUPERCRITICAL",
+        title="Supercritical Geothermal System",
+        description="""Very high temperature systems (>374C) where water exists above its critical point, offering higher energy density.""")
+    GROUND_SOURCE_HEAT_PUMP = PermissibleValue(
+        text="GROUND_SOURCE_HEAT_PUMP",
+        title="Ground Source Heat Pump (GSHP)",
+        description="Shallow geothermal system using stable ground temperatures for heating and cooling buildings.")
+
+    _defn = EnumDefinition(
+        name="GeothermalSystemType",
+        description="""Types of geothermal energy systems, including conventional hydrothermal and enhanced/engineered geothermal systems.""",
+    )
+
+class GeothermalReservoirType(EnumDefinitionImpl):
+    """
+    Classification of geothermal reservoirs by geological setting and characteristics.
+    """
+    VOLCANIC = PermissibleValue(
+        text="VOLCANIC",
+        title="Volcanic Reservoir",
+        description="""Reservoir associated with volcanic activity, typically in active volcanic regions with magma heat sources.""")
+    SEDIMENTARY = PermissibleValue(
+        text="SEDIMENTARY",
+        title="Sedimentary Basin Reservoir",
+        description="""Reservoir in sedimentary formations with elevated temperatures due to depth or regional heat flow.""")
+    FRACTURED_BASEMENT = PermissibleValue(
+        text="FRACTURED_BASEMENT",
+        title="Fractured Basement Reservoir",
+        description="Reservoir in fractured crystalline basement rocks, typically granitic or metamorphic.")
+    FAULT_CONTROLLED = PermissibleValue(
+        text="FAULT_CONTROLLED",
+        title="Fault-Controlled Reservoir",
+        description="Reservoir where fluid flow is controlled by fault systems providing permeability pathways.")
+    MAGMATIC = PermissibleValue(
+        text="MAGMATIC",
+        title="Magmatic/Near-Magmatic Reservoir",
+        description="Very high temperature reservoir near or in contact with magma bodies or recent intrusions.")
+    CONDUCTION_DOMINATED = PermissibleValue(
+        text="CONDUCTION_DOMINATED",
+        title="Conduction-Dominated Reservoir",
+        description="""Low permeability reservoir where heat transfer is primarily through conduction rather than convection.""")
+
+    _defn = EnumDefinition(
+        name="GeothermalReservoirType",
+        description="Classification of geothermal reservoirs by geological setting and characteristics.",
+    )
+
+class GeothermalWellType(EnumDefinitionImpl):
+    """
+    Types of wells used in geothermal energy development and production.
+    """
+    PRODUCTION_WELL = PermissibleValue(
+        text="PRODUCTION_WELL",
+        title="Production Well",
+        description="Well used to extract geothermal fluids or steam from the reservoir.")
+    INJECTION_WELL = PermissibleValue(
+        text="INJECTION_WELL",
+        title="Injection Well",
+        description="""Well used to return cooled geothermal fluids to the reservoir to maintain pressure and sustainability.""")
+    EXPLORATION_WELL = PermissibleValue(
+        text="EXPLORATION_WELL",
+        title="Exploration Well",
+        description="Well drilled to evaluate geothermal resource characteristics.")
+    OBSERVATION_WELL = PermissibleValue(
+        text="OBSERVATION_WELL",
+        title="Observation/Monitoring Well",
+        description="Well used to monitor reservoir conditions and pressure.")
+    SLIM_HOLE = PermissibleValue(
+        text="SLIM_HOLE",
+        title="Slim Hole",
+        description="Smaller diameter well used for initial exploration and temperature gradient measurement.")
+    DIRECTIONAL_WELL = PermissibleValue(
+        text="DIRECTIONAL_WELL",
+        title="Directional/Deviated Well",
+        description="""Well drilled at an angle to access reservoir from offset surface location or increase reservoir contact.""")
+
+    _defn = EnumDefinition(
+        name="GeothermalWellType",
+        description="Types of wells used in geothermal energy development and production.",
+    )
+
+class GeothermalApplication(EnumDefinitionImpl):
+    """
+    Applications and uses of geothermal energy.
+    """
+    ELECTRICITY_GENERATION = PermissibleValue(
+        text="ELECTRICITY_GENERATION",
+        title="Electricity Generation",
+        description="""Use of geothermal resources for power generation through steam turbines or binary cycle plants.""",
+        meaning=ENVO["2000034"])
+    DIRECT_USE_HEATING = PermissibleValue(
+        text="DIRECT_USE_HEATING",
+        title="Direct Use Heating",
+        description="Direct use of geothermal heat for space heating, district heating, or industrial processes.")
+    GREENHOUSE_HEATING = PermissibleValue(
+        text="GREENHOUSE_HEATING",
+        title="Greenhouse Heating",
+        description="Use of geothermal heat for agricultural greenhouses.")
+    AQUACULTURE = PermissibleValue(
+        text="AQUACULTURE",
+        title="Aquaculture Heating",
+        description="Use of geothermal heat for fish farming and aquaculture.")
+    INDUSTRIAL_PROCESS_HEAT = PermissibleValue(
+        text="INDUSTRIAL_PROCESS_HEAT",
+        title="Industrial Process Heat",
+        description="Use of geothermal heat for industrial manufacturing processes.")
+    FOOD_PROCESSING = PermissibleValue(
+        text="FOOD_PROCESSING",
+        title="Food Processing",
+        description="Use of geothermal heat for food drying, pasteurization, and processing.")
+    BATHING_RECREATION = PermissibleValue(
+        text="BATHING_RECREATION",
+        title="Bathing and Recreation",
+        description="Use of geothermal waters for spas, pools, and recreation.")
+    LITHIUM_EXTRACTION = PermissibleValue(
+        text="LITHIUM_EXTRACTION",
+        title="Lithium Extraction",
+        description="""Extraction of lithium and other minerals from geothermal brines as a co-product of energy production.""")
+
+    _defn = EnumDefinition(
+        name="GeothermalApplication",
+        description="Applications and uses of geothermal energy.",
+    )
+
+class GeothermalResourceTemperature(EnumDefinitionImpl):
+    """
+    Classification of geothermal resources by temperature range.
+    """
+    LOW_TEMPERATURE = PermissibleValue(
+        text="LOW_TEMPERATURE",
+        title="Low Temperature Resource",
+        description="Geothermal resource below 90C, suitable for direct use applications.")
+    MODERATE_TEMPERATURE = PermissibleValue(
+        text="MODERATE_TEMPERATURE",
+        title="Moderate Temperature Resource",
+        description="Geothermal resource 90-150C, suitable for binary power generation.")
+    HIGH_TEMPERATURE = PermissibleValue(
+        text="HIGH_TEMPERATURE",
+        title="High Temperature Resource",
+        description="Geothermal resource above 150C, suitable for flash steam power generation.")
+    SUPERCRITICAL = PermissibleValue(
+        text="SUPERCRITICAL",
+        title="Supercritical Resource",
+        description="Very high temperature resource above 374C where water exists in supercritical state.")
+
+    _defn = EnumDefinition(
+        name="GeothermalResourceTemperature",
+        description="Classification of geothermal resources by temperature range.",
+    )
+
+class HydrogenType(EnumDefinitionImpl):
+    """
+    Color-coded classification of hydrogen based on production method and carbon intensity. This informal industry
+    taxonomy differentiates hydrogen by its carbon footprint and energy source.
+    """
+    GREEN_HYDROGEN = PermissibleValue(
+        text="GREEN_HYDROGEN",
+        title="Green Hydrogen",
+        description="""Hydrogen produced via electrolysis powered by renewable energy sources (solar, wind, hydro). Zero carbon emissions during production.""")
+    BLUE_HYDROGEN = PermissibleValue(
+        text="BLUE_HYDROGEN",
+        title="Blue Hydrogen",
+        description="""Hydrogen produced from natural gas via steam methane reforming (SMR) with carbon capture and storage (CCS). Low carbon intensity.""")
+    GREY_HYDROGEN = PermissibleValue(
+        text="GREY_HYDROGEN",
+        title="Grey Hydrogen",
+        description="""Hydrogen produced from natural gas via steam methane reforming without carbon capture. Most common production method currently.""")
+    BROWN_HYDROGEN = PermissibleValue(
+        text="BROWN_HYDROGEN",
+        title="Brown Hydrogen",
+        description="""Hydrogen produced from brown coal (lignite) gasification without carbon capture. High carbon intensity.""")
+    BLACK_HYDROGEN = PermissibleValue(
+        text="BLACK_HYDROGEN",
+        title="Black Hydrogen",
+        description="""Hydrogen produced from black coal (bituminous) gasification without carbon capture. High carbon intensity.""")
+    PINK_HYDROGEN = PermissibleValue(
+        text="PINK_HYDROGEN",
+        title="Pink Hydrogen",
+        description="""Hydrogen produced via electrolysis powered by nuclear energy. Zero carbon emissions during production.""")
+    TURQUOISE_HYDROGEN = PermissibleValue(
+        text="TURQUOISE_HYDROGEN",
+        title="Turquoise Hydrogen",
+        description="""Hydrogen produced via methane pyrolysis, producing solid carbon instead of CO2. Lower carbon intensity than grey hydrogen.""")
+    WHITE_HYDROGEN = PermissibleValue(
+        text="WHITE_HYDROGEN",
+        title="White Hydrogen",
+        description="""Naturally occurring geological hydrogen found in underground deposits. Zero production emissions.""")
+    YELLOW_HYDROGEN = PermissibleValue(
+        text="YELLOW_HYDROGEN",
+        title="Yellow Hydrogen",
+        description="""Hydrogen produced via electrolysis powered by solar energy specifically. A subset of green hydrogen.""")
+    ORANGE_HYDROGEN = PermissibleValue(
+        text="ORANGE_HYDROGEN",
+        title="Orange Hydrogen",
+        description="""Hydrogen produced from plastic waste gasification or pyrolysis. Emerging technology addressing both energy and waste challenges.""")
+
+    _defn = EnumDefinition(
+        name="HydrogenType",
+        description="""Color-coded classification of hydrogen based on production method and carbon intensity. This informal industry taxonomy differentiates hydrogen by its carbon footprint and energy source.""",
+    )
+
+class HydrogenProductionMethod(EnumDefinitionImpl):
+    """
+    Methods and processes for producing hydrogen.
+    """
+    STEAM_METHANE_REFORMING = PermissibleValue(
+        text="STEAM_METHANE_REFORMING",
+        title="Steam Methane Reforming (SMR)",
+        description="""High temperature steam reacts with methane to produce hydrogen, carbon monoxide, and carbon dioxide.""")
+    AUTOTHERMAL_REFORMING = PermissibleValue(
+        text="AUTOTHERMAL_REFORMING",
+        title="Autothermal Reforming (ATR)",
+        description="""Combines steam reforming and partial oxidation using oxygen and steam to produce hydrogen from hydrocarbons.""")
+    PARTIAL_OXIDATION = PermissibleValue(
+        text="PARTIAL_OXIDATION",
+        title="Partial Oxidation (POX)",
+        description="""Exothermic process reacting hydrocarbons with limited oxygen to produce hydrogen and carbon monoxide.""")
+    COAL_GASIFICATION = PermissibleValue(
+        text="COAL_GASIFICATION",
+        title="Coal Gasification",
+        description="Conversion of coal to syngas (hydrogen and carbon monoxide) using high temperature and steam.",
+        meaning=CHMO["0001501"])
+    WATER_ELECTROLYSIS = PermissibleValue(
+        text="WATER_ELECTROLYSIS",
+        title="Water Electrolysis",
+        description="""Splitting water into hydrogen and oxygen using electrical current. Can be powered by various energy sources.""")
+    ALKALINE_ELECTROLYSIS = PermissibleValue(
+        text="ALKALINE_ELECTROLYSIS",
+        title="Alkaline Electrolysis (AEL)",
+        description="""Electrolysis using alkaline solution (typically KOH) as electrolyte. Mature commercial technology.""")
+    PEM_ELECTROLYSIS = PermissibleValue(
+        text="PEM_ELECTROLYSIS",
+        title="PEM Electrolysis",
+        description="""Proton Exchange Membrane electrolysis using solid polymer electrolyte. Higher efficiency, faster response.""")
+    SOLID_OXIDE_ELECTROLYSIS = PermissibleValue(
+        text="SOLID_OXIDE_ELECTROLYSIS",
+        title="Solid Oxide Electrolysis (SOEC)",
+        description="""High temperature electrolysis using solid ceramic electrolyte. Higher efficiency when waste heat is available.""")
+    METHANE_PYROLYSIS = PermissibleValue(
+        text="METHANE_PYROLYSIS",
+        title="Methane Pyrolysis",
+        description="""Thermal decomposition of methane into hydrogen and solid carbon without oxygen. Produces no direct CO2.""")
+    BIOMASS_GASIFICATION = PermissibleValue(
+        text="BIOMASS_GASIFICATION",
+        title="Biomass Gasification",
+        description="Thermochemical conversion of biomass to hydrogen-rich syngas at high temperatures.")
+    BIOLOGICAL_PRODUCTION = PermissibleValue(
+        text="BIOLOGICAL_PRODUCTION",
+        title="Biological Hydrogen Production",
+        description="""Production of hydrogen by microorganisms through photosynthesis, fermentation, or other biological processes.""")
+    THERMOCHEMICAL_WATER_SPLITTING = PermissibleValue(
+        text="THERMOCHEMICAL_WATER_SPLITTING",
+        title="Thermochemical Water Splitting",
+        description="""Using high temperatures from concentrated solar or nuclear to drive chemical cycles that split water.""")
+    PHOTOELECTROCHEMICAL = PermissibleValue(
+        text="PHOTOELECTROCHEMICAL",
+        title="Photoelectrochemical Water Splitting",
+        description="""Direct conversion of sunlight to hydrogen using specialized semiconductor materials in contact with water.""")
+
+    _defn = EnumDefinition(
+        name="HydrogenProductionMethod",
+        description="Methods and processes for producing hydrogen.",
+    )
+
+class HydrogenStorageMethod(EnumDefinitionImpl):
+    """
+    Methods for storing hydrogen for later use or transport.
+    """
+    COMPRESSED_GAS = PermissibleValue(
+        text="COMPRESSED_GAS",
+        title="Compressed Gas Storage",
+        description="Storage of hydrogen as compressed gas at high pressure (350-700 bar) in pressure vessels.")
+    LIQUID_HYDROGEN = PermissibleValue(
+        text="LIQUID_HYDROGEN",
+        title="Liquid Hydrogen Storage",
+        description="""Storage of hydrogen in liquid form at cryogenic temperatures (-253C). Higher energy density but requires insulation.""")
+    METAL_HYDRIDE = PermissibleValue(
+        text="METAL_HYDRIDE",
+        title="Metal Hydride Storage",
+        description="""Storage of hydrogen absorbed into metal alloys forming metal hydrides. Safer but heavier than compressed gas.""")
+    CHEMICAL_HYDRIDE = PermissibleValue(
+        text="CHEMICAL_HYDRIDE",
+        title="Chemical Hydride Storage",
+        description="Storage as chemical compounds (ammonia, methanol, LOHC) that release hydrogen when processed.")
+    UNDERGROUND_STORAGE = PermissibleValue(
+        text="UNDERGROUND_STORAGE",
+        title="Underground Storage",
+        description="""Large-scale storage in salt caverns, depleted gas fields, or aquifers for grid-scale applications.""")
+    CRYO_COMPRESSED = PermissibleValue(
+        text="CRYO_COMPRESSED",
+        title="Cryo-Compressed Storage",
+        description="Hybrid approach combining cryogenic cooling with high pressure for improved density.")
+
+    _defn = EnumDefinition(
+        name="HydrogenStorageMethod",
+        description="Methods for storing hydrogen for later use or transport.",
+    )
+
+class HydrogenApplication(EnumDefinitionImpl):
+    """
+    End-use applications for hydrogen.
+    """
+    FUEL_CELL_VEHICLE = PermissibleValue(
+        text="FUEL_CELL_VEHICLE",
+        title="Fuel Cell Electric Vehicle",
+        description="Use of hydrogen in fuel cells for transportation (cars, trucks, buses).")
+    FUEL_CELL_STATIONARY = PermissibleValue(
+        text="FUEL_CELL_STATIONARY",
+        title="Stationary Fuel Cell",
+        description="Use of hydrogen in stationary fuel cells for power generation.")
+    INDUSTRIAL_FEEDSTOCK = PermissibleValue(
+        text="INDUSTRIAL_FEEDSTOCK",
+        title="Industrial Feedstock",
+        description="""Use of hydrogen as chemical feedstock for ammonia production, petroleum refining, and chemical synthesis.""",
+        meaning=CHEBI["18276"])
+    STEEL_PRODUCTION = PermissibleValue(
+        text="STEEL_PRODUCTION",
+        title="Steel Production (Direct Reduction)",
+        description="Use of hydrogen to reduce iron ore in steelmaking, replacing coal.")
+    AMMONIA_SYNTHESIS = PermissibleValue(
+        text="AMMONIA_SYNTHESIS",
+        title="Ammonia Synthesis",
+        description="Use of hydrogen with nitrogen to produce ammonia for fertilizers.")
+    METHANOL_SYNTHESIS = PermissibleValue(
+        text="METHANOL_SYNTHESIS",
+        title="Methanol Synthesis",
+        description="Use of hydrogen with CO2 to produce methanol.")
+    POWER_TO_GAS = PermissibleValue(
+        text="POWER_TO_GAS",
+        title="Power-to-Gas",
+        description="Conversion of excess renewable electricity to hydrogen for grid balancing and energy storage.")
+    BLENDING_NATURAL_GAS = PermissibleValue(
+        text="BLENDING_NATURAL_GAS",
+        title="Natural Gas Blending",
+        description="Blending hydrogen into natural gas pipelines for decarbonization of heating.")
+    SYNTHETIC_FUELS = PermissibleValue(
+        text="SYNTHETIC_FUELS",
+        title="Synthetic Fuel Production",
+        description="Use of hydrogen with captured CO2 to produce synthetic hydrocarbons (e-fuels, SAF).")
+
+    _defn = EnumDefinition(
+        name="HydrogenApplication",
+        description="End-use applications for hydrogen.",
+    )
+
+class BiomassFeedstockType(EnumDefinitionImpl):
+    """
+    Types of biomass materials used as feedstocks for bioenergy production. Includes dedicated energy crops,
+    agricultural residues, forest residues, and waste streams.
+    """
+    CORN_STOVER = PermissibleValue(
+        text="CORN_STOVER",
+        title="Corn Stover",
+        description="""Agricultural residue consisting of leaves, stalks, and cobs remaining after corn grain harvest.""")
+    WHEAT_STRAW = PermissibleValue(
+        text="WHEAT_STRAW",
+        title="Wheat Straw",
+        description="Agricultural residue remaining after wheat grain harvest.")
+    RICE_STRAW = PermissibleValue(
+        text="RICE_STRAW",
+        title="Rice Straw",
+        description="Agricultural residue remaining after rice grain harvest.")
+    SWITCHGRASS = PermissibleValue(
+        text="SWITCHGRASS",
+        title="Switchgrass",
+        description="""Perennial warm-season grass native to North America, cultivated as dedicated energy crop for cellulosic biofuel production.""")
+    MISCANTHUS = PermissibleValue(
+        text="MISCANTHUS",
+        title="Miscanthus",
+        description="High-yielding perennial grass cultivated as dedicated energy crop.")
+    ENERGY_CANE = PermissibleValue(
+        text="ENERGY_CANE",
+        title="Energy Cane",
+        description="High-fiber sugarcane varieties bred for biomass production rather than sugar content.")
+    SWEET_SORGHUM = PermissibleValue(
+        text="SWEET_SORGHUM",
+        title="Sweet Sorghum",
+        description="""Sorghum variety with high sugar content in stalks, suitable for both sugar and lignocellulosic conversion.""")
+    POPLAR = PermissibleValue(
+        text="POPLAR",
+        title="Poplar",
+        description="Fast-growing hardwood tree cultivated as short-rotation woody crop for biomass.")
+    WILLOW = PermissibleValue(
+        text="WILLOW",
+        title="Willow",
+        description="Fast-growing shrub cultivated as short-rotation woody crop.")
+    FOREST_RESIDUE = PermissibleValue(
+        text="FOREST_RESIDUE",
+        title="Forest Residue",
+        description="""Biomass from forest operations including logging residues, thinning material, and salvage timber.""")
+    WOOD_PROCESSING_RESIDUE = PermissibleValue(
+        text="WOOD_PROCESSING_RESIDUE",
+        title="Wood Processing Residue",
+        description="Byproducts from wood processing including sawdust, bark, shavings, and wood chips.")
+    MUNICIPAL_SOLID_WASTE = PermissibleValue(
+        text="MUNICIPAL_SOLID_WASTE",
+        title="Municipal Solid Waste (Organic Fraction)",
+        description="Organic portion of municipal solid waste suitable for bioenergy conversion.")
+    FOOD_WASTE = PermissibleValue(
+        text="FOOD_WASTE",
+        title="Food Waste",
+        description="Waste food from residential, commercial, and industrial sources.")
+    ANIMAL_MANURE = PermissibleValue(
+        text="ANIMAL_MANURE",
+        title="Animal Manure",
+        description="Livestock waste including cattle, swine, and poultry manure.")
+    ALGAE = PermissibleValue(
+        text="ALGAE",
+        title="Algae",
+        description="Microalgae or macroalgae cultivated for lipid or carbohydrate content for biofuel production.")
+    USED_COOKING_OIL = PermissibleValue(
+        text="USED_COOKING_OIL",
+        title="Used Cooking Oil",
+        description="Waste vegetable oils from food preparation.")
+    SOYBEAN_OIL = PermissibleValue(
+        text="SOYBEAN_OIL",
+        title="Soybean Oil",
+        description="Vegetable oil from soybean seeds, used for biodiesel.",
+        meaning=CHEBI["166975"])
+    CORN_GRAIN = PermissibleValue(
+        text="CORN_GRAIN",
+        title="Corn Grain",
+        description="Corn kernels used for starch-based ethanol production.")
+    SUGARCANE = PermissibleValue(
+        text="SUGARCANE",
+        title="Sugarcane",
+        description="Sugar-rich crop used for first-generation ethanol production.")
+
+    _defn = EnumDefinition(
+        name="BiomassFeedstockType",
+        description="""Types of biomass materials used as feedstocks for bioenergy production. Includes dedicated energy crops, agricultural residues, forest residues, and waste streams.""",
+    )
+
+class BiofuelType(EnumDefinitionImpl):
+    """
+    Types of fuels produced from biomass feedstocks.
+    """
+    ETHANOL = PermissibleValue(
+        text="ETHANOL",
+        title="Ethanol",
+        description="""Alcohol biofuel (C2H5OH) produced by fermentation of sugars or starches, or from cellulosic biomass.""",
+        meaning=CHEBI["16236"])
+    BIODIESEL = PermissibleValue(
+        text="BIODIESEL",
+        title="Biodiesel",
+        description="""Fatty acid methyl esters (FAME) produced by transesterification of vegetable oils or animal fats.""",
+        meaning=MESH["D056804"])
+    RENEWABLE_DIESEL = PermissibleValue(
+        text="RENEWABLE_DIESEL",
+        title="Renewable Diesel",
+        description="Hydrocarbon diesel produced by hydrotreating lipids. Chemically identical to petroleum diesel.")
+    SUSTAINABLE_AVIATION_FUEL = PermissibleValue(
+        text="SUSTAINABLE_AVIATION_FUEL",
+        title="Sustainable Aviation Fuel (SAF)",
+        description="Jet fuel produced from biomass or waste, meeting aviation fuel specifications.")
+    BIOGAS = PermissibleValue(
+        text="BIOGAS",
+        title="Biogas",
+        description="Gaseous mixture of methane and CO2 produced by anaerobic digestion of organic matter.")
+    BIOMETHANE = PermissibleValue(
+        text="BIOMETHANE",
+        title="Biomethane",
+        description="Purified biogas upgraded to natural gas quality (>95% methane).")
+    BIO_OIL = PermissibleValue(
+        text="BIO_OIL",
+        title="Bio-Oil",
+        description="Liquid intermediate produced by pyrolysis or hydrothermal liquefaction of biomass.")
+    SYNGAS = PermissibleValue(
+        text="SYNGAS",
+        title="Syngas (Bio-Based)",
+        description="Synthesis gas (CO + H2) produced by gasification of biomass.",
+        meaning=CHMO["0001501"])
+    BUTANOL = PermissibleValue(
+        text="BUTANOL",
+        title="Biobutanol",
+        description="Four-carbon alcohol biofuel with higher energy density than ethanol.",
+        meaning=CHEBI["28885"])
+    METHANOL = PermissibleValue(
+        text="METHANOL",
+        title="Biomethanol",
+        description="Methanol produced from biomass-derived syngas.",
+        meaning=CHEBI["17790"])
+    DIMETHYL_ETHER = PermissibleValue(
+        text="DIMETHYL_ETHER",
+        title="Bio-DME",
+        description="Dimethyl ether produced from biomass, usable as diesel substitute.",
+        meaning=CHEBI["28887"])
+
+    _defn = EnumDefinition(
+        name="BiofuelType",
+        description="Types of fuels produced from biomass feedstocks.",
+    )
+
+class BiofuelGeneration(EnumDefinitionImpl):
+    """
+    Classification of biofuels by feedstock source and technology generation.
+    """
+    FIRST_GENERATION = PermissibleValue(
+        text="FIRST_GENERATION",
+        title="First Generation Biofuel",
+        description="""Biofuels produced from food crops (sugar, starch, vegetable oils) using conventional conversion technologies.""")
+    SECOND_GENERATION = PermissibleValue(
+        text="SECOND_GENERATION",
+        title="Second Generation Biofuel",
+        description="""Biofuels produced from lignocellulosic biomass (non-food) using advanced conversion technologies.""")
+    THIRD_GENERATION = PermissibleValue(
+        text="THIRD_GENERATION",
+        title="Third Generation Biofuel",
+        description="Biofuels produced from algae or other photosynthetic microorganisms.")
+    FOURTH_GENERATION = PermissibleValue(
+        text="FOURTH_GENERATION",
+        title="Fourth Generation Biofuel",
+        description="""Biofuels from genetically engineered organisms designed for carbon capture and enhanced fuel production.""")
+
+    _defn = EnumDefinition(
+        name="BiofuelGeneration",
+        description="Classification of biofuels by feedstock source and technology generation.",
+    )
+
+class BioconversionProcess(EnumDefinitionImpl):
+    """
+    Processes for converting biomass feedstocks into biofuels and bioproducts.
+    """
+    FERMENTATION = PermissibleValue(
+        text="FERMENTATION",
+        title="Fermentation",
+        description="Biological conversion of sugars to alcohols using yeast or bacteria.")
+    ANAEROBIC_DIGESTION = PermissibleValue(
+        text="ANAEROBIC_DIGESTION",
+        title="Anaerobic Digestion",
+        description="""Biological breakdown of organic matter by microorganisms in the absence of oxygen, producing biogas.""")
+    TRANSESTERIFICATION = PermissibleValue(
+        text="TRANSESTERIFICATION",
+        title="Transesterification",
+        description="""Chemical reaction of triglycerides with alcohol to produce fatty acid esters (biodiesel) and glycerol.""")
+    HYDROTREATING = PermissibleValue(
+        text="HYDROTREATING",
+        title="Hydrotreating/Hydroprocessing",
+        description="Catalytic reaction of lipids with hydrogen to produce hydrocarbon fuels.")
+    PYROLYSIS = PermissibleValue(
+        text="PYROLYSIS",
+        title="Pyrolysis",
+        description="""Thermal decomposition of biomass in the absence of oxygen to produce bio-oil, syngas, and biochar.""")
+    GASIFICATION = PermissibleValue(
+        text="GASIFICATION",
+        title="Gasification",
+        description="""High-temperature conversion of carbonaceous materials to syngas using controlled oxygen and/or steam.""",
+        meaning=CHMO["0001501"])
+    HYDROTHERMAL_LIQUEFACTION = PermissibleValue(
+        text="HYDROTHERMAL_LIQUEFACTION",
+        title="Hydrothermal Liquefaction (HTL)",
+        description="Conversion of wet biomass to bio-crude using high temperature and pressure water.")
+    ENZYMATIC_HYDROLYSIS = PermissibleValue(
+        text="ENZYMATIC_HYDROLYSIS",
+        title="Enzymatic Hydrolysis",
+        description="Breakdown of cellulose and hemicellulose to fermentable sugars using enzymes.")
+    ACID_HYDROLYSIS = PermissibleValue(
+        text="ACID_HYDROLYSIS",
+        title="Acid Hydrolysis",
+        description="Chemical breakdown of cellulose to sugars using dilute or concentrated acid.")
+    FISCHER_TROPSCH = PermissibleValue(
+        text="FISCHER_TROPSCH",
+        title="Fischer-Tropsch Synthesis",
+        description="Catalytic conversion of syngas to liquid hydrocarbons.")
+    ALCOHOL_TO_JET = PermissibleValue(
+        text="ALCOHOL_TO_JET",
+        title="Alcohol-to-Jet (ATJ)",
+        description="""Conversion of alcohols (ethanol, isobutanol) to jet fuel through dehydration, oligomerization, and hydrogenation.""")
+
+    _defn = EnumDefinition(
+        name="BioconversionProcess",
+        description="Processes for converting biomass feedstocks into biofuels and bioproducts.",
+    )
+
 class MiningType(EnumDefinitionImpl):
     """
     Types of mining operations
@@ -8859,6 +9675,30 @@ class MimeType(EnumDefinitionImpl):
         text="APPLICATION_LD_JSON",
         description="JSON-LD format",
         meaning=IANA["application/ld+json"])
+    APPLICATION_N_QUADS = PermissibleValue(
+        text="APPLICATION_N_QUADS",
+        description="N-Quads RDF serialization format",
+        meaning=IANA["application/n-quads"])
+    APPLICATION_N_TRIPLES = PermissibleValue(
+        text="APPLICATION_N_TRIPLES",
+        description="N-Triples RDF serialization format",
+        meaning=IANA["application/n-triples"])
+    APPLICATION_RDF_XML = PermissibleValue(
+        text="APPLICATION_RDF_XML",
+        description="RDF/XML serialization format",
+        meaning=IANA["application/rdf+xml"])
+    APPLICATION_SPARQL_RESULTS_JSON = PermissibleValue(
+        text="APPLICATION_SPARQL_RESULTS_JSON",
+        description="SPARQL 1.1 Query Results JSON format",
+        meaning=IANA["application/sparql-results+json"])
+    APPLICATION_SPARQL_RESULTS_XML = PermissibleValue(
+        text="APPLICATION_SPARQL_RESULTS_XML",
+        description="SPARQL 1.1 Query Results XML format",
+        meaning=IANA["application/sparql-results+xml"])
+    APPLICATION_TRIG = PermissibleValue(
+        text="APPLICATION_TRIG",
+        description="TriG RDF serialization format",
+        meaning=IANA["application/trig"])
     APPLICATION_WASM = PermissibleValue(
         text="APPLICATION_WASM",
         description="WebAssembly binary format",
@@ -11777,6 +12617,88 @@ class CellPolarity(EnumDefinitionImpl):
     _defn = EnumDefinition(
         name="CellPolarity",
         description="Spatial polarity in cells and tissues",
+    )
+
+class AnatomicalOrientation(EnumDefinitionImpl):
+    """
+    Directional orientation between anatomical positions based on OME NGFF specification
+    """
+    LEFT_TO_RIGHT = PermissibleValue(
+        text="LEFT_TO_RIGHT",
+        title="Left to right orientation",
+        description="Directional orientation from left to right lateral side of an anatomical structure")
+    RIGHT_TO_LEFT = PermissibleValue(
+        text="RIGHT_TO_LEFT",
+        title="Right to left orientation",
+        description="Directional orientation from right to left lateral side of an anatomical structure")
+    ANTERIOR_TO_POSTERIOR = PermissibleValue(
+        text="ANTERIOR_TO_POSTERIOR",
+        title="Anterior to posterior orientation",
+        description="Directional orientation from front to back of an anatomical structure")
+    POSTERIOR_TO_ANTERIOR = PermissibleValue(
+        text="POSTERIOR_TO_ANTERIOR",
+        title="Posterior to anterior orientation",
+        description="Directional orientation from back to front of an anatomical structure")
+    INFERIOR_TO_SUPERIOR = PermissibleValue(
+        text="INFERIOR_TO_SUPERIOR",
+        title="Inferior to superior orientation",
+        description="Directional orientation from below to above in an anatomical structure")
+    SUPERIOR_TO_INFERIOR = PermissibleValue(
+        text="SUPERIOR_TO_INFERIOR",
+        title="Superior to inferior orientation",
+        description="Directional orientation from above to below in an anatomical structure")
+    DORSAL_TO_VENTRAL = PermissibleValue(
+        text="DORSAL_TO_VENTRAL",
+        title="Dorsal to ventral orientation",
+        description="Directional orientation from top/upper to belly/lower in an anatomical structure")
+    VENTRAL_TO_DORSAL = PermissibleValue(
+        text="VENTRAL_TO_DORSAL",
+        title="Ventral to dorsal orientation",
+        description="Directional orientation from belly/lower to top/upper in an anatomical structure")
+    DORSAL_TO_PALMAR = PermissibleValue(
+        text="DORSAL_TO_PALMAR",
+        title="Dorsal to palmar orientation",
+        description="Directional orientation from top/upper to palm of hand")
+    PALMAR_TO_DORSAL = PermissibleValue(
+        text="PALMAR_TO_DORSAL",
+        title="Palmar to dorsal orientation",
+        description="Directional orientation from palm of hand to top/upper")
+    DORSAL_TO_PLANTAR = PermissibleValue(
+        text="DORSAL_TO_PLANTAR",
+        title="Dorsal to plantar orientation",
+        description="Directional orientation from top/upper to sole of foot")
+    PLANTAR_TO_DORSAL = PermissibleValue(
+        text="PLANTAR_TO_DORSAL",
+        title="Plantar to dorsal orientation",
+        description="Directional orientation from sole of foot to top/upper")
+    ROSTRAL_TO_CAUDAL = PermissibleValue(
+        text="ROSTRAL_TO_CAUDAL",
+        title="Rostral to caudal orientation",
+        description="Directional orientation from nasal to tail end, typically for central nervous system")
+    CAUDAL_TO_ROSTRAL = PermissibleValue(
+        text="CAUDAL_TO_ROSTRAL",
+        title="Caudal to rostral orientation",
+        description="Directional orientation from tail to nasal end, typically for central nervous system")
+    CRANIAL_TO_CAUDAL = PermissibleValue(
+        text="CRANIAL_TO_CAUDAL",
+        title="Cranial to caudal orientation",
+        description="Directional orientation from head to tail end of a structure")
+    CAUDAL_TO_CRANIAL = PermissibleValue(
+        text="CAUDAL_TO_CRANIAL",
+        title="Caudal to cranial orientation",
+        description="Directional orientation from tail to head end of a structure")
+    PROXIMAL_TO_DISTAL = PermissibleValue(
+        text="PROXIMAL_TO_DISTAL",
+        title="Proximal to distal orientation",
+        description="Directional orientation from body center to periphery of a structure")
+    DISTAL_TO_PROXIMAL = PermissibleValue(
+        text="DISTAL_TO_PROXIMAL",
+        title="Distal to proximal orientation",
+        description="Directional orientation from periphery to body center of a structure")
+
+    _defn = EnumDefinition(
+        name="AnatomicalOrientation",
+        description="Directional orientation between anatomical positions based on OME NGFF specification",
     )
 
 class CrystalSystemEnum(EnumDefinitionImpl):
@@ -15766,7 +16688,7 @@ class UniProtSpeciesCode(EnumDefinitionImpl):
     SP_9ANUR = PermissibleValue(
         text="SP_9ANUR",
         title="Leptobrachium leishanense",
-        description="Leptobrachium leishanense (Leishan spiny toad) - Proteome: UP000694569",
+        description="Leptobrachium leishanense - Proteome: UP000694569",
         meaning=NCBITAXON["445787"])
     SP_9APHY = PermissibleValue(
         text="SP_9APHY",
@@ -15821,7 +16743,7 @@ class UniProtSpeciesCode(EnumDefinitionImpl):
     SP_9AVES = PermissibleValue(
         text="SP_9AVES",
         title="Anser brachyrhynchus",
-        description="Anser brachyrhynchus (Pink-footed goose) - Proteome: UP000694426",
+        description="Anser brachyrhynchus - Proteome: UP000694426",
         meaning=NCBITAXON["132585"])
     SP_9BACE = PermissibleValue(
         text="SP_9BACE",
@@ -15936,22 +16858,22 @@ class UniProtSpeciesCode(EnumDefinitionImpl):
     SP_9CERV = PermissibleValue(
         text="SP_9CERV",
         title="Cervus hanglu yarkandensis",
-        description="Cervus hanglu yarkandensis (Yarkand deer) - Proteome: UP000631465",
+        description="Cervus hanglu yarkandensis - Proteome: UP000631465",
         meaning=NCBITAXON["84702"])
     SP_9CETA = PermissibleValue(
         text="SP_9CETA",
         title="Catagonus wagneri",
-        description="Catagonus wagneri (Chacoan peccary) - Proteome: UP000694540",
+        description="Catagonus wagneri - Proteome: UP000694540",
         meaning=NCBITAXON["51154"])
     SP_9CHAR = PermissibleValue(
         text="SP_9CHAR",
         title="Rostratula benghalensis",
-        description="Rostratula benghalensis (greater painted-snipe) - Proteome: UP000545435",
+        description="Rostratula benghalensis - Proteome: UP000545435",
         meaning=NCBITAXON["118793"])
     SP_9CHIR = PermissibleValue(
         text="SP_9CHIR",
         title="Phyllostomus discolor",
-        description="Phyllostomus discolor (pale spear-nosed bat) - Proteome: UP000504628",
+        description="Phyllostomus discolor - Proteome: UP000504628",
         meaning=NCBITAXON["89673"])
     SP_9CHLA = PermissibleValue(
         text="SP_9CHLA",
@@ -15981,7 +16903,7 @@ class UniProtSpeciesCode(EnumDefinitionImpl):
     SP_9CICH = PermissibleValue(
         text="SP_9CICH",
         title="Maylandia zebra",
-        description="Maylandia zebra (zebra mbuna) - Proteome: UP000265160",
+        description="Maylandia zebra - Proteome: UP000265160",
         meaning=NCBITAXON["106582"])
     SP_9CILI = PermissibleValue(
         text="SP_9CILI",
@@ -16011,12 +16933,12 @@ class UniProtSpeciesCode(EnumDefinitionImpl):
     SP_9COLU = PermissibleValue(
         text="SP_9COLU",
         title="Pampusana beccarii",
-        description="Pampusana beccarii (Western bronze ground-dove) - Proteome: UP000541332",
+        description="Pampusana beccarii - Proteome: UP000541332",
         meaning=NCBITAXON["2953425"])
     SP_9CORV = PermissibleValue(
         text="SP_9CORV",
         title="Cnemophilus loriae",
-        description="Cnemophilus loriae (Loria's bird-of-paradise) - Proteome: UP000517678",
+        description="Cnemophilus loriae - Proteome: UP000517678",
         meaning=NCBITAXON["254448"])
     SP_9CORY = PermissibleValue(
         text="SP_9CORY",
@@ -16041,7 +16963,7 @@ class UniProtSpeciesCode(EnumDefinitionImpl):
     SP_9CUCU = PermissibleValue(
         text="SP_9CUCU",
         title="Ceutorhynchus assimilis",
-        description="Ceutorhynchus assimilis (cabbage seed weevil) - Proteome: UP001152799",
+        description="Ceutorhynchus assimilis - Proteome: UP001152799",
         meaning=NCBITAXON["467358"])
     SP_9CYAN = PermissibleValue(
         text="SP_9CYAN",
@@ -16071,7 +16993,7 @@ class UniProtSpeciesCode(EnumDefinitionImpl):
     SP_9DEND = PermissibleValue(
         text="SP_9DEND",
         title="Xiphorhynchus elegans",
-        description="Xiphorhynchus elegans (elegant woodcreeper) - Proteome: UP000551443",
+        description="Xiphorhynchus elegans - Proteome: UP000551443",
         meaning=NCBITAXON["269412"])
     SP_9DINO = PermissibleValue(
         text="SP_9DINO",
@@ -16186,7 +17108,7 @@ class UniProtSpeciesCode(EnumDefinitionImpl):
     SP_9GALL = PermissibleValue(
         text="SP_9GALL",
         title="Odontophorus gujanensis",
-        description="Odontophorus gujanensis (marbled wood quail) - Proteome: UP000522663",
+        description="Odontophorus gujanensis - Proteome: UP000522663",
         meaning=NCBITAXON["886794"])
     SP_9GAMA = PermissibleValue(
         text="SP_9GAMA",
@@ -16201,12 +17123,12 @@ class UniProtSpeciesCode(EnumDefinitionImpl):
     SP_9GAMM = PermissibleValue(
         text="SP_9GAMM",
         title="Buchnera aphidicola",
-        description="Buchnera aphidicola (Cinara tujafilina) - Proteome: UP000006811",
+        description="Buchnera aphidicola (Buchnera aphidicola (Cinara tujafilina)) - Proteome: UP000006811",
         meaning=NCBITAXON["261317"])
     SP_9GAST = PermissibleValue(
         text="SP_9GAST",
         title="Elysia crispata",
-        description="Elysia crispata (lettuce slug) - Proteome: UP001283361",
+        description="Elysia crispata - Proteome: UP001283361",
         meaning=NCBITAXON["231223"])
     SP_9GEMI = PermissibleValue(
         text="SP_9GEMI",
@@ -16221,12 +17143,12 @@ class UniProtSpeciesCode(EnumDefinitionImpl):
     SP_9GOBI = PermissibleValue(
         text="SP_9GOBI",
         title="Neogobius melanostomus",
-        description="Neogobius melanostomus (round goby) - Proteome: UP000694523",
+        description="Neogobius melanostomus - Proteome: UP000694523",
         meaning=NCBITAXON["47308"])
     SP_9GRUI = PermissibleValue(
         text="SP_9GRUI",
         title="Atlantisia rogersi",
-        description="Atlantisia rogersi (Inaccessible Island rail) - Proteome: UP000518911",
+        description="Atlantisia rogersi - Proteome: UP000518911",
         meaning=NCBITAXON["2478892"])
     SP_9HELI = PermissibleValue(
         text="SP_9HELI",
@@ -16271,7 +17193,7 @@ class UniProtSpeciesCode(EnumDefinitionImpl):
     SP_9INFA = PermissibleValue(
         text="SP_9INFA",
         title="Influenza A virus (A/California/VRDL364/2009",
-        description="Influenza A virus (A/California/VRDL364/2009 (mixed) - Proteome: UP000109975",
+        description="""Influenza A virus (A/California/VRDL364/2009 (Influenza A virus (A/California/VRDL364/2009(mixed))) - Proteome: UP000109975""",
         meaning=NCBITAXON["1049605"])
     SP_9INSE = PermissibleValue(
         text="SP_9INSE",
@@ -16281,43 +17203,223 @@ class UniProtSpeciesCode(EnumDefinitionImpl):
     SP_9LABR = PermissibleValue(
         text="SP_9LABR",
         title="Labrus bergylta",
-        description="Labrus bergylta (ballan wrasse) - Proteome: UP000261660",
+        description="Labrus bergylta - Proteome: UP000261660",
         meaning=NCBITAXON["56723"])
+    SP_ACIB2 = PermissibleValue(
+        text="SP_ACIB2",
+        title="Acinetobacter baumannii (strain ATCC 19606 / DSM 30007 / JCM 6841 / CCUG 19606 / CIP 70.34 / NBRC 109757 / NCIMB 12457 / NCTC 12156 / 81)",
+        description="""Acinetobacter baumannii (strain ATCC 19606 / DSM 30007 / JCM 6841 / CCUG 19606 / CIP 70.34 / NBRC 109757 / NCIMB 12457 / NCTC 12156 / 81) (A. baumannii ATCC 19606) - Proteome: UP000498640""",
+        meaning=NCBITAXON["575584"])
+    SP_ANOCA = PermissibleValue(
+        text="SP_ANOCA",
+        title="Anolis carolinensis",
+        description="Anolis carolinensis (Green anole (American chameleon)) - Proteome: UP000001646",
+        meaning=NCBITAXON["28377"])
+    SP_ANOGA = PermissibleValue(
+        text="SP_ANOGA",
+        title="Anopheles gambiae",
+        description="Anopheles gambiae (African malaria mosquito) - Proteome: UP000007062",
+        meaning=NCBITAXON["7165"])
+    SP_AQUAE = PermissibleValue(
+        text="SP_AQUAE",
+        title="Aquifex aeolicus",
+        description="Aquifex aeolicus (aquaficae bacteria) - Proteome: UP000000798",
+        meaning=NCBITAXON["224324"])
     SP_ARATH = PermissibleValue(
         text="SP_ARATH",
         title="Arabidopsis thaliana",
-        description="Arabidopsis thaliana (Thale cress) - Proteome: UP000006548",
+        description="Arabidopsis thaliana (Mouse-ear cress) - Proteome: UP000006548",
         meaning=NCBITAXON["3702"])
+    SP_ASPFU = PermissibleValue(
+        text="SP_ASPFU",
+        title="Neosartorya fumigata",
+        description="Neosartorya fumigata (ascomycote fungus) - Proteome: UP000002530",
+        meaning=NCBITAXON["330879"])
+    SP_BACAN = PermissibleValue(
+        text="SP_BACAN",
+        title="Bacillus anthracis",
+        description="Bacillus anthracis - Proteome: UP000000594",
+        meaning=NCBITAXON["1392"])
+    SP_BACCR = PermissibleValue(
+        text="SP_BACCR",
+        title="Bacillus cereus",
+        description="Bacillus cereus (bacillus cereus) - Proteome: UP000001417",
+        meaning=NCBITAXON["226900"])
     SP_BACSU = PermissibleValue(
         text="SP_BACSU",
         title="Bacillus subtilis subsp. subtilis str. 168",
-        description="Bacillus subtilis subsp. subtilis str. 168 - Proteome: UP000001570",
+        description="Bacillus subtilis subsp. subtilis str. 168 (b subtilis) - Proteome: UP000001570",
         meaning=NCBITAXON["224308"])
+    SP_BACTN = PermissibleValue(
+        text="SP_BACTN",
+        title="Bacteroides thetaiotaomicron",
+        description="Bacteroides thetaiotaomicron (bacteroidetes bacteria) - Proteome: UP000001414",
+        meaning=NCBITAXON["226186"])
+    SP_BATDJ = PermissibleValue(
+        text="SP_BATDJ",
+        title="Batrachochytrium dendrobatidis",
+        description="Batrachochytrium dendrobatidis (Frog chytrid fungus) - Proteome: UP000007241",
+        meaning=NCBITAXON["684364"])
     SP_BOVIN = PermissibleValue(
         text="SP_BOVIN",
         title="Bos taurus",
         description="Bos taurus (Cattle) - Proteome: UP000009136",
         meaning=NCBITAXON["9913"])
+    SP_BRACM = PermissibleValue(
+        text="SP_BRACM",
+        title="Brassica campestris",
+        description="Brassica campestris (Field mustard) - Proteome: UP000011750",
+        meaning=NCBITAXON["3711"])
+    SP_BRADI = PermissibleValue(
+        text="SP_BRADI",
+        title="Brachypodium distachyon",
+        description="Brachypodium distachyon (Purple false brome) - Proteome: UP000008810",
+        meaning=NCBITAXON["15368"])
+    SP_BRADU = PermissibleValue(
+        text="SP_BRADU",
+        title="Bradyrhizobium diazoefficiens",
+        description="Bradyrhizobium diazoefficiens (alphaproteobacteria) - Proteome: UP000002526",
+        meaning=NCBITAXON["224911"])
+    SP_BRAFL = PermissibleValue(
+        text="SP_BRAFL",
+        title="Branchiostoma floridae",
+        description="Branchiostoma floridae (Florida lancelet (Amphioxus)) - Proteome: UP000001554",
+        meaning=NCBITAXON["7739"])
+    SP_CAEBR = PermissibleValue(
+        text="SP_CAEBR",
+        title="Caenorhabditis briggsae",
+        description="Caenorhabditis briggsae (nematode worm) - Proteome: UP000008549",
+        meaning=NCBITAXON["6238"])
     SP_CAEEL = PermissibleValue(
         text="SP_CAEEL",
         title="Caenorhabditis elegans",
-        description="Caenorhabditis elegans - Proteome: UP000001940",
+        description="Caenorhabditis elegans (nematode worm) - Proteome: UP000001940",
         meaning=NCBITAXON["6239"])
+    SP_CAMJE = PermissibleValue(
+        text="SP_CAMJE",
+        title="Campylobacter jejuni subsp. jejuni serotype O:2 (strain ATCC 700819 / NCTC 11168)",
+        description="""Campylobacter jejuni subsp. jejuni serotype O:2 (strain ATCC 700819 / NCTC 11168) - Proteome: UP000000799""",
+        meaning=NCBITAXON["192222"])
+    SP_CANAL = PermissibleValue(
+        text="SP_CANAL",
+        title="Candida albicans",
+        description="Candida albicans (Yeast) - Proteome: UP000000559",
+        meaning=NCBITAXON["237561"])
+    SP_CANCO = PermissibleValue(
+        text="SP_CANCO",
+        title="Candida orthopsilosis (strain 90-125) (Co 90-125)",
+        description="Candida orthopsilosis (strain 90-125) (Co 90-125) - Proteome: UP000005018",
+        meaning=NCBITAXON["1136231"])
+    SP_CANDC = PermissibleValue(
+        text="SP_CANDC",
+        title="Candida dubliniensis (strain CD36 / ATCC MYA-646 / CBS 7987 / NCPF 3949 / NRRL Y-17841)",
+        description="""Candida dubliniensis (strain CD36 / ATCC MYA-646 / CBS 7987 / NCPF 3949 / NRRL Y-17841) - Proteome: UP000002605""",
+        meaning=NCBITAXON["573826"])
+    SP_CANGB = PermissibleValue(
+        text="SP_CANGB",
+        title="Candida glabrata (strain ATCC 2001 / BCRC 20586 / JCM 3761 / NBRC 0622 / NRRL Y-65 / CBS 138) (Nakaseomyces glabratus)",
+        description="""Candida glabrata (strain ATCC 2001 / BCRC 20586 / JCM 3761 / NBRC 0622 / NRRL Y-65 / CBS 138) (Nakaseomyces glabratus) - Proteome: UP000002428""",
+        meaning=NCBITAXON["284593"])
     SP_CANLF = PermissibleValue(
         text="SP_CANLF",
         title="Canis lupus familiaris",
         description="Canis lupus familiaris (Dog) - Proteome: UP000805418",
         meaning=NCBITAXON["9615"])
+    SP_CANPA = PermissibleValue(
+        text="SP_CANPA",
+        title="Candida parapsilosis (strain CDC 317 / ATCC MYA-4646)",
+        description="Candida parapsilosis (strain CDC 317 / ATCC MYA-4646) - Proteome: UP000005221",
+        meaning=NCBITAXON["578454"])
+    SP_CANTI = PermissibleValue(
+        text="SP_CANTI",
+        title="Candida tropicalis (strain ATCC MYA-3404 / T1)",
+        description="Candida tropicalis (strain ATCC MYA-3404 / T1) - Proteome: UP000002037",
+        meaning=NCBITAXON["294747"])
     SP_CHICK = PermissibleValue(
         text="SP_CHICK",
         title="Gallus gallus",
         description="Gallus gallus (Chicken) - Proteome: UP000000539",
         meaning=NCBITAXON["9031"])
+    SP_CHLAA = PermissibleValue(
+        text="SP_CHLAA",
+        title="Chloroflexus aurantiacus",
+        description="Chloroflexus aurantiacus (chloroflexi bacteria) - Proteome: UP000002008",
+        meaning=NCBITAXON["324602"])
+    SP_CHLRE = PermissibleValue(
+        text="SP_CHLRE",
+        title="Chlamydomonas reinhardtii",
+        description="Chlamydomonas reinhardtii (green algae) - Proteome: UP000006906",
+        meaning=NCBITAXON["3055"])
+    SP_CHLTR = PermissibleValue(
+        text="SP_CHLTR",
+        title="Chlamydia trachomatis",
+        description="Chlamydia trachomatis (chlamydia) - Proteome: UP000000431",
+        meaning=NCBITAXON["272561"])
+    SP_CIOIN = PermissibleValue(
+        text="SP_CIOIN",
+        title="Ciona intestinalis",
+        description="Ciona intestinalis (Transparent sea squirt) - Proteome: UP000008144",
+        meaning=NCBITAXON["7719"])
+    SP_CITK8 = PermissibleValue(
+        text="SP_CITK8",
+        title="Citrobacter koseri (strain ATCC BAA-895 / CDC 4225-83 / SGSC4696)",
+        description="Citrobacter koseri (strain ATCC BAA-895 / CDC 4225-83 / SGSC4696) - Proteome: UP000008148",
+        meaning=NCBITAXON["290338"])
+    SP_CLALU = PermissibleValue(
+        text="SP_CLALU",
+        title="Clavispora lusitaniae (strain ATCC 42720)",
+        description="Clavispora lusitaniae (strain ATCC 42720) - Proteome: UP000007703",
+        meaning=NCBITAXON["306902"])
+    SP_CLOBH = PermissibleValue(
+        text="SP_CLOBH",
+        title="Clostridium botulinum",
+        description="Clostridium botulinum (firmicutes bacteria) - Proteome: UP000001986",
+        meaning=NCBITAXON["441771"])
+    SP_COXBU = PermissibleValue(
+        text="SP_COXBU",
+        title="Coxiella burnetii",
+        description="Coxiella burnetii (gammaproteobacteria) - Proteome: UP000002671",
+        meaning=NCBITAXON["227377"])
+    SP_CRYD1 = PermissibleValue(
+        text="SP_CRYD1",
+        title="Cryptococcus neoformans var. neoformans serotype D (Filobasidiella neoformans)",
+        description="""Cryptococcus neoformans var. neoformans serotype D (Filobasidiella neoformans) (C. neoformans) - Proteome: UP000002149""",
+        meaning=NCBITAXON["214684"])
     SP_DANRE = PermissibleValue(
         text="SP_DANRE",
         title="Danio rerio",
         description="Danio rerio (Zebrafish) - Proteome: UP000000437",
         meaning=NCBITAXON["7955"])
+    SP_DAPPU = PermissibleValue(
+        text="SP_DAPPU",
+        title="Daphnia pulex",
+        description="Daphnia pulex (Water flea) - Proteome: UP000000305",
+        meaning=NCBITAXON["6669"])
+    SP_DEBHA = PermissibleValue(
+        text="SP_DEBHA",
+        title="Debaryomyces hansenii (strain ATCC 36239 / CBS 767 / BCRC 21394 / JCM 1990 / NBRC 0083 / IGC 2968) (Torulaspora hansenii)",
+        description="""Debaryomyces hansenii (strain ATCC 36239 / CBS 767 / BCRC 21394 / JCM 1990 / NBRC 0083 / IGC 2968) (Torulaspora hansenii) - Proteome: UP000000599""",
+        meaning=NCBITAXON["284592"])
+    SP_DEIRA = PermissibleValue(
+        text="SP_DEIRA",
+        title="Deinococcus radiodurans",
+        description="Deinococcus radiodurans (deinococcus bacteria) - Proteome: UP000002524",
+        meaning=NCBITAXON["243230"])
+    SP_DICDI = PermissibleValue(
+        text="SP_DICDI",
+        title="Dictyostelium discoideum",
+        description="Dictyostelium discoideum (Social amoeba) - Proteome: UP000002195",
+        meaning=NCBITAXON["44689"])
+    SP_DICPU = PermissibleValue(
+        text="SP_DICPU",
+        title="Dictyostelium purpureum",
+        description="Dictyostelium purpureum (Slime mold) - Proteome: UP000001064",
+        meaning=NCBITAXON["5786"])
+    SP_DICTD = PermissibleValue(
+        text="SP_DICTD",
+        title="Dictyoglomus turgidum",
+        description="Dictyoglomus turgidum (dictyoglomi bacteria) - Proteome: UP000007719",
+        meaning=NCBITAXON["515635"])
     SP_DROME = PermissibleValue(
         text="SP_DROME",
         title="Drosophila melanogaster",
@@ -16326,28 +17428,218 @@ class UniProtSpeciesCode(EnumDefinitionImpl):
     SP_ECOLI = PermissibleValue(
         text="SP_ECOLI",
         title="Escherichia coli K-12",
-        description="Escherichia coli K-12 - Proteome: UP000000625",
+        description="Escherichia coli K-12 (E. coli) - Proteome: UP000000625",
         meaning=NCBITAXON["83333"])
+    SP_EMENI = PermissibleValue(
+        text="SP_EMENI",
+        title="Emericella nidulans",
+        description="Emericella nidulans (ascomycote fungus) - Proteome: UP000000560",
+        meaning=NCBITAXON["227321"])
+    SP_ENTCA = PermissibleValue(
+        text="SP_ENTCA",
+        title="Enterococcus casseliflavus EC20",
+        description="Enterococcus casseliflavus EC20 - Proteome: UP000012675",
+        meaning=NCBITAXON["565655"])
+    SP_ENTFA = PermissibleValue(
+        text="SP_ENTFA",
+        title="Enterococcus faecalis (strain ATCC 700802 / V583)",
+        description="Enterococcus faecalis (strain ATCC 700802 / V583) - Proteome: UP000001415",
+        meaning=NCBITAXON["226185"])
+    SP_ENTGA = PermissibleValue(
+        text="SP_ENTGA",
+        title="Enterococcus gallinarum",
+        description="Enterococcus gallinarum - Proteome: UP000254807",
+        meaning=NCBITAXON["1353"])
+    SP_ENTH1 = PermissibleValue(
+        text="SP_ENTH1",
+        title="Entamoeba histolytica",
+        description="Entamoeba histolytica (amoeba) - Proteome: UP000001926",
+        meaning=NCBITAXON["294381"])
+    SP_EREGS = PermissibleValue(
+        text="SP_EREGS",
+        title="Eremothecium gossypii",
+        description="Eremothecium gossypii (Yeast) - Proteome: UP000000591",
+        meaning=NCBITAXON["284811"])
     SP_FELCA = PermissibleValue(
         text="SP_FELCA",
         title="Felis catus",
         description="Felis catus (Cat) - Proteome: UP000011712",
         meaning=NCBITAXON["9685"])
+    SP_FMDVO = PermissibleValue(
+        text="SP_FMDVO",
+        title="Foot-and-mouth disease virus serotype O (FMDV)",
+        description="Foot-and-mouth disease virus serotype O (FMDV) (FMDV) - Proteome: UP000008765",
+        meaning=NCBITAXON["12118"])
+    SP_FUSNN = PermissibleValue(
+        text="SP_FUSNN",
+        title="Fusobacterium nucleatum (strain ATCC 25586)",
+        description="Fusobacterium nucleatum (strain ATCC 25586) (F. nucleatum ATCC 25586) - Proteome: UP000241660",
+        meaning=NCBITAXON["190304"])
+    SP_GEOSL = PermissibleValue(
+        text="SP_GEOSL",
+        title="Geobacter sulfurreducens",
+        description="Geobacter sulfurreducens (deltaproteobacteria) - Proteome: UP000000577",
+        meaning=NCBITAXON["243231"])
+    SP_GIAIC = PermissibleValue(
+        text="SP_GIAIC",
+        title="Giardia intestinalis",
+        description="Giardia intestinalis (giardia) - Proteome: UP000001548",
+        meaning=NCBITAXON["184922"])
+    SP_GLOVI = PermissibleValue(
+        text="SP_GLOVI",
+        title="Gloeobacter violaceus",
+        description="Gloeobacter violaceus (cyanobacteria) - Proteome: UP000000557",
+        meaning=NCBITAXON["251221"])
     SP_GORGO = PermissibleValue(
         text="SP_GORGO",
         title="Gorilla gorilla gorilla",
         description="Gorilla gorilla gorilla (Western lowland gorilla) - Proteome: UP000001519",
         meaning=NCBITAXON["9593"])
+    SP_GOSHI = PermissibleValue(
+        text="SP_GOSHI",
+        title="Gossypium hirsutum",
+        description="Gossypium hirsutum (Upland cotton) - Proteome: UP000189702",
+        meaning=NCBITAXON["3635"])
+    SP_HAEIN = PermissibleValue(
+        text="SP_HAEIN",
+        title="Haemophilus influenzae (strain ATCC 51907 / DSM 11121 / KW20 / Rd)",
+        description="""Haemophilus influenzae (strain ATCC 51907 / DSM 11121 / KW20 / Rd) (H. influenzae strain ATCC 51907) - Proteome: UP000000579""",
+        meaning=NCBITAXON["71421"])
+    SP_HALH5 = PermissibleValue(
+        text="SP_HALH5",
+        title="Halalkalibacterium halodurans (strain ATCC BAA-125 / DSM 18197 / FERM 7344 / JCM 9153 / C-125) (Bacillus halodurans)",
+        description="""Halalkalibacterium halodurans (strain ATCC BAA-125 / DSM 18197 / FERM 7344 / JCM 9153 / C-125) (Bacillus halodurans) - Proteome: UP000001258""",
+        meaning=NCBITAXON["272558"])
+    SP_HALSA = PermissibleValue(
+        text="SP_HALSA",
+        title="Halobacterium salinarum",
+        description="Halobacterium salinarum (euryarchaea) - Proteome: UP000000554",
+        meaning=NCBITAXON["64091"])
+    SP_HBVCJ = PermissibleValue(
+        text="SP_HBVCJ",
+        title="Hepatitis B virus genotype C subtype ayr (isolate Human/Japan/Okamoto/-)",
+        description="""Hepatitis B virus genotype C subtype ayr (isolate Human/Japan/Okamoto/-) (HBV-C) - Proteome: UP000008591""",
+        meaning=NCBITAXON["928302"])
+    SP_HCMVA = PermissibleValue(
+        text="SP_HCMVA",
+        title="Human cytomegalovirus (strain AD169)",
+        description="Human cytomegalovirus (strain AD169) (Human herpesvirus 5 (HHV-5)) - Proteome: UP000008992",
+        meaning=NCBITAXON["10360"])
+    SP_HCMVM = PermissibleValue(
+        text="SP_HCMVM",
+        title="Human cytomegalovirus (Human herpesvirus 5) strain Merlin",
+        description="""Human cytomegalovirus (Human herpesvirus 5) strain Merlin (HHV-5 Merlin) - Proteome: UP000000938""",
+        meaning=NCBITAXON["295027"])
+    SP_HCV77 = PermissibleValue(
+        text="SP_HCV77",
+        title="Hepatitis C virus genotype 1a (isolate H77)",
+        description="Hepatitis C virus genotype 1a (isolate H77) (HCV) - Proteome: UP000000518",
+        meaning=NCBITAXON["63746"])
+    SP_HELAN = PermissibleValue(
+        text="SP_HELAN",
+        title="Helianthus annuus",
+        description="Helianthus annuus (Common sunflower) - Proteome: UP000215914",
+        meaning=NCBITAXON["4232"])
+    SP_HELPY = PermissibleValue(
+        text="SP_HELPY",
+        title="Helicobacter pylori (Campylobacter pylori) strain ATCC 700392 / 26695",
+        description="""Helicobacter pylori (Campylobacter pylori) strain ATCC 700392 / 26695 (H. pylori) - Proteome: UP000000429""",
+        meaning=NCBITAXON["85962"])
+    SP_HELRO = PermissibleValue(
+        text="SP_HELRO",
+        title="Helobdella robusta",
+        description="Helobdella robusta (Californian leech) - Proteome: UP000015101",
+        meaning=NCBITAXON["6412"])
+    SP_HHV11 = PermissibleValue(
+        text="SP_HHV11",
+        title="Human herpesvirus 1 (strain 17)",
+        description="Human herpesvirus 1 (strain 17) (Human herpes simplex virus 1 (HHV-1)) - Proteome: UP000009294",
+        meaning=NCBITAXON["10299"])
     SP_HORSE = PermissibleValue(
         text="SP_HORSE",
         title="Equus caballus",
         description="Equus caballus (Horse) - Proteome: UP000002281",
         meaning=NCBITAXON["9796"])
+    SP_HORVV = PermissibleValue(
+        text="SP_HORVV",
+        title="Hordeum vulgare subsp. vulgare",
+        description="Hordeum vulgare subsp. vulgare (Domesticated barley) - Proteome: UP000011116",
+        meaning=NCBITAXON["112509"])
+    SP_HPV16 = PermissibleValue(
+        text="SP_HPV16",
+        title="Human papillomavirus type 16",
+        description="Human papillomavirus type 16 - Proteome: UP000009251",
+        meaning=NCBITAXON["333760"])
     SP_HUMAN = PermissibleValue(
         text="SP_HUMAN",
         title="Homo sapiens",
         description="Homo sapiens (Human) - Proteome: UP000005640",
         meaning=NCBITAXON["9606"])
+    SP_HV1AN = PermissibleValue(
+        text="SP_HV1AN",
+        title="Human immunodeficiency virus type 1 group O (isolate ANT70)",
+        description="Human immunodeficiency virus type 1 group O (isolate ANT70) - Proteome: UP000007689",
+        meaning=NCBITAXON["327105"])
+    SP_IXOSC = PermissibleValue(
+        text="SP_IXOSC",
+        title="Ixodes scapularis",
+        description="Ixodes scapularis (Deer tick) - Proteome: UP000001555",
+        meaning=NCBITAXON["6945"])
+    SP_JUGRE = PermissibleValue(
+        text="SP_JUGRE",
+        title="Juglans regia",
+        description="Juglans regia (English walnut) - Proteome: UP000235220",
+        meaning=NCBITAXON["51240"])
+    SP_KLENI = PermissibleValue(
+        text="SP_KLENI",
+        title="Klebsormidium nitens",
+        description="Klebsormidium nitens (Green alga) - Proteome: UP000054558",
+        meaning=NCBITAXON["105231"])
+    SP_KLEPH = PermissibleValue(
+        text="SP_KLEPH",
+        title="Klebsiella pneumoniae subsp. pneumoniae (strain HS11286)",
+        description="Klebsiella pneumoniae subsp. pneumoniae (strain HS11286) - Proteome: UP000007841",
+        meaning=NCBITAXON["1125630"])
+    SP_KLEPO = PermissibleValue(
+        text="SP_KLEPO",
+        title="Klebsiella pneumoniae subsp. ozaenae (subspecies)",
+        description="Klebsiella pneumoniae subsp. ozaenae (subspecies) - Proteome: UP000255382",
+        meaning=NCBITAXON["574"])
+    SP_KORCO = PermissibleValue(
+        text="SP_KORCO",
+        title="Korarchaeum cryptofilum",
+        description="Korarchaeum cryptofilum (candidatus archaea) - Proteome: UP000001686",
+        meaning=NCBITAXON["374847"])
+    SP_LACSA = PermissibleValue(
+        text="SP_LACSA",
+        title="Lactuca sativa",
+        description="Lactuca sativa (Garden lettuce) - Proteome: UP000235145",
+        meaning=NCBITAXON["4236"])
+    SP_LEIMA = PermissibleValue(
+        text="SP_LEIMA",
+        title="Leishmania major strain Friedlin",
+        description="Leishmania major strain Friedlin (leishmania) - Proteome: UP000000542",
+        meaning=NCBITAXON["347515"])
+    SP_LEPIN = PermissibleValue(
+        text="SP_LEPIN",
+        title="Leptospira interrogans",
+        description="Leptospira interrogans (spirochaetes bacteria) - Proteome: UP000001408",
+        meaning=NCBITAXON["189518"])
+    SP_LEPOC = PermissibleValue(
+        text="SP_LEPOC",
+        title="Lepisosteus oculatus",
+        description="Lepisosteus oculatus (Spotted gar) - Proteome: UP000018468",
+        meaning=NCBITAXON["7918"])
+    SP_LISMO = PermissibleValue(
+        text="SP_LISMO",
+        title="Listeria monocytogenes serovar 1/2a (strain ATCC BAA-679 / EGD-e)",
+        description="Listeria monocytogenes serovar 1/2a (strain ATCC BAA-679 / EGD-e) - Proteome: UP000000817",
+        meaning=NCBITAXON["169963"])
+    SP_LODEL = PermissibleValue(
+        text="SP_LODEL",
+        title="Lodderomyces elongisporus (strain ATCC 11503 / CBS 2605 / JCM 1781 / NBRC 1676 / NRRL YB-4239) (Saccharomyces elongisporus)",
+        description="""Lodderomyces elongisporus (strain ATCC 11503 / CBS 2605 / JCM 1781 / NBRC 1676 / NRRL YB-4239) (Saccharomyces elongisporus) - Proteome: UP000001996""",
+        meaning=NCBITAXON["379508"])
     SP_MACMU = PermissibleValue(
         text="SP_MACMU",
         title="Macaca mulatta",
@@ -16358,11 +17650,116 @@ class UniProtSpeciesCode(EnumDefinitionImpl):
         title="Zea mays",
         description="Zea mays (Maize) - Proteome: UP000007305",
         meaning=NCBITAXON["4577"])
+    SP_MANES = PermissibleValue(
+        text="SP_MANES",
+        title="Manihot esculenta",
+        description="Manihot esculenta (Cassava) - Proteome: UP000091857",
+        meaning=NCBITAXON["3983"])
+    SP_MARPO = PermissibleValue(
+        text="SP_MARPO",
+        title="Marchantia polymorpha",
+        description="Marchantia polymorpha (Common liverwort) - Proteome: UP000244005",
+        meaning=NCBITAXON["3197"])
+    SP_MEASC = PermissibleValue(
+        text="SP_MEASC",
+        title="Measles virus (Subacute sclerose panencephalitis virus) strain Ichinose-B95a",
+        description="""Measles virus (Subacute sclerose panencephalitis virus) strain Ichinose-B95a (MeV strain Ichinose-B95a) - Proteome: UP000008699""",
+        meaning=NCBITAXON["645098"])
+    SP_MEDTR = PermissibleValue(
+        text="SP_MEDTR",
+        title="Medicago truncatula",
+        description="Medicago truncatula (Barrel medic) - Proteome: UP000002051",
+        meaning=NCBITAXON["3880"])
+    SP_METAC = PermissibleValue(
+        text="SP_METAC",
+        title="Methanosarcina acetivorans",
+        description="Methanosarcina acetivorans (euryarchaea) - Proteome: UP000002487",
+        meaning=NCBITAXON["188937"])
+    SP_METJA = PermissibleValue(
+        text="SP_METJA",
+        title="Methanocaldococcus jannaschii",
+        description="Methanocaldococcus jannaschii (methanococci archaea) - Proteome: UP000000805",
+        meaning=NCBITAXON["243232"])
+    SP_MONBE = PermissibleValue(
+        text="SP_MONBE",
+        title="Monosiga brevicollis",
+        description="Monosiga brevicollis (sponge) - Proteome: UP000001357",
+        meaning=NCBITAXON["81824"])
+    SP_MONDO = PermissibleValue(
+        text="SP_MONDO",
+        title="Monodelphis domestica",
+        description="Monodelphis domestica (Gray short-tailed opossum) - Proteome: UP000002280",
+        meaning=NCBITAXON["13616"])
     SP_MOUSE = PermissibleValue(
         text="SP_MOUSE",
         title="Mus musculus",
         description="Mus musculus (Mouse) - Proteome: UP000000589",
         meaning=NCBITAXON["10090"])
+    SP_MYCGE = PermissibleValue(
+        text="SP_MYCGE",
+        title="Mycoplasma genitalium",
+        description="Mycoplasma genitalium (mollicutes bacteria) - Proteome: UP000000807",
+        meaning=NCBITAXON["243273"])
+    SP_MYCMD = PermissibleValue(
+        text="SP_MYCMD",
+        title="Mycosarcoma maydis (Ustilago maydis)",
+        description="Mycosarcoma maydis (Ustilago maydis) (Corn smut fungus) - Proteome: UP000000561",
+        meaning=NCBITAXON["5270"])
+    SP_MYCPN = PermissibleValue(
+        text="SP_MYCPN",
+        title="Mycoplasma pneumoniae strain ATCC 29342 / M129 / Subtype 1",
+        description="Mycoplasma pneumoniae strain ATCC 29342 / M129 / Subtype 1 - Proteome: UP000000808",
+        meaning=NCBITAXON["272634"])
+    SP_MYCTA = PermissibleValue(
+        text="SP_MYCTA",
+        title="Mycobacterium tuberculosis (strain ATCC 25177 / H37Ra)",
+        description="Mycobacterium tuberculosis (strain ATCC 25177 / H37Ra) - Proteome: UP000001988",
+        meaning=NCBITAXON["419947"])
+    SP_MYCTU = PermissibleValue(
+        text="SP_MYCTU",
+        title="Mycobacterium tuberculosis H37Rv",
+        description="Mycobacterium tuberculosis H37Rv (actinobacteria) - Proteome: UP000001584",
+        meaning=NCBITAXON["83332"])
+    SP_NEIMB = PermissibleValue(
+        text="SP_NEIMB",
+        title="Neisseria meningitidis serogroup B (strain ATCC BAA-335 / MC58)",
+        description="""Neisseria meningitidis serogroup B (strain ATCC BAA-335 / MC58) (betaproteobacteria) - Proteome: UP000000425""",
+        meaning=NCBITAXON["122586"])
+    SP_NEIME = PermissibleValue(
+        text="SP_NEIME",
+        title="Neisseria meningitidis MC58",
+        description="Neisseria meningitidis MC58 - Proteome: UP000000425",
+        meaning=NCBITAXON["122586"])
+    SP_NELNU = PermissibleValue(
+        text="SP_NELNU",
+        title="Nelumbo nucifera",
+        description="Nelumbo nucifera (Sacred lotus) - Proteome: UP000189703",
+        meaning=NCBITAXON["4432"])
+    SP_NEMVE = PermissibleValue(
+        text="SP_NEMVE",
+        title="Nematostella vectensis",
+        description="Nematostella vectensis (Starlet sea anemone) - Proteome: UP000001593",
+        meaning=NCBITAXON["45351"])
+    SP_NEUCR = PermissibleValue(
+        text="SP_NEUCR",
+        title="Neurospora crassa",
+        description="Neurospora crassa (ascomycote fungus) - Proteome: UP000001805",
+        meaning=NCBITAXON["367110"])
+    SP_NITMS = PermissibleValue(
+        text="SP_NITMS",
+        title="Nitrosopumilus maritimus",
+        description="Nitrosopumilus maritimus (thaumarchaea) - Proteome: UP000000792",
+        meaning=NCBITAXON["436308"])
+    SP_ORNAN = PermissibleValue(
+        text="SP_ORNAN",
+        title="Ornithorhynchus anatinus",
+        description="Ornithorhynchus anatinus (Duckbill platypus) - Proteome: UP000002279",
+        meaning=NCBITAXON["9258"])
+    SP_ORYLA = PermissibleValue(
+        text="SP_ORYLA",
+        title="Oryzias latipes",
+        description="Oryzias latipes (Japanese rice fish) - Proteome: UP000001038",
+        meaning=NCBITAXON["8090"])
     SP_ORYSJ = PermissibleValue(
         text="SP_ORYSJ",
         title="Oryza sativa subsp. japonica",
@@ -16373,11 +17770,76 @@ class UniProtSpeciesCode(EnumDefinitionImpl):
         title="Pan troglodytes",
         description="Pan troglodytes (Chimpanzee) - Proteome: UP000002277",
         meaning=NCBITAXON["9598"])
+    SP_PARTE = PermissibleValue(
+        text="SP_PARTE",
+        title="Paramecium tetraurelia",
+        description="Paramecium tetraurelia (alveolate) - Proteome: UP000000600",
+        meaning=NCBITAXON["5888"])
+    SP_PEA = PermissibleValue(
+        text="SP_PEA",
+        title="Pisum sativum",
+        description="Pisum sativum (Garden pea) - Proteome: UP001058974",
+        meaning=NCBITAXON["3888"])
+    SP_PHANO = PermissibleValue(
+        text="SP_PHANO",
+        title="Phaeosphaeria nodorum",
+        description="Phaeosphaeria nodorum (Glume blotch fungus) - Proteome: UP000663193",
+        meaning=NCBITAXON["321614"])
+    SP_PHYPA = PermissibleValue(
+        text="SP_PHYPA",
+        title="Physcomitrella patens",
+        description="Physcomitrella patens (Spreading-leaved earth moss) - Proteome: UP000006727",
+        meaning=NCBITAXON["3218"])
+    SP_PHYRM = PermissibleValue(
+        text="SP_PHYRM",
+        title="Phytophthora ramorum",
+        description="Phytophthora ramorum (Sudden oak death agent) - Proteome: UP000005238",
+        meaning=NCBITAXON["164328"])
+    SP_PICGU = PermissibleValue(
+        text="SP_PICGU",
+        title="Meyerozyma guilliermondii (strain ATCC 6260 / CBS 566 / DSM 6381 / JCM 1539 / NBRC 10279 / NRRL Y-324) (Candida guilliermondii)",
+        description="""Meyerozyma guilliermondii (strain ATCC 6260 / CBS 566 / DSM 6381 / JCM 1539 / NBRC 10279 / NRRL Y-324) (Candida guilliermondii) - Proteome: UP000001997""",
+        meaning=NCBITAXON["294746"])
     SP_PIG = PermissibleValue(
         text="SP_PIG",
         title="Sus scrofa",
         description="Sus scrofa (Pig) - Proteome: UP000008227",
         meaning=NCBITAXON["9823"])
+    SP_PLAF7 = PermissibleValue(
+        text="SP_PLAF7",
+        title="Plasmodium falciparum 3D7",
+        description="Plasmodium falciparum 3D7 (Malaria parasite) - Proteome: UP000001450",
+        meaning=NCBITAXON["36329"])
+    SP_POPTR = PermissibleValue(
+        text="SP_POPTR",
+        title="Populus trichocarpa",
+        description="Populus trichocarpa (Western balsam poplar) - Proteome: UP000006729",
+        meaning=NCBITAXON["3694"])
+    SP_PRIPA = PermissibleValue(
+        text="SP_PRIPA",
+        title="Pristionchus pacificus",
+        description="Pristionchus pacificus (Parasitic nematode) - Proteome: UP000005239",
+        meaning=NCBITAXON["54126"])
+    SP_PRUPE = PermissibleValue(
+        text="SP_PRUPE",
+        title="Prunus persica",
+        description="Prunus persica (Peach) - Proteome: UP000006882",
+        meaning=NCBITAXON["3760"])
+    SP_PSEAE = PermissibleValue(
+        text="SP_PSEAE",
+        title="Pseudomonas aeruginosa PAO1",
+        description="Pseudomonas aeruginosa PAO1 (gammaproteobacteria) - Proteome: UP000002438",
+        meaning=NCBITAXON["208964"])
+    SP_PUCGT = PermissibleValue(
+        text="SP_PUCGT",
+        title="Puccinia graminis",
+        description="Puccinia graminis (Black stem rust fungus) - Proteome: UP000008783",
+        meaning=NCBITAXON["418459"])
+    SP_PYRAE = PermissibleValue(
+        text="SP_PYRAE",
+        title="Pyrobaculum aerophilum",
+        description="Pyrobaculum aerophilum (crenarchaea) - Proteome: UP000002439",
+        meaning=NCBITAXON["178306"])
     SP_RABIT = PermissibleValue(
         text="SP_RABIT",
         title="Oryctolagus cuniculus",
@@ -16388,16 +17850,211 @@ class UniProtSpeciesCode(EnumDefinitionImpl):
         title="Rattus norvegicus",
         description="Rattus norvegicus (Rat) - Proteome: UP000002494",
         meaning=NCBITAXON["10116"])
+    SP_RHOBA = PermissibleValue(
+        text="SP_RHOBA",
+        title="Rhodopirellula baltica",
+        description="Rhodopirellula baltica (planctomycetes bacteria) - Proteome: UP000001025",
+        meaning=NCBITAXON["243090"])
+    SP_SACS2 = PermissibleValue(
+        text="SP_SACS2",
+        title="Sulfolobus solfataricus",
+        description="Sulfolobus solfataricus (crenarchaea) - Proteome: UP000001974",
+        meaning=NCBITAXON["273057"])
+    SP_SALTY = PermissibleValue(
+        text="SP_SALTY",
+        title="Salmonella typhimurium (strain LT2 / SGSC1412 / ATCC 700720)",
+        description="""Salmonella typhimurium (strain LT2 / SGSC1412 / ATCC 700720) (S. typhimurium LT2) - Proteome: UP000001014""",
+        meaning=NCBITAXON["99287"])
+    SP_SCHJY = PermissibleValue(
+        text="SP_SCHJY",
+        title="Schizosaccharomyces japonicus",
+        description="Schizosaccharomyces japonicus (Fission yeast) - Proteome: UP000001744",
+        meaning=NCBITAXON["402676"])
     SP_SCHPO = PermissibleValue(
         text="SP_SCHPO",
         title="Schizosaccharomyces pombe 972h-",
         description="Schizosaccharomyces pombe 972h- (Fission yeast) - Proteome: UP000002485",
         meaning=NCBITAXON["284812"])
+    SP_SCLS1 = PermissibleValue(
+        text="SP_SCLS1",
+        title="Sclerotinia sclerotiorum",
+        description="Sclerotinia sclerotiorum (White mold) - Proteome: UP000001312",
+        meaning=NCBITAXON["665079"])
     SP_SHEEP = PermissibleValue(
         text="SP_SHEEP",
         title="Ovis aries",
         description="Ovis aries (Sheep) - Proteome: UP000002356",
         meaning=NCBITAXON["9940"])
+    SP_SHEON = PermissibleValue(
+        text="SP_SHEON",
+        title="Shewanella oneidensis",
+        description="Shewanella oneidensis (shewanella) - Proteome: UP000008186",
+        meaning=NCBITAXON["211586"])
+    SP_SHIFL = PermissibleValue(
+        text="SP_SHIFL",
+        title="Shigella flexneri",
+        description="Shigella flexneri - Proteome: UP000001006",
+        meaning=NCBITAXON["623"])
+    SP_SOLLC = PermissibleValue(
+        text="SP_SOLLC",
+        title="Solanum lycopersicum",
+        description="Solanum lycopersicum (Tomato) - Proteome: UP000004994",
+        meaning=NCBITAXON["4081"])
+    SP_SORBI = PermissibleValue(
+        text="SP_SORBI",
+        title="Sorghum bicolor",
+        description="Sorghum bicolor (Sorghum) - Proteome: UP000000768",
+        meaning=NCBITAXON["4558"])
+    SP_SOYBN = PermissibleValue(
+        text="SP_SOYBN",
+        title="Glycine max",
+        description="Glycine max (Soybean) - Proteome: UP000008827",
+        meaning=NCBITAXON["3847"])
+    SP_SPIOL = PermissibleValue(
+        text="SP_SPIOL",
+        title="Spinacia oleracea",
+        description="Spinacia oleracea (Spinach) - Proteome: UP001155700",
+        meaning=NCBITAXON["3562"])
+    SP_STAA8 = PermissibleValue(
+        text="SP_STAA8",
+        title="Staphylococcus aureus (strain NCTC 8325 / PS 47)",
+        description="Staphylococcus aureus (strain NCTC 8325 / PS 47) (S. aureus NCTC 8325) - Proteome: UP000008816",
+        meaning=NCBITAXON["93061"])
+    SP_STAAU = PermissibleValue(
+        text="SP_STAAU",
+        title="Staphylococcus aureus subsp. aureus NCTC 8325",
+        description="Staphylococcus aureus subsp. aureus NCTC 8325 - Proteome: UP000008816",
+        meaning=NCBITAXON["93061"])
+    SP_STRCL = PermissibleValue(
+        text="SP_STRCL",
+        title="Streptomyces clavuligerus",
+        description="Streptomyces clavuligerus - Proteome: UP000002357",
+        meaning=NCBITAXON["1901"])
+    SP_STRCO = PermissibleValue(
+        text="SP_STRCO",
+        title="Streptomyces coelicolor",
+        description="Streptomyces coelicolor (actinobacteria) - Proteome: UP000001973",
+        meaning=NCBITAXON["100226"])
+    SP_STRP1 = PermissibleValue(
+        text="SP_STRP1",
+        title="Streptococcus pyogenes serotype M1 (Strain: ATCC 700294 / SF370 / Serotype M1)",
+        description="""Streptococcus pyogenes serotype M1 (Strain: ATCC 700294 / SF370 / Serotype M1) - Proteome: UP000000750""",
+        meaning=NCBITAXON["301447"])
+    SP_STRP2 = PermissibleValue(
+        text="SP_STRP2",
+        title="Streptococcus pneumoniae serotype 2 (strain D39 / NCTC 7466)",
+        description="Streptococcus pneumoniae serotype 2 (strain D39 / NCTC 7466) - Proteome: UP000001452",
+        meaning=NCBITAXON["373153"])
+    SP_STRPN = PermissibleValue(
+        text="SP_STRPN",
+        title="Streptococcus pneumoniae serotype 4 (strain ATCC BAA-334 / TIGR4)",
+        description="Streptococcus pneumoniae serotype 4 (strain ATCC BAA-334 / TIGR4) - Proteome: UP000000586",
+        meaning=NCBITAXON["171101"])
+    SP_STRPU = PermissibleValue(
+        text="SP_STRPU",
+        title="Strongylocentrotus purpuratus",
+        description="Strongylocentrotus purpuratus (Purple sea urchin) - Proteome: UP000007110",
+        meaning=NCBITAXON["7668"])
+    SP_STRR6 = PermissibleValue(
+        text="SP_STRR6",
+        title="Streptococcus pneumoniae",
+        description="Streptococcus pneumoniae (strep) - Proteome: UP000000586",
+        meaning=NCBITAXON["171101"])
+    SP_SYNY3 = PermissibleValue(
+        text="SP_SYNY3",
+        title="Synechocystis sp.",
+        description="Synechocystis sp. (cyanobacteria) - Proteome: UP000001425",
+        meaning=NCBITAXON["1111708"])
+    SP_THAPS = PermissibleValue(
+        text="SP_THAPS",
+        title="Thalassiosira pseudonana",
+        description="Thalassiosira pseudonana (Marine diatom) - Proteome: UP000001449",
+        meaning=NCBITAXON["35128"])
+    SP_THECC = PermissibleValue(
+        text="SP_THECC",
+        title="Theobroma cacao",
+        description="Theobroma cacao (Cacao) - Proteome: UP000026915",
+        meaning=NCBITAXON["3641"])
+    SP_THEKO = PermissibleValue(
+        text="SP_THEKO",
+        title="Thermococcus kodakaraensis",
+        description="Thermococcus kodakaraensis (euryarchaea) - Proteome: UP000000536",
+        meaning=NCBITAXON["69014"])
+    SP_THEMA = PermissibleValue(
+        text="SP_THEMA",
+        title="Thermotoga maritima",
+        description="Thermotoga maritima (thermotogae bacteria) - Proteome: UP000008183",
+        meaning=NCBITAXON["243274"])
+    SP_THEYD = PermissibleValue(
+        text="SP_THEYD",
+        title="Thermodesulfovibrio yellowstonii",
+        description="Thermodesulfovibrio yellowstonii (nitrospirae bacteria) - Proteome: UP000000718",
+        meaning=NCBITAXON["289376"])
+    SP_TOBAC = PermissibleValue(
+        text="SP_TOBAC",
+        title="Nicotiana tabacum",
+        description="Nicotiana tabacum (Common tobacco) - Proteome: UP000084051",
+        meaning=NCBITAXON["4097"])
+    SP_TOXGO = PermissibleValue(
+        text="SP_TOXGO",
+        title="Toxoplasma gondii ME49",
+        description="Toxoplasma gondii ME49 - Proteome: UP000001529",
+        meaning=NCBITAXON["508771"])
+    SP_TRIAD = PermissibleValue(
+        text="SP_TRIAD",
+        title="Trichoplax adhaerens",
+        description="Trichoplax adhaerens (placozoan) - Proteome: UP000009022",
+        meaning=NCBITAXON["10228"])
+    SP_TRICA = PermissibleValue(
+        text="SP_TRICA",
+        title="Tribolium castaneum",
+        description="Tribolium castaneum (Red flour beetle) - Proteome: UP000007266",
+        meaning=NCBITAXON["7070"])
+    SP_TRIV3 = PermissibleValue(
+        text="SP_TRIV3",
+        title="Trichomonas vaginalis",
+        description="Trichomonas vaginalis (excavate) - Proteome: UP000001542",
+        meaning=NCBITAXON["412133"])
+    SP_TRYB2 = PermissibleValue(
+        text="SP_TRYB2",
+        title="Trypanosoma brucei brucei TREU927",
+        description="Trypanosoma brucei brucei TREU927 (excavate) - Proteome: UP000008524",
+        meaning=NCBITAXON["185431"])
+    SP_VACCW = PermissibleValue(
+        text="SP_VACCW",
+        title="Vaccinia virus (strain Western Reserve)",
+        description="Vaccinia virus (strain Western Reserve) (VACV strain WR) - Proteome: UP000000344",
+        meaning=NCBITAXON["10254"])
+    SP_VAR67 = PermissibleValue(
+        text="SP_VAR67",
+        title="Variola virus (Smallpox virus) (isolate Human/India/Ind3/1967)",
+        description="Variola virus (Smallpox virus) (isolate Human/India/Ind3/1967) (VARV) - Proteome: UP000002060",
+        meaning=NCBITAXON["587200"])
+    SP_VIBCH = PermissibleValue(
+        text="SP_VIBCH",
+        title="Vibrio cholerae",
+        description="Vibrio cholerae (cholera) - Proteome: UP000000584",
+        meaning=NCBITAXON["243277"])
+    SP_VITVI = PermissibleValue(
+        text="SP_VITVI",
+        title="Vitis vinifera",
+        description="Vitis vinifera (Grape) - Proteome: UP000009183",
+        meaning=NCBITAXON["29760"])
+    SP_VZVD = PermissibleValue(
+        text="SP_VZVD",
+        title="Varicella-zoster virus (Human herpesvirus 3) strain Dumas",
+        description="""Varicella-zoster virus (Human herpesvirus 3) strain Dumas (HHV-3 strain Dumas) - Proteome: UP000002602""",
+        meaning=NCBITAXON["10338"])
+    SP_WHEAT = PermissibleValue(
+        text="SP_WHEAT",
+        title="Triticum aestivum",
+        description="Triticum aestivum (Wheat) - Proteome: UP000019116",
+        meaning=NCBITAXON["4565"])
+    SP_XANCP = PermissibleValue(
+        text="SP_XANCP",
+        title="Xanthomonas campestris",
+        description="Xanthomonas campestris (xanthomonas) - Proteome: UP000001010",
+        meaning=NCBITAXON["190485"])
     SP_XENLA = PermissibleValue(
         text="SP_XENLA",
         title="Xenopus laevis",
@@ -16408,96 +18065,40 @@ class UniProtSpeciesCode(EnumDefinitionImpl):
         title="Xenopus tropicalis",
         description="Xenopus tropicalis (Western clawed frog) - Proteome: UP000008143",
         meaning=NCBITAXON["8364"])
+    SP_YARLI = PermissibleValue(
+        text="SP_YARLI",
+        title="Yarrowia lipolytica",
+        description="Yarrowia lipolytica (Yeast) - Proteome: UP000001300",
+        meaning=NCBITAXON["284591"])
     SP_YEAST = PermissibleValue(
         text="SP_YEAST",
         title="Saccharomyces cerevisiae S288C",
         description="Saccharomyces cerevisiae S288C (Baker's yeast) - Proteome: UP000002311",
         meaning=NCBITAXON["559292"])
-    SP_DICDI = PermissibleValue(
-        text="SP_DICDI",
-        title="Dictyostelium discoideum",
-        description="Dictyostelium discoideum (Slime mold) - Proteome: UP000002195",
-        meaning=NCBITAXON["44689"])
-    SP_HELPY = PermissibleValue(
-        text="SP_HELPY",
-        title="Helicobacter pylori 26695",
-        description="Helicobacter pylori 26695 - Proteome: UP000000429",
-        meaning=NCBITAXON["85962"])
-    SP_LEIMA = PermissibleValue(
-        text="SP_LEIMA",
-        title="Leishmania major strain Friedlin",
-        description="Leishmania major strain Friedlin",
-        meaning=NCBITAXON["347515"])
-    SP_MEDTR = PermissibleValue(
-        text="SP_MEDTR",
-        title="Medicago truncatula",
-        description="Medicago truncatula (Barrel medic) - Proteome: UP000002051",
-        meaning=NCBITAXON["3880"])
-    SP_MYCTU = PermissibleValue(
-        text="SP_MYCTU",
-        title="Mycobacterium tuberculosis H37Rv",
-        description="Mycobacterium tuberculosis H37Rv - Proteome: UP000001584",
-        meaning=NCBITAXON["83332"])
-    SP_NEIME = PermissibleValue(
-        text="SP_NEIME",
-        title="Neisseria meningitidis MC58",
-        description="Neisseria meningitidis MC58 - Proteome: UP000000425",
-        meaning=NCBITAXON["122586"])
-    SP_PLAF7 = PermissibleValue(
-        text="SP_PLAF7",
-        title="Plasmodium falciparum 3D7",
-        description="Plasmodium falciparum 3D7 (Malaria parasite) - Proteome: UP000001450",
-        meaning=NCBITAXON["36329"])
-    SP_PSEAE = PermissibleValue(
-        text="SP_PSEAE",
-        title="Pseudomonas aeruginosa PAO1",
-        description="Pseudomonas aeruginosa PAO1 - Proteome: UP000002438",
-        meaning=NCBITAXON["208964"])
-    SP_SOYBN = PermissibleValue(
-        text="SP_SOYBN",
-        title="Glycine max",
-        description="Glycine max (Soybean) - Proteome: UP000008827",
-        meaning=NCBITAXON["3847"])
-    SP_STAAU = PermissibleValue(
-        text="SP_STAAU",
-        title="Staphylococcus aureus subsp. aureus NCTC 8325",
-        description="Staphylococcus aureus subsp. aureus NCTC 8325 - Proteome: UP000008816",
-        meaning=NCBITAXON["93061"])
-    SP_STRPN = PermissibleValue(
-        text="SP_STRPN",
-        title="Streptococcus pneumoniae R6",
-        description="Streptococcus pneumoniae R6 - Proteome: UP000000586",
-        meaning=NCBITAXON["171101"])
-    SP_TOXGO = PermissibleValue(
-        text="SP_TOXGO",
-        title="Toxoplasma gondii ME49",
-        description="Toxoplasma gondii ME49 - Proteome: UP000001529",
-        meaning=NCBITAXON["508771"])
-    SP_TRYB2 = PermissibleValue(
-        text="SP_TRYB2",
-        title="Trypanosoma brucei brucei TREU927",
-        description="Trypanosoma brucei brucei TREU927 - Proteome: UP000008524",
-        meaning=NCBITAXON["185431"])
-    SP_WHEAT = PermissibleValue(
-        text="SP_WHEAT",
-        title="Triticum aestivum",
-        description="Triticum aestivum (Wheat) - Proteome: UP000019116",
-        meaning=NCBITAXON["4565"])
-    SP_PEA = PermissibleValue(
-        text="SP_PEA",
-        title="Pisum sativum",
-        description="Pisum sativum (Garden pea) - Proteome: UP001058974",
-        meaning=NCBITAXON["3888"])
-    SP_TOBAC = PermissibleValue(
-        text="SP_TOBAC",
-        title="Nicotiana tabacum",
-        description="Nicotiana tabacum (Common tobacco) - Proteome: UP000084051",
-        meaning=NCBITAXON["4097"])
+    SP_YERPE = PermissibleValue(
+        text="SP_YERPE",
+        title="Yersinia pestis",
+        description="Yersinia pestis (plague bacteria) - Proteome: UP000000815",
+        meaning=NCBITAXON["632"])
+    SP_ZIKV = PermissibleValue(
+        text="SP_ZIKV",
+        title="Zika virus",
+        description="Zika virus (ZIKV) - Proteome: UP000054557",
+        meaning=NCBITAXON["64320"])
 
     _defn = EnumDefinition(
         name="UniProtSpeciesCode",
         description="UniProt species mnemonic codes for reference proteomes with associated metadata",
     )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "SP_E. coli ECO57",
+            PermissibleValue(
+                text="SP_E. coli ECO57",
+                title="Escherichia coli O157:H7",
+                description="Escherichia coli O157:H7 - Proteome: UP000000558",
+                meaning=NCBITAXON["83334"]))
 
 class LipidCategory(EnumDefinitionImpl):
     """
@@ -19367,6 +20968,364 @@ class FMRIParadigmTypeEnum(EnumDefinitionImpl):
     _defn = EnumDefinition(
         name="FMRIParadigmTypeEnum",
         description="fMRI experimental paradigm types",
+    )
+
+class FamilyRelationship(EnumDefinitionImpl):
+    """
+    Family relationships used in pedigree and family history documentation
+    """
+    PARENT = PermissibleValue(
+        text="PARENT",
+        description="""The player of the role is one who begets, gives birth to, or nurtures and raises the scoping entity (child)""",
+        meaning=HL7["v3-RoleCode#PRN"])
+    MOTHER = PermissibleValue(
+        text="MOTHER",
+        description="""The player of the role is a female who conceives, gives birth to, or raises and nurtures the scoping entity (child)""",
+        meaning=HL7["v3-RoleCode#MTH"])
+    FATHER = PermissibleValue(
+        text="FATHER",
+        description="The player of the role is a male who begets or raises or nurtures the scoping entity (child)",
+        meaning=HL7["v3-RoleCode#FTH"])
+    NATURAL_MOTHER = PermissibleValue(
+        text="NATURAL_MOTHER",
+        description="The player of the role is a female who conceives or gives birth to the scoping entity (child)",
+        meaning=HL7["v3-RoleCode#NMTH"])
+    NATURAL_FATHER = PermissibleValue(
+        text="NATURAL_FATHER",
+        description="The player of the role is a male who begets the scoping entity (child)",
+        meaning=HL7["v3-RoleCode#NFTH"])
+    ADOPTIVE_PARENT = PermissibleValue(
+        text="ADOPTIVE_PARENT",
+        description="""The player of the role (parent) has taken the scoper (child) into their family through legal means and raises them as his or her own child""",
+        meaning=HL7["v3-RoleCode#ADOPTP"])
+    ADOPTIVE_MOTHER = PermissibleValue(
+        text="ADOPTIVE_MOTHER",
+        description="""The player of the role (mother) is a female who has taken the scoper (child) into their family through legal means and raises them as her own child""",
+        meaning=HL7["v3-RoleCode#ADOPTM"])
+    ADOPTIVE_FATHER = PermissibleValue(
+        text="ADOPTIVE_FATHER",
+        description="""The player of the role (father) is a male who has taken the scoper (child) into their family through legal means and raises them as his own child""",
+        meaning=HL7["v3-RoleCode#ADOPTF"])
+    STEP_PARENT = PermissibleValue(
+        text="STEP_PARENT",
+        description="""The player of the role is the spouse of the scoping person's parent and not the scoping person's natural parent""",
+        meaning=HL7["v3-RoleCode#STPPRN"])
+    STEP_MOTHER = PermissibleValue(
+        text="STEP_MOTHER",
+        description="""The player of the role is the female spouse of the scoping person's parent and not the scoping person's natural mother""",
+        meaning=HL7["v3-RoleCode#STPMTH"])
+    STEP_FATHER = PermissibleValue(
+        text="STEP_FATHER",
+        description="""The player of the role is the male spouse of the scoping person's parent and not the scoping person's natural father""",
+        meaning=HL7["v3-RoleCode#STPFTH"])
+    FOSTER_PARENT = PermissibleValue(
+        text="FOSTER_PARENT",
+        description="""The player of the role (parent) who is a state-certified caregiver responsible for the scoper (child)""",
+        meaning=HL7["v3-RoleCode#PRNFOST"])
+    GESTATIONAL_MOTHER = PermissibleValue(
+        text="GESTATIONAL_MOTHER",
+        description="The player is a female whose womb carries the fetus of the scoper",
+        meaning=HL7["v3-RoleCode#GESTM"])
+    SIBLING = PermissibleValue(
+        text="SIBLING",
+        description="The player of the role shares one or both parents in common with the scoping entity",
+        meaning=HL7["v3-RoleCode#SIB"])
+    BROTHER = PermissibleValue(
+        text="BROTHER",
+        description="The player of the role is a male sharing one or both parents with the scoping entity",
+        meaning=HL7["v3-RoleCode#BRO"])
+    SISTER = PermissibleValue(
+        text="SISTER",
+        description="The player of the role is a female sharing one or both parents with the scoping entity",
+        meaning=HL7["v3-RoleCode#SIS"])
+    NATURAL_BROTHER = PermissibleValue(
+        text="NATURAL_BROTHER",
+        description="""The player of the role is a male related to the scoping entity by sharing only the same natural parents""",
+        meaning=HL7["v3-RoleCode#NBRO"])
+    NATURAL_SISTER = PermissibleValue(
+        text="NATURAL_SISTER",
+        description="""The player of the role is a female related to the scoping entity by sharing only the same natural parents""",
+        meaning=HL7["v3-RoleCode#NSIS"])
+    HALF_BROTHER = PermissibleValue(
+        text="HALF_BROTHER",
+        description="""The player of the role is a male related to the scoping entity by sharing only one biological parent""",
+        meaning=HL7["v3-RoleCode#HBRO"])
+    HALF_SISTER = PermissibleValue(
+        text="HALF_SISTER",
+        description="""The player of the role is a female related to the scoping entity by sharing only one biological parent""",
+        meaning=HL7["v3-RoleCode#HSIS"])
+    STEP_BROTHER = PermissibleValue(
+        text="STEP_BROTHER",
+        description="The player of the role is a male child of the scoping person's stepparent",
+        meaning=HL7["v3-RoleCode#STPBRO"])
+    STEP_SISTER = PermissibleValue(
+        text="STEP_SISTER",
+        description="The player of the role is a female child of the scoping person's stepparent",
+        meaning=HL7["v3-RoleCode#STPSIS"])
+    TWIN = PermissibleValue(
+        text="TWIN",
+        description="The scoper and player were carried in the same womb and delivered in the same birth",
+        meaning=HL7["v3-RoleCode#TWIN"])
+    TWIN_BROTHER = PermissibleValue(
+        text="TWIN_BROTHER",
+        description="The player of the role is a male born from the same pregnancy as the scoping entity",
+        meaning=HL7["v3-RoleCode#TWINBRO"])
+    TWIN_SISTER = PermissibleValue(
+        text="TWIN_SISTER",
+        description="The player of the role is a female born from the same pregnancy as the scoping entity",
+        meaning=HL7["v3-RoleCode#TWINSIS"])
+    FRATERNAL_TWIN = PermissibleValue(
+        text="FRATERNAL_TWIN",
+        description="""The player of the role is born from the same pregnancy as the scoping entity but does not share the same genotype""",
+        meaning=HL7["v3-RoleCode#FTWIN"])
+    IDENTICAL_TWIN = PermissibleValue(
+        text="IDENTICAL_TWIN",
+        description="""The player of the role is born from the same pregnancy as the scoping entity and shares the same genotype""",
+        meaning=HL7["v3-RoleCode#ITWIN"])
+    CHILD = PermissibleValue(
+        text="CHILD",
+        description="The player of the role is a child of the scoping entity",
+        meaning=HL7["v3-RoleCode#CHILD"])
+    SON = PermissibleValue(
+        text="SON",
+        description="The player of the role is a male offspring of the scoping entity (parent)",
+        meaning=HL7["v3-RoleCode#SON"])
+    DAUGHTER = PermissibleValue(
+        text="DAUGHTER",
+        description="The player of the role is a female offspring of the scoping entity (parent)",
+        meaning=HL7["v3-RoleCode#DAU"])
+    NATURAL_CHILD = PermissibleValue(
+        text="NATURAL_CHILD",
+        description="The player of the role is an offspring of the scoping entity as determined by birth",
+        meaning=HL7["v3-RoleCode#NCHILD"])
+    ADOPTIVE_CHILD = PermissibleValue(
+        text="ADOPTIVE_CHILD",
+        description="""The player of the role is a child taken into a family through legal means and raised by the scoping person (parent) as his or her own child""",
+        meaning=HL7["v3-RoleCode#CHLDADOPT"])
+    FOSTER_CHILD = PermissibleValue(
+        text="FOSTER_CHILD",
+        description="""The player of the role is a child receiving parental care and nurture from the scoping person (parent) but not related to him or her through legal or blood relationship""",
+        meaning=HL7["v3-RoleCode#CHLDFOST"])
+    STEP_CHILD = PermissibleValue(
+        text="STEP_CHILD",
+        description="The player of the role is a child of the scoping person's spouse by a previous union",
+        meaning=HL7["v3-RoleCode#STPCHLD"])
+    GRANDPARENT = PermissibleValue(
+        text="GRANDPARENT",
+        description="The player of the role is a parent of the scoping person's mother or father",
+        meaning=HL7["v3-RoleCode#GRPRN"])
+    GRANDMOTHER = PermissibleValue(
+        text="GRANDMOTHER",
+        description="The player of the role is the mother of the scoping person's mother or father",
+        meaning=HL7["v3-RoleCode#GRMTH"])
+    GRANDFATHER = PermissibleValue(
+        text="GRANDFATHER",
+        description="The player of the role is the father of the scoping person's mother or father",
+        meaning=HL7["v3-RoleCode#GRFTH"])
+    MATERNAL_GRANDMOTHER = PermissibleValue(
+        text="MATERNAL_GRANDMOTHER",
+        description="The player of the role is the mother of the scoping person's mother",
+        meaning=HL7["v3-RoleCode#MGRMTH"])
+    MATERNAL_GRANDFATHER = PermissibleValue(
+        text="MATERNAL_GRANDFATHER",
+        description="The player of the role is the father of the scoping person's mother",
+        meaning=HL7["v3-RoleCode#MGRFTH"])
+    PATERNAL_GRANDMOTHER = PermissibleValue(
+        text="PATERNAL_GRANDMOTHER",
+        description="The player of the role is the mother of the scoping person's father",
+        meaning=HL7["v3-RoleCode#PGRMTH"])
+    PATERNAL_GRANDFATHER = PermissibleValue(
+        text="PATERNAL_GRANDFATHER",
+        description="The player of the role is the father of the scoping person's father",
+        meaning=HL7["v3-RoleCode#PGRFTH"])
+    GRANDCHILD = PermissibleValue(
+        text="GRANDCHILD",
+        description="The player of the role is a child of the scoping person's son or daughter",
+        meaning=HL7["v3-RoleCode#GRNDCHILD"])
+    GRANDSON = PermissibleValue(
+        text="GRANDSON",
+        description="The player of the role is a son of the scoping person's son or daughter",
+        meaning=HL7["v3-RoleCode#GRNDSN"])
+    GRANDDAUGHTER = PermissibleValue(
+        text="GRANDDAUGHTER",
+        description="The player of the role is a daughter of the scoping person's son or daughter",
+        meaning=HL7["v3-RoleCode#GRNDDAU"])
+    AUNT = PermissibleValue(
+        text="AUNT",
+        description="The player of the role is a sister of the scoping person's mother or father",
+        meaning=HL7["v3-RoleCode#AUNT"])
+    UNCLE = PermissibleValue(
+        text="UNCLE",
+        description="The player of the role is a brother of the scoping person's mother or father",
+        meaning=HL7["v3-RoleCode#UNCLE"])
+    MATERNAL_AUNT = PermissibleValue(
+        text="MATERNAL_AUNT",
+        description="The player of the role is a sister of the scoping person's mother",
+        meaning=HL7["v3-RoleCode#MAUNT"])
+    MATERNAL_UNCLE = PermissibleValue(
+        text="MATERNAL_UNCLE",
+        description="The player of the role is a brother of the scoping person's mother",
+        meaning=HL7["v3-RoleCode#MUNCLE"])
+    PATERNAL_AUNT = PermissibleValue(
+        text="PATERNAL_AUNT",
+        description="The player of the role is a sister of the scoping person's father",
+        meaning=HL7["v3-RoleCode#PAUNT"])
+    PATERNAL_UNCLE = PermissibleValue(
+        text="PATERNAL_UNCLE",
+        description="The player of the role is a brother of the scoping person's father",
+        meaning=HL7["v3-RoleCode#PUNCLE"])
+    COUSIN = PermissibleValue(
+        text="COUSIN",
+        description="""The player of the role is a relative descended from a common ancestor, such as a grandparent, by two or more steps in a diverging line""",
+        meaning=HL7["v3-RoleCode#COUSN"])
+    MATERNAL_COUSIN = PermissibleValue(
+        text="MATERNAL_COUSIN",
+        description="The player of the role is a child of a maternal aunt or uncle of the scoping person",
+        meaning=HL7["v3-RoleCode#MCOUSN"])
+    PATERNAL_COUSIN = PermissibleValue(
+        text="PATERNAL_COUSIN",
+        description="The player of the role is a child of a paternal aunt or uncle of the scoping person",
+        meaning=HL7["v3-RoleCode#PCOUSN"])
+    NIECE = PermissibleValue(
+        text="NIECE",
+        description="""The player of the role is a daughter of the scoping person's brother or sister or of the brother or sister of the scoping person's spouse""",
+        meaning=HL7["v3-RoleCode#NIECE"])
+    NEPHEW = PermissibleValue(
+        text="NEPHEW",
+        description="""The player of the role is a son of the scoping person's brother or sister or of the brother or sister of the scoping person's spouse""",
+        meaning=HL7["v3-RoleCode#NEPHEW"])
+    SPOUSE = PermissibleValue(
+        text="SPOUSE",
+        description="The player of the role is a marriage partner of the scoping person",
+        meaning=HL7["v3-RoleCode#SPS"])
+    HUSBAND = PermissibleValue(
+        text="HUSBAND",
+        description="The player of the role is a man joined to a woman (scoping person) in marriage",
+        meaning=HL7["v3-RoleCode#HUSB"])
+    WIFE = PermissibleValue(
+        text="WIFE",
+        description="The player of the role is a woman joined to a man (scoping person) in marriage",
+        meaning=HL7["v3-RoleCode#WIFE"])
+    DOMESTIC_PARTNER = PermissibleValue(
+        text="DOMESTIC_PARTNER",
+        description="The player of the role cohabits with the scoping person but is not the scoping person's spouse",
+        meaning=HL7["v3-RoleCode#DOMPART"])
+    GREAT_GRANDPARENT = PermissibleValue(
+        text="GREAT_GRANDPARENT",
+        description="The player of the role is a grandparent of the scoping person's mother or father",
+        meaning=HL7["v3-RoleCode#GGRPRN"])
+    GREAT_GRANDMOTHER = PermissibleValue(
+        text="GREAT_GRANDMOTHER",
+        description="The player of the role is a grandmother of the scoping person's mother or father",
+        meaning=HL7["v3-RoleCode#GGRMTH"])
+    GREAT_GRANDFATHER = PermissibleValue(
+        text="GREAT_GRANDFATHER",
+        description="The player of the role is a grandfather of the scoping person's mother or father",
+        meaning=HL7["v3-RoleCode#GGRFTH"])
+    MOTHER_IN_LAW = PermissibleValue(
+        text="MOTHER_IN_LAW",
+        description="The player of the role is the mother of the scoping person's spouse",
+        meaning=HL7["v3-RoleCode#MTHINLAW"])
+    FATHER_IN_LAW = PermissibleValue(
+        text="FATHER_IN_LAW",
+        description="The player of the role is the father of the scoping person's spouse",
+        meaning=HL7["v3-RoleCode#FTHINLAW"])
+    DAUGHTER_IN_LAW = PermissibleValue(
+        text="DAUGHTER_IN_LAW",
+        description="The player of the role is the wife of scoping person's son",
+        meaning=HL7["v3-RoleCode#DAUINLAW"])
+    SON_IN_LAW = PermissibleValue(
+        text="SON_IN_LAW",
+        description="The player of the role is the husband of scoping person's daughter",
+        meaning=HL7["v3-RoleCode#SONINLAW"])
+    BROTHER_IN_LAW = PermissibleValue(
+        text="BROTHER_IN_LAW",
+        description="""The player of the role is a brother of the scoping person's spouse, or the husband of the scoping person's sister, or the husband of a sister of the scoping person's spouse""",
+        meaning=HL7["v3-RoleCode#BROINLAW"])
+    SISTER_IN_LAW = PermissibleValue(
+        text="SISTER_IN_LAW",
+        description="""The player of the role is a sister of the scoping person's spouse, or the wife of the scoping person's brother, or the wife of a brother of the scoping person's spouse""",
+        meaning=HL7["v3-RoleCode#SISINLAW"])
+    FAMILY_MEMBER = PermissibleValue(
+        text="FAMILY_MEMBER",
+        description="A relationship between two people characterizing their \"familial\" relationship",
+        meaning=HL7["v3-RoleCode#FAMMEMB"])
+    EXTENDED_FAMILY_MEMBER = PermissibleValue(
+        text="EXTENDED_FAMILY_MEMBER",
+        description="Description of an extended family member",
+        meaning=HL7["v3-RoleCode#EXT"])
+    SIGNIFICANT_OTHER = PermissibleValue(
+        text="SIGNIFICANT_OTHER",
+        description="""A person who is important to one's well being; especially a spouse or one in a similar relationship""",
+        meaning=HL7["v3-RoleCode#SIGOTHR"])
+
+    _defn = EnumDefinition(
+        name="FamilyRelationship",
+        description="Family relationships used in pedigree and family history documentation",
+    )
+
+class FamilyHistoryStatus(EnumDefinitionImpl):
+    """
+    Status of family history information availability
+    """
+    COMPLETED = PermissibleValue(
+        text="COMPLETED",
+        description="All relevant family history information has been obtained",
+        meaning=HL7["observation-status#final"])
+    PARTIAL = PermissibleValue(
+        text="PARTIAL",
+        description="Some family history information is available but not complete",
+        meaning=HL7["observation-status#preliminary"])
+    UNKNOWN = PermissibleValue(
+        text="UNKNOWN",
+        description="Family history status is unknown",
+        meaning=FHIR_DATA_ABSENT_REASON["#unknown"])
+    UNABLE_TO_OBTAIN = PermissibleValue(
+        text="UNABLE_TO_OBTAIN",
+        description="Information could not be obtained due to patient/family constraints",
+        meaning=FHIR_DATA_ABSENT_REASON["#patient-refused"])
+    NOT_ASKED = PermissibleValue(
+        text="NOT_ASKED",
+        description="Family history information was not requested",
+        meaning=FHIR_DATA_ABSENT_REASON["#not-asked"])
+
+    _defn = EnumDefinition(
+        name="FamilyHistoryStatus",
+        description="Status of family history information availability",
+    )
+
+class GeneticRelationship(EnumDefinitionImpl):
+    """
+    Genetic relationship types for pedigree analysis
+    """
+    BIOLOGICAL = PermissibleValue(
+        text="BIOLOGICAL",
+        description="Genetic relationship through biological inheritance",
+        meaning=SNOMED["444018008"])
+    FULL_SIBLING = PermissibleValue(
+        text="FULL_SIBLING",
+        description="Siblings sharing both biological parents",
+        meaning=SNOMED["444301002"])
+    HALF_SIBLING = PermissibleValue(
+        text="HALF_SIBLING",
+        description="Siblings sharing one biological parent",
+        meaning=SNOMED["445295006"])
+    ADOPTIVE = PermissibleValue(
+        text="ADOPTIVE",
+        description="Relationship established through adoption",
+        meaning=SNOMED["160499008"])
+    NO_GENETIC_RELATIONSHIP = PermissibleValue(
+        text="NO_GENETIC_RELATIONSHIP",
+        description="No genetic relationship exists",
+        meaning=SNOMED["373068000"])
+    UNKNOWN_GENETIC_RELATIONSHIP = PermissibleValue(
+        text="UNKNOWN_GENETIC_RELATIONSHIP",
+        description="Genetic relationship status is unknown",
+        meaning=SNOMED["261665006"])
+
+    _defn = EnumDefinition(
+        name="GeneticRelationship",
+        description="Genetic relationship types for pedigree analysis",
     )
 
 class RaceOMB1997Enum(EnumDefinitionImpl):
@@ -25287,6 +27246,15 @@ slots.data = Slot(uri=VALUESETS.data, name="data", curie=VALUESETS.curie('data')
 slots.processing_status = Slot(uri=VALUESETS.processing_status, name="processing_status", curie=VALUESETS.curie('processing_status'),
                    model_uri=VALUESETS.processing_status, domain=None, range=Optional[Union[str, "ProcessingStatus"]])
 
+slots.coordination_geometry = Slot(uri=VALUESETS.coordination_geometry, name="coordination_geometry", curie=VALUESETS.curie('coordination_geometry'),
+                   model_uri=VALUESETS.coordination_geometry, domain=None, range=Optional[Union[str, "CoordinationGeometry"]])
+
+slots.metal_ligand_type = Slot(uri=VALUESETS.metal_ligand_type, name="metal_ligand_type", curie=VALUESETS.curie('metal_ligand_type'),
+                   model_uri=VALUESETS.metal_ligand_type, domain=None, range=Optional[Union[str, "MetalLigandType"]])
+
+slots.protein_modification = Slot(uri=VALUESETS.protein_modification, name="protein_modification", curie=VALUESETS.curie('protein_modification'),
+                   model_uri=VALUESETS.protein_modification, domain=None, range=Optional[Union[str, "ProteinModificationType"]])
+
 slots.biosafety_level = Slot(uri=VALUESETS.biosafety_level, name="biosafety_level", curie=VALUESETS.curie('biosafety_level'),
                    model_uri=VALUESETS.biosafety_level, domain=None, range=Optional[Union[str, "BiosafetyLevelEnum"]])
 
@@ -25416,6 +27384,9 @@ slots.carbon_intensity = Slot(uri=VALUESETS.carbon_intensity, name="carbon_inten
 slots.electricity_market = Slot(uri=VALUESETS.electricity_market, name="electricity_market", curie=VALUESETS.curie('electricity_market'),
                    model_uri=VALUESETS.electricity_market, domain=None, range=Optional[Union[str, "ElectricityMarket"]])
 
+slots.capability_status = Slot(uri=VALUESETS.capability_status, name="capability_status", curie=VALUESETS.curie('capability_status'),
+                   model_uri=VALUESETS.capability_status, domain=None, range=Optional[Union[str, "CapabilityStatus"]])
+
 slots.fossil_fuel_type = Slot(uri=VALUESETS.fossil_fuel_type, name="fossil_fuel_type", curie=VALUESETS.curie('fossil_fuel_type'),
                    model_uri=VALUESETS.fossil_fuel_type, domain=None, range=Optional[Union[str, "FossilFuelTypeEnum"]])
 
@@ -25532,6 +27503,45 @@ slots.reactor_control_mode = Slot(uri=VALUESETS.reactor_control_mode, name="reac
 
 slots.operational_procedure = Slot(uri=VALUESETS.operational_procedure, name="operational_procedure", curie=VALUESETS.curie('operational_procedure'),
                    model_uri=VALUESETS.operational_procedure, domain=None, range=Optional[Union[str, "OperationalProcedureEnum"]])
+
+slots.geothermal_system_type = Slot(uri=VALUESETS.geothermal_system_type, name="geothermal_system_type", curie=VALUESETS.curie('geothermal_system_type'),
+                   model_uri=VALUESETS.geothermal_system_type, domain=None, range=Optional[Union[str, "GeothermalSystemType"]])
+
+slots.geothermal_reservoir_type = Slot(uri=VALUESETS.geothermal_reservoir_type, name="geothermal_reservoir_type", curie=VALUESETS.curie('geothermal_reservoir_type'),
+                   model_uri=VALUESETS.geothermal_reservoir_type, domain=None, range=Optional[Union[str, "GeothermalReservoirType"]])
+
+slots.geothermal_well_type = Slot(uri=VALUESETS.geothermal_well_type, name="geothermal_well_type", curie=VALUESETS.curie('geothermal_well_type'),
+                   model_uri=VALUESETS.geothermal_well_type, domain=None, range=Optional[Union[str, "GeothermalWellType"]])
+
+slots.geothermal_application = Slot(uri=VALUESETS.geothermal_application, name="geothermal_application", curie=VALUESETS.curie('geothermal_application'),
+                   model_uri=VALUESETS.geothermal_application, domain=None, range=Optional[Union[str, "GeothermalApplication"]])
+
+slots.geothermal_resource_temperature = Slot(uri=VALUESETS.geothermal_resource_temperature, name="geothermal_resource_temperature", curie=VALUESETS.curie('geothermal_resource_temperature'),
+                   model_uri=VALUESETS.geothermal_resource_temperature, domain=None, range=Optional[Union[str, "GeothermalResourceTemperature"]])
+
+slots.hydrogen_type = Slot(uri=VALUESETS.hydrogen_type, name="hydrogen_type", curie=VALUESETS.curie('hydrogen_type'),
+                   model_uri=VALUESETS.hydrogen_type, domain=None, range=Optional[Union[str, "HydrogenType"]])
+
+slots.hydrogen_production_method = Slot(uri=VALUESETS.hydrogen_production_method, name="hydrogen_production_method", curie=VALUESETS.curie('hydrogen_production_method'),
+                   model_uri=VALUESETS.hydrogen_production_method, domain=None, range=Optional[Union[str, "HydrogenProductionMethod"]])
+
+slots.hydrogen_storage_method = Slot(uri=VALUESETS.hydrogen_storage_method, name="hydrogen_storage_method", curie=VALUESETS.curie('hydrogen_storage_method'),
+                   model_uri=VALUESETS.hydrogen_storage_method, domain=None, range=Optional[Union[str, "HydrogenStorageMethod"]])
+
+slots.hydrogen_application = Slot(uri=VALUESETS.hydrogen_application, name="hydrogen_application", curie=VALUESETS.curie('hydrogen_application'),
+                   model_uri=VALUESETS.hydrogen_application, domain=None, range=Optional[Union[str, "HydrogenApplication"]])
+
+slots.biomass_feedstock_type = Slot(uri=VALUESETS.biomass_feedstock_type, name="biomass_feedstock_type", curie=VALUESETS.curie('biomass_feedstock_type'),
+                   model_uri=VALUESETS.biomass_feedstock_type, domain=None, range=Optional[Union[str, "BiomassFeedstockType"]])
+
+slots.biofuel_type = Slot(uri=VALUESETS.biofuel_type, name="biofuel_type", curie=VALUESETS.curie('biofuel_type'),
+                   model_uri=VALUESETS.biofuel_type, domain=None, range=Optional[Union[str, "BiofuelType"]])
+
+slots.biofuel_generation = Slot(uri=VALUESETS.biofuel_generation, name="biofuel_generation", curie=VALUESETS.curie('biofuel_generation'),
+                   model_uri=VALUESETS.biofuel_generation, domain=None, range=Optional[Union[str, "BiofuelGeneration"]])
+
+slots.bioconversion_process = Slot(uri=VALUESETS.bioconversion_process, name="bioconversion_process", curie=VALUESETS.curie('bioconversion_process'),
+                   model_uri=VALUESETS.bioconversion_process, domain=None, range=Optional[Union[str, "BioconversionProcess"]])
 
 slots.mining = Slot(uri=VALUESETS.mining, name="mining", curie=VALUESETS.curie('mining'),
                    model_uri=VALUESETS.mining, domain=None, range=Optional[Union[str, "MiningType"]])
@@ -25739,6 +27749,9 @@ slots.spatial_relationship = Slot(uri=VALUESETS.spatial_relationship, name="spat
 
 slots.cell_polarity = Slot(uri=VALUESETS.cell_polarity, name="cell_polarity", curie=VALUESETS.curie('cell_polarity'),
                    model_uri=VALUESETS.cell_polarity, domain=None, range=Optional[Union[str, "CellPolarity"]])
+
+slots.anatomical_orientation = Slot(uri=VALUESETS.anatomical_orientation, name="anatomical_orientation", curie=VALUESETS.curie('anatomical_orientation'),
+                   model_uri=VALUESETS.anatomical_orientation, domain=None, range=Optional[Union[str, "AnatomicalOrientation"]])
 
 slots.crystal_system = Slot(uri=VALUESETS.crystal_system, name="crystal_system", curie=VALUESETS.curie('crystal_system'),
                    model_uri=VALUESETS.crystal_system, domain=None, range=Optional[Union[str, "CrystalSystemEnum"]])
@@ -26132,6 +28145,15 @@ slots.mri_contrast_type = Slot(uri=VALUESETS.mri_contrast_type, name="mri_contra
 
 slots.fmri_paradigm_type = Slot(uri=VALUESETS.fmri_paradigm_type, name="fmri_paradigm_type", curie=VALUESETS.curie('fmri_paradigm_type'),
                    model_uri=VALUESETS.fmri_paradigm_type, domain=None, range=Optional[Union[str, "FMRIParadigmTypeEnum"]])
+
+slots.family_relationship = Slot(uri=VALUESETS.family_relationship, name="family_relationship", curie=VALUESETS.curie('family_relationship'),
+                   model_uri=VALUESETS.family_relationship, domain=None, range=Optional[Union[str, "FamilyRelationship"]])
+
+slots.family_history_status = Slot(uri=VALUESETS.family_history_status, name="family_history_status", curie=VALUESETS.curie('family_history_status'),
+                   model_uri=VALUESETS.family_history_status, domain=None, range=Optional[Union[str, "FamilyHistoryStatus"]])
+
+slots.genetic_relationship = Slot(uri=VALUESETS.genetic_relationship, name="genetic_relationship", curie=VALUESETS.curie('genetic_relationship'),
+                   model_uri=VALUESETS.genetic_relationship, domain=None, range=Optional[Union[str, "GeneticRelationship"]])
 
 slots.race_omb1997 = Slot(uri=VALUESETS.race_omb1997, name="race_omb1997", curie=VALUESETS.curie('race_omb1997'),
                    model_uri=VALUESETS.race_omb1997, domain=None, range=Optional[Union[str, "RaceOMB1997Enum"]])

@@ -1,16 +1,18 @@
 name: nuclear_waste
 title: Nuclear Waste Classifications
-description: 'Classifications of radioactive waste based on IAEA standards, NRC 10 CFR 61
-  classifications, and international waste management standards. Includes activity levels,
-  disposal requirements, and time scales.'
+description: 'Classifications of radioactive waste based on IAEA standards, NRC 10 CFR 61 classifications, and international
+  waste management standards. Includes activity levels, disposal requirements, and time scales.'
 id: https://w3id.org/linkml/valuesets/energy/nuclear/nuclear_waste
 imports:
 - linkml:types
 prefixes:
+  linkml: https://w3id.org/linkml/
   valuesets: https://w3id.org/valuesets/
   IAEA: https://www.iaea.org/
   NRC: https://www.nrc.gov/
   CFR: https://www.ecfr.gov/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   waste_classification:
@@ -36,7 +38,14 @@ slots:
     range: TransuranicWasteCategoryEnum
 enums:
   IAEAWasteClassificationEnum:
+    title: IAEA Waste Classification
     description: IAEA General Safety Requirements radioactive waste classification scheme
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       EXEMPT_WASTE:
         title: Exempt Waste (EW)
@@ -102,7 +111,14 @@ enums:
           cooling: required
           shielding: heavy shielding required
   NRCWasteClassEnum:
+    title: NRC Waste Class
     description: US NRC 10 CFR 61 low-level radioactive waste classification
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       CLASS_A:
         title: Class A Low-Level Waste
@@ -144,7 +160,14 @@ enums:
           nrc_evaluation: required
           concentration_limits: exceeds Class C
   WasteHeatGenerationEnum:
+    title: Waste Heat Generation
     description: Heat generation categories for radioactive waste
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       NEGLIGIBLE_HEAT:
         title: Negligible Heat Generation
@@ -169,7 +192,14 @@ enums:
           thermal_consideration: major design factor
           typical_waste: spent nuclear fuel, HLW glass
   WasteHalfLifeCategoryEnum:
+    title: Waste Half Life Category
     description: Half-life categories for radioactive waste classification
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       VERY_SHORT_LIVED:
         title: Very Short-Lived
@@ -194,7 +224,14 @@ enums:
           decay_significance: minimal over human timescales
           examples: actinides, some fission products
   WasteDisposalMethodEnum:
+    title: Waste Disposal Method
     description: Methods for radioactive waste disposal
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       CLEARANCE:
         title: Clearance for Unrestricted Use
@@ -241,7 +278,14 @@ enums:
           waste_categories: long-lived actinides
           status: research and development
   WasteSourceEnum:
+    title: Waste Source
     description: Sources of radioactive waste generation
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       NUCLEAR_POWER_PLANTS:
         title: Nuclear Power Plants
@@ -300,7 +344,14 @@ enums:
           classification: variable depending on process
           uranium_content: often contains enriched uranium
   TransuranicWasteCategoryEnum:
+    title: Transuranic Waste Category
     description: Transuranic waste classifications (US system)
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       CONTACT_HANDLED_TRU:
         title: Contact-Handled Transuranic Waste

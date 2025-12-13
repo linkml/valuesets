@@ -55,6 +55,9 @@ class LinkMLMeta(RootModel):
 linkml_meta = LinkMLMeta({'default_prefix': 'valuesets', 'description': 'A collection of commonly used value sets', 'id': 'https://w3id.org/linkml/valuesets', 'name': 'valuesets', 'title': 'valuesets'})
 
 class RelativeTimeEnum(RichEnum):
+    """
+    Temporal relationships between events or time points
+    """
     # Enum members
     BEFORE = "BEFORE"
     AFTER = "AFTER"
@@ -62,9 +65,15 @@ class RelativeTimeEnum(RichEnum):
 
 # Set metadata after class creation to avoid it becoming an enum member
 RelativeTimeEnum._metadata = {
+    "BEFORE": {'description': 'Occurs before the reference time point'},
+    "AFTER": {'description': 'Occurs after the reference time point'},
+    "AT_SAME_TIME_AS": {'description': 'Occurs at the same time as the reference time point'},
 }
 
 class PresenceEnum(RichEnum):
+    """
+    Classification of whether an entity is present, absent, or at detection limits
+    """
     # Enum members
     PRESENT = "PRESENT"
     ABSENT = "ABSENT"
@@ -127,8 +136,8 @@ DataAbsentEnum._metadata = {
     "AS_TEXT": {'description': 'The content of the data is represented in the resource narrative.', 'meaning': 'fhir_data_absent_reason:as-text'},
     "ERROR": {'description': 'Some system or workflow process error means that the information is not available.', 'meaning': 'fhir_data_absent_reason:error'},
     "NOT_A_NUMBER": {'description': 'The numeric value is undefined or unrepresentable due to a floating point processing error.', 'meaning': 'fhir_data_absent_reason:not-a-number'},
-    "NEGATIVE_INFINITY": {'description': 'The numeric value is excessively low and unrepresentable due to a floating point processing        error.', 'meaning': 'fhir_data_absent_reason:negative-infinity'},
-    "POSITIVE_INFINITY": {'description': 'The numeric value is excessively high and unrepresentable due to a floating point processing        error.', 'meaning': 'fhir_data_absent_reason:positive-infinity'},
+    "NEGATIVE_INFINITY": {'description': 'The numeric value is excessively low and unrepresentable due to a floating point processing error.', 'meaning': 'fhir_data_absent_reason:negative-infinity'},
+    "POSITIVE_INFINITY": {'description': 'The numeric value is excessively high and unrepresentable due to a floating point processing error.', 'meaning': 'fhir_data_absent_reason:positive-infinity'},
     "NOT_PERFORMED": {'description': 'The value is not available because the observation procedure (test, etc.) was not performed.', 'meaning': 'fhir_data_absent_reason:not-performed'},
     "NOT_PERMITTED": {'description': 'The value is not permitted in this context (e.g. due to profiles, or the base data types).', 'meaning': 'fhir_data_absent_reason:not-permitted'},
 }
@@ -1142,14 +1151,14 @@ class SampleType(RichEnum):
 
 # Set metadata after class creation to avoid it becoming an enum member
 SampleType._metadata = {
-    "PROTEIN": {'description': 'Purified protein sample'},
-    "NUCLEIC_ACID": {'description': 'Nucleic acid sample (DNA or RNA)'},
-    "PROTEIN_COMPLEX": {'description': 'Protein-protein or protein-nucleic acid complex'},
-    "MEMBRANE_PROTEIN": {'description': 'Membrane-associated protein sample'},
-    "VIRUS": {'description': 'Viral particle or capsid'},
-    "ORGANELLE": {'description': 'Cellular organelle (mitochondria, chloroplast, etc.)'},
-    "CELL": {'description': 'Whole cell sample'},
-    "TISSUE": {'description': 'Tissue sample'},
+    "PROTEIN": {'description': 'Purified protein sample', 'meaning': 'NCIT:C17021'},
+    "NUCLEIC_ACID": {'description': 'Nucleic acid sample (DNA or RNA)', 'meaning': 'NCIT:C813'},
+    "PROTEIN_COMPLEX": {'description': 'Protein-protein or protein-nucleic acid complex', 'meaning': 'GO:0032991'},
+    "MEMBRANE_PROTEIN": {'description': 'Membrane-associated protein sample', 'meaning': 'NCIT:C16837'},
+    "VIRUS": {'description': 'Viral particle or capsid', 'meaning': 'NCIT:C14283'},
+    "ORGANELLE": {'description': 'Cellular organelle (mitochondria, chloroplast, etc.)', 'meaning': 'GO:0043226'},
+    "CELL": {'description': 'Whole cell sample', 'meaning': 'NCIT:C12508'},
+    "TISSUE": {'description': 'Tissue sample', 'meaning': 'NCIT:C12801'},
 }
 
 class StructuralBiologyTechnique(RichEnum):
@@ -1171,15 +1180,15 @@ class StructuralBiologyTechnique(RichEnum):
 # Set metadata after class creation to avoid it becoming an enum member
 StructuralBiologyTechnique._metadata = {
     "CRYO_EM": {'description': 'Cryo-electron microscopy', 'meaning': 'CHMO:0002413', 'annotations': {'resolution_range': '2-30 Å typical', 'aliases': 'cryoEM, electron cryo-microscopy'}},
-    "CRYO_ET": {'description': 'Cryo-electron tomography', 'annotations': {'resolution_range': '20-100 Å typical', 'aliases': 'cryoET, electron cryo-tomography'}},
+    "CRYO_ET": {'description': 'Cryo-electron tomography', 'meaning': 'MI:2338', 'annotations': {'resolution_range': '20-100 Å typical', 'aliases': 'cryoET, electron cryo-tomography'}},
     "X_RAY_CRYSTALLOGRAPHY": {'description': 'X-ray crystallography', 'meaning': 'CHMO:0000159', 'annotations': {'resolution_range': '1-4 Å typical', 'aliases': 'XRC, macromolecular crystallography'}},
-    "NEUTRON_CRYSTALLOGRAPHY": {'description': 'Neutron crystallography', 'annotations': {'advantages': 'hydrogen positions, deuteration studies'}},
+    "NEUTRON_CRYSTALLOGRAPHY": {'description': 'Neutron crystallography', 'meaning': 'CHMO:0000175', 'annotations': {'advantages': 'hydrogen positions, deuteration studies'}},
     "SAXS": {'description': 'Small-angle X-ray scattering', 'meaning': 'CHMO:0000204', 'annotations': {'information': 'low-resolution structure, conformational changes'}},
-    "SANS": {'description': 'Small-angle neutron scattering', 'annotations': {'advantages': 'contrast variation with deuteration'}},
-    "WAXS": {'description': 'Wide-angle X-ray scattering'},
+    "SANS": {'description': 'Small-angle neutron scattering', 'meaning': 'CHMO:0000184', 'annotations': {'advantages': 'contrast variation with deuteration'}},
+    "WAXS": {'description': 'Wide-angle X-ray scattering', 'meaning': 'CHMO:0000213'},
     "NMR": {'description': 'Nuclear magnetic resonance spectroscopy', 'meaning': 'CHMO:0000591', 'annotations': {'information': 'solution structure, dynamics'}},
     "MASS_SPECTROMETRY": {'description': 'Mass spectrometry', 'meaning': 'CHMO:0000470', 'annotations': {'applications': 'native MS, crosslinking, HDX'}},
-    "NEGATIVE_STAIN_EM": {'description': 'Negative stain electron microscopy', 'annotations': {'resolution_range': '15-30 Å typical'}},
+    "NEGATIVE_STAIN_EM": {'description': 'Negative stain electron microscopy', 'meaning': 'FBbi:00000568', 'annotations': {'resolution_range': '15-30 Å typical'}},
 }
 
 class CryoEMPreparationType(RichEnum):
@@ -1274,8 +1283,8 @@ class XRaySource(RichEnum):
 
 # Set metadata after class creation to avoid it becoming an enum member
 XRaySource._metadata = {
-    "SYNCHROTRON": {'description': 'Synchrotron radiation source', 'annotations': {'advantages': 'high intensity, tunable wavelength', 'brightness': '10^15-10^18 photons/s/mm²/mrad²'}},
-    "ROTATING_ANODE": {'description': 'Rotating anode generator', 'annotations': {'power': '3-18 kW typical', 'target': 'copper, molybdenum common'}},
+    "SYNCHROTRON": {'description': 'Synchrotron radiation source', 'meaning': 'CHMO:0001810', 'annotations': {'advantages': 'high intensity, tunable wavelength', 'brightness': '10^15-10^18 photons/s/mm²/mrad²'}},
+    "ROTATING_ANODE": {'description': 'Rotating anode generator', 'meaning': 'CHMO:0001107', 'annotations': {'power': '3-18 kW typical', 'target': 'copper, molybdenum common'}},
     "MICROFOCUS": {'description': 'Microfocus sealed tube', 'annotations': {'spot_size': '10-50 μm', 'applications': 'small crystals, in-house screening'}},
     "METAL_JET": {'description': 'Liquid metal jet source', 'annotations': {'advantages': 'higher power density, longer lifetime', 'metals': 'gallium, indium'}},
 }
@@ -1293,11 +1302,11 @@ class Detector(RichEnum):
 
 # Set metadata after class creation to avoid it becoming an enum member
 Detector._metadata = {
-    "DIRECT_ELECTRON": {'description': 'Direct electron detector (DED)', 'annotations': {'examples': 'K2, K3, Falcon, DE-series', 'advantages': 'high DQE, fast readout'}},
-    "CCD": {'description': 'Charge-coupled device camera', 'annotations': {'applications': 'legacy EM, some crystallography'}},
-    "CMOS": {'description': 'Complementary metal-oxide semiconductor detector', 'annotations': {'advantages': 'fast readout, low noise'}},
+    "DIRECT_ELECTRON": {'description': 'Direct electron detector (DED)', 'meaning': 'CHMO:0002837', 'annotations': {'examples': 'K2, K3, Falcon, DE-series', 'advantages': 'high DQE, fast readout'}},
+    "CCD": {'description': 'Charge-coupled device camera', 'meaning': 'CHMO:0002171', 'annotations': {'applications': 'legacy EM, some crystallography'}},
+    "CMOS": {'description': 'Complementary metal-oxide semiconductor detector', 'meaning': 'CHMO:0002836', 'annotations': {'advantages': 'fast readout, low noise'}},
     "HYBRID_PIXEL": {'description': 'Hybrid pixel detector', 'annotations': {'examples': 'Pilatus, Eiger', 'advantages': 'photon counting, zero noise'}},
-    "PHOTOSTIMULABLE_PHOSPHOR": {'description': 'Photostimulable phosphor (image plate)', 'annotations': {'applications': 'legacy crystallography'}},
+    "PHOTOSTIMULABLE_PHOSPHOR": {'description': 'Photostimulable phosphor (image plate)', 'meaning': 'CHMO:0001069', 'annotations': {'applications': 'legacy crystallography'}},
 }
 
 class WorkflowType(RichEnum):
@@ -1352,14 +1361,14 @@ class FileFormat(RichEnum):
 
 # Set metadata after class creation to avoid it becoming an enum member
 FileFormat._metadata = {
-    "MRC": {'description': 'MRC format for EM density maps', 'annotations': {'extension': '.mrc, .map', 'applications': 'EM volumes, tomograms'}},
-    "TIFF": {'description': 'Tagged Image File Format', 'annotations': {'extension': '.tif, .tiff', 'applications': 'micrographs, general imaging'}},
-    "HDF5": {'description': 'Hierarchical Data Format 5', 'annotations': {'extension': '.h5, .hdf5', 'applications': 'large datasets, metadata storage'}},
-    "STAR": {'description': 'Self-defining Text Archival and Retrieval format', 'annotations': {'extension': '.star', 'applications': 'RELION metadata, particle parameters'}},
-    "PDB": {'description': 'Protein Data Bank coordinate format', 'annotations': {'extension': '.pdb', 'applications': 'atomic coordinates, legacy format'}},
-    "MMCIF": {'description': 'Macromolecular Crystallographic Information File', 'annotations': {'extension': '.cif', 'applications': 'atomic coordinates, modern PDB format'}},
-    "MTZ": {'description': 'MTZ reflection data format', 'annotations': {'extension': '.mtz', 'applications': 'crystallographic reflections, phases'}},
-    "CBF": {'description': 'Crystallographic Binary Format', 'annotations': {'extension': '.cbf', 'applications': 'detector images, diffraction data'}},
+    "MRC": {'description': 'MRC format for EM density maps', 'meaning': 'EDAM:3842', 'annotations': {'extension': '.mrc, .map', 'applications': 'EM volumes, tomograms'}},
+    "TIFF": {'description': 'Tagged Image File Format', 'meaning': 'EDAM:3591', 'annotations': {'extension': '.tif, .tiff', 'applications': 'micrographs, general imaging'}},
+    "HDF5": {'description': 'Hierarchical Data Format 5', 'meaning': 'EDAM:3590', 'annotations': {'extension': '.h5, .hdf5', 'applications': 'large datasets, metadata storage'}},
+    "STAR": {'description': 'Self-defining Text Archival and Retrieval format', 'meaning': 'EDAM:3906', 'annotations': {'extension': '.star', 'applications': 'RELION metadata, particle parameters'}},
+    "PDB": {'description': 'Protein Data Bank coordinate format', 'meaning': 'EDAM:1476', 'annotations': {'extension': '.pdb', 'applications': 'atomic coordinates, legacy format'}},
+    "MMCIF": {'description': 'Macromolecular Crystallographic Information File', 'meaning': 'EDAM:1477', 'annotations': {'extension': '.cif', 'applications': 'atomic coordinates, modern PDB format'}},
+    "MTZ": {'description': 'MTZ reflection data format', 'meaning': 'EDAM:3816', 'annotations': {'extension': '.mtz', 'applications': 'crystallographic reflections, phases'}},
+    "CBF": {'description': 'Crystallographic Binary Format', 'meaning': 'EDAM:3874', 'annotations': {'extension': '.cbf', 'applications': 'detector images, diffraction data'}},
     "DM3": {'description': 'Digital Micrograph format', 'annotations': {'extension': '.dm3, .dm4', 'applications': 'FEI/Thermo Fisher EM data'}},
     "SER": {'description': 'FEI series format', 'annotations': {'extension': '.ser', 'applications': 'FEI movie stacks'}},
 }
@@ -1449,11 +1458,11 @@ CoordinationGeometry._metadata = {
     "TRIGONAL_PYRAMIDAL": {'description': 'Trigonal pyramidal coordination geometry', 'annotations': {'coordination_number': '3'}},
     "T_SHAPED": {'description': 'T-shaped coordination geometry', 'annotations': {'coordination_number': '3'}},
     "TETRAHEDRAL": {'description': 'Tetrahedral coordination geometry (4 ligands, 109.5° angles)', 'meaning': 'NCIT:C103215', 'annotations': {'coordination_number': '4'}},
-    "SQUARE_PLANAR": {'description': 'Square planar coordination geometry (4 ligands in plane)', 'annotations': {'coordination_number': '4', 'ncit_variants': 'NCIT:C103211, NCIT:C103212, NCIT:C103213, NCIT:C103214'}},
+    "SQUARE_PLANAR": {'description': 'Square planar coordination geometry (4 ligands in plane)', 'meaning': 'NCIT:C103211', 'annotations': {'coordination_number': '4'}},
     "TRIGONAL_BIPYRAMIDAL": {'description': 'Trigonal bipyramidal coordination geometry (5 ligands)', 'annotations': {'coordination_number': '5'}},
     "SQUARE_PYRAMIDAL": {'description': 'Square pyramidal coordination geometry (5 ligands)', 'annotations': {'coordination_number': '5'}},
     "PENTAGONAL_PLANAR": {'description': 'Pentagonal planar coordination geometry (5 ligands in plane)', 'annotations': {'coordination_number': '5'}},
-    "OCTAHEDRAL": {'description': 'Octahedral coordination geometry (6 ligands)', 'annotations': {'coordination_number': '6', 'ncit_variants': 'NCIT:C103216, NCIT:C103217, NCIT:C103218'}},
+    "OCTAHEDRAL": {'description': 'Octahedral coordination geometry (6 ligands)', 'meaning': 'NCIT:C103216', 'annotations': {'coordination_number': '6'}},
     "TRIGONAL_PRISMATIC": {'description': 'Trigonal prismatic coordination geometry (6 ligands)', 'annotations': {'coordination_number': '6'}},
     "PENTAGONAL_BIPYRAMIDAL": {'description': 'Pentagonal bipyramidal coordination geometry (7 ligands)', 'annotations': {'coordination_number': '7'}},
     "HEXAGONAL_BIPYRAMIDAL": {'description': 'Hexagonal bipyramidal coordination geometry (8 ligands)', 'annotations': {'coordination_number': '8'}},
@@ -1497,17 +1506,17 @@ class ProteinModificationType(RichEnum):
 
 # Set metadata after class creation to avoid it becoming an enum member
 ProteinModificationType._metadata = {
-    "METAL_COORDINATION": {'description': 'Metal coordination modification', 'annotations': {'examples': 'zinc finger, iron-sulfur cluster binding'}},
-    "PHOSPHORYLATION": {'description': 'Phosphorylation modification'},
-    "GLYCOSYLATION": {'description': 'Glycosylation modification'},
-    "ACETYLATION": {'description': 'Acetylation modification'},
-    "METHYLATION": {'description': 'Methylation modification'},
-    "UBIQUITINATION": {'description': 'Ubiquitination modification'},
-    "SUMOYLATION": {'description': 'SUMOylation modification'},
-    "HYDROXYLATION": {'description': 'Hydroxylation modification'},
-    "LIPIDATION": {'description': 'Lipidation modification'},
-    "PROTEOLYTIC_CLEAVAGE": {'description': 'Proteolytic cleavage'},
-    "CROSSLINKING": {'description': 'Crosslinking modification'},
+    "METAL_COORDINATION": {'description': 'Metal coordination modification', 'meaning': 'MOD:00739', 'annotations': {'examples': 'zinc finger, iron-sulfur cluster binding'}},
+    "PHOSPHORYLATION": {'description': 'Phosphorylation modification', 'meaning': 'MOD:00696'},
+    "GLYCOSYLATION": {'description': 'Glycosylation modification', 'meaning': 'MOD:00725'},
+    "ACETYLATION": {'description': 'Acetylation modification', 'meaning': 'MOD:00394'},
+    "METHYLATION": {'description': 'Methylation modification', 'meaning': 'MOD:00599'},
+    "UBIQUITINATION": {'description': 'Ubiquitination modification', 'meaning': 'MOD:01240'},
+    "SUMOYLATION": {'description': 'SUMOylation modification', 'meaning': 'MOD:01149'},
+    "HYDROXYLATION": {'description': 'Hydroxylation modification', 'meaning': 'MOD:00677'},
+    "LIPIDATION": {'description': 'Lipidation modification', 'meaning': 'MOD:00435'},
+    "PROTEOLYTIC_CLEAVAGE": {'description': 'Proteolytic cleavage', 'meaning': 'GO:0006508'},
+    "CROSSLINKING": {'description': 'Crosslinking modification', 'meaning': 'MOD:00276'},
 }
 
 class BiosafetyLevelEnum(RichEnum):
@@ -3379,24 +3388,24 @@ class EnergySource(RichEnum):
 
 # Set metadata after class creation to avoid it becoming an enum member
 EnergySource._metadata = {
-    "SOLAR": {'meaning': 'ENVO:01001862', 'annotations': {'renewable': True, 'emission_free': True}, 'aliases': ['Solar radiation']},
-    "WIND": {'annotations': {'renewable': True, 'emission_free': True}, 'aliases': ['wind wave energy']},
-    "HYDROELECTRIC": {'annotations': {'renewable': True, 'emission_free': True}, 'aliases': ['hydroelectric dam']},
-    "GEOTHERMAL": {'meaning': 'ENVO:2000034', 'annotations': {'renewable': True, 'emission_free': True}, 'aliases': ['geothermal energy']},
-    "BIOMASS": {'annotations': {'renewable': True, 'emission_free': False}, 'aliases': ['organic material']},
-    "BIOFUEL": {'annotations': {'renewable': True, 'emission_free': False}},
-    "TIDAL": {'annotations': {'renewable': True, 'emission_free': True}},
-    "HYDROGEN": {'meaning': 'CHEBI:18276', 'annotations': {'renewable': 'depends', 'emission_free': True}, 'aliases': ['dihydrogen']},
-    "COAL": {'meaning': 'ENVO:02000091', 'annotations': {'renewable': False, 'emission_free': False, 'fossil_fuel': True}},
-    "NATURAL_GAS": {'meaning': 'ENVO:01000552', 'annotations': {'renewable': False, 'emission_free': False, 'fossil_fuel': True}},
-    "PETROLEUM": {'meaning': 'ENVO:00002984', 'annotations': {'renewable': False, 'emission_free': False, 'fossil_fuel': True}},
-    "DIESEL": {'meaning': 'ENVO:03510006', 'annotations': {'renewable': False, 'emission_free': False, 'fossil_fuel': True}, 'aliases': ['diesel fuel']},
-    "GASOLINE": {'annotations': {'renewable': False, 'emission_free': False, 'fossil_fuel': True}, 'aliases': ['fuel oil']},
+    "SOLAR": {'meaning': 'ENVO:01001862', 'annotations': {'renewable': True, 'emission_free': True, 'oeo_label': 'solar energy', 'brick_label': 'Solar Thermal Collector'}, 'aliases': ['Solar radiation']},
+    "WIND": {'annotations': {'renewable': True, 'emission_free': True, 'oeo_label': 'wind energy'}, 'aliases': ['wind wave energy']},
+    "HYDROELECTRIC": {'annotations': {'renewable': True, 'emission_free': True, 'oeo_label': 'hydro energy'}, 'aliases': ['hydroelectric dam']},
+    "GEOTHERMAL": {'meaning': 'ENVO:2000034', 'annotations': {'renewable': True, 'emission_free': True, 'oeo_label': 'geothermal energy'}, 'aliases': ['geothermal energy']},
+    "BIOMASS": {'annotations': {'renewable': True, 'emission_free': False, 'oeo_label': 'bioenergy'}, 'aliases': ['organic material']},
+    "BIOFUEL": {'annotations': {'renewable': True, 'emission_free': False, 'oeo_label': 'biofuel'}},
+    "TIDAL": {'annotations': {'renewable': True, 'emission_free': True, 'oeo_label': 'marine tidal energy, marine wave energy'}},
+    "HYDROGEN": {'meaning': 'CHEBI:18276', 'annotations': {'renewable': 'depends', 'emission_free': True, 'oeo_label': 'hydrogen'}, 'aliases': ['dihydrogen']},
+    "COAL": {'meaning': 'ENVO:02000091', 'annotations': {'renewable': False, 'emission_free': False, 'fossil_fuel': True, 'oeo_label': 'coal'}},
+    "NATURAL_GAS": {'meaning': 'ENVO:01000552', 'annotations': {'renewable': False, 'emission_free': False, 'fossil_fuel': True, 'oeo_label': 'natural gas'}},
+    "PETROLEUM": {'meaning': 'ENVO:00002984', 'annotations': {'renewable': False, 'emission_free': False, 'fossil_fuel': True, 'oeo_label': 'crude oil'}},
+    "DIESEL": {'meaning': 'ENVO:03510006', 'annotations': {'renewable': False, 'emission_free': False, 'fossil_fuel': True, 'oeo_label': 'diesel fuel'}, 'aliases': ['diesel fuel']},
+    "GASOLINE": {'annotations': {'renewable': False, 'emission_free': False, 'fossil_fuel': True, 'oeo_label': 'gasoline fuel'}, 'aliases': ['fuel oil']},
     "PROPANE": {'meaning': 'ENVO:01000553', 'annotations': {'renewable': False, 'emission_free': False, 'fossil_fuel': True}, 'aliases': ['liquefied petroleum gas']},
-    "NUCLEAR_FISSION": {'annotations': {'renewable': False, 'emission_free': True}, 'aliases': ['nuclear energy']},
+    "NUCLEAR_FISSION": {'annotations': {'renewable': False, 'emission_free': True, 'oeo_label': 'nuclear fuel'}, 'aliases': ['nuclear energy']},
     "NUCLEAR_FUSION": {'annotations': {'renewable': False, 'emission_free': True}, 'aliases': ['nuclear energy']},
-    "GRID_MIX": {'annotations': {'renewable': 'partial'}},
-    "BATTERY_STORAGE": {'description': 'Battery storage systems', 'annotations': {'storage': True}},
+    "GRID_MIX": {'annotations': {'renewable': 'partial', 'oeo_label': 'supply grid'}},
+    "BATTERY_STORAGE": {'description': 'Battery storage systems', 'annotations': {'storage': True, 'oeo_label': 'battery'}},
 }
 
 class EnergyUnit(RichEnum):
@@ -3549,7 +3558,7 @@ class GridType(RichEnum):
 
 # Set metadata after class creation to avoid it becoming an enum member
 GridType._metadata = {
-    "MAIN_GRID": {'description': 'Main utility grid'},
+    "MAIN_GRID": {'description': 'Main utility grid', 'annotations': {'oeo_label': 'supply grid'}},
     "MICROGRID": {'description': 'Microgrid'},
     "OFF_GRID": {'description': 'Off-grid/standalone'},
     "SMART_GRID": {'description': 'Smart grid'},
@@ -3557,16 +3566,112 @@ GridType._metadata = {
     "VIRTUAL_POWER_PLANT": {'description': 'Virtual power plant'},
 }
 
-class EnergyStorageType(RichEnum):
+class BatteryType(RichEnum):
     """
-    Types of energy storage systems
+    Types of battery technologies for energy storage
     """
     # Enum members
-    LITHIUM_ION_BATTERY = "LITHIUM_ION_BATTERY"
-    LEAD_ACID_BATTERY = "LEAD_ACID_BATTERY"
-    FLOW_BATTERY = "FLOW_BATTERY"
-    SOLID_STATE_BATTERY = "SOLID_STATE_BATTERY"
-    SODIUM_ION_BATTERY = "SODIUM_ION_BATTERY"
+    LITHIUM_ION = "LITHIUM_ION"
+    LITHIUM_IRON_PHOSPHATE = "LITHIUM_IRON_PHOSPHATE"
+    LITHIUM_POLYMER = "LITHIUM_POLYMER"
+    LEAD_ACID = "LEAD_ACID"
+    NICKEL_METAL_HYDRIDE = "NICKEL_METAL_HYDRIDE"
+    NICKEL_CADMIUM = "NICKEL_CADMIUM"
+    SODIUM_ION = "SODIUM_ION"
+    SOLID_STATE = "SOLID_STATE"
+    VANADIUM_REDOX_FLOW = "VANADIUM_REDOX_FLOW"
+    ZINC_BROMINE_FLOW = "ZINC_BROMINE_FLOW"
+    IRON_AIR = "IRON_AIR"
+    ZINC_AIR = "ZINC_AIR"
+
+# Set metadata after class creation to avoid it becoming an enum member
+BatteryType._metadata = {
+    "LITHIUM_ION": {'description': 'Lithium-ion battery', 'annotations': {'chemistry': 'lithium'}, 'aliases': ['Li-ion', 'LIB']},
+    "LITHIUM_IRON_PHOSPHATE": {'description': 'Lithium iron phosphate (LFP) battery', 'annotations': {'chemistry': 'lithium'}, 'aliases': ['LFP', 'LiFePO4']},
+    "LITHIUM_POLYMER": {'description': 'Lithium polymer battery', 'annotations': {'chemistry': 'lithium'}, 'aliases': ['LiPo']},
+    "LEAD_ACID": {'description': 'Lead-acid battery', 'annotations': {'chemistry': 'lead'}, 'aliases': ['Pb-acid']},
+    "NICKEL_METAL_HYDRIDE": {'description': 'Nickel-metal hydride battery', 'annotations': {'chemistry': 'nickel'}, 'aliases': ['NiMH']},
+    "NICKEL_CADMIUM": {'description': 'Nickel-cadmium battery', 'annotations': {'chemistry': 'nickel'}, 'aliases': ['NiCd']},
+    "SODIUM_ION": {'description': 'Sodium-ion battery', 'annotations': {'chemistry': 'sodium'}, 'aliases': ['Na-ion']},
+    "SOLID_STATE": {'description': 'Solid-state battery', 'annotations': {'chemistry': 'various'}},
+    "VANADIUM_REDOX_FLOW": {'description': 'Vanadium redox flow battery', 'annotations': {'chemistry': 'vanadium', 'type': 'flow'}, 'aliases': ['VRB', 'VRFB']},
+    "ZINC_BROMINE_FLOW": {'description': 'Zinc-bromine flow battery', 'annotations': {'chemistry': 'zinc', 'type': 'flow'}, 'aliases': ['ZnBr']},
+    "IRON_AIR": {'description': 'Iron-air battery', 'annotations': {'chemistry': 'iron'}},
+    "ZINC_AIR": {'description': 'Zinc-air battery', 'annotations': {'chemistry': 'zinc'}},
+}
+
+class PVCellType(RichEnum):
+    """
+    Types of photovoltaic cell technologies
+    """
+    # Enum members
+    MONOCRYSTALLINE_SILICON = "MONOCRYSTALLINE_SILICON"
+    POLYCRYSTALLINE_SILICON = "POLYCRYSTALLINE_SILICON"
+    PASSIVATED_EMITTER_REAR_CELL = "PASSIVATED_EMITTER_REAR_CELL"
+    HETEROJUNCTION = "HETEROJUNCTION"
+    TUNNEL_OXIDE_PASSIVATED_CONTACT = "TUNNEL_OXIDE_PASSIVATED_CONTACT"
+    INTERDIGITATED_BACK_CONTACT = "INTERDIGITATED_BACK_CONTACT"
+    CADMIUM_TELLURIDE = "CADMIUM_TELLURIDE"
+    COPPER_INDIUM_GALLIUM_SELENIDE = "COPPER_INDIUM_GALLIUM_SELENIDE"
+    AMORPHOUS_SILICON = "AMORPHOUS_SILICON"
+    GALLIUM_ARSENIDE = "GALLIUM_ARSENIDE"
+    PEROVSKITE = "PEROVSKITE"
+    ORGANIC = "ORGANIC"
+    TANDEM = "TANDEM"
+
+# Set metadata after class creation to avoid it becoming an enum member
+PVCellType._metadata = {
+    "MONOCRYSTALLINE_SILICON": {'description': 'Monocrystalline silicon (mono-Si) cells', 'annotations': {'material': 'silicon', 'efficiency_range': '17-22%'}, 'aliases': ['mono-Si', 'single-crystal silicon']},
+    "POLYCRYSTALLINE_SILICON": {'description': 'Polycrystalline silicon (poly-Si) cells', 'annotations': {'material': 'silicon', 'efficiency_range': '15-17%'}, 'aliases': ['poly-Si', 'multi-crystalline silicon']},
+    "PASSIVATED_EMITTER_REAR_CELL": {'description': 'Passivated Emitter and Rear Cell (PERC)', 'annotations': {'material': 'silicon', 'efficiency_range': '19-22%'}, 'aliases': ['PERC']},
+    "HETEROJUNCTION": {'description': 'Heterojunction (HJT) cells', 'annotations': {'material': 'silicon', 'efficiency_range': '21-24%'}, 'aliases': ['HJT', 'HIT']},
+    "TUNNEL_OXIDE_PASSIVATED_CONTACT": {'description': 'Tunnel Oxide Passivated Contact (TOPCon) cells', 'annotations': {'material': 'silicon', 'efficiency_range': '22-24%'}, 'aliases': ['TOPCon']},
+    "INTERDIGITATED_BACK_CONTACT": {'description': 'Interdigitated Back Contact (IBC) cells', 'annotations': {'material': 'silicon', 'efficiency_range': '22-24%'}, 'aliases': ['IBC']},
+    "CADMIUM_TELLURIDE": {'description': 'Cadmium telluride (CdTe) thin-film cells', 'annotations': {'material': 'cadmium_telluride', 'type': 'thin-film', 'efficiency_range': '16-18%'}, 'aliases': ['CdTe']},
+    "COPPER_INDIUM_GALLIUM_SELENIDE": {'description': 'Copper indium gallium selenide (CIGS) thin-film cells', 'annotations': {'material': 'CIGS', 'type': 'thin-film', 'efficiency_range': '15-20%'}, 'aliases': ['CIGS', 'CIS']},
+    "AMORPHOUS_SILICON": {'description': 'Amorphous silicon (a-Si) thin-film cells', 'annotations': {'material': 'silicon', 'type': 'thin-film', 'efficiency_range': '6-8%'}, 'aliases': ['a-Si']},
+    "GALLIUM_ARSENIDE": {'description': 'Gallium arsenide (GaAs) cells', 'annotations': {'material': 'gallium_arsenide', 'efficiency_range': '25-30%', 'application': 'space, concentrator'}, 'aliases': ['GaAs']},
+    "PEROVSKITE": {'description': 'Perovskite solar cells', 'annotations': {'material': 'perovskite', 'efficiency_range': '20-25%', 'status': 'emerging'}},
+    "ORGANIC": {'description': 'Organic photovoltaic (OPV) cells', 'annotations': {'material': 'organic', 'type': 'thin-film', 'efficiency_range': '10-15%', 'status': 'emerging'}, 'aliases': ['OPV']},
+    "TANDEM": {'description': 'Tandem/multi-junction cells', 'annotations': {'efficiency_range': '25-35%'}, 'aliases': ['multi-junction']},
+}
+
+class PVSystemType(RichEnum):
+    """
+    Types of photovoltaic system installations
+    """
+    # Enum members
+    ROOFTOP_RESIDENTIAL = "ROOFTOP_RESIDENTIAL"
+    ROOFTOP_COMMERCIAL = "ROOFTOP_COMMERCIAL"
+    GROUND_MOUNTED = "GROUND_MOUNTED"
+    FLOATING = "FLOATING"
+    BUILDING_INTEGRATED = "BUILDING_INTEGRATED"
+    AGRIVOLTAICS = "AGRIVOLTAICS"
+    CARPORT = "CARPORT"
+    TRACKER_SINGLE_AXIS = "TRACKER_SINGLE_AXIS"
+    TRACKER_DUAL_AXIS = "TRACKER_DUAL_AXIS"
+    CONCENTRATING = "CONCENTRATING"
+
+# Set metadata after class creation to avoid it becoming an enum member
+PVSystemType._metadata = {
+    "ROOFTOP_RESIDENTIAL": {'description': 'Residential rooftop PV system', 'annotations': {'scale': 'residential', 'mounting': 'rooftop'}},
+    "ROOFTOP_COMMERCIAL": {'description': 'Commercial/industrial rooftop PV system', 'annotations': {'scale': 'commercial', 'mounting': 'rooftop'}},
+    "GROUND_MOUNTED": {'description': 'Ground-mounted utility-scale PV system', 'annotations': {'scale': 'utility', 'mounting': 'ground'}},
+    "FLOATING": {'description': 'Floating PV system (floatovoltaics)', 'annotations': {'scale': 'utility', 'mounting': 'floating'}, 'aliases': ['floatovoltaics', 'FPV']},
+    "BUILDING_INTEGRATED": {'description': 'Building-integrated PV (BIPV)', 'annotations': {'mounting': 'integrated'}, 'aliases': ['BIPV']},
+    "AGRIVOLTAICS": {'description': 'Agrivoltaic system (dual-use with agriculture)', 'annotations': {'scale': 'utility', 'dual_use': 'agriculture'}, 'aliases': ['agrophotovoltaics', 'APV']},
+    "CARPORT": {'description': 'Solar carport/parking canopy', 'annotations': {'mounting': 'canopy', 'dual_use': 'parking'}},
+    "TRACKER_SINGLE_AXIS": {'description': 'Single-axis tracking system', 'annotations': {'tracking': 'single_axis'}},
+    "TRACKER_DUAL_AXIS": {'description': 'Dual-axis tracking system', 'annotations': {'tracking': 'dual_axis'}},
+    "CONCENTRATING": {'description': 'Concentrating PV (CPV) system', 'annotations': {'type': 'concentrating'}, 'aliases': ['CPV']},
+}
+
+class EnergyStorageType(RichEnum):
+    """
+    Types of energy storage systems (categories)
+    """
+    # Enum members
+    BATTERY = "BATTERY"
     PUMPED_HYDRO = "PUMPED_HYDRO"
     COMPRESSED_AIR = "COMPRESSED_AIR"
     FLYWHEEL = "FLYWHEEL"
@@ -3581,20 +3686,16 @@ class EnergyStorageType(RichEnum):
 
 # Set metadata after class creation to avoid it becoming an enum member
 EnergyStorageType._metadata = {
-    "LITHIUM_ION_BATTERY": {'description': 'Lithium-ion battery', 'annotations': {'category': 'electrochemical'}},
-    "LEAD_ACID_BATTERY": {'description': 'Lead-acid battery', 'annotations': {'category': 'electrochemical'}},
-    "FLOW_BATTERY": {'description': 'Flow battery (e.g., vanadium redox)', 'annotations': {'category': 'electrochemical'}},
-    "SOLID_STATE_BATTERY": {'description': 'Solid-state battery', 'annotations': {'category': 'electrochemical'}},
-    "SODIUM_ION_BATTERY": {'description': 'Sodium-ion battery', 'annotations': {'category': 'electrochemical'}},
-    "PUMPED_HYDRO": {'description': 'Pumped hydroelectric storage', 'annotations': {'category': 'mechanical'}},
-    "COMPRESSED_AIR": {'description': 'Compressed air energy storage (CAES)', 'annotations': {'category': 'mechanical'}},
+    "BATTERY": {'description': 'Battery storage (see BatteryType for specific chemistries)', 'annotations': {'category': 'electrochemical'}},
+    "PUMPED_HYDRO": {'description': 'Pumped hydroelectric storage', 'annotations': {'category': 'mechanical', 'oeo_label': 'pumped hydro storage power plant'}},
+    "COMPRESSED_AIR": {'description': 'Compressed air energy storage (CAES)', 'annotations': {'category': 'mechanical', 'oeo_label': 'compressed air'}},
     "FLYWHEEL": {'description': 'Flywheel energy storage', 'annotations': {'category': 'mechanical'}},
     "GRAVITY_STORAGE": {'description': 'Gravity-based storage', 'annotations': {'category': 'mechanical'}},
     "MOLTEN_SALT": {'description': 'Molten salt thermal storage', 'annotations': {'category': 'thermal'}},
     "ICE_STORAGE": {'description': 'Ice thermal storage', 'annotations': {'category': 'thermal'}},
     "PHASE_CHANGE": {'description': 'Phase change materials', 'annotations': {'category': 'thermal'}},
-    "HYDROGEN_STORAGE": {'description': 'Hydrogen storage', 'annotations': {'category': 'chemical'}},
-    "SYNTHETIC_FUEL": {'description': 'Synthetic fuel storage', 'annotations': {'category': 'chemical'}},
+    "HYDROGEN_STORAGE": {'description': 'Hydrogen storage', 'annotations': {'category': 'chemical', 'oeo_label': 'hydrogen'}},
+    "SYNTHETIC_FUEL": {'description': 'Synthetic fuel storage', 'annotations': {'category': 'chemical', 'oeo_label': 'synthetic fuel'}},
     "SUPERCAPACITOR": {'description': 'Supercapacitor', 'annotations': {'category': 'electrical'}},
     "SUPERCONDUCTING": {'description': 'Superconducting magnetic energy storage (SMES)', 'annotations': {'category': 'electrical'}},
 }
@@ -3612,11 +3713,11 @@ class EmissionScope(RichEnum):
 
 # Set metadata after class creation to avoid it becoming an enum member
 EmissionScope._metadata = {
-    "SCOPE_1": {'description': 'Direct emissions from owned or controlled sources', 'annotations': {'ghg_protocol': 'Scope 1'}},
-    "SCOPE_2": {'description': 'Indirect emissions from purchased energy', 'annotations': {'ghg_protocol': 'Scope 2'}},
-    "SCOPE_3": {'description': 'All other indirect emissions in value chain', 'annotations': {'ghg_protocol': 'Scope 3'}},
-    "SCOPE_3_UPSTREAM": {'description': 'Upstream Scope 3 emissions', 'annotations': {'ghg_protocol': 'Scope 3'}},
-    "SCOPE_3_DOWNSTREAM": {'description': 'Downstream Scope 3 emissions', 'annotations': {'ghg_protocol': 'Scope 3'}},
+    "SCOPE_1": {'description': 'Direct emissions from owned or controlled sources', 'annotations': {'ghg_protocol': 'Scope 1', 'oeo_label': 'greenhouse gas emission'}},
+    "SCOPE_2": {'description': 'Indirect emissions from purchased energy', 'annotations': {'ghg_protocol': 'Scope 2', 'oeo_label': 'greenhouse gas emission'}},
+    "SCOPE_3": {'description': 'All other indirect emissions in value chain', 'annotations': {'ghg_protocol': 'Scope 3', 'oeo_label': 'greenhouse gas emission'}},
+    "SCOPE_3_UPSTREAM": {'description': 'Upstream Scope 3 emissions', 'annotations': {'ghg_protocol': 'Scope 3', 'oeo_label': 'greenhouse gas emission'}},
+    "SCOPE_3_DOWNSTREAM": {'description': 'Downstream Scope 3 emissions', 'annotations': {'ghg_protocol': 'Scope 3', 'oeo_label': 'greenhouse gas emission'}},
 }
 
 class CarbonIntensity(RichEnum):
@@ -3669,6 +3770,26 @@ ElectricityMarket._metadata = {
     "FEED_IN_TARIFF": {'description': 'Feed-in tariff'},
     "NET_METERING": {'description': 'Net metering'},
     "POWER_PURCHASE_AGREEMENT": {'description': 'Power purchase agreement (PPA)'},
+}
+
+class CapabilityStatus(RichEnum):
+    """
+    Operational status of a capability, facility, or infrastructure. Applicable to energy facilities, research capabilities, and other infrastructure throughout their lifecycle.
+    """
+    # Enum members
+    OPERATIONAL = "OPERATIONAL"
+    COMING_ONLINE = "COMING_ONLINE"
+    PILOT = "PILOT"
+    UNDER_DEVELOPMENT = "UNDER_DEVELOPMENT"
+    DECOMMISSIONED = "DECOMMISSIONED"
+
+# Set metadata after class creation to avoid it becoming an enum member
+CapabilityStatus._metadata = {
+    "OPERATIONAL": {'description': 'Fully operational and available to users', 'annotations': {'wikidata_label': 'in use', 'lifecycle_phase': 'operation'}},
+    "COMING_ONLINE": {'description': 'Being commissioned, coming online soon', 'annotations': {'wikidata_label': 'building process', 'lifecycle_phase': 'commissioning', 'iaea_equivalent': 'commissioning'}},
+    "PILOT": {'description': 'In pilot phase with limited access', 'annotations': {'availability': 'limited', 'lifecycle_phase': 'testing'}},
+    "UNDER_DEVELOPMENT": {'description': 'Under development, not yet available', 'annotations': {'wikidata_label': 'proposed building or structure', 'lifecycle_phase': 'planning/construction'}},
+    "DECOMMISSIONED": {'description': 'No longer available, permanently shut down', 'annotations': {'lifecycle_phase': 'end-of-life', 'iaea_equivalent': 'decommissioned'}},
 }
 
 class FossilFuelTypeEnum(RichEnum):
@@ -4603,6 +4724,364 @@ OperationalProcedureEnum._metadata = {
     "EMERGENCY_RESPONSE": {'description': 'Response to emergency conditions', 'annotations': {'classification': 'event classification', 'notification': 'offsite notification', 'mitigation': 'protective action implementation', 'coordination': 'with offsite authorities'}},
     "RADIOLOGICAL_PROTECTION": {'description': 'Procedures for radiation protection', 'annotations': {'monitoring': 'radiation monitoring', 'contamination_control': 'contamination prevention', 'dose_control': 'personnel dose limits', 'emergency': 'radiological emergency response'}},
     "SECURITY_PROCEDURE": {'description': 'Physical security and access control procedures', 'annotations': {'access_control': 'personnel access authorization', 'detection': 'intrusion detection systems', 'response': 'security force response', 'coordination': 'with law enforcement'}},
+}
+
+class GeothermalSystemType(RichEnum):
+    """
+    Types of geothermal energy systems, including conventional hydrothermal and enhanced/engineered geothermal systems.
+    """
+    # Enum members
+    HYDROTHERMAL = "HYDROTHERMAL"
+    ENHANCED_GEOTHERMAL_SYSTEM = "ENHANCED_GEOTHERMAL_SYSTEM"
+    ADVANCED_GEOTHERMAL_SYSTEM = "ADVANCED_GEOTHERMAL_SYSTEM"
+    HOT_DRY_ROCK = "HOT_DRY_ROCK"
+    GEOPRESSURED = "GEOPRESSURED"
+    SUPERCRITICAL = "SUPERCRITICAL"
+    GROUND_SOURCE_HEAT_PUMP = "GROUND_SOURCE_HEAT_PUMP"
+
+# Set metadata after class creation to avoid it becoming an enum member
+GeothermalSystemType._metadata = {
+    "HYDROTHERMAL": {'description': 'Naturally occurring geothermal system with heat, fluid, and permeability sufficient for energy extraction without stimulation.', 'annotations': {'conventional': True}},
+    "ENHANCED_GEOTHERMAL_SYSTEM": {'description': 'Engineered reservoirs created to extract heat from low permeability geothermal resources through stimulation methods.', 'annotations': {'requires_stimulation': True}, 'aliases': ['EGS', 'Engineered Geothermal System']},
+    "ADVANCED_GEOTHERMAL_SYSTEM": {'description': 'Closed-loop geothermal systems that circulate working fluid through wellbores to extract heat conductively without reservoir stimulation.', 'annotations': {'closed_loop': True}, 'aliases': ['AGS', 'Closed-Loop Geothermal']},
+    "HOT_DRY_ROCK": {'description': 'Geothermal system targeting hot basement rock lacking natural fluid or permeability, requiring artificial reservoir creation.', 'aliases': ['HDR']},
+    "GEOPRESSURED": {'description': 'Deep sedimentary formations with abnormally high fluid pressure containing hot brine and dissolved methane.', 'annotations': {'methane_recovery': True}},
+    "SUPERCRITICAL": {'description': 'Very high temperature systems (>374C) where water exists above its critical point, offering higher energy density.', 'annotations': {'temperature_min_c': 374}},
+    "GROUND_SOURCE_HEAT_PUMP": {'description': 'Shallow geothermal system using stable ground temperatures for heating and cooling buildings.', 'annotations': {'direct_use': True}, 'aliases': ['GSHP', 'Geothermal Heat Pump']},
+}
+
+class GeothermalReservoirType(RichEnum):
+    """
+    Classification of geothermal reservoirs by geological setting and characteristics.
+    """
+    # Enum members
+    VOLCANIC = "VOLCANIC"
+    SEDIMENTARY = "SEDIMENTARY"
+    FRACTURED_BASEMENT = "FRACTURED_BASEMENT"
+    FAULT_CONTROLLED = "FAULT_CONTROLLED"
+    MAGMATIC = "MAGMATIC"
+    CONDUCTION_DOMINATED = "CONDUCTION_DOMINATED"
+
+# Set metadata after class creation to avoid it becoming an enum member
+GeothermalReservoirType._metadata = {
+    "VOLCANIC": {'description': 'Reservoir associated with volcanic activity, typically in active volcanic regions with magma heat sources.'},
+    "SEDIMENTARY": {'description': 'Reservoir in sedimentary formations with elevated temperatures due to depth or regional heat flow.'},
+    "FRACTURED_BASEMENT": {'description': 'Reservoir in fractured crystalline basement rocks, typically granitic or metamorphic.', 'aliases': ['Hot Fractured Rock']},
+    "FAULT_CONTROLLED": {'description': 'Reservoir where fluid flow is controlled by fault systems providing permeability pathways.'},
+    "MAGMATIC": {'description': 'Very high temperature reservoir near or in contact with magma bodies or recent intrusions.'},
+    "CONDUCTION_DOMINATED": {'description': 'Low permeability reservoir where heat transfer is primarily through conduction rather than convection.'},
+}
+
+class GeothermalWellType(RichEnum):
+    """
+    Types of wells used in geothermal energy development and production.
+    """
+    # Enum members
+    PRODUCTION_WELL = "PRODUCTION_WELL"
+    INJECTION_WELL = "INJECTION_WELL"
+    EXPLORATION_WELL = "EXPLORATION_WELL"
+    OBSERVATION_WELL = "OBSERVATION_WELL"
+    SLIM_HOLE = "SLIM_HOLE"
+    DIRECTIONAL_WELL = "DIRECTIONAL_WELL"
+
+# Set metadata after class creation to avoid it becoming an enum member
+GeothermalWellType._metadata = {
+    "PRODUCTION_WELL": {'description': 'Well used to extract geothermal fluids or steam from the reservoir.'},
+    "INJECTION_WELL": {'description': 'Well used to return cooled geothermal fluids to the reservoir to maintain pressure and sustainability.', 'aliases': ['Reinjection Well']},
+    "EXPLORATION_WELL": {'description': 'Well drilled to evaluate geothermal resource characteristics.', 'aliases': ['Wildcat Well']},
+    "OBSERVATION_WELL": {'description': 'Well used to monitor reservoir conditions and pressure.', 'aliases': ['Monitoring Well']},
+    "SLIM_HOLE": {'description': 'Smaller diameter well used for initial exploration and temperature gradient measurement.'},
+    "DIRECTIONAL_WELL": {'description': 'Well drilled at an angle to access reservoir from offset surface location or increase reservoir contact.'},
+}
+
+class GeothermalApplication(RichEnum):
+    """
+    Applications and uses of geothermal energy.
+    """
+    # Enum members
+    ELECTRICITY_GENERATION = "ELECTRICITY_GENERATION"
+    DIRECT_USE_HEATING = "DIRECT_USE_HEATING"
+    GREENHOUSE_HEATING = "GREENHOUSE_HEATING"
+    AQUACULTURE = "AQUACULTURE"
+    INDUSTRIAL_PROCESS_HEAT = "INDUSTRIAL_PROCESS_HEAT"
+    FOOD_PROCESSING = "FOOD_PROCESSING"
+    BATHING_RECREATION = "BATHING_RECREATION"
+    LITHIUM_EXTRACTION = "LITHIUM_EXTRACTION"
+
+# Set metadata after class creation to avoid it becoming an enum member
+GeothermalApplication._metadata = {
+    "ELECTRICITY_GENERATION": {'description': 'Use of geothermal resources for power generation through steam turbines or binary cycle plants.', 'meaning': 'ENVO:2000034'},
+    "DIRECT_USE_HEATING": {'description': 'Direct use of geothermal heat for space heating, district heating, or industrial processes.'},
+    "GREENHOUSE_HEATING": {'description': 'Use of geothermal heat for agricultural greenhouses.'},
+    "AQUACULTURE": {'description': 'Use of geothermal heat for fish farming and aquaculture.'},
+    "INDUSTRIAL_PROCESS_HEAT": {'description': 'Use of geothermal heat for industrial manufacturing processes.'},
+    "FOOD_PROCESSING": {'description': 'Use of geothermal heat for food drying, pasteurization, and processing.'},
+    "BATHING_RECREATION": {'description': 'Use of geothermal waters for spas, pools, and recreation.'},
+    "LITHIUM_EXTRACTION": {'description': 'Extraction of lithium and other minerals from geothermal brines as a co-product of energy production.', 'annotations': {'co_production': True}},
+}
+
+class GeothermalResourceTemperature(RichEnum):
+    """
+    Classification of geothermal resources by temperature range.
+    """
+    # Enum members
+    LOW_TEMPERATURE = "LOW_TEMPERATURE"
+    MODERATE_TEMPERATURE = "MODERATE_TEMPERATURE"
+    HIGH_TEMPERATURE = "HIGH_TEMPERATURE"
+    SUPERCRITICAL = "SUPERCRITICAL"
+
+# Set metadata after class creation to avoid it becoming an enum member
+GeothermalResourceTemperature._metadata = {
+    "LOW_TEMPERATURE": {'description': 'Geothermal resource below 90C, suitable for direct use applications.', 'annotations': {'temperature_max_c': 90}},
+    "MODERATE_TEMPERATURE": {'description': 'Geothermal resource 90-150C, suitable for binary power generation.', 'annotations': {'temperature_min_c': 90, 'temperature_max_c': 150}},
+    "HIGH_TEMPERATURE": {'description': 'Geothermal resource above 150C, suitable for flash steam power generation.', 'annotations': {'temperature_min_c': 150}},
+    "SUPERCRITICAL": {'description': 'Very high temperature resource above 374C where water exists in supercritical state.', 'annotations': {'temperature_min_c': 374}},
+}
+
+class HydrogenType(RichEnum):
+    """
+    Color-coded classification of hydrogen based on production method and carbon intensity. This informal industry taxonomy differentiates hydrogen by its carbon footprint and energy source.
+    """
+    # Enum members
+    GREEN_HYDROGEN = "GREEN_HYDROGEN"
+    BLUE_HYDROGEN = "BLUE_HYDROGEN"
+    GREY_HYDROGEN = "GREY_HYDROGEN"
+    BROWN_HYDROGEN = "BROWN_HYDROGEN"
+    BLACK_HYDROGEN = "BLACK_HYDROGEN"
+    PINK_HYDROGEN = "PINK_HYDROGEN"
+    TURQUOISE_HYDROGEN = "TURQUOISE_HYDROGEN"
+    WHITE_HYDROGEN = "WHITE_HYDROGEN"
+    YELLOW_HYDROGEN = "YELLOW_HYDROGEN"
+    ORANGE_HYDROGEN = "ORANGE_HYDROGEN"
+
+# Set metadata after class creation to avoid it becoming an enum member
+HydrogenType._metadata = {
+    "GREEN_HYDROGEN": {'description': 'Hydrogen produced via electrolysis powered by renewable energy sources (solar, wind, hydro). Zero carbon emissions during production.', 'annotations': {'production_method': 'electrolysis', 'energy_source': 'renewable', 'carbon_intensity': 'zero'}, 'aliases': ['Renewable Hydrogen']},
+    "BLUE_HYDROGEN": {'description': 'Hydrogen produced from natural gas via steam methane reforming (SMR) with carbon capture and storage (CCS). Low carbon intensity.', 'annotations': {'production_method': 'steam_methane_reforming', 'energy_source': 'natural_gas', 'carbon_intensity': 'low', 'requires_ccs': True}},
+    "GREY_HYDROGEN": {'description': 'Hydrogen produced from natural gas via steam methane reforming without carbon capture. Most common production method currently.', 'annotations': {'production_method': 'steam_methane_reforming', 'energy_source': 'natural_gas', 'carbon_intensity': 'high', 'co2_per_kg_h2': '9-12'}, 'aliases': ['Gray Hydrogen']},
+    "BROWN_HYDROGEN": {'description': 'Hydrogen produced from brown coal (lignite) gasification without carbon capture. High carbon intensity.', 'annotations': {'production_method': 'coal_gasification', 'energy_source': 'lignite', 'carbon_intensity': 'very_high'}},
+    "BLACK_HYDROGEN": {'description': 'Hydrogen produced from black coal (bituminous) gasification without carbon capture. High carbon intensity.', 'annotations': {'production_method': 'coal_gasification', 'energy_source': 'bituminous_coal', 'carbon_intensity': 'very_high'}},
+    "PINK_HYDROGEN": {'description': 'Hydrogen produced via electrolysis powered by nuclear energy. Zero carbon emissions during production.', 'annotations': {'production_method': 'electrolysis', 'energy_source': 'nuclear', 'carbon_intensity': 'zero'}, 'aliases': ['Purple Hydrogen', 'Red Hydrogen']},
+    "TURQUOISE_HYDROGEN": {'description': 'Hydrogen produced via methane pyrolysis, producing solid carbon instead of CO2. Lower carbon intensity than grey hydrogen.', 'annotations': {'production_method': 'methane_pyrolysis', 'energy_source': 'natural_gas', 'carbon_intensity': 'low', 'byproduct': 'solid_carbon'}},
+    "WHITE_HYDROGEN": {'description': 'Naturally occurring geological hydrogen found in underground deposits. Zero production emissions.', 'annotations': {'production_method': 'geological_extraction', 'energy_source': 'natural', 'carbon_intensity': 'zero'}, 'aliases': ['Natural Hydrogen', 'Geological Hydrogen', 'Gold Hydrogen']},
+    "YELLOW_HYDROGEN": {'description': 'Hydrogen produced via electrolysis powered by solar energy specifically. A subset of green hydrogen.', 'annotations': {'production_method': 'electrolysis', 'energy_source': 'solar', 'carbon_intensity': 'zero'}},
+    "ORANGE_HYDROGEN": {'description': 'Hydrogen produced from plastic waste gasification or pyrolysis. Emerging technology addressing both energy and waste challenges.', 'annotations': {'production_method': 'waste_gasification', 'energy_source': 'plastic_waste', 'carbon_intensity': 'varies'}},
+}
+
+class HydrogenProductionMethod(RichEnum):
+    """
+    Methods and processes for producing hydrogen.
+    """
+    # Enum members
+    STEAM_METHANE_REFORMING = "STEAM_METHANE_REFORMING"
+    AUTOTHERMAL_REFORMING = "AUTOTHERMAL_REFORMING"
+    PARTIAL_OXIDATION = "PARTIAL_OXIDATION"
+    COAL_GASIFICATION = "COAL_GASIFICATION"
+    WATER_ELECTROLYSIS = "WATER_ELECTROLYSIS"
+    ALKALINE_ELECTROLYSIS = "ALKALINE_ELECTROLYSIS"
+    PEM_ELECTROLYSIS = "PEM_ELECTROLYSIS"
+    SOLID_OXIDE_ELECTROLYSIS = "SOLID_OXIDE_ELECTROLYSIS"
+    METHANE_PYROLYSIS = "METHANE_PYROLYSIS"
+    BIOMASS_GASIFICATION = "BIOMASS_GASIFICATION"
+    BIOLOGICAL_PRODUCTION = "BIOLOGICAL_PRODUCTION"
+    THERMOCHEMICAL_WATER_SPLITTING = "THERMOCHEMICAL_WATER_SPLITTING"
+    PHOTOELECTROCHEMICAL = "PHOTOELECTROCHEMICAL"
+
+# Set metadata after class creation to avoid it becoming an enum member
+HydrogenProductionMethod._metadata = {
+    "STEAM_METHANE_REFORMING": {'description': 'High temperature steam reacts with methane to produce hydrogen, carbon monoxide, and carbon dioxide.', 'annotations': {'feedstock': 'natural_gas', 'temperature_c': '700-1000', 'dominant_method': True}, 'aliases': ['SMR']},
+    "AUTOTHERMAL_REFORMING": {'description': 'Combines steam reforming and partial oxidation using oxygen and steam to produce hydrogen from hydrocarbons.', 'aliases': ['ATR']},
+    "PARTIAL_OXIDATION": {'description': 'Exothermic process reacting hydrocarbons with limited oxygen to produce hydrogen and carbon monoxide.', 'aliases': ['POX']},
+    "COAL_GASIFICATION": {'description': 'Conversion of coal to syngas (hydrogen and carbon monoxide) using high temperature and steam.', 'meaning': 'CHMO:0001501'},
+    "WATER_ELECTROLYSIS": {'description': 'Splitting water into hydrogen and oxygen using electrical current. Can be powered by various energy sources.', 'aliases': ['Electrolysis']},
+    "ALKALINE_ELECTROLYSIS": {'description': 'Electrolysis using alkaline solution (typically KOH) as electrolyte. Mature commercial technology.', 'annotations': {'electrolyte': 'alkaline', 'maturity': 'commercial'}, 'aliases': ['AEL']},
+    "PEM_ELECTROLYSIS": {'description': 'Proton Exchange Membrane electrolysis using solid polymer electrolyte. Higher efficiency, faster response.', 'annotations': {'electrolyte': 'polymer_membrane', 'maturity': 'commercial'}, 'aliases': ['PEMEC', 'Polymer Electrolyte Membrane Electrolysis']},
+    "SOLID_OXIDE_ELECTROLYSIS": {'description': 'High temperature electrolysis using solid ceramic electrolyte. Higher efficiency when waste heat is available.', 'annotations': {'electrolyte': 'solid_oxide', 'temperature_c': '700-850', 'maturity': 'emerging'}, 'aliases': ['SOEC']},
+    "METHANE_PYROLYSIS": {'description': 'Thermal decomposition of methane into hydrogen and solid carbon without oxygen. Produces no direct CO2.', 'annotations': {'feedstock': 'natural_gas', 'byproduct': 'solid_carbon'}, 'aliases': ['Thermal Cracking']},
+    "BIOMASS_GASIFICATION": {'description': 'Thermochemical conversion of biomass to hydrogen-rich syngas at high temperatures.', 'annotations': {'feedstock': 'biomass', 'renewable': True}},
+    "BIOLOGICAL_PRODUCTION": {'description': 'Production of hydrogen by microorganisms through photosynthesis, fermentation, or other biological processes.', 'annotations': {'renewable': True, 'maturity': 'research'}, 'aliases': ['Biohydrogen']},
+    "THERMOCHEMICAL_WATER_SPLITTING": {'description': 'Using high temperatures from concentrated solar or nuclear to drive chemical cycles that split water.', 'annotations': {'temperature_c': '500-2000', 'maturity': 'research'}},
+    "PHOTOELECTROCHEMICAL": {'description': 'Direct conversion of sunlight to hydrogen using specialized semiconductor materials in contact with water.', 'annotations': {'maturity': 'research'}, 'aliases': ['PEC']},
+}
+
+class HydrogenStorageMethod(RichEnum):
+    """
+    Methods for storing hydrogen for later use or transport.
+    """
+    # Enum members
+    COMPRESSED_GAS = "COMPRESSED_GAS"
+    LIQUID_HYDROGEN = "LIQUID_HYDROGEN"
+    METAL_HYDRIDE = "METAL_HYDRIDE"
+    CHEMICAL_HYDRIDE = "CHEMICAL_HYDRIDE"
+    UNDERGROUND_STORAGE = "UNDERGROUND_STORAGE"
+    CRYO_COMPRESSED = "CRYO_COMPRESSED"
+
+# Set metadata after class creation to avoid it becoming an enum member
+HydrogenStorageMethod._metadata = {
+    "COMPRESSED_GAS": {'description': 'Storage of hydrogen as compressed gas at high pressure (350-700 bar) in pressure vessels.', 'annotations': {'pressure_bar': '350-700', 'maturity': 'commercial'}, 'aliases': ['CGH2']},
+    "LIQUID_HYDROGEN": {'description': 'Storage of hydrogen in liquid form at cryogenic temperatures (-253C). Higher energy density but requires insulation.', 'annotations': {'temperature_c': -253, 'maturity': 'commercial'}, 'aliases': ['LH2']},
+    "METAL_HYDRIDE": {'description': 'Storage of hydrogen absorbed into metal alloys forming metal hydrides. Safer but heavier than compressed gas.', 'annotations': {'maturity': 'commercial'}},
+    "CHEMICAL_HYDRIDE": {'description': 'Storage as chemical compounds (ammonia, methanol, LOHC) that release hydrogen when processed.', 'aliases': ['LOHC', 'Liquid Organic Hydrogen Carrier']},
+    "UNDERGROUND_STORAGE": {'description': 'Large-scale storage in salt caverns, depleted gas fields, or aquifers for grid-scale applications.', 'annotations': {'scale': 'utility'}, 'aliases': ['Geological Storage']},
+    "CRYO_COMPRESSED": {'description': 'Hybrid approach combining cryogenic cooling with high pressure for improved density.', 'annotations': {'maturity': 'emerging'}, 'aliases': ['CcH2']},
+}
+
+class HydrogenApplication(RichEnum):
+    """
+    End-use applications for hydrogen.
+    """
+    # Enum members
+    FUEL_CELL_VEHICLE = "FUEL_CELL_VEHICLE"
+    FUEL_CELL_STATIONARY = "FUEL_CELL_STATIONARY"
+    INDUSTRIAL_FEEDSTOCK = "INDUSTRIAL_FEEDSTOCK"
+    STEEL_PRODUCTION = "STEEL_PRODUCTION"
+    AMMONIA_SYNTHESIS = "AMMONIA_SYNTHESIS"
+    METHANOL_SYNTHESIS = "METHANOL_SYNTHESIS"
+    POWER_TO_GAS = "POWER_TO_GAS"
+    BLENDING_NATURAL_GAS = "BLENDING_NATURAL_GAS"
+    SYNTHETIC_FUELS = "SYNTHETIC_FUELS"
+
+# Set metadata after class creation to avoid it becoming an enum member
+HydrogenApplication._metadata = {
+    "FUEL_CELL_VEHICLE": {'description': 'Use of hydrogen in fuel cells for transportation (cars, trucks, buses).', 'aliases': ['FCEV']},
+    "FUEL_CELL_STATIONARY": {'description': 'Use of hydrogen in stationary fuel cells for power generation.'},
+    "INDUSTRIAL_FEEDSTOCK": {'description': 'Use of hydrogen as chemical feedstock for ammonia production, petroleum refining, and chemical synthesis.', 'meaning': 'CHEBI:18276'},
+    "STEEL_PRODUCTION": {'description': 'Use of hydrogen to reduce iron ore in steelmaking, replacing coal.', 'aliases': ['Green Steel']},
+    "AMMONIA_SYNTHESIS": {'description': 'Use of hydrogen with nitrogen to produce ammonia for fertilizers.'},
+    "METHANOL_SYNTHESIS": {'description': 'Use of hydrogen with CO2 to produce methanol.'},
+    "POWER_TO_GAS": {'description': 'Conversion of excess renewable electricity to hydrogen for grid balancing and energy storage.', 'aliases': ['P2G']},
+    "BLENDING_NATURAL_GAS": {'description': 'Blending hydrogen into natural gas pipelines for decarbonization of heating.'},
+    "SYNTHETIC_FUELS": {'description': 'Use of hydrogen with captured CO2 to produce synthetic hydrocarbons (e-fuels, SAF).', 'aliases': ['E-Fuels', 'Power-to-Liquid']},
+}
+
+class BiomassFeedstockType(RichEnum):
+    """
+    Types of biomass materials used as feedstocks for bioenergy production. Includes dedicated energy crops, agricultural residues, forest residues, and waste streams.
+    """
+    # Enum members
+    CORN_STOVER = "CORN_STOVER"
+    WHEAT_STRAW = "WHEAT_STRAW"
+    RICE_STRAW = "RICE_STRAW"
+    SWITCHGRASS = "SWITCHGRASS"
+    MISCANTHUS = "MISCANTHUS"
+    ENERGY_CANE = "ENERGY_CANE"
+    SWEET_SORGHUM = "SWEET_SORGHUM"
+    POPLAR = "POPLAR"
+    WILLOW = "WILLOW"
+    FOREST_RESIDUE = "FOREST_RESIDUE"
+    WOOD_PROCESSING_RESIDUE = "WOOD_PROCESSING_RESIDUE"
+    MUNICIPAL_SOLID_WASTE = "MUNICIPAL_SOLID_WASTE"
+    FOOD_WASTE = "FOOD_WASTE"
+    ANIMAL_MANURE = "ANIMAL_MANURE"
+    ALGAE = "ALGAE"
+    USED_COOKING_OIL = "USED_COOKING_OIL"
+    SOYBEAN_OIL = "SOYBEAN_OIL"
+    CORN_GRAIN = "CORN_GRAIN"
+    SUGARCANE = "SUGARCANE"
+
+# Set metadata after class creation to avoid it becoming an enum member
+BiomassFeedstockType._metadata = {
+    "CORN_STOVER": {'description': 'Agricultural residue consisting of leaves, stalks, and cobs remaining after corn grain harvest.', 'annotations': {'category': 'agricultural_residue', 'lignocellulosic': True}, 'aliases': ['Corn Residue']},
+    "WHEAT_STRAW": {'description': 'Agricultural residue remaining after wheat grain harvest.', 'annotations': {'category': 'agricultural_residue', 'lignocellulosic': True}},
+    "RICE_STRAW": {'description': 'Agricultural residue remaining after rice grain harvest.', 'annotations': {'category': 'agricultural_residue', 'lignocellulosic': True}},
+    "SWITCHGRASS": {'description': 'Perennial warm-season grass native to North America, cultivated as dedicated energy crop for cellulosic biofuel production.', 'annotations': {'category': 'energy_crop', 'lignocellulosic': True, 'perennial': True}},
+    "MISCANTHUS": {'description': 'High-yielding perennial grass cultivated as dedicated energy crop.', 'annotations': {'category': 'energy_crop', 'lignocellulosic': True, 'perennial': True}, 'aliases': ['Elephant Grass']},
+    "ENERGY_CANE": {'description': 'High-fiber sugarcane varieties bred for biomass production rather than sugar content.', 'annotations': {'category': 'energy_crop', 'lignocellulosic': True}},
+    "SWEET_SORGHUM": {'description': 'Sorghum variety with high sugar content in stalks, suitable for both sugar and lignocellulosic conversion.', 'annotations': {'category': 'energy_crop', 'sugar_crop': True}},
+    "POPLAR": {'description': 'Fast-growing hardwood tree cultivated as short-rotation woody crop for biomass.', 'annotations': {'category': 'woody_crop', 'lignocellulosic': True}, 'aliases': ['Hybrid Poplar']},
+    "WILLOW": {'description': 'Fast-growing shrub cultivated as short-rotation woody crop.', 'annotations': {'category': 'woody_crop', 'lignocellulosic': True}, 'aliases': ['Shrub Willow']},
+    "FOREST_RESIDUE": {'description': 'Biomass from forest operations including logging residues, thinning material, and salvage timber.', 'annotations': {'category': 'forestry_residue', 'lignocellulosic': True}, 'aliases': ['Logging Residue']},
+    "WOOD_PROCESSING_RESIDUE": {'description': 'Byproducts from wood processing including sawdust, bark, shavings, and wood chips.', 'annotations': {'category': 'processing_residue', 'lignocellulosic': True}, 'aliases': ['Mill Residue']},
+    "MUNICIPAL_SOLID_WASTE": {'description': 'Organic portion of municipal solid waste suitable for bioenergy conversion.', 'annotations': {'category': 'waste'}, 'aliases': ['MSW']},
+    "FOOD_WASTE": {'description': 'Waste food from residential, commercial, and industrial sources.', 'annotations': {'category': 'wet_waste'}},
+    "ANIMAL_MANURE": {'description': 'Livestock waste including cattle, swine, and poultry manure.', 'annotations': {'category': 'wet_waste', 'biogas_suitable': True}},
+    "ALGAE": {'description': 'Microalgae or macroalgae cultivated for lipid or carbohydrate content for biofuel production.', 'annotations': {'category': 'aquatic_biomass', 'lipid_rich': True}, 'aliases': ['Microalgae']},
+    "USED_COOKING_OIL": {'description': 'Waste vegetable oils from food preparation.', 'annotations': {'category': 'waste', 'lipid_rich': True}, 'aliases': ['UCO', 'Waste Vegetable Oil']},
+    "SOYBEAN_OIL": {'description': 'Vegetable oil from soybean seeds, used for biodiesel.', 'meaning': 'CHEBI:166975', 'annotations': {'category': 'oil_crop', 'lipid_rich': True}},
+    "CORN_GRAIN": {'description': 'Corn kernels used for starch-based ethanol production.', 'annotations': {'category': 'grain', 'starch_crop': True}},
+    "SUGARCANE": {'description': 'Sugar-rich crop used for first-generation ethanol production.', 'annotations': {'category': 'sugar_crop'}},
+}
+
+class BiofuelType(RichEnum):
+    """
+    Types of fuels produced from biomass feedstocks.
+    """
+    # Enum members
+    ETHANOL = "ETHANOL"
+    BIODIESEL = "BIODIESEL"
+    RENEWABLE_DIESEL = "RENEWABLE_DIESEL"
+    SUSTAINABLE_AVIATION_FUEL = "SUSTAINABLE_AVIATION_FUEL"
+    BIOGAS = "BIOGAS"
+    BIOMETHANE = "BIOMETHANE"
+    BIO_OIL = "BIO_OIL"
+    SYNGAS = "SYNGAS"
+    BUTANOL = "BUTANOL"
+    METHANOL = "METHANOL"
+    DIMETHYL_ETHER = "DIMETHYL_ETHER"
+
+# Set metadata after class creation to avoid it becoming an enum member
+BiofuelType._metadata = {
+    "ETHANOL": {'description': 'Alcohol biofuel (C2H5OH) produced by fermentation of sugars or starches, or from cellulosic biomass.', 'meaning': 'CHEBI:16236', 'annotations': {'chemical_formula': 'C2H5OH'}, 'aliases': ['Fuel Ethanol', 'Bioethanol']},
+    "BIODIESEL": {'description': 'Fatty acid methyl esters (FAME) produced by transesterification of vegetable oils or animal fats.', 'meaning': 'MESH:D056804', 'annotations': {'production_method': 'transesterification'}, 'aliases': ['FAME']},
+    "RENEWABLE_DIESEL": {'description': 'Hydrocarbon diesel produced by hydrotreating lipids. Chemically identical to petroleum diesel.', 'annotations': {'drop_in_fuel': True}, 'aliases': ['Green Diesel', 'HVO', 'Hydrotreated Vegetable Oil']},
+    "SUSTAINABLE_AVIATION_FUEL": {'description': 'Jet fuel produced from biomass or waste, meeting aviation fuel specifications.', 'annotations': {'drop_in_fuel': True}, 'aliases': ['SAF', 'Biojet']},
+    "BIOGAS": {'description': 'Gaseous mixture of methane and CO2 produced by anaerobic digestion of organic matter.', 'annotations': {'methane_content_percent': '50-70'}, 'aliases': ['Raw Biogas']},
+    "BIOMETHANE": {'description': 'Purified biogas upgraded to natural gas quality (>95% methane).', 'annotations': {'methane_content_percent': '95+', 'pipeline_quality': True}, 'aliases': ['Renewable Natural Gas', 'RNG']},
+    "BIO_OIL": {'description': 'Liquid intermediate produced by pyrolysis or hydrothermal liquefaction of biomass.', 'annotations': {'intermediate': True}, 'aliases': ['Pyrolysis Oil']},
+    "SYNGAS": {'description': 'Synthesis gas (CO + H2) produced by gasification of biomass.', 'meaning': 'CHMO:0001501', 'annotations': {'intermediate': True}, 'aliases': ['Synthesis Gas']},
+    "BUTANOL": {'description': 'Four-carbon alcohol biofuel with higher energy density than ethanol.', 'meaning': 'CHEBI:28885', 'annotations': {'chemical_formula': 'C4H9OH'}},
+    "METHANOL": {'description': 'Methanol produced from biomass-derived syngas.', 'meaning': 'CHEBI:17790', 'annotations': {'chemical_formula': 'CH3OH'}},
+    "DIMETHYL_ETHER": {'description': 'Dimethyl ether produced from biomass, usable as diesel substitute.', 'meaning': 'CHEBI:28887', 'aliases': ['DME']},
+}
+
+class BiofuelGeneration(RichEnum):
+    """
+    Classification of biofuels by feedstock source and technology generation.
+    """
+    # Enum members
+    FIRST_GENERATION = "FIRST_GENERATION"
+    SECOND_GENERATION = "SECOND_GENERATION"
+    THIRD_GENERATION = "THIRD_GENERATION"
+    FOURTH_GENERATION = "FOURTH_GENERATION"
+
+# Set metadata after class creation to avoid it becoming an enum member
+BiofuelGeneration._metadata = {
+    "FIRST_GENERATION": {'description': 'Biofuels produced from food crops (sugar, starch, vegetable oils) using conventional conversion technologies.', 'annotations': {'feedstock': 'food_crops', 'examples': 'corn_ethanol,soy_biodiesel'}, 'aliases': ['1G Biofuel', 'Conventional Biofuel']},
+    "SECOND_GENERATION": {'description': 'Biofuels produced from lignocellulosic biomass (non-food) using advanced conversion technologies.', 'annotations': {'feedstock': 'lignocellulosic', 'examples': 'cellulosic_ethanol,wood_diesel'}, 'aliases': ['2G Biofuel', 'Cellulosic Biofuel', 'Advanced Biofuel']},
+    "THIRD_GENERATION": {'description': 'Biofuels produced from algae or other photosynthetic microorganisms.', 'annotations': {'feedstock': 'algae'}, 'aliases': ['3G Biofuel', 'Algal Biofuel']},
+    "FOURTH_GENERATION": {'description': 'Biofuels from genetically engineered organisms designed for carbon capture and enhanced fuel production.', 'annotations': {'feedstock': 'engineered_organisms', 'carbon_negative': True}, 'aliases': ['4G Biofuel']},
+}
+
+class BioconversionProcess(RichEnum):
+    """
+    Processes for converting biomass feedstocks into biofuels and bioproducts.
+    """
+    # Enum members
+    FERMENTATION = "FERMENTATION"
+    ANAEROBIC_DIGESTION = "ANAEROBIC_DIGESTION"
+    TRANSESTERIFICATION = "TRANSESTERIFICATION"
+    HYDROTREATING = "HYDROTREATING"
+    PYROLYSIS = "PYROLYSIS"
+    GASIFICATION = "GASIFICATION"
+    HYDROTHERMAL_LIQUEFACTION = "HYDROTHERMAL_LIQUEFACTION"
+    ENZYMATIC_HYDROLYSIS = "ENZYMATIC_HYDROLYSIS"
+    ACID_HYDROLYSIS = "ACID_HYDROLYSIS"
+    FISCHER_TROPSCH = "FISCHER_TROPSCH"
+    ALCOHOL_TO_JET = "ALCOHOL_TO_JET"
+
+# Set metadata after class creation to avoid it becoming an enum member
+BioconversionProcess._metadata = {
+    "FERMENTATION": {'description': 'Biological conversion of sugars to alcohols using yeast or bacteria.', 'annotations': {'category': 'biochemical', 'products': 'ethanol,butanol'}},
+    "ANAEROBIC_DIGESTION": {'description': 'Biological breakdown of organic matter by microorganisms in the absence of oxygen, producing biogas.', 'annotations': {'category': 'biochemical', 'products': 'biogas'}},
+    "TRANSESTERIFICATION": {'description': 'Chemical reaction of triglycerides with alcohol to produce fatty acid esters (biodiesel) and glycerol.', 'annotations': {'category': 'chemical', 'products': 'biodiesel'}},
+    "HYDROTREATING": {'description': 'Catalytic reaction of lipids with hydrogen to produce hydrocarbon fuels.', 'annotations': {'category': 'thermochemical', 'products': 'renewable_diesel,SAF'}, 'aliases': ['Hydroprocessing']},
+    "PYROLYSIS": {'description': 'Thermal decomposition of biomass in the absence of oxygen to produce bio-oil, syngas, and biochar.', 'annotations': {'category': 'thermochemical', 'temperature_c': '400-600', 'products': 'bio_oil,syngas,biochar'}},
+    "GASIFICATION": {'description': 'High-temperature conversion of carbonaceous materials to syngas using controlled oxygen and/or steam.', 'meaning': 'CHMO:0001501', 'annotations': {'category': 'thermochemical', 'temperature_c': '700-1500', 'products': 'syngas'}},
+    "HYDROTHERMAL_LIQUEFACTION": {'description': 'Conversion of wet biomass to bio-crude using high temperature and pressure water.', 'annotations': {'category': 'thermochemical', 'temperature_c': '250-400', 'pressure_bar': '100-200', 'wet_feedstock': True}, 'aliases': ['HTL']},
+    "ENZYMATIC_HYDROLYSIS": {'description': 'Breakdown of cellulose and hemicellulose to fermentable sugars using enzymes.', 'annotations': {'category': 'biochemical', 'pretreatment_step': True}},
+    "ACID_HYDROLYSIS": {'description': 'Chemical breakdown of cellulose to sugars using dilute or concentrated acid.', 'annotations': {'category': 'chemical', 'pretreatment_step': True}},
+    "FISCHER_TROPSCH": {'description': 'Catalytic conversion of syngas to liquid hydrocarbons.', 'annotations': {'category': 'thermochemical', 'feedstock': 'syngas', 'products': 'FT_diesel,FT_jet'}, 'aliases': ['FT Synthesis']},
+    "ALCOHOL_TO_JET": {'description': 'Conversion of alcohols (ethanol, isobutanol) to jet fuel through dehydration, oligomerization, and hydrogenation.', 'annotations': {'category': 'chemical', 'products': 'SAF'}, 'aliases': ['ATJ']},
 }
 
 class MiningType(RichEnum):
@@ -6958,6 +7437,52 @@ CellPolarity._metadata = {
     "TRAILING_EDGE": {'description': 'Rear of a migrating cell', 'annotations': {'context': 'cell migration'}},
     "PROXIMAL_POLE": {'description': 'Pole closer to the cell body', 'annotations': {'context': 'neurons, polarized cells'}},
     "DISTAL_POLE": {'description': 'Pole further from the cell body', 'annotations': {'context': 'neurons, polarized cells'}},
+}
+
+class AnatomicalOrientation(RichEnum):
+    """
+    Directional orientation between anatomical positions based on OME NGFF specification
+    """
+    # Enum members
+    LEFT_TO_RIGHT = "LEFT_TO_RIGHT"
+    RIGHT_TO_LEFT = "RIGHT_TO_LEFT"
+    ANTERIOR_TO_POSTERIOR = "ANTERIOR_TO_POSTERIOR"
+    POSTERIOR_TO_ANTERIOR = "POSTERIOR_TO_ANTERIOR"
+    INFERIOR_TO_SUPERIOR = "INFERIOR_TO_SUPERIOR"
+    SUPERIOR_TO_INFERIOR = "SUPERIOR_TO_INFERIOR"
+    DORSAL_TO_VENTRAL = "DORSAL_TO_VENTRAL"
+    VENTRAL_TO_DORSAL = "VENTRAL_TO_DORSAL"
+    DORSAL_TO_PALMAR = "DORSAL_TO_PALMAR"
+    PALMAR_TO_DORSAL = "PALMAR_TO_DORSAL"
+    DORSAL_TO_PLANTAR = "DORSAL_TO_PLANTAR"
+    PLANTAR_TO_DORSAL = "PLANTAR_TO_DORSAL"
+    ROSTRAL_TO_CAUDAL = "ROSTRAL_TO_CAUDAL"
+    CAUDAL_TO_ROSTRAL = "CAUDAL_TO_ROSTRAL"
+    CRANIAL_TO_CAUDAL = "CRANIAL_TO_CAUDAL"
+    CAUDAL_TO_CRANIAL = "CAUDAL_TO_CRANIAL"
+    PROXIMAL_TO_DISTAL = "PROXIMAL_TO_DISTAL"
+    DISTAL_TO_PROXIMAL = "DISTAL_TO_PROXIMAL"
+
+# Set metadata after class creation to avoid it becoming an enum member
+AnatomicalOrientation._metadata = {
+    "LEFT_TO_RIGHT": {'description': 'Directional orientation from left to right lateral side of an anatomical structure', 'annotations': {'source': 'OME NGFF'}},
+    "RIGHT_TO_LEFT": {'description': 'Directional orientation from right to left lateral side of an anatomical structure', 'annotations': {'source': 'OME NGFF'}},
+    "ANTERIOR_TO_POSTERIOR": {'description': 'Directional orientation from front to back of an anatomical structure', 'annotations': {'source': 'OME NGFF'}},
+    "POSTERIOR_TO_ANTERIOR": {'description': 'Directional orientation from back to front of an anatomical structure', 'annotations': {'source': 'OME NGFF'}},
+    "INFERIOR_TO_SUPERIOR": {'description': 'Directional orientation from below to above in an anatomical structure', 'annotations': {'source': 'OME NGFF'}},
+    "SUPERIOR_TO_INFERIOR": {'description': 'Directional orientation from above to below in an anatomical structure', 'annotations': {'source': 'OME NGFF'}},
+    "DORSAL_TO_VENTRAL": {'description': 'Directional orientation from top/upper to belly/lower in an anatomical structure', 'annotations': {'source': 'OME NGFF'}},
+    "VENTRAL_TO_DORSAL": {'description': 'Directional orientation from belly/lower to top/upper in an anatomical structure', 'annotations': {'source': 'OME NGFF'}},
+    "DORSAL_TO_PALMAR": {'description': 'Directional orientation from top/upper to palm of hand', 'annotations': {'source': 'OME NGFF', 'context': 'hand anatomy'}},
+    "PALMAR_TO_DORSAL": {'description': 'Directional orientation from palm of hand to top/upper', 'annotations': {'source': 'OME NGFF', 'context': 'hand anatomy'}},
+    "DORSAL_TO_PLANTAR": {'description': 'Directional orientation from top/upper to sole of foot', 'annotations': {'source': 'OME NGFF', 'context': 'foot anatomy'}},
+    "PLANTAR_TO_DORSAL": {'description': 'Directional orientation from sole of foot to top/upper', 'annotations': {'source': 'OME NGFF', 'context': 'foot anatomy'}},
+    "ROSTRAL_TO_CAUDAL": {'description': 'Directional orientation from nasal to tail end, typically for central nervous system', 'annotations': {'source': 'OME NGFF', 'context': 'central nervous system'}},
+    "CAUDAL_TO_ROSTRAL": {'description': 'Directional orientation from tail to nasal end, typically for central nervous system', 'annotations': {'source': 'OME NGFF', 'context': 'central nervous system'}},
+    "CRANIAL_TO_CAUDAL": {'description': 'Directional orientation from head to tail end of a structure', 'annotations': {'source': 'OME NGFF'}},
+    "CAUDAL_TO_CRANIAL": {'description': 'Directional orientation from tail to head end of a structure', 'annotations': {'source': 'OME NGFF'}},
+    "PROXIMAL_TO_DISTAL": {'description': 'Directional orientation from body center to periphery of a structure', 'annotations': {'source': 'OME NGFF'}},
+    "DISTAL_TO_PROXIMAL": {'description': 'Directional orientation from periphery to body center of a structure', 'annotations': {'source': 'OME NGFF'}},
 }
 
 class CrystalSystemEnum(RichEnum):

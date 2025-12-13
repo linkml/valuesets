@@ -3,6 +3,8 @@ id: https://w3id.org/linkml/valuesets/industry/extractive_industry
 prefixes:
   # linkml_common: https://w3id.org/linkml-common/
   valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   extractive_industry_facility_type:
@@ -19,7 +21,14 @@ slots:
     range: WellTypeEnum
 enums:
   ExtractiveIndustryFacilityTypeEnum:
+    title: Extractive Industry Facility Type
     description: Types of extractive industry facilities
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       MINING_FACILITY:
         description: A facility where mineral resources are extracted
@@ -31,7 +40,14 @@ enums:
         description: A facility where stone, sand, or gravel are extracted
         title: Quarry Facility
   ExtractiveIndustryProductTypeEnum:
+    title: Extractive Industry Product Type
     description: Types of products extracted from extractive industry facilities
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       MINERAL:
         description: A solid inorganic substance
@@ -58,7 +74,14 @@ enums:
         description: A loose aggregation of rock fragments
         title: Gravel
   MiningMethodEnum:
+    title: Mining Method
     description: Methods used for extracting minerals from the earth
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       UNDERGROUND:
         description: Extraction occurs beneath the earth's surface
@@ -73,7 +96,14 @@ enums:
         description: Extraction without removing the ore from its original location
         title: In Situ
   WellTypeEnum:
+    title: Well Type
     description: Types of wells used for extracting fluid resources
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       OIL:
         description: A well that primarily extracts crude oil

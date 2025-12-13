@@ -1,0 +1,301 @@
+name: valuesets_meta
+title: Valuesets Metamodel
+description: >-
+  Custom metamodel for the valuesets schema. Defines metaclasses that constrain
+  LinkML elements to enforce metadata standards for value set enums.
+
+  This metamodel is NOT imported by the main schema - it is used declaratively
+  via the `instantiates` slot to indicate conformance intent.
+
+id: https://w3id.org/valuesets/meta
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+  orcid: https://orcid.org/
+  dcterms: http://purl.org/dc/terms/
+  fhir: http://hl7.org/fhir/
+
+default_prefix: valuesets_meta
+default_range: string
+
+imports:
+  - linkml:types
+
+# =============================================================================
+# Metaclasses for Enum Definitions
+# =============================================================================
+# These classes define constraints on EnumDefinition elements in the main schema.
+# Enums that `instantiates` these metaclasses are expected to conform to the
+# slot requirements defined here.
+#
+# Note: As of LinkML 1.x, `instantiates` declares conformance intent but
+# validation enforcement is limited. This metamodel documents the standard
+# and enables future validation support.
+# =============================================================================
+
+classes:
+
+  # ---------------------------------------------------------------------------
+  # ValueSetEnumDefinition
+  # ---------------------------------------------------------------------------
+  # The primary metaclass for all value set enums in this repository.
+  # Requires complete metadata: title, description, status, and contributors.
+  # ---------------------------------------------------------------------------
+  ValueSetEnumDefinition:
+    class_uri: valuesets_meta:ValueSetEnumDefinition
+    description: >-
+      A metaclass for enum definitions in the valuesets schema.
+      Enums instantiating this class MUST provide complete metadata
+      including title, description, status, and contributors.
+    slot_usage:
+      title:
+        required: true
+        description: >-
+          Human-readable display name for the enum.
+          Should be Title Case and clearly describe the value set.
+      description:
+        required: true
+        description: >-
+          Detailed explanation of the enum's purpose, scope, and usage.
+          Should be at least one complete sentence.
+      status:
+        required: true
+        description: >-
+          Maturity status of the enum. Must be a value from StandardsMaturityLevel:
+          DRAFT, WORKING_DRAFT, COMMITTEE_DRAFT, CANDIDATE_RECOMMENDATION,
+          PROPOSED_STANDARD, STANDARD, MATURE_STANDARD, SUPERSEDED, WITHDRAWN
+      contributors:
+        required: true
+        multivalued: true
+        description: >-
+          List of contributor identifiers (ORCIDs or URIs) who created or
+          maintain this enum. Should include at least one human contributor.
+    attributes:
+      title:
+        range: string
+        required: true
+      description:
+        range: string
+        required: true
+      status:
+        range: string
+        required: true
+      contributors:
+        range: uriorcurie
+        multivalued: true
+        required: true
+
+  # ---------------------------------------------------------------------------
+  # ValueSetEnumDefinitionWithSource
+  # ---------------------------------------------------------------------------
+  # Extended metaclass for enums derived from external sources.
+  # Adds requirement for source provenance.
+  # ---------------------------------------------------------------------------
+  ValueSetEnumDefinitionWithSource:
+    class_uri: valuesets_meta:ValueSetEnumDefinitionWithSource
+    is_a: ValueSetEnumDefinition
+    description: >-
+      A metaclass for enum definitions derived from external standards or ontologies.
+      Requires all base metadata plus source provenance.
+    slot_usage:
+      source:
+        required: true
+        description: >-
+          URL or URI of the external resource this enum is derived from.
+          Maps to dcterms:source / prov:wasDerivedFrom.
+    attributes:
+      source:
+        range: uriorcurie
+        required: true
+
+  # ---------------------------------------------------------------------------
+  # ValueSetEnumDefinitionWithConformance
+  # ---------------------------------------------------------------------------
+  # Extended metaclass for enums that conform to formal standards.
+  # Adds requirement for conforms_to.
+  # ---------------------------------------------------------------------------
+  ValueSetEnumDefinitionWithConformance:
+    class_uri: valuesets_meta:ValueSetEnumDefinitionWithConformance
+    is_a: ValueSetEnumDefinitionWithSource
+    description: >-
+      A metaclass for enum definitions that formally conform to external standards.
+      Requires source and explicit conformance declaration.
+    slot_usage:
+      conforms_to:
+        required: true
+        description: >-
+          The standard or specification this enum conforms to.
+          E.g., "ISO-16290:2013", "HL7 FHIR R4", etc.
+    attributes:
+      conforms_to:
+        range: string
+        required: true
+
+  # ---------------------------------------------------------------------------
+  # ValueSetEnumDefinitionWithStewardship
+  # ---------------------------------------------------------------------------
+  # Extended metaclass for enums with explicit organizational stewardship.
+  # Requires at least one steward or publisher to be identified.
+  # Based on FHIR MetadataResource stewardship patterns.
+  # ---------------------------------------------------------------------------
+  ValueSetEnumDefinitionWithStewardship:
+    class_uri: valuesets_meta:ValueSetEnumDefinitionWithStewardship
+    is_a: ValueSetEnumDefinition
+    description: >-
+      A metaclass for enum definitions with explicit organizational stewardship.
+      Requires identification of stewards and/or publishers responsible for
+      maintaining the value set. Endorsers are optional but recommended for
+      value sets intended for broad adoption.
+    slot_usage:
+      stewards:
+        recommended: true
+        description: >-
+          Organizations or individuals responsible for ongoing curation.
+          At least one steward OR publisher should be specified.
+      publishers:
+        recommended: true
+        description: >-
+          Organizations or individuals responsible for release and maintenance.
+          At least one steward OR publisher should be specified.
+      endorsers:
+        description: >-
+          Organizations that officially endorse this value set.
+          Recommended for value sets intended for broad adoption.
+    attributes:
+      stewards:
+        range: uriorcurie
+        multivalued: true
+      publishers:
+        range: uriorcurie
+        multivalued: true
+      endorsers:
+        range: uriorcurie
+        multivalued: true
+
+  # ---------------------------------------------------------------------------
+  # ReferenceEnumDefinition
+  # ---------------------------------------------------------------------------
+  # Metaclass for "reference" enums that define values used by other parts
+  # of the schema (like StandardsMaturityLevel used for status values).
+  # These should have STANDARD status and complete documentation.
+  # ---------------------------------------------------------------------------
+  ReferenceEnumDefinition:
+    class_uri: valuesets_meta:ReferenceEnumDefinition
+    is_a: ValueSetEnumDefinition
+    description: >-
+      A metaclass for reference enums that define values used elsewhere in the schema.
+      These are authoritative definitions and should have STANDARD status.
+    slot_usage:
+      status:
+        required: true
+        description: >-
+          Reference enums should typically have status STANDARD or MATURE_STANDARD
+          since they define authoritative values used by other schema elements.
+
+# =============================================================================
+# Slots
+# =============================================================================
+# These slots are used in the metaclass definitions above.
+# They mirror the LinkML metamodel slots but with valuesets-specific constraints.
+# =============================================================================
+
+slots:
+  title:
+    description: Human-readable display name
+    range: string
+
+  description:
+    description: Detailed explanation of purpose and usage
+    range: string
+
+  status:
+    description: >-
+      Maturity status using StandardsMaturityLevel values.
+      Valid values: DRAFT, WORKING_DRAFT, COMMITTEE_DRAFT, CANDIDATE_RECOMMENDATION,
+      PROPOSED_STANDARD, STANDARD, MATURE_STANDARD, SUPERSEDED, WITHDRAWN
+    range: string
+
+  contributors:
+    description: List of contributor ORCIDs or URIs
+    range: uriorcurie
+    multivalued: true
+
+  source:
+    description: External resource this element is derived from
+    range: uriorcurie
+
+  conforms_to:
+    description: Standard or specification this element conforms to
+    range: string
+
+  # ---------------------------------------------------------------------------
+  # Stewardship Slots (FHIR-inspired)
+  # ---------------------------------------------------------------------------
+  # These slots define organizational responsibility for value sets.
+  # Based on HL7 FHIR MetadataResource patterns.
+  # ---------------------------------------------------------------------------
+
+  publishers:
+    description: >-
+      Organizations or individuals responsible for the release and ongoing
+      maintenance of this value set. The publisher is the authoritative source
+      for the content. Maps to dcterms:publisher / fhir:publisher.
+    range: uriorcurie
+    multivalued: true
+    slot_uri: dcterms:publisher
+    see_also:
+      - https://build.fhir.org/metadataresource.html
+
+  stewards:
+    description: >-
+      Organizations or individuals responsible for the ongoing curation and
+      maintenance of this value set. Stewards ensure the value set remains
+      accurate, up-to-date, and fit for purpose. Unlike publishers, stewards
+      may not have release authority but are responsible for content quality.
+    range: uriorcurie
+    multivalued: true
+    slot_uri: valuesets_meta:stewards
+
+  endorsers:
+    description: >-
+      Organizations that officially endorse this value set for use within
+      their domain or jurisdiction. Endorsement indicates that the organization
+      has reviewed the value set and recommends it for adoption.
+      Maps to fhir:endorser.
+    range: uriorcurie
+    multivalued: true
+    slot_uri: valuesets_meta:endorsers
+    see_also:
+      - https://build.fhir.org/metadataresource.html
+
+# =============================================================================
+# Enums
+# =============================================================================
+# Define the valid values for status to enable future validation.
+# =============================================================================
+
+enums:
+  StandardsMaturityLevelEnum:
+    description: >-
+      Valid values for the status slot, mirroring StandardsMaturityLevel
+      from computing/maturity_levels.yaml
+    permissible_values:
+      DRAFT:
+        description: Initial draft under development
+      WORKING_DRAFT:
+        description: Work in progress by working group
+      COMMITTEE_DRAFT:
+        description: Draft reviewed by committee
+      CANDIDATE_RECOMMENDATION:
+        description: Mature draft ready for implementation testing
+      PROPOSED_STANDARD:
+        description: Stable specification ready for adoption
+      STANDARD:
+        description: Approved and published standard
+      MATURE_STANDARD:
+        description: Well-established standard with wide adoption
+      SUPERSEDED:
+        description: Replaced by a newer version
+      WITHDRAWN:
+        description: No longer valid or recommended

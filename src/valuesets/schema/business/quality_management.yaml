@@ -1,16 +1,18 @@
 name: quality_management
 title: Quality Management Systems and Standards
-description: 'Quality management frameworks, ISO standards, process improvement methodologies,
-  and quality assurance systems. Based on international quality standards, continuous
-  improvement methodologies, and quality management best practices.'
+description: 'Quality management frameworks, ISO standards, process improvement methodologies, and quality assurance systems.
+  Based on international quality standards, continuous improvement methodologies, and quality management best practices.'
 id: https://w3id.org/linkml/valuesets/business/quality_management
 imports:
 - linkml:types
 prefixes:
+  linkml: https://w3id.org/linkml/
   valuesets: https://w3id.org/valuesets/
   ISO: https://www.iso.org/
   TQM: https://www.asq.org/
   LEAN: https://www.lean.org/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   quality_standard:
@@ -33,7 +35,14 @@ slots:
     range: QualityMaturityLevelEnum
 enums:
   QualityStandardEnum:
+    title: Quality Standard
     description: Quality management standards and frameworks
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       ISO_9001:
         title: ISO 9001 Quality Management Systems
@@ -144,7 +153,14 @@ enums:
           design_controls: "design controls"
           risk_management: "risk management"
   QualityMethodologyEnum:
+    title: Quality Methodology
     description: Quality improvement methodologies and approaches
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       DMAIC:
         title: DMAIC (Define, Measure, Analyze, Improve, Control)
@@ -237,7 +253,14 @@ enums:
           external: "external benchmarking"
           internal: "internal benchmarking"
   QualityControlTechniqueEnum:
+    title: Quality Control Technique
     description: Quality control techniques and tools
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       CONTROL_CHARTS:
         title: Control Charts
@@ -330,7 +353,14 @@ enums:
           variation: "measurement variation"
           capability: "measurement capability"
   QualityAssuranceLevelEnum:
+    title: Quality Assurance Level
     description: Levels of quality assurance implementation
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       BASIC_QA:
         title: Basic Quality Assurance
@@ -378,7 +408,14 @@ enums:
           customer: "customer-focused"
           continuous: "continuous improvement"
   ProcessImprovementApproachEnum:
+    title: Process Improvement Approach
     description: Process improvement methodologies and approaches
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       BUSINESS_PROCESS_REENGINEERING:
         title: Business Process Reengineering (BPR)
@@ -453,7 +490,14 @@ enums:
           responsive: "responsive to change"
           collaboration: "collaborative improvement"
   QualityMaturityLevelEnum:
+    title: Quality Maturity Level
     description: Organizational quality maturity levels
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       AD_HOC:
         title: Ad Hoc Quality Approach

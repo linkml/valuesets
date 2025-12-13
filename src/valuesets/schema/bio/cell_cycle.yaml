@@ -5,8 +5,11 @@ id: https://w3id.org/linkml/valuesets/bio/cell_cycle
 imports:
 - linkml:types
 prefixes:
+  linkml: https://w3id.org/linkml/
   valuesets: https://w3id.org/valuesets/
   GO: http://purl.obolibrary.org/obo/GO_
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   cell_cycle_phase:
@@ -32,7 +35,14 @@ slots:
     range: DNADamageResponse
 enums:
   CellCyclePhase:
+    title: Cell Cycle Phase
     description: Major phases of the eukaryotic cell cycle
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       G0:
         description: G0 phase (quiescent/resting phase)
@@ -74,7 +84,14 @@ enums:
         annotations:
           includes: G1, S, G2
   MitoticPhase:
+    title: Mitotic Phase
     description: Stages of mitosis (M phase)
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       PROPHASE:
         description: Prophase
@@ -114,7 +131,14 @@ enums:
           order: 6
           features: cytoplasmic division
   CellCycleCheckpoint:
+    title: Cell Cycle Checkpoint
     description: Cell cycle checkpoints that regulate progression
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       G1_S_CHECKPOINT:
         description: G1/S checkpoint (Restriction point)
@@ -146,7 +170,14 @@ enums:
           function: ensures proper chromosome attachment
           regulator: MAD2, BubR1
   MeioticPhase:
+    title: Meiotic Phase
     description: Phases specific to meiotic cell division
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       MEIOSIS_I:
         description: Meiosis I (reductional division)
@@ -199,7 +230,14 @@ enums:
         meaning: GO:0007139
         title: meiotic telophase II
   CellCycleRegulator:
+    title: Cell Cycle Regulator
     description: Types of cell cycle regulatory molecules
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       CYCLIN:
         description: Cyclin proteins
@@ -234,8 +272,8 @@ enums:
       E3_UBIQUITIN_LIGASE:
         description: E3 ubiquitin ligase (cell cycle)
         meaning: GO:0051437
-        title: obsolete positive regulation of ubiquitin-protein ligase activity involved in regulation of mitotic cell cycle
-          transition
+        title: obsolete positive regulation of ubiquitin-protein ligase activity involved in regulation of mitotic cell 
+          cycle transition
         annotations:
           examples: APC/C, SCF
       PHOSPHATASE:
@@ -245,7 +283,14 @@ enums:
         annotations:
           examples: CDC25A, CDC25B, CDC25C
   CellProliferationState:
+    title: Cell Proliferation State
     description: Cell proliferation and growth states
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       PROLIFERATING:
         description: Actively proliferating cells
@@ -284,7 +329,14 @@ enums:
         annotations:
           type: uncontrolled cell death
   DNADamageResponse:
+    title: DNA Damage Response
     description: DNA damage response pathways during cell cycle
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       CELL_CYCLE_ARREST:
         description: Cell cycle arrest

@@ -1,0 +1,223 @@
+name: carcinogenicity
+title: Carcinogenicity Classification Value Sets
+description: >-
+  Standard carcinogenicity classifications from IARC (International Agency for
+  Research on Cancer), EPA IRIS (Integrated Risk Information System), and NTP
+  (National Toxicology Program).
+id: https://w3id.org/linkml/valuesets/environmental_health/carcinogenicity
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  valuesets: https://w3id.org/valuesets/
+  NCIT: http://purl.obolibrary.org/obo/NCIT_
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+default_prefix: valuesets
+slots:
+  iarc_classification:
+    description: IARC carcinogenicity classification
+    range: IARCCarcinogenicityGroup
+  epa_iris_classification:
+    description: EPA IRIS carcinogenicity classification
+    range: EPAIRISCarcinogenicityGroup
+  ntp_classification:
+    description: NTP carcinogenicity classification
+    range: NTPCarcinogenicityGroup
+enums:
+  IARCCarcinogenicityGroup:
+    title: IARC Carcinogenicity Group
+    description: >-
+      International Agency for Research on Cancer (IARC) classification groups
+      for carcinogenic hazard to humans. IARC evaluates the strength of evidence
+      that an agent can cause cancer in humans.
+    status: STANDARD
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    annotations:
+      stewards: https://www.iarc.who.int
+      publishers: https://www.iarc.who.int
+      source: https://monographs.iarc.who.int/agents-classified-by-the-iarc/
+    permissible_values:
+      GROUP_1:
+        title: Carcinogenic to humans
+        description: >-
+          Sufficient evidence of carcinogenicity in humans. The agent is
+          carcinogenic to humans.
+        annotations:
+          evidence_level: sufficient in humans
+          examples: asbestos, benzene, tobacco smoking, ionizing radiation
+      GROUP_2A:
+        title: Probably carcinogenic to humans
+        description: >-
+          Limited evidence of carcinogenicity in humans and sufficient evidence
+          in experimental animals. The agent is probably carcinogenic to humans.
+        annotations:
+          evidence_level: limited in humans, sufficient in animals
+          examples: red meat, night shift work, glyphosate
+      GROUP_2B:
+        title: Possibly carcinogenic to humans
+        description: >-
+          Limited evidence of carcinogenicity in humans and less than sufficient
+          evidence in experimental animals. The agent is possibly carcinogenic
+          to humans.
+        annotations:
+          evidence_level: limited in humans or animals
+          examples: coffee, pickled vegetables, gasoline engine exhaust
+      GROUP_3:
+        title: Not classifiable as to carcinogenicity
+        description: >-
+          Inadequate evidence of carcinogenicity in humans and inadequate or
+          limited evidence in experimental animals. The agent is not classifiable
+          as to its carcinogenicity to humans.
+        annotations:
+          evidence_level: inadequate
+          examples: caffeine, cholesterol, saccharin
+  EPAIRISCarcinogenicityGroup:
+    title: EPA IRIS Carcinogenicity Group
+    description: >-
+      U.S. Environmental Protection Agency Integrated Risk Information System
+      (IRIS) weight-of-evidence descriptors for carcinogenicity. These classifications
+      characterize the extent to which available data support the hypothesis that
+      an agent causes cancer in humans.
+    status: STANDARD
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    annotations:
+      stewards: https://www.epa.gov
+      publishers: https://www.epa.gov/iris
+      source: https://www.epa.gov/iris
+    permissible_values:
+      CARCINOGENIC_TO_HUMANS:
+        title: Carcinogenic to Humans
+        description: >-
+          Strong evidence of human carcinogenicity. This descriptor is appropriate
+          when there is convincing epidemiologic evidence of a causal association
+          between human exposure and cancer.
+        annotations:
+          legacy_group: A
+          evidence: convincing epidemiologic evidence
+      LIKELY_CARCINOGENIC:
+        title: Likely to Be Carcinogenic to Humans
+        description: >-
+          Evidence is adequate to demonstrate carcinogenic potential to humans but
+          does not reach the weight of evidence for Carcinogenic to Humans.
+        annotations:
+          legacy_group: B1/B2
+          evidence: adequate evidence
+      SUGGESTIVE_EVIDENCE:
+        title: Suggestive Evidence of Carcinogenic Potential
+        description: >-
+          Evidence is suggestive of carcinogenicity but not sufficient to assess
+          human carcinogenic potential.
+        annotations:
+          legacy_group: C
+          evidence: suggestive but not sufficient
+      INADEQUATE_INFORMATION:
+        title: Inadequate Information to Assess Carcinogenic Potential
+        description: >-
+          Available data are inadequate for an assessment of human carcinogenic
+          potential.
+        annotations:
+          legacy_group: D
+          evidence: inadequate data
+      NOT_LIKELY_CARCINOGENIC:
+        title: Not Likely to Be Carcinogenic to Humans
+        description: >-
+          Available data are considered robust for deciding that there is no basis
+          for human hazard concern.
+        annotations:
+          legacy_group: E
+          evidence: robust evidence of no hazard
+      GROUP_A:
+        title: Group A - Human Carcinogen (Legacy)
+        description: >-
+          Legacy EPA classification. Sufficient evidence from epidemiologic studies
+          to support a causal association between exposure and cancer.
+        annotations:
+          status: legacy
+          superseded_by: CARCINOGENIC_TO_HUMANS
+      GROUP_B1:
+        title: Group B1 - Probable Human Carcinogen (Legacy)
+        description: >-
+          Legacy EPA classification. Limited evidence of carcinogenicity from
+          epidemiologic studies.
+        annotations:
+          status: legacy
+          superseded_by: LIKELY_CARCINOGENIC
+      GROUP_B2:
+        title: Group B2 - Probable Human Carcinogen (Legacy)
+        description: >-
+          Legacy EPA classification. Sufficient evidence from animal studies and
+          inadequate evidence from epidemiologic studies.
+        annotations:
+          status: legacy
+          superseded_by: LIKELY_CARCINOGENIC
+      GROUP_C:
+        title: Group C - Possible Human Carcinogen (Legacy)
+        description: >-
+          Legacy EPA classification. Limited evidence of carcinogenicity in animals
+          in the absence of human data.
+        annotations:
+          status: legacy
+          superseded_by: SUGGESTIVE_EVIDENCE
+      GROUP_D:
+        title: Group D - Not Classifiable (Legacy)
+        description: >-
+          Legacy EPA classification. Inadequate human and animal evidence of
+          carcinogenicity or no data available.
+        annotations:
+          status: legacy
+          superseded_by: INADEQUATE_INFORMATION
+      GROUP_E:
+        title: Group E - Evidence of Non-Carcinogenicity (Legacy)
+        description: >-
+          Legacy EPA classification. No evidence of carcinogenicity in at least
+          two adequate animal tests or in adequate epidemiologic and animal studies.
+        annotations:
+          status: legacy
+          superseded_by: NOT_LIKELY_CARCINOGENIC
+  NTPCarcinogenicityGroup:
+    title: NTP Carcinogenicity Group
+    description: >-
+      U.S. National Toxicology Program (NTP) Report on Carcinogens classifications.
+      The NTP identifies and discusses agents, substances, mixtures, or exposure
+      circumstances that may pose a carcinogenic hazard to human health.
+    status: STANDARD
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    annotations:
+      stewards: https://ntp.niehs.nih.gov
+      publishers: https://ntp.niehs.nih.gov
+      source: https://ntp.niehs.nih.gov/go/roc
+    permissible_values:
+      KNOWN_CARCINOGEN:
+        title: Known To Be Human Carcinogen
+        description: >-
+          There is sufficient evidence of carcinogenicity from studies in humans,
+          which indicates a causal relationship between exposure to the agent and
+          human cancer.
+        annotations:
+          abbreviation: K
+          evidence: sufficient human evidence
+          examples: arsenic, asbestos, benzene, vinyl chloride
+      RAHC:
+        title: Reasonably Anticipated To Be Human Carcinogen
+        description: >-
+          There is limited evidence of carcinogenicity from studies in humans, which
+          indicates that causal interpretation is credible but alternative explanations
+          cannot be ruled out, OR there is sufficient evidence of carcinogenicity
+          from studies in experimental animals.
+        annotations:
+          abbreviation: RAHC
+          evidence: limited human or sufficient animal evidence
+          examples: lead compounds, styrene, trichloroethylene

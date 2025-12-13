@@ -1,17 +1,19 @@
 name: human_resources
 title: Human Resources Management and Workforce Classifications
-description: 'Employment types, HR functions, compensation structures, performance
-  management, and workforce development classifications. Based on labor standards,
-  HR best practices, and organizational development frameworks.'
+description: 'Employment types, HR functions, compensation structures, performance management, and workforce development classifications.
+  Based on labor standards, HR best practices, and organizational development frameworks.'
 id: https://w3id.org/linkml/valuesets/business/human_resources
 imports:
 - linkml:types
 prefixes:
+  linkml: https://w3id.org/linkml/
   valuesets: https://w3id.org/valuesets/
   SHRM: https://www.shrm.org/
   BLS: https://www.bls.gov/
   FLSA: https://www.dol.gov/agencies/whd/flsa/
   EEO: https://www.eeoc.gov/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   employment_type:
@@ -46,7 +48,14 @@ slots:
     range: BenefitsCategoryEnum
 enums:
   EmploymentTypeEnum:
+    title: Employment Type
     description: Types of employment arrangements and contracts
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       FULL_TIME:
         title: Full-Time Employment
@@ -130,7 +139,14 @@ enums:
           purpose: "mission-driven work"
           recognition: "non-monetary recognition"
   JobLevelEnum:
+    title: Job Level
     description: Organizational job levels and career progression
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       ENTRY_LEVEL:
         title: Entry Level
@@ -214,7 +230,14 @@ enums:
           stakeholders: "external stakeholder management"
           fiduciary: "fiduciary responsibility"
   HRFunctionEnum:
+    title: HR Function
     description: Human resources functional areas and specializations
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       TALENT_ACQUISITION:
         title: Talent Acquisition
@@ -298,7 +321,14 @@ enums:
           integration: "system integration"
           security: "data security"
   CompensationTypeEnum:
+    title: Compensation Type
     description: Types of employee compensation structures
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       BASE_SALARY:
         title: Base Salary
@@ -373,7 +403,14 @@ enums:
           supplemental: "supplemental income"
           categories: "interns, volunteers, board members"
   PerformanceRatingEnum:
+    title: Performance Rating
     description: Employee performance evaluation ratings
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       EXCEEDS_EXPECTATIONS:
         title: Exceeds Expectations
@@ -421,7 +458,14 @@ enums:
           innovation: "innovation and excellence"
           rarity: "rare rating"
   RecruitmentSourceEnum:
+    title: Recruitment Source
     description: Sources for candidate recruitment and sourcing
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       INTERNAL_REFERRAL:
         title: Internal Employee Referral
@@ -496,7 +540,14 @@ enums:
           confidential: "confidential searches"
           cost: "premium cost"
   TrainingTypeEnum:
+    title: Training Type
     description: Types of employee training and development programs
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       ONBOARDING:
         title: New Employee Onboarding
@@ -571,7 +622,14 @@ enums:
           understanding: "broader understanding"
           collaboration: "improved collaboration"
   EmployeeStatusEnum:
+    title: Employee Status
     description: Current employment status classifications
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       ACTIVE:
         title: Active Employment
@@ -628,7 +686,14 @@ enums:
           service: "completed service"
           transition: "career transition"
   WorkArrangementEnum:
+    title: Work Arrangement
     description: Work location and arrangement types
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       ON_SITE:
         title: On-Site Work
@@ -676,7 +741,14 @@ enums:
           work_life: "work-life integration"
           communication: "virtual team communication"
   BenefitsCategoryEnum:
+    title: Benefits Category
     description: Categories of employee benefits and compensation
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       HEALTH_INSURANCE:
         title: Health Insurance

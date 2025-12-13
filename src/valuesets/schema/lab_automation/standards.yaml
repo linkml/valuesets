@@ -2,6 +2,8 @@ name: lab_automation_standards
 id: https://w3id.org/linkml/valuesets/lab_automation/standards
 prefixes:
   valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   automation_standard:
@@ -15,10 +17,18 @@ slots:
     range: LabwareStandardEnum
 enums:
   AutomationStandardEnum:
+    title: Automation Standard
     description: Industry standards for laboratory automation systems
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       SILA_2:
-        description: Standardization in Lab Automation version 2 - international standard for open connectivity in lab automation
+        description: Standardization in Lab Automation version 2 - international standard for open connectivity in lab 
+          automation
         title: SiLA 2
         annotations:
           organization: Society for Laboratory Automation and Screening
@@ -61,7 +71,14 @@ enums:
         annotations:
           organization: Clinical and Laboratory Standards Institute
   CommunicationProtocolEnum:
+    title: Communication Protocol
     description: Communication protocols for laboratory automation integration
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       GRPC:
         description: gRPC protocol used in SiLA 2
@@ -95,7 +112,14 @@ enums:
         description: Universal Serial Bus communication
         title: USB
   LabwareStandardEnum:
+    title: Labware Standard
     description: Standardization specifications for laboratory labware
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       ANSI_SLAS_1_2004:
         description: Microplates - Footprint Dimensions
@@ -132,7 +156,14 @@ enums:
         annotations:
           dimensions: 127.76mm x 85.5mm
   IntegrationFeatureEnum:
+    title: Integration Feature
     description: Integration features for laboratory automation systems
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       BARCODE_TRACKING:
         description: Integration feature for tracking samples via barcodes

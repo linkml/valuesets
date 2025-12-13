@@ -5,6 +5,8 @@ prefixes:
   MMO: http://purl.obolibrary.org/obo/MMO_
   OBI: http://purl.obolibrary.org/obo/OBI_
   valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   liquid_handling_operation:
@@ -15,7 +17,14 @@ slots:
     range: SampleProcessingOperationEnum
 enums:
   LiquidHandlingOperationEnum:
+    title: Liquid Handling Operation
     description: Operations for automated liquid handling in laboratory automation
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       PICK_UP_TIPS:
         description: Operation to pick up pipette tips from a tip rack
@@ -36,7 +45,8 @@ enums:
         description: Combined operation to aspirate from source and dispense to destination
         title: transfer
       PIPETTING:
-        description: A procedure or technique by which the size of the three dimensional space occupied by a liquid substance is ascertained using a pipette
+        description: A procedure or technique by which the size of the three dimensional space occupied by a liquid 
+          substance is ascertained using a pipette
         meaning: MMO:0000392
         title: pipette method
       MIXING:
@@ -52,14 +62,23 @@ enums:
         description: Operation to transfer samples from one plate to another in the same well pattern
         title: plate stamping
       ACOUSTIC_TRANSFER:
-        description: Acoustic liquid handling that uses acoustics to fly individual droplets from a source container to a destination
+        description: Acoustic liquid handling that uses acoustics to fly individual droplets from a source container to 
+          a destination
         title: acoustic transfer
       MOUTH_PIPETTING:
-        description: A method of using the researcher's mouth to apply small negative pressure to aspirate a volume into a pipette
+        description: A method of using the researcher's mouth to apply small negative pressure to aspirate a volume into
+          a pipette
         meaning: EFO:0010182
         title: mouth pipetting
   SampleProcessingOperationEnum:
+    title: Sample Processing Operation
     description: General sample processing operations in automated laboratories
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       CENTRIFUGATION:
         description: Operation to separate components of a sample using centrifugal force

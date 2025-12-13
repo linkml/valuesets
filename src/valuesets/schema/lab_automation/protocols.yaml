@@ -2,6 +2,8 @@ name: lab_automation_protocols
 id: https://w3id.org/linkml/valuesets/lab_automation/protocols
 prefixes:
   valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   workflow_orchestration_type:
@@ -18,7 +20,14 @@ slots:
     range: ExecutionModeEnum
 enums:
   WorkflowOrchestrationTypeEnum:
+    title: Workflow Orchestration Type
     description: Types of workflow orchestration in laboratory automation systems
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       STATIC_ORCHESTRATION:
         description: Pre-planned orchestration based on known constraints and fixed workflow
@@ -36,7 +45,14 @@ enums:
         description: Orchestration that enables concurrent execution of independent tasks
         title: parallel processing
   SchedulerTypeEnum:
+    title: Scheduler Type
     description: Types of scheduling algorithms for laboratory automation
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       STATIC_SCHEDULER:
         description: Makes decisions based on known constraints requiring upfront planning
@@ -57,7 +73,14 @@ enums:
         description: Schedules tasks to meet specified deadlines
         title: deadline-driven scheduler
   ProtocolStateEnum:
+    title: Protocol State
     description: Execution states of laboratory protocols
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       PENDING:
         description: Protocol is queued but not yet started
@@ -84,7 +107,14 @@ enums:
         description: Protocol is waiting for required resources to become available
         title: waiting for resource
   ExecutionModeEnum:
+    title: Execution Mode
     description: Modes of protocol execution
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       AUTOMATED:
         description: Fully automated execution without human intervention
@@ -105,7 +135,14 @@ enums:
         description: Test execution without actual operations
         title: dry run
   WorkflowErrorHandlingEnum:
+    title: Workflow Error Handling
     description: Error handling strategies in laboratory automation workflows
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       ABORT_ON_ERROR:
         description: Terminate workflow immediately upon encountering an error
@@ -126,7 +163,14 @@ enums:
         description: Switch to backup resource or alternative execution path
         title: failover
   IntegrationSystemEnum:
+    title: Integration System
     description: Types of systems integrated with laboratory automation platforms
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       LIMS:
         description: Laboratory Information Management System

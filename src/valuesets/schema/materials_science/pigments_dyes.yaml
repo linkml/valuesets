@@ -12,6 +12,8 @@ prefixes:
   CHEBI: http://purl.obolibrary.org/obo/CHEBI_
   NCIt: http://purl.obolibrary.org/obo/NCIT_
   valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   traditional_pigment:
@@ -28,7 +30,14 @@ slots:
     range: AutomobilePaintColorEnum
 enums:
   TraditionalPigmentEnum:
+    title: Traditional Pigment
     description: Traditional artist pigments and their colors
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       TITANIUM_WHITE:
         title: titanium dioxide nanoparticle
@@ -222,7 +231,14 @@ enums:
           chemical: C
           source: soot
   IndustrialDyeEnum:
+    title: Industrial Dye
     description: Industrial and textile dyes
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       INDIGO:
         description: Indigo dye
@@ -300,7 +316,14 @@ enums:
           hex: 002F5C
           use: cotton vat dyeing
   FoodColoringEnum:
+    title: Food Coloring
     description: Food coloring and natural food dyes
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       FD_C_RED_40:
         description: FD&C Red No. 40 (Allura Red)
@@ -398,7 +421,14 @@ enums:
           source: spirulina algae
           natural: 'true'
   AutomobilePaintColorEnum:
+    title: Automobile Paint Color
     description: Common automobile paint colors
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       ARCTIC_WHITE:
         description: Arctic White

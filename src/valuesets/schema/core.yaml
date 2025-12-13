@@ -26,6 +26,8 @@ prefixes:
   _base: http://example.org/
   mixs: http://w3id.org/mixs/
   ucum: http://unitsofmeasure.org/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   relative_time:
@@ -36,11 +38,30 @@ slots:
     range: PresenceEnum
 enums:
   RelativeTimeEnum:
+    title: Relative Time
+    description: Temporal relationships between events or time points
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
-      BEFORE: null
-      AFTER: null
-      AT_SAME_TIME_AS: null
+      BEFORE:
+        description: Occurs before the reference time point
+      AFTER:
+        description: Occurs after the reference time point
+      AT_SAME_TIME_AS:
+        description: Occurs at the same time as the reference time point
   PresenceEnum:
+    title: Presence Status
+    description: Classification of whether an entity is present, absent, or at detection limits
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       PRESENT:
         description: The entity is present

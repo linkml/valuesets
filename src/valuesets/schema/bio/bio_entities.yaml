@@ -9,6 +9,7 @@ id: https://w3id.org/linkml/valuesets/bio/bio_entities
 imports:
 - linkml:types
 prefixes:
+  linkml: https://w3id.org/linkml/
   valuesets: https://w3id.org/valuesets/
   UBERON: http://purl.obolibrary.org/obo/UBERON_
   CL: http://purl.obolibrary.org/obo/CL_
@@ -24,6 +25,8 @@ prefixes:
   SO: http://purl.obolibrary.org/obo/SO_
   PATO: http://purl.obolibrary.org/obo/PATO_
   RO: http://purl.obolibrary.org/obo/RO_
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   metazoan_anatomical_structure:
@@ -111,9 +114,16 @@ slots:
     range: PhysicalQuality
 enums:
   MetazoanAnatomicalStructure:
+    title: Metazoan Anatomical Structure
     description: 'Any anatomical structure found in metazoan organisms,
 
       including organs, tissues, and body parts'
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     reachable_from:
       source_ontology: obo:uberon
       source_nodes:
@@ -122,7 +132,14 @@ enums:
       relationship_types:
       - rdfs:subClassOf
   HumanAnatomicalStructure:
+    title: Human Anatomical Structure
     description: Anatomical structures specific to humans (Homo sapiens)
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     reachable_from:
       source_ontology: obo:uberon
       source_nodes:
@@ -131,7 +148,14 @@ enums:
       relationship_types:
       - rdfs:subClassOf
   PlantAnatomicalStructure:
+    title: Plant Anatomical Structure
     description: Any anatomical structure found in plant organisms
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     reachable_from:
       source_ontology: obo:po
       source_nodes:
@@ -140,9 +164,16 @@ enums:
       relationship_types:
       - rdfs:subClassOf
   CellType:
+    title: Cell Type
     description: 'Any cell type from the Cell Ontology (CL),
 
       including native and experimentally modified cells'
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     reachable_from:
       source_ontology: obo:cl
       source_nodes:
@@ -151,7 +182,14 @@ enums:
       relationship_types:
       - rdfs:subClassOf
   NeuronType:
+    title: Neuron Type
     description: Neuron cell types from the Cell Ontology
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     reachable_from:
       source_ontology: obo:cl
       source_nodes:
@@ -160,7 +198,14 @@ enums:
       relationship_types:
       - rdfs:subClassOf
   ImmuneCell:
+    title: Immune Cell
     description: Immune system cell types (leukocytes and their subtypes)
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     reachable_from:
       source_ontology: obo:cl
       source_nodes:
@@ -169,7 +214,14 @@ enums:
       relationship_types:
       - rdfs:subClassOf
   StemCell:
+    title: Stem Cell
     description: Stem cell types and progenitor cells
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     reachable_from:
       source_ontology: obo:cl
       source_nodes:
@@ -179,7 +231,14 @@ enums:
       relationship_types:
       - rdfs:subClassOf
   Disease:
+    title: Disease
     description: Human diseases from the Mondo Disease Ontology
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     reachable_from:
       source_ontology: obo:mondo
       source_nodes:
@@ -188,7 +247,14 @@ enums:
       relationship_types:
       - rdfs:subClassOf
   InfectiousDisease:
+    title: Infectious Disease
     description: Infectious diseases caused by pathogenic organisms
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     reachable_from:
       source_ontology: obo:mondo
       source_nodes:
@@ -197,7 +263,14 @@ enums:
       relationship_types:
       - rdfs:subClassOf
   Cancer:
+    title: Cancer
     description: Neoplastic and cancerous diseases
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     reachable_from:
       source_ontology: obo:mondo
       source_nodes:
@@ -207,7 +280,14 @@ enums:
       relationship_types:
       - rdfs:subClassOf
   GeneticDisease:
+    title: Genetic Disease
     description: Hereditary and genetic diseases
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     reachable_from:
       source_ontology: obo:mondo
       source_nodes:
@@ -217,7 +297,14 @@ enums:
       relationship_types:
       - rdfs:subClassOf
   ChemicalEntity:
+    title: Chemical Entity
     description: Any chemical entity from ChEBI ontology
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     reachable_from:
       source_ontology: obo:chebi
       source_nodes:
@@ -226,7 +313,14 @@ enums:
       relationship_types:
       - rdfs:subClassOf
   Drug:
+    title: Drug
     description: Pharmaceutical drugs and medications
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     reachable_from:
       source_ontology: obo:chebi
       source_nodes:
@@ -236,7 +330,14 @@ enums:
       - rdfs:subClassOf
       - RO:0000087
   Metabolite:
+    title: Metabolite
     description: Metabolites and metabolic intermediates
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     reachable_from:
       source_ontology: obo:chebi
       source_nodes:
@@ -245,7 +346,14 @@ enums:
       relationship_types:
       - rdfs:subClassOf
   Protein:
+    title: Protein
     description: Proteins and protein complexes
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     reachable_from:
       source_ontology: obo:pr
       source_nodes:
@@ -254,7 +362,14 @@ enums:
       relationship_types:
       - rdfs:subClassOf
   Phenotype:
+    title: Phenotype
     description: Phenotypic abnormalities from Human Phenotype Ontology
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     reachable_from:
       source_ontology: obo:hp
       source_nodes:
@@ -263,7 +378,14 @@ enums:
       relationship_types:
       - rdfs:subClassOf
   ClinicalFinding:
+    title: Clinical Finding
     description: Clinical findings and observations
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     reachable_from:
       source_ontology: obo:hp
       source_nodes:
@@ -272,7 +394,14 @@ enums:
       relationship_types:
       - rdfs:subClassOf
   BiologicalProcess:
+    title: Biological Process
     description: Biological processes from Gene Ontology
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     reachable_from:
       source_ontology: obo:go
       source_nodes:
@@ -281,7 +410,14 @@ enums:
       relationship_types:
       - rdfs:subClassOf
   MetabolicProcess:
+    title: Metabolic Process
     description: Metabolic processes and pathways
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     reachable_from:
       source_ontology: obo:go
       source_nodes:
@@ -290,7 +426,14 @@ enums:
       relationship_types:
       - rdfs:subClassOf
   MolecularFunction:
+    title: Molecular Function
     description: Molecular functions from Gene Ontology
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     reachable_from:
       source_ontology: obo:go
       source_nodes:
@@ -299,7 +442,14 @@ enums:
       relationship_types:
       - rdfs:subClassOf
   CellularComponent:
+    title: Cellular Component
     description: Cellular components and locations from Gene Ontology
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     reachable_from:
       source_ontology: obo:go
       source_nodes:
@@ -308,7 +458,14 @@ enums:
       relationship_types:
       - rdfs:subClassOf
   SequenceFeature:
+    title: Sequence Feature
     description: Sequence features from the Sequence Ontology
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     reachable_from:
       source_ontology: obo:so
       source_nodes:
@@ -317,7 +474,14 @@ enums:
       relationship_types:
       - rdfs:subClassOf
   GeneFeature:
+    title: Gene Feature
     description: Gene-related sequence features
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     reachable_from:
       source_ontology: obo:so
       source_nodes:
@@ -326,7 +490,14 @@ enums:
       relationship_types:
       - rdfs:subClassOf
   Environment:
+    title: Environment
     description: Environmental systems and biomes
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     reachable_from:
       source_ontology: obo:envo
       source_nodes:
@@ -336,7 +507,14 @@ enums:
       relationship_types:
       - rdfs:subClassOf
   EnvironmentalMaterial:
+    title: Environmental Material
     description: Environmental materials and substances
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     reachable_from:
       source_ontology: obo:envo
       source_nodes:
@@ -345,7 +523,14 @@ enums:
       relationship_types:
       - rdfs:subClassOf
   Quality:
+    title: Quality
     description: Phenotypic qualities and attributes from PATO
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     reachable_from:
       source_ontology: obo:pato
       source_nodes:
@@ -354,7 +539,14 @@ enums:
       relationship_types:
       - rdfs:subClassOf
   PhysicalQuality:
+    title: Physical Quality
     description: Physical qualities like size, shape, color
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     reachable_from:
       source_ontology: obo:pato
       source_nodes:

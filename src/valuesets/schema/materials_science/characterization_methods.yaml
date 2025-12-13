@@ -5,6 +5,8 @@ prefixes:
   CHMO: http://purl.obolibrary.org/obo/CHMO_
   # linkml_common: https://w3id.org/linkml-common/
   valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   microscopy_method:
@@ -21,7 +23,14 @@ slots:
     range: MechanicalTestingMethodEnum
 enums:
   MicroscopyMethodEnum:
+    title: Microscopy Method
     description: Microscopy techniques for material characterization
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       SEM:
         description: Scanning Electron Microscopy
@@ -73,7 +82,14 @@ enums:
         - CONFOCAL
         - Confocal
   SpectroscopyMethodEnum:
+    title: Spectroscopy Method
     description: Spectroscopy techniques for material analysis
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       XRD:
         description: X-ray Diffraction
@@ -132,7 +148,14 @@ enums:
         - X-ray Fluorescence
         - XRF
   ThermalAnalysisMethodEnum:
+    title: Thermal Analysis Method
     description: Thermal analysis techniques
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       DSC:
         description: Differential Scanning Calorimetry
@@ -165,7 +188,14 @@ enums:
         - DMA
         - Dynamic Mechanical Analysis
   MechanicalTestingMethodEnum:
+    title: Mechanical Testing Method
     description: Mechanical testing methods
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       TENSILE:
         description: Tensile strength testing

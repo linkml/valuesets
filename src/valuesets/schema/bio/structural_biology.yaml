@@ -14,7 +14,14 @@ prefixes:
   CHMO: http://purl.obolibrary.org/obo/CHMO_
   NCIT: http://purl.obolibrary.org/obo/NCIT_
   MOP: http://purl.obolibrary.org/obo/MOP_
+  MOD: http://purl.obolibrary.org/obo/MOD_
+  MI: http://purl.obolibrary.org/obo/MI_
+  FBbi: http://purl.obolibrary.org/obo/FBbi_
+  GO: http://purl.obolibrary.org/obo/GO_
+  ECO: http://purl.obolibrary.org/obo/ECO_
   valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   sample:
@@ -64,26 +71,48 @@ slots:
     range: ProteinModificationType
 enums:
   SampleType:
+    title: Sample Type
     description: Types of biological samples used in structural biology
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       PROTEIN:
         description: Purified protein sample
+        meaning: NCIT:C17021
       NUCLEIC_ACID:
         description: Nucleic acid sample (DNA or RNA)
+        meaning: NCIT:C813
       PROTEIN_COMPLEX:
         description: Protein-protein or protein-nucleic acid complex
+        meaning: GO:0032991
       MEMBRANE_PROTEIN:
         description: Membrane-associated protein sample
+        meaning: NCIT:C16837
       VIRUS:
         description: Viral particle or capsid
+        meaning: NCIT:C14283
       ORGANELLE:
         description: Cellular organelle (mitochondria, chloroplast, etc.)
+        meaning: GO:0043226
       CELL:
         description: Whole cell sample
+        meaning: NCIT:C12508
       TISSUE:
         description: Tissue sample
+        meaning: NCIT:C12801
   StructuralBiologyTechnique:
+    title: Structural Biology Technique
     description: Structural biology experimental techniques
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       CRYO_EM:
         title: cryogenic electron microscopy
@@ -93,7 +122,9 @@ enums:
           resolution_range: 2-30 Å typical
           aliases: cryoEM, electron cryo-microscopy
       CRYO_ET:
+        title: electron tomography
         description: Cryo-electron tomography
+        meaning: MI:2338
         annotations:
           resolution_range: 20-100 Å typical
           aliases: cryoET, electron cryo-tomography
@@ -105,7 +136,9 @@ enums:
           resolution_range: 1-4 Å typical
           aliases: XRC, macromolecular crystallography
       NEUTRON_CRYSTALLOGRAPHY:
+        title: neutron diffraction
         description: Neutron crystallography
+        meaning: CHMO:0000175
         annotations:
           advantages: hydrogen positions, deuteration studies
       SAXS:
@@ -115,11 +148,15 @@ enums:
         annotations:
           information: low-resolution structure, conformational changes
       SANS:
+        title: small-angle neutron scattering
         description: Small-angle neutron scattering
+        meaning: CHMO:0000184
         annotations:
           advantages: contrast variation with deuteration
       WAXS:
+        title: wide-angle X-ray scattering
         description: Wide-angle X-ray scattering
+        meaning: CHMO:0000213
       NMR:
         title: nuclear magnetic resonance spectroscopy
         description: Nuclear magnetic resonance spectroscopy
@@ -132,11 +169,20 @@ enums:
         annotations:
           applications: native MS, crosslinking, HDX
       NEGATIVE_STAIN_EM:
+        title: negative staining electron microscopy
         description: Negative stain electron microscopy
+        meaning: FBbi:00000568
         annotations:
           resolution_range: 15-30 Å typical
   CryoEMPreparationType:
+    title: Cryo EM Preparation Type
     description: Types of cryo-EM sample preparation
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       VITREOUS_ICE:
         description: Sample embedded in vitreous ice
@@ -147,7 +193,14 @@ enums:
       HIGH_PRESSURE_FREEZING:
         description: High-pressure frozen sample
   CryoEMGridType:
+    title: Cryo EM Grid Type
     description: Types of electron microscopy grids
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       C_FLAT:
         description: C-flat holey carbon grid
@@ -176,7 +229,14 @@ enums:
         annotations:
           advantages: atomically thin, good contrast
   VitrificationMethod:
+    title: Vitrification Method
     description: Methods for sample vitrification
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       PLUNGE_FREEZING:
         description: Plunge freezing in liquid ethane
@@ -197,7 +257,14 @@ enums:
         annotations:
           applications: large samples, tissues
   CrystallizationMethod:
+    title: Crystallization Method
     description: Methods for protein crystallization
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       VAPOR_DIFFUSION_HANGING:
         description: Vapor diffusion hanging drop method
@@ -227,15 +294,26 @@ enums:
           applications: membrane proteins
           lipid: monoolein most common
   XRaySource:
+    title: X Ray Source
     description: Types of X-ray sources
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       SYNCHROTRON:
         description: Synchrotron radiation source
+        meaning: CHMO:0001810
+        exact_mappings:
+        - NCIT:C48205
         annotations:
           advantages: high intensity, tunable wavelength
           brightness: 10^15-10^18 photons/s/mm²/mrad²
       ROTATING_ANODE:
         description: Rotating anode generator
+        meaning: CHMO:0001107
         annotations:
           power: 3-18 kW typical
           target: copper, molybdenum common
@@ -250,19 +328,29 @@ enums:
           advantages: higher power density, longer lifetime
           metals: gallium, indium
   Detector:
+    title: Detector
     description: Types of detectors for structural biology
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       DIRECT_ELECTRON:
         description: Direct electron detector (DED)
+        meaning: CHMO:0002837
         annotations:
           examples: K2, K3, Falcon, DE-series
           advantages: high DQE, fast readout
       CCD:
         description: Charge-coupled device camera
+        meaning: CHMO:0002171
         annotations:
           applications: legacy EM, some crystallography
       CMOS:
         description: Complementary metal-oxide semiconductor detector
+        meaning: CHMO:0002836
         annotations:
           advantages: fast readout, low noise
       HYBRID_PIXEL:
@@ -272,10 +360,18 @@ enums:
           advantages: photon counting, zero noise
       PHOTOSTIMULABLE_PHOSPHOR:
         description: Photostimulable phosphor (image plate)
+        meaning: CHMO:0001069
         annotations:
           applications: legacy crystallography
   WorkflowType:
+    title: Workflow Type
     description: Types of computational processing workflows
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       MOTION_CORRECTION:
         description: Motion correction for cryo-EM movies
@@ -327,45 +423,64 @@ enums:
         annotations:
           software: PRIMUS, CRYSOL, FoXS
   FileFormat:
+    title: File Format
     description: File formats used in structural biology
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       MRC:
         description: MRC format for EM density maps
+        meaning: EDAM:3842
         annotations:
           extension: .mrc, .map
           applications: EM volumes, tomograms
       TIFF:
         description: Tagged Image File Format
+        meaning: EDAM:3591
         annotations:
           extension: .tif, .tiff
           applications: micrographs, general imaging
       HDF5:
         description: Hierarchical Data Format 5
+        meaning: EDAM:3590
         annotations:
           extension: .h5, .hdf5
           applications: large datasets, metadata storage
       STAR:
         description: Self-defining Text Archival and Retrieval format
+        meaning: EDAM:3906
         annotations:
           extension: .star
           applications: RELION metadata, particle parameters
       PDB:
         description: Protein Data Bank coordinate format
+        meaning: EDAM:1476
+        exact_mappings:
+        - OBI:0001525
         annotations:
           extension: .pdb
           applications: atomic coordinates, legacy format
       MMCIF:
         description: Macromolecular Crystallographic Information File
+        meaning: EDAM:1477
+        exact_mappings:
+        - NCIT:C133997
         annotations:
           extension: .cif
           applications: atomic coordinates, modern PDB format
       MTZ:
         description: MTZ reflection data format
+        meaning: EDAM:3816
         annotations:
           extension: .mtz
           applications: crystallographic reflections, phases
       CBF:
         description: Crystallographic Binary Format
+        meaning: EDAM:3874
         annotations:
           extension: .cbf
           applications: detector images, diffraction data
@@ -380,7 +495,14 @@ enums:
           extension: .ser
           applications: FEI movie stacks
   DataType:
+    title: Data Type
     description: Types of structural biology data
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       MICROGRAPH:
         description: Electron micrograph image
@@ -419,7 +541,14 @@ enums:
         annotations:
           formats: STAR, XML, JSON
   ProcessingStatus:
+    title: Processing Status
     description: Status of data processing workflows
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       RAW:
         description: Raw unprocessed data
@@ -438,7 +567,14 @@ enums:
       CANCELLED:
         description: Processing cancelled by user
   CoordinationGeometry:
+    title: Coordination Geometry
     description: Coordination geometry of metal centers in protein structures
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       LINEAR:
         description: Linear coordination geometry (2 ligands at 180°)
@@ -465,9 +601,9 @@ enums:
       SQUARE_PLANAR:
         title: square planar molecular geometry
         description: Square planar coordination geometry (4 ligands in plane)
+        meaning: NCIT:C103211
         annotations:
           coordination_number: '4'
-          ncit_variants: NCIT:C103211, NCIT:C103212, NCIT:C103213, NCIT:C103214
       TRIGONAL_BIPYRAMIDAL:
         description: Trigonal bipyramidal coordination geometry (5 ligands)
         annotations:
@@ -483,9 +619,9 @@ enums:
       OCTAHEDRAL:
         title: octahedral molecular geometry
         description: Octahedral coordination geometry (6 ligands)
+        meaning: NCIT:C103216
         annotations:
           coordination_number: '6'
-          ncit_variants: NCIT:C103216, NCIT:C103217, NCIT:C103218
       TRIGONAL_PRISMATIC:
         description: Trigonal prismatic coordination geometry (6 ligands)
         annotations:
@@ -519,7 +655,14 @@ enums:
         annotations:
           coordination_number: '4'
   MetalLigandType:
+    title: Metal Ligand Type
     description: Types of metal-containing chemical components
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       METAL_CATION:
         description: Metal cation (e.g., Ca2+, Mg2+, Zn2+, Fe3+)
@@ -530,29 +673,47 @@ enums:
         annotations:
           examples: heme, chlorophyll, cobalamin, Fe-S cluster
   ProteinModificationType:
+    title: Protein Modification Type
     description: Types of protein modifications
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       METAL_COORDINATION:
         description: Metal coordination modification
+        meaning: MOD:00739
         annotations:
           examples: zinc finger, iron-sulfur cluster binding
       PHOSPHORYLATION:
         description: Phosphorylation modification
+        meaning: MOD:00696
       GLYCOSYLATION:
         description: Glycosylation modification
+        meaning: MOD:00725
       ACETYLATION:
         description: Acetylation modification
+        meaning: MOD:00394
       METHYLATION:
         description: Methylation modification
+        meaning: MOD:00599
       UBIQUITINATION:
         description: Ubiquitination modification
+        meaning: MOD:01240
       SUMOYLATION:
         description: SUMOylation modification
+        meaning: MOD:01149
       HYDROXYLATION:
         description: Hydroxylation modification
+        meaning: MOD:00677
       LIPIDATION:
         description: Lipidation modification
+        meaning: MOD:00435
       PROTEOLYTIC_CLEAVAGE:
         description: Proteolytic cleavage
+        meaning: GO:0006508
       CROSSLINKING:
         description: Crosslinking modification
+        meaning: MOD:00276

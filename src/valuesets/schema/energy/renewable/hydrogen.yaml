@@ -1,0 +1,408 @@
+name: hydrogen
+title: Hydrogen Energy Value Sets
+description: >-
+  Value sets for hydrogen production, storage, and utilization.
+  Includes the color-coded hydrogen classification system used by industry.
+  Based on DOE Hydrogen and Fuel Cell Technologies Office terminology.
+id: https://w3id.org/linkml/valuesets/energy/renewable/hydrogen
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  valuesets: https://w3id.org/valuesets/
+  CHEBI: http://purl.obolibrary.org/obo/CHEBI_
+  NCIT: http://purl.obolibrary.org/obo/NCIT_
+  CHMO: http://purl.obolibrary.org/obo/CHMO_
+  sweet: http://sweetontology.net/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+default_prefix: valuesets
+slots:
+  hydrogen_type:
+    description: Type of hydrogen classified by production method and carbon intensity
+    range: HydrogenType
+  hydrogen_production_method:
+    description: Method used to produce hydrogen
+    range: HydrogenProductionMethod
+  hydrogen_storage_method:
+    description: Method used to store hydrogen
+    range: HydrogenStorageMethod
+  hydrogen_application:
+    description: Application or end use of hydrogen
+    range: HydrogenApplication
+enums:
+  HydrogenType:
+    title: Hydrogen Type (Color Classification)
+    description: >-
+      Color-coded classification of hydrogen based on production method
+      and carbon intensity. This informal industry taxonomy differentiates
+      hydrogen by its carbon footprint and energy source.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    see_also:
+    - https://www.energy.gov/eere/fuelcells/hydrogen-production
+    - https://www.nationalgrid.com/stories/energy-explained/hydrogen-colour-spectrum
+    permissible_values:
+      GREEN_HYDROGEN:
+        title: Green Hydrogen
+        description: >-
+          Hydrogen produced via electrolysis powered by renewable energy
+          sources (solar, wind, hydro). Zero carbon emissions during production.
+        aliases:
+        - Renewable Hydrogen
+        broad_mappings:
+        - sweet:matrElement/Hydrogen
+        annotations:
+          production_method: electrolysis
+          energy_source: renewable
+          carbon_intensity: zero
+      BLUE_HYDROGEN:
+        title: Blue Hydrogen
+        description: >-
+          Hydrogen produced from natural gas via steam methane reforming (SMR)
+          with carbon capture and storage (CCS). Low carbon intensity.
+        annotations:
+          production_method: steam_methane_reforming
+          energy_source: natural_gas
+          carbon_intensity: low
+          requires_ccs: true
+      GREY_HYDROGEN:
+        title: Grey Hydrogen
+        description: >-
+          Hydrogen produced from natural gas via steam methane reforming
+          without carbon capture. Most common production method currently.
+        aliases:
+        - Gray Hydrogen
+        annotations:
+          production_method: steam_methane_reforming
+          energy_source: natural_gas
+          carbon_intensity: high
+          co2_per_kg_h2: 9-12
+      BROWN_HYDROGEN:
+        title: Brown Hydrogen
+        description: >-
+          Hydrogen produced from brown coal (lignite) gasification
+          without carbon capture. High carbon intensity.
+        annotations:
+          production_method: coal_gasification
+          energy_source: lignite
+          carbon_intensity: very_high
+      BLACK_HYDROGEN:
+        title: Black Hydrogen
+        description: >-
+          Hydrogen produced from black coal (bituminous) gasification
+          without carbon capture. High carbon intensity.
+        annotations:
+          production_method: coal_gasification
+          energy_source: bituminous_coal
+          carbon_intensity: very_high
+      PINK_HYDROGEN:
+        title: Pink Hydrogen
+        description: >-
+          Hydrogen produced via electrolysis powered by nuclear energy.
+          Zero carbon emissions during production.
+        aliases:
+        - Purple Hydrogen
+        - Red Hydrogen
+        annotations:
+          production_method: electrolysis
+          energy_source: nuclear
+          carbon_intensity: zero
+      TURQUOISE_HYDROGEN:
+        title: Turquoise Hydrogen
+        description: >-
+          Hydrogen produced via methane pyrolysis, producing solid carbon
+          instead of CO2. Lower carbon intensity than grey hydrogen.
+        annotations:
+          production_method: methane_pyrolysis
+          energy_source: natural_gas
+          carbon_intensity: low
+          byproduct: solid_carbon
+      WHITE_HYDROGEN:
+        title: White Hydrogen
+        description: >-
+          Naturally occurring geological hydrogen found in underground
+          deposits. Zero production emissions.
+        aliases:
+        - Natural Hydrogen
+        - Geological Hydrogen
+        - Gold Hydrogen
+        annotations:
+          production_method: geological_extraction
+          energy_source: natural
+          carbon_intensity: zero
+      YELLOW_HYDROGEN:
+        title: Yellow Hydrogen
+        description: >-
+          Hydrogen produced via electrolysis powered by solar energy
+          specifically. A subset of green hydrogen.
+        annotations:
+          production_method: electrolysis
+          energy_source: solar
+          carbon_intensity: zero
+      ORANGE_HYDROGEN:
+        title: Orange Hydrogen
+        description: >-
+          Hydrogen produced from plastic waste gasification or pyrolysis.
+          Emerging technology addressing both energy and waste challenges.
+        annotations:
+          production_method: waste_gasification
+          energy_source: plastic_waste
+          carbon_intensity: varies
+  HydrogenProductionMethod:
+    title: Hydrogen Production Method
+    description: Methods and processes for producing hydrogen.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    see_also:
+    - https://www.energy.gov/eere/fuelcells/hydrogen-production
+    permissible_values:
+      STEAM_METHANE_REFORMING:
+        title: Steam Methane Reforming (SMR)
+        description: >-
+          High temperature steam reacts with methane to produce hydrogen,
+          carbon monoxide, and carbon dioxide.
+        aliases:
+        - SMR
+        annotations:
+          feedstock: natural_gas
+          temperature_c: 700-1000
+          dominant_method: true
+      AUTOTHERMAL_REFORMING:
+        title: Autothermal Reforming (ATR)
+        description: >-
+          Combines steam reforming and partial oxidation using oxygen
+          and steam to produce hydrogen from hydrocarbons.
+        aliases:
+        - ATR
+      PARTIAL_OXIDATION:
+        title: Partial Oxidation (POX)
+        description: >-
+          Exothermic process reacting hydrocarbons with limited oxygen
+          to produce hydrogen and carbon monoxide.
+        aliases:
+        - POX
+      COAL_GASIFICATION:
+        title: Coal Gasification
+        description: >-
+          Conversion of coal to syngas (hydrogen and carbon monoxide)
+          using high temperature and steam.
+        meaning: CHMO:0001501
+      WATER_ELECTROLYSIS:
+        title: Water Electrolysis
+        description: >-
+          Splitting water into hydrogen and oxygen using electrical current.
+          Can be powered by various energy sources.
+        aliases:
+        - Electrolysis
+        close_mappings:
+        - sweet:procChemical/Electrolysis
+      ALKALINE_ELECTROLYSIS:
+        title: Alkaline Electrolysis (AEL)
+        description: >-
+          Electrolysis using alkaline solution (typically KOH) as
+          electrolyte. Mature commercial technology.
+        aliases:
+        - AEL
+        annotations:
+          electrolyte: alkaline
+          maturity: commercial
+      PEM_ELECTROLYSIS:
+        title: PEM Electrolysis
+        description: >-
+          Proton Exchange Membrane electrolysis using solid polymer
+          electrolyte. Higher efficiency, faster response.
+        aliases:
+        - PEMEC
+        - Polymer Electrolyte Membrane Electrolysis
+        annotations:
+          electrolyte: polymer_membrane
+          maturity: commercial
+      SOLID_OXIDE_ELECTROLYSIS:
+        title: Solid Oxide Electrolysis (SOEC)
+        description: >-
+          High temperature electrolysis using solid ceramic electrolyte.
+          Higher efficiency when waste heat is available.
+        aliases:
+        - SOEC
+        annotations:
+          electrolyte: solid_oxide
+          temperature_c: 700-850
+          maturity: emerging
+      METHANE_PYROLYSIS:
+        title: Methane Pyrolysis
+        description: >-
+          Thermal decomposition of methane into hydrogen and solid carbon
+          without oxygen. Produces no direct CO2.
+        aliases:
+        - Thermal Cracking
+        annotations:
+          feedstock: natural_gas
+          byproduct: solid_carbon
+      BIOMASS_GASIFICATION:
+        title: Biomass Gasification
+        description: >-
+          Thermochemical conversion of biomass to hydrogen-rich syngas
+          at high temperatures.
+        narrow_mappings:
+        - sweet:procPhysical/Gasification
+        annotations:
+          feedstock: biomass
+          renewable: true
+      BIOLOGICAL_PRODUCTION:
+        title: Biological Hydrogen Production
+        description: >-
+          Production of hydrogen by microorganisms through photosynthesis,
+          fermentation, or other biological processes.
+        aliases:
+        - Biohydrogen
+        annotations:
+          renewable: true
+          maturity: research
+      THERMOCHEMICAL_WATER_SPLITTING:
+        title: Thermochemical Water Splitting
+        description: >-
+          Using high temperatures from concentrated solar or nuclear
+          to drive chemical cycles that split water.
+        annotations:
+          temperature_c: 500-2000
+          maturity: research
+      PHOTOELECTROCHEMICAL:
+        title: Photoelectrochemical Water Splitting
+        description: >-
+          Direct conversion of sunlight to hydrogen using specialized
+          semiconductor materials in contact with water.
+        aliases:
+        - PEC
+        annotations:
+          maturity: research
+  HydrogenStorageMethod:
+    title: Hydrogen Storage Method
+    description: Methods for storing hydrogen for later use or transport.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      COMPRESSED_GAS:
+        title: Compressed Gas Storage
+        description: >-
+          Storage of hydrogen as compressed gas at high pressure
+          (350-700 bar) in pressure vessels.
+        aliases:
+        - CGH2
+        annotations:
+          pressure_bar: 350-700
+          maturity: commercial
+      LIQUID_HYDROGEN:
+        title: Liquid Hydrogen Storage
+        description: >-
+          Storage of hydrogen in liquid form at cryogenic temperatures
+          (-253C). Higher energy density but requires insulation.
+        aliases:
+        - LH2
+        annotations:
+          temperature_c: -253
+          maturity: commercial
+      METAL_HYDRIDE:
+        title: Metal Hydride Storage
+        description: >-
+          Storage of hydrogen absorbed into metal alloys forming
+          metal hydrides. Safer but heavier than compressed gas.
+        annotations:
+          maturity: commercial
+      CHEMICAL_HYDRIDE:
+        title: Chemical Hydride Storage
+        description: >-
+          Storage as chemical compounds (ammonia, methanol, LOHC)
+          that release hydrogen when processed.
+        aliases:
+        - LOHC
+        - Liquid Organic Hydrogen Carrier
+      UNDERGROUND_STORAGE:
+        title: Underground Storage
+        description: >-
+          Large-scale storage in salt caverns, depleted gas fields,
+          or aquifers for grid-scale applications.
+        aliases:
+        - Geological Storage
+        annotations:
+          scale: utility
+      CRYO_COMPRESSED:
+        title: Cryo-Compressed Storage
+        description: >-
+          Hybrid approach combining cryogenic cooling with high pressure
+          for improved density.
+        aliases:
+        - CcH2
+        annotations:
+          maturity: emerging
+  HydrogenApplication:
+    title: Hydrogen Application
+    description: End-use applications for hydrogen.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      FUEL_CELL_VEHICLE:
+        title: Fuel Cell Electric Vehicle
+        description: Use of hydrogen in fuel cells for transportation (cars, trucks, buses).
+        aliases:
+        - FCEV
+      FUEL_CELL_STATIONARY:
+        title: Stationary Fuel Cell
+        description: Use of hydrogen in stationary fuel cells for power generation.
+      INDUSTRIAL_FEEDSTOCK:
+        title: Industrial Feedstock
+        description: >-
+          Use of hydrogen as chemical feedstock for ammonia production,
+          petroleum refining, and chemical synthesis.
+        meaning: CHEBI:18276
+      STEEL_PRODUCTION:
+        title: Steel Production (Direct Reduction)
+        description: Use of hydrogen to reduce iron ore in steelmaking, replacing coal.
+        aliases:
+        - Green Steel
+      AMMONIA_SYNTHESIS:
+        title: Ammonia Synthesis
+        description: Use of hydrogen with nitrogen to produce ammonia for fertilizers.
+        related_mappings:
+        - sweet:matrCompound/Ammonia
+      METHANOL_SYNTHESIS:
+        title: Methanol Synthesis
+        description: Use of hydrogen with CO2 to produce methanol.
+        related_mappings:
+        - sweet:matrOrganicCompound/Methanol
+      POWER_TO_GAS:
+        title: Power-to-Gas
+        description: >-
+          Conversion of excess renewable electricity to hydrogen for
+          grid balancing and energy storage.
+        aliases:
+        - P2G
+      BLENDING_NATURAL_GAS:
+        title: Natural Gas Blending
+        description: >-
+          Blending hydrogen into natural gas pipelines for
+          decarbonization of heating.
+      SYNTHETIC_FUELS:
+        title: Synthetic Fuel Production
+        description: >-
+          Use of hydrogen with captured CO2 to produce synthetic
+          hydrocarbons (e-fuels, SAF).
+        aliases:
+        - E-Fuels
+        - Power-to-Liquid

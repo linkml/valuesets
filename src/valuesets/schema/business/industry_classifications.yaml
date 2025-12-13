@@ -1,17 +1,19 @@
 name: industry_classifications
 title: Business Industry Classifications and Economic Sectors
-description: 'Industry classification systems including NAICS codes, economic sectors,
-  and business activity categories. Based on official government classification systems
-  and international standards for economic analysis and business categorization.'
+description: 'Industry classification systems including NAICS codes, economic sectors, and business activity categories. Based
+  on official government classification systems and international standards for economic analysis and business categorization.'
 id: https://w3id.org/linkml/valuesets/business/industry_classifications
 imports:
 - linkml:types
 prefixes:
+  linkml: https://w3id.org/linkml/
   valuesets: https://w3id.org/valuesets/
   NAICS: https://www.census.gov/naics/
   SIC: https://www.osha.gov/data/sic-manual/
   ISIC: https://unstats.un.org/unsd/classifications/Econ/ISIC
   BLS: https://www.bls.gov/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   naics_sector:
@@ -34,7 +36,14 @@ slots:
     range: IndustryRegulationLevelEnum
 enums:
   NAICSSectorEnum:
+    title: NAICS Sector
     description: NAICS two-digit sector codes (North American Industry Classification System)
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       SECTOR_11:
         title: Agriculture, Forestry, Fishing and Hunting
@@ -177,7 +186,14 @@ enums:
           activities: "executive, legislative, judicial, public safety"
           sector: "government sector"
   EconomicSectorEnum:
+    title: Economic Sector
     description: Broad economic sector classifications
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       PRIMARY_SECTOR:
         title: Primary Sector
@@ -220,7 +236,14 @@ enums:
           characteristics: "elite services and leadership roles"
           scope: "limited to highest level activities"
   BusinessActivityTypeEnum:
+    title: Business Activity Type
     description: Types of primary business activities
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       PRODUCTION:
         title: Production/Manufacturing
@@ -303,7 +326,14 @@ enums:
           examples: "law firms, consulting, accounting"
           expertise: "specialized professional expertise"
   IndustryMaturityEnum:
+    title: Industry Maturity
     description: Industry lifecycle and maturity stages
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       EMERGING:
         title: Emerging Industry
@@ -351,7 +381,14 @@ enums:
           uncertainty: "high uncertainty about future structure"
           opportunity: "opportunities for innovation and disruption"
   MarketStructureEnum:
+    title: Market Structure
     description: Competitive structure of industry markets
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       PERFECT_COMPETITION:
         title: Perfect Competition
@@ -399,7 +436,14 @@ enums:
           strategy: "strategic competition"
           examples: "aircraft manufacturing, some software markets"
   IndustryRegulationLevelEnum:
+    title: Industry Regulation Level
     description: Level of government regulation in different industries
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       HIGHLY_REGULATED:
         title: Highly Regulated

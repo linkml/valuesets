@@ -13,6 +13,8 @@ prefixes:
   linkml: https://w3id.org/linkml/
   # cval: https://w3id.org/linkml-common/
   valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 default_curi_maps:
 - semweb_context

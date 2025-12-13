@@ -9,6 +9,8 @@ prefixes:
   linkml: https://w3id.org/linkml/
   PO: http://purl.obolibrary.org/obo/PO_
   valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   plant_developmental_stage:
@@ -16,8 +18,15 @@ slots:
     range: PlantDevelopmentalStage
 enums:
   PlantDevelopmentalStage:
-    description: Major developmental stages in the plant life cycle, from seed germination through senescence. Based on the
-      Plant Ontology (PO) standardized stages.
+    title: Plant Developmental Stage
+    description: Major developmental stages in the plant life cycle, from seed germination through senescence. Based on 
+      the Plant Ontology (PO) standardized stages.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       SEED_GERMINATION_STAGE:
         description: Stage beginning with seed imbibition and ending with radicle emergence

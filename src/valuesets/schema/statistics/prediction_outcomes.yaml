@@ -3,6 +3,8 @@ id: https://w3id.org/linkml/valuesets/statistics/prediction_outcomes
 prefixes:
   # linkml_common: https://w3id.org/linkml-common/
   valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   outcome_type:
@@ -10,7 +12,14 @@ slots:
     range: OutcomeTypeEnum
 enums:
   OutcomeTypeEnum:
+    title: Outcome Type
     description: Types of prediction outcomes for classification tasks
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       TP:
         description: True Positive

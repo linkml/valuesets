@@ -12,6 +12,8 @@ prefixes:
   UO: http://purl.obolibrary.org/obo/UO_
   cvs: https://w3id.org/common-value-sets/
   valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   peak_annotation_series_label:
@@ -27,6 +29,12 @@ enums:
   PeakAnnotationSeriesLabel:
     title: Peak Annotation Series Label
     description: Types of peak annotations in mass spectrometry data
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       PEPTIDE:
         description: Peptide fragment ion
@@ -57,6 +65,12 @@ enums:
   PeptideIonSeries:
     title: Peptide Ion Series
     description: Types of peptide fragment ion series in mass spectrometry
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       B:
         description: B ion series - N-terminal fragment with CO
@@ -101,6 +115,12 @@ enums:
   MassErrorUnit:
     title: Mass Error Unit
     description: Units for expressing mass error in mass spectrometry
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       PPM:
         description: Parts per million - relative mass error

@@ -7,6 +7,8 @@ prefixes:
   ENVO: http://purl.obolibrary.org/obo/ENVO_
   OBI: http://purl.obolibrary.org/obo/OBI_
   valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 
 slots:
@@ -16,11 +18,18 @@ slots:
 
 enums:
   SESARSampleType:
+    title: SESAR Sample Type
     description: >-
       Sample object types as defined by SESAR (System for Earth Sample Registration).
       These describe the physical form and collection context of samples.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     see_also:
-      - https://www.geosamples.org/vocabularies/sample-type-object
+    - https://www.geosamples.org/vocabularies/sample-type-object
     permissible_values:
       CORE:
         description: Long cylindrical cores
@@ -75,5 +84,5 @@ enums:
 
 license: MIT
 see_also:
-  - https://linkml.github.io/valuesets
-  - https://www.geosamples.org/vocabularies/sample-type-object
+- https://linkml.github.io/valuesets
+- https://www.geosamples.org/vocabularies/sample-type-object

@@ -7,23 +7,33 @@ id: https://w3id.org/linkml/valuesets/bio/plant_biology
 imports:
 - linkml:types
 prefixes:
+  linkml: https://w3id.org/linkml/
   valuesets: https://w3id.org/valuesets/
   GSSO: http://purl.obolibrary.org/obo/GSSO_
   PATO: http://purl.obolibrary.org/obo/PATO_
   PO: http://purl.obolibrary.org/obo/PO_
   TO: http://purl.obolibrary.org/obo/TO_
   ECOCORE: http://purl.obolibrary.org/obo/ECOCORE_
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   plant_sexual_system:
-    description: Sexual systems in plants, describing the distribution and types of reproductive organs (flowers) within and
-      among individual plants
+    description: Sexual systems in plants, describing the distribution and types of reproductive organs (flowers) within
+      and among individual plants
     range: PlantSexualSystem
 enums:
   PlantSexualSystem:
+    title: Plant Sexual System
     description: 'Sexual systems in plants, describing the distribution and types of
 
       reproductive organs (flowers) within and among individual plants.'
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       ANDRODIOECIOUS:
         text: ANDRODIOECIOUS

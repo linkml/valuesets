@@ -1,7 +1,7 @@
 name: developmental_stages
 title: Developmental Stages Value Sets
-description: Ontology-mapped developmental stages for human and mouse organisms. Human stages use HsapDv (Human Developmental
-  Stages) ontology. Mouse stages use MmusDv (Mouse Developmental Stages) ontology.
+description: Ontology-mapped developmental stages for human and mouse organisms. Human stages use HsapDv (Human 
+  Developmental Stages) ontology. Mouse stages use MmusDv (Mouse Developmental Stages) ontology.
 id: https://w3id.org/valuesets/bio/developmental_stages
 imports:
 - linkml:types
@@ -11,6 +11,8 @@ prefixes:
   MmusDv: http://purl.obolibrary.org/obo/MmusDv_
   UBERON: http://purl.obolibrary.org/obo/UBERON_
   valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   human_developmental_stage:
@@ -21,54 +23,62 @@ slots:
     range: MouseDevelopmentalStage
 enums:
   HumanDevelopmentalStage:
+    title: Human Developmental Stage
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       ZYGOTE_STAGE:
         text: ZYGOTE_STAGE
         title: Carnegie stage 01
         meaning: HsapDv:0000003
-        description: Embryonic stage defined by a fertilized oocyte and presence of pronuclei. Starts at day 1 post-fertilization.
+        description: Embryonic stage defined by a fertilized oocyte and presence of pronuclei. Starts at day 1 
+          post-fertilization.
       CLEAVAGE_STAGE:
         text: CLEAVAGE_STAGE
         title: Carnegie stage 02
         meaning: HsapDv:0000005
-        description: Embryonic stage during which cell division occurs with reduction in cytoplasmic volume, and formation
-          of inner and outer cell mass. 2-8 cells. Usually starts between day 2-3 post-fertilization.
+        description: Embryonic stage during which cell division occurs with reduction in cytoplasmic volume, and 
+          formation of inner and outer cell mass. 2-8 cells. Usually starts between day 2-3 post-fertilization.
       MORULA_STAGE:
         text: MORULA_STAGE
         title: morula stage
         meaning: HsapDv:0000205
-        description: The later part of Carnegie stage 02 when the cells have coalesced into a mass but the blastocystic cavity
-          has not formed.
+        description: The later part of Carnegie stage 02 when the cells have coalesced into a mass but the blastocystic 
+          cavity has not formed.
       BLASTOCYST_STAGE:
         text: BLASTOCYST_STAGE
         title: Carnegie stage 03
         meaning: HsapDv:0000007
-        description: Blastula stage with the loss of the zona pellucida and the definition of a free blastocyst. Usually starts
-          between day 4-5 post-fertilization.
+        description: Blastula stage with the loss of the zona pellucida and the definition of a free blastocyst. Usually
+          starts between day 4-5 post-fertilization.
       GASTRULA_STAGE:
         text: GASTRULA_STAGE
         title: gastrula stage
         meaning: HsapDv:0000010
-        description: Embryonic stage defined by a complex and coordinated series of cellular movements that occurs at the
-          end of cleavage.
+        description: Embryonic stage defined by a complex and coordinated series of cellular movements that occurs at 
+          the end of cleavage.
       NEURULA_STAGE:
         text: NEURULA_STAGE
         title: neurula stage
         meaning: HsapDv:0000012
-        description: Embryonic stage defined by the formation of a tube from the flat layer of ectodermal cells known as the
-          neural plate. This stage starts the emergence of the central nervous system.
+        description: Embryonic stage defined by the formation of a tube from the flat layer of ectodermal cells known as
+          the neural plate. This stage starts the emergence of the central nervous system.
       ORGANOGENESIS_STAGE:
         text: ORGANOGENESIS_STAGE
         title: organogenesis stage
         meaning: HsapDv:0000015
-        description: Embryonic stage at which the ectoderm, endoderm, and mesoderm develop into the internal organs of the
-          organism.
+        description: Embryonic stage at which the ectoderm, endoderm, and mesoderm develop into the internal organs of 
+          the organism.
       FETAL_STAGE:
         text: FETAL_STAGE
         title: fetal stage
         meaning: HsapDv:0000037
-        description: Prenatal stage that starts with the fully formed embryo and ends at birth. Generally from 8 weeks post-fertilization
-          until birth.
+        description: Prenatal stage that starts with the fully formed embryo and ends at birth. Generally from 8 weeks 
+          post-fertilization until birth.
       NEONATAL_STAGE:
         text: NEONATAL_STAGE
         title: newborn stage (0-28 days)
@@ -83,57 +93,64 @@ enums:
         text: TODDLER_STAGE
         title: child stage (1-4 yo)
         meaning: HsapDv:0000265
-        description: Human stage that refers to a child who is over 12 months and under 5 years old. Often divided into early
-          toddler (1-2 years) and late toddler (2-3 years).
+        description: Human stage that refers to a child who is over 12 months and under 5 years old. Often divided into 
+          early toddler (1-2 years) and late toddler (2-3 years).
       CHILD_STAGE:
         text: CHILD_STAGE
         title: juvenile stage (5-14 yo)
         meaning: HsapDv:0000271
-        description: Pediatric stage that refers to a human who is over 5 and under 15 years old. Covers elementary and middle
-          school ages.
+        description: Pediatric stage that refers to a human who is over 5 and under 15 years old. Covers elementary and 
+          middle school ages.
       ADOLESCENT_STAGE:
         text: ADOLESCENT_STAGE
         title: 15-19 year-old
         meaning: HsapDv:0000268
-        description: A young adult stage that refers to an individual who is over 15 and under 20 years old. Period of transition
-          from childhood to adulthood.
+        description: A young adult stage that refers to an individual who is over 15 and under 20 years old. Period of 
+          transition from childhood to adulthood.
       ADULT_STAGE:
         text: ADULT_STAGE
         title: adult stage
         meaning: HsapDv:0000258
-        description: Human developmental stage that refers to a sexually mature human. Starts at approximately 15 years according
-          to HPO definitions.
+        description: Human developmental stage that refers to a sexually mature human. Starts at approximately 15 years 
+          according to HPO definitions.
       AGED_STAGE:
         text: AGED_STAGE
         title: late adult stage
         meaning: HsapDv:0000227
-        description: Late adult stage that refers to an individual who is over 60 and starts to have some age-related impairments.
-          Often subdivided into young-old (60-79) and old-old (80+).
+        description: Late adult stage that refers to an individual who is over 60 and starts to have some age-related 
+          impairments. Often subdivided into young-old (60-79) and old-old (80+).
       EMBRYONIC_STAGE:
         text: EMBRYONIC_STAGE
         title: embryonic stage
         meaning: HsapDv:0000002
-        description: Prenatal stage that starts with fertilization and ends with a fully formed embryo, before undergoing
-          last development during the fetal stage. Up to 8 weeks post-fertilization.
+        description: Prenatal stage that starts with fertilization and ends with a fully formed embryo, before 
+          undergoing last development during the fetal stage. Up to 8 weeks post-fertilization.
       PRENATAL_STAGE:
         text: PRENATAL_STAGE
         title: prenatal stage
         meaning: HsapDv:0000045
-        description: Prenatal stage that starts with fertilization and ends at birth. Encompasses both embryonic and fetal
-          stages.
+        description: Prenatal stage that starts with fertilization and ends at birth. Encompasses both embryonic and 
+          fetal stages.
       POSTNATAL_STAGE:
         text: POSTNATAL_STAGE
         title: postnatal stage
         meaning: HsapDv:0010000
         description: Human developmental stage that covers the whole of human life post birth.
   MouseDevelopmentalStage:
+    title: Mouse Developmental Stage
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       ZYGOTE_STAGE:
         text: ZYGOTE_STAGE
         title: Theiler stage 01
         meaning: MmusDv:0000003
-        description: Embryonic stage defined by a one-cell embryo (fertilised egg) with zona pellucida present. Embryonic
-          age 0-0.9 dpc (days post coitum).
+        description: Embryonic stage defined by a one-cell embryo (fertilised egg) with zona pellucida present. 
+          Embryonic age 0-0.9 dpc (days post coitum).
       TWO_CELL_STAGE:
         text: TWO_CELL_STAGE
         title: Theiler stage 02
@@ -153,31 +170,32 @@ enums:
         text: MORULA_STAGE
         title: Theiler stage 03
         meaning: MmusDv:0000006
-        description: Embryonic cleavage stage defined by a dividing 4-16 cells egg, early to fully compacted morula. Embryonic
-          age 2 dpc.
+        description: Embryonic cleavage stage defined by a dividing 4-16 cells egg, early to fully compacted morula. 
+          Embryonic age 2 dpc.
       BLASTOCYST_STAGE:
         text: BLASTOCYST_STAGE
         title: Theiler stage 05
         meaning: MmusDv:0000009
-        description: Embryonic blastula stage defined by a zona free blastocyst (zona pellucida absent). Embryonic age 4 dpc.
+        description: Embryonic blastula stage defined by a zona free blastocyst (zona pellucida absent). Embryonic age 4
+          dpc.
       GASTRULA_STAGE:
         text: GASTRULA_STAGE
         title: gastrula stage
         meaning: MmusDv:0000013
-        description: Embryonic stage defined by complex and coordinated series of cellular movements that occurs at the end
-          of cleavage.
+        description: Embryonic stage defined by complex and coordinated series of cellular movements that occurs at the 
+          end of cleavage.
       NEURULA_STAGE:
         text: NEURULA_STAGE
         title: Theiler stage 11
         meaning: MmusDv:0000017
-        description: Embryonic stage called presomite stage and defined by the formation of the neural plate. This stage starts
-          the emergence of the central nervous system at embryonic age 7.5 dpc.
+        description: Embryonic stage called presomite stage and defined by the formation of the neural plate. This stage
+          starts the emergence of the central nervous system at embryonic age 7.5 dpc.
       ORGANOGENESIS_STAGE:
         text: ORGANOGENESIS_STAGE
         title: organogenesis stage
         meaning: MmusDv:0000018
-        description: Embryonic stage at which the ectoderm, endoderm, and mesoderm develop into the internal organs of the
-          organism.
+        description: Embryonic stage at which the ectoderm, endoderm, and mesoderm develop into the internal organs of 
+          the organism.
       E0_5:
         text: E0_5
         title: Theiler stage 01
@@ -187,12 +205,14 @@ enums:
         text: E9_5
         title: Theiler stage 16
         meaning: MmusDv:0000023
-        description: Embryonic day 9.5 - organogenesis stage with visible hind limb buds. Between Theiler stages 15 and 16.
+        description: Embryonic day 9.5 - organogenesis stage with visible hind limb buds. Between Theiler stages 15 and 
+          16.
       E14_5:
         text: E14_5
         title: Theiler stage 22
         meaning: MmusDv:0000029
-        description: Embryonic day 14.5 - late organogenesis with clearly visible fingers and long bones of the limbs present.
+        description: Embryonic day 14.5 - late organogenesis with clearly visible fingers and long bones of the limbs 
+          present.
       P0_NEWBORN:
         text: P0_NEWBORN
         title: Theiler stage 27
@@ -220,7 +240,7 @@ enums:
         description: Middle aged stage for mice over 10 and under 18 months old. Shows progressive age-related changes.
       THEILER_STAGE:
         text: THEILER_STAGE
-        description: Reference to any Theiler stage (TS1-TS28) which provides standardized morphological staging for mouse
-          development.
+        description: Reference to any Theiler stage (TS1-TS28) which provides standardized morphological staging for 
+          mouse development.
 license: Apache-2.0
 default_range: string

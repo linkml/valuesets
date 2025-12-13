@@ -9,6 +9,8 @@ prefixes:
   iso3166loc: http://id.loc.gov/vocabulary/countries/
   geonames: http://sws.geonames.org/
   valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   country_code_iso2:
@@ -49,7 +51,14 @@ slots:
     range: CurrencyCodeISO4217Enum
 enums:
   CountryCodeISO2Enum:
+    title: Country Code ISO2
     description: ISO 3166-1 alpha-2 country codes (2-letter codes)
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       US:
         description: United States of America
@@ -302,7 +311,14 @@ enums:
         exact_mappings:
         - GAZ:00003750
   CountryCodeISO3Enum:
+    title: Country Code ISO3
     description: ISO 3166-1 alpha-3 country codes (3-letter codes)
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       USA:
         description: United States of America
@@ -455,7 +471,14 @@ enums:
         exact_mappings:
         - GAZ:00002929
   USStateCodeEnum:
+    title: US State Code
     description: United States state and territory codes
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       AL:
         description: Alabama
@@ -570,7 +593,14 @@ enums:
       MP:
         description: Northern Mariana Islands
   CanadianProvinceCodeEnum:
+    title: Canadian Province Code
     description: Canadian province and territory codes
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       AB:
         description: Alberta
@@ -599,7 +629,14 @@ enums:
       YT:
         description: Yukon
   CompassDirection:
+    title: Compass Direction
     description: Cardinal and intercardinal compass directions
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       NORTH:
         description: North (0°/360°)
@@ -682,7 +719,14 @@ enums:
           abbreviation: NNW
           degrees: 337.5
   RelativeDirection:
+    title: Relative Direction
     description: Relative directional terms
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       FORWARD:
         description: Forward/Ahead
@@ -726,7 +770,14 @@ enums:
           abbreviation: CCW
           aliases: anticlockwise
   WindDirection:
+    title: Wind Direction
     description: Wind direction nomenclature (named for where wind comes FROM)
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       NORTHERLY:
         description: Wind from the north
@@ -773,7 +824,14 @@ enums:
         annotations:
           note: changing or inconsistent direction
   ContinentEnum:
+    title: Continent
     description: Continental regions
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       AFRICA:
         description: Africa
@@ -790,7 +848,14 @@ enums:
       SOUTH_AMERICA:
         description: South America
   UNRegionEnum:
+    title: UN Region
     description: United Nations regional classifications
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       EASTERN_AFRICA:
         description: Eastern Africa
@@ -837,7 +902,14 @@ enums:
       POLYNESIA:
         description: Polynesia
   LanguageCodeISO639_1Enum:
+    title: Language Code ISO639_1
     description: ISO 639-1 two-letter language codes
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       EN:
         description: English
@@ -900,7 +972,14 @@ enums:
       UK:
         description: Ukrainian
   TimeZoneEnum:
+    title: Time Zone
     description: Common time zones
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       UTC:
         description: Coordinated Universal Time
@@ -947,7 +1026,14 @@ enums:
       NZDT:
         description: New Zealand Daylight Time (UTC+13)
   CurrencyCodeISO4217Enum:
+    title: Currency Code ISO4217
     description: ISO 4217 currency codes
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       USD:
         description: United States Dollar

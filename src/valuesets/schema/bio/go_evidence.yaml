@@ -5,9 +5,12 @@ id: https://w3id.org/linkml/valuesets/bio/go_evidence
 imports:
 - linkml:types
 prefixes:
+  linkml: https://w3id.org/linkml/
   valuesets: https://w3id.org/valuesets/
   ECO: http://purl.obolibrary.org/obo/ECO_
   GO_REF: http://purl.obolibrary.org/obo/GO_REF_
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
 slots:
   go_evidence:
@@ -18,7 +21,17 @@ slots:
     range: GOElectronicMethods
 enums:
   GOEvidenceCode:
+    title: GO Evidence Code
     description: Gene Ontology evidence codes mapped to Evidence and Conclusion Ontology (ECO) terms
+    status: STANDARD
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    annotations:
+      stewards: https://geneontology.org
+      publishers: https://geneontology.org
     permissible_values:
       EXP:
         title: Inferred from Experiment
@@ -151,7 +164,17 @@ enums:
         - evidence used in automatic assertion
         meaning: ECO:0000501
   GOElectronicMethods:
+    title: GO Electronic Methods
     description: Electronic annotation methods used in Gene Ontology, identified by GO_REF codes
+    status: STANDARD
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    annotations:
+      stewards: https://geneontology.org
+      publishers: https://geneontology.org
     permissible_values:
       INTERPRO2GO:
         title: Gene Ontology annotation based on InterPro classification
