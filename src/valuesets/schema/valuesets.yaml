@@ -83,10 +83,14 @@ imports:
 - medical/clinical
 - medical/neuroimaging
 - medical/family_history
+- medical/pediatric_oncology/diagnosis_categories
+- medical/pediatric_oncology/iccc3
+- medical/pediatric_oncology/staging/neuroblastoma
 - clinical/nih_demographics
 - clinical/phenopackets
 - bioprocessing/scale_up
 - units/measurements
+- units/quantity_kinds
 - computing/file_formats
 - computing/maturity_levels
 - computing/ontologies
