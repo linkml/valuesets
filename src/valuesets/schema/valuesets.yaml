@@ -83,6 +83,7 @@ imports:
 - medical/clinical
 - medical/neuroimaging
 - medical/family_history
+- medical/pain
 - clinical/nih_demographics
 - clinical/phenopackets
 - bioprocessing/scale_up
