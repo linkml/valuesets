@@ -1,0 +1,346 @@
+name: pediatric_oncology_diagnosis_categories
+title: Pediatric Oncology Diagnosis Categories
+description: >-
+  High-level pediatric cancer diagnosis groupings based on CCDI CDE 16607972
+  (Diagnosis Pediatric Oncology Grouping Category). These categories were
+  developed through consensus by St. Jude, CBTN, Treehouse, and NCI to enable
+  cohort aggregation across federated pediatric cancer data resources.
+  Categories are aligned with WHO CNS5, WHO-HAEM5, and WHO Pediatric Blue Book.
+id: https://w3id.org/linkml/valuesets/medical/pediatric_oncology/diagnosis_categories
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  valuesets: https://w3id.org/valuesets/
+  NCIT: http://purl.obolibrary.org/obo/NCIT_
+  MONDO: http://purl.obolibrary.org/obo/MONDO_
+  EFO: http://www.ebi.ac.uk/efo/EFO_
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+  caDSR: https://cadsr.cancer.gov/onedata/cde/
+default_prefix: valuesets
+enums:
+  PediatricOncologyDiagnosisCategory:
+    title: Pediatric Oncology Diagnosis Category
+    description: >-
+      High-level groupings for pediatric cancer diagnoses per CCDI CDE 16607972.
+      Designed for cohort aggregation across federated data resources. Each
+      diagnosis maps to a single dominant category.
+    status: RELEASED
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    see_also:
+    - https://github.com/CBIIT/ccdi-federation-api/discussions/160
+    - https://docs.stjude.cloud/cc4k
+    annotations:
+      caDSR_CDE: "16607972"
+      source: CCDI Federation API
+      alignment: WHO CNS5, WHO-HAEM5, WHO Pediatric Blue Book
+    permissible_values:
+      # ===== BRAIN TUMORS (13 categories) =====
+      ATYPICAL_TERATOID_RHABDOID_TUMOR:
+        title: Atypical Teratoid/Rhabdoid Tumors
+        description: >-
+          Highly malignant embryonal CNS tumor characterized by loss of
+          SMARCB1 (INI1) or SMARCA4 expression. Predominantly occurs in
+          young children.
+        meaning: NCIT:C6807
+        annotations:
+          category: brain_tumor
+          who_classification: WHO CNS5
+      CHOROID_PLEXUS_TUMOR:
+        title: Choroid Plexus Tumors
+        description: >-
+          Neoplasms arising from the choroid plexus epithelium, including
+          papilloma, atypical papilloma, and carcinoma.
+        meaning: NCIT:C3698
+        annotations:
+          category: brain_tumor
+          who_classification: WHO CNS5
+      CNS_GERM_CELL_TUMOR:
+        title: CNS Germ Cell Tumors
+        description: >-
+          Germ cell tumors arising within the central nervous system,
+          including germinoma and non-germinomatous germ cell tumors.
+        meaning: NCIT:C6286
+        annotations:
+          category: brain_tumor
+          who_classification: WHO CNS5
+      CNS_SARCOMA:
+        title: CNS Sarcomas
+        description: >-
+          Sarcomas arising primarily in the central nervous system,
+          including Ewing sarcoma and rhabdomyosarcoma of CNS.
+        meaning: NCIT:C121624
+        annotations:
+          category: brain_tumor
+      CRANIOPHARYNGIOMA:
+        title: Craniopharyngiomas
+        description: >-
+          Benign epithelial tumors arising from remnants of Rathke pouch,
+          including adamantinomatous and papillary subtypes.
+        meaning: NCIT:C2998
+        annotations:
+          category: brain_tumor
+          who_classification: WHO CNS5
+      EPENDYMOMA:
+        title: Ependymoma
+        description: >-
+          Glial tumors arising from ependymal cells lining the ventricular
+          system and central canal. Includes molecular subtypes defined
+          by WHO CNS5.
+        meaning: NCIT:C3017
+        annotations:
+          category: brain_tumor
+          who_classification: WHO CNS5
+      GLIONEURONAL_AND_NEURONAL_TUMOR:
+        title: Glioneuronal and Neuronal Tumors
+        description: >-
+          Tumors with neuronal differentiation including ganglioglioma,
+          dysembryoplastic neuroepithelial tumor (DNET), and central
+          neurocytoma.
+        meaning: NCIT:C6927
+        annotations:
+          category: brain_tumor
+          who_classification: WHO CNS5
+      HIGH_GRADE_GLIOMA:
+        title: High-Grade Gliomas
+        description: >-
+          Aggressive glial tumors including pediatric-type diffuse high-grade
+          gliomas (H3 K27-altered, H3 G34-mutant, and H3/IDH-wildtype),
+          as well as glioblastoma.
+        meaning: NCIT:C129355
+        annotations:
+          category: brain_tumor
+          who_classification: WHO CNS5
+          grade: high
+      LOW_GRADE_GLIOMA:
+        title: Low-Grade Gliomas
+        description: >-
+          Indolent glial tumors including pilocytic astrocytoma and
+          pediatric-type diffuse low-grade gliomas (MYB/MYBL1-altered,
+          MAPK pathway-altered).
+        meaning: NCIT:C129354
+        annotations:
+          category: brain_tumor
+          who_classification: WHO CNS5
+          grade: low
+      MEDULLOBLASTOMA:
+        title: Medulloblastoma
+        description: >-
+          Embryonal tumor of the cerebellum, classified by molecular
+          subgroups (WNT-activated, SHH-activated, Group 3, Group 4)
+          per WHO CNS5.
+        meaning: NCIT:C3222
+        annotations:
+          category: brain_tumor
+          who_classification: WHO CNS5
+      OTHER_CNS_EMBRYONAL_TUMOR:
+        title: Other CNS Embryonal Tumors
+        description: >-
+          Embryonal tumors of the CNS other than medulloblastoma and ATRT,
+          including embryonal tumor with multilayered rosettes (ETMR),
+          CNS neuroblastoma, and pineoblastoma.
+        meaning: NCIT:C6774
+        aliases:
+        - CNS Embryonal Tumor, NOS
+        annotations:
+          category: brain_tumor
+          who_classification: WHO CNS5
+      OTHER_GLIOMA:
+        title: Other Gliomas
+        description: >-
+          Glial tumors not classified as high-grade or low-grade glioma,
+          including angiocentric glioma and astroblastoma.
+        meaning: NCIT:C3059
+        annotations:
+          category: brain_tumor
+      OTHER_BRAIN_TUMOR:
+        title: Other Brain Tumors
+        description: >-
+          CNS tumors not fitting other brain tumor categories, including
+          meningioma, schwannoma, and hemangioblastoma.
+        meaning: NCIT:C2907
+        annotations:
+          category: brain_tumor
+
+      # ===== HEMATOLOGIC MALIGNANCIES (6 categories) =====
+      LYMPHOBLASTIC_LEUKEMIA:
+        title: Lymphoblastic Leukemia
+        description: >-
+          Acute lymphoblastic leukemia (ALL) including B-ALL and T-ALL
+          with all molecular subtypes (BCR::ABL1, ETV6::RUNX1, KMT2A-r,
+          DUX4, MEF2D, etc.).
+        meaning: NCIT:C3167
+        aliases:
+        - ALL
+        - Acute Lymphoblastic Leukemia
+        annotations:
+          category: hematologic
+          who_classification: WHO-HAEM5
+      MYELOID_LEUKEMIA:
+        title: Myeloid Leukemia
+        description: >-
+          Acute myeloid leukemia (AML) and related myeloid neoplasms
+          including AML with defining genetic abnormalities, therapy-related
+          AML, and juvenile myelomonocytic leukemia (JMML).
+        meaning: NCIT:C3171
+        aliases:
+        - AML
+        - Acute Myeloid Leukemia
+        annotations:
+          category: hematologic
+          who_classification: WHO-HAEM5
+      HODGKIN_LYMPHOMA:
+        title: Hodgkin Lymphoma
+        description: >-
+          Lymphoid neoplasm characterized by Reed-Sternberg cells,
+          including classical Hodgkin lymphoma and nodular lymphocyte
+          predominant Hodgkin lymphoma.
+        meaning: NCIT:C9357
+        annotations:
+          category: hematologic
+          who_classification: WHO-HAEM5
+      NON_HODGKIN_LYMPHOMA:
+        title: Non-Hodgkin Lymphoma
+        description: >-
+          Lymphoid neoplasms other than Hodgkin lymphoma, including
+          Burkitt lymphoma, diffuse large B-cell lymphoma, anaplastic
+          large cell lymphoma, and lymphoblastic lymphoma.
+        meaning: NCIT:C3211
+        aliases:
+        - NHL
+        annotations:
+          category: hematologic
+          who_classification: WHO-HAEM5
+      LYMPHOPROLIFERATIVE_DISEASE:
+        title: Lymphoproliferative Diseases
+        description: >-
+          Disorders characterized by abnormal lymphocyte proliferation,
+          including post-transplant lymphoproliferative disorder (PTLD)
+          and hemophagocytic lymphohistiocytosis (HLH).
+        meaning: NCIT:C3138
+        annotations:
+          category: hematologic
+      OTHER_HEME_TUMOR:
+        title: Other Heme Tumors
+        description: >-
+          Hematologic malignancies not classified elsewhere, including
+          histiocytic disorders, myelodysplastic syndromes, and
+          myeloproliferative neoplasms.
+        meaning: NCIT:C27134
+        annotations:
+          category: hematologic
+
+      # ===== SOLID TUMORS (11 categories) =====
+      NEUROBLASTOMA:
+        title: Neuroblastoma
+        description: >-
+          Embryonal tumor of the peripheral sympathetic nervous system,
+          arising from neural crest cells. Includes ganglioneuroblastoma
+          and ganglioneuroma.
+        meaning: NCIT:C3270
+        annotations:
+          category: solid_tumor
+          who_classification: WHO Pediatric Blue Book
+      OSTEOSARCOMA:
+        title: Osteosarcoma
+        description: >-
+          Primary malignant bone tumor characterized by osteoid production,
+          including conventional, telangiectatic, and small cell variants.
+        meaning: NCIT:C9145
+        annotations:
+          category: solid_tumor
+          who_classification: WHO Bone/Soft Tissue
+      EWING_SARCOMA:
+        title: Ewing Sarcoma
+        description: >-
+          Small round cell sarcoma typically harboring EWSR1 rearrangements,
+          arising in bone or soft tissue. Includes Ewing sarcoma family
+          of tumors.
+        meaning: NCIT:C4817
+        annotations:
+          category: solid_tumor
+          who_classification: WHO Bone/Soft Tissue
+      RHABDOMYOSARCOMA:
+        title: Rhabdomyosarcoma
+        description: >-
+          Malignant soft tissue tumor with skeletal muscle differentiation,
+          including embryonal, alveolar, and spindle cell/sclerosing subtypes.
+        meaning: NCIT:C3359
+        annotations:
+          category: solid_tumor
+          who_classification: WHO Bone/Soft Tissue
+      SOFT_TISSUE_TUMOR:
+        title: Soft Tissue Tumors
+        description: >-
+          Soft tissue neoplasms other than rhabdomyosarcoma and Ewing sarcoma,
+          including synovial sarcoma, fibrosarcoma, and other sarcomas.
+          Also includes non-sarcomatous soft tissue tumors.
+        meaning: NCIT:C3399
+        aliases:
+        - Soft Tissue Sarcoma
+        annotations:
+          category: solid_tumor
+      RHABDOID_TUMOR:
+        title: Rhabdoid Tumors
+        description: >-
+          Highly aggressive tumors characterized by SMARCB1 loss,
+          occurring outside the CNS (extracranial rhabdoid tumor).
+          Includes malignant rhabdoid tumor of kidney.
+        meaning: NCIT:C3769
+        annotations:
+          category: solid_tumor
+      RENAL_TUMOR:
+        title: Renal Tumors
+        description: >-
+          Kidney tumors including Wilms tumor (nephroblastoma), clear cell
+          sarcoma of kidney, renal cell carcinoma, and congenital
+          mesoblastic nephroma.
+        meaning: NCIT:C7548
+        aliases:
+        - Kidney Tumor
+        - Wilms Tumor
+        annotations:
+          category: solid_tumor
+          who_classification: WHO Pediatric Blue Book
+      RETINOBLASTOMA:
+        title: Retinoblastoma
+        description: >-
+          Malignant neoplasm of the retina arising from developing
+          retinal cells, associated with RB1 mutations.
+        meaning: NCIT:C7541
+        annotations:
+          category: solid_tumor
+          who_classification: WHO Pediatric Blue Book
+      GERM_CELL_TUMOR:
+        title: Germ Cell Tumors
+        description: >-
+          Tumors arising from primordial germ cells, occurring in gonadal
+          or extragonadal sites. Includes teratoma, yolk sac tumor,
+          germinoma, choriocarcinoma, and mixed germ cell tumors.
+          Excludes CNS germ cell tumors.
+        meaning: NCIT:C3708
+        annotations:
+          category: solid_tumor
+      ENDOCRINE_AND_NEUROENDOCRINE_TUMOR:
+        title: Endocrine and Neuroendocrine Tumors
+        description: >-
+          Tumors of endocrine glands and neuroendocrine cells, including
+          thyroid carcinoma, adrenocortical carcinoma, pheochromocytoma,
+          and paraganglioma.
+        meaning: NCIT:C3010
+        annotations:
+          category: solid_tumor
+      OTHER_SOLID_TUMOR:
+        title: Other Solid Tumors
+        description: >-
+          Solid tumors not classified elsewhere, including hepatoblastoma,
+          pleuropulmonary blastoma, nasopharyngeal carcinoma, melanoma,
+          and carcinomas.
+        meaning: NCIT:C9107
+        annotations:
+          category: solid_tumor
