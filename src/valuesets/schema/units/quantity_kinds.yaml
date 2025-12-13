@@ -1,0 +1,419 @@
+name: quantity_kinds
+title: QUDT Quantity Kinds Value Set
+description: >-
+  Value set for physical quantity kinds based on QUDT (Quantities, Units, Dimensions and Types).
+  Quantity kinds represent the abstract type of a physical quantity, independent of its units.
+  For example, "length" is a quantity kind that can be measured in meters, feet, etc.
+id: https://w3id.org/valuesets/units/quantity_kinds
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  valuesets: https://w3id.org/valuesets/
+  quantitykind: http://qudt.org/vocab/quantitykind/
+  PATO: http://purl.obolibrary.org/obo/PATO_
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+default_prefix: valuesets
+slots:
+  quantity_kind:
+    description: The type of physical quantity being measured
+    range: QuantityKindEnum
+enums:
+  QuantityKindEnum:
+    title: Quantity Kind
+    description: >-
+      Physical quantity kinds based on QUDT. These represent abstract types of
+      physical quantities independent of the units used to measure them.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    see_also:
+    - https://www.qudt.org/doc/DOC_VOCAB-QUANTITY-KINDS.html
+    permissible_values:
+      # SI Base Quantity Kinds
+      LENGTH:
+        title: length
+        description: A 1-D extent quality representing distance between two points
+        meaning: quantitykind:Length
+        exact_mappings:
+        - PATO:0000122
+        annotations:
+          si_base: 'true'
+          dimension: L
+      MASS:
+        title: mass
+        description: The amount of matter in an object
+        meaning: quantitykind:Mass
+        exact_mappings:
+        - PATO:0000125
+        annotations:
+          si_base: 'true'
+          dimension: M
+      TIME:
+        title: time
+        description: Duration or temporal extent
+        meaning: quantitykind:Time
+        exact_mappings:
+        - PATO:0001309
+        annotations:
+          si_base: 'true'
+          dimension: T
+          pato_label: duration
+      THERMODYNAMIC_TEMPERATURE:
+        title: thermodynamic temperature
+        description: The thermal energy of a system
+        meaning: quantitykind:ThermodynamicTemperature
+        exact_mappings:
+        - PATO:0000146
+        annotations:
+          si_base: 'true'
+          dimension: Θ
+          pato_label: temperature
+      AMOUNT_OF_SUBSTANCE:
+        title: amount of substance
+        description: The number of elementary entities (atoms, molecules, etc.)
+        meaning: quantitykind:AmountOfSubstance
+        close_mappings:
+        - PATO:0000070
+        annotations:
+          si_base: 'true'
+          dimension: N
+          pato_label: amount
+      ELECTRIC_CURRENT:
+        title: electric current
+        description: Flow of electric charge per unit time
+        meaning: quantitykind:ElectricCurrent
+        annotations:
+          si_base: 'true'
+          dimension: I
+      LUMINOUS_INTENSITY:
+        title: luminous intensity
+        description: Luminous power per unit solid angle emitted by a point light source
+        meaning: quantitykind:LuminousIntensity
+        close_mappings:
+        - PATO:0001718
+        annotations:
+          si_base: 'true'
+          dimension: J
+          pato_label: luminance
+
+      # Derived Geometric Quantity Kinds
+      AREA:
+        title: area
+        description: A 2-D extent representing the size of a surface
+        meaning: quantitykind:Area
+        exact_mappings:
+        - PATO:0001323
+        annotations:
+          dimension: L²
+      VOLUME:
+        title: volume
+        description: A 3-D extent representing the amount of space occupied
+        meaning: quantitykind:Volume
+        exact_mappings:
+        - PATO:0000918
+        annotations:
+          dimension: L³
+      ANGLE:
+        title: plane angle
+        description: The figure formed by two rays sharing a common endpoint
+        meaning: quantitykind:Angle
+        exact_mappings:
+        - PATO:0002326
+        annotations:
+          dimension: dimensionless
+      SOLID_ANGLE:
+        title: solid angle
+        description: A 3-D angular measure
+        meaning: quantitykind:SolidAngle
+        annotations:
+          dimension: dimensionless
+
+      # Mechanical Quantity Kinds
+      VELOCITY:
+        title: velocity
+        description: Rate of change of position with direction
+        meaning: quantitykind:Velocity
+        exact_mappings:
+        - PATO:0002242
+        annotations:
+          dimension: L·T⁻¹
+      SPEED:
+        title: speed
+        description: Scalar rate of change of position
+        meaning: quantitykind:Speed
+        exact_mappings:
+        - PATO:0000008
+        annotations:
+          dimension: L·T⁻¹
+      ACCELERATION:
+        title: acceleration
+        description: Rate of change of velocity
+        meaning: quantitykind:Acceleration
+        exact_mappings:
+        - PATO:0001028
+        annotations:
+          dimension: L·T⁻²
+      FORCE:
+        title: force
+        description: Rate of change of momentum
+        meaning: quantitykind:Force
+        exact_mappings:
+        - PATO:0001035
+        annotations:
+          dimension: M·L·T⁻²
+      PRESSURE:
+        title: pressure
+        description: Force per unit area
+        meaning: quantitykind:Pressure
+        exact_mappings:
+        - PATO:0001025
+        annotations:
+          dimension: M·L⁻¹·T⁻²
+      ENERGY:
+        title: energy
+        description: Capacity to do work
+        meaning: quantitykind:Energy
+        exact_mappings:
+        - PATO:0001021
+        annotations:
+          dimension: M·L²·T⁻²
+      WORK:
+        title: work
+        description: Energy transferred by a force
+        meaning: quantitykind:Work
+        exact_mappings:
+        - PATO:0001026
+        annotations:
+          dimension: M·L²·T⁻²
+      POWER:
+        title: power
+        description: Rate of doing work or transferring energy
+        meaning: quantitykind:Power
+        exact_mappings:
+        - PATO:0001024
+        annotations:
+          dimension: M·L²·T⁻³
+      MOMENTUM:
+        title: momentum
+        description: Product of mass and velocity
+        meaning: quantitykind:Momentum
+        exact_mappings:
+        - PATO:0001023
+        annotations:
+          dimension: M·L·T⁻¹
+      TORQUE:
+        title: torque
+        description: Rotational force or moment of force
+        meaning: quantitykind:Torque
+        annotations:
+          dimension: M·L²·T⁻²
+      ANGULAR_VELOCITY:
+        title: angular velocity
+        description: Rate of change of angular position
+        meaning: quantitykind:AngularVelocity
+        annotations:
+          dimension: T⁻¹
+      ANGULAR_ACCELERATION:
+        title: angular acceleration
+        description: Rate of change of angular velocity
+        meaning: quantitykind:AngularAcceleration
+        exact_mappings:
+        - PATO:0001350
+        annotations:
+          dimension: T⁻²
+
+      # Material Property Quantity Kinds
+      DENSITY:
+        title: density
+        description: Mass per unit volume
+        meaning: quantitykind:Density
+        exact_mappings:
+        - PATO:0001019
+        annotations:
+          dimension: M·L⁻³
+          pato_label: mass density
+      VISCOSITY:
+        title: dynamic viscosity
+        description: Internal resistance to flow
+        meaning: quantitykind:DynamicViscosity
+        exact_mappings:
+        - PATO:0000992
+        annotations:
+          dimension: M·L⁻¹·T⁻¹
+      KINEMATIC_VISCOSITY:
+        title: kinematic viscosity
+        description: Dynamic viscosity divided by density
+        meaning: quantitykind:KinematicViscosity
+        annotations:
+          dimension: L²·T⁻¹
+
+      # Frequency and Time-Related Quantity Kinds
+      FREQUENCY:
+        title: frequency
+        description: Number of repetitive events per unit time
+        meaning: quantitykind:Frequency
+        exact_mappings:
+        - PATO:0000044
+        annotations:
+          dimension: T⁻¹
+
+      # Concentration Quantity Kinds
+      MASS_CONCENTRATION:
+        title: mass concentration
+        description: Mass of a substance per unit volume
+        meaning: quantitykind:MassConcentration
+        exact_mappings:
+        - PATO:0000033
+        annotations:
+          dimension: M·L⁻³
+          pato_label: concentration of
+      AMOUNT_CONCENTRATION:
+        title: amount concentration
+        description: Amount of substance per unit volume (molarity)
+        meaning: quantitykind:AmountConcentration
+        close_mappings:
+        - PATO:0000033
+        annotations:
+          dimension: N·L⁻³
+
+      # Electromagnetic Quantity Kinds
+      ELECTRIC_CHARGE:
+        title: electric charge
+        description: Fundamental property of matter causing electromagnetic interaction
+        meaning: quantitykind:ElectricCharge
+        exact_mappings:
+        - PATO:0002193
+        annotations:
+          dimension: I·T
+      ELECTRIC_POTENTIAL:
+        title: electric potential
+        description: Potential energy per unit charge (voltage)
+        meaning: quantitykind:ElectricPotential
+        exact_mappings:
+        - PATO:0001464
+        aliases:
+        - voltage
+        annotations:
+          dimension: M·L²·T⁻³·I⁻¹
+      ELECTRIC_RESISTANCE:
+        title: electric resistance
+        description: Opposition to electric current flow
+        meaning: quantitykind:Resistance
+        annotations:
+          dimension: M·L²·T⁻³·I⁻²
+      ELECTRICAL_CONDUCTIVITY:
+        title: electrical conductivity
+        description: Ability to conduct electric current
+        meaning: quantitykind:Conductivity
+        exact_mappings:
+        - PATO:0001757
+        annotations:
+          dimension: I²·T³·M⁻¹·L⁻³
+      CAPACITANCE:
+        title: capacitance
+        description: Ability to store electric charge
+        meaning: quantitykind:Capacitance
+        annotations:
+          dimension: I²·T⁴·M⁻¹·L⁻²
+      INDUCTANCE:
+        title: inductance
+        description: Property relating magnetic flux to electric current
+        meaning: quantitykind:Inductance
+        annotations:
+          dimension: M·L²·T⁻²·I⁻²
+      MAGNETIC_FLUX:
+        title: magnetic flux
+        description: Measure of total magnetic field passing through a surface
+        meaning: quantitykind:MagneticFlux
+        annotations:
+          dimension: M·L²·T⁻²·I⁻¹
+      MAGNETIC_FLUX_DENSITY:
+        title: magnetic flux density
+        description: Magnetic flux per unit area
+        meaning: quantitykind:MagneticFluxDensity
+        annotations:
+          dimension: M·T⁻²·I⁻¹
+
+      # Thermal Quantity Kinds
+      HEAT_CAPACITY:
+        title: heat capacity
+        description: Heat required to raise temperature by one unit
+        meaning: quantitykind:HeatCapacity
+        annotations:
+          dimension: M·L²·T⁻²·Θ⁻¹
+      SPECIFIC_HEAT_CAPACITY:
+        title: specific heat capacity
+        description: Heat capacity per unit mass
+        meaning: quantitykind:SpecificHeatCapacity
+        annotations:
+          dimension: L²·T⁻²·Θ⁻¹
+      THERMAL_CONDUCTIVITY:
+        title: thermal conductivity
+        description: Ability to conduct heat
+        meaning: quantitykind:ThermalConductivity
+        exact_mappings:
+        - PATO:0001756
+        annotations:
+          dimension: M·L·T⁻³·Θ⁻¹
+          pato_label: heat conductivity
+
+      # Optical Quantity Kinds
+      LUMINOUS_FLUX:
+        title: luminous flux
+        description: Total perceived light power emitted
+        meaning: quantitykind:LuminousFlux
+        exact_mappings:
+        - PATO:0001296
+        annotations:
+          dimension: J
+      ILLUMINANCE:
+        title: illuminance
+        description: Luminous flux per unit area
+        meaning: quantitykind:Illuminance
+        annotations:
+          dimension: J·L⁻²
+      RADIANT_INTENSITY:
+        title: radiant intensity
+        description: Radiant power per unit solid angle
+        meaning: quantitykind:RadiantIntensity
+        annotations:
+          dimension: M·L²·T⁻³
+
+      # Radioactivity Quantity Kinds
+      ACTIVITY:
+        title: activity (radioactivity)
+        description: Number of nuclear disintegrations per unit time
+        meaning: quantitykind:Activity
+        annotations:
+          dimension: T⁻¹
+      ABSORBED_DOSE:
+        title: absorbed dose
+        description: Energy deposited per unit mass by ionizing radiation
+        meaning: quantitykind:AbsorbedDose
+        annotations:
+          dimension: L²·T⁻²
+      DOSE_EQUIVALENT:
+        title: dose equivalent
+        description: Absorbed dose weighted by radiation type
+        meaning: quantitykind:DoseEquivalent
+        annotations:
+          dimension: L²·T⁻²
+
+      # Information Quantity Kinds
+      INFORMATION_ENTROPY:
+        title: information entropy
+        description: Measure of information content or uncertainty
+        meaning: quantitykind:InformationEntropy
+        annotations:
+          dimension: dimensionless
+      DATA_RATE:
+        title: data rate
+        description: Amount of data transferred per unit time
+        meaning: quantitykind:DataRate
+        annotations:
+          dimension: T⁻¹

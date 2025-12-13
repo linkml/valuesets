@@ -1,0 +1,312 @@
+name: neuroblastoma_staging
+title: Neuroblastoma Staging Value Sets
+description: >-
+  Staging systems for neuroblastoma including the International Neuroblastoma
+  Risk Group Staging System (INRGSS) and International Neuroblastoma Staging
+  System (INSS). INRGSS is the current standard (effective 2024+) based on
+  imaging and image-defined risk factors. INSS is the legacy surgical staging
+  system still used for historical data.
+id: https://w3id.org/linkml/valuesets/medical/pediatric_oncology/staging/neuroblastoma
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  valuesets: https://w3id.org/valuesets/
+  NCIT: http://purl.obolibrary.org/obo/NCIT_
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+  seer: https://seer.cancer.gov/
+default_prefix: valuesets
+enums:
+  INRGSSStage:
+    title: INRGSS Stage
+    description: >-
+      International Neuroblastoma Risk Group Staging System (INRGSS) stages.
+      A clinical staging system based on imaging and image-defined risk factors
+      (IDRFs), effective for diagnosis years 2024+. Allows staging before any
+      treatment, unlike the surgical INSS system.
+    status: RELEASED
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    see_also:
+    - https://staging.seer.cancer.gov/pediatric/input/1.0/neuroblastoma/inrgss/
+    - https://pmc.ncbi.nlm.nih.gov/articles/PMC2650389/
+    annotations:
+      source: SEER/INRG Task Force
+      effective_year: 2024
+      staging_basis: imaging
+    permissible_values:
+      L1:
+        title: "L1 - Localized, no IDRFs"
+        description: >-
+          Localized tumor not involving vital structures as defined by the
+          list of image-defined risk factors and confined to one body
+          compartment (neck, chest, abdomen, or pelvis).
+        meaning: NCIT:C133427
+        annotations:
+          localized: true
+          idrfs_present: false
+      L2:
+        title: "L2 - Localized, with IDRFs"
+        description: >-
+          Locoregional tumor with presence of one or more image-defined
+          risk factors. The tumor has not spread far from where it started
+          but has at least one IDRF.
+        meaning: NCIT:C133428
+        annotations:
+          localized: true
+          idrfs_present: true
+      M:
+        title: "M - Metastatic"
+        description: >-
+          Distant metastatic disease (except as defined for MS). The tumor
+          has spread (metastasized) to distant parts of the body.
+        meaning: NCIT:C133429
+        annotations:
+          metastatic: true
+      MS:
+        title: "MS - Metastatic special"
+        description: >-
+          Metastatic disease in children younger than 18 months with
+          metastases confined to skin, liver, and/or bone marrow (bone
+          marrow involvement limited to <10% tumor cells). This stage
+          has a favorable prognosis despite metastatic disease.
+        meaning: NCIT:C133430
+        aliases:
+        - Stage 4S equivalent
+        annotations:
+          metastatic: true
+          special_category: true
+          age_restriction: "<18 months"
+          favorable_prognosis: true
+
+  INSSStage:
+    title: INSS Stage
+    description: >-
+      International Neuroblastoma Staging System (INSS) stages. A post-surgical
+      staging system based on extent of tumor resection, lymph node involvement,
+      and metastatic spread. This is the legacy system; INRGSS is now preferred
+      for diagnosis years 2024+.
+    status: RELEASED
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    see_also:
+    - https://www.ncbi.nlm.nih.gov/books/NBK65747.5/table/CDR0000062786__725/
+    - https://www.cancer.org/cancer/types/neuroblastoma/detection-diagnosis-staging/staging.html
+    annotations:
+      source: INSS Consensus Conference
+      staging_basis: surgical
+      legacy_system: true
+    permissible_values:
+      STAGE_1:
+        title: "Stage 1"
+        description: >-
+          Localized tumor with complete gross excision, with or without
+          microscopic residual disease; representative ipsilateral lymph
+          nodes negative for tumor microscopically.
+        meaning: NCIT:C6639
+        annotations:
+          localized: true
+          resection: complete
+      STAGE_2A:
+        title: "Stage 2A"
+        description: >-
+          Localized tumor with incomplete gross excision; representative
+          ipsilateral nonadherent lymph nodes negative for tumor microscopically.
+        meaning: NCIT:C6640
+        annotations:
+          localized: true
+          resection: incomplete
+          lymph_nodes: negative
+      STAGE_2B:
+        title: "Stage 2B"
+        description: >-
+          Localized tumor with or without complete gross excision, with
+          ipsilateral nonadherent lymph nodes positive for tumor.
+          Enlarged contralateral lymph nodes must be negative microscopically.
+        meaning: NCIT:C6641
+        annotations:
+          localized: true
+          lymph_nodes: ipsilateral_positive
+      STAGE_3:
+        title: "Stage 3"
+        description: >-
+          Unresectable unilateral tumor infiltrating across the midline,
+          with or without regional lymph node involvement; or localized
+          unilateral tumor with contralateral regional lymph node involvement;
+          or midline tumor with bilateral extension by infiltration
+          (unresectable) or by lymph node involvement.
+        meaning: NCIT:C6642
+        annotations:
+          localized: false
+          crosses_midline: true
+      STAGE_4:
+        title: "Stage 4"
+        description: >-
+          Any primary tumor with dissemination to distant lymph nodes,
+          bone, bone marrow, liver, skin, and/or other organs (except as
+          defined for stage 4S).
+        meaning: NCIT:C6643
+        annotations:
+          metastatic: true
+      STAGE_4S:
+        title: "Stage 4S"
+        description: >-
+          Localized primary tumor (as defined for stage 1, 2A, or 2B)
+          with dissemination limited to skin, liver, and/or bone marrow
+          (limited to infants <1 year of age). Marrow involvement should
+          be minimal (<10% of total nucleated cells).
+        meaning: NCIT:C6644
+        aliases:
+        - Special stage 4
+        annotations:
+          metastatic: true
+          special_category: true
+          age_restriction: "<12 months"
+          favorable_prognosis: true
+
+  NeuroblastomaRiskGroup:
+    title: Neuroblastoma Risk Group
+    description: >-
+      International Neuroblastoma Risk Group (INRG) pretreatment risk
+      classification groups. Combines INRGSS stage with tumor histology,
+      MYCN status, ploidy, and other prognostic factors.
+    status: RELEASED
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    see_also:
+    - https://pmc.ncbi.nlm.nih.gov/articles/PMC2650388/
+    annotations:
+      source: INRG Task Force
+    permissible_values:
+      VERY_LOW:
+        title: Very Low Risk
+        description: >-
+          Very low risk neuroblastoma with excellent prognosis. Typically
+          includes L1 tumors and MS without MYCN amplification.
+        meaning: NCIT:C103236
+        annotations:
+          expected_efs: ">85%"
+      LOW:
+        title: Low Risk
+        description: >-
+          Low risk neuroblastoma with favorable prognosis. Treatment
+          may include surgery alone or observation.
+        meaning: NCIT:C103237
+        annotations:
+          expected_efs: ">75%"
+      INTERMEDIATE:
+        title: Intermediate Risk
+        description: >-
+          Intermediate risk neuroblastoma requiring multimodal treatment
+          including chemotherapy.
+        meaning: NCIT:C103238
+        annotations:
+          expected_efs: "50-75%"
+      HIGH:
+        title: High Risk
+        description: >-
+          High risk neuroblastoma with poor prognosis. Requires intensive
+          multimodal therapy including high-dose chemotherapy with
+          autologous stem cell rescue, surgery, radiation, and
+          immunotherapy.
+        meaning: NCIT:C103239
+        annotations:
+          expected_efs: "<50%"
+          mycn_amplified: often
+
+  ImageDefinedRiskFactor:
+    title: Image-Defined Risk Factor
+    description: >-
+      Image-defined risk factors (IDRFs) used in INRGSS staging to determine
+      surgical risk. Presence of any IDRF upgrades a tumor from L1 to L2.
+    status: RELEASED
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    see_also:
+    - https://pmc.ncbi.nlm.nih.gov/articles/PMC2650389/
+    annotations:
+      source: INRG Task Force
+    permissible_values:
+      IPSILATERAL_TUMOR_EXTENSION_TO_BODY_CAVITIES:
+        title: Ipsilateral tumor extension within two body compartments
+        description: >-
+          Tumor extension from neck to chest, chest to abdomen,
+          or abdomen to pelvis.
+      NECK_ENCASING_CAROTID_OR_VERTEBRAL:
+        title: Neck - Tumor encasing carotid and/or vertebral artery
+        description: Tumor encasing carotid artery and/or vertebral artery.
+      NECK_ENCASING_JUGULAR:
+        title: Neck - Tumor encasing internal jugular vein
+        description: Tumor encasing internal jugular vein.
+      NECK_EXTENDING_TO_SKULL_BASE:
+        title: Neck - Tumor extending to base of skull
+        description: Tumor extending to base of skull.
+      NECK_COMPRESSING_TRACHEA:
+        title: Neck - Tumor compressing trachea
+        description: Tumor compressing the trachea.
+      CERVICOTHORACIC_ENCASING_BRACHIAL_PLEXUS:
+        title: Cervico-thoracic junction - Tumor encasing brachial plexus roots
+        description: Tumor encasing brachial plexus roots (C5-T1).
+      CERVICOTHORACIC_ENCASING_SUBCLAVIAN:
+        title: Cervico-thoracic junction - Tumor encasing subclavian vessels
+        description: >-
+          Tumor encasing subclavian vessels and/or vertebral artery
+          and/or carotid artery.
+      CERVICOTHORACIC_COMPRESSING_TRACHEA:
+        title: Cervico-thoracic junction - Tumor compressing trachea
+        description: Tumor compressing the trachea.
+      THORAX_ENCASING_AORTA:
+        title: Thorax - Tumor encasing aorta and/or major branches
+        description: Tumor encasing aorta and/or major branches.
+      THORAX_COMPRESSING_TRACHEA_BRONCHI:
+        title: Thorax - Tumor compressing trachea and/or principal bronchi
+        description: Tumor compressing trachea and/or principal bronchi.
+      THORAX_LOWER_MEDIASTINUM_INFILTRATING:
+        title: Thorax - Lower mediastinal tumor infiltrating costo-vertebral junction
+        description: >-
+          Lower mediastinal tumor infiltrating the costo-vertebral junction
+          between T9 and T12.
+      THORACOABDOMINAL_ENCASING_AORTA_CELIAC:
+        title: Thoraco-abdominal - Tumor encasing aorta and/or vena cava
+        description: Tumor encasing the aorta and/or vena cava.
+      ABDOMEN_PELVIS_ENCASING_CELIAC_SMA:
+        title: Abdomen/pelvis - Tumor encasing celiac axis and/or SMA
+        description: >-
+          Tumor encasing celiac axis and/or superior mesenteric artery.
+      ABDOMEN_PELVIS_ENCASING_RENAL_VESSELS:
+        title: Abdomen/pelvis - Tumor encasing origin of renal vessels
+        description: Tumor encasing origin of renal vessels.
+      ABDOMEN_PELVIS_ENCASING_AORTA_IVC:
+        title: Abdomen/pelvis - Tumor encasing aorta and/or IVC
+        description: Tumor encasing aorta and/or inferior vena cava.
+      ABDOMEN_PELVIS_ENCASING_ILIAC_VESSELS:
+        title: Abdomen/pelvis - Tumor encasing iliac vessels
+        description: Tumor encasing iliac vessels.
+      ABDOMEN_PELVIS_PELVIC_CROSSING_SCIATIC_NOTCH:
+        title: Abdomen/pelvis - Pelvic tumor crossing sciatic notch
+        description: Pelvic tumor crossing the sciatic notch.
+      INTRASPINAL_EXTENSION:
+        title: Intraspinal tumor extension
+        description: >-
+          Intraspinal tumor extension provided that more than one third
+          of the spinal canal in the axial plane is invaded and/or the
+          perimedullary leptomeningeal spaces are not visible and/or
+          spinal cord signal is abnormal.
+      ADJACENT_ORGAN_INFILTRATION:
+        title: Infiltration of adjacent organs/structures
+        description: >-
+          Infiltration of adjacent organs/structures such as pericardium,
+          diaphragm, kidney, liver, duodeno-pancreatic block, and mesentery.
