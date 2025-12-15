@@ -12,7 +12,7 @@ from valuesets.generators.rich_enum import RichEnum
 
 class GOEvidenceCode(RichEnum):
     """
-    Gene Ontology evidence codes mapped to Evidence and Conclusion Ontology (ECO) terms
+    Gene Ontology evidence codes used to describe the type of support for GO annotations. Each code maps to the Evidence and Conclusion Ontology (ECO). Evidence codes are categorized by whether they represent experimental evidence, computational analysis, phylogenetic inference, author statements, or electronic annotation. All codes except IEA represent manual curation.
     """
     # Enum members
     EXP = "EXP"
@@ -44,32 +44,32 @@ class GOEvidenceCode(RichEnum):
 
 # Set metadata after class creation
 GOEvidenceCode._metadata = {
-    "EXP": {'meaning': 'ECO:0000269', 'aliases': ['experimental evidence used in manual assertion']},
-    "IDA": {'meaning': 'ECO:0000314', 'aliases': ['direct assay evidence used in manual assertion']},
-    "IPI": {'meaning': 'ECO:0000353', 'aliases': ['physical interaction evidence used in manual assertion']},
-    "IMP": {'meaning': 'ECO:0000315', 'aliases': ['mutant phenotype evidence used in manual assertion']},
-    "IGI": {'meaning': 'ECO:0000316', 'aliases': ['genetic interaction evidence used in manual assertion']},
-    "IEP": {'meaning': 'ECO:0000270', 'aliases': ['expression pattern evidence used in manual assertion']},
-    "HTP": {'meaning': 'ECO:0006056', 'aliases': ['high throughput evidence used in manual assertion']},
-    "HDA": {'meaning': 'ECO:0007005', 'aliases': ['high throughput direct assay evidence used in manual assertion']},
-    "HMP": {'meaning': 'ECO:0007001', 'aliases': ['high throughput mutant phenotypic evidence used in manual assertion']},
-    "HGI": {'meaning': 'ECO:0007003', 'aliases': ['high throughput genetic interaction phenotypic evidence used in manual assertion']},
-    "HEP": {'meaning': 'ECO:0007007', 'aliases': ['high throughput expression pattern evidence used in manual assertion']},
-    "IBA": {'meaning': 'ECO:0000318', 'aliases': ['biological aspect of ancestor evidence used in manual assertion']},
-    "IBD": {'meaning': 'ECO:0000319', 'aliases': ['biological aspect of descendant evidence used in manual assertion']},
-    "IKR": {'meaning': 'ECO:0000320', 'aliases': ['phylogenetic determination of loss of key residues evidence used in manual assertion']},
-    "IRD": {'meaning': 'ECO:0000321', 'aliases': ['rapid divergence from ancestral sequence evidence used in manual assertion']},
-    "ISS": {'meaning': 'ECO:0000250', 'aliases': ['sequence similarity evidence used in manual assertion']},
-    "ISO": {'meaning': 'ECO:0000266', 'aliases': ['sequence orthology evidence used in manual assertion']},
-    "ISA": {'meaning': 'ECO:0000247', 'aliases': ['sequence alignment evidence used in manual assertion']},
-    "ISM": {'meaning': 'ECO:0000255', 'aliases': ['match to sequence model evidence used in manual assertion']},
-    "IGC": {'meaning': 'ECO:0000317', 'aliases': ['genomic context evidence used in manual assertion']},
-    "RCA": {'meaning': 'ECO:0000245', 'aliases': ['automatically integrated combinatorial evidence used in manual assertion']},
-    "TAS": {'meaning': 'ECO:0000304', 'aliases': ['author statement supported by traceable reference used in manual assertion']},
-    "NAS": {'meaning': 'ECO:0000303', 'aliases': ['author statement without traceable support used in manual assertion']},
-    "IC": {'meaning': 'ECO:0000305', 'aliases': ['curator inference used in manual assertion']},
-    "ND": {'meaning': 'ECO:0000307', 'aliases': ['no evidence data found used in manual assertion']},
-    "IEA": {'meaning': 'ECO:0000501', 'aliases': ['evidence used in automatic assertion']},
+    "EXP": {'description': 'General experimental evidence supporting a GO annotation', 'meaning': 'ECO:0000269', 'annotations': {'is_experimental': True, 'is_manual': True, 'is_high_throughput': False}, 'aliases': ['experimental evidence used in manual assertion']},
+    "IDA": {'description': 'Evidence from a direct assay for the presence or activity of a gene product', 'meaning': 'ECO:0000314', 'annotations': {'is_experimental': True, 'is_manual': True, 'is_high_throughput': False}, 'aliases': ['direct assay evidence used in manual assertion']},
+    "IPI": {'description': 'Evidence from physical interaction between gene products', 'meaning': 'ECO:0000353', 'annotations': {'is_experimental': True, 'is_manual': True, 'is_high_throughput': False}, 'aliases': ['physical interaction evidence used in manual assertion']},
+    "IMP": {'description': 'Evidence from the phenotype of a mutant allele', 'meaning': 'ECO:0000315', 'annotations': {'is_experimental': True, 'is_manual': True, 'is_high_throughput': False}, 'aliases': ['mutant phenotype evidence used in manual assertion']},
+    "IGI": {'description': 'Evidence from genetic interaction between genes', 'meaning': 'ECO:0000316', 'annotations': {'is_experimental': True, 'is_manual': True, 'is_high_throughput': False}, 'aliases': ['genetic interaction evidence used in manual assertion']},
+    "IEP": {'description': 'Evidence from gene expression pattern data', 'meaning': 'ECO:0000270', 'annotations': {'is_experimental': True, 'is_manual': True, 'is_high_throughput': False}, 'aliases': ['expression pattern evidence used in manual assertion']},
+    "HTP": {'description': 'Evidence from high-throughput experimental methods', 'meaning': 'ECO:0006056', 'annotations': {'is_experimental': True, 'is_manual': True, 'is_high_throughput': True}, 'aliases': ['high throughput evidence used in manual assertion']},
+    "HDA": {'description': 'Evidence from high-throughput direct assay experiments', 'meaning': 'ECO:0007005', 'annotations': {'is_experimental': True, 'is_manual': True, 'is_high_throughput': True}, 'aliases': ['high throughput direct assay evidence used in manual assertion']},
+    "HMP": {'description': 'Evidence from high-throughput mutant phenotype screening', 'meaning': 'ECO:0007001', 'annotations': {'is_experimental': True, 'is_manual': True, 'is_high_throughput': True}, 'aliases': ['high throughput mutant phenotypic evidence used in manual assertion']},
+    "HGI": {'description': 'Evidence from high-throughput genetic interaction screening', 'meaning': 'ECO:0007003', 'annotations': {'is_experimental': True, 'is_manual': True, 'is_high_throughput': True}, 'aliases': ['high throughput genetic interaction phenotypic evidence used in manual assertion']},
+    "HEP": {'description': 'Evidence from high-throughput expression profiling', 'meaning': 'ECO:0007007', 'annotations': {'is_experimental': True, 'is_manual': True, 'is_high_throughput': True}, 'aliases': ['high throughput expression pattern evidence used in manual assertion']},
+    "IBA": {'description': 'Evidence from conservation of biological aspect in an ancestral sequence', 'meaning': 'ECO:0000318', 'annotations': {'is_experimental': False, 'is_manual': True, 'is_high_throughput': False, 'is_phylogenetic': True}, 'aliases': ['biological aspect of ancestor evidence used in manual assertion']},
+    "IBD": {'description': 'Evidence from conservation of biological aspect in a descendant sequence', 'meaning': 'ECO:0000319', 'annotations': {'is_experimental': False, 'is_manual': True, 'is_high_throughput': False, 'is_phylogenetic': True}, 'aliases': ['biological aspect of descendant evidence used in manual assertion']},
+    "IKR": {'description': 'Evidence from phylogenetic analysis showing loss of key residues', 'meaning': 'ECO:0000320', 'annotations': {'is_experimental': False, 'is_manual': True, 'is_high_throughput': False, 'is_phylogenetic': True}, 'aliases': ['phylogenetic determination of loss of key residues evidence used in manual assertion']},
+    "IRD": {'description': 'Evidence from rapid divergence from ancestral sequence', 'meaning': 'ECO:0000321', 'annotations': {'is_experimental': False, 'is_manual': True, 'is_high_throughput': False, 'is_phylogenetic': True}, 'aliases': ['rapid divergence from ancestral sequence evidence used in manual assertion']},
+    "ISS": {'description': 'Evidence from sequence or structural similarity to another annotated gene product', 'meaning': 'ECO:0000250', 'annotations': {'is_experimental': False, 'is_manual': True, 'is_high_throughput': False, 'is_computational': True}, 'aliases': ['sequence similarity evidence used in manual assertion']},
+    "ISO": {'description': 'Evidence from orthology to an experimentally characterized gene product', 'meaning': 'ECO:0000266', 'annotations': {'is_experimental': False, 'is_manual': True, 'is_high_throughput': False, 'is_computational': True}, 'aliases': ['sequence orthology evidence used in manual assertion']},
+    "ISA": {'description': 'Evidence from sequence alignment to an annotated gene product', 'meaning': 'ECO:0000247', 'annotations': {'is_experimental': False, 'is_manual': True, 'is_high_throughput': False, 'is_computational': True}, 'aliases': ['sequence alignment evidence used in manual assertion']},
+    "ISM": {'description': 'Evidence from match to a sequence model (e.g., HMM, profile)', 'meaning': 'ECO:0000255', 'annotations': {'is_experimental': False, 'is_manual': True, 'is_high_throughput': False, 'is_computational': True}, 'aliases': ['match to sequence model evidence used in manual assertion']},
+    "IGC": {'description': 'Evidence from genomic context such as synteny or gene neighborhood', 'meaning': 'ECO:0000317', 'annotations': {'is_experimental': False, 'is_manual': True, 'is_high_throughput': False, 'is_computational': True}, 'aliases': ['genomic context evidence used in manual assertion']},
+    "RCA": {'description': 'Evidence from computational analysis that has been reviewed by a curator', 'meaning': 'ECO:0000245', 'annotations': {'is_experimental': False, 'is_manual': True, 'is_high_throughput': False, 'is_computational': True}, 'aliases': ['automatically integrated combinatorial evidence used in manual assertion']},
+    "TAS": {'description': 'Evidence from an author statement in a published paper that can be traced to the original source', 'meaning': 'ECO:0000304', 'annotations': {'is_experimental': False, 'is_manual': True, 'is_high_throughput': False, 'is_author_statement': True}, 'aliases': ['author statement supported by traceable reference used in manual assertion']},
+    "NAS": {'description': 'Evidence from an author statement that cannot be traced to the experimental source', 'meaning': 'ECO:0000303', 'annotations': {'is_experimental': False, 'is_manual': True, 'is_high_throughput': False, 'is_author_statement': True}, 'aliases': ['author statement without traceable support used in manual assertion']},
+    "IC": {'description': 'Evidence inferred by a curator based on existing annotations and biological knowledge', 'meaning': 'ECO:0000305', 'annotations': {'is_experimental': False, 'is_manual': True, 'is_high_throughput': False, 'is_curator_inference': True}, 'aliases': ['curator inference used in manual assertion']},
+    "ND": {'description': 'Indicates that no biological data is available to support an annotation', 'meaning': 'ECO:0000307', 'annotations': {'is_experimental': False, 'is_manual': True, 'is_high_throughput': False}, 'aliases': ['no evidence data found used in manual assertion']},
+    "IEA": {'description': 'Evidence from automated electronic annotation pipelines without manual curation', 'meaning': 'ECO:0000501', 'annotations': {'is_experimental': False, 'is_manual': False, 'is_high_throughput': False, 'is_electronic': True}, 'aliases': ['evidence used in automatic assertion']},
 }
 
 class GOElectronicMethods(RichEnum):

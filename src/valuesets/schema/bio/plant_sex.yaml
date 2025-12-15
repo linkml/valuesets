@@ -1,9 +1,7 @@
 name: plant_sex
 id: https://w3id.org/linkml/valuesets/bio/plant_sex
 prefixes:
-  GSSO: http://purl.obolibrary.org/obo/GSSO_
   PATO: http://purl.obolibrary.org/obo/PATO_
-  UBERON: http://purl.obolibrary.org/obo/UBERON_
   ECOCORE: http://purl.obolibrary.org/obo/ECOCORE_
   mixs: https://genomicsstandardsconsortium.github.io/mixs/
   valuesets: https://w3id.org/valuesets/
@@ -51,7 +49,6 @@ enums:
         title: Diclinous
       DIOECIOUS:
         description: Having male and female flowers on separate plants
-        meaning: GSSO:011872
         title: Dioecious
       GYNODIOECIOUS:
         description: Having female and hermaphrodite flowers on separate plants
@@ -64,8 +61,8 @@ enums:
         title: Gynomonoecious
       HERMAPHRODITIC:
         description: Having both male and female reproductive organs
-        meaning: UBERON:0007197
-        title: hermaphroditic organism
+        meaning: PATO:0001340
+        title: Hermaphroditic
       IMPERFECT:
         description: Flower lacking either male or female reproductive organs
         title: Imperfect
@@ -74,7 +71,6 @@ enums:
         title: Monoclinous
       MONOECIOUS:
         description: Having male and female flowers on the same plant
-        meaning: GSSO:011868
         title: Monoecious
       PERFECT:
         description: Flower having both male and female reproductive organs

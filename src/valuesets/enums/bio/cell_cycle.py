@@ -90,15 +90,15 @@ class MeioticPhase(RichEnum):
 
 # Set metadata after class creation
 MeioticPhase._metadata = {
-    "MEIOSIS_I": {'description': 'Meiosis I (reductional division)', 'meaning': 'GO:0007127', 'annotations': {'result': 'reduction from diploid to haploid'}},
-    "PROPHASE_I": {'description': 'Prophase I', 'meaning': 'GO:0007128', 'annotations': {'substages': 'leptotene, zygotene, pachytene, diplotene, diakinesis'}},
-    "METAPHASE_I": {'description': 'Metaphase I', 'meaning': 'GO:0007132', 'annotations': {'feature': 'homologous pairs align'}},
-    "ANAPHASE_I": {'description': 'Anaphase I', 'meaning': 'GO:0007133', 'annotations': {'feature': 'homologous chromosomes separate'}},
-    "TELOPHASE_I": {'description': 'Telophase I', 'meaning': 'GO:0007134'},
+    "MEIOSIS_I": {'description': 'Meiosis I (reductional division)', 'meaning': 'GO:0007127', 'annotations': {'result': 'reduction from diploid to haploid', 'succeeded_by': 'MEIOSIS_II'}},
+    "PROPHASE_I": {'description': 'Prophase I', 'meaning': 'GO:0007128', 'annotations': {'substages': 'leptotene, zygotene, pachytene, diplotene, diakinesis', 'succeeded_by': 'METAPHASE_I'}},
+    "METAPHASE_I": {'description': 'Metaphase I', 'meaning': 'GO:0007132', 'annotations': {'feature': 'homologous pairs align', 'succeeded_by': 'ANAPHASE_I'}},
+    "ANAPHASE_I": {'description': 'Anaphase I', 'meaning': 'GO:0007133', 'annotations': {'feature': 'homologous chromosomes separate', 'succeeded_by': 'TELOPHASE_I'}},
+    "TELOPHASE_I": {'description': 'Telophase I', 'meaning': 'GO:0007134', 'annotations': {'succeeded_by': 'PROPHASE_II'}},
     "MEIOSIS_II": {'description': 'Meiosis II (equational division)', 'meaning': 'GO:0007135', 'annotations': {'similarity': 'similar to mitosis'}},
-    "PROPHASE_II": {'description': 'Prophase II', 'meaning': 'GO:0007136'},
-    "METAPHASE_II": {'description': 'Metaphase II', 'meaning': 'GO:0007137'},
-    "ANAPHASE_II": {'description': 'Anaphase II', 'meaning': 'GO:0007138', 'annotations': {'feature': 'sister chromatids separate'}},
+    "PROPHASE_II": {'description': 'Prophase II', 'meaning': 'GO:0007136', 'annotations': {'succeeded_by': 'METAPHASE_II'}},
+    "METAPHASE_II": {'description': 'Metaphase II', 'meaning': 'GO:0007137', 'annotations': {'succeeded_by': 'ANAPHASE_II'}},
+    "ANAPHASE_II": {'description': 'Anaphase II', 'meaning': 'GO:0007138', 'annotations': {'feature': 'sister chromatids separate', 'succeeded_by': 'TELOPHASE_II'}},
     "TELOPHASE_II": {'description': 'Telophase II', 'meaning': 'GO:0007139'},
 }
 

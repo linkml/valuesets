@@ -200,6 +200,9 @@ class ModularRichEnumGenerator:
         if pv.meaning:
             metadata['meaning'] = pv.meaning
 
+        if hasattr(pv, 'rank') and pv.rank is not None:
+            metadata['rank'] = pv.rank
+
         if pv.annotations:
             annotations_dict = {}
             for key, annotation in pv.annotations.items():

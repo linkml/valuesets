@@ -1,0 +1,1075 @@
+name: arxiv_categories
+title: arXiv Subject Categories
+description: >-
+  Value sets for arXiv preprint subject categories and taxonomy.
+  Based on the official arXiv category taxonomy.
+id: https://w3id.org/linkml/valuesets/publishing/arxiv_categories
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  valuesets: https://w3id.org/valuesets/
+  arxiv: https://arxiv.org/abs/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+  NCIT: http://purl.obolibrary.org/obo/NCIT_
+  mesh: http://id.nlm.nih.gov/mesh/
+default_prefix: valuesets
+slots:
+  arxiv_category:
+    description: arXiv subject category for a preprint or publication
+    range: ArxivCategory
+  arxiv_primary_category:
+    description: Primary arXiv subject category
+    range: ArxivCategory
+  arxiv_secondary_categories:
+    description: Secondary/cross-list arXiv subject categories
+    range: ArxivCategory
+    multivalued: true
+enums:
+  ArxivCategory:
+    title: arXiv Category
+    description: >-
+      arXiv subject categories for classifying preprints and publications.
+      Categories are organized by major subject groups.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      # ============================================
+      # TOP-LEVEL GROUPS
+      # ============================================
+      cs:
+        title: Computer Science
+        description: Computer science research areas
+        close_mappings:
+        - NCIT:C18145
+      econ:
+        title: Economics
+        description: Economics research areas
+        close_mappings:
+        - NCIT:C61331
+        - mesh:D004467
+      eess:
+        title: Electrical Engineering and Systems Science
+        description: Electrical engineering and systems science research areas
+        close_mappings:
+        - NCIT:C19349
+      math:
+        title: Mathematics
+        description: Mathematics research areas
+        close_mappings:
+        - NCIT:C16825
+        - mesh:D008433
+      astro-ph:
+        title: Astrophysics
+        description: Astrophysics research areas
+      cond-mat:
+        title: Condensed Matter
+        description: Condensed matter physics research areas
+      hep:
+        title: High Energy Physics
+        description: High energy physics research areas
+      nlin:
+        title: Nonlinear Sciences
+        description: Nonlinear sciences research areas
+      nucl:
+        title: Nuclear Physics
+        description: Nuclear physics research areas
+        close_mappings:
+        - mesh:D009686
+      physics:
+        title: Physics
+        description: General physics research areas
+        close_mappings:
+        - NCIT:C16989
+        - mesh:D010825
+      q-bio:
+        title: Quantitative Biology
+        description: Quantitative biology research areas
+        close_mappings:
+        - NCIT:C16345
+        - mesh:D001695
+      q-fin:
+        title: Quantitative Finance
+        description: Quantitative finance research areas
+      stat:
+        title: Statistics
+        description: Statistics research areas
+        close_mappings:
+        - NCIT:C17167
+      # ============================================
+      # COMPUTER SCIENCE (cs)
+      # ============================================
+      cs.AI:
+        title: Artificial Intelligence
+        description: >-
+          Covers all areas of AI except Vision, Robotics, Machine Learning,
+          Multiagent Systems, and NLP. Includes Expert Systems, Theorem Proving,
+          Knowledge Representation, Planning, and Uncertainty in AI.
+        is_a: cs
+        close_mappings:
+        - NCIT:C16309
+        - mesh:D001185
+      cs.AR:
+        title: Hardware Architecture
+        description: >-
+          Covers systems organization and hardware architecture. Roughly includes
+          material in ACM Subject Class C.0, C.1, and C.5.
+        is_a: cs
+      cs.CC:
+        title: Computational Complexity
+        description: >-
+          Covers models of computation, complexity classes, structural complexity,
+          complexity tradeoffs, upper and lower bounds.
+        is_a: cs
+      cs.CE:
+        title: Computational Engineering, Finance, and Science
+        description: >-
+          Covers applications of computer science to the mathematical modeling
+          of complex systems in science, engineering, and finance.
+        is_a: cs
+      cs.CG:
+        title: Computational Geometry
+        description: >-
+          Geometric algorithms, discrete differential geometry, and directly
+          related problems.
+        is_a: cs
+      cs.CL:
+        title: Computation and Language
+        description: >-
+          Covers natural language processing. Includes computational linguistics,
+          speech processing, text retrieval and processing.
+        is_a: cs
+        close_mappings:
+        - NCIT:C176260
+        - mesh:D009323
+      cs.CR:
+        title: Cryptography and Security
+        description: >-
+          Covers all areas of cryptography and security including authentication,
+          public key cryptosystems, proof-carrying code, etc.
+        is_a: cs
+      cs.CV:
+        title: Computer Vision and Pattern Recognition
+        description: >-
+          Covers image processing, computer vision, pattern recognition, and
+          scene understanding.
+        is_a: cs
+      cs.CY:
+        title: Computers and Society
+        description: >-
+          Covers impact of computers on society, computer ethics, information
+          technology and public policy, legal aspects of computing.
+        is_a: cs
+      cs.DB:
+        title: Databases
+        description: >-
+          Covers database management, datamining, and data processing. Roughly
+          includes material in ACM Subject Classes H.2, H.3, and H.4.
+        is_a: cs
+      cs.DC:
+        title: Distributed, Parallel, and Cluster Computing
+        description: >-
+          Covers fault-tolerance, distributed algorithms, stabilization, parallel
+          computation, and cluster computing.
+        is_a: cs
+      cs.DL:
+        title: Digital Libraries
+        description: >-
+          Covers all aspects of digital library design and document creation.
+          Note this may overlap with other areas.
+        is_a: cs
+      cs.DM:
+        title: Discrete Mathematics
+        description: >-
+          Covers combinatorics, graph theory, applications of probability.
+          Roughly includes material in ACM Subject Classes G.2 and G.3.
+        is_a: cs
+      cs.DS:
+        title: Data Structures and Algorithms
+        description: >-
+          Covers data structures and analysis of algorithms. Roughly includes
+          material in ACM Subject Classes E.1, E.2, F.2.1, and F.2.2.
+        is_a: cs
+      cs.ET:
+        title: Emerging Technologies
+        description: >-
+          Covers approaches to computing based on emerging technologies such as
+          quantum computing, DNA computing, optical computing.
+        is_a: cs
+      cs.FL:
+        title: Formal Languages and Automata Theory
+        description: >-
+          Covers automata theory, formal language theory, grammars, and
+          combinatorics on words.
+        is_a: cs
+      cs.GL:
+        title: General Literature
+        description: >-
+          Covers introductory material, survey material, predictions of future
+          trends, biographies, and miscellaneous computer-science related material.
+        is_a: cs
+      cs.GR:
+        title: Graphics
+        description: >-
+          Covers all aspects of computer graphics. Roughly includes material
+          in ACM Subject Classes I.3.0-I.3.8.
+        is_a: cs
+        close_mappings:
+        - NCIT:C16460
+      cs.GT:
+        title: Computer Science and Game Theory
+        description: >-
+          Covers all theoretical and applied aspects at the intersection of
+          computer science and game theory.
+        is_a: cs
+      cs.HC:
+        title: Human-Computer Interaction
+        description: >-
+          Covers human factors, user interfaces, and collaborative computing.
+          Roughly includes material in ACM Subject Classes H.1.2 and H.5.
+        is_a: cs
+      cs.IR:
+        title: Information Retrieval
+        description: >-
+          Covers indexing, dictionaries, retrieval, content and analysis.
+          Roughly includes material in ACM Subject Classes H.3.0-H.3.4.
+        is_a: cs
+      cs.IT:
+        title: Information Theory
+        description: >-
+          Covers theoretical and experimental aspects of information theory
+          and coding.
+        is_a: cs
+      cs.LG:
+        title: Machine Learning
+        description: >-
+          Papers on all aspects of machine learning research, including
+          supervised, unsupervised, reinforcement learning, bandit algorithms.
+        is_a: cs
+        close_mappings:
+        - NCIT:C176231
+        - mesh:D000069550
+      cs.LO:
+        title: Logic in Computer Science
+        description: >-
+          Covers all aspects of logic in computer science, including finite
+          model theory, logics of programs, modal logic, and program verification.
+        is_a: cs
+      cs.MA:
+        title: Multiagent Systems
+        description: >-
+          Covers multiagent systems, distributed artificial intelligence,
+          intelligent agents, coordinated interactions.
+        is_a: cs
+      cs.MM:
+        title: Multimedia
+        description: >-
+          Covers all aspects of multimedia systems, including hypermedia
+          and information systems design.
+        is_a: cs
+      cs.MS:
+        title: Mathematical Software
+        description: >-
+          Covers aspects of mathematical software for mathematical computation
+          and related support.
+        is_a: cs
+      cs.NA:
+        title: Numerical Analysis
+        description: >-
+          Covers numerical algorithms for problems in analysis and algebra.
+          Includes numerical linear algebra, optimization, and interpolation.
+        is_a: cs
+      cs.NE:
+        title: Neural and Evolutionary Computing
+        description: >-
+          Covers neural networks, connectionism, genetic algorithms, artificial
+          life, adaptive behavior.
+        is_a: cs
+      cs.NI:
+        title: Networking and Internet Architecture
+        description: >-
+          Covers all aspects of computer communication networks, including
+          network architecture and design.
+        is_a: cs
+      cs.OH:
+        title: Other Computer Science
+        description: >-
+          Covers topics not fitting other computer science categories.
+        is_a: cs
+      cs.OS:
+        title: Operating Systems
+        description: >-
+          Covers aspects of operating systems including structure, design,
+          management, and synchronization.
+        is_a: cs
+      cs.PF:
+        title: Performance
+        description: >-
+          Covers performance measurement, simulation, and evaluation methodology.
+        is_a: cs
+      cs.PL:
+        title: Programming Languages
+        description: >-
+          Covers programming language semantics, language features, programming
+          approaches, compilers.
+        is_a: cs
+      cs.RO:
+        title: Robotics
+        description: >-
+          Covers all aspects of robotics, including control, manipulation,
+          planning, and robot learning.
+        is_a: cs
+        close_mappings:
+        - mesh:D012371
+      cs.SC:
+        title: Symbolic Computation
+        description: >-
+          Covers symbolics, including computer algebra systems, implementation,
+          and applications.
+        is_a: cs
+      cs.SD:
+        title: Sound
+        description: >-
+          Covers all aspects of computing with sound, and sound as an
+          information channel.
+        is_a: cs
+      cs.SE:
+        title: Software Engineering
+        description: >-
+          Covers design tools, software metrics, testing and debugging,
+          programming environments, requirements, specifications.
+        is_a: cs
+      cs.SI:
+        title: Social and Information Networks
+        description: >-
+          Covers design, analysis, and modeling of social and information
+          networks, including their applications for online systems.
+        is_a: cs
+      cs.SY:
+        title: Systems and Control
+        description: >-
+          Covers theoretical and practical aspects of systems and control,
+          including control system design.
+        is_a: cs
+      # ============================================
+      # ECONOMICS (econ)
+      # ============================================
+      econ.EM:
+        title: Econometrics
+        description: >-
+          Econometric theory and practice, including estimation, hypothesis
+          testing, and forecasting.
+        is_a: econ
+      econ.GN:
+        title: General Economics
+        description: >-
+          General methodological, applied, and empirical contributions to
+          economics.
+        is_a: econ
+      econ.TH:
+        title: Theoretical Economics
+        description: >-
+          Includes decision theory, game theory, mechanism design, and
+          mathematical modeling in economics.
+        is_a: econ
+      # ============================================
+      # ELECTRICAL ENGINEERING AND SYSTEMS SCIENCE (eess)
+      # ============================================
+      eess.AS:
+        title: Audio and Speech Processing
+        description: >-
+          Theory and methods for processing signals representing audio, speech,
+          and language, and their applications.
+        is_a: eess
+      eess.IV:
+        title: Image and Video Processing
+        description: >-
+          Theory, algorithms, and applications for the formation, capture,
+          processing, communication, analysis, and display of images.
+        is_a: eess
+      eess.SP:
+        title: Signal Processing
+        description: >-
+          Theory, algorithms, performance analysis and applications of signal
+          and data analysis.
+        is_a: eess
+      eess.SY:
+        title: Systems and Control
+        description: >-
+          Analysis and design of control systems, covering mathematical modeling
+          and automatic control.
+        is_a: eess
+      # ============================================
+      # MATHEMATICS (math)
+      # ============================================
+      math.AC:
+        title: Commutative Algebra
+        description: >-
+          Commutative rings, modules, ideals, homological algebra, computational
+          aspects, local rings.
+        is_a: math
+      math.AG:
+        title: Algebraic Geometry
+        description: >-
+          Algebraic varieties, stacks, sheaves, schemes, moduli spaces, complex
+          geometry, quantum cohomology.
+        is_a: math
+      math.AP:
+        title: Analysis of PDEs
+        description: >-
+          Existence and uniqueness, boundary conditions, linear and non-linear
+          operators, stability, soliton theory.
+        is_a: math
+      math.AT:
+        title: Algebraic Topology
+        description: >-
+          Homotopy theory, homological algebra, algebraic treatments of manifolds.
+        is_a: math
+      math.CA:
+        title: Classical Analysis and ODEs
+        description: >-
+          Special functions, orthogonal polynomials, harmonic analysis, ODEs,
+          differential relations.
+        is_a: math
+      math.CO:
+        title: Combinatorics
+        description: >-
+          Discrete mathematics, graph theory, enumeration, combinatorial
+          optimization.
+        is_a: math
+      math.CT:
+        title: Category Theory
+        description: >-
+          Enriched categories, topoi, abelian categories, monoidal categories,
+          homological algebra.
+        is_a: math
+      math.CV:
+        title: Complex Variables
+        description: >-
+          Holomorphic functions, automorphic group actions, and their
+          generalizations, complex geometry.
+        is_a: math
+      math.DG:
+        title: Differential Geometry
+        description: >-
+          Complex, contact, Riemannian, pseudo-Riemannian, symplectic geometry,
+          relativity, gauge theory.
+        is_a: math
+      math.DS:
+        title: Dynamical Systems
+        description: >-
+          Dynamics of differential equations and flows, mechanics, classical
+          few-body problems.
+        is_a: math
+      math.FA:
+        title: Functional Analysis
+        description: >-
+          Banach spaces, function spaces, real functions, distributions,
+          measures, integration.
+        is_a: math
+      math.GM:
+        title: General Mathematics
+        description: >-
+          Mathematical material of general interest, broadly accessible
+          expositions of research results.
+        is_a: math
+      math.GN:
+        title: General Topology
+        description: >-
+          Continuum theory, point-set topology, spaces with algebraic structure,
+          topological dynamics.
+        is_a: math
+      math.GR:
+        title: Group Theory
+        description: >-
+          Finite groups, topological groups, representation theory, cohomology,
+          classification.
+        is_a: math
+      math.GT:
+        title: Geometric Topology
+        description: >-
+          Manifolds, orbifolds, polyhedra, cell complexes, foliations, geometric
+          structures.
+        is_a: math
+      math.HO:
+        title: History and Overview
+        description: >-
+          Biographies, philosophy of mathematics, mathematics education,
+          recreational mathematics.
+        is_a: math
+      math.IT:
+        title: Information Theory
+        description: >-
+          Math methods in information theory and coding theory.
+        is_a: math
+      math.KT:
+        title: K-Theory and Homology
+        description: >-
+          Algebraic and topological K-theory, relations with topology,
+          commutative algebra, index theories.
+        is_a: math
+      math.LO:
+        title: Logic
+        description: >-
+          Logic, set theory, point-set topology, formal mathematics.
+        is_a: math
+      math.MG:
+        title: Metric Geometry
+        description: >-
+          Euclidean, hyperbolic, discrete, convex, coarse geometry,
+          comparisons in Riemannian geometry.
+        is_a: math
+      math.MP:
+        title: Mathematical Physics
+        description: >-
+          Articles in which math methods are used to study physics problems,
+          or math questions arising from physics.
+        is_a: math
+      math.NA:
+        title: Numerical Analysis
+        description: >-
+          Numerical algorithms for problems in analysis and algebra, scientific
+          computation.
+        is_a: math
+      math.NT:
+        title: Number Theory
+        description: >-
+          Prime numbers, diophantine equations, analytic number theory, algebraic
+          number theory, arithmetic geometry.
+        is_a: math
+      math.OA:
+        title: Operator Algebras
+        description: >-
+          Algebras of operators on Hilbert space, C*-algebras, von Neumann
+          algebras, non-commutative geometry.
+        is_a: math
+      math.OC:
+        title: Optimization and Control
+        description: >-
+          Operations research, linear programming, control theory, systems
+          theory, optimal control.
+        is_a: math
+      math.PR:
+        title: Probability
+        description: >-
+          Theory and applications of probability and stochastic processes,
+          including stochastic differential equations.
+        is_a: math
+      math.QA:
+        title: Quantum Algebra
+        description: >-
+          Quantum groups, skein theories, operadic and diagrammatic algebra,
+          quantum field theory.
+        is_a: math
+      math.RA:
+        title: Rings and Algebras
+        description: >-
+          Non-commutative rings and algebras, non-associative algebras,
+          universal algebra.
+        is_a: math
+      math.RT:
+        title: Representation Theory
+        description: >-
+          Linear representations of algebras and groups, Lie theory,
+          associative algebras.
+        is_a: math
+      math.SG:
+        title: Symplectic Geometry
+        description: >-
+          Hamiltonian systems, symplectic flows, classical integrable systems.
+        is_a: math
+      math.SP:
+        title: Spectral Theory
+        description: >-
+          Schrodinger operators, differential operators, spectral measures,
+          scattering theory.
+        is_a: math
+      math.ST:
+        title: Statistics Theory
+        description: >-
+          Applied, computational and theoretical statistics including
+          probability, coverage, learning theory.
+        is_a: math
+      # ============================================
+      # ASTROPHYSICS (astro-ph)
+      # ============================================
+      astro-ph.CO:
+        title: Cosmology and Nongalactic Astrophysics
+        description: >-
+          Phenomenology of early universe, cosmic microwave background,
+          cosmological parameters, primordial element abundances.
+        is_a: astro-ph
+      astro-ph.EP:
+        title: Earth and Planetary Astrophysics
+        description: >-
+          Interplanetary medium, planetary physics, terrestrial planets,
+          extrasolar planets, irregular satellites.
+        is_a: astro-ph
+      astro-ph.GA:
+        title: Astrophysics of Galaxies
+        description: >-
+          Phenomena pertaining to galaxies or combinations of galaxies,
+          interstellar medium, star clusters.
+        is_a: astro-ph
+      astro-ph.HE:
+        title: High Energy Astrophysical Phenomena
+        description: >-
+          Cosmic ray production, gamma rays, X-rays, charged particles,
+          supernovae, neutron stars, pulsars.
+        is_a: astro-ph
+      astro-ph.IM:
+        title: Instrumentation and Methods for Astrophysics
+        description: >-
+          Detector and calculation design, space and laboratory observatories,
+          data analysis methods.
+        is_a: astro-ph
+      astro-ph.SR:
+        title: Solar and Stellar Astrophysics
+        description: >-
+          White dwarfs, brown dwarfs, stars, solar system, helioseismology,
+          stellar evolution.
+        is_a: astro-ph
+      # ============================================
+      # CONDENSED MATTER (cond-mat)
+      # ============================================
+      cond-mat.dis-nn:
+        title: Disordered Systems and Neural Networks
+        description: >-
+          Glasses and spin glasses; random systems; information theory in
+          physics; neural networks.
+        is_a: cond-mat
+      cond-mat.mes-hall:
+        title: Mesoscale and Nanoscale Physics
+        description: >-
+          Quantum dots and wires, nanotubes, graphene, ballistic transport,
+          mesoscale and nanoscale systems.
+        is_a: cond-mat
+      cond-mat.mtrl-sci:
+        title: Materials Science
+        description: >-
+          Techniques, synthesis, characterization, structure; mechanical and
+          structural phase transitions.
+        is_a: cond-mat
+      cond-mat.other:
+        title: Other Condensed Matter
+        description: >-
+          Work in condensed matter that does not fit into other cond-mat
+          classifications.
+        is_a: cond-mat
+      cond-mat.quant-gas:
+        title: Quantum Gases
+        description: >-
+          Ultracold atomic gases, Bose-Einstein condensation, Feshbach
+          resonances, spinor condensates.
+        is_a: cond-mat
+      cond-mat.soft:
+        title: Soft Condensed Matter
+        description: >-
+          Membranes, emulsions, gels, foams, nematic phases, polymers,
+          liquid crystals.
+        is_a: cond-mat
+      cond-mat.stat-mech:
+        title: Statistical Mechanics
+        description: >-
+          Phase transitions, thermodynamics, field theory, non-equilibrium
+          phenomena, renormalization.
+        is_a: cond-mat
+      cond-mat.str-el:
+        title: Strongly Correlated Electrons
+        description: >-
+          Quantum magnetism, non-Fermi liquid, spin liquids, stripe phases,
+          electron-phonon interactions.
+        is_a: cond-mat
+      cond-mat.supr-con:
+        title: Superconductivity
+        description: >-
+          Superconductivity theory, models, phenomenology, experimental results.
+        is_a: cond-mat
+      # ============================================
+      # HIGH ENERGY PHYSICS (hep)
+      # ============================================
+      hep-ex:
+        title: High Energy Physics - Experiment
+        description: >-
+          Results from high-energy/particle physics experiments at accelerators
+          and observatories.
+        is_a: hep
+      hep-lat:
+        title: High Energy Physics - Lattice
+        description: >-
+          Lattice field theory results with desired precision and algorithmic
+          advances.
+        is_a: hep
+      hep-ph:
+        title: High Energy Physics - Phenomenology
+        description: >-
+          Theoretical particle physics and its relation to experiment. Covers
+          Standard Model and beyond.
+        is_a: hep
+      hep-th:
+        title: High Energy Physics - Theory
+        description: >-
+          Formal aspects of quantum field theory, string theory, quantum gravity.
+        is_a: hep
+      # ============================================
+      # STANDALONE PHYSICS ARCHIVES
+      # ============================================
+      gr-qc:
+        title: General Relativity and Quantum Cosmology
+        description: >-
+          General relativity, gravitational physics, cosmological models,
+          relativistic astrophysics.
+        is_a: physics
+      math-ph:
+        title: Mathematical Physics
+        description: >-
+          Applications of mathematics to problems in physics and development
+          of mathematical methods for such applications.
+        is_a: physics
+      quant-ph:
+        title: Quantum Physics
+        description: >-
+          Quantum foundations, quantum information, quantum computation,
+          quantum mechanics.
+        is_a: physics
+        close_mappings:
+        - NCIT:C19650
+        - mesh:D000098222
+      # ============================================
+      # NONLINEAR SCIENCES (nlin)
+      # ============================================
+      nlin.AO:
+        title: Adaptation and Self-Organizing Systems
+        description: >-
+          Self-organization, adaptation, and autonomous systems.
+        is_a: nlin
+      nlin.CD:
+        title: Chaotic Dynamics
+        description: >-
+          Dynamical systems with chaotic behavior, routes to chaos, spectral
+          analysis, Lyapunov exponents.
+        is_a: nlin
+      nlin.CG:
+        title: Cellular Automata and Lattice Gases
+        description: >-
+          Cellular automata, lattice Boltzmann, lattice gas automata, signal
+          processing with cellular automata.
+        is_a: nlin
+      nlin.PS:
+        title: Pattern Formation and Solitons
+        description: >-
+          Pattern formation, coherent structures, solitons, waves.
+        is_a: nlin
+      nlin.SI:
+        title: Exactly Solvable and Integrable Systems
+        description: >-
+          Integrable PDEs, integrable ODEs, Painleve analysis, integrable
+          discrete systems.
+        is_a: nlin
+      # ============================================
+      # NUCLEAR PHYSICS (nucl)
+      # ============================================
+      nucl-ex:
+        title: Nuclear Experiment
+        description: >-
+          Experimental results from nuclear physics laboratories, such as
+          heavy-ion collisions.
+        is_a: nucl
+      nucl-th:
+        title: Nuclear Theory
+        description: >-
+          Theory of nuclear structure and low-energy reactions, including
+          heavy-ion physics.
+        is_a: nucl
+      # ============================================
+      # GENERAL PHYSICS (physics)
+      # ============================================
+      physics.acc-ph:
+        title: Accelerator Physics
+        description: >-
+          Accelerator theory and target design, beam physics, secondary beams,
+          photon sources.
+        is_a: physics
+      physics.ao-ph:
+        title: Atmospheric and Oceanic Physics
+        description: >-
+          Atmospheric and oceanic processes, climate dynamics, waves, boundary
+          layer physics.
+        is_a: physics
+      physics.app-ph:
+        title: Applied Physics
+        description: >-
+          Applications of physics to new technology, medical physics,
+          instrumentation.
+        is_a: physics
+      physics.atm-clus:
+        title: Atomic and Molecular Clusters
+        description: >-
+          Binding, structure, and properties of clusters, nanoparticles.
+        is_a: physics
+      physics.atom-ph:
+        title: Atomic Physics
+        description: >-
+          Atomic and molecular structure, spectra, collisions, and data. Ultrafast
+          physics, molecular physics.
+        is_a: physics
+      physics.bio-ph:
+        title: Biological Physics
+        description: >-
+          Molecular biophysics, cellular biophysics, single molecule biophysics.
+        is_a: physics
+        close_mappings:
+        - NCIT:C16349
+        - mesh:D001703
+      physics.chem-ph:
+        title: Chemical Physics
+        description: >-
+          Experimental, methods, and results in chemical physics and molecular
+          dynamics.
+        is_a: physics
+      physics.class-ph:
+        title: Classical Physics
+        description: >-
+          Newtonian and Lagrangian mechanics, electromagnetism, thermodynamics,
+          special relativity.
+        is_a: physics
+      physics.comp-ph:
+        title: Computational Physics
+        description: >-
+          All aspects of computational science applied to physics problems.
+        is_a: physics
+      physics.data-an:
+        title: Data Analysis, Statistics and Probability
+        description: >-
+          Methods, software, and results in physics data analysis.
+        is_a: physics
+      physics.ed-ph:
+        title: Physics Education
+        description: >-
+          Physics teaching and learning research.
+        is_a: physics
+      physics.flu-dyn:
+        title: Fluid Dynamics
+        description: >-
+          Turbulence, instabilities, incompressible and compressible flows,
+          boundary layers.
+        is_a: physics
+      physics.gen-ph:
+        title: General Physics
+        description: >-
+          General physics that does not fit elsewhere.
+        is_a: physics
+      physics.geo-ph:
+        title: Geophysics
+        description: >-
+          Computational and theoretical geophysics including seismology, potential
+          theory.
+        is_a: physics
+      physics.hist-ph:
+        title: History and Philosophy of Physics
+        description: >-
+          History and philosophy of all aspects of physics.
+        is_a: physics
+      physics.ins-det:
+        title: Instrumentation and Detectors
+        description: >-
+          Instrumentation and detectors for accelerator, astro-, geo-, or
+          particle physics.
+        is_a: physics
+      physics.med-ph:
+        title: Medical Physics
+        description: >-
+          Radiation therapy, biomedical imaging, health physics.
+        is_a: physics
+        close_mappings:
+        - NCIT:C16667
+      physics.optics:
+        title: Optics
+        description: >-
+          Adaptive optics, polarimetry, quantum optics, ultrafast optics,
+          photonics.
+        is_a: physics
+      physics.plasm-ph:
+        title: Plasma Physics
+        description: >-
+          Fundamental plasma physics, magnetic and inertial confinement,
+          astrophysical plasmas.
+        is_a: physics
+      physics.pop-ph:
+        title: Popular Physics
+        description: >-
+          General physics topics for a broad audience.
+        is_a: physics
+      physics.soc-ph:
+        title: Physics and Society
+        description: >-
+          Sociophysics, structure and dynamics of societies, opinion dynamics.
+        is_a: physics
+      physics.space-ph:
+        title: Space Physics
+        description: >-
+          Space plasma physics, magnetospheric physics, solar wind, cosmic rays.
+        is_a: physics
+      # ============================================
+      # QUANTITATIVE BIOLOGY (q-bio)
+      # ============================================
+      q-bio.BM:
+        title: Biomolecules
+        description: >-
+          DNA, RNA, proteins, lipids, small molecules; molecular structure
+          and dynamics; molecular engineering.
+        is_a: q-bio
+      q-bio.CB:
+        title: Cell Behavior
+        description: >-
+          Cell-cell signaling, morphogenesis, development; cell division/cycle;
+          immunology.
+        is_a: q-bio
+      q-bio.GN:
+        title: Genomics
+        description: >-
+          DNA sequencing and assembly; gene finding; genome structure,
+          organization, and regulation.
+        is_a: q-bio
+        close_mappings:
+        - NCIT:C84343
+        - mesh:D023281
+      q-bio.MN:
+        title: Molecular Networks
+        description: >-
+          Gene regulation, signal transduction, metabolic networks, kinetics,
+          synthetic biology.
+        is_a: q-bio
+      q-bio.NC:
+        title: Neurons and Cognition
+        description: >-
+          Synapse, receptor dynamics, learning, neural coding, neuroinformatics.
+        is_a: q-bio
+      q-bio.OT:
+        title: Other Quantitative Biology
+        description: >-
+          Work in quantitative biology that does not fit in the other q-bio
+          classifications.
+        is_a: q-bio
+      q-bio.PE:
+        title: Populations and Evolution
+        description: >-
+          Population dynamics, spatio-temporal evolution, migration, phylogeny,
+          biodiversity.
+        is_a: q-bio
+      q-bio.QM:
+        title: Quantitative Methods
+        description: >-
+          Research papers with experimental, numerical, or statistical
+          contributions of value to biologists.
+        is_a: q-bio
+      q-bio.SC:
+        title: Subcellular Processes
+        description: >-
+          Subcellular structures, molecular motors, organelle transport,
+          packaging.
+        is_a: q-bio
+      q-bio.TO:
+        title: Tissues and Organs
+        description: >-
+          Blood flow, biomechanics, tumor growth, tissue morphogenesis.
+        is_a: q-bio
+      # ============================================
+      # QUANTITATIVE FINANCE (q-fin)
+      # ============================================
+      q-fin.CP:
+        title: Computational Finance
+        description: >-
+          Monte Carlo, PDE, and other numerical methods with applications to
+          quantitative finance.
+        is_a: q-fin
+      q-fin.EC:
+        title: Economics
+        description: >-
+          General economics topics with quantitative approaches.
+        is_a: q-fin
+      q-fin.GN:
+        title: General Finance
+        description: >-
+          General quantitative financial methodologies covering multiple
+          sub-fields.
+        is_a: q-fin
+      q-fin.MF:
+        title: Mathematical Finance
+        description: >-
+          Mathematical and analytical methods in finance, stochastic methods,
+          hedging strategies.
+        is_a: q-fin
+      q-fin.PM:
+        title: Portfolio Management
+        description: >-
+          Security selection and optimization, capital allocation, investment
+          strategies.
+        is_a: q-fin
+      q-fin.PR:
+        title: Pricing of Securities
+        description: >-
+          Valuation and hedging of financial securities, their derivatives,
+          and structured products.
+        is_a: q-fin
+      q-fin.RM:
+        title: Risk Management
+        description: >-
+          Measurement and management of financial risks in trading, banking,
+          insurance.
+        is_a: q-fin
+      q-fin.ST:
+        title: Statistical Finance
+        description: >-
+          Statistical, econometric methods applied to financial markets.
+        is_a: q-fin
+      q-fin.TR:
+        title: Trading and Market Microstructure
+        description: >-
+          Market microstructure, algorithmic trading, order book dynamics.
+        is_a: q-fin
+      # ============================================
+      # STATISTICS (stat)
+      # ============================================
+      stat.AP:
+        title: Applications
+        description: >-
+          Biology, education, epidemiology, engineering, environmental sciences,
+          medical, physical sciences.
+        is_a: stat
+      stat.CO:
+        title: Computation
+        description: >-
+          Algorithms, computational methods, simulation, visualization.
+        is_a: stat
+      stat.ME:
+        title: Methodology
+        description: >-
+          Design, surveys, model selection, regression, testing, time series.
+        is_a: stat
+      stat.ML:
+        title: Machine Learning
+        description: >-
+          Covers machine learning papers with a statistical or theoretical
+          grounding.
+        is_a: stat
+        close_mappings:
+        - NCIT:C176231
+        - mesh:D000069550
+      stat.OT:
+        title: Other Statistics
+        description: >-
+          Work in statistics that does not fit into the other stat-*
+          classifications.
+        is_a: stat
+      stat.TH:
+        title: Statistics Theory
+        description: >-
+          Asymptotics, Bayesian inference, decision theory, estimation,
+          foundations, inference.
+        is_a: stat

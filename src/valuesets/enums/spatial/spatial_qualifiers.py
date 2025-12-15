@@ -234,6 +234,52 @@ CellPolarity._metadata = {
     "DISTAL_POLE": {'description': 'Pole further from the cell body', 'annotations': {'context': 'neurons, polarized cells'}},
 }
 
+class AnatomicalOrientation(RichEnum):
+    """
+    Directional orientation between anatomical positions based on OME NGFF specification
+    """
+    # Enum members
+    LEFT_TO_RIGHT = "LEFT_TO_RIGHT"
+    RIGHT_TO_LEFT = "RIGHT_TO_LEFT"
+    ANTERIOR_TO_POSTERIOR = "ANTERIOR_TO_POSTERIOR"
+    POSTERIOR_TO_ANTERIOR = "POSTERIOR_TO_ANTERIOR"
+    INFERIOR_TO_SUPERIOR = "INFERIOR_TO_SUPERIOR"
+    SUPERIOR_TO_INFERIOR = "SUPERIOR_TO_INFERIOR"
+    DORSAL_TO_VENTRAL = "DORSAL_TO_VENTRAL"
+    VENTRAL_TO_DORSAL = "VENTRAL_TO_DORSAL"
+    DORSAL_TO_PALMAR = "DORSAL_TO_PALMAR"
+    PALMAR_TO_DORSAL = "PALMAR_TO_DORSAL"
+    DORSAL_TO_PLANTAR = "DORSAL_TO_PLANTAR"
+    PLANTAR_TO_DORSAL = "PLANTAR_TO_DORSAL"
+    ROSTRAL_TO_CAUDAL = "ROSTRAL_TO_CAUDAL"
+    CAUDAL_TO_ROSTRAL = "CAUDAL_TO_ROSTRAL"
+    CRANIAL_TO_CAUDAL = "CRANIAL_TO_CAUDAL"
+    CAUDAL_TO_CRANIAL = "CAUDAL_TO_CRANIAL"
+    PROXIMAL_TO_DISTAL = "PROXIMAL_TO_DISTAL"
+    DISTAL_TO_PROXIMAL = "DISTAL_TO_PROXIMAL"
+
+# Set metadata after class creation
+AnatomicalOrientation._metadata = {
+    "LEFT_TO_RIGHT": {'description': 'Directional orientation from left to right lateral side of an anatomical structure', 'annotations': {'source': 'OME NGFF'}},
+    "RIGHT_TO_LEFT": {'description': 'Directional orientation from right to left lateral side of an anatomical structure', 'annotations': {'source': 'OME NGFF'}},
+    "ANTERIOR_TO_POSTERIOR": {'description': 'Directional orientation from front to back of an anatomical structure', 'annotations': {'source': 'OME NGFF'}},
+    "POSTERIOR_TO_ANTERIOR": {'description': 'Directional orientation from back to front of an anatomical structure', 'annotations': {'source': 'OME NGFF'}},
+    "INFERIOR_TO_SUPERIOR": {'description': 'Directional orientation from below to above in an anatomical structure', 'annotations': {'source': 'OME NGFF'}},
+    "SUPERIOR_TO_INFERIOR": {'description': 'Directional orientation from above to below in an anatomical structure', 'annotations': {'source': 'OME NGFF'}},
+    "DORSAL_TO_VENTRAL": {'description': 'Directional orientation from top/upper to belly/lower in an anatomical structure', 'annotations': {'source': 'OME NGFF'}},
+    "VENTRAL_TO_DORSAL": {'description': 'Directional orientation from belly/lower to top/upper in an anatomical structure', 'annotations': {'source': 'OME NGFF'}},
+    "DORSAL_TO_PALMAR": {'description': 'Directional orientation from top/upper to palm of hand', 'annotations': {'source': 'OME NGFF', 'context': 'hand anatomy'}},
+    "PALMAR_TO_DORSAL": {'description': 'Directional orientation from palm of hand to top/upper', 'annotations': {'source': 'OME NGFF', 'context': 'hand anatomy'}},
+    "DORSAL_TO_PLANTAR": {'description': 'Directional orientation from top/upper to sole of foot', 'annotations': {'source': 'OME NGFF', 'context': 'foot anatomy'}},
+    "PLANTAR_TO_DORSAL": {'description': 'Directional orientation from sole of foot to top/upper', 'annotations': {'source': 'OME NGFF', 'context': 'foot anatomy'}},
+    "ROSTRAL_TO_CAUDAL": {'description': 'Directional orientation from nasal to tail end, typically for central nervous system', 'annotations': {'source': 'OME NGFF', 'context': 'central nervous system'}},
+    "CAUDAL_TO_ROSTRAL": {'description': 'Directional orientation from tail to nasal end, typically for central nervous system', 'annotations': {'source': 'OME NGFF', 'context': 'central nervous system'}},
+    "CRANIAL_TO_CAUDAL": {'description': 'Directional orientation from head to tail end of a structure', 'annotations': {'source': 'OME NGFF'}},
+    "CAUDAL_TO_CRANIAL": {'description': 'Directional orientation from tail to head end of a structure', 'annotations': {'source': 'OME NGFF'}},
+    "PROXIMAL_TO_DISTAL": {'description': 'Directional orientation from body center to periphery of a structure', 'annotations': {'source': 'OME NGFF'}},
+    "DISTAL_TO_PROXIMAL": {'description': 'Directional orientation from periphery to body center of a structure', 'annotations': {'source': 'OME NGFF'}},
+}
+
 __all__ = [
     "SimpleSpatialDirection",
     "AnatomicalSide",
@@ -242,4 +288,5 @@ __all__ = [
     "AnatomicalPlane",
     "SpatialRelationship",
     "CellPolarity",
+    "AnatomicalOrientation",
 ]

@@ -116,6 +116,28 @@ gen-sssom-schema SCHEMA_PATH OUTPUT="project/mappings/schema_mappings.sssom.tsv"
   uv run python -m src.valuesets.generators.sssom_generator {{SCHEMA_PATH}} -o {{OUTPUT}} {{ARGS}}
   @echo "✅ Generated {{OUTPUT}}"
 
+# List all dynamic enums (those with reachable_from definitions)
+[group('model development')]
+list-dynamic-enums:
+  uv run python -m src.valuesets.utils.query_describer --list {{source_schema_dir}}
+
+# List dynamic enums in markdown format (with links)
+[group('model development')]
+list-dynamic-enums-md:
+  uv run python -m src.valuesets.utils.query_describer --list --markdown {{source_schema_dir}}
+
+# List dynamic enums in markdown with labels from OLS (slower)
+[group('model development')]
+list-dynamic-enums-full:
+  uv run python -m src.valuesets.utils.query_describer --list --markdown --labels {{source_schema_dir}}
+
+# Generate md documentation for the schema (with dynamic enum enrichment)
+[group('model development')]
+gen-doc: _gen-yaml
+  uv run gen-doc {{gen_doc_args}} -d {{docdir}} {{source_schema_path}}
+  @echo "Enriching dynamic enum documentation..."
+  uv run python scripts/enrich_enum_docs.py --schema-dir {{source_schema_dir}} --docs-dir {{docdir}}
+
 # Expand all dynamic enums using OAK
 [group('model development')]
 expand-enums workers="4":

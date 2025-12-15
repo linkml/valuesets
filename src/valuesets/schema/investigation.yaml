@@ -9,6 +9,7 @@ prefixes:
   schema: http://schema.org/
   PATO: http://purl.obolibrary.org/obo/PATO_
   OBI: http://purl.obolibrary.org/obo/OBI_
+  COB: http://purl.obolibrary.org/obo/COB_
   fhir: http://hl7.org/fhir/
   prov: http://www.w3.org/ns/prov#
   dcterms: http://purl.org/dc/terms/
@@ -30,6 +31,9 @@ slots:
   sample_processing:
     description: The sample processing classification
     range: SampleProcessingEnum
+  planned_process_completion_status:
+    description: The completion status of a planned process
+    range: PlannedProcessCompletionStatus
 enums:
   CaseOrControlEnum:
     title: Case Or Control
@@ -88,6 +92,27 @@ enums:
       is_direct: false
       relationship_types:
       - rdfs:subClassOf
+  PlannedProcessCompletionStatus:
+    title: Planned Process Completion Status
+    description: >-
+      The completion status of a planned process, indicating whether the process
+      was successfully executed or failed. Based on COB (Core Ontology for Biology)
+      planned process hierarchy.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      COMPLETELY_EXECUTED:
+        title: completely executed planned process
+        description: A planned process that was successfully completed as intended
+        meaning: COB:0000035
+      FAILED:
+        title: failed planned process
+        description: A planned process that did not complete successfully
+        meaning: COB:0000083
 license: MIT
 see_also:
 - https://linkml.github.io/valuesets

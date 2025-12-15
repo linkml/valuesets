@@ -22,7 +22,12 @@ slots:
 enums:
   GOEvidenceCode:
     title: GO Evidence Code
-    description: Gene Ontology evidence codes mapped to Evidence and Conclusion Ontology (ECO) terms
+    description: >-
+      Gene Ontology evidence codes used to describe the type of support for GO annotations.
+      Each code maps to the Evidence and Conclusion Ontology (ECO). Evidence codes are
+      categorized by whether they represent experimental evidence, computational analysis,
+      phylogenetic inference, author statements, or electronic annotation. All codes except
+      IEA represent manual curation.
     status: STANDARD
     contributors:
     - orcid:0000-0002-6601-2165
@@ -35,134 +40,278 @@ enums:
     permissible_values:
       EXP:
         title: Inferred from Experiment
+        description: General experimental evidence supporting a GO annotation
         aliases:
         - experimental evidence used in manual assertion
         meaning: ECO:0000269
+        annotations:
+          is_experimental: true
+          is_manual: true
+          is_high_throughput: false
       IDA:
         title: Inferred from Direct Assay
+        description: Evidence from a direct assay for the presence or activity of a gene product
         aliases:
         - direct assay evidence used in manual assertion
         meaning: ECO:0000314
+        annotations:
+          is_experimental: true
+          is_manual: true
+          is_high_throughput: false
       IPI:
         title: Inferred from Physical Interaction
+        description: Evidence from physical interaction between gene products
         aliases:
         - physical interaction evidence used in manual assertion
         meaning: ECO:0000353
+        annotations:
+          is_experimental: true
+          is_manual: true
+          is_high_throughput: false
       IMP:
         title: Inferred from Mutant Phenotype
+        description: Evidence from the phenotype of a mutant allele
         aliases:
         - mutant phenotype evidence used in manual assertion
         meaning: ECO:0000315
+        annotations:
+          is_experimental: true
+          is_manual: true
+          is_high_throughput: false
       IGI:
         title: Inferred from Genetic Interaction
+        description: Evidence from genetic interaction between genes
         aliases:
         - genetic interaction evidence used in manual assertion
         meaning: ECO:0000316
+        annotations:
+          is_experimental: true
+          is_manual: true
+          is_high_throughput: false
       IEP:
         title: Inferred from Expression Pattern
+        description: Evidence from gene expression pattern data
         aliases:
         - expression pattern evidence used in manual assertion
         meaning: ECO:0000270
+        annotations:
+          is_experimental: true
+          is_manual: true
+          is_high_throughput: false
       HTP:
         title: Inferred from High Throughput Experiment
+        description: Evidence from high-throughput experimental methods
         aliases:
         - high throughput evidence used in manual assertion
         meaning: ECO:0006056
+        annotations:
+          is_experimental: true
+          is_manual: true
+          is_high_throughput: true
       HDA:
         title: Inferred from High Throughput Direct Assay
+        description: Evidence from high-throughput direct assay experiments
         aliases:
         - high throughput direct assay evidence used in manual assertion
         meaning: ECO:0007005
+        annotations:
+          is_experimental: true
+          is_manual: true
+          is_high_throughput: true
       HMP:
         title: Inferred from High Throughput Mutant Phenotype
+        description: Evidence from high-throughput mutant phenotype screening
         aliases:
         - high throughput mutant phenotypic evidence used in manual assertion
         meaning: ECO:0007001
+        annotations:
+          is_experimental: true
+          is_manual: true
+          is_high_throughput: true
       HGI:
         title: Inferred from High Throughput Genetic Interaction
+        description: Evidence from high-throughput genetic interaction screening
         aliases:
         - high throughput genetic interaction phenotypic evidence used in manual assertion
         meaning: ECO:0007003
+        annotations:
+          is_experimental: true
+          is_manual: true
+          is_high_throughput: true
       HEP:
         title: Inferred from High Throughput Expression Pattern
+        description: Evidence from high-throughput expression profiling
         aliases:
         - high throughput expression pattern evidence used in manual assertion
         meaning: ECO:0007007
+        annotations:
+          is_experimental: true
+          is_manual: true
+          is_high_throughput: true
       IBA:
         title: Inferred from Biological aspect of Ancestor
+        description: Evidence from conservation of biological aspect in an ancestral sequence
         aliases:
         - biological aspect of ancestor evidence used in manual assertion
         meaning: ECO:0000318
+        annotations:
+          is_experimental: false
+          is_manual: true
+          is_high_throughput: false
+          is_phylogenetic: true
       IBD:
         title: Inferred from Biological aspect of Descendant
+        description: Evidence from conservation of biological aspect in a descendant sequence
         aliases:
         - biological aspect of descendant evidence used in manual assertion
         meaning: ECO:0000319
+        annotations:
+          is_experimental: false
+          is_manual: true
+          is_high_throughput: false
+          is_phylogenetic: true
       IKR:
         title: Inferred from Key Residues
+        description: Evidence from phylogenetic analysis showing loss of key residues
         aliases:
         - phylogenetic determination of loss of key residues evidence used in manual assertion
         meaning: ECO:0000320
+        annotations:
+          is_experimental: false
+          is_manual: true
+          is_high_throughput: false
+          is_phylogenetic: true
       IRD:
         title: Inferred from Rapid Divergence
+        description: Evidence from rapid divergence from ancestral sequence
         aliases:
         - rapid divergence from ancestral sequence evidence used in manual assertion
         meaning: ECO:0000321
+        annotations:
+          is_experimental: false
+          is_manual: true
+          is_high_throughput: false
+          is_phylogenetic: true
       ISS:
         title: Inferred from Sequence or structural Similarity
+        description: Evidence from sequence or structural similarity to another annotated gene product
         aliases:
         - sequence similarity evidence used in manual assertion
         meaning: ECO:0000250
+        annotations:
+          is_experimental: false
+          is_manual: true
+          is_high_throughput: false
+          is_computational: true
       ISO:
         title: Inferred from Sequence Orthology
+        description: Evidence from orthology to an experimentally characterized gene product
         aliases:
         - sequence orthology evidence used in manual assertion
         meaning: ECO:0000266
+        annotations:
+          is_experimental: false
+          is_manual: true
+          is_high_throughput: false
+          is_computational: true
       ISA:
         title: Inferred from Sequence Alignment
+        description: Evidence from sequence alignment to an annotated gene product
         aliases:
         - sequence alignment evidence used in manual assertion
         meaning: ECO:0000247
+        annotations:
+          is_experimental: false
+          is_manual: true
+          is_high_throughput: false
+          is_computational: true
       ISM:
         title: Inferred from Sequence Model
+        description: Evidence from match to a sequence model (e.g., HMM, profile)
         aliases:
         - match to sequence model evidence used in manual assertion
         meaning: ECO:0000255
+        annotations:
+          is_experimental: false
+          is_manual: true
+          is_high_throughput: false
+          is_computational: true
       IGC:
         title: Inferred from Genomic Context
+        description: Evidence from genomic context such as synteny or gene neighborhood
         aliases:
         - genomic context evidence used in manual assertion
         meaning: ECO:0000317
+        annotations:
+          is_experimental: false
+          is_manual: true
+          is_high_throughput: false
+          is_computational: true
       RCA:
         title: Inferred from Reviewed Computational Analysis
+        description: Evidence from computational analysis that has been reviewed by a curator
         aliases:
         - automatically integrated combinatorial evidence used in manual assertion
         meaning: ECO:0000245
+        annotations:
+          is_experimental: false
+          is_manual: true
+          is_high_throughput: false
+          is_computational: true
       TAS:
         title: Traceable Author Statement
+        description: Evidence from an author statement in a published paper that can be traced to the original source
         aliases:
         - author statement supported by traceable reference used in manual assertion
         meaning: ECO:0000304
+        annotations:
+          is_experimental: false
+          is_manual: true
+          is_high_throughput: false
+          is_author_statement: true
       NAS:
         title: Non-traceable Author Statement
+        description: Evidence from an author statement that cannot be traced to the experimental source
         aliases:
         - author statement without traceable support used in manual assertion
         meaning: ECO:0000303
+        annotations:
+          is_experimental: false
+          is_manual: true
+          is_high_throughput: false
+          is_author_statement: true
       IC:
         title: Inferred by Curator
+        description: Evidence inferred by a curator based on existing annotations and biological knowledge
         aliases:
         - curator inference used in manual assertion
         meaning: ECO:0000305
+        annotations:
+          is_experimental: false
+          is_manual: true
+          is_high_throughput: false
+          is_curator_inference: true
       ND:
         title: No biological Data available
+        description: Indicates that no biological data is available to support an annotation
         aliases:
         - no evidence data found used in manual assertion
         meaning: ECO:0000307
+        annotations:
+          is_experimental: false
+          is_manual: true
+          is_high_throughput: false
       IEA:
         title: Inferred from Electronic Annotation
+        description: Evidence from automated electronic annotation pipelines without manual curation
         aliases:
         - evidence used in automatic assertion
         meaning: ECO:0000501
+        annotations:
+          is_experimental: false
+          is_manual: false
+          is_high_throughput: false
+          is_electronic: true
   GOElectronicMethods:
     title: GO Electronic Methods
     description: Electronic annotation methods used in Gene Ontology, identified by GO_REF codes

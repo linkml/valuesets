@@ -93,9 +93,10 @@ lint:
   uv run linkml-lint {{source_schema_dir}}
 
 # Generate md documentation for the schema
-[group('model development')]
-gen-doc: _gen-yaml
-  uv run gen-doc {{gen_doc_args}} -d {{docdir}} {{source_schema_path}}
+# NOTE: Overridden in project.justfile to include dynamic enum enrichment
+# [group('model development')]
+# gen-doc: _gen-yaml
+#   uv run gen-doc {{gen_doc_args}} -d {{docdir}} {{source_schema_path}}
 
 # Build docs and run test server
 [group('model development')]

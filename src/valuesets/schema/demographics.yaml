@@ -9,6 +9,7 @@ prefixes:
   schema: http://schema.org/
   HL7: http://terminology.hl7.org/CodeSystem/
   SNOMED: http://snomed.info/id/
+  NCIT: http://purl.obolibrary.org/obo/NCIT_
   valuesets: https://w3id.org/valuesets/
   orcid: https://orcid.org/
   valuesets_meta: https://w3id.org/valuesets/meta/
@@ -23,6 +24,9 @@ slots:
   employment_status:
     description: Employment status of a person
     range: EmploymentStatus
+  occupation:
+    description: The principal activity that a person does to earn money
+    range: OccupationEnum
   housing_status:
     description: Housing status of patients per UDS Plus HRSA standards
     range: HousingStatus
@@ -284,6 +288,24 @@ enums:
       UNKNOWN:
         description: unknown
         meaning: HL7:UNK
+  OccupationEnum:
+    title: Occupation
+    description: >-
+      The principal activity that a person does to earn money.
+      Dynamic enum populated from NCIT occupation hierarchy including
+      medical, professional, service, and military occupations.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    reachable_from:
+      source_nodes:
+      - NCIT:C25193
+      is_direct: false
+      relationship_types:
+      - rdfs:subClassOf
 license: MIT
 see_also:
 - https://linkml.github.io/valuesets

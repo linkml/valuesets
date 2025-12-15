@@ -13,12 +13,15 @@ license-files = ["LICENSE"]
 readme = "README.md"
 requires-python = ">=3.9,<4.0"
 dynamic = ["version"]
-
 dependencies = [
   "linkml-runtime >=1.9.4",
   "oaklib>=0.6.23",
   "ruamel-yaml>=0.18.15",
+  "typer>=0.20.0",
 ]
+
+[project.scripts]
+valuesets = "valuesets.cli:main"
 
 [dependency-groups]
 dev = [

@@ -184,28 +184,34 @@ enums:
         meaning: GO:0007127
         annotations:
           result: reduction from diploid to haploid
+          succeeded_by: MEIOSIS_II
       PROPHASE_I:
         description: Prophase I
         meaning: GO:0007128
         title: meiotic prophase I
         annotations:
           substages: leptotene, zygotene, pachytene, diplotene, diakinesis
+          succeeded_by: METAPHASE_I
       METAPHASE_I:
         description: Metaphase I
         meaning: GO:0007132
         title: meiotic metaphase I
         annotations:
           feature: homologous pairs align
+          succeeded_by: ANAPHASE_I
       ANAPHASE_I:
         description: Anaphase I
         meaning: GO:0007133
         title: meiotic anaphase I
         annotations:
           feature: homologous chromosomes separate
+          succeeded_by: TELOPHASE_I
       TELOPHASE_I:
         description: Telophase I
         meaning: GO:0007134
         title: meiotic telophase I
+        annotations:
+          succeeded_by: PROPHASE_II
       MEIOSIS_II:
         description: Meiosis II (equational division)
         meaning: GO:0007135
@@ -215,16 +221,21 @@ enums:
         description: Prophase II
         meaning: GO:0007136
         title: meiotic prophase II
+        annotations:
+          succeeded_by: METAPHASE_II
       METAPHASE_II:
         description: Metaphase II
         meaning: GO:0007137
         title: meiotic metaphase II
+        annotations:
+          succeeded_by: ANAPHASE_II
       ANAPHASE_II:
         description: Anaphase II
         meaning: GO:0007138
         title: meiotic anaphase II
         annotations:
           feature: sister chromatids separate
+          succeeded_by: TELOPHASE_II
       TELOPHASE_II:
         description: Telophase II
         meaning: GO:0007139
