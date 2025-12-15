@@ -404,7 +404,6 @@ def fetch_label_from_ols(curie: str) -> str | None:
 
 
 if __name__ == "__main__":
-    import sys
     import argparse
 
     parser = argparse.ArgumentParser(description="Describe dynamic enum queries")
