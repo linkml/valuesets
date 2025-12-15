@@ -1,0 +1,153 @@
+name: radiation
+title: Radiation Types Value Sets
+description: >-
+  Value sets for radiation types based on the Environment Ontology (ENVO),
+  including electromagnetic radiation, ionizing radiation, and acoustic radiation.
+id: https://w3id.org/linkml/valuesets/physics/radiation
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  valuesets: https://w3id.org/valuesets/
+  ENVO: http://purl.obolibrary.org/obo/ENVO_
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+default_prefix: valuesets
+slots:
+  radiation_type:
+    description: >-
+      The type of radiation, including electromagnetic, acoustic, and particle radiation.
+    range: RadiationTypeEnum
+  electromagnetic_radiation_type:
+    description: >-
+      The type of electromagnetic radiation, from radio waves to gamma rays.
+    range: ElectromagneticRadiationTypeEnum
+  infrared_radiation_type:
+    description: >-
+      The type of infrared radiation, including near, mid, and far infrared.
+    range: InfraredRadiationTypeEnum
+enums:
+  RadiationTypeEnum:
+    title: Radiation Type
+    description: >-
+      High-level classification of radiation types including electromagnetic,
+      acoustic, and particle radiation. Dynamically populated from ENVO.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    reachable_from:
+      source_ontology: obo:envo
+      source_nodes:
+      - ENVO:01001023
+      include_self: true
+      relationship_types:
+      - rdfs:subClassOf
+  ElectromagneticRadiationTypeEnum:
+    title: Electromagnetic Radiation Type
+    description: >-
+      Types of electromagnetic radiation across the spectrum, from radio waves
+      to gamma rays, including ionizing and non-ionizing radiation.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      ELECTROMAGNETIC_RADIATION:
+        title: electromagnetic radiation
+        description: Radiation during which waves of the electromagnetic field propagate through space
+        meaning: ENVO:01001026
+      IONIZING_RADIATION:
+        title: ionizing radiation
+        description: Electromagnetic radiation with sufficient energy to disrupt molecular bonds or alter electron numbers
+        meaning: ENVO:21001219
+      GAMMA_RAY_RADIATION:
+        title: gamma-ray radiation
+        description: Penetrating electromagnetic radiation emitted from radioactive decay of atomic nuclei
+        meaning: ENVO:21001218
+      X_RAY_RADIATION:
+        title: X-ray radiation
+        description: Penetrating electromagnetic radiation emitted by high-energy electrons falling to lower energy states
+        meaning: ENVO:21001217
+      ULTRAVIOLET_RADIATION:
+        title: ultraviolet radiation
+        description: Electromagnetic radiation at wavelengths between 10 nm and 400 nm
+        meaning: ENVO:21001216
+      VISIBLE_SPECTRUM_RADIATION:
+        title: visible spectrum radiation
+        description: Electromagnetic radiation at wavelengths between 380 nm and 760 nm
+        meaning: ENVO:21001215
+      INFRARED_RADIATION:
+        title: infrared radiation
+        description: Electromagnetic radiation emitted by molecular rotational-vibrational movements, wavelengths 760 nm to 1 mm
+        meaning: ENVO:21001214
+      MICROWAVE_RADIATION:
+        title: microwave radiation
+        description: Electromagnetic radiation that travels line-of-sight and may produce molecular rotation on contact
+        meaning: ENVO:21001212
+      RADIO_WAVE_RADIATION:
+        title: radio wave radiation
+        description: Electromagnetic radiation at wavelengths ranging from millimetre to kilometer scales
+        meaning: ENVO:21001213
+      PHOTOSYNTHETICALLY_ACTIVE_RADIATION:
+        title: photosynthetically active radiation
+        description: Radiant energy in the 400-700 nm wave band usable by organisms for photosynthesis
+        meaning: ENVO:01001864
+      SHORTWAVE_RADIATION:
+        title: shortwave radiation
+        description: Radiant energy in visible, near-ultraviolet, or near-infrared spectra
+        meaning: ENVO:01001861
+      OUTGOING_LONGWAVE_RADIATION:
+        title: outgoing longwave radiation
+        description: Infrared radiation emitted from a planet and atmosphere to space as thermal radiation
+        meaning: ENVO:01001857
+  InfraredRadiationTypeEnum:
+    title: Infrared Radiation Type
+    description: >-
+      Subtypes of infrared radiation based on wavelength ranges.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      NEAR_INFRARED:
+        title: near-infrared radiation
+        description: Infrared radiation with frequencies 120-400 THz, wavelengths 750 nm to 2.5 micrometers
+        meaning: ENVO:03500014
+      MID_INFRARED:
+        title: mid-infrared radiation
+        description: Infrared radiation with frequencies 30-120 THz, wavelengths 2.5-10 micrometers
+        meaning: ENVO:03500013
+      FAR_INFRARED:
+        title: far-infrared radiation
+        description: Infrared radiation with frequencies 300 GHz to 30 THz, wavelengths 10 micrometers to 1 mm
+        meaning: ENVO:03500015
+  AcousticRadiationTypeEnum:
+    title: Acoustic Radiation Type
+    description: >-
+      Types of acoustic (mechanical wave) radiation including ultrasound and infrasound.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      ACOUSTIC_RADIATION:
+        title: acoustic radiation
+        description: Mechanical waves generated by oscillations that radiate through environmental material
+        meaning: ENVO:01001027
+      ULTRASOUND_RADIATION:
+        title: ultrasound radiation
+        description: Acoustic radiation at frequencies above 20 kHz
+        meaning: ENVO:03500012
+      INFRASOUND:
+        title: infrasound
+        description: Acoustic radiation at frequencies below the range of human hearing
+        meaning: ENVO:01001566

@@ -1,5 +1,5 @@
 # Auto generated from valuesets.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-12-06T18:56:38
+# Generation date: 2025-12-15T10:12:30
 # Schema: valuesets
 #
 # id: https://w3id.org/linkml/valuesets
@@ -761,6 +761,16 @@ class OmbEthnicityCategory(EnumDefinitionImpl):
         description="Office of Management and Budget (OMB) ethnicity category codes",
     )
 
+class OccupationEnum(EnumDefinitionImpl):
+    """
+    The principal activity that a person does to earn money. Dynamic enum populated from NCIT occupation hierarchy
+    including medical, professional, service, and military occupations.
+    """
+    _defn = EnumDefinition(
+        name="OccupationEnum",
+        description="""The principal activity that a person does to earn money. Dynamic enum populated from NCIT occupation hierarchy including medical, professional, service, and military occupations.""",
+    )
+
 class CaseOrControlEnum(EnumDefinitionImpl):
 
     CASE = PermissibleValue(
@@ -794,118 +804,168 @@ class SampleProcessingEnum(EnumDefinitionImpl):
         name="SampleProcessingEnum",
     )
 
+class PlannedProcessCompletionStatus(EnumDefinitionImpl):
+    """
+    The completion status of a planned process, indicating whether the process was successfully executed or failed.
+    Based on COB (Core Ontology for Biology) planned process hierarchy.
+    """
+    COMPLETELY_EXECUTED = PermissibleValue(
+        text="COMPLETELY_EXECUTED",
+        title="completely executed planned process",
+        description="A planned process that was successfully completed as intended",
+        meaning=COB["0000035"])
+    FAILED = PermissibleValue(
+        text="FAILED",
+        title="failed planned process",
+        description="A planned process that did not complete successfully",
+        meaning=COB["0000083"])
+
+    _defn = EnumDefinition(
+        name="PlannedProcessCompletionStatus",
+        description="""The completion status of a planned process, indicating whether the process was successfully executed or failed. Based on COB (Core Ontology for Biology) planned process hierarchy.""",
+    )
+
 class GOEvidenceCode(EnumDefinitionImpl):
     """
-    Gene Ontology evidence codes mapped to Evidence and Conclusion Ontology (ECO) terms
+    Gene Ontology evidence codes used to describe the type of support for GO annotations. Each code maps to the
+    Evidence and Conclusion Ontology (ECO). Evidence codes are categorized by whether they represent experimental
+    evidence, computational analysis, phylogenetic inference, author statements, or electronic annotation. All codes
+    except IEA represent manual curation.
     """
     EXP = PermissibleValue(
         text="EXP",
         title="Inferred from Experiment",
+        description="General experimental evidence supporting a GO annotation",
         meaning=ECO["0000269"])
     IDA = PermissibleValue(
         text="IDA",
         title="Inferred from Direct Assay",
+        description="Evidence from a direct assay for the presence or activity of a gene product",
         meaning=ECO["0000314"])
     IPI = PermissibleValue(
         text="IPI",
         title="Inferred from Physical Interaction",
+        description="Evidence from physical interaction between gene products",
         meaning=ECO["0000353"])
     IMP = PermissibleValue(
         text="IMP",
         title="Inferred from Mutant Phenotype",
+        description="Evidence from the phenotype of a mutant allele",
         meaning=ECO["0000315"])
     IGI = PermissibleValue(
         text="IGI",
         title="Inferred from Genetic Interaction",
+        description="Evidence from genetic interaction between genes",
         meaning=ECO["0000316"])
     IEP = PermissibleValue(
         text="IEP",
         title="Inferred from Expression Pattern",
+        description="Evidence from gene expression pattern data",
         meaning=ECO["0000270"])
     HTP = PermissibleValue(
         text="HTP",
         title="Inferred from High Throughput Experiment",
+        description="Evidence from high-throughput experimental methods",
         meaning=ECO["0006056"])
     HDA = PermissibleValue(
         text="HDA",
         title="Inferred from High Throughput Direct Assay",
+        description="Evidence from high-throughput direct assay experiments",
         meaning=ECO["0007005"])
     HMP = PermissibleValue(
         text="HMP",
         title="Inferred from High Throughput Mutant Phenotype",
+        description="Evidence from high-throughput mutant phenotype screening",
         meaning=ECO["0007001"])
     HGI = PermissibleValue(
         text="HGI",
         title="Inferred from High Throughput Genetic Interaction",
+        description="Evidence from high-throughput genetic interaction screening",
         meaning=ECO["0007003"])
     HEP = PermissibleValue(
         text="HEP",
         title="Inferred from High Throughput Expression Pattern",
+        description="Evidence from high-throughput expression profiling",
         meaning=ECO["0007007"])
     IBA = PermissibleValue(
         text="IBA",
         title="Inferred from Biological aspect of Ancestor",
+        description="Evidence from conservation of biological aspect in an ancestral sequence",
         meaning=ECO["0000318"])
     IBD = PermissibleValue(
         text="IBD",
         title="Inferred from Biological aspect of Descendant",
+        description="Evidence from conservation of biological aspect in a descendant sequence",
         meaning=ECO["0000319"])
     IKR = PermissibleValue(
         text="IKR",
         title="Inferred from Key Residues",
+        description="Evidence from phylogenetic analysis showing loss of key residues",
         meaning=ECO["0000320"])
     IRD = PermissibleValue(
         text="IRD",
         title="Inferred from Rapid Divergence",
+        description="Evidence from rapid divergence from ancestral sequence",
         meaning=ECO["0000321"])
     ISS = PermissibleValue(
         text="ISS",
         title="Inferred from Sequence or structural Similarity",
+        description="Evidence from sequence or structural similarity to another annotated gene product",
         meaning=ECO["0000250"])
     ISO = PermissibleValue(
         text="ISO",
         title="Inferred from Sequence Orthology",
+        description="Evidence from orthology to an experimentally characterized gene product",
         meaning=ECO["0000266"])
     ISA = PermissibleValue(
         text="ISA",
         title="Inferred from Sequence Alignment",
+        description="Evidence from sequence alignment to an annotated gene product",
         meaning=ECO["0000247"])
     ISM = PermissibleValue(
         text="ISM",
         title="Inferred from Sequence Model",
+        description="Evidence from match to a sequence model (e.g., HMM, profile)",
         meaning=ECO["0000255"])
     IGC = PermissibleValue(
         text="IGC",
         title="Inferred from Genomic Context",
+        description="Evidence from genomic context such as synteny or gene neighborhood",
         meaning=ECO["0000317"])
     RCA = PermissibleValue(
         text="RCA",
         title="Inferred from Reviewed Computational Analysis",
+        description="Evidence from computational analysis that has been reviewed by a curator",
         meaning=ECO["0000245"])
     TAS = PermissibleValue(
         text="TAS",
         title="Traceable Author Statement",
+        description="""Evidence from an author statement in a published paper that can be traced to the original source""",
         meaning=ECO["0000304"])
     NAS = PermissibleValue(
         text="NAS",
         title="Non-traceable Author Statement",
+        description="Evidence from an author statement that cannot be traced to the experimental source",
         meaning=ECO["0000303"])
     IC = PermissibleValue(
         text="IC",
         title="Inferred by Curator",
+        description="Evidence inferred by a curator based on existing annotations and biological knowledge",
         meaning=ECO["0000305"])
     ND = PermissibleValue(
         text="ND",
         title="No biological Data available",
+        description="Indicates that no biological data is available to support an annotation",
         meaning=ECO["0000307"])
     IEA = PermissibleValue(
         text="IEA",
         title="Inferred from Electronic Annotation",
+        description="Evidence from automated electronic annotation pipelines without manual curation",
         meaning=ECO["0000501"])
 
     _defn = EnumDefinition(
         name="GOEvidenceCode",
-        description="Gene Ontology evidence codes mapped to Evidence and Conclusion Ontology (ECO) terms",
+        description="""Gene Ontology evidence codes used to describe the type of support for GO annotations. Each code maps to the Evidence and Conclusion Ontology (ECO). Evidence codes are categorized by whether they represent experimental evidence, computational analysis, phylogenetic inference, author statements, or electronic annotation. All codes except IEA represent manual curation.""",
     )
 
 class GOElectronicMethods(EnumDefinitionImpl):
@@ -4196,8 +4256,7 @@ class PlantSexEnum(EnumDefinitionImpl):
     DIOECIOUS = PermissibleValue(
         text="DIOECIOUS",
         title="Dioecious",
-        description="Having male and female flowers on separate plants",
-        meaning=GSSO["011872"])
+        description="Having male and female flowers on separate plants")
     GYNODIOECIOUS = PermissibleValue(
         text="GYNODIOECIOUS",
         title="Gynodioecious",
@@ -4212,9 +4271,9 @@ class PlantSexEnum(EnumDefinitionImpl):
         description="Having female and hermaphrodite flowers on the same plant")
     HERMAPHRODITIC = PermissibleValue(
         text="HERMAPHRODITIC",
-        title="hermaphroditic organism",
+        title="Hermaphroditic",
         description="Having both male and female reproductive organs",
-        meaning=UBERON["0007197"])
+        meaning=PATO["0001340"])
     IMPERFECT = PermissibleValue(
         text="IMPERFECT",
         title="Imperfect",
@@ -4226,8 +4285,7 @@ class PlantSexEnum(EnumDefinitionImpl):
     MONOECIOUS = PermissibleValue(
         text="MONOECIOUS",
         title="Monoecious",
-        description="Having male and female flowers on the same plant",
-        meaning=GSSO["011868"])
+        description="Having male and female flowers on the same plant")
     PERFECT = PermissibleValue(
         text="PERFECT",
         title="Perfect",
@@ -6536,25 +6594,148 @@ class GridType(EnumDefinitionImpl):
         description="Types of electrical grid systems",
     )
 
+class BatteryType(EnumDefinitionImpl):
+    """
+    Types of battery technologies for energy storage
+    """
+    LITHIUM_ION = PermissibleValue(
+        text="LITHIUM_ION",
+        description="Lithium-ion battery")
+    LITHIUM_IRON_PHOSPHATE = PermissibleValue(
+        text="LITHIUM_IRON_PHOSPHATE",
+        description="Lithium iron phosphate (LFP) battery")
+    LITHIUM_POLYMER = PermissibleValue(
+        text="LITHIUM_POLYMER",
+        description="Lithium polymer battery")
+    LEAD_ACID = PermissibleValue(
+        text="LEAD_ACID",
+        description="Lead-acid battery")
+    NICKEL_METAL_HYDRIDE = PermissibleValue(
+        text="NICKEL_METAL_HYDRIDE",
+        description="Nickel-metal hydride battery")
+    NICKEL_CADMIUM = PermissibleValue(
+        text="NICKEL_CADMIUM",
+        description="Nickel-cadmium battery")
+    SODIUM_ION = PermissibleValue(
+        text="SODIUM_ION",
+        description="Sodium-ion battery")
+    SOLID_STATE = PermissibleValue(
+        text="SOLID_STATE",
+        description="Solid-state battery")
+    VANADIUM_REDOX_FLOW = PermissibleValue(
+        text="VANADIUM_REDOX_FLOW",
+        description="Vanadium redox flow battery")
+    ZINC_BROMINE_FLOW = PermissibleValue(
+        text="ZINC_BROMINE_FLOW",
+        description="Zinc-bromine flow battery")
+    IRON_AIR = PermissibleValue(
+        text="IRON_AIR",
+        description="Iron-air battery")
+    ZINC_AIR = PermissibleValue(
+        text="ZINC_AIR",
+        description="Zinc-air battery")
+
+    _defn = EnumDefinition(
+        name="BatteryType",
+        description="Types of battery technologies for energy storage",
+    )
+
+class PVCellType(EnumDefinitionImpl):
+    """
+    Types of photovoltaic cell technologies
+    """
+    MONOCRYSTALLINE_SILICON = PermissibleValue(
+        text="MONOCRYSTALLINE_SILICON",
+        description="Monocrystalline silicon (mono-Si) cells")
+    POLYCRYSTALLINE_SILICON = PermissibleValue(
+        text="POLYCRYSTALLINE_SILICON",
+        description="Polycrystalline silicon (poly-Si) cells")
+    PASSIVATED_EMITTER_REAR_CELL = PermissibleValue(
+        text="PASSIVATED_EMITTER_REAR_CELL",
+        description="Passivated Emitter and Rear Cell (PERC)")
+    HETEROJUNCTION = PermissibleValue(
+        text="HETEROJUNCTION",
+        description="Heterojunction (HJT) cells")
+    TUNNEL_OXIDE_PASSIVATED_CONTACT = PermissibleValue(
+        text="TUNNEL_OXIDE_PASSIVATED_CONTACT",
+        description="Tunnel Oxide Passivated Contact (TOPCon) cells")
+    INTERDIGITATED_BACK_CONTACT = PermissibleValue(
+        text="INTERDIGITATED_BACK_CONTACT",
+        description="Interdigitated Back Contact (IBC) cells")
+    CADMIUM_TELLURIDE = PermissibleValue(
+        text="CADMIUM_TELLURIDE",
+        description="Cadmium telluride (CdTe) thin-film cells")
+    COPPER_INDIUM_GALLIUM_SELENIDE = PermissibleValue(
+        text="COPPER_INDIUM_GALLIUM_SELENIDE",
+        description="Copper indium gallium selenide (CIGS) thin-film cells")
+    AMORPHOUS_SILICON = PermissibleValue(
+        text="AMORPHOUS_SILICON",
+        description="Amorphous silicon (a-Si) thin-film cells")
+    GALLIUM_ARSENIDE = PermissibleValue(
+        text="GALLIUM_ARSENIDE",
+        description="Gallium arsenide (GaAs) cells")
+    PEROVSKITE = PermissibleValue(
+        text="PEROVSKITE",
+        description="Perovskite solar cells")
+    ORGANIC = PermissibleValue(
+        text="ORGANIC",
+        description="Organic photovoltaic (OPV) cells")
+    TANDEM = PermissibleValue(
+        text="TANDEM",
+        description="Tandem/multi-junction cells")
+
+    _defn = EnumDefinition(
+        name="PVCellType",
+        description="Types of photovoltaic cell technologies",
+    )
+
+class PVSystemType(EnumDefinitionImpl):
+    """
+    Types of photovoltaic system installations
+    """
+    ROOFTOP_RESIDENTIAL = PermissibleValue(
+        text="ROOFTOP_RESIDENTIAL",
+        description="Residential rooftop PV system")
+    ROOFTOP_COMMERCIAL = PermissibleValue(
+        text="ROOFTOP_COMMERCIAL",
+        description="Commercial/industrial rooftop PV system")
+    GROUND_MOUNTED = PermissibleValue(
+        text="GROUND_MOUNTED",
+        description="Ground-mounted utility-scale PV system")
+    FLOATING = PermissibleValue(
+        text="FLOATING",
+        description="Floating PV system (floatovoltaics)")
+    BUILDING_INTEGRATED = PermissibleValue(
+        text="BUILDING_INTEGRATED",
+        description="Building-integrated PV (BIPV)")
+    AGRIVOLTAICS = PermissibleValue(
+        text="AGRIVOLTAICS",
+        description="Agrivoltaic system (dual-use with agriculture)")
+    CARPORT = PermissibleValue(
+        text="CARPORT",
+        description="Solar carport/parking canopy")
+    TRACKER_SINGLE_AXIS = PermissibleValue(
+        text="TRACKER_SINGLE_AXIS",
+        description="Single-axis tracking system")
+    TRACKER_DUAL_AXIS = PermissibleValue(
+        text="TRACKER_DUAL_AXIS",
+        description="Dual-axis tracking system")
+    CONCENTRATING = PermissibleValue(
+        text="CONCENTRATING",
+        description="Concentrating PV (CPV) system")
+
+    _defn = EnumDefinition(
+        name="PVSystemType",
+        description="Types of photovoltaic system installations",
+    )
+
 class EnergyStorageType(EnumDefinitionImpl):
     """
-    Types of energy storage systems
+    Types of energy storage systems (categories)
     """
-    LITHIUM_ION_BATTERY = PermissibleValue(
-        text="LITHIUM_ION_BATTERY",
-        description="Lithium-ion battery")
-    LEAD_ACID_BATTERY = PermissibleValue(
-        text="LEAD_ACID_BATTERY",
-        description="Lead-acid battery")
-    FLOW_BATTERY = PermissibleValue(
-        text="FLOW_BATTERY",
-        description="Flow battery (e.g., vanadium redox)")
-    SOLID_STATE_BATTERY = PermissibleValue(
-        text="SOLID_STATE_BATTERY",
-        description="Solid-state battery")
-    SODIUM_ION_BATTERY = PermissibleValue(
-        text="SODIUM_ION_BATTERY",
-        description="Sodium-ion battery")
+    BATTERY = PermissibleValue(
+        text="BATTERY",
+        description="Battery storage (see BatteryType for specific chemistries)")
     PUMPED_HYDRO = PermissibleValue(
         text="PUMPED_HYDRO",
         description="Pumped hydroelectric storage")
@@ -6591,7 +6772,7 @@ class EnergyStorageType(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
         name="EnergyStorageType",
-        description="Types of energy storage systems",
+        description="Types of energy storage systems (categories)",
     )
 
 class EmissionScope(EnumDefinitionImpl):
@@ -21328,6 +21509,676 @@ class GeneticRelationship(EnumDefinitionImpl):
         description="Genetic relationship types for pedigree analysis",
     )
 
+class PediatricOncologyDiagnosisCategory(EnumDefinitionImpl):
+    """
+    High-level groupings for pediatric cancer diagnoses per CCDI CDE 16607972. Designed for cohort aggregation across
+    federated data resources. Each diagnosis maps to a single dominant category.
+    """
+    ATYPICAL_TERATOID_RHABDOID_TUMOR = PermissibleValue(
+        text="ATYPICAL_TERATOID_RHABDOID_TUMOR",
+        title="Atypical Teratoid/Rhabdoid Tumors",
+        description="""Highly malignant embryonal CNS tumor characterized by loss of SMARCB1 (INI1) or SMARCA4 expression. Predominantly occurs in young children.""",
+        meaning=NCIT["C6807"])
+    CHOROID_PLEXUS_TUMOR = PermissibleValue(
+        text="CHOROID_PLEXUS_TUMOR",
+        title="Choroid Plexus Tumors",
+        description="""Neoplasms arising from the choroid plexus epithelium, including papilloma, atypical papilloma, and carcinoma.""",
+        meaning=NCIT["C3698"])
+    CNS_GERM_CELL_TUMOR = PermissibleValue(
+        text="CNS_GERM_CELL_TUMOR",
+        title="CNS Germ Cell Tumors",
+        description="""Germ cell tumors arising within the central nervous system, including germinoma and non-germinomatous germ cell tumors.""",
+        meaning=NCIT["C6286"])
+    CNS_SARCOMA = PermissibleValue(
+        text="CNS_SARCOMA",
+        title="CNS Sarcomas",
+        description="""Sarcomas arising primarily in the central nervous system, including Ewing sarcoma and rhabdomyosarcoma of CNS.""",
+        meaning=NCIT["C121624"])
+    CRANIOPHARYNGIOMA = PermissibleValue(
+        text="CRANIOPHARYNGIOMA",
+        title="Craniopharyngiomas",
+        description="""Benign epithelial tumors arising from remnants of Rathke pouch, including adamantinomatous and papillary subtypes.""",
+        meaning=NCIT["C2998"])
+    EPENDYMOMA = PermissibleValue(
+        text="EPENDYMOMA",
+        title="Ependymoma",
+        description="""Glial tumors arising from ependymal cells lining the ventricular system and central canal. Includes molecular subtypes defined by WHO CNS5.""",
+        meaning=NCIT["C3017"])
+    GLIONEURONAL_AND_NEURONAL_TUMOR = PermissibleValue(
+        text="GLIONEURONAL_AND_NEURONAL_TUMOR",
+        title="Glioneuronal and Neuronal Tumors",
+        description="""Tumors with neuronal differentiation including ganglioglioma, dysembryoplastic neuroepithelial tumor (DNET), and central neurocytoma.""",
+        meaning=NCIT["C6927"])
+    HIGH_GRADE_GLIOMA = PermissibleValue(
+        text="HIGH_GRADE_GLIOMA",
+        title="High-Grade Gliomas",
+        description="""Aggressive glial tumors including pediatric-type diffuse high-grade gliomas (H3 K27-altered, H3 G34-mutant, and H3/IDH-wildtype), as well as glioblastoma.""",
+        meaning=NCIT["C129355"])
+    LOW_GRADE_GLIOMA = PermissibleValue(
+        text="LOW_GRADE_GLIOMA",
+        title="Low-Grade Gliomas",
+        description="""Indolent glial tumors including pilocytic astrocytoma and pediatric-type diffuse low-grade gliomas (MYB/MYBL1-altered, MAPK pathway-altered).""",
+        meaning=NCIT["C129354"])
+    MEDULLOBLASTOMA = PermissibleValue(
+        text="MEDULLOBLASTOMA",
+        title="Medulloblastoma",
+        description="""Embryonal tumor of the cerebellum, classified by molecular subgroups (WNT-activated, SHH-activated, Group 3, Group 4) per WHO CNS5.""",
+        meaning=NCIT["C3222"])
+    OTHER_CNS_EMBRYONAL_TUMOR = PermissibleValue(
+        text="OTHER_CNS_EMBRYONAL_TUMOR",
+        title="Other CNS Embryonal Tumors",
+        description="""Embryonal tumors of the CNS other than medulloblastoma and ATRT, including embryonal tumor with multilayered rosettes (ETMR), CNS neuroblastoma, and pineoblastoma.""",
+        meaning=NCIT["C6774"])
+    OTHER_GLIOMA = PermissibleValue(
+        text="OTHER_GLIOMA",
+        title="Other Gliomas",
+        description="""Glial tumors not classified as high-grade or low-grade glioma, including angiocentric glioma and astroblastoma.""",
+        meaning=NCIT["C3059"])
+    OTHER_BRAIN_TUMOR = PermissibleValue(
+        text="OTHER_BRAIN_TUMOR",
+        title="Other Brain Tumors",
+        description="""CNS tumors not fitting other brain tumor categories, including meningioma, schwannoma, and hemangioblastoma.""",
+        meaning=NCIT["C2907"])
+    LYMPHOBLASTIC_LEUKEMIA = PermissibleValue(
+        text="LYMPHOBLASTIC_LEUKEMIA",
+        title="Lymphoblastic Leukemia",
+        description="""Acute lymphoblastic leukemia (ALL) including B-ALL and T-ALL with all molecular subtypes (BCR::ABL1, ETV6::RUNX1, KMT2A-r, DUX4, MEF2D, etc.).""",
+        meaning=NCIT["C3167"])
+    MYELOID_LEUKEMIA = PermissibleValue(
+        text="MYELOID_LEUKEMIA",
+        title="Myeloid Leukemia",
+        description="""Acute myeloid leukemia (AML) and related myeloid neoplasms including AML with defining genetic abnormalities, therapy-related AML, and juvenile myelomonocytic leukemia (JMML).""",
+        meaning=NCIT["C3171"])
+    HODGKIN_LYMPHOMA = PermissibleValue(
+        text="HODGKIN_LYMPHOMA",
+        title="Hodgkin Lymphoma",
+        description="""Lymphoid neoplasm characterized by Reed-Sternberg cells, including classical Hodgkin lymphoma and nodular lymphocyte predominant Hodgkin lymphoma.""",
+        meaning=NCIT["C9357"])
+    NON_HODGKIN_LYMPHOMA = PermissibleValue(
+        text="NON_HODGKIN_LYMPHOMA",
+        title="Non-Hodgkin Lymphoma",
+        description="""Lymphoid neoplasms other than Hodgkin lymphoma, including Burkitt lymphoma, diffuse large B-cell lymphoma, anaplastic large cell lymphoma, and lymphoblastic lymphoma.""",
+        meaning=NCIT["C3211"])
+    LYMPHOPROLIFERATIVE_DISEASE = PermissibleValue(
+        text="LYMPHOPROLIFERATIVE_DISEASE",
+        title="Lymphoproliferative Diseases",
+        description="""Disorders characterized by abnormal lymphocyte proliferation, including post-transplant lymphoproliferative disorder (PTLD) and hemophagocytic lymphohistiocytosis (HLH).""",
+        meaning=NCIT["C3138"])
+    OTHER_HEME_TUMOR = PermissibleValue(
+        text="OTHER_HEME_TUMOR",
+        title="Other Heme Tumors",
+        description="""Hematologic malignancies not classified elsewhere, including histiocytic disorders, myelodysplastic syndromes, and myeloproliferative neoplasms.""",
+        meaning=NCIT["C27134"])
+    NEUROBLASTOMA = PermissibleValue(
+        text="NEUROBLASTOMA",
+        title="Neuroblastoma",
+        description="""Embryonal tumor of the peripheral sympathetic nervous system, arising from neural crest cells. Includes ganglioneuroblastoma and ganglioneuroma.""",
+        meaning=NCIT["C3270"])
+    OSTEOSARCOMA = PermissibleValue(
+        text="OSTEOSARCOMA",
+        title="Osteosarcoma",
+        description="""Primary malignant bone tumor characterized by osteoid production, including conventional, telangiectatic, and small cell variants.""",
+        meaning=NCIT["C9145"])
+    EWING_SARCOMA = PermissibleValue(
+        text="EWING_SARCOMA",
+        title="Ewing Sarcoma",
+        description="""Small round cell sarcoma typically harboring EWSR1 rearrangements, arising in bone or soft tissue. Includes Ewing sarcoma family of tumors.""",
+        meaning=NCIT["C4817"])
+    RHABDOMYOSARCOMA = PermissibleValue(
+        text="RHABDOMYOSARCOMA",
+        title="Rhabdomyosarcoma",
+        description="""Malignant soft tissue tumor with skeletal muscle differentiation, including embryonal, alveolar, and spindle cell/sclerosing subtypes.""",
+        meaning=NCIT["C3359"])
+    SOFT_TISSUE_TUMOR = PermissibleValue(
+        text="SOFT_TISSUE_TUMOR",
+        title="Soft Tissue Tumors",
+        description="""Soft tissue neoplasms other than rhabdomyosarcoma and Ewing sarcoma, including synovial sarcoma, fibrosarcoma, and other sarcomas. Also includes non-sarcomatous soft tissue tumors.""",
+        meaning=NCIT["C3399"])
+    RHABDOID_TUMOR = PermissibleValue(
+        text="RHABDOID_TUMOR",
+        title="Rhabdoid Tumors",
+        description="""Highly aggressive tumors characterized by SMARCB1 loss, occurring outside the CNS (extracranial rhabdoid tumor). Includes malignant rhabdoid tumor of kidney.""",
+        meaning=NCIT["C3769"])
+    RENAL_TUMOR = PermissibleValue(
+        text="RENAL_TUMOR",
+        title="Renal Tumors",
+        description="""Kidney tumors including Wilms tumor (nephroblastoma), clear cell sarcoma of kidney, renal cell carcinoma, and congenital mesoblastic nephroma.""",
+        meaning=NCIT["C7548"])
+    RETINOBLASTOMA = PermissibleValue(
+        text="RETINOBLASTOMA",
+        title="Retinoblastoma",
+        description="""Malignant neoplasm of the retina arising from developing retinal cells, associated with RB1 mutations.""",
+        meaning=NCIT["C7541"])
+    GERM_CELL_TUMOR = PermissibleValue(
+        text="GERM_CELL_TUMOR",
+        title="Germ Cell Tumors",
+        description="""Tumors arising from primordial germ cells, occurring in gonadal or extragonadal sites. Includes teratoma, yolk sac tumor, germinoma, choriocarcinoma, and mixed germ cell tumors. Excludes CNS germ cell tumors.""",
+        meaning=NCIT["C3708"])
+    ENDOCRINE_AND_NEUROENDOCRINE_TUMOR = PermissibleValue(
+        text="ENDOCRINE_AND_NEUROENDOCRINE_TUMOR",
+        title="Endocrine and Neuroendocrine Tumors",
+        description="""Tumors of endocrine glands and neuroendocrine cells, including thyroid carcinoma, adrenocortical carcinoma, pheochromocytoma, and paraganglioma.""",
+        meaning=NCIT["C3010"])
+    OTHER_SOLID_TUMOR = PermissibleValue(
+        text="OTHER_SOLID_TUMOR",
+        title="Other Solid Tumors",
+        description="""Solid tumors not classified elsewhere, including hepatoblastoma, pleuropulmonary blastoma, nasopharyngeal carcinoma, melanoma, and carcinomas.""",
+        meaning=NCIT["C9107"])
+
+    _defn = EnumDefinition(
+        name="PediatricOncologyDiagnosisCategory",
+        description="""High-level groupings for pediatric cancer diagnoses per CCDI CDE 16607972. Designed for cohort aggregation across federated data resources. Each diagnosis maps to a single dominant category.""",
+    )
+
+class ICCC3MainGroup(EnumDefinitionImpl):
+    """
+    The 12 main diagnostic groups of the International Classification of Childhood Cancer, Third Edition. Based on
+    tumor morphology and primary site with emphasis on morphology.
+    """
+    I_LEUKEMIAS_MYELOPROLIFERATIVE_MYELODYSPLASTIC = PermissibleValue(
+        text="I_LEUKEMIAS_MYELOPROLIFERATIVE_MYELODYSPLASTIC",
+        title="I. Leukemias, myeloproliferative diseases, and myelodysplastic diseases",
+        description="""Includes lymphoid leukemias, acute myeloid leukemias, chronic myeloproliferative diseases, myelodysplastic syndrome and other myeloproliferative diseases, and unspecified and other specified leukemias.""",
+        meaning=NCIT["C3161"])
+    II_LYMPHOMAS_RETICULOENDOTHELIAL = PermissibleValue(
+        text="II_LYMPHOMAS_RETICULOENDOTHELIAL",
+        title="II. Lymphomas and reticuloendothelial neoplasms",
+        description="""Includes Hodgkin lymphomas, non-Hodgkin lymphomas (except Burkitt lymphoma), Burkitt lymphoma, and miscellaneous lymphoreticular neoplasms.""",
+        meaning=NCIT["C7058"])
+    III_CNS_INTRACRANIAL_INTRASPINAL = PermissibleValue(
+        text="III_CNS_INTRACRANIAL_INTRASPINAL",
+        title="III. CNS and miscellaneous intracranial and intraspinal neoplasms",
+        description="""Includes ependymomas and choroid plexus tumor, astrocytomas, intracranial and intraspinal embryonal tumors, other gliomas, other specified intracranial and intraspinal neoplasms, and unspecified intracranial and intraspinal neoplasms. Also includes nonmalignant CNS tumors.""",
+        meaning=NCIT["C2907"])
+    IV_NEUROBLASTOMA_PERIPHERAL_NERVOUS = PermissibleValue(
+        text="IV_NEUROBLASTOMA_PERIPHERAL_NERVOUS",
+        title="IV. Neuroblastoma and other peripheral nervous cell tumors",
+        description="Includes neuroblastoma and ganglioneuroblastoma, and other peripheral nervous cell tumors.",
+        meaning=NCIT["C3270"])
+    V_RETINOBLASTOMA = PermissibleValue(
+        text="V_RETINOBLASTOMA",
+        title="V. Retinoblastoma",
+        description="Malignant neoplasm of the retina. Single group with no subgroups.",
+        meaning=NCIT["C7541"])
+    VI_RENAL_TUMORS = PermissibleValue(
+        text="VI_RENAL_TUMORS",
+        title="VI. Renal tumors",
+        description="""Includes nephroblastoma and other nonepithelial renal tumors, renal carcinomas, and unspecified malignant renal tumors.""",
+        meaning=NCIT["C7548"])
+    VII_HEPATIC_TUMORS = PermissibleValue(
+        text="VII_HEPATIC_TUMORS",
+        title="VII. Hepatic tumors",
+        description="Includes hepatoblastoma, hepatic carcinomas, and unspecified malignant hepatic tumors.",
+        meaning=NCIT["C7927"])
+    VIII_MALIGNANT_BONE_TUMORS = PermissibleValue(
+        text="VIII_MALIGNANT_BONE_TUMORS",
+        title="VIII. Malignant bone tumors",
+        description="""Includes osteosarcomas, chondrosarcomas, Ewing tumor and related sarcomas of bone, other specified malignant bone tumors, and unspecified malignant bone tumors.""",
+        meaning=NCIT["C4882"])
+    IX_SOFT_TISSUE_SARCOMAS = PermissibleValue(
+        text="IX_SOFT_TISSUE_SARCOMAS",
+        title="IX. Soft tissue and other extraosseous sarcomas",
+        description="""Includes rhabdomyosarcomas, fibrosarcomas/peripheral nerve sheath tumors/other fibrous neoplasms, Kaposi sarcoma, other specified soft tissue sarcomas, and unspecified soft tissue sarcomas.""",
+        meaning=NCIT["C9306"])
+    X_GERM_CELL_GONADAL = PermissibleValue(
+        text="X_GERM_CELL_GONADAL",
+        title="X. Germ cell tumors, trophoblastic tumors, and neoplasms of gonads",
+        description="""Includes intracranial and intraspinal germ cell tumors, malignant extracranial and extragonadal germ cell tumors, malignant gonadal germ cell tumors, gonadal carcinomas, and other and unspecified malignant gonadal tumors.""",
+        meaning=NCIT["C3708"])
+    XI_EPITHELIAL_MELANOMA = PermissibleValue(
+        text="XI_EPITHELIAL_MELANOMA",
+        title="XI. Other malignant epithelial neoplasms and malignant melanomas",
+        description="""Includes adrenocortical carcinomas, thyroid carcinomas, nasopharyngeal carcinomas, malignant melanomas, skin carcinomas, and other and unspecified carcinomas.""",
+        meaning=NCIT["C3709"])
+    XII_OTHER_UNSPECIFIED = PermissibleValue(
+        text="XII_OTHER_UNSPECIFIED",
+        title="XII. Other and unspecified malignant neoplasms",
+        description="""Includes other specified malignant tumors and other unspecified malignant tumors not classifiable in groups I-XI.""",
+        meaning=NCIT["C3262"])
+
+    _defn = EnumDefinition(
+        name="ICCC3MainGroup",
+        description="""The 12 main diagnostic groups of the International Classification of Childhood Cancer, Third Edition. Based on tumor morphology and primary site with emphasis on morphology.""",
+    )
+
+class ICCC3Subgroup(EnumDefinitionImpl):
+    """
+    The 47 diagnostic subgroups of the International Classification of Childhood Cancer, Third Edition. These provide
+    more detailed classification within each of the 12 main groups.
+    """
+    Ia_LYMPHOID_LEUKEMIAS = PermissibleValue(
+        text="Ia_LYMPHOID_LEUKEMIAS",
+        title="Ia. Lymphoid leukemias",
+        description="""Precursor cell lymphoblastic leukemia, NOS; precursor cell lymphoblastic leukemia, B-cell; precursor cell lymphoblastic leukemia, T-cell; Burkitt cell leukemia; and other lymphoid leukemias.""",
+        meaning=NCIT["C3167"])
+    Ib_ACUTE_MYELOID_LEUKEMIAS = PermissibleValue(
+        text="Ib_ACUTE_MYELOID_LEUKEMIAS",
+        title="Ib. Acute myeloid leukemias",
+        description="""Acute myeloid leukemia and variants including AML with maturation, acute promyelocytic leukemia, acute myelomonocytic leukemia, acute monoblastic leukemia, acute megakaryoblastic leukemia, etc.""",
+        meaning=NCIT["C3171"])
+    Ic_CHRONIC_MYELOPROLIFERATIVE = PermissibleValue(
+        text="Ic_CHRONIC_MYELOPROLIFERATIVE",
+        title="Ic. Chronic myeloproliferative diseases",
+        description="""Chronic myeloid leukemia, NOS; juvenile myelomonocytic leukemia; and other chronic myeloproliferative diseases.""",
+        meaning=NCIT["C4345"])
+    Id_MYELODYSPLASTIC_OTHER_MYELOPROLIFERATIVE = PermissibleValue(
+        text="Id_MYELODYSPLASTIC_OTHER_MYELOPROLIFERATIVE",
+        title="Id. Myelodysplastic syndrome and other myeloproliferative diseases",
+        description="""Myelodysplastic syndrome, NOS; refractory anemia; refractory anemia with ringed sideroblasts; refractory anemia with excess blasts.""",
+        meaning=NCIT["C3247"])
+    Ie_UNSPECIFIED_OTHER_LEUKEMIAS = PermissibleValue(
+        text="Ie_UNSPECIFIED_OTHER_LEUKEMIAS",
+        title="Ie. Unspecified and other specified leukemias",
+        description="Leukemia, NOS and other specified leukemias not elsewhere classified.",
+        meaning=NCIT["C3161"])
+    IIa_HODGKIN_LYMPHOMAS = PermissibleValue(
+        text="IIa_HODGKIN_LYMPHOMAS",
+        title="IIa. Hodgkin lymphomas",
+        description="Classical Hodgkin lymphoma and nodular lymphocyte predominant Hodgkin lymphoma.",
+        meaning=NCIT["C9357"])
+    IIb_NON_HODGKIN_LYMPHOMAS = PermissibleValue(
+        text="IIb_NON_HODGKIN_LYMPHOMAS",
+        title="IIb. Non-Hodgkin lymphomas (except Burkitt lymphoma)",
+        description="""Diffuse large B-cell lymphoma, follicular lymphoma, peripheral T-cell lymphoma, anaplastic large cell lymphoma, and other non-Hodgkin lymphomas.""",
+        meaning=NCIT["C3211"])
+    IIc_BURKITT_LYMPHOMA = PermissibleValue(
+        text="IIc_BURKITT_LYMPHOMA",
+        title="IIc. Burkitt lymphoma",
+        description="Burkitt lymphoma and Burkitt-like lymphoma.",
+        meaning=NCIT["C8150"])
+    IId_MISC_LYMPHORETICULAR = PermissibleValue(
+        text="IId_MISC_LYMPHORETICULAR",
+        title="IId. Miscellaneous lymphoreticular neoplasms",
+        description="""Lymphoreticular neoplasms not elsewhere classified including lymphomatoid granulomatosis and post-transplant lymphoproliferative disorder.""",
+        meaning=NCIT["C27134"])
+    IIIa_EPENDYMOMAS = PermissibleValue(
+        text="IIIa_EPENDYMOMAS",
+        title="IIIa. Ependymomas and choroid plexus tumor",
+        description="""Ependymoma, anaplastic ependymoma, myxopapillary ependymoma, and choroid plexus papilloma and carcinoma.""",
+        meaning=NCIT["C3017"])
+    IIIb_ASTROCYTOMAS = PermissibleValue(
+        text="IIIb_ASTROCYTOMAS",
+        title="IIIb. Astrocytomas",
+        description="""Pilocytic astrocytoma, diffuse astrocytoma, anaplastic astrocytoma, glioblastoma, and other astrocytic tumors.""",
+        meaning=NCIT["C60781"])
+    IIIc_INTRACRANIAL_EMBRYONAL = PermissibleValue(
+        text="IIIc_INTRACRANIAL_EMBRYONAL",
+        title="IIIc. Intracranial and intraspinal embryonal tumors",
+        description="""Medulloblastoma, primitive neuroectodermal tumor, medulloepithelioma, atypical teratoid/rhabdoid tumor, and other embryonal tumors.""",
+        meaning=NCIT["C6774"])
+    IIId_OTHER_GLIOMAS = PermissibleValue(
+        text="IIId_OTHER_GLIOMAS",
+        title="IIId. Other gliomas",
+        description="""Oligodendroglioma, anaplastic oligodendroglioma, mixed glioma, and other gliomas not elsewhere classified.""",
+        meaning=NCIT["C3059"])
+    IIIe_OTHER_INTRACRANIAL_INTRASPINAL = PermissibleValue(
+        text="IIIe_OTHER_INTRACRANIAL_INTRASPINAL",
+        title="IIIe. Other specified intracranial and intraspinal neoplasms",
+        description="""Pituitary adenoma, craniopharyngioma, pineal tumors, and other specified intracranial neoplasms.""",
+        meaning=NCIT["C2907"])
+    IIIf_UNSPECIFIED_INTRACRANIAL = PermissibleValue(
+        text="IIIf_UNSPECIFIED_INTRACRANIAL",
+        title="IIIf. Unspecified intracranial and intraspinal neoplasms",
+        description="Intracranial and intraspinal neoplasms, NOS.",
+        meaning=NCIT["C2907"])
+    IVa_NEUROBLASTOMA_GANGLIONEUROBLASTOMA = PermissibleValue(
+        text="IVa_NEUROBLASTOMA_GANGLIONEUROBLASTOMA",
+        title="IVa. Neuroblastoma and ganglioneuroblastoma",
+        description="Neuroblastoma, NOS and ganglioneuroblastoma.",
+        meaning=NCIT["C3270"])
+    IVb_OTHER_PERIPHERAL_NERVOUS = PermissibleValue(
+        text="IVb_OTHER_PERIPHERAL_NERVOUS",
+        title="IVb. Other peripheral nervous cell tumors",
+        description="Other peripheral nerve tumors including ganglioneuroma and peripheral nerve sheath tumors.",
+        meaning=NCIT["C4969"])
+    V_RETINOBLASTOMA = PermissibleValue(
+        text="V_RETINOBLASTOMA",
+        title="V. Retinoblastoma",
+        description="Retinoblastoma.",
+        meaning=NCIT["C7541"])
+    VIa_NEPHROBLASTOMA = PermissibleValue(
+        text="VIa_NEPHROBLASTOMA",
+        title="VIa. Nephroblastoma and other nonepithelial renal tumors",
+        description="""Wilms tumor (nephroblastoma), clear cell sarcoma of kidney, rhabdoid tumor of kidney, and other nonepithelial renal tumors.""",
+        meaning=NCIT["C3267"])
+    VIb_RENAL_CARCINOMAS = PermissibleValue(
+        text="VIb_RENAL_CARCINOMAS",
+        title="VIb. Renal carcinomas",
+        description="Renal cell carcinoma and other renal carcinomas.",
+        meaning=NCIT["C9385"])
+    VIc_UNSPECIFIED_RENAL = PermissibleValue(
+        text="VIc_UNSPECIFIED_RENAL",
+        title="VIc. Unspecified malignant renal tumors",
+        description="Malignant renal tumors, NOS.",
+        meaning=NCIT["C7548"])
+    VIIa_HEPATOBLASTOMA = PermissibleValue(
+        text="VIIa_HEPATOBLASTOMA",
+        title="VIIa. Hepatoblastoma",
+        description="Hepatoblastoma.",
+        meaning=NCIT["C3728"])
+    VIIb_HEPATIC_CARCINOMAS = PermissibleValue(
+        text="VIIb_HEPATIC_CARCINOMAS",
+        title="VIIb. Hepatic carcinomas",
+        description="Hepatocellular carcinoma, cholangiocarcinoma, and other hepatic carcinomas.",
+        meaning=NCIT["C3099"])
+    VIIc_UNSPECIFIED_HEPATIC = PermissibleValue(
+        text="VIIc_UNSPECIFIED_HEPATIC",
+        title="VIIc. Unspecified malignant hepatic tumors",
+        description="Malignant hepatic tumors, NOS.",
+        meaning=NCIT["C7927"])
+    VIIIa_OSTEOSARCOMAS = PermissibleValue(
+        text="VIIIa_OSTEOSARCOMAS",
+        title="VIIIa. Osteosarcomas",
+        description="""Osteosarcoma, NOS and variants including chondroblastic, fibroblastic, telangiectatic, and small cell osteosarcoma.""",
+        meaning=NCIT["C9145"])
+    VIIIb_CHONDROSARCOMAS = PermissibleValue(
+        text="VIIIb_CHONDROSARCOMAS",
+        title="VIIIb. Chondrosarcomas",
+        description="Chondrosarcoma, NOS and variants.",
+        meaning=NCIT["C2946"])
+    VIIIc_EWING_TUMOR_BONE = PermissibleValue(
+        text="VIIIc_EWING_TUMOR_BONE",
+        title="VIIIc. Ewing tumor and related sarcomas of bone",
+        description="Ewing sarcoma of bone and peripheral primitive neuroectodermal tumor of bone.",
+        meaning=NCIT["C4817"])
+    VIIId_OTHER_BONE = PermissibleValue(
+        text="VIIId_OTHER_BONE",
+        title="VIIId. Other specified malignant bone tumors",
+        description="""Other specified malignant bone tumors including giant cell tumor of bone, malignant and adamantinoma.""",
+        meaning=NCIT["C4882"])
+    VIIIe_UNSPECIFIED_BONE = PermissibleValue(
+        text="VIIIe_UNSPECIFIED_BONE",
+        title="VIIIe. Unspecified malignant bone tumors",
+        description="Malignant bone tumors, NOS.",
+        meaning=NCIT["C4882"])
+    IXa_RHABDOMYOSARCOMAS = PermissibleValue(
+        text="IXa_RHABDOMYOSARCOMAS",
+        title="IXa. Rhabdomyosarcomas",
+        description="""Rhabdomyosarcoma, NOS; embryonal rhabdomyosarcoma; alveolar rhabdomyosarcoma; and other rhabdomyosarcomas.""",
+        meaning=NCIT["C3359"])
+    IXb_FIBROSARCOMAS = PermissibleValue(
+        text="IXb_FIBROSARCOMAS",
+        title="IXb. Fibrosarcomas, peripheral nerve sheath tumors, and other fibrous neoplasms",
+        description="""Fibrosarcoma, NOS; infantile fibrosarcoma; dermatofibrosarcoma; and malignant peripheral nerve sheath tumor.""",
+        meaning=NCIT["C3043"])
+    IXc_KAPOSI_SARCOMA = PermissibleValue(
+        text="IXc_KAPOSI_SARCOMA",
+        title="IXc. Kaposi sarcoma",
+        description="Kaposi sarcoma.",
+        meaning=NCIT["C9087"])
+    IXd_OTHER_SOFT_TISSUE = PermissibleValue(
+        text="IXd_OTHER_SOFT_TISSUE",
+        title="IXd. Other specified soft tissue sarcomas",
+        description="""Includes liposarcoma, leiomyosarcoma, synovial sarcoma, hemangiosarcoma, and other specified soft tissue sarcomas.""",
+        meaning=NCIT["C9306"])
+    IXe_UNSPECIFIED_SOFT_TISSUE = PermissibleValue(
+        text="IXe_UNSPECIFIED_SOFT_TISSUE",
+        title="IXe. Unspecified soft tissue sarcomas",
+        description="Soft tissue sarcomas, NOS.",
+        meaning=NCIT["C9306"])
+    Xa_INTRACRANIAL_GERM_CELL = PermissibleValue(
+        text="Xa_INTRACRANIAL_GERM_CELL",
+        title="Xa. Intracranial and intraspinal germ cell tumors",
+        description="CNS germ cell tumors including germinoma, teratoma, and nongerminomatous germ cell tumors.",
+        meaning=NCIT["C6286"])
+    Xb_EXTRACRANIAL_EXTRAGONADAL_GERM_CELL = PermissibleValue(
+        text="Xb_EXTRACRANIAL_EXTRAGONADAL_GERM_CELL",
+        title="Xb. Malignant extracranial and extragonadal germ cell tumors",
+        description="""Extracranial germ cell tumors not involving the gonads including sacrococcygeal, retroperitoneal, and mediastinal germ cell tumors.""",
+        meaning=NCIT["C6545"])
+    Xc_GONADAL_GERM_CELL = PermissibleValue(
+        text="Xc_GONADAL_GERM_CELL",
+        title="Xc. Malignant gonadal germ cell tumors",
+        description="""Germ cell tumors of the ovary and testis including dysgerminoma, yolk sac tumor, embryonal carcinoma, and mixed germ cell tumors.""",
+        meaning=NCIT["C3708"])
+    Xd_GONADAL_CARCINOMAS = PermissibleValue(
+        text="Xd_GONADAL_CARCINOMAS",
+        title="Xd. Gonadal carcinomas",
+        description="Carcinomas arising in the ovary and testis.",
+        meaning=NCIT["C3709"])
+    Xe_OTHER_GONADAL = PermissibleValue(
+        text="Xe_OTHER_GONADAL",
+        title="Xe. Other and unspecified malignant gonadal tumors",
+        description="Other specified and unspecified gonadal tumors.",
+        meaning=NCIT["C3708"])
+    XIa_ADRENOCORTICAL_CARCINOMAS = PermissibleValue(
+        text="XIa_ADRENOCORTICAL_CARCINOMAS",
+        title="XIa. Adrenocortical carcinomas",
+        description="Adrenocortical carcinoma.",
+        meaning=NCIT["C9325"])
+    XIb_THYROID_CARCINOMAS = PermissibleValue(
+        text="XIb_THYROID_CARCINOMAS",
+        title="XIb. Thyroid carcinomas",
+        description="Papillary thyroid carcinoma, follicular thyroid carcinoma, and medullary thyroid carcinoma.",
+        meaning=NCIT["C7510"])
+    XIc_NASOPHARYNGEAL_CARCINOMAS = PermissibleValue(
+        text="XIc_NASOPHARYNGEAL_CARCINOMAS",
+        title="XIc. Nasopharyngeal carcinomas",
+        description="Nasopharyngeal carcinoma and related carcinomas.",
+        meaning=NCIT["C3871"])
+    XId_MALIGNANT_MELANOMAS = PermissibleValue(
+        text="XId_MALIGNANT_MELANOMAS",
+        title="XId. Malignant melanomas",
+        description="Cutaneous and non-cutaneous malignant melanomas.",
+        meaning=NCIT["C3224"])
+    XIe_SKIN_CARCINOMAS = PermissibleValue(
+        text="XIe_SKIN_CARCINOMAS",
+        title="XIe. Skin carcinomas",
+        description="Basal cell carcinoma, squamous cell carcinoma of skin, and other skin carcinomas.",
+        meaning=NCIT["C3372"])
+    XIf_OTHER_CARCINOMAS = PermissibleValue(
+        text="XIf_OTHER_CARCINOMAS",
+        title="XIf. Other and unspecified carcinomas",
+        description="Carcinomas at other sites and carcinomas, NOS.",
+        meaning=NCIT["C3709"])
+    XIIa_OTHER_SPECIFIED = PermissibleValue(
+        text="XIIa_OTHER_SPECIFIED",
+        title="XIIa. Other specified malignant tumors",
+        description="Malignant tumors not classifiable in groups I-XI but with specified histology.",
+        meaning=NCIT["C3262"])
+    XIIb_OTHER_UNSPECIFIED = PermissibleValue(
+        text="XIIb_OTHER_UNSPECIFIED",
+        title="XIIb. Other unspecified malignant tumors",
+        description="Malignant tumors, NOS not classifiable in groups I-XI.",
+        meaning=NCIT["C3262"])
+
+    _defn = EnumDefinition(
+        name="ICCC3Subgroup",
+        description="""The 47 diagnostic subgroups of the International Classification of Childhood Cancer, Third Edition. These provide more detailed classification within each of the 12 main groups.""",
+    )
+
+class INRGSSStage(EnumDefinitionImpl):
+    """
+    International Neuroblastoma Risk Group Staging System (INRGSS) stages. A clinical staging system based on imaging
+    and image-defined risk factors (IDRFs), effective for diagnosis years 2024+. Allows staging before any treatment,
+    unlike the surgical INSS system.
+    """
+    L1 = PermissibleValue(
+        text="L1",
+        title="L1 - Localized, no IDRFs",
+        description="""Localized tumor not involving vital structures as defined by the list of image-defined risk factors and confined to one body compartment (neck, chest, abdomen, or pelvis).""",
+        meaning=NCIT["C133427"])
+    L2 = PermissibleValue(
+        text="L2",
+        title="L2 - Localized, with IDRFs",
+        description="""Locoregional tumor with presence of one or more image-defined risk factors. The tumor has not spread far from where it started but has at least one IDRF.""",
+        meaning=NCIT["C133428"])
+    M = PermissibleValue(
+        text="M",
+        title="M - Metastatic",
+        description="""Distant metastatic disease (except as defined for MS). The tumor has spread (metastasized) to distant parts of the body.""",
+        meaning=NCIT["C133429"])
+    MS = PermissibleValue(
+        text="MS",
+        title="MS - Metastatic special",
+        description="""Metastatic disease in children younger than 18 months with metastases confined to skin, liver, and/or bone marrow (bone marrow involvement limited to <10% tumor cells). This stage has a favorable prognosis despite metastatic disease.""",
+        meaning=NCIT["C133430"])
+
+    _defn = EnumDefinition(
+        name="INRGSSStage",
+        description="""International Neuroblastoma Risk Group Staging System (INRGSS) stages. A clinical staging system based on imaging and image-defined risk factors (IDRFs), effective for diagnosis years 2024+. Allows staging before any treatment, unlike the surgical INSS system.""",
+    )
+
+class INSSStage(EnumDefinitionImpl):
+    """
+    International Neuroblastoma Staging System (INSS) stages. A post-surgical staging system based on extent of tumor
+    resection, lymph node involvement, and metastatic spread. This is the legacy system; INRGSS is now preferred for
+    diagnosis years 2024+.
+    """
+    STAGE_1 = PermissibleValue(
+        text="STAGE_1",
+        title="Stage 1",
+        description="""Localized tumor with complete gross excision, with or without microscopic residual disease; representative ipsilateral lymph nodes negative for tumor microscopically.""",
+        meaning=NCIT["C6639"])
+    STAGE_2A = PermissibleValue(
+        text="STAGE_2A",
+        title="Stage 2A",
+        description="""Localized tumor with incomplete gross excision; representative ipsilateral nonadherent lymph nodes negative for tumor microscopically.""",
+        meaning=NCIT["C6640"])
+    STAGE_2B = PermissibleValue(
+        text="STAGE_2B",
+        title="Stage 2B",
+        description="""Localized tumor with or without complete gross excision, with ipsilateral nonadherent lymph nodes positive for tumor. Enlarged contralateral lymph nodes must be negative microscopically.""",
+        meaning=NCIT["C6641"])
+    STAGE_3 = PermissibleValue(
+        text="STAGE_3",
+        title="Stage 3",
+        description="""Unresectable unilateral tumor infiltrating across the midline, with or without regional lymph node involvement; or localized unilateral tumor with contralateral regional lymph node involvement; or midline tumor with bilateral extension by infiltration (unresectable) or by lymph node involvement.""",
+        meaning=NCIT["C6642"])
+    STAGE_4 = PermissibleValue(
+        text="STAGE_4",
+        title="Stage 4",
+        description="""Any primary tumor with dissemination to distant lymph nodes, bone, bone marrow, liver, skin, and/or other organs (except as defined for stage 4S).""",
+        meaning=NCIT["C6643"])
+    STAGE_4S = PermissibleValue(
+        text="STAGE_4S",
+        title="Stage 4S",
+        description="""Localized primary tumor (as defined for stage 1, 2A, or 2B) with dissemination limited to skin, liver, and/or bone marrow (limited to infants <1 year of age). Marrow involvement should be minimal (<10% of total nucleated cells).""",
+        meaning=NCIT["C6644"])
+
+    _defn = EnumDefinition(
+        name="INSSStage",
+        description="""International Neuroblastoma Staging System (INSS) stages. A post-surgical staging system based on extent of tumor resection, lymph node involvement, and metastatic spread. This is the legacy system; INRGSS is now preferred for diagnosis years 2024+.""",
+    )
+
+class NeuroblastomaRiskGroup(EnumDefinitionImpl):
+    """
+    International Neuroblastoma Risk Group (INRG) pretreatment risk classification groups. Combines INRGSS stage with
+    tumor histology, MYCN status, ploidy, and other prognostic factors.
+    """
+    VERY_LOW = PermissibleValue(
+        text="VERY_LOW",
+        title="Very Low Risk",
+        description="""Very low risk neuroblastoma with excellent prognosis. Typically includes L1 tumors and MS without MYCN amplification.""",
+        meaning=NCIT["C103236"])
+    LOW = PermissibleValue(
+        text="LOW",
+        title="Low Risk",
+        description="""Low risk neuroblastoma with favorable prognosis. Treatment may include surgery alone or observation.""",
+        meaning=NCIT["C103237"])
+    INTERMEDIATE = PermissibleValue(
+        text="INTERMEDIATE",
+        title="Intermediate Risk",
+        description="Intermediate risk neuroblastoma requiring multimodal treatment including chemotherapy.",
+        meaning=NCIT["C103238"])
+    HIGH = PermissibleValue(
+        text="HIGH",
+        title="High Risk",
+        description="""High risk neuroblastoma with poor prognosis. Requires intensive multimodal therapy including high-dose chemotherapy with autologous stem cell rescue, surgery, radiation, and immunotherapy.""",
+        meaning=NCIT["C103239"])
+
+    _defn = EnumDefinition(
+        name="NeuroblastomaRiskGroup",
+        description="""International Neuroblastoma Risk Group (INRG) pretreatment risk classification groups. Combines INRGSS stage with tumor histology, MYCN status, ploidy, and other prognostic factors.""",
+    )
+
+class ImageDefinedRiskFactor(EnumDefinitionImpl):
+    """
+    Image-defined risk factors (IDRFs) used in INRGSS staging to determine surgical risk. Presence of any IDRF
+    upgrades a tumor from L1 to L2.
+    """
+    IPSILATERAL_TUMOR_EXTENSION_TO_BODY_CAVITIES = PermissibleValue(
+        text="IPSILATERAL_TUMOR_EXTENSION_TO_BODY_CAVITIES",
+        title="Ipsilateral tumor extension within two body compartments",
+        description="Tumor extension from neck to chest, chest to abdomen, or abdomen to pelvis.")
+    NECK_ENCASING_CAROTID_OR_VERTEBRAL = PermissibleValue(
+        text="NECK_ENCASING_CAROTID_OR_VERTEBRAL",
+        title="Neck - Tumor encasing carotid and/or vertebral artery",
+        description="Tumor encasing carotid artery and/or vertebral artery.")
+    NECK_ENCASING_JUGULAR = PermissibleValue(
+        text="NECK_ENCASING_JUGULAR",
+        title="Neck - Tumor encasing internal jugular vein",
+        description="Tumor encasing internal jugular vein.")
+    NECK_EXTENDING_TO_SKULL_BASE = PermissibleValue(
+        text="NECK_EXTENDING_TO_SKULL_BASE",
+        title="Neck - Tumor extending to base of skull",
+        description="Tumor extending to base of skull.")
+    NECK_COMPRESSING_TRACHEA = PermissibleValue(
+        text="NECK_COMPRESSING_TRACHEA",
+        title="Neck - Tumor compressing trachea",
+        description="Tumor compressing the trachea.")
+    CERVICOTHORACIC_ENCASING_BRACHIAL_PLEXUS = PermissibleValue(
+        text="CERVICOTHORACIC_ENCASING_BRACHIAL_PLEXUS",
+        title="Cervico-thoracic junction - Tumor encasing brachial plexus roots",
+        description="Tumor encasing brachial plexus roots (C5-T1).")
+    CERVICOTHORACIC_ENCASING_SUBCLAVIAN = PermissibleValue(
+        text="CERVICOTHORACIC_ENCASING_SUBCLAVIAN",
+        title="Cervico-thoracic junction - Tumor encasing subclavian vessels",
+        description="Tumor encasing subclavian vessels and/or vertebral artery and/or carotid artery.")
+    CERVICOTHORACIC_COMPRESSING_TRACHEA = PermissibleValue(
+        text="CERVICOTHORACIC_COMPRESSING_TRACHEA",
+        title="Cervico-thoracic junction - Tumor compressing trachea",
+        description="Tumor compressing the trachea.")
+    THORAX_ENCASING_AORTA = PermissibleValue(
+        text="THORAX_ENCASING_AORTA",
+        title="Thorax - Tumor encasing aorta and/or major branches",
+        description="Tumor encasing aorta and/or major branches.")
+    THORAX_COMPRESSING_TRACHEA_BRONCHI = PermissibleValue(
+        text="THORAX_COMPRESSING_TRACHEA_BRONCHI",
+        title="Thorax - Tumor compressing trachea and/or principal bronchi",
+        description="Tumor compressing trachea and/or principal bronchi.")
+    THORAX_LOWER_MEDIASTINUM_INFILTRATING = PermissibleValue(
+        text="THORAX_LOWER_MEDIASTINUM_INFILTRATING",
+        title="Thorax - Lower mediastinal tumor infiltrating costo-vertebral junction",
+        description="Lower mediastinal tumor infiltrating the costo-vertebral junction between T9 and T12.")
+    THORACOABDOMINAL_ENCASING_AORTA_CELIAC = PermissibleValue(
+        text="THORACOABDOMINAL_ENCASING_AORTA_CELIAC",
+        title="Thoraco-abdominal - Tumor encasing aorta and/or vena cava",
+        description="Tumor encasing the aorta and/or vena cava.")
+    ABDOMEN_PELVIS_ENCASING_CELIAC_SMA = PermissibleValue(
+        text="ABDOMEN_PELVIS_ENCASING_CELIAC_SMA",
+        title="Abdomen/pelvis - Tumor encasing celiac axis and/or SMA",
+        description="Tumor encasing celiac axis and/or superior mesenteric artery.")
+    ABDOMEN_PELVIS_ENCASING_RENAL_VESSELS = PermissibleValue(
+        text="ABDOMEN_PELVIS_ENCASING_RENAL_VESSELS",
+        title="Abdomen/pelvis - Tumor encasing origin of renal vessels",
+        description="Tumor encasing origin of renal vessels.")
+    ABDOMEN_PELVIS_ENCASING_AORTA_IVC = PermissibleValue(
+        text="ABDOMEN_PELVIS_ENCASING_AORTA_IVC",
+        title="Abdomen/pelvis - Tumor encasing aorta and/or IVC",
+        description="Tumor encasing aorta and/or inferior vena cava.")
+    ABDOMEN_PELVIS_ENCASING_ILIAC_VESSELS = PermissibleValue(
+        text="ABDOMEN_PELVIS_ENCASING_ILIAC_VESSELS",
+        title="Abdomen/pelvis - Tumor encasing iliac vessels",
+        description="Tumor encasing iliac vessels.")
+    ABDOMEN_PELVIS_PELVIC_CROSSING_SCIATIC_NOTCH = PermissibleValue(
+        text="ABDOMEN_PELVIS_PELVIC_CROSSING_SCIATIC_NOTCH",
+        title="Abdomen/pelvis - Pelvic tumor crossing sciatic notch",
+        description="Pelvic tumor crossing the sciatic notch.")
+    INTRASPINAL_EXTENSION = PermissibleValue(
+        text="INTRASPINAL_EXTENSION",
+        title="Intraspinal tumor extension",
+        description="""Intraspinal tumor extension provided that more than one third of the spinal canal in the axial plane is invaded and/or the perimedullary leptomeningeal spaces are not visible and/or spinal cord signal is abnormal.""")
+    ADJACENT_ORGAN_INFILTRATION = PermissibleValue(
+        text="ADJACENT_ORGAN_INFILTRATION",
+        title="Infiltration of adjacent organs/structures",
+        description="""Infiltration of adjacent organs/structures such as pericardium, diaphragm, kidney, liver, duodeno-pancreatic block, and mesentery.""")
+
+    _defn = EnumDefinition(
+        name="ImageDefinedRiskFactor",
+        description="""Image-defined risk factors (IDRFs) used in INRGSS staging to determine surgical risk. Presence of any IDRF upgrades a tumor from L1 to L2.""",
+    )
+
 class RaceOMB1997Enum(EnumDefinitionImpl):
     """
     Race categories following OMB 1997 standards used by NIH and federal agencies.
@@ -22787,6 +23638,257 @@ class DataSizeUnitEnum(EnumDefinitionImpl):
     _defn = EnumDefinition(
         name="DataSizeUnitEnum",
         description="Units of digital data size",
+    )
+
+class QuantityKindEnum(EnumDefinitionImpl):
+    """
+    Physical quantity kinds based on QUDT. These represent abstract types of physical quantities independent of the
+    units used to measure them.
+    """
+    LENGTH = PermissibleValue(
+        text="LENGTH",
+        title="length",
+        description="A 1-D extent quality representing distance between two points",
+        meaning=QUANTITYKIND["Length"])
+    MASS = PermissibleValue(
+        text="MASS",
+        title="mass",
+        description="The amount of matter in an object",
+        meaning=QUANTITYKIND["Mass"])
+    TIME = PermissibleValue(
+        text="TIME",
+        title="time",
+        description="Duration or temporal extent",
+        meaning=QUANTITYKIND["Time"])
+    THERMODYNAMIC_TEMPERATURE = PermissibleValue(
+        text="THERMODYNAMIC_TEMPERATURE",
+        title="thermodynamic temperature",
+        description="The thermal energy of a system",
+        meaning=QUANTITYKIND["ThermodynamicTemperature"])
+    AMOUNT_OF_SUBSTANCE = PermissibleValue(
+        text="AMOUNT_OF_SUBSTANCE",
+        title="amount of substance",
+        description="The number of elementary entities (atoms, molecules, etc.)",
+        meaning=QUANTITYKIND["AmountOfSubstance"])
+    ELECTRIC_CURRENT = PermissibleValue(
+        text="ELECTRIC_CURRENT",
+        title="electric current",
+        description="Flow of electric charge per unit time",
+        meaning=QUANTITYKIND["ElectricCurrent"])
+    LUMINOUS_INTENSITY = PermissibleValue(
+        text="LUMINOUS_INTENSITY",
+        title="luminous intensity",
+        description="Luminous power per unit solid angle emitted by a point light source",
+        meaning=QUANTITYKIND["LuminousIntensity"])
+    AREA = PermissibleValue(
+        text="AREA",
+        title="area",
+        description="A 2-D extent representing the size of a surface",
+        meaning=QUANTITYKIND["Area"])
+    VOLUME = PermissibleValue(
+        text="VOLUME",
+        title="volume",
+        description="A 3-D extent representing the amount of space occupied",
+        meaning=QUANTITYKIND["Volume"])
+    ANGLE = PermissibleValue(
+        text="ANGLE",
+        title="plane angle",
+        description="The figure formed by two rays sharing a common endpoint",
+        meaning=QUANTITYKIND["Angle"])
+    SOLID_ANGLE = PermissibleValue(
+        text="SOLID_ANGLE",
+        title="solid angle",
+        description="A 3-D angular measure",
+        meaning=QUANTITYKIND["SolidAngle"])
+    VELOCITY = PermissibleValue(
+        text="VELOCITY",
+        title="velocity",
+        description="Rate of change of position with direction",
+        meaning=QUANTITYKIND["Velocity"])
+    SPEED = PermissibleValue(
+        text="SPEED",
+        title="speed",
+        description="Scalar rate of change of position",
+        meaning=QUANTITYKIND["Speed"])
+    ACCELERATION = PermissibleValue(
+        text="ACCELERATION",
+        title="acceleration",
+        description="Rate of change of velocity",
+        meaning=QUANTITYKIND["Acceleration"])
+    FORCE = PermissibleValue(
+        text="FORCE",
+        title="force",
+        description="Rate of change of momentum",
+        meaning=QUANTITYKIND["Force"])
+    PRESSURE = PermissibleValue(
+        text="PRESSURE",
+        title="pressure",
+        description="Force per unit area",
+        meaning=QUANTITYKIND["Pressure"])
+    ENERGY = PermissibleValue(
+        text="ENERGY",
+        title="energy",
+        description="Capacity to do work",
+        meaning=QUANTITYKIND["Energy"])
+    WORK = PermissibleValue(
+        text="WORK",
+        title="work",
+        description="Energy transferred by a force",
+        meaning=QUANTITYKIND["Work"])
+    POWER = PermissibleValue(
+        text="POWER",
+        title="power",
+        description="Rate of doing work or transferring energy",
+        meaning=QUANTITYKIND["Power"])
+    MOMENTUM = PermissibleValue(
+        text="MOMENTUM",
+        title="momentum",
+        description="Product of mass and velocity",
+        meaning=QUANTITYKIND["Momentum"])
+    TORQUE = PermissibleValue(
+        text="TORQUE",
+        title="torque",
+        description="Rotational force or moment of force",
+        meaning=QUANTITYKIND["Torque"])
+    ANGULAR_VELOCITY = PermissibleValue(
+        text="ANGULAR_VELOCITY",
+        title="angular velocity",
+        description="Rate of change of angular position",
+        meaning=QUANTITYKIND["AngularVelocity"])
+    ANGULAR_ACCELERATION = PermissibleValue(
+        text="ANGULAR_ACCELERATION",
+        title="angular acceleration",
+        description="Rate of change of angular velocity",
+        meaning=QUANTITYKIND["AngularAcceleration"])
+    DENSITY = PermissibleValue(
+        text="DENSITY",
+        title="density",
+        description="Mass per unit volume",
+        meaning=QUANTITYKIND["Density"])
+    VISCOSITY = PermissibleValue(
+        text="VISCOSITY",
+        title="dynamic viscosity",
+        description="Internal resistance to flow",
+        meaning=QUANTITYKIND["DynamicViscosity"])
+    KINEMATIC_VISCOSITY = PermissibleValue(
+        text="KINEMATIC_VISCOSITY",
+        title="kinematic viscosity",
+        description="Dynamic viscosity divided by density",
+        meaning=QUANTITYKIND["KinematicViscosity"])
+    FREQUENCY = PermissibleValue(
+        text="FREQUENCY",
+        title="frequency",
+        description="Number of repetitive events per unit time",
+        meaning=QUANTITYKIND["Frequency"])
+    MASS_CONCENTRATION = PermissibleValue(
+        text="MASS_CONCENTRATION",
+        title="mass concentration",
+        description="Mass of a substance per unit volume",
+        meaning=QUANTITYKIND["MassConcentration"])
+    AMOUNT_CONCENTRATION = PermissibleValue(
+        text="AMOUNT_CONCENTRATION",
+        title="amount concentration",
+        description="Amount of substance per unit volume (molarity)",
+        meaning=QUANTITYKIND["AmountConcentration"])
+    ELECTRIC_CHARGE = PermissibleValue(
+        text="ELECTRIC_CHARGE",
+        title="electric charge",
+        description="Fundamental property of matter causing electromagnetic interaction",
+        meaning=QUANTITYKIND["ElectricCharge"])
+    ELECTRIC_POTENTIAL = PermissibleValue(
+        text="ELECTRIC_POTENTIAL",
+        title="electric potential",
+        description="Potential energy per unit charge (voltage)",
+        meaning=QUANTITYKIND["ElectricPotential"])
+    ELECTRIC_RESISTANCE = PermissibleValue(
+        text="ELECTRIC_RESISTANCE",
+        title="electric resistance",
+        description="Opposition to electric current flow",
+        meaning=QUANTITYKIND["Resistance"])
+    ELECTRICAL_CONDUCTIVITY = PermissibleValue(
+        text="ELECTRICAL_CONDUCTIVITY",
+        title="electrical conductivity",
+        description="Ability to conduct electric current",
+        meaning=QUANTITYKIND["Conductivity"])
+    CAPACITANCE = PermissibleValue(
+        text="CAPACITANCE",
+        title="capacitance",
+        description="Ability to store electric charge",
+        meaning=QUANTITYKIND["Capacitance"])
+    INDUCTANCE = PermissibleValue(
+        text="INDUCTANCE",
+        title="inductance",
+        description="Property relating magnetic flux to electric current",
+        meaning=QUANTITYKIND["Inductance"])
+    MAGNETIC_FLUX = PermissibleValue(
+        text="MAGNETIC_FLUX",
+        title="magnetic flux",
+        description="Measure of total magnetic field passing through a surface",
+        meaning=QUANTITYKIND["MagneticFlux"])
+    MAGNETIC_FLUX_DENSITY = PermissibleValue(
+        text="MAGNETIC_FLUX_DENSITY",
+        title="magnetic flux density",
+        description="Magnetic flux per unit area",
+        meaning=QUANTITYKIND["MagneticFluxDensity"])
+    HEAT_CAPACITY = PermissibleValue(
+        text="HEAT_CAPACITY",
+        title="heat capacity",
+        description="Heat required to raise temperature by one unit",
+        meaning=QUANTITYKIND["HeatCapacity"])
+    SPECIFIC_HEAT_CAPACITY = PermissibleValue(
+        text="SPECIFIC_HEAT_CAPACITY",
+        title="specific heat capacity",
+        description="Heat capacity per unit mass",
+        meaning=QUANTITYKIND["SpecificHeatCapacity"])
+    THERMAL_CONDUCTIVITY = PermissibleValue(
+        text="THERMAL_CONDUCTIVITY",
+        title="thermal conductivity",
+        description="Ability to conduct heat",
+        meaning=QUANTITYKIND["ThermalConductivity"])
+    LUMINOUS_FLUX = PermissibleValue(
+        text="LUMINOUS_FLUX",
+        title="luminous flux",
+        description="Total perceived light power emitted",
+        meaning=QUANTITYKIND["LuminousFlux"])
+    ILLUMINANCE = PermissibleValue(
+        text="ILLUMINANCE",
+        title="illuminance",
+        description="Luminous flux per unit area",
+        meaning=QUANTITYKIND["Illuminance"])
+    RADIANT_INTENSITY = PermissibleValue(
+        text="RADIANT_INTENSITY",
+        title="radiant intensity",
+        description="Radiant power per unit solid angle",
+        meaning=QUANTITYKIND["RadiantIntensity"])
+    ACTIVITY = PermissibleValue(
+        text="ACTIVITY",
+        title="activity (radioactivity)",
+        description="Number of nuclear disintegrations per unit time",
+        meaning=QUANTITYKIND["Activity"])
+    ABSORBED_DOSE = PermissibleValue(
+        text="ABSORBED_DOSE",
+        title="absorbed dose",
+        description="Energy deposited per unit mass by ionizing radiation",
+        meaning=QUANTITYKIND["AbsorbedDose"])
+    DOSE_EQUIVALENT = PermissibleValue(
+        text="DOSE_EQUIVALENT",
+        title="dose equivalent",
+        description="Absorbed dose weighted by radiation type",
+        meaning=QUANTITYKIND["DoseEquivalent"])
+    INFORMATION_ENTROPY = PermissibleValue(
+        text="INFORMATION_ENTROPY",
+        title="information entropy",
+        description="Measure of information content or uncertainty",
+        meaning=QUANTITYKIND["InformationEntropy"])
+    DATA_RATE = PermissibleValue(
+        text="DATA_RATE",
+        title="data rate",
+        description="Amount of data transferred per unit time",
+        meaning=QUANTITYKIND["DataRate"])
+
+    _defn = EnumDefinition(
+        name="QuantityKindEnum",
+        description="""Physical quantity kinds based on QUDT. These represent abstract types of physical quantities independent of the units used to measure them.""",
     )
 
 class ImageFileFormatEnum(EnumDefinitionImpl):
@@ -27020,6 +28122,851 @@ class ThermalCyclingStepEnum(EnumDefinitionImpl):
         description="Steps in thermal cycling protocols",
     )
 
+class ArxivCategory(EnumDefinitionImpl):
+    """
+    arXiv subject categories for classifying preprints and publications. Categories are organized by major subject
+    groups.
+    """
+    cs = PermissibleValue(
+        text="cs",
+        title="Computer Science",
+        description="Computer science research areas")
+    econ = PermissibleValue(
+        text="econ",
+        title="Economics",
+        description="Economics research areas")
+    eess = PermissibleValue(
+        text="eess",
+        title="Electrical Engineering and Systems Science",
+        description="Electrical engineering and systems science research areas")
+    math = PermissibleValue(
+        text="math",
+        title="Mathematics",
+        description="Mathematics research areas")
+    hep = PermissibleValue(
+        text="hep",
+        title="High Energy Physics",
+        description="High energy physics research areas")
+    nlin = PermissibleValue(
+        text="nlin",
+        title="Nonlinear Sciences",
+        description="Nonlinear sciences research areas")
+    nucl = PermissibleValue(
+        text="nucl",
+        title="Nuclear Physics",
+        description="Nuclear physics research areas")
+    physics = PermissibleValue(
+        text="physics",
+        title="Physics",
+        description="General physics research areas")
+    stat = PermissibleValue(
+        text="stat",
+        title="Statistics",
+        description="Statistics research areas")
+
+    _defn = EnumDefinition(
+        name="ArxivCategory",
+        description="""arXiv subject categories for classifying preprints and publications. Categories are organized by major subject groups.""",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "astro-ph",
+            PermissibleValue(
+                text="astro-ph",
+                title="Astrophysics",
+                description="Astrophysics research areas"))
+        setattr(cls, "cond-mat",
+            PermissibleValue(
+                text="cond-mat",
+                title="Condensed Matter",
+                description="Condensed matter physics research areas"))
+        setattr(cls, "q-bio",
+            PermissibleValue(
+                text="q-bio",
+                title="Quantitative Biology",
+                description="Quantitative biology research areas"))
+        setattr(cls, "q-fin",
+            PermissibleValue(
+                text="q-fin",
+                title="Quantitative Finance",
+                description="Quantitative finance research areas"))
+        setattr(cls, "cs.AI",
+            PermissibleValue(
+                text="cs.AI",
+                title="Artificial Intelligence",
+                description="""Covers all areas of AI except Vision, Robotics, Machine Learning, Multiagent Systems, and NLP. Includes Expert Systems, Theorem Proving, Knowledge Representation, Planning, and Uncertainty in AI."""))
+        setattr(cls, "cs.AR",
+            PermissibleValue(
+                text="cs.AR",
+                title="Hardware Architecture",
+                description="""Covers systems organization and hardware architecture. Roughly includes material in ACM Subject Class C.0, C.1, and C.5."""))
+        setattr(cls, "cs.CC",
+            PermissibleValue(
+                text="cs.CC",
+                title="Computational Complexity",
+                description="""Covers models of computation, complexity classes, structural complexity, complexity tradeoffs, upper and lower bounds."""))
+        setattr(cls, "cs.CE",
+            PermissibleValue(
+                text="cs.CE",
+                title="Computational Engineering, Finance, and Science",
+                description="""Covers applications of computer science to the mathematical modeling of complex systems in science, engineering, and finance."""))
+        setattr(cls, "cs.CG",
+            PermissibleValue(
+                text="cs.CG",
+                title="Computational Geometry",
+                description="Geometric algorithms, discrete differential geometry, and directly related problems."))
+        setattr(cls, "cs.CL",
+            PermissibleValue(
+                text="cs.CL",
+                title="Computation and Language",
+                description="""Covers natural language processing. Includes computational linguistics, speech processing, text retrieval and processing."""))
+        setattr(cls, "cs.CR",
+            PermissibleValue(
+                text="cs.CR",
+                title="Cryptography and Security",
+                description="""Covers all areas of cryptography and security including authentication, public key cryptosystems, proof-carrying code, etc."""))
+        setattr(cls, "cs.CV",
+            PermissibleValue(
+                text="cs.CV",
+                title="Computer Vision and Pattern Recognition",
+                description="""Covers image processing, computer vision, pattern recognition, and scene understanding."""))
+        setattr(cls, "cs.CY",
+            PermissibleValue(
+                text="cs.CY",
+                title="Computers and Society",
+                description="""Covers impact of computers on society, computer ethics, information technology and public policy, legal aspects of computing."""))
+        setattr(cls, "cs.DB",
+            PermissibleValue(
+                text="cs.DB",
+                title="Databases",
+                description="""Covers database management, datamining, and data processing. Roughly includes material in ACM Subject Classes H.2, H.3, and H.4."""))
+        setattr(cls, "cs.DC",
+            PermissibleValue(
+                text="cs.DC",
+                title="Distributed, Parallel, and Cluster Computing",
+                description="""Covers fault-tolerance, distributed algorithms, stabilization, parallel computation, and cluster computing."""))
+        setattr(cls, "cs.DL",
+            PermissibleValue(
+                text="cs.DL",
+                title="Digital Libraries",
+                description="""Covers all aspects of digital library design and document creation. Note this may overlap with other areas."""))
+        setattr(cls, "cs.DM",
+            PermissibleValue(
+                text="cs.DM",
+                title="Discrete Mathematics",
+                description="""Covers combinatorics, graph theory, applications of probability. Roughly includes material in ACM Subject Classes G.2 and G.3."""))
+        setattr(cls, "cs.DS",
+            PermissibleValue(
+                text="cs.DS",
+                title="Data Structures and Algorithms",
+                description="""Covers data structures and analysis of algorithms. Roughly includes material in ACM Subject Classes E.1, E.2, F.2.1, and F.2.2."""))
+        setattr(cls, "cs.ET",
+            PermissibleValue(
+                text="cs.ET",
+                title="Emerging Technologies",
+                description="""Covers approaches to computing based on emerging technologies such as quantum computing, DNA computing, optical computing."""))
+        setattr(cls, "cs.FL",
+            PermissibleValue(
+                text="cs.FL",
+                title="Formal Languages and Automata Theory",
+                description="Covers automata theory, formal language theory, grammars, and combinatorics on words."))
+        setattr(cls, "cs.GL",
+            PermissibleValue(
+                text="cs.GL",
+                title="General Literature",
+                description="""Covers introductory material, survey material, predictions of future trends, biographies, and miscellaneous computer-science related material."""))
+        setattr(cls, "cs.GR",
+            PermissibleValue(
+                text="cs.GR",
+                title="Graphics",
+                description="""Covers all aspects of computer graphics. Roughly includes material in ACM Subject Classes I.3.0-I.3.8."""))
+        setattr(cls, "cs.GT",
+            PermissibleValue(
+                text="cs.GT",
+                title="Computer Science and Game Theory",
+                description="""Covers all theoretical and applied aspects at the intersection of computer science and game theory."""))
+        setattr(cls, "cs.HC",
+            PermissibleValue(
+                text="cs.HC",
+                title="Human-Computer Interaction",
+                description="""Covers human factors, user interfaces, and collaborative computing. Roughly includes material in ACM Subject Classes H.1.2 and H.5."""))
+        setattr(cls, "cs.IR",
+            PermissibleValue(
+                text="cs.IR",
+                title="Information Retrieval",
+                description="""Covers indexing, dictionaries, retrieval, content and analysis. Roughly includes material in ACM Subject Classes H.3.0-H.3.4."""))
+        setattr(cls, "cs.IT",
+            PermissibleValue(
+                text="cs.IT",
+                title="Information Theory",
+                description="Covers theoretical and experimental aspects of information theory and coding."))
+        setattr(cls, "cs.LG",
+            PermissibleValue(
+                text="cs.LG",
+                title="Machine Learning",
+                description="""Papers on all aspects of machine learning research, including supervised, unsupervised, reinforcement learning, bandit algorithms."""))
+        setattr(cls, "cs.LO",
+            PermissibleValue(
+                text="cs.LO",
+                title="Logic in Computer Science",
+                description="""Covers all aspects of logic in computer science, including finite model theory, logics of programs, modal logic, and program verification."""))
+        setattr(cls, "cs.MA",
+            PermissibleValue(
+                text="cs.MA",
+                title="Multiagent Systems",
+                description="""Covers multiagent systems, distributed artificial intelligence, intelligent agents, coordinated interactions."""))
+        setattr(cls, "cs.MM",
+            PermissibleValue(
+                text="cs.MM",
+                title="Multimedia",
+                description="""Covers all aspects of multimedia systems, including hypermedia and information systems design."""))
+        setattr(cls, "cs.MS",
+            PermissibleValue(
+                text="cs.MS",
+                title="Mathematical Software",
+                description="""Covers aspects of mathematical software for mathematical computation and related support."""))
+        setattr(cls, "cs.NA",
+            PermissibleValue(
+                text="cs.NA",
+                title="Numerical Analysis",
+                description="""Covers numerical algorithms for problems in analysis and algebra. Includes numerical linear algebra, optimization, and interpolation."""))
+        setattr(cls, "cs.NE",
+            PermissibleValue(
+                text="cs.NE",
+                title="Neural and Evolutionary Computing",
+                description="""Covers neural networks, connectionism, genetic algorithms, artificial life, adaptive behavior."""))
+        setattr(cls, "cs.NI",
+            PermissibleValue(
+                text="cs.NI",
+                title="Networking and Internet Architecture",
+                description="""Covers all aspects of computer communication networks, including network architecture and design."""))
+        setattr(cls, "cs.OH",
+            PermissibleValue(
+                text="cs.OH",
+                title="Other Computer Science",
+                description="Covers topics not fitting other computer science categories."))
+        setattr(cls, "cs.OS",
+            PermissibleValue(
+                text="cs.OS",
+                title="Operating Systems",
+                description="""Covers aspects of operating systems including structure, design, management, and synchronization."""))
+        setattr(cls, "cs.PF",
+            PermissibleValue(
+                text="cs.PF",
+                title="Performance",
+                description="Covers performance measurement, simulation, and evaluation methodology."))
+        setattr(cls, "cs.PL",
+            PermissibleValue(
+                text="cs.PL",
+                title="Programming Languages",
+                description="""Covers programming language semantics, language features, programming approaches, compilers."""))
+        setattr(cls, "cs.RO",
+            PermissibleValue(
+                text="cs.RO",
+                title="Robotics",
+                description="""Covers all aspects of robotics, including control, manipulation, planning, and robot learning."""))
+        setattr(cls, "cs.SC",
+            PermissibleValue(
+                text="cs.SC",
+                title="Symbolic Computation",
+                description="""Covers symbolics, including computer algebra systems, implementation, and applications."""))
+        setattr(cls, "cs.SD",
+            PermissibleValue(
+                text="cs.SD",
+                title="Sound",
+                description="Covers all aspects of computing with sound, and sound as an information channel."))
+        setattr(cls, "cs.SE",
+            PermissibleValue(
+                text="cs.SE",
+                title="Software Engineering",
+                description="""Covers design tools, software metrics, testing and debugging, programming environments, requirements, specifications."""))
+        setattr(cls, "cs.SI",
+            PermissibleValue(
+                text="cs.SI",
+                title="Social and Information Networks",
+                description="""Covers design, analysis, and modeling of social and information networks, including their applications for online systems."""))
+        setattr(cls, "cs.SY",
+            PermissibleValue(
+                text="cs.SY",
+                title="Systems and Control",
+                description="""Covers theoretical and practical aspects of systems and control, including control system design."""))
+        setattr(cls, "econ.EM",
+            PermissibleValue(
+                text="econ.EM",
+                title="Econometrics",
+                description="""Econometric theory and practice, including estimation, hypothesis testing, and forecasting."""))
+        setattr(cls, "econ.GN",
+            PermissibleValue(
+                text="econ.GN",
+                title="General Economics",
+                description="General methodological, applied, and empirical contributions to economics."))
+        setattr(cls, "econ.TH",
+            PermissibleValue(
+                text="econ.TH",
+                title="Theoretical Economics",
+                description="""Includes decision theory, game theory, mechanism design, and mathematical modeling in economics."""))
+        setattr(cls, "eess.AS",
+            PermissibleValue(
+                text="eess.AS",
+                title="Audio and Speech Processing",
+                description="""Theory and methods for processing signals representing audio, speech, and language, and their applications."""))
+        setattr(cls, "eess.IV",
+            PermissibleValue(
+                text="eess.IV",
+                title="Image and Video Processing",
+                description="""Theory, algorithms, and applications for the formation, capture, processing, communication, analysis, and display of images."""))
+        setattr(cls, "eess.SP",
+            PermissibleValue(
+                text="eess.SP",
+                title="Signal Processing",
+                description="Theory, algorithms, performance analysis and applications of signal and data analysis."))
+        setattr(cls, "eess.SY",
+            PermissibleValue(
+                text="eess.SY",
+                title="Systems and Control",
+                description="""Analysis and design of control systems, covering mathematical modeling and automatic control."""))
+        setattr(cls, "math.AC",
+            PermissibleValue(
+                text="math.AC",
+                title="Commutative Algebra",
+                description="""Commutative rings, modules, ideals, homological algebra, computational aspects, local rings."""))
+        setattr(cls, "math.AG",
+            PermissibleValue(
+                text="math.AG",
+                title="Algebraic Geometry",
+                description="""Algebraic varieties, stacks, sheaves, schemes, moduli spaces, complex geometry, quantum cohomology."""))
+        setattr(cls, "math.AP",
+            PermissibleValue(
+                text="math.AP",
+                title="Analysis of PDEs",
+                description="""Existence and uniqueness, boundary conditions, linear and non-linear operators, stability, soliton theory."""))
+        setattr(cls, "math.AT",
+            PermissibleValue(
+                text="math.AT",
+                title="Algebraic Topology",
+                description="Homotopy theory, homological algebra, algebraic treatments of manifolds."))
+        setattr(cls, "math.CA",
+            PermissibleValue(
+                text="math.CA",
+                title="Classical Analysis and ODEs",
+                description="""Special functions, orthogonal polynomials, harmonic analysis, ODEs, differential relations."""))
+        setattr(cls, "math.CO",
+            PermissibleValue(
+                text="math.CO",
+                title="Combinatorics",
+                description="Discrete mathematics, graph theory, enumeration, combinatorial optimization."))
+        setattr(cls, "math.CT",
+            PermissibleValue(
+                text="math.CT",
+                title="Category Theory",
+                description="""Enriched categories, topoi, abelian categories, monoidal categories, homological algebra."""))
+        setattr(cls, "math.CV",
+            PermissibleValue(
+                text="math.CV",
+                title="Complex Variables",
+                description="""Holomorphic functions, automorphic group actions, and their generalizations, complex geometry."""))
+        setattr(cls, "math.DG",
+            PermissibleValue(
+                text="math.DG",
+                title="Differential Geometry",
+                description="""Complex, contact, Riemannian, pseudo-Riemannian, symplectic geometry, relativity, gauge theory."""))
+        setattr(cls, "math.DS",
+            PermissibleValue(
+                text="math.DS",
+                title="Dynamical Systems",
+                description="Dynamics of differential equations and flows, mechanics, classical few-body problems."))
+        setattr(cls, "math.FA",
+            PermissibleValue(
+                text="math.FA",
+                title="Functional Analysis",
+                description="Banach spaces, function spaces, real functions, distributions, measures, integration."))
+        setattr(cls, "math.GM",
+            PermissibleValue(
+                text="math.GM",
+                title="General Mathematics",
+                description="""Mathematical material of general interest, broadly accessible expositions of research results."""))
+        setattr(cls, "math.GN",
+            PermissibleValue(
+                text="math.GN",
+                title="General Topology",
+                description="""Continuum theory, point-set topology, spaces with algebraic structure, topological dynamics."""))
+        setattr(cls, "math.GR",
+            PermissibleValue(
+                text="math.GR",
+                title="Group Theory",
+                description="Finite groups, topological groups, representation theory, cohomology, classification."))
+        setattr(cls, "math.GT",
+            PermissibleValue(
+                text="math.GT",
+                title="Geometric Topology",
+                description="Manifolds, orbifolds, polyhedra, cell complexes, foliations, geometric structures."))
+        setattr(cls, "math.HO",
+            PermissibleValue(
+                text="math.HO",
+                title="History and Overview",
+                description="""Biographies, philosophy of mathematics, mathematics education, recreational mathematics."""))
+        setattr(cls, "math.IT",
+            PermissibleValue(
+                text="math.IT",
+                title="Information Theory",
+                description="Math methods in information theory and coding theory."))
+        setattr(cls, "math.KT",
+            PermissibleValue(
+                text="math.KT",
+                title="K-Theory and Homology",
+                description="""Algebraic and topological K-theory, relations with topology, commutative algebra, index theories."""))
+        setattr(cls, "math.LO",
+            PermissibleValue(
+                text="math.LO",
+                title="Logic",
+                description="Logic, set theory, point-set topology, formal mathematics."))
+        setattr(cls, "math.MG",
+            PermissibleValue(
+                text="math.MG",
+                title="Metric Geometry",
+                description="""Euclidean, hyperbolic, discrete, convex, coarse geometry, comparisons in Riemannian geometry."""))
+        setattr(cls, "math.MP",
+            PermissibleValue(
+                text="math.MP",
+                title="Mathematical Physics",
+                description="""Articles in which math methods are used to study physics problems, or math questions arising from physics."""))
+        setattr(cls, "math.NA",
+            PermissibleValue(
+                text="math.NA",
+                title="Numerical Analysis",
+                description="Numerical algorithms for problems in analysis and algebra, scientific computation."))
+        setattr(cls, "math.NT",
+            PermissibleValue(
+                text="math.NT",
+                title="Number Theory",
+                description="""Prime numbers, diophantine equations, analytic number theory, algebraic number theory, arithmetic geometry."""))
+        setattr(cls, "math.OA",
+            PermissibleValue(
+                text="math.OA",
+                title="Operator Algebras",
+                description="""Algebras of operators on Hilbert space, C*-algebras, von Neumann algebras, non-commutative geometry."""))
+        setattr(cls, "math.OC",
+            PermissibleValue(
+                text="math.OC",
+                title="Optimization and Control",
+                description="""Operations research, linear programming, control theory, systems theory, optimal control."""))
+        setattr(cls, "math.PR",
+            PermissibleValue(
+                text="math.PR",
+                title="Probability",
+                description="""Theory and applications of probability and stochastic processes, including stochastic differential equations."""))
+        setattr(cls, "math.QA",
+            PermissibleValue(
+                text="math.QA",
+                title="Quantum Algebra",
+                description="""Quantum groups, skein theories, operadic and diagrammatic algebra, quantum field theory."""))
+        setattr(cls, "math.RA",
+            PermissibleValue(
+                text="math.RA",
+                title="Rings and Algebras",
+                description="Non-commutative rings and algebras, non-associative algebras, universal algebra."))
+        setattr(cls, "math.RT",
+            PermissibleValue(
+                text="math.RT",
+                title="Representation Theory",
+                description="Linear representations of algebras and groups, Lie theory, associative algebras."))
+        setattr(cls, "math.SG",
+            PermissibleValue(
+                text="math.SG",
+                title="Symplectic Geometry",
+                description="Hamiltonian systems, symplectic flows, classical integrable systems."))
+        setattr(cls, "math.SP",
+            PermissibleValue(
+                text="math.SP",
+                title="Spectral Theory",
+                description="Schrodinger operators, differential operators, spectral measures, scattering theory."))
+        setattr(cls, "math.ST",
+            PermissibleValue(
+                text="math.ST",
+                title="Statistics Theory",
+                description="""Applied, computational and theoretical statistics including probability, coverage, learning theory."""))
+        setattr(cls, "astro-ph.CO",
+            PermissibleValue(
+                text="astro-ph.CO",
+                title="Cosmology and Nongalactic Astrophysics",
+                description="""Phenomenology of early universe, cosmic microwave background, cosmological parameters, primordial element abundances."""))
+        setattr(cls, "astro-ph.EP",
+            PermissibleValue(
+                text="astro-ph.EP",
+                title="Earth and Planetary Astrophysics",
+                description="""Interplanetary medium, planetary physics, terrestrial planets, extrasolar planets, irregular satellites."""))
+        setattr(cls, "astro-ph.GA",
+            PermissibleValue(
+                text="astro-ph.GA",
+                title="Astrophysics of Galaxies",
+                description="""Phenomena pertaining to galaxies or combinations of galaxies, interstellar medium, star clusters."""))
+        setattr(cls, "astro-ph.HE",
+            PermissibleValue(
+                text="astro-ph.HE",
+                title="High Energy Astrophysical Phenomena",
+                description="""Cosmic ray production, gamma rays, X-rays, charged particles, supernovae, neutron stars, pulsars."""))
+        setattr(cls, "astro-ph.IM",
+            PermissibleValue(
+                text="astro-ph.IM",
+                title="Instrumentation and Methods for Astrophysics",
+                description="""Detector and calculation design, space and laboratory observatories, data analysis methods."""))
+        setattr(cls, "astro-ph.SR",
+            PermissibleValue(
+                text="astro-ph.SR",
+                title="Solar and Stellar Astrophysics",
+                description="White dwarfs, brown dwarfs, stars, solar system, helioseismology, stellar evolution."))
+        setattr(cls, "cond-mat.dis-nn",
+            PermissibleValue(
+                text="cond-mat.dis-nn",
+                title="Disordered Systems and Neural Networks",
+                description="""Glasses and spin glasses; random systems; information theory in physics; neural networks."""))
+        setattr(cls, "cond-mat.mes-hall",
+            PermissibleValue(
+                text="cond-mat.mes-hall",
+                title="Mesoscale and Nanoscale Physics",
+                description="""Quantum dots and wires, nanotubes, graphene, ballistic transport, mesoscale and nanoscale systems."""))
+        setattr(cls, "cond-mat.mtrl-sci",
+            PermissibleValue(
+                text="cond-mat.mtrl-sci",
+                title="Materials Science",
+                description="""Techniques, synthesis, characterization, structure; mechanical and structural phase transitions."""))
+        setattr(cls, "cond-mat.other",
+            PermissibleValue(
+                text="cond-mat.other",
+                title="Other Condensed Matter",
+                description="Work in condensed matter that does not fit into other cond-mat classifications."))
+        setattr(cls, "cond-mat.quant-gas",
+            PermissibleValue(
+                text="cond-mat.quant-gas",
+                title="Quantum Gases",
+                description="""Ultracold atomic gases, Bose-Einstein condensation, Feshbach resonances, spinor condensates."""))
+        setattr(cls, "cond-mat.soft",
+            PermissibleValue(
+                text="cond-mat.soft",
+                title="Soft Condensed Matter",
+                description="Membranes, emulsions, gels, foams, nematic phases, polymers, liquid crystals."))
+        setattr(cls, "cond-mat.stat-mech",
+            PermissibleValue(
+                text="cond-mat.stat-mech",
+                title="Statistical Mechanics",
+                description="""Phase transitions, thermodynamics, field theory, non-equilibrium phenomena, renormalization."""))
+        setattr(cls, "cond-mat.str-el",
+            PermissibleValue(
+                text="cond-mat.str-el",
+                title="Strongly Correlated Electrons",
+                description="""Quantum magnetism, non-Fermi liquid, spin liquids, stripe phases, electron-phonon interactions."""))
+        setattr(cls, "cond-mat.supr-con",
+            PermissibleValue(
+                text="cond-mat.supr-con",
+                title="Superconductivity",
+                description="Superconductivity theory, models, phenomenology, experimental results."))
+        setattr(cls, "hep-ex",
+            PermissibleValue(
+                text="hep-ex",
+                title="High Energy Physics - Experiment",
+                description="""Results from high-energy/particle physics experiments at accelerators and observatories."""))
+        setattr(cls, "hep-lat",
+            PermissibleValue(
+                text="hep-lat",
+                title="High Energy Physics - Lattice",
+                description="Lattice field theory results with desired precision and algorithmic advances."))
+        setattr(cls, "hep-ph",
+            PermissibleValue(
+                text="hep-ph",
+                title="High Energy Physics - Phenomenology",
+                description="""Theoretical particle physics and its relation to experiment. Covers Standard Model and beyond."""))
+        setattr(cls, "hep-th",
+            PermissibleValue(
+                text="hep-th",
+                title="High Energy Physics - Theory",
+                description="Formal aspects of quantum field theory, string theory, quantum gravity."))
+        setattr(cls, "gr-qc",
+            PermissibleValue(
+                text="gr-qc",
+                title="General Relativity and Quantum Cosmology",
+                description="""General relativity, gravitational physics, cosmological models, relativistic astrophysics."""))
+        setattr(cls, "math-ph",
+            PermissibleValue(
+                text="math-ph",
+                title="Mathematical Physics",
+                description="""Applications of mathematics to problems in physics and development of mathematical methods for such applications."""))
+        setattr(cls, "quant-ph",
+            PermissibleValue(
+                text="quant-ph",
+                title="Quantum Physics",
+                description="Quantum foundations, quantum information, quantum computation, quantum mechanics."))
+        setattr(cls, "nlin.AO",
+            PermissibleValue(
+                text="nlin.AO",
+                title="Adaptation and Self-Organizing Systems",
+                description="Self-organization, adaptation, and autonomous systems."))
+        setattr(cls, "nlin.CD",
+            PermissibleValue(
+                text="nlin.CD",
+                title="Chaotic Dynamics",
+                description="""Dynamical systems with chaotic behavior, routes to chaos, spectral analysis, Lyapunov exponents."""))
+        setattr(cls, "nlin.CG",
+            PermissibleValue(
+                text="nlin.CG",
+                title="Cellular Automata and Lattice Gases",
+                description="""Cellular automata, lattice Boltzmann, lattice gas automata, signal processing with cellular automata."""))
+        setattr(cls, "nlin.PS",
+            PermissibleValue(
+                text="nlin.PS",
+                title="Pattern Formation and Solitons",
+                description="Pattern formation, coherent structures, solitons, waves."))
+        setattr(cls, "nlin.SI",
+            PermissibleValue(
+                text="nlin.SI",
+                title="Exactly Solvable and Integrable Systems",
+                description="Integrable PDEs, integrable ODEs, Painleve analysis, integrable discrete systems."))
+        setattr(cls, "nucl-ex",
+            PermissibleValue(
+                text="nucl-ex",
+                title="Nuclear Experiment",
+                description="Experimental results from nuclear physics laboratories, such as heavy-ion collisions."))
+        setattr(cls, "nucl-th",
+            PermissibleValue(
+                text="nucl-th",
+                title="Nuclear Theory",
+                description="Theory of nuclear structure and low-energy reactions, including heavy-ion physics."))
+        setattr(cls, "physics.acc-ph",
+            PermissibleValue(
+                text="physics.acc-ph",
+                title="Accelerator Physics",
+                description="Accelerator theory and target design, beam physics, secondary beams, photon sources."))
+        setattr(cls, "physics.ao-ph",
+            PermissibleValue(
+                text="physics.ao-ph",
+                title="Atmospheric and Oceanic Physics",
+                description="Atmospheric and oceanic processes, climate dynamics, waves, boundary layer physics."))
+        setattr(cls, "physics.app-ph",
+            PermissibleValue(
+                text="physics.app-ph",
+                title="Applied Physics",
+                description="Applications of physics to new technology, medical physics, instrumentation."))
+        setattr(cls, "physics.atm-clus",
+            PermissibleValue(
+                text="physics.atm-clus",
+                title="Atomic and Molecular Clusters",
+                description="Binding, structure, and properties of clusters, nanoparticles."))
+        setattr(cls, "physics.atom-ph",
+            PermissibleValue(
+                text="physics.atom-ph",
+                title="Atomic Physics",
+                description="""Atomic and molecular structure, spectra, collisions, and data. Ultrafast physics, molecular physics."""))
+        setattr(cls, "physics.bio-ph",
+            PermissibleValue(
+                text="physics.bio-ph",
+                title="Biological Physics",
+                description="Molecular biophysics, cellular biophysics, single molecule biophysics."))
+        setattr(cls, "physics.chem-ph",
+            PermissibleValue(
+                text="physics.chem-ph",
+                title="Chemical Physics",
+                description="Experimental, methods, and results in chemical physics and molecular dynamics."))
+        setattr(cls, "physics.class-ph",
+            PermissibleValue(
+                text="physics.class-ph",
+                title="Classical Physics",
+                description="""Newtonian and Lagrangian mechanics, electromagnetism, thermodynamics, special relativity."""))
+        setattr(cls, "physics.comp-ph",
+            PermissibleValue(
+                text="physics.comp-ph",
+                title="Computational Physics",
+                description="All aspects of computational science applied to physics problems."))
+        setattr(cls, "physics.data-an",
+            PermissibleValue(
+                text="physics.data-an",
+                title="Data Analysis, Statistics and Probability",
+                description="Methods, software, and results in physics data analysis."))
+        setattr(cls, "physics.ed-ph",
+            PermissibleValue(
+                text="physics.ed-ph",
+                title="Physics Education",
+                description="Physics teaching and learning research."))
+        setattr(cls, "physics.flu-dyn",
+            PermissibleValue(
+                text="physics.flu-dyn",
+                title="Fluid Dynamics",
+                description="Turbulence, instabilities, incompressible and compressible flows, boundary layers."))
+        setattr(cls, "physics.gen-ph",
+            PermissibleValue(
+                text="physics.gen-ph",
+                title="General Physics",
+                description="General physics that does not fit elsewhere."))
+        setattr(cls, "physics.geo-ph",
+            PermissibleValue(
+                text="physics.geo-ph",
+                title="Geophysics",
+                description="Computational and theoretical geophysics including seismology, potential theory."))
+        setattr(cls, "physics.hist-ph",
+            PermissibleValue(
+                text="physics.hist-ph",
+                title="History and Philosophy of Physics",
+                description="History and philosophy of all aspects of physics."))
+        setattr(cls, "physics.ins-det",
+            PermissibleValue(
+                text="physics.ins-det",
+                title="Instrumentation and Detectors",
+                description="Instrumentation and detectors for accelerator, astro-, geo-, or particle physics."))
+        setattr(cls, "physics.med-ph",
+            PermissibleValue(
+                text="physics.med-ph",
+                title="Medical Physics",
+                description="Radiation therapy, biomedical imaging, health physics."))
+        setattr(cls, "physics.optics",
+            PermissibleValue(
+                text="physics.optics",
+                title="Optics",
+                description="Adaptive optics, polarimetry, quantum optics, ultrafast optics, photonics."))
+        setattr(cls, "physics.plasm-ph",
+            PermissibleValue(
+                text="physics.plasm-ph",
+                title="Plasma Physics",
+                description="Fundamental plasma physics, magnetic and inertial confinement, astrophysical plasmas."))
+        setattr(cls, "physics.pop-ph",
+            PermissibleValue(
+                text="physics.pop-ph",
+                title="Popular Physics",
+                description="General physics topics for a broad audience."))
+        setattr(cls, "physics.soc-ph",
+            PermissibleValue(
+                text="physics.soc-ph",
+                title="Physics and Society",
+                description="Sociophysics, structure and dynamics of societies, opinion dynamics."))
+        setattr(cls, "physics.space-ph",
+            PermissibleValue(
+                text="physics.space-ph",
+                title="Space Physics",
+                description="Space plasma physics, magnetospheric physics, solar wind, cosmic rays."))
+        setattr(cls, "q-bio.BM",
+            PermissibleValue(
+                text="q-bio.BM",
+                title="Biomolecules",
+                description="""DNA, RNA, proteins, lipids, small molecules; molecular structure and dynamics; molecular engineering."""))
+        setattr(cls, "q-bio.CB",
+            PermissibleValue(
+                text="q-bio.CB",
+                title="Cell Behavior",
+                description="Cell-cell signaling, morphogenesis, development; cell division/cycle; immunology."))
+        setattr(cls, "q-bio.GN",
+            PermissibleValue(
+                text="q-bio.GN",
+                title="Genomics",
+                description="""DNA sequencing and assembly; gene finding; genome structure, organization, and regulation."""))
+        setattr(cls, "q-bio.MN",
+            PermissibleValue(
+                text="q-bio.MN",
+                title="Molecular Networks",
+                description="Gene regulation, signal transduction, metabolic networks, kinetics, synthetic biology."))
+        setattr(cls, "q-bio.NC",
+            PermissibleValue(
+                text="q-bio.NC",
+                title="Neurons and Cognition",
+                description="Synapse, receptor dynamics, learning, neural coding, neuroinformatics."))
+        setattr(cls, "q-bio.OT",
+            PermissibleValue(
+                text="q-bio.OT",
+                title="Other Quantitative Biology",
+                description="Work in quantitative biology that does not fit in the other q-bio classifications."))
+        setattr(cls, "q-bio.PE",
+            PermissibleValue(
+                text="q-bio.PE",
+                title="Populations and Evolution",
+                description="Population dynamics, spatio-temporal evolution, migration, phylogeny, biodiversity."))
+        setattr(cls, "q-bio.QM",
+            PermissibleValue(
+                text="q-bio.QM",
+                title="Quantitative Methods",
+                description="""Research papers with experimental, numerical, or statistical contributions of value to biologists."""))
+        setattr(cls, "q-bio.SC",
+            PermissibleValue(
+                text="q-bio.SC",
+                title="Subcellular Processes",
+                description="Subcellular structures, molecular motors, organelle transport, packaging."))
+        setattr(cls, "q-bio.TO",
+            PermissibleValue(
+                text="q-bio.TO",
+                title="Tissues and Organs",
+                description="Blood flow, biomechanics, tumor growth, tissue morphogenesis."))
+        setattr(cls, "q-fin.CP",
+            PermissibleValue(
+                text="q-fin.CP",
+                title="Computational Finance",
+                description="""Monte Carlo, PDE, and other numerical methods with applications to quantitative finance."""))
+        setattr(cls, "q-fin.EC",
+            PermissibleValue(
+                text="q-fin.EC",
+                title="Economics",
+                description="General economics topics with quantitative approaches."))
+        setattr(cls, "q-fin.GN",
+            PermissibleValue(
+                text="q-fin.GN",
+                title="General Finance",
+                description="General quantitative financial methodologies covering multiple sub-fields."))
+        setattr(cls, "q-fin.MF",
+            PermissibleValue(
+                text="q-fin.MF",
+                title="Mathematical Finance",
+                description="""Mathematical and analytical methods in finance, stochastic methods, hedging strategies."""))
+        setattr(cls, "q-fin.PM",
+            PermissibleValue(
+                text="q-fin.PM",
+                title="Portfolio Management",
+                description="Security selection and optimization, capital allocation, investment strategies."))
+        setattr(cls, "q-fin.PR",
+            PermissibleValue(
+                text="q-fin.PR",
+                title="Pricing of Securities",
+                description="""Valuation and hedging of financial securities, their derivatives, and structured products."""))
+        setattr(cls, "q-fin.RM",
+            PermissibleValue(
+                text="q-fin.RM",
+                title="Risk Management",
+                description="Measurement and management of financial risks in trading, banking, insurance."))
+        setattr(cls, "q-fin.ST",
+            PermissibleValue(
+                text="q-fin.ST",
+                title="Statistical Finance",
+                description="Statistical, econometric methods applied to financial markets."))
+        setattr(cls, "q-fin.TR",
+            PermissibleValue(
+                text="q-fin.TR",
+                title="Trading and Market Microstructure",
+                description="Market microstructure, algorithmic trading, order book dynamics."))
+        setattr(cls, "stat.AP",
+            PermissibleValue(
+                text="stat.AP",
+                title="Applications",
+                description="""Biology, education, epidemiology, engineering, environmental sciences, medical, physical sciences."""))
+        setattr(cls, "stat.CO",
+            PermissibleValue(
+                text="stat.CO",
+                title="Computation",
+                description="Algorithms, computational methods, simulation, visualization."))
+        setattr(cls, "stat.ME",
+            PermissibleValue(
+                text="stat.ME",
+                title="Methodology",
+                description="Design, surveys, model selection, regression, testing, time series."))
+        setattr(cls, "stat.ML",
+            PermissibleValue(
+                text="stat.ML",
+                title="Machine Learning",
+                description="Covers machine learning papers with a statistical or theoretical grounding."))
+        setattr(cls, "stat.OT",
+            PermissibleValue(
+                text="stat.OT",
+                title="Other Statistics",
+                description="Work in statistics that does not fit into the other stat-* classifications."))
+        setattr(cls, "stat.TH",
+            PermissibleValue(
+                text="stat.TH",
+                title="Statistics Theory",
+                description="Asymptotics, Bayesian inference, decision theory, estimation, foundations, inference."))
+
 # Slots
 class slots:
     pass
@@ -27063,6 +29010,9 @@ slots.marital_status = Slot(uri=VALUESETS.marital_status, name="marital_status",
 slots.employment_status = Slot(uri=VALUESETS.employment_status, name="employment_status", curie=VALUESETS.curie('employment_status'),
                    model_uri=VALUESETS.employment_status, domain=None, range=Optional[Union[str, "EmploymentStatus"]])
 
+slots.occupation = Slot(uri=VALUESETS.occupation, name="occupation", curie=VALUESETS.curie('occupation'),
+                   model_uri=VALUESETS.occupation, domain=None, range=Optional[Union[str, "OccupationEnum"]])
+
 slots.housing_status = Slot(uri=VALUESETS.housing_status, name="housing_status", curie=VALUESETS.curie('housing_status'),
                    model_uri=VALUESETS.housing_status, domain=None, range=Optional[Union[str, "HousingStatus"]])
 
@@ -27086,6 +29036,9 @@ slots.investigative_protocol = Slot(uri=VALUESETS.investigative_protocol, name="
 
 slots.sample_processing = Slot(uri=VALUESETS.sample_processing, name="sample_processing", curie=VALUESETS.curie('sample_processing'),
                    model_uri=VALUESETS.sample_processing, domain=None, range=Optional[Union[str, "SampleProcessingEnum"]])
+
+slots.planned_process_completion_status = Slot(uri=VALUESETS.planned_process_completion_status, name="planned_process_completion_status", curie=VALUESETS.curie('planned_process_completion_status'),
+                   model_uri=VALUESETS.planned_process_completion_status, domain=None, range=Optional[Union[str, "PlannedProcessCompletionStatus"]])
 
 slots.go_evidence = Slot(uri=VALUESETS.go_evidence, name="go_evidence", curie=VALUESETS.curie('go_evidence'),
                    model_uri=VALUESETS.go_evidence, domain=None, range=Optional[Union[str, "GOEvidenceCode"]])
@@ -27374,6 +29327,15 @@ slots.grid = Slot(uri=VALUESETS.grid, name="grid", curie=VALUESETS.curie('grid')
 
 slots.energy_storage = Slot(uri=VALUESETS.energy_storage, name="energy_storage", curie=VALUESETS.curie('energy_storage'),
                    model_uri=VALUESETS.energy_storage, domain=None, range=Optional[Union[str, "EnergyStorageType"]])
+
+slots.battery_type = Slot(uri=VALUESETS.battery_type, name="battery_type", curie=VALUESETS.curie('battery_type'),
+                   model_uri=VALUESETS.battery_type, domain=None, range=Optional[Union[str, "BatteryType"]])
+
+slots.pv_cell_type = Slot(uri=VALUESETS.pv_cell_type, name="pv_cell_type", curie=VALUESETS.curie('pv_cell_type'),
+                   model_uri=VALUESETS.pv_cell_type, domain=None, range=Optional[Union[str, "PVCellType"]])
+
+slots.pv_system_type = Slot(uri=VALUESETS.pv_system_type, name="pv_system_type", curie=VALUESETS.curie('pv_system_type'),
+                   model_uri=VALUESETS.pv_system_type, domain=None, range=Optional[Union[str, "PVSystemType"]])
 
 slots.emission_scope = Slot(uri=VALUESETS.emission_scope, name="emission_scope", curie=VALUESETS.curie('emission_scope'),
                    model_uri=VALUESETS.emission_scope, domain=None, range=Optional[Union[str, "EmissionScope"]])
@@ -28263,6 +30225,9 @@ slots.angle_unit = Slot(uri=VALUESETS.angle_unit, name="angle_unit", curie=VALUE
 slots.data_size_unit = Slot(uri=VALUESETS.data_size_unit, name="data_size_unit", curie=VALUESETS.curie('data_size_unit'),
                    model_uri=VALUESETS.data_size_unit, domain=None, range=Optional[Union[str, "DataSizeUnitEnum"]])
 
+slots.quantity_kind = Slot(uri=VALUESETS.quantity_kind, name="quantity_kind", curie=VALUESETS.curie('quantity_kind'),
+                   model_uri=VALUESETS.quantity_kind, domain=None, range=Optional[Union[str, "QuantityKindEnum"]])
+
 slots.image_file_format = Slot(uri=VALUESETS.image_file_format, name="image_file_format", curie=VALUESETS.curie('image_file_format'),
                    model_uri=VALUESETS.image_file_format, domain=None, range=Optional[Union[str, "ImageFileFormatEnum"]])
 
@@ -28493,3 +30458,12 @@ slots.pcr_operation_type = Slot(uri=VALUESETS.pcr_operation_type, name="pcr_oper
 
 slots.detection_mode = Slot(uri=VALUESETS.detection_mode, name="detection_mode", curie=VALUESETS.curie('detection_mode'),
                    model_uri=VALUESETS.detection_mode, domain=None, range=Optional[Union[str, "DetectionModeEnum"]])
+
+slots.arxiv_category = Slot(uri=VALUESETS.arxiv_category, name="arxiv_category", curie=VALUESETS.curie('arxiv_category'),
+                   model_uri=VALUESETS.arxiv_category, domain=None, range=Optional[Union[str, "ArxivCategory"]])
+
+slots.arxiv_primary_category = Slot(uri=VALUESETS.arxiv_primary_category, name="arxiv_primary_category", curie=VALUESETS.curie('arxiv_primary_category'),
+                   model_uri=VALUESETS.arxiv_primary_category, domain=None, range=Optional[Union[str, "ArxivCategory"]])
+
+slots.arxiv_secondary_categories = Slot(uri=VALUESETS.arxiv_secondary_categories, name="arxiv_secondary_categories", curie=VALUESETS.curie('arxiv_secondary_categories'),
+                   model_uri=VALUESETS.arxiv_secondary_categories, domain=None, range=Optional[Union[Union[str, "ArxivCategory"], list[Union[str, "ArxivCategory"]]]])

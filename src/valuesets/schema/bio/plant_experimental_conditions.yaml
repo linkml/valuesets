@@ -1,0 +1,215 @@
+name: plant_experimental_conditions
+title: Plant Experimental Conditions Value Sets
+description: >-
+  Value sets based on the Plant Experimental Conditions Ontology (PECO),
+  including plant exposures and study conditions.
+id: https://w3id.org/linkml/valuesets/bio/plant_experimental_conditions
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  valuesets: https://w3id.org/valuesets/
+  PECO: http://purl.obolibrary.org/obo/PECO_
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+default_prefix: valuesets
+slots:
+  plant_exposure:
+    description: >-
+      Any plant exposure condition, including abiotic exposures (chemical, physical)
+      and biotic exposures (pathogens, insects, other organisms).
+    range: PlantExposureEnum
+  plant_study_condition:
+    description: >-
+      The type of plant growth facility or study environment used in an experiment.
+    range: PlantStudyConditionEnum
+  seasonal_environment_exposure:
+    description: >-
+      Seasonal conditions during plant growth, including standard seasons and
+      regional agricultural seasons.
+    range: SeasonalEnvironmentExposureEnum
+  ecological_environment_exposure:
+    description: >-
+      Ecological or geographical environment conditions during plant growth,
+      including climate zones, altitude, and land characteristics.
+    range: EcologicalEnvironmentExposureEnum
+  plant_growth_medium_exposure:
+    description: >-
+      The type of growth medium or substrate used for plant cultivation.
+    range: PlantGrowthMediumExposureEnum
+enums:
+  PlantExposureEnum:
+    title: Plant Exposure
+    description: >-
+      A plant experimental condition describing the application of an abiotic
+      (chemical, physical) or biotic (pathogen, insect, plant) exposure.
+      Dynamically populated from PECO.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    reachable_from:
+      source_ontology: obo:peco
+      source_nodes:
+      - PECO:0001001
+      include_self: true
+      relationship_types:
+      - rdfs:subClassOf
+  PlantStudyConditionEnum:
+    title: Plant Study Condition
+    description: >-
+      The type of plant growth facility used in an experiment, describing
+      whether plants were grown in a field, greenhouse, growth chamber, or laboratory.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      FIELD_STUDY:
+        title: field study
+        description: Plants were grown outdoors under field conditions
+        meaning: PECO:0007256
+      GREENHOUSE_STUDY:
+        title: greenhouse study
+        description: Plants were grown under greenhouse conditions
+        meaning: PECO:0007248
+      GROWTH_CHAMBER_STUDY:
+        title: growth chamber study
+        description: Plants were grown in growth chambers under controlled light and temperature conditions
+        meaning: PECO:0007269
+      LABORATORY_STUDY:
+        title: laboratory study
+        description: Plants were grown under in vitro growth conditions in a laboratory
+        meaning: PECO:0007255
+  SeasonalEnvironmentExposureEnum:
+    title: Seasonal Environment Exposure
+    description: >-
+      Seasonal conditions during plant growth, including standard seasons
+      and regional agricultural seasons (e.g., kharif, rabi in South Asia).
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      SPRING_SEASON:
+        title: spring season exposure
+        description: Growth during the spring season
+        meaning: PECO:0007037
+      SUMMER_SEASON:
+        title: summer season exposure
+        description: Growth during the summer season
+        meaning: PECO:0007036
+      AUTUMN_SEASON:
+        title: autumn season exposure
+        description: Growth during the autumn season
+        meaning: PECO:0007038
+      WINTER_SEASON:
+        title: winter season exposure
+        description: Growth during the winter season
+        meaning: PECO:0007035
+      DRY_SEASON:
+        title: dry season exposure
+        description: Growth during the dry season
+        meaning: PECO:0007286
+      RAINY_SEASON:
+        title: rainy season exposure
+        description: Growth during the wet or rainy season
+        meaning: PECO:0007285
+      KHARIF_SEASON:
+        title: kharif season exposure
+        description: Growth during the kharif crop season (May-October) as practiced in South Asia
+        meaning: PECO:0007034
+      RABI_SEASON:
+        title: rabi season exposure
+        description: Growth during the rabi crop season (October-March) as practiced in South Asia
+        meaning: PECO:0007033
+  EcologicalEnvironmentExposureEnum:
+    title: Ecological Environment Exposure
+    description: >-
+      Ecological or geographical environment conditions during plant growth,
+      including climate zones, altitude, atmospheric pressure, and land characteristics.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      ALTITUDE:
+        title: altitude exposure
+        description: Growth at a given elevation or height above sea level
+        meaning: PECO:0007176
+      ATMOSPHERIC_PRESSURE:
+        title: atmospheric pressure exposure
+        description: Growth at a given air pressure
+        meaning: PECO:0007178
+      TROPICAL_REGION:
+        title: tropical region exposure
+        description: Growth in the geographical region between the Tropics of Cancer and Capricorn
+        meaning: PECO:0007061
+      SUB_TROPICAL_REGION:
+        title: sub-tropical region exposure
+        description: Growth in regions adjacent to the tropics (roughly 25-40 degrees latitude)
+        meaning: PECO:0007398
+      TEMPERATE_REGION:
+        title: temperate region exposure
+        description: Growth in regions with temperate climate, characterized by roughly equal winters and summers
+        meaning: PECO:0007003
+      DESERT_LIKE_REGION:
+        title: desert-like region exposure
+        description: Growth in biome characterized by low moisture and infrequent precipitation
+        meaning: PECO:0007394
+      SEMIARID_REGION:
+        title: semiarid region exposure
+        description: Growth in regions with 25-50cm (10-20 inches) annual rainfall
+        meaning: PECO:0007401
+      LOWLAND_REGION:
+        title: lowland region exposure
+        description: Growth in slightly steep regions with noncontinuous flooding and alternating aerobic/anaerobic soil
+        meaning: PECO:0007391
+      UPLAND_REGION:
+        title: upland region exposure
+        description: Growth in steep regions that are rarely flooded with aerobic soil
+        meaning: PECO:0007392
+      FLOOD_PRONE_REGION:
+        title: flood-prone region exposure
+        description: Growth in conditions susceptible to inundation by water
+        meaning: PECO:0007396
+      IRRIGATED_LAND_REGION:
+        title: irrigated land region exposure
+        description: Growth in leveled land with water control and shallow flooding
+        meaning: PECO:0007385
+  PlantGrowthMediumExposureEnum:
+    title: Plant Growth Medium Exposure
+    description: >-
+      The type of growth medium or substrate used for plant cultivation,
+      including soil, hydroponic, aeroponic, and in vitro media.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      SOIL_ENVIRONMENT:
+        title: soil environment exposure
+        description: Growing plants in soil growth media with varying contents
+        meaning: PECO:0007049
+      HYDROPONIC_CULTURE:
+        title: hydroponic plant culture media exposure
+        description: Growing plants in liquid growth media
+        meaning: PECO:0007067
+      AEROPONIC_GROWTH:
+        title: aeroponic plant growth media exposure
+        description: Growing plants in air and/or mist environment without soil or aggregate medium
+        meaning: PECO:0001073
+      IN_VITRO_GROWTH_MEDIUM:
+        title: in vitro growth medium exposure
+        description: In vitro culture using solid or liquid substrate with nutrients and amendments
+        meaning: PECO:0007266

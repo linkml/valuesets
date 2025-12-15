@@ -85,10 +85,14 @@ imports:
 - medical/clinical
 - medical/neuroimaging
 - medical/family_history
+- medical/pediatric_oncology/diagnosis_categories
+- medical/pediatric_oncology/iccc3
+- medical/pediatric_oncology/staging/neuroblastoma
 - clinical/nih_demographics
 - clinical/phenopackets
 - bioprocessing/scale_up
 - units/measurements
+- units/quantity_kinds
 - computing/file_formats
 - computing/maturity_levels
 - computing/ontologies
@@ -106,6 +110,7 @@ imports:
 - lab_automation/protocols
 - lab_automation/standards
 - lab_automation/thermal_cycling
+- publishing/arxiv_categories
 - linkml:types
 - core
 - core
@@ -1223,6 +1228,31 @@ enums:
       relationship_types:
       - rdfs:subClassOf
       is_direct: false
+  PlannedProcessCompletionStatus:
+    name: PlannedProcessCompletionStatus
+    definition_uri: https://w3id.org/valuesets/PlannedProcessCompletionStatus
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: The completion status of a planned process, indicating whether the
+      process was successfully executed or failed. Based on COB (Core Ontology for
+      Biology) planned process hierarchy.
+    title: Planned Process Completion Status
+    from_schema: https://w3id.org/valuesets/investigation
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      COMPLETELY_EXECUTED:
+        text: COMPLETELY_EXECUTED
+        description: A planned process that was successfully completed as intended
+        meaning: COB:0000035
+        title: completely executed planned process
+      FAILED:
+        text: FAILED
+        description: A planned process that did not complete successfully
+        meaning: COB:0000083
+        title: failed planned process
   GOEvidenceCode:
     name: GOEvidenceCode
     definition_uri: https://w3id.org/valuesets/GOEvidenceCode
@@ -1235,8 +1265,11 @@ enums:
       publishers:
         tag: publishers
         value: https://geneontology.org
-    description: Gene Ontology evidence codes mapped to Evidence and Conclusion Ontology
-      (ECO) terms
+    description: Gene Ontology evidence codes used to describe the type of support
+      for GO annotations. Each code maps to the Evidence and Conclusion Ontology (ECO).
+      Evidence codes are categorized by whether they represent experimental evidence,
+      computational analysis, phylogenetic inference, author statements, or electronic
+      annotation. All codes except IEA represent manual curation.
     title: GO Evidence Code
     from_schema: https://w3id.org/linkml/valuesets/bio/go_evidence
     contributors:
@@ -1246,158 +1279,497 @@ enums:
     permissible_values:
       EXP:
         text: EXP
+        description: General experimental evidence supporting a GO annotation
         meaning: ECO:0000269
+        annotations:
+          is_experimental:
+            tag: is_experimental
+            value: true
+          is_manual:
+            tag: is_manual
+            value: true
+          is_high_throughput:
+            tag: is_high_throughput
+            value: false
         title: Inferred from Experiment
         aliases:
         - experimental evidence used in manual assertion
       IDA:
         text: IDA
+        description: Evidence from a direct assay for the presence or activity of
+          a gene product
         meaning: ECO:0000314
+        annotations:
+          is_experimental:
+            tag: is_experimental
+            value: true
+          is_manual:
+            tag: is_manual
+            value: true
+          is_high_throughput:
+            tag: is_high_throughput
+            value: false
         title: Inferred from Direct Assay
         aliases:
         - direct assay evidence used in manual assertion
       IPI:
         text: IPI
+        description: Evidence from physical interaction between gene products
         meaning: ECO:0000353
+        annotations:
+          is_experimental:
+            tag: is_experimental
+            value: true
+          is_manual:
+            tag: is_manual
+            value: true
+          is_high_throughput:
+            tag: is_high_throughput
+            value: false
         title: Inferred from Physical Interaction
         aliases:
         - physical interaction evidence used in manual assertion
       IMP:
         text: IMP
+        description: Evidence from the phenotype of a mutant allele
         meaning: ECO:0000315
+        annotations:
+          is_experimental:
+            tag: is_experimental
+            value: true
+          is_manual:
+            tag: is_manual
+            value: true
+          is_high_throughput:
+            tag: is_high_throughput
+            value: false
         title: Inferred from Mutant Phenotype
         aliases:
         - mutant phenotype evidence used in manual assertion
       IGI:
         text: IGI
+        description: Evidence from genetic interaction between genes
         meaning: ECO:0000316
+        annotations:
+          is_experimental:
+            tag: is_experimental
+            value: true
+          is_manual:
+            tag: is_manual
+            value: true
+          is_high_throughput:
+            tag: is_high_throughput
+            value: false
         title: Inferred from Genetic Interaction
         aliases:
         - genetic interaction evidence used in manual assertion
       IEP:
         text: IEP
+        description: Evidence from gene expression pattern data
         meaning: ECO:0000270
+        annotations:
+          is_experimental:
+            tag: is_experimental
+            value: true
+          is_manual:
+            tag: is_manual
+            value: true
+          is_high_throughput:
+            tag: is_high_throughput
+            value: false
         title: Inferred from Expression Pattern
         aliases:
         - expression pattern evidence used in manual assertion
       HTP:
         text: HTP
+        description: Evidence from high-throughput experimental methods
         meaning: ECO:0006056
+        annotations:
+          is_experimental:
+            tag: is_experimental
+            value: true
+          is_manual:
+            tag: is_manual
+            value: true
+          is_high_throughput:
+            tag: is_high_throughput
+            value: true
         title: Inferred from High Throughput Experiment
         aliases:
         - high throughput evidence used in manual assertion
       HDA:
         text: HDA
+        description: Evidence from high-throughput direct assay experiments
         meaning: ECO:0007005
+        annotations:
+          is_experimental:
+            tag: is_experimental
+            value: true
+          is_manual:
+            tag: is_manual
+            value: true
+          is_high_throughput:
+            tag: is_high_throughput
+            value: true
         title: Inferred from High Throughput Direct Assay
         aliases:
         - high throughput direct assay evidence used in manual assertion
       HMP:
         text: HMP
+        description: Evidence from high-throughput mutant phenotype screening
         meaning: ECO:0007001
+        annotations:
+          is_experimental:
+            tag: is_experimental
+            value: true
+          is_manual:
+            tag: is_manual
+            value: true
+          is_high_throughput:
+            tag: is_high_throughput
+            value: true
         title: Inferred from High Throughput Mutant Phenotype
         aliases:
         - high throughput mutant phenotypic evidence used in manual assertion
       HGI:
         text: HGI
+        description: Evidence from high-throughput genetic interaction screening
         meaning: ECO:0007003
+        annotations:
+          is_experimental:
+            tag: is_experimental
+            value: true
+          is_manual:
+            tag: is_manual
+            value: true
+          is_high_throughput:
+            tag: is_high_throughput
+            value: true
         title: Inferred from High Throughput Genetic Interaction
         aliases:
         - high throughput genetic interaction phenotypic evidence used in manual assertion
       HEP:
         text: HEP
+        description: Evidence from high-throughput expression profiling
         meaning: ECO:0007007
+        annotations:
+          is_experimental:
+            tag: is_experimental
+            value: true
+          is_manual:
+            tag: is_manual
+            value: true
+          is_high_throughput:
+            tag: is_high_throughput
+            value: true
         title: Inferred from High Throughput Expression Pattern
         aliases:
         - high throughput expression pattern evidence used in manual assertion
       IBA:
         text: IBA
+        description: Evidence from conservation of biological aspect in an ancestral
+          sequence
         meaning: ECO:0000318
+        annotations:
+          is_experimental:
+            tag: is_experimental
+            value: false
+          is_manual:
+            tag: is_manual
+            value: true
+          is_high_throughput:
+            tag: is_high_throughput
+            value: false
+          is_phylogenetic:
+            tag: is_phylogenetic
+            value: true
         title: Inferred from Biological aspect of Ancestor
         aliases:
         - biological aspect of ancestor evidence used in manual assertion
       IBD:
         text: IBD
+        description: Evidence from conservation of biological aspect in a descendant
+          sequence
         meaning: ECO:0000319
+        annotations:
+          is_experimental:
+            tag: is_experimental
+            value: false
+          is_manual:
+            tag: is_manual
+            value: true
+          is_high_throughput:
+            tag: is_high_throughput
+            value: false
+          is_phylogenetic:
+            tag: is_phylogenetic
+            value: true
         title: Inferred from Biological aspect of Descendant
         aliases:
         - biological aspect of descendant evidence used in manual assertion
       IKR:
         text: IKR
+        description: Evidence from phylogenetic analysis showing loss of key residues
         meaning: ECO:0000320
+        annotations:
+          is_experimental:
+            tag: is_experimental
+            value: false
+          is_manual:
+            tag: is_manual
+            value: true
+          is_high_throughput:
+            tag: is_high_throughput
+            value: false
+          is_phylogenetic:
+            tag: is_phylogenetic
+            value: true
         title: Inferred from Key Residues
         aliases:
         - phylogenetic determination of loss of key residues evidence used in manual
           assertion
       IRD:
         text: IRD
+        description: Evidence from rapid divergence from ancestral sequence
         meaning: ECO:0000321
+        annotations:
+          is_experimental:
+            tag: is_experimental
+            value: false
+          is_manual:
+            tag: is_manual
+            value: true
+          is_high_throughput:
+            tag: is_high_throughput
+            value: false
+          is_phylogenetic:
+            tag: is_phylogenetic
+            value: true
         title: Inferred from Rapid Divergence
         aliases:
         - rapid divergence from ancestral sequence evidence used in manual assertion
       ISS:
         text: ISS
+        description: Evidence from sequence or structural similarity to another annotated
+          gene product
         meaning: ECO:0000250
+        annotations:
+          is_experimental:
+            tag: is_experimental
+            value: false
+          is_manual:
+            tag: is_manual
+            value: true
+          is_high_throughput:
+            tag: is_high_throughput
+            value: false
+          is_computational:
+            tag: is_computational
+            value: true
         title: Inferred from Sequence or structural Similarity
         aliases:
         - sequence similarity evidence used in manual assertion
       ISO:
         text: ISO
+        description: Evidence from orthology to an experimentally characterized gene
+          product
         meaning: ECO:0000266
+        annotations:
+          is_experimental:
+            tag: is_experimental
+            value: false
+          is_manual:
+            tag: is_manual
+            value: true
+          is_high_throughput:
+            tag: is_high_throughput
+            value: false
+          is_computational:
+            tag: is_computational
+            value: true
         title: Inferred from Sequence Orthology
         aliases:
         - sequence orthology evidence used in manual assertion
       ISA:
         text: ISA
+        description: Evidence from sequence alignment to an annotated gene product
         meaning: ECO:0000247
+        annotations:
+          is_experimental:
+            tag: is_experimental
+            value: false
+          is_manual:
+            tag: is_manual
+            value: true
+          is_high_throughput:
+            tag: is_high_throughput
+            value: false
+          is_computational:
+            tag: is_computational
+            value: true
         title: Inferred from Sequence Alignment
         aliases:
         - sequence alignment evidence used in manual assertion
       ISM:
         text: ISM
+        description: Evidence from match to a sequence model (e.g., HMM, profile)
         meaning: ECO:0000255
+        annotations:
+          is_experimental:
+            tag: is_experimental
+            value: false
+          is_manual:
+            tag: is_manual
+            value: true
+          is_high_throughput:
+            tag: is_high_throughput
+            value: false
+          is_computational:
+            tag: is_computational
+            value: true
         title: Inferred from Sequence Model
         aliases:
         - match to sequence model evidence used in manual assertion
       IGC:
         text: IGC
+        description: Evidence from genomic context such as synteny or gene neighborhood
         meaning: ECO:0000317
+        annotations:
+          is_experimental:
+            tag: is_experimental
+            value: false
+          is_manual:
+            tag: is_manual
+            value: true
+          is_high_throughput:
+            tag: is_high_throughput
+            value: false
+          is_computational:
+            tag: is_computational
+            value: true
         title: Inferred from Genomic Context
         aliases:
         - genomic context evidence used in manual assertion
       RCA:
         text: RCA
+        description: Evidence from computational analysis that has been reviewed by
+          a curator
         meaning: ECO:0000245
+        annotations:
+          is_experimental:
+            tag: is_experimental
+            value: false
+          is_manual:
+            tag: is_manual
+            value: true
+          is_high_throughput:
+            tag: is_high_throughput
+            value: false
+          is_computational:
+            tag: is_computational
+            value: true
         title: Inferred from Reviewed Computational Analysis
         aliases:
         - automatically integrated combinatorial evidence used in manual assertion
       TAS:
         text: TAS
+        description: Evidence from an author statement in a published paper that can
+          be traced to the original source
         meaning: ECO:0000304
+        annotations:
+          is_experimental:
+            tag: is_experimental
+            value: false
+          is_manual:
+            tag: is_manual
+            value: true
+          is_high_throughput:
+            tag: is_high_throughput
+            value: false
+          is_author_statement:
+            tag: is_author_statement
+            value: true
         title: Traceable Author Statement
         aliases:
         - author statement supported by traceable reference used in manual assertion
       NAS:
         text: NAS
+        description: Evidence from an author statement that cannot be traced to the
+          experimental source
         meaning: ECO:0000303
+        annotations:
+          is_experimental:
+            tag: is_experimental
+            value: false
+          is_manual:
+            tag: is_manual
+            value: true
+          is_high_throughput:
+            tag: is_high_throughput
+            value: false
+          is_author_statement:
+            tag: is_author_statement
+            value: true
         title: Non-traceable Author Statement
         aliases:
         - author statement without traceable support used in manual assertion
       IC:
         text: IC
+        description: Evidence inferred by a curator based on existing annotations
+          and biological knowledge
         meaning: ECO:0000305
+        annotations:
+          is_experimental:
+            tag: is_experimental
+            value: false
+          is_manual:
+            tag: is_manual
+            value: true
+          is_high_throughput:
+            tag: is_high_throughput
+            value: false
+          is_curator_inference:
+            tag: is_curator_inference
+            value: true
         title: Inferred by Curator
         aliases:
         - curator inference used in manual assertion
       ND:
         text: ND
+        description: Indicates that no biological data is available to support an
+          annotation
         meaning: ECO:0000307
+        annotations:
+          is_experimental:
+            tag: is_experimental
+            value: false
+          is_manual:
+            tag: is_manual
+            value: true
+          is_high_throughput:
+            tag: is_high_throughput
+            value: false
         title: No biological Data available
         aliases:
         - no evidence data found used in manual assertion
       IEA:
         text: IEA
+        description: Evidence from automated electronic annotation pipelines without
+          manual curation
         meaning: ECO:0000501
+        annotations:
+          is_experimental:
+            tag: is_experimental
+            value: false
+          is_manual:
+            tag: is_manual
+            value: false
+          is_high_throughput:
+            tag: is_high_throughput
+            value: false
+          is_electronic:
+            tag: is_electronic
+            value: true
         title: Inferred from Electronic Annotation
         aliases:
         - evidence used in automatic assertion
@@ -2309,6 +2681,9 @@ enums:
           result:
             tag: result
             value: reduction from diploid to haploid
+          succeeded_by:
+            tag: succeeded_by
+            value: MEIOSIS_II
       PROPHASE_I:
         text: PROPHASE_I
         description: Prophase I
@@ -2317,6 +2692,9 @@ enums:
           substages:
             tag: substages
             value: leptotene, zygotene, pachytene, diplotene, diakinesis
+          succeeded_by:
+            tag: succeeded_by
+            value: METAPHASE_I
         title: meiotic prophase I
       METAPHASE_I:
         text: METAPHASE_I
@@ -2326,6 +2704,9 @@ enums:
           feature:
             tag: feature
             value: homologous pairs align
+          succeeded_by:
+            tag: succeeded_by
+            value: ANAPHASE_I
         title: meiotic metaphase I
       ANAPHASE_I:
         text: ANAPHASE_I
@@ -2335,11 +2716,18 @@ enums:
           feature:
             tag: feature
             value: homologous chromosomes separate
+          succeeded_by:
+            tag: succeeded_by
+            value: TELOPHASE_I
         title: meiotic anaphase I
       TELOPHASE_I:
         text: TELOPHASE_I
         description: Telophase I
         meaning: GO:0007134
+        annotations:
+          succeeded_by:
+            tag: succeeded_by
+            value: PROPHASE_II
         title: meiotic telophase I
       MEIOSIS_II:
         text: MEIOSIS_II
@@ -2353,11 +2741,19 @@ enums:
         text: PROPHASE_II
         description: Prophase II
         meaning: GO:0007136
+        annotations:
+          succeeded_by:
+            tag: succeeded_by
+            value: METAPHASE_II
         title: meiotic prophase II
       METAPHASE_II:
         text: METAPHASE_II
         description: Metaphase II
         meaning: GO:0007137
+        annotations:
+          succeeded_by:
+            tag: succeeded_by
+            value: ANAPHASE_II
         title: meiotic metaphase II
       ANAPHASE_II:
         text: ANAPHASE_II
@@ -2367,6 +2763,9 @@ enums:
           feature:
             tag: feature
             value: sister chromatids separate
+          succeeded_by:
+            tag: succeeded_by
+            value: TELOPHASE_II
         title: meiotic anaphase II
       TELOPHASE_II:
         text: TELOPHASE_II
@@ -6109,7 +6508,6 @@ enums:
       DIOECIOUS:
         text: DIOECIOUS
         description: Having male and female flowers on separate plants
-        meaning: GSSO:011872
         title: Dioecious
       GYNODIOECIOUS:
         text: GYNODIOECIOUS
@@ -6126,8 +6524,8 @@ enums:
       HERMAPHRODITIC:
         text: HERMAPHRODITIC
         description: Having both male and female reproductive organs
-        meaning: UBERON:0007197
-        title: hermaphroditic organism
+        meaning: PATO:0001340
+        title: Hermaphroditic
       IMPERFECT:
         text: IMPERFECT
         description: Flower lacking either male or female reproductive organs
@@ -6139,7 +6537,6 @@ enums:
       MONOECIOUS:
         text: MONOECIOUS
         description: Having male and female flowers on the same plant
-        meaning: GSSO:011868
         title: Monoecious
       PERFECT:
         text: PERFECT
@@ -6765,9 +7162,6 @@ enums:
         description: January
         meaning: greg:January
         annotations:
-          month_number:
-            tag: month_number
-            value: 1
           abbreviation:
             tag: abbreviation
             value: Jan
@@ -6777,14 +7171,12 @@ enums:
         exact_mappings:
         - OPMI:0000071
         - NCIT:C106180
+        rank: 1
       FEBRUARY:
         text: FEBRUARY
         description: February
         meaning: greg:February
         annotations:
-          month_number:
-            tag: month_number
-            value: 2
           abbreviation:
             tag: abbreviation
             value: Feb
@@ -6794,14 +7186,12 @@ enums:
         exact_mappings:
         - OPMI:0000072
         - NCIT:C106181
+        rank: 2
       MARCH:
         text: MARCH
         description: March
         meaning: greg:March
         annotations:
-          month_number:
-            tag: month_number
-            value: 3
           abbreviation:
             tag: abbreviation
             value: Mar
@@ -6811,14 +7201,12 @@ enums:
         exact_mappings:
         - OPMI:0000073
         - NCIT:C106182
+        rank: 3
       APRIL:
         text: APRIL
         description: April
         meaning: greg:April
         annotations:
-          month_number:
-            tag: month_number
-            value: 4
           abbreviation:
             tag: abbreviation
             value: Apr
@@ -6828,14 +7216,12 @@ enums:
         exact_mappings:
         - OPMI:0000074
         - NCIT:C106183
+        rank: 4
       MAY:
         text: MAY
         description: May
         meaning: greg:May
         annotations:
-          month_number:
-            tag: month_number
-            value: 5
           abbreviation:
             tag: abbreviation
             value: May
@@ -6845,14 +7231,12 @@ enums:
         exact_mappings:
         - OPMI:0000075
         - NCIT:C106184
+        rank: 5
       JUNE:
         text: JUNE
         description: June
         meaning: greg:June
         annotations:
-          month_number:
-            tag: month_number
-            value: 6
           abbreviation:
             tag: abbreviation
             value: Jun
@@ -6862,14 +7246,12 @@ enums:
         exact_mappings:
         - OPMI:0000076
         - NCIT:C106185
+        rank: 6
       JULY:
         text: JULY
         description: July
         meaning: greg:July
         annotations:
-          month_number:
-            tag: month_number
-            value: 7
           abbreviation:
             tag: abbreviation
             value: Jul
@@ -6879,14 +7261,12 @@ enums:
         exact_mappings:
         - OPMI:0000077
         - NCIT:C106186
+        rank: 7
       AUGUST:
         text: AUGUST
         description: August
         meaning: greg:August
         annotations:
-          month_number:
-            tag: month_number
-            value: 8
           abbreviation:
             tag: abbreviation
             value: Aug
@@ -6896,14 +7276,12 @@ enums:
         exact_mappings:
         - OPMI:0000078
         - NCIT:C106187
+        rank: 8
       SEPTEMBER:
         text: SEPTEMBER
         description: September
         meaning: greg:September
         annotations:
-          month_number:
-            tag: month_number
-            value: 9
           abbreviation:
             tag: abbreviation
             value: Sep
@@ -6913,14 +7291,12 @@ enums:
         exact_mappings:
         - OPMI:0000079
         - NCIT:C106188
+        rank: 9
       OCTOBER:
         text: OCTOBER
         description: October
         meaning: greg:October
         annotations:
-          month_number:
-            tag: month_number
-            value: 10
           abbreviation:
             tag: abbreviation
             value: Oct
@@ -6930,14 +7306,12 @@ enums:
         exact_mappings:
         - OPMI:0000080
         - NCIT:C106189
+        rank: 10
       NOVEMBER:
         text: NOVEMBER
         description: November
         meaning: greg:November
         annotations:
-          month_number:
-            tag: month_number
-            value: 11
           abbreviation:
             tag: abbreviation
             value: Nov
@@ -6947,14 +7321,12 @@ enums:
         exact_mappings:
         - OPMI:0000081
         - NCIT:C106191
+        rank: 11
       DECEMBER:
         text: DECEMBER
         description: December
         meaning: greg:December
         annotations:
-          month_number:
-            tag: month_number
-            value: 12
           abbreviation:
             tag: abbreviation
             value: Dec
@@ -6964,6 +7336,7 @@ enums:
         exact_mappings:
         - OPMI:0000082
         - NCIT:C106192
+        rank: 12
   Quarter:
     name: Quarter
     definition_uri: https://w3id.org/valuesets/Quarter
@@ -41931,6 +42304,1561 @@ enums:
         text: UNKNOWN_GENETIC_RELATIONSHIP
         description: Genetic relationship status is unknown
         meaning: SNOMED:261665006
+  PediatricOncologyDiagnosisCategory:
+    name: PediatricOncologyDiagnosisCategory
+    definition_uri: https://w3id.org/valuesets/PediatricOncologyDiagnosisCategory
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    annotations:
+      caDSR_CDE:
+        tag: caDSR_CDE
+        value: '16607972'
+      source:
+        tag: source
+        value: CCDI Federation API
+      alignment:
+        tag: alignment
+        value: WHO CNS5, WHO-HAEM5, WHO Pediatric Blue Book
+    description: High-level groupings for pediatric cancer diagnoses per CCDI CDE
+      16607972. Designed for cohort aggregation across federated data resources. Each
+      diagnosis maps to a single dominant category.
+    title: Pediatric Oncology Diagnosis Category
+    from_schema: https://w3id.org/linkml/valuesets/medical/pediatric_oncology/diagnosis_categories
+    see_also:
+    - https://github.com/CBIIT/ccdi-federation-api/discussions/160
+    - https://docs.stjude.cloud/cc4k
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: RELEASED
+    permissible_values:
+      ATYPICAL_TERATOID_RHABDOID_TUMOR:
+        text: ATYPICAL_TERATOID_RHABDOID_TUMOR
+        description: Highly malignant embryonal CNS tumor characterized by loss of
+          SMARCB1 (INI1) or SMARCA4 expression. Predominantly occurs in young children.
+        meaning: NCIT:C6807
+        annotations:
+          category:
+            tag: category
+            value: brain_tumor
+          who_classification:
+            tag: who_classification
+            value: WHO CNS5
+        title: Atypical Teratoid/Rhabdoid Tumors
+      CHOROID_PLEXUS_TUMOR:
+        text: CHOROID_PLEXUS_TUMOR
+        description: Neoplasms arising from the choroid plexus epithelium, including
+          papilloma, atypical papilloma, and carcinoma.
+        meaning: NCIT:C3698
+        annotations:
+          category:
+            tag: category
+            value: brain_tumor
+          who_classification:
+            tag: who_classification
+            value: WHO CNS5
+        title: Choroid Plexus Tumors
+      CNS_GERM_CELL_TUMOR:
+        text: CNS_GERM_CELL_TUMOR
+        description: Germ cell tumors arising within the central nervous system, including
+          germinoma and non-germinomatous germ cell tumors.
+        meaning: NCIT:C6286
+        annotations:
+          category:
+            tag: category
+            value: brain_tumor
+          who_classification:
+            tag: who_classification
+            value: WHO CNS5
+        title: CNS Germ Cell Tumors
+      CNS_SARCOMA:
+        text: CNS_SARCOMA
+        description: Sarcomas arising primarily in the central nervous system, including
+          Ewing sarcoma and rhabdomyosarcoma of CNS.
+        meaning: NCIT:C121624
+        annotations:
+          category:
+            tag: category
+            value: brain_tumor
+        title: CNS Sarcomas
+      CRANIOPHARYNGIOMA:
+        text: CRANIOPHARYNGIOMA
+        description: Benign epithelial tumors arising from remnants of Rathke pouch,
+          including adamantinomatous and papillary subtypes.
+        meaning: NCIT:C2998
+        annotations:
+          category:
+            tag: category
+            value: brain_tumor
+          who_classification:
+            tag: who_classification
+            value: WHO CNS5
+        title: Craniopharyngiomas
+      EPENDYMOMA:
+        text: EPENDYMOMA
+        description: Glial tumors arising from ependymal cells lining the ventricular
+          system and central canal. Includes molecular subtypes defined by WHO CNS5.
+        meaning: NCIT:C3017
+        annotations:
+          category:
+            tag: category
+            value: brain_tumor
+          who_classification:
+            tag: who_classification
+            value: WHO CNS5
+        title: Ependymoma
+      GLIONEURONAL_AND_NEURONAL_TUMOR:
+        text: GLIONEURONAL_AND_NEURONAL_TUMOR
+        description: Tumors with neuronal differentiation including ganglioglioma,
+          dysembryoplastic neuroepithelial tumor (DNET), and central neurocytoma.
+        meaning: NCIT:C6927
+        annotations:
+          category:
+            tag: category
+            value: brain_tumor
+          who_classification:
+            tag: who_classification
+            value: WHO CNS5
+        title: Glioneuronal and Neuronal Tumors
+      HIGH_GRADE_GLIOMA:
+        text: HIGH_GRADE_GLIOMA
+        description: Aggressive glial tumors including pediatric-type diffuse high-grade
+          gliomas (H3 K27-altered, H3 G34-mutant, and H3/IDH-wildtype), as well as
+          glioblastoma.
+        meaning: NCIT:C129355
+        annotations:
+          category:
+            tag: category
+            value: brain_tumor
+          who_classification:
+            tag: who_classification
+            value: WHO CNS5
+          grade:
+            tag: grade
+            value: high
+        title: High-Grade Gliomas
+      LOW_GRADE_GLIOMA:
+        text: LOW_GRADE_GLIOMA
+        description: Indolent glial tumors including pilocytic astrocytoma and pediatric-type
+          diffuse low-grade gliomas (MYB/MYBL1-altered, MAPK pathway-altered).
+        meaning: NCIT:C129354
+        annotations:
+          category:
+            tag: category
+            value: brain_tumor
+          who_classification:
+            tag: who_classification
+            value: WHO CNS5
+          grade:
+            tag: grade
+            value: low
+        title: Low-Grade Gliomas
+      MEDULLOBLASTOMA:
+        text: MEDULLOBLASTOMA
+        description: Embryonal tumor of the cerebellum, classified by molecular subgroups
+          (WNT-activated, SHH-activated, Group 3, Group 4) per WHO CNS5.
+        meaning: NCIT:C3222
+        annotations:
+          category:
+            tag: category
+            value: brain_tumor
+          who_classification:
+            tag: who_classification
+            value: WHO CNS5
+        title: Medulloblastoma
+      OTHER_CNS_EMBRYONAL_TUMOR:
+        text: OTHER_CNS_EMBRYONAL_TUMOR
+        description: Embryonal tumors of the CNS other than medulloblastoma and ATRT,
+          including embryonal tumor with multilayered rosettes (ETMR), CNS neuroblastoma,
+          and pineoblastoma.
+        meaning: NCIT:C6774
+        annotations:
+          category:
+            tag: category
+            value: brain_tumor
+          who_classification:
+            tag: who_classification
+            value: WHO CNS5
+        title: Other CNS Embryonal Tumors
+        aliases:
+        - CNS Embryonal Tumor, NOS
+      OTHER_GLIOMA:
+        text: OTHER_GLIOMA
+        description: Glial tumors not classified as high-grade or low-grade glioma,
+          including angiocentric glioma and astroblastoma.
+        meaning: NCIT:C3059
+        annotations:
+          category:
+            tag: category
+            value: brain_tumor
+        title: Other Gliomas
+      OTHER_BRAIN_TUMOR:
+        text: OTHER_BRAIN_TUMOR
+        description: CNS tumors not fitting other brain tumor categories, including
+          meningioma, schwannoma, and hemangioblastoma.
+        meaning: NCIT:C2907
+        annotations:
+          category:
+            tag: category
+            value: brain_tumor
+        title: Other Brain Tumors
+      LYMPHOBLASTIC_LEUKEMIA:
+        text: LYMPHOBLASTIC_LEUKEMIA
+        description: Acute lymphoblastic leukemia (ALL) including B-ALL and T-ALL
+          with all molecular subtypes (BCR::ABL1, ETV6::RUNX1, KMT2A-r, DUX4, MEF2D,
+          etc.).
+        meaning: NCIT:C3167
+        annotations:
+          category:
+            tag: category
+            value: hematologic
+          who_classification:
+            tag: who_classification
+            value: WHO-HAEM5
+        title: Lymphoblastic Leukemia
+        aliases:
+        - ALL
+        - Acute Lymphoblastic Leukemia
+      MYELOID_LEUKEMIA:
+        text: MYELOID_LEUKEMIA
+        description: Acute myeloid leukemia (AML) and related myeloid neoplasms including
+          AML with defining genetic abnormalities, therapy-related AML, and juvenile
+          myelomonocytic leukemia (JMML).
+        meaning: NCIT:C3171
+        annotations:
+          category:
+            tag: category
+            value: hematologic
+          who_classification:
+            tag: who_classification
+            value: WHO-HAEM5
+        title: Myeloid Leukemia
+        aliases:
+        - AML
+        - Acute Myeloid Leukemia
+      HODGKIN_LYMPHOMA:
+        text: HODGKIN_LYMPHOMA
+        description: Lymphoid neoplasm characterized by Reed-Sternberg cells, including
+          classical Hodgkin lymphoma and nodular lymphocyte predominant Hodgkin lymphoma.
+        meaning: NCIT:C9357
+        annotations:
+          category:
+            tag: category
+            value: hematologic
+          who_classification:
+            tag: who_classification
+            value: WHO-HAEM5
+        title: Hodgkin Lymphoma
+      NON_HODGKIN_LYMPHOMA:
+        text: NON_HODGKIN_LYMPHOMA
+        description: Lymphoid neoplasms other than Hodgkin lymphoma, including Burkitt
+          lymphoma, diffuse large B-cell lymphoma, anaplastic large cell lymphoma,
+          and lymphoblastic lymphoma.
+        meaning: NCIT:C3211
+        annotations:
+          category:
+            tag: category
+            value: hematologic
+          who_classification:
+            tag: who_classification
+            value: WHO-HAEM5
+        title: Non-Hodgkin Lymphoma
+        aliases:
+        - NHL
+      LYMPHOPROLIFERATIVE_DISEASE:
+        text: LYMPHOPROLIFERATIVE_DISEASE
+        description: Disorders characterized by abnormal lymphocyte proliferation,
+          including post-transplant lymphoproliferative disorder (PTLD) and hemophagocytic
+          lymphohistiocytosis (HLH).
+        meaning: NCIT:C3138
+        annotations:
+          category:
+            tag: category
+            value: hematologic
+        title: Lymphoproliferative Diseases
+      OTHER_HEME_TUMOR:
+        text: OTHER_HEME_TUMOR
+        description: Hematologic malignancies not classified elsewhere, including
+          histiocytic disorders, myelodysplastic syndromes, and myeloproliferative
+          neoplasms.
+        meaning: NCIT:C27134
+        annotations:
+          category:
+            tag: category
+            value: hematologic
+        title: Other Heme Tumors
+      NEUROBLASTOMA:
+        text: NEUROBLASTOMA
+        description: Embryonal tumor of the peripheral sympathetic nervous system,
+          arising from neural crest cells. Includes ganglioneuroblastoma and ganglioneuroma.
+        meaning: NCIT:C3270
+        annotations:
+          category:
+            tag: category
+            value: solid_tumor
+          who_classification:
+            tag: who_classification
+            value: WHO Pediatric Blue Book
+        title: Neuroblastoma
+      OSTEOSARCOMA:
+        text: OSTEOSARCOMA
+        description: Primary malignant bone tumor characterized by osteoid production,
+          including conventional, telangiectatic, and small cell variants.
+        meaning: NCIT:C9145
+        annotations:
+          category:
+            tag: category
+            value: solid_tumor
+          who_classification:
+            tag: who_classification
+            value: WHO Bone/Soft Tissue
+        title: Osteosarcoma
+      EWING_SARCOMA:
+        text: EWING_SARCOMA
+        description: Small round cell sarcoma typically harboring EWSR1 rearrangements,
+          arising in bone or soft tissue. Includes Ewing sarcoma family of tumors.
+        meaning: NCIT:C4817
+        annotations:
+          category:
+            tag: category
+            value: solid_tumor
+          who_classification:
+            tag: who_classification
+            value: WHO Bone/Soft Tissue
+        title: Ewing Sarcoma
+      RHABDOMYOSARCOMA:
+        text: RHABDOMYOSARCOMA
+        description: Malignant soft tissue tumor with skeletal muscle differentiation,
+          including embryonal, alveolar, and spindle cell/sclerosing subtypes.
+        meaning: NCIT:C3359
+        annotations:
+          category:
+            tag: category
+            value: solid_tumor
+          who_classification:
+            tag: who_classification
+            value: WHO Bone/Soft Tissue
+        title: Rhabdomyosarcoma
+      SOFT_TISSUE_TUMOR:
+        text: SOFT_TISSUE_TUMOR
+        description: Soft tissue neoplasms other than rhabdomyosarcoma and Ewing sarcoma,
+          including synovial sarcoma, fibrosarcoma, and other sarcomas. Also includes
+          non-sarcomatous soft tissue tumors.
+        meaning: NCIT:C3399
+        annotations:
+          category:
+            tag: category
+            value: solid_tumor
+        title: Soft Tissue Tumors
+        aliases:
+        - Soft Tissue Sarcoma
+      RHABDOID_TUMOR:
+        text: RHABDOID_TUMOR
+        description: Highly aggressive tumors characterized by SMARCB1 loss, occurring
+          outside the CNS (extracranial rhabdoid tumor). Includes malignant rhabdoid
+          tumor of kidney.
+        meaning: NCIT:C3769
+        annotations:
+          category:
+            tag: category
+            value: solid_tumor
+        title: Rhabdoid Tumors
+      RENAL_TUMOR:
+        text: RENAL_TUMOR
+        description: Kidney tumors including Wilms tumor (nephroblastoma), clear cell
+          sarcoma of kidney, renal cell carcinoma, and congenital mesoblastic nephroma.
+        meaning: NCIT:C7548
+        annotations:
+          category:
+            tag: category
+            value: solid_tumor
+          who_classification:
+            tag: who_classification
+            value: WHO Pediatric Blue Book
+        title: Renal Tumors
+        aliases:
+        - Kidney Tumor
+        - Wilms Tumor
+      RETINOBLASTOMA:
+        text: RETINOBLASTOMA
+        description: Malignant neoplasm of the retina arising from developing retinal
+          cells, associated with RB1 mutations.
+        meaning: NCIT:C7541
+        annotations:
+          category:
+            tag: category
+            value: solid_tumor
+          who_classification:
+            tag: who_classification
+            value: WHO Pediatric Blue Book
+        title: Retinoblastoma
+      GERM_CELL_TUMOR:
+        text: GERM_CELL_TUMOR
+        description: Tumors arising from primordial germ cells, occurring in gonadal
+          or extragonadal sites. Includes teratoma, yolk sac tumor, germinoma, choriocarcinoma,
+          and mixed germ cell tumors. Excludes CNS germ cell tumors.
+        meaning: NCIT:C3708
+        annotations:
+          category:
+            tag: category
+            value: solid_tumor
+        title: Germ Cell Tumors
+      ENDOCRINE_AND_NEUROENDOCRINE_TUMOR:
+        text: ENDOCRINE_AND_NEUROENDOCRINE_TUMOR
+        description: Tumors of endocrine glands and neuroendocrine cells, including
+          thyroid carcinoma, adrenocortical carcinoma, pheochromocytoma, and paraganglioma.
+        meaning: NCIT:C3010
+        annotations:
+          category:
+            tag: category
+            value: solid_tumor
+        title: Endocrine and Neuroendocrine Tumors
+      OTHER_SOLID_TUMOR:
+        text: OTHER_SOLID_TUMOR
+        description: Solid tumors not classified elsewhere, including hepatoblastoma,
+          pleuropulmonary blastoma, nasopharyngeal carcinoma, melanoma, and carcinomas.
+        meaning: NCIT:C9107
+        annotations:
+          category:
+            tag: category
+            value: solid_tumor
+        title: Other Solid Tumors
+  ICCC3MainGroup:
+    name: ICCC3MainGroup
+    definition_uri: https://w3id.org/valuesets/ICCC3MainGroup
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    annotations:
+      source:
+        tag: source
+        value: SEER/IARC
+      version:
+        tag: version
+        value: ICCC-3
+      coding_system:
+        tag: coding_system
+        value: ICD-O-3
+    description: The 12 main diagnostic groups of the International Classification
+      of Childhood Cancer, Third Edition. Based on tumor morphology and primary site
+      with emphasis on morphology.
+    title: ICCC-3 Main Diagnostic Group
+    from_schema: https://w3id.org/linkml/valuesets/medical/pediatric_oncology/iccc3
+    see_also:
+    - https://seer.cancer.gov/iccc/
+    - https://seer.cancer.gov/iccc/iccc3.html
+    - https://pubmed.ncbi.nlm.nih.gov/15712273/
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: RELEASED
+    permissible_values:
+      I_LEUKEMIAS_MYELOPROLIFERATIVE_MYELODYSPLASTIC:
+        text: I_LEUKEMIAS_MYELOPROLIFERATIVE_MYELODYSPLASTIC
+        description: Includes lymphoid leukemias, acute myeloid leukemias, chronic
+          myeloproliferative diseases, myelodysplastic syndrome and other myeloproliferative
+          diseases, and unspecified and other specified leukemias.
+        meaning: NCIT:C3161
+        annotations:
+          iccc_code:
+            tag: iccc_code
+            value: I
+          subgroup_count:
+            tag: subgroup_count
+            value: 5
+        title: I. Leukemias, myeloproliferative diseases, and myelodysplastic diseases
+      II_LYMPHOMAS_RETICULOENDOTHELIAL:
+        text: II_LYMPHOMAS_RETICULOENDOTHELIAL
+        description: Includes Hodgkin lymphomas, non-Hodgkin lymphomas (except Burkitt
+          lymphoma), Burkitt lymphoma, and miscellaneous lymphoreticular neoplasms.
+        meaning: NCIT:C7058
+        annotations:
+          iccc_code:
+            tag: iccc_code
+            value: II
+          subgroup_count:
+            tag: subgroup_count
+            value: 4
+        title: II. Lymphomas and reticuloendothelial neoplasms
+      III_CNS_INTRACRANIAL_INTRASPINAL:
+        text: III_CNS_INTRACRANIAL_INTRASPINAL
+        description: Includes ependymomas and choroid plexus tumor, astrocytomas,
+          intracranial and intraspinal embryonal tumors, other gliomas, other specified
+          intracranial and intraspinal neoplasms, and unspecified intracranial and
+          intraspinal neoplasms. Also includes nonmalignant CNS tumors.
+        meaning: NCIT:C2907
+        annotations:
+          iccc_code:
+            tag: iccc_code
+            value: III
+          subgroup_count:
+            tag: subgroup_count
+            value: 6
+          includes_nonmalignant:
+            tag: includes_nonmalignant
+            value: true
+        title: III. CNS and miscellaneous intracranial and intraspinal neoplasms
+      IV_NEUROBLASTOMA_PERIPHERAL_NERVOUS:
+        text: IV_NEUROBLASTOMA_PERIPHERAL_NERVOUS
+        description: Includes neuroblastoma and ganglioneuroblastoma, and other peripheral
+          nervous cell tumors.
+        meaning: NCIT:C3270
+        annotations:
+          iccc_code:
+            tag: iccc_code
+            value: IV
+          subgroup_count:
+            tag: subgroup_count
+            value: 2
+        title: IV. Neuroblastoma and other peripheral nervous cell tumors
+      V_RETINOBLASTOMA:
+        text: V_RETINOBLASTOMA
+        description: Malignant neoplasm of the retina. Single group with no subgroups.
+        meaning: NCIT:C7541
+        annotations:
+          iccc_code:
+            tag: iccc_code
+            value: V
+          subgroup_count:
+            tag: subgroup_count
+            value: 1
+        title: V. Retinoblastoma
+      VI_RENAL_TUMORS:
+        text: VI_RENAL_TUMORS
+        description: Includes nephroblastoma and other nonepithelial renal tumors,
+          renal carcinomas, and unspecified malignant renal tumors.
+        meaning: NCIT:C7548
+        annotations:
+          iccc_code:
+            tag: iccc_code
+            value: VI
+          subgroup_count:
+            tag: subgroup_count
+            value: 3
+        title: VI. Renal tumors
+      VII_HEPATIC_TUMORS:
+        text: VII_HEPATIC_TUMORS
+        description: Includes hepatoblastoma, hepatic carcinomas, and unspecified
+          malignant hepatic tumors.
+        meaning: NCIT:C7927
+        annotations:
+          iccc_code:
+            tag: iccc_code
+            value: VII
+          subgroup_count:
+            tag: subgroup_count
+            value: 3
+        title: VII. Hepatic tumors
+      VIII_MALIGNANT_BONE_TUMORS:
+        text: VIII_MALIGNANT_BONE_TUMORS
+        description: Includes osteosarcomas, chondrosarcomas, Ewing tumor and related
+          sarcomas of bone, other specified malignant bone tumors, and unspecified
+          malignant bone tumors.
+        meaning: NCIT:C4882
+        annotations:
+          iccc_code:
+            tag: iccc_code
+            value: VIII
+          subgroup_count:
+            tag: subgroup_count
+            value: 5
+        title: VIII. Malignant bone tumors
+      IX_SOFT_TISSUE_SARCOMAS:
+        text: IX_SOFT_TISSUE_SARCOMAS
+        description: Includes rhabdomyosarcomas, fibrosarcomas/peripheral nerve sheath
+          tumors/other fibrous neoplasms, Kaposi sarcoma, other specified soft tissue
+          sarcomas, and unspecified soft tissue sarcomas.
+        meaning: NCIT:C9306
+        annotations:
+          iccc_code:
+            tag: iccc_code
+            value: IX
+          subgroup_count:
+            tag: subgroup_count
+            value: 5
+        title: IX. Soft tissue and other extraosseous sarcomas
+      X_GERM_CELL_GONADAL:
+        text: X_GERM_CELL_GONADAL
+        description: Includes intracranial and intraspinal germ cell tumors, malignant
+          extracranial and extragonadal germ cell tumors, malignant gonadal germ cell
+          tumors, gonadal carcinomas, and other and unspecified malignant gonadal
+          tumors.
+        meaning: NCIT:C3708
+        annotations:
+          iccc_code:
+            tag: iccc_code
+            value: X
+          subgroup_count:
+            tag: subgroup_count
+            value: 5
+        title: X. Germ cell tumors, trophoblastic tumors, and neoplasms of gonads
+      XI_EPITHELIAL_MELANOMA:
+        text: XI_EPITHELIAL_MELANOMA
+        description: Includes adrenocortical carcinomas, thyroid carcinomas, nasopharyngeal
+          carcinomas, malignant melanomas, skin carcinomas, and other and unspecified
+          carcinomas.
+        meaning: NCIT:C3709
+        annotations:
+          iccc_code:
+            tag: iccc_code
+            value: XI
+          subgroup_count:
+            tag: subgroup_count
+            value: 6
+        title: XI. Other malignant epithelial neoplasms and malignant melanomas
+      XII_OTHER_UNSPECIFIED:
+        text: XII_OTHER_UNSPECIFIED
+        description: Includes other specified malignant tumors and other unspecified
+          malignant tumors not classifiable in groups I-XI.
+        meaning: NCIT:C3262
+        annotations:
+          iccc_code:
+            tag: iccc_code
+            value: XII
+          subgroup_count:
+            tag: subgroup_count
+            value: 2
+        title: XII. Other and unspecified malignant neoplasms
+  ICCC3Subgroup:
+    name: ICCC3Subgroup
+    definition_uri: https://w3id.org/valuesets/ICCC3Subgroup
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    annotations:
+      source:
+        tag: source
+        value: SEER/IARC
+      version:
+        tag: version
+        value: ICCC-3
+    description: The 47 diagnostic subgroups of the International Classification of
+      Childhood Cancer, Third Edition. These provide more detailed classification
+      within each of the 12 main groups.
+    title: ICCC-3 Diagnostic Subgroup
+    from_schema: https://w3id.org/linkml/valuesets/medical/pediatric_oncology/iccc3
+    see_also:
+    - https://seer.cancer.gov/iccc/iccc3.html
+    - https://seer.cancer.gov/iccc/iccc3_ext.html
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: RELEASED
+    permissible_values:
+      Ia_LYMPHOID_LEUKEMIAS:
+        text: Ia_LYMPHOID_LEUKEMIAS
+        description: Precursor cell lymphoblastic leukemia, NOS; precursor cell lymphoblastic
+          leukemia, B-cell; precursor cell lymphoblastic leukemia, T-cell; Burkitt
+          cell leukemia; and other lymphoid leukemias.
+        meaning: NCIT:C3167
+        annotations:
+          main_group:
+            tag: main_group
+            value: I
+          icdo3_codes:
+            tag: icdo3_codes
+            value: 9820-9827, 9835-9837
+        title: Ia. Lymphoid leukemias
+      Ib_ACUTE_MYELOID_LEUKEMIAS:
+        text: Ib_ACUTE_MYELOID_LEUKEMIAS
+        description: Acute myeloid leukemia and variants including AML with maturation,
+          acute promyelocytic leukemia, acute myelomonocytic leukemia, acute monoblastic
+          leukemia, acute megakaryoblastic leukemia, etc.
+        meaning: NCIT:C3171
+        annotations:
+          main_group:
+            tag: main_group
+            value: I
+          icdo3_codes:
+            tag: icdo3_codes
+            value: 9840, 9861, 9866-9867, 9870-9874, 9891, 9895-9897, 9910, 9920,
+              9931
+        title: Ib. Acute myeloid leukemias
+      Ic_CHRONIC_MYELOPROLIFERATIVE:
+        text: Ic_CHRONIC_MYELOPROLIFERATIVE
+        description: Chronic myeloid leukemia, NOS; juvenile myelomonocytic leukemia;
+          and other chronic myeloproliferative diseases.
+        meaning: NCIT:C4345
+        annotations:
+          main_group:
+            tag: main_group
+            value: I
+          icdo3_codes:
+            tag: icdo3_codes
+            value: 9863, 9875-9876, 9945-9946, 9950, 9960-9964
+        title: Ic. Chronic myeloproliferative diseases
+      Id_MYELODYSPLASTIC_OTHER_MYELOPROLIFERATIVE:
+        text: Id_MYELODYSPLASTIC_OTHER_MYELOPROLIFERATIVE
+        description: Myelodysplastic syndrome, NOS; refractory anemia; refractory
+          anemia with ringed sideroblasts; refractory anemia with excess blasts.
+        meaning: NCIT:C3247
+        annotations:
+          main_group:
+            tag: main_group
+            value: I
+          icdo3_codes:
+            tag: icdo3_codes
+            value: 9945, 9980, 9982-9983, 9985-9989
+        title: Id. Myelodysplastic syndrome and other myeloproliferative diseases
+      Ie_UNSPECIFIED_OTHER_LEUKEMIAS:
+        text: Ie_UNSPECIFIED_OTHER_LEUKEMIAS
+        description: Leukemia, NOS and other specified leukemias not elsewhere classified.
+        meaning: NCIT:C3161
+        annotations:
+          main_group:
+            tag: main_group
+            value: I
+          icdo3_codes:
+            tag: icdo3_codes
+            value: 9800-9801, 9805-9809, 9860, 9930
+        title: Ie. Unspecified and other specified leukemias
+      IIa_HODGKIN_LYMPHOMAS:
+        text: IIa_HODGKIN_LYMPHOMAS
+        description: Classical Hodgkin lymphoma and nodular lymphocyte predominant
+          Hodgkin lymphoma.
+        meaning: NCIT:C9357
+        annotations:
+          main_group:
+            tag: main_group
+            value: II
+          icdo3_codes:
+            tag: icdo3_codes
+            value: 9650-9655, 9659, 9661-9665, 9667
+        title: IIa. Hodgkin lymphomas
+      IIb_NON_HODGKIN_LYMPHOMAS:
+        text: IIb_NON_HODGKIN_LYMPHOMAS
+        description: Diffuse large B-cell lymphoma, follicular lymphoma, peripheral
+          T-cell lymphoma, anaplastic large cell lymphoma, and other non-Hodgkin lymphomas.
+        meaning: NCIT:C3211
+        annotations:
+          main_group:
+            tag: main_group
+            value: II
+          icdo3_codes:
+            tag: icdo3_codes
+            value: 9591, 9670-9686, 9689-9691, 9695, 9698-9702, 9705, 9708-9709, 9714-9719,
+              9727-9729
+        title: IIb. Non-Hodgkin lymphomas (except Burkitt lymphoma)
+      IIc_BURKITT_LYMPHOMA:
+        text: IIc_BURKITT_LYMPHOMA
+        description: Burkitt lymphoma and Burkitt-like lymphoma.
+        meaning: NCIT:C8150
+        annotations:
+          main_group:
+            tag: main_group
+            value: II
+          icdo3_codes:
+            tag: icdo3_codes
+            value: '9687'
+        title: IIc. Burkitt lymphoma
+      IId_MISC_LYMPHORETICULAR:
+        text: IId_MISC_LYMPHORETICULAR
+        description: Lymphoreticular neoplasms not elsewhere classified including
+          lymphomatoid granulomatosis and post-transplant lymphoproliferative disorder.
+        meaning: NCIT:C27134
+        annotations:
+          main_group:
+            tag: main_group
+            value: II
+          icdo3_codes:
+            tag: icdo3_codes
+            value: 9740-9742, 9750, 9754-9758, 9930, 9970
+        title: IId. Miscellaneous lymphoreticular neoplasms
+      IIIa_EPENDYMOMAS:
+        text: IIIa_EPENDYMOMAS
+        description: Ependymoma, anaplastic ependymoma, myxopapillary ependymoma,
+          and choroid plexus papilloma and carcinoma.
+        meaning: NCIT:C3017
+        annotations:
+          main_group:
+            tag: main_group
+            value: III
+          icdo3_codes:
+            tag: icdo3_codes
+            value: 9383, 9390-9394
+        title: IIIa. Ependymomas and choroid plexus tumor
+      IIIb_ASTROCYTOMAS:
+        text: IIIb_ASTROCYTOMAS
+        description: Pilocytic astrocytoma, diffuse astrocytoma, anaplastic astrocytoma,
+          glioblastoma, and other astrocytic tumors.
+        meaning: NCIT:C60781
+        annotations:
+          main_group:
+            tag: main_group
+            value: III
+          icdo3_codes:
+            tag: icdo3_codes
+            value: 9380, 9384, 9400-9411, 9420, 9424
+        title: IIIb. Astrocytomas
+      IIIc_INTRACRANIAL_EMBRYONAL:
+        text: IIIc_INTRACRANIAL_EMBRYONAL
+        description: Medulloblastoma, primitive neuroectodermal tumor, medulloepithelioma,
+          atypical teratoid/rhabdoid tumor, and other embryonal tumors.
+        meaning: NCIT:C6774
+        annotations:
+          main_group:
+            tag: main_group
+            value: III
+          icdo3_codes:
+            tag: icdo3_codes
+            value: 9470-9474, 9480, 9490, 9500-9508
+        title: IIIc. Intracranial and intraspinal embryonal tumors
+      IIId_OTHER_GLIOMAS:
+        text: IIId_OTHER_GLIOMAS
+        description: Oligodendroglioma, anaplastic oligodendroglioma, mixed glioma,
+          and other gliomas not elsewhere classified.
+        meaning: NCIT:C3059
+        annotations:
+          main_group:
+            tag: main_group
+            value: III
+          icdo3_codes:
+            tag: icdo3_codes
+            value: 9380-9382, 9430, 9440-9460
+        title: IIId. Other gliomas
+      IIIe_OTHER_INTRACRANIAL_INTRASPINAL:
+        text: IIIe_OTHER_INTRACRANIAL_INTRASPINAL
+        description: Pituitary adenoma, craniopharyngioma, pineal tumors, and other
+          specified intracranial neoplasms.
+        meaning: NCIT:C2907
+        annotations:
+          main_group:
+            tag: main_group
+            value: III
+        title: IIIe. Other specified intracranial and intraspinal neoplasms
+      IIIf_UNSPECIFIED_INTRACRANIAL:
+        text: IIIf_UNSPECIFIED_INTRACRANIAL
+        description: Intracranial and intraspinal neoplasms, NOS.
+        meaning: NCIT:C2907
+        annotations:
+          main_group:
+            tag: main_group
+            value: III
+          icdo3_codes:
+            tag: icdo3_codes
+            value: 8000-8005
+        title: IIIf. Unspecified intracranial and intraspinal neoplasms
+      IVa_NEUROBLASTOMA_GANGLIONEUROBLASTOMA:
+        text: IVa_NEUROBLASTOMA_GANGLIONEUROBLASTOMA
+        description: Neuroblastoma, NOS and ganglioneuroblastoma.
+        meaning: NCIT:C3270
+        annotations:
+          main_group:
+            tag: main_group
+            value: IV
+          icdo3_codes:
+            tag: icdo3_codes
+            value: 9490, 9500
+        title: IVa. Neuroblastoma and ganglioneuroblastoma
+      IVb_OTHER_PERIPHERAL_NERVOUS:
+        text: IVb_OTHER_PERIPHERAL_NERVOUS
+        description: Other peripheral nerve tumors including ganglioneuroma and peripheral
+          nerve sheath tumors.
+        meaning: NCIT:C4969
+        annotations:
+          main_group:
+            tag: main_group
+            value: IV
+          icdo3_codes:
+            tag: icdo3_codes
+            value: 9501-9504, 9520-9523
+        title: IVb. Other peripheral nervous cell tumors
+      V_RETINOBLASTOMA:
+        text: V_RETINOBLASTOMA
+        description: Retinoblastoma.
+        meaning: NCIT:C7541
+        annotations:
+          main_group:
+            tag: main_group
+            value: V
+          icdo3_codes:
+            tag: icdo3_codes
+            value: 9510-9514
+        title: V. Retinoblastoma
+      VIa_NEPHROBLASTOMA:
+        text: VIa_NEPHROBLASTOMA
+        description: Wilms tumor (nephroblastoma), clear cell sarcoma of kidney, rhabdoid
+          tumor of kidney, and other nonepithelial renal tumors.
+        meaning: NCIT:C3267
+        annotations:
+          main_group:
+            tag: main_group
+            value: VI
+          icdo3_codes:
+            tag: icdo3_codes
+            value: 8960, 8963-8964
+        title: VIa. Nephroblastoma and other nonepithelial renal tumors
+      VIb_RENAL_CARCINOMAS:
+        text: VIb_RENAL_CARCINOMAS
+        description: Renal cell carcinoma and other renal carcinomas.
+        meaning: NCIT:C9385
+        annotations:
+          main_group:
+            tag: main_group
+            value: VI
+        title: VIb. Renal carcinomas
+      VIc_UNSPECIFIED_RENAL:
+        text: VIc_UNSPECIFIED_RENAL
+        description: Malignant renal tumors, NOS.
+        meaning: NCIT:C7548
+        annotations:
+          main_group:
+            tag: main_group
+            value: VI
+        title: VIc. Unspecified malignant renal tumors
+      VIIa_HEPATOBLASTOMA:
+        text: VIIa_HEPATOBLASTOMA
+        description: Hepatoblastoma.
+        meaning: NCIT:C3728
+        annotations:
+          main_group:
+            tag: main_group
+            value: VII
+          icdo3_codes:
+            tag: icdo3_codes
+            value: '8970'
+        title: VIIa. Hepatoblastoma
+      VIIb_HEPATIC_CARCINOMAS:
+        text: VIIb_HEPATIC_CARCINOMAS
+        description: Hepatocellular carcinoma, cholangiocarcinoma, and other hepatic
+          carcinomas.
+        meaning: NCIT:C3099
+        annotations:
+          main_group:
+            tag: main_group
+            value: VII
+        title: VIIb. Hepatic carcinomas
+      VIIc_UNSPECIFIED_HEPATIC:
+        text: VIIc_UNSPECIFIED_HEPATIC
+        description: Malignant hepatic tumors, NOS.
+        meaning: NCIT:C7927
+        annotations:
+          main_group:
+            tag: main_group
+            value: VII
+        title: VIIc. Unspecified malignant hepatic tumors
+      VIIIa_OSTEOSARCOMAS:
+        text: VIIIa_OSTEOSARCOMAS
+        description: Osteosarcoma, NOS and variants including chondroblastic, fibroblastic,
+          telangiectatic, and small cell osteosarcoma.
+        meaning: NCIT:C9145
+        annotations:
+          main_group:
+            tag: main_group
+            value: VIII
+          icdo3_codes:
+            tag: icdo3_codes
+            value: 9180-9187, 9191-9195
+        title: VIIIa. Osteosarcomas
+      VIIIb_CHONDROSARCOMAS:
+        text: VIIIb_CHONDROSARCOMAS
+        description: Chondrosarcoma, NOS and variants.
+        meaning: NCIT:C2946
+        annotations:
+          main_group:
+            tag: main_group
+            value: VIII
+          icdo3_codes:
+            tag: icdo3_codes
+            value: 9220-9231, 9240-9243
+        title: VIIIb. Chondrosarcomas
+      VIIIc_EWING_TUMOR_BONE:
+        text: VIIIc_EWING_TUMOR_BONE
+        description: Ewing sarcoma of bone and peripheral primitive neuroectodermal
+          tumor of bone.
+        meaning: NCIT:C4817
+        annotations:
+          main_group:
+            tag: main_group
+            value: VIII
+          icdo3_codes:
+            tag: icdo3_codes
+            value: 9260, 9364
+        title: VIIIc. Ewing tumor and related sarcomas of bone
+      VIIId_OTHER_BONE:
+        text: VIIId_OTHER_BONE
+        description: Other specified malignant bone tumors including giant cell tumor
+          of bone, malignant and adamantinoma.
+        meaning: NCIT:C4882
+        annotations:
+          main_group:
+            tag: main_group
+            value: VIII
+        title: VIIId. Other specified malignant bone tumors
+      VIIIe_UNSPECIFIED_BONE:
+        text: VIIIe_UNSPECIFIED_BONE
+        description: Malignant bone tumors, NOS.
+        meaning: NCIT:C4882
+        annotations:
+          main_group:
+            tag: main_group
+            value: VIII
+        title: VIIIe. Unspecified malignant bone tumors
+      IXa_RHABDOMYOSARCOMAS:
+        text: IXa_RHABDOMYOSARCOMAS
+        description: Rhabdomyosarcoma, NOS; embryonal rhabdomyosarcoma; alveolar rhabdomyosarcoma;
+          and other rhabdomyosarcomas.
+        meaning: NCIT:C3359
+        annotations:
+          main_group:
+            tag: main_group
+            value: IX
+          icdo3_codes:
+            tag: icdo3_codes
+            value: 8900-8905, 8910, 8912, 8920
+        title: IXa. Rhabdomyosarcomas
+      IXb_FIBROSARCOMAS:
+        text: IXb_FIBROSARCOMAS
+        description: Fibrosarcoma, NOS; infantile fibrosarcoma; dermatofibrosarcoma;
+          and malignant peripheral nerve sheath tumor.
+        meaning: NCIT:C3043
+        annotations:
+          main_group:
+            tag: main_group
+            value: IX
+          icdo3_codes:
+            tag: icdo3_codes
+            value: 8810-8815, 8820-8823, 8830, 8832-8833, 9540, 9560-9561
+        title: IXb. Fibrosarcomas, peripheral nerve sheath tumors, and other fibrous
+          neoplasms
+      IXc_KAPOSI_SARCOMA:
+        text: IXc_KAPOSI_SARCOMA
+        description: Kaposi sarcoma.
+        meaning: NCIT:C9087
+        annotations:
+          main_group:
+            tag: main_group
+            value: IX
+          icdo3_codes:
+            tag: icdo3_codes
+            value: '9140'
+        title: IXc. Kaposi sarcoma
+      IXd_OTHER_SOFT_TISSUE:
+        text: IXd_OTHER_SOFT_TISSUE
+        description: Includes liposarcoma, leiomyosarcoma, synovial sarcoma, hemangiosarcoma,
+          and other specified soft tissue sarcomas.
+        meaning: NCIT:C9306
+        annotations:
+          main_group:
+            tag: main_group
+            value: IX
+        title: IXd. Other specified soft tissue sarcomas
+      IXe_UNSPECIFIED_SOFT_TISSUE:
+        text: IXe_UNSPECIFIED_SOFT_TISSUE
+        description: Soft tissue sarcomas, NOS.
+        meaning: NCIT:C9306
+        annotations:
+          main_group:
+            tag: main_group
+            value: IX
+        title: IXe. Unspecified soft tissue sarcomas
+      Xa_INTRACRANIAL_GERM_CELL:
+        text: Xa_INTRACRANIAL_GERM_CELL
+        description: CNS germ cell tumors including germinoma, teratoma, and nongerminomatous
+          germ cell tumors.
+        meaning: NCIT:C6286
+        annotations:
+          main_group:
+            tag: main_group
+            value: X
+          icdo3_codes:
+            tag: icdo3_codes
+            value: 9060-9102
+        title: Xa. Intracranial and intraspinal germ cell tumors
+      Xb_EXTRACRANIAL_EXTRAGONADAL_GERM_CELL:
+        text: Xb_EXTRACRANIAL_EXTRAGONADAL_GERM_CELL
+        description: Extracranial germ cell tumors not involving the gonads including
+          sacrococcygeal, retroperitoneal, and mediastinal germ cell tumors.
+        meaning: NCIT:C6545
+        annotations:
+          main_group:
+            tag: main_group
+            value: X
+        title: Xb. Malignant extracranial and extragonadal germ cell tumors
+      Xc_GONADAL_GERM_CELL:
+        text: Xc_GONADAL_GERM_CELL
+        description: Germ cell tumors of the ovary and testis including dysgerminoma,
+          yolk sac tumor, embryonal carcinoma, and mixed germ cell tumors.
+        meaning: NCIT:C3708
+        annotations:
+          main_group:
+            tag: main_group
+            value: X
+        title: Xc. Malignant gonadal germ cell tumors
+      Xd_GONADAL_CARCINOMAS:
+        text: Xd_GONADAL_CARCINOMAS
+        description: Carcinomas arising in the ovary and testis.
+        meaning: NCIT:C3709
+        annotations:
+          main_group:
+            tag: main_group
+            value: X
+        title: Xd. Gonadal carcinomas
+      Xe_OTHER_GONADAL:
+        text: Xe_OTHER_GONADAL
+        description: Other specified and unspecified gonadal tumors.
+        meaning: NCIT:C3708
+        annotations:
+          main_group:
+            tag: main_group
+            value: X
+        title: Xe. Other and unspecified malignant gonadal tumors
+      XIa_ADRENOCORTICAL_CARCINOMAS:
+        text: XIa_ADRENOCORTICAL_CARCINOMAS
+        description: Adrenocortical carcinoma.
+        meaning: NCIT:C9325
+        annotations:
+          main_group:
+            tag: main_group
+            value: XI
+          icdo3_codes:
+            tag: icdo3_codes
+            value: '8370'
+        title: XIa. Adrenocortical carcinomas
+      XIb_THYROID_CARCINOMAS:
+        text: XIb_THYROID_CARCINOMAS
+        description: Papillary thyroid carcinoma, follicular thyroid carcinoma, and
+          medullary thyroid carcinoma.
+        meaning: NCIT:C7510
+        annotations:
+          main_group:
+            tag: main_group
+            value: XI
+        title: XIb. Thyroid carcinomas
+      XIc_NASOPHARYNGEAL_CARCINOMAS:
+        text: XIc_NASOPHARYNGEAL_CARCINOMAS
+        description: Nasopharyngeal carcinoma and related carcinomas.
+        meaning: NCIT:C3871
+        annotations:
+          main_group:
+            tag: main_group
+            value: XI
+        title: XIc. Nasopharyngeal carcinomas
+      XId_MALIGNANT_MELANOMAS:
+        text: XId_MALIGNANT_MELANOMAS
+        description: Cutaneous and non-cutaneous malignant melanomas.
+        meaning: NCIT:C3224
+        annotations:
+          main_group:
+            tag: main_group
+            value: XI
+        title: XId. Malignant melanomas
+      XIe_SKIN_CARCINOMAS:
+        text: XIe_SKIN_CARCINOMAS
+        description: Basal cell carcinoma, squamous cell carcinoma of skin, and other
+          skin carcinomas.
+        meaning: NCIT:C3372
+        annotations:
+          main_group:
+            tag: main_group
+            value: XI
+        title: XIe. Skin carcinomas
+      XIf_OTHER_CARCINOMAS:
+        text: XIf_OTHER_CARCINOMAS
+        description: Carcinomas at other sites and carcinomas, NOS.
+        meaning: NCIT:C3709
+        annotations:
+          main_group:
+            tag: main_group
+            value: XI
+        title: XIf. Other and unspecified carcinomas
+      XIIa_OTHER_SPECIFIED:
+        text: XIIa_OTHER_SPECIFIED
+        description: Malignant tumors not classifiable in groups I-XI but with specified
+          histology.
+        meaning: NCIT:C3262
+        annotations:
+          main_group:
+            tag: main_group
+            value: XII
+        title: XIIa. Other specified malignant tumors
+      XIIb_OTHER_UNSPECIFIED:
+        text: XIIb_OTHER_UNSPECIFIED
+        description: Malignant tumors, NOS not classifiable in groups I-XI.
+        meaning: NCIT:C3262
+        annotations:
+          main_group:
+            tag: main_group
+            value: XII
+        title: XIIb. Other unspecified malignant tumors
+  INRGSSStage:
+    name: INRGSSStage
+    definition_uri: https://w3id.org/valuesets/INRGSSStage
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    annotations:
+      source:
+        tag: source
+        value: SEER/INRG Task Force
+      effective_year:
+        tag: effective_year
+        value: 2024
+      staging_basis:
+        tag: staging_basis
+        value: imaging
+    description: International Neuroblastoma Risk Group Staging System (INRGSS) stages.
+      A clinical staging system based on imaging and image-defined risk factors (IDRFs),
+      effective for diagnosis years 2024+. Allows staging before any treatment, unlike
+      the surgical INSS system.
+    title: INRGSS Stage
+    from_schema: https://w3id.org/linkml/valuesets/medical/pediatric_oncology/staging/neuroblastoma
+    see_also:
+    - https://staging.seer.cancer.gov/pediatric/input/1.0/neuroblastoma/inrgss/
+    - https://pmc.ncbi.nlm.nih.gov/articles/PMC2650389/
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: RELEASED
+    permissible_values:
+      L1:
+        text: L1
+        description: Localized tumor not involving vital structures as defined by
+          the list of image-defined risk factors and confined to one body compartment
+          (neck, chest, abdomen, or pelvis).
+        meaning: NCIT:C133427
+        annotations:
+          localized:
+            tag: localized
+            value: true
+          idrfs_present:
+            tag: idrfs_present
+            value: false
+        title: L1 - Localized, no IDRFs
+      L2:
+        text: L2
+        description: Locoregional tumor with presence of one or more image-defined
+          risk factors. The tumor has not spread far from where it started but has
+          at least one IDRF.
+        meaning: NCIT:C133428
+        annotations:
+          localized:
+            tag: localized
+            value: true
+          idrfs_present:
+            tag: idrfs_present
+            value: true
+        title: L2 - Localized, with IDRFs
+      M:
+        text: M
+        description: Distant metastatic disease (except as defined for MS). The tumor
+          has spread (metastasized) to distant parts of the body.
+        meaning: NCIT:C133429
+        annotations:
+          metastatic:
+            tag: metastatic
+            value: true
+        title: M - Metastatic
+      MS:
+        text: MS
+        description: Metastatic disease in children younger than 18 months with metastases
+          confined to skin, liver, and/or bone marrow (bone marrow involvement limited
+          to <10% tumor cells). This stage has a favorable prognosis despite metastatic
+          disease.
+        meaning: NCIT:C133430
+        annotations:
+          metastatic:
+            tag: metastatic
+            value: true
+          special_category:
+            tag: special_category
+            value: true
+          age_restriction:
+            tag: age_restriction
+            value: <18 months
+          favorable_prognosis:
+            tag: favorable_prognosis
+            value: true
+        title: MS - Metastatic special
+        aliases:
+        - Stage 4S equivalent
+  INSSStage:
+    name: INSSStage
+    definition_uri: https://w3id.org/valuesets/INSSStage
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    annotations:
+      source:
+        tag: source
+        value: INSS Consensus Conference
+      staging_basis:
+        tag: staging_basis
+        value: surgical
+      legacy_system:
+        tag: legacy_system
+        value: true
+    description: International Neuroblastoma Staging System (INSS) stages. A post-surgical
+      staging system based on extent of tumor resection, lymph node involvement, and
+      metastatic spread. This is the legacy system; INRGSS is now preferred for diagnosis
+      years 2024+.
+    title: INSS Stage
+    from_schema: https://w3id.org/linkml/valuesets/medical/pediatric_oncology/staging/neuroblastoma
+    see_also:
+    - https://www.ncbi.nlm.nih.gov/books/NBK65747.5/table/CDR0000062786__725/
+    - https://www.cancer.org/cancer/types/neuroblastoma/detection-diagnosis-staging/staging.html
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: RELEASED
+    permissible_values:
+      STAGE_1:
+        text: STAGE_1
+        description: Localized tumor with complete gross excision, with or without
+          microscopic residual disease; representative ipsilateral lymph nodes negative
+          for tumor microscopically.
+        meaning: NCIT:C6639
+        annotations:
+          localized:
+            tag: localized
+            value: true
+          resection:
+            tag: resection
+            value: complete
+        title: Stage 1
+      STAGE_2A:
+        text: STAGE_2A
+        description: Localized tumor with incomplete gross excision; representative
+          ipsilateral nonadherent lymph nodes negative for tumor microscopically.
+        meaning: NCIT:C6640
+        annotations:
+          localized:
+            tag: localized
+            value: true
+          resection:
+            tag: resection
+            value: incomplete
+          lymph_nodes:
+            tag: lymph_nodes
+            value: negative
+        title: Stage 2A
+      STAGE_2B:
+        text: STAGE_2B
+        description: Localized tumor with or without complete gross excision, with
+          ipsilateral nonadherent lymph nodes positive for tumor. Enlarged contralateral
+          lymph nodes must be negative microscopically.
+        meaning: NCIT:C6641
+        annotations:
+          localized:
+            tag: localized
+            value: true
+          lymph_nodes:
+            tag: lymph_nodes
+            value: ipsilateral_positive
+        title: Stage 2B
+      STAGE_3:
+        text: STAGE_3
+        description: Unresectable unilateral tumor infiltrating across the midline,
+          with or without regional lymph node involvement; or localized unilateral
+          tumor with contralateral regional lymph node involvement; or midline tumor
+          with bilateral extension by infiltration (unresectable) or by lymph node
+          involvement.
+        meaning: NCIT:C6642
+        annotations:
+          localized:
+            tag: localized
+            value: false
+          crosses_midline:
+            tag: crosses_midline
+            value: true
+        title: Stage 3
+      STAGE_4:
+        text: STAGE_4
+        description: Any primary tumor with dissemination to distant lymph nodes,
+          bone, bone marrow, liver, skin, and/or other organs (except as defined for
+          stage 4S).
+        meaning: NCIT:C6643
+        annotations:
+          metastatic:
+            tag: metastatic
+            value: true
+        title: Stage 4
+      STAGE_4S:
+        text: STAGE_4S
+        description: Localized primary tumor (as defined for stage 1, 2A, or 2B) with
+          dissemination limited to skin, liver, and/or bone marrow (limited to infants
+          <1 year of age). Marrow involvement should be minimal (<10% of total nucleated
+          cells).
+        meaning: NCIT:C6644
+        annotations:
+          metastatic:
+            tag: metastatic
+            value: true
+          special_category:
+            tag: special_category
+            value: true
+          age_restriction:
+            tag: age_restriction
+            value: <12 months
+          favorable_prognosis:
+            tag: favorable_prognosis
+            value: true
+        title: Stage 4S
+        aliases:
+        - Special stage 4
+  NeuroblastomaRiskGroup:
+    name: NeuroblastomaRiskGroup
+    definition_uri: https://w3id.org/valuesets/NeuroblastomaRiskGroup
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    annotations:
+      source:
+        tag: source
+        value: INRG Task Force
+    description: International Neuroblastoma Risk Group (INRG) pretreatment risk classification
+      groups. Combines INRGSS stage with tumor histology, MYCN status, ploidy, and
+      other prognostic factors.
+    title: Neuroblastoma Risk Group
+    from_schema: https://w3id.org/linkml/valuesets/medical/pediatric_oncology/staging/neuroblastoma
+    see_also:
+    - https://pmc.ncbi.nlm.nih.gov/articles/PMC2650388/
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: RELEASED
+    permissible_values:
+      VERY_LOW:
+        text: VERY_LOW
+        description: Very low risk neuroblastoma with excellent prognosis. Typically
+          includes L1 tumors and MS without MYCN amplification.
+        meaning: NCIT:C103236
+        annotations:
+          expected_efs:
+            tag: expected_efs
+            value: '>85%'
+        title: Very Low Risk
+      LOW:
+        text: LOW
+        description: Low risk neuroblastoma with favorable prognosis. Treatment may
+          include surgery alone or observation.
+        meaning: NCIT:C103237
+        annotations:
+          expected_efs:
+            tag: expected_efs
+            value: '>75%'
+        title: Low Risk
+      INTERMEDIATE:
+        text: INTERMEDIATE
+        description: Intermediate risk neuroblastoma requiring multimodal treatment
+          including chemotherapy.
+        meaning: NCIT:C103238
+        annotations:
+          expected_efs:
+            tag: expected_efs
+            value: 50-75%
+        title: Intermediate Risk
+      HIGH:
+        text: HIGH
+        description: High risk neuroblastoma with poor prognosis. Requires intensive
+          multimodal therapy including high-dose chemotherapy with autologous stem
+          cell rescue, surgery, radiation, and immunotherapy.
+        meaning: NCIT:C103239
+        annotations:
+          expected_efs:
+            tag: expected_efs
+            value: <50%
+          mycn_amplified:
+            tag: mycn_amplified
+            value: often
+        title: High Risk
+  ImageDefinedRiskFactor:
+    name: ImageDefinedRiskFactor
+    definition_uri: https://w3id.org/valuesets/ImageDefinedRiskFactor
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    annotations:
+      source:
+        tag: source
+        value: INRG Task Force
+    description: Image-defined risk factors (IDRFs) used in INRGSS staging to determine
+      surgical risk. Presence of any IDRF upgrades a tumor from L1 to L2.
+    title: Image-Defined Risk Factor
+    from_schema: https://w3id.org/linkml/valuesets/medical/pediatric_oncology/staging/neuroblastoma
+    see_also:
+    - https://pmc.ncbi.nlm.nih.gov/articles/PMC2650389/
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: RELEASED
+    permissible_values:
+      IPSILATERAL_TUMOR_EXTENSION_TO_BODY_CAVITIES:
+        text: IPSILATERAL_TUMOR_EXTENSION_TO_BODY_CAVITIES
+        description: Tumor extension from neck to chest, chest to abdomen, or abdomen
+          to pelvis.
+        title: Ipsilateral tumor extension within two body compartments
+      NECK_ENCASING_CAROTID_OR_VERTEBRAL:
+        text: NECK_ENCASING_CAROTID_OR_VERTEBRAL
+        description: Tumor encasing carotid artery and/or vertebral artery.
+        title: Neck - Tumor encasing carotid and/or vertebral artery
+      NECK_ENCASING_JUGULAR:
+        text: NECK_ENCASING_JUGULAR
+        description: Tumor encasing internal jugular vein.
+        title: Neck - Tumor encasing internal jugular vein
+      NECK_EXTENDING_TO_SKULL_BASE:
+        text: NECK_EXTENDING_TO_SKULL_BASE
+        description: Tumor extending to base of skull.
+        title: Neck - Tumor extending to base of skull
+      NECK_COMPRESSING_TRACHEA:
+        text: NECK_COMPRESSING_TRACHEA
+        description: Tumor compressing the trachea.
+        title: Neck - Tumor compressing trachea
+      CERVICOTHORACIC_ENCASING_BRACHIAL_PLEXUS:
+        text: CERVICOTHORACIC_ENCASING_BRACHIAL_PLEXUS
+        description: Tumor encasing brachial plexus roots (C5-T1).
+        title: Cervico-thoracic junction - Tumor encasing brachial plexus roots
+      CERVICOTHORACIC_ENCASING_SUBCLAVIAN:
+        text: CERVICOTHORACIC_ENCASING_SUBCLAVIAN
+        description: Tumor encasing subclavian vessels and/or vertebral artery and/or
+          carotid artery.
+        title: Cervico-thoracic junction - Tumor encasing subclavian vessels
+      CERVICOTHORACIC_COMPRESSING_TRACHEA:
+        text: CERVICOTHORACIC_COMPRESSING_TRACHEA
+        description: Tumor compressing the trachea.
+        title: Cervico-thoracic junction - Tumor compressing trachea
+      THORAX_ENCASING_AORTA:
+        text: THORAX_ENCASING_AORTA
+        description: Tumor encasing aorta and/or major branches.
+        title: Thorax - Tumor encasing aorta and/or major branches
+      THORAX_COMPRESSING_TRACHEA_BRONCHI:
+        text: THORAX_COMPRESSING_TRACHEA_BRONCHI
+        description: Tumor compressing trachea and/or principal bronchi.
+        title: Thorax - Tumor compressing trachea and/or principal bronchi
+      THORAX_LOWER_MEDIASTINUM_INFILTRATING:
+        text: THORAX_LOWER_MEDIASTINUM_INFILTRATING
+        description: Lower mediastinal tumor infiltrating the costo-vertebral junction
+          between T9 and T12.
+        title: Thorax - Lower mediastinal tumor infiltrating costo-vertebral junction
+      THORACOABDOMINAL_ENCASING_AORTA_CELIAC:
+        text: THORACOABDOMINAL_ENCASING_AORTA_CELIAC
+        description: Tumor encasing the aorta and/or vena cava.
+        title: Thoraco-abdominal - Tumor encasing aorta and/or vena cava
+      ABDOMEN_PELVIS_ENCASING_CELIAC_SMA:
+        text: ABDOMEN_PELVIS_ENCASING_CELIAC_SMA
+        description: Tumor encasing celiac axis and/or superior mesenteric artery.
+        title: Abdomen/pelvis - Tumor encasing celiac axis and/or SMA
+      ABDOMEN_PELVIS_ENCASING_RENAL_VESSELS:
+        text: ABDOMEN_PELVIS_ENCASING_RENAL_VESSELS
+        description: Tumor encasing origin of renal vessels.
+        title: Abdomen/pelvis - Tumor encasing origin of renal vessels
+      ABDOMEN_PELVIS_ENCASING_AORTA_IVC:
+        text: ABDOMEN_PELVIS_ENCASING_AORTA_IVC
+        description: Tumor encasing aorta and/or inferior vena cava.
+        title: Abdomen/pelvis - Tumor encasing aorta and/or IVC
+      ABDOMEN_PELVIS_ENCASING_ILIAC_VESSELS:
+        text: ABDOMEN_PELVIS_ENCASING_ILIAC_VESSELS
+        description: Tumor encasing iliac vessels.
+        title: Abdomen/pelvis - Tumor encasing iliac vessels
+      ABDOMEN_PELVIS_PELVIC_CROSSING_SCIATIC_NOTCH:
+        text: ABDOMEN_PELVIS_PELVIC_CROSSING_SCIATIC_NOTCH
+        description: Pelvic tumor crossing the sciatic notch.
+        title: Abdomen/pelvis - Pelvic tumor crossing sciatic notch
+      INTRASPINAL_EXTENSION:
+        text: INTRASPINAL_EXTENSION
+        description: Intraspinal tumor extension provided that more than one third
+          of the spinal canal in the axial plane is invaded and/or the perimedullary
+          leptomeningeal spaces are not visible and/or spinal cord signal is abnormal.
+        title: Intraspinal tumor extension
+      ADJACENT_ORGAN_INFILTRATION:
+        text: ADJACENT_ORGAN_INFILTRATION
+        description: Infiltration of adjacent organs/structures such as pericardium,
+          diaphragm, kidney, liver, duodeno-pancreatic block, and mesentery.
+        title: Infiltration of adjacent organs/structures
   RaceOMB1997Enum:
     name: RaceOMB1997Enum
     definition_uri: https://w3id.org/valuesets/RaceOMB1997Enum
@@ -45198,6 +47126,557 @@ enums:
           standard:
             tag: standard
             value: binary
+  QuantityKindEnum:
+    name: QuantityKindEnum
+    definition_uri: https://w3id.org/valuesets/QuantityKindEnum
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Physical quantity kinds based on QUDT. These represent abstract types
+      of physical quantities independent of the units used to measure them.
+    title: Quantity Kind
+    from_schema: https://w3id.org/valuesets/units/quantity_kinds
+    see_also:
+    - https://www.qudt.org/doc/DOC_VOCAB-QUANTITY-KINDS.html
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      LENGTH:
+        text: LENGTH
+        description: A 1-D extent quality representing distance between two points
+        meaning: quantitykind:Length
+        annotations:
+          si_base:
+            tag: si_base
+            value: 'true'
+          dimension:
+            tag: dimension
+            value: L
+        title: length
+        exact_mappings:
+        - PATO:0000122
+      MASS:
+        text: MASS
+        description: The amount of matter in an object
+        meaning: quantitykind:Mass
+        annotations:
+          si_base:
+            tag: si_base
+            value: 'true'
+          dimension:
+            tag: dimension
+            value: M
+        title: mass
+        exact_mappings:
+        - PATO:0000125
+      TIME:
+        text: TIME
+        description: Duration or temporal extent
+        meaning: quantitykind:Time
+        annotations:
+          si_base:
+            tag: si_base
+            value: 'true'
+          dimension:
+            tag: dimension
+            value: T
+          pato_label:
+            tag: pato_label
+            value: duration
+        title: time
+        exact_mappings:
+        - PATO:0001309
+      THERMODYNAMIC_TEMPERATURE:
+        text: THERMODYNAMIC_TEMPERATURE
+        description: The thermal energy of a system
+        meaning: quantitykind:ThermodynamicTemperature
+        annotations:
+          si_base:
+            tag: si_base
+            value: 'true'
+          dimension:
+            tag: dimension
+            value: "\u0398"
+          pato_label:
+            tag: pato_label
+            value: temperature
+        title: thermodynamic temperature
+        exact_mappings:
+        - PATO:0000146
+      AMOUNT_OF_SUBSTANCE:
+        text: AMOUNT_OF_SUBSTANCE
+        description: The number of elementary entities (atoms, molecules, etc.)
+        meaning: quantitykind:AmountOfSubstance
+        annotations:
+          si_base:
+            tag: si_base
+            value: 'true'
+          dimension:
+            tag: dimension
+            value: N
+          pato_label:
+            tag: pato_label
+            value: amount
+        title: amount of substance
+        close_mappings:
+        - PATO:0000070
+      ELECTRIC_CURRENT:
+        text: ELECTRIC_CURRENT
+        description: Flow of electric charge per unit time
+        meaning: quantitykind:ElectricCurrent
+        annotations:
+          si_base:
+            tag: si_base
+            value: 'true'
+          dimension:
+            tag: dimension
+            value: I
+        title: electric current
+      LUMINOUS_INTENSITY:
+        text: LUMINOUS_INTENSITY
+        description: Luminous power per unit solid angle emitted by a point light
+          source
+        meaning: quantitykind:LuminousIntensity
+        annotations:
+          si_base:
+            tag: si_base
+            value: 'true'
+          dimension:
+            tag: dimension
+            value: J
+          pato_label:
+            tag: pato_label
+            value: luminance
+        title: luminous intensity
+        close_mappings:
+        - PATO:0001718
+      AREA:
+        text: AREA
+        description: A 2-D extent representing the size of a surface
+        meaning: quantitykind:Area
+        annotations:
+          dimension:
+            tag: dimension
+            value: "L\xB2"
+        title: area
+        exact_mappings:
+        - PATO:0001323
+      VOLUME:
+        text: VOLUME
+        description: A 3-D extent representing the amount of space occupied
+        meaning: quantitykind:Volume
+        annotations:
+          dimension:
+            tag: dimension
+            value: "L\xB3"
+        title: volume
+        exact_mappings:
+        - PATO:0000918
+      ANGLE:
+        text: ANGLE
+        description: The figure formed by two rays sharing a common endpoint
+        meaning: quantitykind:Angle
+        annotations:
+          dimension:
+            tag: dimension
+            value: dimensionless
+        title: plane angle
+        exact_mappings:
+        - PATO:0002326
+      SOLID_ANGLE:
+        text: SOLID_ANGLE
+        description: A 3-D angular measure
+        meaning: quantitykind:SolidAngle
+        annotations:
+          dimension:
+            tag: dimension
+            value: dimensionless
+        title: solid angle
+      VELOCITY:
+        text: VELOCITY
+        description: Rate of change of position with direction
+        meaning: quantitykind:Velocity
+        annotations:
+          dimension:
+            tag: dimension
+            value: "L\xB7T\u207B\xB9"
+        title: velocity
+        exact_mappings:
+        - PATO:0002242
+      SPEED:
+        text: SPEED
+        description: Scalar rate of change of position
+        meaning: quantitykind:Speed
+        annotations:
+          dimension:
+            tag: dimension
+            value: "L\xB7T\u207B\xB9"
+        title: speed
+        exact_mappings:
+        - PATO:0000008
+      ACCELERATION:
+        text: ACCELERATION
+        description: Rate of change of velocity
+        meaning: quantitykind:Acceleration
+        annotations:
+          dimension:
+            tag: dimension
+            value: "L\xB7T\u207B\xB2"
+        title: acceleration
+        exact_mappings:
+        - PATO:0001028
+      FORCE:
+        text: FORCE
+        description: Rate of change of momentum
+        meaning: quantitykind:Force
+        annotations:
+          dimension:
+            tag: dimension
+            value: "M\xB7L\xB7T\u207B\xB2"
+        title: force
+        exact_mappings:
+        - PATO:0001035
+      PRESSURE:
+        text: PRESSURE
+        description: Force per unit area
+        meaning: quantitykind:Pressure
+        annotations:
+          dimension:
+            tag: dimension
+            value: "M\xB7L\u207B\xB9\xB7T\u207B\xB2"
+        title: pressure
+        exact_mappings:
+        - PATO:0001025
+      ENERGY:
+        text: ENERGY
+        description: Capacity to do work
+        meaning: quantitykind:Energy
+        annotations:
+          dimension:
+            tag: dimension
+            value: "M\xB7L\xB2\xB7T\u207B\xB2"
+        title: energy
+        exact_mappings:
+        - PATO:0001021
+      WORK:
+        text: WORK
+        description: Energy transferred by a force
+        meaning: quantitykind:Work
+        annotations:
+          dimension:
+            tag: dimension
+            value: "M\xB7L\xB2\xB7T\u207B\xB2"
+        title: work
+        exact_mappings:
+        - PATO:0001026
+      POWER:
+        text: POWER
+        description: Rate of doing work or transferring energy
+        meaning: quantitykind:Power
+        annotations:
+          dimension:
+            tag: dimension
+            value: "M\xB7L\xB2\xB7T\u207B\xB3"
+        title: power
+        exact_mappings:
+        - PATO:0001024
+      MOMENTUM:
+        text: MOMENTUM
+        description: Product of mass and velocity
+        meaning: quantitykind:Momentum
+        annotations:
+          dimension:
+            tag: dimension
+            value: "M\xB7L\xB7T\u207B\xB9"
+        title: momentum
+        exact_mappings:
+        - PATO:0001023
+      TORQUE:
+        text: TORQUE
+        description: Rotational force or moment of force
+        meaning: quantitykind:Torque
+        annotations:
+          dimension:
+            tag: dimension
+            value: "M\xB7L\xB2\xB7T\u207B\xB2"
+        title: torque
+      ANGULAR_VELOCITY:
+        text: ANGULAR_VELOCITY
+        description: Rate of change of angular position
+        meaning: quantitykind:AngularVelocity
+        annotations:
+          dimension:
+            tag: dimension
+            value: "T\u207B\xB9"
+        title: angular velocity
+      ANGULAR_ACCELERATION:
+        text: ANGULAR_ACCELERATION
+        description: Rate of change of angular velocity
+        meaning: quantitykind:AngularAcceleration
+        annotations:
+          dimension:
+            tag: dimension
+            value: "T\u207B\xB2"
+        title: angular acceleration
+        exact_mappings:
+        - PATO:0001350
+      DENSITY:
+        text: DENSITY
+        description: Mass per unit volume
+        meaning: quantitykind:Density
+        annotations:
+          dimension:
+            tag: dimension
+            value: "M\xB7L\u207B\xB3"
+          pato_label:
+            tag: pato_label
+            value: mass density
+        title: density
+        exact_mappings:
+        - PATO:0001019
+      VISCOSITY:
+        text: VISCOSITY
+        description: Internal resistance to flow
+        meaning: quantitykind:DynamicViscosity
+        annotations:
+          dimension:
+            tag: dimension
+            value: "M\xB7L\u207B\xB9\xB7T\u207B\xB9"
+        title: dynamic viscosity
+        exact_mappings:
+        - PATO:0000992
+      KINEMATIC_VISCOSITY:
+        text: KINEMATIC_VISCOSITY
+        description: Dynamic viscosity divided by density
+        meaning: quantitykind:KinematicViscosity
+        annotations:
+          dimension:
+            tag: dimension
+            value: "L\xB2\xB7T\u207B\xB9"
+        title: kinematic viscosity
+      FREQUENCY:
+        text: FREQUENCY
+        description: Number of repetitive events per unit time
+        meaning: quantitykind:Frequency
+        annotations:
+          dimension:
+            tag: dimension
+            value: "T\u207B\xB9"
+        title: frequency
+        exact_mappings:
+        - PATO:0000044
+      MASS_CONCENTRATION:
+        text: MASS_CONCENTRATION
+        description: Mass of a substance per unit volume
+        meaning: quantitykind:MassConcentration
+        annotations:
+          dimension:
+            tag: dimension
+            value: "M\xB7L\u207B\xB3"
+          pato_label:
+            tag: pato_label
+            value: concentration of
+        title: mass concentration
+        exact_mappings:
+        - PATO:0000033
+      AMOUNT_CONCENTRATION:
+        text: AMOUNT_CONCENTRATION
+        description: Amount of substance per unit volume (molarity)
+        meaning: quantitykind:AmountConcentration
+        annotations:
+          dimension:
+            tag: dimension
+            value: "N\xB7L\u207B\xB3"
+        title: amount concentration
+        close_mappings:
+        - PATO:0000033
+      ELECTRIC_CHARGE:
+        text: ELECTRIC_CHARGE
+        description: Fundamental property of matter causing electromagnetic interaction
+        meaning: quantitykind:ElectricCharge
+        annotations:
+          dimension:
+            tag: dimension
+            value: "I\xB7T"
+        title: electric charge
+        exact_mappings:
+        - PATO:0002193
+      ELECTRIC_POTENTIAL:
+        text: ELECTRIC_POTENTIAL
+        description: Potential energy per unit charge (voltage)
+        meaning: quantitykind:ElectricPotential
+        annotations:
+          dimension:
+            tag: dimension
+            value: "M\xB7L\xB2\xB7T\u207B\xB3\xB7I\u207B\xB9"
+        title: electric potential
+        aliases:
+        - voltage
+        exact_mappings:
+        - PATO:0001464
+      ELECTRIC_RESISTANCE:
+        text: ELECTRIC_RESISTANCE
+        description: Opposition to electric current flow
+        meaning: quantitykind:Resistance
+        annotations:
+          dimension:
+            tag: dimension
+            value: "M\xB7L\xB2\xB7T\u207B\xB3\xB7I\u207B\xB2"
+        title: electric resistance
+      ELECTRICAL_CONDUCTIVITY:
+        text: ELECTRICAL_CONDUCTIVITY
+        description: Ability to conduct electric current
+        meaning: quantitykind:Conductivity
+        annotations:
+          dimension:
+            tag: dimension
+            value: "I\xB2\xB7T\xB3\xB7M\u207B\xB9\xB7L\u207B\xB3"
+        title: electrical conductivity
+        exact_mappings:
+        - PATO:0001757
+      CAPACITANCE:
+        text: CAPACITANCE
+        description: Ability to store electric charge
+        meaning: quantitykind:Capacitance
+        annotations:
+          dimension:
+            tag: dimension
+            value: "I\xB2\xB7T\u2074\xB7M\u207B\xB9\xB7L\u207B\xB2"
+        title: capacitance
+      INDUCTANCE:
+        text: INDUCTANCE
+        description: Property relating magnetic flux to electric current
+        meaning: quantitykind:Inductance
+        annotations:
+          dimension:
+            tag: dimension
+            value: "M\xB7L\xB2\xB7T\u207B\xB2\xB7I\u207B\xB2"
+        title: inductance
+      MAGNETIC_FLUX:
+        text: MAGNETIC_FLUX
+        description: Measure of total magnetic field passing through a surface
+        meaning: quantitykind:MagneticFlux
+        annotations:
+          dimension:
+            tag: dimension
+            value: "M\xB7L\xB2\xB7T\u207B\xB2\xB7I\u207B\xB9"
+        title: magnetic flux
+      MAGNETIC_FLUX_DENSITY:
+        text: MAGNETIC_FLUX_DENSITY
+        description: Magnetic flux per unit area
+        meaning: quantitykind:MagneticFluxDensity
+        annotations:
+          dimension:
+            tag: dimension
+            value: "M\xB7T\u207B\xB2\xB7I\u207B\xB9"
+        title: magnetic flux density
+      HEAT_CAPACITY:
+        text: HEAT_CAPACITY
+        description: Heat required to raise temperature by one unit
+        meaning: quantitykind:HeatCapacity
+        annotations:
+          dimension:
+            tag: dimension
+            value: "M\xB7L\xB2\xB7T\u207B\xB2\xB7\u0398\u207B\xB9"
+        title: heat capacity
+      SPECIFIC_HEAT_CAPACITY:
+        text: SPECIFIC_HEAT_CAPACITY
+        description: Heat capacity per unit mass
+        meaning: quantitykind:SpecificHeatCapacity
+        annotations:
+          dimension:
+            tag: dimension
+            value: "L\xB2\xB7T\u207B\xB2\xB7\u0398\u207B\xB9"
+        title: specific heat capacity
+      THERMAL_CONDUCTIVITY:
+        text: THERMAL_CONDUCTIVITY
+        description: Ability to conduct heat
+        meaning: quantitykind:ThermalConductivity
+        annotations:
+          dimension:
+            tag: dimension
+            value: "M\xB7L\xB7T\u207B\xB3\xB7\u0398\u207B\xB9"
+          pato_label:
+            tag: pato_label
+            value: heat conductivity
+        title: thermal conductivity
+        exact_mappings:
+        - PATO:0001756
+      LUMINOUS_FLUX:
+        text: LUMINOUS_FLUX
+        description: Total perceived light power emitted
+        meaning: quantitykind:LuminousFlux
+        annotations:
+          dimension:
+            tag: dimension
+            value: J
+        title: luminous flux
+        exact_mappings:
+        - PATO:0001296
+      ILLUMINANCE:
+        text: ILLUMINANCE
+        description: Luminous flux per unit area
+        meaning: quantitykind:Illuminance
+        annotations:
+          dimension:
+            tag: dimension
+            value: "J\xB7L\u207B\xB2"
+        title: illuminance
+      RADIANT_INTENSITY:
+        text: RADIANT_INTENSITY
+        description: Radiant power per unit solid angle
+        meaning: quantitykind:RadiantIntensity
+        annotations:
+          dimension:
+            tag: dimension
+            value: "M\xB7L\xB2\xB7T\u207B\xB3"
+        title: radiant intensity
+      ACTIVITY:
+        text: ACTIVITY
+        description: Number of nuclear disintegrations per unit time
+        meaning: quantitykind:Activity
+        annotations:
+          dimension:
+            tag: dimension
+            value: "T\u207B\xB9"
+        title: activity (radioactivity)
+      ABSORBED_DOSE:
+        text: ABSORBED_DOSE
+        description: Energy deposited per unit mass by ionizing radiation
+        meaning: quantitykind:AbsorbedDose
+        annotations:
+          dimension:
+            tag: dimension
+            value: "L\xB2\xB7T\u207B\xB2"
+        title: absorbed dose
+      DOSE_EQUIVALENT:
+        text: DOSE_EQUIVALENT
+        description: Absorbed dose weighted by radiation type
+        meaning: quantitykind:DoseEquivalent
+        annotations:
+          dimension:
+            tag: dimension
+            value: "L\xB2\xB7T\u207B\xB2"
+        title: dose equivalent
+      INFORMATION_ENTROPY:
+        text: INFORMATION_ENTROPY
+        description: Measure of information content or uncertainty
+        meaning: quantitykind:InformationEntropy
+        annotations:
+          dimension:
+            tag: dimension
+            value: dimensionless
+        title: information entropy
+      DATA_RATE:
+        text: DATA_RATE
+        description: Amount of data transferred per unit time
+        meaning: quantitykind:DataRate
+        annotations:
+          dimension:
+            tag: dimension
+            value: "T\u207B\xB9"
+        title: data rate
   ImageFileFormatEnum:
     name: ImageFileFormatEnum
     definition_uri: https://w3id.org/valuesets/ImageFileFormatEnum
@@ -56784,6 +59263,1024 @@ enums:
         text: GRADIENT
         description: Temperature gradient across block
         title: gradient
+  ArxivCategory:
+    name: ArxivCategory
+    definition_uri: https://w3id.org/valuesets/ArxivCategory
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: arXiv subject categories for classifying preprints and publications.
+      Categories are organized by major subject groups.
+    title: arXiv Category
+    from_schema: https://w3id.org/linkml/valuesets/publishing/arxiv_categories
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      cs:
+        text: cs
+        description: Computer science research areas
+        title: Computer Science
+        close_mappings:
+        - NCIT:C18145
+      econ:
+        text: econ
+        description: Economics research areas
+        title: Economics
+        close_mappings:
+        - NCIT:C61331
+        - mesh:D004467
+      eess:
+        text: eess
+        description: Electrical engineering and systems science research areas
+        title: Electrical Engineering and Systems Science
+        close_mappings:
+        - NCIT:C19349
+      math:
+        text: math
+        description: Mathematics research areas
+        title: Mathematics
+        close_mappings:
+        - NCIT:C16825
+        - mesh:D008433
+      astro-ph:
+        text: astro-ph
+        description: Astrophysics research areas
+        title: Astrophysics
+      cond-mat:
+        text: cond-mat
+        description: Condensed matter physics research areas
+        title: Condensed Matter
+      hep:
+        text: hep
+        description: High energy physics research areas
+        title: High Energy Physics
+      nlin:
+        text: nlin
+        description: Nonlinear sciences research areas
+        title: Nonlinear Sciences
+      nucl:
+        text: nucl
+        description: Nuclear physics research areas
+        title: Nuclear Physics
+        close_mappings:
+        - mesh:D009686
+      physics:
+        text: physics
+        description: General physics research areas
+        title: Physics
+        close_mappings:
+        - NCIT:C16989
+        - mesh:D010825
+      q-bio:
+        text: q-bio
+        description: Quantitative biology research areas
+        title: Quantitative Biology
+        close_mappings:
+        - NCIT:C16345
+        - mesh:D001695
+      q-fin:
+        text: q-fin
+        description: Quantitative finance research areas
+        title: Quantitative Finance
+      stat:
+        text: stat
+        description: Statistics research areas
+        title: Statistics
+        close_mappings:
+        - NCIT:C17167
+      cs.AI:
+        text: cs.AI
+        description: Covers all areas of AI except Vision, Robotics, Machine Learning,
+          Multiagent Systems, and NLP. Includes Expert Systems, Theorem Proving, Knowledge
+          Representation, Planning, and Uncertainty in AI.
+        is_a: cs
+        title: Artificial Intelligence
+        close_mappings:
+        - NCIT:C16309
+        - mesh:D001185
+      cs.AR:
+        text: cs.AR
+        description: Covers systems organization and hardware architecture. Roughly
+          includes material in ACM Subject Class C.0, C.1, and C.5.
+        is_a: cs
+        title: Hardware Architecture
+      cs.CC:
+        text: cs.CC
+        description: Covers models of computation, complexity classes, structural
+          complexity, complexity tradeoffs, upper and lower bounds.
+        is_a: cs
+        title: Computational Complexity
+      cs.CE:
+        text: cs.CE
+        description: Covers applications of computer science to the mathematical modeling
+          of complex systems in science, engineering, and finance.
+        is_a: cs
+        title: Computational Engineering, Finance, and Science
+      cs.CG:
+        text: cs.CG
+        description: Geometric algorithms, discrete differential geometry, and directly
+          related problems.
+        is_a: cs
+        title: Computational Geometry
+      cs.CL:
+        text: cs.CL
+        description: Covers natural language processing. Includes computational linguistics,
+          speech processing, text retrieval and processing.
+        is_a: cs
+        title: Computation and Language
+        close_mappings:
+        - NCIT:C176260
+        - mesh:D009323
+      cs.CR:
+        text: cs.CR
+        description: Covers all areas of cryptography and security including authentication,
+          public key cryptosystems, proof-carrying code, etc.
+        is_a: cs
+        title: Cryptography and Security
+      cs.CV:
+        text: cs.CV
+        description: Covers image processing, computer vision, pattern recognition,
+          and scene understanding.
+        is_a: cs
+        title: Computer Vision and Pattern Recognition
+      cs.CY:
+        text: cs.CY
+        description: Covers impact of computers on society, computer ethics, information
+          technology and public policy, legal aspects of computing.
+        is_a: cs
+        title: Computers and Society
+      cs.DB:
+        text: cs.DB
+        description: Covers database management, datamining, and data processing.
+          Roughly includes material in ACM Subject Classes H.2, H.3, and H.4.
+        is_a: cs
+        title: Databases
+      cs.DC:
+        text: cs.DC
+        description: Covers fault-tolerance, distributed algorithms, stabilization,
+          parallel computation, and cluster computing.
+        is_a: cs
+        title: Distributed, Parallel, and Cluster Computing
+      cs.DL:
+        text: cs.DL
+        description: Covers all aspects of digital library design and document creation.
+          Note this may overlap with other areas.
+        is_a: cs
+        title: Digital Libraries
+      cs.DM:
+        text: cs.DM
+        description: Covers combinatorics, graph theory, applications of probability.
+          Roughly includes material in ACM Subject Classes G.2 and G.3.
+        is_a: cs
+        title: Discrete Mathematics
+      cs.DS:
+        text: cs.DS
+        description: Covers data structures and analysis of algorithms. Roughly includes
+          material in ACM Subject Classes E.1, E.2, F.2.1, and F.2.2.
+        is_a: cs
+        title: Data Structures and Algorithms
+      cs.ET:
+        text: cs.ET
+        description: Covers approaches to computing based on emerging technologies
+          such as quantum computing, DNA computing, optical computing.
+        is_a: cs
+        title: Emerging Technologies
+      cs.FL:
+        text: cs.FL
+        description: Covers automata theory, formal language theory, grammars, and
+          combinatorics on words.
+        is_a: cs
+        title: Formal Languages and Automata Theory
+      cs.GL:
+        text: cs.GL
+        description: Covers introductory material, survey material, predictions of
+          future trends, biographies, and miscellaneous computer-science related material.
+        is_a: cs
+        title: General Literature
+      cs.GR:
+        text: cs.GR
+        description: Covers all aspects of computer graphics. Roughly includes material
+          in ACM Subject Classes I.3.0-I.3.8.
+        is_a: cs
+        title: Graphics
+        close_mappings:
+        - NCIT:C16460
+      cs.GT:
+        text: cs.GT
+        description: Covers all theoretical and applied aspects at the intersection
+          of computer science and game theory.
+        is_a: cs
+        title: Computer Science and Game Theory
+      cs.HC:
+        text: cs.HC
+        description: Covers human factors, user interfaces, and collaborative computing.
+          Roughly includes material in ACM Subject Classes H.1.2 and H.5.
+        is_a: cs
+        title: Human-Computer Interaction
+      cs.IR:
+        text: cs.IR
+        description: Covers indexing, dictionaries, retrieval, content and analysis.
+          Roughly includes material in ACM Subject Classes H.3.0-H.3.4.
+        is_a: cs
+        title: Information Retrieval
+      cs.IT:
+        text: cs.IT
+        description: Covers theoretical and experimental aspects of information theory
+          and coding.
+        is_a: cs
+        title: Information Theory
+      cs.LG:
+        text: cs.LG
+        description: Papers on all aspects of machine learning research, including
+          supervised, unsupervised, reinforcement learning, bandit algorithms.
+        is_a: cs
+        title: Machine Learning
+        close_mappings:
+        - NCIT:C176231
+        - mesh:D000069550
+      cs.LO:
+        text: cs.LO
+        description: Covers all aspects of logic in computer science, including finite
+          model theory, logics of programs, modal logic, and program verification.
+        is_a: cs
+        title: Logic in Computer Science
+      cs.MA:
+        text: cs.MA
+        description: Covers multiagent systems, distributed artificial intelligence,
+          intelligent agents, coordinated interactions.
+        is_a: cs
+        title: Multiagent Systems
+      cs.MM:
+        text: cs.MM
+        description: Covers all aspects of multimedia systems, including hypermedia
+          and information systems design.
+        is_a: cs
+        title: Multimedia
+      cs.MS:
+        text: cs.MS
+        description: Covers aspects of mathematical software for mathematical computation
+          and related support.
+        is_a: cs
+        title: Mathematical Software
+      cs.NA:
+        text: cs.NA
+        description: Covers numerical algorithms for problems in analysis and algebra.
+          Includes numerical linear algebra, optimization, and interpolation.
+        is_a: cs
+        title: Numerical Analysis
+      cs.NE:
+        text: cs.NE
+        description: Covers neural networks, connectionism, genetic algorithms, artificial
+          life, adaptive behavior.
+        is_a: cs
+        title: Neural and Evolutionary Computing
+      cs.NI:
+        text: cs.NI
+        description: Covers all aspects of computer communication networks, including
+          network architecture and design.
+        is_a: cs
+        title: Networking and Internet Architecture
+      cs.OH:
+        text: cs.OH
+        description: Covers topics not fitting other computer science categories.
+        is_a: cs
+        title: Other Computer Science
+      cs.OS:
+        text: cs.OS
+        description: Covers aspects of operating systems including structure, design,
+          management, and synchronization.
+        is_a: cs
+        title: Operating Systems
+      cs.PF:
+        text: cs.PF
+        description: Covers performance measurement, simulation, and evaluation methodology.
+        is_a: cs
+        title: Performance
+      cs.PL:
+        text: cs.PL
+        description: Covers programming language semantics, language features, programming
+          approaches, compilers.
+        is_a: cs
+        title: Programming Languages
+      cs.RO:
+        text: cs.RO
+        description: Covers all aspects of robotics, including control, manipulation,
+          planning, and robot learning.
+        is_a: cs
+        title: Robotics
+        close_mappings:
+        - mesh:D012371
+      cs.SC:
+        text: cs.SC
+        description: Covers symbolics, including computer algebra systems, implementation,
+          and applications.
+        is_a: cs
+        title: Symbolic Computation
+      cs.SD:
+        text: cs.SD
+        description: Covers all aspects of computing with sound, and sound as an information
+          channel.
+        is_a: cs
+        title: Sound
+      cs.SE:
+        text: cs.SE
+        description: Covers design tools, software metrics, testing and debugging,
+          programming environments, requirements, specifications.
+        is_a: cs
+        title: Software Engineering
+      cs.SI:
+        text: cs.SI
+        description: Covers design, analysis, and modeling of social and information
+          networks, including their applications for online systems.
+        is_a: cs
+        title: Social and Information Networks
+      cs.SY:
+        text: cs.SY
+        description: Covers theoretical and practical aspects of systems and control,
+          including control system design.
+        is_a: cs
+        title: Systems and Control
+      econ.EM:
+        text: econ.EM
+        description: Econometric theory and practice, including estimation, hypothesis
+          testing, and forecasting.
+        is_a: econ
+        title: Econometrics
+      econ.GN:
+        text: econ.GN
+        description: General methodological, applied, and empirical contributions
+          to economics.
+        is_a: econ
+        title: General Economics
+      econ.TH:
+        text: econ.TH
+        description: Includes decision theory, game theory, mechanism design, and
+          mathematical modeling in economics.
+        is_a: econ
+        title: Theoretical Economics
+      eess.AS:
+        text: eess.AS
+        description: Theory and methods for processing signals representing audio,
+          speech, and language, and their applications.
+        is_a: eess
+        title: Audio and Speech Processing
+      eess.IV:
+        text: eess.IV
+        description: Theory, algorithms, and applications for the formation, capture,
+          processing, communication, analysis, and display of images.
+        is_a: eess
+        title: Image and Video Processing
+      eess.SP:
+        text: eess.SP
+        description: Theory, algorithms, performance analysis and applications of
+          signal and data analysis.
+        is_a: eess
+        title: Signal Processing
+      eess.SY:
+        text: eess.SY
+        description: Analysis and design of control systems, covering mathematical
+          modeling and automatic control.
+        is_a: eess
+        title: Systems and Control
+      math.AC:
+        text: math.AC
+        description: Commutative rings, modules, ideals, homological algebra, computational
+          aspects, local rings.
+        is_a: math
+        title: Commutative Algebra
+      math.AG:
+        text: math.AG
+        description: Algebraic varieties, stacks, sheaves, schemes, moduli spaces,
+          complex geometry, quantum cohomology.
+        is_a: math
+        title: Algebraic Geometry
+      math.AP:
+        text: math.AP
+        description: Existence and uniqueness, boundary conditions, linear and non-linear
+          operators, stability, soliton theory.
+        is_a: math
+        title: Analysis of PDEs
+      math.AT:
+        text: math.AT
+        description: Homotopy theory, homological algebra, algebraic treatments of
+          manifolds.
+        is_a: math
+        title: Algebraic Topology
+      math.CA:
+        text: math.CA
+        description: Special functions, orthogonal polynomials, harmonic analysis,
+          ODEs, differential relations.
+        is_a: math
+        title: Classical Analysis and ODEs
+      math.CO:
+        text: math.CO
+        description: Discrete mathematics, graph theory, enumeration, combinatorial
+          optimization.
+        is_a: math
+        title: Combinatorics
+      math.CT:
+        text: math.CT
+        description: Enriched categories, topoi, abelian categories, monoidal categories,
+          homological algebra.
+        is_a: math
+        title: Category Theory
+      math.CV:
+        text: math.CV
+        description: Holomorphic functions, automorphic group actions, and their generalizations,
+          complex geometry.
+        is_a: math
+        title: Complex Variables
+      math.DG:
+        text: math.DG
+        description: Complex, contact, Riemannian, pseudo-Riemannian, symplectic geometry,
+          relativity, gauge theory.
+        is_a: math
+        title: Differential Geometry
+      math.DS:
+        text: math.DS
+        description: Dynamics of differential equations and flows, mechanics, classical
+          few-body problems.
+        is_a: math
+        title: Dynamical Systems
+      math.FA:
+        text: math.FA
+        description: Banach spaces, function spaces, real functions, distributions,
+          measures, integration.
+        is_a: math
+        title: Functional Analysis
+      math.GM:
+        text: math.GM
+        description: Mathematical material of general interest, broadly accessible
+          expositions of research results.
+        is_a: math
+        title: General Mathematics
+      math.GN:
+        text: math.GN
+        description: Continuum theory, point-set topology, spaces with algebraic structure,
+          topological dynamics.
+        is_a: math
+        title: General Topology
+      math.GR:
+        text: math.GR
+        description: Finite groups, topological groups, representation theory, cohomology,
+          classification.
+        is_a: math
+        title: Group Theory
+      math.GT:
+        text: math.GT
+        description: Manifolds, orbifolds, polyhedra, cell complexes, foliations,
+          geometric structures.
+        is_a: math
+        title: Geometric Topology
+      math.HO:
+        text: math.HO
+        description: Biographies, philosophy of mathematics, mathematics education,
+          recreational mathematics.
+        is_a: math
+        title: History and Overview
+      math.IT:
+        text: math.IT
+        description: Math methods in information theory and coding theory.
+        is_a: math
+        title: Information Theory
+      math.KT:
+        text: math.KT
+        description: Algebraic and topological K-theory, relations with topology,
+          commutative algebra, index theories.
+        is_a: math
+        title: K-Theory and Homology
+      math.LO:
+        text: math.LO
+        description: Logic, set theory, point-set topology, formal mathematics.
+        is_a: math
+        title: Logic
+      math.MG:
+        text: math.MG
+        description: Euclidean, hyperbolic, discrete, convex, coarse geometry, comparisons
+          in Riemannian geometry.
+        is_a: math
+        title: Metric Geometry
+      math.MP:
+        text: math.MP
+        description: Articles in which math methods are used to study physics problems,
+          or math questions arising from physics.
+        is_a: math
+        title: Mathematical Physics
+      math.NA:
+        text: math.NA
+        description: Numerical algorithms for problems in analysis and algebra, scientific
+          computation.
+        is_a: math
+        title: Numerical Analysis
+      math.NT:
+        text: math.NT
+        description: Prime numbers, diophantine equations, analytic number theory,
+          algebraic number theory, arithmetic geometry.
+        is_a: math
+        title: Number Theory
+      math.OA:
+        text: math.OA
+        description: Algebras of operators on Hilbert space, C*-algebras, von Neumann
+          algebras, non-commutative geometry.
+        is_a: math
+        title: Operator Algebras
+      math.OC:
+        text: math.OC
+        description: Operations research, linear programming, control theory, systems
+          theory, optimal control.
+        is_a: math
+        title: Optimization and Control
+      math.PR:
+        text: math.PR
+        description: Theory and applications of probability and stochastic processes,
+          including stochastic differential equations.
+        is_a: math
+        title: Probability
+      math.QA:
+        text: math.QA
+        description: Quantum groups, skein theories, operadic and diagrammatic algebra,
+          quantum field theory.
+        is_a: math
+        title: Quantum Algebra
+      math.RA:
+        text: math.RA
+        description: Non-commutative rings and algebras, non-associative algebras,
+          universal algebra.
+        is_a: math
+        title: Rings and Algebras
+      math.RT:
+        text: math.RT
+        description: Linear representations of algebras and groups, Lie theory, associative
+          algebras.
+        is_a: math
+        title: Representation Theory
+      math.SG:
+        text: math.SG
+        description: Hamiltonian systems, symplectic flows, classical integrable systems.
+        is_a: math
+        title: Symplectic Geometry
+      math.SP:
+        text: math.SP
+        description: Schrodinger operators, differential operators, spectral measures,
+          scattering theory.
+        is_a: math
+        title: Spectral Theory
+      math.ST:
+        text: math.ST
+        description: Applied, computational and theoretical statistics including probability,
+          coverage, learning theory.
+        is_a: math
+        title: Statistics Theory
+      astro-ph.CO:
+        text: astro-ph.CO
+        description: Phenomenology of early universe, cosmic microwave background,
+          cosmological parameters, primordial element abundances.
+        is_a: astro-ph
+        title: Cosmology and Nongalactic Astrophysics
+      astro-ph.EP:
+        text: astro-ph.EP
+        description: Interplanetary medium, planetary physics, terrestrial planets,
+          extrasolar planets, irregular satellites.
+        is_a: astro-ph
+        title: Earth and Planetary Astrophysics
+      astro-ph.GA:
+        text: astro-ph.GA
+        description: Phenomena pertaining to galaxies or combinations of galaxies,
+          interstellar medium, star clusters.
+        is_a: astro-ph
+        title: Astrophysics of Galaxies
+      astro-ph.HE:
+        text: astro-ph.HE
+        description: Cosmic ray production, gamma rays, X-rays, charged particles,
+          supernovae, neutron stars, pulsars.
+        is_a: astro-ph
+        title: High Energy Astrophysical Phenomena
+      astro-ph.IM:
+        text: astro-ph.IM
+        description: Detector and calculation design, space and laboratory observatories,
+          data analysis methods.
+        is_a: astro-ph
+        title: Instrumentation and Methods for Astrophysics
+      astro-ph.SR:
+        text: astro-ph.SR
+        description: White dwarfs, brown dwarfs, stars, solar system, helioseismology,
+          stellar evolution.
+        is_a: astro-ph
+        title: Solar and Stellar Astrophysics
+      cond-mat.dis-nn:
+        text: cond-mat.dis-nn
+        description: Glasses and spin glasses; random systems; information theory
+          in physics; neural networks.
+        is_a: cond-mat
+        title: Disordered Systems and Neural Networks
+      cond-mat.mes-hall:
+        text: cond-mat.mes-hall
+        description: Quantum dots and wires, nanotubes, graphene, ballistic transport,
+          mesoscale and nanoscale systems.
+        is_a: cond-mat
+        title: Mesoscale and Nanoscale Physics
+      cond-mat.mtrl-sci:
+        text: cond-mat.mtrl-sci
+        description: Techniques, synthesis, characterization, structure; mechanical
+          and structural phase transitions.
+        is_a: cond-mat
+        title: Materials Science
+      cond-mat.other:
+        text: cond-mat.other
+        description: Work in condensed matter that does not fit into other cond-mat
+          classifications.
+        is_a: cond-mat
+        title: Other Condensed Matter
+      cond-mat.quant-gas:
+        text: cond-mat.quant-gas
+        description: Ultracold atomic gases, Bose-Einstein condensation, Feshbach
+          resonances, spinor condensates.
+        is_a: cond-mat
+        title: Quantum Gases
+      cond-mat.soft:
+        text: cond-mat.soft
+        description: Membranes, emulsions, gels, foams, nematic phases, polymers,
+          liquid crystals.
+        is_a: cond-mat
+        title: Soft Condensed Matter
+      cond-mat.stat-mech:
+        text: cond-mat.stat-mech
+        description: Phase transitions, thermodynamics, field theory, non-equilibrium
+          phenomena, renormalization.
+        is_a: cond-mat
+        title: Statistical Mechanics
+      cond-mat.str-el:
+        text: cond-mat.str-el
+        description: Quantum magnetism, non-Fermi liquid, spin liquids, stripe phases,
+          electron-phonon interactions.
+        is_a: cond-mat
+        title: Strongly Correlated Electrons
+      cond-mat.supr-con:
+        text: cond-mat.supr-con
+        description: Superconductivity theory, models, phenomenology, experimental
+          results.
+        is_a: cond-mat
+        title: Superconductivity
+      hep-ex:
+        text: hep-ex
+        description: Results from high-energy/particle physics experiments at accelerators
+          and observatories.
+        is_a: hep
+        title: High Energy Physics - Experiment
+      hep-lat:
+        text: hep-lat
+        description: Lattice field theory results with desired precision and algorithmic
+          advances.
+        is_a: hep
+        title: High Energy Physics - Lattice
+      hep-ph:
+        text: hep-ph
+        description: Theoretical particle physics and its relation to experiment.
+          Covers Standard Model and beyond.
+        is_a: hep
+        title: High Energy Physics - Phenomenology
+      hep-th:
+        text: hep-th
+        description: Formal aspects of quantum field theory, string theory, quantum
+          gravity.
+        is_a: hep
+        title: High Energy Physics - Theory
+      gr-qc:
+        text: gr-qc
+        description: General relativity, gravitational physics, cosmological models,
+          relativistic astrophysics.
+        is_a: physics
+        title: General Relativity and Quantum Cosmology
+      math-ph:
+        text: math-ph
+        description: Applications of mathematics to problems in physics and development
+          of mathematical methods for such applications.
+        is_a: physics
+        title: Mathematical Physics
+      quant-ph:
+        text: quant-ph
+        description: Quantum foundations, quantum information, quantum computation,
+          quantum mechanics.
+        is_a: physics
+        title: Quantum Physics
+        close_mappings:
+        - NCIT:C19650
+        - mesh:D000098222
+      nlin.AO:
+        text: nlin.AO
+        description: Self-organization, adaptation, and autonomous systems.
+        is_a: nlin
+        title: Adaptation and Self-Organizing Systems
+      nlin.CD:
+        text: nlin.CD
+        description: Dynamical systems with chaotic behavior, routes to chaos, spectral
+          analysis, Lyapunov exponents.
+        is_a: nlin
+        title: Chaotic Dynamics
+      nlin.CG:
+        text: nlin.CG
+        description: Cellular automata, lattice Boltzmann, lattice gas automata, signal
+          processing with cellular automata.
+        is_a: nlin
+        title: Cellular Automata and Lattice Gases
+      nlin.PS:
+        text: nlin.PS
+        description: Pattern formation, coherent structures, solitons, waves.
+        is_a: nlin
+        title: Pattern Formation and Solitons
+      nlin.SI:
+        text: nlin.SI
+        description: Integrable PDEs, integrable ODEs, Painleve analysis, integrable
+          discrete systems.
+        is_a: nlin
+        title: Exactly Solvable and Integrable Systems
+      nucl-ex:
+        text: nucl-ex
+        description: Experimental results from nuclear physics laboratories, such
+          as heavy-ion collisions.
+        is_a: nucl
+        title: Nuclear Experiment
+      nucl-th:
+        text: nucl-th
+        description: Theory of nuclear structure and low-energy reactions, including
+          heavy-ion physics.
+        is_a: nucl
+        title: Nuclear Theory
+      physics.acc-ph:
+        text: physics.acc-ph
+        description: Accelerator theory and target design, beam physics, secondary
+          beams, photon sources.
+        is_a: physics
+        title: Accelerator Physics
+      physics.ao-ph:
+        text: physics.ao-ph
+        description: Atmospheric and oceanic processes, climate dynamics, waves, boundary
+          layer physics.
+        is_a: physics
+        title: Atmospheric and Oceanic Physics
+      physics.app-ph:
+        text: physics.app-ph
+        description: Applications of physics to new technology, medical physics, instrumentation.
+        is_a: physics
+        title: Applied Physics
+      physics.atm-clus:
+        text: physics.atm-clus
+        description: Binding, structure, and properties of clusters, nanoparticles.
+        is_a: physics
+        title: Atomic and Molecular Clusters
+      physics.atom-ph:
+        text: physics.atom-ph
+        description: Atomic and molecular structure, spectra, collisions, and data.
+          Ultrafast physics, molecular physics.
+        is_a: physics
+        title: Atomic Physics
+      physics.bio-ph:
+        text: physics.bio-ph
+        description: Molecular biophysics, cellular biophysics, single molecule biophysics.
+        is_a: physics
+        title: Biological Physics
+        close_mappings:
+        - NCIT:C16349
+        - mesh:D001703
+      physics.chem-ph:
+        text: physics.chem-ph
+        description: Experimental, methods, and results in chemical physics and molecular
+          dynamics.
+        is_a: physics
+        title: Chemical Physics
+      physics.class-ph:
+        text: physics.class-ph
+        description: Newtonian and Lagrangian mechanics, electromagnetism, thermodynamics,
+          special relativity.
+        is_a: physics
+        title: Classical Physics
+      physics.comp-ph:
+        text: physics.comp-ph
+        description: All aspects of computational science applied to physics problems.
+        is_a: physics
+        title: Computational Physics
+      physics.data-an:
+        text: physics.data-an
+        description: Methods, software, and results in physics data analysis.
+        is_a: physics
+        title: Data Analysis, Statistics and Probability
+      physics.ed-ph:
+        text: physics.ed-ph
+        description: Physics teaching and learning research.
+        is_a: physics
+        title: Physics Education
+      physics.flu-dyn:
+        text: physics.flu-dyn
+        description: Turbulence, instabilities, incompressible and compressible flows,
+          boundary layers.
+        is_a: physics
+        title: Fluid Dynamics
+      physics.gen-ph:
+        text: physics.gen-ph
+        description: General physics that does not fit elsewhere.
+        is_a: physics
+        title: General Physics
+      physics.geo-ph:
+        text: physics.geo-ph
+        description: Computational and theoretical geophysics including seismology,
+          potential theory.
+        is_a: physics
+        title: Geophysics
+      physics.hist-ph:
+        text: physics.hist-ph
+        description: History and philosophy of all aspects of physics.
+        is_a: physics
+        title: History and Philosophy of Physics
+      physics.ins-det:
+        text: physics.ins-det
+        description: Instrumentation and detectors for accelerator, astro-, geo-,
+          or particle physics.
+        is_a: physics
+        title: Instrumentation and Detectors
+      physics.med-ph:
+        text: physics.med-ph
+        description: Radiation therapy, biomedical imaging, health physics.
+        is_a: physics
+        title: Medical Physics
+        close_mappings:
+        - NCIT:C16667
+      physics.optics:
+        text: physics.optics
+        description: Adaptive optics, polarimetry, quantum optics, ultrafast optics,
+          photonics.
+        is_a: physics
+        title: Optics
+      physics.plasm-ph:
+        text: physics.plasm-ph
+        description: Fundamental plasma physics, magnetic and inertial confinement,
+          astrophysical plasmas.
+        is_a: physics
+        title: Plasma Physics
+      physics.pop-ph:
+        text: physics.pop-ph
+        description: General physics topics for a broad audience.
+        is_a: physics
+        title: Popular Physics
+      physics.soc-ph:
+        text: physics.soc-ph
+        description: Sociophysics, structure and dynamics of societies, opinion dynamics.
+        is_a: physics
+        title: Physics and Society
+      physics.space-ph:
+        text: physics.space-ph
+        description: Space plasma physics, magnetospheric physics, solar wind, cosmic
+          rays.
+        is_a: physics
+        title: Space Physics
+      q-bio.BM:
+        text: q-bio.BM
+        description: DNA, RNA, proteins, lipids, small molecules; molecular structure
+          and dynamics; molecular engineering.
+        is_a: q-bio
+        title: Biomolecules
+      q-bio.CB:
+        text: q-bio.CB
+        description: Cell-cell signaling, morphogenesis, development; cell division/cycle;
+          immunology.
+        is_a: q-bio
+        title: Cell Behavior
+      q-bio.GN:
+        text: q-bio.GN
+        description: DNA sequencing and assembly; gene finding; genome structure,
+          organization, and regulation.
+        is_a: q-bio
+        title: Genomics
+        close_mappings:
+        - NCIT:C84343
+        - mesh:D023281
+      q-bio.MN:
+        text: q-bio.MN
+        description: Gene regulation, signal transduction, metabolic networks, kinetics,
+          synthetic biology.
+        is_a: q-bio
+        title: Molecular Networks
+      q-bio.NC:
+        text: q-bio.NC
+        description: Synapse, receptor dynamics, learning, neural coding, neuroinformatics.
+        is_a: q-bio
+        title: Neurons and Cognition
+      q-bio.OT:
+        text: q-bio.OT
+        description: Work in quantitative biology that does not fit in the other q-bio
+          classifications.
+        is_a: q-bio
+        title: Other Quantitative Biology
+      q-bio.PE:
+        text: q-bio.PE
+        description: Population dynamics, spatio-temporal evolution, migration, phylogeny,
+          biodiversity.
+        is_a: q-bio
+        title: Populations and Evolution
+      q-bio.QM:
+        text: q-bio.QM
+        description: Research papers with experimental, numerical, or statistical
+          contributions of value to biologists.
+        is_a: q-bio
+        title: Quantitative Methods
+      q-bio.SC:
+        text: q-bio.SC
+        description: Subcellular structures, molecular motors, organelle transport,
+          packaging.
+        is_a: q-bio
+        title: Subcellular Processes
+      q-bio.TO:
+        text: q-bio.TO
+        description: Blood flow, biomechanics, tumor growth, tissue morphogenesis.
+        is_a: q-bio
+        title: Tissues and Organs
+      q-fin.CP:
+        text: q-fin.CP
+        description: Monte Carlo, PDE, and other numerical methods with applications
+          to quantitative finance.
+        is_a: q-fin
+        title: Computational Finance
+      q-fin.EC:
+        text: q-fin.EC
+        description: General economics topics with quantitative approaches.
+        is_a: q-fin
+        title: Economics
+      q-fin.GN:
+        text: q-fin.GN
+        description: General quantitative financial methodologies covering multiple
+          sub-fields.
+        is_a: q-fin
+        title: General Finance
+      q-fin.MF:
+        text: q-fin.MF
+        description: Mathematical and analytical methods in finance, stochastic methods,
+          hedging strategies.
+        is_a: q-fin
+        title: Mathematical Finance
+      q-fin.PM:
+        text: q-fin.PM
+        description: Security selection and optimization, capital allocation, investment
+          strategies.
+        is_a: q-fin
+        title: Portfolio Management
+      q-fin.PR:
+        text: q-fin.PR
+        description: Valuation and hedging of financial securities, their derivatives,
+          and structured products.
+        is_a: q-fin
+        title: Pricing of Securities
+      q-fin.RM:
+        text: q-fin.RM
+        description: Measurement and management of financial risks in trading, banking,
+          insurance.
+        is_a: q-fin
+        title: Risk Management
+      q-fin.ST:
+        text: q-fin.ST
+        description: Statistical, econometric methods applied to financial markets.
+        is_a: q-fin
+        title: Statistical Finance
+      q-fin.TR:
+        text: q-fin.TR
+        description: Market microstructure, algorithmic trading, order book dynamics.
+        is_a: q-fin
+        title: Trading and Market Microstructure
+      stat.AP:
+        text: stat.AP
+        description: Biology, education, epidemiology, engineering, environmental
+          sciences, medical, physical sciences.
+        is_a: stat
+        title: Applications
+      stat.CO:
+        text: stat.CO
+        description: Algorithms, computational methods, simulation, visualization.
+        is_a: stat
+        title: Computation
+      stat.ME:
+        text: stat.ME
+        description: Design, surveys, model selection, regression, testing, time series.
+        is_a: stat
+        title: Methodology
+      stat.ML:
+        text: stat.ML
+        description: Covers machine learning papers with a statistical or theoretical
+          grounding.
+        is_a: stat
+        title: Machine Learning
+        close_mappings:
+        - NCIT:C176231
+        - mesh:D000069550
+      stat.OT:
+        text: stat.OT
+        description: Work in statistics that does not fit into the other stat-* classifications.
+        is_a: stat
+        title: Other Statistics
+      stat.TH:
+        text: stat.TH
+        description: Asymptotics, Bayesian inference, decision theory, estimation,
+          foundations, inference.
+        is_a: stat
+        title: Statistics Theory
 slots:
   relative_time:
     name: relative_time
@@ -56934,6 +60431,13 @@ slots:
     from_schema: https://w3id.org/valuesets/investigation
     slot_uri: valuesets:sample_processing
     range: SampleProcessingEnum
+  planned_process_completion_status:
+    name: planned_process_completion_status
+    definition_uri: https://w3id.org/valuesets/planned_process_completion_status
+    description: The completion status of a planned process
+    from_schema: https://w3id.org/valuesets/investigation
+    slot_uri: valuesets:planned_process_completion_status
+    range: PlannedProcessCompletionStatus
   go_evidence:
     name: go_evidence
     definition_uri: https://w3id.org/valuesets/go_evidence
@@ -59744,6 +63248,13 @@ slots:
     from_schema: https://w3id.org/valuesets/units/measurements
     slot_uri: valuesets:data_size_unit
     range: DataSizeUnitEnum
+  quantity_kind:
+    name: quantity_kind
+    definition_uri: https://w3id.org/valuesets/quantity_kind
+    description: The type of physical quantity being measured
+    from_schema: https://w3id.org/valuesets/units/quantity_kinds
+    slot_uri: valuesets:quantity_kind
+    range: QuantityKindEnum
   image_file_format:
     name: image_file_format
     definition_uri: https://w3id.org/valuesets/image_file_format
@@ -60285,6 +63796,28 @@ slots:
     from_schema: https://w3id.org/linkml/valuesets/lab_automation/thermal_cycling
     slot_uri: valuesets:detection_mode
     range: DetectionModeEnum
+  arxiv_category:
+    name: arxiv_category
+    definition_uri: https://w3id.org/valuesets/arxiv_category
+    description: arXiv subject category for a preprint or publication
+    from_schema: https://w3id.org/linkml/valuesets/publishing/arxiv_categories
+    slot_uri: valuesets:arxiv_category
+    range: ArxivCategory
+  arxiv_primary_category:
+    name: arxiv_primary_category
+    definition_uri: https://w3id.org/valuesets/arxiv_primary_category
+    description: Primary arXiv subject category
+    from_schema: https://w3id.org/linkml/valuesets/publishing/arxiv_categories
+    slot_uri: valuesets:arxiv_primary_category
+    range: ArxivCategory
+  arxiv_secondary_categories:
+    name: arxiv_secondary_categories
+    definition_uri: https://w3id.org/valuesets/arxiv_secondary_categories
+    description: Secondary/cross-list arXiv subject categories
+    from_schema: https://w3id.org/linkml/valuesets/publishing/arxiv_categories
+    slot_uri: valuesets:arxiv_secondary_categories
+    range: ArxivCategory
+    multivalued: true
 classes:
   Fake:
     name: Fake
@@ -60293,7 +63826,7 @@ classes:
     class_uri: valuesets:Fake
 metamodel_version: 1.7.0
 source_file: valuesets.yaml
-source_file_date: '2025-12-05T22:33:14'
-source_file_size: 3002
-generation_date: '2025-12-07T12:12:52'
+source_file_date: '2025-12-14T18:57:11'
+source_file_size: 3191
+generation_date: '2025-12-15T07:50:34'
 

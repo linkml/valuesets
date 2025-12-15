@@ -54,18 +54,18 @@ class Month(RichEnum):
 
 # Set metadata after class creation
 Month._metadata = {
-    "JANUARY": {'description': 'January', 'meaning': 'greg:January', 'annotations': {'month_number': 1, 'abbreviation': 'Jan', 'days': 31}},
-    "FEBRUARY": {'description': 'February', 'meaning': 'greg:February', 'annotations': {'month_number': 2, 'abbreviation': 'Feb', 'days': '28/29'}},
-    "MARCH": {'description': 'March', 'meaning': 'greg:March', 'annotations': {'month_number': 3, 'abbreviation': 'Mar', 'days': 31}},
-    "APRIL": {'description': 'April', 'meaning': 'greg:April', 'annotations': {'month_number': 4, 'abbreviation': 'Apr', 'days': 30}},
-    "MAY": {'description': 'May', 'meaning': 'greg:May', 'annotations': {'month_number': 5, 'abbreviation': 'May', 'days': 31}},
-    "JUNE": {'description': 'June', 'meaning': 'greg:June', 'annotations': {'month_number': 6, 'abbreviation': 'Jun', 'days': 30}},
-    "JULY": {'description': 'July', 'meaning': 'greg:July', 'annotations': {'month_number': 7, 'abbreviation': 'Jul', 'days': 31}},
-    "AUGUST": {'description': 'August', 'meaning': 'greg:August', 'annotations': {'month_number': 8, 'abbreviation': 'Aug', 'days': 31}},
-    "SEPTEMBER": {'description': 'September', 'meaning': 'greg:September', 'annotations': {'month_number': 9, 'abbreviation': 'Sep', 'days': 30}},
-    "OCTOBER": {'description': 'October', 'meaning': 'greg:October', 'annotations': {'month_number': 10, 'abbreviation': 'Oct', 'days': 31}},
-    "NOVEMBER": {'description': 'November', 'meaning': 'greg:November', 'annotations': {'month_number': 11, 'abbreviation': 'Nov', 'days': 30}},
-    "DECEMBER": {'description': 'December', 'meaning': 'greg:December', 'annotations': {'month_number': 12, 'abbreviation': 'Dec', 'days': 31}},
+    "JANUARY": {'description': 'January', 'meaning': 'greg:January', 'rank': 1, 'annotations': {'abbreviation': 'Jan', 'days': 31}},
+    "FEBRUARY": {'description': 'February', 'meaning': 'greg:February', 'rank': 2, 'annotations': {'abbreviation': 'Feb', 'days': '28/29'}},
+    "MARCH": {'description': 'March', 'meaning': 'greg:March', 'rank': 3, 'annotations': {'abbreviation': 'Mar', 'days': 31}},
+    "APRIL": {'description': 'April', 'meaning': 'greg:April', 'rank': 4, 'annotations': {'abbreviation': 'Apr', 'days': 30}},
+    "MAY": {'description': 'May', 'meaning': 'greg:May', 'rank': 5, 'annotations': {'abbreviation': 'May', 'days': 31}},
+    "JUNE": {'description': 'June', 'meaning': 'greg:June', 'rank': 6, 'annotations': {'abbreviation': 'Jun', 'days': 30}},
+    "JULY": {'description': 'July', 'meaning': 'greg:July', 'rank': 7, 'annotations': {'abbreviation': 'Jul', 'days': 31}},
+    "AUGUST": {'description': 'August', 'meaning': 'greg:August', 'rank': 8, 'annotations': {'abbreviation': 'Aug', 'days': 31}},
+    "SEPTEMBER": {'description': 'September', 'meaning': 'greg:September', 'rank': 9, 'annotations': {'abbreviation': 'Sep', 'days': 30}},
+    "OCTOBER": {'description': 'October', 'meaning': 'greg:October', 'rank': 10, 'annotations': {'abbreviation': 'Oct', 'days': 31}},
+    "NOVEMBER": {'description': 'November', 'meaning': 'greg:November', 'rank': 11, 'annotations': {'abbreviation': 'Nov', 'days': 30}},
+    "DECEMBER": {'description': 'December', 'meaning': 'greg:December', 'rank': 12, 'annotations': {'abbreviation': 'Dec', 'days': 31}},
 }
 
 class Quarter(RichEnum):

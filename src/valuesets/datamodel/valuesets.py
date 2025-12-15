@@ -481,9 +481,23 @@ CaseOrControlEnum._metadata = {
     "CONTROL": {'meaning': 'OBI:0002493'},
 }
 
+class PlannedProcessCompletionStatus(RichEnum):
+    """
+    The completion status of a planned process, indicating whether the process was successfully executed or failed. Based on COB (Core Ontology for Biology) planned process hierarchy.
+    """
+    # Enum members
+    COMPLETELY_EXECUTED = "COMPLETELY_EXECUTED"
+    FAILED = "FAILED"
+
+# Set metadata after class creation to avoid it becoming an enum member
+PlannedProcessCompletionStatus._metadata = {
+    "COMPLETELY_EXECUTED": {'description': 'A planned process that was successfully completed as intended', 'meaning': 'COB:0000035'},
+    "FAILED": {'description': 'A planned process that did not complete successfully', 'meaning': 'COB:0000083'},
+}
+
 class GOEvidenceCode(RichEnum):
     """
-    Gene Ontology evidence codes mapped to Evidence and Conclusion Ontology (ECO) terms
+    Gene Ontology evidence codes used to describe the type of support for GO annotations. Each code maps to the Evidence and Conclusion Ontology (ECO). Evidence codes are categorized by whether they represent experimental evidence, computational analysis, phylogenetic inference, author statements, or electronic annotation. All codes except IEA represent manual curation.
     """
     # Enum members
     EXP = "EXP"
@@ -515,32 +529,32 @@ class GOEvidenceCode(RichEnum):
 
 # Set metadata after class creation to avoid it becoming an enum member
 GOEvidenceCode._metadata = {
-    "EXP": {'meaning': 'ECO:0000269', 'aliases': ['experimental evidence used in manual assertion']},
-    "IDA": {'meaning': 'ECO:0000314', 'aliases': ['direct assay evidence used in manual assertion']},
-    "IPI": {'meaning': 'ECO:0000353', 'aliases': ['physical interaction evidence used in manual assertion']},
-    "IMP": {'meaning': 'ECO:0000315', 'aliases': ['mutant phenotype evidence used in manual assertion']},
-    "IGI": {'meaning': 'ECO:0000316', 'aliases': ['genetic interaction evidence used in manual assertion']},
-    "IEP": {'meaning': 'ECO:0000270', 'aliases': ['expression pattern evidence used in manual assertion']},
-    "HTP": {'meaning': 'ECO:0006056', 'aliases': ['high throughput evidence used in manual assertion']},
-    "HDA": {'meaning': 'ECO:0007005', 'aliases': ['high throughput direct assay evidence used in manual assertion']},
-    "HMP": {'meaning': 'ECO:0007001', 'aliases': ['high throughput mutant phenotypic evidence used in manual assertion']},
-    "HGI": {'meaning': 'ECO:0007003', 'aliases': ['high throughput genetic interaction phenotypic evidence used in manual assertion']},
-    "HEP": {'meaning': 'ECO:0007007', 'aliases': ['high throughput expression pattern evidence used in manual assertion']},
-    "IBA": {'meaning': 'ECO:0000318', 'aliases': ['biological aspect of ancestor evidence used in manual assertion']},
-    "IBD": {'meaning': 'ECO:0000319', 'aliases': ['biological aspect of descendant evidence used in manual assertion']},
-    "IKR": {'meaning': 'ECO:0000320', 'aliases': ['phylogenetic determination of loss of key residues evidence used in manual assertion']},
-    "IRD": {'meaning': 'ECO:0000321', 'aliases': ['rapid divergence from ancestral sequence evidence used in manual assertion']},
-    "ISS": {'meaning': 'ECO:0000250', 'aliases': ['sequence similarity evidence used in manual assertion']},
-    "ISO": {'meaning': 'ECO:0000266', 'aliases': ['sequence orthology evidence used in manual assertion']},
-    "ISA": {'meaning': 'ECO:0000247', 'aliases': ['sequence alignment evidence used in manual assertion']},
-    "ISM": {'meaning': 'ECO:0000255', 'aliases': ['match to sequence model evidence used in manual assertion']},
-    "IGC": {'meaning': 'ECO:0000317', 'aliases': ['genomic context evidence used in manual assertion']},
-    "RCA": {'meaning': 'ECO:0000245', 'aliases': ['automatically integrated combinatorial evidence used in manual assertion']},
-    "TAS": {'meaning': 'ECO:0000304', 'aliases': ['author statement supported by traceable reference used in manual assertion']},
-    "NAS": {'meaning': 'ECO:0000303', 'aliases': ['author statement without traceable support used in manual assertion']},
-    "IC": {'meaning': 'ECO:0000305', 'aliases': ['curator inference used in manual assertion']},
-    "ND": {'meaning': 'ECO:0000307', 'aliases': ['no evidence data found used in manual assertion']},
-    "IEA": {'meaning': 'ECO:0000501', 'aliases': ['evidence used in automatic assertion']},
+    "EXP": {'description': 'General experimental evidence supporting a GO annotation', 'meaning': 'ECO:0000269', 'annotations': {'is_experimental': True, 'is_manual': True, 'is_high_throughput': False}, 'aliases': ['experimental evidence used in manual assertion']},
+    "IDA": {'description': 'Evidence from a direct assay for the presence or activity of a gene product', 'meaning': 'ECO:0000314', 'annotations': {'is_experimental': True, 'is_manual': True, 'is_high_throughput': False}, 'aliases': ['direct assay evidence used in manual assertion']},
+    "IPI": {'description': 'Evidence from physical interaction between gene products', 'meaning': 'ECO:0000353', 'annotations': {'is_experimental': True, 'is_manual': True, 'is_high_throughput': False}, 'aliases': ['physical interaction evidence used in manual assertion']},
+    "IMP": {'description': 'Evidence from the phenotype of a mutant allele', 'meaning': 'ECO:0000315', 'annotations': {'is_experimental': True, 'is_manual': True, 'is_high_throughput': False}, 'aliases': ['mutant phenotype evidence used in manual assertion']},
+    "IGI": {'description': 'Evidence from genetic interaction between genes', 'meaning': 'ECO:0000316', 'annotations': {'is_experimental': True, 'is_manual': True, 'is_high_throughput': False}, 'aliases': ['genetic interaction evidence used in manual assertion']},
+    "IEP": {'description': 'Evidence from gene expression pattern data', 'meaning': 'ECO:0000270', 'annotations': {'is_experimental': True, 'is_manual': True, 'is_high_throughput': False}, 'aliases': ['expression pattern evidence used in manual assertion']},
+    "HTP": {'description': 'Evidence from high-throughput experimental methods', 'meaning': 'ECO:0006056', 'annotations': {'is_experimental': True, 'is_manual': True, 'is_high_throughput': True}, 'aliases': ['high throughput evidence used in manual assertion']},
+    "HDA": {'description': 'Evidence from high-throughput direct assay experiments', 'meaning': 'ECO:0007005', 'annotations': {'is_experimental': True, 'is_manual': True, 'is_high_throughput': True}, 'aliases': ['high throughput direct assay evidence used in manual assertion']},
+    "HMP": {'description': 'Evidence from high-throughput mutant phenotype screening', 'meaning': 'ECO:0007001', 'annotations': {'is_experimental': True, 'is_manual': True, 'is_high_throughput': True}, 'aliases': ['high throughput mutant phenotypic evidence used in manual assertion']},
+    "HGI": {'description': 'Evidence from high-throughput genetic interaction screening', 'meaning': 'ECO:0007003', 'annotations': {'is_experimental': True, 'is_manual': True, 'is_high_throughput': True}, 'aliases': ['high throughput genetic interaction phenotypic evidence used in manual assertion']},
+    "HEP": {'description': 'Evidence from high-throughput expression profiling', 'meaning': 'ECO:0007007', 'annotations': {'is_experimental': True, 'is_manual': True, 'is_high_throughput': True}, 'aliases': ['high throughput expression pattern evidence used in manual assertion']},
+    "IBA": {'description': 'Evidence from conservation of biological aspect in an ancestral sequence', 'meaning': 'ECO:0000318', 'annotations': {'is_experimental': False, 'is_manual': True, 'is_high_throughput': False, 'is_phylogenetic': True}, 'aliases': ['biological aspect of ancestor evidence used in manual assertion']},
+    "IBD": {'description': 'Evidence from conservation of biological aspect in a descendant sequence', 'meaning': 'ECO:0000319', 'annotations': {'is_experimental': False, 'is_manual': True, 'is_high_throughput': False, 'is_phylogenetic': True}, 'aliases': ['biological aspect of descendant evidence used in manual assertion']},
+    "IKR": {'description': 'Evidence from phylogenetic analysis showing loss of key residues', 'meaning': 'ECO:0000320', 'annotations': {'is_experimental': False, 'is_manual': True, 'is_high_throughput': False, 'is_phylogenetic': True}, 'aliases': ['phylogenetic determination of loss of key residues evidence used in manual assertion']},
+    "IRD": {'description': 'Evidence from rapid divergence from ancestral sequence', 'meaning': 'ECO:0000321', 'annotations': {'is_experimental': False, 'is_manual': True, 'is_high_throughput': False, 'is_phylogenetic': True}, 'aliases': ['rapid divergence from ancestral sequence evidence used in manual assertion']},
+    "ISS": {'description': 'Evidence from sequence or structural similarity to another annotated gene product', 'meaning': 'ECO:0000250', 'annotations': {'is_experimental': False, 'is_manual': True, 'is_high_throughput': False, 'is_computational': True}, 'aliases': ['sequence similarity evidence used in manual assertion']},
+    "ISO": {'description': 'Evidence from orthology to an experimentally characterized gene product', 'meaning': 'ECO:0000266', 'annotations': {'is_experimental': False, 'is_manual': True, 'is_high_throughput': False, 'is_computational': True}, 'aliases': ['sequence orthology evidence used in manual assertion']},
+    "ISA": {'description': 'Evidence from sequence alignment to an annotated gene product', 'meaning': 'ECO:0000247', 'annotations': {'is_experimental': False, 'is_manual': True, 'is_high_throughput': False, 'is_computational': True}, 'aliases': ['sequence alignment evidence used in manual assertion']},
+    "ISM": {'description': 'Evidence from match to a sequence model (e.g., HMM, profile)', 'meaning': 'ECO:0000255', 'annotations': {'is_experimental': False, 'is_manual': True, 'is_high_throughput': False, 'is_computational': True}, 'aliases': ['match to sequence model evidence used in manual assertion']},
+    "IGC": {'description': 'Evidence from genomic context such as synteny or gene neighborhood', 'meaning': 'ECO:0000317', 'annotations': {'is_experimental': False, 'is_manual': True, 'is_high_throughput': False, 'is_computational': True}, 'aliases': ['genomic context evidence used in manual assertion']},
+    "RCA": {'description': 'Evidence from computational analysis that has been reviewed by a curator', 'meaning': 'ECO:0000245', 'annotations': {'is_experimental': False, 'is_manual': True, 'is_high_throughput': False, 'is_computational': True}, 'aliases': ['automatically integrated combinatorial evidence used in manual assertion']},
+    "TAS": {'description': 'Evidence from an author statement in a published paper that can be traced to the original source', 'meaning': 'ECO:0000304', 'annotations': {'is_experimental': False, 'is_manual': True, 'is_high_throughput': False, 'is_author_statement': True}, 'aliases': ['author statement supported by traceable reference used in manual assertion']},
+    "NAS": {'description': 'Evidence from an author statement that cannot be traced to the experimental source', 'meaning': 'ECO:0000303', 'annotations': {'is_experimental': False, 'is_manual': True, 'is_high_throughput': False, 'is_author_statement': True}, 'aliases': ['author statement without traceable support used in manual assertion']},
+    "IC": {'description': 'Evidence inferred by a curator based on existing annotations and biological knowledge', 'meaning': 'ECO:0000305', 'annotations': {'is_experimental': False, 'is_manual': True, 'is_high_throughput': False, 'is_curator_inference': True}, 'aliases': ['curator inference used in manual assertion']},
+    "ND": {'description': 'Indicates that no biological data is available to support an annotation', 'meaning': 'ECO:0000307', 'annotations': {'is_experimental': False, 'is_manual': True, 'is_high_throughput': False}, 'aliases': ['no evidence data found used in manual assertion']},
+    "IEA": {'description': 'Evidence from automated electronic annotation pipelines without manual curation', 'meaning': 'ECO:0000501', 'annotations': {'is_experimental': False, 'is_manual': False, 'is_high_throughput': False, 'is_electronic': True}, 'aliases': ['evidence used in automatic assertion']},
 }
 
 class GOElectronicMethods(RichEnum):
@@ -893,15 +907,15 @@ class MeioticPhase(RichEnum):
 
 # Set metadata after class creation to avoid it becoming an enum member
 MeioticPhase._metadata = {
-    "MEIOSIS_I": {'description': 'Meiosis I (reductional division)', 'meaning': 'GO:0007127', 'annotations': {'result': 'reduction from diploid to haploid'}},
-    "PROPHASE_I": {'description': 'Prophase I', 'meaning': 'GO:0007128', 'annotations': {'substages': 'leptotene, zygotene, pachytene, diplotene, diakinesis'}},
-    "METAPHASE_I": {'description': 'Metaphase I', 'meaning': 'GO:0007132', 'annotations': {'feature': 'homologous pairs align'}},
-    "ANAPHASE_I": {'description': 'Anaphase I', 'meaning': 'GO:0007133', 'annotations': {'feature': 'homologous chromosomes separate'}},
-    "TELOPHASE_I": {'description': 'Telophase I', 'meaning': 'GO:0007134'},
+    "MEIOSIS_I": {'description': 'Meiosis I (reductional division)', 'meaning': 'GO:0007127', 'annotations': {'result': 'reduction from diploid to haploid', 'succeeded_by': 'MEIOSIS_II'}},
+    "PROPHASE_I": {'description': 'Prophase I', 'meaning': 'GO:0007128', 'annotations': {'substages': 'leptotene, zygotene, pachytene, diplotene, diakinesis', 'succeeded_by': 'METAPHASE_I'}},
+    "METAPHASE_I": {'description': 'Metaphase I', 'meaning': 'GO:0007132', 'annotations': {'feature': 'homologous pairs align', 'succeeded_by': 'ANAPHASE_I'}},
+    "ANAPHASE_I": {'description': 'Anaphase I', 'meaning': 'GO:0007133', 'annotations': {'feature': 'homologous chromosomes separate', 'succeeded_by': 'TELOPHASE_I'}},
+    "TELOPHASE_I": {'description': 'Telophase I', 'meaning': 'GO:0007134', 'annotations': {'succeeded_by': 'PROPHASE_II'}},
     "MEIOSIS_II": {'description': 'Meiosis II (equational division)', 'meaning': 'GO:0007135', 'annotations': {'similarity': 'similar to mitosis'}},
-    "PROPHASE_II": {'description': 'Prophase II', 'meaning': 'GO:0007136'},
-    "METAPHASE_II": {'description': 'Metaphase II', 'meaning': 'GO:0007137'},
-    "ANAPHASE_II": {'description': 'Anaphase II', 'meaning': 'GO:0007138', 'annotations': {'feature': 'sister chromatids separate'}},
+    "PROPHASE_II": {'description': 'Prophase II', 'meaning': 'GO:0007136', 'annotations': {'succeeded_by': 'METAPHASE_II'}},
+    "METAPHASE_II": {'description': 'Metaphase II', 'meaning': 'GO:0007137', 'annotations': {'succeeded_by': 'ANAPHASE_II'}},
+    "ANAPHASE_II": {'description': 'Anaphase II', 'meaning': 'GO:0007138', 'annotations': {'feature': 'sister chromatids separate', 'succeeded_by': 'TELOPHASE_II'}},
     "TELOPHASE_II": {'description': 'Telophase II', 'meaning': 'GO:0007139'},
 }
 
@@ -2224,14 +2238,14 @@ PlantSexEnum._metadata = {
     "BISEXUAL": {'description': 'Having both male and female reproductive organs'},
     "DICHOGAMOUS": {'description': 'Male and female organs mature at different times'},
     "DICLINOUS": {'description': 'Having male and female reproductive organs in separate flowers'},
-    "DIOECIOUS": {'description': 'Having male and female flowers on separate plants', 'meaning': 'GSSO:011872'},
+    "DIOECIOUS": {'description': 'Having male and female flowers on separate plants'},
     "GYNODIOECIOUS": {'description': 'Having female and hermaphrodite flowers on separate plants'},
     "GYNOECIOUS": {'description': 'Having only female flowers'},
     "GYNOMONOECIOUS": {'description': 'Having female and hermaphrodite flowers on the same plant'},
-    "HERMAPHRODITIC": {'description': 'Having both male and female reproductive organs', 'meaning': 'UBERON:0007197'},
+    "HERMAPHRODITIC": {'description': 'Having both male and female reproductive organs', 'meaning': 'PATO:0001340'},
     "IMPERFECT": {'description': 'Flower lacking either male or female reproductive organs'},
     "MONOCLINOUS": {'description': 'Having both male and female reproductive organs in the same flower'},
-    "MONOECIOUS": {'description': 'Having male and female flowers on the same plant', 'meaning': 'GSSO:011868'},
+    "MONOECIOUS": {'description': 'Having male and female flowers on the same plant'},
     "PERFECT": {'description': 'Flower having both male and female reproductive organs'},
     "POLYGAMODIOECIOUS": {'description': 'Having male, female, and hermaphrodite flowers on separate plants'},
     "POLYGAMOMONOECIOUS": {'description': 'Having male, female, and hermaphrodite flowers on the same plant'},
@@ -2473,18 +2487,18 @@ class Month(RichEnum):
 
 # Set metadata after class creation to avoid it becoming an enum member
 Month._metadata = {
-    "JANUARY": {'description': 'January', 'meaning': 'greg:January', 'annotations': {'month_number': 1, 'abbreviation': 'Jan', 'days': 31}},
-    "FEBRUARY": {'description': 'February', 'meaning': 'greg:February', 'annotations': {'month_number': 2, 'abbreviation': 'Feb', 'days': '28/29'}},
-    "MARCH": {'description': 'March', 'meaning': 'greg:March', 'annotations': {'month_number': 3, 'abbreviation': 'Mar', 'days': 31}},
-    "APRIL": {'description': 'April', 'meaning': 'greg:April', 'annotations': {'month_number': 4, 'abbreviation': 'Apr', 'days': 30}},
-    "MAY": {'description': 'May', 'meaning': 'greg:May', 'annotations': {'month_number': 5, 'abbreviation': 'May', 'days': 31}},
-    "JUNE": {'description': 'June', 'meaning': 'greg:June', 'annotations': {'month_number': 6, 'abbreviation': 'Jun', 'days': 30}},
-    "JULY": {'description': 'July', 'meaning': 'greg:July', 'annotations': {'month_number': 7, 'abbreviation': 'Jul', 'days': 31}},
-    "AUGUST": {'description': 'August', 'meaning': 'greg:August', 'annotations': {'month_number': 8, 'abbreviation': 'Aug', 'days': 31}},
-    "SEPTEMBER": {'description': 'September', 'meaning': 'greg:September', 'annotations': {'month_number': 9, 'abbreviation': 'Sep', 'days': 30}},
-    "OCTOBER": {'description': 'October', 'meaning': 'greg:October', 'annotations': {'month_number': 10, 'abbreviation': 'Oct', 'days': 31}},
-    "NOVEMBER": {'description': 'November', 'meaning': 'greg:November', 'annotations': {'month_number': 11, 'abbreviation': 'Nov', 'days': 30}},
-    "DECEMBER": {'description': 'December', 'meaning': 'greg:December', 'annotations': {'month_number': 12, 'abbreviation': 'Dec', 'days': 31}},
+    "JANUARY": {'description': 'January', 'meaning': 'greg:January', 'annotations': {'abbreviation': 'Jan', 'days': 31}},
+    "FEBRUARY": {'description': 'February', 'meaning': 'greg:February', 'annotations': {'abbreviation': 'Feb', 'days': '28/29'}},
+    "MARCH": {'description': 'March', 'meaning': 'greg:March', 'annotations': {'abbreviation': 'Mar', 'days': 31}},
+    "APRIL": {'description': 'April', 'meaning': 'greg:April', 'annotations': {'abbreviation': 'Apr', 'days': 30}},
+    "MAY": {'description': 'May', 'meaning': 'greg:May', 'annotations': {'abbreviation': 'May', 'days': 31}},
+    "JUNE": {'description': 'June', 'meaning': 'greg:June', 'annotations': {'abbreviation': 'Jun', 'days': 30}},
+    "JULY": {'description': 'July', 'meaning': 'greg:July', 'annotations': {'abbreviation': 'Jul', 'days': 31}},
+    "AUGUST": {'description': 'August', 'meaning': 'greg:August', 'annotations': {'abbreviation': 'Aug', 'days': 31}},
+    "SEPTEMBER": {'description': 'September', 'meaning': 'greg:September', 'annotations': {'abbreviation': 'Sep', 'days': 30}},
+    "OCTOBER": {'description': 'October', 'meaning': 'greg:October', 'annotations': {'abbreviation': 'Oct', 'days': 31}},
+    "NOVEMBER": {'description': 'November', 'meaning': 'greg:November', 'annotations': {'abbreviation': 'Nov', 'days': 30}},
+    "DECEMBER": {'description': 'December', 'meaning': 'greg:December', 'annotations': {'abbreviation': 'Dec', 'days': 31}},
 }
 
 class Quarter(RichEnum):
@@ -12507,6 +12521,320 @@ GeneticRelationship._metadata = {
     "UNKNOWN_GENETIC_RELATIONSHIP": {'description': 'Genetic relationship status is unknown', 'meaning': 'SNOMED:261665006'},
 }
 
+class PediatricOncologyDiagnosisCategory(RichEnum):
+    """
+    High-level groupings for pediatric cancer diagnoses per CCDI CDE 16607972. Designed for cohort aggregation across federated data resources. Each diagnosis maps to a single dominant category.
+    """
+    # Enum members
+    ATYPICAL_TERATOID_RHABDOID_TUMOR = "ATYPICAL_TERATOID_RHABDOID_TUMOR"
+    CHOROID_PLEXUS_TUMOR = "CHOROID_PLEXUS_TUMOR"
+    CNS_GERM_CELL_TUMOR = "CNS_GERM_CELL_TUMOR"
+    CNS_SARCOMA = "CNS_SARCOMA"
+    CRANIOPHARYNGIOMA = "CRANIOPHARYNGIOMA"
+    EPENDYMOMA = "EPENDYMOMA"
+    GLIONEURONAL_AND_NEURONAL_TUMOR = "GLIONEURONAL_AND_NEURONAL_TUMOR"
+    HIGH_GRADE_GLIOMA = "HIGH_GRADE_GLIOMA"
+    LOW_GRADE_GLIOMA = "LOW_GRADE_GLIOMA"
+    MEDULLOBLASTOMA = "MEDULLOBLASTOMA"
+    OTHER_CNS_EMBRYONAL_TUMOR = "OTHER_CNS_EMBRYONAL_TUMOR"
+    OTHER_GLIOMA = "OTHER_GLIOMA"
+    OTHER_BRAIN_TUMOR = "OTHER_BRAIN_TUMOR"
+    LYMPHOBLASTIC_LEUKEMIA = "LYMPHOBLASTIC_LEUKEMIA"
+    MYELOID_LEUKEMIA = "MYELOID_LEUKEMIA"
+    HODGKIN_LYMPHOMA = "HODGKIN_LYMPHOMA"
+    NON_HODGKIN_LYMPHOMA = "NON_HODGKIN_LYMPHOMA"
+    LYMPHOPROLIFERATIVE_DISEASE = "LYMPHOPROLIFERATIVE_DISEASE"
+    OTHER_HEME_TUMOR = "OTHER_HEME_TUMOR"
+    NEUROBLASTOMA = "NEUROBLASTOMA"
+    OSTEOSARCOMA = "OSTEOSARCOMA"
+    EWING_SARCOMA = "EWING_SARCOMA"
+    RHABDOMYOSARCOMA = "RHABDOMYOSARCOMA"
+    SOFT_TISSUE_TUMOR = "SOFT_TISSUE_TUMOR"
+    RHABDOID_TUMOR = "RHABDOID_TUMOR"
+    RENAL_TUMOR = "RENAL_TUMOR"
+    RETINOBLASTOMA = "RETINOBLASTOMA"
+    GERM_CELL_TUMOR = "GERM_CELL_TUMOR"
+    ENDOCRINE_AND_NEUROENDOCRINE_TUMOR = "ENDOCRINE_AND_NEUROENDOCRINE_TUMOR"
+    OTHER_SOLID_TUMOR = "OTHER_SOLID_TUMOR"
+
+# Set metadata after class creation to avoid it becoming an enum member
+PediatricOncologyDiagnosisCategory._metadata = {
+    "ATYPICAL_TERATOID_RHABDOID_TUMOR": {'description': 'Highly malignant embryonal CNS tumor characterized by loss of SMARCB1 (INI1) or SMARCA4 expression. Predominantly occurs in young children.', 'meaning': 'NCIT:C6807', 'annotations': {'category': 'brain_tumor', 'who_classification': 'WHO CNS5'}},
+    "CHOROID_PLEXUS_TUMOR": {'description': 'Neoplasms arising from the choroid plexus epithelium, including papilloma, atypical papilloma, and carcinoma.', 'meaning': 'NCIT:C3698', 'annotations': {'category': 'brain_tumor', 'who_classification': 'WHO CNS5'}},
+    "CNS_GERM_CELL_TUMOR": {'description': 'Germ cell tumors arising within the central nervous system, including germinoma and non-germinomatous germ cell tumors.', 'meaning': 'NCIT:C6286', 'annotations': {'category': 'brain_tumor', 'who_classification': 'WHO CNS5'}},
+    "CNS_SARCOMA": {'description': 'Sarcomas arising primarily in the central nervous system, including Ewing sarcoma and rhabdomyosarcoma of CNS.', 'meaning': 'NCIT:C121624', 'annotations': {'category': 'brain_tumor'}},
+    "CRANIOPHARYNGIOMA": {'description': 'Benign epithelial tumors arising from remnants of Rathke pouch, including adamantinomatous and papillary subtypes.', 'meaning': 'NCIT:C2998', 'annotations': {'category': 'brain_tumor', 'who_classification': 'WHO CNS5'}},
+    "EPENDYMOMA": {'description': 'Glial tumors arising from ependymal cells lining the ventricular system and central canal. Includes molecular subtypes defined by WHO CNS5.', 'meaning': 'NCIT:C3017', 'annotations': {'category': 'brain_tumor', 'who_classification': 'WHO CNS5'}},
+    "GLIONEURONAL_AND_NEURONAL_TUMOR": {'description': 'Tumors with neuronal differentiation including ganglioglioma, dysembryoplastic neuroepithelial tumor (DNET), and central neurocytoma.', 'meaning': 'NCIT:C6927', 'annotations': {'category': 'brain_tumor', 'who_classification': 'WHO CNS5'}},
+    "HIGH_GRADE_GLIOMA": {'description': 'Aggressive glial tumors including pediatric-type diffuse high-grade gliomas (H3 K27-altered, H3 G34-mutant, and H3/IDH-wildtype), as well as glioblastoma.', 'meaning': 'NCIT:C129355', 'annotations': {'category': 'brain_tumor', 'who_classification': 'WHO CNS5', 'grade': 'high'}},
+    "LOW_GRADE_GLIOMA": {'description': 'Indolent glial tumors including pilocytic astrocytoma and pediatric-type diffuse low-grade gliomas (MYB/MYBL1-altered, MAPK pathway-altered).', 'meaning': 'NCIT:C129354', 'annotations': {'category': 'brain_tumor', 'who_classification': 'WHO CNS5', 'grade': 'low'}},
+    "MEDULLOBLASTOMA": {'description': 'Embryonal tumor of the cerebellum, classified by molecular subgroups (WNT-activated, SHH-activated, Group 3, Group 4) per WHO CNS5.', 'meaning': 'NCIT:C3222', 'annotations': {'category': 'brain_tumor', 'who_classification': 'WHO CNS5'}},
+    "OTHER_CNS_EMBRYONAL_TUMOR": {'description': 'Embryonal tumors of the CNS other than medulloblastoma and ATRT, including embryonal tumor with multilayered rosettes (ETMR), CNS neuroblastoma, and pineoblastoma.', 'meaning': 'NCIT:C6774', 'annotations': {'category': 'brain_tumor', 'who_classification': 'WHO CNS5'}, 'aliases': ['CNS Embryonal Tumor, NOS']},
+    "OTHER_GLIOMA": {'description': 'Glial tumors not classified as high-grade or low-grade glioma, including angiocentric glioma and astroblastoma.', 'meaning': 'NCIT:C3059', 'annotations': {'category': 'brain_tumor'}},
+    "OTHER_BRAIN_TUMOR": {'description': 'CNS tumors not fitting other brain tumor categories, including meningioma, schwannoma, and hemangioblastoma.', 'meaning': 'NCIT:C2907', 'annotations': {'category': 'brain_tumor'}},
+    "LYMPHOBLASTIC_LEUKEMIA": {'description': 'Acute lymphoblastic leukemia (ALL) including B-ALL and T-ALL with all molecular subtypes (BCR::ABL1, ETV6::RUNX1, KMT2A-r, DUX4, MEF2D, etc.).', 'meaning': 'NCIT:C3167', 'annotations': {'category': 'hematologic', 'who_classification': 'WHO-HAEM5'}, 'aliases': ['ALL', 'Acute Lymphoblastic Leukemia']},
+    "MYELOID_LEUKEMIA": {'description': 'Acute myeloid leukemia (AML) and related myeloid neoplasms including AML with defining genetic abnormalities, therapy-related AML, and juvenile myelomonocytic leukemia (JMML).', 'meaning': 'NCIT:C3171', 'annotations': {'category': 'hematologic', 'who_classification': 'WHO-HAEM5'}, 'aliases': ['AML', 'Acute Myeloid Leukemia']},
+    "HODGKIN_LYMPHOMA": {'description': 'Lymphoid neoplasm characterized by Reed-Sternberg cells, including classical Hodgkin lymphoma and nodular lymphocyte predominant Hodgkin lymphoma.', 'meaning': 'NCIT:C9357', 'annotations': {'category': 'hematologic', 'who_classification': 'WHO-HAEM5'}},
+    "NON_HODGKIN_LYMPHOMA": {'description': 'Lymphoid neoplasms other than Hodgkin lymphoma, including Burkitt lymphoma, diffuse large B-cell lymphoma, anaplastic large cell lymphoma, and lymphoblastic lymphoma.', 'meaning': 'NCIT:C3211', 'annotations': {'category': 'hematologic', 'who_classification': 'WHO-HAEM5'}, 'aliases': ['NHL']},
+    "LYMPHOPROLIFERATIVE_DISEASE": {'description': 'Disorders characterized by abnormal lymphocyte proliferation, including post-transplant lymphoproliferative disorder (PTLD) and hemophagocytic lymphohistiocytosis (HLH).', 'meaning': 'NCIT:C3138', 'annotations': {'category': 'hematologic'}},
+    "OTHER_HEME_TUMOR": {'description': 'Hematologic malignancies not classified elsewhere, including histiocytic disorders, myelodysplastic syndromes, and myeloproliferative neoplasms.', 'meaning': 'NCIT:C27134', 'annotations': {'category': 'hematologic'}},
+    "NEUROBLASTOMA": {'description': 'Embryonal tumor of the peripheral sympathetic nervous system, arising from neural crest cells. Includes ganglioneuroblastoma and ganglioneuroma.', 'meaning': 'NCIT:C3270', 'annotations': {'category': 'solid_tumor', 'who_classification': 'WHO Pediatric Blue Book'}},
+    "OSTEOSARCOMA": {'description': 'Primary malignant bone tumor characterized by osteoid production, including conventional, telangiectatic, and small cell variants.', 'meaning': 'NCIT:C9145', 'annotations': {'category': 'solid_tumor', 'who_classification': 'WHO Bone/Soft Tissue'}},
+    "EWING_SARCOMA": {'description': 'Small round cell sarcoma typically harboring EWSR1 rearrangements, arising in bone or soft tissue. Includes Ewing sarcoma family of tumors.', 'meaning': 'NCIT:C4817', 'annotations': {'category': 'solid_tumor', 'who_classification': 'WHO Bone/Soft Tissue'}},
+    "RHABDOMYOSARCOMA": {'description': 'Malignant soft tissue tumor with skeletal muscle differentiation, including embryonal, alveolar, and spindle cell/sclerosing subtypes.', 'meaning': 'NCIT:C3359', 'annotations': {'category': 'solid_tumor', 'who_classification': 'WHO Bone/Soft Tissue'}},
+    "SOFT_TISSUE_TUMOR": {'description': 'Soft tissue neoplasms other than rhabdomyosarcoma and Ewing sarcoma, including synovial sarcoma, fibrosarcoma, and other sarcomas. Also includes non-sarcomatous soft tissue tumors.', 'meaning': 'NCIT:C3399', 'annotations': {'category': 'solid_tumor'}, 'aliases': ['Soft Tissue Sarcoma']},
+    "RHABDOID_TUMOR": {'description': 'Highly aggressive tumors characterized by SMARCB1 loss, occurring outside the CNS (extracranial rhabdoid tumor). Includes malignant rhabdoid tumor of kidney.', 'meaning': 'NCIT:C3769', 'annotations': {'category': 'solid_tumor'}},
+    "RENAL_TUMOR": {'description': 'Kidney tumors including Wilms tumor (nephroblastoma), clear cell sarcoma of kidney, renal cell carcinoma, and congenital mesoblastic nephroma.', 'meaning': 'NCIT:C7548', 'annotations': {'category': 'solid_tumor', 'who_classification': 'WHO Pediatric Blue Book'}, 'aliases': ['Kidney Tumor', 'Wilms Tumor']},
+    "RETINOBLASTOMA": {'description': 'Malignant neoplasm of the retina arising from developing retinal cells, associated with RB1 mutations.', 'meaning': 'NCIT:C7541', 'annotations': {'category': 'solid_tumor', 'who_classification': 'WHO Pediatric Blue Book'}},
+    "GERM_CELL_TUMOR": {'description': 'Tumors arising from primordial germ cells, occurring in gonadal or extragonadal sites. Includes teratoma, yolk sac tumor, germinoma, choriocarcinoma, and mixed germ cell tumors. Excludes CNS germ cell tumors.', 'meaning': 'NCIT:C3708', 'annotations': {'category': 'solid_tumor'}},
+    "ENDOCRINE_AND_NEUROENDOCRINE_TUMOR": {'description': 'Tumors of endocrine glands and neuroendocrine cells, including thyroid carcinoma, adrenocortical carcinoma, pheochromocytoma, and paraganglioma.', 'meaning': 'NCIT:C3010', 'annotations': {'category': 'solid_tumor'}},
+    "OTHER_SOLID_TUMOR": {'description': 'Solid tumors not classified elsewhere, including hepatoblastoma, pleuropulmonary blastoma, nasopharyngeal carcinoma, melanoma, and carcinomas.', 'meaning': 'NCIT:C9107', 'annotations': {'category': 'solid_tumor'}},
+}
+
+class ICCC3MainGroup(RichEnum):
+    """
+    The 12 main diagnostic groups of the International Classification of Childhood Cancer, Third Edition. Based on tumor morphology and primary site with emphasis on morphology.
+    """
+    # Enum members
+    I_LEUKEMIAS_MYELOPROLIFERATIVE_MYELODYSPLASTIC = "I_LEUKEMIAS_MYELOPROLIFERATIVE_MYELODYSPLASTIC"
+    II_LYMPHOMAS_RETICULOENDOTHELIAL = "II_LYMPHOMAS_RETICULOENDOTHELIAL"
+    III_CNS_INTRACRANIAL_INTRASPINAL = "III_CNS_INTRACRANIAL_INTRASPINAL"
+    IV_NEUROBLASTOMA_PERIPHERAL_NERVOUS = "IV_NEUROBLASTOMA_PERIPHERAL_NERVOUS"
+    V_RETINOBLASTOMA = "V_RETINOBLASTOMA"
+    VI_RENAL_TUMORS = "VI_RENAL_TUMORS"
+    VII_HEPATIC_TUMORS = "VII_HEPATIC_TUMORS"
+    VIII_MALIGNANT_BONE_TUMORS = "VIII_MALIGNANT_BONE_TUMORS"
+    IX_SOFT_TISSUE_SARCOMAS = "IX_SOFT_TISSUE_SARCOMAS"
+    X_GERM_CELL_GONADAL = "X_GERM_CELL_GONADAL"
+    XI_EPITHELIAL_MELANOMA = "XI_EPITHELIAL_MELANOMA"
+    XII_OTHER_UNSPECIFIED = "XII_OTHER_UNSPECIFIED"
+
+# Set metadata after class creation to avoid it becoming an enum member
+ICCC3MainGroup._metadata = {
+    "I_LEUKEMIAS_MYELOPROLIFERATIVE_MYELODYSPLASTIC": {'description': 'Includes lymphoid leukemias, acute myeloid leukemias, chronic myeloproliferative diseases, myelodysplastic syndrome and other myeloproliferative diseases, and unspecified and other specified leukemias.', 'meaning': 'NCIT:C3161', 'annotations': {'iccc_code': 'I', 'subgroup_count': 5}},
+    "II_LYMPHOMAS_RETICULOENDOTHELIAL": {'description': 'Includes Hodgkin lymphomas, non-Hodgkin lymphomas (except Burkitt lymphoma), Burkitt lymphoma, and miscellaneous lymphoreticular neoplasms.', 'meaning': 'NCIT:C7058', 'annotations': {'iccc_code': 'II', 'subgroup_count': 4}},
+    "III_CNS_INTRACRANIAL_INTRASPINAL": {'description': 'Includes ependymomas and choroid plexus tumor, astrocytomas, intracranial and intraspinal embryonal tumors, other gliomas, other specified intracranial and intraspinal neoplasms, and unspecified intracranial and intraspinal neoplasms. Also includes nonmalignant CNS tumors.', 'meaning': 'NCIT:C2907', 'annotations': {'iccc_code': 'III', 'subgroup_count': 6, 'includes_nonmalignant': True}},
+    "IV_NEUROBLASTOMA_PERIPHERAL_NERVOUS": {'description': 'Includes neuroblastoma and ganglioneuroblastoma, and other peripheral nervous cell tumors.', 'meaning': 'NCIT:C3270', 'annotations': {'iccc_code': 'IV', 'subgroup_count': 2}},
+    "V_RETINOBLASTOMA": {'description': 'Malignant neoplasm of the retina. Single group with no subgroups.', 'meaning': 'NCIT:C7541', 'annotations': {'iccc_code': 'V', 'subgroup_count': 1}},
+    "VI_RENAL_TUMORS": {'description': 'Includes nephroblastoma and other nonepithelial renal tumors, renal carcinomas, and unspecified malignant renal tumors.', 'meaning': 'NCIT:C7548', 'annotations': {'iccc_code': 'VI', 'subgroup_count': 3}},
+    "VII_HEPATIC_TUMORS": {'description': 'Includes hepatoblastoma, hepatic carcinomas, and unspecified malignant hepatic tumors.', 'meaning': 'NCIT:C7927', 'annotations': {'iccc_code': 'VII', 'subgroup_count': 3}},
+    "VIII_MALIGNANT_BONE_TUMORS": {'description': 'Includes osteosarcomas, chondrosarcomas, Ewing tumor and related sarcomas of bone, other specified malignant bone tumors, and unspecified malignant bone tumors.', 'meaning': 'NCIT:C4882', 'annotations': {'iccc_code': 'VIII', 'subgroup_count': 5}},
+    "IX_SOFT_TISSUE_SARCOMAS": {'description': 'Includes rhabdomyosarcomas, fibrosarcomas/peripheral nerve sheath tumors/other fibrous neoplasms, Kaposi sarcoma, other specified soft tissue sarcomas, and unspecified soft tissue sarcomas.', 'meaning': 'NCIT:C9306', 'annotations': {'iccc_code': 'IX', 'subgroup_count': 5}},
+    "X_GERM_CELL_GONADAL": {'description': 'Includes intracranial and intraspinal germ cell tumors, malignant extracranial and extragonadal germ cell tumors, malignant gonadal germ cell tumors, gonadal carcinomas, and other and unspecified malignant gonadal tumors.', 'meaning': 'NCIT:C3708', 'annotations': {'iccc_code': 'X', 'subgroup_count': 5}},
+    "XI_EPITHELIAL_MELANOMA": {'description': 'Includes adrenocortical carcinomas, thyroid carcinomas, nasopharyngeal carcinomas, malignant melanomas, skin carcinomas, and other and unspecified carcinomas.', 'meaning': 'NCIT:C3709', 'annotations': {'iccc_code': 'XI', 'subgroup_count': 6}},
+    "XII_OTHER_UNSPECIFIED": {'description': 'Includes other specified malignant tumors and other unspecified malignant tumors not classifiable in groups I-XI.', 'meaning': 'NCIT:C3262', 'annotations': {'iccc_code': 'XII', 'subgroup_count': 2}},
+}
+
+class ICCC3Subgroup(RichEnum):
+    """
+    The 47 diagnostic subgroups of the International Classification of Childhood Cancer, Third Edition. These provide more detailed classification within each of the 12 main groups.
+    """
+    # Enum members
+    IA_LYMPHOID_LEUKEMIAS = "Ia_LYMPHOID_LEUKEMIAS"
+    IB_ACUTE_MYELOID_LEUKEMIAS = "Ib_ACUTE_MYELOID_LEUKEMIAS"
+    IC_CHRONIC_MYELOPROLIFERATIVE = "Ic_CHRONIC_MYELOPROLIFERATIVE"
+    ID_MYELODYSPLASTIC_OTHER_MYELOPROLIFERATIVE = "Id_MYELODYSPLASTIC_OTHER_MYELOPROLIFERATIVE"
+    IE_UNSPECIFIED_OTHER_LEUKEMIAS = "Ie_UNSPECIFIED_OTHER_LEUKEMIAS"
+    IIA_HODGKIN_LYMPHOMAS = "IIa_HODGKIN_LYMPHOMAS"
+    IIB_NON_HODGKIN_LYMPHOMAS = "IIb_NON_HODGKIN_LYMPHOMAS"
+    IIC_BURKITT_LYMPHOMA = "IIc_BURKITT_LYMPHOMA"
+    IID_MISC_LYMPHORETICULAR = "IId_MISC_LYMPHORETICULAR"
+    IIIA_EPENDYMOMAS = "IIIa_EPENDYMOMAS"
+    IIIB_ASTROCYTOMAS = "IIIb_ASTROCYTOMAS"
+    IIIC_INTRACRANIAL_EMBRYONAL = "IIIc_INTRACRANIAL_EMBRYONAL"
+    IIID_OTHER_GLIOMAS = "IIId_OTHER_GLIOMAS"
+    IIIE_OTHER_INTRACRANIAL_INTRASPINAL = "IIIe_OTHER_INTRACRANIAL_INTRASPINAL"
+    IIIF_UNSPECIFIED_INTRACRANIAL = "IIIf_UNSPECIFIED_INTRACRANIAL"
+    IVA_NEUROBLASTOMA_GANGLIONEUROBLASTOMA = "IVa_NEUROBLASTOMA_GANGLIONEUROBLASTOMA"
+    IVB_OTHER_PERIPHERAL_NERVOUS = "IVb_OTHER_PERIPHERAL_NERVOUS"
+    V_RETINOBLASTOMA = "V_RETINOBLASTOMA"
+    VIA_NEPHROBLASTOMA = "VIa_NEPHROBLASTOMA"
+    VIB_RENAL_CARCINOMAS = "VIb_RENAL_CARCINOMAS"
+    VIC_UNSPECIFIED_RENAL = "VIc_UNSPECIFIED_RENAL"
+    VIIA_HEPATOBLASTOMA = "VIIa_HEPATOBLASTOMA"
+    VIIB_HEPATIC_CARCINOMAS = "VIIb_HEPATIC_CARCINOMAS"
+    VIIC_UNSPECIFIED_HEPATIC = "VIIc_UNSPECIFIED_HEPATIC"
+    VIIIA_OSTEOSARCOMAS = "VIIIa_OSTEOSARCOMAS"
+    VIIIB_CHONDROSARCOMAS = "VIIIb_CHONDROSARCOMAS"
+    VIIIC_EWING_TUMOR_BONE = "VIIIc_EWING_TUMOR_BONE"
+    VIIID_OTHER_BONE = "VIIId_OTHER_BONE"
+    VIIIE_UNSPECIFIED_BONE = "VIIIe_UNSPECIFIED_BONE"
+    IXA_RHABDOMYOSARCOMAS = "IXa_RHABDOMYOSARCOMAS"
+    IXB_FIBROSARCOMAS = "IXb_FIBROSARCOMAS"
+    IXC_KAPOSI_SARCOMA = "IXc_KAPOSI_SARCOMA"
+    IXD_OTHER_SOFT_TISSUE = "IXd_OTHER_SOFT_TISSUE"
+    IXE_UNSPECIFIED_SOFT_TISSUE = "IXe_UNSPECIFIED_SOFT_TISSUE"
+    XA_INTRACRANIAL_GERM_CELL = "Xa_INTRACRANIAL_GERM_CELL"
+    XB_EXTRACRANIAL_EXTRAGONADAL_GERM_CELL = "Xb_EXTRACRANIAL_EXTRAGONADAL_GERM_CELL"
+    XC_GONADAL_GERM_CELL = "Xc_GONADAL_GERM_CELL"
+    XD_GONADAL_CARCINOMAS = "Xd_GONADAL_CARCINOMAS"
+    XE_OTHER_GONADAL = "Xe_OTHER_GONADAL"
+    XIA_ADRENOCORTICAL_CARCINOMAS = "XIa_ADRENOCORTICAL_CARCINOMAS"
+    XIB_THYROID_CARCINOMAS = "XIb_THYROID_CARCINOMAS"
+    XIC_NASOPHARYNGEAL_CARCINOMAS = "XIc_NASOPHARYNGEAL_CARCINOMAS"
+    XID_MALIGNANT_MELANOMAS = "XId_MALIGNANT_MELANOMAS"
+    XIE_SKIN_CARCINOMAS = "XIe_SKIN_CARCINOMAS"
+    XIF_OTHER_CARCINOMAS = "XIf_OTHER_CARCINOMAS"
+    XIIA_OTHER_SPECIFIED = "XIIa_OTHER_SPECIFIED"
+    XIIB_OTHER_UNSPECIFIED = "XIIb_OTHER_UNSPECIFIED"
+
+# Set metadata after class creation to avoid it becoming an enum member
+ICCC3Subgroup._metadata = {
+    "IA_LYMPHOID_LEUKEMIAS": {'description': 'Precursor cell lymphoblastic leukemia, NOS; precursor cell lymphoblastic leukemia, B-cell; precursor cell lymphoblastic leukemia, T-cell; Burkitt cell leukemia; and other lymphoid leukemias.', 'meaning': 'NCIT:C3167', 'annotations': {'main_group': 'I', 'icdo3_codes': '9820-9827, 9835-9837'}},
+    "IB_ACUTE_MYELOID_LEUKEMIAS": {'description': 'Acute myeloid leukemia and variants including AML with maturation, acute promyelocytic leukemia, acute myelomonocytic leukemia, acute monoblastic leukemia, acute megakaryoblastic leukemia, etc.', 'meaning': 'NCIT:C3171', 'annotations': {'main_group': 'I', 'icdo3_codes': '9840, 9861, 9866-9867, 9870-9874, 9891, 9895-9897, 9910, 9920, 9931'}},
+    "IC_CHRONIC_MYELOPROLIFERATIVE": {'description': 'Chronic myeloid leukemia, NOS; juvenile myelomonocytic leukemia; and other chronic myeloproliferative diseases.', 'meaning': 'NCIT:C4345', 'annotations': {'main_group': 'I', 'icdo3_codes': '9863, 9875-9876, 9945-9946, 9950, 9960-9964'}},
+    "ID_MYELODYSPLASTIC_OTHER_MYELOPROLIFERATIVE": {'description': 'Myelodysplastic syndrome, NOS; refractory anemia; refractory anemia with ringed sideroblasts; refractory anemia with excess blasts.', 'meaning': 'NCIT:C3247', 'annotations': {'main_group': 'I', 'icdo3_codes': '9945, 9980, 9982-9983, 9985-9989'}},
+    "IE_UNSPECIFIED_OTHER_LEUKEMIAS": {'description': 'Leukemia, NOS and other specified leukemias not elsewhere classified.', 'meaning': 'NCIT:C3161', 'annotations': {'main_group': 'I', 'icdo3_codes': '9800-9801, 9805-9809, 9860, 9930'}},
+    "IIA_HODGKIN_LYMPHOMAS": {'description': 'Classical Hodgkin lymphoma and nodular lymphocyte predominant Hodgkin lymphoma.', 'meaning': 'NCIT:C9357', 'annotations': {'main_group': 'II', 'icdo3_codes': '9650-9655, 9659, 9661-9665, 9667'}},
+    "IIB_NON_HODGKIN_LYMPHOMAS": {'description': 'Diffuse large B-cell lymphoma, follicular lymphoma, peripheral T-cell lymphoma, anaplastic large cell lymphoma, and other non-Hodgkin lymphomas.', 'meaning': 'NCIT:C3211', 'annotations': {'main_group': 'II', 'icdo3_codes': '9591, 9670-9686, 9689-9691, 9695, 9698-9702, 9705, 9708-9709, 9714-9719, 9727-9729'}},
+    "IIC_BURKITT_LYMPHOMA": {'description': 'Burkitt lymphoma and Burkitt-like lymphoma.', 'meaning': 'NCIT:C8150', 'annotations': {'main_group': 'II', 'icdo3_codes': '9687'}},
+    "IID_MISC_LYMPHORETICULAR": {'description': 'Lymphoreticular neoplasms not elsewhere classified including lymphomatoid granulomatosis and post-transplant lymphoproliferative disorder.', 'meaning': 'NCIT:C27134', 'annotations': {'main_group': 'II', 'icdo3_codes': '9740-9742, 9750, 9754-9758, 9930, 9970'}},
+    "IIIA_EPENDYMOMAS": {'description': 'Ependymoma, anaplastic ependymoma, myxopapillary ependymoma, and choroid plexus papilloma and carcinoma.', 'meaning': 'NCIT:C3017', 'annotations': {'main_group': 'III', 'icdo3_codes': '9383, 9390-9394'}},
+    "IIIB_ASTROCYTOMAS": {'description': 'Pilocytic astrocytoma, diffuse astrocytoma, anaplastic astrocytoma, glioblastoma, and other astrocytic tumors.', 'meaning': 'NCIT:C60781', 'annotations': {'main_group': 'III', 'icdo3_codes': '9380, 9384, 9400-9411, 9420, 9424'}},
+    "IIIC_INTRACRANIAL_EMBRYONAL": {'description': 'Medulloblastoma, primitive neuroectodermal tumor, medulloepithelioma, atypical teratoid/rhabdoid tumor, and other embryonal tumors.', 'meaning': 'NCIT:C6774', 'annotations': {'main_group': 'III', 'icdo3_codes': '9470-9474, 9480, 9490, 9500-9508'}},
+    "IIID_OTHER_GLIOMAS": {'description': 'Oligodendroglioma, anaplastic oligodendroglioma, mixed glioma, and other gliomas not elsewhere classified.', 'meaning': 'NCIT:C3059', 'annotations': {'main_group': 'III', 'icdo3_codes': '9380-9382, 9430, 9440-9460'}},
+    "IIIE_OTHER_INTRACRANIAL_INTRASPINAL": {'description': 'Pituitary adenoma, craniopharyngioma, pineal tumors, and other specified intracranial neoplasms.', 'meaning': 'NCIT:C2907', 'annotations': {'main_group': 'III'}},
+    "IIIF_UNSPECIFIED_INTRACRANIAL": {'description': 'Intracranial and intraspinal neoplasms, NOS.', 'meaning': 'NCIT:C2907', 'annotations': {'main_group': 'III', 'icdo3_codes': '8000-8005'}},
+    "IVA_NEUROBLASTOMA_GANGLIONEUROBLASTOMA": {'description': 'Neuroblastoma, NOS and ganglioneuroblastoma.', 'meaning': 'NCIT:C3270', 'annotations': {'main_group': 'IV', 'icdo3_codes': '9490, 9500'}},
+    "IVB_OTHER_PERIPHERAL_NERVOUS": {'description': 'Other peripheral nerve tumors including ganglioneuroma and peripheral nerve sheath tumors.', 'meaning': 'NCIT:C4969', 'annotations': {'main_group': 'IV', 'icdo3_codes': '9501-9504, 9520-9523'}},
+    "V_RETINOBLASTOMA": {'description': 'Retinoblastoma.', 'meaning': 'NCIT:C7541', 'annotations': {'main_group': 'V', 'icdo3_codes': '9510-9514'}},
+    "VIA_NEPHROBLASTOMA": {'description': 'Wilms tumor (nephroblastoma), clear cell sarcoma of kidney, rhabdoid tumor of kidney, and other nonepithelial renal tumors.', 'meaning': 'NCIT:C3267', 'annotations': {'main_group': 'VI', 'icdo3_codes': '8960, 8963-8964'}},
+    "VIB_RENAL_CARCINOMAS": {'description': 'Renal cell carcinoma and other renal carcinomas.', 'meaning': 'NCIT:C9385', 'annotations': {'main_group': 'VI'}},
+    "VIC_UNSPECIFIED_RENAL": {'description': 'Malignant renal tumors, NOS.', 'meaning': 'NCIT:C7548', 'annotations': {'main_group': 'VI'}},
+    "VIIA_HEPATOBLASTOMA": {'description': 'Hepatoblastoma.', 'meaning': 'NCIT:C3728', 'annotations': {'main_group': 'VII', 'icdo3_codes': '8970'}},
+    "VIIB_HEPATIC_CARCINOMAS": {'description': 'Hepatocellular carcinoma, cholangiocarcinoma, and other hepatic carcinomas.', 'meaning': 'NCIT:C3099', 'annotations': {'main_group': 'VII'}},
+    "VIIC_UNSPECIFIED_HEPATIC": {'description': 'Malignant hepatic tumors, NOS.', 'meaning': 'NCIT:C7927', 'annotations': {'main_group': 'VII'}},
+    "VIIIA_OSTEOSARCOMAS": {'description': 'Osteosarcoma, NOS and variants including chondroblastic, fibroblastic, telangiectatic, and small cell osteosarcoma.', 'meaning': 'NCIT:C9145', 'annotations': {'main_group': 'VIII', 'icdo3_codes': '9180-9187, 9191-9195'}},
+    "VIIIB_CHONDROSARCOMAS": {'description': 'Chondrosarcoma, NOS and variants.', 'meaning': 'NCIT:C2946', 'annotations': {'main_group': 'VIII', 'icdo3_codes': '9220-9231, 9240-9243'}},
+    "VIIIC_EWING_TUMOR_BONE": {'description': 'Ewing sarcoma of bone and peripheral primitive neuroectodermal tumor of bone.', 'meaning': 'NCIT:C4817', 'annotations': {'main_group': 'VIII', 'icdo3_codes': '9260, 9364'}},
+    "VIIID_OTHER_BONE": {'description': 'Other specified malignant bone tumors including giant cell tumor of bone, malignant and adamantinoma.', 'meaning': 'NCIT:C4882', 'annotations': {'main_group': 'VIII'}},
+    "VIIIE_UNSPECIFIED_BONE": {'description': 'Malignant bone tumors, NOS.', 'meaning': 'NCIT:C4882', 'annotations': {'main_group': 'VIII'}},
+    "IXA_RHABDOMYOSARCOMAS": {'description': 'Rhabdomyosarcoma, NOS; embryonal rhabdomyosarcoma; alveolar rhabdomyosarcoma; and other rhabdomyosarcomas.', 'meaning': 'NCIT:C3359', 'annotations': {'main_group': 'IX', 'icdo3_codes': '8900-8905, 8910, 8912, 8920'}},
+    "IXB_FIBROSARCOMAS": {'description': 'Fibrosarcoma, NOS; infantile fibrosarcoma; dermatofibrosarcoma; and malignant peripheral nerve sheath tumor.', 'meaning': 'NCIT:C3043', 'annotations': {'main_group': 'IX', 'icdo3_codes': '8810-8815, 8820-8823, 8830, 8832-8833, 9540, 9560-9561'}},
+    "IXC_KAPOSI_SARCOMA": {'description': 'Kaposi sarcoma.', 'meaning': 'NCIT:C9087', 'annotations': {'main_group': 'IX', 'icdo3_codes': '9140'}},
+    "IXD_OTHER_SOFT_TISSUE": {'description': 'Includes liposarcoma, leiomyosarcoma, synovial sarcoma, hemangiosarcoma, and other specified soft tissue sarcomas.', 'meaning': 'NCIT:C9306', 'annotations': {'main_group': 'IX'}},
+    "IXE_UNSPECIFIED_SOFT_TISSUE": {'description': 'Soft tissue sarcomas, NOS.', 'meaning': 'NCIT:C9306', 'annotations': {'main_group': 'IX'}},
+    "XA_INTRACRANIAL_GERM_CELL": {'description': 'CNS germ cell tumors including germinoma, teratoma, and nongerminomatous germ cell tumors.', 'meaning': 'NCIT:C6286', 'annotations': {'main_group': 'X', 'icdo3_codes': '9060-9102'}},
+    "XB_EXTRACRANIAL_EXTRAGONADAL_GERM_CELL": {'description': 'Extracranial germ cell tumors not involving the gonads including sacrococcygeal, retroperitoneal, and mediastinal germ cell tumors.', 'meaning': 'NCIT:C6545', 'annotations': {'main_group': 'X'}},
+    "XC_GONADAL_GERM_CELL": {'description': 'Germ cell tumors of the ovary and testis including dysgerminoma, yolk sac tumor, embryonal carcinoma, and mixed germ cell tumors.', 'meaning': 'NCIT:C3708', 'annotations': {'main_group': 'X'}},
+    "XD_GONADAL_CARCINOMAS": {'description': 'Carcinomas arising in the ovary and testis.', 'meaning': 'NCIT:C3709', 'annotations': {'main_group': 'X'}},
+    "XE_OTHER_GONADAL": {'description': 'Other specified and unspecified gonadal tumors.', 'meaning': 'NCIT:C3708', 'annotations': {'main_group': 'X'}},
+    "XIA_ADRENOCORTICAL_CARCINOMAS": {'description': 'Adrenocortical carcinoma.', 'meaning': 'NCIT:C9325', 'annotations': {'main_group': 'XI', 'icdo3_codes': '8370'}},
+    "XIB_THYROID_CARCINOMAS": {'description': 'Papillary thyroid carcinoma, follicular thyroid carcinoma, and medullary thyroid carcinoma.', 'meaning': 'NCIT:C7510', 'annotations': {'main_group': 'XI'}},
+    "XIC_NASOPHARYNGEAL_CARCINOMAS": {'description': 'Nasopharyngeal carcinoma and related carcinomas.', 'meaning': 'NCIT:C3871', 'annotations': {'main_group': 'XI'}},
+    "XID_MALIGNANT_MELANOMAS": {'description': 'Cutaneous and non-cutaneous malignant melanomas.', 'meaning': 'NCIT:C3224', 'annotations': {'main_group': 'XI'}},
+    "XIE_SKIN_CARCINOMAS": {'description': 'Basal cell carcinoma, squamous cell carcinoma of skin, and other skin carcinomas.', 'meaning': 'NCIT:C3372', 'annotations': {'main_group': 'XI'}},
+    "XIF_OTHER_CARCINOMAS": {'description': 'Carcinomas at other sites and carcinomas, NOS.', 'meaning': 'NCIT:C3709', 'annotations': {'main_group': 'XI'}},
+    "XIIA_OTHER_SPECIFIED": {'description': 'Malignant tumors not classifiable in groups I-XI but with specified histology.', 'meaning': 'NCIT:C3262', 'annotations': {'main_group': 'XII'}},
+    "XIIB_OTHER_UNSPECIFIED": {'description': 'Malignant tumors, NOS not classifiable in groups I-XI.', 'meaning': 'NCIT:C3262', 'annotations': {'main_group': 'XII'}},
+}
+
+class INRGSSStage(RichEnum):
+    """
+    International Neuroblastoma Risk Group Staging System (INRGSS) stages. A clinical staging system based on imaging and image-defined risk factors (IDRFs), effective for diagnosis years 2024+. Allows staging before any treatment, unlike the surgical INSS system.
+    """
+    # Enum members
+    L1 = "L1"
+    L2 = "L2"
+    M = "M"
+    MS = "MS"
+
+# Set metadata after class creation to avoid it becoming an enum member
+INRGSSStage._metadata = {
+    "L1": {'description': 'Localized tumor not involving vital structures as defined by the list of image-defined risk factors and confined to one body compartment (neck, chest, abdomen, or pelvis).', 'meaning': 'NCIT:C133427', 'annotations': {'localized': True, 'idrfs_present': False}},
+    "L2": {'description': 'Locoregional tumor with presence of one or more image-defined risk factors. The tumor has not spread far from where it started but has at least one IDRF.', 'meaning': 'NCIT:C133428', 'annotations': {'localized': True, 'idrfs_present': True}},
+    "M": {'description': 'Distant metastatic disease (except as defined for MS). The tumor has spread (metastasized) to distant parts of the body.', 'meaning': 'NCIT:C133429', 'annotations': {'metastatic': True}},
+    "MS": {'description': 'Metastatic disease in children younger than 18 months with metastases confined to skin, liver, and/or bone marrow (bone marrow involvement limited to <10% tumor cells). This stage has a favorable prognosis despite metastatic disease.', 'meaning': 'NCIT:C133430', 'annotations': {'metastatic': True, 'special_category': True, 'age_restriction': '<18 months', 'favorable_prognosis': True}, 'aliases': ['Stage 4S equivalent']},
+}
+
+class INSSStage(RichEnum):
+    """
+    International Neuroblastoma Staging System (INSS) stages. A post-surgical staging system based on extent of tumor resection, lymph node involvement, and metastatic spread. This is the legacy system; INRGSS is now preferred for diagnosis years 2024+.
+    """
+    # Enum members
+    STAGE_1 = "STAGE_1"
+    STAGE_2A = "STAGE_2A"
+    STAGE_2B = "STAGE_2B"
+    STAGE_3 = "STAGE_3"
+    STAGE_4 = "STAGE_4"
+    STAGE_4S = "STAGE_4S"
+
+# Set metadata after class creation to avoid it becoming an enum member
+INSSStage._metadata = {
+    "STAGE_1": {'description': 'Localized tumor with complete gross excision, with or without microscopic residual disease; representative ipsilateral lymph nodes negative for tumor microscopically.', 'meaning': 'NCIT:C6639', 'annotations': {'localized': True, 'resection': 'complete'}},
+    "STAGE_2A": {'description': 'Localized tumor with incomplete gross excision; representative ipsilateral nonadherent lymph nodes negative for tumor microscopically.', 'meaning': 'NCIT:C6640', 'annotations': {'localized': True, 'resection': 'incomplete', 'lymph_nodes': 'negative'}},
+    "STAGE_2B": {'description': 'Localized tumor with or without complete gross excision, with ipsilateral nonadherent lymph nodes positive for tumor. Enlarged contralateral lymph nodes must be negative microscopically.', 'meaning': 'NCIT:C6641', 'annotations': {'localized': True, 'lymph_nodes': 'ipsilateral_positive'}},
+    "STAGE_3": {'description': 'Unresectable unilateral tumor infiltrating across the midline, with or without regional lymph node involvement; or localized unilateral tumor with contralateral regional lymph node involvement; or midline tumor with bilateral extension by infiltration (unresectable) or by lymph node involvement.', 'meaning': 'NCIT:C6642', 'annotations': {'localized': False, 'crosses_midline': True}},
+    "STAGE_4": {'description': 'Any primary tumor with dissemination to distant lymph nodes, bone, bone marrow, liver, skin, and/or other organs (except as defined for stage 4S).', 'meaning': 'NCIT:C6643', 'annotations': {'metastatic': True}},
+    "STAGE_4S": {'description': 'Localized primary tumor (as defined for stage 1, 2A, or 2B) with dissemination limited to skin, liver, and/or bone marrow (limited to infants <1 year of age). Marrow involvement should be minimal (<10% of total nucleated cells).', 'meaning': 'NCIT:C6644', 'annotations': {'metastatic': True, 'special_category': True, 'age_restriction': '<12 months', 'favorable_prognosis': True}, 'aliases': ['Special stage 4']},
+}
+
+class NeuroblastomaRiskGroup(RichEnum):
+    """
+    International Neuroblastoma Risk Group (INRG) pretreatment risk classification groups. Combines INRGSS stage with tumor histology, MYCN status, ploidy, and other prognostic factors.
+    """
+    # Enum members
+    VERY_LOW = "VERY_LOW"
+    LOW = "LOW"
+    INTERMEDIATE = "INTERMEDIATE"
+    HIGH = "HIGH"
+
+# Set metadata after class creation to avoid it becoming an enum member
+NeuroblastomaRiskGroup._metadata = {
+    "VERY_LOW": {'description': 'Very low risk neuroblastoma with excellent prognosis. Typically includes L1 tumors and MS without MYCN amplification.', 'meaning': 'NCIT:C103236', 'annotations': {'expected_efs': '>85%'}},
+    "LOW": {'description': 'Low risk neuroblastoma with favorable prognosis. Treatment may include surgery alone or observation.', 'meaning': 'NCIT:C103237', 'annotations': {'expected_efs': '>75%'}},
+    "INTERMEDIATE": {'description': 'Intermediate risk neuroblastoma requiring multimodal treatment including chemotherapy.', 'meaning': 'NCIT:C103238', 'annotations': {'expected_efs': '50-75%'}},
+    "HIGH": {'description': 'High risk neuroblastoma with poor prognosis. Requires intensive multimodal therapy including high-dose chemotherapy with autologous stem cell rescue, surgery, radiation, and immunotherapy.', 'meaning': 'NCIT:C103239', 'annotations': {'expected_efs': '<50%', 'mycn_amplified': 'often'}},
+}
+
+class ImageDefinedRiskFactor(RichEnum):
+    """
+    Image-defined risk factors (IDRFs) used in INRGSS staging to determine surgical risk. Presence of any IDRF upgrades a tumor from L1 to L2.
+    """
+    # Enum members
+    IPSILATERAL_TUMOR_EXTENSION_TO_BODY_CAVITIES = "IPSILATERAL_TUMOR_EXTENSION_TO_BODY_CAVITIES"
+    NECK_ENCASING_CAROTID_OR_VERTEBRAL = "NECK_ENCASING_CAROTID_OR_VERTEBRAL"
+    NECK_ENCASING_JUGULAR = "NECK_ENCASING_JUGULAR"
+    NECK_EXTENDING_TO_SKULL_BASE = "NECK_EXTENDING_TO_SKULL_BASE"
+    NECK_COMPRESSING_TRACHEA = "NECK_COMPRESSING_TRACHEA"
+    CERVICOTHORACIC_ENCASING_BRACHIAL_PLEXUS = "CERVICOTHORACIC_ENCASING_BRACHIAL_PLEXUS"
+    CERVICOTHORACIC_ENCASING_SUBCLAVIAN = "CERVICOTHORACIC_ENCASING_SUBCLAVIAN"
+    CERVICOTHORACIC_COMPRESSING_TRACHEA = "CERVICOTHORACIC_COMPRESSING_TRACHEA"
+    THORAX_ENCASING_AORTA = "THORAX_ENCASING_AORTA"
+    THORAX_COMPRESSING_TRACHEA_BRONCHI = "THORAX_COMPRESSING_TRACHEA_BRONCHI"
+    THORAX_LOWER_MEDIASTINUM_INFILTRATING = "THORAX_LOWER_MEDIASTINUM_INFILTRATING"
+    THORACOABDOMINAL_ENCASING_AORTA_CELIAC = "THORACOABDOMINAL_ENCASING_AORTA_CELIAC"
+    ABDOMEN_PELVIS_ENCASING_CELIAC_SMA = "ABDOMEN_PELVIS_ENCASING_CELIAC_SMA"
+    ABDOMEN_PELVIS_ENCASING_RENAL_VESSELS = "ABDOMEN_PELVIS_ENCASING_RENAL_VESSELS"
+    ABDOMEN_PELVIS_ENCASING_AORTA_IVC = "ABDOMEN_PELVIS_ENCASING_AORTA_IVC"
+    ABDOMEN_PELVIS_ENCASING_ILIAC_VESSELS = "ABDOMEN_PELVIS_ENCASING_ILIAC_VESSELS"
+    ABDOMEN_PELVIS_PELVIC_CROSSING_SCIATIC_NOTCH = "ABDOMEN_PELVIS_PELVIC_CROSSING_SCIATIC_NOTCH"
+    INTRASPINAL_EXTENSION = "INTRASPINAL_EXTENSION"
+    ADJACENT_ORGAN_INFILTRATION = "ADJACENT_ORGAN_INFILTRATION"
+
+# Set metadata after class creation to avoid it becoming an enum member
+ImageDefinedRiskFactor._metadata = {
+    "IPSILATERAL_TUMOR_EXTENSION_TO_BODY_CAVITIES": {'description': 'Tumor extension from neck to chest, chest to abdomen, or abdomen to pelvis.'},
+    "NECK_ENCASING_CAROTID_OR_VERTEBRAL": {'description': 'Tumor encasing carotid artery and/or vertebral artery.'},
+    "NECK_ENCASING_JUGULAR": {'description': 'Tumor encasing internal jugular vein.'},
+    "NECK_EXTENDING_TO_SKULL_BASE": {'description': 'Tumor extending to base of skull.'},
+    "NECK_COMPRESSING_TRACHEA": {'description': 'Tumor compressing the trachea.'},
+    "CERVICOTHORACIC_ENCASING_BRACHIAL_PLEXUS": {'description': 'Tumor encasing brachial plexus roots (C5-T1).'},
+    "CERVICOTHORACIC_ENCASING_SUBCLAVIAN": {'description': 'Tumor encasing subclavian vessels and/or vertebral artery and/or carotid artery.'},
+    "CERVICOTHORACIC_COMPRESSING_TRACHEA": {'description': 'Tumor compressing the trachea.'},
+    "THORAX_ENCASING_AORTA": {'description': 'Tumor encasing aorta and/or major branches.'},
+    "THORAX_COMPRESSING_TRACHEA_BRONCHI": {'description': 'Tumor compressing trachea and/or principal bronchi.'},
+    "THORAX_LOWER_MEDIASTINUM_INFILTRATING": {'description': 'Lower mediastinal tumor infiltrating the costo-vertebral junction between T9 and T12.'},
+    "THORACOABDOMINAL_ENCASING_AORTA_CELIAC": {'description': 'Tumor encasing the aorta and/or vena cava.'},
+    "ABDOMEN_PELVIS_ENCASING_CELIAC_SMA": {'description': 'Tumor encasing celiac axis and/or superior mesenteric artery.'},
+    "ABDOMEN_PELVIS_ENCASING_RENAL_VESSELS": {'description': 'Tumor encasing origin of renal vessels.'},
+    "ABDOMEN_PELVIS_ENCASING_AORTA_IVC": {'description': 'Tumor encasing aorta and/or inferior vena cava.'},
+    "ABDOMEN_PELVIS_ENCASING_ILIAC_VESSELS": {'description': 'Tumor encasing iliac vessels.'},
+    "ABDOMEN_PELVIS_PELVIC_CROSSING_SCIATIC_NOTCH": {'description': 'Pelvic tumor crossing the sciatic notch.'},
+    "INTRASPINAL_EXTENSION": {'description': 'Intraspinal tumor extension provided that more than one third of the spinal canal in the axial plane is invaded and/or the perimedullary leptomeningeal spaces are not visible and/or spinal cord signal is abnormal.'},
+    "ADJACENT_ORGAN_INFILTRATION": {'description': 'Infiltration of adjacent organs/structures such as pericardium, diaphragm, kidney, liver, duodeno-pancreatic block, and mesentery.'},
+}
+
 class RaceOMB1997Enum(RichEnum):
     """
     Race categories following OMB 1997 standards used by NIH and federal agencies.
@@ -13396,6 +13724,112 @@ DataSizeUnitEnum._metadata = {
     "MEBIBYTE": {'description': 'Mebibyte (2^20 bytes)', 'annotations': {'symbol': 'MiB', 'conversion_to_byte': '1048576', 'standard': 'binary'}},
     "GIBIBYTE": {'description': 'Gibibyte (2^30 bytes)', 'annotations': {'symbol': 'GiB', 'conversion_to_byte': '1073741824', 'standard': 'binary'}},
     "TEBIBYTE": {'description': 'Tebibyte (2^40 bytes)', 'annotations': {'symbol': 'TiB', 'conversion_to_byte': '1099511627776', 'standard': 'binary'}},
+}
+
+class QuantityKindEnum(RichEnum):
+    """
+    Physical quantity kinds based on QUDT. These represent abstract types of physical quantities independent of the units used to measure them.
+    """
+    # Enum members
+    LENGTH = "LENGTH"
+    MASS = "MASS"
+    TIME = "TIME"
+    THERMODYNAMIC_TEMPERATURE = "THERMODYNAMIC_TEMPERATURE"
+    AMOUNT_OF_SUBSTANCE = "AMOUNT_OF_SUBSTANCE"
+    ELECTRIC_CURRENT = "ELECTRIC_CURRENT"
+    LUMINOUS_INTENSITY = "LUMINOUS_INTENSITY"
+    AREA = "AREA"
+    VOLUME = "VOLUME"
+    ANGLE = "ANGLE"
+    SOLID_ANGLE = "SOLID_ANGLE"
+    VELOCITY = "VELOCITY"
+    SPEED = "SPEED"
+    ACCELERATION = "ACCELERATION"
+    FORCE = "FORCE"
+    PRESSURE = "PRESSURE"
+    ENERGY = "ENERGY"
+    WORK = "WORK"
+    POWER = "POWER"
+    MOMENTUM = "MOMENTUM"
+    TORQUE = "TORQUE"
+    ANGULAR_VELOCITY = "ANGULAR_VELOCITY"
+    ANGULAR_ACCELERATION = "ANGULAR_ACCELERATION"
+    DENSITY = "DENSITY"
+    VISCOSITY = "VISCOSITY"
+    KINEMATIC_VISCOSITY = "KINEMATIC_VISCOSITY"
+    FREQUENCY = "FREQUENCY"
+    MASS_CONCENTRATION = "MASS_CONCENTRATION"
+    AMOUNT_CONCENTRATION = "AMOUNT_CONCENTRATION"
+    ELECTRIC_CHARGE = "ELECTRIC_CHARGE"
+    ELECTRIC_POTENTIAL = "ELECTRIC_POTENTIAL"
+    ELECTRIC_RESISTANCE = "ELECTRIC_RESISTANCE"
+    ELECTRICAL_CONDUCTIVITY = "ELECTRICAL_CONDUCTIVITY"
+    CAPACITANCE = "CAPACITANCE"
+    INDUCTANCE = "INDUCTANCE"
+    MAGNETIC_FLUX = "MAGNETIC_FLUX"
+    MAGNETIC_FLUX_DENSITY = "MAGNETIC_FLUX_DENSITY"
+    HEAT_CAPACITY = "HEAT_CAPACITY"
+    SPECIFIC_HEAT_CAPACITY = "SPECIFIC_HEAT_CAPACITY"
+    THERMAL_CONDUCTIVITY = "THERMAL_CONDUCTIVITY"
+    LUMINOUS_FLUX = "LUMINOUS_FLUX"
+    ILLUMINANCE = "ILLUMINANCE"
+    RADIANT_INTENSITY = "RADIANT_INTENSITY"
+    ACTIVITY = "ACTIVITY"
+    ABSORBED_DOSE = "ABSORBED_DOSE"
+    DOSE_EQUIVALENT = "DOSE_EQUIVALENT"
+    INFORMATION_ENTROPY = "INFORMATION_ENTROPY"
+    DATA_RATE = "DATA_RATE"
+
+# Set metadata after class creation to avoid it becoming an enum member
+QuantityKindEnum._metadata = {
+    "LENGTH": {'description': 'A 1-D extent quality representing distance between two points', 'meaning': 'quantitykind:Length', 'annotations': {'si_base': 'true', 'dimension': 'L'}},
+    "MASS": {'description': 'The amount of matter in an object', 'meaning': 'quantitykind:Mass', 'annotations': {'si_base': 'true', 'dimension': 'M'}},
+    "TIME": {'description': 'Duration or temporal extent', 'meaning': 'quantitykind:Time', 'annotations': {'si_base': 'true', 'dimension': 'T', 'pato_label': 'duration'}},
+    "THERMODYNAMIC_TEMPERATURE": {'description': 'The thermal energy of a system', 'meaning': 'quantitykind:ThermodynamicTemperature', 'annotations': {'si_base': 'true', 'dimension': 'Θ', 'pato_label': 'temperature'}},
+    "AMOUNT_OF_SUBSTANCE": {'description': 'The number of elementary entities (atoms, molecules, etc.)', 'meaning': 'quantitykind:AmountOfSubstance', 'annotations': {'si_base': 'true', 'dimension': 'N', 'pato_label': 'amount'}},
+    "ELECTRIC_CURRENT": {'description': 'Flow of electric charge per unit time', 'meaning': 'quantitykind:ElectricCurrent', 'annotations': {'si_base': 'true', 'dimension': 'I'}},
+    "LUMINOUS_INTENSITY": {'description': 'Luminous power per unit solid angle emitted by a point light source', 'meaning': 'quantitykind:LuminousIntensity', 'annotations': {'si_base': 'true', 'dimension': 'J', 'pato_label': 'luminance'}},
+    "AREA": {'description': 'A 2-D extent representing the size of a surface', 'meaning': 'quantitykind:Area', 'annotations': {'dimension': 'L²'}},
+    "VOLUME": {'description': 'A 3-D extent representing the amount of space occupied', 'meaning': 'quantitykind:Volume', 'annotations': {'dimension': 'L³'}},
+    "ANGLE": {'description': 'The figure formed by two rays sharing a common endpoint', 'meaning': 'quantitykind:Angle', 'annotations': {'dimension': 'dimensionless'}},
+    "SOLID_ANGLE": {'description': 'A 3-D angular measure', 'meaning': 'quantitykind:SolidAngle', 'annotations': {'dimension': 'dimensionless'}},
+    "VELOCITY": {'description': 'Rate of change of position with direction', 'meaning': 'quantitykind:Velocity', 'annotations': {'dimension': 'L·T⁻¹'}},
+    "SPEED": {'description': 'Scalar rate of change of position', 'meaning': 'quantitykind:Speed', 'annotations': {'dimension': 'L·T⁻¹'}},
+    "ACCELERATION": {'description': 'Rate of change of velocity', 'meaning': 'quantitykind:Acceleration', 'annotations': {'dimension': 'L·T⁻²'}},
+    "FORCE": {'description': 'Rate of change of momentum', 'meaning': 'quantitykind:Force', 'annotations': {'dimension': 'M·L·T⁻²'}},
+    "PRESSURE": {'description': 'Force per unit area', 'meaning': 'quantitykind:Pressure', 'annotations': {'dimension': 'M·L⁻¹·T⁻²'}},
+    "ENERGY": {'description': 'Capacity to do work', 'meaning': 'quantitykind:Energy', 'annotations': {'dimension': 'M·L²·T⁻²'}},
+    "WORK": {'description': 'Energy transferred by a force', 'meaning': 'quantitykind:Work', 'annotations': {'dimension': 'M·L²·T⁻²'}},
+    "POWER": {'description': 'Rate of doing work or transferring energy', 'meaning': 'quantitykind:Power', 'annotations': {'dimension': 'M·L²·T⁻³'}},
+    "MOMENTUM": {'description': 'Product of mass and velocity', 'meaning': 'quantitykind:Momentum', 'annotations': {'dimension': 'M·L·T⁻¹'}},
+    "TORQUE": {'description': 'Rotational force or moment of force', 'meaning': 'quantitykind:Torque', 'annotations': {'dimension': 'M·L²·T⁻²'}},
+    "ANGULAR_VELOCITY": {'description': 'Rate of change of angular position', 'meaning': 'quantitykind:AngularVelocity', 'annotations': {'dimension': 'T⁻¹'}},
+    "ANGULAR_ACCELERATION": {'description': 'Rate of change of angular velocity', 'meaning': 'quantitykind:AngularAcceleration', 'annotations': {'dimension': 'T⁻²'}},
+    "DENSITY": {'description': 'Mass per unit volume', 'meaning': 'quantitykind:Density', 'annotations': {'dimension': 'M·L⁻³', 'pato_label': 'mass density'}},
+    "VISCOSITY": {'description': 'Internal resistance to flow', 'meaning': 'quantitykind:DynamicViscosity', 'annotations': {'dimension': 'M·L⁻¹·T⁻¹'}},
+    "KINEMATIC_VISCOSITY": {'description': 'Dynamic viscosity divided by density', 'meaning': 'quantitykind:KinematicViscosity', 'annotations': {'dimension': 'L²·T⁻¹'}},
+    "FREQUENCY": {'description': 'Number of repetitive events per unit time', 'meaning': 'quantitykind:Frequency', 'annotations': {'dimension': 'T⁻¹'}},
+    "MASS_CONCENTRATION": {'description': 'Mass of a substance per unit volume', 'meaning': 'quantitykind:MassConcentration', 'annotations': {'dimension': 'M·L⁻³', 'pato_label': 'concentration of'}},
+    "AMOUNT_CONCENTRATION": {'description': 'Amount of substance per unit volume (molarity)', 'meaning': 'quantitykind:AmountConcentration', 'annotations': {'dimension': 'N·L⁻³'}},
+    "ELECTRIC_CHARGE": {'description': 'Fundamental property of matter causing electromagnetic interaction', 'meaning': 'quantitykind:ElectricCharge', 'annotations': {'dimension': 'I·T'}},
+    "ELECTRIC_POTENTIAL": {'description': 'Potential energy per unit charge (voltage)', 'meaning': 'quantitykind:ElectricPotential', 'annotations': {'dimension': 'M·L²·T⁻³·I⁻¹'}, 'aliases': ['voltage']},
+    "ELECTRIC_RESISTANCE": {'description': 'Opposition to electric current flow', 'meaning': 'quantitykind:Resistance', 'annotations': {'dimension': 'M·L²·T⁻³·I⁻²'}},
+    "ELECTRICAL_CONDUCTIVITY": {'description': 'Ability to conduct electric current', 'meaning': 'quantitykind:Conductivity', 'annotations': {'dimension': 'I²·T³·M⁻¹·L⁻³'}},
+    "CAPACITANCE": {'description': 'Ability to store electric charge', 'meaning': 'quantitykind:Capacitance', 'annotations': {'dimension': 'I²·T⁴·M⁻¹·L⁻²'}},
+    "INDUCTANCE": {'description': 'Property relating magnetic flux to electric current', 'meaning': 'quantitykind:Inductance', 'annotations': {'dimension': 'M·L²·T⁻²·I⁻²'}},
+    "MAGNETIC_FLUX": {'description': 'Measure of total magnetic field passing through a surface', 'meaning': 'quantitykind:MagneticFlux', 'annotations': {'dimension': 'M·L²·T⁻²·I⁻¹'}},
+    "MAGNETIC_FLUX_DENSITY": {'description': 'Magnetic flux per unit area', 'meaning': 'quantitykind:MagneticFluxDensity', 'annotations': {'dimension': 'M·T⁻²·I⁻¹'}},
+    "HEAT_CAPACITY": {'description': 'Heat required to raise temperature by one unit', 'meaning': 'quantitykind:HeatCapacity', 'annotations': {'dimension': 'M·L²·T⁻²·Θ⁻¹'}},
+    "SPECIFIC_HEAT_CAPACITY": {'description': 'Heat capacity per unit mass', 'meaning': 'quantitykind:SpecificHeatCapacity', 'annotations': {'dimension': 'L²·T⁻²·Θ⁻¹'}},
+    "THERMAL_CONDUCTIVITY": {'description': 'Ability to conduct heat', 'meaning': 'quantitykind:ThermalConductivity', 'annotations': {'dimension': 'M·L·T⁻³·Θ⁻¹', 'pato_label': 'heat conductivity'}},
+    "LUMINOUS_FLUX": {'description': 'Total perceived light power emitted', 'meaning': 'quantitykind:LuminousFlux', 'annotations': {'dimension': 'J'}},
+    "ILLUMINANCE": {'description': 'Luminous flux per unit area', 'meaning': 'quantitykind:Illuminance', 'annotations': {'dimension': 'J·L⁻²'}},
+    "RADIANT_INTENSITY": {'description': 'Radiant power per unit solid angle', 'meaning': 'quantitykind:RadiantIntensity', 'annotations': {'dimension': 'M·L²·T⁻³'}},
+    "ACTIVITY": {'description': 'Number of nuclear disintegrations per unit time', 'meaning': 'quantitykind:Activity', 'annotations': {'dimension': 'T⁻¹'}},
+    "ABSORBED_DOSE": {'description': 'Energy deposited per unit mass by ionizing radiation', 'meaning': 'quantitykind:AbsorbedDose', 'annotations': {'dimension': 'L²·T⁻²'}},
+    "DOSE_EQUIVALENT": {'description': 'Absorbed dose weighted by radiation type', 'meaning': 'quantitykind:DoseEquivalent', 'annotations': {'dimension': 'L²·T⁻²'}},
+    "INFORMATION_ENTROPY": {'description': 'Measure of information content or uncertainty', 'meaning': 'quantitykind:InformationEntropy', 'annotations': {'dimension': 'dimensionless'}},
+    "DATA_RATE": {'description': 'Amount of data transferred per unit time', 'meaning': 'quantitykind:DataRate', 'annotations': {'dimension': 'T⁻¹'}},
 }
 
 class ImageFileFormatEnum(RichEnum):
@@ -16016,6 +16450,352 @@ ThermalCyclingStepEnum._metadata = {
     "HOLD": {'description': 'Temperature hold step'},
     "MELT_CURVE": {'description': 'Gradual temperature increase for melt curve analysis'},
     "GRADIENT": {'description': 'Temperature gradient across block'},
+}
+
+class ArxivCategory(RichEnum):
+    """
+    arXiv subject categories for classifying preprints and publications. Categories are organized by major subject groups.
+    """
+    # Enum members
+    CS = "cs"
+    ECON = "econ"
+    EESS = "eess"
+    MATH = "math"
+    ASTRO_PH = "astro-ph"
+    COND_MAT = "cond-mat"
+    HEP = "hep"
+    NLIN = "nlin"
+    NUCL = "nucl"
+    PHYSICS = "physics"
+    Q_BIO = "q-bio"
+    Q_FIN = "q-fin"
+    STAT = "stat"
+    CS_AI = "cs.AI"
+    CS_AR = "cs.AR"
+    CS_CC = "cs.CC"
+    CS_CE = "cs.CE"
+    CS_CG = "cs.CG"
+    CS_CL = "cs.CL"
+    CS_CR = "cs.CR"
+    CS_CV = "cs.CV"
+    CS_CY = "cs.CY"
+    CS_DB = "cs.DB"
+    CS_DC = "cs.DC"
+    CS_DL = "cs.DL"
+    CS_DM = "cs.DM"
+    CS_DS = "cs.DS"
+    CS_ET = "cs.ET"
+    CS_FL = "cs.FL"
+    CS_GL = "cs.GL"
+    CS_GR = "cs.GR"
+    CS_GT = "cs.GT"
+    CS_HC = "cs.HC"
+    CS_IR = "cs.IR"
+    CS_IT = "cs.IT"
+    CS_LG = "cs.LG"
+    CS_LO = "cs.LO"
+    CS_MA = "cs.MA"
+    CS_MM = "cs.MM"
+    CS_MS = "cs.MS"
+    CS_NA = "cs.NA"
+    CS_NE = "cs.NE"
+    CS_NI = "cs.NI"
+    CS_OH = "cs.OH"
+    CS_OS = "cs.OS"
+    CS_PF = "cs.PF"
+    CS_PL = "cs.PL"
+    CS_RO = "cs.RO"
+    CS_SC = "cs.SC"
+    CS_SD = "cs.SD"
+    CS_SE = "cs.SE"
+    CS_SI = "cs.SI"
+    CS_SY = "cs.SY"
+    ECON_EM = "econ.EM"
+    ECON_GN = "econ.GN"
+    ECON_TH = "econ.TH"
+    EESS_AS = "eess.AS"
+    EESS_IV = "eess.IV"
+    EESS_SP = "eess.SP"
+    EESS_SY = "eess.SY"
+    MATH_AC = "math.AC"
+    MATH_AG = "math.AG"
+    MATH_AP = "math.AP"
+    MATH_AT = "math.AT"
+    MATH_CA = "math.CA"
+    MATH_CO = "math.CO"
+    MATH_CT = "math.CT"
+    MATH_CV = "math.CV"
+    MATH_DG = "math.DG"
+    MATH_DS = "math.DS"
+    MATH_FA = "math.FA"
+    MATH_GM = "math.GM"
+    MATH_GN = "math.GN"
+    MATH_GR = "math.GR"
+    MATH_GT = "math.GT"
+    MATH_HO = "math.HO"
+    MATH_IT = "math.IT"
+    MATH_KT = "math.KT"
+    MATH_LO = "math.LO"
+    MATH_MG = "math.MG"
+    MATH_MP = "math.MP"
+    MATH_NA = "math.NA"
+    MATH_NT = "math.NT"
+    MATH_OA = "math.OA"
+    MATH_OC = "math.OC"
+    MATH_PR = "math.PR"
+    MATH_QA = "math.QA"
+    MATH_RA = "math.RA"
+    MATH_RT = "math.RT"
+    MATH_SG = "math.SG"
+    MATH_SP = "math.SP"
+    MATH_ST = "math.ST"
+    ASTRO_PH_CO = "astro-ph.CO"
+    ASTRO_PH_EP = "astro-ph.EP"
+    ASTRO_PH_GA = "astro-ph.GA"
+    ASTRO_PH_HE = "astro-ph.HE"
+    ASTRO_PH_IM = "astro-ph.IM"
+    ASTRO_PH_SR = "astro-ph.SR"
+    COND_MAT_DIS_NN = "cond-mat.dis-nn"
+    COND_MAT_MES_HALL = "cond-mat.mes-hall"
+    COND_MAT_MTRL_SCI = "cond-mat.mtrl-sci"
+    COND_MAT_OTHER = "cond-mat.other"
+    COND_MAT_QUANT_GAS = "cond-mat.quant-gas"
+    COND_MAT_SOFT = "cond-mat.soft"
+    COND_MAT_STAT_MECH = "cond-mat.stat-mech"
+    COND_MAT_STR_EL = "cond-mat.str-el"
+    COND_MAT_SUPR_CON = "cond-mat.supr-con"
+    HEP_EX = "hep-ex"
+    HEP_LAT = "hep-lat"
+    HEP_PH = "hep-ph"
+    HEP_TH = "hep-th"
+    GR_QC = "gr-qc"
+    MATH_PH = "math-ph"
+    QUANT_PH = "quant-ph"
+    NLIN_AO = "nlin.AO"
+    NLIN_CD = "nlin.CD"
+    NLIN_CG = "nlin.CG"
+    NLIN_PS = "nlin.PS"
+    NLIN_SI = "nlin.SI"
+    NUCL_EX = "nucl-ex"
+    NUCL_TH = "nucl-th"
+    PHYSICS_ACC_PH = "physics.acc-ph"
+    PHYSICS_AO_PH = "physics.ao-ph"
+    PHYSICS_APP_PH = "physics.app-ph"
+    PHYSICS_ATM_CLUS = "physics.atm-clus"
+    PHYSICS_ATOM_PH = "physics.atom-ph"
+    PHYSICS_BIO_PH = "physics.bio-ph"
+    PHYSICS_CHEM_PH = "physics.chem-ph"
+    PHYSICS_CLASS_PH = "physics.class-ph"
+    PHYSICS_COMP_PH = "physics.comp-ph"
+    PHYSICS_DATA_AN = "physics.data-an"
+    PHYSICS_ED_PH = "physics.ed-ph"
+    PHYSICS_FLU_DYN = "physics.flu-dyn"
+    PHYSICS_GEN_PH = "physics.gen-ph"
+    PHYSICS_GEO_PH = "physics.geo-ph"
+    PHYSICS_HIST_PH = "physics.hist-ph"
+    PHYSICS_INS_DET = "physics.ins-det"
+    PHYSICS_MED_PH = "physics.med-ph"
+    PHYSICS_OPTICS = "physics.optics"
+    PHYSICS_PLASM_PH = "physics.plasm-ph"
+    PHYSICS_POP_PH = "physics.pop-ph"
+    PHYSICS_SOC_PH = "physics.soc-ph"
+    PHYSICS_SPACE_PH = "physics.space-ph"
+    Q_BIO_BM = "q-bio.BM"
+    Q_BIO_CB = "q-bio.CB"
+    Q_BIO_GN = "q-bio.GN"
+    Q_BIO_MN = "q-bio.MN"
+    Q_BIO_NC = "q-bio.NC"
+    Q_BIO_OT = "q-bio.OT"
+    Q_BIO_PE = "q-bio.PE"
+    Q_BIO_QM = "q-bio.QM"
+    Q_BIO_SC = "q-bio.SC"
+    Q_BIO_TO = "q-bio.TO"
+    Q_FIN_CP = "q-fin.CP"
+    Q_FIN_EC = "q-fin.EC"
+    Q_FIN_GN = "q-fin.GN"
+    Q_FIN_MF = "q-fin.MF"
+    Q_FIN_PM = "q-fin.PM"
+    Q_FIN_PR = "q-fin.PR"
+    Q_FIN_RM = "q-fin.RM"
+    Q_FIN_ST = "q-fin.ST"
+    Q_FIN_TR = "q-fin.TR"
+    STAT_AP = "stat.AP"
+    STAT_CO = "stat.CO"
+    STAT_ME = "stat.ME"
+    STAT_ML = "stat.ML"
+    STAT_OT = "stat.OT"
+    STAT_TH = "stat.TH"
+
+# Set metadata after class creation to avoid it becoming an enum member
+ArxivCategory._metadata = {
+    "CS": {'description': 'Computer science research areas'},
+    "ECON": {'description': 'Economics research areas'},
+    "EESS": {'description': 'Electrical engineering and systems science research areas'},
+    "MATH": {'description': 'Mathematics research areas'},
+    "ASTRO_PH": {'description': 'Astrophysics research areas'},
+    "COND_MAT": {'description': 'Condensed matter physics research areas'},
+    "HEP": {'description': 'High energy physics research areas'},
+    "NLIN": {'description': 'Nonlinear sciences research areas'},
+    "NUCL": {'description': 'Nuclear physics research areas'},
+    "PHYSICS": {'description': 'General physics research areas'},
+    "Q_BIO": {'description': 'Quantitative biology research areas'},
+    "Q_FIN": {'description': 'Quantitative finance research areas'},
+    "STAT": {'description': 'Statistics research areas'},
+    "CS_AI": {'description': 'Covers all areas of AI except Vision, Robotics, Machine Learning, Multiagent Systems, and NLP. Includes Expert Systems, Theorem Proving, Knowledge Representation, Planning, and Uncertainty in AI.'},
+    "CS_AR": {'description': 'Covers systems organization and hardware architecture. Roughly includes material in ACM Subject Class C.0, C.1, and C.5.'},
+    "CS_CC": {'description': 'Covers models of computation, complexity classes, structural complexity, complexity tradeoffs, upper and lower bounds.'},
+    "CS_CE": {'description': 'Covers applications of computer science to the mathematical modeling of complex systems in science, engineering, and finance.'},
+    "CS_CG": {'description': 'Geometric algorithms, discrete differential geometry, and directly related problems.'},
+    "CS_CL": {'description': 'Covers natural language processing. Includes computational linguistics, speech processing, text retrieval and processing.'},
+    "CS_CR": {'description': 'Covers all areas of cryptography and security including authentication, public key cryptosystems, proof-carrying code, etc.'},
+    "CS_CV": {'description': 'Covers image processing, computer vision, pattern recognition, and scene understanding.'},
+    "CS_CY": {'description': 'Covers impact of computers on society, computer ethics, information technology and public policy, legal aspects of computing.'},
+    "CS_DB": {'description': 'Covers database management, datamining, and data processing. Roughly includes material in ACM Subject Classes H.2, H.3, and H.4.'},
+    "CS_DC": {'description': 'Covers fault-tolerance, distributed algorithms, stabilization, parallel computation, and cluster computing.'},
+    "CS_DL": {'description': 'Covers all aspects of digital library design and document creation. Note this may overlap with other areas.'},
+    "CS_DM": {'description': 'Covers combinatorics, graph theory, applications of probability. Roughly includes material in ACM Subject Classes G.2 and G.3.'},
+    "CS_DS": {'description': 'Covers data structures and analysis of algorithms. Roughly includes material in ACM Subject Classes E.1, E.2, F.2.1, and F.2.2.'},
+    "CS_ET": {'description': 'Covers approaches to computing based on emerging technologies such as quantum computing, DNA computing, optical computing.'},
+    "CS_FL": {'description': 'Covers automata theory, formal language theory, grammars, and combinatorics on words.'},
+    "CS_GL": {'description': 'Covers introductory material, survey material, predictions of future trends, biographies, and miscellaneous computer-science related material.'},
+    "CS_GR": {'description': 'Covers all aspects of computer graphics. Roughly includes material in ACM Subject Classes I.3.0-I.3.8.'},
+    "CS_GT": {'description': 'Covers all theoretical and applied aspects at the intersection of computer science and game theory.'},
+    "CS_HC": {'description': 'Covers human factors, user interfaces, and collaborative computing. Roughly includes material in ACM Subject Classes H.1.2 and H.5.'},
+    "CS_IR": {'description': 'Covers indexing, dictionaries, retrieval, content and analysis. Roughly includes material in ACM Subject Classes H.3.0-H.3.4.'},
+    "CS_IT": {'description': 'Covers theoretical and experimental aspects of information theory and coding.'},
+    "CS_LG": {'description': 'Papers on all aspects of machine learning research, including supervised, unsupervised, reinforcement learning, bandit algorithms.'},
+    "CS_LO": {'description': 'Covers all aspects of logic in computer science, including finite model theory, logics of programs, modal logic, and program verification.'},
+    "CS_MA": {'description': 'Covers multiagent systems, distributed artificial intelligence, intelligent agents, coordinated interactions.'},
+    "CS_MM": {'description': 'Covers all aspects of multimedia systems, including hypermedia and information systems design.'},
+    "CS_MS": {'description': 'Covers aspects of mathematical software for mathematical computation and related support.'},
+    "CS_NA": {'description': 'Covers numerical algorithms for problems in analysis and algebra. Includes numerical linear algebra, optimization, and interpolation.'},
+    "CS_NE": {'description': 'Covers neural networks, connectionism, genetic algorithms, artificial life, adaptive behavior.'},
+    "CS_NI": {'description': 'Covers all aspects of computer communication networks, including network architecture and design.'},
+    "CS_OH": {'description': 'Covers topics not fitting other computer science categories.'},
+    "CS_OS": {'description': 'Covers aspects of operating systems including structure, design, management, and synchronization.'},
+    "CS_PF": {'description': 'Covers performance measurement, simulation, and evaluation methodology.'},
+    "CS_PL": {'description': 'Covers programming language semantics, language features, programming approaches, compilers.'},
+    "CS_RO": {'description': 'Covers all aspects of robotics, including control, manipulation, planning, and robot learning.'},
+    "CS_SC": {'description': 'Covers symbolics, including computer algebra systems, implementation, and applications.'},
+    "CS_SD": {'description': 'Covers all aspects of computing with sound, and sound as an information channel.'},
+    "CS_SE": {'description': 'Covers design tools, software metrics, testing and debugging, programming environments, requirements, specifications.'},
+    "CS_SI": {'description': 'Covers design, analysis, and modeling of social and information networks, including their applications for online systems.'},
+    "CS_SY": {'description': 'Covers theoretical and practical aspects of systems and control, including control system design.'},
+    "ECON_EM": {'description': 'Econometric theory and practice, including estimation, hypothesis testing, and forecasting.'},
+    "ECON_GN": {'description': 'General methodological, applied, and empirical contributions to economics.'},
+    "ECON_TH": {'description': 'Includes decision theory, game theory, mechanism design, and mathematical modeling in economics.'},
+    "EESS_AS": {'description': 'Theory and methods for processing signals representing audio, speech, and language, and their applications.'},
+    "EESS_IV": {'description': 'Theory, algorithms, and applications for the formation, capture, processing, communication, analysis, and display of images.'},
+    "EESS_SP": {'description': 'Theory, algorithms, performance analysis and applications of signal and data analysis.'},
+    "EESS_SY": {'description': 'Analysis and design of control systems, covering mathematical modeling and automatic control.'},
+    "MATH_AC": {'description': 'Commutative rings, modules, ideals, homological algebra, computational aspects, local rings.'},
+    "MATH_AG": {'description': 'Algebraic varieties, stacks, sheaves, schemes, moduli spaces, complex geometry, quantum cohomology.'},
+    "MATH_AP": {'description': 'Existence and uniqueness, boundary conditions, linear and non-linear operators, stability, soliton theory.'},
+    "MATH_AT": {'description': 'Homotopy theory, homological algebra, algebraic treatments of manifolds.'},
+    "MATH_CA": {'description': 'Special functions, orthogonal polynomials, harmonic analysis, ODEs, differential relations.'},
+    "MATH_CO": {'description': 'Discrete mathematics, graph theory, enumeration, combinatorial optimization.'},
+    "MATH_CT": {'description': 'Enriched categories, topoi, abelian categories, monoidal categories, homological algebra.'},
+    "MATH_CV": {'description': 'Holomorphic functions, automorphic group actions, and their generalizations, complex geometry.'},
+    "MATH_DG": {'description': 'Complex, contact, Riemannian, pseudo-Riemannian, symplectic geometry, relativity, gauge theory.'},
+    "MATH_DS": {'description': 'Dynamics of differential equations and flows, mechanics, classical few-body problems.'},
+    "MATH_FA": {'description': 'Banach spaces, function spaces, real functions, distributions, measures, integration.'},
+    "MATH_GM": {'description': 'Mathematical material of general interest, broadly accessible expositions of research results.'},
+    "MATH_GN": {'description': 'Continuum theory, point-set topology, spaces with algebraic structure, topological dynamics.'},
+    "MATH_GR": {'description': 'Finite groups, topological groups, representation theory, cohomology, classification.'},
+    "MATH_GT": {'description': 'Manifolds, orbifolds, polyhedra, cell complexes, foliations, geometric structures.'},
+    "MATH_HO": {'description': 'Biographies, philosophy of mathematics, mathematics education, recreational mathematics.'},
+    "MATH_IT": {'description': 'Math methods in information theory and coding theory.'},
+    "MATH_KT": {'description': 'Algebraic and topological K-theory, relations with topology, commutative algebra, index theories.'},
+    "MATH_LO": {'description': 'Logic, set theory, point-set topology, formal mathematics.'},
+    "MATH_MG": {'description': 'Euclidean, hyperbolic, discrete, convex, coarse geometry, comparisons in Riemannian geometry.'},
+    "MATH_MP": {'description': 'Articles in which math methods are used to study physics problems, or math questions arising from physics.'},
+    "MATH_NA": {'description': 'Numerical algorithms for problems in analysis and algebra, scientific computation.'},
+    "MATH_NT": {'description': 'Prime numbers, diophantine equations, analytic number theory, algebraic number theory, arithmetic geometry.'},
+    "MATH_OA": {'description': 'Algebras of operators on Hilbert space, C*-algebras, von Neumann algebras, non-commutative geometry.'},
+    "MATH_OC": {'description': 'Operations research, linear programming, control theory, systems theory, optimal control.'},
+    "MATH_PR": {'description': 'Theory and applications of probability and stochastic processes, including stochastic differential equations.'},
+    "MATH_QA": {'description': 'Quantum groups, skein theories, operadic and diagrammatic algebra, quantum field theory.'},
+    "MATH_RA": {'description': 'Non-commutative rings and algebras, non-associative algebras, universal algebra.'},
+    "MATH_RT": {'description': 'Linear representations of algebras and groups, Lie theory, associative algebras.'},
+    "MATH_SG": {'description': 'Hamiltonian systems, symplectic flows, classical integrable systems.'},
+    "MATH_SP": {'description': 'Schrodinger operators, differential operators, spectral measures, scattering theory.'},
+    "MATH_ST": {'description': 'Applied, computational and theoretical statistics including probability, coverage, learning theory.'},
+    "ASTRO_PH_CO": {'description': 'Phenomenology of early universe, cosmic microwave background, cosmological parameters, primordial element abundances.'},
+    "ASTRO_PH_EP": {'description': 'Interplanetary medium, planetary physics, terrestrial planets, extrasolar planets, irregular satellites.'},
+    "ASTRO_PH_GA": {'description': 'Phenomena pertaining to galaxies or combinations of galaxies, interstellar medium, star clusters.'},
+    "ASTRO_PH_HE": {'description': 'Cosmic ray production, gamma rays, X-rays, charged particles, supernovae, neutron stars, pulsars.'},
+    "ASTRO_PH_IM": {'description': 'Detector and calculation design, space and laboratory observatories, data analysis methods.'},
+    "ASTRO_PH_SR": {'description': 'White dwarfs, brown dwarfs, stars, solar system, helioseismology, stellar evolution.'},
+    "COND_MAT_DIS_NN": {'description': 'Glasses and spin glasses; random systems; information theory in physics; neural networks.'},
+    "COND_MAT_MES_HALL": {'description': 'Quantum dots and wires, nanotubes, graphene, ballistic transport, mesoscale and nanoscale systems.'},
+    "COND_MAT_MTRL_SCI": {'description': 'Techniques, synthesis, characterization, structure; mechanical and structural phase transitions.'},
+    "COND_MAT_OTHER": {'description': 'Work in condensed matter that does not fit into other cond-mat classifications.'},
+    "COND_MAT_QUANT_GAS": {'description': 'Ultracold atomic gases, Bose-Einstein condensation, Feshbach resonances, spinor condensates.'},
+    "COND_MAT_SOFT": {'description': 'Membranes, emulsions, gels, foams, nematic phases, polymers, liquid crystals.'},
+    "COND_MAT_STAT_MECH": {'description': 'Phase transitions, thermodynamics, field theory, non-equilibrium phenomena, renormalization.'},
+    "COND_MAT_STR_EL": {'description': 'Quantum magnetism, non-Fermi liquid, spin liquids, stripe phases, electron-phonon interactions.'},
+    "COND_MAT_SUPR_CON": {'description': 'Superconductivity theory, models, phenomenology, experimental results.'},
+    "HEP_EX": {'description': 'Results from high-energy/particle physics experiments at accelerators and observatories.'},
+    "HEP_LAT": {'description': 'Lattice field theory results with desired precision and algorithmic advances.'},
+    "HEP_PH": {'description': 'Theoretical particle physics and its relation to experiment. Covers Standard Model and beyond.'},
+    "HEP_TH": {'description': 'Formal aspects of quantum field theory, string theory, quantum gravity.'},
+    "GR_QC": {'description': 'General relativity, gravitational physics, cosmological models, relativistic astrophysics.'},
+    "MATH_PH": {'description': 'Applications of mathematics to problems in physics and development of mathematical methods for such applications.'},
+    "QUANT_PH": {'description': 'Quantum foundations, quantum information, quantum computation, quantum mechanics.'},
+    "NLIN_AO": {'description': 'Self-organization, adaptation, and autonomous systems.'},
+    "NLIN_CD": {'description': 'Dynamical systems with chaotic behavior, routes to chaos, spectral analysis, Lyapunov exponents.'},
+    "NLIN_CG": {'description': 'Cellular automata, lattice Boltzmann, lattice gas automata, signal processing with cellular automata.'},
+    "NLIN_PS": {'description': 'Pattern formation, coherent structures, solitons, waves.'},
+    "NLIN_SI": {'description': 'Integrable PDEs, integrable ODEs, Painleve analysis, integrable discrete systems.'},
+    "NUCL_EX": {'description': 'Experimental results from nuclear physics laboratories, such as heavy-ion collisions.'},
+    "NUCL_TH": {'description': 'Theory of nuclear structure and low-energy reactions, including heavy-ion physics.'},
+    "PHYSICS_ACC_PH": {'description': 'Accelerator theory and target design, beam physics, secondary beams, photon sources.'},
+    "PHYSICS_AO_PH": {'description': 'Atmospheric and oceanic processes, climate dynamics, waves, boundary layer physics.'},
+    "PHYSICS_APP_PH": {'description': 'Applications of physics to new technology, medical physics, instrumentation.'},
+    "PHYSICS_ATM_CLUS": {'description': 'Binding, structure, and properties of clusters, nanoparticles.'},
+    "PHYSICS_ATOM_PH": {'description': 'Atomic and molecular structure, spectra, collisions, and data. Ultrafast physics, molecular physics.'},
+    "PHYSICS_BIO_PH": {'description': 'Molecular biophysics, cellular biophysics, single molecule biophysics.'},
+    "PHYSICS_CHEM_PH": {'description': 'Experimental, methods, and results in chemical physics and molecular dynamics.'},
+    "PHYSICS_CLASS_PH": {'description': 'Newtonian and Lagrangian mechanics, electromagnetism, thermodynamics, special relativity.'},
+    "PHYSICS_COMP_PH": {'description': 'All aspects of computational science applied to physics problems.'},
+    "PHYSICS_DATA_AN": {'description': 'Methods, software, and results in physics data analysis.'},
+    "PHYSICS_ED_PH": {'description': 'Physics teaching and learning research.'},
+    "PHYSICS_FLU_DYN": {'description': 'Turbulence, instabilities, incompressible and compressible flows, boundary layers.'},
+    "PHYSICS_GEN_PH": {'description': 'General physics that does not fit elsewhere.'},
+    "PHYSICS_GEO_PH": {'description': 'Computational and theoretical geophysics including seismology, potential theory.'},
+    "PHYSICS_HIST_PH": {'description': 'History and philosophy of all aspects of physics.'},
+    "PHYSICS_INS_DET": {'description': 'Instrumentation and detectors for accelerator, astro-, geo-, or particle physics.'},
+    "PHYSICS_MED_PH": {'description': 'Radiation therapy, biomedical imaging, health physics.'},
+    "PHYSICS_OPTICS": {'description': 'Adaptive optics, polarimetry, quantum optics, ultrafast optics, photonics.'},
+    "PHYSICS_PLASM_PH": {'description': 'Fundamental plasma physics, magnetic and inertial confinement, astrophysical plasmas.'},
+    "PHYSICS_POP_PH": {'description': 'General physics topics for a broad audience.'},
+    "PHYSICS_SOC_PH": {'description': 'Sociophysics, structure and dynamics of societies, opinion dynamics.'},
+    "PHYSICS_SPACE_PH": {'description': 'Space plasma physics, magnetospheric physics, solar wind, cosmic rays.'},
+    "Q_BIO_BM": {'description': 'DNA, RNA, proteins, lipids, small molecules; molecular structure and dynamics; molecular engineering.'},
+    "Q_BIO_CB": {'description': 'Cell-cell signaling, morphogenesis, development; cell division/cycle; immunology.'},
+    "Q_BIO_GN": {'description': 'DNA sequencing and assembly; gene finding; genome structure, organization, and regulation.'},
+    "Q_BIO_MN": {'description': 'Gene regulation, signal transduction, metabolic networks, kinetics, synthetic biology.'},
+    "Q_BIO_NC": {'description': 'Synapse, receptor dynamics, learning, neural coding, neuroinformatics.'},
+    "Q_BIO_OT": {'description': 'Work in quantitative biology that does not fit in the other q-bio classifications.'},
+    "Q_BIO_PE": {'description': 'Population dynamics, spatio-temporal evolution, migration, phylogeny, biodiversity.'},
+    "Q_BIO_QM": {'description': 'Research papers with experimental, numerical, or statistical contributions of value to biologists.'},
+    "Q_BIO_SC": {'description': 'Subcellular structures, molecular motors, organelle transport, packaging.'},
+    "Q_BIO_TO": {'description': 'Blood flow, biomechanics, tumor growth, tissue morphogenesis.'},
+    "Q_FIN_CP": {'description': 'Monte Carlo, PDE, and other numerical methods with applications to quantitative finance.'},
+    "Q_FIN_EC": {'description': 'General economics topics with quantitative approaches.'},
+    "Q_FIN_GN": {'description': 'General quantitative financial methodologies covering multiple sub-fields.'},
+    "Q_FIN_MF": {'description': 'Mathematical and analytical methods in finance, stochastic methods, hedging strategies.'},
+    "Q_FIN_PM": {'description': 'Security selection and optimization, capital allocation, investment strategies.'},
+    "Q_FIN_PR": {'description': 'Valuation and hedging of financial securities, their derivatives, and structured products.'},
+    "Q_FIN_RM": {'description': 'Measurement and management of financial risks in trading, banking, insurance.'},
+    "Q_FIN_ST": {'description': 'Statistical, econometric methods applied to financial markets.'},
+    "Q_FIN_TR": {'description': 'Market microstructure, algorithmic trading, order book dynamics.'},
+    "STAT_AP": {'description': 'Biology, education, epidemiology, engineering, environmental sciences, medical, physical sciences.'},
+    "STAT_CO": {'description': 'Algorithms, computational methods, simulation, visualization.'},
+    "STAT_ME": {'description': 'Design, surveys, model selection, regression, testing, time series.'},
+    "STAT_ML": {'description': 'Covers machine learning papers with a statistical or theoretical grounding.'},
+    "STAT_OT": {'description': 'Work in statistics that does not fit into the other stat-* classifications.'},
+    "STAT_TH": {'description': 'Asymptotics, Bayesian inference, decision theory, estimation, foundations, inference.'},
 }
 
 class Fake(ConfiguredBaseModel):
