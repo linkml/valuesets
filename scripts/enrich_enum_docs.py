@@ -12,9 +12,7 @@ import sys
 import yaml
 from pathlib import Path
 
-# Add src to path for imports
-sys.path.insert(0, str(Path(__file__).parent.parent))
-
+# NOTE: Ensure this script is run with the package root in PYTHONPATH, or install the package in editable mode (`pip install -e .`)
 from src.valuesets.utils.query_describer import describe_enum_query, fetch_label_from_ols
 
 
