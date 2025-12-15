@@ -10,6 +10,10 @@ A collection of commonly used value sets
 - [Agentic IDE Support](how-to-guides/agentic-ide-support.md)
 - [Sync UniProt Species](how-to-guides/sync-uniprot-species.md)
 
+## Explanations
+
+- [Prefer Binary Enums Over Booleans](explanations/binary-enums-vs-booleans.md) - Why two-element enums are often better than boolean types
+
 Note: this schema consists ONLY of enums, so it is normal
 that classes and slots are empty.
 
