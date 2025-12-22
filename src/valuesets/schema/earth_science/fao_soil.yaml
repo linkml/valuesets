@@ -45,13 +45,15 @@ enums:
           fao_id: 2
           color_rgb: "255,255,190"
       ANDOSOLS:
+        title: andosol
         description: Andosols - soils developed from volcanic ash with unique physical and chemical properties
-        meaning: ENVO:00002030
+        meaning: ENVO:00002232
         annotations:
           symbol: AN
           fao_id: 3
           color_rgb: "254,0,0"
       ARENOSOLS:
+        title: arenosol
         description: Arenosols - sandy soils with weak horizon development
         meaning: ENVO:00002229
         annotations:
@@ -83,15 +85,17 @@ enums:
           fao_id: 8
           color_rgb: "254,190,0"
       CRYOSOLS:
+        title: cryosol
         description: Cryosols - soils formed under permafrost conditions
-        meaning: ENVO:00000134
+        meaning: ENVO:00002236
         annotations:
           symbol: CR
           fao_id: 9
           color_rgb: "75,61,172"
       FLUVISOLS:
+        title: fluvisol
         description: Fluvisols - soils developed from recent alluvial deposits
-        meaning: ENVO:00002269
+        meaning: ENVO:00002273
         annotations:
           symbol: FL
           fao_id: 10
@@ -103,6 +107,7 @@ enums:
           fao_id: 11
           color_rgb: "255,135,33"
       GLACIERS:
+        title: glacier
         description: Glaciers - areas covered by permanent ice
         meaning: ENVO:00000133
         annotations:
@@ -110,8 +115,9 @@ enums:
           fao_id: 12
           color_rgb: "212,212,212"
       GLEYSOLS:
+        title: gleysol
         description: Gleysols - soils with permanent or temporary waterlogging
-        meaning: ENVO:00002234
+        meaning: ENVO:00002244
         annotations:
           symbol: GL
           fao_id: 13
@@ -123,6 +129,7 @@ enums:
           fao_id: 14
           color_rgb: "254,246,164"
       HISTOSOLS:
+        title: peat soil
         description: Histosols - soils formed from organic materials (peat soils)
         meaning: ENVO:00005774
         annotations:
@@ -197,8 +204,9 @@ enums:
           fao_id: 27
           color_rgb: "254,194,194"
       SOLONCHAKS:
+        title: solonchak
         description: Solonchaks - soils with high salt content
-        meaning: ENVO:00005767
+        meaning: ENVO:00002252
         annotations:
           symbol: SC
           fao_id: 28
@@ -228,15 +236,17 @@ enums:
           fao_id: 32
           color_rgb: "115,142,127"
       VERTISOLS:
+        title: vertisol
         description: Vertisols - clay-rich soils with shrink-swell properties
-        meaning: ENVO:00002273
+        meaning: ENVO:00002254
         annotations:
           symbol: VR
           fao_id: 33
           color_rgb: "197,0,255"
       OPEN_INLAND_WATER:
+        title: fresh water body
         description: Open inland water - areas covered by permanent water bodies
-        meaning: ENVO:00000873
+        meaning: ENVO:01001320
         annotations:
           symbol: WR
           fao_id: 34

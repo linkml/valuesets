@@ -10,6 +10,7 @@ prefixes:
   CHEBI: http://purl.obolibrary.org/obo/CHEBI_
   ExO: http://purl.obolibrary.org/obo/ExO_
   ECTO: http://purl.obolibrary.org/obo/ECTO_
+  FOODON: http://purl.obolibrary.org/obo/FOODON_
   valuesets: https://w3id.org/valuesets/
   orcid: https://orcid.org/
   valuesets_meta: https://w3id.org/valuesets/meta/
@@ -54,6 +55,9 @@ slots:
   study_population:
     description: Specific population groups in exposure studies
     range: StudyPopulationEnum
+  hhear_exposure_assessed:
+    description: Environmental exposures assessed in HHEAR studies
+    range: HHEARExposureAssessedEnum
 enums:
   AirPollutantEnum:
     title: Air Pollutant
@@ -603,6 +607,133 @@ enums:
         description: Control group participants without the disease or phenotype of interest
         meaning: ExO:0000121
         title: controls for disease or phenotype
+  HHEARExposureAssessedEnum:
+    title: HHEAR Study Environmental Exposures Assessed
+    description: >-
+      Categories of environmental exposures assessed in Human Health Exposure
+      Analysis Resource (HHEAR) studies. Based on the HHEAR value set
+      HHEARVS:00008 (Study Environmental Exposures Assessed).
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      AIR_POLLUTANT:
+        title: exposure to air pollution
+        description: Airborne pollutants including particulate matter and gaseous contaminants
+        meaning: ECTO:8000036
+      ALKYL_PHOSPHATE_PESTICIDE_METABOLITE:
+        title: exposure to pesticide
+        description: Metabolites of organophosphate pesticides
+        meaning: ECTO:0000530
+        related_mappings:
+        - CHEBI:25703
+      ALLERGEN:
+        title: exposure to allergen
+        description: Substances that can cause allergic reactions
+        meaning: ECTO:0000726
+        exact_mappings:
+        - NCIT:C62651
+      ARSENIC_SPECIES:
+        title: exposure to arsenic
+        description: Various forms of arsenic compounds
+        meaning: ECTO:9000032
+      BROMINATED_FLAME_RETARDANT:
+        title: exposure to brominated flame retardant
+        description: Organobromine compounds used as flame retardants
+        meaning: ECTO:9002162
+        exact_mappings:
+        - CHEBI:172368
+      BUILT_ENVIRONMENT:
+        title: Built Environment
+        description: Human-made surroundings including buildings and infrastructure
+        meaning: ExO:0000048
+      ENVIRONMENTAL_PHENOL:
+        title: exposure to phenol
+        description: Phenolic compounds in the environment
+        meaning: ECTO:9000071
+        exact_mappings:
+        - CHEBI:15882
+      FOOD_PACKAGING:
+        title: Food Packaging
+        description: Materials used to package food products
+        meaning: FOODON:03490100
+      MERCURY_SPECIES:
+        title: exposure to mercury
+        description: Various forms of mercury compounds
+        meaning: ECTO:0001571
+      METAL:
+        title: exposure to heavy metal
+        description: Metallic elements and compounds
+        meaning: ECTO:9002163
+      ORGANOCHLORINE_COMPOUND:
+        title: exposure to organochlorine compound
+        description: Organic compounds containing chlorine
+        meaning: ECTO:0001152
+        exact_mappings:
+        - CHEBI:36683
+      ORGANOPHOSPHORUS_FLAME_RETARDANT:
+        title: exposure to organophosphorus compound
+        description: Organophosphorus compounds used as flame retardants
+        meaning: ECTO:9000284
+      PARABEN:
+        title: exposure to paraben
+        description: 4-hydroxybenzoate esters used as preservatives
+        meaning: ECTO:9000930
+        exact_mappings:
+        - CHEBI:85122
+      PERFLUOROALKYL_AND_POLYFLUOROALKYL_SUBSTANCE:
+        title: exposure to perfluoroalkyl substance
+        description: PFAS compounds including PFOA and PFOS
+        meaning: ECTO:9002160
+        aliases:
+        - PFAS
+        exact_mappings:
+        - CHEBI:172397
+      PESTICIDE:
+        title: exposure to pesticide
+        description: Substances used to control pests
+        meaning: ECTO:0000530
+        exact_mappings:
+        - CHEBI:25944
+      PHTHALATE:
+        title: exposure to phthalate
+        description: Phthalic acid esters used as plasticizers
+        meaning: ECTO:9000522
+        exact_mappings:
+        - CHEBI:26092
+      POLYBROMINATED_DIPHENYL_ETHER:
+        title: exposure to polybromodiphenyl ether
+        description: Brominated aromatic ethers used as flame retardants
+        meaning: ECTO:9001619
+        aliases:
+        - PBDE
+        exact_mappings:
+        - CHEBI:134094
+      TOBACCO_METABOLITE:
+        title: exposure to tobacco
+        description: Metabolites of tobacco and nicotine
+        meaning: ECTO:0100013
+      TOBACCO_SMOKE_EXPOSURE:
+        title: exposure to tobacco smoking
+        description: Exposure to primary or secondhand tobacco smoke
+        meaning: ECTO:6000029
+      VOLATILE_ORGANIC_COMPOUND:
+        title: exposure to volatile organic compound
+        description: Organic compounds with high vapor pressure
+        meaning: ECTO:9001621
+        aliases:
+        - VOC
+        exact_mappings:
+        - CHEBI:134179
+      WEATHER:
+        title: exposure to weather
+        description: Atmospheric conditions and weather-related exposures
+        meaning: ECTO:1000020
+        exact_mappings:
+        - NCIT:C170964
 license: MIT
 see_also:
 - https://linkml.github.io/valuesets

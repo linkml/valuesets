@@ -372,6 +372,58 @@ StudyPopulationEnum._metadata = {
     "CONTROLS": {'description': 'Control group participants without the disease or phenotype of interest', 'meaning': 'ExO:0000121'},
 }
 
+class HHEARExposureAssessedEnum(RichEnum):
+    """
+    Categories of environmental exposures assessed in Human Health Exposure Analysis Resource (HHEAR) studies. Based on the HHEAR value set HHEARVS:00008 (Study Environmental Exposures Assessed).
+    """
+    # Enum members
+    AIR_POLLUTANT = "AIR_POLLUTANT"
+    ALKYL_PHOSPHATE_PESTICIDE_METABOLITE = "ALKYL_PHOSPHATE_PESTICIDE_METABOLITE"
+    ALLERGEN = "ALLERGEN"
+    ARSENIC_SPECIES = "ARSENIC_SPECIES"
+    BROMINATED_FLAME_RETARDANT = "BROMINATED_FLAME_RETARDANT"
+    BUILT_ENVIRONMENT = "BUILT_ENVIRONMENT"
+    ENVIRONMENTAL_PHENOL = "ENVIRONMENTAL_PHENOL"
+    FOOD_PACKAGING = "FOOD_PACKAGING"
+    MERCURY_SPECIES = "MERCURY_SPECIES"
+    METAL = "METAL"
+    ORGANOCHLORINE_COMPOUND = "ORGANOCHLORINE_COMPOUND"
+    ORGANOPHOSPHORUS_FLAME_RETARDANT = "ORGANOPHOSPHORUS_FLAME_RETARDANT"
+    PARABEN = "PARABEN"
+    PERFLUOROALKYL_AND_POLYFLUOROALKYL_SUBSTANCE = "PERFLUOROALKYL_AND_POLYFLUOROALKYL_SUBSTANCE"
+    PESTICIDE = "PESTICIDE"
+    PHTHALATE = "PHTHALATE"
+    POLYBROMINATED_DIPHENYL_ETHER = "POLYBROMINATED_DIPHENYL_ETHER"
+    TOBACCO_METABOLITE = "TOBACCO_METABOLITE"
+    TOBACCO_SMOKE_EXPOSURE = "TOBACCO_SMOKE_EXPOSURE"
+    VOLATILE_ORGANIC_COMPOUND = "VOLATILE_ORGANIC_COMPOUND"
+    WEATHER = "WEATHER"
+
+# Set metadata after class creation
+HHEARExposureAssessedEnum._metadata = {
+    "AIR_POLLUTANT": {'description': 'Airborne pollutants including particulate matter and gaseous contaminants', 'meaning': 'ECTO:8000036'},
+    "ALKYL_PHOSPHATE_PESTICIDE_METABOLITE": {'description': 'Metabolites of organophosphate pesticides', 'meaning': 'ECTO:0000530'},
+    "ALLERGEN": {'description': 'Substances that can cause allergic reactions', 'meaning': 'ECTO:0000726'},
+    "ARSENIC_SPECIES": {'description': 'Various forms of arsenic compounds', 'meaning': 'ECTO:9000032'},
+    "BROMINATED_FLAME_RETARDANT": {'description': 'Organobromine compounds used as flame retardants', 'meaning': 'ECTO:9002162'},
+    "BUILT_ENVIRONMENT": {'description': 'Human-made surroundings including buildings and infrastructure', 'meaning': 'ExO:0000048'},
+    "ENVIRONMENTAL_PHENOL": {'description': 'Phenolic compounds in the environment', 'meaning': 'ECTO:9000071'},
+    "FOOD_PACKAGING": {'description': 'Materials used to package food products', 'meaning': 'FOODON:03490100'},
+    "MERCURY_SPECIES": {'description': 'Various forms of mercury compounds', 'meaning': 'ECTO:0001571'},
+    "METAL": {'description': 'Metallic elements and compounds', 'meaning': 'ECTO:9002163'},
+    "ORGANOCHLORINE_COMPOUND": {'description': 'Organic compounds containing chlorine', 'meaning': 'ECTO:0001152'},
+    "ORGANOPHOSPHORUS_FLAME_RETARDANT": {'description': 'Organophosphorus compounds used as flame retardants', 'meaning': 'ECTO:9000284'},
+    "PARABEN": {'description': '4-hydroxybenzoate esters used as preservatives', 'meaning': 'ECTO:9000930'},
+    "PERFLUOROALKYL_AND_POLYFLUOROALKYL_SUBSTANCE": {'description': 'PFAS compounds including PFOA and PFOS', 'meaning': 'ECTO:9002160', 'aliases': ['PFAS']},
+    "PESTICIDE": {'description': 'Substances used to control pests', 'meaning': 'ECTO:0000530'},
+    "PHTHALATE": {'description': 'Phthalic acid esters used as plasticizers', 'meaning': 'ECTO:9000522'},
+    "POLYBROMINATED_DIPHENYL_ETHER": {'description': 'Brominated aromatic ethers used as flame retardants', 'meaning': 'ECTO:9001619', 'aliases': ['PBDE']},
+    "TOBACCO_METABOLITE": {'description': 'Metabolites of tobacco and nicotine', 'meaning': 'ECTO:0100013'},
+    "TOBACCO_SMOKE_EXPOSURE": {'description': 'Exposure to primary or secondhand tobacco smoke', 'meaning': 'ECTO:6000029'},
+    "VOLATILE_ORGANIC_COMPOUND": {'description': 'Organic compounds with high vapor pressure', 'meaning': 'ECTO:9001621', 'aliases': ['VOC']},
+    "WEATHER": {'description': 'Atmospheric conditions and weather-related exposures', 'meaning': 'ECTO:1000020'},
+}
+
 __all__ = [
     "AirPollutantEnum",
     "PesticideTypeEnum",
@@ -386,4 +438,5 @@ __all__ = [
     "ExposureTransportPathEnum",
     "ExposureFrequencyEnum",
     "StudyPopulationEnum",
+    "HHEARExposureAssessedEnum",
 ]

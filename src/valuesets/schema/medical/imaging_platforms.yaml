@@ -1,0 +1,461 @@
+name: imaging_platforms
+title: Medical Imaging Platform Value Sets
+description: >-
+  Value sets for medical imaging platforms and instruments including MRI scanners,
+  microscopy systems, and other imaging devices. Organized by manufacturer and
+  field strength where applicable.
+id: https://w3id.org/valuesets/medical/imaging_platforms
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  valuesets: https://w3id.org/valuesets/
+  NCIT: http://purl.obolibrary.org/obo/NCIT_
+  OBI: http://purl.obolibrary.org/obo/OBI_
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+default_prefix: valuesets
+slots:
+  mri_platform:
+    description: MRI scanner platform
+    range: MRIPlatformEnum
+  microscopy_platform:
+    description: Microscopy imaging platform
+    range: MicroscopyPlatformEnum
+  imaging_system_platform:
+    description: Other imaging system platform
+    range: ImagingSystemPlatformEnum
+enums:
+  MRIPlatformEnum:
+    title: MRI Scanner Platforms
+    description: >-
+      Specific MRI scanner models from major manufacturers. Includes field strength
+      information (1.5T, 3T, 7T) for proper data interpretation.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    see_also:
+    - https://nf-osi.github.io/nf-metadata-dictionary/
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      # Siemens 1.5T
+      SIEMENS_AVANTO_1_5T:
+        description: Siemens Magnetom Avanto 1.5T MRI scanner
+        aliases:
+        - Siemens Avanto 1.5T
+        annotations:
+          manufacturer: Siemens
+          field_strength: 1.5T
+      SIEMENS_AVANTO_FIT_1_5T:
+        description: Siemens Magnetom Avanto Fit 1.5T MRI scanner
+        aliases:
+        - Siemens Avanto Fit 1.5T
+        annotations:
+          manufacturer: Siemens
+          field_strength: 1.5T
+      SIEMENS_AERA_1_5T:
+        description: Siemens Magnetom Aera 1.5T MRI scanner
+        aliases:
+        - Siemens Magnetom Aera 1.5T
+        annotations:
+          manufacturer: Siemens
+          field_strength: 1.5T
+      SIEMENS_ESPREE_1_5T:
+        description: Siemens Magnetom Espree 1.5T MRI scanner
+        aliases:
+        - Siemens Magnetom Espree 1.5T
+        annotations:
+          manufacturer: Siemens
+          field_strength: 1.5T
+      # Siemens 3T
+      SIEMENS_TRIO_3T:
+        description: Siemens Magnetom Trio 3T MRI scanner
+        aliases:
+        - Siemens Magnetom Trio 3T
+        annotations:
+          manufacturer: Siemens
+          field_strength: 3T
+      SIEMENS_VERIO_3T:
+        description: Siemens Magnetom Verio 3T MRI scanner
+        aliases:
+        - Siemens Magnetom Verio 3T
+        annotations:
+          manufacturer: Siemens
+          field_strength: 3T
+      SIEMENS_SKYRA_3T:
+        description: Siemens Magnetom Skyra 3T MRI scanner
+        aliases:
+        - Siemens Magnetom Skyra 3T
+        annotations:
+          manufacturer: Siemens
+          field_strength: 3T
+      SIEMENS_PRISMA_3T:
+        description: Siemens Magnetom Prisma 3T MRI scanner
+        aliases:
+        - Siemens Magnetom Prisma 3T
+        annotations:
+          manufacturer: Siemens
+          field_strength: 3T
+      SIEMENS_PRISMA_FIT_3T:
+        description: Siemens Magnetom Prisma Fit 3T MRI scanner
+        aliases:
+        - Siemens Magnetom Prisma Fit 3T
+        annotations:
+          manufacturer: Siemens
+          field_strength: 3T
+      # GE 1.5T
+      GE_SIGNA_EXCITE_1_5T:
+        description: GE Signa Excite 1.5T MRI scanner
+        aliases:
+        - GE Signa Excite 1.5T
+        annotations:
+          manufacturer: GE Healthcare
+          field_strength: 1.5T
+      GE_SIGNA_GENESIS_1_5T:
+        description: GE Signa Genesis 1.5T MRI scanner
+        aliases:
+        - GE Signa Genesis 1.5T
+        annotations:
+          manufacturer: GE Healthcare
+          field_strength: 1.5T
+      GE_SIGNA_HDXT_1_5T:
+        description: GE Signa HDxt 1.5T MRI scanner
+        aliases:
+        - GE Signa HDxt 1.5T
+        annotations:
+          manufacturer: GE Healthcare
+          field_strength: 1.5T
+      GE_OPTIMA_MR450W_1_5T:
+        description: GE Optima MR450W 1.5T MRI scanner
+        aliases:
+        - GE Optima MR450W 1.5T
+        annotations:
+          manufacturer: GE Healthcare
+          field_strength: 1.5T
+      # GE 3T
+      GE_SIGNA_HDXT_3T:
+        description: GE Signa HDxt 3T MRI scanner
+        aliases:
+        - GE Signa HDxt 3T
+        annotations:
+          manufacturer: GE Healthcare
+          field_strength: 3T
+      GE_DISCOVERY_MR750_3T:
+        description: GE Discovery MR750 3T MRI scanner
+        aliases:
+        - GE Discovery MR750 3T
+        annotations:
+          manufacturer: GE Healthcare
+          field_strength: 3T
+      GE_SIGNA_PREMIER_3T:
+        description: GE Signa Premier 3T MRI scanner
+        aliases:
+        - GE Signa Premier 3T
+        annotations:
+          manufacturer: GE Healthcare
+          field_strength: 3T
+      # Philips 1.0T
+      PHILIPS_PANORAMA_1_0T:
+        description: Philips Panorama 1.0T MRI scanner
+        aliases:
+        - Philips Panorama 1.0T
+        annotations:
+          manufacturer: Philips Healthcare
+          field_strength: 1.0T
+      # Philips 1.5T
+      PHILIPS_ACHIEVA_1_5T:
+        description: Philips Achieva 1.5T MRI scanner
+        aliases:
+        - Philips Achieva 1.5T
+        annotations:
+          manufacturer: Philips Healthcare
+          field_strength: 1.5T
+      PHILIPS_INGENIA_1_5T:
+        description: Philips Ingenia 1.5T MRI scanner
+        aliases:
+        - Philips Ingenia 1.5T
+        annotations:
+          manufacturer: Philips Healthcare
+          field_strength: 1.5T
+      # Philips 3T
+      PHILIPS_ACHIEVA_3T:
+        description: Philips Achieva 3T MRI scanner
+        aliases:
+        - Philips Achieva 3T
+        annotations:
+          manufacturer: Philips Healthcare
+          field_strength: 3T
+      PHILIPS_INTERA_ACHIEVA_3T:
+        description: Philips Intera Achieva 3T MRI scanner
+        aliases:
+        - Philips Intera Achieva 3T
+        annotations:
+          manufacturer: Philips Healthcare
+          field_strength: 3T
+      PHILIPS_INGENIA_3T:
+        description: Philips Ingenia 3T MRI scanner
+        aliases:
+        - Philips Ingenia 3T
+        annotations:
+          manufacturer: Philips Healthcare
+          field_strength: 3T
+      # Hitachi
+      HITACHI_ECHELON_1_5T:
+        description: Hitachi Echelon 1.5T MRI scanner
+        aliases:
+        - Hitachi Echelon 1.5T
+        annotations:
+          manufacturer: Hitachi
+          field_strength: 1.5T
+      HITACHI_OASIS_1_2T:
+        description: Hitachi Oasis 1.2T MRI scanner
+        aliases:
+        - Hitachi Oasis 1.2T
+        annotations:
+          manufacturer: Hitachi
+          field_strength: 1.2T
+      # Toshiba
+      TOSHIBA_VANTAGE_TITAN_1_5T:
+        description: Toshiba Vantage Titan 1.5T MRI scanner
+        aliases:
+        - Toshiba Vantage Titan 1.5T
+        annotations:
+          manufacturer: Toshiba/Canon
+          field_strength: 1.5T
+      # High field research
+      BRUKER_BIOSPEC_7T:
+        description: Bruker Biospec 7T research MRI scanner
+        aliases:
+        - 7T Bruker Biospec
+        annotations:
+          manufacturer: Bruker
+          field_strength: 7T
+          type: research
+
+  MicroscopyPlatformEnum:
+    title: Microscopy Platforms
+    description: Microscopy imaging systems and platforms
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    see_also:
+    - https://nf-osi.github.io/nf-metadata-dictionary/
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      ZEISS_LSM_700:
+        description: Zeiss LSM 700 confocal microscope
+        aliases:
+        - Zeiss LSM 700
+        annotations:
+          manufacturer: Zeiss
+          type: confocal
+      ZEISS_LSM_980:
+        description: Zeiss LSM 980 confocal microscope
+        aliases:
+        - Zeiss LSM 980
+        annotations:
+          manufacturer: Zeiss
+          type: confocal
+      ZEISS_LSM:
+        description: Zeiss LSM confocal microscope (general)
+        aliases:
+        - Zeiss LSM
+        annotations:
+          manufacturer: Zeiss
+          type: confocal
+      LEICA_APERIO_AT2:
+        description: Leica Aperio AT2 whole slide scanner
+        aliases:
+        - Leica Aperio AT2
+        annotations:
+          manufacturer: Leica
+          type: slide scanner
+      APERIO_CS2:
+        description: Aperio CS2 slide scanner
+        aliases:
+        - Aperio CS2
+        annotations:
+          manufacturer: Leica
+          type: slide scanner
+      LEICA_MZ16:
+        description: Leica MZ16 stereomicroscope
+        aliases:
+        - Leica MZ16
+        annotations:
+          manufacturer: Leica
+          type: stereomicroscope
+      LEICA_S9:
+        description: Leica S9 stereomicroscope
+        aliases:
+        - Leica S9 Stereomicroscope
+        annotations:
+          manufacturer: Leica
+          type: stereomicroscope
+      OLYMPUS_IX73:
+        description: Olympus IX73 inverted microscope
+        aliases:
+        - Olympus IX73
+        annotations:
+          manufacturer: Olympus
+          type: inverted fluorescence
+      OLYMPUS_DP80:
+        description: Olympus DP80 camera system
+        aliases:
+        - Olympus DP80
+        annotations:
+          manufacturer: Olympus
+          type: camera
+      PANNORAMIC_250_FLASH:
+        description: 3DHISTECH Pannoramic 250 Flash slide scanner
+        aliases:
+        - Pannoramic 250 Flash
+        annotations:
+          manufacturer: 3DHISTECH
+          type: slide scanner
+      PHILIPS_FEI_TECNAI_12:
+        description: Philips FEI Tecnai 12 electron microscope
+        aliases:
+        - Philips FEI Tecnai 12
+        annotations:
+          manufacturer: FEI/Thermo Fisher
+          type: TEM
+      ECHO_CONFOCAL:
+        description: ECHO confocal imaging system
+        aliases:
+        - ECHO Confocal
+        annotations:
+          type: confocal
+
+  ImagingSystemPlatformEnum:
+    title: Other Imaging System Platforms
+    description: Other imaging systems including plate readers, flow cytometers, and specialized systems
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    see_also:
+    - https://nf-osi.github.io/nf-metadata-dictionary/
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      # Plate readers
+      ENVISION_MULTIPLATE_READER:
+        description: PerkinElmer EnVision 2103 Multiplate Reader
+        aliases:
+        - EnVision 2103 Multiplate Reader
+        annotations:
+          manufacturer: PerkinElmer
+          type: plate reader
+      SPECTRAMAX_M_SERIES:
+        description: Molecular Devices SpectraMax M Series
+        aliases:
+        - Spectramax M Series
+        annotations:
+          manufacturer: Molecular Devices
+          type: plate reader
+      VARIOSKAN_LUX:
+        description: Thermo Scientific Varioskan LUX
+        aliases:
+        - Varioskan LUX
+        annotations:
+          manufacturer: Thermo Fisher
+          type: plate reader
+      PROMEGA_GLOMAX_DISCOVER:
+        description: Promega GloMax Discover
+        aliases:
+        - Promega GloMax Discover
+        annotations:
+          manufacturer: Promega
+          type: plate reader
+      # Flow cytometry
+      BD_FACS_CALIBUR:
+        description: BD FACS Calibur flow cytometer
+        aliases:
+        - BD FACS Calibur
+        annotations:
+          manufacturer: BD Biosciences
+          type: flow cytometer
+      BD_FACSSYMPHONY:
+        description: BD FACSymphony flow cytometer
+        aliases:
+        - BD FACSymphony
+        annotations:
+          manufacturer: BD Biosciences
+          type: flow cytometer
+      # In vivo imaging
+      IVIS_SPECTRUM:
+        description: PerkinElmer IVIS Spectrum In Vivo Imaging System
+        aliases:
+        - IVIS Spectrum In Vivo Imaging System
+        annotations:
+          manufacturer: PerkinElmer
+          type: in vivo bioluminescence
+      # Spatial omics
+      NANOSTRING_COSMX:
+        description: NanoString CosMx Spatial Molecular Imager
+        aliases:
+        - Nanostring CosMx
+        annotations:
+          manufacturer: NanoString
+          type: spatial transcriptomics
+      NANOSTRING_GEOMX:
+        description: NanoString GeoMx Digital Spatial Profiler
+        aliases:
+        - Nanostring GeoMx
+        annotations:
+          manufacturer: NanoString
+          type: spatial profiling
+      VISIUM_10X:
+        description: 10x Genomics Visium Spatial Gene Expression
+        aliases:
+        - 10x Visium Spatial Gene Expression
+        annotations:
+          manufacturer: 10x Genomics
+          type: spatial transcriptomics
+      # Specialized
+      VEVO_3100:
+        description: Vevo 3100 Imaging System (ultrasound)
+        aliases:
+        - Vevo 3100 Imaging System
+        annotations:
+          manufacturer: FUJIFILM VisualSonics
+          type: ultrasound
+      VENTANA_BENCHMARK_XT:
+        description: Ventana Benchmark XT automated staining
+        aliases:
+        - Ventana Benchmark XT
+        annotations:
+          manufacturer: Roche
+          type: automated IHC stainer
+      VECTRA_H1:
+        description: Vectra H1 3D Imaging System (Perkin Elmer)
+        aliases:
+        - Vectra H1 3D Imaging System
+        annotations:
+          manufacturer: PerkinElmer
+          type: multispectral imaging
+      XF24_EXTRACELLULAR_FLUX:
+        description: Agilent XF24 Extracellular Flux Analyzer
+        aliases:
+        - XF24 Extracellular Flux Analyzer
+        annotations:
+          manufacturer: Agilent/Seahorse
+          type: metabolic analyzer
+      LICOR_ODYSSEY_CLX:
+        description: LI-COR Odyssey CLx Imaging System
+        aliases:
+        - LI-COR Odyssey CLx
+        annotations:
+          manufacturer: LI-COR
+          type: western blot imager
+      BIORAD_CHEMIDOC_MP:
+        description: BioRad ChemiDoc MP Imaging System
+        aliases:
+        - BioRad ChemiDoc MP Imaging System
+        annotations:
+          manufacturer: BioRad
+          type: gel/western imager

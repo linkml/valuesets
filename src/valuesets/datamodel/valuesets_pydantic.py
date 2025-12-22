@@ -1166,7 +1166,7 @@ class SampleType(RichEnum):
 # Set metadata after class creation to avoid it becoming an enum member
 SampleType._metadata = {
     "PROTEIN": {'description': 'Purified protein sample', 'meaning': 'NCIT:C17021'},
-    "NUCLEIC_ACID": {'description': 'Nucleic acid sample (DNA or RNA)', 'meaning': 'NCIT:C813'},
+    "NUCLEIC_ACID": {'description': 'Nucleic acid sample (DNA or RNA)', 'meaning': 'NCIT:C706'},
     "PROTEIN_COMPLEX": {'description': 'Protein-protein or protein-nucleic acid complex', 'meaning': 'GO:0032991'},
     "MEMBRANE_PROTEIN": {'description': 'Membrane-associated protein sample', 'meaning': 'NCIT:C16837'},
     "VIRUS": {'description': 'Viral particle or capsid', 'meaning': 'NCIT:C14283'},
@@ -1196,13 +1196,13 @@ StructuralBiologyTechnique._metadata = {
     "CRYO_EM": {'description': 'Cryo-electron microscopy', 'meaning': 'CHMO:0002413', 'annotations': {'resolution_range': '2-30 Å typical', 'aliases': 'cryoEM, electron cryo-microscopy'}},
     "CRYO_ET": {'description': 'Cryo-electron tomography', 'meaning': 'MI:2338', 'annotations': {'resolution_range': '20-100 Å typical', 'aliases': 'cryoET, electron cryo-tomography'}},
     "X_RAY_CRYSTALLOGRAPHY": {'description': 'X-ray crystallography', 'meaning': 'CHMO:0000159', 'annotations': {'resolution_range': '1-4 Å typical', 'aliases': 'XRC, macromolecular crystallography'}},
-    "NEUTRON_CRYSTALLOGRAPHY": {'description': 'Neutron crystallography', 'meaning': 'CHMO:0000175', 'annotations': {'advantages': 'hydrogen positions, deuteration studies'}},
+    "NEUTRON_CRYSTALLOGRAPHY": {'description': 'Neutron crystallography', 'meaning': 'CHMO:0000698', 'annotations': {'advantages': 'hydrogen positions, deuteration studies'}},
     "SAXS": {'description': 'Small-angle X-ray scattering', 'meaning': 'CHMO:0000204', 'annotations': {'information': 'low-resolution structure, conformational changes'}},
     "SANS": {'description': 'Small-angle neutron scattering', 'meaning': 'CHMO:0000184', 'annotations': {'advantages': 'contrast variation with deuteration'}},
-    "WAXS": {'description': 'Wide-angle X-ray scattering', 'meaning': 'CHMO:0000213'},
+    "WAXS": {'description': 'Wide-angle X-ray scattering', 'meaning': 'CHMO:0000207'},
     "NMR": {'description': 'Nuclear magnetic resonance spectroscopy', 'meaning': 'CHMO:0000591', 'annotations': {'information': 'solution structure, dynamics'}},
     "MASS_SPECTROMETRY": {'description': 'Mass spectrometry', 'meaning': 'CHMO:0000470', 'annotations': {'applications': 'native MS, crosslinking, HDX'}},
-    "NEGATIVE_STAIN_EM": {'description': 'Negative stain electron microscopy', 'meaning': 'FBbi:00000568', 'annotations': {'resolution_range': '15-30 Å typical'}},
+    "NEGATIVE_STAIN_EM": {'description': 'Negative stain electron microscopy', 'meaning': 'FBbi:00000399', 'annotations': {'resolution_range': '15-30 Å typical'}},
 }
 
 class CryoEMPreparationType(RichEnum):
@@ -1298,7 +1298,7 @@ class XRaySource(RichEnum):
 # Set metadata after class creation to avoid it becoming an enum member
 XRaySource._metadata = {
     "SYNCHROTRON": {'description': 'Synchrotron radiation source', 'meaning': 'CHMO:0001810', 'annotations': {'advantages': 'high intensity, tunable wavelength', 'brightness': '10^15-10^18 photons/s/mm²/mrad²'}},
-    "ROTATING_ANODE": {'description': 'Rotating anode generator', 'meaning': 'CHMO:0001107', 'annotations': {'power': '3-18 kW typical', 'target': 'copper, molybdenum common'}},
+    "ROTATING_ANODE": {'description': 'Rotating anode generator', 'annotations': {'power': '3-18 kW typical', 'target': 'copper, molybdenum common'}},
     "MICROFOCUS": {'description': 'Microfocus sealed tube', 'annotations': {'spot_size': '10-50 μm', 'applications': 'small crystals, in-house screening'}},
     "METAL_JET": {'description': 'Liquid metal jet source', 'annotations': {'advantages': 'higher power density, longer lifetime', 'metals': 'gallium, indium'}},
 }
@@ -1316,11 +1316,11 @@ class Detector(RichEnum):
 
 # Set metadata after class creation to avoid it becoming an enum member
 Detector._metadata = {
-    "DIRECT_ELECTRON": {'description': 'Direct electron detector (DED)', 'meaning': 'CHMO:0002837', 'annotations': {'examples': 'K2, K3, Falcon, DE-series', 'advantages': 'high DQE, fast readout'}},
-    "CCD": {'description': 'Charge-coupled device camera', 'meaning': 'CHMO:0002171', 'annotations': {'applications': 'legacy EM, some crystallography'}},
-    "CMOS": {'description': 'Complementary metal-oxide semiconductor detector', 'meaning': 'CHMO:0002836', 'annotations': {'advantages': 'fast readout, low noise'}},
+    "DIRECT_ELECTRON": {'description': 'Direct electron detector (DED)', 'annotations': {'examples': 'K2, K3, Falcon, DE-series', 'advantages': 'high DQE, fast readout'}},
+    "CCD": {'description': 'Charge-coupled device camera', 'meaning': 'CHMO:0002245', 'annotations': {'applications': 'legacy EM, some crystallography'}},
+    "CMOS": {'description': 'Complementary metal-oxide semiconductor detector', 'annotations': {'advantages': 'fast readout, low noise'}},
     "HYBRID_PIXEL": {'description': 'Hybrid pixel detector', 'annotations': {'examples': 'Pilatus, Eiger', 'advantages': 'photon counting, zero noise'}},
-    "PHOTOSTIMULABLE_PHOSPHOR": {'description': 'Photostimulable phosphor (image plate)', 'meaning': 'CHMO:0001069', 'annotations': {'applications': 'legacy crystallography'}},
+    "PHOTOSTIMULABLE_PHOSPHOR": {'description': 'Photostimulable phosphor (image plate)', 'annotations': {'applications': 'legacy crystallography'}},
 }
 
 class WorkflowType(RichEnum):
@@ -1375,14 +1375,14 @@ class FileFormat(RichEnum):
 
 # Set metadata after class creation to avoid it becoming an enum member
 FileFormat._metadata = {
-    "MRC": {'description': 'MRC format for EM density maps', 'meaning': 'EDAM:3842', 'annotations': {'extension': '.mrc, .map', 'applications': 'EM volumes, tomograms'}},
-    "TIFF": {'description': 'Tagged Image File Format', 'meaning': 'EDAM:3591', 'annotations': {'extension': '.tif, .tiff', 'applications': 'micrographs, general imaging'}},
-    "HDF5": {'description': 'Hierarchical Data Format 5', 'meaning': 'EDAM:3590', 'annotations': {'extension': '.h5, .hdf5', 'applications': 'large datasets, metadata storage'}},
-    "STAR": {'description': 'Self-defining Text Archival and Retrieval format', 'meaning': 'EDAM:3906', 'annotations': {'extension': '.star', 'applications': 'RELION metadata, particle parameters'}},
-    "PDB": {'description': 'Protein Data Bank coordinate format', 'meaning': 'EDAM:1476', 'annotations': {'extension': '.pdb', 'applications': 'atomic coordinates, legacy format'}},
-    "MMCIF": {'description': 'Macromolecular Crystallographic Information File', 'meaning': 'EDAM:1477', 'annotations': {'extension': '.cif', 'applications': 'atomic coordinates, modern PDB format'}},
-    "MTZ": {'description': 'MTZ reflection data format', 'meaning': 'EDAM:3816', 'annotations': {'extension': '.mtz', 'applications': 'crystallographic reflections, phases'}},
-    "CBF": {'description': 'Crystallographic Binary Format', 'meaning': 'EDAM:3874', 'annotations': {'extension': '.cbf', 'applications': 'detector images, diffraction data'}},
+    "MRC": {'description': 'MRC format for EM density maps', 'annotations': {'extension': '.mrc, .map', 'applications': 'EM volumes, tomograms'}},
+    "TIFF": {'description': 'Tagged Image File Format', 'meaning': 'EDAM:format_3591', 'annotations': {'extension': '.tif, .tiff', 'applications': 'micrographs, general imaging'}},
+    "HDF5": {'description': 'Hierarchical Data Format 5', 'meaning': 'EDAM:format_3590', 'annotations': {'extension': '.h5, .hdf5', 'applications': 'large datasets, metadata storage'}},
+    "STAR": {'description': 'Self-defining Text Archival and Retrieval format', 'annotations': {'extension': '.star', 'applications': 'RELION metadata, particle parameters'}},
+    "PDB": {'description': 'Protein Data Bank coordinate format', 'meaning': 'EDAM:format_1476', 'annotations': {'extension': '.pdb', 'applications': 'atomic coordinates, legacy format'}},
+    "MMCIF": {'description': 'Macromolecular Crystallographic Information File', 'meaning': 'EDAM:format_1477', 'annotations': {'extension': '.cif', 'applications': 'atomic coordinates, modern PDB format'}},
+    "MTZ": {'description': 'MTZ reflection data format', 'annotations': {'extension': '.mtz', 'applications': 'crystallographic reflections, phases'}},
+    "CBF": {'description': 'Crystallographic Binary Format', 'annotations': {'extension': '.cbf', 'applications': 'detector images, diffraction data'}},
     "DM3": {'description': 'Digital Micrograph format', 'annotations': {'extension': '.dm3, .dm4', 'applications': 'FEI/Thermo Fisher EM data'}},
     "SER": {'description': 'FEI series format', 'annotations': {'extension': '.ser', 'applications': 'FEI movie stacks'}},
 }
@@ -1528,9 +1528,9 @@ ProteinModificationType._metadata = {
     "UBIQUITINATION": {'description': 'Ubiquitination modification', 'meaning': 'MOD:01240'},
     "SUMOYLATION": {'description': 'SUMOylation modification', 'meaning': 'MOD:01149'},
     "HYDROXYLATION": {'description': 'Hydroxylation modification', 'meaning': 'MOD:00677'},
-    "LIPIDATION": {'description': 'Lipidation modification', 'meaning': 'MOD:00435'},
+    "LIPIDATION": {'description': 'Lipidation modification'},
     "PROTEOLYTIC_CLEAVAGE": {'description': 'Proteolytic cleavage', 'meaning': 'GO:0006508'},
-    "CROSSLINKING": {'description': 'Crosslinking modification', 'meaning': 'MOD:00276'},
+    "CROSSLINKING": {'description': 'Crosslinking modification', 'meaning': 'MOD:00033'},
 }
 
 class BiosafetyLevelEnum(RichEnum):
@@ -2441,6 +2441,46 @@ MouseDevelopmentalStage._metadata = {
     "P56_ADULT": {'description': 'Adult stage at 8 weeks (56 days) old. Fully mature adult mouse.', 'meaning': 'MmusDv:0000154'},
     "AGED_12_MONTHS": {'description': 'Middle aged stage for mice over 10 and under 18 months old. Shows progressive age-related changes.', 'meaning': 'MmusDv:0000135'},
     "THEILER_STAGE": {'description': 'Reference to any Theiler stage (TS1-TS28) which provides standardized morphological staging for mouse development.'},
+}
+
+class HumanAgeGroupEnum(RichEnum):
+    """
+    Simplified human age group categories based on MeSH classifications. Useful for cohort stratification and demographic reporting.
+    """
+    # Enum members
+    INFANT = "INFANT"
+    CHILD = "CHILD"
+    ADOLESCENT = "ADOLESCENT"
+    ADULT = "ADULT"
+
+# Set metadata after class creation to avoid it becoming an enum member
+HumanAgeGroupEnum._metadata = {
+    "INFANT": {'description': 'A child between 1 and 23 months of age', 'meaning': 'MESH:D007223', 'annotations': {'age_range': '1-23 months'}, 'aliases': ['Infant']},
+    "CHILD": {'description': 'A person 2 to 12 years of age', 'meaning': 'MESH:D002648', 'annotations': {'age_range': '2-12 years'}, 'aliases': ['Child']},
+    "ADOLESCENT": {'description': 'A person 13 to 18 years of age', 'meaning': 'MESH:D000293', 'annotations': {'age_range': '13-18 years'}, 'aliases': ['Adolescent', 'Teenager']},
+    "ADULT": {'description': 'A person having attained full growth or maturity. Adults are of 19 to 120 years of age', 'meaning': 'MESH:D000328', 'annotations': {'age_range': '19-120 years'}, 'aliases': ['Adult']},
+}
+
+class MousePostnatalAgeGroupEnum(RichEnum):
+    """
+    Postnatal mouse age groups using postnatal day (P) notation. Common categories used in laboratory research for developmental studies.
+    """
+    # Enum members
+    P0_P3_NEONATAL = "P0_P3_NEONATAL"
+    P4_P21_PREWEANING = "P4_P21_PREWEANING"
+    P21_P60_YOUNG_ADULT = "P21_P60_YOUNG_ADULT"
+    P60_P180_ADULT = "P60_P180_ADULT"
+    P180_P365_MIDDLE_AGED = "P180_P365_MIDDLE_AGED"
+    P365_PLUS_AGED = "P365_PLUS_AGED"
+
+# Set metadata after class creation to avoid it becoming an enum member
+MousePostnatalAgeGroupEnum._metadata = {
+    "P0_P3_NEONATAL": {'description': 'Neonatal stage from birth through postnatal day 3', 'annotations': {'postnatal_days': 'P0-P3', 'approximate_age': 'birth to day 3'}, 'aliases': ['P0-P3 Neonatal']},
+    "P4_P21_PREWEANING": {'description': 'Pre-weaning stage from postnatal days 4-21 (typical weaning age)', 'annotations': {'postnatal_days': 'P4-P21', 'approximate_age': 'days 4-21'}, 'aliases': ['P4-P21 Pre-weaning']},
+    "P21_P60_YOUNG_ADULT": {'description': 'Young adult stage from postnatal days 21-60 (3 weeks to 2 months)', 'annotations': {'postnatal_days': 'P21-P60', 'approximate_age': '3 weeks to 2 months'}, 'aliases': ['P21-P60 Young Adult']},
+    "P60_P180_ADULT": {'description': 'Adult stage from postnatal days 60-180 (2 to 6 months)', 'annotations': {'postnatal_days': 'P60-P180', 'approximate_age': '2 to 6 months'}, 'aliases': ['P60-P180 Adult']},
+    "P180_P365_MIDDLE_AGED": {'description': 'Middle-aged stage from postnatal days 180-365 (6 to 12 months)', 'annotations': {'postnatal_days': 'P180-P365', 'approximate_age': '6 to 12 months'}, 'aliases': ['P180-P365 Middle-Aged']},
+    "P365_PLUS_AGED": {'description': 'Aged stage from postnatal day 365 onwards (12+ months)', 'annotations': {'postnatal_days': 'P365+', 'approximate_age': '12+ months'}, 'aliases': ['P365+ Aged']},
 }
 
 class DayOfWeek(RichEnum):
@@ -4824,7 +4864,7 @@ class GeothermalApplication(RichEnum):
 
 # Set metadata after class creation to avoid it becoming an enum member
 GeothermalApplication._metadata = {
-    "ELECTRICITY_GENERATION": {'description': 'Use of geothermal resources for power generation through steam turbines or binary cycle plants.', 'meaning': 'ENVO:2000034'},
+    "ELECTRICITY_GENERATION": {'description': 'Use of geothermal resources for power generation through steam turbines or binary cycle plants.'},
     "DIRECT_USE_HEATING": {'description': 'Direct use of geothermal heat for space heating, district heating, or industrial processes.'},
     "GREENHOUSE_HEATING": {'description': 'Use of geothermal heat for agricultural greenhouses.'},
     "AQUACULTURE": {'description': 'Use of geothermal heat for fish farming and aquaculture.'},
@@ -4959,7 +4999,7 @@ class HydrogenApplication(RichEnum):
 HydrogenApplication._metadata = {
     "FUEL_CELL_VEHICLE": {'description': 'Use of hydrogen in fuel cells for transportation (cars, trucks, buses).', 'aliases': ['FCEV']},
     "FUEL_CELL_STATIONARY": {'description': 'Use of hydrogen in stationary fuel cells for power generation.'},
-    "INDUSTRIAL_FEEDSTOCK": {'description': 'Use of hydrogen as chemical feedstock for ammonia production, petroleum refining, and chemical synthesis.', 'meaning': 'CHEBI:18276'},
+    "INDUSTRIAL_FEEDSTOCK": {'description': 'Use of hydrogen as chemical feedstock for ammonia production, petroleum refining, and chemical synthesis.'},
     "STEEL_PRODUCTION": {'description': 'Use of hydrogen to reduce iron ore in steelmaking, replacing coal.', 'aliases': ['Green Steel']},
     "AMMONIA_SYNTHESIS": {'description': 'Use of hydrogen with nitrogen to produce ammonia for fertilizers.'},
     "METHANOL_SYNTHESIS": {'description': 'Use of hydrogen with CO2 to produce methanol.'},
@@ -5036,14 +5076,14 @@ class BiofuelType(RichEnum):
 # Set metadata after class creation to avoid it becoming an enum member
 BiofuelType._metadata = {
     "ETHANOL": {'description': 'Alcohol biofuel (C2H5OH) produced by fermentation of sugars or starches, or from cellulosic biomass.', 'meaning': 'CHEBI:16236', 'annotations': {'chemical_formula': 'C2H5OH'}, 'aliases': ['Fuel Ethanol', 'Bioethanol']},
-    "BIODIESEL": {'description': 'Fatty acid methyl esters (FAME) produced by transesterification of vegetable oils or animal fats.', 'meaning': 'MESH:D056804', 'annotations': {'production_method': 'transesterification'}, 'aliases': ['FAME']},
+    "BIODIESEL": {'description': 'Fatty acid methyl esters (FAME) produced by transesterification of vegetable oils or animal fats.', 'annotations': {'production_method': 'transesterification'}, 'aliases': ['FAME']},
     "RENEWABLE_DIESEL": {'description': 'Hydrocarbon diesel produced by hydrotreating lipids. Chemically identical to petroleum diesel.', 'annotations': {'drop_in_fuel': True}, 'aliases': ['Green Diesel', 'HVO', 'Hydrotreated Vegetable Oil']},
     "SUSTAINABLE_AVIATION_FUEL": {'description': 'Jet fuel produced from biomass or waste, meeting aviation fuel specifications.', 'annotations': {'drop_in_fuel': True}, 'aliases': ['SAF', 'Biojet']},
     "BIOGAS": {'description': 'Gaseous mixture of methane and CO2 produced by anaerobic digestion of organic matter.', 'annotations': {'methane_content_percent': '50-70'}, 'aliases': ['Raw Biogas']},
     "BIOMETHANE": {'description': 'Purified biogas upgraded to natural gas quality (>95% methane).', 'annotations': {'methane_content_percent': '95+', 'pipeline_quality': True}, 'aliases': ['Renewable Natural Gas', 'RNG']},
     "BIO_OIL": {'description': 'Liquid intermediate produced by pyrolysis or hydrothermal liquefaction of biomass.', 'annotations': {'intermediate': True}, 'aliases': ['Pyrolysis Oil']},
-    "SYNGAS": {'description': 'Synthesis gas (CO + H2) produced by gasification of biomass.', 'meaning': 'CHMO:0001501', 'annotations': {'intermediate': True}, 'aliases': ['Synthesis Gas']},
-    "BUTANOL": {'description': 'Four-carbon alcohol biofuel with higher energy density than ethanol.', 'meaning': 'CHEBI:28885', 'annotations': {'chemical_formula': 'C4H9OH'}},
+    "SYNGAS": {'description': 'Synthesis gas (CO + H2) produced by gasification of biomass.', 'annotations': {'intermediate': True}, 'aliases': ['Synthesis Gas', 'gasification']},
+    "BUTANOL": {'description': 'Four-carbon alcohol biofuel with higher energy density than ethanol.', 'meaning': 'CHEBI:28885', 'annotations': {'chemical_formula': 'C4H9OH'}, 'aliases': ['Biobutanol']},
     "METHANOL": {'description': 'Methanol produced from biomass-derived syngas.', 'meaning': 'CHEBI:17790', 'annotations': {'chemical_formula': 'CH3OH'}},
     "DIMETHYL_ETHER": {'description': 'Dimethyl ether produced from biomass, usable as diesel substitute.', 'meaning': 'CHEBI:28887', 'aliases': ['DME']},
 }
@@ -6184,6 +6224,58 @@ StudyPopulationEnum._metadata = {
     "VETERANS": {'description': 'Military veterans', 'meaning': 'ExO:0000130'},
     "WORKERS": {'description': 'Occupational workers', 'meaning': 'ExO:0000131'},
     "CONTROLS": {'description': 'Control group participants without the disease or phenotype of interest', 'meaning': 'ExO:0000121'},
+}
+
+class HHEARExposureAssessedEnum(RichEnum):
+    """
+    Categories of environmental exposures assessed in Human Health Exposure Analysis Resource (HHEAR) studies. Based on the HHEAR value set HHEARVS:00008 (Study Environmental Exposures Assessed).
+    """
+    # Enum members
+    AIR_POLLUTANT = "AIR_POLLUTANT"
+    ALKYL_PHOSPHATE_PESTICIDE_METABOLITE = "ALKYL_PHOSPHATE_PESTICIDE_METABOLITE"
+    ALLERGEN = "ALLERGEN"
+    ARSENIC_SPECIES = "ARSENIC_SPECIES"
+    BROMINATED_FLAME_RETARDANT = "BROMINATED_FLAME_RETARDANT"
+    BUILT_ENVIRONMENT = "BUILT_ENVIRONMENT"
+    ENVIRONMENTAL_PHENOL = "ENVIRONMENTAL_PHENOL"
+    FOOD_PACKAGING = "FOOD_PACKAGING"
+    MERCURY_SPECIES = "MERCURY_SPECIES"
+    METAL = "METAL"
+    ORGANOCHLORINE_COMPOUND = "ORGANOCHLORINE_COMPOUND"
+    ORGANOPHOSPHORUS_FLAME_RETARDANT = "ORGANOPHOSPHORUS_FLAME_RETARDANT"
+    PARABEN = "PARABEN"
+    PERFLUOROALKYL_AND_POLYFLUOROALKYL_SUBSTANCE = "PERFLUOROALKYL_AND_POLYFLUOROALKYL_SUBSTANCE"
+    PESTICIDE = "PESTICIDE"
+    PHTHALATE = "PHTHALATE"
+    POLYBROMINATED_DIPHENYL_ETHER = "POLYBROMINATED_DIPHENYL_ETHER"
+    TOBACCO_METABOLITE = "TOBACCO_METABOLITE"
+    TOBACCO_SMOKE_EXPOSURE = "TOBACCO_SMOKE_EXPOSURE"
+    VOLATILE_ORGANIC_COMPOUND = "VOLATILE_ORGANIC_COMPOUND"
+    WEATHER = "WEATHER"
+
+# Set metadata after class creation to avoid it becoming an enum member
+HHEARExposureAssessedEnum._metadata = {
+    "AIR_POLLUTANT": {'description': 'Airborne pollutants including particulate matter and gaseous contaminants', 'meaning': 'ECTO:8000036'},
+    "ALKYL_PHOSPHATE_PESTICIDE_METABOLITE": {'description': 'Metabolites of organophosphate pesticides', 'meaning': 'ECTO:0000530'},
+    "ALLERGEN": {'description': 'Substances that can cause allergic reactions', 'meaning': 'ECTO:0000726'},
+    "ARSENIC_SPECIES": {'description': 'Various forms of arsenic compounds', 'meaning': 'ECTO:9000032'},
+    "BROMINATED_FLAME_RETARDANT": {'description': 'Organobromine compounds used as flame retardants', 'meaning': 'ECTO:9002162'},
+    "BUILT_ENVIRONMENT": {'description': 'Human-made surroundings including buildings and infrastructure', 'meaning': 'ExO:0000048'},
+    "ENVIRONMENTAL_PHENOL": {'description': 'Phenolic compounds in the environment', 'meaning': 'ECTO:9000071'},
+    "FOOD_PACKAGING": {'description': 'Materials used to package food products', 'meaning': 'FOODON:03490100'},
+    "MERCURY_SPECIES": {'description': 'Various forms of mercury compounds', 'meaning': 'ECTO:0001571'},
+    "METAL": {'description': 'Metallic elements and compounds', 'meaning': 'ECTO:9002163'},
+    "ORGANOCHLORINE_COMPOUND": {'description': 'Organic compounds containing chlorine', 'meaning': 'ECTO:0001152'},
+    "ORGANOPHOSPHORUS_FLAME_RETARDANT": {'description': 'Organophosphorus compounds used as flame retardants', 'meaning': 'ECTO:9000284'},
+    "PARABEN": {'description': '4-hydroxybenzoate esters used as preservatives', 'meaning': 'ECTO:9000930'},
+    "PERFLUOROALKYL_AND_POLYFLUOROALKYL_SUBSTANCE": {'description': 'PFAS compounds including PFOA and PFOS', 'meaning': 'ECTO:9002160', 'aliases': ['PFAS']},
+    "PESTICIDE": {'description': 'Substances used to control pests', 'meaning': 'ECTO:0000530'},
+    "PHTHALATE": {'description': 'Phthalic acid esters used as plasticizers', 'meaning': 'ECTO:9000522'},
+    "POLYBROMINATED_DIPHENYL_ETHER": {'description': 'Brominated aromatic ethers used as flame retardants', 'meaning': 'ECTO:9001619', 'aliases': ['PBDE']},
+    "TOBACCO_METABOLITE": {'description': 'Metabolites of tobacco and nicotine', 'meaning': 'ECTO:0100013'},
+    "TOBACCO_SMOKE_EXPOSURE": {'description': 'Exposure to primary or secondhand tobacco smoke', 'meaning': 'ECTO:6000029'},
+    "VOLATILE_ORGANIC_COMPOUND": {'description': 'Organic compounds with high vapor pressure', 'meaning': 'ECTO:9001621', 'aliases': ['VOC']},
+    "WEATHER": {'description': 'Atmospheric conditions and weather-related exposures', 'meaning': 'ECTO:1000020'},
 }
 
 class CountryCodeISO2Enum(RichEnum):
@@ -10506,10 +10598,10 @@ UniProtSpeciesCode._metadata = {
     "SP_VITVI": {'description': 'Vitis vinifera (Grape) - Proteome: UP000009183', 'meaning': 'NCBITaxon:29760', 'annotations': {'sources': 'GO'}, 'aliases': ['Grape']},
     "SP_VZVD": {'description': 'Varicella-zoster virus (Human herpesvirus 3) strain Dumas (HHV-3 strain Dumas) - Proteome: UP000002602', 'meaning': 'NCBITaxon:10338', 'annotations': {'sources': 'GO'}, 'aliases': ['HHV-3 strain Dumas']},
     "SP_WHEAT": {'description': 'Triticum aestivum (Wheat) - Proteome: UP000019116', 'meaning': 'NCBITaxon:4565', 'annotations': {'sources': 'GO'}, 'aliases': ['Wheat']},
-    "SP_XANCP": {'description': 'Xanthomonas campestris (xanthomonas) - Proteome: UP000001010', 'meaning': 'NCBITaxon:190485', 'annotations': {'sources': 'GO'}, 'aliases': ['xanthomonas']},
+    "SP_XANCP": {'description': 'Xanthomonas campestris (xanthomonas) - Proteome: UP000001010', 'meaning': 'NCBITaxon:340', 'annotations': {'sources': 'GO'}, 'aliases': ['xanthomonas']},
     "SP_XENLA": {'description': 'Xenopus laevis (African clawed frog) - Proteome: UP000186698', 'meaning': 'NCBITaxon:8355', 'annotations': {'sources': 'common, GO'}, 'aliases': ['African clawed frog']},
     "SP_XENTR": {'description': 'Xenopus tropicalis (Western clawed frog) - Proteome: UP000008143', 'meaning': 'NCBITaxon:8364', 'annotations': {'sources': 'common, GO'}, 'aliases': ['Western clawed frog']},
-    "SP_YARLI": {'description': 'Yarrowia lipolytica (Yeast) - Proteome: UP000001300', 'meaning': 'NCBITaxon:284591', 'annotations': {'sources': 'GO'}, 'aliases': ['Yeast']},
+    "SP_YARLI": {'description': 'Yarrowia lipolytica (Yeast) - Proteome: UP000001300', 'meaning': 'NCBITaxon:4952', 'annotations': {'sources': 'GO'}, 'aliases': ['Yeast']},
     "SP_YEAST": {'description': "Saccharomyces cerevisiae S288C (Baker's yeast) - Proteome: UP000002311", 'meaning': 'NCBITaxon:559292', 'annotations': {'sources': 'common, GO'}, 'aliases': ["Baker's yeast"]},
     "SP_YERPE": {'description': 'Yersinia pestis (plague bacteria) - Proteome: UP000000815', 'meaning': 'NCBITaxon:632', 'annotations': {'sources': 'GO'}, 'aliases': ['plague bacteria']},
     "SP_ZIKV": {'description': 'Zika virus (ZIKV) - Proteome: UP000054557', 'meaning': 'NCBITaxon:64320', 'annotations': {'sources': 'GO'}, 'aliases': ['ZIKV']},
@@ -12559,32 +12651,32 @@ class PediatricOncologyDiagnosisCategory(RichEnum):
 
 # Set metadata after class creation to avoid it becoming an enum member
 PediatricOncologyDiagnosisCategory._metadata = {
-    "ATYPICAL_TERATOID_RHABDOID_TUMOR": {'description': 'Highly malignant embryonal CNS tumor characterized by loss of SMARCB1 (INI1) or SMARCA4 expression. Predominantly occurs in young children.', 'meaning': 'NCIT:C6807', 'annotations': {'category': 'brain_tumor', 'who_classification': 'WHO CNS5'}},
-    "CHOROID_PLEXUS_TUMOR": {'description': 'Neoplasms arising from the choroid plexus epithelium, including papilloma, atypical papilloma, and carcinoma.', 'meaning': 'NCIT:C3698', 'annotations': {'category': 'brain_tumor', 'who_classification': 'WHO CNS5'}},
-    "CNS_GERM_CELL_TUMOR": {'description': 'Germ cell tumors arising within the central nervous system, including germinoma and non-germinomatous germ cell tumors.', 'meaning': 'NCIT:C6286', 'annotations': {'category': 'brain_tumor', 'who_classification': 'WHO CNS5'}},
-    "CNS_SARCOMA": {'description': 'Sarcomas arising primarily in the central nervous system, including Ewing sarcoma and rhabdomyosarcoma of CNS.', 'meaning': 'NCIT:C121624', 'annotations': {'category': 'brain_tumor'}},
-    "CRANIOPHARYNGIOMA": {'description': 'Benign epithelial tumors arising from remnants of Rathke pouch, including adamantinomatous and papillary subtypes.', 'meaning': 'NCIT:C2998', 'annotations': {'category': 'brain_tumor', 'who_classification': 'WHO CNS5'}},
+    "ATYPICAL_TERATOID_RHABDOID_TUMOR": {'description': 'Highly malignant embryonal CNS tumor characterized by loss of SMARCB1 (INI1) or SMARCA4 expression. Predominantly occurs in young children.', 'meaning': 'NCIT:C6906', 'annotations': {'category': 'brain_tumor', 'who_classification': 'WHO CNS5'}},
+    "CHOROID_PLEXUS_TUMOR": {'description': 'Neoplasms arising from the choroid plexus epithelium, including papilloma, atypical papilloma, and carcinoma.', 'meaning': 'NCIT:C3473', 'annotations': {'category': 'brain_tumor', 'who_classification': 'WHO CNS5'}},
+    "CNS_GERM_CELL_TUMOR": {'description': 'Germ cell tumors arising within the central nervous system, including germinoma and non-germinomatous germ cell tumors.', 'meaning': 'NCIT:C5461', 'annotations': {'category': 'brain_tumor', 'who_classification': 'WHO CNS5'}},
+    "CNS_SARCOMA": {'description': 'Sarcomas arising primarily in the central nervous system, including Ewing sarcoma and rhabdomyosarcoma of CNS.', 'meaning': 'NCIT:C5153', 'annotations': {'category': 'brain_tumor'}},
+    "CRANIOPHARYNGIOMA": {'description': 'Benign epithelial tumors arising from remnants of Rathke pouch, including adamantinomatous and papillary subtypes.', 'meaning': 'NCIT:C2964', 'annotations': {'category': 'brain_tumor', 'who_classification': 'WHO CNS5'}},
     "EPENDYMOMA": {'description': 'Glial tumors arising from ependymal cells lining the ventricular system and central canal. Includes molecular subtypes defined by WHO CNS5.', 'meaning': 'NCIT:C3017', 'annotations': {'category': 'brain_tumor', 'who_classification': 'WHO CNS5'}},
-    "GLIONEURONAL_AND_NEURONAL_TUMOR": {'description': 'Tumors with neuronal differentiation including ganglioglioma, dysembryoplastic neuroepithelial tumor (DNET), and central neurocytoma.', 'meaning': 'NCIT:C6927', 'annotations': {'category': 'brain_tumor', 'who_classification': 'WHO CNS5'}},
-    "HIGH_GRADE_GLIOMA": {'description': 'Aggressive glial tumors including pediatric-type diffuse high-grade gliomas (H3 K27-altered, H3 G34-mutant, and H3/IDH-wildtype), as well as glioblastoma.', 'meaning': 'NCIT:C129355', 'annotations': {'category': 'brain_tumor', 'who_classification': 'WHO CNS5', 'grade': 'high'}},
-    "LOW_GRADE_GLIOMA": {'description': 'Indolent glial tumors including pilocytic astrocytoma and pediatric-type diffuse low-grade gliomas (MYB/MYBL1-altered, MAPK pathway-altered).', 'meaning': 'NCIT:C129354', 'annotations': {'category': 'brain_tumor', 'who_classification': 'WHO CNS5', 'grade': 'low'}},
+    "GLIONEURONAL_AND_NEURONAL_TUMOR": {'description': 'Tumors with neuronal differentiation including ganglioglioma, dysembryoplastic neuroepithelial tumor (DNET), and central neurocytoma.', 'meaning': 'NCIT:C4747', 'annotations': {'category': 'brain_tumor', 'who_classification': 'WHO CNS5'}},
+    "HIGH_GRADE_GLIOMA": {'description': 'Aggressive glial tumors including pediatric-type diffuse high-grade gliomas (H3 K27-altered, H3 G34-mutant, and H3/IDH-wildtype), as well as glioblastoma.', 'meaning': 'NCIT:C4822', 'annotations': {'category': 'brain_tumor', 'who_classification': 'WHO CNS5', 'grade': 'high'}},
+    "LOW_GRADE_GLIOMA": {'description': 'Indolent glial tumors including pilocytic astrocytoma and pediatric-type diffuse low-grade gliomas (MYB/MYBL1-altered, MAPK pathway-altered).', 'meaning': 'NCIT:C132067', 'annotations': {'category': 'brain_tumor', 'who_classification': 'WHO CNS5', 'grade': 'low'}},
     "MEDULLOBLASTOMA": {'description': 'Embryonal tumor of the cerebellum, classified by molecular subgroups (WNT-activated, SHH-activated, Group 3, Group 4) per WHO CNS5.', 'meaning': 'NCIT:C3222', 'annotations': {'category': 'brain_tumor', 'who_classification': 'WHO CNS5'}},
-    "OTHER_CNS_EMBRYONAL_TUMOR": {'description': 'Embryonal tumors of the CNS other than medulloblastoma and ATRT, including embryonal tumor with multilayered rosettes (ETMR), CNS neuroblastoma, and pineoblastoma.', 'meaning': 'NCIT:C6774', 'annotations': {'category': 'brain_tumor', 'who_classification': 'WHO CNS5'}, 'aliases': ['CNS Embryonal Tumor, NOS']},
+    "OTHER_CNS_EMBRYONAL_TUMOR": {'description': 'Embryonal tumors of the CNS other than medulloblastoma and ATRT, including embryonal tumor with multilayered rosettes (ETMR), CNS neuroblastoma, and pineoblastoma.', 'meaning': 'NCIT:C6990', 'annotations': {'category': 'brain_tumor', 'who_classification': 'WHO CNS5'}, 'aliases': ['CNS Embryonal Tumor, NOS']},
     "OTHER_GLIOMA": {'description': 'Glial tumors not classified as high-grade or low-grade glioma, including angiocentric glioma and astroblastoma.', 'meaning': 'NCIT:C3059', 'annotations': {'category': 'brain_tumor'}},
     "OTHER_BRAIN_TUMOR": {'description': 'CNS tumors not fitting other brain tumor categories, including meningioma, schwannoma, and hemangioblastoma.', 'meaning': 'NCIT:C2907', 'annotations': {'category': 'brain_tumor'}},
     "LYMPHOBLASTIC_LEUKEMIA": {'description': 'Acute lymphoblastic leukemia (ALL) including B-ALL and T-ALL with all molecular subtypes (BCR::ABL1, ETV6::RUNX1, KMT2A-r, DUX4, MEF2D, etc.).', 'meaning': 'NCIT:C3167', 'annotations': {'category': 'hematologic', 'who_classification': 'WHO-HAEM5'}, 'aliases': ['ALL', 'Acute Lymphoblastic Leukemia']},
     "MYELOID_LEUKEMIA": {'description': 'Acute myeloid leukemia (AML) and related myeloid neoplasms including AML with defining genetic abnormalities, therapy-related AML, and juvenile myelomonocytic leukemia (JMML).', 'meaning': 'NCIT:C3171', 'annotations': {'category': 'hematologic', 'who_classification': 'WHO-HAEM5'}, 'aliases': ['AML', 'Acute Myeloid Leukemia']},
     "HODGKIN_LYMPHOMA": {'description': 'Lymphoid neoplasm characterized by Reed-Sternberg cells, including classical Hodgkin lymphoma and nodular lymphocyte predominant Hodgkin lymphoma.', 'meaning': 'NCIT:C9357', 'annotations': {'category': 'hematologic', 'who_classification': 'WHO-HAEM5'}},
     "NON_HODGKIN_LYMPHOMA": {'description': 'Lymphoid neoplasms other than Hodgkin lymphoma, including Burkitt lymphoma, diffuse large B-cell lymphoma, anaplastic large cell lymphoma, and lymphoblastic lymphoma.', 'meaning': 'NCIT:C3211', 'annotations': {'category': 'hematologic', 'who_classification': 'WHO-HAEM5'}, 'aliases': ['NHL']},
-    "LYMPHOPROLIFERATIVE_DISEASE": {'description': 'Disorders characterized by abnormal lymphocyte proliferation, including post-transplant lymphoproliferative disorder (PTLD) and hemophagocytic lymphohistiocytosis (HLH).', 'meaning': 'NCIT:C3138', 'annotations': {'category': 'hematologic'}},
+    "LYMPHOPROLIFERATIVE_DISEASE": {'description': 'Disorders characterized by abnormal lymphocyte proliferation, including post-transplant lymphoproliferative disorder (PTLD) and hemophagocytic lymphohistiocytosis (HLH).', 'meaning': 'NCIT:C9308', 'annotations': {'category': 'hematologic'}},
     "OTHER_HEME_TUMOR": {'description': 'Hematologic malignancies not classified elsewhere, including histiocytic disorders, myelodysplastic syndromes, and myeloproliferative neoplasms.', 'meaning': 'NCIT:C27134', 'annotations': {'category': 'hematologic'}},
     "NEUROBLASTOMA": {'description': 'Embryonal tumor of the peripheral sympathetic nervous system, arising from neural crest cells. Includes ganglioneuroblastoma and ganglioneuroma.', 'meaning': 'NCIT:C3270', 'annotations': {'category': 'solid_tumor', 'who_classification': 'WHO Pediatric Blue Book'}},
     "OSTEOSARCOMA": {'description': 'Primary malignant bone tumor characterized by osteoid production, including conventional, telangiectatic, and small cell variants.', 'meaning': 'NCIT:C9145', 'annotations': {'category': 'solid_tumor', 'who_classification': 'WHO Bone/Soft Tissue'}},
     "EWING_SARCOMA": {'description': 'Small round cell sarcoma typically harboring EWSR1 rearrangements, arising in bone or soft tissue. Includes Ewing sarcoma family of tumors.', 'meaning': 'NCIT:C4817', 'annotations': {'category': 'solid_tumor', 'who_classification': 'WHO Bone/Soft Tissue'}},
     "RHABDOMYOSARCOMA": {'description': 'Malignant soft tissue tumor with skeletal muscle differentiation, including embryonal, alveolar, and spindle cell/sclerosing subtypes.', 'meaning': 'NCIT:C3359', 'annotations': {'category': 'solid_tumor', 'who_classification': 'WHO Bone/Soft Tissue'}},
-    "SOFT_TISSUE_TUMOR": {'description': 'Soft tissue neoplasms other than rhabdomyosarcoma and Ewing sarcoma, including synovial sarcoma, fibrosarcoma, and other sarcomas. Also includes non-sarcomatous soft tissue tumors.', 'meaning': 'NCIT:C3399', 'annotations': {'category': 'solid_tumor'}, 'aliases': ['Soft Tissue Sarcoma']},
-    "RHABDOID_TUMOR": {'description': 'Highly aggressive tumors characterized by SMARCB1 loss, occurring outside the CNS (extracranial rhabdoid tumor). Includes malignant rhabdoid tumor of kidney.', 'meaning': 'NCIT:C3769', 'annotations': {'category': 'solid_tumor'}},
-    "RENAL_TUMOR": {'description': 'Kidney tumors including Wilms tumor (nephroblastoma), clear cell sarcoma of kidney, renal cell carcinoma, and congenital mesoblastic nephroma.', 'meaning': 'NCIT:C7548', 'annotations': {'category': 'solid_tumor', 'who_classification': 'WHO Pediatric Blue Book'}, 'aliases': ['Kidney Tumor', 'Wilms Tumor']},
+    "SOFT_TISSUE_TUMOR": {'description': 'Soft tissue neoplasms other than rhabdomyosarcoma and Ewing sarcoma, including synovial sarcoma, fibrosarcoma, and other sarcomas. Also includes non-sarcomatous soft tissue tumors.', 'meaning': 'NCIT:C9306', 'annotations': {'category': 'solid_tumor'}, 'aliases': ['Soft Tissue Sarcoma']},
+    "RHABDOID_TUMOR": {'description': 'Highly aggressive tumors characterized by SMARCB1 loss, occurring outside the CNS (extracranial rhabdoid tumor). Includes malignant rhabdoid tumor of kidney.', 'meaning': 'NCIT:C3808', 'annotations': {'category': 'solid_tumor'}},
+    "RENAL_TUMOR": {'description': 'Kidney tumors including Wilms tumor (nephroblastoma), clear cell sarcoma of kidney, renal cell carcinoma, and congenital mesoblastic nephroma.', 'meaning': 'NCIT:C7548', 'annotations': {'category': 'solid_tumor', 'who_classification': 'WHO Pediatric Blue Book'}, 'aliases': ['Kidney Tumor', 'Wilms Tumor', 'Renal Tumors']},
     "RETINOBLASTOMA": {'description': 'Malignant neoplasm of the retina arising from developing retinal cells, associated with RB1 mutations.', 'meaning': 'NCIT:C7541', 'annotations': {'category': 'solid_tumor', 'who_classification': 'WHO Pediatric Blue Book'}},
     "GERM_CELL_TUMOR": {'description': 'Tumors arising from primordial germ cells, occurring in gonadal or extragonadal sites. Includes teratoma, yolk sac tumor, germinoma, choriocarcinoma, and mixed germ cell tumors. Excludes CNS germ cell tumors.', 'meaning': 'NCIT:C3708', 'annotations': {'category': 'solid_tumor'}},
     "ENDOCRINE_AND_NEUROENDOCRINE_TUMOR": {'description': 'Tumors of endocrine glands and neuroendocrine cells, including thyroid carcinoma, adrenocortical carcinoma, pheochromocytoma, and paraganglioma.', 'meaning': 'NCIT:C3010', 'annotations': {'category': 'solid_tumor'}},
@@ -12612,13 +12704,13 @@ class ICCC3MainGroup(RichEnum):
 # Set metadata after class creation to avoid it becoming an enum member
 ICCC3MainGroup._metadata = {
     "I_LEUKEMIAS_MYELOPROLIFERATIVE_MYELODYSPLASTIC": {'description': 'Includes lymphoid leukemias, acute myeloid leukemias, chronic myeloproliferative diseases, myelodysplastic syndrome and other myeloproliferative diseases, and unspecified and other specified leukemias.', 'meaning': 'NCIT:C3161', 'annotations': {'iccc_code': 'I', 'subgroup_count': 5}},
-    "II_LYMPHOMAS_RETICULOENDOTHELIAL": {'description': 'Includes Hodgkin lymphomas, non-Hodgkin lymphomas (except Burkitt lymphoma), Burkitt lymphoma, and miscellaneous lymphoreticular neoplasms.', 'meaning': 'NCIT:C7058', 'annotations': {'iccc_code': 'II', 'subgroup_count': 4}},
+    "II_LYMPHOMAS_RETICULOENDOTHELIAL": {'description': 'Includes Hodgkin lymphomas, non-Hodgkin lymphomas (except Burkitt lymphoma), Burkitt lymphoma, and miscellaneous lymphoreticular neoplasms.', 'meaning': 'NCIT:C3208', 'annotations': {'iccc_code': 'II', 'subgroup_count': 4}},
     "III_CNS_INTRACRANIAL_INTRASPINAL": {'description': 'Includes ependymomas and choroid plexus tumor, astrocytomas, intracranial and intraspinal embryonal tumors, other gliomas, other specified intracranial and intraspinal neoplasms, and unspecified intracranial and intraspinal neoplasms. Also includes nonmalignant CNS tumors.', 'meaning': 'NCIT:C2907', 'annotations': {'iccc_code': 'III', 'subgroup_count': 6, 'includes_nonmalignant': True}},
     "IV_NEUROBLASTOMA_PERIPHERAL_NERVOUS": {'description': 'Includes neuroblastoma and ganglioneuroblastoma, and other peripheral nervous cell tumors.', 'meaning': 'NCIT:C3270', 'annotations': {'iccc_code': 'IV', 'subgroup_count': 2}},
     "V_RETINOBLASTOMA": {'description': 'Malignant neoplasm of the retina. Single group with no subgroups.', 'meaning': 'NCIT:C7541', 'annotations': {'iccc_code': 'V', 'subgroup_count': 1}},
     "VI_RENAL_TUMORS": {'description': 'Includes nephroblastoma and other nonepithelial renal tumors, renal carcinomas, and unspecified malignant renal tumors.', 'meaning': 'NCIT:C7548', 'annotations': {'iccc_code': 'VI', 'subgroup_count': 3}},
     "VII_HEPATIC_TUMORS": {'description': 'Includes hepatoblastoma, hepatic carcinomas, and unspecified malignant hepatic tumors.', 'meaning': 'NCIT:C7927', 'annotations': {'iccc_code': 'VII', 'subgroup_count': 3}},
-    "VIII_MALIGNANT_BONE_TUMORS": {'description': 'Includes osteosarcomas, chondrosarcomas, Ewing tumor and related sarcomas of bone, other specified malignant bone tumors, and unspecified malignant bone tumors.', 'meaning': 'NCIT:C4882', 'annotations': {'iccc_code': 'VIII', 'subgroup_count': 5}},
+    "VIII_MALIGNANT_BONE_TUMORS": {'description': 'Includes osteosarcomas, chondrosarcomas, Ewing tumor and related sarcomas of bone, other specified malignant bone tumors, and unspecified malignant bone tumors.', 'meaning': 'NCIT:C4016', 'annotations': {'iccc_code': 'VIII', 'subgroup_count': 5}},
     "IX_SOFT_TISSUE_SARCOMAS": {'description': 'Includes rhabdomyosarcomas, fibrosarcomas/peripheral nerve sheath tumors/other fibrous neoplasms, Kaposi sarcoma, other specified soft tissue sarcomas, and unspecified soft tissue sarcomas.', 'meaning': 'NCIT:C9306', 'annotations': {'iccc_code': 'IX', 'subgroup_count': 5}},
     "X_GERM_CELL_GONADAL": {'description': 'Includes intracranial and intraspinal germ cell tumors, malignant extracranial and extragonadal germ cell tumors, malignant gonadal germ cell tumors, gonadal carcinomas, and other and unspecified malignant gonadal tumors.', 'meaning': 'NCIT:C3708', 'annotations': {'iccc_code': 'X', 'subgroup_count': 5}},
     "XI_EPITHELIAL_MELANOMA": {'description': 'Includes adrenocortical carcinomas, thyroid carcinomas, nasopharyngeal carcinomas, malignant melanomas, skin carcinomas, and other and unspecified carcinomas.', 'meaning': 'NCIT:C3709', 'annotations': {'iccc_code': 'XI', 'subgroup_count': 6}},
@@ -12687,16 +12779,16 @@ ICCC3Subgroup._metadata = {
     "IE_UNSPECIFIED_OTHER_LEUKEMIAS": {'description': 'Leukemia, NOS and other specified leukemias not elsewhere classified.', 'meaning': 'NCIT:C3161', 'annotations': {'main_group': 'I', 'icdo3_codes': '9800-9801, 9805-9809, 9860, 9930'}},
     "IIA_HODGKIN_LYMPHOMAS": {'description': 'Classical Hodgkin lymphoma and nodular lymphocyte predominant Hodgkin lymphoma.', 'meaning': 'NCIT:C9357', 'annotations': {'main_group': 'II', 'icdo3_codes': '9650-9655, 9659, 9661-9665, 9667'}},
     "IIB_NON_HODGKIN_LYMPHOMAS": {'description': 'Diffuse large B-cell lymphoma, follicular lymphoma, peripheral T-cell lymphoma, anaplastic large cell lymphoma, and other non-Hodgkin lymphomas.', 'meaning': 'NCIT:C3211', 'annotations': {'main_group': 'II', 'icdo3_codes': '9591, 9670-9686, 9689-9691, 9695, 9698-9702, 9705, 9708-9709, 9714-9719, 9727-9729'}},
-    "IIC_BURKITT_LYMPHOMA": {'description': 'Burkitt lymphoma and Burkitt-like lymphoma.', 'meaning': 'NCIT:C8150', 'annotations': {'main_group': 'II', 'icdo3_codes': '9687'}},
+    "IIC_BURKITT_LYMPHOMA": {'description': 'Burkitt lymphoma and Burkitt-like lymphoma.', 'meaning': 'NCIT:C2912', 'annotations': {'main_group': 'II', 'icdo3_codes': '9687'}},
     "IID_MISC_LYMPHORETICULAR": {'description': 'Lymphoreticular neoplasms not elsewhere classified including lymphomatoid granulomatosis and post-transplant lymphoproliferative disorder.', 'meaning': 'NCIT:C27134', 'annotations': {'main_group': 'II', 'icdo3_codes': '9740-9742, 9750, 9754-9758, 9930, 9970'}},
     "IIIA_EPENDYMOMAS": {'description': 'Ependymoma, anaplastic ependymoma, myxopapillary ependymoma, and choroid plexus papilloma and carcinoma.', 'meaning': 'NCIT:C3017', 'annotations': {'main_group': 'III', 'icdo3_codes': '9383, 9390-9394'}},
     "IIIB_ASTROCYTOMAS": {'description': 'Pilocytic astrocytoma, diffuse astrocytoma, anaplastic astrocytoma, glioblastoma, and other astrocytic tumors.', 'meaning': 'NCIT:C60781', 'annotations': {'main_group': 'III', 'icdo3_codes': '9380, 9384, 9400-9411, 9420, 9424'}},
-    "IIIC_INTRACRANIAL_EMBRYONAL": {'description': 'Medulloblastoma, primitive neuroectodermal tumor, medulloepithelioma, atypical teratoid/rhabdoid tumor, and other embryonal tumors.', 'meaning': 'NCIT:C6774', 'annotations': {'main_group': 'III', 'icdo3_codes': '9470-9474, 9480, 9490, 9500-9508'}},
+    "IIIC_INTRACRANIAL_EMBRYONAL": {'description': 'Medulloblastoma, primitive neuroectodermal tumor, medulloepithelioma, atypical teratoid/rhabdoid tumor, and other embryonal tumors.', 'meaning': 'NCIT:C6990', 'annotations': {'main_group': 'III', 'icdo3_codes': '9470-9474, 9480, 9490, 9500-9508'}},
     "IIID_OTHER_GLIOMAS": {'description': 'Oligodendroglioma, anaplastic oligodendroglioma, mixed glioma, and other gliomas not elsewhere classified.', 'meaning': 'NCIT:C3059', 'annotations': {'main_group': 'III', 'icdo3_codes': '9380-9382, 9430, 9440-9460'}},
     "IIIE_OTHER_INTRACRANIAL_INTRASPINAL": {'description': 'Pituitary adenoma, craniopharyngioma, pineal tumors, and other specified intracranial neoplasms.', 'meaning': 'NCIT:C2907', 'annotations': {'main_group': 'III'}},
     "IIIF_UNSPECIFIED_INTRACRANIAL": {'description': 'Intracranial and intraspinal neoplasms, NOS.', 'meaning': 'NCIT:C2907', 'annotations': {'main_group': 'III', 'icdo3_codes': '8000-8005'}},
     "IVA_NEUROBLASTOMA_GANGLIONEUROBLASTOMA": {'description': 'Neuroblastoma, NOS and ganglioneuroblastoma.', 'meaning': 'NCIT:C3270', 'annotations': {'main_group': 'IV', 'icdo3_codes': '9490, 9500'}},
-    "IVB_OTHER_PERIPHERAL_NERVOUS": {'description': 'Other peripheral nerve tumors including ganglioneuroma and peripheral nerve sheath tumors.', 'meaning': 'NCIT:C4969', 'annotations': {'main_group': 'IV', 'icdo3_codes': '9501-9504, 9520-9523'}},
+    "IVB_OTHER_PERIPHERAL_NERVOUS": {'description': 'Other peripheral nerve tumors including ganglioneuroma and peripheral nerve sheath tumors.', 'meaning': 'NCIT:C3321', 'annotations': {'main_group': 'IV', 'icdo3_codes': '9501-9504, 9520-9523'}},
     "V_RETINOBLASTOMA": {'description': 'Retinoblastoma.', 'meaning': 'NCIT:C7541', 'annotations': {'main_group': 'V', 'icdo3_codes': '9510-9514'}},
     "VIA_NEPHROBLASTOMA": {'description': 'Wilms tumor (nephroblastoma), clear cell sarcoma of kidney, rhabdoid tumor of kidney, and other nonepithelial renal tumors.', 'meaning': 'NCIT:C3267', 'annotations': {'main_group': 'VI', 'icdo3_codes': '8960, 8963-8964'}},
     "VIB_RENAL_CARCINOMAS": {'description': 'Renal cell carcinoma and other renal carcinomas.', 'meaning': 'NCIT:C9385', 'annotations': {'main_group': 'VI'}},
@@ -12707,15 +12799,15 @@ ICCC3Subgroup._metadata = {
     "VIIIA_OSTEOSARCOMAS": {'description': 'Osteosarcoma, NOS and variants including chondroblastic, fibroblastic, telangiectatic, and small cell osteosarcoma.', 'meaning': 'NCIT:C9145', 'annotations': {'main_group': 'VIII', 'icdo3_codes': '9180-9187, 9191-9195'}},
     "VIIIB_CHONDROSARCOMAS": {'description': 'Chondrosarcoma, NOS and variants.', 'meaning': 'NCIT:C2946', 'annotations': {'main_group': 'VIII', 'icdo3_codes': '9220-9231, 9240-9243'}},
     "VIIIC_EWING_TUMOR_BONE": {'description': 'Ewing sarcoma of bone and peripheral primitive neuroectodermal tumor of bone.', 'meaning': 'NCIT:C4817', 'annotations': {'main_group': 'VIII', 'icdo3_codes': '9260, 9364'}},
-    "VIIID_OTHER_BONE": {'description': 'Other specified malignant bone tumors including giant cell tumor of bone, malignant and adamantinoma.', 'meaning': 'NCIT:C4882', 'annotations': {'main_group': 'VIII'}},
-    "VIIIE_UNSPECIFIED_BONE": {'description': 'Malignant bone tumors, NOS.', 'meaning': 'NCIT:C4882', 'annotations': {'main_group': 'VIII'}},
+    "VIIID_OTHER_BONE": {'description': 'Other specified malignant bone tumors including giant cell tumor of bone, malignant and adamantinoma.', 'meaning': 'NCIT:C4016', 'annotations': {'main_group': 'VIII'}},
+    "VIIIE_UNSPECIFIED_BONE": {'description': 'Malignant bone tumors, NOS.', 'meaning': 'NCIT:C4016', 'annotations': {'main_group': 'VIII'}},
     "IXA_RHABDOMYOSARCOMAS": {'description': 'Rhabdomyosarcoma, NOS; embryonal rhabdomyosarcoma; alveolar rhabdomyosarcoma; and other rhabdomyosarcomas.', 'meaning': 'NCIT:C3359', 'annotations': {'main_group': 'IX', 'icdo3_codes': '8900-8905, 8910, 8912, 8920'}},
     "IXB_FIBROSARCOMAS": {'description': 'Fibrosarcoma, NOS; infantile fibrosarcoma; dermatofibrosarcoma; and malignant peripheral nerve sheath tumor.', 'meaning': 'NCIT:C3043', 'annotations': {'main_group': 'IX', 'icdo3_codes': '8810-8815, 8820-8823, 8830, 8832-8833, 9540, 9560-9561'}},
     "IXC_KAPOSI_SARCOMA": {'description': 'Kaposi sarcoma.', 'meaning': 'NCIT:C9087', 'annotations': {'main_group': 'IX', 'icdo3_codes': '9140'}},
     "IXD_OTHER_SOFT_TISSUE": {'description': 'Includes liposarcoma, leiomyosarcoma, synovial sarcoma, hemangiosarcoma, and other specified soft tissue sarcomas.', 'meaning': 'NCIT:C9306', 'annotations': {'main_group': 'IX'}},
     "IXE_UNSPECIFIED_SOFT_TISSUE": {'description': 'Soft tissue sarcomas, NOS.', 'meaning': 'NCIT:C9306', 'annotations': {'main_group': 'IX'}},
-    "XA_INTRACRANIAL_GERM_CELL": {'description': 'CNS germ cell tumors including germinoma, teratoma, and nongerminomatous germ cell tumors.', 'meaning': 'NCIT:C6286', 'annotations': {'main_group': 'X', 'icdo3_codes': '9060-9102'}},
-    "XB_EXTRACRANIAL_EXTRAGONADAL_GERM_CELL": {'description': 'Extracranial germ cell tumors not involving the gonads including sacrococcygeal, retroperitoneal, and mediastinal germ cell tumors.', 'meaning': 'NCIT:C6545', 'annotations': {'main_group': 'X'}},
+    "XA_INTRACRANIAL_GERM_CELL": {'description': 'CNS germ cell tumors including germinoma, teratoma, and nongerminomatous germ cell tumors.', 'meaning': 'NCIT:C5461', 'annotations': {'main_group': 'X', 'icdo3_codes': '9060-9102'}},
+    "XB_EXTRACRANIAL_EXTRAGONADAL_GERM_CELL": {'description': 'Extracranial germ cell tumors not involving the gonads including sacrococcygeal, retroperitoneal, and mediastinal germ cell tumors.', 'meaning': 'NCIT:C8881', 'annotations': {'main_group': 'X'}},
     "XC_GONADAL_GERM_CELL": {'description': 'Germ cell tumors of the ovary and testis including dysgerminoma, yolk sac tumor, embryonal carcinoma, and mixed germ cell tumors.', 'meaning': 'NCIT:C3708', 'annotations': {'main_group': 'X'}},
     "XD_GONADAL_CARCINOMAS": {'description': 'Carcinomas arising in the ovary and testis.', 'meaning': 'NCIT:C3709', 'annotations': {'main_group': 'X'}},
     "XE_OTHER_GONADAL": {'description': 'Other specified and unspecified gonadal tumors.', 'meaning': 'NCIT:C3708', 'annotations': {'main_group': 'X'}},
@@ -12741,10 +12833,10 @@ class INRGSSStage(RichEnum):
 
 # Set metadata after class creation to avoid it becoming an enum member
 INRGSSStage._metadata = {
-    "L1": {'description': 'Localized tumor not involving vital structures as defined by the list of image-defined risk factors and confined to one body compartment (neck, chest, abdomen, or pelvis).', 'meaning': 'NCIT:C133427', 'annotations': {'localized': True, 'idrfs_present': False}},
-    "L2": {'description': 'Locoregional tumor with presence of one or more image-defined risk factors. The tumor has not spread far from where it started but has at least one IDRF.', 'meaning': 'NCIT:C133428', 'annotations': {'localized': True, 'idrfs_present': True}},
-    "M": {'description': 'Distant metastatic disease (except as defined for MS). The tumor has spread (metastasized) to distant parts of the body.', 'meaning': 'NCIT:C133429', 'annotations': {'metastatic': True}},
-    "MS": {'description': 'Metastatic disease in children younger than 18 months with metastases confined to skin, liver, and/or bone marrow (bone marrow involvement limited to <10% tumor cells). This stage has a favorable prognosis despite metastatic disease.', 'meaning': 'NCIT:C133430', 'annotations': {'metastatic': True, 'special_category': True, 'age_restriction': '<18 months', 'favorable_prognosis': True}, 'aliases': ['Stage 4S equivalent']},
+    "L1": {'description': 'Localized tumor not involving vital structures as defined by the list of image-defined risk factors and confined to one body compartment (neck, chest, abdomen, or pelvis).', 'meaning': 'NCIT:C133428', 'annotations': {'localized': True, 'idrfs_present': False}},
+    "L2": {'description': 'Locoregional tumor with presence of one or more image-defined risk factors. The tumor has not spread far from where it started but has at least one IDRF.', 'meaning': 'NCIT:C133429', 'annotations': {'localized': True, 'idrfs_present': True}},
+    "M": {'description': 'Distant metastatic disease (except as defined for MS). The tumor has spread (metastasized) to distant parts of the body.', 'meaning': 'NCIT:C133430', 'annotations': {'metastatic': True}},
+    "MS": {'description': 'Metastatic disease in children younger than 18 months with metastases confined to skin, liver, and/or bone marrow (bone marrow involvement limited to <10% tumor cells). This stage has a favorable prognosis despite metastatic disease.', 'meaning': 'NCIT:C133431', 'annotations': {'metastatic': True, 'special_category': True, 'age_restriction': '<18 months', 'favorable_prognosis': True}, 'aliases': ['Stage 4S equivalent']},
 }
 
 class INSSStage(RichEnum):
@@ -12761,12 +12853,12 @@ class INSSStage(RichEnum):
 
 # Set metadata after class creation to avoid it becoming an enum member
 INSSStage._metadata = {
-    "STAGE_1": {'description': 'Localized tumor with complete gross excision, with or without microscopic residual disease; representative ipsilateral lymph nodes negative for tumor microscopically.', 'meaning': 'NCIT:C6639', 'annotations': {'localized': True, 'resection': 'complete'}},
-    "STAGE_2A": {'description': 'Localized tumor with incomplete gross excision; representative ipsilateral nonadherent lymph nodes negative for tumor microscopically.', 'meaning': 'NCIT:C6640', 'annotations': {'localized': True, 'resection': 'incomplete', 'lymph_nodes': 'negative'}},
-    "STAGE_2B": {'description': 'Localized tumor with or without complete gross excision, with ipsilateral nonadherent lymph nodes positive for tumor. Enlarged contralateral lymph nodes must be negative microscopically.', 'meaning': 'NCIT:C6641', 'annotations': {'localized': True, 'lymph_nodes': 'ipsilateral_positive'}},
-    "STAGE_3": {'description': 'Unresectable unilateral tumor infiltrating across the midline, with or without regional lymph node involvement; or localized unilateral tumor with contralateral regional lymph node involvement; or midline tumor with bilateral extension by infiltration (unresectable) or by lymph node involvement.', 'meaning': 'NCIT:C6642', 'annotations': {'localized': False, 'crosses_midline': True}},
-    "STAGE_4": {'description': 'Any primary tumor with dissemination to distant lymph nodes, bone, bone marrow, liver, skin, and/or other organs (except as defined for stage 4S).', 'meaning': 'NCIT:C6643', 'annotations': {'metastatic': True}},
-    "STAGE_4S": {'description': 'Localized primary tumor (as defined for stage 1, 2A, or 2B) with dissemination limited to skin, liver, and/or bone marrow (limited to infants <1 year of age). Marrow involvement should be minimal (<10% of total nucleated cells).', 'meaning': 'NCIT:C6644', 'annotations': {'metastatic': True, 'special_category': True, 'age_restriction': '<12 months', 'favorable_prognosis': True}, 'aliases': ['Special stage 4']},
+    "STAGE_1": {'description': 'Localized tumor with complete gross excision, with or without microscopic residual disease; representative ipsilateral lymph nodes negative for tumor microscopically.', 'meaning': 'NCIT:C85417', 'annotations': {'localized': True, 'resection': 'complete'}},
+    "STAGE_2A": {'description': 'Localized tumor with incomplete gross excision; representative ipsilateral nonadherent lymph nodes negative for tumor microscopically.', 'meaning': 'NCIT:C85418', 'annotations': {'localized': True, 'resection': 'incomplete', 'lymph_nodes': 'negative'}},
+    "STAGE_2B": {'description': 'Localized tumor with or without complete gross excision, with ipsilateral nonadherent lymph nodes positive for tumor. Enlarged contralateral lymph nodes must be negative microscopically.', 'meaning': 'NCIT:C85419', 'annotations': {'localized': True, 'lymph_nodes': 'ipsilateral_positive'}},
+    "STAGE_3": {'description': 'Unresectable unilateral tumor infiltrating across the midline, with or without regional lymph node involvement; or localized unilateral tumor with contralateral regional lymph node involvement; or midline tumor with bilateral extension by infiltration (unresectable) or by lymph node involvement.', 'meaning': 'NCIT:C85420', 'annotations': {'localized': False, 'crosses_midline': True}},
+    "STAGE_4": {'description': 'Any primary tumor with dissemination to distant lymph nodes, bone, bone marrow, liver, skin, and/or other organs (except as defined for stage 4S).', 'meaning': 'NCIT:C85421', 'annotations': {'metastatic': True}},
+    "STAGE_4S": {'description': 'Localized primary tumor (as defined for stage 1, 2A, or 2B) with dissemination limited to skin, liver, and/or bone marrow (limited to infants <1 year of age). Marrow involvement should be minimal (<10% of total nucleated cells).', 'meaning': 'NCIT:C85422', 'annotations': {'metastatic': True, 'special_category': True, 'age_restriction': '<12 months', 'favorable_prognosis': True}, 'aliases': ['Special stage 4']},
 }
 
 class NeuroblastomaRiskGroup(RichEnum):
@@ -12781,10 +12873,10 @@ class NeuroblastomaRiskGroup(RichEnum):
 
 # Set metadata after class creation to avoid it becoming an enum member
 NeuroblastomaRiskGroup._metadata = {
-    "VERY_LOW": {'description': 'Very low risk neuroblastoma with excellent prognosis. Typically includes L1 tumors and MS without MYCN amplification.', 'meaning': 'NCIT:C103236', 'annotations': {'expected_efs': '>85%'}},
-    "LOW": {'description': 'Low risk neuroblastoma with favorable prognosis. Treatment may include surgery alone or observation.', 'meaning': 'NCIT:C103237', 'annotations': {'expected_efs': '>75%'}},
-    "INTERMEDIATE": {'description': 'Intermediate risk neuroblastoma requiring multimodal treatment including chemotherapy.', 'meaning': 'NCIT:C103238', 'annotations': {'expected_efs': '50-75%'}},
-    "HIGH": {'description': 'High risk neuroblastoma with poor prognosis. Requires intensive multimodal therapy including high-dose chemotherapy with autologous stem cell rescue, surgery, radiation, and immunotherapy.', 'meaning': 'NCIT:C103239', 'annotations': {'expected_efs': '<50%', 'mycn_amplified': 'often'}},
+    "VERY_LOW": {'description': 'Very low risk neuroblastoma with excellent prognosis. Typically includes L1 tumors and MS without MYCN amplification.', 'annotations': {'expected_efs': '>85%'}},
+    "LOW": {'description': 'Low risk neuroblastoma with favorable prognosis. Treatment may include surgery alone or observation.', 'annotations': {'expected_efs': '>75%'}},
+    "INTERMEDIATE": {'description': 'Intermediate risk neuroblastoma requiring multimodal treatment including chemotherapy.', 'annotations': {'expected_efs': '50-75%'}},
+    "HIGH": {'description': 'High risk neuroblastoma with poor prognosis. Requires intensive multimodal therapy including high-dose chemotherapy with autologous stem cell rescue, surgery, radiation, and immunotherapy.', 'meaning': 'NCIT:C150281', 'annotations': {'expected_efs': '<50%', 'mycn_amplified': 'often'}},
 }
 
 class ImageDefinedRiskFactor(RichEnum):
@@ -16796,6 +16888,949 @@ ArxivCategory._metadata = {
     "STAT_ML": {'description': 'Covers machine learning papers with a statistical or theoretical grounding.'},
     "STAT_OT": {'description': 'Work in statistics that does not fit into the other stat-* classifications.'},
     "STAT_TH": {'description': 'Asymptotics, Bayesian inference, decision theory, estimation, foundations, inference.'},
+}
+
+class OstiWorkflowStatus(RichEnum):
+    """
+    Workflow status codes for OSTI record revisions.
+    """
+    # Enum members
+    R = "R"
+    SA = "SA"
+    SR = "SR"
+    SO = "SO"
+    SF = "SF"
+    SX = "SX"
+    SV = "SV"
+
+# Set metadata after class creation to avoid it becoming an enum member
+OstiWorkflowStatus._metadata = {
+}
+
+class OstiAccessLimitation(RichEnum):
+    """
+    Access and distribution limitation codes from OSTI.
+    """
+    # Enum members
+    UNL = "UNL"
+    OPN = "OPN"
+    CPY = "CPY"
+    OUO = "OUO"
+    PROT = "PROT"
+    PDOUO = "PDOUO"
+    ECI = "ECI"
+    PDSH = "PDSH"
+    USO = "USO"
+    LRD = "LRD"
+    NAT = "NAT"
+    NNPI = "NNPI"
+    INTL = "INTL"
+    PROP = "PROP"
+    PAT = "PAT"
+    OTHR = "OTHR"
+    CUI = "CUI"
+
+# Set metadata after class creation to avoid it becoming an enum member
+OstiAccessLimitation._metadata = {
+}
+
+class OstiCollectionType(RichEnum):
+    """
+    Collection type codes used by OSTI for record origin.
+    """
+    # Enum members
+    CHORUS = "CHORUS"
+    DOE_GRANT = "DOE_GRANT"
+    DOE_LAB = "DOE_LAB"
+
+# Set metadata after class creation to avoid it becoming an enum member
+OstiCollectionType._metadata = {
+}
+
+class OstiSensitivityFlag(RichEnum):
+    """
+    Sensitivity flags calculated by OSTI for released records.
+    """
+    # Enum members
+    H = "H"
+    S = "S"
+    U = "U"
+    X = "X"
+
+# Set metadata after class creation to avoid it becoming an enum member
+OstiSensitivityFlag._metadata = {
+}
+
+class OstiOrganizationIdentifierType(RichEnum):
+    """
+    Identifier types for OSTI organizations.
+    """
+    # Enum members
+    AWARD_DOI = "AWARD_DOI"
+    CN_DOE = "CN_DOE"
+    CN_NONDOE = "CN_NONDOE"
+
+# Set metadata after class creation to avoid it becoming an enum member
+OstiOrganizationIdentifierType._metadata = {
+}
+
+class OstiProductType(RichEnum):
+    """
+    Product type codes from OSTI record metadata.
+    """
+    # Enum members
+    AR = "AR"
+    B = "B"
+    CO = "CO"
+    DA = "DA"
+    FS = "FS"
+    JA = "JA"
+    MI = "MI"
+    OT = "OT"
+    P = "P"
+    PD = "PD"
+    SM = "SM"
+    TD = "TD"
+    TR = "TR"
+    PA = "PA"
+
+# Set metadata after class creation to avoid it becoming an enum member
+OstiProductType._metadata = {
+}
+
+class OstiOrganizationType(RichEnum):
+    """
+    Organization role types used by OSTI.
+    """
+    # Enum members
+    AUTHOR = "AUTHOR"
+    CONTRIBUTING = "CONTRIBUTING"
+    RESEARCHING = "RESEARCHING"
+    SPONSOR = "SPONSOR"
+
+# Set metadata after class creation to avoid it becoming an enum member
+OstiOrganizationType._metadata = {
+}
+
+class OstiPersonType(RichEnum):
+    """
+    Person role types used by OSTI.
+    """
+    # Enum members
+    AUTHOR = "AUTHOR"
+    RELEASE = "RELEASE"
+    CONTACT = "CONTACT"
+    CONTRIBUTING = "CONTRIBUTING"
+    PROT_CE = "PROT_CE"
+    PROT_RO = "PROT_RO"
+    SBIZ_PI = "SBIZ_PI"
+    SBIZ_BO = "SBIZ_BO"
+
+# Set metadata after class creation to avoid it becoming an enum member
+OstiPersonType._metadata = {
+}
+
+class OstiContributorType(RichEnum):
+    """
+    Contributor role types used by OSTI.
+    """
+    # Enum members
+    CHAIR = "Chair"
+    DATACOLLECTOR = "DataCollector"
+    DATACURATOR = "DataCurator"
+    DATAMANAGER = "DataManager"
+    DISTRIBUTOR = "Distributor"
+    EDITOR = "Editor"
+    HOSTINGINSTITUTION = "HostingInstitution"
+    PRODUCER = "Producer"
+    PROJECTLEADER = "ProjectLeader"
+    PROJECTMANAGER = "ProjectManager"
+    PROJECTMEMBER = "ProjectMember"
+    REGISTRATIONAGENCY = "RegistrationAgency"
+    REGISTRATIONAUTHORITY = "RegistrationAuthority"
+    RELATEDPERSON = "RelatedPerson"
+    REVIEWER = "Reviewer"
+    REVIEWASSISTANT = "ReviewAssistant"
+    REVIEWEREXTERNAL = "ReviewerExternal"
+    RIGHTSHOLDER = "RightsHolder"
+    STATSREVIEWER = "StatsReviewer"
+    SUPERVISOR = "Supervisor"
+    TRANSLATOR = "Translator"
+    WORKPACKAGELEADER = "WorkPackageLeader"
+    OTHER = "Other"
+
+# Set metadata after class creation to avoid it becoming an enum member
+OstiContributorType._metadata = {
+}
+
+class OstiRelatedIdentifierType(RichEnum):
+    """
+    Identifier types for related resources in OSTI.
+    """
+    # Enum members
+    ARK = "ARK"
+    ARXIV = "arXiv"
+    BIBCODE = "bibcode"
+    DOI = "DOI"
+    EAN13 = "EAN13"
+    EISSN = "EISSN"
+    IGSN = "IGSN"
+    ISBN = "ISBN"
+    ISSN = "ISSN"
+    ISTC = "ISTC"
+    HANDLE = "Handle"
+    LISSN = "LISSN"
+    LSID = "LSID"
+    OTHER = "OTHER"
+    PMCID = "PMCID"
+    PMID = "PMID"
+    PURL = "PURL"
+    UPC = "UPC"
+    URI = "URI"
+    URL = "URL"
+    URN = "URN"
+    UUID = "UUID"
+    W3ID = "w3id"
+
+# Set metadata after class creation to avoid it becoming an enum member
+OstiRelatedIdentifierType._metadata = {
+}
+
+class OstiRelationType(RichEnum):
+    """
+    Relationship types between records in OSTI.
+    """
+    # Enum members
+    BASEDONDATA = "BasedOnData"
+    CITES = "Cites"
+    COMPILES = "Compiles"
+    CONTINUES = "Continues"
+    DESCRIBES = "Describes"
+    DOCUMENTS = "Documents"
+    FINANCES = "Finances"
+    HASCOMMENT = "HasComment"
+    HASDERIVATION = "HasDerivation"
+    HASMETADATA = "HasMetadata"
+    HASPART = "HasPart"
+    HASRELATEDMATERIAL = "HasRelatedMaterial"
+    HASREPLY = "HasReply"
+    HASREVIEW = "HasReview"
+    HASVERSION = "HasVersion"
+    ISBASEDON = "IsBasedOn"
+    ISBASISFOR = "IsBasisFor"
+    ISCITEDBY = "IsCitedBy"
+    ISCOMMENTON = "IsCommentOn"
+    ISCOMPILEDBY = "IsCompiledBy"
+    ISCONTINUEDBY = "IsContinuedBy"
+    ISDATABASISFOR = "IsDataBasisFor"
+    ISDERIVEDFROM = "IsDerivedFrom"
+    ISDESCRIBEDBY = "IsDescribedBy"
+    ISDOCUMENTEDBY = "IsDocumentedBy"
+    ISFINANCEDBY = "IsFinancedBy"
+    ISIDENTICALTO = "IsIdenticalTo"
+    ISMETADATAFOR = "IsMetadataFor"
+    ISNEWVERSIONOF = "IsNewVersionOf"
+    ISOBSOLETEDBY = "IsObsoletedBy"
+    ISORIGINALFORMOF = "IsOriginalFormOf"
+    ISPARTOF = "IsPartOf"
+    ISPREVIOUSVERSIONOF = "IsPreviousVersionOf"
+    ISREFERENCEDBY = "IsReferencedBy"
+    ISRELATEDMATERIAL = "IsRelatedMaterial"
+    ISREPLYTO = "IsReplyTo"
+    ISREQUIREDBY = "IsRequiredBy"
+    ISREVIEWEDBY = "IsReviewedBy"
+    ISREVIEWOF = "IsReviewOf"
+    ISSOURCEOF = "IsSourceOf"
+    ISSUPPLEMENTEDBY = "IsSupplementedBy"
+    ISSUPPLEMENTTO = "IsSupplementTo"
+    ISVARIANTFORMOF = "IsVariantFormOf"
+    ISVERSIONOF = "IsVersionOf"
+    OBSOLETES = "Obsoletes"
+    REFERENCES = "References"
+    REQUIRES = "Requires"
+    REVIEWS = "Reviews"
+
+# Set metadata after class creation to avoid it becoming an enum member
+OstiRelationType._metadata = {
+}
+
+class OstiIdentifierType(RichEnum):
+    """
+    Identifier type codes from OSTI record metadata.
+    """
+    # Enum members
+    AUTH_REV = "AUTH_REV"
+    CN_DOE = "CN_DOE"
+    CN_NONDOE = "CN_NONDOE"
+    CODEN = "CODEN"
+    DOE_DOCKET = "DOE_DOCKET"
+    EDB = "EDB"
+    ETDE_RN = "ETDE_RN"
+    INIS_RN = "INIS_RN"
+    ISBN = "ISBN"
+    ISSN = "ISSN"
+    LEGACY = "LEGACY"
+    NSA = "NSA"
+    OPN_ACC = "OPN_ACC"
+    OTHER_ID = "OTHER_ID"
+    PATENT = "PATENT"
+    PROJ_ID = "PROJ_ID"
+    PROP_REV = "PROP_REV"
+    REF = "REF"
+    REL_TRN = "REL_TRN"
+    RN = "RN"
+    TRN = "TRN"
+    TVI = "TVI"
+    USER_VER = "USER_VER"
+    WORK_AUTH = "WORK_AUTH"
+    WORK_PROP = "WORK_PROP"
+
+# Set metadata after class creation to avoid it becoming an enum member
+OstiIdentifierType._metadata = {
+}
+
+class OstiGeolocationType(RichEnum):
+    """
+    Geolocation shape types in OSTI record metadata.
+    """
+    # Enum members
+    POINT = "POINT"
+    BOX = "BOX"
+    POLYGON = "POLYGON"
+
+# Set metadata after class creation to avoid it becoming an enum member
+OstiGeolocationType._metadata = {
+}
+
+class OstiMediaLocationType(RichEnum):
+    """
+    Location indicators for OSTI media files and sets.
+    """
+    # Enum members
+    L = "L"
+    O = "O"
+
+# Set metadata after class creation to avoid it becoming an enum member
+OstiMediaLocationType._metadata = {
+}
+
+class PreservationEventType(RichEnum):
+    """
+    Actions performed within or outside a repository that affect the long-term
+preservation of digital objects. Based on PREMIS 3.0 event types.
+
+    """
+    # Enum members
+    ACCESSION = "ACCESSION"
+    APPRAISAL = "APPRAISAL"
+    CAPTURE = "CAPTURE"
+    COMPILING = "COMPILING"
+    COMPRESSION = "COMPRESSION"
+    CREATION = "CREATION"
+    DEACCESSION = "DEACCESSION"
+    DECOMPRESSION = "DECOMPRESSION"
+    DECRYPTION = "DECRYPTION"
+    DELETION = "DELETION"
+    DIGITAL_SIGNATURE_GENERATION = "DIGITAL_SIGNATURE_GENERATION"
+    DIGITAL_SIGNATURE_VALIDATION = "DIGITAL_SIGNATURE_VALIDATION"
+    DISPLAYING = "DISPLAYING"
+    DISSEMINATION = "DISSEMINATION"
+    ENCRYPTION = "ENCRYPTION"
+    EXECUTION = "EXECUTION"
+    EXPORTING = "EXPORTING"
+    EXTRACTION = "EXTRACTION"
+    FILENAME_CHANGE = "FILENAME_CHANGE"
+    FIXITY_CHECK = "FIXITY_CHECK"
+    FORENSIC_FEATURE_ANALYSIS = "FORENSIC_FEATURE_ANALYSIS"
+    FORMAT_IDENTIFICATION = "FORMAT_IDENTIFICATION"
+    IMAGING = "IMAGING"
+    INFORMATION_PACKAGE_CREATION = "INFORMATION_PACKAGE_CREATION"
+    INFORMATION_PACKAGE_MERGING = "INFORMATION_PACKAGE_MERGING"
+    INFORMATION_PACKAGE_SPLITTING = "INFORMATION_PACKAGE_SPLITTING"
+    INGESTION = "INGESTION"
+    INGESTION_END = "INGESTION_END"
+    INGESTION_START = "INGESTION_START"
+    INTERPRETING = "INTERPRETING"
+    MESSAGE_DIGEST_CALCULATION = "MESSAGE_DIGEST_CALCULATION"
+    METADATA_EXTRACTION = "METADATA_EXTRACTION"
+    METADATA_MODIFICATION = "METADATA_MODIFICATION"
+    MIGRATION = "MIGRATION"
+    MODIFICATION = "MODIFICATION"
+    NORMALIZATION = "NORMALIZATION"
+    PACKING = "PACKING"
+    POLICY_ASSIGNMENT = "POLICY_ASSIGNMENT"
+    PRINTING = "PRINTING"
+    QUARANTINE = "QUARANTINE"
+    RECOVERY = "RECOVERY"
+    REDACTION = "REDACTION"
+    REFRESHMENT = "REFRESHMENT"
+    RENDERING = "RENDERING"
+    REPLICATION = "REPLICATION"
+    TRANSFER = "TRANSFER"
+    UNPACKING = "UNPACKING"
+    UNQUARANTINE = "UNQUARANTINE"
+    VALIDATION = "VALIDATION"
+    VIRUS_CHECK = "VIRUS_CHECK"
+
+# Set metadata after class creation to avoid it becoming an enum member
+PreservationEventType._metadata = {
+    "ACCESSION": {'description': "The process of adding objects to a repository's holdings.", 'meaning': 'premis:eventType/acc'},
+    "APPRAISAL": {'description': 'The process of evaluating objects for long-term retention.', 'meaning': 'premis:eventType/app'},
+    "CAPTURE": {'description': 'The process of recording or acquiring digital content.', 'meaning': 'premis:eventType/cap'},
+    "COMPILING": {'description': 'The process of converting source code into executable code.', 'meaning': 'premis:eventType/com'},
+    "COMPRESSION": {'description': 'The process of reducing file size through encoding.', 'meaning': 'premis:eventType/cmp'},
+    "CREATION": {'description': 'The act of creating a new digital object.', 'meaning': 'premis:eventType/cre'},
+    "DEACCESSION": {'description': "The process of removing objects from a repository's holdings.", 'meaning': 'premis:eventType/dea'},
+    "DECOMPRESSION": {'description': 'The process of restoring compressed data to its original form.', 'meaning': 'premis:eventType/dec'},
+    "DECRYPTION": {'description': 'The process of converting encrypted data back to plaintext.', 'meaning': 'premis:eventType/der'},
+    "DELETION": {'description': 'The act of removing a digital object.', 'meaning': 'premis:eventType/del'},
+    "DIGITAL_SIGNATURE_GENERATION": {'description': 'The process of creating a digital signature for authentication.', 'meaning': 'premis:eventType/dig'},
+    "DIGITAL_SIGNATURE_VALIDATION": {'description': 'The process of verifying the authenticity of a digital signature.', 'meaning': 'premis:eventType/dsv'},
+    "DISPLAYING": {'description': 'The process of presenting content for viewing.', 'meaning': 'premis:eventType/dip'},
+    "DISSEMINATION": {'description': 'The process of making content available to users.', 'meaning': 'premis:eventType/dis'},
+    "ENCRYPTION": {'description': 'The process of converting plaintext to ciphertext.', 'meaning': 'premis:eventType/enc'},
+    "EXECUTION": {'description': 'The process of running software or scripts.', 'meaning': 'premis:eventType/exe'},
+    "EXPORTING": {'description': 'The process of extracting content from a system.', 'meaning': 'premis:eventType/exp'},
+    "EXTRACTION": {'description': 'The process of retrieving content from a container or archive.', 'meaning': 'premis:eventType/ext'},
+    "FILENAME_CHANGE": {'description': "The act of modifying a file's name.", 'meaning': 'premis:eventType/fil'},
+    "FIXITY_CHECK": {'description': 'The process of verifying data integrity using checksums or hashes.', 'meaning': 'premis:eventType/fix'},
+    "FORENSIC_FEATURE_ANALYSIS": {'description': 'Analysis of digital objects for authenticity or provenance evidence.', 'meaning': 'premis:eventType/for'},
+    "FORMAT_IDENTIFICATION": {'description': 'The process of determining the file format of a digital object.', 'meaning': 'premis:eventType/fmi'},
+    "IMAGING": {'description': 'The process of creating a bit-level copy of storage media.', 'meaning': 'premis:eventType/ima'},
+    "INFORMATION_PACKAGE_CREATION": {'description': 'Creating a packaged unit of content and metadata (SIP, AIP, DIP).', 'meaning': 'premis:eventType/ipc'},
+    "INFORMATION_PACKAGE_MERGING": {'description': 'Combining multiple information packages into one.', 'meaning': 'premis:eventType/ipm'},
+    "INFORMATION_PACKAGE_SPLITTING": {'description': 'Dividing an information package into multiple packages.', 'meaning': 'premis:eventType/ips'},
+    "INGESTION": {'description': 'The process of accepting and processing submitted content.', 'meaning': 'premis:eventType/ing'},
+    "INGESTION_END": {'description': 'The completion of the ingestion process.', 'meaning': 'premis:eventType/ine'},
+    "INGESTION_START": {'description': 'The beginning of the ingestion process.', 'meaning': 'premis:eventType/ins'},
+    "INTERPRETING": {'description': 'The process of rendering or executing interpretable content.', 'meaning': 'premis:eventType/int'},
+    "MESSAGE_DIGEST_CALCULATION": {'description': 'The process of computing a hash or checksum value.', 'meaning': 'premis:eventType/mes'},
+    "METADATA_EXTRACTION": {'description': 'The process of extracting metadata from digital objects.', 'meaning': 'premis:eventType/mee'},
+    "METADATA_MODIFICATION": {'description': 'The process of changing metadata associated with an object.', 'meaning': 'premis:eventType/mem'},
+    "MIGRATION": {'description': 'The process of converting content from one format to another\nto ensure continued accessibility.\n', 'meaning': 'premis:eventType/mig'},
+    "MODIFICATION": {'description': 'The act of changing the content of a digital object.', 'meaning': 'premis:eventType/mod'},
+    "NORMALIZATION": {'description': 'The process of converting content to a standard format\nfor preservation or access.\n', 'meaning': 'premis:eventType/nor'},
+    "PACKING": {'description': 'The process of combining files into a container format.', 'meaning': 'premis:eventType/pac'},
+    "POLICY_ASSIGNMENT": {'description': 'The act of associating preservation policies with objects.', 'meaning': 'premis:eventType/poa'},
+    "PRINTING": {'description': 'The process of producing a physical copy of digital content.', 'meaning': 'premis:eventType/pri'},
+    "QUARANTINE": {'description': 'Isolating objects suspected of containing malware or corruption.', 'meaning': 'premis:eventType/qua'},
+    "RECOVERY": {'description': 'The process of restoring objects from backup or damaged media.', 'meaning': 'premis:eventType/rec'},
+    "REDACTION": {'description': 'The process of removing sensitive content from objects.', 'meaning': 'premis:eventType/red'},
+    "REFRESHMENT": {'description': 'Copying data to new storage media without format change.', 'meaning': 'premis:eventType/ref'},
+    "RENDERING": {'description': 'The process of generating a viewable representation.', 'meaning': 'premis:eventType/ren'},
+    "REPLICATION": {'description': 'Creating exact copies for redundancy or distribution.', 'meaning': 'premis:eventType/rep'},
+    "TRANSFER": {'description': 'Moving objects between systems or locations.', 'meaning': 'premis:eventType/tra'},
+    "UNPACKING": {'description': 'Extracting files from a container format.', 'meaning': 'premis:eventType/unp'},
+    "UNQUARANTINE": {'description': 'Releasing objects from quarantine after verification.', 'meaning': 'premis:eventType/unq'},
+    "VALIDATION": {'description': 'Verifying that objects conform to expected specifications.', 'meaning': 'premis:eventType/val'},
+    "VIRUS_CHECK": {'description': 'Scanning objects for malware or viruses.', 'meaning': 'premis:eventType/vir'},
+}
+
+class PreservationEventOutcome(RichEnum):
+    """
+    The outcome or result of a preservation event.
+    """
+    # Enum members
+    SUCCESS = "SUCCESS"
+    FAILURE = "FAILURE"
+    WARNING = "WARNING"
+
+# Set metadata after class creation to avoid it becoming an enum member
+PreservationEventOutcome._metadata = {
+    "SUCCESS": {'description': 'The event completed successfully.', 'meaning': 'premis:eventOutcome/suc'},
+    "FAILURE": {'description': 'The event failed to complete.', 'meaning': 'premis:eventOutcome/fai'},
+    "WARNING": {'description': 'The event completed with warnings or issues.', 'meaning': 'premis:eventOutcome/war'},
+}
+
+class DigitalObjectCategory(RichEnum):
+    """
+    The category of object to which preservation metadata applies.
+Based on PREMIS object categories.
+
+    """
+    # Enum members
+    BITSTREAM = "BITSTREAM"
+    FILE = "FILE"
+    INTELLECTUAL_ENTITY = "INTELLECTUAL_ENTITY"
+    REPRESENTATION = "REPRESENTATION"
+
+# Set metadata after class creation to avoid it becoming an enum member
+DigitalObjectCategory._metadata = {
+    "BITSTREAM": {'description': 'Contiguous or non-contiguous data within a file that has meaningful\nproperties for preservation purposes. A bitstream cannot be transformed\ninto a standalone file without the addition of file structure.\n', 'meaning': 'premis:objectCategory/bit'},
+    "FILE": {'description': 'A named and ordered sequence of bytes that is known to an operating\nsystem. A file can be zero or more bytes and has a file format,\naccess permissions, and other file system characteristics.\n', 'meaning': 'premis:objectCategory/fil'},
+    "INTELLECTUAL_ENTITY": {'description': 'A coherent set of content that is reasonably described as a unit.\nExamples include a book, a photograph, a database, or a software\napplication. An intellectual entity may contain other intellectual\nentities.\n', 'meaning': 'premis:objectCategory/int'},
+    "REPRESENTATION": {'description': 'The set of files, including structural metadata, needed for a\ncomplete and reasonable rendition of an intellectual entity.\nA digital object may have multiple representations.\n', 'meaning': 'premis:objectCategory/rep'},
+}
+
+class CopyrightStatus(RichEnum):
+    """
+    A designation for the copyright status of an object at the time
+the rights statement is recorded. Based on PREMIS.
+
+    """
+    # Enum members
+    COPYRIGHTED = "COPYRIGHTED"
+    PUBLIC_DOMAIN = "PUBLIC_DOMAIN"
+    UNKNOWN = "UNKNOWN"
+
+# Set metadata after class creation to avoid it becoming an enum member
+CopyrightStatus._metadata = {
+    "COPYRIGHTED": {'description': 'The object is protected by copyright.', 'meaning': 'premis:copyrightStatus/cpr'},
+    "PUBLIC_DOMAIN": {'description': 'The object is not protected by copyright, either because copyright\nhas expired, was never applicable, or has been waived.\n', 'meaning': 'premis:copyrightStatus/pub'},
+    "UNKNOWN": {'description': 'The copyright status cannot be determined.', 'meaning': 'premis:copyrightStatus/unk'},
+}
+
+class RightsBasis(RichEnum):
+    """
+    The basis for the right or permission granted for an object.
+Based on PREMIS rights basis vocabulary.
+
+    """
+    # Enum members
+    COPYRIGHT = "COPYRIGHT"
+    INSTITUTIONAL_POLICY = "INSTITUTIONAL_POLICY"
+    LICENSE = "LICENSE"
+    STATUTE = "STATUTE"
+    OTHER = "OTHER"
+
+# Set metadata after class creation to avoid it becoming an enum member
+RightsBasis._metadata = {
+    "COPYRIGHT": {'description': 'Rights based on copyright law.', 'meaning': 'premis:rightsBasis/cop'},
+    "INSTITUTIONAL_POLICY": {'description': 'Rights based on the policies of the holding institution.', 'meaning': 'premis:rightsBasis/ins'},
+    "LICENSE": {'description': 'Rights based on a license agreement.', 'meaning': 'premis:rightsBasis/lic'},
+    "STATUTE": {'description': 'Rights based on statutory law other than copyright.', 'meaning': 'premis:rightsBasis/sta'},
+    "OTHER": {'description': 'Rights based on another basis not listed.', 'meaning': 'premis:rightsBasis/oth'},
+}
+
+class PreservationLevelRole(RichEnum):
+    """
+    The context in which a preservation level value is specified.
+Based on PREMIS preservation level role vocabulary.
+
+    """
+    # Enum members
+    CAPABILITY = "CAPABILITY"
+    INTENTION = "INTENTION"
+    REQUIREMENT = "REQUIREMENT"
+
+# Set metadata after class creation to avoid it becoming an enum member
+PreservationLevelRole._metadata = {
+    "CAPABILITY": {'description': 'The preservation level that the repository is capable of providing\nbased on its technical infrastructure and resources.\n', 'meaning': 'premis:preservationLevelRole/cap'},
+    "INTENTION": {'description': 'The preservation level that the repository intends to provide\nfor the object, based on policy decisions.\n', 'meaning': 'premis:preservationLevelRole/int'},
+    "REQUIREMENT": {'description': 'The preservation level required by the depositor or\nother stakeholder for the object.\n', 'meaning': 'premis:preservationLevelRole/req'},
+}
+
+class PreservationLevelValue(RichEnum):
+    """
+    Common preservation level tiers indicating the degree of preservation
+commitment. These are not from PREMIS directly but represent common
+practice in digital preservation.
+
+    """
+    # Enum members
+    BIT_LEVEL = "BIT_LEVEL"
+    LOGICAL_PRESERVATION = "LOGICAL_PRESERVATION"
+    SEMANTIC_PRESERVATION = "SEMANTIC_PRESERVATION"
+    FULL_PRESERVATION = "FULL_PRESERVATION"
+
+# Set metadata after class creation to avoid it becoming an enum member
+PreservationLevelValue._metadata = {
+    "BIT_LEVEL": {'description': 'Ensures the exact bit sequence is maintained. Includes fixity checks\nand secure storage but no format migration or access provision.\n', 'aliases': ['Level 1']},
+    "LOGICAL_PRESERVATION": {'description': 'Maintains the ability to render or use the content. May include\nformat migration to ensure long-term accessibility.\n', 'aliases': ['Level 2', 'Content Preservation']},
+    "SEMANTIC_PRESERVATION": {'description': 'Preserves the meaning and context of content, including relationships\nbetween objects and their intellectual context.\n', 'aliases': ['Level 3', 'Full Preservation']},
+    "FULL_PRESERVATION": {'description': 'Comprehensive preservation including all aspects: bit-level integrity,\nformat migration, semantic context, and provenance tracking.\n', 'aliases': ['Level 4']},
+}
+
+class CryptographicHashFunction(RichEnum):
+    """
+    Algorithms that take an input and return a fixed-size string (hash value).
+Used for verifying data integrity and creating digital signatures.
+Based on PREMIS cryptographic hash functions vocabulary.
+
+    """
+    # Enum members
+    ADLER_32 = "ADLER_32"
+    CRC32 = "CRC32"
+    HAVAL = "HAVAL"
+    MD2 = "MD2"
+    MD4 = "MD4"
+    MD5 = "MD5"
+    MD6 = "MD6"
+    SHA_1 = "SHA_1"
+    SHA_224 = "SHA_224"
+    SHA_256 = "SHA_256"
+    SHA_384 = "SHA_384"
+    SHA_512 = "SHA_512"
+    SHA3_224 = "SHA3_224"
+    SHA3_256 = "SHA3_256"
+    SHA3_384 = "SHA3_384"
+    SHA3_512 = "SHA3_512"
+    BLAKE2B_256 = "BLAKE2B_256"
+    BLAKE2B_384 = "BLAKE2B_384"
+    BLAKE2B_512 = "BLAKE2B_512"
+    BLAKE3 = "BLAKE3"
+    TIGER = "TIGER"
+    WHIRLPOOL = "WHIRLPOOL"
+    UNKNOWN = "UNKNOWN"
+
+# Set metadata after class creation to avoid it becoming an enum member
+CryptographicHashFunction._metadata = {
+    "ADLER_32": {'description': 'A checksum algorithm developed by Mark Adler. Faster than CRC32\nbut with weaker error detection. Used in zlib compression.\n', 'meaning': 'premis:cryptographicHashFunctions/adl', 'annotations': {'output_bits': 32, 'security_level': 'non-cryptographic'}},
+    "CRC32": {'description': 'Cyclic Redundancy Check with 32-bit output. Used for error detection\nin network transmissions and storage. Not cryptographically secure.\n', 'meaning': 'premis:cryptographicHashFunctions/crc', 'annotations': {'output_bits': 32, 'security_level': 'non-cryptographic'}},
+    "HAVAL": {'description': 'A cryptographic hash function that can produce hash values of\n128, 160, 192, 224, or 256 bits. Variable number of rounds.\n', 'meaning': 'premis:cryptographicHashFunctions/hav', 'annotations': {'output_bits': 'variable', 'security_level': 'deprecated'}},
+    "MD2": {'description': 'Message Digest 2 algorithm producing a 128-bit hash value.\nDesigned for 8-bit computers. Considered cryptographically broken.\n', 'meaning': 'premis:cryptographicHashFunctions/md2', 'annotations': {'output_bits': 128, 'security_level': 'broken'}},
+    "MD4": {'description': 'Message Digest 4 algorithm producing a 128-bit hash value.\nPredecessor to MD5. Considered cryptographically broken.\n', 'annotations': {'output_bits': 128, 'security_level': 'broken'}},
+    "MD5": {'description': 'Message Digest 5 algorithm producing a 128-bit hash value.\nWidely used but vulnerable to collision attacks. Acceptable\nfor non-security integrity checks only.\n', 'meaning': 'premis:cryptographicHashFunctions/md5', 'annotations': {'output_bits': 128, 'security_level': 'weak'}},
+    "MD6": {'description': 'Message Digest 6 algorithm with variable output size.\nDesigned as a candidate for SHA-3 but not selected.\n', 'annotations': {'output_bits': 'variable', 'security_level': 'adequate'}},
+    "SHA_1": {'description': 'Secure Hash Algorithm 1 producing a 160-bit hash value.\nDeprecated for security applications due to collision vulnerabilities.\nStill acceptable for integrity verification in some contexts.\n', 'meaning': 'premis:cryptographicHashFunctions/sha1', 'annotations': {'output_bits': 160, 'security_level': 'weak'}, 'aliases': ['SHA1']},
+    "SHA_224": {'description': 'SHA-2 variant producing a 224-bit hash value.\nTruncated version of SHA-256.\n', 'annotations': {'output_bits': 224, 'security_level': 'secure'}, 'aliases': ['SHA224']},
+    "SHA_256": {'description': 'SHA-2 variant producing a 256-bit hash value.\nWidely used and considered secure for most applications.\nRecommended for digital preservation.\n', 'meaning': 'premis:cryptographicHashFunctions/sha256', 'annotations': {'output_bits': 256, 'security_level': 'secure'}, 'aliases': ['SHA256']},
+    "SHA_384": {'description': 'SHA-2 variant producing a 384-bit hash value.\nTruncated version of SHA-512.\n', 'meaning': 'premis:cryptographicHashFunctions/sha384', 'annotations': {'output_bits': 384, 'security_level': 'secure'}, 'aliases': ['SHA384']},
+    "SHA_512": {'description': 'SHA-2 variant producing a 512-bit hash value.\nHighest security level in the SHA-2 family.\n', 'meaning': 'premis:cryptographicHashFunctions/sha512', 'annotations': {'output_bits': 512, 'security_level': 'secure'}, 'aliases': ['SHA512']},
+    "SHA3_224": {'description': 'SHA-3 variant producing a 224-bit hash value.\nBased on the Keccak algorithm.\n', 'annotations': {'output_bits': 224, 'security_level': 'secure'}},
+    "SHA3_256": {'description': 'SHA-3 variant producing a 256-bit hash value.\nBased on the Keccak algorithm. Provides defense against\nlength extension attacks.\n', 'annotations': {'output_bits': 256, 'security_level': 'secure'}},
+    "SHA3_384": {'description': 'SHA-3 variant producing a 384-bit hash value.\nBased on the Keccak algorithm.\n', 'annotations': {'output_bits': 384, 'security_level': 'secure'}},
+    "SHA3_512": {'description': 'SHA-3 variant producing a 512-bit hash value.\nBased on the Keccak algorithm.\n', 'annotations': {'output_bits': 512, 'security_level': 'secure'}},
+    "BLAKE2B_256": {'description': 'BLAKE2b variant producing a 256-bit hash value.\nFaster than MD5 and SHA-1 while being more secure.\n', 'annotations': {'output_bits': 256, 'security_level': 'secure'}},
+    "BLAKE2B_384": {'description': 'BLAKE2b variant producing a 384-bit hash value.\n', 'annotations': {'output_bits': 384, 'security_level': 'secure'}},
+    "BLAKE2B_512": {'description': 'BLAKE2b variant producing a 512-bit hash value.\nOptimized for 64-bit platforms.\n', 'annotations': {'output_bits': 512, 'security_level': 'secure'}},
+    "BLAKE3": {'description': 'Latest BLAKE variant, extremely fast with 256-bit output.\nSupports parallelization and incremental hashing.\n', 'annotations': {'output_bits': 256, 'security_level': 'secure'}},
+    "TIGER": {'description': 'A cryptographic hash function designed for 64-bit platforms.\nProduces a 192-bit hash value.\n', 'meaning': 'premis:cryptographicHashFunctions/tig', 'annotations': {'output_bits': 192, 'security_level': 'adequate'}},
+    "WHIRLPOOL": {'description': 'A cryptographic hash function producing a 512-bit hash value.\nBased on a modified AES block cipher.\n', 'meaning': 'premis:cryptographicHashFunctions/whi', 'annotations': {'output_bits': 512, 'security_level': 'secure'}},
+    "UNKNOWN": {'description': 'The hash algorithm is not known or not specified.', 'meaning': 'premis:cryptographicHashFunctions/unk'},
+}
+
+class DataCiteResourceType(RichEnum):
+    """
+    General resource type classifications from DataCite 4.6.
+Used for categorizing research outputs in data repositories.
+
+    """
+    # Enum members
+    AUDIOVISUAL = "AUDIOVISUAL"
+    AWARD = "AWARD"
+    BOOK = "BOOK"
+    BOOK_CHAPTER = "BOOK_CHAPTER"
+    COLLECTION = "COLLECTION"
+    COMPUTATIONAL_NOTEBOOK = "COMPUTATIONAL_NOTEBOOK"
+    CONFERENCE_PAPER = "CONFERENCE_PAPER"
+    CONFERENCE_PROCEEDING = "CONFERENCE_PROCEEDING"
+    DATA_PAPER = "DATA_PAPER"
+    DATASET = "DATASET"
+    DISSERTATION = "DISSERTATION"
+    EVENT = "EVENT"
+    IMAGE = "IMAGE"
+    INSTRUMENT = "INSTRUMENT"
+    INTERACTIVE_RESOURCE = "INTERACTIVE_RESOURCE"
+    JOURNAL = "JOURNAL"
+    JOURNAL_ARTICLE = "JOURNAL_ARTICLE"
+    MODEL = "MODEL"
+    OUTPUT_MANAGEMENT_PLAN = "OUTPUT_MANAGEMENT_PLAN"
+    PEER_REVIEW = "PEER_REVIEW"
+    PHYSICAL_OBJECT = "PHYSICAL_OBJECT"
+    PREPRINT = "PREPRINT"
+    PROJECT = "PROJECT"
+    REPORT = "REPORT"
+    SERVICE = "SERVICE"
+    SOFTWARE = "SOFTWARE"
+    SOUND = "SOUND"
+    STANDARD = "STANDARD"
+    STUDY_REGISTRATION = "STUDY_REGISTRATION"
+    TEXT = "TEXT"
+    WORKFLOW = "WORKFLOW"
+    OTHER = "OTHER"
+
+# Set metadata after class creation to avoid it becoming an enum member
+DataCiteResourceType._metadata = {
+    "AUDIOVISUAL": {'description': 'A series of visual representations imparting an impression of motion\nwhen shown in succession. May include sound.\n', 'meaning': 'DataCite:Audiovisual', 'annotations': {'examples': 'video, film, animation'}},
+    "AWARD": {'description': 'Funding or support provided to an individual or organization\nfor research, academic work, or professional development.\n', 'meaning': 'DataCite:Award', 'annotations': {'added_version': '4.6', 'examples': 'grant award, fellowship, scholarship'}},
+    "BOOK": {'description': 'A medium for recording information in the form of writing or images,\ntypically composed of many pages bound together.\n', 'meaning': 'DataCite:Book'},
+    "BOOK_CHAPTER": {'description': 'One of the main divisions of a book.', 'meaning': 'DataCite:BookChapter'},
+    "COLLECTION": {'description': 'An aggregation of resources, which may encompass collections of\none resource type as well as those of mixed types.\n', 'meaning': 'DataCite:Collection'},
+    "COMPUTATIONAL_NOTEBOOK": {'description': 'A virtual notebook environment used for literate programming,\ncombining code, documentation, and visualizations.\n', 'meaning': 'DataCite:ComputationalNotebook', 'annotations': {'examples': 'Jupyter notebook, R Markdown, Observable'}},
+    "CONFERENCE_PAPER": {'description': 'Article written with the goal of being accepted to a conference.\n', 'meaning': 'DataCite:ConferencePaper'},
+    "CONFERENCE_PROCEEDING": {'description': 'Collection of academic papers published in the context of\nan academic conference.\n', 'meaning': 'DataCite:ConferenceProceeding'},
+    "DATA_PAPER": {'description': 'A scholarly publication describing a dataset, intended to\nfacilitate its discovery, interpretation, and reuse.\n', 'meaning': 'DataCite:DataPaper'},
+    "DATASET": {'description': 'Data encoded in a defined structure. May include tables,\ndatabases, or other structured data.\n', 'meaning': 'DataCite:Dataset'},
+    "DISSERTATION": {'description': 'A written essay, treatise, or thesis, especially one written\nby a candidate for a doctoral degree.\n', 'meaning': 'DataCite:Dissertation'},
+    "EVENT": {'description': 'A non-persistent, time-based occurrence. May be planned or\nunplanned.\n', 'meaning': 'DataCite:Event', 'annotations': {'examples': 'conference, workshop, exhibition'}},
+    "IMAGE": {'description': 'A visual representation other than text, including photographs,\ndiagrams, illustrations, and other static visual works.\n', 'meaning': 'DataCite:Image'},
+    "INSTRUMENT": {'description': 'A device, tool, or apparatus used to obtain, measure, and/or\nanalyze data.\n', 'meaning': 'DataCite:Instrument', 'annotations': {'examples': 'microscope, telescope, sensor, spectrometer'}},
+    "INTERACTIVE_RESOURCE": {'description': 'A resource requiring interaction from the user to be understood,\nexecuted, or experienced.\n', 'meaning': 'DataCite:InteractiveResource', 'annotations': {'examples': 'web application, game, simulation'}},
+    "JOURNAL": {'description': 'A scholarly publication consisting of articles that is published\nregularly throughout the year.\n', 'meaning': 'DataCite:Journal'},
+    "JOURNAL_ARTICLE": {'description': 'A written composition on a topic of interest, which forms a\nseparate part of a journal.\n', 'meaning': 'DataCite:JournalArticle'},
+    "MODEL": {'description': 'An abstract, conceptual, graphical, mathematical, or visualization\nmodel that represents empirical objects, phenomena, or processes.\n', 'meaning': 'DataCite:Model', 'annotations': {'examples': '3D model, statistical model, simulation model'}},
+    "OUTPUT_MANAGEMENT_PLAN": {'description': 'A formal document that outlines how research outputs are to be\nhandled during and after a research project.\n', 'meaning': 'DataCite:OutputManagementPlan', 'aliases': ['Data Management Plan', 'DMP']},
+    "PEER_REVIEW": {'description': 'Evaluation of scientific, academic, or professional work by\nothers working in the same field.\n', 'meaning': 'DataCite:PeerReview'},
+    "PHYSICAL_OBJECT": {'description': 'A physical object or substance, including artifacts, specimens,\nsamples, and material objects.\n', 'meaning': 'DataCite:PhysicalObject', 'annotations': {'examples': 'fossil, artifact, tissue sample, mineral specimen'}},
+    "PREPRINT": {'description': 'A version of a scholarly or scientific paper that precedes\nformal peer review and publication in a journal.\n', 'meaning': 'DataCite:Preprint'},
+    "PROJECT": {'description': 'A planned endeavor or activity, frequently collaborative,\nintended to achieve a particular aim.\n', 'meaning': 'DataCite:Project', 'annotations': {'added_version': '4.6'}},
+    "REPORT": {'description': 'A document that presents information in an organized format\nfor a specific audience and purpose.\n', 'meaning': 'DataCite:Report'},
+    "SERVICE": {'description': 'An organized system of apparatus, appliances, staff, etc.,\nfor supplying some function required by end users.\n', 'meaning': 'DataCite:Service', 'annotations': {'examples': 'API, web service, data service'}},
+    "SOFTWARE": {'description': 'A computer program other than a computational notebook,\nin either source code (text) or compiled form.\n', 'meaning': 'DataCite:Software'},
+    "SOUND": {'description': 'A resource primarily intended to be heard, including music,\nspeech, and other audio recordings.\n', 'meaning': 'DataCite:Sound'},
+    "STANDARD": {'description': 'Something established by authority, custom, or general consent\nas a model, example, or point of reference.\n', 'meaning': 'DataCite:Standard', 'annotations': {'examples': 'ISO standard, data format specification'}},
+    "STUDY_REGISTRATION": {'description': 'A detailed, time-stamped description of a research plan,\noften openly shared in a registry or repository.\n', 'meaning': 'DataCite:StudyRegistration', 'annotations': {'examples': 'clinical trial registration, pre-registration'}},
+    "TEXT": {'description': 'A resource consisting primarily of words for reading that is\nnot covered by any other textual resource type.\n', 'meaning': 'DataCite:Text'},
+    "WORKFLOW": {'description': 'A structured series of steps which can be executed to produce\na final outcome, often automated.\n', 'meaning': 'DataCite:Workflow', 'annotations': {'examples': 'bioinformatics pipeline, ETL workflow, analysis script'}},
+    "OTHER": {'description': 'Use when the resource type does not fit any other category.\nShould be accompanied by a free-text description.\n', 'meaning': 'DataCite:Other'},
+}
+
+class DataCiteRelationType(RichEnum):
+    """
+    Types of relationships between research resources from DataCite 4.6.
+Relations are expressed from the perspective of the resource being
+described (A) in relation to another resource (B).
+
+    """
+    # Enum members
+    IS_CITED_BY = "IS_CITED_BY"
+    CITES = "CITES"
+    IS_SUPPLEMENT_TO = "IS_SUPPLEMENT_TO"
+    IS_SUPPLEMENTED_BY = "IS_SUPPLEMENTED_BY"
+    IS_CONTINUED_BY = "IS_CONTINUED_BY"
+    CONTINUES = "CONTINUES"
+    DESCRIBES = "DESCRIBES"
+    IS_DESCRIBED_BY = "IS_DESCRIBED_BY"
+    HAS_METADATA = "HAS_METADATA"
+    IS_METADATA_FOR = "IS_METADATA_FOR"
+    HAS_VERSION = "HAS_VERSION"
+    IS_VERSION_OF = "IS_VERSION_OF"
+    IS_NEW_VERSION_OF = "IS_NEW_VERSION_OF"
+    IS_PREVIOUS_VERSION_OF = "IS_PREVIOUS_VERSION_OF"
+    IS_PART_OF = "IS_PART_OF"
+    HAS_PART = "HAS_PART"
+    IS_PUBLISHED_IN = "IS_PUBLISHED_IN"
+    IS_REFERENCED_BY = "IS_REFERENCED_BY"
+    REFERENCES = "REFERENCES"
+    IS_DOCUMENTED_BY = "IS_DOCUMENTED_BY"
+    DOCUMENTS = "DOCUMENTS"
+    IS_COMPILED_BY = "IS_COMPILED_BY"
+    COMPILES = "COMPILES"
+    IS_VARIANT_FORM_OF = "IS_VARIANT_FORM_OF"
+    IS_ORIGINAL_FORM_OF = "IS_ORIGINAL_FORM_OF"
+    IS_IDENTICAL_TO = "IS_IDENTICAL_TO"
+    IS_REVIEWED_BY = "IS_REVIEWED_BY"
+    REVIEWS = "REVIEWS"
+    IS_DERIVED_FROM = "IS_DERIVED_FROM"
+    IS_SOURCE_OF = "IS_SOURCE_OF"
+    IS_REQUIRED_BY = "IS_REQUIRED_BY"
+    REQUIRES = "REQUIRES"
+    OBSOLETES = "OBSOLETES"
+    IS_OBSOLETED_BY = "IS_OBSOLETED_BY"
+    IS_COLLECTED_BY = "IS_COLLECTED_BY"
+    COLLECTS = "COLLECTS"
+    IS_TRANSLATION_OF = "IS_TRANSLATION_OF"
+    HAS_TRANSLATION = "HAS_TRANSLATION"
+
+# Set metadata after class creation to avoid it becoming an enum member
+DataCiteRelationType._metadata = {
+    "IS_CITED_BY": {'description': 'Indicates that B includes A in a citation.', 'meaning': 'DataCite:IsCitedBy', 'annotations': {'inverse': 'CITES', 'category': 'citation'}},
+    "CITES": {'description': 'Indicates that A includes B in a citation.', 'meaning': 'DataCite:Cites', 'annotations': {'inverse': 'IS_CITED_BY', 'category': 'citation'}},
+    "IS_SUPPLEMENT_TO": {'description': 'Indicates that A is a supplement to B.', 'meaning': 'DataCite:IsSupplementTo', 'annotations': {'inverse': 'IS_SUPPLEMENTED_BY', 'category': 'supplementary'}},
+    "IS_SUPPLEMENTED_BY": {'description': 'Indicates that B is a supplement to A.', 'meaning': 'DataCite:IsSupplementedBy', 'annotations': {'inverse': 'IS_SUPPLEMENT_TO', 'category': 'supplementary'}},
+    "IS_CONTINUED_BY": {'description': 'Indicates that A is continued by the work B.', 'meaning': 'DataCite:IsContinuedBy', 'annotations': {'inverse': 'CONTINUES', 'category': 'continuation'}},
+    "CONTINUES": {'description': 'Indicates that A is a continuation of the work B.', 'meaning': 'DataCite:Continues', 'annotations': {'inverse': 'IS_CONTINUED_BY', 'category': 'continuation'}},
+    "DESCRIBES": {'description': 'Indicates that A describes B.', 'meaning': 'DataCite:Describes', 'annotations': {'inverse': 'IS_DESCRIBED_BY', 'category': 'description'}},
+    "IS_DESCRIBED_BY": {'description': 'Indicates that A is described by B.', 'meaning': 'DataCite:IsDescribedBy', 'annotations': {'inverse': 'DESCRIBES', 'category': 'description'}},
+    "HAS_METADATA": {'description': 'Indicates that resource A has additional metadata B.', 'meaning': 'DataCite:HasMetadata', 'annotations': {'inverse': 'IS_METADATA_FOR', 'category': 'metadata'}},
+    "IS_METADATA_FOR": {'description': 'Indicates that additional metadata A describes resource B.', 'meaning': 'DataCite:IsMetadataFor', 'annotations': {'inverse': 'HAS_METADATA', 'category': 'metadata'}},
+    "HAS_VERSION": {'description': 'Indicates that A has a version B.', 'meaning': 'DataCite:HasVersion', 'annotations': {'inverse': 'IS_VERSION_OF', 'category': 'versioning'}},
+    "IS_VERSION_OF": {'description': 'Indicates that A is a version of B.', 'meaning': 'DataCite:IsVersionOf', 'annotations': {'inverse': 'HAS_VERSION', 'category': 'versioning'}},
+    "IS_NEW_VERSION_OF": {'description': 'Indicates that A is a new edition of B, where the new edition\nhas been modified or updated.\n', 'meaning': 'DataCite:IsNewVersionOf', 'annotations': {'inverse': 'IS_PREVIOUS_VERSION_OF', 'category': 'versioning'}},
+    "IS_PREVIOUS_VERSION_OF": {'description': 'Indicates that A is a previous edition of B.', 'meaning': 'DataCite:IsPreviousVersionOf', 'annotations': {'inverse': 'IS_NEW_VERSION_OF', 'category': 'versioning'}},
+    "IS_PART_OF": {'description': 'Indicates that A is a portion of B. May be used for elements\nof a series.\n', 'meaning': 'DataCite:IsPartOf', 'annotations': {'inverse': 'HAS_PART', 'category': 'partonomy'}},
+    "HAS_PART": {'description': 'Indicates that A includes the part B.', 'meaning': 'DataCite:HasPart', 'annotations': {'inverse': 'IS_PART_OF', 'category': 'partonomy'}},
+    "IS_PUBLISHED_IN": {'description': 'Indicates that A is published inside B, but is independent of\nother things published inside of B.\n', 'meaning': 'DataCite:IsPublishedIn', 'annotations': {'category': 'publication'}},
+    "IS_REFERENCED_BY": {'description': 'Indicates that A is used as a source of information by B.', 'meaning': 'DataCite:IsReferencedBy', 'annotations': {'inverse': 'REFERENCES', 'category': 'reference'}},
+    "REFERENCES": {'description': 'Indicates that B is used as a source of information for A.', 'meaning': 'DataCite:References', 'annotations': {'inverse': 'IS_REFERENCED_BY', 'category': 'reference'}},
+    "IS_DOCUMENTED_BY": {'description': 'Indicates that B is documentation about/explaining A.', 'meaning': 'DataCite:IsDocumentedBy', 'annotations': {'inverse': 'DOCUMENTS', 'category': 'documentation'}},
+    "DOCUMENTS": {'description': 'Indicates that A is documentation about/explaining B.', 'meaning': 'DataCite:Documents', 'annotations': {'inverse': 'IS_DOCUMENTED_BY', 'category': 'documentation'}},
+    "IS_COMPILED_BY": {'description': 'Indicates that B is used to compile or create A.', 'meaning': 'DataCite:IsCompiledBy', 'annotations': {'inverse': 'COMPILES', 'category': 'derivation'}},
+    "COMPILES": {'description': 'Indicates that B is the result of a compile or creation event using A.', 'meaning': 'DataCite:Compiles', 'annotations': {'inverse': 'IS_COMPILED_BY', 'category': 'derivation'}},
+    "IS_VARIANT_FORM_OF": {'description': 'Indicates that A is a variant or different form of B.', 'meaning': 'DataCite:IsVariantFormOf', 'annotations': {'inverse': 'IS_ORIGINAL_FORM_OF', 'category': 'form'}},
+    "IS_ORIGINAL_FORM_OF": {'description': 'Indicates that A is the original form of B.', 'meaning': 'DataCite:IsOriginalFormOf', 'annotations': {'inverse': 'IS_VARIANT_FORM_OF', 'category': 'form'}},
+    "IS_IDENTICAL_TO": {'description': 'Indicates that A is identical to B, for use when there is a need\nto register two separate instances of the same resource.\n', 'meaning': 'DataCite:IsIdenticalTo', 'annotations': {'category': 'identity'}},
+    "IS_REVIEWED_BY": {'description': 'Indicates that A is reviewed by B.', 'meaning': 'DataCite:IsReviewedBy', 'annotations': {'inverse': 'REVIEWS', 'category': 'review'}},
+    "REVIEWS": {'description': 'Indicates that A is a review of B.', 'meaning': 'DataCite:Reviews', 'annotations': {'inverse': 'IS_REVIEWED_BY', 'category': 'review'}},
+    "IS_DERIVED_FROM": {'description': 'Indicates that B is a source upon which A is based.', 'meaning': 'DataCite:IsDerivedFrom', 'annotations': {'inverse': 'IS_SOURCE_OF', 'category': 'derivation'}},
+    "IS_SOURCE_OF": {'description': 'Indicates that A is a source upon which B is based.', 'meaning': 'DataCite:IsSourceOf', 'annotations': {'inverse': 'IS_DERIVED_FROM', 'category': 'derivation'}},
+    "IS_REQUIRED_BY": {'description': 'Indicates that A is required by B.', 'meaning': 'DataCite:IsRequiredBy', 'annotations': {'inverse': 'REQUIRES', 'category': 'dependency'}},
+    "REQUIRES": {'description': 'Indicates that A requires B.', 'meaning': 'DataCite:Requires', 'annotations': {'inverse': 'IS_REQUIRED_BY', 'category': 'dependency'}},
+    "OBSOLETES": {'description': 'Indicates that A replaces B.', 'meaning': 'DataCite:Obsoletes', 'annotations': {'inverse': 'IS_OBSOLETED_BY', 'category': 'obsolescence'}},
+    "IS_OBSOLETED_BY": {'description': 'Indicates that A is replaced by B.', 'meaning': 'DataCite:IsObsoletedBy', 'annotations': {'inverse': 'OBSOLETES', 'category': 'obsolescence'}},
+    "IS_COLLECTED_BY": {'description': 'Indicates that A is collected by B.', 'meaning': 'DataCite:IsCollectedBy', 'annotations': {'inverse': 'COLLECTS', 'category': 'collection'}},
+    "COLLECTS": {'description': 'Indicates that A collects B.', 'meaning': 'DataCite:Collects', 'annotations': {'inverse': 'IS_COLLECTED_BY', 'category': 'collection'}},
+    "IS_TRANSLATION_OF": {'description': 'Indicates that A is a translation of B.', 'meaning': 'DataCite:IsTranslationOf', 'annotations': {'inverse': 'HAS_TRANSLATION', 'category': 'translation', 'added_version': '4.6'}},
+    "HAS_TRANSLATION": {'description': 'Indicates that A has a translation B.', 'meaning': 'DataCite:HasTranslation', 'annotations': {'inverse': 'IS_TRANSLATION_OF', 'category': 'translation', 'added_version': '4.6'}},
+}
+
+class DataCiteContributorType(RichEnum):
+    """
+    Types of contributors to research resources from DataCite 4.6.
+These describe organizational and functional roles rather than
+specific contribution activities (see CRediT/ResearchRole for those).
+
+    """
+    # Enum members
+    CONTACT_PERSON = "CONTACT_PERSON"
+    DATA_COLLECTOR = "DATA_COLLECTOR"
+    DATA_CURATOR = "DATA_CURATOR"
+    DATA_MANAGER = "DATA_MANAGER"
+    DISTRIBUTOR = "DISTRIBUTOR"
+    EDITOR = "EDITOR"
+    HOSTING_INSTITUTION = "HOSTING_INSTITUTION"
+    PRODUCER = "PRODUCER"
+    PROJECT_LEADER = "PROJECT_LEADER"
+    PROJECT_MANAGER = "PROJECT_MANAGER"
+    PROJECT_MEMBER = "PROJECT_MEMBER"
+    REGISTRATION_AGENCY = "REGISTRATION_AGENCY"
+    REGISTRATION_AUTHORITY = "REGISTRATION_AUTHORITY"
+    RELATED_PERSON = "RELATED_PERSON"
+    RESEARCHER = "RESEARCHER"
+    RESEARCH_GROUP = "RESEARCH_GROUP"
+    RIGHTS_HOLDER = "RIGHTS_HOLDER"
+    SPONSOR = "SPONSOR"
+    SUPERVISOR = "SUPERVISOR"
+    TRANSLATOR = "TRANSLATOR"
+    WORK_PACKAGE_LEADER = "WORK_PACKAGE_LEADER"
+    OTHER = "OTHER"
+
+# Set metadata after class creation to avoid it becoming an enum member
+DataCiteContributorType._metadata = {
+    "CONTACT_PERSON": {'description': 'Person with knowledge of how to access, troubleshoot, or\notherwise field issues related to the resource.\n', 'meaning': 'DataCite:ContactPerson', 'annotations': {'category': 'support'}},
+    "DATA_COLLECTOR": {'description': 'Person or institution responsible for finding, gathering, or\ncollecting data under the guidelines of the author(s) or\nPrincipal Investigator (PI).\n', 'meaning': 'DataCite:DataCollector', 'annotations': {'category': 'data_work'}},
+    "DATA_CURATOR": {'description': 'Person tasked with reviewing, enhancing, cleaning, or standardizing\nmetadata and the associated data submitted for storage, use, and\nmaintenance within a repository.\n', 'meaning': 'DataCite:DataCurator', 'annotations': {'category': 'data_work'}},
+    "DATA_MANAGER": {'description': 'Person or organization responsible for maintaining the finished\nresource, including data quality, access permissions, and\nlong-term availability.\n', 'meaning': 'DataCite:DataManager', 'annotations': {'category': 'data_work'}},
+    "DISTRIBUTOR": {'description': 'Institution tasked with responsibility to generate or disseminate\ncopies of the resource in either electronic or print form.\n', 'meaning': 'DataCite:Distributor', 'annotations': {'category': 'dissemination'}},
+    "EDITOR": {'description': 'A person who oversees the details related to the publication\nformat of the resource.\n', 'meaning': 'DataCite:Editor', 'annotations': {'category': 'editorial'}},
+    "HOSTING_INSTITUTION": {'description': 'Typically, the organization allowing the resource to be available\non the internet through the provision of its hardware, software,\nor operating support.\n', 'meaning': 'DataCite:HostingInstitution', 'annotations': {'category': 'infrastructure'}},
+    "PRODUCER": {'description': 'Person or organization responsible for the artistic and technical\naspects of a resource, typically in audiovisual or media contexts.\n', 'meaning': 'DataCite:Producer', 'annotations': {'category': 'production'}},
+    "PROJECT_LEADER": {'description': 'Person officially designated as head of a project team or\nsub-project team instrumental in the work necessary to the\ndevelopment of the resource.\n', 'meaning': 'DataCite:ProjectLeader', 'annotations': {'category': 'leadership'}, 'aliases': ['Principal Investigator', 'PI']},
+    "PROJECT_MANAGER": {'description': 'Person officially designated as manager of a project, responsible\nfor day-to-day management activities.\n', 'meaning': 'DataCite:ProjectManager', 'annotations': {'category': 'leadership'}},
+    "PROJECT_MEMBER": {'description': 'Person on the membership list of a designated project or\nproject team.\n', 'meaning': 'DataCite:ProjectMember', 'annotations': {'category': 'team'}},
+    "REGISTRATION_AGENCY": {'description': 'Institution or organization officially appointed by a Registration\nAuthority to handle specific tasks within a defined area of\nresponsibility.\n', 'meaning': 'DataCite:RegistrationAgency', 'annotations': {'category': 'governance', 'examples': 'DataCite member organizations'}},
+    "REGISTRATION_AUTHORITY": {'description': 'A standards-setting body from which Registration Agencies obtain\ntheir official recognition and guidance.\n', 'meaning': 'DataCite:RegistrationAuthority', 'annotations': {'category': 'governance', 'examples': 'International DOI Foundation'}},
+    "RELATED_PERSON": {'description': 'A person without a specifically defined role in the development\nof the resource, but who is someone the author wishes to recognize.\n', 'meaning': 'DataCite:RelatedPerson', 'annotations': {'category': 'acknowledgment'}},
+    "RESEARCHER": {'description': 'A person involved in analyzing data or the results of an\nexperiment or formal study.\n', 'meaning': 'DataCite:Researcher', 'annotations': {'category': 'research'}},
+    "RESEARCH_GROUP": {'description': 'A group of individuals with a common research focus, typically\nwithin a lab, department, or division.\n', 'meaning': 'DataCite:ResearchGroup', 'annotations': {'category': 'team'}},
+    "RIGHTS_HOLDER": {'description': 'Person or institution owning or managing property rights,\nincluding intellectual property rights, over the resource.\n', 'meaning': 'DataCite:RightsHolder', 'annotations': {'category': 'legal'}},
+    "SPONSOR": {'description': 'Person or organization that issued a contract or under the\nauspices of which a work has been written, printed, published,\ndeveloped, etc.\n', 'meaning': 'DataCite:Sponsor', 'annotations': {'category': 'funding'}},
+    "SUPERVISOR": {'description': 'Designated administrator overseeing one or more groups or teams\nworking to produce the resource.\n', 'meaning': 'DataCite:Supervisor', 'annotations': {'category': 'leadership'}},
+    "TRANSLATOR": {'description': 'Person, organization, or automated system responsible for\nrendering the content of a resource from one language into\nanother.\n', 'meaning': 'DataCite:Translator', 'annotations': {'category': 'translation', 'added_version': '4.6'}},
+    "WORK_PACKAGE_LEADER": {'description': 'A Work Package is a recognized data product, and the Work Package\nLeader ensures the comprehensive contents, availability, and\nquality of the work package.\n', 'meaning': 'DataCite:WorkPackageLeader', 'annotations': {'category': 'leadership'}},
+    "OTHER": {'description': 'Any person or institution making a significant contribution not\ncovered by other contributor type values.\n', 'meaning': 'DataCite:Other', 'annotations': {'note': 'Should be accompanied by free-text description'}},
+}
+
+class AccessRights(RichEnum):
+    """
+    Information about who can access the resource or an indication of
+its security status. Based on EU Vocabularies Access Rights authority list
+and DCAT recommendations.
+
+    """
+    # Enum members
+    PUBLIC = "PUBLIC"
+    RESTRICTED = "RESTRICTED"
+    NON_PUBLIC = "NON_PUBLIC"
+    EMBARGOED = "EMBARGOED"
+    SENSITIVE = "SENSITIVE"
+
+# Set metadata after class creation to avoid it becoming an enum member
+AccessRights._metadata = {
+    "PUBLIC": {'description': 'The resource is publicly accessible to everyone without\nrestrictions.\n', 'meaning': 'euvoc:access-right/PUBLIC', 'annotations': {'dcat_mapping': 'http://publications.europa.eu/resource/authority/access-right/PUBLIC'}, 'aliases': ['Open', 'Unrestricted']},
+    "RESTRICTED": {'description': 'The resource is available under certain conditions or to\nauthorized users only. Access may require authentication,\npayment, or agreement to terms.\n', 'meaning': 'euvoc:access-right/RESTRICTED', 'annotations': {'dcat_mapping': 'http://publications.europa.eu/resource/authority/access-right/RESTRICTED'}, 'aliases': ['Limited Access']},
+    "NON_PUBLIC": {'description': 'The resource is not publicly accessible. May include confidential,\nsensitive, or internal-use-only resources.\n', 'meaning': 'euvoc:access-right/NON_PUBLIC', 'annotations': {'dcat_mapping': 'http://publications.europa.eu/resource/authority/access-right/NON_PUBLIC'}, 'aliases': ['Closed', 'Private']},
+    "EMBARGOED": {'description': 'The resource is temporarily restricted and will become publicly\navailable after a specific date or event.\n', 'annotations': {'common_in': 'academic publishing, research data'}},
+    "SENSITIVE": {'description': 'The resource contains sensitive information requiring special\nhandling or access controls.\n', 'annotations': {'examples': 'PII, health data, classified information'}},
+}
+
+class DatasetStatus(RichEnum):
+    """
+    The status of a dataset in its lifecycle. Based on ADMS (Asset
+Description Metadata Schema) status vocabulary.
+
+    """
+    # Enum members
+    COMPLETED = "COMPLETED"
+    DEPRECATED = "DEPRECATED"
+    UNDER_DEVELOPMENT = "UNDER_DEVELOPMENT"
+    WITHDRAWN = "WITHDRAWN"
+
+# Set metadata after class creation to avoid it becoming an enum member
+DatasetStatus._metadata = {
+    "COMPLETED": {'description': 'The dataset is complete and no further updates are planned.\nThe data is in its final form.\n', 'meaning': 'adms:Completed', 'aliases': ['Final', 'Finished']},
+    "DEPRECATED": {'description': 'The dataset has been superseded by a newer version or is\nno longer recommended for use.\n', 'meaning': 'adms:Deprecated', 'aliases': ['Superseded', 'Legacy']},
+    "UNDER_DEVELOPMENT": {'description': 'The dataset is still being created, collected, or processed.\nNot yet ready for production use.\n', 'meaning': 'adms:UnderDevelopment', 'aliases': ['In Progress', 'Draft', 'Work in Progress']},
+    "WITHDRAWN": {'description': 'The dataset has been removed from availability, either\ntemporarily or permanently.\n', 'meaning': 'adms:Withdrawn', 'aliases': ['Retracted', 'Removed']},
+}
+
+class UpdateFrequency(RichEnum):
+    """
+    The frequency at which a dataset is updated with new data.
+Based on Dublin Core Collection Description Frequency Vocabulary.
+
+    """
+    # Enum members
+    CONTINUOUS = "CONTINUOUS"
+    DAILY = "DAILY"
+    TWICE_WEEKLY = "TWICE_WEEKLY"
+    WEEKLY = "WEEKLY"
+    BIWEEKLY = "BIWEEKLY"
+    MONTHLY = "MONTHLY"
+    BIMONTHLY = "BIMONTHLY"
+    QUARTERLY = "QUARTERLY"
+    SEMIANNUAL = "SEMIANNUAL"
+    ANNUAL = "ANNUAL"
+    BIENNIAL = "BIENNIAL"
+    TRIENNIAL = "TRIENNIAL"
+    IRREGULAR = "IRREGULAR"
+    NEVER = "NEVER"
+    UNKNOWN = "UNKNOWN"
+
+# Set metadata after class creation to avoid it becoming an enum member
+UpdateFrequency._metadata = {
+    "CONTINUOUS": {'description': 'Data is updated continuously or in real-time.', 'meaning': 'dcterms:Frequency', 'annotations': {'iso_duration': 'PT0S'}},
+    "DAILY": {'description': 'Data is updated once per day.', 'annotations': {'iso_duration': 'P1D'}},
+    "TWICE_WEEKLY": {'description': 'Data is updated twice per week.', 'annotations': {'iso_duration': 'P3D'}},
+    "WEEKLY": {'description': 'Data is updated once per week.', 'annotations': {'iso_duration': 'P1W'}},
+    "BIWEEKLY": {'description': 'Data is updated every two weeks.', 'annotations': {'iso_duration': 'P2W'}, 'aliases': ['Fortnightly']},
+    "MONTHLY": {'description': 'Data is updated once per month.', 'annotations': {'iso_duration': 'P1M'}},
+    "BIMONTHLY": {'description': 'Data is updated every two months.', 'annotations': {'iso_duration': 'P2M'}},
+    "QUARTERLY": {'description': 'Data is updated once per quarter (every three months).', 'annotations': {'iso_duration': 'P3M'}},
+    "SEMIANNUAL": {'description': 'Data is updated twice per year.', 'annotations': {'iso_duration': 'P6M'}, 'aliases': ['Biannual']},
+    "ANNUAL": {'description': 'Data is updated once per year.', 'annotations': {'iso_duration': 'P1Y'}, 'aliases': ['Yearly']},
+    "BIENNIAL": {'description': 'Data is updated every two years.', 'annotations': {'iso_duration': 'P2Y'}},
+    "TRIENNIAL": {'description': 'Data is updated every three years.', 'annotations': {'iso_duration': 'P3Y'}},
+    "IRREGULAR": {'description': 'Data is updated at irregular intervals.', 'aliases': ['As Needed', 'Ad Hoc']},
+    "NEVER": {'description': 'Data is not updated after initial publication.\nHistorical or archival datasets.\n', 'aliases': ['Static', 'One-time']},
+    "UNKNOWN": {'description': 'The update frequency is not known.'},
+}
+
+class DataServiceType(RichEnum):
+    """
+    The type of data service provided. Based on INSPIRE spatial data
+service types and common data access patterns.
+
+    """
+    # Enum members
+    DISCOVERY = "DISCOVERY"
+    VIEW = "VIEW"
+    DOWNLOAD = "DOWNLOAD"
+    TRANSFORMATION = "TRANSFORMATION"
+    INVOKE = "INVOKE"
+    SUBSCRIPTION = "SUBSCRIPTION"
+    QUERY = "QUERY"
+
+# Set metadata after class creation to avoid it becoming an enum member
+DataServiceType._metadata = {
+    "DISCOVERY": {'description': 'Service enabling search and discovery of datasets and services.\n', 'annotations': {'inspire_type': 'discovery'}, 'aliases': ['Catalog Service', 'Search Service']},
+    "VIEW": {'description': 'Service enabling viewing or visualization of data without\nfull download.\n', 'annotations': {'inspire_type': 'view'}, 'aliases': ['Visualization Service', 'Display Service']},
+    "DOWNLOAD": {'description': 'Service enabling bulk download of datasets or portions thereof.\n', 'annotations': {'inspire_type': 'download'}, 'aliases': ['Access Service', 'Retrieval Service']},
+    "TRANSFORMATION": {'description': 'Service enabling transformation of data, such as format\nconversion or coordinate transformation.\n', 'annotations': {'inspire_type': 'transformation'}, 'aliases': ['Processing Service', 'Conversion Service']},
+    "INVOKE": {'description': 'Service enabling invocation of operations on data, typically\nthrough an API.\n', 'annotations': {'inspire_type': 'invoke'}, 'aliases': ['API Service', 'Web Service']},
+    "SUBSCRIPTION": {'description': 'Service enabling subscription to data updates or notifications.\n', 'aliases': ['Notification Service', 'Event Service']},
+    "QUERY": {'description': 'Service enabling query-based access to data, returning\nfiltered or aggregated results.\n', 'aliases': ['SPARQL Endpoint', 'Query Service']},
 }
 
 class Fake(ConfiguredBaseModel):

@@ -22,10 +22,10 @@ class INRGSSStage(RichEnum):
 
 # Set metadata after class creation
 INRGSSStage._metadata = {
-    "L1": {'description': 'Localized tumor not involving vital structures as defined by the list of image-defined risk factors and confined to one body compartment (neck, chest, abdomen, or pelvis).', 'meaning': 'NCIT:C133427', 'annotations': {'localized': True, 'idrfs_present': False}},
-    "L2": {'description': 'Locoregional tumor with presence of one or more image-defined risk factors. The tumor has not spread far from where it started but has at least one IDRF.', 'meaning': 'NCIT:C133428', 'annotations': {'localized': True, 'idrfs_present': True}},
-    "M": {'description': 'Distant metastatic disease (except as defined for MS). The tumor has spread (metastasized) to distant parts of the body.', 'meaning': 'NCIT:C133429', 'annotations': {'metastatic': True}},
-    "MS": {'description': 'Metastatic disease in children younger than 18 months with metastases confined to skin, liver, and/or bone marrow (bone marrow involvement limited to <10% tumor cells). This stage has a favorable prognosis despite metastatic disease.', 'meaning': 'NCIT:C133430', 'annotations': {'metastatic': True, 'special_category': True, 'age_restriction': '<18 months', 'favorable_prognosis': True}, 'aliases': ['Stage 4S equivalent']},
+    "L1": {'description': 'Localized tumor not involving vital structures as defined by the list of image-defined risk factors and confined to one body compartment (neck, chest, abdomen, or pelvis).', 'meaning': 'NCIT:C133428', 'annotations': {'localized': True, 'idrfs_present': False}},
+    "L2": {'description': 'Locoregional tumor with presence of one or more image-defined risk factors. The tumor has not spread far from where it started but has at least one IDRF.', 'meaning': 'NCIT:C133429', 'annotations': {'localized': True, 'idrfs_present': True}},
+    "M": {'description': 'Distant metastatic disease (except as defined for MS). The tumor has spread (metastasized) to distant parts of the body.', 'meaning': 'NCIT:C133430', 'annotations': {'metastatic': True}},
+    "MS": {'description': 'Metastatic disease in children younger than 18 months with metastases confined to skin, liver, and/or bone marrow (bone marrow involvement limited to <10% tumor cells). This stage has a favorable prognosis despite metastatic disease.', 'meaning': 'NCIT:C133431', 'annotations': {'metastatic': True, 'special_category': True, 'age_restriction': '<18 months', 'favorable_prognosis': True}, 'aliases': ['Stage 4S equivalent']},
 }
 
 class INSSStage(RichEnum):
@@ -42,12 +42,12 @@ class INSSStage(RichEnum):
 
 # Set metadata after class creation
 INSSStage._metadata = {
-    "STAGE_1": {'description': 'Localized tumor with complete gross excision, with or without microscopic residual disease; representative ipsilateral lymph nodes negative for tumor microscopically.', 'meaning': 'NCIT:C6639', 'annotations': {'localized': True, 'resection': 'complete'}},
-    "STAGE_2A": {'description': 'Localized tumor with incomplete gross excision; representative ipsilateral nonadherent lymph nodes negative for tumor microscopically.', 'meaning': 'NCIT:C6640', 'annotations': {'localized': True, 'resection': 'incomplete', 'lymph_nodes': 'negative'}},
-    "STAGE_2B": {'description': 'Localized tumor with or without complete gross excision, with ipsilateral nonadherent lymph nodes positive for tumor. Enlarged contralateral lymph nodes must be negative microscopically.', 'meaning': 'NCIT:C6641', 'annotations': {'localized': True, 'lymph_nodes': 'ipsilateral_positive'}},
-    "STAGE_3": {'description': 'Unresectable unilateral tumor infiltrating across the midline, with or without regional lymph node involvement; or localized unilateral tumor with contralateral regional lymph node involvement; or midline tumor with bilateral extension by infiltration (unresectable) or by lymph node involvement.', 'meaning': 'NCIT:C6642', 'annotations': {'localized': False, 'crosses_midline': True}},
-    "STAGE_4": {'description': 'Any primary tumor with dissemination to distant lymph nodes, bone, bone marrow, liver, skin, and/or other organs (except as defined for stage 4S).', 'meaning': 'NCIT:C6643', 'annotations': {'metastatic': True}},
-    "STAGE_4S": {'description': 'Localized primary tumor (as defined for stage 1, 2A, or 2B) with dissemination limited to skin, liver, and/or bone marrow (limited to infants <1 year of age). Marrow involvement should be minimal (<10% of total nucleated cells).', 'meaning': 'NCIT:C6644', 'annotations': {'metastatic': True, 'special_category': True, 'age_restriction': '<12 months', 'favorable_prognosis': True}, 'aliases': ['Special stage 4']},
+    "STAGE_1": {'description': 'Localized tumor with complete gross excision, with or without microscopic residual disease; representative ipsilateral lymph nodes negative for tumor microscopically.', 'meaning': 'NCIT:C85417', 'annotations': {'localized': True, 'resection': 'complete'}},
+    "STAGE_2A": {'description': 'Localized tumor with incomplete gross excision; representative ipsilateral nonadherent lymph nodes negative for tumor microscopically.', 'meaning': 'NCIT:C85418', 'annotations': {'localized': True, 'resection': 'incomplete', 'lymph_nodes': 'negative'}},
+    "STAGE_2B": {'description': 'Localized tumor with or without complete gross excision, with ipsilateral nonadherent lymph nodes positive for tumor. Enlarged contralateral lymph nodes must be negative microscopically.', 'meaning': 'NCIT:C85419', 'annotations': {'localized': True, 'lymph_nodes': 'ipsilateral_positive'}},
+    "STAGE_3": {'description': 'Unresectable unilateral tumor infiltrating across the midline, with or without regional lymph node involvement; or localized unilateral tumor with contralateral regional lymph node involvement; or midline tumor with bilateral extension by infiltration (unresectable) or by lymph node involvement.', 'meaning': 'NCIT:C85420', 'annotations': {'localized': False, 'crosses_midline': True}},
+    "STAGE_4": {'description': 'Any primary tumor with dissemination to distant lymph nodes, bone, bone marrow, liver, skin, and/or other organs (except as defined for stage 4S).', 'meaning': 'NCIT:C85421', 'annotations': {'metastatic': True}},
+    "STAGE_4S": {'description': 'Localized primary tumor (as defined for stage 1, 2A, or 2B) with dissemination limited to skin, liver, and/or bone marrow (limited to infants <1 year of age). Marrow involvement should be minimal (<10% of total nucleated cells).', 'meaning': 'NCIT:C85422', 'annotations': {'metastatic': True, 'special_category': True, 'age_restriction': '<12 months', 'favorable_prognosis': True}, 'aliases': ['Special stage 4']},
 }
 
 class NeuroblastomaRiskGroup(RichEnum):
@@ -62,10 +62,10 @@ class NeuroblastomaRiskGroup(RichEnum):
 
 # Set metadata after class creation
 NeuroblastomaRiskGroup._metadata = {
-    "VERY_LOW": {'description': 'Very low risk neuroblastoma with excellent prognosis. Typically includes L1 tumors and MS without MYCN amplification.', 'meaning': 'NCIT:C103236', 'annotations': {'expected_efs': '>85%'}},
-    "LOW": {'description': 'Low risk neuroblastoma with favorable prognosis. Treatment may include surgery alone or observation.', 'meaning': 'NCIT:C103237', 'annotations': {'expected_efs': '>75%'}},
-    "INTERMEDIATE": {'description': 'Intermediate risk neuroblastoma requiring multimodal treatment including chemotherapy.', 'meaning': 'NCIT:C103238', 'annotations': {'expected_efs': '50-75%'}},
-    "HIGH": {'description': 'High risk neuroblastoma with poor prognosis. Requires intensive multimodal therapy including high-dose chemotherapy with autologous stem cell rescue, surgery, radiation, and immunotherapy.', 'meaning': 'NCIT:C103239', 'annotations': {'expected_efs': '<50%', 'mycn_amplified': 'often'}},
+    "VERY_LOW": {'description': 'Very low risk neuroblastoma with excellent prognosis. Typically includes L1 tumors and MS without MYCN amplification.', 'annotations': {'expected_efs': '>85%'}},
+    "LOW": {'description': 'Low risk neuroblastoma with favorable prognosis. Treatment may include surgery alone or observation.', 'annotations': {'expected_efs': '>75%'}},
+    "INTERMEDIATE": {'description': 'Intermediate risk neuroblastoma requiring multimodal treatment including chemotherapy.', 'annotations': {'expected_efs': '50-75%'}},
+    "HIGH": {'description': 'High risk neuroblastoma with poor prognosis. Requires intensive multimodal therapy including high-dose chemotherapy with autologous stem cell rescue, surgery, radiation, and immunotherapy.', 'meaning': 'NCIT:C150281', 'annotations': {'expected_efs': '<50%', 'mycn_amplified': 'often'}},
 }
 
 class ImageDefinedRiskFactor(RichEnum):

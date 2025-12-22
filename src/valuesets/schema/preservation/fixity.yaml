@@ -1,0 +1,288 @@
+name: preservation-fixity
+title: Fixity and Integrity Verification
+description: |
+  Value sets for data integrity verification, including cryptographic
+  hash functions and fixity-related metadata. Based on PREMIS 3.0.
+
+  Fixity information is used to verify that a digital object has not
+  been altered in an undocumented manner.
+
+  See: https://www.loc.gov/standards/premis/
+id: https://w3id.org/valuesets/preservation/fixity
+
+imports:
+  - linkml:types
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+  valuesets: https://w3id.org/valuesets/
+  premis: http://id.loc.gov/vocabulary/preservation/
+  spdx: https://spdx.org/rdf/terms#
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+
+default_prefix: valuesets
+
+slots:
+  hash_algorithm:
+    description: The cryptographic hash algorithm used for fixity verification
+    range: CryptographicHashFunction
+
+enums:
+  CryptographicHashFunction:
+    title: Cryptographic Hash Function
+    description: |
+      Algorithms that take an input and return a fixed-size string (hash value).
+      Used for verifying data integrity and creating digital signatures.
+      Based on PREMIS cryptographic hash functions vocabulary.
+    status: DRAFT
+    contributors:
+      - orcid:0000-0002-6601-2165
+      - https://github.com/anthropics/claude-code
+    instantiates:
+      - valuesets_meta:ValueSetEnumDefinition
+    see_also:
+      - https://id.loc.gov/vocabulary/preservation/cryptographicHashFunctions.html
+      - https://spdx.github.io/spdx-spec/v2.3/file-information/#89-file-checksum-field
+    permissible_values:
+      ADLER_32:
+        title: Adler-32
+        description: |
+          A checksum algorithm developed by Mark Adler. Faster than CRC32
+          but with weaker error detection. Used in zlib compression.
+        meaning: premis:cryptographicHashFunctions/adl
+        exact_mappings:
+          - spdx:checksumAlgorithm_adler32
+        annotations:
+          output_bits: 32
+          security_level: non-cryptographic
+      CRC32:
+        title: CRC32
+        description: |
+          Cyclic Redundancy Check with 32-bit output. Used for error detection
+          in network transmissions and storage. Not cryptographically secure.
+        meaning: premis:cryptographicHashFunctions/crc
+        annotations:
+          output_bits: 32
+          security_level: non-cryptographic
+      HAVAL:
+        title: HAVAL
+        description: |
+          A cryptographic hash function that can produce hash values of
+          128, 160, 192, 224, or 256 bits. Variable number of rounds.
+        meaning: premis:cryptographicHashFunctions/hav
+        annotations:
+          output_bits: variable
+          security_level: deprecated
+      MD2:
+        title: MD2
+        description: |
+          Message Digest 2 algorithm producing a 128-bit hash value.
+          Designed for 8-bit computers. Considered cryptographically broken.
+        meaning: premis:cryptographicHashFunctions/md2
+        exact_mappings:
+          - spdx:checksumAlgorithm_md2
+        annotations:
+          output_bits: 128
+          security_level: broken
+      MD4:
+        title: MD4
+        description: |
+          Message Digest 4 algorithm producing a 128-bit hash value.
+          Predecessor to MD5. Considered cryptographically broken.
+        exact_mappings:
+          - spdx:checksumAlgorithm_md4
+        annotations:
+          output_bits: 128
+          security_level: broken
+      MD5:
+        title: MD5
+        description: |
+          Message Digest 5 algorithm producing a 128-bit hash value.
+          Widely used but vulnerable to collision attacks. Acceptable
+          for non-security integrity checks only.
+        meaning: premis:cryptographicHashFunctions/md5
+        exact_mappings:
+          - spdx:checksumAlgorithm_md5
+        annotations:
+          output_bits: 128
+          security_level: weak
+      MD6:
+        title: MD6
+        description: |
+          Message Digest 6 algorithm with variable output size.
+          Designed as a candidate for SHA-3 but not selected.
+        exact_mappings:
+          - spdx:checksumAlgorithm_md6
+        annotations:
+          output_bits: variable
+          security_level: adequate
+      SHA_1:
+        title: SHA-1
+        description: |
+          Secure Hash Algorithm 1 producing a 160-bit hash value.
+          Deprecated for security applications due to collision vulnerabilities.
+          Still acceptable for integrity verification in some contexts.
+        meaning: premis:cryptographicHashFunctions/sha1
+        exact_mappings:
+          - spdx:checksumAlgorithm_sha1
+        aliases:
+          - SHA1
+        annotations:
+          output_bits: 160
+          security_level: weak
+      SHA_224:
+        title: SHA-224
+        description: |
+          SHA-2 variant producing a 224-bit hash value.
+          Truncated version of SHA-256.
+        exact_mappings:
+          - spdx:checksumAlgorithm_sha224
+        aliases:
+          - SHA224
+        annotations:
+          output_bits: 224
+          security_level: secure
+      SHA_256:
+        title: SHA-256
+        description: |
+          SHA-2 variant producing a 256-bit hash value.
+          Widely used and considered secure for most applications.
+          Recommended for digital preservation.
+        meaning: premis:cryptographicHashFunctions/sha256
+        exact_mappings:
+          - spdx:checksumAlgorithm_sha256
+        aliases:
+          - SHA256
+        annotations:
+          output_bits: 256
+          security_level: secure
+      SHA_384:
+        title: SHA-384
+        description: |
+          SHA-2 variant producing a 384-bit hash value.
+          Truncated version of SHA-512.
+        meaning: premis:cryptographicHashFunctions/sha384
+        exact_mappings:
+          - spdx:checksumAlgorithm_sha384
+        aliases:
+          - SHA384
+        annotations:
+          output_bits: 384
+          security_level: secure
+      SHA_512:
+        title: SHA-512
+        description: |
+          SHA-2 variant producing a 512-bit hash value.
+          Highest security level in the SHA-2 family.
+        meaning: premis:cryptographicHashFunctions/sha512
+        exact_mappings:
+          - spdx:checksumAlgorithm_sha512
+        aliases:
+          - SHA512
+        annotations:
+          output_bits: 512
+          security_level: secure
+      SHA3_224:
+        title: SHA3-224
+        description: |
+          SHA-3 variant producing a 224-bit hash value.
+          Based on the Keccak algorithm.
+        exact_mappings:
+          - spdx:checksumAlgorithm_sha3_224
+        annotations:
+          output_bits: 224
+          security_level: secure
+      SHA3_256:
+        title: SHA3-256
+        description: |
+          SHA-3 variant producing a 256-bit hash value.
+          Based on the Keccak algorithm. Provides defense against
+          length extension attacks.
+        exact_mappings:
+          - spdx:checksumAlgorithm_sha3_256
+        annotations:
+          output_bits: 256
+          security_level: secure
+      SHA3_384:
+        title: SHA3-384
+        description: |
+          SHA-3 variant producing a 384-bit hash value.
+          Based on the Keccak algorithm.
+        exact_mappings:
+          - spdx:checksumAlgorithm_sha3_384
+        annotations:
+          output_bits: 384
+          security_level: secure
+      SHA3_512:
+        title: SHA3-512
+        description: |
+          SHA-3 variant producing a 512-bit hash value.
+          Based on the Keccak algorithm.
+        exact_mappings:
+          - spdx:checksumAlgorithm_sha3_512
+        annotations:
+          output_bits: 512
+          security_level: secure
+      BLAKE2B_256:
+        title: BLAKE2b-256
+        description: |
+          BLAKE2b variant producing a 256-bit hash value.
+          Faster than MD5 and SHA-1 while being more secure.
+        exact_mappings:
+          - spdx:checksumAlgorithm_blake2b256
+        annotations:
+          output_bits: 256
+          security_level: secure
+      BLAKE2B_384:
+        title: BLAKE2b-384
+        description: |
+          BLAKE2b variant producing a 384-bit hash value.
+        exact_mappings:
+          - spdx:checksumAlgorithm_blake2b384
+        annotations:
+          output_bits: 384
+          security_level: secure
+      BLAKE2B_512:
+        title: BLAKE2b-512
+        description: |
+          BLAKE2b variant producing a 512-bit hash value.
+          Optimized for 64-bit platforms.
+        exact_mappings:
+          - spdx:checksumAlgorithm_blake2b512
+        annotations:
+          output_bits: 512
+          security_level: secure
+      BLAKE3:
+        title: BLAKE3
+        description: |
+          Latest BLAKE variant, extremely fast with 256-bit output.
+          Supports parallelization and incremental hashing.
+        exact_mappings:
+          - spdx:checksumAlgorithm_blake3
+        annotations:
+          output_bits: 256
+          security_level: secure
+      TIGER:
+        title: Tiger
+        description: |
+          A cryptographic hash function designed for 64-bit platforms.
+          Produces a 192-bit hash value.
+        meaning: premis:cryptographicHashFunctions/tig
+        annotations:
+          output_bits: 192
+          security_level: adequate
+      WHIRLPOOL:
+        title: Whirlpool
+        description: |
+          A cryptographic hash function producing a 512-bit hash value.
+          Based on a modified AES block cipher.
+        meaning: premis:cryptographicHashFunctions/whi
+        annotations:
+          output_bits: 512
+          security_level: secure
+      UNKNOWN:
+        description: The hash algorithm is not known or not specified.
+        meaning: premis:cryptographicHashFunctions/unk
+
+default_range: string

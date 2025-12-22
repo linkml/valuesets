@@ -1,0 +1,214 @@
+name: preservation-digital-objects
+title: Digital Object Preservation Metadata
+description: |
+  Value sets for digital object preservation, based on PREMIS 3.0.
+
+  Includes object categories, copyright status, rights basis, and
+  preservation level classifications.
+
+  See: https://www.loc.gov/standards/premis/
+id: https://w3id.org/valuesets/preservation/digital_objects
+
+imports:
+  - linkml:types
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+  valuesets: https://w3id.org/valuesets/
+  premis: http://id.loc.gov/vocabulary/preservation/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+
+default_prefix: valuesets
+
+slots:
+  object_category:
+    description: The category of digital object
+    range: DigitalObjectCategory
+  copyright_status:
+    description: The copyright status of the object
+    range: CopyrightStatus
+  rights_basis:
+    description: The basis for rights or permissions
+    range: RightsBasis
+  preservation_level_role:
+    description: The role of the preservation level specification
+    range: PreservationLevelRole
+
+enums:
+  DigitalObjectCategory:
+    title: Digital Object Category
+    description: |
+      The category of object to which preservation metadata applies.
+      Based on PREMIS object categories.
+    status: DRAFT
+    contributors:
+      - orcid:0000-0002-6601-2165
+      - https://github.com/anthropics/claude-code
+    instantiates:
+      - valuesets_meta:ValueSetEnumDefinition
+    see_also:
+      - https://id.loc.gov/vocabulary/preservation/objectCategory.html
+    permissible_values:
+      BITSTREAM:
+        description: |
+          Contiguous or non-contiguous data within a file that has meaningful
+          properties for preservation purposes. A bitstream cannot be transformed
+          into a standalone file without the addition of file structure.
+        meaning: premis:objectCategory/bit
+      FILE:
+        description: |
+          A named and ordered sequence of bytes that is known to an operating
+          system. A file can be zero or more bytes and has a file format,
+          access permissions, and other file system characteristics.
+        meaning: premis:objectCategory/fil
+      INTELLECTUAL_ENTITY:
+        title: Intellectual Entity
+        description: |
+          A coherent set of content that is reasonably described as a unit.
+          Examples include a book, a photograph, a database, or a software
+          application. An intellectual entity may contain other intellectual
+          entities.
+        meaning: premis:objectCategory/int
+      REPRESENTATION:
+        description: |
+          The set of files, including structural metadata, needed for a
+          complete and reasonable rendition of an intellectual entity.
+          A digital object may have multiple representations.
+        meaning: premis:objectCategory/rep
+
+  CopyrightStatus:
+    title: Copyright Status
+    description: |
+      A designation for the copyright status of an object at the time
+      the rights statement is recorded. Based on PREMIS.
+    status: DRAFT
+    contributors:
+      - orcid:0000-0002-6601-2165
+      - https://github.com/anthropics/claude-code
+    instantiates:
+      - valuesets_meta:ValueSetEnumDefinition
+    see_also:
+      - https://id.loc.gov/vocabulary/preservation/copyrightStatus.html
+    permissible_values:
+      COPYRIGHTED:
+        description: The object is protected by copyright.
+        meaning: premis:copyrightStatus/cpr
+      PUBLIC_DOMAIN:
+        title: Public Domain
+        description: |
+          The object is not protected by copyright, either because copyright
+          has expired, was never applicable, or has been waived.
+        meaning: premis:copyrightStatus/pub
+      UNKNOWN:
+        description: The copyright status cannot be determined.
+        meaning: premis:copyrightStatus/unk
+
+  RightsBasis:
+    title: Rights Basis
+    description: |
+      The basis for the right or permission granted for an object.
+      Based on PREMIS rights basis vocabulary.
+    status: DRAFT
+    contributors:
+      - orcid:0000-0002-6601-2165
+      - https://github.com/anthropics/claude-code
+    instantiates:
+      - valuesets_meta:ValueSetEnumDefinition
+    see_also:
+      - https://id.loc.gov/vocabulary/preservation/rightsBasis.html
+    permissible_values:
+      COPYRIGHT:
+        description: Rights based on copyright law.
+        meaning: premis:rightsBasis/cop
+      INSTITUTIONAL_POLICY:
+        title: Institutional Policy
+        description: Rights based on the policies of the holding institution.
+        meaning: premis:rightsBasis/ins
+      LICENSE:
+        description: Rights based on a license agreement.
+        meaning: premis:rightsBasis/lic
+      STATUTE:
+        description: Rights based on statutory law other than copyright.
+        meaning: premis:rightsBasis/sta
+      OTHER:
+        description: Rights based on another basis not listed.
+        meaning: premis:rightsBasis/oth
+
+  PreservationLevelRole:
+    title: Preservation Level Role
+    description: |
+      The context in which a preservation level value is specified.
+      Based on PREMIS preservation level role vocabulary.
+    status: DRAFT
+    contributors:
+      - orcid:0000-0002-6601-2165
+      - https://github.com/anthropics/claude-code
+    instantiates:
+      - valuesets_meta:ValueSetEnumDefinition
+    see_also:
+      - https://id.loc.gov/vocabulary/preservation/preservationLevelRole.html
+    permissible_values:
+      CAPABILITY:
+        description: |
+          The preservation level that the repository is capable of providing
+          based on its technical infrastructure and resources.
+        meaning: premis:preservationLevelRole/cap
+      INTENTION:
+        description: |
+          The preservation level that the repository intends to provide
+          for the object, based on policy decisions.
+        meaning: premis:preservationLevelRole/int
+      REQUIREMENT:
+        description: |
+          The preservation level required by the depositor or
+          other stakeholder for the object.
+        meaning: premis:preservationLevelRole/req
+
+  PreservationLevelValue:
+    title: Preservation Level Value
+    description: |
+      Common preservation level tiers indicating the degree of preservation
+      commitment. These are not from PREMIS directly but represent common
+      practice in digital preservation.
+    status: DRAFT
+    contributors:
+      - orcid:0000-0002-6601-2165
+      - https://github.com/anthropics/claude-code
+    instantiates:
+      - valuesets_meta:ValueSetEnumDefinition
+    see_also:
+      - https://ndsa.org/publications/levels-of-digital-preservation/
+    permissible_values:
+      BIT_LEVEL:
+        title: Bit-level Preservation
+        description: |
+          Ensures the exact bit sequence is maintained. Includes fixity checks
+          and secure storage but no format migration or access provision.
+        aliases:
+          - Level 1
+      LOGICAL_PRESERVATION:
+        title: Logical Preservation
+        description: |
+          Maintains the ability to render or use the content. May include
+          format migration to ensure long-term accessibility.
+        aliases:
+          - Level 2
+          - Content Preservation
+      SEMANTIC_PRESERVATION:
+        title: Semantic Preservation
+        description: |
+          Preserves the meaning and context of content, including relationships
+          between objects and their intellectual context.
+        aliases:
+          - Level 3
+          - Full Preservation
+      FULL_PRESERVATION:
+        title: Full Preservation
+        description: |
+          Comprehensive preservation including all aspects: bit-level integrity,
+          format migration, semantic context, and provenance tracking.
+        aliases:
+          - Level 4
+
+default_range: string

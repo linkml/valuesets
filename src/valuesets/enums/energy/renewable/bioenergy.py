@@ -78,14 +78,14 @@ class BiofuelType(RichEnum):
 # Set metadata after class creation
 BiofuelType._metadata = {
     "ETHANOL": {'description': 'Alcohol biofuel (C2H5OH) produced by fermentation of sugars or starches, or from cellulosic biomass.', 'meaning': 'CHEBI:16236', 'annotations': {'chemical_formula': 'C2H5OH'}, 'aliases': ['Fuel Ethanol', 'Bioethanol']},
-    "BIODIESEL": {'description': 'Fatty acid methyl esters (FAME) produced by transesterification of vegetable oils or animal fats.', 'meaning': 'MESH:D056804', 'annotations': {'production_method': 'transesterification'}, 'aliases': ['FAME']},
+    "BIODIESEL": {'description': 'Fatty acid methyl esters (FAME) produced by transesterification of vegetable oils or animal fats.', 'annotations': {'production_method': 'transesterification'}, 'aliases': ['FAME']},
     "RENEWABLE_DIESEL": {'description': 'Hydrocarbon diesel produced by hydrotreating lipids. Chemically identical to petroleum diesel.', 'annotations': {'drop_in_fuel': True}, 'aliases': ['Green Diesel', 'HVO', 'Hydrotreated Vegetable Oil']},
     "SUSTAINABLE_AVIATION_FUEL": {'description': 'Jet fuel produced from biomass or waste, meeting aviation fuel specifications.', 'annotations': {'drop_in_fuel': True}, 'aliases': ['SAF', 'Biojet']},
     "BIOGAS": {'description': 'Gaseous mixture of methane and CO2 produced by anaerobic digestion of organic matter.', 'annotations': {'methane_content_percent': '50-70'}, 'aliases': ['Raw Biogas']},
     "BIOMETHANE": {'description': 'Purified biogas upgraded to natural gas quality (>95% methane).', 'annotations': {'methane_content_percent': '95+', 'pipeline_quality': True}, 'aliases': ['Renewable Natural Gas', 'RNG']},
     "BIO_OIL": {'description': 'Liquid intermediate produced by pyrolysis or hydrothermal liquefaction of biomass.', 'annotations': {'intermediate': True}, 'aliases': ['Pyrolysis Oil']},
-    "SYNGAS": {'description': 'Synthesis gas (CO + H2) produced by gasification of biomass.', 'meaning': 'CHMO:0001501', 'annotations': {'intermediate': True}, 'aliases': ['Synthesis Gas']},
-    "BUTANOL": {'description': 'Four-carbon alcohol biofuel with higher energy density than ethanol.', 'meaning': 'CHEBI:28885', 'annotations': {'chemical_formula': 'C4H9OH'}},
+    "SYNGAS": {'description': 'Synthesis gas (CO + H2) produced by gasification of biomass.', 'annotations': {'intermediate': True}, 'aliases': ['Synthesis Gas', 'gasification']},
+    "BUTANOL": {'description': 'Four-carbon alcohol biofuel with higher energy density than ethanol.', 'meaning': 'CHEBI:28885', 'annotations': {'chemical_formula': 'C4H9OH'}, 'aliases': ['Biobutanol']},
     "METHANOL": {'description': 'Methanol produced from biomass-derived syngas.', 'meaning': 'CHEBI:17790', 'annotations': {'chemical_formula': 'CH3OH'}},
     "DIMETHYL_ETHER": {'description': 'Dimethyl ether produced from biomass, usable as diesel substitute.', 'meaning': 'CHEBI:28887', 'aliases': ['DME']},
 }

@@ -109,6 +109,14 @@ imports:
 - lab_automation/standards
 - lab_automation/thermal_cycling
 - publishing/arxiv_categories
+- publishing/osti_record
+- preservation/events
+- preservation/digital_objects
+- preservation/fixity
+- data_catalog/resource_types
+- data_catalog/relations
+- data_catalog/contributor_roles
+- data_catalog/access
 prefixes:
   valuesets: https://w3id.org/valuesets/
   orcid: https://orcid.org/

@@ -84,9 +84,11 @@ enums:
         description: Purified protein sample
         meaning: NCIT:C17021
       NUCLEIC_ACID:
+        title: Nucleic Acids
         description: Nucleic acid sample (DNA or RNA)
-        meaning: NCIT:C813
+        meaning: NCIT:C706
       PROTEIN_COMPLEX:
+        title: protein-containing complex
         description: Protein-protein or protein-nucleic acid complex
         meaning: GO:0032991
       MEMBRANE_PROTEIN:
@@ -138,7 +140,7 @@ enums:
       NEUTRON_CRYSTALLOGRAPHY:
         title: neutron diffraction
         description: Neutron crystallography
-        meaning: CHMO:0000175
+        meaning: CHMO:0000698
         annotations:
           advantages: hydrogen positions, deuteration studies
       SAXS:
@@ -156,7 +158,7 @@ enums:
       WAXS:
         title: wide-angle X-ray scattering
         description: Wide-angle X-ray scattering
-        meaning: CHMO:0000213
+        meaning: CHMO:0000207
       NMR:
         title: nuclear magnetic resonance spectroscopy
         description: Nuclear magnetic resonance spectroscopy
@@ -169,9 +171,9 @@ enums:
         annotations:
           applications: native MS, crosslinking, HDX
       NEGATIVE_STAIN_EM:
-        title: negative staining electron microscopy
+        title: negative staining
         description: Negative stain electron microscopy
-        meaning: FBbi:00000568
+        meaning: FBbi:00000399
         annotations:
           resolution_range: 15-30 Å typical
   CryoEMPreparationType:
@@ -313,7 +315,6 @@ enums:
           brightness: 10^15-10^18 photons/s/mm²/mrad²
       ROTATING_ANODE:
         description: Rotating anode generator
-        meaning: CHMO:0001107
         annotations:
           power: 3-18 kW typical
           target: copper, molybdenum common
@@ -339,18 +340,17 @@ enums:
     permissible_values:
       DIRECT_ELECTRON:
         description: Direct electron detector (DED)
-        meaning: CHMO:0002837
         annotations:
           examples: K2, K3, Falcon, DE-series
           advantages: high DQE, fast readout
       CCD:
+        title: charge-coupled-device detector
         description: Charge-coupled device camera
-        meaning: CHMO:0002171
+        meaning: CHMO:0002245
         annotations:
           applications: legacy EM, some crystallography
       CMOS:
         description: Complementary metal-oxide semiconductor detector
-        meaning: CHMO:0002836
         annotations:
           advantages: fast readout, low noise
       HYBRID_PIXEL:
@@ -360,7 +360,6 @@ enums:
           advantages: photon counting, zero noise
       PHOTOSTIMULABLE_PHOSPHOR:
         description: Photostimulable phosphor (image plate)
-        meaning: CHMO:0001069
         annotations:
           applications: legacy crystallography
   WorkflowType:
@@ -434,31 +433,29 @@ enums:
     permissible_values:
       MRC:
         description: MRC format for EM density maps
-        meaning: EDAM:3842
         annotations:
           extension: .mrc, .map
           applications: EM volumes, tomograms
       TIFF:
         description: Tagged Image File Format
-        meaning: EDAM:3591
+        meaning: EDAM:format_3591
         annotations:
           extension: .tif, .tiff
           applications: micrographs, general imaging
       HDF5:
         description: Hierarchical Data Format 5
-        meaning: EDAM:3590
+        meaning: EDAM:format_3590
         annotations:
           extension: .h5, .hdf5
           applications: large datasets, metadata storage
       STAR:
         description: Self-defining Text Archival and Retrieval format
-        meaning: EDAM:3906
         annotations:
           extension: .star
           applications: RELION metadata, particle parameters
       PDB:
         description: Protein Data Bank coordinate format
-        meaning: EDAM:1476
+        meaning: EDAM:format_1476
         exact_mappings:
         - OBI:0001525
         annotations:
@@ -466,7 +463,7 @@ enums:
           applications: atomic coordinates, legacy format
       MMCIF:
         description: Macromolecular Crystallographic Information File
-        meaning: EDAM:1477
+        meaning: EDAM:format_1477
         exact_mappings:
         - NCIT:C133997
         annotations:
@@ -474,13 +471,11 @@ enums:
           applications: atomic coordinates, modern PDB format
       MTZ:
         description: MTZ reflection data format
-        meaning: EDAM:3816
         annotations:
           extension: .mtz
           applications: crystallographic reflections, phases
       CBF:
         description: Crystallographic Binary Format
-        meaning: EDAM:3874
         annotations:
           extension: .cbf
           applications: detector images, diffraction data
@@ -599,7 +594,7 @@ enums:
         annotations:
           coordination_number: '4'
       SQUARE_PLANAR:
-        title: square planar molecular geometry
+        title: Square Planar 1 Molecular Geometry
         description: Square planar coordination geometry (4 ligands in plane)
         meaning: NCIT:C103211
         annotations:
@@ -617,7 +612,7 @@ enums:
         annotations:
           coordination_number: '5'
       OCTAHEDRAL:
-        title: octahedral molecular geometry
+        title: Octahedral 12 Molecular Geometry
         description: Octahedral coordination geometry (6 ligands)
         meaning: NCIT:C103216
         annotations:
@@ -683,37 +678,46 @@ enums:
     - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
       METAL_COORDINATION:
+        title: iron-sulfur cluster containing modification
         description: Metal coordination modification
         meaning: MOD:00739
         annotations:
           examples: zinc finger, iron-sulfur cluster binding
       PHOSPHORYLATION:
+        title: phosphorylated residue
         description: Phosphorylation modification
         meaning: MOD:00696
       GLYCOSYLATION:
+        title: complex glycosylation
         description: Glycosylation modification
         meaning: MOD:00725
       ACETYLATION:
+        title: monoacetylated residue
         description: Acetylation modification
         meaning: MOD:00394
       METHYLATION:
+        title: monomethylated residue
         description: Methylation modification
         meaning: MOD:00599
       UBIQUITINATION:
+        title: ubiquitination signature tetrapeptidyl lysine
         description: Ubiquitination modification
         meaning: MOD:01240
       SUMOYLATION:
+        title: sumoylated lysine
         description: SUMOylation modification
         meaning: MOD:01149
       HYDROXYLATION:
+        title: hydroxylated residue
         description: Hydroxylation modification
         meaning: MOD:00677
       LIPIDATION:
         description: Lipidation modification
-        meaning: MOD:00435
       PROTEOLYTIC_CLEAVAGE:
+        title: proteolysis
         description: Proteolytic cleavage
         meaning: GO:0006508
       CROSSLINKING:
+        title: crosslinked residues
         description: Crosslinking modification
-        meaning: MOD:00276
+        meaning: MOD:00033

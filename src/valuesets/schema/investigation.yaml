@@ -15,6 +15,7 @@ prefixes:
   dcterms: http://purl.org/dc/terms/
   fibo.commons.PartiesAndSituations: https://spec.edmcouncil.org/fibo/ontology/FBC/ommons/PartiesAndSituations/
   valuesets: https://w3id.org/valuesets/
+  NCIT: http://purl.obolibrary.org/obo/NCIT_
   orcid: https://orcid.org/
   valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
@@ -34,6 +35,9 @@ slots:
   planned_process_completion_status:
     description: The completion status of a planned process
     range: PlannedProcessCompletionStatus
+  study_type:
+    description: The type of study
+    range: StudyTypeEnum
 enums:
   CaseOrControlEnum:
     title: Case Or Control
@@ -113,6 +117,24 @@ enums:
         title: failed planned process
         description: A planned process that did not complete successfully
         meaning: COB:0000083
+  StudyTypeEnum:
+    title: Study Type
+    description: >-
+      Types of studies, including clinical trials, observational studies,
+      and other research investigations. Dynamically populated from NCIT
+      descendants of Study (NCIT:C63536).
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    reachable_from:
+      source_nodes:
+      - NCIT:C63536
+      is_direct: false
+      relationship_types:
+      - rdfs:subClassOf
 license: MIT
 see_also:
 - https://linkml.github.io/valuesets

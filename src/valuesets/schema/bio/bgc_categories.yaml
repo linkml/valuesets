@@ -74,6 +74,7 @@ enums:
           biosynthetic_enzyme: Various enzymes
           examples: Morphine, caffeine, nicotine
       SACCHARIDE:
+        title: polysaccharide
         description: Saccharide/polysaccharide biosynthetic gene clusters
         meaning: CHEBI:18154
         annotations:

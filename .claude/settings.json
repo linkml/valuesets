@@ -1,16 +1,4 @@
 {
-  "permissions": {
-    "allow": [
-        "Bash(*)",
-        "Edit",
-        "MultiEdit",
-        "NotebookEdit",
-        "FileEdit",
-        "WebFetch",
-        "WebSearch",
-        "Write"
-    ]
-  },
   "hooks": {
     "PostToolUse": [
       {

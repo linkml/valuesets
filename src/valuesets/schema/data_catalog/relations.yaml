@@ -1,0 +1,376 @@
+name: data-catalog-relations
+title: Resource Relation Types
+description: |
+  Relation types for linking research resources, based on DataCite 4.6.
+
+  These relations describe how resources are connected to each other,
+  supporting citation networks, version tracking, and provenance chains.
+
+  See: https://datacite-metadata-schema.readthedocs.io/
+id: https://w3id.org/valuesets/data_catalog/relations
+
+imports:
+  - linkml:types
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+  valuesets: https://w3id.org/valuesets/
+  DataCite: https://datacite.org/schema/kernel-4/
+  dcterms: http://purl.org/dc/terms/
+  cito: http://purl.org/spar/cito/
+  prov: http://www.w3.org/ns/prov#
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+
+default_prefix: valuesets
+
+slots:
+  resource_relation_type:
+    description: The type of relationship between resources
+    range: DataCiteRelationType
+
+enums:
+  DataCiteRelationType:
+    title: DataCite Relation Type
+    description: |
+      Types of relationships between research resources from DataCite 4.6.
+      Relations are expressed from the perspective of the resource being
+      described (A) in relation to another resource (B).
+    status: DRAFT
+    contributors:
+      - orcid:0000-0002-6601-2165
+      - https://github.com/anthropics/claude-code
+    instantiates:
+      - valuesets_meta:ValueSetEnumDefinition
+    see_also:
+      - https://datacite-metadata-schema.readthedocs.io/en/4.6/appendices/appendix-1/relationType/
+      - http://purl.org/spar/cito/
+    permissible_values:
+      # Citation relations
+      IS_CITED_BY:
+        title: Is Cited By
+        description: Indicates that B includes A in a citation.
+        meaning: DataCite:IsCitedBy
+        exact_mappings:
+          - cito:isCitedBy
+        annotations:
+          inverse: CITES
+          category: citation
+      CITES:
+        description: Indicates that A includes B in a citation.
+        meaning: DataCite:Cites
+        exact_mappings:
+          - cito:cites
+          - dcterms:references
+        annotations:
+          inverse: IS_CITED_BY
+          category: citation
+
+      # Supplement relations
+      IS_SUPPLEMENT_TO:
+        title: Is Supplement To
+        description: Indicates that A is a supplement to B.
+        meaning: DataCite:IsSupplementTo
+        annotations:
+          inverse: IS_SUPPLEMENTED_BY
+          category: supplementary
+      IS_SUPPLEMENTED_BY:
+        title: Is Supplemented By
+        description: Indicates that B is a supplement to A.
+        meaning: DataCite:IsSupplementedBy
+        annotations:
+          inverse: IS_SUPPLEMENT_TO
+          category: supplementary
+
+      # Continuation relations
+      IS_CONTINUED_BY:
+        title: Is Continued By
+        description: Indicates that A is continued by the work B.
+        meaning: DataCite:IsContinuedBy
+        annotations:
+          inverse: CONTINUES
+          category: continuation
+      CONTINUES:
+        description: Indicates that A is a continuation of the work B.
+        meaning: DataCite:Continues
+        annotations:
+          inverse: IS_CONTINUED_BY
+          category: continuation
+
+      # Description relations
+      DESCRIBES:
+        description: Indicates that A describes B.
+        meaning: DataCite:Describes
+        annotations:
+          inverse: IS_DESCRIBED_BY
+          category: description
+      IS_DESCRIBED_BY:
+        title: Is Described By
+        description: Indicates that A is described by B.
+        meaning: DataCite:IsDescribedBy
+        annotations:
+          inverse: DESCRIBES
+          category: description
+
+      # Metadata relations
+      HAS_METADATA:
+        title: Has Metadata
+        description: Indicates that resource A has additional metadata B.
+        meaning: DataCite:HasMetadata
+        annotations:
+          inverse: IS_METADATA_FOR
+          category: metadata
+      IS_METADATA_FOR:
+        title: Is Metadata For
+        description: Indicates that additional metadata A describes resource B.
+        meaning: DataCite:IsMetadataFor
+        annotations:
+          inverse: HAS_METADATA
+          category: metadata
+
+      # Version relations
+      HAS_VERSION:
+        title: Has Version
+        description: Indicates that A has a version B.
+        meaning: DataCite:HasVersion
+        annotations:
+          inverse: IS_VERSION_OF
+          category: versioning
+      IS_VERSION_OF:
+        title: Is Version Of
+        description: Indicates that A is a version of B.
+        meaning: DataCite:IsVersionOf
+        annotations:
+          inverse: HAS_VERSION
+          category: versioning
+      IS_NEW_VERSION_OF:
+        title: Is New Version Of
+        description: |
+          Indicates that A is a new edition of B, where the new edition
+          has been modified or updated.
+        meaning: DataCite:IsNewVersionOf
+        annotations:
+          inverse: IS_PREVIOUS_VERSION_OF
+          category: versioning
+      IS_PREVIOUS_VERSION_OF:
+        title: Is Previous Version Of
+        description: Indicates that A is a previous edition of B.
+        meaning: DataCite:IsPreviousVersionOf
+        annotations:
+          inverse: IS_NEW_VERSION_OF
+          category: versioning
+
+      # Part relations
+      IS_PART_OF:
+        title: Is Part Of
+        description: |
+          Indicates that A is a portion of B. May be used for elements
+          of a series.
+        meaning: DataCite:IsPartOf
+        exact_mappings:
+          - dcterms:isPartOf
+        annotations:
+          inverse: HAS_PART
+          category: partonomy
+      HAS_PART:
+        title: Has Part
+        description: Indicates that A includes the part B.
+        meaning: DataCite:HasPart
+        exact_mappings:
+          - dcterms:hasPart
+        annotations:
+          inverse: IS_PART_OF
+          category: partonomy
+      IS_PUBLISHED_IN:
+        title: Is Published In
+        description: |
+          Indicates that A is published inside B, but is independent of
+          other things published inside of B.
+        meaning: DataCite:IsPublishedIn
+        annotations:
+          category: publication
+
+      # Reference relations
+      IS_REFERENCED_BY:
+        title: Is Referenced By
+        description: Indicates that A is used as a source of information by B.
+        meaning: DataCite:IsReferencedBy
+        exact_mappings:
+          - dcterms:isReferencedBy
+        annotations:
+          inverse: REFERENCES
+          category: reference
+      REFERENCES:
+        description: Indicates that B is used as a source of information for A.
+        meaning: DataCite:References
+        exact_mappings:
+          - dcterms:references
+        annotations:
+          inverse: IS_REFERENCED_BY
+          category: reference
+
+      # Documentation relations
+      IS_DOCUMENTED_BY:
+        title: Is Documented By
+        description: Indicates that B is documentation about/explaining A.
+        meaning: DataCite:IsDocumentedBy
+        annotations:
+          inverse: DOCUMENTS
+          category: documentation
+      DOCUMENTS:
+        description: Indicates that A is documentation about/explaining B.
+        meaning: DataCite:Documents
+        annotations:
+          inverse: IS_DOCUMENTED_BY
+          category: documentation
+
+      # Compilation relations
+      IS_COMPILED_BY:
+        title: Is Compiled By
+        description: Indicates that B is used to compile or create A.
+        meaning: DataCite:IsCompiledBy
+        annotations:
+          inverse: COMPILES
+          category: derivation
+      COMPILES:
+        description: Indicates that B is the result of a compile or creation event using A.
+        meaning: DataCite:Compiles
+        annotations:
+          inverse: IS_COMPILED_BY
+          category: derivation
+
+      # Form relations
+      IS_VARIANT_FORM_OF:
+        title: Is Variant Form Of
+        description: Indicates that A is a variant or different form of B.
+        meaning: DataCite:IsVariantFormOf
+        annotations:
+          inverse: IS_ORIGINAL_FORM_OF
+          category: form
+      IS_ORIGINAL_FORM_OF:
+        title: Is Original Form Of
+        description: Indicates that A is the original form of B.
+        meaning: DataCite:IsOriginalFormOf
+        annotations:
+          inverse: IS_VARIANT_FORM_OF
+          category: form
+
+      # Identity relation
+      IS_IDENTICAL_TO:
+        title: Is Identical To
+        description: |
+          Indicates that A is identical to B, for use when there is a need
+          to register two separate instances of the same resource.
+        meaning: DataCite:IsIdenticalTo
+        annotations:
+          category: identity
+
+      # Review relations
+      IS_REVIEWED_BY:
+        title: Is Reviewed By
+        description: Indicates that A is reviewed by B.
+        meaning: DataCite:IsReviewedBy
+        exact_mappings:
+          - cito:hasReview
+        annotations:
+          inverse: REVIEWS
+          category: review
+      REVIEWS:
+        description: Indicates that A is a review of B.
+        meaning: DataCite:Reviews
+        exact_mappings:
+          - cito:reviews
+        annotations:
+          inverse: IS_REVIEWED_BY
+          category: review
+
+      # Derivation relations
+      IS_DERIVED_FROM:
+        title: Is Derived From
+        description: Indicates that B is a source upon which A is based.
+        meaning: DataCite:IsDerivedFrom
+        exact_mappings:
+          - prov:wasDerivedFrom
+        annotations:
+          inverse: IS_SOURCE_OF
+          category: derivation
+      IS_SOURCE_OF:
+        title: Is Source Of
+        description: Indicates that A is a source upon which B is based.
+        meaning: DataCite:IsSourceOf
+        annotations:
+          inverse: IS_DERIVED_FROM
+          category: derivation
+
+      # Dependency relations
+      IS_REQUIRED_BY:
+        title: Is Required By
+        description: Indicates that A is required by B.
+        meaning: DataCite:IsRequiredBy
+        exact_mappings:
+          - dcterms:isRequiredBy
+        annotations:
+          inverse: REQUIRES
+          category: dependency
+      REQUIRES:
+        description: Indicates that A requires B.
+        meaning: DataCite:Requires
+        exact_mappings:
+          - dcterms:requires
+        annotations:
+          inverse: IS_REQUIRED_BY
+          category: dependency
+
+      # Obsolescence relations
+      OBSOLETES:
+        description: Indicates that A replaces B.
+        meaning: DataCite:Obsoletes
+        exact_mappings:
+          - dcterms:replaces
+        annotations:
+          inverse: IS_OBSOLETED_BY
+          category: obsolescence
+      IS_OBSOLETED_BY:
+        title: Is Obsoleted By
+        description: Indicates that A is replaced by B.
+        meaning: DataCite:IsObsoletedBy
+        exact_mappings:
+          - dcterms:isReplacedBy
+        annotations:
+          inverse: OBSOLETES
+          category: obsolescence
+
+      # Collection relations
+      IS_COLLECTED_BY:
+        title: Is Collected By
+        description: Indicates that A is collected by B.
+        meaning: DataCite:IsCollectedBy
+        annotations:
+          inverse: COLLECTS
+          category: collection
+      COLLECTS:
+        description: Indicates that A collects B.
+        meaning: DataCite:Collects
+        annotations:
+          inverse: IS_COLLECTED_BY
+          category: collection
+
+      # Translation relations
+      IS_TRANSLATION_OF:
+        title: Is Translation Of
+        description: Indicates that A is a translation of B.
+        meaning: DataCite:IsTranslationOf
+        annotations:
+          inverse: HAS_TRANSLATION
+          category: translation
+          added_version: "4.6"
+      HAS_TRANSLATION:
+        title: Has Translation
+        description: Indicates that A has a translation B.
+        meaning: DataCite:HasTranslation
+        annotations:
+          inverse: IS_TRANSLATION_OF
+          category: translation
+          added_version: "4.6"
+
+default_range: string

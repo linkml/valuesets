@@ -40,41 +40,41 @@ enums:
       staging_basis: imaging
     permissible_values:
       L1:
-        title: "L1 - Localized, no IDRFs"
+        title: INRG Stage L1
         description: >-
           Localized tumor not involving vital structures as defined by the
           list of image-defined risk factors and confined to one body
           compartment (neck, chest, abdomen, or pelvis).
-        meaning: NCIT:C133427
+        meaning: NCIT:C133428
         annotations:
           localized: true
           idrfs_present: false
       L2:
-        title: "L2 - Localized, with IDRFs"
+        title: INRG Stage L2
         description: >-
           Locoregional tumor with presence of one or more image-defined
           risk factors. The tumor has not spread far from where it started
           but has at least one IDRF.
-        meaning: NCIT:C133428
+        meaning: NCIT:C133429
         annotations:
           localized: true
           idrfs_present: true
       M:
-        title: "M - Metastatic"
+        title: INRG Stage M
         description: >-
           Distant metastatic disease (except as defined for MS). The tumor
           has spread (metastasized) to distant parts of the body.
-        meaning: NCIT:C133429
+        meaning: NCIT:C133430
         annotations:
           metastatic: true
       MS:
-        title: "MS - Metastatic special"
+        title: INRG Stage MS
         description: >-
           Metastatic disease in children younger than 18 months with
           metastases confined to skin, liver, and/or bone marrow (bone
           marrow involvement limited to <10% tumor cells). This stage
           has a favorable prognosis despite metastatic disease.
-        meaning: NCIT:C133430
+        meaning: NCIT:C133431
         aliases:
         - Stage 4S equivalent
         annotations:
@@ -105,64 +105,64 @@ enums:
       legacy_system: true
     permissible_values:
       STAGE_1:
-        title: "Stage 1"
+        title: INSS Stage 1
         description: >-
           Localized tumor with complete gross excision, with or without
           microscopic residual disease; representative ipsilateral lymph
           nodes negative for tumor microscopically.
-        meaning: NCIT:C6639
+        meaning: NCIT:C85417
         annotations:
           localized: true
           resection: complete
       STAGE_2A:
-        title: "Stage 2A"
+        title: INSS Stage 2A
         description: >-
           Localized tumor with incomplete gross excision; representative
           ipsilateral nonadherent lymph nodes negative for tumor microscopically.
-        meaning: NCIT:C6640
+        meaning: NCIT:C85418
         annotations:
           localized: true
           resection: incomplete
           lymph_nodes: negative
       STAGE_2B:
-        title: "Stage 2B"
+        title: INSS Stage 2B
         description: >-
           Localized tumor with or without complete gross excision, with
           ipsilateral nonadherent lymph nodes positive for tumor.
           Enlarged contralateral lymph nodes must be negative microscopically.
-        meaning: NCIT:C6641
+        meaning: NCIT:C85419
         annotations:
           localized: true
           lymph_nodes: ipsilateral_positive
       STAGE_3:
-        title: "Stage 3"
+        title: INSS Stage 3
         description: >-
           Unresectable unilateral tumor infiltrating across the midline,
           with or without regional lymph node involvement; or localized
           unilateral tumor with contralateral regional lymph node involvement;
           or midline tumor with bilateral extension by infiltration
           (unresectable) or by lymph node involvement.
-        meaning: NCIT:C6642
+        meaning: NCIT:C85420
         annotations:
           localized: false
           crosses_midline: true
       STAGE_4:
-        title: "Stage 4"
+        title: INSS Stage 4
         description: >-
           Any primary tumor with dissemination to distant lymph nodes,
           bone, bone marrow, liver, skin, and/or other organs (except as
           defined for stage 4S).
-        meaning: NCIT:C6643
+        meaning: NCIT:C85421
         annotations:
           metastatic: true
       STAGE_4S:
-        title: "Stage 4S"
+        title: INSS Stage 4S
         description: >-
           Localized primary tumor (as defined for stage 1, 2A, or 2B)
           with dissemination limited to skin, liver, and/or bone marrow
           (limited to infants <1 year of age). Marrow involvement should
           be minimal (<10% of total nucleated cells).
-        meaning: NCIT:C6644
+        meaning: NCIT:C85422
         aliases:
         - Special stage 4
         annotations:
@@ -193,7 +193,6 @@ enums:
         description: >-
           Very low risk neuroblastoma with excellent prognosis. Typically
           includes L1 tumors and MS without MYCN amplification.
-        meaning: NCIT:C103236
         annotations:
           expected_efs: ">85%"
       LOW:
@@ -201,7 +200,6 @@ enums:
         description: >-
           Low risk neuroblastoma with favorable prognosis. Treatment
           may include surgery alone or observation.
-        meaning: NCIT:C103237
         annotations:
           expected_efs: ">75%"
       INTERMEDIATE:
@@ -209,17 +207,16 @@ enums:
         description: >-
           Intermediate risk neuroblastoma requiring multimodal treatment
           including chemotherapy.
-        meaning: NCIT:C103238
         annotations:
           expected_efs: "50-75%"
       HIGH:
-        title: High Risk
+        title: High Risk Neuroblastoma
         description: >-
           High risk neuroblastoma with poor prognosis. Requires intensive
           multimodal therapy including high-dose chemotherapy with
           autologous stem cell rescue, surgery, radiation, and
           immunotherapy.
-        meaning: NCIT:C103239
+        meaning: NCIT:C150281
         annotations:
           expected_efs: "<50%"
           mycn_amplified: often

@@ -191,7 +191,7 @@ enums:
         aliases:
         - POX
       COAL_GASIFICATION:
-        title: Coal Gasification
+        title: gasification
         description: >-
           Conversion of coal to syngas (hydrogen and carbon monoxide)
           using high temperature and steam.
@@ -370,7 +370,6 @@ enums:
         description: >-
           Use of hydrogen as chemical feedstock for ammonia production,
           petroleum refining, and chemical synthesis.
-        meaning: CHEBI:18276
       STEEL_PRODUCTION:
         title: Steel Production (Direct Reduction)
         description: Use of hydrogen to reduce iron ore in steelmaking, replacing coal.

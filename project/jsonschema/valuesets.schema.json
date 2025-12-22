@@ -45,6 +45,18 @@
             "title": "AcademicDegree",
             "type": "string"
         },
+        "AccessRights": {
+            "description": "Information about who can access the resource or an indication of\nits security status. Based on EU Vocabularies Access Rights authority list\nand DCAT recommendations.",
+            "enum": [
+                "PUBLIC",
+                "RESTRICTED",
+                "NON_PUBLIC",
+                "EMBARGOED",
+                "SENSITIVE"
+            ],
+            "title": "AccessRights",
+            "type": "string"
+        },
         "AdditiveManufacturingEnum": {
             "description": "3D printing and additive manufacturing methods",
             "enum": [
@@ -1798,6 +1810,16 @@
             "title": "CoordinationGeometry",
             "type": "string"
         },
+        "CopyrightStatus": {
+            "description": "A designation for the copyright status of an object at the time\nthe rights statement is recorded. Based on PREMIS.",
+            "enum": [
+                "COPYRIGHTED",
+                "PUBLIC_DOMAIN",
+                "UNKNOWN"
+            ],
+            "title": "CopyrightStatus",
+            "type": "string"
+        },
         "CorporateGovernanceRoleEnum": {
             "description": "Roles within corporate governance structure",
             "enum": [
@@ -1985,6 +2007,36 @@
             "title": "CryoEMPreparationType",
             "type": "string"
         },
+        "CryptographicHashFunction": {
+            "description": "Algorithms that take an input and return a fixed-size string (hash value).\nUsed for verifying data integrity and creating digital signatures.\nBased on PREMIS cryptographic hash functions vocabulary.",
+            "enum": [
+                "ADLER_32",
+                "CRC32",
+                "HAVAL",
+                "MD2",
+                "MD4",
+                "MD5",
+                "MD6",
+                "SHA_1",
+                "SHA_224",
+                "SHA_256",
+                "SHA_384",
+                "SHA_512",
+                "SHA3_224",
+                "SHA3_256",
+                "SHA3_384",
+                "SHA3_512",
+                "BLAKE2B_256",
+                "BLAKE2B_384",
+                "BLAKE2B_512",
+                "BLAKE3",
+                "TIGER",
+                "WHIRLPOOL",
+                "UNKNOWN"
+            ],
+            "title": "CryptographicHashFunction",
+            "type": "string"
+        },
         "CrystalGrowthMethodEnum": {
             "description": "Methods for growing single crystals",
             "enum": [
@@ -2155,6 +2207,119 @@
             "title": "DataAbsentEnum",
             "type": "string"
         },
+        "DataCiteContributorType": {
+            "description": "Types of contributors to research resources from DataCite 4.6.\nThese describe organizational and functional roles rather than\nspecific contribution activities (see CRediT/ResearchRole for those).",
+            "enum": [
+                "CONTACT_PERSON",
+                "DATA_COLLECTOR",
+                "DATA_CURATOR",
+                "DATA_MANAGER",
+                "DISTRIBUTOR",
+                "EDITOR",
+                "HOSTING_INSTITUTION",
+                "PRODUCER",
+                "PROJECT_LEADER",
+                "PROJECT_MANAGER",
+                "PROJECT_MEMBER",
+                "REGISTRATION_AGENCY",
+                "REGISTRATION_AUTHORITY",
+                "RELATED_PERSON",
+                "RESEARCHER",
+                "RESEARCH_GROUP",
+                "RIGHTS_HOLDER",
+                "SPONSOR",
+                "SUPERVISOR",
+                "TRANSLATOR",
+                "WORK_PACKAGE_LEADER",
+                "OTHER"
+            ],
+            "title": "DataCiteContributorType",
+            "type": "string"
+        },
+        "DataCiteRelationType": {
+            "description": "Types of relationships between research resources from DataCite 4.6.\nRelations are expressed from the perspective of the resource being\ndescribed (A) in relation to another resource (B).",
+            "enum": [
+                "IS_CITED_BY",
+                "CITES",
+                "IS_SUPPLEMENT_TO",
+                "IS_SUPPLEMENTED_BY",
+                "IS_CONTINUED_BY",
+                "CONTINUES",
+                "DESCRIBES",
+                "IS_DESCRIBED_BY",
+                "HAS_METADATA",
+                "IS_METADATA_FOR",
+                "HAS_VERSION",
+                "IS_VERSION_OF",
+                "IS_NEW_VERSION_OF",
+                "IS_PREVIOUS_VERSION_OF",
+                "IS_PART_OF",
+                "HAS_PART",
+                "IS_PUBLISHED_IN",
+                "IS_REFERENCED_BY",
+                "REFERENCES",
+                "IS_DOCUMENTED_BY",
+                "DOCUMENTS",
+                "IS_COMPILED_BY",
+                "COMPILES",
+                "IS_VARIANT_FORM_OF",
+                "IS_ORIGINAL_FORM_OF",
+                "IS_IDENTICAL_TO",
+                "IS_REVIEWED_BY",
+                "REVIEWS",
+                "IS_DERIVED_FROM",
+                "IS_SOURCE_OF",
+                "IS_REQUIRED_BY",
+                "REQUIRES",
+                "OBSOLETES",
+                "IS_OBSOLETED_BY",
+                "IS_COLLECTED_BY",
+                "COLLECTS",
+                "IS_TRANSLATION_OF",
+                "HAS_TRANSLATION"
+            ],
+            "title": "DataCiteRelationType",
+            "type": "string"
+        },
+        "DataCiteResourceType": {
+            "description": "General resource type classifications from DataCite 4.6.\nUsed for categorizing research outputs in data repositories.",
+            "enum": [
+                "AUDIOVISUAL",
+                "AWARD",
+                "BOOK",
+                "BOOK_CHAPTER",
+                "COLLECTION",
+                "COMPUTATIONAL_NOTEBOOK",
+                "CONFERENCE_PAPER",
+                "CONFERENCE_PROCEEDING",
+                "DATA_PAPER",
+                "DATASET",
+                "DISSERTATION",
+                "EVENT",
+                "IMAGE",
+                "INSTRUMENT",
+                "INTERACTIVE_RESOURCE",
+                "JOURNAL",
+                "JOURNAL_ARTICLE",
+                "MODEL",
+                "OUTPUT_MANAGEMENT_PLAN",
+                "PEER_REVIEW",
+                "PHYSICAL_OBJECT",
+                "PREPRINT",
+                "PROJECT",
+                "REPORT",
+                "SERVICE",
+                "SOFTWARE",
+                "SOUND",
+                "STANDARD",
+                "STUDY_REGISTRATION",
+                "TEXT",
+                "WORKFLOW",
+                "OTHER"
+            ],
+            "title": "DataCiteResourceType",
+            "type": "string"
+        },
         "DataFormatEnum": {
             "description": "Structured data file formats",
             "enum": [
@@ -2204,6 +2369,20 @@
                 "ANNOTATED"
             ],
             "title": "DataProcessingLevel",
+            "type": "string"
+        },
+        "DataServiceType": {
+            "description": "The type of data service provided. Based on INSPIRE spatial data\nservice types and common data access patterns.",
+            "enum": [
+                "DISCOVERY",
+                "VIEW",
+                "DOWNLOAD",
+                "TRANSFORMATION",
+                "INVOKE",
+                "SUBSCRIPTION",
+                "QUERY"
+            ],
+            "title": "DataServiceType",
             "type": "string"
         },
         "DataSizeUnitEnum": {
@@ -2267,6 +2446,17 @@
                 "ALL"
             ],
             "title": "DatasetSplitType",
+            "type": "string"
+        },
+        "DatasetStatus": {
+            "description": "The status of a dataset in its lifecycle. Based on ADMS (Asset\nDescription Metadata Schema) status vocabulary.",
+            "enum": [
+                "COMPLETED",
+                "DEPRECATED",
+                "UNDER_DEVELOPMENT",
+                "WITHDRAWN"
+            ],
+            "title": "DatasetStatus",
             "type": "string"
         },
         "DayOfWeek": {
@@ -2379,6 +2569,17 @@
                 "GENETIC_TEST"
             ],
             "title": "DiagnosticTestTypeEnum",
+            "type": "string"
+        },
+        "DigitalObjectCategory": {
+            "description": "The category of object to which preservation metadata applies.\nBased on PREMIS object categories.",
+            "enum": [
+                "BITSTREAM",
+                "FILE",
+                "INTELLECTUAL_ENTITY",
+                "REPRESENTATION"
+            ],
+            "title": "DigitalObjectCategory",
             "type": "string"
         },
         "Disease": {
@@ -3686,6 +3887,34 @@
             "title": "GridType",
             "type": "string"
         },
+        "HHEARExposureAssessedEnum": {
+            "description": "Categories of environmental exposures assessed in Human Health Exposure Analysis Resource (HHEAR) studies. Based on the HHEAR value set HHEARVS:00008 (Study Environmental Exposures Assessed).",
+            "enum": [
+                "AIR_POLLUTANT",
+                "ALKYL_PHOSPHATE_PESTICIDE_METABOLITE",
+                "ALLERGEN",
+                "ARSENIC_SPECIES",
+                "BROMINATED_FLAME_RETARDANT",
+                "BUILT_ENVIRONMENT",
+                "ENVIRONMENTAL_PHENOL",
+                "FOOD_PACKAGING",
+                "MERCURY_SPECIES",
+                "METAL",
+                "ORGANOCHLORINE_COMPOUND",
+                "ORGANOPHOSPHORUS_FLAME_RETARDANT",
+                "PARABEN",
+                "PERFLUOROALKYL_AND_POLYFLUOROALKYL_SUBSTANCE",
+                "PESTICIDE",
+                "PHTHALATE",
+                "POLYBROMINATED_DIPHENYL_ETHER",
+                "TOBACCO_METABOLITE",
+                "TOBACCO_SMOKE_EXPOSURE",
+                "VOLATILE_ORGANIC_COMPOUND",
+                "WEATHER"
+            ],
+            "title": "HHEARExposureAssessedEnum",
+            "type": "string"
+        },
         "HRFunctionEnum": {
             "description": "Human resources functional areas and specializations",
             "enum": [
@@ -3813,6 +4042,17 @@
                 "UNKNOWN"
             ],
             "title": "HousingStatus",
+            "type": "string"
+        },
+        "HumanAgeGroupEnum": {
+            "description": "Simplified human age group categories based on MeSH classifications. Useful for cohort stratification and demographic reporting.",
+            "enum": [
+                "INFANT",
+                "CHILD",
+                "ADOLESCENT",
+                "ADULT"
+            ],
+            "title": "HumanAgeGroupEnum",
             "type": "string"
         },
         "HumanAnatomicalStructure": {
@@ -5729,6 +5969,19 @@
             "title": "MouseDevelopmentalStage",
             "type": "string"
         },
+        "MousePostnatalAgeGroupEnum": {
+            "description": "Postnatal mouse age groups using postnatal day (P) notation. Common categories used in laboratory research for developmental studies.",
+            "enum": [
+                "P0_P3_NEONATAL",
+                "P4_P21_PREWEANING",
+                "P21_P60_YOUNG_ADULT",
+                "P60_P180_ADULT",
+                "P180_P365_MIDDLE_AGED",
+                "P365_PLUS_AGED"
+            ],
+            "title": "MousePostnatalAgeGroupEnum",
+            "type": "string"
+        },
         "NAICSSectorEnum": {
             "description": "NAICS two-digit sector codes (North American Industry Classification System)",
             "enum": [
@@ -5953,6 +6206,11 @@
             "title": "OWLProfileEnum",
             "type": "string"
         },
+        "OccupationEnum": {
+            "description": "The principal activity that a person does to earn money. Dynamic enum populated from NCIT occupation hierarchy including medical, professional, service, and military occupations.",
+            "title": "OccupationEnum",
+            "type": "string"
+        },
         "OmbEthnicityCategory": {
             "description": "Office of Management and Budget (OMB) ethnicity category codes",
             "enum": [
@@ -6102,6 +6360,288 @@
                 "HYBRID"
             ],
             "title": "OrganizationalStructureEnum",
+            "type": "string"
+        },
+        "OstiAccessLimitation": {
+            "description": "Access and distribution limitation codes from OSTI.",
+            "enum": [
+                "UNL",
+                "OPN",
+                "CPY",
+                "OUO",
+                "PROT",
+                "PDOUO",
+                "ECI",
+                "PDSH",
+                "USO",
+                "LRD",
+                "NAT",
+                "NNPI",
+                "INTL",
+                "PROP",
+                "PAT",
+                "OTHR",
+                "CUI"
+            ],
+            "title": "OstiAccessLimitation",
+            "type": "string"
+        },
+        "OstiCollectionType": {
+            "description": "Collection type codes used by OSTI for record origin.",
+            "enum": [
+                "CHORUS",
+                "DOE_GRANT",
+                "DOE_LAB"
+            ],
+            "title": "OstiCollectionType",
+            "type": "string"
+        },
+        "OstiContributorType": {
+            "description": "Contributor role types used by OSTI.",
+            "enum": [
+                "Chair",
+                "DataCollector",
+                "DataCurator",
+                "DataManager",
+                "Distributor",
+                "Editor",
+                "HostingInstitution",
+                "Producer",
+                "ProjectLeader",
+                "ProjectManager",
+                "ProjectMember",
+                "RegistrationAgency",
+                "RegistrationAuthority",
+                "RelatedPerson",
+                "Reviewer",
+                "ReviewAssistant",
+                "ReviewerExternal",
+                "RightsHolder",
+                "StatsReviewer",
+                "Supervisor",
+                "Translator",
+                "WorkPackageLeader",
+                "Other"
+            ],
+            "title": "OstiContributorType",
+            "type": "string"
+        },
+        "OstiGeolocationType": {
+            "description": "Geolocation shape types in OSTI record metadata.",
+            "enum": [
+                "POINT",
+                "BOX",
+                "POLYGON"
+            ],
+            "title": "OstiGeolocationType",
+            "type": "string"
+        },
+        "OstiIdentifierType": {
+            "description": "Identifier type codes from OSTI record metadata.",
+            "enum": [
+                "AUTH_REV",
+                "CN_DOE",
+                "CN_NONDOE",
+                "CODEN",
+                "DOE_DOCKET",
+                "EDB",
+                "ETDE_RN",
+                "INIS_RN",
+                "ISBN",
+                "ISSN",
+                "LEGACY",
+                "NSA",
+                "OPN_ACC",
+                "OTHER_ID",
+                "PATENT",
+                "PROJ_ID",
+                "PROP_REV",
+                "REF",
+                "REL_TRN",
+                "RN",
+                "TRN",
+                "TVI",
+                "USER_VER",
+                "WORK_AUTH",
+                "WORK_PROP"
+            ],
+            "title": "OstiIdentifierType",
+            "type": "string"
+        },
+        "OstiMediaLocationType": {
+            "description": "Location indicators for OSTI media files and sets.",
+            "enum": [
+                "L",
+                "O"
+            ],
+            "title": "OstiMediaLocationType",
+            "type": "string"
+        },
+        "OstiOrganizationIdentifierType": {
+            "description": "Identifier types for OSTI organizations.",
+            "enum": [
+                "AWARD_DOI",
+                "CN_DOE",
+                "CN_NONDOE"
+            ],
+            "title": "OstiOrganizationIdentifierType",
+            "type": "string"
+        },
+        "OstiOrganizationType": {
+            "description": "Organization role types used by OSTI.",
+            "enum": [
+                "AUTHOR",
+                "CONTRIBUTING",
+                "RESEARCHING",
+                "SPONSOR"
+            ],
+            "title": "OstiOrganizationType",
+            "type": "string"
+        },
+        "OstiPersonType": {
+            "description": "Person role types used by OSTI.",
+            "enum": [
+                "AUTHOR",
+                "RELEASE",
+                "CONTACT",
+                "CONTRIBUTING",
+                "PROT_CE",
+                "PROT_RO",
+                "SBIZ_PI",
+                "SBIZ_BO"
+            ],
+            "title": "OstiPersonType",
+            "type": "string"
+        },
+        "OstiProductType": {
+            "description": "Product type codes from OSTI record metadata.",
+            "enum": [
+                "AR",
+                "B",
+                "CO",
+                "DA",
+                "FS",
+                "JA",
+                "MI",
+                "OT",
+                "P",
+                "PD",
+                "SM",
+                "TD",
+                "TR",
+                "PA"
+            ],
+            "title": "OstiProductType",
+            "type": "string"
+        },
+        "OstiRelatedIdentifierType": {
+            "description": "Identifier types for related resources in OSTI.",
+            "enum": [
+                "ARK",
+                "arXiv",
+                "bibcode",
+                "DOI",
+                "EAN13",
+                "EISSN",
+                "IGSN",
+                "ISBN",
+                "ISSN",
+                "ISTC",
+                "Handle",
+                "LISSN",
+                "LSID",
+                "OTHER",
+                "PMCID",
+                "PMID",
+                "PURL",
+                "UPC",
+                "URI",
+                "URL",
+                "URN",
+                "UUID",
+                "w3id"
+            ],
+            "title": "OstiRelatedIdentifierType",
+            "type": "string"
+        },
+        "OstiRelationType": {
+            "description": "Relationship types between records in OSTI.",
+            "enum": [
+                "BasedOnData",
+                "Cites",
+                "Compiles",
+                "Continues",
+                "Describes",
+                "Documents",
+                "Finances",
+                "HasComment",
+                "HasDerivation",
+                "HasMetadata",
+                "HasPart",
+                "HasRelatedMaterial",
+                "HasReply",
+                "HasReview",
+                "HasVersion",
+                "IsBasedOn",
+                "IsBasisFor",
+                "IsCitedBy",
+                "IsCommentOn",
+                "IsCompiledBy",
+                "IsContinuedBy",
+                "IsDataBasisFor",
+                "IsDerivedFrom",
+                "IsDescribedBy",
+                "IsDocumentedBy",
+                "IsFinancedBy",
+                "IsIdenticalTo",
+                "IsMetadataFor",
+                "IsNewVersionOf",
+                "IsObsoletedBy",
+                "IsOriginalFormOf",
+                "IsPartOf",
+                "IsPreviousVersionOf",
+                "IsReferencedBy",
+                "IsRelatedMaterial",
+                "IsReplyTo",
+                "IsRequiredBy",
+                "IsReviewedBy",
+                "IsReviewOf",
+                "IsSourceOf",
+                "IsSupplementedBy",
+                "IsSupplementTo",
+                "IsVariantFormOf",
+                "IsVersionOf",
+                "Obsoletes",
+                "References",
+                "Requires",
+                "Reviews"
+            ],
+            "title": "OstiRelationType",
+            "type": "string"
+        },
+        "OstiSensitivityFlag": {
+            "description": "Sensitivity flags calculated by OSTI for released records.",
+            "enum": [
+                "H",
+                "S",
+                "U",
+                "X"
+            ],
+            "title": "OstiSensitivityFlag",
+            "type": "string"
+        },
+        "OstiWorkflowStatus": {
+            "description": "Workflow status codes for OSTI record revisions.",
+            "enum": [
+                "R",
+                "SA",
+                "SR",
+                "SO",
+                "SF",
+                "SX",
+                "SV"
+            ],
+            "title": "OstiWorkflowStatus",
             "type": "string"
         },
         "OutcomeTypeEnum": {
@@ -6591,6 +7131,94 @@
                 "ABOVE_DETECTION_LIMIT"
             ],
             "title": "PresenceEnum",
+            "type": "string"
+        },
+        "PreservationEventOutcome": {
+            "description": "The outcome or result of a preservation event.",
+            "enum": [
+                "SUCCESS",
+                "FAILURE",
+                "WARNING"
+            ],
+            "title": "PreservationEventOutcome",
+            "type": "string"
+        },
+        "PreservationEventType": {
+            "description": "Actions performed within or outside a repository that affect the long-term\npreservation of digital objects. Based on PREMIS 3.0 event types.",
+            "enum": [
+                "ACCESSION",
+                "APPRAISAL",
+                "CAPTURE",
+                "COMPILING",
+                "COMPRESSION",
+                "CREATION",
+                "DEACCESSION",
+                "DECOMPRESSION",
+                "DECRYPTION",
+                "DELETION",
+                "DIGITAL_SIGNATURE_GENERATION",
+                "DIGITAL_SIGNATURE_VALIDATION",
+                "DISPLAYING",
+                "DISSEMINATION",
+                "ENCRYPTION",
+                "EXECUTION",
+                "EXPORTING",
+                "EXTRACTION",
+                "FILENAME_CHANGE",
+                "FIXITY_CHECK",
+                "FORENSIC_FEATURE_ANALYSIS",
+                "FORMAT_IDENTIFICATION",
+                "IMAGING",
+                "INFORMATION_PACKAGE_CREATION",
+                "INFORMATION_PACKAGE_MERGING",
+                "INFORMATION_PACKAGE_SPLITTING",
+                "INGESTION",
+                "INGESTION_END",
+                "INGESTION_START",
+                "INTERPRETING",
+                "MESSAGE_DIGEST_CALCULATION",
+                "METADATA_EXTRACTION",
+                "METADATA_MODIFICATION",
+                "MIGRATION",
+                "MODIFICATION",
+                "NORMALIZATION",
+                "PACKING",
+                "POLICY_ASSIGNMENT",
+                "PRINTING",
+                "QUARANTINE",
+                "RECOVERY",
+                "REDACTION",
+                "REFRESHMENT",
+                "RENDERING",
+                "REPLICATION",
+                "TRANSFER",
+                "UNPACKING",
+                "UNQUARANTINE",
+                "VALIDATION",
+                "VIRUS_CHECK"
+            ],
+            "title": "PreservationEventType",
+            "type": "string"
+        },
+        "PreservationLevelRole": {
+            "description": "The context in which a preservation level value is specified.\nBased on PREMIS preservation level role vocabulary.",
+            "enum": [
+                "CAPABILITY",
+                "INTENTION",
+                "REQUIREMENT"
+            ],
+            "title": "PreservationLevelRole",
+            "type": "string"
+        },
+        "PreservationLevelValue": {
+            "description": "Common preservation level tiers indicating the degree of preservation\ncommitment. These are not from PREMIS directly but represent common\npractice in digital preservation.",
+            "enum": [
+                "BIT_LEVEL",
+                "LOGICAL_PRESERVATION",
+                "SEMANTIC_PRESERVATION",
+                "FULL_PRESERVATION"
+            ],
+            "title": "PreservationLevelValue",
             "type": "string"
         },
         "PressureUnitEnum": {
@@ -7486,6 +8114,18 @@
             "title": "ResearchRole",
             "type": "string"
         },
+        "RightsBasis": {
+            "description": "The basis for the right or permission granted for an object.\nBased on PREMIS rights basis vocabulary.",
+            "enum": [
+                "COPYRIGHT",
+                "INSTITUTIONAL_POLICY",
+                "LICENSE",
+                "STATUTE",
+                "OTHER"
+            ],
+            "title": "RightsBasis",
+            "type": "string"
+        },
         "RoboticArmTypeEnum": {
             "description": "Types of robotic arms used in laboratory automation systems",
             "enum": [
@@ -8119,6 +8759,11 @@
                 "CONTROLS"
             ],
             "title": "StudyPopulationEnum",
+            "type": "string"
+        },
+        "StudyTypeEnum": {
+            "description": "Types of studies, including clinical trials, observational studies, and other research investigations. Dynamically populated from NCIT descendants of Study (NCIT:C63536).",
+            "title": "StudyTypeEnum",
             "type": "string"
         },
         "SubatomicParticleEnum": {
@@ -9006,6 +9651,28 @@
                 "SP_ZIKV"
             ],
             "title": "UniProtSpeciesCode",
+            "type": "string"
+        },
+        "UpdateFrequency": {
+            "description": "The frequency at which a dataset is updated with new data.\nBased on Dublin Core Collection Description Frequency Vocabulary.",
+            "enum": [
+                "CONTINUOUS",
+                "DAILY",
+                "TWICE_WEEKLY",
+                "WEEKLY",
+                "BIWEEKLY",
+                "MONTHLY",
+                "BIMONTHLY",
+                "QUARTERLY",
+                "SEMIANNUAL",
+                "ANNUAL",
+                "BIENNIAL",
+                "TRIENNIAL",
+                "IRREGULAR",
+                "NEVER",
+                "UNKNOWN"
+            ],
+            "title": "UpdateFrequency",
             "type": "string"
         },
         "UraniumEnrichmentLevelEnum": {

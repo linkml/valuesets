@@ -66,12 +66,28 @@ ontology_adapters:
   HL7: 
   IANA: 
   ISO3166LOC: 
-  LOINC: 
-  QUDT: 
+  LOINC:
+  QUDT:
+  quantitykind:    # QUDT quantity kinds - multilingual labels, skip validation
   SCHEMA: sqlite:obo:schema
   SNOMED: 
   SPDX: 
   SLM: sqlite:obo:swisslipid
   TIME: 
   DAMLPT:
-  DCMITYPE: 
+  DCMITYPE:
+
+  # Data catalog and preservation vocabularies
+  # These are external vocabularies not in OBO/OLS
+  DataCite:        # DataCite metadata schema
+  premis:          # PREMIS preservation vocabulary (LOC)
+  adms:            # ADMS (Asset Description Metadata Schema)
+  euvoc:           # EU Vocabularies
+  dcterms:         # Dublin Core Terms
+  dcat:            # DCAT vocabulary
+  cito:            # Citation Typing Ontology
+  prov:            # PROV-O provenance ontology
+  marcrel:         # MARC relators
+  spdx:            # SPDX license/checksum vocabulary
+  CRediT:          # Contributor Roles Taxonomy
+  https:           # Full HTTPS URLs used as meanings (e.g., organization websites) 

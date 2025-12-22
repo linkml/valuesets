@@ -1,0 +1,294 @@
+name: data-catalog-resource-types
+title: Research Resource Types
+description: |
+  Resource type classifications for research outputs, based on DataCite 4.6.
+
+  DataCite is a global registration agency for research data identifiers (DOIs)
+  and provides a schema for describing research outputs.
+
+  See: https://datacite-metadata-schema.readthedocs.io/
+id: https://w3id.org/valuesets/data_catalog/resource_types
+
+imports:
+  - linkml:types
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+  valuesets: https://w3id.org/valuesets/
+  DataCite: https://datacite.org/schema/kernel-4/
+  DCMITYPE: http://purl.org/dc/dcmitype/
+  FABIO: http://purl.org/spar/fabio/
+  IAO: http://purl.obolibrary.org/obo/IAO_
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+
+default_prefix: valuesets
+
+slots:
+  resource_type:
+    description: The general type of research resource
+    range: DataCiteResourceType
+
+enums:
+  DataCiteResourceType:
+    title: DataCite Resource Type
+    description: |
+      General resource type classifications from DataCite 4.6.
+      Used for categorizing research outputs in data repositories.
+    status: DRAFT
+    contributors:
+      - orcid:0000-0002-6601-2165
+      - https://github.com/anthropics/claude-code
+    instantiates:
+      - valuesets_meta:ValueSetEnumDefinition
+    see_also:
+      - https://datacite-metadata-schema.readthedocs.io/en/4.6/appendices/appendix-1/resourceTypeGeneral/
+    permissible_values:
+      AUDIOVISUAL:
+        description: |
+          A series of visual representations imparting an impression of motion
+          when shown in succession. May include sound.
+        meaning: DataCite:Audiovisual
+        exact_mappings:
+          - DCMITYPE:MovingImage
+        annotations:
+          examples: video, film, animation
+      AWARD:
+        description: |
+          Funding or support provided to an individual or organization
+          for research, academic work, or professional development.
+        meaning: DataCite:Award
+        annotations:
+          added_version: "4.6"
+          examples: grant award, fellowship, scholarship
+      BOOK:
+        description: |
+          A medium for recording information in the form of writing or images,
+          typically composed of many pages bound together.
+        meaning: DataCite:Book
+        exact_mappings:
+          - FABIO:Book
+          - DCMITYPE:Text
+      BOOK_CHAPTER:
+        title: Book Chapter
+        description: One of the main divisions of a book.
+        meaning: DataCite:BookChapter
+        exact_mappings:
+          - FABIO:BookChapter
+      COLLECTION:
+        description: |
+          An aggregation of resources, which may encompass collections of
+          one resource type as well as those of mixed types.
+        meaning: DataCite:Collection
+        exact_mappings:
+          - DCMITYPE:Collection
+      COMPUTATIONAL_NOTEBOOK:
+        title: Computational Notebook
+        description: |
+          A virtual notebook environment used for literate programming,
+          combining code, documentation, and visualizations.
+        meaning: DataCite:ComputationalNotebook
+        annotations:
+          examples: Jupyter notebook, R Markdown, Observable
+      CONFERENCE_PAPER:
+        title: Conference Paper
+        description: |
+          Article written with the goal of being accepted to a conference.
+        meaning: DataCite:ConferencePaper
+        exact_mappings:
+          - FABIO:ConferencePaper
+      CONFERENCE_PROCEEDING:
+        title: Conference Proceeding
+        description: |
+          Collection of academic papers published in the context of
+          an academic conference.
+        meaning: DataCite:ConferenceProceeding
+        exact_mappings:
+          - FABIO:ConferenceProceedings
+      DATA_PAPER:
+        title: Data Paper
+        description: |
+          A scholarly publication describing a dataset, intended to
+          facilitate its discovery, interpretation, and reuse.
+        meaning: DataCite:DataPaper
+        exact_mappings:
+          - FABIO:DataPaper
+      DATASET:
+        description: |
+          Data encoded in a defined structure. May include tables,
+          databases, or other structured data.
+        meaning: DataCite:Dataset
+        exact_mappings:
+          - DCMITYPE:Dataset
+      DISSERTATION:
+        description: |
+          A written essay, treatise, or thesis, especially one written
+          by a candidate for a doctoral degree.
+        meaning: DataCite:Dissertation
+        exact_mappings:
+          - FABIO:DoctoralThesis
+      EVENT:
+        description: |
+          A non-persistent, time-based occurrence. May be planned or
+          unplanned.
+        meaning: DataCite:Event
+        exact_mappings:
+          - DCMITYPE:Event
+        annotations:
+          examples: conference, workshop, exhibition
+      IMAGE:
+        description: |
+          A visual representation other than text, including photographs,
+          diagrams, illustrations, and other static visual works.
+        meaning: DataCite:Image
+        exact_mappings:
+          - DCMITYPE:Image
+          - DCMITYPE:StillImage
+      INSTRUMENT:
+        description: |
+          A device, tool, or apparatus used to obtain, measure, and/or
+          analyze data.
+        meaning: DataCite:Instrument
+        annotations:
+          examples: microscope, telescope, sensor, spectrometer
+      INTERACTIVE_RESOURCE:
+        title: Interactive Resource
+        description: |
+          A resource requiring interaction from the user to be understood,
+          executed, or experienced.
+        meaning: DataCite:InteractiveResource
+        exact_mappings:
+          - DCMITYPE:InteractiveResource
+        annotations:
+          examples: web application, game, simulation
+      JOURNAL:
+        description: |
+          A scholarly publication consisting of articles that is published
+          regularly throughout the year.
+        meaning: DataCite:Journal
+        exact_mappings:
+          - FABIO:Journal
+      JOURNAL_ARTICLE:
+        title: Journal Article
+        description: |
+          A written composition on a topic of interest, which forms a
+          separate part of a journal.
+        meaning: DataCite:JournalArticle
+        exact_mappings:
+          - FABIO:JournalArticle
+          - IAO:0000013
+      MODEL:
+        description: |
+          An abstract, conceptual, graphical, mathematical, or visualization
+          model that represents empirical objects, phenomena, or processes.
+        meaning: DataCite:Model
+        annotations:
+          examples: 3D model, statistical model, simulation model
+      OUTPUT_MANAGEMENT_PLAN:
+        title: Output Management Plan
+        description: |
+          A formal document that outlines how research outputs are to be
+          handled during and after a research project.
+        meaning: DataCite:OutputManagementPlan
+        aliases:
+          - Data Management Plan
+          - DMP
+      PEER_REVIEW:
+        title: Peer Review
+        description: |
+          Evaluation of scientific, academic, or professional work by
+          others working in the same field.
+        meaning: DataCite:PeerReview
+      PHYSICAL_OBJECT:
+        title: Physical Object
+        description: |
+          A physical object or substance, including artifacts, specimens,
+          samples, and material objects.
+        meaning: DataCite:PhysicalObject
+        exact_mappings:
+          - DCMITYPE:PhysicalObject
+        annotations:
+          examples: fossil, artifact, tissue sample, mineral specimen
+      PREPRINT:
+        description: |
+          A version of a scholarly or scientific paper that precedes
+          formal peer review and publication in a journal.
+        meaning: DataCite:Preprint
+        exact_mappings:
+          - FABIO:Preprint
+      PROJECT:
+        description: |
+          A planned endeavor or activity, frequently collaborative,
+          intended to achieve a particular aim.
+        meaning: DataCite:Project
+        annotations:
+          added_version: "4.6"
+      REPORT:
+        description: |
+          A document that presents information in an organized format
+          for a specific audience and purpose.
+        meaning: DataCite:Report
+        exact_mappings:
+          - FABIO:TechnicalReport
+          - IAO:0000088
+      SERVICE:
+        description: |
+          An organized system of apparatus, appliances, staff, etc.,
+          for supplying some function required by end users.
+        meaning: DataCite:Service
+        exact_mappings:
+          - DCMITYPE:Service
+        annotations:
+          examples: API, web service, data service
+      SOFTWARE:
+        description: |
+          A computer program other than a computational notebook,
+          in either source code (text) or compiled form.
+        meaning: DataCite:Software
+        exact_mappings:
+          - DCMITYPE:Software
+      SOUND:
+        description: |
+          A resource primarily intended to be heard, including music,
+          speech, and other audio recordings.
+        meaning: DataCite:Sound
+        exact_mappings:
+          - DCMITYPE:Sound
+      STANDARD:
+        description: |
+          Something established by authority, custom, or general consent
+          as a model, example, or point of reference.
+        meaning: DataCite:Standard
+        exact_mappings:
+          - FABIO:Standard
+        annotations:
+          examples: ISO standard, data format specification
+      STUDY_REGISTRATION:
+        title: Study Registration
+        description: |
+          A detailed, time-stamped description of a research plan,
+          often openly shared in a registry or repository.
+        meaning: DataCite:StudyRegistration
+        annotations:
+          examples: clinical trial registration, pre-registration
+      TEXT:
+        description: |
+          A resource consisting primarily of words for reading that is
+          not covered by any other textual resource type.
+        meaning: DataCite:Text
+        exact_mappings:
+          - DCMITYPE:Text
+      WORKFLOW:
+        description: |
+          A structured series of steps which can be executed to produce
+          a final outcome, often automated.
+        meaning: DataCite:Workflow
+        annotations:
+          examples: bioinformatics pipeline, ETL workflow, analysis script
+      OTHER:
+        description: |
+          Use when the resource type does not fit any other category.
+          Should be accompanied by a free-text description.
+        meaning: DataCite:Other
+
+default_range: string

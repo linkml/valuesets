@@ -244,10 +244,10 @@ enums:
         description: >-
           Fatty acid methyl esters (FAME) produced by transesterification
           of vegetable oils or animal fats.
-        meaning: MESH:D056804
         aliases:
         - FAME
         close_mappings:
+        - MESH:D056804
         - sweet:matrEnergy/Biodiesel
         annotations:
           production_method: transesterification
@@ -306,18 +306,21 @@ enums:
         title: Syngas (Bio-Based)
         description: >-
           Synthesis gas (CO + H2) produced by gasification of biomass.
-        meaning: CHMO:0001501
         aliases:
         - Synthesis Gas
+        - gasification
         close_mappings:
+        - CHMO:0001501
         - sweet:matrEnergy/Syngas
         annotations:
           intermediate: true
       BUTANOL:
-        title: Biobutanol
+        title: butan-1-ol
         description: >-
           Four-carbon alcohol biofuel with higher energy density than ethanol.
         meaning: CHEBI:28885
+        aliases:
+        - Biobutanol
         annotations:
           chemical_formula: C4H9OH
       METHANOL:

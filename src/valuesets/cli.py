@@ -3,6 +3,7 @@
 import csv
 import json
 import sys
+from contextlib import nullcontext
 from enum import Enum
 from pathlib import Path
 from typing import Any, Dict, Iterator, List, Optional, Type
@@ -144,22 +145,16 @@ def write_output(
         if not results:
             return
         fieldnames = list(results[0].keys())
-        output = sys.stdout if output_path is None else open(output_path, "w", newline="")
-        try:
+        cm = nullcontext(sys.stdout) if output_path is None else open(output_path, "w", newline="")
+        with cm as output:
             writer = csv.DictWriter(output, fieldnames=fieldnames)
             writer.writeheader()
             writer.writerows(results)
-        finally:
-            if output_path:
-                output.close()
     elif output_format == "jsonl":
-        output = sys.stdout if output_path is None else open(output_path, "w")
-        try:
+        cm = nullcontext(sys.stdout) if output_path is None else open(output_path, "w")
+        with cm as output:
             for row in results:
                 output.write(json.dumps(row) + "\n")
-        finally:
-            if output_path:
-                output.close()
     else:  # json
         content = json.dumps(results, indent=2)
         if output_path:

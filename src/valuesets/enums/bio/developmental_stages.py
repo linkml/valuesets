@@ -96,7 +96,49 @@ MouseDevelopmentalStage._metadata = {
     "THEILER_STAGE": {'description': 'Reference to any Theiler stage (TS1-TS28) which provides standardized morphological staging for mouse development.'},
 }
 
+class HumanAgeGroupEnum(RichEnum):
+    """
+    Simplified human age group categories based on MeSH classifications. Useful for cohort stratification and demographic reporting.
+    """
+    # Enum members
+    INFANT = "INFANT"
+    CHILD = "CHILD"
+    ADOLESCENT = "ADOLESCENT"
+    ADULT = "ADULT"
+
+# Set metadata after class creation
+HumanAgeGroupEnum._metadata = {
+    "INFANT": {'description': 'A child between 1 and 23 months of age', 'meaning': 'MESH:D007223', 'annotations': {'age_range': '1-23 months'}, 'aliases': ['Infant']},
+    "CHILD": {'description': 'A person 2 to 12 years of age', 'meaning': 'MESH:D002648', 'annotations': {'age_range': '2-12 years'}, 'aliases': ['Child']},
+    "ADOLESCENT": {'description': 'A person 13 to 18 years of age', 'meaning': 'MESH:D000293', 'annotations': {'age_range': '13-18 years'}, 'aliases': ['Adolescent', 'Teenager']},
+    "ADULT": {'description': 'A person having attained full growth or maturity. Adults are of 19 to 120 years of age', 'meaning': 'MESH:D000328', 'annotations': {'age_range': '19-120 years'}, 'aliases': ['Adult']},
+}
+
+class MousePostnatalAgeGroupEnum(RichEnum):
+    """
+    Postnatal mouse age groups using postnatal day (P) notation. Common categories used in laboratory research for developmental studies.
+    """
+    # Enum members
+    P0_P3_NEONATAL = "P0_P3_NEONATAL"
+    P4_P21_PREWEANING = "P4_P21_PREWEANING"
+    P21_P60_YOUNG_ADULT = "P21_P60_YOUNG_ADULT"
+    P60_P180_ADULT = "P60_P180_ADULT"
+    P180_P365_MIDDLE_AGED = "P180_P365_MIDDLE_AGED"
+    P365_PLUS_AGED = "P365_PLUS_AGED"
+
+# Set metadata after class creation
+MousePostnatalAgeGroupEnum._metadata = {
+    "P0_P3_NEONATAL": {'description': 'Neonatal stage from birth through postnatal day 3', 'annotations': {'postnatal_days': 'P0-P3', 'approximate_age': 'birth to day 3'}, 'aliases': ['P0-P3 Neonatal']},
+    "P4_P21_PREWEANING": {'description': 'Pre-weaning stage from postnatal days 4-21 (typical weaning age)', 'annotations': {'postnatal_days': 'P4-P21', 'approximate_age': 'days 4-21'}, 'aliases': ['P4-P21 Pre-weaning']},
+    "P21_P60_YOUNG_ADULT": {'description': 'Young adult stage from postnatal days 21-60 (3 weeks to 2 months)', 'annotations': {'postnatal_days': 'P21-P60', 'approximate_age': '3 weeks to 2 months'}, 'aliases': ['P21-P60 Young Adult']},
+    "P60_P180_ADULT": {'description': 'Adult stage from postnatal days 60-180 (2 to 6 months)', 'annotations': {'postnatal_days': 'P60-P180', 'approximate_age': '2 to 6 months'}, 'aliases': ['P60-P180 Adult']},
+    "P180_P365_MIDDLE_AGED": {'description': 'Middle-aged stage from postnatal days 180-365 (6 to 12 months)', 'annotations': {'postnatal_days': 'P180-P365', 'approximate_age': '6 to 12 months'}, 'aliases': ['P180-P365 Middle-Aged']},
+    "P365_PLUS_AGED": {'description': 'Aged stage from postnatal day 365 onwards (12+ months)', 'annotations': {'postnatal_days': 'P365+', 'approximate_age': '12+ months'}, 'aliases': ['P365+ Aged']},
+}
+
 __all__ = [
     "HumanDevelopmentalStage",
     "MouseDevelopmentalStage",
+    "HumanAgeGroupEnum",
+    "MousePostnatalAgeGroupEnum",
 ]

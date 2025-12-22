@@ -1,0 +1,310 @@
+name: gene_perturbation
+title: Gene Perturbation Value Sets
+description: >-
+  Value sets for genetic perturbation and modification methods used in
+  functional genomics, gene therapy, and molecular biology research.
+id: https://w3id.org/valuesets/bio/gene_perturbation
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  valuesets: https://w3id.org/valuesets/
+  NCIT: http://purl.obolibrary.org/obo/NCIT_
+  OBI: http://purl.obolibrary.org/obo/OBI_
+  BAO: http://www.bioassayontology.org/bao#BAO_
+  MI: http://purl.obolibrary.org/obo/MI_
+  GO: http://purl.obolibrary.org/obo/GO_
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+default_prefix: valuesets
+slots:
+  gene_perturbation_method:
+    description: Method used for gene perturbation or modification
+    range: GenePerturbationMethodEnum
+  gene_knockout_method:
+    description: Method for creating gene knockouts
+    range: GeneKnockoutMethodEnum
+  vector_type:
+    description: Type of vector used for gene delivery
+    range: VectorTypeEnum
+enums:
+  GenePerturbationMethodEnum:
+    title: Gene Perturbation Methods
+    description: >-
+      Methods for perturbing or modifying gene expression and function.
+      Includes gene editing, silencing, and overexpression approaches.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    see_also:
+    - https://nf-osi.github.io/nf-metadata-dictionary/
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      CRISPR:
+        description: CRISPR/Cas9 gene editing technology
+        meaning: BAO:0010249
+        aliases:
+        - CRISPR/Cas9
+        - CRISPR-Cas9
+        annotations:
+          mechanism: DNA cleavage and repair
+      CRISPR_ACTIVATION:
+        description: CRISPR activation (CRISPRa) for gene upregulation
+        aliases:
+        - CRISPRa
+        annotations:
+          mechanism: transcriptional activation
+          effect: overexpression
+      CRISPR_INTERFERENCE:
+        description: CRISPR interference (CRISPRi) for gene silencing
+        aliases:
+        - CRISPRi
+        annotations:
+          mechanism: transcriptional repression
+          effect: knockdown
+      CRISPR_BASE_EDITING:
+        description: CRISPR base editing for precise nucleotide changes
+        aliases:
+        - base editing
+        annotations:
+          mechanism: nucleotide conversion
+      CRISPR_PRIME_EDITING:
+        description: CRISPR prime editing for versatile sequence changes
+        aliases:
+        - prime editing
+        annotations:
+          mechanism: search-and-replace
+      CRAFT:
+        description: CRISPR Assisted mRNA Fragment Trans-splicing
+        aliases:
+        - CRISPR Assisted mRNA Fragment Trans-splicing
+        annotations:
+          mechanism: RNA trans-splicing
+      RNAI:
+        description: RNA interference for post-transcriptional gene silencing
+        meaning: NCIT:C20153
+        aliases:
+        - RNAi
+        - RNA interference
+        annotations:
+          mechanism: mRNA degradation
+          effect: knockdown
+      SIRNA:
+        description: Small interfering RNA for transient gene silencing
+        meaning: NCIT:C2191
+        aliases:
+        - siRNA
+        annotations:
+          duration: transient
+          delivery: transfection
+      SHRNA:
+        description: Short hairpin RNA for stable gene silencing
+        meaning: NCIT:C111906
+        aliases:
+        - shRNA
+        annotations:
+          duration: stable
+          delivery: viral transduction
+      ANTISENSE_OLIGONUCLEOTIDE:
+        description: Antisense oligonucleotides for gene silencing
+        meaning: NCIT:C1653
+        aliases:
+        - ASO
+        - antisense
+        annotations:
+          mechanism: RNase H activation or steric blocking
+      MORPHOLINO:
+        description: Morpholino oligomers for gene knockdown
+        meaning: NCIT:C96280
+        annotations:
+          mechanism: steric blocking
+          use: developmental biology
+      CRE_RECOMBINASE:
+        description: Cre-lox recombination system for conditional gene modification
+        meaning: NCIT:C17285
+        aliases:
+        - Cre-lox
+        - CRE Recombinase
+        annotations:
+          mechanism: site-specific recombination
+          use: conditional knockout
+      FLPE_RECOMBINASE:
+        description: Flp-FRT recombination system
+        aliases:
+        - Flp-FRT
+        annotations:
+          mechanism: site-specific recombination
+      TALEN:
+        description: Transcription Activator-Like Effector Nucleases
+        meaning: NCIT:C111903
+        aliases:
+        - TALENs
+        annotations:
+          mechanism: DNA cleavage
+      ZINC_FINGER_NUCLEASE:
+        description: Zinc finger nucleases for gene editing
+        meaning: NCIT:C111904
+        aliases:
+        - ZFN
+        annotations:
+          mechanism: DNA cleavage
+      TRANSPOSON_MUTAGENESIS:
+        description: Transposon-mediated insertional mutagenesis
+        meaning: OBI:0001187
+        aliases:
+        - transposon insertion
+        annotations:
+          mechanism: random insertion
+      CHEMICAL_MUTAGENESIS:
+        description: Chemical mutagen-induced mutagenesis
+        meaning: OBI:0001183
+        aliases:
+        - ENU mutagenesis
+        - EMS mutagenesis
+        annotations:
+          mechanism: base modification
+      OVEREXPRESSION:
+        description: Transgene overexpression
+        meaning: OBI:0002452
+        aliases:
+        - transgene expression
+        annotations:
+          effect: gain of function
+
+  GeneKnockoutMethodEnum:
+    title: Gene Knockout Methods
+    description: Specific methods for creating gene knockouts in model systems
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      HOMOLOGOUS_RECOMBINATION:
+        description: Traditional homologous recombination-based knockout
+        meaning: OBI:0001186
+        annotations:
+          use: ES cell targeting
+      CRISPR_KNOCKOUT:
+        description: CRISPR-mediated gene knockout
+        aliases:
+        - CRISPR KO
+        annotations:
+          mechanism: indel formation
+      CONDITIONAL_KNOCKOUT:
+        description: Conditional/inducible gene knockout (Cre-lox or similar)
+        aliases:
+        - cKO
+        - floxed
+        annotations:
+          mechanism: Cre-lox recombination
+      CONSTITUTIVE_KNOCKOUT:
+        description: Constitutive whole-body gene knockout
+        aliases:
+        - germline knockout
+      TISSUE_SPECIFIC_KNOCKOUT:
+        description: Tissue or cell type-specific gene knockout
+        annotations:
+          mechanism: tissue-specific Cre
+      INDUCIBLE_KNOCKOUT:
+        description: Temporally inducible gene knockout
+        aliases:
+        - tamoxifen-inducible
+        annotations:
+          mechanism: CreERT2
+
+  GenotypeEnum:
+    title: Genotype States
+    description: Allelic states for genotype description
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    see_also:
+    - https://nf-osi.github.io/nf-metadata-dictionary/
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      HOMOZYGOUS_WILDTYPE:
+        description: Homozygous wild-type alleles
+        aliases:
+        - "+/+"
+        - wild-type
+        - WT
+      HETEROZYGOUS:
+        description: Heterozygous for mutation or deletion
+        aliases:
+        - "+/-"
+        - het
+      HOMOZYGOUS_MUTANT:
+        description: Homozygous for mutation or deletion
+        aliases:
+        - "-/-"
+        - null
+        - KO
+      HEMIZYGOUS:
+        description: Hemizygous (single allele, X-linked or deletion)
+        aliases:
+        - "-/Y"
+      COMPOUND_HETEROZYGOUS:
+        description: Compound heterozygous (two different mutant alleles)
+        aliases:
+        - compound het
+
+  VectorTypeEnum:
+    title: Gene Delivery Vector Types
+    description: Types of vectors used for gene delivery in research
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      LENTIVIRAL:
+        description: Lentiviral vector
+        meaning: NCIT:C73481
+        annotations:
+          integration: integrating
+      RETROVIRAL:
+        description: Retroviral vector (gamma-retrovirus)
+        meaning: NCIT:C16886
+        annotations:
+          integration: integrating
+      ADENOVIRAL:
+        description: Adenoviral vector
+        meaning: NCIT:C73475
+        annotations:
+          integration: non-integrating
+      AAV:
+        description: Adeno-associated viral vector
+        meaning: NCIT:C73476
+        aliases:
+        - adeno-associated virus
+        annotations:
+          integration: non-integrating (episomal)
+      PLASMID:
+        description: Plasmid DNA vector
+        meaning: NCIT:C730
+        annotations:
+          delivery: transfection
+          duration: transient
+      MRNA:
+        description: mRNA delivery
+        meaning: NCIT:C813
+        annotations:
+          duration: transient
+      LNP:
+        description: Lipid nanoparticle delivery
+        aliases:
+        - lipid nanoparticle
+        annotations:
+          cargo: mRNA, siRNA
+      ELECTROPORATION:
+        description: Electroporation-based delivery
+        meaning: OBI:0001937
+        annotations:
+          method: physical

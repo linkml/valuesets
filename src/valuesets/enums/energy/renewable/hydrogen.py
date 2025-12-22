@@ -117,7 +117,7 @@ class HydrogenApplication(RichEnum):
 HydrogenApplication._metadata = {
     "FUEL_CELL_VEHICLE": {'description': 'Use of hydrogen in fuel cells for transportation (cars, trucks, buses).', 'aliases': ['FCEV']},
     "FUEL_CELL_STATIONARY": {'description': 'Use of hydrogen in stationary fuel cells for power generation.'},
-    "INDUSTRIAL_FEEDSTOCK": {'description': 'Use of hydrogen as chemical feedstock for ammonia production, petroleum refining, and chemical synthesis.', 'meaning': 'CHEBI:18276'},
+    "INDUSTRIAL_FEEDSTOCK": {'description': 'Use of hydrogen as chemical feedstock for ammonia production, petroleum refining, and chemical synthesis.'},
     "STEEL_PRODUCTION": {'description': 'Use of hydrogen to reduce iron ore in steelmaking, replacing coal.', 'aliases': ['Green Steel']},
     "AMMONIA_SYNTHESIS": {'description': 'Use of hydrogen with nitrogen to produce ammonia for fertilizers.'},
     "METHANOL_SYNTHESIS": {'description': 'Use of hydrogen with CO2 to produce methanol.'},

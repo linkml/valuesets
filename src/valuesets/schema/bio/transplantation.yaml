@@ -1,0 +1,179 @@
+name: transplantation
+title: Transplantation Value Sets
+description: >-
+  Value sets for transplantation types and model systems used in
+  biological and medical research, including xenografts and allografts.
+id: https://w3id.org/valuesets/bio/transplantation
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  valuesets: https://w3id.org/valuesets/
+  NCIT: http://purl.obolibrary.org/obo/NCIT_
+  OBI: http://purl.obolibrary.org/obo/OBI_
+  EFO: http://www.ebi.ac.uk/efo/EFO_
+  SNOMED: http://snomed.info/id/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+default_prefix: valuesets
+slots:
+  transplantation_type:
+    description: Type of transplantation based on donor-recipient relationship
+    range: TransplantationTypeEnum
+  model_system_type:
+    description: Type of model system used in research
+    range: ModelSystemTypeEnum
+enums:
+  TransplantationTypeEnum:
+    title: Transplantation Types
+    description: >-
+      Classification of transplants based on the genetic relationship
+      between donor and recipient organisms.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    see_also:
+    - https://nf-osi.github.io/nf-metadata-dictionary/
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      XENOGRAFT:
+        description: >-
+          Transplantation of cells, tissues, or organs between animals
+          of different species
+        meaning: NCIT:C12932
+        aliases:
+        - xenotransplant
+        - heterograft
+        annotations:
+          donor_recipient: different species
+          example: human tumor in mouse
+      ALLOGRAFT:
+        description: >-
+          Transplantation of cells, tissues, or organs between genetically
+          different individuals of the same species
+        meaning: SNOMED:7970006
+        aliases:
+        - allogeneic transplant
+        - homograft
+        annotations:
+          donor_recipient: same species, different individual
+          example: bone marrow transplant
+      AUTOGRAFT:
+        description: >-
+          Transplantation of tissue from one body location to another
+          within the same individual
+        meaning: NCIT:C40997
+        aliases:
+        - autologous transplant
+        - autotransplant
+        annotations:
+          donor_recipient: same individual
+          example: skin graft, autologous stem cell transplant
+      ISOGRAFT:
+        description: >-
+          Transplantation of cells, tissues, or organs between genetically
+          identical individuals (e.g., identical twins, inbred strains)
+        meaning: NCIT:C41000
+        aliases:
+        - syngeneic transplant
+        - isogeneic transplant
+        annotations:
+          donor_recipient: genetically identical
+          example: transplant between identical twins
+
+  XenograftModelEnum:
+    title: Xenograft Model Types
+    description: Types of xenograft models used in cancer and disease research
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      PDX:
+        description: Patient-derived xenograft - tumor tissue directly from patient
+        meaning: NCIT:C122738
+        aliases:
+        - patient-derived xenograft
+        annotations:
+          source: patient tumor
+          passage: primary or passaged
+      CDX:
+        description: Cell line-derived xenograft - from established cell lines
+        aliases:
+        - cell line-derived xenograft
+        annotations:
+          source: cell line
+      PDOX:
+        description: Patient-derived orthotopic xenograft
+        aliases:
+        - patient-derived orthotopic xenograft
+        annotations:
+          implantation: orthotopic site
+      HUMANIZED_MOUSE:
+        description: Mouse engrafted with human immune cells
+        meaning: NCIT:C122961
+        aliases:
+        - humanized mouse model
+        annotations:
+          engraftment: human immune system
+
+  ModelSystemTypeEnum:
+    title: Research Model System Types
+    description: Types of model systems used in biological research
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      CELL_LINE:
+        description: Immortalized or primary cell lines
+        meaning: NCIT:C16403
+      PRIMARY_CELLS:
+        description: Primary cells directly from tissue
+        meaning: NCIT:C70598
+      ORGANOID:
+        description: Three-dimensional organ-like cultures
+        meaning: NCIT:C172259
+      SPHEROID:
+        description: Three-dimensional cell aggregates
+        meaning: NCIT:C176153
+      TISSUE_EXPLANT:
+        description: Tissue explant culture
+        meaning: NCIT:C127861
+      ANIMAL_MODEL:
+        description: In vivo animal model
+        meaning: NCIT:C71164
+      TRANSGENIC_MODEL:
+        description: Genetically engineered transgenic animal
+        meaning: NCIT:C14348
+      KNOCKOUT_MODEL:
+        description: Gene knockout animal model
+        meaning: NCIT:C14341
+      KNOCKIN_MODEL:
+        description: Gene knock-in animal model
+      PDX_MODEL:
+        description: Patient-derived xenograft model
+        meaning: NCIT:C122738
+      GEMM:
+        description: Genetically engineered mouse model
+        aliases:
+        - genetically engineered mouse model
+      ZEBRAFISH_MODEL:
+        description: Zebrafish disease model
+      DROSOPHILA_MODEL:
+        description: Drosophila (fruit fly) disease model
+      C_ELEGANS_MODEL:
+        description: C. elegans disease model
+      YEAST_MODEL:
+        description: Yeast genetic model
+      IPSC_DERIVED:
+        description: Induced pluripotent stem cell-derived model
+        meaning: EFO:0004905
+        aliases:
+        - iPSC-derived

@@ -1,0 +1,277 @@
+name: data-catalog-contributor-roles
+title: DataCite Contributor Types
+description: |
+  Contributor type classifications from DataCite 4.6.
+
+  This enum is separate from CRediT (Contributor Roles Taxonomy) which
+  focuses on research contribution activities. DataCite contributor types
+  describe organizational and functional roles in resource creation and
+  management.
+
+  For research contribution activities, see ResearchRole in academic/research.yaml
+  which uses CRediT terms.
+
+  See: https://datacite-metadata-schema.readthedocs.io/
+id: https://w3id.org/valuesets/data_catalog/contributor_roles
+
+imports:
+  - linkml:types
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+  valuesets: https://w3id.org/valuesets/
+  DataCite: https://datacite.org/schema/kernel-4/
+  CRediT: https://credit.niso.org/contributor-roles/
+  NCIT: http://purl.obolibrary.org/obo/NCIT_
+  SIO: http://semanticscience.org/resource/SIO_
+  marcrel: http://id.loc.gov/vocabulary/relators/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+
+default_prefix: valuesets
+
+slots:
+  datacite_contributor_type:
+    description: The type of contributor from the DataCite vocabulary
+    range: DataCiteContributorType
+
+enums:
+  DataCiteContributorType:
+    title: DataCite Contributor Type
+    description: |
+      Types of contributors to research resources from DataCite 4.6.
+      These describe organizational and functional roles rather than
+      specific contribution activities (see CRediT/ResearchRole for those).
+    status: DRAFT
+    contributors:
+      - orcid:0000-0002-6601-2165
+      - https://github.com/anthropics/claude-code
+    instantiates:
+      - valuesets_meta:ValueSetEnumDefinition
+    see_also:
+      - https://datacite-metadata-schema.readthedocs.io/en/4.6/appendices/appendix-1/contributorType/
+      - https://credit.niso.org/
+    permissible_values:
+      CONTACT_PERSON:
+        title: Contact Person
+        description: |
+          Person with knowledge of how to access, troubleshoot, or
+          otherwise field issues related to the resource.
+        meaning: DataCite:ContactPerson
+        annotations:
+          category: support
+      DATA_COLLECTOR:
+        title: Data Collector
+        description: |
+          Person or institution responsible for finding, gathering, or
+          collecting data under the guidelines of the author(s) or
+          Principal Investigator (PI).
+        meaning: DataCite:DataCollector
+        close_mappings:
+          - CRediT:investigation
+        annotations:
+          category: data_work
+      DATA_CURATOR:
+        title: Data Curator
+        description: |
+          Person tasked with reviewing, enhancing, cleaning, or standardizing
+          metadata and the associated data submitted for storage, use, and
+          maintenance within a repository.
+        meaning: DataCite:DataCurator
+        close_mappings:
+          - CRediT:data-curation
+        annotations:
+          category: data_work
+      DATA_MANAGER:
+        title: Data Manager
+        description: |
+          Person or organization responsible for maintaining the finished
+          resource, including data quality, access permissions, and
+          long-term availability.
+        meaning: DataCite:DataManager
+        close_mappings:
+          - CRediT:data-curation
+        annotations:
+          category: data_work
+      DISTRIBUTOR:
+        description: |
+          Institution tasked with responsibility to generate or disseminate
+          copies of the resource in either electronic or print form.
+        meaning: DataCite:Distributor
+        exact_mappings:
+          - marcrel:dst
+        annotations:
+          category: dissemination
+      EDITOR:
+        description: |
+          A person who oversees the details related to the publication
+          format of the resource.
+        meaning: DataCite:Editor
+        exact_mappings:
+          - marcrel:edt
+        close_mappings:
+          - CRediT:writing-review-editing
+        annotations:
+          category: editorial
+      HOSTING_INSTITUTION:
+        title: Hosting Institution
+        description: |
+          Typically, the organization allowing the resource to be available
+          on the internet through the provision of its hardware, software,
+          or operating support.
+        meaning: DataCite:HostingInstitution
+        annotations:
+          category: infrastructure
+      PRODUCER:
+        description: |
+          Person or organization responsible for the artistic and technical
+          aspects of a resource, typically in audiovisual or media contexts.
+        meaning: DataCite:Producer
+        exact_mappings:
+          - marcrel:pro
+        annotations:
+          category: production
+      PROJECT_LEADER:
+        title: Project Leader
+        description: |
+          Person officially designated as head of a project team or
+          sub-project team instrumental in the work necessary to the
+          development of the resource.
+        meaning: DataCite:ProjectLeader
+        exact_mappings:
+          - NCIT:C19924
+        close_mappings:
+          - CRediT:project-administration
+        aliases:
+          - Principal Investigator
+          - PI
+        annotations:
+          category: leadership
+      PROJECT_MANAGER:
+        title: Project Manager
+        description: |
+          Person officially designated as manager of a project, responsible
+          for day-to-day management activities.
+        meaning: DataCite:ProjectManager
+        close_mappings:
+          - CRediT:project-administration
+        annotations:
+          category: leadership
+      PROJECT_MEMBER:
+        title: Project Member
+        description: |
+          Person on the membership list of a designated project or
+          project team.
+        meaning: DataCite:ProjectMember
+        annotations:
+          category: team
+      REGISTRATION_AGENCY:
+        title: Registration Agency
+        description: |
+          Institution or organization officially appointed by a Registration
+          Authority to handle specific tasks within a defined area of
+          responsibility.
+        meaning: DataCite:RegistrationAgency
+        annotations:
+          category: governance
+          examples: DataCite member organizations
+      REGISTRATION_AUTHORITY:
+        title: Registration Authority
+        description: |
+          A standards-setting body from which Registration Agencies obtain
+          their official recognition and guidance.
+        meaning: DataCite:RegistrationAuthority
+        annotations:
+          category: governance
+          examples: International DOI Foundation
+      RELATED_PERSON:
+        title: Related Person
+        description: |
+          A person without a specifically defined role in the development
+          of the resource, but who is someone the author wishes to recognize.
+        meaning: DataCite:RelatedPerson
+        annotations:
+          category: acknowledgment
+      RESEARCHER:
+        description: |
+          A person involved in analyzing data or the results of an
+          experiment or formal study.
+        meaning: DataCite:Researcher
+        exact_mappings:
+          - NCIT:C25741
+        close_mappings:
+          - CRediT:formal-analysis
+          - CRediT:investigation
+        annotations:
+          category: research
+      RESEARCH_GROUP:
+        title: Research Group
+        description: |
+          A group of individuals with a common research focus, typically
+          within a lab, department, or division.
+        meaning: DataCite:ResearchGroup
+        annotations:
+          category: team
+      RIGHTS_HOLDER:
+        title: Rights Holder
+        description: |
+          Person or institution owning or managing property rights,
+          including intellectual property rights, over the resource.
+        meaning: DataCite:RightsHolder
+        exact_mappings:
+          - marcrel:own
+          - NCIT:C54131
+        annotations:
+          category: legal
+      SPONSOR:
+        description: |
+          Person or organization that issued a contract or under the
+          auspices of which a work has been written, printed, published,
+          developed, etc.
+        meaning: DataCite:Sponsor
+        exact_mappings:
+          - marcrel:spn
+        close_mappings:
+          - CRediT:funding-acquisition
+        annotations:
+          category: funding
+      SUPERVISOR:
+        description: |
+          Designated administrator overseeing one or more groups or teams
+          working to produce the resource.
+        meaning: DataCite:Supervisor
+        exact_mappings:
+          - marcrel:ths
+        close_mappings:
+          - CRediT:supervision
+        annotations:
+          category: leadership
+      TRANSLATOR:
+        description: |
+          Person, organization, or automated system responsible for
+          rendering the content of a resource from one language into
+          another.
+        meaning: DataCite:Translator
+        exact_mappings:
+          - marcrel:trl
+        annotations:
+          category: translation
+          added_version: "4.6"
+      WORK_PACKAGE_LEADER:
+        title: Work Package Leader
+        description: |
+          A Work Package is a recognized data product, and the Work Package
+          Leader ensures the comprehensive contents, availability, and
+          quality of the work package.
+        meaning: DataCite:WorkPackageLeader
+        annotations:
+          category: leadership
+      OTHER:
+        description: |
+          Any person or institution making a significant contribution not
+          covered by other contributor type values.
+        meaning: DataCite:Other
+        annotations:
+          note: Should be accompanied by free-text description
+
+default_range: string
