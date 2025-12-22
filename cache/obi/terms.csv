@@ -33,3 +33,44 @@ OBI:0001113,microplate washer,2025-10-29T20:43:07.387613
 OBI:0001115,ELISA microplate washer,2025-10-29T20:43:07.389510
 OBI:0001118,multichannel pipette,2025-10-29T20:43:07.391085
 OBI:0000570,spin column,2025-10-29T20:43:07.413832
+OBI:0001271,RNA-seq assay,2025-12-19T10:23:50.426320
+OBI:0002631,single-cell RNA sequencing assay,2025-12-19T10:23:50.427223
+OBI:0002112,small RNA sequencing assay,2025-12-19T10:23:50.432132
+OBI:0002117,whole genome sequencing assay,2025-12-19T10:23:50.432585
+OBI:0002118,exome sequencing assay,2025-12-19T10:23:50.432976
+OBI:0002039,assay for transposase-accessible chromatin using sequencing,2025-12-19T10:23:50.433333
+OBI:0000716,ChIP-seq assay,2025-12-19T10:23:50.433786
+OBI:0000748,bisulfite sequencing assay,2025-12-19T10:23:50.434167
+OBI:0002042,carbon-copy chromosome conformation capture assay followed by sequencing assay,2025-12-19T10:23:50.434600
+OBI:0001204,SNP microarray,2025-12-19T10:23:50.434898
+OBI:0001463,transcription profiling by array assay,2025-12-19T10:23:50.435331
+OBI:0001332,DNA methylation profiling by array assay,2025-12-19T10:23:50.435652
+OBI:0003357,brain region atlas image data set,2025-12-19T10:23:50.437867
+OBI:0001986,immunohistochemistry,2025-12-19T10:23:50.438179
+OBI:0600020,histological assay,2025-12-19T10:23:50.438575
+OBI:0003094,fluorescence in-situ hybridization assay,2025-12-19T10:23:50.438915
+OBI:0002985,magnetic resonance imaging assay,2025-12-19T10:23:50.439623
+OBI:0001501,fluorescence detection assay,2025-12-19T10:23:50.439912
+OBI:0002986,computed tomography imaging assay,2025-12-19T10:23:50.440645
+OBI:0001912,cell freezing medium,2025-12-19T10:23:50.441053
+OBI:0001503,MHC protein complex binding to ligand,2025-12-19T10:23:50.441676
+OBI:0001975,,2025-12-19T10:23:50.442730
+OBI:0001330,ELISA measuring epitope specific chemokine (C-X-C motif) ligand 9 production by T cells,2025-12-19T10:23:51.579584
+OBI:0000916,flow cytometry assay,2025-12-19T10:23:51.580062
+OBI:0000661,enzyme-linked immunosorbent assay,2025-12-19T10:23:51.580433
+OBI:0000714,graph of vertices,2025-12-19T10:23:51.580646
+OBI:0000717,HeliScope Single Molecule Sequencer,2025-12-19T10:23:51.580868
+OBI:0000415,polymerase chain reaction,2025-12-19T10:23:51.581320
+OBI:0000893,real time polymerase chain reaction assay,2025-12-19T10:23:51.581700
+OBI:0002187,single-unit recording,2025-12-19T10:23:51.581954
+OBI:0002179,cell-attached patch clamp assay,2025-12-19T10:23:51.582165
+OBI:0001504,dissection,2025-12-19T10:23:51.583760
+OBI:0002508,sputum specimen,2025-12-19T10:23:51.584166
+OBI:0000435,genotyping assay,2025-12-19T10:23:51.584502
+OBI:0001472,specimen with known storage state,2025-12-19T10:23:51.959758
+OBI:0002822,drag swab,2025-12-19T10:23:51.967262
+OBI:0001187,infectious agent detection assay,2025-12-19T11:06:30.219910
+OBI:0001183,epitope protection from tumor challenge experiment,2025-12-19T11:06:30.220241
+OBI:0002452,assay measuring epitope specific interferon-alpha production by T cells,2025-12-19T11:06:30.220982
+OBI:0001186,epitope protection from infectious challenge experiment based on pathogen burden,2025-12-19T11:06:30.221431
+OBI:0001937,has specified numeric value,2025-12-19T11:06:30.227493

@@ -111,6 +111,14 @@ imports:
 - lab_automation/standards
 - lab_automation/thermal_cycling
 - publishing/arxiv_categories
+- publishing/osti_record
+- preservation/events
+- preservation/digital_objects
+- preservation/fixity
+- data_catalog/resource_types
+- data_catalog/relations
+- data_catalog/contributor_roles
+- data_catalog/access
 - linkml:types
 - core
 - core
@@ -1157,6 +1165,26 @@ enums:
         text: UNKNOWN
         description: unknown
         meaning: HL7:UNK
+  OccupationEnum:
+    name: OccupationEnum
+    definition_uri: https://w3id.org/valuesets/OccupationEnum
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: The principal activity that a person does to earn money. Dynamic
+      enum populated from NCIT occupation hierarchy including medical, professional,
+      service, and military occupations.
+    title: Occupation
+    from_schema: https://w3id.org/valuesets/demographics
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    reachable_from:
+      source_nodes:
+      - NCIT:C25193
+      relationship_types:
+      - rdfs:subClassOf
+      is_direct: false
   CaseOrControlEnum:
     name: CaseOrControlEnum
     definition_uri: https://w3id.org/valuesets/CaseOrControlEnum
@@ -1253,6 +1281,26 @@ enums:
         description: A planned process that did not complete successfully
         meaning: COB:0000083
         title: failed planned process
+  StudyTypeEnum:
+    name: StudyTypeEnum
+    definition_uri: https://w3id.org/valuesets/StudyTypeEnum
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Types of studies, including clinical trials, observational studies,
+      and other research investigations. Dynamically populated from NCIT descendants
+      of Study (NCIT:C63536).
+    title: Study Type
+    from_schema: https://w3id.org/valuesets/investigation
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    reachable_from:
+      source_nodes:
+      - NCIT:C63536
+      relationship_types:
+      - rdfs:subClassOf
+      is_direct: false
   GOEvidenceCode:
     name: GOEvidenceCode
     definition_uri: https://w3id.org/valuesets/GOEvidenceCode
@@ -3923,11 +3971,13 @@ enums:
       NUCLEIC_ACID:
         text: NUCLEIC_ACID
         description: Nucleic acid sample (DNA or RNA)
-        meaning: NCIT:C813
+        meaning: NCIT:C706
+        title: Nucleic Acids
       PROTEIN_COMPLEX:
         text: PROTEIN_COMPLEX
         description: Protein-protein or protein-nucleic acid complex
         meaning: GO:0032991
+        title: protein-containing complex
       MEMBRANE_PROTEIN:
         text: MEMBRANE_PROTEIN
         description: Membrane-associated protein sample
@@ -4000,7 +4050,7 @@ enums:
       NEUTRON_CRYSTALLOGRAPHY:
         text: NEUTRON_CRYSTALLOGRAPHY
         description: Neutron crystallography
-        meaning: CHMO:0000175
+        meaning: CHMO:0000698
         annotations:
           advantages:
             tag: advantages
@@ -4027,7 +4077,7 @@ enums:
       WAXS:
         text: WAXS
         description: Wide-angle X-ray scattering
-        meaning: CHMO:0000213
+        meaning: CHMO:0000207
         title: wide-angle X-ray scattering
       NMR:
         text: NMR
@@ -4049,12 +4099,12 @@ enums:
       NEGATIVE_STAIN_EM:
         text: NEGATIVE_STAIN_EM
         description: Negative stain electron microscopy
-        meaning: FBbi:00000568
+        meaning: FBbi:00000399
         annotations:
           resolution_range:
             tag: resolution_range
             value: "15-30 \xC5 typical"
-        title: negative staining electron microscopy
+        title: negative staining
   CryoEMPreparationType:
     name: CryoEMPreparationType
     definition_uri: https://w3id.org/valuesets/CryoEMPreparationType
@@ -4281,7 +4331,6 @@ enums:
       ROTATING_ANODE:
         text: ROTATING_ANODE
         description: Rotating anode generator
-        meaning: CHMO:0001107
         annotations:
           power:
             tag: power
@@ -4325,7 +4374,6 @@ enums:
       DIRECT_ELECTRON:
         text: DIRECT_ELECTRON
         description: Direct electron detector (DED)
-        meaning: CHMO:0002837
         annotations:
           examples:
             tag: examples
@@ -4336,15 +4384,15 @@ enums:
       CCD:
         text: CCD
         description: Charge-coupled device camera
-        meaning: CHMO:0002171
+        meaning: CHMO:0002245
         annotations:
           applications:
             tag: applications
             value: legacy EM, some crystallography
+        title: charge-coupled-device detector
       CMOS:
         text: CMOS
         description: Complementary metal-oxide semiconductor detector
-        meaning: CHMO:0002836
         annotations:
           advantages:
             tag: advantages
@@ -4362,7 +4410,6 @@ enums:
       PHOTOSTIMULABLE_PHOSPHOR:
         text: PHOTOSTIMULABLE_PHOSPHOR
         description: Photostimulable phosphor (image plate)
-        meaning: CHMO:0001069
         annotations:
           applications:
             tag: applications
@@ -4483,7 +4530,6 @@ enums:
       MRC:
         text: MRC
         description: MRC format for EM density maps
-        meaning: EDAM:3842
         annotations:
           extension:
             tag: extension
@@ -4494,7 +4540,7 @@ enums:
       TIFF:
         text: TIFF
         description: Tagged Image File Format
-        meaning: EDAM:3591
+        meaning: EDAM:format_3591
         annotations:
           extension:
             tag: extension
@@ -4505,7 +4551,7 @@ enums:
       HDF5:
         text: HDF5
         description: Hierarchical Data Format 5
-        meaning: EDAM:3590
+        meaning: EDAM:format_3590
         annotations:
           extension:
             tag: extension
@@ -4516,7 +4562,6 @@ enums:
       STAR:
         text: STAR
         description: Self-defining Text Archival and Retrieval format
-        meaning: EDAM:3906
         annotations:
           extension:
             tag: extension
@@ -4527,7 +4572,7 @@ enums:
       PDB:
         text: PDB
         description: Protein Data Bank coordinate format
-        meaning: EDAM:1476
+        meaning: EDAM:format_1476
         annotations:
           extension:
             tag: extension
@@ -4540,7 +4585,7 @@ enums:
       MMCIF:
         text: MMCIF
         description: Macromolecular Crystallographic Information File
-        meaning: EDAM:1477
+        meaning: EDAM:format_1477
         annotations:
           extension:
             tag: extension
@@ -4553,7 +4598,6 @@ enums:
       MTZ:
         text: MTZ
         description: MTZ reflection data format
-        meaning: EDAM:3816
         annotations:
           extension:
             tag: extension
@@ -4564,7 +4608,6 @@ enums:
       CBF:
         text: CBF
         description: Crystallographic Binary Format
-        meaning: EDAM:3874
         annotations:
           extension:
             tag: extension
@@ -4763,7 +4806,7 @@ enums:
           coordination_number:
             tag: coordination_number
             value: '4'
-        title: square planar molecular geometry
+        title: Square Planar 1 Molecular Geometry
       TRIGONAL_BIPYRAMIDAL:
         text: TRIGONAL_BIPYRAMIDAL
         description: Trigonal bipyramidal coordination geometry (5 ligands)
@@ -4793,7 +4836,7 @@ enums:
           coordination_number:
             tag: coordination_number
             value: '6'
-        title: octahedral molecular geometry
+        title: Octahedral 12 Molecular Geometry
       TRIGONAL_PRISMATIC:
         text: TRIGONAL_PRISMATIC
         description: Trigonal prismatic coordination geometry (6 ligands)
@@ -4898,46 +4941,55 @@ enums:
           examples:
             tag: examples
             value: zinc finger, iron-sulfur cluster binding
+        title: iron-sulfur cluster containing modification
       PHOSPHORYLATION:
         text: PHOSPHORYLATION
         description: Phosphorylation modification
         meaning: MOD:00696
+        title: phosphorylated residue
       GLYCOSYLATION:
         text: GLYCOSYLATION
         description: Glycosylation modification
         meaning: MOD:00725
+        title: complex glycosylation
       ACETYLATION:
         text: ACETYLATION
         description: Acetylation modification
         meaning: MOD:00394
+        title: monoacetylated residue
       METHYLATION:
         text: METHYLATION
         description: Methylation modification
         meaning: MOD:00599
+        title: monomethylated residue
       UBIQUITINATION:
         text: UBIQUITINATION
         description: Ubiquitination modification
         meaning: MOD:01240
+        title: ubiquitination signature tetrapeptidyl lysine
       SUMOYLATION:
         text: SUMOYLATION
         description: SUMOylation modification
         meaning: MOD:01149
+        title: sumoylated lysine
       HYDROXYLATION:
         text: HYDROXYLATION
         description: Hydroxylation modification
         meaning: MOD:00677
+        title: hydroxylated residue
       LIPIDATION:
         text: LIPIDATION
         description: Lipidation modification
-        meaning: MOD:00435
       PROTEOLYTIC_CLEAVAGE:
         text: PROTEOLYTIC_CLEAVAGE
         description: Proteolytic cleavage
         meaning: GO:0006508
+        title: proteolysis
       CROSSLINKING:
         text: CROSSLINKING
         description: Crosslinking modification
-        meaning: MOD:00276
+        meaning: MOD:00033
+        title: crosslinked residues
   BiosafetyLevelEnum:
     name: BiosafetyLevelEnum
     definition_uri: https://w3id.org/valuesets/BiosafetyLevelEnum
@@ -6525,7 +6577,7 @@ enums:
         text: HERMAPHRODITIC
         description: Having both male and female reproductive organs
         meaning: PATO:0001340
-        title: Hermaphroditic
+        title: hermaphrodite
       IMPERFECT:
         text: IMPERFECT
         description: Flower lacking either male or female reproductive organs
@@ -7033,6 +7085,152 @@ enums:
         text: THEILER_STAGE
         description: Reference to any Theiler stage (TS1-TS28) which provides standardized
           morphological staging for mouse development.
+  HumanAgeGroupEnum:
+    name: HumanAgeGroupEnum
+    definition_uri: https://w3id.org/valuesets/HumanAgeGroupEnum
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Simplified human age group categories based on MeSH classifications.
+      Useful for cohort stratification and demographic reporting.
+    title: Human Age Group Categories
+    from_schema: https://w3id.org/valuesets/bio/developmental_stages
+    see_also:
+    - https://nf-osi.github.io/nf-metadata-dictionary/
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      INFANT:
+        text: INFANT
+        description: A child between 1 and 23 months of age
+        meaning: MESH:D007223
+        annotations:
+          age_range:
+            tag: age_range
+            value: 1-23 months
+        aliases:
+        - Infant
+      CHILD:
+        text: CHILD
+        description: A person 2 to 12 years of age
+        meaning: MESH:D002648
+        annotations:
+          age_range:
+            tag: age_range
+            value: 2-12 years
+        aliases:
+        - Child
+      ADOLESCENT:
+        text: ADOLESCENT
+        description: A person 13 to 18 years of age
+        meaning: MESH:D000293
+        annotations:
+          age_range:
+            tag: age_range
+            value: 13-18 years
+        aliases:
+        - Adolescent
+        - Teenager
+      ADULT:
+        text: ADULT
+        description: A person having attained full growth or maturity. Adults are
+          of 19 to 120 years of age
+        meaning: MESH:D000328
+        annotations:
+          age_range:
+            tag: age_range
+            value: 19-120 years
+        aliases:
+        - Adult
+  MousePostnatalAgeGroupEnum:
+    name: MousePostnatalAgeGroupEnum
+    definition_uri: https://w3id.org/valuesets/MousePostnatalAgeGroupEnum
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Postnatal mouse age groups using postnatal day (P) notation. Common
+      categories used in laboratory research for developmental studies.
+    title: Mouse Postnatal Age Groups
+    from_schema: https://w3id.org/valuesets/bio/developmental_stages
+    see_also:
+    - https://nf-osi.github.io/nf-metadata-dictionary/
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      P0_P3_NEONATAL:
+        text: P0_P3_NEONATAL
+        description: Neonatal stage from birth through postnatal day 3
+        annotations:
+          postnatal_days:
+            tag: postnatal_days
+            value: P0-P3
+          approximate_age:
+            tag: approximate_age
+            value: birth to day 3
+        aliases:
+        - P0-P3 Neonatal
+      P4_P21_PREWEANING:
+        text: P4_P21_PREWEANING
+        description: Pre-weaning stage from postnatal days 4-21 (typical weaning age)
+        annotations:
+          postnatal_days:
+            tag: postnatal_days
+            value: P4-P21
+          approximate_age:
+            tag: approximate_age
+            value: days 4-21
+        aliases:
+        - P4-P21 Pre-weaning
+      P21_P60_YOUNG_ADULT:
+        text: P21_P60_YOUNG_ADULT
+        description: Young adult stage from postnatal days 21-60 (3 weeks to 2 months)
+        annotations:
+          postnatal_days:
+            tag: postnatal_days
+            value: P21-P60
+          approximate_age:
+            tag: approximate_age
+            value: 3 weeks to 2 months
+        aliases:
+        - P21-P60 Young Adult
+      P60_P180_ADULT:
+        text: P60_P180_ADULT
+        description: Adult stage from postnatal days 60-180 (2 to 6 months)
+        annotations:
+          postnatal_days:
+            tag: postnatal_days
+            value: P60-P180
+          approximate_age:
+            tag: approximate_age
+            value: 2 to 6 months
+        aliases:
+        - P60-P180 Adult
+      P180_P365_MIDDLE_AGED:
+        text: P180_P365_MIDDLE_AGED
+        description: Middle-aged stage from postnatal days 180-365 (6 to 12 months)
+        annotations:
+          postnatal_days:
+            tag: postnatal_days
+            value: P180-P365
+          approximate_age:
+            tag: approximate_age
+            value: 6 to 12 months
+        aliases:
+        - P180-P365 Middle-Aged
+      P365_PLUS_AGED:
+        text: P365_PLUS_AGED
+        description: Aged stage from postnatal day 365 onwards (12+ months)
+        annotations:
+          postnatal_days:
+            tag: postnatal_days
+            value: P365+
+          approximate_age:
+            tag: approximate_age
+            value: 12+ months
+        aliases:
+        - P365+ Aged
   DayOfWeek:
     name: DayOfWeek
     definition_uri: https://w3id.org/valuesets/DayOfWeek
@@ -16759,9 +16957,9 @@ enums:
         text: ELECTRICITY_GENERATION
         description: Use of geothermal resources for power generation through steam
           turbines or binary cycle plants.
-        meaning: ENVO:2000034
         title: Electricity Generation
         close_mappings:
+        - ENVO:2000034
         - sweet:humanTechEnergy/ElectricalGeneration
       DIRECT_USE_HEATING:
         text: DIRECT_USE_HEATING
@@ -17088,7 +17286,7 @@ enums:
         description: Conversion of coal to syngas (hydrogen and carbon monoxide) using
           high temperature and steam.
         meaning: CHMO:0001501
-        title: Coal Gasification
+        title: gasification
       WATER_ELECTROLYSIS:
         text: WATER_ELECTROLYSIS
         description: Splitting water into hydrogen and oxygen using electrical current.
@@ -17317,7 +17515,6 @@ enums:
         text: INDUSTRIAL_FEEDSTOCK
         description: Use of hydrogen as chemical feedstock for ammonia production,
           petroleum refining, and chemical synthesis.
-        meaning: CHEBI:18276
         title: Industrial Feedstock
       STEEL_PRODUCTION:
         text: STEEL_PRODUCTION
@@ -17656,7 +17853,6 @@ enums:
         text: BIODIESEL
         description: Fatty acid methyl esters (FAME) produced by transesterification
           of vegetable oils or animal fats.
-        meaning: MESH:D056804
         annotations:
           production_method:
             tag: production_method
@@ -17665,6 +17861,7 @@ enums:
         aliases:
         - FAME
         close_mappings:
+        - MESH:D056804
         - sweet:matrEnergy/Biodiesel
       RENEWABLE_DIESEL:
         text: RENEWABLE_DIESEL
@@ -17732,7 +17929,6 @@ enums:
       SYNGAS:
         text: SYNGAS
         description: Synthesis gas (CO + H2) produced by gasification of biomass.
-        meaning: CHMO:0001501
         annotations:
           intermediate:
             tag: intermediate
@@ -17740,7 +17936,9 @@ enums:
         title: Syngas (Bio-Based)
         aliases:
         - Synthesis Gas
+        - gasification
         close_mappings:
+        - CHMO:0001501
         - sweet:matrEnergy/Syngas
       BUTANOL:
         text: BUTANOL
@@ -17750,7 +17948,9 @@ enums:
           chemical_formula:
             tag: chemical_formula
             value: C4H9OH
-        title: Biobutanol
+        title: butan-1-ol
+        aliases:
+        - Biobutanol
       METHANOL:
         text: METHANOL
         description: Methanol produced from biomass-derived syngas.
@@ -20962,6 +21162,157 @@ enums:
           interest
         meaning: ExO:0000121
         title: controls for disease or phenotype
+  HHEARExposureAssessedEnum:
+    name: HHEARExposureAssessedEnum
+    definition_uri: https://w3id.org/valuesets/HHEARExposureAssessedEnum
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Categories of environmental exposures assessed in Human Health Exposure
+      Analysis Resource (HHEAR) studies. Based on the HHEAR value set HHEARVS:00008
+      (Study Environmental Exposures Assessed).
+    title: HHEAR Study Environmental Exposures Assessed
+    from_schema: https://w3id.org/valuesets/environmental-health/exposures
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      AIR_POLLUTANT:
+        text: AIR_POLLUTANT
+        description: Airborne pollutants including particulate matter and gaseous
+          contaminants
+        meaning: ECTO:8000036
+        title: exposure to air pollution
+      ALKYL_PHOSPHATE_PESTICIDE_METABOLITE:
+        text: ALKYL_PHOSPHATE_PESTICIDE_METABOLITE
+        description: Metabolites of organophosphate pesticides
+        meaning: ECTO:0000530
+        title: exposure to pesticide
+        related_mappings:
+        - CHEBI:25703
+      ALLERGEN:
+        text: ALLERGEN
+        description: Substances that can cause allergic reactions
+        meaning: ECTO:0000726
+        title: exposure to allergen
+        exact_mappings:
+        - NCIT:C62651
+      ARSENIC_SPECIES:
+        text: ARSENIC_SPECIES
+        description: Various forms of arsenic compounds
+        meaning: ECTO:9000032
+        title: exposure to arsenic
+      BROMINATED_FLAME_RETARDANT:
+        text: BROMINATED_FLAME_RETARDANT
+        description: Organobromine compounds used as flame retardants
+        meaning: ECTO:9002162
+        title: exposure to brominated flame retardant
+        exact_mappings:
+        - CHEBI:172368
+      BUILT_ENVIRONMENT:
+        text: BUILT_ENVIRONMENT
+        description: Human-made surroundings including buildings and infrastructure
+        meaning: ExO:0000048
+        title: Built Environment
+      ENVIRONMENTAL_PHENOL:
+        text: ENVIRONMENTAL_PHENOL
+        description: Phenolic compounds in the environment
+        meaning: ECTO:9000071
+        title: exposure to phenol
+        exact_mappings:
+        - CHEBI:15882
+      FOOD_PACKAGING:
+        text: FOOD_PACKAGING
+        description: Materials used to package food products
+        meaning: FOODON:03490100
+        title: Food Packaging
+      MERCURY_SPECIES:
+        text: MERCURY_SPECIES
+        description: Various forms of mercury compounds
+        meaning: ECTO:0001571
+        title: exposure to mercury
+      METAL:
+        text: METAL
+        description: Metallic elements and compounds
+        meaning: ECTO:9002163
+        title: exposure to heavy metal
+      ORGANOCHLORINE_COMPOUND:
+        text: ORGANOCHLORINE_COMPOUND
+        description: Organic compounds containing chlorine
+        meaning: ECTO:0001152
+        title: exposure to organochlorine compound
+        exact_mappings:
+        - CHEBI:36683
+      ORGANOPHOSPHORUS_FLAME_RETARDANT:
+        text: ORGANOPHOSPHORUS_FLAME_RETARDANT
+        description: Organophosphorus compounds used as flame retardants
+        meaning: ECTO:9000284
+        title: exposure to organophosphorus compound
+      PARABEN:
+        text: PARABEN
+        description: 4-hydroxybenzoate esters used as preservatives
+        meaning: ECTO:9000930
+        title: exposure to paraben
+        exact_mappings:
+        - CHEBI:85122
+      PERFLUOROALKYL_AND_POLYFLUOROALKYL_SUBSTANCE:
+        text: PERFLUOROALKYL_AND_POLYFLUOROALKYL_SUBSTANCE
+        description: PFAS compounds including PFOA and PFOS
+        meaning: ECTO:9002160
+        title: exposure to perfluoroalkyl substance
+        aliases:
+        - PFAS
+        exact_mappings:
+        - CHEBI:172397
+      PESTICIDE:
+        text: PESTICIDE
+        description: Substances used to control pests
+        meaning: ECTO:0000530
+        title: exposure to pesticide
+        exact_mappings:
+        - CHEBI:25944
+      PHTHALATE:
+        text: PHTHALATE
+        description: Phthalic acid esters used as plasticizers
+        meaning: ECTO:9000522
+        title: exposure to phthalate
+        exact_mappings:
+        - CHEBI:26092
+      POLYBROMINATED_DIPHENYL_ETHER:
+        text: POLYBROMINATED_DIPHENYL_ETHER
+        description: Brominated aromatic ethers used as flame retardants
+        meaning: ECTO:9001619
+        title: exposure to polybromodiphenyl ether
+        aliases:
+        - PBDE
+        exact_mappings:
+        - CHEBI:134094
+      TOBACCO_METABOLITE:
+        text: TOBACCO_METABOLITE
+        description: Metabolites of tobacco and nicotine
+        meaning: ECTO:0100013
+        title: exposure to tobacco
+      TOBACCO_SMOKE_EXPOSURE:
+        text: TOBACCO_SMOKE_EXPOSURE
+        description: Exposure to primary or secondhand tobacco smoke
+        meaning: ECTO:6000029
+        title: exposure to tobacco smoking
+      VOLATILE_ORGANIC_COMPOUND:
+        text: VOLATILE_ORGANIC_COMPOUND
+        description: Organic compounds with high vapor pressure
+        meaning: ECTO:9001621
+        title: exposure to volatile organic compound
+        aliases:
+        - VOC
+        exact_mappings:
+        - CHEBI:134179
+      WEATHER:
+        text: WEATHER
+        description: Atmospheric conditions and weather-related exposures
+        meaning: ECTO:1000020
+        title: exposure to weather
+        exact_mappings:
+        - NCIT:C170964
   CountryCodeISO2Enum:
     name: CountryCodeISO2Enum
     definition_uri: https://w3id.org/valuesets/CountryCodeISO2Enum
@@ -36062,16 +36413,16 @@ enums:
       SP_XANCP:
         text: SP_XANCP
         description: 'Xanthomonas campestris (xanthomonas) - Proteome: UP000001010'
-        meaning: NCBITaxon:190485
+        meaning: NCBITaxon:340
         annotations:
           sources:
             tag: sources
             value: GO
-        title: Xanthomonas campestris
+        title: Xanthomonas campestris pv. campestris
         aliases:
         - xanthomonas
         exact_mappings:
-        - NCBITaxon:190485
+        - NCBITaxon:340
         - uniprot.proteome:UP000001010
       SP_XENLA:
         text: SP_XENLA
@@ -36104,7 +36455,7 @@ enums:
       SP_YARLI:
         text: SP_YARLI
         description: 'Yarrowia lipolytica (Yeast) - Proteome: UP000001300'
-        meaning: NCBITaxon:284591
+        meaning: NCBITaxon:4952
         annotations:
           sources:
             tag: sources
@@ -36113,7 +36464,7 @@ enums:
         aliases:
         - Yeast
         exact_mappings:
-        - NCBITaxon:284591
+        - NCBITaxon:4952
         - uniprot.proteome:UP000001300
       SP_YEAST:
         text: SP_YEAST
@@ -42336,7 +42687,7 @@ enums:
         text: ATYPICAL_TERATOID_RHABDOID_TUMOR
         description: Highly malignant embryonal CNS tumor characterized by loss of
           SMARCB1 (INI1) or SMARCA4 expression. Predominantly occurs in young children.
-        meaning: NCIT:C6807
+        meaning: NCIT:C6906
         annotations:
           category:
             tag: category
@@ -42344,12 +42695,12 @@ enums:
           who_classification:
             tag: who_classification
             value: WHO CNS5
-        title: Atypical Teratoid/Rhabdoid Tumors
+        title: Atypical Teratoid/Rhabdoid Tumor
       CHOROID_PLEXUS_TUMOR:
         text: CHOROID_PLEXUS_TUMOR
         description: Neoplasms arising from the choroid plexus epithelium, including
           papilloma, atypical papilloma, and carcinoma.
-        meaning: NCIT:C3698
+        meaning: NCIT:C3473
         annotations:
           category:
             tag: category
@@ -42357,12 +42708,12 @@ enums:
           who_classification:
             tag: who_classification
             value: WHO CNS5
-        title: Choroid Plexus Tumors
+        title: Choroid Plexus Neoplasm
       CNS_GERM_CELL_TUMOR:
         text: CNS_GERM_CELL_TUMOR
         description: Germ cell tumors arising within the central nervous system, including
           germinoma and non-germinomatous germ cell tumors.
-        meaning: NCIT:C6286
+        meaning: NCIT:C5461
         annotations:
           category:
             tag: category
@@ -42370,22 +42721,22 @@ enums:
           who_classification:
             tag: who_classification
             value: WHO CNS5
-        title: CNS Germ Cell Tumors
+        title: Central Nervous System Germ Cell Tumor
       CNS_SARCOMA:
         text: CNS_SARCOMA
         description: Sarcomas arising primarily in the central nervous system, including
           Ewing sarcoma and rhabdomyosarcoma of CNS.
-        meaning: NCIT:C121624
+        meaning: NCIT:C5153
         annotations:
           category:
             tag: category
             value: brain_tumor
-        title: CNS Sarcomas
+        title: Central Nervous System Sarcoma
       CRANIOPHARYNGIOMA:
         text: CRANIOPHARYNGIOMA
         description: Benign epithelial tumors arising from remnants of Rathke pouch,
           including adamantinomatous and papillary subtypes.
-        meaning: NCIT:C2998
+        meaning: NCIT:C2964
         annotations:
           category:
             tag: category
@@ -42393,7 +42744,7 @@ enums:
           who_classification:
             tag: who_classification
             value: WHO CNS5
-        title: Craniopharyngiomas
+        title: Craniopharyngioma
       EPENDYMOMA:
         text: EPENDYMOMA
         description: Glial tumors arising from ependymal cells lining the ventricular
@@ -42411,7 +42762,7 @@ enums:
         text: GLIONEURONAL_AND_NEURONAL_TUMOR
         description: Tumors with neuronal differentiation including ganglioglioma,
           dysembryoplastic neuroepithelial tumor (DNET), and central neurocytoma.
-        meaning: NCIT:C6927
+        meaning: NCIT:C4747
         annotations:
           category:
             tag: category
@@ -42425,7 +42776,7 @@ enums:
         description: Aggressive glial tumors including pediatric-type diffuse high-grade
           gliomas (H3 K27-altered, H3 G34-mutant, and H3/IDH-wildtype), as well as
           glioblastoma.
-        meaning: NCIT:C129355
+        meaning: NCIT:C4822
         annotations:
           category:
             tag: category
@@ -42436,12 +42787,12 @@ enums:
           grade:
             tag: grade
             value: high
-        title: High-Grade Gliomas
+        title: Malignant Glioma
       LOW_GRADE_GLIOMA:
         text: LOW_GRADE_GLIOMA
         description: Indolent glial tumors including pilocytic astrocytoma and pediatric-type
           diffuse low-grade gliomas (MYB/MYBL1-altered, MAPK pathway-altered).
-        meaning: NCIT:C129354
+        meaning: NCIT:C132067
         annotations:
           category:
             tag: category
@@ -42452,7 +42803,7 @@ enums:
           grade:
             tag: grade
             value: low
-        title: Low-Grade Gliomas
+        title: Low Grade Glioma
       MEDULLOBLASTOMA:
         text: MEDULLOBLASTOMA
         description: Embryonal tumor of the cerebellum, classified by molecular subgroups
@@ -42471,7 +42822,7 @@ enums:
         description: Embryonal tumors of the CNS other than medulloblastoma and ATRT,
           including embryonal tumor with multilayered rosettes (ETMR), CNS neuroblastoma,
           and pineoblastoma.
-        meaning: NCIT:C6774
+        meaning: NCIT:C6990
         annotations:
           category:
             tag: category
@@ -42479,7 +42830,7 @@ enums:
           who_classification:
             tag: who_classification
             value: WHO CNS5
-        title: Other CNS Embryonal Tumors
+        title: Central Nervous System Embryonal Tumor
         aliases:
         - CNS Embryonal Tumor, NOS
       OTHER_GLIOMA:
@@ -42491,7 +42842,7 @@ enums:
           category:
             tag: category
             value: brain_tumor
-        title: Other Gliomas
+        title: Glioma
       OTHER_BRAIN_TUMOR:
         text: OTHER_BRAIN_TUMOR
         description: CNS tumors not fitting other brain tumor categories, including
@@ -42501,7 +42852,7 @@ enums:
           category:
             tag: category
             value: brain_tumor
-        title: Other Brain Tumors
+        title: Brain Neoplasm
       LYMPHOBLASTIC_LEUKEMIA:
         text: LYMPHOBLASTIC_LEUKEMIA
         description: Acute lymphoblastic leukemia (ALL) including B-ALL and T-ALL
@@ -42570,12 +42921,12 @@ enums:
         description: Disorders characterized by abnormal lymphocyte proliferation,
           including post-transplant lymphoproliferative disorder (PTLD) and hemophagocytic
           lymphohistiocytosis (HLH).
-        meaning: NCIT:C3138
+        meaning: NCIT:C9308
         annotations:
           category:
             tag: category
             value: hematologic
-        title: Lymphoproliferative Diseases
+        title: Lymphoproliferative Disorder
       OTHER_HEME_TUMOR:
         text: OTHER_HEME_TUMOR
         description: Hematologic malignancies not classified elsewhere, including
@@ -42586,7 +42937,7 @@ enums:
           category:
             tag: category
             value: hematologic
-        title: Other Heme Tumors
+        title: Hematopoietic and Lymphoid Cell Neoplasm
       NEUROBLASTOMA:
         text: NEUROBLASTOMA
         description: Embryonal tumor of the peripheral sympathetic nervous system,
@@ -42644,12 +42995,12 @@ enums:
         description: Soft tissue neoplasms other than rhabdomyosarcoma and Ewing sarcoma,
           including synovial sarcoma, fibrosarcoma, and other sarcomas. Also includes
           non-sarcomatous soft tissue tumors.
-        meaning: NCIT:C3399
+        meaning: NCIT:C9306
         annotations:
           category:
             tag: category
             value: solid_tumor
-        title: Soft Tissue Tumors
+        title: Soft Tissue Sarcoma
         aliases:
         - Soft Tissue Sarcoma
       RHABDOID_TUMOR:
@@ -42657,12 +43008,12 @@ enums:
         description: Highly aggressive tumors characterized by SMARCB1 loss, occurring
           outside the CNS (extracranial rhabdoid tumor). Includes malignant rhabdoid
           tumor of kidney.
-        meaning: NCIT:C3769
+        meaning: NCIT:C3808
         annotations:
           category:
             tag: category
             value: solid_tumor
-        title: Rhabdoid Tumors
+        title: Rhabdoid Tumor
       RENAL_TUMOR:
         text: RENAL_TUMOR
         description: Kidney tumors including Wilms tumor (nephroblastoma), clear cell
@@ -42675,10 +43026,11 @@ enums:
           who_classification:
             tag: who_classification
             value: WHO Pediatric Blue Book
-        title: Renal Tumors
+        title: Malignant Kidney Neoplasm
         aliases:
         - Kidney Tumor
         - Wilms Tumor
+        - Renal Tumors
       RETINOBLASTOMA:
         text: RETINOBLASTOMA
         description: Malignant neoplasm of the retina arising from developing retinal
@@ -42712,7 +43064,7 @@ enums:
           category:
             tag: category
             value: solid_tumor
-        title: Endocrine and Neuroendocrine Tumors
+        title: Endocrine Neoplasm
       OTHER_SOLID_TUMOR:
         text: OTHER_SOLID_TUMOR
         description: Solid tumors not classified elsewhere, including hepatoblastoma,
@@ -42722,7 +43074,7 @@ enums:
           category:
             tag: category
             value: solid_tumor
-        title: Other Solid Tumors
+        title: Childhood Solid Neoplasm
   ICCC3MainGroup:
     name: ICCC3MainGroup
     definition_uri: https://w3id.org/valuesets/ICCC3MainGroup
@@ -42765,12 +43117,12 @@ enums:
           subgroup_count:
             tag: subgroup_count
             value: 5
-        title: I. Leukemias, myeloproliferative diseases, and myelodysplastic diseases
+        title: Leukemia
       II_LYMPHOMAS_RETICULOENDOTHELIAL:
         text: II_LYMPHOMAS_RETICULOENDOTHELIAL
         description: Includes Hodgkin lymphomas, non-Hodgkin lymphomas (except Burkitt
           lymphoma), Burkitt lymphoma, and miscellaneous lymphoreticular neoplasms.
-        meaning: NCIT:C7058
+        meaning: NCIT:C3208
         annotations:
           iccc_code:
             tag: iccc_code
@@ -42778,7 +43130,7 @@ enums:
           subgroup_count:
             tag: subgroup_count
             value: 4
-        title: II. Lymphomas and reticuloendothelial neoplasms
+        title: Lymphoma
       III_CNS_INTRACRANIAL_INTRASPINAL:
         text: III_CNS_INTRACRANIAL_INTRASPINAL
         description: Includes ependymomas and choroid plexus tumor, astrocytomas,
@@ -42796,7 +43148,7 @@ enums:
           includes_nonmalignant:
             tag: includes_nonmalignant
             value: true
-        title: III. CNS and miscellaneous intracranial and intraspinal neoplasms
+        title: Brain Neoplasm
       IV_NEUROBLASTOMA_PERIPHERAL_NERVOUS:
         text: IV_NEUROBLASTOMA_PERIPHERAL_NERVOUS
         description: Includes neuroblastoma and ganglioneuroblastoma, and other peripheral
@@ -42809,7 +43161,7 @@ enums:
           subgroup_count:
             tag: subgroup_count
             value: 2
-        title: IV. Neuroblastoma and other peripheral nervous cell tumors
+        title: Neuroblastoma
       V_RETINOBLASTOMA:
         text: V_RETINOBLASTOMA
         description: Malignant neoplasm of the retina. Single group with no subgroups.
@@ -42821,7 +43173,7 @@ enums:
           subgroup_count:
             tag: subgroup_count
             value: 1
-        title: V. Retinoblastoma
+        title: Retinoblastoma
       VI_RENAL_TUMORS:
         text: VI_RENAL_TUMORS
         description: Includes nephroblastoma and other nonepithelial renal tumors,
@@ -42834,7 +43186,7 @@ enums:
           subgroup_count:
             tag: subgroup_count
             value: 3
-        title: VI. Renal tumors
+        title: Malignant Kidney Neoplasm
       VII_HEPATIC_TUMORS:
         text: VII_HEPATIC_TUMORS
         description: Includes hepatoblastoma, hepatic carcinomas, and unspecified
@@ -42847,13 +43199,13 @@ enums:
           subgroup_count:
             tag: subgroup_count
             value: 3
-        title: VII. Hepatic tumors
+        title: Liver Carcinoma
       VIII_MALIGNANT_BONE_TUMORS:
         text: VIII_MALIGNANT_BONE_TUMORS
         description: Includes osteosarcomas, chondrosarcomas, Ewing tumor and related
           sarcomas of bone, other specified malignant bone tumors, and unspecified
           malignant bone tumors.
-        meaning: NCIT:C4882
+        meaning: NCIT:C4016
         annotations:
           iccc_code:
             tag: iccc_code
@@ -42861,7 +43213,7 @@ enums:
           subgroup_count:
             tag: subgroup_count
             value: 5
-        title: VIII. Malignant bone tumors
+        title: Malignant Bone Neoplasm
       IX_SOFT_TISSUE_SARCOMAS:
         text: IX_SOFT_TISSUE_SARCOMAS
         description: Includes rhabdomyosarcomas, fibrosarcomas/peripheral nerve sheath
@@ -42875,7 +43227,7 @@ enums:
           subgroup_count:
             tag: subgroup_count
             value: 5
-        title: IX. Soft tissue and other extraosseous sarcomas
+        title: Soft Tissue Sarcoma
       X_GERM_CELL_GONADAL:
         text: X_GERM_CELL_GONADAL
         description: Includes intracranial and intraspinal germ cell tumors, malignant
@@ -42890,7 +43242,7 @@ enums:
           subgroup_count:
             tag: subgroup_count
             value: 5
-        title: X. Germ cell tumors, trophoblastic tumors, and neoplasms of gonads
+        title: Germ Cell Tumor
       XI_EPITHELIAL_MELANOMA:
         text: XI_EPITHELIAL_MELANOMA
         description: Includes adrenocortical carcinomas, thyroid carcinomas, nasopharyngeal
@@ -42904,7 +43256,7 @@ enums:
           subgroup_count:
             tag: subgroup_count
             value: 6
-        title: XI. Other malignant epithelial neoplasms and malignant melanomas
+        title: Epithelial Neoplasm
       XII_OTHER_UNSPECIFIED:
         text: XII_OTHER_UNSPECIFIED
         description: Includes other specified malignant tumors and other unspecified
@@ -42917,7 +43269,7 @@ enums:
           subgroup_count:
             tag: subgroup_count
             value: 2
-        title: XII. Other and unspecified malignant neoplasms
+        title: Neoplasm
   ICCC3Subgroup:
     name: ICCC3Subgroup
     definition_uri: https://w3id.org/valuesets/ICCC3Subgroup
@@ -42956,7 +43308,7 @@ enums:
           icdo3_codes:
             tag: icdo3_codes
             value: 9820-9827, 9835-9837
-        title: Ia. Lymphoid leukemias
+        title: Acute Lymphoblastic Leukemia
       Ib_ACUTE_MYELOID_LEUKEMIAS:
         text: Ib_ACUTE_MYELOID_LEUKEMIAS
         description: Acute myeloid leukemia and variants including AML with maturation,
@@ -42971,7 +43323,7 @@ enums:
             tag: icdo3_codes
             value: 9840, 9861, 9866-9867, 9870-9874, 9891, 9895-9897, 9910, 9920,
               9931
-        title: Ib. Acute myeloid leukemias
+        title: Acute Myeloid Leukemia
       Ic_CHRONIC_MYELOPROLIFERATIVE:
         text: Ic_CHRONIC_MYELOPROLIFERATIVE
         description: Chronic myeloid leukemia, NOS; juvenile myelomonocytic leukemia;
@@ -42984,7 +43336,7 @@ enums:
           icdo3_codes:
             tag: icdo3_codes
             value: 9863, 9875-9876, 9945-9946, 9950, 9960-9964
-        title: Ic. Chronic myeloproliferative diseases
+        title: Myeloproliferative Neoplasm
       Id_MYELODYSPLASTIC_OTHER_MYELOPROLIFERATIVE:
         text: Id_MYELODYSPLASTIC_OTHER_MYELOPROLIFERATIVE
         description: Myelodysplastic syndrome, NOS; refractory anemia; refractory
@@ -42997,7 +43349,7 @@ enums:
           icdo3_codes:
             tag: icdo3_codes
             value: 9945, 9980, 9982-9983, 9985-9989
-        title: Id. Myelodysplastic syndrome and other myeloproliferative diseases
+        title: Myelodysplastic Syndrome
       Ie_UNSPECIFIED_OTHER_LEUKEMIAS:
         text: Ie_UNSPECIFIED_OTHER_LEUKEMIAS
         description: Leukemia, NOS and other specified leukemias not elsewhere classified.
@@ -43009,7 +43361,7 @@ enums:
           icdo3_codes:
             tag: icdo3_codes
             value: 9800-9801, 9805-9809, 9860, 9930
-        title: Ie. Unspecified and other specified leukemias
+        title: Leukemia
       IIa_HODGKIN_LYMPHOMAS:
         text: IIa_HODGKIN_LYMPHOMAS
         description: Classical Hodgkin lymphoma and nodular lymphocyte predominant
@@ -43022,7 +43374,7 @@ enums:
           icdo3_codes:
             tag: icdo3_codes
             value: 9650-9655, 9659, 9661-9665, 9667
-        title: IIa. Hodgkin lymphomas
+        title: Hodgkin Lymphoma
       IIb_NON_HODGKIN_LYMPHOMAS:
         text: IIb_NON_HODGKIN_LYMPHOMAS
         description: Diffuse large B-cell lymphoma, follicular lymphoma, peripheral
@@ -43036,11 +43388,11 @@ enums:
             tag: icdo3_codes
             value: 9591, 9670-9686, 9689-9691, 9695, 9698-9702, 9705, 9708-9709, 9714-9719,
               9727-9729
-        title: IIb. Non-Hodgkin lymphomas (except Burkitt lymphoma)
+        title: Non-Hodgkin Lymphoma
       IIc_BURKITT_LYMPHOMA:
         text: IIc_BURKITT_LYMPHOMA
         description: Burkitt lymphoma and Burkitt-like lymphoma.
-        meaning: NCIT:C8150
+        meaning: NCIT:C2912
         annotations:
           main_group:
             tag: main_group
@@ -43048,7 +43400,7 @@ enums:
           icdo3_codes:
             tag: icdo3_codes
             value: '9687'
-        title: IIc. Burkitt lymphoma
+        title: Burkitt Lymphoma
       IId_MISC_LYMPHORETICULAR:
         text: IId_MISC_LYMPHORETICULAR
         description: Lymphoreticular neoplasms not elsewhere classified including
@@ -43061,7 +43413,7 @@ enums:
           icdo3_codes:
             tag: icdo3_codes
             value: 9740-9742, 9750, 9754-9758, 9930, 9970
-        title: IId. Miscellaneous lymphoreticular neoplasms
+        title: Hematopoietic and Lymphoid Cell Neoplasm
       IIIa_EPENDYMOMAS:
         text: IIIa_EPENDYMOMAS
         description: Ependymoma, anaplastic ependymoma, myxopapillary ependymoma,
@@ -43074,7 +43426,7 @@ enums:
           icdo3_codes:
             tag: icdo3_codes
             value: 9383, 9390-9394
-        title: IIIa. Ependymomas and choroid plexus tumor
+        title: Ependymoma
       IIIb_ASTROCYTOMAS:
         text: IIIb_ASTROCYTOMAS
         description: Pilocytic astrocytoma, diffuse astrocytoma, anaplastic astrocytoma,
@@ -43087,12 +43439,12 @@ enums:
           icdo3_codes:
             tag: icdo3_codes
             value: 9380, 9384, 9400-9411, 9420, 9424
-        title: IIIb. Astrocytomas
+        title: Astrocytoma
       IIIc_INTRACRANIAL_EMBRYONAL:
         text: IIIc_INTRACRANIAL_EMBRYONAL
         description: Medulloblastoma, primitive neuroectodermal tumor, medulloepithelioma,
           atypical teratoid/rhabdoid tumor, and other embryonal tumors.
-        meaning: NCIT:C6774
+        meaning: NCIT:C6990
         annotations:
           main_group:
             tag: main_group
@@ -43100,7 +43452,7 @@ enums:
           icdo3_codes:
             tag: icdo3_codes
             value: 9470-9474, 9480, 9490, 9500-9508
-        title: IIIc. Intracranial and intraspinal embryonal tumors
+        title: Central Nervous System Embryonal Tumor
       IIId_OTHER_GLIOMAS:
         text: IIId_OTHER_GLIOMAS
         description: Oligodendroglioma, anaplastic oligodendroglioma, mixed glioma,
@@ -43113,7 +43465,7 @@ enums:
           icdo3_codes:
             tag: icdo3_codes
             value: 9380-9382, 9430, 9440-9460
-        title: IIId. Other gliomas
+        title: Glioma
       IIIe_OTHER_INTRACRANIAL_INTRASPINAL:
         text: IIIe_OTHER_INTRACRANIAL_INTRASPINAL
         description: Pituitary adenoma, craniopharyngioma, pineal tumors, and other
@@ -43123,7 +43475,7 @@ enums:
           main_group:
             tag: main_group
             value: III
-        title: IIIe. Other specified intracranial and intraspinal neoplasms
+        title: Brain Neoplasm
       IIIf_UNSPECIFIED_INTRACRANIAL:
         text: IIIf_UNSPECIFIED_INTRACRANIAL
         description: Intracranial and intraspinal neoplasms, NOS.
@@ -43135,7 +43487,7 @@ enums:
           icdo3_codes:
             tag: icdo3_codes
             value: 8000-8005
-        title: IIIf. Unspecified intracranial and intraspinal neoplasms
+        title: Brain Neoplasm
       IVa_NEUROBLASTOMA_GANGLIONEUROBLASTOMA:
         text: IVa_NEUROBLASTOMA_GANGLIONEUROBLASTOMA
         description: Neuroblastoma, NOS and ganglioneuroblastoma.
@@ -43147,12 +43499,12 @@ enums:
           icdo3_codes:
             tag: icdo3_codes
             value: 9490, 9500
-        title: IVa. Neuroblastoma and ganglioneuroblastoma
+        title: Neuroblastoma
       IVb_OTHER_PERIPHERAL_NERVOUS:
         text: IVb_OTHER_PERIPHERAL_NERVOUS
         description: Other peripheral nerve tumors including ganglioneuroma and peripheral
           nerve sheath tumors.
-        meaning: NCIT:C4969
+        meaning: NCIT:C3321
         annotations:
           main_group:
             tag: main_group
@@ -43160,7 +43512,7 @@ enums:
           icdo3_codes:
             tag: icdo3_codes
             value: 9501-9504, 9520-9523
-        title: IVb. Other peripheral nervous cell tumors
+        title: Peripheral Nervous System Neoplasm
       V_RETINOBLASTOMA:
         text: V_RETINOBLASTOMA
         description: Retinoblastoma.
@@ -43172,7 +43524,7 @@ enums:
           icdo3_codes:
             tag: icdo3_codes
             value: 9510-9514
-        title: V. Retinoblastoma
+        title: Retinoblastoma
       VIa_NEPHROBLASTOMA:
         text: VIa_NEPHROBLASTOMA
         description: Wilms tumor (nephroblastoma), clear cell sarcoma of kidney, rhabdoid
@@ -43185,7 +43537,7 @@ enums:
           icdo3_codes:
             tag: icdo3_codes
             value: 8960, 8963-8964
-        title: VIa. Nephroblastoma and other nonepithelial renal tumors
+        title: Wilms Tumor
       VIb_RENAL_CARCINOMAS:
         text: VIb_RENAL_CARCINOMAS
         description: Renal cell carcinoma and other renal carcinomas.
@@ -43194,7 +43546,7 @@ enums:
           main_group:
             tag: main_group
             value: VI
-        title: VIb. Renal carcinomas
+        title: Renal Cell Carcinoma
       VIc_UNSPECIFIED_RENAL:
         text: VIc_UNSPECIFIED_RENAL
         description: Malignant renal tumors, NOS.
@@ -43203,7 +43555,7 @@ enums:
           main_group:
             tag: main_group
             value: VI
-        title: VIc. Unspecified malignant renal tumors
+        title: Malignant Kidney Neoplasm
       VIIa_HEPATOBLASTOMA:
         text: VIIa_HEPATOBLASTOMA
         description: Hepatoblastoma.
@@ -43215,7 +43567,7 @@ enums:
           icdo3_codes:
             tag: icdo3_codes
             value: '8970'
-        title: VIIa. Hepatoblastoma
+        title: Hepatoblastoma
       VIIb_HEPATIC_CARCINOMAS:
         text: VIIb_HEPATIC_CARCINOMAS
         description: Hepatocellular carcinoma, cholangiocarcinoma, and other hepatic
@@ -43225,7 +43577,7 @@ enums:
           main_group:
             tag: main_group
             value: VII
-        title: VIIb. Hepatic carcinomas
+        title: Hepatocellular Carcinoma
       VIIc_UNSPECIFIED_HEPATIC:
         text: VIIc_UNSPECIFIED_HEPATIC
         description: Malignant hepatic tumors, NOS.
@@ -43234,7 +43586,7 @@ enums:
           main_group:
             tag: main_group
             value: VII
-        title: VIIc. Unspecified malignant hepatic tumors
+        title: Liver Carcinoma
       VIIIa_OSTEOSARCOMAS:
         text: VIIIa_OSTEOSARCOMAS
         description: Osteosarcoma, NOS and variants including chondroblastic, fibroblastic,
@@ -43247,7 +43599,7 @@ enums:
           icdo3_codes:
             tag: icdo3_codes
             value: 9180-9187, 9191-9195
-        title: VIIIa. Osteosarcomas
+        title: Osteosarcoma
       VIIIb_CHONDROSARCOMAS:
         text: VIIIb_CHONDROSARCOMAS
         description: Chondrosarcoma, NOS and variants.
@@ -43259,7 +43611,7 @@ enums:
           icdo3_codes:
             tag: icdo3_codes
             value: 9220-9231, 9240-9243
-        title: VIIIb. Chondrosarcomas
+        title: Chondrosarcoma
       VIIIc_EWING_TUMOR_BONE:
         text: VIIIc_EWING_TUMOR_BONE
         description: Ewing sarcoma of bone and peripheral primitive neuroectodermal
@@ -43272,26 +43624,26 @@ enums:
           icdo3_codes:
             tag: icdo3_codes
             value: 9260, 9364
-        title: VIIIc. Ewing tumor and related sarcomas of bone
+        title: Ewing Sarcoma
       VIIId_OTHER_BONE:
         text: VIIId_OTHER_BONE
         description: Other specified malignant bone tumors including giant cell tumor
           of bone, malignant and adamantinoma.
-        meaning: NCIT:C4882
+        meaning: NCIT:C4016
         annotations:
           main_group:
             tag: main_group
             value: VIII
-        title: VIIId. Other specified malignant bone tumors
+        title: Malignant Bone Neoplasm
       VIIIe_UNSPECIFIED_BONE:
         text: VIIIe_UNSPECIFIED_BONE
         description: Malignant bone tumors, NOS.
-        meaning: NCIT:C4882
+        meaning: NCIT:C4016
         annotations:
           main_group:
             tag: main_group
             value: VIII
-        title: VIIIe. Unspecified malignant bone tumors
+        title: Malignant Bone Neoplasm
       IXa_RHABDOMYOSARCOMAS:
         text: IXa_RHABDOMYOSARCOMAS
         description: Rhabdomyosarcoma, NOS; embryonal rhabdomyosarcoma; alveolar rhabdomyosarcoma;
@@ -43304,7 +43656,7 @@ enums:
           icdo3_codes:
             tag: icdo3_codes
             value: 8900-8905, 8910, 8912, 8920
-        title: IXa. Rhabdomyosarcomas
+        title: Rhabdomyosarcoma
       IXb_FIBROSARCOMAS:
         text: IXb_FIBROSARCOMAS
         description: Fibrosarcoma, NOS; infantile fibrosarcoma; dermatofibrosarcoma;
@@ -43317,8 +43669,7 @@ enums:
           icdo3_codes:
             tag: icdo3_codes
             value: 8810-8815, 8820-8823, 8830, 8832-8833, 9540, 9560-9561
-        title: IXb. Fibrosarcomas, peripheral nerve sheath tumors, and other fibrous
-          neoplasms
+        title: Fibrosarcoma
       IXc_KAPOSI_SARCOMA:
         text: IXc_KAPOSI_SARCOMA
         description: Kaposi sarcoma.
@@ -43330,7 +43681,7 @@ enums:
           icdo3_codes:
             tag: icdo3_codes
             value: '9140'
-        title: IXc. Kaposi sarcoma
+        title: Kaposi Sarcoma
       IXd_OTHER_SOFT_TISSUE:
         text: IXd_OTHER_SOFT_TISSUE
         description: Includes liposarcoma, leiomyosarcoma, synovial sarcoma, hemangiosarcoma,
@@ -43340,7 +43691,7 @@ enums:
           main_group:
             tag: main_group
             value: IX
-        title: IXd. Other specified soft tissue sarcomas
+        title: Soft Tissue Sarcoma
       IXe_UNSPECIFIED_SOFT_TISSUE:
         text: IXe_UNSPECIFIED_SOFT_TISSUE
         description: Soft tissue sarcomas, NOS.
@@ -43349,12 +43700,12 @@ enums:
           main_group:
             tag: main_group
             value: IX
-        title: IXe. Unspecified soft tissue sarcomas
+        title: Soft Tissue Sarcoma
       Xa_INTRACRANIAL_GERM_CELL:
         text: Xa_INTRACRANIAL_GERM_CELL
         description: CNS germ cell tumors including germinoma, teratoma, and nongerminomatous
           germ cell tumors.
-        meaning: NCIT:C6286
+        meaning: NCIT:C5461
         annotations:
           main_group:
             tag: main_group
@@ -43362,17 +43713,17 @@ enums:
           icdo3_codes:
             tag: icdo3_codes
             value: 9060-9102
-        title: Xa. Intracranial and intraspinal germ cell tumors
+        title: Central Nervous System Germ Cell Tumor
       Xb_EXTRACRANIAL_EXTRAGONADAL_GERM_CELL:
         text: Xb_EXTRACRANIAL_EXTRAGONADAL_GERM_CELL
         description: Extracranial germ cell tumors not involving the gonads including
           sacrococcygeal, retroperitoneal, and mediastinal germ cell tumors.
-        meaning: NCIT:C6545
+        meaning: NCIT:C8881
         annotations:
           main_group:
             tag: main_group
             value: X
-        title: Xb. Malignant extracranial and extragonadal germ cell tumors
+        title: Malignant Extragonadal Germ Cell Tumor
       Xc_GONADAL_GERM_CELL:
         text: Xc_GONADAL_GERM_CELL
         description: Germ cell tumors of the ovary and testis including dysgerminoma,
@@ -43382,7 +43733,7 @@ enums:
           main_group:
             tag: main_group
             value: X
-        title: Xc. Malignant gonadal germ cell tumors
+        title: Germ Cell Tumor
       Xd_GONADAL_CARCINOMAS:
         text: Xd_GONADAL_CARCINOMAS
         description: Carcinomas arising in the ovary and testis.
@@ -43391,7 +43742,7 @@ enums:
           main_group:
             tag: main_group
             value: X
-        title: Xd. Gonadal carcinomas
+        title: Epithelial Neoplasm
       Xe_OTHER_GONADAL:
         text: Xe_OTHER_GONADAL
         description: Other specified and unspecified gonadal tumors.
@@ -43400,7 +43751,7 @@ enums:
           main_group:
             tag: main_group
             value: X
-        title: Xe. Other and unspecified malignant gonadal tumors
+        title: Germ Cell Tumor
       XIa_ADRENOCORTICAL_CARCINOMAS:
         text: XIa_ADRENOCORTICAL_CARCINOMAS
         description: Adrenocortical carcinoma.
@@ -43412,7 +43763,7 @@ enums:
           icdo3_codes:
             tag: icdo3_codes
             value: '8370'
-        title: XIa. Adrenocortical carcinomas
+        title: Adrenal Cortical Carcinoma
       XIb_THYROID_CARCINOMAS:
         text: XIb_THYROID_CARCINOMAS
         description: Papillary thyroid carcinoma, follicular thyroid carcinoma, and
@@ -43422,7 +43773,7 @@ enums:
           main_group:
             tag: main_group
             value: XI
-        title: XIb. Thyroid carcinomas
+        title: Malignant Thyroid Gland Neoplasm
       XIc_NASOPHARYNGEAL_CARCINOMAS:
         text: XIc_NASOPHARYNGEAL_CARCINOMAS
         description: Nasopharyngeal carcinoma and related carcinomas.
@@ -43431,7 +43782,7 @@ enums:
           main_group:
             tag: main_group
             value: XI
-        title: XIc. Nasopharyngeal carcinomas
+        title: Nasopharyngeal Carcinoma
       XId_MALIGNANT_MELANOMAS:
         text: XId_MALIGNANT_MELANOMAS
         description: Cutaneous and non-cutaneous malignant melanomas.
@@ -43440,7 +43791,7 @@ enums:
           main_group:
             tag: main_group
             value: XI
-        title: XId. Malignant melanomas
+        title: Melanoma
       XIe_SKIN_CARCINOMAS:
         text: XIe_SKIN_CARCINOMAS
         description: Basal cell carcinoma, squamous cell carcinoma of skin, and other
@@ -43450,7 +43801,7 @@ enums:
           main_group:
             tag: main_group
             value: XI
-        title: XIe. Skin carcinomas
+        title: Skin Neoplasm
       XIf_OTHER_CARCINOMAS:
         text: XIf_OTHER_CARCINOMAS
         description: Carcinomas at other sites and carcinomas, NOS.
@@ -43459,7 +43810,7 @@ enums:
           main_group:
             tag: main_group
             value: XI
-        title: XIf. Other and unspecified carcinomas
+        title: Epithelial Neoplasm
       XIIa_OTHER_SPECIFIED:
         text: XIIa_OTHER_SPECIFIED
         description: Malignant tumors not classifiable in groups I-XI but with specified
@@ -43469,7 +43820,7 @@ enums:
           main_group:
             tag: main_group
             value: XII
-        title: XIIa. Other specified malignant tumors
+        title: Neoplasm
       XIIb_OTHER_UNSPECIFIED:
         text: XIIb_OTHER_UNSPECIFIED
         description: Malignant tumors, NOS not classifiable in groups I-XI.
@@ -43478,7 +43829,7 @@ enums:
           main_group:
             tag: main_group
             value: XII
-        title: XIIb. Other unspecified malignant tumors
+        title: Neoplasm
   INRGSSStage:
     name: INRGSSStage
     definition_uri: https://w3id.org/valuesets/INRGSSStage
@@ -43513,20 +43864,6 @@ enums:
         description: Localized tumor not involving vital structures as defined by
           the list of image-defined risk factors and confined to one body compartment
           (neck, chest, abdomen, or pelvis).
-        meaning: NCIT:C133427
-        annotations:
-          localized:
-            tag: localized
-            value: true
-          idrfs_present:
-            tag: idrfs_present
-            value: false
-        title: L1 - Localized, no IDRFs
-      L2:
-        text: L2
-        description: Locoregional tumor with presence of one or more image-defined
-          risk factors. The tumor has not spread far from where it started but has
-          at least one IDRF.
         meaning: NCIT:C133428
         annotations:
           localized:
@@ -43534,25 +43871,39 @@ enums:
             value: true
           idrfs_present:
             tag: idrfs_present
+            value: false
+        title: INRG Stage L1
+      L2:
+        text: L2
+        description: Locoregional tumor with presence of one or more image-defined
+          risk factors. The tumor has not spread far from where it started but has
+          at least one IDRF.
+        meaning: NCIT:C133429
+        annotations:
+          localized:
+            tag: localized
             value: true
-        title: L2 - Localized, with IDRFs
+          idrfs_present:
+            tag: idrfs_present
+            value: true
+        title: INRG Stage L2
       M:
         text: M
         description: Distant metastatic disease (except as defined for MS). The tumor
           has spread (metastasized) to distant parts of the body.
-        meaning: NCIT:C133429
+        meaning: NCIT:C133430
         annotations:
           metastatic:
             tag: metastatic
             value: true
-        title: M - Metastatic
+        title: INRG Stage M
       MS:
         text: MS
         description: Metastatic disease in children younger than 18 months with metastases
           confined to skin, liver, and/or bone marrow (bone marrow involvement limited
           to <10% tumor cells). This stage has a favorable prognosis despite metastatic
           disease.
-        meaning: NCIT:C133430
+        meaning: NCIT:C133431
         annotations:
           metastatic:
             tag: metastatic
@@ -43566,7 +43917,7 @@ enums:
           favorable_prognosis:
             tag: favorable_prognosis
             value: true
-        title: MS - Metastatic special
+        title: INRG Stage MS
         aliases:
         - Stage 4S equivalent
   INSSStage:
@@ -43603,7 +43954,7 @@ enums:
         description: Localized tumor with complete gross excision, with or without
           microscopic residual disease; representative ipsilateral lymph nodes negative
           for tumor microscopically.
-        meaning: NCIT:C6639
+        meaning: NCIT:C85417
         annotations:
           localized:
             tag: localized
@@ -43611,12 +43962,12 @@ enums:
           resection:
             tag: resection
             value: complete
-        title: Stage 1
+        title: INSS Stage 1
       STAGE_2A:
         text: STAGE_2A
         description: Localized tumor with incomplete gross excision; representative
           ipsilateral nonadherent lymph nodes negative for tumor microscopically.
-        meaning: NCIT:C6640
+        meaning: NCIT:C85418
         annotations:
           localized:
             tag: localized
@@ -43627,13 +43978,13 @@ enums:
           lymph_nodes:
             tag: lymph_nodes
             value: negative
-        title: Stage 2A
+        title: INSS Stage 2A
       STAGE_2B:
         text: STAGE_2B
         description: Localized tumor with or without complete gross excision, with
           ipsilateral nonadherent lymph nodes positive for tumor. Enlarged contralateral
           lymph nodes must be negative microscopically.
-        meaning: NCIT:C6641
+        meaning: NCIT:C85419
         annotations:
           localized:
             tag: localized
@@ -43641,7 +43992,7 @@ enums:
           lymph_nodes:
             tag: lymph_nodes
             value: ipsilateral_positive
-        title: Stage 2B
+        title: INSS Stage 2B
       STAGE_3:
         text: STAGE_3
         description: Unresectable unilateral tumor infiltrating across the midline,
@@ -43649,7 +44000,7 @@ enums:
           tumor with contralateral regional lymph node involvement; or midline tumor
           with bilateral extension by infiltration (unresectable) or by lymph node
           involvement.
-        meaning: NCIT:C6642
+        meaning: NCIT:C85420
         annotations:
           localized:
             tag: localized
@@ -43657,25 +44008,25 @@ enums:
           crosses_midline:
             tag: crosses_midline
             value: true
-        title: Stage 3
+        title: INSS Stage 3
       STAGE_4:
         text: STAGE_4
         description: Any primary tumor with dissemination to distant lymph nodes,
           bone, bone marrow, liver, skin, and/or other organs (except as defined for
           stage 4S).
-        meaning: NCIT:C6643
+        meaning: NCIT:C85421
         annotations:
           metastatic:
             tag: metastatic
             value: true
-        title: Stage 4
+        title: INSS Stage 4
       STAGE_4S:
         text: STAGE_4S
         description: Localized primary tumor (as defined for stage 1, 2A, or 2B) with
           dissemination limited to skin, liver, and/or bone marrow (limited to infants
           <1 year of age). Marrow involvement should be minimal (<10% of total nucleated
           cells).
-        meaning: NCIT:C6644
+        meaning: NCIT:C85422
         annotations:
           metastatic:
             tag: metastatic
@@ -43689,7 +44040,7 @@ enums:
           favorable_prognosis:
             tag: favorable_prognosis
             value: true
-        title: Stage 4S
+        title: INSS Stage 4S
         aliases:
         - Special stage 4
   NeuroblastomaRiskGroup:
@@ -43717,7 +44068,6 @@ enums:
         text: VERY_LOW
         description: Very low risk neuroblastoma with excellent prognosis. Typically
           includes L1 tumors and MS without MYCN amplification.
-        meaning: NCIT:C103236
         annotations:
           expected_efs:
             tag: expected_efs
@@ -43727,7 +44077,6 @@ enums:
         text: LOW
         description: Low risk neuroblastoma with favorable prognosis. Treatment may
           include surgery alone or observation.
-        meaning: NCIT:C103237
         annotations:
           expected_efs:
             tag: expected_efs
@@ -43737,7 +44086,6 @@ enums:
         text: INTERMEDIATE
         description: Intermediate risk neuroblastoma requiring multimodal treatment
           including chemotherapy.
-        meaning: NCIT:C103238
         annotations:
           expected_efs:
             tag: expected_efs
@@ -43748,7 +44096,7 @@ enums:
         description: High risk neuroblastoma with poor prognosis. Requires intensive
           multimodal therapy including high-dose chemotherapy with autologous stem
           cell rescue, surgery, radiation, and immunotherapy.
-        meaning: NCIT:C103239
+        meaning: NCIT:C150281
         annotations:
           expected_efs:
             tag: expected_efs
@@ -43756,7 +44104,7 @@ enums:
           mycn_amplified:
             tag: mycn_amplified
             value: often
-        title: High Risk
+        title: High Risk Neuroblastoma
   ImageDefinedRiskFactor:
     name: ImageDefinedRiskFactor
     definition_uri: https://w3id.org/valuesets/ImageDefinedRiskFactor
@@ -60281,6 +60629,3189 @@ enums:
           foundations, inference.
         is_a: stat
         title: Statistics Theory
+  OstiWorkflowStatus:
+    name: OstiWorkflowStatus
+    definition_uri: https://w3id.org/valuesets/OstiWorkflowStatus
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Workflow status codes for OSTI record revisions.
+    title: OSTI Workflow Status
+    from_schema: https://w3id.org/linkml/valuesets/publishing/osti_record
+    see_also:
+    - https://www.osti.gov/elink2api/record-schema
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      R:
+        text: R
+      SA:
+        text: SA
+      SR:
+        text: SR
+      SO:
+        text: SO
+      SF:
+        text: SF
+      SX:
+        text: SX
+      SV:
+        text: SV
+  OstiAccessLimitation:
+    name: OstiAccessLimitation
+    definition_uri: https://w3id.org/valuesets/OstiAccessLimitation
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Access and distribution limitation codes from OSTI.
+    title: OSTI Access Limitation
+    from_schema: https://w3id.org/linkml/valuesets/publishing/osti_record
+    see_also:
+    - https://www.osti.gov/elink2api/record-schema
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      UNL:
+        text: UNL
+      OPN:
+        text: OPN
+      CPY:
+        text: CPY
+      OUO:
+        text: OUO
+      PROT:
+        text: PROT
+      PDOUO:
+        text: PDOUO
+      ECI:
+        text: ECI
+      PDSH:
+        text: PDSH
+      USO:
+        text: USO
+      LRD:
+        text: LRD
+      NAT:
+        text: NAT
+      NNPI:
+        text: NNPI
+      INTL:
+        text: INTL
+      PROP:
+        text: PROP
+      PAT:
+        text: PAT
+      OTHR:
+        text: OTHR
+      CUI:
+        text: CUI
+  OstiCollectionType:
+    name: OstiCollectionType
+    definition_uri: https://w3id.org/valuesets/OstiCollectionType
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Collection type codes used by OSTI for record origin.
+    title: OSTI Collection Type
+    from_schema: https://w3id.org/linkml/valuesets/publishing/osti_record
+    see_also:
+    - https://www.osti.gov/elink2api/record-schema
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      CHORUS:
+        text: CHORUS
+      DOE_GRANT:
+        text: DOE_GRANT
+      DOE_LAB:
+        text: DOE_LAB
+  OstiSensitivityFlag:
+    name: OstiSensitivityFlag
+    definition_uri: https://w3id.org/valuesets/OstiSensitivityFlag
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Sensitivity flags calculated by OSTI for released records.
+    title: OSTI Sensitivity Flag
+    from_schema: https://w3id.org/linkml/valuesets/publishing/osti_record
+    see_also:
+    - https://www.osti.gov/elink2api/record-schema
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      H:
+        text: H
+      S:
+        text: S
+      U:
+        text: U
+      X:
+        text: X
+  OstiOrganizationIdentifierType:
+    name: OstiOrganizationIdentifierType
+    definition_uri: https://w3id.org/valuesets/OstiOrganizationIdentifierType
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Identifier types for OSTI organizations.
+    title: OSTI Organization Identifier Type
+    from_schema: https://w3id.org/linkml/valuesets/publishing/osti_record
+    see_also:
+    - https://www.osti.gov/elink2api/record-schema
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      AWARD_DOI:
+        text: AWARD_DOI
+      CN_DOE:
+        text: CN_DOE
+      CN_NONDOE:
+        text: CN_NONDOE
+  OstiProductType:
+    name: OstiProductType
+    definition_uri: https://w3id.org/valuesets/OstiProductType
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Product type codes from OSTI record metadata.
+    title: OSTI Product Type
+    from_schema: https://w3id.org/linkml/valuesets/publishing/osti_record
+    see_also:
+    - https://www.osti.gov/elink2api/record-schema
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      AR:
+        text: AR
+      B:
+        text: B
+      CO:
+        text: CO
+      DA:
+        text: DA
+      FS:
+        text: FS
+      JA:
+        text: JA
+      MI:
+        text: MI
+      OT:
+        text: OT
+      P:
+        text: P
+      PD:
+        text: PD
+      SM:
+        text: SM
+      TD:
+        text: TD
+      TR:
+        text: TR
+      PA:
+        text: PA
+  OstiOrganizationType:
+    name: OstiOrganizationType
+    definition_uri: https://w3id.org/valuesets/OstiOrganizationType
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Organization role types used by OSTI.
+    title: OSTI Organization Type
+    from_schema: https://w3id.org/linkml/valuesets/publishing/osti_record
+    see_also:
+    - https://www.osti.gov/elink2api/record-schema
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      AUTHOR:
+        text: AUTHOR
+      CONTRIBUTING:
+        text: CONTRIBUTING
+      RESEARCHING:
+        text: RESEARCHING
+      SPONSOR:
+        text: SPONSOR
+  OstiPersonType:
+    name: OstiPersonType
+    definition_uri: https://w3id.org/valuesets/OstiPersonType
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Person role types used by OSTI.
+    title: OSTI Person Type
+    from_schema: https://w3id.org/linkml/valuesets/publishing/osti_record
+    see_also:
+    - https://www.osti.gov/elink2api/record-schema
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      AUTHOR:
+        text: AUTHOR
+      RELEASE:
+        text: RELEASE
+      CONTACT:
+        text: CONTACT
+      CONTRIBUTING:
+        text: CONTRIBUTING
+      PROT_CE:
+        text: PROT_CE
+      PROT_RO:
+        text: PROT_RO
+      SBIZ_PI:
+        text: SBIZ_PI
+      SBIZ_BO:
+        text: SBIZ_BO
+  OstiContributorType:
+    name: OstiContributorType
+    definition_uri: https://w3id.org/valuesets/OstiContributorType
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Contributor role types used by OSTI.
+    title: OSTI Contributor Type
+    from_schema: https://w3id.org/linkml/valuesets/publishing/osti_record
+    see_also:
+    - https://www.osti.gov/elink2api/record-schema
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      Chair:
+        text: Chair
+      DataCollector:
+        text: DataCollector
+      DataCurator:
+        text: DataCurator
+      DataManager:
+        text: DataManager
+      Distributor:
+        text: Distributor
+      Editor:
+        text: Editor
+      HostingInstitution:
+        text: HostingInstitution
+      Producer:
+        text: Producer
+      ProjectLeader:
+        text: ProjectLeader
+      ProjectManager:
+        text: ProjectManager
+      ProjectMember:
+        text: ProjectMember
+      RegistrationAgency:
+        text: RegistrationAgency
+      RegistrationAuthority:
+        text: RegistrationAuthority
+      RelatedPerson:
+        text: RelatedPerson
+      Reviewer:
+        text: Reviewer
+      ReviewAssistant:
+        text: ReviewAssistant
+      ReviewerExternal:
+        text: ReviewerExternal
+      RightsHolder:
+        text: RightsHolder
+      StatsReviewer:
+        text: StatsReviewer
+      Supervisor:
+        text: Supervisor
+      Translator:
+        text: Translator
+      WorkPackageLeader:
+        text: WorkPackageLeader
+      Other:
+        text: Other
+  OstiRelatedIdentifierType:
+    name: OstiRelatedIdentifierType
+    definition_uri: https://w3id.org/valuesets/OstiRelatedIdentifierType
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Identifier types for related resources in OSTI.
+    title: OSTI Related Identifier Type
+    from_schema: https://w3id.org/linkml/valuesets/publishing/osti_record
+    see_also:
+    - https://www.osti.gov/elink2api/record-schema
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      ARK:
+        text: ARK
+      arXiv:
+        text: arXiv
+      bibcode:
+        text: bibcode
+      DOI:
+        text: DOI
+      EAN13:
+        text: EAN13
+      EISSN:
+        text: EISSN
+      IGSN:
+        text: IGSN
+      ISBN:
+        text: ISBN
+      ISSN:
+        text: ISSN
+      ISTC:
+        text: ISTC
+      Handle:
+        text: Handle
+      LISSN:
+        text: LISSN
+      LSID:
+        text: LSID
+      OTHER:
+        text: OTHER
+      PMCID:
+        text: PMCID
+      PMID:
+        text: PMID
+      PURL:
+        text: PURL
+      UPC:
+        text: UPC
+      URI:
+        text: URI
+      URL:
+        text: URL
+      URN:
+        text: URN
+      UUID:
+        text: UUID
+      w3id:
+        text: w3id
+  OstiRelationType:
+    name: OstiRelationType
+    definition_uri: https://w3id.org/valuesets/OstiRelationType
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Relationship types between records in OSTI.
+    title: OSTI Relation Type
+    from_schema: https://w3id.org/linkml/valuesets/publishing/osti_record
+    see_also:
+    - https://www.osti.gov/elink2api/record-schema
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      BasedOnData:
+        text: BasedOnData
+      Cites:
+        text: Cites
+      Compiles:
+        text: Compiles
+      Continues:
+        text: Continues
+      Describes:
+        text: Describes
+      Documents:
+        text: Documents
+      Finances:
+        text: Finances
+      HasComment:
+        text: HasComment
+      HasDerivation:
+        text: HasDerivation
+      HasMetadata:
+        text: HasMetadata
+      HasPart:
+        text: HasPart
+      HasRelatedMaterial:
+        text: HasRelatedMaterial
+      HasReply:
+        text: HasReply
+      HasReview:
+        text: HasReview
+      HasVersion:
+        text: HasVersion
+      IsBasedOn:
+        text: IsBasedOn
+      IsBasisFor:
+        text: IsBasisFor
+      IsCitedBy:
+        text: IsCitedBy
+      IsCommentOn:
+        text: IsCommentOn
+      IsCompiledBy:
+        text: IsCompiledBy
+      IsContinuedBy:
+        text: IsContinuedBy
+      IsDataBasisFor:
+        text: IsDataBasisFor
+      IsDerivedFrom:
+        text: IsDerivedFrom
+      IsDescribedBy:
+        text: IsDescribedBy
+      IsDocumentedBy:
+        text: IsDocumentedBy
+      IsFinancedBy:
+        text: IsFinancedBy
+      IsIdenticalTo:
+        text: IsIdenticalTo
+      IsMetadataFor:
+        text: IsMetadataFor
+      IsNewVersionOf:
+        text: IsNewVersionOf
+      IsObsoletedBy:
+        text: IsObsoletedBy
+      IsOriginalFormOf:
+        text: IsOriginalFormOf
+      IsPartOf:
+        text: IsPartOf
+      IsPreviousVersionOf:
+        text: IsPreviousVersionOf
+      IsReferencedBy:
+        text: IsReferencedBy
+      IsRelatedMaterial:
+        text: IsRelatedMaterial
+      IsReplyTo:
+        text: IsReplyTo
+      IsRequiredBy:
+        text: IsRequiredBy
+      IsReviewedBy:
+        text: IsReviewedBy
+      IsReviewOf:
+        text: IsReviewOf
+      IsSourceOf:
+        text: IsSourceOf
+      IsSupplementedBy:
+        text: IsSupplementedBy
+      IsSupplementTo:
+        text: IsSupplementTo
+      IsVariantFormOf:
+        text: IsVariantFormOf
+      IsVersionOf:
+        text: IsVersionOf
+      Obsoletes:
+        text: Obsoletes
+      References:
+        text: References
+      Requires:
+        text: Requires
+      Reviews:
+        text: Reviews
+  OstiIdentifierType:
+    name: OstiIdentifierType
+    definition_uri: https://w3id.org/valuesets/OstiIdentifierType
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Identifier type codes from OSTI record metadata.
+    title: OSTI Identifier Type
+    from_schema: https://w3id.org/linkml/valuesets/publishing/osti_record
+    see_also:
+    - https://www.osti.gov/elink2api/record-schema
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      AUTH_REV:
+        text: AUTH_REV
+      CN_DOE:
+        text: CN_DOE
+      CN_NONDOE:
+        text: CN_NONDOE
+      CODEN:
+        text: CODEN
+      DOE_DOCKET:
+        text: DOE_DOCKET
+      EDB:
+        text: EDB
+      ETDE_RN:
+        text: ETDE_RN
+      INIS_RN:
+        text: INIS_RN
+      ISBN:
+        text: ISBN
+      ISSN:
+        text: ISSN
+      LEGACY:
+        text: LEGACY
+      NSA:
+        text: NSA
+      OPN_ACC:
+        text: OPN_ACC
+      OTHER_ID:
+        text: OTHER_ID
+      PATENT:
+        text: PATENT
+      PROJ_ID:
+        text: PROJ_ID
+      PROP_REV:
+        text: PROP_REV
+      REF:
+        text: REF
+      REL_TRN:
+        text: REL_TRN
+      RN:
+        text: RN
+      TRN:
+        text: TRN
+      TVI:
+        text: TVI
+      USER_VER:
+        text: USER_VER
+      WORK_AUTH:
+        text: WORK_AUTH
+      WORK_PROP:
+        text: WORK_PROP
+  OstiGeolocationType:
+    name: OstiGeolocationType
+    definition_uri: https://w3id.org/valuesets/OstiGeolocationType
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Geolocation shape types in OSTI record metadata.
+    title: OSTI Geolocation Type
+    from_schema: https://w3id.org/linkml/valuesets/publishing/osti_record
+    see_also:
+    - https://www.osti.gov/elink2api/record-schema
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      POINT:
+        text: POINT
+      BOX:
+        text: BOX
+      POLYGON:
+        text: POLYGON
+  OstiMediaLocationType:
+    name: OstiMediaLocationType
+    definition_uri: https://w3id.org/valuesets/OstiMediaLocationType
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Location indicators for OSTI media files and sets.
+    title: OSTI Media Location Type
+    from_schema: https://w3id.org/linkml/valuesets/publishing/osti_record
+    see_also:
+    - https://www.osti.gov/elink2api/record-schema
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      L:
+        text: L
+      O:
+        text: O
+  PreservationEventType:
+    name: PreservationEventType
+    definition_uri: https://w3id.org/valuesets/PreservationEventType
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: 'Actions performed within or outside a repository that affect the
+      long-term
+
+      preservation of digital objects. Based on PREMIS 3.0 event types.
+
+      '
+    title: Preservation Event Type
+    from_schema: https://w3id.org/valuesets/preservation/events
+    see_also:
+    - https://id.loc.gov/vocabulary/preservation/eventType.html
+    - https://www.loc.gov/standards/premis/v3/
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      ACCESSION:
+        text: ACCESSION
+        description: The process of adding objects to a repository's holdings.
+        meaning: premis:eventType/acc
+      APPRAISAL:
+        text: APPRAISAL
+        description: The process of evaluating objects for long-term retention.
+        meaning: premis:eventType/app
+      CAPTURE:
+        text: CAPTURE
+        description: The process of recording or acquiring digital content.
+        meaning: premis:eventType/cap
+      COMPILING:
+        text: COMPILING
+        description: The process of converting source code into executable code.
+        meaning: premis:eventType/com
+      COMPRESSION:
+        text: COMPRESSION
+        description: The process of reducing file size through encoding.
+        meaning: premis:eventType/cmp
+      CREATION:
+        text: CREATION
+        description: The act of creating a new digital object.
+        meaning: premis:eventType/cre
+      DEACCESSION:
+        text: DEACCESSION
+        description: The process of removing objects from a repository's holdings.
+        meaning: premis:eventType/dea
+      DECOMPRESSION:
+        text: DECOMPRESSION
+        description: The process of restoring compressed data to its original form.
+        meaning: premis:eventType/dec
+      DECRYPTION:
+        text: DECRYPTION
+        description: The process of converting encrypted data back to plaintext.
+        meaning: premis:eventType/der
+      DELETION:
+        text: DELETION
+        description: The act of removing a digital object.
+        meaning: premis:eventType/del
+      DIGITAL_SIGNATURE_GENERATION:
+        text: DIGITAL_SIGNATURE_GENERATION
+        description: The process of creating a digital signature for authentication.
+        meaning: premis:eventType/dig
+        title: Digital Signature Generation
+      DIGITAL_SIGNATURE_VALIDATION:
+        text: DIGITAL_SIGNATURE_VALIDATION
+        description: The process of verifying the authenticity of a digital signature.
+        meaning: premis:eventType/dsv
+        title: Digital Signature Validation
+      DISPLAYING:
+        text: DISPLAYING
+        description: The process of presenting content for viewing.
+        meaning: premis:eventType/dip
+      DISSEMINATION:
+        text: DISSEMINATION
+        description: The process of making content available to users.
+        meaning: premis:eventType/dis
+      ENCRYPTION:
+        text: ENCRYPTION
+        description: The process of converting plaintext to ciphertext.
+        meaning: premis:eventType/enc
+      EXECUTION:
+        text: EXECUTION
+        description: The process of running software or scripts.
+        meaning: premis:eventType/exe
+      EXPORTING:
+        text: EXPORTING
+        description: The process of extracting content from a system.
+        meaning: premis:eventType/exp
+      EXTRACTION:
+        text: EXTRACTION
+        description: The process of retrieving content from a container or archive.
+        meaning: premis:eventType/ext
+      FILENAME_CHANGE:
+        text: FILENAME_CHANGE
+        description: The act of modifying a file's name.
+        meaning: premis:eventType/fil
+        title: Filename Change
+      FIXITY_CHECK:
+        text: FIXITY_CHECK
+        description: The process of verifying data integrity using checksums or hashes.
+        meaning: premis:eventType/fix
+        title: Fixity Check
+      FORENSIC_FEATURE_ANALYSIS:
+        text: FORENSIC_FEATURE_ANALYSIS
+        description: Analysis of digital objects for authenticity or provenance evidence.
+        meaning: premis:eventType/for
+        title: Forensic Feature Analysis
+      FORMAT_IDENTIFICATION:
+        text: FORMAT_IDENTIFICATION
+        description: The process of determining the file format of a digital object.
+        meaning: premis:eventType/fmi
+        title: Format Identification
+      IMAGING:
+        text: IMAGING
+        description: The process of creating a bit-level copy of storage media.
+        meaning: premis:eventType/ima
+      INFORMATION_PACKAGE_CREATION:
+        text: INFORMATION_PACKAGE_CREATION
+        description: Creating a packaged unit of content and metadata (SIP, AIP, DIP).
+        meaning: premis:eventType/ipc
+        title: Information Package Creation
+      INFORMATION_PACKAGE_MERGING:
+        text: INFORMATION_PACKAGE_MERGING
+        description: Combining multiple information packages into one.
+        meaning: premis:eventType/ipm
+        title: Information Package Merging
+      INFORMATION_PACKAGE_SPLITTING:
+        text: INFORMATION_PACKAGE_SPLITTING
+        description: Dividing an information package into multiple packages.
+        meaning: premis:eventType/ips
+        title: Information Package Splitting
+      INGESTION:
+        text: INGESTION
+        description: The process of accepting and processing submitted content.
+        meaning: premis:eventType/ing
+      INGESTION_END:
+        text: INGESTION_END
+        description: The completion of the ingestion process.
+        meaning: premis:eventType/ine
+        title: Ingestion End
+      INGESTION_START:
+        text: INGESTION_START
+        description: The beginning of the ingestion process.
+        meaning: premis:eventType/ins
+        title: Ingestion Start
+      INTERPRETING:
+        text: INTERPRETING
+        description: The process of rendering or executing interpretable content.
+        meaning: premis:eventType/int
+      MESSAGE_DIGEST_CALCULATION:
+        text: MESSAGE_DIGEST_CALCULATION
+        description: The process of computing a hash or checksum value.
+        meaning: premis:eventType/mes
+        title: Message Digest Calculation
+      METADATA_EXTRACTION:
+        text: METADATA_EXTRACTION
+        description: The process of extracting metadata from digital objects.
+        meaning: premis:eventType/mee
+        title: Metadata Extraction
+      METADATA_MODIFICATION:
+        text: METADATA_MODIFICATION
+        description: The process of changing metadata associated with an object.
+        meaning: premis:eventType/mem
+        title: Metadata Modification
+      MIGRATION:
+        text: MIGRATION
+        description: 'The process of converting content from one format to another
+
+          to ensure continued accessibility.
+
+          '
+        meaning: premis:eventType/mig
+      MODIFICATION:
+        text: MODIFICATION
+        description: The act of changing the content of a digital object.
+        meaning: premis:eventType/mod
+      NORMALIZATION:
+        text: NORMALIZATION
+        description: 'The process of converting content to a standard format
+
+          for preservation or access.
+
+          '
+        meaning: premis:eventType/nor
+      PACKING:
+        text: PACKING
+        description: The process of combining files into a container format.
+        meaning: premis:eventType/pac
+      POLICY_ASSIGNMENT:
+        text: POLICY_ASSIGNMENT
+        description: The act of associating preservation policies with objects.
+        meaning: premis:eventType/poa
+        title: Policy Assignment
+      PRINTING:
+        text: PRINTING
+        description: The process of producing a physical copy of digital content.
+        meaning: premis:eventType/pri
+      QUARANTINE:
+        text: QUARANTINE
+        description: Isolating objects suspected of containing malware or corruption.
+        meaning: premis:eventType/qua
+      RECOVERY:
+        text: RECOVERY
+        description: The process of restoring objects from backup or damaged media.
+        meaning: premis:eventType/rec
+      REDACTION:
+        text: REDACTION
+        description: The process of removing sensitive content from objects.
+        meaning: premis:eventType/red
+      REFRESHMENT:
+        text: REFRESHMENT
+        description: Copying data to new storage media without format change.
+        meaning: premis:eventType/ref
+      RENDERING:
+        text: RENDERING
+        description: The process of generating a viewable representation.
+        meaning: premis:eventType/ren
+      REPLICATION:
+        text: REPLICATION
+        description: Creating exact copies for redundancy or distribution.
+        meaning: premis:eventType/rep
+      TRANSFER:
+        text: TRANSFER
+        description: Moving objects between systems or locations.
+        meaning: premis:eventType/tra
+      UNPACKING:
+        text: UNPACKING
+        description: Extracting files from a container format.
+        meaning: premis:eventType/unp
+      UNQUARANTINE:
+        text: UNQUARANTINE
+        description: Releasing objects from quarantine after verification.
+        meaning: premis:eventType/unq
+      VALIDATION:
+        text: VALIDATION
+        description: Verifying that objects conform to expected specifications.
+        meaning: premis:eventType/val
+      VIRUS_CHECK:
+        text: VIRUS_CHECK
+        description: Scanning objects for malware or viruses.
+        meaning: premis:eventType/vir
+        title: Virus Check
+  PreservationEventOutcome:
+    name: PreservationEventOutcome
+    definition_uri: https://w3id.org/valuesets/PreservationEventOutcome
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: The outcome or result of a preservation event.
+    title: Preservation Event Outcome
+    from_schema: https://w3id.org/valuesets/preservation/events
+    see_also:
+    - https://id.loc.gov/vocabulary/preservation/eventOutcome.html
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      SUCCESS:
+        text: SUCCESS
+        description: The event completed successfully.
+        meaning: premis:eventOutcome/suc
+      FAILURE:
+        text: FAILURE
+        description: The event failed to complete.
+        meaning: premis:eventOutcome/fai
+      WARNING:
+        text: WARNING
+        description: The event completed with warnings or issues.
+        meaning: premis:eventOutcome/war
+  DigitalObjectCategory:
+    name: DigitalObjectCategory
+    definition_uri: https://w3id.org/valuesets/DigitalObjectCategory
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: 'The category of object to which preservation metadata applies.
+
+      Based on PREMIS object categories.
+
+      '
+    title: Digital Object Category
+    from_schema: https://w3id.org/valuesets/preservation/digital_objects
+    see_also:
+    - https://id.loc.gov/vocabulary/preservation/objectCategory.html
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      BITSTREAM:
+        text: BITSTREAM
+        description: 'Contiguous or non-contiguous data within a file that has meaningful
+
+          properties for preservation purposes. A bitstream cannot be transformed
+
+          into a standalone file without the addition of file structure.
+
+          '
+        meaning: premis:objectCategory/bit
+      FILE:
+        text: FILE
+        description: 'A named and ordered sequence of bytes that is known to an operating
+
+          system. A file can be zero or more bytes and has a file format,
+
+          access permissions, and other file system characteristics.
+
+          '
+        meaning: premis:objectCategory/fil
+      INTELLECTUAL_ENTITY:
+        text: INTELLECTUAL_ENTITY
+        description: 'A coherent set of content that is reasonably described as a
+          unit.
+
+          Examples include a book, a photograph, a database, or a software
+
+          application. An intellectual entity may contain other intellectual
+
+          entities.
+
+          '
+        meaning: premis:objectCategory/int
+        title: Intellectual Entity
+      REPRESENTATION:
+        text: REPRESENTATION
+        description: 'The set of files, including structural metadata, needed for
+          a
+
+          complete and reasonable rendition of an intellectual entity.
+
+          A digital object may have multiple representations.
+
+          '
+        meaning: premis:objectCategory/rep
+  CopyrightStatus:
+    name: CopyrightStatus
+    definition_uri: https://w3id.org/valuesets/CopyrightStatus
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: 'A designation for the copyright status of an object at the time
+
+      the rights statement is recorded. Based on PREMIS.
+
+      '
+    title: Copyright Status
+    from_schema: https://w3id.org/valuesets/preservation/digital_objects
+    see_also:
+    - https://id.loc.gov/vocabulary/preservation/copyrightStatus.html
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      COPYRIGHTED:
+        text: COPYRIGHTED
+        description: The object is protected by copyright.
+        meaning: premis:copyrightStatus/cpr
+      PUBLIC_DOMAIN:
+        text: PUBLIC_DOMAIN
+        description: 'The object is not protected by copyright, either because copyright
+
+          has expired, was never applicable, or has been waived.
+
+          '
+        meaning: premis:copyrightStatus/pub
+        title: Public Domain
+      UNKNOWN:
+        text: UNKNOWN
+        description: The copyright status cannot be determined.
+        meaning: premis:copyrightStatus/unk
+  RightsBasis:
+    name: RightsBasis
+    definition_uri: https://w3id.org/valuesets/RightsBasis
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: 'The basis for the right or permission granted for an object.
+
+      Based on PREMIS rights basis vocabulary.
+
+      '
+    title: Rights Basis
+    from_schema: https://w3id.org/valuesets/preservation/digital_objects
+    see_also:
+    - https://id.loc.gov/vocabulary/preservation/rightsBasis.html
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      COPYRIGHT:
+        text: COPYRIGHT
+        description: Rights based on copyright law.
+        meaning: premis:rightsBasis/cop
+      INSTITUTIONAL_POLICY:
+        text: INSTITUTIONAL_POLICY
+        description: Rights based on the policies of the holding institution.
+        meaning: premis:rightsBasis/ins
+        title: Institutional Policy
+      LICENSE:
+        text: LICENSE
+        description: Rights based on a license agreement.
+        meaning: premis:rightsBasis/lic
+      STATUTE:
+        text: STATUTE
+        description: Rights based on statutory law other than copyright.
+        meaning: premis:rightsBasis/sta
+      OTHER:
+        text: OTHER
+        description: Rights based on another basis not listed.
+        meaning: premis:rightsBasis/oth
+  PreservationLevelRole:
+    name: PreservationLevelRole
+    definition_uri: https://w3id.org/valuesets/PreservationLevelRole
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: 'The context in which a preservation level value is specified.
+
+      Based on PREMIS preservation level role vocabulary.
+
+      '
+    title: Preservation Level Role
+    from_schema: https://w3id.org/valuesets/preservation/digital_objects
+    see_also:
+    - https://id.loc.gov/vocabulary/preservation/preservationLevelRole.html
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      CAPABILITY:
+        text: CAPABILITY
+        description: 'The preservation level that the repository is capable of providing
+
+          based on its technical infrastructure and resources.
+
+          '
+        meaning: premis:preservationLevelRole/cap
+      INTENTION:
+        text: INTENTION
+        description: 'The preservation level that the repository intends to provide
+
+          for the object, based on policy decisions.
+
+          '
+        meaning: premis:preservationLevelRole/int
+      REQUIREMENT:
+        text: REQUIREMENT
+        description: 'The preservation level required by the depositor or
+
+          other stakeholder for the object.
+
+          '
+        meaning: premis:preservationLevelRole/req
+  PreservationLevelValue:
+    name: PreservationLevelValue
+    definition_uri: https://w3id.org/valuesets/PreservationLevelValue
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: 'Common preservation level tiers indicating the degree of preservation
+
+      commitment. These are not from PREMIS directly but represent common
+
+      practice in digital preservation.
+
+      '
+    title: Preservation Level Value
+    from_schema: https://w3id.org/valuesets/preservation/digital_objects
+    see_also:
+    - https://ndsa.org/publications/levels-of-digital-preservation/
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      BIT_LEVEL:
+        text: BIT_LEVEL
+        description: 'Ensures the exact bit sequence is maintained. Includes fixity
+          checks
+
+          and secure storage but no format migration or access provision.
+
+          '
+        title: Bit-level Preservation
+        aliases:
+        - Level 1
+      LOGICAL_PRESERVATION:
+        text: LOGICAL_PRESERVATION
+        description: 'Maintains the ability to render or use the content. May include
+
+          format migration to ensure long-term accessibility.
+
+          '
+        title: Logical Preservation
+        aliases:
+        - Level 2
+        - Content Preservation
+      SEMANTIC_PRESERVATION:
+        text: SEMANTIC_PRESERVATION
+        description: 'Preserves the meaning and context of content, including relationships
+
+          between objects and their intellectual context.
+
+          '
+        title: Semantic Preservation
+        aliases:
+        - Level 3
+        - Full Preservation
+      FULL_PRESERVATION:
+        text: FULL_PRESERVATION
+        description: 'Comprehensive preservation including all aspects: bit-level
+          integrity,
+
+          format migration, semantic context, and provenance tracking.
+
+          '
+        title: Full Preservation
+        aliases:
+        - Level 4
+  CryptographicHashFunction:
+    name: CryptographicHashFunction
+    definition_uri: https://w3id.org/valuesets/CryptographicHashFunction
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: 'Algorithms that take an input and return a fixed-size string (hash
+      value).
+
+      Used for verifying data integrity and creating digital signatures.
+
+      Based on PREMIS cryptographic hash functions vocabulary.
+
+      '
+    title: Cryptographic Hash Function
+    from_schema: https://w3id.org/valuesets/preservation/fixity
+    see_also:
+    - https://id.loc.gov/vocabulary/preservation/cryptographicHashFunctions.html
+    - https://spdx.github.io/spdx-spec/v2.3/file-information/#89-file-checksum-field
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      ADLER_32:
+        text: ADLER_32
+        description: 'A checksum algorithm developed by Mark Adler. Faster than CRC32
+
+          but with weaker error detection. Used in zlib compression.
+
+          '
+        meaning: premis:cryptographicHashFunctions/adl
+        annotations:
+          output_bits:
+            tag: output_bits
+            value: 32
+          security_level:
+            tag: security_level
+            value: non-cryptographic
+        title: Adler-32
+        exact_mappings:
+        - spdx:checksumAlgorithm_adler32
+      CRC32:
+        text: CRC32
+        description: 'Cyclic Redundancy Check with 32-bit output. Used for error detection
+
+          in network transmissions and storage. Not cryptographically secure.
+
+          '
+        meaning: premis:cryptographicHashFunctions/crc
+        annotations:
+          output_bits:
+            tag: output_bits
+            value: 32
+          security_level:
+            tag: security_level
+            value: non-cryptographic
+        title: CRC32
+      HAVAL:
+        text: HAVAL
+        description: 'A cryptographic hash function that can produce hash values of
+
+          128, 160, 192, 224, or 256 bits. Variable number of rounds.
+
+          '
+        meaning: premis:cryptographicHashFunctions/hav
+        annotations:
+          output_bits:
+            tag: output_bits
+            value: variable
+          security_level:
+            tag: security_level
+            value: deprecated
+        title: HAVAL
+      MD2:
+        text: MD2
+        description: 'Message Digest 2 algorithm producing a 128-bit hash value.
+
+          Designed for 8-bit computers. Considered cryptographically broken.
+
+          '
+        meaning: premis:cryptographicHashFunctions/md2
+        annotations:
+          output_bits:
+            tag: output_bits
+            value: 128
+          security_level:
+            tag: security_level
+            value: broken
+        title: MD2
+        exact_mappings:
+        - spdx:checksumAlgorithm_md2
+      MD4:
+        text: MD4
+        description: 'Message Digest 4 algorithm producing a 128-bit hash value.
+
+          Predecessor to MD5. Considered cryptographically broken.
+
+          '
+        annotations:
+          output_bits:
+            tag: output_bits
+            value: 128
+          security_level:
+            tag: security_level
+            value: broken
+        title: MD4
+        exact_mappings:
+        - spdx:checksumAlgorithm_md4
+      MD5:
+        text: MD5
+        description: 'Message Digest 5 algorithm producing a 128-bit hash value.
+
+          Widely used but vulnerable to collision attacks. Acceptable
+
+          for non-security integrity checks only.
+
+          '
+        meaning: premis:cryptographicHashFunctions/md5
+        annotations:
+          output_bits:
+            tag: output_bits
+            value: 128
+          security_level:
+            tag: security_level
+            value: weak
+        title: MD5
+        exact_mappings:
+        - spdx:checksumAlgorithm_md5
+      MD6:
+        text: MD6
+        description: 'Message Digest 6 algorithm with variable output size.
+
+          Designed as a candidate for SHA-3 but not selected.
+
+          '
+        annotations:
+          output_bits:
+            tag: output_bits
+            value: variable
+          security_level:
+            tag: security_level
+            value: adequate
+        title: MD6
+        exact_mappings:
+        - spdx:checksumAlgorithm_md6
+      SHA_1:
+        text: SHA_1
+        description: 'Secure Hash Algorithm 1 producing a 160-bit hash value.
+
+          Deprecated for security applications due to collision vulnerabilities.
+
+          Still acceptable for integrity verification in some contexts.
+
+          '
+        meaning: premis:cryptographicHashFunctions/sha1
+        annotations:
+          output_bits:
+            tag: output_bits
+            value: 160
+          security_level:
+            tag: security_level
+            value: weak
+        title: SHA-1
+        aliases:
+        - SHA1
+        exact_mappings:
+        - spdx:checksumAlgorithm_sha1
+      SHA_224:
+        text: SHA_224
+        description: 'SHA-2 variant producing a 224-bit hash value.
+
+          Truncated version of SHA-256.
+
+          '
+        annotations:
+          output_bits:
+            tag: output_bits
+            value: 224
+          security_level:
+            tag: security_level
+            value: secure
+        title: SHA-224
+        aliases:
+        - SHA224
+        exact_mappings:
+        - spdx:checksumAlgorithm_sha224
+      SHA_256:
+        text: SHA_256
+        description: 'SHA-2 variant producing a 256-bit hash value.
+
+          Widely used and considered secure for most applications.
+
+          Recommended for digital preservation.
+
+          '
+        meaning: premis:cryptographicHashFunctions/sha256
+        annotations:
+          output_bits:
+            tag: output_bits
+            value: 256
+          security_level:
+            tag: security_level
+            value: secure
+        title: SHA-256
+        aliases:
+        - SHA256
+        exact_mappings:
+        - spdx:checksumAlgorithm_sha256
+      SHA_384:
+        text: SHA_384
+        description: 'SHA-2 variant producing a 384-bit hash value.
+
+          Truncated version of SHA-512.
+
+          '
+        meaning: premis:cryptographicHashFunctions/sha384
+        annotations:
+          output_bits:
+            tag: output_bits
+            value: 384
+          security_level:
+            tag: security_level
+            value: secure
+        title: SHA-384
+        aliases:
+        - SHA384
+        exact_mappings:
+        - spdx:checksumAlgorithm_sha384
+      SHA_512:
+        text: SHA_512
+        description: 'SHA-2 variant producing a 512-bit hash value.
+
+          Highest security level in the SHA-2 family.
+
+          '
+        meaning: premis:cryptographicHashFunctions/sha512
+        annotations:
+          output_bits:
+            tag: output_bits
+            value: 512
+          security_level:
+            tag: security_level
+            value: secure
+        title: SHA-512
+        aliases:
+        - SHA512
+        exact_mappings:
+        - spdx:checksumAlgorithm_sha512
+      SHA3_224:
+        text: SHA3_224
+        description: 'SHA-3 variant producing a 224-bit hash value.
+
+          Based on the Keccak algorithm.
+
+          '
+        annotations:
+          output_bits:
+            tag: output_bits
+            value: 224
+          security_level:
+            tag: security_level
+            value: secure
+        title: SHA3-224
+        exact_mappings:
+        - spdx:checksumAlgorithm_sha3_224
+      SHA3_256:
+        text: SHA3_256
+        description: 'SHA-3 variant producing a 256-bit hash value.
+
+          Based on the Keccak algorithm. Provides defense against
+
+          length extension attacks.
+
+          '
+        annotations:
+          output_bits:
+            tag: output_bits
+            value: 256
+          security_level:
+            tag: security_level
+            value: secure
+        title: SHA3-256
+        exact_mappings:
+        - spdx:checksumAlgorithm_sha3_256
+      SHA3_384:
+        text: SHA3_384
+        description: 'SHA-3 variant producing a 384-bit hash value.
+
+          Based on the Keccak algorithm.
+
+          '
+        annotations:
+          output_bits:
+            tag: output_bits
+            value: 384
+          security_level:
+            tag: security_level
+            value: secure
+        title: SHA3-384
+        exact_mappings:
+        - spdx:checksumAlgorithm_sha3_384
+      SHA3_512:
+        text: SHA3_512
+        description: 'SHA-3 variant producing a 512-bit hash value.
+
+          Based on the Keccak algorithm.
+
+          '
+        annotations:
+          output_bits:
+            tag: output_bits
+            value: 512
+          security_level:
+            tag: security_level
+            value: secure
+        title: SHA3-512
+        exact_mappings:
+        - spdx:checksumAlgorithm_sha3_512
+      BLAKE2B_256:
+        text: BLAKE2B_256
+        description: 'BLAKE2b variant producing a 256-bit hash value.
+
+          Faster than MD5 and SHA-1 while being more secure.
+
+          '
+        annotations:
+          output_bits:
+            tag: output_bits
+            value: 256
+          security_level:
+            tag: security_level
+            value: secure
+        title: BLAKE2b-256
+        exact_mappings:
+        - spdx:checksumAlgorithm_blake2b256
+      BLAKE2B_384:
+        text: BLAKE2B_384
+        description: 'BLAKE2b variant producing a 384-bit hash value.
+
+          '
+        annotations:
+          output_bits:
+            tag: output_bits
+            value: 384
+          security_level:
+            tag: security_level
+            value: secure
+        title: BLAKE2b-384
+        exact_mappings:
+        - spdx:checksumAlgorithm_blake2b384
+      BLAKE2B_512:
+        text: BLAKE2B_512
+        description: 'BLAKE2b variant producing a 512-bit hash value.
+
+          Optimized for 64-bit platforms.
+
+          '
+        annotations:
+          output_bits:
+            tag: output_bits
+            value: 512
+          security_level:
+            tag: security_level
+            value: secure
+        title: BLAKE2b-512
+        exact_mappings:
+        - spdx:checksumAlgorithm_blake2b512
+      BLAKE3:
+        text: BLAKE3
+        description: 'Latest BLAKE variant, extremely fast with 256-bit output.
+
+          Supports parallelization and incremental hashing.
+
+          '
+        annotations:
+          output_bits:
+            tag: output_bits
+            value: 256
+          security_level:
+            tag: security_level
+            value: secure
+        title: BLAKE3
+        exact_mappings:
+        - spdx:checksumAlgorithm_blake3
+      TIGER:
+        text: TIGER
+        description: 'A cryptographic hash function designed for 64-bit platforms.
+
+          Produces a 192-bit hash value.
+
+          '
+        meaning: premis:cryptographicHashFunctions/tig
+        annotations:
+          output_bits:
+            tag: output_bits
+            value: 192
+          security_level:
+            tag: security_level
+            value: adequate
+        title: Tiger
+      WHIRLPOOL:
+        text: WHIRLPOOL
+        description: 'A cryptographic hash function producing a 512-bit hash value.
+
+          Based on a modified AES block cipher.
+
+          '
+        meaning: premis:cryptographicHashFunctions/whi
+        annotations:
+          output_bits:
+            tag: output_bits
+            value: 512
+          security_level:
+            tag: security_level
+            value: secure
+        title: Whirlpool
+      UNKNOWN:
+        text: UNKNOWN
+        description: The hash algorithm is not known or not specified.
+        meaning: premis:cryptographicHashFunctions/unk
+  DataCiteResourceType:
+    name: DataCiteResourceType
+    definition_uri: https://w3id.org/valuesets/DataCiteResourceType
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: 'General resource type classifications from DataCite 4.6.
+
+      Used for categorizing research outputs in data repositories.
+
+      '
+    title: DataCite Resource Type
+    from_schema: https://w3id.org/valuesets/data_catalog/resource_types
+    see_also:
+    - https://datacite-metadata-schema.readthedocs.io/en/4.6/appendices/appendix-1/resourceTypeGeneral/
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      AUDIOVISUAL:
+        text: AUDIOVISUAL
+        description: 'A series of visual representations imparting an impression of
+          motion
+
+          when shown in succession. May include sound.
+
+          '
+        meaning: DataCite:Audiovisual
+        annotations:
+          examples:
+            tag: examples
+            value: video, film, animation
+        exact_mappings:
+        - DCMITYPE:MovingImage
+      AWARD:
+        text: AWARD
+        description: 'Funding or support provided to an individual or organization
+
+          for research, academic work, or professional development.
+
+          '
+        meaning: DataCite:Award
+        annotations:
+          added_version:
+            tag: added_version
+            value: '4.6'
+          examples:
+            tag: examples
+            value: grant award, fellowship, scholarship
+      BOOK:
+        text: BOOK
+        description: 'A medium for recording information in the form of writing or
+          images,
+
+          typically composed of many pages bound together.
+
+          '
+        meaning: DataCite:Book
+        exact_mappings:
+        - FABIO:Book
+        - DCMITYPE:Text
+      BOOK_CHAPTER:
+        text: BOOK_CHAPTER
+        description: One of the main divisions of a book.
+        meaning: DataCite:BookChapter
+        title: Book Chapter
+        exact_mappings:
+        - FABIO:BookChapter
+      COLLECTION:
+        text: COLLECTION
+        description: 'An aggregation of resources, which may encompass collections
+          of
+
+          one resource type as well as those of mixed types.
+
+          '
+        meaning: DataCite:Collection
+        exact_mappings:
+        - DCMITYPE:Collection
+      COMPUTATIONAL_NOTEBOOK:
+        text: COMPUTATIONAL_NOTEBOOK
+        description: 'A virtual notebook environment used for literate programming,
+
+          combining code, documentation, and visualizations.
+
+          '
+        meaning: DataCite:ComputationalNotebook
+        annotations:
+          examples:
+            tag: examples
+            value: Jupyter notebook, R Markdown, Observable
+        title: Computational Notebook
+      CONFERENCE_PAPER:
+        text: CONFERENCE_PAPER
+        description: 'Article written with the goal of being accepted to a conference.
+
+          '
+        meaning: DataCite:ConferencePaper
+        title: Conference Paper
+        exact_mappings:
+        - FABIO:ConferencePaper
+      CONFERENCE_PROCEEDING:
+        text: CONFERENCE_PROCEEDING
+        description: 'Collection of academic papers published in the context of
+
+          an academic conference.
+
+          '
+        meaning: DataCite:ConferenceProceeding
+        title: Conference Proceeding
+        exact_mappings:
+        - FABIO:ConferenceProceedings
+      DATA_PAPER:
+        text: DATA_PAPER
+        description: 'A scholarly publication describing a dataset, intended to
+
+          facilitate its discovery, interpretation, and reuse.
+
+          '
+        meaning: DataCite:DataPaper
+        title: Data Paper
+        exact_mappings:
+        - FABIO:DataPaper
+      DATASET:
+        text: DATASET
+        description: 'Data encoded in a defined structure. May include tables,
+
+          databases, or other structured data.
+
+          '
+        meaning: DataCite:Dataset
+        exact_mappings:
+        - DCMITYPE:Dataset
+      DISSERTATION:
+        text: DISSERTATION
+        description: 'A written essay, treatise, or thesis, especially one written
+
+          by a candidate for a doctoral degree.
+
+          '
+        meaning: DataCite:Dissertation
+        exact_mappings:
+        - FABIO:DoctoralThesis
+      EVENT:
+        text: EVENT
+        description: 'A non-persistent, time-based occurrence. May be planned or
+
+          unplanned.
+
+          '
+        meaning: DataCite:Event
+        annotations:
+          examples:
+            tag: examples
+            value: conference, workshop, exhibition
+        exact_mappings:
+        - DCMITYPE:Event
+      IMAGE:
+        text: IMAGE
+        description: 'A visual representation other than text, including photographs,
+
+          diagrams, illustrations, and other static visual works.
+
+          '
+        meaning: DataCite:Image
+        exact_mappings:
+        - DCMITYPE:Image
+        - DCMITYPE:StillImage
+      INSTRUMENT:
+        text: INSTRUMENT
+        description: 'A device, tool, or apparatus used to obtain, measure, and/or
+
+          analyze data.
+
+          '
+        meaning: DataCite:Instrument
+        annotations:
+          examples:
+            tag: examples
+            value: microscope, telescope, sensor, spectrometer
+      INTERACTIVE_RESOURCE:
+        text: INTERACTIVE_RESOURCE
+        description: 'A resource requiring interaction from the user to be understood,
+
+          executed, or experienced.
+
+          '
+        meaning: DataCite:InteractiveResource
+        annotations:
+          examples:
+            tag: examples
+            value: web application, game, simulation
+        title: Interactive Resource
+        exact_mappings:
+        - DCMITYPE:InteractiveResource
+      JOURNAL:
+        text: JOURNAL
+        description: 'A scholarly publication consisting of articles that is published
+
+          regularly throughout the year.
+
+          '
+        meaning: DataCite:Journal
+        exact_mappings:
+        - FABIO:Journal
+      JOURNAL_ARTICLE:
+        text: JOURNAL_ARTICLE
+        description: 'A written composition on a topic of interest, which forms a
+
+          separate part of a journal.
+
+          '
+        meaning: DataCite:JournalArticle
+        title: Journal Article
+        exact_mappings:
+        - FABIO:JournalArticle
+        - IAO:0000013
+      MODEL:
+        text: MODEL
+        description: 'An abstract, conceptual, graphical, mathematical, or visualization
+
+          model that represents empirical objects, phenomena, or processes.
+
+          '
+        meaning: DataCite:Model
+        annotations:
+          examples:
+            tag: examples
+            value: 3D model, statistical model, simulation model
+      OUTPUT_MANAGEMENT_PLAN:
+        text: OUTPUT_MANAGEMENT_PLAN
+        description: 'A formal document that outlines how research outputs are to
+          be
+
+          handled during and after a research project.
+
+          '
+        meaning: DataCite:OutputManagementPlan
+        title: Output Management Plan
+        aliases:
+        - Data Management Plan
+        - DMP
+      PEER_REVIEW:
+        text: PEER_REVIEW
+        description: 'Evaluation of scientific, academic, or professional work by
+
+          others working in the same field.
+
+          '
+        meaning: DataCite:PeerReview
+        title: Peer Review
+      PHYSICAL_OBJECT:
+        text: PHYSICAL_OBJECT
+        description: 'A physical object or substance, including artifacts, specimens,
+
+          samples, and material objects.
+
+          '
+        meaning: DataCite:PhysicalObject
+        annotations:
+          examples:
+            tag: examples
+            value: fossil, artifact, tissue sample, mineral specimen
+        title: Physical Object
+        exact_mappings:
+        - DCMITYPE:PhysicalObject
+      PREPRINT:
+        text: PREPRINT
+        description: 'A version of a scholarly or scientific paper that precedes
+
+          formal peer review and publication in a journal.
+
+          '
+        meaning: DataCite:Preprint
+        exact_mappings:
+        - FABIO:Preprint
+      PROJECT:
+        text: PROJECT
+        description: 'A planned endeavor or activity, frequently collaborative,
+
+          intended to achieve a particular aim.
+
+          '
+        meaning: DataCite:Project
+        annotations:
+          added_version:
+            tag: added_version
+            value: '4.6'
+      REPORT:
+        text: REPORT
+        description: 'A document that presents information in an organized format
+
+          for a specific audience and purpose.
+
+          '
+        meaning: DataCite:Report
+        exact_mappings:
+        - FABIO:TechnicalReport
+        - IAO:0000088
+      SERVICE:
+        text: SERVICE
+        description: 'An organized system of apparatus, appliances, staff, etc.,
+
+          for supplying some function required by end users.
+
+          '
+        meaning: DataCite:Service
+        annotations:
+          examples:
+            tag: examples
+            value: API, web service, data service
+        exact_mappings:
+        - DCMITYPE:Service
+      SOFTWARE:
+        text: SOFTWARE
+        description: 'A computer program other than a computational notebook,
+
+          in either source code (text) or compiled form.
+
+          '
+        meaning: DataCite:Software
+        exact_mappings:
+        - DCMITYPE:Software
+      SOUND:
+        text: SOUND
+        description: 'A resource primarily intended to be heard, including music,
+
+          speech, and other audio recordings.
+
+          '
+        meaning: DataCite:Sound
+        exact_mappings:
+        - DCMITYPE:Sound
+      STANDARD:
+        text: STANDARD
+        description: 'Something established by authority, custom, or general consent
+
+          as a model, example, or point of reference.
+
+          '
+        meaning: DataCite:Standard
+        annotations:
+          examples:
+            tag: examples
+            value: ISO standard, data format specification
+        exact_mappings:
+        - FABIO:Standard
+      STUDY_REGISTRATION:
+        text: STUDY_REGISTRATION
+        description: 'A detailed, time-stamped description of a research plan,
+
+          often openly shared in a registry or repository.
+
+          '
+        meaning: DataCite:StudyRegistration
+        annotations:
+          examples:
+            tag: examples
+            value: clinical trial registration, pre-registration
+        title: Study Registration
+      TEXT:
+        text: TEXT
+        description: 'A resource consisting primarily of words for reading that is
+
+          not covered by any other textual resource type.
+
+          '
+        meaning: DataCite:Text
+        exact_mappings:
+        - DCMITYPE:Text
+      WORKFLOW:
+        text: WORKFLOW
+        description: 'A structured series of steps which can be executed to produce
+
+          a final outcome, often automated.
+
+          '
+        meaning: DataCite:Workflow
+        annotations:
+          examples:
+            tag: examples
+            value: bioinformatics pipeline, ETL workflow, analysis script
+      OTHER:
+        text: OTHER
+        description: 'Use when the resource type does not fit any other category.
+
+          Should be accompanied by a free-text description.
+
+          '
+        meaning: DataCite:Other
+  DataCiteRelationType:
+    name: DataCiteRelationType
+    definition_uri: https://w3id.org/valuesets/DataCiteRelationType
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: 'Types of relationships between research resources from DataCite
+      4.6.
+
+      Relations are expressed from the perspective of the resource being
+
+      described (A) in relation to another resource (B).
+
+      '
+    title: DataCite Relation Type
+    from_schema: https://w3id.org/valuesets/data_catalog/relations
+    see_also:
+    - https://datacite-metadata-schema.readthedocs.io/en/4.6/appendices/appendix-1/relationType/
+    - http://purl.org/spar/cito/
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      IS_CITED_BY:
+        text: IS_CITED_BY
+        description: Indicates that B includes A in a citation.
+        meaning: DataCite:IsCitedBy
+        annotations:
+          inverse:
+            tag: inverse
+            value: CITES
+          category:
+            tag: category
+            value: citation
+        title: Is Cited By
+        exact_mappings:
+        - cito:isCitedBy
+      CITES:
+        text: CITES
+        description: Indicates that A includes B in a citation.
+        meaning: DataCite:Cites
+        annotations:
+          inverse:
+            tag: inverse
+            value: IS_CITED_BY
+          category:
+            tag: category
+            value: citation
+        exact_mappings:
+        - cito:cites
+        - dcterms:references
+      IS_SUPPLEMENT_TO:
+        text: IS_SUPPLEMENT_TO
+        description: Indicates that A is a supplement to B.
+        meaning: DataCite:IsSupplementTo
+        annotations:
+          inverse:
+            tag: inverse
+            value: IS_SUPPLEMENTED_BY
+          category:
+            tag: category
+            value: supplementary
+        title: Is Supplement To
+      IS_SUPPLEMENTED_BY:
+        text: IS_SUPPLEMENTED_BY
+        description: Indicates that B is a supplement to A.
+        meaning: DataCite:IsSupplementedBy
+        annotations:
+          inverse:
+            tag: inverse
+            value: IS_SUPPLEMENT_TO
+          category:
+            tag: category
+            value: supplementary
+        title: Is Supplemented By
+      IS_CONTINUED_BY:
+        text: IS_CONTINUED_BY
+        description: Indicates that A is continued by the work B.
+        meaning: DataCite:IsContinuedBy
+        annotations:
+          inverse:
+            tag: inverse
+            value: CONTINUES
+          category:
+            tag: category
+            value: continuation
+        title: Is Continued By
+      CONTINUES:
+        text: CONTINUES
+        description: Indicates that A is a continuation of the work B.
+        meaning: DataCite:Continues
+        annotations:
+          inverse:
+            tag: inverse
+            value: IS_CONTINUED_BY
+          category:
+            tag: category
+            value: continuation
+      DESCRIBES:
+        text: DESCRIBES
+        description: Indicates that A describes B.
+        meaning: DataCite:Describes
+        annotations:
+          inverse:
+            tag: inverse
+            value: IS_DESCRIBED_BY
+          category:
+            tag: category
+            value: description
+      IS_DESCRIBED_BY:
+        text: IS_DESCRIBED_BY
+        description: Indicates that A is described by B.
+        meaning: DataCite:IsDescribedBy
+        annotations:
+          inverse:
+            tag: inverse
+            value: DESCRIBES
+          category:
+            tag: category
+            value: description
+        title: Is Described By
+      HAS_METADATA:
+        text: HAS_METADATA
+        description: Indicates that resource A has additional metadata B.
+        meaning: DataCite:HasMetadata
+        annotations:
+          inverse:
+            tag: inverse
+            value: IS_METADATA_FOR
+          category:
+            tag: category
+            value: metadata
+        title: Has Metadata
+      IS_METADATA_FOR:
+        text: IS_METADATA_FOR
+        description: Indicates that additional metadata A describes resource B.
+        meaning: DataCite:IsMetadataFor
+        annotations:
+          inverse:
+            tag: inverse
+            value: HAS_METADATA
+          category:
+            tag: category
+            value: metadata
+        title: Is Metadata For
+      HAS_VERSION:
+        text: HAS_VERSION
+        description: Indicates that A has a version B.
+        meaning: DataCite:HasVersion
+        annotations:
+          inverse:
+            tag: inverse
+            value: IS_VERSION_OF
+          category:
+            tag: category
+            value: versioning
+        title: Has Version
+      IS_VERSION_OF:
+        text: IS_VERSION_OF
+        description: Indicates that A is a version of B.
+        meaning: DataCite:IsVersionOf
+        annotations:
+          inverse:
+            tag: inverse
+            value: HAS_VERSION
+          category:
+            tag: category
+            value: versioning
+        title: Is Version Of
+      IS_NEW_VERSION_OF:
+        text: IS_NEW_VERSION_OF
+        description: 'Indicates that A is a new edition of B, where the new edition
+
+          has been modified or updated.
+
+          '
+        meaning: DataCite:IsNewVersionOf
+        annotations:
+          inverse:
+            tag: inverse
+            value: IS_PREVIOUS_VERSION_OF
+          category:
+            tag: category
+            value: versioning
+        title: Is New Version Of
+      IS_PREVIOUS_VERSION_OF:
+        text: IS_PREVIOUS_VERSION_OF
+        description: Indicates that A is a previous edition of B.
+        meaning: DataCite:IsPreviousVersionOf
+        annotations:
+          inverse:
+            tag: inverse
+            value: IS_NEW_VERSION_OF
+          category:
+            tag: category
+            value: versioning
+        title: Is Previous Version Of
+      IS_PART_OF:
+        text: IS_PART_OF
+        description: 'Indicates that A is a portion of B. May be used for elements
+
+          of a series.
+
+          '
+        meaning: DataCite:IsPartOf
+        annotations:
+          inverse:
+            tag: inverse
+            value: HAS_PART
+          category:
+            tag: category
+            value: partonomy
+        title: Is Part Of
+        exact_mappings:
+        - dcterms:isPartOf
+      HAS_PART:
+        text: HAS_PART
+        description: Indicates that A includes the part B.
+        meaning: DataCite:HasPart
+        annotations:
+          inverse:
+            tag: inverse
+            value: IS_PART_OF
+          category:
+            tag: category
+            value: partonomy
+        title: Has Part
+        exact_mappings:
+        - dcterms:hasPart
+      IS_PUBLISHED_IN:
+        text: IS_PUBLISHED_IN
+        description: 'Indicates that A is published inside B, but is independent of
+
+          other things published inside of B.
+
+          '
+        meaning: DataCite:IsPublishedIn
+        annotations:
+          category:
+            tag: category
+            value: publication
+        title: Is Published In
+      IS_REFERENCED_BY:
+        text: IS_REFERENCED_BY
+        description: Indicates that A is used as a source of information by B.
+        meaning: DataCite:IsReferencedBy
+        annotations:
+          inverse:
+            tag: inverse
+            value: REFERENCES
+          category:
+            tag: category
+            value: reference
+        title: Is Referenced By
+        exact_mappings:
+        - dcterms:isReferencedBy
+      REFERENCES:
+        text: REFERENCES
+        description: Indicates that B is used as a source of information for A.
+        meaning: DataCite:References
+        annotations:
+          inverse:
+            tag: inverse
+            value: IS_REFERENCED_BY
+          category:
+            tag: category
+            value: reference
+        exact_mappings:
+        - dcterms:references
+      IS_DOCUMENTED_BY:
+        text: IS_DOCUMENTED_BY
+        description: Indicates that B is documentation about/explaining A.
+        meaning: DataCite:IsDocumentedBy
+        annotations:
+          inverse:
+            tag: inverse
+            value: DOCUMENTS
+          category:
+            tag: category
+            value: documentation
+        title: Is Documented By
+      DOCUMENTS:
+        text: DOCUMENTS
+        description: Indicates that A is documentation about/explaining B.
+        meaning: DataCite:Documents
+        annotations:
+          inverse:
+            tag: inverse
+            value: IS_DOCUMENTED_BY
+          category:
+            tag: category
+            value: documentation
+      IS_COMPILED_BY:
+        text: IS_COMPILED_BY
+        description: Indicates that B is used to compile or create A.
+        meaning: DataCite:IsCompiledBy
+        annotations:
+          inverse:
+            tag: inverse
+            value: COMPILES
+          category:
+            tag: category
+            value: derivation
+        title: Is Compiled By
+      COMPILES:
+        text: COMPILES
+        description: Indicates that B is the result of a compile or creation event
+          using A.
+        meaning: DataCite:Compiles
+        annotations:
+          inverse:
+            tag: inverse
+            value: IS_COMPILED_BY
+          category:
+            tag: category
+            value: derivation
+      IS_VARIANT_FORM_OF:
+        text: IS_VARIANT_FORM_OF
+        description: Indicates that A is a variant or different form of B.
+        meaning: DataCite:IsVariantFormOf
+        annotations:
+          inverse:
+            tag: inverse
+            value: IS_ORIGINAL_FORM_OF
+          category:
+            tag: category
+            value: form
+        title: Is Variant Form Of
+      IS_ORIGINAL_FORM_OF:
+        text: IS_ORIGINAL_FORM_OF
+        description: Indicates that A is the original form of B.
+        meaning: DataCite:IsOriginalFormOf
+        annotations:
+          inverse:
+            tag: inverse
+            value: IS_VARIANT_FORM_OF
+          category:
+            tag: category
+            value: form
+        title: Is Original Form Of
+      IS_IDENTICAL_TO:
+        text: IS_IDENTICAL_TO
+        description: 'Indicates that A is identical to B, for use when there is a
+          need
+
+          to register two separate instances of the same resource.
+
+          '
+        meaning: DataCite:IsIdenticalTo
+        annotations:
+          category:
+            tag: category
+            value: identity
+        title: Is Identical To
+      IS_REVIEWED_BY:
+        text: IS_REVIEWED_BY
+        description: Indicates that A is reviewed by B.
+        meaning: DataCite:IsReviewedBy
+        annotations:
+          inverse:
+            tag: inverse
+            value: REVIEWS
+          category:
+            tag: category
+            value: review
+        title: Is Reviewed By
+        exact_mappings:
+        - cito:hasReview
+      REVIEWS:
+        text: REVIEWS
+        description: Indicates that A is a review of B.
+        meaning: DataCite:Reviews
+        annotations:
+          inverse:
+            tag: inverse
+            value: IS_REVIEWED_BY
+          category:
+            tag: category
+            value: review
+        exact_mappings:
+        - cito:reviews
+      IS_DERIVED_FROM:
+        text: IS_DERIVED_FROM
+        description: Indicates that B is a source upon which A is based.
+        meaning: DataCite:IsDerivedFrom
+        annotations:
+          inverse:
+            tag: inverse
+            value: IS_SOURCE_OF
+          category:
+            tag: category
+            value: derivation
+        title: Is Derived From
+        exact_mappings:
+        - prov:wasDerivedFrom
+      IS_SOURCE_OF:
+        text: IS_SOURCE_OF
+        description: Indicates that A is a source upon which B is based.
+        meaning: DataCite:IsSourceOf
+        annotations:
+          inverse:
+            tag: inverse
+            value: IS_DERIVED_FROM
+          category:
+            tag: category
+            value: derivation
+        title: Is Source Of
+      IS_REQUIRED_BY:
+        text: IS_REQUIRED_BY
+        description: Indicates that A is required by B.
+        meaning: DataCite:IsRequiredBy
+        annotations:
+          inverse:
+            tag: inverse
+            value: REQUIRES
+          category:
+            tag: category
+            value: dependency
+        title: Is Required By
+        exact_mappings:
+        - dcterms:isRequiredBy
+      REQUIRES:
+        text: REQUIRES
+        description: Indicates that A requires B.
+        meaning: DataCite:Requires
+        annotations:
+          inverse:
+            tag: inverse
+            value: IS_REQUIRED_BY
+          category:
+            tag: category
+            value: dependency
+        exact_mappings:
+        - dcterms:requires
+      OBSOLETES:
+        text: OBSOLETES
+        description: Indicates that A replaces B.
+        meaning: DataCite:Obsoletes
+        annotations:
+          inverse:
+            tag: inverse
+            value: IS_OBSOLETED_BY
+          category:
+            tag: category
+            value: obsolescence
+        exact_mappings:
+        - dcterms:replaces
+      IS_OBSOLETED_BY:
+        text: IS_OBSOLETED_BY
+        description: Indicates that A is replaced by B.
+        meaning: DataCite:IsObsoletedBy
+        annotations:
+          inverse:
+            tag: inverse
+            value: OBSOLETES
+          category:
+            tag: category
+            value: obsolescence
+        title: Is Obsoleted By
+        exact_mappings:
+        - dcterms:isReplacedBy
+      IS_COLLECTED_BY:
+        text: IS_COLLECTED_BY
+        description: Indicates that A is collected by B.
+        meaning: DataCite:IsCollectedBy
+        annotations:
+          inverse:
+            tag: inverse
+            value: COLLECTS
+          category:
+            tag: category
+            value: collection
+        title: Is Collected By
+      COLLECTS:
+        text: COLLECTS
+        description: Indicates that A collects B.
+        meaning: DataCite:Collects
+        annotations:
+          inverse:
+            tag: inverse
+            value: IS_COLLECTED_BY
+          category:
+            tag: category
+            value: collection
+      IS_TRANSLATION_OF:
+        text: IS_TRANSLATION_OF
+        description: Indicates that A is a translation of B.
+        meaning: DataCite:IsTranslationOf
+        annotations:
+          inverse:
+            tag: inverse
+            value: HAS_TRANSLATION
+          category:
+            tag: category
+            value: translation
+          added_version:
+            tag: added_version
+            value: '4.6'
+        title: Is Translation Of
+      HAS_TRANSLATION:
+        text: HAS_TRANSLATION
+        description: Indicates that A has a translation B.
+        meaning: DataCite:HasTranslation
+        annotations:
+          inverse:
+            tag: inverse
+            value: IS_TRANSLATION_OF
+          category:
+            tag: category
+            value: translation
+          added_version:
+            tag: added_version
+            value: '4.6'
+        title: Has Translation
+  DataCiteContributorType:
+    name: DataCiteContributorType
+    definition_uri: https://w3id.org/valuesets/DataCiteContributorType
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: 'Types of contributors to research resources from DataCite 4.6.
+
+      These describe organizational and functional roles rather than
+
+      specific contribution activities (see CRediT/ResearchRole for those).
+
+      '
+    title: DataCite Contributor Type
+    from_schema: https://w3id.org/valuesets/data_catalog/contributor_roles
+    see_also:
+    - https://datacite-metadata-schema.readthedocs.io/en/4.6/appendices/appendix-1/contributorType/
+    - https://credit.niso.org/
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      CONTACT_PERSON:
+        text: CONTACT_PERSON
+        description: 'Person with knowledge of how to access, troubleshoot, or
+
+          otherwise field issues related to the resource.
+
+          '
+        meaning: DataCite:ContactPerson
+        annotations:
+          category:
+            tag: category
+            value: support
+        title: Contact Person
+      DATA_COLLECTOR:
+        text: DATA_COLLECTOR
+        description: 'Person or institution responsible for finding, gathering, or
+
+          collecting data under the guidelines of the author(s) or
+
+          Principal Investigator (PI).
+
+          '
+        meaning: DataCite:DataCollector
+        annotations:
+          category:
+            tag: category
+            value: data_work
+        title: Data Collector
+        close_mappings:
+        - CRediT:investigation
+      DATA_CURATOR:
+        text: DATA_CURATOR
+        description: 'Person tasked with reviewing, enhancing, cleaning, or standardizing
+
+          metadata and the associated data submitted for storage, use, and
+
+          maintenance within a repository.
+
+          '
+        meaning: DataCite:DataCurator
+        annotations:
+          category:
+            tag: category
+            value: data_work
+        title: Data Curator
+        close_mappings:
+        - CRediT:data-curation
+      DATA_MANAGER:
+        text: DATA_MANAGER
+        description: 'Person or organization responsible for maintaining the finished
+
+          resource, including data quality, access permissions, and
+
+          long-term availability.
+
+          '
+        meaning: DataCite:DataManager
+        annotations:
+          category:
+            tag: category
+            value: data_work
+        title: Data Manager
+        close_mappings:
+        - CRediT:data-curation
+      DISTRIBUTOR:
+        text: DISTRIBUTOR
+        description: 'Institution tasked with responsibility to generate or disseminate
+
+          copies of the resource in either electronic or print form.
+
+          '
+        meaning: DataCite:Distributor
+        annotations:
+          category:
+            tag: category
+            value: dissemination
+        exact_mappings:
+        - marcrel:dst
+      EDITOR:
+        text: EDITOR
+        description: 'A person who oversees the details related to the publication
+
+          format of the resource.
+
+          '
+        meaning: DataCite:Editor
+        annotations:
+          category:
+            tag: category
+            value: editorial
+        exact_mappings:
+        - marcrel:edt
+        close_mappings:
+        - CRediT:writing-review-editing
+      HOSTING_INSTITUTION:
+        text: HOSTING_INSTITUTION
+        description: 'Typically, the organization allowing the resource to be available
+
+          on the internet through the provision of its hardware, software,
+
+          or operating support.
+
+          '
+        meaning: DataCite:HostingInstitution
+        annotations:
+          category:
+            tag: category
+            value: infrastructure
+        title: Hosting Institution
+      PRODUCER:
+        text: PRODUCER
+        description: 'Person or organization responsible for the artistic and technical
+
+          aspects of a resource, typically in audiovisual or media contexts.
+
+          '
+        meaning: DataCite:Producer
+        annotations:
+          category:
+            tag: category
+            value: production
+        exact_mappings:
+        - marcrel:pro
+      PROJECT_LEADER:
+        text: PROJECT_LEADER
+        description: 'Person officially designated as head of a project team or
+
+          sub-project team instrumental in the work necessary to the
+
+          development of the resource.
+
+          '
+        meaning: DataCite:ProjectLeader
+        annotations:
+          category:
+            tag: category
+            value: leadership
+        title: Project Leader
+        aliases:
+        - Principal Investigator
+        - PI
+        exact_mappings:
+        - NCIT:C19924
+        close_mappings:
+        - CRediT:project-administration
+      PROJECT_MANAGER:
+        text: PROJECT_MANAGER
+        description: 'Person officially designated as manager of a project, responsible
+
+          for day-to-day management activities.
+
+          '
+        meaning: DataCite:ProjectManager
+        annotations:
+          category:
+            tag: category
+            value: leadership
+        title: Project Manager
+        close_mappings:
+        - CRediT:project-administration
+      PROJECT_MEMBER:
+        text: PROJECT_MEMBER
+        description: 'Person on the membership list of a designated project or
+
+          project team.
+
+          '
+        meaning: DataCite:ProjectMember
+        annotations:
+          category:
+            tag: category
+            value: team
+        title: Project Member
+      REGISTRATION_AGENCY:
+        text: REGISTRATION_AGENCY
+        description: 'Institution or organization officially appointed by a Registration
+
+          Authority to handle specific tasks within a defined area of
+
+          responsibility.
+
+          '
+        meaning: DataCite:RegistrationAgency
+        annotations:
+          category:
+            tag: category
+            value: governance
+          examples:
+            tag: examples
+            value: DataCite member organizations
+        title: Registration Agency
+      REGISTRATION_AUTHORITY:
+        text: REGISTRATION_AUTHORITY
+        description: 'A standards-setting body from which Registration Agencies obtain
+
+          their official recognition and guidance.
+
+          '
+        meaning: DataCite:RegistrationAuthority
+        annotations:
+          category:
+            tag: category
+            value: governance
+          examples:
+            tag: examples
+            value: International DOI Foundation
+        title: Registration Authority
+      RELATED_PERSON:
+        text: RELATED_PERSON
+        description: 'A person without a specifically defined role in the development
+
+          of the resource, but who is someone the author wishes to recognize.
+
+          '
+        meaning: DataCite:RelatedPerson
+        annotations:
+          category:
+            tag: category
+            value: acknowledgment
+        title: Related Person
+      RESEARCHER:
+        text: RESEARCHER
+        description: 'A person involved in analyzing data or the results of an
+
+          experiment or formal study.
+
+          '
+        meaning: DataCite:Researcher
+        annotations:
+          category:
+            tag: category
+            value: research
+        exact_mappings:
+        - NCIT:C25741
+        close_mappings:
+        - CRediT:formal-analysis
+        - CRediT:investigation
+      RESEARCH_GROUP:
+        text: RESEARCH_GROUP
+        description: 'A group of individuals with a common research focus, typically
+
+          within a lab, department, or division.
+
+          '
+        meaning: DataCite:ResearchGroup
+        annotations:
+          category:
+            tag: category
+            value: team
+        title: Research Group
+      RIGHTS_HOLDER:
+        text: RIGHTS_HOLDER
+        description: 'Person or institution owning or managing property rights,
+
+          including intellectual property rights, over the resource.
+
+          '
+        meaning: DataCite:RightsHolder
+        annotations:
+          category:
+            tag: category
+            value: legal
+        title: Rights Holder
+        exact_mappings:
+        - marcrel:own
+        - NCIT:C54131
+      SPONSOR:
+        text: SPONSOR
+        description: 'Person or organization that issued a contract or under the
+
+          auspices of which a work has been written, printed, published,
+
+          developed, etc.
+
+          '
+        meaning: DataCite:Sponsor
+        annotations:
+          category:
+            tag: category
+            value: funding
+        exact_mappings:
+        - marcrel:spn
+        close_mappings:
+        - CRediT:funding-acquisition
+      SUPERVISOR:
+        text: SUPERVISOR
+        description: 'Designated administrator overseeing one or more groups or teams
+
+          working to produce the resource.
+
+          '
+        meaning: DataCite:Supervisor
+        annotations:
+          category:
+            tag: category
+            value: leadership
+        exact_mappings:
+        - marcrel:ths
+        close_mappings:
+        - CRediT:supervision
+      TRANSLATOR:
+        text: TRANSLATOR
+        description: 'Person, organization, or automated system responsible for
+
+          rendering the content of a resource from one language into
+
+          another.
+
+          '
+        meaning: DataCite:Translator
+        annotations:
+          category:
+            tag: category
+            value: translation
+          added_version:
+            tag: added_version
+            value: '4.6'
+        exact_mappings:
+        - marcrel:trl
+      WORK_PACKAGE_LEADER:
+        text: WORK_PACKAGE_LEADER
+        description: 'A Work Package is a recognized data product, and the Work Package
+
+          Leader ensures the comprehensive contents, availability, and
+
+          quality of the work package.
+
+          '
+        meaning: DataCite:WorkPackageLeader
+        annotations:
+          category:
+            tag: category
+            value: leadership
+        title: Work Package Leader
+      OTHER:
+        text: OTHER
+        description: 'Any person or institution making a significant contribution
+          not
+
+          covered by other contributor type values.
+
+          '
+        meaning: DataCite:Other
+        annotations:
+          note:
+            tag: note
+            value: Should be accompanied by free-text description
+  AccessRights:
+    name: AccessRights
+    definition_uri: https://w3id.org/valuesets/AccessRights
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: 'Information about who can access the resource or an indication of
+
+      its security status. Based on EU Vocabularies Access Rights authority list
+
+      and DCAT recommendations.
+
+      '
+    title: Access Rights
+    from_schema: https://w3id.org/valuesets/data_catalog/access
+    see_also:
+    - https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/access-right
+    - https://www.w3.org/TR/vocab-dcat-3/#Property:resource_access_rights
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      PUBLIC:
+        text: PUBLIC
+        description: 'The resource is publicly accessible to everyone without
+
+          restrictions.
+
+          '
+        meaning: euvoc:access-right/PUBLIC
+        annotations:
+          dcat_mapping:
+            tag: dcat_mapping
+            value: http://publications.europa.eu/resource/authority/access-right/PUBLIC
+        aliases:
+        - Open
+        - Unrestricted
+      RESTRICTED:
+        text: RESTRICTED
+        description: 'The resource is available under certain conditions or to
+
+          authorized users only. Access may require authentication,
+
+          payment, or agreement to terms.
+
+          '
+        meaning: euvoc:access-right/RESTRICTED
+        annotations:
+          dcat_mapping:
+            tag: dcat_mapping
+            value: http://publications.europa.eu/resource/authority/access-right/RESTRICTED
+        aliases:
+        - Limited Access
+      NON_PUBLIC:
+        text: NON_PUBLIC
+        description: 'The resource is not publicly accessible. May include confidential,
+
+          sensitive, or internal-use-only resources.
+
+          '
+        meaning: euvoc:access-right/NON_PUBLIC
+        annotations:
+          dcat_mapping:
+            tag: dcat_mapping
+            value: http://publications.europa.eu/resource/authority/access-right/NON_PUBLIC
+        title: Non-Public
+        aliases:
+        - Closed
+        - Private
+      EMBARGOED:
+        text: EMBARGOED
+        description: 'The resource is temporarily restricted and will become publicly
+
+          available after a specific date or event.
+
+          '
+        annotations:
+          common_in:
+            tag: common_in
+            value: academic publishing, research data
+      SENSITIVE:
+        text: SENSITIVE
+        description: 'The resource contains sensitive information requiring special
+
+          handling or access controls.
+
+          '
+        annotations:
+          examples:
+            tag: examples
+            value: PII, health data, classified information
+  DatasetStatus:
+    name: DatasetStatus
+    definition_uri: https://w3id.org/valuesets/DatasetStatus
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: 'The status of a dataset in its lifecycle. Based on ADMS (Asset
+
+      Description Metadata Schema) status vocabulary.
+
+      '
+    title: Dataset Status
+    from_schema: https://w3id.org/valuesets/data_catalog/access
+    see_also:
+    - https://www.w3.org/TR/vocab-adms/
+    - https://joinup.ec.europa.eu/collection/semantic-interoperability-community-semic/solution/asset-description-metadata-schema-adms
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      COMPLETED:
+        text: COMPLETED
+        description: 'The dataset is complete and no further updates are planned.
+
+          The data is in its final form.
+
+          '
+        meaning: adms:Completed
+        aliases:
+        - Final
+        - Finished
+      DEPRECATED:
+        text: DEPRECATED
+        description: 'The dataset has been superseded by a newer version or is
+
+          no longer recommended for use.
+
+          '
+        meaning: adms:Deprecated
+        aliases:
+        - Superseded
+        - Legacy
+      UNDER_DEVELOPMENT:
+        text: UNDER_DEVELOPMENT
+        description: 'The dataset is still being created, collected, or processed.
+
+          Not yet ready for production use.
+
+          '
+        meaning: adms:UnderDevelopment
+        title: Under Development
+        aliases:
+        - In Progress
+        - Draft
+        - Work in Progress
+      WITHDRAWN:
+        text: WITHDRAWN
+        description: 'The dataset has been removed from availability, either
+
+          temporarily or permanently.
+
+          '
+        meaning: adms:Withdrawn
+        aliases:
+        - Retracted
+        - Removed
+  UpdateFrequency:
+    name: UpdateFrequency
+    definition_uri: https://w3id.org/valuesets/UpdateFrequency
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: 'The frequency at which a dataset is updated with new data.
+
+      Based on Dublin Core Collection Description Frequency Vocabulary.
+
+      '
+    title: Update Frequency
+    from_schema: https://w3id.org/valuesets/data_catalog/access
+    see_also:
+    - http://purl.org/cld/freq/
+    - https://www.w3.org/TR/vocab-dcat-3/#Property:dataset_frequency
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      CONTINUOUS:
+        text: CONTINUOUS
+        description: Data is updated continuously or in real-time.
+        meaning: dcterms:Frequency
+        annotations:
+          iso_duration:
+            tag: iso_duration
+            value: PT0S
+      DAILY:
+        text: DAILY
+        description: Data is updated once per day.
+        annotations:
+          iso_duration:
+            tag: iso_duration
+            value: P1D
+      TWICE_WEEKLY:
+        text: TWICE_WEEKLY
+        description: Data is updated twice per week.
+        annotations:
+          iso_duration:
+            tag: iso_duration
+            value: P3D
+        title: Twice Weekly
+      WEEKLY:
+        text: WEEKLY
+        description: Data is updated once per week.
+        annotations:
+          iso_duration:
+            tag: iso_duration
+            value: P1W
+      BIWEEKLY:
+        text: BIWEEKLY
+        description: Data is updated every two weeks.
+        annotations:
+          iso_duration:
+            tag: iso_duration
+            value: P2W
+        aliases:
+        - Fortnightly
+      MONTHLY:
+        text: MONTHLY
+        description: Data is updated once per month.
+        annotations:
+          iso_duration:
+            tag: iso_duration
+            value: P1M
+      BIMONTHLY:
+        text: BIMONTHLY
+        description: Data is updated every two months.
+        annotations:
+          iso_duration:
+            tag: iso_duration
+            value: P2M
+      QUARTERLY:
+        text: QUARTERLY
+        description: Data is updated once per quarter (every three months).
+        annotations:
+          iso_duration:
+            tag: iso_duration
+            value: P3M
+      SEMIANNUAL:
+        text: SEMIANNUAL
+        description: Data is updated twice per year.
+        annotations:
+          iso_duration:
+            tag: iso_duration
+            value: P6M
+        aliases:
+        - Biannual
+      ANNUAL:
+        text: ANNUAL
+        description: Data is updated once per year.
+        annotations:
+          iso_duration:
+            tag: iso_duration
+            value: P1Y
+        aliases:
+        - Yearly
+      BIENNIAL:
+        text: BIENNIAL
+        description: Data is updated every two years.
+        annotations:
+          iso_duration:
+            tag: iso_duration
+            value: P2Y
+      TRIENNIAL:
+        text: TRIENNIAL
+        description: Data is updated every three years.
+        annotations:
+          iso_duration:
+            tag: iso_duration
+            value: P3Y
+      IRREGULAR:
+        text: IRREGULAR
+        description: Data is updated at irregular intervals.
+        aliases:
+        - As Needed
+        - Ad Hoc
+      NEVER:
+        text: NEVER
+        description: 'Data is not updated after initial publication.
+
+          Historical or archival datasets.
+
+          '
+        aliases:
+        - Static
+        - One-time
+      UNKNOWN:
+        text: UNKNOWN
+        description: The update frequency is not known.
+  DataServiceType:
+    name: DataServiceType
+    definition_uri: https://w3id.org/valuesets/DataServiceType
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: 'The type of data service provided. Based on INSPIRE spatial data
+
+      service types and common data access patterns.
+
+      '
+    title: Data Service Type
+    from_schema: https://w3id.org/valuesets/data_catalog/access
+    see_also:
+    - https://inspire.ec.europa.eu/metadata-codelist/SpatialDataServiceType
+    - https://www.w3.org/TR/vocab-dcat-3/#Class:Data_Service
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      DISCOVERY:
+        text: DISCOVERY
+        description: 'Service enabling search and discovery of datasets and services.
+
+          '
+        annotations:
+          inspire_type:
+            tag: inspire_type
+            value: discovery
+        aliases:
+        - Catalog Service
+        - Search Service
+      VIEW:
+        text: VIEW
+        description: 'Service enabling viewing or visualization of data without
+
+          full download.
+
+          '
+        annotations:
+          inspire_type:
+            tag: inspire_type
+            value: view
+        aliases:
+        - Visualization Service
+        - Display Service
+      DOWNLOAD:
+        text: DOWNLOAD
+        description: 'Service enabling bulk download of datasets or portions thereof.
+
+          '
+        annotations:
+          inspire_type:
+            tag: inspire_type
+            value: download
+        aliases:
+        - Access Service
+        - Retrieval Service
+      TRANSFORMATION:
+        text: TRANSFORMATION
+        description: 'Service enabling transformation of data, such as format
+
+          conversion or coordinate transformation.
+
+          '
+        annotations:
+          inspire_type:
+            tag: inspire_type
+            value: transformation
+        aliases:
+        - Processing Service
+        - Conversion Service
+      INVOKE:
+        text: INVOKE
+        description: 'Service enabling invocation of operations on data, typically
+
+          through an API.
+
+          '
+        annotations:
+          inspire_type:
+            tag: inspire_type
+            value: invoke
+        aliases:
+        - API Service
+        - Web Service
+      SUBSCRIPTION:
+        text: SUBSCRIPTION
+        description: 'Service enabling subscription to data updates or notifications.
+
+          '
+        aliases:
+        - Notification Service
+        - Event Service
+      QUERY:
+        text: QUERY
+        description: 'Service enabling query-based access to data, returning
+
+          filtered or aggregated results.
+
+          '
+        aliases:
+        - SPARQL Endpoint
+        - Query Service
 slots:
   relative_time:
     name: relative_time
@@ -60374,6 +63905,13 @@ slots:
     from_schema: https://w3id.org/valuesets/demographics
     slot_uri: valuesets:employment_status
     range: EmploymentStatus
+  occupation:
+    name: occupation
+    definition_uri: https://w3id.org/valuesets/occupation
+    description: The principal activity that a person does to earn money
+    from_schema: https://w3id.org/valuesets/demographics
+    slot_uri: valuesets:occupation
+    range: OccupationEnum
   housing_status:
     name: housing_status
     definition_uri: https://w3id.org/valuesets/housing_status
@@ -60438,6 +63976,13 @@ slots:
     from_schema: https://w3id.org/valuesets/investigation
     slot_uri: valuesets:planned_process_completion_status
     range: PlannedProcessCompletionStatus
+  study_type:
+    name: study_type
+    definition_uri: https://w3id.org/valuesets/study_type
+    description: The type of study
+    from_schema: https://w3id.org/valuesets/investigation
+    slot_uri: valuesets:study_type
+    range: StudyTypeEnum
   go_evidence:
     name: go_evidence
     definition_uri: https://w3id.org/valuesets/go_evidence
@@ -60904,6 +64449,20 @@ slots:
     from_schema: https://w3id.org/valuesets/bio/developmental_stages
     slot_uri: valuesets:mouse_developmental_stage
     range: MouseDevelopmentalStage
+  human_age_group:
+    name: human_age_group
+    definition_uri: https://w3id.org/valuesets/human_age_group
+    description: Simplified human age group categories based on MeSH
+    from_schema: https://w3id.org/valuesets/bio/developmental_stages
+    slot_uri: valuesets:human_age_group
+    range: HumanAgeGroupEnum
+  mouse_postnatal_age_group:
+    name: mouse_postnatal_age_group
+    definition_uri: https://w3id.org/valuesets/mouse_postnatal_age_group
+    description: Postnatal mouse age group classification
+    from_schema: https://w3id.org/valuesets/bio/developmental_stages
+    slot_uri: valuesets:mouse_postnatal_age_group
+    range: MousePostnatalAgeGroupEnum
   day_of_week:
     name: day_of_week
     definition_uri: https://w3id.org/valuesets/day_of_week
@@ -61766,6 +65325,13 @@ slots:
     from_schema: https://w3id.org/valuesets/environmental-health/exposures
     slot_uri: valuesets:study_population
     range: StudyPopulationEnum
+  hhear_exposure_assessed:
+    name: hhear_exposure_assessed
+    definition_uri: https://w3id.org/valuesets/hhear_exposure_assessed
+    description: Environmental exposures assessed in HHEAR studies
+    from_schema: https://w3id.org/valuesets/environmental-health/exposures
+    slot_uri: valuesets:hhear_exposure_assessed
+    range: HHEARExposureAssessedEnum
   country_code_iso2:
     name: country_code_iso2
     definition_uri: https://w3id.org/valuesets/country_code_iso2
@@ -63818,6 +67384,195 @@ slots:
     slot_uri: valuesets:arxiv_secondary_categories
     range: ArxivCategory
     multivalued: true
+  osti_workflow_status:
+    name: osti_workflow_status
+    definition_uri: https://w3id.org/valuesets/osti_workflow_status
+    description: OSTI workflow status code for a record revision
+    from_schema: https://w3id.org/linkml/valuesets/publishing/osti_record
+    slot_uri: valuesets:osti_workflow_status
+    range: OstiWorkflowStatus
+  osti_access_limitation:
+    name: osti_access_limitation
+    definition_uri: https://w3id.org/valuesets/osti_access_limitation
+    description: Access/distribution limitation code for a record
+    from_schema: https://w3id.org/linkml/valuesets/publishing/osti_record
+    slot_uri: valuesets:osti_access_limitation
+    range: OstiAccessLimitation
+  osti_collection_type:
+    name: osti_collection_type
+    definition_uri: https://w3id.org/valuesets/osti_collection_type
+    description: OSTI collection type for the record origin
+    from_schema: https://w3id.org/linkml/valuesets/publishing/osti_record
+    slot_uri: valuesets:osti_collection_type
+    range: OstiCollectionType
+  osti_sensitivity_flag:
+    name: osti_sensitivity_flag
+    definition_uri: https://w3id.org/valuesets/osti_sensitivity_flag
+    description: OSTI sensitivity flag for released records
+    from_schema: https://w3id.org/linkml/valuesets/publishing/osti_record
+    slot_uri: valuesets:osti_sensitivity_flag
+    range: OstiSensitivityFlag
+  osti_organization_identifier_type:
+    name: osti_organization_identifier_type
+    definition_uri: https://w3id.org/valuesets/osti_organization_identifier_type
+    description: Identifier type for OSTI organizations
+    from_schema: https://w3id.org/linkml/valuesets/publishing/osti_record
+    slot_uri: valuesets:osti_organization_identifier_type
+    range: OstiOrganizationIdentifierType
+  osti_product_type:
+    name: osti_product_type
+    definition_uri: https://w3id.org/valuesets/osti_product_type
+    description: OSTI product type code
+    from_schema: https://w3id.org/linkml/valuesets/publishing/osti_record
+    slot_uri: valuesets:osti_product_type
+    range: OstiProductType
+  osti_organization_type:
+    name: osti_organization_type
+    definition_uri: https://w3id.org/valuesets/osti_organization_type
+    description: OSTI organization role type
+    from_schema: https://w3id.org/linkml/valuesets/publishing/osti_record
+    slot_uri: valuesets:osti_organization_type
+    range: OstiOrganizationType
+  osti_person_type:
+    name: osti_person_type
+    definition_uri: https://w3id.org/valuesets/osti_person_type
+    description: OSTI person role type
+    from_schema: https://w3id.org/linkml/valuesets/publishing/osti_record
+    slot_uri: valuesets:osti_person_type
+    range: OstiPersonType
+  osti_contributor_type:
+    name: osti_contributor_type
+    definition_uri: https://w3id.org/valuesets/osti_contributor_type
+    description: OSTI contributor role type
+    from_schema: https://w3id.org/linkml/valuesets/publishing/osti_record
+    slot_uri: valuesets:osti_contributor_type
+    range: OstiContributorType
+  osti_related_identifier_type:
+    name: osti_related_identifier_type
+    definition_uri: https://w3id.org/valuesets/osti_related_identifier_type
+    description: Identifier type for related resources in OSTI
+    from_schema: https://w3id.org/linkml/valuesets/publishing/osti_record
+    slot_uri: valuesets:osti_related_identifier_type
+    range: OstiRelatedIdentifierType
+  osti_relation_type:
+    name: osti_relation_type
+    definition_uri: https://w3id.org/valuesets/osti_relation_type
+    description: Relationship type between records in OSTI
+    from_schema: https://w3id.org/linkml/valuesets/publishing/osti_record
+    slot_uri: valuesets:osti_relation_type
+    range: OstiRelationType
+  osti_identifier_type:
+    name: osti_identifier_type
+    definition_uri: https://w3id.org/valuesets/osti_identifier_type
+    description: Identifier type for OSTI identifiers
+    from_schema: https://w3id.org/linkml/valuesets/publishing/osti_record
+    slot_uri: valuesets:osti_identifier_type
+    range: OstiIdentifierType
+  osti_geolocation_type:
+    name: osti_geolocation_type
+    definition_uri: https://w3id.org/valuesets/osti_geolocation_type
+    description: Geolocation shape type used by OSTI
+    from_schema: https://w3id.org/linkml/valuesets/publishing/osti_record
+    slot_uri: valuesets:osti_geolocation_type
+    range: OstiGeolocationType
+  osti_media_location_type:
+    name: osti_media_location_type
+    definition_uri: https://w3id.org/valuesets/osti_media_location_type
+    description: Media location indicator for OSTI files and media sets
+    from_schema: https://w3id.org/linkml/valuesets/publishing/osti_record
+    slot_uri: valuesets:osti_media_location_type
+    range: OstiMediaLocationType
+  preservation_event_type:
+    name: preservation_event_type
+    definition_uri: https://w3id.org/valuesets/preservation_event_type
+    description: The type of preservation event
+    from_schema: https://w3id.org/valuesets/preservation/events
+    slot_uri: valuesets:preservation_event_type
+    range: PreservationEventType
+  object_category:
+    name: object_category
+    definition_uri: https://w3id.org/valuesets/object_category
+    description: The category of digital object
+    from_schema: https://w3id.org/valuesets/preservation/digital_objects
+    slot_uri: valuesets:object_category
+    range: DigitalObjectCategory
+  copyright_status:
+    name: copyright_status
+    definition_uri: https://w3id.org/valuesets/copyright_status
+    description: The copyright status of the object
+    from_schema: https://w3id.org/valuesets/preservation/digital_objects
+    slot_uri: valuesets:copyright_status
+    range: CopyrightStatus
+  rights_basis:
+    name: rights_basis
+    definition_uri: https://w3id.org/valuesets/rights_basis
+    description: The basis for rights or permissions
+    from_schema: https://w3id.org/valuesets/preservation/digital_objects
+    slot_uri: valuesets:rights_basis
+    range: RightsBasis
+  preservation_level_role:
+    name: preservation_level_role
+    definition_uri: https://w3id.org/valuesets/preservation_level_role
+    description: The role of the preservation level specification
+    from_schema: https://w3id.org/valuesets/preservation/digital_objects
+    slot_uri: valuesets:preservation_level_role
+    range: PreservationLevelRole
+  hash_algorithm:
+    name: hash_algorithm
+    definition_uri: https://w3id.org/valuesets/hash_algorithm
+    description: The cryptographic hash algorithm used for fixity verification
+    from_schema: https://w3id.org/valuesets/preservation/fixity
+    slot_uri: valuesets:hash_algorithm
+    range: CryptographicHashFunction
+  resource_type:
+    name: resource_type
+    definition_uri: https://w3id.org/valuesets/resource_type
+    description: The general type of research resource
+    from_schema: https://w3id.org/valuesets/data_catalog/resource_types
+    slot_uri: valuesets:resource_type
+    range: DataCiteResourceType
+  resource_relation_type:
+    name: resource_relation_type
+    definition_uri: https://w3id.org/valuesets/resource_relation_type
+    description: The type of relationship between resources
+    from_schema: https://w3id.org/valuesets/data_catalog/relations
+    slot_uri: valuesets:resource_relation_type
+    range: DataCiteRelationType
+  datacite_contributor_type:
+    name: datacite_contributor_type
+    definition_uri: https://w3id.org/valuesets/datacite_contributor_type
+    description: The type of contributor from the DataCite vocabulary
+    from_schema: https://w3id.org/valuesets/data_catalog/contributor_roles
+    slot_uri: valuesets:datacite_contributor_type
+    range: DataCiteContributorType
+  access_rights:
+    name: access_rights
+    definition_uri: https://w3id.org/valuesets/access_rights
+    description: The access rights for the resource
+    from_schema: https://w3id.org/valuesets/data_catalog/access
+    slot_uri: valuesets:access_rights
+    range: AccessRights
+  dataset_status:
+    name: dataset_status
+    definition_uri: https://w3id.org/valuesets/dataset_status
+    description: The status of the dataset in its lifecycle
+    from_schema: https://w3id.org/valuesets/data_catalog/access
+    slot_uri: valuesets:dataset_status
+    range: DatasetStatus
+  update_frequency:
+    name: update_frequency
+    definition_uri: https://w3id.org/valuesets/update_frequency
+    description: The frequency at which the dataset is updated
+    from_schema: https://w3id.org/valuesets/data_catalog/access
+    slot_uri: valuesets:update_frequency
+    range: UpdateFrequency
+  data_service_type:
+    name: data_service_type
+    definition_uri: https://w3id.org/valuesets/data_service_type
+    description: The type of data service provided
+    from_schema: https://w3id.org/valuesets/data_catalog/access
+    slot_uri: valuesets:data_service_type
+    range: DataServiceType
 classes:
   Fake:
     name: Fake
@@ -63826,7 +67581,7 @@ classes:
     class_uri: valuesets:Fake
 metamodel_version: 1.7.0
 source_file: valuesets.yaml
-source_file_date: '2025-12-14T18:57:11'
-source_file_size: 3191
-generation_date: '2025-12-15T07:50:34'
+source_file_date: '2025-12-19T09:37:51'
+source_file_size: 3401
+generation_date: '2025-12-19T12:49:51'
 

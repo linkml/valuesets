@@ -1,0 +1,413 @@
+name: osti_record
+title: OSTI Record Metadata Value Sets
+description: |
+  Value sets derived from the OSTI E-Link 2 record schema for
+  bibliographic and submission metadata.
+id: https://w3id.org/linkml/valuesets/publishing/osti_record
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+default_prefix: valuesets
+slots:
+  osti_workflow_status:
+    description: OSTI workflow status code for a record revision
+    range: OstiWorkflowStatus
+  osti_access_limitation:
+    description: Access/distribution limitation code for a record
+    range: OstiAccessLimitation
+  osti_collection_type:
+    description: OSTI collection type for the record origin
+    range: OstiCollectionType
+  osti_sensitivity_flag:
+    description: OSTI sensitivity flag for released records
+    range: OstiSensitivityFlag
+  osti_organization_identifier_type:
+    description: Identifier type for OSTI organizations
+    range: OstiOrganizationIdentifierType
+  osti_product_type:
+    description: OSTI product type code
+    range: OstiProductType
+  osti_organization_type:
+    description: OSTI organization role type
+    range: OstiOrganizationType
+  osti_person_type:
+    description: OSTI person role type
+    range: OstiPersonType
+  osti_contributor_type:
+    description: OSTI contributor role type
+    range: OstiContributorType
+  osti_related_identifier_type:
+    description: Identifier type for related resources in OSTI
+    range: OstiRelatedIdentifierType
+  osti_relation_type:
+    description: Relationship type between records in OSTI
+    range: OstiRelationType
+  osti_identifier_type:
+    description: Identifier type for OSTI identifiers
+    range: OstiIdentifierType
+  osti_geolocation_type:
+    description: Geolocation shape type used by OSTI
+    range: OstiGeolocationType
+  osti_media_location_type:
+    description: Media location indicator for OSTI files and media sets
+    range: OstiMediaLocationType
+enums:
+  OstiWorkflowStatus:
+    title: OSTI Workflow Status
+    description: Workflow status codes for OSTI record revisions.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    see_also:
+    - https://www.osti.gov/elink2api/record-schema
+    permissible_values:
+      R: {}
+      SA: {}
+      SR: {}
+      SO: {}
+      SF: {}
+      SX: {}
+      SV: {}
+  OstiAccessLimitation:
+    title: OSTI Access Limitation
+    description: Access and distribution limitation codes from OSTI.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    see_also:
+    - https://www.osti.gov/elink2api/record-schema
+    permissible_values:
+      UNL: {}
+      OPN: {}
+      CPY: {}
+      OUO: {}
+      PROT: {}
+      PDOUO: {}
+      ECI: {}
+      PDSH: {}
+      USO: {}
+      LRD: {}
+      NAT: {}
+      NNPI: {}
+      INTL: {}
+      PROP: {}
+      PAT: {}
+      OTHR: {}
+      CUI: {}
+  OstiCollectionType:
+    title: OSTI Collection Type
+    description: Collection type codes used by OSTI for record origin.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    see_also:
+    - https://www.osti.gov/elink2api/record-schema
+    permissible_values:
+      CHORUS: {}
+      DOE_GRANT: {}
+      DOE_LAB: {}
+  OstiSensitivityFlag:
+    title: OSTI Sensitivity Flag
+    description: Sensitivity flags calculated by OSTI for released records.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    see_also:
+    - https://www.osti.gov/elink2api/record-schema
+    permissible_values:
+      H: {}
+      S: {}
+      U: {}
+      X: {}
+  OstiOrganizationIdentifierType:
+    title: OSTI Organization Identifier Type
+    description: Identifier types for OSTI organizations.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    see_also:
+    - https://www.osti.gov/elink2api/record-schema
+    permissible_values:
+      AWARD_DOI: {}
+      CN_DOE: {}
+      CN_NONDOE: {}
+  OstiProductType:
+    title: OSTI Product Type
+    description: Product type codes from OSTI record metadata.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    see_also:
+    - https://www.osti.gov/elink2api/record-schema
+    permissible_values:
+      AR: {}
+      B: {}
+      CO: {}
+      DA: {}
+      FS: {}
+      JA: {}
+      MI: {}
+      OT: {}
+      P: {}
+      PD: {}
+      SM: {}
+      TD: {}
+      TR: {}
+      PA: {}
+  OstiOrganizationType:
+    title: OSTI Organization Type
+    description: Organization role types used by OSTI.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    see_also:
+    - https://www.osti.gov/elink2api/record-schema
+    permissible_values:
+      AUTHOR: {}
+      CONTRIBUTING: {}
+      RESEARCHING: {}
+      SPONSOR: {}
+  OstiPersonType:
+    title: OSTI Person Type
+    description: Person role types used by OSTI.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    see_also:
+    - https://www.osti.gov/elink2api/record-schema
+    permissible_values:
+      AUTHOR: {}
+      RELEASE: {}
+      CONTACT: {}
+      CONTRIBUTING: {}
+      PROT_CE: {}
+      PROT_RO: {}
+      SBIZ_PI: {}
+      SBIZ_BO: {}
+  OstiContributorType:
+    title: OSTI Contributor Type
+    description: Contributor role types used by OSTI.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    see_also:
+    - https://www.osti.gov/elink2api/record-schema
+    permissible_values:
+      Chair: {}
+      DataCollector: {}
+      DataCurator: {}
+      DataManager: {}
+      Distributor: {}
+      Editor: {}
+      HostingInstitution: {}
+      Producer: {}
+      ProjectLeader: {}
+      ProjectManager: {}
+      ProjectMember: {}
+      RegistrationAgency: {}
+      RegistrationAuthority: {}
+      RelatedPerson: {}
+      Reviewer: {}
+      ReviewAssistant: {}
+      ReviewerExternal: {}
+      RightsHolder: {}
+      StatsReviewer: {}
+      Supervisor: {}
+      Translator: {}
+      WorkPackageLeader: {}
+      Other: {}
+  OstiRelatedIdentifierType:
+    title: OSTI Related Identifier Type
+    description: Identifier types for related resources in OSTI.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    see_also:
+    - https://www.osti.gov/elink2api/record-schema
+    permissible_values:
+      ARK: {}
+      arXiv: {}
+      bibcode: {}
+      DOI: {}
+      EAN13: {}
+      EISSN: {}
+      IGSN: {}
+      ISBN: {}
+      ISSN: {}
+      ISTC: {}
+      Handle: {}
+      LISSN: {}
+      LSID: {}
+      OTHER: {}
+      PMCID: {}
+      PMID: {}
+      PURL: {}
+      UPC: {}
+      URI: {}
+      URL: {}
+      URN: {}
+      UUID: {}
+      w3id: {}
+  OstiRelationType:
+    title: OSTI Relation Type
+    description: Relationship types between records in OSTI.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    see_also:
+    - https://www.osti.gov/elink2api/record-schema
+    permissible_values:
+      BasedOnData: {}
+      Cites: {}
+      Compiles: {}
+      Continues: {}
+      Describes: {}
+      Documents: {}
+      Finances: {}
+      HasComment: {}
+      HasDerivation: {}
+      HasMetadata: {}
+      HasPart: {}
+      HasRelatedMaterial: {}
+      HasReply: {}
+      HasReview: {}
+      HasVersion: {}
+      IsBasedOn: {}
+      IsBasisFor: {}
+      IsCitedBy: {}
+      IsCommentOn: {}
+      IsCompiledBy: {}
+      IsContinuedBy: {}
+      IsDataBasisFor: {}
+      IsDerivedFrom: {}
+      IsDescribedBy: {}
+      IsDocumentedBy: {}
+      IsFinancedBy: {}
+      IsIdenticalTo: {}
+      IsMetadataFor: {}
+      IsNewVersionOf: {}
+      IsObsoletedBy: {}
+      IsOriginalFormOf: {}
+      IsPartOf: {}
+      IsPreviousVersionOf: {}
+      IsReferencedBy: {}
+      IsRelatedMaterial: {}
+      IsReplyTo: {}
+      IsRequiredBy: {}
+      IsReviewedBy: {}
+      IsReviewOf: {}
+      IsSourceOf: {}
+      IsSupplementedBy: {}
+      IsSupplementTo: {}
+      IsVariantFormOf: {}
+      IsVersionOf: {}
+      Obsoletes: {}
+      References: {}
+      Requires: {}
+      Reviews: {}
+  OstiIdentifierType:
+    title: OSTI Identifier Type
+    description: Identifier type codes from OSTI record metadata.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    see_also:
+    - https://www.osti.gov/elink2api/record-schema
+    permissible_values:
+      AUTH_REV: {}
+      CN_DOE: {}
+      CN_NONDOE: {}
+      CODEN: {}
+      DOE_DOCKET: {}
+      EDB: {}
+      ETDE_RN: {}
+      INIS_RN: {}
+      ISBN: {}
+      ISSN: {}
+      LEGACY: {}
+      NSA: {}
+      OPN_ACC: {}
+      OTHER_ID: {}
+      PATENT: {}
+      PROJ_ID: {}
+      PROP_REV: {}
+      REF: {}
+      REL_TRN: {}
+      RN: {}
+      TRN: {}
+      TVI: {}
+      USER_VER: {}
+      WORK_AUTH: {}
+      WORK_PROP: {}
+  OstiGeolocationType:
+    title: OSTI Geolocation Type
+    description: Geolocation shape types in OSTI record metadata.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    see_also:
+    - https://www.osti.gov/elink2api/record-schema
+    permissible_values:
+      POINT: {}
+      BOX: {}
+      POLYGON: {}
+  OstiMediaLocationType:
+    title: OSTI Media Location Type
+    description: Location indicators for OSTI media files and sets.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    see_also:
+    - https://www.osti.gov/elink2api/record-schema
+    permissible_values:
+      L: {}
+      O: {}
+license: Apache-2.0
+see_also:
+- https://www.osti.gov/elink2api/record-schema

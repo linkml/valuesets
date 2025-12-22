@@ -22,12 +22,15 @@ from .academic.research import PublicationType, PeerReviewStatus, AcademicDegree
 from .analytical_chemistry.mass_spectrometry import RelativeTimeEnum, PresenceEnum, MassSpectrometerFileFormat, MassSpectrometerVendor, ChromatographyType, DerivatizationMethod, MetabolomicsAssayType, AnalyticalControlType
 
 # Bio domain
+from .bio.assays import SequencingAssayEnum, ImagingAssayEnum, MassSpectrometryAssayEnum, CellBasedAssayEnum, ClinicalBehavioralAssayEnum
 from .bio.bgc_categories import BgcCategoryEnum
 from .bio.biological_colors import EyeColorEnum, HairColorEnum, FlowerColorEnum, AnimalCoatColorEnum, SkinToneEnum, PlantLeafColorEnum
 from .bio.biosafety import BiosafetyLevelEnum
 from .bio.cell_cycle import CellCyclePhase, MitoticPhase, CellCycleCheckpoint, MeioticPhase, CellCycleRegulator, CellProliferationState, DNADamageResponse
 from .bio.currency_chemicals import CurrencyChemical
-from .bio.developmental_stages import HumanDevelopmentalStage, MouseDevelopmentalStage
+from .bio.developmental_stages import HumanDevelopmentalStage, MouseDevelopmentalStage, HumanAgeGroupEnum, MousePostnatalAgeGroupEnum
+from .bio.expression_units import ExpressionUnitEnum, ConcentrationUnitEnum, TimeUnitEnum
+from .bio.gene_perturbation import GenePerturbationMethodEnum, GeneKnockoutMethodEnum, GenotypeEnum, VectorTypeEnum
 from .bio.genome_features import GenomeFeatureType
 from .bio.genomics import CdsPhaseType, ContigCollectionType, StrandType, SequenceType
 from .bio.go_aspect import GOAspect
@@ -47,8 +50,10 @@ from .bio.relationship_to_oxygen import RelToOxygenEnum
 from .bio.sequence_alphabets import DNABaseEnum, DNABaseExtendedEnum, RNABaseEnum, RNABaseExtendedEnum, AminoAcidEnum, AminoAcidExtendedEnum, CodonEnum, NucleotideModificationEnum, SequenceQualityEnum
 from .bio.sequence_chemistry import IUPACNucleotideCode, StandardAminoAcid, IUPACAminoAcidCode, SequenceAlphabet, SequenceQualityEncoding, GeneticCodeTable, SequenceStrand, SequenceTopology, SequenceModality
 from .bio.sequencing_platforms import SequencingPlatform, SequencingChemistry, LibraryPreparation, SequencingApplication, ReadType, SequenceFileFormat, DataProcessingLevel
+from .bio.specimen_processing import SpecimenPreparationMethodEnum, TissuePreservationEnum, SpecimenCollectionMethodEnum, SpecimenTypeEnum
 from .bio.structural_biology import SampleType, StructuralBiologyTechnique, CryoEMPreparationType, CryoEMGridType, VitrificationMethod, CrystallizationMethod, XRaySource, Detector, WorkflowType, FileFormat, DataType, ProcessingStatus, CoordinationGeometry, MetalLigandType, ProteinModificationType
 from .bio.taxonomy import CommonOrganismTaxaEnum, TaxonomicRank, BiologicalKingdom
+from .bio.transplantation import TransplantationTypeEnum, XenograftModelEnum, ModelSystemTypeEnum
 from .bio.trophic_levels import TrophicLevelEnum
 from .bio.uniprot_species import UniProtSpeciesCode
 from .bio.viral_genome_types import ViralGenomeTypeEnum
@@ -98,6 +103,12 @@ from .stewardship import ValueSetStewardEnum
 # Data domain
 from .data.data_absent_reason import DataAbsentEnum
 
+# Data_Catalog domain
+from .data_catalog.access import AccessRights, DatasetStatus, UpdateFrequency, DataServiceType
+from .data_catalog.contributor_roles import DataCiteContributorType
+from .data_catalog.relations import DataCiteRelationType
+from .data_catalog.resource_types import DataCiteResourceType
+
 # Data_Science domain
 from .data_science.binary_classification import BinaryClassificationEnum, SpamClassificationEnum, AnomalyDetectionEnum, ChurnClassificationEnum, FraudDetectionEnum
 from .data_science.emotion_classification import BasicEmotionEnum, ExtendedEmotionEnum
@@ -130,7 +141,7 @@ from .energy.renewable.hydrogen import HydrogenType, HydrogenProductionMethod, H
 
 # Environmental_Health domain
 from .environmental_health.carcinogenicity import IARCCarcinogenicityGroup, EPAIRISCarcinogenicityGroup, NTPCarcinogenicityGroup
-from .environmental_health.exposures import AirPollutantEnum, PesticideTypeEnum, HeavyMetalEnum, ExposureRouteEnum, ExposureSourceEnum, WaterContaminantEnum, EndocrineDisruptorEnum, ExposureDurationEnum, SmokingStatusEnum, ExposureStressorTypeEnum, ExposureTransportPathEnum, ExposureFrequencyEnum, StudyPopulationEnum
+from .environmental_health.exposures import AirPollutantEnum, PesticideTypeEnum, HeavyMetalEnum, ExposureRouteEnum, ExposureSourceEnum, WaterContaminantEnum, EndocrineDisruptorEnum, ExposureDurationEnum, SmokingStatusEnum, ExposureStressorTypeEnum, ExposureTransportPathEnum, ExposureFrequencyEnum, StudyPopulationEnum, HHEARExposureAssessedEnum
 from .environmental_health.gb_edoh import ExtremeWeatherEventEnum, ExposureAgentCategoryEnum, TemporalAggregationEnum, SpatialResolutionEnum
 from .environmental_health.radionuclides import RadionuclideEnum, NORMEnum
 
@@ -164,6 +175,7 @@ from .materials_science.synthesis_methods import SynthesisMethodEnum, CrystalGro
 # Medical domain
 from .medical.clinical import BloodTypeEnum, AnatomicalSystemEnum, MedicalSpecialtyEnum, DrugRouteEnum, VitalSignEnum, DiagnosticTestTypeEnum, SymptomSeverityEnum, AllergyTypeEnum, VaccineTypeEnum, BMIClassificationEnum
 from .medical.family_history import FamilyRelationship, FamilyHistoryStatus, GeneticRelationship
+from .medical.imaging_platforms import MRIPlatformEnum, MicroscopyPlatformEnum, ImagingSystemPlatformEnum
 from .medical.neuroimaging import MRIModalityEnum, MRISequenceTypeEnum, MRIContrastTypeEnum, FMRIParadigmTypeEnum
 from .medical.oncology.icdo import TumorTopography, TumorMorphology, TumorBehavior, TumorGrade
 from .medical.pediatric_oncology.diagnosis_categories import PediatricOncologyDiagnosisCategory
@@ -174,8 +186,14 @@ from .medical.pediatric_oncology.staging.neuroblastoma import INRGSSStage, INSSS
 from .physics.radiation import ElectromagneticRadiationTypeEnum, InfraredRadiationTypeEnum, AcousticRadiationTypeEnum
 from .physics.states_of_matter import StateOfMatterEnum
 
+# Preservation domain
+from .preservation.digital_objects import DigitalObjectCategory, CopyrightStatus, RightsBasis, PreservationLevelRole, PreservationLevelValue
+from .preservation.events import PreservationEventType, PreservationEventOutcome
+from .preservation.fixity import CryptographicHashFunction
+
 # Publishing domain
 from .publishing.arxiv_categories import ArxivCategory
+from .publishing.osti_record import OstiWorkflowStatus, OstiAccessLimitation, OstiCollectionType, OstiSensitivityFlag, OstiOrganizationIdentifierType, OstiProductType, OstiOrganizationType, OstiPersonType, OstiContributorType, OstiRelatedIdentifierType, OstiRelationType, OstiIdentifierType, OstiGeolocationType, OstiMediaLocationType
 
 # Social domain
 from .social.person_status import PersonStatusEnum
@@ -199,6 +217,7 @@ from .visual.colors import BasicColorEnum, WebColorEnum, X11ColorEnum, ColorSpac
 __all__ = [
     "ACMGPathogenicityEnum",
     "AcademicDegree",
+    "AccessRights",
     "AcousticRadiationTypeEnum",
     "AdditiveManufacturingEnum",
     "AgeGroupEnum",
@@ -265,6 +284,7 @@ __all__ = [
     "CatalystTypeEnum",
     "CausalPredicateEnum",
     "CdsPhaseType",
+    "CellBasedAssayEnum",
     "CellCycleCheckpoint",
     "CellCyclePhase",
     "CellCycleRegulator",
@@ -274,6 +294,7 @@ __all__ = [
     "ChromatographyType",
     "ChurnClassificationEnum",
     "CitationStyle",
+    "ClinicalBehavioralAssayEnum",
     "CodonEnum",
     "ColorSpaceEnum",
     "CommonMineral",
@@ -294,12 +315,14 @@ __all__ = [
     "ContinentEnum",
     "ContributorType",
     "CoordinationGeometry",
+    "CopyrightStatus",
     "CorporateGovernanceRoleEnum",
     "CountryCodeISO2Enum",
     "CountryCodeISO3Enum",
     "CriticalMineral",
     "CryoEMGridType",
     "CryoEMPreparationType",
+    "CryptographicHashFunction",
     "CrystalGrowthMethodEnum",
     "CrystalSystemEnum",
     "CrystallizationMethod",
@@ -309,13 +332,18 @@ __all__ = [
     "DNABaseExtendedEnum",
     "DNADamageResponse",
     "DataAbsentEnum",
+    "DataCiteContributorType",
+    "DataCiteRelationType",
+    "DataCiteResourceType",
     "DataFormatEnum",
     "DataMaturityLevel",
     "DataProcessingLevel",
+    "DataServiceType",
     "DataSizeUnitEnum",
     "DataType",
     "DatasetEncodingFormat",
     "DatasetSplitType",
+    "DatasetStatus",
     "DayOfWeek",
     "DecisionMakingStyleEnum",
     "DefectClassificationEnum",
@@ -324,6 +352,7 @@ __all__ = [
     "DetectionModeEnum",
     "Detector",
     "DiagnosticTestTypeEnum",
+    "DigitalObjectCategory",
     "DocumentFormatEnum",
     "DownstreamProcessEnum",
     "DrugResponseEnum",
@@ -362,6 +391,7 @@ __all__ = [
     "ExposureSourceEnum",
     "ExposureStressorTypeEnum",
     "ExposureTransportPathEnum",
+    "ExpressionUnitEnum",
     "ExtendedEmotionEnum",
     "ExtractableTargetElement",
     "ExtractiveIndustryFacilityTypeEnum",
@@ -394,9 +424,12 @@ __all__ = [
     "GOElectronicMethods",
     "GOEvidenceCode",
     "GenderIdentity",
+    "GeneKnockoutMethodEnum",
+    "GenePerturbationMethodEnum",
     "GeneticCodeTable",
     "GeneticRelationship",
     "GenomeFeatureType",
+    "GenotypeEnum",
     "GeologicalEra",
     "GeospatialRasterFormat",
     "GeospatialVectorFormat",
@@ -406,6 +439,7 @@ __all__ = [
     "GeothermalSystemType",
     "GeothermalWellType",
     "GridType",
+    "HHEARExposureAssessedEnum",
     "HRFunctionEnum",
     "HairColorEnum",
     "HardOrSoftEnum",
@@ -414,6 +448,7 @@ __all__ = [
     "HeavyMetalEnum",
     "HistoricalPeriod",
     "HousingStatus",
+    "HumanAgeGroupEnum",
     "HumanDevelopmentalStage",
     "HydrogenApplication",
     "HydrogenProductionMethod",
@@ -432,6 +467,8 @@ __all__ = [
     "IUPACNucleotideCode",
     "ImageDefinedRiskFactor",
     "ImageFileFormatEnum",
+    "ImagingAssayEnum",
+    "ImagingSystemPlatformEnum",
     "InSituChemistryRegime",
     "IndustrialDyeEnum",
     "IndustryMaturityEnum",
@@ -471,6 +508,7 @@ __all__ = [
     "MLModalityType",
     "MRIContrastTypeEnum",
     "MRIModalityEnum",
+    "MRIPlatformEnum",
     "MRISequenceTypeEnum",
     "MagneticPropertyEnum",
     "MaintenanceTypeEnum",
@@ -483,6 +521,7 @@ __all__ = [
     "MassErrorUnit",
     "MassSpectrometerFileFormat",
     "MassSpectrometerVendor",
+    "MassSpectrometryAssayEnum",
     "MassUnitEnum",
     "MaterialClassEnum",
     "MechanicalBehaviorEnum",
@@ -494,6 +533,7 @@ __all__ = [
     "MetalTypeEnum",
     "MicroplateFormatEnum",
     "MicroscopyMethodEnum",
+    "MicroscopyPlatformEnum",
     "MimeType",
     "MimeTypeCategory",
     "MineralCategory",
@@ -505,8 +545,10 @@ __all__ = [
     "MiningType",
     "MitoticPhase",
     "ModeOfInheritance",
+    "ModelSystemTypeEnum",
     "Month",
     "MouseDevelopmentalStage",
+    "MousePostnatalAgeGroupEnum",
     "NAICSSectorEnum",
     "NCITFivePointConfidenceScale",
     "NIHInstituteCenterEnum",
@@ -537,6 +579,20 @@ __all__ = [
     "OpticalPropertyEnum",
     "OreGrade",
     "OrganizationalStructureEnum",
+    "OstiAccessLimitation",
+    "OstiCollectionType",
+    "OstiContributorType",
+    "OstiGeolocationType",
+    "OstiIdentifierType",
+    "OstiMediaLocationType",
+    "OstiOrganizationIdentifierType",
+    "OstiOrganizationType",
+    "OstiPersonType",
+    "OstiProductType",
+    "OstiRelatedIdentifierType",
+    "OstiRelationType",
+    "OstiSensitivityFlag",
+    "OstiWorkflowStatus",
     "OutcomeTypeEnum",
     "OxidationStateEnum",
     "OxygenationStrategyEnum",
@@ -570,6 +626,10 @@ __all__ = [
     "PowerUnit",
     "PredictionOutcomeType",
     "PresenceEnum",
+    "PreservationEventOutcome",
+    "PreservationEventType",
+    "PreservationLevelRole",
+    "PreservationLevelValue",
     "PressureUnitEnum",
     "PriorityLevelEnum",
     "ProcessImprovementApproachEnum",
@@ -624,6 +684,7 @@ __all__ = [
     "ResearchField",
     "ResearchReactorTypeEnum",
     "ResearchRole",
+    "RightsBasis",
     "RoboticArmTypeEnum",
     "SESARCollectionMethod",
     "SESARMaterialType",
@@ -647,6 +708,7 @@ __all__ = [
     "SequenceTopology",
     "SequenceType",
     "SequencingApplication",
+    "SequencingAssayEnum",
     "SequencingChemistry",
     "SequencingPlatform",
     "SeverityLevelEnum",
@@ -659,6 +721,9 @@ __all__ = [
     "SpamClassificationEnum",
     "SpatialRelationship",
     "SpatialResolutionEnum",
+    "SpecimenCollectionMethodEnum",
+    "SpecimenPreparationMethodEnum",
+    "SpecimenTypeEnum",
     "SpectroscopyMethodEnum",
     "StandardAminoAcid",
     "StandardsMaturityLevel",
@@ -690,10 +755,12 @@ __all__ = [
     "TimePeriod",
     "TimeUnitEnum",
     "TimeZoneEnum",
+    "TissuePreservationEnum",
     "ToxicityClassificationEnum",
     "TraditionalPigmentEnum",
     "TrafficLightColorEnum",
     "TrainingTypeEnum",
+    "TransplantationTypeEnum",
     "TransuranicWasteCategoryEnum",
     "TrophicLevelEnum",
     "TumorBehavior",
@@ -706,12 +773,14 @@ __all__ = [
     "USFederalFundingAgencyEnum",
     "USStateCodeEnum",
     "UniProtSpeciesCode",
+    "UpdateFrequency",
     "UraniumEnrichmentLevelEnum",
     "VaccinationPeriodicityEnum",
     "VaccinationStatusEnum",
     "VaccineCategoryEnum",
     "VaccineTypeEnum",
     "ValueSetStewardEnum",
+    "VectorTypeEnum",
     "VendorCategoryEnum",
     "VideoFormatEnum",
     "ViralGenomeTypeEnum",
@@ -734,4 +803,5 @@ __all__ = [
     "WorkflowType",
     "X11ColorEnum",
     "XRaySource",
+    "XenograftModelEnum",
 ]

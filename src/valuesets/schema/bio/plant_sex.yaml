@@ -60,9 +60,9 @@ enums:
         description: Having female and hermaphrodite flowers on the same plant
         title: Gynomonoecious
       HERMAPHRODITIC:
+        title: hermaphrodite
         description: Having both male and female reproductive organs
         meaning: PATO:0001340
-        title: Hermaphroditic
       IMPERFECT:
         description: Flower lacking either male or female reproductive organs
         title: Imperfect

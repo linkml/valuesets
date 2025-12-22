@@ -1,5 +1,5 @@
 # Auto generated from valuesets.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-12-15T10:12:30
+# Generation date: 2025-12-22T07:10:11
 # Schema: valuesets
 #
 # id: https://w3id.org/linkml/valuesets
@@ -823,6 +823,16 @@ class PlannedProcessCompletionStatus(EnumDefinitionImpl):
     _defn = EnumDefinition(
         name="PlannedProcessCompletionStatus",
         description="""The completion status of a planned process, indicating whether the process was successfully executed or failed. Based on COB (Core Ontology for Biology) planned process hierarchy.""",
+    )
+
+class StudyTypeEnum(EnumDefinitionImpl):
+    """
+    Types of studies, including clinical trials, observational studies, and other research investigations. Dynamically
+    populated from NCIT descendants of Study (NCIT:C63536).
+    """
+    _defn = EnumDefinition(
+        name="StudyTypeEnum",
+        description="""Types of studies, including clinical trials, observational studies, and other research investigations. Dynamically populated from NCIT descendants of Study (NCIT:C63536).""",
     )
 
 class GOEvidenceCode(EnumDefinitionImpl):
@@ -2388,10 +2398,12 @@ class SampleType(EnumDefinitionImpl):
         meaning=NCIT["C17021"])
     NUCLEIC_ACID = PermissibleValue(
         text="NUCLEIC_ACID",
+        title="Nucleic Acids",
         description="Nucleic acid sample (DNA or RNA)",
-        meaning=NCIT["C813"])
+        meaning=NCIT["C706"])
     PROTEIN_COMPLEX = PermissibleValue(
         text="PROTEIN_COMPLEX",
+        title="protein-containing complex",
         description="Protein-protein or protein-nucleic acid complex",
         meaning=GO["0032991"])
     MEMBRANE_PROTEIN = PermissibleValue(
@@ -2443,7 +2455,7 @@ class StructuralBiologyTechnique(EnumDefinitionImpl):
         text="NEUTRON_CRYSTALLOGRAPHY",
         title="neutron diffraction",
         description="Neutron crystallography",
-        meaning=CHMO["0000175"])
+        meaning=CHMO["0000698"])
     SAXS = PermissibleValue(
         text="SAXS",
         title="small-angle X-ray scattering",
@@ -2458,7 +2470,7 @@ class StructuralBiologyTechnique(EnumDefinitionImpl):
         text="WAXS",
         title="wide-angle X-ray scattering",
         description="Wide-angle X-ray scattering",
-        meaning=CHMO["0000213"])
+        meaning=CHMO["0000207"])
     NMR = PermissibleValue(
         text="NMR",
         title="nuclear magnetic resonance spectroscopy",
@@ -2470,9 +2482,9 @@ class StructuralBiologyTechnique(EnumDefinitionImpl):
         meaning=CHMO["0000470"])
     NEGATIVE_STAIN_EM = PermissibleValue(
         text="NEGATIVE_STAIN_EM",
-        title="negative staining electron microscopy",
+        title="negative staining",
         description="Negative stain electron microscopy",
-        meaning=FBBI["00000568"])
+        meaning=FBBI["00000399"])
 
     _defn = EnumDefinition(
         name="StructuralBiologyTechnique",
@@ -2589,8 +2601,7 @@ class XRaySource(EnumDefinitionImpl):
         meaning=CHMO["0001810"])
     ROTATING_ANODE = PermissibleValue(
         text="ROTATING_ANODE",
-        description="Rotating anode generator",
-        meaning=CHMO["0001107"])
+        description="Rotating anode generator")
     MICROFOCUS = PermissibleValue(
         text="MICROFOCUS",
         description="Microfocus sealed tube")
@@ -2609,23 +2620,21 @@ class Detector(EnumDefinitionImpl):
     """
     DIRECT_ELECTRON = PermissibleValue(
         text="DIRECT_ELECTRON",
-        description="Direct electron detector (DED)",
-        meaning=CHMO["0002837"])
+        description="Direct electron detector (DED)")
     CCD = PermissibleValue(
         text="CCD",
+        title="charge-coupled-device detector",
         description="Charge-coupled device camera",
-        meaning=CHMO["0002171"])
+        meaning=CHMO["0002245"])
     CMOS = PermissibleValue(
         text="CMOS",
-        description="Complementary metal-oxide semiconductor detector",
-        meaning=CHMO["0002836"])
+        description="Complementary metal-oxide semiconductor detector")
     HYBRID_PIXEL = PermissibleValue(
         text="HYBRID_PIXEL",
         description="Hybrid pixel detector")
     PHOTOSTIMULABLE_PHOSPHOR = PermissibleValue(
         text="PHOTOSTIMULABLE_PHOSPHOR",
-        description="Photostimulable phosphor (image plate)",
-        meaning=CHMO["0001069"])
+        description="Photostimulable phosphor (image plate)")
 
     _defn = EnumDefinition(
         name="Detector",
@@ -2684,36 +2693,32 @@ class FileFormat(EnumDefinitionImpl):
     """
     MRC = PermissibleValue(
         text="MRC",
-        description="MRC format for EM density maps",
-        meaning=EDAM["3842"])
+        description="MRC format for EM density maps")
     TIFF = PermissibleValue(
         text="TIFF",
         description="Tagged Image File Format",
-        meaning=EDAM["3591"])
+        meaning=EDAM["format_3591"])
     HDF5 = PermissibleValue(
         text="HDF5",
         description="Hierarchical Data Format 5",
-        meaning=EDAM["3590"])
+        meaning=EDAM["format_3590"])
     STAR = PermissibleValue(
         text="STAR",
-        description="Self-defining Text Archival and Retrieval format",
-        meaning=EDAM["3906"])
+        description="Self-defining Text Archival and Retrieval format")
     PDB = PermissibleValue(
         text="PDB",
         description="Protein Data Bank coordinate format",
-        meaning=EDAM["1476"])
+        meaning=EDAM["format_1476"])
     MMCIF = PermissibleValue(
         text="MMCIF",
         description="Macromolecular Crystallographic Information File",
-        meaning=EDAM["1477"])
+        meaning=EDAM["format_1477"])
     MTZ = PermissibleValue(
         text="MTZ",
-        description="MTZ reflection data format",
-        meaning=EDAM["3816"])
+        description="MTZ reflection data format")
     CBF = PermissibleValue(
         text="CBF",
-        description="Crystallographic Binary Format",
-        meaning=EDAM["3874"])
+        description="Crystallographic Binary Format")
     DM3 = PermissibleValue(
         text="DM3",
         description="Digital Micrograph format")
@@ -2820,7 +2825,7 @@ class CoordinationGeometry(EnumDefinitionImpl):
         meaning=NCIT["C103215"])
     SQUARE_PLANAR = PermissibleValue(
         text="SQUARE_PLANAR",
-        title="square planar molecular geometry",
+        title="Square Planar 1 Molecular Geometry",
         description="Square planar coordination geometry (4 ligands in plane)",
         meaning=NCIT["C103211"])
     TRIGONAL_BIPYRAMIDAL = PermissibleValue(
@@ -2834,7 +2839,7 @@ class CoordinationGeometry(EnumDefinitionImpl):
         description="Pentagonal planar coordination geometry (5 ligands in plane)")
     OCTAHEDRAL = PermissibleValue(
         text="OCTAHEDRAL",
-        title="octahedral molecular geometry",
+        title="Octahedral 12 Molecular Geometry",
         description="Octahedral coordination geometry (6 ligands)",
         meaning=NCIT["C103216"])
     TRIGONAL_PRISMATIC = PermissibleValue(
@@ -2889,48 +2894,57 @@ class ProteinModificationType(EnumDefinitionImpl):
     """
     METAL_COORDINATION = PermissibleValue(
         text="METAL_COORDINATION",
+        title="iron-sulfur cluster containing modification",
         description="Metal coordination modification",
         meaning=MOD["00739"])
     PHOSPHORYLATION = PermissibleValue(
         text="PHOSPHORYLATION",
+        title="phosphorylated residue",
         description="Phosphorylation modification",
         meaning=MOD["00696"])
     GLYCOSYLATION = PermissibleValue(
         text="GLYCOSYLATION",
+        title="complex glycosylation",
         description="Glycosylation modification",
         meaning=MOD["00725"])
     ACETYLATION = PermissibleValue(
         text="ACETYLATION",
+        title="monoacetylated residue",
         description="Acetylation modification",
         meaning=MOD["00394"])
     METHYLATION = PermissibleValue(
         text="METHYLATION",
+        title="monomethylated residue",
         description="Methylation modification",
         meaning=MOD["00599"])
     UBIQUITINATION = PermissibleValue(
         text="UBIQUITINATION",
+        title="ubiquitination signature tetrapeptidyl lysine",
         description="Ubiquitination modification",
         meaning=MOD["01240"])
     SUMOYLATION = PermissibleValue(
         text="SUMOYLATION",
+        title="sumoylated lysine",
         description="SUMOylation modification",
         meaning=MOD["01149"])
     HYDROXYLATION = PermissibleValue(
         text="HYDROXYLATION",
+        title="hydroxylated residue",
         description="Hydroxylation modification",
         meaning=MOD["00677"])
     LIPIDATION = PermissibleValue(
         text="LIPIDATION",
-        description="Lipidation modification",
-        meaning=MOD["00435"])
+        description="Lipidation modification")
     PROTEOLYTIC_CLEAVAGE = PermissibleValue(
         text="PROTEOLYTIC_CLEAVAGE",
+        title="proteolysis",
         description="Proteolytic cleavage",
         meaning=GO["0006508"])
     CROSSLINKING = PermissibleValue(
         text="CROSSLINKING",
+        title="crosslinked residues",
         description="Crosslinking modification",
-        meaning=MOD["00276"])
+        meaning=MOD["00033"])
 
     _defn = EnumDefinition(
         name="ProteinModificationType",
@@ -4271,7 +4285,7 @@ class PlantSexEnum(EnumDefinitionImpl):
         description="Having female and hermaphrodite flowers on the same plant")
     HERMAPHRODITIC = PermissibleValue(
         text="HERMAPHRODITIC",
-        title="Hermaphroditic",
+        title="hermaphrodite",
         description="Having both male and female reproductive organs",
         meaning=PATO["0001340"])
     IMPERFECT = PermissibleValue(
@@ -4720,6 +4734,62 @@ class MouseDevelopmentalStage(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
         name="MouseDevelopmentalStage",
+    )
+
+class HumanAgeGroupEnum(EnumDefinitionImpl):
+    """
+    Simplified human age group categories based on MeSH classifications. Useful for cohort stratification and
+    demographic reporting.
+    """
+    INFANT = PermissibleValue(
+        text="INFANT",
+        description="A child between 1 and 23 months of age",
+        meaning=MESH["D007223"])
+    CHILD = PermissibleValue(
+        text="CHILD",
+        description="A person 2 to 12 years of age",
+        meaning=MESH["D002648"])
+    ADOLESCENT = PermissibleValue(
+        text="ADOLESCENT",
+        description="A person 13 to 18 years of age",
+        meaning=MESH["D000293"])
+    ADULT = PermissibleValue(
+        text="ADULT",
+        description="A person having attained full growth or maturity. Adults are of 19 to 120 years of age",
+        meaning=MESH["D000328"])
+
+    _defn = EnumDefinition(
+        name="HumanAgeGroupEnum",
+        description="""Simplified human age group categories based on MeSH classifications. Useful for cohort stratification and demographic reporting.""",
+    )
+
+class MousePostnatalAgeGroupEnum(EnumDefinitionImpl):
+    """
+    Postnatal mouse age groups using postnatal day (P) notation. Common categories used in laboratory research for
+    developmental studies.
+    """
+    P0_P3_NEONATAL = PermissibleValue(
+        text="P0_P3_NEONATAL",
+        description="Neonatal stage from birth through postnatal day 3")
+    P4_P21_PREWEANING = PermissibleValue(
+        text="P4_P21_PREWEANING",
+        description="Pre-weaning stage from postnatal days 4-21 (typical weaning age)")
+    P21_P60_YOUNG_ADULT = PermissibleValue(
+        text="P21_P60_YOUNG_ADULT",
+        description="Young adult stage from postnatal days 21-60 (3 weeks to 2 months)")
+    P60_P180_ADULT = PermissibleValue(
+        text="P60_P180_ADULT",
+        description="Adult stage from postnatal days 60-180 (2 to 6 months)")
+    P180_P365_MIDDLE_AGED = PermissibleValue(
+        text="P180_P365_MIDDLE_AGED",
+        description="Middle-aged stage from postnatal days 180-365 (6 to 12 months)")
+    P365_PLUS_AGED = PermissibleValue(
+        text="P365_PLUS_AGED",
+        description="Aged stage from postnatal day 365 onwards (12+ months)")
+
+    _defn = EnumDefinition(
+        name="MousePostnatalAgeGroupEnum",
+        description="""Postnatal mouse age groups using postnatal day (P) notation. Common categories used in laboratory research for developmental studies.""",
     )
 
 class DayOfWeek(EnumDefinitionImpl):
@@ -8495,8 +8565,7 @@ class GeothermalApplication(EnumDefinitionImpl):
     ELECTRICITY_GENERATION = PermissibleValue(
         text="ELECTRICITY_GENERATION",
         title="Electricity Generation",
-        description="""Use of geothermal resources for power generation through steam turbines or binary cycle plants.""",
-        meaning=ENVO["2000034"])
+        description="""Use of geothermal resources for power generation through steam turbines or binary cycle plants.""")
     DIRECT_USE_HEATING = PermissibleValue(
         text="DIRECT_USE_HEATING",
         title="Direct Use Heating",
@@ -8626,7 +8695,7 @@ class HydrogenProductionMethod(EnumDefinitionImpl):
         description="""Exothermic process reacting hydrocarbons with limited oxygen to produce hydrogen and carbon monoxide.""")
     COAL_GASIFICATION = PermissibleValue(
         text="COAL_GASIFICATION",
-        title="Coal Gasification",
+        title="gasification",
         description="Conversion of coal to syngas (hydrogen and carbon monoxide) using high temperature and steam.",
         meaning=CHMO["0001501"])
     WATER_ELECTROLYSIS = PermissibleValue(
@@ -8720,8 +8789,7 @@ class HydrogenApplication(EnumDefinitionImpl):
     INDUSTRIAL_FEEDSTOCK = PermissibleValue(
         text="INDUSTRIAL_FEEDSTOCK",
         title="Industrial Feedstock",
-        description="""Use of hydrogen as chemical feedstock for ammonia production, petroleum refining, and chemical synthesis.""",
-        meaning=CHEBI["18276"])
+        description="""Use of hydrogen as chemical feedstock for ammonia production, petroleum refining, and chemical synthesis.""")
     STEEL_PRODUCTION = PermissibleValue(
         text="STEEL_PRODUCTION",
         title="Steel Production (Direct Reduction)",
@@ -8852,8 +8920,7 @@ class BiofuelType(EnumDefinitionImpl):
     BIODIESEL = PermissibleValue(
         text="BIODIESEL",
         title="Biodiesel",
-        description="""Fatty acid methyl esters (FAME) produced by transesterification of vegetable oils or animal fats.""",
-        meaning=MESH["D056804"])
+        description="""Fatty acid methyl esters (FAME) produced by transesterification of vegetable oils or animal fats.""")
     RENEWABLE_DIESEL = PermissibleValue(
         text="RENEWABLE_DIESEL",
         title="Renewable Diesel",
@@ -8877,11 +8944,10 @@ class BiofuelType(EnumDefinitionImpl):
     SYNGAS = PermissibleValue(
         text="SYNGAS",
         title="Syngas (Bio-Based)",
-        description="Synthesis gas (CO + H2) produced by gasification of biomass.",
-        meaning=CHMO["0001501"])
+        description="Synthesis gas (CO + H2) produced by gasification of biomass.")
     BUTANOL = PermissibleValue(
         text="BUTANOL",
-        title="Biobutanol",
+        title="butan-1-ol",
         description="Four-carbon alcohol biofuel with higher energy density than ethanol.",
         meaning=CHEBI["28885"])
     METHANOL = PermissibleValue(
@@ -10822,6 +10888,122 @@ class StudyPopulationEnum(EnumDefinitionImpl):
     _defn = EnumDefinition(
         name="StudyPopulationEnum",
         description="Specific population groups commonly studied in exposure research",
+    )
+
+class HHEARExposureAssessedEnum(EnumDefinitionImpl):
+    """
+    Categories of environmental exposures assessed in Human Health Exposure Analysis Resource (HHEAR) studies. Based
+    on the HHEAR value set HHEARVS:00008 (Study Environmental Exposures Assessed).
+    """
+    AIR_POLLUTANT = PermissibleValue(
+        text="AIR_POLLUTANT",
+        title="exposure to air pollution",
+        description="Airborne pollutants including particulate matter and gaseous contaminants",
+        meaning=ECTO["8000036"])
+    ALKYL_PHOSPHATE_PESTICIDE_METABOLITE = PermissibleValue(
+        text="ALKYL_PHOSPHATE_PESTICIDE_METABOLITE",
+        title="exposure to pesticide",
+        description="Metabolites of organophosphate pesticides",
+        meaning=ECTO["0000530"])
+    ALLERGEN = PermissibleValue(
+        text="ALLERGEN",
+        title="exposure to allergen",
+        description="Substances that can cause allergic reactions",
+        meaning=ECTO["0000726"])
+    ARSENIC_SPECIES = PermissibleValue(
+        text="ARSENIC_SPECIES",
+        title="exposure to arsenic",
+        description="Various forms of arsenic compounds",
+        meaning=ECTO["9000032"])
+    BROMINATED_FLAME_RETARDANT = PermissibleValue(
+        text="BROMINATED_FLAME_RETARDANT",
+        title="exposure to brominated flame retardant",
+        description="Organobromine compounds used as flame retardants",
+        meaning=ECTO["9002162"])
+    BUILT_ENVIRONMENT = PermissibleValue(
+        text="BUILT_ENVIRONMENT",
+        title="Built Environment",
+        description="Human-made surroundings including buildings and infrastructure",
+        meaning=EXO["0000048"])
+    ENVIRONMENTAL_PHENOL = PermissibleValue(
+        text="ENVIRONMENTAL_PHENOL",
+        title="exposure to phenol",
+        description="Phenolic compounds in the environment",
+        meaning=ECTO["9000071"])
+    FOOD_PACKAGING = PermissibleValue(
+        text="FOOD_PACKAGING",
+        title="Food Packaging",
+        description="Materials used to package food products",
+        meaning=FOODON["03490100"])
+    MERCURY_SPECIES = PermissibleValue(
+        text="MERCURY_SPECIES",
+        title="exposure to mercury",
+        description="Various forms of mercury compounds",
+        meaning=ECTO["0001571"])
+    METAL = PermissibleValue(
+        text="METAL",
+        title="exposure to heavy metal",
+        description="Metallic elements and compounds",
+        meaning=ECTO["9002163"])
+    ORGANOCHLORINE_COMPOUND = PermissibleValue(
+        text="ORGANOCHLORINE_COMPOUND",
+        title="exposure to organochlorine compound",
+        description="Organic compounds containing chlorine",
+        meaning=ECTO["0001152"])
+    ORGANOPHOSPHORUS_FLAME_RETARDANT = PermissibleValue(
+        text="ORGANOPHOSPHORUS_FLAME_RETARDANT",
+        title="exposure to organophosphorus compound",
+        description="Organophosphorus compounds used as flame retardants",
+        meaning=ECTO["9000284"])
+    PARABEN = PermissibleValue(
+        text="PARABEN",
+        title="exposure to paraben",
+        description="4-hydroxybenzoate esters used as preservatives",
+        meaning=ECTO["9000930"])
+    PERFLUOROALKYL_AND_POLYFLUOROALKYL_SUBSTANCE = PermissibleValue(
+        text="PERFLUOROALKYL_AND_POLYFLUOROALKYL_SUBSTANCE",
+        title="exposure to perfluoroalkyl substance",
+        description="PFAS compounds including PFOA and PFOS",
+        meaning=ECTO["9002160"])
+    PESTICIDE = PermissibleValue(
+        text="PESTICIDE",
+        title="exposure to pesticide",
+        description="Substances used to control pests",
+        meaning=ECTO["0000530"])
+    PHTHALATE = PermissibleValue(
+        text="PHTHALATE",
+        title="exposure to phthalate",
+        description="Phthalic acid esters used as plasticizers",
+        meaning=ECTO["9000522"])
+    POLYBROMINATED_DIPHENYL_ETHER = PermissibleValue(
+        text="POLYBROMINATED_DIPHENYL_ETHER",
+        title="exposure to polybromodiphenyl ether",
+        description="Brominated aromatic ethers used as flame retardants",
+        meaning=ECTO["9001619"])
+    TOBACCO_METABOLITE = PermissibleValue(
+        text="TOBACCO_METABOLITE",
+        title="exposure to tobacco",
+        description="Metabolites of tobacco and nicotine",
+        meaning=ECTO["0100013"])
+    TOBACCO_SMOKE_EXPOSURE = PermissibleValue(
+        text="TOBACCO_SMOKE_EXPOSURE",
+        title="exposure to tobacco smoking",
+        description="Exposure to primary or secondhand tobacco smoke",
+        meaning=ECTO["6000029"])
+    VOLATILE_ORGANIC_COMPOUND = PermissibleValue(
+        text="VOLATILE_ORGANIC_COMPOUND",
+        title="exposure to volatile organic compound",
+        description="Organic compounds with high vapor pressure",
+        meaning=ECTO["9001621"])
+    WEATHER = PermissibleValue(
+        text="WEATHER",
+        title="exposure to weather",
+        description="Atmospheric conditions and weather-related exposures",
+        meaning=ECTO["1000020"])
+
+    _defn = EnumDefinition(
+        name="HHEARExposureAssessedEnum",
+        description="""Categories of environmental exposures assessed in Human Health Exposure Analysis Resource (HHEAR) studies. Based on the HHEAR value set HHEARVS:00008 (Study Environmental Exposures Assessed).""",
     )
 
 class CountryCodeISO2Enum(EnumDefinitionImpl):
@@ -18233,9 +18415,9 @@ class UniProtSpeciesCode(EnumDefinitionImpl):
         meaning=NCBITAXON["4565"])
     SP_XANCP = PermissibleValue(
         text="SP_XANCP",
-        title="Xanthomonas campestris",
+        title="Xanthomonas campestris pv. campestris",
         description="Xanthomonas campestris (xanthomonas) - Proteome: UP000001010",
-        meaning=NCBITAXON["190485"])
+        meaning=NCBITAXON["340"])
     SP_XENLA = PermissibleValue(
         text="SP_XENLA",
         title="Xenopus laevis",
@@ -18250,7 +18432,7 @@ class UniProtSpeciesCode(EnumDefinitionImpl):
         text="SP_YARLI",
         title="Yarrowia lipolytica",
         description="Yarrowia lipolytica (Yeast) - Proteome: UP000001300",
-        meaning=NCBITAXON["284591"])
+        meaning=NCBITAXON["4952"])
     SP_YEAST = PermissibleValue(
         text="SP_YEAST",
         title="Saccharomyces cerevisiae S288C",
@@ -21516,29 +21698,29 @@ class PediatricOncologyDiagnosisCategory(EnumDefinitionImpl):
     """
     ATYPICAL_TERATOID_RHABDOID_TUMOR = PermissibleValue(
         text="ATYPICAL_TERATOID_RHABDOID_TUMOR",
-        title="Atypical Teratoid/Rhabdoid Tumors",
+        title="Atypical Teratoid/Rhabdoid Tumor",
         description="""Highly malignant embryonal CNS tumor characterized by loss of SMARCB1 (INI1) or SMARCA4 expression. Predominantly occurs in young children.""",
-        meaning=NCIT["C6807"])
+        meaning=NCIT["C6906"])
     CHOROID_PLEXUS_TUMOR = PermissibleValue(
         text="CHOROID_PLEXUS_TUMOR",
-        title="Choroid Plexus Tumors",
+        title="Choroid Plexus Neoplasm",
         description="""Neoplasms arising from the choroid plexus epithelium, including papilloma, atypical papilloma, and carcinoma.""",
-        meaning=NCIT["C3698"])
+        meaning=NCIT["C3473"])
     CNS_GERM_CELL_TUMOR = PermissibleValue(
         text="CNS_GERM_CELL_TUMOR",
-        title="CNS Germ Cell Tumors",
+        title="Central Nervous System Germ Cell Tumor",
         description="""Germ cell tumors arising within the central nervous system, including germinoma and non-germinomatous germ cell tumors.""",
-        meaning=NCIT["C6286"])
+        meaning=NCIT["C5461"])
     CNS_SARCOMA = PermissibleValue(
         text="CNS_SARCOMA",
-        title="CNS Sarcomas",
+        title="Central Nervous System Sarcoma",
         description="""Sarcomas arising primarily in the central nervous system, including Ewing sarcoma and rhabdomyosarcoma of CNS.""",
-        meaning=NCIT["C121624"])
+        meaning=NCIT["C5153"])
     CRANIOPHARYNGIOMA = PermissibleValue(
         text="CRANIOPHARYNGIOMA",
-        title="Craniopharyngiomas",
+        title="Craniopharyngioma",
         description="""Benign epithelial tumors arising from remnants of Rathke pouch, including adamantinomatous and papillary subtypes.""",
-        meaning=NCIT["C2998"])
+        meaning=NCIT["C2964"])
     EPENDYMOMA = PermissibleValue(
         text="EPENDYMOMA",
         title="Ependymoma",
@@ -21548,17 +21730,17 @@ class PediatricOncologyDiagnosisCategory(EnumDefinitionImpl):
         text="GLIONEURONAL_AND_NEURONAL_TUMOR",
         title="Glioneuronal and Neuronal Tumors",
         description="""Tumors with neuronal differentiation including ganglioglioma, dysembryoplastic neuroepithelial tumor (DNET), and central neurocytoma.""",
-        meaning=NCIT["C6927"])
+        meaning=NCIT["C4747"])
     HIGH_GRADE_GLIOMA = PermissibleValue(
         text="HIGH_GRADE_GLIOMA",
-        title="High-Grade Gliomas",
+        title="Malignant Glioma",
         description="""Aggressive glial tumors including pediatric-type diffuse high-grade gliomas (H3 K27-altered, H3 G34-mutant, and H3/IDH-wildtype), as well as glioblastoma.""",
-        meaning=NCIT["C129355"])
+        meaning=NCIT["C4822"])
     LOW_GRADE_GLIOMA = PermissibleValue(
         text="LOW_GRADE_GLIOMA",
-        title="Low-Grade Gliomas",
+        title="Low Grade Glioma",
         description="""Indolent glial tumors including pilocytic astrocytoma and pediatric-type diffuse low-grade gliomas (MYB/MYBL1-altered, MAPK pathway-altered).""",
-        meaning=NCIT["C129354"])
+        meaning=NCIT["C132067"])
     MEDULLOBLASTOMA = PermissibleValue(
         text="MEDULLOBLASTOMA",
         title="Medulloblastoma",
@@ -21566,17 +21748,17 @@ class PediatricOncologyDiagnosisCategory(EnumDefinitionImpl):
         meaning=NCIT["C3222"])
     OTHER_CNS_EMBRYONAL_TUMOR = PermissibleValue(
         text="OTHER_CNS_EMBRYONAL_TUMOR",
-        title="Other CNS Embryonal Tumors",
+        title="Central Nervous System Embryonal Tumor",
         description="""Embryonal tumors of the CNS other than medulloblastoma and ATRT, including embryonal tumor with multilayered rosettes (ETMR), CNS neuroblastoma, and pineoblastoma.""",
-        meaning=NCIT["C6774"])
+        meaning=NCIT["C6990"])
     OTHER_GLIOMA = PermissibleValue(
         text="OTHER_GLIOMA",
-        title="Other Gliomas",
+        title="Glioma",
         description="""Glial tumors not classified as high-grade or low-grade glioma, including angiocentric glioma and astroblastoma.""",
         meaning=NCIT["C3059"])
     OTHER_BRAIN_TUMOR = PermissibleValue(
         text="OTHER_BRAIN_TUMOR",
-        title="Other Brain Tumors",
+        title="Brain Neoplasm",
         description="""CNS tumors not fitting other brain tumor categories, including meningioma, schwannoma, and hemangioblastoma.""",
         meaning=NCIT["C2907"])
     LYMPHOBLASTIC_LEUKEMIA = PermissibleValue(
@@ -21601,12 +21783,12 @@ class PediatricOncologyDiagnosisCategory(EnumDefinitionImpl):
         meaning=NCIT["C3211"])
     LYMPHOPROLIFERATIVE_DISEASE = PermissibleValue(
         text="LYMPHOPROLIFERATIVE_DISEASE",
-        title="Lymphoproliferative Diseases",
+        title="Lymphoproliferative Disorder",
         description="""Disorders characterized by abnormal lymphocyte proliferation, including post-transplant lymphoproliferative disorder (PTLD) and hemophagocytic lymphohistiocytosis (HLH).""",
-        meaning=NCIT["C3138"])
+        meaning=NCIT["C9308"])
     OTHER_HEME_TUMOR = PermissibleValue(
         text="OTHER_HEME_TUMOR",
-        title="Other Heme Tumors",
+        title="Hematopoietic and Lymphoid Cell Neoplasm",
         description="""Hematologic malignancies not classified elsewhere, including histiocytic disorders, myelodysplastic syndromes, and myeloproliferative neoplasms.""",
         meaning=NCIT["C27134"])
     NEUROBLASTOMA = PermissibleValue(
@@ -21631,17 +21813,17 @@ class PediatricOncologyDiagnosisCategory(EnumDefinitionImpl):
         meaning=NCIT["C3359"])
     SOFT_TISSUE_TUMOR = PermissibleValue(
         text="SOFT_TISSUE_TUMOR",
-        title="Soft Tissue Tumors",
+        title="Soft Tissue Sarcoma",
         description="""Soft tissue neoplasms other than rhabdomyosarcoma and Ewing sarcoma, including synovial sarcoma, fibrosarcoma, and other sarcomas. Also includes non-sarcomatous soft tissue tumors.""",
-        meaning=NCIT["C3399"])
+        meaning=NCIT["C9306"])
     RHABDOID_TUMOR = PermissibleValue(
         text="RHABDOID_TUMOR",
-        title="Rhabdoid Tumors",
+        title="Rhabdoid Tumor",
         description="""Highly aggressive tumors characterized by SMARCB1 loss, occurring outside the CNS (extracranial rhabdoid tumor). Includes malignant rhabdoid tumor of kidney.""",
-        meaning=NCIT["C3769"])
+        meaning=NCIT["C3808"])
     RENAL_TUMOR = PermissibleValue(
         text="RENAL_TUMOR",
-        title="Renal Tumors",
+        title="Malignant Kidney Neoplasm",
         description="""Kidney tumors including Wilms tumor (nephroblastoma), clear cell sarcoma of kidney, renal cell carcinoma, and congenital mesoblastic nephroma.""",
         meaning=NCIT["C7548"])
     RETINOBLASTOMA = PermissibleValue(
@@ -21656,12 +21838,12 @@ class PediatricOncologyDiagnosisCategory(EnumDefinitionImpl):
         meaning=NCIT["C3708"])
     ENDOCRINE_AND_NEUROENDOCRINE_TUMOR = PermissibleValue(
         text="ENDOCRINE_AND_NEUROENDOCRINE_TUMOR",
-        title="Endocrine and Neuroendocrine Tumors",
+        title="Endocrine Neoplasm",
         description="""Tumors of endocrine glands and neuroendocrine cells, including thyroid carcinoma, adrenocortical carcinoma, pheochromocytoma, and paraganglioma.""",
         meaning=NCIT["C3010"])
     OTHER_SOLID_TUMOR = PermissibleValue(
         text="OTHER_SOLID_TUMOR",
-        title="Other Solid Tumors",
+        title="Childhood Solid Neoplasm",
         description="""Solid tumors not classified elsewhere, including hepatoblastoma, pleuropulmonary blastoma, nasopharyngeal carcinoma, melanoma, and carcinomas.""",
         meaning=NCIT["C9107"])
 
@@ -21677,62 +21859,62 @@ class ICCC3MainGroup(EnumDefinitionImpl):
     """
     I_LEUKEMIAS_MYELOPROLIFERATIVE_MYELODYSPLASTIC = PermissibleValue(
         text="I_LEUKEMIAS_MYELOPROLIFERATIVE_MYELODYSPLASTIC",
-        title="I. Leukemias, myeloproliferative diseases, and myelodysplastic diseases",
+        title="Leukemia",
         description="""Includes lymphoid leukemias, acute myeloid leukemias, chronic myeloproliferative diseases, myelodysplastic syndrome and other myeloproliferative diseases, and unspecified and other specified leukemias.""",
         meaning=NCIT["C3161"])
     II_LYMPHOMAS_RETICULOENDOTHELIAL = PermissibleValue(
         text="II_LYMPHOMAS_RETICULOENDOTHELIAL",
-        title="II. Lymphomas and reticuloendothelial neoplasms",
+        title="Lymphoma",
         description="""Includes Hodgkin lymphomas, non-Hodgkin lymphomas (except Burkitt lymphoma), Burkitt lymphoma, and miscellaneous lymphoreticular neoplasms.""",
-        meaning=NCIT["C7058"])
+        meaning=NCIT["C3208"])
     III_CNS_INTRACRANIAL_INTRASPINAL = PermissibleValue(
         text="III_CNS_INTRACRANIAL_INTRASPINAL",
-        title="III. CNS and miscellaneous intracranial and intraspinal neoplasms",
+        title="Brain Neoplasm",
         description="""Includes ependymomas and choroid plexus tumor, astrocytomas, intracranial and intraspinal embryonal tumors, other gliomas, other specified intracranial and intraspinal neoplasms, and unspecified intracranial and intraspinal neoplasms. Also includes nonmalignant CNS tumors.""",
         meaning=NCIT["C2907"])
     IV_NEUROBLASTOMA_PERIPHERAL_NERVOUS = PermissibleValue(
         text="IV_NEUROBLASTOMA_PERIPHERAL_NERVOUS",
-        title="IV. Neuroblastoma and other peripheral nervous cell tumors",
+        title="Neuroblastoma",
         description="Includes neuroblastoma and ganglioneuroblastoma, and other peripheral nervous cell tumors.",
         meaning=NCIT["C3270"])
     V_RETINOBLASTOMA = PermissibleValue(
         text="V_RETINOBLASTOMA",
-        title="V. Retinoblastoma",
+        title="Retinoblastoma",
         description="Malignant neoplasm of the retina. Single group with no subgroups.",
         meaning=NCIT["C7541"])
     VI_RENAL_TUMORS = PermissibleValue(
         text="VI_RENAL_TUMORS",
-        title="VI. Renal tumors",
+        title="Malignant Kidney Neoplasm",
         description="""Includes nephroblastoma and other nonepithelial renal tumors, renal carcinomas, and unspecified malignant renal tumors.""",
         meaning=NCIT["C7548"])
     VII_HEPATIC_TUMORS = PermissibleValue(
         text="VII_HEPATIC_TUMORS",
-        title="VII. Hepatic tumors",
+        title="Liver Carcinoma",
         description="Includes hepatoblastoma, hepatic carcinomas, and unspecified malignant hepatic tumors.",
         meaning=NCIT["C7927"])
     VIII_MALIGNANT_BONE_TUMORS = PermissibleValue(
         text="VIII_MALIGNANT_BONE_TUMORS",
-        title="VIII. Malignant bone tumors",
+        title="Malignant Bone Neoplasm",
         description="""Includes osteosarcomas, chondrosarcomas, Ewing tumor and related sarcomas of bone, other specified malignant bone tumors, and unspecified malignant bone tumors.""",
-        meaning=NCIT["C4882"])
+        meaning=NCIT["C4016"])
     IX_SOFT_TISSUE_SARCOMAS = PermissibleValue(
         text="IX_SOFT_TISSUE_SARCOMAS",
-        title="IX. Soft tissue and other extraosseous sarcomas",
+        title="Soft Tissue Sarcoma",
         description="""Includes rhabdomyosarcomas, fibrosarcomas/peripheral nerve sheath tumors/other fibrous neoplasms, Kaposi sarcoma, other specified soft tissue sarcomas, and unspecified soft tissue sarcomas.""",
         meaning=NCIT["C9306"])
     X_GERM_CELL_GONADAL = PermissibleValue(
         text="X_GERM_CELL_GONADAL",
-        title="X. Germ cell tumors, trophoblastic tumors, and neoplasms of gonads",
+        title="Germ Cell Tumor",
         description="""Includes intracranial and intraspinal germ cell tumors, malignant extracranial and extragonadal germ cell tumors, malignant gonadal germ cell tumors, gonadal carcinomas, and other and unspecified malignant gonadal tumors.""",
         meaning=NCIT["C3708"])
     XI_EPITHELIAL_MELANOMA = PermissibleValue(
         text="XI_EPITHELIAL_MELANOMA",
-        title="XI. Other malignant epithelial neoplasms and malignant melanomas",
+        title="Epithelial Neoplasm",
         description="""Includes adrenocortical carcinomas, thyroid carcinomas, nasopharyngeal carcinomas, malignant melanomas, skin carcinomas, and other and unspecified carcinomas.""",
         meaning=NCIT["C3709"])
     XII_OTHER_UNSPECIFIED = PermissibleValue(
         text="XII_OTHER_UNSPECIFIED",
-        title="XII. Other and unspecified malignant neoplasms",
+        title="Neoplasm",
         description="""Includes other specified malignant tumors and other unspecified malignant tumors not classifiable in groups I-XI.""",
         meaning=NCIT["C3262"])
 
@@ -21748,237 +21930,237 @@ class ICCC3Subgroup(EnumDefinitionImpl):
     """
     Ia_LYMPHOID_LEUKEMIAS = PermissibleValue(
         text="Ia_LYMPHOID_LEUKEMIAS",
-        title="Ia. Lymphoid leukemias",
+        title="Acute Lymphoblastic Leukemia",
         description="""Precursor cell lymphoblastic leukemia, NOS; precursor cell lymphoblastic leukemia, B-cell; precursor cell lymphoblastic leukemia, T-cell; Burkitt cell leukemia; and other lymphoid leukemias.""",
         meaning=NCIT["C3167"])
     Ib_ACUTE_MYELOID_LEUKEMIAS = PermissibleValue(
         text="Ib_ACUTE_MYELOID_LEUKEMIAS",
-        title="Ib. Acute myeloid leukemias",
+        title="Acute Myeloid Leukemia",
         description="""Acute myeloid leukemia and variants including AML with maturation, acute promyelocytic leukemia, acute myelomonocytic leukemia, acute monoblastic leukemia, acute megakaryoblastic leukemia, etc.""",
         meaning=NCIT["C3171"])
     Ic_CHRONIC_MYELOPROLIFERATIVE = PermissibleValue(
         text="Ic_CHRONIC_MYELOPROLIFERATIVE",
-        title="Ic. Chronic myeloproliferative diseases",
+        title="Myeloproliferative Neoplasm",
         description="""Chronic myeloid leukemia, NOS; juvenile myelomonocytic leukemia; and other chronic myeloproliferative diseases.""",
         meaning=NCIT["C4345"])
     Id_MYELODYSPLASTIC_OTHER_MYELOPROLIFERATIVE = PermissibleValue(
         text="Id_MYELODYSPLASTIC_OTHER_MYELOPROLIFERATIVE",
-        title="Id. Myelodysplastic syndrome and other myeloproliferative diseases",
+        title="Myelodysplastic Syndrome",
         description="""Myelodysplastic syndrome, NOS; refractory anemia; refractory anemia with ringed sideroblasts; refractory anemia with excess blasts.""",
         meaning=NCIT["C3247"])
     Ie_UNSPECIFIED_OTHER_LEUKEMIAS = PermissibleValue(
         text="Ie_UNSPECIFIED_OTHER_LEUKEMIAS",
-        title="Ie. Unspecified and other specified leukemias",
+        title="Leukemia",
         description="Leukemia, NOS and other specified leukemias not elsewhere classified.",
         meaning=NCIT["C3161"])
     IIa_HODGKIN_LYMPHOMAS = PermissibleValue(
         text="IIa_HODGKIN_LYMPHOMAS",
-        title="IIa. Hodgkin lymphomas",
+        title="Hodgkin Lymphoma",
         description="Classical Hodgkin lymphoma and nodular lymphocyte predominant Hodgkin lymphoma.",
         meaning=NCIT["C9357"])
     IIb_NON_HODGKIN_LYMPHOMAS = PermissibleValue(
         text="IIb_NON_HODGKIN_LYMPHOMAS",
-        title="IIb. Non-Hodgkin lymphomas (except Burkitt lymphoma)",
+        title="Non-Hodgkin Lymphoma",
         description="""Diffuse large B-cell lymphoma, follicular lymphoma, peripheral T-cell lymphoma, anaplastic large cell lymphoma, and other non-Hodgkin lymphomas.""",
         meaning=NCIT["C3211"])
     IIc_BURKITT_LYMPHOMA = PermissibleValue(
         text="IIc_BURKITT_LYMPHOMA",
-        title="IIc. Burkitt lymphoma",
+        title="Burkitt Lymphoma",
         description="Burkitt lymphoma and Burkitt-like lymphoma.",
-        meaning=NCIT["C8150"])
+        meaning=NCIT["C2912"])
     IId_MISC_LYMPHORETICULAR = PermissibleValue(
         text="IId_MISC_LYMPHORETICULAR",
-        title="IId. Miscellaneous lymphoreticular neoplasms",
+        title="Hematopoietic and Lymphoid Cell Neoplasm",
         description="""Lymphoreticular neoplasms not elsewhere classified including lymphomatoid granulomatosis and post-transplant lymphoproliferative disorder.""",
         meaning=NCIT["C27134"])
     IIIa_EPENDYMOMAS = PermissibleValue(
         text="IIIa_EPENDYMOMAS",
-        title="IIIa. Ependymomas and choroid plexus tumor",
+        title="Ependymoma",
         description="""Ependymoma, anaplastic ependymoma, myxopapillary ependymoma, and choroid plexus papilloma and carcinoma.""",
         meaning=NCIT["C3017"])
     IIIb_ASTROCYTOMAS = PermissibleValue(
         text="IIIb_ASTROCYTOMAS",
-        title="IIIb. Astrocytomas",
+        title="Astrocytoma",
         description="""Pilocytic astrocytoma, diffuse astrocytoma, anaplastic astrocytoma, glioblastoma, and other astrocytic tumors.""",
         meaning=NCIT["C60781"])
     IIIc_INTRACRANIAL_EMBRYONAL = PermissibleValue(
         text="IIIc_INTRACRANIAL_EMBRYONAL",
-        title="IIIc. Intracranial and intraspinal embryonal tumors",
+        title="Central Nervous System Embryonal Tumor",
         description="""Medulloblastoma, primitive neuroectodermal tumor, medulloepithelioma, atypical teratoid/rhabdoid tumor, and other embryonal tumors.""",
-        meaning=NCIT["C6774"])
+        meaning=NCIT["C6990"])
     IIId_OTHER_GLIOMAS = PermissibleValue(
         text="IIId_OTHER_GLIOMAS",
-        title="IIId. Other gliomas",
+        title="Glioma",
         description="""Oligodendroglioma, anaplastic oligodendroglioma, mixed glioma, and other gliomas not elsewhere classified.""",
         meaning=NCIT["C3059"])
     IIIe_OTHER_INTRACRANIAL_INTRASPINAL = PermissibleValue(
         text="IIIe_OTHER_INTRACRANIAL_INTRASPINAL",
-        title="IIIe. Other specified intracranial and intraspinal neoplasms",
+        title="Brain Neoplasm",
         description="""Pituitary adenoma, craniopharyngioma, pineal tumors, and other specified intracranial neoplasms.""",
         meaning=NCIT["C2907"])
     IIIf_UNSPECIFIED_INTRACRANIAL = PermissibleValue(
         text="IIIf_UNSPECIFIED_INTRACRANIAL",
-        title="IIIf. Unspecified intracranial and intraspinal neoplasms",
+        title="Brain Neoplasm",
         description="Intracranial and intraspinal neoplasms, NOS.",
         meaning=NCIT["C2907"])
     IVa_NEUROBLASTOMA_GANGLIONEUROBLASTOMA = PermissibleValue(
         text="IVa_NEUROBLASTOMA_GANGLIONEUROBLASTOMA",
-        title="IVa. Neuroblastoma and ganglioneuroblastoma",
+        title="Neuroblastoma",
         description="Neuroblastoma, NOS and ganglioneuroblastoma.",
         meaning=NCIT["C3270"])
     IVb_OTHER_PERIPHERAL_NERVOUS = PermissibleValue(
         text="IVb_OTHER_PERIPHERAL_NERVOUS",
-        title="IVb. Other peripheral nervous cell tumors",
+        title="Peripheral Nervous System Neoplasm",
         description="Other peripheral nerve tumors including ganglioneuroma and peripheral nerve sheath tumors.",
-        meaning=NCIT["C4969"])
+        meaning=NCIT["C3321"])
     V_RETINOBLASTOMA = PermissibleValue(
         text="V_RETINOBLASTOMA",
-        title="V. Retinoblastoma",
+        title="Retinoblastoma",
         description="Retinoblastoma.",
         meaning=NCIT["C7541"])
     VIa_NEPHROBLASTOMA = PermissibleValue(
         text="VIa_NEPHROBLASTOMA",
-        title="VIa. Nephroblastoma and other nonepithelial renal tumors",
+        title="Wilms Tumor",
         description="""Wilms tumor (nephroblastoma), clear cell sarcoma of kidney, rhabdoid tumor of kidney, and other nonepithelial renal tumors.""",
         meaning=NCIT["C3267"])
     VIb_RENAL_CARCINOMAS = PermissibleValue(
         text="VIb_RENAL_CARCINOMAS",
-        title="VIb. Renal carcinomas",
+        title="Renal Cell Carcinoma",
         description="Renal cell carcinoma and other renal carcinomas.",
         meaning=NCIT["C9385"])
     VIc_UNSPECIFIED_RENAL = PermissibleValue(
         text="VIc_UNSPECIFIED_RENAL",
-        title="VIc. Unspecified malignant renal tumors",
+        title="Malignant Kidney Neoplasm",
         description="Malignant renal tumors, NOS.",
         meaning=NCIT["C7548"])
     VIIa_HEPATOBLASTOMA = PermissibleValue(
         text="VIIa_HEPATOBLASTOMA",
-        title="VIIa. Hepatoblastoma",
+        title="Hepatoblastoma",
         description="Hepatoblastoma.",
         meaning=NCIT["C3728"])
     VIIb_HEPATIC_CARCINOMAS = PermissibleValue(
         text="VIIb_HEPATIC_CARCINOMAS",
-        title="VIIb. Hepatic carcinomas",
+        title="Hepatocellular Carcinoma",
         description="Hepatocellular carcinoma, cholangiocarcinoma, and other hepatic carcinomas.",
         meaning=NCIT["C3099"])
     VIIc_UNSPECIFIED_HEPATIC = PermissibleValue(
         text="VIIc_UNSPECIFIED_HEPATIC",
-        title="VIIc. Unspecified malignant hepatic tumors",
+        title="Liver Carcinoma",
         description="Malignant hepatic tumors, NOS.",
         meaning=NCIT["C7927"])
     VIIIa_OSTEOSARCOMAS = PermissibleValue(
         text="VIIIa_OSTEOSARCOMAS",
-        title="VIIIa. Osteosarcomas",
+        title="Osteosarcoma",
         description="""Osteosarcoma, NOS and variants including chondroblastic, fibroblastic, telangiectatic, and small cell osteosarcoma.""",
         meaning=NCIT["C9145"])
     VIIIb_CHONDROSARCOMAS = PermissibleValue(
         text="VIIIb_CHONDROSARCOMAS",
-        title="VIIIb. Chondrosarcomas",
+        title="Chondrosarcoma",
         description="Chondrosarcoma, NOS and variants.",
         meaning=NCIT["C2946"])
     VIIIc_EWING_TUMOR_BONE = PermissibleValue(
         text="VIIIc_EWING_TUMOR_BONE",
-        title="VIIIc. Ewing tumor and related sarcomas of bone",
+        title="Ewing Sarcoma",
         description="Ewing sarcoma of bone and peripheral primitive neuroectodermal tumor of bone.",
         meaning=NCIT["C4817"])
     VIIId_OTHER_BONE = PermissibleValue(
         text="VIIId_OTHER_BONE",
-        title="VIIId. Other specified malignant bone tumors",
+        title="Malignant Bone Neoplasm",
         description="""Other specified malignant bone tumors including giant cell tumor of bone, malignant and adamantinoma.""",
-        meaning=NCIT["C4882"])
+        meaning=NCIT["C4016"])
     VIIIe_UNSPECIFIED_BONE = PermissibleValue(
         text="VIIIe_UNSPECIFIED_BONE",
-        title="VIIIe. Unspecified malignant bone tumors",
+        title="Malignant Bone Neoplasm",
         description="Malignant bone tumors, NOS.",
-        meaning=NCIT["C4882"])
+        meaning=NCIT["C4016"])
     IXa_RHABDOMYOSARCOMAS = PermissibleValue(
         text="IXa_RHABDOMYOSARCOMAS",
-        title="IXa. Rhabdomyosarcomas",
+        title="Rhabdomyosarcoma",
         description="""Rhabdomyosarcoma, NOS; embryonal rhabdomyosarcoma; alveolar rhabdomyosarcoma; and other rhabdomyosarcomas.""",
         meaning=NCIT["C3359"])
     IXb_FIBROSARCOMAS = PermissibleValue(
         text="IXb_FIBROSARCOMAS",
-        title="IXb. Fibrosarcomas, peripheral nerve sheath tumors, and other fibrous neoplasms",
+        title="Fibrosarcoma",
         description="""Fibrosarcoma, NOS; infantile fibrosarcoma; dermatofibrosarcoma; and malignant peripheral nerve sheath tumor.""",
         meaning=NCIT["C3043"])
     IXc_KAPOSI_SARCOMA = PermissibleValue(
         text="IXc_KAPOSI_SARCOMA",
-        title="IXc. Kaposi sarcoma",
+        title="Kaposi Sarcoma",
         description="Kaposi sarcoma.",
         meaning=NCIT["C9087"])
     IXd_OTHER_SOFT_TISSUE = PermissibleValue(
         text="IXd_OTHER_SOFT_TISSUE",
-        title="IXd. Other specified soft tissue sarcomas",
+        title="Soft Tissue Sarcoma",
         description="""Includes liposarcoma, leiomyosarcoma, synovial sarcoma, hemangiosarcoma, and other specified soft tissue sarcomas.""",
         meaning=NCIT["C9306"])
     IXe_UNSPECIFIED_SOFT_TISSUE = PermissibleValue(
         text="IXe_UNSPECIFIED_SOFT_TISSUE",
-        title="IXe. Unspecified soft tissue sarcomas",
+        title="Soft Tissue Sarcoma",
         description="Soft tissue sarcomas, NOS.",
         meaning=NCIT["C9306"])
     Xa_INTRACRANIAL_GERM_CELL = PermissibleValue(
         text="Xa_INTRACRANIAL_GERM_CELL",
-        title="Xa. Intracranial and intraspinal germ cell tumors",
+        title="Central Nervous System Germ Cell Tumor",
         description="CNS germ cell tumors including germinoma, teratoma, and nongerminomatous germ cell tumors.",
-        meaning=NCIT["C6286"])
+        meaning=NCIT["C5461"])
     Xb_EXTRACRANIAL_EXTRAGONADAL_GERM_CELL = PermissibleValue(
         text="Xb_EXTRACRANIAL_EXTRAGONADAL_GERM_CELL",
-        title="Xb. Malignant extracranial and extragonadal germ cell tumors",
+        title="Malignant Extragonadal Germ Cell Tumor",
         description="""Extracranial germ cell tumors not involving the gonads including sacrococcygeal, retroperitoneal, and mediastinal germ cell tumors.""",
-        meaning=NCIT["C6545"])
+        meaning=NCIT["C8881"])
     Xc_GONADAL_GERM_CELL = PermissibleValue(
         text="Xc_GONADAL_GERM_CELL",
-        title="Xc. Malignant gonadal germ cell tumors",
+        title="Germ Cell Tumor",
         description="""Germ cell tumors of the ovary and testis including dysgerminoma, yolk sac tumor, embryonal carcinoma, and mixed germ cell tumors.""",
         meaning=NCIT["C3708"])
     Xd_GONADAL_CARCINOMAS = PermissibleValue(
         text="Xd_GONADAL_CARCINOMAS",
-        title="Xd. Gonadal carcinomas",
+        title="Epithelial Neoplasm",
         description="Carcinomas arising in the ovary and testis.",
         meaning=NCIT["C3709"])
     Xe_OTHER_GONADAL = PermissibleValue(
         text="Xe_OTHER_GONADAL",
-        title="Xe. Other and unspecified malignant gonadal tumors",
+        title="Germ Cell Tumor",
         description="Other specified and unspecified gonadal tumors.",
         meaning=NCIT["C3708"])
     XIa_ADRENOCORTICAL_CARCINOMAS = PermissibleValue(
         text="XIa_ADRENOCORTICAL_CARCINOMAS",
-        title="XIa. Adrenocortical carcinomas",
+        title="Adrenal Cortical Carcinoma",
         description="Adrenocortical carcinoma.",
         meaning=NCIT["C9325"])
     XIb_THYROID_CARCINOMAS = PermissibleValue(
         text="XIb_THYROID_CARCINOMAS",
-        title="XIb. Thyroid carcinomas",
+        title="Malignant Thyroid Gland Neoplasm",
         description="Papillary thyroid carcinoma, follicular thyroid carcinoma, and medullary thyroid carcinoma.",
         meaning=NCIT["C7510"])
     XIc_NASOPHARYNGEAL_CARCINOMAS = PermissibleValue(
         text="XIc_NASOPHARYNGEAL_CARCINOMAS",
-        title="XIc. Nasopharyngeal carcinomas",
+        title="Nasopharyngeal Carcinoma",
         description="Nasopharyngeal carcinoma and related carcinomas.",
         meaning=NCIT["C3871"])
     XId_MALIGNANT_MELANOMAS = PermissibleValue(
         text="XId_MALIGNANT_MELANOMAS",
-        title="XId. Malignant melanomas",
+        title="Melanoma",
         description="Cutaneous and non-cutaneous malignant melanomas.",
         meaning=NCIT["C3224"])
     XIe_SKIN_CARCINOMAS = PermissibleValue(
         text="XIe_SKIN_CARCINOMAS",
-        title="XIe. Skin carcinomas",
+        title="Skin Neoplasm",
         description="Basal cell carcinoma, squamous cell carcinoma of skin, and other skin carcinomas.",
         meaning=NCIT["C3372"])
     XIf_OTHER_CARCINOMAS = PermissibleValue(
         text="XIf_OTHER_CARCINOMAS",
-        title="XIf. Other and unspecified carcinomas",
+        title="Epithelial Neoplasm",
         description="Carcinomas at other sites and carcinomas, NOS.",
         meaning=NCIT["C3709"])
     XIIa_OTHER_SPECIFIED = PermissibleValue(
         text="XIIa_OTHER_SPECIFIED",
-        title="XIIa. Other specified malignant tumors",
+        title="Neoplasm",
         description="Malignant tumors not classifiable in groups I-XI but with specified histology.",
         meaning=NCIT["C3262"])
     XIIb_OTHER_UNSPECIFIED = PermissibleValue(
         text="XIIb_OTHER_UNSPECIFIED",
-        title="XIIb. Other unspecified malignant tumors",
+        title="Neoplasm",
         description="Malignant tumors, NOS not classifiable in groups I-XI.",
         meaning=NCIT["C3262"])
 
@@ -21995,24 +22177,24 @@ class INRGSSStage(EnumDefinitionImpl):
     """
     L1 = PermissibleValue(
         text="L1",
-        title="L1 - Localized, no IDRFs",
+        title="INRG Stage L1",
         description="""Localized tumor not involving vital structures as defined by the list of image-defined risk factors and confined to one body compartment (neck, chest, abdomen, or pelvis).""",
-        meaning=NCIT["C133427"])
+        meaning=NCIT["C133428"])
     L2 = PermissibleValue(
         text="L2",
-        title="L2 - Localized, with IDRFs",
+        title="INRG Stage L2",
         description="""Locoregional tumor with presence of one or more image-defined risk factors. The tumor has not spread far from where it started but has at least one IDRF.""",
-        meaning=NCIT["C133428"])
+        meaning=NCIT["C133429"])
     M = PermissibleValue(
         text="M",
-        title="M - Metastatic",
+        title="INRG Stage M",
         description="""Distant metastatic disease (except as defined for MS). The tumor has spread (metastasized) to distant parts of the body.""",
-        meaning=NCIT["C133429"])
+        meaning=NCIT["C133430"])
     MS = PermissibleValue(
         text="MS",
-        title="MS - Metastatic special",
+        title="INRG Stage MS",
         description="""Metastatic disease in children younger than 18 months with metastases confined to skin, liver, and/or bone marrow (bone marrow involvement limited to <10% tumor cells). This stage has a favorable prognosis despite metastatic disease.""",
-        meaning=NCIT["C133430"])
+        meaning=NCIT["C133431"])
 
     _defn = EnumDefinition(
         name="INRGSSStage",
@@ -22027,34 +22209,34 @@ class INSSStage(EnumDefinitionImpl):
     """
     STAGE_1 = PermissibleValue(
         text="STAGE_1",
-        title="Stage 1",
+        title="INSS Stage 1",
         description="""Localized tumor with complete gross excision, with or without microscopic residual disease; representative ipsilateral lymph nodes negative for tumor microscopically.""",
-        meaning=NCIT["C6639"])
+        meaning=NCIT["C85417"])
     STAGE_2A = PermissibleValue(
         text="STAGE_2A",
-        title="Stage 2A",
+        title="INSS Stage 2A",
         description="""Localized tumor with incomplete gross excision; representative ipsilateral nonadherent lymph nodes negative for tumor microscopically.""",
-        meaning=NCIT["C6640"])
+        meaning=NCIT["C85418"])
     STAGE_2B = PermissibleValue(
         text="STAGE_2B",
-        title="Stage 2B",
+        title="INSS Stage 2B",
         description="""Localized tumor with or without complete gross excision, with ipsilateral nonadherent lymph nodes positive for tumor. Enlarged contralateral lymph nodes must be negative microscopically.""",
-        meaning=NCIT["C6641"])
+        meaning=NCIT["C85419"])
     STAGE_3 = PermissibleValue(
         text="STAGE_3",
-        title="Stage 3",
+        title="INSS Stage 3",
         description="""Unresectable unilateral tumor infiltrating across the midline, with or without regional lymph node involvement; or localized unilateral tumor with contralateral regional lymph node involvement; or midline tumor with bilateral extension by infiltration (unresectable) or by lymph node involvement.""",
-        meaning=NCIT["C6642"])
+        meaning=NCIT["C85420"])
     STAGE_4 = PermissibleValue(
         text="STAGE_4",
-        title="Stage 4",
+        title="INSS Stage 4",
         description="""Any primary tumor with dissemination to distant lymph nodes, bone, bone marrow, liver, skin, and/or other organs (except as defined for stage 4S).""",
-        meaning=NCIT["C6643"])
+        meaning=NCIT["C85421"])
     STAGE_4S = PermissibleValue(
         text="STAGE_4S",
-        title="Stage 4S",
+        title="INSS Stage 4S",
         description="""Localized primary tumor (as defined for stage 1, 2A, or 2B) with dissemination limited to skin, liver, and/or bone marrow (limited to infants <1 year of age). Marrow involvement should be minimal (<10% of total nucleated cells).""",
-        meaning=NCIT["C6644"])
+        meaning=NCIT["C85422"])
 
     _defn = EnumDefinition(
         name="INSSStage",
@@ -22069,23 +22251,20 @@ class NeuroblastomaRiskGroup(EnumDefinitionImpl):
     VERY_LOW = PermissibleValue(
         text="VERY_LOW",
         title="Very Low Risk",
-        description="""Very low risk neuroblastoma with excellent prognosis. Typically includes L1 tumors and MS without MYCN amplification.""",
-        meaning=NCIT["C103236"])
+        description="""Very low risk neuroblastoma with excellent prognosis. Typically includes L1 tumors and MS without MYCN amplification.""")
     LOW = PermissibleValue(
         text="LOW",
         title="Low Risk",
-        description="""Low risk neuroblastoma with favorable prognosis. Treatment may include surgery alone or observation.""",
-        meaning=NCIT["C103237"])
+        description="""Low risk neuroblastoma with favorable prognosis. Treatment may include surgery alone or observation.""")
     INTERMEDIATE = PermissibleValue(
         text="INTERMEDIATE",
         title="Intermediate Risk",
-        description="Intermediate risk neuroblastoma requiring multimodal treatment including chemotherapy.",
-        meaning=NCIT["C103238"])
+        description="Intermediate risk neuroblastoma requiring multimodal treatment including chemotherapy.")
     HIGH = PermissibleValue(
         text="HIGH",
-        title="High Risk",
+        title="High Risk Neuroblastoma",
         description="""High risk neuroblastoma with poor prognosis. Requires intensive multimodal therapy including high-dose chemotherapy with autologous stem cell rescue, surgery, radiation, and immunotherapy.""",
-        meaning=NCIT["C103239"])
+        meaning=NCIT["C150281"])
 
     _defn = EnumDefinition(
         name="NeuroblastomaRiskGroup",
@@ -28967,6 +29146,1577 @@ class ArxivCategory(EnumDefinitionImpl):
                 title="Statistics Theory",
                 description="Asymptotics, Bayesian inference, decision theory, estimation, foundations, inference."))
 
+class OstiWorkflowStatus(EnumDefinitionImpl):
+    """
+    Workflow status codes for OSTI record revisions.
+    """
+    R = PermissibleValue(text="R")
+    SA = PermissibleValue(text="SA")
+    SR = PermissibleValue(text="SR")
+    SO = PermissibleValue(text="SO")
+    SF = PermissibleValue(text="SF")
+    SX = PermissibleValue(text="SX")
+    SV = PermissibleValue(text="SV")
+
+    _defn = EnumDefinition(
+        name="OstiWorkflowStatus",
+        description="Workflow status codes for OSTI record revisions.",
+    )
+
+class OstiAccessLimitation(EnumDefinitionImpl):
+    """
+    Access and distribution limitation codes from OSTI.
+    """
+    UNL = PermissibleValue(text="UNL")
+    OPN = PermissibleValue(text="OPN")
+    CPY = PermissibleValue(text="CPY")
+    OUO = PermissibleValue(text="OUO")
+    PROT = PermissibleValue(text="PROT")
+    PDOUO = PermissibleValue(text="PDOUO")
+    ECI = PermissibleValue(text="ECI")
+    PDSH = PermissibleValue(text="PDSH")
+    USO = PermissibleValue(text="USO")
+    LRD = PermissibleValue(text="LRD")
+    NAT = PermissibleValue(text="NAT")
+    NNPI = PermissibleValue(text="NNPI")
+    INTL = PermissibleValue(text="INTL")
+    PROP = PermissibleValue(text="PROP")
+    PAT = PermissibleValue(text="PAT")
+    OTHR = PermissibleValue(text="OTHR")
+    CUI = PermissibleValue(text="CUI")
+
+    _defn = EnumDefinition(
+        name="OstiAccessLimitation",
+        description="Access and distribution limitation codes from OSTI.",
+    )
+
+class OstiCollectionType(EnumDefinitionImpl):
+    """
+    Collection type codes used by OSTI for record origin.
+    """
+    CHORUS = PermissibleValue(text="CHORUS")
+    DOE_GRANT = PermissibleValue(text="DOE_GRANT")
+    DOE_LAB = PermissibleValue(text="DOE_LAB")
+
+    _defn = EnumDefinition(
+        name="OstiCollectionType",
+        description="Collection type codes used by OSTI for record origin.",
+    )
+
+class OstiSensitivityFlag(EnumDefinitionImpl):
+    """
+    Sensitivity flags calculated by OSTI for released records.
+    """
+    H = PermissibleValue(text="H")
+    S = PermissibleValue(text="S")
+    U = PermissibleValue(text="U")
+    X = PermissibleValue(text="X")
+
+    _defn = EnumDefinition(
+        name="OstiSensitivityFlag",
+        description="Sensitivity flags calculated by OSTI for released records.",
+    )
+
+class OstiOrganizationIdentifierType(EnumDefinitionImpl):
+    """
+    Identifier types for OSTI organizations.
+    """
+    AWARD_DOI = PermissibleValue(text="AWARD_DOI")
+    CN_DOE = PermissibleValue(text="CN_DOE")
+    CN_NONDOE = PermissibleValue(text="CN_NONDOE")
+
+    _defn = EnumDefinition(
+        name="OstiOrganizationIdentifierType",
+        description="Identifier types for OSTI organizations.",
+    )
+
+class OstiProductType(EnumDefinitionImpl):
+    """
+    Product type codes from OSTI record metadata.
+    """
+    AR = PermissibleValue(text="AR")
+    B = PermissibleValue(text="B")
+    CO = PermissibleValue(text="CO")
+    DA = PermissibleValue(text="DA")
+    FS = PermissibleValue(text="FS")
+    JA = PermissibleValue(text="JA")
+    MI = PermissibleValue(text="MI")
+    OT = PermissibleValue(text="OT")
+    P = PermissibleValue(text="P")
+    PD = PermissibleValue(text="PD")
+    SM = PermissibleValue(text="SM")
+    TD = PermissibleValue(text="TD")
+    TR = PermissibleValue(text="TR")
+    PA = PermissibleValue(text="PA")
+
+    _defn = EnumDefinition(
+        name="OstiProductType",
+        description="Product type codes from OSTI record metadata.",
+    )
+
+class OstiOrganizationType(EnumDefinitionImpl):
+    """
+    Organization role types used by OSTI.
+    """
+    AUTHOR = PermissibleValue(text="AUTHOR")
+    CONTRIBUTING = PermissibleValue(text="CONTRIBUTING")
+    RESEARCHING = PermissibleValue(text="RESEARCHING")
+    SPONSOR = PermissibleValue(text="SPONSOR")
+
+    _defn = EnumDefinition(
+        name="OstiOrganizationType",
+        description="Organization role types used by OSTI.",
+    )
+
+class OstiPersonType(EnumDefinitionImpl):
+    """
+    Person role types used by OSTI.
+    """
+    AUTHOR = PermissibleValue(text="AUTHOR")
+    RELEASE = PermissibleValue(text="RELEASE")
+    CONTACT = PermissibleValue(text="CONTACT")
+    CONTRIBUTING = PermissibleValue(text="CONTRIBUTING")
+    PROT_CE = PermissibleValue(text="PROT_CE")
+    PROT_RO = PermissibleValue(text="PROT_RO")
+    SBIZ_PI = PermissibleValue(text="SBIZ_PI")
+    SBIZ_BO = PermissibleValue(text="SBIZ_BO")
+
+    _defn = EnumDefinition(
+        name="OstiPersonType",
+        description="Person role types used by OSTI.",
+    )
+
+class OstiContributorType(EnumDefinitionImpl):
+    """
+    Contributor role types used by OSTI.
+    """
+    Chair = PermissibleValue(text="Chair")
+    DataCollector = PermissibleValue(text="DataCollector")
+    DataCurator = PermissibleValue(text="DataCurator")
+    DataManager = PermissibleValue(text="DataManager")
+    Distributor = PermissibleValue(text="Distributor")
+    Editor = PermissibleValue(text="Editor")
+    HostingInstitution = PermissibleValue(text="HostingInstitution")
+    Producer = PermissibleValue(text="Producer")
+    ProjectLeader = PermissibleValue(text="ProjectLeader")
+    ProjectManager = PermissibleValue(text="ProjectManager")
+    ProjectMember = PermissibleValue(text="ProjectMember")
+    RegistrationAgency = PermissibleValue(text="RegistrationAgency")
+    RegistrationAuthority = PermissibleValue(text="RegistrationAuthority")
+    RelatedPerson = PermissibleValue(text="RelatedPerson")
+    Reviewer = PermissibleValue(text="Reviewer")
+    ReviewAssistant = PermissibleValue(text="ReviewAssistant")
+    ReviewerExternal = PermissibleValue(text="ReviewerExternal")
+    RightsHolder = PermissibleValue(text="RightsHolder")
+    StatsReviewer = PermissibleValue(text="StatsReviewer")
+    Supervisor = PermissibleValue(text="Supervisor")
+    Translator = PermissibleValue(text="Translator")
+    WorkPackageLeader = PermissibleValue(text="WorkPackageLeader")
+    Other = PermissibleValue(text="Other")
+
+    _defn = EnumDefinition(
+        name="OstiContributorType",
+        description="Contributor role types used by OSTI.",
+    )
+
+class OstiRelatedIdentifierType(EnumDefinitionImpl):
+    """
+    Identifier types for related resources in OSTI.
+    """
+    ARK = PermissibleValue(text="ARK")
+    arXiv = PermissibleValue(text="arXiv")
+    bibcode = PermissibleValue(text="bibcode")
+    DOI = PermissibleValue(text="DOI")
+    EAN13 = PermissibleValue(text="EAN13")
+    EISSN = PermissibleValue(text="EISSN")
+    IGSN = PermissibleValue(text="IGSN")
+    ISBN = PermissibleValue(text="ISBN")
+    ISSN = PermissibleValue(text="ISSN")
+    ISTC = PermissibleValue(text="ISTC")
+    Handle = PermissibleValue(text="Handle")
+    LISSN = PermissibleValue(text="LISSN")
+    LSID = PermissibleValue(text="LSID")
+    OTHER = PermissibleValue(text="OTHER")
+    PMCID = PermissibleValue(text="PMCID")
+    PMID = PermissibleValue(text="PMID")
+    PURL = PermissibleValue(text="PURL")
+    UPC = PermissibleValue(text="UPC")
+    URI = PermissibleValue(text="URI")
+    URL = PermissibleValue(text="URL")
+    URN = PermissibleValue(text="URN")
+    UUID = PermissibleValue(text="UUID")
+    w3id = PermissibleValue(text="w3id")
+
+    _defn = EnumDefinition(
+        name="OstiRelatedIdentifierType",
+        description="Identifier types for related resources in OSTI.",
+    )
+
+class OstiRelationType(EnumDefinitionImpl):
+    """
+    Relationship types between records in OSTI.
+    """
+    BasedOnData = PermissibleValue(text="BasedOnData")
+    Cites = PermissibleValue(text="Cites")
+    Compiles = PermissibleValue(text="Compiles")
+    Continues = PermissibleValue(text="Continues")
+    Describes = PermissibleValue(text="Describes")
+    Documents = PermissibleValue(text="Documents")
+    Finances = PermissibleValue(text="Finances")
+    HasComment = PermissibleValue(text="HasComment")
+    HasDerivation = PermissibleValue(text="HasDerivation")
+    HasMetadata = PermissibleValue(text="HasMetadata")
+    HasPart = PermissibleValue(text="HasPart")
+    HasRelatedMaterial = PermissibleValue(text="HasRelatedMaterial")
+    HasReply = PermissibleValue(text="HasReply")
+    HasReview = PermissibleValue(text="HasReview")
+    HasVersion = PermissibleValue(text="HasVersion")
+    IsBasedOn = PermissibleValue(text="IsBasedOn")
+    IsBasisFor = PermissibleValue(text="IsBasisFor")
+    IsCitedBy = PermissibleValue(text="IsCitedBy")
+    IsCommentOn = PermissibleValue(text="IsCommentOn")
+    IsCompiledBy = PermissibleValue(text="IsCompiledBy")
+    IsContinuedBy = PermissibleValue(text="IsContinuedBy")
+    IsDataBasisFor = PermissibleValue(text="IsDataBasisFor")
+    IsDerivedFrom = PermissibleValue(text="IsDerivedFrom")
+    IsDescribedBy = PermissibleValue(text="IsDescribedBy")
+    IsDocumentedBy = PermissibleValue(text="IsDocumentedBy")
+    IsFinancedBy = PermissibleValue(text="IsFinancedBy")
+    IsIdenticalTo = PermissibleValue(text="IsIdenticalTo")
+    IsMetadataFor = PermissibleValue(text="IsMetadataFor")
+    IsNewVersionOf = PermissibleValue(text="IsNewVersionOf")
+    IsObsoletedBy = PermissibleValue(text="IsObsoletedBy")
+    IsOriginalFormOf = PermissibleValue(text="IsOriginalFormOf")
+    IsPartOf = PermissibleValue(text="IsPartOf")
+    IsPreviousVersionOf = PermissibleValue(text="IsPreviousVersionOf")
+    IsReferencedBy = PermissibleValue(text="IsReferencedBy")
+    IsRelatedMaterial = PermissibleValue(text="IsRelatedMaterial")
+    IsReplyTo = PermissibleValue(text="IsReplyTo")
+    IsRequiredBy = PermissibleValue(text="IsRequiredBy")
+    IsReviewedBy = PermissibleValue(text="IsReviewedBy")
+    IsReviewOf = PermissibleValue(text="IsReviewOf")
+    IsSourceOf = PermissibleValue(text="IsSourceOf")
+    IsSupplementedBy = PermissibleValue(text="IsSupplementedBy")
+    IsSupplementTo = PermissibleValue(text="IsSupplementTo")
+    IsVariantFormOf = PermissibleValue(text="IsVariantFormOf")
+    IsVersionOf = PermissibleValue(text="IsVersionOf")
+    Obsoletes = PermissibleValue(text="Obsoletes")
+    References = PermissibleValue(text="References")
+    Requires = PermissibleValue(text="Requires")
+    Reviews = PermissibleValue(text="Reviews")
+
+    _defn = EnumDefinition(
+        name="OstiRelationType",
+        description="Relationship types between records in OSTI.",
+    )
+
+class OstiIdentifierType(EnumDefinitionImpl):
+    """
+    Identifier type codes from OSTI record metadata.
+    """
+    AUTH_REV = PermissibleValue(text="AUTH_REV")
+    CN_DOE = PermissibleValue(text="CN_DOE")
+    CN_NONDOE = PermissibleValue(text="CN_NONDOE")
+    CODEN = PermissibleValue(text="CODEN")
+    DOE_DOCKET = PermissibleValue(text="DOE_DOCKET")
+    EDB = PermissibleValue(text="EDB")
+    ETDE_RN = PermissibleValue(text="ETDE_RN")
+    INIS_RN = PermissibleValue(text="INIS_RN")
+    ISBN = PermissibleValue(text="ISBN")
+    ISSN = PermissibleValue(text="ISSN")
+    LEGACY = PermissibleValue(text="LEGACY")
+    NSA = PermissibleValue(text="NSA")
+    OPN_ACC = PermissibleValue(text="OPN_ACC")
+    OTHER_ID = PermissibleValue(text="OTHER_ID")
+    PATENT = PermissibleValue(text="PATENT")
+    PROJ_ID = PermissibleValue(text="PROJ_ID")
+    PROP_REV = PermissibleValue(text="PROP_REV")
+    REF = PermissibleValue(text="REF")
+    REL_TRN = PermissibleValue(text="REL_TRN")
+    RN = PermissibleValue(text="RN")
+    TRN = PermissibleValue(text="TRN")
+    TVI = PermissibleValue(text="TVI")
+    USER_VER = PermissibleValue(text="USER_VER")
+    WORK_AUTH = PermissibleValue(text="WORK_AUTH")
+    WORK_PROP = PermissibleValue(text="WORK_PROP")
+
+    _defn = EnumDefinition(
+        name="OstiIdentifierType",
+        description="Identifier type codes from OSTI record metadata.",
+    )
+
+class OstiGeolocationType(EnumDefinitionImpl):
+    """
+    Geolocation shape types in OSTI record metadata.
+    """
+    POINT = PermissibleValue(text="POINT")
+    BOX = PermissibleValue(text="BOX")
+    POLYGON = PermissibleValue(text="POLYGON")
+
+    _defn = EnumDefinition(
+        name="OstiGeolocationType",
+        description="Geolocation shape types in OSTI record metadata.",
+    )
+
+class OstiMediaLocationType(EnumDefinitionImpl):
+    """
+    Location indicators for OSTI media files and sets.
+    """
+    L = PermissibleValue(text="L")
+    O = PermissibleValue(text="O")
+
+    _defn = EnumDefinition(
+        name="OstiMediaLocationType",
+        description="Location indicators for OSTI media files and sets.",
+    )
+
+class PreservationEventType(EnumDefinitionImpl):
+    """
+    Actions performed within or outside a repository that affect the long-term
+    preservation of digital objects. Based on PREMIS 3.0 event types.
+    """
+    ACCESSION = PermissibleValue(
+        text="ACCESSION",
+        description="The process of adding objects to a repository's holdings.",
+        meaning=PREMIS["eventType/acc"])
+    APPRAISAL = PermissibleValue(
+        text="APPRAISAL",
+        description="The process of evaluating objects for long-term retention.",
+        meaning=PREMIS["eventType/app"])
+    CAPTURE = PermissibleValue(
+        text="CAPTURE",
+        description="The process of recording or acquiring digital content.",
+        meaning=PREMIS["eventType/cap"])
+    COMPILING = PermissibleValue(
+        text="COMPILING",
+        description="The process of converting source code into executable code.",
+        meaning=PREMIS["eventType/com"])
+    COMPRESSION = PermissibleValue(
+        text="COMPRESSION",
+        description="The process of reducing file size through encoding.",
+        meaning=PREMIS["eventType/cmp"])
+    CREATION = PermissibleValue(
+        text="CREATION",
+        description="The act of creating a new digital object.",
+        meaning=PREMIS["eventType/cre"])
+    DEACCESSION = PermissibleValue(
+        text="DEACCESSION",
+        description="The process of removing objects from a repository's holdings.",
+        meaning=PREMIS["eventType/dea"])
+    DECOMPRESSION = PermissibleValue(
+        text="DECOMPRESSION",
+        description="The process of restoring compressed data to its original form.",
+        meaning=PREMIS["eventType/dec"])
+    DECRYPTION = PermissibleValue(
+        text="DECRYPTION",
+        description="The process of converting encrypted data back to plaintext.",
+        meaning=PREMIS["eventType/der"])
+    DELETION = PermissibleValue(
+        text="DELETION",
+        description="The act of removing a digital object.",
+        meaning=PREMIS["eventType/del"])
+    DIGITAL_SIGNATURE_GENERATION = PermissibleValue(
+        text="DIGITAL_SIGNATURE_GENERATION",
+        title="Digital Signature Generation",
+        description="The process of creating a digital signature for authentication.",
+        meaning=PREMIS["eventType/dig"])
+    DIGITAL_SIGNATURE_VALIDATION = PermissibleValue(
+        text="DIGITAL_SIGNATURE_VALIDATION",
+        title="Digital Signature Validation",
+        description="The process of verifying the authenticity of a digital signature.",
+        meaning=PREMIS["eventType/dsv"])
+    DISPLAYING = PermissibleValue(
+        text="DISPLAYING",
+        description="The process of presenting content for viewing.",
+        meaning=PREMIS["eventType/dip"])
+    DISSEMINATION = PermissibleValue(
+        text="DISSEMINATION",
+        description="The process of making content available to users.",
+        meaning=PREMIS["eventType/dis"])
+    ENCRYPTION = PermissibleValue(
+        text="ENCRYPTION",
+        description="The process of converting plaintext to ciphertext.",
+        meaning=PREMIS["eventType/enc"])
+    EXECUTION = PermissibleValue(
+        text="EXECUTION",
+        description="The process of running software or scripts.",
+        meaning=PREMIS["eventType/exe"])
+    EXPORTING = PermissibleValue(
+        text="EXPORTING",
+        description="The process of extracting content from a system.",
+        meaning=PREMIS["eventType/exp"])
+    EXTRACTION = PermissibleValue(
+        text="EXTRACTION",
+        description="The process of retrieving content from a container or archive.",
+        meaning=PREMIS["eventType/ext"])
+    FILENAME_CHANGE = PermissibleValue(
+        text="FILENAME_CHANGE",
+        title="Filename Change",
+        description="The act of modifying a file's name.",
+        meaning=PREMIS["eventType/fil"])
+    FIXITY_CHECK = PermissibleValue(
+        text="FIXITY_CHECK",
+        title="Fixity Check",
+        description="The process of verifying data integrity using checksums or hashes.",
+        meaning=PREMIS["eventType/fix"])
+    FORENSIC_FEATURE_ANALYSIS = PermissibleValue(
+        text="FORENSIC_FEATURE_ANALYSIS",
+        title="Forensic Feature Analysis",
+        description="Analysis of digital objects for authenticity or provenance evidence.",
+        meaning=PREMIS["eventType/for"])
+    FORMAT_IDENTIFICATION = PermissibleValue(
+        text="FORMAT_IDENTIFICATION",
+        title="Format Identification",
+        description="The process of determining the file format of a digital object.",
+        meaning=PREMIS["eventType/fmi"])
+    IMAGING = PermissibleValue(
+        text="IMAGING",
+        description="The process of creating a bit-level copy of storage media.",
+        meaning=PREMIS["eventType/ima"])
+    INFORMATION_PACKAGE_CREATION = PermissibleValue(
+        text="INFORMATION_PACKAGE_CREATION",
+        title="Information Package Creation",
+        description="Creating a packaged unit of content and metadata (SIP, AIP, DIP).",
+        meaning=PREMIS["eventType/ipc"])
+    INFORMATION_PACKAGE_MERGING = PermissibleValue(
+        text="INFORMATION_PACKAGE_MERGING",
+        title="Information Package Merging",
+        description="Combining multiple information packages into one.",
+        meaning=PREMIS["eventType/ipm"])
+    INFORMATION_PACKAGE_SPLITTING = PermissibleValue(
+        text="INFORMATION_PACKAGE_SPLITTING",
+        title="Information Package Splitting",
+        description="Dividing an information package into multiple packages.",
+        meaning=PREMIS["eventType/ips"])
+    INGESTION = PermissibleValue(
+        text="INGESTION",
+        description="The process of accepting and processing submitted content.",
+        meaning=PREMIS["eventType/ing"])
+    INGESTION_END = PermissibleValue(
+        text="INGESTION_END",
+        title="Ingestion End",
+        description="The completion of the ingestion process.",
+        meaning=PREMIS["eventType/ine"])
+    INGESTION_START = PermissibleValue(
+        text="INGESTION_START",
+        title="Ingestion Start",
+        description="The beginning of the ingestion process.",
+        meaning=PREMIS["eventType/ins"])
+    INTERPRETING = PermissibleValue(
+        text="INTERPRETING",
+        description="The process of rendering or executing interpretable content.",
+        meaning=PREMIS["eventType/int"])
+    MESSAGE_DIGEST_CALCULATION = PermissibleValue(
+        text="MESSAGE_DIGEST_CALCULATION",
+        title="Message Digest Calculation",
+        description="The process of computing a hash or checksum value.",
+        meaning=PREMIS["eventType/mes"])
+    METADATA_EXTRACTION = PermissibleValue(
+        text="METADATA_EXTRACTION",
+        title="Metadata Extraction",
+        description="The process of extracting metadata from digital objects.",
+        meaning=PREMIS["eventType/mee"])
+    METADATA_MODIFICATION = PermissibleValue(
+        text="METADATA_MODIFICATION",
+        title="Metadata Modification",
+        description="The process of changing metadata associated with an object.",
+        meaning=PREMIS["eventType/mem"])
+    MIGRATION = PermissibleValue(
+        text="MIGRATION",
+        description="""The process of converting content from one format to another
+to ensure continued accessibility.""",
+        meaning=PREMIS["eventType/mig"])
+    MODIFICATION = PermissibleValue(
+        text="MODIFICATION",
+        description="The act of changing the content of a digital object.",
+        meaning=PREMIS["eventType/mod"])
+    NORMALIZATION = PermissibleValue(
+        text="NORMALIZATION",
+        description="""The process of converting content to a standard format
+for preservation or access.""",
+        meaning=PREMIS["eventType/nor"])
+    PACKING = PermissibleValue(
+        text="PACKING",
+        description="The process of combining files into a container format.",
+        meaning=PREMIS["eventType/pac"])
+    POLICY_ASSIGNMENT = PermissibleValue(
+        text="POLICY_ASSIGNMENT",
+        title="Policy Assignment",
+        description="The act of associating preservation policies with objects.",
+        meaning=PREMIS["eventType/poa"])
+    PRINTING = PermissibleValue(
+        text="PRINTING",
+        description="The process of producing a physical copy of digital content.",
+        meaning=PREMIS["eventType/pri"])
+    QUARANTINE = PermissibleValue(
+        text="QUARANTINE",
+        description="Isolating objects suspected of containing malware or corruption.",
+        meaning=PREMIS["eventType/qua"])
+    RECOVERY = PermissibleValue(
+        text="RECOVERY",
+        description="The process of restoring objects from backup or damaged media.",
+        meaning=PREMIS["eventType/rec"])
+    REDACTION = PermissibleValue(
+        text="REDACTION",
+        description="The process of removing sensitive content from objects.",
+        meaning=PREMIS["eventType/red"])
+    REFRESHMENT = PermissibleValue(
+        text="REFRESHMENT",
+        description="Copying data to new storage media without format change.",
+        meaning=PREMIS["eventType/ref"])
+    RENDERING = PermissibleValue(
+        text="RENDERING",
+        description="The process of generating a viewable representation.",
+        meaning=PREMIS["eventType/ren"])
+    REPLICATION = PermissibleValue(
+        text="REPLICATION",
+        description="Creating exact copies for redundancy or distribution.",
+        meaning=PREMIS["eventType/rep"])
+    TRANSFER = PermissibleValue(
+        text="TRANSFER",
+        description="Moving objects between systems or locations.",
+        meaning=PREMIS["eventType/tra"])
+    UNPACKING = PermissibleValue(
+        text="UNPACKING",
+        description="Extracting files from a container format.",
+        meaning=PREMIS["eventType/unp"])
+    UNQUARANTINE = PermissibleValue(
+        text="UNQUARANTINE",
+        description="Releasing objects from quarantine after verification.",
+        meaning=PREMIS["eventType/unq"])
+    VALIDATION = PermissibleValue(
+        text="VALIDATION",
+        description="Verifying that objects conform to expected specifications.",
+        meaning=PREMIS["eventType/val"])
+    VIRUS_CHECK = PermissibleValue(
+        text="VIRUS_CHECK",
+        title="Virus Check",
+        description="Scanning objects for malware or viruses.",
+        meaning=PREMIS["eventType/vir"])
+
+    _defn = EnumDefinition(
+        name="PreservationEventType",
+        description="""Actions performed within or outside a repository that affect the long-term
+preservation of digital objects. Based on PREMIS 3.0 event types.""",
+    )
+
+class PreservationEventOutcome(EnumDefinitionImpl):
+    """
+    The outcome or result of a preservation event.
+    """
+    SUCCESS = PermissibleValue(
+        text="SUCCESS",
+        description="The event completed successfully.",
+        meaning=PREMIS["eventOutcome/suc"])
+    FAILURE = PermissibleValue(
+        text="FAILURE",
+        description="The event failed to complete.",
+        meaning=PREMIS["eventOutcome/fai"])
+    WARNING = PermissibleValue(
+        text="WARNING",
+        description="The event completed with warnings or issues.",
+        meaning=PREMIS["eventOutcome/war"])
+
+    _defn = EnumDefinition(
+        name="PreservationEventOutcome",
+        description="The outcome or result of a preservation event.",
+    )
+
+class DigitalObjectCategory(EnumDefinitionImpl):
+    """
+    The category of object to which preservation metadata applies.
+    Based on PREMIS object categories.
+    """
+    BITSTREAM = PermissibleValue(
+        text="BITSTREAM",
+        description="""Contiguous or non-contiguous data within a file that has meaningful
+properties for preservation purposes. A bitstream cannot be transformed
+into a standalone file without the addition of file structure.""",
+        meaning=PREMIS["objectCategory/bit"])
+    FILE = PermissibleValue(
+        text="FILE",
+        description="""A named and ordered sequence of bytes that is known to an operating
+system. A file can be zero or more bytes and has a file format,
+access permissions, and other file system characteristics.""",
+        meaning=PREMIS["objectCategory/fil"])
+    INTELLECTUAL_ENTITY = PermissibleValue(
+        text="INTELLECTUAL_ENTITY",
+        title="Intellectual Entity",
+        description="""A coherent set of content that is reasonably described as a unit.
+Examples include a book, a photograph, a database, or a software
+application. An intellectual entity may contain other intellectual
+entities.""",
+        meaning=PREMIS["objectCategory/int"])
+    REPRESENTATION = PermissibleValue(
+        text="REPRESENTATION",
+        description="""The set of files, including structural metadata, needed for a
+complete and reasonable rendition of an intellectual entity.
+A digital object may have multiple representations.""",
+        meaning=PREMIS["objectCategory/rep"])
+
+    _defn = EnumDefinition(
+        name="DigitalObjectCategory",
+        description="""The category of object to which preservation metadata applies.
+Based on PREMIS object categories.""",
+    )
+
+class CopyrightStatus(EnumDefinitionImpl):
+    """
+    A designation for the copyright status of an object at the time
+    the rights statement is recorded. Based on PREMIS.
+    """
+    COPYRIGHTED = PermissibleValue(
+        text="COPYRIGHTED",
+        description="The object is protected by copyright.",
+        meaning=PREMIS["copyrightStatus/cpr"])
+    PUBLIC_DOMAIN = PermissibleValue(
+        text="PUBLIC_DOMAIN",
+        title="Public Domain",
+        description="""The object is not protected by copyright, either because copyright
+has expired, was never applicable, or has been waived.""",
+        meaning=PREMIS["copyrightStatus/pub"])
+    UNKNOWN = PermissibleValue(
+        text="UNKNOWN",
+        description="The copyright status cannot be determined.",
+        meaning=PREMIS["copyrightStatus/unk"])
+
+    _defn = EnumDefinition(
+        name="CopyrightStatus",
+        description="""A designation for the copyright status of an object at the time
+the rights statement is recorded. Based on PREMIS.""",
+    )
+
+class RightsBasis(EnumDefinitionImpl):
+    """
+    The basis for the right or permission granted for an object.
+    Based on PREMIS rights basis vocabulary.
+    """
+    COPYRIGHT = PermissibleValue(
+        text="COPYRIGHT",
+        description="Rights based on copyright law.",
+        meaning=PREMIS["rightsBasis/cop"])
+    INSTITUTIONAL_POLICY = PermissibleValue(
+        text="INSTITUTIONAL_POLICY",
+        title="Institutional Policy",
+        description="Rights based on the policies of the holding institution.",
+        meaning=PREMIS["rightsBasis/ins"])
+    LICENSE = PermissibleValue(
+        text="LICENSE",
+        description="Rights based on a license agreement.",
+        meaning=PREMIS["rightsBasis/lic"])
+    STATUTE = PermissibleValue(
+        text="STATUTE",
+        description="Rights based on statutory law other than copyright.",
+        meaning=PREMIS["rightsBasis/sta"])
+    OTHER = PermissibleValue(
+        text="OTHER",
+        description="Rights based on another basis not listed.",
+        meaning=PREMIS["rightsBasis/oth"])
+
+    _defn = EnumDefinition(
+        name="RightsBasis",
+        description="""The basis for the right or permission granted for an object.
+Based on PREMIS rights basis vocabulary.""",
+    )
+
+class PreservationLevelRole(EnumDefinitionImpl):
+    """
+    The context in which a preservation level value is specified.
+    Based on PREMIS preservation level role vocabulary.
+    """
+    CAPABILITY = PermissibleValue(
+        text="CAPABILITY",
+        description="""The preservation level that the repository is capable of providing
+based on its technical infrastructure and resources.""",
+        meaning=PREMIS["preservationLevelRole/cap"])
+    INTENTION = PermissibleValue(
+        text="INTENTION",
+        description="""The preservation level that the repository intends to provide
+for the object, based on policy decisions.""",
+        meaning=PREMIS["preservationLevelRole/int"])
+    REQUIREMENT = PermissibleValue(
+        text="REQUIREMENT",
+        description="""The preservation level required by the depositor or
+other stakeholder for the object.""",
+        meaning=PREMIS["preservationLevelRole/req"])
+
+    _defn = EnumDefinition(
+        name="PreservationLevelRole",
+        description="""The context in which a preservation level value is specified.
+Based on PREMIS preservation level role vocabulary.""",
+    )
+
+class PreservationLevelValue(EnumDefinitionImpl):
+    """
+    Common preservation level tiers indicating the degree of preservation
+    commitment. These are not from PREMIS directly but represent common
+    practice in digital preservation.
+    """
+    BIT_LEVEL = PermissibleValue(
+        text="BIT_LEVEL",
+        title="Bit-level Preservation",
+        description="""Ensures the exact bit sequence is maintained. Includes fixity checks
+and secure storage but no format migration or access provision.""")
+    LOGICAL_PRESERVATION = PermissibleValue(
+        text="LOGICAL_PRESERVATION",
+        title="Logical Preservation",
+        description="""Maintains the ability to render or use the content. May include
+format migration to ensure long-term accessibility.""")
+    SEMANTIC_PRESERVATION = PermissibleValue(
+        text="SEMANTIC_PRESERVATION",
+        title="Semantic Preservation",
+        description="""Preserves the meaning and context of content, including relationships
+between objects and their intellectual context.""")
+    FULL_PRESERVATION = PermissibleValue(
+        text="FULL_PRESERVATION",
+        title="Full Preservation",
+        description="""Comprehensive preservation including all aspects: bit-level integrity,
+format migration, semantic context, and provenance tracking.""")
+
+    _defn = EnumDefinition(
+        name="PreservationLevelValue",
+        description="""Common preservation level tiers indicating the degree of preservation
+commitment. These are not from PREMIS directly but represent common
+practice in digital preservation.""",
+    )
+
+class CryptographicHashFunction(EnumDefinitionImpl):
+    """
+    Algorithms that take an input and return a fixed-size string (hash value).
+    Used for verifying data integrity and creating digital signatures.
+    Based on PREMIS cryptographic hash functions vocabulary.
+    """
+    ADLER_32 = PermissibleValue(
+        text="ADLER_32",
+        title="Adler-32",
+        description="""A checksum algorithm developed by Mark Adler. Faster than CRC32
+but with weaker error detection. Used in zlib compression.""",
+        meaning=PREMIS["cryptographicHashFunctions/adl"])
+    CRC32 = PermissibleValue(
+        text="CRC32",
+        title="CRC32",
+        description="""Cyclic Redundancy Check with 32-bit output. Used for error detection
+in network transmissions and storage. Not cryptographically secure.""",
+        meaning=PREMIS["cryptographicHashFunctions/crc"])
+    HAVAL = PermissibleValue(
+        text="HAVAL",
+        title="HAVAL",
+        description="""A cryptographic hash function that can produce hash values of
+128, 160, 192, 224, or 256 bits. Variable number of rounds.""",
+        meaning=PREMIS["cryptographicHashFunctions/hav"])
+    MD2 = PermissibleValue(
+        text="MD2",
+        title="MD2",
+        description="""Message Digest 2 algorithm producing a 128-bit hash value.
+Designed for 8-bit computers. Considered cryptographically broken.""",
+        meaning=PREMIS["cryptographicHashFunctions/md2"])
+    MD4 = PermissibleValue(
+        text="MD4",
+        title="MD4",
+        description="""Message Digest 4 algorithm producing a 128-bit hash value.
+Predecessor to MD5. Considered cryptographically broken.""")
+    MD5 = PermissibleValue(
+        text="MD5",
+        title="MD5",
+        description="""Message Digest 5 algorithm producing a 128-bit hash value.
+Widely used but vulnerable to collision attacks. Acceptable
+for non-security integrity checks only.""",
+        meaning=PREMIS["cryptographicHashFunctions/md5"])
+    MD6 = PermissibleValue(
+        text="MD6",
+        title="MD6",
+        description="""Message Digest 6 algorithm with variable output size.
+Designed as a candidate for SHA-3 but not selected.""")
+    SHA_1 = PermissibleValue(
+        text="SHA_1",
+        title="SHA-1",
+        description="""Secure Hash Algorithm 1 producing a 160-bit hash value.
+Deprecated for security applications due to collision vulnerabilities.
+Still acceptable for integrity verification in some contexts.""",
+        meaning=PREMIS["cryptographicHashFunctions/sha1"])
+    SHA_224 = PermissibleValue(
+        text="SHA_224",
+        title="SHA-224",
+        description="""SHA-2 variant producing a 224-bit hash value.
+Truncated version of SHA-256.""")
+    SHA_256 = PermissibleValue(
+        text="SHA_256",
+        title="SHA-256",
+        description="""SHA-2 variant producing a 256-bit hash value.
+Widely used and considered secure for most applications.
+Recommended for digital preservation.""",
+        meaning=PREMIS["cryptographicHashFunctions/sha256"])
+    SHA_384 = PermissibleValue(
+        text="SHA_384",
+        title="SHA-384",
+        description="""SHA-2 variant producing a 384-bit hash value.
+Truncated version of SHA-512.""",
+        meaning=PREMIS["cryptographicHashFunctions/sha384"])
+    SHA_512 = PermissibleValue(
+        text="SHA_512",
+        title="SHA-512",
+        description="""SHA-2 variant producing a 512-bit hash value.
+Highest security level in the SHA-2 family.""",
+        meaning=PREMIS["cryptographicHashFunctions/sha512"])
+    SHA3_224 = PermissibleValue(
+        text="SHA3_224",
+        title="SHA3-224",
+        description="""SHA-3 variant producing a 224-bit hash value.
+Based on the Keccak algorithm.""")
+    SHA3_256 = PermissibleValue(
+        text="SHA3_256",
+        title="SHA3-256",
+        description="""SHA-3 variant producing a 256-bit hash value.
+Based on the Keccak algorithm. Provides defense against
+length extension attacks.""")
+    SHA3_384 = PermissibleValue(
+        text="SHA3_384",
+        title="SHA3-384",
+        description="""SHA-3 variant producing a 384-bit hash value.
+Based on the Keccak algorithm.""")
+    SHA3_512 = PermissibleValue(
+        text="SHA3_512",
+        title="SHA3-512",
+        description="""SHA-3 variant producing a 512-bit hash value.
+Based on the Keccak algorithm.""")
+    BLAKE2B_256 = PermissibleValue(
+        text="BLAKE2B_256",
+        title="BLAKE2b-256",
+        description="""BLAKE2b variant producing a 256-bit hash value.
+Faster than MD5 and SHA-1 while being more secure.""")
+    BLAKE2B_384 = PermissibleValue(
+        text="BLAKE2B_384",
+        title="BLAKE2b-384",
+        description="""BLAKE2b variant producing a 384-bit hash value.""")
+    BLAKE2B_512 = PermissibleValue(
+        text="BLAKE2B_512",
+        title="BLAKE2b-512",
+        description="""BLAKE2b variant producing a 512-bit hash value.
+Optimized for 64-bit platforms.""")
+    BLAKE3 = PermissibleValue(
+        text="BLAKE3",
+        title="BLAKE3",
+        description="""Latest BLAKE variant, extremely fast with 256-bit output.
+Supports parallelization and incremental hashing.""")
+    TIGER = PermissibleValue(
+        text="TIGER",
+        title="Tiger",
+        description="""A cryptographic hash function designed for 64-bit platforms.
+Produces a 192-bit hash value.""",
+        meaning=PREMIS["cryptographicHashFunctions/tig"])
+    WHIRLPOOL = PermissibleValue(
+        text="WHIRLPOOL",
+        title="Whirlpool",
+        description="""A cryptographic hash function producing a 512-bit hash value.
+Based on a modified AES block cipher.""",
+        meaning=PREMIS["cryptographicHashFunctions/whi"])
+    UNKNOWN = PermissibleValue(
+        text="UNKNOWN",
+        description="The hash algorithm is not known or not specified.",
+        meaning=PREMIS["cryptographicHashFunctions/unk"])
+
+    _defn = EnumDefinition(
+        name="CryptographicHashFunction",
+        description="""Algorithms that take an input and return a fixed-size string (hash value).
+Used for verifying data integrity and creating digital signatures.
+Based on PREMIS cryptographic hash functions vocabulary.""",
+    )
+
+class DataCiteResourceType(EnumDefinitionImpl):
+    """
+    General resource type classifications from DataCite 4.6.
+    Used for categorizing research outputs in data repositories.
+    """
+    AUDIOVISUAL = PermissibleValue(
+        text="AUDIOVISUAL",
+        description="""A series of visual representations imparting an impression of motion
+when shown in succession. May include sound.""",
+        meaning=DATACITE["Audiovisual"])
+    AWARD = PermissibleValue(
+        text="AWARD",
+        description="""Funding or support provided to an individual or organization
+for research, academic work, or professional development.""",
+        meaning=DATACITE["Award"])
+    BOOK = PermissibleValue(
+        text="BOOK",
+        description="""A medium for recording information in the form of writing or images,
+typically composed of many pages bound together.""",
+        meaning=DATACITE["Book"])
+    BOOK_CHAPTER = PermissibleValue(
+        text="BOOK_CHAPTER",
+        title="Book Chapter",
+        description="One of the main divisions of a book.",
+        meaning=DATACITE["BookChapter"])
+    COLLECTION = PermissibleValue(
+        text="COLLECTION",
+        description="""An aggregation of resources, which may encompass collections of
+one resource type as well as those of mixed types.""",
+        meaning=DATACITE["Collection"])
+    COMPUTATIONAL_NOTEBOOK = PermissibleValue(
+        text="COMPUTATIONAL_NOTEBOOK",
+        title="Computational Notebook",
+        description="""A virtual notebook environment used for literate programming,
+combining code, documentation, and visualizations.""",
+        meaning=DATACITE["ComputationalNotebook"])
+    CONFERENCE_PAPER = PermissibleValue(
+        text="CONFERENCE_PAPER",
+        title="Conference Paper",
+        description="""Article written with the goal of being accepted to a conference.""",
+        meaning=DATACITE["ConferencePaper"])
+    CONFERENCE_PROCEEDING = PermissibleValue(
+        text="CONFERENCE_PROCEEDING",
+        title="Conference Proceeding",
+        description="""Collection of academic papers published in the context of
+an academic conference.""",
+        meaning=DATACITE["ConferenceProceeding"])
+    DATA_PAPER = PermissibleValue(
+        text="DATA_PAPER",
+        title="Data Paper",
+        description="""A scholarly publication describing a dataset, intended to
+facilitate its discovery, interpretation, and reuse.""",
+        meaning=DATACITE["DataPaper"])
+    DATASET = PermissibleValue(
+        text="DATASET",
+        description="""Data encoded in a defined structure. May include tables,
+databases, or other structured data.""",
+        meaning=DATACITE["Dataset"])
+    DISSERTATION = PermissibleValue(
+        text="DISSERTATION",
+        description="""A written essay, treatise, or thesis, especially one written
+by a candidate for a doctoral degree.""",
+        meaning=DATACITE["Dissertation"])
+    EVENT = PermissibleValue(
+        text="EVENT",
+        description="""A non-persistent, time-based occurrence. May be planned or
+unplanned.""",
+        meaning=DATACITE["Event"])
+    IMAGE = PermissibleValue(
+        text="IMAGE",
+        description="""A visual representation other than text, including photographs,
+diagrams, illustrations, and other static visual works.""",
+        meaning=DATACITE["Image"])
+    INSTRUMENT = PermissibleValue(
+        text="INSTRUMENT",
+        description="""A device, tool, or apparatus used to obtain, measure, and/or
+analyze data.""",
+        meaning=DATACITE["Instrument"])
+    INTERACTIVE_RESOURCE = PermissibleValue(
+        text="INTERACTIVE_RESOURCE",
+        title="Interactive Resource",
+        description="""A resource requiring interaction from the user to be understood,
+executed, or experienced.""",
+        meaning=DATACITE["InteractiveResource"])
+    JOURNAL = PermissibleValue(
+        text="JOURNAL",
+        description="""A scholarly publication consisting of articles that is published
+regularly throughout the year.""",
+        meaning=DATACITE["Journal"])
+    JOURNAL_ARTICLE = PermissibleValue(
+        text="JOURNAL_ARTICLE",
+        title="Journal Article",
+        description="""A written composition on a topic of interest, which forms a
+separate part of a journal.""",
+        meaning=DATACITE["JournalArticle"])
+    MODEL = PermissibleValue(
+        text="MODEL",
+        description="""An abstract, conceptual, graphical, mathematical, or visualization
+model that represents empirical objects, phenomena, or processes.""",
+        meaning=DATACITE["Model"])
+    OUTPUT_MANAGEMENT_PLAN = PermissibleValue(
+        text="OUTPUT_MANAGEMENT_PLAN",
+        title="Output Management Plan",
+        description="""A formal document that outlines how research outputs are to be
+handled during and after a research project.""",
+        meaning=DATACITE["OutputManagementPlan"])
+    PEER_REVIEW = PermissibleValue(
+        text="PEER_REVIEW",
+        title="Peer Review",
+        description="""Evaluation of scientific, academic, or professional work by
+others working in the same field.""",
+        meaning=DATACITE["PeerReview"])
+    PHYSICAL_OBJECT = PermissibleValue(
+        text="PHYSICAL_OBJECT",
+        title="Physical Object",
+        description="""A physical object or substance, including artifacts, specimens,
+samples, and material objects.""",
+        meaning=DATACITE["PhysicalObject"])
+    PREPRINT = PermissibleValue(
+        text="PREPRINT",
+        description="""A version of a scholarly or scientific paper that precedes
+formal peer review and publication in a journal.""",
+        meaning=DATACITE["Preprint"])
+    PROJECT = PermissibleValue(
+        text="PROJECT",
+        description="""A planned endeavor or activity, frequently collaborative,
+intended to achieve a particular aim.""",
+        meaning=DATACITE["Project"])
+    REPORT = PermissibleValue(
+        text="REPORT",
+        description="""A document that presents information in an organized format
+for a specific audience and purpose.""",
+        meaning=DATACITE["Report"])
+    SERVICE = PermissibleValue(
+        text="SERVICE",
+        description="""An organized system of apparatus, appliances, staff, etc.,
+for supplying some function required by end users.""",
+        meaning=DATACITE["Service"])
+    SOFTWARE = PermissibleValue(
+        text="SOFTWARE",
+        description="""A computer program other than a computational notebook,
+in either source code (text) or compiled form.""",
+        meaning=DATACITE["Software"])
+    SOUND = PermissibleValue(
+        text="SOUND",
+        description="""A resource primarily intended to be heard, including music,
+speech, and other audio recordings.""",
+        meaning=DATACITE["Sound"])
+    STANDARD = PermissibleValue(
+        text="STANDARD",
+        description="""Something established by authority, custom, or general consent
+as a model, example, or point of reference.""",
+        meaning=DATACITE["Standard"])
+    STUDY_REGISTRATION = PermissibleValue(
+        text="STUDY_REGISTRATION",
+        title="Study Registration",
+        description="""A detailed, time-stamped description of a research plan,
+often openly shared in a registry or repository.""",
+        meaning=DATACITE["StudyRegistration"])
+    TEXT = PermissibleValue(
+        text="TEXT",
+        description="""A resource consisting primarily of words for reading that is
+not covered by any other textual resource type.""",
+        meaning=DATACITE["Text"])
+    WORKFLOW = PermissibleValue(
+        text="WORKFLOW",
+        description="""A structured series of steps which can be executed to produce
+a final outcome, often automated.""",
+        meaning=DATACITE["Workflow"])
+    OTHER = PermissibleValue(
+        text="OTHER",
+        description="""Use when the resource type does not fit any other category.
+Should be accompanied by a free-text description.""",
+        meaning=DATACITE["Other"])
+
+    _defn = EnumDefinition(
+        name="DataCiteResourceType",
+        description="""General resource type classifications from DataCite 4.6.
+Used for categorizing research outputs in data repositories.""",
+    )
+
+class DataCiteRelationType(EnumDefinitionImpl):
+    """
+    Types of relationships between research resources from DataCite 4.6.
+    Relations are expressed from the perspective of the resource being
+    described (A) in relation to another resource (B).
+    """
+    IS_CITED_BY = PermissibleValue(
+        text="IS_CITED_BY",
+        title="Is Cited By",
+        description="Indicates that B includes A in a citation.",
+        meaning=DATACITE["IsCitedBy"])
+    CITES = PermissibleValue(
+        text="CITES",
+        description="Indicates that A includes B in a citation.",
+        meaning=DATACITE["Cites"])
+    IS_SUPPLEMENT_TO = PermissibleValue(
+        text="IS_SUPPLEMENT_TO",
+        title="Is Supplement To",
+        description="Indicates that A is a supplement to B.",
+        meaning=DATACITE["IsSupplementTo"])
+    IS_SUPPLEMENTED_BY = PermissibleValue(
+        text="IS_SUPPLEMENTED_BY",
+        title="Is Supplemented By",
+        description="Indicates that B is a supplement to A.",
+        meaning=DATACITE["IsSupplementedBy"])
+    IS_CONTINUED_BY = PermissibleValue(
+        text="IS_CONTINUED_BY",
+        title="Is Continued By",
+        description="Indicates that A is continued by the work B.",
+        meaning=DATACITE["IsContinuedBy"])
+    CONTINUES = PermissibleValue(
+        text="CONTINUES",
+        description="Indicates that A is a continuation of the work B.",
+        meaning=DATACITE["Continues"])
+    DESCRIBES = PermissibleValue(
+        text="DESCRIBES",
+        description="Indicates that A describes B.",
+        meaning=DATACITE["Describes"])
+    IS_DESCRIBED_BY = PermissibleValue(
+        text="IS_DESCRIBED_BY",
+        title="Is Described By",
+        description="Indicates that A is described by B.",
+        meaning=DATACITE["IsDescribedBy"])
+    HAS_METADATA = PermissibleValue(
+        text="HAS_METADATA",
+        title="Has Metadata",
+        description="Indicates that resource A has additional metadata B.",
+        meaning=DATACITE["HasMetadata"])
+    IS_METADATA_FOR = PermissibleValue(
+        text="IS_METADATA_FOR",
+        title="Is Metadata For",
+        description="Indicates that additional metadata A describes resource B.",
+        meaning=DATACITE["IsMetadataFor"])
+    HAS_VERSION = PermissibleValue(
+        text="HAS_VERSION",
+        title="Has Version",
+        description="Indicates that A has a version B.",
+        meaning=DATACITE["HasVersion"])
+    IS_VERSION_OF = PermissibleValue(
+        text="IS_VERSION_OF",
+        title="Is Version Of",
+        description="Indicates that A is a version of B.",
+        meaning=DATACITE["IsVersionOf"])
+    IS_NEW_VERSION_OF = PermissibleValue(
+        text="IS_NEW_VERSION_OF",
+        title="Is New Version Of",
+        description="""Indicates that A is a new edition of B, where the new edition
+has been modified or updated.""",
+        meaning=DATACITE["IsNewVersionOf"])
+    IS_PREVIOUS_VERSION_OF = PermissibleValue(
+        text="IS_PREVIOUS_VERSION_OF",
+        title="Is Previous Version Of",
+        description="Indicates that A is a previous edition of B.",
+        meaning=DATACITE["IsPreviousVersionOf"])
+    IS_PART_OF = PermissibleValue(
+        text="IS_PART_OF",
+        title="Is Part Of",
+        description="""Indicates that A is a portion of B. May be used for elements
+of a series.""",
+        meaning=DATACITE["IsPartOf"])
+    HAS_PART = PermissibleValue(
+        text="HAS_PART",
+        title="Has Part",
+        description="Indicates that A includes the part B.",
+        meaning=DATACITE["HasPart"])
+    IS_PUBLISHED_IN = PermissibleValue(
+        text="IS_PUBLISHED_IN",
+        title="Is Published In",
+        description="""Indicates that A is published inside B, but is independent of
+other things published inside of B.""",
+        meaning=DATACITE["IsPublishedIn"])
+    IS_REFERENCED_BY = PermissibleValue(
+        text="IS_REFERENCED_BY",
+        title="Is Referenced By",
+        description="Indicates that A is used as a source of information by B.",
+        meaning=DATACITE["IsReferencedBy"])
+    REFERENCES = PermissibleValue(
+        text="REFERENCES",
+        description="Indicates that B is used as a source of information for A.",
+        meaning=DATACITE["References"])
+    IS_DOCUMENTED_BY = PermissibleValue(
+        text="IS_DOCUMENTED_BY",
+        title="Is Documented By",
+        description="Indicates that B is documentation about/explaining A.",
+        meaning=DATACITE["IsDocumentedBy"])
+    DOCUMENTS = PermissibleValue(
+        text="DOCUMENTS",
+        description="Indicates that A is documentation about/explaining B.",
+        meaning=DATACITE["Documents"])
+    IS_COMPILED_BY = PermissibleValue(
+        text="IS_COMPILED_BY",
+        title="Is Compiled By",
+        description="Indicates that B is used to compile or create A.",
+        meaning=DATACITE["IsCompiledBy"])
+    COMPILES = PermissibleValue(
+        text="COMPILES",
+        description="Indicates that B is the result of a compile or creation event using A.",
+        meaning=DATACITE["Compiles"])
+    IS_VARIANT_FORM_OF = PermissibleValue(
+        text="IS_VARIANT_FORM_OF",
+        title="Is Variant Form Of",
+        description="Indicates that A is a variant or different form of B.",
+        meaning=DATACITE["IsVariantFormOf"])
+    IS_ORIGINAL_FORM_OF = PermissibleValue(
+        text="IS_ORIGINAL_FORM_OF",
+        title="Is Original Form Of",
+        description="Indicates that A is the original form of B.",
+        meaning=DATACITE["IsOriginalFormOf"])
+    IS_IDENTICAL_TO = PermissibleValue(
+        text="IS_IDENTICAL_TO",
+        title="Is Identical To",
+        description="""Indicates that A is identical to B, for use when there is a need
+to register two separate instances of the same resource.""",
+        meaning=DATACITE["IsIdenticalTo"])
+    IS_REVIEWED_BY = PermissibleValue(
+        text="IS_REVIEWED_BY",
+        title="Is Reviewed By",
+        description="Indicates that A is reviewed by B.",
+        meaning=DATACITE["IsReviewedBy"])
+    REVIEWS = PermissibleValue(
+        text="REVIEWS",
+        description="Indicates that A is a review of B.",
+        meaning=DATACITE["Reviews"])
+    IS_DERIVED_FROM = PermissibleValue(
+        text="IS_DERIVED_FROM",
+        title="Is Derived From",
+        description="Indicates that B is a source upon which A is based.",
+        meaning=DATACITE["IsDerivedFrom"])
+    IS_SOURCE_OF = PermissibleValue(
+        text="IS_SOURCE_OF",
+        title="Is Source Of",
+        description="Indicates that A is a source upon which B is based.",
+        meaning=DATACITE["IsSourceOf"])
+    IS_REQUIRED_BY = PermissibleValue(
+        text="IS_REQUIRED_BY",
+        title="Is Required By",
+        description="Indicates that A is required by B.",
+        meaning=DATACITE["IsRequiredBy"])
+    REQUIRES = PermissibleValue(
+        text="REQUIRES",
+        description="Indicates that A requires B.",
+        meaning=DATACITE["Requires"])
+    OBSOLETES = PermissibleValue(
+        text="OBSOLETES",
+        description="Indicates that A replaces B.",
+        meaning=DATACITE["Obsoletes"])
+    IS_OBSOLETED_BY = PermissibleValue(
+        text="IS_OBSOLETED_BY",
+        title="Is Obsoleted By",
+        description="Indicates that A is replaced by B.",
+        meaning=DATACITE["IsObsoletedBy"])
+    IS_COLLECTED_BY = PermissibleValue(
+        text="IS_COLLECTED_BY",
+        title="Is Collected By",
+        description="Indicates that A is collected by B.",
+        meaning=DATACITE["IsCollectedBy"])
+    COLLECTS = PermissibleValue(
+        text="COLLECTS",
+        description="Indicates that A collects B.",
+        meaning=DATACITE["Collects"])
+    IS_TRANSLATION_OF = PermissibleValue(
+        text="IS_TRANSLATION_OF",
+        title="Is Translation Of",
+        description="Indicates that A is a translation of B.",
+        meaning=DATACITE["IsTranslationOf"])
+    HAS_TRANSLATION = PermissibleValue(
+        text="HAS_TRANSLATION",
+        title="Has Translation",
+        description="Indicates that A has a translation B.",
+        meaning=DATACITE["HasTranslation"])
+
+    _defn = EnumDefinition(
+        name="DataCiteRelationType",
+        description="""Types of relationships between research resources from DataCite 4.6.
+Relations are expressed from the perspective of the resource being
+described (A) in relation to another resource (B).""",
+    )
+
+class DataCiteContributorType(EnumDefinitionImpl):
+    """
+    Types of contributors to research resources from DataCite 4.6.
+    These describe organizational and functional roles rather than
+    specific contribution activities (see CRediT/ResearchRole for those).
+    """
+    CONTACT_PERSON = PermissibleValue(
+        text="CONTACT_PERSON",
+        title="Contact Person",
+        description="""Person with knowledge of how to access, troubleshoot, or
+otherwise field issues related to the resource.""",
+        meaning=DATACITE["ContactPerson"])
+    DATA_COLLECTOR = PermissibleValue(
+        text="DATA_COLLECTOR",
+        title="Data Collector",
+        description="""Person or institution responsible for finding, gathering, or
+collecting data under the guidelines of the author(s) or
+Principal Investigator (PI).""",
+        meaning=DATACITE["DataCollector"])
+    DATA_CURATOR = PermissibleValue(
+        text="DATA_CURATOR",
+        title="Data Curator",
+        description="""Person tasked with reviewing, enhancing, cleaning, or standardizing
+metadata and the associated data submitted for storage, use, and
+maintenance within a repository.""",
+        meaning=DATACITE["DataCurator"])
+    DATA_MANAGER = PermissibleValue(
+        text="DATA_MANAGER",
+        title="Data Manager",
+        description="""Person or organization responsible for maintaining the finished
+resource, including data quality, access permissions, and
+long-term availability.""",
+        meaning=DATACITE["DataManager"])
+    DISTRIBUTOR = PermissibleValue(
+        text="DISTRIBUTOR",
+        description="""Institution tasked with responsibility to generate or disseminate
+copies of the resource in either electronic or print form.""",
+        meaning=DATACITE["Distributor"])
+    EDITOR = PermissibleValue(
+        text="EDITOR",
+        description="""A person who oversees the details related to the publication
+format of the resource.""",
+        meaning=DATACITE["Editor"])
+    HOSTING_INSTITUTION = PermissibleValue(
+        text="HOSTING_INSTITUTION",
+        title="Hosting Institution",
+        description="""Typically, the organization allowing the resource to be available
+on the internet through the provision of its hardware, software,
+or operating support.""",
+        meaning=DATACITE["HostingInstitution"])
+    PRODUCER = PermissibleValue(
+        text="PRODUCER",
+        description="""Person or organization responsible for the artistic and technical
+aspects of a resource, typically in audiovisual or media contexts.""",
+        meaning=DATACITE["Producer"])
+    PROJECT_LEADER = PermissibleValue(
+        text="PROJECT_LEADER",
+        title="Project Leader",
+        description="""Person officially designated as head of a project team or
+sub-project team instrumental in the work necessary to the
+development of the resource.""",
+        meaning=DATACITE["ProjectLeader"])
+    PROJECT_MANAGER = PermissibleValue(
+        text="PROJECT_MANAGER",
+        title="Project Manager",
+        description="""Person officially designated as manager of a project, responsible
+for day-to-day management activities.""",
+        meaning=DATACITE["ProjectManager"])
+    PROJECT_MEMBER = PermissibleValue(
+        text="PROJECT_MEMBER",
+        title="Project Member",
+        description="""Person on the membership list of a designated project or
+project team.""",
+        meaning=DATACITE["ProjectMember"])
+    REGISTRATION_AGENCY = PermissibleValue(
+        text="REGISTRATION_AGENCY",
+        title="Registration Agency",
+        description="""Institution or organization officially appointed by a Registration
+Authority to handle specific tasks within a defined area of
+responsibility.""",
+        meaning=DATACITE["RegistrationAgency"])
+    REGISTRATION_AUTHORITY = PermissibleValue(
+        text="REGISTRATION_AUTHORITY",
+        title="Registration Authority",
+        description="""A standards-setting body from which Registration Agencies obtain
+their official recognition and guidance.""",
+        meaning=DATACITE["RegistrationAuthority"])
+    RELATED_PERSON = PermissibleValue(
+        text="RELATED_PERSON",
+        title="Related Person",
+        description="""A person without a specifically defined role in the development
+of the resource, but who is someone the author wishes to recognize.""",
+        meaning=DATACITE["RelatedPerson"])
+    RESEARCHER = PermissibleValue(
+        text="RESEARCHER",
+        description="""A person involved in analyzing data or the results of an
+experiment or formal study.""",
+        meaning=DATACITE["Researcher"])
+    RESEARCH_GROUP = PermissibleValue(
+        text="RESEARCH_GROUP",
+        title="Research Group",
+        description="""A group of individuals with a common research focus, typically
+within a lab, department, or division.""",
+        meaning=DATACITE["ResearchGroup"])
+    RIGHTS_HOLDER = PermissibleValue(
+        text="RIGHTS_HOLDER",
+        title="Rights Holder",
+        description="""Person or institution owning or managing property rights,
+including intellectual property rights, over the resource.""",
+        meaning=DATACITE["RightsHolder"])
+    SPONSOR = PermissibleValue(
+        text="SPONSOR",
+        description="""Person or organization that issued a contract or under the
+auspices of which a work has been written, printed, published,
+developed, etc.""",
+        meaning=DATACITE["Sponsor"])
+    SUPERVISOR = PermissibleValue(
+        text="SUPERVISOR",
+        description="""Designated administrator overseeing one or more groups or teams
+working to produce the resource.""",
+        meaning=DATACITE["Supervisor"])
+    TRANSLATOR = PermissibleValue(
+        text="TRANSLATOR",
+        description="""Person, organization, or automated system responsible for
+rendering the content of a resource from one language into
+another.""",
+        meaning=DATACITE["Translator"])
+    WORK_PACKAGE_LEADER = PermissibleValue(
+        text="WORK_PACKAGE_LEADER",
+        title="Work Package Leader",
+        description="""A Work Package is a recognized data product, and the Work Package
+Leader ensures the comprehensive contents, availability, and
+quality of the work package.""",
+        meaning=DATACITE["WorkPackageLeader"])
+    OTHER = PermissibleValue(
+        text="OTHER",
+        description="""Any person or institution making a significant contribution not
+covered by other contributor type values.""",
+        meaning=DATACITE["Other"])
+
+    _defn = EnumDefinition(
+        name="DataCiteContributorType",
+        description="""Types of contributors to research resources from DataCite 4.6.
+These describe organizational and functional roles rather than
+specific contribution activities (see CRediT/ResearchRole for those).""",
+    )
+
+class AccessRights(EnumDefinitionImpl):
+    """
+    Information about who can access the resource or an indication of
+    its security status. Based on EU Vocabularies Access Rights authority list
+    and DCAT recommendations.
+    """
+    PUBLIC = PermissibleValue(
+        text="PUBLIC",
+        description="""The resource is publicly accessible to everyone without
+restrictions.""",
+        meaning=EUVOC["access-right/PUBLIC"])
+    RESTRICTED = PermissibleValue(
+        text="RESTRICTED",
+        description="""The resource is available under certain conditions or to
+authorized users only. Access may require authentication,
+payment, or agreement to terms.""",
+        meaning=EUVOC["access-right/RESTRICTED"])
+    NON_PUBLIC = PermissibleValue(
+        text="NON_PUBLIC",
+        title="Non-Public",
+        description="""The resource is not publicly accessible. May include confidential,
+sensitive, or internal-use-only resources.""",
+        meaning=EUVOC["access-right/NON_PUBLIC"])
+    EMBARGOED = PermissibleValue(
+        text="EMBARGOED",
+        description="""The resource is temporarily restricted and will become publicly
+available after a specific date or event.""")
+    SENSITIVE = PermissibleValue(
+        text="SENSITIVE",
+        description="""The resource contains sensitive information requiring special
+handling or access controls.""")
+
+    _defn = EnumDefinition(
+        name="AccessRights",
+        description="""Information about who can access the resource or an indication of
+its security status. Based on EU Vocabularies Access Rights authority list
+and DCAT recommendations.""",
+    )
+
+class DatasetStatus(EnumDefinitionImpl):
+    """
+    The status of a dataset in its lifecycle. Based on ADMS (Asset
+    Description Metadata Schema) status vocabulary.
+    """
+    COMPLETED = PermissibleValue(
+        text="COMPLETED",
+        description="""The dataset is complete and no further updates are planned.
+The data is in its final form.""",
+        meaning=ADMS["Completed"])
+    DEPRECATED = PermissibleValue(
+        text="DEPRECATED",
+        description="""The dataset has been superseded by a newer version or is
+no longer recommended for use.""",
+        meaning=ADMS["Deprecated"])
+    UNDER_DEVELOPMENT = PermissibleValue(
+        text="UNDER_DEVELOPMENT",
+        title="Under Development",
+        description="""The dataset is still being created, collected, or processed.
+Not yet ready for production use.""",
+        meaning=ADMS["UnderDevelopment"])
+    WITHDRAWN = PermissibleValue(
+        text="WITHDRAWN",
+        description="""The dataset has been removed from availability, either
+temporarily or permanently.""",
+        meaning=ADMS["Withdrawn"])
+
+    _defn = EnumDefinition(
+        name="DatasetStatus",
+        description="""The status of a dataset in its lifecycle. Based on ADMS (Asset
+Description Metadata Schema) status vocabulary.""",
+    )
+
+class UpdateFrequency(EnumDefinitionImpl):
+    """
+    The frequency at which a dataset is updated with new data.
+    Based on Dublin Core Collection Description Frequency Vocabulary.
+    """
+    CONTINUOUS = PermissibleValue(
+        text="CONTINUOUS",
+        description="Data is updated continuously or in real-time.",
+        meaning=DCTERMS["Frequency"])
+    DAILY = PermissibleValue(
+        text="DAILY",
+        description="Data is updated once per day.")
+    TWICE_WEEKLY = PermissibleValue(
+        text="TWICE_WEEKLY",
+        title="Twice Weekly",
+        description="Data is updated twice per week.")
+    WEEKLY = PermissibleValue(
+        text="WEEKLY",
+        description="Data is updated once per week.")
+    BIWEEKLY = PermissibleValue(
+        text="BIWEEKLY",
+        description="Data is updated every two weeks.")
+    MONTHLY = PermissibleValue(
+        text="MONTHLY",
+        description="Data is updated once per month.")
+    BIMONTHLY = PermissibleValue(
+        text="BIMONTHLY",
+        description="Data is updated every two months.")
+    QUARTERLY = PermissibleValue(
+        text="QUARTERLY",
+        description="Data is updated once per quarter (every three months).")
+    SEMIANNUAL = PermissibleValue(
+        text="SEMIANNUAL",
+        description="Data is updated twice per year.")
+    ANNUAL = PermissibleValue(
+        text="ANNUAL",
+        description="Data is updated once per year.")
+    BIENNIAL = PermissibleValue(
+        text="BIENNIAL",
+        description="Data is updated every two years.")
+    TRIENNIAL = PermissibleValue(
+        text="TRIENNIAL",
+        description="Data is updated every three years.")
+    IRREGULAR = PermissibleValue(
+        text="IRREGULAR",
+        description="Data is updated at irregular intervals.")
+    NEVER = PermissibleValue(
+        text="NEVER",
+        description="""Data is not updated after initial publication.
+Historical or archival datasets.""")
+    UNKNOWN = PermissibleValue(
+        text="UNKNOWN",
+        description="The update frequency is not known.")
+
+    _defn = EnumDefinition(
+        name="UpdateFrequency",
+        description="""The frequency at which a dataset is updated with new data.
+Based on Dublin Core Collection Description Frequency Vocabulary.""",
+    )
+
+class DataServiceType(EnumDefinitionImpl):
+    """
+    The type of data service provided. Based on INSPIRE spatial data
+    service types and common data access patterns.
+    """
+    DISCOVERY = PermissibleValue(
+        text="DISCOVERY",
+        description="""Service enabling search and discovery of datasets and services.""")
+    VIEW = PermissibleValue(
+        text="VIEW",
+        description="""Service enabling viewing or visualization of data without
+full download.""")
+    DOWNLOAD = PermissibleValue(
+        text="DOWNLOAD",
+        description="""Service enabling bulk download of datasets or portions thereof.""")
+    TRANSFORMATION = PermissibleValue(
+        text="TRANSFORMATION",
+        description="""Service enabling transformation of data, such as format
+conversion or coordinate transformation.""")
+    INVOKE = PermissibleValue(
+        text="INVOKE",
+        description="""Service enabling invocation of operations on data, typically
+through an API.""")
+    SUBSCRIPTION = PermissibleValue(
+        text="SUBSCRIPTION",
+        description="""Service enabling subscription to data updates or notifications.""")
+    QUERY = PermissibleValue(
+        text="QUERY",
+        description="""Service enabling query-based access to data, returning
+filtered or aggregated results.""")
+
+    _defn = EnumDefinition(
+        name="DataServiceType",
+        description="""The type of data service provided. Based on INSPIRE spatial data
+service types and common data access patterns.""",
+    )
+
 # Slots
 class slots:
     pass
@@ -29039,6 +30789,9 @@ slots.sample_processing = Slot(uri=VALUESETS.sample_processing, name="sample_pro
 
 slots.planned_process_completion_status = Slot(uri=VALUESETS.planned_process_completion_status, name="planned_process_completion_status", curie=VALUESETS.curie('planned_process_completion_status'),
                    model_uri=VALUESETS.planned_process_completion_status, domain=None, range=Optional[Union[str, "PlannedProcessCompletionStatus"]])
+
+slots.study_type = Slot(uri=VALUESETS.study_type, name="study_type", curie=VALUESETS.curie('study_type'),
+                   model_uri=VALUESETS.study_type, domain=None, range=Optional[Union[str, "StudyTypeEnum"]])
 
 slots.go_evidence = Slot(uri=VALUESETS.go_evidence, name="go_evidence", curie=VALUESETS.curie('go_evidence'),
                    model_uri=VALUESETS.go_evidence, domain=None, range=Optional[Union[str, "GOEvidenceCode"]])
@@ -29234,6 +30987,12 @@ slots.human_developmental_stage = Slot(uri=VALUESETS.human_developmental_stage, 
 
 slots.mouse_developmental_stage = Slot(uri=VALUESETS.mouse_developmental_stage, name="mouse_developmental_stage", curie=VALUESETS.curie('mouse_developmental_stage'),
                    model_uri=VALUESETS.mouse_developmental_stage, domain=None, range=Optional[Union[str, "MouseDevelopmentalStage"]])
+
+slots.human_age_group = Slot(uri=VALUESETS.human_age_group, name="human_age_group", curie=VALUESETS.curie('human_age_group'),
+                   model_uri=VALUESETS.human_age_group, domain=None, range=Optional[Union[str, "HumanAgeGroupEnum"]])
+
+slots.mouse_postnatal_age_group = Slot(uri=VALUESETS.mouse_postnatal_age_group, name="mouse_postnatal_age_group", curie=VALUESETS.curie('mouse_postnatal_age_group'),
+                   model_uri=VALUESETS.mouse_postnatal_age_group, domain=None, range=Optional[Union[str, "MousePostnatalAgeGroupEnum"]])
 
 slots.day_of_week = Slot(uri=VALUESETS.day_of_week, name="day_of_week", curie=VALUESETS.curie('day_of_week'),
                    model_uri=VALUESETS.day_of_week, domain=None, range=Optional[Union[str, "DayOfWeek"]])
@@ -29603,6 +31362,9 @@ slots.exposure_frequency = Slot(uri=VALUESETS.exposure_frequency, name="exposure
 
 slots.study_population = Slot(uri=VALUESETS.study_population, name="study_population", curie=VALUESETS.curie('study_population'),
                    model_uri=VALUESETS.study_population, domain=None, range=Optional[Union[str, "StudyPopulationEnum"]])
+
+slots.hhear_exposure_assessed = Slot(uri=VALUESETS.hhear_exposure_assessed, name="hhear_exposure_assessed", curie=VALUESETS.curie('hhear_exposure_assessed'),
+                   model_uri=VALUESETS.hhear_exposure_assessed, domain=None, range=Optional[Union[str, "HHEARExposureAssessedEnum"]])
 
 slots.country_code_iso2 = Slot(uri=VALUESETS.country_code_iso2, name="country_code_iso2", curie=VALUESETS.curie('country_code_iso2'),
                    model_uri=VALUESETS.country_code_iso2, domain=None, range=Optional[Union[str, "CountryCodeISO2Enum"]])
@@ -30467,3 +32229,84 @@ slots.arxiv_primary_category = Slot(uri=VALUESETS.arxiv_primary_category, name="
 
 slots.arxiv_secondary_categories = Slot(uri=VALUESETS.arxiv_secondary_categories, name="arxiv_secondary_categories", curie=VALUESETS.curie('arxiv_secondary_categories'),
                    model_uri=VALUESETS.arxiv_secondary_categories, domain=None, range=Optional[Union[Union[str, "ArxivCategory"], list[Union[str, "ArxivCategory"]]]])
+
+slots.osti_workflow_status = Slot(uri=VALUESETS.osti_workflow_status, name="osti_workflow_status", curie=VALUESETS.curie('osti_workflow_status'),
+                   model_uri=VALUESETS.osti_workflow_status, domain=None, range=Optional[Union[str, "OstiWorkflowStatus"]])
+
+slots.osti_access_limitation = Slot(uri=VALUESETS.osti_access_limitation, name="osti_access_limitation", curie=VALUESETS.curie('osti_access_limitation'),
+                   model_uri=VALUESETS.osti_access_limitation, domain=None, range=Optional[Union[str, "OstiAccessLimitation"]])
+
+slots.osti_collection_type = Slot(uri=VALUESETS.osti_collection_type, name="osti_collection_type", curie=VALUESETS.curie('osti_collection_type'),
+                   model_uri=VALUESETS.osti_collection_type, domain=None, range=Optional[Union[str, "OstiCollectionType"]])
+
+slots.osti_sensitivity_flag = Slot(uri=VALUESETS.osti_sensitivity_flag, name="osti_sensitivity_flag", curie=VALUESETS.curie('osti_sensitivity_flag'),
+                   model_uri=VALUESETS.osti_sensitivity_flag, domain=None, range=Optional[Union[str, "OstiSensitivityFlag"]])
+
+slots.osti_organization_identifier_type = Slot(uri=VALUESETS.osti_organization_identifier_type, name="osti_organization_identifier_type", curie=VALUESETS.curie('osti_organization_identifier_type'),
+                   model_uri=VALUESETS.osti_organization_identifier_type, domain=None, range=Optional[Union[str, "OstiOrganizationIdentifierType"]])
+
+slots.osti_product_type = Slot(uri=VALUESETS.osti_product_type, name="osti_product_type", curie=VALUESETS.curie('osti_product_type'),
+                   model_uri=VALUESETS.osti_product_type, domain=None, range=Optional[Union[str, "OstiProductType"]])
+
+slots.osti_organization_type = Slot(uri=VALUESETS.osti_organization_type, name="osti_organization_type", curie=VALUESETS.curie('osti_organization_type'),
+                   model_uri=VALUESETS.osti_organization_type, domain=None, range=Optional[Union[str, "OstiOrganizationType"]])
+
+slots.osti_person_type = Slot(uri=VALUESETS.osti_person_type, name="osti_person_type", curie=VALUESETS.curie('osti_person_type'),
+                   model_uri=VALUESETS.osti_person_type, domain=None, range=Optional[Union[str, "OstiPersonType"]])
+
+slots.osti_contributor_type = Slot(uri=VALUESETS.osti_contributor_type, name="osti_contributor_type", curie=VALUESETS.curie('osti_contributor_type'),
+                   model_uri=VALUESETS.osti_contributor_type, domain=None, range=Optional[Union[str, "OstiContributorType"]])
+
+slots.osti_related_identifier_type = Slot(uri=VALUESETS.osti_related_identifier_type, name="osti_related_identifier_type", curie=VALUESETS.curie('osti_related_identifier_type'),
+                   model_uri=VALUESETS.osti_related_identifier_type, domain=None, range=Optional[Union[str, "OstiRelatedIdentifierType"]])
+
+slots.osti_relation_type = Slot(uri=VALUESETS.osti_relation_type, name="osti_relation_type", curie=VALUESETS.curie('osti_relation_type'),
+                   model_uri=VALUESETS.osti_relation_type, domain=None, range=Optional[Union[str, "OstiRelationType"]])
+
+slots.osti_identifier_type = Slot(uri=VALUESETS.osti_identifier_type, name="osti_identifier_type", curie=VALUESETS.curie('osti_identifier_type'),
+                   model_uri=VALUESETS.osti_identifier_type, domain=None, range=Optional[Union[str, "OstiIdentifierType"]])
+
+slots.osti_geolocation_type = Slot(uri=VALUESETS.osti_geolocation_type, name="osti_geolocation_type", curie=VALUESETS.curie('osti_geolocation_type'),
+                   model_uri=VALUESETS.osti_geolocation_type, domain=None, range=Optional[Union[str, "OstiGeolocationType"]])
+
+slots.osti_media_location_type = Slot(uri=VALUESETS.osti_media_location_type, name="osti_media_location_type", curie=VALUESETS.curie('osti_media_location_type'),
+                   model_uri=VALUESETS.osti_media_location_type, domain=None, range=Optional[Union[str, "OstiMediaLocationType"]])
+
+slots.preservation_event_type = Slot(uri=VALUESETS.preservation_event_type, name="preservation_event_type", curie=VALUESETS.curie('preservation_event_type'),
+                   model_uri=VALUESETS.preservation_event_type, domain=None, range=Optional[Union[str, "PreservationEventType"]])
+
+slots.object_category = Slot(uri=VALUESETS.object_category, name="object_category", curie=VALUESETS.curie('object_category'),
+                   model_uri=VALUESETS.object_category, domain=None, range=Optional[Union[str, "DigitalObjectCategory"]])
+
+slots.copyright_status = Slot(uri=VALUESETS.copyright_status, name="copyright_status", curie=VALUESETS.curie('copyright_status'),
+                   model_uri=VALUESETS.copyright_status, domain=None, range=Optional[Union[str, "CopyrightStatus"]])
+
+slots.rights_basis = Slot(uri=VALUESETS.rights_basis, name="rights_basis", curie=VALUESETS.curie('rights_basis'),
+                   model_uri=VALUESETS.rights_basis, domain=None, range=Optional[Union[str, "RightsBasis"]])
+
+slots.preservation_level_role = Slot(uri=VALUESETS.preservation_level_role, name="preservation_level_role", curie=VALUESETS.curie('preservation_level_role'),
+                   model_uri=VALUESETS.preservation_level_role, domain=None, range=Optional[Union[str, "PreservationLevelRole"]])
+
+slots.hash_algorithm = Slot(uri=VALUESETS.hash_algorithm, name="hash_algorithm", curie=VALUESETS.curie('hash_algorithm'),
+                   model_uri=VALUESETS.hash_algorithm, domain=None, range=Optional[Union[str, "CryptographicHashFunction"]])
+
+slots.resource_type = Slot(uri=VALUESETS.resource_type, name="resource_type", curie=VALUESETS.curie('resource_type'),
+                   model_uri=VALUESETS.resource_type, domain=None, range=Optional[Union[str, "DataCiteResourceType"]])
+
+slots.resource_relation_type = Slot(uri=VALUESETS.resource_relation_type, name="resource_relation_type", curie=VALUESETS.curie('resource_relation_type'),
+                   model_uri=VALUESETS.resource_relation_type, domain=None, range=Optional[Union[str, "DataCiteRelationType"]])
+
+slots.datacite_contributor_type = Slot(uri=VALUESETS.datacite_contributor_type, name="datacite_contributor_type", curie=VALUESETS.curie('datacite_contributor_type'),
+                   model_uri=VALUESETS.datacite_contributor_type, domain=None, range=Optional[Union[str, "DataCiteContributorType"]])
+
+slots.access_rights = Slot(uri=VALUESETS.access_rights, name="access_rights", curie=VALUESETS.curie('access_rights'),
+                   model_uri=VALUESETS.access_rights, domain=None, range=Optional[Union[str, "AccessRights"]])
+
+slots.dataset_status = Slot(uri=VALUESETS.dataset_status, name="dataset_status", curie=VALUESETS.curie('dataset_status'),
+                   model_uri=VALUESETS.dataset_status, domain=None, range=Optional[Union[str, "DatasetStatus"]])
+
+slots.update_frequency = Slot(uri=VALUESETS.update_frequency, name="update_frequency", curie=VALUESETS.curie('update_frequency'),
+                   model_uri=VALUESETS.update_frequency, domain=None, range=Optional[Union[str, "UpdateFrequency"]])
+
+slots.data_service_type = Slot(uri=VALUESETS.data_service_type, name="data_service_type", curie=VALUESETS.curie('data_service_type'),
+                   model_uri=VALUESETS.data_service_type, domain=None, range=Optional[Union[str, "DataServiceType"]])

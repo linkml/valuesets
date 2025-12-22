@@ -41,7 +41,7 @@ enums:
       coding_system: ICD-O-3
     permissible_values:
       I_LEUKEMIAS_MYELOPROLIFERATIVE_MYELODYSPLASTIC:
-        title: "I. Leukemias, myeloproliferative diseases, and myelodysplastic diseases"
+        title: Leukemia
         description: >-
           Includes lymphoid leukemias, acute myeloid leukemias, chronic
           myeloproliferative diseases, myelodysplastic syndrome and other
@@ -52,17 +52,17 @@ enums:
           iccc_code: I
           subgroup_count: 5
       II_LYMPHOMAS_RETICULOENDOTHELIAL:
-        title: "II. Lymphomas and reticuloendothelial neoplasms"
+        title: Lymphoma
         description: >-
           Includes Hodgkin lymphomas, non-Hodgkin lymphomas (except Burkitt
           lymphoma), Burkitt lymphoma, and miscellaneous lymphoreticular
           neoplasms.
-        meaning: NCIT:C7058
+        meaning: NCIT:C3208
         annotations:
           iccc_code: II
           subgroup_count: 4
       III_CNS_INTRACRANIAL_INTRASPINAL:
-        title: "III. CNS and miscellaneous intracranial and intraspinal neoplasms"
+        title: Brain Neoplasm
         description: >-
           Includes ependymomas and choroid plexus tumor, astrocytomas,
           intracranial and intraspinal embryonal tumors, other gliomas,
@@ -75,7 +75,7 @@ enums:
           subgroup_count: 6
           includes_nonmalignant: true
       IV_NEUROBLASTOMA_PERIPHERAL_NERVOUS:
-        title: "IV. Neuroblastoma and other peripheral nervous cell tumors"
+        title: Neuroblastoma
         description: >-
           Includes neuroblastoma and ganglioneuroblastoma, and other
           peripheral nervous cell tumors.
@@ -84,7 +84,7 @@ enums:
           iccc_code: IV
           subgroup_count: 2
       V_RETINOBLASTOMA:
-        title: "V. Retinoblastoma"
+        title: Retinoblastoma
         description: >-
           Malignant neoplasm of the retina. Single group with no subgroups.
         meaning: NCIT:C7541
@@ -92,7 +92,7 @@ enums:
           iccc_code: V
           subgroup_count: 1
       VI_RENAL_TUMORS:
-        title: "VI. Renal tumors"
+        title: Malignant Kidney Neoplasm
         description: >-
           Includes nephroblastoma and other nonepithelial renal tumors,
           renal carcinomas, and unspecified malignant renal tumors.
@@ -101,7 +101,7 @@ enums:
           iccc_code: VI
           subgroup_count: 3
       VII_HEPATIC_TUMORS:
-        title: "VII. Hepatic tumors"
+        title: Liver Carcinoma
         description: >-
           Includes hepatoblastoma, hepatic carcinomas, and unspecified
           malignant hepatic tumors.
@@ -110,17 +110,17 @@ enums:
           iccc_code: VII
           subgroup_count: 3
       VIII_MALIGNANT_BONE_TUMORS:
-        title: "VIII. Malignant bone tumors"
+        title: Malignant Bone Neoplasm
         description: >-
           Includes osteosarcomas, chondrosarcomas, Ewing tumor and related
           sarcomas of bone, other specified malignant bone tumors, and
           unspecified malignant bone tumors.
-        meaning: NCIT:C4882
+        meaning: NCIT:C4016
         annotations:
           iccc_code: VIII
           subgroup_count: 5
       IX_SOFT_TISSUE_SARCOMAS:
-        title: "IX. Soft tissue and other extraosseous sarcomas"
+        title: Soft Tissue Sarcoma
         description: >-
           Includes rhabdomyosarcomas, fibrosarcomas/peripheral nerve sheath
           tumors/other fibrous neoplasms, Kaposi sarcoma, other specified
@@ -130,7 +130,7 @@ enums:
           iccc_code: IX
           subgroup_count: 5
       X_GERM_CELL_GONADAL:
-        title: "X. Germ cell tumors, trophoblastic tumors, and neoplasms of gonads"
+        title: Germ Cell Tumor
         description: >-
           Includes intracranial and intraspinal germ cell tumors, malignant
           extracranial and extragonadal germ cell tumors, malignant gonadal
@@ -141,7 +141,7 @@ enums:
           iccc_code: X
           subgroup_count: 5
       XI_EPITHELIAL_MELANOMA:
-        title: "XI. Other malignant epithelial neoplasms and malignant melanomas"
+        title: Epithelial Neoplasm
         description: >-
           Includes adrenocortical carcinomas, thyroid carcinomas,
           nasopharyngeal carcinomas, malignant melanomas, skin carcinomas,
@@ -151,7 +151,7 @@ enums:
           iccc_code: XI
           subgroup_count: 6
       XII_OTHER_UNSPECIFIED:
-        title: "XII. Other and unspecified malignant neoplasms"
+        title: Neoplasm
         description: >-
           Includes other specified malignant tumors and other unspecified
           malignant tumors not classifiable in groups I-XI.
@@ -181,7 +181,7 @@ enums:
     permissible_values:
       # ===== Group I: Leukemias =====
       Ia_LYMPHOID_LEUKEMIAS:
-        title: "Ia. Lymphoid leukemias"
+        title: Acute Lymphoblastic Leukemia
         description: >-
           Precursor cell lymphoblastic leukemia, NOS; precursor cell
           lymphoblastic leukemia, B-cell; precursor cell lymphoblastic
@@ -191,7 +191,7 @@ enums:
           main_group: I
           icdo3_codes: "9820-9827, 9835-9837"
       Ib_ACUTE_MYELOID_LEUKEMIAS:
-        title: "Ib. Acute myeloid leukemias"
+        title: Acute Myeloid Leukemia
         description: >-
           Acute myeloid leukemia and variants including AML with maturation,
           acute promyelocytic leukemia, acute myelomonocytic leukemia,
@@ -201,7 +201,7 @@ enums:
           main_group: I
           icdo3_codes: "9840, 9861, 9866-9867, 9870-9874, 9891, 9895-9897, 9910, 9920, 9931"
       Ic_CHRONIC_MYELOPROLIFERATIVE:
-        title: "Ic. Chronic myeloproliferative diseases"
+        title: Myeloproliferative Neoplasm
         description: >-
           Chronic myeloid leukemia, NOS; juvenile myelomonocytic leukemia;
           and other chronic myeloproliferative diseases.
@@ -210,7 +210,7 @@ enums:
           main_group: I
           icdo3_codes: "9863, 9875-9876, 9945-9946, 9950, 9960-9964"
       Id_MYELODYSPLASTIC_OTHER_MYELOPROLIFERATIVE:
-        title: "Id. Myelodysplastic syndrome and other myeloproliferative diseases"
+        title: Myelodysplastic Syndrome
         description: >-
           Myelodysplastic syndrome, NOS; refractory anemia; refractory
           anemia with ringed sideroblasts; refractory anemia with excess blasts.
@@ -219,7 +219,7 @@ enums:
           main_group: I
           icdo3_codes: "9945, 9980, 9982-9983, 9985-9989"
       Ie_UNSPECIFIED_OTHER_LEUKEMIAS:
-        title: "Ie. Unspecified and other specified leukemias"
+        title: Leukemia
         description: Leukemia, NOS and other specified leukemias not elsewhere classified.
         meaning: NCIT:C3161
         annotations:
@@ -228,7 +228,7 @@ enums:
 
       # ===== Group II: Lymphomas =====
       IIa_HODGKIN_LYMPHOMAS:
-        title: "IIa. Hodgkin lymphomas"
+        title: Hodgkin Lymphoma
         description: >-
           Classical Hodgkin lymphoma and nodular lymphocyte predominant
           Hodgkin lymphoma.
@@ -237,7 +237,7 @@ enums:
           main_group: II
           icdo3_codes: "9650-9655, 9659, 9661-9665, 9667"
       IIb_NON_HODGKIN_LYMPHOMAS:
-        title: "IIb. Non-Hodgkin lymphomas (except Burkitt lymphoma)"
+        title: Non-Hodgkin Lymphoma
         description: >-
           Diffuse large B-cell lymphoma, follicular lymphoma, peripheral
           T-cell lymphoma, anaplastic large cell lymphoma, and other
@@ -247,14 +247,14 @@ enums:
           main_group: II
           icdo3_codes: "9591, 9670-9686, 9689-9691, 9695, 9698-9702, 9705, 9708-9709, 9714-9719, 9727-9729"
       IIc_BURKITT_LYMPHOMA:
-        title: "IIc. Burkitt lymphoma"
+        title: Burkitt Lymphoma
         description: Burkitt lymphoma and Burkitt-like lymphoma.
-        meaning: NCIT:C8150
+        meaning: NCIT:C2912
         annotations:
           main_group: II
           icdo3_codes: "9687"
       IId_MISC_LYMPHORETICULAR:
-        title: "IId. Miscellaneous lymphoreticular neoplasms"
+        title: Hematopoietic and Lymphoid Cell Neoplasm
         description: >-
           Lymphoreticular neoplasms not elsewhere classified including
           lymphomatoid granulomatosis and post-transplant lymphoproliferative
@@ -266,7 +266,7 @@ enums:
 
       # ===== Group III: CNS and Intracranial =====
       IIIa_EPENDYMOMAS:
-        title: "IIIa. Ependymomas and choroid plexus tumor"
+        title: Ependymoma
         description: >-
           Ependymoma, anaplastic ependymoma, myxopapillary ependymoma,
           and choroid plexus papilloma and carcinoma.
@@ -275,7 +275,7 @@ enums:
           main_group: III
           icdo3_codes: "9383, 9390-9394"
       IIIb_ASTROCYTOMAS:
-        title: "IIIb. Astrocytomas"
+        title: Astrocytoma
         description: >-
           Pilocytic astrocytoma, diffuse astrocytoma, anaplastic astrocytoma,
           glioblastoma, and other astrocytic tumors.
@@ -284,16 +284,16 @@ enums:
           main_group: III
           icdo3_codes: "9380, 9384, 9400-9411, 9420, 9424"
       IIIc_INTRACRANIAL_EMBRYONAL:
-        title: "IIIc. Intracranial and intraspinal embryonal tumors"
+        title: Central Nervous System Embryonal Tumor
         description: >-
           Medulloblastoma, primitive neuroectodermal tumor, medulloepithelioma,
           atypical teratoid/rhabdoid tumor, and other embryonal tumors.
-        meaning: NCIT:C6774
+        meaning: NCIT:C6990
         annotations:
           main_group: III
           icdo3_codes: "9470-9474, 9480, 9490, 9500-9508"
       IIId_OTHER_GLIOMAS:
-        title: "IIId. Other gliomas"
+        title: Glioma
         description: >-
           Oligodendroglioma, anaplastic oligodendroglioma, mixed glioma,
           and other gliomas not elsewhere classified.
@@ -302,7 +302,7 @@ enums:
           main_group: III
           icdo3_codes: "9380-9382, 9430, 9440-9460"
       IIIe_OTHER_INTRACRANIAL_INTRASPINAL:
-        title: "IIIe. Other specified intracranial and intraspinal neoplasms"
+        title: Brain Neoplasm
         description: >-
           Pituitary adenoma, craniopharyngioma, pineal tumors, and other
           specified intracranial neoplasms.
@@ -310,7 +310,7 @@ enums:
         annotations:
           main_group: III
       IIIf_UNSPECIFIED_INTRACRANIAL:
-        title: "IIIf. Unspecified intracranial and intraspinal neoplasms"
+        title: Brain Neoplasm
         description: Intracranial and intraspinal neoplasms, NOS.
         meaning: NCIT:C2907
         annotations:
@@ -319,7 +319,7 @@ enums:
 
       # ===== Group IV: Neuroblastoma =====
       IVa_NEUROBLASTOMA_GANGLIONEUROBLASTOMA:
-        title: "IVa. Neuroblastoma and ganglioneuroblastoma"
+        title: Neuroblastoma
         description: >-
           Neuroblastoma, NOS and ganglioneuroblastoma.
         meaning: NCIT:C3270
@@ -327,18 +327,18 @@ enums:
           main_group: IV
           icdo3_codes: "9490, 9500"
       IVb_OTHER_PERIPHERAL_NERVOUS:
-        title: "IVb. Other peripheral nervous cell tumors"
+        title: Peripheral Nervous System Neoplasm
         description: >-
           Other peripheral nerve tumors including ganglioneuroma and
           peripheral nerve sheath tumors.
-        meaning: NCIT:C4969
+        meaning: NCIT:C3321
         annotations:
           main_group: IV
           icdo3_codes: "9501-9504, 9520-9523"
 
       # ===== Group V: Retinoblastoma =====
       V_RETINOBLASTOMA:
-        title: "V. Retinoblastoma"
+        title: Retinoblastoma
         description: Retinoblastoma.
         meaning: NCIT:C7541
         annotations:
@@ -347,7 +347,7 @@ enums:
 
       # ===== Group VI: Renal tumors =====
       VIa_NEPHROBLASTOMA:
-        title: "VIa. Nephroblastoma and other nonepithelial renal tumors"
+        title: Wilms Tumor
         description: >-
           Wilms tumor (nephroblastoma), clear cell sarcoma of kidney,
           rhabdoid tumor of kidney, and other nonepithelial renal tumors.
@@ -356,13 +356,13 @@ enums:
           main_group: VI
           icdo3_codes: "8960, 8963-8964"
       VIb_RENAL_CARCINOMAS:
-        title: "VIb. Renal carcinomas"
+        title: Renal Cell Carcinoma
         description: Renal cell carcinoma and other renal carcinomas.
         meaning: NCIT:C9385
         annotations:
           main_group: VI
       VIc_UNSPECIFIED_RENAL:
-        title: "VIc. Unspecified malignant renal tumors"
+        title: Malignant Kidney Neoplasm
         description: Malignant renal tumors, NOS.
         meaning: NCIT:C7548
         annotations:
@@ -370,14 +370,14 @@ enums:
 
       # ===== Group VII: Hepatic tumors =====
       VIIa_HEPATOBLASTOMA:
-        title: "VIIa. Hepatoblastoma"
+        title: Hepatoblastoma
         description: Hepatoblastoma.
         meaning: NCIT:C3728
         annotations:
           main_group: VII
           icdo3_codes: "8970"
       VIIb_HEPATIC_CARCINOMAS:
-        title: "VIIb. Hepatic carcinomas"
+        title: Hepatocellular Carcinoma
         description: >-
           Hepatocellular carcinoma, cholangiocarcinoma, and other hepatic
           carcinomas.
@@ -385,7 +385,7 @@ enums:
         annotations:
           main_group: VII
       VIIc_UNSPECIFIED_HEPATIC:
-        title: "VIIc. Unspecified malignant hepatic tumors"
+        title: Liver Carcinoma
         description: Malignant hepatic tumors, NOS.
         meaning: NCIT:C7927
         annotations:
@@ -393,7 +393,7 @@ enums:
 
       # ===== Group VIII: Bone tumors =====
       VIIIa_OSTEOSARCOMAS:
-        title: "VIIIa. Osteosarcomas"
+        title: Osteosarcoma
         description: >-
           Osteosarcoma, NOS and variants including chondroblastic,
           fibroblastic, telangiectatic, and small cell osteosarcoma.
@@ -402,14 +402,14 @@ enums:
           main_group: VIII
           icdo3_codes: "9180-9187, 9191-9195"
       VIIIb_CHONDROSARCOMAS:
-        title: "VIIIb. Chondrosarcomas"
+        title: Chondrosarcoma
         description: Chondrosarcoma, NOS and variants.
         meaning: NCIT:C2946
         annotations:
           main_group: VIII
           icdo3_codes: "9220-9231, 9240-9243"
       VIIIc_EWING_TUMOR_BONE:
-        title: "VIIIc. Ewing tumor and related sarcomas of bone"
+        title: Ewing Sarcoma
         description: >-
           Ewing sarcoma of bone and peripheral primitive neuroectodermal
           tumor of bone.
@@ -418,23 +418,23 @@ enums:
           main_group: VIII
           icdo3_codes: "9260, 9364"
       VIIId_OTHER_BONE:
-        title: "VIIId. Other specified malignant bone tumors"
+        title: Malignant Bone Neoplasm
         description: >-
           Other specified malignant bone tumors including giant cell tumor
           of bone, malignant and adamantinoma.
-        meaning: NCIT:C4882
+        meaning: NCIT:C4016
         annotations:
           main_group: VIII
       VIIIe_UNSPECIFIED_BONE:
-        title: "VIIIe. Unspecified malignant bone tumors"
+        title: Malignant Bone Neoplasm
         description: Malignant bone tumors, NOS.
-        meaning: NCIT:C4882
+        meaning: NCIT:C4016
         annotations:
           main_group: VIII
 
       # ===== Group IX: Soft tissue sarcomas =====
       IXa_RHABDOMYOSARCOMAS:
-        title: "IXa. Rhabdomyosarcomas"
+        title: Rhabdomyosarcoma
         description: >-
           Rhabdomyosarcoma, NOS; embryonal rhabdomyosarcoma; alveolar
           rhabdomyosarcoma; and other rhabdomyosarcomas.
@@ -443,7 +443,7 @@ enums:
           main_group: IX
           icdo3_codes: "8900-8905, 8910, 8912, 8920"
       IXb_FIBROSARCOMAS:
-        title: "IXb. Fibrosarcomas, peripheral nerve sheath tumors, and other fibrous neoplasms"
+        title: Fibrosarcoma
         description: >-
           Fibrosarcoma, NOS; infantile fibrosarcoma; dermatofibrosarcoma;
           and malignant peripheral nerve sheath tumor.
@@ -452,14 +452,14 @@ enums:
           main_group: IX
           icdo3_codes: "8810-8815, 8820-8823, 8830, 8832-8833, 9540, 9560-9561"
       IXc_KAPOSI_SARCOMA:
-        title: "IXc. Kaposi sarcoma"
+        title: Kaposi Sarcoma
         description: Kaposi sarcoma.
         meaning: NCIT:C9087
         annotations:
           main_group: IX
           icdo3_codes: "9140"
       IXd_OTHER_SOFT_TISSUE:
-        title: "IXd. Other specified soft tissue sarcomas"
+        title: Soft Tissue Sarcoma
         description: >-
           Includes liposarcoma, leiomyosarcoma, synovial sarcoma,
           hemangiosarcoma, and other specified soft tissue sarcomas.
@@ -467,7 +467,7 @@ enums:
         annotations:
           main_group: IX
       IXe_UNSPECIFIED_SOFT_TISSUE:
-        title: "IXe. Unspecified soft tissue sarcomas"
+        title: Soft Tissue Sarcoma
         description: Soft tissue sarcomas, NOS.
         meaning: NCIT:C9306
         annotations:
@@ -475,24 +475,24 @@ enums:
 
       # ===== Group X: Germ cell tumors =====
       Xa_INTRACRANIAL_GERM_CELL:
-        title: "Xa. Intracranial and intraspinal germ cell tumors"
+        title: Central Nervous System Germ Cell Tumor
         description: >-
           CNS germ cell tumors including germinoma, teratoma, and
           nongerminomatous germ cell tumors.
-        meaning: NCIT:C6286
+        meaning: NCIT:C5461
         annotations:
           main_group: X
           icdo3_codes: "9060-9102"
       Xb_EXTRACRANIAL_EXTRAGONADAL_GERM_CELL:
-        title: "Xb. Malignant extracranial and extragonadal germ cell tumors"
+        title: Malignant Extragonadal Germ Cell Tumor
         description: >-
           Extracranial germ cell tumors not involving the gonads including
           sacrococcygeal, retroperitoneal, and mediastinal germ cell tumors.
-        meaning: NCIT:C6545
+        meaning: NCIT:C8881
         annotations:
           main_group: X
       Xc_GONADAL_GERM_CELL:
-        title: "Xc. Malignant gonadal germ cell tumors"
+        title: Germ Cell Tumor
         description: >-
           Germ cell tumors of the ovary and testis including dysgerminoma,
           yolk sac tumor, embryonal carcinoma, and mixed germ cell tumors.
@@ -500,13 +500,13 @@ enums:
         annotations:
           main_group: X
       Xd_GONADAL_CARCINOMAS:
-        title: "Xd. Gonadal carcinomas"
+        title: Epithelial Neoplasm
         description: Carcinomas arising in the ovary and testis.
         meaning: NCIT:C3709
         annotations:
           main_group: X
       Xe_OTHER_GONADAL:
-        title: "Xe. Other and unspecified malignant gonadal tumors"
+        title: Germ Cell Tumor
         description: Other specified and unspecified gonadal tumors.
         meaning: NCIT:C3708
         annotations:
@@ -514,14 +514,14 @@ enums:
 
       # ===== Group XI: Epithelial neoplasms and melanomas =====
       XIa_ADRENOCORTICAL_CARCINOMAS:
-        title: "XIa. Adrenocortical carcinomas"
+        title: Adrenal Cortical Carcinoma
         description: Adrenocortical carcinoma.
         meaning: NCIT:C9325
         annotations:
           main_group: XI
           icdo3_codes: "8370"
       XIb_THYROID_CARCINOMAS:
-        title: "XIb. Thyroid carcinomas"
+        title: Malignant Thyroid Gland Neoplasm
         description: >-
           Papillary thyroid carcinoma, follicular thyroid carcinoma,
           and medullary thyroid carcinoma.
@@ -529,19 +529,19 @@ enums:
         annotations:
           main_group: XI
       XIc_NASOPHARYNGEAL_CARCINOMAS:
-        title: "XIc. Nasopharyngeal carcinomas"
+        title: Nasopharyngeal Carcinoma
         description: Nasopharyngeal carcinoma and related carcinomas.
         meaning: NCIT:C3871
         annotations:
           main_group: XI
       XId_MALIGNANT_MELANOMAS:
-        title: "XId. Malignant melanomas"
+        title: Melanoma
         description: Cutaneous and non-cutaneous malignant melanomas.
         meaning: NCIT:C3224
         annotations:
           main_group: XI
       XIe_SKIN_CARCINOMAS:
-        title: "XIe. Skin carcinomas"
+        title: Skin Neoplasm
         description: >-
           Basal cell carcinoma, squamous cell carcinoma of skin, and
           other skin carcinomas.
@@ -549,7 +549,7 @@ enums:
         annotations:
           main_group: XI
       XIf_OTHER_CARCINOMAS:
-        title: "XIf. Other and unspecified carcinomas"
+        title: Epithelial Neoplasm
         description: >-
           Carcinomas at other sites and carcinomas, NOS.
         meaning: NCIT:C3709
@@ -558,7 +558,7 @@ enums:
 
       # ===== Group XII: Other and unspecified =====
       XIIa_OTHER_SPECIFIED:
-        title: "XIIa. Other specified malignant tumors"
+        title: Neoplasm
         description: >-
           Malignant tumors not classifiable in groups I-XI but with
           specified histology.
@@ -566,7 +566,7 @@ enums:
         annotations:
           main_group: XII
       XIIb_OTHER_UNSPECIFIED:
-        title: "XIIb. Other unspecified malignant tumors"
+        title: Neoplasm
         description: Malignant tumors, NOS not classifiable in groups I-XI.
         meaning: NCIT:C3262
         annotations:

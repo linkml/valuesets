@@ -2910,10 +2910,10 @@ enums:
           sources: GO
       SP_XANCP:
         description: 'Xanthomonas campestris (xanthomonas) - Proteome: UP000001010'
-        meaning: NCBITaxon:190485
-        title: Xanthomonas campestris
+        meaning: NCBITaxon:340
+        title: Xanthomonas campestris pv. campestris
         exact_mappings:
-        - NCBITaxon:190485
+        - NCBITaxon:340
         - uniprot.proteome:UP000001010
         aliases:
         - xanthomonas
@@ -2943,10 +2943,10 @@ enums:
           sources: common, GO
       SP_YARLI:
         description: 'Yarrowia lipolytica (Yeast) - Proteome: UP000001300'
-        meaning: NCBITaxon:284591
+        meaning: NCBITaxon:4952
         title: Yarrowia lipolytica
         exact_mappings:
-        - NCBITaxon:284591
+        - NCBITaxon:4952
         - uniprot.proteome:UP000001300
         aliases:
         - Yeast

@@ -12,8 +12,7 @@ import sys
 import yaml
 from pathlib import Path
 
-# NOTE: Ensure this script is run with the package root in PYTHONPATH, or install the package in editable mode (`pip install -e .`)
-from src.valuesets.utils.query_describer import describe_enum_query, fetch_label_from_ols
+from valuesets.utils.query_describer import describe_enum_query, fetch_label_from_ols
 
 
 def find_all_enums(schema_dir: Path) -> dict[str, dict]:
@@ -43,7 +42,7 @@ def build_annotation_table(defn: dict, prefix_map: dict) -> str | None:
 
     Returns markdown table string or None if no extra columns to add.
     """
-    from src.valuesets.utils.query_describer import curie_to_uri
+    from valuesets.utils.query_describer import curie_to_uri
 
     pvs = defn.get("permissible_values", {})
     if not pvs:

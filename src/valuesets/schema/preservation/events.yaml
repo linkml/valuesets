@@ -1,0 +1,239 @@
+name: preservation-events
+title: Preservation Event Types
+description: |
+  Event types for digital preservation activities, based on PREMIS 3.0.
+
+  PREMIS (Preservation Metadata: Implementation Strategies) defines events as
+  "actions performed within or outside the repository that affect the long term
+  preservation of digital objects."
+
+  See: https://www.loc.gov/standards/premis/
+id: https://w3id.org/valuesets/preservation/events
+
+imports:
+  - linkml:types
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+  valuesets: https://w3id.org/valuesets/
+  premis: http://id.loc.gov/vocabulary/preservation/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+
+default_prefix: valuesets
+
+slots:
+  preservation_event_type:
+    description: The type of preservation event
+    range: PreservationEventType
+
+enums:
+  PreservationEventType:
+    title: Preservation Event Type
+    description: |
+      Actions performed within or outside a repository that affect the long-term
+      preservation of digital objects. Based on PREMIS 3.0 event types.
+    status: DRAFT
+    contributors:
+      - orcid:0000-0002-6601-2165
+      - https://github.com/anthropics/claude-code
+    instantiates:
+      - valuesets_meta:ValueSetEnumDefinition
+    see_also:
+      - https://id.loc.gov/vocabulary/preservation/eventType.html
+      - https://www.loc.gov/standards/premis/v3/
+    permissible_values:
+      ACCESSION:
+        description: The process of adding objects to a repository's holdings.
+        meaning: premis:eventType/acc
+      APPRAISAL:
+        description: The process of evaluating objects for long-term retention.
+        meaning: premis:eventType/app
+      CAPTURE:
+        description: The process of recording or acquiring digital content.
+        meaning: premis:eventType/cap
+      COMPILING:
+        description: The process of converting source code into executable code.
+        meaning: premis:eventType/com
+      COMPRESSION:
+        description: The process of reducing file size through encoding.
+        meaning: premis:eventType/cmp
+      CREATION:
+        description: The act of creating a new digital object.
+        meaning: premis:eventType/cre
+      DEACCESSION:
+        description: The process of removing objects from a repository's holdings.
+        meaning: premis:eventType/dea
+      DECOMPRESSION:
+        description: The process of restoring compressed data to its original form.
+        meaning: premis:eventType/dec
+      DECRYPTION:
+        description: The process of converting encrypted data back to plaintext.
+        meaning: premis:eventType/der
+      DELETION:
+        description: The act of removing a digital object.
+        meaning: premis:eventType/del
+      DIGITAL_SIGNATURE_GENERATION:
+        title: Digital Signature Generation
+        description: The process of creating a digital signature for authentication.
+        meaning: premis:eventType/dig
+      DIGITAL_SIGNATURE_VALIDATION:
+        title: Digital Signature Validation
+        description: The process of verifying the authenticity of a digital signature.
+        meaning: premis:eventType/dsv
+      DISPLAYING:
+        description: The process of presenting content for viewing.
+        meaning: premis:eventType/dip
+      DISSEMINATION:
+        description: The process of making content available to users.
+        meaning: premis:eventType/dis
+      ENCRYPTION:
+        description: The process of converting plaintext to ciphertext.
+        meaning: premis:eventType/enc
+      EXECUTION:
+        description: The process of running software or scripts.
+        meaning: premis:eventType/exe
+      EXPORTING:
+        description: The process of extracting content from a system.
+        meaning: premis:eventType/exp
+      EXTRACTION:
+        description: The process of retrieving content from a container or archive.
+        meaning: premis:eventType/ext
+      FILENAME_CHANGE:
+        title: Filename Change
+        description: The act of modifying a file's name.
+        meaning: premis:eventType/fil
+      FIXITY_CHECK:
+        title: Fixity Check
+        description: The process of verifying data integrity using checksums or hashes.
+        meaning: premis:eventType/fix
+      FORENSIC_FEATURE_ANALYSIS:
+        title: Forensic Feature Analysis
+        description: Analysis of digital objects for authenticity or provenance evidence.
+        meaning: premis:eventType/for
+      FORMAT_IDENTIFICATION:
+        title: Format Identification
+        description: The process of determining the file format of a digital object.
+        meaning: premis:eventType/fmi
+      IMAGING:
+        description: The process of creating a bit-level copy of storage media.
+        meaning: premis:eventType/ima
+      INFORMATION_PACKAGE_CREATION:
+        title: Information Package Creation
+        description: Creating a packaged unit of content and metadata (SIP, AIP, DIP).
+        meaning: premis:eventType/ipc
+      INFORMATION_PACKAGE_MERGING:
+        title: Information Package Merging
+        description: Combining multiple information packages into one.
+        meaning: premis:eventType/ipm
+      INFORMATION_PACKAGE_SPLITTING:
+        title: Information Package Splitting
+        description: Dividing an information package into multiple packages.
+        meaning: premis:eventType/ips
+      INGESTION:
+        description: The process of accepting and processing submitted content.
+        meaning: premis:eventType/ing
+      INGESTION_END:
+        title: Ingestion End
+        description: The completion of the ingestion process.
+        meaning: premis:eventType/ine
+      INGESTION_START:
+        title: Ingestion Start
+        description: The beginning of the ingestion process.
+        meaning: premis:eventType/ins
+      INTERPRETING:
+        description: The process of rendering or executing interpretable content.
+        meaning: premis:eventType/int
+      MESSAGE_DIGEST_CALCULATION:
+        title: Message Digest Calculation
+        description: The process of computing a hash or checksum value.
+        meaning: premis:eventType/mes
+      METADATA_EXTRACTION:
+        title: Metadata Extraction
+        description: The process of extracting metadata from digital objects.
+        meaning: premis:eventType/mee
+      METADATA_MODIFICATION:
+        title: Metadata Modification
+        description: The process of changing metadata associated with an object.
+        meaning: premis:eventType/mem
+      MIGRATION:
+        description: |
+          The process of converting content from one format to another
+          to ensure continued accessibility.
+        meaning: premis:eventType/mig
+      MODIFICATION:
+        description: The act of changing the content of a digital object.
+        meaning: premis:eventType/mod
+      NORMALIZATION:
+        description: |
+          The process of converting content to a standard format
+          for preservation or access.
+        meaning: premis:eventType/nor
+      PACKING:
+        description: The process of combining files into a container format.
+        meaning: premis:eventType/pac
+      POLICY_ASSIGNMENT:
+        title: Policy Assignment
+        description: The act of associating preservation policies with objects.
+        meaning: premis:eventType/poa
+      PRINTING:
+        description: The process of producing a physical copy of digital content.
+        meaning: premis:eventType/pri
+      QUARANTINE:
+        description: Isolating objects suspected of containing malware or corruption.
+        meaning: premis:eventType/qua
+      RECOVERY:
+        description: The process of restoring objects from backup or damaged media.
+        meaning: premis:eventType/rec
+      REDACTION:
+        description: The process of removing sensitive content from objects.
+        meaning: premis:eventType/red
+      REFRESHMENT:
+        description: Copying data to new storage media without format change.
+        meaning: premis:eventType/ref
+      RENDERING:
+        description: The process of generating a viewable representation.
+        meaning: premis:eventType/ren
+      REPLICATION:
+        description: Creating exact copies for redundancy or distribution.
+        meaning: premis:eventType/rep
+      TRANSFER:
+        description: Moving objects between systems or locations.
+        meaning: premis:eventType/tra
+      UNPACKING:
+        description: Extracting files from a container format.
+        meaning: premis:eventType/unp
+      UNQUARANTINE:
+        description: Releasing objects from quarantine after verification.
+        meaning: premis:eventType/unq
+      VALIDATION:
+        description: Verifying that objects conform to expected specifications.
+        meaning: premis:eventType/val
+      VIRUS_CHECK:
+        title: Virus Check
+        description: Scanning objects for malware or viruses.
+        meaning: premis:eventType/vir
+
+  PreservationEventOutcome:
+    title: Preservation Event Outcome
+    description: The outcome or result of a preservation event.
+    status: DRAFT
+    contributors:
+      - orcid:0000-0002-6601-2165
+      - https://github.com/anthropics/claude-code
+    instantiates:
+      - valuesets_meta:ValueSetEnumDefinition
+    see_also:
+      - https://id.loc.gov/vocabulary/preservation/eventOutcome.html
+    permissible_values:
+      SUCCESS:
+        description: The event completed successfully.
+        meaning: premis:eventOutcome/suc
+      FAILURE:
+        description: The event failed to complete.
+        meaning: premis:eventOutcome/fai
+      WARNING:
+        description: The event completed with warnings or issues.
+        meaning: premis:eventOutcome/war
+
+default_range: string

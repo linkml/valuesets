@@ -212,8 +212,8 @@ enums:
         description: >-
           Use of geothermal resources for power generation through
           steam turbines or binary cycle plants.
-        meaning: ENVO:2000034
         close_mappings:
+        - ENVO:2000034
         - sweet:humanTechEnergy/ElectricalGeneration
       DIRECT_USE_HEATING:
         title: Direct Use Heating

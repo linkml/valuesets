@@ -1,0 +1,236 @@
+name: expression_units
+title: Gene Expression Unit Value Sets
+description: >-
+  Value sets for gene expression quantification units used in RNA-seq and
+  other transcriptomic analyses. Includes normalization methods and count types.
+id: https://w3id.org/valuesets/bio/expression_units
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  valuesets: https://w3id.org/valuesets/
+  STATO: http://purl.obolibrary.org/obo/STATO_
+  NCIT: http://purl.obolibrary.org/obo/NCIT_
+  UO: http://purl.obolibrary.org/obo/UO_
+  BAO: http://www.bioassayontology.org/bao#BAO_
+  EDAM: http://edamontology.org/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+default_prefix: valuesets
+slots:
+  expression_unit:
+    description: Unit for gene expression quantification
+    range: ExpressionUnitEnum
+  concentration_unit:
+    description: Unit for concentration measurement
+    range: ConcentrationUnitEnum
+  time_unit:
+    description: Unit for time measurement
+    range: TimeUnitEnum
+enums:
+  ExpressionUnitEnum:
+    title: Gene Expression Units
+    description: >-
+      Quantification units for gene expression data from RNA-seq and microarray
+      experiments. Includes raw counts and various normalization methods.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    see_also:
+    - https://nf-osi.github.io/nf-metadata-dictionary/
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      RAW_COUNTS:
+        description: Raw read counts of transcripts without normalization
+        aliases:
+        - Raw Counts
+        - raw counts
+        annotations:
+          normalization: none
+          use: within-sample comparisons only
+      NORMALIZED_COUNTS:
+        description: Counts normalized by a method such as DESeq2 or edgeR
+        aliases:
+        - Normalized Counts
+        annotations:
+          normalization: library size
+          use: differential expression
+      COUNTS:
+        description: General read counts category
+        aliases:
+        - Counts
+      TPM:
+        description: Transcripts per million - normalized for gene length and sequencing depth
+        meaning: NCIT:C181327
+        aliases:
+        - Transcript per million
+        annotations:
+          normalization: length and depth
+          use: within and between sample comparisons
+          formula: (reads/gene_length_kb) / sum(reads/gene_length_kb) * 1e6
+      FPKM:
+        description: Fragments per kilobase of transcript per million reads mapped
+        meaning: STATO:0000172
+        aliases:
+        - Fragments per kilobase of transcript per million reads mapped
+        annotations:
+          normalization: length and depth
+          use: within-sample comparisons
+          library_type: paired-end
+      RPKM:
+        description: Reads per kilobase of transcript per million reads mapped
+        meaning: STATO:0000206
+        aliases:
+        - Reads per kilobase of transcript per million reads mapped
+        annotations:
+          normalization: length and depth
+          use: within-sample comparisons
+          library_type: single-end
+      CPM:
+        description: Counts per million reads
+        aliases:
+        - Counts per million
+        annotations:
+          normalization: depth only
+      RPKM_UQ:
+        description: RPKM with upper quartile normalization
+        annotations:
+          normalization: length, depth, and upper quartile
+      VST:
+        description: Variance stabilizing transformation values
+        annotations:
+          method: DESeq2
+          use: visualization, clustering
+      RLOG:
+        description: Regularized log transformation values
+        aliases:
+        - rlog
+        annotations:
+          method: DESeq2
+          use: visualization, clustering
+      LOG2_RATIO:
+        description: Log2 fold change ratio
+        annotations:
+          use: differential expression
+      Z_SCORE:
+        description: Z-score normalized expression
+        annotations:
+          use: cross-gene comparisons
+
+  ConcentrationUnitEnum:
+    title: Concentration Units
+    description: Units for measuring concentration in biological experiments
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    see_also:
+    - https://nf-osi.github.io/nf-metadata-dictionary/
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      MOLAR:
+        description: Molar concentration (mol/L)
+        meaning: UO:0000062
+        aliases:
+        - M
+      MILLIMOLAR:
+        description: Millimolar concentration (mmol/L)
+        meaning: UO:0000063
+        aliases:
+        - mM
+      MICROMOLAR:
+        description: Micromolar concentration (umol/L)
+        meaning: UO:0000064
+        aliases:
+        - uM
+      NANOMOLAR:
+        description: Nanomolar concentration (nmol/L)
+        meaning: UO:0000065
+        aliases:
+        - nM
+      PICOMOLAR:
+        description: Picomolar concentration (pmol/L)
+        meaning: UO:0000066
+        aliases:
+        - pM
+      MG_PER_ML:
+        description: Milligrams per milliliter
+        meaning: UO:0000176
+        aliases:
+        - mg/mL
+      UG_PER_ML:
+        description: Micrograms per milliliter
+        meaning: UO:0000274
+        aliases:
+        - ug/mL
+      NG_PER_ML:
+        description: Nanograms per milliliter
+        aliases:
+        - ng/mL
+      PARTICLES_PER_ML:
+        description: Particles per milliliter
+        aliases:
+        - particles/mL
+      PERCENT_W_V:
+        description: Percent weight per volume
+        meaning: UO:0000164
+        aliases:
+        - "% w/v"
+      PERCENT_V_V:
+        description: Percent volume per volume
+        meaning: UO:0000165
+        aliases:
+        - "% v/v"
+
+  TimeUnitEnum:
+    title: Time Units
+    description: Units for measuring time in biological experiments
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    see_also:
+    - https://nf-osi.github.io/nf-metadata-dictionary/
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      SECONDS:
+        description: Time in seconds
+        meaning: UO:0000010
+        aliases:
+        - s
+        - sec
+      MINUTES:
+        description: Time in minutes
+        meaning: UO:0000031
+        aliases:
+        - min
+      HOURS:
+        description: Time in hours
+        meaning: UO:0000032
+        aliases:
+        - h
+        - hr
+      DAYS:
+        description: Time in days
+        meaning: UO:0000033
+        aliases:
+        - d
+      WEEKS:
+        description: Time in weeks
+        meaning: UO:0000034
+        aliases:
+        - wk
+      MONTHS:
+        description: Time in months
+        meaning: UO:0000035
+        aliases:
+        - mo
+      YEARS:
+        description: Time in years
+        meaning: UO:0000036
+        aliases:
+        - yr

@@ -10,6 +10,7 @@ prefixes:
   HsapDv: http://purl.obolibrary.org/obo/HsapDv_
   MmusDv: http://purl.obolibrary.org/obo/MmusDv_
   UBERON: http://purl.obolibrary.org/obo/UBERON_
+  MESH: http://id.nlm.nih.gov/mesh/
   valuesets: https://w3id.org/valuesets/
   orcid: https://orcid.org/
   valuesets_meta: https://w3id.org/valuesets/meta/
@@ -21,6 +22,12 @@ slots:
   mouse_developmental_stage:
     description: The mouse developmental stage classification
     range: MouseDevelopmentalStage
+  human_age_group:
+    description: Simplified human age group categories based on MeSH
+    range: HumanAgeGroupEnum
+  mouse_postnatal_age_group:
+    description: Postnatal mouse age group classification
+    range: MousePostnatalAgeGroupEnum
 enums:
   HumanDevelopmentalStage:
     title: Human Developmental Stage
@@ -240,7 +247,109 @@ enums:
         description: Middle aged stage for mice over 10 and under 18 months old. Shows progressive age-related changes.
       THEILER_STAGE:
         text: THEILER_STAGE
-        description: Reference to any Theiler stage (TS1-TS28) which provides standardized morphological staging for 
+        description: Reference to any Theiler stage (TS1-TS28) which provides standardized morphological staging for
           mouse development.
+
+  HumanAgeGroupEnum:
+    title: Human Age Group Categories
+    description: >-
+      Simplified human age group categories based on MeSH classifications.
+      Useful for cohort stratification and demographic reporting.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    see_also:
+    - https://nf-osi.github.io/nf-metadata-dictionary/
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      INFANT:
+        description: A child between 1 and 23 months of age
+        meaning: MESH:D007223
+        aliases:
+        - Infant
+        annotations:
+          age_range: 1-23 months
+      CHILD:
+        description: A person 2 to 12 years of age
+        meaning: MESH:D002648
+        aliases:
+        - Child
+        annotations:
+          age_range: 2-12 years
+      ADOLESCENT:
+        description: A person 13 to 18 years of age
+        meaning: MESH:D000293
+        aliases:
+        - Adolescent
+        - Teenager
+        annotations:
+          age_range: 13-18 years
+      ADULT:
+        description: A person having attained full growth or maturity. Adults are of 19 to 120 years of age
+        meaning: MESH:D000328
+        aliases:
+        - Adult
+        annotations:
+          age_range: 19-120 years
+
+  MousePostnatalAgeGroupEnum:
+    title: Mouse Postnatal Age Groups
+    description: >-
+      Postnatal mouse age groups using postnatal day (P) notation.
+      Common categories used in laboratory research for developmental studies.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    see_also:
+    - https://nf-osi.github.io/nf-metadata-dictionary/
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      P0_P3_NEONATAL:
+        description: Neonatal stage from birth through postnatal day 3
+        aliases:
+        - P0-P3 Neonatal
+        annotations:
+          postnatal_days: P0-P3
+          approximate_age: birth to day 3
+      P4_P21_PREWEANING:
+        description: Pre-weaning stage from postnatal days 4-21 (typical weaning age)
+        aliases:
+        - P4-P21 Pre-weaning
+        annotations:
+          postnatal_days: P4-P21
+          approximate_age: days 4-21
+      P21_P60_YOUNG_ADULT:
+        description: Young adult stage from postnatal days 21-60 (3 weeks to 2 months)
+        aliases:
+        - P21-P60 Young Adult
+        annotations:
+          postnatal_days: P21-P60
+          approximate_age: 3 weeks to 2 months
+      P60_P180_ADULT:
+        description: Adult stage from postnatal days 60-180 (2 to 6 months)
+        aliases:
+        - P60-P180 Adult
+        annotations:
+          postnatal_days: P60-P180
+          approximate_age: 2 to 6 months
+      P180_P365_MIDDLE_AGED:
+        description: Middle-aged stage from postnatal days 180-365 (6 to 12 months)
+        aliases:
+        - P180-P365 Middle-Aged
+        annotations:
+          postnatal_days: P180-P365
+          approximate_age: 6 to 12 months
+      P365_PLUS_AGED:
+        description: Aged stage from postnatal day 365 onwards (12+ months)
+        aliases:
+        - P365+ Aged
+        annotations:
+          postnatal_days: P365+
+          approximate_age: 12+ months
+
 license: Apache-2.0
 default_range: string

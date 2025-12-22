@@ -1,0 +1,310 @@
+name: data-catalog-access
+title: Data Access and Status
+description: |
+  Value sets for data access rights, dataset status, and update frequencies.
+
+  Based on DCAT (Data Catalog Vocabulary) 3.0, EU Vocabularies, and
+  ADMS (Asset Description Metadata Schema).
+
+  See: https://www.w3.org/TR/vocab-dcat-3/
+id: https://w3id.org/valuesets/data_catalog/access
+
+imports:
+  - linkml:types
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+  valuesets: https://w3id.org/valuesets/
+  dcat: http://www.w3.org/ns/dcat#
+  dcterms: http://purl.org/dc/terms/
+  adms: http://www.w3.org/ns/adms#
+  euvoc: http://publications.europa.eu/resource/authority/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+
+default_prefix: valuesets
+
+slots:
+  access_rights:
+    description: The access rights for the resource
+    range: AccessRights
+  dataset_status:
+    description: The status of the dataset in its lifecycle
+    range: DatasetStatus
+  update_frequency:
+    description: The frequency at which the dataset is updated
+    range: UpdateFrequency
+  data_service_type:
+    description: The type of data service provided
+    range: DataServiceType
+
+enums:
+  AccessRights:
+    title: Access Rights
+    description: |
+      Information about who can access the resource or an indication of
+      its security status. Based on EU Vocabularies Access Rights authority list
+      and DCAT recommendations.
+    status: DRAFT
+    contributors:
+      - orcid:0000-0002-6601-2165
+      - https://github.com/anthropics/claude-code
+    instantiates:
+      - valuesets_meta:ValueSetEnumDefinition
+    see_also:
+      - https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/access-right
+      - https://www.w3.org/TR/vocab-dcat-3/#Property:resource_access_rights
+    permissible_values:
+      PUBLIC:
+        description: |
+          The resource is publicly accessible to everyone without
+          restrictions.
+        meaning: euvoc:access-right/PUBLIC
+        aliases:
+          - Open
+          - Unrestricted
+        annotations:
+          dcat_mapping: http://publications.europa.eu/resource/authority/access-right/PUBLIC
+      RESTRICTED:
+        description: |
+          The resource is available under certain conditions or to
+          authorized users only. Access may require authentication,
+          payment, or agreement to terms.
+        meaning: euvoc:access-right/RESTRICTED
+        aliases:
+          - Limited Access
+        annotations:
+          dcat_mapping: http://publications.europa.eu/resource/authority/access-right/RESTRICTED
+      NON_PUBLIC:
+        title: Non-Public
+        description: |
+          The resource is not publicly accessible. May include confidential,
+          sensitive, or internal-use-only resources.
+        meaning: euvoc:access-right/NON_PUBLIC
+        aliases:
+          - Closed
+          - Private
+        annotations:
+          dcat_mapping: http://publications.europa.eu/resource/authority/access-right/NON_PUBLIC
+      EMBARGOED:
+        description: |
+          The resource is temporarily restricted and will become publicly
+          available after a specific date or event.
+        annotations:
+          common_in: academic publishing, research data
+      SENSITIVE:
+        description: |
+          The resource contains sensitive information requiring special
+          handling or access controls.
+        annotations:
+          examples: PII, health data, classified information
+
+  DatasetStatus:
+    title: Dataset Status
+    description: |
+      The status of a dataset in its lifecycle. Based on ADMS (Asset
+      Description Metadata Schema) status vocabulary.
+    status: DRAFT
+    contributors:
+      - orcid:0000-0002-6601-2165
+      - https://github.com/anthropics/claude-code
+    instantiates:
+      - valuesets_meta:ValueSetEnumDefinition
+    see_also:
+      - https://www.w3.org/TR/vocab-adms/
+      - https://joinup.ec.europa.eu/collection/semantic-interoperability-community-semic/solution/asset-description-metadata-schema-adms
+    permissible_values:
+      COMPLETED:
+        description: |
+          The dataset is complete and no further updates are planned.
+          The data is in its final form.
+        meaning: adms:Completed
+        aliases:
+          - Final
+          - Finished
+      DEPRECATED:
+        description: |
+          The dataset has been superseded by a newer version or is
+          no longer recommended for use.
+        meaning: adms:Deprecated
+        aliases:
+          - Superseded
+          - Legacy
+      UNDER_DEVELOPMENT:
+        title: Under Development
+        description: |
+          The dataset is still being created, collected, or processed.
+          Not yet ready for production use.
+        meaning: adms:UnderDevelopment
+        aliases:
+          - In Progress
+          - Draft
+          - Work in Progress
+      WITHDRAWN:
+        description: |
+          The dataset has been removed from availability, either
+          temporarily or permanently.
+        meaning: adms:Withdrawn
+        aliases:
+          - Retracted
+          - Removed
+
+  UpdateFrequency:
+    title: Update Frequency
+    description: |
+      The frequency at which a dataset is updated with new data.
+      Based on Dublin Core Collection Description Frequency Vocabulary.
+    status: DRAFT
+    contributors:
+      - orcid:0000-0002-6601-2165
+      - https://github.com/anthropics/claude-code
+    instantiates:
+      - valuesets_meta:ValueSetEnumDefinition
+    see_also:
+      - http://purl.org/cld/freq/
+      - https://www.w3.org/TR/vocab-dcat-3/#Property:dataset_frequency
+    permissible_values:
+      CONTINUOUS:
+        description: Data is updated continuously or in real-time.
+        meaning: dcterms:Frequency
+        annotations:
+          iso_duration: PT0S
+      DAILY:
+        description: Data is updated once per day.
+        annotations:
+          iso_duration: P1D
+      TWICE_WEEKLY:
+        title: Twice Weekly
+        description: Data is updated twice per week.
+        annotations:
+          iso_duration: P3D
+      WEEKLY:
+        description: Data is updated once per week.
+        annotations:
+          iso_duration: P1W
+      BIWEEKLY:
+        description: Data is updated every two weeks.
+        aliases:
+          - Fortnightly
+        annotations:
+          iso_duration: P2W
+      MONTHLY:
+        description: Data is updated once per month.
+        annotations:
+          iso_duration: P1M
+      BIMONTHLY:
+        description: Data is updated every two months.
+        annotations:
+          iso_duration: P2M
+      QUARTERLY:
+        description: Data is updated once per quarter (every three months).
+        annotations:
+          iso_duration: P3M
+      SEMIANNUAL:
+        description: Data is updated twice per year.
+        aliases:
+          - Biannual
+        annotations:
+          iso_duration: P6M
+      ANNUAL:
+        description: Data is updated once per year.
+        aliases:
+          - Yearly
+        annotations:
+          iso_duration: P1Y
+      BIENNIAL:
+        description: Data is updated every two years.
+        annotations:
+          iso_duration: P2Y
+      TRIENNIAL:
+        description: Data is updated every three years.
+        annotations:
+          iso_duration: P3Y
+      IRREGULAR:
+        description: Data is updated at irregular intervals.
+        aliases:
+          - As Needed
+          - Ad Hoc
+      NEVER:
+        description: |
+          Data is not updated after initial publication.
+          Historical or archival datasets.
+        aliases:
+          - Static
+          - One-time
+      UNKNOWN:
+        description: The update frequency is not known.
+
+  DataServiceType:
+    title: Data Service Type
+    description: |
+      The type of data service provided. Based on INSPIRE spatial data
+      service types and common data access patterns.
+    status: DRAFT
+    contributors:
+      - orcid:0000-0002-6601-2165
+      - https://github.com/anthropics/claude-code
+    instantiates:
+      - valuesets_meta:ValueSetEnumDefinition
+    see_also:
+      - https://inspire.ec.europa.eu/metadata-codelist/SpatialDataServiceType
+      - https://www.w3.org/TR/vocab-dcat-3/#Class:Data_Service
+    permissible_values:
+      DISCOVERY:
+        description: |
+          Service enabling search and discovery of datasets and services.
+        aliases:
+          - Catalog Service
+          - Search Service
+        annotations:
+          inspire_type: discovery
+      VIEW:
+        description: |
+          Service enabling viewing or visualization of data without
+          full download.
+        aliases:
+          - Visualization Service
+          - Display Service
+        annotations:
+          inspire_type: view
+      DOWNLOAD:
+        description: |
+          Service enabling bulk download of datasets or portions thereof.
+        aliases:
+          - Access Service
+          - Retrieval Service
+        annotations:
+          inspire_type: download
+      TRANSFORMATION:
+        description: |
+          Service enabling transformation of data, such as format
+          conversion or coordinate transformation.
+        aliases:
+          - Processing Service
+          - Conversion Service
+        annotations:
+          inspire_type: transformation
+      INVOKE:
+        description: |
+          Service enabling invocation of operations on data, typically
+          through an API.
+        aliases:
+          - API Service
+          - Web Service
+        annotations:
+          inspire_type: invoke
+      SUBSCRIPTION:
+        description: |
+          Service enabling subscription to data updates or notifications.
+        aliases:
+          - Notification Service
+          - Event Service
+      QUERY:
+        description: |
+          Service enabling query-based access to data, returning
+          filtered or aggregated results.
+        aliases:
+          - SPARQL Endpoint
+          - Query Service
+
+default_range: string

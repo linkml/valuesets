@@ -94,7 +94,7 @@ class GeothermalApplication(RichEnum):
 
 # Set metadata after class creation
 GeothermalApplication._metadata = {
-    "ELECTRICITY_GENERATION": {'description': 'Use of geothermal resources for power generation through steam turbines or binary cycle plants.', 'meaning': 'ENVO:2000034'},
+    "ELECTRICITY_GENERATION": {'description': 'Use of geothermal resources for power generation through steam turbines or binary cycle plants.'},
     "DIRECT_USE_HEATING": {'description': 'Direct use of geothermal heat for space heating, district heating, or industrial processes.'},
     "GREENHOUSE_HEATING": {'description': 'Use of geothermal heat for agricultural greenhouses.'},
     "AQUACULTURE": {'description': 'Use of geothermal heat for fish farming and aquaculture.'},
