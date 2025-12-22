@@ -403,64 +403,560 @@
 <p><em>Inventory management methodologies</em></p>
 <p>URI: <a href="https://w3id.org/valuesets/InventoryManagementApproachEnum">valuesets:InventoryManagementApproachEnum</a></p>
 <h2 id="permissible-values">Permissible Values</h2>
+<!-- annotations-table -->
 <table>
 <thead>
 <tr>
 <th>Value</th>
+<th>Title</th>
 <th>Meaning</th>
 <th>Description</th>
+<th>Aggregation</th>
+<th>Automatic</th>
+<th>Automation</th>
+<th>Availability</th>
+<th>Bins</th>
+<th>Buffer</th>
+<th>Calculation</th>
+<th>Cash Flow</th>
+<th>Classical</th>
+<th>Classification</th>
+<th>Control</th>
+<th>Cost</th>
+<th>Efficiency</th>
+<th>Flow</th>
+<th>Focus</th>
+<th>Lean</th>
+<th>Location</th>
+<th>Low Cost</th>
+<th>Management</th>
+<th>Monitoring</th>
+<th>Optimization</th>
+<th>Ownership</th>
+<th>Pareto</th>
+<th>Partnership</th>
+<th>Periodic</th>
+<th>Pull</th>
+<th>Quality</th>
+<th>Quantity</th>
+<th>Reorder Point</th>
+<th>Responsiveness</th>
+<th>Risk</th>
+<th>Service Level</th>
+<th>Signals</th>
+<th>Simplicity</th>
+<th>Static</th>
+<th>Supplier</th>
+<th>Target</th>
+<th>Timing</th>
+<th>Trade Off</th>
+<th>Uncertainty</th>
+<th>Variable</th>
+<th>Visibility</th>
+<th>Visual</th>
+<th>Waste</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>JUST_IN_TIME</td>
-<td>None</td>
+<td>Just-in-Time (JIT)</td>
+<td></td>
 <td>Minimal inventory with precise timing</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>continuous flow</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>zero defect requirement</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>supplier integration</td>
+<td></td>
+<td>precise delivery timing</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>inventory waste elimination</td>
 </tr>
 <tr>
 <td>ECONOMIC_ORDER_QUANTITY</td>
-<td>None</td>
+<td>Economic Order Quantity (EOQ)</td>
+<td></td>
 <td>Optimal order quantity calculation</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>mathematical calculation</td>
+<td></td>
+<td>classical inventory model</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>cost optimization</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>static demand assumption</td>
+<td></td>
+<td></td>
+<td></td>
+<td>ordering vs holding cost trade-off</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>ABC_ANALYSIS</td>
-<td>None</td>
+<td>ABC Analysis</td>
+<td></td>
 <td>Inventory classification by value importance</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>value-based classification</td>
+<td></td>
+<td></td>
+<td>resource allocation efficiency</td>
+<td></td>
+<td>priority focus on high-value items</td>
+<td></td>
+<td></td>
+<td></td>
+<td>differentiated management</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Pareto principle application</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>SAFETY_STOCK</td>
-<td>None</td>
+<td>Safety Stock Management</td>
+<td></td>
 <td>Buffer inventory for demand/supply uncertainty</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>inventory buffer</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>additional holding cost</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>stockout risk mitigation</td>
+<td>service level protection</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>demand and supply uncertainty</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>VENDOR_MANAGED_INVENTORY</td>
-<td>None</td>
+<td>Vendor Managed Inventory (VMI)</td>
+<td></td>
 <td>Supplier-controlled inventory management</td>
+<td></td>
+<td></td>
+<td>automated replenishment</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>supplier inventory control</td>
+<td></td>
+<td>inventory efficiency</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>supplier partnership</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>demand visibility</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>CONSIGNMENT_INVENTORY</td>
-<td>None</td>
+<td>Consignment Inventory</td>
+<td></td>
 <td>Supplier-owned inventory at customer location</td>
+<td></td>
+<td></td>
+<td></td>
+<td>immediate availability</td>
+<td></td>
+<td></td>
+<td></td>
+<td>improved cash flow</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>customer location</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>supplier ownership</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>supplier risk</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>KANBAN</td>
-<td>None</td>
+<td>Kanban System</td>
+<td></td>
 <td>Visual pull-based inventory system</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>smooth material flow</td>
+<td></td>
+<td>lean methodology</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>pull-based replenishment</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>kanban signals</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>visual control system</td>
+<td></td>
 </tr>
 <tr>
 <td>TWO_BIN_SYSTEM</td>
-<td>None</td>
+<td>Two-Bin System</td>
+<td></td>
 <td>Simple reorder point system using two bins</td>
+<td></td>
+<td>automatic reordering</td>
+<td></td>
+<td></td>
+<td>two-bin methodology</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>low-cost implementation</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>simple reorder system</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>visual reorder point</td>
+<td></td>
 </tr>
 <tr>
 <td>CONTINUOUS_REVIEW</td>
-<td>None</td>
+<td>Continuous Review System</td>
+<td></td>
 <td>Continuous monitoring with fixed reorder point</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>higher monitoring cost</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>continuous inventory monitoring</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>fixed order quantity</td>
+<td>fixed reorder point</td>
+<td>responsive to demand</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>PERIODIC_REVIEW</td>
-<td>None</td>
+<td>Periodic Review System</td>
+<td></td>
 <td>Periodic inventory review with variable order quantity</td>
+<td>order aggregation</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>administrative efficiency</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>periodic review intervals</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>target inventory level</td>
+<td></td>
+<td></td>
+<td></td>
+<td>variable order quantity</td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>

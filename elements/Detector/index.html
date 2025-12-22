@@ -403,39 +403,64 @@
 <p><em>Types of detectors for structural biology</em></p>
 <p>URI: <a href="https://w3id.org/valuesets/Detector">valuesets:Detector</a></p>
 <h2 id="permissible-values">Permissible Values</h2>
+<!-- annotations-table -->
 <table>
 <thead>
 <tr>
 <th>Value</th>
+<th>Title</th>
 <th>Meaning</th>
 <th>Description</th>
+<th>Advantages</th>
+<th>Applications</th>
+<th>Examples</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>DIRECT_ELECTRON</td>
-<td>CHMO:0002837</td>
+<td></td>
+<td></td>
 <td>Direct electron detector (DED)</td>
+<td>high DQE, fast readout</td>
+<td></td>
+<td>K2, K3, Falcon, DE-series</td>
 </tr>
 <tr>
 <td>CCD</td>
-<td>CHMO:0002171</td>
+<td>charge-coupled-device detector</td>
+<td><a href="http://purl.obolibrary.org/obo/CHMO_0002245">CHMO:0002245</a></td>
 <td>Charge-coupled device camera</td>
+<td></td>
+<td>legacy EM, some crystallography</td>
+<td></td>
 </tr>
 <tr>
 <td>CMOS</td>
-<td>CHMO:0002836</td>
+<td></td>
+<td></td>
 <td>Complementary metal-oxide semiconductor detector</td>
+<td>fast readout, low noise</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>HYBRID_PIXEL</td>
-<td>None</td>
+<td></td>
+<td></td>
 <td>Hybrid pixel detector</td>
+<td>photon counting, zero noise</td>
+<td></td>
+<td>Pilatus, Eiger</td>
 </tr>
 <tr>
 <td>PHOTOSTIMULABLE_PHOSPHOR</td>
-<td>CHMO:0001069</td>
+<td></td>
+<td></td>
 <td>Photostimulable phosphor (image plate)</td>
+<td></td>
+<td>legacy crystallography</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -477,7 +502,6 @@ permissible_values:
   DIRECT_ELECTRON:
     text: DIRECT_ELECTRON
     description: Direct electron detector (DED)
-    meaning: CHMO:0002837
     annotations:
       examples:
         tag: examples
@@ -488,15 +512,15 @@ permissible_values:
   CCD:
     text: CCD
     description: Charge-coupled device camera
-    meaning: CHMO:0002171
+    meaning: CHMO:0002245
     annotations:
       applications:
         tag: applications
         value: legacy EM, some crystallography
+    title: charge-coupled-device detector
   CMOS:
     text: CMOS
     description: Complementary metal-oxide semiconductor detector
-    meaning: CHMO:0002836
     annotations:
       advantages:
         tag: advantages
@@ -514,7 +538,6 @@ permissible_values:
   PHOTOSTIMULABLE_PHOSPHOR:
     text: PHOTOSTIMULABLE_PHOSPHOR
     description: Photostimulable phosphor (image plate)
-    meaning: CHMO:0001069
     annotations:
       applications:
         tag: applications

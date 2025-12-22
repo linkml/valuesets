@@ -412,44 +412,108 @@
 <p><em>International Neuroblastoma Staging System (INSS) stages. A post-surgical staging system based on extent of tumor resection, lymph node involvement, and metastatic spread. This is the legacy system; INRGSS is now preferred for diagnosis years 2024+.</em></p>
 <p>URI: <a href="https://w3id.org/valuesets/INSSStage">valuesets:INSSStage</a></p>
 <h2 id="permissible-values">Permissible Values</h2>
+<!-- annotations-table -->
 <table>
 <thead>
 <tr>
 <th>Value</th>
+<th>Title</th>
 <th>Meaning</th>
 <th>Description</th>
+<th>Age Restriction</th>
+<th>Crosses Midline</th>
+<th>Favorable Prognosis</th>
+<th>Localized</th>
+<th>Lymph Nodes</th>
+<th>Metastatic</th>
+<th>Resection</th>
+<th>Special Category</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>STAGE_1</td>
-<td>NCIT:C6639</td>
-<td>Localized tumor with complete gross excision, with or without microscopic res...</td>
+<td>INSS Stage 1</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C85417">NCIT:C85417</a></td>
+<td>Localized tumor with complete gross excision, with or without microscopic residual disease; representative ipsilateral lymph nodes negative for tumor microscopically.</td>
+<td></td>
+<td></td>
+<td></td>
+<td>True</td>
+<td></td>
+<td></td>
+<td>complete</td>
+<td></td>
 </tr>
 <tr>
 <td>STAGE_2A</td>
-<td>NCIT:C6640</td>
-<td>Localized tumor with incomplete gross excision; representative ipsilateral no...</td>
+<td>INSS Stage 2A</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C85418">NCIT:C85418</a></td>
+<td>Localized tumor with incomplete gross excision; representative ipsilateral nonadherent lymph nodes negative for tumor microscopically.</td>
+<td></td>
+<td></td>
+<td></td>
+<td>True</td>
+<td>negative</td>
+<td></td>
+<td>incomplete</td>
+<td></td>
 </tr>
 <tr>
 <td>STAGE_2B</td>
-<td>NCIT:C6641</td>
-<td>Localized tumor with or without complete gross excision, with ipsilateral non...</td>
+<td>INSS Stage 2B</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C85419">NCIT:C85419</a></td>
+<td>Localized tumor with or without complete gross excision, with ipsilateral nonadherent lymph nodes positive for tumor. Enlarged contralateral lymph nodes must be negative microscopically.</td>
+<td></td>
+<td></td>
+<td></td>
+<td>True</td>
+<td>ipsilateral_positive</td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>STAGE_3</td>
-<td>NCIT:C6642</td>
-<td>Unresectable unilateral tumor infiltrating across the midline, with or withou...</td>
+<td>INSS Stage 3</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C85420">NCIT:C85420</a></td>
+<td>Unresectable unilateral tumor infiltrating across the midline, with or without regional lymph node involvement; or localized unilateral tumor with contralateral regional lymph node involvement; or midline tumor with bilateral extension by infiltration (unresectable) or by lymph node involvement.</td>
+<td></td>
+<td>True</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>STAGE_4</td>
-<td>NCIT:C6643</td>
-<td>Any primary tumor with dissemination to distant lymph nodes, bone, bone marro...</td>
+<td>INSS Stage 4</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C85421">NCIT:C85421</a></td>
+<td>Any primary tumor with dissemination to distant lymph nodes, bone, bone marrow, liver, skin, and/or other organs (except as defined for stage 4S).</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>True</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>STAGE_4S</td>
-<td>NCIT:C6644</td>
-<td>Localized primary tumor (as defined for stage 1, 2A, or 2B) with disseminatio...</td>
+<td>INSS Stage 4S</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C85422">NCIT:C85422</a></td>
+<td>Localized primary tumor (as defined for stage 1, 2A, or 2B) with dissemination limited to skin, liver, and/or bone marrow (limited to infants &lt;1 year of age). Marrow involvement should be minimal (&lt;10% of total nucleated cells).</td>
+<td>&lt;12 months</td>
+<td></td>
+<td>True</td>
+<td></td>
+<td></td>
+<td>True</td>
+<td></td>
+<td>True</td>
 </tr>
 </tbody>
 </table>
@@ -521,7 +585,7 @@ permissible_values:
     description: Localized tumor with complete gross excision, with or without microscopic
       residual disease; representative ipsilateral lymph nodes negative for tumor
       microscopically.
-    meaning: NCIT:C6639
+    meaning: NCIT:C85417
     annotations:
       localized:
         tag: localized
@@ -529,12 +593,12 @@ permissible_values:
       resection:
         tag: resection
         value: complete
-    title: Stage 1
+    title: INSS Stage 1
   STAGE_2A:
     text: STAGE_2A
     description: Localized tumor with incomplete gross excision; representative ipsilateral
       nonadherent lymph nodes negative for tumor microscopically.
-    meaning: NCIT:C6640
+    meaning: NCIT:C85418
     annotations:
       localized:
         tag: localized
@@ -545,13 +609,13 @@ permissible_values:
       lymph_nodes:
         tag: lymph_nodes
         value: negative
-    title: Stage 2A
+    title: INSS Stage 2A
   STAGE_2B:
     text: STAGE_2B
     description: Localized tumor with or without complete gross excision, with ipsilateral
       nonadherent lymph nodes positive for tumor. Enlarged contralateral lymph nodes
       must be negative microscopically.
-    meaning: NCIT:C6641
+    meaning: NCIT:C85419
     annotations:
       localized:
         tag: localized
@@ -559,14 +623,14 @@ permissible_values:
       lymph_nodes:
         tag: lymph_nodes
         value: ipsilateral_positive
-    title: Stage 2B
+    title: INSS Stage 2B
   STAGE_3:
     text: STAGE_3
     description: Unresectable unilateral tumor infiltrating across the midline, with
       or without regional lymph node involvement; or localized unilateral tumor with
       contralateral regional lymph node involvement; or midline tumor with bilateral
       extension by infiltration (unresectable) or by lymph node involvement.
-    meaning: NCIT:C6642
+    meaning: NCIT:C85420
     annotations:
       localized:
         tag: localized
@@ -574,24 +638,24 @@ permissible_values:
       crosses_midline:
         tag: crosses_midline
         value: true
-    title: Stage 3
+    title: INSS Stage 3
   STAGE_4:
     text: STAGE_4
     description: Any primary tumor with dissemination to distant lymph nodes, bone,
       bone marrow, liver, skin, and/or other organs (except as defined for stage 4S).
-    meaning: NCIT:C6643
+    meaning: NCIT:C85421
     annotations:
       metastatic:
         tag: metastatic
         value: true
-    title: Stage 4
+    title: INSS Stage 4
   STAGE_4S:
     text: STAGE_4S
     description: Localized primary tumor (as defined for stage 1, 2A, or 2B) with
       dissemination limited to skin, liver, and/or bone marrow (limited to infants
       &lt;1 year of age). Marrow involvement should be minimal (&lt;10% of total nucleated
       cells).
-    meaning: NCIT:C6644
+    meaning: NCIT:C85422
     annotations:
       metastatic:
         tag: metastatic
@@ -605,7 +669,7 @@ permissible_values:
       favorable_prognosis:
         tag: favorable_prognosis
         value: true
-    title: Stage 4S
+    title: INSS Stage 4S
     aliases:
     - Special stage 4
 

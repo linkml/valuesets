@@ -403,34 +403,65 @@
 <p><em>Nuclear emergency action levels and classifications</em></p>
 <p>URI: <a href="https://w3id.org/valuesets/EmergencyClassificationEnum">valuesets:EmergencyClassificationEnum</a></p>
 <h2 id="permissible-values">Permissible Values</h2>
+<!-- annotations-table -->
 <table>
 <thead>
 <tr>
 <th>Value</th>
+<th>Title</th>
 <th>Meaning</th>
 <th>Description</th>
+<th>Emergency Response</th>
+<th>Off Site Response</th>
+<th>Plant Status</th>
+<th>Public Protective Actions</th>
+<th>Severity</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>NOTIFICATION_UNUSUAL_EVENT</td>
-<td>None</td>
-<td>Events that are in process or have occurred which indicate potential degradat...</td>
+<td>Notification of Unusual Event (NOUE)</td>
+<td></td>
+<td>Events that are in process or have occurred which indicate potential degradation</td>
+<td>minimal activation</td>
+<td>notification only</td>
+<td></td>
+<td>none required</td>
+<td>lowest emergency level</td>
 </tr>
 <tr>
 <td>ALERT</td>
-<td>None</td>
+<td>Alert</td>
+<td></td>
 <td>Events involving actual or potential substantial degradation of plant safety</td>
+<td>partial activation</td>
+<td>notification and standby</td>
+<td>substantial safety degradation possible</td>
+<td>none required, but preparation</td>
+<td>second emergency level</td>
 </tr>
 <tr>
 <td>SITE_AREA_EMERGENCY</td>
-<td>None</td>
+<td>Site Area Emergency (SAE)</td>
+<td></td>
 <td>Events with actual or likely major failures of plant protective systems</td>
+<td>full activation</td>
+<td>offsite centers activated</td>
+<td>major plant safety systems failure</td>
+<td>may be required near site</td>
+<td>third emergency level</td>
 </tr>
 <tr>
 <td>GENERAL_EMERGENCY</td>
-<td>None</td>
+<td>General Emergency</td>
+<td></td>
 <td>Events involving actual or imminent substantial core degradation</td>
+<td>maximum response</td>
+<td>full activation</td>
+<td>core degradation or containment failure</td>
+<td>implementation likely</td>
+<td>highest emergency level</td>
 </tr>
 </tbody>
 </table>

@@ -403,64 +403,109 @@
 <p><em>Archive and compression formats</em></p>
 <p>URI: <a href="https://w3id.org/valuesets/ArchiveFormatEnum">valuesets:ArchiveFormatEnum</a></p>
 <h2 id="permissible-values">Permissible Values</h2>
+<!-- annotations-table -->
 <table>
 <thead>
 <tr>
 <th>Value</th>
 <th>Meaning</th>
 <th>Description</th>
+<th>Compression</th>
+<th>Extension</th>
+<th>Mime Type</th>
+<th>Proprietary</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>ZIP</td>
-<td>None</td>
+<td></td>
 <td>ZIP archive</td>
+<td>DEFLATE</td>
+<td>.zip</td>
+<td>application/zip</td>
+<td></td>
 </tr>
 <tr>
 <td>TAR</td>
-<td>None</td>
+<td></td>
 <td>Tape Archive</td>
+<td>none (archive only)</td>
+<td>.tar</td>
+<td>application/x-tar</td>
+<td></td>
 </tr>
 <tr>
 <td>GZIP</td>
-<td>None</td>
+<td></td>
 <td>GNU zip</td>
+<td>DEFLATE</td>
+<td>.gz</td>
+<td>application/gzip</td>
+<td></td>
 </tr>
 <tr>
 <td>TAR_GZ</td>
-<td>None</td>
+<td></td>
 <td>Gzipped tar archive</td>
+<td>tar + gzip</td>
+<td>.tar.gz, .tgz</td>
+<td>application/x-gtar</td>
+<td></td>
 </tr>
 <tr>
 <td>BZIP2</td>
-<td>None</td>
+<td></td>
 <td>Bzip2 compression</td>
+<td>Burrows-Wheeler</td>
+<td>.bz2</td>
+<td>application/x-bzip2</td>
+<td></td>
 </tr>
 <tr>
 <td>TAR_BZ2</td>
-<td>None</td>
+<td></td>
 <td>Bzip2 compressed tar archive</td>
+<td></td>
+<td>.tar.bz2, .tbz2</td>
+<td>application/x-bzip2</td>
+<td></td>
 </tr>
 <tr>
 <td>XZ</td>
-<td>None</td>
+<td></td>
 <td>XZ compression</td>
+<td>LZMA2</td>
+<td>.xz</td>
+<td>application/x-xz</td>
+<td></td>
 </tr>
 <tr>
 <td>TAR_XZ</td>
-<td>None</td>
+<td></td>
 <td>XZ compressed tar archive</td>
+<td></td>
+<td>.tar.xz, .txz</td>
+<td>application/x-xz</td>
+<td></td>
 </tr>
 <tr>
 <td>SEVEN_ZIP</td>
-<td>None</td>
+<td></td>
 <td>7-Zip archive</td>
+<td>LZMA</td>
+<td>.7z</td>
+<td>application/x-7z-compressed</td>
+<td></td>
 </tr>
 <tr>
 <td>RAR</td>
-<td>None</td>
+<td></td>
 <td>RAR archive</td>
+<td></td>
+<td>.rar</td>
+<td>application/vnd.rar</td>
+<td>true</td>
 </tr>
 </tbody>
 </table>

@@ -412,109 +412,310 @@
 <p><em>Types of biomass materials used as feedstocks for bioenergy production. Includes dedicated energy crops, agricultural residues, forest residues, and waste streams.</em></p>
 <p>URI: <a href="https://w3id.org/valuesets/BiomassFeedstockType">valuesets:BiomassFeedstockType</a></p>
 <h2 id="permissible-values">Permissible Values</h2>
+<!-- annotations-table -->
 <table>
 <thead>
 <tr>
 <th>Value</th>
+<th>Title</th>
 <th>Meaning</th>
 <th>Description</th>
+<th>Related Mappings</th>
+<th>Broad Mappings</th>
+<th>Biogas Suitable</th>
+<th>Category</th>
+<th>Lignocellulosic</th>
+<th>Lipid Rich</th>
+<th>Perennial</th>
+<th>Starch Crop</th>
+<th>Sugar Crop</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>CORN_STOVER</td>
-<td>None</td>
-<td>Agricultural residue consisting of leaves, stalks, and cobs remaining after c...</td>
+<td>Corn Stover</td>
+<td></td>
+<td>Agricultural residue consisting of leaves, stalks, and cobs remaining after corn grain harvest.</td>
+<td></td>
+<td></td>
+<td></td>
+<td>agricultural_residue</td>
+<td>True</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>WHEAT_STRAW</td>
-<td>None</td>
-<td>Agricultural residue remaining after wheat grain harvest</td>
+<td>Wheat Straw</td>
+<td></td>
+<td>Agricultural residue remaining after wheat grain harvest.</td>
+<td></td>
+<td></td>
+<td></td>
+<td>agricultural_residue</td>
+<td>True</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>RICE_STRAW</td>
-<td>None</td>
-<td>Agricultural residue remaining after rice grain harvest</td>
+<td>Rice Straw</td>
+<td></td>
+<td>Agricultural residue remaining after rice grain harvest.</td>
+<td></td>
+<td></td>
+<td></td>
+<td>agricultural_residue</td>
+<td>True</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>SWITCHGRASS</td>
-<td>None</td>
-<td>Perennial warm-season grass native to North America, cultivated as dedicated ...</td>
+<td>Switchgrass</td>
+<td></td>
+<td>Perennial warm-season grass native to North America, cultivated as dedicated energy crop for cellulosic biofuel production.</td>
+<td><a href="http://purl.obolibrary.org/obo/AGRO_00000325">AGRO:00000325</a></td>
+<td></td>
+<td></td>
+<td>energy_crop</td>
+<td>True</td>
+<td></td>
+<td>True</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>MISCANTHUS</td>
-<td>None</td>
-<td>High-yielding perennial grass cultivated as dedicated energy crop</td>
+<td>Miscanthus</td>
+<td></td>
+<td>High-yielding perennial grass cultivated as dedicated energy crop.</td>
+<td></td>
+<td></td>
+<td></td>
+<td>energy_crop</td>
+<td>True</td>
+<td></td>
+<td>True</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>ENERGY_CANE</td>
-<td>None</td>
-<td>High-fiber sugarcane varieties bred for biomass production rather than sugar ...</td>
+<td>Energy Cane</td>
+<td></td>
+<td>High-fiber sugarcane varieties bred for biomass production rather than sugar content.</td>
+<td></td>
+<td></td>
+<td></td>
+<td>energy_crop</td>
+<td>True</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>SWEET_SORGHUM</td>
-<td>None</td>
-<td>Sorghum variety with high sugar content in stalks, suitable for both sugar an...</td>
+<td>Sweet Sorghum</td>
+<td></td>
+<td>Sorghum variety with high sugar content in stalks, suitable for both sugar and lignocellulosic conversion.</td>
+<td></td>
+<td></td>
+<td></td>
+<td>energy_crop</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>True</td>
 </tr>
 <tr>
 <td>POPLAR</td>
-<td>None</td>
-<td>Fast-growing hardwood tree cultivated as short-rotation woody crop for biomas...</td>
+<td>Poplar</td>
+<td></td>
+<td>Fast-growing hardwood tree cultivated as short-rotation woody crop for biomass.</td>
+<td></td>
+<td></td>
+<td></td>
+<td>woody_crop</td>
+<td>True</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>WILLOW</td>
-<td>None</td>
-<td>Fast-growing shrub cultivated as short-rotation woody crop</td>
+<td>Willow</td>
+<td></td>
+<td>Fast-growing shrub cultivated as short-rotation woody crop.</td>
+<td></td>
+<td></td>
+<td></td>
+<td>woody_crop</td>
+<td>True</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>FOREST_RESIDUE</td>
-<td>None</td>
-<td>Biomass from forest operations including logging residues, thinning material,...</td>
+<td>Forest Residue</td>
+<td></td>
+<td>Biomass from forest operations including logging residues, thinning material, and salvage timber.</td>
+<td><a href="http://purl.obolibrary.org/obo/AGRO_00000546">AGRO:00000546</a></td>
+<td><a href="http://sweetontology.net/matrBiomass/Biomass">sweet:matrBiomass/Biomass</a></td>
+<td></td>
+<td>forestry_residue</td>
+<td>True</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>WOOD_PROCESSING_RESIDUE</td>
-<td>None</td>
-<td>Byproducts from wood processing including sawdust, bark, shavings, and wood c...</td>
+<td>Wood Processing Residue</td>
+<td></td>
+<td>Byproducts from wood processing including sawdust, bark, shavings, and wood chips.</td>
+<td></td>
+<td></td>
+<td></td>
+<td>processing_residue</td>
+<td>True</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>MUNICIPAL_SOLID_WASTE</td>
-<td>None</td>
-<td>Organic portion of municipal solid waste suitable for bioenergy conversion</td>
+<td>Municipal Solid Waste (Organic Fraction)</td>
+<td></td>
+<td>Organic portion of municipal solid waste suitable for bioenergy conversion.</td>
+<td><a href="http://purl.obolibrary.org/obo/ENVO_00002273">ENVO:00002273</a></td>
+<td></td>
+<td></td>
+<td>waste</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>FOOD_WASTE</td>
-<td>None</td>
-<td>Waste food from residential, commercial, and industrial sources</td>
+<td>Food Waste</td>
+<td></td>
+<td>Waste food from residential, commercial, and industrial sources.</td>
+<td></td>
+<td></td>
+<td></td>
+<td>wet_waste</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>ANIMAL_MANURE</td>
-<td>None</td>
-<td>Livestock waste including cattle, swine, and poultry manure</td>
+<td>Animal Manure</td>
+<td></td>
+<td>Livestock waste including cattle, swine, and poultry manure.</td>
+<td><a href="http://purl.obolibrary.org/obo/ENVO_00003031">ENVO:00003031</a></td>
+<td></td>
+<td>True</td>
+<td>wet_waste</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>ALGAE</td>
-<td>None</td>
-<td>Microalgae or macroalgae cultivated for lipid or carbohydrate content for bio...</td>
+<td>Algae</td>
+<td></td>
+<td>Microalgae or macroalgae cultivated for lipid or carbohydrate content for biofuel production.</td>
+<td></td>
+<td></td>
+<td></td>
+<td>aquatic_biomass</td>
+<td></td>
+<td>True</td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>USED_COOKING_OIL</td>
-<td>None</td>
-<td>Waste vegetable oils from food preparation</td>
+<td>Used Cooking Oil</td>
+<td></td>
+<td>Waste vegetable oils from food preparation.</td>
+<td></td>
+<td></td>
+<td></td>
+<td>waste</td>
+<td></td>
+<td>True</td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>SOYBEAN_OIL</td>
-<td>CHEBI:166975</td>
-<td>Vegetable oil from soybean seeds, used for biodiesel</td>
+<td>Soybean Oil</td>
+<td><a href="http://purl.obolibrary.org/obo/CHEBI_166975">CHEBI:166975</a></td>
+<td>Vegetable oil from soybean seeds, used for biodiesel.</td>
+<td></td>
+<td></td>
+<td></td>
+<td>oil_crop</td>
+<td></td>
+<td>True</td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>CORN_GRAIN</td>
-<td>None</td>
-<td>Corn kernels used for starch-based ethanol production</td>
+<td>Corn Grain</td>
+<td></td>
+<td>Corn kernels used for starch-based ethanol production.</td>
+<td></td>
+<td></td>
+<td></td>
+<td>grain</td>
+<td></td>
+<td></td>
+<td></td>
+<td>True</td>
+<td></td>
 </tr>
 <tr>
 <td>SUGARCANE</td>
-<td>None</td>
-<td>Sugar-rich crop used for first-generation ethanol production</td>
+<td>Sugarcane</td>
+<td></td>
+<td>Sugar-rich crop used for first-generation ethanol production.</td>
+<td></td>
+<td></td>
+<td></td>
+<td>sugar_crop</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>

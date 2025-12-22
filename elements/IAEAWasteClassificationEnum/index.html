@@ -403,44 +403,143 @@
 <p><em>IAEA General Safety Requirements radioactive waste classification scheme</em></p>
 <p>URI: <a href="https://w3id.org/valuesets/IAEAWasteClassificationEnum">valuesets:IAEAWasteClassificationEnum</a></p>
 <h2 id="permissible-values">Permissible Values</h2>
+<!-- annotations-table -->
 <table>
 <thead>
 <tr>
 <th>Value</th>
+<th>Title</th>
 <th>Meaning</th>
 <th>Description</th>
+<th>Activity Level</th>
+<th>Clearance</th>
+<th>Containment Period</th>
+<th>Containment Requirement</th>
+<th>Cooling</th>
+<th>Decay Strategy</th>
+<th>Disposal</th>
+<th>Heat Generation</th>
+<th>Isolation Period</th>
+<th>Regulatory Control</th>
+<th>Shielding</th>
+<th>Storage Period</th>
+<th>Typical Sources</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>EXEMPT_WASTE</td>
-<td>None</td>
+<td>Exempt Waste (EW)</td>
+<td></td>
 <td>Waste with negligible radioactivity requiring no regulatory control</td>
+<td>negligible</td>
+<td>can be cleared from regulatory control</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>as ordinary waste</td>
+<td></td>
+<td></td>
+<td>none required</td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>VERY_SHORT_LIVED_WASTE</td>
-<td>None</td>
+<td>Very Short-Lived Waste (VSLW)</td>
+<td></td>
 <td>Waste stored for decay to exempt levels within few years</td>
+<td></td>
+<td>after decay period</td>
+<td></td>
+<td></td>
+<td></td>
+<td>storage for decay</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>up to few years</td>
+<td>medical, research isotopes</td>
 </tr>
 <tr>
 <td>VERY_LOW_LEVEL_WASTE</td>
-<td>None</td>
+<td>Very Low Level Waste (VLLW)</td>
+<td></td>
 <td>Waste requiring limited containment and isolation</td>
+<td>very low but above exempt</td>
+<td></td>
+<td></td>
+<td>limited</td>
+<td></td>
+<td></td>
+<td>near-surface landfill-type</td>
+<td></td>
+<td>limited</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>LOW_LEVEL_WASTE</td>
-<td>None</td>
+<td>Low Level Waste (LLW)</td>
+<td></td>
 <td>Waste requiring containment for up to hundreds of years</td>
+<td>low</td>
+<td></td>
+<td>up to few hundred years</td>
+<td></td>
+<td></td>
+<td></td>
+<td>near-surface disposal</td>
+<td>negligible</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>INTERMEDIATE_LEVEL_WASTE</td>
-<td>None</td>
+<td>Intermediate Level Waste (ILW)</td>
+<td></td>
 <td>Waste requiring containment for thousands of years</td>
+<td>intermediate</td>
+<td></td>
+<td>up to thousands of years</td>
+<td></td>
+<td></td>
+<td></td>
+<td>geological disposal</td>
+<td>low (&lt;2 kW/m³)</td>
+<td></td>
+<td></td>
+<td>required</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>HIGH_LEVEL_WASTE</td>
-<td>None</td>
+<td>High Level Waste (HLW)</td>
+<td></td>
 <td>Waste requiring containment for thousands to hundreds of thousands of years</td>
+<td>high</td>
+<td></td>
+<td>thousands to hundreds of thousands of years</td>
+<td></td>
+<td>required</td>
+<td></td>
+<td>geological disposal</td>
+<td>significant (&gt;2 kW/m³)</td>
+<td></td>
+<td></td>
+<td>heavy shielding required</td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>

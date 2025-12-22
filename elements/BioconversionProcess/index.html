@@ -403,69 +403,166 @@
 <p><em>Processes for converting biomass feedstocks into biofuels and bioproducts.</em></p>
 <p>URI: <a href="https://w3id.org/valuesets/BioconversionProcess">valuesets:BioconversionProcess</a></p>
 <h2 id="permissible-values">Permissible Values</h2>
+<!-- annotations-table -->
 <table>
 <thead>
 <tr>
 <th>Value</th>
+<th>Title</th>
 <th>Meaning</th>
 <th>Description</th>
+<th>Category</th>
+<th>Feedstock</th>
+<th>Pressure Bar</th>
+<th>Pretreatment Step</th>
+<th>Products</th>
+<th>Temperature C</th>
+<th>Wet Feedstock</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>FERMENTATION</td>
-<td>None</td>
-<td>Biological conversion of sugars to alcohols using yeast or bacteria</td>
+<td>Fermentation</td>
+<td></td>
+<td>Biological conversion of sugars to alcohols using yeast or bacteria.</td>
+<td>biochemical</td>
+<td></td>
+<td></td>
+<td></td>
+<td>ethanol,butanol</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>ANAEROBIC_DIGESTION</td>
-<td>None</td>
-<td>Biological breakdown of organic matter by microorganisms in the absence of ox...</td>
+<td>Anaerobic Digestion</td>
+<td></td>
+<td>Biological breakdown of organic matter by microorganisms in the absence of oxygen, producing biogas.</td>
+<td>biochemical</td>
+<td></td>
+<td></td>
+<td></td>
+<td>biogas</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>TRANSESTERIFICATION</td>
-<td>None</td>
-<td>Chemical reaction of triglycerides with alcohol to produce fatty acid esters ...</td>
+<td>Transesterification</td>
+<td></td>
+<td>Chemical reaction of triglycerides with alcohol to produce fatty acid esters (biodiesel) and glycerol.</td>
+<td>chemical</td>
+<td></td>
+<td></td>
+<td></td>
+<td>biodiesel</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>HYDROTREATING</td>
-<td>None</td>
-<td>Catalytic reaction of lipids with hydrogen to produce hydrocarbon fuels</td>
+<td>Hydrotreating/Hydroprocessing</td>
+<td></td>
+<td>Catalytic reaction of lipids with hydrogen to produce hydrocarbon fuels.</td>
+<td>thermochemical</td>
+<td></td>
+<td></td>
+<td></td>
+<td>renewable_diesel,SAF</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>PYROLYSIS</td>
-<td>None</td>
-<td>Thermal decomposition of biomass in the absence of oxygen to produce bio-oil,...</td>
+<td>Pyrolysis</td>
+<td></td>
+<td>Thermal decomposition of biomass in the absence of oxygen to produce bio-oil, syngas, and biochar.</td>
+<td>thermochemical</td>
+<td></td>
+<td></td>
+<td></td>
+<td>bio_oil,syngas,biochar</td>
+<td>400-600</td>
+<td></td>
 </tr>
 <tr>
 <td>GASIFICATION</td>
-<td>CHMO:0001501</td>
-<td>High-temperature conversion of carbonaceous materials to syngas using control...</td>
+<td>Gasification</td>
+<td><a href="http://purl.obolibrary.org/obo/CHMO_0001501">CHMO:0001501</a></td>
+<td>High-temperature conversion of carbonaceous materials to syngas using controlled oxygen and/or steam.</td>
+<td>thermochemical</td>
+<td></td>
+<td></td>
+<td></td>
+<td>syngas</td>
+<td>700-1500</td>
+<td></td>
 </tr>
 <tr>
 <td>HYDROTHERMAL_LIQUEFACTION</td>
-<td>None</td>
-<td>Conversion of wet biomass to bio-crude using high temperature and pressure wa...</td>
+<td>Hydrothermal Liquefaction (HTL)</td>
+<td></td>
+<td>Conversion of wet biomass to bio-crude using high temperature and pressure water.</td>
+<td>thermochemical</td>
+<td></td>
+<td>100-200</td>
+<td></td>
+<td></td>
+<td>250-400</td>
+<td>True</td>
 </tr>
 <tr>
 <td>ENZYMATIC_HYDROLYSIS</td>
-<td>None</td>
-<td>Breakdown of cellulose and hemicellulose to fermentable sugars using enzymes</td>
+<td>Enzymatic Hydrolysis</td>
+<td></td>
+<td>Breakdown of cellulose and hemicellulose to fermentable sugars using enzymes.</td>
+<td>biochemical</td>
+<td></td>
+<td></td>
+<td>True</td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>ACID_HYDROLYSIS</td>
-<td>None</td>
-<td>Chemical breakdown of cellulose to sugars using dilute or concentrated acid</td>
+<td>Acid Hydrolysis</td>
+<td></td>
+<td>Chemical breakdown of cellulose to sugars using dilute or concentrated acid.</td>
+<td>chemical</td>
+<td></td>
+<td></td>
+<td>True</td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>FISCHER_TROPSCH</td>
-<td>None</td>
-<td>Catalytic conversion of syngas to liquid hydrocarbons</td>
+<td>Fischer-Tropsch Synthesis</td>
+<td></td>
+<td>Catalytic conversion of syngas to liquid hydrocarbons.</td>
+<td>thermochemical</td>
+<td>syngas</td>
+<td></td>
+<td></td>
+<td>FT_diesel,FT_jet</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>ALCOHOL_TO_JET</td>
-<td>None</td>
-<td>Conversion of alcohols (ethanol, isobutanol) to jet fuel through dehydration,...</td>
+<td>Alcohol-to-Jet (ATJ)</td>
+<td></td>
+<td>Conversion of alcohols (ethanol, isobutanol) to jet fuel through dehydration, oligomerization, and hydrogenation.</td>
+<td>chemical</td>
+<td></td>
+<td></td>
+<td></td>
+<td>SAF</td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>

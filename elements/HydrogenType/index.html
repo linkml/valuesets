@@ -412,64 +412,153 @@
 <p><em>Color-coded classification of hydrogen based on production method and carbon intensity. This informal industry taxonomy differentiates hydrogen by its carbon footprint and energy source.</em></p>
 <p>URI: <a href="https://w3id.org/valuesets/HydrogenType">valuesets:HydrogenType</a></p>
 <h2 id="permissible-values">Permissible Values</h2>
+<!-- annotations-table -->
 <table>
 <thead>
 <tr>
 <th>Value</th>
+<th>Title</th>
 <th>Meaning</th>
 <th>Description</th>
+<th>Broad Mappings</th>
+<th>Byproduct</th>
+<th>Carbon Intensity</th>
+<th>Co2 Per Kg H2</th>
+<th>Energy Source</th>
+<th>Production Method</th>
+<th>Requires Ccs</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>GREEN_HYDROGEN</td>
-<td>None</td>
-<td>Hydrogen produced via electrolysis powered by renewable energy sources (solar...</td>
+<td>Green Hydrogen</td>
+<td></td>
+<td>Hydrogen produced via electrolysis powered by renewable energy sources (solar, wind, hydro). Zero carbon emissions during production.</td>
+<td><a href="http://sweetontology.net/matrElement/Hydrogen">sweet:matrElement/Hydrogen</a></td>
+<td></td>
+<td>zero</td>
+<td></td>
+<td>renewable</td>
+<td>electrolysis</td>
+<td></td>
 </tr>
 <tr>
 <td>BLUE_HYDROGEN</td>
-<td>None</td>
-<td>Hydrogen produced from natural gas via steam methane reforming (SMR) with car...</td>
+<td>Blue Hydrogen</td>
+<td></td>
+<td>Hydrogen produced from natural gas via steam methane reforming (SMR) with carbon capture and storage (CCS). Low carbon intensity.</td>
+<td></td>
+<td></td>
+<td>low</td>
+<td></td>
+<td>natural_gas</td>
+<td>steam_methane_reforming</td>
+<td>True</td>
 </tr>
 <tr>
 <td>GREY_HYDROGEN</td>
-<td>None</td>
-<td>Hydrogen produced from natural gas via steam methane reforming without carbon...</td>
+<td>Grey Hydrogen</td>
+<td></td>
+<td>Hydrogen produced from natural gas via steam methane reforming without carbon capture. Most common production method currently.</td>
+<td></td>
+<td></td>
+<td>high</td>
+<td>9-12</td>
+<td>natural_gas</td>
+<td>steam_methane_reforming</td>
+<td></td>
 </tr>
 <tr>
 <td>BROWN_HYDROGEN</td>
-<td>None</td>
-<td>Hydrogen produced from brown coal (lignite) gasification without carbon captu...</td>
+<td>Brown Hydrogen</td>
+<td></td>
+<td>Hydrogen produced from brown coal (lignite) gasification without carbon capture. High carbon intensity.</td>
+<td></td>
+<td></td>
+<td>very_high</td>
+<td></td>
+<td>lignite</td>
+<td>coal_gasification</td>
+<td></td>
 </tr>
 <tr>
 <td>BLACK_HYDROGEN</td>
-<td>None</td>
-<td>Hydrogen produced from black coal (bituminous) gasification without carbon ca...</td>
+<td>Black Hydrogen</td>
+<td></td>
+<td>Hydrogen produced from black coal (bituminous) gasification without carbon capture. High carbon intensity.</td>
+<td></td>
+<td></td>
+<td>very_high</td>
+<td></td>
+<td>bituminous_coal</td>
+<td>coal_gasification</td>
+<td></td>
 </tr>
 <tr>
 <td>PINK_HYDROGEN</td>
-<td>None</td>
-<td>Hydrogen produced via electrolysis powered by nuclear energy</td>
+<td>Pink Hydrogen</td>
+<td></td>
+<td>Hydrogen produced via electrolysis powered by nuclear energy. Zero carbon emissions during production.</td>
+<td></td>
+<td></td>
+<td>zero</td>
+<td></td>
+<td>nuclear</td>
+<td>electrolysis</td>
+<td></td>
 </tr>
 <tr>
 <td>TURQUOISE_HYDROGEN</td>
-<td>None</td>
-<td>Hydrogen produced via methane pyrolysis, producing solid carbon instead of CO...</td>
+<td>Turquoise Hydrogen</td>
+<td></td>
+<td>Hydrogen produced via methane pyrolysis, producing solid carbon instead of CO2. Lower carbon intensity than grey hydrogen.</td>
+<td></td>
+<td>solid_carbon</td>
+<td>low</td>
+<td></td>
+<td>natural_gas</td>
+<td>methane_pyrolysis</td>
+<td></td>
 </tr>
 <tr>
 <td>WHITE_HYDROGEN</td>
-<td>None</td>
-<td>Naturally occurring geological hydrogen found in underground deposits</td>
+<td>White Hydrogen</td>
+<td></td>
+<td>Naturally occurring geological hydrogen found in underground deposits. Zero production emissions.</td>
+<td></td>
+<td></td>
+<td>zero</td>
+<td></td>
+<td>natural</td>
+<td>geological_extraction</td>
+<td></td>
 </tr>
 <tr>
 <td>YELLOW_HYDROGEN</td>
-<td>None</td>
-<td>Hydrogen produced via electrolysis powered by solar energy specifically</td>
+<td>Yellow Hydrogen</td>
+<td></td>
+<td>Hydrogen produced via electrolysis powered by solar energy specifically. A subset of green hydrogen.</td>
+<td></td>
+<td></td>
+<td>zero</td>
+<td></td>
+<td>solar</td>
+<td>electrolysis</td>
+<td></td>
 </tr>
 <tr>
 <td>ORANGE_HYDROGEN</td>
-<td>None</td>
-<td>Hydrogen produced from plastic waste gasification or pyrolysis</td>
+<td>Orange Hydrogen</td>
+<td></td>
+<td>Hydrogen produced from plastic waste gasification or pyrolysis. Emerging technology addressing both energy and waste challenges.</td>
+<td></td>
+<td></td>
+<td>varies</td>
+<td></td>
+<td>plastic_waste</td>
+<td>waste_gasification</td>
+<td></td>
 </tr>
 </tbody>
 </table>

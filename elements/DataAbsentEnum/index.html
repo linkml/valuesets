@@ -403,10 +403,12 @@
 <p><em>Used to specify why the normally expected content of the data element is missing.</em></p>
 <p>URI: <a href="https://w3id.org/valuesets/DataAbsentEnum">valuesets:DataAbsentEnum</a></p>
 <h2 id="permissible-values">Permissible Values</h2>
+<!-- annotations-table -->
 <table>
 <thead>
 <tr>
 <th>Value</th>
+<th>Title</th>
 <th>Meaning</th>
 <th>Description</th>
 </tr>
@@ -414,78 +416,93 @@
 <tbody>
 <tr>
 <td>unknown</td>
-<td>fhir_data_absent_reason:unknown</td>
-<td>The value is expected to exist but is not known</td>
+<td>Unknown</td>
+<td><a href="http://terminology.hl7.org/CodeSystem/data-absent-reasonunknown">fhir_data_absent_reason:unknown</a></td>
+<td>The value is expected to exist but is not known.</td>
 </tr>
 <tr>
 <td>asked-unknown</td>
-<td>fhir_data_absent_reason:asked-unknown</td>
-<td>The source was asked but does not know the value</td>
+<td>Asked But Unknown</td>
+<td><a href="http://terminology.hl7.org/CodeSystem/data-absent-reasonasked-unknown">fhir_data_absent_reason:asked-unknown</a></td>
+<td>The source was asked but does not know the value.</td>
 </tr>
 <tr>
 <td>temp-unknown</td>
-<td>fhir_data_absent_reason:temp-unknown</td>
-<td>There is reason to expect (from the workflow) that the value may become known</td>
+<td>Temporarily Unknown</td>
+<td><a href="http://terminology.hl7.org/CodeSystem/data-absent-reasontemp-unknown">fhir_data_absent_reason:temp-unknown</a></td>
+<td>There is reason to expect (from the workflow) that the value may become known.</td>
 </tr>
 <tr>
 <td>not-asked</td>
-<td>fhir_data_absent_reason:not-asked</td>
-<td>The workflow didn't lead to this value being known</td>
+<td>Not Asked</td>
+<td><a href="http://terminology.hl7.org/CodeSystem/data-absent-reasonnot-asked">fhir_data_absent_reason:not-asked</a></td>
+<td>The workflow didn't lead to this value being known.</td>
 </tr>
 <tr>
 <td>asked-declined</td>
-<td>fhir_data_absent_reason:asked-declined</td>
-<td>The source was asked but declined to answer</td>
+<td>Asked But Declined</td>
+<td><a href="http://terminology.hl7.org/CodeSystem/data-absent-reasonasked-declined">fhir_data_absent_reason:asked-declined</a></td>
+<td>The source was asked but declined to answer.</td>
 </tr>
 <tr>
 <td>masked</td>
-<td>fhir_data_absent_reason:masked</td>
-<td>The information is not available due to security, privacy or related reasons</td>
+<td>Masked</td>
+<td><a href="http://terminology.hl7.org/CodeSystem/data-absent-reasonmasked">fhir_data_absent_reason:masked</a></td>
+<td>The information is not available due to security, privacy or related reasons.</td>
 </tr>
 <tr>
 <td>not-applicable</td>
-<td>fhir_data_absent_reason:not-applicable</td>
-<td>There is no proper value for this element (e</td>
+<td>Not Applicable</td>
+<td><a href="http://terminology.hl7.org/CodeSystem/data-absent-reasonnot-applicable">fhir_data_absent_reason:not-applicable</a></td>
+<td>There is no proper value for this element (e.g. last menstrual period for a male).</td>
 </tr>
 <tr>
 <td>unsupported</td>
-<td>fhir_data_absent_reason:unsupported</td>
-<td>The source system wasn't capable of supporting this element</td>
+<td>Unsupported</td>
+<td><a href="http://terminology.hl7.org/CodeSystem/data-absent-reasonunsupported">fhir_data_absent_reason:unsupported</a></td>
+<td>The source system wasn't capable of supporting this element.</td>
 </tr>
 <tr>
 <td>as-text</td>
-<td>fhir_data_absent_reason:as-text</td>
-<td>The content of the data is represented in the resource narrative</td>
+<td>As Text</td>
+<td><a href="http://terminology.hl7.org/CodeSystem/data-absent-reasonas-text">fhir_data_absent_reason:as-text</a></td>
+<td>The content of the data is represented in the resource narrative.</td>
 </tr>
 <tr>
 <td>error</td>
-<td>fhir_data_absent_reason:error</td>
-<td>Some system or workflow process error means that the information is not avail...</td>
+<td>Error</td>
+<td><a href="http://terminology.hl7.org/CodeSystem/data-absent-reasonerror">fhir_data_absent_reason:error</a></td>
+<td>Some system or workflow process error means that the information is not available.</td>
 </tr>
 <tr>
 <td>not-a-number</td>
-<td>fhir_data_absent_reason:not-a-number</td>
-<td>The numeric value is undefined or unrepresentable due to a floating point pro...</td>
+<td>Not a Number (NaN)</td>
+<td><a href="http://terminology.hl7.org/CodeSystem/data-absent-reasonnot-a-number">fhir_data_absent_reason:not-a-number</a></td>
+<td>The numeric value is undefined or unrepresentable due to a floating point processing error.</td>
 </tr>
 <tr>
 <td>negative-infinity</td>
-<td>fhir_data_absent_reason:negative-infinity</td>
-<td>The numeric value is excessively low and unrepresentable due to a floating po...</td>
+<td>Negative Infinity (NINF)</td>
+<td><a href="http://terminology.hl7.org/CodeSystem/data-absent-reasonnegative-infinity">fhir_data_absent_reason:negative-infinity</a></td>
+<td>The numeric value is excessively low and unrepresentable due to a floating point processing error.</td>
 </tr>
 <tr>
 <td>positive-infinity</td>
-<td>fhir_data_absent_reason:positive-infinity</td>
-<td>The numeric value is excessively high and unrepresentable due to a floating p...</td>
+<td>Positive Infinity (PINF)</td>
+<td><a href="http://terminology.hl7.org/CodeSystem/data-absent-reasonpositive-infinity">fhir_data_absent_reason:positive-infinity</a></td>
+<td>The numeric value is excessively high and unrepresentable due to a floating point processing error.</td>
 </tr>
 <tr>
 <td>not-performed</td>
-<td>fhir_data_absent_reason:not-performed</td>
-<td>The value is not available because the observation procedure (test, etc</td>
+<td>Not Performed</td>
+<td><a href="http://terminology.hl7.org/CodeSystem/data-absent-reasonnot-performed">fhir_data_absent_reason:not-performed</a></td>
+<td>The value is not available because the observation procedure (test, etc.) was not performed.</td>
 </tr>
 <tr>
 <td>not-permitted</td>
-<td>fhir_data_absent_reason:not-permitted</td>
-<td>The value is not permitted in this context (e</td>
+<td>Not Permitted</td>
+<td><a href="http://terminology.hl7.org/CodeSystem/data-absent-reasonnot-permitted">fhir_data_absent_reason:not-permitted</a></td>
+<td>The value is not permitted in this context (e.g. due to profiles, or the base data types).</td>
 </tr>
 </tbody>
 </table>

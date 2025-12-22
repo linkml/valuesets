@@ -403,79 +403,290 @@
 <p><em>MRI imaging modalities and techniques</em></p>
 <p>URI: <a href="https://w3id.org/valuesets/MRIModalityEnum">valuesets:MRIModalityEnum</a></p>
 <h2 id="permissible-values">Permissible Values</h2>
+<!-- annotations-table -->
 <table>
 <thead>
 <tr>
 <th>Value</th>
+<th>Title</th>
 <th>Meaning</th>
 <th>Description</th>
+<th>Advantage</th>
+<th>Analysis</th>
+<th>Analysis Type</th>
+<th>Contrast Mechanism</th>
+<th>Metric</th>
+<th>Networks</th>
+<th>Paradigm</th>
+<th>Parameter</th>
+<th>Parameters</th>
+<th>Requires</th>
+<th>Strength</th>
+<th>Temporal Resolution</th>
+<th>Tissue Contrast</th>
+<th>Typical Use</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>STRUCTURAL_T1</td>
-<td>NCIT:C116455</td>
+<td>T1-weighted structural MRI</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C116455">NCIT:C116455</a></td>
 <td>High-resolution anatomical imaging with T1 contrast</td>
+<td></td>
+<td></td>
+<td></td>
+<td>T1 relaxation</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>good gray/white matter contrast</td>
+<td>anatomical reference, volumetric analysis</td>
 </tr>
 <tr>
 <td>STRUCTURAL_T2</td>
-<td>NCIT:C116456</td>
+<td>T2-weighted structural MRI</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C116456">NCIT:C116456</a></td>
 <td>Structural imaging with T2 contrast</td>
+<td></td>
+<td></td>
+<td></td>
+<td>T2 relaxation</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>good fluid contrast</td>
+<td>pathology detection, CSF visualization</td>
 </tr>
 <tr>
 <td>FLAIR</td>
-<td>NCIT:C82392</td>
+<td>Fluid-attenuated inversion recovery</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C82392">NCIT:C82392</a></td>
 <td>T2-weighted sequence with CSF signal suppressed</td>
+<td>suppresses CSF signal</td>
+<td></td>
+<td></td>
+<td>T2 with fluid suppression</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>lesion detection, periventricular pathology</td>
 </tr>
 <tr>
 <td>BOLD_FMRI</td>
-<td>NCIT:C17958</td>
+<td>Blood oxygen level dependent fMRI</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C17958">NCIT:C17958</a></td>
 <td>Functional MRI based on blood oxygenation changes</td>
+<td></td>
+<td></td>
+<td></td>
+<td>BOLD signal</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>seconds</td>
+<td></td>
+<td>brain activation mapping</td>
 </tr>
 <tr>
 <td>ASL</td>
-<td>NCIT:C116450</td>
+<td>Arterial spin labeling</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C116450">NCIT:C116450</a></td>
 <td>Perfusion imaging using magnetically labeled blood</td>
+<td>no contrast agent required</td>
+<td></td>
+<td></td>
+<td>arterial blood labeling</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>cerebral blood flow measurement</td>
 </tr>
 <tr>
 <td>DWI</td>
-<td>mesh:D038524</td>
+<td>Diffusion-weighted imaging</td>
+<td><a href="http://id.nlm.nih.gov/mesh/D038524">mesh:D038524</a></td>
 <td>Imaging sensitive to water molecule diffusion</td>
+<td></td>
+<td></td>
+<td></td>
+<td>water diffusion</td>
+<td></td>
+<td></td>
+<td></td>
+<td>apparent diffusion coefficient</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>stroke detection, fiber tracking</td>
 </tr>
 <tr>
 <td>DTI</td>
-<td>NCIT:C64862</td>
+<td>Diffusion tensor imaging</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C64862">NCIT:C64862</a></td>
 <td>Advanced diffusion imaging with directional information</td>
+<td></td>
+<td></td>
+<td></td>
+<td>directional diffusion</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>fractional anisotropy, mean diffusivity</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>white matter tractography</td>
 </tr>
 <tr>
 <td>PERFUSION_DSC</td>
-<td>NCIT:C116459</td>
+<td>Dynamic susceptibility contrast perfusion</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C116459">NCIT:C116459</a></td>
 <td>Perfusion imaging using contrast agent bolus</td>
+<td></td>
+<td></td>
+<td></td>
+<td>contrast agent dynamics</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>gadolinium contrast</td>
+<td></td>
+<td></td>
+<td></td>
+<td>cerebral blood flow, blood volume</td>
 </tr>
 <tr>
 <td>PERFUSION_DCE</td>
-<td>NCIT:C116458</td>
+<td>Dynamic contrast-enhanced perfusion</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C116458">NCIT:C116458</a></td>
 <td>Perfusion imaging with pharmacokinetic modeling</td>
+<td></td>
+<td>pharmacokinetic modeling</td>
+<td></td>
+<td>contrast enhancement kinetics</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>blood-brain barrier permeability</td>
 </tr>
 <tr>
 <td>SWI</td>
-<td>NCIT:C121377</td>
+<td>Susceptibility-weighted imaging</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C121377">NCIT:C121377</a></td>
 <td>High-resolution venography and iron detection</td>
+<td></td>
+<td></td>
+<td></td>
+<td>magnetic susceptibility</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>high field preferred</td>
+<td></td>
+<td></td>
+<td>venography, microbleeds, iron deposits</td>
 </tr>
 <tr>
 <td>TASK_FMRI</td>
-<td>NCIT:C178023</td>
+<td>Task-based functional MRI</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C178023">NCIT:C178023</a></td>
 <td>fMRI during specific cognitive or motor tasks</td>
+<td></td>
+<td>statistical parametric mapping</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>stimulus-response</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>localization of brain functions</td>
 </tr>
 <tr>
 <td>RESTING_STATE_FMRI</td>
-<td>NCIT:C178024</td>
+<td>Resting-state functional MRI</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C178024">NCIT:C178024</a></td>
 <td>fMRI acquired at rest without explicit tasks</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>default mode, attention, executive</td>
+<td>no task</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>functional connectivity analysis</td>
 </tr>
 <tr>
 <td>FUNCTIONAL_CONNECTIVITY</td>
-<td>NCIT:C116454</td>
+<td>Functional connectivity MRI</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C116454">NCIT:C116454</a></td>
 <td>Analysis of temporal correlations between brain regions</td>
+<td></td>
+<td></td>
+<td>connectivity mapping</td>
+<td></td>
+<td>correlation coefficients</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>network analysis</td>
 </tr>
 </tbody>
 </table>

@@ -403,94 +403,146 @@
 <p><em>Standard file formats used for storing sequence data</em></p>
 <p>URI: <a href="https://w3id.org/valuesets/SequenceFileFormat">valuesets:SequenceFileFormat</a></p>
 <h2 id="permissible-values">Permissible Values</h2>
+<!-- annotations-table -->
 <table>
 <thead>
 <tr>
 <th>Value</th>
 <th>Meaning</th>
 <th>Description</th>
+<th>Content</th>
+<th>Extensions</th>
+<th>Status</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>FASTA</td>
-<td>EDAM:format_1929</td>
+<td><a href="http://edamontology.org/format_1929">EDAM:format_1929</a></td>
 <td>FASTA sequence format</td>
+<td>sequences only</td>
+<td>.fa, .fasta, .fna, .ffn, .faa, .frn</td>
+<td></td>
 </tr>
 <tr>
 <td>FASTQ</td>
-<td>EDAM:format_1930</td>
+<td><a href="http://edamontology.org/format_1930">EDAM:format_1930</a></td>
 <td>FASTQ sequence with quality format</td>
+<td>sequences and quality scores</td>
+<td>.fq, .fastq</td>
+<td></td>
 </tr>
 <tr>
 <td>SAM</td>
-<td>EDAM:format_2573</td>
+<td><a href="http://edamontology.org/format_2573">EDAM:format_2573</a></td>
 <td>Sequence Alignment Map format</td>
+<td>aligned sequences (text)</td>
+<td>.sam</td>
+<td></td>
 </tr>
 <tr>
 <td>BAM</td>
-<td>EDAM:format_2572</td>
+<td><a href="http://edamontology.org/format_2572">EDAM:format_2572</a></td>
 <td>Binary Alignment Map format</td>
+<td>aligned sequences (binary)</td>
+<td>.bam</td>
+<td></td>
 </tr>
 <tr>
 <td>CRAM</td>
-<td>None</td>
+<td></td>
 <td>Compressed Reference-oriented Alignment Map</td>
+<td>compressed aligned sequences</td>
+<td>.cram</td>
+<td></td>
 </tr>
 <tr>
 <td>VCF</td>
-<td>EDAM:format_3016</td>
+<td><a href="http://edamontology.org/format_3016">EDAM:format_3016</a></td>
 <td>Variant Call Format</td>
+<td>genetic variants</td>
+<td>.vcf</td>
+<td></td>
 </tr>
 <tr>
 <td>BCF</td>
-<td>EDAM:format_3020</td>
+<td><a href="http://edamontology.org/format_3020">EDAM:format_3020</a></td>
 <td>Binary Variant Call Format</td>
+<td>genetic variants (binary)</td>
+<td>.bcf</td>
+<td></td>
 </tr>
 <tr>
 <td>GFF3</td>
-<td>None</td>
+<td></td>
 <td>Generic Feature Format version 3</td>
+<td>genomic annotations</td>
+<td>.gff, .gff3</td>
+<td></td>
 </tr>
 <tr>
 <td>GTF</td>
-<td>None</td>
+<td></td>
 <td>Gene Transfer Format</td>
+<td>gene annotations</td>
+<td>.gtf</td>
+<td></td>
 </tr>
 <tr>
 <td>BED</td>
-<td>None</td>
+<td></td>
 <td>Browser Extensible Data format</td>
+<td>genomic intervals</td>
+<td>.bed</td>
+<td></td>
 </tr>
 <tr>
 <td>BIGWIG</td>
-<td>None</td>
+<td></td>
 <td>BigWig format for continuous data</td>
+<td>continuous genomic data</td>
+<td>.bw, .bigwig</td>
+<td></td>
 </tr>
 <tr>
 <td>BIGBED</td>
-<td>None</td>
+<td></td>
 <td>BigBed format for interval data</td>
+<td>genomic intervals (indexed)</td>
+<td>.bb, .bigbed</td>
+<td></td>
 </tr>
 <tr>
 <td>HDF5</td>
-<td>None</td>
+<td></td>
 <td>Hierarchical Data Format 5</td>
+<td>multi-dimensional arrays</td>
+<td>.h5, .hdf5</td>
+<td></td>
 </tr>
 <tr>
 <td>SFF</td>
-<td>EDAM:format_3284</td>
+<td><a href="http://edamontology.org/format_3284">EDAM:format_3284</a></td>
 <td>Standard Flowgram Format (454)</td>
+<td>454 sequencing data</td>
+<td>.sff</td>
+<td>legacy</td>
 </tr>
 <tr>
 <td>FAST5</td>
-<td>None</td>
+<td></td>
 <td>Fast5 format (Oxford Nanopore)</td>
+<td>nanopore raw signal data</td>
+<td>.fast5</td>
+<td></td>
 </tr>
 <tr>
 <td>POD5</td>
-<td>None</td>
+<td></td>
 <td>POD5 format (Oxford Nanopore, newer)</td>
+<td>nanopore raw signal data (compressed)</td>
+<td>.pod5</td>
+<td></td>
 </tr>
 </tbody>
 </table>

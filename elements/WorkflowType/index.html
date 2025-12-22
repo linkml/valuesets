@@ -403,74 +403,127 @@
 <p><em>Types of computational processing workflows</em></p>
 <p>URI: <a href="https://w3id.org/valuesets/WorkflowType">valuesets:WorkflowType</a></p>
 <h2 id="permissible-values">Permissible Values</h2>
+<!-- annotations-table -->
 <table>
 <thead>
 <tr>
 <th>Value</th>
 <th>Meaning</th>
 <th>Description</th>
+<th>Algorithms</th>
+<th>Methods</th>
+<th>Purpose</th>
+<th>Software</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>MOTION_CORRECTION</td>
-<td>None</td>
+<td></td>
 <td>Motion correction for cryo-EM movies</td>
+<td></td>
+<td></td>
+<td></td>
+<td>MotionCorr, Unblur, RELION</td>
 </tr>
 <tr>
 <td>CTF_ESTIMATION</td>
-<td>None</td>
+<td></td>
 <td>Contrast transfer function estimation</td>
+<td></td>
+<td></td>
+<td></td>
+<td>CTFFIND, Gctf, RELION</td>
 </tr>
 <tr>
 <td>PARTICLE_PICKING</td>
-<td>None</td>
+<td></td>
 <td>Particle picking from micrographs</td>
+<td></td>
+<td>template matching, deep learning</td>
+<td></td>
+<td>RELION, cryoSPARC, Topaz</td>
 </tr>
 <tr>
 <td>CLASSIFICATION_2D</td>
-<td>None</td>
+<td></td>
 <td>2D classification of particles</td>
+<td></td>
+<td></td>
+<td>sorting, cleaning particle dataset</td>
+<td></td>
 </tr>
 <tr>
 <td>CLASSIFICATION_3D</td>
-<td>None</td>
+<td></td>
 <td>3D classification of particles</td>
+<td></td>
+<td></td>
+<td>conformational sorting, resolution improvement</td>
+<td></td>
 </tr>
 <tr>
 <td>REFINEMENT_3D</td>
-<td>None</td>
+<td></td>
 <td>3D refinement of particle orientations</td>
+<td>expectation maximization, gradient descent</td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>MODEL_BUILDING</td>
-<td>None</td>
+<td></td>
 <td>Atomic model building into density</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Coot, ChimeraX, Isolde</td>
 </tr>
 <tr>
 <td>MODEL_REFINEMENT</td>
-<td>None</td>
+<td></td>
 <td>Atomic model refinement</td>
+<td></td>
+<td></td>
+<td></td>
+<td>PHENIX, REFMAC, Buster</td>
 </tr>
 <tr>
 <td>PHASING</td>
-<td>None</td>
+<td></td>
 <td>Phase determination for crystallography</td>
+<td></td>
+<td>SAD, MAD, MR, MIR</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>DATA_INTEGRATION</td>
-<td>None</td>
+<td></td>
 <td>Integration of diffraction data</td>
+<td></td>
+<td></td>
+<td></td>
+<td>XDS, DIALS, HKL</td>
 </tr>
 <tr>
 <td>DATA_SCALING</td>
-<td>None</td>
+<td></td>
 <td>Scaling and merging of diffraction data</td>
+<td></td>
+<td></td>
+<td></td>
+<td>SCALA, AIMLESS, XSCALE</td>
 </tr>
 <tr>
 <td>SAXS_ANALYSIS</td>
-<td>None</td>
+<td></td>
 <td>SAXS data analysis and modeling</td>
+<td></td>
+<td></td>
+<td></td>
+<td>PRIMUS, CRYSOL, FoXS</td>
 </tr>
 </tbody>
 </table>

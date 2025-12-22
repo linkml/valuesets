@@ -403,59 +403,240 @@
 <p><em>Types of nuclear waste management facilities</em></p>
 <p>URI: <a href="https://w3id.org/valuesets/WasteFacilityTypeEnum">valuesets:WasteFacilityTypeEnum</a></p>
 <h2 id="permissible-values">Permissible Values</h2>
+<!-- annotations-table -->
 <table>
 <thead>
 <tr>
 <th>Value</th>
+<th>Title</th>
 <th>Meaning</th>
 <th>Description</th>
+<th>Containment Period</th>
+<th>Cooling Medium</th>
+<th>Disposal Depth</th>
+<th>Disposal Requirements</th>
+<th>Example</th>
+<th>Institutional Control</th>
+<th>Location</th>
+<th>Materials</th>
+<th>Methods</th>
+<th>Output</th>
+<th>Processes</th>
+<th>Purpose</th>
+<th>Scale</th>
+<th>Storage Duration</th>
+<th>Storage Type</th>
+<th>Transportation</th>
+<th>Waste Category</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>SPENT_FUEL_POOL</td>
-<td>None</td>
+<td>Spent Fuel Pool</td>
+<td></td>
 <td>Water-filled pool for cooling spent fuel</td>
+<td></td>
+<td>water</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>typically at reactor site</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>5-10 years typical</td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>DRY_CASK_STORAGE</td>
-<td>None</td>
+<td>Dry Cask Storage</td>
+<td></td>
 <td>Air-cooled storage in sealed containers</td>
+<td></td>
+<td>air circulation</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>on-site or centralized</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>20-100 years</td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>CENTRALIZED_INTERIM_STORAGE</td>
-<td>None</td>
+<td>Centralized Interim Storage Facility</td>
+<td></td>
 <td>Large-scale interim storage away from reactor sites</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>multiple reactor's worth of fuel</td>
+<td>decades</td>
+<td></td>
+<td>rail or truck access required</td>
+<td></td>
 </tr>
 <tr>
 <td>LOW_LEVEL_WASTE_DISPOSAL</td>
-<td>None</td>
+<td>Low-Level Waste Disposal Site</td>
+<td></td>
 <td>Near-surface disposal for low-level waste</td>
+<td></td>
+<td></td>
+<td>near-surface (&lt;30 meters)</td>
+<td></td>
+<td></td>
+<td>100 years minimum</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>Class A, B, C low-level waste</td>
 </tr>
 <tr>
 <td>GREATER_THAN_CLASS_C_STORAGE</td>
-<td>None</td>
+<td>Greater Than Class C Storage</td>
+<td></td>
 <td>Storage for waste exceeding Class C limits</td>
+<td></td>
+<td></td>
+<td></td>
+<td>deep disposal likely required</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>interim storage pending disposal</td>
+<td></td>
+<td>greater than Class C waste</td>
 </tr>
 <tr>
 <td>TRANSURANIC_WASTE_REPOSITORY</td>
-<td>None</td>
+<td>Transuranic Waste Repository</td>
+<td></td>
 <td>Deep geological repository for TRU waste</td>
+<td></td>
+<td></td>
+<td>deep underground</td>
+<td></td>
+<td>Waste Isolation Pilot Plant (WIPP)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>transuranic waste</td>
 </tr>
 <tr>
 <td>HIGH_LEVEL_WASTE_REPOSITORY</td>
-<td>None</td>
+<td>High-Level Waste Repository</td>
+<td></td>
 <td>Deep geological repository for high-level waste</td>
+<td>thousands of years</td>
+<td></td>
+<td>typically &gt;300 meters</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>high-level waste, spent fuel</td>
 </tr>
 <tr>
 <td>WASTE_TREATMENT_FACILITY</td>
-<td>None</td>
+<td>Waste Treatment Facility</td>
+<td></td>
 <td>Facility for processing and conditioning waste</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>treated waste for disposal</td>
+<td>incineration, compaction, solidification</td>
+<td>volume reduction, stabilization</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>DECONTAMINATION_FACILITY</td>
-<td>None</td>
+<td>Decontamination Facility</td>
+<td></td>
 <td>Facility for cleaning contaminated materials</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>equipment, clothing, tools</td>
+<td>chemical, physical decontamination</td>
+<td></td>
+<td></td>
+<td>remove radioactive contamination</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>

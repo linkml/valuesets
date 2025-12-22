@@ -394,10 +394,12 @@
 <p><em>Error handling strategies in laboratory automation workflows</em></p>
 <p>URI: <a href="https://w3id.org/valuesets/WorkflowErrorHandlingEnum">valuesets:WorkflowErrorHandlingEnum</a></p>
 <h2 id="permissible-values">Permissible Values</h2>
+<!-- annotations-table -->
 <table>
 <thead>
 <tr>
 <th>Value</th>
+<th>Title</th>
 <th>Meaning</th>
 <th>Description</th>
 </tr>
@@ -405,32 +407,38 @@
 <tbody>
 <tr>
 <td>ABORT_ON_ERROR</td>
-<td>None</td>
+<td>abort on error</td>
+<td></td>
 <td>Terminate workflow immediately upon encountering an error</td>
 </tr>
 <tr>
 <td>RETRY</td>
-<td>None</td>
+<td>retry</td>
+<td></td>
 <td>Attempt to retry the failed operation</td>
 </tr>
 <tr>
 <td>SKIP_AND_CONTINUE</td>
-<td>None</td>
+<td>skip and continue</td>
+<td></td>
 <td>Skip the failed operation and continue with the workflow</td>
 </tr>
 <tr>
 <td>NOTIFY_AND_PAUSE</td>
-<td>None</td>
+<td>notify and pause</td>
+<td></td>
 <td>Notify operator and pause workflow for intervention</td>
 </tr>
 <tr>
 <td>ROLLBACK</td>
-<td>None</td>
+<td>rollback</td>
+<td></td>
 <td>Revert to previous stable state</td>
 </tr>
 <tr>
 <td>FAILOVER</td>
-<td>None</td>
+<td>failover</td>
+<td></td>
 <td>Switch to backup resource or alternative execution path</td>
 </tr>
 </tbody>

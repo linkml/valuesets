@@ -412,34 +412,50 @@
 <p><em>International Neuroblastoma Risk Group (INRG) pretreatment risk classification groups. Combines INRGSS stage with tumor histology, MYCN status, ploidy, and other prognostic factors.</em></p>
 <p>URI: <a href="https://w3id.org/valuesets/NeuroblastomaRiskGroup">valuesets:NeuroblastomaRiskGroup</a></p>
 <h2 id="permissible-values">Permissible Values</h2>
+<!-- annotations-table -->
 <table>
 <thead>
 <tr>
 <th>Value</th>
+<th>Title</th>
 <th>Meaning</th>
 <th>Description</th>
+<th>Expected Efs</th>
+<th>Mycn Amplified</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>VERY_LOW</td>
-<td>NCIT:C103236</td>
-<td>Very low risk neuroblastoma with excellent prognosis</td>
+<td>Very Low Risk</td>
+<td></td>
+<td>Very low risk neuroblastoma with excellent prognosis. Typically includes L1 tumors and MS without MYCN amplification.</td>
+<td>&gt;85%</td>
+<td></td>
 </tr>
 <tr>
 <td>LOW</td>
-<td>NCIT:C103237</td>
-<td>Low risk neuroblastoma with favorable prognosis</td>
+<td>Low Risk</td>
+<td></td>
+<td>Low risk neuroblastoma with favorable prognosis. Treatment may include surgery alone or observation.</td>
+<td>&gt;75%</td>
+<td></td>
 </tr>
 <tr>
 <td>INTERMEDIATE</td>
-<td>NCIT:C103238</td>
-<td>Intermediate risk neuroblastoma requiring multimodal treatment including chem...</td>
+<td>Intermediate Risk</td>
+<td></td>
+<td>Intermediate risk neuroblastoma requiring multimodal treatment including chemotherapy.</td>
+<td>50-75%</td>
+<td></td>
 </tr>
 <tr>
 <td>HIGH</td>
-<td>NCIT:C103239</td>
-<td>High risk neuroblastoma with poor prognosis</td>
+<td>High Risk Neuroblastoma</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C150281">NCIT:C150281</a></td>
+<td>High risk neuroblastoma with poor prognosis. Requires intensive multimodal therapy including high-dose chemotherapy with autologous stem cell rescue, surgery, radiation, and immunotherapy.</td>
+<td>&lt;50%</td>
+<td>often</td>
 </tr>
 </tbody>
 </table>
@@ -494,7 +510,6 @@ permissible_values:
     text: VERY_LOW
     description: Very low risk neuroblastoma with excellent prognosis. Typically includes
       L1 tumors and MS without MYCN amplification.
-    meaning: NCIT:C103236
     annotations:
       expected_efs:
         tag: expected_efs
@@ -504,7 +519,6 @@ permissible_values:
     text: LOW
     description: Low risk neuroblastoma with favorable prognosis. Treatment may include
       surgery alone or observation.
-    meaning: NCIT:C103237
     annotations:
       expected_efs:
         tag: expected_efs
@@ -514,7 +528,6 @@ permissible_values:
     text: INTERMEDIATE
     description: Intermediate risk neuroblastoma requiring multimodal treatment including
       chemotherapy.
-    meaning: NCIT:C103238
     annotations:
       expected_efs:
         tag: expected_efs
@@ -525,7 +538,7 @@ permissible_values:
     description: High risk neuroblastoma with poor prognosis. Requires intensive multimodal
       therapy including high-dose chemotherapy with autologous stem cell rescue, surgery,
       radiation, and immunotherapy.
-    meaning: NCIT:C103239
+    meaning: NCIT:C150281
     annotations:
       expected_efs:
         tag: expected_efs
@@ -533,7 +546,7 @@ permissible_values:
       mycn_amplified:
         tag: mycn_amplified
         value: often
-    title: High Risk
+    title: High Risk Neuroblastoma
 
 </code></pre>
 

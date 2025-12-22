@@ -403,39 +403,58 @@
 <p><em>OWL 2 profiles that provide different tradeoffs between expressiveness and computational complexity</em></p>
 <p>URI: <a href="https://w3id.org/valuesets/OWLProfileEnum">valuesets:OWLProfileEnum</a></p>
 <h2 id="permissible-values">Permissible Values</h2>
+<!-- annotations-table -->
 <table>
 <thead>
 <tr>
 <th>Value</th>
+<th>Title</th>
 <th>Meaning</th>
 <th>Description</th>
+<th>Complexity</th>
+<th>Use Case</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>OWL_2_EL</td>
-<td>None</td>
-<td>OWL 2 EL (Existential Language) - optimized for applications using very large...</td>
+<td>OWL 2 EL</td>
+<td></td>
+<td>OWL 2 EL (Existential Language) - optimized for applications using very large ontologies with basic relationships. Provides polynomial time reasoning.</td>
+<td>polynomial time</td>
+<td>large biomedical ontologies, SNOMED CT</td>
 </tr>
 <tr>
 <td>OWL_2_QL</td>
-<td>None</td>
-<td>OWL 2 QL (Query Language) - optimized for query answering over large data rep...</td>
+<td>OWL 2 QL</td>
+<td></td>
+<td>OWL 2 QL (Query Language) - optimized for query answering over large data repositories. Based on DL-Lite family.</td>
+<td>LogSpace data complexity</td>
+<td>ontology-based data access, database integration</td>
 </tr>
 <tr>
 <td>OWL_2_RL</td>
-<td>None</td>
-<td>OWL 2 RL (Rule Language) - optimized for rule-based reasoning and can be impl...</td>
+<td>OWL 2 RL</td>
+<td></td>
+<td>OWL 2 RL (Rule Language) - optimized for rule-based reasoning and can be implemented using rule engines. Compatible with RDF Schema.</td>
+<td>polynomial time</td>
+<td>business rules, policy systems</td>
 </tr>
 <tr>
 <td>OWL_2_DL</td>
-<td>None</td>
-<td>OWL 2 DL (Description Logic) - full expressiveness while maintaining computat...</td>
+<td>OWL 2 DL</td>
+<td></td>
+<td>OWL 2 DL (Description Logic) - full expressiveness while maintaining computational completeness and decidability. Maximum expressiveness without sacrificing decidability.</td>
+<td>NExpTime</td>
+<td>general purpose ontologies requiring high expressiveness</td>
 </tr>
 <tr>
 <td>OWL_2_FULL</td>
-<td>None</td>
-<td>OWL 2 Full - maximum expressiveness with no restrictions, but reasoning is un...</td>
+<td>OWL 2 Full</td>
+<td></td>
+<td>OWL 2 Full - maximum expressiveness with no restrictions, but reasoning is undecidable. Allows full RDF capabilities.</td>
+<td>undecidable</td>
+<td>maximum flexibility, no guaranteed reasoning</td>
 </tr>
 </tbody>
 </table>

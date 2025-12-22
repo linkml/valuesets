@@ -403,44 +403,157 @@
 <p><em>Reactor control and safety system operational modes</em></p>
 <p>URI: <a href="https://w3id.org/valuesets/ReactorControlModeEnum">valuesets:ReactorControlModeEnum</a></p>
 <h2 id="permissible-values">Permissible Values</h2>
+<!-- annotations-table -->
 <table>
 <thead>
 <tr>
 <th>Value</th>
+<th>Title</th>
 <th>Meaning</th>
 <th>Description</th>
+<th>Activation</th>
+<th>Application</th>
+<th>Automation</th>
+<th>Coordination</th>
+<th>Decision Making</th>
+<th>Equipment</th>
+<th>Function</th>
+<th>Guidance</th>
+<th>Operator Role</th>
+<th>Priority</th>
+<th>Redundancy</th>
+<th>Response Time</th>
+<th>Scope</th>
+<th>Systems</th>
+<th>Training</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>MANUAL_CONTROL</td>
-<td>None</td>
+<td>Manual Control</td>
+<td></td>
 <td>Direct operator control of reactor systems</td>
+<td></td>
+<td>startup, shutdown, testing</td>
+<td>minimal automation</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>direct manual operation</td>
+<td></td>
+<td></td>
+<td>depends on operator</td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>AUTOMATIC_CONTROL</td>
-<td>None</td>
+<td>Automatic Control</td>
+<td></td>
 <td>Automated reactor control systems</td>
+<td></td>
+<td>normal power operation</td>
+<td>high level automation</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>supervisory</td>
+<td></td>
+<td></td>
+<td>rapid automatic response</td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>REACTOR_PROTECTION_SYSTEM</td>
-<td>None</td>
+<td>Reactor Protection System Active</td>
+<td></td>
 <td>Safety system monitoring for trip conditions</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>automatic reactor trip on unsafe conditions</td>
+<td></td>
+<td></td>
+<td>overrides operator actions</td>
+<td>multiple independent channels</td>
+<td>milliseconds to seconds</td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>ENGINEERED_SAFEGUARDS</td>
-<td>None</td>
+<td>Engineered Safeguards Active</td>
+<td></td>
 <td>Safety systems for accident mitigation</td>
+<td>automatic on accident conditions</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>mitigate consequences of accidents</td>
+<td></td>
+<td></td>
+<td></td>
+<td>multiple trains</td>
+<td></td>
+<td></td>
+<td>emergency core cooling, containment</td>
+<td></td>
 </tr>
 <tr>
 <td>EMERGENCY_OPERATING_PROCEDURES</td>
-<td>None</td>
+<td>Emergency Operating Procedures</td>
+<td></td>
 <td>Operator actions for emergency conditions</td>
+<td></td>
+<td></td>
+<td></td>
+<td>with emergency response</td>
+<td>structured approach</td>
+<td></td>
+<td></td>
+<td>symptom-based procedures</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>extensive operator training</td>
 </tr>
 <tr>
 <td>SEVERE_ACCIDENT_MANAGEMENT</td>
-<td>None</td>
+<td>Severe Accident Management</td>
+<td></td>
 <td>Procedures for beyond design basis accidents</td>
+<td></td>
+<td></td>
+<td></td>
+<td>multi-unit considerations</td>
+<td></td>
+<td>portable emergency equipment</td>
+<td></td>
+<td>severe accident management guidelines</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>core damage mitigation</td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>

@@ -412,254 +412,549 @@
 <p><em>Physical quantity kinds based on QUDT. These represent abstract types of physical quantities independent of the units used to measure them.</em></p>
 <p>URI: <a href="https://w3id.org/valuesets/QuantityKindEnum">valuesets:QuantityKindEnum</a></p>
 <h2 id="permissible-values">Permissible Values</h2>
+<!-- annotations-table -->
 <table>
 <thead>
 <tr>
 <th>Value</th>
+<th>Title</th>
 <th>Meaning</th>
 <th>Description</th>
+<th>Exact Mappings</th>
+<th>Close Mappings</th>
+<th>Dimension</th>
+<th>Pato Label</th>
+<th>Si Base</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>LENGTH</td>
-<td>quantitykind:Length</td>
+<td>length</td>
+<td><a href="http://qudt.org/vocab/quantitykind/Length">quantitykind:Length</a></td>
 <td>A 1-D extent quality representing distance between two points</td>
+<td><a href="http://purl.obolibrary.org/obo/PATO_0000122">PATO:0000122</a></td>
+<td></td>
+<td>L</td>
+<td></td>
+<td>true</td>
 </tr>
 <tr>
 <td>MASS</td>
-<td>quantitykind:Mass</td>
+<td>mass</td>
+<td><a href="http://qudt.org/vocab/quantitykind/Mass">quantitykind:Mass</a></td>
 <td>The amount of matter in an object</td>
+<td><a href="http://purl.obolibrary.org/obo/PATO_0000125">PATO:0000125</a></td>
+<td></td>
+<td>M</td>
+<td></td>
+<td>true</td>
 </tr>
 <tr>
 <td>TIME</td>
-<td>quantitykind:Time</td>
+<td>time</td>
+<td><a href="http://qudt.org/vocab/quantitykind/Time">quantitykind:Time</a></td>
 <td>Duration or temporal extent</td>
+<td><a href="http://purl.obolibrary.org/obo/PATO_0001309">PATO:0001309</a></td>
+<td></td>
+<td>T</td>
+<td>duration</td>
+<td>true</td>
 </tr>
 <tr>
 <td>THERMODYNAMIC_TEMPERATURE</td>
-<td>quantitykind:ThermodynamicTemperature</td>
+<td>thermodynamic temperature</td>
+<td><a href="http://qudt.org/vocab/quantitykind/ThermodynamicTemperature">quantitykind:ThermodynamicTemperature</a></td>
 <td>The thermal energy of a system</td>
+<td><a href="http://purl.obolibrary.org/obo/PATO_0000146">PATO:0000146</a></td>
+<td></td>
+<td>Θ</td>
+<td>temperature</td>
+<td>true</td>
 </tr>
 <tr>
 <td>AMOUNT_OF_SUBSTANCE</td>
-<td>quantitykind:AmountOfSubstance</td>
-<td>The number of elementary entities (atoms, molecules, etc</td>
+<td>amount of substance</td>
+<td><a href="http://qudt.org/vocab/quantitykind/AmountOfSubstance">quantitykind:AmountOfSubstance</a></td>
+<td>The number of elementary entities (atoms, molecules, etc.)</td>
+<td></td>
+<td><a href="http://purl.obolibrary.org/obo/PATO_0000070">PATO:0000070</a></td>
+<td>N</td>
+<td>amount</td>
+<td>true</td>
 </tr>
 <tr>
 <td>ELECTRIC_CURRENT</td>
-<td>quantitykind:ElectricCurrent</td>
+<td>electric current</td>
+<td><a href="http://qudt.org/vocab/quantitykind/ElectricCurrent">quantitykind:ElectricCurrent</a></td>
 <td>Flow of electric charge per unit time</td>
+<td></td>
+<td></td>
+<td>I</td>
+<td></td>
+<td>true</td>
 </tr>
 <tr>
 <td>LUMINOUS_INTENSITY</td>
-<td>quantitykind:LuminousIntensity</td>
+<td>luminous intensity</td>
+<td><a href="http://qudt.org/vocab/quantitykind/LuminousIntensity">quantitykind:LuminousIntensity</a></td>
 <td>Luminous power per unit solid angle emitted by a point light source</td>
+<td></td>
+<td><a href="http://purl.obolibrary.org/obo/PATO_0001718">PATO:0001718</a></td>
+<td>J</td>
+<td>luminance</td>
+<td>true</td>
 </tr>
 <tr>
 <td>AREA</td>
-<td>quantitykind:Area</td>
+<td>area</td>
+<td><a href="http://qudt.org/vocab/quantitykind/Area">quantitykind:Area</a></td>
 <td>A 2-D extent representing the size of a surface</td>
+<td><a href="http://purl.obolibrary.org/obo/PATO_0001323">PATO:0001323</a></td>
+<td></td>
+<td>L²</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>VOLUME</td>
-<td>quantitykind:Volume</td>
+<td>volume</td>
+<td><a href="http://qudt.org/vocab/quantitykind/Volume">quantitykind:Volume</a></td>
 <td>A 3-D extent representing the amount of space occupied</td>
+<td><a href="http://purl.obolibrary.org/obo/PATO_0000918">PATO:0000918</a></td>
+<td></td>
+<td>L³</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>ANGLE</td>
-<td>quantitykind:Angle</td>
+<td>plane angle</td>
+<td><a href="http://qudt.org/vocab/quantitykind/Angle">quantitykind:Angle</a></td>
 <td>The figure formed by two rays sharing a common endpoint</td>
+<td><a href="http://purl.obolibrary.org/obo/PATO_0002326">PATO:0002326</a></td>
+<td></td>
+<td>dimensionless</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>SOLID_ANGLE</td>
-<td>quantitykind:SolidAngle</td>
+<td>solid angle</td>
+<td><a href="http://qudt.org/vocab/quantitykind/SolidAngle">quantitykind:SolidAngle</a></td>
 <td>A 3-D angular measure</td>
+<td></td>
+<td></td>
+<td>dimensionless</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>VELOCITY</td>
-<td>quantitykind:Velocity</td>
+<td>velocity</td>
+<td><a href="http://qudt.org/vocab/quantitykind/Velocity">quantitykind:Velocity</a></td>
 <td>Rate of change of position with direction</td>
+<td><a href="http://purl.obolibrary.org/obo/PATO_0002242">PATO:0002242</a></td>
+<td></td>
+<td>L·T⁻¹</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>SPEED</td>
-<td>quantitykind:Speed</td>
+<td>speed</td>
+<td><a href="http://qudt.org/vocab/quantitykind/Speed">quantitykind:Speed</a></td>
 <td>Scalar rate of change of position</td>
+<td><a href="http://purl.obolibrary.org/obo/PATO_0000008">PATO:0000008</a></td>
+<td></td>
+<td>L·T⁻¹</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>ACCELERATION</td>
-<td>quantitykind:Acceleration</td>
+<td>acceleration</td>
+<td><a href="http://qudt.org/vocab/quantitykind/Acceleration">quantitykind:Acceleration</a></td>
 <td>Rate of change of velocity</td>
+<td><a href="http://purl.obolibrary.org/obo/PATO_0001028">PATO:0001028</a></td>
+<td></td>
+<td>L·T⁻²</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>FORCE</td>
-<td>quantitykind:Force</td>
+<td>force</td>
+<td><a href="http://qudt.org/vocab/quantitykind/Force">quantitykind:Force</a></td>
 <td>Rate of change of momentum</td>
+<td><a href="http://purl.obolibrary.org/obo/PATO_0001035">PATO:0001035</a></td>
+<td></td>
+<td>M·L·T⁻²</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>PRESSURE</td>
-<td>quantitykind:Pressure</td>
+<td>pressure</td>
+<td><a href="http://qudt.org/vocab/quantitykind/Pressure">quantitykind:Pressure</a></td>
 <td>Force per unit area</td>
+<td><a href="http://purl.obolibrary.org/obo/PATO_0001025">PATO:0001025</a></td>
+<td></td>
+<td>M·L⁻¹·T⁻²</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>ENERGY</td>
-<td>quantitykind:Energy</td>
+<td>energy</td>
+<td><a href="http://qudt.org/vocab/quantitykind/Energy">quantitykind:Energy</a></td>
 <td>Capacity to do work</td>
+<td><a href="http://purl.obolibrary.org/obo/PATO_0001021">PATO:0001021</a></td>
+<td></td>
+<td>M·L²·T⁻²</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>WORK</td>
-<td>quantitykind:Work</td>
+<td>work</td>
+<td><a href="http://qudt.org/vocab/quantitykind/Work">quantitykind:Work</a></td>
 <td>Energy transferred by a force</td>
+<td><a href="http://purl.obolibrary.org/obo/PATO_0001026">PATO:0001026</a></td>
+<td></td>
+<td>M·L²·T⁻²</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>POWER</td>
-<td>quantitykind:Power</td>
+<td>power</td>
+<td><a href="http://qudt.org/vocab/quantitykind/Power">quantitykind:Power</a></td>
 <td>Rate of doing work or transferring energy</td>
+<td><a href="http://purl.obolibrary.org/obo/PATO_0001024">PATO:0001024</a></td>
+<td></td>
+<td>M·L²·T⁻³</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>MOMENTUM</td>
-<td>quantitykind:Momentum</td>
+<td>momentum</td>
+<td><a href="http://qudt.org/vocab/quantitykind/Momentum">quantitykind:Momentum</a></td>
 <td>Product of mass and velocity</td>
+<td><a href="http://purl.obolibrary.org/obo/PATO_0001023">PATO:0001023</a></td>
+<td></td>
+<td>M·L·T⁻¹</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>TORQUE</td>
-<td>quantitykind:Torque</td>
+<td>torque</td>
+<td><a href="http://qudt.org/vocab/quantitykind/Torque">quantitykind:Torque</a></td>
 <td>Rotational force or moment of force</td>
+<td></td>
+<td></td>
+<td>M·L²·T⁻²</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>ANGULAR_VELOCITY</td>
-<td>quantitykind:AngularVelocity</td>
+<td>angular velocity</td>
+<td><a href="http://qudt.org/vocab/quantitykind/AngularVelocity">quantitykind:AngularVelocity</a></td>
 <td>Rate of change of angular position</td>
+<td></td>
+<td></td>
+<td>T⁻¹</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>ANGULAR_ACCELERATION</td>
-<td>quantitykind:AngularAcceleration</td>
+<td>angular acceleration</td>
+<td><a href="http://qudt.org/vocab/quantitykind/AngularAcceleration">quantitykind:AngularAcceleration</a></td>
 <td>Rate of change of angular velocity</td>
+<td><a href="http://purl.obolibrary.org/obo/PATO_0001350">PATO:0001350</a></td>
+<td></td>
+<td>T⁻²</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>DENSITY</td>
-<td>quantitykind:Density</td>
+<td>density</td>
+<td><a href="http://qudt.org/vocab/quantitykind/Density">quantitykind:Density</a></td>
 <td>Mass per unit volume</td>
+<td><a href="http://purl.obolibrary.org/obo/PATO_0001019">PATO:0001019</a></td>
+<td></td>
+<td>M·L⁻³</td>
+<td>mass density</td>
+<td></td>
 </tr>
 <tr>
 <td>VISCOSITY</td>
-<td>quantitykind:DynamicViscosity</td>
+<td>dynamic viscosity</td>
+<td><a href="http://qudt.org/vocab/quantitykind/DynamicViscosity">quantitykind:DynamicViscosity</a></td>
 <td>Internal resistance to flow</td>
+<td><a href="http://purl.obolibrary.org/obo/PATO_0000992">PATO:0000992</a></td>
+<td></td>
+<td>M·L⁻¹·T⁻¹</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>KINEMATIC_VISCOSITY</td>
-<td>quantitykind:KinematicViscosity</td>
+<td>kinematic viscosity</td>
+<td><a href="http://qudt.org/vocab/quantitykind/KinematicViscosity">quantitykind:KinematicViscosity</a></td>
 <td>Dynamic viscosity divided by density</td>
+<td></td>
+<td></td>
+<td>L²·T⁻¹</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>FREQUENCY</td>
-<td>quantitykind:Frequency</td>
+<td>frequency</td>
+<td><a href="http://qudt.org/vocab/quantitykind/Frequency">quantitykind:Frequency</a></td>
 <td>Number of repetitive events per unit time</td>
+<td><a href="http://purl.obolibrary.org/obo/PATO_0000044">PATO:0000044</a></td>
+<td></td>
+<td>T⁻¹</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>MASS_CONCENTRATION</td>
-<td>quantitykind:MassConcentration</td>
+<td>mass concentration</td>
+<td><a href="http://qudt.org/vocab/quantitykind/MassConcentration">quantitykind:MassConcentration</a></td>
 <td>Mass of a substance per unit volume</td>
+<td><a href="http://purl.obolibrary.org/obo/PATO_0000033">PATO:0000033</a></td>
+<td></td>
+<td>M·L⁻³</td>
+<td>concentration of</td>
+<td></td>
 </tr>
 <tr>
 <td>AMOUNT_CONCENTRATION</td>
-<td>quantitykind:AmountConcentration</td>
+<td>amount concentration</td>
+<td><a href="http://qudt.org/vocab/quantitykind/AmountConcentration">quantitykind:AmountConcentration</a></td>
 <td>Amount of substance per unit volume (molarity)</td>
+<td></td>
+<td><a href="http://purl.obolibrary.org/obo/PATO_0000033">PATO:0000033</a></td>
+<td>N·L⁻³</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>ELECTRIC_CHARGE</td>
-<td>quantitykind:ElectricCharge</td>
+<td>electric charge</td>
+<td><a href="http://qudt.org/vocab/quantitykind/ElectricCharge">quantitykind:ElectricCharge</a></td>
 <td>Fundamental property of matter causing electromagnetic interaction</td>
+<td><a href="http://purl.obolibrary.org/obo/PATO_0002193">PATO:0002193</a></td>
+<td></td>
+<td>I·T</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>ELECTRIC_POTENTIAL</td>
-<td>quantitykind:ElectricPotential</td>
+<td>electric potential</td>
+<td><a href="http://qudt.org/vocab/quantitykind/ElectricPotential">quantitykind:ElectricPotential</a></td>
 <td>Potential energy per unit charge (voltage)</td>
+<td><a href="http://purl.obolibrary.org/obo/PATO_0001464">PATO:0001464</a></td>
+<td></td>
+<td>M·L²·T⁻³·I⁻¹</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>ELECTRIC_RESISTANCE</td>
-<td>quantitykind:Resistance</td>
+<td>electric resistance</td>
+<td><a href="http://qudt.org/vocab/quantitykind/Resistance">quantitykind:Resistance</a></td>
 <td>Opposition to electric current flow</td>
+<td></td>
+<td></td>
+<td>M·L²·T⁻³·I⁻²</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>ELECTRICAL_CONDUCTIVITY</td>
-<td>quantitykind:Conductivity</td>
+<td>electrical conductivity</td>
+<td><a href="http://qudt.org/vocab/quantitykind/Conductivity">quantitykind:Conductivity</a></td>
 <td>Ability to conduct electric current</td>
+<td><a href="http://purl.obolibrary.org/obo/PATO_0001757">PATO:0001757</a></td>
+<td></td>
+<td>I²·T³·M⁻¹·L⁻³</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>CAPACITANCE</td>
-<td>quantitykind:Capacitance</td>
+<td>capacitance</td>
+<td><a href="http://qudt.org/vocab/quantitykind/Capacitance">quantitykind:Capacitance</a></td>
 <td>Ability to store electric charge</td>
+<td></td>
+<td></td>
+<td>I²·T⁴·M⁻¹·L⁻²</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>INDUCTANCE</td>
-<td>quantitykind:Inductance</td>
+<td>inductance</td>
+<td><a href="http://qudt.org/vocab/quantitykind/Inductance">quantitykind:Inductance</a></td>
 <td>Property relating magnetic flux to electric current</td>
+<td></td>
+<td></td>
+<td>M·L²·T⁻²·I⁻²</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>MAGNETIC_FLUX</td>
-<td>quantitykind:MagneticFlux</td>
+<td>magnetic flux</td>
+<td><a href="http://qudt.org/vocab/quantitykind/MagneticFlux">quantitykind:MagneticFlux</a></td>
 <td>Measure of total magnetic field passing through a surface</td>
+<td></td>
+<td></td>
+<td>M·L²·T⁻²·I⁻¹</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>MAGNETIC_FLUX_DENSITY</td>
-<td>quantitykind:MagneticFluxDensity</td>
+<td>magnetic flux density</td>
+<td><a href="http://qudt.org/vocab/quantitykind/MagneticFluxDensity">quantitykind:MagneticFluxDensity</a></td>
 <td>Magnetic flux per unit area</td>
+<td></td>
+<td></td>
+<td>M·T⁻²·I⁻¹</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>HEAT_CAPACITY</td>
-<td>quantitykind:HeatCapacity</td>
+<td>heat capacity</td>
+<td><a href="http://qudt.org/vocab/quantitykind/HeatCapacity">quantitykind:HeatCapacity</a></td>
 <td>Heat required to raise temperature by one unit</td>
+<td></td>
+<td></td>
+<td>M·L²·T⁻²·Θ⁻¹</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>SPECIFIC_HEAT_CAPACITY</td>
-<td>quantitykind:SpecificHeatCapacity</td>
+<td>specific heat capacity</td>
+<td><a href="http://qudt.org/vocab/quantitykind/SpecificHeatCapacity">quantitykind:SpecificHeatCapacity</a></td>
 <td>Heat capacity per unit mass</td>
+<td></td>
+<td></td>
+<td>L²·T⁻²·Θ⁻¹</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>THERMAL_CONDUCTIVITY</td>
-<td>quantitykind:ThermalConductivity</td>
+<td>thermal conductivity</td>
+<td><a href="http://qudt.org/vocab/quantitykind/ThermalConductivity">quantitykind:ThermalConductivity</a></td>
 <td>Ability to conduct heat</td>
+<td><a href="http://purl.obolibrary.org/obo/PATO_0001756">PATO:0001756</a></td>
+<td></td>
+<td>M·L·T⁻³·Θ⁻¹</td>
+<td>heat conductivity</td>
+<td></td>
 </tr>
 <tr>
 <td>LUMINOUS_FLUX</td>
-<td>quantitykind:LuminousFlux</td>
+<td>luminous flux</td>
+<td><a href="http://qudt.org/vocab/quantitykind/LuminousFlux">quantitykind:LuminousFlux</a></td>
 <td>Total perceived light power emitted</td>
+<td><a href="http://purl.obolibrary.org/obo/PATO_0001296">PATO:0001296</a></td>
+<td></td>
+<td>J</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>ILLUMINANCE</td>
-<td>quantitykind:Illuminance</td>
+<td>illuminance</td>
+<td><a href="http://qudt.org/vocab/quantitykind/Illuminance">quantitykind:Illuminance</a></td>
 <td>Luminous flux per unit area</td>
+<td></td>
+<td></td>
+<td>J·L⁻²</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>RADIANT_INTENSITY</td>
-<td>quantitykind:RadiantIntensity</td>
+<td>radiant intensity</td>
+<td><a href="http://qudt.org/vocab/quantitykind/RadiantIntensity">quantitykind:RadiantIntensity</a></td>
 <td>Radiant power per unit solid angle</td>
+<td></td>
+<td></td>
+<td>M·L²·T⁻³</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>ACTIVITY</td>
-<td>quantitykind:Activity</td>
+<td>activity (radioactivity)</td>
+<td><a href="http://qudt.org/vocab/quantitykind/Activity">quantitykind:Activity</a></td>
 <td>Number of nuclear disintegrations per unit time</td>
+<td></td>
+<td></td>
+<td>T⁻¹</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>ABSORBED_DOSE</td>
-<td>quantitykind:AbsorbedDose</td>
+<td>absorbed dose</td>
+<td><a href="http://qudt.org/vocab/quantitykind/AbsorbedDose">quantitykind:AbsorbedDose</a></td>
 <td>Energy deposited per unit mass by ionizing radiation</td>
+<td></td>
+<td></td>
+<td>L²·T⁻²</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>DOSE_EQUIVALENT</td>
-<td>quantitykind:DoseEquivalent</td>
+<td>dose equivalent</td>
+<td><a href="http://qudt.org/vocab/quantitykind/DoseEquivalent">quantitykind:DoseEquivalent</a></td>
 <td>Absorbed dose weighted by radiation type</td>
+<td></td>
+<td></td>
+<td>L²·T⁻²</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>INFORMATION_ENTROPY</td>
-<td>quantitykind:InformationEntropy</td>
+<td>information entropy</td>
+<td><a href="http://qudt.org/vocab/quantitykind/InformationEntropy">quantitykind:InformationEntropy</a></td>
 <td>Measure of information content or uncertainty</td>
+<td></td>
+<td></td>
+<td>dimensionless</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>DATA_RATE</td>
-<td>quantitykind:DataRate</td>
+<td>data rate</td>
+<td><a href="http://qudt.org/vocab/quantitykind/DataRate">quantitykind:DataRate</a></td>
 <td>Amount of data transferred per unit time</td>
+<td></td>
+<td></td>
+<td>T⁻¹</td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>

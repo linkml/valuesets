@@ -403,74 +403,543 @@
 <p><em>Operational states of nuclear reactors</em></p>
 <p>URI: <a href="https://w3id.org/valuesets/ReactorOperatingStateEnum">valuesets:ReactorOperatingStateEnum</a></p>
 <h2 id="permissible-values">Permissible Values</h2>
+<!-- annotations-table -->
 <table>
 <thead>
 <tr>
 <th>Value</th>
+<th>Title</th>
 <th>Meaning</th>
 <th>Description</th>
+<th>Cause</th>
+<th>Control Mode</th>
+<th>Control Rod Insertion</th>
+<th>Control Rod Position</th>
+<th>Control Rods</th>
+<th>Criticality</th>
+<th>Criticality Control</th>
+<th>Duration</th>
+<th>Flexibility</th>
+<th>Follow Up</th>
+<th>Frequency</th>
+<th>Fuel Burnup</th>
+<th>Fuel Handling</th>
+<th>Investigation</th>
+<th>Maintenance</th>
+<th>Milestone</th>
+<th>Neutron Level</th>
+<th>Neutron Multiplication</th>
+<th>Operation Mode</th>
+<th>Operator Action</th>
+<th>Operator Attention</th>
+<th>Power Level</th>
+<th>Pressure</th>
+<th>Procedures</th>
+<th>Reactor Head</th>
+<th>Ready Time</th>
+<th>Reasons</th>
+<th>Recovery</th>
+<th>Refueling</th>
+<th>Safety Systems</th>
+<th>Shutdown Speed</th>
+<th>Shutdown Type</th>
+<th>Temperature</th>
+<th>Testing</th>
+<th>Urgency</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>STARTUP</td>
-<td>None</td>
+<td>Startup</td>
+<td></td>
 <td>Reactor transitioning from shutdown to power operation</td>
+<td></td>
+<td></td>
+<td></td>
+<td>withdrawing</td>
+<td></td>
+<td></td>
+<td></td>
+<td>hours to days</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>increasing</td>
+<td></td>
+<td></td>
+<td></td>
+<td>high</td>
+<td>rising from zero</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>CRITICAL</td>
-<td>None</td>
+<td>Critical</td>
+<td></td>
 <td>Reactor achieving self-sustaining chain reaction</td>
+<td></td>
+<td></td>
+<td></td>
+<td>critical position</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>first criticality achievement</td>
+<td></td>
+<td>k-effective = 1.0</td>
+<td></td>
+<td></td>
+<td></td>
+<td>minimal but self-sustaining</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>POWER_ESCALATION</td>
-<td>None</td>
+<td>Power Escalation</td>
+<td></td>
 <td>Reactor increasing power toward full power operation</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>days to weeks</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>increasing incrementally</td>
+<td></td>
+<td>systematic power increases</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>ongoing at each power level</td>
+<td></td>
 </tr>
 <tr>
 <td>FULL_POWER_OPERATION</td>
-<td>None</td>
+<td>Full Power Operation</td>
+<td></td>
 <td>Reactor operating at rated thermal power</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>typically 12-24 months</td>
+<td></td>
+<td></td>
+<td></td>
+<td>accumulating</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>commercial electricity generation</td>
+<td></td>
+<td></td>
+<td>100% rated power</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>LOAD_FOLLOWING</td>
-<td>None</td>
+<td>Load Following</td>
+<td></td>
 <td>Reactor adjusting power to match electrical demand</td>
+<td></td>
+<td>automatic load following</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>grid demand responsive</td>
+<td></td>
+<td>daily power variations</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>variable based on demand</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>REDUCED_POWER</td>
-<td>None</td>
+<td>Reduced Power Operation</td>
+<td></td>
 <td>Reactor operating below rated power</td>
+<td></td>
+<td></td>
+<td></td>
+<td>partially inserted</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>&lt;100% rated power</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>maintenance, grid demand, testing</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>HOT_STANDBY</td>
-<td>None</td>
+<td>Hot Standby</td>
+<td></td>
 <td>Reactor subcritical but at operating temperature</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>subcritical</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>operating pressure maintained</td>
+<td></td>
+<td></td>
+<td>rapid return to power possible</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>operating temperature maintained</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>COLD_SHUTDOWN</td>
-<td>None</td>
+<td>Cold Shutdown</td>
+<td></td>
 <td>Reactor subcritical and cooled below operating temperature</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>subcritical with margin</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>major maintenance possible</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>possible in this state</td>
+<td></td>
+<td></td>
+<td></td>
+<td>&lt;200°F (93°C) typically</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>REFUELING</td>
-<td>None</td>
+<td>Refueling</td>
+<td></td>
 <td>Reactor shut down for fuel replacement</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>strict procedures</td>
+<td>typically 30-60 days</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>active fuel movement</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>removed</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>REACTOR_TRIP</td>
-<td>None</td>
+<td>Reactor Trip</td>
+<td></td>
 <td>Rapid automatic shutdown due to safety system actuation</td>
+<td>safety system activation</td>
+<td></td>
+<td></td>
+<td></td>
+<td>fully inserted rapidly</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>cause determination required</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>seconds</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>SCRAM</td>
-<td>None</td>
+<td>Scram</td>
+<td></td>
 <td>Emergency rapid shutdown of reactor</td>
+<td></td>
+<td></td>
+<td>fastest possible</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>immediate safety assessment</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>manual or automatic</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>emergency shutdown</td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>EMERGENCY_SHUTDOWN</td>
-<td>None</td>
+<td>Emergency Shutdown</td>
+<td></td>
 <td>Shutdown due to emergency conditions</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>extensive post-event analysis</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>detailed restart procedures</td>
+<td></td>
+<td>may be activated</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>immediate shutdown required</td>
 </tr>
 </tbody>
 </table>

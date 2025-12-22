@@ -403,44 +403,80 @@
 <p><em>MRI image contrast mechanisms</em></p>
 <p>URI: <a href="https://w3id.org/valuesets/MRIContrastTypeEnum">valuesets:MRIContrastTypeEnum</a></p>
 <h2 id="permissible-values">Permissible Values</h2>
+<!-- annotations-table -->
 <table>
 <thead>
 <tr>
 <th>Value</th>
+<th>Title</th>
 <th>Meaning</th>
 <th>Description</th>
+<th>Measurement</th>
+<th>Sensitivity</th>
+<th>Tissue Contrast</th>
+<th>Typical Use</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>T1_WEIGHTED</td>
-<td>NCIT:C180727</td>
+<td>T1-weighted contrast</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C180727">NCIT:C180727</a></td>
 <td>Image contrast based on T1 relaxation times</td>
+<td></td>
+<td></td>
+<td>gray matter darker than white matter</td>
+<td>anatomical structure</td>
 </tr>
 <tr>
 <td>T2_WEIGHTED</td>
-<td>NCIT:C180729</td>
+<td>T2-weighted contrast</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C180729">NCIT:C180729</a></td>
 <td>Image contrast based on T2 relaxation times</td>
+<td></td>
+<td></td>
+<td>CSF bright, gray matter brighter than white</td>
+<td>pathology detection</td>
 </tr>
 <tr>
 <td>T2_STAR</td>
-<td>NCIT:C156447</td>
+<td>T2*-weighted contrast</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C156447">NCIT:C156447</a></td>
 <td>Image contrast sensitive to magnetic susceptibility</td>
+<td></td>
+<td>blood, iron, air-tissue interfaces</td>
+<td></td>
+<td>functional imaging, venography</td>
 </tr>
 <tr>
 <td>PROTON_DENSITY</td>
-<td>NCIT:C170797</td>
+<td>Proton density weighted</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C170797">NCIT:C170797</a></td>
 <td>Image contrast based on hydrogen density</td>
+<td></td>
+<td></td>
+<td>proportional to water content</td>
+<td>joint imaging, some brain pathology</td>
 </tr>
 <tr>
 <td>DIFFUSION_WEIGHTED</td>
-<td>NCIT:C111116</td>
+<td>Diffusion-weighted contrast</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C111116">NCIT:C111116</a></td>
 <td>Image contrast based on water diffusion</td>
+<td></td>
+<td>molecular motion</td>
+<td></td>
+<td>stroke, tumor cellularity</td>
 </tr>
 <tr>
 <td>PERFUSION_WEIGHTED</td>
-<td>mesh:D000098642</td>
+<td>Perfusion-weighted contrast</td>
+<td><a href="http://id.nlm.nih.gov/mesh/D000098642">mesh:D000098642</a></td>
 <td>Image contrast based on blood flow dynamics</td>
+<td>cerebral blood flow/volume</td>
+<td></td>
+<td></td>
+<td>stroke, tumor vascularity</td>
 </tr>
 </tbody>
 </table>

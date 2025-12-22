@@ -403,64 +403,131 @@
 <p><em>Structural biology experimental techniques</em></p>
 <p>URI: <a href="https://w3id.org/valuesets/StructuralBiologyTechnique">valuesets:StructuralBiologyTechnique</a></p>
 <h2 id="permissible-values">Permissible Values</h2>
+<!-- annotations-table -->
 <table>
 <thead>
 <tr>
 <th>Value</th>
+<th>Title</th>
 <th>Meaning</th>
 <th>Description</th>
+<th>Advantages</th>
+<th>Aliases</th>
+<th>Applications</th>
+<th>Information</th>
+<th>Resolution Range</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>CRYO_EM</td>
-<td>CHMO:0002413</td>
+<td>cryogenic electron microscopy</td>
+<td><a href="http://purl.obolibrary.org/obo/CHMO_0002413">CHMO:0002413</a></td>
 <td>Cryo-electron microscopy</td>
+<td></td>
+<td>cryoEM, electron cryo-microscopy</td>
+<td></td>
+<td></td>
+<td>2-30 Å typical</td>
 </tr>
 <tr>
 <td>CRYO_ET</td>
-<td>MI:2338</td>
+<td>electron tomography</td>
+<td><a href="http://purl.obolibrary.org/obo/MI_2338">MI:2338</a></td>
 <td>Cryo-electron tomography</td>
+<td></td>
+<td>cryoET, electron cryo-tomography</td>
+<td></td>
+<td></td>
+<td>20-100 Å typical</td>
 </tr>
 <tr>
 <td>X_RAY_CRYSTALLOGRAPHY</td>
-<td>CHMO:0000159</td>
+<td>single crystal X-ray diffraction</td>
+<td><a href="http://purl.obolibrary.org/obo/CHMO_0000159">CHMO:0000159</a></td>
 <td>X-ray crystallography</td>
+<td></td>
+<td>XRC, macromolecular crystallography</td>
+<td></td>
+<td></td>
+<td>1-4 Å typical</td>
 </tr>
 <tr>
 <td>NEUTRON_CRYSTALLOGRAPHY</td>
-<td>CHMO:0000175</td>
+<td>neutron diffraction</td>
+<td><a href="http://purl.obolibrary.org/obo/CHMO_0000698">CHMO:0000698</a></td>
 <td>Neutron crystallography</td>
+<td>hydrogen positions, deuteration studies</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>SAXS</td>
-<td>CHMO:0000204</td>
+<td>small-angle X-ray scattering</td>
+<td><a href="http://purl.obolibrary.org/obo/CHMO_0000204">CHMO:0000204</a></td>
 <td>Small-angle X-ray scattering</td>
+<td></td>
+<td></td>
+<td></td>
+<td>low-resolution structure, conformational changes</td>
+<td></td>
 </tr>
 <tr>
 <td>SANS</td>
-<td>CHMO:0000184</td>
+<td>small-angle neutron scattering</td>
+<td><a href="http://purl.obolibrary.org/obo/CHMO_0000184">CHMO:0000184</a></td>
 <td>Small-angle neutron scattering</td>
+<td>contrast variation with deuteration</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>WAXS</td>
-<td>CHMO:0000213</td>
+<td>wide-angle X-ray scattering</td>
+<td><a href="http://purl.obolibrary.org/obo/CHMO_0000207">CHMO:0000207</a></td>
 <td>Wide-angle X-ray scattering</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>NMR</td>
-<td>CHMO:0000591</td>
+<td>nuclear magnetic resonance spectroscopy</td>
+<td><a href="http://purl.obolibrary.org/obo/CHMO_0000591">CHMO:0000591</a></td>
 <td>Nuclear magnetic resonance spectroscopy</td>
+<td></td>
+<td></td>
+<td></td>
+<td>solution structure, dynamics</td>
+<td></td>
 </tr>
 <tr>
 <td>MASS_SPECTROMETRY</td>
-<td>CHMO:0000470</td>
+<td></td>
+<td><a href="http://purl.obolibrary.org/obo/CHMO_0000470">CHMO:0000470</a></td>
 <td>Mass spectrometry</td>
+<td></td>
+<td></td>
+<td>native MS, crosslinking, HDX</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>NEGATIVE_STAIN_EM</td>
-<td>FBbi:00000568</td>
+<td>negative staining</td>
+<td><a href="http://purl.obolibrary.org/obo/FBbi_00000399">FBbi:00000399</a></td>
 <td>Negative stain electron microscopy</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>15-30 Å typical</td>
 </tr>
 </tbody>
 </table>
@@ -538,7 +605,7 @@ permissible_values:
   NEUTRON_CRYSTALLOGRAPHY:
     text: NEUTRON_CRYSTALLOGRAPHY
     description: Neutron crystallography
-    meaning: CHMO:0000175
+    meaning: CHMO:0000698
     annotations:
       advantages:
         tag: advantages
@@ -565,7 +632,7 @@ permissible_values:
   WAXS:
     text: WAXS
     description: Wide-angle X-ray scattering
-    meaning: CHMO:0000213
+    meaning: CHMO:0000207
     title: wide-angle X-ray scattering
   NMR:
     text: NMR
@@ -587,12 +654,12 @@ permissible_values:
   NEGATIVE_STAIN_EM:
     text: NEGATIVE_STAIN_EM
     description: Negative stain electron microscopy
-    meaning: FBbi:00000568
+    meaning: FBbi:00000399
     annotations:
       resolution_range:
         tag: resolution_range
         value: 15-30 Å typical
-    title: negative staining electron microscopy
+    title: negative staining
 
 </code></pre>
 

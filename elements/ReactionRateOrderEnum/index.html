@@ -403,44 +403,80 @@
 <p><em>Reaction rate orders</em></p>
 <p>URI: <a href="https://w3id.org/valuesets/ReactionRateOrderEnum">valuesets:ReactionRateOrderEnum</a></p>
 <h2 id="permissible-values">Permissible Values</h2>
+<!-- annotations-table -->
 <table>
 <thead>
 <tr>
 <th>Value</th>
 <th>Meaning</th>
 <th>Description</th>
+<th>Condition</th>
+<th>Example</th>
+<th>Indicates</th>
+<th>Integrated</th>
+<th>Rate Law</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>ZERO_ORDER</td>
-<td>None</td>
+<td></td>
 <td>Rate independent of concentration</td>
+<td></td>
+<td></td>
+<td></td>
+<td>[A] = [A]₀ - kt</td>
+<td>rate = k</td>
 </tr>
 <tr>
 <td>FIRST_ORDER</td>
-<td>None</td>
+<td></td>
 <td>Rate proportional to concentration</td>
+<td></td>
+<td></td>
+<td></td>
+<td>ln[A] = ln[A]₀ - kt</td>
+<td>rate = k[A]</td>
 </tr>
 <tr>
 <td>SECOND_ORDER</td>
-<td>None</td>
+<td></td>
 <td>Rate proportional to concentration squared</td>
+<td></td>
+<td></td>
+<td></td>
+<td>1/[A] = 1/[A]₀ + kt</td>
+<td>rate = k[A]²</td>
 </tr>
 <tr>
 <td>PSEUDO_FIRST_ORDER</td>
-<td>None</td>
+<td></td>
 <td>Apparent first order (excess reagent)</td>
+<td>one reagent in large excess</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>FRACTIONAL_ORDER</td>
-<td>None</td>
+<td></td>
 <td>Non-integer order</td>
+<td></td>
+<td></td>
+<td>complex mechanism</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>MIXED_ORDER</td>
-<td>None</td>
+<td></td>
 <td>Different orders for different reactants</td>
+<td></td>
+<td>rate = k[A][B]²</td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>

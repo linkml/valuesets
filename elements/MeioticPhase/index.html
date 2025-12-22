@@ -403,64 +403,131 @@
 <p><em>Phases specific to meiotic cell division</em></p>
 <p>URI: <a href="https://w3id.org/valuesets/MeioticPhase">valuesets:MeioticPhase</a></p>
 <h2 id="permissible-values">Permissible Values</h2>
+<!-- annotations-table -->
 <table>
 <thead>
 <tr>
 <th>Value</th>
+<th>Title</th>
 <th>Meaning</th>
 <th>Description</th>
+<th>Feature</th>
+<th>Result</th>
+<th>Similarity</th>
+<th>Substages</th>
+<th>Succeeded By</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>MEIOSIS_I</td>
-<td>GO:0007127</td>
+<td></td>
+<td><a href="http://purl.obolibrary.org/obo/GO_0007127">GO:0007127</a></td>
 <td>Meiosis I (reductional division)</td>
+<td></td>
+<td>reduction from diploid to haploid</td>
+<td></td>
+<td></td>
+<td>MEIOSIS_II</td>
 </tr>
 <tr>
 <td>PROPHASE_I</td>
-<td>GO:0007128</td>
+<td>meiotic prophase I</td>
+<td><a href="http://purl.obolibrary.org/obo/GO_0007128">GO:0007128</a></td>
 <td>Prophase I</td>
+<td></td>
+<td></td>
+<td></td>
+<td>leptotene, zygotene, pachytene, diplotene, diakinesis</td>
+<td>METAPHASE_I</td>
 </tr>
 <tr>
 <td>METAPHASE_I</td>
-<td>GO:0007132</td>
+<td>meiotic metaphase I</td>
+<td><a href="http://purl.obolibrary.org/obo/GO_0007132">GO:0007132</a></td>
 <td>Metaphase I</td>
+<td>homologous pairs align</td>
+<td></td>
+<td></td>
+<td></td>
+<td>ANAPHASE_I</td>
 </tr>
 <tr>
 <td>ANAPHASE_I</td>
-<td>GO:0007133</td>
+<td>meiotic anaphase I</td>
+<td><a href="http://purl.obolibrary.org/obo/GO_0007133">GO:0007133</a></td>
 <td>Anaphase I</td>
+<td>homologous chromosomes separate</td>
+<td></td>
+<td></td>
+<td></td>
+<td>TELOPHASE_I</td>
 </tr>
 <tr>
 <td>TELOPHASE_I</td>
-<td>GO:0007134</td>
+<td>meiotic telophase I</td>
+<td><a href="http://purl.obolibrary.org/obo/GO_0007134">GO:0007134</a></td>
 <td>Telophase I</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>PROPHASE_II</td>
 </tr>
 <tr>
 <td>MEIOSIS_II</td>
-<td>GO:0007135</td>
+<td></td>
+<td><a href="http://purl.obolibrary.org/obo/GO_0007135">GO:0007135</a></td>
 <td>Meiosis II (equational division)</td>
+<td></td>
+<td></td>
+<td>similar to mitosis</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>PROPHASE_II</td>
-<td>GO:0007136</td>
+<td>meiotic prophase II</td>
+<td><a href="http://purl.obolibrary.org/obo/GO_0007136">GO:0007136</a></td>
 <td>Prophase II</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>METAPHASE_II</td>
 </tr>
 <tr>
 <td>METAPHASE_II</td>
-<td>GO:0007137</td>
+<td>meiotic metaphase II</td>
+<td><a href="http://purl.obolibrary.org/obo/GO_0007137">GO:0007137</a></td>
 <td>Metaphase II</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>ANAPHASE_II</td>
 </tr>
 <tr>
 <td>ANAPHASE_II</td>
-<td>GO:0007138</td>
+<td>meiotic anaphase II</td>
+<td><a href="http://purl.obolibrary.org/obo/GO_0007138">GO:0007138</a></td>
 <td>Anaphase II</td>
+<td>sister chromatids separate</td>
+<td></td>
+<td></td>
+<td></td>
+<td>TELOPHASE_II</td>
 </tr>
 <tr>
 <td>TELOPHASE_II</td>
-<td>GO:0007139</td>
+<td>meiotic telophase II</td>
+<td><a href="http://purl.obolibrary.org/obo/GO_0007139">GO:0007139</a></td>
 <td>Telophase II</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -507,6 +574,9 @@ permissible_values:
       result:
         tag: result
         value: reduction from diploid to haploid
+      succeeded_by:
+        tag: succeeded_by
+        value: MEIOSIS_II
   PROPHASE_I:
     text: PROPHASE_I
     description: Prophase I
@@ -515,6 +585,9 @@ permissible_values:
       substages:
         tag: substages
         value: leptotene, zygotene, pachytene, diplotene, diakinesis
+      succeeded_by:
+        tag: succeeded_by
+        value: METAPHASE_I
     title: meiotic prophase I
   METAPHASE_I:
     text: METAPHASE_I
@@ -524,6 +597,9 @@ permissible_values:
       feature:
         tag: feature
         value: homologous pairs align
+      succeeded_by:
+        tag: succeeded_by
+        value: ANAPHASE_I
     title: meiotic metaphase I
   ANAPHASE_I:
     text: ANAPHASE_I
@@ -533,11 +609,18 @@ permissible_values:
       feature:
         tag: feature
         value: homologous chromosomes separate
+      succeeded_by:
+        tag: succeeded_by
+        value: TELOPHASE_I
     title: meiotic anaphase I
   TELOPHASE_I:
     text: TELOPHASE_I
     description: Telophase I
     meaning: GO:0007134
+    annotations:
+      succeeded_by:
+        tag: succeeded_by
+        value: PROPHASE_II
     title: meiotic telophase I
   MEIOSIS_II:
     text: MEIOSIS_II
@@ -551,11 +634,19 @@ permissible_values:
     text: PROPHASE_II
     description: Prophase II
     meaning: GO:0007136
+    annotations:
+      succeeded_by:
+        tag: succeeded_by
+        value: METAPHASE_II
     title: meiotic prophase II
   METAPHASE_II:
     text: METAPHASE_II
     description: Metaphase II
     meaning: GO:0007137
+    annotations:
+      succeeded_by:
+        tag: succeeded_by
+        value: ANAPHASE_II
     title: meiotic metaphase II
   ANAPHASE_II:
     text: ANAPHASE_II
@@ -565,6 +656,9 @@ permissible_values:
       feature:
         tag: feature
         value: sister chromatids separate
+      succeeded_by:
+        tag: succeeded_by
+        value: TELOPHASE_II
     title: meiotic anaphase II
   TELOPHASE_II:
     text: TELOPHASE_II

@@ -412,34 +412,70 @@
 <p><em>International Neuroblastoma Risk Group Staging System (INRGSS) stages. A clinical staging system based on imaging and image-defined risk factors (IDRFs), effective for diagnosis years 2024+. Allows staging before any treatment, unlike the surgical INSS system.</em></p>
 <p>URI: <a href="https://w3id.org/valuesets/INRGSSStage">valuesets:INRGSSStage</a></p>
 <h2 id="permissible-values">Permissible Values</h2>
+<!-- annotations-table -->
 <table>
 <thead>
 <tr>
 <th>Value</th>
+<th>Title</th>
 <th>Meaning</th>
 <th>Description</th>
+<th>Age Restriction</th>
+<th>Favorable Prognosis</th>
+<th>Idrfs Present</th>
+<th>Localized</th>
+<th>Metastatic</th>
+<th>Special Category</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>L1</td>
-<td>NCIT:C133427</td>
-<td>Localized tumor not involving vital structures as defined by the list of imag...</td>
+<td>INRG Stage L1</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C133428">NCIT:C133428</a></td>
+<td>Localized tumor not involving vital structures as defined by the list of image-defined risk factors and confined to one body compartment (neck, chest, abdomen, or pelvis).</td>
+<td></td>
+<td></td>
+<td></td>
+<td>True</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>L2</td>
-<td>NCIT:C133428</td>
-<td>Locoregional tumor with presence of one or more image-defined risk factors</td>
+<td>INRG Stage L2</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C133429">NCIT:C133429</a></td>
+<td>Locoregional tumor with presence of one or more image-defined risk factors. The tumor has not spread far from where it started but has at least one IDRF.</td>
+<td></td>
+<td></td>
+<td>True</td>
+<td>True</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>M</td>
-<td>NCIT:C133429</td>
-<td>Distant metastatic disease (except as defined for MS)</td>
+<td>INRG Stage M</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C133430">NCIT:C133430</a></td>
+<td>Distant metastatic disease (except as defined for MS). The tumor has spread (metastasized) to distant parts of the body.</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>True</td>
+<td></td>
 </tr>
 <tr>
 <td>MS</td>
-<td>NCIT:C133430</td>
-<td>Metastatic disease in children younger than 18 months with metastases confine...</td>
+<td>INRG Stage MS</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C133431">NCIT:C133431</a></td>
+<td>Metastatic disease in children younger than 18 months with metastases confined to skin, liver, and/or bone marrow (bone marrow involvement limited to &lt;10% tumor cells). This stage has a favorable prognosis despite metastatic disease.</td>
+<td>&lt;18 months</td>
+<td>True</td>
+<td></td>
+<td></td>
+<td>True</td>
+<td>True</td>
 </tr>
 </tbody>
 </table>
@@ -512,20 +548,6 @@ permissible_values:
     description: Localized tumor not involving vital structures as defined by the
       list of image-defined risk factors and confined to one body compartment (neck,
       chest, abdomen, or pelvis).
-    meaning: NCIT:C133427
-    annotations:
-      localized:
-        tag: localized
-        value: true
-      idrfs_present:
-        tag: idrfs_present
-        value: false
-    title: L1 - Localized, no IDRFs
-  L2:
-    text: L2
-    description: Locoregional tumor with presence of one or more image-defined risk
-      factors. The tumor has not spread far from where it started but has at least
-      one IDRF.
     meaning: NCIT:C133428
     annotations:
       localized:
@@ -533,25 +555,39 @@ permissible_values:
         value: true
       idrfs_present:
         tag: idrfs_present
+        value: false
+    title: INRG Stage L1
+  L2:
+    text: L2
+    description: Locoregional tumor with presence of one or more image-defined risk
+      factors. The tumor has not spread far from where it started but has at least
+      one IDRF.
+    meaning: NCIT:C133429
+    annotations:
+      localized:
+        tag: localized
         value: true
-    title: L2 - Localized, with IDRFs
+      idrfs_present:
+        tag: idrfs_present
+        value: true
+    title: INRG Stage L2
   M:
     text: M
     description: Distant metastatic disease (except as defined for MS). The tumor
       has spread (metastasized) to distant parts of the body.
-    meaning: NCIT:C133429
+    meaning: NCIT:C133430
     annotations:
       metastatic:
         tag: metastatic
         value: true
-    title: M - Metastatic
+    title: INRG Stage M
   MS:
     text: MS
     description: Metastatic disease in children younger than 18 months with metastases
       confined to skin, liver, and/or bone marrow (bone marrow involvement limited
       to &lt;10% tumor cells). This stage has a favorable prognosis despite metastatic
       disease.
-    meaning: NCIT:C133430
+    meaning: NCIT:C133431
     annotations:
       metastatic:
         tag: metastatic
@@ -565,7 +601,7 @@ permissible_values:
       favorable_prognosis:
         tag: favorable_prognosis
         value: true
-    title: MS - Metastatic special
+    title: INRG Stage MS
     aliases:
     - Stage 4S equivalent
 

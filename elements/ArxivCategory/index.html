@@ -1,0 +1,2696 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://linkml.github.io/valuesets/elements/ArxivCategory/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Enum: ArxivCategory - valuesets</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/ansi-colours.css">
+    
+      <link rel="stylesheet" href="../../css/jupyter-cells.css">
+    
+      <link rel="stylesheet" href="../../css/pandas-dataframe.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#enum-arxivcategory" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="valuesets" class="md-header__button md-logo" aria-label="valuesets" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            valuesets
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Enum: ArxivCategory
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/linkml/valuesets" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="valuesets" class="md-nav__button md-logo" aria-label="valuesets" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    valuesets
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/linkml/valuesets" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Schema
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    About
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slides/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Slides
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#permissible-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      Permissible Values
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slots" class="md-nav__link">
+    <span class="md-ellipsis">
+      Slots
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#identifier-and-mapping-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      Identifier and Mapping Information
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Identifier and Mapping Information">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#schema-source" class="md-nav__link">
+    <span class="md-ellipsis">
+      Schema Source
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linkml-source" class="md-nav__link">
+    <span class="md-ellipsis">
+      LinkML Source
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="enum-arxivcategory">Enum: ArxivCategory</h1>
+<p><em>arXiv subject categories for classifying preprints and publications. Categories are organized by major subject groups.</em></p>
+<p>URI: <a href="https://w3id.org/valuesets/ArxivCategory">valuesets:ArxivCategory</a></p>
+<h2 id="permissible-values">Permissible Values</h2>
+<!-- annotations-table -->
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Title</th>
+<th>Meaning</th>
+<th>Description</th>
+<th>Close Mappings</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cs</td>
+<td>Computer Science</td>
+<td></td>
+<td>Computer science research areas</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C18145">NCIT:C18145</a></td>
+</tr>
+<tr>
+<td>econ</td>
+<td>Economics</td>
+<td></td>
+<td>Economics research areas</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C61331">NCIT:C61331</a>, <a href="http://id.nlm.nih.gov/mesh/D004467">mesh:D004467</a></td>
+</tr>
+<tr>
+<td>eess</td>
+<td>Electrical Engineering and Systems Science</td>
+<td></td>
+<td>Electrical engineering and systems science research areas</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C19349">NCIT:C19349</a></td>
+</tr>
+<tr>
+<td>math</td>
+<td>Mathematics</td>
+<td></td>
+<td>Mathematics research areas</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C16825">NCIT:C16825</a>, <a href="http://id.nlm.nih.gov/mesh/D008433">mesh:D008433</a></td>
+</tr>
+<tr>
+<td>astro-ph</td>
+<td>Astrophysics</td>
+<td></td>
+<td>Astrophysics research areas</td>
+<td></td>
+</tr>
+<tr>
+<td>cond-mat</td>
+<td>Condensed Matter</td>
+<td></td>
+<td>Condensed matter physics research areas</td>
+<td></td>
+</tr>
+<tr>
+<td>hep</td>
+<td>High Energy Physics</td>
+<td></td>
+<td>High energy physics research areas</td>
+<td></td>
+</tr>
+<tr>
+<td>nlin</td>
+<td>Nonlinear Sciences</td>
+<td></td>
+<td>Nonlinear sciences research areas</td>
+<td></td>
+</tr>
+<tr>
+<td>nucl</td>
+<td>Nuclear Physics</td>
+<td></td>
+<td>Nuclear physics research areas</td>
+<td><a href="http://id.nlm.nih.gov/mesh/D009686">mesh:D009686</a></td>
+</tr>
+<tr>
+<td>physics</td>
+<td>Physics</td>
+<td></td>
+<td>General physics research areas</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C16989">NCIT:C16989</a>, <a href="http://id.nlm.nih.gov/mesh/D010825">mesh:D010825</a></td>
+</tr>
+<tr>
+<td>q-bio</td>
+<td>Quantitative Biology</td>
+<td></td>
+<td>Quantitative biology research areas</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C16345">NCIT:C16345</a>, <a href="http://id.nlm.nih.gov/mesh/D001695">mesh:D001695</a></td>
+</tr>
+<tr>
+<td>q-fin</td>
+<td>Quantitative Finance</td>
+<td></td>
+<td>Quantitative finance research areas</td>
+<td></td>
+</tr>
+<tr>
+<td>stat</td>
+<td>Statistics</td>
+<td></td>
+<td>Statistics research areas</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C17167">NCIT:C17167</a></td>
+</tr>
+<tr>
+<td>cs.AI</td>
+<td>Artificial Intelligence</td>
+<td></td>
+<td>Covers all areas of AI except Vision, Robotics, Machine Learning, Multiagent Systems, and NLP. Includes Expert Systems, Theorem Proving, Knowledge Representation, Planning, and Uncertainty in AI.</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C16309">NCIT:C16309</a>, <a href="http://id.nlm.nih.gov/mesh/D001185">mesh:D001185</a></td>
+</tr>
+<tr>
+<td>cs.AR</td>
+<td>Hardware Architecture</td>
+<td></td>
+<td>Covers systems organization and hardware architecture. Roughly includes material in ACM Subject Class C.0, C.1, and C.5.</td>
+<td></td>
+</tr>
+<tr>
+<td>cs.CC</td>
+<td>Computational Complexity</td>
+<td></td>
+<td>Covers models of computation, complexity classes, structural complexity, complexity tradeoffs, upper and lower bounds.</td>
+<td></td>
+</tr>
+<tr>
+<td>cs.CE</td>
+<td>Computational Engineering, Finance, and Science</td>
+<td></td>
+<td>Covers applications of computer science to the mathematical modeling of complex systems in science, engineering, and finance.</td>
+<td></td>
+</tr>
+<tr>
+<td>cs.CG</td>
+<td>Computational Geometry</td>
+<td></td>
+<td>Geometric algorithms, discrete differential geometry, and directly related problems.</td>
+<td></td>
+</tr>
+<tr>
+<td>cs.CL</td>
+<td>Computation and Language</td>
+<td></td>
+<td>Covers natural language processing. Includes computational linguistics, speech processing, text retrieval and processing.</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C176260">NCIT:C176260</a>, <a href="http://id.nlm.nih.gov/mesh/D009323">mesh:D009323</a></td>
+</tr>
+<tr>
+<td>cs.CR</td>
+<td>Cryptography and Security</td>
+<td></td>
+<td>Covers all areas of cryptography and security including authentication, public key cryptosystems, proof-carrying code, etc.</td>
+<td></td>
+</tr>
+<tr>
+<td>cs.CV</td>
+<td>Computer Vision and Pattern Recognition</td>
+<td></td>
+<td>Covers image processing, computer vision, pattern recognition, and scene understanding.</td>
+<td></td>
+</tr>
+<tr>
+<td>cs.CY</td>
+<td>Computers and Society</td>
+<td></td>
+<td>Covers impact of computers on society, computer ethics, information technology and public policy, legal aspects of computing.</td>
+<td></td>
+</tr>
+<tr>
+<td>cs.DB</td>
+<td>Databases</td>
+<td></td>
+<td>Covers database management, datamining, and data processing. Roughly includes material in ACM Subject Classes H.2, H.3, and H.4.</td>
+<td></td>
+</tr>
+<tr>
+<td>cs.DC</td>
+<td>Distributed, Parallel, and Cluster Computing</td>
+<td></td>
+<td>Covers fault-tolerance, distributed algorithms, stabilization, parallel computation, and cluster computing.</td>
+<td></td>
+</tr>
+<tr>
+<td>cs.DL</td>
+<td>Digital Libraries</td>
+<td></td>
+<td>Covers all aspects of digital library design and document creation. Note this may overlap with other areas.</td>
+<td></td>
+</tr>
+<tr>
+<td>cs.DM</td>
+<td>Discrete Mathematics</td>
+<td></td>
+<td>Covers combinatorics, graph theory, applications of probability. Roughly includes material in ACM Subject Classes G.2 and G.3.</td>
+<td></td>
+</tr>
+<tr>
+<td>cs.DS</td>
+<td>Data Structures and Algorithms</td>
+<td></td>
+<td>Covers data structures and analysis of algorithms. Roughly includes material in ACM Subject Classes E.1, E.2, F.2.1, and F.2.2.</td>
+<td></td>
+</tr>
+<tr>
+<td>cs.ET</td>
+<td>Emerging Technologies</td>
+<td></td>
+<td>Covers approaches to computing based on emerging technologies such as quantum computing, DNA computing, optical computing.</td>
+<td></td>
+</tr>
+<tr>
+<td>cs.FL</td>
+<td>Formal Languages and Automata Theory</td>
+<td></td>
+<td>Covers automata theory, formal language theory, grammars, and combinatorics on words.</td>
+<td></td>
+</tr>
+<tr>
+<td>cs.GL</td>
+<td>General Literature</td>
+<td></td>
+<td>Covers introductory material, survey material, predictions of future trends, biographies, and miscellaneous computer-science related material.</td>
+<td></td>
+</tr>
+<tr>
+<td>cs.GR</td>
+<td>Graphics</td>
+<td></td>
+<td>Covers all aspects of computer graphics. Roughly includes material in ACM Subject Classes I.3.0-I.3.8.</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C16460">NCIT:C16460</a></td>
+</tr>
+<tr>
+<td>cs.GT</td>
+<td>Computer Science and Game Theory</td>
+<td></td>
+<td>Covers all theoretical and applied aspects at the intersection of computer science and game theory.</td>
+<td></td>
+</tr>
+<tr>
+<td>cs.HC</td>
+<td>Human-Computer Interaction</td>
+<td></td>
+<td>Covers human factors, user interfaces, and collaborative computing. Roughly includes material in ACM Subject Classes H.1.2 and H.5.</td>
+<td></td>
+</tr>
+<tr>
+<td>cs.IR</td>
+<td>Information Retrieval</td>
+<td></td>
+<td>Covers indexing, dictionaries, retrieval, content and analysis. Roughly includes material in ACM Subject Classes H.3.0-H.3.4.</td>
+<td></td>
+</tr>
+<tr>
+<td>cs.IT</td>
+<td>Information Theory</td>
+<td></td>
+<td>Covers theoretical and experimental aspects of information theory and coding.</td>
+<td></td>
+</tr>
+<tr>
+<td>cs.LG</td>
+<td>Machine Learning</td>
+<td></td>
+<td>Papers on all aspects of machine learning research, including supervised, unsupervised, reinforcement learning, bandit algorithms.</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C176231">NCIT:C176231</a>, <a href="http://id.nlm.nih.gov/mesh/D000069550">mesh:D000069550</a></td>
+</tr>
+<tr>
+<td>cs.LO</td>
+<td>Logic in Computer Science</td>
+<td></td>
+<td>Covers all aspects of logic in computer science, including finite model theory, logics of programs, modal logic, and program verification.</td>
+<td></td>
+</tr>
+<tr>
+<td>cs.MA</td>
+<td>Multiagent Systems</td>
+<td></td>
+<td>Covers multiagent systems, distributed artificial intelligence, intelligent agents, coordinated interactions.</td>
+<td></td>
+</tr>
+<tr>
+<td>cs.MM</td>
+<td>Multimedia</td>
+<td></td>
+<td>Covers all aspects of multimedia systems, including hypermedia and information systems design.</td>
+<td></td>
+</tr>
+<tr>
+<td>cs.MS</td>
+<td>Mathematical Software</td>
+<td></td>
+<td>Covers aspects of mathematical software for mathematical computation and related support.</td>
+<td></td>
+</tr>
+<tr>
+<td>cs.NA</td>
+<td>Numerical Analysis</td>
+<td></td>
+<td>Covers numerical algorithms for problems in analysis and algebra. Includes numerical linear algebra, optimization, and interpolation.</td>
+<td></td>
+</tr>
+<tr>
+<td>cs.NE</td>
+<td>Neural and Evolutionary Computing</td>
+<td></td>
+<td>Covers neural networks, connectionism, genetic algorithms, artificial life, adaptive behavior.</td>
+<td></td>
+</tr>
+<tr>
+<td>cs.NI</td>
+<td>Networking and Internet Architecture</td>
+<td></td>
+<td>Covers all aspects of computer communication networks, including network architecture and design.</td>
+<td></td>
+</tr>
+<tr>
+<td>cs.OH</td>
+<td>Other Computer Science</td>
+<td></td>
+<td>Covers topics not fitting other computer science categories.</td>
+<td></td>
+</tr>
+<tr>
+<td>cs.OS</td>
+<td>Operating Systems</td>
+<td></td>
+<td>Covers aspects of operating systems including structure, design, management, and synchronization.</td>
+<td></td>
+</tr>
+<tr>
+<td>cs.PF</td>
+<td>Performance</td>
+<td></td>
+<td>Covers performance measurement, simulation, and evaluation methodology.</td>
+<td></td>
+</tr>
+<tr>
+<td>cs.PL</td>
+<td>Programming Languages</td>
+<td></td>
+<td>Covers programming language semantics, language features, programming approaches, compilers.</td>
+<td></td>
+</tr>
+<tr>
+<td>cs.RO</td>
+<td>Robotics</td>
+<td></td>
+<td>Covers all aspects of robotics, including control, manipulation, planning, and robot learning.</td>
+<td><a href="http://id.nlm.nih.gov/mesh/D012371">mesh:D012371</a></td>
+</tr>
+<tr>
+<td>cs.SC</td>
+<td>Symbolic Computation</td>
+<td></td>
+<td>Covers symbolics, including computer algebra systems, implementation, and applications.</td>
+<td></td>
+</tr>
+<tr>
+<td>cs.SD</td>
+<td>Sound</td>
+<td></td>
+<td>Covers all aspects of computing with sound, and sound as an information channel.</td>
+<td></td>
+</tr>
+<tr>
+<td>cs.SE</td>
+<td>Software Engineering</td>
+<td></td>
+<td>Covers design tools, software metrics, testing and debugging, programming environments, requirements, specifications.</td>
+<td></td>
+</tr>
+<tr>
+<td>cs.SI</td>
+<td>Social and Information Networks</td>
+<td></td>
+<td>Covers design, analysis, and modeling of social and information networks, including their applications for online systems.</td>
+<td></td>
+</tr>
+<tr>
+<td>cs.SY</td>
+<td>Systems and Control</td>
+<td></td>
+<td>Covers theoretical and practical aspects of systems and control, including control system design.</td>
+<td></td>
+</tr>
+<tr>
+<td>econ.EM</td>
+<td>Econometrics</td>
+<td></td>
+<td>Econometric theory and practice, including estimation, hypothesis testing, and forecasting.</td>
+<td></td>
+</tr>
+<tr>
+<td>econ.GN</td>
+<td>General Economics</td>
+<td></td>
+<td>General methodological, applied, and empirical contributions to economics.</td>
+<td></td>
+</tr>
+<tr>
+<td>econ.TH</td>
+<td>Theoretical Economics</td>
+<td></td>
+<td>Includes decision theory, game theory, mechanism design, and mathematical modeling in economics.</td>
+<td></td>
+</tr>
+<tr>
+<td>eess.AS</td>
+<td>Audio and Speech Processing</td>
+<td></td>
+<td>Theory and methods for processing signals representing audio, speech, and language, and their applications.</td>
+<td></td>
+</tr>
+<tr>
+<td>eess.IV</td>
+<td>Image and Video Processing</td>
+<td></td>
+<td>Theory, algorithms, and applications for the formation, capture, processing, communication, analysis, and display of images.</td>
+<td></td>
+</tr>
+<tr>
+<td>eess.SP</td>
+<td>Signal Processing</td>
+<td></td>
+<td>Theory, algorithms, performance analysis and applications of signal and data analysis.</td>
+<td></td>
+</tr>
+<tr>
+<td>eess.SY</td>
+<td>Systems and Control</td>
+<td></td>
+<td>Analysis and design of control systems, covering mathematical modeling and automatic control.</td>
+<td></td>
+</tr>
+<tr>
+<td>math.AC</td>
+<td>Commutative Algebra</td>
+<td></td>
+<td>Commutative rings, modules, ideals, homological algebra, computational aspects, local rings.</td>
+<td></td>
+</tr>
+<tr>
+<td>math.AG</td>
+<td>Algebraic Geometry</td>
+<td></td>
+<td>Algebraic varieties, stacks, sheaves, schemes, moduli spaces, complex geometry, quantum cohomology.</td>
+<td></td>
+</tr>
+<tr>
+<td>math.AP</td>
+<td>Analysis of PDEs</td>
+<td></td>
+<td>Existence and uniqueness, boundary conditions, linear and non-linear operators, stability, soliton theory.</td>
+<td></td>
+</tr>
+<tr>
+<td>math.AT</td>
+<td>Algebraic Topology</td>
+<td></td>
+<td>Homotopy theory, homological algebra, algebraic treatments of manifolds.</td>
+<td></td>
+</tr>
+<tr>
+<td>math.CA</td>
+<td>Classical Analysis and ODEs</td>
+<td></td>
+<td>Special functions, orthogonal polynomials, harmonic analysis, ODEs, differential relations.</td>
+<td></td>
+</tr>
+<tr>
+<td>math.CO</td>
+<td>Combinatorics</td>
+<td></td>
+<td>Discrete mathematics, graph theory, enumeration, combinatorial optimization.</td>
+<td></td>
+</tr>
+<tr>
+<td>math.CT</td>
+<td>Category Theory</td>
+<td></td>
+<td>Enriched categories, topoi, abelian categories, monoidal categories, homological algebra.</td>
+<td></td>
+</tr>
+<tr>
+<td>math.CV</td>
+<td>Complex Variables</td>
+<td></td>
+<td>Holomorphic functions, automorphic group actions, and their generalizations, complex geometry.</td>
+<td></td>
+</tr>
+<tr>
+<td>math.DG</td>
+<td>Differential Geometry</td>
+<td></td>
+<td>Complex, contact, Riemannian, pseudo-Riemannian, symplectic geometry, relativity, gauge theory.</td>
+<td></td>
+</tr>
+<tr>
+<td>math.DS</td>
+<td>Dynamical Systems</td>
+<td></td>
+<td>Dynamics of differential equations and flows, mechanics, classical few-body problems.</td>
+<td></td>
+</tr>
+<tr>
+<td>math.FA</td>
+<td>Functional Analysis</td>
+<td></td>
+<td>Banach spaces, function spaces, real functions, distributions, measures, integration.</td>
+<td></td>
+</tr>
+<tr>
+<td>math.GM</td>
+<td>General Mathematics</td>
+<td></td>
+<td>Mathematical material of general interest, broadly accessible expositions of research results.</td>
+<td></td>
+</tr>
+<tr>
+<td>math.GN</td>
+<td>General Topology</td>
+<td></td>
+<td>Continuum theory, point-set topology, spaces with algebraic structure, topological dynamics.</td>
+<td></td>
+</tr>
+<tr>
+<td>math.GR</td>
+<td>Group Theory</td>
+<td></td>
+<td>Finite groups, topological groups, representation theory, cohomology, classification.</td>
+<td></td>
+</tr>
+<tr>
+<td>math.GT</td>
+<td>Geometric Topology</td>
+<td></td>
+<td>Manifolds, orbifolds, polyhedra, cell complexes, foliations, geometric structures.</td>
+<td></td>
+</tr>
+<tr>
+<td>math.HO</td>
+<td>History and Overview</td>
+<td></td>
+<td>Biographies, philosophy of mathematics, mathematics education, recreational mathematics.</td>
+<td></td>
+</tr>
+<tr>
+<td>math.IT</td>
+<td>Information Theory</td>
+<td></td>
+<td>Math methods in information theory and coding theory.</td>
+<td></td>
+</tr>
+<tr>
+<td>math.KT</td>
+<td>K-Theory and Homology</td>
+<td></td>
+<td>Algebraic and topological K-theory, relations with topology, commutative algebra, index theories.</td>
+<td></td>
+</tr>
+<tr>
+<td>math.LO</td>
+<td>Logic</td>
+<td></td>
+<td>Logic, set theory, point-set topology, formal mathematics.</td>
+<td></td>
+</tr>
+<tr>
+<td>math.MG</td>
+<td>Metric Geometry</td>
+<td></td>
+<td>Euclidean, hyperbolic, discrete, convex, coarse geometry, comparisons in Riemannian geometry.</td>
+<td></td>
+</tr>
+<tr>
+<td>math.MP</td>
+<td>Mathematical Physics</td>
+<td></td>
+<td>Articles in which math methods are used to study physics problems, or math questions arising from physics.</td>
+<td></td>
+</tr>
+<tr>
+<td>math.NA</td>
+<td>Numerical Analysis</td>
+<td></td>
+<td>Numerical algorithms for problems in analysis and algebra, scientific computation.</td>
+<td></td>
+</tr>
+<tr>
+<td>math.NT</td>
+<td>Number Theory</td>
+<td></td>
+<td>Prime numbers, diophantine equations, analytic number theory, algebraic number theory, arithmetic geometry.</td>
+<td></td>
+</tr>
+<tr>
+<td>math.OA</td>
+<td>Operator Algebras</td>
+<td></td>
+<td>Algebras of operators on Hilbert space, C*-algebras, von Neumann algebras, non-commutative geometry.</td>
+<td></td>
+</tr>
+<tr>
+<td>math.OC</td>
+<td>Optimization and Control</td>
+<td></td>
+<td>Operations research, linear programming, control theory, systems theory, optimal control.</td>
+<td></td>
+</tr>
+<tr>
+<td>math.PR</td>
+<td>Probability</td>
+<td></td>
+<td>Theory and applications of probability and stochastic processes, including stochastic differential equations.</td>
+<td></td>
+</tr>
+<tr>
+<td>math.QA</td>
+<td>Quantum Algebra</td>
+<td></td>
+<td>Quantum groups, skein theories, operadic and diagrammatic algebra, quantum field theory.</td>
+<td></td>
+</tr>
+<tr>
+<td>math.RA</td>
+<td>Rings and Algebras</td>
+<td></td>
+<td>Non-commutative rings and algebras, non-associative algebras, universal algebra.</td>
+<td></td>
+</tr>
+<tr>
+<td>math.RT</td>
+<td>Representation Theory</td>
+<td></td>
+<td>Linear representations of algebras and groups, Lie theory, associative algebras.</td>
+<td></td>
+</tr>
+<tr>
+<td>math.SG</td>
+<td>Symplectic Geometry</td>
+<td></td>
+<td>Hamiltonian systems, symplectic flows, classical integrable systems.</td>
+<td></td>
+</tr>
+<tr>
+<td>math.SP</td>
+<td>Spectral Theory</td>
+<td></td>
+<td>Schrodinger operators, differential operators, spectral measures, scattering theory.</td>
+<td></td>
+</tr>
+<tr>
+<td>math.ST</td>
+<td>Statistics Theory</td>
+<td></td>
+<td>Applied, computational and theoretical statistics including probability, coverage, learning theory.</td>
+<td></td>
+</tr>
+<tr>
+<td>astro-ph.CO</td>
+<td>Cosmology and Nongalactic Astrophysics</td>
+<td></td>
+<td>Phenomenology of early universe, cosmic microwave background, cosmological parameters, primordial element abundances.</td>
+<td></td>
+</tr>
+<tr>
+<td>astro-ph.EP</td>
+<td>Earth and Planetary Astrophysics</td>
+<td></td>
+<td>Interplanetary medium, planetary physics, terrestrial planets, extrasolar planets, irregular satellites.</td>
+<td></td>
+</tr>
+<tr>
+<td>astro-ph.GA</td>
+<td>Astrophysics of Galaxies</td>
+<td></td>
+<td>Phenomena pertaining to galaxies or combinations of galaxies, interstellar medium, star clusters.</td>
+<td></td>
+</tr>
+<tr>
+<td>astro-ph.HE</td>
+<td>High Energy Astrophysical Phenomena</td>
+<td></td>
+<td>Cosmic ray production, gamma rays, X-rays, charged particles, supernovae, neutron stars, pulsars.</td>
+<td></td>
+</tr>
+<tr>
+<td>astro-ph.IM</td>
+<td>Instrumentation and Methods for Astrophysics</td>
+<td></td>
+<td>Detector and calculation design, space and laboratory observatories, data analysis methods.</td>
+<td></td>
+</tr>
+<tr>
+<td>astro-ph.SR</td>
+<td>Solar and Stellar Astrophysics</td>
+<td></td>
+<td>White dwarfs, brown dwarfs, stars, solar system, helioseismology, stellar evolution.</td>
+<td></td>
+</tr>
+<tr>
+<td>cond-mat.dis-nn</td>
+<td>Disordered Systems and Neural Networks</td>
+<td></td>
+<td>Glasses and spin glasses; random systems; information theory in physics; neural networks.</td>
+<td></td>
+</tr>
+<tr>
+<td>cond-mat.mes-hall</td>
+<td>Mesoscale and Nanoscale Physics</td>
+<td></td>
+<td>Quantum dots and wires, nanotubes, graphene, ballistic transport, mesoscale and nanoscale systems.</td>
+<td></td>
+</tr>
+<tr>
+<td>cond-mat.mtrl-sci</td>
+<td>Materials Science</td>
+<td></td>
+<td>Techniques, synthesis, characterization, structure; mechanical and structural phase transitions.</td>
+<td></td>
+</tr>
+<tr>
+<td>cond-mat.other</td>
+<td>Other Condensed Matter</td>
+<td></td>
+<td>Work in condensed matter that does not fit into other cond-mat classifications.</td>
+<td></td>
+</tr>
+<tr>
+<td>cond-mat.quant-gas</td>
+<td>Quantum Gases</td>
+<td></td>
+<td>Ultracold atomic gases, Bose-Einstein condensation, Feshbach resonances, spinor condensates.</td>
+<td></td>
+</tr>
+<tr>
+<td>cond-mat.soft</td>
+<td>Soft Condensed Matter</td>
+<td></td>
+<td>Membranes, emulsions, gels, foams, nematic phases, polymers, liquid crystals.</td>
+<td></td>
+</tr>
+<tr>
+<td>cond-mat.stat-mech</td>
+<td>Statistical Mechanics</td>
+<td></td>
+<td>Phase transitions, thermodynamics, field theory, non-equilibrium phenomena, renormalization.</td>
+<td></td>
+</tr>
+<tr>
+<td>cond-mat.str-el</td>
+<td>Strongly Correlated Electrons</td>
+<td></td>
+<td>Quantum magnetism, non-Fermi liquid, spin liquids, stripe phases, electron-phonon interactions.</td>
+<td></td>
+</tr>
+<tr>
+<td>cond-mat.supr-con</td>
+<td>Superconductivity</td>
+<td></td>
+<td>Superconductivity theory, models, phenomenology, experimental results.</td>
+<td></td>
+</tr>
+<tr>
+<td>hep-ex</td>
+<td>High Energy Physics - Experiment</td>
+<td></td>
+<td>Results from high-energy/particle physics experiments at accelerators and observatories.</td>
+<td></td>
+</tr>
+<tr>
+<td>hep-lat</td>
+<td>High Energy Physics - Lattice</td>
+<td></td>
+<td>Lattice field theory results with desired precision and algorithmic advances.</td>
+<td></td>
+</tr>
+<tr>
+<td>hep-ph</td>
+<td>High Energy Physics - Phenomenology</td>
+<td></td>
+<td>Theoretical particle physics and its relation to experiment. Covers Standard Model and beyond.</td>
+<td></td>
+</tr>
+<tr>
+<td>hep-th</td>
+<td>High Energy Physics - Theory</td>
+<td></td>
+<td>Formal aspects of quantum field theory, string theory, quantum gravity.</td>
+<td></td>
+</tr>
+<tr>
+<td>gr-qc</td>
+<td>General Relativity and Quantum Cosmology</td>
+<td></td>
+<td>General relativity, gravitational physics, cosmological models, relativistic astrophysics.</td>
+<td></td>
+</tr>
+<tr>
+<td>math-ph</td>
+<td>Mathematical Physics</td>
+<td></td>
+<td>Applications of mathematics to problems in physics and development of mathematical methods for such applications.</td>
+<td></td>
+</tr>
+<tr>
+<td>quant-ph</td>
+<td>Quantum Physics</td>
+<td></td>
+<td>Quantum foundations, quantum information, quantum computation, quantum mechanics.</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C19650">NCIT:C19650</a>, <a href="http://id.nlm.nih.gov/mesh/D000098222">mesh:D000098222</a></td>
+</tr>
+<tr>
+<td>nlin.AO</td>
+<td>Adaptation and Self-Organizing Systems</td>
+<td></td>
+<td>Self-organization, adaptation, and autonomous systems.</td>
+<td></td>
+</tr>
+<tr>
+<td>nlin.CD</td>
+<td>Chaotic Dynamics</td>
+<td></td>
+<td>Dynamical systems with chaotic behavior, routes to chaos, spectral analysis, Lyapunov exponents.</td>
+<td></td>
+</tr>
+<tr>
+<td>nlin.CG</td>
+<td>Cellular Automata and Lattice Gases</td>
+<td></td>
+<td>Cellular automata, lattice Boltzmann, lattice gas automata, signal processing with cellular automata.</td>
+<td></td>
+</tr>
+<tr>
+<td>nlin.PS</td>
+<td>Pattern Formation and Solitons</td>
+<td></td>
+<td>Pattern formation, coherent structures, solitons, waves.</td>
+<td></td>
+</tr>
+<tr>
+<td>nlin.SI</td>
+<td>Exactly Solvable and Integrable Systems</td>
+<td></td>
+<td>Integrable PDEs, integrable ODEs, Painleve analysis, integrable discrete systems.</td>
+<td></td>
+</tr>
+<tr>
+<td>nucl-ex</td>
+<td>Nuclear Experiment</td>
+<td></td>
+<td>Experimental results from nuclear physics laboratories, such as heavy-ion collisions.</td>
+<td></td>
+</tr>
+<tr>
+<td>nucl-th</td>
+<td>Nuclear Theory</td>
+<td></td>
+<td>Theory of nuclear structure and low-energy reactions, including heavy-ion physics.</td>
+<td></td>
+</tr>
+<tr>
+<td>physics.acc-ph</td>
+<td>Accelerator Physics</td>
+<td></td>
+<td>Accelerator theory and target design, beam physics, secondary beams, photon sources.</td>
+<td></td>
+</tr>
+<tr>
+<td>physics.ao-ph</td>
+<td>Atmospheric and Oceanic Physics</td>
+<td></td>
+<td>Atmospheric and oceanic processes, climate dynamics, waves, boundary layer physics.</td>
+<td></td>
+</tr>
+<tr>
+<td>physics.app-ph</td>
+<td>Applied Physics</td>
+<td></td>
+<td>Applications of physics to new technology, medical physics, instrumentation.</td>
+<td></td>
+</tr>
+<tr>
+<td>physics.atm-clus</td>
+<td>Atomic and Molecular Clusters</td>
+<td></td>
+<td>Binding, structure, and properties of clusters, nanoparticles.</td>
+<td></td>
+</tr>
+<tr>
+<td>physics.atom-ph</td>
+<td>Atomic Physics</td>
+<td></td>
+<td>Atomic and molecular structure, spectra, collisions, and data. Ultrafast physics, molecular physics.</td>
+<td></td>
+</tr>
+<tr>
+<td>physics.bio-ph</td>
+<td>Biological Physics</td>
+<td></td>
+<td>Molecular biophysics, cellular biophysics, single molecule biophysics.</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C16349">NCIT:C16349</a>, <a href="http://id.nlm.nih.gov/mesh/D001703">mesh:D001703</a></td>
+</tr>
+<tr>
+<td>physics.chem-ph</td>
+<td>Chemical Physics</td>
+<td></td>
+<td>Experimental, methods, and results in chemical physics and molecular dynamics.</td>
+<td></td>
+</tr>
+<tr>
+<td>physics.class-ph</td>
+<td>Classical Physics</td>
+<td></td>
+<td>Newtonian and Lagrangian mechanics, electromagnetism, thermodynamics, special relativity.</td>
+<td></td>
+</tr>
+<tr>
+<td>physics.comp-ph</td>
+<td>Computational Physics</td>
+<td></td>
+<td>All aspects of computational science applied to physics problems.</td>
+<td></td>
+</tr>
+<tr>
+<td>physics.data-an</td>
+<td>Data Analysis, Statistics and Probability</td>
+<td></td>
+<td>Methods, software, and results in physics data analysis.</td>
+<td></td>
+</tr>
+<tr>
+<td>physics.ed-ph</td>
+<td>Physics Education</td>
+<td></td>
+<td>Physics teaching and learning research.</td>
+<td></td>
+</tr>
+<tr>
+<td>physics.flu-dyn</td>
+<td>Fluid Dynamics</td>
+<td></td>
+<td>Turbulence, instabilities, incompressible and compressible flows, boundary layers.</td>
+<td></td>
+</tr>
+<tr>
+<td>physics.gen-ph</td>
+<td>General Physics</td>
+<td></td>
+<td>General physics that does not fit elsewhere.</td>
+<td></td>
+</tr>
+<tr>
+<td>physics.geo-ph</td>
+<td>Geophysics</td>
+<td></td>
+<td>Computational and theoretical geophysics including seismology, potential theory.</td>
+<td></td>
+</tr>
+<tr>
+<td>physics.hist-ph</td>
+<td>History and Philosophy of Physics</td>
+<td></td>
+<td>History and philosophy of all aspects of physics.</td>
+<td></td>
+</tr>
+<tr>
+<td>physics.ins-det</td>
+<td>Instrumentation and Detectors</td>
+<td></td>
+<td>Instrumentation and detectors for accelerator, astro-, geo-, or particle physics.</td>
+<td></td>
+</tr>
+<tr>
+<td>physics.med-ph</td>
+<td>Medical Physics</td>
+<td></td>
+<td>Radiation therapy, biomedical imaging, health physics.</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C16667">NCIT:C16667</a></td>
+</tr>
+<tr>
+<td>physics.optics</td>
+<td>Optics</td>
+<td></td>
+<td>Adaptive optics, polarimetry, quantum optics, ultrafast optics, photonics.</td>
+<td></td>
+</tr>
+<tr>
+<td>physics.plasm-ph</td>
+<td>Plasma Physics</td>
+<td></td>
+<td>Fundamental plasma physics, magnetic and inertial confinement, astrophysical plasmas.</td>
+<td></td>
+</tr>
+<tr>
+<td>physics.pop-ph</td>
+<td>Popular Physics</td>
+<td></td>
+<td>General physics topics for a broad audience.</td>
+<td></td>
+</tr>
+<tr>
+<td>physics.soc-ph</td>
+<td>Physics and Society</td>
+<td></td>
+<td>Sociophysics, structure and dynamics of societies, opinion dynamics.</td>
+<td></td>
+</tr>
+<tr>
+<td>physics.space-ph</td>
+<td>Space Physics</td>
+<td></td>
+<td>Space plasma physics, magnetospheric physics, solar wind, cosmic rays.</td>
+<td></td>
+</tr>
+<tr>
+<td>q-bio.BM</td>
+<td>Biomolecules</td>
+<td></td>
+<td>DNA, RNA, proteins, lipids, small molecules; molecular structure and dynamics; molecular engineering.</td>
+<td></td>
+</tr>
+<tr>
+<td>q-bio.CB</td>
+<td>Cell Behavior</td>
+<td></td>
+<td>Cell-cell signaling, morphogenesis, development; cell division/cycle; immunology.</td>
+<td></td>
+</tr>
+<tr>
+<td>q-bio.GN</td>
+<td>Genomics</td>
+<td></td>
+<td>DNA sequencing and assembly; gene finding; genome structure, organization, and regulation.</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C84343">NCIT:C84343</a>, <a href="http://id.nlm.nih.gov/mesh/D023281">mesh:D023281</a></td>
+</tr>
+<tr>
+<td>q-bio.MN</td>
+<td>Molecular Networks</td>
+<td></td>
+<td>Gene regulation, signal transduction, metabolic networks, kinetics, synthetic biology.</td>
+<td></td>
+</tr>
+<tr>
+<td>q-bio.NC</td>
+<td>Neurons and Cognition</td>
+<td></td>
+<td>Synapse, receptor dynamics, learning, neural coding, neuroinformatics.</td>
+<td></td>
+</tr>
+<tr>
+<td>q-bio.OT</td>
+<td>Other Quantitative Biology</td>
+<td></td>
+<td>Work in quantitative biology that does not fit in the other q-bio classifications.</td>
+<td></td>
+</tr>
+<tr>
+<td>q-bio.PE</td>
+<td>Populations and Evolution</td>
+<td></td>
+<td>Population dynamics, spatio-temporal evolution, migration, phylogeny, biodiversity.</td>
+<td></td>
+</tr>
+<tr>
+<td>q-bio.QM</td>
+<td>Quantitative Methods</td>
+<td></td>
+<td>Research papers with experimental, numerical, or statistical contributions of value to biologists.</td>
+<td></td>
+</tr>
+<tr>
+<td>q-bio.SC</td>
+<td>Subcellular Processes</td>
+<td></td>
+<td>Subcellular structures, molecular motors, organelle transport, packaging.</td>
+<td></td>
+</tr>
+<tr>
+<td>q-bio.TO</td>
+<td>Tissues and Organs</td>
+<td></td>
+<td>Blood flow, biomechanics, tumor growth, tissue morphogenesis.</td>
+<td></td>
+</tr>
+<tr>
+<td>q-fin.CP</td>
+<td>Computational Finance</td>
+<td></td>
+<td>Monte Carlo, PDE, and other numerical methods with applications to quantitative finance.</td>
+<td></td>
+</tr>
+<tr>
+<td>q-fin.EC</td>
+<td>Economics</td>
+<td></td>
+<td>General economics topics with quantitative approaches.</td>
+<td></td>
+</tr>
+<tr>
+<td>q-fin.GN</td>
+<td>General Finance</td>
+<td></td>
+<td>General quantitative financial methodologies covering multiple sub-fields.</td>
+<td></td>
+</tr>
+<tr>
+<td>q-fin.MF</td>
+<td>Mathematical Finance</td>
+<td></td>
+<td>Mathematical and analytical methods in finance, stochastic methods, hedging strategies.</td>
+<td></td>
+</tr>
+<tr>
+<td>q-fin.PM</td>
+<td>Portfolio Management</td>
+<td></td>
+<td>Security selection and optimization, capital allocation, investment strategies.</td>
+<td></td>
+</tr>
+<tr>
+<td>q-fin.PR</td>
+<td>Pricing of Securities</td>
+<td></td>
+<td>Valuation and hedging of financial securities, their derivatives, and structured products.</td>
+<td></td>
+</tr>
+<tr>
+<td>q-fin.RM</td>
+<td>Risk Management</td>
+<td></td>
+<td>Measurement and management of financial risks in trading, banking, insurance.</td>
+<td></td>
+</tr>
+<tr>
+<td>q-fin.ST</td>
+<td>Statistical Finance</td>
+<td></td>
+<td>Statistical, econometric methods applied to financial markets.</td>
+<td></td>
+</tr>
+<tr>
+<td>q-fin.TR</td>
+<td>Trading and Market Microstructure</td>
+<td></td>
+<td>Market microstructure, algorithmic trading, order book dynamics.</td>
+<td></td>
+</tr>
+<tr>
+<td>stat.AP</td>
+<td>Applications</td>
+<td></td>
+<td>Biology, education, epidemiology, engineering, environmental sciences, medical, physical sciences.</td>
+<td></td>
+</tr>
+<tr>
+<td>stat.CO</td>
+<td>Computation</td>
+<td></td>
+<td>Algorithms, computational methods, simulation, visualization.</td>
+<td></td>
+</tr>
+<tr>
+<td>stat.ME</td>
+<td>Methodology</td>
+<td></td>
+<td>Design, surveys, model selection, regression, testing, time series.</td>
+<td></td>
+</tr>
+<tr>
+<td>stat.ML</td>
+<td>Machine Learning</td>
+<td></td>
+<td>Covers machine learning papers with a statistical or theoretical grounding.</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C176231">NCIT:C176231</a>, <a href="http://id.nlm.nih.gov/mesh/D000069550">mesh:D000069550</a></td>
+</tr>
+<tr>
+<td>stat.OT</td>
+<td>Other Statistics</td>
+<td></td>
+<td>Work in statistics that does not fit into the other stat-* classifications.</td>
+<td></td>
+</tr>
+<tr>
+<td>stat.TH</td>
+<td>Statistics Theory</td>
+<td></td>
+<td>Asymptotics, Bayesian inference, decision theory, estimation, foundations, inference.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="slots">Slots</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../arxiv_category/">arxiv_category</a></td>
+<td>arXiv subject category for a preprint or publication</td>
+</tr>
+<tr>
+<td><a href="../arxiv_primary_category/">arxiv_primary_category</a></td>
+<td>Primary arXiv subject category</td>
+</tr>
+<tr>
+<td><a href="../arxiv_secondary_categories/">arxiv_secondary_categories</a></td>
+<td>Secondary/cross-list arXiv subject categories</td>
+</tr>
+</tbody>
+</table>
+<h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
+<h3 id="schema-source">Schema Source</h3>
+<ul>
+<li>from schema: https://w3id.org/linkml/valuesets</li>
+</ul>
+<h2 id="linkml-source">LinkML Source</h2>
+<details>
+
+<pre><code class="language-yaml">name: ArxivCategory
+instantiates:
+- valuesets_meta:ValueSetEnumDefinition
+description: arXiv subject categories for classifying preprints and publications.
+  Categories are organized by major subject groups.
+title: arXiv Category
+from_schema: https://w3id.org/linkml/valuesets
+contributors:
+- orcid:0000-0002-6601-2165
+- https://github.com/anthropics/claude-code
+status: DRAFT
+rank: 1000
+permissible_values:
+  cs:
+    text: cs
+    description: Computer science research areas
+    title: Computer Science
+    close_mappings:
+    - NCIT:C18145
+  econ:
+    text: econ
+    description: Economics research areas
+    title: Economics
+    close_mappings:
+    - NCIT:C61331
+    - mesh:D004467
+  eess:
+    text: eess
+    description: Electrical engineering and systems science research areas
+    title: Electrical Engineering and Systems Science
+    close_mappings:
+    - NCIT:C19349
+  math:
+    text: math
+    description: Mathematics research areas
+    title: Mathematics
+    close_mappings:
+    - NCIT:C16825
+    - mesh:D008433
+  astro-ph:
+    text: astro-ph
+    description: Astrophysics research areas
+    title: Astrophysics
+  cond-mat:
+    text: cond-mat
+    description: Condensed matter physics research areas
+    title: Condensed Matter
+  hep:
+    text: hep
+    description: High energy physics research areas
+    title: High Energy Physics
+  nlin:
+    text: nlin
+    description: Nonlinear sciences research areas
+    title: Nonlinear Sciences
+  nucl:
+    text: nucl
+    description: Nuclear physics research areas
+    title: Nuclear Physics
+    close_mappings:
+    - mesh:D009686
+  physics:
+    text: physics
+    description: General physics research areas
+    title: Physics
+    close_mappings:
+    - NCIT:C16989
+    - mesh:D010825
+  q-bio:
+    text: q-bio
+    description: Quantitative biology research areas
+    title: Quantitative Biology
+    close_mappings:
+    - NCIT:C16345
+    - mesh:D001695
+  q-fin:
+    text: q-fin
+    description: Quantitative finance research areas
+    title: Quantitative Finance
+  stat:
+    text: stat
+    description: Statistics research areas
+    title: Statistics
+    close_mappings:
+    - NCIT:C17167
+  cs.AI:
+    text: cs.AI
+    description: Covers all areas of AI except Vision, Robotics, Machine Learning,
+      Multiagent Systems, and NLP. Includes Expert Systems, Theorem Proving, Knowledge
+      Representation, Planning, and Uncertainty in AI.
+    is_a: cs
+    title: Artificial Intelligence
+    close_mappings:
+    - NCIT:C16309
+    - mesh:D001185
+  cs.AR:
+    text: cs.AR
+    description: Covers systems organization and hardware architecture. Roughly includes
+      material in ACM Subject Class C.0, C.1, and C.5.
+    is_a: cs
+    title: Hardware Architecture
+  cs.CC:
+    text: cs.CC
+    description: Covers models of computation, complexity classes, structural complexity,
+      complexity tradeoffs, upper and lower bounds.
+    is_a: cs
+    title: Computational Complexity
+  cs.CE:
+    text: cs.CE
+    description: Covers applications of computer science to the mathematical modeling
+      of complex systems in science, engineering, and finance.
+    is_a: cs
+    title: Computational Engineering, Finance, and Science
+  cs.CG:
+    text: cs.CG
+    description: Geometric algorithms, discrete differential geometry, and directly
+      related problems.
+    is_a: cs
+    title: Computational Geometry
+  cs.CL:
+    text: cs.CL
+    description: Covers natural language processing. Includes computational linguistics,
+      speech processing, text retrieval and processing.
+    is_a: cs
+    title: Computation and Language
+    close_mappings:
+    - NCIT:C176260
+    - mesh:D009323
+  cs.CR:
+    text: cs.CR
+    description: Covers all areas of cryptography and security including authentication,
+      public key cryptosystems, proof-carrying code, etc.
+    is_a: cs
+    title: Cryptography and Security
+  cs.CV:
+    text: cs.CV
+    description: Covers image processing, computer vision, pattern recognition, and
+      scene understanding.
+    is_a: cs
+    title: Computer Vision and Pattern Recognition
+  cs.CY:
+    text: cs.CY
+    description: Covers impact of computers on society, computer ethics, information
+      technology and public policy, legal aspects of computing.
+    is_a: cs
+    title: Computers and Society
+  cs.DB:
+    text: cs.DB
+    description: Covers database management, datamining, and data processing. Roughly
+      includes material in ACM Subject Classes H.2, H.3, and H.4.
+    is_a: cs
+    title: Databases
+  cs.DC:
+    text: cs.DC
+    description: Covers fault-tolerance, distributed algorithms, stabilization, parallel
+      computation, and cluster computing.
+    is_a: cs
+    title: Distributed, Parallel, and Cluster Computing
+  cs.DL:
+    text: cs.DL
+    description: Covers all aspects of digital library design and document creation.
+      Note this may overlap with other areas.
+    is_a: cs
+    title: Digital Libraries
+  cs.DM:
+    text: cs.DM
+    description: Covers combinatorics, graph theory, applications of probability.
+      Roughly includes material in ACM Subject Classes G.2 and G.3.
+    is_a: cs
+    title: Discrete Mathematics
+  cs.DS:
+    text: cs.DS
+    description: Covers data structures and analysis of algorithms. Roughly includes
+      material in ACM Subject Classes E.1, E.2, F.2.1, and F.2.2.
+    is_a: cs
+    title: Data Structures and Algorithms
+  cs.ET:
+    text: cs.ET
+    description: Covers approaches to computing based on emerging technologies such
+      as quantum computing, DNA computing, optical computing.
+    is_a: cs
+    title: Emerging Technologies
+  cs.FL:
+    text: cs.FL
+    description: Covers automata theory, formal language theory, grammars, and combinatorics
+      on words.
+    is_a: cs
+    title: Formal Languages and Automata Theory
+  cs.GL:
+    text: cs.GL
+    description: Covers introductory material, survey material, predictions of future
+      trends, biographies, and miscellaneous computer-science related material.
+    is_a: cs
+    title: General Literature
+  cs.GR:
+    text: cs.GR
+    description: Covers all aspects of computer graphics. Roughly includes material
+      in ACM Subject Classes I.3.0-I.3.8.
+    is_a: cs
+    title: Graphics
+    close_mappings:
+    - NCIT:C16460
+  cs.GT:
+    text: cs.GT
+    description: Covers all theoretical and applied aspects at the intersection of
+      computer science and game theory.
+    is_a: cs
+    title: Computer Science and Game Theory
+  cs.HC:
+    text: cs.HC
+    description: Covers human factors, user interfaces, and collaborative computing.
+      Roughly includes material in ACM Subject Classes H.1.2 and H.5.
+    is_a: cs
+    title: Human-Computer Interaction
+  cs.IR:
+    text: cs.IR
+    description: Covers indexing, dictionaries, retrieval, content and analysis. Roughly
+      includes material in ACM Subject Classes H.3.0-H.3.4.
+    is_a: cs
+    title: Information Retrieval
+  cs.IT:
+    text: cs.IT
+    description: Covers theoretical and experimental aspects of information theory
+      and coding.
+    is_a: cs
+    title: Information Theory
+  cs.LG:
+    text: cs.LG
+    description: Papers on all aspects of machine learning research, including supervised,
+      unsupervised, reinforcement learning, bandit algorithms.
+    is_a: cs
+    title: Machine Learning
+    close_mappings:
+    - NCIT:C176231
+    - mesh:D000069550
+  cs.LO:
+    text: cs.LO
+    description: Covers all aspects of logic in computer science, including finite
+      model theory, logics of programs, modal logic, and program verification.
+    is_a: cs
+    title: Logic in Computer Science
+  cs.MA:
+    text: cs.MA
+    description: Covers multiagent systems, distributed artificial intelligence, intelligent
+      agents, coordinated interactions.
+    is_a: cs
+    title: Multiagent Systems
+  cs.MM:
+    text: cs.MM
+    description: Covers all aspects of multimedia systems, including hypermedia and
+      information systems design.
+    is_a: cs
+    title: Multimedia
+  cs.MS:
+    text: cs.MS
+    description: Covers aspects of mathematical software for mathematical computation
+      and related support.
+    is_a: cs
+    title: Mathematical Software
+  cs.NA:
+    text: cs.NA
+    description: Covers numerical algorithms for problems in analysis and algebra.
+      Includes numerical linear algebra, optimization, and interpolation.
+    is_a: cs
+    title: Numerical Analysis
+  cs.NE:
+    text: cs.NE
+    description: Covers neural networks, connectionism, genetic algorithms, artificial
+      life, adaptive behavior.
+    is_a: cs
+    title: Neural and Evolutionary Computing
+  cs.NI:
+    text: cs.NI
+    description: Covers all aspects of computer communication networks, including
+      network architecture and design.
+    is_a: cs
+    title: Networking and Internet Architecture
+  cs.OH:
+    text: cs.OH
+    description: Covers topics not fitting other computer science categories.
+    is_a: cs
+    title: Other Computer Science
+  cs.OS:
+    text: cs.OS
+    description: Covers aspects of operating systems including structure, design,
+      management, and synchronization.
+    is_a: cs
+    title: Operating Systems
+  cs.PF:
+    text: cs.PF
+    description: Covers performance measurement, simulation, and evaluation methodology.
+    is_a: cs
+    title: Performance
+  cs.PL:
+    text: cs.PL
+    description: Covers programming language semantics, language features, programming
+      approaches, compilers.
+    is_a: cs
+    title: Programming Languages
+  cs.RO:
+    text: cs.RO
+    description: Covers all aspects of robotics, including control, manipulation,
+      planning, and robot learning.
+    is_a: cs
+    title: Robotics
+    close_mappings:
+    - mesh:D012371
+  cs.SC:
+    text: cs.SC
+    description: Covers symbolics, including computer algebra systems, implementation,
+      and applications.
+    is_a: cs
+    title: Symbolic Computation
+  cs.SD:
+    text: cs.SD
+    description: Covers all aspects of computing with sound, and sound as an information
+      channel.
+    is_a: cs
+    title: Sound
+  cs.SE:
+    text: cs.SE
+    description: Covers design tools, software metrics, testing and debugging, programming
+      environments, requirements, specifications.
+    is_a: cs
+    title: Software Engineering
+  cs.SI:
+    text: cs.SI
+    description: Covers design, analysis, and modeling of social and information networks,
+      including their applications for online systems.
+    is_a: cs
+    title: Social and Information Networks
+  cs.SY:
+    text: cs.SY
+    description: Covers theoretical and practical aspects of systems and control,
+      including control system design.
+    is_a: cs
+    title: Systems and Control
+  econ.EM:
+    text: econ.EM
+    description: Econometric theory and practice, including estimation, hypothesis
+      testing, and forecasting.
+    is_a: econ
+    title: Econometrics
+  econ.GN:
+    text: econ.GN
+    description: General methodological, applied, and empirical contributions to economics.
+    is_a: econ
+    title: General Economics
+  econ.TH:
+    text: econ.TH
+    description: Includes decision theory, game theory, mechanism design, and mathematical
+      modeling in economics.
+    is_a: econ
+    title: Theoretical Economics
+  eess.AS:
+    text: eess.AS
+    description: Theory and methods for processing signals representing audio, speech,
+      and language, and their applications.
+    is_a: eess
+    title: Audio and Speech Processing
+  eess.IV:
+    text: eess.IV
+    description: Theory, algorithms, and applications for the formation, capture,
+      processing, communication, analysis, and display of images.
+    is_a: eess
+    title: Image and Video Processing
+  eess.SP:
+    text: eess.SP
+    description: Theory, algorithms, performance analysis and applications of signal
+      and data analysis.
+    is_a: eess
+    title: Signal Processing
+  eess.SY:
+    text: eess.SY
+    description: Analysis and design of control systems, covering mathematical modeling
+      and automatic control.
+    is_a: eess
+    title: Systems and Control
+  math.AC:
+    text: math.AC
+    description: Commutative rings, modules, ideals, homological algebra, computational
+      aspects, local rings.
+    is_a: math
+    title: Commutative Algebra
+  math.AG:
+    text: math.AG
+    description: Algebraic varieties, stacks, sheaves, schemes, moduli spaces, complex
+      geometry, quantum cohomology.
+    is_a: math
+    title: Algebraic Geometry
+  math.AP:
+    text: math.AP
+    description: Existence and uniqueness, boundary conditions, linear and non-linear
+      operators, stability, soliton theory.
+    is_a: math
+    title: Analysis of PDEs
+  math.AT:
+    text: math.AT
+    description: Homotopy theory, homological algebra, algebraic treatments of manifolds.
+    is_a: math
+    title: Algebraic Topology
+  math.CA:
+    text: math.CA
+    description: Special functions, orthogonal polynomials, harmonic analysis, ODEs,
+      differential relations.
+    is_a: math
+    title: Classical Analysis and ODEs
+  math.CO:
+    text: math.CO
+    description: Discrete mathematics, graph theory, enumeration, combinatorial optimization.
+    is_a: math
+    title: Combinatorics
+  math.CT:
+    text: math.CT
+    description: Enriched categories, topoi, abelian categories, monoidal categories,
+      homological algebra.
+    is_a: math
+    title: Category Theory
+  math.CV:
+    text: math.CV
+    description: Holomorphic functions, automorphic group actions, and their generalizations,
+      complex geometry.
+    is_a: math
+    title: Complex Variables
+  math.DG:
+    text: math.DG
+    description: Complex, contact, Riemannian, pseudo-Riemannian, symplectic geometry,
+      relativity, gauge theory.
+    is_a: math
+    title: Differential Geometry
+  math.DS:
+    text: math.DS
+    description: Dynamics of differential equations and flows, mechanics, classical
+      few-body problems.
+    is_a: math
+    title: Dynamical Systems
+  math.FA:
+    text: math.FA
+    description: Banach spaces, function spaces, real functions, distributions, measures,
+      integration.
+    is_a: math
+    title: Functional Analysis
+  math.GM:
+    text: math.GM
+    description: Mathematical material of general interest, broadly accessible expositions
+      of research results.
+    is_a: math
+    title: General Mathematics
+  math.GN:
+    text: math.GN
+    description: Continuum theory, point-set topology, spaces with algebraic structure,
+      topological dynamics.
+    is_a: math
+    title: General Topology
+  math.GR:
+    text: math.GR
+    description: Finite groups, topological groups, representation theory, cohomology,
+      classification.
+    is_a: math
+    title: Group Theory
+  math.GT:
+    text: math.GT
+    description: Manifolds, orbifolds, polyhedra, cell complexes, foliations, geometric
+      structures.
+    is_a: math
+    title: Geometric Topology
+  math.HO:
+    text: math.HO
+    description: Biographies, philosophy of mathematics, mathematics education, recreational
+      mathematics.
+    is_a: math
+    title: History and Overview
+  math.IT:
+    text: math.IT
+    description: Math methods in information theory and coding theory.
+    is_a: math
+    title: Information Theory
+  math.KT:
+    text: math.KT
+    description: Algebraic and topological K-theory, relations with topology, commutative
+      algebra, index theories.
+    is_a: math
+    title: K-Theory and Homology
+  math.LO:
+    text: math.LO
+    description: Logic, set theory, point-set topology, formal mathematics.
+    is_a: math
+    title: Logic
+  math.MG:
+    text: math.MG
+    description: Euclidean, hyperbolic, discrete, convex, coarse geometry, comparisons
+      in Riemannian geometry.
+    is_a: math
+    title: Metric Geometry
+  math.MP:
+    text: math.MP
+    description: Articles in which math methods are used to study physics problems,
+      or math questions arising from physics.
+    is_a: math
+    title: Mathematical Physics
+  math.NA:
+    text: math.NA
+    description: Numerical algorithms for problems in analysis and algebra, scientific
+      computation.
+    is_a: math
+    title: Numerical Analysis
+  math.NT:
+    text: math.NT
+    description: Prime numbers, diophantine equations, analytic number theory, algebraic
+      number theory, arithmetic geometry.
+    is_a: math
+    title: Number Theory
+  math.OA:
+    text: math.OA
+    description: Algebras of operators on Hilbert space, C*-algebras, von Neumann
+      algebras, non-commutative geometry.
+    is_a: math
+    title: Operator Algebras
+  math.OC:
+    text: math.OC
+    description: Operations research, linear programming, control theory, systems
+      theory, optimal control.
+    is_a: math
+    title: Optimization and Control
+  math.PR:
+    text: math.PR
+    description: Theory and applications of probability and stochastic processes,
+      including stochastic differential equations.
+    is_a: math
+    title: Probability
+  math.QA:
+    text: math.QA
+    description: Quantum groups, skein theories, operadic and diagrammatic algebra,
+      quantum field theory.
+    is_a: math
+    title: Quantum Algebra
+  math.RA:
+    text: math.RA
+    description: Non-commutative rings and algebras, non-associative algebras, universal
+      algebra.
+    is_a: math
+    title: Rings and Algebras
+  math.RT:
+    text: math.RT
+    description: Linear representations of algebras and groups, Lie theory, associative
+      algebras.
+    is_a: math
+    title: Representation Theory
+  math.SG:
+    text: math.SG
+    description: Hamiltonian systems, symplectic flows, classical integrable systems.
+    is_a: math
+    title: Symplectic Geometry
+  math.SP:
+    text: math.SP
+    description: Schrodinger operators, differential operators, spectral measures,
+      scattering theory.
+    is_a: math
+    title: Spectral Theory
+  math.ST:
+    text: math.ST
+    description: Applied, computational and theoretical statistics including probability,
+      coverage, learning theory.
+    is_a: math
+    title: Statistics Theory
+  astro-ph.CO:
+    text: astro-ph.CO
+    description: Phenomenology of early universe, cosmic microwave background, cosmological
+      parameters, primordial element abundances.
+    is_a: astro-ph
+    title: Cosmology and Nongalactic Astrophysics
+  astro-ph.EP:
+    text: astro-ph.EP
+    description: Interplanetary medium, planetary physics, terrestrial planets, extrasolar
+      planets, irregular satellites.
+    is_a: astro-ph
+    title: Earth and Planetary Astrophysics
+  astro-ph.GA:
+    text: astro-ph.GA
+    description: Phenomena pertaining to galaxies or combinations of galaxies, interstellar
+      medium, star clusters.
+    is_a: astro-ph
+    title: Astrophysics of Galaxies
+  astro-ph.HE:
+    text: astro-ph.HE
+    description: Cosmic ray production, gamma rays, X-rays, charged particles, supernovae,
+      neutron stars, pulsars.
+    is_a: astro-ph
+    title: High Energy Astrophysical Phenomena
+  astro-ph.IM:
+    text: astro-ph.IM
+    description: Detector and calculation design, space and laboratory observatories,
+      data analysis methods.
+    is_a: astro-ph
+    title: Instrumentation and Methods for Astrophysics
+  astro-ph.SR:
+    text: astro-ph.SR
+    description: White dwarfs, brown dwarfs, stars, solar system, helioseismology,
+      stellar evolution.
+    is_a: astro-ph
+    title: Solar and Stellar Astrophysics
+  cond-mat.dis-nn:
+    text: cond-mat.dis-nn
+    description: Glasses and spin glasses; random systems; information theory in physics;
+      neural networks.
+    is_a: cond-mat
+    title: Disordered Systems and Neural Networks
+  cond-mat.mes-hall:
+    text: cond-mat.mes-hall
+    description: Quantum dots and wires, nanotubes, graphene, ballistic transport,
+      mesoscale and nanoscale systems.
+    is_a: cond-mat
+    title: Mesoscale and Nanoscale Physics
+  cond-mat.mtrl-sci:
+    text: cond-mat.mtrl-sci
+    description: Techniques, synthesis, characterization, structure; mechanical and
+      structural phase transitions.
+    is_a: cond-mat
+    title: Materials Science
+  cond-mat.other:
+    text: cond-mat.other
+    description: Work in condensed matter that does not fit into other cond-mat classifications.
+    is_a: cond-mat
+    title: Other Condensed Matter
+  cond-mat.quant-gas:
+    text: cond-mat.quant-gas
+    description: Ultracold atomic gases, Bose-Einstein condensation, Feshbach resonances,
+      spinor condensates.
+    is_a: cond-mat
+    title: Quantum Gases
+  cond-mat.soft:
+    text: cond-mat.soft
+    description: Membranes, emulsions, gels, foams, nematic phases, polymers, liquid
+      crystals.
+    is_a: cond-mat
+    title: Soft Condensed Matter
+  cond-mat.stat-mech:
+    text: cond-mat.stat-mech
+    description: Phase transitions, thermodynamics, field theory, non-equilibrium
+      phenomena, renormalization.
+    is_a: cond-mat
+    title: Statistical Mechanics
+  cond-mat.str-el:
+    text: cond-mat.str-el
+    description: Quantum magnetism, non-Fermi liquid, spin liquids, stripe phases,
+      electron-phonon interactions.
+    is_a: cond-mat
+    title: Strongly Correlated Electrons
+  cond-mat.supr-con:
+    text: cond-mat.supr-con
+    description: Superconductivity theory, models, phenomenology, experimental results.
+    is_a: cond-mat
+    title: Superconductivity
+  hep-ex:
+    text: hep-ex
+    description: Results from high-energy/particle physics experiments at accelerators
+      and observatories.
+    is_a: hep
+    title: High Energy Physics - Experiment
+  hep-lat:
+    text: hep-lat
+    description: Lattice field theory results with desired precision and algorithmic
+      advances.
+    is_a: hep
+    title: High Energy Physics - Lattice
+  hep-ph:
+    text: hep-ph
+    description: Theoretical particle physics and its relation to experiment. Covers
+      Standard Model and beyond.
+    is_a: hep
+    title: High Energy Physics - Phenomenology
+  hep-th:
+    text: hep-th
+    description: Formal aspects of quantum field theory, string theory, quantum gravity.
+    is_a: hep
+    title: High Energy Physics - Theory
+  gr-qc:
+    text: gr-qc
+    description: General relativity, gravitational physics, cosmological models, relativistic
+      astrophysics.
+    is_a: physics
+    title: General Relativity and Quantum Cosmology
+  math-ph:
+    text: math-ph
+    description: Applications of mathematics to problems in physics and development
+      of mathematical methods for such applications.
+    is_a: physics
+    title: Mathematical Physics
+  quant-ph:
+    text: quant-ph
+    description: Quantum foundations, quantum information, quantum computation, quantum
+      mechanics.
+    is_a: physics
+    title: Quantum Physics
+    close_mappings:
+    - NCIT:C19650
+    - mesh:D000098222
+  nlin.AO:
+    text: nlin.AO
+    description: Self-organization, adaptation, and autonomous systems.
+    is_a: nlin
+    title: Adaptation and Self-Organizing Systems
+  nlin.CD:
+    text: nlin.CD
+    description: Dynamical systems with chaotic behavior, routes to chaos, spectral
+      analysis, Lyapunov exponents.
+    is_a: nlin
+    title: Chaotic Dynamics
+  nlin.CG:
+    text: nlin.CG
+    description: Cellular automata, lattice Boltzmann, lattice gas automata, signal
+      processing with cellular automata.
+    is_a: nlin
+    title: Cellular Automata and Lattice Gases
+  nlin.PS:
+    text: nlin.PS
+    description: Pattern formation, coherent structures, solitons, waves.
+    is_a: nlin
+    title: Pattern Formation and Solitons
+  nlin.SI:
+    text: nlin.SI
+    description: Integrable PDEs, integrable ODEs, Painleve analysis, integrable discrete
+      systems.
+    is_a: nlin
+    title: Exactly Solvable and Integrable Systems
+  nucl-ex:
+    text: nucl-ex
+    description: Experimental results from nuclear physics laboratories, such as heavy-ion
+      collisions.
+    is_a: nucl
+    title: Nuclear Experiment
+  nucl-th:
+    text: nucl-th
+    description: Theory of nuclear structure and low-energy reactions, including heavy-ion
+      physics.
+    is_a: nucl
+    title: Nuclear Theory
+  physics.acc-ph:
+    text: physics.acc-ph
+    description: Accelerator theory and target design, beam physics, secondary beams,
+      photon sources.
+    is_a: physics
+    title: Accelerator Physics
+  physics.ao-ph:
+    text: physics.ao-ph
+    description: Atmospheric and oceanic processes, climate dynamics, waves, boundary
+      layer physics.
+    is_a: physics
+    title: Atmospheric and Oceanic Physics
+  physics.app-ph:
+    text: physics.app-ph
+    description: Applications of physics to new technology, medical physics, instrumentation.
+    is_a: physics
+    title: Applied Physics
+  physics.atm-clus:
+    text: physics.atm-clus
+    description: Binding, structure, and properties of clusters, nanoparticles.
+    is_a: physics
+    title: Atomic and Molecular Clusters
+  physics.atom-ph:
+    text: physics.atom-ph
+    description: Atomic and molecular structure, spectra, collisions, and data. Ultrafast
+      physics, molecular physics.
+    is_a: physics
+    title: Atomic Physics
+  physics.bio-ph:
+    text: physics.bio-ph
+    description: Molecular biophysics, cellular biophysics, single molecule biophysics.
+    is_a: physics
+    title: Biological Physics
+    close_mappings:
+    - NCIT:C16349
+    - mesh:D001703
+  physics.chem-ph:
+    text: physics.chem-ph
+    description: Experimental, methods, and results in chemical physics and molecular
+      dynamics.
+    is_a: physics
+    title: Chemical Physics
+  physics.class-ph:
+    text: physics.class-ph
+    description: Newtonian and Lagrangian mechanics, electromagnetism, thermodynamics,
+      special relativity.
+    is_a: physics
+    title: Classical Physics
+  physics.comp-ph:
+    text: physics.comp-ph
+    description: All aspects of computational science applied to physics problems.
+    is_a: physics
+    title: Computational Physics
+  physics.data-an:
+    text: physics.data-an
+    description: Methods, software, and results in physics data analysis.
+    is_a: physics
+    title: Data Analysis, Statistics and Probability
+  physics.ed-ph:
+    text: physics.ed-ph
+    description: Physics teaching and learning research.
+    is_a: physics
+    title: Physics Education
+  physics.flu-dyn:
+    text: physics.flu-dyn
+    description: Turbulence, instabilities, incompressible and compressible flows,
+      boundary layers.
+    is_a: physics
+    title: Fluid Dynamics
+  physics.gen-ph:
+    text: physics.gen-ph
+    description: General physics that does not fit elsewhere.
+    is_a: physics
+    title: General Physics
+  physics.geo-ph:
+    text: physics.geo-ph
+    description: Computational and theoretical geophysics including seismology, potential
+      theory.
+    is_a: physics
+    title: Geophysics
+  physics.hist-ph:
+    text: physics.hist-ph
+    description: History and philosophy of all aspects of physics.
+    is_a: physics
+    title: History and Philosophy of Physics
+  physics.ins-det:
+    text: physics.ins-det
+    description: Instrumentation and detectors for accelerator, astro-, geo-, or particle
+      physics.
+    is_a: physics
+    title: Instrumentation and Detectors
+  physics.med-ph:
+    text: physics.med-ph
+    description: Radiation therapy, biomedical imaging, health physics.
+    is_a: physics
+    title: Medical Physics
+    close_mappings:
+    - NCIT:C16667
+  physics.optics:
+    text: physics.optics
+    description: Adaptive optics, polarimetry, quantum optics, ultrafast optics, photonics.
+    is_a: physics
+    title: Optics
+  physics.plasm-ph:
+    text: physics.plasm-ph
+    description: Fundamental plasma physics, magnetic and inertial confinement, astrophysical
+      plasmas.
+    is_a: physics
+    title: Plasma Physics
+  physics.pop-ph:
+    text: physics.pop-ph
+    description: General physics topics for a broad audience.
+    is_a: physics
+    title: Popular Physics
+  physics.soc-ph:
+    text: physics.soc-ph
+    description: Sociophysics, structure and dynamics of societies, opinion dynamics.
+    is_a: physics
+    title: Physics and Society
+  physics.space-ph:
+    text: physics.space-ph
+    description: Space plasma physics, magnetospheric physics, solar wind, cosmic
+      rays.
+    is_a: physics
+    title: Space Physics
+  q-bio.BM:
+    text: q-bio.BM
+    description: DNA, RNA, proteins, lipids, small molecules; molecular structure
+      and dynamics; molecular engineering.
+    is_a: q-bio
+    title: Biomolecules
+  q-bio.CB:
+    text: q-bio.CB
+    description: Cell-cell signaling, morphogenesis, development; cell division/cycle;
+      immunology.
+    is_a: q-bio
+    title: Cell Behavior
+  q-bio.GN:
+    text: q-bio.GN
+    description: DNA sequencing and assembly; gene finding; genome structure, organization,
+      and regulation.
+    is_a: q-bio
+    title: Genomics
+    close_mappings:
+    - NCIT:C84343
+    - mesh:D023281
+  q-bio.MN:
+    text: q-bio.MN
+    description: Gene regulation, signal transduction, metabolic networks, kinetics,
+      synthetic biology.
+    is_a: q-bio
+    title: Molecular Networks
+  q-bio.NC:
+    text: q-bio.NC
+    description: Synapse, receptor dynamics, learning, neural coding, neuroinformatics.
+    is_a: q-bio
+    title: Neurons and Cognition
+  q-bio.OT:
+    text: q-bio.OT
+    description: Work in quantitative biology that does not fit in the other q-bio
+      classifications.
+    is_a: q-bio
+    title: Other Quantitative Biology
+  q-bio.PE:
+    text: q-bio.PE
+    description: Population dynamics, spatio-temporal evolution, migration, phylogeny,
+      biodiversity.
+    is_a: q-bio
+    title: Populations and Evolution
+  q-bio.QM:
+    text: q-bio.QM
+    description: Research papers with experimental, numerical, or statistical contributions
+      of value to biologists.
+    is_a: q-bio
+    title: Quantitative Methods
+  q-bio.SC:
+    text: q-bio.SC
+    description: Subcellular structures, molecular motors, organelle transport, packaging.
+    is_a: q-bio
+    title: Subcellular Processes
+  q-bio.TO:
+    text: q-bio.TO
+    description: Blood flow, biomechanics, tumor growth, tissue morphogenesis.
+    is_a: q-bio
+    title: Tissues and Organs
+  q-fin.CP:
+    text: q-fin.CP
+    description: Monte Carlo, PDE, and other numerical methods with applications to
+      quantitative finance.
+    is_a: q-fin
+    title: Computational Finance
+  q-fin.EC:
+    text: q-fin.EC
+    description: General economics topics with quantitative approaches.
+    is_a: q-fin
+    title: Economics
+  q-fin.GN:
+    text: q-fin.GN
+    description: General quantitative financial methodologies covering multiple sub-fields.
+    is_a: q-fin
+    title: General Finance
+  q-fin.MF:
+    text: q-fin.MF
+    description: Mathematical and analytical methods in finance, stochastic methods,
+      hedging strategies.
+    is_a: q-fin
+    title: Mathematical Finance
+  q-fin.PM:
+    text: q-fin.PM
+    description: Security selection and optimization, capital allocation, investment
+      strategies.
+    is_a: q-fin
+    title: Portfolio Management
+  q-fin.PR:
+    text: q-fin.PR
+    description: Valuation and hedging of financial securities, their derivatives,
+      and structured products.
+    is_a: q-fin
+    title: Pricing of Securities
+  q-fin.RM:
+    text: q-fin.RM
+    description: Measurement and management of financial risks in trading, banking,
+      insurance.
+    is_a: q-fin
+    title: Risk Management
+  q-fin.ST:
+    text: q-fin.ST
+    description: Statistical, econometric methods applied to financial markets.
+    is_a: q-fin
+    title: Statistical Finance
+  q-fin.TR:
+    text: q-fin.TR
+    description: Market microstructure, algorithmic trading, order book dynamics.
+    is_a: q-fin
+    title: Trading and Market Microstructure
+  stat.AP:
+    text: stat.AP
+    description: Biology, education, epidemiology, engineering, environmental sciences,
+      medical, physical sciences.
+    is_a: stat
+    title: Applications
+  stat.CO:
+    text: stat.CO
+    description: Algorithms, computational methods, simulation, visualization.
+    is_a: stat
+    title: Computation
+  stat.ME:
+    text: stat.ME
+    description: Design, surveys, model selection, regression, testing, time series.
+    is_a: stat
+    title: Methodology
+  stat.ML:
+    text: stat.ML
+    description: Covers machine learning papers with a statistical or theoretical
+      grounding.
+    is_a: stat
+    title: Machine Learning
+    close_mappings:
+    - NCIT:C176231
+    - mesh:D000069550
+  stat.OT:
+    text: stat.OT
+    description: Work in statistics that does not fit into the other stat-* classifications.
+    is_a: stat
+    title: Other Statistics
+  stat.TH:
+    text: stat.TH
+    description: Asymptotics, Bayesian inference, decision theory, estimation, foundations,
+      inference.
+    is_a: stat
+    title: Statistics Theory
+
+</code></pre>
+
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.tabs.link"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

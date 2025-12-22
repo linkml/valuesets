@@ -403,34 +403,65 @@
 <p><em>IAEA nuclear material security categories (INFCIRC/225)</em></p>
 <p>URI: <a href="https://w3id.org/valuesets/NuclearSecurityCategoryEnum">valuesets:NuclearSecurityCategoryEnum</a></p>
 <h2 id="permissible-values">Permissible Values</h2>
+<!-- annotations-table -->
 <table>
 <thead>
 <tr>
 <th>Value</th>
+<th>Title</th>
 <th>Meaning</th>
 <th>Description</th>
+<th>Direct Use</th>
+<th>Examples</th>
+<th>Physical Protection</th>
+<th>Proliferation Risk</th>
+<th>Protection Requirements</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>CATEGORY_I</td>
-<td>None</td>
+<td>Category I Nuclear Material</td>
+<td></td>
 <td>Material that can be used directly to manufacture nuclear explosive devices</td>
+<td>True</td>
+<td>HEU ≥20%, Pu ≥2kg, U-233 ≥2kg</td>
+<td>multiple independent physical barriers</td>
+<td>highest</td>
+<td>maximum</td>
 </tr>
 <tr>
 <td>CATEGORY_II</td>
-<td>None</td>
-<td>Material requiring further processing to manufacture nuclear explosive device...</td>
+<td>Category II Nuclear Material</td>
+<td></td>
+<td>Material requiring further processing to manufacture nuclear explosive devices</td>
+<td>requires processing</td>
+<td>HEU &lt;20% but &gt;5%, natural uranium &gt;500kg</td>
+<td>significant barriers required</td>
+<td>moderate</td>
+<td>substantial</td>
 </tr>
 <tr>
 <td>CATEGORY_III</td>
-<td>None</td>
+<td>Category III Nuclear Material</td>
+<td></td>
 <td>Material posing radiation hazard but minimal proliferation risk</td>
+<td></td>
+<td>natural uranium 10-500kg, depleted uranium</td>
+<td>basic measures sufficient</td>
+<td>low</td>
+<td>basic</td>
 </tr>
 <tr>
 <td>CATEGORY_IV</td>
-<td>None</td>
+<td>Category IV Nuclear Material</td>
+<td></td>
 <td>Material with minimal security significance</td>
+<td></td>
+<td>small quantities of natural uranium</td>
+<td></td>
+<td>minimal</td>
+<td>administrative</td>
 </tr>
 </tbody>
 </table>

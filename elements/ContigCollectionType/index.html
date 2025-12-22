@@ -403,10 +403,12 @@
 <p><em>The type of the contig set; the type of the 'omics data set. Terms are taken from the Genomics Standards Consortium where possible. See the GSC checklists at https://genomicsstandardsconsortium.github.io/mixs/ for the controlled vocabularies used.</em></p>
 <p>URI: <a href="https://w3id.org/valuesets/ContigCollectionType">valuesets:ContigCollectionType</a></p>
 <h2 id="permissible-values">Permissible Values</h2>
+<!-- annotations-table -->
 <table>
 <thead>
 <tr>
 <th>Value</th>
+<th>Title</th>
 <th>Meaning</th>
 <th>Description</th>
 </tr>
@@ -414,38 +416,45 @@
 <tbody>
 <tr>
 <td>ISOLATE</td>
-<td>None</td>
-<td>Sequences assembled from DNA of isolated organism</td>
+<td></td>
+<td></td>
+<td>Sequences assembled from DNA of isolated organism. Bacteria/Archaea: https://genomicsstandardsconsortium.github.io/mixs/0010003/ Euk: https://genomicsstandardsconsortium.github.io/mixs/0010002/ Virus: https://genomicsstandardsconsortium.github.io/mixs/0010005/ Organelle: https://genomicsstandardsconsortium.github.io/mixs/0010006/ Plasmid: https://genomicsstandardsconsortium.github.io/mixs/0010004/</td>
 </tr>
 <tr>
 <td>MAG</td>
-<td>mixs:0010011</td>
-<td>Sequences assembled from DNA of mixed community and binned</td>
+<td>Mimag</td>
+<td><a href="http://purl.obolibrary.org/obo/MIXS_0010011">mixs:0010011</a></td>
+<td>Sequences assembled from DNA of mixed community and binned. MAGs are likely to represent a single taxonomic origin. See checkm2 scores for quality assessment.</td>
 </tr>
 <tr>
 <td>METAGENOME</td>
-<td>mixs:0010007</td>
-<td>Sequences assembled from DNA of mixed community</td>
+<td>Mims</td>
+<td><a href="http://purl.obolibrary.org/obo/MIXS_0010007">mixs:0010007</a></td>
+<td>Sequences assembled from DNA of mixed community.</td>
 </tr>
 <tr>
 <td>METATRANSCRIPTOME</td>
-<td>None</td>
-<td>Sequences assembled from RNA of mixed community</td>
+<td></td>
+<td></td>
+<td>Sequences assembled from RNA of mixed community. Currently not represented by GSC.</td>
 </tr>
 <tr>
 <td>SAG</td>
-<td>mixs:0010010</td>
-<td>Sequences assembled from DNA of single cell</td>
+<td>Misag</td>
+<td><a href="http://purl.obolibrary.org/obo/MIXS_0010010">mixs:0010010</a></td>
+<td>Sequences assembled from DNA of single cell.</td>
 </tr>
 <tr>
 <td>VIRUS</td>
-<td>mixs:0010012</td>
-<td>Sequences assembled from uncultivated virus genome (DNA/RNA)</td>
+<td>Miuvig</td>
+<td><a href="http://purl.obolibrary.org/obo/MIXS_0010012">mixs:0010012</a></td>
+<td>Sequences assembled from uncultivated virus genome (DNA/RNA).</td>
 </tr>
 <tr>
 <td>MARKER</td>
-<td>None</td>
-<td>Sequences from targeted region of DNA; see protocol for information on target...</td>
+<td></td>
+<td></td>
+<td>Sequences from targeted region of DNA; see protocol for information on targeted region. specimen: https://genomicsstandardsconsortium.github.io/mixs/0010009/ survey: https://genomicsstandardsconsortium.github.io/mixs/0010008/</td>
 </tr>
 </tbody>
 </table>

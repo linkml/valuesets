@@ -412,79 +412,108 @@
 <p><em>INSDC (International Nucleotide Sequence Database Collaboration) controlled vocabulary for missing values in sequence records</em></p>
 <p>URI: <a href="https://w3id.org/valuesets/InsdcMissingValueEnum">valuesets:InsdcMissingValueEnum</a></p>
 <h2 id="permissible-values">Permissible Values</h2>
+<!-- annotations-table -->
 <table>
 <thead>
 <tr>
 <th>Value</th>
+<th>Title</th>
 <th>Meaning</th>
 <th>Description</th>
+<th>Note</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>NOT_APPLICABLE</td>
-<td>NCIT:C48660</td>
-<td>Information is inappropriate to report, can indicate that the standard itself...</td>
+<td>not applicable</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C48660">NCIT:C48660</a></td>
+<td>Information is inappropriate to report, can indicate that the standard itself fails to model or represent the information appropriately</td>
+<td></td>
 </tr>
 <tr>
 <td>MISSING</td>
-<td>NCIT:C54031</td>
+<td>missing</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C54031">NCIT:C54031</a></td>
 <td>Not stated explicitly or implied by any other means</td>
+<td></td>
 </tr>
 <tr>
 <td>NOT_COLLECTED</td>
-<td>NCIT:C142610</td>
-<td>Information of an expected format was not given because it has never been col...</td>
+<td>Missing Data</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C142610">NCIT:C142610</a></td>
+<td>Information of an expected format was not given because it has never been collected</td>
+<td>NCIT:C142610 represents Missing Data which encompasses data not collected</td>
 </tr>
 <tr>
 <td>NOT_PROVIDED</td>
-<td>NCIT:C126101</td>
-<td>Information of an expected format was not given, a value may be given at the ...</td>
+<td>Not Available</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C126101">NCIT:C126101</a></td>
+<td>Information of an expected format was not given, a value may be given at the later stage</td>
+<td>Using NCIT:C126101 (Not Available) as a general term for data not provided</td>
 </tr>
 <tr>
 <td>RESTRICTED_ACCESS</td>
-<td>NCIT:C67110</td>
+<td>Data Not Releasable</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C67110">NCIT:C67110</a></td>
 <td>Information exists but cannot be released openly because of privacy concerns</td>
+<td>NCIT:C67110 represents Data Not Releasable due to confidentiality</td>
 </tr>
 <tr>
 <td>MISSING_CONTROL_SAMPLE</td>
-<td>None</td>
-<td>Information is not applicable to control samples, negative control samples (e</td>
+<td></td>
+<td></td>
+<td>Information is not applicable to control samples, negative control samples (e.g. blank sample or clear sample)</td>
+<td>No specific ontology term found for missing control sample data</td>
 </tr>
 <tr>
 <td>MISSING_SAMPLE_GROUP</td>
-<td>None</td>
-<td>Information can not be provided for a sample group where a selection of sampl...</td>
+<td></td>
+<td></td>
+<td>Information can not be provided for a sample group where a selection of samples is used to represent a species, location or some other attribute/metric</td>
+<td>No specific ontology term found for missing sample group data</td>
 </tr>
 <tr>
 <td>MISSING_SYNTHETIC_CONSTRUCT</td>
-<td>None</td>
+<td></td>
+<td></td>
 <td>Information does not exist for a synthetic construct</td>
+<td>No specific ontology term found for missing synthetic construct data</td>
 </tr>
 <tr>
 <td>MISSING_LAB_STOCK</td>
-<td>None</td>
-<td>Information is not collected for a lab stock and its cultivation, e</td>
+<td></td>
+<td></td>
+<td>Information is not collected for a lab stock and its cultivation, e.g. stock centers, culture collections, seed banks</td>
+<td>No specific ontology term found for missing lab stock data</td>
 </tr>
 <tr>
 <td>MISSING_THIRD_PARTY_DATA</td>
-<td>NCIT:C67329</td>
+<td>Source Data Not Available</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C67329">NCIT:C67329</a></td>
 <td>Information has not been revealed by another party</td>
+<td>NCIT:C67329 represents Source Data Not Available</td>
 </tr>
 <tr>
 <td>MISSING_DATA_AGREEMENT_ESTABLISHED_PRE_2023</td>
-<td>None</td>
-<td>Information can not be reported due to a data agreement established before me...</td>
+<td></td>
+<td></td>
+<td>Information can not be reported due to a data agreement established before metadata standards were introduced in 2023</td>
+<td>No specific ontology term for data missing due to pre-2023 agreements</td>
 </tr>
 <tr>
 <td>MISSING_ENDANGERED_SPECIES</td>
-<td>None</td>
+<td></td>
+<td></td>
 <td>Information can not be reported due to endangered species concerns</td>
+<td>No specific ontology term for data withheld due to endangered species</td>
 </tr>
 <tr>
 <td>MISSING_HUMAN_IDENTIFIABLE</td>
-<td>None</td>
+<td></td>
+<td></td>
 <td>Information can not be reported due to identifiable human data concerns</td>
+<td>No specific ontology term for data withheld due to human identifiability</td>
 </tr>
 </tbody>
 </table>

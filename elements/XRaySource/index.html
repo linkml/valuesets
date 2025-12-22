@@ -403,34 +403,75 @@
 <p><em>Types of X-ray sources</em></p>
 <p>URI: <a href="https://w3id.org/valuesets/XRaySource">valuesets:XRaySource</a></p>
 <h2 id="permissible-values">Permissible Values</h2>
+<!-- annotations-table -->
 <table>
 <thead>
 <tr>
 <th>Value</th>
 <th>Meaning</th>
 <th>Description</th>
+<th>Exact Mappings</th>
+<th>Advantages</th>
+<th>Applications</th>
+<th>Brightness</th>
+<th>Metals</th>
+<th>Power</th>
+<th>Spot Size</th>
+<th>Target</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>SYNCHROTRON</td>
-<td>CHMO:0001810</td>
+<td><a href="http://purl.obolibrary.org/obo/CHMO_0001810">CHMO:0001810</a></td>
 <td>Synchrotron radiation source</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C48205">NCIT:C48205</a></td>
+<td>high intensity, tunable wavelength</td>
+<td></td>
+<td>10^15-10^18 photons/s/mm²/mrad²</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>ROTATING_ANODE</td>
-<td>CHMO:0001107</td>
+<td></td>
 <td>Rotating anode generator</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>3-18 kW typical</td>
+<td></td>
+<td>copper, molybdenum common</td>
 </tr>
 <tr>
 <td>MICROFOCUS</td>
-<td>None</td>
+<td></td>
 <td>Microfocus sealed tube</td>
+<td></td>
+<td></td>
+<td>small crystals, in-house screening</td>
+<td></td>
+<td></td>
+<td></td>
+<td>10-50 μm</td>
+<td></td>
 </tr>
 <tr>
 <td>METAL_JET</td>
-<td>None</td>
+<td></td>
 <td>Liquid metal jet source</td>
+<td></td>
+<td>higher power density, longer lifetime</td>
+<td></td>
+<td></td>
+<td>gallium, indium</td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -485,7 +526,6 @@ permissible_values:
   ROTATING_ANODE:
     text: ROTATING_ANODE
     description: Rotating anode generator
-    meaning: CHMO:0001107
     annotations:
       power:
         tag: power

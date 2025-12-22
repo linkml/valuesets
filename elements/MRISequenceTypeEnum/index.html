@@ -403,44 +403,115 @@
 <p><em>MRI pulse sequence types</em></p>
 <p>URI: <a href="https://w3id.org/valuesets/MRISequenceTypeEnum">valuesets:MRISequenceTypeEnum</a></p>
 <h2 id="permissible-values">Permissible Values</h2>
+<!-- annotations-table -->
 <table>
 <thead>
 <tr>
 <th>Value</th>
+<th>Title</th>
 <th>Meaning</th>
 <th>Description</th>
+<th>Artifact Resistance</th>
+<th>Artifact Sensitivity</th>
+<th>Contrast</th>
+<th>Dimension</th>
+<th>Image Type</th>
+<th>Signal</th>
+<th>Speed</th>
+<th>Temporal Resolution</th>
+<th>Typical Use</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>GRADIENT_ECHO</td>
-<td>NCIT:C154542</td>
+<td>Gradient echo sequence</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C154542">NCIT:C154542</a></td>
 <td>Fast imaging sequence using gradient reversal</td>
+<td></td>
+<td>susceptible to magnetic field inhomogeneity</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>fast</td>
+<td></td>
+<td>T2*, functional imaging</td>
 </tr>
 <tr>
 <td>SPIN_ECHO</td>
-<td>CHMO:0001868</td>
+<td>Spin echo sequence</td>
+<td><a href="http://purl.obolibrary.org/obo/CHMO_0001868">CHMO:0001868</a></td>
 <td>Sequence using 180-degree refocusing pulse</td>
+<td>good</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>slower</td>
+<td></td>
+<td>T2 imaging, reduced artifacts</td>
 </tr>
 <tr>
 <td>EPI</td>
-<td>NCIT:C17558</td>
+<td>Echo planar imaging</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C17558">NCIT:C17558</a></td>
 <td>Ultrafast imaging sequence</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>very fast</td>
+<td>subsecond</td>
+<td>functional MRI, diffusion imaging</td>
 </tr>
 <tr>
 <td>MPRAGE</td>
-<td>NCIT:C118462</td>
+<td>Magnetization prepared rapid gradient echo</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C118462">NCIT:C118462</a></td>
 <td>T1-weighted 3D sequence with preparation pulse</td>
+<td></td>
+<td></td>
+<td></td>
+<td>3D</td>
+<td>T1-weighted</td>
+<td></td>
+<td></td>
+<td></td>
+<td>high-resolution anatomical imaging</td>
 </tr>
 <tr>
 <td>SPACE</td>
-<td>None</td>
+<td>Sampling perfection with application optimized contrasts</td>
+<td></td>
 <td>3D turbo spin echo sequence</td>
+<td></td>
+<td></td>
+<td></td>
+<td>3D</td>
+<td>T2-weighted</td>
+<td></td>
+<td></td>
+<td></td>
+<td>high-resolution T2 imaging</td>
 </tr>
 <tr>
 <td>TRUFI</td>
-<td>NCIT:C200534</td>
+<td>True fast imaging with steady-state precession</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C200534">NCIT:C200534</a></td>
 <td>Balanced steady-state free precession sequence</td>
+<td></td>
+<td></td>
+<td>mixed T1/T2</td>
+<td></td>
+<td></td>
+<td>high</td>
+<td></td>
+<td></td>
+<td>cardiac imaging, fast scanning</td>
 </tr>
 </tbody>
 </table>

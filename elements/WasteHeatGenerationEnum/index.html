@@ -403,29 +403,50 @@
 <p><em>Heat generation categories for radioactive waste</em></p>
 <p>URI: <a href="https://w3id.org/valuesets/WasteHeatGenerationEnum">valuesets:WasteHeatGenerationEnum</a></p>
 <h2 id="permissible-values">Permissible Values</h2>
+<!-- annotations-table -->
 <table>
 <thead>
 <tr>
 <th>Value</th>
+<th>Title</th>
 <th>Meaning</th>
 <th>Description</th>
+<th>Cooling Required</th>
+<th>Heat Output</th>
+<th>Thermal Consideration</th>
+<th>Typical Waste</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>NEGLIGIBLE_HEAT</td>
-<td>None</td>
+<td>Negligible Heat Generation</td>
+<td></td>
 <td>Waste generating negligible heat</td>
+<td></td>
+<td>&lt;0.1 kW/m³</td>
+<td>minimal</td>
+<td></td>
 </tr>
 <tr>
 <td>LOW_HEAT</td>
-<td>None</td>
+<td>Low Heat Generation</td>
+<td></td>
 <td>Waste generating low but measurable heat</td>
+<td>minimal</td>
+<td>0.1-2 kW/m³</td>
+<td>some design consideration</td>
+<td></td>
 </tr>
 <tr>
 <td>HIGH_HEAT</td>
-<td>None</td>
+<td>High Heat Generation</td>
+<td></td>
 <td>Waste generating significant heat requiring thermal management</td>
+<td>True</td>
+<td>&gt;2 kW/m³</td>
+<td>major design factor</td>
+<td>spent nuclear fuel, HLW glass</td>
 </tr>
 </tbody>
 </table>

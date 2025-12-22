@@ -403,54 +403,280 @@
 <p><em>Types of nuclear facility maintenance activities</em></p>
 <p>URI: <a href="https://w3id.org/valuesets/MaintenanceTypeEnum">valuesets:MaintenanceTypeEnum</a></p>
 <h2 id="permissible-values">Permissible Values</h2>
+<!-- annotations-table -->
 <table>
 <thead>
 <tr>
 <th>Value</th>
+<th>Title</th>
 <th>Meaning</th>
 <th>Description</th>
+<th>Access</th>
+<th>Approval</th>
+<th>Assessment</th>
+<th>Basis</th>
+<th>Cause</th>
+<th>Documentation</th>
+<th>Duration</th>
+<th>Efficiency</th>
+<th>Frequency</th>
+<th>Optimization</th>
+<th>Outage Type</th>
+<th>Planning</th>
+<th>Purpose</th>
+<th>Regulatory Requirement</th>
+<th>Safety</th>
+<th>Safety Significance</th>
+<th>Schedule</th>
+<th>Scope</th>
+<th>Techniques</th>
+<th>Technology</th>
+<th>Testing</th>
+<th>Timing</th>
+<th>Trigger</th>
+<th>Urgency</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>PREVENTIVE_MAINTENANCE</td>
-<td>None</td>
+<td>Preventive Maintenance</td>
+<td></td>
 <td>Scheduled maintenance to prevent equipment failure</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>planned outage</td>
+<td>extensive advance planning</td>
+<td>prevent failures</td>
+<td></td>
+<td></td>
+<td></td>
+<td>predetermined intervals</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>CORRECTIVE_MAINTENANCE</td>
-<td>None</td>
+<td>Corrective Maintenance</td>
+<td></td>
 <td>Maintenance to repair failed or degraded equipment</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>may be immediate</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>unplanned</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>equipment failure or degradation</td>
+<td>varies by safety significance</td>
 </tr>
 <tr>
 <td>PREDICTIVE_MAINTENANCE</td>
-<td>None</td>
+<td>Predictive Maintenance</td>
+<td></td>
 <td>Maintenance based on condition monitoring</td>
+<td></td>
+<td></td>
+<td></td>
+<td>condition monitoring data</td>
+<td></td>
+<td></td>
+<td></td>
+<td>optimized maintenance timing</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>condition monitoring systems</td>
+<td></td>
+<td>based on predicted failure</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>CONDITION_BASED_MAINTENANCE</td>
-<td>None</td>
+<td>Condition-Based Maintenance</td>
+<td></td>
 <td>Maintenance triggered by equipment condition assessment</td>
+<td></td>
+<td></td>
+<td>continuous condition monitoring</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>resource optimization</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>maintains safety margins</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>condition degradation</td>
+<td></td>
 </tr>
 <tr>
 <td>REFUELING_OUTAGE_MAINTENANCE</td>
-<td>None</td>
+<td>Refueling Outage Maintenance</td>
+<td></td>
 <td>Major maintenance during scheduled refueling</td>
+<td>full plant access available</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>30-60 days typical</td>
+<td></td>
+<td>every 12-24 months</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>major equipment inspection and repair</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>FORCED_OUTAGE_MAINTENANCE</td>
-<td>None</td>
+<td>Forced Outage Maintenance</td>
+<td></td>
 <td>Unplanned maintenance due to equipment failure</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>unexpected equipment failure</td>
+<td></td>
+<td>variable</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>may affect safety systems</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>immediate attention required</td>
 </tr>
 <tr>
 <td>IN_SERVICE_INSPECTION</td>
-<td>None</td>
+<td>In-Service Inspection</td>
+<td></td>
 <td>Required inspection of safety-related components</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>specified intervals (typically 10 years)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>mandated by regulations</td>
+<td></td>
+<td></td>
+<td></td>
+<td>pressure vessels, piping, supports</td>
+<td>non-destructive testing</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>MODIFICATION_WORK</td>
-<td>None</td>
+<td>Modification Work</td>
+<td></td>
 <td>Changes to plant design or configuration</td>
+<td></td>
+<td>requires design change approval</td>
+<td></td>
+<td></td>
+<td></td>
+<td>comprehensive documentation updates</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>plant improvement or regulatory compliance</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>extensive post-modification testing</td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>

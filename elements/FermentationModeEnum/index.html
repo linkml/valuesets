@@ -403,44 +403,94 @@
 <p><em>Modes of fermentation operation</em></p>
 <p>URI: <a href="https://w3id.org/valuesets/FermentationModeEnum">valuesets:FermentationModeEnum</a></p>
 <h2 id="permissible-values">Permissible Values</h2>
+<!-- annotations-table -->
 <table>
 <thead>
 <tr>
 <th>Value</th>
+<th>Title</th>
 <th>Meaning</th>
 <th>Description</th>
+<th>Related Mappings</th>
+<th>Advantage</th>
+<th>Application</th>
+<th>Duration</th>
+<th>Operation</th>
+<th>Steady State</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>BATCH</td>
-<td>MSIO:0000181</td>
+<td>batch cell culture</td>
+<td><a href="http://purl.obolibrary.org/obo/MSIO_0000181">MSIO:0000181</a></td>
 <td>Batch fermentation</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Fixed time period</td>
+<td>All nutrients added at start</td>
+<td></td>
 </tr>
 <tr>
 <td>FED_BATCH</td>
-<td>None</td>
+<td></td>
+<td></td>
 <td>Fed-batch fermentation</td>
+<td><a href="http://purl.obolibrary.org/obo/MSIO_0000165">MSIO:0000165</a>, <a href="http://purl.obolibrary.org/obo/MSIO_0000166">MSIO:0000166</a></td>
+<td>Control of growth rate</td>
+<td></td>
+<td></td>
+<td>Nutrients added during run</td>
+<td></td>
 </tr>
 <tr>
 <td>CONTINUOUS</td>
-<td>MSIO:0000155</td>
+<td>continuous fermentation cell culture</td>
+<td><a href="http://purl.obolibrary.org/obo/MSIO_0000155">MSIO:0000155</a></td>
 <td>Continuous fermentation (chemostat)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>Continuous feed and harvest</td>
+<td>True</td>
 </tr>
 <tr>
 <td>PERFUSION</td>
-<td>None</td>
+<td></td>
+<td></td>
 <td>Perfusion culture</td>
+<td></td>
+<td></td>
+<td>High-density cell culture</td>
+<td></td>
+<td>Continuous media exchange with cell retention</td>
+<td></td>
 </tr>
 <tr>
 <td>REPEATED_BATCH</td>
-<td>None</td>
+<td></td>
+<td></td>
 <td>Repeated batch fermentation</td>
+<td></td>
+<td>Reduced downtime</td>
+<td></td>
+<td></td>
+<td>Sequential batches with partial harvest</td>
+<td></td>
 </tr>
 <tr>
 <td>SEMI_CONTINUOUS</td>
-<td>None</td>
+<td></td>
+<td></td>
 <td>Semi-continuous operation</td>
+<td></td>
+<td>Extended production</td>
+<td></td>
+<td></td>
+<td>Periodic harvest and refill</td>
+<td></td>
 </tr>
 </tbody>
 </table>

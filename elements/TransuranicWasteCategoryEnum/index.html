@@ -403,29 +403,62 @@
 <p><em>Transuranic waste classifications (US system)</em></p>
 <p>URI: <a href="https://w3id.org/valuesets/TransuranicWasteCategoryEnum">valuesets:TransuranicWasteCategoryEnum</a></p>
 <h2 id="permissible-values">Permissible Values</h2>
+<!-- annotations-table -->
 <table>
 <thead>
 <tr>
 <th>Value</th>
+<th>Title</th>
 <th>Meaning</th>
 <th>Description</th>
+<th>Complexity</th>
+<th>Disposal</th>
+<th>Dose Rate</th>
+<th>Handling</th>
+<th>Plutonium Content</th>
+<th>Regulation</th>
+<th>Treatment</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>CONTACT_HANDLED_TRU</td>
-<td>None</td>
+<td>Contact-Handled Transuranic Waste</td>
+<td></td>
 <td>TRU waste with surface dose rate ≤200 mrem/hr</td>
+<td></td>
+<td>geological repository (WIPP)</td>
+<td>≤200 mrem/hr at surface</td>
+<td>direct contact possible with protection</td>
+<td>&gt;100 nCi/g</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>REMOTE_HANDLED_TRU</td>
-<td>None</td>
+<td>Remote-Handled Transuranic Waste</td>
+<td></td>
 <td>TRU waste with surface dose rate &gt;200 mrem/hr</td>
+<td></td>
+<td>geological repository with additional shielding</td>
+<td>&gt;200 mrem/hr at surface</td>
+<td>remote handling required</td>
+<td>&gt;100 nCi/g</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>TRU_MIXED_WASTE</td>
-<td>None</td>
+<td>TRU Mixed Waste</td>
+<td></td>
 <td>TRU waste also containing hazardous chemical components</td>
+<td>dual regulatory framework</td>
+<td>geological repository after treatment</td>
+<td></td>
+<td></td>
+<td></td>
+<td>both radiological and chemical hazard regulations</td>
+<td>may require chemical treatment before disposal</td>
 </tr>
 </tbody>
 </table>

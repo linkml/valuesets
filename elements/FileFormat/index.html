@@ -403,64 +403,98 @@
 <p><em>File formats used in structural biology</em></p>
 <p>URI: <a href="https://w3id.org/valuesets/FileFormat">valuesets:FileFormat</a></p>
 <h2 id="permissible-values">Permissible Values</h2>
+<!-- annotations-table -->
 <table>
 <thead>
 <tr>
 <th>Value</th>
 <th>Meaning</th>
 <th>Description</th>
+<th>Exact Mappings</th>
+<th>Applications</th>
+<th>Extension</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>MRC</td>
-<td>EDAM:3842</td>
+<td></td>
 <td>MRC format for EM density maps</td>
+<td></td>
+<td>EM volumes, tomograms</td>
+<td>.mrc, .map</td>
 </tr>
 <tr>
 <td>TIFF</td>
-<td>EDAM:3591</td>
+<td><a href="http://edamontology.org/format_3591">EDAM:format_3591</a></td>
 <td>Tagged Image File Format</td>
+<td></td>
+<td>micrographs, general imaging</td>
+<td>.tif, .tiff</td>
 </tr>
 <tr>
 <td>HDF5</td>
-<td>EDAM:3590</td>
+<td><a href="http://edamontology.org/format_3590">EDAM:format_3590</a></td>
 <td>Hierarchical Data Format 5</td>
+<td></td>
+<td>large datasets, metadata storage</td>
+<td>.h5, .hdf5</td>
 </tr>
 <tr>
 <td>STAR</td>
-<td>EDAM:3906</td>
+<td></td>
 <td>Self-defining Text Archival and Retrieval format</td>
+<td></td>
+<td>RELION metadata, particle parameters</td>
+<td>.star</td>
 </tr>
 <tr>
 <td>PDB</td>
-<td>EDAM:1476</td>
+<td><a href="http://edamontology.org/format_1476">EDAM:format_1476</a></td>
 <td>Protein Data Bank coordinate format</td>
+<td><a href="http://purl.obolibrary.org/obo/OBI_0001525">OBI:0001525</a></td>
+<td>atomic coordinates, legacy format</td>
+<td>.pdb</td>
 </tr>
 <tr>
 <td>MMCIF</td>
-<td>EDAM:1477</td>
+<td><a href="http://edamontology.org/format_1477">EDAM:format_1477</a></td>
 <td>Macromolecular Crystallographic Information File</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C133997">NCIT:C133997</a></td>
+<td>atomic coordinates, modern PDB format</td>
+<td>.cif</td>
 </tr>
 <tr>
 <td>MTZ</td>
-<td>EDAM:3816</td>
+<td></td>
 <td>MTZ reflection data format</td>
+<td></td>
+<td>crystallographic reflections, phases</td>
+<td>.mtz</td>
 </tr>
 <tr>
 <td>CBF</td>
-<td>EDAM:3874</td>
+<td></td>
 <td>Crystallographic Binary Format</td>
+<td></td>
+<td>detector images, diffraction data</td>
+<td>.cbf</td>
 </tr>
 <tr>
 <td>DM3</td>
-<td>None</td>
+<td></td>
 <td>Digital Micrograph format</td>
+<td></td>
+<td>FEI/Thermo Fisher EM data</td>
+<td>.dm3, .dm4</td>
 </tr>
 <tr>
 <td>SER</td>
-<td>None</td>
+<td></td>
 <td>FEI series format</td>
+<td></td>
+<td>FEI movie stacks</td>
+<td>.ser</td>
 </tr>
 </tbody>
 </table>
@@ -502,7 +536,6 @@ permissible_values:
   MRC:
     text: MRC
     description: MRC format for EM density maps
-    meaning: EDAM:3842
     annotations:
       extension:
         tag: extension
@@ -513,7 +546,7 @@ permissible_values:
   TIFF:
     text: TIFF
     description: Tagged Image File Format
-    meaning: EDAM:3591
+    meaning: EDAM:format_3591
     annotations:
       extension:
         tag: extension
@@ -524,7 +557,7 @@ permissible_values:
   HDF5:
     text: HDF5
     description: Hierarchical Data Format 5
-    meaning: EDAM:3590
+    meaning: EDAM:format_3590
     annotations:
       extension:
         tag: extension
@@ -535,7 +568,6 @@ permissible_values:
   STAR:
     text: STAR
     description: Self-defining Text Archival and Retrieval format
-    meaning: EDAM:3906
     annotations:
       extension:
         tag: extension
@@ -546,7 +578,7 @@ permissible_values:
   PDB:
     text: PDB
     description: Protein Data Bank coordinate format
-    meaning: EDAM:1476
+    meaning: EDAM:format_1476
     annotations:
       extension:
         tag: extension
@@ -559,7 +591,7 @@ permissible_values:
   MMCIF:
     text: MMCIF
     description: Macromolecular Crystallographic Information File
-    meaning: EDAM:1477
+    meaning: EDAM:format_1477
     annotations:
       extension:
         tag: extension
@@ -572,7 +604,6 @@ permissible_values:
   MTZ:
     text: MTZ
     description: MTZ reflection data format
-    meaning: EDAM:3816
     annotations:
       extension:
         tag: extension
@@ -583,7 +614,6 @@ permissible_values:
   CBF:
     text: CBF
     description: Crystallographic Binary Format
-    meaning: EDAM:3874
     annotations:
       extension:
         tag: extension

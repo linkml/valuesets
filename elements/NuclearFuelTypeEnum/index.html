@@ -403,84 +403,475 @@
 <p><em>Types of nuclear fuel materials and compositions</em></p>
 <p>URI: <a href="https://w3id.org/valuesets/NuclearFuelTypeEnum">valuesets:NuclearFuelTypeEnum</a></p>
 <h2 id="permissible-values">Permissible Values</h2>
+<!-- annotations-table -->
 <table>
 <thead>
 <tr>
 <th>Value</th>
+<th>Title</th>
 <th>Meaning</th>
 <th>Description</th>
+<th>Abundance</th>
+<th>Chemical Form</th>
+<th>Composition</th>
+<th>Containment Layers</th>
+<th>Density</th>
+<th>Enrichment Required</th>
+<th>Fertile Isotope</th>
+<th>Fissile Product</th>
+<th>Form</th>
+<th>Iaea Category</th>
+<th>Meltdown Resistance</th>
+<th>Melting Point</th>
+<th>Phase</th>
+<th>Plutonium Content</th>
+<th>Proliferation Resistance</th>
+<th>Proliferation Risk</th>
+<th>Pu239 Content</th>
+<th>Pu240 Content</th>
+<th>Recycling</th>
+<th>Reprocessing</th>
+<th>Source</th>
+<th>Thermal Conductivity</th>
+<th>Typical Use</th>
+<th>U235 Content</th>
+<th>U238 Content</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>NATURAL_URANIUM</td>
-<td>CHEBI:27214</td>
-<td>Uranium as found in nature (0</td>
+<td>Natural Uranium</td>
+<td><a href="http://purl.obolibrary.org/obo/CHEBI_27214">CHEBI:27214</a></td>
+<td>Uranium as found in nature (0.711% U-235)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>PHWR, some research reactors</td>
+<td>0.711%</td>
+<td>99.289%</td>
 </tr>
 <tr>
 <td>LOW_ENRICHED_URANIUM</td>
-<td>None</td>
-<td>Uranium enriched to 0</td>
+<td>Low Enriched Uranium (LEU)</td>
+<td></td>
+<td>Uranium enriched to 0.7%-20% U-235</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>indirect use material</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>low</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>commercial power reactors</td>
+<td>0.7-20%</td>
+<td></td>
 </tr>
 <tr>
 <td>HIGH_ASSAY_LEU</td>
-<td>None</td>
+<td>High-Assay Low Enriched Uranium (HALEU)</td>
+<td></td>
 <td>Uranium enriched to 5%-20% U-235</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>moderate</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>advanced reactors, SMRs</td>
+<td>5-20%</td>
+<td></td>
 </tr>
 <tr>
 <td>HIGHLY_ENRICHED_URANIUM</td>
-<td>None</td>
+<td>Highly Enriched Uranium (HEU)</td>
+<td></td>
 <td>Uranium enriched to 20% or more U-235</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>direct use material</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>high</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>research reactors, naval propulsion</td>
+<td>≥20%</td>
+<td></td>
 </tr>
 <tr>
 <td>WEAPONS_GRADE_URANIUM</td>
-<td>None</td>
+<td>Weapons-Grade Uranium</td>
+<td></td>
 <td>Uranium enriched to 90% or more U-235</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>very high</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>nuclear weapons, some naval reactors</td>
+<td>≥90%</td>
+<td></td>
 </tr>
 <tr>
 <td>REACTOR_GRADE_PLUTONIUM</td>
-<td>None</td>
+<td>Reactor-Grade Plutonium</td>
+<td></td>
 <td>Plutonium with high Pu-240 content from spent fuel</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>&lt;93%</td>
+<td>&gt;7%</td>
+<td></td>
+<td></td>
+<td>spent nuclear fuel</td>
+<td></td>
+<td>MOX fuel</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>WEAPONS_GRADE_PLUTONIUM</td>
-<td>None</td>
+<td>Weapons-Grade Plutonium</td>
+<td></td>
 <td>Plutonium with low Pu-240 content</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>very high</td>
+<td>≥93%</td>
+<td>&lt;7%</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>MOX_FUEL</td>
-<td>None</td>
+<td>Mixed Oxide Fuel</td>
+<td></td>
 <td>Mixture of plutonium and uranium oxides</td>
+<td></td>
+<td></td>
+<td>UO2 + PuO2</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>3-10%</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>enables plutonium recycling</td>
+<td></td>
+<td></td>
+<td></td>
+<td>thermal reactors</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>THORIUM_FUEL</td>
-<td>CHEBI:33385</td>
+<td>Thorium-Based Fuel</td>
+<td><a href="http://purl.obolibrary.org/obo/CHEBI_33385">CHEBI:33385</a></td>
 <td>Fuel containing thorium-232 as fertile material</td>
+<td>more abundant than uranium</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>Th-232</td>
+<td>U-233</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>high</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>TRISO_FUEL</td>
-<td>None</td>
+<td>Tri-structural Isotropic Fuel</td>
+<td></td>
 <td>Coated particle fuel with multiple containment layers</td>
+<td></td>
+<td></td>
+<td></td>
+<td>4</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>coated particles</td>
+<td></td>
+<td>very high</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>HTGR, some SMRs</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>LIQUID_FUEL</td>
-<td>None</td>
+<td>Liquid Nuclear Fuel</td>
+<td></td>
 <td>Fuel dissolved in liquid medium</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>liquid</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>online</td>
+<td></td>
+<td></td>
+<td>molten salt reactors</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>METALLIC_FUEL</td>
-<td>None</td>
+<td>Metallic Nuclear Fuel</td>
+<td></td>
 <td>Fuel in metallic form</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>metal alloy</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>high</td>
+<td>fast reactors</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>CARBIDE_FUEL</td>
-<td>None</td>
+<td>Carbide Nuclear Fuel</td>
+<td></td>
 <td>Uranium or plutonium carbide fuel</td>
+<td></td>
+<td>carbide</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>very high</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>advanced reactors</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>NITRIDE_FUEL</td>
-<td>None</td>
+<td>Nitride Nuclear Fuel</td>
+<td></td>
 <td>Uranium or plutonium nitride fuel</td>
+<td></td>
+<td>nitride</td>
+<td></td>
+<td></td>
+<td>high</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>fast reactors</td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>

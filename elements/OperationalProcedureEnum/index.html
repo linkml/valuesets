@@ -403,54 +403,307 @@
 <p><em>Standard nuclear facility operational procedures</em></p>
 <p>URI: <a href="https://w3id.org/valuesets/OperationalProcedureEnum">valuesets:OperationalProcedureEnum</a></p>
 <h2 id="permissible-values">Permissible Values</h2>
+<!-- annotations-table -->
 <table>
 <thead>
 <tr>
 <th>Value</th>
+<th>Title</th>
 <th>Meaning</th>
 <th>Description</th>
+<th>Access Control</th>
+<th>Authorization</th>
+<th>Classification</th>
+<th>Contamination Control</th>
+<th>Control Rod Insertion</th>
+<th>Cooling</th>
+<th>Coordination</th>
+<th>Corrective Action</th>
+<th>Criticality Control</th>
+<th>Detection</th>
+<th>Documentation</th>
+<th>Dose Control</th>
+<th>Duration</th>
+<th>Emergency</th>
+<th>Frequency</th>
+<th>Handling</th>
+<th>Mitigation</th>
+<th>Monitoring</th>
+<th>Notification</th>
+<th>Phases</th>
+<th>Response</th>
+<th>Safety Tagging</th>
+<th>Scope</th>
+<th>Systems</th>
+<th>Testing</th>
+<th>Verification</th>
+<th>Work Control</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>STARTUP_PROCEDURE</td>
-<td>None</td>
+<td>Reactor Startup Procedure</td>
+<td></td>
 <td>Systematic procedure for bringing reactor to power</td>
+<td></td>
+<td>management authorization required</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>hours to days</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>multiple phases with hold points</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>system testing at each phase</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>SHUTDOWN_PROCEDURE</td>
-<td>None</td>
+<td>Reactor Shutdown Procedure</td>
+<td></td>
 <td>Systematic procedure for shutting down reactor</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>gradual or rapid</td>
+<td>controlled cooldown</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>systematic system shutdown</td>
+<td></td>
+<td>shutdown margin verification</td>
+<td></td>
 </tr>
 <tr>
 <td>REFUELING_PROCEDURE</td>
-<td>None</td>
+<td>Refueling Procedure</td>
+<td></td>
 <td>Procedure for fuel handling and replacement</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>strict criticality prevention</td>
+<td></td>
+<td>detailed records</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>underwater fuel handling</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>independent verification</td>
+<td></td>
 </tr>
 <tr>
 <td>SURVEILLANCE_TESTING</td>
-<td>None</td>
+<td>Surveillance Testing</td>
+<td></td>
 <td>Regular testing of safety systems</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>if performance degraded</td>
+<td></td>
+<td></td>
+<td>test result documentation</td>
+<td></td>
+<td></td>
+<td></td>
+<td>specified by technical specifications</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>functionality verification</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>MAINTENANCE_PROCEDURE</td>
-<td>None</td>
+<td>Maintenance Procedure</td>
+<td></td>
 <td>Systematic approach to equipment maintenance</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>maintenance records</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>equipment isolation</td>
+<td></td>
+<td></td>
+<td>post-maintenance testing</td>
+<td></td>
+<td>work order control process</td>
 </tr>
 <tr>
 <td>EMERGENCY_RESPONSE</td>
-<td>None</td>
+<td>Emergency Response Procedure</td>
+<td></td>
 <td>Response to emergency conditions</td>
+<td></td>
+<td></td>
+<td>event classification</td>
+<td></td>
+<td></td>
+<td></td>
+<td>with offsite authorities</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>protective action implementation</td>
+<td></td>
+<td>offsite notification</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>RADIOLOGICAL_PROTECTION</td>
-<td>None</td>
+<td>Radiological Protection Procedure</td>
+<td></td>
 <td>Procedures for radiation protection</td>
+<td></td>
+<td></td>
+<td></td>
+<td>contamination prevention</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>personnel dose limits</td>
+<td></td>
+<td>radiological emergency response</td>
+<td></td>
+<td></td>
+<td></td>
+<td>radiation monitoring</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>SECURITY_PROCEDURE</td>
-<td>None</td>
+<td>Security Procedure</td>
+<td></td>
 <td>Physical security and access control procedures</td>
+<td>personnel access authorization</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>with law enforcement</td>
+<td></td>
+<td></td>
+<td>intrusion detection systems</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>security force response</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>

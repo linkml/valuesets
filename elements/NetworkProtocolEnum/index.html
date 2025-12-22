@@ -403,99 +403,244 @@
 <p><em>Network communication protocols</em></p>
 <p>URI: <a href="https://w3id.org/valuesets/NetworkProtocolEnum">valuesets:NetworkProtocolEnum</a></p>
 <h2 id="permissible-values">Permissible Values</h2>
+<!-- annotations-table -->
 <table>
 <thead>
 <tr>
 <th>Value</th>
 <th>Meaning</th>
 <th>Description</th>
+<th>Encryption</th>
+<th>Layer</th>
+<th>Port</th>
+<th>Security</th>
+<th>Transport</th>
+<th>Type</th>
+<th>Use</th>
+<th>Version</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>HTTP</td>
-<td>None</td>
+<td></td>
 <td>Hypertext Transfer Protocol</td>
+<td></td>
+<td>application</td>
+<td>80</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>1.0, 1.1, 2, 3</td>
 </tr>
 <tr>
 <td>HTTPS</td>
-<td>None</td>
+<td></td>
 <td>HTTP Secure</td>
+<td>TLS/SSL</td>
+<td>application</td>
+<td>443</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>FTP</td>
-<td>None</td>
+<td></td>
 <td>File Transfer Protocol</td>
+<td></td>
+<td>application</td>
+<td>21</td>
+<td></td>
+<td></td>
+<td></td>
+<td>file transfer</td>
+<td></td>
 </tr>
 <tr>
 <td>SFTP</td>
-<td>None</td>
+<td></td>
 <td>SSH File Transfer Protocol</td>
+<td>SSH</td>
+<td>application</td>
+<td>22</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>SSH</td>
-<td>None</td>
+<td></td>
 <td>Secure Shell</td>
+<td></td>
+<td>application</td>
+<td>22</td>
+<td></td>
+<td></td>
+<td></td>
+<td>secure remote access</td>
+<td></td>
 </tr>
 <tr>
 <td>TELNET</td>
-<td>None</td>
+<td></td>
 <td>Telnet protocol</td>
+<td></td>
+<td>application</td>
+<td>23</td>
+<td>unencrypted</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>SMTP</td>
-<td>None</td>
+<td></td>
 <td>Simple Mail Transfer Protocol</td>
+<td></td>
+<td>application</td>
+<td>25, 587</td>
+<td></td>
+<td></td>
+<td></td>
+<td>email sending</td>
+<td></td>
 </tr>
 <tr>
 <td>POP3</td>
-<td>None</td>
+<td></td>
 <td>Post Office Protocol version 3</td>
+<td></td>
+<td>application</td>
+<td>110, 995</td>
+<td></td>
+<td></td>
+<td></td>
+<td>email retrieval</td>
+<td></td>
 </tr>
 <tr>
 <td>IMAP</td>
-<td>None</td>
+<td></td>
 <td>Internet Message Access Protocol</td>
+<td></td>
+<td>application</td>
+<td>143, 993</td>
+<td></td>
+<td></td>
+<td></td>
+<td>email access</td>
+<td></td>
 </tr>
 <tr>
 <td>DNS</td>
-<td>None</td>
+<td></td>
 <td>Domain Name System</td>
+<td></td>
+<td>application</td>
+<td>53</td>
+<td></td>
+<td></td>
+<td></td>
+<td>name resolution</td>
+<td></td>
 </tr>
 <tr>
 <td>DHCP</td>
-<td>None</td>
+<td></td>
 <td>Dynamic Host Configuration Protocol</td>
+<td></td>
+<td>application</td>
+<td>67, 68</td>
+<td></td>
+<td></td>
+<td></td>
+<td>IP assignment</td>
+<td></td>
 </tr>
 <tr>
 <td>TCP</td>
-<td>None</td>
+<td></td>
 <td>Transmission Control Protocol</td>
+<td></td>
+<td>transport</td>
+<td></td>
+<td></td>
+<td></td>
+<td>connection-oriented</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>UDP</td>
-<td>None</td>
+<td></td>
 <td>User Datagram Protocol</td>
+<td></td>
+<td>transport</td>
+<td></td>
+<td></td>
+<td></td>
+<td>connectionless</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>WEBSOCKET</td>
-<td>None</td>
+<td></td>
 <td>WebSocket protocol</td>
+<td></td>
+<td>application</td>
+<td>80, 443</td>
+<td></td>
+<td></td>
+<td></td>
+<td>bidirectional communication</td>
+<td></td>
 </tr>
 <tr>
 <td>MQTT</td>
-<td>None</td>
+<td></td>
 <td>Message Queuing Telemetry Transport</td>
+<td></td>
+<td>application</td>
+<td>1883, 8883</td>
+<td></td>
+<td></td>
+<td></td>
+<td>IoT messaging</td>
+<td></td>
 </tr>
 <tr>
 <td>AMQP</td>
-<td>None</td>
+<td></td>
 <td>Advanced Message Queuing Protocol</td>
+<td></td>
+<td>application</td>
+<td>5672</td>
+<td></td>
+<td></td>
+<td></td>
+<td>message queuing</td>
+<td></td>
 </tr>
 <tr>
 <td>GRPC</td>
-<td>None</td>
+<td></td>
 <td>gRPC Remote Procedure Call</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>HTTP/2</td>
+<td></td>
+<td>RPC framework</td>
+<td></td>
 </tr>
 </tbody>
 </table>

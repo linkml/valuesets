@@ -403,34 +403,60 @@
 <p><em>Oxygen supply strategies for fermentation</em></p>
 <p>URI: <a href="https://w3id.org/valuesets/OxygenationStrategyEnum">valuesets:OxygenationStrategyEnum</a></p>
 <h2 id="permissible-values">Permissible Values</h2>
+<!-- annotations-table -->
 <table>
 <thead>
 <tr>
 <th>Value</th>
 <th>Meaning</th>
 <th>Description</th>
+<th>Related Mappings</th>
+<th>Atmosphere</th>
+<th>Flexibility</th>
+<th>Oxygen</th>
+<th>Typical Do</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>AEROBIC</td>
-<td>None</td>
+<td></td>
 <td>Aerobic with active aeration</td>
+<td><a href="http://purl.obolibrary.org/obo/ENVO_00002126">ENVO:00002126</a></td>
+<td></td>
+<td></td>
+<td>Required</td>
+<td>20-80% saturation</td>
 </tr>
 <tr>
 <td>ANAEROBIC</td>
-<td>None</td>
+<td></td>
 <td>Anaerobic (no oxygen)</td>
+<td><a href="http://purl.obolibrary.org/obo/ENVO_00002124">ENVO:00002124</a></td>
+<td>N2 or CO2</td>
+<td></td>
+<td>Excluded</td>
+<td></td>
 </tr>
 <tr>
 <td>MICROAEROBIC</td>
-<td>None</td>
+<td></td>
 <td>Microaerobic (limited oxygen)</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Limited</td>
+<td>&lt;5% saturation</td>
 </tr>
 <tr>
 <td>FACULTATIVE</td>
-<td>None</td>
+<td></td>
 <td>Facultative (with/without oxygen)</td>
+<td></td>
+<td></td>
+<td>Organism-dependent</td>
+<td>Optional</td>
+<td></td>
 </tr>
 </tbody>
 </table>

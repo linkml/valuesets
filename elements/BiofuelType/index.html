@@ -412,69 +412,178 @@
 <p><em>Types of fuels produced from biomass feedstocks.</em></p>
 <p>URI: <a href="https://w3id.org/valuesets/BiofuelType">valuesets:BiofuelType</a></p>
 <h2 id="permissible-values">Permissible Values</h2>
+<!-- annotations-table -->
 <table>
 <thead>
 <tr>
 <th>Value</th>
+<th>Title</th>
 <th>Meaning</th>
 <th>Description</th>
+<th>Close Mappings</th>
+<th>Broad Mappings</th>
+<th>Chemical Formula</th>
+<th>Drop In Fuel</th>
+<th>Intermediate</th>
+<th>Methane Content Percent</th>
+<th>Pipeline Quality</th>
+<th>Production Method</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>ETHANOL</td>
-<td>CHEBI:16236</td>
-<td>Alcohol biofuel (C2H5OH) produced by fermentation of sugars or starches, or f...</td>
+<td>Ethanol</td>
+<td><a href="http://purl.obolibrary.org/obo/CHEBI_16236">CHEBI:16236</a></td>
+<td>Alcohol biofuel (C2H5OH) produced by fermentation of sugars or starches, or from cellulosic biomass.</td>
+<td><a href="http://sweetontology.net/matrEnergy/Ethanol">sweet:matrEnergy/Ethanol</a></td>
+<td></td>
+<td>C2H5OH</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>BIODIESEL</td>
-<td>MESH:D056804</td>
-<td>Fatty acid methyl esters (FAME) produced by transesterification of vegetable ...</td>
+<td>Biodiesel</td>
+<td></td>
+<td>Fatty acid methyl esters (FAME) produced by transesterification of vegetable oils or animal fats.</td>
+<td><a href="http://id.nlm.nih.gov/mesh/D056804">MESH:D056804</a>, <a href="http://sweetontology.net/matrEnergy/Biodiesel">sweet:matrEnergy/Biodiesel</a></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>transesterification</td>
 </tr>
 <tr>
 <td>RENEWABLE_DIESEL</td>
-<td>None</td>
-<td>Hydrocarbon diesel produced by hydrotreating lipids</td>
+<td>Renewable Diesel</td>
+<td></td>
+<td>Hydrocarbon diesel produced by hydrotreating lipids. Chemically identical to petroleum diesel.</td>
+<td></td>
+<td></td>
+<td></td>
+<td>True</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>SUSTAINABLE_AVIATION_FUEL</td>
-<td>None</td>
-<td>Jet fuel produced from biomass or waste, meeting aviation fuel specifications</td>
+<td>Sustainable Aviation Fuel (SAF)</td>
+<td></td>
+<td>Jet fuel produced from biomass or waste, meeting aviation fuel specifications.</td>
+<td></td>
+<td></td>
+<td></td>
+<td>True</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>BIOGAS</td>
-<td>None</td>
-<td>Gaseous mixture of methane and CO2 produced by anaerobic digestion of organic...</td>
+<td>Biogas</td>
+<td></td>
+<td>Gaseous mixture of methane and CO2 produced by anaerobic digestion of organic matter.</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>50-70</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>BIOMETHANE</td>
-<td>None</td>
-<td>Purified biogas upgraded to natural gas quality (&gt;95% methane)</td>
+<td>Biomethane</td>
+<td></td>
+<td>Purified biogas upgraded to natural gas quality (&gt;95% methane).</td>
+<td></td>
+<td><a href="http://sweetontology.net/matrOrganicCompound/Methane">sweet:matrOrganicCompound/Methane</a></td>
+<td></td>
+<td></td>
+<td></td>
+<td>95+</td>
+<td>True</td>
+<td></td>
 </tr>
 <tr>
 <td>BIO_OIL</td>
-<td>None</td>
-<td>Liquid intermediate produced by pyrolysis or hydrothermal liquefaction of bio...</td>
+<td>Bio-Oil</td>
+<td></td>
+<td>Liquid intermediate produced by pyrolysis or hydrothermal liquefaction of biomass.</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>True</td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>SYNGAS</td>
-<td>CHMO:0001501</td>
-<td>Synthesis gas (CO + H2) produced by gasification of biomass</td>
+<td>Syngas (Bio-Based)</td>
+<td></td>
+<td>Synthesis gas (CO + H2) produced by gasification of biomass.</td>
+<td><a href="http://purl.obolibrary.org/obo/CHMO_0001501">CHMO:0001501</a>, <a href="http://sweetontology.net/matrEnergy/Syngas">sweet:matrEnergy/Syngas</a></td>
+<td></td>
+<td></td>
+<td></td>
+<td>True</td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>BUTANOL</td>
-<td>CHEBI:28885</td>
-<td>Four-carbon alcohol biofuel with higher energy density than ethanol</td>
+<td>butan-1-ol</td>
+<td><a href="http://purl.obolibrary.org/obo/CHEBI_28885">CHEBI:28885</a></td>
+<td>Four-carbon alcohol biofuel with higher energy density than ethanol.</td>
+<td></td>
+<td></td>
+<td>C4H9OH</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>METHANOL</td>
-<td>CHEBI:17790</td>
-<td>Methanol produced from biomass-derived syngas</td>
+<td>Biomethanol</td>
+<td><a href="http://purl.obolibrary.org/obo/CHEBI_17790">CHEBI:17790</a></td>
+<td>Methanol produced from biomass-derived syngas.</td>
+<td></td>
+<td></td>
+<td>CH3OH</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>DIMETHYL_ETHER</td>
-<td>CHEBI:28887</td>
-<td>Dimethyl ether produced from biomass, usable as diesel substitute</td>
+<td>Bio-DME</td>
+<td><a href="http://purl.obolibrary.org/obo/CHEBI_28887">CHEBI:28887</a></td>
+<td>Dimethyl ether produced from biomass, usable as diesel substitute.</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -538,7 +647,6 @@ permissible_values:
     text: BIODIESEL
     description: Fatty acid methyl esters (FAME) produced by transesterification of
       vegetable oils or animal fats.
-    meaning: MESH:D056804
     annotations:
       production_method:
         tag: production_method
@@ -547,6 +655,7 @@ permissible_values:
     aliases:
     - FAME
     close_mappings:
+    - MESH:D056804
     - sweet:matrEnergy/Biodiesel
   RENEWABLE_DIESEL:
     text: RENEWABLE_DIESEL
@@ -613,7 +722,6 @@ permissible_values:
   SYNGAS:
     text: SYNGAS
     description: Synthesis gas (CO + H2) produced by gasification of biomass.
-    meaning: CHMO:0001501
     annotations:
       intermediate:
         tag: intermediate
@@ -621,7 +729,9 @@ permissible_values:
     title: Syngas (Bio-Based)
     aliases:
     - Synthesis Gas
+    - gasification
     close_mappings:
+    - CHMO:0001501
     - sweet:matrEnergy/Syngas
   BUTANOL:
     text: BUTANOL
@@ -631,7 +741,9 @@ permissible_values:
       chemical_formula:
         tag: chemical_formula
         value: C4H9OH
-    title: Biobutanol
+    title: butan-1-ol
+    aliases:
+    - Biobutanol
   METHANOL:
     text: METHANOL
     description: Methanol produced from biomass-derived syngas.

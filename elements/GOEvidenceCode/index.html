@@ -409,146 +409,390 @@
 
 
 <h1 id="enum-goevidencecode">Enum: GOEvidenceCode</h1>
-<p><em>Gene Ontology evidence codes mapped to Evidence and Conclusion Ontology (ECO) terms</em></p>
+<p><em>Gene Ontology evidence codes used to describe the type of support for GO annotations. Each code maps to the Evidence and Conclusion Ontology (ECO). Evidence codes are categorized by whether they represent experimental evidence, computational analysis, phylogenetic inference, author statements, or electronic annotation. All codes except IEA represent manual curation.</em></p>
 <p>URI: <a href="https://w3id.org/valuesets/GOEvidenceCode">valuesets:GOEvidenceCode</a></p>
 <h2 id="permissible-values">Permissible Values</h2>
+<!-- annotations-table -->
 <table>
 <thead>
 <tr>
 <th>Value</th>
+<th>Title</th>
 <th>Meaning</th>
 <th>Description</th>
+<th>Is Author Statement</th>
+<th>Is Computational</th>
+<th>Is Curator Inference</th>
+<th>Is Electronic</th>
+<th>Is Experimental</th>
+<th>Is High Throughput</th>
+<th>Is Manual</th>
+<th>Is Phylogenetic</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>EXP</td>
-<td>ECO:0000269</td>
+<td>Inferred from Experiment</td>
+<td><a href="http://purl.obolibrary.org/obo/ECO_0000269">ECO:0000269</a></td>
+<td>General experimental evidence supporting a GO annotation</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>True</td>
+<td></td>
+<td>True</td>
 <td></td>
 </tr>
 <tr>
 <td>IDA</td>
-<td>ECO:0000314</td>
+<td>Inferred from Direct Assay</td>
+<td><a href="http://purl.obolibrary.org/obo/ECO_0000314">ECO:0000314</a></td>
+<td>Evidence from a direct assay for the presence or activity of a gene product</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>True</td>
+<td></td>
+<td>True</td>
 <td></td>
 </tr>
 <tr>
 <td>IPI</td>
-<td>ECO:0000353</td>
+<td>Inferred from Physical Interaction</td>
+<td><a href="http://purl.obolibrary.org/obo/ECO_0000353">ECO:0000353</a></td>
+<td>Evidence from physical interaction between gene products</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>True</td>
+<td></td>
+<td>True</td>
 <td></td>
 </tr>
 <tr>
 <td>IMP</td>
-<td>ECO:0000315</td>
+<td>Inferred from Mutant Phenotype</td>
+<td><a href="http://purl.obolibrary.org/obo/ECO_0000315">ECO:0000315</a></td>
+<td>Evidence from the phenotype of a mutant allele</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>True</td>
+<td></td>
+<td>True</td>
 <td></td>
 </tr>
 <tr>
 <td>IGI</td>
-<td>ECO:0000316</td>
+<td>Inferred from Genetic Interaction</td>
+<td><a href="http://purl.obolibrary.org/obo/ECO_0000316">ECO:0000316</a></td>
+<td>Evidence from genetic interaction between genes</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>True</td>
+<td></td>
+<td>True</td>
 <td></td>
 </tr>
 <tr>
 <td>IEP</td>
-<td>ECO:0000270</td>
+<td>Inferred from Expression Pattern</td>
+<td><a href="http://purl.obolibrary.org/obo/ECO_0000270">ECO:0000270</a></td>
+<td>Evidence from gene expression pattern data</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>True</td>
+<td></td>
+<td>True</td>
 <td></td>
 </tr>
 <tr>
 <td>HTP</td>
-<td>ECO:0006056</td>
+<td>Inferred from High Throughput Experiment</td>
+<td><a href="http://purl.obolibrary.org/obo/ECO_0006056">ECO:0006056</a></td>
+<td>Evidence from high-throughput experimental methods</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
 <td></td>
 </tr>
 <tr>
 <td>HDA</td>
-<td>ECO:0007005</td>
+<td>Inferred from High Throughput Direct Assay</td>
+<td><a href="http://purl.obolibrary.org/obo/ECO_0007005">ECO:0007005</a></td>
+<td>Evidence from high-throughput direct assay experiments</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
 <td></td>
 </tr>
 <tr>
 <td>HMP</td>
-<td>ECO:0007001</td>
+<td>Inferred from High Throughput Mutant Phenotype</td>
+<td><a href="http://purl.obolibrary.org/obo/ECO_0007001">ECO:0007001</a></td>
+<td>Evidence from high-throughput mutant phenotype screening</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
 <td></td>
 </tr>
 <tr>
 <td>HGI</td>
-<td>ECO:0007003</td>
+<td>Inferred from High Throughput Genetic Interaction</td>
+<td><a href="http://purl.obolibrary.org/obo/ECO_0007003">ECO:0007003</a></td>
+<td>Evidence from high-throughput genetic interaction screening</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
 <td></td>
 </tr>
 <tr>
 <td>HEP</td>
-<td>ECO:0007007</td>
+<td>Inferred from High Throughput Expression Pattern</td>
+<td><a href="http://purl.obolibrary.org/obo/ECO_0007007">ECO:0007007</a></td>
+<td>Evidence from high-throughput expression profiling</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
 <td></td>
 </tr>
 <tr>
 <td>IBA</td>
-<td>ECO:0000318</td>
+<td>Inferred from Biological aspect of Ancestor</td>
+<td><a href="http://purl.obolibrary.org/obo/ECO_0000318">ECO:0000318</a></td>
+<td>Evidence from conservation of biological aspect in an ancestral sequence</td>
 <td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>True</td>
+<td>True</td>
 </tr>
 <tr>
 <td>IBD</td>
-<td>ECO:0000319</td>
+<td>Inferred from Biological aspect of Descendant</td>
+<td><a href="http://purl.obolibrary.org/obo/ECO_0000319">ECO:0000319</a></td>
+<td>Evidence from conservation of biological aspect in a descendant sequence</td>
 <td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>True</td>
+<td>True</td>
 </tr>
 <tr>
 <td>IKR</td>
-<td>ECO:0000320</td>
+<td>Inferred from Key Residues</td>
+<td><a href="http://purl.obolibrary.org/obo/ECO_0000320">ECO:0000320</a></td>
+<td>Evidence from phylogenetic analysis showing loss of key residues</td>
 <td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>True</td>
+<td>True</td>
 </tr>
 <tr>
 <td>IRD</td>
-<td>ECO:0000321</td>
+<td>Inferred from Rapid Divergence</td>
+<td><a href="http://purl.obolibrary.org/obo/ECO_0000321">ECO:0000321</a></td>
+<td>Evidence from rapid divergence from ancestral sequence</td>
 <td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>True</td>
+<td>True</td>
 </tr>
 <tr>
 <td>ISS</td>
-<td>ECO:0000250</td>
+<td>Inferred from Sequence or structural Similarity</td>
+<td><a href="http://purl.obolibrary.org/obo/ECO_0000250">ECO:0000250</a></td>
+<td>Evidence from sequence or structural similarity to another annotated gene product</td>
+<td></td>
+<td>True</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>True</td>
 <td></td>
 </tr>
 <tr>
 <td>ISO</td>
-<td>ECO:0000266</td>
+<td>Inferred from Sequence Orthology</td>
+<td><a href="http://purl.obolibrary.org/obo/ECO_0000266">ECO:0000266</a></td>
+<td>Evidence from orthology to an experimentally characterized gene product</td>
+<td></td>
+<td>True</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>True</td>
 <td></td>
 </tr>
 <tr>
 <td>ISA</td>
-<td>ECO:0000247</td>
+<td>Inferred from Sequence Alignment</td>
+<td><a href="http://purl.obolibrary.org/obo/ECO_0000247">ECO:0000247</a></td>
+<td>Evidence from sequence alignment to an annotated gene product</td>
+<td></td>
+<td>True</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>True</td>
 <td></td>
 </tr>
 <tr>
 <td>ISM</td>
-<td>ECO:0000255</td>
+<td>Inferred from Sequence Model</td>
+<td><a href="http://purl.obolibrary.org/obo/ECO_0000255">ECO:0000255</a></td>
+<td>Evidence from match to a sequence model (e.g., HMM, profile)</td>
+<td></td>
+<td>True</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>True</td>
 <td></td>
 </tr>
 <tr>
 <td>IGC</td>
-<td>ECO:0000317</td>
+<td>Inferred from Genomic Context</td>
+<td><a href="http://purl.obolibrary.org/obo/ECO_0000317">ECO:0000317</a></td>
+<td>Evidence from genomic context such as synteny or gene neighborhood</td>
+<td></td>
+<td>True</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>True</td>
 <td></td>
 </tr>
 <tr>
 <td>RCA</td>
-<td>ECO:0000245</td>
+<td>Inferred from Reviewed Computational Analysis</td>
+<td><a href="http://purl.obolibrary.org/obo/ECO_0000245">ECO:0000245</a></td>
+<td>Evidence from computational analysis that has been reviewed by a curator</td>
+<td></td>
+<td>True</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>True</td>
 <td></td>
 </tr>
 <tr>
 <td>TAS</td>
-<td>ECO:0000304</td>
+<td>Traceable Author Statement</td>
+<td><a href="http://purl.obolibrary.org/obo/ECO_0000304">ECO:0000304</a></td>
+<td>Evidence from an author statement in a published paper that can be traced to the original source</td>
+<td>True</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>True</td>
 <td></td>
 </tr>
 <tr>
 <td>NAS</td>
-<td>ECO:0000303</td>
+<td>Non-traceable Author Statement</td>
+<td><a href="http://purl.obolibrary.org/obo/ECO_0000303">ECO:0000303</a></td>
+<td>Evidence from an author statement that cannot be traced to the experimental source</td>
+<td>True</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>True</td>
 <td></td>
 </tr>
 <tr>
 <td>IC</td>
-<td>ECO:0000305</td>
+<td>Inferred by Curator</td>
+<td><a href="http://purl.obolibrary.org/obo/ECO_0000305">ECO:0000305</a></td>
+<td>Evidence inferred by a curator based on existing annotations and biological knowledge</td>
+<td></td>
+<td></td>
+<td>True</td>
+<td></td>
+<td></td>
+<td></td>
+<td>True</td>
 <td></td>
 </tr>
 <tr>
 <td>ND</td>
-<td>ECO:0000307</td>
+<td>No biological Data available</td>
+<td><a href="http://purl.obolibrary.org/obo/ECO_0000307">ECO:0000307</a></td>
+<td>Indicates that no biological data is available to support an annotation</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>True</td>
 <td></td>
 </tr>
 <tr>
 <td>IEA</td>
-<td>ECO:0000501</td>
+<td>Inferred from Electronic Annotation</td>
+<td><a href="http://purl.obolibrary.org/obo/ECO_0000501">ECO:0000501</a></td>
+<td>Evidence from automated electronic annotation pipelines without manual curation</td>
+<td></td>
+<td></td>
+<td></td>
+<td>True</td>
+<td></td>
+<td></td>
+<td></td>
 <td></td>
 </tr>
 </tbody>
@@ -605,8 +849,11 @@ annotations:
   publishers:
     tag: publishers
     value: https://geneontology.org
-description: Gene Ontology evidence codes mapped to Evidence and Conclusion Ontology
-  (ECO) terms
+description: Gene Ontology evidence codes used to describe the type of support for
+  GO annotations. Each code maps to the Evidence and Conclusion Ontology (ECO). Evidence
+  codes are categorized by whether they represent experimental evidence, computational
+  analysis, phylogenetic inference, author statements, or electronic annotation. All
+  codes except IEA represent manual curation.
 title: GO Evidence Code
 from_schema: https://w3id.org/linkml/valuesets
 contributors:
@@ -617,157 +864,492 @@ rank: 1000
 permissible_values:
   EXP:
     text: EXP
+    description: General experimental evidence supporting a GO annotation
     meaning: ECO:0000269
+    annotations:
+      is_experimental:
+        tag: is_experimental
+        value: true
+      is_manual:
+        tag: is_manual
+        value: true
+      is_high_throughput:
+        tag: is_high_throughput
+        value: false
     title: Inferred from Experiment
     aliases:
     - experimental evidence used in manual assertion
   IDA:
     text: IDA
+    description: Evidence from a direct assay for the presence or activity of a gene
+      product
     meaning: ECO:0000314
+    annotations:
+      is_experimental:
+        tag: is_experimental
+        value: true
+      is_manual:
+        tag: is_manual
+        value: true
+      is_high_throughput:
+        tag: is_high_throughput
+        value: false
     title: Inferred from Direct Assay
     aliases:
     - direct assay evidence used in manual assertion
   IPI:
     text: IPI
+    description: Evidence from physical interaction between gene products
     meaning: ECO:0000353
+    annotations:
+      is_experimental:
+        tag: is_experimental
+        value: true
+      is_manual:
+        tag: is_manual
+        value: true
+      is_high_throughput:
+        tag: is_high_throughput
+        value: false
     title: Inferred from Physical Interaction
     aliases:
     - physical interaction evidence used in manual assertion
   IMP:
     text: IMP
+    description: Evidence from the phenotype of a mutant allele
     meaning: ECO:0000315
+    annotations:
+      is_experimental:
+        tag: is_experimental
+        value: true
+      is_manual:
+        tag: is_manual
+        value: true
+      is_high_throughput:
+        tag: is_high_throughput
+        value: false
     title: Inferred from Mutant Phenotype
     aliases:
     - mutant phenotype evidence used in manual assertion
   IGI:
     text: IGI
+    description: Evidence from genetic interaction between genes
     meaning: ECO:0000316
+    annotations:
+      is_experimental:
+        tag: is_experimental
+        value: true
+      is_manual:
+        tag: is_manual
+        value: true
+      is_high_throughput:
+        tag: is_high_throughput
+        value: false
     title: Inferred from Genetic Interaction
     aliases:
     - genetic interaction evidence used in manual assertion
   IEP:
     text: IEP
+    description: Evidence from gene expression pattern data
     meaning: ECO:0000270
+    annotations:
+      is_experimental:
+        tag: is_experimental
+        value: true
+      is_manual:
+        tag: is_manual
+        value: true
+      is_high_throughput:
+        tag: is_high_throughput
+        value: false
     title: Inferred from Expression Pattern
     aliases:
     - expression pattern evidence used in manual assertion
   HTP:
     text: HTP
+    description: Evidence from high-throughput experimental methods
     meaning: ECO:0006056
+    annotations:
+      is_experimental:
+        tag: is_experimental
+        value: true
+      is_manual:
+        tag: is_manual
+        value: true
+      is_high_throughput:
+        tag: is_high_throughput
+        value: true
     title: Inferred from High Throughput Experiment
     aliases:
     - high throughput evidence used in manual assertion
   HDA:
     text: HDA
+    description: Evidence from high-throughput direct assay experiments
     meaning: ECO:0007005
+    annotations:
+      is_experimental:
+        tag: is_experimental
+        value: true
+      is_manual:
+        tag: is_manual
+        value: true
+      is_high_throughput:
+        tag: is_high_throughput
+        value: true
     title: Inferred from High Throughput Direct Assay
     aliases:
     - high throughput direct assay evidence used in manual assertion
   HMP:
     text: HMP
+    description: Evidence from high-throughput mutant phenotype screening
     meaning: ECO:0007001
+    annotations:
+      is_experimental:
+        tag: is_experimental
+        value: true
+      is_manual:
+        tag: is_manual
+        value: true
+      is_high_throughput:
+        tag: is_high_throughput
+        value: true
     title: Inferred from High Throughput Mutant Phenotype
     aliases:
     - high throughput mutant phenotypic evidence used in manual assertion
   HGI:
     text: HGI
+    description: Evidence from high-throughput genetic interaction screening
     meaning: ECO:0007003
+    annotations:
+      is_experimental:
+        tag: is_experimental
+        value: true
+      is_manual:
+        tag: is_manual
+        value: true
+      is_high_throughput:
+        tag: is_high_throughput
+        value: true
     title: Inferred from High Throughput Genetic Interaction
     aliases:
     - high throughput genetic interaction phenotypic evidence used in manual assertion
   HEP:
     text: HEP
+    description: Evidence from high-throughput expression profiling
     meaning: ECO:0007007
+    annotations:
+      is_experimental:
+        tag: is_experimental
+        value: true
+      is_manual:
+        tag: is_manual
+        value: true
+      is_high_throughput:
+        tag: is_high_throughput
+        value: true
     title: Inferred from High Throughput Expression Pattern
     aliases:
     - high throughput expression pattern evidence used in manual assertion
   IBA:
     text: IBA
+    description: Evidence from conservation of biological aspect in an ancestral sequence
     meaning: ECO:0000318
+    annotations:
+      is_experimental:
+        tag: is_experimental
+        value: false
+      is_manual:
+        tag: is_manual
+        value: true
+      is_high_throughput:
+        tag: is_high_throughput
+        value: false
+      is_phylogenetic:
+        tag: is_phylogenetic
+        value: true
     title: Inferred from Biological aspect of Ancestor
     aliases:
     - biological aspect of ancestor evidence used in manual assertion
   IBD:
     text: IBD
+    description: Evidence from conservation of biological aspect in a descendant sequence
     meaning: ECO:0000319
+    annotations:
+      is_experimental:
+        tag: is_experimental
+        value: false
+      is_manual:
+        tag: is_manual
+        value: true
+      is_high_throughput:
+        tag: is_high_throughput
+        value: false
+      is_phylogenetic:
+        tag: is_phylogenetic
+        value: true
     title: Inferred from Biological aspect of Descendant
     aliases:
     - biological aspect of descendant evidence used in manual assertion
   IKR:
     text: IKR
+    description: Evidence from phylogenetic analysis showing loss of key residues
     meaning: ECO:0000320
+    annotations:
+      is_experimental:
+        tag: is_experimental
+        value: false
+      is_manual:
+        tag: is_manual
+        value: true
+      is_high_throughput:
+        tag: is_high_throughput
+        value: false
+      is_phylogenetic:
+        tag: is_phylogenetic
+        value: true
     title: Inferred from Key Residues
     aliases:
     - phylogenetic determination of loss of key residues evidence used in manual assertion
   IRD:
     text: IRD
+    description: Evidence from rapid divergence from ancestral sequence
     meaning: ECO:0000321
+    annotations:
+      is_experimental:
+        tag: is_experimental
+        value: false
+      is_manual:
+        tag: is_manual
+        value: true
+      is_high_throughput:
+        tag: is_high_throughput
+        value: false
+      is_phylogenetic:
+        tag: is_phylogenetic
+        value: true
     title: Inferred from Rapid Divergence
     aliases:
     - rapid divergence from ancestral sequence evidence used in manual assertion
   ISS:
     text: ISS
+    description: Evidence from sequence or structural similarity to another annotated
+      gene product
     meaning: ECO:0000250
+    annotations:
+      is_experimental:
+        tag: is_experimental
+        value: false
+      is_manual:
+        tag: is_manual
+        value: true
+      is_high_throughput:
+        tag: is_high_throughput
+        value: false
+      is_computational:
+        tag: is_computational
+        value: true
     title: Inferred from Sequence or structural Similarity
     aliases:
     - sequence similarity evidence used in manual assertion
   ISO:
     text: ISO
+    description: Evidence from orthology to an experimentally characterized gene product
     meaning: ECO:0000266
+    annotations:
+      is_experimental:
+        tag: is_experimental
+        value: false
+      is_manual:
+        tag: is_manual
+        value: true
+      is_high_throughput:
+        tag: is_high_throughput
+        value: false
+      is_computational:
+        tag: is_computational
+        value: true
     title: Inferred from Sequence Orthology
     aliases:
     - sequence orthology evidence used in manual assertion
   ISA:
     text: ISA
+    description: Evidence from sequence alignment to an annotated gene product
     meaning: ECO:0000247
+    annotations:
+      is_experimental:
+        tag: is_experimental
+        value: false
+      is_manual:
+        tag: is_manual
+        value: true
+      is_high_throughput:
+        tag: is_high_throughput
+        value: false
+      is_computational:
+        tag: is_computational
+        value: true
     title: Inferred from Sequence Alignment
     aliases:
     - sequence alignment evidence used in manual assertion
   ISM:
     text: ISM
+    description: Evidence from match to a sequence model (e.g., HMM, profile)
     meaning: ECO:0000255
+    annotations:
+      is_experimental:
+        tag: is_experimental
+        value: false
+      is_manual:
+        tag: is_manual
+        value: true
+      is_high_throughput:
+        tag: is_high_throughput
+        value: false
+      is_computational:
+        tag: is_computational
+        value: true
     title: Inferred from Sequence Model
     aliases:
     - match to sequence model evidence used in manual assertion
   IGC:
     text: IGC
+    description: Evidence from genomic context such as synteny or gene neighborhood
     meaning: ECO:0000317
+    annotations:
+      is_experimental:
+        tag: is_experimental
+        value: false
+      is_manual:
+        tag: is_manual
+        value: true
+      is_high_throughput:
+        tag: is_high_throughput
+        value: false
+      is_computational:
+        tag: is_computational
+        value: true
     title: Inferred from Genomic Context
     aliases:
     - genomic context evidence used in manual assertion
   RCA:
     text: RCA
+    description: Evidence from computational analysis that has been reviewed by a
+      curator
     meaning: ECO:0000245
+    annotations:
+      is_experimental:
+        tag: is_experimental
+        value: false
+      is_manual:
+        tag: is_manual
+        value: true
+      is_high_throughput:
+        tag: is_high_throughput
+        value: false
+      is_computational:
+        tag: is_computational
+        value: true
     title: Inferred from Reviewed Computational Analysis
     aliases:
     - automatically integrated combinatorial evidence used in manual assertion
   TAS:
     text: TAS
+    description: Evidence from an author statement in a published paper that can be
+      traced to the original source
     meaning: ECO:0000304
+    annotations:
+      is_experimental:
+        tag: is_experimental
+        value: false
+      is_manual:
+        tag: is_manual
+        value: true
+      is_high_throughput:
+        tag: is_high_throughput
+        value: false
+      is_author_statement:
+        tag: is_author_statement
+        value: true
     title: Traceable Author Statement
     aliases:
     - author statement supported by traceable reference used in manual assertion
   NAS:
     text: NAS
+    description: Evidence from an author statement that cannot be traced to the experimental
+      source
     meaning: ECO:0000303
+    annotations:
+      is_experimental:
+        tag: is_experimental
+        value: false
+      is_manual:
+        tag: is_manual
+        value: true
+      is_high_throughput:
+        tag: is_high_throughput
+        value: false
+      is_author_statement:
+        tag: is_author_statement
+        value: true
     title: Non-traceable Author Statement
     aliases:
     - author statement without traceable support used in manual assertion
   IC:
     text: IC
+    description: Evidence inferred by a curator based on existing annotations and
+      biological knowledge
     meaning: ECO:0000305
+    annotations:
+      is_experimental:
+        tag: is_experimental
+        value: false
+      is_manual:
+        tag: is_manual
+        value: true
+      is_high_throughput:
+        tag: is_high_throughput
+        value: false
+      is_curator_inference:
+        tag: is_curator_inference
+        value: true
     title: Inferred by Curator
     aliases:
     - curator inference used in manual assertion
   ND:
     text: ND
+    description: Indicates that no biological data is available to support an annotation
     meaning: ECO:0000307
+    annotations:
+      is_experimental:
+        tag: is_experimental
+        value: false
+      is_manual:
+        tag: is_manual
+        value: true
+      is_high_throughput:
+        tag: is_high_throughput
+        value: false
     title: No biological Data available
     aliases:
     - no evidence data found used in manual assertion
   IEA:
     text: IEA
+    description: Evidence from automated electronic annotation pipelines without manual
+      curation
     meaning: ECO:0000501
+    annotations:
+      is_experimental:
+        tag: is_experimental
+        value: false
+      is_manual:
+        tag: is_manual
+        value: false
+      is_high_throughput:
+        tag: is_high_throughput
+        value: false
+      is_electronic:
+        tag: is_electronic
+        value: true
     title: Inferred from Electronic Annotation
     aliases:
     - evidence used in automatic assertion

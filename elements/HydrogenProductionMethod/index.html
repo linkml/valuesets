@@ -412,79 +412,220 @@
 <p><em>Methods and processes for producing hydrogen.</em></p>
 <p>URI: <a href="https://w3id.org/valuesets/HydrogenProductionMethod">valuesets:HydrogenProductionMethod</a></p>
 <h2 id="permissible-values">Permissible Values</h2>
+<!-- annotations-table -->
 <table>
 <thead>
 <tr>
 <th>Value</th>
+<th>Title</th>
 <th>Meaning</th>
 <th>Description</th>
+<th>Close Mappings</th>
+<th>Narrow Mappings</th>
+<th>Byproduct</th>
+<th>Dominant Method</th>
+<th>Electrolyte</th>
+<th>Feedstock</th>
+<th>Maturity</th>
+<th>Renewable</th>
+<th>Temperature C</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>STEAM_METHANE_REFORMING</td>
-<td>None</td>
-<td>High temperature steam reacts with methane to produce hydrogen, carbon monoxi...</td>
+<td>Steam Methane Reforming (SMR)</td>
+<td></td>
+<td>High temperature steam reacts with methane to produce hydrogen, carbon monoxide, and carbon dioxide.</td>
+<td></td>
+<td></td>
+<td></td>
+<td>True</td>
+<td></td>
+<td>natural_gas</td>
+<td></td>
+<td></td>
+<td>700-1000</td>
 </tr>
 <tr>
 <td>AUTOTHERMAL_REFORMING</td>
-<td>None</td>
-<td>Combines steam reforming and partial oxidation using oxygen and steam to prod...</td>
+<td>Autothermal Reforming (ATR)</td>
+<td></td>
+<td>Combines steam reforming and partial oxidation using oxygen and steam to produce hydrogen from hydrocarbons.</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>PARTIAL_OXIDATION</td>
-<td>None</td>
-<td>Exothermic process reacting hydrocarbons with limited oxygen to produce hydro...</td>
+<td>Partial Oxidation (POX)</td>
+<td></td>
+<td>Exothermic process reacting hydrocarbons with limited oxygen to produce hydrogen and carbon monoxide.</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>COAL_GASIFICATION</td>
-<td>CHMO:0001501</td>
-<td>Conversion of coal to syngas (hydrogen and carbon monoxide) using high temper...</td>
+<td>gasification</td>
+<td><a href="http://purl.obolibrary.org/obo/CHMO_0001501">CHMO:0001501</a></td>
+<td>Conversion of coal to syngas (hydrogen and carbon monoxide) using high temperature and steam.</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>WATER_ELECTROLYSIS</td>
-<td>None</td>
-<td>Splitting water into hydrogen and oxygen using electrical current</td>
+<td>Water Electrolysis</td>
+<td></td>
+<td>Splitting water into hydrogen and oxygen using electrical current. Can be powered by various energy sources.</td>
+<td><a href="http://sweetontology.net/procChemical/Electrolysis">sweet:procChemical/Electrolysis</a></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>ALKALINE_ELECTROLYSIS</td>
-<td>None</td>
-<td>Electrolysis using alkaline solution (typically KOH) as electrolyte</td>
+<td>Alkaline Electrolysis (AEL)</td>
+<td></td>
+<td>Electrolysis using alkaline solution (typically KOH) as electrolyte. Mature commercial technology.</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>alkaline</td>
+<td></td>
+<td>commercial</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>PEM_ELECTROLYSIS</td>
-<td>None</td>
-<td>Proton Exchange Membrane electrolysis using solid polymer electrolyte</td>
+<td>PEM Electrolysis</td>
+<td></td>
+<td>Proton Exchange Membrane electrolysis using solid polymer electrolyte. Higher efficiency, faster response.</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>polymer_membrane</td>
+<td></td>
+<td>commercial</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>SOLID_OXIDE_ELECTROLYSIS</td>
-<td>None</td>
-<td>High temperature electrolysis using solid ceramic electrolyte</td>
+<td>Solid Oxide Electrolysis (SOEC)</td>
+<td></td>
+<td>High temperature electrolysis using solid ceramic electrolyte. Higher efficiency when waste heat is available.</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>solid_oxide</td>
+<td></td>
+<td>emerging</td>
+<td></td>
+<td>700-850</td>
 </tr>
 <tr>
 <td>METHANE_PYROLYSIS</td>
-<td>None</td>
-<td>Thermal decomposition of methane into hydrogen and solid carbon without oxyge...</td>
+<td>Methane Pyrolysis</td>
+<td></td>
+<td>Thermal decomposition of methane into hydrogen and solid carbon without oxygen. Produces no direct CO2.</td>
+<td></td>
+<td></td>
+<td>solid_carbon</td>
+<td></td>
+<td></td>
+<td>natural_gas</td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>BIOMASS_GASIFICATION</td>
-<td>None</td>
-<td>Thermochemical conversion of biomass to hydrogen-rich syngas at high temperat...</td>
+<td>Biomass Gasification</td>
+<td></td>
+<td>Thermochemical conversion of biomass to hydrogen-rich syngas at high temperatures.</td>
+<td></td>
+<td><a href="http://sweetontology.net/procPhysical/Gasification">sweet:procPhysical/Gasification</a></td>
+<td></td>
+<td></td>
+<td></td>
+<td>biomass</td>
+<td></td>
+<td>True</td>
+<td></td>
 </tr>
 <tr>
 <td>BIOLOGICAL_PRODUCTION</td>
-<td>None</td>
-<td>Production of hydrogen by microorganisms through photosynthesis, fermentation...</td>
+<td>Biological Hydrogen Production</td>
+<td></td>
+<td>Production of hydrogen by microorganisms through photosynthesis, fermentation, or other biological processes.</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>research</td>
+<td>True</td>
+<td></td>
 </tr>
 <tr>
 <td>THERMOCHEMICAL_WATER_SPLITTING</td>
-<td>None</td>
-<td>Using high temperatures from concentrated solar or nuclear to drive chemical ...</td>
+<td>Thermochemical Water Splitting</td>
+<td></td>
+<td>Using high temperatures from concentrated solar or nuclear to drive chemical cycles that split water.</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>research</td>
+<td></td>
+<td>500-2000</td>
 </tr>
 <tr>
 <td>PHOTOELECTROCHEMICAL</td>
-<td>None</td>
-<td>Direct conversion of sunlight to hydrogen using specialized semiconductor mat...</td>
+<td>Photoelectrochemical Water Splitting</td>
+<td></td>
+<td>Direct conversion of sunlight to hydrogen using specialized semiconductor materials in contact with water.</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>research</td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -565,7 +706,7 @@ permissible_values:
     description: Conversion of coal to syngas (hydrogen and carbon monoxide) using
       high temperature and steam.
     meaning: CHMO:0001501
-    title: Coal Gasification
+    title: gasification
   WATER_ELECTROLYSIS:
     text: WATER_ELECTROLYSIS
     description: Splitting water into hydrogen and oxygen using electrical current.
