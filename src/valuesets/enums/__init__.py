@@ -50,7 +50,7 @@ from .bio.relationship_to_oxygen import RelToOxygenEnum
 from .bio.sequence_alphabets import DNABaseEnum, DNABaseExtendedEnum, RNABaseEnum, RNABaseExtendedEnum, AminoAcidEnum, AminoAcidExtendedEnum, CodonEnum, NucleotideModificationEnum, SequenceQualityEnum
 from .bio.sequence_chemistry import IUPACNucleotideCode, StandardAminoAcid, IUPACAminoAcidCode, SequenceAlphabet, SequenceQualityEncoding, GeneticCodeTable, SequenceStrand, SequenceTopology, SequenceModality
 from .bio.sequencing_platforms import SequencingPlatform, SequencingChemistry, LibraryPreparation, SequencingApplication, ReadType, SequenceFileFormat, DataProcessingLevel
-from .bio.specimen_processing import SpecimenPreparationMethodEnum, TissuePreservationEnum, SpecimenCollectionMethodEnum, SpecimenTypeEnum
+from .bio.specimen_processing import SpecimenPreparationMethodEnum, TissuePreservationEnum, SpecimenCollectionMethodEnum, SpecimenTypeEnum, AnalyteTypeEnum, SourceMaterialTypeEnum, SpecimenCreationActivityTypeEnum, SpecimenProcessingActivityTypeEnum, SpecimenQualityObservationTypeEnum, SpecimenQualityObservationMethodEnum, SpecimenQuantityObservationTypeEnum, SectionLocationEnum
 from .bio.structural_biology import SampleType, StructuralBiologyTechnique, CryoEMPreparationType, CryoEMGridType, VitrificationMethod, CrystallizationMethod, XRaySource, Detector, WorkflowType, FileFormat, DataType, ProcessingStatus, CoordinationGeometry, MetalLigandType, ProteinModificationType
 from .bio.taxonomy import CommonOrganismTaxaEnum, TaxonomicRank, BiologicalKingdom
 from .bio.transplantation import TransplantationTypeEnum, XenograftModelEnum, ModelSystemTypeEnum
@@ -78,6 +78,7 @@ from .chemistry.reactions import ReactionTypeEnum, ReactionMechanismEnum, Cataly
 from .clinical.genetics import ModeOfInheritance
 from .clinical.nih_demographics import RaceOMB1997Enum, EthnicityOMB1997Enum, BiologicalSexEnum, AgeGroupEnum, ParticipantVitalStatusEnum, RecruitmentStatusEnum, StudyPhaseEnum
 from .clinical.phenopackets import KaryotypicSexEnum, PhenotypicSexEnum, AllelicStateEnum, LateralityEnum, OnsetTimingEnum, ACMGPathogenicityEnum, TherapeuticActionabilityEnum, InterpretationProgressEnum, RegimenStatusEnum, DrugResponseEnum
+from .clinical.provenance import ConditionProvenanceEnum, VisitProvenanceEnum, DrugExposureProvenanceEnum, StatusEnum, HistoricalStatusEnum, ResearchProjectTypeEnum
 
 # Computing domain
 from .computing.croissant_ml import MLDataType, DatasetEncodingFormat, DatasetSplitType, MLLicenseType, MLFieldRole, CompressionFormat, MLMediaType, MLModalityType
@@ -102,6 +103,7 @@ from .stewardship import ValueSetStewardEnum
 
 # Data domain
 from .data.data_absent_reason import DataAbsentEnum
+from .data.data_use import DataUsePermissionEnum, DataUseModifierEnum
 
 # Data_Catalog domain
 from .data_catalog.access import AccessRights, DatasetStatus, UpdateFrequency, DataServiceType
@@ -197,6 +199,7 @@ from .publishing.osti_record import OstiWorkflowStatus, OstiAccessLimitation, Os
 
 # Social domain
 from .social.person_status import PersonStatusEnum
+from .social.sdoh import GravitySdohDomainEnum, EducationalAttainmentEnum
 
 # Spatial domain
 from .spatial.spatial_qualifiers import SimpleSpatialDirection, AnatomicalSide, AnatomicalRegion, AnatomicalAxis, AnatomicalPlane, SpatialRelationship, CellPolarity, AnatomicalOrientation
@@ -227,6 +230,7 @@ __all__ = [
     "AllergyTypeEnum",
     "AminoAcidEnum",
     "AminoAcidExtendedEnum",
+    "AnalyteTypeEnum",
     "AnalyticalControlType",
     "AnatomicalAxis",
     "AnatomicalOrientation",
@@ -307,6 +311,7 @@ __all__ = [
     "CompressionFormat",
     "CompressionType",
     "ConcentrationUnitEnum",
+    "ConditionProvenanceEnum",
     "ConfidenceLevel",
     "ConfidenceLevelEnum",
     "ConfidenceScore",
@@ -341,6 +346,8 @@ __all__ = [
     "DataServiceType",
     "DataSizeUnitEnum",
     "DataType",
+    "DataUseModifierEnum",
+    "DataUsePermissionEnum",
     "DatasetEncodingFormat",
     "DatasetSplitType",
     "DatasetStatus",
@@ -355,12 +362,14 @@ __all__ = [
     "DigitalObjectCategory",
     "DocumentFormatEnum",
     "DownstreamProcessEnum",
+    "DrugExposureProvenanceEnum",
     "DrugResponseEnum",
     "DrugRouteEnum",
     "EPAIRISCarcinogenicityGroup",
     "EcologicalEnvironmentExposureEnum",
     "EconomicSectorEnum",
     "EducationLevel",
+    "EducationalAttainmentEnum",
     "ElectricalConductivityEnum",
     "ElectricalWireColorEnum",
     "ElectricityMarket",
@@ -438,6 +447,7 @@ __all__ = [
     "GeothermalResourceTemperature",
     "GeothermalSystemType",
     "GeothermalWellType",
+    "GravitySdohDomainEnum",
     "GridType",
     "HHEARExposureAssessedEnum",
     "HRFunctionEnum",
@@ -447,6 +457,7 @@ __all__ = [
     "HealthcareEncounterClassification",
     "HeavyMetalEnum",
     "HistoricalPeriod",
+    "HistoricalStatusEnum",
     "HousingStatus",
     "HumanAgeGroupEnum",
     "HumanDevelopmentalStage",
@@ -682,6 +693,7 @@ __all__ = [
     "RelativeDirection",
     "RelativeTimeEnum",
     "ResearchField",
+    "ResearchProjectTypeEnum",
     "ResearchReactorTypeEnum",
     "ResearchRole",
     "RightsBasis",
@@ -697,6 +709,7 @@ __all__ = [
     "SchedulerTypeEnum",
     "Season",
     "SeasonalEnvironmentExposureEnum",
+    "SectionLocationEnum",
     "SensorWhileDrillingFeature",
     "SentimentClassificationEnum",
     "SequenceAlphabet",
@@ -717,18 +730,25 @@ __all__ = [
     "SmokingStatusEnum",
     "SoftwareMaturityLevel",
     "SolventClassEnum",
+    "SourceMaterialTypeEnum",
     "SourcingStrategyEnum",
     "SpamClassificationEnum",
     "SpatialRelationship",
     "SpatialResolutionEnum",
     "SpecimenCollectionMethodEnum",
+    "SpecimenCreationActivityTypeEnum",
     "SpecimenPreparationMethodEnum",
+    "SpecimenProcessingActivityTypeEnum",
+    "SpecimenQualityObservationMethodEnum",
+    "SpecimenQualityObservationTypeEnum",
+    "SpecimenQuantityObservationTypeEnum",
     "SpecimenTypeEnum",
     "SpectroscopyMethodEnum",
     "StandardAminoAcid",
     "StandardsMaturityLevel",
     "StandardsOrganizationEnum",
     "StateOfMatterEnum",
+    "StatusEnum",
     "SterilizationMethodEnum",
     "StrandType",
     "StrategicFrameworkEnum",
@@ -784,6 +804,7 @@ __all__ = [
     "VendorCategoryEnum",
     "VideoFormatEnum",
     "ViralGenomeTypeEnum",
+    "VisitProvenanceEnum",
     "VitalSignEnum",
     "VitalStatusEnum",
     "VitrificationMethod",
