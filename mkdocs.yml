@@ -27,11 +27,18 @@ watch:
 nav:
   - Home: index.md
   - Schema: elements/index.md
-  - About: about.md
+  - Governance: governance.md
+  - How-To Guides:
+    - how-to-guides/agentic-ide-support.md
+    - how-to-guides/dynamic-valuesets-validation.md
+    - how-to-guides/sync-uniprot-species.md
+  - Slot Generation: slot-generation.md
   - Slides: slides/index.md
+  - About: about.md
 
 exclude_docs: |
   /templates-linkml/
+  /manuscript/
 
 site_url: https://linkml.github.io/valuesets
 repo_url: https://github.com/linkml/valuesets

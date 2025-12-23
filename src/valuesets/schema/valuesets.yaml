@@ -44,6 +44,10 @@ imports:
 - industry/extractive_industry
 - statistics/prediction_outcomes
 - social/person_status
+- social/sdoh
+- bio/specimen_processing
+- clinical/provenance
+- data/data_use
 - computing/mime_types
 - physics/states_of_matter
 - environmental_health/exposures

@@ -209,6 +209,26 @@
             "title": "AminoAcidExtendedEnum",
             "type": "string"
         },
+        "AnalyteTypeEnum": {
+            "description": "Types of analytes that can be extracted from biological specimens for molecular analysis.",
+            "enum": [
+                "DNA",
+                "RNA",
+                "TOTAL_RNA",
+                "FFPE_DNA",
+                "FFPE_RNA",
+                "cfDNA",
+                "PROTEIN",
+                "NUCLEI_RNA",
+                "REPLI_G_DNA",
+                "REPLI_G_X_DNA",
+                "REPLI_G_POOLED_DNA",
+                "GENOMEPLEX_DNA",
+                "EBV_IMMORTALIZED"
+            ],
+            "title": "AnalyteTypeEnum",
+            "type": "string"
+        },
         "AnalyticalControlType": {
             "description": "Types of control samples used in analytical chemistry",
             "enum": [
@@ -1706,6 +1726,28 @@
             "title": "ConcentrationUnitEnum",
             "type": "string"
         },
+        "ConditionProvenanceEnum": {
+            "description": "Sources of condition/diagnosis records indicating how the condition was documented or determined.",
+            "enum": [
+                "EHR_BILLING_DIAGNOSIS",
+                "EHR_CHIEF_COMPLAINT",
+                "EHR_ENCOUNTER_DIAGNOSIS",
+                "EHR_EPISODE_ENTRY",
+                "EHR_PROBLEM_LIST_ENTRY",
+                "FIRST_POSITION_CONDITION",
+                "NLP_DERIVED",
+                "OBSERVATION_RECORDED_FROM_EHR",
+                "PATIENT_SELF_REPORTED_CONDITION",
+                "PRIMARY_CONDITION",
+                "REFERRAL_RECORD",
+                "SECONDARY_CONDITION",
+                "TUMOR_REGISTRY",
+                "WORKING_DIAGNOSIS",
+                "CLINICAL_DIAGNOSIS"
+            ],
+            "title": "ConditionProvenanceEnum",
+            "type": "string"
+        },
         "ConfidenceLevelEnum": {
             "description": "Confidence levels for predictions and classifications",
             "enum": [
@@ -2419,6 +2461,31 @@
             "title": "DataType",
             "type": "string"
         },
+        "DataUseModifierEnum": {
+            "description": "Additional conditions and modifiers for data use from the GA4GH Data Use Ontology (DUO).",
+            "enum": [
+                "NPUNCU",
+                "NPO",
+                "NCU",
+                "IRB",
+                "NRES",
+                "NMDS",
+                "RS"
+            ],
+            "title": "DataUseModifierEnum",
+            "type": "string"
+        },
+        "DataUsePermissionEnum": {
+            "description": "Primary data use permissions from the GA4GH Data Use Ontology (DUO) indicating what research purposes data can be used for.",
+            "enum": [
+                "GRU",
+                "HMB",
+                "DS",
+                "NO_RESTRICTION"
+            ],
+            "title": "DataUsePermissionEnum",
+            "type": "string"
+        },
         "DatasetEncodingFormat": {
             "description": "Encoding formats (MIME types) commonly used for ML dataset files in Croissant.\nThese specify how data is serialized and stored.",
             "enum": [
@@ -2626,6 +2693,24 @@
             "title": "Drug",
             "type": "string"
         },
+        "DrugExposureProvenanceEnum": {
+            "description": "Sources of drug exposure records indicating how the medication information was documented.",
+            "enum": [
+                "RANDOMIZED_DRUG",
+                "PATIENT_SELF_REPORTED_MEDICATION",
+                "NLP_DERIVED",
+                "PRESCRIPTION_DISPENSED_IN_PHARMACY",
+                "PHYSICIAN_ADMINISTERED_DRUG_FROM_EHR_ORDER",
+                "DISPENSED_IN_OUTPATIENT_OFFICE",
+                "PRESCRIPTION_DISPENSED_THROUGH_MAIL_ORDER",
+                "PRESCRIPTION_WRITTEN",
+                "MEDICATION_LIST_ENTRY",
+                "PHYSICIAN_ADMINISTERED_DRUG_AS_PROCEDURE",
+                "INPATIENT_ADMINISTRATION"
+            ],
+            "title": "DrugExposureProvenanceEnum",
+            "type": "string"
+        },
         "DrugResponseEnum": {
             "description": "Response categories for drug treatment outcomes",
             "enum": [
@@ -2686,6 +2771,21 @@
                 "POSTG"
             ],
             "title": "EducationLevel",
+            "type": "string"
+        },
+        "EducationalAttainmentEnum": {
+            "description": "Levels of educational attainment for survey and demographic purposes. Based on standard US educational categories.",
+            "enum": [
+                "EIGHTH_GRADE_OR_LESS",
+                "HIGH_SCHOOL_NO_DIPLOMA",
+                "HIGH_SCHOOL_GRADUATE_GED",
+                "SOME_COLLEGE_NO_DEGREE",
+                "ASSOCIATE_DEGREE",
+                "BACHELORS_DEGREE",
+                "MASTERS_DEGREE",
+                "DOCTORAL_DEGREE"
+            ],
+            "title": "EducationalAttainmentEnum",
             "type": "string"
         },
         "ElectricalConductivityEnum": {
@@ -3874,6 +3974,33 @@
             "title": "GeothermalWellType",
             "type": "string"
         },
+        "GravitySdohDomainEnum": {
+            "description": "Social Determinants of Health domains as defined by the Gravity Project. These domains represent key areas of social need that impact health outcomes.",
+            "enum": [
+                "FOOD_INSECURITY",
+                "HOUSING_INSTABILITY",
+                "HOMELESSNESS",
+                "INADEQUATE_HOUSING",
+                "TRANSPORTATION_INSECURITY",
+                "FINANCIAL_INSECURITY",
+                "MATERIAL_HARDSHIP",
+                "EMPLOYMENT_STATUS",
+                "EDUCATIONAL_ATTAINMENT",
+                "VETERAN_STATUS",
+                "STRESS",
+                "SOCIAL_CONNECTION",
+                "INTIMATE_PARTNER_VIOLENCE",
+                "ELDER_ABUSE",
+                "HEALTH_LITERACY",
+                "MEDICAL_COST_BURDEN",
+                "HEALTH_INSURANCE_COVERAGE_STATUS",
+                "DIGITAL_LITERACY",
+                "DIGITAL_ACCESS",
+                "UTILITY_INSECURITY"
+            ],
+            "title": "GravitySdohDomainEnum",
+            "type": "string"
+        },
         "GridType": {
             "description": "Types of electrical grid systems",
             "enum": [
@@ -4028,6 +4155,17 @@
                 "DIGITAL_AGE"
             ],
             "title": "HistoricalPeriod",
+            "type": "string"
+        },
+        "HistoricalStatusEnum": {
+            "description": "Extended status values including historical presence of conditions or observations.",
+            "enum": [
+                "PRESENT",
+                "ABSENT",
+                "UNKNOWN",
+                "HISTORICAL"
+            ],
+            "title": "HistoricalStatusEnum",
             "type": "string"
         },
         "HousingStatus": {
@@ -8072,6 +8210,15 @@
             "title": "ResearchField",
             "type": "string"
         },
+        "ResearchProjectTypeEnum": {
+            "description": "Types of research projects and studies",
+            "enum": [
+                "CONSORTIUM",
+                "STUDY"
+            ],
+            "title": "ResearchProjectTypeEnum",
+            "type": "string"
+        },
         "ResearchReactorTypeEnum": {
             "description": "Types of research reactors",
             "enum": [
@@ -8227,6 +8374,16 @@
                 "WINTER"
             ],
             "title": "Season",
+            "type": "string"
+        },
+        "SectionLocationEnum": {
+            "description": "Location in a parent specimen from which a section was excised",
+            "enum": [
+                "TOP",
+                "BOTTOM",
+                "UNKNOWN"
+            ],
+            "title": "SectionLocationEnum",
             "type": "string"
         },
         "SensorWhileDrillingFeature": {
@@ -8528,6 +8685,36 @@
             "title": "SolventClassEnum",
             "type": "string"
         },
+        "SourceMaterialTypeEnum": {
+            "description": "Types of source materials from which specimens are derived, particularly relevant for cancer and tissue banking research.",
+            "enum": [
+                "PRIMARY_TUMOR",
+                "METASTATIC",
+                "RECURRENT_TUMOR",
+                "BLOOD_DERIVED_NORMAL",
+                "BLOOD_DERIVED_CANCER_PERIPHERAL_BLOOD",
+                "BLOOD_DERIVED_CANCER_BONE_MARROW",
+                "BONE_MARROW_NORMAL",
+                "SOLID_TISSUE_NORMAL",
+                "BUCCAL_CELL_NORMAL",
+                "NORMAL_ADJACENT_TISSUE",
+                "CELL_LINES",
+                "PRIMARY_XENOGRAFT_TISSUE",
+                "XENOGRAFT_TISSUE",
+                "NEXT_GENERATION_CANCER_MODEL",
+                "PLEURAL_EFFUSION",
+                "SALIVA",
+                "GRANULOCYTES",
+                "EBV_IMMORTALIZED_NORMAL",
+                "CONTROL_ANALYTE",
+                "FFPE_SCROLLS",
+                "FFPE_RECURRENT",
+                "NOT_REPORTED",
+                "UNKNOWN"
+            ],
+            "title": "SourceMaterialTypeEnum",
+            "type": "string"
+        },
         "SourcingStrategyEnum": {
             "description": "Sourcing strategy approaches",
             "enum": [
@@ -8573,6 +8760,119 @@
                 "BETWEEN"
             ],
             "title": "SpatialRelationship",
+            "type": "string"
+        },
+        "SpecimenCollectionMethodEnum": {
+            "description": "Methods for collecting biological specimens",
+            "enum": [
+                "BIOPSY",
+                "SURGICAL_RESECTION",
+                "AUTOPSY",
+                "FINE_NEEDLE_ASPIRATE",
+                "CORE_NEEDLE_BIOPSY",
+                "PUNCH_BIOPSY",
+                "SWAB",
+                "VENIPUNCTURE",
+                "LUMBAR_PUNCTURE",
+                "LAVAGE"
+            ],
+            "title": "SpecimenCollectionMethodEnum",
+            "type": "string"
+        },
+        "SpecimenCreationActivityTypeEnum": {
+            "description": "High-level types of activities through which specimens are generated, either by collection from source or derivation from existing specimens.",
+            "enum": [
+                "COLLECTION_FROM_SOURCE",
+                "DERIVATION_FROM_SPECIMEN"
+            ],
+            "title": "SpecimenCreationActivityTypeEnum",
+            "type": "string"
+        },
+        "SpecimenPreparationMethodEnum": {
+            "description": "Methods for preparing and preserving biological specimens for analysis. Sourced from NF-OSI metadata dictionary and Human Cell Atlas standards.",
+            "enum": [
+                "FFPE",
+                "FORMALIN_FIXED",
+                "CRYOPRESERVED",
+                "VIABLY_FROZEN",
+                "FLASH_FROZEN",
+                "FRESH_COLLECTED",
+                "OCT_EMBEDDED",
+                "RNALATER",
+                "ETHANOL_PRESERVED",
+                "METHANOL_FIXED",
+                "ACETONE_FIXED",
+                "PAXgene_FIXED",
+                "DRIED",
+                "LYOPHILIZED"
+            ],
+            "title": "SpecimenPreparationMethodEnum",
+            "type": "string"
+        },
+        "SpecimenProcessingActivityTypeEnum": {
+            "description": "High-level types of specimen processing activities",
+            "enum": [
+                "FIXATION",
+                "FREEZING",
+                "MOUNTING",
+                "PRESERVATION"
+            ],
+            "title": "SpecimenProcessingActivityTypeEnum",
+            "type": "string"
+        },
+        "SpecimenQualityObservationMethodEnum": {
+            "description": "Methods used for determining specimen quality",
+            "enum": [
+                "UV_SPEC",
+                "PICO_GREEN"
+            ],
+            "title": "SpecimenQualityObservationMethodEnum",
+            "type": "string"
+        },
+        "SpecimenQualityObservationTypeEnum": {
+            "description": "Types of measurements that reflect specimen quality or suitability for use",
+            "enum": [
+                "A260_A280_RATIO",
+                "RIBOSOMAL_RNA_28S_16S_RATIO"
+            ],
+            "title": "SpecimenQualityObservationTypeEnum",
+            "type": "string"
+        },
+        "SpecimenQuantityObservationTypeEnum": {
+            "description": "Types of quantity measurements for specimens",
+            "enum": [
+                "WEIGHT",
+                "VOLUME",
+                "CONCENTRATION"
+            ],
+            "title": "SpecimenQuantityObservationTypeEnum",
+            "type": "string"
+        },
+        "SpecimenTypeEnum": {
+            "description": "Types of biological specimens used in research",
+            "enum": [
+                "TISSUE",
+                "BLOOD",
+                "PLASMA",
+                "SERUM",
+                "BUFFY_COAT",
+                "URINE",
+                "SALIVA",
+                "STOOL",
+                "CSF",
+                "SWEAT",
+                "MUCUS",
+                "BONE_MARROW",
+                "PRIMARY_TUMOR",
+                "METASTATIC_TUMOR",
+                "TUMOR_ADJACENT_NORMAL",
+                "ORGANOID",
+                "SPHEROID",
+                "MICROTISSUE",
+                "PDX_TISSUE",
+                "CDX_TISSUE"
+            ],
+            "title": "SpecimenTypeEnum",
             "type": "string"
         },
         "SpectroscopyMethodEnum": {
@@ -8659,6 +8959,16 @@
                 "QUARK_GLUON_PLASMA"
             ],
             "title": "StateOfMatterEnum",
+            "type": "string"
+        },
+        "StatusEnum": {
+            "description": "Values indicating whether a condition or observation is present, absent, or of unknown status.",
+            "enum": [
+                "PRESENT",
+                "ABSENT",
+                "UNKNOWN"
+            ],
+            "title": "StatusEnum",
             "type": "string"
         },
         "StemCell": {
@@ -9077,6 +9387,17 @@
                 "NZDT"
             ],
             "title": "TimeZoneEnum",
+            "type": "string"
+        },
+        "TissuePreservationEnum": {
+            "description": "Broader categorization of tissue preservation approaches",
+            "enum": [
+                "FROZEN",
+                "FIXED",
+                "FRESH",
+                "EMBEDDED"
+            ],
+            "title": "TissuePreservationEnum",
             "type": "string"
         },
         "ToxicityClassificationEnum": {
@@ -9796,6 +10117,33 @@
                 "UNCHARACTERIZED"
             ],
             "title": "ViralGenomeTypeEnum",
+            "type": "string"
+        },
+        "VisitProvenanceEnum": {
+            "description": "Sources of healthcare visit/encounter records indicating the origin of the visit documentation.",
+            "enum": [
+                "CASE_REPORT_FORM",
+                "CLAIM",
+                "EHR",
+                "EHR_ENCOUNTER_RECORD",
+                "EHR_ADMISSION_NOTE",
+                "EHR_DISCHARGE_RECORD",
+                "EHR_EMERGENCY_ROOM_NOTE",
+                "EHR_INPATIENT_NOTE",
+                "EHR_OUTPATIENT_NOTE",
+                "INPATIENT_CLAIM",
+                "OUTPATIENT_CLAIM",
+                "FACILITY_CLAIM",
+                "PROFESSIONAL_CLAIM",
+                "PHARMACY_CLAIM",
+                "LAB",
+                "REGISTRY",
+                "SURVEY",
+                "PATIENT_SELF_REPORT",
+                "NLP",
+                "HEALTH_INFORMATION_EXCHANGE_RECORD"
+            ],
+            "title": "VisitProvenanceEnum",
             "type": "string"
         },
         "VitalSignEnum": {
