@@ -4,6 +4,7 @@
 [![LinkML](https://img.shields.io/badge/LinkML-1.9+-orange.svg)](https://linkml.io/)
 [![Documentation](https://img.shields.io/badge/docs-linkml.io-green.svg)](https://linkml.io/valuesets/)
 [![OWL/RDF](https://img.shields.io/badge/OWL-RDF-purple.svg)](https://w3id.org/valuesets/valuesets.owl.ttl)
+[![BioPortal](https://img.shields.io/badge/BioPortal-VALUESETS-blue.svg)](https://bioportal.bioontology.org/ontologies/VALUESETS)
 
 A comprehensive collection of standardized enumerations and value sets for data science, bioinformatics, materials science, and beyond.
 
