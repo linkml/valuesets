@@ -11,6 +11,10 @@
         <link rel="canonical" href="https://linkml.github.io/valuesets/how-to-guides/agentic-ide-support/">
       
       
+        <link rel="prev" href="../../governance/">
+      
+      
+        <link rel="next" href="../dynamic-valuesets-validation/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -266,12 +270,483 @@
   
   
     <li class="md-nav__item">
-      <a href="../../about/" class="md-nav__link">
+      <a href="../../governance/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    About
+    Governance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    How-To Guides
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            How-To Guides
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Using Common Value Sets with Agentic IDE Support via Context7 MCP
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Using Common Value Sets with Agentic IDE Support via Context7 MCP
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-agentic-ide-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      🤖 What is Agentic IDE Support?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛠️ Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      📦 Installation &amp; Setup
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📦 Installation &amp; Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-install-context7-mcp-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Install Context7 MCP Server
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Install Context7 MCP Server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#option-a-using-smithery-cli-recommended-for-claude-desktop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Option A: Using Smithery CLI (Recommended for Claude Desktop)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-b-manual-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Option B: Manual Configuration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-install-common-value-sets" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Install Common Value Sets
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 Usage Patterns
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 Usage Patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-pattern-context-aware-code-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Pattern: Context-Aware Code Generation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-pattern-domain-specific-workflows" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Pattern: Domain-Specific Workflows
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practical-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Practical Examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎯 Practical Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1-data-science-classification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example 1: Data Science Classification
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2-bioinformatics-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example 2: Bioinformatics Integration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-agentic-workflows" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎪 Advanced Agentic Workflows
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎪 Advanced Agentic Workflows">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#multi-step-data-harmonization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multi-Step Data Harmonization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#semantic-query-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Semantic Query Generation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔧 Configuration Tips
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔧 Configuration Tips">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#optimize-context7-for-valuesets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optimize Context7 for ValueSets
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ide-specific-optimizations" class="md-nav__link">
+    <span class="md-ellipsis">
+      IDE-Specific Optimizations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IDE-Specific Optimizations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#for-cursor" class="md-nav__link">
+    <span class="md-ellipsis">
+      For Cursor:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-claude-desktop" class="md-nav__link">
+    <span class="md-ellipsis">
+      For Claude Desktop:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-vs-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      For VS Code:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔍 Troubleshooting
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔍 Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Issues
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Performance Optimization
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      🌟 Best Practices
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 Next Steps
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dynamic-valuesets-validation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dynamic Value Sets and Validation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sync-uniprot-species/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    How to Sync UniProt Species Data
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slot-generation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Slot Generation
     
   </span>
   
@@ -294,6 +769,28 @@
   
   <span class="md-ellipsis">
     Slides
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    About
     
   </span>
   

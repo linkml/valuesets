@@ -46,6 +46,10 @@ imports:
 - industry/extractive_industry
 - statistics/prediction_outcomes
 - social/person_status
+- social/sdoh
+- bio/specimen_processing
+- clinical/provenance
+- data/data_use
 - computing/mime_types
 - physics/states_of_matter
 - environmental_health/exposures
@@ -20014,6 +20018,1303 @@ enums:
         description: The vital status is not known
         meaning: NCIT:C17998
         title: Unknown
+  GravitySdohDomainEnum:
+    name: GravitySdohDomainEnum
+    definition_uri: https://w3id.org/valuesets/GravitySdohDomainEnum
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Social Determinants of Health domains as defined by the Gravity Project.
+      These domains represent key areas of social need that impact health outcomes.
+    title: Gravity Project SDOH Domains
+    from_schema: https://w3id.org/valuesets/social/sdoh
+    see_also:
+    - https://thegravityproject.net/
+    - https://hl7.org/fhir/us/sdoh-clinicalcare/
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      FOOD_INSECURITY:
+        text: FOOD_INSECURITY
+        description: Limited or uncertain availability of nutritionally adequate and
+          safe foods
+        meaning: NCIT:C171542
+        aliases:
+        - Food Insecurity
+      HOUSING_INSTABILITY:
+        text: HOUSING_INSTABILITY
+        description: Challenges with housing including trouble paying rent or frequent
+          moves
+        meaning: SNOMED:1156191002
+        aliases:
+        - Housing instability
+      HOMELESSNESS:
+        text: HOMELESSNESS
+        description: The condition of lacking stable, safe, and adequate housing
+        meaning: SNOMED:32911000
+        aliases:
+        - Homeless
+      INADEQUATE_HOUSING:
+        text: INADEQUATE_HOUSING
+        description: Housing that does not meet basic standards for safety and habitability
+        meaning: SNOMED:105531004
+        aliases:
+        - Unsatisfactory housing conditions
+      TRANSPORTATION_INSECURITY:
+        text: TRANSPORTATION_INSECURITY
+        description: Lack of reliable, safe, and affordable transportation
+      FINANCIAL_INSECURITY:
+        text: FINANCIAL_INSECURITY
+        description: Inability to meet basic financial needs and obligations
+      MATERIAL_HARDSHIP:
+        text: MATERIAL_HARDSHIP
+        description: Difficulty affording basic necessities such as food, housing,
+          and utilities
+      EMPLOYMENT_STATUS:
+        text: EMPLOYMENT_STATUS
+        description: Current employment situation and stability
+        meaning: NCIT:C179143
+        aliases:
+        - Employment Status
+      EDUCATIONAL_ATTAINMENT:
+        text: EDUCATIONAL_ATTAINMENT
+        description: Highest level of education completed
+        meaning: EFO:0011015
+        aliases:
+        - educational attainment
+      VETERAN_STATUS:
+        text: VETERAN_STATUS
+        description: Military veteran status and related needs
+      STRESS:
+        text: STRESS
+        description: Psychological stress affecting health and wellbeing
+        meaning: NCIT:C35041
+        aliases:
+        - Stress
+      SOCIAL_CONNECTION:
+        text: SOCIAL_CONNECTION
+        description: Quality and quantity of social relationships and support networks
+      INTIMATE_PARTNER_VIOLENCE:
+        text: INTIMATE_PARTNER_VIOLENCE
+        description: Abuse occurring between people in a close relationship
+        meaning: MESH:D000066511
+        aliases:
+        - IPV
+        - domestic violence
+        - Intimate Partner Violence
+      ELDER_ABUSE:
+        text: ELDER_ABUSE
+        description: Abuse, neglect, or exploitation of older adults
+        meaning: MESH:D004552
+        aliases:
+        - Elder Abuse
+      HEALTH_LITERACY:
+        text: HEALTH_LITERACY
+        description: Ability to obtain, process, and understand health information
+        meaning: MESH:D057220
+        aliases:
+        - Health Literacy
+      MEDICAL_COST_BURDEN:
+        text: MEDICAL_COST_BURDEN
+        description: Financial strain from healthcare costs
+      HEALTH_INSURANCE_COVERAGE_STATUS:
+        text: HEALTH_INSURANCE_COVERAGE_STATUS
+        description: Status of health insurance coverage
+        meaning: NCIT:C157356
+        aliases:
+        - Health Insurance
+      DIGITAL_LITERACY:
+        text: DIGITAL_LITERACY
+        description: Ability to use digital technology and access digital resources
+      DIGITAL_ACCESS:
+        text: DIGITAL_ACCESS
+        description: Access to internet and digital devices
+      UTILITY_INSECURITY:
+        text: UTILITY_INSECURITY
+        description: Difficulty paying for utilities such as electricity, gas, or
+          water
+  EducationalAttainmentEnum:
+    name: EducationalAttainmentEnum
+    definition_uri: https://w3id.org/valuesets/EducationalAttainmentEnum
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Levels of educational attainment for survey and demographic purposes.
+      Based on standard US educational categories.
+    title: Educational Attainment Levels
+    from_schema: https://w3id.org/valuesets/social/sdoh
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      EIGHTH_GRADE_OR_LESS:
+        text: EIGHTH_GRADE_OR_LESS
+        description: Completed 8th grade or less
+        aliases:
+        - 8TH_GRADE_OR_LESS
+        - elementary
+      HIGH_SCHOOL_NO_DIPLOMA:
+        text: HIGH_SCHOOL_NO_DIPLOMA
+        description: Some high school but no diploma
+        meaning: NCIT:C76123
+        aliases:
+        - some high school
+        - Not High School Graduate
+      HIGH_SCHOOL_GRADUATE_GED:
+        text: HIGH_SCHOOL_GRADUATE_GED
+        description: High school graduate or GED equivalent
+        meaning: NCIT:C67136
+        aliases:
+        - high school diploma
+        - GED
+        - High School Completion
+      SOME_COLLEGE_NO_DEGREE:
+        text: SOME_COLLEGE_NO_DEGREE
+        description: Some college or technical school but no degree
+        aliases:
+        - SOME_COLLEGE_OR_TECH_NO_DEGREE
+      ASSOCIATE_DEGREE:
+        text: ASSOCIATE_DEGREE
+        description: Associate degree (2-year college)
+        meaning: NCIT:C71344
+        aliases:
+        - Associate of Science
+      BACHELORS_DEGREE:
+        text: BACHELORS_DEGREE
+        description: Bachelor's degree (4-year college)
+        meaning: NCIT:C71345
+        aliases:
+        - COLLEGE_OR_TECH_WITH_DEGREE
+        - Bachelor of Arts
+      MASTERS_DEGREE:
+        text: MASTERS_DEGREE
+        description: Master's degree
+        meaning: NCIT:C39452
+        aliases:
+        - Master of Science
+      DOCTORAL_DEGREE:
+        text: DOCTORAL_DEGREE
+        description: Doctoral or professional degree (PhD, MD, JD, etc.)
+        meaning: NCIT:C39387
+        aliases:
+        - MASTERS_OR_DOCTORAL_DEGREE
+        - Doctor of Philosophy
+  SpecimenPreparationMethodEnum:
+    name: SpecimenPreparationMethodEnum
+    definition_uri: https://w3id.org/valuesets/SpecimenPreparationMethodEnum
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Methods for preparing and preserving biological specimens for analysis.
+      Sourced from NF-OSI metadata dictionary and Human Cell Atlas standards.
+    title: Specimen Preparation Methods
+    from_schema: https://w3id.org/valuesets/bio/specimen_processing
+    see_also:
+    - https://nf-osi.github.io/nf-metadata-dictionary/
+    - https://data.humancellatlas.org/
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      FFPE:
+        text: FFPE
+        description: Formalin-fixed, paraffin-embedded tissue preservation
+        meaning: NCIT:C143028
+        annotations:
+          fixative:
+            tag: fixative
+            value: formalin
+          embedding:
+            tag: embedding
+            value: paraffin
+        aliases:
+        - Formalin-fixed paraffin-embedded
+        - formalin-fixed, paraffin-embedded
+        - FFPE Tissue Block
+      FORMALIN_FIXED:
+        text: FORMALIN_FIXED
+        description: Tissue fixed with formalin without paraffin embedding
+        annotations:
+          fixative:
+            tag: fixative
+            value: formalin
+        aliases:
+        - formalin-fixed
+      CRYOPRESERVED:
+        text: CRYOPRESERVED
+        description: Specimen preserved by freezing with cryoprotectant
+        meaning: NCIT:C16475
+        annotations:
+          temperature:
+            tag: temperature
+            value: ultra-low
+        aliases:
+        - Cryopreserved
+        - Cryopreservation
+      VIABLY_FROZEN:
+        text: VIABLY_FROZEN
+        description: Specimen frozen while maintaining cell viability
+        annotations:
+          viability:
+            tag: viability
+            value: preserved
+        aliases:
+        - Viably frozen
+      FLASH_FROZEN:
+        text: FLASH_FROZEN
+        description: Rapid freezing to preserve molecular integrity
+        annotations:
+          method:
+            tag: method
+            value: rapid freezing
+        aliases:
+        - Flash frozen
+        - snap frozen
+      FRESH_COLLECTED:
+        text: FRESH_COLLECTED
+        description: Freshly collected specimen without preservation
+        annotations:
+          preservation:
+            tag: preservation
+            value: none
+        aliases:
+        - Fresh collected
+        - fresh
+      OCT_EMBEDDED:
+        text: OCT_EMBEDDED
+        description: Tissue embedded in optimal cutting temperature compound
+        annotations:
+          embedding:
+            tag: embedding
+            value: OCT compound
+          purpose:
+            tag: purpose
+            value: cryosectioning
+        aliases:
+        - OCT
+        - OCT embedded
+      RNALATER:
+        text: RNALATER
+        description: Storage in reagent that stabilizes and protects cellular RNA
+        annotations:
+          purpose:
+            tag: purpose
+            value: RNA stabilization
+          manufacturer:
+            tag: manufacturer
+            value: Thermo Fisher
+        aliases:
+        - RNAlater
+      ETHANOL_PRESERVED:
+        text: ETHANOL_PRESERVED
+        description: Specimen preserved in ethanol
+        annotations:
+          preservative:
+            tag: preservative
+            value: ethanol
+        aliases:
+        - ethanol
+      METHANOL_FIXED:
+        text: METHANOL_FIXED
+        description: Specimen fixed with methanol
+        annotations:
+          fixative:
+            tag: fixative
+            value: methanol
+        aliases:
+        - methanol
+      ACETONE_FIXED:
+        text: ACETONE_FIXED
+        description: Specimen fixed with acetone
+        annotations:
+          fixative:
+            tag: fixative
+            value: acetone
+      PAXgene_FIXED:
+        text: PAXgene_FIXED
+        description: Tissue fixed using PAXgene tissue system
+        annotations:
+          purpose:
+            tag: purpose
+            value: RNA and DNA preservation
+      DRIED:
+        text: DRIED
+        description: Air-dried or desiccated specimen
+        aliases:
+        - air-dried
+      LYOPHILIZED:
+        text: LYOPHILIZED
+        description: Freeze-dried specimen
+        meaning: NCIT:C28150
+        aliases:
+        - freeze-dried
+        - lyophilization
+        - Freeze-Drying
+  TissuePreservationEnum:
+    name: TissuePreservationEnum
+    definition_uri: https://w3id.org/valuesets/TissuePreservationEnum
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Broader categorization of tissue preservation approaches
+    title: Tissue Preservation Methods
+    from_schema: https://w3id.org/valuesets/bio/specimen_processing
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      FROZEN:
+        text: FROZEN
+        description: Tissue preserved by freezing
+        meaning: NCIT:C70717
+        aliases:
+        - Frozen Specimen
+      FIXED:
+        text: FIXED
+        description: Tissue preserved by chemical fixation
+        meaning: NCIT:C25219
+        aliases:
+        - Fixation
+      FRESH:
+        text: FRESH
+        description: Fresh unfixed tissue
+      EMBEDDED:
+        text: EMBEDDED
+        description: Tissue embedded in medium (paraffin, OCT, etc.)
+  SpecimenCollectionMethodEnum:
+    name: SpecimenCollectionMethodEnum
+    definition_uri: https://w3id.org/valuesets/SpecimenCollectionMethodEnum
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Methods for collecting biological specimens
+    title: Specimen Collection Methods
+    from_schema: https://w3id.org/valuesets/bio/specimen_processing
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      BIOPSY:
+        text: BIOPSY
+        description: Tissue sample obtained by biopsy
+        meaning: NCIT:C15189
+        aliases:
+        - Biopsy Procedure
+      SURGICAL_RESECTION:
+        text: SURGICAL_RESECTION
+        description: Tissue obtained during surgical resection
+        meaning: NCIT:C15329
+        aliases:
+        - Surgical Procedure
+      AUTOPSY:
+        text: AUTOPSY
+        description: Specimen obtained at autopsy
+        meaning: NCIT:C25153
+        aliases:
+        - Autopsy
+      FINE_NEEDLE_ASPIRATE:
+        text: FINE_NEEDLE_ASPIRATE
+        description: Sample obtained by fine needle aspiration
+        meaning: NCIT:C15361
+        aliases:
+        - FNA
+        - Fine-Needle Aspiration
+      CORE_NEEDLE_BIOPSY:
+        text: CORE_NEEDLE_BIOPSY
+        description: Sample obtained by core needle biopsy
+        meaning: NCIT:C15190
+        aliases:
+        - Needle Biopsy
+      PUNCH_BIOPSY:
+        text: PUNCH_BIOPSY
+        description: Sample obtained by punch biopsy
+      SWAB:
+        text: SWAB
+        description: Sample collected by swabbing
+      VENIPUNCTURE:
+        text: VENIPUNCTURE
+        description: Blood sample obtained by venipuncture
+        meaning: NCIT:C28221
+        aliases:
+        - Phlebotomy
+      LUMBAR_PUNCTURE:
+        text: LUMBAR_PUNCTURE
+        description: CSF sample obtained by lumbar puncture
+        meaning: NCIT:C15327
+        aliases:
+        - spinal tap
+        - Lumbar Puncture
+      LAVAGE:
+        text: LAVAGE
+        description: Sample obtained by lavage (washing)
+  SpecimenTypeEnum:
+    name: SpecimenTypeEnum
+    definition_uri: https://w3id.org/valuesets/SpecimenTypeEnum
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Types of biological specimens used in research
+    title: Biological Specimen Types
+    from_schema: https://w3id.org/valuesets/bio/specimen_processing
+    see_also:
+    - https://nf-osi.github.io/nf-metadata-dictionary/
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      TISSUE:
+        text: TISSUE
+        description: Solid tissue specimen
+        meaning: NCIT:C12801
+        aliases:
+        - Tissue
+      BLOOD:
+        text: BLOOD
+        description: Whole blood specimen
+        meaning: NCIT:C12434
+        aliases:
+        - Blood
+      PLASMA:
+        text: PLASMA
+        description: Blood plasma specimen
+        meaning: NCIT:C13356
+        aliases:
+        - Plasma
+      SERUM:
+        text: SERUM
+        description: Blood serum specimen
+        meaning: NCIT:C13325
+        aliases:
+        - Serum
+      BUFFY_COAT:
+        text: BUFFY_COAT
+        description: Leukocyte-enriched blood fraction
+        meaning: NCIT:C84507
+        aliases:
+        - Buffy Coat
+      URINE:
+        text: URINE
+        description: Urine specimen
+        meaning: NCIT:C13283
+        aliases:
+        - Urine
+      SALIVA:
+        text: SALIVA
+        description: Saliva specimen
+        meaning: NCIT:C13275
+        aliases:
+        - Saliva
+      STOOL:
+        text: STOOL
+        description: Stool/fecal specimen
+        meaning: NCIT:C13234
+        aliases:
+        - Feces
+        - fecal
+      CSF:
+        text: CSF
+        description: Cerebrospinal fluid specimen
+        meaning: NCIT:C12692
+        aliases:
+        - cerebrospinal fluid
+        - Cerebrospinal Fluid
+      SWEAT:
+        text: SWEAT
+        description: Sweat specimen
+      MUCUS:
+        text: MUCUS
+        description: Mucus specimen
+      BONE_MARROW:
+        text: BONE_MARROW
+        description: Bone marrow specimen
+        meaning: NCIT:C12431
+        aliases:
+        - Bone Marrow
+      PRIMARY_TUMOR:
+        text: PRIMARY_TUMOR
+        description: Primary tumor tissue specimen
+        meaning: NCIT:C8509
+        aliases:
+        - Primary Neoplasm
+      METASTATIC_TUMOR:
+        text: METASTATIC_TUMOR
+        description: Metastatic tumor tissue specimen
+        meaning: NCIT:C3261
+        aliases:
+        - Metastatic Neoplasm
+      TUMOR_ADJACENT_NORMAL:
+        text: TUMOR_ADJACENT_NORMAL
+        description: Normal tissue adjacent to tumor
+        meaning: NCIT:C164032
+        aliases:
+        - Tumor-Adjacent Normal Specimen
+      ORGANOID:
+        text: ORGANOID
+        description: Organoid specimen
+        meaning: NCIT:C172259
+        aliases:
+        - Organoid
+      SPHEROID:
+        text: SPHEROID
+        description: Cell spheroid specimen
+      MICROTISSUE:
+        text: MICROTISSUE
+        description: Engineered microtissue specimen
+      PDX_TISSUE:
+        text: PDX_TISSUE
+        description: Patient-derived xenograft tissue
+        meaning: NCIT:C122936
+        aliases:
+        - PDX tissue
+        - Patient Derived Xenograft
+      CDX_TISSUE:
+        text: CDX_TISSUE
+        description: Cell line-derived xenograft tissue
+        aliases:
+        - CDX tissue
+  AnalyteTypeEnum:
+    name: AnalyteTypeEnum
+    definition_uri: https://w3id.org/valuesets/AnalyteTypeEnum
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Types of analytes that can be extracted from biological specimens
+      for molecular analysis.
+    title: Analyte Types
+    from_schema: https://w3id.org/valuesets/bio/specimen_processing
+    see_also:
+    - https://github.com/RTIInternational/NHLBI-BDC-DMC-HM
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      DNA:
+        text: DNA
+        description: Deoxyribonucleic acid
+        meaning: NCIT:C198567
+        aliases:
+        - DNA Specimen
+      RNA:
+        text: RNA
+        description: Ribonucleic acid
+        meaning: NCIT:C198568
+        aliases:
+        - RNA Specimen
+      TOTAL_RNA:
+        text: TOTAL_RNA
+        description: Total RNA including all RNA species
+      FFPE_DNA:
+        text: FFPE_DNA
+        description: DNA extracted from formalin-fixed paraffin-embedded tissue
+        aliases:
+        - Formalin-Fixed Paraffin-Embedded DNA
+      FFPE_RNA:
+        text: FFPE_RNA
+        description: RNA extracted from formalin-fixed paraffin-embedded tissue
+        aliases:
+        - Formalin-Fixed Paraffin-Embedded RNA
+      cfDNA:
+        text: cfDNA
+        description: Cell-free DNA found in blood plasma
+        meaning: NCIT:C128274
+        aliases:
+        - Circulating Cell-Free DNA
+        - cell-free DNA
+      PROTEIN:
+        text: PROTEIN
+        description: Protein analyte
+        meaning: NCIT:C17021
+        aliases:
+        - Protein
+      NUCLEI_RNA:
+        text: NUCLEI_RNA
+        description: RNA isolated from cell nuclei
+      REPLI_G_DNA:
+        text: REPLI_G_DNA
+        description: Whole genome amplified DNA using Repli-G technology
+        aliases:
+        - Repli-G (Qiagen) DNA
+      REPLI_G_X_DNA:
+        text: REPLI_G_X_DNA
+        description: Whole genome amplified DNA using Repli-G X technology
+        aliases:
+        - Repli-G X (Qiagen) DNA
+      REPLI_G_POOLED_DNA:
+        text: REPLI_G_POOLED_DNA
+        description: Pooled whole genome amplified DNA using Repli-G
+        aliases:
+        - Repli-G Pooled (Qiagen) DNA
+      GENOMEPLEX_DNA:
+        text: GENOMEPLEX_DNA
+        description: Whole genome amplified DNA using GenomePlex technology
+        aliases:
+        - GenomePlex (Rubicon) Amplified DNA
+      EBV_IMMORTALIZED:
+        text: EBV_IMMORTALIZED
+        description: DNA/cells from EBV immortalized cell lines
+        aliases:
+        - EBV Immortalized Normal
+  SourceMaterialTypeEnum:
+    name: SourceMaterialTypeEnum
+    definition_uri: https://w3id.org/valuesets/SourceMaterialTypeEnum
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Types of source materials from which specimens are derived, particularly
+      relevant for cancer and tissue banking research.
+    title: Source Material Types
+    from_schema: https://w3id.org/valuesets/bio/specimen_processing
+    see_also:
+    - https://github.com/RTIInternational/NHLBI-BDC-DMC-HM
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      PRIMARY_TUMOR:
+        text: PRIMARY_TUMOR
+        description: Primary tumor tissue
+        meaning: NCIT:C8509
+        aliases:
+        - Primary Neoplasm
+      METASTATIC:
+        text: METASTATIC
+        description: Metastatic tumor tissue
+        meaning: NCIT:C3261
+        aliases:
+        - Metastatic Neoplasm
+      RECURRENT_TUMOR:
+        text: RECURRENT_TUMOR
+        description: Recurrent tumor tissue
+        meaning: NCIT:C4798
+        aliases:
+        - Recurrent Neoplasm
+      BLOOD_DERIVED_NORMAL:
+        text: BLOOD_DERIVED_NORMAL
+        description: Normal cells derived from blood
+      BLOOD_DERIVED_CANCER_PERIPHERAL_BLOOD:
+        text: BLOOD_DERIVED_CANCER_PERIPHERAL_BLOOD
+        description: Cancer cells from peripheral blood
+      BLOOD_DERIVED_CANCER_BONE_MARROW:
+        text: BLOOD_DERIVED_CANCER_BONE_MARROW
+        description: Cancer cells from bone marrow
+      BONE_MARROW_NORMAL:
+        text: BONE_MARROW_NORMAL
+        description: Normal bone marrow cells
+      SOLID_TISSUE_NORMAL:
+        text: SOLID_TISSUE_NORMAL
+        description: Normal solid tissue
+      BUCCAL_CELL_NORMAL:
+        text: BUCCAL_CELL_NORMAL
+        description: Normal buccal (cheek) cells
+      NORMAL_ADJACENT_TISSUE:
+        text: NORMAL_ADJACENT_TISSUE
+        description: Normal tissue adjacent to tumor
+        meaning: NCIT:C164032
+        aliases:
+        - Tumor-Adjacent Normal Specimen
+      CELL_LINES:
+        text: CELL_LINES
+        description: Established cell lines
+        meaning: NCIT:C16403
+        aliases:
+        - Cell Line
+      PRIMARY_XENOGRAFT_TISSUE:
+        text: PRIMARY_XENOGRAFT_TISSUE
+        description: Tissue from primary xenograft
+      XENOGRAFT_TISSUE:
+        text: XENOGRAFT_TISSUE
+        description: Tissue derived from xenograft models
+      NEXT_GENERATION_CANCER_MODEL:
+        text: NEXT_GENERATION_CANCER_MODEL
+        description: Tissue from next-generation cancer models
+      PLEURAL_EFFUSION:
+        text: PLEURAL_EFFUSION
+        description: Fluid from pleural effusion
+        meaning: NCIT:C3331
+        aliases:
+        - Pleural Effusion
+      SALIVA:
+        text: SALIVA
+        description: Saliva specimen
+        meaning: NCIT:C13275
+        aliases:
+        - Saliva
+      GRANULOCYTES:
+        text: GRANULOCYTES
+        description: Granulocyte cells
+        meaning: NCIT:C12530
+        aliases:
+        - Granulocyte
+      EBV_IMMORTALIZED_NORMAL:
+        text: EBV_IMMORTALIZED_NORMAL
+        description: EBV immortalized normal cells
+      CONTROL_ANALYTE:
+        text: CONTROL_ANALYTE
+        description: Control analyte material
+      FFPE_SCROLLS:
+        text: FFPE_SCROLLS
+        description: FFPE tissue scrolls
+      FFPE_RECURRENT:
+        text: FFPE_RECURRENT
+        description: FFPE tissue from recurrent tumor
+      NOT_REPORTED:
+        text: NOT_REPORTED
+        description: Source material type not reported
+      UNKNOWN:
+        text: UNKNOWN
+        description: Unknown source material type
+        meaning: NCIT:C17998
+        aliases:
+        - Unknown
+  SpecimenCreationActivityTypeEnum:
+    name: SpecimenCreationActivityTypeEnum
+    definition_uri: https://w3id.org/valuesets/SpecimenCreationActivityTypeEnum
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: High-level types of activities through which specimens are generated,
+      either by collection from source or derivation from existing specimens.
+    title: Specimen Creation Activity Types
+    from_schema: https://w3id.org/valuesets/bio/specimen_processing
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      COLLECTION_FROM_SOURCE:
+        text: COLLECTION_FROM_SOURCE
+        description: Activity that collects an initial sample directly from a subject
+          or source
+        meaning: OBI:0000659
+        aliases:
+        - specimen collection process
+      DERIVATION_FROM_SPECIMEN:
+        text: DERIVATION_FROM_SPECIMEN
+        description: Activity that derives a new specimen from an existing one
+        meaning: OBI:0000094
+        aliases:
+        - material processing
+  SpecimenProcessingActivityTypeEnum:
+    name: SpecimenProcessingActivityTypeEnum
+    definition_uri: https://w3id.org/valuesets/SpecimenProcessingActivityTypeEnum
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: High-level types of specimen processing activities
+    title: Specimen Processing Activity Types
+    from_schema: https://w3id.org/valuesets/bio/specimen_processing
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      FIXATION:
+        text: FIXATION
+        description: Chemical preservation to maintain structural and molecular features
+        meaning: NCIT:C25219
+        aliases:
+        - Fixation
+      FREEZING:
+        text: FREEZING
+        description: Processing activity that freezes a specimen
+        meaning: NCIT:C70717
+        aliases:
+        - Frozen Specimen
+      MOUNTING:
+        text: MOUNTING
+        description: Securing a specimen in place for examination
+      PRESERVATION:
+        text: PRESERVATION
+        description: Processing activity that preserves a specimen for storage
+  SpecimenQualityObservationTypeEnum:
+    name: SpecimenQualityObservationTypeEnum
+    definition_uri: https://w3id.org/valuesets/SpecimenQualityObservationTypeEnum
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Types of measurements that reflect specimen quality or suitability
+      for use
+    title: Specimen Quality Observation Types
+    from_schema: https://w3id.org/valuesets/bio/specimen_processing
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      A260_A280_RATIO:
+        text: A260_A280_RATIO
+        description: Ratio of absorbance at 260nm to 280nm wavelength for nucleic
+          acid purity
+      RIBOSOMAL_RNA_28S_16S_RATIO:
+        text: RIBOSOMAL_RNA_28S_16S_RATIO
+        description: Ratio of 28S to 16S ribosomal RNA for RNA integrity
+  SpecimenQualityObservationMethodEnum:
+    name: SpecimenQualityObservationMethodEnum
+    definition_uri: https://w3id.org/valuesets/SpecimenQualityObservationMethodEnum
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Methods used for determining specimen quality
+    title: Specimen Quality Observation Methods
+    from_schema: https://w3id.org/valuesets/bio/specimen_processing
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      UV_SPEC:
+        text: UV_SPEC
+        description: UV-Vis spectrophotometry measuring absorbance across UV and visible
+          ranges
+        meaning: NCIT:C116701
+        aliases:
+        - Spectrophotometry
+      PICO_GREEN:
+        text: PICO_GREEN
+        description: Fluorescent dye assay for quantifying double-stranded DNA
+  SpecimenQuantityObservationTypeEnum:
+    name: SpecimenQuantityObservationTypeEnum
+    definition_uri: https://w3id.org/valuesets/SpecimenQuantityObservationTypeEnum
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Types of quantity measurements for specimens
+    title: Specimen Quantity Observation Types
+    from_schema: https://w3id.org/valuesets/bio/specimen_processing
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      WEIGHT:
+        text: WEIGHT
+        description: Current weight of the specimen
+        meaning: NCIT:C25208
+        aliases:
+        - Weight
+      VOLUME:
+        text: VOLUME
+        description: Current volume of the specimen
+        meaning: NCIT:C25335
+        aliases:
+        - Volume
+      CONCENTRATION:
+        text: CONCENTRATION
+        description: Concentration of extracted analyte in specimen
+        meaning: NCIT:C41185
+        aliases:
+        - Concentration
+  SectionLocationEnum:
+    name: SectionLocationEnum
+    definition_uri: https://w3id.org/valuesets/SectionLocationEnum
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Location in a parent specimen from which a section was excised
+    title: Section Location
+    from_schema: https://w3id.org/valuesets/bio/specimen_processing
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      TOP:
+        text: TOP
+        description: The top portion of a specimen per orientation criteria
+      BOTTOM:
+        text: BOTTOM
+        description: The bottom portion of a specimen per orientation criteria
+      UNKNOWN:
+        text: UNKNOWN
+        description: Unknown location on a specimen
+        meaning: NCIT:C17998
+        aliases:
+        - Unknown
+  ConditionProvenanceEnum:
+    name: ConditionProvenanceEnum
+    definition_uri: https://w3id.org/valuesets/ConditionProvenanceEnum
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Sources of condition/diagnosis records indicating how the condition
+      was documented or determined.
+    title: Condition Provenance
+    from_schema: https://w3id.org/valuesets/clinical/provenance
+    see_also:
+    - https://github.com/RTIInternational/NHLBI-BDC-DMC-HM
+    - https://ohdsi.github.io/CommonDataModel/
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      EHR_BILLING_DIAGNOSIS:
+        text: EHR_BILLING_DIAGNOSIS
+        description: Diagnosis recorded for billing purposes in EHR
+      EHR_CHIEF_COMPLAINT:
+        text: EHR_CHIEF_COMPLAINT
+        description: Condition documented as chief complaint in EHR
+      EHR_ENCOUNTER_DIAGNOSIS:
+        text: EHR_ENCOUNTER_DIAGNOSIS
+        description: Diagnosis recorded during healthcare encounter
+      EHR_EPISODE_ENTRY:
+        text: EHR_EPISODE_ENTRY
+        description: Condition recorded as part of care episode
+      EHR_PROBLEM_LIST_ENTRY:
+        text: EHR_PROBLEM_LIST_ENTRY
+        description: Condition on patient problem list in EHR
+      FIRST_POSITION_CONDITION:
+        text: FIRST_POSITION_CONDITION
+        description: Primary diagnosis in first position on claim
+      NLP_DERIVED:
+        text: NLP_DERIVED
+        description: Condition derived through natural language processing
+      OBSERVATION_RECORDED_FROM_EHR:
+        text: OBSERVATION_RECORDED_FROM_EHR
+        description: Condition recorded as observation in EHR
+      PATIENT_SELF_REPORTED_CONDITION:
+        text: PATIENT_SELF_REPORTED_CONDITION
+        description: Condition reported by the patient
+        aliases:
+        - PATIENT_SELF-REPORTED_CONDITION
+      PRIMARY_CONDITION:
+        text: PRIMARY_CONDITION
+        description: Primary condition for an encounter or episode
+      REFERRAL_RECORD:
+        text: REFERRAL_RECORD
+        description: Condition documented in referral record
+      SECONDARY_CONDITION:
+        text: SECONDARY_CONDITION
+        description: Secondary or comorbid condition
+      TUMOR_REGISTRY:
+        text: TUMOR_REGISTRY
+        description: Condition from tumor registry
+      WORKING_DIAGNOSIS:
+        text: WORKING_DIAGNOSIS
+        description: Preliminary or working diagnosis
+      CLINICAL_DIAGNOSIS:
+        text: CLINICAL_DIAGNOSIS
+        description: Clinically confirmed diagnosis
+  VisitProvenanceEnum:
+    name: VisitProvenanceEnum
+    definition_uri: https://w3id.org/valuesets/VisitProvenanceEnum
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Sources of healthcare visit/encounter records indicating the origin
+      of the visit documentation.
+    title: Visit Provenance
+    from_schema: https://w3id.org/valuesets/clinical/provenance
+    see_also:
+    - https://github.com/RTIInternational/NHLBI-BDC-DMC-HM
+    - https://ohdsi.github.io/CommonDataModel/
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      CASE_REPORT_FORM:
+        text: CASE_REPORT_FORM
+        description: Visit from clinical trial case report form
+      CLAIM:
+        text: CLAIM
+        description: Visit derived from insurance claim
+      EHR:
+        text: EHR
+        description: Visit from electronic health record
+      EHR_ENCOUNTER_RECORD:
+        text: EHR_ENCOUNTER_RECORD
+        description: Visit from EHR encounter documentation
+      EHR_ADMISSION_NOTE:
+        text: EHR_ADMISSION_NOTE
+        description: Visit from EHR admission note
+      EHR_DISCHARGE_RECORD:
+        text: EHR_DISCHARGE_RECORD
+        description: Visit from EHR discharge documentation
+      EHR_EMERGENCY_ROOM_NOTE:
+        text: EHR_EMERGENCY_ROOM_NOTE
+        description: Visit from EHR emergency room note
+      EHR_INPATIENT_NOTE:
+        text: EHR_INPATIENT_NOTE
+        description: Visit from EHR inpatient note
+      EHR_OUTPATIENT_NOTE:
+        text: EHR_OUTPATIENT_NOTE
+        description: Visit from EHR outpatient note
+      INPATIENT_CLAIM:
+        text: INPATIENT_CLAIM
+        description: Visit from inpatient insurance claim
+      OUTPATIENT_CLAIM:
+        text: OUTPATIENT_CLAIM
+        description: Visit from outpatient insurance claim
+      FACILITY_CLAIM:
+        text: FACILITY_CLAIM
+        description: Visit from facility insurance claim
+      PROFESSIONAL_CLAIM:
+        text: PROFESSIONAL_CLAIM
+        description: Visit from professional services claim
+      PHARMACY_CLAIM:
+        text: PHARMACY_CLAIM
+        description: Visit from pharmacy claim
+      LAB:
+        text: LAB
+        description: Visit from laboratory record
+      REGISTRY:
+        text: REGISTRY
+        description: Visit from disease or patient registry
+      SURVEY:
+        text: SURVEY
+        description: Visit from patient survey
+      PATIENT_SELF_REPORT:
+        text: PATIENT_SELF_REPORT
+        description: Visit reported by patient
+        aliases:
+        - PATIENT_SELF-REPORT
+      NLP:
+        text: NLP
+        description: Visit derived through natural language processing
+      HEALTH_INFORMATION_EXCHANGE_RECORD:
+        text: HEALTH_INFORMATION_EXCHANGE_RECORD
+        description: Visit from health information exchange
+  DrugExposureProvenanceEnum:
+    name: DrugExposureProvenanceEnum
+    definition_uri: https://w3id.org/valuesets/DrugExposureProvenanceEnum
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Sources of drug exposure records indicating how the medication information
+      was documented.
+    title: Drug Exposure Provenance
+    from_schema: https://w3id.org/valuesets/clinical/provenance
+    see_also:
+    - https://github.com/RTIInternational/NHLBI-BDC-DMC-HM
+    - https://ohdsi.github.io/CommonDataModel/
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      RANDOMIZED_DRUG:
+        text: RANDOMIZED_DRUG
+        description: Drug from clinical trial randomization
+        aliases:
+        - RANDOMIZED DRUG
+      PATIENT_SELF_REPORTED_MEDICATION:
+        text: PATIENT_SELF_REPORTED_MEDICATION
+        description: Medication reported by patient
+        aliases:
+        - PATIENT SELF-REPORTED MEDICATION
+      NLP_DERIVED:
+        text: NLP_DERIVED
+        description: Drug exposure derived through NLP
+        aliases:
+        - NLP DERIVED
+      PRESCRIPTION_DISPENSED_IN_PHARMACY:
+        text: PRESCRIPTION_DISPENSED_IN_PHARMACY
+        description: Prescription dispensed at pharmacy
+        aliases:
+        - PRESCRIPTION DISPENSED IN PHARMACY
+      PHYSICIAN_ADMINISTERED_DRUG_FROM_EHR_ORDER:
+        text: PHYSICIAN_ADMINISTERED_DRUG_FROM_EHR_ORDER
+        description: Drug administered by physician from EHR order
+        aliases:
+        - PHYSICIAN ADMINISTERED DRUG (IDENTIFIED FROM EHR ORDER)
+      DISPENSED_IN_OUTPATIENT_OFFICE:
+        text: DISPENSED_IN_OUTPATIENT_OFFICE
+        description: Drug dispensed in outpatient office
+        aliases:
+        - DISPENSED IN OUTPATIENT OFFICE
+      PRESCRIPTION_DISPENSED_THROUGH_MAIL_ORDER:
+        text: PRESCRIPTION_DISPENSED_THROUGH_MAIL_ORDER
+        description: Prescription dispensed via mail order
+        aliases:
+        - PRESCRIPTION DISPENSED THROUGH MAIL ORDER
+      PRESCRIPTION_WRITTEN:
+        text: PRESCRIPTION_WRITTEN
+        description: Prescription written by provider
+        aliases:
+        - PRESCRIPTION WRITTEN
+      MEDICATION_LIST_ENTRY:
+        text: MEDICATION_LIST_ENTRY
+        description: Drug from medication list
+        aliases:
+        - MEDICATION LIST ENTRY
+      PHYSICIAN_ADMINISTERED_DRUG_AS_PROCEDURE:
+        text: PHYSICIAN_ADMINISTERED_DRUG_AS_PROCEDURE
+        description: Drug administered as procedure
+        aliases:
+        - PHYSICIAN ADMINISTERED DRUG (IDENTIFIED AS PROCEDURE)
+      INPATIENT_ADMINISTRATION:
+        text: INPATIENT_ADMINISTRATION
+        description: Drug administered during inpatient stay
+        aliases:
+        - INPATIENT ADMINISTRATION
+  StatusEnum:
+    name: StatusEnum
+    definition_uri: https://w3id.org/valuesets/StatusEnum
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Values indicating whether a condition or observation is present,
+      absent, or of unknown status.
+    title: Presence Status
+    from_schema: https://w3id.org/valuesets/clinical/provenance
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      PRESENT:
+        text: PRESENT
+        description: Was present in the patient at observation time
+      ABSENT:
+        text: ABSENT
+        description: Was absent in the patient at observation time
+      UNKNOWN:
+        text: UNKNOWN
+        description: Status was unknown at observation time
+  HistoricalStatusEnum:
+    name: HistoricalStatusEnum
+    definition_uri: https://w3id.org/valuesets/HistoricalStatusEnum
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Extended status values including historical presence of conditions
+      or observations.
+    title: Historical Status
+    from_schema: https://w3id.org/valuesets/clinical/provenance
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      PRESENT:
+        text: PRESENT
+        description: Currently present in the patient
+      ABSENT:
+        text: ABSENT
+        description: Currently absent in the patient
+      UNKNOWN:
+        text: UNKNOWN
+        description: Current status is unknown
+      HISTORICAL:
+        text: HISTORICAL
+        description: Was present in the patient historically but not currently
+  ResearchProjectTypeEnum:
+    name: ResearchProjectTypeEnum
+    definition_uri: https://w3id.org/valuesets/ResearchProjectTypeEnum
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Types of research projects and studies
+    title: Research Project Types
+    from_schema: https://w3id.org/valuesets/clinical/provenance
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      CONSORTIUM:
+        text: CONSORTIUM
+        description: Multi-institutional research consortium
+      STUDY:
+        text: STUDY
+        description: Individual research study
+  DataUsePermissionEnum:
+    name: DataUsePermissionEnum
+    definition_uri: https://w3id.org/valuesets/DataUsePermissionEnum
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Primary data use permissions from the GA4GH Data Use Ontology (DUO)
+      indicating what research purposes data can be used for.
+    title: Data Use Permissions
+    from_schema: https://w3id.org/valuesets/data/data_use
+    see_also:
+    - https://github.com/EBISPOT/DUO
+    - https://www.ga4gh.org/
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      GRU:
+        text: GRU
+        description: General research use - allowed for any research purpose including
+          health/medical/biomedical, fundamental biology, population origins, statistical
+          methods development, and social-sciences research.
+        meaning: DUO:0000042
+        aliases:
+        - general research use
+      HMB:
+        text: HMB
+        description: Health/medical/biomedical research only - does not include study
+          of population origins or ancestry.
+        meaning: DUO:0000006
+        aliases:
+        - health or medical or biomedical research
+      DS:
+        text: DS
+        description: Disease-specific research - use allowed only for research related
+          to specified disease(s). Should be coupled with disease ontology term.
+        meaning: DUO:0000007
+        aliases:
+        - disease specific research
+      NO_RESTRICTION:
+        text: NO_RESTRICTION
+        description: No restriction on use of the data.
+        meaning: DUO:0000004
+        aliases:
+        - no restriction
+  DataUseModifierEnum:
+    name: DataUseModifierEnum
+    definition_uri: https://w3id.org/valuesets/DataUseModifierEnum
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Additional conditions and modifiers for data use from the GA4GH Data
+      Use Ontology (DUO).
+    title: Data Use Modifiers
+    from_schema: https://w3id.org/valuesets/data/data_use
+    see_also:
+    - https://github.com/EBISPOT/DUO
+    - https://www.ga4gh.org/
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      NPUNCU:
+        text: NPUNCU
+        description: Not-for-profit use only - use limited to not-for-profit organizations
+          and non-commercial use.
+        meaning: DUO:0000018
+        aliases:
+        - not for profit, non commercial use only
+      NPO:
+        text: NPO
+        description: Use limited to not-for-profit organizations only.
+        meaning: DUO:0000045
+        aliases:
+        - not for profit organisation use only
+      NCU:
+        text: NCU
+        description: Non-commercial use only - data can be used by commercial organizations
+          for research but not commercial purposes.
+        meaning: DUO:0000046
+        aliases:
+        - non-commercial use only
+      IRB:
+        text: IRB
+        description: Ethics approval required - requestor must provide documentation
+          of local IRB/ERB approval.
+        meaning: DUO:0000021
+        aliases:
+        - ethics approval required
+      NRES:
+        text: NRES
+        description: No restriction on data use.
+        meaning: DUO:0000004
+        aliases:
+        - no restriction
+      NMDS:
+        text: NMDS
+        description: No general methods research - does not allow methods development.
+        meaning: DUO:0000015
+        aliases:
+        - no general methods research
+      RS:
+        text: RS
+        description: Research-specific restrictions apply.
+        meaning: DUO:0000012
+        aliases:
+        - research specific restrictions
   MimeType:
     name: MimeType
     definition_uri: https://w3id.org/valuesets/MimeType
@@ -65199,6 +66500,69 @@ slots:
     from_schema: https://w3id.org/linkml/valuesets/social/person_status
     slot_uri: valuesets:person_status
     range: PersonStatusEnum
+  sdoh_domain:
+    name: sdoh_domain
+    definition_uri: https://w3id.org/valuesets/sdoh_domain
+    description: The social determinants of health domain
+    from_schema: https://w3id.org/valuesets/social/sdoh
+    slot_uri: valuesets:sdoh_domain
+    range: GravitySdohDomainEnum
+  educational_attainment:
+    name: educational_attainment
+    definition_uri: https://w3id.org/valuesets/educational_attainment
+    description: Highest level of education attained
+    from_schema: https://w3id.org/valuesets/social/sdoh
+    slot_uri: valuesets:educational_attainment
+    range: EducationalAttainmentEnum
+  specimen_preparation_method:
+    name: specimen_preparation_method
+    definition_uri: https://w3id.org/valuesets/specimen_preparation_method
+    description: Method used to prepare/preserve specimen
+    from_schema: https://w3id.org/valuesets/bio/specimen_processing
+    slot_uri: valuesets:specimen_preparation_method
+    range: SpecimenPreparationMethodEnum
+  tissue_preservation:
+    name: tissue_preservation
+    definition_uri: https://w3id.org/valuesets/tissue_preservation
+    description: Tissue preservation method
+    from_schema: https://w3id.org/valuesets/bio/specimen_processing
+    slot_uri: valuesets:tissue_preservation
+    range: TissuePreservationEnum
+  condition_provenance:
+    name: condition_provenance
+    definition_uri: https://w3id.org/valuesets/condition_provenance
+    description: Source/provenance of a condition record
+    from_schema: https://w3id.org/valuesets/clinical/provenance
+    slot_uri: valuesets:condition_provenance
+    range: ConditionProvenanceEnum
+  visit_provenance:
+    name: visit_provenance
+    definition_uri: https://w3id.org/valuesets/visit_provenance
+    description: Source/provenance of a visit record
+    from_schema: https://w3id.org/valuesets/clinical/provenance
+    slot_uri: valuesets:visit_provenance
+    range: VisitProvenanceEnum
+  drug_provenance:
+    name: drug_provenance
+    definition_uri: https://w3id.org/valuesets/drug_provenance
+    description: Source/provenance of a drug exposure record
+    from_schema: https://w3id.org/valuesets/clinical/provenance
+    slot_uri: valuesets:drug_provenance
+    range: DrugExposureProvenanceEnum
+  data_use_permission:
+    name: data_use_permission
+    definition_uri: https://w3id.org/valuesets/data_use_permission
+    description: Permission level for data use
+    from_schema: https://w3id.org/valuesets/data/data_use
+    slot_uri: valuesets:data_use_permission
+    range: DataUsePermissionEnum
+  data_use_modifier:
+    name: data_use_modifier
+    definition_uri: https://w3id.org/valuesets/data_use_modifier
+    description: Additional conditions for data use
+    from_schema: https://w3id.org/valuesets/data/data_use
+    slot_uri: valuesets:data_use_modifier
+    range: DataUseModifierEnum
   mime:
     name: mime
     definition_uri: https://w3id.org/valuesets/mime
@@ -67581,7 +68945,7 @@ classes:
     class_uri: valuesets:Fake
 metamodel_version: 1.7.0
 source_file: valuesets.yaml
-source_file_date: '2025-12-22T15:27:10'
-source_file_size: 3401
-generation_date: '2025-12-22T15:27:21'
+source_file_date: '2025-12-23T02:18:25'
+source_file_size: 3479
+generation_date: '2025-12-23T02:18:35'
 

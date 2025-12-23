@@ -11,6 +11,10 @@
         <link rel="canonical" href="https://linkml.github.io/valuesets/how-to-guides/dynamic-valuesets-validation/">
       
       
+        <link rel="prev" href="../agentic-ide-support/">
+      
+      
+        <link rel="next" href="../sync-uniprot-species/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -266,12 +270,537 @@
   
   
     <li class="md-nav__item">
-      <a href="../../about/" class="md-nav__link">
+      <a href="../../governance/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    About
+    Governance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    How-To Guides
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            How-To Guides
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agentic-ide-support/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Using Common Value Sets with Agentic IDE Support via Context7 MCP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Dynamic Value Sets and Validation
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dynamic Value Sets and Validation
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-dynamic-value-sets" class="md-nav__link">
+    <span class="md-ellipsis">
+      What are Dynamic Value Sets?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#available-dynamic-value-sets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Available Dynamic Value Sets
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Available Dynamic Value Sets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#biological-entities-biobio_entitiesyaml" class="md-nav__link">
+    <span class="md-ellipsis">
+      Biological Entities (bio/bio_entities.yaml)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Biological Entities (bio/bio_entities.yaml)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cell-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cell Types
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diseases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diseases
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chemical-entities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chemical Entities
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anatomical-structures" class="md-nav__link">
+    <span class="md-ellipsis">
+      Anatomical Structures
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#taxonomy-biotaxonomyyaml" class="md-nav__link">
+    <span class="md-ellipsis">
+      Taxonomy (bio/taxonomy.yaml)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#investigation-protocols-investigationyaml" class="md-nav__link">
+    <span class="md-ellipsis">
+      Investigation Protocols (investigation.yaml)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-dynamic-value-sets-in-schemas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using Dynamic Value Sets in Schemas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Using Dynamic Value Sets in Schemas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Usage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instance-data-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instance Data Validation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validation-approaches" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validation Approaches
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Validation Approaches">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-static-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Static Validation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-ontology-based-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Ontology-based Validation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-batch-validation-with-oak" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Batch Validation with OAK
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practical-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Practical Examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Practical Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1-cell-biology-study" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example 1: Cell Biology Study
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2-disease-research" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example 2: Disease Research
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-3-taxonomic-classification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example 3: Taxonomic Classification
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validation-tools-and-libraries" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validation Tools and Libraries
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Validation Tools and Libraries">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#oak-ontology-access-kit" class="md-nav__link">
+    <span class="md-ellipsis">
+      OAK (Ontology Access Kit)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-validation-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Custom Validation Functions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Best Practices
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Best Practices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-choose-appropriate-root-terms" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Choose Appropriate Root Terms
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-include-ontology-prefixes-in-schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Include Ontology Prefixes in Schema
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-validate-during-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Validate During Development
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-handle-validation-errors-gracefully" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Handle Validation Errors Gracefully
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limitations-and-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limitations and Considerations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Limitations and Considerations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#current-limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Current Limitations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Performance Considerations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#future-developments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Future Developments
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Additional Resources
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sync-uniprot-species/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    How to Sync UniProt Species Data
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slot-generation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Slot Generation
     
   </span>
   
@@ -294,6 +823,28 @@
   
   <span class="md-ellipsis">
     Slides
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    About
     
   </span>
   
