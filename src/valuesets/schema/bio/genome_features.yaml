@@ -5,7 +5,7 @@ description: 'Genome feature types from SOFA (Sequence Ontology Feature Annotati
   the subset of SO used in GFF3 files for genome annotation.
 
   Organized hierarchically following the Sequence Ontology structure.'
-id: https://w3id.org/linkml/valuesets/bio/genome_features
+id: https://w3id.org/valuesets/bio/genome_features
 imports:
 - linkml:types
 prefixes:

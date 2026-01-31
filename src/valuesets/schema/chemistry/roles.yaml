@@ -3,7 +3,7 @@ title: Chemical and Biological Roles
 description: >-
   Value sets for chemical and biological roles that molecular entities can play,
   based on the ChEBI ontology role hierarchy.
-id: https://w3id.org/linkml/valuesets/chemistry/roles
+id: https://w3id.org/valuesets/chemistry/roles
 imports:
 - linkml:types
 prefixes:

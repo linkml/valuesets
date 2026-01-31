@@ -3,7 +3,7 @@ title: Radiation Types Value Sets
 description: >-
   Value sets for radiation types based on the Environment Ontology (ENVO),
   including electromagnetic radiation, ionizing radiation, and acoustic radiation.
-id: https://w3id.org/linkml/valuesets/physics/radiation
+id: https://w3id.org/valuesets/physics/radiation
 imports:
 - linkml:types
 prefixes:

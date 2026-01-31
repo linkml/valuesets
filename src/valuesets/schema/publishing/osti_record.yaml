@@ -3,7 +3,7 @@ title: OSTI Record Metadata Value Sets
 description: |
   Value sets derived from the OSTI E-Link 2 record schema for
   bibliographic and submission metadata.
-id: https://w3id.org/linkml/valuesets/publishing/osti_record
+id: https://w3id.org/valuesets/publishing/osti_record
 imports:
 - linkml:types
 prefixes:

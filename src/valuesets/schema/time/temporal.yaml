@@ -1,7 +1,7 @@
 name: temporal
 title: Temporal and Time-Related Value Sets
 description: Value sets for temporal concepts including days, months, time periods, and durations
-id: https://w3id.org/linkml/valuesets/time/temporal
+id: https://w3id.org/valuesets/time/temporal
 imports:
 - linkml:types
 prefixes:

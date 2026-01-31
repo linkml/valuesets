@@ -6,7 +6,7 @@ description: >-
   developed through consensus by St. Jude, CBTN, Treehouse, and NCI to enable
   cohort aggregation across federated pediatric cancer data resources.
   Categories are aligned with WHO CNS5, WHO-HAEM5, and WHO Pediatric Blue Book.
-id: https://w3id.org/linkml/valuesets/medical/pediatric_oncology/diagnosis_categories
+id: https://w3id.org/valuesets/medical/pediatric_oncology/diagnosis_categories
 imports:
 - linkml:types
 prefixes:

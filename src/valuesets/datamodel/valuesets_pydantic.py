@@ -52,7 +52,7 @@ class LinkMLMeta(RootModel):
         return key in self.root
 
 
-linkml_meta = LinkMLMeta({'default_prefix': 'valuesets', 'description': 'A collection of commonly used value sets', 'id': 'https://w3id.org/linkml/valuesets', 'name': 'valuesets', 'title': 'valuesets'})
+linkml_meta = LinkMLMeta({'default_prefix': 'valuesets', 'description': 'A collection of commonly used value sets', 'id': 'https://w3id.org/valuesets', 'name': 'valuesets', 'title': 'valuesets'})
 
 class RelativeTimeEnum(RichEnum):
     """

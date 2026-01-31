@@ -5,7 +5,7 @@ description: >-
   program for standardizing geospatial-based environmental determinants of health
   (GB-EDoH) data and metadata. These value sets support OMOP integration and
   environmental epidemiology studies.
-id: https://w3id.org/linkml/valuesets/environmental_health/gb_edoh
+id: https://w3id.org/valuesets/environmental_health/gb_edoh
 imports:
 - linkml:types
 prefixes:

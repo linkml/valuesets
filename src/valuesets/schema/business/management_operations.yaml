@@ -2,7 +2,7 @@ name: management_operations
 title: Business Management and Operations
 description: 'Business management methodologies, operational frameworks, strategic planning approaches, and performance management
   systems. Based on management theory, business strategy frameworks, and operational excellence practices.'
-id: https://w3id.org/linkml/valuesets/business/management_operations
+id: https://w3id.org/valuesets/business/management_operations
 imports:
 - linkml:types
 prefixes:

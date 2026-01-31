@@ -7,7 +7,7 @@ description: 'Value sets for biosynthetic gene cluster (BGC) categories used in 
   BGCs.
 
   Based on the MIBiG (Minimum Information about a Biosynthetic Gene cluster) standard.'
-id: https://w3id.org/linkml/valuesets/bio/bgc_categories
+id: https://w3id.org/valuesets/bio/bgc_categories
 imports:
 - linkml:types
 prefixes:

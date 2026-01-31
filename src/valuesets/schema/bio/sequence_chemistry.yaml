@@ -3,7 +3,7 @@ title: Sequence Chemistry Value Sets
 description: 'Value sets for nucleic acid and protein sequence chemistry, including
 
   standard and extended alphabets, quality encodings, and molecular representations'
-id: https://w3id.org/linkml/valuesets/bio/sequence_chemistry
+id: https://w3id.org/valuesets/bio/sequence_chemistry
 imports:
 - linkml:types
 prefixes:

@@ -2,7 +2,7 @@ name: industry_classifications
 title: Business Industry Classifications and Economic Sectors
 description: 'Industry classification systems including NAICS codes, economic sectors, and business activity categories. Based
   on official government classification systems and international standards for economic analysis and business categorization.'
-id: https://w3id.org/linkml/valuesets/business/industry_classifications
+id: https://w3id.org/valuesets/business/industry_classifications
 imports:
 - linkml:types
 prefixes:

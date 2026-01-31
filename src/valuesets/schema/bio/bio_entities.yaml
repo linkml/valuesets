@@ -5,7 +5,7 @@ description: 'Dynamic enumerations for biological entities including anatomical 
   cell types, diseases, and chemical entities. These enums are populated
 
   dynamically from ontologies.'
-id: https://w3id.org/linkml/valuesets/bio/bio_entities
+id: https://w3id.org/valuesets/bio/bio_entities
 imports:
 - linkml:types
 prefixes:

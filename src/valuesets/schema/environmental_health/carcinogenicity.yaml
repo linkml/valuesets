@@ -4,7 +4,7 @@ description: >-
   Standard carcinogenicity classifications from IARC (International Agency for
   Research on Cancer), EPA IRIS (Integrated Risk Information System), and NTP
   (National Toxicology Program).
-id: https://w3id.org/linkml/valuesets/environmental_health/carcinogenicity
+id: https://w3id.org/valuesets/environmental_health/carcinogenicity
 imports:
 - linkml:types
 prefixes:

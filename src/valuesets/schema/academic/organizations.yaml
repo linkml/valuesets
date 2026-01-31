@@ -14,7 +14,7 @@ description: |
   - ROR API: https://api.ror.org/organizations
 
   ROR IDs should be used in the `meaning` field with the full URL format (e.g., https://ror.org/05gvnxz63).
-id: https://w3id.org/linkml/valuesets/academic/organizations
+id: https://w3id.org/valuesets/academic/organizations
 imports:
 - linkml:types
 prefixes:

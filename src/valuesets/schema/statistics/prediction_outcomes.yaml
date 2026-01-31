@@ -1,5 +1,5 @@
 name: prediction_outcomes
-id: https://w3id.org/linkml/valuesets/statistics/prediction_outcomes
+id: https://w3id.org/valuesets/statistics/prediction_outcomes
 prefixes:
   # linkml_common: https://w3id.org/linkml-common/
   valuesets: https://w3id.org/valuesets/

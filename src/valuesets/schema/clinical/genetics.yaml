@@ -1,7 +1,7 @@
 name: genetics
 title: Clinical Genetics Value Sets
 description: Value sets for clinical genetics including modes of inheritance
-id: https://w3id.org/linkml/valuesets/clinical/genetics
+id: https://w3id.org/valuesets/clinical/genetics
 imports:
 - linkml:types
 prefixes:

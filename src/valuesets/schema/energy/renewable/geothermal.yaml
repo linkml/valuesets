@@ -3,7 +3,7 @@ title: Geothermal Energy Value Sets
 description: >-
   Value sets for geothermal energy systems, reservoir types, well types, and technologies.
   Based on DOE Geothermal Technologies Office terminology and the Geothermal Data Repository standards.
-id: https://w3id.org/linkml/valuesets/energy/renewable/geothermal
+id: https://w3id.org/valuesets/energy/renewable/geothermal
 imports:
 - linkml:types
 prefixes:

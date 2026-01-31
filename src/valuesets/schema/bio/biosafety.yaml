@@ -1,5 +1,5 @@
 name: biosafety
-id: https://w3id.org/linkml/valuesets/bio/biosafety
+id: https://w3id.org/valuesets/bio/biosafety
 prefixes:
   SNOMED: http://snomed.info/id/
   METPO: https://w3id.org/metpo/

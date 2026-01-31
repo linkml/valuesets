@@ -1,7 +1,7 @@
 name: cell_cycle
 title: Cell Cycle Value Sets
 description: Value sets for cell cycle phases, checkpoints, and related concepts
-id: https://w3id.org/linkml/valuesets/bio/cell_cycle
+id: https://w3id.org/valuesets/bio/cell_cycle
 imports:
 - linkml:types
 prefixes:

@@ -2,7 +2,7 @@ name: mime_types
 title: MIME Types Value Sets
 description: Common MIME (Multipurpose Internet Mail Extensions) types for various file formats and content types used 
   in web and application development.
-id: https://w3id.org/linkml/valuesets/computing/mime_types
+id: https://w3id.org/valuesets/computing/mime_types
 imports:
 - linkml:types
 prefixes:

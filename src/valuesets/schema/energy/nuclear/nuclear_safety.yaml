@@ -2,7 +2,7 @@ name: nuclear_safety
 title: Nuclear Safety Classifications and Emergency Levels
 description: 'Nuclear safety classifications including INES scale, emergency action levels, nuclear security categories, and
   safety system classifications. Based on IAEA standards, NRC regulations, and international nuclear safety frameworks.'
-id: https://w3id.org/linkml/valuesets/energy/nuclear/nuclear_safety
+id: https://w3id.org/valuesets/energy/nuclear/nuclear_safety
 imports:
 - linkml:types
 prefixes:

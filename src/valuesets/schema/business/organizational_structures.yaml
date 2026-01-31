@@ -3,7 +3,7 @@ title: Business Organizational Structures and Legal Entities
 description: 'Classifications of business organizational structures including legal entity types, corporate hierarchies, management
   levels, and organizational frameworks. Based on business law standards, corporate governance frameworks, and organizational
   behavior research.'
-id: https://w3id.org/linkml/valuesets/business/organizational_structures
+id: https://w3id.org/valuesets/business/organizational_structures
 imports:
 - linkml:types
 prefixes:

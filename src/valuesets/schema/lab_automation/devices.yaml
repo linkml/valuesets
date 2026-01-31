@@ -1,5 +1,5 @@
 name: lab_automation_devices
-id: https://w3id.org/linkml/valuesets/lab_automation/devices
+id: https://w3id.org/valuesets/lab_automation/devices
 prefixes:
   OBI: http://purl.obolibrary.org/obo/OBI_
   SNOMED: http://snomed.info/id/

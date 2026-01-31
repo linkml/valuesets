@@ -1,5 +1,5 @@
 name: insdc_missing_values
-id: https://w3id.org/linkml/valuesets/bio/insdc_missing_values
+id: https://w3id.org/valuesets/bio/insdc_missing_values
 prefixes:
   NCIT: http://purl.obolibrary.org/obo/NCIT_
   OBI: http://purl.obolibrary.org/obo/OBI_

@@ -2,7 +2,7 @@ name: nuclear_fuels
 title: Nuclear Fuel Types and Classifications
 description: 'Classifications of nuclear fuel types including uranium enrichment levels, fuel forms, and alternative fuel
   cycles. Based on IAEA classifications, nuclear fuel cycle standards, and industry specifications.'
-id: https://w3id.org/linkml/valuesets/energy/nuclear/nuclear_fuels
+id: https://w3id.org/valuesets/energy/nuclear/nuclear_fuels
 imports:
 - linkml:types
 prefixes:

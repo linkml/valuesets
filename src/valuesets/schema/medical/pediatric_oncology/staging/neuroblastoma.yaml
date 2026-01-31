@@ -6,7 +6,7 @@ description: >-
   System (INSS). INRGSS is the current standard (effective 2024+) based on
   imaging and image-defined risk factors. INSS is the legacy surgical staging
   system still used for historical data.
-id: https://w3id.org/linkml/valuesets/medical/pediatric_oncology/staging/neuroblastoma
+id: https://w3id.org/valuesets/medical/pediatric_oncology/staging/neuroblastoma
 imports:
 - linkml:types
 prefixes:

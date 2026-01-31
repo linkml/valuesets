@@ -1,7 +1,7 @@
 name: mining
 title: Mining and Extractive Industry Value Sets
 description: Value sets for mining operations, minerals, extraction methods, and related concepts
-id: https://w3id.org/linkml/valuesets/industry/mining
+id: https://w3id.org/valuesets/industry/mining
 imports:
 - linkml:types
 prefixes:

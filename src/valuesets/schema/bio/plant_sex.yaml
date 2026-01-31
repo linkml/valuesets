@@ -1,5 +1,5 @@
 name: plant_sex
-id: https://w3id.org/linkml/valuesets/bio/plant_sex
+id: https://w3id.org/valuesets/bio/plant_sex
 prefixes:
   PATO: http://purl.obolibrary.org/obo/PATO_
   ECOCORE: http://purl.obolibrary.org/obo/ECOCORE_

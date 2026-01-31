@@ -2,7 +2,7 @@ name: supply_chain
 title: Supply Chain Management and Procurement
 description: 'Supply chain management classifications including procurement types, vendor management, logistics operations,
   and supply chain strategies. Based on supply chain management best practices, procurement standards, and logistics frameworks.'
-id: https://w3id.org/linkml/valuesets/business/supply_chain
+id: https://w3id.org/valuesets/business/supply_chain
 imports:
 - linkml:types
 prefixes:

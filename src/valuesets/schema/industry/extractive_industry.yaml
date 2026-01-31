@@ -1,5 +1,5 @@
 name: extractive_industry
-id: https://w3id.org/linkml/valuesets/industry/extractive_industry
+id: https://w3id.org/valuesets/industry/extractive_industry
 prefixes:
   # linkml_common: https://w3id.org/linkml-common/
   valuesets: https://w3id.org/valuesets/
