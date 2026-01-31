@@ -5,7 +5,6 @@ id: https://w3id.org/common-value-sets/currency_chemicals
 imports:
 - linkml:types
 prefixes:
-  CVS: https://w3id.org/common-value-sets/
   linkml: https://w3id.org/linkml/
   CHEBI: http://purl.obolibrary.org/obo/CHEBI_
   valuesets: https://w3id.org/valuesets/
