@@ -7,7 +7,6 @@ imports:
 - linkml:types
 prefixes:
   linkml: https://w3id.org/linkml/
-  cvs: https://w3id.org/linkml/valuesets/
   iana: https://www.iana.org/assignments/media-types/
   valuesets: https://w3id.org/valuesets/
   orcid: https://orcid.org/
