@@ -87,14 +87,14 @@ def build_hierarchical_schema(schema_dir: Path) -> Dict[str, Any]:
 
     # Initialize the merged schema
     merged_schema = {
-        'id': 'https://w3id.org/linkml/valuesets/merged',
+        'id': 'https://w3id.org/valuesets/merged',
         'name': 'valuesets_merged_hierarchy',
         'title': 'Merged Value Sets with Hierarchical Structure',
         'description': 'All value sets merged into a single hierarchical structure with is_a relationships',
         'license': 'MIT',
         'prefixes': {
             'linkml': 'https://w3id.org/linkml/',
-            'valuesets': 'https://w3id.org/linkml/valuesets/',
+            'valuesets': 'https://w3id.org/valuesets/',
         },
         'default_prefix': 'valuesets',
         'imports': ['linkml:types'],
