@@ -4,7 +4,7 @@ description: >-
   Value sets for hydrogen production, storage, and utilization.
   Includes the color-coded hydrogen classification system used by industry.
   Based on DOE Hydrogen and Fuel Cell Technologies Office terminology.
-id: https://w3id.org/linkml/valuesets/energy/renewable/hydrogen
+id: https://w3id.org/valuesets/energy/renewable/hydrogen
 imports:
 - linkml:types
 prefixes:

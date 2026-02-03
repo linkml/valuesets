@@ -1,7 +1,7 @@
 name: research
 title: Academic and Research Value Sets
 description: Value sets for academic publishing, research, and scholarly communication
-id: https://w3id.org/linkml/valuesets/academic/research
+id: https://w3id.org/valuesets/academic/research
 imports:
 - linkml:types
 prefixes:

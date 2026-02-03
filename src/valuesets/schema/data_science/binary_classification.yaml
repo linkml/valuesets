@@ -1,5 +1,5 @@
 name: binary_classification
-id: https://w3id.org/linkml/valuesets/data_science/binary_classification
+id: https://w3id.org/valuesets/data_science/binary_classification
 prefixes:
   # linkml_common: https://w3id.org/linkml-common/
   STATO: http://purl.obolibrary.org/obo/STATO_

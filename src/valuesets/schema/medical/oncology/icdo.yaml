@@ -4,7 +4,7 @@ description: >-
   Value sets based on the International Classification of Diseases for Oncology
   (ICD-O) bi-axial classification system. ICD-O uses two independent axes:
   topography (anatomic site) and morphology (histological type and behavior).
-id: https://w3id.org/linkml/valuesets/medical/oncology/icdo
+id: https://w3id.org/valuesets/medical/oncology/icdo
 imports:
 - linkml:types
 prefixes:

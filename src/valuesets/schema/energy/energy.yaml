@@ -1,7 +1,7 @@
 name: energy
 title: Energy and Power Value Sets
 description: Value sets for energy sources, units, consumption, and related concepts
-id: https://w3id.org/linkml/valuesets/energy/energy
+id: https://w3id.org/valuesets/energy/energy
 imports:
 - linkml:types
 prefixes:

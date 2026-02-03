@@ -1,8 +1,8 @@
 # Auto generated from valuesets.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-12-22T07:10:11
+# Generation date: 2026-01-30T18:34:51
 # Schema: valuesets
 #
-# id: https://w3id.org/linkml/valuesets
+# id: https://w3id.org/valuesets
 # description: A collection of commonly used value sets
 # license: Apache-2.0
 
@@ -9848,6 +9848,890 @@ class PersonStatusEnum(EnumDefinitionImpl):
     _defn = EnumDefinition(
         name="PersonStatusEnum",
         description="Vital status of a person (living or deceased)",
+    )
+
+class GravitySdohDomainEnum(EnumDefinitionImpl):
+    """
+    Social Determinants of Health domains as defined by the Gravity Project. These domains represent key areas of
+    social need that impact health outcomes.
+    """
+    FOOD_INSECURITY = PermissibleValue(
+        text="FOOD_INSECURITY",
+        description="Limited or uncertain availability of nutritionally adequate and safe foods",
+        meaning=NCIT["C171542"])
+    HOUSING_INSTABILITY = PermissibleValue(
+        text="HOUSING_INSTABILITY",
+        description="Challenges with housing including trouble paying rent or frequent moves",
+        meaning=SNOMED["1156191002"])
+    HOMELESSNESS = PermissibleValue(
+        text="HOMELESSNESS",
+        description="The condition of lacking stable, safe, and adequate housing",
+        meaning=SNOMED["32911000"])
+    INADEQUATE_HOUSING = PermissibleValue(
+        text="INADEQUATE_HOUSING",
+        description="Housing that does not meet basic standards for safety and habitability",
+        meaning=SNOMED["105531004"])
+    TRANSPORTATION_INSECURITY = PermissibleValue(
+        text="TRANSPORTATION_INSECURITY",
+        description="Lack of reliable, safe, and affordable transportation")
+    FINANCIAL_INSECURITY = PermissibleValue(
+        text="FINANCIAL_INSECURITY",
+        description="Inability to meet basic financial needs and obligations")
+    MATERIAL_HARDSHIP = PermissibleValue(
+        text="MATERIAL_HARDSHIP",
+        description="Difficulty affording basic necessities such as food, housing, and utilities")
+    EMPLOYMENT_STATUS = PermissibleValue(
+        text="EMPLOYMENT_STATUS",
+        description="Current employment situation and stability",
+        meaning=NCIT["C179143"])
+    EDUCATIONAL_ATTAINMENT = PermissibleValue(
+        text="EDUCATIONAL_ATTAINMENT",
+        description="Highest level of education completed",
+        meaning=EFO["0011015"])
+    VETERAN_STATUS = PermissibleValue(
+        text="VETERAN_STATUS",
+        description="Military veteran status and related needs")
+    STRESS = PermissibleValue(
+        text="STRESS",
+        description="Psychological stress affecting health and wellbeing",
+        meaning=NCIT["C35041"])
+    SOCIAL_CONNECTION = PermissibleValue(
+        text="SOCIAL_CONNECTION",
+        description="Quality and quantity of social relationships and support networks")
+    INTIMATE_PARTNER_VIOLENCE = PermissibleValue(
+        text="INTIMATE_PARTNER_VIOLENCE",
+        description="Abuse occurring between people in a close relationship",
+        meaning=MESH["D000066511"])
+    ELDER_ABUSE = PermissibleValue(
+        text="ELDER_ABUSE",
+        description="Abuse, neglect, or exploitation of older adults",
+        meaning=MESH["D004552"])
+    HEALTH_LITERACY = PermissibleValue(
+        text="HEALTH_LITERACY",
+        description="Ability to obtain, process, and understand health information",
+        meaning=MESH["D057220"])
+    MEDICAL_COST_BURDEN = PermissibleValue(
+        text="MEDICAL_COST_BURDEN",
+        description="Financial strain from healthcare costs")
+    HEALTH_INSURANCE_COVERAGE_STATUS = PermissibleValue(
+        text="HEALTH_INSURANCE_COVERAGE_STATUS",
+        description="Status of health insurance coverage",
+        meaning=NCIT["C157356"])
+    DIGITAL_LITERACY = PermissibleValue(
+        text="DIGITAL_LITERACY",
+        description="Ability to use digital technology and access digital resources")
+    DIGITAL_ACCESS = PermissibleValue(
+        text="DIGITAL_ACCESS",
+        description="Access to internet and digital devices")
+    UTILITY_INSECURITY = PermissibleValue(
+        text="UTILITY_INSECURITY",
+        description="Difficulty paying for utilities such as electricity, gas, or water")
+
+    _defn = EnumDefinition(
+        name="GravitySdohDomainEnum",
+        description="""Social Determinants of Health domains as defined by the Gravity Project. These domains represent key areas of social need that impact health outcomes.""",
+    )
+
+class EducationalAttainmentEnum(EnumDefinitionImpl):
+    """
+    Levels of educational attainment for survey and demographic purposes. Based on standard US educational categories.
+    """
+    EIGHTH_GRADE_OR_LESS = PermissibleValue(
+        text="EIGHTH_GRADE_OR_LESS",
+        description="Completed 8th grade or less")
+    HIGH_SCHOOL_NO_DIPLOMA = PermissibleValue(
+        text="HIGH_SCHOOL_NO_DIPLOMA",
+        description="Some high school but no diploma",
+        meaning=NCIT["C76123"])
+    HIGH_SCHOOL_GRADUATE_GED = PermissibleValue(
+        text="HIGH_SCHOOL_GRADUATE_GED",
+        description="High school graduate or GED equivalent",
+        meaning=NCIT["C67136"])
+    SOME_COLLEGE_NO_DEGREE = PermissibleValue(
+        text="SOME_COLLEGE_NO_DEGREE",
+        description="Some college or technical school but no degree")
+    ASSOCIATE_DEGREE = PermissibleValue(
+        text="ASSOCIATE_DEGREE",
+        description="Associate degree (2-year college)",
+        meaning=NCIT["C71344"])
+    BACHELORS_DEGREE = PermissibleValue(
+        text="BACHELORS_DEGREE",
+        description="Bachelor's degree (4-year college)",
+        meaning=NCIT["C71345"])
+    MASTERS_DEGREE = PermissibleValue(
+        text="MASTERS_DEGREE",
+        description="Master's degree",
+        meaning=NCIT["C39452"])
+    DOCTORAL_DEGREE = PermissibleValue(
+        text="DOCTORAL_DEGREE",
+        description="Doctoral or professional degree (PhD, MD, JD, etc.)",
+        meaning=NCIT["C39387"])
+
+    _defn = EnumDefinition(
+        name="EducationalAttainmentEnum",
+        description="""Levels of educational attainment for survey and demographic purposes. Based on standard US educational categories.""",
+    )
+
+class SpecimenPreparationMethodEnum(EnumDefinitionImpl):
+    """
+    Methods for preparing and preserving biological specimens for analysis. Sourced from NF-OSI metadata dictionary
+    and Human Cell Atlas standards.
+    """
+    FFPE = PermissibleValue(
+        text="FFPE",
+        description="Formalin-fixed, paraffin-embedded tissue preservation",
+        meaning=NCIT["C143028"])
+    FORMALIN_FIXED = PermissibleValue(
+        text="FORMALIN_FIXED",
+        description="Tissue fixed with formalin without paraffin embedding")
+    CRYOPRESERVED = PermissibleValue(
+        text="CRYOPRESERVED",
+        description="Specimen preserved by freezing with cryoprotectant",
+        meaning=NCIT["C16475"])
+    VIABLY_FROZEN = PermissibleValue(
+        text="VIABLY_FROZEN",
+        description="Specimen frozen while maintaining cell viability")
+    FLASH_FROZEN = PermissibleValue(
+        text="FLASH_FROZEN",
+        description="Rapid freezing to preserve molecular integrity")
+    FRESH_COLLECTED = PermissibleValue(
+        text="FRESH_COLLECTED",
+        description="Freshly collected specimen without preservation")
+    OCT_EMBEDDED = PermissibleValue(
+        text="OCT_EMBEDDED",
+        description="Tissue embedded in optimal cutting temperature compound")
+    RNALATER = PermissibleValue(
+        text="RNALATER",
+        description="Storage in reagent that stabilizes and protects cellular RNA")
+    ETHANOL_PRESERVED = PermissibleValue(
+        text="ETHANOL_PRESERVED",
+        description="Specimen preserved in ethanol")
+    METHANOL_FIXED = PermissibleValue(
+        text="METHANOL_FIXED",
+        description="Specimen fixed with methanol")
+    ACETONE_FIXED = PermissibleValue(
+        text="ACETONE_FIXED",
+        description="Specimen fixed with acetone")
+    PAXgene_FIXED = PermissibleValue(
+        text="PAXgene_FIXED",
+        description="Tissue fixed using PAXgene tissue system")
+    DRIED = PermissibleValue(
+        text="DRIED",
+        description="Air-dried or desiccated specimen")
+    LYOPHILIZED = PermissibleValue(
+        text="LYOPHILIZED",
+        description="Freeze-dried specimen",
+        meaning=NCIT["C28150"])
+
+    _defn = EnumDefinition(
+        name="SpecimenPreparationMethodEnum",
+        description="""Methods for preparing and preserving biological specimens for analysis. Sourced from NF-OSI metadata dictionary and Human Cell Atlas standards.""",
+    )
+
+class TissuePreservationEnum(EnumDefinitionImpl):
+    """
+    Broader categorization of tissue preservation approaches
+    """
+    FROZEN = PermissibleValue(
+        text="FROZEN",
+        description="Tissue preserved by freezing",
+        meaning=NCIT["C70717"])
+    FIXED = PermissibleValue(
+        text="FIXED",
+        description="Tissue preserved by chemical fixation",
+        meaning=NCIT["C25219"])
+    FRESH = PermissibleValue(
+        text="FRESH",
+        description="Fresh unfixed tissue")
+    EMBEDDED = PermissibleValue(
+        text="EMBEDDED",
+        description="Tissue embedded in medium (paraffin, OCT, etc.)")
+
+    _defn = EnumDefinition(
+        name="TissuePreservationEnum",
+        description="Broader categorization of tissue preservation approaches",
+    )
+
+class SpecimenCollectionMethodEnum(EnumDefinitionImpl):
+    """
+    Methods for collecting biological specimens
+    """
+    BIOPSY = PermissibleValue(
+        text="BIOPSY",
+        description="Tissue sample obtained by biopsy",
+        meaning=NCIT["C15189"])
+    SURGICAL_RESECTION = PermissibleValue(
+        text="SURGICAL_RESECTION",
+        description="Tissue obtained during surgical resection",
+        meaning=NCIT["C15329"])
+    AUTOPSY = PermissibleValue(
+        text="AUTOPSY",
+        description="Specimen obtained at autopsy",
+        meaning=NCIT["C25153"])
+    FINE_NEEDLE_ASPIRATE = PermissibleValue(
+        text="FINE_NEEDLE_ASPIRATE",
+        description="Sample obtained by fine needle aspiration",
+        meaning=NCIT["C15361"])
+    CORE_NEEDLE_BIOPSY = PermissibleValue(
+        text="CORE_NEEDLE_BIOPSY",
+        description="Sample obtained by core needle biopsy",
+        meaning=NCIT["C15190"])
+    PUNCH_BIOPSY = PermissibleValue(
+        text="PUNCH_BIOPSY",
+        description="Sample obtained by punch biopsy")
+    SWAB = PermissibleValue(
+        text="SWAB",
+        description="Sample collected by swabbing")
+    VENIPUNCTURE = PermissibleValue(
+        text="VENIPUNCTURE",
+        description="Blood sample obtained by venipuncture",
+        meaning=NCIT["C28221"])
+    LUMBAR_PUNCTURE = PermissibleValue(
+        text="LUMBAR_PUNCTURE",
+        description="CSF sample obtained by lumbar puncture",
+        meaning=NCIT["C15327"])
+    LAVAGE = PermissibleValue(
+        text="LAVAGE",
+        description="Sample obtained by lavage (washing)")
+
+    _defn = EnumDefinition(
+        name="SpecimenCollectionMethodEnum",
+        description="Methods for collecting biological specimens",
+    )
+
+class SpecimenTypeEnum(EnumDefinitionImpl):
+    """
+    Types of biological specimens used in research
+    """
+    TISSUE = PermissibleValue(
+        text="TISSUE",
+        description="Solid tissue specimen",
+        meaning=NCIT["C12801"])
+    BLOOD = PermissibleValue(
+        text="BLOOD",
+        description="Whole blood specimen",
+        meaning=NCIT["C12434"])
+    PLASMA = PermissibleValue(
+        text="PLASMA",
+        description="Blood plasma specimen",
+        meaning=NCIT["C13356"])
+    SERUM = PermissibleValue(
+        text="SERUM",
+        description="Blood serum specimen",
+        meaning=NCIT["C13325"])
+    BUFFY_COAT = PermissibleValue(
+        text="BUFFY_COAT",
+        description="Leukocyte-enriched blood fraction",
+        meaning=NCIT["C84507"])
+    URINE = PermissibleValue(
+        text="URINE",
+        description="Urine specimen",
+        meaning=NCIT["C13283"])
+    SALIVA = PermissibleValue(
+        text="SALIVA",
+        description="Saliva specimen",
+        meaning=NCIT["C13275"])
+    STOOL = PermissibleValue(
+        text="STOOL",
+        description="Stool/fecal specimen",
+        meaning=NCIT["C13234"])
+    CSF = PermissibleValue(
+        text="CSF",
+        description="Cerebrospinal fluid specimen",
+        meaning=NCIT["C12692"])
+    SWEAT = PermissibleValue(
+        text="SWEAT",
+        description="Sweat specimen")
+    MUCUS = PermissibleValue(
+        text="MUCUS",
+        description="Mucus specimen")
+    BONE_MARROW = PermissibleValue(
+        text="BONE_MARROW",
+        description="Bone marrow specimen",
+        meaning=NCIT["C12431"])
+    PRIMARY_TUMOR = PermissibleValue(
+        text="PRIMARY_TUMOR",
+        description="Primary tumor tissue specimen",
+        meaning=NCIT["C8509"])
+    METASTATIC_TUMOR = PermissibleValue(
+        text="METASTATIC_TUMOR",
+        description="Metastatic tumor tissue specimen",
+        meaning=NCIT["C3261"])
+    TUMOR_ADJACENT_NORMAL = PermissibleValue(
+        text="TUMOR_ADJACENT_NORMAL",
+        description="Normal tissue adjacent to tumor",
+        meaning=NCIT["C164032"])
+    ORGANOID = PermissibleValue(
+        text="ORGANOID",
+        description="Organoid specimen",
+        meaning=NCIT["C172259"])
+    SPHEROID = PermissibleValue(
+        text="SPHEROID",
+        description="Cell spheroid specimen")
+    MICROTISSUE = PermissibleValue(
+        text="MICROTISSUE",
+        description="Engineered microtissue specimen")
+    PDX_TISSUE = PermissibleValue(
+        text="PDX_TISSUE",
+        description="Patient-derived xenograft tissue",
+        meaning=NCIT["C122936"])
+    CDX_TISSUE = PermissibleValue(
+        text="CDX_TISSUE",
+        description="Cell line-derived xenograft tissue")
+
+    _defn = EnumDefinition(
+        name="SpecimenTypeEnum",
+        description="Types of biological specimens used in research",
+    )
+
+class AnalyteTypeEnum(EnumDefinitionImpl):
+    """
+    Types of analytes that can be extracted from biological specimens for molecular analysis.
+    """
+    DNA = PermissibleValue(
+        text="DNA",
+        description="Deoxyribonucleic acid",
+        meaning=NCIT["C198567"])
+    RNA = PermissibleValue(
+        text="RNA",
+        description="Ribonucleic acid",
+        meaning=NCIT["C198568"])
+    TOTAL_RNA = PermissibleValue(
+        text="TOTAL_RNA",
+        description="Total RNA including all RNA species")
+    FFPE_DNA = PermissibleValue(
+        text="FFPE_DNA",
+        description="DNA extracted from formalin-fixed paraffin-embedded tissue")
+    FFPE_RNA = PermissibleValue(
+        text="FFPE_RNA",
+        description="RNA extracted from formalin-fixed paraffin-embedded tissue")
+    cfDNA = PermissibleValue(
+        text="cfDNA",
+        description="Cell-free DNA found in blood plasma",
+        meaning=NCIT["C128274"])
+    PROTEIN = PermissibleValue(
+        text="PROTEIN",
+        description="Protein analyte",
+        meaning=NCIT["C17021"])
+    NUCLEI_RNA = PermissibleValue(
+        text="NUCLEI_RNA",
+        description="RNA isolated from cell nuclei")
+    REPLI_G_DNA = PermissibleValue(
+        text="REPLI_G_DNA",
+        description="Whole genome amplified DNA using Repli-G technology")
+    REPLI_G_X_DNA = PermissibleValue(
+        text="REPLI_G_X_DNA",
+        description="Whole genome amplified DNA using Repli-G X technology")
+    REPLI_G_POOLED_DNA = PermissibleValue(
+        text="REPLI_G_POOLED_DNA",
+        description="Pooled whole genome amplified DNA using Repli-G")
+    GENOMEPLEX_DNA = PermissibleValue(
+        text="GENOMEPLEX_DNA",
+        description="Whole genome amplified DNA using GenomePlex technology")
+    EBV_IMMORTALIZED = PermissibleValue(
+        text="EBV_IMMORTALIZED",
+        description="DNA/cells from EBV immortalized cell lines")
+
+    _defn = EnumDefinition(
+        name="AnalyteTypeEnum",
+        description="Types of analytes that can be extracted from biological specimens for molecular analysis.",
+    )
+
+class SourceMaterialTypeEnum(EnumDefinitionImpl):
+    """
+    Types of source materials from which specimens are derived, particularly relevant for cancer and tissue banking
+    research.
+    """
+    PRIMARY_TUMOR = PermissibleValue(
+        text="PRIMARY_TUMOR",
+        description="Primary tumor tissue",
+        meaning=NCIT["C8509"])
+    METASTATIC = PermissibleValue(
+        text="METASTATIC",
+        description="Metastatic tumor tissue",
+        meaning=NCIT["C3261"])
+    RECURRENT_TUMOR = PermissibleValue(
+        text="RECURRENT_TUMOR",
+        description="Recurrent tumor tissue",
+        meaning=NCIT["C4798"])
+    BLOOD_DERIVED_NORMAL = PermissibleValue(
+        text="BLOOD_DERIVED_NORMAL",
+        description="Normal cells derived from blood")
+    BLOOD_DERIVED_CANCER_PERIPHERAL_BLOOD = PermissibleValue(
+        text="BLOOD_DERIVED_CANCER_PERIPHERAL_BLOOD",
+        description="Cancer cells from peripheral blood")
+    BLOOD_DERIVED_CANCER_BONE_MARROW = PermissibleValue(
+        text="BLOOD_DERIVED_CANCER_BONE_MARROW",
+        description="Cancer cells from bone marrow")
+    BONE_MARROW_NORMAL = PermissibleValue(
+        text="BONE_MARROW_NORMAL",
+        description="Normal bone marrow cells")
+    SOLID_TISSUE_NORMAL = PermissibleValue(
+        text="SOLID_TISSUE_NORMAL",
+        description="Normal solid tissue")
+    BUCCAL_CELL_NORMAL = PermissibleValue(
+        text="BUCCAL_CELL_NORMAL",
+        description="Normal buccal (cheek) cells")
+    NORMAL_ADJACENT_TISSUE = PermissibleValue(
+        text="NORMAL_ADJACENT_TISSUE",
+        description="Normal tissue adjacent to tumor",
+        meaning=NCIT["C164032"])
+    CELL_LINES = PermissibleValue(
+        text="CELL_LINES",
+        description="Established cell lines",
+        meaning=NCIT["C16403"])
+    PRIMARY_XENOGRAFT_TISSUE = PermissibleValue(
+        text="PRIMARY_XENOGRAFT_TISSUE",
+        description="Tissue from primary xenograft")
+    XENOGRAFT_TISSUE = PermissibleValue(
+        text="XENOGRAFT_TISSUE",
+        description="Tissue derived from xenograft models")
+    NEXT_GENERATION_CANCER_MODEL = PermissibleValue(
+        text="NEXT_GENERATION_CANCER_MODEL",
+        description="Tissue from next-generation cancer models")
+    PLEURAL_EFFUSION = PermissibleValue(
+        text="PLEURAL_EFFUSION",
+        description="Fluid from pleural effusion",
+        meaning=NCIT["C3331"])
+    SALIVA = PermissibleValue(
+        text="SALIVA",
+        description="Saliva specimen",
+        meaning=NCIT["C13275"])
+    GRANULOCYTES = PermissibleValue(
+        text="GRANULOCYTES",
+        description="Granulocyte cells",
+        meaning=NCIT["C12530"])
+    EBV_IMMORTALIZED_NORMAL = PermissibleValue(
+        text="EBV_IMMORTALIZED_NORMAL",
+        description="EBV immortalized normal cells")
+    CONTROL_ANALYTE = PermissibleValue(
+        text="CONTROL_ANALYTE",
+        description="Control analyte material")
+    FFPE_SCROLLS = PermissibleValue(
+        text="FFPE_SCROLLS",
+        description="FFPE tissue scrolls")
+    FFPE_RECURRENT = PermissibleValue(
+        text="FFPE_RECURRENT",
+        description="FFPE tissue from recurrent tumor")
+    NOT_REPORTED = PermissibleValue(
+        text="NOT_REPORTED",
+        description="Source material type not reported")
+    UNKNOWN = PermissibleValue(
+        text="UNKNOWN",
+        description="Unknown source material type",
+        meaning=NCIT["C17998"])
+
+    _defn = EnumDefinition(
+        name="SourceMaterialTypeEnum",
+        description="""Types of source materials from which specimens are derived, particularly relevant for cancer and tissue banking research.""",
+    )
+
+class SpecimenCreationActivityTypeEnum(EnumDefinitionImpl):
+    """
+    High-level types of activities through which specimens are generated, either by collection from source or
+    derivation from existing specimens.
+    """
+    COLLECTION_FROM_SOURCE = PermissibleValue(
+        text="COLLECTION_FROM_SOURCE",
+        description="Activity that collects an initial sample directly from a subject or source",
+        meaning=OBI["0000659"])
+    DERIVATION_FROM_SPECIMEN = PermissibleValue(
+        text="DERIVATION_FROM_SPECIMEN",
+        description="Activity that derives a new specimen from an existing one",
+        meaning=OBI["0000094"])
+
+    _defn = EnumDefinition(
+        name="SpecimenCreationActivityTypeEnum",
+        description="""High-level types of activities through which specimens are generated, either by collection from source or derivation from existing specimens.""",
+    )
+
+class SpecimenProcessingActivityTypeEnum(EnumDefinitionImpl):
+    """
+    High-level types of specimen processing activities
+    """
+    FIXATION = PermissibleValue(
+        text="FIXATION",
+        description="Chemical preservation to maintain structural and molecular features",
+        meaning=NCIT["C25219"])
+    FREEZING = PermissibleValue(
+        text="FREEZING",
+        description="Processing activity that freezes a specimen",
+        meaning=NCIT["C70717"])
+    MOUNTING = PermissibleValue(
+        text="MOUNTING",
+        description="Securing a specimen in place for examination")
+    PRESERVATION = PermissibleValue(
+        text="PRESERVATION",
+        description="Processing activity that preserves a specimen for storage")
+
+    _defn = EnumDefinition(
+        name="SpecimenProcessingActivityTypeEnum",
+        description="High-level types of specimen processing activities",
+    )
+
+class SpecimenQualityObservationTypeEnum(EnumDefinitionImpl):
+    """
+    Types of measurements that reflect specimen quality or suitability for use
+    """
+    A260_A280_RATIO = PermissibleValue(
+        text="A260_A280_RATIO",
+        description="Ratio of absorbance at 260nm to 280nm wavelength for nucleic acid purity")
+    RIBOSOMAL_RNA_28S_16S_RATIO = PermissibleValue(
+        text="RIBOSOMAL_RNA_28S_16S_RATIO",
+        description="Ratio of 28S to 16S ribosomal RNA for RNA integrity")
+
+    _defn = EnumDefinition(
+        name="SpecimenQualityObservationTypeEnum",
+        description="Types of measurements that reflect specimen quality or suitability for use",
+    )
+
+class SpecimenQualityObservationMethodEnum(EnumDefinitionImpl):
+    """
+    Methods used for determining specimen quality
+    """
+    UV_SPEC = PermissibleValue(
+        text="UV_SPEC",
+        description="UV-Vis spectrophotometry measuring absorbance across UV and visible ranges",
+        meaning=NCIT["C116701"])
+    PICO_GREEN = PermissibleValue(
+        text="PICO_GREEN",
+        description="Fluorescent dye assay for quantifying double-stranded DNA")
+
+    _defn = EnumDefinition(
+        name="SpecimenQualityObservationMethodEnum",
+        description="Methods used for determining specimen quality",
+    )
+
+class SpecimenQuantityObservationTypeEnum(EnumDefinitionImpl):
+    """
+    Types of quantity measurements for specimens
+    """
+    WEIGHT = PermissibleValue(
+        text="WEIGHT",
+        description="Current weight of the specimen",
+        meaning=NCIT["C25208"])
+    VOLUME = PermissibleValue(
+        text="VOLUME",
+        description="Current volume of the specimen",
+        meaning=NCIT["C25335"])
+    CONCENTRATION = PermissibleValue(
+        text="CONCENTRATION",
+        description="Concentration of extracted analyte in specimen",
+        meaning=NCIT["C41185"])
+
+    _defn = EnumDefinition(
+        name="SpecimenQuantityObservationTypeEnum",
+        description="Types of quantity measurements for specimens",
+    )
+
+class SectionLocationEnum(EnumDefinitionImpl):
+    """
+    Location in a parent specimen from which a section was excised
+    """
+    TOP = PermissibleValue(
+        text="TOP",
+        description="The top portion of a specimen per orientation criteria")
+    BOTTOM = PermissibleValue(
+        text="BOTTOM",
+        description="The bottom portion of a specimen per orientation criteria")
+    UNKNOWN = PermissibleValue(
+        text="UNKNOWN",
+        description="Unknown location on a specimen",
+        meaning=NCIT["C17998"])
+
+    _defn = EnumDefinition(
+        name="SectionLocationEnum",
+        description="Location in a parent specimen from which a section was excised",
+    )
+
+class ConditionProvenanceEnum(EnumDefinitionImpl):
+    """
+    Sources of condition/diagnosis records indicating how the condition was documented or determined.
+    """
+    EHR_BILLING_DIAGNOSIS = PermissibleValue(
+        text="EHR_BILLING_DIAGNOSIS",
+        description="Diagnosis recorded for billing purposes in EHR")
+    EHR_CHIEF_COMPLAINT = PermissibleValue(
+        text="EHR_CHIEF_COMPLAINT",
+        description="Condition documented as chief complaint in EHR")
+    EHR_ENCOUNTER_DIAGNOSIS = PermissibleValue(
+        text="EHR_ENCOUNTER_DIAGNOSIS",
+        description="Diagnosis recorded during healthcare encounter")
+    EHR_EPISODE_ENTRY = PermissibleValue(
+        text="EHR_EPISODE_ENTRY",
+        description="Condition recorded as part of care episode")
+    EHR_PROBLEM_LIST_ENTRY = PermissibleValue(
+        text="EHR_PROBLEM_LIST_ENTRY",
+        description="Condition on patient problem list in EHR")
+    FIRST_POSITION_CONDITION = PermissibleValue(
+        text="FIRST_POSITION_CONDITION",
+        description="Primary diagnosis in first position on claim")
+    NLP_DERIVED = PermissibleValue(
+        text="NLP_DERIVED",
+        description="Condition derived through natural language processing")
+    OBSERVATION_RECORDED_FROM_EHR = PermissibleValue(
+        text="OBSERVATION_RECORDED_FROM_EHR",
+        description="Condition recorded as observation in EHR")
+    PATIENT_SELF_REPORTED_CONDITION = PermissibleValue(
+        text="PATIENT_SELF_REPORTED_CONDITION",
+        description="Condition reported by the patient")
+    PRIMARY_CONDITION = PermissibleValue(
+        text="PRIMARY_CONDITION",
+        description="Primary condition for an encounter or episode")
+    REFERRAL_RECORD = PermissibleValue(
+        text="REFERRAL_RECORD",
+        description="Condition documented in referral record")
+    SECONDARY_CONDITION = PermissibleValue(
+        text="SECONDARY_CONDITION",
+        description="Secondary or comorbid condition")
+    TUMOR_REGISTRY = PermissibleValue(
+        text="TUMOR_REGISTRY",
+        description="Condition from tumor registry")
+    WORKING_DIAGNOSIS = PermissibleValue(
+        text="WORKING_DIAGNOSIS",
+        description="Preliminary or working diagnosis")
+    CLINICAL_DIAGNOSIS = PermissibleValue(
+        text="CLINICAL_DIAGNOSIS",
+        description="Clinically confirmed diagnosis")
+
+    _defn = EnumDefinition(
+        name="ConditionProvenanceEnum",
+        description="Sources of condition/diagnosis records indicating how the condition was documented or determined.",
+    )
+
+class VisitProvenanceEnum(EnumDefinitionImpl):
+    """
+    Sources of healthcare visit/encounter records indicating the origin of the visit documentation.
+    """
+    CASE_REPORT_FORM = PermissibleValue(
+        text="CASE_REPORT_FORM",
+        description="Visit from clinical trial case report form")
+    CLAIM = PermissibleValue(
+        text="CLAIM",
+        description="Visit derived from insurance claim")
+    EHR = PermissibleValue(
+        text="EHR",
+        description="Visit from electronic health record")
+    EHR_ENCOUNTER_RECORD = PermissibleValue(
+        text="EHR_ENCOUNTER_RECORD",
+        description="Visit from EHR encounter documentation")
+    EHR_ADMISSION_NOTE = PermissibleValue(
+        text="EHR_ADMISSION_NOTE",
+        description="Visit from EHR admission note")
+    EHR_DISCHARGE_RECORD = PermissibleValue(
+        text="EHR_DISCHARGE_RECORD",
+        description="Visit from EHR discharge documentation")
+    EHR_EMERGENCY_ROOM_NOTE = PermissibleValue(
+        text="EHR_EMERGENCY_ROOM_NOTE",
+        description="Visit from EHR emergency room note")
+    EHR_INPATIENT_NOTE = PermissibleValue(
+        text="EHR_INPATIENT_NOTE",
+        description="Visit from EHR inpatient note")
+    EHR_OUTPATIENT_NOTE = PermissibleValue(
+        text="EHR_OUTPATIENT_NOTE",
+        description="Visit from EHR outpatient note")
+    INPATIENT_CLAIM = PermissibleValue(
+        text="INPATIENT_CLAIM",
+        description="Visit from inpatient insurance claim")
+    OUTPATIENT_CLAIM = PermissibleValue(
+        text="OUTPATIENT_CLAIM",
+        description="Visit from outpatient insurance claim")
+    FACILITY_CLAIM = PermissibleValue(
+        text="FACILITY_CLAIM",
+        description="Visit from facility insurance claim")
+    PROFESSIONAL_CLAIM = PermissibleValue(
+        text="PROFESSIONAL_CLAIM",
+        description="Visit from professional services claim")
+    PHARMACY_CLAIM = PermissibleValue(
+        text="PHARMACY_CLAIM",
+        description="Visit from pharmacy claim")
+    LAB = PermissibleValue(
+        text="LAB",
+        description="Visit from laboratory record")
+    REGISTRY = PermissibleValue(
+        text="REGISTRY",
+        description="Visit from disease or patient registry")
+    SURVEY = PermissibleValue(
+        text="SURVEY",
+        description="Visit from patient survey")
+    PATIENT_SELF_REPORT = PermissibleValue(
+        text="PATIENT_SELF_REPORT",
+        description="Visit reported by patient")
+    NLP = PermissibleValue(
+        text="NLP",
+        description="Visit derived through natural language processing")
+    HEALTH_INFORMATION_EXCHANGE_RECORD = PermissibleValue(
+        text="HEALTH_INFORMATION_EXCHANGE_RECORD",
+        description="Visit from health information exchange")
+
+    _defn = EnumDefinition(
+        name="VisitProvenanceEnum",
+        description="Sources of healthcare visit/encounter records indicating the origin of the visit documentation.",
+    )
+
+class DrugExposureProvenanceEnum(EnumDefinitionImpl):
+    """
+    Sources of drug exposure records indicating how the medication information was documented.
+    """
+    RANDOMIZED_DRUG = PermissibleValue(
+        text="RANDOMIZED_DRUG",
+        description="Drug from clinical trial randomization")
+    PATIENT_SELF_REPORTED_MEDICATION = PermissibleValue(
+        text="PATIENT_SELF_REPORTED_MEDICATION",
+        description="Medication reported by patient")
+    NLP_DERIVED = PermissibleValue(
+        text="NLP_DERIVED",
+        description="Drug exposure derived through NLP")
+    PRESCRIPTION_DISPENSED_IN_PHARMACY = PermissibleValue(
+        text="PRESCRIPTION_DISPENSED_IN_PHARMACY",
+        description="Prescription dispensed at pharmacy")
+    PHYSICIAN_ADMINISTERED_DRUG_FROM_EHR_ORDER = PermissibleValue(
+        text="PHYSICIAN_ADMINISTERED_DRUG_FROM_EHR_ORDER",
+        description="Drug administered by physician from EHR order")
+    DISPENSED_IN_OUTPATIENT_OFFICE = PermissibleValue(
+        text="DISPENSED_IN_OUTPATIENT_OFFICE",
+        description="Drug dispensed in outpatient office")
+    PRESCRIPTION_DISPENSED_THROUGH_MAIL_ORDER = PermissibleValue(
+        text="PRESCRIPTION_DISPENSED_THROUGH_MAIL_ORDER",
+        description="Prescription dispensed via mail order")
+    PRESCRIPTION_WRITTEN = PermissibleValue(
+        text="PRESCRIPTION_WRITTEN",
+        description="Prescription written by provider")
+    MEDICATION_LIST_ENTRY = PermissibleValue(
+        text="MEDICATION_LIST_ENTRY",
+        description="Drug from medication list")
+    PHYSICIAN_ADMINISTERED_DRUG_AS_PROCEDURE = PermissibleValue(
+        text="PHYSICIAN_ADMINISTERED_DRUG_AS_PROCEDURE",
+        description="Drug administered as procedure")
+    INPATIENT_ADMINISTRATION = PermissibleValue(
+        text="INPATIENT_ADMINISTRATION",
+        description="Drug administered during inpatient stay")
+
+    _defn = EnumDefinition(
+        name="DrugExposureProvenanceEnum",
+        description="Sources of drug exposure records indicating how the medication information was documented.",
+    )
+
+class StatusEnum(EnumDefinitionImpl):
+    """
+    Values indicating whether a condition or observation is present, absent, or of unknown status.
+    """
+    PRESENT = PermissibleValue(
+        text="PRESENT",
+        description="Was present in the patient at observation time")
+    ABSENT = PermissibleValue(
+        text="ABSENT",
+        description="Was absent in the patient at observation time")
+    UNKNOWN = PermissibleValue(
+        text="UNKNOWN",
+        description="Status was unknown at observation time")
+
+    _defn = EnumDefinition(
+        name="StatusEnum",
+        description="Values indicating whether a condition or observation is present, absent, or of unknown status.",
+    )
+
+class HistoricalStatusEnum(EnumDefinitionImpl):
+    """
+    Extended status values including historical presence of conditions or observations.
+    """
+    PRESENT = PermissibleValue(
+        text="PRESENT",
+        description="Currently present in the patient")
+    ABSENT = PermissibleValue(
+        text="ABSENT",
+        description="Currently absent in the patient")
+    UNKNOWN = PermissibleValue(
+        text="UNKNOWN",
+        description="Current status is unknown")
+    HISTORICAL = PermissibleValue(
+        text="HISTORICAL",
+        description="Was present in the patient historically but not currently")
+
+    _defn = EnumDefinition(
+        name="HistoricalStatusEnum",
+        description="Extended status values including historical presence of conditions or observations.",
+    )
+
+class ResearchProjectTypeEnum(EnumDefinitionImpl):
+    """
+    Types of research projects and studies
+    """
+    CONSORTIUM = PermissibleValue(
+        text="CONSORTIUM",
+        description="Multi-institutional research consortium")
+    STUDY = PermissibleValue(
+        text="STUDY",
+        description="Individual research study")
+
+    _defn = EnumDefinition(
+        name="ResearchProjectTypeEnum",
+        description="Types of research projects and studies",
+    )
+
+class DataUsePermissionEnum(EnumDefinitionImpl):
+    """
+    Primary data use permissions from the GA4GH Data Use Ontology (DUO) indicating what research purposes data can be
+    used for.
+    """
+    GRU = PermissibleValue(
+        text="GRU",
+        description="""General research use - allowed for any research purpose including health/medical/biomedical, fundamental biology, population origins, statistical methods development, and social-sciences research.""",
+        meaning=DUO["0000042"])
+    HMB = PermissibleValue(
+        text="HMB",
+        description="""Health/medical/biomedical research only - does not include study of population origins or ancestry.""",
+        meaning=DUO["0000006"])
+    DS = PermissibleValue(
+        text="DS",
+        description="""Disease-specific research - use allowed only for research related to specified disease(s). Should be coupled with disease ontology term.""",
+        meaning=DUO["0000007"])
+    NO_RESTRICTION = PermissibleValue(
+        text="NO_RESTRICTION",
+        description="No restriction on use of the data.",
+        meaning=DUO["0000004"])
+
+    _defn = EnumDefinition(
+        name="DataUsePermissionEnum",
+        description="""Primary data use permissions from the GA4GH Data Use Ontology (DUO) indicating what research purposes data can be used for.""",
+    )
+
+class DataUseModifierEnum(EnumDefinitionImpl):
+    """
+    Additional conditions and modifiers for data use from the GA4GH Data Use Ontology (DUO).
+    """
+    NPUNCU = PermissibleValue(
+        text="NPUNCU",
+        description="Not-for-profit use only - use limited to not-for-profit organizations and non-commercial use.",
+        meaning=DUO["0000018"])
+    NPO = PermissibleValue(
+        text="NPO",
+        description="Use limited to not-for-profit organizations only.",
+        meaning=DUO["0000045"])
+    NCU = PermissibleValue(
+        text="NCU",
+        description="""Non-commercial use only - data can be used by commercial organizations for research but not commercial purposes.""",
+        meaning=DUO["0000046"])
+    IRB = PermissibleValue(
+        text="IRB",
+        description="Ethics approval required - requestor must provide documentation of local IRB/ERB approval.",
+        meaning=DUO["0000021"])
+    NRES = PermissibleValue(
+        text="NRES",
+        description="No restriction on data use.",
+        meaning=DUO["0000004"])
+    NMDS = PermissibleValue(
+        text="NMDS",
+        description="No general methods research - does not allow methods development.",
+        meaning=DUO["0000015"])
+    RS = PermissibleValue(
+        text="RS",
+        description="Research-specific restrictions apply.",
+        meaning=DUO["0000012"])
+
+    _defn = EnumDefinition(
+        name="DataUseModifierEnum",
+        description="Additional conditions and modifiers for data use from the GA4GH Data Use Ontology (DUO).",
     )
 
 class MimeType(EnumDefinitionImpl):
@@ -31309,6 +32193,33 @@ slots.outcome_type = Slot(uri=VALUESETS.outcome_type, name="outcome_type", curie
 slots.person_status = Slot(uri=VALUESETS.person_status, name="person_status", curie=VALUESETS.curie('person_status'),
                    model_uri=VALUESETS.person_status, domain=None, range=Optional[Union[str, "PersonStatusEnum"]])
 
+slots.sdoh_domain = Slot(uri=VALUESETS.sdoh_domain, name="sdoh_domain", curie=VALUESETS.curie('sdoh_domain'),
+                   model_uri=VALUESETS.sdoh_domain, domain=None, range=Optional[Union[str, "GravitySdohDomainEnum"]])
+
+slots.educational_attainment = Slot(uri=VALUESETS.educational_attainment, name="educational_attainment", curie=VALUESETS.curie('educational_attainment'),
+                   model_uri=VALUESETS.educational_attainment, domain=None, range=Optional[Union[str, "EducationalAttainmentEnum"]])
+
+slots.specimen_preparation_method = Slot(uri=VALUESETS.specimen_preparation_method, name="specimen_preparation_method", curie=VALUESETS.curie('specimen_preparation_method'),
+                   model_uri=VALUESETS.specimen_preparation_method, domain=None, range=Optional[Union[str, "SpecimenPreparationMethodEnum"]])
+
+slots.tissue_preservation = Slot(uri=VALUESETS.tissue_preservation, name="tissue_preservation", curie=VALUESETS.curie('tissue_preservation'),
+                   model_uri=VALUESETS.tissue_preservation, domain=None, range=Optional[Union[str, "TissuePreservationEnum"]])
+
+slots.condition_provenance = Slot(uri=VALUESETS.condition_provenance, name="condition_provenance", curie=VALUESETS.curie('condition_provenance'),
+                   model_uri=VALUESETS.condition_provenance, domain=None, range=Optional[Union[str, "ConditionProvenanceEnum"]])
+
+slots.visit_provenance = Slot(uri=VALUESETS.visit_provenance, name="visit_provenance", curie=VALUESETS.curie('visit_provenance'),
+                   model_uri=VALUESETS.visit_provenance, domain=None, range=Optional[Union[str, "VisitProvenanceEnum"]])
+
+slots.drug_provenance = Slot(uri=VALUESETS.drug_provenance, name="drug_provenance", curie=VALUESETS.curie('drug_provenance'),
+                   model_uri=VALUESETS.drug_provenance, domain=None, range=Optional[Union[str, "DrugExposureProvenanceEnum"]])
+
+slots.data_use_permission = Slot(uri=VALUESETS.data_use_permission, name="data_use_permission", curie=VALUESETS.curie('data_use_permission'),
+                   model_uri=VALUESETS.data_use_permission, domain=None, range=Optional[Union[str, "DataUsePermissionEnum"]])
+
+slots.data_use_modifier = Slot(uri=VALUESETS.data_use_modifier, name="data_use_modifier", curie=VALUESETS.curie('data_use_modifier'),
+                   model_uri=VALUESETS.data_use_modifier, domain=None, range=Optional[Union[str, "DataUseModifierEnum"]])
+
 slots.mime = Slot(uri=VALUESETS.mime, name="mime", curie=VALUESETS.curie('mime'),
                    model_uri=VALUESETS.mime, domain=None, range=Optional[Union[str, "MimeType"]])
 
@@ -32310,3 +33221,4 @@ slots.update_frequency = Slot(uri=VALUESETS.update_frequency, name="update_frequ
 
 slots.data_service_type = Slot(uri=VALUESETS.data_service_type, name="data_service_type", curie=VALUESETS.curie('data_service_type'),
                    model_uri=VALUESETS.data_service_type, domain=None, range=Optional[Union[str, "DataServiceType"]])
+

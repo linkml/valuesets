@@ -1,7 +1,7 @@
 name: taxonomy
 title: Taxonomic Classifications
 description: Value sets for taxonomic classifications and model organisms
-id: https://w3id.org/linkml/valuesets/bio/taxonomy
+id: https://w3id.org/valuesets/bio/taxonomy
 imports:
 - linkml:types
 prefixes:

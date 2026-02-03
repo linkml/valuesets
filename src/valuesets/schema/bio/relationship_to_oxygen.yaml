@@ -1,5 +1,5 @@
 name: relationship_to_oxygen
-id: https://w3id.org/linkml/valuesets/bio/relationship_to_oxygen
+id: https://w3id.org/valuesets/bio/relationship_to_oxygen
 prefixes:
   ECOCORE: http://purl.obolibrary.org/obo/ECOCORE_
   OMP: http://purl.obolibrary.org/obo/OMP_

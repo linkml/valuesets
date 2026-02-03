@@ -1,5 +1,5 @@
 name: trophic_levels
-id: https://w3id.org/linkml/valuesets/bio/trophic_levels
+id: https://w3id.org/valuesets/bio/trophic_levels
 prefixes:
   ECOCORE: http://purl.obolibrary.org/obo/ECOCORE_
   MICRO: http://purl.obolibrary.org/obo/MICRO_

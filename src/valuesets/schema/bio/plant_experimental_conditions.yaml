@@ -3,7 +3,7 @@ title: Plant Experimental Conditions Value Sets
 description: >-
   Value sets based on the Plant Experimental Conditions Ontology (PECO),
   including plant exposures and study conditions.
-id: https://w3id.org/linkml/valuesets/bio/plant_experimental_conditions
+id: https://w3id.org/valuesets/bio/plant_experimental_conditions
 imports:
 - linkml:types
 prefixes:

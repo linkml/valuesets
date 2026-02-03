@@ -3,7 +3,7 @@ title: NIH Demographics and Common Data Elements
 description: 'Standard value sets for NIH Common Data Elements (CDEs) including demographics,
 
   race, ethnicity, sex, and other clinical variables following NIH and OMB standards'
-id: https://w3id.org/linkml/valuesets/clinical/nih_demographics
+id: https://w3id.org/valuesets/clinical/nih_demographics
 imports:
 - linkml:types
 prefixes:

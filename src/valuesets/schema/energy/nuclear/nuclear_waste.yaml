@@ -2,7 +2,7 @@ name: nuclear_waste
 title: Nuclear Waste Classifications
 description: 'Classifications of radioactive waste based on IAEA standards, NRC 10 CFR 61 classifications, and international
   waste management standards. Includes activity levels, disposal requirements, and time scales.'
-id: https://w3id.org/linkml/valuesets/energy/nuclear/nuclear_waste
+id: https://w3id.org/valuesets/energy/nuclear/nuclear_waste
 imports:
 - linkml:types
 prefixes:

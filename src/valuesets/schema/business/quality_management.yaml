@@ -2,7 +2,7 @@ name: quality_management
 title: Quality Management Systems and Standards
 description: 'Quality management frameworks, ISO standards, process improvement methodologies, and quality assurance systems.
   Based on international quality standards, continuous improvement methodologies, and quality management best practices.'
-id: https://w3id.org/linkml/valuesets/business/quality_management
+id: https://w3id.org/valuesets/business/quality_management
 imports:
 - linkml:types
 prefixes:

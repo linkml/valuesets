@@ -1,5 +1,5 @@
 name: lab_automation_thermal_cycling
-id: https://w3id.org/linkml/valuesets/lab_automation/thermal_cycling
+id: https://w3id.org/valuesets/lab_automation/thermal_cycling
 prefixes:
   OBI: http://purl.obolibrary.org/obo/OBI_
   NCIT: http://purl.obolibrary.org/obo/NCIT_

@@ -1,5 +1,5 @@
 name: emotion_classification
-id: https://w3id.org/linkml/valuesets/data_science/emotion_classification
+id: https://w3id.org/valuesets/data_science/emotion_classification
 prefixes:
   # linkml_common: https://w3id.org/linkml-common/
   MFOEM: http://purl.obolibrary.org/obo/MFOEM_

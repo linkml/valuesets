@@ -1,5 +1,5 @@
 name: material_properties
-id: https://w3id.org/linkml/valuesets/materials_science/material_properties
+id: https://w3id.org/valuesets/materials_science/material_properties
 prefixes:
   CHEBI: http://purl.obolibrary.org/obo/CHEBI_
   NCIT: http://purl.obolibrary.org/obo/NCIT_

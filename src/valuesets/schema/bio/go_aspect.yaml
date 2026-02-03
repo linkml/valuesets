@@ -1,7 +1,7 @@
 name: go_aspect
 title: Gene Ontology Aspects
 description: The three main aspects of Gene Ontology - Molecular Function, Biological Process, and Cellular Component
-id: https://w3id.org/linkml/valuesets/bio/go_aspect
+id: https://w3id.org/valuesets/bio/go_aspect
 imports:
 - linkml:types
 prefixes:

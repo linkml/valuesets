@@ -3,7 +3,7 @@ title: arXiv Subject Categories
 description: >-
   Value sets for arXiv preprint subject categories and taxonomy.
   Based on the official arXiv category taxonomy.
-id: https://w3id.org/linkml/valuesets/publishing/arxiv_categories
+id: https://w3id.org/valuesets/publishing/arxiv_categories
 imports:
 - linkml:types
 prefixes:

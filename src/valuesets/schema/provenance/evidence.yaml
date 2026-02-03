@@ -3,7 +3,7 @@ title: Evidence and Provenance Value Sets
 description: >-
   Value sets for evidence types and provenance information, based on the
   Evidence and Conclusion Ontology (ECO).
-id: https://w3id.org/linkml/valuesets/provenance/evidence
+id: https://w3id.org/valuesets/provenance/evidence
 imports:
 - linkml:types
 prefixes:

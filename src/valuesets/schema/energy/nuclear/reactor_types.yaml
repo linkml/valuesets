@@ -2,7 +2,7 @@ name: nuclear_reactor_types
 title: Nuclear Reactor Types and Classifications
 description: 'Classifications of nuclear reactor types based on coolant, moderator, neutron spectrum, and generational designs.
   Based on World Nuclear Association classifications, IAEA reactor types, and industry standards.'
-id: https://w3id.org/linkml/valuesets/energy/nuclear/reactor_types
+id: https://w3id.org/valuesets/energy/nuclear/reactor_types
 imports:
 - linkml:types
 prefixes:

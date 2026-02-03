@@ -1,7 +1,7 @@
 name: valuesets
 title: valuesets
 description: A collection of commonly used value sets
-id: https://w3id.org/linkml/valuesets
+id: https://w3id.org/valuesets
 imports:
 - core
 - contributor

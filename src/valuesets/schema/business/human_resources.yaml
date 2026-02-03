@@ -2,7 +2,7 @@ name: human_resources
 title: Human Resources Management and Workforce Classifications
 description: 'Employment types, HR functions, compensation structures, performance management, and workforce development classifications.
   Based on labor standards, HR best practices, and organizational development frameworks.'
-id: https://w3id.org/linkml/valuesets/business/human_resources
+id: https://w3id.org/valuesets/business/human_resources
 imports:
 - linkml:types
 prefixes:

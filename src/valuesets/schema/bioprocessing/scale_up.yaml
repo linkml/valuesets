@@ -3,7 +3,7 @@ title: Bioprocessing Scale-up Value Sets
 description: 'Value sets for bioprocessing scale-up facilities, fermentation, and biomanufacturing
 
   operations like those at ABPDU (Advanced Biofuels and Bioproducts Process Development Unit)'
-id: https://w3id.org/linkml/valuesets/bioprocessing/scale_up
+id: https://w3id.org/valuesets/bioprocessing/scale_up
 imports:
 - linkml:types
 prefixes:

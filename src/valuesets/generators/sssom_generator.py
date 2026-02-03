@@ -257,7 +257,7 @@ class SSSOMGenerator:
 
         # Prepare metadata
         meta = metadata or {}
-        meta.setdefault("mapping_set_id", f"https://w3id.org/linkml/valuesets/mappings")
+        meta.setdefault("mapping_set_id", f"https://w3id.org/valuesets/mappings")
         meta.setdefault("mapping_set_version", datetime.now().strftime("%Y-%m-%d"))
         meta.setdefault("license", "https://creativecommons.org/publicdomain/zero/1.0/")
         meta.setdefault("creator_id", "https://github.com/linkml/linkml-valuesets")

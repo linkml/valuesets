@@ -1,5 +1,5 @@
 name: fossil_fuels
-id: https://w3id.org/linkml/valuesets/energy/fossil_fuels
+id: https://w3id.org/valuesets/energy/fossil_fuels
 prefixes:
   # linkml_common: https://w3id.org/linkml-common/
   ENVO: http://purl.obolibrary.org/obo/ENVO_

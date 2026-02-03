@@ -3,7 +3,7 @@ title: Radionuclide Value Sets
 description: >-
   Radioactive elements and isotopes of environmental and health concern,
   commonly measured in environmental monitoring and exposure assessment.
-id: https://w3id.org/linkml/valuesets/environmental_health/radionuclides
+id: https://w3id.org/valuesets/environmental_health/radionuclides
 imports:
 - linkml:types
 prefixes:

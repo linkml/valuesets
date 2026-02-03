@@ -2,7 +2,7 @@ name: nuclear_facilities
 title: Nuclear Facilities and Infrastructure Types
 description: 'Classifications of nuclear facilities including power plants, research reactors, fuel cycle facilities, waste
   management facilities, and nuclear infrastructure. Based on IAEA classifications and nuclear industry standards.'
-id: https://w3id.org/linkml/valuesets/energy/nuclear/nuclear_facilities
+id: https://w3id.org/valuesets/energy/nuclear/nuclear_facilities
 imports:
 - linkml:types
 prefixes:

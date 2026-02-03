@@ -1,7 +1,7 @@
 name: phenopackets
 title: Phenopackets Clinical Value Sets
 description: Value sets derived from GA4GH Phenopackets Schema for clinical genomics and phenotyping
-id: https://w3id.org/linkml/valuesets/clinical/phenopackets
+id: https://w3id.org/valuesets/clinical/phenopackets
 imports:
 - linkml:types
 prefixes:

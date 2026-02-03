@@ -4,7 +4,7 @@ description: >-
   File formats commonly used for geospatial and environmental data, including
   raster formats, vector formats, and scientific data formats with spatial
   extensions.
-id: https://w3id.org/linkml/valuesets/computing/geospatial_formats
+id: https://w3id.org/valuesets/computing/geospatial_formats
 imports:
 - linkml:types
 prefixes:

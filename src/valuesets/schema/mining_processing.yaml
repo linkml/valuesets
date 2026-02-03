@@ -158,10 +158,11 @@ enums:
       BIOLEACH_IRON_OXIDIZING:
         description: Bioleaching using iron-oxidizing bacteria
   ExtractableTargetElement:
-    title: Extractable Target Element
-    description: 'Target elements for extraction, particularly rare earth elements (REE) and critical minerals.
-
-      '
+    title: Extractable Target Elements
+    description: >-
+      Target elements for extraction in mining operations, including rare earth elements (REE),
+      critical minerals, and battery metals. These elements are strategically important for
+      clean energy technologies, electronics, and defense applications.
     status: DRAFT
     contributors:
     - orcid:0000-0002-6601-2165
@@ -169,63 +170,120 @@ enums:
     instantiates:
     - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
-      REE_LA:
-        title: REE_LA
-        description: Lanthanum
-      REE_CE:
-        title: REE_CE
-        description: Cerium
-      REE_PR:
-        title: REE_PR
-        description: Praseodymium
-      REE_ND:
-        title: REE_ND
-        description: Neodymium
-      REE_PM:
-        title: REE_PM
-        description: Promethium
-      REE_SM:
-        title: REE_SM
-        description: Samarium
-      REE_EU:
-        title: REE_EU
-        description: Europium
-      REE_GD:
-        title: REE_GD
-        description: Gadolinium
-      REE_TB:
-        title: REE_TB
-        description: Terbium
-      REE_DY:
-        title: REE_DY
-        description: Dysprosium
-      REE_HO:
-        title: REE_HO
-        description: Holmium
-      REE_ER:
-        title: REE_ER
-        description: Erbium
-      REE_TM:
-        title: REE_TM
-        description: Thulium
-      REE_YB:
-        title: REE_YB
-        description: Ytterbium
-      REE_LU:
-        title: REE_LU
-        description: Lutetium
+      LA:
+        title: Lanthanum
+        aliases:
+        - lanthanum atom
+        description: Light rare earth element (atomic number 57) used in catalysts, optics, and battery electrodes
+        meaning: CHEBI:33336
+      CE:
+        title: Cerium
+        aliases:
+        - cerium
+        description: Light rare earth element (atomic number 58) used in catalytic converters, glass polishing, and metallurgy
+        meaning: CHEBI:33369
+      PR:
+        title: Praseodymium
+        aliases:
+        - praseodymium atom
+        description: Light rare earth element (atomic number 59) used in magnets, lasers, and aircraft engines
+        meaning: CHEBI:49828
+      ND:
+        title: Neodymium
+        aliases:
+        - neodymium atom
+        description: Light rare earth element (atomic number 60) essential for high-strength permanent magnets in wind turbines and EVs
+        meaning: CHEBI:33372
+      PM:
+        title: Promethium
+        aliases:
+        - promethium atom
+        description: Radioactive rare earth element (atomic number 61) used in nuclear batteries and luminous paint
+        meaning: CHEBI:33373
+      SM:
+        title: Samarium
+        aliases:
+        - samarium atom
+        description: Light rare earth element (atomic number 62) used in samarium-cobalt magnets and cancer treatment
+        meaning: CHEBI:33374
+      EU:
+        title: Europium
+        aliases:
+        - europium atom
+        description: Rare earth element (atomic number 63) used in phosphors for displays and fluorescent lighting
+        meaning: CHEBI:32999
+      GD:
+        title: Gadolinium
+        aliases:
+        - gadolinium atom
+        description: Heavy rare earth element (atomic number 64) used in MRI contrast agents and nuclear reactor control rods
+        meaning: CHEBI:33375
+      TB:
+        title: Terbium
+        aliases:
+        - terbium atom
+        description: Heavy rare earth element (atomic number 65) used in solid-state devices and green phosphors
+        meaning: CHEBI:33376
+      DY:
+        title: Dysprosium
+        aliases:
+        - dysprosium atom
+        description: Heavy rare earth element (atomic number 66) critical for high-temperature permanent magnets
+        meaning: CHEBI:33377
+      HO:
+        title: Holmium
+        aliases:
+        - holmium atom
+        description: Heavy rare earth element (atomic number 67) used in lasers and magnetic flux concentrators
+        meaning: CHEBI:49648
+      ER:
+        title: Erbium
+        aliases:
+        - erbium
+        description: Heavy rare earth element (atomic number 68) used in fiber optic amplifiers and lasers
+        meaning: CHEBI:33379
+      TM:
+        title: Thulium
+        aliases:
+        - thulium atom
+        description: Heavy rare earth element (atomic number 69) used in portable X-ray devices and lasers
+        meaning: CHEBI:33380
+      YB:
+        title: Ytterbium
+        aliases:
+        - ytterbium
+        description: Heavy rare earth element (atomic number 70) used in metallurgy, lasers, and atomic clocks
+        meaning: CHEBI:33381
+      LU:
+        title: Lutetium
+        aliases:
+        - lutetium atom
+        description: Heavy rare earth element (atomic number 71) used in PET scan detectors and cancer treatment
+        meaning: CHEBI:33382
       SC:
-        title: SC
-        description: Scandium
+        title: Scandium
+        aliases:
+        - scandium atom
+        description: Transition metal (atomic number 21) used in aluminum alloys for aerospace and sports equipment
+        meaning: CHEBI:33330
       CO:
-        title: CO
-        description: Cobalt
+        title: Cobalt
+        aliases:
+        - cobalt atom
+        description: Transition metal (atomic number 27) essential for lithium-ion battery cathodes and superalloys
+        meaning: CHEBI:27638
       NI:
-        title: NI
-        description: Nickel
+        title: Nickel
+        aliases:
+        - nickel atom
+        description: Transition metal (atomic number 28) used in stainless steel, batteries, and electroplating
+        meaning: CHEBI:28112
       LI:
-        title: LI
-        description: Lithium
+        title: Lithium
+        aliases:
+        - lithium atom
+        description: Alkali metal (atomic number 3) essential for lithium-ion batteries and energy storage systems
+        meaning: CHEBI:30145
   SensorWhileDrillingFeature:
     title: Sensor While Drilling Feature
     description: 'Measurement while drilling (MWD) and logging while drilling (LWD) features for orebody ML and geosteering

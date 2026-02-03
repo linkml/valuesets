@@ -1,5 +1,5 @@
 name: viral_genome_types
-id: https://w3id.org/linkml/valuesets/bio/viral_genome_types
+id: https://w3id.org/valuesets/bio/viral_genome_types
 prefixes:
   NCIT: http://purl.obolibrary.org/obo/NCIT_
   CHEBI: http://purl.obolibrary.org/obo/CHEBI_

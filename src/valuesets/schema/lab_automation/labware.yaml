@@ -1,5 +1,5 @@
 name: lab_automation_labware
-id: https://w3id.org/linkml/valuesets/lab_automation/labware
+id: https://w3id.org/valuesets/lab_automation/labware
 prefixes:
   NCIT: http://purl.obolibrary.org/obo/NCIT_
   BAO: http://www.bioassayontology.org/bao#BAO_

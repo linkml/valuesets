@@ -1,7 +1,7 @@
 name: go_evidence
 title: Gene Ontology Evidence Codes
 description: Value sets for Gene Ontology evidence codes and electronic annotation methods
-id: https://w3id.org/linkml/valuesets/bio/go_evidence
+id: https://w3id.org/valuesets/bio/go_evidence
 imports:
 - linkml:types
 prefixes:

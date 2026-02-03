@@ -1,7 +1,7 @@
 name: types
 title: Common Type Definitions
 description: Common type definitions for value sets
-id: https://w3id.org/linkml/valuesets/types
+id: https://w3id.org/valuesets/types
 imports:
 - linkml:types
 prefixes:

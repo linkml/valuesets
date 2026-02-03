@@ -6,7 +6,7 @@ description: >-
   cancers, emphasizing tumor morphology rather than primary site (as used for
   adult cancers). ICCC-3 classifies tumors coded according to ICD-O-3 into
   12 main groups and 47 subgroups.
-id: https://w3id.org/linkml/valuesets/medical/pediatric_oncology/iccc3
+id: https://w3id.org/valuesets/medical/pediatric_oncology/iccc3
 imports:
 - linkml:types
 prefixes:

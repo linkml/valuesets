@@ -1,5 +1,5 @@
 name: crystal_structures
-id: https://w3id.org/linkml/valuesets/materials_science/crystal_structures
+id: https://w3id.org/valuesets/materials_science/crystal_structures
 prefixes:
   CHEBI: http://purl.obolibrary.org/obo/CHEBI_
   EMMO: http://emmo.info/emmo#

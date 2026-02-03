@@ -98,7 +98,7 @@ CVS schemas are authored in YAML following LinkML syntax. Each schema file defin
 
 ```yaml
 name: schema_name
-id: https://w3id.org/linkml/valuesets/domain/schema_name
+id: https://w3id.org/valuesets/domain/schema_name
 prefixes:
   ontology_prefix: http://purl.obolibrary.org/obo/ONTOLOGY_
 

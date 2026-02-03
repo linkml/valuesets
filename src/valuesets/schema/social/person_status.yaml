@@ -1,5 +1,5 @@
 name: person_status
-id: https://w3id.org/linkml/valuesets/social/person_status
+id: https://w3id.org/valuesets/social/person_status
 prefixes:
   PATO: http://purl.obolibrary.org/obo/PATO_
   # linkml_common: https://w3id.org/linkml-common/

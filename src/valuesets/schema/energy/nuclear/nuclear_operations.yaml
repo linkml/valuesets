@@ -2,7 +2,7 @@ name: nuclear_operations
 title: Nuclear Operations and Reactor States
 description: 'Classifications for nuclear reactor operational states, maintenance activities, licensing stages, and operational
   procedures. Based on nuclear industry standards and regulatory frameworks.'
-id: https://w3id.org/linkml/valuesets/energy/nuclear/nuclear_operations
+id: https://w3id.org/valuesets/energy/nuclear/nuclear_operations
 imports:
 - linkml:types
 prefixes:

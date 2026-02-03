@@ -1,5 +1,5 @@
 name: lab_automation_operations
-id: https://w3id.org/linkml/valuesets/lab_automation/operations
+id: https://w3id.org/valuesets/lab_automation/operations
 prefixes:
   EFO: http://www.ebi.ac.uk/efo/EFO_
   MMO: http://purl.obolibrary.org/obo/MMO_

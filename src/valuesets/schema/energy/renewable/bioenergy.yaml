@@ -3,7 +3,7 @@ title: Bioenergy and Biofuels Value Sets
 description: >-
   Value sets for bioenergy feedstocks, biofuels, and conversion processes.
   Based on DOE Bioenergy Technologies Office terminology and glossary.
-id: https://w3id.org/linkml/valuesets/energy/renewable/bioenergy
+id: https://w3id.org/valuesets/energy/renewable/bioenergy
 imports:
 - linkml:types
 prefixes:

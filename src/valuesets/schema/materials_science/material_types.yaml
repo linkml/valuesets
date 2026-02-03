@@ -1,5 +1,5 @@
 name: material_types
-id: https://w3id.org/linkml/valuesets/materials_science/material_types
+id: https://w3id.org/valuesets/materials_science/material_types
 prefixes:
   CHEBI: http://purl.obolibrary.org/obo/CHEBI_
   ENVO: http://purl.obolibrary.org/obo/ENVO_

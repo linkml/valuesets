@@ -3,7 +3,7 @@ title: Spatial Qualifier Value Sets
 description: 'Value sets for spatial qualifiers, directions, and anatomical positions,
 
   including both simple directional terms and biological spatial terminology'
-id: https://w3id.org/linkml/valuesets/spatial/spatial_qualifiers
+id: https://w3id.org/valuesets/spatial/spatial_qualifiers
 imports:
 - linkml:types
 prefixes:

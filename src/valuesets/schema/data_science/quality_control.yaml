@@ -1,5 +1,5 @@
 name: quality_control
-id: https://w3id.org/linkml/valuesets/data_science/quality_control
+id: https://w3id.org/valuesets/data_science/quality_control
 prefixes:
   # linkml_common: https://w3id.org/linkml-common/
   NCIT: http://purl.obolibrary.org/obo/NCIT_

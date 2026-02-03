@@ -1,5 +1,5 @@
 name: synthesis_methods
-id: https://w3id.org/linkml/valuesets/materials_science/synthesis_methods
+id: https://w3id.org/valuesets/materials_science/synthesis_methods
 prefixes:
   OBI: http://purl.obolibrary.org/obo/OBI_
   CHMO: http://purl.obolibrary.org/obo/CHMO_
