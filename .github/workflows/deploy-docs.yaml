@@ -52,7 +52,10 @@ jobs:
       - name: Install dependencies
         run: uv sync --dev --no-progress
 
-      - name: Generate schema documentation
+      - name: Generate project and documentation
         run: |
+          just gen-project
           just gen-doc
-          uv run mkdocs gh-deploy
+
+      - name: Deploy to GitHub Pages
+        run: uv run mkdocs gh-deploy --force

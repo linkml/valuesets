@@ -45,6 +45,7 @@ jobs:
         run: |
           just gen-project
           just gen-doc
+          just gen-sssom
 
       - name: Check for changes
         id: changes
@@ -97,6 +98,7 @@ jobs:
           ```
           just gen-project
           just gen-doc
+          just gen-sssom
           ```
 
           Please review the diffs before merging.
