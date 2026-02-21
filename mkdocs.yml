@@ -33,6 +33,8 @@ nav:
     - how-to-guides/dynamic-valuesets-validation.md
     - how-to-guides/sync-uniprot-species.md
   - Slot Generation: slot-generation.md
+  - Subsets:
+    - DOE Genesis Mission: subsets/genesis-mission.md
   - Slides: slides/index.md
   - About: about.md
 
