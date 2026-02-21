@@ -50,7 +50,7 @@ def collect_all_schemas(schema_dir: Path) -> Dict[str, List[Path]]:
             # Skip the merged directory to avoid recursion
             if domain_name == 'merged':
                 continue
-            for yaml_file in domain_dir.glob('*.yaml'):
+            for yaml_file in domain_dir.rglob('*.yaml'):
                 schemas_by_domain[domain_name].append(yaml_file)
 
     return dict(schemas_by_domain)
