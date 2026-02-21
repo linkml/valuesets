@@ -59,6 +59,7 @@ from .bio.uniprot_species import UniProtSpeciesCode
 from .bio.viral_genome_types import ViralGenomeTypeEnum
 
 # Bioprocessing domain
+from .bioprocessing.biomanufacturing import BiomanufacturingScaleType, BioproductCategoryType, BioprocessOptimizationType
 from .bioprocessing.scale_up import ProcessScaleEnum, BioreactorTypeEnum, FermentationModeEnum, OxygenationStrategyEnum, AgitationTypeEnum, DownstreamProcessEnum, FeedstockTypeEnum, ProductTypeEnum, SterilizationMethodEnum
 
 # Business domain
@@ -82,11 +83,14 @@ from .clinical.provenance import ConditionProvenanceEnum, VisitProvenanceEnum, D
 
 # Computing domain
 from .computing.croissant_ml import MLDataType, DatasetEncodingFormat, DatasetSplitType, MLLicenseType, MLFieldRole, CompressionFormat, MLMediaType, MLModalityType
+from .computing.data_centers import DataCenterCoolingType, DataCenterTierLevel
 from .computing.file_formats import ImageFileFormatEnum, DocumentFormatEnum, DataFormatEnum, ArchiveFormatEnum, VideoFormatEnum, AudioFormatEnum, ProgrammingLanguageFileEnum, NetworkProtocolEnum
 from .computing.geospatial_formats import GeospatialRasterFormat, GeospatialVectorFormat
 from .computing.maturity_levels import TechnologyReadinessLevel, SoftwareMaturityLevel, CapabilityMaturityLevel, StandardsMaturityLevel, ProjectMaturityLevel, DataMaturityLevel, OpenSourceMaturityLevel
+from .computing.microelectronics import SemiconductorMaterialType, ChipFabricationNodeType
 from .computing.mime_types import MimeType, MimeTypeCategory, TextCharset, CompressionType
 from .computing.ontologies import OWLProfileEnum
+from .computing.quantum import QubitType, QuantumAlgorithmCategoryType
 
 # Core domain
 from .confidence_levels import RelativeTimeEnum, PresenceEnum, ConfidenceLevel, CIOConfidenceLevel, OBCSCertaintyLevel, IPCCLikelihoodScale, IPCCConfidenceLevel, NCITFivePointConfidenceScale
@@ -122,14 +126,22 @@ from .data_science.text_classification import NewsTopicCategoryEnum, ToxicityCla
 # Earth_Science domain
 from .earth_science.collection_methods import SESARCollectionMethod
 from .earth_science.fao_soil import FAOSoilType
+from .earth_science.hydrogeology import AquiferType, GroundwaterProcessType, HydrogeologyWellType
 from .earth_science.material_types import SESARMaterialType
 from .earth_science.physiographic_features import SESARPhysiographicFeature
+from .earth_science.remote_sensing import RemoteSensingPlatformType, RemoteSensingDataType
 from .earth_science.sample_types import SESARSampleType
+from .earth_science.subsurface import SubsurfaceFormationType, GeophysicalMethodType, SubsurfacePropertyType
+from .earth_science.water_resources import WaterResourceType, WaterUseCategoryType, WaterQualityParameterType
 
 # Energy domain
 from .energy.energy import EnergySource, EnergyUnit, PowerUnit, EnergyEfficiencyRating, BuildingEnergyStandard, GridType, BatteryType, PVCellType, PVSystemType, EnergyStorageType, EmissionScope, CarbonIntensity, ElectricityMarket, CapabilityStatus
 from .energy.fossil_fuels import FossilFuelTypeEnum
+from .energy.grid import GridComponentType, GridEnergyStorageType, GridManagementStrategyType
+from .energy.nuclear.fusion import FusionConfinementType, FusionFuelType, FusionPlasmaParameterType
+from .energy.nuclear.nuclear_cleanup import NuclearRemediationType, DecommissioningPhaseType, RadioactiveContaminantType
 from .energy.nuclear.nuclear_facilities import NuclearFacilityTypeEnum, PowerPlantStatusEnum, ResearchReactorTypeEnum, FuelCycleFacilityTypeEnum, WasteFacilityTypeEnum, NuclearShipTypeEnum
+from .energy.nuclear.nuclear_forensics import NuclearForensicsMethodType, NuclearThreatCategoryType
 from .energy.nuclear.nuclear_fuel_cycle import NuclearFuelCycleStageEnum, NuclearFuelFormEnum, EnrichmentProcessEnum
 from .energy.nuclear.nuclear_fuels import NuclearFuelTypeEnum, UraniumEnrichmentLevelEnum, FuelFormEnum, FuelAssemblyTypeEnum, FuelCycleStageEnum, FissileIsotopeEnum
 from .energy.nuclear.nuclear_operations import ReactorOperatingStateEnum, MaintenanceTypeEnum, LicensingStageEnum, FuelCycleOperationEnum, ReactorControlModeEnum, OperationalProcedureEnum
@@ -140,6 +152,7 @@ from .energy.nuclear.reactor_types import ReactorTypeEnum, ReactorGenerationEnum
 from .energy.renewable.bioenergy import BiomassFeedstockType, BiofuelType, BiofuelGeneration, BioconversionProcess
 from .energy.renewable.geothermal import GeothermalSystemType, GeothermalReservoirType, GeothermalWellType, GeothermalApplication, GeothermalResourceTemperature
 from .energy.renewable.hydrogen import HydrogenType, HydrogenProductionMethod, HydrogenStorageMethod, HydrogenApplication
+from .energy.subsurface_energy import SubsurfaceEnergyResourceType, SubsurfaceStorageType, ReservoirCharacterizationMethodType
 
 # Environmental_Health domain
 from .environmental_health.carcinogenicity import IARCCarcinogenicityGroup, EPAIRISCarcinogenicityGroup, NTPCarcinogenicityGroup
@@ -154,11 +167,15 @@ from .geography.geographic_codes import CountryCodeISO2Enum, CountryCodeISO3Enum
 from .health.vaccination import VaccinationStatusEnum, VaccinationPeriodicityEnum, VaccineCategoryEnum
 
 # Industry domain
+from .industry.construction import BuildingSystemType, BuildingEnergyPerformanceLevel
 from .industry.extractive_industry import ExtractiveIndustryFacilityTypeEnum, ExtractiveIndustryProductTypeEnum, MiningMethodEnum, WellTypeEnum
+from .industry.manufacturing import ManufacturingProcessType, SmartManufacturingTechnologyType
 from .industry.mining import MiningType, MineralCategory, CriticalMineral, CommonMineral, MiningEquipment, OreGrade, MiningPhase, MiningHazard, EnvironmentalImpact
 from .industry.safety_colors import SafetyColorEnum, TrafficLightColorEnum, HazmatColorEnum, FireSafetyColorEnum, MaritimeSignalColorEnum, AviationLightColorEnum, ElectricalWireColorEnum
+from .industry.unconventional_resources import UnconventionalMineralResourceType, BioextractionMethodType, TailingCharacterizationType
 
 # Lab_Automation domain
+from .lab_automation.autonomous_labs import AutonomousLabComponentType, ExperimentalDesignMethodType, LabAutomationWorkflowType
 from .lab_automation.devices import LaboratoryDeviceTypeEnum, RoboticArmTypeEnum
 from .lab_automation.labware import MicroplateFormatEnum, ContainerTypeEnum, PlateMaterialEnum, PlateCoatingEnum
 from .lab_automation.operations import LiquidHandlingOperationEnum, SampleProcessingOperationEnum
@@ -168,6 +185,7 @@ from .lab_automation.thermal_cycling import ThermalCyclerTypeEnum, PCROperationT
 
 # Materials_Science domain
 from .materials_science.characterization_methods import MicroscopyMethodEnum, SpectroscopyMethodEnum, ThermalAnalysisMethodEnum, MechanicalTestingMethodEnum
+from .materials_science.computational_materials import MaterialsSimulationType, MaterialPropertyPredictionType
 from .materials_science.crystal_structures import CrystalSystemEnum, BravaisLatticeEnum
 from .materials_science.material_properties import ElectricalConductivityEnum, MagneticPropertyEnum, OpticalPropertyEnum, ThermalConductivityEnum, MechanicalBehaviorEnum
 from .materials_science.material_types import MaterialClassEnum, PolymerTypeEnum, MetalTypeEnum, CompositeTypeEnum
@@ -185,6 +203,7 @@ from .medical.pediatric_oncology.iccc3 import ICCC3MainGroup, ICCC3Subgroup
 from .medical.pediatric_oncology.staging.neuroblastoma import INRGSSStage, INSSStage, NeuroblastomaRiskGroup, ImageDefinedRiskFactor
 
 # Physics domain
+from .physics.particle_physics import ParticleAcceleratorType, FundamentalParticleType, DetectorType
 from .physics.radiation import ElectromagneticRadiationTypeEnum, InfraredRadiationTypeEnum, AcousticRadiationTypeEnum
 from .physics.states_of_matter import StateOfMatterEnum
 
@@ -241,11 +260,13 @@ __all__ = [
     "AngleUnitEnum",
     "AnimalCoatColorEnum",
     "AnomalyDetectionEnum",
+    "AquiferType",
     "ArchiveFormatEnum",
     "ArxivCategory",
     "AudioFormatEnum",
     "AutomationStandardEnum",
     "AutomobilePaintColorEnum",
+    "AutonomousLabComponentType",
     "AutonomyLevel",
     "AviationLightColorEnum",
     "BMIClassificationEnum",
@@ -257,6 +278,7 @@ __all__ = [
     "BgcCategoryEnum",
     "BinaryClassificationEnum",
     "BioconversionProcess",
+    "BioextractionMethodType",
     "BiofuelGeneration",
     "BiofuelType",
     "BioleachMode",
@@ -264,7 +286,10 @@ __all__ = [
     "BiologicalKingdom",
     "BiologicalRole",
     "BiologicalSexEnum",
+    "BiomanufacturingScaleType",
     "BiomassFeedstockType",
+    "BioprocessOptimizationType",
+    "BioproductCategoryType",
     "BioreactorTypeEnum",
     "BiosafetyLevelEnum",
     "BioticInteractionType",
@@ -272,7 +297,9 @@ __all__ = [
     "BondTypeEnum",
     "BravaisLatticeEnum",
     "BronstedAcidBaseRoleEnum",
+    "BuildingEnergyPerformanceLevel",
     "BuildingEnergyStandard",
+    "BuildingSystemType",
     "BusinessActivityTypeEnum",
     "BusinessLifecycleStageEnum",
     "BusinessOwnershipTypeEnum",
@@ -294,6 +321,7 @@ __all__ = [
     "CellCycleRegulator",
     "CellPolarity",
     "CellProliferationState",
+    "ChipFabricationNodeType",
     "ChiralityEnum",
     "ChromatographyType",
     "ChurnClassificationEnum",
@@ -337,6 +365,8 @@ __all__ = [
     "DNABaseExtendedEnum",
     "DNADamageResponse",
     "DataAbsentEnum",
+    "DataCenterCoolingType",
+    "DataCenterTierLevel",
     "DataCiteContributorType",
     "DataCiteRelationType",
     "DataCiteResourceType",
@@ -353,11 +383,13 @@ __all__ = [
     "DatasetStatus",
     "DayOfWeek",
     "DecisionMakingStyleEnum",
+    "DecommissioningPhaseType",
     "DefectClassificationEnum",
     "DefenseInDepthLevelEnum",
     "DerivatizationMethod",
     "DetectionModeEnum",
     "Detector",
+    "DetectorType",
     "DiagnosticTestTypeEnum",
     "DigitalObjectCategory",
     "DocumentFormatEnum",
@@ -391,6 +423,7 @@ __all__ = [
     "EnzymeClassEnum",
     "EthnicityOMB1997Enum",
     "ExecutionModeEnum",
+    "ExperimentalDesignMethodType",
     "ExperimentalPreparation",
     "ExperimentalRole",
     "ExposureAgentCategoryEnum",
@@ -428,7 +461,11 @@ __all__ = [
     "FuelCycleOperationEnum",
     "FuelCycleStageEnum",
     "FuelFormEnum",
+    "FundamentalParticleType",
     "FundingType",
+    "FusionConfinementType",
+    "FusionFuelType",
+    "FusionPlasmaParameterType",
     "GOAspect",
     "GOElectronicMethods",
     "GOEvidenceCode",
@@ -440,6 +477,7 @@ __all__ = [
     "GenomeFeatureType",
     "GenotypeEnum",
     "GeologicalEra",
+    "GeophysicalMethodType",
     "GeospatialRasterFormat",
     "GeospatialVectorFormat",
     "GeothermalApplication",
@@ -448,7 +486,11 @@ __all__ = [
     "GeothermalSystemType",
     "GeothermalWellType",
     "GravitySdohDomainEnum",
+    "GridComponentType",
+    "GridEnergyStorageType",
+    "GridManagementStrategyType",
     "GridType",
+    "GroundwaterProcessType",
     "HHEARExposureAssessedEnum",
     "HRFunctionEnum",
     "HairColorEnum",
@@ -465,6 +507,7 @@ __all__ = [
     "HydrogenProductionMethod",
     "HydrogenStorageMethod",
     "HydrogenType",
+    "HydrogeologyWellType",
     "IAEAWasteClassificationEnum",
     "IARCCarcinogenicityGroup",
     "ICCC3MainGroup",
@@ -498,6 +541,7 @@ __all__ = [
     "InventoryManagementApproachEnum",
     "JobLevelEnum",
     "KaryotypicSexEnum",
+    "LabAutomationWorkflowType",
     "LaboratoryDeviceTypeEnum",
     "LabwareStandardEnum",
     "LanguageCodeISO6391enum",
@@ -525,6 +569,7 @@ __all__ = [
     "MaintenanceTypeEnum",
     "ManagementLevelEnum",
     "ManagementMethodologyEnum",
+    "ManufacturingProcessType",
     "ManuscriptSection",
     "MaritalStatus",
     "MaritimeSignalColorEnum",
@@ -535,6 +580,8 @@ __all__ = [
     "MassSpectrometryAssayEnum",
     "MassUnitEnum",
     "MaterialClassEnum",
+    "MaterialPropertyPredictionType",
+    "MaterialsSimulationType",
     "MechanicalBehaviorEnum",
     "MechanicalTestingMethodEnum",
     "MedicalSpecialtyEnum",
@@ -571,12 +618,15 @@ __all__ = [
     "NeuroblastomaRiskGroup",
     "NewsTopicCategoryEnum",
     "NuclearFacilityTypeEnum",
+    "NuclearForensicsMethodType",
     "NuclearFuelCycleStageEnum",
     "NuclearFuelFormEnum",
     "NuclearFuelTypeEnum",
     "NuclearRegulatoryBodyEnum",
+    "NuclearRemediationType",
     "NuclearSecurityCategoryEnum",
     "NuclearShipTypeEnum",
+    "NuclearThreatCategoryType",
     "NucleotideModificationEnum",
     "OBCSCertaintyLevel",
     "OWLProfileEnum",
@@ -613,6 +663,7 @@ __all__ = [
     "PVSystemType",
     "ParticipantIdentificationMethod",
     "ParticipantVitalStatusEnum",
+    "ParticleAcceleratorType",
     "PeakAnnotationSeriesLabel",
     "PediatricOncologyDiagnosisCategory",
     "PeerReviewStatus",
@@ -662,11 +713,14 @@ __all__ = [
     "QualityMethodologyEnum",
     "QualityStandardEnum",
     "QuantityKindEnum",
+    "QuantumAlgorithmCategoryType",
     "Quarter",
+    "QubitType",
     "RNABaseEnum",
     "RNABaseExtendedEnum",
     "RaceOMB1997Enum",
     "RadiationProtectionZoneEnum",
+    "RadioactiveContaminantType",
     "RadionuclideEnum",
     "ReactionConditionEnum",
     "ReactionDirectionality",
@@ -692,10 +746,13 @@ __all__ = [
     "RelToOxygenEnum",
     "RelativeDirection",
     "RelativeTimeEnum",
+    "RemoteSensingDataType",
+    "RemoteSensingPlatformType",
     "ResearchField",
     "ResearchProjectTypeEnum",
     "ResearchReactorTypeEnum",
     "ResearchRole",
+    "ReservoirCharacterizationMethodType",
     "RightsBasis",
     "RoboticArmTypeEnum",
     "SESARCollectionMethod",
@@ -710,6 +767,7 @@ __all__ = [
     "Season",
     "SeasonalEnvironmentExposureEnum",
     "SectionLocationEnum",
+    "SemiconductorMaterialType",
     "SensorWhileDrillingFeature",
     "SentimentClassificationEnum",
     "SequenceAlphabet",
@@ -727,6 +785,7 @@ __all__ = [
     "SeverityLevelEnum",
     "SimpleSpatialDirection",
     "SkinToneEnum",
+    "SmartManufacturingTechnologyType",
     "SmokingStatusEnum",
     "SoftwareMaturityLevel",
     "SolventClassEnum",
@@ -756,10 +815,15 @@ __all__ = [
     "StudyPhaseEnum",
     "StudyPopulationEnum",
     "SubatomicParticleEnum",
+    "SubsurfaceEnergyResourceType",
+    "SubsurfaceFormationType",
+    "SubsurfacePropertyType",
+    "SubsurfaceStorageType",
     "SupplierRelationshipTypeEnum",
     "SupplyChainStrategyEnum",
     "SymptomSeverityEnum",
     "SynthesisMethodEnum",
+    "TailingCharacterizationType",
     "TaxonomicRank",
     "TechnologyReadinessLevel",
     "TemperatureUnitEnum",
@@ -792,6 +856,7 @@ __all__ = [
     "USDOENationalLaboratoryEnum",
     "USFederalFundingAgencyEnum",
     "USStateCodeEnum",
+    "UnconventionalMineralResourceType",
     "UniProtSpeciesCode",
     "UpdateFrequency",
     "UraniumEnrichmentLevelEnum",
@@ -815,6 +880,9 @@ __all__ = [
     "WasteHeatGenerationEnum",
     "WasteSourceEnum",
     "WaterContaminantEnum",
+    "WaterQualityParameterType",
+    "WaterResourceType",
+    "WaterUseCategoryType",
     "WebColorEnum",
     "WellTypeEnum",
     "WindDirection",
