@@ -39037,93 +39037,169 @@ enums:
     definition_uri: https://w3id.org/valuesets/ExtractableTargetElement
     instantiates:
     - valuesets_meta:ValueSetEnumDefinition
-    description: 'Target elements for extraction, particularly rare earth elements
-      (REE) and critical minerals.
-
-      '
-    title: Extractable Target Element
+    description: Target elements for extraction in mining operations, including rare
+      earth elements (REE), critical minerals, and battery metals. These elements
+      are strategically important for clean energy technologies, electronics, and
+      defense applications.
+    title: Extractable Target Elements
     from_schema: https://w3id.org/valuesets/mining-processing
     contributors:
     - orcid:0000-0002-6601-2165
     - https://github.com/anthropics/claude-code
     status: DRAFT
     permissible_values:
-      REE_LA:
-        text: REE_LA
-        description: Lanthanum
-        title: REE_LA
-      REE_CE:
-        text: REE_CE
-        description: Cerium
-        title: REE_CE
-      REE_PR:
-        text: REE_PR
-        description: Praseodymium
-        title: REE_PR
-      REE_ND:
-        text: REE_ND
-        description: Neodymium
-        title: REE_ND
-      REE_PM:
-        text: REE_PM
-        description: Promethium
-        title: REE_PM
-      REE_SM:
-        text: REE_SM
-        description: Samarium
-        title: REE_SM
-      REE_EU:
-        text: REE_EU
-        description: Europium
-        title: REE_EU
-      REE_GD:
-        text: REE_GD
-        description: Gadolinium
-        title: REE_GD
-      REE_TB:
-        text: REE_TB
-        description: Terbium
-        title: REE_TB
-      REE_DY:
-        text: REE_DY
-        description: Dysprosium
-        title: REE_DY
-      REE_HO:
-        text: REE_HO
-        description: Holmium
-        title: REE_HO
-      REE_ER:
-        text: REE_ER
-        description: Erbium
-        title: REE_ER
-      REE_TM:
-        text: REE_TM
-        description: Thulium
-        title: REE_TM
-      REE_YB:
-        text: REE_YB
-        description: Ytterbium
-        title: REE_YB
-      REE_LU:
-        text: REE_LU
-        description: Lutetium
-        title: REE_LU
+      LA:
+        text: LA
+        description: Light rare earth element (atomic number 57) used in catalysts,
+          optics, and battery electrodes
+        meaning: CHEBI:33336
+        title: Lanthanum
+        aliases:
+        - lanthanum atom
+      CE:
+        text: CE
+        description: Light rare earth element (atomic number 58) used in catalytic
+          converters, glass polishing, and metallurgy
+        meaning: CHEBI:33369
+        title: Cerium
+        aliases:
+        - cerium
+      PR:
+        text: PR
+        description: Light rare earth element (atomic number 59) used in magnets,
+          lasers, and aircraft engines
+        meaning: CHEBI:49828
+        title: Praseodymium
+        aliases:
+        - praseodymium atom
+      ND:
+        text: ND
+        description: Light rare earth element (atomic number 60) essential for high-strength
+          permanent magnets in wind turbines and EVs
+        meaning: CHEBI:33372
+        title: Neodymium
+        aliases:
+        - neodymium atom
+      PM:
+        text: PM
+        description: Radioactive rare earth element (atomic number 61) used in nuclear
+          batteries and luminous paint
+        meaning: CHEBI:33373
+        title: Promethium
+        aliases:
+        - promethium atom
+      SM:
+        text: SM
+        description: Light rare earth element (atomic number 62) used in samarium-cobalt
+          magnets and cancer treatment
+        meaning: CHEBI:33374
+        title: Samarium
+        aliases:
+        - samarium atom
+      EU:
+        text: EU
+        description: Rare earth element (atomic number 63) used in phosphors for displays
+          and fluorescent lighting
+        meaning: CHEBI:32999
+        title: Europium
+        aliases:
+        - europium atom
+      GD:
+        text: GD
+        description: Heavy rare earth element (atomic number 64) used in MRI contrast
+          agents and nuclear reactor control rods
+        meaning: CHEBI:33375
+        title: Gadolinium
+        aliases:
+        - gadolinium atom
+      TB:
+        text: TB
+        description: Heavy rare earth element (atomic number 65) used in solid-state
+          devices and green phosphors
+        meaning: CHEBI:33376
+        title: Terbium
+        aliases:
+        - terbium atom
+      DY:
+        text: DY
+        description: Heavy rare earth element (atomic number 66) critical for high-temperature
+          permanent magnets
+        meaning: CHEBI:33377
+        title: Dysprosium
+        aliases:
+        - dysprosium atom
+      HO:
+        text: HO
+        description: Heavy rare earth element (atomic number 67) used in lasers and
+          magnetic flux concentrators
+        meaning: CHEBI:49648
+        title: Holmium
+        aliases:
+        - holmium atom
+      ER:
+        text: ER
+        description: Heavy rare earth element (atomic number 68) used in fiber optic
+          amplifiers and lasers
+        meaning: CHEBI:33379
+        title: Erbium
+        aliases:
+        - erbium
+      TM:
+        text: TM
+        description: Heavy rare earth element (atomic number 69) used in portable
+          X-ray devices and lasers
+        meaning: CHEBI:33380
+        title: Thulium
+        aliases:
+        - thulium atom
+      YB:
+        text: YB
+        description: Heavy rare earth element (atomic number 70) used in metallurgy,
+          lasers, and atomic clocks
+        meaning: CHEBI:33381
+        title: Ytterbium
+        aliases:
+        - ytterbium
+      LU:
+        text: LU
+        description: Heavy rare earth element (atomic number 71) used in PET scan
+          detectors and cancer treatment
+        meaning: CHEBI:33382
+        title: Lutetium
+        aliases:
+        - lutetium atom
       SC:
         text: SC
-        description: Scandium
-        title: SC
+        description: Transition metal (atomic number 21) used in aluminum alloys for
+          aerospace and sports equipment
+        meaning: CHEBI:33330
+        title: Scandium
+        aliases:
+        - scandium atom
       CO:
         text: CO
-        description: Cobalt
-        title: CO
+        description: Transition metal (atomic number 27) essential for lithium-ion
+          battery cathodes and superalloys
+        meaning: CHEBI:27638
+        title: Cobalt
+        aliases:
+        - cobalt atom
       NI:
         text: NI
-        description: Nickel
-        title: NI
+        description: Transition metal (atomic number 28) used in stainless steel,
+          batteries, and electroplating
+        meaning: CHEBI:28112
+        title: Nickel
+        aliases:
+        - nickel atom
       LI:
         text: LI
-        description: Lithium
-        title: LI
+        description: Alkali metal (atomic number 3) essential for lithium-ion batteries
+          and energy storage systems
+        meaning: CHEBI:30145
+        title: Lithium
+        aliases:
+        - lithium atom
   SensorWhileDrillingFeature:
     name: SensorWhileDrillingFeature
     definition_uri: https://w3id.org/valuesets/SensorWhileDrillingFeature
@@ -68945,7 +69021,7 @@ classes:
     class_uri: valuesets:Fake
 metamodel_version: 1.7.0
 source_file: valuesets.yaml
-source_file_date: '2026-01-30T18:18:29'
+source_file_date: '2026-02-21T21:48:01'
 source_file_size: 3472
-generation_date: '2026-01-30T18:35:49'
+generation_date: '2026-02-21T21:49:21'
 

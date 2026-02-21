@@ -11783,25 +11783,24 @@ InSituChemistryRegime._metadata = {
 
 class ExtractableTargetElement(RichEnum):
     """
-    Target elements for extraction, particularly rare earth elements (REE) and critical minerals.
-
+    Target elements for extraction in mining operations, including rare earth elements (REE), critical minerals, and battery metals. These elements are strategically important for clean energy technologies, electronics, and defense applications.
     """
     # Enum members
-    REE_LA = "REE_LA"
-    REE_CE = "REE_CE"
-    REE_PR = "REE_PR"
-    REE_ND = "REE_ND"
-    REE_PM = "REE_PM"
-    REE_SM = "REE_SM"
-    REE_EU = "REE_EU"
-    REE_GD = "REE_GD"
-    REE_TB = "REE_TB"
-    REE_DY = "REE_DY"
-    REE_HO = "REE_HO"
-    REE_ER = "REE_ER"
-    REE_TM = "REE_TM"
-    REE_YB = "REE_YB"
-    REE_LU = "REE_LU"
+    LA = "LA"
+    CE = "CE"
+    PR = "PR"
+    ND = "ND"
+    PM = "PM"
+    SM = "SM"
+    EU = "EU"
+    GD = "GD"
+    TB = "TB"
+    DY = "DY"
+    HO = "HO"
+    ER = "ER"
+    TM = "TM"
+    YB = "YB"
+    LU = "LU"
     SC = "SC"
     CO = "CO"
     NI = "NI"
@@ -11809,25 +11808,25 @@ class ExtractableTargetElement(RichEnum):
 
 # Set metadata after class creation to avoid it becoming an enum member
 ExtractableTargetElement._metadata = {
-    "REE_LA": {'description': 'Lanthanum'},
-    "REE_CE": {'description': 'Cerium'},
-    "REE_PR": {'description': 'Praseodymium'},
-    "REE_ND": {'description': 'Neodymium'},
-    "REE_PM": {'description': 'Promethium'},
-    "REE_SM": {'description': 'Samarium'},
-    "REE_EU": {'description': 'Europium'},
-    "REE_GD": {'description': 'Gadolinium'},
-    "REE_TB": {'description': 'Terbium'},
-    "REE_DY": {'description': 'Dysprosium'},
-    "REE_HO": {'description': 'Holmium'},
-    "REE_ER": {'description': 'Erbium'},
-    "REE_TM": {'description': 'Thulium'},
-    "REE_YB": {'description': 'Ytterbium'},
-    "REE_LU": {'description': 'Lutetium'},
-    "SC": {'description': 'Scandium'},
-    "CO": {'description': 'Cobalt'},
-    "NI": {'description': 'Nickel'},
-    "LI": {'description': 'Lithium'},
+    "LA": {'description': 'Light rare earth element (atomic number 57) used in catalysts, optics, and battery electrodes', 'meaning': 'CHEBI:33336', 'aliases': ['lanthanum atom']},
+    "CE": {'description': 'Light rare earth element (atomic number 58) used in catalytic converters, glass polishing, and metallurgy', 'meaning': 'CHEBI:33369', 'aliases': ['cerium']},
+    "PR": {'description': 'Light rare earth element (atomic number 59) used in magnets, lasers, and aircraft engines', 'meaning': 'CHEBI:49828', 'aliases': ['praseodymium atom']},
+    "ND": {'description': 'Light rare earth element (atomic number 60) essential for high-strength permanent magnets in wind turbines and EVs', 'meaning': 'CHEBI:33372', 'aliases': ['neodymium atom']},
+    "PM": {'description': 'Radioactive rare earth element (atomic number 61) used in nuclear batteries and luminous paint', 'meaning': 'CHEBI:33373', 'aliases': ['promethium atom']},
+    "SM": {'description': 'Light rare earth element (atomic number 62) used in samarium-cobalt magnets and cancer treatment', 'meaning': 'CHEBI:33374', 'aliases': ['samarium atom']},
+    "EU": {'description': 'Rare earth element (atomic number 63) used in phosphors for displays and fluorescent lighting', 'meaning': 'CHEBI:32999', 'aliases': ['europium atom']},
+    "GD": {'description': 'Heavy rare earth element (atomic number 64) used in MRI contrast agents and nuclear reactor control rods', 'meaning': 'CHEBI:33375', 'aliases': ['gadolinium atom']},
+    "TB": {'description': 'Heavy rare earth element (atomic number 65) used in solid-state devices and green phosphors', 'meaning': 'CHEBI:33376', 'aliases': ['terbium atom']},
+    "DY": {'description': 'Heavy rare earth element (atomic number 66) critical for high-temperature permanent magnets', 'meaning': 'CHEBI:33377', 'aliases': ['dysprosium atom']},
+    "HO": {'description': 'Heavy rare earth element (atomic number 67) used in lasers and magnetic flux concentrators', 'meaning': 'CHEBI:49648', 'aliases': ['holmium atom']},
+    "ER": {'description': 'Heavy rare earth element (atomic number 68) used in fiber optic amplifiers and lasers', 'meaning': 'CHEBI:33379', 'aliases': ['erbium']},
+    "TM": {'description': 'Heavy rare earth element (atomic number 69) used in portable X-ray devices and lasers', 'meaning': 'CHEBI:33380', 'aliases': ['thulium atom']},
+    "YB": {'description': 'Heavy rare earth element (atomic number 70) used in metallurgy, lasers, and atomic clocks', 'meaning': 'CHEBI:33381', 'aliases': ['ytterbium']},
+    "LU": {'description': 'Heavy rare earth element (atomic number 71) used in PET scan detectors and cancer treatment', 'meaning': 'CHEBI:33382', 'aliases': ['lutetium atom']},
+    "SC": {'description': 'Transition metal (atomic number 21) used in aluminum alloys for aerospace and sports equipment', 'meaning': 'CHEBI:33330', 'aliases': ['scandium atom']},
+    "CO": {'description': 'Transition metal (atomic number 27) essential for lithium-ion battery cathodes and superalloys', 'meaning': 'CHEBI:27638', 'aliases': ['cobalt atom']},
+    "NI": {'description': 'Transition metal (atomic number 28) used in stainless steel, batteries, and electroplating', 'meaning': 'CHEBI:28112', 'aliases': ['nickel atom']},
+    "LI": {'description': 'Alkali metal (atomic number 3) essential for lithium-ion batteries and energy storage systems', 'meaning': 'CHEBI:30145', 'aliases': ['lithium atom']},
 }
 
 class SensorWhileDrillingFeature(RichEnum):
