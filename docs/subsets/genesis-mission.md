@@ -6,7 +6,7 @@ manufacturing, earth systems, and national security. This project provides stand
 value sets (enums with ontology mappings) that support data interoperability across
 these challenge areas.
 
-The 19 schema modules below cover topics from grid modernization and fusion energy to
+The schema modules below cover topics from grid modernization and fusion energy to
 quantum computing and autonomous laboratories. Each enum is mapped to established
 ontologies wherever possible, enabling integration with broader scientific data ecosystems.
 
@@ -14,13 +14,13 @@ ontologies wherever possible, enabling integration with broader scientific data 
 
 | Domain | Schema | Enums | Ontologies |
 |--------|--------|------:|------------|
-| [Energy and Grid](#energy-and-grid) | grid, subsurface_energy | 6 | OEO, ENVO, CHEBI |
-| [Nuclear](#nuclear) | fusion, nuclear_cleanup, nuclear_forensics | 8 | CHEBI, NCIT, CHMO, ENVO |
-| [Earth Science](#earth-science) | subsurface, hydrogeology, remote_sensing, water_resources | 12 | ENVO, PATO, CHEBI, OBI |
-| [Computing](#computing) | data_centers, microelectronics, quantum | 6 | Brick, CHEBI, NCIT |
-| [Industry](#industry) | manufacturing, construction, unconventional_resources | 7 | OBI, CHMO, ENVO, Brick |
-| [Materials and Physics](#materials-and-physics) | computational_materials, particle_physics | 5 | NCIT, CHEBI, PATO, SWO |
-| [Bioprocessing and Labs](#bioprocessing-and-labs) | biomanufacturing, autonomous_labs | 6 | OBI, CHEBI, NCIT, BAO |
+| [Energy and Grid](#energy-and-grid) | energy/energy, energy/fossil_fuels, energy/renewable/geothermal | 6 | OEO, ENVO, CHEBI |
+| [Nuclear](#nuclear) | energy/nuclear/reactor_types, energy/nuclear/nuclear_waste, energy/nuclear/nuclear_safety | 8 | CHEBI, NCIT, CHMO, ENVO |
+| [Earth Science](#earth-science) | earth_science/collection_methods, earth_science/material_types, earth_science/physiographic_features, earth_science/sample_types | 12 | ENVO, PATO, CHEBI, OBI |
+| [Computing](#computing) | computing/file_formats, computing/ontologies, computing/maturity_levels | 6 | Brick, CHEBI, NCIT |
+| [Industry](#industry) | industry/extractive_industry, industry/mining | 7 | OBI, CHMO, ENVO, Brick |
+| [Materials and Physics](#materials-and-physics) | materials_science/material_types, materials_science/characterization_methods, physics/radiation | 5 | NCIT, CHEBI, PATO, SWO |
+| [Bioprocessing and Labs](#bioprocessing-and-labs) | bioprocessing/scale_up, lab_automation/operations, lab_automation/devices | 6 | OBI, CHEBI, NCIT, BAO |
 
 ---
 
