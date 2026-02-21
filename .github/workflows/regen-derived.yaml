@@ -1,0 +1,104 @@
+---
+name: Regenerate derived files
+on:  # yamllint disable-line rule:truthy
+  push:
+    branches: [main]
+    paths:
+      - "src/valuesets/schema/**/*.yaml"
+      - "src/valuesets/schema/*.yaml"
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  regen:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+          cache-dependency-glob: "uv.lock"
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Install just
+        run: uv tool install rust-just
+
+      - name: Install dependencies
+        run: uv sync --group dev --no-progress
+
+      - name: Regenerate derived files
+        run: |
+          just gen-project
+          just gen-doc
+
+      - name: Check for changes
+        id: changes
+        run: |
+          git add -A
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Close previous regen PRs
+        if: steps.changes.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh pr list \
+            --label "automated-regen" \
+            --state open \
+            --json number \
+            --jq '.[].number' \
+          | while read -r pr; do
+              gh pr close "$pr" --comment "Superseded by a newer regeneration run."
+            done
+
+      - name: Create pull request
+        if: steps.changes.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          BRANCH="auto/regen-derived-$(date +%Y%m%d-%H%M%S)"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$BRANCH"
+          git commit -m "Regenerate derived files from schema changes"
+          git push -u origin "$BRANCH"
+
+          gh label create "automated-regen" \
+            --description "PRs created by the regen-derived workflow" \
+            --color "c5def5" \
+            --force
+
+          gh pr create \
+            --title "Regenerate derived files" \
+            --label "automated-regen" \
+            --body "$(cat <<'EOF'
+          Automated regeneration of derived files after schema changes.
+
+          Updated by running:
+          ```
+          just gen-project
+          just gen-doc
+          ```
+
+          Please review the diffs before merging.
+          EOF
+          )"
