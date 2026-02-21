@@ -109,6 +109,10 @@
          <lastmod>2026-02-21</lastmod>
     </url>
     <url>
+         <loc>https://linkml.github.io/valuesets/elements/AquiferType/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
          <loc>https://linkml.github.io/valuesets/elements/ArchiveFormatEnum/</loc>
          <lastmod>2026-02-21</lastmod>
     </url>
@@ -126,6 +130,10 @@
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/AutomobilePaintColorEnum/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/AutonomousLabComponentType/</loc>
          <lastmod>2026-02-21</lastmod>
     </url>
     <url>
@@ -169,6 +177,10 @@
          <lastmod>2026-02-21</lastmod>
     </url>
     <url>
+         <loc>https://linkml.github.io/valuesets/elements/BioextractionMethodType/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
          <loc>https://linkml.github.io/valuesets/elements/BiofuelGeneration/</loc>
          <lastmod>2026-02-21</lastmod>
     </url>
@@ -201,7 +213,19 @@
          <lastmod>2026-02-21</lastmod>
     </url>
     <url>
+         <loc>https://linkml.github.io/valuesets/elements/BiomanufacturingScaleType/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
          <loc>https://linkml.github.io/valuesets/elements/BiomassFeedstockType/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/BioprocessOptimizationType/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/BioproductCategoryType/</loc>
          <lastmod>2026-02-21</lastmod>
     </url>
     <url>
@@ -237,7 +261,15 @@
          <lastmod>2026-02-21</lastmod>
     </url>
     <url>
+         <loc>https://linkml.github.io/valuesets/elements/BuildingEnergyPerformanceLevel/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
          <loc>https://linkml.github.io/valuesets/elements/BuildingEnergyStandard/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/BuildingSystemType/</loc>
          <lastmod>2026-02-21</lastmod>
     </url>
     <url>
@@ -326,6 +358,10 @@
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ChemicalEntity/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/ChipFabricationNodeType/</loc>
          <lastmod>2026-02-21</lastmod>
     </url>
     <url>
@@ -497,6 +533,14 @@
          <lastmod>2026-02-21</lastmod>
     </url>
     <url>
+         <loc>https://linkml.github.io/valuesets/elements/DataCenterCoolingType/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/DataCenterTierLevel/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
          <loc>https://linkml.github.io/valuesets/elements/DataCiteContributorType/</loc>
          <lastmod>2026-02-21</lastmod>
     </url>
@@ -577,6 +621,10 @@
          <lastmod>2026-02-21</lastmod>
     </url>
     <url>
+         <loc>https://linkml.github.io/valuesets/elements/DecommissioningPhaseType/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
          <loc>https://linkml.github.io/valuesets/elements/DefectClassificationEnum/</loc>
          <lastmod>2026-02-21</lastmod>
     </url>
@@ -594,6 +642,10 @@
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/Detector/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/DetectorType/</loc>
          <lastmod>2026-02-21</lastmod>
     </url>
     <url>
@@ -730,6 +782,10 @@
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ExecutionModeEnum/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/ExperimentalDesignMethodType/</loc>
          <lastmod>2026-02-21</lastmod>
     </url>
     <url>
@@ -873,7 +929,23 @@
          <lastmod>2026-02-21</lastmod>
     </url>
     <url>
+         <loc>https://linkml.github.io/valuesets/elements/FundamentalParticleType/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
          <loc>https://linkml.github.io/valuesets/elements/FundingType/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/FusionConfinementType/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/FusionFuelType/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/FusionPlasmaParameterType/</loc>
          <lastmod>2026-02-21</lastmod>
     </url>
     <url>
@@ -913,6 +985,10 @@
          <lastmod>2026-02-21</lastmod>
     </url>
     <url>
+         <loc>https://linkml.github.io/valuesets/elements/GeophysicalMethodType/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
          <loc>https://linkml.github.io/valuesets/elements/GeothermalApplication/</loc>
          <lastmod>2026-02-21</lastmod>
     </url>
@@ -937,7 +1013,23 @@
          <lastmod>2026-02-21</lastmod>
     </url>
     <url>
+         <loc>https://linkml.github.io/valuesets/elements/GridComponentType/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/GridEnergyStorageType/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/GridManagementStrategyType/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
          <loc>https://linkml.github.io/valuesets/elements/GridType/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/GroundwaterProcessType/</loc>
          <lastmod>2026-02-21</lastmod>
     </url>
     <url>
@@ -1006,6 +1098,10 @@
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/HydrogenType/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/HydrogeologyWellType/</loc>
          <lastmod>2026-02-21</lastmod>
     </url>
     <url>
@@ -1137,6 +1233,10 @@
          <lastmod>2026-02-21</lastmod>
     </url>
     <url>
+         <loc>https://linkml.github.io/valuesets/elements/LabAutomationWorkflowType/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
          <loc>https://linkml.github.io/valuesets/elements/LaboratoryDeviceTypeEnum/</loc>
          <lastmod>2026-02-21</lastmod>
     </url>
@@ -1241,6 +1341,10 @@
          <lastmod>2026-02-21</lastmod>
     </url>
     <url>
+         <loc>https://linkml.github.io/valuesets/elements/ManufacturingProcessType/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
          <loc>https://linkml.github.io/valuesets/elements/ManuscriptSection/</loc>
          <lastmod>2026-02-21</lastmod>
     </url>
@@ -1274,6 +1378,14 @@
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/MaterialClassEnum/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/MaterialPropertyPredictionType/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/MaterialsSimulationType/</loc>
          <lastmod>2026-02-21</lastmod>
     </url>
     <url>
@@ -1425,7 +1537,15 @@
          <lastmod>2026-02-21</lastmod>
     </url>
     <url>
+         <loc>https://linkml.github.io/valuesets/elements/NuclearForensicsMethodType/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
          <loc>https://linkml.github.io/valuesets/elements/NuclearFuelTypeEnum/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/NuclearRemediationType/</loc>
          <lastmod>2026-02-21</lastmod>
     </url>
     <url>
@@ -1434,6 +1554,10 @@
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/NuclearShipTypeEnum/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/NuclearThreatCategoryType/</loc>
          <lastmod>2026-02-21</lastmod>
     </url>
     <url>
@@ -1586,6 +1710,10 @@
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ParticipantVitalStatusEnum/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/ParticleAcceleratorType/</loc>
          <lastmod>2026-02-21</lastmod>
     </url>
     <url>
@@ -1793,7 +1921,15 @@
          <lastmod>2026-02-21</lastmod>
     </url>
     <url>
+         <loc>https://linkml.github.io/valuesets/elements/QuantumAlgorithmCategoryType/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
          <loc>https://linkml.github.io/valuesets/elements/Quarter/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/QubitType/</loc>
          <lastmod>2026-02-21</lastmod>
     </url>
     <url>
@@ -1810,6 +1946,10 @@
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/RadiationProtectionZoneEnum/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/RadioactiveContaminantType/</loc>
          <lastmod>2026-02-21</lastmod>
     </url>
     <url>
@@ -1905,6 +2045,14 @@
          <lastmod>2026-02-21</lastmod>
     </url>
     <url>
+         <loc>https://linkml.github.io/valuesets/elements/RemoteSensingDataType/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/RemoteSensingPlatformType/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
          <loc>https://linkml.github.io/valuesets/elements/ResearchField/</loc>
          <lastmod>2026-02-21</lastmod>
     </url>
@@ -1918,6 +2066,10 @@
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/ResearchRole/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/ReservoirCharacterizationMethodType/</loc>
          <lastmod>2026-02-21</lastmod>
     </url>
     <url>
@@ -1958,6 +2110,10 @@
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/SectionLocationEnum/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/SemiconductorMaterialType/</loc>
          <lastmod>2026-02-21</lastmod>
     </url>
     <url>
@@ -2026,6 +2182,10 @@
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/SkinToneEnum/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/SmartManufacturingTechnologyType/</loc>
          <lastmod>2026-02-21</lastmod>
     </url>
     <url>
@@ -2161,6 +2321,22 @@
          <lastmod>2026-02-21</lastmod>
     </url>
     <url>
+         <loc>https://linkml.github.io/valuesets/elements/SubsurfaceEnergyResourceType/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/SubsurfaceFormationType/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/SubsurfacePropertyType/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/SubsurfaceStorageType/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
          <loc>https://linkml.github.io/valuesets/elements/SupplierRelationshipTypeEnum/</loc>
          <lastmod>2026-02-21</lastmod>
     </url>
@@ -2174,6 +2350,10 @@
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/SynthesisMethodEnum/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/TailingCharacterizationType/</loc>
          <lastmod>2026-02-21</lastmod>
     </url>
     <url>
@@ -2285,6 +2465,10 @@
          <lastmod>2026-02-21</lastmod>
     </url>
     <url>
+         <loc>https://linkml.github.io/valuesets/elements/UnconventionalMineralResourceType/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
          <loc>https://linkml.github.io/valuesets/elements/UniProtSpeciesCode/</loc>
          <lastmod>2026-02-21</lastmod>
     </url>
@@ -2374,6 +2558,18 @@
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/WaterContaminantEnum/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/WaterQualityParameterType/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/WaterResourceType/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/WaterUseCategoryType/</loc>
          <lastmod>2026-02-21</lastmod>
     </url>
     <url>
@@ -2493,6 +2689,10 @@
          <lastmod>2026-02-21</lastmod>
     </url>
     <url>
+         <loc>https://linkml.github.io/valuesets/elements/aquifer_type/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
          <loc>https://linkml.github.io/valuesets/elements/archive_format/</loc>
          <lastmod>2026-02-21</lastmod>
     </url>
@@ -2518,6 +2718,10 @@
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/automobile_paint_color/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/autonomous_lab_component/</loc>
          <lastmod>2026-02-21</lastmod>
     </url>
     <url>
@@ -2557,6 +2761,10 @@
          <lastmod>2026-02-21</lastmod>
     </url>
     <url>
+         <loc>https://linkml.github.io/valuesets/elements/bioextraction_method/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
          <loc>https://linkml.github.io/valuesets/elements/biofuel_generation/</loc>
          <lastmod>2026-02-21</lastmod>
     </url>
@@ -2589,7 +2797,19 @@
          <lastmod>2026-02-21</lastmod>
     </url>
     <url>
+         <loc>https://linkml.github.io/valuesets/elements/biomanufacturing_scale/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
          <loc>https://linkml.github.io/valuesets/elements/biomass_feedstock_type/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/bioprocess_optimization/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/bioproduct_category/</loc>
          <lastmod>2026-02-21</lastmod>
     </url>
     <url>
@@ -2625,7 +2845,15 @@
          <lastmod>2026-02-21</lastmod>
     </url>
     <url>
+         <loc>https://linkml.github.io/valuesets/elements/building_energy_performance_level/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
          <loc>https://linkml.github.io/valuesets/elements/building_energy_standard/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/building_system_type/</loc>
          <lastmod>2026-02-21</lastmod>
     </url>
     <url>
@@ -2714,6 +2942,10 @@
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/chemical_entity/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/chip_fabrication_node_type/</loc>
          <lastmod>2026-02-21</lastmod>
     </url>
     <url>
@@ -2861,6 +3093,14 @@
          <lastmod>2026-02-21</lastmod>
     </url>
     <url>
+         <loc>https://linkml.github.io/valuesets/elements/data_center_cooling_type/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/data_center_tier_level/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
          <loc>https://linkml.github.io/valuesets/elements/data_format/</loc>
          <lastmod>2026-02-21</lastmod>
     </url>
@@ -2905,6 +3145,10 @@
          <lastmod>2026-02-21</lastmod>
     </url>
     <url>
+         <loc>https://linkml.github.io/valuesets/elements/decommissioning_phase_type/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
          <loc>https://linkml.github.io/valuesets/elements/defect_classification/</loc>
          <lastmod>2026-02-21</lastmod>
     </url>
@@ -2918,6 +3162,10 @@
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/detector/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/detector_type/</loc>
          <lastmod>2026-02-21</lastmod>
     </url>
     <url>
@@ -3033,6 +3281,10 @@
          <lastmod>2026-02-21</lastmod>
     </url>
     <url>
+         <loc>https://linkml.github.io/valuesets/elements/energy_storage_type/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
          <loc>https://linkml.github.io/valuesets/elements/energy_unit/</loc>
          <lastmod>2026-02-21</lastmod>
     </url>
@@ -3058,6 +3310,10 @@
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/execution_mode/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/experimental_design_method/</loc>
          <lastmod>2026-02-21</lastmod>
     </url>
     <url>
@@ -3193,7 +3449,23 @@
          <lastmod>2026-02-21</lastmod>
     </url>
     <url>
+         <loc>https://linkml.github.io/valuesets/elements/fundamental_particle_type/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
          <loc>https://linkml.github.io/valuesets/elements/funding/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/fusion_confinement_type/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/fusion_fuel_type/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/fusion_plasma_parameter_type/</loc>
          <lastmod>2026-02-21</lastmod>
     </url>
     <url>
@@ -3222,6 +3494,10 @@
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/geological_era/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/geophysical_method_type/</loc>
          <lastmod>2026-02-21</lastmod>
     </url>
     <url>
@@ -3254,6 +3530,18 @@
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/grid/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/grid_component_type/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/grid_management_strategy_type/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/groundwater_process_type/</loc>
          <lastmod>2026-02-21</lastmod>
     </url>
     <url>
@@ -3322,6 +3610,10 @@
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/hydrogen_type/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/hydrogeology_well_type/</loc>
          <lastmod>2026-02-21</lastmod>
     </url>
     <url>
@@ -3409,6 +3701,10 @@
          <lastmod>2026-02-21</lastmod>
     </url>
     <url>
+         <loc>https://linkml.github.io/valuesets/elements/lab_automation_workflow/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
          <loc>https://linkml.github.io/valuesets/elements/laboratory_device_type/</loc>
          <lastmod>2026-02-21</lastmod>
     </url>
@@ -3481,6 +3777,10 @@
          <lastmod>2026-02-21</lastmod>
     </url>
     <url>
+         <loc>https://linkml.github.io/valuesets/elements/manufacturing_process_type/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
          <loc>https://linkml.github.io/valuesets/elements/manuscript_section/</loc>
          <lastmod>2026-02-21</lastmod>
     </url>
@@ -3506,6 +3806,14 @@
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/material_class/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/material_property_prediction_type/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/materials_simulation_type/</loc>
          <lastmod>2026-02-21</lastmod>
     </url>
     <url>
@@ -3653,7 +3961,15 @@
          <lastmod>2026-02-21</lastmod>
     </url>
     <url>
+         <loc>https://linkml.github.io/valuesets/elements/nuclear_forensics_method_type/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
          <loc>https://linkml.github.io/valuesets/elements/nuclear_fuel_type/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/nuclear_remediation_type/</loc>
          <lastmod>2026-02-21</lastmod>
     </url>
     <url>
@@ -3662,6 +3978,10 @@
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/nuclear_ship_type/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/nuclear_threat_category_type/</loc>
          <lastmod>2026-02-21</lastmod>
     </url>
     <url>
@@ -3798,6 +4118,10 @@
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/participant_vital_status/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/particle_accelerator_type/</loc>
          <lastmod>2026-02-21</lastmod>
     </url>
     <url>
@@ -4005,7 +4329,15 @@
          <lastmod>2026-02-21</lastmod>
     </url>
     <url>
+         <loc>https://linkml.github.io/valuesets/elements/quantum_algorithm_category_type/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
          <loc>https://linkml.github.io/valuesets/elements/quarter/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/qubit_type/</loc>
          <lastmod>2026-02-21</lastmod>
     </url>
     <url>
@@ -4014,6 +4346,10 @@
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/radiation_protection_zone/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/radioactive_contaminant_type/</loc>
          <lastmod>2026-02-21</lastmod>
     </url>
     <url>
@@ -4109,6 +4445,14 @@
          <lastmod>2026-02-21</lastmod>
     </url>
     <url>
+         <loc>https://linkml.github.io/valuesets/elements/remote_sensing_data_type/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/remote_sensing_platform_type/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
          <loc>https://linkml.github.io/valuesets/elements/research_field/</loc>
          <lastmod>2026-02-21</lastmod>
     </url>
@@ -4118,6 +4462,10 @@
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/research_role/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/reservoir_characterization_method/</loc>
          <lastmod>2026-02-21</lastmod>
     </url>
     <url>
@@ -4174,6 +4522,10 @@
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/season/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/semiconductor_material_type/</loc>
          <lastmod>2026-02-21</lastmod>
     </url>
     <url>
@@ -4242,6 +4594,10 @@
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/skin_tone/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/smart_manufacturing_technology_type/</loc>
          <lastmod>2026-02-21</lastmod>
     </url>
     <url>
@@ -4333,6 +4689,22 @@
          <lastmod>2026-02-21</lastmod>
     </url>
     <url>
+         <loc>https://linkml.github.io/valuesets/elements/subsurface_energy_resource/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/subsurface_formation_type/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/subsurface_property_type/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/subsurface_storage/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
          <loc>https://linkml.github.io/valuesets/elements/supplier_relationship_type/</loc>
          <lastmod>2026-02-21</lastmod>
     </url>
@@ -4346,6 +4718,10 @@
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/synthesis_method/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/tailing_characterization/</loc>
          <lastmod>2026-02-21</lastmod>
     </url>
     <url>
@@ -4434,6 +4810,10 @@
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/un_specialized_agency/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/unconventional_mineral_resource/</loc>
          <lastmod>2026-02-21</lastmod>
     </url>
     <url>
@@ -4538,6 +4918,18 @@
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/water_contaminant/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/water_quality_parameter_type/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/water_resource_type/</loc>
+         <lastmod>2026-02-21</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/water_use_category_type/</loc>
          <lastmod>2026-02-21</lastmod>
     </url>
     <url>
