@@ -1,0 +1,101 @@
+name: valuesets-materials-science-computational-materials
+title: Computational Materials Science Value Sets
+description: >-
+  Value sets for computational materials methods and property prediction
+  relevant to the DOE Materials Discovery and Design challenges
+id: https://w3id.org/valuesets/materials_science/computational_materials
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+  SWO: http://www.ebi.ac.uk/swo/algorithm/SWO_
+  PATO: http://purl.obolibrary.org/obo/PATO_
+  NCIT: http://purl.obolibrary.org/obo/NCIT_
+default_prefix: valuesets
+
+slots:
+  materials_simulation_type:
+    description: Types of computational simulation methods for materials science
+    range: MaterialsSimulationType
+  material_property_prediction_type:
+    description: Types of material properties targeted for computational prediction
+    range: MaterialPropertyPredictionType
+
+enums:
+  MaterialsSimulationType:
+    title: Materials Simulation Type
+    description: >-
+      Computational simulation methods used in materials science for
+      predicting structure, properties, and behavior of materials
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      DENSITY_FUNCTIONAL_THEORY:
+        description: Quantum mechanical method for computing electronic structure based on electron density functionals
+      MOLECULAR_DYNAMICS:
+        title: Molecular Dynamics
+        description: Simulation of atomic and molecular motion by numerically integrating equations of motion
+        meaning: NCIT:C18097
+      MONTE_CARLO:
+        description: Stochastic simulation method using random sampling to explore configuration space
+        meaning: SWO:4000008
+      PHASE_FIELD_MODELING:
+        description: Continuum method for simulating microstructure evolution using order parameter fields
+      FINITE_ELEMENT_ANALYSIS:
+        description: Numerical method for solving partial differential equations by dividing a domain into discrete elements
+      CONTINUUM_MECHANICS:
+        description: Modeling material behavior at the macroscopic scale using continuous field equations
+      TIGHT_BINDING:
+        description: Semi-empirical quantum mechanical method using parameterized Hamiltonian matrices
+      AB_INITIO_MOLECULAR_DYNAMICS:
+        description: Molecular dynamics with forces computed from first-principles electronic structure calculations
+      MACHINE_LEARNING_POTENTIAL:
+        description: Interatomic potentials trained on quantum mechanical data using machine learning methods
+      COARSE_GRAINED_SIMULATION:
+        description: Simulation using simplified representations that group atoms into larger effective interaction sites
+
+  MaterialPropertyPredictionType:
+    title: Material Property Prediction Type
+    description: >-
+      Material properties that are commonly targeted for computational
+      prediction in materials discovery and design
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      BAND_GAP:
+        description: Energy difference between the valence band and conduction band in a semiconductor or insulator
+      ELASTIC_MODULUS:
+        description: Measure of material stiffness defined as the ratio of stress to strain in the elastic regime
+        broad_mappings:
+        - PATO:0001031
+      THERMAL_CONDUCTIVITY:
+        title: heat conductivity
+        description: Ability of a material to conduct heat, measured in watts per meter-kelvin
+        meaning: PATO:0001756
+      DIELECTRIC_CONSTANT:
+        description: Ratio of the permittivity of a material to the permittivity of free space
+      MAGNETIC_MOMENT:
+        description: Magnetic dipole moment of a material arising from electron spin and orbital contributions
+      FORMATION_ENERGY:
+        description: Energy required to form a compound from its constituent elements in their standard states
+      SURFACE_ENERGY:
+        description: Excess energy at the surface of a material relative to its bulk
+      DEFECT_ENERGY:
+        description: Energy associated with the formation or migration of point defects and dislocations
+      PHASE_STABILITY:
+        description: Thermodynamic stability of a material phase relative to competing phases
+      MECHANICAL_STRENGTH:
+        description: Maximum stress a material can withstand before failure under applied load
+        broad_mappings:
+        - PATO:0001230

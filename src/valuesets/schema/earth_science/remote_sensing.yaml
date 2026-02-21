@@ -1,0 +1,88 @@
+name: valuesets-earth-science-remote-sensing
+title: Remote Sensing Value Sets
+description: >-
+  Value sets for remote sensing data types and platforms used in earth observation
+  and subsurface characterization
+id: https://w3id.org/valuesets/earth_science/remote_sensing
+prefixes:
+  linkml: https://w3id.org/linkml/
+  ENVO: http://purl.obolibrary.org/obo/ENVO_
+  valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+default_prefix: valuesets
+
+slots:
+  remote_sensing_platform_type:
+    description: Type of platform used for remote sensing
+    range: RemoteSensingPlatformType
+  remote_sensing_data_type:
+    description: Type of remote sensing data acquired
+    range: RemoteSensingDataType
+
+enums:
+  RemoteSensingPlatformType:
+    title: Remote Sensing Platform Type
+    description: >-
+      Classification of platforms used to carry remote sensing instruments for
+      earth observation and environmental monitoring.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      SATELLITE:
+        description: An artificial satellite orbiting Earth carrying remote sensing instruments
+        broad_mappings:
+        - ENVO:01001492
+      AIRBORNE:
+        description: A manned aircraft carrying remote sensing instruments
+      UAV_DRONE:
+        description: An unmanned aerial vehicle or drone carrying remote sensing instruments
+        annotations:
+          aliases: UAV, drone
+      GROUND_BASED:
+        description: A stationary or mobile ground-based platform carrying remote sensing instruments
+      SHIPBORNE:
+        description: A watercraft carrying remote sensing instruments for maritime or coastal observation
+
+  RemoteSensingDataType:
+    title: Remote Sensing Data Type
+    description: >-
+      Classification of data types acquired by remote sensing instruments,
+      covering electromagnetic and potential field measurements.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      MULTISPECTRAL:
+        description: Imagery acquired in a limited number of discrete spectral bands across the electromagnetic spectrum
+      HYPERSPECTRAL:
+        description: Imagery acquired in many narrow, contiguous spectral bands providing detailed spectral information
+      SYNTHETIC_APERTURE_RADAR:
+        description: Radar imagery produced by synthesizing a large antenna aperture from a moving platform to achieve high spatial resolution
+        annotations:
+          abbreviation: SAR
+      LIDAR:
+        description: Active remote sensing data acquired by measuring the time delay of reflected laser pulses to determine distances and surface topography
+        annotations:
+          full_name: Light Detection And Ranging
+      THERMAL_INFRARED:
+        description: Imagery acquired in the thermal infrared portion of the spectrum, measuring emitted thermal radiation
+      MICROWAVE_RADIOMETRY:
+        description: Passive measurement of naturally emitted microwave radiation from the Earth's surface and atmosphere
+      GRAVIMETRY:
+        description: Measurement of variations in the gravitational field from airborne or satellite platforms
+      MAGNETOMETRY:
+        description: Measurement of variations in the magnetic field from airborne or satellite platforms
+      PHOTOGRAMMETRY:
+        description: The science of making measurements from photographs or imagery, typically to produce 3D models or maps
+
+license: MIT
+see_also:
+- https://linkml.github.io/valuesets

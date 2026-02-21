@@ -1,0 +1,83 @@
+name: valuesets-computing-quantum
+title: Quantum Computing Value Sets
+description: >-
+  Value sets for quantum computing concepts relevant to the DOE Quantum
+  Algorithms and Quantum Systems challenges
+id: https://w3id.org/valuesets/computing/quantum
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  NCIT: http://purl.obolibrary.org/obo/NCIT_
+  CHEBI: http://purl.obolibrary.org/obo/CHEBI_
+  valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+default_prefix: valuesets
+
+slots:
+  qubit_type:
+    description: Type of physical qubit implementation
+    range: QubitType
+  quantum_algorithm_category_type:
+    description: Category of quantum algorithm
+    range: QuantumAlgorithmCategoryType
+
+enums:
+  QubitType:
+    title: Qubit Type
+    description: Types of physical qubit implementations used in quantum computing hardware
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      SUPERCONDUCTING:
+        description: Superconducting qubit using Josephson junctions cooled to millikelvin temperatures
+      TRAPPED_ION:
+        description: Qubit encoded in electronic states of trapped atomic ions
+      PHOTONIC:
+        description: Qubit encoded in quantum states of photons
+        title: photon
+        meaning: CHEBI:30212
+      TOPOLOGICAL:
+        description: Qubit based on topological states of matter resistant to local perturbations
+      NEUTRAL_ATOM:
+        description: Qubit encoded in energy levels of electrically neutral atoms held in optical traps
+      QUANTUM_DOT:
+        description: Qubit using semiconductor quantum dot nanostructures
+        title: Quantum Dot
+        meaning: NCIT:C62378
+      NITROGEN_VACANCY_CENTER:
+        description: Qubit based on nitrogen-vacancy defect centers in diamond lattice
+      SPIN_QUBIT:
+        description: Qubit encoded in the spin state of an electron or nucleus in a semiconductor
+
+  QuantumAlgorithmCategoryType:
+    title: Quantum Algorithm Category Type
+    description: Categories of quantum algorithms by their primary application domain
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      OPTIMIZATION:
+        description: Quantum algorithms for combinatorial and continuous optimization problems
+      SIMULATION:
+        description: Quantum algorithms for simulating physical and chemical systems
+      MACHINE_LEARNING:
+        description: Quantum algorithms for machine learning and pattern recognition tasks
+      CRYPTOGRAPHY:
+        description: Quantum algorithms for cryptographic applications including key distribution and code breaking
+      LINEAR_ALGEBRA:
+        description: Quantum algorithms for linear algebra problems such as solving linear systems
+      SEARCH:
+        description: Quantum search algorithms for unstructured database search
+      ERROR_CORRECTION:
+        description: Quantum error correction codes and fault-tolerant computation protocols
+      VARIATIONAL:
+        description: Hybrid quantum-classical variational algorithms for near-term quantum devices

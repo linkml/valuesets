@@ -1,0 +1,104 @@
+name: valuesets-industry-manufacturing
+title: Advanced Manufacturing Value Sets
+description: >-
+  Value sets for manufacturing processes and technologies relevant to the
+  DOE Reenvisioning Advanced Manufacturing challenge
+id: https://w3id.org/valuesets/industry/manufacturing
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+  OBI: http://purl.obolibrary.org/obo/OBI_
+  CHMO: http://purl.obolibrary.org/obo/CHMO_
+default_prefix: valuesets
+
+slots:
+  manufacturing_process_type:
+    description: Types of manufacturing processes
+    range: ManufacturingProcessType
+  smart_manufacturing_technology_type:
+    description: Types of smart manufacturing technologies
+    range: SmartManufacturingTechnologyType
+
+enums:
+  ManufacturingProcessType:
+    title: Manufacturing Process Type
+    description: >-
+      Types of manufacturing processes including additive, subtractive,
+      and formative methods
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      ADDITIVE_MANUFACTURING:
+        description: Manufacturing by adding material layer by layer to build a three-dimensional object
+      SUBTRACTIVE_MANUFACTURING:
+        description: Manufacturing by removing material from a solid block to create a desired shape
+      FORMATIVE_MANUFACTURING:
+        description: Manufacturing by reshaping material through mechanical forces without significant addition or removal
+      CASTING:
+        description: Pouring molten material into a mold and allowing it to solidify
+      FORGING:
+        description: Shaping metal using compressive forces applied by hammering, pressing, or rolling
+      WELDING:
+        description: Joining materials by applying heat, pressure, or both to fuse them together
+      MACHINING:
+        description: Removing material from a workpiece using cutting tools to achieve a desired geometry
+      INJECTION_MOLDING:
+        title: injection moulding
+        description: Forcing molten material into a mold cavity where it cools and hardens
+        meaning: CHMO:0001430
+      EXTRUSION:
+        description: Forcing material through a die to create objects with a fixed cross-sectional profile
+        meaning: CHMO:0001613
+      POWDER_METALLURGY:
+        description: Forming metal parts from compacted and sintered metal powders
+        broad_mappings:
+        - CHMO:0001701
+      CHEMICAL_VAPOR_DEPOSITION:
+        title: chemical vapour deposition
+        description: Depositing thin films by exposing a substrate to volatile precursors that react on the surface
+        meaning: CHMO:0001314
+      PHYSICAL_VAPOR_DEPOSITION:
+        title: physical vapour deposition
+        description: Depositing thin films by condensing vaporized material onto a substrate surface
+        meaning: CHMO:0001356
+      ELECTROFORMING:
+        description: Producing metal parts by electrodeposition of metal onto a mandrel or pattern
+        broad_mappings:
+        - CHMO:0001331
+
+  SmartManufacturingTechnologyType:
+    title: Smart Manufacturing Technology Type
+    description: >-
+      Types of digital and intelligent technologies used in modern
+      manufacturing environments
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      DIGITAL_TWIN:
+        description: Virtual replica of a physical asset or process used for simulation and optimization
+      INDUSTRIAL_IOT:
+        description: Network of interconnected sensors and devices in industrial settings for data collection and control
+      PREDICTIVE_MAINTENANCE:
+        description: Using data analytics and machine learning to predict equipment failures before they occur
+      COMPUTER_VISION_INSPECTION:
+        description: Automated visual inspection of manufactured parts using computer vision and image analysis
+      ROBOTIC_ASSEMBLY:
+        description: Automated assembly of components using programmable robotic systems
+      AUTOMATED_QUALITY_CONTROL:
+        description: Automated systems for monitoring and ensuring product quality during manufacturing
+      SUPPLY_CHAIN_OPTIMIZATION:
+        description: Data-driven optimization of supply chain logistics and inventory management
+      PROCESS_SIMULATION:
+        description: Computer-based simulation of manufacturing processes for design and optimization

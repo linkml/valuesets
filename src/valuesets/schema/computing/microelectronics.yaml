@@ -1,0 +1,108 @@
+name: valuesets-computing-microelectronics
+title: Microelectronics Value Sets
+description: >-
+  Value sets for semiconductor and microelectronics types relevant to the
+  DOE Recentering Microelectronics challenge
+id: https://w3id.org/valuesets/computing/microelectronics
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  CHEBI: http://purl.obolibrary.org/obo/CHEBI_
+  valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+default_prefix: valuesets
+
+slots:
+  semiconductor_material_type:
+    description: Type of semiconductor material
+    range: SemiconductorMaterialType
+  chip_fabrication_node_type:
+    description: Chip fabrication process node size
+    range: ChipFabricationNodeType
+
+enums:
+  SemiconductorMaterialType:
+    title: Semiconductor Material Type
+    description: Types of semiconductor materials used in microelectronics fabrication
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      SILICON:
+        description: Elemental silicon, the most widely used semiconductor material
+        title: silicon atom
+        meaning: CHEBI:27573
+      GALLIUM_ARSENIDE:
+        description: Gallium arsenide (GaAs) compound semiconductor for high-frequency applications
+      SILICON_CARBIDE:
+        description: Silicon carbide (SiC) wide-bandgap semiconductor for high-power applications
+        title: silicon carbide
+        meaning: CHEBI:29390
+      GALLIUM_NITRIDE:
+        description: Gallium nitride (GaN) wide-bandgap semiconductor for power electronics and LEDs
+      INDIUM_PHOSPHIDE:
+        description: Indium phosphide (InP) compound semiconductor for optoelectronics and fiber communications
+        title: Indium phosphide
+        meaning: CHEBI:82281
+      GERMANIUM:
+        description: Elemental germanium semiconductor used in high-speed transistors and detectors
+        title: germanium atom
+        meaning: CHEBI:30441
+      SILICON_GERMANIUM:
+        description: Silicon-germanium (SiGe) alloy semiconductor for heterojunction bipolar transistors
+      DIAMOND:
+        description: Diamond as an ultra-wide-bandgap semiconductor for extreme environment electronics
+        title: diamond
+        meaning: CHEBI:33417
+
+  ChipFabricationNodeType:
+    title: Chip Fabrication Node Type
+    description: Semiconductor fabrication process node sizes defining transistor feature dimensions
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      NODE_3NM:
+        description: 3 nanometer process node
+        annotations:
+          feature_size: 3nm
+      NODE_5NM:
+        description: 5 nanometer process node
+        annotations:
+          feature_size: 5nm
+      NODE_7NM:
+        description: 7 nanometer process node
+        annotations:
+          feature_size: 7nm
+      NODE_10NM:
+        description: 10 nanometer process node
+        annotations:
+          feature_size: 10nm
+      NODE_14NM:
+        description: 14 nanometer process node
+        annotations:
+          feature_size: 14nm
+      NODE_22NM:
+        description: 22 nanometer process node
+        annotations:
+          feature_size: 22nm
+      NODE_28NM:
+        description: 28 nanometer process node
+        annotations:
+          feature_size: 28nm
+      NODE_45NM:
+        description: 45 nanometer process node
+        annotations:
+          feature_size: 45nm
+      MATURE_NODE:
+        description: Mature fabrication node (65nm and larger) for legacy and specialty applications
+        annotations:
+          feature_size: 65nm+

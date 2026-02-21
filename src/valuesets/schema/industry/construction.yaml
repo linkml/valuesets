@@ -1,0 +1,90 @@
+name: valuesets-industry-construction
+title: Construction and Buildings Value Sets
+description: >-
+  Value sets for building systems and construction relevant to the DOE
+  Reimagining Construction challenge
+id: https://w3id.org/valuesets/industry/construction
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  ENVO: http://purl.obolibrary.org/obo/ENVO_
+  brick: https://brickschema.org/schema/Brick#
+  valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+default_prefix: valuesets
+
+slots:
+  building_system_type:
+    description: Type of building mechanical, electrical, or structural system
+    range: BuildingSystemType
+  building_energy_performance_level:
+    description: Energy performance certification or standard level for buildings
+    range: BuildingEnergyPerformanceLevel
+
+enums:
+  BuildingSystemType:
+    title: Building System Type
+    description: Types of building systems for mechanical, electrical, and structural infrastructure
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      HVAC:
+        description: Heating, ventilation, and air conditioning systems for climate control
+        close_mappings:
+        - brick:HVAC_System
+      ELECTRICAL:
+        description: Electrical power distribution and wiring systems within the building
+      PLUMBING:
+        description: Water supply, drainage, and sewage systems
+      STRUCTURAL:
+        description: Load-bearing structural framework including foundations, columns, beams, and slabs
+      BUILDING_ENVELOPE:
+        description: Exterior enclosure system including walls, roof, windows, and insulation
+        meaning: ENVO:01000470
+      FIRE_PROTECTION:
+        description: Fire detection, suppression, and alarm systems
+        close_mappings:
+        - brick:Fire_Safety_System
+      LIGHTING:
+        description: Interior and exterior lighting systems including controls and fixtures
+        close_mappings:
+        - brick:Lighting_System
+      BUILDING_AUTOMATION:
+        description: Integrated control systems for monitoring and managing building operations
+      RENEWABLE_ENERGY_INTEGRATION:
+        description: On-site renewable energy generation systems such as solar panels and wind turbines
+
+  BuildingEnergyPerformanceLevel:
+    title: Building Energy Performance Level
+    description: Energy performance certification levels and standards for buildings
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      NET_ZERO_ENERGY:
+        description: Building that produces as much energy as it consumes on an annual basis
+      NET_POSITIVE_ENERGY:
+        description: Building that produces more energy than it consumes on an annual basis
+      PASSIVE_HOUSE:
+        description: Building meeting Passive House Institute standards for ultra-low energy consumption
+      LEED_CERTIFIED:
+        description: LEED Certified rating (40-49 points) from the U.S. Green Building Council
+      LEED_SILVER:
+        description: LEED Silver rating (50-59 points) from the U.S. Green Building Council
+      LEED_GOLD:
+        description: LEED Gold rating (60-79 points) from the U.S. Green Building Council
+      LEED_PLATINUM:
+        description: LEED Platinum rating (80+ points) from the U.S. Green Building Council
+      ENERGY_STAR_CERTIFIED:
+        description: EPA Energy Star certification for buildings performing in top 25% of energy efficiency
+      CODE_MINIMUM:
+        description: Building meeting minimum energy code requirements without additional certification

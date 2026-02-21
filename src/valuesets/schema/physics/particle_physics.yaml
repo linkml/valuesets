@@ -1,0 +1,162 @@
+name: valuesets-physics-particle-physics
+title: Particle Physics Value Sets
+description: >-
+  Value sets for particle accelerators and fundamental particles relevant to the
+  DOE Enhancing Particle Accelerators and Unifying Physics challenges
+id: https://w3id.org/valuesets/physics/particle_physics
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  NCIT: http://purl.obolibrary.org/obo/NCIT_
+  CHEBI: http://purl.obolibrary.org/obo/CHEBI_
+  CHMO: http://purl.obolibrary.org/obo/CHMO_
+  valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+default_prefix: valuesets
+
+slots:
+  particle_accelerator_type:
+    description: Type of particle accelerator
+    range: ParticleAcceleratorType
+  fundamental_particle_type:
+    description: Type of fundamental subatomic particle
+    range: FundamentalParticleType
+  detector_type:
+    description: Type of particle physics detector
+    range: DetectorType
+
+enums:
+  ParticleAcceleratorType:
+    title: Particle Accelerator Type
+    description: Types of particle accelerator facilities used in high-energy physics research
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      LINEAR_ACCELERATOR:
+        description: Linear accelerator (linac) that accelerates particles along a straight path
+        title: Linear Accelerator
+        meaning: NCIT:C28169
+      SYNCHROTRON:
+        description: Circular accelerator with increasing magnetic field to maintain constant orbit radius
+        title: Synchrotron
+        meaning: NCIT:C48205
+      CYCLOTRON:
+        description: Circular accelerator using constant magnetic field and alternating electric field
+        title: Cyclotron
+        meaning: NCIT:C94881
+      STORAGE_RING:
+        description: Circular ring that stores particles at constant energy for extended periods
+      FREE_ELECTRON_LASER:
+        description: Accelerator-based light source using relativistic electrons in a magnetic undulator
+      COLLIDER:
+        description: Accelerator that directs two counter-rotating beams into head-on collisions
+      SPALLATION_SOURCE:
+        description: Accelerator-driven neutron source where protons strike a heavy metal target
+      BETATRON:
+        description: Circular accelerator that uses a changing magnetic field to accelerate electrons
+
+  FundamentalParticleType:
+    title: Fundamental Particle Type
+    description: Standard Model fundamental particles classified by type
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      ELECTRON:
+        description: First-generation charged lepton with mass 0.511 MeV
+        title: electron
+        meaning: CHEBI:10545
+      MUON:
+        description: Second-generation charged lepton with mass 105.66 MeV
+        title: muon
+        meaning: CHEBI:36356
+      TAU:
+        description: Third-generation charged lepton with mass 1777 MeV
+        title: tau lepton
+        meaning: CHEBI:36355
+      ELECTRON_NEUTRINO:
+        description: First-generation neutrino associated with the electron
+        title: electron neutrino
+        meaning: CHEBI:30223
+      MUON_NEUTRINO:
+        description: Second-generation neutrino associated with the muon
+        title: muon neutrino
+        meaning: CHEBI:36353
+      TAU_NEUTRINO:
+        description: Third-generation neutrino associated with the tau lepton
+        title: tau neutrino
+        meaning: CHEBI:36354
+      UP_QUARK:
+        description: First-generation quark with charge +2/3
+        title: up quark
+        meaning: CHEBI:36366
+      DOWN_QUARK:
+        description: First-generation quark with charge -1/3
+        title: down quark
+        meaning: CHEBI:36367
+      CHARM_QUARK:
+        description: Second-generation quark with charge +2/3
+        title: charm quark
+        meaning: CHEBI:36369
+      STRANGE_QUARK:
+        description: Second-generation quark with charge -1/3
+        title: strange quark
+        meaning: CHEBI:36368
+      TOP_QUARK:
+        description: Third-generation quark with charge +2/3
+        title: top quark
+        meaning: CHEBI:36371
+      BOTTOM_QUARK:
+        description: Third-generation quark with charge -1/3
+        title: bottom quark
+        meaning: CHEBI:36370
+      PHOTON:
+        description: Massless gauge boson mediating the electromagnetic force
+        title: photon
+        meaning: CHEBI:30212
+      GLUON:
+        description: Massless gauge boson mediating the strong force between quarks
+      W_BOSON:
+        description: Massive gauge boson mediating the charged weak interaction
+      Z_BOSON:
+        description: Massive gauge boson mediating the neutral weak interaction
+      HIGGS_BOSON:
+        description: Scalar boson associated with the Higgs field and mass generation mechanism
+        title: Higgs boson
+        meaning: CHEBI:146278
+
+  DetectorType:
+    title: Detector Type
+    description: Types of detectors used in particle physics experiments
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      CALORIMETER:
+        description: Detector that measures the total energy of incident particles by absorbing them
+      TRACKING_DETECTOR:
+        description: Detector that records the trajectories of charged particles
+      TIME_PROJECTION_CHAMBER:
+        description: Gas-filled detector that provides three-dimensional particle track reconstruction
+      CHERENKOV_DETECTOR:
+        description: Detector that identifies particles by measuring Cherenkov radiation emitted in a medium
+      SCINTILLATOR:
+        description: Detector using scintillating material that emits light when traversed by ionizing radiation
+      SILICON_STRIP_DETECTOR:
+        description: Semiconductor detector using finely segmented silicon strips for precise position measurement
+      DRIFT_CHAMBER:
+        description: Gas-filled wire chamber that measures particle positions from electron drift times
+      MUON_SPECTROMETER:
+        description: Large detector system designed to identify and measure the momentum of muons

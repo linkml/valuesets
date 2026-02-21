@@ -1,0 +1,199 @@
+name: valuesets-industry-unconventional-resources
+title: Unconventional Mineral Resources Value Sets
+description: >-
+  Value sets for unconventional mineral resource types and recovery methods
+  relevant to the DOE AI-Driven Living Mine lighthouse
+id: https://w3id.org/valuesets/industry/unconventional_resources
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  valuesets: https://w3id.org/valuesets/
+  ENVO: http://purl.obolibrary.org/obo/ENVO_
+  CHEBI: http://purl.obolibrary.org/obo/CHEBI_
+  CHMO: http://purl.obolibrary.org/obo/CHMO_
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+default_prefix: valuesets
+slots:
+  unconventional_mineral_resource:
+    description: Type of unconventional mineral resource
+    range: UnconventionalMineralResourceType
+  bioextraction_method:
+    description: Method of biological extraction of minerals or metals
+    range: BioextractionMethodType
+  tailing_characterization:
+    description: Type of tailing characterization measurement
+    range: TailingCharacterizationType
+enums:
+  UnconventionalMineralResourceType:
+    title: Unconventional Mineral Resource Type
+    description: >-
+      Types of unconventional mineral resources including industrial waste
+      streams, mining residues, and brines that contain recoverable
+      critical minerals and metals
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      MINE_TAILINGS:
+        title: mine tailing
+        description: Materials remaining after separating the valuable fraction from the uneconomic fraction of an ore
+        meaning: ENVO:00000003
+      WASTE_ROCK:
+        description: Rock removed during mining that does not contain sufficient mineral of interest for processing
+        annotations:
+          source: surface and underground mining
+      ACID_MINE_DRAINAGE:
+        title: acid mine drainage
+        description: Acidic water outflow from mines containing dissolved metals and sulfuric acid
+        meaning: ENVO:00001997
+      COAL_COMBUSTION_RESIDUALS:
+        title: coal ash
+        description: Residual materials from combustion of coal in power plants, including fly ash, bottom ash, and boiler slag
+        meaning: ENVO:02000127
+      RED_MUD:
+        description: Alkaline residue generated during alumina extraction from bauxite ore via the Bayer process
+        annotations:
+          composition: iron oxides, alumina, silica, rare earth elements
+          source: alumina refining
+      PHOSPHOGYPSUM:
+        description: Gypsum byproduct from phosphoric acid production containing trace radioactive elements and rare earth elements
+        annotations:
+          composition: calcium sulfate dihydrate with trace REE
+          source: phosphate fertilizer production
+      SLAG:
+        title: boiler slag
+        description: Glassy material formed as a byproduct of smelting and refining metal ores
+        meaning: ENVO:02000130
+      FLY_ASH:
+        title: fly ash
+        description: Fine powdery material composed mostly of silica collected from flue gases during coal combustion
+        meaning: ENVO:02000128
+      ELECTRONIC_WASTE:
+        description: Discarded electronic devices and components containing recoverable precious and critical metals
+        annotations:
+          metals: gold, silver, platinum, copper, rare earth elements
+      SPENT_CATALYSTS:
+        description: Used industrial catalysts containing recoverable platinum group metals and other valuable elements
+        annotations:
+          metals: platinum, palladium, rhodium, rhenium
+          source: petroleum refining, chemical manufacturing
+      GEOTHERMAL_BRINE:
+        title: brine
+        description: Hot saline water from geothermal systems containing dissolved lithium, rare earth elements, and other minerals
+        meaning: ENVO:00003044
+      OIL_FIELD_BRINE:
+        description: Saline water produced during oil and gas extraction containing dissolved minerals including lithium and boron
+        broad_mappings:
+        - ENVO:00003044
+        annotations:
+          minerals: lithium, bromine, boron, iodine
+          source: oil and gas production
+  BioextractionMethodType:
+    title: Bioextraction Method Type
+    description: >-
+      Biological methods for extracting metals and minerals from
+      unconventional resources using microorganisms or plants
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      HEAP_BIOLEACHING:
+        description: Biological leaching of metals from crushed ore stacked in heaps irrigated with acidic microbial solutions
+        broad_mappings:
+        - CHMO:0001681
+        annotations:
+          organisms: Acidithiobacillus ferrooxidans, Acidithiobacillus thiooxidans
+          scale: industrial
+      STIRRED_TANK_BIOLEACHING:
+        description: Biological leaching of metals in agitated tank reactors with controlled conditions
+        broad_mappings:
+        - CHMO:0001681
+        annotations:
+          organisms: Acidithiobacillus, Leptospirillum
+          scale: industrial, pilot
+      IN_SITU_BIOLEACHING:
+        description: Biological leaching of metals directly in the ore body without excavation
+        broad_mappings:
+        - CHMO:0001681
+        annotations:
+          advantage: minimal surface disturbance
+          application: low-grade deposits
+      PHYTOMINING:
+        description: Use of hyperaccumulator plants to extract metals from soil or mining waste for recovery
+        annotations:
+          organisms: Alyssum, Thlaspi, Pteris
+          metals: nickel, zinc, thallium
+      BIOSORPTION:
+        description: Passive binding of metal ions to the surface of biological materials such as microbial biomass
+        annotations:
+          mechanism: surface complexation, ion exchange
+          materials: dead biomass, algae, fungi
+      BIOACCUMULATION:
+        description: Active uptake and intracellular concentration of metals by living organisms
+        annotations:
+          mechanism: metabolically driven intracellular uptake
+          organisms: bacteria, fungi, algae
+      BIOPRECIPITATION:
+        description: Microbially mediated precipitation of metals as insoluble compounds such as sulfides or phosphates
+        broad_mappings:
+        - CHMO:0001688
+        annotations:
+          mechanism: sulfate reduction, phosphate release
+          products: metal sulfides, metal phosphates
+      BIOFLOTATION:
+        description: Use of microorganisms or biosurfactants to selectively separate mineral particles by flotation
+        annotations:
+          mechanism: selective surface modification
+          organisms: Mycobacterium, Bacillus
+  TailingCharacterizationType:
+    title: Tailing Characterization Type
+    description: >-
+      Types of measurements and analyses used to characterize mine tailings
+      and other mineral processing residues for resource recovery potential
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      PARTICLE_SIZE_DISTRIBUTION:
+        description: Measurement of the distribution of particle sizes in tailing material
+        title: granulometry
+        meaning: CHMO:0002119
+        annotations:
+          methods: sieve analysis, laser diffraction, sedimentation
+      MINERALOGICAL_COMPOSITION:
+        description: Determination of mineral phases present in tailing material using diffraction and spectroscopic methods
+        annotations:
+          methods: XRD, SEM-EDS, QEMSCAN, MLA
+      ACID_GENERATING_POTENTIAL:
+        description: Assessment of the potential for tailings to generate acid drainage through sulfide oxidation
+        annotations:
+          tests: acid-base accounting, NAG test, kinetic testing
+      METAL_CONTENT:
+        description: Quantitative analysis of metal and element concentrations in tailing material
+        close_mappings:
+        - CHMO:0001075
+        annotations:
+          methods: ICP-MS, ICP-OES, XRF
+      MOISTURE_CONTENT:
+        description: Measurement of water content in tailing material affecting stability and handling
+        annotations:
+          methods: gravimetric, nuclear moisture gauge
+      GEOTECHNICAL_STABILITY:
+        description: Assessment of the mechanical and physical stability of tailing storage facilities
+        annotations:
+          parameters: shear strength, consolidation, liquefaction potential
+      ENVIRONMENTAL_RISK_CLASSIFICATION:
+        description: Classification of environmental risk based on contaminant mobility, toxicity, and exposure pathways
+        annotations:
+          frameworks: TCLP, WET, environmental impact assessment

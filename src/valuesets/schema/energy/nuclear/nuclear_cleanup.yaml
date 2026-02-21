@@ -1,0 +1,169 @@
+name: valuesets-energy-nuclear-cleanup
+title: Nuclear Cleanup and Restoration Value Sets
+description: >-
+  Value sets for nuclear site cleanup, remediation, and environmental restoration
+  relevant to the DOE Transforming Nuclear Cleanup challenge
+id: https://w3id.org/valuesets/energy/nuclear/nuclear_cleanup
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+  CHEBI: http://purl.obolibrary.org/obo/CHEBI_
+  NCIT: http://purl.obolibrary.org/obo/NCIT_
+  ENVO: http://purl.obolibrary.org/obo/ENVO_
+default_prefix: valuesets
+
+slots:
+  nuclear_remediation_type:
+    description: Types of nuclear site remediation methods
+    range: NuclearRemediationType
+  decommissioning_phase_type:
+    description: Phases in the nuclear facility decommissioning process
+    range: DecommissioningPhaseType
+  radioactive_contaminant_type:
+    description: Types of radioactive contaminants found at nuclear sites
+    range: RadioactiveContaminantType
+
+enums:
+  NuclearRemediationType:
+    title: Nuclear Remediation Type
+    description: >-
+      Methods for remediating radioactive contamination at nuclear sites
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      SOIL_EXCAVATION:
+        description: Physical removal and disposal of contaminated soil
+      GROUNDWATER_PUMP_AND_TREAT:
+        description: Pumping contaminated groundwater to the surface for treatment and reinjection
+      IN_SITU_BIOREMEDIATION:
+        description: Using microorganisms in place to degrade or immobilize radioactive contaminants
+      VITRIFICATION:
+        description: Immobilizing radioactive waste by incorporating it into a glass matrix
+      STABILIZATION:
+        description: Chemical or physical treatment to reduce the mobility of contaminants in soil or waste
+      CAPPING:
+        description: Placing an engineered barrier over contaminated material to prevent migration and exposure
+      PHYTOREMEDIATION:
+        description: Using plants to extract, contain, or degrade radioactive contaminants from soil and water
+      ELECTROKINETIC_REMEDIATION:
+        description: Applying electric fields to move and concentrate contaminants in soil for removal
+      CHEMICAL_OXIDATION:
+        description: Using chemical oxidants to destroy or transform organic contaminants at nuclear sites
+      MONITORED_NATURAL_ATTENUATION:
+        description: Monitoring natural processes that reduce contaminant concentrations without active intervention
+
+  DecommissioningPhaseType:
+    title: Decommissioning Phase Type
+    description: >-
+      Phases in the decommissioning lifecycle of nuclear facilities
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      CHARACTERIZATION:
+        description: Surveying and characterizing radiological and hazardous conditions at the facility
+      DECONTAMINATION:
+        title: Decontamination
+        description: Removing radioactive contamination from surfaces, equipment, and structures
+        meaning: NCIT:C68769
+      DISMANTLEMENT:
+        description: Physical demolition and removal of contaminated structures and equipment
+      WASTE_MANAGEMENT:
+        description: Processing, packaging, transporting, and disposing of radioactive waste
+      SITE_RESTORATION:
+        description: Restoring the site to a condition suitable for future use
+      LONG_TERM_MONITORING:
+        description: Ongoing environmental monitoring after initial cleanup is complete
+        broad_mappings:
+        - ENVO:02500041
+      LICENSE_TERMINATION:
+        description: Final regulatory review and release of the site from nuclear licensing requirements
+
+  RadioactiveContaminantType:
+    title: Radioactive Contaminant Type
+    description: >-
+      Common radioactive contaminants found at nuclear cleanup sites
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      CESIUM_137:
+        title: caesium-137
+        description: Cesium-137, a beta and gamma emitter with a half-life of approximately 30 years
+        meaning: CHEBI:196959
+        annotations:
+          half_life: 30.17 years
+          decay_mode: beta, gamma
+      STRONTIUM_90:
+        title: Strontium Sr-90
+        description: Strontium-90, a beta emitter with a half-life of approximately 29 years
+        meaning: NCIT:C29776
+        annotations:
+          half_life: 28.8 years
+          decay_mode: beta
+      TECHNETIUM_99:
+        description: Technetium-99, a long-lived beta emitter produced in fission reactors
+        meaning: CHEBI:33371
+        annotations:
+          half_life: 211100 years
+          decay_mode: beta
+      TRITIUM:
+        title: tritium atom
+        description: Tritium (hydrogen-3), a low-energy beta emitter with a half-life of approximately 12 years
+        meaning: CHEBI:29238
+        annotations:
+          half_life: 12.33 years
+          decay_mode: beta
+      URANIUM:
+        title: uranium atom
+        description: Uranium isotopes, alpha emitters with very long half-lives
+        meaning: CHEBI:27214
+        annotations:
+          decay_mode: alpha
+      PLUTONIUM:
+        title: plutonium atom
+        description: Plutonium isotopes, alpha emitters with long half-lives and high radiotoxicity
+        meaning: CHEBI:33388
+        annotations:
+          decay_mode: alpha
+      AMERICIUM_241:
+        title: americium atom
+        description: Americium-241, an alpha emitter with a half-life of approximately 432 years
+        meaning: CHEBI:33389
+        annotations:
+          half_life: 432.2 years
+          decay_mode: alpha
+      IODINE_129:
+        title: iodine-129 atom
+        description: Iodine-129, a long-lived beta and gamma emitter produced in nuclear fission
+        meaning: CHEBI:52636
+        annotations:
+          half_life: 15.7 million years
+          decay_mode: beta, gamma
+      COBALT_60:
+        title: Cobalt Co-60
+        description: Cobalt-60, a gamma emitter with a half-life of approximately 5 years
+        meaning: NCIT:C28239
+        annotations:
+          half_life: 5.27 years
+          decay_mode: beta, gamma
+      RADIUM_226:
+        description: Radium-226, an alpha emitter with a half-life of approximately 1600 years
+        meaning: CHEBI:80504
+        annotations:
+          half_life: 1600 years
+          decay_mode: alpha

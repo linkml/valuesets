@@ -1,0 +1,167 @@
+name: valuesets-bioprocessing-biomanufacturing
+title: Biomanufacturing Value Sets
+description: >-
+  Value sets for biomanufacturing scales, processes, and product categories
+  relevant to the DOE Scaling the Biotechnology Revolution challenge
+id: https://w3id.org/valuesets/bioprocessing/biomanufacturing
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  valuesets: https://w3id.org/valuesets/
+  CHEBI: http://purl.obolibrary.org/obo/CHEBI_
+  NCIT: http://purl.obolibrary.org/obo/NCIT_
+  OBI: http://purl.obolibrary.org/obo/OBI_
+  AGRO: http://purl.obolibrary.org/obo/AGRO_
+  FOODON: http://purl.obolibrary.org/obo/FOODON_
+  PROCO: http://purl.obolibrary.org/obo/PROCO_
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+default_prefix: valuesets
+slots:
+  biomanufacturing_scale:
+    description: Scale of biomanufacturing operations
+    range: BiomanufacturingScaleType
+  bioproduct_category:
+    description: Category of bioproduct
+    range: BioproductCategoryType
+  bioprocess_optimization:
+    description: Type of bioprocess optimization strategy
+    range: BioprocessOptimizationType
+enums:
+  BiomanufacturingScaleType:
+    title: Biomanufacturing Scale Type
+    description: >-
+      Scale classifications for biomanufacturing operations, from micro-scale
+      screening through commercial production
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      BENCH_SCALE:
+        description: Laboratory bench scale operations, typically less than 10 liters
+        annotations:
+          volume_range: <10 L
+          purpose: Initial development and screening
+      PILOT_SCALE:
+        description: Pilot plant scale operations for process development, typically 10-1000 liters
+        annotations:
+          volume_range: 10-1000 L
+          purpose: Process development and optimization
+      DEMONSTRATION_SCALE:
+        description: Demonstration scale operations for technology validation, typically 1000-10000 liters
+        annotations:
+          volume_range: 1000-10000 L
+          purpose: Technology demonstration and validation
+      COMMERCIAL_SCALE:
+        description: Full commercial production scale, typically greater than 10000 liters
+        annotations:
+          volume_range: '>10000 L'
+          purpose: Commercial manufacturing
+      MICRO_SCALE:
+        description: Micro-scale operations using microfluidic or microtiter plate formats, typically less than 1 mL
+        annotations:
+          volume_range: <1 mL
+          purpose: High-throughput screening and optimization
+  BioproductCategoryType:
+    title: Bioproduct Category Type
+    description: >-
+      Categories of products derived from biological manufacturing processes
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      BIOFUEL:
+        title: fuel
+        description: Biologically derived fuel including ethanol, biodiesel, and biogas
+        meaning: CHEBI:33292
+      BIOCHEMICAL:
+        description: Chemical compounds produced through biological processes
+        related_mappings:
+        - CHEBI:52206
+        annotations:
+          examples: organic acids, amino acids, platform chemicals
+      BIOPLASTIC:
+        description: Biodegradable or bio-based plastic materials such as PHA, PLA, and PBS
+        annotations:
+          examples: polyhydroxyalkanoates, polylactic acid
+      BIOSURFACTANT:
+        description: Surface-active compounds produced by microorganisms
+        related_mappings:
+        - CHEBI:35195
+        annotations:
+          examples: rhamnolipids, sophorolipids, surfactin
+      BIOACTIVE_COMPOUND:
+        description: Biologically active compounds with therapeutic or functional properties
+        annotations:
+          examples: alkaloids, terpenoids, flavonoids
+      INDUSTRIAL_ENZYME:
+        title: Enzyme
+        description: Enzymes produced for industrial applications such as detergents, textiles, and food processing
+        meaning: NCIT:C16554
+      BIOFERTILIZER:
+        title: biofertilizer
+        description: Biological preparations containing living microorganisms that enhance plant nutrient availability
+        meaning: AGRO:00020001
+      BIOPESTICIDE:
+        description: Biological agents used for pest control in agriculture
+        broad_mappings:
+        - CHEBI:25944
+        annotations:
+          examples: Bacillus thuringiensis, entomopathogenic fungi
+      BIOPHARMACEUTICAL:
+        title: Biological Agent
+        description: Pharmaceutical products derived from biological sources or manufactured using biotechnology
+        meaning: NCIT:C307
+        annotations:
+          examples: recombinant proteins, monoclonal antibodies, vaccines
+      FOOD_INGREDIENT:
+        title: food ingredient
+        description: Biologically produced ingredients for food and beverage applications
+        meaning: FOODON:00004274
+  BioprocessOptimizationType:
+    title: Bioprocess Optimization Type
+    description: >-
+      Strategies and approaches for optimizing biomanufacturing processes
+      to improve yield, productivity, and product quality
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      MEDIA_OPTIMIZATION:
+        description: Optimization of growth media composition including carbon sources, nitrogen sources, and micronutrients
+      STRAIN_ENGINEERING:
+        description: Genetic modification and selection of production strains for improved performance
+        annotations:
+          approaches: metabolic engineering, directed evolution, adaptive laboratory evolution
+      PROCESS_INTENSIFICATION:
+        description: Engineering approaches to increase volumetric productivity and reduce process footprint
+      CONTINUOUS_PROCESSING:
+        description: Conversion from batch to continuous operation for improved efficiency and consistency
+      FED_BATCH_OPTIMIZATION:
+        description: Optimization of feeding strategies in fed-batch processes to maximize product yield
+      DOWNSTREAM_PURIFICATION:
+        description: Optimization of product recovery and purification processes
+        broad_mappings:
+        - OBI:0001505
+        annotations:
+          approaches: chromatography, membrane separation, extraction
+      IN_LINE_ANALYTICS:
+        description: Implementation of real-time process analytical technology (PAT) for process monitoring and control
+        close_mappings:
+        - PROCO:0000227
+        annotations:
+          technologies: Raman spectroscopy, NIR, online HPLC
+      DIGITAL_TWIN_MODELING:
+        description: Use of computational process models for simulation, prediction, and optimization
+        annotations:
+          approaches: mechanistic models, hybrid models, machine learning
