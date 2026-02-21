@@ -1,0 +1,88 @@
+name: valuesets-computing-data-centers
+title: Data Center Value Sets
+description: >-
+  Value sets for data center infrastructure relevant to the DOE Securing
+  U.S. Leadership in Data Centers challenge
+id: https://w3id.org/valuesets/computing/data_centers
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  valuesets: https://w3id.org/valuesets/
+  brick: https://brickschema.org/schema/Brick#
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+default_prefix: valuesets
+
+slots:
+  data_center_cooling_type:
+    description: Type of data center cooling system
+    range: DataCenterCoolingType
+  data_center_tier_level:
+    description: Uptime Institute tier classification level for data centers
+    range: DataCenterTierLevel
+
+enums:
+  DataCenterCoolingType:
+    title: Data Center Cooling Type
+    description: Types of cooling systems used in data center facilities
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      AIR_COOLING:
+        description: Traditional air-based cooling using computer room air conditioning (CRAC) or air handling units
+        close_mappings:
+        - brick:Computer_Room_Air_Conditioning
+      LIQUID_COOLING:
+        description: Cooling using liquid coolant circulated through heat exchangers near server components
+      IMMERSION_COOLING:
+        description: Cooling by submerging server hardware in a thermally conductive dielectric liquid
+      REAR_DOOR_HEAT_EXCHANGER:
+        description: Liquid-to-air heat exchanger mounted on the rear door of server racks
+        broad_mappings:
+        - brick:Heat_Exchanger
+      EVAPORATIVE_COOLING:
+        description: Cooling that uses water evaporation to reduce air temperature
+        related_mappings:
+        - brick:Cooling_Tower
+      GEOTHERMAL_COOLING:
+        description: Cooling that leverages underground temperature stability for heat dissipation
+      FREE_AIR_COOLING:
+        description: Cooling using outside ambient air when conditions permit, reducing mechanical cooling load
+      DIRECT_TO_CHIP_LIQUID_COOLING:
+        description: Liquid cooling with cold plates attached directly to processors and other heat-generating components
+
+  DataCenterTierLevel:
+    title: Data Center Tier Level
+    description: Uptime Institute data center tier classification levels defining infrastructure reliability
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      TIER_I:
+        description: Basic capacity - single non-redundant distribution path with no redundancy
+        annotations:
+          uptime_guarantee: 99.671%
+          classification: Basic
+      TIER_II:
+        description: Redundant capacity components - single non-redundant distribution path with redundant components
+        annotations:
+          uptime_guarantee: 99.741%
+          classification: Redundant Components
+      TIER_III:
+        description: Concurrently maintainable - multiple independent distribution paths with redundant components
+        annotations:
+          uptime_guarantee: 99.982%
+          classification: Concurrently Maintainable
+      TIER_IV:
+        description: Fault tolerant - multiple independent distribution paths with redundant components, fault tolerant
+        annotations:
+          uptime_guarantee: 99.995%
+          classification: Fault Tolerant

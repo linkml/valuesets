@@ -1,0 +1,126 @@
+name: valuesets-earth-science-hydrogeology
+title: Hydrogeology Value Sets
+description: >-
+  Value sets for hydrogeological characterization, aquifer types, and groundwater processes
+id: https://w3id.org/valuesets/earth_science/hydrogeology
+prefixes:
+  linkml: https://w3id.org/linkml/
+  ENVO: http://purl.obolibrary.org/obo/ENVO_
+  valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+default_prefix: valuesets
+
+slots:
+  aquifer_type:
+    description: Classification of aquifer type
+    range: AquiferType
+  groundwater_process_type:
+    description: Type of groundwater process
+    range: GroundwaterProcessType
+  hydrogeology_well_type:
+    description: Classification of well type
+    range: HydrogeologyWellType
+
+enums:
+  AquiferType:
+    title: Aquifer Type
+    description: >-
+      Classification of aquifer types based on confinement, geology, and hydraulic characteristics.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      UNCONFINED:
+        description: An aquifer whose upper boundary is the water table, open to atmospheric pressure
+      CONFINED:
+        description: An aquifer bounded above and below by impermeable layers, under pressure greater than atmospheric
+      SEMI_CONFINED:
+        description: An aquifer partially bounded by layers of lower permeability that allow some vertical leakage
+      PERCHED:
+        description: A localized unconfined aquifer above the regional water table, supported by a low-permeability layer
+      ARTESIAN:
+        description: A confined aquifer in which the hydraulic pressure causes water to rise above the top of the aquifer
+      FRACTURED_ROCK:
+        description: An aquifer in which groundwater flows primarily through fractures in otherwise low-permeability rock
+      KARST:
+        description: An aquifer in soluble rock such as limestone where flow occurs through dissolution-enlarged conduits and fractures
+        broad_mappings:
+        - ENVO:00000175
+      ALLUVIAL:
+        description: An aquifer composed of unconsolidated alluvial deposits such as sand and gravel deposited by rivers
+
+  GroundwaterProcessType:
+    title: Groundwater Process Type
+    description: >-
+      Types of physical, chemical, and biological processes occurring in groundwater systems.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      RECHARGE:
+        description: The process by which water enters an aquifer from the surface or from an overlying formation
+      DISCHARGE:
+        description: The process by which groundwater exits an aquifer to the surface or to another formation
+        broad_mappings:
+        - ENVO:01001631
+      BASEFLOW:
+        description: The portion of streamflow derived from groundwater discharge into surface water bodies
+      LATERAL_FLOW:
+        description: Horizontal movement of groundwater through an aquifer
+        broad_mappings:
+        - ENVO:01001632
+      VERTICAL_LEAKAGE:
+        description: Vertical movement of groundwater between aquifers through semi-confining layers
+      SALTWATER_INTRUSION:
+        description: The movement of saline water into freshwater aquifers, typically in coastal areas
+      CONTAMINANT_TRANSPORT:
+        description: The movement and spreading of dissolved or suspended contaminants through groundwater
+      BIODEGRADATION:
+        description: The biological breakdown of contaminants in groundwater by microbial activity
+        broad_mappings:
+        - ENVO:06105014
+      SORPTION:
+        description: The process by which dissolved substances are attached to solid surfaces in the aquifer matrix
+      PRECIPITATION_DISSOLUTION:
+        description: Chemical processes involving the formation or dissolution of mineral phases in groundwater
+
+  HydrogeologyWellType:
+    title: Well Type
+    description: >-
+      Classification of wells used for groundwater access, monitoring, and management.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      MONITORING_WELL:
+        description: A well used to observe and measure groundwater conditions such as water level, quality, and flow
+      PRODUCTION_WELL:
+        description: A well used to extract groundwater for water supply purposes
+      INJECTION_WELL:
+        description: A well used to inject fluids into the subsurface for disposal, storage, or aquifer recharge
+      OBSERVATION_WELL:
+        description: A well used to observe hydrological parameters without significant water extraction
+      PIEZOMETER:
+        description: A device or small-diameter well used to measure hydraulic head at a specific point in the subsurface
+      EXTRACTION_WELL:
+        description: A well used to remove contaminated groundwater as part of remediation activities
+      RECHARGE_WELL:
+        description: A well used to artificially replenish groundwater by injecting treated water into an aquifer
+      GEOTHERMAL_WELL:
+        description: A well drilled to access geothermal resources for energy production or direct use
+        broad_mappings:
+        - ENVO:01000002
+
+license: MIT
+see_also:
+- https://linkml.github.io/valuesets

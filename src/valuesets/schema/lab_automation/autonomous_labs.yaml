@@ -1,0 +1,168 @@
+name: valuesets-lab-automation-autonomous-labs
+title: Autonomous Laboratory Value Sets
+description: >-
+  Value sets for AI-driven autonomous laboratories, self-driving lab components,
+  and experimental design methods relevant to the DOE Autonomous Labs challenge
+id: https://w3id.org/valuesets/lab_automation/autonomous_labs
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  valuesets: https://w3id.org/valuesets/
+  OBI: http://purl.obolibrary.org/obo/OBI_
+  BAO: http://www.bioassayontology.org/bao#BAO_
+  NCIT: http://purl.obolibrary.org/obo/NCIT_
+  STATO: http://purl.obolibrary.org/obo/STATO_
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+default_prefix: valuesets
+slots:
+  autonomous_lab_component:
+    description: Type of component in an autonomous laboratory system
+    range: AutonomousLabComponentType
+  experimental_design_method:
+    description: Method used for experimental design in autonomous laboratories
+    range: ExperimentalDesignMethodType
+  lab_automation_workflow:
+    description: Type of automated laboratory workflow
+    range: LabAutomationWorkflowType
+enums:
+  AutonomousLabComponentType:
+    title: Autonomous Lab Component Type
+    description: >-
+      Types of hardware and software components that comprise an AI-driven
+      autonomous laboratory system
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      ROBOTIC_SAMPLE_HANDLER:
+        description: Robotic system for automated sample manipulation, transfer, and preparation
+        close_mappings:
+        - OBI:0400112
+        annotations:
+          function: sample handling and transfer
+      AUTOMATED_SYNTHESIZER:
+        description: Automated system for chemical or biological synthesis operations
+        broad_mappings:
+        - NCIT:C50206
+        annotations:
+          function: automated synthesis
+      HIGH_THROUGHPUT_SCREENING_PLATFORM:
+        title: high throughput screening
+        description: Integrated platform for rapid screening of large numbers of samples or conditions
+        meaning: BAO:0010074
+      AUTOMATED_CHARACTERIZATION_INSTRUMENT:
+        description: Instrument for automated measurement and characterization of samples
+        annotations:
+          examples: automated XRD, SEM, spectroscopy
+      AI_EXPERIMENT_PLANNER:
+        description: AI-based software system that designs and plans experiments based on prior data and objectives
+        annotations:
+          function: experiment planning and design
+      DATA_MANAGEMENT_SYSTEM:
+        description: System for automated collection, storage, and management of experimental data
+        close_mappings:
+        - NCIT:C48209
+        annotations:
+          function: data management and integration
+      SAFETY_MONITORING_SYSTEM:
+        description: System for real-time monitoring of laboratory safety conditions and automated hazard response
+        annotations:
+          function: safety monitoring and emergency response
+      SAMPLE_STORAGE_SYSTEM:
+        description: Automated storage and retrieval system for laboratory samples
+        annotations:
+          function: sample storage and inventory management
+  ExperimentalDesignMethodType:
+    title: Experimental Design Method Type
+    description: >-
+      Computational and statistical methods used for experimental design
+      in autonomous laboratory workflows
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      BAYESIAN_OPTIMIZATION:
+        description: Probabilistic model-based optimization using Bayesian inference to guide experimental selection
+        annotations:
+          approach: surrogate model with acquisition function
+      ACTIVE_LEARNING:
+        description: Machine learning approach that iteratively selects the most informative experiments to perform
+        annotations:
+          approach: query-based learning from unlabeled data
+      REINFORCEMENT_LEARNING:
+        description: Machine learning approach where an agent learns optimal experimental strategies through trial and reward
+        annotations:
+          approach: reward-based sequential decision making
+      EVOLUTIONARY_ALGORITHM:
+        description: Optimization method inspired by biological evolution using mutation, crossover, and selection
+        annotations:
+          approach: population-based metaheuristic
+      RANDOM_SEARCH:
+        description: Experimental design using random sampling of the parameter space
+        annotations:
+          approach: random sampling
+      GRID_SEARCH:
+        description: Systematic exploration of parameter space using a regular grid of experimental conditions
+        annotations:
+          approach: exhaustive grid evaluation
+      LATIN_HYPERCUBE_SAMPLING:
+        description: Statistical sampling method that ensures even coverage of each parameter dimension
+        annotations:
+          approach: stratified random sampling
+      DESIGN_OF_EXPERIMENTS:
+        description: Classical statistical methods for planning experiments including factorial and response surface designs
+        annotations:
+          approaches: full factorial, fractional factorial, Box-Behnken, central composite
+      MULTI_OBJECTIVE_OPTIMIZATION:
+        description: Optimization approach that simultaneously considers multiple competing objectives
+        annotations:
+          approach: Pareto-optimal solution search
+  LabAutomationWorkflowType:
+    title: Lab Automation Workflow Type
+    description: >-
+      Types of automated workflows implemented in autonomous laboratory systems
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      CLOSED_LOOP_OPTIMIZATION:
+        description: Workflow where experimental results are automatically fed back to guide subsequent experiments
+        annotations:
+          characteristic: feedback-driven iterative optimization
+      HIGH_THROUGHPUT_SCREENING:
+        title: High Throughput Screening
+        description: Workflow for rapid parallel evaluation of many samples or conditions
+        meaning: NCIT:C18472
+        related_mappings:
+        - BAO:0010074
+        annotations:
+          characteristic: massively parallel evaluation
+      AUTOMATED_SYNTHESIS:
+        description: Workflow for automated execution of chemical or biological synthesis procedures
+        annotations:
+          characteristic: automated reaction execution
+      AUTONOMOUS_CHARACTERIZATION:
+        description: Workflow for automated sample characterization using multiple analytical techniques
+        annotations:
+          characteristic: multi-modal automated measurement
+      SELF_DRIVING_EXPERIMENTATION:
+        description: Fully autonomous workflow combining AI-driven planning, execution, and analysis without human intervention
+        annotations:
+          characteristic: end-to-end autonomous operation
+      ROBOTIC_SAMPLE_PREPARATION:
+        description: Workflow for automated preparation of samples for analysis or further processing
+        broad_mappings:
+        - OBI:0000073
+        annotations:
+          characteristic: automated sample handling and preparation
