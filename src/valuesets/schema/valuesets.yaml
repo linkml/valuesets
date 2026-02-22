@@ -95,6 +95,12 @@ imports:
 - bio/lipid_categories
 - bio/proteomics_standards
 - bio/psi_mi
+- bio/assays/nf_osi_assays
+- bio/assays/bio_assay
+- bio/assays/enzymology
+- bio/assays/immunology
+- bio/assays/protein_engineering
+- bio/assays/toxicology
 - ecological_interactions
 - mining_processing
 - chemistry/chemical_entities

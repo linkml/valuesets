@@ -11,6 +11,7 @@ import re
 import sys
 import yaml
 from pathlib import Path
+from urllib.parse import quote
 
 from valuesets.utils.query_describer import describe_enum_query, fetch_label_from_ols
 
@@ -185,6 +186,17 @@ This value set is dynamically populated from an ontology.
             if re.search(pattern, content):
                 content = re.sub(pattern, r"\1" + enrichment, content)
                 modified = True
+
+    # Add BioPortal link after the URI line
+    already_has_bioportal = "<!-- bioportal-link -->" in content
+    if not already_has_bioportal:
+        uri_pattern = r"(URI: \[valuesets:" + re.escape(enum_name) + r"\]\(https://w3id\.org/valuesets/" + re.escape(enum_name) + r"\)\n)"
+        if re.search(uri_pattern, content):
+            concept_uri = f"https://w3id.org/valuesets/{enum_name}"
+            bp_url = f"https://bioportal.bioontology.org/ontologies/VALUESETS?p=classes&conceptid={quote(concept_uri, safe='')}"
+            bp_link = f"\n<!-- bioportal-link -->\n[View in BioPortal]({bp_url})\n"
+            content = re.sub(uri_pattern, r"\1" + bp_link, content)
+            modified = True
 
     # Enrich static enums with annotation table (if they have annotations)
     if not already_has_annotations:

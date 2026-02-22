@@ -22,7 +22,11 @@ from .academic.research import PublicationType, PeerReviewStatus, AcademicDegree
 from .analytical_chemistry.mass_spectrometry import RelativeTimeEnum, PresenceEnum, MassSpectrometerFileFormat, MassSpectrometerVendor, ChromatographyType, DerivatizationMethod, MetabolomicsAssayType, AnalyticalControlType
 
 # Bio domain
-from .bio.assays import SequencingAssayEnum, ImagingAssayEnum, MassSpectrometryAssayEnum, CellBasedAssayEnum, ClinicalBehavioralAssayEnum
+from .bio.assays.enzymology import EnzymologyAssayEnum
+from .bio.assays.immunology import ImmunologyAssayEnum
+from .bio.assays.nf_osi_assays import SequencingAssayEnum, ImagingAssayEnum, MassSpectrometryAssayEnum, CellBasedAssayEnum, ClinicalBehavioralAssayEnum
+from .bio.assays.protein_engineering import ProteinEngineeringAssayEnum
+from .bio.assays.toxicology import ToxicologyAssayEnum
 from .bio.bgc_categories import BgcCategoryEnum
 from .bio.biological_colors import EyeColorEnum, HairColorEnum, FlowerColorEnum, AnimalCoatColorEnum, SkinToneEnum, PlantLeafColorEnum
 from .bio.biosafety import BiosafetyLevelEnum
@@ -421,6 +425,7 @@ __all__ = [
     "EnrichmentProcessEnum",
     "EnvironmentalImpact",
     "EnzymeClassEnum",
+    "EnzymologyAssayEnum",
     "EthnicityOMB1997Enum",
     "ExecutionModeEnum",
     "ExperimentalDesignMethodType",
@@ -523,6 +528,7 @@ __all__ = [
     "ImageFileFormatEnum",
     "ImagingAssayEnum",
     "ImagingSystemPlatformEnum",
+    "ImmunologyAssayEnum",
     "InSituChemistryRegime",
     "IndustrialDyeEnum",
     "IndustryMaturityEnum",
@@ -702,6 +708,7 @@ __all__ = [
     "ProductTypeEnum",
     "ProgrammingLanguageFileEnum",
     "ProjectMaturityLevel",
+    "ProteinEngineeringAssayEnum",
     "ProteinEvidenceForExistence",
     "ProteinModificationType",
     "ProtocolStateEnum",
@@ -841,6 +848,7 @@ __all__ = [
     "TimeZoneEnum",
     "TissuePreservationEnum",
     "ToxicityClassificationEnum",
+    "ToxicologyAssayEnum",
     "TraditionalPigmentEnum",
     "TrafficLightColorEnum",
     "TrainingTypeEnum",

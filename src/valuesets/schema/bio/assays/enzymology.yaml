@@ -1,0 +1,81 @@
+name: enzymology
+title: Enzymology Assay Value Sets
+description: >-
+  Value sets for enzymology assays including enzyme activity, kinetics,
+  inhibition, and substrate specificity measurements.
+id: https://w3id.org/valuesets/bio/assays/enzymology
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  valuesets: https://w3id.org/valuesets/
+  BAO: http://www.bioassayontology.org/bao#BAO_
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+default_prefix: valuesets
+slots:
+  enzymology_assay:
+    description: Enzymology assay type
+    range: EnzymologyAssayEnum
+enums:
+  EnzymologyAssayEnum:
+    title: Enzymology Assay Types
+    description: >-
+      Assays for characterizing enzyme function including activity,
+      kinetics, inhibition, and substrate specificity.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      ENZYME_ACTIVITY_ASSAY:
+        description: Measures the effect of a perturbagen on enzyme activity
+        meaning: BAO:0002994
+        annotations:
+          companion_enum_substrate: ChemicalEntity
+          companion_enum_enzyme: Protein
+          companion_enum_readout: DetectionModeEnum
+      MICHAELIS_MENTEN_KINETICS:
+        description: Enzyme kinetics assay measuring Km and Vmax parameters
+        annotations:
+          companion_enum_substrate: ChemicalEntity
+          companion_enum_enzyme: Protein
+      INHIBITION_ASSAY:
+        description: Assay to measure enzyme inhibition (IC50, Ki)
+        annotations:
+          companion_enum_substrate: ChemicalEntity
+          companion_enum_enzyme: Protein
+      SUBSTRATE_SPECIFICITY:
+        description: Assay to determine enzyme substrate preference and specificity
+        annotations:
+          companion_enum_substrate: ChemicalEntity
+          companion_enum_enzyme: Protein
+      FLUOROMETRIC_ENZYME_ASSAY:
+        description: Enzyme assay using fluorescent substrates or products for detection
+        annotations:
+          companion_enum_substrate: ChemicalEntity
+          companion_enum_enzyme: Protein
+          companion_enum_readout: DetectionModeEnum
+      COLORIMETRIC_ENZYME_ASSAY:
+        description: Enzyme assay using chromogenic substrates for absorbance-based detection
+        annotations:
+          companion_enum_substrate: ChemicalEntity
+          companion_enum_enzyme: Protein
+          companion_enum_readout: DetectionModeEnum
+      COUPLED_ENZYME_ASSAY:
+        description: Enzyme assay using a secondary enzyme reaction for signal generation
+        annotations:
+          companion_enum_substrate: ChemicalEntity
+          companion_enum_enzyme: Protein
+      CONTINUOUS_ENZYME_ASSAY:
+        description: Real-time monitoring of enzyme reaction progress
+        annotations:
+          companion_enum_substrate: ChemicalEntity
+          companion_enum_enzyme: Protein
+      ENDPOINT_ENZYME_ASSAY:
+        description: Single time-point measurement of enzyme reaction product
+        annotations:
+          companion_enum_substrate: ChemicalEntity
+          companion_enum_enzyme: Protein

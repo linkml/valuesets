@@ -405,6 +405,21 @@
             "title": "AnomalyDetectionEnum",
             "type": "string"
         },
+        "AquiferType": {
+            "description": "Classification of aquifer types based on confinement, geology, and hydraulic characteristics.",
+            "enum": [
+                "UNCONFINED",
+                "CONFINED",
+                "SEMI_CONFINED",
+                "PERCHED",
+                "ARTESIAN",
+                "FRACTURED_ROCK",
+                "KARST",
+                "ALLUVIAL"
+            ],
+            "title": "AquiferType",
+            "type": "string"
+        },
         "ArchiveFormatEnum": {
             "description": "Archive and compression formats",
             "enum": [
@@ -647,6 +662,21 @@
             "title": "AutomobilePaintColorEnum",
             "type": "string"
         },
+        "AutonomousLabComponentType": {
+            "description": "Types of hardware and software components that comprise an AI-driven autonomous laboratory system",
+            "enum": [
+                "ROBOTIC_SAMPLE_HANDLER",
+                "AUTOMATED_SYNTHESIZER",
+                "HIGH_THROUGHPUT_SCREENING_PLATFORM",
+                "AUTOMATED_CHARACTERIZATION_INSTRUMENT",
+                "AI_EXPERIMENT_PLANNER",
+                "DATA_MANAGEMENT_SYSTEM",
+                "SAFETY_MONITORING_SYSTEM",
+                "SAMPLE_STORAGE_SYSTEM"
+            ],
+            "title": "AutonomousLabComponentType",
+            "type": "string"
+        },
         "AutonomyLevel": {
             "description": "Levels of autonomy for mining systems including drilling, hauling, and sorting robots (relevant for Topic 1 initiatives).",
             "enum": [
@@ -672,6 +702,11 @@
                 "RED_RUNWAY_END"
             ],
             "title": "AviationLightColorEnum",
+            "type": "string"
+        },
+        "BAOBioassayEnum": {
+            "description": "Dynamic enum covering all bioassays defined in the BioAssay Ontology (BAO), rooted at BAO:0000015 (bioassay).",
+            "title": "BAOBioassayEnum",
             "type": "string"
         },
         "BMIClassificationEnum": {
@@ -797,6 +832,21 @@
             "title": "BioconversionProcess",
             "type": "string"
         },
+        "BioextractionMethodType": {
+            "description": "Biological methods for extracting metals and minerals from unconventional resources using microorganisms or plants",
+            "enum": [
+                "HEAP_BIOLEACHING",
+                "STIRRED_TANK_BIOLEACHING",
+                "IN_SITU_BIOLEACHING",
+                "PHYTOMINING",
+                "BIOSORPTION",
+                "BIOACCUMULATION",
+                "BIOPRECIPITATION",
+                "BIOFLOTATION"
+            ],
+            "title": "BioextractionMethodType",
+            "type": "string"
+        },
         "BiofuelGeneration": {
             "description": "Classification of biofuels by feedstock source and technology generation.",
             "enum": [
@@ -896,6 +946,18 @@
             "title": "BiologicalSexEnum",
             "type": "string"
         },
+        "BiomanufacturingScaleType": {
+            "description": "Scale classifications for biomanufacturing operations, from micro-scale screening through commercial production",
+            "enum": [
+                "BENCH_SCALE",
+                "PILOT_SCALE",
+                "DEMONSTRATION_SCALE",
+                "COMMERCIAL_SCALE",
+                "MICRO_SCALE"
+            ],
+            "title": "BiomanufacturingScaleType",
+            "type": "string"
+        },
         "BiomassFeedstockType": {
             "description": "Types of biomass materials used as feedstocks for bioenergy production. Includes dedicated energy crops, agricultural residues, forest residues, and waste streams.",
             "enum": [
@@ -920,6 +982,38 @@
                 "SUGARCANE"
             ],
             "title": "BiomassFeedstockType",
+            "type": "string"
+        },
+        "BioprocessOptimizationType": {
+            "description": "Strategies and approaches for optimizing biomanufacturing processes to improve yield, productivity, and product quality",
+            "enum": [
+                "MEDIA_OPTIMIZATION",
+                "STRAIN_ENGINEERING",
+                "PROCESS_INTENSIFICATION",
+                "CONTINUOUS_PROCESSING",
+                "FED_BATCH_OPTIMIZATION",
+                "DOWNSTREAM_PURIFICATION",
+                "IN_LINE_ANALYTICS",
+                "DIGITAL_TWIN_MODELING"
+            ],
+            "title": "BioprocessOptimizationType",
+            "type": "string"
+        },
+        "BioproductCategoryType": {
+            "description": "Categories of products derived from biological manufacturing processes",
+            "enum": [
+                "BIOFUEL",
+                "BIOCHEMICAL",
+                "BIOPLASTIC",
+                "BIOSURFACTANT",
+                "BIOACTIVE_COMPOUND",
+                "INDUSTRIAL_ENZYME",
+                "BIOFERTILIZER",
+                "BIOPESTICIDE",
+                "BIOPHARMACEUTICAL",
+                "FOOD_INGREDIENT"
+            ],
+            "title": "BioproductCategoryType",
             "type": "string"
         },
         "BioreactorTypeEnum": {
@@ -1069,6 +1163,22 @@
             "title": "BronstedAcidBaseRoleEnum",
             "type": "string"
         },
+        "BuildingEnergyPerformanceLevel": {
+            "description": "Energy performance certification levels and standards for buildings",
+            "enum": [
+                "NET_ZERO_ENERGY",
+                "NET_POSITIVE_ENERGY",
+                "PASSIVE_HOUSE",
+                "LEED_CERTIFIED",
+                "LEED_SILVER",
+                "LEED_GOLD",
+                "LEED_PLATINUM",
+                "ENERGY_STAR_CERTIFIED",
+                "CODE_MINIMUM"
+            ],
+            "title": "BuildingEnergyPerformanceLevel",
+            "type": "string"
+        },
         "BuildingEnergyStandard": {
             "description": "Building energy efficiency standards and certifications",
             "enum": [
@@ -1087,6 +1197,22 @@
                 "ZERO_CARBON"
             ],
             "title": "BuildingEnergyStandard",
+            "type": "string"
+        },
+        "BuildingSystemType": {
+            "description": "Types of building systems for mechanical, electrical, and structural infrastructure",
+            "enum": [
+                "HVAC",
+                "ELECTRICAL",
+                "PLUMBING",
+                "STRUCTURAL",
+                "BUILDING_ENVELOPE",
+                "FIRE_PROTECTION",
+                "LIGHTING",
+                "BUILDING_AUTOMATION",
+                "RENEWABLE_ENERGY_INTEGRATION"
+            ],
+            "title": "BuildingSystemType",
             "type": "string"
         },
         "BusinessActivityTypeEnum": {
@@ -1282,6 +1408,62 @@
             "title": "CdsPhaseType",
             "type": "string"
         },
+        "CellBasedAssayEnum": {
+            "description": "Cell-based assays including viability, proliferation, and functional assays",
+            "enum": [
+                "CELL_VIABILITY_ASSAY",
+                "CELL_PROLIFERATION_ASSAY",
+                "CELL_COUNT",
+                "ALAMAR_BLUE_ABSORBANCE",
+                "ALAMAR_BLUE_FLUORESCENCE",
+                "THREE_D_MICROTISSUE_VIABILITY",
+                "BRDU_PROLIFERATION",
+                "EDU_PROLIFERATION",
+                "ATPASE_ACTIVITY_ASSAY",
+                "CAMP_GLO_ASSAY",
+                "FLOW_CYTOMETRY",
+                "ELISA",
+                "SANDWICH_ELISA",
+                "WESTERN_BLOT",
+                "IMMUNOASSAY",
+                "PCR",
+                "QPCR",
+                "NANOSTRING_NCOUNTER",
+                "MULTI_ELECTRODE_ARRAY",
+                "CURRENT_CLAMP_ASSAY",
+                "WHOLE_CELL_PATCH_CLAMP",
+                "LOCAL_FIELD_POTENTIAL",
+                "LONG_TERM_POTENTIATION",
+                "MIGRATION_ASSAY",
+                "IN_VITRO_TUMORIGENESIS",
+                "IN_VIVO_TUMOR_GROWTH",
+                "IN_VIVO_PDX_VIABILITY",
+                "MATRIGEL_TUMORIGENESIS",
+                "HIGH_CONTENT_SCREEN",
+                "CELL_PAINTING",
+                "COMPOUND_SCREEN",
+                "COMBINATION_SCREEN",
+                "SMALL_MOLECULE_LIBRARY_SCREEN",
+                "REPORTER_GENE_ASSAY",
+                "MASSIVELY_PARALLEL_REPORTER_ASSAY",
+                "SPLIT_GFP_ASSAY",
+                "FOCUS_FORMING_ASSAY",
+                "OXYGEN_CONSUMPTION_ASSAY",
+                "ROS_ASSAY",
+                "CALCIUM_RETENTION_ASSAY",
+                "TRANS_ENDOTHELIAL_RESISTANCE",
+                "CELL_PERMEABILITY_ASSAY",
+                "PHARMACOKINETIC_ADME",
+                "ARRAY",
+                "HPLC",
+                "ELECTROCHEMILUMINESCENCE",
+                "STR_PROFILE",
+                "TIDE",
+                "SURVIVAL_ASSAY"
+            ],
+            "title": "CellBasedAssayEnum",
+            "type": "string"
+        },
         "CellCycleCheckpoint": {
             "description": "Cell cycle checkpoints that regulate progression",
             "enum": [
@@ -1364,6 +1546,22 @@
             "title": "ChemicalEntity",
             "type": "string"
         },
+        "ChipFabricationNodeType": {
+            "description": "Semiconductor fabrication process node sizes defining transistor feature dimensions",
+            "enum": [
+                "NODE_3NM",
+                "NODE_5NM",
+                "NODE_7NM",
+                "NODE_10NM",
+                "NODE_14NM",
+                "NODE_22NM",
+                "NODE_28NM",
+                "NODE_45NM",
+                "MATURE_NODE"
+            ],
+            "title": "ChipFabricationNodeType",
+            "type": "string"
+        },
         "ChiralityEnum": {
             "description": "Chirality/stereochemistry descriptors",
             "enum": [
@@ -1417,6 +1615,59 @@
                 "CELL"
             ],
             "title": "CitationStyle",
+            "type": "string"
+        },
+        "ClinicalBehavioralAssayEnum": {
+            "description": "Clinical assessments and behavioral assays used in research",
+            "enum": [
+                "CLINICAL_DATA",
+                "QUESTIONNAIRE",
+                "INTERVIEW",
+                "FOCUS_GROUP",
+                "SCALE",
+                "NEUROPSYCHOLOGICAL_ASSESSMENT",
+                "COGNITIVE_ASSESSMENT",
+                "NIH_TOOLBOX",
+                "PROMIS_COGNITIVE_FUNCTION",
+                "N_BACK_TASK",
+                "CORSI_BLOCKS",
+                "CBCL_1_5_5",
+                "CBCL_6_18",
+                "SRS",
+                "SRS_2",
+                "BLOOD_CHEMISTRY",
+                "METABOLIC_SCREENING",
+                "GENOTYPING",
+                "BODY_SIZE_MEASUREMENT",
+                "GAIT_MEASUREMENT",
+                "GRIP_STRENGTH",
+                "HAND_HELD_DYNAMOMETRY",
+                "SIX_MINUTE_WALK_TEST",
+                "ACTIGRAPHY",
+                "POLYSOMNOGRAPHY",
+                "QUANTITATIVE_SENSORY_TESTING",
+                "VON_FREY_TEST",
+                "ALGOMETRX_NOCIOMETER",
+                "AUDITORY_BRAINSTEM_RESPONSE",
+                "PURE_TONE_AVERAGE",
+                "WORD_RECOGNITION_SCORE",
+                "DPOE",
+                "PATTERN_ERG",
+                "OPTOKINETIC_REFLEX",
+                "RICCARDI_ABLON_SCALES",
+                "SKINDEX_16",
+                "CNF_SKINDEX",
+                "CDLQI",
+                "FACEQ_DISTRESS",
+                "OPEN_FIELD_TEST",
+                "ELEVATED_PLUS_MAZE",
+                "ROTAROD_TEST",
+                "ACTIVE_AVOIDANCE",
+                "CONTEXTUAL_CONDITIONING",
+                "NOVELTY_RESPONSE",
+                "FEEDING_ASSAY"
+            ],
+            "title": "ClinicalBehavioralAssayEnum",
             "type": "string"
         },
         "ClinicalFinding": {
@@ -2249,6 +2500,32 @@
             "title": "DataAbsentEnum",
             "type": "string"
         },
+        "DataCenterCoolingType": {
+            "description": "Types of cooling systems used in data center facilities",
+            "enum": [
+                "AIR_COOLING",
+                "LIQUID_COOLING",
+                "IMMERSION_COOLING",
+                "REAR_DOOR_HEAT_EXCHANGER",
+                "EVAPORATIVE_COOLING",
+                "GEOTHERMAL_COOLING",
+                "FREE_AIR_COOLING",
+                "DIRECT_TO_CHIP_LIQUID_COOLING"
+            ],
+            "title": "DataCenterCoolingType",
+            "type": "string"
+        },
+        "DataCenterTierLevel": {
+            "description": "Uptime Institute data center tier classification levels defining infrastructure reliability",
+            "enum": [
+                "TIER_I",
+                "TIER_II",
+                "TIER_III",
+                "TIER_IV"
+            ],
+            "title": "DataCenterTierLevel",
+            "type": "string"
+        },
         "DataCiteContributorType": {
             "description": "Types of contributors to research resources from DataCite 4.6.\nThese describe organizational and functional roles rather than\nspecific contribution activities (see CRediT/ResearchRole for those).",
             "enum": [
@@ -2557,6 +2834,20 @@
             "title": "DecisionMakingStyleEnum",
             "type": "string"
         },
+        "DecommissioningPhaseType": {
+            "description": "Phases in the decommissioning lifecycle of nuclear facilities",
+            "enum": [
+                "CHARACTERIZATION",
+                "DECONTAMINATION",
+                "DISMANTLEMENT",
+                "WASTE_MANAGEMENT",
+                "SITE_RESTORATION",
+                "LONG_TERM_MONITORING",
+                "LICENSE_TERMINATION"
+            ],
+            "title": "DecommissioningPhaseType",
+            "type": "string"
+        },
         "DefectClassificationEnum": {
             "description": "Manufacturing defect classification",
             "enum": [
@@ -2617,6 +2908,21 @@
                 "PHOTOSTIMULABLE_PHOSPHOR"
             ],
             "title": "Detector",
+            "type": "string"
+        },
+        "DetectorType": {
+            "description": "Types of detectors used in particle physics experiments",
+            "enum": [
+                "CALORIMETER",
+                "TRACKING_DETECTOR",
+                "TIME_PROJECTION_CHAMBER",
+                "CHERENKOV_DETECTOR",
+                "SCINTILLATOR",
+                "SILICON_STRIP_DETECTOR",
+                "DRIFT_CHAMBER",
+                "MUON_SPECTROMETER"
+            ],
+            "title": "DetectorType",
             "type": "string"
         },
         "DiagnosticTestTypeEnum": {
@@ -3074,6 +3380,22 @@
             "title": "EnzymeClassEnum",
             "type": "string"
         },
+        "EnzymologyAssayEnum": {
+            "description": "Assays for characterizing enzyme function including activity, kinetics, inhibition, and substrate specificity.",
+            "enum": [
+                "ENZYME_ACTIVITY_ASSAY",
+                "MICHAELIS_MENTEN_KINETICS",
+                "INHIBITION_ASSAY",
+                "SUBSTRATE_SPECIFICITY",
+                "FLUOROMETRIC_ENZYME_ASSAY",
+                "COLORIMETRIC_ENZYME_ASSAY",
+                "COUPLED_ENZYME_ASSAY",
+                "CONTINUOUS_ENZYME_ASSAY",
+                "ENDPOINT_ENZYME_ASSAY"
+            ],
+            "title": "EnzymologyAssayEnum",
+            "type": "string"
+        },
         "EthnicityOMB1997Enum": {
             "description": "Ethnicity categories following OMB 1997 standards used by NIH and federal agencies",
             "enum": [
@@ -3095,6 +3417,22 @@
                 "DRY_RUN"
             ],
             "title": "ExecutionModeEnum",
+            "type": "string"
+        },
+        "ExperimentalDesignMethodType": {
+            "description": "Computational and statistical methods used for experimental design in autonomous laboratory workflows",
+            "enum": [
+                "BAYESIAN_OPTIMIZATION",
+                "ACTIVE_LEARNING",
+                "REINFORCEMENT_LEARNING",
+                "EVOLUTIONARY_ALGORITHM",
+                "RANDOM_SEARCH",
+                "GRID_SEARCH",
+                "LATIN_HYPERCUBE_SAMPLING",
+                "DESIGN_OF_EXPERIMENTS",
+                "MULTI_OBJECTIVE_OPTIMIZATION"
+            ],
+            "title": "ExperimentalDesignMethodType",
             "type": "string"
         },
         "ExperimentalPreparation": {
@@ -3240,23 +3578,23 @@
             "type": "string"
         },
         "ExtractableTargetElement": {
-            "description": "Target elements for extraction, particularly rare earth elements (REE) and critical minerals.",
+            "description": "Target elements for extraction in mining operations, including rare earth elements (REE), critical minerals, and battery metals. These elements are strategically important for clean energy technologies, electronics, and defense applications.",
             "enum": [
-                "REE_LA",
-                "REE_CE",
-                "REE_PR",
-                "REE_ND",
-                "REE_PM",
-                "REE_SM",
-                "REE_EU",
-                "REE_GD",
-                "REE_TB",
-                "REE_DY",
-                "REE_HO",
-                "REE_ER",
-                "REE_TM",
-                "REE_YB",
-                "REE_LU",
+                "LA",
+                "CE",
+                "PR",
+                "ND",
+                "PM",
+                "SM",
+                "EU",
+                "GD",
+                "TB",
+                "DY",
+                "HO",
+                "ER",
+                "TM",
+                "YB",
+                "LU",
                 "SC",
                 "CO",
                 "NI",
@@ -3671,6 +4009,30 @@
             "title": "FuelFormEnum",
             "type": "string"
         },
+        "FundamentalParticleType": {
+            "description": "Standard Model fundamental particles classified by type",
+            "enum": [
+                "ELECTRON",
+                "MUON",
+                "TAU",
+                "ELECTRON_NEUTRINO",
+                "MUON_NEUTRINO",
+                "TAU_NEUTRINO",
+                "UP_QUARK",
+                "DOWN_QUARK",
+                "CHARM_QUARK",
+                "STRANGE_QUARK",
+                "TOP_QUARK",
+                "BOTTOM_QUARK",
+                "PHOTON",
+                "GLUON",
+                "W_BOSON",
+                "Z_BOSON",
+                "HIGGS_BOSON"
+            ],
+            "title": "FundamentalParticleType",
+            "type": "string"
+        },
         "FundingType": {
             "description": "Types of research funding",
             "enum": [
@@ -3686,6 +4048,47 @@
                 "CROWDFUNDING"
             ],
             "title": "FundingType",
+            "type": "string"
+        },
+        "FusionConfinementType": {
+            "description": "Methods for confining plasma in fusion energy experiments and reactors",
+            "enum": [
+                "MAGNETIC_CONFINEMENT_TOKAMAK",
+                "MAGNETIC_CONFINEMENT_STELLARATOR",
+                "INERTIAL_CONFINEMENT",
+                "MAGNETO_INERTIAL",
+                "LASER_DRIVEN",
+                "Z_PINCH",
+                "FIELD_REVERSED_CONFIGURATION",
+                "SPHEROMAK"
+            ],
+            "title": "FusionConfinementType",
+            "type": "string"
+        },
+        "FusionFuelType": {
+            "description": "Types of nuclear fuel mixtures used in fusion reactions",
+            "enum": [
+                "DEUTERIUM_TRITIUM",
+                "DEUTERIUM_DEUTERIUM",
+                "DEUTERIUM_HELIUM3",
+                "PROTON_BORON11"
+            ],
+            "title": "FusionFuelType",
+            "type": "string"
+        },
+        "FusionPlasmaParameterType": {
+            "description": "Key physical parameters measured and optimized in fusion plasma experiments",
+            "enum": [
+                "PLASMA_TEMPERATURE",
+                "PLASMA_DENSITY",
+                "CONFINEMENT_TIME",
+                "BETA_VALUE",
+                "ENERGY_GAIN_FACTOR_Q",
+                "LAWSON_CRITERION",
+                "PLASMA_CURRENT",
+                "MAGNETIC_FIELD_STRENGTH"
+            ],
+            "title": "FusionPlasmaParameterType",
             "type": "string"
         },
         "GOElectronicMethods": {
@@ -3908,6 +4311,24 @@
             "title": "GeologicalEra",
             "type": "string"
         },
+        "GeophysicalMethodType": {
+            "description": "Types of geophysical investigation methods used for subsurface characterization, resource exploration, and environmental monitoring.",
+            "enum": [
+                "SEISMIC_REFLECTION",
+                "SEISMIC_REFRACTION",
+                "GROUND_PENETRATING_RADAR",
+                "ELECTRICAL_RESISTIVITY_TOMOGRAPHY",
+                "MAGNETOTELLURICS",
+                "GRAVITY_SURVEY",
+                "MAGNETIC_SURVEY",
+                "WELL_LOGGING",
+                "DISTRIBUTED_ACOUSTIC_SENSING",
+                "DISTRIBUTED_TEMPERATURE_SENSING",
+                "CROSSWELL_TOMOGRAPHY"
+            ],
+            "title": "GeophysicalMethodType",
+            "type": "string"
+        },
         "GeothermalApplication": {
             "description": "Applications and uses of geothermal energy.",
             "enum": [
@@ -4001,6 +4422,56 @@
             "title": "GravitySdohDomainEnum",
             "type": "string"
         },
+        "GridComponentType": {
+            "description": "Types of physical components in electrical transmission and distribution grids",
+            "enum": [
+                "TRANSMISSION_LINE",
+                "DISTRIBUTION_LINE",
+                "TRANSFORMER",
+                "SUBSTATION",
+                "CIRCUIT_BREAKER",
+                "CAPACITOR_BANK",
+                "FACTS_DEVICE",
+                "SMART_METER",
+                "INVERTER",
+                "RELAY"
+            ],
+            "title": "GridComponentType",
+            "type": "string"
+        },
+        "GridEnergyStorageType": {
+            "description": "Types of energy storage technologies used for grid-scale and distributed applications",
+            "enum": [
+                "LITHIUM_ION_BATTERY",
+                "FLOW_BATTERY",
+                "PUMPED_HYDROELECTRIC",
+                "COMPRESSED_AIR",
+                "FLYWHEEL",
+                "SUPERCAPACITOR",
+                "THERMAL_STORAGE",
+                "HYDROGEN_STORAGE",
+                "GRAVITY_STORAGE",
+                "SODIUM_ION_BATTERY"
+            ],
+            "title": "GridEnergyStorageType",
+            "type": "string"
+        },
+        "GridManagementStrategyType": {
+            "description": "Strategies for managing and optimizing the operation of electrical grids",
+            "enum": [
+                "DEMAND_RESPONSE",
+                "LOAD_BALANCING",
+                "FREQUENCY_REGULATION",
+                "VOLTAGE_CONTROL",
+                "PEAK_SHAVING",
+                "DISTRIBUTED_GENERATION",
+                "MICROGRID_OPERATION",
+                "VIRTUAL_POWER_PLANT",
+                "GRID_SCALE_STORAGE_DISPATCH"
+            ],
+            "title": "GridManagementStrategyType",
+            "type": "string"
+        },
         "GridType": {
             "description": "Types of electrical grid systems",
             "enum": [
@@ -4012,6 +4483,23 @@
                 "VIRTUAL_POWER_PLANT"
             ],
             "title": "GridType",
+            "type": "string"
+        },
+        "GroundwaterProcessType": {
+            "description": "Types of physical, chemical, and biological processes occurring in groundwater systems.",
+            "enum": [
+                "RECHARGE",
+                "DISCHARGE",
+                "BASEFLOW",
+                "LATERAL_FLOW",
+                "VERTICAL_LEAKAGE",
+                "SALTWATER_INTRUSION",
+                "CONTAMINANT_TRANSPORT",
+                "BIODEGRADATION",
+                "SORPTION",
+                "PRECIPITATION_DISSOLUTION"
+            ],
+            "title": "GroundwaterProcessType",
             "type": "string"
         },
         "HHEARExposureAssessedEnum": {
@@ -4289,6 +4777,21 @@
             "title": "HydrogenType",
             "type": "string"
         },
+        "HydrogeologyWellType": {
+            "description": "Classification of wells used for groundwater access, monitoring, and management.",
+            "enum": [
+                "MONITORING_WELL",
+                "PRODUCTION_WELL",
+                "INJECTION_WELL",
+                "OBSERVATION_WELL",
+                "PIEZOMETER",
+                "EXTRACTION_WELL",
+                "RECHARGE_WELL",
+                "GEOTHERMAL_WELL"
+            ],
+            "title": "HydrogeologyWellType",
+            "type": "string"
+        },
         "IAEAWasteClassificationEnum": {
             "description": "IAEA General Safety Requirements radioactive waste classification scheme",
             "enum": [
@@ -4516,9 +5019,63 @@
             "title": "ImageFileFormatEnum",
             "type": "string"
         },
+        "ImagingAssayEnum": {
+            "description": "Imaging-based assays including microscopy, MRI, and related methods",
+            "enum": [
+                "BRIGHTFIELD_MICROSCOPY",
+                "CONFOCAL_MICROSCOPY",
+                "THREE_D_CONFOCAL_IMAGING",
+                "FLUORESCENCE_MICROSCOPY",
+                "PHASE_CONTRAST_MICROSCOPY",
+                "ATOMIC_FORCE_MICROSCOPY",
+                "THREE_D_ELECTRON_MICROSCOPY",
+                "IMMUNOFLUORESCENCE",
+                "IMMUNOHISTOCHEMISTRY",
+                "IMMUNOCYTOCHEMISTRY",
+                "HISTOLOGY",
+                "FISH",
+                "CODEX",
+                "LIVE_IMAGING",
+                "AUTORADIOGRAPHY",
+                "CONVENTIONAL_MRI",
+                "FUNCTIONAL_MRI",
+                "DIFFUSION_MRI",
+                "MPRAGE_MRI",
+                "MAGNETIC_RESONANCE_SPECTROSCOPY",
+                "MAGNETIC_RESONANCE_ANGIOGRAPHY",
+                "POSITRON_EMISSION_TOMOGRAPHY",
+                "OPTICAL_COHERENCE_TOMOGRAPHY",
+                "OPTICAL_TOMOGRAPHY",
+                "HIGH_FREQUENCY_ULTRASOUND",
+                "TRANSCRANIAL_DOPPLER",
+                "IN_VIVO_BIOLUMINESCENCE",
+                "LASER_SPECKLE_IMAGING",
+                "SPATIAL_FREQUENCY_DOMAIN_IMAGING",
+                "TRACTION_FORCE_MICROSCOPY",
+                "PHOTOGRAPH"
+            ],
+            "title": "ImagingAssayEnum",
+            "type": "string"
+        },
         "ImmuneCell": {
             "description": "Immune system cell types (leukocytes and their subtypes)",
             "title": "ImmuneCell",
+            "type": "string"
+        },
+        "ImmunologyAssayEnum": {
+            "description": "Assays for detecting and quantifying immune-related molecules including antibody-based detection, cell sorting, and blotting methods.",
+            "enum": [
+                "ELISA",
+                "SANDWICH_ELISA",
+                "IMMUNOPRECIPITATION",
+                "FLOW_CYTOMETRY",
+                "WESTERN_BLOT",
+                "CYTOKINE_SECRETION_ASSAY",
+                "IMMUNOBLOT",
+                "COMPLEMENT_FIXATION",
+                "MULTIPLEX_BEAD_ASSAY"
+            ],
+            "title": "ImmunologyAssayEnum",
             "type": "string"
         },
         "InSituChemistryRegime": {
@@ -5064,6 +5621,19 @@
             "title": "KaryotypicSexEnum",
             "type": "string"
         },
+        "LabAutomationWorkflowType": {
+            "description": "Types of automated workflows implemented in autonomous laboratory systems",
+            "enum": [
+                "CLOSED_LOOP_OPTIMIZATION",
+                "HIGH_THROUGHPUT_SCREENING",
+                "AUTOMATED_SYNTHESIS",
+                "AUTONOMOUS_CHARACTERIZATION",
+                "SELF_DRIVING_EXPERIMENTATION",
+                "ROBOTIC_SAMPLE_PREPARATION"
+            ],
+            "title": "LabAutomationWorkflowType",
+            "type": "string"
+        },
         "LaboratoryDeviceTypeEnum": {
             "description": "Types of automated laboratory devices and equipment",
             "enum": [
@@ -5523,6 +6093,26 @@
             "title": "ManagementMethodologyEnum",
             "type": "string"
         },
+        "ManufacturingProcessType": {
+            "description": "Types of manufacturing processes including additive, subtractive, and formative methods",
+            "enum": [
+                "ADDITIVE_MANUFACTURING",
+                "SUBTRACTIVE_MANUFACTURING",
+                "FORMATIVE_MANUFACTURING",
+                "CASTING",
+                "FORGING",
+                "WELDING",
+                "MACHINING",
+                "INJECTION_MOLDING",
+                "EXTRUSION",
+                "POWDER_METALLURGY",
+                "CHEMICAL_VAPOR_DEPOSITION",
+                "PHYSICAL_VAPOR_DEPOSITION",
+                "ELECTROFORMING"
+            ],
+            "title": "ManufacturingProcessType",
+            "type": "string"
+        },
         "ManuscriptSection": {
             "description": "Sections of a scientific manuscript or publication",
             "enum": [
@@ -5657,6 +6247,27 @@
             "title": "MassSpectrometerVendor",
             "type": "string"
         },
+        "MassSpectrometryAssayEnum": {
+            "description": "Mass spectrometry-based assays for proteomics and metabolomics",
+            "enum": [
+                "MASS_SPECTROMETRY",
+                "LC_MS",
+                "LC_MS_MS",
+                "HPLC_MS_MS",
+                "UHPLC_MS_MS",
+                "FIA_MSMS",
+                "LABEL_FREE_MS",
+                "TMT_QUANTITATION",
+                "MUDPIT",
+                "MIB_MS",
+                "LC_ECD",
+                "FTIR_SPECTROSCOPY",
+                "RPPA",
+                "PROXIMITY_EXTENSION_ASSAY"
+            ],
+            "title": "MassSpectrometryAssayEnum",
+            "type": "string"
+        },
         "MassUnitEnum": {
             "description": "Units of mass measurement",
             "enum": [
@@ -5686,6 +6297,40 @@
                 "NANOMATERIAL"
             ],
             "title": "MaterialClassEnum",
+            "type": "string"
+        },
+        "MaterialPropertyPredictionType": {
+            "description": "Material properties that are commonly targeted for computational prediction in materials discovery and design",
+            "enum": [
+                "BAND_GAP",
+                "ELASTIC_MODULUS",
+                "THERMAL_CONDUCTIVITY",
+                "DIELECTRIC_CONSTANT",
+                "MAGNETIC_MOMENT",
+                "FORMATION_ENERGY",
+                "SURFACE_ENERGY",
+                "DEFECT_ENERGY",
+                "PHASE_STABILITY",
+                "MECHANICAL_STRENGTH"
+            ],
+            "title": "MaterialPropertyPredictionType",
+            "type": "string"
+        },
+        "MaterialsSimulationType": {
+            "description": "Computational simulation methods used in materials science for predicting structure, properties, and behavior of materials",
+            "enum": [
+                "DENSITY_FUNCTIONAL_THEORY",
+                "MOLECULAR_DYNAMICS",
+                "MONTE_CARLO",
+                "PHASE_FIELD_MODELING",
+                "FINITE_ELEMENT_ANALYSIS",
+                "CONTINUUM_MECHANICS",
+                "TIGHT_BINDING",
+                "AB_INITIO_MOLECULAR_DYNAMICS",
+                "MACHINE_LEARNING_POTENTIAL",
+                "COARSE_GRAINED_SIMULATION"
+            ],
+            "title": "MaterialsSimulationType",
             "type": "string"
         },
         "MechanicalBehaviorEnum": {
@@ -6272,6 +6917,22 @@
             "title": "NuclearFacilityTypeEnum",
             "type": "string"
         },
+        "NuclearForensicsMethodType": {
+            "description": "Analytical methods used in nuclear forensics for material characterization and attribution",
+            "enum": [
+                "ISOTOPE_RATIO_ANALYSIS",
+                "MASS_SPECTROMETRY",
+                "GAMMA_SPECTROSCOPY",
+                "ALPHA_SPECTROSCOPY",
+                "NEUTRON_ACTIVATION_ANALYSIS",
+                "RADIOCHEMICAL_SEPARATION",
+                "ELECTRON_MICROSCOPY",
+                "X_RAY_FLUORESCENCE",
+                "AGE_DATING"
+            ],
+            "title": "NuclearForensicsMethodType",
+            "type": "string"
+        },
         "NuclearFuelTypeEnum": {
             "description": "Types of nuclear fuel materials and compositions",
             "enum": [
@@ -6291,6 +6952,23 @@
                 "NITRIDE_FUEL"
             ],
             "title": "NuclearFuelTypeEnum",
+            "type": "string"
+        },
+        "NuclearRemediationType": {
+            "description": "Methods for remediating radioactive contamination at nuclear sites",
+            "enum": [
+                "SOIL_EXCAVATION",
+                "GROUNDWATER_PUMP_AND_TREAT",
+                "IN_SITU_BIOREMEDIATION",
+                "VITRIFICATION",
+                "STABILIZATION",
+                "CAPPING",
+                "PHYTOREMEDIATION",
+                "ELECTROKINETIC_REMEDIATION",
+                "CHEMICAL_OXIDATION",
+                "MONITORED_NATURAL_ATTENUATION"
+            ],
+            "title": "NuclearRemediationType",
             "type": "string"
         },
         "NuclearSecurityCategoryEnum": {
@@ -6317,6 +6995,19 @@
             "title": "NuclearShipTypeEnum",
             "type": "string"
         },
+        "NuclearThreatCategoryType": {
+            "description": "Categories of nuclear and radiological threat scenarios for security assessment",
+            "enum": [
+                "IMPROVISED_NUCLEAR_DEVICE",
+                "RADIOLOGICAL_DISPERSAL_DEVICE",
+                "NUCLEAR_FACILITY_SABOTAGE",
+                "NUCLEAR_MATERIAL_THEFT",
+                "NUCLEAR_SMUGGLING",
+                "ENVIRONMENTAL_RELEASE"
+            ],
+            "title": "NuclearThreatCategoryType",
+            "type": "string"
+        },
         "NucleotideModificationEnum": {
             "description": "Common nucleotide modifications",
             "enum": [
@@ -6330,6 +7021,11 @@
                 "EIGHT_OXO_G"
             ],
             "title": "NucleotideModificationEnum",
+            "type": "string"
+        },
+        "OBIAssayEnum": {
+            "description": "Dynamic enum covering all assays defined in the Ontology for Biomedical Investigations (OBI), rooted at OBI:0000070 (assay).",
+            "title": "OBIAssayEnum",
             "type": "string"
         },
         "OWLProfileEnum": {
@@ -6916,6 +7612,21 @@
                 "UNKNOWN"
             ],
             "title": "ParticipantVitalStatusEnum",
+            "type": "string"
+        },
+        "ParticleAcceleratorType": {
+            "description": "Types of particle accelerator facilities used in high-energy physics research",
+            "enum": [
+                "LINEAR_ACCELERATOR",
+                "SYNCHROTRON",
+                "CYCLOTRON",
+                "STORAGE_RING",
+                "FREE_ELECTRON_LASER",
+                "COLLIDER",
+                "SPALLATION_SOURCE",
+                "BETATRON"
+            ],
+            "title": "ParticleAcceleratorType",
             "type": "string"
         },
         "PeakAnnotationSeriesLabel": {
@@ -7521,6 +8232,20 @@
             "title": "Protein",
             "type": "string"
         },
+        "ProteinEngineeringAssayEnum": {
+            "description": "Assays for protein engineering including binding kinetics, biophysical characterization, and display-based selection methods.",
+            "enum": [
+                "SURFACE_PLASMON_RESONANCE",
+                "BIOLAYER_INTERFEROMETRY",
+                "THERMAL_SHIFT_ASSAY",
+                "CIRCULAR_DICHROISM",
+                "PHAGE_DISPLAY",
+                "YEAST_DISPLAY",
+                "DIRECTED_EVOLUTION_SCREEN"
+            ],
+            "title": "ProteinEngineeringAssayEnum",
+            "type": "string"
+        },
         "ProteinEvidenceForExistence": {
             "description": "The evidence for the existence of a biological entity. See https://www.uniprot.org/help/protein_existence and https://www.ncbi.nlm.nih.gov/genbank/evidence/.",
             "enum": [
@@ -7759,6 +8484,21 @@
             "title": "QuantityKindEnum",
             "type": "string"
         },
+        "QuantumAlgorithmCategoryType": {
+            "description": "Categories of quantum algorithms by their primary application domain",
+            "enum": [
+                "OPTIMIZATION",
+                "SIMULATION",
+                "MACHINE_LEARNING",
+                "CRYPTOGRAPHY",
+                "LINEAR_ALGEBRA",
+                "SEARCH",
+                "ERROR_CORRECTION",
+                "VARIATIONAL"
+            ],
+            "title": "QuantumAlgorithmCategoryType",
+            "type": "string"
+        },
         "Quarter": {
             "description": "Calendar quarters",
             "enum": [
@@ -7768,6 +8508,21 @@
                 "Q4"
             ],
             "title": "Quarter",
+            "type": "string"
+        },
+        "QubitType": {
+            "description": "Types of physical qubit implementations used in quantum computing hardware",
+            "enum": [
+                "SUPERCONDUCTING",
+                "TRAPPED_ION",
+                "PHOTONIC",
+                "TOPOLOGICAL",
+                "NEUTRAL_ATOM",
+                "QUANTUM_DOT",
+                "NITROGEN_VACANCY_CENTER",
+                "SPIN_QUBIT"
+            ],
+            "title": "QubitType",
             "type": "string"
         },
         "RNABaseEnum": {
@@ -7829,6 +8584,23 @@
                 "SUPERVISED_AREA"
             ],
             "title": "RadiationProtectionZoneEnum",
+            "type": "string"
+        },
+        "RadioactiveContaminantType": {
+            "description": "Common radioactive contaminants found at nuclear cleanup sites",
+            "enum": [
+                "CESIUM_137",
+                "STRONTIUM_90",
+                "TECHNETIUM_99",
+                "TRITIUM",
+                "URANIUM",
+                "PLUTONIUM",
+                "AMERICIUM_241",
+                "IODINE_129",
+                "COBALT_60",
+                "RADIUM_226"
+            ],
+            "title": "RadioactiveContaminantType",
             "type": "string"
         },
         "ReactionConditionEnum": {
@@ -8168,6 +8940,34 @@
             "title": "RelativeTimeEnum",
             "type": "string"
         },
+        "RemoteSensingDataType": {
+            "description": "Classification of data types acquired by remote sensing instruments, covering electromagnetic and potential field measurements.",
+            "enum": [
+                "MULTISPECTRAL",
+                "HYPERSPECTRAL",
+                "SYNTHETIC_APERTURE_RADAR",
+                "LIDAR",
+                "THERMAL_INFRARED",
+                "MICROWAVE_RADIOMETRY",
+                "GRAVIMETRY",
+                "MAGNETOMETRY",
+                "PHOTOGRAMMETRY"
+            ],
+            "title": "RemoteSensingDataType",
+            "type": "string"
+        },
+        "RemoteSensingPlatformType": {
+            "description": "Classification of platforms used to carry remote sensing instruments for earth observation and environmental monitoring.",
+            "enum": [
+                "SATELLITE",
+                "AIRBORNE",
+                "UAV_DRONE",
+                "GROUND_BASED",
+                "SHIPBORNE"
+            ],
+            "title": "RemoteSensingPlatformType",
+            "type": "string"
+        },
         "ResearchField": {
             "description": "Major research fields and disciplines",
             "enum": [
@@ -8259,6 +9059,21 @@
                 "COLLABORATOR"
             ],
             "title": "ResearchRole",
+            "type": "string"
+        },
+        "ReservoirCharacterizationMethodType": {
+            "description": "Methods and techniques used to characterize subsurface reservoirs for energy extraction and storage applications",
+            "enum": [
+                "WELL_TEST_ANALYSIS",
+                "SEISMIC_INTERPRETATION",
+                "CORE_ANALYSIS",
+                "WIRELINE_LOGGING",
+                "TRACER_TEST",
+                "PRESSURE_TRANSIENT_ANALYSIS",
+                "PRODUCTION_HISTORY_MATCHING",
+                "GEOSTATISTICAL_MODELING"
+            ],
+            "title": "ReservoirCharacterizationMethodType",
             "type": "string"
         },
         "RightsBasis": {
@@ -8384,6 +9199,21 @@
                 "UNKNOWN"
             ],
             "title": "SectionLocationEnum",
+            "type": "string"
+        },
+        "SemiconductorMaterialType": {
+            "description": "Types of semiconductor materials used in microelectronics fabrication",
+            "enum": [
+                "SILICON",
+                "GALLIUM_ARSENIDE",
+                "SILICON_CARBIDE",
+                "GALLIUM_NITRIDE",
+                "INDIUM_PHOSPHIDE",
+                "GERMANIUM",
+                "SILICON_GERMANIUM",
+                "DIAMOND"
+            ],
+            "title": "SemiconductorMaterialType",
             "type": "string"
         },
         "SensorWhileDrillingFeature": {
@@ -8550,6 +9380,44 @@
             "title": "SequencingApplication",
             "type": "string"
         },
+        "SequencingAssayEnum": {
+            "description": "Sequencing-based assays including RNA-seq, DNA-seq, and related methods",
+            "enum": [
+                "RNA_SEQ",
+                "SINGLE_CELL_RNA_SEQ",
+                "SINGLE_NUCLEUS_RNA_SEQ",
+                "SPATIAL_TRANSCRIPTOMICS",
+                "LNCRNA_SEQ",
+                "MIRNA_SEQ",
+                "RIBO_SEQ",
+                "WHOLE_GENOME_SEQUENCING",
+                "WHOLE_EXOME_SEQUENCING",
+                "TARGETED_EXOME_SEQUENCING",
+                "NEXT_GENERATION_TARGETED_SEQUENCING",
+                "SANGER_SEQUENCING",
+                "ATAC_SEQ",
+                "SINGLE_CELL_ATAC_SEQ",
+                "CHIP_SEQ",
+                "CUT_AND_RUN",
+                "BISULFITE_SEQUENCING",
+                "ERR_BISULFITE_SEQUENCING",
+                "OXBS_SEQ",
+                "HI_C",
+                "ISO_SEQ",
+                "NOME_SEQ",
+                "CAPP_SEQ",
+                "SAFER_SEQS",
+                "TCR_REPERTOIRE_SEQUENCING",
+                "SCCGI_SEQ",
+                "JUMPING_LIBRARY",
+                "SNP_ARRAY",
+                "RNA_ARRAY",
+                "MIRNA_ARRAY",
+                "METHYLATION_ARRAY"
+            ],
+            "title": "SequencingAssayEnum",
+            "type": "string"
+        },
         "SequencingChemistry": {
             "description": "Fundamental chemical methods used for DNA/RNA sequencing",
             "enum": [
@@ -8642,6 +9510,21 @@
                 "TYPE_VI"
             ],
             "title": "SkinToneEnum",
+            "type": "string"
+        },
+        "SmartManufacturingTechnologyType": {
+            "description": "Types of digital and intelligent technologies used in modern manufacturing environments",
+            "enum": [
+                "DIGITAL_TWIN",
+                "INDUSTRIAL_IOT",
+                "PREDICTIVE_MAINTENANCE",
+                "COMPUTER_VISION_INSPECTION",
+                "ROBOTIC_ASSEMBLY",
+                "AUTOMATED_QUALITY_CONTROL",
+                "SUPPLY_CHAIN_OPTIMIZATION",
+                "PROCESS_SIMULATION"
+            ],
+            "title": "SmartManufacturingTechnologyType",
             "type": "string"
         },
         "SmokingStatusEnum": {
@@ -9106,6 +9989,72 @@
             "title": "SubatomicParticleEnum",
             "type": "string"
         },
+        "SubsurfaceEnergyResourceType": {
+            "description": "Types of subsurface energy resources including geothermal, hydrocarbon, and other geological energy assets",
+            "enum": [
+                "GEOTHERMAL_RESERVOIR",
+                "ENHANCED_GEOTHERMAL_SYSTEM",
+                "OIL_RESERVOIR",
+                "NATURAL_GAS_RESERVOIR",
+                "COALBED_METHANE",
+                "GAS_HYDRATE",
+                "HOT_DRY_ROCK",
+                "SEDIMENTARY_BASIN",
+                "VOLCANIC_SYSTEM"
+            ],
+            "title": "SubsurfaceEnergyResourceType",
+            "type": "string"
+        },
+        "SubsurfaceFormationType": {
+            "description": "Classification of subsurface geological formations relevant to energy exploration, carbon storage, geothermal systems, and groundwater resources.",
+            "enum": [
+                "AQUIFER",
+                "AQUITARD",
+                "RESERVOIR_ROCK",
+                "CAPROCK",
+                "FAULT_ZONE",
+                "KARST",
+                "PERMAFROST",
+                "UNCONSOLIDATED_SEDIMENT",
+                "FRACTURED_BEDROCK",
+                "COAL_SEAM",
+                "SALT_DOME",
+                "SHALE"
+            ],
+            "title": "SubsurfaceFormationType",
+            "type": "string"
+        },
+        "SubsurfacePropertyType": {
+            "description": "Physical and hydraulic properties of subsurface formations relevant to resource characterization and reservoir modeling.",
+            "enum": [
+                "POROSITY",
+                "PERMEABILITY",
+                "THERMAL_CONDUCTIVITY",
+                "SPECIFIC_HEAT_CAPACITY",
+                "BULK_DENSITY",
+                "FLUID_SATURATION",
+                "PORE_PRESSURE",
+                "GEOTHERMAL_GRADIENT",
+                "HYDRAULIC_CONDUCTIVITY",
+                "ELASTIC_MODULUS",
+                "SEISMIC_VELOCITY"
+            ],
+            "title": "SubsurfacePropertyType",
+            "type": "string"
+        },
+        "SubsurfaceStorageType": {
+            "description": "Types of subsurface energy and material storage technologies utilizing geological formations",
+            "enum": [
+                "CARBON_CAPTURE_AND_STORAGE",
+                "HYDROGEN_STORAGE",
+                "COMPRESSED_AIR_ENERGY_STORAGE",
+                "NATURAL_GAS_STORAGE",
+                "THERMAL_ENERGY_STORAGE",
+                "NUCLEAR_WASTE_REPOSITORY"
+            ],
+            "title": "SubsurfaceStorageType",
+            "type": "string"
+        },
         "SupplierRelationshipTypeEnum": {
             "description": "Types of supplier relationship management",
             "enum": [
@@ -9172,6 +10121,20 @@
                 "SPRAY_COATING"
             ],
             "title": "SynthesisMethodEnum",
+            "type": "string"
+        },
+        "TailingCharacterizationType": {
+            "description": "Types of measurements and analyses used to characterize mine tailings and other mineral processing residues for resource recovery potential",
+            "enum": [
+                "PARTICLE_SIZE_DISTRIBUTION",
+                "MINERALOGICAL_COMPOSITION",
+                "ACID_GENERATING_POTENTIAL",
+                "METAL_CONTENT",
+                "MOISTURE_CONTENT",
+                "GEOTECHNICAL_STABILITY",
+                "ENVIRONMENTAL_RISK_CLASSIFICATION"
+            ],
+            "title": "TailingCharacterizationType",
             "type": "string"
         },
         "TaxonomicRank": {
@@ -9412,6 +10375,21 @@
                 "IDENTITY_HATE"
             ],
             "title": "ToxicityClassificationEnum",
+            "type": "string"
+        },
+        "ToxicologyAssayEnum": {
+            "description": "Assays for evaluating toxicity, genotoxicity, and safety of compounds including cytotoxicity, mutagenicity, and ADME measurements.",
+            "enum": [
+                "TOXICITY_ASSAY",
+                "MTT_ASSAY",
+                "LDH_RELEASE_ASSAY",
+                "AMES_TEST",
+                "COMET_ASSAY",
+                "MICRONUCLEUS_ASSAY",
+                "DOSE_RESPONSE",
+                "ADME_ASSAY"
+            ],
+            "title": "ToxicologyAssayEnum",
             "type": "string"
         },
         "TraditionalPigmentEnum": {
@@ -9671,6 +10649,25 @@
                 "MP"
             ],
             "title": "USStateCodeEnum",
+            "type": "string"
+        },
+        "UnconventionalMineralResourceType": {
+            "description": "Types of unconventional mineral resources including industrial waste streams, mining residues, and brines that contain recoverable critical minerals and metals",
+            "enum": [
+                "MINE_TAILINGS",
+                "WASTE_ROCK",
+                "ACID_MINE_DRAINAGE",
+                "COAL_COMBUSTION_RESIDUALS",
+                "RED_MUD",
+                "PHOSPHOGYPSUM",
+                "SLAG",
+                "FLY_ASH",
+                "ELECTRONIC_WASTE",
+                "SPENT_CATALYSTS",
+                "GEOTHERMAL_BRINE",
+                "OIL_FIELD_BRINE"
+            ],
+            "title": "UnconventionalMineralResourceType",
             "type": "string"
         },
         "UniProtSpeciesCode": {
@@ -10284,6 +11281,57 @@
                 "PESTICIDES"
             ],
             "title": "WaterContaminantEnum",
+            "type": "string"
+        },
+        "WaterQualityParameterType": {
+            "description": "Physical, chemical, and biological parameters used to assess water quality for various applications.",
+            "enum": [
+                "PH",
+                "DISSOLVED_OXYGEN",
+                "TOTAL_DISSOLVED_SOLIDS",
+                "TURBIDITY",
+                "CONDUCTIVITY",
+                "BIOLOGICAL_OXYGEN_DEMAND",
+                "CHEMICAL_OXYGEN_DEMAND",
+                "NITRATE",
+                "PHOSPHATE",
+                "HEAVY_METALS",
+                "COLIFORM_BACTERIA",
+                "TEMPERATURE"
+            ],
+            "title": "WaterQualityParameterType",
+            "type": "string"
+        },
+        "WaterResourceType": {
+            "description": "Classification of water resources by source, quality, and origin.",
+            "enum": [
+                "SURFACE_WATER",
+                "GROUNDWATER",
+                "PRODUCED_WATER",
+                "BRACKISH_WATER",
+                "SEAWATER",
+                "STORMWATER",
+                "WASTEWATER",
+                "RECLAIMED_WATER",
+                "GLACIAL_MELTWATER"
+            ],
+            "title": "WaterResourceType",
+            "type": "string"
+        },
+        "WaterUseCategoryType": {
+            "description": "Classification of water use categories relevant to the water-energy nexus and national water resource planning.",
+            "enum": [
+                "AGRICULTURAL_IRRIGATION",
+                "INDUSTRIAL_COOLING",
+                "MUNICIPAL_SUPPLY",
+                "THERMOELECTRIC_POWER",
+                "HYDROELECTRIC",
+                "MINING",
+                "LIVESTOCK",
+                "AQUACULTURE",
+                "ENVIRONMENTAL_FLOW"
+            ],
+            "title": "WaterUseCategoryType",
             "type": "string"
         },
         "WebColorEnum": {
