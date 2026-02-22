@@ -97,6 +97,12 @@ imports:
 - bio/lipid_categories
 - bio/proteomics_standards
 - bio/psi_mi
+- bio/assays/nf_osi_assays
+- bio/assays/bio_assay
+- bio/assays/enzymology
+- bio/assays/immunology
+- bio/assays/protein_engineering
+- bio/assays/toxicology
 - ecological_interactions
 - mining_processing
 - chemistry/chemical_entities
@@ -41282,6 +41288,1291 @@ enums:
       ENDOGENOUS_LEVEL:
         text: ENDOGENOUS_LEVEL
         description: Physiological expression
+  SequencingAssayEnum:
+    name: SequencingAssayEnum
+    definition_uri: https://w3id.org/valuesets/SequencingAssayEnum
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Sequencing-based assays including RNA-seq, DNA-seq, and related methods
+    title: Sequencing Assay Types
+    from_schema: https://w3id.org/valuesets/bio/assays/nf_osi_assays
+    see_also:
+    - https://nf-osi.github.io/nf-metadata-dictionary/
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      RNA_SEQ:
+        text: RNA_SEQ
+        description: RNA sequencing to profile transcriptome
+        meaning: OBI:0001271
+        aliases:
+        - RNA-seq
+      SINGLE_CELL_RNA_SEQ:
+        text: SINGLE_CELL_RNA_SEQ
+        description: Single-cell RNA sequencing
+        meaning: OBI:0002631
+        aliases:
+        - scRNA-seq
+      SINGLE_NUCLEUS_RNA_SEQ:
+        text: SINGLE_NUCLEUS_RNA_SEQ
+        description: Single-nucleus RNA sequencing
+        aliases:
+        - snRNA-seq
+      SPATIAL_TRANSCRIPTOMICS:
+        text: SPATIAL_TRANSCRIPTOMICS
+        description: Spatially resolved transcriptomics
+        meaning: EFO:0008992
+      LNCRNA_SEQ:
+        text: LNCRNA_SEQ
+        description: Long non-coding RNA sequencing
+        aliases:
+        - lncRNA-seq
+      MIRNA_SEQ:
+        text: MIRNA_SEQ
+        description: MicroRNA sequencing
+        meaning: OBI:0002112
+        aliases:
+        - miRNA-seq
+      RIBO_SEQ:
+        text: RIBO_SEQ
+        description: Ribosome profiling sequencing
+        aliases:
+        - Ribo-seq
+      WHOLE_GENOME_SEQUENCING:
+        text: WHOLE_GENOME_SEQUENCING
+        description: Whole genome sequencing
+        meaning: OBI:0002117
+        aliases:
+        - WGS
+      WHOLE_EXOME_SEQUENCING:
+        text: WHOLE_EXOME_SEQUENCING
+        description: Whole exome sequencing
+        meaning: OBI:0002118
+        aliases:
+        - WES
+      TARGETED_EXOME_SEQUENCING:
+        text: TARGETED_EXOME_SEQUENCING
+        description: Targeted exome sequencing panel
+      NEXT_GENERATION_TARGETED_SEQUENCING:
+        text: NEXT_GENERATION_TARGETED_SEQUENCING
+        description: Next generation targeted sequencing panel
+      SANGER_SEQUENCING:
+        text: SANGER_SEQUENCING
+        description: Sanger chain termination sequencing
+        meaning: OBI:0000695
+      ATAC_SEQ:
+        text: ATAC_SEQ
+        description: Assay for Transposase-Accessible Chromatin sequencing
+        meaning: OBI:0002039
+        aliases:
+        - ATAC-seq
+      SINGLE_CELL_ATAC_SEQ:
+        text: SINGLE_CELL_ATAC_SEQ
+        description: Single-cell ATAC-seq
+        aliases:
+        - scATAC-seq
+      CHIP_SEQ:
+        text: CHIP_SEQ
+        description: Chromatin immunoprecipitation sequencing
+        meaning: OBI:0000716
+        aliases:
+        - ChIP-seq
+      CUT_AND_RUN:
+        text: CUT_AND_RUN
+        description: Cleavage Under Targets and Release Using Nuclease
+        aliases:
+        - CUT&RUN
+      BISULFITE_SEQUENCING:
+        text: BISULFITE_SEQUENCING
+        description: Bisulfite sequencing for DNA methylation
+        meaning: OBI:0000748
+        aliases:
+        - BS-seq
+      ERR_BISULFITE_SEQUENCING:
+        text: ERR_BISULFITE_SEQUENCING
+        description: Enzymatic methyl-seq (EM-seq) or similar error-reduced bisulfite
+          sequencing
+      OXBS_SEQ:
+        text: OXBS_SEQ
+        description: Oxidative bisulfite sequencing
+        aliases:
+        - oxBS-seq
+      HI_C:
+        text: HI_C
+        description: High-throughput chromosome conformation capture
+        meaning: OBI:0002042
+        aliases:
+        - Hi-C
+      ISO_SEQ:
+        text: ISO_SEQ
+        description: Isoform sequencing (PacBio long-read)
+        aliases:
+        - Iso-Seq
+      NOME_SEQ:
+        text: NOME_SEQ
+        description: Nucleosome Occupancy and Methylome Sequencing
+        aliases:
+        - NOMe-seq
+      CAPP_SEQ:
+        text: CAPP_SEQ
+        description: CAncer Personalized Profiling by deep Sequencing
+        aliases:
+        - CAPP-Seq
+      SAFER_SEQS:
+        text: SAFER_SEQS
+        description: Safe-Sequencing System
+      TCR_REPERTOIRE_SEQUENCING:
+        text: TCR_REPERTOIRE_SEQUENCING
+        description: T cell receptor repertoire sequencing
+        aliases:
+        - TCR-seq
+      SCCGI_SEQ:
+        text: SCCGI_SEQ
+        description: Single-cell CGI sequencing
+        aliases:
+        - scCGI-seq
+      JUMPING_LIBRARY:
+        text: JUMPING_LIBRARY
+        description: Jumping library sequencing for structural variants
+      SNP_ARRAY:
+        text: SNP_ARRAY
+        description: SNP genotyping array
+        meaning: OBI:0001204
+      RNA_ARRAY:
+        text: RNA_ARRAY
+        description: RNA expression array
+        meaning: OBI:0001463
+      MIRNA_ARRAY:
+        text: MIRNA_ARRAY
+        description: MicroRNA array
+      METHYLATION_ARRAY:
+        text: METHYLATION_ARRAY
+        description: DNA methylation array
+        meaning: OBI:0001332
+  ImagingAssayEnum:
+    name: ImagingAssayEnum
+    definition_uri: https://w3id.org/valuesets/ImagingAssayEnum
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Imaging-based assays including microscopy, MRI, and related methods
+    title: Imaging Assay Types
+    from_schema: https://w3id.org/valuesets/bio/assays/nf_osi_assays
+    see_also:
+    - https://nf-osi.github.io/nf-metadata-dictionary/
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      BRIGHTFIELD_MICROSCOPY:
+        text: BRIGHTFIELD_MICROSCOPY
+        description: Brightfield microscopy imaging
+        meaning: CHMO:0000104
+      CONFOCAL_MICROSCOPY:
+        text: CONFOCAL_MICROSCOPY
+        description: Confocal laser scanning microscopy
+        meaning: CHMO:0000545
+      THREE_D_CONFOCAL_IMAGING:
+        text: THREE_D_CONFOCAL_IMAGING
+        description: Three-dimensional confocal imaging
+        aliases:
+        - 3D confocal imaging
+      FLUORESCENCE_MICROSCOPY:
+        text: FLUORESCENCE_MICROSCOPY
+        description: Fluorescence microscopy assay
+        meaning: CHMO:0000087
+      PHASE_CONTRAST_MICROSCOPY:
+        text: PHASE_CONTRAST_MICROSCOPY
+        description: Phase-contrast microscopy
+        meaning: CHMO:0000056
+      ATOMIC_FORCE_MICROSCOPY:
+        text: ATOMIC_FORCE_MICROSCOPY
+        description: Atomic force microscopy
+        meaning: CHMO:0000113
+        aliases:
+        - AFM
+      THREE_D_ELECTRON_MICROSCOPY:
+        text: THREE_D_ELECTRON_MICROSCOPY
+        description: Three-dimensional electron microscopy
+        aliases:
+        - 3D EM
+      IMMUNOFLUORESCENCE:
+        text: IMMUNOFLUORESCENCE
+        description: Immunofluorescence staining and imaging
+        meaning: OBI:0003357
+      IMMUNOHISTOCHEMISTRY:
+        text: IMMUNOHISTOCHEMISTRY
+        description: Immunohistochemistry staining
+        meaning: OBI:0001986
+        aliases:
+        - IHC
+      IMMUNOCYTOCHEMISTRY:
+        text: IMMUNOCYTOCHEMISTRY
+        description: Immunocytochemistry staining
+        aliases:
+        - ICC
+      HISTOLOGY:
+        text: HISTOLOGY
+        description: Histological examination
+        meaning: OBI:0600020
+      FISH:
+        text: FISH
+        description: Fluorescence In Situ Hybridization
+        meaning: OBI:0003094
+        aliases:
+        - Fluorescence In Situ Hybridization
+      CODEX:
+        text: CODEX
+        description: CO-Detection by indEXing imaging
+      LIVE_IMAGING:
+        text: LIVE_IMAGING
+        description: Live cell or tissue imaging
+      AUTORADIOGRAPHY:
+        text: AUTORADIOGRAPHY
+        description: Autoradiography imaging
+        meaning: CHMO:0000812
+      CONVENTIONAL_MRI:
+        text: CONVENTIONAL_MRI
+        description: Conventional magnetic resonance imaging
+        meaning: OBI:0002985
+      FUNCTIONAL_MRI:
+        text: FUNCTIONAL_MRI
+        description: Functional magnetic resonance imaging
+        meaning: OBI:0001501
+        aliases:
+        - fMRI
+      DIFFUSION_MRI:
+        text: DIFFUSION_MRI
+        description: Diffusion-weighted MRI
+        aliases:
+        - DWI
+      MPRAGE_MRI:
+        text: MPRAGE_MRI
+        description: Magnetization-Prepared Rapid Gradient Echo MRI
+        aliases:
+        - MPRAGE
+      MAGNETIC_RESONANCE_SPECTROSCOPY:
+        text: MAGNETIC_RESONANCE_SPECTROSCOPY
+        description: Magnetic resonance spectroscopy
+        meaning: CHMO:0000566
+        aliases:
+        - MRS
+      MAGNETIC_RESONANCE_ANGIOGRAPHY:
+        text: MAGNETIC_RESONANCE_ANGIOGRAPHY
+        description: Magnetic resonance angiography
+        meaning: OBI:0002986
+        aliases:
+        - MRA
+      POSITRON_EMISSION_TOMOGRAPHY:
+        text: POSITRON_EMISSION_TOMOGRAPHY
+        description: Positron emission tomography
+        meaning: OBI:0001912
+        aliases:
+        - PET
+      OPTICAL_COHERENCE_TOMOGRAPHY:
+        text: OPTICAL_COHERENCE_TOMOGRAPHY
+        description: Optical coherence tomography
+        meaning: CHMO:0000896
+        aliases:
+        - OCT
+      OPTICAL_TOMOGRAPHY:
+        text: OPTICAL_TOMOGRAPHY
+        description: Optical tomography
+      HIGH_FREQUENCY_ULTRASOUND:
+        text: HIGH_FREQUENCY_ULTRASOUND
+        description: High frequency ultrasound imaging
+      TRANSCRANIAL_DOPPLER:
+        text: TRANSCRANIAL_DOPPLER
+        description: Transcranial doppler ultrasonography
+      IN_VIVO_BIOLUMINESCENCE:
+        text: IN_VIVO_BIOLUMINESCENCE
+        description: In vivo bioluminescence imaging
+        meaning: OBI:0001503
+      LASER_SPECKLE_IMAGING:
+        text: LASER_SPECKLE_IMAGING
+        description: Laser speckle contrast imaging
+      SPATIAL_FREQUENCY_DOMAIN_IMAGING:
+        text: SPATIAL_FREQUENCY_DOMAIN_IMAGING
+        description: Spatial frequency domain imaging
+      TRACTION_FORCE_MICROSCOPY:
+        text: TRACTION_FORCE_MICROSCOPY
+        description: Traction force microscopy
+      PHOTOGRAPH:
+        text: PHOTOGRAPH
+        description: Photographic documentation
+  MassSpectrometryAssayEnum:
+    name: MassSpectrometryAssayEnum
+    definition_uri: https://w3id.org/valuesets/MassSpectrometryAssayEnum
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Mass spectrometry-based assays for proteomics and metabolomics
+    title: Mass Spectrometry Assay Types
+    from_schema: https://w3id.org/valuesets/bio/assays/nf_osi_assays
+    see_also:
+    - https://nf-osi.github.io/nf-metadata-dictionary/
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      MASS_SPECTROMETRY:
+        text: MASS_SPECTROMETRY
+        description: General mass spectrometry
+        meaning: CHMO:0000470
+        aliases:
+        - MS
+      LC_MS:
+        text: LC_MS
+        description: Liquid chromatography-mass spectrometry
+        meaning: CHMO:0000524
+        aliases:
+        - liquid chromatography/mass spectrometry
+      LC_MS_MS:
+        text: LC_MS_MS
+        description: Liquid chromatography-tandem mass spectrometry
+        meaning: CHMO:0000701
+        aliases:
+        - LC-MS/MS
+        - liquid chromatography/tandem mass spectrometry
+      HPLC_MS_MS:
+        text: HPLC_MS_MS
+        description: High-performance liquid chromatography/tandem mass spectrometry
+        aliases:
+        - high-performance liquid chromatography/tandem mass spectrometry
+      UHPLC_MS_MS:
+        text: UHPLC_MS_MS
+        description: Ultra high-performance liquid chromatography/tandem mass spectrometry
+        aliases:
+        - ultra high-performance liquid chromatography/tandem mass spectrometry
+      FIA_MSMS:
+        text: FIA_MSMS
+        description: Flow injection analysis tandem mass spectrometry
+        aliases:
+        - FIA-MSMS
+      LABEL_FREE_MS:
+        text: LABEL_FREE_MS
+        description: Label-free mass spectrometry quantification
+        aliases:
+        - label free mass spectrometry
+      TMT_QUANTITATION:
+        text: TMT_QUANTITATION
+        description: Tandem mass tag quantitation
+        aliases:
+        - TMT quantitation
+      MUDPIT:
+        text: MUDPIT
+        description: Multidimensional Protein Identification Technology
+        aliases:
+        - MudPIT
+      MIB_MS:
+        text: MIB_MS
+        description: Multiplexed Inhibitor Beads mass spectrometry
+        aliases:
+        - MIB/MS
+      LC_ECD:
+        text: LC_ECD
+        description: Liquid chromatography-electrochemical detection
+        aliases:
+        - liquid chromatography-electrochemical detection
+      FTIR_SPECTROSCOPY:
+        text: FTIR_SPECTROSCOPY
+        description: Fourier-transform infrared spectroscopy
+        meaning: CHMO:0000817
+        aliases:
+        - FTIR spectroscopy
+      RPPA:
+        text: RPPA
+        description: Reverse Phase Protein Array
+        meaning: OBI:0001975
+        aliases:
+        - RPPA
+      PROXIMITY_EXTENSION_ASSAY:
+        text: PROXIMITY_EXTENSION_ASSAY
+        description: Proximity extension assay
+        aliases:
+        - PEA
+  CellBasedAssayEnum:
+    name: CellBasedAssayEnum
+    definition_uri: https://w3id.org/valuesets/CellBasedAssayEnum
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Cell-based assays including viability, proliferation, and functional
+      assays
+    title: Cell-Based Assay Types
+    from_schema: https://w3id.org/valuesets/bio/assays/nf_osi_assays
+    see_also:
+    - https://nf-osi.github.io/nf-metadata-dictionary/
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      CELL_VIABILITY_ASSAY:
+        text: CELL_VIABILITY_ASSAY
+        description: Cell viability measurement assay
+        meaning: BAO:0003009
+      CELL_PROLIFERATION_ASSAY:
+        text: CELL_PROLIFERATION_ASSAY
+        description: Cell proliferation measurement
+        meaning: BAO:0002100
+      CELL_COUNT:
+        text: CELL_COUNT
+        description: Cell counting assay
+        meaning: BAO:0002097
+      ALAMAR_BLUE_ABSORBANCE:
+        text: ALAMAR_BLUE_ABSORBANCE
+        description: AlamarBlue absorbance assay (2D)
+        aliases:
+        - 2D AlamarBlue absorbance
+      ALAMAR_BLUE_FLUORESCENCE:
+        text: ALAMAR_BLUE_FLUORESCENCE
+        description: AlamarBlue fluorescence assay (2D)
+        aliases:
+        - 2D AlamarBlue fluorescence
+      THREE_D_MICROTISSUE_VIABILITY:
+        text: THREE_D_MICROTISSUE_VIABILITY
+        description: 3D microtissue viability assay
+        aliases:
+        - 3D microtissue viability
+      BRDU_PROLIFERATION:
+        text: BRDU_PROLIFERATION
+        description: BrdU incorporation proliferation assay
+        meaning: OBI:0001330
+        aliases:
+        - BrdU proliferation assay
+      EDU_PROLIFERATION:
+        text: EDU_PROLIFERATION
+        description: EdU incorporation proliferation assay
+        aliases:
+        - EdU proliferation assay
+      ATPASE_ACTIVITY_ASSAY:
+        text: ATPASE_ACTIVITY_ASSAY
+        description: ATPase activity measurement
+      CAMP_GLO_ASSAY:
+        text: CAMP_GLO_ASSAY
+        description: cAMP-Glo Max Assay
+        aliases:
+        - cAMP-Glo Max Assay
+      FLOW_CYTOMETRY:
+        text: FLOW_CYTOMETRY
+        description: Flow cytometry analysis
+        meaning: OBI:0000916
+      ELISA:
+        text: ELISA
+        description: Enzyme-linked immunosorbent assay
+        meaning: OBI:0000661
+      SANDWICH_ELISA:
+        text: SANDWICH_ELISA
+        description: Sandwich ELISA
+      WESTERN_BLOT:
+        text: WESTERN_BLOT
+        description: Western blot analysis
+        meaning: OBI:0000714
+      IMMUNOASSAY:
+        text: IMMUNOASSAY
+        description: General immunoassay
+        meaning: OBI:0000717
+      PCR:
+        text: PCR
+        description: Polymerase chain reaction
+        meaning: OBI:0000415
+        aliases:
+        - polymerase chain reaction
+      QPCR:
+        text: QPCR
+        description: Quantitative PCR
+        meaning: OBI:0000893
+        aliases:
+        - quantitative PCR
+      NANOSTRING_NCOUNTER:
+        text: NANOSTRING_NCOUNTER
+        description: NanoString nCounter Analysis System
+      MULTI_ELECTRODE_ARRAY:
+        text: MULTI_ELECTRODE_ARRAY
+        description: Multi-electrode array recording
+        meaning: OBI:0002187
+      CURRENT_CLAMP_ASSAY:
+        text: CURRENT_CLAMP_ASSAY
+        description: Current clamp electrophysiology
+      WHOLE_CELL_PATCH_CLAMP:
+        text: WHOLE_CELL_PATCH_CLAMP
+        description: Whole-cell patch clamp recording
+        meaning: OBI:0002179
+      LOCAL_FIELD_POTENTIAL:
+        text: LOCAL_FIELD_POTENTIAL
+        description: Local field potential recording
+      LONG_TERM_POTENTIATION:
+        text: LONG_TERM_POTENTIATION
+        description: Long-term potentiation assay
+      MIGRATION_ASSAY:
+        text: MIGRATION_ASSAY
+        description: Cell migration assay
+        meaning: BAO:0002110
+      IN_VITRO_TUMORIGENESIS:
+        text: IN_VITRO_TUMORIGENESIS
+        description: In vitro tumorigenesis assay
+      IN_VIVO_TUMOR_GROWTH:
+        text: IN_VIVO_TUMOR_GROWTH
+        description: In vivo tumor growth assay
+      IN_VIVO_PDX_VIABILITY:
+        text: IN_VIVO_PDX_VIABILITY
+        description: In vivo patient-derived xenograft viability
+      MATRIGEL_TUMORIGENESIS:
+        text: MATRIGEL_TUMORIGENESIS
+        description: Matrigel-based tumorigenesis assay
+        aliases:
+        - Matrigel-based tumorigenesis assay
+      HIGH_CONTENT_SCREEN:
+        text: HIGH_CONTENT_SCREEN
+        description: High content screening assay
+        meaning: BAO:0000514
+      CELL_PAINTING:
+        text: CELL_PAINTING
+        description: Cell painting morphological profiling
+        meaning: BAO:0020000
+      COMPOUND_SCREEN:
+        text: COMPOUND_SCREEN
+        description: Compound library screening
+      COMBINATION_SCREEN:
+        text: COMBINATION_SCREEN
+        description: Drug combination screening
+      SMALL_MOLECULE_LIBRARY_SCREEN:
+        text: SMALL_MOLECULE_LIBRARY_SCREEN
+        description: Small molecule library screen
+      REPORTER_GENE_ASSAY:
+        text: REPORTER_GENE_ASSAY
+        description: Reporter gene assay
+        meaning: BAO:0000098
+      MASSIVELY_PARALLEL_REPORTER_ASSAY:
+        text: MASSIVELY_PARALLEL_REPORTER_ASSAY
+        description: Massively parallel reporter assay
+        aliases:
+        - MPRA
+      SPLIT_GFP_ASSAY:
+        text: SPLIT_GFP_ASSAY
+        description: Split-GFP protein interaction assay
+        aliases:
+        - split-GFP assay
+      FOCUS_FORMING_ASSAY:
+        text: FOCUS_FORMING_ASSAY
+        description: Focus forming assay
+      OXYGEN_CONSUMPTION_ASSAY:
+        text: OXYGEN_CONSUMPTION_ASSAY
+        description: Oxygen consumption rate measurement
+        meaning: BAO:0003028
+      ROS_ASSAY:
+        text: ROS_ASSAY
+        description: Reactive oxygen species assay
+        aliases:
+        - reactive oxygen species assay
+      CALCIUM_RETENTION_ASSAY:
+        text: CALCIUM_RETENTION_ASSAY
+        description: Calcium retention capacity assay
+      TRANS_ENDOTHELIAL_RESISTANCE:
+        text: TRANS_ENDOTHELIAL_RESISTANCE
+        description: Trans-endothelial electrical resistance measurement
+        aliases:
+        - trans-endothelial electrical resistance
+      CELL_PERMEABILITY_ASSAY:
+        text: CELL_PERMEABILITY_ASSAY
+        description: Cell permeability assay
+      PHARMACOKINETIC_ADME:
+        text: PHARMACOKINETIC_ADME
+        description: Pharmacokinetic ADME assay
+        aliases:
+        - pharmocokinetic ADME assay
+      ARRAY:
+        text: ARRAY
+        description: General array-based assay
+      HPLC:
+        text: HPLC
+        description: High-performance liquid chromatography
+        meaning: CHMO:0001009
+      ELECTROCHEMILUMINESCENCE:
+        text: ELECTROCHEMILUMINESCENCE
+        description: Electrochemiluminescence detection
+      STR_PROFILE:
+        text: STR_PROFILE
+        description: Short tandem repeat profiling
+      TIDE:
+        text: TIDE
+        description: Tracking of Indels by Decomposition
+      SURVIVAL_ASSAY:
+        text: SURVIVAL_ASSAY
+        description: Cell or organism survival assay
+  ClinicalBehavioralAssayEnum:
+    name: ClinicalBehavioralAssayEnum
+    definition_uri: https://w3id.org/valuesets/ClinicalBehavioralAssayEnum
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Clinical assessments and behavioral assays used in research
+    title: Clinical and Behavioral Assay Types
+    from_schema: https://w3id.org/valuesets/bio/assays/nf_osi_assays
+    see_also:
+    - https://nf-osi.github.io/nf-metadata-dictionary/
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      CLINICAL_DATA:
+        text: CLINICAL_DATA
+        description: Clinical data collection
+      QUESTIONNAIRE:
+        text: QUESTIONNAIRE
+        description: Questionnaire-based assessment
+        meaning: OBI:0001504
+      INTERVIEW:
+        text: INTERVIEW
+        description: Clinical or research interview
+      FOCUS_GROUP:
+        text: FOCUS_GROUP
+        description: Focus group discussion
+      SCALE:
+        text: SCALE
+        description: Clinical rating scale
+      NEUROPSYCHOLOGICAL_ASSESSMENT:
+        text: NEUROPSYCHOLOGICAL_ASSESSMENT
+        description: Neuropsychological testing
+        meaning: OBI:0002508
+      COGNITIVE_ASSESSMENT:
+        text: COGNITIVE_ASSESSMENT
+        description: Cognitive function assessment
+      NIH_TOOLBOX:
+        text: NIH_TOOLBOX
+        description: NIH Toolbox assessment battery
+      PROMIS_COGNITIVE_FUNCTION:
+        text: PROMIS_COGNITIVE_FUNCTION
+        description: PROMIS Cognitive Function measures
+      N_BACK_TASK:
+        text: N_BACK_TASK
+        description: N-back working memory task
+        aliases:
+        - n-back task
+      CORSI_BLOCKS:
+        text: CORSI_BLOCKS
+        description: Corsi block-tapping task
+      CBCL_1_5_5:
+        text: CBCL_1_5_5
+        description: Child Behavior Checklist for Ages 1.5-5
+        aliases:
+        - Child Behavior Checklist for Ages 1.5-5
+      CBCL_6_18:
+        text: CBCL_6_18
+        description: Child Behavior Checklist for Ages 6-18
+        aliases:
+        - Child Behavior Checklist for Ages 6-18
+      SRS:
+        text: SRS
+        description: Social Responsiveness Scale
+        aliases:
+        - Social Responsiveness Scale
+      SRS_2:
+        text: SRS_2
+        description: Social Responsiveness Scale Second Edition
+        aliases:
+        - Social Responsiveness Scale Second Edition
+      BLOOD_CHEMISTRY:
+        text: BLOOD_CHEMISTRY
+        description: Blood chemistry measurement
+        aliases:
+        - blood chemistry measurement
+      METABOLIC_SCREENING:
+        text: METABOLIC_SCREENING
+        description: Metabolic screening panel
+      GENOTYPING:
+        text: GENOTYPING
+        description: Genotyping assay
+        meaning: OBI:0000435
+      BODY_SIZE_MEASUREMENT:
+        text: BODY_SIZE_MEASUREMENT
+        description: Body size trait measurement
+        meaning: MMO:0000013
+        aliases:
+        - body size trait measurement
+      GAIT_MEASUREMENT:
+        text: GAIT_MEASUREMENT
+        description: Gait analysis measurement
+        aliases:
+        - gait measurement
+      GRIP_STRENGTH:
+        text: GRIP_STRENGTH
+        description: Grip strength measurement
+      HAND_HELD_DYNAMOMETRY:
+        text: HAND_HELD_DYNAMOMETRY
+        description: Hand-held dynamometry
+      SIX_MINUTE_WALK_TEST:
+        text: SIX_MINUTE_WALK_TEST
+        description: Six-minute walk test
+        aliases:
+        - six-minute walk test
+      ACTIGRAPHY:
+        text: ACTIGRAPHY
+        description: Actigraphy monitoring
+      POLYSOMNOGRAPHY:
+        text: POLYSOMNOGRAPHY
+        description: Polysomnography sleep study
+      QUANTITATIVE_SENSORY_TESTING:
+        text: QUANTITATIVE_SENSORY_TESTING
+        description: Quantitative sensory testing
+      VON_FREY_TEST:
+        text: VON_FREY_TEST
+        description: Von Frey filament test
+        aliases:
+        - Von Frey test
+      ALGOMETRX_NOCIOMETER:
+        text: ALGOMETRX_NOCIOMETER
+        description: AlgometRx Nociometer assessment
+      AUDITORY_BRAINSTEM_RESPONSE:
+        text: AUDITORY_BRAINSTEM_RESPONSE
+        description: Auditory brainstem response testing
+        aliases:
+        - ABR
+      PURE_TONE_AVERAGE:
+        text: PURE_TONE_AVERAGE
+        description: Pure tone average audiometry
+      WORD_RECOGNITION_SCORE:
+        text: WORD_RECOGNITION_SCORE
+        description: Word recognition score
+      DPOE:
+        text: DPOE
+        description: Distortion product otoacoustic emissions
+        aliases:
+        - distortion product otoacoustic emissions
+      PATTERN_ERG:
+        text: PATTERN_ERG
+        description: Pattern electroretinogram
+        aliases:
+        - pattern electroretinogram
+      OPTOKINETIC_REFLEX:
+        text: OPTOKINETIC_REFLEX
+        description: Optokinetic reflex assay
+        aliases:
+        - optokinetic reflex assay
+      RICCARDI_ABLON_SCALES:
+        text: RICCARDI_ABLON_SCALES
+        description: Riccardi and Ablon clinical severity scales
+      SKINDEX_16:
+        text: SKINDEX_16
+        description: Skindex-16 dermatology questionnaire
+      CNF_SKINDEX:
+        text: CNF_SKINDEX
+        description: Cutaneous neurofibroma Skindex
+        aliases:
+        - cNF-Skindex
+      CDLQI:
+        text: CDLQI
+        description: Children's Dermatology Life Quality Index Questionnaire
+        aliases:
+        - Children's Dermatology Life Quality Index Questionnaire
+      FACEQ_DISTRESS:
+        text: FACEQ_DISTRESS
+        description: FACE-Q Appearance-related Distress
+        aliases:
+        - FACE-Q Appearance-related Distress
+      OPEN_FIELD_TEST:
+        text: OPEN_FIELD_TEST
+        description: Open field locomotor test
+        meaning: MMO:0000093
+      ELEVATED_PLUS_MAZE:
+        text: ELEVATED_PLUS_MAZE
+        description: Elevated plus maze anxiety test
+        meaning: MMO:0000292
+        aliases:
+        - elevated plus maze test
+      ROTAROD_TEST:
+        text: ROTAROD_TEST
+        description: Rotarod motor coordination test
+        meaning: MMO:0000091
+        aliases:
+        - rotarod performance test
+      ACTIVE_AVOIDANCE:
+        text: ACTIVE_AVOIDANCE
+        description: Active avoidance learning behavior assay
+        aliases:
+        - active avoidance learning behavior assay
+      CONTEXTUAL_CONDITIONING:
+        text: CONTEXTUAL_CONDITIONING
+        description: Contextual conditioning behavior assay
+        aliases:
+        - contextual conditioning behavior assay
+      NOVELTY_RESPONSE:
+        text: NOVELTY_RESPONSE
+        description: Novelty response behavior assay
+        aliases:
+        - novelty response behavior assay
+      FEEDING_ASSAY:
+        text: FEEDING_ASSAY
+        description: Feeding behavior assay
+  OBIAssayEnum:
+    name: OBIAssayEnum
+    definition_uri: https://w3id.org/valuesets/OBIAssayEnum
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Dynamic enum covering all assays defined in the Ontology for Biomedical
+      Investigations (OBI), rooted at OBI:0000070 (assay).
+    title: OBI Assay
+    from_schema: https://w3id.org/valuesets/bio/assays/bio_assay
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    reachable_from:
+      source_ontology: obo:obi
+      source_nodes:
+      - OBI:0000070
+      relationship_types:
+      - rdfs:subClassOf
+      include_self: true
+  BAOBioassayEnum:
+    name: BAOBioassayEnum
+    definition_uri: https://w3id.org/valuesets/BAOBioassayEnum
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Dynamic enum covering all bioassays defined in the BioAssay Ontology
+      (BAO), rooted at BAO:0000015 (bioassay).
+    title: BAO Bioassay
+    from_schema: https://w3id.org/valuesets/bio/assays/bio_assay
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    reachable_from:
+      source_ontology: obo:bao
+      source_nodes:
+      - BAO:0000015
+      relationship_types:
+      - rdfs:subClassOf
+      include_self: true
+  EnzymologyAssayEnum:
+    name: EnzymologyAssayEnum
+    definition_uri: https://w3id.org/valuesets/EnzymologyAssayEnum
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Assays for characterizing enzyme function including activity, kinetics,
+      inhibition, and substrate specificity.
+    title: Enzymology Assay Types
+    from_schema: https://w3id.org/valuesets/bio/assays/enzymology
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      ENZYME_ACTIVITY_ASSAY:
+        text: ENZYME_ACTIVITY_ASSAY
+        description: Measures the effect of a perturbagen on enzyme activity
+        meaning: BAO:0002994
+        annotations:
+          companion_enum_substrate:
+            tag: companion_enum_substrate
+            value: ChemicalEntity
+          companion_enum_enzyme:
+            tag: companion_enum_enzyme
+            value: Protein
+          companion_enum_readout:
+            tag: companion_enum_readout
+            value: DetectionModeEnum
+      MICHAELIS_MENTEN_KINETICS:
+        text: MICHAELIS_MENTEN_KINETICS
+        description: Enzyme kinetics assay measuring Km and Vmax parameters
+        annotations:
+          companion_enum_substrate:
+            tag: companion_enum_substrate
+            value: ChemicalEntity
+          companion_enum_enzyme:
+            tag: companion_enum_enzyme
+            value: Protein
+      INHIBITION_ASSAY:
+        text: INHIBITION_ASSAY
+        description: Assay to measure enzyme inhibition (IC50, Ki)
+        annotations:
+          companion_enum_substrate:
+            tag: companion_enum_substrate
+            value: ChemicalEntity
+          companion_enum_enzyme:
+            tag: companion_enum_enzyme
+            value: Protein
+      SUBSTRATE_SPECIFICITY:
+        text: SUBSTRATE_SPECIFICITY
+        description: Assay to determine enzyme substrate preference and specificity
+        annotations:
+          companion_enum_substrate:
+            tag: companion_enum_substrate
+            value: ChemicalEntity
+          companion_enum_enzyme:
+            tag: companion_enum_enzyme
+            value: Protein
+      FLUOROMETRIC_ENZYME_ASSAY:
+        text: FLUOROMETRIC_ENZYME_ASSAY
+        description: Enzyme assay using fluorescent substrates or products for detection
+        annotations:
+          companion_enum_substrate:
+            tag: companion_enum_substrate
+            value: ChemicalEntity
+          companion_enum_enzyme:
+            tag: companion_enum_enzyme
+            value: Protein
+          companion_enum_readout:
+            tag: companion_enum_readout
+            value: DetectionModeEnum
+      COLORIMETRIC_ENZYME_ASSAY:
+        text: COLORIMETRIC_ENZYME_ASSAY
+        description: Enzyme assay using chromogenic substrates for absorbance-based
+          detection
+        annotations:
+          companion_enum_substrate:
+            tag: companion_enum_substrate
+            value: ChemicalEntity
+          companion_enum_enzyme:
+            tag: companion_enum_enzyme
+            value: Protein
+          companion_enum_readout:
+            tag: companion_enum_readout
+            value: DetectionModeEnum
+      COUPLED_ENZYME_ASSAY:
+        text: COUPLED_ENZYME_ASSAY
+        description: Enzyme assay using a secondary enzyme reaction for signal generation
+        annotations:
+          companion_enum_substrate:
+            tag: companion_enum_substrate
+            value: ChemicalEntity
+          companion_enum_enzyme:
+            tag: companion_enum_enzyme
+            value: Protein
+      CONTINUOUS_ENZYME_ASSAY:
+        text: CONTINUOUS_ENZYME_ASSAY
+        description: Real-time monitoring of enzyme reaction progress
+        annotations:
+          companion_enum_substrate:
+            tag: companion_enum_substrate
+            value: ChemicalEntity
+          companion_enum_enzyme:
+            tag: companion_enum_enzyme
+            value: Protein
+      ENDPOINT_ENZYME_ASSAY:
+        text: ENDPOINT_ENZYME_ASSAY
+        description: Single time-point measurement of enzyme reaction product
+        annotations:
+          companion_enum_substrate:
+            tag: companion_enum_substrate
+            value: ChemicalEntity
+          companion_enum_enzyme:
+            tag: companion_enum_enzyme
+            value: Protein
+  ImmunologyAssayEnum:
+    name: ImmunologyAssayEnum
+    definition_uri: https://w3id.org/valuesets/ImmunologyAssayEnum
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Assays for detecting and quantifying immune-related molecules including
+      antibody-based detection, cell sorting, and blotting methods.
+    title: Immunology Assay Types
+    from_schema: https://w3id.org/valuesets/bio/assays/immunology
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      ELISA:
+        text: ELISA
+        description: Enzyme-linked immunosorbent assay for detecting antigens or antibodies
+        meaning: BAO:0000134
+        annotations:
+          companion_enum_antibody_target:
+            tag: companion_enum_antibody_target
+            value: Protein
+          companion_enum_detection_method:
+            tag: companion_enum_detection_method
+            value: DetectionModeEnum
+      SANDWICH_ELISA:
+        text: SANDWICH_ELISA
+        description: Sandwich ELISA using capture and detection antibodies
+        annotations:
+          companion_enum_antibody_target:
+            tag: companion_enum_antibody_target
+            value: Protein
+          companion_enum_detection_method:
+            tag: companion_enum_detection_method
+            value: DetectionModeEnum
+      IMMUNOPRECIPITATION:
+        text: IMMUNOPRECIPITATION
+        description: Precipitation of a protein antigen from solution using a specific
+          antibody
+        meaning: BAO:0002508
+        annotations:
+          companion_enum_antibody_target:
+            tag: companion_enum_antibody_target
+            value: Protein
+          companion_enum_detection_method:
+            tag: companion_enum_detection_method
+            value: DetectionModeEnum
+      FLOW_CYTOMETRY:
+        text: FLOW_CYTOMETRY
+        description: Analysis of cell populations using fluorescent antibodies and
+          light scattering
+        meaning: BAO:0000005
+        annotations:
+          companion_enum_antibody_target:
+            tag: companion_enum_antibody_target
+            value: Protein
+          companion_enum_detection_method:
+            tag: companion_enum_detection_method
+            value: DetectionModeEnum
+      WESTERN_BLOT:
+        text: WESTERN_BLOT
+        description: Protein detection by gel electrophoresis, membrane transfer,
+          and antibody staining
+        meaning: OBI:0000854
+        annotations:
+          companion_enum_antibody_target:
+            tag: companion_enum_antibody_target
+            value: Protein
+          companion_enum_detection_method:
+            tag: companion_enum_detection_method
+            value: DetectionModeEnum
+        aliases:
+        - western blot assay
+      CYTOKINE_SECRETION_ASSAY:
+        text: CYTOKINE_SECRETION_ASSAY
+        description: Measurement of cytokine types and amounts released from cells
+        meaning: BAO:0003003
+        annotations:
+          companion_enum_antibody_target:
+            tag: companion_enum_antibody_target
+            value: Protein
+          companion_enum_detection_method:
+            tag: companion_enum_detection_method
+            value: DetectionModeEnum
+      IMMUNOBLOT:
+        text: IMMUNOBLOT
+        description: Detection of proteins using antibodies on a membrane
+        meaning: BAO:0002422
+        annotations:
+          companion_enum_antibody_target:
+            tag: companion_enum_antibody_target
+            value: Protein
+          companion_enum_detection_method:
+            tag: companion_enum_detection_method
+            value: DetectionModeEnum
+      COMPLEMENT_FIXATION:
+        text: COMPLEMENT_FIXATION
+        description: Serological assay detecting antibodies by complement consumption
+        annotations:
+          companion_enum_antibody_target:
+            tag: companion_enum_antibody_target
+            value: Protein
+      MULTIPLEX_BEAD_ASSAY:
+        text: MULTIPLEX_BEAD_ASSAY
+        description: Simultaneous detection of multiple analytes using antibody-conjugated
+          beads
+        annotations:
+          companion_enum_antibody_target:
+            tag: companion_enum_antibody_target
+            value: Protein
+          companion_enum_detection_method:
+            tag: companion_enum_detection_method
+            value: DetectionModeEnum
+  ProteinEngineeringAssayEnum:
+    name: ProteinEngineeringAssayEnum
+    definition_uri: https://w3id.org/valuesets/ProteinEngineeringAssayEnum
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Assays for protein engineering including binding kinetics, biophysical
+      characterization, and display-based selection methods.
+    title: Protein Engineering Assay Types
+    from_schema: https://w3id.org/valuesets/bio/assays/protein_engineering
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      SURFACE_PLASMON_RESONANCE:
+        text: SURFACE_PLASMON_RESONANCE
+        description: Real-time label-free measurement of biomolecular binding kinetics
+        meaning: BAO:0000054
+        annotations:
+          companion_enum_target_protein:
+            tag: companion_enum_target_protein
+            value: Protein
+          companion_enum_readout:
+            tag: companion_enum_readout
+            value: DetectionModeEnum
+        aliases:
+        - SPR
+      BIOLAYER_INTERFEROMETRY:
+        text: BIOLAYER_INTERFEROMETRY
+        description: Label-free measurement of biomolecular interactions via interference
+          patterns
+        meaning: BAO:0000066
+        annotations:
+          companion_enum_target_protein:
+            tag: companion_enum_target_protein
+            value: Protein
+          companion_enum_readout:
+            tag: companion_enum_readout
+            value: DetectionModeEnum
+        aliases:
+        - BLI
+        - bio layer interferometry
+      THERMAL_SHIFT_ASSAY:
+        text: THERMAL_SHIFT_ASSAY
+        description: Measurement of protein thermal stability via fluorescent dye
+          binding
+        meaning: BAO:0010261
+        annotations:
+          companion_enum_target_protein:
+            tag: companion_enum_target_protein
+            value: Protein
+          companion_enum_readout:
+            tag: companion_enum_readout
+            value: DetectionModeEnum
+        aliases:
+        - differential scanning fluorimetry
+        - DSF
+      CIRCULAR_DICHROISM:
+        text: CIRCULAR_DICHROISM
+        description: Assessment of protein secondary and tertiary structure using
+          polarized light
+        meaning: BAO:0000161
+        annotations:
+          companion_enum_target_protein:
+            tag: companion_enum_target_protein
+            value: Protein
+          companion_enum_readout:
+            tag: companion_enum_readout
+            value: DetectionModeEnum
+        aliases:
+        - CD
+      PHAGE_DISPLAY:
+        text: PHAGE_DISPLAY
+        description: Selection of peptides or proteins displayed on bacteriophage
+          surface
+        annotations:
+          companion_enum_target_protein:
+            tag: companion_enum_target_protein
+            value: Protein
+      YEAST_DISPLAY:
+        text: YEAST_DISPLAY
+        description: Selection of proteins displayed on yeast cell surface
+        annotations:
+          companion_enum_target_protein:
+            tag: companion_enum_target_protein
+            value: Protein
+      DIRECTED_EVOLUTION_SCREEN:
+        text: DIRECTED_EVOLUTION_SCREEN
+        description: High-throughput screening of mutant protein libraries for improved
+          function
+        annotations:
+          companion_enum_target_protein:
+            tag: companion_enum_target_protein
+            value: Protein
+          companion_enum_readout:
+            tag: companion_enum_readout
+            value: DetectionModeEnum
+  ToxicologyAssayEnum:
+    name: ToxicologyAssayEnum
+    definition_uri: https://w3id.org/valuesets/ToxicologyAssayEnum
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Assays for evaluating toxicity, genotoxicity, and safety of compounds
+      including cytotoxicity, mutagenicity, and ADME measurements.
+    title: Toxicology Assay Types
+    from_schema: https://w3id.org/valuesets/bio/assays/toxicology
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      TOXICITY_ASSAY:
+        text: TOXICITY_ASSAY
+        description: General assay measuring degree of substance toxicity to living
+          cells
+        meaning: BAO:0002189
+        annotations:
+          companion_enum_compound:
+            tag: companion_enum_compound
+            value: ChemicalEntity
+          companion_enum_cell_line:
+            tag: companion_enum_cell_line
+            value: CellType
+      MTT_ASSAY:
+        text: MTT_ASSAY
+        description: Colorimetric assay measuring cell metabolic activity via MTT
+          reduction
+        meaning: BAO:0002457
+        annotations:
+          companion_enum_compound:
+            tag: companion_enum_compound
+            value: ChemicalEntity
+          companion_enum_cell_line:
+            tag: companion_enum_cell_line
+            value: CellType
+        aliases:
+        - MTT reduction assay
+      LDH_RELEASE_ASSAY:
+        text: LDH_RELEASE_ASSAY
+        description: Cytotoxicity assay measuring lactate dehydrogenase release from
+          damaged cells
+        meaning: BAO:0013056
+        annotations:
+          companion_enum_compound:
+            tag: companion_enum_compound
+            value: ChemicalEntity
+          companion_enum_cell_line:
+            tag: companion_enum_cell_line
+            value: CellType
+      AMES_TEST:
+        text: AMES_TEST
+        description: Mutagenicity assay using bacterial reverse mutation in Salmonella
+          strains
+        meaning: BAO:0013054
+        annotations:
+          companion_enum_compound:
+            tag: companion_enum_compound
+            value: ChemicalEntity
+      COMET_ASSAY:
+        text: COMET_ASSAY
+        description: Single cell gel electrophoresis assay measuring DNA strand breaks
+        meaning: OBI:0302736
+        annotations:
+          companion_enum_compound:
+            tag: companion_enum_compound
+            value: ChemicalEntity
+          companion_enum_cell_line:
+            tag: companion_enum_cell_line
+            value: CellType
+      MICRONUCLEUS_ASSAY:
+        text: MICRONUCLEUS_ASSAY
+        description: Genotoxicity assay detecting chromosomal damage via micronucleus
+          formation
+        meaning: BAO:0013055
+        annotations:
+          companion_enum_compound:
+            tag: companion_enum_compound
+            value: ChemicalEntity
+          companion_enum_cell_line:
+            tag: companion_enum_cell_line
+            value: CellType
+      DOSE_RESPONSE:
+        text: DOSE_RESPONSE
+        description: Measurement of biological response as a function of compound
+          concentration
+        annotations:
+          companion_enum_compound:
+            tag: companion_enum_compound
+            value: ChemicalEntity
+          companion_enum_cell_line:
+            tag: companion_enum_cell_line
+            value: CellType
+      ADME_ASSAY:
+        text: ADME_ASSAY
+        description: Absorption, distribution, metabolism, and excretion profiling
+        annotations:
+          companion_enum_compound:
+            tag: companion_enum_compound
+            value: ChemicalEntity
   BioticInteractionType:
     name: BioticInteractionType
     definition_uri: https://w3id.org/valuesets/BioticInteractionType
@@ -71075,6 +72366,83 @@ slots:
     from_schema: https://w3id.org/common-value-sets/bio/psi_mi
     slot_uri: valuesets:experimental_preparation
     range: ExperimentalPreparation
+  sequencing_assay:
+    name: sequencing_assay
+    definition_uri: https://w3id.org/valuesets/sequencing_assay
+    description: Sequencing-based assay type
+    from_schema: https://w3id.org/valuesets/bio/assays/nf_osi_assays
+    slot_uri: valuesets:sequencing_assay
+    range: SequencingAssayEnum
+  imaging_assay:
+    name: imaging_assay
+    definition_uri: https://w3id.org/valuesets/imaging_assay
+    description: Imaging-based assay type
+    from_schema: https://w3id.org/valuesets/bio/assays/nf_osi_assays
+    slot_uri: valuesets:imaging_assay
+    range: ImagingAssayEnum
+  mass_spectrometry_assay:
+    name: mass_spectrometry_assay
+    definition_uri: https://w3id.org/valuesets/mass_spectrometry_assay
+    description: Mass spectrometry-based assay type
+    from_schema: https://w3id.org/valuesets/bio/assays/nf_osi_assays
+    slot_uri: valuesets:mass_spectrometry_assay
+    range: MassSpectrometryAssayEnum
+  cell_based_assay:
+    name: cell_based_assay
+    definition_uri: https://w3id.org/valuesets/cell_based_assay
+    description: Cell-based assay type
+    from_schema: https://w3id.org/valuesets/bio/assays/nf_osi_assays
+    slot_uri: valuesets:cell_based_assay
+    range: CellBasedAssayEnum
+  clinical_behavioral_assay:
+    name: clinical_behavioral_assay
+    definition_uri: https://w3id.org/valuesets/clinical_behavioral_assay
+    description: Clinical or behavioral assay type
+    from_schema: https://w3id.org/valuesets/bio/assays/nf_osi_assays
+    slot_uri: valuesets:clinical_behavioral_assay
+    range: ClinicalBehavioralAssayEnum
+  obi_assay:
+    name: obi_assay
+    definition_uri: https://w3id.org/valuesets/obi_assay
+    description: Any assay from the Ontology for Biomedical Investigations (OBI)
+    from_schema: https://w3id.org/valuesets/bio/assays/bio_assay
+    slot_uri: valuesets:obi_assay
+    range: OBIAssayEnum
+  bao_bioassay:
+    name: bao_bioassay
+    definition_uri: https://w3id.org/valuesets/bao_bioassay
+    description: Any bioassay from the BioAssay Ontology (BAO)
+    from_schema: https://w3id.org/valuesets/bio/assays/bio_assay
+    slot_uri: valuesets:bao_bioassay
+    range: BAOBioassayEnum
+  enzymology_assay:
+    name: enzymology_assay
+    definition_uri: https://w3id.org/valuesets/enzymology_assay
+    description: Enzymology assay type
+    from_schema: https://w3id.org/valuesets/bio/assays/enzymology
+    slot_uri: valuesets:enzymology_assay
+    range: EnzymologyAssayEnum
+  immunology_assay:
+    name: immunology_assay
+    definition_uri: https://w3id.org/valuesets/immunology_assay
+    description: Immunology assay type
+    from_schema: https://w3id.org/valuesets/bio/assays/immunology
+    slot_uri: valuesets:immunology_assay
+    range: ImmunologyAssayEnum
+  protein_engineering_assay:
+    name: protein_engineering_assay
+    definition_uri: https://w3id.org/valuesets/protein_engineering_assay
+    description: Protein engineering assay type
+    from_schema: https://w3id.org/valuesets/bio/assays/protein_engineering
+    slot_uri: valuesets:protein_engineering_assay
+    range: ProteinEngineeringAssayEnum
+  toxicology_assay:
+    name: toxicology_assay
+    definition_uri: https://w3id.org/valuesets/toxicology_assay
+    description: Toxicology assay type
+    from_schema: https://w3id.org/valuesets/bio/assays/toxicology
+    slot_uri: valuesets:toxicology_assay
+    range: ToxicologyAssayEnum
   biotic_interaction:
     name: biotic_interaction
     definition_uri: https://w3id.org/valuesets/biotic_interaction
@@ -72544,7 +73912,7 @@ classes:
     class_uri: valuesets:Fake
 metamodel_version: 1.7.0
 source_file: valuesets.yaml
-source_file_date: '2026-02-21T22:39:25'
-source_file_size: 4020
-generation_date: '2026-02-21T22:40:49'
+source_file_date: '2026-02-22T20:57:20'
+source_file_size: 4175
+generation_date: '2026-02-22T20:58:45'
 

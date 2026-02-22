@@ -1,0 +1,1729 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://linkml.github.io/valuesets/views/genesis-mission/">
+      
+      
+        <link rel="prev" href="../../slot-generation/">
+      
+      
+        <link rel="next" href="../microbial-ecology/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>DOE Genesis Mission - valuesets</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/ansi-colours.css">
+    
+      <link rel="stylesheet" href="../../css/jupyter-cells.css">
+    
+      <link rel="stylesheet" href="../../css/pandas-dataframe.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#doe-genesis-mission-value-sets" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="valuesets" class="md-header__button md-logo" aria-label="valuesets" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            valuesets
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              DOE Genesis Mission
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/linkml/valuesets" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="valuesets" class="md-nav__button md-logo" aria-label="valuesets" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    valuesets
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/linkml/valuesets" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../elements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Schema
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../governance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Governance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    How-To Guides
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            How-To Guides
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to-guides/agentic-ide-support/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Using Common Value Sets with Agentic IDE Support via Context7 MCP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to-guides/dynamic-valuesets-validation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dynamic Value Sets and Validation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to-guides/sync-uniprot-species/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    How to Sync UniProt Species Data
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slot-generation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Slot Generation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Views
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Views
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    DOE Genesis Mission
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    DOE Genesis Mission
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#coverage-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Coverage Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#energy-and-grid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Energy and Grid
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Energy and Grid">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enums" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enums
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-mappings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Mappings
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nuclear" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nuclear
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Nuclear">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enums_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enums
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-mappings_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Mappings
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#earth-science" class="md-nav__link">
+    <span class="md-ellipsis">
+      Earth Science
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Earth Science">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enums_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enums
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-mappings_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Mappings
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#computing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Computing
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Computing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enums_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enums
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-mappings_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Mappings
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#industry" class="md-nav__link">
+    <span class="md-ellipsis">
+      Industry
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Industry">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enums_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enums
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-mappings_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Mappings
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#materials-and-physics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Materials and Physics
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Materials and Physics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enums_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enums
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-mappings_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Mappings
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bioprocessing-and-labs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bioprocessing and Labs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bioprocessing and Labs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enums_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enums
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-mappings_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Mappings
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ontology-coverage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ontology Coverage
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../microbial-ecology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Microbial Ecology
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rare-disease/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Rare Disease
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab-automation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab Automation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slides/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Slides
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    About
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#coverage-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Coverage Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#energy-and-grid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Energy and Grid
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Energy and Grid">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enums" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enums
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-mappings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Mappings
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nuclear" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nuclear
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Nuclear">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enums_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enums
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-mappings_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Mappings
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#earth-science" class="md-nav__link">
+    <span class="md-ellipsis">
+      Earth Science
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Earth Science">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enums_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enums
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-mappings_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Mappings
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#computing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Computing
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Computing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enums_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enums
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-mappings_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Mappings
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#industry" class="md-nav__link">
+    <span class="md-ellipsis">
+      Industry
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Industry">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enums_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enums
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-mappings_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Mappings
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#materials-and-physics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Materials and Physics
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Materials and Physics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enums_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enums
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-mappings_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Mappings
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bioprocessing-and-labs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bioprocessing and Labs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bioprocessing and Labs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enums_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enums
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-mappings_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Mappings
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ontology-coverage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ontology Coverage
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="doe-genesis-mission-value-sets">DOE Genesis Mission Value Sets</h1>
+<p>The U.S. Department of Energy's <a href="https://www.energy.gov/genesis">Genesis Mission</a> defines
+26 national science and technology challenges spanning clean energy, advanced computing,
+manufacturing, earth systems, and national security. This project provides standardized
+value sets (enums with ontology mappings) that support data interoperability across
+these challenge areas.</p>
+<p>The 19 schema modules below cover topics from grid modernization and fusion energy to
+quantum computing and autonomous laboratories. Each enum is mapped to established
+ontologies wherever possible, enabling integration with broader scientific data ecosystems.</p>
+<h2 id="coverage-summary">Coverage Summary</h2>
+<table>
+<thead>
+<tr>
+<th>Domain</th>
+<th>Schema</th>
+<th style="text-align: right;">Enums</th>
+<th>Ontologies</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#energy-and-grid">Energy and Grid</a></td>
+<td>grid, subsurface_energy</td>
+<td style="text-align: right;">6</td>
+<td>OEO, ENVO, CHEBI</td>
+</tr>
+<tr>
+<td><a href="#nuclear">Nuclear</a></td>
+<td>fusion, nuclear_cleanup, nuclear_forensics</td>
+<td style="text-align: right;">8</td>
+<td>CHEBI, NCIT, CHMO, ENVO</td>
+</tr>
+<tr>
+<td><a href="#earth-science">Earth Science</a></td>
+<td>subsurface, hydrogeology, remote_sensing, water_resources</td>
+<td style="text-align: right;">12</td>
+<td>ENVO, PATO, CHEBI, OBI</td>
+</tr>
+<tr>
+<td><a href="#computing">Computing</a></td>
+<td>data_centers, microelectronics, quantum</td>
+<td style="text-align: right;">6</td>
+<td>Brick, CHEBI, NCIT</td>
+</tr>
+<tr>
+<td><a href="#industry">Industry</a></td>
+<td>manufacturing, construction, unconventional_resources</td>
+<td style="text-align: right;">7</td>
+<td>OBI, CHMO, ENVO, Brick</td>
+</tr>
+<tr>
+<td><a href="#materials-and-physics">Materials and Physics</a></td>
+<td>computational_materials, particle_physics</td>
+<td style="text-align: right;">5</td>
+<td>NCIT, CHEBI, PATO, SWO</td>
+</tr>
+<tr>
+<td><a href="#bioprocessing-and-labs">Bioprocessing and Labs</a></td>
+<td>biomanufacturing, autonomous_labs</td>
+<td style="text-align: right;">6</td>
+<td>OBI, CHEBI, NCIT, BAO</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="energy-and-grid">Energy and Grid</h2>
+<p>Grid modernization and subsurface energy are central to the Genesis challenges on
+decarbonization and energy security. These value sets standardize terminology for
+grid components, storage technologies, and subsurface resources.</p>
+<h3 id="enums">Enums</h3>
+<ul>
+<li><a href="../../elements/GridComponentType/">GridComponentType</a> -- transmission lines, transformers, substations, inverters</li>
+<li><a href="../../elements/GridEnergyStorageType/">GridEnergyStorageType</a> -- battery chemistries, pumped hydro, hydrogen storage</li>
+<li><a href="../../elements/GridManagementStrategyType/">GridManagementStrategyType</a> -- demand response, load balancing, virtual power plants</li>
+<li><a href="../../elements/SubsurfaceEnergyResourceType/">SubsurfaceEnergyResourceType</a> -- geothermal, oil, gas hydrate reservoirs</li>
+<li><a href="../../elements/SubsurfaceStorageType/">SubsurfaceStorageType</a> -- CCS, underground hydrogen, compressed air</li>
+<li><a href="../../elements/ReservoirCharacterizationMethodType/">ReservoirCharacterizationMethodType</a> -- well tests, seismic, core analysis</li>
+</ul>
+<h3 id="example-mappings">Example Mappings</h3>
+<table>
+<thead>
+<tr>
+<th>Permissible Value</th>
+<th>Enum</th>
+<th>Ontology Mapping</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LITHIUM_ION_BATTERY</td>
+<td>GridEnergyStorageType</td>
+<td>OEO:00000248</td>
+</tr>
+<tr>
+<td>GEOTHERMAL_RESERVOIR</td>
+<td>SubsurfaceEnergyResourceType</td>
+<td>ENVO:2000034</td>
+</tr>
+<tr>
+<td>CARBON_CAPTURE_AND_STORAGE</td>
+<td>SubsurfaceStorageType</td>
+<td>OEO:00010141</td>
+</tr>
+<tr>
+<td>TRANSFORMER</td>
+<td>GridComponentType</td>
+<td>OEO:00000420</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="nuclear">Nuclear</h2>
+<p>Fusion energy, environmental cleanup of legacy nuclear sites, and nuclear forensics
+each present distinct vocabulary needs. These enums cover confinement approaches,
+plasma parameters, remediation techniques, and analytical methods.</p>
+<h3 id="enums_1">Enums</h3>
+<ul>
+<li><a href="../../elements/FusionConfinementType/">FusionConfinementType</a> -- tokamak, stellarator, inertial confinement</li>
+<li><a href="../../elements/FusionFuelType/">FusionFuelType</a> -- D-T, D-D, D-He3, p-B11 fuel cycles</li>
+<li><a href="../../elements/FusionPlasmaParameterType/">FusionPlasmaParameterType</a> -- temperature, density, beta value</li>
+<li><a href="../../elements/NuclearRemediationType/">NuclearRemediationType</a> -- soil excavation, vitrification, phytoremediation</li>
+<li><a href="../../elements/DecommissioningPhaseType/">DecommissioningPhaseType</a> -- characterization through long-term monitoring</li>
+<li><a href="../../elements/RadioactiveContaminantType/">RadioactiveContaminantType</a> -- Cs-137, Sr-90, Tc-99, Pu, U</li>
+<li><a href="../../elements/NuclearForensicsMethodType/">NuclearForensicsMethodType</a> -- isotope ratios, mass spec, gamma spectroscopy</li>
+<li><a href="../../elements/NuclearThreatCategoryType/">NuclearThreatCategoryType</a> -- IND, RDD, material theft scenarios</li>
+</ul>
+<h3 id="example-mappings_1">Example Mappings</h3>
+<table>
+<thead>
+<tr>
+<th>Permissible Value</th>
+<th>Enum</th>
+<th>Ontology Mapping</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CESIUM_137</td>
+<td>RadioactiveContaminantType</td>
+<td>CHEBI:196959</td>
+</tr>
+<tr>
+<td>ISOTOPE_RATIO_ANALYSIS</td>
+<td>NuclearForensicsMethodType</td>
+<td>CHMO:0000506</td>
+</tr>
+<tr>
+<td>DECONTAMINATION</td>
+<td>DecommissioningPhaseType</td>
+<td>NCIT:C68769</td>
+</tr>
+<tr>
+<td>PLASMA_TEMPERATURE</td>
+<td>FusionPlasmaParameterType</td>
+<td>PATO:0000146</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="earth-science">Earth Science</h2>
+<p>Subsurface characterization, hydrogeology, remote sensing, and water resources span
+multiple Genesis challenges related to environmental stewardship, critical minerals,
+and climate resilience.</p>
+<h3 id="enums_2">Enums</h3>
+<ul>
+<li><a href="../../elements/SubsurfaceFormationType/">SubsurfaceFormationType</a> -- aquifers, fault zones, permafrost, shale</li>
+<li><a href="../../elements/GeophysicalMethodType/">GeophysicalMethodType</a> -- seismic, GPR, resistivity tomography</li>
+<li><a href="../../elements/SubsurfacePropertyType/">SubsurfacePropertyType</a> -- porosity, permeability, geothermal gradient</li>
+<li><a href="../../elements/AquiferType/">AquiferType</a> -- unconfined, confined, artesian, karst</li>
+<li><a href="../../elements/GroundwaterProcessType/">GroundwaterProcessType</a> -- recharge, discharge, saltwater intrusion</li>
+<li><a href="../../elements/HydrogeologyWellType/">HydrogeologyWellType</a> -- monitoring, production, injection wells</li>
+<li><a href="../../elements/RemoteSensingPlatformType/">RemoteSensingPlatformType</a> -- satellite, airborne, UAV, ground-based</li>
+<li><a href="../../elements/RemoteSensingDataType/">RemoteSensingDataType</a> -- multispectral, hyperspectral, SAR, LiDAR</li>
+<li><a href="../../elements/WaterResourceType/">WaterResourceType</a> -- surface water, groundwater, produced water</li>
+<li><a href="../../elements/WaterUseCategoryType/">WaterUseCategoryType</a> -- irrigation, industrial cooling, environmental flow</li>
+<li><a href="../../elements/WaterQualityParameterType/">WaterQualityParameterType</a> -- pH, dissolved oxygen, turbidity, nitrate</li>
+<li><a href="../../elements/WaterContaminantEnum/">WaterContaminantEnum</a> -- water contaminant classification</li>
+</ul>
+<h3 id="example-mappings_2">Example Mappings</h3>
+<table>
+<thead>
+<tr>
+<th>Permissible Value</th>
+<th>Enum</th>
+<th>Ontology Mapping</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AQUIFER</td>
+<td>SubsurfaceFormationType</td>
+<td>ENVO:00012408</td>
+</tr>
+<tr>
+<td>POROSITY</td>
+<td>SubsurfacePropertyType</td>
+<td>PATO:0000973</td>
+</tr>
+<tr>
+<td>SURFACE_WATER</td>
+<td>WaterResourceType</td>
+<td>ENVO:00002042</td>
+</tr>
+<tr>
+<td>DISSOLVED_OXYGEN</td>
+<td>WaterQualityParameterType</td>
+<td>CHEBI:15379</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="computing">Computing</h2>
+<p>Data center infrastructure, semiconductor fabrication, and quantum computing are
+addressed by Genesis challenges on advanced computing and microelectronics supply chains.</p>
+<h3 id="enums_3">Enums</h3>
+<ul>
+<li><a href="../../elements/DataCenterCoolingType/">DataCenterCoolingType</a> -- air, liquid, immersion, geothermal cooling</li>
+<li><a href="../../elements/DataCenterTierLevel/">DataCenterTierLevel</a> -- Tier I through Tier IV reliability</li>
+<li><a href="../../elements/SemiconductorMaterialType/">SemiconductorMaterialType</a> -- silicon, GaN, SiC, diamond</li>
+<li><a href="../../elements/ChipFabricationNodeType/">ChipFabricationNodeType</a> -- 3 nm through mature node processes</li>
+<li><a href="../../elements/QubitType/">QubitType</a> -- superconducting, trapped ion, photonic, topological</li>
+<li><a href="../../elements/QuantumAlgorithmCategoryType/">QuantumAlgorithmCategoryType</a> -- optimization, simulation, ML, cryptography</li>
+</ul>
+<h3 id="example-mappings_3">Example Mappings</h3>
+<table>
+<thead>
+<tr>
+<th>Permissible Value</th>
+<th>Enum</th>
+<th>Ontology Mapping</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SILICON</td>
+<td>SemiconductorMaterialType</td>
+<td>CHEBI:27573</td>
+</tr>
+<tr>
+<td>SILICON_CARBIDE</td>
+<td>SemiconductorMaterialType</td>
+<td>CHEBI:29390</td>
+</tr>
+<tr>
+<td>PHOTONIC</td>
+<td>QubitType</td>
+<td>CHEBI:30212</td>
+</tr>
+<tr>
+<td>SYNCHROTRON</td>
+<td>ParticleAcceleratorType</td>
+<td>NCIT:C48205</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="industry">Industry</h2>
+<p>Advanced manufacturing, building energy performance, and unconventional mineral
+resources reflect Genesis challenges on industrial competitiveness, infrastructure
+resilience, and critical material supply chains.</p>
+<h3 id="enums_4">Enums</h3>
+<ul>
+<li><a href="../../elements/ManufacturingProcessType/">ManufacturingProcessType</a> -- additive, subtractive, casting, CVD, PVD</li>
+<li><a href="../../elements/SmartManufacturingTechnologyType/">SmartManufacturingTechnologyType</a> -- digital twins, IIoT, predictive maintenance</li>
+<li><a href="../../elements/BuildingSystemType/">BuildingSystemType</a> -- HVAC, electrical, structural, fire protection</li>
+<li><a href="../../elements/BuildingEnergyPerformanceLevel/">BuildingEnergyPerformanceLevel</a> -- net zero, passive house, LEED tiers</li>
+<li><a href="../../elements/UnconventionalMineralResourceType/">UnconventionalMineralResourceType</a> -- mine tailings, red mud, fly ash, geothermal brine</li>
+<li><a href="../../elements/BioextractionMethodType/">BioextractionMethodType</a> -- bioleaching, phytomining, biosorption</li>
+<li><a href="../../elements/TailingCharacterizationType/">TailingCharacterizationType</a> -- particle size, mineralogy, metal content</li>
+</ul>
+<h3 id="example-mappings_4">Example Mappings</h3>
+<table>
+<thead>
+<tr>
+<th>Permissible Value</th>
+<th>Enum</th>
+<th>Ontology Mapping</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>INJECTION_MOLDING</td>
+<td>ManufacturingProcessType</td>
+<td>CHMO:0001430</td>
+</tr>
+<tr>
+<td>HVAC</td>
+<td>BuildingSystemType</td>
+<td>brick:HVAC_System</td>
+</tr>
+<tr>
+<td>MINE_TAILINGS</td>
+<td>UnconventionalMineralResourceType</td>
+<td>ENVO:00000003</td>
+</tr>
+<tr>
+<td>HEAP_BIOLEACHING</td>
+<td>BioextractionMethodType</td>
+<td>CHMO:0001681</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="materials-and-physics">Materials and Physics</h2>
+<p>Computational materials discovery and particle physics instrumentation underpin
+Genesis challenges on scientific discovery and next-generation materials.</p>
+<h3 id="enums_5">Enums</h3>
+<ul>
+<li><a href="../../elements/MaterialsSimulationType/">MaterialsSimulationType</a> -- DFT, molecular dynamics, Monte Carlo, phase field</li>
+<li><a href="../../elements/MaterialPropertyPredictionType/">MaterialPropertyPredictionType</a> -- band gap, elastic modulus, thermal conductivity</li>
+<li><a href="../../elements/ParticleAcceleratorType/">ParticleAcceleratorType</a> -- linac, synchrotron, cyclotron, FEL</li>
+<li><a href="../../elements/FundamentalParticleType/">FundamentalParticleType</a> -- Standard Model particles (quarks, leptons, bosons)</li>
+<li><a href="../../elements/DetectorType/">DetectorType</a> -- calorimeters, tracking, Cherenkov, muon spectrometers</li>
+</ul>
+<h3 id="example-mappings_5">Example Mappings</h3>
+<table>
+<thead>
+<tr>
+<th>Permissible Value</th>
+<th>Enum</th>
+<th>Ontology Mapping</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MOLECULAR_DYNAMICS</td>
+<td>MaterialsSimulationType</td>
+<td>NCIT:C18097</td>
+</tr>
+<tr>
+<td>ELASTIC_MODULUS</td>
+<td>MaterialPropertyPredictionType</td>
+<td>PATO:0001031</td>
+</tr>
+<tr>
+<td>ELECTRON</td>
+<td>FundamentalParticleType</td>
+<td>CHEBI:10545</td>
+</tr>
+<tr>
+<td>HIGGS_BOSON</td>
+<td>FundamentalParticleType</td>
+<td>CHEBI:146278</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="bioprocessing-and-labs">Bioprocessing and Labs</h2>
+<p>Biomanufacturing scale-up and autonomous/self-driving laboratories address Genesis
+challenges on the bioeconomy and accelerated scientific discovery.</p>
+<h3 id="enums_6">Enums</h3>
+<ul>
+<li><a href="../../elements/BiomanufacturingScaleType/">BiomanufacturingScaleType</a> -- micro through commercial scale</li>
+<li><a href="../../elements/BioproductCategoryType/">BioproductCategoryType</a> -- biofuels, biochemicals, enzymes, biopharmaceuticals</li>
+<li><a href="../../elements/BioprocessOptimizationType/">BioprocessOptimizationType</a> -- media optimization, strain engineering, PAT</li>
+<li><a href="../../elements/AutonomousLabComponentType/">AutonomousLabComponentType</a> -- robotic handlers, synthesizers, HTS platforms</li>
+<li><a href="../../elements/ExperimentalDesignMethodType/">ExperimentalDesignMethodType</a> -- Bayesian optimization, active learning, DOE</li>
+<li><a href="../../elements/LabAutomationWorkflowType/">LabAutomationWorkflowType</a> -- closed-loop optimization, self-driving experimentation</li>
+</ul>
+<h3 id="example-mappings_6">Example Mappings</h3>
+<table>
+<thead>
+<tr>
+<th>Permissible Value</th>
+<th>Enum</th>
+<th>Ontology Mapping</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BIOFUEL</td>
+<td>BioproductCategoryType</td>
+<td>CHEBI:33292</td>
+</tr>
+<tr>
+<td>ROBOTIC_SAMPLE_HANDLER</td>
+<td>AutonomousLabComponentType</td>
+<td>OBI:0400112</td>
+</tr>
+<tr>
+<td>HIGH_THROUGHPUT_SCREENING</td>
+<td>LabAutomationWorkflowType</td>
+<td>BAO:0010074</td>
+</tr>
+<tr>
+<td>DOWNSTREAM_PURIFICATION</td>
+<td>BioprocessOptimizationType</td>
+<td>OBI:0001505</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="ontology-coverage">Ontology Coverage</h2>
+<p>The Genesis value sets draw on 15 ontologies:</p>
+<table>
+<thead>
+<tr>
+<th>Ontology</th>
+<th>Full Name</th>
+<th>Used In</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CHEBI</td>
+<td>Chemical Entities of Biological Interest</td>
+<td>9 modules</td>
+</tr>
+<tr>
+<td>ENVO</td>
+<td>Environment Ontology</td>
+<td>8 modules</td>
+</tr>
+<tr>
+<td>NCIT</td>
+<td>NCI Thesaurus</td>
+<td>8 modules</td>
+</tr>
+<tr>
+<td>PATO</td>
+<td>Phenotype and Trait Ontology</td>
+<td>6 modules</td>
+</tr>
+<tr>
+<td>OBI</td>
+<td>Ontology for Biomedical Investigations</td>
+<td>4 modules</td>
+</tr>
+<tr>
+<td>CHMO</td>
+<td>Chemical Methods Ontology</td>
+<td>4 modules</td>
+</tr>
+<tr>
+<td>OEO</td>
+<td>Open Energy Ontology</td>
+<td>3 modules</td>
+</tr>
+<tr>
+<td>Brick</td>
+<td>Brick Schema for Buildings</td>
+<td>2 modules</td>
+</tr>
+<tr>
+<td>MS</td>
+<td>Mass Spectrometry Ontology</td>
+<td>1 module</td>
+</tr>
+<tr>
+<td>SWO</td>
+<td>Software Ontology</td>
+<td>1 module</td>
+</tr>
+<tr>
+<td>AGRO</td>
+<td>Agronomy Ontology</td>
+<td>1 module</td>
+</tr>
+<tr>
+<td>FOODON</td>
+<td>Food Ontology</td>
+<td>1 module</td>
+</tr>
+<tr>
+<td>PROCO</td>
+<td>Process Chemistry Ontology</td>
+<td>1 module</td>
+</tr>
+<tr>
+<td>BAO</td>
+<td>BioAssay Ontology</td>
+<td>1 module</td>
+</tr>
+<tr>
+<td>STATO</td>
+<td>Statistics Ontology</td>
+<td>1 module</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.tabs.link"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>
