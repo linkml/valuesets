@@ -33,8 +33,11 @@ nav:
     - how-to-guides/dynamic-valuesets-validation.md
     - how-to-guides/sync-uniprot-species.md
   - Slot Generation: slot-generation.md
-  - Subsets:
-    - DOE Genesis Mission: subsets/genesis-mission.md
+  - Views:
+    - DOE Genesis Mission: views/genesis-mission.md
+    - Microbial Ecology: views/microbial-ecology.md
+    - Rare Disease: views/rare-disease.md
+    - Lab Automation: views/lab-automation.md
   - Slides: slides/index.md
   - About: about.md
 

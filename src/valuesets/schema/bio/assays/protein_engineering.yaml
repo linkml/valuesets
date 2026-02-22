@@ -1,0 +1,79 @@
+name: protein_engineering
+title: Protein Engineering Assay Value Sets
+description: >-
+  Value sets for protein engineering and characterization assays including
+  binding kinetics, biophysical characterization, and display technologies.
+id: https://w3id.org/valuesets/bio/assays/protein_engineering
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  valuesets: https://w3id.org/valuesets/
+  BAO: http://www.bioassayontology.org/bao#BAO_
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+default_prefix: valuesets
+slots:
+  protein_engineering_assay:
+    description: Protein engineering assay type
+    range: ProteinEngineeringAssayEnum
+enums:
+  ProteinEngineeringAssayEnum:
+    title: Protein Engineering Assay Types
+    description: >-
+      Assays for protein engineering including binding kinetics,
+      biophysical characterization, and display-based selection methods.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      SURFACE_PLASMON_RESONANCE:
+        description: Real-time label-free measurement of biomolecular binding kinetics
+        meaning: BAO:0000054
+        aliases:
+        - SPR
+        annotations:
+          companion_enum_target_protein: Protein
+          companion_enum_readout: DetectionModeEnum
+      BIOLAYER_INTERFEROMETRY:
+        description: Label-free measurement of biomolecular interactions via interference patterns
+        meaning: BAO:0000066
+        aliases:
+        - BLI
+        - bio layer interferometry
+        annotations:
+          companion_enum_target_protein: Protein
+          companion_enum_readout: DetectionModeEnum
+      THERMAL_SHIFT_ASSAY:
+        description: Measurement of protein thermal stability via fluorescent dye binding
+        meaning: BAO:0010261
+        aliases:
+        - differential scanning fluorimetry
+        - DSF
+        annotations:
+          companion_enum_target_protein: Protein
+          companion_enum_readout: DetectionModeEnum
+      CIRCULAR_DICHROISM:
+        description: Assessment of protein secondary and tertiary structure using polarized light
+        meaning: BAO:0000161
+        aliases:
+        - CD
+        annotations:
+          companion_enum_target_protein: Protein
+          companion_enum_readout: DetectionModeEnum
+      PHAGE_DISPLAY:
+        description: Selection of peptides or proteins displayed on bacteriophage surface
+        annotations:
+          companion_enum_target_protein: Protein
+      YEAST_DISPLAY:
+        description: Selection of proteins displayed on yeast cell surface
+        annotations:
+          companion_enum_target_protein: Protein
+      DIRECTED_EVOLUTION_SCREEN:
+        description: High-throughput screening of mutant protein libraries for improved function
+        annotations:
+          companion_enum_target_protein: Protein
+          companion_enum_readout: DetectionModeEnum

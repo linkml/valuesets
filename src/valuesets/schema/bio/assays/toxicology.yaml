@@ -1,0 +1,79 @@
+name: toxicology
+title: Toxicology Assay Value Sets
+description: >-
+  Value sets for toxicological assays including cytotoxicity, genotoxicity,
+  mutagenicity, and dose-response measurements.
+id: https://w3id.org/valuesets/bio/assays/toxicology
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  valuesets: https://w3id.org/valuesets/
+  BAO: http://www.bioassayontology.org/bao#BAO_
+  OBI: http://purl.obolibrary.org/obo/OBI_
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+default_prefix: valuesets
+slots:
+  toxicology_assay:
+    description: Toxicology assay type
+    range: ToxicologyAssayEnum
+enums:
+  ToxicologyAssayEnum:
+    title: Toxicology Assay Types
+    description: >-
+      Assays for evaluating toxicity, genotoxicity, and safety of
+      compounds including cytotoxicity, mutagenicity, and ADME measurements.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      TOXICITY_ASSAY:
+        description: General assay measuring degree of substance toxicity to living cells
+        meaning: BAO:0002189
+        annotations:
+          companion_enum_compound: ChemicalEntity
+          companion_enum_cell_line: CellType
+      MTT_ASSAY:
+        description: Colorimetric assay measuring cell metabolic activity via MTT reduction
+        meaning: BAO:0002457
+        aliases:
+        - MTT reduction assay
+        annotations:
+          companion_enum_compound: ChemicalEntity
+          companion_enum_cell_line: CellType
+      LDH_RELEASE_ASSAY:
+        description: Cytotoxicity assay measuring lactate dehydrogenase release from damaged cells
+        meaning: BAO:0013056
+        annotations:
+          companion_enum_compound: ChemicalEntity
+          companion_enum_cell_line: CellType
+      AMES_TEST:
+        description: Mutagenicity assay using bacterial reverse mutation in Salmonella strains
+        meaning: BAO:0013054
+        annotations:
+          companion_enum_compound: ChemicalEntity
+      COMET_ASSAY:
+        description: Single cell gel electrophoresis assay measuring DNA strand breaks
+        meaning: OBI:0302736
+        annotations:
+          companion_enum_compound: ChemicalEntity
+          companion_enum_cell_line: CellType
+      MICRONUCLEUS_ASSAY:
+        description: Genotoxicity assay detecting chromosomal damage via micronucleus formation
+        meaning: BAO:0013055
+        annotations:
+          companion_enum_compound: ChemicalEntity
+          companion_enum_cell_line: CellType
+      DOSE_RESPONSE:
+        description: Measurement of biological response as a function of compound concentration
+        annotations:
+          companion_enum_compound: ChemicalEntity
+          companion_enum_cell_line: CellType
+      ADME_ASSAY:
+        description: Absorption, distribution, metabolism, and excretion profiling
+        annotations:
+          companion_enum_compound: ChemicalEntity

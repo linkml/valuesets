@@ -1,0 +1,62 @@
+name: bio_assay
+title: Biological Assay Dynamic Value Sets
+description: >-
+  Dynamic enumerations for biological assays backed by OBI and BAO ontologies.
+  OBIAssayEnum covers assays from the Ontology for Biomedical Investigations,
+  while BAOBioassayEnum covers assays from the BioAssay Ontology. Together they
+  form a logical union of assay types.
+id: https://w3id.org/valuesets/bio/assays/bio_assay
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  valuesets: https://w3id.org/valuesets/
+  OBI: http://purl.obolibrary.org/obo/OBI_
+  BAO: http://www.bioassayontology.org/bao#BAO_
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+default_prefix: valuesets
+slots:
+  obi_assay:
+    description: Any assay from the Ontology for Biomedical Investigations (OBI)
+    range: OBIAssayEnum
+  bao_bioassay:
+    description: Any bioassay from the BioAssay Ontology (BAO)
+    range: BAOBioassayEnum
+enums:
+  OBIAssayEnum:
+    title: OBI Assay
+    description: >-
+      Dynamic enum covering all assays defined in the Ontology for
+      Biomedical Investigations (OBI), rooted at OBI:0000070 (assay).
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    reachable_from:
+      source_ontology: obo:obi
+      source_nodes:
+      - OBI:0000070
+      include_self: true
+      relationship_types:
+      - rdfs:subClassOf
+  BAOBioassayEnum:
+    title: BAO Bioassay
+    description: >-
+      Dynamic enum covering all bioassays defined in the BioAssay Ontology
+      (BAO), rooted at BAO:0000015 (bioassay).
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    reachable_from:
+      source_ontology: obo:bao
+      source_nodes:
+      - BAO:0000015
+      include_self: true
+      relationship_types:
+      - rdfs:subClassOf

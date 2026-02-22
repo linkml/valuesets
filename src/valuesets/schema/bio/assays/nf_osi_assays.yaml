@@ -1,10 +1,10 @@
-name: assays
-title: Biological Assay Value Sets
+name: nf_osi_assays
+title: NF-OSI Biological Assay Value Sets
 description: >-
   Value sets for biological assays including sequencing, imaging, mass spectrometry,
   cell-based, and clinical/behavioral assays. Derived from NF-OSI metadata dictionary
   with ontology mappings to OBI, CHMO, BAO, and other relevant ontologies.
-id: https://w3id.org/valuesets/bio/assays
+id: https://w3id.org/valuesets/bio/assays/nf_osi_assays
 imports:
 - linkml:types
 prefixes:

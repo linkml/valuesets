@@ -1,0 +1,85 @@
+name: immunology
+title: Immunology Assay Value Sets
+description: >-
+  Value sets for immunological assays including ELISA, immunoprecipitation,
+  flow cytometry, western blot, and related methods.
+id: https://w3id.org/valuesets/bio/assays/immunology
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  valuesets: https://w3id.org/valuesets/
+  BAO: http://www.bioassayontology.org/bao#BAO_
+  OBI: http://purl.obolibrary.org/obo/OBI_
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+default_prefix: valuesets
+slots:
+  immunology_assay:
+    description: Immunology assay type
+    range: ImmunologyAssayEnum
+enums:
+  ImmunologyAssayEnum:
+    title: Immunology Assay Types
+    description: >-
+      Assays for detecting and quantifying immune-related molecules
+      including antibody-based detection, cell sorting, and blotting methods.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      ELISA:
+        description: Enzyme-linked immunosorbent assay for detecting antigens or antibodies
+        meaning: BAO:0000134
+        annotations:
+          companion_enum_antibody_target: Protein
+          companion_enum_detection_method: DetectionModeEnum
+      SANDWICH_ELISA:
+        description: Sandwich ELISA using capture and detection antibodies
+        annotations:
+          companion_enum_antibody_target: Protein
+          companion_enum_detection_method: DetectionModeEnum
+      IMMUNOPRECIPITATION:
+        description: Precipitation of a protein antigen from solution using a specific antibody
+        meaning: BAO:0002508
+        annotations:
+          companion_enum_antibody_target: Protein
+          companion_enum_detection_method: DetectionModeEnum
+      FLOW_CYTOMETRY:
+        description: Analysis of cell populations using fluorescent antibodies and light scattering
+        meaning: BAO:0000005
+        annotations:
+          companion_enum_antibody_target: Protein
+          companion_enum_detection_method: DetectionModeEnum
+      WESTERN_BLOT:
+        description: Protein detection by gel electrophoresis, membrane transfer, and antibody staining
+        meaning: OBI:0000854
+        aliases:
+        - western blot assay
+        annotations:
+          companion_enum_antibody_target: Protein
+          companion_enum_detection_method: DetectionModeEnum
+      CYTOKINE_SECRETION_ASSAY:
+        description: Measurement of cytokine types and amounts released from cells
+        meaning: BAO:0003003
+        annotations:
+          companion_enum_antibody_target: Protein
+          companion_enum_detection_method: DetectionModeEnum
+      IMMUNOBLOT:
+        description: Detection of proteins using antibodies on a membrane
+        meaning: BAO:0002422
+        annotations:
+          companion_enum_antibody_target: Protein
+          companion_enum_detection_method: DetectionModeEnum
+      COMPLEMENT_FIXATION:
+        description: Serological assay detecting antibodies by complement consumption
+        annotations:
+          companion_enum_antibody_target: Protein
+      MULTIPLEX_BEAD_ASSAY:
+        description: Simultaneous detection of multiple analytes using antibody-conjugated beads
+        annotations:
+          companion_enum_antibody_target: Protein
+          companion_enum_detection_method: DetectionModeEnum
