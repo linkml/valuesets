@@ -8,23 +8,21 @@
       
       
       
-        <link rel="canonical" href="https://linkml.github.io/valuesets/">
+        <link rel="canonical" href="https://linkml.github.io/valuesets/explanations/binary-enums-vs-booleans/">
       
       
       
-        <link rel="next" href="elements/">
       
-      
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
     
     
       
-        <title>valuesets</title>
+        <title>Prefer Binary Enums Over Booleans - valuesets</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.e53b48f4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
       
       
 
@@ -43,13 +41,13 @@
       
     
     
-      <link rel="stylesheet" href="css/ansi-colours.css">
+      <link rel="stylesheet" href="../../css/ansi-colours.css">
     
-      <link rel="stylesheet" href="css/jupyter-cells.css">
+      <link rel="stylesheet" href="../../css/jupyter-cells.css">
     
-      <link rel="stylesheet" href="css/pandas-dataframe.css">
+      <link rel="stylesheet" href="../../css/pandas-dataframe.css">
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -68,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#valuesets" class="md-skip">
+        <a href="#prefer-binary-enums-over-booleans" class="md-skip">
           Skip to content
         </a>
       
@@ -84,7 +82,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="valuesets" class="md-header__button md-logo" aria-label="valuesets" data-md-component="logo">
+    <a href="../.." title="valuesets" class="md-header__button md-logo" aria-label="valuesets" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -104,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              Prefer Binary Enums Over Booleans
             
           </span>
         </div>
@@ -194,7 +192,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="valuesets" class="md-nav__button md-logo" aria-label="valuesets" data-md-component="logo">
+    <a href="../.." title="valuesets" class="md-nav__button md-logo" aria-label="valuesets" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -221,32 +219,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Home
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -257,44 +233,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#how-to-guides" class="md-nav__link">
-    <span class="md-ellipsis">
-      How-to Guides
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#explanations" class="md-nav__link">
-    <span class="md-ellipsis">
-      Explanations
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -306,7 +244,7 @@
   
   
     <li class="md-nav__item">
-      <a href="elements/" class="md-nav__link">
+      <a href="../../elements/" class="md-nav__link">
         
   
   
@@ -328,7 +266,7 @@
   
   
     <li class="md-nav__item">
-      <a href="governance/" class="md-nav__link">
+      <a href="../../governance/" class="md-nav__link">
         
   
   
@@ -388,7 +326,7 @@
   
   
     <li class="md-nav__item">
-      <a href="how-to-guides/agentic-ide-support/" class="md-nav__link">
+      <a href="../../how-to-guides/agentic-ide-support/" class="md-nav__link">
         
   
   
@@ -411,7 +349,7 @@
   
   
     <li class="md-nav__item">
-      <a href="how-to-guides/dynamic-valuesets-validation/" class="md-nav__link">
+      <a href="../../how-to-guides/dynamic-valuesets-validation/" class="md-nav__link">
         
   
   
@@ -434,7 +372,7 @@
   
   
     <li class="md-nav__item">
-      <a href="how-to-guides/sync-uniprot-species/" class="md-nav__link">
+      <a href="../../how-to-guides/sync-uniprot-species/" class="md-nav__link">
         
   
   
@@ -464,7 +402,7 @@
   
   
     <li class="md-nav__item">
-      <a href="slot-generation/" class="md-nav__link">
+      <a href="../../slot-generation/" class="md-nav__link">
         
   
   
@@ -524,7 +462,7 @@
   
   
     <li class="md-nav__item">
-      <a href="views/genesis-mission/" class="md-nav__link">
+      <a href="../../views/genesis-mission/" class="md-nav__link">
         
   
   
@@ -547,7 +485,7 @@
   
   
     <li class="md-nav__item">
-      <a href="views/microbial-ecology/" class="md-nav__link">
+      <a href="../../views/microbial-ecology/" class="md-nav__link">
         
   
   
@@ -570,7 +508,7 @@
   
   
     <li class="md-nav__item">
-      <a href="views/rare-disease/" class="md-nav__link">
+      <a href="../../views/rare-disease/" class="md-nav__link">
         
   
   
@@ -593,7 +531,7 @@
   
   
     <li class="md-nav__item">
-      <a href="views/lab-automation/" class="md-nav__link">
+      <a href="../../views/lab-automation/" class="md-nav__link">
         
   
   
@@ -623,7 +561,7 @@
   
   
     <li class="md-nav__item">
-      <a href="slides/" class="md-nav__link">
+      <a href="../../slides/" class="md-nav__link">
         
   
   
@@ -645,7 +583,7 @@
   
   
     <li class="md-nav__item">
-      <a href="about/" class="md-nav__link">
+      <a href="../../about/" class="md-nav__link">
         
   
   
@@ -687,18 +625,120 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#how-to-guides" class="md-nav__link">
+  <a href="#the-case-for-binary-enums" class="md-nav__link">
     <span class="md-ellipsis">
-      How-to Guides
+      The Case for Binary Enums
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Case for Binary Enums">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-extensibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Extensibility
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-clarity-of-intent" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Clarity of Intent
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-avoiding-cryptic-negations" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Avoiding Cryptic Negations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-self-documenting-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Self-Documenting Code
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-the-name-the-scale-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. The "Name the Scale" Pattern
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-booleans-are-acceptable" class="md-nav__link">
+    <span class="md-ellipsis">
+      When Booleans Are Acceptable
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#explanations" class="md-nav__link">
+  <a href="#linkml-examples" class="md-nav__link">
     <span class="md-ellipsis">
-      Explanations
+      LinkML Examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LinkML Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#binary-enum-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      Binary Enum Pattern
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#applying-to-slots" class="md-nav__link">
+    <span class="md-ellipsis">
+      Applying to Slots
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
     </span>
   </a>
   
@@ -723,25 +763,168 @@
   
 
 
-<h1 id="valuesets">valuesets</h1>
-<p>A collection of commonly used value sets</p>
+<h1 id="prefer-binary-enums-over-booleans">Prefer Binary Enums Over Booleans</h1>
+<p>When modeling data that has two possible states, it may be tempting to use a boolean type (<code>true</code>/<code>false</code>). However, in many cases, a two-element enumeration (binary enum) is the better choice. This document explains why and when to prefer binary enums over booleans in your LinkML schemas.</p>
+<h2 id="the-case-for-binary-enums">The Case for Binary Enums</h2>
+<p>The <a href="https://design.tidyverse.org/boolean-strategies.html">Tidy Design Principles</a> from the tidyverse project articulate several compelling reasons to prefer enums even when there are only two choices.</p>
+<h3 id="1-extensibility">1. Extensibility</h3>
+<p>If you later discover a third (or fourth, or fifth) option, you'll need to change the interface. With an enum, adding new values is straightforward. With a boolean, you face a breaking change.</p>
+<p><strong>Example:</strong> Consider a data submission status. You might initially think "submitted" or "not submitted" covers it:</p>
+<pre><code class="language-yaml"># Boolean approach - seems simple at first
+slots:
+  is_submitted:
+    range: boolean
+</code></pre>
+<p>But what about "pending review", "rejected", or "withdrawn"? With a boolean, you're stuck. With an enum, you simply add new values:</p>
+<pre><code class="language-yaml"># Enum approach - extensible
+enums:
+  SubmissionStatus:
+    permissible_values:
+      SUBMITTED:
+      NOT_SUBMITTED:
+      PENDING_REVIEW:   # Easy to add later
+      REJECTED:         # Easy to add later
+</code></pre>
+<h3 id="2-clarity-of-intent">2. Clarity of Intent</h3>
+<p>Boolean values often have asymmetric clarity. <code>something = TRUE</code> tells you what <em>will</em> happen, but <code>something = FALSE</code> only tells you what <em>won't</em> happen, not what will happen instead.</p>
+<p><strong>Example from tidyverse:</strong> The <code>sort()</code> function uses <code>decreasing = TRUE/FALSE</code>. Reading <code>decreasing = FALSE</code> leaves ambiguity:
+- Does it mean "sort in increasing order"?
+- Or does it mean "don't sort at all"?</p>
+<p>Compare this with <code>vctrs::vec_sort()</code> which uses <code>direction = "asc"</code> or <code>direction = "desc"</code>. Both options are explicit and self-documenting.</p>
+<h3 id="3-avoiding-cryptic-negations">3. Avoiding Cryptic Negations</h3>
+<p>Boolean parameters often require mental gymnastics to interpret, especially with negated names.</p>
+<p><strong>Example from tidyverse:</strong> The <code>cut()</code> function has a <code>right</code> parameter:
+- <code>right = TRUE</code>: right-closed, left-open intervals <code>(a, b]</code>
+- <code>right = FALSE</code>: right-open, left-closed intervals <code>[a, b)</code></p>
+<p>A clearer design would be <code>open_side = c("right", "left")</code> or <code>bounds = c("[)", "(]")</code>.</p>
+<h3 id="4-self-documenting-code">4. Self-Documenting Code</h3>
+<p>Enums make data and code more readable without needing to consult documentation.</p>
+<pre><code class="language-yaml"># What does this mean? Need to check docs.
+sample:
+  is_control: false
+
+# Self-explanatory
+sample:
+  sample_type: EXPERIMENTAL
+</code></pre>
+<h3 id="5-the-name-the-scale-pattern">5. The "Name the Scale" Pattern</h3>
+<p>When converting booleans to enums, consider naming the scale with values that represent points on it. This signals that intermediate values could be added.</p>
+<p><strong>Example:</strong> Instead of <code>verbose = TRUE/FALSE</code>, use:</p>
+<pre><code class="language-yaml">enums:
+  VerbosityLevel:
+    permissible_values:
+      NONE:
+        description: No output
+      MINIMAL:
+        description: Errors only
+      NORMAL:
+        description: Standard output
+      VERBOSE:
+        description: Detailed output
+      DEBUG:
+        description: All available information
+</code></pre>
+<h2 id="when-booleans-are-acceptable">When Booleans Are Acceptable</h2>
+<p>Booleans remain appropriate in certain cases:</p>
+<ol>
+<li>
+<p><strong>Truly binary states</strong>: The states are fundamentally and permanently binary (e.g., physical properties like "alive/dead" in certain contexts)</p>
+</li>
+<li>
+<p><strong>Well-named parameters</strong>: The parameter name makes both states crystal clear (e.g., <code>include_header</code> where <code>false</code> clearly means "exclude header")</p>
+</li>
+<li>
+<p><strong>Toggle operations</strong>: When the operation is clearly about enabling/disabling something (<code>enabled = true/false</code>)</p>
+</li>
+</ol>
+<h2 id="linkml-examples">LinkML Examples</h2>
+<h3 id="binary-enum-pattern">Binary Enum Pattern</h3>
+<pre><code class="language-yaml">enums:
+  SortDirection:
+    permissible_values:
+      ASCENDING:
+        description: Sort from lowest to highest
+        meaning: SIO:001395  # ascending order
+      DESCENDING:
+        description: Sort from highest to lowest
+        meaning: SIO:001396  # descending order
+
+  StrandOrientation:
+    permissible_values:
+      FORWARD:
+        description: Forward/plus strand
+        meaning: SO:0000853  # forward_strand
+      REVERSE:
+        description: Reverse/minus strand
+        meaning: SO:0000854  # reverse_strand
+
+  PresenceStatus:
+    permissible_values:
+      PRESENT:
+        description: The entity is present
+      ABSENT:
+        description: The entity is absent
+      NOT_DETERMINED:
+        description: Presence could not be determined
+</code></pre>
+<h3 id="applying-to-slots">Applying to Slots</h3>
+<pre><code class="language-yaml">slots:
+  sort_direction:
+    range: SortDirection
+    description: Direction for sorting results
+
+  strand:
+    range: StrandOrientation
+    description: DNA strand orientation
+
+  presence:
+    range: PresenceStatus
+    description: Whether the feature was detected
+</code></pre>
+<h2 id="summary">Summary</h2>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Boolean</th>
+<th>Binary Enum</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Extensibility</td>
+<td>Poor - breaking change to add states</td>
+<td>Good - add new values easily</td>
+</tr>
+<tr>
+<td>Clarity</td>
+<td>Often asymmetric</td>
+<td>Both values explicit</td>
+</tr>
+<tr>
+<td>Documentation</td>
+<td>Requires external docs</td>
+<td>Self-documenting</td>
+</tr>
+<tr>
+<td>Ontology mapping</td>
+<td>Not possible</td>
+<td>Supports <code>meaning</code> annotations</td>
+</tr>
+<tr>
+<td>Future-proofing</td>
+<td>Risky</td>
+<td>Safe</td>
+</tr>
+</tbody>
+</table>
+<p>When in doubt, prefer a two-element enum. The small additional effort pays dividends in clarity, maintainability, and extensibility.</p>
+<h2 id="references">References</h2>
 <ul>
-<li>Auto-generated <a href="elements/#enumerations">schema documentation</a></li>
+<li><a href="https://design.tidyverse.org/boolean-strategies.html">Tidy Design Principles: Prefer an enum, even if only two choices</a></li>
+<li><a href="https://design.tidyverse.org/explicit-strategies.html">Tidy Design Principles: Explicit Strategies</a></li>
+<li><a href="https://design.tidyverse.org/strategy-objects.html">Tidy Design Principles: Extract strategies into objects</a></li>
 </ul>
-<h2 id="how-to-guides">How-to Guides</h2>
-<ul>
-<li><a href="how-to-guides/dynamic-valuesets-validation/">Dynamic Value Sets and Validation</a> - Guide to using and validating dynamic value sets with ontology integration</li>
-<li><a href="how-to-guides/agentic-ide-support/">Agentic IDE Support</a></li>
-<li><a href="how-to-guides/sync-uniprot-species/">Sync UniProt Species</a></li>
-</ul>
-<h2 id="explanations">Explanations</h2>
-<ul>
-<li><a href="explanations/binary-enums-vs-booleans/">Prefer Binary Enums Over Booleans</a> - Why two-element enums are often better than boolean types</li>
-</ul>
-<p>Note: this schema consists ONLY of enums, so it is normal
-that classes and slots are empty.</p>
-<p>Note also that dynamic enums do not show up as expanded in the view
-here yet.</p>
 
 
 
@@ -792,10 +975,10 @@ here yet.</p>
     
     
       
-      <script id="__config" type="application/json">{"base": ".", "features": ["content.tabs.link"], "search": "assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.tabs.link"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.f55a23d4.min.js"></script>
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
     
   </body>
