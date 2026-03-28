@@ -84,6 +84,7 @@ imports:
 - materials_science/pigments_dyes
 - visual/colors
 - bio/biological_colors
+- bio/pato
 - bio/sequence_alphabets
 - bio/sequence_chemistry
 - bio/sequencing_platforms

@@ -1,0 +1,582 @@
+name: pato
+title: PATO Phenotypic Quality Value Sets
+description: >-
+  Value sets derived from the Phenotype And Trait Ontology (PATO).
+  Each enum corresponds to a leaf attribute in the PATO hierarchy,
+  with child quality values as permissible values.
+id: https://w3id.org/valuesets/bio/pato
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  PATO: http://purl.obolibrary.org/obo/PATO_
+  valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+default_prefix: valuesets
+slots:
+  pato_color:
+    description: Color quality of an entity
+    range: ColorEnum
+  pato_shape:
+    description: Shape quality of an entity
+    range: ShapeEnum
+  pato_size:
+    description: Relative size quality of an entity
+    range: SizeEnum
+  pato_texture:
+    description: Surface texture quality of an entity
+    range: TextureEnum
+  pato_biological_sex:
+    description: Biological sex quality of an organism (PATO phenotypic sex)
+    range: PATOBiologicalSexEnum
+  pato_maturity:
+    description: Maturity or developmental stage quality of an organism
+    range: MaturityEnum
+  pato_viability:
+    description: Viability quality of an organism or cell
+    range: ViabilityEnum
+  pato_cellularity:
+    description: Cellularity quality of an organism
+    range: CellularityEnum
+  pato_spatial_pattern:
+    description: Spatial pattern quality of an entity
+    range: SpatialPatternEnum
+enums:
+  ColorEnum:
+    title: Color
+    description: >-
+      A composite chromatic quality composed of hue, saturation and intensity parts.
+      Derived from PATO color (PATO:0000014) child values.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      BLACK:
+        description: A color that lacks any hues as parts
+        meaning: PATO:0000317
+        title: black
+      WHITE:
+        description: An achromatic color of maximum brightness
+        meaning: PATO:0000323
+        title: white
+      GREY:
+        description: A color between white and black colors
+        meaning: PATO:0000950
+        title: grey
+        aliases:
+        - gray
+      RED:
+        description: A color hue with high wavelength of the long-wave end of the visible spectrum (630-750 nm)
+        meaning: PATO:0000322
+        title: red
+      ORANGE:
+        description: A color hue with high-medium wavelength lying between red and yellow (585-620 nm)
+        meaning: PATO:0000953
+        title: orange
+      YELLOW:
+        description: A color hue with medium wavelength lying between orange and green (570-590 nm)
+        meaning: PATO:0000324
+        title: yellow
+      GREEN:
+        description: A color hue with medium-low wavelength lying between yellow and blue (490-570 nm)
+        meaning: PATO:0000320
+        title: green
+      CYAN:
+        description: A color consisting of green and blue hue
+        meaning: PATO:0000319
+        title: cyan
+      BLUE:
+        description: A color hue with low wavelength lying between green and indigo (420-490 nm)
+        meaning: PATO:0000318
+        title: blue
+      VIOLET:
+        description: A color hue with very low wavelength lying between reddish blue and bluish purple (380-420 nm)
+        meaning: PATO:0001424
+        title: violet
+      PURPLE:
+        description: A color that falls about midway between red and blue in hue
+        meaning: PATO:0000951
+        title: purple
+      MAGENTA:
+        description: A color consisting of red and blue hues
+        meaning: PATO:0000321
+        title: magenta
+      BROWN:
+        description: A color consisting of dark orange, red, of very low intensity
+        meaning: PATO:0000952
+        title: brown
+      MAROON:
+        description: A color consisting of purple and brown hue
+        meaning: PATO:0001426
+        title: maroon
+      ROSY:
+        description: A color hue consisting of red and yellow hue with high brightness
+        meaning: PATO:0001425
+        title: rosy
+        aliases:
+        - pink
+      VERMILION:
+        description: A color consisting of red and orange hue with a slight amount of gray
+        meaning: PATO:0001302
+        title: vermilion
+      COLORED:
+        description: A color quality inhering in a bearer by virtue of having color
+        meaning: PATO:0000336
+        title: colored
+
+  ShapeEnum:
+    title: Shape
+    description: >-
+      A morphological quality inhering in a bearer by virtue of the bearer's ratios
+      of distances between its features. Derived from PATO shape (PATO:0000052) child values.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      CIRCULAR:
+        description: A shape where every part of the surface or circumference is equidistant from the center
+        meaning: PATO:0000411
+        title: circular
+      ELLIPTIC:
+        description: Oval with two axes of symmetry, as produced by a conical section
+        meaning: PATO:0000947
+        title: elliptic
+        aliases:
+        - oval
+      SPHEROID:
+        description: A convex 3-D shape obtained by rotating an ellipse about one of its principal axes
+        meaning: PATO:0001865
+        title: spheroid
+      CONICAL:
+        description: A convex 3-D shape resembling a cone with a round cross section that tapers
+        meaning: PATO:0002021
+        title: conical
+      COLUMNAR:
+        description: Elongated and cylindrical in shape
+        meaning: PATO:0002063
+        title: columnar
+        aliases:
+        - cylindrical
+      TUBULAR:
+        description: A cylindrical shape that is hollow
+        meaning: PATO:0002299
+        title: tubular
+      FLAT:
+        description: Having a horizontal surface without a slope, tilt, or curvature
+        meaning: PATO:0000407
+        title: flat
+      ELONGATED:
+        description: Length being notably higher relative to width
+        meaning: PATO:0001154
+        title: elongated
+      LINEAR:
+        description: Narrow, with approximately parallel sides
+        meaning: PATO:0001199
+        title: linear
+      FILAMENTOUS:
+        description: Having thin filaments or thread-like structures
+        meaning: PATO:0001360
+        title: filamentous
+      SLENDER:
+        description: Being small or narrow in circumference or width in proportion to length or height
+        meaning: PATO:0002212
+        title: slender
+      BROAD:
+        description: Width being notably higher relative to comparable entities
+        meaning: PATO:0002359
+        title: broad
+      ROBUST:
+        description: Being strong, thick, or stout in form
+        meaning: PATO:0002310
+        title: robust
+      STRAIGHT:
+        description: Free of curves, bends, or angles
+        meaning: PATO:0002180
+        title: straight
+      BENT:
+        description: Having one or more fixed curves, folds, or angles
+        meaning: PATO:0000617
+        title: bent
+      ANGULAR:
+        description: Having at least one angle formed by two planes
+        meaning: PATO:0001977
+        title: angular
+      LOBED:
+        description: Being partly divided into a determinate number of segments
+        meaning: PATO:0001979
+        title: lobed
+      TRUNCATED:
+        description: Terminating abruptly by a transverse line or plane
+        meaning: PATO:0000936
+        title: truncated
+      PYRAMIDAL:
+        description: Having triangular faces meeting at a common point
+        meaning: PATO:0002336
+        title: pyramidal
+      STAR_SHAPED:
+        description: Being arranged like a star with radiating points
+        meaning: PATO:0002065
+        title: star shaped
+        aliases:
+        - stellate
+      SIGMOID:
+        description: Consisting of two curves in opposite directions like the letter S
+        meaning: PATO:0001878
+        title: sigmoid
+      UNDULATE:
+        description: Having a sinuate margin that moves smoothly and regularly up and down
+        meaning: PATO:0000967
+        title: undulate
+        aliases:
+        - wavy
+      PINNATE:
+        description: Having leaflets or branches on each side of a common axis
+        meaning: PATO:0000410
+        title: pinnate
+      PLEOMORPHIC:
+        description: Having the ability to take on multiple forms
+        meaning: PATO:0001356
+        title: pleomorphic
+      COILING:
+        description: Being wound in a spiral or helix
+        meaning: PATO:0001794
+        title: coiling
+        aliases:
+        - coiled
+        - helical
+
+  SizeEnum:
+    title: Size
+    description: >-
+      A morphology quality inhering in a bearer by virtue of the bearer's physical magnitude.
+      Derived from PATO size (PATO:0000117) child values.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      NORMAL_SIZE:
+        description: A size quality which is relatively normal or average
+        meaning: PATO:0045050
+        title: normal size
+      INCREASED_SIZE:
+        description: A size quality which is relatively high
+        meaning: PATO:0000586
+        title: increased size
+        aliases:
+        - enlarged
+        - large
+      DECREASED_SIZE:
+        description: A size quality which is relatively low
+        meaning: PATO:0000587
+        title: decreased size
+        aliases:
+        - reduced
+        - small
+
+  TextureEnum:
+    title: Texture
+    description: >-
+      A morphological quality inhering in a bearer by virtue of the bearer's surface
+      characteristics. Derived from PATO texture (PATO:0000150) child values.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      SMOOTH:
+        description: Having a surface free of roughness or irregularities
+        meaning: PATO:0000701
+        title: smooth
+      ROUGH:
+        description: Having an irregular surface
+        meaning: PATO:0000700
+        title: rough
+      SCALY:
+        description: Being covered or partially covered with scales
+        meaning: PATO:0001804
+        title: scaly
+      FLAKY:
+        description: Formed or tending to form flakes or thin, crisp fragments
+        meaning: PATO:0001805
+        title: flaky
+      GROOVED:
+        description: Being marked with one or more channels
+        meaning: PATO:0002255
+        title: grooved
+      BLISTERED:
+        description: Having a local accumulation of fluid underneath the surface
+        meaning: PATO:0001928
+        title: blistered
+      HAIRY:
+        description: Having hair or bristles
+        meaning: PATO:0000066
+        title: pilose
+        aliases:
+        - pilose
+        - hairy
+      ABRASED:
+        description: Having a portion of the surface scraped away
+        meaning: PATO:0001849
+        title: abrased
+      RUSTY:
+        description: Being covered by iron oxide as a result of oxidation
+        meaning: PATO:0070059
+        title: rusty
+      FOVEATE:
+        description: Being marked by the presence of small, shallow, regular depressions
+        meaning: PATO:0002296
+        title: foveate
+
+  PATOBiologicalSexEnum:
+    title: Biological Sex (PATO)
+    description: >-
+      An organismal quality inhering in a bearer by virtue of the bearer's ability to
+      undergo sexual reproduction. Derived from PATO biological sex (PATO:0000047)
+      and phenotypic sex (PATO:0001894) child values.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      FEMALE:
+        description: A biological sex quality inhering in an individual or population that only produces
+          gametes that can be fertilised by male gametes
+        meaning: PATO:0000383
+        title: female
+      MALE:
+        description: A biological sex quality inhering in an individual or population whose sex organs
+          contain only male gametes
+        meaning: PATO:0000384
+        title: male
+      HERMAPHRODITE:
+        description: A biological sex quality inhering in an organism or population with both male and
+          female sexual organs in one individual
+        meaning: PATO:0001340
+        title: hermaphrodite
+      MALE_WITH_DSD:
+        description: A male of a non-hermaphroditic species with ambiguous or atypical congenital
+          development of the reproductive system
+        meaning: PATO:0040049
+        title: male with DSD
+        comments:
+        - DSD = disorders/differences of sexual development/differentiation
+      FEMALE_WITH_DSD:
+        description: A female of a non-hermaphroditic species with ambiguous or atypical congenital
+          development of the reproductive system
+        meaning: PATO:0040056
+        title: female with DSD
+        comments:
+        - DSD = disorders/differences of sexual development/differentiation
+      PSEUDOHERMAPHRODITE:
+        description: Having internal reproductive organs of one sex and external sexual characteristics
+          of the other sex
+        meaning: PATO:0001827
+        title: pseudohermaphrodite
+
+  MaturityEnum:
+    title: Maturity
+    description: >-
+      A quality of a single physical entity held by a bearer when it exhibits a state of
+      growth, differentiation, or development. Derived from PATO maturity (PATO:0000261) child values.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      NEONATAL:
+        description: Being at the point or shortly after birth
+        meaning: PATO:0002206
+        title: neonatal
+      LARVAL:
+        description: Undergoing indirect development and metamorphosis
+        meaning: PATO:0001185
+        title: larval
+      PREPUBESCENT:
+        description: Being at the age immediately before puberty
+        meaning: PATO:0001186
+        title: prepubescent
+      PUPAL:
+        description: Being in the chrysalis (cocoon) or post-larval stage
+        meaning: PATO:0001187
+        title: pupal
+      PREPUPAL:
+        description: Being in an inactive stage between the larval and the pupal stages
+        meaning: PATO:0001188
+        title: prepupal
+      PUBESCENT:
+        description: Having arrived at the onset of puberty but not yet fully mature
+        meaning: PATO:0000455
+        title: pubescent
+      ADOLESCENT:
+        description: Being between the onset of puberty and maturity
+        meaning: PATO:0001189
+        title: adolescent
+      JUVENILE:
+        description: Not fully grown or developed
+        meaning: PATO:0001190
+        title: juvenile
+      IMMATURE:
+        description: Lacking complete growth, differentiation, or development
+        meaning: PATO:0001501
+        title: immature
+      MATURE:
+        description: Exhibiting complete growth, differentiation, or development
+        meaning: PATO:0001701
+        title: mature
+        aliases:
+        - adult
+
+  ViabilityEnum:
+    title: Viability
+    description: >-
+      An organismal quality inhering in a bearer by virtue of the bearer's disposition
+      to survive and develop normally. Derived from PATO viability (PATO:0000169) child values.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      ALIVE:
+        description: The bearer's condition before death
+        meaning: PATO:0001421
+        title: alive
+      DEAD:
+        description: The cessation of the bearer's life
+        meaning: PATO:0001422
+        title: dead
+      VIABLE:
+        description: The bearer's ability to survive or the long term survival ability of a given population
+        meaning: PATO:0000719
+        title: viable
+      LETHAL:
+        description: The bearer's long term survival inability
+        meaning: PATO:0000718
+        title: lethal (sensu genetics)
+      SEMI_VIABLE:
+        description: Some of the population members' ability to survive
+        meaning: PATO:0001770
+        title: semi-viable
+      SEMI_LETHAL:
+        description: Some of the population members' inability to survive to reproduce
+        meaning: PATO:0001768
+        title: semi-lethal (sensu genetics)
+      IMMORTAL:
+        description: Being capable of indefinite growth or division
+        meaning: PATO:0001991
+        title: immortal
+      DECAYED:
+        description: Decomposition into component parts
+        meaning: PATO:0001432
+        title: decayed
+
+  CellularityEnum:
+    title: Cellularity
+    description: >-
+      An organismal quality inhering in a bearer by virtue of the bearer's
+      consisting of cells. Derived from PATO cellularity (PATO:0001992) child values.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      UNICELLULAR:
+        description: Consisting of exactly one cell
+        meaning: PATO:0001994
+        title: unicellular
+      MULTICELLULAR:
+        description: Consisting of more than one cell
+        meaning: PATO:0001993
+        title: multicellular
+
+  SpatialPatternEnum:
+    title: Spatial Pattern
+    description: >-
+      A spatial quality inhering in a bearer by virtue of the bearer's exhibiting
+      repetition of placement of its parts. Derived from PATO spatial pattern (PATO:0000060)
+      child values.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      LOCALIZED:
+        description: Being confined or restricted to a particular location
+        meaning: PATO:0000627
+        title: localized
+      UNLOCALISED:
+        description: Not being confined or restricted to a particular location
+        meaning: PATO:0000635
+        title: unlocalised
+        aliases:
+        - diffuse
+      MULTI_LOCALISED:
+        description: Being confined or restricted to multiple locations
+        meaning: PATO:0001791
+        title: multi-localised
+      DISTRIBUTED:
+        description: Being spread out or scattered about or divided up
+        meaning: PATO:0001566
+        title: distributed
+      UNDISTRIBUTED:
+        description: Not being spread out or scattered about or divided up
+        meaning: PATO:0001567
+        title: undistributed
+      SPARSE:
+        description: Being scattered and spread irregularly at a distance from each other
+        meaning: PATO:0001609
+        title: sparse
+      UNILATERAL:
+        description: Involving only one part or side
+        meaning: PATO:0000634
+        title: unilateral
+      VERTICAL:
+        description: Being situated at right angles to the horizon
+        meaning: PATO:0001854
+        title: vertical
+      REGULAR_SPATIAL_PATTERN:
+        description: Having a repeatable or predictable placement
+        meaning: PATO:0000440
+        title: regular spatial pattern
+      IRREGULAR_SPATIAL_PATTERN:
+        description: Magnitude or relationships between repeated parts lack consistency
+        meaning: PATO:0000330
+        title: irregular spatial pattern
+      GENERALIZED:
+        description: Affecting all regions without specificity of distribution
+        meaning: PATO:0002403
+        title: generalized
+      SEGMENTAL:
+        description: Affecting a segment or segments
+        meaning: PATO:0002404
+        title: segmental
+      RANDOM_PATTERN:
+        description: Characterised by an unidentifiable pattern
+        meaning: PATO:0002401
+        title: random pattern
+      SYMMETRICAL:
+        description: Correspondence in size, shape, and relative position of parts on opposite sides
+          of a dividing line or about a center or axis
+        meaning: PATO:0000965
+        title: symmetry
