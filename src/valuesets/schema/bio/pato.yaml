@@ -21,9 +21,12 @@ slots:
   pato_shape:
     description: Shape quality of an entity
     range: ShapeEnum
-  pato_size:
-    description: Relative size quality of an entity
-    range: SizeEnum
+  pato_relative_change:
+    description: Direction of change of a quality relative to normal or baseline
+    range: RelativeChangeEnum
+  pato_intensity:
+    description: Intensity or severity of a quality
+    range: IntensityEnum
   pato_texture:
     description: Surface texture quality of an entity
     range: TextureEnum
@@ -252,11 +255,12 @@ enums:
         - coiled
         - helical
 
-  SizeEnum:
-    title: Size
+  RelativeChangeEnum:
+    title: Relative Change
     description: >-
-      A morphology quality inhering in a bearer by virtue of the bearer's physical magnitude.
-      Derived from PATO size (PATO:0000117) child values.
+      Direction of change of any quality relative to normal or baseline.
+      This is PATO's general-purpose deviation-from-normal axis (PATO:0000069)
+      that crosscuts all specific quality attributes (size, rate, amount, etc.).
     status: DRAFT
     contributors:
     - orcid:0000-0002-6601-2165
@@ -264,24 +268,82 @@ enums:
     instantiates:
     - valuesets_meta:ValueSetEnumDefinition
     permissible_values:
-      NORMAL_SIZE:
-        description: A size quality which is relatively normal or average
-        meaning: PATO:0045050
-        title: normal size
-      INCREASED_SIZE:
-        description: A size quality which is relatively high
-        meaning: PATO:0000586
-        title: increased size
+      NORMAL:
+        description: Exhibiting no deviation from normal or average
+        meaning: PATO:0000461
+        title: normal
+      ABNORMAL:
+        description: Deviating from normal or average
+        meaning: PATO:0000460
+        title: abnormal
+      INCREASED:
+        description: A value that is increased compared to normal or average
+        meaning: PATO:0002300
+        title: increased quality
         aliases:
-        - enlarged
-        - large
-      DECREASED_SIZE:
-        description: A size quality which is relatively low
-        meaning: PATO:0000587
-        title: decreased size
+        - elevated
+        - high
+      DECREASED:
+        description: A value that is decreased compared to normal or average
+        meaning: PATO:0002301
+        title: decreased quality
         aliases:
         - reduced
-        - small
+        - low
+      INCREASED_MAGNITUDE:
+        description: An increased magnitude of a quality
+        meaning: PATO:0002017
+        title: increased magnitude
+      DECREASED_MAGNITUDE:
+        description: A decreased magnitude of a quality
+        meaning: PATO:0002018
+        title: decreased magnitude
+
+  IntensityEnum:
+    title: Intensity
+    description: >-
+      A quality inhering in a bearer by virtue of the bearer's possessing or displaying
+      a distinctive feature in type or degree or effect or force. Derived from PATO
+      intensity (PATO:0000049) child values.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      BORDERLINE:
+        description: Borderline in effect or force compared to baseline or normal
+        meaning: PATO:0002628
+        title: borderline intensity
+      MILD:
+        description: Less than moderate in type or degree or effect or force
+        meaning: PATO:0000394
+        title: mild intensity
+      MODERATE:
+        description: Less than extreme in type or degree or effect or force
+        meaning: PATO:0000395
+        title: moderate intensity
+      SEVERE:
+        description: Extremely bad or unpleasant in type or degree or effect or force
+        meaning: PATO:0000396
+        title: severe intensity
+      PROFOUND:
+        description: Very severe in intensity
+        meaning: PATO:0002629
+        title: profound intensity
+      INCREASED_INTENSITY:
+        description: Intensity which is relatively high
+        meaning: PATO:0001782
+        title: increased intensity
+      DECREASED_INTENSITY:
+        description: Intensity which is relatively low
+        meaning: PATO:0001783
+        title: decreased intensity
+      REMITTENT:
+        description: Characterised by temporary abatement in severity
+        meaning: PATO:0001841
+        title: remittent intensity
 
   TextureEnum:
     title: Texture
