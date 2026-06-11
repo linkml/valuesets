@@ -101,6 +101,9 @@ enums:
       MIX:
         title: mix
         description: Homogenize a sample by pipetting, inversion, vortexing, stirring, sonication, or related agitation
+        meaning: CHMO:0001685  # mixing
+        aliases:
+        - mixing
       INCUBATE:
         title: incubate
         description: Hold a sample at controlled temperature (and optionally mixing) for a specified duration
@@ -111,12 +114,18 @@ enums:
       CENTRIFUGE:
         title: centrifuge
         description: Apply centrifugal force to a sample to separate components by density
+        meaning: OBI:0302886  # centrifugation
+        aliases:
+        - centrifugation
       PELLET:
         title: pellet
         description: Centrifuge to precipitate solids, optionally aspirate the supernatant, and optionally resuspend the pellet
       FILTER:
         title: filter
         description: Pass a sample through a filter to separate particulates or to sterilize
+        meaning: CHMO:0001640  # filtration
+        aliases:
+        - filtration
       MAGNETIC_BEAD_SEPARATION:
         title: magnetic bead separation
         description: Isolate target analytes bound to magnetic beads using a magnetic field
@@ -136,15 +145,24 @@ enums:
       DEGAS:
         title: degas
         description: Remove dissolved gases from a liquid sample
+        meaning: CHMO:0002772  # degassing
+        aliases:
+        - degassing
       DESICCATE:
         title: desiccate
         description: Remove moisture from a sample using a desiccant or controlled-humidity chamber
       EVAPORATE:
         title: evaporate
         description: Remove solvent from a sample by evaporation, optionally under reduced pressure
+        meaning: CHMO:0001574  # evaporation
+        aliases:
+        - evaporation
       LYOPHILIZE:
         title: lyophilize
         description: Freeze-dry a sample to remove solvent by sublimation under vacuum
+        meaning: CHMO:0001553  # freeze drying
+        aliases:
+        - freeze drying
       FLASH_FREEZE:
         title: flash freeze
         description: Rapidly freeze a sample, typically in liquid nitrogen
@@ -154,6 +172,9 @@ enums:
       GRIND:
         title: grind
         description: Mechanically reduce a solid sample to smaller particles or powder
+        meaning: CHMO:0001652  # grinding
+        aliases:
+        - grinding
       MICROWAVE_DIGESTION:
         title: microwave digestion
         description: Digest a sample in acid under microwave heating to bring analytes into solution
@@ -194,6 +215,9 @@ enums:
       PCR:
         title: PCR
         description: Polymerase chain reaction amplification of nucleic acids
+        meaning: OBI:0000415  # polymerase chain reaction
+        aliases:
+        - polymerase chain reaction
       BIOCONJUGATION:
         title: bioconjugation
         description: Covalent coupling of biomolecules or labels to a target molecule
@@ -201,18 +225,24 @@ enums:
       HPLC:
         title: HPLC
         description: High-performance liquid chromatography separation
+        meaning: CHMO:0001009  # high-performance liquid chromatography
+        aliases:
+        - high-performance liquid chromatography
       FPLC:
         title: FPLC
         description: Fast protein liquid chromatography separation
       FLASH_CHROMATOGRAPHY:
         title: flash chromatography
         description: Medium-pressure flash column chromatography separation
+        meaning: CHMO:0002582  # flash chromatography
       GAS_CHROMATOGRAPHY:
         title: gas chromatography
         description: Gas chromatography separation of volatile analytes
+        meaning: CHMO:0001002  # gas chromatography
       ION_CHROMATOGRAPHY:
         title: ion chromatography
         description: Chromatographic separation of ionic species
+        meaning: CHMO:0002874  # ion chromatography
       SUPERCRITICAL_FLUID_CHROMATOGRAPHY:
         title: supercritical fluid chromatography
         description: Chromatographic separation using a supercritical fluid mobile phase
@@ -222,34 +252,52 @@ enums:
       LIQUID_LIQUID_EXTRACTION:
         title: liquid-liquid extraction
         description: Separation of analytes between two immiscible liquid phases
+        meaning: CHMO:0001600  # liquid–liquid extraction
+        aliases:
+        - liquid–liquid extraction
       CROSS_FLOW_FILTRATION:
         title: cross-flow filtration
         description: Tangential-flow filtration for concentration or buffer exchange
       DIALYSIS:
         title: dialysis
         description: Separation of molecules by size across a semipermeable membrane
+        meaning: CHMO:0001522  # dialysis
       AGAROSE_GEL_ELECTROPHORESIS:
         title: agarose gel electrophoresis
         description: Size-based separation of nucleic acids in an agarose gel
+        meaning: CHMO:0001022  # agarose gel electrophoresis
       PAGE:
         title: PAGE
         description: Polyacrylamide gel electrophoresis separation of biomolecules
+        meaning: CHMO:0001023  # polyacrylamide gel electrophoresis
+        aliases:
+        - polyacrylamide gel electrophoresis
       CAPILLARY_GEL_ELECTROPHORESIS_SDS:
         title: capillary gel electrophoresis SDS
         description: SDS capillary gel electrophoresis sizing of proteins
       CAPILLARY_ISOELECTRIC_FOCUSING:
         title: capillary isoelectric focusing
         description: Separation of proteins by isoelectric point in a capillary
+        meaning: CHMO:0001033  # capillary isoelectric focusing
       WESTERN_BLOT:
         title: Western blot
         description: Immunodetection of proteins separated by electrophoresis
+        meaning: OBI:0000854  # western blot assay
+        aliases:
+        - western blot assay
       # --- Spectroscopy ---
       NMR:
         title: NMR
         description: One-dimensional nuclear magnetic resonance spectroscopy
+        meaning: CHMO:0000591  # nuclear magnetic resonance spectroscopy
+        aliases:
+        - nuclear magnetic resonance spectroscopy
       NMR_2D:
         title: 2D NMR
         description: Two-dimensional nuclear magnetic resonance spectroscopy
+        meaning: CHMO:0000598  # two-dimensional nuclear magnetic resonance spectroscopy
+        aliases:
+        - two-dimensional nuclear magnetic resonance spectroscopy
       ABSORBANCE_SPECTROSCOPY:
         title: absorbance spectroscopy
         description: Measurement of absorbance across a wavelength range
@@ -262,6 +310,7 @@ enums:
       FLUORESCENCE_SPECTROSCOPY:
         title: fluorescence spectroscopy
         description: Measurement of fluorescence emission across a wavelength range
+        meaning: CHMO:0000287  # fluorescence spectroscopy
       FLUORESCENCE_INTENSITY:
         title: fluorescence intensity
         description: Measurement of fluorescence intensity at discrete wavelengths
@@ -274,6 +323,7 @@ enums:
       LUMINESCENCE_SPECTROSCOPY:
         title: luminescence spectroscopy
         description: Measurement of luminescence emission across a wavelength range
+        meaning: CHMO:0002415  # luminescence spectroscopy
       LUMINESCENCE_INTENSITY:
         title: luminescence intensity
         description: Measurement of luminescence intensity at discrete wavelengths
@@ -283,15 +333,20 @@ enums:
       IR_SPECTROSCOPY:
         title: IR spectroscopy
         description: Infrared absorption spectroscopy
+        meaning: CHMO:0000630  # infrared absorption spectroscopy
+        aliases:
+        - infrared absorption spectroscopy
       RAMAN_SPECTROSCOPY:
         title: Raman spectroscopy
         description: Raman scattering spectroscopy
+        meaning: CHMO:0000656  # Raman spectroscopy
       CIRCULAR_DICHROISM:
         title: circular dichroism
         description: Measurement of differential absorption of circularly polarized light
       DYNAMIC_LIGHT_SCATTERING:
         title: dynamic light scattering
         description: Measurement of particle size distribution from scattered-light fluctuations
+        meaning: CHMO:0000167  # dynamic light scattering
       NEPHELOMETRY:
         title: nephelometry
         description: Measurement of turbidity by scattered light
@@ -305,19 +360,32 @@ enums:
       MASS_SPECTROMETRY:
         title: mass spectrometry
         description: Determination of mass-to-charge ratios of ionized analytes
+        meaning: CHMO:0000470  # mass spectrometry
       LCMS:
         title: LC-MS
         description: Liquid chromatography coupled to mass spectrometry
+        meaning: CHMO:0000524  # liquid chromatography-mass spectrometry
+        aliases:
+        - liquid chromatography-mass spectrometry
       GCMS:
         title: GC-MS
         description: Gas chromatography coupled to mass spectrometry
+        meaning: CHMO:0000497  # gas chromatography-mass spectrometry
+        aliases:
+        - gas chromatography-mass spectrometry
       ICPMS:
         title: ICP-MS
         description: Inductively coupled plasma mass spectrometry for elemental analysis
+        meaning: CHMO:0000538  # inductively coupled plasma mass spectrometry
+        aliases:
+        - inductively coupled plasma mass spectrometry
       # --- Bioassays / immunoassays ---
       ELISA:
         title: ELISA
         description: Enzyme-linked immunosorbent assay
+        meaning: OBI:0000661  # enzyme-linked immunosorbent assay
+        aliases:
+        - enzyme-linked immunosorbent assay
       CAPILLARY_ELISA:
         title: capillary ELISA
         description: Automated capillary-based enzyme-linked immunosorbent assay
@@ -327,12 +395,21 @@ enums:
       BIOLAYER_INTERFEROMETRY:
         title: biolayer interferometry
         description: Label-free measurement of biomolecular binding kinetics by interferometry
+        meaning: OBI:0002107  # bio-layer interferometry assay
+        aliases:
+        - bio-layer interferometry assay
       QPCR:
         title: qPCR
         description: Quantitative real-time polymerase chain reaction
+        meaning: OBI:0000893  # real time polymerase chain reaction assay
+        aliases:
+        - real time polymerase chain reaction assay
       DNA_SEQUENCING:
         title: DNA sequencing
         description: Determination of nucleotide sequence of DNA (Sanger/capillary)
+        meaning: OBI:0000626  # DNA sequencing assay
+        aliases:
+        - DNA sequencing assay
       TOTAL_PROTEIN_QUANTIFICATION:
         title: total protein quantification
         description: Colorimetric or fluorometric quantification of total protein
@@ -342,13 +419,20 @@ enums:
       DIFFERENTIAL_SCANNING_CALORIMETRY:
         title: differential scanning calorimetry
         description: Measurement of heat flow associated with thermal transitions
+        meaning: CHMO:0000684  # differential scanning calorimetry
       # --- Crystallography / solid-state ---
       GROW_CRYSTAL:
         title: grow crystal
         description: Crystallization of a compound or macromolecule for structural analysis
+        meaning: CHMO:0001477  # crystallisation
+        aliases:
+        - crystallisation
       POWDER_XRD:
         title: powder XRD
         description: Powder X-ray diffraction analysis of crystalline solids
+        meaning: CHMO:0000158  # powder X-ray diffraction
+        aliases:
+        - powder X-ray diffraction
       # --- Physical property measurement ---
       MEASURE_PH:
         title: measure pH
@@ -398,9 +482,13 @@ enums:
       CYCLIC_VOLTAMMETRY:
         title: cyclic voltammetry
         description: Electrochemical measurement of current versus swept potential
+        meaning: CHMO:0000025  # cyclic voltammetry
       KARL_FISCHER_TITRATION:
         title: Karl Fischer titration
         description: Titrimetric determination of water content
+        meaning: CHMO:0002535  # Karl–Fischer titration
+        aliases:
+        - Karl–Fischer titration
       DISSOLUTION:
         title: dissolution
         description: Measurement of the rate and extent of dissolution of a solid
