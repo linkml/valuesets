@@ -20,6 +20,7 @@ imports:
 - bio/genome_features
 - bio/bio_entities
 - bio/structural_biology
+- bio/protein_structure_features
 - bio/biosafety
 - bio/insdc_missing_values
 - bio/insdc_geographic_locations
@@ -60,6 +61,7 @@ imports:
 - data/data_use
 - computing/mime_types
 - computing/quantum
+- computing/frontier_ai_models
 - computing/microelectronics
 - computing/data_centers
 - physics/states_of_matter
@@ -134,6 +136,7 @@ imports:
 - analytical_chemistry/mass_spectrometry
 - lab_automation/devices
 - lab_automation/operations
+- lab_automation/cloud_lab
 - lab_automation/labware
 - lab_automation/protocols
 - lab_automation/standards
@@ -149,6 +152,7 @@ imports:
 - data_catalog/contributor_roles
 - data_catalog/access
 - linkml:types
+- core
 - core
 - core
 - core
@@ -5019,6 +5023,312 @@ enums:
         description: Crosslinking modification
         meaning: MOD:00033
         title: crosslinked residues
+  SecondaryStructureType:
+    name: SecondaryStructureType
+    definition_uri: https://w3id.org/valuesets/SecondaryStructureType
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Per-residue secondary structure assignment. The permissible values
+      correspond to the canonical DSSP 8-state (SS8) classification, which is also
+      the secondary-structure track vocabulary used by protein language models such
+      as ESM3. The single-letter DSSP code is recorded in the ``dssp_code`` annotation.
+    title: Secondary Structure Type
+    from_schema: https://w3id.org/valuesets/bio/protein_structure_features
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      ALPHA_HELIX:
+        text: ALPHA_HELIX
+        description: Right-handed alpha helix (3.6 residues/turn, i to i+4 hydrogen
+          bonding)
+        meaning: SO:0001117
+        annotations:
+          dssp_code:
+            tag: dssp_code
+            value: H
+          ss8_class:
+            tag: ss8_class
+            value: H
+        title: alpha helix
+        broad_mappings:
+        - uniprot_core:Helix_Annotation
+      THREE_TEN_HELIX:
+        text: THREE_TEN_HELIX
+        description: 3-10 helix (3 residues/turn, i to i+3 hydrogen bonding)
+        meaning: SO:0001119
+        annotations:
+          dssp_code:
+            tag: dssp_code
+            value: G
+          ss8_class:
+            tag: ss8_class
+            value: G
+        title: 3-10 helix
+        broad_mappings:
+        - uniprot_core:Helix_Annotation
+      PI_HELIX:
+        text: PI_HELIX
+        description: Pi helix (4.1 residues/turn, i to i+5 hydrogen bonding)
+        meaning: SO:0001118
+        annotations:
+          dssp_code:
+            tag: dssp_code
+            value: I
+          ss8_class:
+            tag: ss8_class
+            value: I
+        title: pi helix
+        broad_mappings:
+        - uniprot_core:Helix_Annotation
+      BETA_STRAND:
+        text: BETA_STRAND
+        description: Extended beta strand participating in a beta sheet
+        meaning: SO:0001111
+        annotations:
+          dssp_code:
+            tag: dssp_code
+            value: E
+          ss8_class:
+            tag: ss8_class
+            value: E
+        title: beta strand
+        broad_mappings:
+        - uniprot_core:Beta_Strand_Annotation
+      BETA_BRIDGE:
+        text: BETA_BRIDGE
+        description: Residue in an isolated single-pair beta bridge
+        annotations:
+          dssp_code:
+            tag: dssp_code
+            value: B
+          ss8_class:
+            tag: ss8_class
+            value: B
+          ontology_gap:
+            tag: ontology_gap
+            value: 'true'
+        title: isolated beta bridge
+        broad_mappings:
+        - uniprot_core:Beta_Strand_Annotation
+      TURN:
+        text: TURN
+        description: Hydrogen-bonded turn reversing backbone direction over <=4 residues
+        meaning: SO:0001128
+        annotations:
+          dssp_code:
+            tag: dssp_code
+            value: T
+          ss8_class:
+            tag: ss8_class
+            value: T
+        title: hydrogen-bonded turn
+        exact_mappings:
+        - uniprot_core:Turn_Annotation
+      BEND:
+        text: BEND
+        description: Region of high backbone curvature without regular hydrogen bonding
+        annotations:
+          dssp_code:
+            tag: dssp_code
+            value: S
+          ss8_class:
+            tag: ss8_class
+            value: S
+          ontology_gap:
+            tag: ontology_gap
+            value: 'true'
+        title: bend
+      COIL:
+        text: COIL
+        description: Irregular, unstructured backbone region (loop / random coil)
+        meaning: SO:0100012
+        annotations:
+          dssp_code:
+            tag: dssp_code
+            value: C
+          ss8_class:
+            tag: ss8_class
+            value: C
+          aliases:
+            tag: aliases
+            value: loop, random coil, blank
+        title: coil / loop
+  LocalStructuralFeature:
+    name: LocalStructuralFeature
+    definition_uri: https://w3id.org/valuesets/LocalStructuralFeature
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Fine-grained local three-dimensional features of protein structures,
+      spanning super-secondary structural motifs, functional sites, and local geometric
+      surface features. This is the curated, ontology-mapped analogue of the learned
+      per-residue feature vocabularies produced by protein language models and their
+      sparse-autoencoder interpretations. Members marked with the ``ontology_gap``
+      annotation have no suitable OBO term and are candidates for new ontology terms.
+    title: Local Structural Feature
+    from_schema: https://w3id.org/valuesets/bio/protein_structure_features
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      POLYPEPTIDE_STRUCTURAL_MOTIF:
+        text: POLYPEPTIDE_STRUCTURAL_MOTIF
+        description: A recurring 3D structural element within the chain that does
+          not form a stable globular unit (the general parent class for local motifs)
+        meaning: SO:0001079
+        title: polypeptide structural motif
+      BETA_HAIRPIN:
+        text: BETA_HAIRPIN
+        description: Two adjacent antiparallel beta strands connected by a short loop
+          or turn
+        annotations:
+          ontology_gap:
+            tag: ontology_gap
+            value: 'true'
+        title: beta hairpin
+      BETA_BULGE:
+        text: BETA_BULGE
+        description: A local disruption of beta-sheet hydrogen bonding across three
+          residues
+        meaning: SO:0001107
+        title: beta bulge
+      ASX_MOTIF:
+        text: ASX_MOTIF
+        description: A five-residue motif nucleated by an Asp/Asn side chain (Asx)
+        meaning: SO:0001106
+        title: asx motif
+      NEST:
+        text: NEST
+        description: A motif of two consecutive residues forming an anion-binding
+          concavity
+        meaning: SO:0001120
+        title: polypeptide nest motif
+      COILED_COIL:
+        text: COILED_COIL
+        description: Two or more alpha helices wound together like strands of a rope
+        meaning: SO:0001080
+        title: coiled coil
+        exact_mappings:
+        - uniprot_core:Coiled_Coil_Annotation
+      HELIX_CAP:
+        text: HELIX_CAP
+        description: N-cap or C-cap residue terminating an alpha helix
+        annotations:
+          ontology_gap:
+            tag: ontology_gap
+            value: 'true'
+        title: helix cap
+      CATALYTIC_RESIDUE:
+        text: CATALYTIC_RESIDUE
+        description: An amino acid residue directly involved in enzyme catalysis (active
+          site)
+        meaning: SO:0001104
+        title: catalytic residue
+        related_mappings:
+        - uniprot_core:Active_Site_Annotation
+      PROTEIN_BINDING_SITE:
+        text: PROTEIN_BINDING_SITE
+        description: A site that interacts selectively and non-covalently with polypeptide
+          molecules
+        meaning: SO:0000410
+        title: protein binding site
+        broad_mappings:
+        - uniprot_core:Binding_Site_Annotation
+      DISULFIDE_BOND:
+        text: DISULFIDE_BOND
+        description: A covalent S-S bond between two cysteine residues
+        annotations:
+          obo_gap:
+            tag: obo_gap
+            value: 'true'
+        title: disulfide bond
+        exact_mappings:
+        - uniprot_core:Disulfide_Bond_Annotation
+      METAL_BINDING_SITE:
+        text: METAL_BINDING_SITE
+        description: A local site coordinating one or more metal ions
+        annotations:
+          obo_gap:
+            tag: obo_gap
+            value: 'true'
+        title: metal binding site
+        broad_mappings:
+        - uniprot_core:Binding_Site_Annotation
+      POCKET:
+        text: POCKET
+        description: A concave, solvent-accessible surface depression that can accommodate
+          a ligand
+        annotations:
+          ontology_gap:
+            tag: ontology_gap
+            value: 'true'
+          related_edam:
+            tag: related_edam
+            value: EDAM:data_1542
+        title: binding pocket
+      CLEFT:
+        text: CLEFT
+        description: An elongated surface groove between structural elements or domains
+        annotations:
+          ontology_gap:
+            tag: ontology_gap
+            value: 'true'
+        title: cleft
+      CAVITY:
+        text: CAVITY
+        description: An enclosed, solvent-inaccessible internal void within the structure
+        annotations:
+          ontology_gap:
+            tag: ontology_gap
+            value: 'true'
+          related_edam:
+            tag: related_edam
+            value: EDAM:data_1542
+        title: interior cavity
+      TUNNEL:
+        text: TUNNEL
+        description: An elongated, often buried, passage through the structure connecting
+          two regions
+        annotations:
+          ontology_gap:
+            tag: ontology_gap
+            value: 'true'
+        title: tunnel / channel
+      GROOVE:
+        text: GROOVE
+        description: A surface channel, e.g. a nucleic-acid-binding groove
+        annotations:
+          ontology_gap:
+            tag: ontology_gap
+            value: 'true'
+        title: groove
+      ELBOW:
+        text: ELBOW
+        description: A localized bend or hinge between two structural elements or
+          domains
+        annotations:
+          ontology_gap:
+            tag: ontology_gap
+            value: 'true'
+        title: elbow / hinge
+      KINK:
+        text: KINK
+        description: A localized bend interrupting the regular geometry of a helix
+        annotations:
+          ontology_gap:
+            tag: ontology_gap
+            value: 'true'
+        title: helix kink
+      INTERFACE:
+        text: INTERFACE
+        description: A surface patch mediating contact with another chain or molecule
+        annotations:
+          ontology_gap:
+            tag: ontology_gap
+            value: 'true'
+        title: interaction interface
   BiosafetyLevelEnum:
     name: BiosafetyLevelEnum
     definition_uri: https://w3id.org/valuesets/BiosafetyLevelEnum
@@ -23275,6 +23585,967 @@ enums:
         text: VARIATIONAL
         description: Hybrid quantum-classical variational algorithms for near-term
           quantum devices
+  FrontierModelEnum:
+    name: FrontierModelEnum
+    definition_uri: https://w3id.org/valuesets/FrontierModelEnum
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: 'Hierarchical enumeration of frontier AI models. The hierarchy has
+      three tiers: developer (e.g. ANTHROPIC), model family (e.g. CLAUDE_OPUS), and
+      specific model release identified by its canonical API model id (e.g. claude-opus-4-8).
+      Intermediate developer and family nodes are uppercase categorical values; leaf
+      nodes are the verbatim API identifiers.'
+    title: Frontier AI Model
+    from_schema: https://w3id.org/valuesets/computing/frontier_ai_models
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      ANTHROPIC:
+        text: ANTHROPIC
+        description: Models developed by Anthropic (the Claude family)
+        annotations:
+          node_type:
+            tag: node_type
+            value: developer
+          homepage:
+            tag: homepage
+            value: https://www.anthropic.com
+        see_also:
+        - https://docs.claude.com/en/docs/about-claude/models/overview
+      CLAUDE_OPUS:
+        text: CLAUDE_OPUS
+        description: Claude Opus - Anthropic's most capable Opus-tier model family
+        is_a: ANTHROPIC
+        annotations:
+          node_type:
+            tag: node_type
+            value: family
+          tier:
+            tag: tier
+            value: most capable
+      claude-opus-4-8:
+        text: claude-opus-4-8
+        description: Claude Opus 4.8 - Anthropic's most capable Opus-tier model; highly
+          autonomous, state-of-the-art on long-horizon agentic work, knowledge work,
+          and memory. Adaptive thinking only.
+        is_a: CLAUDE_OPUS
+        annotations:
+          node_type:
+            tag: node_type
+            value: model
+          api_model_id:
+            tag: api_model_id
+            value: claude-opus-4-8
+          developer:
+            tag: developer
+            value: Anthropic
+          context_window:
+            tag: context_window
+            value: 1000000
+          max_output_tokens:
+            tag: max_output_tokens
+            value: 128000
+          input_usd_per_mtok:
+            tag: input_usd_per_mtok
+            value: 5.0
+          output_usd_per_mtok:
+            tag: output_usd_per_mtok
+            value: 25.0
+        title: Claude Opus 4.8
+        see_also:
+        - https://docs.claude.com/en/docs/about-claude/models/overview
+        aliases:
+        - Opus 4.8
+        - opus
+      claude-opus-4-7:
+        text: claude-opus-4-7
+        description: Claude Opus 4.7 - previous-generation Opus; highly autonomous,
+          strong on long-horizon agentic work, vision, and memory. Adaptive thinking
+          only.
+        is_a: CLAUDE_OPUS
+        annotations:
+          node_type:
+            tag: node_type
+            value: model
+          api_model_id:
+            tag: api_model_id
+            value: claude-opus-4-7
+          developer:
+            tag: developer
+            value: Anthropic
+          context_window:
+            tag: context_window
+            value: 1000000
+          max_output_tokens:
+            tag: max_output_tokens
+            value: 128000
+        title: Claude Opus 4.7
+        aliases:
+        - Opus 4.7
+      claude-opus-4-6:
+        text: claude-opus-4-6
+        description: Claude Opus 4.6 - older Opus model supporting adaptive thinking
+          and 128K max output tokens.
+        is_a: CLAUDE_OPUS
+        annotations:
+          node_type:
+            tag: node_type
+            value: model
+          api_model_id:
+            tag: api_model_id
+            value: claude-opus-4-6
+          developer:
+            tag: developer
+            value: Anthropic
+          context_window:
+            tag: context_window
+            value: 1000000
+          max_output_tokens:
+            tag: max_output_tokens
+            value: 128000
+        title: Claude Opus 4.6
+        aliases:
+        - Opus 4.6
+      claude-opus-4-5:
+        text: claude-opus-4-5
+        description: Claude Opus 4.5 - legacy Opus model (still active).
+        is_a: CLAUDE_OPUS
+        annotations:
+          node_type:
+            tag: node_type
+            value: model
+          api_model_id:
+            tag: api_model_id
+            value: claude-opus-4-5
+          full_model_id:
+            tag: full_model_id
+            value: claude-opus-4-5-20251101
+          developer:
+            tag: developer
+            value: Anthropic
+        title: Claude Opus 4.5
+        aliases:
+        - Opus 4.5
+      CLAUDE_SONNET:
+        text: CLAUDE_SONNET
+        description: Claude Sonnet - Anthropic's balanced speed / intelligence family
+        is_a: ANTHROPIC
+        annotations:
+          node_type:
+            tag: node_type
+            value: family
+          tier:
+            tag: tier
+            value: balanced
+      claude-sonnet-4-6:
+        text: claude-sonnet-4-6
+        description: Claude Sonnet 4.6 - Anthropic's best combination of speed and
+          intelligence. Supports adaptive thinking.
+        is_a: CLAUDE_SONNET
+        annotations:
+          node_type:
+            tag: node_type
+            value: model
+          api_model_id:
+            tag: api_model_id
+            value: claude-sonnet-4-6
+          developer:
+            tag: developer
+            value: Anthropic
+          context_window:
+            tag: context_window
+            value: 1000000
+          max_output_tokens:
+            tag: max_output_tokens
+            value: 64000
+          input_usd_per_mtok:
+            tag: input_usd_per_mtok
+            value: 3.0
+          output_usd_per_mtok:
+            tag: output_usd_per_mtok
+            value: 15.0
+        title: Claude Sonnet 4.6
+        aliases:
+        - Sonnet 4.6
+        - sonnet
+      claude-sonnet-4-5:
+        text: claude-sonnet-4-5
+        description: Claude Sonnet 4.5 - legacy Sonnet model (still active).
+        is_a: CLAUDE_SONNET
+        annotations:
+          node_type:
+            tag: node_type
+            value: model
+          api_model_id:
+            tag: api_model_id
+            value: claude-sonnet-4-5
+          full_model_id:
+            tag: full_model_id
+            value: claude-sonnet-4-5-20250929
+          developer:
+            tag: developer
+            value: Anthropic
+        title: Claude Sonnet 4.5
+        aliases:
+        - Sonnet 4.5
+      CLAUDE_HAIKU:
+        text: CLAUDE_HAIKU
+        description: Claude Haiku - Anthropic's fastest and most cost-effective family
+        is_a: ANTHROPIC
+        annotations:
+          node_type:
+            tag: node_type
+            value: family
+          tier:
+            tag: tier
+            value: fast
+      claude-haiku-4-5:
+        text: claude-haiku-4-5
+        description: Claude Haiku 4.5 - Anthropic's fastest and most cost-effective
+          model for simple, latency-sensitive tasks.
+        is_a: CLAUDE_HAIKU
+        annotations:
+          node_type:
+            tag: node_type
+            value: model
+          api_model_id:
+            tag: api_model_id
+            value: claude-haiku-4-5
+          full_model_id:
+            tag: full_model_id
+            value: claude-haiku-4-5-20251001
+          developer:
+            tag: developer
+            value: Anthropic
+          context_window:
+            tag: context_window
+            value: 200000
+          max_output_tokens:
+            tag: max_output_tokens
+            value: 64000
+          input_usd_per_mtok:
+            tag: input_usd_per_mtok
+            value: 1.0
+          output_usd_per_mtok:
+            tag: output_usd_per_mtok
+            value: 5.0
+        title: Claude Haiku 4.5
+        aliases:
+        - Haiku 4.5
+        - haiku
+      CLAUDE_FABLE:
+        text: CLAUDE_FABLE
+        description: Claude Fable - Anthropic's most capable widely released model
+          family, for the most demanding reasoning and long-horizon agentic work.
+        is_a: ANTHROPIC
+        annotations:
+          node_type:
+            tag: node_type
+            value: family
+          tier:
+            tag: tier
+            value: frontier
+      claude-fable-5:
+        text: claude-fable-5
+        description: Claude Fable 5 - Anthropic's most capable widely released model.
+          Thinking is always on; raw chain of thought is never returned. Requires
+          30-day data retention.
+        is_a: CLAUDE_FABLE
+        annotations:
+          node_type:
+            tag: node_type
+            value: model
+          api_model_id:
+            tag: api_model_id
+            value: claude-fable-5
+          developer:
+            tag: developer
+            value: Anthropic
+          context_window:
+            tag: context_window
+            value: 1000000
+          max_output_tokens:
+            tag: max_output_tokens
+            value: 128000
+          input_usd_per_mtok:
+            tag: input_usd_per_mtok
+            value: 10.0
+          output_usd_per_mtok:
+            tag: output_usd_per_mtok
+            value: 50.0
+        title: Claude Fable 5
+        aliases:
+        - Fable 5
+        - fable
+      CLAUDE_MYTHOS:
+        text: CLAUDE_MYTHOS
+        description: Claude Mythos - same capabilities and API behavior as Claude
+          Fable, available exclusively through Project Glasswing.
+        is_a: ANTHROPIC
+        annotations:
+          node_type:
+            tag: node_type
+            value: family
+          tier:
+            tag: tier
+            value: frontier
+          availability:
+            tag: availability
+            value: Project Glasswing only
+      claude-mythos-5:
+        text: claude-mythos-5
+        description: Claude Mythos 5 - same capabilities, pricing, limits, and API
+          behavior as Claude Fable 5; available only through Project Glasswing.
+        is_a: CLAUDE_MYTHOS
+        annotations:
+          node_type:
+            tag: node_type
+            value: model
+          api_model_id:
+            tag: api_model_id
+            value: claude-mythos-5
+          developer:
+            tag: developer
+            value: Anthropic
+          context_window:
+            tag: context_window
+            value: 1000000
+          max_output_tokens:
+            tag: max_output_tokens
+            value: 128000
+        title: Claude Mythos 5
+        aliases:
+        - Mythos 5
+      OPENAI:
+        text: OPENAI
+        description: Models developed by OpenAI (the GPT family)
+        annotations:
+          node_type:
+            tag: node_type
+            value: developer
+          homepage:
+            tag: homepage
+            value: https://openai.com
+        see_also:
+        - https://developers.openai.com/api/docs/models
+      GPT_5:
+        text: GPT_5
+        description: GPT-5 - OpenAI's frontier model family for coding and professional
+          work
+        is_a: OPENAI
+        annotations:
+          node_type:
+            tag: node_type
+            value: family
+          tier:
+            tag: tier
+            value: frontier
+      gpt-5.5:
+        text: gpt-5.5
+        description: GPT-5.5 - OpenAI's newest frontier model, "a new class of intelligence
+          for coding and professional work".
+        is_a: GPT_5
+        annotations:
+          node_type:
+            tag: node_type
+            value: model
+          api_model_id:
+            tag: api_model_id
+            value: gpt-5.5
+          developer:
+            tag: developer
+            value: OpenAI
+          training_cutoff:
+            tag: training_cutoff
+            value: '2025-12-01'
+          context_window:
+            tag: context_window
+            value: 1000000
+        title: GPT-5.5
+        see_also:
+        - https://developers.openai.com/api/docs/models/gpt-5.5
+        aliases:
+        - GPT-5.5
+      gpt-5.4:
+        text: gpt-5.4
+        description: GPT-5.4 - a more affordable model for coding and professional
+          work.
+        is_a: GPT_5
+        annotations:
+          node_type:
+            tag: node_type
+            value: model
+          api_model_id:
+            tag: api_model_id
+            value: gpt-5.4
+          developer:
+            tag: developer
+            value: OpenAI
+          training_cutoff:
+            tag: training_cutoff
+            value: '2025-08-31'
+          context_window:
+            tag: context_window
+            value: 1000000
+        title: GPT-5.4
+        aliases:
+        - GPT-5.4
+      gpt-5.4-mini:
+        text: gpt-5.4-mini
+        description: GPT-5.4 mini - OpenAI's strongest mini model for coding, computer
+          use, and subagents; lower latency and cost.
+        is_a: GPT_5
+        annotations:
+          node_type:
+            tag: node_type
+            value: model
+          api_model_id:
+            tag: api_model_id
+            value: gpt-5.4-mini
+          developer:
+            tag: developer
+            value: OpenAI
+          training_cutoff:
+            tag: training_cutoff
+            value: '2025-08-31'
+          context_window:
+            tag: context_window
+            value: 400000
+        title: GPT-5.4 mini
+        aliases:
+        - GPT-5.4 mini
+      gpt-5.2:
+        text: gpt-5.2
+        description: GPT-5.2 - previous frontier model for complex professional work.
+        is_a: GPT_5
+        annotations:
+          node_type:
+            tag: node_type
+            value: model
+          api_model_id:
+            tag: api_model_id
+            value: gpt-5.2
+          developer:
+            tag: developer
+            value: OpenAI
+        title: GPT-5.2
+        aliases:
+        - GPT-5.2
+      gpt-5.2-codex:
+        text: gpt-5.2-codex
+        description: GPT-5.2-Codex - coding-specialized variant for API-authenticated
+          Codex workflows.
+        is_a: GPT_5
+        annotations:
+          node_type:
+            tag: node_type
+            value: model
+          api_model_id:
+            tag: api_model_id
+            value: gpt-5.2-codex
+          developer:
+            tag: developer
+            value: OpenAI
+          specialization:
+            tag: specialization
+            value: coding
+        title: GPT-5.2-Codex
+        aliases:
+        - GPT-5.2 Codex
+      GOOGLE:
+        text: GOOGLE
+        description: Models developed by Google DeepMind (the Gemini family)
+        annotations:
+          node_type:
+            tag: node_type
+            value: developer
+          homepage:
+            tag: homepage
+            value: https://deepmind.google
+        see_also:
+        - https://ai.google.dev/gemini-api/docs/models
+      GEMINI_3:
+        text: GEMINI_3
+        description: Gemini 3 - Google's latest generation multimodal model family
+        is_a: GOOGLE
+        annotations:
+          node_type:
+            tag: node_type
+            value: family
+          tier:
+            tag: tier
+            value: frontier
+      gemini-3.5-flash:
+        text: gemini-3.5-flash
+        description: Gemini 3.5 Flash - Google's most intelligent model for agentic
+          and coding tasks, delivering near-Pro intelligence at Flash-tier speed and
+          cost.
+        is_a: GEMINI_3
+        annotations:
+          node_type:
+            tag: node_type
+            value: model
+          api_model_id:
+            tag: api_model_id
+            value: gemini-3.5-flash
+          developer:
+            tag: developer
+            value: Google DeepMind
+          release_date:
+            tag: release_date
+            value: '2026-05-19'
+          context_window:
+            tag: context_window
+            value: 1000000
+        title: Gemini 3.5 Flash
+        aliases:
+        - Gemini 3.5 Flash
+      gemini-3.1-pro-preview:
+        text: gemini-3.1-pro-preview
+        description: Gemini 3.1 Pro - reasoning-first model optimized for complex
+          agentic workflows and coding, with adaptive thinking and integrated grounding.
+        is_a: GEMINI_3
+        annotations:
+          node_type:
+            tag: node_type
+            value: model
+          api_model_id:
+            tag: api_model_id
+            value: gemini-3.1-pro-preview
+          developer:
+            tag: developer
+            value: Google DeepMind
+          context_window:
+            tag: context_window
+            value: 1000000
+        title: Gemini 3.1 Pro
+        aliases:
+        - Gemini 3.1 Pro
+      gemini-3-flash-preview:
+        text: gemini-3-flash-preview
+        description: Gemini 3 Flash - frontier-class performance at reduced cost.
+        is_a: GEMINI_3
+        annotations:
+          node_type:
+            tag: node_type
+            value: model
+          api_model_id:
+            tag: api_model_id
+            value: gemini-3-flash-preview
+          developer:
+            tag: developer
+            value: Google DeepMind
+        title: Gemini 3 Flash
+        aliases:
+        - Gemini 3 Flash
+      gemini-3.1-flash-lite:
+        text: gemini-3.1-flash-lite
+        description: Gemini 3.1 Flash-Lite - most cost-efficient Gemini model, optimized
+          for low latency and high-volume traffic.
+        is_a: GEMINI_3
+        annotations:
+          node_type:
+            tag: node_type
+            value: model
+          api_model_id:
+            tag: api_model_id
+            value: gemini-3.1-flash-lite
+          developer:
+            tag: developer
+            value: Google DeepMind
+        title: Gemini 3.1 Flash-Lite
+        aliases:
+        - Gemini 3.1 Flash-Lite
+      GEMINI_2_5:
+        text: GEMINI_2_5
+        description: Gemini 2.5 - Google's previous-generation multimodal model family
+        is_a: GOOGLE
+        annotations:
+          node_type:
+            tag: node_type
+            value: family
+      gemini-2.5-pro:
+        text: gemini-2.5-pro
+        description: Gemini 2.5 Pro - high-capability model for complex reasoning
+          and coding with adaptive thinking and a 1M token context.
+        is_a: GEMINI_2_5
+        annotations:
+          node_type:
+            tag: node_type
+            value: model
+          api_model_id:
+            tag: api_model_id
+            value: gemini-2.5-pro
+          developer:
+            tag: developer
+            value: Google DeepMind
+          context_window:
+            tag: context_window
+            value: 1000000
+        title: Gemini 2.5 Pro
+        aliases:
+        - Gemini 2.5 Pro
+      gemini-2.5-flash:
+        text: gemini-2.5-flash
+        description: Gemini 2.5 Flash - best price-performance for reasoning tasks.
+        is_a: GEMINI_2_5
+        annotations:
+          node_type:
+            tag: node_type
+            value: model
+          api_model_id:
+            tag: api_model_id
+            value: gemini-2.5-flash
+          developer:
+            tag: developer
+            value: Google DeepMind
+        title: Gemini 2.5 Flash
+        aliases:
+        - Gemini 2.5 Flash
+      gemini-2.5-flash-lite:
+        text: gemini-2.5-flash-lite
+        description: Gemini 2.5 Flash-Lite - fastest and most budget-friendly option.
+        is_a: GEMINI_2_5
+        annotations:
+          node_type:
+            tag: node_type
+            value: model
+          api_model_id:
+            tag: api_model_id
+            value: gemini-2.5-flash-lite
+          developer:
+            tag: developer
+            value: Google DeepMind
+        title: Gemini 2.5 Flash-Lite
+        aliases:
+        - Gemini 2.5 Flash-Lite
+      XAI:
+        text: XAI
+        description: Models developed by xAI (the Grok family)
+        annotations:
+          node_type:
+            tag: node_type
+            value: developer
+          homepage:
+            tag: homepage
+            value: https://x.ai
+        see_also:
+        - https://docs.x.ai/developers/models
+      GROK_4:
+        text: GROK_4
+        description: Grok 4 - xAI's reasoning-first flagship model family
+        is_a: XAI
+        annotations:
+          node_type:
+            tag: node_type
+            value: family
+          tier:
+            tag: tier
+            value: frontier
+      grok-4.3:
+        text: grok-4.3
+        description: Grok 4.3 - xAI's reasoning-first flagship; the most intelligent
+          and fastest model xAI has built.
+        is_a: GROK_4
+        annotations:
+          node_type:
+            tag: node_type
+            value: model
+          api_model_id:
+            tag: api_model_id
+            value: grok-4.3
+          developer:
+            tag: developer
+            value: xAI
+          release_date:
+            tag: release_date
+            value: '2026-04-30'
+          context_window:
+            tag: context_window
+            value: 1000000
+        title: Grok 4.3
+        aliases:
+        - Grok 4.3
+      grok-4.20-0309-reasoning:
+        text: grok-4.20-0309-reasoning
+        description: Grok 4.20 (reasoning) - agentic tool-calling model noted for
+          a very low hallucination rate.
+        is_a: GROK_4
+        annotations:
+          node_type:
+            tag: node_type
+            value: model
+          api_model_id:
+            tag: api_model_id
+            value: grok-4.20-0309-reasoning
+          developer:
+            tag: developer
+            value: xAI
+          context_window:
+            tag: context_window
+            value: 1000000
+        title: Grok 4.20 (reasoning)
+        aliases:
+        - Grok 4.20
+      grok-4-0709:
+        text: grok-4-0709
+        description: Grok 4 - earlier Grok 4 release.
+        is_a: GROK_4
+        annotations:
+          node_type:
+            tag: node_type
+            value: model
+          api_model_id:
+            tag: api_model_id
+            value: grok-4-0709
+          developer:
+            tag: developer
+            value: xAI
+          knowledge_cutoff:
+            tag: knowledge_cutoff
+            value: 2024-11
+        title: Grok 4
+        aliases:
+        - Grok 4
+      GROK_CODE:
+        text: GROK_CODE
+        description: Grok Code - xAI's dedicated agentic coding model family
+        is_a: XAI
+        annotations:
+          node_type:
+            tag: node_type
+            value: family
+          specialization:
+            tag: specialization
+            value: coding
+      grok-code-fast-1:
+        text: grok-code-fast-1
+        description: Grok Code Fast 1 - dedicated agentic coding model.
+        is_a: GROK_CODE
+        annotations:
+          node_type:
+            tag: node_type
+            value: model
+          api_model_id:
+            tag: api_model_id
+            value: grok-code-fast-1
+          developer:
+            tag: developer
+            value: xAI
+          specialization:
+            tag: specialization
+            value: coding
+        title: Grok Code Fast 1
+        aliases:
+        - Grok Code Fast
+      META:
+        text: META
+        description: Open-weight models developed by Meta (the Llama family)
+        annotations:
+          node_type:
+            tag: node_type
+            value: developer
+          homepage:
+            tag: homepage
+            value: https://www.llama.com
+          license:
+            tag: license
+            value: Llama Community License
+        see_also:
+        - https://www.llama.com/models/
+      LLAMA_4:
+        text: LLAMA_4
+        description: Llama 4 - Meta's open-weight mixture-of-experts model family
+        is_a: META
+        annotations:
+          node_type:
+            tag: node_type
+            value: family
+      llama-4-maverick:
+        text: llama-4-maverick
+        description: Llama 4 Maverick - general-purpose open-weight chat model; highest
+          MMLU among Llama 4 variants.
+        is_a: LLAMA_4
+        annotations:
+          node_type:
+            tag: node_type
+            value: model
+          api_model_id:
+            tag: api_model_id
+            value: llama-4-maverick
+          developer:
+            tag: developer
+            value: Meta
+        title: Llama 4 Maverick
+        aliases:
+        - Llama 4 Maverick
+      llama-4-scout:
+        text: llama-4-scout
+        description: Llama 4 Scout - open-weight model supporting very long context
+          (up to 10M tokens).
+        is_a: LLAMA_4
+        annotations:
+          node_type:
+            tag: node_type
+            value: model
+          api_model_id:
+            tag: api_model_id
+            value: llama-4-scout
+          developer:
+            tag: developer
+            value: Meta
+          context_window:
+            tag: context_window
+            value: 10000000
+        title: Llama 4 Scout
+        aliases:
+        - Llama 4 Scout
+      DEEPSEEK:
+        text: DEEPSEEK
+        description: Open-weight models developed by DeepSeek
+        annotations:
+          node_type:
+            tag: node_type
+            value: developer
+          homepage:
+            tag: homepage
+            value: https://www.deepseek.com
+        see_also:
+        - https://api-docs.deepseek.com/
+      DEEPSEEK_MODELS:
+        text: DEEPSEEK_MODELS
+        description: DeepSeek - open-weight mixture-of-experts chat and reasoning
+          models
+        is_a: DEEPSEEK
+        annotations:
+          node_type:
+            tag: node_type
+            value: family
+      deepseek-chat:
+        text: deepseek-chat
+        description: DeepSeek-V3 (served as deepseek-chat) - open-weight MoE model
+          activating ~37B of 671B parameters per token.
+        is_a: DEEPSEEK_MODELS
+        annotations:
+          node_type:
+            tag: node_type
+            value: model
+          api_model_id:
+            tag: api_model_id
+            value: deepseek-chat
+          developer:
+            tag: developer
+            value: DeepSeek
+        title: DeepSeek-V3
+        aliases:
+        - DeepSeek-V3
+        - DeepSeek V3
+      deepseek-reasoner:
+        text: deepseek-reasoner
+        description: DeepSeek-R1 (served as deepseek-reasoner) - open-weight reasoning
+          model.
+        is_a: DEEPSEEK_MODELS
+        annotations:
+          node_type:
+            tag: node_type
+            value: model
+          api_model_id:
+            tag: api_model_id
+            value: deepseek-reasoner
+          developer:
+            tag: developer
+            value: DeepSeek
+        title: DeepSeek-R1
+        aliases:
+        - DeepSeek-R1
+        - DeepSeek R1
+      MISTRAL:
+        text: MISTRAL
+        description: Models developed by Mistral AI
+        annotations:
+          node_type:
+            tag: node_type
+            value: developer
+          homepage:
+            tag: homepage
+            value: https://mistral.ai
+        see_also:
+        - https://docs.mistral.ai/getting-started/models/models_overview/
+      MISTRAL_LARGE:
+        text: MISTRAL_LARGE
+        description: Mistral Large - Mistral AI's flagship open-weight model family
+        is_a: MISTRAL
+        annotations:
+          node_type:
+            tag: node_type
+            value: family
+      mistral-large-3:
+        text: mistral-large-3
+        description: Mistral Large 3 - state-of-the-art open-weight MoE model (41B
+          active / 675B total parameters), 256K context, released under Apache 2.0.
+        is_a: MISTRAL_LARGE
+        annotations:
+          node_type:
+            tag: node_type
+            value: model
+          api_model_id:
+            tag: api_model_id
+            value: mistral-large-3
+          developer:
+            tag: developer
+            value: Mistral AI
+          release_date:
+            tag: release_date
+            value: 2025-12
+          context_window:
+            tag: context_window
+            value: 256000
+          license:
+            tag: license
+            value: Apache-2.0
+        title: Mistral Large 3
+        aliases:
+        - Mistral Large 3
+      MOONSHOT:
+        text: MOONSHOT
+        description: Models developed by Moonshot AI (the Kimi family)
+        annotations:
+          node_type:
+            tag: node_type
+            value: developer
+          homepage:
+            tag: homepage
+            value: https://www.moonshot.ai
+        see_also:
+        - https://platform.moonshot.ai/docs
+      KIMI:
+        text: KIMI
+        description: Kimi - Moonshot AI's open-weight mixture-of-experts model family
+        is_a: MOONSHOT
+        annotations:
+          node_type:
+            tag: node_type
+            value: family
+      kimi-k2.6:
+        text: kimi-k2.6
+        description: Kimi K2.6 - frontier open-weight MoE coding model (32B active
+          / 1T total parameters).
+        is_a: KIMI
+        annotations:
+          node_type:
+            tag: node_type
+            value: model
+          api_model_id:
+            tag: api_model_id
+            value: kimi-k2.6
+          developer:
+            tag: developer
+            value: Moonshot AI
+        title: Kimi K2.6
+        aliases:
+        - Kimi K2.6
   SemiconductorMaterialType:
     name: SemiconductorMaterialType
     definition_uri: https://w3id.org/valuesets/SemiconductorMaterialType
@@ -64267,6 +65538,609 @@ enums:
         text: BARCODE_READING
         description: Operation to read barcode labels on samples or containers
         title: barcode reading
+  LabUnitOperationEnum:
+    name: LabUnitOperationEnum
+    definition_uri: https://w3id.org/valuesets/LabUnitOperationEnum
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Composable sample-manipulation primitives ("unit operations") used
+      to build sample-preparation protocols in a cloud laboratory. Modeled on the
+      ECL Symbolic Lab Language sample-preparation unit operations (Transfer, Aliquot,
+      Mix, Incubate, Filter, Centrifuge, Pellet, Resuspend, etc.). Complements the
+      lower level LiquidHandlingOperationEnum and SampleProcessingOperationEnum in
+      lab_automation/operations.
+    title: Lab Unit Operation
+    from_schema: https://w3id.org/valuesets/lab_automation/cloud_lab
+    see_also:
+    - https://w3id.org/valuesets/lab_automation/operations
+    - https://www.emeraldcloudlab.com/guides/runningexperiments
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      DEFINE:
+        text: DEFINE
+        description: Declare a new sample, container, or model and assign it a label
+          for later reference in the protocol
+        title: define
+      LABEL_SAMPLE:
+        text: LABEL_SAMPLE
+        description: Assign a human-readable label to a sample so it can be referenced
+          by later unit operations
+        title: label sample
+      LABEL_CONTAINER:
+        text: LABEL_CONTAINER
+        description: Assign a human-readable label to a container so it can be referenced
+          by later unit operations
+        title: label container
+      TRANSFER:
+        text: TRANSFER
+        description: Move a specified amount of sample from one source to one or more
+          destinations
+        title: transfer
+      ALIQUOT:
+        text: ALIQUOT
+        description: Distribute a sample into multiple equal portions in separate
+          containers
+        title: aliquot
+      CONSOLIDATE:
+        text: CONSOLIDATE
+        description: Combine multiple source samples into a single destination container
+        title: consolidate
+      DILUTE:
+        text: DILUTE
+        description: Reduce the concentration of a sample by adding diluent to a target
+          volume or concentration
+        title: dilute
+      SERIAL_DILUTE:
+        text: SERIAL_DILUTE
+        description: Create a stepwise series of dilutions by repeatedly transferring
+          and diluting a sample
+        title: serial dilute
+      FILL_TO_VOLUME:
+        text: FILL_TO_VOLUME
+        description: Add solvent to a sample until a specified total volume is reached
+        title: fill to volume
+      RESUSPEND:
+        text: RESUSPEND
+        description: Dissolve or re-disperse a solid or pellet in a specified volume
+          of solvent
+        title: resuspend
+      PREPARE_STOCK_SOLUTION:
+        text: PREPARE_STOCK_SOLUTION
+        description: Prepare a solution of defined composition from components and
+          solvent
+        title: prepare stock solution
+      ADJUST_PH:
+        text: ADJUST_PH
+        description: Add titrant to bring a sample to a target pH
+        title: adjust pH
+      MIX:
+        text: MIX
+        description: Homogenize a sample by pipetting, inversion, vortexing, stirring,
+          sonication, or related agitation
+        meaning: CHMO:0001685
+        title: mix
+        aliases:
+        - mixing
+      INCUBATE:
+        text: INCUBATE
+        description: Hold a sample at controlled temperature (and optionally mixing)
+          for a specified duration
+        title: incubate
+      WAIT:
+        text: WAIT
+        description: Pause the protocol for a specified duration without other manipulation
+        title: wait
+      CENTRIFUGE:
+        text: CENTRIFUGE
+        description: Apply centrifugal force to a sample to separate components by
+          density
+        meaning: OBI:0302886
+        title: centrifuge
+        aliases:
+        - centrifugation
+      PELLET:
+        text: PELLET
+        description: Centrifuge to precipitate solids, optionally aspirate the supernatant,
+          and optionally resuspend the pellet
+        title: pellet
+      FILTER:
+        text: FILTER
+        description: Pass a sample through a filter to separate particulates or to
+          sterilize
+        meaning: CHMO:0001640
+        title: filter
+        aliases:
+        - filtration
+      MAGNETIC_BEAD_SEPARATION:
+        text: MAGNETIC_BEAD_SEPARATION
+        description: Isolate target analytes bound to magnetic beads using a magnetic
+          field
+        title: magnetic bead separation
+      MOVE_TO_MAGNET:
+        text: MOVE_TO_MAGNET
+        description: Place a container on a magnetic rack to immobilize magnetic beads
+        title: move to magnet
+      REMOVE_FROM_MAGNET:
+        text: REMOVE_FROM_MAGNET
+        description: Remove a container from a magnetic rack to release magnetic beads
+        title: remove from magnet
+      COVER:
+        text: COVER
+        description: Apply a lid, cap, or seal to a container
+        title: cover
+      UNCOVER:
+        text: UNCOVER
+        description: Remove a lid, cap, or seal from a container
+        title: uncover
+      DEGAS:
+        text: DEGAS
+        description: Remove dissolved gases from a liquid sample
+        meaning: CHMO:0002772
+        title: degas
+        aliases:
+        - degassing
+      DESICCATE:
+        text: DESICCATE
+        description: Remove moisture from a sample using a desiccant or controlled-humidity
+          chamber
+        title: desiccate
+      EVAPORATE:
+        text: EVAPORATE
+        description: Remove solvent from a sample by evaporation, optionally under
+          reduced pressure
+        meaning: CHMO:0001574
+        title: evaporate
+        aliases:
+        - evaporation
+      LYOPHILIZE:
+        text: LYOPHILIZE
+        description: Freeze-dry a sample to remove solvent by sublimation under vacuum
+        meaning: CHMO:0001553
+        title: lyophilize
+        aliases:
+        - freeze drying
+      FLASH_FREEZE:
+        text: FLASH_FREEZE
+        description: Rapidly freeze a sample, typically in liquid nitrogen
+        title: flash freeze
+      AUTOCLAVE:
+        text: AUTOCLAVE
+        description: Sterilize a sample or labware using pressurized saturated steam
+        title: autoclave
+      GRIND:
+        text: GRIND
+        description: Mechanically reduce a solid sample to smaller particles or powder
+        meaning: CHMO:0001652
+        title: grind
+        aliases:
+        - grinding
+      MICROWAVE_DIGESTION:
+        text: MICROWAVE_DIGESTION
+        description: Digest a sample in acid under microwave heating to bring analytes
+          into solution
+        title: microwave digestion
+  CloudLabExperimentEnum:
+    name: CloudLabExperimentEnum
+    definition_uri: https://w3id.org/valuesets/CloudLabExperimentEnum
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Higher-level experiment and assay functions offered as protocols
+      by a cloud laboratory, modeled on the ECL Symbolic Lab Language experiment functions
+      and grouped by category (synthesis, separations/chromatography, spectroscopy,
+      mass spectrometry, bioassays, crystallography, property measurement, cellular).
+      Cross-referenced to the assay value sets in bio/assays/ (OBIAssayEnum, BAOBioassayEnum)
+      and to analytical_chemistry vocabularies; `meaning:` maps to OBI/CHMO classes
+      where an equivalent assay or analytical method exists.
+    title: Cloud Lab Experiment
+    from_schema: https://w3id.org/valuesets/lab_automation/cloud_lab
+    see_also:
+    - https://w3id.org/valuesets/bio/assays/bio_assay
+    - https://www.emeraldcloudlab.com/guides/runningexperiments
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      DNA_SYNTHESIS:
+        text: DNA_SYNTHESIS
+        description: Solid-phase chemical synthesis of DNA oligonucleotides
+        title: DNA synthesis
+      RNA_SYNTHESIS:
+        text: RNA_SYNTHESIS
+        description: Solid-phase chemical synthesis of RNA oligonucleotides
+        title: RNA synthesis
+      PNA_SYNTHESIS:
+        text: PNA_SYNTHESIS
+        description: Solid-phase chemical synthesis of peptide nucleic acid oligomers
+        title: PNA synthesis
+      PEPTIDE_SYNTHESIS:
+        text: PEPTIDE_SYNTHESIS
+        description: Solid-phase chemical synthesis of peptides
+        title: peptide synthesis
+      PCR:
+        text: PCR
+        description: Polymerase chain reaction amplification of nucleic acids
+        meaning: OBI:0000415
+        title: PCR
+        aliases:
+        - polymerase chain reaction
+      BIOCONJUGATION:
+        text: BIOCONJUGATION
+        description: Covalent coupling of biomolecules or labels to a target molecule
+        title: bioconjugation
+      HPLC:
+        text: HPLC
+        description: High-performance liquid chromatography separation
+        meaning: CHMO:0001009
+        title: HPLC
+        aliases:
+        - high-performance liquid chromatography
+      FPLC:
+        text: FPLC
+        description: Fast protein liquid chromatography separation
+        title: FPLC
+      FLASH_CHROMATOGRAPHY:
+        text: FLASH_CHROMATOGRAPHY
+        description: Medium-pressure flash column chromatography separation
+        meaning: CHMO:0002582
+        title: flash chromatography
+      GAS_CHROMATOGRAPHY:
+        text: GAS_CHROMATOGRAPHY
+        description: Gas chromatography separation of volatile analytes
+        meaning: CHMO:0001002
+        title: gas chromatography
+      ION_CHROMATOGRAPHY:
+        text: ION_CHROMATOGRAPHY
+        description: Chromatographic separation of ionic species
+        meaning: CHMO:0002874
+        title: ion chromatography
+      SUPERCRITICAL_FLUID_CHROMATOGRAPHY:
+        text: SUPERCRITICAL_FLUID_CHROMATOGRAPHY
+        description: Chromatographic separation using a supercritical fluid mobile
+          phase
+        title: supercritical fluid chromatography
+      SOLID_PHASE_EXTRACTION:
+        text: SOLID_PHASE_EXTRACTION
+        description: Sample cleanup or enrichment by selective retention on a solid
+          sorbent
+        title: solid phase extraction
+      LIQUID_LIQUID_EXTRACTION:
+        text: LIQUID_LIQUID_EXTRACTION
+        description: Separation of analytes between two immiscible liquid phases
+        meaning: CHMO:0001600
+        title: liquid-liquid extraction
+        aliases:
+        - "liquid\u2013liquid extraction"
+      CROSS_FLOW_FILTRATION:
+        text: CROSS_FLOW_FILTRATION
+        description: Tangential-flow filtration for concentration or buffer exchange
+        title: cross-flow filtration
+      DIALYSIS:
+        text: DIALYSIS
+        description: Separation of molecules by size across a semipermeable membrane
+        meaning: CHMO:0001522
+        title: dialysis
+      AGAROSE_GEL_ELECTROPHORESIS:
+        text: AGAROSE_GEL_ELECTROPHORESIS
+        description: Size-based separation of nucleic acids in an agarose gel
+        meaning: CHMO:0001022
+        title: agarose gel electrophoresis
+      PAGE:
+        text: PAGE
+        description: Polyacrylamide gel electrophoresis separation of biomolecules
+        meaning: CHMO:0001023
+        title: PAGE
+        aliases:
+        - polyacrylamide gel electrophoresis
+      CAPILLARY_GEL_ELECTROPHORESIS_SDS:
+        text: CAPILLARY_GEL_ELECTROPHORESIS_SDS
+        description: SDS capillary gel electrophoresis sizing of proteins
+        title: capillary gel electrophoresis SDS
+      CAPILLARY_ISOELECTRIC_FOCUSING:
+        text: CAPILLARY_ISOELECTRIC_FOCUSING
+        description: Separation of proteins by isoelectric point in a capillary
+        meaning: CHMO:0001033
+        title: capillary isoelectric focusing
+      WESTERN_BLOT:
+        text: WESTERN_BLOT
+        description: Immunodetection of proteins separated by electrophoresis
+        meaning: OBI:0000854
+        title: Western blot
+        aliases:
+        - western blot assay
+      NMR:
+        text: NMR
+        description: One-dimensional nuclear magnetic resonance spectroscopy
+        meaning: CHMO:0000591
+        title: NMR
+        aliases:
+        - nuclear magnetic resonance spectroscopy
+      NMR_2D:
+        text: NMR_2D
+        description: Two-dimensional nuclear magnetic resonance spectroscopy
+        meaning: CHMO:0000598
+        title: 2D NMR
+        aliases:
+        - two-dimensional nuclear magnetic resonance spectroscopy
+      ABSORBANCE_SPECTROSCOPY:
+        text: ABSORBANCE_SPECTROSCOPY
+        description: Measurement of absorbance across a wavelength range
+        title: absorbance spectroscopy
+      ABSORBANCE_INTENSITY:
+        text: ABSORBANCE_INTENSITY
+        description: Measurement of absorbance at one or more discrete wavelengths
+        title: absorbance intensity
+      ABSORBANCE_KINETICS:
+        text: ABSORBANCE_KINETICS
+        description: Time-resolved measurement of absorbance
+        title: absorbance kinetics
+      FLUORESCENCE_SPECTROSCOPY:
+        text: FLUORESCENCE_SPECTROSCOPY
+        description: Measurement of fluorescence emission across a wavelength range
+        meaning: CHMO:0000287
+        title: fluorescence spectroscopy
+      FLUORESCENCE_INTENSITY:
+        text: FLUORESCENCE_INTENSITY
+        description: Measurement of fluorescence intensity at discrete wavelengths
+        title: fluorescence intensity
+      FLUORESCENCE_KINETICS:
+        text: FLUORESCENCE_KINETICS
+        description: Time-resolved measurement of fluorescence intensity
+        title: fluorescence kinetics
+      FLUORESCENCE_POLARIZATION:
+        text: FLUORESCENCE_POLARIZATION
+        description: Measurement of fluorescence polarization/anisotropy
+        title: fluorescence polarization
+      LUMINESCENCE_SPECTROSCOPY:
+        text: LUMINESCENCE_SPECTROSCOPY
+        description: Measurement of luminescence emission across a wavelength range
+        meaning: CHMO:0002415
+        title: luminescence spectroscopy
+      LUMINESCENCE_INTENSITY:
+        text: LUMINESCENCE_INTENSITY
+        description: Measurement of luminescence intensity at discrete wavelengths
+        title: luminescence intensity
+      LUMINESCENCE_KINETICS:
+        text: LUMINESCENCE_KINETICS
+        description: Time-resolved measurement of luminescence intensity
+        title: luminescence kinetics
+      IR_SPECTROSCOPY:
+        text: IR_SPECTROSCOPY
+        description: Infrared absorption spectroscopy
+        meaning: CHMO:0000630
+        title: IR spectroscopy
+        aliases:
+        - infrared absorption spectroscopy
+      RAMAN_SPECTROSCOPY:
+        text: RAMAN_SPECTROSCOPY
+        description: Raman scattering spectroscopy
+        meaning: CHMO:0000656
+        title: Raman spectroscopy
+      CIRCULAR_DICHROISM:
+        text: CIRCULAR_DICHROISM
+        description: Measurement of differential absorption of circularly polarized
+          light
+        title: circular dichroism
+      DYNAMIC_LIGHT_SCATTERING:
+        text: DYNAMIC_LIGHT_SCATTERING
+        description: Measurement of particle size distribution from scattered-light
+          fluctuations
+        meaning: CHMO:0000167
+        title: dynamic light scattering
+      NEPHELOMETRY:
+        text: NEPHELOMETRY
+        description: Measurement of turbidity by scattered light
+        title: nephelometry
+      THERMAL_SHIFT:
+        text: THERMAL_SHIFT
+        description: Measurement of protein thermal stability via a fluorescent thermal
+          shift assay
+        title: thermal shift
+      UV_MELTING:
+        text: UV_MELTING
+        description: Measurement of nucleic acid or protein melting curves by UV absorbance
+        title: UV melting
+      MASS_SPECTROMETRY:
+        text: MASS_SPECTROMETRY
+        description: Determination of mass-to-charge ratios of ionized analytes
+        meaning: CHMO:0000470
+        title: mass spectrometry
+      LCMS:
+        text: LCMS
+        description: Liquid chromatography coupled to mass spectrometry
+        meaning: CHMO:0000524
+        title: LC-MS
+        aliases:
+        - liquid chromatography-mass spectrometry
+      GCMS:
+        text: GCMS
+        description: Gas chromatography coupled to mass spectrometry
+        meaning: CHMO:0000497
+        title: GC-MS
+        aliases:
+        - gas chromatography-mass spectrometry
+      ICPMS:
+        text: ICPMS
+        description: Inductively coupled plasma mass spectrometry for elemental analysis
+        meaning: CHMO:0000538
+        title: ICP-MS
+        aliases:
+        - inductively coupled plasma mass spectrometry
+      ELISA:
+        text: ELISA
+        description: Enzyme-linked immunosorbent assay
+        meaning: OBI:0000661
+        title: ELISA
+        aliases:
+        - enzyme-linked immunosorbent assay
+      CAPILLARY_ELISA:
+        text: CAPILLARY_ELISA
+        description: Automated capillary-based enzyme-linked immunosorbent assay
+        title: capillary ELISA
+      ALPHASCREEN:
+        text: ALPHASCREEN
+        description: Bead-based amplified luminescent proximity homogeneous assay
+        title: AlphaScreen
+      BIOLAYER_INTERFEROMETRY:
+        text: BIOLAYER_INTERFEROMETRY
+        description: Label-free measurement of biomolecular binding kinetics by interferometry
+        meaning: OBI:0002107
+        title: biolayer interferometry
+        aliases:
+        - bio-layer interferometry assay
+      QPCR:
+        text: QPCR
+        description: Quantitative real-time polymerase chain reaction
+        meaning: OBI:0000893
+        title: qPCR
+        aliases:
+        - real time polymerase chain reaction assay
+      DNA_SEQUENCING:
+        text: DNA_SEQUENCING
+        description: Determination of nucleotide sequence of DNA (Sanger/capillary)
+        meaning: OBI:0000626
+        title: DNA sequencing
+        aliases:
+        - DNA sequencing assay
+      TOTAL_PROTEIN_QUANTIFICATION:
+        text: TOTAL_PROTEIN_QUANTIFICATION
+        description: Colorimetric or fluorometric quantification of total protein
+        title: total protein quantification
+      TOTAL_PROTEIN_DETECTION:
+        text: TOTAL_PROTEIN_DETECTION
+        description: Capillary-based detection and sizing of total protein
+        title: total protein detection
+      DIFFERENTIAL_SCANNING_CALORIMETRY:
+        text: DIFFERENTIAL_SCANNING_CALORIMETRY
+        description: Measurement of heat flow associated with thermal transitions
+        meaning: CHMO:0000684
+        title: differential scanning calorimetry
+      GROW_CRYSTAL:
+        text: GROW_CRYSTAL
+        description: Crystallization of a compound or macromolecule for structural
+          analysis
+        meaning: CHMO:0001477
+        title: grow crystal
+        aliases:
+        - crystallisation
+      POWDER_XRD:
+        text: POWDER_XRD
+        description: Powder X-ray diffraction analysis of crystalline solids
+        meaning: CHMO:0000158
+        title: powder XRD
+        aliases:
+        - powder X-ray diffraction
+      MEASURE_PH:
+        text: MEASURE_PH
+        description: Measurement of sample pH
+        title: measure pH
+      MEASURE_CONDUCTIVITY:
+        text: MEASURE_CONDUCTIVITY
+        description: Measurement of electrical conductivity of a solution
+        title: measure conductivity
+      MEASURE_DENSITY:
+        text: MEASURE_DENSITY
+        description: Measurement of sample density
+        title: measure density
+      MEASURE_VISCOSITY:
+        text: MEASURE_VISCOSITY
+        description: Measurement of sample viscosity
+        title: measure viscosity
+      MEASURE_OSMOLALITY:
+        text: MEASURE_OSMOLALITY
+        description: Measurement of solute concentration as osmolality
+        title: measure osmolality
+      MEASURE_REFRACTIVE_INDEX:
+        text: MEASURE_REFRACTIVE_INDEX
+        description: Measurement of the refractive index of a sample
+        title: measure refractive index
+      MEASURE_SURFACE_TENSION:
+        text: MEASURE_SURFACE_TENSION
+        description: Measurement of liquid surface tension
+        title: measure surface tension
+      MEASURE_CONTACT_ANGLE:
+        text: MEASURE_CONTACT_ANGLE
+        description: Measurement of the contact angle of a liquid on a surface
+        title: measure contact angle
+      MEASURE_DISSOLVED_OXYGEN:
+        text: MEASURE_DISSOLVED_OXYGEN
+        description: Measurement of dissolved oxygen concentration in a liquid
+        title: measure dissolved oxygen
+      MEASURE_MELTING_POINT:
+        text: MEASURE_MELTING_POINT
+        description: Determination of the melting point of a solid
+        title: measure melting point
+      MEASURE_WEIGHT:
+        text: MEASURE_WEIGHT
+        description: Gravimetric measurement of sample mass
+        title: measure weight
+      MEASURE_VOLUME:
+        text: MEASURE_VOLUME
+        description: Measurement of sample volume
+        title: measure volume
+      MEASURE_COUNT:
+        text: MEASURE_COUNT
+        description: Counting of discrete objects (e.g. particles, colonies, cells)
+        title: measure count
+      COUNT_LIQUID_PARTICLES:
+        text: COUNT_LIQUID_PARTICLES
+        description: Counting and sizing of particles suspended in a liquid
+        title: count liquid particles
+      COULTER_COUNT:
+        text: COULTER_COUNT
+        description: Counting and sizing of particles or cells by electrical impedance
+        title: Coulter count
+      CYCLIC_VOLTAMMETRY:
+        text: CYCLIC_VOLTAMMETRY
+        description: Electrochemical measurement of current versus swept potential
+        meaning: CHMO:0000025
+        title: cyclic voltammetry
+      KARL_FISCHER_TITRATION:
+        text: KARL_FISCHER_TITRATION
+        description: Titrimetric determination of water content
+        meaning: CHMO:0002535
+        title: Karl Fischer titration
+        aliases:
+        - "Karl\u2013Fischer titration"
+      DISSOLUTION:
+        text: DISSOLUTION
+        description: Measurement of the rate and extent of dissolution of a solid
+        title: dissolution
+      DYNAMIC_FOAM_ANALYSIS:
+        text: DYNAMIC_FOAM_ANALYSIS
+        description: Measurement of foam formation and decay
+        title: dynamic foam analysis
+      VISUAL_INSPECTION:
+        text: VISUAL_INSPECTION
+        description: Operator or imaging-based visual assessment of a sample
+        title: visual inspection
+      IMAGE_SAMPLE:
+        text: IMAGE_SAMPLE
+        description: Acquisition of a photographic image of a sample
+        title: image sample
+      IMAGE_CELLS:
+        text: IMAGE_CELLS
+        description: Microscopic imaging of cells
+        title: image cells
+      IMAGE_COLONIES:
+        text: IMAGE_COLONIES
+        description: Imaging of microbial colonies on solid media
+        title: image colonies
+      QUANTIFY_COLONIES:
+        text: QUANTIFY_COLONIES
+        description: Counting and quantification of microbial colonies
+        title: quantify colonies
+      LYSE_CELLS:
+        text: LYSE_CELLS
+        description: Disruption of cells to release intracellular contents
+        title: lyse cells
+      FREEZE_CELLS:
+        text: FREEZE_CELLS
+        description: Controlled-rate freezing of cells for storage
+        title: freeze cells
   MicroplateFormatEnum:
     name: MicroplateFormatEnum
     definition_uri: https://w3id.org/valuesets/MicroplateFormatEnum
@@ -70231,6 +72105,20 @@ slots:
     from_schema: https://w3id.org/valuesets/bio/structural_biology
     slot_uri: valuesets:protein_modification
     range: ProteinModificationType
+  secondary_structure:
+    name: secondary_structure
+    definition_uri: https://w3id.org/valuesets/secondary_structure
+    description: Per-residue secondary structure state
+    from_schema: https://w3id.org/valuesets/bio/protein_structure_features
+    slot_uri: valuesets:secondary_structure
+    range: SecondaryStructureType
+  local_structural_feature:
+    name: local_structural_feature
+    definition_uri: https://w3id.org/valuesets/local_structural_feature
+    description: Local 3D structural feature, motif, site, or geometric feature
+    from_schema: https://w3id.org/valuesets/bio/protein_structure_features
+    slot_uri: valuesets:local_structural_feature
+    range: LocalStructuralFeature
   biosafety_level:
     name: biosafety_level
     definition_uri: https://w3id.org/valuesets/biosafety_level
@@ -71299,6 +73187,13 @@ slots:
     from_schema: https://w3id.org/valuesets/computing/quantum
     slot_uri: valuesets:quantum_algorithm_category_type
     range: QuantumAlgorithmCategoryType
+  frontier_model:
+    name: frontier_model
+    definition_uri: https://w3id.org/valuesets/frontier_model
+    description: A frontier AI model, its family, or its developer
+    from_schema: https://w3id.org/valuesets/computing/frontier_ai_models
+    slot_uri: valuesets:frontier_model
+    range: FrontierModelEnum
   semiconductor_material_type:
     name: semiconductor_material_type
     definition_uri: https://w3id.org/valuesets/semiconductor_material_type
@@ -73574,6 +75469,20 @@ slots:
     from_schema: https://w3id.org/valuesets/lab_automation/operations
     slot_uri: valuesets:sample_processing_operation
     range: SampleProcessingOperationEnum
+  lab_unit_operation:
+    name: lab_unit_operation
+    definition_uri: https://w3id.org/valuesets/lab_unit_operation
+    description: A sample-manipulation unit operation in a cloud-laboratory protocol
+    from_schema: https://w3id.org/valuesets/lab_automation/cloud_lab
+    slot_uri: valuesets:lab_unit_operation
+    range: LabUnitOperationEnum
+  cloud_lab_experiment:
+    name: cloud_lab_experiment
+    definition_uri: https://w3id.org/valuesets/cloud_lab_experiment
+    description: A cloud-laboratory experiment or assay function
+    from_schema: https://w3id.org/valuesets/lab_automation/cloud_lab
+    slot_uri: valuesets:cloud_lab_experiment
+    range: CloudLabExperimentEnum
   microplate_format:
     name: microplate_format
     definition_uri: https://w3id.org/valuesets/microplate_format
@@ -73912,7 +75821,7 @@ classes:
     class_uri: valuesets:Fake
 metamodel_version: 1.7.0
 source_file: valuesets.yaml
-source_file_date: '2026-02-22T20:57:20'
-source_file_size: 4175
-generation_date: '2026-02-22T20:58:46'
+source_file_date: '2026-06-12T22:51:09'
+source_file_size: 4266
+generation_date: '2026-06-12T22:52:34'
 
