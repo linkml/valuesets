@@ -1541,6 +1541,15 @@
             "title": "CellularComponent",
             "type": "string"
         },
+        "CellularityEnum": {
+            "description": "An organismal quality inhering in a bearer by virtue of the bearer's consisting of cells. Derived from PATO cellularity (PATO:0001992) child values.",
+            "enum": [
+                "UNICELLULAR",
+                "MULTICELLULAR"
+            ],
+            "title": "CellularityEnum",
+            "type": "string"
+        },
         "ChemicalEntity": {
             "description": "Any chemical entity from ChEBI ontology",
             "title": "ChemicalEntity",
@@ -1675,6 +1684,94 @@
             "title": "ClinicalFinding",
             "type": "string"
         },
+        "CloudLabExperimentEnum": {
+            "description": "Higher-level experiment and assay functions offered as protocols by a cloud laboratory, modeled on the ECL Symbolic Lab Language experiment functions and grouped by category (synthesis, separations/chromatography, spectroscopy, mass spectrometry, bioassays, crystallography, property measurement, cellular). Cross-referenced to the assay value sets in bio/assays/ (OBIAssayEnum, BAOBioassayEnum) and to analytical_chemistry vocabularies; `meaning:` maps to OBI/CHMO classes where an equivalent assay or analytical method exists.",
+            "enum": [
+                "DNA_SYNTHESIS",
+                "RNA_SYNTHESIS",
+                "PNA_SYNTHESIS",
+                "PEPTIDE_SYNTHESIS",
+                "PCR",
+                "BIOCONJUGATION",
+                "HPLC",
+                "FPLC",
+                "FLASH_CHROMATOGRAPHY",
+                "GAS_CHROMATOGRAPHY",
+                "ION_CHROMATOGRAPHY",
+                "SUPERCRITICAL_FLUID_CHROMATOGRAPHY",
+                "SOLID_PHASE_EXTRACTION",
+                "LIQUID_LIQUID_EXTRACTION",
+                "CROSS_FLOW_FILTRATION",
+                "DIALYSIS",
+                "AGAROSE_GEL_ELECTROPHORESIS",
+                "PAGE",
+                "CAPILLARY_GEL_ELECTROPHORESIS_SDS",
+                "CAPILLARY_ISOELECTRIC_FOCUSING",
+                "WESTERN_BLOT",
+                "NMR",
+                "NMR_2D",
+                "ABSORBANCE_SPECTROSCOPY",
+                "ABSORBANCE_INTENSITY",
+                "ABSORBANCE_KINETICS",
+                "FLUORESCENCE_SPECTROSCOPY",
+                "FLUORESCENCE_INTENSITY",
+                "FLUORESCENCE_KINETICS",
+                "FLUORESCENCE_POLARIZATION",
+                "LUMINESCENCE_SPECTROSCOPY",
+                "LUMINESCENCE_INTENSITY",
+                "LUMINESCENCE_KINETICS",
+                "IR_SPECTROSCOPY",
+                "RAMAN_SPECTROSCOPY",
+                "CIRCULAR_DICHROISM",
+                "DYNAMIC_LIGHT_SCATTERING",
+                "NEPHELOMETRY",
+                "THERMAL_SHIFT",
+                "UV_MELTING",
+                "MASS_SPECTROMETRY",
+                "LCMS",
+                "GCMS",
+                "ICPMS",
+                "ELISA",
+                "CAPILLARY_ELISA",
+                "ALPHASCREEN",
+                "BIOLAYER_INTERFEROMETRY",
+                "QPCR",
+                "DNA_SEQUENCING",
+                "TOTAL_PROTEIN_QUANTIFICATION",
+                "TOTAL_PROTEIN_DETECTION",
+                "DIFFERENTIAL_SCANNING_CALORIMETRY",
+                "GROW_CRYSTAL",
+                "POWDER_XRD",
+                "MEASURE_PH",
+                "MEASURE_CONDUCTIVITY",
+                "MEASURE_DENSITY",
+                "MEASURE_VISCOSITY",
+                "MEASURE_OSMOLALITY",
+                "MEASURE_REFRACTIVE_INDEX",
+                "MEASURE_SURFACE_TENSION",
+                "MEASURE_CONTACT_ANGLE",
+                "MEASURE_DISSOLVED_OXYGEN",
+                "MEASURE_MELTING_POINT",
+                "MEASURE_WEIGHT",
+                "MEASURE_VOLUME",
+                "MEASURE_COUNT",
+                "COUNT_LIQUID_PARTICLES",
+                "COULTER_COUNT",
+                "CYCLIC_VOLTAMMETRY",
+                "KARL_FISCHER_TITRATION",
+                "DISSOLUTION",
+                "DYNAMIC_FOAM_ANALYSIS",
+                "VISUAL_INSPECTION",
+                "IMAGE_SAMPLE",
+                "IMAGE_CELLS",
+                "IMAGE_COLONIES",
+                "QUANTIFY_COLONIES",
+                "LYSE_CELLS",
+                "FREEZE_CELLS"
+            ],
+            "title": "CloudLabExperimentEnum",
+            "type": "string"
+        },
         "CodonEnum": {
             "description": "Standard genetic code codons (DNA)",
             "enum": [
@@ -1744,6 +1841,30 @@
                 "GGG"
             ],
             "title": "CodonEnum",
+            "type": "string"
+        },
+        "ColorEnum": {
+            "description": "A composite chromatic quality composed of hue, saturation and intensity parts. Derived from PATO color (PATO:0000014) child values.",
+            "enum": [
+                "BLACK",
+                "WHITE",
+                "GREY",
+                "RED",
+                "ORANGE",
+                "YELLOW",
+                "GREEN",
+                "CYAN",
+                "BLUE",
+                "VIOLET",
+                "PURPLE",
+                "MAGENTA",
+                "BROWN",
+                "MAROON",
+                "ROSY",
+                "VERMILION",
+                "COLORED"
+            ],
+            "title": "ColorEnum",
             "type": "string"
         },
         "ColorSpaceEnum": {
@@ -3929,6 +4050,66 @@
             "title": "FrequencyUnitEnum",
             "type": "string"
         },
+        "FrontierModelEnum": {
+            "description": "Hierarchical enumeration of frontier AI models. The hierarchy has three tiers: developer (e.g. ANTHROPIC), model family (e.g. CLAUDE_OPUS), and specific model release identified by its canonical API model id (e.g. claude-opus-4-8). Intermediate developer and family nodes are uppercase categorical values; leaf nodes are the verbatim API identifiers.",
+            "enum": [
+                "ANTHROPIC",
+                "CLAUDE_OPUS",
+                "claude-opus-4-8",
+                "claude-opus-4-7",
+                "claude-opus-4-6",
+                "claude-opus-4-5",
+                "CLAUDE_SONNET",
+                "claude-sonnet-4-6",
+                "claude-sonnet-4-5",
+                "CLAUDE_HAIKU",
+                "claude-haiku-4-5",
+                "CLAUDE_FABLE",
+                "claude-fable-5",
+                "CLAUDE_MYTHOS",
+                "claude-mythos-5",
+                "OPENAI",
+                "GPT_5",
+                "gpt-5.5",
+                "gpt-5.4",
+                "gpt-5.4-mini",
+                "gpt-5.2",
+                "gpt-5.2-codex",
+                "GOOGLE",
+                "GEMINI_3",
+                "gemini-3.5-flash",
+                "gemini-3.1-pro-preview",
+                "gemini-3-flash-preview",
+                "gemini-3.1-flash-lite",
+                "GEMINI_2_5",
+                "gemini-2.5-pro",
+                "gemini-2.5-flash",
+                "gemini-2.5-flash-lite",
+                "XAI",
+                "GROK_4",
+                "grok-4.3",
+                "grok-4.20-0309-reasoning",
+                "grok-4-0709",
+                "GROK_CODE",
+                "grok-code-fast-1",
+                "META",
+                "LLAMA_4",
+                "llama-4-maverick",
+                "llama-4-scout",
+                "DEEPSEEK",
+                "DEEPSEEK_MODELS",
+                "deepseek-chat",
+                "deepseek-reasoner",
+                "MISTRAL",
+                "MISTRAL_LARGE",
+                "mistral-large-3",
+                "MOONSHOT",
+                "KIMI",
+                "kimi-k2.6"
+            ],
+            "title": "FrontierModelEnum",
+            "type": "string"
+        },
         "FuelAssemblyTypeEnum": {
             "description": "Types of fuel assembly configurations",
             "enum": [
@@ -5474,6 +5655,21 @@
             "title": "IntegrationSystemEnum",
             "type": "string"
         },
+        "IntensityEnum": {
+            "description": "A quality inhering in a bearer by virtue of the bearer's possessing or displaying a distinctive feature in type or degree or effect or force. Derived from PATO intensity (PATO:0000049) child values.",
+            "enum": [
+                "BORDERLINE",
+                "MILD",
+                "MODERATE",
+                "SEVERE",
+                "PROFOUND",
+                "INCREASED_INTENSITY",
+                "DECREASED_INTENSITY",
+                "REMITTENT"
+            ],
+            "title": "IntensityEnum",
+            "type": "string"
+        },
         "IntentClassificationEnum": {
             "description": "Common chatbot/NLU intent categories",
             "enum": [
@@ -5632,6 +5828,44 @@
                 "ROBOTIC_SAMPLE_PREPARATION"
             ],
             "title": "LabAutomationWorkflowType",
+            "type": "string"
+        },
+        "LabUnitOperationEnum": {
+            "description": "Composable sample-manipulation primitives (\"unit operations\") used to build sample-preparation protocols in a cloud laboratory. Modeled on the ECL Symbolic Lab Language sample-preparation unit operations (Transfer, Aliquot, Mix, Incubate, Filter, Centrifuge, Pellet, Resuspend, etc.). Complements the lower level LiquidHandlingOperationEnum and SampleProcessingOperationEnum in lab_automation/operations.",
+            "enum": [
+                "DEFINE",
+                "LABEL_SAMPLE",
+                "LABEL_CONTAINER",
+                "TRANSFER",
+                "ALIQUOT",
+                "CONSOLIDATE",
+                "DILUTE",
+                "SERIAL_DILUTE",
+                "FILL_TO_VOLUME",
+                "RESUSPEND",
+                "PREPARE_STOCK_SOLUTION",
+                "ADJUST_PH",
+                "MIX",
+                "INCUBATE",
+                "WAIT",
+                "CENTRIFUGE",
+                "PELLET",
+                "FILTER",
+                "MAGNETIC_BEAD_SEPARATION",
+                "MOVE_TO_MAGNET",
+                "REMOVE_FROM_MAGNET",
+                "COVER",
+                "UNCOVER",
+                "DEGAS",
+                "DESICCATE",
+                "EVAPORATE",
+                "LYOPHILIZE",
+                "FLASH_FREEZE",
+                "AUTOCLAVE",
+                "GRIND",
+                "MICROWAVE_DIGESTION"
+            ],
+            "title": "LabUnitOperationEnum",
             "type": "string"
         },
         "LaboratoryDeviceTypeEnum": {
@@ -5892,6 +6126,32 @@
                 "MOUTH_PIPETTING"
             ],
             "title": "LiquidHandlingOperationEnum",
+            "type": "string"
+        },
+        "LocalStructuralFeature": {
+            "description": "Fine-grained local three-dimensional features of protein structures, spanning super-secondary structural motifs, functional sites, and local geometric surface features. This is the curated, ontology-mapped analogue of the learned per-residue feature vocabularies produced by protein language models and their sparse-autoencoder interpretations. Members marked with the ``ontology_gap`` annotation have no suitable OBO term and are candidates for new ontology terms.",
+            "enum": [
+                "POLYPEPTIDE_STRUCTURAL_MOTIF",
+                "BETA_HAIRPIN",
+                "BETA_BULGE",
+                "ASX_MOTIF",
+                "NEST",
+                "COILED_COIL",
+                "HELIX_CAP",
+                "CATALYTIC_RESIDUE",
+                "PROTEIN_BINDING_SITE",
+                "DISULFIDE_BOND",
+                "METAL_BINDING_SITE",
+                "POCKET",
+                "CLEFT",
+                "CAVITY",
+                "TUNNEL",
+                "GROOVE",
+                "ELBOW",
+                "KINK",
+                "INTERFACE"
+            ],
+            "title": "LocalStructuralFeature",
             "type": "string"
         },
         "LogisticsOperationEnum": {
@@ -6331,6 +6591,23 @@
                 "COARSE_GRAINED_SIMULATION"
             ],
             "title": "MaterialsSimulationType",
+            "type": "string"
+        },
+        "MaturityEnum": {
+            "description": "A quality of a single physical entity held by a bearer when it exhibits a state of growth, differentiation, or development. Derived from PATO maturity (PATO:0000261) child values.",
+            "enum": [
+                "NEONATAL",
+                "LARVAL",
+                "PREPUBESCENT",
+                "PUPAL",
+                "PREPUPAL",
+                "PUBESCENT",
+                "ADOLESCENT",
+                "JUVENILE",
+                "IMMATURE",
+                "MATURE"
+            ],
+            "title": "MaturityEnum",
             "type": "string"
         },
         "MechanicalBehaviorEnum": {
@@ -7518,6 +7795,19 @@
                 "FACULTATIVE"
             ],
             "title": "OxygenationStrategyEnum",
+            "type": "string"
+        },
+        "PATOBiologicalSexEnum": {
+            "description": "An organismal quality inhering in a bearer by virtue of the bearer's ability to undergo sexual reproduction. Derived from PATO biological sex (PATO:0000047) and phenotypic sex (PATO:0001894) child values.",
+            "enum": [
+                "FEMALE",
+                "MALE",
+                "HERMAPHRODITE",
+                "MALE_WITH_DSD",
+                "FEMALE_WITH_DSD",
+                "PSEUDOHERMAPHRODITE"
+            ],
+            "title": "PATOBiologicalSexEnum",
             "type": "string"
         },
         "PCROperationTypeEnum": {
@@ -8913,6 +9203,19 @@
             "title": "RelToOxygenEnum",
             "type": "string"
         },
+        "RelativeChangeEnum": {
+            "description": "Direction of change of any quality relative to normal or baseline. This is PATO's general-purpose deviation-from-normal axis (PATO:0000069) that crosscuts all specific quality attributes (size, rate, amount, etc.).",
+            "enum": [
+                "NORMAL",
+                "ABNORMAL",
+                "INCREASED",
+                "DECREASED",
+                "INCREASED_MAGNITUDE",
+                "DECREASED_MAGNITUDE"
+            ],
+            "title": "RelativeChangeEnum",
+            "type": "string"
+        },
         "RelativeDirection": {
             "description": "Relative directional terms",
             "enum": [
@@ -9189,6 +9492,21 @@
                 "WINTER"
             ],
             "title": "Season",
+            "type": "string"
+        },
+        "SecondaryStructureType": {
+            "description": "Per-residue secondary structure assignment. The permissible values correspond to the canonical DSSP 8-state (SS8) classification, which is also the secondary-structure track vocabulary used by protein language models such as ESM3. The single-letter DSSP code is recorded in the ``dssp_code`` annotation.",
+            "enum": [
+                "ALPHA_HELIX",
+                "THREE_TEN_HELIX",
+                "PI_HELIX",
+                "BETA_STRAND",
+                "BETA_BRIDGE",
+                "TURN",
+                "BEND",
+                "COIL"
+            ],
+            "title": "SecondaryStructureType",
             "type": "string"
         },
         "SectionLocationEnum": {
@@ -9481,6 +9799,38 @@
             "title": "SeverityLevelEnum",
             "type": "string"
         },
+        "ShapeEnum": {
+            "description": "A morphological quality inhering in a bearer by virtue of the bearer's ratios of distances between its features. Derived from PATO shape (PATO:0000052) child values.",
+            "enum": [
+                "CIRCULAR",
+                "ELLIPTIC",
+                "SPHEROID",
+                "CONICAL",
+                "COLUMNAR",
+                "TUBULAR",
+                "FLAT",
+                "ELONGATED",
+                "LINEAR",
+                "FILAMENTOUS",
+                "SLENDER",
+                "BROAD",
+                "ROBUST",
+                "STRAIGHT",
+                "BENT",
+                "ANGULAR",
+                "LOBED",
+                "TRUNCATED",
+                "PYRAMIDAL",
+                "STAR_SHAPED",
+                "SIGMOID",
+                "UNDULATE",
+                "PINNATE",
+                "PLEOMORPHIC",
+                "COILING"
+            ],
+            "title": "ShapeEnum",
+            "type": "string"
+        },
         "SimpleSpatialDirection": {
             "description": "Basic spatial directional terms for general use",
             "enum": [
@@ -9622,6 +9972,27 @@
                 "HAM"
             ],
             "title": "SpamClassificationEnum",
+            "type": "string"
+        },
+        "SpatialPatternEnum": {
+            "description": "A spatial quality inhering in a bearer by virtue of the bearer's exhibiting repetition of placement of its parts. Derived from PATO spatial pattern (PATO:0000060) child values.",
+            "enum": [
+                "LOCALIZED",
+                "UNLOCALISED",
+                "MULTI_LOCALISED",
+                "DISTRIBUTED",
+                "UNDISTRIBUTED",
+                "SPARSE",
+                "UNILATERAL",
+                "VERTICAL",
+                "REGULAR_SPATIAL_PATTERN",
+                "IRREGULAR_SPATIAL_PATTERN",
+                "GENERALIZED",
+                "SEGMENTAL",
+                "RANDOM_PATTERN",
+                "SYMMETRICAL"
+            ],
+            "title": "SpatialPatternEnum",
             "type": "string"
         },
         "SpatialRelationship": {
@@ -10200,6 +10571,23 @@
                 "BIG5"
             ],
             "title": "TextCharset",
+            "type": "string"
+        },
+        "TextureEnum": {
+            "description": "A morphological quality inhering in a bearer by virtue of the bearer's surface characteristics. Derived from PATO texture (PATO:0000150) child values.",
+            "enum": [
+                "SMOOTH",
+                "ROUGH",
+                "SCALY",
+                "FLAKY",
+                "GROOVED",
+                "BLISTERED",
+                "HAIRY",
+                "ABRASED",
+                "RUSTY",
+                "FOVEATE"
+            ],
+            "title": "TextureEnum",
             "type": "string"
         },
         "TherapeuticActionabilityEnum": {
@@ -11080,6 +11468,21 @@
                 "SPOT_SUPPLIER"
             ],
             "title": "VendorCategoryEnum",
+            "type": "string"
+        },
+        "ViabilityEnum": {
+            "description": "An organismal quality inhering in a bearer by virtue of the bearer's disposition to survive and develop normally. Derived from PATO viability (PATO:0000169) child values.",
+            "enum": [
+                "ALIVE",
+                "DEAD",
+                "VIABLE",
+                "LETHAL",
+                "SEMI_VIABLE",
+                "SEMI_LETHAL",
+                "IMMORTAL",
+                "DECAYED"
+            ],
+            "title": "ViabilityEnum",
             "type": "string"
         },
         "VideoFormatEnum": {

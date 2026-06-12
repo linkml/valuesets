@@ -43,11 +43,13 @@ from .bio.go_evidence import GOEvidenceCode, GOElectronicMethods
 from .bio.insdc_geographic_locations import InsdcGeographicLocationEnum
 from .bio.insdc_missing_values import InsdcMissingValueEnum
 from .bio.lipid_categories import RelativeTimeEnum, PresenceEnum, LipidCategory
+from .bio.pato import ColorEnum, ShapeEnum, RelativeChangeEnum, IntensityEnum, TextureEnum, PATOBiologicalSexEnum, MaturityEnum, ViabilityEnum, CellularityEnum, SpatialPatternEnum
 from .bio.plant_biology import PlantSexualSystem
 from .bio.plant_developmental_stages import PlantDevelopmentalStage
 from .bio.plant_experimental_conditions import PlantStudyConditionEnum, SeasonalEnvironmentExposureEnum, EcologicalEnvironmentExposureEnum, PlantGrowthMediumExposureEnum
 from .bio.plant_sex import PlantSexEnum
 from .bio.protein_evidence import ProteinEvidenceForExistence, RefSeqStatusType
+from .bio.protein_structure_features import SecondaryStructureType, LocalStructuralFeature
 from .bio.proteomics_standards import RelativeTimeEnum, PresenceEnum, PeakAnnotationSeriesLabel, PeptideIonSeries, MassErrorUnit
 from .bio.psi_mi import InteractionDetectionMethod, InteractionType, ExperimentalRole, BiologicalRole, ParticipantIdentificationMethod, FeatureType, InteractorType, ConfidenceScore, ExperimentalPreparation
 from .bio.relationship_to_oxygen import RelToOxygenEnum
@@ -181,6 +183,7 @@ from .industry.unconventional_resources import UnconventionalMineralResourceType
 
 # Lab_Automation domain
 from .lab_automation.autonomous_labs import AutonomousLabComponentType, ExperimentalDesignMethodType, LabAutomationWorkflowType
+from .lab_automation.cloud_lab import RelativeTimeEnum, PresenceEnum, LabUnitOperationEnum, CloudLabExperimentEnum
 from .lab_automation.devices import LaboratoryDeviceTypeEnum, RoboticArmTypeEnum
 from .lab_automation.labware import MicroplateFormatEnum, ContainerTypeEnum, PlateMaterialEnum, PlateCoatingEnum
 from .lab_automation.operations import LiquidHandlingOperationEnum, SampleProcessingOperationEnum
@@ -326,13 +329,16 @@ __all__ = [
     "CellCycleRegulator",
     "CellPolarity",
     "CellProliferationState",
+    "CellularityEnum",
     "ChipFabricationNodeType",
     "ChiralityEnum",
     "ChromatographyType",
     "ChurnClassificationEnum",
     "CitationStyle",
     "ClinicalBehavioralAssayEnum",
+    "CloudLabExperimentEnum",
     "CodonEnum",
+    "ColorEnum",
     "ColorSpaceEnum",
     "CommonMineral",
     "CommonOrganismTaxaEnum",
@@ -541,6 +547,7 @@ __all__ = [
     "InspectionTypeEnum",
     "IntegrationFeatureEnum",
     "IntegrationSystemEnum",
+    "IntensityEnum",
     "IntentClassificationEnum",
     "InteractionDetectionMethod",
     "InteractionType",
@@ -550,6 +557,7 @@ __all__ = [
     "JobLevelEnum",
     "KaryotypicSexEnum",
     "LabAutomationWorkflowType",
+    "LabUnitOperationEnum",
     "LaboratoryDeviceTypeEnum",
     "LabwareStandardEnum",
     "LanguageCodeISO6391enum",
@@ -563,6 +571,7 @@ __all__ = [
     "LicensingStageEnum",
     "LipidCategory",
     "LiquidHandlingOperationEnum",
+    "LocalStructuralFeature",
     "LogisticsOperationEnum",
     "MLDataType",
     "MLFieldRole",
@@ -590,6 +599,7 @@ __all__ = [
     "MaterialClassEnum",
     "MaterialPropertyPredictionType",
     "MaterialsSimulationType",
+    "MaturityEnum",
     "MechanicalBehaviorEnum",
     "MechanicalTestingMethodEnum",
     "MedicalSpecialtyEnum",
@@ -665,6 +675,7 @@ __all__ = [
     "OutcomeTypeEnum",
     "OxidationStateEnum",
     "OxygenationStrategyEnum",
+    "PATOBiologicalSexEnum",
     "PCROperationTypeEnum",
     "PCRPlateTypeEnum",
     "PVCellType",
@@ -753,6 +764,7 @@ __all__ = [
     "RegulatoryConstraint",
     "RegulatoryFrameworkEnum",
     "RelToOxygenEnum",
+    "RelativeChangeEnum",
     "RelativeDirection",
     "RelativeTimeEnum",
     "RemoteSensingDataType",
@@ -775,6 +787,7 @@ __all__ = [
     "SchedulerTypeEnum",
     "Season",
     "SeasonalEnvironmentExposureEnum",
+    "SecondaryStructureType",
     "SectionLocationEnum",
     "SemiconductorMaterialType",
     "SensorWhileDrillingFeature",
@@ -792,6 +805,7 @@ __all__ = [
     "SequencingChemistry",
     "SequencingPlatform",
     "SeverityLevelEnum",
+    "ShapeEnum",
     "SimpleSpatialDirection",
     "SkinToneEnum",
     "SmartManufacturingTechnologyType",
@@ -801,6 +815,7 @@ __all__ = [
     "SourceMaterialTypeEnum",
     "SourcingStrategyEnum",
     "SpamClassificationEnum",
+    "SpatialPatternEnum",
     "SpatialRelationship",
     "SpatialResolutionEnum",
     "SpecimenCollectionMethodEnum",
@@ -838,6 +853,7 @@ __all__ = [
     "TemperatureUnitEnum",
     "TemporalAggregationEnum",
     "TextCharset",
+    "TextureEnum",
     "TherapeuticActionabilityEnum",
     "ThermalAnalysisMethodEnum",
     "ThermalConductivityEnum",
@@ -877,6 +893,7 @@ __all__ = [
     "ValueSetStewardEnum",
     "VectorTypeEnum",
     "VendorCategoryEnum",
+    "ViabilityEnum",
     "VideoFormatEnum",
     "ViralGenomeTypeEnum",
     "VisitProvenanceEnum",
