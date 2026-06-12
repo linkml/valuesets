@@ -18,6 +18,7 @@ imports:
 - bio/genome_features
 - bio/bio_entities
 - bio/structural_biology
+- bio/protein_structure_features
 - bio/biosafety
 - bio/insdc_missing_values
 - bio/insdc_geographic_locations
