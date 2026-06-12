@@ -1,0 +1,674 @@
+name: valuesets-computing-frontier-ai-models
+title: Frontier AI Model Value Sets
+description: >-
+  A hierarchical value set of frontier large language / foundation models,
+  organized as provider > model family > specific model release. Leaf nodes use
+  the canonical model identifier as used in the providers' APIs and "/model"
+  selectors (e.g. claude-opus-4-8, gpt-5.5, gemini-3.5-flash). Intermediate nodes
+  group models by developer and family. Per-model metadata (knowledge/training
+  cutoff, context window, max output tokens, release date, links to model cards)
+  is attached as annotations and see_also links where available.
+
+  NOTE: The frontier model landscape changes rapidly; values reflect the state of
+  provider documentation as of mid-2026. Canonical API identifiers for
+  open-weight models (Llama, DeepSeek, Mistral, Kimi) can vary between inference
+  hosts; the identifiers given are the developer's reference names.
+id: https://w3id.org/valuesets/computing/frontier_ai_models
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+default_prefix: valuesets
+
+slots:
+  frontier_model:
+    description: A frontier AI model, its family, or its developer
+    range: FrontierModelEnum
+
+enums:
+  FrontierModelEnum:
+    title: Frontier AI Model
+    description: >-
+      Hierarchical enumeration of frontier AI models. The hierarchy has three
+      tiers: developer (e.g. ANTHROPIC), model family (e.g. CLAUDE_OPUS), and
+      specific model release identified by its canonical API model id
+      (e.g. claude-opus-4-8). Intermediate developer and family nodes are
+      uppercase categorical values; leaf nodes are the verbatim API identifiers.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+
+      ##########################################################################
+      # Anthropic
+      ##########################################################################
+      ANTHROPIC:
+        description: Models developed by Anthropic (the Claude family)
+        annotations:
+          node_type: developer
+          homepage: https://www.anthropic.com
+        see_also:
+        - https://docs.claude.com/en/docs/about-claude/models/overview
+
+      CLAUDE_OPUS:
+        description: Claude Opus - Anthropic's most capable Opus-tier model family
+        is_a: ANTHROPIC
+        annotations:
+          node_type: family
+          tier: most capable
+
+      claude-opus-4-8:
+        description: >-
+          Claude Opus 4.8 - Anthropic's most capable Opus-tier model; highly
+          autonomous, state-of-the-art on long-horizon agentic work, knowledge
+          work, and memory. Adaptive thinking only.
+        is_a: CLAUDE_OPUS
+        title: Claude Opus 4.8
+        aliases:
+        - Opus 4.8
+        - opus
+        annotations:
+          node_type: model
+          api_model_id: claude-opus-4-8
+          developer: Anthropic
+          context_window: 1000000
+          max_output_tokens: 128000
+          input_usd_per_mtok: 5.00
+          output_usd_per_mtok: 25.00
+        see_also:
+        - https://docs.claude.com/en/docs/about-claude/models/overview
+
+      claude-opus-4-7:
+        description: >-
+          Claude Opus 4.7 - previous-generation Opus; highly autonomous, strong on
+          long-horizon agentic work, vision, and memory. Adaptive thinking only.
+        is_a: CLAUDE_OPUS
+        title: Claude Opus 4.7
+        aliases:
+        - Opus 4.7
+        annotations:
+          node_type: model
+          api_model_id: claude-opus-4-7
+          developer: Anthropic
+          context_window: 1000000
+          max_output_tokens: 128000
+
+      claude-opus-4-6:
+        description: >-
+          Claude Opus 4.6 - older Opus model supporting adaptive thinking and 128K
+          max output tokens.
+        is_a: CLAUDE_OPUS
+        title: Claude Opus 4.6
+        aliases:
+        - Opus 4.6
+        annotations:
+          node_type: model
+          api_model_id: claude-opus-4-6
+          developer: Anthropic
+          context_window: 1000000
+          max_output_tokens: 128000
+
+      claude-opus-4-5:
+        description: Claude Opus 4.5 - legacy Opus model (still active).
+        is_a: CLAUDE_OPUS
+        title: Claude Opus 4.5
+        aliases:
+        - Opus 4.5
+        annotations:
+          node_type: model
+          api_model_id: claude-opus-4-5
+          full_model_id: claude-opus-4-5-20251101
+          developer: Anthropic
+
+      CLAUDE_SONNET:
+        description: Claude Sonnet - Anthropic's balanced speed / intelligence family
+        is_a: ANTHROPIC
+        annotations:
+          node_type: family
+          tier: balanced
+
+      claude-sonnet-4-6:
+        description: >-
+          Claude Sonnet 4.6 - Anthropic's best combination of speed and
+          intelligence. Supports adaptive thinking.
+        is_a: CLAUDE_SONNET
+        title: Claude Sonnet 4.6
+        aliases:
+        - Sonnet 4.6
+        - sonnet
+        annotations:
+          node_type: model
+          api_model_id: claude-sonnet-4-6
+          developer: Anthropic
+          context_window: 1000000
+          max_output_tokens: 64000
+          input_usd_per_mtok: 3.00
+          output_usd_per_mtok: 15.00
+
+      claude-sonnet-4-5:
+        description: Claude Sonnet 4.5 - legacy Sonnet model (still active).
+        is_a: CLAUDE_SONNET
+        title: Claude Sonnet 4.5
+        aliases:
+        - Sonnet 4.5
+        annotations:
+          node_type: model
+          api_model_id: claude-sonnet-4-5
+          full_model_id: claude-sonnet-4-5-20250929
+          developer: Anthropic
+
+      CLAUDE_HAIKU:
+        description: Claude Haiku - Anthropic's fastest and most cost-effective family
+        is_a: ANTHROPIC
+        annotations:
+          node_type: family
+          tier: fast
+
+      claude-haiku-4-5:
+        description: >-
+          Claude Haiku 4.5 - Anthropic's fastest and most cost-effective model for
+          simple, latency-sensitive tasks.
+        is_a: CLAUDE_HAIKU
+        title: Claude Haiku 4.5
+        aliases:
+        - Haiku 4.5
+        - haiku
+        annotations:
+          node_type: model
+          api_model_id: claude-haiku-4-5
+          full_model_id: claude-haiku-4-5-20251001
+          developer: Anthropic
+          context_window: 200000
+          max_output_tokens: 64000
+          input_usd_per_mtok: 1.00
+          output_usd_per_mtok: 5.00
+
+      CLAUDE_FABLE:
+        description: >-
+          Claude Fable - Anthropic's most capable widely released model family, for
+          the most demanding reasoning and long-horizon agentic work.
+        is_a: ANTHROPIC
+        annotations:
+          node_type: family
+          tier: frontier
+
+      claude-fable-5:
+        description: >-
+          Claude Fable 5 - Anthropic's most capable widely released model. Thinking
+          is always on; raw chain of thought is never returned. Requires 30-day
+          data retention.
+        is_a: CLAUDE_FABLE
+        title: Claude Fable 5
+        aliases:
+        - Fable 5
+        - fable
+        annotations:
+          node_type: model
+          api_model_id: claude-fable-5
+          developer: Anthropic
+          context_window: 1000000
+          max_output_tokens: 128000
+          input_usd_per_mtok: 10.00
+          output_usd_per_mtok: 50.00
+
+      CLAUDE_MYTHOS:
+        description: >-
+          Claude Mythos - same capabilities and API behavior as Claude Fable,
+          available exclusively through Project Glasswing.
+        is_a: ANTHROPIC
+        annotations:
+          node_type: family
+          tier: frontier
+          availability: Project Glasswing only
+
+      claude-mythos-5:
+        description: >-
+          Claude Mythos 5 - same capabilities, pricing, limits, and API behavior as
+          Claude Fable 5; available only through Project Glasswing.
+        is_a: CLAUDE_MYTHOS
+        title: Claude Mythos 5
+        aliases:
+        - Mythos 5
+        annotations:
+          node_type: model
+          api_model_id: claude-mythos-5
+          developer: Anthropic
+          context_window: 1000000
+          max_output_tokens: 128000
+
+      ##########################################################################
+      # OpenAI
+      ##########################################################################
+      OPENAI:
+        description: Models developed by OpenAI (the GPT family)
+        annotations:
+          node_type: developer
+          homepage: https://openai.com
+        see_also:
+        - https://developers.openai.com/api/docs/models
+
+      GPT_5:
+        description: GPT-5 - OpenAI's frontier model family for coding and professional work
+        is_a: OPENAI
+        annotations:
+          node_type: family
+          tier: frontier
+
+      gpt-5.5:
+        description: >-
+          GPT-5.5 - OpenAI's newest frontier model, "a new class of intelligence
+          for coding and professional work".
+        is_a: GPT_5
+        title: GPT-5.5
+        aliases:
+        - GPT-5.5
+        annotations:
+          node_type: model
+          api_model_id: gpt-5.5
+          developer: OpenAI
+          training_cutoff: 2025-12-01
+          context_window: 1000000
+        see_also:
+        - https://developers.openai.com/api/docs/models/gpt-5.5
+
+      gpt-5.4:
+        description: GPT-5.4 - a more affordable model for coding and professional work.
+        is_a: GPT_5
+        title: GPT-5.4
+        aliases:
+        - GPT-5.4
+        annotations:
+          node_type: model
+          api_model_id: gpt-5.4
+          developer: OpenAI
+          training_cutoff: 2025-08-31
+          context_window: 1000000
+
+      gpt-5.4-mini:
+        description: >-
+          GPT-5.4 mini - OpenAI's strongest mini model for coding, computer use,
+          and subagents; lower latency and cost.
+        is_a: GPT_5
+        title: GPT-5.4 mini
+        aliases:
+        - GPT-5.4 mini
+        annotations:
+          node_type: model
+          api_model_id: gpt-5.4-mini
+          developer: OpenAI
+          training_cutoff: 2025-08-31
+          context_window: 400000
+
+      gpt-5.2:
+        description: GPT-5.2 - previous frontier model for complex professional work.
+        is_a: GPT_5
+        title: GPT-5.2
+        aliases:
+        - GPT-5.2
+        annotations:
+          node_type: model
+          api_model_id: gpt-5.2
+          developer: OpenAI
+
+      gpt-5.2-codex:
+        description: >-
+          GPT-5.2-Codex - coding-specialized variant for API-authenticated Codex
+          workflows.
+        is_a: GPT_5
+        title: GPT-5.2-Codex
+        aliases:
+        - GPT-5.2 Codex
+        annotations:
+          node_type: model
+          api_model_id: gpt-5.2-codex
+          developer: OpenAI
+          specialization: coding
+
+      ##########################################################################
+      # Google DeepMind
+      ##########################################################################
+      GOOGLE:
+        description: Models developed by Google DeepMind (the Gemini family)
+        annotations:
+          node_type: developer
+          homepage: https://deepmind.google
+        see_also:
+        - https://ai.google.dev/gemini-api/docs/models
+
+      GEMINI_3:
+        description: Gemini 3 - Google's latest generation multimodal model family
+        is_a: GOOGLE
+        annotations:
+          node_type: family
+          tier: frontier
+
+      gemini-3.5-flash:
+        description: >-
+          Gemini 3.5 Flash - Google's most intelligent model for agentic and coding
+          tasks, delivering near-Pro intelligence at Flash-tier speed and cost.
+        is_a: GEMINI_3
+        title: Gemini 3.5 Flash
+        aliases:
+        - Gemini 3.5 Flash
+        annotations:
+          node_type: model
+          api_model_id: gemini-3.5-flash
+          developer: Google DeepMind
+          release_date: 2026-05-19
+          context_window: 1000000
+
+      gemini-3.1-pro-preview:
+        description: >-
+          Gemini 3.1 Pro - reasoning-first model optimized for complex agentic
+          workflows and coding, with adaptive thinking and integrated grounding.
+        is_a: GEMINI_3
+        title: Gemini 3.1 Pro
+        aliases:
+        - Gemini 3.1 Pro
+        annotations:
+          node_type: model
+          api_model_id: gemini-3.1-pro-preview
+          developer: Google DeepMind
+          context_window: 1000000
+
+      gemini-3-flash-preview:
+        description: Gemini 3 Flash - frontier-class performance at reduced cost.
+        is_a: GEMINI_3
+        title: Gemini 3 Flash
+        aliases:
+        - Gemini 3 Flash
+        annotations:
+          node_type: model
+          api_model_id: gemini-3-flash-preview
+          developer: Google DeepMind
+
+      gemini-3.1-flash-lite:
+        description: >-
+          Gemini 3.1 Flash-Lite - most cost-efficient Gemini model, optimized for
+          low latency and high-volume traffic.
+        is_a: GEMINI_3
+        title: Gemini 3.1 Flash-Lite
+        aliases:
+        - Gemini 3.1 Flash-Lite
+        annotations:
+          node_type: model
+          api_model_id: gemini-3.1-flash-lite
+          developer: Google DeepMind
+
+      GEMINI_2_5:
+        description: Gemini 2.5 - Google's previous-generation multimodal model family
+        is_a: GOOGLE
+        annotations:
+          node_type: family
+
+      gemini-2.5-pro:
+        description: >-
+          Gemini 2.5 Pro - high-capability model for complex reasoning and coding
+          with adaptive thinking and a 1M token context.
+        is_a: GEMINI_2_5
+        title: Gemini 2.5 Pro
+        aliases:
+        - Gemini 2.5 Pro
+        annotations:
+          node_type: model
+          api_model_id: gemini-2.5-pro
+          developer: Google DeepMind
+          context_window: 1000000
+
+      gemini-2.5-flash:
+        description: Gemini 2.5 Flash - best price-performance for reasoning tasks.
+        is_a: GEMINI_2_5
+        title: Gemini 2.5 Flash
+        aliases:
+        - Gemini 2.5 Flash
+        annotations:
+          node_type: model
+          api_model_id: gemini-2.5-flash
+          developer: Google DeepMind
+
+      gemini-2.5-flash-lite:
+        description: Gemini 2.5 Flash-Lite - fastest and most budget-friendly option.
+        is_a: GEMINI_2_5
+        title: Gemini 2.5 Flash-Lite
+        aliases:
+        - Gemini 2.5 Flash-Lite
+        annotations:
+          node_type: model
+          api_model_id: gemini-2.5-flash-lite
+          developer: Google DeepMind
+
+      ##########################################################################
+      # xAI
+      ##########################################################################
+      XAI:
+        description: Models developed by xAI (the Grok family)
+        annotations:
+          node_type: developer
+          homepage: https://x.ai
+        see_also:
+        - https://docs.x.ai/developers/models
+
+      GROK_4:
+        description: Grok 4 - xAI's reasoning-first flagship model family
+        is_a: XAI
+        annotations:
+          node_type: family
+          tier: frontier
+
+      grok-4.3:
+        description: >-
+          Grok 4.3 - xAI's reasoning-first flagship; the most intelligent and
+          fastest model xAI has built.
+        is_a: GROK_4
+        title: Grok 4.3
+        aliases:
+        - Grok 4.3
+        annotations:
+          node_type: model
+          api_model_id: grok-4.3
+          developer: xAI
+          release_date: 2026-04-30
+          context_window: 1000000
+
+      grok-4.20-0309-reasoning:
+        description: >-
+          Grok 4.20 (reasoning) - agentic tool-calling model noted for a very low
+          hallucination rate.
+        is_a: GROK_4
+        title: Grok 4.20 (reasoning)
+        aliases:
+        - Grok 4.20
+        annotations:
+          node_type: model
+          api_model_id: grok-4.20-0309-reasoning
+          developer: xAI
+          context_window: 1000000
+
+      grok-4-0709:
+        description: Grok 4 - earlier Grok 4 release.
+        is_a: GROK_4
+        title: Grok 4
+        aliases:
+        - Grok 4
+        annotations:
+          node_type: model
+          api_model_id: grok-4-0709
+          developer: xAI
+          knowledge_cutoff: 2024-11
+
+      GROK_CODE:
+        description: Grok Code - xAI's dedicated agentic coding model family
+        is_a: XAI
+        annotations:
+          node_type: family
+          specialization: coding
+
+      grok-code-fast-1:
+        description: Grok Code Fast 1 - dedicated agentic coding model.
+        is_a: GROK_CODE
+        title: Grok Code Fast 1
+        aliases:
+        - Grok Code Fast
+        annotations:
+          node_type: model
+          api_model_id: grok-code-fast-1
+          developer: xAI
+          specialization: coding
+
+      ##########################################################################
+      # Meta (open-weight)
+      ##########################################################################
+      META:
+        description: Open-weight models developed by Meta (the Llama family)
+        annotations:
+          node_type: developer
+          homepage: https://www.llama.com
+          license: Llama Community License
+        see_also:
+        - https://www.llama.com/models/
+
+      LLAMA_4:
+        description: Llama 4 - Meta's open-weight mixture-of-experts model family
+        is_a: META
+        annotations:
+          node_type: family
+
+      llama-4-maverick:
+        description: >-
+          Llama 4 Maverick - general-purpose open-weight chat model; highest MMLU
+          among Llama 4 variants.
+        is_a: LLAMA_4
+        title: Llama 4 Maverick
+        aliases:
+        - Llama 4 Maverick
+        annotations:
+          node_type: model
+          api_model_id: llama-4-maverick
+          developer: Meta
+
+      llama-4-scout:
+        description: >-
+          Llama 4 Scout - open-weight model supporting very long context
+          (up to 10M tokens).
+        is_a: LLAMA_4
+        title: Llama 4 Scout
+        aliases:
+        - Llama 4 Scout
+        annotations:
+          node_type: model
+          api_model_id: llama-4-scout
+          developer: Meta
+          context_window: 10000000
+
+      ##########################################################################
+      # DeepSeek (open-weight)
+      ##########################################################################
+      DEEPSEEK:
+        description: Open-weight models developed by DeepSeek
+        annotations:
+          node_type: developer
+          homepage: https://www.deepseek.com
+        see_also:
+        - https://api-docs.deepseek.com/
+
+      DEEPSEEK_MODELS:
+        description: DeepSeek - open-weight mixture-of-experts chat and reasoning models
+        is_a: DEEPSEEK
+        annotations:
+          node_type: family
+
+      deepseek-chat:
+        description: >-
+          DeepSeek-V3 (served as deepseek-chat) - open-weight MoE model activating
+          ~37B of 671B parameters per token.
+        is_a: DEEPSEEK_MODELS
+        title: DeepSeek-V3
+        aliases:
+        - DeepSeek-V3
+        - DeepSeek V3
+        annotations:
+          node_type: model
+          api_model_id: deepseek-chat
+          developer: DeepSeek
+
+      deepseek-reasoner:
+        description: >-
+          DeepSeek-R1 (served as deepseek-reasoner) - open-weight reasoning model.
+        is_a: DEEPSEEK_MODELS
+        title: DeepSeek-R1
+        aliases:
+        - DeepSeek-R1
+        - DeepSeek R1
+        annotations:
+          node_type: model
+          api_model_id: deepseek-reasoner
+          developer: DeepSeek
+
+      ##########################################################################
+      # Mistral AI (open-weight)
+      ##########################################################################
+      MISTRAL:
+        description: Models developed by Mistral AI
+        annotations:
+          node_type: developer
+          homepage: https://mistral.ai
+        see_also:
+        - https://docs.mistral.ai/getting-started/models/models_overview/
+
+      MISTRAL_LARGE:
+        description: Mistral Large - Mistral AI's flagship open-weight model family
+        is_a: MISTRAL
+        annotations:
+          node_type: family
+
+      mistral-large-3:
+        description: >-
+          Mistral Large 3 - state-of-the-art open-weight MoE model (41B active /
+          675B total parameters), 256K context, released under Apache 2.0.
+        is_a: MISTRAL_LARGE
+        title: Mistral Large 3
+        aliases:
+        - Mistral Large 3
+        annotations:
+          node_type: model
+          api_model_id: mistral-large-3
+          developer: Mistral AI
+          release_date: 2025-12
+          context_window: 256000
+          license: Apache-2.0
+
+      ##########################################################################
+      # Moonshot AI (open-weight)
+      ##########################################################################
+      MOONSHOT:
+        description: Models developed by Moonshot AI (the Kimi family)
+        annotations:
+          node_type: developer
+          homepage: https://www.moonshot.ai
+        see_also:
+        - https://platform.moonshot.ai/docs
+
+      KIMI:
+        description: Kimi - Moonshot AI's open-weight mixture-of-experts model family
+        is_a: MOONSHOT
+        annotations:
+          node_type: family
+
+      kimi-k2.6:
+        description: >-
+          Kimi K2.6 - frontier open-weight MoE coding model
+          (32B active / 1T total parameters).
+        is_a: KIMI
+        title: Kimi K2.6
+        aliases:
+        - Kimi K2.6
+        annotations:
+          node_type: model
+          api_model_id: kimi-k2.6
+          developer: Moonshot AI
