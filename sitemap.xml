@@ -1321,6 +1321,10 @@
          <lastmod>2026-06-12</lastmod>
     </url>
     <url>
+         <loc>https://linkml.github.io/valuesets/elements/LocalStructuralFeature/</loc>
+         <lastmod>2026-06-12</lastmod>
+    </url>
+    <url>
          <loc>https://linkml.github.io/valuesets/elements/LogisticsOperationEnum/</loc>
          <lastmod>2026-06-12</lastmod>
     </url>
@@ -2150,6 +2154,10 @@
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/Season/</loc>
+         <lastmod>2026-06-12</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/SecondaryStructureType/</loc>
          <lastmod>2026-06-12</lastmod>
     </url>
     <url>
@@ -3841,6 +3849,10 @@
          <lastmod>2026-06-12</lastmod>
     </url>
     <url>
+         <loc>https://linkml.github.io/valuesets/elements/local_structural_feature/</loc>
+         <lastmod>2026-06-12</lastmod>
+    </url>
+    <url>
          <loc>https://linkml.github.io/valuesets/elements/logistics_operation/</loc>
          <lastmod>2026-06-12</lastmod>
     </url>
@@ -4618,6 +4630,10 @@
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/season/</loc>
+         <lastmod>2026-06-12</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/secondary_structure/</loc>
          <lastmod>2026-06-12</lastmod>
     </url>
     <url>
