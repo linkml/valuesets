@@ -1,0 +1,235 @@
+name: protein_structure_features
+title: Protein 3D Local Structure Feature Value Sets
+description: 'Value sets describing fine-grained, local three-dimensional features of protein
+  structures: per-residue secondary structure states, super-secondary structural motifs,
+  functional sites, and local geometric features (pockets, clefts, elbows).
+
+
+  These provide a curated, human-interpretable, ontology-mapped counterpart to the learned
+  per-residue feature vocabularies produced by protein language models -- e.g. the 8-state
+  secondary structure (SS8) track and structure-token codebook of ESM3, and the ~16,000
+  sparse-autoencoder feature dictionaries served per-residue by interpretability APIs
+  (InterPLM; the Biohub/EvolutionaryScale ESMC SAE, model
+  biohub/ESMC-6B-sae-layer60-k64-codebook16384). Where curated ontology terms exist they
+  are mapped via ``meaning:``; geometric surface features (pocket, cleft, cavity, elbow,
+  groove, tunnel) currently have no suitable OBO term and are flagged as gaps.
+
+  '
+id: https://w3id.org/valuesets/bio/protein_structure_features
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  SO: http://purl.obolibrary.org/obo/SO_
+  EDAM: http://edamontology.org/
+  uniprot_core: http://purl.uniprot.org/core/
+  valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+default_prefix: valuesets
+slots:
+  secondary_structure:
+    description: Per-residue secondary structure state
+    range: SecondaryStructureType
+  local_structural_feature:
+    description: Local 3D structural feature, motif, site, or geometric feature
+    range: LocalStructuralFeature
+enums:
+  SecondaryStructureType:
+    title: Secondary Structure Type
+    description: 'Per-residue secondary structure assignment. The permissible values
+      correspond to the canonical DSSP 8-state (SS8) classification, which is also the
+      secondary-structure track vocabulary used by protein language models such as ESM3.
+      The single-letter DSSP code is recorded in the ``dssp_code`` annotation.'
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      ALPHA_HELIX:
+        title: alpha helix
+        description: Right-handed alpha helix (3.6 residues/turn, i to i+4 hydrogen bonding)
+        meaning: SO:0001117
+        broad_mappings:
+        - uniprot_core:Helix_Annotation
+        annotations:
+          dssp_code: H
+          ss8_class: H
+      THREE_TEN_HELIX:
+        title: 3-10 helix
+        description: 3-10 helix (3 residues/turn, i to i+3 hydrogen bonding)
+        meaning: SO:0001119
+        broad_mappings:
+        - uniprot_core:Helix_Annotation
+        annotations:
+          dssp_code: G
+          ss8_class: G
+      PI_HELIX:
+        title: pi helix
+        description: Pi helix (4.1 residues/turn, i to i+5 hydrogen bonding)
+        meaning: SO:0001118
+        broad_mappings:
+        - uniprot_core:Helix_Annotation
+        annotations:
+          dssp_code: I
+          ss8_class: I
+      BETA_STRAND:
+        title: beta strand
+        description: Extended beta strand participating in a beta sheet
+        meaning: SO:0001111
+        broad_mappings:
+        - uniprot_core:Beta_Strand_Annotation
+        annotations:
+          dssp_code: E
+          ss8_class: E
+      BETA_BRIDGE:
+        title: isolated beta bridge
+        description: Residue in an isolated single-pair beta bridge
+        broad_mappings:
+        - uniprot_core:Beta_Strand_Annotation
+        annotations:
+          dssp_code: B
+          ss8_class: B
+          ontology_gap: 'true'
+      TURN:
+        title: hydrogen-bonded turn
+        description: Hydrogen-bonded turn reversing backbone direction over <=4 residues
+        meaning: SO:0001128
+        exact_mappings:
+        - uniprot_core:Turn_Annotation
+        annotations:
+          dssp_code: T
+          ss8_class: T
+      BEND:
+        title: bend
+        description: Region of high backbone curvature without regular hydrogen bonding
+        annotations:
+          dssp_code: S
+          ss8_class: S
+          ontology_gap: 'true'
+      COIL:
+        title: coil / loop
+        description: Irregular, unstructured backbone region (loop / random coil)
+        meaning: SO:0100012
+        annotations:
+          dssp_code: C
+          ss8_class: C
+          aliases: loop, random coil, blank
+  LocalStructuralFeature:
+    title: Local Structural Feature
+    description: 'Fine-grained local three-dimensional features of protein structures,
+      spanning super-secondary structural motifs, functional sites, and local geometric
+      surface features. This is the curated, ontology-mapped analogue of the learned
+      per-residue feature vocabularies produced by protein language models and their
+      sparse-autoencoder interpretations. Members marked with the ``ontology_gap``
+      annotation have no suitable OBO term and are candidates for new ontology terms.'
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      POLYPEPTIDE_STRUCTURAL_MOTIF:
+        title: polypeptide structural motif
+        description: A recurring 3D structural element within the chain that does not form
+          a stable globular unit (the general parent class for local motifs)
+        meaning: SO:0001079
+      BETA_HAIRPIN:
+        title: beta hairpin
+        description: Two adjacent antiparallel beta strands connected by a short loop or turn
+        annotations:
+          ontology_gap: 'true'
+      BETA_BULGE:
+        title: beta bulge
+        description: A local disruption of beta-sheet hydrogen bonding across three residues
+        meaning: SO:0001107
+      ASX_MOTIF:
+        title: asx motif
+        description: A five-residue motif nucleated by an Asp/Asn side chain (Asx)
+        meaning: SO:0001106
+      NEST:
+        title: polypeptide nest motif
+        description: A motif of two consecutive residues forming an anion-binding concavity
+        meaning: SO:0001120
+      COILED_COIL:
+        title: coiled coil
+        description: Two or more alpha helices wound together like strands of a rope
+        meaning: SO:0001080
+        exact_mappings:
+        - uniprot_core:Coiled_Coil_Annotation
+      HELIX_CAP:
+        title: helix cap
+        description: N-cap or C-cap residue terminating an alpha helix
+        annotations:
+          ontology_gap: 'true'
+      CATALYTIC_RESIDUE:
+        title: catalytic residue
+        description: An amino acid residue directly involved in enzyme catalysis (active site)
+        meaning: SO:0001104
+        related_mappings:
+        - uniprot_core:Active_Site_Annotation
+      PROTEIN_BINDING_SITE:
+        title: protein binding site
+        description: A site that interacts selectively and non-covalently with polypeptide molecules
+        meaning: SO:0000410
+        broad_mappings:
+        - uniprot_core:Binding_Site_Annotation
+      DISULFIDE_BOND:
+        title: disulfide bond
+        description: A covalent S-S bond between two cysteine residues
+        exact_mappings:
+        - uniprot_core:Disulfide_Bond_Annotation
+        annotations:
+          obo_gap: 'true'
+      METAL_BINDING_SITE:
+        title: metal binding site
+        description: A local site coordinating one or more metal ions
+        broad_mappings:
+        - uniprot_core:Binding_Site_Annotation
+        annotations:
+          obo_gap: 'true'
+      POCKET:
+        title: binding pocket
+        description: A concave, solvent-accessible surface depression that can accommodate a ligand
+        annotations:
+          ontology_gap: 'true'
+          related_edam: EDAM:data_1542
+      CLEFT:
+        title: cleft
+        description: An elongated surface groove between structural elements or domains
+        annotations:
+          ontology_gap: 'true'
+      CAVITY:
+        title: interior cavity
+        description: An enclosed, solvent-inaccessible internal void within the structure
+        annotations:
+          ontology_gap: 'true'
+          related_edam: EDAM:data_1542
+      TUNNEL:
+        title: tunnel / channel
+        description: An elongated, often buried, passage through the structure connecting two regions
+        annotations:
+          ontology_gap: 'true'
+      GROOVE:
+        title: groove
+        description: A surface channel, e.g. a nucleic-acid-binding groove
+        annotations:
+          ontology_gap: 'true'
+      ELBOW:
+        title: elbow / hinge
+        description: A localized bend or hinge between two structural elements or domains
+        annotations:
+          ontology_gap: 'true'
+      KINK:
+        title: helix kink
+        description: A localized bend interrupting the regular geometry of a helix
+        annotations:
+          ontology_gap: 'true'
+      INTERFACE:
+        title: interaction interface
+        description: A surface patch mediating contact with another chain or molecule
+        annotations:
+          ontology_gap: 'true'
