@@ -22,6 +22,7 @@ prefixes:
   linkml: https://w3id.org/linkml/
   SO: http://purl.obolibrary.org/obo/SO_
   EDAM: http://edamontology.org/
+  uniprot_core: http://purl.uniprot.org/core/
   valuesets: https://w3id.org/valuesets/
   orcid: https://orcid.org/
   valuesets_meta: https://w3id.org/valuesets/meta/
@@ -51,6 +52,8 @@ enums:
         title: alpha helix
         description: Right-handed alpha helix (3.6 residues/turn, i to i+4 hydrogen bonding)
         meaning: SO:0001117
+        broad_mappings:
+        - uniprot_core:Helix_Annotation
         annotations:
           dssp_code: H
           ss8_class: H
@@ -58,6 +61,8 @@ enums:
         title: 3-10 helix
         description: 3-10 helix (3 residues/turn, i to i+3 hydrogen bonding)
         meaning: SO:0001119
+        broad_mappings:
+        - uniprot_core:Helix_Annotation
         annotations:
           dssp_code: G
           ss8_class: G
@@ -65,6 +70,8 @@ enums:
         title: pi helix
         description: Pi helix (4.1 residues/turn, i to i+5 hydrogen bonding)
         meaning: SO:0001118
+        broad_mappings:
+        - uniprot_core:Helix_Annotation
         annotations:
           dssp_code: I
           ss8_class: I
@@ -72,12 +79,16 @@ enums:
         title: beta strand
         description: Extended beta strand participating in a beta sheet
         meaning: SO:0001111
+        broad_mappings:
+        - uniprot_core:Beta_Strand_Annotation
         annotations:
           dssp_code: E
           ss8_class: E
       BETA_BRIDGE:
         title: isolated beta bridge
         description: Residue in an isolated single-pair beta bridge
+        broad_mappings:
+        - uniprot_core:Beta_Strand_Annotation
         annotations:
           dssp_code: B
           ss8_class: B
@@ -86,6 +97,8 @@ enums:
         title: hydrogen-bonded turn
         description: Hydrogen-bonded turn reversing backbone direction over <=4 residues
         meaning: SO:0001128
+        exact_mappings:
+        - uniprot_core:Turn_Annotation
         annotations:
           dssp_code: T
           ss8_class: T
@@ -145,6 +158,8 @@ enums:
         title: coiled coil
         description: Two or more alpha helices wound together like strands of a rope
         meaning: SO:0001080
+        exact_mappings:
+        - uniprot_core:Coiled_Coil_Annotation
       HELIX_CAP:
         title: helix cap
         description: N-cap or C-cap residue terminating an alpha helix
@@ -154,20 +169,28 @@ enums:
         title: catalytic residue
         description: An amino acid residue directly involved in enzyme catalysis (active site)
         meaning: SO:0001104
+        related_mappings:
+        - uniprot_core:Active_Site_Annotation
       PROTEIN_BINDING_SITE:
         title: protein binding site
         description: A site that interacts selectively and non-covalently with polypeptide molecules
         meaning: SO:0000410
+        broad_mappings:
+        - uniprot_core:Binding_Site_Annotation
       DISULFIDE_BOND:
         title: disulfide bond
         description: A covalent S-S bond between two cysteine residues
+        exact_mappings:
+        - uniprot_core:Disulfide_Bond_Annotation
         annotations:
-          ontology_gap: 'true'
+          obo_gap: 'true'
       METAL_BINDING_SITE:
         title: metal binding site
         description: A local site coordinating one or more metal ions
+        broad_mappings:
+        - uniprot_core:Binding_Site_Annotation
         annotations:
-          ontology_gap: 'true'
+          obo_gap: 'true'
       POCKET:
         title: binding pocket
         description: A concave, solvent-accessible surface depression that can accommodate a ligand
