@@ -132,6 +132,7 @@ imports:
 - analytical_chemistry/mass_spectrometry
 - lab_automation/devices
 - lab_automation/operations
+- lab_automation/cloud_lab
 - lab_automation/labware
 - lab_automation/protocols
 - lab_automation/standards

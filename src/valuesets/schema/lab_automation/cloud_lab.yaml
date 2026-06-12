@@ -1,0 +1,519 @@
+name: cloud_lab
+id: https://w3id.org/valuesets/lab_automation/cloud_lab
+title: Cloud Laboratory Protocol Value Sets
+description: >-
+  Controlled vocabularies for cloud-laboratory research protocols, modeled on the
+  operational taxonomy exposed by remote/cloud labs such as Emerald Cloud Lab (ECL)
+  and its Symbolic Lab Language (SLL). Two complementary layers are captured:
+  (1) LabUnitOperationEnum -- the composable sample-manipulation primitives ("unit
+  operations") that make up a sample-preparation protocol; and
+  (2) CloudLabExperimentEnum -- the higher-level experiment/assay functions that a
+  protocol invokes. The experiment layer is cross-referenced to the assay value sets
+  under bio/assays/ (OBIAssayEnum, BAOBioassayEnum) and to analytical-chemistry
+  vocabularies; OBI/CHMO/MMO terms are used for `meaning:` where an equivalent
+  ontology class exists. These vocabularies use neutral ontology mappings rather than
+  vendor-specific identifiers; ECL function names are used only as an input checklist
+  for completeness.
+license: https://creativecommons.org/publicdomain/zero/1.0/
+version: 0.1.0
+prefixes:
+  valuesets: https://w3id.org/valuesets/
+  linkml: https://w3id.org/linkml/
+  OBI: http://purl.obolibrary.org/obo/OBI_
+  CHMO: http://purl.obolibrary.org/obo/CHMO_
+  MMO: http://purl.obolibrary.org/obo/MMO_
+  EFO: http://www.ebi.ac.uk/efo/EFO_
+  NCIT: http://purl.obolibrary.org/obo/NCIT_
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+default_prefix: valuesets
+imports:
+- linkml:types
+- ../core
+
+slots:
+  lab_unit_operation:
+    description: A sample-manipulation unit operation in a cloud-laboratory protocol
+    range: LabUnitOperationEnum
+  cloud_lab_experiment:
+    description: A cloud-laboratory experiment or assay function
+    range: CloudLabExperimentEnum
+
+enums:
+  LabUnitOperationEnum:
+    title: Lab Unit Operation
+    description: >-
+      Composable sample-manipulation primitives ("unit operations") used to build
+      sample-preparation protocols in a cloud laboratory. Modeled on the ECL Symbolic
+      Lab Language sample-preparation unit operations (Transfer, Aliquot, Mix,
+      Incubate, Filter, Centrifuge, Pellet, Resuspend, etc.). Complements the lower
+      level LiquidHandlingOperationEnum and SampleProcessingOperationEnum in
+      lab_automation/operations.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    see_also:
+    - https://w3id.org/valuesets/lab_automation/operations
+    - https://www.emeraldcloudlab.com/guides/runningexperiments
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      # --- Labeling / definition ---
+      DEFINE:
+        title: define
+        description: Declare a new sample, container, or model and assign it a label for later reference in the protocol
+      LABEL_SAMPLE:
+        title: label sample
+        description: Assign a human-readable label to a sample so it can be referenced by later unit operations
+      LABEL_CONTAINER:
+        title: label container
+        description: Assign a human-readable label to a container so it can be referenced by later unit operations
+      # --- Liquid handling / volumetric ---
+      TRANSFER:
+        title: transfer
+        description: Move a specified amount of sample from one source to one or more destinations
+      ALIQUOT:
+        title: aliquot
+        description: Distribute a sample into multiple equal portions in separate containers
+      CONSOLIDATE:
+        title: consolidate
+        description: Combine multiple source samples into a single destination container
+      DILUTE:
+        title: dilute
+        description: Reduce the concentration of a sample by adding diluent to a target volume or concentration
+      SERIAL_DILUTE:
+        title: serial dilute
+        description: Create a stepwise series of dilutions by repeatedly transferring and diluting a sample
+      FILL_TO_VOLUME:
+        title: fill to volume
+        description: Add solvent to a sample until a specified total volume is reached
+      RESUSPEND:
+        title: resuspend
+        description: Dissolve or re-disperse a solid or pellet in a specified volume of solvent
+      PREPARE_STOCK_SOLUTION:
+        title: prepare stock solution
+        description: Prepare a solution of defined composition from components and solvent
+      ADJUST_PH:
+        title: adjust pH
+        description: Add titrant to bring a sample to a target pH
+      # --- Mixing / incubation / timing ---
+      MIX:
+        title: mix
+        description: Homogenize a sample by pipetting, inversion, vortexing, stirring, sonication, or related agitation
+        meaning: CHMO:0001685  # mixing
+        aliases:
+        - mixing
+      INCUBATE:
+        title: incubate
+        description: Hold a sample at controlled temperature (and optionally mixing) for a specified duration
+      WAIT:
+        title: wait
+        description: Pause the protocol for a specified duration without other manipulation
+      # --- Separation / clarification ---
+      CENTRIFUGE:
+        title: centrifuge
+        description: Apply centrifugal force to a sample to separate components by density
+        meaning: OBI:0302886  # centrifugation
+        aliases:
+        - centrifugation
+      PELLET:
+        title: pellet
+        description: Centrifuge to precipitate solids, optionally aspirate the supernatant, and optionally resuspend the pellet
+      FILTER:
+        title: filter
+        description: Pass a sample through a filter to separate particulates or to sterilize
+        meaning: CHMO:0001640  # filtration
+        aliases:
+        - filtration
+      MAGNETIC_BEAD_SEPARATION:
+        title: magnetic bead separation
+        description: Isolate target analytes bound to magnetic beads using a magnetic field
+      MOVE_TO_MAGNET:
+        title: move to magnet
+        description: Place a container on a magnetic rack to immobilize magnetic beads
+      REMOVE_FROM_MAGNET:
+        title: remove from magnet
+        description: Remove a container from a magnetic rack to release magnetic beads
+      # --- Conditioning / state change ---
+      COVER:
+        title: cover
+        description: Apply a lid, cap, or seal to a container
+      UNCOVER:
+        title: uncover
+        description: Remove a lid, cap, or seal from a container
+      DEGAS:
+        title: degas
+        description: Remove dissolved gases from a liquid sample
+        meaning: CHMO:0002772  # degassing
+        aliases:
+        - degassing
+      DESICCATE:
+        title: desiccate
+        description: Remove moisture from a sample using a desiccant or controlled-humidity chamber
+      EVAPORATE:
+        title: evaporate
+        description: Remove solvent from a sample by evaporation, optionally under reduced pressure
+        meaning: CHMO:0001574  # evaporation
+        aliases:
+        - evaporation
+      LYOPHILIZE:
+        title: lyophilize
+        description: Freeze-dry a sample to remove solvent by sublimation under vacuum
+        meaning: CHMO:0001553  # freeze drying
+        aliases:
+        - freeze drying
+      FLASH_FREEZE:
+        title: flash freeze
+        description: Rapidly freeze a sample, typically in liquid nitrogen
+      AUTOCLAVE:
+        title: autoclave
+        description: Sterilize a sample or labware using pressurized saturated steam
+      GRIND:
+        title: grind
+        description: Mechanically reduce a solid sample to smaller particles or powder
+        meaning: CHMO:0001652  # grinding
+        aliases:
+        - grinding
+      MICROWAVE_DIGESTION:
+        title: microwave digestion
+        description: Digest a sample in acid under microwave heating to bring analytes into solution
+
+  CloudLabExperimentEnum:
+    title: Cloud Lab Experiment
+    description: >-
+      Higher-level experiment and assay functions offered as protocols by a cloud
+      laboratory, modeled on the ECL Symbolic Lab Language experiment functions and
+      grouped by category (synthesis, separations/chromatography, spectroscopy, mass
+      spectrometry, bioassays, crystallography, property measurement, cellular).
+      Cross-referenced to the assay value sets in bio/assays/ (OBIAssayEnum,
+      BAOBioassayEnum) and to analytical_chemistry vocabularies; `meaning:` maps to
+      OBI/CHMO classes where an equivalent assay or analytical method exists.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    see_also:
+    - https://w3id.org/valuesets/bio/assays/bio_assay
+    - https://www.emeraldcloudlab.com/guides/runningexperiments
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      # --- Organic / biomolecular synthesis ---
+      DNA_SYNTHESIS:
+        title: DNA synthesis
+        description: Solid-phase chemical synthesis of DNA oligonucleotides
+      RNA_SYNTHESIS:
+        title: RNA synthesis
+        description: Solid-phase chemical synthesis of RNA oligonucleotides
+      PNA_SYNTHESIS:
+        title: PNA synthesis
+        description: Solid-phase chemical synthesis of peptide nucleic acid oligomers
+      PEPTIDE_SYNTHESIS:
+        title: peptide synthesis
+        description: Solid-phase chemical synthesis of peptides
+      PCR:
+        title: PCR
+        description: Polymerase chain reaction amplification of nucleic acids
+        meaning: OBI:0000415  # polymerase chain reaction
+        aliases:
+        - polymerase chain reaction
+      BIOCONJUGATION:
+        title: bioconjugation
+        description: Covalent coupling of biomolecules or labels to a target molecule
+      # --- Separations / chromatography / electrophoresis ---
+      HPLC:
+        title: HPLC
+        description: High-performance liquid chromatography separation
+        meaning: CHMO:0001009  # high-performance liquid chromatography
+        aliases:
+        - high-performance liquid chromatography
+      FPLC:
+        title: FPLC
+        description: Fast protein liquid chromatography separation
+      FLASH_CHROMATOGRAPHY:
+        title: flash chromatography
+        description: Medium-pressure flash column chromatography separation
+        meaning: CHMO:0002582  # flash chromatography
+      GAS_CHROMATOGRAPHY:
+        title: gas chromatography
+        description: Gas chromatography separation of volatile analytes
+        meaning: CHMO:0001002  # gas chromatography
+      ION_CHROMATOGRAPHY:
+        title: ion chromatography
+        description: Chromatographic separation of ionic species
+        meaning: CHMO:0002874  # ion chromatography
+      SUPERCRITICAL_FLUID_CHROMATOGRAPHY:
+        title: supercritical fluid chromatography
+        description: Chromatographic separation using a supercritical fluid mobile phase
+      SOLID_PHASE_EXTRACTION:
+        title: solid phase extraction
+        description: Sample cleanup or enrichment by selective retention on a solid sorbent
+      LIQUID_LIQUID_EXTRACTION:
+        title: liquid-liquid extraction
+        description: Separation of analytes between two immiscible liquid phases
+        meaning: CHMO:0001600  # liquid–liquid extraction
+        aliases:
+        - liquid–liquid extraction
+      CROSS_FLOW_FILTRATION:
+        title: cross-flow filtration
+        description: Tangential-flow filtration for concentration or buffer exchange
+      DIALYSIS:
+        title: dialysis
+        description: Separation of molecules by size across a semipermeable membrane
+        meaning: CHMO:0001522  # dialysis
+      AGAROSE_GEL_ELECTROPHORESIS:
+        title: agarose gel electrophoresis
+        description: Size-based separation of nucleic acids in an agarose gel
+        meaning: CHMO:0001022  # agarose gel electrophoresis
+      PAGE:
+        title: PAGE
+        description: Polyacrylamide gel electrophoresis separation of biomolecules
+        meaning: CHMO:0001023  # polyacrylamide gel electrophoresis
+        aliases:
+        - polyacrylamide gel electrophoresis
+      CAPILLARY_GEL_ELECTROPHORESIS_SDS:
+        title: capillary gel electrophoresis SDS
+        description: SDS capillary gel electrophoresis sizing of proteins
+      CAPILLARY_ISOELECTRIC_FOCUSING:
+        title: capillary isoelectric focusing
+        description: Separation of proteins by isoelectric point in a capillary
+        meaning: CHMO:0001033  # capillary isoelectric focusing
+      WESTERN_BLOT:
+        title: Western blot
+        description: Immunodetection of proteins separated by electrophoresis
+        meaning: OBI:0000854  # western blot assay
+        aliases:
+        - western blot assay
+      # --- Spectroscopy ---
+      NMR:
+        title: NMR
+        description: One-dimensional nuclear magnetic resonance spectroscopy
+        meaning: CHMO:0000591  # nuclear magnetic resonance spectroscopy
+        aliases:
+        - nuclear magnetic resonance spectroscopy
+      NMR_2D:
+        title: 2D NMR
+        description: Two-dimensional nuclear magnetic resonance spectroscopy
+        meaning: CHMO:0000598  # two-dimensional nuclear magnetic resonance spectroscopy
+        aliases:
+        - two-dimensional nuclear magnetic resonance spectroscopy
+      ABSORBANCE_SPECTROSCOPY:
+        title: absorbance spectroscopy
+        description: Measurement of absorbance across a wavelength range
+      ABSORBANCE_INTENSITY:
+        title: absorbance intensity
+        description: Measurement of absorbance at one or more discrete wavelengths
+      ABSORBANCE_KINETICS:
+        title: absorbance kinetics
+        description: Time-resolved measurement of absorbance
+      FLUORESCENCE_SPECTROSCOPY:
+        title: fluorescence spectroscopy
+        description: Measurement of fluorescence emission across a wavelength range
+        meaning: CHMO:0000287  # fluorescence spectroscopy
+      FLUORESCENCE_INTENSITY:
+        title: fluorescence intensity
+        description: Measurement of fluorescence intensity at discrete wavelengths
+      FLUORESCENCE_KINETICS:
+        title: fluorescence kinetics
+        description: Time-resolved measurement of fluorescence intensity
+      FLUORESCENCE_POLARIZATION:
+        title: fluorescence polarization
+        description: Measurement of fluorescence polarization/anisotropy
+      LUMINESCENCE_SPECTROSCOPY:
+        title: luminescence spectroscopy
+        description: Measurement of luminescence emission across a wavelength range
+        meaning: CHMO:0002415  # luminescence spectroscopy
+      LUMINESCENCE_INTENSITY:
+        title: luminescence intensity
+        description: Measurement of luminescence intensity at discrete wavelengths
+      LUMINESCENCE_KINETICS:
+        title: luminescence kinetics
+        description: Time-resolved measurement of luminescence intensity
+      IR_SPECTROSCOPY:
+        title: IR spectroscopy
+        description: Infrared absorption spectroscopy
+        meaning: CHMO:0000630  # infrared absorption spectroscopy
+        aliases:
+        - infrared absorption spectroscopy
+      RAMAN_SPECTROSCOPY:
+        title: Raman spectroscopy
+        description: Raman scattering spectroscopy
+        meaning: CHMO:0000656  # Raman spectroscopy
+      CIRCULAR_DICHROISM:
+        title: circular dichroism
+        description: Measurement of differential absorption of circularly polarized light
+      DYNAMIC_LIGHT_SCATTERING:
+        title: dynamic light scattering
+        description: Measurement of particle size distribution from scattered-light fluctuations
+        meaning: CHMO:0000167  # dynamic light scattering
+      NEPHELOMETRY:
+        title: nephelometry
+        description: Measurement of turbidity by scattered light
+      THERMAL_SHIFT:
+        title: thermal shift
+        description: Measurement of protein thermal stability via a fluorescent thermal shift assay
+      UV_MELTING:
+        title: UV melting
+        description: Measurement of nucleic acid or protein melting curves by UV absorbance
+      # --- Mass spectrometry ---
+      MASS_SPECTROMETRY:
+        title: mass spectrometry
+        description: Determination of mass-to-charge ratios of ionized analytes
+        meaning: CHMO:0000470  # mass spectrometry
+      LCMS:
+        title: LC-MS
+        description: Liquid chromatography coupled to mass spectrometry
+        meaning: CHMO:0000524  # liquid chromatography-mass spectrometry
+        aliases:
+        - liquid chromatography-mass spectrometry
+      GCMS:
+        title: GC-MS
+        description: Gas chromatography coupled to mass spectrometry
+        meaning: CHMO:0000497  # gas chromatography-mass spectrometry
+        aliases:
+        - gas chromatography-mass spectrometry
+      ICPMS:
+        title: ICP-MS
+        description: Inductively coupled plasma mass spectrometry for elemental analysis
+        meaning: CHMO:0000538  # inductively coupled plasma mass spectrometry
+        aliases:
+        - inductively coupled plasma mass spectrometry
+      # --- Bioassays / immunoassays ---
+      ELISA:
+        title: ELISA
+        description: Enzyme-linked immunosorbent assay
+        meaning: OBI:0000661  # enzyme-linked immunosorbent assay
+        aliases:
+        - enzyme-linked immunosorbent assay
+      CAPILLARY_ELISA:
+        title: capillary ELISA
+        description: Automated capillary-based enzyme-linked immunosorbent assay
+      ALPHASCREEN:
+        title: AlphaScreen
+        description: Bead-based amplified luminescent proximity homogeneous assay
+      BIOLAYER_INTERFEROMETRY:
+        title: biolayer interferometry
+        description: Label-free measurement of biomolecular binding kinetics by interferometry
+        meaning: OBI:0002107  # bio-layer interferometry assay
+        aliases:
+        - bio-layer interferometry assay
+      QPCR:
+        title: qPCR
+        description: Quantitative real-time polymerase chain reaction
+        meaning: OBI:0000893  # real time polymerase chain reaction assay
+        aliases:
+        - real time polymerase chain reaction assay
+      DNA_SEQUENCING:
+        title: DNA sequencing
+        description: Determination of nucleotide sequence of DNA (Sanger/capillary)
+        meaning: OBI:0000626  # DNA sequencing assay
+        aliases:
+        - DNA sequencing assay
+      TOTAL_PROTEIN_QUANTIFICATION:
+        title: total protein quantification
+        description: Colorimetric or fluorometric quantification of total protein
+      TOTAL_PROTEIN_DETECTION:
+        title: total protein detection
+        description: Capillary-based detection and sizing of total protein
+      DIFFERENTIAL_SCANNING_CALORIMETRY:
+        title: differential scanning calorimetry
+        description: Measurement of heat flow associated with thermal transitions
+        meaning: CHMO:0000684  # differential scanning calorimetry
+      # --- Crystallography / solid-state ---
+      GROW_CRYSTAL:
+        title: grow crystal
+        description: Crystallization of a compound or macromolecule for structural analysis
+        meaning: CHMO:0001477  # crystallisation
+        aliases:
+        - crystallisation
+      POWDER_XRD:
+        title: powder XRD
+        description: Powder X-ray diffraction analysis of crystalline solids
+        meaning: CHMO:0000158  # powder X-ray diffraction
+        aliases:
+        - powder X-ray diffraction
+      # --- Physical property measurement ---
+      MEASURE_PH:
+        title: measure pH
+        description: Measurement of sample pH
+      MEASURE_CONDUCTIVITY:
+        title: measure conductivity
+        description: Measurement of electrical conductivity of a solution
+      MEASURE_DENSITY:
+        title: measure density
+        description: Measurement of sample density
+      MEASURE_VISCOSITY:
+        title: measure viscosity
+        description: Measurement of sample viscosity
+      MEASURE_OSMOLALITY:
+        title: measure osmolality
+        description: Measurement of solute concentration as osmolality
+      MEASURE_REFRACTIVE_INDEX:
+        title: measure refractive index
+        description: Measurement of the refractive index of a sample
+      MEASURE_SURFACE_TENSION:
+        title: measure surface tension
+        description: Measurement of liquid surface tension
+      MEASURE_CONTACT_ANGLE:
+        title: measure contact angle
+        description: Measurement of the contact angle of a liquid on a surface
+      MEASURE_DISSOLVED_OXYGEN:
+        title: measure dissolved oxygen
+        description: Measurement of dissolved oxygen concentration in a liquid
+      MEASURE_MELTING_POINT:
+        title: measure melting point
+        description: Determination of the melting point of a solid
+      MEASURE_WEIGHT:
+        title: measure weight
+        description: Gravimetric measurement of sample mass
+      MEASURE_VOLUME:
+        title: measure volume
+        description: Measurement of sample volume
+      MEASURE_COUNT:
+        title: measure count
+        description: Counting of discrete objects (e.g. particles, colonies, cells)
+      COUNT_LIQUID_PARTICLES:
+        title: count liquid particles
+        description: Counting and sizing of particles suspended in a liquid
+      COULTER_COUNT:
+        title: Coulter count
+        description: Counting and sizing of particles or cells by electrical impedance
+      CYCLIC_VOLTAMMETRY:
+        title: cyclic voltammetry
+        description: Electrochemical measurement of current versus swept potential
+        meaning: CHMO:0000025  # cyclic voltammetry
+      KARL_FISCHER_TITRATION:
+        title: Karl Fischer titration
+        description: Titrimetric determination of water content
+        meaning: CHMO:0002535  # Karl–Fischer titration
+        aliases:
+        - Karl–Fischer titration
+      DISSOLUTION:
+        title: dissolution
+        description: Measurement of the rate and extent of dissolution of a solid
+      DYNAMIC_FOAM_ANALYSIS:
+        title: dynamic foam analysis
+        description: Measurement of foam formation and decay
+      VISUAL_INSPECTION:
+        title: visual inspection
+        description: Operator or imaging-based visual assessment of a sample
+      IMAGE_SAMPLE:
+        title: image sample
+        description: Acquisition of a photographic image of a sample
+      # --- Cellular / microbiology ---
+      IMAGE_CELLS:
+        title: image cells
+        description: Microscopic imaging of cells
+      IMAGE_COLONIES:
+        title: image colonies
+        description: Imaging of microbial colonies on solid media
+      QUANTIFY_COLONIES:
+        title: quantify colonies
+        description: Counting and quantification of microbial colonies
+      LYSE_CELLS:
+        title: lyse cells
+        description: Disruption of cells to release intracellular contents
+      FREEZE_CELLS:
+        title: freeze cells
+        description: Controlled-rate freezing of cells for storage
