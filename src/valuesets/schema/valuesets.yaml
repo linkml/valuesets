@@ -59,6 +59,7 @@ imports:
 - data/data_use
 - computing/mime_types
 - computing/quantum
+- computing/frontier_ai_models
 - computing/microelectronics
 - computing/data_centers
 - physics/states_of_matter
