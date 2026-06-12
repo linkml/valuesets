@@ -89,6 +89,7 @@ from .clinical.provenance import ConditionProvenanceEnum, VisitProvenanceEnum, D
 from .computing.croissant_ml import MLDataType, DatasetEncodingFormat, DatasetSplitType, MLLicenseType, MLFieldRole, CompressionFormat, MLMediaType, MLModalityType
 from .computing.data_centers import DataCenterCoolingType, DataCenterTierLevel
 from .computing.file_formats import ImageFileFormatEnum, DocumentFormatEnum, DataFormatEnum, ArchiveFormatEnum, VideoFormatEnum, AudioFormatEnum, ProgrammingLanguageFileEnum, NetworkProtocolEnum
+from .computing.frontier_ai_models import FrontierModelEnum
 from .computing.geospatial_formats import GeospatialRasterFormat, GeospatialVectorFormat
 from .computing.maturity_levels import TechnologyReadinessLevel, SoftwareMaturityLevel, CapabilityMaturityLevel, StandardsMaturityLevel, ProjectMaturityLevel, DataMaturityLevel, OpenSourceMaturityLevel
 from .computing.microelectronics import SemiconductorMaterialType, ChipFabricationNodeType
@@ -461,6 +462,7 @@ __all__ = [
     "FossilFuelTypeEnum",
     "FraudDetectionEnum",
     "FrequencyUnitEnum",
+    "FrontierModelEnum",
     "FuelAssemblyTypeEnum",
     "FuelCycleFacilityTypeEnum",
     "FuelCycleOperationEnum",

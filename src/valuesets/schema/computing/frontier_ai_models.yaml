@@ -272,7 +272,7 @@ enums:
           node_type: model
           api_model_id: gpt-5.5
           developer: OpenAI
-          training_cutoff: 2025-12-01
+          training_cutoff: "2025-12-01"
           context_window: 1000000
         see_also:
         - https://developers.openai.com/api/docs/models/gpt-5.5
@@ -287,7 +287,7 @@ enums:
           node_type: model
           api_model_id: gpt-5.4
           developer: OpenAI
-          training_cutoff: 2025-08-31
+          training_cutoff: "2025-08-31"
           context_window: 1000000
 
       gpt-5.4-mini:
@@ -302,7 +302,7 @@ enums:
           node_type: model
           api_model_id: gpt-5.4-mini
           developer: OpenAI
-          training_cutoff: 2025-08-31
+          training_cutoff: "2025-08-31"
           context_window: 400000
 
       gpt-5.2:
@@ -360,7 +360,7 @@ enums:
           node_type: model
           api_model_id: gemini-3.5-flash
           developer: Google DeepMind
-          release_date: 2026-05-19
+          release_date: "2026-05-19"
           context_window: 1000000
 
       gemini-3.1-pro-preview:
@@ -473,7 +473,7 @@ enums:
           node_type: model
           api_model_id: grok-4.3
           developer: xAI
-          release_date: 2026-04-30
+          release_date: "2026-04-30"
           context_window: 1000000
 
       grok-4.20-0309-reasoning:
@@ -500,7 +500,7 @@ enums:
           node_type: model
           api_model_id: grok-4-0709
           developer: xAI
-          knowledge_cutoff: 2024-11
+          knowledge_cutoff: "2024-11"
 
       GROK_CODE:
         description: Grok Code - xAI's dedicated agentic coding model family
@@ -639,7 +639,7 @@ enums:
           node_type: model
           api_model_id: mistral-large-3
           developer: Mistral AI
-          release_date: 2025-12
+          release_date: "2025-12"
           context_window: 256000
           license: Apache-2.0
 
