@@ -180,6 +180,7 @@ from .industry.unconventional_resources import UnconventionalMineralResourceType
 
 # Lab_Automation domain
 from .lab_automation.autonomous_labs import AutonomousLabComponentType, ExperimentalDesignMethodType, LabAutomationWorkflowType
+from .lab_automation.cloud_lab import RelativeTimeEnum, PresenceEnum, LabUnitOperationEnum, CloudLabExperimentEnum
 from .lab_automation.devices import LaboratoryDeviceTypeEnum, RoboticArmTypeEnum
 from .lab_automation.labware import MicroplateFormatEnum, ContainerTypeEnum, PlateMaterialEnum, PlateCoatingEnum
 from .lab_automation.operations import LiquidHandlingOperationEnum, SampleProcessingOperationEnum
@@ -331,6 +332,7 @@ __all__ = [
     "ChurnClassificationEnum",
     "CitationStyle",
     "ClinicalBehavioralAssayEnum",
+    "CloudLabExperimentEnum",
     "CodonEnum",
     "ColorSpaceEnum",
     "CommonMineral",
@@ -548,6 +550,7 @@ __all__ = [
     "JobLevelEnum",
     "KaryotypicSexEnum",
     "LabAutomationWorkflowType",
+    "LabUnitOperationEnum",
     "LaboratoryDeviceTypeEnum",
     "LabwareStandardEnum",
     "LanguageCodeISO6391enum",
