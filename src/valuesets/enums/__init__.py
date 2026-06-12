@@ -48,6 +48,7 @@ from .bio.plant_developmental_stages import PlantDevelopmentalStage
 from .bio.plant_experimental_conditions import PlantStudyConditionEnum, SeasonalEnvironmentExposureEnum, EcologicalEnvironmentExposureEnum, PlantGrowthMediumExposureEnum
 from .bio.plant_sex import PlantSexEnum
 from .bio.protein_evidence import ProteinEvidenceForExistence, RefSeqStatusType
+from .bio.protein_structure_features import SecondaryStructureType, LocalStructuralFeature
 from .bio.proteomics_standards import RelativeTimeEnum, PresenceEnum, PeakAnnotationSeriesLabel, PeptideIonSeries, MassErrorUnit
 from .bio.psi_mi import InteractionDetectionMethod, InteractionType, ExperimentalRole, BiologicalRole, ParticipantIdentificationMethod, FeatureType, InteractorType, ConfidenceScore, ExperimentalPreparation
 from .bio.relationship_to_oxygen import RelToOxygenEnum
@@ -180,6 +181,7 @@ from .industry.unconventional_resources import UnconventionalMineralResourceType
 
 # Lab_Automation domain
 from .lab_automation.autonomous_labs import AutonomousLabComponentType, ExperimentalDesignMethodType, LabAutomationWorkflowType
+from .lab_automation.cloud_lab import RelativeTimeEnum, PresenceEnum, LabUnitOperationEnum, CloudLabExperimentEnum
 from .lab_automation.devices import LaboratoryDeviceTypeEnum, RoboticArmTypeEnum
 from .lab_automation.labware import MicroplateFormatEnum, ContainerTypeEnum, PlateMaterialEnum, PlateCoatingEnum
 from .lab_automation.operations import LiquidHandlingOperationEnum, SampleProcessingOperationEnum
@@ -331,6 +333,7 @@ __all__ = [
     "ChurnClassificationEnum",
     "CitationStyle",
     "ClinicalBehavioralAssayEnum",
+    "CloudLabExperimentEnum",
     "CodonEnum",
     "ColorSpaceEnum",
     "CommonMineral",
@@ -548,6 +551,7 @@ __all__ = [
     "JobLevelEnum",
     "KaryotypicSexEnum",
     "LabAutomationWorkflowType",
+    "LabUnitOperationEnum",
     "LaboratoryDeviceTypeEnum",
     "LabwareStandardEnum",
     "LanguageCodeISO6391enum",
@@ -561,6 +565,7 @@ __all__ = [
     "LicensingStageEnum",
     "LipidCategory",
     "LiquidHandlingOperationEnum",
+    "LocalStructuralFeature",
     "LogisticsOperationEnum",
     "MLDataType",
     "MLFieldRole",
@@ -773,6 +778,7 @@ __all__ = [
     "SchedulerTypeEnum",
     "Season",
     "SeasonalEnvironmentExposureEnum",
+    "SecondaryStructureType",
     "SectionLocationEnum",
     "SemiconductorMaterialType",
     "SensorWhileDrillingFeature",
