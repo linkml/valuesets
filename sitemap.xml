@@ -365,6 +365,10 @@
          <lastmod>2026-06-12</lastmod>
     </url>
     <url>
+         <loc>https://linkml.github.io/valuesets/elements/CellularityEnum/</loc>
+         <lastmod>2026-06-12</lastmod>
+    </url>
+    <url>
          <loc>https://linkml.github.io/valuesets/elements/ChemicalEntity/</loc>
          <lastmod>2026-06-12</lastmod>
     </url>
@@ -402,6 +406,10 @@
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/CodonEnum/</loc>
+         <lastmod>2026-06-12</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/ColorEnum/</loc>
          <lastmod>2026-06-12</lastmod>
     </url>
     <url>
@@ -929,6 +937,10 @@
          <lastmod>2026-06-12</lastmod>
     </url>
     <url>
+         <loc>https://linkml.github.io/valuesets/elements/FrontierModelEnum/</loc>
+         <lastmod>2026-06-12</lastmod>
+    </url>
+    <url>
          <loc>https://linkml.github.io/valuesets/elements/FuelAssemblyTypeEnum/</loc>
          <lastmod>2026-06-12</lastmod>
     </url>
@@ -1217,6 +1229,10 @@
          <lastmod>2026-06-12</lastmod>
     </url>
     <url>
+         <loc>https://linkml.github.io/valuesets/elements/IntensityEnum/</loc>
+         <lastmod>2026-06-12</lastmod>
+    </url>
+    <url>
          <loc>https://linkml.github.io/valuesets/elements/IntentClassificationEnum/</loc>
          <lastmod>2026-06-12</lastmod>
     </url>
@@ -1426,6 +1442,10 @@
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/MaterialsSimulationType/</loc>
+         <lastmod>2026-06-12</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/MaturityEnum/</loc>
          <lastmod>2026-06-12</lastmod>
     </url>
     <url>
@@ -1730,6 +1750,10 @@
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/OxygenationStrategyEnum/</loc>
+         <lastmod>2026-06-12</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/PATOBiologicalSexEnum/</loc>
          <lastmod>2026-06-12</lastmod>
     </url>
     <url>
@@ -2085,6 +2109,10 @@
          <lastmod>2026-06-12</lastmod>
     </url>
     <url>
+         <loc>https://linkml.github.io/valuesets/elements/RelativeChangeEnum/</loc>
+         <lastmod>2026-06-12</lastmod>
+    </url>
+    <url>
          <loc>https://linkml.github.io/valuesets/elements/RelativeDirection/</loc>
          <lastmod>2026-06-12</lastmod>
     </url>
@@ -2233,6 +2261,10 @@
          <lastmod>2026-06-12</lastmod>
     </url>
     <url>
+         <loc>https://linkml.github.io/valuesets/elements/ShapeEnum/</loc>
+         <lastmod>2026-06-12</lastmod>
+    </url>
+    <url>
          <loc>https://linkml.github.io/valuesets/elements/SimpleSpatialDirection/</loc>
          <lastmod>2026-06-12</lastmod>
     </url>
@@ -2270,6 +2302,10 @@
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/Sparqlpath/</loc>
+         <lastmod>2026-06-12</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/SpatialPatternEnum/</loc>
          <lastmod>2026-06-12</lastmod>
     </url>
     <url>
@@ -2429,6 +2465,10 @@
          <lastmod>2026-06-12</lastmod>
     </url>
     <url>
+         <loc>https://linkml.github.io/valuesets/elements/TextureEnum/</loc>
+         <lastmod>2026-06-12</lastmod>
+    </url>
+    <url>
          <loc>https://linkml.github.io/valuesets/elements/TherapeuticActionabilityEnum/</loc>
          <lastmod>2026-06-12</lastmod>
     </url>
@@ -2566,6 +2606,10 @@
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/VendorCategoryEnum/</loc>
+         <lastmod>2026-06-12</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/ViabilityEnum/</loc>
          <lastmod>2026-06-12</lastmod>
     </url>
     <url>
@@ -3509,6 +3553,10 @@
          <lastmod>2026-06-12</lastmod>
     </url>
     <url>
+         <loc>https://linkml.github.io/valuesets/elements/frontier_model/</loc>
+         <lastmod>2026-06-12</lastmod>
+    </url>
+    <url>
          <loc>https://linkml.github.io/valuesets/elements/fuel_assembly_type/</loc>
          <lastmod>2026-06-12</lastmod>
     </url>
@@ -4226,6 +4274,46 @@
     </url>
     <url>
          <loc>https://linkml.github.io/valuesets/elements/particle_accelerator_type/</loc>
+         <lastmod>2026-06-12</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/pato_biological_sex/</loc>
+         <lastmod>2026-06-12</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/pato_cellularity/</loc>
+         <lastmod>2026-06-12</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/pato_color/</loc>
+         <lastmod>2026-06-12</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/pato_intensity/</loc>
+         <lastmod>2026-06-12</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/pato_maturity/</loc>
+         <lastmod>2026-06-12</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/pato_relative_change/</loc>
+         <lastmod>2026-06-12</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/pato_shape/</loc>
+         <lastmod>2026-06-12</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/pato_spatial_pattern/</loc>
+         <lastmod>2026-06-12</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/pato_texture/</loc>
+         <lastmod>2026-06-12</lastmod>
+    </url>
+    <url>
+         <loc>https://linkml.github.io/valuesets/elements/pato_viability/</loc>
          <lastmod>2026-06-12</lastmod>
     </url>
     <url>
