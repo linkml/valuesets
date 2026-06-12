@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://linkml.github.io/valuesets/elements/ConcentrationUnitEnum/">
+        <link rel="canonical" href="https://linkml.github.io/valuesets/elements/LabUnitOperationEnum/">
       
       
       
@@ -18,7 +18,7 @@
     
     
       
-        <title>Enum: ConcentrationUnitEnum - valuesets</title>
+        <title>Enum: LabUnitOperationEnum - valuesets</title>
       
     
     
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#enum-concentrationunitenum" class="md-skip">
+        <a href="#enum-labunitoperationenum" class="md-skip">
           Skip to content
         </a>
       
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Enum: ConcentrationUnitEnum
+              Enum: LabUnitOperationEnum
             
           </span>
         </div>
@@ -643,6 +643,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      See Also
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#identifier-and-mapping-information" class="md-nav__link">
     <span class="md-ellipsis">
       Identifier and Mapping Information
@@ -694,75 +703,208 @@
   
 
 
-<h1 id="enum-concentrationunitenum">Enum: ConcentrationUnitEnum</h1>
-<p><em>Units of concentration measurement</em></p>
-<p>URI: <a href="https://w3id.org/valuesets/ConcentrationUnitEnum">valuesets:ConcentrationUnitEnum</a></p>
+<h1 id="enum-labunitoperationenum">Enum: LabUnitOperationEnum</h1>
+<p><em>Composable sample-manipulation primitives ("unit operations") used to build sample-preparation protocols in a cloud laboratory. Modeled on the ECL Symbolic Lab Language sample-preparation unit operations (Transfer, Aliquot, Mix, Incubate, Filter, Centrifuge, Pellet, Resuspend, etc.). Complements the lower level LiquidHandlingOperationEnum and SampleProcessingOperationEnum in lab_automation/operations.</em></p>
+<p>URI: <a href="https://w3id.org/valuesets/LabUnitOperationEnum">valuesets:LabUnitOperationEnum</a></p>
 <!-- bioportal-link -->
-<p><a href="https://bioportal.bioontology.org/ontologies/VALUESETS?p=classes&amp;conceptid=https%3A%2F%2Fw3id.org%2Fvaluesets%2FConcentrationUnitEnum">View in BioPortal</a></p>
+<p><a href="https://bioportal.bioontology.org/ontologies/VALUESETS?p=classes&amp;conceptid=https%3A%2F%2Fw3id.org%2Fvaluesets%2FLabUnitOperationEnum">View in BioPortal</a></p>
 <h2 id="permissible-values">Permissible Values</h2>
+<!-- annotations-table -->
 <table>
 <thead>
 <tr>
 <th>Value</th>
+<th>Title</th>
 <th>Meaning</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>MOLAR</td>
-<td>UO:0000062</td>
-<td>Molar (moles per liter)</td>
+<td>DEFINE</td>
+<td>define</td>
+<td></td>
+<td>Declare a new sample, container, or model and assign it a label for later reference in the protocol</td>
 </tr>
 <tr>
-<td>MILLIMOLAR</td>
-<td>UO:0000063</td>
-<td>Millimolar (10^-3 molar)</td>
+<td>LABEL_SAMPLE</td>
+<td>label sample</td>
+<td></td>
+<td>Assign a human-readable label to a sample so it can be referenced by later unit operations</td>
 </tr>
 <tr>
-<td>MICROMOLAR</td>
-<td>UO:0000064</td>
-<td>Micromolar (10^-6 molar)</td>
+<td>LABEL_CONTAINER</td>
+<td>label container</td>
+<td></td>
+<td>Assign a human-readable label to a container so it can be referenced by later unit operations</td>
 </tr>
 <tr>
-<td>NANOMOLAR</td>
-<td>UO:0000065</td>
-<td>Nanomolar (10^-9 molar)</td>
+<td>TRANSFER</td>
+<td>transfer</td>
+<td></td>
+<td>Move a specified amount of sample from one source to one or more destinations</td>
 </tr>
 <tr>
-<td>PICOMOLAR</td>
-<td>UO:0000066</td>
-<td>Picomolar (10^-12 molar)</td>
+<td>ALIQUOT</td>
+<td>aliquot</td>
+<td></td>
+<td>Distribute a sample into multiple equal portions in separate containers</td>
 </tr>
 <tr>
-<td>MG_PER_ML</td>
-<td>UO:0000176</td>
-<td>Milligrams per milliliter</td>
+<td>CONSOLIDATE</td>
+<td>consolidate</td>
+<td></td>
+<td>Combine multiple source samples into a single destination container</td>
 </tr>
 <tr>
-<td>UG_PER_ML</td>
-<td>UO:0000274</td>
-<td>Micrograms per milliliter</td>
+<td>DILUTE</td>
+<td>dilute</td>
+<td></td>
+<td>Reduce the concentration of a sample by adding diluent to a target volume or concentration</td>
 </tr>
 <tr>
-<td>NG_PER_ML</td>
-<td>UO:0000275</td>
-<td>Nanograms per milliliter</td>
+<td>SERIAL_DILUTE</td>
+<td>serial dilute</td>
+<td></td>
+<td>Create a stepwise series of dilutions by repeatedly transferring and diluting a sample</td>
 </tr>
 <tr>
-<td>PERCENT</td>
-<td>UO:0000187</td>
-<td>Percent (parts per hundred)</td>
+<td>FILL_TO_VOLUME</td>
+<td>fill to volume</td>
+<td></td>
+<td>Add solvent to a sample until a specified total volume is reached</td>
 </tr>
 <tr>
-<td>PPM</td>
-<td>UO:0000169</td>
-<td>Parts per million</td>
+<td>RESUSPEND</td>
+<td>resuspend</td>
+<td></td>
+<td>Dissolve or re-disperse a solid or pellet in a specified volume of solvent</td>
 </tr>
 <tr>
-<td>PPB</td>
-<td>UO:0000170</td>
-<td>Parts per billion</td>
+<td>PREPARE_STOCK_SOLUTION</td>
+<td>prepare stock solution</td>
+<td></td>
+<td>Prepare a solution of defined composition from components and solvent</td>
+</tr>
+<tr>
+<td>ADJUST_PH</td>
+<td>adjust pH</td>
+<td></td>
+<td>Add titrant to bring a sample to a target pH</td>
+</tr>
+<tr>
+<td>MIX</td>
+<td>mix</td>
+<td><a href="http://purl.obolibrary.org/obo/CHMO_0001685">CHMO:0001685</a></td>
+<td>Homogenize a sample by pipetting, inversion, vortexing, stirring, sonication, or related agitation</td>
+</tr>
+<tr>
+<td>INCUBATE</td>
+<td>incubate</td>
+<td></td>
+<td>Hold a sample at controlled temperature (and optionally mixing) for a specified duration</td>
+</tr>
+<tr>
+<td>WAIT</td>
+<td>wait</td>
+<td></td>
+<td>Pause the protocol for a specified duration without other manipulation</td>
+</tr>
+<tr>
+<td>CENTRIFUGE</td>
+<td>centrifuge</td>
+<td><a href="http://purl.obolibrary.org/obo/OBI_0302886">OBI:0302886</a></td>
+<td>Apply centrifugal force to a sample to separate components by density</td>
+</tr>
+<tr>
+<td>PELLET</td>
+<td>pellet</td>
+<td></td>
+<td>Centrifuge to precipitate solids, optionally aspirate the supernatant, and optionally resuspend the pellet</td>
+</tr>
+<tr>
+<td>FILTER</td>
+<td>filter</td>
+<td><a href="http://purl.obolibrary.org/obo/CHMO_0001640">CHMO:0001640</a></td>
+<td>Pass a sample through a filter to separate particulates or to sterilize</td>
+</tr>
+<tr>
+<td>MAGNETIC_BEAD_SEPARATION</td>
+<td>magnetic bead separation</td>
+<td></td>
+<td>Isolate target analytes bound to magnetic beads using a magnetic field</td>
+</tr>
+<tr>
+<td>MOVE_TO_MAGNET</td>
+<td>move to magnet</td>
+<td></td>
+<td>Place a container on a magnetic rack to immobilize magnetic beads</td>
+</tr>
+<tr>
+<td>REMOVE_FROM_MAGNET</td>
+<td>remove from magnet</td>
+<td></td>
+<td>Remove a container from a magnetic rack to release magnetic beads</td>
+</tr>
+<tr>
+<td>COVER</td>
+<td>cover</td>
+<td></td>
+<td>Apply a lid, cap, or seal to a container</td>
+</tr>
+<tr>
+<td>UNCOVER</td>
+<td>uncover</td>
+<td></td>
+<td>Remove a lid, cap, or seal from a container</td>
+</tr>
+<tr>
+<td>DEGAS</td>
+<td>degas</td>
+<td><a href="http://purl.obolibrary.org/obo/CHMO_0002772">CHMO:0002772</a></td>
+<td>Remove dissolved gases from a liquid sample</td>
+</tr>
+<tr>
+<td>DESICCATE</td>
+<td>desiccate</td>
+<td></td>
+<td>Remove moisture from a sample using a desiccant or controlled-humidity chamber</td>
+</tr>
+<tr>
+<td>EVAPORATE</td>
+<td>evaporate</td>
+<td><a href="http://purl.obolibrary.org/obo/CHMO_0001574">CHMO:0001574</a></td>
+<td>Remove solvent from a sample by evaporation, optionally under reduced pressure</td>
+</tr>
+<tr>
+<td>LYOPHILIZE</td>
+<td>lyophilize</td>
+<td><a href="http://purl.obolibrary.org/obo/CHMO_0001553">CHMO:0001553</a></td>
+<td>Freeze-dry a sample to remove solvent by sublimation under vacuum</td>
+</tr>
+<tr>
+<td>FLASH_FREEZE</td>
+<td>flash freeze</td>
+<td></td>
+<td>Rapidly freeze a sample, typically in liquid nitrogen</td>
+</tr>
+<tr>
+<td>AUTOCLAVE</td>
+<td>autoclave</td>
+<td></td>
+<td>Sterilize a sample or labware using pressurized saturated steam</td>
+</tr>
+<tr>
+<td>GRIND</td>
+<td>grind</td>
+<td><a href="http://purl.obolibrary.org/obo/CHMO_0001652">CHMO:0001652</a></td>
+<td>Mechanically reduce a solid sample to smaller particles or powder</td>
+</tr>
+<tr>
+<td>MICROWAVE_DIGESTION</td>
+<td>microwave digestion</td>
+<td></td>
+<td>Digest a sample in acid under microwave heating to bring analytes into solution</td>
 </tr>
 </tbody>
 </table>
@@ -776,11 +918,16 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../concentration_unit/">concentration_unit</a></td>
-<td>Units of concentration measurement</td>
+<td><a href="../lab_unit_operation/">lab_unit_operation</a></td>
+<td>A sample-manipulation unit operation in a cloud-laboratory protocol</td>
 </tr>
 </tbody>
 </table>
+<h2 id="see-also">See Also</h2>
+<ul>
+<li><a href="https://w3id.org/valuesets/lab_automation/operations">https://w3id.org/valuesets/lab_automation/operations</a></li>
+<li><a href="https://www.emeraldcloudlab.com/guides/runningexperiments">https://www.emeraldcloudlab.com/guides/runningexperiments</a></li>
+</ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
@@ -789,135 +936,184 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
-<pre><code class="language-yaml">name: ConcentrationUnitEnum
+<pre><code class="language-yaml">name: LabUnitOperationEnum
 instantiates:
 - valuesets_meta:ValueSetEnumDefinition
-description: Units of concentration measurement
-title: Concentration Unit
+description: Composable sample-manipulation primitives (&quot;unit operations&quot;) used to
+  build sample-preparation protocols in a cloud laboratory. Modeled on the ECL Symbolic
+  Lab Language sample-preparation unit operations (Transfer, Aliquot, Mix, Incubate,
+  Filter, Centrifuge, Pellet, Resuspend, etc.). Complements the lower level LiquidHandlingOperationEnum
+  and SampleProcessingOperationEnum in lab_automation/operations.
+title: Lab Unit Operation
 from_schema: https://w3id.org/valuesets
+see_also:
+- https://w3id.org/valuesets/lab_automation/operations
+- https://www.emeraldcloudlab.com/guides/runningexperiments
 contributors:
 - orcid:0000-0002-6601-2165
 - https://github.com/anthropics/claude-code
 status: DRAFT
 rank: 1000
 permissible_values:
-  MOLAR:
-    text: MOLAR
-    description: Molar (moles per liter)
-    meaning: UO:0000062
-    annotations:
-      symbol:
-        tag: symbol
-        value: M
-      definition:
-        tag: definition
-        value: mol/L
-  MILLIMOLAR:
-    text: MILLIMOLAR
-    description: Millimolar (10^-3 molar)
-    meaning: UO:0000063
-    annotations:
-      symbol:
-        tag: symbol
-        value: mM
-      conversion_to_molar:
-        tag: conversion_to_molar
-        value: '0.001'
-  MICROMOLAR:
-    text: MICROMOLAR
-    description: Micromolar (10^-6 molar)
-    meaning: UO:0000064
-    annotations:
-      symbol:
-        tag: symbol
-        value: μM
-      conversion_to_molar:
-        tag: conversion_to_molar
-        value: 1e-6
-  NANOMOLAR:
-    text: NANOMOLAR
-    description: Nanomolar (10^-9 molar)
-    meaning: UO:0000065
-    annotations:
-      symbol:
-        tag: symbol
-        value: nM
-      conversion_to_molar:
-        tag: conversion_to_molar
-        value: 1e-9
-  PICOMOLAR:
-    text: PICOMOLAR
-    description: Picomolar (10^-12 molar)
-    meaning: UO:0000066
-    annotations:
-      symbol:
-        tag: symbol
-        value: pM
-      conversion_to_molar:
-        tag: conversion_to_molar
-        value: 1e-12
-  MG_PER_ML:
-    text: MG_PER_ML
-    description: Milligrams per milliliter
-    meaning: UO:0000176
-    annotations:
-      symbol:
-        tag: symbol
-        value: mg/mL
-    title: milligram per milliliter
-  UG_PER_ML:
-    text: UG_PER_ML
-    description: Micrograms per milliliter
-    meaning: UO:0000274
-    annotations:
-      symbol:
-        tag: symbol
-        value: μg/mL
-    title: microgram per milliliter
-  NG_PER_ML:
-    text: NG_PER_ML
-    description: Nanograms per milliliter
-    meaning: UO:0000275
-    annotations:
-      symbol:
-        tag: symbol
-        value: ng/mL
-    title: nanogram per milliliter
-  PERCENT:
-    text: PERCENT
-    description: Percent (parts per hundred)
-    meaning: UO:0000187
-    annotations:
-      symbol:
-        tag: symbol
-        value: '%'
-      conversion_to_fraction:
-        tag: conversion_to_fraction
-        value: '0.01'
-  PPM:
-    text: PPM
-    description: Parts per million
-    meaning: UO:0000169
-    annotations:
-      symbol:
-        tag: symbol
-        value: ppm
-      conversion_to_fraction:
-        tag: conversion_to_fraction
-        value: 1e-6
-    title: parts per million
-  PPB:
-    text: PPB
-    description: Parts per billion
-    meaning: UO:0000170
-    annotations:
-      symbol:
-        tag: symbol
-        value: ppb
-      conversion_to_fraction:
-        tag: conversion_to_fraction
-        value: 1e-9
-    title: parts per billion
+  DEFINE:
+    text: DEFINE
+    description: Declare a new sample, container, or model and assign it a label for
+      later reference in the protocol
+    title: define
+  LABEL_SAMPLE:
+    text: LABEL_SAMPLE
+    description: Assign a human-readable label to a sample so it can be referenced
+      by later unit operations
+    title: label sample
+  LABEL_CONTAINER:
+    text: LABEL_CONTAINER
+    description: Assign a human-readable label to a container so it can be referenced
+      by later unit operations
+    title: label container
+  TRANSFER:
+    text: TRANSFER
+    description: Move a specified amount of sample from one source to one or more
+      destinations
+    title: transfer
+  ALIQUOT:
+    text: ALIQUOT
+    description: Distribute a sample into multiple equal portions in separate containers
+    title: aliquot
+  CONSOLIDATE:
+    text: CONSOLIDATE
+    description: Combine multiple source samples into a single destination container
+    title: consolidate
+  DILUTE:
+    text: DILUTE
+    description: Reduce the concentration of a sample by adding diluent to a target
+      volume or concentration
+    title: dilute
+  SERIAL_DILUTE:
+    text: SERIAL_DILUTE
+    description: Create a stepwise series of dilutions by repeatedly transferring
+      and diluting a sample
+    title: serial dilute
+  FILL_TO_VOLUME:
+    text: FILL_TO_VOLUME
+    description: Add solvent to a sample until a specified total volume is reached
+    title: fill to volume
+  RESUSPEND:
+    text: RESUSPEND
+    description: Dissolve or re-disperse a solid or pellet in a specified volume of
+      solvent
+    title: resuspend
+  PREPARE_STOCK_SOLUTION:
+    text: PREPARE_STOCK_SOLUTION
+    description: Prepare a solution of defined composition from components and solvent
+    title: prepare stock solution
+  ADJUST_PH:
+    text: ADJUST_PH
+    description: Add titrant to bring a sample to a target pH
+    title: adjust pH
+  MIX:
+    text: MIX
+    description: Homogenize a sample by pipetting, inversion, vortexing, stirring,
+      sonication, or related agitation
+    meaning: CHMO:0001685
+    title: mix
+    aliases:
+    - mixing
+  INCUBATE:
+    text: INCUBATE
+    description: Hold a sample at controlled temperature (and optionally mixing) for
+      a specified duration
+    title: incubate
+  WAIT:
+    text: WAIT
+    description: Pause the protocol for a specified duration without other manipulation
+    title: wait
+  CENTRIFUGE:
+    text: CENTRIFUGE
+    description: Apply centrifugal force to a sample to separate components by density
+    meaning: OBI:0302886
+    title: centrifuge
+    aliases:
+    - centrifugation
+  PELLET:
+    text: PELLET
+    description: Centrifuge to precipitate solids, optionally aspirate the supernatant,
+      and optionally resuspend the pellet
+    title: pellet
+  FILTER:
+    text: FILTER
+    description: Pass a sample through a filter to separate particulates or to sterilize
+    meaning: CHMO:0001640
+    title: filter
+    aliases:
+    - filtration
+  MAGNETIC_BEAD_SEPARATION:
+    text: MAGNETIC_BEAD_SEPARATION
+    description: Isolate target analytes bound to magnetic beads using a magnetic
+      field
+    title: magnetic bead separation
+  MOVE_TO_MAGNET:
+    text: MOVE_TO_MAGNET
+    description: Place a container on a magnetic rack to immobilize magnetic beads
+    title: move to magnet
+  REMOVE_FROM_MAGNET:
+    text: REMOVE_FROM_MAGNET
+    description: Remove a container from a magnetic rack to release magnetic beads
+    title: remove from magnet
+  COVER:
+    text: COVER
+    description: Apply a lid, cap, or seal to a container
+    title: cover
+  UNCOVER:
+    text: UNCOVER
+    description: Remove a lid, cap, or seal from a container
+    title: uncover
+  DEGAS:
+    text: DEGAS
+    description: Remove dissolved gases from a liquid sample
+    meaning: CHMO:0002772
+    title: degas
+    aliases:
+    - degassing
+  DESICCATE:
+    text: DESICCATE
+    description: Remove moisture from a sample using a desiccant or controlled-humidity
+      chamber
+    title: desiccate
+  EVAPORATE:
+    text: EVAPORATE
+    description: Remove solvent from a sample by evaporation, optionally under reduced
+      pressure
+    meaning: CHMO:0001574
+    title: evaporate
+    aliases:
+    - evaporation
+  LYOPHILIZE:
+    text: LYOPHILIZE
+    description: Freeze-dry a sample to remove solvent by sublimation under vacuum
+    meaning: CHMO:0001553
+    title: lyophilize
+    aliases:
+    - freeze drying
+  FLASH_FREEZE:
+    text: FLASH_FREEZE
+    description: Rapidly freeze a sample, typically in liquid nitrogen
+    title: flash freeze
+  AUTOCLAVE:
+    text: AUTOCLAVE
+    description: Sterilize a sample or labware using pressurized saturated steam
+    title: autoclave
+  GRIND:
+    text: GRIND
+    description: Mechanically reduce a solid sample to smaller particles or powder
+    meaning: CHMO:0001652
+    title: grind
+    aliases:
+    - grinding
+  MICROWAVE_DIGESTION:
+    text: MICROWAVE_DIGESTION
+    description: Digest a sample in acid under microwave heating to bring analytes
+      into solution
+    title: microwave digestion
 
 </code></pre>
 
