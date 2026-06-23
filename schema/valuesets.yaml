@@ -29,6 +29,7 @@ imports:
 - bio/relationship_to_oxygen
 - bio/trophic_levels
 - bio/developmental_stages
+- bio/cell_free_expression
 - time/temporal
 - academic/research
 - academic/organizations
@@ -7571,6 +7572,509 @@ enums:
             value: 12+ months
         aliases:
         - P365+ Aged
+  CellFreeExpressionSystemEnum:
+    name: CellFreeExpressionSystemEnum
+    definition_uri: https://w3id.org/valuesets/CellFreeExpressionSystemEnum
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Source extracts and reconstituted systems used for cell-free protein
+      synthesis. Crude lysate systems are derived from cell extracts, while reconstituted
+      systems (e.g. PURE) are assembled from purified components.
+    title: Cell-Free Expression Systems
+    from_schema: https://w3id.org/valuesets/bio/cell_free_expression
+    see_also:
+    - https://en.wikipedia.org/wiki/Cell-free_protein_synthesis
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      ECOLI_EXTRACT:
+        text: ECOLI_EXTRACT
+        description: Escherichia coli crude cell extract (e.g. S30, S12), the most
+          widely used prokaryotic cell-free system for high-yield protein production
+        annotations:
+          source_taxon:
+            tag: source_taxon
+            value: NCBITaxon:562
+          extract_type:
+            tag: extract_type
+            value: crude lysate
+          domain:
+            tag: domain
+            value: prokaryotic
+        aliases:
+        - E. coli extract
+        - E. coli lysate
+        - S30 extract
+        - ECE
+        broad_mappings:
+        - BAO:0000366
+      PURE_SYSTEM:
+        text: PURE_SYSTEM
+        description: Protein synthesis Using Recombinant Elements - a reconstituted
+          system assembled from individually purified E. coli translation factors,
+          ribosomes, and enzymes
+        annotations:
+          extract_type:
+            tag: extract_type
+            value: reconstituted
+          domain:
+            tag: domain
+            value: prokaryotic
+          advantage:
+            tag: advantage
+            value: defined composition, low nuclease/protease activity
+        aliases:
+        - PURE
+        - PURExpress
+        - reconstituted system
+        broad_mappings:
+        - BAO:0000366
+      WHEAT_GERM_EXTRACT:
+        text: WHEAT_GERM_EXTRACT
+        description: Wheat germ (Triticum aestivum) extract, a eukaryotic system favored
+          for expression of complex and difficult eukaryotic proteins
+        annotations:
+          source_taxon:
+            tag: source_taxon
+            value: NCBITaxon:4565
+          extract_type:
+            tag: extract_type
+            value: crude lysate
+          domain:
+            tag: domain
+            value: eukaryotic
+        aliases:
+        - WGE
+        - wheat germ system
+        broad_mappings:
+        - BAO:0000366
+      RABBIT_RETICULOCYTE_LYSATE:
+        text: RABBIT_RETICULOCYTE_LYSATE
+        description: Rabbit (Oryctolagus cuniculus) reticulocyte lysate, a classic
+          mammalian system for in vitro translation and protein labeling
+        meaning: BAO:0000255
+        annotations:
+          source_taxon:
+            tag: source_taxon
+            value: NCBITaxon:9986
+          extract_type:
+            tag: extract_type
+            value: crude lysate
+          domain:
+            tag: domain
+            value: eukaryotic
+        aliases:
+        - RRL
+        - reticulocyte lysate
+        - rabbit reticulocyte lysate format
+      INSECT_CELL_EXTRACT:
+        text: INSECT_CELL_EXTRACT
+        description: Insect cell extract, typically from Spodoptera frugiperda (Sf21),
+          supporting eukaryotic post-translational modifications
+        annotations:
+          source_taxon:
+            tag: source_taxon
+            value: NCBITaxon:7108
+          extract_type:
+            tag: extract_type
+            value: crude lysate
+          domain:
+            tag: domain
+            value: eukaryotic
+        aliases:
+        - ICE
+        - Sf21 extract
+        - insect lysate
+        broad_mappings:
+        - BAO:0000366
+      HELA_EXTRACT:
+        text: HELA_EXTRACT
+        description: Human HeLa cell extract used for mammalian cell-free expression
+          with authentic human translation machinery
+        annotations:
+          source_taxon:
+            tag: source_taxon
+            value: NCBITaxon:9606
+          extract_type:
+            tag: extract_type
+            value: crude lysate
+          domain:
+            tag: domain
+            value: eukaryotic
+        aliases:
+        - HeLa lysate
+        - human cell extract
+        broad_mappings:
+        - BAO:0000366
+      CHO_EXTRACT:
+        text: CHO_EXTRACT
+        description: Chinese hamster ovary (Cricetulus griseus) cell extract supporting
+          glycosylation and disulfide bond formation
+        annotations:
+          source_taxon:
+            tag: source_taxon
+            value: NCBITaxon:10029
+          extract_type:
+            tag: extract_type
+            value: crude lysate
+          domain:
+            tag: domain
+            value: eukaryotic
+        aliases:
+        - CHO lysate
+        broad_mappings:
+        - BAO:0000366
+      YEAST_EXTRACT:
+        text: YEAST_EXTRACT
+        description: Yeast (Saccharomyces cerevisiae) cell extract for eukaryotic
+          cell-free protein synthesis
+        annotations:
+          source_taxon:
+            tag: source_taxon
+            value: NCBITaxon:4932
+          extract_type:
+            tag: extract_type
+            value: crude lysate
+          domain:
+            tag: domain
+            value: eukaryotic
+        aliases:
+        - S. cerevisiae extract
+        - yeast lysate
+        broad_mappings:
+        - BAO:0000366
+      LEISHMANIA_EXTRACT:
+        text: LEISHMANIA_EXTRACT
+        description: Leishmania tarentolae cell extract, a eukaryotic system supporting
+          high yields and post-translational modifications
+        annotations:
+          source_taxon:
+            tag: source_taxon
+            value: NCBITaxon:5689
+          extract_type:
+            tag: extract_type
+            value: crude lysate
+          domain:
+            tag: domain
+            value: eukaryotic
+        aliases:
+        - Leishmania tarentolae extract
+        - LTE
+        broad_mappings:
+        - BAO:0000366
+      VIBRIO_NATRIEGENS_EXTRACT:
+        text: VIBRIO_NATRIEGENS_EXTRACT
+        description: Vibrio natriegens cell extract, an emerging fast-growing prokaryotic
+          chassis for rapid, high-yield cell-free expression
+        annotations:
+          source_taxon:
+            tag: source_taxon
+            value: NCBITaxon:691
+          extract_type:
+            tag: extract_type
+            value: crude lysate
+          domain:
+            tag: domain
+            value: prokaryotic
+        aliases:
+        - V. natriegens extract
+        - Vmax extract
+        broad_mappings:
+        - BAO:0000366
+      TOBACCO_BY2_EXTRACT:
+        text: TOBACCO_BY2_EXTRACT
+        description: Tobacco BY-2 (Nicotiana tabacum bright yellow-2) cell lysate,
+          a plant eukaryotic cell-free system
+        annotations:
+          extract_type:
+            tag: extract_type
+            value: crude lysate
+          domain:
+            tag: domain
+            value: eukaryotic
+        aliases:
+        - BY-2 lysate
+        - BYL
+        broad_mappings:
+        - BAO:0000366
+  CellFreeReactionFormatEnum:
+    name: CellFreeReactionFormatEnum
+    definition_uri: https://w3id.org/valuesets/CellFreeReactionFormatEnum
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Physical configurations of cell-free expression reactions, differing
+      in how substrates are supplied and byproducts removed, which affects reaction
+      duration and protein yield.
+    title: Cell-Free Reaction Formats
+    from_schema: https://w3id.org/valuesets/bio/cell_free_expression
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      BATCH:
+        text: BATCH
+        description: Single closed reaction with all components mixed at the start;
+          simplest format but limited by substrate depletion and byproduct accumulation
+        annotations:
+          duration:
+            tag: duration
+            value: short (hours)
+        aliases:
+        - batch mode
+      CONTINUOUS_EXCHANGE:
+        text: CONTINUOUS_EXCHANGE
+        description: Continuous-exchange cell-free (CECF) format with a semipermeable
+          membrane separating a reaction chamber from a feeding chamber, allowing
+          diffusion of substrates in and byproducts out
+        annotations:
+          duration:
+            tag: duration
+            value: extended (up to ~24 h)
+        aliases:
+        - CECF
+        - continuous exchange
+        - dialysis mode
+        related_mappings:
+        - OBI:0600052
+      CONTINUOUS_FLOW:
+        text: CONTINUOUS_FLOW
+        description: Continuous-flow cell-free (CFCF) format in which fresh substrates
+          are continuously pumped through the reaction while product is collected
+        annotations:
+          duration:
+            tag: duration
+            value: extended
+        aliases:
+        - CFCF
+        - continuous flow
+      BILAYER:
+        text: BILAYER
+        description: Bilayer format where a feeding solution is layered over the reaction
+          mixture without a membrane, prolonging reaction by passive diffusion
+        aliases:
+        - bilayer mode
+      LYOPHILIZED:
+        text: LYOPHILIZED
+        description: Freeze-dried (lyophilized) cell-free reaction that is shelf-stable
+          and activated by rehydration; basis of freeze-dried cell-free (FD-CF) diagnostics
+          and portable biomanufacturing
+        annotations:
+          advantage:
+            tag: advantage
+            value: cold-chain-free storage and distribution
+        aliases:
+        - freeze-dried
+        - FD-CF
+        - lyophilised
+        related_mappings:
+        - NCIT:C28150
+  EnergyRegenerationSubstrateEnum:
+    name: EnergyRegenerationSubstrateEnum
+    definition_uri: https://w3id.org/valuesets/EnergyRegenerationSubstrateEnum
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Secondary energy substrates added to cell-free reactions to regenerate
+      ATP and GTP consumed during transcription and translation. Choice of substrate
+      affects cost, reaction longevity, and inorganic phosphate accumulation.
+    title: Energy Regeneration Substrates
+    from_schema: https://w3id.org/valuesets/bio/cell_free_expression
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      PHOSPHOCREATINE:
+        text: PHOSPHOCREATINE
+        description: Creatine phosphate (N-phosphocreatine) regenerated with creatine
+          kinase; a classic high-energy phosphate donor
+        meaning: CHEBI:17287
+        annotations:
+          enzyme:
+            tag: enzyme
+            value: creatine kinase
+        aliases:
+        - creatine phosphate
+        - phosphocreatine
+        - N-phosphocreatine
+      PHOSPHOENOLPYRUVATE:
+        text: PHOSPHOENOLPYRUVATE
+        description: Phosphoenolpyruvate (PEP) regenerated with pyruvate kinase; a
+          common high-energy phosphate donor
+        meaning: CHEBI:18021
+        annotations:
+          enzyme:
+            tag: enzyme
+            value: pyruvate kinase
+        aliases:
+        - PEP
+      ACETYL_PHOSPHATE:
+        text: ACETYL_PHOSPHATE
+        description: Acetyl phosphate regenerated with acetate kinase; an inexpensive
+          energy source
+        meaning: CHEBI:15350
+        annotations:
+          enzyme:
+            tag: enzyme
+            value: acetate kinase
+        aliases:
+        - AcP
+        - acetyl dihydrogen phosphate
+      THREE_PGA:
+        text: THREE_PGA
+        description: 3-phosphoglycerate (3-PGA), a glycolytic intermediate widely
+          used as a low-cost energy substrate in E. coli cell-free systems
+        meaning: CHEBI:17794
+        aliases:
+        - 3-PGA
+        - 3-phosphoglycerate
+        - 3-phospho-D-glycerate
+        - 3-phospho-D-glyceric acid
+      GLUCOSE:
+        text: GLUCOSE
+        description: Glucose feeding glycolysis for ATP regeneration; a very low-cost
+          energy source that requires phosphate buffering
+        meaning: CHEBI:17634
+        aliases:
+        - D-glucose
+      GLUCOSE_6_PHOSPHATE:
+        text: GLUCOSE_6_PHOSPHATE
+        description: Glucose 6-phosphate fed into glycolysis for energy regeneration
+        meaning: CHEBI:14314
+        aliases:
+        - G6P
+        - glucose-6-phosphate
+        - D-glucose 6-phosphate
+      MALTOSE:
+        text: MALTOSE
+        description: Maltose used as a low-cost energy substrate that limits inorganic
+          phosphate accumulation
+        meaning: CHEBI:17306
+      PYRUVATE:
+        text: PYRUVATE
+        description: Pyruvate used as an energy source, oxidized via the central metabolism
+          of the extract
+        meaning: CHEBI:15361
+      MALTODEXTRIN:
+        text: MALTODEXTRIN
+        description: Maltodextrin (glucose polymer) energy substrate providing slow
+          glucose release and minimal phosphate buildup
+        aliases:
+        - polymeric glucose
+  CellFreeApplicationEnum:
+    name: CellFreeApplicationEnum
+    definition_uri: https://w3id.org/valuesets/CellFreeApplicationEnum
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Common applications and use cases for cell-free protein synthesis
+      across research, synthetic biology, and biomanufacturing.
+    title: Cell-Free Expression Applications
+    from_schema: https://w3id.org/valuesets/bio/cell_free_expression
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      RECOMBINANT_PROTEIN_PRODUCTION:
+        text: RECOMBINANT_PROTEIN_PRODUCTION
+        description: General production of recombinant proteins in vitro
+        aliases:
+        - protein production
+      MEMBRANE_PROTEIN_EXPRESSION:
+        text: MEMBRANE_PROTEIN_EXPRESSION
+        description: Expression of membrane proteins, often co-translationally inserted
+          into liposomes, nanodiscs, or detergent micelles
+        aliases:
+        - membrane protein synthesis
+      DIFFICULT_PROTEIN_EXPRESSION:
+        text: DIFFICULT_PROTEIN_EXPRESSION
+        description: Expression of toxic, unstable, or otherwise difficult-to-express
+          proteins that are problematic in living cells
+        aliases:
+        - toxic protein expression
+      GENETIC_CIRCUIT_PROTOTYPING:
+        text: GENETIC_CIRCUIT_PROTOTYPING
+        description: Rapid prototyping and characterization of genetic parts and circuits
+          using in vitro transcription-translation (TX-TL)
+        aliases:
+        - TX-TL prototyping
+        - circuit prototyping
+      METABOLIC_PATHWAY_PROTOTYPING:
+        text: METABOLIC_PATHWAY_PROTOTYPING
+        description: Building and testing enzymatic and metabolic pathways in vitro
+          for cell-free biosynthesis
+        aliases:
+        - cell-free metabolic engineering
+        - pathway prototyping
+      BIOSENSOR:
+        text: BIOSENSOR
+        description: Cell-free biosensors, including freeze-dried paper-based sensors
+          for detecting nucleic acids, small molecules, or contaminants
+        meaning: NCIT:C16350
+        aliases:
+        - cell-free biosensor
+        - Biosensors
+        exact_mappings:
+        - BAO:0010264
+      DIAGNOSTICS:
+        text: DIAGNOSTICS
+        description: Point-of-care and field-deployable diagnostics, often freeze-dried
+          cell-free reactions coupled to toehold switches or CRISPR readouts
+        aliases:
+        - point-of-care diagnostics
+        related_mappings:
+        - NCIT:C209465
+      UNNATURAL_AMINO_ACID_INCORPORATION:
+        text: UNNATURAL_AMINO_ACID_INCORPORATION
+        description: Site-specific incorporation of non-canonical/unnatural amino
+          acids via orthogonal translation components
+        aliases:
+        - ncAA incorporation
+        - non-canonical amino acid incorporation
+      PROTEIN_LABELING:
+        text: PROTEIN_LABELING
+        description: Incorporation of radioactive, fluorescent, or isotopic labels
+          for detection and structural studies
+        aliases:
+        - isotopic labeling
+        - radiolabeling
+      STRUCTURAL_BIOLOGY:
+        text: STRUCTURAL_BIOLOGY
+        description: Production of selectively or uniformly isotope-labeled proteins
+          for NMR and other structural studies
+        aliases:
+        - NMR labeling
+      HIGH_THROUGHPUT_SCREENING:
+        text: HIGH_THROUGHPUT_SCREENING
+        description: Parallelized small-volume expression for protein screening, directed
+          evolution, and library characterization
+        meaning: NCIT:C18472
+        aliases:
+        - HTS
+        exact_mappings:
+        - BAO:0010074
+      VACCINE_PRODUCTION:
+        text: VACCINE_PRODUCTION
+        description: On-demand cell-free production of protein subunit and conjugate
+          vaccine antigens
+        meaning: OBI:0000719
+        aliases:
+        - on-demand vaccine production
+        exact_mappings:
+        - NCIT:C26030
+      ANTIBODY_PRODUCTION:
+        text: ANTIBODY_PRODUCTION
+        description: Cell-free synthesis of antibodies and antibody fragments
+        aliases:
+        - antibody synthesis
+      EDUCATION:
+        text: EDUCATION
+        description: Use of cell-free kits for teaching and outreach in synthetic
+          biology
+        aliases:
+        - teaching
   DayOfWeek:
     name: DayOfWeek
     definition_uri: https://w3id.org/valuesets/DayOfWeek
@@ -72931,6 +73435,34 @@ slots:
     from_schema: https://w3id.org/valuesets/bio/developmental_stages
     slot_uri: valuesets:mouse_postnatal_age_group
     range: MousePostnatalAgeGroupEnum
+  cell_free_system:
+    name: cell_free_system
+    definition_uri: https://w3id.org/valuesets/cell_free_system
+    description: The source extract or reconstituted system used for cell-free expression
+    from_schema: https://w3id.org/valuesets/bio/cell_free_expression
+    slot_uri: valuesets:cell_free_system
+    range: CellFreeExpressionSystemEnum
+  cell_free_reaction_format:
+    name: cell_free_reaction_format
+    definition_uri: https://w3id.org/valuesets/cell_free_reaction_format
+    description: The physical configuration of the cell-free reaction
+    from_schema: https://w3id.org/valuesets/bio/cell_free_expression
+    slot_uri: valuesets:cell_free_reaction_format
+    range: CellFreeReactionFormatEnum
+  energy_regeneration_substrate:
+    name: energy_regeneration_substrate
+    definition_uri: https://w3id.org/valuesets/energy_regeneration_substrate
+    description: Secondary energy substrate used to regenerate ATP/GTP in the reaction
+    from_schema: https://w3id.org/valuesets/bio/cell_free_expression
+    slot_uri: valuesets:energy_regeneration_substrate
+    range: EnergyRegenerationSubstrateEnum
+  cell_free_application:
+    name: cell_free_application
+    definition_uri: https://w3id.org/valuesets/cell_free_application
+    description: Application or use case for the cell-free expression reaction
+    from_schema: https://w3id.org/valuesets/bio/cell_free_expression
+    slot_uri: valuesets:cell_free_application
+    range: CellFreeApplicationEnum
   day_of_week:
     name: day_of_week
     definition_uri: https://w3id.org/valuesets/day_of_week
@@ -76623,7 +77155,7 @@ classes:
     class_uri: valuesets:Fake
 metamodel_version: 1.7.0
 source_file: valuesets.yaml
-source_file_date: '2026-06-14T06:00:15'
-source_file_size: 4277
-generation_date: '2026-06-14T06:01:38'
+source_file_date: '2026-06-23T14:42:18'
+source_file_size: 4304
+generation_date: '2026-06-23T14:43:44'
 
