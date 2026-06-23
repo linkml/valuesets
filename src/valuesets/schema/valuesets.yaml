@@ -27,6 +27,7 @@ imports:
 - bio/relationship_to_oxygen
 - bio/trophic_levels
 - bio/developmental_stages
+- bio/cell_free_expression
 - time/temporal
 - academic/research
 - academic/organizations
