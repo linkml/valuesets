@@ -1502,6 +1502,57 @@
             "title": "CellCycleRegulator",
             "type": "string"
         },
+        "CellFreeApplicationEnum": {
+            "description": "Common applications and use cases for cell-free protein synthesis across research, synthetic biology, and biomanufacturing.",
+            "enum": [
+                "RECOMBINANT_PROTEIN_PRODUCTION",
+                "MEMBRANE_PROTEIN_EXPRESSION",
+                "DIFFICULT_PROTEIN_EXPRESSION",
+                "GENETIC_CIRCUIT_PROTOTYPING",
+                "METABOLIC_PATHWAY_PROTOTYPING",
+                "BIOSENSOR",
+                "DIAGNOSTICS",
+                "UNNATURAL_AMINO_ACID_INCORPORATION",
+                "PROTEIN_LABELING",
+                "STRUCTURAL_BIOLOGY",
+                "HIGH_THROUGHPUT_SCREENING",
+                "VACCINE_PRODUCTION",
+                "ANTIBODY_PRODUCTION",
+                "EDUCATION"
+            ],
+            "title": "CellFreeApplicationEnum",
+            "type": "string"
+        },
+        "CellFreeExpressionSystemEnum": {
+            "description": "Source extracts and reconstituted systems used for cell-free protein synthesis. Crude lysate systems are derived from cell extracts, while reconstituted systems (e.g. PURE) are assembled from purified components.",
+            "enum": [
+                "ECOLI_EXTRACT",
+                "PURE_SYSTEM",
+                "WHEAT_GERM_EXTRACT",
+                "RABBIT_RETICULOCYTE_LYSATE",
+                "INSECT_CELL_EXTRACT",
+                "HELA_EXTRACT",
+                "CHO_EXTRACT",
+                "YEAST_EXTRACT",
+                "LEISHMANIA_EXTRACT",
+                "VIBRIO_NATRIEGENS_EXTRACT",
+                "TOBACCO_BY2_EXTRACT"
+            ],
+            "title": "CellFreeExpressionSystemEnum",
+            "type": "string"
+        },
+        "CellFreeReactionFormatEnum": {
+            "description": "Physical configurations of cell-free expression reactions, differing in how substrates are supplied and byproducts removed, which affects reaction duration and protein yield.",
+            "enum": [
+                "BATCH",
+                "CONTINUOUS_EXCHANGE",
+                "CONTINUOUS_FLOW",
+                "BILAYER",
+                "LYOPHILIZED"
+            ],
+            "title": "CellFreeReactionFormatEnum",
+            "type": "string"
+        },
         "CellPolarity": {
             "description": "Spatial polarity in cells and tissues",
             "enum": [
@@ -1539,6 +1590,15 @@
         "CellularComponent": {
             "description": "Cellular components and locations from Gene Ontology",
             "title": "CellularComponent",
+            "type": "string"
+        },
+        "CellularityEnum": {
+            "description": "An organismal quality inhering in a bearer by virtue of the bearer's consisting of cells. Derived from PATO cellularity (PATO:0001992) child values.",
+            "enum": [
+                "UNICELLULAR",
+                "MULTICELLULAR"
+            ],
+            "title": "CellularityEnum",
             "type": "string"
         },
         "ChemicalEntity": {
@@ -1832,6 +1892,30 @@
                 "GGG"
             ],
             "title": "CodonEnum",
+            "type": "string"
+        },
+        "ColorEnum": {
+            "description": "A composite chromatic quality composed of hue, saturation and intensity parts. Derived from PATO color (PATO:0000014) child values.",
+            "enum": [
+                "BLACK",
+                "WHITE",
+                "GREY",
+                "RED",
+                "ORANGE",
+                "YELLOW",
+                "GREEN",
+                "CYAN",
+                "BLUE",
+                "VIOLET",
+                "PURPLE",
+                "MAGENTA",
+                "BROWN",
+                "MAROON",
+                "ROSY",
+                "VERMILION",
+                "COLORED"
+            ],
+            "title": "ColorEnum",
             "type": "string"
         },
         "ColorSpaceEnum": {
@@ -3358,6 +3442,22 @@
                 "ENERGY_STAR_MOST_EFFICIENT"
             ],
             "title": "EnergyEfficiencyRating",
+            "type": "string"
+        },
+        "EnergyRegenerationSubstrateEnum": {
+            "description": "Secondary energy substrates added to cell-free reactions to regenerate ATP and GTP consumed during transcription and translation. Choice of substrate affects cost, reaction longevity, and inorganic phosphate accumulation.",
+            "enum": [
+                "PHOSPHOCREATINE",
+                "PHOSPHOENOLPYRUVATE",
+                "ACETYL_PHOSPHATE",
+                "THREE_PGA",
+                "GLUCOSE",
+                "GLUCOSE_6_PHOSPHATE",
+                "MALTOSE",
+                "PYRUVATE",
+                "MALTODEXTRIN"
+            ],
+            "title": "EnergyRegenerationSubstrateEnum",
             "type": "string"
         },
         "EnergySource": {
@@ -5622,6 +5722,21 @@
             "title": "IntegrationSystemEnum",
             "type": "string"
         },
+        "IntensityEnum": {
+            "description": "A quality inhering in a bearer by virtue of the bearer's possessing or displaying a distinctive feature in type or degree or effect or force. Derived from PATO intensity (PATO:0000049) child values.",
+            "enum": [
+                "BORDERLINE",
+                "MILD",
+                "MODERATE",
+                "SEVERE",
+                "PROFOUND",
+                "INCREASED_INTENSITY",
+                "DECREASED_INTENSITY",
+                "REMITTENT"
+            ],
+            "title": "IntensityEnum",
+            "type": "string"
+        },
         "IntentClassificationEnum": {
             "description": "Common chatbot/NLU intent categories",
             "enum": [
@@ -6543,6 +6658,23 @@
                 "COARSE_GRAINED_SIMULATION"
             ],
             "title": "MaterialsSimulationType",
+            "type": "string"
+        },
+        "MaturityEnum": {
+            "description": "A quality of a single physical entity held by a bearer when it exhibits a state of growth, differentiation, or development. Derived from PATO maturity (PATO:0000261) child values.",
+            "enum": [
+                "NEONATAL",
+                "LARVAL",
+                "PREPUBESCENT",
+                "PUPAL",
+                "PREPUPAL",
+                "PUBESCENT",
+                "ADOLESCENT",
+                "JUVENILE",
+                "IMMATURE",
+                "MATURE"
+            ],
+            "title": "MaturityEnum",
             "type": "string"
         },
         "MechanicalBehaviorEnum": {
@@ -7730,6 +7862,19 @@
                 "FACULTATIVE"
             ],
             "title": "OxygenationStrategyEnum",
+            "type": "string"
+        },
+        "PATOBiologicalSexEnum": {
+            "description": "An organismal quality inhering in a bearer by virtue of the bearer's ability to undergo sexual reproduction. Derived from PATO biological sex (PATO:0000047) and phenotypic sex (PATO:0001894) child values.",
+            "enum": [
+                "FEMALE",
+                "MALE",
+                "HERMAPHRODITE",
+                "MALE_WITH_DSD",
+                "FEMALE_WITH_DSD",
+                "PSEUDOHERMAPHRODITE"
+            ],
+            "title": "PATOBiologicalSexEnum",
             "type": "string"
         },
         "PCROperationTypeEnum": {
@@ -9125,6 +9270,19 @@
             "title": "RelToOxygenEnum",
             "type": "string"
         },
+        "RelativeChangeEnum": {
+            "description": "Direction of change of any quality relative to normal or baseline. This is PATO's general-purpose deviation-from-normal axis (PATO:0000069) that crosscuts all specific quality attributes (size, rate, amount, etc.).",
+            "enum": [
+                "NORMAL",
+                "ABNORMAL",
+                "INCREASED",
+                "DECREASED",
+                "INCREASED_MAGNITUDE",
+                "DECREASED_MAGNITUDE"
+            ],
+            "title": "RelativeChangeEnum",
+            "type": "string"
+        },
         "RelativeDirection": {
             "description": "Relative directional terms",
             "enum": [
@@ -9708,6 +9866,38 @@
             "title": "SeverityLevelEnum",
             "type": "string"
         },
+        "ShapeEnum": {
+            "description": "A morphological quality inhering in a bearer by virtue of the bearer's ratios of distances between its features. Derived from PATO shape (PATO:0000052) child values.",
+            "enum": [
+                "CIRCULAR",
+                "ELLIPTIC",
+                "SPHEROID",
+                "CONICAL",
+                "COLUMNAR",
+                "TUBULAR",
+                "FLAT",
+                "ELONGATED",
+                "LINEAR",
+                "FILAMENTOUS",
+                "SLENDER",
+                "BROAD",
+                "ROBUST",
+                "STRAIGHT",
+                "BENT",
+                "ANGULAR",
+                "LOBED",
+                "TRUNCATED",
+                "PYRAMIDAL",
+                "STAR_SHAPED",
+                "SIGMOID",
+                "UNDULATE",
+                "PINNATE",
+                "PLEOMORPHIC",
+                "COILING"
+            ],
+            "title": "ShapeEnum",
+            "type": "string"
+        },
         "SimpleSpatialDirection": {
             "description": "Basic spatial directional terms for general use",
             "enum": [
@@ -9849,6 +10039,27 @@
                 "HAM"
             ],
             "title": "SpamClassificationEnum",
+            "type": "string"
+        },
+        "SpatialPatternEnum": {
+            "description": "A spatial quality inhering in a bearer by virtue of the bearer's exhibiting repetition of placement of its parts. Derived from PATO spatial pattern (PATO:0000060) child values.",
+            "enum": [
+                "LOCALIZED",
+                "UNLOCALISED",
+                "MULTI_LOCALISED",
+                "DISTRIBUTED",
+                "UNDISTRIBUTED",
+                "SPARSE",
+                "UNILATERAL",
+                "VERTICAL",
+                "REGULAR_SPATIAL_PATTERN",
+                "IRREGULAR_SPATIAL_PATTERN",
+                "GENERALIZED",
+                "SEGMENTAL",
+                "RANDOM_PATTERN",
+                "SYMMETRICAL"
+            ],
+            "title": "SpatialPatternEnum",
             "type": "string"
         },
         "SpatialRelationship": {
@@ -10427,6 +10638,23 @@
                 "BIG5"
             ],
             "title": "TextCharset",
+            "type": "string"
+        },
+        "TextureEnum": {
+            "description": "A morphological quality inhering in a bearer by virtue of the bearer's surface characteristics. Derived from PATO texture (PATO:0000150) child values.",
+            "enum": [
+                "SMOOTH",
+                "ROUGH",
+                "SCALY",
+                "FLAKY",
+                "GROOVED",
+                "BLISTERED",
+                "HAIRY",
+                "ABRASED",
+                "RUSTY",
+                "FOVEATE"
+            ],
+            "title": "TextureEnum",
             "type": "string"
         },
         "TherapeuticActionabilityEnum": {
@@ -11307,6 +11535,21 @@
                 "SPOT_SUPPLIER"
             ],
             "title": "VendorCategoryEnum",
+            "type": "string"
+        },
+        "ViabilityEnum": {
+            "description": "An organismal quality inhering in a bearer by virtue of the bearer's disposition to survive and develop normally. Derived from PATO viability (PATO:0000169) child values.",
+            "enum": [
+                "ALIVE",
+                "DEAD",
+                "VIABLE",
+                "LETHAL",
+                "SEMI_VIABLE",
+                "SEMI_LETHAL",
+                "IMMORTAL",
+                "DECAYED"
+            ],
+            "title": "ViabilityEnum",
             "type": "string"
         },
         "VideoFormatEnum": {

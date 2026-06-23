@@ -31,6 +31,7 @@ from .bio.bgc_categories import BgcCategoryEnum
 from .bio.biological_colors import EyeColorEnum, HairColorEnum, FlowerColorEnum, AnimalCoatColorEnum, SkinToneEnum, PlantLeafColorEnum
 from .bio.biosafety import BiosafetyLevelEnum
 from .bio.cell_cycle import CellCyclePhase, MitoticPhase, CellCycleCheckpoint, MeioticPhase, CellCycleRegulator, CellProliferationState, DNADamageResponse
+from .bio.cell_free_expression import CellFreeExpressionSystemEnum, CellFreeReactionFormatEnum, EnergyRegenerationSubstrateEnum, CellFreeApplicationEnum
 from .bio.currency_chemicals import CurrencyChemical
 from .bio.developmental_stages import HumanDevelopmentalStage, MouseDevelopmentalStage, HumanAgeGroupEnum, MousePostnatalAgeGroupEnum
 from .bio.expression_units import ExpressionUnitEnum, ConcentrationUnitEnum, TimeUnitEnum
@@ -43,6 +44,7 @@ from .bio.go_evidence import GOEvidenceCode, GOElectronicMethods
 from .bio.insdc_geographic_locations import InsdcGeographicLocationEnum
 from .bio.insdc_missing_values import InsdcMissingValueEnum
 from .bio.lipid_categories import RelativeTimeEnum, PresenceEnum, LipidCategory
+from .bio.pato import ColorEnum, ShapeEnum, RelativeChangeEnum, IntensityEnum, TextureEnum, PATOBiologicalSexEnum, MaturityEnum, ViabilityEnum, CellularityEnum, SpatialPatternEnum
 from .bio.plant_biology import PlantSexualSystem
 from .bio.plant_developmental_stages import PlantDevelopmentalStage
 from .bio.plant_experimental_conditions import PlantStudyConditionEnum, SeasonalEnvironmentExposureEnum, EcologicalEnvironmentExposureEnum, PlantGrowthMediumExposureEnum
@@ -326,8 +328,12 @@ __all__ = [
     "CellCycleCheckpoint",
     "CellCyclePhase",
     "CellCycleRegulator",
+    "CellFreeApplicationEnum",
+    "CellFreeExpressionSystemEnum",
+    "CellFreeReactionFormatEnum",
     "CellPolarity",
     "CellProliferationState",
+    "CellularityEnum",
     "ChipFabricationNodeType",
     "ChiralityEnum",
     "ChromatographyType",
@@ -336,6 +342,7 @@ __all__ = [
     "ClinicalBehavioralAssayEnum",
     "CloudLabExperimentEnum",
     "CodonEnum",
+    "ColorEnum",
     "ColorSpaceEnum",
     "CommonMineral",
     "CommonOrganismTaxaEnum",
@@ -423,6 +430,7 @@ __all__ = [
     "EmploymentTypeEnum",
     "EndocrineDisruptorEnum",
     "EnergyEfficiencyRating",
+    "EnergyRegenerationSubstrateEnum",
     "EnergySource",
     "EnergyStorageType",
     "EnergyUnit",
@@ -544,6 +552,7 @@ __all__ = [
     "InspectionTypeEnum",
     "IntegrationFeatureEnum",
     "IntegrationSystemEnum",
+    "IntensityEnum",
     "IntentClassificationEnum",
     "InteractionDetectionMethod",
     "InteractionType",
@@ -595,6 +604,7 @@ __all__ = [
     "MaterialClassEnum",
     "MaterialPropertyPredictionType",
     "MaterialsSimulationType",
+    "MaturityEnum",
     "MechanicalBehaviorEnum",
     "MechanicalTestingMethodEnum",
     "MedicalSpecialtyEnum",
@@ -670,6 +680,7 @@ __all__ = [
     "OutcomeTypeEnum",
     "OxidationStateEnum",
     "OxygenationStrategyEnum",
+    "PATOBiologicalSexEnum",
     "PCROperationTypeEnum",
     "PCRPlateTypeEnum",
     "PVCellType",
@@ -758,6 +769,7 @@ __all__ = [
     "RegulatoryConstraint",
     "RegulatoryFrameworkEnum",
     "RelToOxygenEnum",
+    "RelativeChangeEnum",
     "RelativeDirection",
     "RelativeTimeEnum",
     "RemoteSensingDataType",
@@ -798,6 +810,7 @@ __all__ = [
     "SequencingChemistry",
     "SequencingPlatform",
     "SeverityLevelEnum",
+    "ShapeEnum",
     "SimpleSpatialDirection",
     "SkinToneEnum",
     "SmartManufacturingTechnologyType",
@@ -807,6 +820,7 @@ __all__ = [
     "SourceMaterialTypeEnum",
     "SourcingStrategyEnum",
     "SpamClassificationEnum",
+    "SpatialPatternEnum",
     "SpatialRelationship",
     "SpatialResolutionEnum",
     "SpecimenCollectionMethodEnum",
@@ -844,6 +858,7 @@ __all__ = [
     "TemperatureUnitEnum",
     "TemporalAggregationEnum",
     "TextCharset",
+    "TextureEnum",
     "TherapeuticActionabilityEnum",
     "ThermalAnalysisMethodEnum",
     "ThermalConductivityEnum",
@@ -883,6 +898,7 @@ __all__ = [
     "ValueSetStewardEnum",
     "VectorTypeEnum",
     "VendorCategoryEnum",
+    "ViabilityEnum",
     "VideoFormatEnum",
     "ViralGenomeTypeEnum",
     "VisitProvenanceEnum",
