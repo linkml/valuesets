@@ -14,8 +14,8 @@ prefixes:
   CHEBI: http://purl.obolibrary.org/obo/CHEBI_
   NCBITaxon: http://purl.obolibrary.org/obo/NCBITaxon_
   OBI: http://purl.obolibrary.org/obo/OBI_
-  MI: http://purl.obolibrary.org/obo/MI_
-  ECO: http://purl.obolibrary.org/obo/ECO_
+  NCIT: http://purl.obolibrary.org/obo/NCIT_
+  BAO: http://www.bioassayontology.org/bao#BAO_
   orcid: https://orcid.org/
   valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
@@ -57,6 +57,8 @@ enums:
         - E. coli lysate
         - S30 extract
         - ECE
+        broad_mappings:
+        - BAO:0000366
         annotations:
           source_taxon: NCBITaxon:562
           extract_type: crude lysate
@@ -70,6 +72,8 @@ enums:
         - PURE
         - PURExpress
         - reconstituted system
+        broad_mappings:
+        - BAO:0000366
         annotations:
           extract_type: reconstituted
           domain: prokaryotic
@@ -81,6 +85,8 @@ enums:
         aliases:
         - WGE
         - wheat germ system
+        broad_mappings:
+        - BAO:0000366
         annotations:
           source_taxon: NCBITaxon:4565
           extract_type: crude lysate
@@ -89,9 +95,11 @@ enums:
         description: >-
           Rabbit (Oryctolagus cuniculus) reticulocyte lysate, a classic
           mammalian system for in vitro translation and protein labeling
+        meaning: BAO:0000255
         aliases:
         - RRL
         - reticulocyte lysate
+        - rabbit reticulocyte lysate format
         annotations:
           source_taxon: NCBITaxon:9986
           extract_type: crude lysate
@@ -104,6 +112,8 @@ enums:
         - ICE
         - Sf21 extract
         - insect lysate
+        broad_mappings:
+        - BAO:0000366
         annotations:
           source_taxon: NCBITaxon:7108
           extract_type: crude lysate
@@ -115,6 +125,8 @@ enums:
         aliases:
         - HeLa lysate
         - human cell extract
+        broad_mappings:
+        - BAO:0000366
         annotations:
           source_taxon: NCBITaxon:9606
           extract_type: crude lysate
@@ -125,6 +137,8 @@ enums:
           glycosylation and disulfide bond formation
         aliases:
         - CHO lysate
+        broad_mappings:
+        - BAO:0000366
         annotations:
           source_taxon: NCBITaxon:10029
           extract_type: crude lysate
@@ -136,6 +150,8 @@ enums:
         aliases:
         - S. cerevisiae extract
         - yeast lysate
+        broad_mappings:
+        - BAO:0000366
         annotations:
           source_taxon: NCBITaxon:4932
           extract_type: crude lysate
@@ -147,6 +163,8 @@ enums:
         aliases:
         - Leishmania tarentolae extract
         - LTE
+        broad_mappings:
+        - BAO:0000366
         annotations:
           source_taxon: NCBITaxon:5689
           extract_type: crude lysate
@@ -158,6 +176,8 @@ enums:
         aliases:
         - V. natriegens extract
         - Vmax extract
+        broad_mappings:
+        - BAO:0000366
         annotations:
           source_taxon: NCBITaxon:691
           extract_type: crude lysate
@@ -169,6 +189,8 @@ enums:
         aliases:
         - BY-2 lysate
         - BYL
+        broad_mappings:
+        - BAO:0000366
         annotations:
           extract_type: crude lysate
           domain: eukaryotic
@@ -203,6 +225,8 @@ enums:
         - CECF
         - continuous exchange
         - dialysis mode
+        related_mappings:
+        - OBI:0600052
         annotations:
           duration: extended (up to ~24 h)
       CONTINUOUS_FLOW:
@@ -229,6 +253,8 @@ enums:
         - freeze-dried
         - FD-CF
         - lyophilised
+        related_mappings:
+        - NCIT:C28150
         annotations:
           advantage: cold-chain-free storage and distribution
 
@@ -362,14 +388,20 @@ enums:
         description: >-
           Cell-free biosensors, including freeze-dried paper-based sensors for
           detecting nucleic acids, small molecules, or contaminants
+        meaning: NCIT:C16350
         aliases:
         - cell-free biosensor
+        - Biosensors
+        exact_mappings:
+        - BAO:0010264
       DIAGNOSTICS:
         description: >-
           Point-of-care and field-deployable diagnostics, often freeze-dried
           cell-free reactions coupled to toehold switches or CRISPR readouts
         aliases:
         - point-of-care diagnostics
+        related_mappings:
+        - NCIT:C209465
       UNNATURAL_AMINO_ACID_INCORPORATION:
         description: >-
           Site-specific incorporation of non-canonical/unnatural amino acids via
@@ -394,14 +426,20 @@ enums:
         description: >-
           Parallelized small-volume expression for protein screening, directed
           evolution, and library characterization
+        meaning: NCIT:C18472
         aliases:
         - HTS
+        exact_mappings:
+        - BAO:0010074
       VACCINE_PRODUCTION:
         description: >-
           On-demand cell-free production of protein subunit and conjugate vaccine
           antigens
+        meaning: OBI:0000719
         aliases:
         - on-demand vaccine production
+        exact_mappings:
+        - NCIT:C26030
       ANTIBODY_PRODUCTION:
         description: Cell-free synthesis of antibodies and antibody fragments
         aliases:
