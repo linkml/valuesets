@@ -1,0 +1,230 @@
+name: valuesets-business-currencies
+title: Currency Value Sets
+description: >-
+  Value set of world currencies identified by their ISO 4217 three-letter
+  alpha codes. Permissible value names are the ISO 4217 alpha-3 codes (an
+  existing standard) rather than upper-snake-case. Covers monetary fields such
+  as the PISCES Standard Flowsheet Format TEA_currency and per-mass price
+  units. This is a curated set of actively circulating currencies and is
+  extensible to the full ISO 4217 list.
+id: https://w3id.org/valuesets/business/currencies
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+default_prefix: valuesets
+slots:
+  currency_code:
+    description: The ISO 4217 currency of a monetary amount
+    range: CurrencyCode
+enums:
+  CurrencyCode:
+    title: Currency Code
+    description: >-
+      World currencies by ISO 4217 alpha-3 code. The numeric_code, symbol, and
+      minor_unit (number of decimal places) annotations record the
+      corresponding ISO 4217 attributes.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    annotations:
+      standard: ISO 4217
+    permissible_values:
+      USD:
+        title: United States dollar
+        description: United States dollar
+        annotations: {numeric_code: '840', symbol: $, minor_unit: 2}
+      EUR:
+        title: Euro
+        description: Euro
+        annotations: {numeric_code: '978', symbol: "€", minor_unit: 2}
+      JPY:
+        title: Japanese yen
+        description: Japanese yen
+        annotations: {numeric_code: '392', symbol: "¥", minor_unit: 0}
+      GBP:
+        title: Pound sterling
+        description: British pound sterling
+        annotations: {numeric_code: '826', symbol: "£", minor_unit: 2}
+      CNY:
+        title: Renminbi
+        description: Chinese yuan renminbi
+        annotations: {numeric_code: '156', symbol: "¥", minor_unit: 2}
+      AUD:
+        title: Australian dollar
+        description: Australian dollar
+        annotations: {numeric_code: '036', symbol: $, minor_unit: 2}
+      CAD:
+        title: Canadian dollar
+        description: Canadian dollar
+        annotations: {numeric_code: '124', symbol: $, minor_unit: 2}
+      CHF:
+        title: Swiss franc
+        description: Swiss franc
+        annotations: {numeric_code: '756', symbol: Fr, minor_unit: 2}
+      HKD:
+        title: Hong Kong dollar
+        description: Hong Kong dollar
+        annotations: {numeric_code: '344', symbol: $, minor_unit: 2}
+      SGD:
+        title: Singapore dollar
+        description: Singapore dollar
+        annotations: {numeric_code: '702', symbol: $, minor_unit: 2}
+      SEK:
+        title: Swedish krona
+        description: Swedish krona
+        annotations: {numeric_code: '752', symbol: kr, minor_unit: 2}
+      NOK:
+        title: Norwegian krone
+        description: Norwegian krone
+        annotations: {numeric_code: '578', symbol: kr, minor_unit: 2}
+      DKK:
+        title: Danish krone
+        description: Danish krone
+        annotations: {numeric_code: '208', symbol: kr, minor_unit: 2}
+      NZD:
+        title: New Zealand dollar
+        description: New Zealand dollar
+        annotations: {numeric_code: '554', symbol: $, minor_unit: 2}
+      KRW:
+        title: South Korean won
+        description: South Korean won
+        annotations: {numeric_code: '410', symbol: "₩", minor_unit: 0}
+      INR:
+        title: Indian rupee
+        description: Indian rupee
+        annotations: {numeric_code: '356', symbol: "₹", minor_unit: 2}
+      BRL:
+        title: Brazilian real
+        description: Brazilian real
+        annotations: {numeric_code: '986', symbol: R$, minor_unit: 2}
+      ZAR:
+        title: South African rand
+        description: South African rand
+        annotations: {numeric_code: '710', symbol: R, minor_unit: 2}
+      RUB:
+        title: Russian ruble
+        description: Russian ruble
+        annotations: {numeric_code: '643', symbol: "₽", minor_unit: 2}
+      MXN:
+        title: Mexican peso
+        description: Mexican peso
+        annotations: {numeric_code: '484', symbol: $, minor_unit: 2}
+      TRY:
+        title: Turkish lira
+        description: Turkish lira
+        annotations: {numeric_code: '949', symbol: "₺", minor_unit: 2}
+      PLN:
+        title: Polish zloty
+        description: Polish zloty
+        annotations: {numeric_code: '985', symbol: "zł", minor_unit: 2}
+      THB:
+        title: Thai baht
+        description: Thai baht
+        annotations: {numeric_code: '764', symbol: "฿", minor_unit: 2}
+      IDR:
+        title: Indonesian rupiah
+        description: Indonesian rupiah
+        annotations: {numeric_code: '360', symbol: Rp, minor_unit: 2}
+      MYR:
+        title: Malaysian ringgit
+        description: Malaysian ringgit
+        annotations: {numeric_code: '458', symbol: RM, minor_unit: 2}
+      PHP:
+        title: Philippine peso
+        description: Philippine peso
+        annotations: {numeric_code: '608', symbol: "₱", minor_unit: 2}
+      AED:
+        title: UAE dirham
+        description: United Arab Emirates dirham
+        annotations: {numeric_code: '784', minor_unit: 2}
+      SAR:
+        title: Saudi riyal
+        description: Saudi riyal
+        annotations: {numeric_code: '682', minor_unit: 2}
+      ILS:
+        title: Israeli new shekel
+        description: Israeli new shekel
+        annotations: {numeric_code: '376', symbol: "₪", minor_unit: 2}
+      CZK:
+        title: Czech koruna
+        description: Czech koruna
+        annotations: {numeric_code: '203', symbol: "Kč", minor_unit: 2}
+      HUF:
+        title: Hungarian forint
+        description: Hungarian forint
+        annotations: {numeric_code: '348', symbol: Ft, minor_unit: 2}
+      RON:
+        title: Romanian leu
+        description: Romanian leu
+        annotations: {numeric_code: '946', symbol: lei, minor_unit: 2}
+      UAH:
+        title: Ukrainian hryvnia
+        description: Ukrainian hryvnia
+        annotations: {numeric_code: '980', symbol: "₴", minor_unit: 2}
+      CLP:
+        title: Chilean peso
+        description: Chilean peso
+        annotations: {numeric_code: '152', symbol: $, minor_unit: 0}
+      COP:
+        title: Colombian peso
+        description: Colombian peso
+        annotations: {numeric_code: '170', symbol: $, minor_unit: 2}
+      ARS:
+        title: Argentine peso
+        description: Argentine peso
+        annotations: {numeric_code: '032', symbol: $, minor_unit: 2}
+      EGP:
+        title: Egyptian pound
+        description: Egyptian pound
+        annotations: {numeric_code: '818', symbol: "£", minor_unit: 2}
+      NGN:
+        title: Nigerian naira
+        description: Nigerian naira
+        annotations: {numeric_code: '566', symbol: "₦", minor_unit: 2}
+      KES:
+        title: Kenyan shilling
+        description: Kenyan shilling
+        annotations: {numeric_code: '404', symbol: Sh, minor_unit: 2}
+      PKR:
+        title: Pakistani rupee
+        description: Pakistani rupee
+        annotations: {numeric_code: '586', symbol: "₨", minor_unit: 2}
+      BDT:
+        title: Bangladeshi taka
+        description: Bangladeshi taka
+        annotations: {numeric_code: '050', symbol: "৳", minor_unit: 2}
+      VND:
+        title: Vietnamese dong
+        description: Vietnamese dong
+        annotations: {numeric_code: '704', symbol: "₫", minor_unit: 0}
+      TWD:
+        title: New Taiwan dollar
+        description: New Taiwan dollar
+        annotations: {numeric_code: '901', symbol: $, minor_unit: 2}
+      KWD:
+        title: Kuwaiti dinar
+        description: Kuwaiti dinar
+        annotations: {numeric_code: '414', minor_unit: 3}
+      BHD:
+        title: Bahraini dinar
+        description: Bahraini dinar
+        annotations: {numeric_code: '048', minor_unit: 3}
+      OMR:
+        title: Omani rial
+        description: Omani rial
+        annotations: {numeric_code: '512', minor_unit: 3}
+      QAR:
+        title: Qatari riyal
+        description: Qatari riyal
+        annotations: {numeric_code: '634', minor_unit: 2}
+      ISK:
+        title: Icelandic krona
+        description: Icelandic krona
+        annotations: {numeric_code: '352', symbol: kr, minor_unit: 0}

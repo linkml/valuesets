@@ -47,6 +47,21 @@ slots:
   data_size_unit:
     description: Units of digital data size
     range: DataSizeUnitEnum
+  energy_unit:
+    description: Units of energy
+    range: EnergyUnitEnum
+  power_unit:
+    description: Units of power (energy per unit time)
+    range: PowerUnitEnum
+  mass_flow_rate_unit:
+    description: Units of mass flow rate
+    range: MassFlowRateUnitEnum
+  molar_flow_rate_unit:
+    description: Units of molar flow rate
+    range: MolarFlowRateUnitEnum
+  volumetric_flow_rate_unit:
+    description: Units of volumetric flow rate
+    range: VolumetricFlowRateUnitEnum
 enums:
   LengthUnitEnum:
     title: Length Unit
@@ -745,3 +760,233 @@ enums:
           symbol: TiB
           conversion_to_byte: '1099511627776'
           standard: binary
+  EnergyUnitEnum:
+    title: Energy Unit
+    description: Units of energy
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      JOULE:
+        description: Joule (SI derived unit of energy)
+        meaning: UO:0000112
+        annotations:
+          symbol: J
+          system: SI
+      KILOJOULE:
+        description: Kilojoule (1000 joules)
+        annotations:
+          symbol: kJ
+          conversion_to_joule: '1000'
+      MEGAJOULE:
+        description: Megajoule (10^6 joules)
+        annotations:
+          symbol: MJ
+          conversion_to_joule: 1e6
+      GIGAJOULE:
+        description: Gigajoule (10^9 joules)
+        annotations:
+          symbol: GJ
+          conversion_to_joule: 1e9
+      WATT_HOUR:
+        title: watt-hour
+        description: Watt-hour (energy of one watt over one hour)
+        meaning: UO:0000223
+        annotations:
+          symbol: Wh
+          conversion_to_joule: '3600'
+      KILOWATT_HOUR:
+        title: kilowatt-hour
+        description: Kilowatt-hour
+        meaning: UO:0000224
+        annotations:
+          symbol: kWh
+          conversion_to_joule: '3600000'
+      MEGAWATT_HOUR:
+        description: Megawatt-hour
+        annotations:
+          symbol: MWh
+          conversion_to_joule: 3.6e9
+      CALORIE:
+        description: Thermochemical calorie
+        annotations:
+          symbol: cal
+          conversion_to_joule: '4.184'
+      KILOCALORIE:
+        title: large calorie
+        description: Kilocalorie (large calorie)
+        meaning: UO:0010051
+        annotations:
+          symbol: kcal
+          conversion_to_joule: '4184'
+      BTU:
+        title: British thermal unit
+        description: British thermal unit
+        annotations:
+          symbol: BTU
+          conversion_to_joule: '1055.06'
+          system: imperial
+  PowerUnitEnum:
+    title: Power Unit
+    description: Units of power (energy per unit time)
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      WATT:
+        description: Watt (SI derived unit of power)
+        meaning: UO:0000114
+        annotations:
+          symbol: W
+          system: SI
+          definition: J/s
+      KILOWATT:
+        description: Kilowatt (1000 watts)
+        annotations:
+          symbol: kW
+          conversion_to_watt: '1000'
+      MEGAWATT:
+        description: Megawatt (10^6 watts)
+        annotations:
+          symbol: MW
+          conversion_to_watt: 1e6
+      GIGAWATT:
+        description: Gigawatt (10^9 watts)
+        annotations:
+          symbol: GW
+          conversion_to_watt: 1e9
+      MILLIWATT:
+        description: Milliwatt (10^-3 watts)
+        annotations:
+          symbol: mW
+          conversion_to_watt: '0.001'
+      HORSEPOWER:
+        description: Mechanical horsepower
+        annotations:
+          symbol: hp
+          conversion_to_watt: '745.7'
+          system: imperial
+      BTU_PER_HOUR:
+        description: British thermal units per hour
+        annotations:
+          symbol: BTU/h
+          conversion_to_watt: '0.293071'
+  MassFlowRateUnitEnum:
+    title: Mass Flow Rate Unit
+    description: Units of mass flow rate (mass per unit time)
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      KILOGRAM_PER_SECOND:
+        description: Kilograms per second (SI)
+        annotations:
+          symbol: kg/s
+          system: SI
+      KILOGRAM_PER_HOUR:
+        description: Kilograms per hour
+        annotations:
+          symbol: kg/h
+          conversion_to_kg_per_s: '0.000277778'
+      GRAM_PER_SECOND:
+        description: Grams per second
+        annotations:
+          symbol: g/s
+          conversion_to_kg_per_s: '0.001'
+      TONNE_PER_HOUR:
+        description: Metric tonnes per hour
+        annotations:
+          symbol: t/h
+          conversion_to_kg_per_s: '0.277778'
+      TONNE_PER_DAY:
+        description: Metric tonnes per day
+        annotations:
+          symbol: t/d
+          conversion_to_kg_per_s: '0.0115741'
+      POUND_PER_HOUR:
+        description: Pounds (mass) per hour
+        annotations:
+          symbol: lb/h
+          conversion_to_kg_per_s: '0.000125998'
+          system: imperial
+  MolarFlowRateUnitEnum:
+    title: Molar Flow Rate Unit
+    description: Units of molar flow rate (amount of substance per unit time)
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      MOLE_PER_SECOND:
+        description: Moles per second (SI)
+        annotations:
+          symbol: mol/s
+          system: SI
+      MOLE_PER_HOUR:
+        description: Moles per hour
+        annotations:
+          symbol: mol/h
+          conversion_to_mol_per_s: '0.000277778'
+      KILOMOLE_PER_HOUR:
+        description: Kilomoles per hour
+        annotations:
+          symbol: kmol/h
+          conversion_to_mol_per_s: '0.277778'
+      KILOMOLE_PER_SECOND:
+        description: Kilomoles per second
+        annotations:
+          symbol: kmol/s
+          conversion_to_mol_per_s: '1000'
+  VolumetricFlowRateUnitEnum:
+    title: Volumetric Flow Rate Unit
+    description: Units of volumetric flow rate (volume per unit time)
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      CUBIC_METER_PER_SECOND:
+        description: Cubic meters per second (SI)
+        annotations:
+          symbol: m3/s
+          system: SI
+      CUBIC_METER_PER_HOUR:
+        description: Cubic meters per hour
+        annotations:
+          symbol: m3/h
+          conversion_to_m3_per_s: '0.000277778'
+      LITER_PER_SECOND:
+        description: Liters per second
+        annotations:
+          symbol: L/s
+          conversion_to_m3_per_s: '0.001'
+      LITER_PER_MINUTE:
+        description: Liters per minute
+        annotations:
+          symbol: L/min
+          conversion_to_m3_per_s: '1.66667e-5'
+      GALLON_PER_MINUTE:
+        description: US gallons per minute
+        annotations:
+          symbol: gpm
+          conversion_to_m3_per_s: '6.30902e-5'
+          system: US
+      CUBIC_FOOT_PER_MINUTE:
+        description: Cubic feet per minute
+        annotations:
+          symbol: cfm
+          conversion_to_m3_per_s: '0.000471947'
+          system: imperial

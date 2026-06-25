@@ -1,0 +1,64 @@
+name: valuesets-chemistry-identifiers
+title: Chemical Identifier Value Sets
+description: >-
+  Value sets for the identifier schemes used to reference chemical substances.
+  Covers fields such as the PISCES Standard Flowsheet Format chemical
+  registry_id ("CAS number or SMILES string").
+id: https://w3id.org/valuesets/chemistry/identifiers
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+default_prefix: valuesets
+slots:
+  chemical_identifier_scheme:
+    description: The scheme/namespace of a chemical identifier
+    range: ChemicalIdentifierScheme
+enums:
+  ChemicalIdentifierScheme:
+    title: Chemical Identifier Scheme
+    description: >-
+      Schemes used to identify chemical substances, including registry numbers,
+      line notations, structure-derived keys, and database accessions.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      CAS_RN:
+        description: CAS Registry Number assigned by the Chemical Abstracts Service
+        annotations:
+          example: 64-17-5
+      SMILES:
+        description: Simplified Molecular-Input Line-Entry System structure notation
+        annotations:
+          example: CCO
+      INCHI:
+        description: IUPAC International Chemical Identifier structure string
+        annotations:
+          example: InChI=1S/C2H6O/c1-2-3/h3H,2H2,1H3
+      INCHIKEY:
+        description: Hashed fixed-length form of an InChI
+        annotations:
+          example: LFQSCWFLJHTTHZ-UHFFFAOYSA-N
+      IUPAC_NAME:
+        description: Systematic IUPAC chemical name
+      MOLECULAR_FORMULA:
+        description: Molecular or empirical chemical formula
+        annotations:
+          example: C2H6O
+      PUBCHEM_CID:
+        description: PubChem Compound Identifier
+      CHEBI_ID:
+        description: ChEBI ontology identifier
+      KEGG_COMPOUND:
+        description: KEGG COMPOUND database accession
+      DRUGBANK_ID:
+        description: DrugBank accession
+      EC_NUMBER:
+        description: European Community (EINECS/EC) substance number
