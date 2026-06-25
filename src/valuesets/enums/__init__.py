@@ -70,6 +70,7 @@ from .bioprocessing.biomanufacturing import BiomanufacturingScaleType, Bioproduc
 from .bioprocessing.scale_up import ProcessScaleEnum, BioreactorTypeEnum, FermentationModeEnum, OxygenationStrategyEnum, AgitationTypeEnum, DownstreamProcessEnum, FeedstockTypeEnum, ProductTypeEnum, SterilizationMethodEnum
 
 # Business domain
+from .business.currencies import CurrencyCode
 from .business.human_resources import EmploymentTypeEnum, JobLevelEnum, HRFunctionEnum, CompensationTypeEnum, PerformanceRatingEnum, RecruitmentSourceEnum, TrainingTypeEnum, EmployeeStatusEnum, WorkArrangementEnum, BenefitsCategoryEnum
 from .business.industry_classifications import NAICSSectorEnum, EconomicSectorEnum, BusinessActivityTypeEnum, IndustryMaturityEnum, MarketStructureEnum, IndustryRegulationLevelEnum
 from .business.management_operations import ManagementMethodologyEnum, StrategicFrameworkEnum, OperationalModelEnum, PerformanceMeasurementEnum, DecisionMakingStyleEnum, LeadershipStyleEnum, BusinessProcessTypeEnum
@@ -79,6 +80,7 @@ from .business.supply_chain import ProcurementTypeEnum, VendorCategoryEnum, Supp
 
 # Chemistry domain
 from .chemistry.chemical_entities import SubatomicParticleEnum, BondTypeEnum, PeriodicTableBlockEnum, ElementFamilyEnum, ElementMetallicClassificationEnum, HardOrSoftEnum, BronstedAcidBaseRoleEnum, LewisAcidBaseRoleEnum, OxidationStateEnum, ChiralityEnum, NanostructureMorphologyEnum
+from .chemistry.identifiers import ChemicalIdentifierScheme
 from .chemistry.reaction_directionality import RelativeTimeEnum, PresenceEnum, ReactionDirectionality
 from .chemistry.reactions import ReactionTypeEnum, ReactionMechanismEnum, CatalystTypeEnum, ReactionConditionEnum, ReactionRateOrderEnum, EnzymeClassEnum, SolventClassEnum, ThermodynamicParameterEnum
 
@@ -221,6 +223,13 @@ from .preservation.digital_objects import DigitalObjectCategory, CopyrightStatus
 from .preservation.events import PreservationEventType, PreservationEventOutcome
 from .preservation.fixity import CryptographicHashFunction
 
+# Process_Engineering domain
+from .process_engineering.process_industries import ProcessIndustryCategory, ProcessOperationMode
+from .process_engineering.process_modeling import DesignSimulationMethod, FlowsheetSolutionApproach, ProcessSimulator
+from .process_engineering.process_streams import ProcessStreamRole, ProcessStreamPhase, UtilityType
+from .process_engineering.thermodynamics import EquationOfStateModel, ActivityCoefficientModel, ThermodynamicPropertyPackage, MixingRuleModel, PoyntingCorrectionMethod
+from .process_engineering.unit_operations import UnitOperationType, ProcessEquipmentType
+
 # Publishing domain
 from .publishing.arxiv_categories import ArxivCategory
 from .publishing.osti_record import OstiWorkflowStatus, OstiAccessLimitation, OstiCollectionType, OstiSensitivityFlag, OstiOrganizationIdentifierType, OstiProductType, OstiOrganizationType, OstiPersonType, OstiContributorType, OstiRelatedIdentifierType, OstiRelationType, OstiIdentifierType, OstiGeolocationType, OstiMediaLocationType
@@ -239,7 +248,7 @@ from .statistics.prediction_outcomes import OutcomeTypeEnum
 from .time.temporal import DayOfWeek, Month, Quarter, Season, TimePeriod, TimeOfDay, BusinessTimeFrame, GeologicalEra, HistoricalPeriod
 
 # Units domain
-from .units.measurements import LengthUnitEnum, MassUnitEnum, VolumeUnitEnum, TemperatureUnitEnum, TimeUnitEnum, PressureUnitEnum, ConcentrationUnitEnum, FrequencyUnitEnum, AngleUnitEnum, DataSizeUnitEnum
+from .units.measurements import LengthUnitEnum, MassUnitEnum, VolumeUnitEnum, TemperatureUnitEnum, TimeUnitEnum, PressureUnitEnum, ConcentrationUnitEnum, FrequencyUnitEnum, AngleUnitEnum, DataSizeUnitEnum, MassFlowRateUnitEnum, MolarFlowRateUnitEnum, VolumetricFlowRateUnitEnum
 from .units.quantity_kinds import QuantityKindEnum
 
 # Visual domain
@@ -250,6 +259,7 @@ __all__ = [
     "AcademicDegree",
     "AccessRights",
     "AcousticRadiationTypeEnum",
+    "ActivityCoefficientModel",
     "AdditiveManufacturingEnum",
     "AgeGroupEnum",
     "AgitationTypeEnum",
@@ -334,6 +344,7 @@ __all__ = [
     "CellPolarity",
     "CellProliferationState",
     "CellularityEnum",
+    "ChemicalIdentifierScheme",
     "ChipFabricationNodeType",
     "ChiralityEnum",
     "ChromatographyType",
@@ -375,6 +386,7 @@ __all__ = [
     "CrystalSystemEnum",
     "CrystallizationMethod",
     "CurrencyChemical",
+    "CurrencyCode",
     "CurrencyCodeISO4217Enum",
     "DNABaseEnum",
     "DNABaseExtendedEnum",
@@ -402,6 +414,7 @@ __all__ = [
     "DefectClassificationEnum",
     "DefenseInDepthLevelEnum",
     "DerivatizationMethod",
+    "DesignSimulationMethod",
     "DetectionModeEnum",
     "Detector",
     "DetectorType",
@@ -438,6 +451,7 @@ __all__ = [
     "EnvironmentalImpact",
     "EnzymeClassEnum",
     "EnzymologyAssayEnum",
+    "EquationOfStateModel",
     "EthnicityOMB1997Enum",
     "ExecutionModeEnum",
     "ExperimentalDesignMethodType",
@@ -469,6 +483,7 @@ __all__ = [
     "FireSafetyColorEnum",
     "FissileIsotopeEnum",
     "FlowerColorEnum",
+    "FlowsheetSolutionApproach",
     "FoodColoringEnum",
     "FossilFuelTypeEnum",
     "FraudDetectionEnum",
@@ -597,6 +612,7 @@ __all__ = [
     "MaritimeSignalColorEnum",
     "MarketStructureEnum",
     "MassErrorUnit",
+    "MassFlowRateUnitEnum",
     "MassSpectrometerFileFormat",
     "MassSpectrometerVendor",
     "MassSpectrometryAssayEnum",
@@ -625,8 +641,10 @@ __all__ = [
     "MiningPhase",
     "MiningType",
     "MitoticPhase",
+    "MixingRuleModel",
     "ModeOfInheritance",
     "ModelSystemTypeEnum",
+    "MolarFlowRateUnitEnum",
     "Month",
     "MouseDevelopmentalStage",
     "MousePostnatalAgeGroupEnum",
@@ -710,6 +728,7 @@ __all__ = [
     "PolymerTypeEnum",
     "PowerPlantStatusEnum",
     "PowerUnit",
+    "PoyntingCorrectionMethod",
     "PredictionOutcomeType",
     "PresenceEnum",
     "PreservationEventOutcome",
@@ -718,9 +737,15 @@ __all__ = [
     "PreservationLevelValue",
     "PressureUnitEnum",
     "PriorityLevelEnum",
+    "ProcessEquipmentType",
     "ProcessImprovementApproachEnum",
+    "ProcessIndustryCategory",
+    "ProcessOperationMode",
     "ProcessPerformanceMetric",
     "ProcessScaleEnum",
+    "ProcessSimulator",
+    "ProcessStreamPhase",
+    "ProcessStreamRole",
     "ProcessingStatus",
     "ProcurementTypeEnum",
     "ProductTypeEnum",
@@ -865,6 +890,7 @@ __all__ = [
     "ThermalCyclerTypeEnum",
     "ThermalCyclingStepEnum",
     "ThermodynamicParameterEnum",
+    "ThermodynamicPropertyPackage",
     "TimeOfDay",
     "TimePeriod",
     "TimeUnitEnum",
@@ -889,8 +915,10 @@ __all__ = [
     "USStateCodeEnum",
     "UnconventionalMineralResourceType",
     "UniProtSpeciesCode",
+    "UnitOperationType",
     "UpdateFrequency",
     "UraniumEnrichmentLevelEnum",
+    "UtilityType",
     "VaccinationPeriodicityEnum",
     "VaccinationStatusEnum",
     "VaccineCategoryEnum",
@@ -906,6 +934,7 @@ __all__ = [
     "VitalStatusEnum",
     "VitrificationMethod",
     "VolumeUnitEnum",
+    "VolumetricFlowRateUnitEnum",
     "WasteDisposalMethodEnum",
     "WasteFacilityTypeEnum",
     "WasteHalfLifeCategoryEnum",
