@@ -348,6 +348,40 @@ enums:
         description: Cell disruption/homogenization
         annotations:
           methods: High pressure, bead mill
+      CLARIFICATION:
+        description: Removal of cells and debris to produce a clarified harvest
+        annotations:
+          methods: Centrifugation, depth filtration
+      FLOCCULATION:
+        description: Aggregation of cells and debris into flocs to aid clarification
+      ULTRAFILTRATION:
+        title: ultra-filtration
+        description: Membrane concentration retaining macromolecules such as proteins
+        meaning: CHMO:0001645
+        annotations:
+          mwco: Typically 1-1000 kDa
+      DIAFILTRATION:
+        description: Buffer exchange and desalting by ultrafiltration with continuous makeup
+      TANGENTIAL_FLOW_FILTRATION:
+        description: Crossflow membrane filtration used for concentration and diafiltration
+        annotations:
+          aliases: TFF, crossflow filtration
+      BUFFER_EXCHANGE:
+        description: Replacement of the buffer matrix of a product stream
+      ADSORPTION:
+        description: Capture of product or impurities onto a solid sorbent
+      VIRAL_INACTIVATION:
+        description: Treatment step that inactivates potential viral contaminants
+        annotations:
+          methods: Low pH, solvent/detergent, heat
+      POLISHING:
+        description: Final chromatographic or filtration steps to remove trace impurities
+      LYOPHILIZATION:
+        title: freeze drying
+        description: Freeze-drying to produce a stable solid product
+        meaning: CHMO:0001553
+        annotations:
+          aliases: freeze drying
   FeedstockTypeEnum:
     title: Feedstock Type
     description: Types of feedstocks for bioprocessing

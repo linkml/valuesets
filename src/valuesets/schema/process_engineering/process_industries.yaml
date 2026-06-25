@@ -1,0 +1,125 @@
+name: valuesets-process-engineering-process-industries
+title: Process Industry Value Sets
+description: >-
+  Value sets categorizing process industries and process operation modes.
+  The process industry categories generalize the top-level process categories
+  used by the PISCES Standard Flowsheet Format (Biofuel, Chemical, Energy,
+  Pharmaceutical, Food Product) into a more comprehensive set of process
+  manufacturing sectors.
+id: https://w3id.org/valuesets/process_engineering/process_industries
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+default_prefix: valuesets
+slots:
+  process_industry_category:
+    description: The process manufacturing sector a process belongs to
+    range: ProcessIndustryCategory
+  process_operation_mode:
+    description: The temporal operating mode of a process
+    range: ProcessOperationMode
+enums:
+  ProcessIndustryCategory:
+    title: Process Industry Category
+    description: >-
+      Sectors of the process (continuous and batch) manufacturing industries.
+      The pisces_category annotation records the corresponding top-level
+      category in the PISCES Standard Flowsheet Format where one exists.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      PETROLEUM_REFINING:
+        description: Refining of crude oil into fuels and feedstocks
+        annotations:
+          pisces_category: Energy
+      PETROCHEMICAL:
+        description: Production of chemicals derived from petroleum and natural gas
+        annotations:
+          pisces_category: Chemical
+      BULK_CHEMICAL:
+        description: Large-volume production of commodity chemicals
+        annotations:
+          pisces_category: Chemical
+      SPECIALTY_CHEMICAL:
+        description: Production of lower-volume, high-value performance chemicals
+        annotations:
+          pisces_category: Chemical
+      AGROCHEMICAL:
+        description: Production of fertilizers, pesticides, and other agricultural chemicals
+        annotations:
+          pisces_category: Chemical
+      POLYMER_AND_PLASTICS:
+        description: Production of polymers, resins, and plastic materials
+        annotations:
+          pisces_category: Chemical
+      PHARMACEUTICAL:
+        description: Manufacture of active pharmaceutical ingredients and drug products
+        annotations:
+          pisces_category: Pharmaceutical
+      BIOTECHNOLOGY:
+        description: Manufacture of products using biological systems and fermentation
+        annotations:
+          pisces_category: Pharmaceutical
+      BIOFUEL:
+        description: Production of biologically derived fuels such as ethanol and biodiesel
+        annotations:
+          pisces_category: Biofuel
+      FOOD_AND_BEVERAGE:
+        description: Processing and manufacture of food and beverage products
+        annotations:
+          pisces_category: Food Product
+      PULP_AND_PAPER:
+        description: Production of pulp, paper, and board from fiber
+      METALS_AND_MINING:
+        description: Extraction and processing of metals and minerals
+      WATER_AND_WASTEWATER_TREATMENT:
+        description: Treatment of water and wastewater streams
+      POWER_GENERATION:
+        description: Generation of electrical power and process heat
+        annotations:
+          pisces_category: Energy
+      GAS_PROCESSING:
+        description: Processing and separation of natural gas and industrial gases
+        annotations:
+          pisces_category: Energy
+      CEMENT_AND_CONSTRUCTION_MATERIALS:
+        description: Production of cement, lime, and construction materials
+      GLASS_AND_CERAMICS:
+        description: Manufacture of glass and ceramic products
+      TEXTILE:
+        description: Production and finishing of textile fibers and fabrics
+      COSMETICS_AND_PERSONAL_CARE:
+        description: Manufacture of cosmetics and personal care products
+      NUCLEAR_FUEL:
+        description: Processing of nuclear fuel materials
+        annotations:
+          pisces_category: Energy
+      SEMICONDUCTOR:
+        description: Fabrication of semiconductor and microelectronic materials
+  ProcessOperationMode:
+    title: Process Operation Mode
+    description: >-
+      The temporal mode in which a process or unit operation is run.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      BATCH:
+        description: Material is charged, processed, and discharged in discrete batches
+      CONTINUOUS:
+        description: Material flows through the process steadily without interruption
+      SEMI_BATCH:
+        description: A hybrid mode where some streams are continuous while others are batch-wise
+      SEMI_CONTINUOUS:
+        description: Process alternates between continuous operation and periodic interruptions
