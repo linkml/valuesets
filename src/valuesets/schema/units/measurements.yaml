@@ -47,6 +47,15 @@ slots:
   data_size_unit:
     description: Units of digital data size
     range: DataSizeUnitEnum
+  mass_flow_rate_unit:
+    description: Units of mass flow rate
+    range: MassFlowRateUnitEnum
+  molar_flow_rate_unit:
+    description: Units of molar flow rate
+    range: MolarFlowRateUnitEnum
+  volumetric_flow_rate_unit:
+    description: Units of volumetric flow rate
+    range: VolumetricFlowRateUnitEnum
 enums:
   LengthUnitEnum:
     title: Length Unit
@@ -745,3 +754,116 @@ enums:
           symbol: TiB
           conversion_to_byte: '1099511627776'
           standard: binary
+  MassFlowRateUnitEnum:
+    title: Mass Flow Rate Unit
+    description: Units of mass flow rate (mass per unit time)
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      KILOGRAM_PER_SECOND:
+        description: Kilograms per second (SI)
+        annotations:
+          symbol: kg/s
+          system: SI
+      KILOGRAM_PER_HOUR:
+        description: Kilograms per hour
+        annotations:
+          symbol: kg/h
+          conversion_to_kg_per_s: '0.000277778'
+      GRAM_PER_SECOND:
+        description: Grams per second
+        annotations:
+          symbol: g/s
+          conversion_to_kg_per_s: '0.001'
+      TONNE_PER_HOUR:
+        description: Metric tonnes per hour
+        annotations:
+          symbol: t/h
+          conversion_to_kg_per_s: '0.277778'
+      TONNE_PER_DAY:
+        description: Metric tonnes per day
+        annotations:
+          symbol: t/d
+          conversion_to_kg_per_s: '0.0115741'
+      POUND_PER_HOUR:
+        description: Pounds (mass) per hour
+        annotations:
+          symbol: lb/h
+          conversion_to_kg_per_s: '0.000125998'
+          system: imperial
+  MolarFlowRateUnitEnum:
+    title: Molar Flow Rate Unit
+    description: Units of molar flow rate (amount of substance per unit time)
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      MOLE_PER_SECOND:
+        description: Moles per second (SI)
+        annotations:
+          symbol: mol/s
+          system: SI
+      MOLE_PER_HOUR:
+        description: Moles per hour
+        annotations:
+          symbol: mol/h
+          conversion_to_mol_per_s: '0.000277778'
+      KILOMOLE_PER_HOUR:
+        description: Kilomoles per hour
+        annotations:
+          symbol: kmol/h
+          conversion_to_mol_per_s: '0.277778'
+      KILOMOLE_PER_SECOND:
+        description: Kilomoles per second
+        annotations:
+          symbol: kmol/s
+          conversion_to_mol_per_s: '1000'
+  VolumetricFlowRateUnitEnum:
+    title: Volumetric Flow Rate Unit
+    description: Units of volumetric flow rate (volume per unit time)
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      CUBIC_METER_PER_SECOND:
+        description: Cubic meters per second (SI)
+        annotations:
+          symbol: m3/s
+          system: SI
+      CUBIC_METER_PER_HOUR:
+        description: Cubic meters per hour
+        annotations:
+          symbol: m3/h
+          conversion_to_m3_per_s: '0.000277778'
+      LITER_PER_SECOND:
+        description: Liters per second
+        annotations:
+          symbol: L/s
+          conversion_to_m3_per_s: '0.001'
+      LITER_PER_MINUTE:
+        description: Liters per minute
+        annotations:
+          symbol: L/min
+          conversion_to_m3_per_s: '1.66667e-5'
+      GALLON_PER_MINUTE:
+        description: US gallons per minute
+        annotations:
+          symbol: gpm
+          conversion_to_m3_per_s: '6.30902e-5'
+          system: US
+      CUBIC_FOOT_PER_MINUTE:
+        description: Cubic feet per minute
+        annotations:
+          symbol: cfm
+          conversion_to_m3_per_s: '0.000471947'
+          system: imperial

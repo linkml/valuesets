@@ -121,6 +121,13 @@ imports:
 - clinical/phenopackets
 - bioprocessing/scale_up
 - bioprocessing/biomanufacturing
+- process_engineering/unit_operations
+- process_engineering/process_streams
+- process_engineering/process_industries
+- process_engineering/thermodynamics
+- process_engineering/process_modeling
+- chemistry/identifiers
+- business/currencies
 - units/measurements
 - units/quantity_kinds
 - computing/file_formats

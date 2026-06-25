@@ -1,0 +1,147 @@
+name: valuesets-process-engineering-process-modeling
+title: Process Modeling Value Sets
+description: >-
+  Value sets describing how process flowsheets and unit operations are modeled
+  and solved - unit-operation design/simulation methods, flowsheet solution
+  approaches, and process simulator software. These cover the
+  design_simulation_method and process_simulator fields of the PISCES Standard
+  Flowsheet Format, which are otherwise free strings.
+id: https://w3id.org/valuesets/process_engineering/process_modeling
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+default_prefix: valuesets
+slots:
+  design_simulation_method:
+    description: The method used to design or simulate a unit operation
+    range: DesignSimulationMethod
+  flowsheet_solution_approach:
+    description: The overall approach used to converge a flowsheet
+    range: FlowsheetSolutionApproach
+  process_simulator:
+    description: The process simulation software used to model a flowsheet
+    range: ProcessSimulator
+enums:
+  DesignSimulationMethod:
+    title: Design and Simulation Method
+    description: >-
+      Methods used to design or simulate unit operations, particularly
+      separation columns - ranging from graphical and shortcut methods to
+      rigorous stage-by-stage and rate-based models.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      MCCABE_THIELE:
+        description: McCabe-Thiele graphical method for binary distillation
+        annotations:
+          method_class: GRAPHICAL
+      PONCHON_SAVARIT:
+        description: Ponchon-Savarit enthalpy-composition graphical method for binary distillation
+        annotations:
+          method_class: GRAPHICAL
+      FENSKE_UNDERWOOD_GILLILAND:
+        description: Fenske-Underwood-Gilliland shortcut method for multicomponent distillation
+        annotations:
+          method_class: SHORTCUT
+          abbreviation: FUG
+      KREMSER:
+        description: Kremser shortcut method for absorber and stripper design
+        annotations:
+          method_class: SHORTCUT
+      MESH:
+        description: Rigorous equilibrium-stage solution of the Material, Equilibrium, Summation and Heat (enthalpy) equations
+        annotations:
+          method_class: RIGOROUS_EQUILIBRIUM
+      INSIDE_OUT:
+        description: Inside-out algorithm for rigorous equilibrium-stage column convergence
+        annotations:
+          method_class: RIGOROUS_EQUILIBRIUM
+      RATE_BASED:
+        description: Rate-based (nonequilibrium) model accounting for mass and heat transfer rates
+        annotations:
+          method_class: RATE_BASED
+      EQUILIBRIUM_STAGE:
+        description: Generic equilibrium-stage model assuming each stage reaches phase equilibrium
+        annotations:
+          method_class: RIGOROUS_EQUILIBRIUM
+      SHORTCUT:
+        description: Generic shortcut / approximate design method
+        annotations:
+          method_class: SHORTCUT
+      RIGOROUS:
+        description: Generic rigorous design method
+        annotations:
+          method_class: RIGOROUS_EQUILIBRIUM
+      PINCH_ANALYSIS:
+        description: Pinch analysis for heat-exchanger network and energy integration
+        annotations:
+          method_class: ENERGY_INTEGRATION
+  FlowsheetSolutionApproach:
+    title: Flowsheet Solution Approach
+    description: >-
+      The overall computational strategy used to converge a process flowsheet.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      SEQUENTIAL_MODULAR:
+        description: Units solved one at a time in sequence, iterating on recycle tear streams
+      EQUATION_ORIENTED:
+        description: All model equations assembled and solved simultaneously
+      SIMULTANEOUS_MODULAR:
+        description: Hybrid approach combining modular unit models with a simultaneous convergence layer
+  ProcessSimulator:
+    title: Process Simulator
+    description: >-
+      Process simulation software packages used to model chemical and
+      biochemical process flowsheets.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      ASPEN_PLUS:
+        description: Aspen Plus steady-state process simulator (AspenTech)
+      ASPEN_HYSYS:
+        description: Aspen HYSYS process simulator (AspenTech)
+      ASPEN_CUSTOM_MODELER:
+        description: Aspen Custom Modeler for user-defined unit operation models (AspenTech)
+      UNISIM_DESIGN:
+        description: Honeywell UniSim Design process simulator
+      PRO_II:
+        description: AVEVA Pro/II (formerly SimSci Pro/II) process simulator
+      AVEVA_PROCESS_SIMULATION:
+        description: AVEVA Process Simulation (formerly SimCentral)
+      CHEMCAD:
+        description: ChemCAD process simulator (Chemstations)
+      DWSIM:
+        description: DWSIM open-source CAPE-OPEN process simulator
+      COCO_SIMULATOR:
+        description: COCO/COFE free CAPE-OPEN flowsheeting environment
+      GPROMS:
+        description: gPROMS equation-oriented process modeling environment (Siemens / PSE)
+      PROSIMPLUS:
+        description: ProSimPlus steady-state process simulator (ProSim)
+      PETRO_SIM:
+        description: KBC Petro-SIM process simulator
+      BIOSTEAM:
+        description: BioSTEAM open-source biorefinery simulation and techno-economic analysis package
+      SUPERPRO_DESIGNER:
+        description: SuperPro Designer batch and bioprocess simulator (Intelligen)
+      IDAES:
+        description: IDAES open-source equation-oriented process systems engineering platform (US DOE)
+      CAPE_OPEN:
+        description: A CAPE-OPEN compliant simulator or unit (interoperability standard, simulator unspecified)

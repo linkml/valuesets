@@ -1,0 +1,232 @@
+name: valuesets-process-engineering-thermodynamics
+title: Process Thermodynamics Value Sets
+description: >-
+  Value sets for the thermodynamic models used in process simulation - equations
+  of state, activity-coefficient (excess Gibbs energy) models, mixing rules,
+  Poynting corrections, and the named property packages that combine them.
+  These cover the thermo_property_package fields (mixture, gamma, phi, PCF) of
+  the PISCES Standard Flowsheet Format, which are otherwise free strings.
+id: https://w3id.org/valuesets/process_engineering/thermodynamics
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+default_prefix: valuesets
+slots:
+  equation_of_state_model:
+    description: The equation of state used for fugacity / PVT property estimation
+    range: EquationOfStateModel
+  activity_coefficient_model:
+    description: The activity-coefficient (excess Gibbs energy) model used for the liquid phase
+    range: ActivityCoefficientModel
+  thermodynamic_property_package:
+    description: The named thermodynamic property package used for a simulation
+    range: ThermodynamicPropertyPackage
+  mixing_rule_model:
+    description: The mixing rule applied to an equation of state
+    range: MixingRuleModel
+  poynting_correction_method:
+    description: The method used for the Poynting correction factor
+    range: PoyntingCorrectionMethod
+enums:
+  EquationOfStateModel:
+    title: Equation of State Model
+    description: >-
+      Equations of state used to compute fugacity coefficients and PVT
+      behavior of fluids in process simulation (the SFF phi method).
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      IDEAL_GAS:
+        description: Ideal gas law, assuming no intermolecular interactions
+      VIRIAL:
+        description: Virial equation of state expressed as a power series in density or pressure
+      REDLICH_KWONG:
+        description: Redlich-Kwong cubic equation of state
+        annotations:
+          abbreviation: RK
+      SOAVE_REDLICH_KWONG:
+        description: Soave modification of the Redlich-Kwong cubic equation of state
+        annotations:
+          abbreviation: SRK
+      PENG_ROBINSON:
+        description: Peng-Robinson cubic equation of state
+        annotations:
+          abbreviation: PR
+      PENG_ROBINSON_BOSTON_MATHIAS:
+        description: Peng-Robinson with Boston-Mathias alpha function for supercritical extrapolation
+        annotations:
+          abbreviation: PR-BM
+      SRK_BOSTON_MATHIAS:
+        description: Soave-Redlich-Kwong with Boston-Mathias alpha function
+        annotations:
+          abbreviation: SRK-BM
+      LEE_KESLER_PLOCKER:
+        description: Lee-Kesler-Plocker corresponding-states equation of state
+        annotations:
+          abbreviation: LKP
+      BENEDICT_WEBB_RUBIN_STARLING:
+        description: Benedict-Webb-Rubin-Starling equation of state for light hydrocarbons
+        annotations:
+          abbreviation: BWRS
+      PREDICTIVE_SRK:
+        description: Predictive SRK combining SRK with a UNIFAC-based mixing rule
+        annotations:
+          abbreviation: PSRK
+      PC_SAFT:
+        description: Perturbed-chain statistical associating fluid theory equation of state
+        annotations:
+          abbreviation: PC-SAFT
+      CUBIC_PLUS_ASSOCIATION:
+        description: Cubic-plus-association equation of state for associating fluids
+        annotations:
+          abbreviation: CPA
+      GERG_2008:
+        description: GERG-2008 reference equation of state for natural gas mixtures
+      IAPWS_95:
+        description: IAPWS-95 reference formulation for the thermodynamic properties of water
+        annotations:
+          aliases: steam tables
+  ActivityCoefficientModel:
+    title: Activity Coefficient Model
+    description: >-
+      Excess Gibbs energy / activity-coefficient models for non-ideal liquid
+      phases (the SFF gamma method).
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      IDEAL:
+        description: Ideal solution, all activity coefficients equal to one (Raoult's law)
+      MARGULES:
+        description: Margules two-parameter activity-coefficient model
+      VAN_LAAR:
+        description: Van Laar activity-coefficient model
+      REGULAR_SOLUTION:
+        description: Scatchard-Hildebrand regular solution model based on solubility parameters
+      WILSON:
+        description: Wilson local-composition activity-coefficient model
+      NRTL:
+        description: Non-random two-liquid local-composition activity-coefficient model
+      ELECTROLYTE_NRTL:
+        description: Electrolyte NRTL model for systems containing ions
+        annotations:
+          abbreviation: eNRTL
+      UNIQUAC:
+        description: Universal quasi-chemical activity-coefficient model
+      UNIFAC:
+        description: UNIQUAC functional-group activity-coefficient (group-contribution) model
+      UNIFAC_DORTMUND:
+        description: Modified UNIFAC (Dortmund) group-contribution model
+      FLORY_HUGGINS:
+        description: Flory-Huggins model for polymer solutions
+      PITZER:
+        description: Pitzer model for aqueous electrolyte activity coefficients
+      COSMO_SAC:
+        description: COSMO-based segment activity-coefficient model from quantum chemistry
+        annotations:
+          aliases: COSMO-RS, COSMO-SAC
+  ThermodynamicPropertyPackage:
+    title: Thermodynamic Property Package
+    description: >-
+      Named property methods/packages offered by process simulators, typically
+      combining an equation of state and/or an activity-coefficient model. Used
+      where a single package label rather than separate gamma/phi methods is
+      recorded.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      IDEAL:
+        description: Ideal (Raoult's law) property package
+      NRTL:
+        description: NRTL activity model with ideal or RK vapor phase
+      NRTL_RK:
+        description: NRTL activity model with Redlich-Kwong vapor phase
+      UNIQUAC:
+        description: UNIQUAC activity model property package
+      UNIFAC:
+        description: UNIFAC group-contribution property package
+      WILSON:
+        description: Wilson activity model property package
+      VAN_LAAR:
+        description: Van Laar activity model property package
+      PENG_ROBINSON:
+        description: Peng-Robinson equation-of-state property package
+      SOAVE_REDLICH_KWONG:
+        description: Soave-Redlich-Kwong equation-of-state property package
+      ELECTROLYTE_NRTL:
+        description: Electrolyte NRTL property package for ionic systems
+      PITZER:
+        description: Pitzer property package for aqueous electrolytes
+      CHAO_SEADER:
+        description: Chao-Seader semi-empirical package for hydrocarbon systems
+      GRAYSON_STREED:
+        description: Grayson-Streed package for hydrogen-rich hydrocarbon systems
+      BRAUN_K10:
+        description: Braun K10 package for low-pressure heavy hydrocarbon systems
+        annotations:
+          abbreviation: BK10
+      PC_SAFT:
+        description: PC-SAFT equation-of-state property package
+      STEAM_TABLES:
+        description: Steam-table (IAPWS / ASME) property package for water and steam
+      API_SOUR:
+        description: API sour-water package for systems with acid gases and ammonia
+  MixingRuleModel:
+    title: Mixing Rule Model
+    description: >-
+      Mixing rules applied to equation-of-state parameters for mixtures (the
+      SFF mixture method).
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      IDEAL:
+        description: Ideal mixing, no excess properties
+      VAN_DER_WAALS:
+        description: Classical van der Waals one-fluid mixing rule with binary interaction parameters
+        annotations:
+          aliases: classical, quadratic mixing rule
+      HURON_VIDAL:
+        description: Huron-Vidal mixing rule coupling an equation of state to an excess Gibbs energy model
+      MODIFIED_HURON_VIDAL:
+        description: Modified Huron-Vidal first/second order mixing rules
+        annotations:
+          aliases: MHV1, MHV2
+      WONG_SANDLER:
+        description: Wong-Sandler mixing rule with correct low- and high-density limits
+      PSRK_MIXING:
+        description: Predictive SRK (PSRK) mixing rule based on UNIFAC
+  PoyntingCorrectionMethod:
+    title: Poynting Correction Method
+    description: >-
+      Treatment of the Poynting correction factor accounting for the effect of
+      pressure on liquid fugacity (the SFF PCF method).
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      NONE:
+        description: No Poynting correction applied
+      POYNTING:
+        description: Poynting correction factor applied to the liquid fugacity
