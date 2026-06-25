@@ -1,0 +1,1931 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://linkml.github.io/valuesets/elements/CurrencyCode/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Enum: CurrencyCode - valuesets</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/ansi-colours.css">
+    
+      <link rel="stylesheet" href="../../css/jupyter-cells.css">
+    
+      <link rel="stylesheet" href="../../css/pandas-dataframe.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#enum-currencycode" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="valuesets" class="md-header__button md-logo" aria-label="valuesets" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            valuesets
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Enum: CurrencyCode
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/linkml/valuesets" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="valuesets" class="md-nav__button md-logo" aria-label="valuesets" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    valuesets
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/linkml/valuesets" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Schema
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../governance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Governance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    How-To Guides
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            How-To Guides
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to-guides/agentic-ide-support/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Using Common Value Sets with Agentic IDE Support via Context7 MCP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to-guides/dynamic-valuesets-validation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dynamic Value Sets and Validation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to-guides/sync-uniprot-species/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    How to Sync UniProt Species Data
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slot-generation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Slot Generation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Views
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Views
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../views/genesis-mission/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DOE Genesis Mission
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../views/microbial-ecology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Microbial Ecology
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../views/rare-disease/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Rare Disease
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../views/lab-automation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab Automation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slides/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Slides
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    About
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#permissible-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      Permissible Values
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slots" class="md-nav__link">
+    <span class="md-ellipsis">
+      Slots
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#identifier-and-mapping-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      Identifier and Mapping Information
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Identifier and Mapping Information">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#annotations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Annotations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#schema-source" class="md-nav__link">
+    <span class="md-ellipsis">
+      Schema Source
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linkml-source" class="md-nav__link">
+    <span class="md-ellipsis">
+      LinkML Source
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="enum-currencycode">Enum: CurrencyCode</h1>
+<p><em>World currencies by ISO 4217 alpha-3 code. The numeric_code, symbol, and minor_unit (number of decimal places) annotations record the corresponding ISO 4217 attributes.</em></p>
+<p>URI: <a href="https://w3id.org/valuesets/CurrencyCode">valuesets:CurrencyCode</a></p>
+<!-- bioportal-link -->
+<p><a href="https://bioportal.bioontology.org/ontologies/VALUESETS?p=classes&amp;conceptid=https%3A%2F%2Fw3id.org%2Fvaluesets%2FCurrencyCode">View in BioPortal</a></p>
+<h2 id="permissible-values">Permissible Values</h2>
+<!-- annotations-table -->
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Title</th>
+<th>Meaning</th>
+<th>Description</th>
+<th>Minor Unit</th>
+<th>Numeric Code</th>
+<th>Symbol</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>USD</td>
+<td>United States dollar</td>
+<td></td>
+<td>United States dollar</td>
+<td>2</td>
+<td>840</td>
+<td>$</td>
+</tr>
+<tr>
+<td>EUR</td>
+<td>Euro</td>
+<td></td>
+<td>Euro</td>
+<td>2</td>
+<td>978</td>
+<td>€</td>
+</tr>
+<tr>
+<td>JPY</td>
+<td>Japanese yen</td>
+<td></td>
+<td>Japanese yen</td>
+<td></td>
+<td>392</td>
+<td>¥</td>
+</tr>
+<tr>
+<td>GBP</td>
+<td>Pound sterling</td>
+<td></td>
+<td>British pound sterling</td>
+<td>2</td>
+<td>826</td>
+<td>£</td>
+</tr>
+<tr>
+<td>CNY</td>
+<td>Renminbi</td>
+<td></td>
+<td>Chinese yuan renminbi</td>
+<td>2</td>
+<td>156</td>
+<td>¥</td>
+</tr>
+<tr>
+<td>AUD</td>
+<td>Australian dollar</td>
+<td></td>
+<td>Australian dollar</td>
+<td>2</td>
+<td>036</td>
+<td>$</td>
+</tr>
+<tr>
+<td>CAD</td>
+<td>Canadian dollar</td>
+<td></td>
+<td>Canadian dollar</td>
+<td>2</td>
+<td>124</td>
+<td>$</td>
+</tr>
+<tr>
+<td>CHF</td>
+<td>Swiss franc</td>
+<td></td>
+<td>Swiss franc</td>
+<td>2</td>
+<td>756</td>
+<td>Fr</td>
+</tr>
+<tr>
+<td>HKD</td>
+<td>Hong Kong dollar</td>
+<td></td>
+<td>Hong Kong dollar</td>
+<td>2</td>
+<td>344</td>
+<td>$</td>
+</tr>
+<tr>
+<td>SGD</td>
+<td>Singapore dollar</td>
+<td></td>
+<td>Singapore dollar</td>
+<td>2</td>
+<td>702</td>
+<td>$</td>
+</tr>
+<tr>
+<td>SEK</td>
+<td>Swedish krona</td>
+<td></td>
+<td>Swedish krona</td>
+<td>2</td>
+<td>752</td>
+<td>kr</td>
+</tr>
+<tr>
+<td>NOK</td>
+<td>Norwegian krone</td>
+<td></td>
+<td>Norwegian krone</td>
+<td>2</td>
+<td>578</td>
+<td>kr</td>
+</tr>
+<tr>
+<td>DKK</td>
+<td>Danish krone</td>
+<td></td>
+<td>Danish krone</td>
+<td>2</td>
+<td>208</td>
+<td>kr</td>
+</tr>
+<tr>
+<td>NZD</td>
+<td>New Zealand dollar</td>
+<td></td>
+<td>New Zealand dollar</td>
+<td>2</td>
+<td>554</td>
+<td>$</td>
+</tr>
+<tr>
+<td>KRW</td>
+<td>South Korean won</td>
+<td></td>
+<td>South Korean won</td>
+<td></td>
+<td>410</td>
+<td>₩</td>
+</tr>
+<tr>
+<td>INR</td>
+<td>Indian rupee</td>
+<td></td>
+<td>Indian rupee</td>
+<td>2</td>
+<td>356</td>
+<td>₹</td>
+</tr>
+<tr>
+<td>BRL</td>
+<td>Brazilian real</td>
+<td></td>
+<td>Brazilian real</td>
+<td>2</td>
+<td>986</td>
+<td>R$</td>
+</tr>
+<tr>
+<td>ZAR</td>
+<td>South African rand</td>
+<td></td>
+<td>South African rand</td>
+<td>2</td>
+<td>710</td>
+<td>R</td>
+</tr>
+<tr>
+<td>RUB</td>
+<td>Russian ruble</td>
+<td></td>
+<td>Russian ruble</td>
+<td>2</td>
+<td>643</td>
+<td>₽</td>
+</tr>
+<tr>
+<td>MXN</td>
+<td>Mexican peso</td>
+<td></td>
+<td>Mexican peso</td>
+<td>2</td>
+<td>484</td>
+<td>$</td>
+</tr>
+<tr>
+<td>TRY</td>
+<td>Turkish lira</td>
+<td></td>
+<td>Turkish lira</td>
+<td>2</td>
+<td>949</td>
+<td>₺</td>
+</tr>
+<tr>
+<td>PLN</td>
+<td>Polish zloty</td>
+<td></td>
+<td>Polish zloty</td>
+<td>2</td>
+<td>985</td>
+<td>zł</td>
+</tr>
+<tr>
+<td>THB</td>
+<td>Thai baht</td>
+<td></td>
+<td>Thai baht</td>
+<td>2</td>
+<td>764</td>
+<td>฿</td>
+</tr>
+<tr>
+<td>IDR</td>
+<td>Indonesian rupiah</td>
+<td></td>
+<td>Indonesian rupiah</td>
+<td>2</td>
+<td>360</td>
+<td>Rp</td>
+</tr>
+<tr>
+<td>MYR</td>
+<td>Malaysian ringgit</td>
+<td></td>
+<td>Malaysian ringgit</td>
+<td>2</td>
+<td>458</td>
+<td>RM</td>
+</tr>
+<tr>
+<td>PHP</td>
+<td>Philippine peso</td>
+<td></td>
+<td>Philippine peso</td>
+<td>2</td>
+<td>608</td>
+<td>₱</td>
+</tr>
+<tr>
+<td>AED</td>
+<td>UAE dirham</td>
+<td></td>
+<td>United Arab Emirates dirham</td>
+<td>2</td>
+<td>784</td>
+<td></td>
+</tr>
+<tr>
+<td>SAR</td>
+<td>Saudi riyal</td>
+<td></td>
+<td>Saudi riyal</td>
+<td>2</td>
+<td>682</td>
+<td></td>
+</tr>
+<tr>
+<td>ILS</td>
+<td>Israeli new shekel</td>
+<td></td>
+<td>Israeli new shekel</td>
+<td>2</td>
+<td>376</td>
+<td>₪</td>
+</tr>
+<tr>
+<td>CZK</td>
+<td>Czech koruna</td>
+<td></td>
+<td>Czech koruna</td>
+<td>2</td>
+<td>203</td>
+<td>Kč</td>
+</tr>
+<tr>
+<td>HUF</td>
+<td>Hungarian forint</td>
+<td></td>
+<td>Hungarian forint</td>
+<td>2</td>
+<td>348</td>
+<td>Ft</td>
+</tr>
+<tr>
+<td>RON</td>
+<td>Romanian leu</td>
+<td></td>
+<td>Romanian leu</td>
+<td>2</td>
+<td>946</td>
+<td>lei</td>
+</tr>
+<tr>
+<td>UAH</td>
+<td>Ukrainian hryvnia</td>
+<td></td>
+<td>Ukrainian hryvnia</td>
+<td>2</td>
+<td>980</td>
+<td>₴</td>
+</tr>
+<tr>
+<td>CLP</td>
+<td>Chilean peso</td>
+<td></td>
+<td>Chilean peso</td>
+<td></td>
+<td>152</td>
+<td>$</td>
+</tr>
+<tr>
+<td>COP</td>
+<td>Colombian peso</td>
+<td></td>
+<td>Colombian peso</td>
+<td>2</td>
+<td>170</td>
+<td>$</td>
+</tr>
+<tr>
+<td>ARS</td>
+<td>Argentine peso</td>
+<td></td>
+<td>Argentine peso</td>
+<td>2</td>
+<td>032</td>
+<td>$</td>
+</tr>
+<tr>
+<td>EGP</td>
+<td>Egyptian pound</td>
+<td></td>
+<td>Egyptian pound</td>
+<td>2</td>
+<td>818</td>
+<td>£</td>
+</tr>
+<tr>
+<td>NGN</td>
+<td>Nigerian naira</td>
+<td></td>
+<td>Nigerian naira</td>
+<td>2</td>
+<td>566</td>
+<td>₦</td>
+</tr>
+<tr>
+<td>KES</td>
+<td>Kenyan shilling</td>
+<td></td>
+<td>Kenyan shilling</td>
+<td>2</td>
+<td>404</td>
+<td>Sh</td>
+</tr>
+<tr>
+<td>PKR</td>
+<td>Pakistani rupee</td>
+<td></td>
+<td>Pakistani rupee</td>
+<td>2</td>
+<td>586</td>
+<td>₨</td>
+</tr>
+<tr>
+<td>BDT</td>
+<td>Bangladeshi taka</td>
+<td></td>
+<td>Bangladeshi taka</td>
+<td>2</td>
+<td>050</td>
+<td>৳</td>
+</tr>
+<tr>
+<td>VND</td>
+<td>Vietnamese dong</td>
+<td></td>
+<td>Vietnamese dong</td>
+<td></td>
+<td>704</td>
+<td>₫</td>
+</tr>
+<tr>
+<td>TWD</td>
+<td>New Taiwan dollar</td>
+<td></td>
+<td>New Taiwan dollar</td>
+<td>2</td>
+<td>901</td>
+<td>$</td>
+</tr>
+<tr>
+<td>KWD</td>
+<td>Kuwaiti dinar</td>
+<td></td>
+<td>Kuwaiti dinar</td>
+<td>3</td>
+<td>414</td>
+<td></td>
+</tr>
+<tr>
+<td>BHD</td>
+<td>Bahraini dinar</td>
+<td></td>
+<td>Bahraini dinar</td>
+<td>3</td>
+<td>048</td>
+<td></td>
+</tr>
+<tr>
+<td>OMR</td>
+<td>Omani rial</td>
+<td></td>
+<td>Omani rial</td>
+<td>3</td>
+<td>512</td>
+<td></td>
+</tr>
+<tr>
+<td>QAR</td>
+<td>Qatari riyal</td>
+<td></td>
+<td>Qatari riyal</td>
+<td>2</td>
+<td>634</td>
+<td></td>
+</tr>
+<tr>
+<td>ISK</td>
+<td>Icelandic krona</td>
+<td></td>
+<td>Icelandic krona</td>
+<td></td>
+<td>352</td>
+<td>kr</td>
+</tr>
+</tbody>
+</table>
+<h2 id="slots">Slots</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../currency_code/">currency_code</a></td>
+<td>The ISO 4217 currency of a monetary amount</td>
+</tr>
+</tbody>
+</table>
+<h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
+<h3 id="annotations">Annotations</h3>
+<table>
+<thead>
+<tr>
+<th>property</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>standard</td>
+<td>ISO 4217</td>
+</tr>
+</tbody>
+</table>
+<h3 id="schema-source">Schema Source</h3>
+<ul>
+<li>from schema: https://w3id.org/valuesets</li>
+</ul>
+<h2 id="linkml-source">LinkML Source</h2>
+<details>
+
+<pre><code class="language-yaml">name: CurrencyCode
+instantiates:
+- valuesets_meta:ValueSetEnumDefinition
+annotations:
+  standard:
+    tag: standard
+    value: ISO 4217
+description: World currencies by ISO 4217 alpha-3 code. The numeric_code, symbol,
+  and minor_unit (number of decimal places) annotations record the corresponding ISO
+  4217 attributes.
+title: Currency Code
+from_schema: https://w3id.org/valuesets
+contributors:
+- orcid:0000-0002-6601-2165
+- https://github.com/anthropics/claude-code
+status: DRAFT
+rank: 1000
+permissible_values:
+  USD:
+    text: USD
+    description: United States dollar
+    annotations:
+      numeric_code:
+        tag: numeric_code
+        value: '840'
+      symbol:
+        tag: symbol
+        value: $
+      minor_unit:
+        tag: minor_unit
+        value: 2
+    title: United States dollar
+  EUR:
+    text: EUR
+    description: Euro
+    annotations:
+      numeric_code:
+        tag: numeric_code
+        value: '978'
+      symbol:
+        tag: symbol
+        value: €
+      minor_unit:
+        tag: minor_unit
+        value: 2
+    title: Euro
+  JPY:
+    text: JPY
+    description: Japanese yen
+    annotations:
+      numeric_code:
+        tag: numeric_code
+        value: '392'
+      symbol:
+        tag: symbol
+        value: ¥
+      minor_unit:
+        tag: minor_unit
+        value: 0
+    title: Japanese yen
+  GBP:
+    text: GBP
+    description: British pound sterling
+    annotations:
+      numeric_code:
+        tag: numeric_code
+        value: '826'
+      symbol:
+        tag: symbol
+        value: £
+      minor_unit:
+        tag: minor_unit
+        value: 2
+    title: Pound sterling
+  CNY:
+    text: CNY
+    description: Chinese yuan renminbi
+    annotations:
+      numeric_code:
+        tag: numeric_code
+        value: '156'
+      symbol:
+        tag: symbol
+        value: ¥
+      minor_unit:
+        tag: minor_unit
+        value: 2
+    title: Renminbi
+  AUD:
+    text: AUD
+    description: Australian dollar
+    annotations:
+      numeric_code:
+        tag: numeric_code
+        value: '036'
+      symbol:
+        tag: symbol
+        value: $
+      minor_unit:
+        tag: minor_unit
+        value: 2
+    title: Australian dollar
+  CAD:
+    text: CAD
+    description: Canadian dollar
+    annotations:
+      numeric_code:
+        tag: numeric_code
+        value: '124'
+      symbol:
+        tag: symbol
+        value: $
+      minor_unit:
+        tag: minor_unit
+        value: 2
+    title: Canadian dollar
+  CHF:
+    text: CHF
+    description: Swiss franc
+    annotations:
+      numeric_code:
+        tag: numeric_code
+        value: '756'
+      symbol:
+        tag: symbol
+        value: Fr
+      minor_unit:
+        tag: minor_unit
+        value: 2
+    title: Swiss franc
+  HKD:
+    text: HKD
+    description: Hong Kong dollar
+    annotations:
+      numeric_code:
+        tag: numeric_code
+        value: '344'
+      symbol:
+        tag: symbol
+        value: $
+      minor_unit:
+        tag: minor_unit
+        value: 2
+    title: Hong Kong dollar
+  SGD:
+    text: SGD
+    description: Singapore dollar
+    annotations:
+      numeric_code:
+        tag: numeric_code
+        value: '702'
+      symbol:
+        tag: symbol
+        value: $
+      minor_unit:
+        tag: minor_unit
+        value: 2
+    title: Singapore dollar
+  SEK:
+    text: SEK
+    description: Swedish krona
+    annotations:
+      numeric_code:
+        tag: numeric_code
+        value: '752'
+      symbol:
+        tag: symbol
+        value: kr
+      minor_unit:
+        tag: minor_unit
+        value: 2
+    title: Swedish krona
+  NOK:
+    text: NOK
+    description: Norwegian krone
+    annotations:
+      numeric_code:
+        tag: numeric_code
+        value: '578'
+      symbol:
+        tag: symbol
+        value: kr
+      minor_unit:
+        tag: minor_unit
+        value: 2
+    title: Norwegian krone
+  DKK:
+    text: DKK
+    description: Danish krone
+    annotations:
+      numeric_code:
+        tag: numeric_code
+        value: '208'
+      symbol:
+        tag: symbol
+        value: kr
+      minor_unit:
+        tag: minor_unit
+        value: 2
+    title: Danish krone
+  NZD:
+    text: NZD
+    description: New Zealand dollar
+    annotations:
+      numeric_code:
+        tag: numeric_code
+        value: '554'
+      symbol:
+        tag: symbol
+        value: $
+      minor_unit:
+        tag: minor_unit
+        value: 2
+    title: New Zealand dollar
+  KRW:
+    text: KRW
+    description: South Korean won
+    annotations:
+      numeric_code:
+        tag: numeric_code
+        value: '410'
+      symbol:
+        tag: symbol
+        value: ₩
+      minor_unit:
+        tag: minor_unit
+        value: 0
+    title: South Korean won
+  INR:
+    text: INR
+    description: Indian rupee
+    annotations:
+      numeric_code:
+        tag: numeric_code
+        value: '356'
+      symbol:
+        tag: symbol
+        value: ₹
+      minor_unit:
+        tag: minor_unit
+        value: 2
+    title: Indian rupee
+  BRL:
+    text: BRL
+    description: Brazilian real
+    annotations:
+      numeric_code:
+        tag: numeric_code
+        value: '986'
+      symbol:
+        tag: symbol
+        value: R$
+      minor_unit:
+        tag: minor_unit
+        value: 2
+    title: Brazilian real
+  ZAR:
+    text: ZAR
+    description: South African rand
+    annotations:
+      numeric_code:
+        tag: numeric_code
+        value: '710'
+      symbol:
+        tag: symbol
+        value: R
+      minor_unit:
+        tag: minor_unit
+        value: 2
+    title: South African rand
+  RUB:
+    text: RUB
+    description: Russian ruble
+    annotations:
+      numeric_code:
+        tag: numeric_code
+        value: '643'
+      symbol:
+        tag: symbol
+        value: ₽
+      minor_unit:
+        tag: minor_unit
+        value: 2
+    title: Russian ruble
+  MXN:
+    text: MXN
+    description: Mexican peso
+    annotations:
+      numeric_code:
+        tag: numeric_code
+        value: '484'
+      symbol:
+        tag: symbol
+        value: $
+      minor_unit:
+        tag: minor_unit
+        value: 2
+    title: Mexican peso
+  TRY:
+    text: TRY
+    description: Turkish lira
+    annotations:
+      numeric_code:
+        tag: numeric_code
+        value: '949'
+      symbol:
+        tag: symbol
+        value: ₺
+      minor_unit:
+        tag: minor_unit
+        value: 2
+    title: Turkish lira
+  PLN:
+    text: PLN
+    description: Polish zloty
+    annotations:
+      numeric_code:
+        tag: numeric_code
+        value: '985'
+      symbol:
+        tag: symbol
+        value: zł
+      minor_unit:
+        tag: minor_unit
+        value: 2
+    title: Polish zloty
+  THB:
+    text: THB
+    description: Thai baht
+    annotations:
+      numeric_code:
+        tag: numeric_code
+        value: '764'
+      symbol:
+        tag: symbol
+        value: ฿
+      minor_unit:
+        tag: minor_unit
+        value: 2
+    title: Thai baht
+  IDR:
+    text: IDR
+    description: Indonesian rupiah
+    annotations:
+      numeric_code:
+        tag: numeric_code
+        value: '360'
+      symbol:
+        tag: symbol
+        value: Rp
+      minor_unit:
+        tag: minor_unit
+        value: 2
+    title: Indonesian rupiah
+  MYR:
+    text: MYR
+    description: Malaysian ringgit
+    annotations:
+      numeric_code:
+        tag: numeric_code
+        value: '458'
+      symbol:
+        tag: symbol
+        value: RM
+      minor_unit:
+        tag: minor_unit
+        value: 2
+    title: Malaysian ringgit
+  PHP:
+    text: PHP
+    description: Philippine peso
+    annotations:
+      numeric_code:
+        tag: numeric_code
+        value: '608'
+      symbol:
+        tag: symbol
+        value: ₱
+      minor_unit:
+        tag: minor_unit
+        value: 2
+    title: Philippine peso
+  AED:
+    text: AED
+    description: United Arab Emirates dirham
+    annotations:
+      numeric_code:
+        tag: numeric_code
+        value: '784'
+      minor_unit:
+        tag: minor_unit
+        value: 2
+    title: UAE dirham
+  SAR:
+    text: SAR
+    description: Saudi riyal
+    annotations:
+      numeric_code:
+        tag: numeric_code
+        value: '682'
+      minor_unit:
+        tag: minor_unit
+        value: 2
+    title: Saudi riyal
+  ILS:
+    text: ILS
+    description: Israeli new shekel
+    annotations:
+      numeric_code:
+        tag: numeric_code
+        value: '376'
+      symbol:
+        tag: symbol
+        value: ₪
+      minor_unit:
+        tag: minor_unit
+        value: 2
+    title: Israeli new shekel
+  CZK:
+    text: CZK
+    description: Czech koruna
+    annotations:
+      numeric_code:
+        tag: numeric_code
+        value: '203'
+      symbol:
+        tag: symbol
+        value: Kč
+      minor_unit:
+        tag: minor_unit
+        value: 2
+    title: Czech koruna
+  HUF:
+    text: HUF
+    description: Hungarian forint
+    annotations:
+      numeric_code:
+        tag: numeric_code
+        value: '348'
+      symbol:
+        tag: symbol
+        value: Ft
+      minor_unit:
+        tag: minor_unit
+        value: 2
+    title: Hungarian forint
+  RON:
+    text: RON
+    description: Romanian leu
+    annotations:
+      numeric_code:
+        tag: numeric_code
+        value: '946'
+      symbol:
+        tag: symbol
+        value: lei
+      minor_unit:
+        tag: minor_unit
+        value: 2
+    title: Romanian leu
+  UAH:
+    text: UAH
+    description: Ukrainian hryvnia
+    annotations:
+      numeric_code:
+        tag: numeric_code
+        value: '980'
+      symbol:
+        tag: symbol
+        value: ₴
+      minor_unit:
+        tag: minor_unit
+        value: 2
+    title: Ukrainian hryvnia
+  CLP:
+    text: CLP
+    description: Chilean peso
+    annotations:
+      numeric_code:
+        tag: numeric_code
+        value: '152'
+      symbol:
+        tag: symbol
+        value: $
+      minor_unit:
+        tag: minor_unit
+        value: 0
+    title: Chilean peso
+  COP:
+    text: COP
+    description: Colombian peso
+    annotations:
+      numeric_code:
+        tag: numeric_code
+        value: '170'
+      symbol:
+        tag: symbol
+        value: $
+      minor_unit:
+        tag: minor_unit
+        value: 2
+    title: Colombian peso
+  ARS:
+    text: ARS
+    description: Argentine peso
+    annotations:
+      numeric_code:
+        tag: numeric_code
+        value: '032'
+      symbol:
+        tag: symbol
+        value: $
+      minor_unit:
+        tag: minor_unit
+        value: 2
+    title: Argentine peso
+  EGP:
+    text: EGP
+    description: Egyptian pound
+    annotations:
+      numeric_code:
+        tag: numeric_code
+        value: '818'
+      symbol:
+        tag: symbol
+        value: £
+      minor_unit:
+        tag: minor_unit
+        value: 2
+    title: Egyptian pound
+  NGN:
+    text: NGN
+    description: Nigerian naira
+    annotations:
+      numeric_code:
+        tag: numeric_code
+        value: '566'
+      symbol:
+        tag: symbol
+        value: ₦
+      minor_unit:
+        tag: minor_unit
+        value: 2
+    title: Nigerian naira
+  KES:
+    text: KES
+    description: Kenyan shilling
+    annotations:
+      numeric_code:
+        tag: numeric_code
+        value: '404'
+      symbol:
+        tag: symbol
+        value: Sh
+      minor_unit:
+        tag: minor_unit
+        value: 2
+    title: Kenyan shilling
+  PKR:
+    text: PKR
+    description: Pakistani rupee
+    annotations:
+      numeric_code:
+        tag: numeric_code
+        value: '586'
+      symbol:
+        tag: symbol
+        value: ₨
+      minor_unit:
+        tag: minor_unit
+        value: 2
+    title: Pakistani rupee
+  BDT:
+    text: BDT
+    description: Bangladeshi taka
+    annotations:
+      numeric_code:
+        tag: numeric_code
+        value: '050'
+      symbol:
+        tag: symbol
+        value: ৳
+      minor_unit:
+        tag: minor_unit
+        value: 2
+    title: Bangladeshi taka
+  VND:
+    text: VND
+    description: Vietnamese dong
+    annotations:
+      numeric_code:
+        tag: numeric_code
+        value: '704'
+      symbol:
+        tag: symbol
+        value: ₫
+      minor_unit:
+        tag: minor_unit
+        value: 0
+    title: Vietnamese dong
+  TWD:
+    text: TWD
+    description: New Taiwan dollar
+    annotations:
+      numeric_code:
+        tag: numeric_code
+        value: '901'
+      symbol:
+        tag: symbol
+        value: $
+      minor_unit:
+        tag: minor_unit
+        value: 2
+    title: New Taiwan dollar
+  KWD:
+    text: KWD
+    description: Kuwaiti dinar
+    annotations:
+      numeric_code:
+        tag: numeric_code
+        value: '414'
+      minor_unit:
+        tag: minor_unit
+        value: 3
+    title: Kuwaiti dinar
+  BHD:
+    text: BHD
+    description: Bahraini dinar
+    annotations:
+      numeric_code:
+        tag: numeric_code
+        value: 048
+      minor_unit:
+        tag: minor_unit
+        value: 3
+    title: Bahraini dinar
+  OMR:
+    text: OMR
+    description: Omani rial
+    annotations:
+      numeric_code:
+        tag: numeric_code
+        value: '512'
+      minor_unit:
+        tag: minor_unit
+        value: 3
+    title: Omani rial
+  QAR:
+    text: QAR
+    description: Qatari riyal
+    annotations:
+      numeric_code:
+        tag: numeric_code
+        value: '634'
+      minor_unit:
+        tag: minor_unit
+        value: 2
+    title: Qatari riyal
+  ISK:
+    text: ISK
+    description: Icelandic krona
+    annotations:
+      numeric_code:
+        tag: numeric_code
+        value: '352'
+      symbol:
+        tag: symbol
+        value: kr
+      minor_unit:
+        tag: minor_unit
+        value: 0
+    title: Icelandic krona
+
+</code></pre>
+
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.tabs.link"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

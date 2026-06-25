@@ -1,0 +1,1673 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://linkml.github.io/valuesets/elements/UnitOperationType/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Enum: UnitOperationType - valuesets</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/ansi-colours.css">
+    
+      <link rel="stylesheet" href="../../css/jupyter-cells.css">
+    
+      <link rel="stylesheet" href="../../css/pandas-dataframe.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#enum-unitoperationtype" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="valuesets" class="md-header__button md-logo" aria-label="valuesets" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            valuesets
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Enum: UnitOperationType
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/linkml/valuesets" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="valuesets" class="md-nav__button md-logo" aria-label="valuesets" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    valuesets
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/linkml/valuesets" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Schema
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../governance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Governance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    How-To Guides
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            How-To Guides
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to-guides/agentic-ide-support/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Using Common Value Sets with Agentic IDE Support via Context7 MCP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to-guides/dynamic-valuesets-validation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dynamic Value Sets and Validation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to-guides/sync-uniprot-species/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    How to Sync UniProt Species Data
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slot-generation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Slot Generation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Views
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Views
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../views/genesis-mission/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DOE Genesis Mission
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../views/microbial-ecology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Microbial Ecology
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../views/rare-disease/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Rare Disease
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../views/lab-automation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab Automation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slides/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Slides
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    About
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#permissible-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      Permissible Values
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slots" class="md-nav__link">
+    <span class="md-ellipsis">
+      Slots
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#identifier-and-mapping-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      Identifier and Mapping Information
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Identifier and Mapping Information">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#schema-source" class="md-nav__link">
+    <span class="md-ellipsis">
+      Schema Source
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linkml-source" class="md-nav__link">
+    <span class="md-ellipsis">
+      LinkML Source
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="enum-unitoperationtype">Enum: UnitOperationType</h1>
+<p><em>Fundamental chemical and process engineering unit operations - the discrete processing steps that transform, separate, combine, or move process material. Grouped (via the unit_operation_class annotation) into momentum transfer, heat transfer, mass-transfer separations, mechanical separations, solids processing, reaction, and storage.</em></p>
+<p>URI: <a href="https://w3id.org/valuesets/UnitOperationType">valuesets:UnitOperationType</a></p>
+<!-- bioportal-link -->
+<p><a href="https://bioportal.bioontology.org/ontologies/VALUESETS?p=classes&amp;conceptid=https%3A%2F%2Fw3id.org%2Fvaluesets%2FUnitOperationType">View in BioPortal</a></p>
+<h2 id="permissible-values">Permissible Values</h2>
+<!-- annotations-table -->
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Title</th>
+<th>Meaning</th>
+<th>Description</th>
+<th>Aliases</th>
+<th>Unit Operation Class</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PUMPING</td>
+<td></td>
+<td></td>
+<td>Raising the pressure or moving of a liquid stream using a pump</td>
+<td></td>
+<td>MOMENTUM_TRANSFER</td>
+</tr>
+<tr>
+<td>COMPRESSION</td>
+<td></td>
+<td></td>
+<td>Raising the pressure of a gas or vapor stream using a compressor</td>
+<td></td>
+<td>MOMENTUM_TRANSFER</td>
+</tr>
+<tr>
+<td>GAS_MOVING</td>
+<td></td>
+<td></td>
+<td>Moving a gas stream at low pressure rise using a fan or blower</td>
+<td></td>
+<td>MOMENTUM_TRANSFER</td>
+</tr>
+<tr>
+<td>FLOW_SPLITTING</td>
+<td></td>
+<td></td>
+<td>Dividing a single stream into two or more streams of identical composition</td>
+<td></td>
+<td>MOMENTUM_TRANSFER</td>
+</tr>
+<tr>
+<td>STREAM_MIXING</td>
+<td></td>
+<td></td>
+<td>Combining two or more streams into a single stream</td>
+<td></td>
+<td>MOMENTUM_TRANSFER</td>
+</tr>
+<tr>
+<td>HEAT_EXCHANGE</td>
+<td></td>
+<td></td>
+<td>Transfer of thermal energy between two streams without phase-change intent</td>
+<td></td>
+<td>HEAT_TRANSFER</td>
+</tr>
+<tr>
+<td>HEATING</td>
+<td></td>
+<td></td>
+<td>Raising the temperature of a process stream</td>
+<td></td>
+<td>HEAT_TRANSFER</td>
+</tr>
+<tr>
+<td>COOLING</td>
+<td></td>
+<td></td>
+<td>Lowering the temperature of a process stream</td>
+<td></td>
+<td>HEAT_TRANSFER</td>
+</tr>
+<tr>
+<td>CONDENSATION</td>
+<td></td>
+<td></td>
+<td>Converting a vapor to a liquid by removing heat</td>
+<td></td>
+<td>HEAT_TRANSFER</td>
+</tr>
+<tr>
+<td>EVAPORATION</td>
+<td>evaporation</td>
+<td><a href="http://purl.obolibrary.org/obo/CHMO_0001574">CHMO:0001574</a></td>
+<td>Concentrating a solution by vaporizing solvent, typically water</td>
+<td></td>
+<td>HEAT_TRANSFER</td>
+</tr>
+<tr>
+<td>DISTILLATION</td>
+<td>distillation</td>
+<td><a href="http://purl.obolibrary.org/obo/CHMO_0001532">CHMO:0001532</a></td>
+<td>Separation of components by differences in volatility (boiling point)</td>
+<td></td>
+<td>MASS_TRANSFER_SEPARATION</td>
+</tr>
+<tr>
+<td>ABSORPTION</td>
+<td></td>
+<td></td>
+<td>Selective transfer of one or more gas-phase components into a liquid solvent</td>
+<td></td>
+<td>MASS_TRANSFER_SEPARATION</td>
+</tr>
+<tr>
+<td>STRIPPING</td>
+<td></td>
+<td></td>
+<td>Selective transfer of dissolved components from a liquid into a gas stream</td>
+<td></td>
+<td>MASS_TRANSFER_SEPARATION</td>
+</tr>
+<tr>
+<td>LIQUID_LIQUID_EXTRACTION</td>
+<td>extraction</td>
+<td><a href="http://purl.obolibrary.org/obo/CHMO_0001577">CHMO:0001577</a></td>
+<td>Separation by partitioning of solutes between two immiscible liquid phases</td>
+<td></td>
+<td>MASS_TRANSFER_SEPARATION</td>
+</tr>
+<tr>
+<td>LEACHING</td>
+<td>leaching</td>
+<td><a href="http://purl.obolibrary.org/obo/CHMO_0001681">CHMO:0001681</a></td>
+<td>Solid-liquid extraction of soluble components from a solid using a solvent</td>
+<td></td>
+<td>MASS_TRANSFER_SEPARATION</td>
+</tr>
+<tr>
+<td>ADSORPTION</td>
+<td></td>
+<td></td>
+<td>Selective uptake of components onto the surface of a solid sorbent</td>
+<td></td>
+<td>MASS_TRANSFER_SEPARATION</td>
+</tr>
+<tr>
+<td>ION_EXCHANGE</td>
+<td></td>
+<td></td>
+<td>Reversible exchange of ions between a solution and a solid ion-exchange resin</td>
+<td></td>
+<td>MASS_TRANSFER_SEPARATION</td>
+</tr>
+<tr>
+<td>CHROMATOGRAPHY</td>
+<td>chromatography</td>
+<td><a href="http://purl.obolibrary.org/obo/CHMO_0001000">CHMO:0001000</a></td>
+<td>Separation by differential partitioning of solutes between a mobile and stationary phase</td>
+<td></td>
+<td>MASS_TRANSFER_SEPARATION</td>
+</tr>
+<tr>
+<td>CRYSTALLIZATION</td>
+<td>crystallization</td>
+<td><a href="http://purl.obolibrary.org/obo/PROCO_0000052">PROCO:0000052</a></td>
+<td>Formation of a solid crystalline phase from a solution or melt</td>
+<td></td>
+<td>MASS_TRANSFER_SEPARATION</td>
+</tr>
+<tr>
+<td>PRECIPITATION</td>
+<td>precipitation</td>
+<td><a href="http://purl.obolibrary.org/obo/CHMO_0001688">CHMO:0001688</a></td>
+<td>Formation of an insoluble solid from solution by chemical or physical means</td>
+<td></td>
+<td>MASS_TRANSFER_SEPARATION</td>
+</tr>
+<tr>
+<td>DRYING</td>
+<td></td>
+<td></td>
+<td>Removal of a liquid (usually water) from a solid or surface by vaporization</td>
+<td></td>
+<td>MASS_TRANSFER_SEPARATION</td>
+</tr>
+<tr>
+<td>FREEZE_DRYING</td>
+<td>freeze drying</td>
+<td><a href="http://purl.obolibrary.org/obo/CHMO_0001553">CHMO:0001553</a></td>
+<td>Removal of solvent by sublimation from the frozen state (lyophilization)</td>
+<td>lyophilization</td>
+<td>MASS_TRANSFER_SEPARATION</td>
+</tr>
+<tr>
+<td>HUMIDIFICATION</td>
+<td></td>
+<td></td>
+<td>Addition of water vapor to a gas stream</td>
+<td></td>
+<td>MASS_TRANSFER_SEPARATION</td>
+</tr>
+<tr>
+<td>MEMBRANE_SEPARATION</td>
+<td></td>
+<td></td>
+<td>Separation of stream components using a semipermeable membrane</td>
+<td></td>
+<td>MEMBRANE_SEPARATION</td>
+</tr>
+<tr>
+<td>MICROFILTRATION</td>
+<td>micro-filtration</td>
+<td><a href="http://purl.obolibrary.org/obo/CHMO_0001641">CHMO:0001641</a></td>
+<td>Membrane separation retaining particles roughly 0.1-10 micrometers</td>
+<td></td>
+<td>MEMBRANE_SEPARATION</td>
+</tr>
+<tr>
+<td>ULTRAFILTRATION</td>
+<td>ultra-filtration</td>
+<td><a href="http://purl.obolibrary.org/obo/CHMO_0001645">CHMO:0001645</a></td>
+<td>Membrane separation retaining macromolecules and colloids</td>
+<td></td>
+<td>MEMBRANE_SEPARATION</td>
+</tr>
+<tr>
+<td>NANOFILTRATION</td>
+<td>nano-filtration</td>
+<td><a href="http://purl.obolibrary.org/obo/CHMO_0001642">CHMO:0001642</a></td>
+<td>Membrane separation retaining small molecules and multivalent ions</td>
+<td></td>
+<td>MEMBRANE_SEPARATION</td>
+</tr>
+<tr>
+<td>REVERSE_OSMOSIS</td>
+<td>reverse osmosis</td>
+<td><a href="http://purl.obolibrary.org/obo/CHMO_0001643">CHMO:0001643</a></td>
+<td>Pressure-driven membrane separation rejecting dissolved salts and small solutes</td>
+<td></td>
+<td>MEMBRANE_SEPARATION</td>
+</tr>
+<tr>
+<td>DIALYSIS</td>
+<td>dialysis</td>
+<td><a href="http://purl.obolibrary.org/obo/CHMO_0001522">CHMO:0001522</a></td>
+<td>Diffusive membrane separation of solutes across a concentration gradient</td>
+<td></td>
+<td>MEMBRANE_SEPARATION</td>
+</tr>
+<tr>
+<td>ELECTRODIALYSIS</td>
+<td></td>
+<td></td>
+<td>Membrane separation of ions driven by an applied electric field</td>
+<td></td>
+<td>MEMBRANE_SEPARATION</td>
+</tr>
+<tr>
+<td>PERVAPORATION</td>
+<td></td>
+<td></td>
+<td>Membrane separation combining permeation and partial vaporization of the permeate</td>
+<td></td>
+<td>MEMBRANE_SEPARATION</td>
+</tr>
+<tr>
+<td>FILTRATION</td>
+<td>filtration</td>
+<td><a href="http://purl.obolibrary.org/obo/CHMO_0001640">CHMO:0001640</a></td>
+<td>Separation of solids from a fluid by passage through a porous medium</td>
+<td></td>
+<td>MECHANICAL_SEPARATION</td>
+</tr>
+<tr>
+<td>CENTRIFUGATION</td>
+<td>centrifugation</td>
+<td><a href="http://purl.obolibrary.org/obo/OBI_0302886">OBI:0302886</a></td>
+<td>Separation of phases by density difference under centrifugal force</td>
+<td></td>
+<td>MECHANICAL_SEPARATION</td>
+</tr>
+<tr>
+<td>SEDIMENTATION</td>
+<td></td>
+<td></td>
+<td>Gravity separation of suspended solids or immiscible liquids by settling</td>
+<td></td>
+<td>MECHANICAL_SEPARATION</td>
+</tr>
+<tr>
+<td>CLARIFICATION</td>
+<td></td>
+<td></td>
+<td>Removal of suspended solids from a liquid to produce a clarified stream</td>
+<td></td>
+<td>MECHANICAL_SEPARATION</td>
+</tr>
+<tr>
+<td>FLOTATION</td>
+<td></td>
+<td></td>
+<td>Separation of solids or droplets by attachment to rising gas bubbles</td>
+<td></td>
+<td>MECHANICAL_SEPARATION</td>
+</tr>
+<tr>
+<td>FLOCCULATION</td>
+<td></td>
+<td></td>
+<td>Aggregation of fine suspended particles into larger flocs to aid separation</td>
+<td></td>
+<td>MECHANICAL_SEPARATION</td>
+</tr>
+<tr>
+<td>CYCLONE_SEPARATION</td>
+<td></td>
+<td></td>
+<td>Separation of particles from a fluid using centrifugal force in a cyclone</td>
+<td></td>
+<td>MECHANICAL_SEPARATION</td>
+</tr>
+<tr>
+<td>SCREENING</td>
+<td></td>
+<td></td>
+<td>Separation of particulate solids by size using a screen or sieve</td>
+<td></td>
+<td>MECHANICAL_SEPARATION</td>
+</tr>
+<tr>
+<td>GAS_LIQUID_SEPARATION</td>
+<td></td>
+<td></td>
+<td>Disengagement of vapor and liquid phases, e.g. in a flash or knockout drum</td>
+<td></td>
+<td>MECHANICAL_SEPARATION</td>
+</tr>
+<tr>
+<td>SIZE_REDUCTION</td>
+<td></td>
+<td></td>
+<td>Reduction of particle size by crushing, grinding, or milling (comminution)</td>
+<td></td>
+<td>SOLIDS_PROCESSING</td>
+</tr>
+<tr>
+<td>SIZE_ENLARGEMENT</td>
+<td></td>
+<td></td>
+<td>Increase of particle size by granulation, agglomeration, or pelletizing</td>
+<td></td>
+<td>SOLIDS_PROCESSING</td>
+</tr>
+<tr>
+<td>MIXING</td>
+<td>mixing</td>
+<td><a href="http://purl.obolibrary.org/obo/CHMO_0001685">CHMO:0001685</a></td>
+<td>Blending of materials to achieve compositional or thermal uniformity</td>
+<td></td>
+<td>SOLIDS_PROCESSING</td>
+</tr>
+<tr>
+<td>SOLIDS_CONVEYING</td>
+<td></td>
+<td></td>
+<td>Transport of bulk particulate solids between process steps</td>
+<td></td>
+<td>SOLIDS_PROCESSING</td>
+</tr>
+<tr>
+<td>CHEMICAL_REACTION</td>
+<td></td>
+<td></td>
+<td>Chemical conversion of reactants to products in a reactor</td>
+<td></td>
+<td>REACTION</td>
+</tr>
+<tr>
+<td>FERMENTATION</td>
+<td>fermentation</td>
+<td><a href="http://purl.obolibrary.org/obo/CHMO_0001624">CHMO:0001624</a></td>
+<td>Microbial or enzymatic conversion of substrate to product in a bioreactor</td>
+<td></td>
+<td>REACTION</td>
+</tr>
+<tr>
+<td>COMBUSTION</td>
+<td>combustion</td>
+<td><a href="http://purl.obolibrary.org/obo/CHMO_0001473">CHMO:0001473</a></td>
+<td>Exothermic oxidation of a fuel, typically to generate heat or power</td>
+<td></td>
+<td>REACTION</td>
+</tr>
+<tr>
+<td>GASIFICATION</td>
+<td>gasification</td>
+<td><a href="http://purl.obolibrary.org/obo/CHMO_0001501">CHMO:0001501</a></td>
+<td>Conversion of carbonaceous feedstock to synthesis gas under limited oxygen</td>
+<td></td>
+<td>REACTION</td>
+</tr>
+<tr>
+<td>PYROLYSIS</td>
+<td>pyrolysis</td>
+<td><a href="http://purl.obolibrary.org/obo/CHMO_0001502">CHMO:0001502</a></td>
+<td>Thermal decomposition of material in the absence of oxygen</td>
+<td></td>
+<td>REACTION</td>
+</tr>
+<tr>
+<td>ELECTROLYSIS</td>
+<td></td>
+<td></td>
+<td>Driving a non-spontaneous chemical reaction using electrical energy</td>
+<td></td>
+<td>REACTION</td>
+</tr>
+<tr>
+<td>NEUTRALIZATION</td>
+<td></td>
+<td></td>
+<td>Adjustment of pH by reaction of acid and base</td>
+<td></td>
+<td>REACTION</td>
+</tr>
+<tr>
+<td>PURIFICATION</td>
+<td>purification</td>
+<td><a href="http://purl.obolibrary.org/obo/CHMO_0002231">CHMO:0002231</a></td>
+<td>Removal of impurities to increase the purity of a product stream</td>
+<td></td>
+<td>SEPARATION</td>
+</tr>
+<tr>
+<td>STORAGE</td>
+<td></td>
+<td></td>
+<td>Holding of material in a vessel or tank between process steps</td>
+<td></td>
+<td>STORAGE</td>
+</tr>
+</tbody>
+</table>
+<h2 id="slots">Slots</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../unit_operation_type/">unit_operation_type</a></td>
+<td>The type of unit operation performed at a process step</td>
+</tr>
+</tbody>
+</table>
+<h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
+<h3 id="schema-source">Schema Source</h3>
+<ul>
+<li>from schema: https://w3id.org/valuesets</li>
+</ul>
+<h2 id="linkml-source">LinkML Source</h2>
+<details>
+
+<pre><code class="language-yaml">name: UnitOperationType
+instantiates:
+- valuesets_meta:ValueSetEnumDefinition
+description: Fundamental chemical and process engineering unit operations - the discrete
+  processing steps that transform, separate, combine, or move process material. Grouped
+  (via the unit_operation_class annotation) into momentum transfer, heat transfer,
+  mass-transfer separations, mechanical separations, solids processing, reaction,
+  and storage.
+title: Unit Operation Type
+from_schema: https://w3id.org/valuesets
+contributors:
+- orcid:0000-0002-6601-2165
+- https://github.com/anthropics/claude-code
+status: DRAFT
+rank: 1000
+permissible_values:
+  PUMPING:
+    text: PUMPING
+    description: Raising the pressure or moving of a liquid stream using a pump
+    annotations:
+      unit_operation_class:
+        tag: unit_operation_class
+        value: MOMENTUM_TRANSFER
+  COMPRESSION:
+    text: COMPRESSION
+    description: Raising the pressure of a gas or vapor stream using a compressor
+    annotations:
+      unit_operation_class:
+        tag: unit_operation_class
+        value: MOMENTUM_TRANSFER
+  GAS_MOVING:
+    text: GAS_MOVING
+    description: Moving a gas stream at low pressure rise using a fan or blower
+    annotations:
+      unit_operation_class:
+        tag: unit_operation_class
+        value: MOMENTUM_TRANSFER
+  FLOW_SPLITTING:
+    text: FLOW_SPLITTING
+    description: Dividing a single stream into two or more streams of identical composition
+    annotations:
+      unit_operation_class:
+        tag: unit_operation_class
+        value: MOMENTUM_TRANSFER
+  STREAM_MIXING:
+    text: STREAM_MIXING
+    description: Combining two or more streams into a single stream
+    annotations:
+      unit_operation_class:
+        tag: unit_operation_class
+        value: MOMENTUM_TRANSFER
+  HEAT_EXCHANGE:
+    text: HEAT_EXCHANGE
+    description: Transfer of thermal energy between two streams without phase-change
+      intent
+    annotations:
+      unit_operation_class:
+        tag: unit_operation_class
+        value: HEAT_TRANSFER
+  HEATING:
+    text: HEATING
+    description: Raising the temperature of a process stream
+    annotations:
+      unit_operation_class:
+        tag: unit_operation_class
+        value: HEAT_TRANSFER
+  COOLING:
+    text: COOLING
+    description: Lowering the temperature of a process stream
+    annotations:
+      unit_operation_class:
+        tag: unit_operation_class
+        value: HEAT_TRANSFER
+  CONDENSATION:
+    text: CONDENSATION
+    description: Converting a vapor to a liquid by removing heat
+    annotations:
+      unit_operation_class:
+        tag: unit_operation_class
+        value: HEAT_TRANSFER
+  EVAPORATION:
+    text: EVAPORATION
+    description: Concentrating a solution by vaporizing solvent, typically water
+    meaning: CHMO:0001574
+    annotations:
+      unit_operation_class:
+        tag: unit_operation_class
+        value: HEAT_TRANSFER
+    title: evaporation
+  DISTILLATION:
+    text: DISTILLATION
+    description: Separation of components by differences in volatility (boiling point)
+    meaning: CHMO:0001532
+    annotations:
+      unit_operation_class:
+        tag: unit_operation_class
+        value: MASS_TRANSFER_SEPARATION
+    title: distillation
+  ABSORPTION:
+    text: ABSORPTION
+    description: Selective transfer of one or more gas-phase components into a liquid
+      solvent
+    annotations:
+      unit_operation_class:
+        tag: unit_operation_class
+        value: MASS_TRANSFER_SEPARATION
+  STRIPPING:
+    text: STRIPPING
+    description: Selective transfer of dissolved components from a liquid into a gas
+      stream
+    annotations:
+      unit_operation_class:
+        tag: unit_operation_class
+        value: MASS_TRANSFER_SEPARATION
+  LIQUID_LIQUID_EXTRACTION:
+    text: LIQUID_LIQUID_EXTRACTION
+    description: Separation by partitioning of solutes between two immiscible liquid
+      phases
+    meaning: CHMO:0001577
+    annotations:
+      unit_operation_class:
+        tag: unit_operation_class
+        value: MASS_TRANSFER_SEPARATION
+    title: extraction
+  LEACHING:
+    text: LEACHING
+    description: Solid-liquid extraction of soluble components from a solid using
+      a solvent
+    meaning: CHMO:0001681
+    annotations:
+      unit_operation_class:
+        tag: unit_operation_class
+        value: MASS_TRANSFER_SEPARATION
+    title: leaching
+  ADSORPTION:
+    text: ADSORPTION
+    description: Selective uptake of components onto the surface of a solid sorbent
+    annotations:
+      unit_operation_class:
+        tag: unit_operation_class
+        value: MASS_TRANSFER_SEPARATION
+  ION_EXCHANGE:
+    text: ION_EXCHANGE
+    description: Reversible exchange of ions between a solution and a solid ion-exchange
+      resin
+    annotations:
+      unit_operation_class:
+        tag: unit_operation_class
+        value: MASS_TRANSFER_SEPARATION
+  CHROMATOGRAPHY:
+    text: CHROMATOGRAPHY
+    description: Separation by differential partitioning of solutes between a mobile
+      and stationary phase
+    meaning: CHMO:0001000
+    annotations:
+      unit_operation_class:
+        tag: unit_operation_class
+        value: MASS_TRANSFER_SEPARATION
+    title: chromatography
+  CRYSTALLIZATION:
+    text: CRYSTALLIZATION
+    description: Formation of a solid crystalline phase from a solution or melt
+    meaning: PROCO:0000052
+    annotations:
+      unit_operation_class:
+        tag: unit_operation_class
+        value: MASS_TRANSFER_SEPARATION
+    title: crystallization
+  PRECIPITATION:
+    text: PRECIPITATION
+    description: Formation of an insoluble solid from solution by chemical or physical
+      means
+    meaning: CHMO:0001688
+    annotations:
+      unit_operation_class:
+        tag: unit_operation_class
+        value: MASS_TRANSFER_SEPARATION
+    title: precipitation
+  DRYING:
+    text: DRYING
+    description: Removal of a liquid (usually water) from a solid or surface by vaporization
+    annotations:
+      unit_operation_class:
+        tag: unit_operation_class
+        value: MASS_TRANSFER_SEPARATION
+  FREEZE_DRYING:
+    text: FREEZE_DRYING
+    description: Removal of solvent by sublimation from the frozen state (lyophilization)
+    meaning: CHMO:0001553
+    annotations:
+      unit_operation_class:
+        tag: unit_operation_class
+        value: MASS_TRANSFER_SEPARATION
+      aliases:
+        tag: aliases
+        value: lyophilization
+    title: freeze drying
+  HUMIDIFICATION:
+    text: HUMIDIFICATION
+    description: Addition of water vapor to a gas stream
+    annotations:
+      unit_operation_class:
+        tag: unit_operation_class
+        value: MASS_TRANSFER_SEPARATION
+  MEMBRANE_SEPARATION:
+    text: MEMBRANE_SEPARATION
+    description: Separation of stream components using a semipermeable membrane
+    annotations:
+      unit_operation_class:
+        tag: unit_operation_class
+        value: MEMBRANE_SEPARATION
+  MICROFILTRATION:
+    text: MICROFILTRATION
+    description: Membrane separation retaining particles roughly 0.1-10 micrometers
+    meaning: CHMO:0001641
+    annotations:
+      unit_operation_class:
+        tag: unit_operation_class
+        value: MEMBRANE_SEPARATION
+    title: micro-filtration
+  ULTRAFILTRATION:
+    text: ULTRAFILTRATION
+    description: Membrane separation retaining macromolecules and colloids
+    meaning: CHMO:0001645
+    annotations:
+      unit_operation_class:
+        tag: unit_operation_class
+        value: MEMBRANE_SEPARATION
+    title: ultra-filtration
+  NANOFILTRATION:
+    text: NANOFILTRATION
+    description: Membrane separation retaining small molecules and multivalent ions
+    meaning: CHMO:0001642
+    annotations:
+      unit_operation_class:
+        tag: unit_operation_class
+        value: MEMBRANE_SEPARATION
+    title: nano-filtration
+  REVERSE_OSMOSIS:
+    text: REVERSE_OSMOSIS
+    description: Pressure-driven membrane separation rejecting dissolved salts and
+      small solutes
+    meaning: CHMO:0001643
+    annotations:
+      unit_operation_class:
+        tag: unit_operation_class
+        value: MEMBRANE_SEPARATION
+    title: reverse osmosis
+  DIALYSIS:
+    text: DIALYSIS
+    description: Diffusive membrane separation of solutes across a concentration gradient
+    meaning: CHMO:0001522
+    annotations:
+      unit_operation_class:
+        tag: unit_operation_class
+        value: MEMBRANE_SEPARATION
+    title: dialysis
+  ELECTRODIALYSIS:
+    text: ELECTRODIALYSIS
+    description: Membrane separation of ions driven by an applied electric field
+    annotations:
+      unit_operation_class:
+        tag: unit_operation_class
+        value: MEMBRANE_SEPARATION
+  PERVAPORATION:
+    text: PERVAPORATION
+    description: Membrane separation combining permeation and partial vaporization
+      of the permeate
+    annotations:
+      unit_operation_class:
+        tag: unit_operation_class
+        value: MEMBRANE_SEPARATION
+  FILTRATION:
+    text: FILTRATION
+    description: Separation of solids from a fluid by passage through a porous medium
+    meaning: CHMO:0001640
+    annotations:
+      unit_operation_class:
+        tag: unit_operation_class
+        value: MECHANICAL_SEPARATION
+    title: filtration
+  CENTRIFUGATION:
+    text: CENTRIFUGATION
+    description: Separation of phases by density difference under centrifugal force
+    meaning: OBI:0302886
+    annotations:
+      unit_operation_class:
+        tag: unit_operation_class
+        value: MECHANICAL_SEPARATION
+    title: centrifugation
+  SEDIMENTATION:
+    text: SEDIMENTATION
+    description: Gravity separation of suspended solids or immiscible liquids by settling
+    annotations:
+      unit_operation_class:
+        tag: unit_operation_class
+        value: MECHANICAL_SEPARATION
+  CLARIFICATION:
+    text: CLARIFICATION
+    description: Removal of suspended solids from a liquid to produce a clarified
+      stream
+    annotations:
+      unit_operation_class:
+        tag: unit_operation_class
+        value: MECHANICAL_SEPARATION
+  FLOTATION:
+    text: FLOTATION
+    description: Separation of solids or droplets by attachment to rising gas bubbles
+    annotations:
+      unit_operation_class:
+        tag: unit_operation_class
+        value: MECHANICAL_SEPARATION
+  FLOCCULATION:
+    text: FLOCCULATION
+    description: Aggregation of fine suspended particles into larger flocs to aid
+      separation
+    annotations:
+      unit_operation_class:
+        tag: unit_operation_class
+        value: MECHANICAL_SEPARATION
+  CYCLONE_SEPARATION:
+    text: CYCLONE_SEPARATION
+    description: Separation of particles from a fluid using centrifugal force in a
+      cyclone
+    annotations:
+      unit_operation_class:
+        tag: unit_operation_class
+        value: MECHANICAL_SEPARATION
+  SCREENING:
+    text: SCREENING
+    description: Separation of particulate solids by size using a screen or sieve
+    annotations:
+      unit_operation_class:
+        tag: unit_operation_class
+        value: MECHANICAL_SEPARATION
+  GAS_LIQUID_SEPARATION:
+    text: GAS_LIQUID_SEPARATION
+    description: Disengagement of vapor and liquid phases, e.g. in a flash or knockout
+      drum
+    annotations:
+      unit_operation_class:
+        tag: unit_operation_class
+        value: MECHANICAL_SEPARATION
+  SIZE_REDUCTION:
+    text: SIZE_REDUCTION
+    description: Reduction of particle size by crushing, grinding, or milling (comminution)
+    annotations:
+      unit_operation_class:
+        tag: unit_operation_class
+        value: SOLIDS_PROCESSING
+  SIZE_ENLARGEMENT:
+    text: SIZE_ENLARGEMENT
+    description: Increase of particle size by granulation, agglomeration, or pelletizing
+    annotations:
+      unit_operation_class:
+        tag: unit_operation_class
+        value: SOLIDS_PROCESSING
+  MIXING:
+    text: MIXING
+    description: Blending of materials to achieve compositional or thermal uniformity
+    meaning: CHMO:0001685
+    annotations:
+      unit_operation_class:
+        tag: unit_operation_class
+        value: SOLIDS_PROCESSING
+    title: mixing
+  SOLIDS_CONVEYING:
+    text: SOLIDS_CONVEYING
+    description: Transport of bulk particulate solids between process steps
+    annotations:
+      unit_operation_class:
+        tag: unit_operation_class
+        value: SOLIDS_PROCESSING
+  CHEMICAL_REACTION:
+    text: CHEMICAL_REACTION
+    description: Chemical conversion of reactants to products in a reactor
+    annotations:
+      unit_operation_class:
+        tag: unit_operation_class
+        value: REACTION
+  FERMENTATION:
+    text: FERMENTATION
+    description: Microbial or enzymatic conversion of substrate to product in a bioreactor
+    meaning: CHMO:0001624
+    annotations:
+      unit_operation_class:
+        tag: unit_operation_class
+        value: REACTION
+    title: fermentation
+  COMBUSTION:
+    text: COMBUSTION
+    description: Exothermic oxidation of a fuel, typically to generate heat or power
+    meaning: CHMO:0001473
+    annotations:
+      unit_operation_class:
+        tag: unit_operation_class
+        value: REACTION
+    title: combustion
+  GASIFICATION:
+    text: GASIFICATION
+    description: Conversion of carbonaceous feedstock to synthesis gas under limited
+      oxygen
+    meaning: CHMO:0001501
+    annotations:
+      unit_operation_class:
+        tag: unit_operation_class
+        value: REACTION
+    title: gasification
+  PYROLYSIS:
+    text: PYROLYSIS
+    description: Thermal decomposition of material in the absence of oxygen
+    meaning: CHMO:0001502
+    annotations:
+      unit_operation_class:
+        tag: unit_operation_class
+        value: REACTION
+    title: pyrolysis
+  ELECTROLYSIS:
+    text: ELECTROLYSIS
+    description: Driving a non-spontaneous chemical reaction using electrical energy
+    annotations:
+      unit_operation_class:
+        tag: unit_operation_class
+        value: REACTION
+  NEUTRALIZATION:
+    text: NEUTRALIZATION
+    description: Adjustment of pH by reaction of acid and base
+    annotations:
+      unit_operation_class:
+        tag: unit_operation_class
+        value: REACTION
+  PURIFICATION:
+    text: PURIFICATION
+    description: Removal of impurities to increase the purity of a product stream
+    meaning: CHMO:0002231
+    annotations:
+      unit_operation_class:
+        tag: unit_operation_class
+        value: SEPARATION
+    title: purification
+  STORAGE:
+    text: STORAGE
+    description: Holding of material in a vessel or tank between process steps
+    annotations:
+      unit_operation_class:
+        tag: unit_operation_class
+        value: STORAGE
+
+</code></pre>
+
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.tabs.link"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>
