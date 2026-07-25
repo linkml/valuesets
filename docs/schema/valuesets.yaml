@@ -123,10 +123,19 @@ imports:
 - clinical/phenopackets
 - bioprocessing/scale_up
 - bioprocessing/biomanufacturing
+- process_engineering/unit_operations
+- process_engineering/process_streams
+- process_engineering/process_industries
+- process_engineering/thermodynamics
+- process_engineering/process_modeling
+- chemistry/identifiers
+- business/currencies
 - units/measurements
 - units/quantity_kinds
 - computing/file_formats
 - computing/maturity_levels
+- computing/systems_engineering
+- computing/verification_validation_ieee_1012
 - computing/ontologies
 - computing/croissant_ml
 - business/organizational_structures
@@ -53837,6 +53846,61 @@ enums:
           methods:
             tag: methods
             value: High pressure, bead mill
+      CLARIFICATION:
+        text: CLARIFICATION
+        description: Removal of cells and debris to produce a clarified harvest
+        annotations:
+          methods:
+            tag: methods
+            value: Centrifugation, depth filtration
+      FLOCCULATION:
+        text: FLOCCULATION
+        description: Aggregation of cells and debris into flocs to aid clarification
+      ULTRAFILTRATION:
+        text: ULTRAFILTRATION
+        description: Membrane concentration retaining macromolecules such as proteins
+        meaning: CHMO:0001645
+        annotations:
+          mwco:
+            tag: mwco
+            value: Typically 1-1000 kDa
+        title: ultra-filtration
+      DIAFILTRATION:
+        text: DIAFILTRATION
+        description: Buffer exchange and desalting by ultrafiltration with continuous
+          makeup
+      TANGENTIAL_FLOW_FILTRATION:
+        text: TANGENTIAL_FLOW_FILTRATION
+        description: Crossflow membrane filtration used for concentration and diafiltration
+        annotations:
+          aliases:
+            tag: aliases
+            value: TFF, crossflow filtration
+      BUFFER_EXCHANGE:
+        text: BUFFER_EXCHANGE
+        description: Replacement of the buffer matrix of a product stream
+      ADSORPTION:
+        text: ADSORPTION
+        description: Capture of product or impurities onto a solid sorbent
+      VIRAL_INACTIVATION:
+        text: VIRAL_INACTIVATION
+        description: Treatment step that inactivates potential viral contaminants
+        annotations:
+          methods:
+            tag: methods
+            value: Low pH, solvent/detergent, heat
+      POLISHING:
+        text: POLISHING
+        description: Final chromatographic or filtration steps to remove trace impurities
+      LYOPHILIZATION:
+        text: LYOPHILIZATION
+        description: Freeze-drying to produce a stable solid product
+        meaning: CHMO:0001553
+        annotations:
+          aliases:
+            tag: aliases
+            value: freeze drying
+        title: freeze drying
   FeedstockTypeEnum:
     name: FeedstockTypeEnum
     definition_uri: https://w3id.org/valuesets/FeedstockTypeEnum
@@ -54352,6 +54416,2455 @@ enums:
           approaches:
             tag: approaches
             value: mechanistic models, hybrid models, machine learning
+  UnitOperationType:
+    name: UnitOperationType
+    definition_uri: https://w3id.org/valuesets/UnitOperationType
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Fundamental chemical and process engineering unit operations - the
+      discrete processing steps that transform, separate, combine, or move process
+      material. Grouped (via the unit_operation_class annotation) into momentum transfer,
+      heat transfer, mass-transfer separations, mechanical separations, solids processing,
+      reaction, and storage.
+    title: Unit Operation Type
+    from_schema: https://w3id.org/valuesets/process_engineering/unit_operations
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      PUMPING:
+        text: PUMPING
+        description: Raising the pressure or moving of a liquid stream using a pump
+        annotations:
+          unit_operation_class:
+            tag: unit_operation_class
+            value: MOMENTUM_TRANSFER
+      COMPRESSION:
+        text: COMPRESSION
+        description: Raising the pressure of a gas or vapor stream using a compressor
+        annotations:
+          unit_operation_class:
+            tag: unit_operation_class
+            value: MOMENTUM_TRANSFER
+      GAS_MOVING:
+        text: GAS_MOVING
+        description: Moving a gas stream at low pressure rise using a fan or blower
+        annotations:
+          unit_operation_class:
+            tag: unit_operation_class
+            value: MOMENTUM_TRANSFER
+      FLOW_SPLITTING:
+        text: FLOW_SPLITTING
+        description: Dividing a single stream into two or more streams of identical
+          composition
+        annotations:
+          unit_operation_class:
+            tag: unit_operation_class
+            value: MOMENTUM_TRANSFER
+      STREAM_MIXING:
+        text: STREAM_MIXING
+        description: Combining two or more streams into a single stream
+        annotations:
+          unit_operation_class:
+            tag: unit_operation_class
+            value: MOMENTUM_TRANSFER
+      HEAT_EXCHANGE:
+        text: HEAT_EXCHANGE
+        description: Transfer of thermal energy between two streams without phase-change
+          intent
+        annotations:
+          unit_operation_class:
+            tag: unit_operation_class
+            value: HEAT_TRANSFER
+      HEATING:
+        text: HEATING
+        description: Raising the temperature of a process stream
+        annotations:
+          unit_operation_class:
+            tag: unit_operation_class
+            value: HEAT_TRANSFER
+      COOLING:
+        text: COOLING
+        description: Lowering the temperature of a process stream
+        annotations:
+          unit_operation_class:
+            tag: unit_operation_class
+            value: HEAT_TRANSFER
+      CONDENSATION:
+        text: CONDENSATION
+        description: Converting a vapor to a liquid by removing heat
+        annotations:
+          unit_operation_class:
+            tag: unit_operation_class
+            value: HEAT_TRANSFER
+      EVAPORATION:
+        text: EVAPORATION
+        description: Concentrating a solution by vaporizing solvent, typically water
+        meaning: CHMO:0001574
+        annotations:
+          unit_operation_class:
+            tag: unit_operation_class
+            value: HEAT_TRANSFER
+        title: evaporation
+      DISTILLATION:
+        text: DISTILLATION
+        description: Separation of components by differences in volatility (boiling
+          point)
+        meaning: CHMO:0001532
+        annotations:
+          unit_operation_class:
+            tag: unit_operation_class
+            value: MASS_TRANSFER_SEPARATION
+        title: distillation
+      ABSORPTION:
+        text: ABSORPTION
+        description: Selective transfer of one or more gas-phase components into a
+          liquid solvent
+        annotations:
+          unit_operation_class:
+            tag: unit_operation_class
+            value: MASS_TRANSFER_SEPARATION
+      STRIPPING:
+        text: STRIPPING
+        description: Selective transfer of dissolved components from a liquid into
+          a gas stream
+        annotations:
+          unit_operation_class:
+            tag: unit_operation_class
+            value: MASS_TRANSFER_SEPARATION
+      LIQUID_LIQUID_EXTRACTION:
+        text: LIQUID_LIQUID_EXTRACTION
+        description: Separation by partitioning of solutes between two immiscible
+          liquid phases
+        meaning: CHMO:0001577
+        annotations:
+          unit_operation_class:
+            tag: unit_operation_class
+            value: MASS_TRANSFER_SEPARATION
+        title: extraction
+      LEACHING:
+        text: LEACHING
+        description: Solid-liquid extraction of soluble components from a solid using
+          a solvent
+        meaning: CHMO:0001681
+        annotations:
+          unit_operation_class:
+            tag: unit_operation_class
+            value: MASS_TRANSFER_SEPARATION
+        title: leaching
+      ADSORPTION:
+        text: ADSORPTION
+        description: Selective uptake of components onto the surface of a solid sorbent
+        annotations:
+          unit_operation_class:
+            tag: unit_operation_class
+            value: MASS_TRANSFER_SEPARATION
+      ION_EXCHANGE:
+        text: ION_EXCHANGE
+        description: Reversible exchange of ions between a solution and a solid ion-exchange
+          resin
+        annotations:
+          unit_operation_class:
+            tag: unit_operation_class
+            value: MASS_TRANSFER_SEPARATION
+      CHROMATOGRAPHY:
+        text: CHROMATOGRAPHY
+        description: Separation by differential partitioning of solutes between a
+          mobile and stationary phase
+        meaning: CHMO:0001000
+        annotations:
+          unit_operation_class:
+            tag: unit_operation_class
+            value: MASS_TRANSFER_SEPARATION
+        title: chromatography
+      CRYSTALLIZATION:
+        text: CRYSTALLIZATION
+        description: Formation of a solid crystalline phase from a solution or melt
+        meaning: PROCO:0000052
+        annotations:
+          unit_operation_class:
+            tag: unit_operation_class
+            value: MASS_TRANSFER_SEPARATION
+        title: crystallization
+      PRECIPITATION:
+        text: PRECIPITATION
+        description: Formation of an insoluble solid from solution by chemical or
+          physical means
+        meaning: CHMO:0001688
+        annotations:
+          unit_operation_class:
+            tag: unit_operation_class
+            value: MASS_TRANSFER_SEPARATION
+        title: precipitation
+      DRYING:
+        text: DRYING
+        description: Removal of a liquid (usually water) from a solid or surface by
+          vaporization
+        annotations:
+          unit_operation_class:
+            tag: unit_operation_class
+            value: MASS_TRANSFER_SEPARATION
+      FREEZE_DRYING:
+        text: FREEZE_DRYING
+        description: Removal of solvent by sublimation from the frozen state (lyophilization)
+        meaning: CHMO:0001553
+        annotations:
+          unit_operation_class:
+            tag: unit_operation_class
+            value: MASS_TRANSFER_SEPARATION
+          aliases:
+            tag: aliases
+            value: lyophilization
+        title: freeze drying
+      HUMIDIFICATION:
+        text: HUMIDIFICATION
+        description: Addition of water vapor to a gas stream
+        annotations:
+          unit_operation_class:
+            tag: unit_operation_class
+            value: MASS_TRANSFER_SEPARATION
+      MEMBRANE_SEPARATION:
+        text: MEMBRANE_SEPARATION
+        description: Separation of stream components using a semipermeable membrane
+        annotations:
+          unit_operation_class:
+            tag: unit_operation_class
+            value: MEMBRANE_SEPARATION
+      MICROFILTRATION:
+        text: MICROFILTRATION
+        description: Membrane separation retaining particles roughly 0.1-10 micrometers
+        meaning: CHMO:0001641
+        annotations:
+          unit_operation_class:
+            tag: unit_operation_class
+            value: MEMBRANE_SEPARATION
+        title: micro-filtration
+      ULTRAFILTRATION:
+        text: ULTRAFILTRATION
+        description: Membrane separation retaining macromolecules and colloids
+        meaning: CHMO:0001645
+        annotations:
+          unit_operation_class:
+            tag: unit_operation_class
+            value: MEMBRANE_SEPARATION
+        title: ultra-filtration
+      NANOFILTRATION:
+        text: NANOFILTRATION
+        description: Membrane separation retaining small molecules and multivalent
+          ions
+        meaning: CHMO:0001642
+        annotations:
+          unit_operation_class:
+            tag: unit_operation_class
+            value: MEMBRANE_SEPARATION
+        title: nano-filtration
+      REVERSE_OSMOSIS:
+        text: REVERSE_OSMOSIS
+        description: Pressure-driven membrane separation rejecting dissolved salts
+          and small solutes
+        meaning: CHMO:0001643
+        annotations:
+          unit_operation_class:
+            tag: unit_operation_class
+            value: MEMBRANE_SEPARATION
+        title: reverse osmosis
+      DIALYSIS:
+        text: DIALYSIS
+        description: Diffusive membrane separation of solutes across a concentration
+          gradient
+        meaning: CHMO:0001522
+        annotations:
+          unit_operation_class:
+            tag: unit_operation_class
+            value: MEMBRANE_SEPARATION
+        title: dialysis
+      ELECTRODIALYSIS:
+        text: ELECTRODIALYSIS
+        description: Membrane separation of ions driven by an applied electric field
+        annotations:
+          unit_operation_class:
+            tag: unit_operation_class
+            value: MEMBRANE_SEPARATION
+      PERVAPORATION:
+        text: PERVAPORATION
+        description: Membrane separation combining permeation and partial vaporization
+          of the permeate
+        annotations:
+          unit_operation_class:
+            tag: unit_operation_class
+            value: MEMBRANE_SEPARATION
+      FILTRATION:
+        text: FILTRATION
+        description: Separation of solids from a fluid by passage through a porous
+          medium
+        meaning: CHMO:0001640
+        annotations:
+          unit_operation_class:
+            tag: unit_operation_class
+            value: MECHANICAL_SEPARATION
+        title: filtration
+      CENTRIFUGATION:
+        text: CENTRIFUGATION
+        description: Separation of phases by density difference under centrifugal
+          force
+        meaning: OBI:0302886
+        annotations:
+          unit_operation_class:
+            tag: unit_operation_class
+            value: MECHANICAL_SEPARATION
+        title: centrifugation
+      SEDIMENTATION:
+        text: SEDIMENTATION
+        description: Gravity separation of suspended solids or immiscible liquids
+          by settling
+        annotations:
+          unit_operation_class:
+            tag: unit_operation_class
+            value: MECHANICAL_SEPARATION
+      CLARIFICATION:
+        text: CLARIFICATION
+        description: Removal of suspended solids from a liquid to produce a clarified
+          stream
+        annotations:
+          unit_operation_class:
+            tag: unit_operation_class
+            value: MECHANICAL_SEPARATION
+      FLOTATION:
+        text: FLOTATION
+        description: Separation of solids or droplets by attachment to rising gas
+          bubbles
+        annotations:
+          unit_operation_class:
+            tag: unit_operation_class
+            value: MECHANICAL_SEPARATION
+      FLOCCULATION:
+        text: FLOCCULATION
+        description: Aggregation of fine suspended particles into larger flocs to
+          aid separation
+        annotations:
+          unit_operation_class:
+            tag: unit_operation_class
+            value: MECHANICAL_SEPARATION
+      CYCLONE_SEPARATION:
+        text: CYCLONE_SEPARATION
+        description: Separation of particles from a fluid using centrifugal force
+          in a cyclone
+        annotations:
+          unit_operation_class:
+            tag: unit_operation_class
+            value: MECHANICAL_SEPARATION
+      SCREENING:
+        text: SCREENING
+        description: Separation of particulate solids by size using a screen or sieve
+        annotations:
+          unit_operation_class:
+            tag: unit_operation_class
+            value: MECHANICAL_SEPARATION
+      GAS_LIQUID_SEPARATION:
+        text: GAS_LIQUID_SEPARATION
+        description: Disengagement of vapor and liquid phases, e.g. in a flash or
+          knockout drum
+        annotations:
+          unit_operation_class:
+            tag: unit_operation_class
+            value: MECHANICAL_SEPARATION
+      SIZE_REDUCTION:
+        text: SIZE_REDUCTION
+        description: Reduction of particle size by crushing, grinding, or milling
+          (comminution)
+        annotations:
+          unit_operation_class:
+            tag: unit_operation_class
+            value: SOLIDS_PROCESSING
+      SIZE_ENLARGEMENT:
+        text: SIZE_ENLARGEMENT
+        description: Increase of particle size by granulation, agglomeration, or pelletizing
+        annotations:
+          unit_operation_class:
+            tag: unit_operation_class
+            value: SOLIDS_PROCESSING
+      MIXING:
+        text: MIXING
+        description: Blending of materials to achieve compositional or thermal uniformity
+        meaning: CHMO:0001685
+        annotations:
+          unit_operation_class:
+            tag: unit_operation_class
+            value: SOLIDS_PROCESSING
+        title: mixing
+      SOLIDS_CONVEYING:
+        text: SOLIDS_CONVEYING
+        description: Transport of bulk particulate solids between process steps
+        annotations:
+          unit_operation_class:
+            tag: unit_operation_class
+            value: SOLIDS_PROCESSING
+      CHEMICAL_REACTION:
+        text: CHEMICAL_REACTION
+        description: Chemical conversion of reactants to products in a reactor
+        annotations:
+          unit_operation_class:
+            tag: unit_operation_class
+            value: REACTION
+      FERMENTATION:
+        text: FERMENTATION
+        description: Microbial or enzymatic conversion of substrate to product in
+          a bioreactor
+        meaning: CHMO:0001624
+        annotations:
+          unit_operation_class:
+            tag: unit_operation_class
+            value: REACTION
+        title: fermentation
+      COMBUSTION:
+        text: COMBUSTION
+        description: Exothermic oxidation of a fuel, typically to generate heat or
+          power
+        meaning: CHMO:0001473
+        annotations:
+          unit_operation_class:
+            tag: unit_operation_class
+            value: REACTION
+        title: combustion
+      GASIFICATION:
+        text: GASIFICATION
+        description: Conversion of carbonaceous feedstock to synthesis gas under limited
+          oxygen
+        meaning: CHMO:0001501
+        annotations:
+          unit_operation_class:
+            tag: unit_operation_class
+            value: REACTION
+        title: gasification
+      PYROLYSIS:
+        text: PYROLYSIS
+        description: Thermal decomposition of material in the absence of oxygen
+        meaning: CHMO:0001502
+        annotations:
+          unit_operation_class:
+            tag: unit_operation_class
+            value: REACTION
+        title: pyrolysis
+      ELECTROLYSIS:
+        text: ELECTROLYSIS
+        description: Driving a non-spontaneous chemical reaction using electrical
+          energy
+        annotations:
+          unit_operation_class:
+            tag: unit_operation_class
+            value: REACTION
+      NEUTRALIZATION:
+        text: NEUTRALIZATION
+        description: Adjustment of pH by reaction of acid and base
+        annotations:
+          unit_operation_class:
+            tag: unit_operation_class
+            value: REACTION
+      PURIFICATION:
+        text: PURIFICATION
+        description: Removal of impurities to increase the purity of a product stream
+        meaning: CHMO:0002231
+        annotations:
+          unit_operation_class:
+            tag: unit_operation_class
+            value: SEPARATION
+        title: purification
+      STORAGE:
+        text: STORAGE
+        description: Holding of material in a vessel or tank between process steps
+        annotations:
+          unit_operation_class:
+            tag: unit_operation_class
+            value: STORAGE
+  ProcessEquipmentType:
+    name: ProcessEquipmentType
+    definition_uri: https://w3id.org/valuesets/ProcessEquipmentType
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Physical equipment / asset types used in process plants. These correspond
+      to the nodes of a process flowsheet and complement UnitOperationType (which
+      describes the function performed). Grouped via the equipment_class annotation.
+    title: Process Equipment Type
+    from_schema: https://w3id.org/valuesets/process_engineering/unit_operations
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      STORAGE_TANK:
+        text: STORAGE_TANK
+        description: Atmospheric or low-pressure vessel for holding liquids or solids
+        annotations:
+          equipment_class:
+            tag: equipment_class
+            value: VESSEL
+      PRESSURE_VESSEL:
+        text: PRESSURE_VESSEL
+        description: Vessel designed to hold contents at elevated pressure
+        annotations:
+          equipment_class:
+            tag: equipment_class
+            value: VESSEL
+      HOPPER:
+        text: HOPPER
+        description: Funnel-shaped vessel for storing and discharging bulk solids
+        annotations:
+          equipment_class:
+            tag: equipment_class
+            value: VESSEL
+      FLASH_DRUM:
+        text: FLASH_DRUM
+        description: Vessel for separating vapor and liquid produced by a pressure
+          let-down
+        annotations:
+          equipment_class:
+            tag: equipment_class
+            value: VESSEL
+      KNOCKOUT_DRUM:
+        text: KNOCKOUT_DRUM
+        description: Vessel that removes entrained liquid from a gas stream
+        annotations:
+          equipment_class:
+            tag: equipment_class
+            value: VESSEL
+      REACTOR:
+        text: REACTOR
+        description: Vessel in which chemical reactions are carried out
+        annotations:
+          equipment_class:
+            tag: equipment_class
+            value: REACTOR
+          subtypes:
+            tag: subtypes
+            value: CSTR, plug-flow, batch, fixed-bed, fluidized-bed
+      BIOREACTOR:
+        text: BIOREACTOR
+        description: Vessel for culturing cells or carrying out enzymatic reactions
+        meaning: OBI:0001046
+        annotations:
+          equipment_class:
+            tag: equipment_class
+            value: REACTOR
+        title: bioreactor
+      FERMENTER:
+        text: FERMENTER
+        description: Bioreactor configured for microbial fermentation
+        annotations:
+          equipment_class:
+            tag: equipment_class
+            value: REACTOR
+      DISTILLATION_COLUMN:
+        text: DISTILLATION_COLUMN
+        description: Column with trays or packing for vapor-liquid separation by distillation
+        annotations:
+          equipment_class:
+            tag: equipment_class
+            value: COLUMN
+      ABSORPTION_COLUMN:
+        text: ABSORPTION_COLUMN
+        description: Column for gas absorption into a liquid solvent
+        annotations:
+          equipment_class:
+            tag: equipment_class
+            value: COLUMN
+      STRIPPING_COLUMN:
+        text: STRIPPING_COLUMN
+        description: Column for stripping volatile components from a liquid
+        annotations:
+          equipment_class:
+            tag: equipment_class
+            value: COLUMN
+      EXTRACTION_COLUMN:
+        text: EXTRACTION_COLUMN
+        description: Column for liquid-liquid extraction
+        annotations:
+          equipment_class:
+            tag: equipment_class
+            value: COLUMN
+      CHROMATOGRAPHY_COLUMN:
+        text: CHROMATOGRAPHY_COLUMN
+        description: Column packed with a stationary phase for chromatographic separation
+        meaning: OBI:0000038
+        annotations:
+          equipment_class:
+            tag: equipment_class
+            value: COLUMN
+        title: chromatography column
+      SCRUBBER:
+        text: SCRUBBER
+        description: Contactor for removing pollutants or particulates from a gas
+          using a liquid
+        annotations:
+          equipment_class:
+            tag: equipment_class
+            value: COLUMN
+      HEAT_EXCHANGER:
+        text: HEAT_EXCHANGER
+        description: Equipment that transfers heat between two fluid streams
+        annotations:
+          equipment_class:
+            tag: equipment_class
+            value: HEAT_TRANSFER
+          subtypes:
+            tag: subtypes
+            value: shell-and-tube, plate, air-cooled
+      CONDENSER:
+        text: CONDENSER
+        description: Heat exchanger that condenses a vapor to liquid
+        annotations:
+          equipment_class:
+            tag: equipment_class
+            value: HEAT_TRANSFER
+      REBOILER:
+        text: REBOILER
+        description: Heat exchanger that supplies boilup at the base of a distillation
+          column
+        annotations:
+          equipment_class:
+            tag: equipment_class
+            value: HEAT_TRANSFER
+      EVAPORATOR:
+        text: EVAPORATOR
+        description: Equipment that concentrates a solution by vaporizing solvent
+        annotations:
+          equipment_class:
+            tag: equipment_class
+            value: HEAT_TRANSFER
+      FURNACE:
+        text: FURNACE
+        description: Fired heater that raises stream temperature by combustion
+        annotations:
+          equipment_class:
+            tag: equipment_class
+            value: HEAT_TRANSFER
+      BOILER:
+        text: BOILER
+        description: Equipment that generates steam by transferring combustion heat
+          to water
+        annotations:
+          equipment_class:
+            tag: equipment_class
+            value: HEAT_TRANSFER
+      COOLING_TOWER:
+        text: COOLING_TOWER
+        description: Equipment that rejects process heat to the atmosphere by evaporative
+          cooling
+        annotations:
+          equipment_class:
+            tag: equipment_class
+            value: HEAT_TRANSFER
+      DRYER:
+        text: DRYER
+        description: Equipment for removing liquid from solids by vaporization
+        annotations:
+          equipment_class:
+            tag: equipment_class
+            value: HEAT_TRANSFER
+      CRYSTALLIZER:
+        text: CRYSTALLIZER
+        description: Equipment for producing crystalline solids from solution or melt
+        annotations:
+          equipment_class:
+            tag: equipment_class
+            value: HEAT_TRANSFER
+      PUMP:
+        text: PUMP
+        description: Machine that moves or pressurizes a liquid
+        annotations:
+          equipment_class:
+            tag: equipment_class
+            value: FLUID_MOVER
+      COMPRESSOR:
+        text: COMPRESSOR
+        description: Machine that raises the pressure of a gas
+        annotations:
+          equipment_class:
+            tag: equipment_class
+            value: FLUID_MOVER
+      BLOWER:
+        text: BLOWER
+        description: Machine that moves gas at a low pressure rise
+        annotations:
+          equipment_class:
+            tag: equipment_class
+            value: FLUID_MOVER
+      FAN:
+        text: FAN
+        description: Machine that moves large gas volumes at very low pressure rise
+        annotations:
+          equipment_class:
+            tag: equipment_class
+            value: FLUID_MOVER
+      VALVE:
+        text: VALVE
+        description: Device that regulates, directs, or controls stream flow
+        annotations:
+          equipment_class:
+            tag: equipment_class
+            value: FLUID_MOVER
+      CENTRIFUGE:
+        text: CENTRIFUGE
+        description: Equipment that separates phases by density under centrifugal
+          force
+        meaning: OBI:0400106
+        annotations:
+          equipment_class:
+            tag: equipment_class
+            value: SEPARATION
+        title: centrifuge
+      FILTER:
+        text: FILTER
+        description: Equipment that separates solids from a fluid using a porous medium
+        annotations:
+          equipment_class:
+            tag: equipment_class
+            value: SEPARATION
+      DECANTER:
+        text: DECANTER
+        description: Equipment that separates immiscible liquids or settled solids
+          by gravity
+        annotations:
+          equipment_class:
+            tag: equipment_class
+            value: SEPARATION
+      CLARIFIER:
+        text: CLARIFIER
+        description: Settling tank that removes suspended solids from a liquid
+        annotations:
+          equipment_class:
+            tag: equipment_class
+            value: SEPARATION
+      CYCLONE:
+        text: CYCLONE
+        description: Device that separates particles from a fluid by centrifugal action
+        annotations:
+          equipment_class:
+            tag: equipment_class
+            value: SEPARATION
+      HYDROCYCLONE:
+        text: HYDROCYCLONE
+        description: Cyclone that separates solids or immiscible liquids from a liquid
+          stream
+        annotations:
+          equipment_class:
+            tag: equipment_class
+            value: SEPARATION
+      MEMBRANE_MODULE:
+        text: MEMBRANE_MODULE
+        description: Housing containing membrane elements for a membrane separation
+        annotations:
+          equipment_class:
+            tag: equipment_class
+            value: SEPARATION
+      SETTLER:
+        text: SETTLER
+        description: Vessel allowing phases to separate by gravity settling
+        annotations:
+          equipment_class:
+            tag: equipment_class
+            value: SEPARATION
+      MIXER:
+        text: MIXER
+        description: Equipment for blending streams or materials
+        annotations:
+          equipment_class:
+            tag: equipment_class
+            value: SOLIDS_HANDLING
+      AGITATOR:
+        text: AGITATOR
+        description: Impeller-driven device that mixes vessel contents
+        annotations:
+          equipment_class:
+            tag: equipment_class
+            value: SOLIDS_HANDLING
+      MILL:
+        text: MILL
+        description: Equipment that reduces particle size by grinding or crushing
+        annotations:
+          equipment_class:
+            tag: equipment_class
+            value: SOLIDS_HANDLING
+      CRUSHER:
+        text: CRUSHER
+        description: Equipment that reduces large solids by mechanical force
+        annotations:
+          equipment_class:
+            tag: equipment_class
+            value: SOLIDS_HANDLING
+      SCREEN:
+        text: SCREEN
+        description: Equipment that classifies particulate solids by size
+        annotations:
+          equipment_class:
+            tag: equipment_class
+            value: SOLIDS_HANDLING
+      CONVEYOR:
+        text: CONVEYOR
+        description: Equipment that transports bulk solids between locations
+        annotations:
+          equipment_class:
+            tag: equipment_class
+            value: SOLIDS_HANDLING
+  ProcessStreamRole:
+    name: ProcessStreamRole
+    definition_uri: https://w3id.org/valuesets/ProcessStreamRole
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: The functional role of a stream within a process flowsheet, independent
+      of its chemical composition.
+    title: Process Stream Role
+    from_schema: https://w3id.org/valuesets/process_engineering/process_streams
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      FEED:
+        text: FEED
+        description: A stream entering the process or a unit operation as input
+      RAW_MATERIAL:
+        text: RAW_MATERIAL
+        description: A fresh raw material or reactant stream entering the process
+          battery limits
+      PRODUCT:
+        text: PRODUCT
+        description: A primary product stream of commercial value leaving the process
+      BYPRODUCT:
+        text: BYPRODUCT
+        description: A secondary saleable or usable product produced alongside the
+          main product
+      INTERMEDIATE:
+        text: INTERMEDIATE
+        description: A stream flowing between unit operations within the process
+      RECYCLE:
+        text: RECYCLE
+        description: A stream returned to an upstream point for reprocessing
+      PURGE:
+        text: PURGE
+        description: A stream withdrawn from a recycle loop to prevent accumulation
+          of inerts or impurities
+      BLEED:
+        text: BLEED
+        description: A small continuous stream withdrawn to control composition or
+          level
+      MAKEUP:
+        text: MAKEUP
+        description: A stream added to replenish material lost from a circulating
+          loop
+      WASTE:
+        text: WASTE
+        description: A stream with no further use that must be treated or disposed
+          of
+      EFFLUENT:
+        text: EFFLUENT
+        description: A liquid waste stream discharged from the process
+      EMISSION:
+        text: EMISSION
+        description: A gaseous stream released to the atmosphere
+      UTILITY:
+        text: UTILITY
+        description: A service stream (e.g. steam, cooling water) supplied to a unit
+          operation
+  ProcessStreamPhase:
+    name: ProcessStreamPhase
+    definition_uri: https://w3id.org/valuesets/ProcessStreamPhase
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: The physical phase or phase combination of a process stream. For
+      single-phase fundamental states see also StateOfMatterEnum in the physics module;
+      this enum adds the multiphase combinations common in process engineering.
+    title: Process Stream Phase
+    from_schema: https://w3id.org/valuesets/process_engineering/process_streams
+    see_also:
+    - https://w3id.org/valuesets/physics/states_of_matter
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      GAS:
+        text: GAS
+        description: A single gas or vapor phase
+        annotations:
+          sff_phase_code:
+            tag: sff_phase_code
+            value: g
+      LIQUID:
+        text: LIQUID
+        description: A single liquid phase
+        annotations:
+          sff_phase_code:
+            tag: sff_phase_code
+            value: l
+      SOLID:
+        text: SOLID
+        description: A single solid phase
+        annotations:
+          sff_phase_code:
+            tag: sff_phase_code
+            value: s
+      SUPERCRITICAL:
+        text: SUPERCRITICAL
+        description: A supercritical fluid above its critical temperature and pressure
+      VAPOR_LIQUID:
+        text: VAPOR_LIQUID
+        description: A two-phase mixture of vapor and liquid
+      LIQUID_LIQUID:
+        text: LIQUID_LIQUID
+        description: A two-phase mixture of two immiscible liquids
+      VAPOR_LIQUID_LIQUID:
+        text: VAPOR_LIQUID_LIQUID
+        description: A three-phase mixture of a vapor and two immiscible liquids
+      SLURRY:
+        text: SLURRY
+        description: A suspension of solids in a liquid
+      GAS_SOLID:
+        text: GAS_SOLID
+        description: A two-phase mixture of gas and entrained or fluidized solids
+      MULTIPHASE:
+        text: MULTIPHASE
+        description: A stream containing more than one phase, of mixed or unspecified
+          composition
+  UtilityType:
+    name: UtilityType
+    definition_uri: https://w3id.org/valuesets/UtilityType
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Common plant utilities consumed or produced by process unit operations,
+      used for energy and mass balance accounting on a flowsheet.
+    title: Utility Type
+    from_schema: https://w3id.org/valuesets/process_engineering/process_streams
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      STEAM:
+        text: STEAM
+        description: Process steam used for heating or stripping
+        annotations:
+          utility_category:
+            tag: utility_category
+            value: HEAT
+      LOW_PRESSURE_STEAM:
+        text: LOW_PRESSURE_STEAM
+        description: Low-pressure steam utility
+        annotations:
+          utility_category:
+            tag: utility_category
+            value: HEAT
+          typical_range:
+            tag: typical_range
+            value: <3 barg
+      MEDIUM_PRESSURE_STEAM:
+        text: MEDIUM_PRESSURE_STEAM
+        description: Medium-pressure steam utility
+        annotations:
+          utility_category:
+            tag: utility_category
+            value: HEAT
+          typical_range:
+            tag: typical_range
+            value: 3-20 barg
+      HIGH_PRESSURE_STEAM:
+        text: HIGH_PRESSURE_STEAM
+        description: High-pressure steam utility
+        annotations:
+          utility_category:
+            tag: utility_category
+            value: HEAT
+          typical_range:
+            tag: typical_range
+            value: '>20 barg'
+      COOLING_WATER:
+        text: COOLING_WATER
+        description: Recirculated cooling water for heat rejection
+        annotations:
+          utility_category:
+            tag: utility_category
+            value: HEAT
+      CHILLED_WATER:
+        text: CHILLED_WATER
+        description: Refrigerated water for below-ambient cooling
+        annotations:
+          utility_category:
+            tag: utility_category
+            value: HEAT
+      REFRIGERANT:
+        text: REFRIGERANT
+        description: Refrigerant fluid for low-temperature cooling duty
+        annotations:
+          utility_category:
+            tag: utility_category
+            value: HEAT
+      HOT_OIL:
+        text: HOT_OIL
+        description: Thermal oil heat-transfer fluid for high-temperature heating
+        annotations:
+          utility_category:
+            tag: utility_category
+            value: HEAT
+      BRINE:
+        text: BRINE
+        description: Chilled brine used as a low-temperature coolant
+        annotations:
+          utility_category:
+            tag: utility_category
+            value: HEAT
+      ELECTRICITY:
+        text: ELECTRICITY
+        description: Electrical power supplied to drivers and equipment
+        annotations:
+          utility_category:
+            tag: utility_category
+            value: POWER
+      PROCESS_WATER:
+        text: PROCESS_WATER
+        description: Treated water used as a process input
+        annotations:
+          utility_category:
+            tag: utility_category
+            value: OTHER
+      DEMINERALIZED_WATER:
+        text: DEMINERALIZED_WATER
+        description: High-purity demineralized water utility
+        annotations:
+          utility_category:
+            tag: utility_category
+            value: OTHER
+      NATURAL_GAS:
+        text: NATURAL_GAS
+        description: Natural gas supplied as fuel or feedstock
+        annotations:
+          utility_category:
+            tag: utility_category
+            value: OTHER
+      FUEL_GAS:
+        text: FUEL_GAS
+        description: Fuel gas burned in fired heaters and boilers
+        annotations:
+          utility_category:
+            tag: utility_category
+            value: OTHER
+      COMPRESSED_AIR:
+        text: COMPRESSED_AIR
+        description: Compressed air utility for process or actuation use
+        annotations:
+          utility_category:
+            tag: utility_category
+            value: OTHER
+      INSTRUMENT_AIR:
+        text: INSTRUMENT_AIR
+        description: Clean dry compressed air for instrumentation
+        annotations:
+          utility_category:
+            tag: utility_category
+            value: OTHER
+      NITROGEN:
+        text: NITROGEN
+        description: Nitrogen used for inerting, blanketing, or purging
+        annotations:
+          utility_category:
+            tag: utility_category
+            value: OTHER
+      FLARE:
+        text: FLARE
+        description: Flare system for safe combustion of relieved gases
+        annotations:
+          utility_category:
+            tag: utility_category
+            value: OTHER
+  ProcessIndustryCategory:
+    name: ProcessIndustryCategory
+    definition_uri: https://w3id.org/valuesets/ProcessIndustryCategory
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Sectors of the process (continuous and batch) manufacturing industries.
+      The pisces_category annotation records the corresponding top-level category
+      in the PISCES Standard Flowsheet Format where one exists.
+    title: Process Industry Category
+    from_schema: https://w3id.org/valuesets/process_engineering/process_industries
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      PETROLEUM_REFINING:
+        text: PETROLEUM_REFINING
+        description: Refining of crude oil into fuels and feedstocks
+        annotations:
+          pisces_category:
+            tag: pisces_category
+            value: Energy
+      PETROCHEMICAL:
+        text: PETROCHEMICAL
+        description: Production of chemicals derived from petroleum and natural gas
+        annotations:
+          pisces_category:
+            tag: pisces_category
+            value: Chemical
+      BULK_CHEMICAL:
+        text: BULK_CHEMICAL
+        description: Large-volume production of commodity chemicals
+        annotations:
+          pisces_category:
+            tag: pisces_category
+            value: Chemical
+      SPECIALTY_CHEMICAL:
+        text: SPECIALTY_CHEMICAL
+        description: Production of lower-volume, high-value performance chemicals
+        annotations:
+          pisces_category:
+            tag: pisces_category
+            value: Chemical
+      AGROCHEMICAL:
+        text: AGROCHEMICAL
+        description: Production of fertilizers, pesticides, and other agricultural
+          chemicals
+        annotations:
+          pisces_category:
+            tag: pisces_category
+            value: Chemical
+      POLYMER_AND_PLASTICS:
+        text: POLYMER_AND_PLASTICS
+        description: Production of polymers, resins, and plastic materials
+        annotations:
+          pisces_category:
+            tag: pisces_category
+            value: Chemical
+      PHARMACEUTICAL:
+        text: PHARMACEUTICAL
+        description: Manufacture of active pharmaceutical ingredients and drug products
+        annotations:
+          pisces_category:
+            tag: pisces_category
+            value: Pharmaceutical
+      BIOTECHNOLOGY:
+        text: BIOTECHNOLOGY
+        description: Manufacture of products using biological systems and fermentation
+        annotations:
+          pisces_category:
+            tag: pisces_category
+            value: Pharmaceutical
+      BIOFUEL:
+        text: BIOFUEL
+        description: Production of biologically derived fuels such as ethanol and
+          biodiesel
+        annotations:
+          pisces_category:
+            tag: pisces_category
+            value: Biofuel
+      FOOD_AND_BEVERAGE:
+        text: FOOD_AND_BEVERAGE
+        description: Processing and manufacture of food and beverage products
+        annotations:
+          pisces_category:
+            tag: pisces_category
+            value: Food Product
+      PULP_AND_PAPER:
+        text: PULP_AND_PAPER
+        description: Production of pulp, paper, and board from fiber
+      METALS_AND_MINING:
+        text: METALS_AND_MINING
+        description: Extraction and processing of metals and minerals
+      WATER_AND_WASTEWATER_TREATMENT:
+        text: WATER_AND_WASTEWATER_TREATMENT
+        description: Treatment of water and wastewater streams
+      POWER_GENERATION:
+        text: POWER_GENERATION
+        description: Generation of electrical power and process heat
+        annotations:
+          pisces_category:
+            tag: pisces_category
+            value: Energy
+      GAS_PROCESSING:
+        text: GAS_PROCESSING
+        description: Processing and separation of natural gas and industrial gases
+        annotations:
+          pisces_category:
+            tag: pisces_category
+            value: Energy
+      CEMENT_AND_CONSTRUCTION_MATERIALS:
+        text: CEMENT_AND_CONSTRUCTION_MATERIALS
+        description: Production of cement, lime, and construction materials
+      GLASS_AND_CERAMICS:
+        text: GLASS_AND_CERAMICS
+        description: Manufacture of glass and ceramic products
+      TEXTILE:
+        text: TEXTILE
+        description: Production and finishing of textile fibers and fabrics
+      COSMETICS_AND_PERSONAL_CARE:
+        text: COSMETICS_AND_PERSONAL_CARE
+        description: Manufacture of cosmetics and personal care products
+      NUCLEAR_FUEL:
+        text: NUCLEAR_FUEL
+        description: Processing of nuclear fuel materials
+        annotations:
+          pisces_category:
+            tag: pisces_category
+            value: Energy
+      SEMICONDUCTOR:
+        text: SEMICONDUCTOR
+        description: Fabrication of semiconductor and microelectronic materials
+  ProcessOperationMode:
+    name: ProcessOperationMode
+    definition_uri: https://w3id.org/valuesets/ProcessOperationMode
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: The temporal mode in which a process or unit operation is run.
+    title: Process Operation Mode
+    from_schema: https://w3id.org/valuesets/process_engineering/process_industries
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      BATCH:
+        text: BATCH
+        description: Material is charged, processed, and discharged in discrete batches
+      CONTINUOUS:
+        text: CONTINUOUS
+        description: Material flows through the process steadily without interruption
+      SEMI_BATCH:
+        text: SEMI_BATCH
+        description: A hybrid mode where some streams are continuous while others
+          are batch-wise
+      SEMI_CONTINUOUS:
+        text: SEMI_CONTINUOUS
+        description: Process alternates between continuous operation and periodic
+          interruptions
+  EquationOfStateModel:
+    name: EquationOfStateModel
+    definition_uri: https://w3id.org/valuesets/EquationOfStateModel
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Equations of state used to compute fugacity coefficients and PVT
+      behavior of fluids in process simulation (the SFF phi method).
+    title: Equation of State Model
+    from_schema: https://w3id.org/valuesets/process_engineering/thermodynamics
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      IDEAL_GAS:
+        text: IDEAL_GAS
+        description: Ideal gas law, assuming no intermolecular interactions
+      VIRIAL:
+        text: VIRIAL
+        description: Virial equation of state expressed as a power series in density
+          or pressure
+      REDLICH_KWONG:
+        text: REDLICH_KWONG
+        description: Redlich-Kwong cubic equation of state
+        annotations:
+          abbreviation:
+            tag: abbreviation
+            value: RK
+      SOAVE_REDLICH_KWONG:
+        text: SOAVE_REDLICH_KWONG
+        description: Soave modification of the Redlich-Kwong cubic equation of state
+        annotations:
+          abbreviation:
+            tag: abbreviation
+            value: SRK
+      PENG_ROBINSON:
+        text: PENG_ROBINSON
+        description: Peng-Robinson cubic equation of state
+        annotations:
+          abbreviation:
+            tag: abbreviation
+            value: PR
+      PENG_ROBINSON_BOSTON_MATHIAS:
+        text: PENG_ROBINSON_BOSTON_MATHIAS
+        description: Peng-Robinson with Boston-Mathias alpha function for supercritical
+          extrapolation
+        annotations:
+          abbreviation:
+            tag: abbreviation
+            value: PR-BM
+      SRK_BOSTON_MATHIAS:
+        text: SRK_BOSTON_MATHIAS
+        description: Soave-Redlich-Kwong with Boston-Mathias alpha function
+        annotations:
+          abbreviation:
+            tag: abbreviation
+            value: SRK-BM
+      LEE_KESLER_PLOCKER:
+        text: LEE_KESLER_PLOCKER
+        description: Lee-Kesler-Plocker corresponding-states equation of state
+        annotations:
+          abbreviation:
+            tag: abbreviation
+            value: LKP
+      BENEDICT_WEBB_RUBIN_STARLING:
+        text: BENEDICT_WEBB_RUBIN_STARLING
+        description: Benedict-Webb-Rubin-Starling equation of state for light hydrocarbons
+        annotations:
+          abbreviation:
+            tag: abbreviation
+            value: BWRS
+      PREDICTIVE_SRK:
+        text: PREDICTIVE_SRK
+        description: Predictive SRK combining SRK with a UNIFAC-based mixing rule
+        annotations:
+          abbreviation:
+            tag: abbreviation
+            value: PSRK
+      PC_SAFT:
+        text: PC_SAFT
+        description: Perturbed-chain statistical associating fluid theory equation
+          of state
+        annotations:
+          abbreviation:
+            tag: abbreviation
+            value: PC-SAFT
+      CUBIC_PLUS_ASSOCIATION:
+        text: CUBIC_PLUS_ASSOCIATION
+        description: Cubic-plus-association equation of state for associating fluids
+        annotations:
+          abbreviation:
+            tag: abbreviation
+            value: CPA
+      GERG_2008:
+        text: GERG_2008
+        description: GERG-2008 reference equation of state for natural gas mixtures
+      IAPWS_95:
+        text: IAPWS_95
+        description: IAPWS-95 reference formulation for the thermodynamic properties
+          of water
+        annotations:
+          aliases:
+            tag: aliases
+            value: steam tables
+  ActivityCoefficientModel:
+    name: ActivityCoefficientModel
+    definition_uri: https://w3id.org/valuesets/ActivityCoefficientModel
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Excess Gibbs energy / activity-coefficient models for non-ideal liquid
+      phases (the SFF gamma method).
+    title: Activity Coefficient Model
+    from_schema: https://w3id.org/valuesets/process_engineering/thermodynamics
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      IDEAL:
+        text: IDEAL
+        description: Ideal solution, all activity coefficients equal to one (Raoult's
+          law)
+      MARGULES:
+        text: MARGULES
+        description: Margules two-parameter activity-coefficient model
+      VAN_LAAR:
+        text: VAN_LAAR
+        description: Van Laar activity-coefficient model
+      REGULAR_SOLUTION:
+        text: REGULAR_SOLUTION
+        description: Scatchard-Hildebrand regular solution model based on solubility
+          parameters
+      WILSON:
+        text: WILSON
+        description: Wilson local-composition activity-coefficient model
+      NRTL:
+        text: NRTL
+        description: Non-random two-liquid local-composition activity-coefficient
+          model
+      ELECTROLYTE_NRTL:
+        text: ELECTROLYTE_NRTL
+        description: Electrolyte NRTL model for systems containing ions
+        annotations:
+          abbreviation:
+            tag: abbreviation
+            value: eNRTL
+      UNIQUAC:
+        text: UNIQUAC
+        description: Universal quasi-chemical activity-coefficient model
+      UNIFAC:
+        text: UNIFAC
+        description: UNIQUAC functional-group activity-coefficient (group-contribution)
+          model
+      UNIFAC_DORTMUND:
+        text: UNIFAC_DORTMUND
+        description: Modified UNIFAC (Dortmund) group-contribution model
+      FLORY_HUGGINS:
+        text: FLORY_HUGGINS
+        description: Flory-Huggins model for polymer solutions
+      PITZER:
+        text: PITZER
+        description: Pitzer model for aqueous electrolyte activity coefficients
+      COSMO_SAC:
+        text: COSMO_SAC
+        description: COSMO-based segment activity-coefficient model from quantum chemistry
+        annotations:
+          aliases:
+            tag: aliases
+            value: COSMO-RS, COSMO-SAC
+  ThermodynamicPropertyPackage:
+    name: ThermodynamicPropertyPackage
+    definition_uri: https://w3id.org/valuesets/ThermodynamicPropertyPackage
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Named property methods/packages offered by process simulators, typically
+      combining an equation of state and/or an activity-coefficient model. Used where
+      a single package label rather than separate gamma/phi methods is recorded.
+    title: Thermodynamic Property Package
+    from_schema: https://w3id.org/valuesets/process_engineering/thermodynamics
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      IDEAL:
+        text: IDEAL
+        description: Ideal (Raoult's law) property package
+      NRTL:
+        text: NRTL
+        description: NRTL activity model with ideal or RK vapor phase
+      NRTL_RK:
+        text: NRTL_RK
+        description: NRTL activity model with Redlich-Kwong vapor phase
+      UNIQUAC:
+        text: UNIQUAC
+        description: UNIQUAC activity model property package
+      UNIFAC:
+        text: UNIFAC
+        description: UNIFAC group-contribution property package
+      WILSON:
+        text: WILSON
+        description: Wilson activity model property package
+      VAN_LAAR:
+        text: VAN_LAAR
+        description: Van Laar activity model property package
+      PENG_ROBINSON:
+        text: PENG_ROBINSON
+        description: Peng-Robinson equation-of-state property package
+      SOAVE_REDLICH_KWONG:
+        text: SOAVE_REDLICH_KWONG
+        description: Soave-Redlich-Kwong equation-of-state property package
+      ELECTROLYTE_NRTL:
+        text: ELECTROLYTE_NRTL
+        description: Electrolyte NRTL property package for ionic systems
+      PITZER:
+        text: PITZER
+        description: Pitzer property package for aqueous electrolytes
+      CHAO_SEADER:
+        text: CHAO_SEADER
+        description: Chao-Seader semi-empirical package for hydrocarbon systems
+      GRAYSON_STREED:
+        text: GRAYSON_STREED
+        description: Grayson-Streed package for hydrogen-rich hydrocarbon systems
+      BRAUN_K10:
+        text: BRAUN_K10
+        description: Braun K10 package for low-pressure heavy hydrocarbon systems
+        annotations:
+          abbreviation:
+            tag: abbreviation
+            value: BK10
+      PC_SAFT:
+        text: PC_SAFT
+        description: PC-SAFT equation-of-state property package
+      STEAM_TABLES:
+        text: STEAM_TABLES
+        description: Steam-table (IAPWS / ASME) property package for water and steam
+      API_SOUR:
+        text: API_SOUR
+        description: API sour-water package for systems with acid gases and ammonia
+  MixingRuleModel:
+    name: MixingRuleModel
+    definition_uri: https://w3id.org/valuesets/MixingRuleModel
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Mixing rules applied to equation-of-state parameters for mixtures
+      (the SFF mixture method).
+    title: Mixing Rule Model
+    from_schema: https://w3id.org/valuesets/process_engineering/thermodynamics
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      IDEAL:
+        text: IDEAL
+        description: Ideal mixing, no excess properties
+      VAN_DER_WAALS:
+        text: VAN_DER_WAALS
+        description: Classical van der Waals one-fluid mixing rule with binary interaction
+          parameters
+        annotations:
+          aliases:
+            tag: aliases
+            value: classical, quadratic mixing rule
+      HURON_VIDAL:
+        text: HURON_VIDAL
+        description: Huron-Vidal mixing rule coupling an equation of state to an excess
+          Gibbs energy model
+      MODIFIED_HURON_VIDAL:
+        text: MODIFIED_HURON_VIDAL
+        description: Modified Huron-Vidal first/second order mixing rules
+        annotations:
+          aliases:
+            tag: aliases
+            value: MHV1, MHV2
+      WONG_SANDLER:
+        text: WONG_SANDLER
+        description: Wong-Sandler mixing rule with correct low- and high-density limits
+      PSRK_MIXING:
+        text: PSRK_MIXING
+        description: Predictive SRK (PSRK) mixing rule based on UNIFAC
+  PoyntingCorrectionMethod:
+    name: PoyntingCorrectionMethod
+    definition_uri: https://w3id.org/valuesets/PoyntingCorrectionMethod
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Treatment of the Poynting correction factor accounting for the effect
+      of pressure on liquid fugacity (the SFF PCF method).
+    title: Poynting Correction Method
+    from_schema: https://w3id.org/valuesets/process_engineering/thermodynamics
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      NONE:
+        text: NONE
+        description: No Poynting correction applied
+      POYNTING:
+        text: POYNTING
+        description: Poynting correction factor applied to the liquid fugacity
+  DesignSimulationMethod:
+    name: DesignSimulationMethod
+    definition_uri: https://w3id.org/valuesets/DesignSimulationMethod
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Methods used to design or simulate unit operations, particularly
+      separation columns - ranging from graphical and shortcut methods to rigorous
+      stage-by-stage and rate-based models.
+    title: Design and Simulation Method
+    from_schema: https://w3id.org/valuesets/process_engineering/process_modeling
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      MCCABE_THIELE:
+        text: MCCABE_THIELE
+        description: McCabe-Thiele graphical method for binary distillation
+        annotations:
+          method_class:
+            tag: method_class
+            value: GRAPHICAL
+      PONCHON_SAVARIT:
+        text: PONCHON_SAVARIT
+        description: Ponchon-Savarit enthalpy-composition graphical method for binary
+          distillation
+        annotations:
+          method_class:
+            tag: method_class
+            value: GRAPHICAL
+      FENSKE_UNDERWOOD_GILLILAND:
+        text: FENSKE_UNDERWOOD_GILLILAND
+        description: Fenske-Underwood-Gilliland shortcut method for multicomponent
+          distillation
+        annotations:
+          method_class:
+            tag: method_class
+            value: SHORTCUT
+          abbreviation:
+            tag: abbreviation
+            value: FUG
+      KREMSER:
+        text: KREMSER
+        description: Kremser shortcut method for absorber and stripper design
+        annotations:
+          method_class:
+            tag: method_class
+            value: SHORTCUT
+      MESH:
+        text: MESH
+        description: Rigorous equilibrium-stage solution of the Material, Equilibrium,
+          Summation and Heat (enthalpy) equations
+        annotations:
+          method_class:
+            tag: method_class
+            value: RIGOROUS_EQUILIBRIUM
+      INSIDE_OUT:
+        text: INSIDE_OUT
+        description: Inside-out algorithm for rigorous equilibrium-stage column convergence
+        annotations:
+          method_class:
+            tag: method_class
+            value: RIGOROUS_EQUILIBRIUM
+      RATE_BASED:
+        text: RATE_BASED
+        description: Rate-based (nonequilibrium) model accounting for mass and heat
+          transfer rates
+        annotations:
+          method_class:
+            tag: method_class
+            value: RATE_BASED
+      EQUILIBRIUM_STAGE:
+        text: EQUILIBRIUM_STAGE
+        description: Generic equilibrium-stage model assuming each stage reaches phase
+          equilibrium
+        annotations:
+          method_class:
+            tag: method_class
+            value: RIGOROUS_EQUILIBRIUM
+      SHORTCUT:
+        text: SHORTCUT
+        description: Generic shortcut / approximate design method
+        annotations:
+          method_class:
+            tag: method_class
+            value: SHORTCUT
+      RIGOROUS:
+        text: RIGOROUS
+        description: Generic rigorous design method
+        annotations:
+          method_class:
+            tag: method_class
+            value: RIGOROUS_EQUILIBRIUM
+      PINCH_ANALYSIS:
+        text: PINCH_ANALYSIS
+        description: Pinch analysis for heat-exchanger network and energy integration
+        annotations:
+          method_class:
+            tag: method_class
+            value: ENERGY_INTEGRATION
+  FlowsheetSolutionApproach:
+    name: FlowsheetSolutionApproach
+    definition_uri: https://w3id.org/valuesets/FlowsheetSolutionApproach
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: The overall computational strategy used to converge a process flowsheet.
+    title: Flowsheet Solution Approach
+    from_schema: https://w3id.org/valuesets/process_engineering/process_modeling
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      SEQUENTIAL_MODULAR:
+        text: SEQUENTIAL_MODULAR
+        description: Units solved one at a time in sequence, iterating on recycle
+          tear streams
+      EQUATION_ORIENTED:
+        text: EQUATION_ORIENTED
+        description: All model equations assembled and solved simultaneously
+      SIMULTANEOUS_MODULAR:
+        text: SIMULTANEOUS_MODULAR
+        description: Hybrid approach combining modular unit models with a simultaneous
+          convergence layer
+  ProcessSimulator:
+    name: ProcessSimulator
+    definition_uri: https://w3id.org/valuesets/ProcessSimulator
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Process simulation software packages used to model chemical and biochemical
+      process flowsheets.
+    title: Process Simulator
+    from_schema: https://w3id.org/valuesets/process_engineering/process_modeling
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      ASPEN_PLUS:
+        text: ASPEN_PLUS
+        description: Aspen Plus steady-state process simulator (AspenTech)
+      ASPEN_HYSYS:
+        text: ASPEN_HYSYS
+        description: Aspen HYSYS process simulator (AspenTech)
+      ASPEN_CUSTOM_MODELER:
+        text: ASPEN_CUSTOM_MODELER
+        description: Aspen Custom Modeler for user-defined unit operation models (AspenTech)
+      UNISIM_DESIGN:
+        text: UNISIM_DESIGN
+        description: Honeywell UniSim Design process simulator
+      PRO_II:
+        text: PRO_II
+        description: AVEVA Pro/II (formerly SimSci Pro/II) process simulator
+      AVEVA_PROCESS_SIMULATION:
+        text: AVEVA_PROCESS_SIMULATION
+        description: AVEVA Process Simulation (formerly SimCentral)
+      CHEMCAD:
+        text: CHEMCAD
+        description: ChemCAD process simulator (Chemstations)
+      DWSIM:
+        text: DWSIM
+        description: DWSIM open-source CAPE-OPEN process simulator
+      COCO_SIMULATOR:
+        text: COCO_SIMULATOR
+        description: COCO/COFE free CAPE-OPEN flowsheeting environment
+      GPROMS:
+        text: GPROMS
+        description: gPROMS equation-oriented process modeling environment (Siemens
+          / PSE)
+      PROSIMPLUS:
+        text: PROSIMPLUS
+        description: ProSimPlus steady-state process simulator (ProSim)
+      PETRO_SIM:
+        text: PETRO_SIM
+        description: KBC Petro-SIM process simulator
+      BIOSTEAM:
+        text: BIOSTEAM
+        description: BioSTEAM open-source biorefinery simulation and techno-economic
+          analysis package
+      SUPERPRO_DESIGNER:
+        text: SUPERPRO_DESIGNER
+        description: SuperPro Designer batch and bioprocess simulator (Intelligen)
+      IDAES:
+        text: IDAES
+        description: IDAES open-source equation-oriented process systems engineering
+          platform (US DOE)
+      CAPE_OPEN:
+        text: CAPE_OPEN
+        description: A CAPE-OPEN compliant simulator or unit (interoperability standard,
+          simulator unspecified)
+  ChemicalIdentifierScheme:
+    name: ChemicalIdentifierScheme
+    definition_uri: https://w3id.org/valuesets/ChemicalIdentifierScheme
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Schemes used to identify chemical substances, including registry
+      numbers, line notations, structure-derived keys, and database accessions.
+    title: Chemical Identifier Scheme
+    from_schema: https://w3id.org/valuesets/chemistry/identifiers
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      CAS_RN:
+        text: CAS_RN
+        description: CAS Registry Number assigned by the Chemical Abstracts Service
+        annotations:
+          example:
+            tag: example
+            value: 64-17-5
+      SMILES:
+        text: SMILES
+        description: Simplified Molecular-Input Line-Entry System structure notation
+        annotations:
+          example:
+            tag: example
+            value: CCO
+      INCHI:
+        text: INCHI
+        description: IUPAC International Chemical Identifier structure string
+        annotations:
+          example:
+            tag: example
+            value: InChI=1S/C2H6O/c1-2-3/h3H,2H2,1H3
+      INCHIKEY:
+        text: INCHIKEY
+        description: Hashed fixed-length form of an InChI
+        annotations:
+          example:
+            tag: example
+            value: LFQSCWFLJHTTHZ-UHFFFAOYSA-N
+      IUPAC_NAME:
+        text: IUPAC_NAME
+        description: Systematic IUPAC chemical name
+      MOLECULAR_FORMULA:
+        text: MOLECULAR_FORMULA
+        description: Molecular or empirical chemical formula
+        annotations:
+          example:
+            tag: example
+            value: C2H6O
+      PUBCHEM_CID:
+        text: PUBCHEM_CID
+        description: PubChem Compound Identifier
+      CHEBI_ID:
+        text: CHEBI_ID
+        description: ChEBI ontology identifier
+      KEGG_COMPOUND:
+        text: KEGG_COMPOUND
+        description: KEGG COMPOUND database accession
+      DRUGBANK_ID:
+        text: DRUGBANK_ID
+        description: DrugBank accession
+      EC_NUMBER:
+        text: EC_NUMBER
+        description: European Community (EINECS/EC) substance number
+  CurrencyCode:
+    name: CurrencyCode
+    definition_uri: https://w3id.org/valuesets/CurrencyCode
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    annotations:
+      standard:
+        tag: standard
+        value: ISO 4217
+    description: World currencies by ISO 4217 alpha-3 code. The numeric_code, symbol,
+      and minor_unit (number of decimal places) annotations record the corresponding
+      ISO 4217 attributes.
+    title: Currency Code
+    from_schema: https://w3id.org/valuesets/business/currencies
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      USD:
+        text: USD
+        description: United States dollar
+        annotations:
+          numeric_code:
+            tag: numeric_code
+            value: '840'
+          symbol:
+            tag: symbol
+            value: $
+          minor_unit:
+            tag: minor_unit
+            value: 2
+        title: United States dollar
+      EUR:
+        text: EUR
+        description: Euro
+        annotations:
+          numeric_code:
+            tag: numeric_code
+            value: '978'
+          symbol:
+            tag: symbol
+            value: "\u20AC"
+          minor_unit:
+            tag: minor_unit
+            value: 2
+        title: Euro
+      JPY:
+        text: JPY
+        description: Japanese yen
+        annotations:
+          numeric_code:
+            tag: numeric_code
+            value: '392'
+          symbol:
+            tag: symbol
+            value: "\xA5"
+          minor_unit:
+            tag: minor_unit
+            value: 0
+        title: Japanese yen
+      GBP:
+        text: GBP
+        description: British pound sterling
+        annotations:
+          numeric_code:
+            tag: numeric_code
+            value: '826'
+          symbol:
+            tag: symbol
+            value: "\xA3"
+          minor_unit:
+            tag: minor_unit
+            value: 2
+        title: Pound sterling
+      CNY:
+        text: CNY
+        description: Chinese yuan renminbi
+        annotations:
+          numeric_code:
+            tag: numeric_code
+            value: '156'
+          symbol:
+            tag: symbol
+            value: "\xA5"
+          minor_unit:
+            tag: minor_unit
+            value: 2
+        title: Renminbi
+      AUD:
+        text: AUD
+        description: Australian dollar
+        annotations:
+          numeric_code:
+            tag: numeric_code
+            value: '036'
+          symbol:
+            tag: symbol
+            value: $
+          minor_unit:
+            tag: minor_unit
+            value: 2
+        title: Australian dollar
+      CAD:
+        text: CAD
+        description: Canadian dollar
+        annotations:
+          numeric_code:
+            tag: numeric_code
+            value: '124'
+          symbol:
+            tag: symbol
+            value: $
+          minor_unit:
+            tag: minor_unit
+            value: 2
+        title: Canadian dollar
+      CHF:
+        text: CHF
+        description: Swiss franc
+        annotations:
+          numeric_code:
+            tag: numeric_code
+            value: '756'
+          symbol:
+            tag: symbol
+            value: Fr
+          minor_unit:
+            tag: minor_unit
+            value: 2
+        title: Swiss franc
+      HKD:
+        text: HKD
+        description: Hong Kong dollar
+        annotations:
+          numeric_code:
+            tag: numeric_code
+            value: '344'
+          symbol:
+            tag: symbol
+            value: $
+          minor_unit:
+            tag: minor_unit
+            value: 2
+        title: Hong Kong dollar
+      SGD:
+        text: SGD
+        description: Singapore dollar
+        annotations:
+          numeric_code:
+            tag: numeric_code
+            value: '702'
+          symbol:
+            tag: symbol
+            value: $
+          minor_unit:
+            tag: minor_unit
+            value: 2
+        title: Singapore dollar
+      SEK:
+        text: SEK
+        description: Swedish krona
+        annotations:
+          numeric_code:
+            tag: numeric_code
+            value: '752'
+          symbol:
+            tag: symbol
+            value: kr
+          minor_unit:
+            tag: minor_unit
+            value: 2
+        title: Swedish krona
+      NOK:
+        text: NOK
+        description: Norwegian krone
+        annotations:
+          numeric_code:
+            tag: numeric_code
+            value: '578'
+          symbol:
+            tag: symbol
+            value: kr
+          minor_unit:
+            tag: minor_unit
+            value: 2
+        title: Norwegian krone
+      DKK:
+        text: DKK
+        description: Danish krone
+        annotations:
+          numeric_code:
+            tag: numeric_code
+            value: '208'
+          symbol:
+            tag: symbol
+            value: kr
+          minor_unit:
+            tag: minor_unit
+            value: 2
+        title: Danish krone
+      NZD:
+        text: NZD
+        description: New Zealand dollar
+        annotations:
+          numeric_code:
+            tag: numeric_code
+            value: '554'
+          symbol:
+            tag: symbol
+            value: $
+          minor_unit:
+            tag: minor_unit
+            value: 2
+        title: New Zealand dollar
+      KRW:
+        text: KRW
+        description: South Korean won
+        annotations:
+          numeric_code:
+            tag: numeric_code
+            value: '410'
+          symbol:
+            tag: symbol
+            value: "\u20A9"
+          minor_unit:
+            tag: minor_unit
+            value: 0
+        title: South Korean won
+      INR:
+        text: INR
+        description: Indian rupee
+        annotations:
+          numeric_code:
+            tag: numeric_code
+            value: '356'
+          symbol:
+            tag: symbol
+            value: "\u20B9"
+          minor_unit:
+            tag: minor_unit
+            value: 2
+        title: Indian rupee
+      BRL:
+        text: BRL
+        description: Brazilian real
+        annotations:
+          numeric_code:
+            tag: numeric_code
+            value: '986'
+          symbol:
+            tag: symbol
+            value: R$
+          minor_unit:
+            tag: minor_unit
+            value: 2
+        title: Brazilian real
+      ZAR:
+        text: ZAR
+        description: South African rand
+        annotations:
+          numeric_code:
+            tag: numeric_code
+            value: '710'
+          symbol:
+            tag: symbol
+            value: R
+          minor_unit:
+            tag: minor_unit
+            value: 2
+        title: South African rand
+      RUB:
+        text: RUB
+        description: Russian ruble
+        annotations:
+          numeric_code:
+            tag: numeric_code
+            value: '643'
+          symbol:
+            tag: symbol
+            value: "\u20BD"
+          minor_unit:
+            tag: minor_unit
+            value: 2
+        title: Russian ruble
+      MXN:
+        text: MXN
+        description: Mexican peso
+        annotations:
+          numeric_code:
+            tag: numeric_code
+            value: '484'
+          symbol:
+            tag: symbol
+            value: $
+          minor_unit:
+            tag: minor_unit
+            value: 2
+        title: Mexican peso
+      TRY:
+        text: TRY
+        description: Turkish lira
+        annotations:
+          numeric_code:
+            tag: numeric_code
+            value: '949'
+          symbol:
+            tag: symbol
+            value: "\u20BA"
+          minor_unit:
+            tag: minor_unit
+            value: 2
+        title: Turkish lira
+      PLN:
+        text: PLN
+        description: Polish zloty
+        annotations:
+          numeric_code:
+            tag: numeric_code
+            value: '985'
+          symbol:
+            tag: symbol
+            value: "z\u0142"
+          minor_unit:
+            tag: minor_unit
+            value: 2
+        title: Polish zloty
+      THB:
+        text: THB
+        description: Thai baht
+        annotations:
+          numeric_code:
+            tag: numeric_code
+            value: '764'
+          symbol:
+            tag: symbol
+            value: "\u0E3F"
+          minor_unit:
+            tag: minor_unit
+            value: 2
+        title: Thai baht
+      IDR:
+        text: IDR
+        description: Indonesian rupiah
+        annotations:
+          numeric_code:
+            tag: numeric_code
+            value: '360'
+          symbol:
+            tag: symbol
+            value: Rp
+          minor_unit:
+            tag: minor_unit
+            value: 2
+        title: Indonesian rupiah
+      MYR:
+        text: MYR
+        description: Malaysian ringgit
+        annotations:
+          numeric_code:
+            tag: numeric_code
+            value: '458'
+          symbol:
+            tag: symbol
+            value: RM
+          minor_unit:
+            tag: minor_unit
+            value: 2
+        title: Malaysian ringgit
+      PHP:
+        text: PHP
+        description: Philippine peso
+        annotations:
+          numeric_code:
+            tag: numeric_code
+            value: '608'
+          symbol:
+            tag: symbol
+            value: "\u20B1"
+          minor_unit:
+            tag: minor_unit
+            value: 2
+        title: Philippine peso
+      AED:
+        text: AED
+        description: United Arab Emirates dirham
+        annotations:
+          numeric_code:
+            tag: numeric_code
+            value: '784'
+          minor_unit:
+            tag: minor_unit
+            value: 2
+        title: UAE dirham
+      SAR:
+        text: SAR
+        description: Saudi riyal
+        annotations:
+          numeric_code:
+            tag: numeric_code
+            value: '682'
+          minor_unit:
+            tag: minor_unit
+            value: 2
+        title: Saudi riyal
+      ILS:
+        text: ILS
+        description: Israeli new shekel
+        annotations:
+          numeric_code:
+            tag: numeric_code
+            value: '376'
+          symbol:
+            tag: symbol
+            value: "\u20AA"
+          minor_unit:
+            tag: minor_unit
+            value: 2
+        title: Israeli new shekel
+      CZK:
+        text: CZK
+        description: Czech koruna
+        annotations:
+          numeric_code:
+            tag: numeric_code
+            value: '203'
+          symbol:
+            tag: symbol
+            value: "K\u010D"
+          minor_unit:
+            tag: minor_unit
+            value: 2
+        title: Czech koruna
+      HUF:
+        text: HUF
+        description: Hungarian forint
+        annotations:
+          numeric_code:
+            tag: numeric_code
+            value: '348'
+          symbol:
+            tag: symbol
+            value: Ft
+          minor_unit:
+            tag: minor_unit
+            value: 2
+        title: Hungarian forint
+      RON:
+        text: RON
+        description: Romanian leu
+        annotations:
+          numeric_code:
+            tag: numeric_code
+            value: '946'
+          symbol:
+            tag: symbol
+            value: lei
+          minor_unit:
+            tag: minor_unit
+            value: 2
+        title: Romanian leu
+      UAH:
+        text: UAH
+        description: Ukrainian hryvnia
+        annotations:
+          numeric_code:
+            tag: numeric_code
+            value: '980'
+          symbol:
+            tag: symbol
+            value: "\u20B4"
+          minor_unit:
+            tag: minor_unit
+            value: 2
+        title: Ukrainian hryvnia
+      CLP:
+        text: CLP
+        description: Chilean peso
+        annotations:
+          numeric_code:
+            tag: numeric_code
+            value: '152'
+          symbol:
+            tag: symbol
+            value: $
+          minor_unit:
+            tag: minor_unit
+            value: 0
+        title: Chilean peso
+      COP:
+        text: COP
+        description: Colombian peso
+        annotations:
+          numeric_code:
+            tag: numeric_code
+            value: '170'
+          symbol:
+            tag: symbol
+            value: $
+          minor_unit:
+            tag: minor_unit
+            value: 2
+        title: Colombian peso
+      ARS:
+        text: ARS
+        description: Argentine peso
+        annotations:
+          numeric_code:
+            tag: numeric_code
+            value: '032'
+          symbol:
+            tag: symbol
+            value: $
+          minor_unit:
+            tag: minor_unit
+            value: 2
+        title: Argentine peso
+      EGP:
+        text: EGP
+        description: Egyptian pound
+        annotations:
+          numeric_code:
+            tag: numeric_code
+            value: '818'
+          symbol:
+            tag: symbol
+            value: "\xA3"
+          minor_unit:
+            tag: minor_unit
+            value: 2
+        title: Egyptian pound
+      NGN:
+        text: NGN
+        description: Nigerian naira
+        annotations:
+          numeric_code:
+            tag: numeric_code
+            value: '566'
+          symbol:
+            tag: symbol
+            value: "\u20A6"
+          minor_unit:
+            tag: minor_unit
+            value: 2
+        title: Nigerian naira
+      KES:
+        text: KES
+        description: Kenyan shilling
+        annotations:
+          numeric_code:
+            tag: numeric_code
+            value: '404'
+          symbol:
+            tag: symbol
+            value: Sh
+          minor_unit:
+            tag: minor_unit
+            value: 2
+        title: Kenyan shilling
+      PKR:
+        text: PKR
+        description: Pakistani rupee
+        annotations:
+          numeric_code:
+            tag: numeric_code
+            value: '586'
+          symbol:
+            tag: symbol
+            value: "\u20A8"
+          minor_unit:
+            tag: minor_unit
+            value: 2
+        title: Pakistani rupee
+      BDT:
+        text: BDT
+        description: Bangladeshi taka
+        annotations:
+          numeric_code:
+            tag: numeric_code
+            value: '050'
+          symbol:
+            tag: symbol
+            value: "\u09F3"
+          minor_unit:
+            tag: minor_unit
+            value: 2
+        title: Bangladeshi taka
+      VND:
+        text: VND
+        description: Vietnamese dong
+        annotations:
+          numeric_code:
+            tag: numeric_code
+            value: '704'
+          symbol:
+            tag: symbol
+            value: "\u20AB"
+          minor_unit:
+            tag: minor_unit
+            value: 0
+        title: Vietnamese dong
+      TWD:
+        text: TWD
+        description: New Taiwan dollar
+        annotations:
+          numeric_code:
+            tag: numeric_code
+            value: '901'
+          symbol:
+            tag: symbol
+            value: $
+          minor_unit:
+            tag: minor_unit
+            value: 2
+        title: New Taiwan dollar
+      KWD:
+        text: KWD
+        description: Kuwaiti dinar
+        annotations:
+          numeric_code:
+            tag: numeric_code
+            value: '414'
+          minor_unit:
+            tag: minor_unit
+            value: 3
+        title: Kuwaiti dinar
+      BHD:
+        text: BHD
+        description: Bahraini dinar
+        annotations:
+          numeric_code:
+            tag: numeric_code
+            value: 048
+          minor_unit:
+            tag: minor_unit
+            value: 3
+        title: Bahraini dinar
+      OMR:
+        text: OMR
+        description: Omani rial
+        annotations:
+          numeric_code:
+            tag: numeric_code
+            value: '512'
+          minor_unit:
+            tag: minor_unit
+            value: 3
+        title: Omani rial
+      QAR:
+        text: QAR
+        description: Qatari riyal
+        annotations:
+          numeric_code:
+            tag: numeric_code
+            value: '634'
+          minor_unit:
+            tag: minor_unit
+            value: 2
+        title: Qatari riyal
+      ISK:
+        text: ISK
+        description: Icelandic krona
+        annotations:
+          numeric_code:
+            tag: numeric_code
+            value: '352'
+          symbol:
+            tag: symbol
+            value: kr
+          minor_unit:
+            tag: minor_unit
+            value: 0
+        title: Icelandic krona
   LengthUnitEnum:
     name: LengthUnitEnum
     definition_uri: https://w3id.org/valuesets/LengthUnitEnum
@@ -55597,6 +58110,214 @@ enums:
           standard:
             tag: standard
             value: binary
+  MassFlowRateUnitEnum:
+    name: MassFlowRateUnitEnum
+    definition_uri: https://w3id.org/valuesets/MassFlowRateUnitEnum
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Units of mass flow rate (mass per unit time)
+    title: Mass Flow Rate Unit
+    from_schema: https://w3id.org/valuesets/units/measurements
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      KILOGRAM_PER_SECOND:
+        text: KILOGRAM_PER_SECOND
+        description: Kilograms per second (SI)
+        annotations:
+          symbol:
+            tag: symbol
+            value: kg/s
+          system:
+            tag: system
+            value: SI
+      KILOGRAM_PER_HOUR:
+        text: KILOGRAM_PER_HOUR
+        description: Kilograms per hour
+        annotations:
+          symbol:
+            tag: symbol
+            value: kg/h
+          conversion_to_kg_per_s:
+            tag: conversion_to_kg_per_s
+            value: '0.000277778'
+      GRAM_PER_SECOND:
+        text: GRAM_PER_SECOND
+        description: Grams per second
+        annotations:
+          symbol:
+            tag: symbol
+            value: g/s
+          conversion_to_kg_per_s:
+            tag: conversion_to_kg_per_s
+            value: '0.001'
+      TONNE_PER_HOUR:
+        text: TONNE_PER_HOUR
+        description: Metric tonnes per hour
+        annotations:
+          symbol:
+            tag: symbol
+            value: t/h
+          conversion_to_kg_per_s:
+            tag: conversion_to_kg_per_s
+            value: '0.277778'
+      TONNE_PER_DAY:
+        text: TONNE_PER_DAY
+        description: Metric tonnes per day
+        annotations:
+          symbol:
+            tag: symbol
+            value: t/d
+          conversion_to_kg_per_s:
+            tag: conversion_to_kg_per_s
+            value: '0.0115741'
+      POUND_PER_HOUR:
+        text: POUND_PER_HOUR
+        description: Pounds (mass) per hour
+        annotations:
+          symbol:
+            tag: symbol
+            value: lb/h
+          conversion_to_kg_per_s:
+            tag: conversion_to_kg_per_s
+            value: '0.000125998'
+          system:
+            tag: system
+            value: imperial
+  MolarFlowRateUnitEnum:
+    name: MolarFlowRateUnitEnum
+    definition_uri: https://w3id.org/valuesets/MolarFlowRateUnitEnum
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Units of molar flow rate (amount of substance per unit time)
+    title: Molar Flow Rate Unit
+    from_schema: https://w3id.org/valuesets/units/measurements
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      MOLE_PER_SECOND:
+        text: MOLE_PER_SECOND
+        description: Moles per second (SI)
+        annotations:
+          symbol:
+            tag: symbol
+            value: mol/s
+          system:
+            tag: system
+            value: SI
+      MOLE_PER_HOUR:
+        text: MOLE_PER_HOUR
+        description: Moles per hour
+        annotations:
+          symbol:
+            tag: symbol
+            value: mol/h
+          conversion_to_mol_per_s:
+            tag: conversion_to_mol_per_s
+            value: '0.000277778'
+      KILOMOLE_PER_HOUR:
+        text: KILOMOLE_PER_HOUR
+        description: Kilomoles per hour
+        annotations:
+          symbol:
+            tag: symbol
+            value: kmol/h
+          conversion_to_mol_per_s:
+            tag: conversion_to_mol_per_s
+            value: '0.277778'
+      KILOMOLE_PER_SECOND:
+        text: KILOMOLE_PER_SECOND
+        description: Kilomoles per second
+        annotations:
+          symbol:
+            tag: symbol
+            value: kmol/s
+          conversion_to_mol_per_s:
+            tag: conversion_to_mol_per_s
+            value: '1000'
+  VolumetricFlowRateUnitEnum:
+    name: VolumetricFlowRateUnitEnum
+    definition_uri: https://w3id.org/valuesets/VolumetricFlowRateUnitEnum
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Units of volumetric flow rate (volume per unit time)
+    title: Volumetric Flow Rate Unit
+    from_schema: https://w3id.org/valuesets/units/measurements
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      CUBIC_METER_PER_SECOND:
+        text: CUBIC_METER_PER_SECOND
+        description: Cubic meters per second (SI)
+        annotations:
+          symbol:
+            tag: symbol
+            value: m3/s
+          system:
+            tag: system
+            value: SI
+      CUBIC_METER_PER_HOUR:
+        text: CUBIC_METER_PER_HOUR
+        description: Cubic meters per hour
+        annotations:
+          symbol:
+            tag: symbol
+            value: m3/h
+          conversion_to_m3_per_s:
+            tag: conversion_to_m3_per_s
+            value: '0.000277778'
+      LITER_PER_SECOND:
+        text: LITER_PER_SECOND
+        description: Liters per second
+        annotations:
+          symbol:
+            tag: symbol
+            value: L/s
+          conversion_to_m3_per_s:
+            tag: conversion_to_m3_per_s
+            value: '0.001'
+      LITER_PER_MINUTE:
+        text: LITER_PER_MINUTE
+        description: Liters per minute
+        annotations:
+          symbol:
+            tag: symbol
+            value: L/min
+          conversion_to_m3_per_s:
+            tag: conversion_to_m3_per_s
+            value: '1.66667e-5'
+      GALLON_PER_MINUTE:
+        text: GALLON_PER_MINUTE
+        description: US gallons per minute
+        annotations:
+          symbol:
+            tag: symbol
+            value: gpm
+          conversion_to_m3_per_s:
+            tag: conversion_to_m3_per_s
+            value: '6.30902e-5'
+          system:
+            tag: system
+            value: US
+      CUBIC_FOOT_PER_MINUTE:
+        text: CUBIC_FOOT_PER_MINUTE
+        description: Cubic feet per minute
+        annotations:
+          symbol:
+            tag: symbol
+            value: cfm
+          conversion_to_m3_per_s:
+            tag: conversion_to_m3_per_s
+            value: '0.000471947'
+          system:
+            tag: system
+            value: imperial
   QuantityKindEnum:
     name: QuantityKindEnum
     definition_uri: https://w3id.org/valuesets/QuantityKindEnum
@@ -57728,6 +60449,148 @@ enums:
         text: ARCHIVED
         description: No longer actively maintained
         title: Archived
+  SystemLifeCycleProcess15288:
+    name: SystemLifeCycleProcess15288
+    definition_uri: https://w3id.org/valuesets/SystemLifeCycleProcess15288
+    conforms_to: ISO/IEC/IEEE 15288:2015
+    instantiates:
+    - valuesets_meta:ReferenceEnumDefinition
+    description: The 30 system life cycle processes grouped by ISO/IEC/IEEE 15288:2015.
+    title: ISO/IEC/IEEE 15288 System Life Cycle Process
+    from_schema: https://w3id.org/valuesets/computing/systems_engineering
+    source: https://www.iso.org/standard/63711.html
+    status: STANDARD
+    permissible_values:
+      ACQUISITION:
+        text: ACQUISITION
+        title: Acquisition Process
+      SUPPLY:
+        text: SUPPLY
+        title: Supply Process
+      LIFE_CYCLE_MODEL_MANAGEMENT:
+        text: LIFE_CYCLE_MODEL_MANAGEMENT
+        title: Life Cycle Model Management Process
+      INFRASTRUCTURE_MANAGEMENT:
+        text: INFRASTRUCTURE_MANAGEMENT
+        title: Infrastructure Management Process
+      PORTFOLIO_MANAGEMENT:
+        text: PORTFOLIO_MANAGEMENT
+        title: Portfolio Management Process
+      HUMAN_RESOURCE_MANAGEMENT:
+        text: HUMAN_RESOURCE_MANAGEMENT
+        title: Human Resource Management Process
+      QUALITY_MANAGEMENT:
+        text: QUALITY_MANAGEMENT
+        title: Quality Management Process
+      PROJECT_PLANNING:
+        text: PROJECT_PLANNING
+        title: Project Planning Process
+      PROJECT_ASSESSMENT_AND_CONTROL:
+        text: PROJECT_ASSESSMENT_AND_CONTROL
+        title: Project Assessment and Control Process
+      DECISION_MANAGEMENT:
+        text: DECISION_MANAGEMENT
+        title: Decision Management Process
+      RISK_MANAGEMENT:
+        text: RISK_MANAGEMENT
+        title: Risk Management Process
+      CONFIGURATION_MANAGEMENT:
+        text: CONFIGURATION_MANAGEMENT
+        title: Configuration Management Process
+      INFORMATION_MANAGEMENT:
+        text: INFORMATION_MANAGEMENT
+        title: Information Management Process
+      MEASUREMENT:
+        text: MEASUREMENT
+        title: Measurement Process
+      QUALITY_ASSURANCE:
+        text: QUALITY_ASSURANCE
+        title: Quality Assurance Process
+      KNOWLEDGE_MANAGEMENT:
+        text: KNOWLEDGE_MANAGEMENT
+        title: Knowledge Management Process
+      BUSINESS_OR_MISSION_ANALYSIS:
+        text: BUSINESS_OR_MISSION_ANALYSIS
+        title: Business or Mission Analysis Process
+      STAKEHOLDER_NEEDS_AND_REQUIREMENTS_DEFINITION:
+        text: STAKEHOLDER_NEEDS_AND_REQUIREMENTS_DEFINITION
+        title: Stakeholder Needs and Requirements Definition Process
+      SYSTEM_REQUIREMENTS_DEFINITION:
+        text: SYSTEM_REQUIREMENTS_DEFINITION
+        title: System Requirements Definition Process
+      ARCHITECTURE_DEFINITION:
+        text: ARCHITECTURE_DEFINITION
+        title: Architecture Definition Process
+      DESIGN_DEFINITION:
+        text: DESIGN_DEFINITION
+        title: Design Definition Process
+      SYSTEM_ANALYSIS:
+        text: SYSTEM_ANALYSIS
+        title: System Analysis Process
+      IMPLEMENTATION:
+        text: IMPLEMENTATION
+        title: Implementation Process
+      INTEGRATION:
+        text: INTEGRATION
+        title: Integration Process
+      VERIFICATION:
+        text: VERIFICATION
+        title: Verification Process
+      TRANSITION:
+        text: TRANSITION
+        title: Transition Process
+      VALIDATION:
+        text: VALIDATION
+        title: Validation Process
+      OPERATION:
+        text: OPERATION
+        title: Operation Process
+      MAINTENANCE:
+        text: MAINTENANCE
+        title: Maintenance Process
+      DISPOSAL:
+        text: DISPOSAL
+        title: Disposal Process
+  VerificationValidationProcessIEEE1012:
+    name: VerificationValidationProcessIEEE1012
+    definition_uri: https://w3id.org/valuesets/VerificationValidationProcessIEEE1012
+    conforms_to: IEEE 1012-2016
+    instantiates:
+    - valuesets_meta:ReferenceEnumDefinition
+    description: Verification and validation processes applied across the system,
+      software, and hardware life cycle.
+    title: IEEE 1012 Verification and Validation Process
+    from_schema: https://w3id.org/valuesets/computing/verification_validation_ieee_1012
+    source: https://standards.ieee.org/standard/1012-2016.html
+    status: STANDARD
+    permissible_values:
+      CONCEPT_AND_REQUIREMENTS_V_AND_V:
+        text: CONCEPT_AND_REQUIREMENTS_V_AND_V
+        title: Concept and Requirements Verification and Validation
+      ARCHITECTURE_AND_DESIGN_V_AND_V:
+        text: ARCHITECTURE_AND_DESIGN_V_AND_V
+        title: Architecture and Design Verification and Validation
+      IMPLEMENTATION_V_AND_V:
+        text: IMPLEMENTATION_V_AND_V
+        title: Implementation Verification and Validation
+      INTEGRATION_V_AND_V:
+        text: INTEGRATION_V_AND_V
+        title: Integration Verification and Validation
+      QUALIFICATION_TESTING:
+        text: QUALIFICATION_TESTING
+        title: Qualification Testing
+      INSTALLATION_AND_CHECKOUT:
+        text: INSTALLATION_AND_CHECKOUT
+        title: Installation and Checkout Verification and Validation
+      OPERATION_V_AND_V:
+        text: OPERATION_V_AND_V
+        title: Operation Verification and Validation
+      MAINTENANCE_V_AND_V:
+        text: MAINTENANCE_V_AND_V
+        title: Maintenance Verification and Validation
+      DISPOSAL_V_AND_V:
+        text: DISPOSAL_V_AND_V
+        title: Disposal Verification and Validation
   OWLProfileEnum:
     name: OWLProfileEnum
     definition_uri: https://w3id.org/valuesets/OWLProfileEnum
@@ -76283,6 +79146,126 @@ slots:
     from_schema: https://w3id.org/valuesets/bioprocessing/biomanufacturing
     slot_uri: valuesets:bioprocess_optimization
     range: BioprocessOptimizationType
+  unit_operation_type:
+    name: unit_operation_type
+    definition_uri: https://w3id.org/valuesets/unit_operation_type
+    description: The type of unit operation performed at a process step
+    from_schema: https://w3id.org/valuesets/process_engineering/unit_operations
+    slot_uri: valuesets:unit_operation_type
+    range: UnitOperationType
+  process_equipment_type:
+    name: process_equipment_type
+    definition_uri: https://w3id.org/valuesets/process_equipment_type
+    description: The type of physical equipment implementing a process step
+    from_schema: https://w3id.org/valuesets/process_engineering/unit_operations
+    slot_uri: valuesets:process_equipment_type
+    range: ProcessEquipmentType
+  process_stream_role:
+    name: process_stream_role
+    definition_uri: https://w3id.org/valuesets/process_stream_role
+    description: The role a process stream plays in a flowsheet
+    from_schema: https://w3id.org/valuesets/process_engineering/process_streams
+    slot_uri: valuesets:process_stream_role
+    range: ProcessStreamRole
+  process_stream_phase:
+    name: process_stream_phase
+    definition_uri: https://w3id.org/valuesets/process_stream_phase
+    description: The physical phase state of a process stream
+    from_schema: https://w3id.org/valuesets/process_engineering/process_streams
+    slot_uri: valuesets:process_stream_phase
+    range: ProcessStreamPhase
+  utility_type:
+    name: utility_type
+    definition_uri: https://w3id.org/valuesets/utility_type
+    description: The type of plant utility supplied to or produced by a process
+    from_schema: https://w3id.org/valuesets/process_engineering/process_streams
+    slot_uri: valuesets:utility_type
+    range: UtilityType
+  process_industry_category:
+    name: process_industry_category
+    definition_uri: https://w3id.org/valuesets/process_industry_category
+    description: The process manufacturing sector a process belongs to
+    from_schema: https://w3id.org/valuesets/process_engineering/process_industries
+    slot_uri: valuesets:process_industry_category
+    range: ProcessIndustryCategory
+  process_operation_mode:
+    name: process_operation_mode
+    definition_uri: https://w3id.org/valuesets/process_operation_mode
+    description: The temporal operating mode of a process
+    from_schema: https://w3id.org/valuesets/process_engineering/process_industries
+    slot_uri: valuesets:process_operation_mode
+    range: ProcessOperationMode
+  equation_of_state_model:
+    name: equation_of_state_model
+    definition_uri: https://w3id.org/valuesets/equation_of_state_model
+    description: The equation of state used for fugacity / PVT property estimation
+    from_schema: https://w3id.org/valuesets/process_engineering/thermodynamics
+    slot_uri: valuesets:equation_of_state_model
+    range: EquationOfStateModel
+  activity_coefficient_model:
+    name: activity_coefficient_model
+    definition_uri: https://w3id.org/valuesets/activity_coefficient_model
+    description: The activity-coefficient (excess Gibbs energy) model used for the
+      liquid phase
+    from_schema: https://w3id.org/valuesets/process_engineering/thermodynamics
+    slot_uri: valuesets:activity_coefficient_model
+    range: ActivityCoefficientModel
+  thermodynamic_property_package:
+    name: thermodynamic_property_package
+    definition_uri: https://w3id.org/valuesets/thermodynamic_property_package
+    description: The named thermodynamic property package used for a simulation
+    from_schema: https://w3id.org/valuesets/process_engineering/thermodynamics
+    slot_uri: valuesets:thermodynamic_property_package
+    range: ThermodynamicPropertyPackage
+  mixing_rule_model:
+    name: mixing_rule_model
+    definition_uri: https://w3id.org/valuesets/mixing_rule_model
+    description: The mixing rule applied to an equation of state
+    from_schema: https://w3id.org/valuesets/process_engineering/thermodynamics
+    slot_uri: valuesets:mixing_rule_model
+    range: MixingRuleModel
+  poynting_correction_method:
+    name: poynting_correction_method
+    definition_uri: https://w3id.org/valuesets/poynting_correction_method
+    description: The method used for the Poynting correction factor
+    from_schema: https://w3id.org/valuesets/process_engineering/thermodynamics
+    slot_uri: valuesets:poynting_correction_method
+    range: PoyntingCorrectionMethod
+  design_simulation_method:
+    name: design_simulation_method
+    definition_uri: https://w3id.org/valuesets/design_simulation_method
+    description: The method used to design or simulate a unit operation
+    from_schema: https://w3id.org/valuesets/process_engineering/process_modeling
+    slot_uri: valuesets:design_simulation_method
+    range: DesignSimulationMethod
+  flowsheet_solution_approach:
+    name: flowsheet_solution_approach
+    definition_uri: https://w3id.org/valuesets/flowsheet_solution_approach
+    description: The overall approach used to converge a flowsheet
+    from_schema: https://w3id.org/valuesets/process_engineering/process_modeling
+    slot_uri: valuesets:flowsheet_solution_approach
+    range: FlowsheetSolutionApproach
+  process_simulator:
+    name: process_simulator
+    definition_uri: https://w3id.org/valuesets/process_simulator
+    description: The process simulation software used to model a flowsheet
+    from_schema: https://w3id.org/valuesets/process_engineering/process_modeling
+    slot_uri: valuesets:process_simulator
+    range: ProcessSimulator
+  chemical_identifier_scheme:
+    name: chemical_identifier_scheme
+    definition_uri: https://w3id.org/valuesets/chemical_identifier_scheme
+    description: The scheme/namespace of a chemical identifier
+    from_schema: https://w3id.org/valuesets/chemistry/identifiers
+    slot_uri: valuesets:chemical_identifier_scheme
+    range: ChemicalIdentifierScheme
+  currency_code:
+    name: currency_code
+    definition_uri: https://w3id.org/valuesets/currency_code
+    description: The ISO 4217 currency of a monetary amount
+    from_schema: https://w3id.org/valuesets/business/currencies
+    slot_uri: valuesets:currency_code
+    range: CurrencyCode
   length_unit:
     name: length_unit
     definition_uri: https://w3id.org/valuesets/length_unit
@@ -76353,6 +79336,27 @@ slots:
     from_schema: https://w3id.org/valuesets/units/measurements
     slot_uri: valuesets:data_size_unit
     range: DataSizeUnitEnum
+  mass_flow_rate_unit:
+    name: mass_flow_rate_unit
+    definition_uri: https://w3id.org/valuesets/mass_flow_rate_unit
+    description: Units of mass flow rate
+    from_schema: https://w3id.org/valuesets/units/measurements
+    slot_uri: valuesets:mass_flow_rate_unit
+    range: MassFlowRateUnitEnum
+  molar_flow_rate_unit:
+    name: molar_flow_rate_unit
+    definition_uri: https://w3id.org/valuesets/molar_flow_rate_unit
+    description: Units of molar flow rate
+    from_schema: https://w3id.org/valuesets/units/measurements
+    slot_uri: valuesets:molar_flow_rate_unit
+    range: MolarFlowRateUnitEnum
+  volumetric_flow_rate_unit:
+    name: volumetric_flow_rate_unit
+    definition_uri: https://w3id.org/valuesets/volumetric_flow_rate_unit
+    description: Units of volumetric flow rate
+    from_schema: https://w3id.org/valuesets/units/measurements
+    slot_uri: valuesets:volumetric_flow_rate_unit
+    range: VolumetricFlowRateUnitEnum
   quantity_kind:
     name: quantity_kind
     definition_uri: https://w3id.org/valuesets/quantity_kind
@@ -77155,7 +80159,7 @@ classes:
     class_uri: valuesets:Fake
 metamodel_version: 1.7.0
 source_file: valuesets.yaml
-source_file_date: '2026-06-23T14:42:19'
-source_file_size: 4304
-generation_date: '2026-06-23T14:43:49'
+source_file_date: '2026-07-25T17:13:31'
+source_file_size: 4621
+generation_date: '2026-07-25T17:15:11'
 

@@ -57,6 +57,26 @@
             "title": "AccessRights",
             "type": "string"
         },
+        "ActivityCoefficientModel": {
+            "description": "Excess Gibbs energy / activity-coefficient models for non-ideal liquid phases (the SFF gamma method).",
+            "enum": [
+                "IDEAL",
+                "MARGULES",
+                "VAN_LAAR",
+                "REGULAR_SOLUTION",
+                "WILSON",
+                "NRTL",
+                "ELECTROLYTE_NRTL",
+                "UNIQUAC",
+                "UNIFAC",
+                "UNIFAC_DORTMUND",
+                "FLORY_HUGGINS",
+                "PITZER",
+                "COSMO_SAC"
+            ],
+            "title": "ActivityCoefficientModel",
+            "type": "string"
+        },
         "AdditiveManufacturingEnum": {
             "description": "3D printing and additive manufacturing methods",
             "enum": [
@@ -1606,6 +1626,24 @@
             "title": "ChemicalEntity",
             "type": "string"
         },
+        "ChemicalIdentifierScheme": {
+            "description": "Schemes used to identify chemical substances, including registry numbers, line notations, structure-derived keys, and database accessions.",
+            "enum": [
+                "CAS_RN",
+                "SMILES",
+                "INCHI",
+                "INCHIKEY",
+                "IUPAC_NAME",
+                "MOLECULAR_FORMULA",
+                "PUBCHEM_CID",
+                "CHEBI_ID",
+                "KEGG_COMPOUND",
+                "DRUGBANK_ID",
+                "EC_NUMBER"
+            ],
+            "title": "ChemicalIdentifierScheme",
+            "type": "string"
+        },
         "ChipFabricationNodeType": {
             "description": "Semiconductor fabrication process node sizes defining transistor feature dimensions",
             "enum": [
@@ -2565,6 +2603,61 @@
             "title": "CurrencyChemical",
             "type": "string"
         },
+        "CurrencyCode": {
+            "description": "World currencies by ISO 4217 alpha-3 code. The numeric_code, symbol, and minor_unit (number of decimal places) annotations record the corresponding ISO 4217 attributes.",
+            "enum": [
+                "USD",
+                "EUR",
+                "JPY",
+                "GBP",
+                "CNY",
+                "AUD",
+                "CAD",
+                "CHF",
+                "HKD",
+                "SGD",
+                "SEK",
+                "NOK",
+                "DKK",
+                "NZD",
+                "KRW",
+                "INR",
+                "BRL",
+                "ZAR",
+                "RUB",
+                "MXN",
+                "TRY",
+                "PLN",
+                "THB",
+                "IDR",
+                "MYR",
+                "PHP",
+                "AED",
+                "SAR",
+                "ILS",
+                "CZK",
+                "HUF",
+                "RON",
+                "UAH",
+                "CLP",
+                "COP",
+                "ARS",
+                "EGP",
+                "NGN",
+                "KES",
+                "PKR",
+                "BDT",
+                "VND",
+                "TWD",
+                "KWD",
+                "BHD",
+                "OMR",
+                "QAR",
+                "ISK"
+            ],
+            "title": "CurrencyCode",
+            "type": "string"
+        },
         "CurrencyCodeISO4217Enum": {
             "description": "ISO 4217 currency codes",
             "enum": [
@@ -3056,6 +3149,24 @@
             "title": "DerivatizationMethod",
             "type": "string"
         },
+        "DesignSimulationMethod": {
+            "description": "Methods used to design or simulate unit operations, particularly separation columns - ranging from graphical and shortcut methods to rigorous stage-by-stage and rate-based models.",
+            "enum": [
+                "MCCABE_THIELE",
+                "PONCHON_SAVARIT",
+                "FENSKE_UNDERWOOD_GILLILAND",
+                "KREMSER",
+                "MESH",
+                "INSIDE_OUT",
+                "RATE_BASED",
+                "EQUILIBRIUM_STAGE",
+                "SHORTCUT",
+                "RIGOROUS",
+                "PINCH_ANALYSIS"
+            ],
+            "title": "DesignSimulationMethod",
+            "type": "string"
+        },
         "DetectionModeEnum": {
             "description": "Detection modes for real-time PCR instruments",
             "enum": [
@@ -3161,7 +3272,17 @@
                 "EVAPORATION",
                 "DISTILLATION",
                 "DRYING",
-                "HOMOGENIZATION"
+                "HOMOGENIZATION",
+                "CLARIFICATION",
+                "FLOCCULATION",
+                "ULTRAFILTRATION",
+                "DIAFILTRATION",
+                "TANGENTIAL_FLOW_FILTRATION",
+                "BUFFER_EXCHANGE",
+                "ADSORPTION",
+                "VIRAL_INACTIVATION",
+                "POLISHING",
+                "LYOPHILIZATION"
             ],
             "title": "DownstreamProcessEnum",
             "type": "string"
@@ -3582,6 +3703,27 @@
                 "ENDPOINT_ENZYME_ASSAY"
             ],
             "title": "EnzymologyAssayEnum",
+            "type": "string"
+        },
+        "EquationOfStateModel": {
+            "description": "Equations of state used to compute fugacity coefficients and PVT behavior of fluids in process simulation (the SFF phi method).",
+            "enum": [
+                "IDEAL_GAS",
+                "VIRIAL",
+                "REDLICH_KWONG",
+                "SOAVE_REDLICH_KWONG",
+                "PENG_ROBINSON",
+                "PENG_ROBINSON_BOSTON_MATHIAS",
+                "SRK_BOSTON_MATHIAS",
+                "LEE_KESLER_PLOCKER",
+                "BENEDICT_WEBB_RUBIN_STARLING",
+                "PREDICTIVE_SRK",
+                "PC_SAFT",
+                "CUBIC_PLUS_ASSOCIATION",
+                "GERG_2008",
+                "IAPWS_95"
+            ],
+            "title": "EquationOfStateModel",
             "type": "string"
         },
         "EthnicityOMB1997Enum": {
@@ -4062,6 +4204,16 @@
                 "MULTICOLOR"
             ],
             "title": "FlowerColorEnum",
+            "type": "string"
+        },
+        "FlowsheetSolutionApproach": {
+            "description": "The overall computational strategy used to converge a process flowsheet.",
+            "enum": [
+                "SEQUENTIAL_MODULAR",
+                "EQUATION_ORIENTED",
+                "SIMULTANEOUS_MODULAR"
+            ],
+            "title": "FlowsheetSolutionApproach",
             "type": "string"
         },
         "FoodColoringEnum": {
@@ -6537,6 +6689,19 @@
             "title": "MassErrorUnit",
             "type": "string"
         },
+        "MassFlowRateUnitEnum": {
+            "description": "Units of mass flow rate (mass per unit time)",
+            "enum": [
+                "KILOGRAM_PER_SECOND",
+                "KILOGRAM_PER_HOUR",
+                "GRAM_PER_SECOND",
+                "TONNE_PER_HOUR",
+                "TONNE_PER_DAY",
+                "POUND_PER_HOUR"
+            ],
+            "title": "MassFlowRateUnitEnum",
+            "type": "string"
+        },
         "MassSpectrometerFileFormat": {
             "description": "Standard file formats used in mass spectrometry",
             "enum": [
@@ -7045,6 +7210,30 @@
                 "CYTOKINESIS"
             ],
             "title": "MitoticPhase",
+            "type": "string"
+        },
+        "MixingRuleModel": {
+            "description": "Mixing rules applied to equation-of-state parameters for mixtures (the SFF mixture method).",
+            "enum": [
+                "IDEAL",
+                "VAN_DER_WAALS",
+                "HURON_VIDAL",
+                "MODIFIED_HURON_VIDAL",
+                "WONG_SANDLER",
+                "PSRK_MIXING"
+            ],
+            "title": "MixingRuleModel",
+            "type": "string"
+        },
+        "MolarFlowRateUnitEnum": {
+            "description": "Units of molar flow rate (amount of substance per unit time)",
+            "enum": [
+                "MOLE_PER_SECOND",
+                "MOLE_PER_HOUR",
+                "KILOMOLE_PER_HOUR",
+                "KILOMOLE_PER_SECOND"
+            ],
+            "title": "MolarFlowRateUnitEnum",
             "type": "string"
         },
         "MolecularFunction": {
@@ -8317,6 +8506,15 @@
             "title": "PowerUnit",
             "type": "string"
         },
+        "PoyntingCorrectionMethod": {
+            "description": "Treatment of the Poynting correction factor accounting for the effect of pressure on liquid fugacity (the SFF PCF method).",
+            "enum": [
+                "NONE",
+                "POYNTING"
+            ],
+            "title": "PoyntingCorrectionMethod",
+            "type": "string"
+        },
         "PredictionOutcomeType": {
             "description": "",
             "enum": [
@@ -8455,6 +8653,55 @@
             "title": "PriorityLevelEnum",
             "type": "string"
         },
+        "ProcessEquipmentType": {
+            "description": "Physical equipment / asset types used in process plants. These correspond to the nodes of a process flowsheet and complement UnitOperationType (which describes the function performed). Grouped via the equipment_class annotation.",
+            "enum": [
+                "STORAGE_TANK",
+                "PRESSURE_VESSEL",
+                "HOPPER",
+                "FLASH_DRUM",
+                "KNOCKOUT_DRUM",
+                "REACTOR",
+                "BIOREACTOR",
+                "FERMENTER",
+                "DISTILLATION_COLUMN",
+                "ABSORPTION_COLUMN",
+                "STRIPPING_COLUMN",
+                "EXTRACTION_COLUMN",
+                "CHROMATOGRAPHY_COLUMN",
+                "SCRUBBER",
+                "HEAT_EXCHANGER",
+                "CONDENSER",
+                "REBOILER",
+                "EVAPORATOR",
+                "FURNACE",
+                "BOILER",
+                "COOLING_TOWER",
+                "DRYER",
+                "CRYSTALLIZER",
+                "PUMP",
+                "COMPRESSOR",
+                "BLOWER",
+                "FAN",
+                "VALVE",
+                "CENTRIFUGE",
+                "FILTER",
+                "DECANTER",
+                "CLARIFIER",
+                "CYCLONE",
+                "HYDROCYCLONE",
+                "MEMBRANE_MODULE",
+                "SETTLER",
+                "MIXER",
+                "AGITATOR",
+                "MILL",
+                "CRUSHER",
+                "SCREEN",
+                "CONVEYOR"
+            ],
+            "title": "ProcessEquipmentType",
+            "type": "string"
+        },
         "ProcessImprovementApproachEnum": {
             "description": "Process improvement methodologies and approaches",
             "enum": [
@@ -8468,6 +8715,45 @@
                 "AGILE_PROCESS_IMPROVEMENT"
             ],
             "title": "ProcessImprovementApproachEnum",
+            "type": "string"
+        },
+        "ProcessIndustryCategory": {
+            "description": "Sectors of the process (continuous and batch) manufacturing industries. The pisces_category annotation records the corresponding top-level category in the PISCES Standard Flowsheet Format where one exists.",
+            "enum": [
+                "PETROLEUM_REFINING",
+                "PETROCHEMICAL",
+                "BULK_CHEMICAL",
+                "SPECIALTY_CHEMICAL",
+                "AGROCHEMICAL",
+                "POLYMER_AND_PLASTICS",
+                "PHARMACEUTICAL",
+                "BIOTECHNOLOGY",
+                "BIOFUEL",
+                "FOOD_AND_BEVERAGE",
+                "PULP_AND_PAPER",
+                "METALS_AND_MINING",
+                "WATER_AND_WASTEWATER_TREATMENT",
+                "POWER_GENERATION",
+                "GAS_PROCESSING",
+                "CEMENT_AND_CONSTRUCTION_MATERIALS",
+                "GLASS_AND_CERAMICS",
+                "TEXTILE",
+                "COSMETICS_AND_PERSONAL_CARE",
+                "NUCLEAR_FUEL",
+                "SEMICONDUCTOR"
+            ],
+            "title": "ProcessIndustryCategory",
+            "type": "string"
+        },
+        "ProcessOperationMode": {
+            "description": "The temporal mode in which a process or unit operation is run.",
+            "enum": [
+                "BATCH",
+                "CONTINUOUS",
+                "SEMI_BATCH",
+                "SEMI_CONTINUOUS"
+            ],
+            "title": "ProcessOperationMode",
             "type": "string"
         },
         "ProcessPerformanceMetric": {
@@ -8494,6 +8780,66 @@
                 "MICROFLUIDIC_SCALE"
             ],
             "title": "ProcessScaleEnum",
+            "type": "string"
+        },
+        "ProcessSimulator": {
+            "description": "Process simulation software packages used to model chemical and biochemical process flowsheets.",
+            "enum": [
+                "ASPEN_PLUS",
+                "ASPEN_HYSYS",
+                "ASPEN_CUSTOM_MODELER",
+                "UNISIM_DESIGN",
+                "PRO_II",
+                "AVEVA_PROCESS_SIMULATION",
+                "CHEMCAD",
+                "DWSIM",
+                "COCO_SIMULATOR",
+                "GPROMS",
+                "PROSIMPLUS",
+                "PETRO_SIM",
+                "BIOSTEAM",
+                "SUPERPRO_DESIGNER",
+                "IDAES",
+                "CAPE_OPEN"
+            ],
+            "title": "ProcessSimulator",
+            "type": "string"
+        },
+        "ProcessStreamPhase": {
+            "description": "The physical phase or phase combination of a process stream. For single-phase fundamental states see also StateOfMatterEnum in the physics module; this enum adds the multiphase combinations common in process engineering.",
+            "enum": [
+                "GAS",
+                "LIQUID",
+                "SOLID",
+                "SUPERCRITICAL",
+                "VAPOR_LIQUID",
+                "LIQUID_LIQUID",
+                "VAPOR_LIQUID_LIQUID",
+                "SLURRY",
+                "GAS_SOLID",
+                "MULTIPHASE"
+            ],
+            "title": "ProcessStreamPhase",
+            "type": "string"
+        },
+        "ProcessStreamRole": {
+            "description": "The functional role of a stream within a process flowsheet, independent of its chemical composition.",
+            "enum": [
+                "FEED",
+                "RAW_MATERIAL",
+                "PRODUCT",
+                "BYPRODUCT",
+                "INTERMEDIATE",
+                "RECYCLE",
+                "PURGE",
+                "BLEED",
+                "MAKEUP",
+                "WASTE",
+                "EFFLUENT",
+                "EMISSION",
+                "UTILITY"
+            ],
+            "title": "ProcessStreamRole",
             "type": "string"
         },
         "ProcessingStatus": {
@@ -10561,6 +10907,43 @@
             "title": "SynthesisMethodEnum",
             "type": "string"
         },
+        "SystemLifeCycleProcess15288": {
+            "description": "The 30 system life cycle processes grouped by ISO/IEC/IEEE 15288:2015.",
+            "enum": [
+                "ACQUISITION",
+                "SUPPLY",
+                "LIFE_CYCLE_MODEL_MANAGEMENT",
+                "INFRASTRUCTURE_MANAGEMENT",
+                "PORTFOLIO_MANAGEMENT",
+                "HUMAN_RESOURCE_MANAGEMENT",
+                "QUALITY_MANAGEMENT",
+                "PROJECT_PLANNING",
+                "PROJECT_ASSESSMENT_AND_CONTROL",
+                "DECISION_MANAGEMENT",
+                "RISK_MANAGEMENT",
+                "CONFIGURATION_MANAGEMENT",
+                "INFORMATION_MANAGEMENT",
+                "MEASUREMENT",
+                "QUALITY_ASSURANCE",
+                "KNOWLEDGE_MANAGEMENT",
+                "BUSINESS_OR_MISSION_ANALYSIS",
+                "STAKEHOLDER_NEEDS_AND_REQUIREMENTS_DEFINITION",
+                "SYSTEM_REQUIREMENTS_DEFINITION",
+                "ARCHITECTURE_DEFINITION",
+                "DESIGN_DEFINITION",
+                "SYSTEM_ANALYSIS",
+                "IMPLEMENTATION",
+                "INTEGRATION",
+                "VERIFICATION",
+                "TRANSITION",
+                "VALIDATION",
+                "OPERATION",
+                "MAINTENANCE",
+                "DISPOSAL"
+            ],
+            "title": "SystemLifeCycleProcess15288",
+            "type": "string"
+        },
         "TailingCharacterizationType": {
             "description": "Types of measurements and analyses used to characterize mine tailings and other mineral processing residues for resource recovery potential",
             "enum": [
@@ -10729,6 +11112,30 @@
                 "INTERNAL_ENERGY"
             ],
             "title": "ThermodynamicParameterEnum",
+            "type": "string"
+        },
+        "ThermodynamicPropertyPackage": {
+            "description": "Named property methods/packages offered by process simulators, typically combining an equation of state and/or an activity-coefficient model. Used where a single package label rather than separate gamma/phi methods is recorded.",
+            "enum": [
+                "IDEAL",
+                "NRTL",
+                "NRTL_RK",
+                "UNIQUAC",
+                "UNIFAC",
+                "WILSON",
+                "VAN_LAAR",
+                "PENG_ROBINSON",
+                "SOAVE_REDLICH_KWONG",
+                "ELECTROLYTE_NRTL",
+                "PITZER",
+                "CHAO_SEADER",
+                "GRAYSON_STREED",
+                "BRAUN_K10",
+                "PC_SAFT",
+                "STEAM_TABLES",
+                "API_SOUR"
+            ],
+            "title": "ThermodynamicPropertyPackage",
             "type": "string"
         },
         "TimeOfDay": {
@@ -11426,6 +11833,66 @@
             "title": "UniProtSpeciesCode",
             "type": "string"
         },
+        "UnitOperationType": {
+            "description": "Fundamental chemical and process engineering unit operations - the discrete processing steps that transform, separate, combine, or move process material. Grouped (via the unit_operation_class annotation) into momentum transfer, heat transfer, mass-transfer separations, mechanical separations, solids processing, reaction, and storage.",
+            "enum": [
+                "PUMPING",
+                "COMPRESSION",
+                "GAS_MOVING",
+                "FLOW_SPLITTING",
+                "STREAM_MIXING",
+                "HEAT_EXCHANGE",
+                "HEATING",
+                "COOLING",
+                "CONDENSATION",
+                "EVAPORATION",
+                "DISTILLATION",
+                "ABSORPTION",
+                "STRIPPING",
+                "LIQUID_LIQUID_EXTRACTION",
+                "LEACHING",
+                "ADSORPTION",
+                "ION_EXCHANGE",
+                "CHROMATOGRAPHY",
+                "CRYSTALLIZATION",
+                "PRECIPITATION",
+                "DRYING",
+                "FREEZE_DRYING",
+                "HUMIDIFICATION",
+                "MEMBRANE_SEPARATION",
+                "MICROFILTRATION",
+                "ULTRAFILTRATION",
+                "NANOFILTRATION",
+                "REVERSE_OSMOSIS",
+                "DIALYSIS",
+                "ELECTRODIALYSIS",
+                "PERVAPORATION",
+                "FILTRATION",
+                "CENTRIFUGATION",
+                "SEDIMENTATION",
+                "CLARIFICATION",
+                "FLOTATION",
+                "FLOCCULATION",
+                "CYCLONE_SEPARATION",
+                "SCREENING",
+                "GAS_LIQUID_SEPARATION",
+                "SIZE_REDUCTION",
+                "SIZE_ENLARGEMENT",
+                "MIXING",
+                "SOLIDS_CONVEYING",
+                "CHEMICAL_REACTION",
+                "FERMENTATION",
+                "COMBUSTION",
+                "GASIFICATION",
+                "PYROLYSIS",
+                "ELECTROLYSIS",
+                "NEUTRALIZATION",
+                "PURIFICATION",
+                "STORAGE"
+            ],
+            "title": "UnitOperationType",
+            "type": "string"
+        },
         "UpdateFrequency": {
             "description": "The frequency at which a dataset is updated with new data.\nBased on Dublin Core Collection Description Frequency Vocabulary.",
             "enum": [
@@ -11459,6 +11926,31 @@
                 "WEAPONS_GRADE"
             ],
             "title": "UraniumEnrichmentLevelEnum",
+            "type": "string"
+        },
+        "UtilityType": {
+            "description": "Common plant utilities consumed or produced by process unit operations, used for energy and mass balance accounting on a flowsheet.",
+            "enum": [
+                "STEAM",
+                "LOW_PRESSURE_STEAM",
+                "MEDIUM_PRESSURE_STEAM",
+                "HIGH_PRESSURE_STEAM",
+                "COOLING_WATER",
+                "CHILLED_WATER",
+                "REFRIGERANT",
+                "HOT_OIL",
+                "BRINE",
+                "ELECTRICITY",
+                "PROCESS_WATER",
+                "DEMINERALIZED_WATER",
+                "NATURAL_GAS",
+                "FUEL_GAS",
+                "COMPRESSED_AIR",
+                "INSTRUMENT_AIR",
+                "NITROGEN",
+                "FLARE"
+            ],
+            "title": "UtilityType",
             "type": "string"
         },
         "VaccinationPeriodicityEnum": {
@@ -11535,6 +12027,22 @@
                 "SPOT_SUPPLIER"
             ],
             "title": "VendorCategoryEnum",
+            "type": "string"
+        },
+        "VerificationValidationProcessIEEE1012": {
+            "description": "Verification and validation processes applied across the system, software, and hardware life cycle.",
+            "enum": [
+                "CONCEPT_AND_REQUIREMENTS_V_AND_V",
+                "ARCHITECTURE_AND_DESIGN_V_AND_V",
+                "IMPLEMENTATION_V_AND_V",
+                "INTEGRATION_V_AND_V",
+                "QUALIFICATION_TESTING",
+                "INSTALLATION_AND_CHECKOUT",
+                "OPERATION_V_AND_V",
+                "MAINTENANCE_V_AND_V",
+                "DISPOSAL_V_AND_V"
+            ],
+            "title": "VerificationValidationProcessIEEE1012",
             "type": "string"
         },
         "ViabilityEnum": {
@@ -11668,6 +12176,19 @@
                 "TEASPOON"
             ],
             "title": "VolumeUnitEnum",
+            "type": "string"
+        },
+        "VolumetricFlowRateUnitEnum": {
+            "description": "Units of volumetric flow rate (volume per unit time)",
+            "enum": [
+                "CUBIC_METER_PER_SECOND",
+                "CUBIC_METER_PER_HOUR",
+                "LITER_PER_SECOND",
+                "LITER_PER_MINUTE",
+                "GALLON_PER_MINUTE",
+                "CUBIC_FOOT_PER_MINUTE"
+            ],
+            "title": "VolumetricFlowRateUnitEnum",
             "type": "string"
         },
         "WasteDisposalMethodEnum": {
