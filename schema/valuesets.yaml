@@ -134,6 +134,8 @@ imports:
 - units/quantity_kinds
 - computing/file_formats
 - computing/maturity_levels
+- computing/systems_engineering
+- computing/verification_validation_ieee_1012
 - computing/ontologies
 - computing/croissant_ml
 - business/organizational_structures
@@ -60447,6 +60449,148 @@ enums:
         text: ARCHIVED
         description: No longer actively maintained
         title: Archived
+  SystemLifeCycleProcess15288:
+    name: SystemLifeCycleProcess15288
+    definition_uri: https://w3id.org/valuesets/SystemLifeCycleProcess15288
+    conforms_to: ISO/IEC/IEEE 15288:2015
+    instantiates:
+    - valuesets_meta:ReferenceEnumDefinition
+    description: The 30 system life cycle processes grouped by ISO/IEC/IEEE 15288:2015.
+    title: ISO/IEC/IEEE 15288 System Life Cycle Process
+    from_schema: https://w3id.org/valuesets/computing/systems_engineering
+    source: https://www.iso.org/standard/63711.html
+    status: STANDARD
+    permissible_values:
+      ACQUISITION:
+        text: ACQUISITION
+        title: Acquisition Process
+      SUPPLY:
+        text: SUPPLY
+        title: Supply Process
+      LIFE_CYCLE_MODEL_MANAGEMENT:
+        text: LIFE_CYCLE_MODEL_MANAGEMENT
+        title: Life Cycle Model Management Process
+      INFRASTRUCTURE_MANAGEMENT:
+        text: INFRASTRUCTURE_MANAGEMENT
+        title: Infrastructure Management Process
+      PORTFOLIO_MANAGEMENT:
+        text: PORTFOLIO_MANAGEMENT
+        title: Portfolio Management Process
+      HUMAN_RESOURCE_MANAGEMENT:
+        text: HUMAN_RESOURCE_MANAGEMENT
+        title: Human Resource Management Process
+      QUALITY_MANAGEMENT:
+        text: QUALITY_MANAGEMENT
+        title: Quality Management Process
+      PROJECT_PLANNING:
+        text: PROJECT_PLANNING
+        title: Project Planning Process
+      PROJECT_ASSESSMENT_AND_CONTROL:
+        text: PROJECT_ASSESSMENT_AND_CONTROL
+        title: Project Assessment and Control Process
+      DECISION_MANAGEMENT:
+        text: DECISION_MANAGEMENT
+        title: Decision Management Process
+      RISK_MANAGEMENT:
+        text: RISK_MANAGEMENT
+        title: Risk Management Process
+      CONFIGURATION_MANAGEMENT:
+        text: CONFIGURATION_MANAGEMENT
+        title: Configuration Management Process
+      INFORMATION_MANAGEMENT:
+        text: INFORMATION_MANAGEMENT
+        title: Information Management Process
+      MEASUREMENT:
+        text: MEASUREMENT
+        title: Measurement Process
+      QUALITY_ASSURANCE:
+        text: QUALITY_ASSURANCE
+        title: Quality Assurance Process
+      KNOWLEDGE_MANAGEMENT:
+        text: KNOWLEDGE_MANAGEMENT
+        title: Knowledge Management Process
+      BUSINESS_OR_MISSION_ANALYSIS:
+        text: BUSINESS_OR_MISSION_ANALYSIS
+        title: Business or Mission Analysis Process
+      STAKEHOLDER_NEEDS_AND_REQUIREMENTS_DEFINITION:
+        text: STAKEHOLDER_NEEDS_AND_REQUIREMENTS_DEFINITION
+        title: Stakeholder Needs and Requirements Definition Process
+      SYSTEM_REQUIREMENTS_DEFINITION:
+        text: SYSTEM_REQUIREMENTS_DEFINITION
+        title: System Requirements Definition Process
+      ARCHITECTURE_DEFINITION:
+        text: ARCHITECTURE_DEFINITION
+        title: Architecture Definition Process
+      DESIGN_DEFINITION:
+        text: DESIGN_DEFINITION
+        title: Design Definition Process
+      SYSTEM_ANALYSIS:
+        text: SYSTEM_ANALYSIS
+        title: System Analysis Process
+      IMPLEMENTATION:
+        text: IMPLEMENTATION
+        title: Implementation Process
+      INTEGRATION:
+        text: INTEGRATION
+        title: Integration Process
+      VERIFICATION:
+        text: VERIFICATION
+        title: Verification Process
+      TRANSITION:
+        text: TRANSITION
+        title: Transition Process
+      VALIDATION:
+        text: VALIDATION
+        title: Validation Process
+      OPERATION:
+        text: OPERATION
+        title: Operation Process
+      MAINTENANCE:
+        text: MAINTENANCE
+        title: Maintenance Process
+      DISPOSAL:
+        text: DISPOSAL
+        title: Disposal Process
+  VerificationValidationProcessIEEE1012:
+    name: VerificationValidationProcessIEEE1012
+    definition_uri: https://w3id.org/valuesets/VerificationValidationProcessIEEE1012
+    conforms_to: IEEE 1012-2016
+    instantiates:
+    - valuesets_meta:ReferenceEnumDefinition
+    description: Verification and validation processes applied across the system,
+      software, and hardware life cycle.
+    title: IEEE 1012 Verification and Validation Process
+    from_schema: https://w3id.org/valuesets/computing/verification_validation_ieee_1012
+    source: https://standards.ieee.org/standard/1012-2016.html
+    status: STANDARD
+    permissible_values:
+      CONCEPT_AND_REQUIREMENTS_V_AND_V:
+        text: CONCEPT_AND_REQUIREMENTS_V_AND_V
+        title: Concept and Requirements Verification and Validation
+      ARCHITECTURE_AND_DESIGN_V_AND_V:
+        text: ARCHITECTURE_AND_DESIGN_V_AND_V
+        title: Architecture and Design Verification and Validation
+      IMPLEMENTATION_V_AND_V:
+        text: IMPLEMENTATION_V_AND_V
+        title: Implementation Verification and Validation
+      INTEGRATION_V_AND_V:
+        text: INTEGRATION_V_AND_V
+        title: Integration Verification and Validation
+      QUALIFICATION_TESTING:
+        text: QUALIFICATION_TESTING
+        title: Qualification Testing
+      INSTALLATION_AND_CHECKOUT:
+        text: INSTALLATION_AND_CHECKOUT
+        title: Installation and Checkout Verification and Validation
+      OPERATION_V_AND_V:
+        text: OPERATION_V_AND_V
+        title: Operation Verification and Validation
+      MAINTENANCE_V_AND_V:
+        text: MAINTENANCE_V_AND_V
+        title: Maintenance Verification and Validation
+      DISPOSAL_V_AND_V:
+        text: DISPOSAL_V_AND_V
+        title: Disposal Verification and Validation
   OWLProfileEnum:
     name: OWLProfileEnum
     definition_uri: https://w3id.org/valuesets/OWLProfileEnum
@@ -80015,7 +80159,7 @@ classes:
     class_uri: valuesets:Fake
 metamodel_version: 1.7.0
 source_file: valuesets.yaml
-source_file_date: '2026-06-25T21:39:06'
-source_file_size: 4543
-generation_date: '2026-06-25T21:40:35'
+source_file_date: '2026-07-25T17:13:32'
+source_file_size: 4621
+generation_date: '2026-07-25T17:15:02'
 
