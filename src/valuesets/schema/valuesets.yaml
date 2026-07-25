@@ -121,6 +121,8 @@ imports:
 - units/quantity_kinds
 - computing/file_formats
 - computing/maturity_levels
+- computing/systems_engineering
+- computing/verification_validation_ieee_1012
 - computing/ontologies
 - computing/croissant_ml
 - business/organizational_structures

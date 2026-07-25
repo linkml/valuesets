@@ -1,0 +1,39 @@
+name: verification_validation_ieee_1012
+title: IEEE 1012 Verification and Validation Processes
+description: Value sets for system, software, and hardware verification and validation activities defined by IEEE 1012.
+id: https://w3id.org/valuesets/computing/verification_validation_ieee_1012
+imports:
+- linkml:types
+prefixes:
+  valuesets: https://w3id.org/valuesets/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+default_prefix: valuesets
+
+enums:
+  VerificationValidationProcessIEEE1012:
+    title: IEEE 1012 Verification and Validation Process
+    description: Verification and validation processes applied across the system, software, and hardware life cycle.
+    status: STANDARD
+    instantiates:
+    - valuesets_meta:ReferenceEnumDefinition
+    source: https://standards.ieee.org/standard/1012-2016.html
+    conforms_to: IEEE 1012-2016
+    permissible_values:
+      CONCEPT_AND_REQUIREMENTS_V_AND_V:
+        title: Concept and Requirements Verification and Validation
+      ARCHITECTURE_AND_DESIGN_V_AND_V:
+        title: Architecture and Design Verification and Validation
+      IMPLEMENTATION_V_AND_V:
+        title: Implementation Verification and Validation
+      INTEGRATION_V_AND_V:
+        title: Integration Verification and Validation
+      QUALIFICATION_TESTING:
+        title: Qualification Testing
+      INSTALLATION_AND_CHECKOUT:
+        title: Installation and Checkout Verification and Validation
+      OPERATION_V_AND_V:
+        title: Operation Verification and Validation
+      MAINTENANCE_V_AND_V:
+        title: Maintenance Verification and Validation
+      DISPOSAL_V_AND_V:
+        title: Disposal Verification and Validation
