@@ -1,0 +1,81 @@
+name: systems_engineering
+title: Systems and Software Engineering Life Cycle Processes
+description: Value sets for the system life cycle processes defined by ISO/IEC/IEEE 15288.
+id: https://w3id.org/valuesets/computing/systems_engineering
+imports:
+- linkml:types
+prefixes:
+  valuesets: https://w3id.org/valuesets/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+default_prefix: valuesets
+
+enums:
+  SystemLifeCycleProcess15288:
+    title: ISO/IEC/IEEE 15288 System Life Cycle Process
+    description: The 30 system life cycle processes grouped by ISO/IEC/IEEE 15288:2015.
+    status: STANDARD
+    instantiates:
+    - valuesets_meta:ReferenceEnumDefinition
+    source: https://www.iso.org/standard/63711.html
+    conforms_to: ISO/IEC/IEEE 15288:2015
+    permissible_values:
+      ACQUISITION:
+        title: Acquisition Process
+      SUPPLY:
+        title: Supply Process
+      LIFE_CYCLE_MODEL_MANAGEMENT:
+        title: Life Cycle Model Management Process
+      INFRASTRUCTURE_MANAGEMENT:
+        title: Infrastructure Management Process
+      PORTFOLIO_MANAGEMENT:
+        title: Portfolio Management Process
+      HUMAN_RESOURCE_MANAGEMENT:
+        title: Human Resource Management Process
+      QUALITY_MANAGEMENT:
+        title: Quality Management Process
+      PROJECT_PLANNING:
+        title: Project Planning Process
+      PROJECT_ASSESSMENT_AND_CONTROL:
+        title: Project Assessment and Control Process
+      DECISION_MANAGEMENT:
+        title: Decision Management Process
+      RISK_MANAGEMENT:
+        title: Risk Management Process
+      CONFIGURATION_MANAGEMENT:
+        title: Configuration Management Process
+      INFORMATION_MANAGEMENT:
+        title: Information Management Process
+      MEASUREMENT:
+        title: Measurement Process
+      QUALITY_ASSURANCE:
+        title: Quality Assurance Process
+      KNOWLEDGE_MANAGEMENT:
+        title: Knowledge Management Process
+      BUSINESS_OR_MISSION_ANALYSIS:
+        title: Business or Mission Analysis Process
+      STAKEHOLDER_NEEDS_AND_REQUIREMENTS_DEFINITION:
+        title: Stakeholder Needs and Requirements Definition Process
+      SYSTEM_REQUIREMENTS_DEFINITION:
+        title: System Requirements Definition Process
+      ARCHITECTURE_DEFINITION:
+        title: Architecture Definition Process
+      DESIGN_DEFINITION:
+        title: Design Definition Process
+      SYSTEM_ANALYSIS:
+        title: System Analysis Process
+      IMPLEMENTATION:
+        title: Implementation Process
+      INTEGRATION:
+        title: Integration Process
+      VERIFICATION:
+        title: Verification Process
+      TRANSITION:
+        title: Transition Process
+      VALIDATION:
+        title: Validation Process
+      OPERATION:
+        title: Operation Process
+      MAINTENANCE:
+        title: Maintenance Process
+      DISPOSAL:
+        title: Disposal Process
