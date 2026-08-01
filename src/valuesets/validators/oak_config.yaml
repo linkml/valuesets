@@ -14,6 +14,7 @@ ontology_adapters:
 
   # Investigations, experiments, and protocols
   OBI: sqlite:obo:obi
+  STATO: sqlite:obo:stato
   MS: sqlite:obo:ms
   mixs:
   #ALLOTROPE: sqlite:obo:allotrope

@@ -1,0 +1,1001 @@
+name: statistical_tests
+title: Statistical Test Value Sets
+description: >-
+  Value sets for statistical hypothesis tests and closely related concepts,
+  including t-tests, ANOVA, non-parametric tests, normality and homoscedasticity
+  tests, post-hoc multiple comparison procedures, multiple testing correction
+  methods, correlation coefficients, and test tailedness. Terms are mapped to
+  STATO (the Statistical Methods Ontology) where possible, falling back to OBI
+  and NCIT.
+id: https://w3id.org/valuesets/statistics/statistical_tests
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  STATO: http://purl.obolibrary.org/obo/STATO_
+  OBI: http://purl.obolibrary.org/obo/OBI_
+  NCIT: http://purl.obolibrary.org/obo/NCIT_
+  valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+default_prefix: valuesets
+slots:
+  statistical_test:
+    description: The statistical hypothesis test applied
+    range: StatisticalTestEnum
+  t_test_type:
+    description: The variant of Student's t-test applied
+    range: TTestTypeEnum
+  normality_test:
+    description: The test used to assess whether data follow a normal distribution
+    range: NormalityTestEnum
+  homoscedasticity_test:
+    description: The test used to assess equality of variances across groups
+    range: HomoscedasticityTestEnum
+  post_hoc_test:
+    description: The post-hoc multiple comparison procedure applied after an omnibus test
+    range: PostHocTestEnum
+  multiple_testing_correction:
+    description: The method used to correct p-values for multiple testing
+    range: MultipleTestingCorrectionEnum
+  correlation_coefficient:
+    description: The correlation coefficient used to quantify association between two variables
+    range: CorrelationCoefficientEnum
+  test_tailedness:
+    description: Whether the test allocates the significance level to one or both tails
+    range: TestTailednessEnum
+  distributional_assumption:
+    description: Whether the test assumes a parametric form for the underlying distribution
+    range: DistributionalAssumptionEnum
+  comparison_objective:
+    description: The objective of a between-group comparison in a controlled trial
+    range: ComparisonObjectiveEnum
+enums:
+  StatisticalTestEnum:
+    title: Statistical Test
+    description: >-
+      Statistical hypothesis tests, drawn primarily from the descendants of
+      'statistical hypothesis test' (OBI:0000673) in STATO.
+
+      This enum deliberately mixes abstraction levels: alongside concrete tests it
+      retains STATO's grouping classes (GOODNESS_OF_FIT_TEST, HOMOSKEDASTICITY_TEST,
+      SPHERICITY_TEST, POST_HOC_ANALYSIS, NON_PARAMETRIC_TEST and similar) so that a
+      source reporting only "a test of normality was applied" can still be annotated.
+      Prefer the most specific value that the source supports, and use a grouping
+      value only when the specific test is genuinely not stated.
+
+      Several values are also repeated in the narrower enums below
+      (TTestTypeEnum, NormalityTestEnum, HomoscedasticityTestEnum, PostHocTestEnum),
+      which exist to constrain slot ranges. The duplicated meanings are intentional;
+      from_meaning() resolves per enum class.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    see_also:
+    - http://purl.obolibrary.org/obo/OBI_0000673
+    - https://obofoundry.org/ontology/stato.html
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      # --- t-tests and z-tests ---
+      STUDENTS_T_TEST:
+        title: Student's t-test
+        description: >-
+          Test in which the test statistic follows a Student's t distribution under
+          the null hypothesis; used when the population is assumed normal but the
+          sample is small
+        meaning: OBI:0000739
+        aliases:
+        - t-test
+        - t-Test
+      ONE_SAMPLE_T_TEST:
+        title: one sample t-test
+        description: >-
+          Student's t-test comparing a sample mean against a specified population
+          mean
+        meaning: STATO:0000302
+        close_mappings:
+        - NCIT:C53240
+      PAIRED_T_TEST:
+        title: paired t-test
+        description: >-
+          Student's t-test for differences between paired observations, as in a
+          repeated measures design with two measurements per subject
+        meaning: STATO:0000095
+        close_mappings:
+        - NCIT:C53232
+      TWO_SAMPLE_T_TEST_EQUAL_VARIANCE:
+        title: two sample t-test with equal variance
+        description: >-
+          Two-sample t-test comparing the means of two independent samples assumed
+          to have equal variances
+        meaning: STATO:0000303
+        aliases:
+        - independent samples t-test
+        - unpaired t-test
+        annotations:
+          note: >-
+            The bare terms "unpaired t-test" and "independent samples t-test" are
+            ambiguous: they are attached here because this is the classical
+            equal-variance form, but common software defaults to the Welch variant
+            (R's t.test, scipy.stats.ttest_ind with equal_var=False). Choose
+            TWO_SAMPLE_T_TEST_UNEQUAL_VARIANCE when the source did not assume equal
+            variances.
+      TWO_SAMPLE_T_TEST_UNEQUAL_VARIANCE:
+        title: two sample t-test with unequal variance
+        description: >-
+          Two-sample t-test used when the variances of the two populations are not
+          assumed equal
+        meaning: STATO:0000304
+        aliases:
+        - Welch's t-test
+        annotations:
+          note: >-
+            This is the default two-sample t-test in R and SciPy, so an unqualified
+            "unpaired t-test" in a methods section often means this rather than
+            TWO_SAMPLE_T_TEST_EQUAL_VARIANCE.
+      YUEN_T_TEST:
+        title: Yuen t-Test with trimmed means
+        description: >-
+          Robust two-sample t-test computed on trimmed means and winsorized
+          variances
+        meaning: STATO:0000406
+      Z_TEST:
+        title: Z-test
+        description: >-
+          Test evaluating the null hypothesis that the means of two populations are
+          equal using a normal reference distribution
+        meaning: STATO:0000052
+      ONE_SAMPLE_HOTELLING_T2_TEST:
+        title: one sample Hotelling T2 test
+        description: >-
+          Multivariate extension of the one-sample t-test comparing a vector of
+          means against a reference vector
+        meaning: STATO:0000153
+      TWO_SAMPLE_HOTELLING_T2_TEST:
+        title: two sample Hotelling T2 test
+        description: >-
+          Multivariate generalization of the two-sample t-test comparing mean
+          vectors of two populations
+        meaning: STATO:0000098
+
+      # --- analysis of variance ---
+      ANOVA:
+        title: ANOVA
+        description: Analysis of variance testing whether the means of several groups are equal
+        meaning: OBI:0200201
+        aliases:
+        - analysis of variance
+      ONE_WAY_ANOVA:
+        title: one-way ANOVA
+        description: >-
+          Analysis of variance in which the groups compared correspond to the levels
+          of a single independent variable
+        meaning: STATO:0000044
+      TWO_WAY_ANOVA:
+        title: two-way ANOVA
+        description: >-
+          Analysis of variance in which the groups compared correspond to the levels
+          of exactly two independent variables
+        meaning: STATO:0000045
+      MULTIWAY_ANOVA:
+        title: multiway ANOVA
+        description: >-
+          Analysis of variance in which the groups compared correspond to the levels
+          of more than two independent variables
+        meaning: STATO:0000048
+      REPEATED_MEASURES_ANOVA:
+        title: repeated measure ANOVA
+        description: >-
+          Analysis of variance developed for non-independent observations arising
+          from repeated measurements on the same experimental unit
+        meaning: STATO:0000260
+      MANOVA:
+        title: multivariate analysis of variance
+        description: >-
+          Procedure for comparing multivariate sample means when there are two or
+          more dependent variables
+        meaning: STATO:0000454
+      ANCOVA:
+        title: ANCOVA
+        description: >-
+          Analysis of covariance evaluating whether population means of a dependent
+          variable are equal across levels of a categorical independent variable
+          while controlling for covariates
+        meaning: STATO:0000179
+        aliases:
+        - analysis of covariance
+      F_TEST:
+        title: F-test
+        description: >-
+          Test in which the test statistic follows an F-distribution under the null
+          hypothesis
+        meaning: STATO:0000086
+
+      # --- non-parametric rank-based tests ---
+      MANN_WHITNEY_U_TEST:
+        title: Mann-Whitney U-test
+        description: >-
+          Non-parametric test comparing two independent groups without assuming
+          normally distributed values
+        meaning: STATO:0000076
+        aliases:
+        - Wilcoxon rank sum test
+        - Mann-Whitney Test
+        close_mappings:
+        - NCIT:C53247
+      WILCOXON_SIGNED_RANK_TEST:
+        title: Wilcoxon signed rank test
+        description: >-
+          Non-parametric test of the null hypothesis that the median difference
+          between paired observations is zero
+        meaning: STATO:0000092
+        close_mappings:
+        - NCIT:C53246
+      KRUSKAL_WALLIS_TEST:
+        title: Kruskal Wallis test
+        description: >-
+          Non-parametric test comparing two or more groups without assuming normally
+          distributed values
+        meaning: STATO:0000094
+        aliases:
+        - Kruskal-Wallis Test
+        close_mappings:
+        - NCIT:C53248
+      FRIEDMAN_TEST:
+        title: Friedman test
+        description: >-
+          Non-parametric test for differences among multiple related groups;
+          extension of the Wilcoxon signed-rank test to more than two conditions
+        meaning: STATO:0000641
+      SIGN_TEST:
+        title: sign test
+        description: >-
+          Non-parametric test assessing whether the median of a population equals a
+          specified value
+        meaning: STATO:0000644
+
+      # --- categorical data and contingency table tests ---
+      CHI_SQUARE_TEST:
+        title: chi square test
+        description: >-
+          Test in which the sampling distribution of the test statistic is a
+          chi-square distribution under the null hypothesis
+        meaning: OBI:0200200
+        close_mappings:
+        - NCIT:C53235
+      PEARSON_CHI_SQUARE_TEST_OF_INDEPENDENCE:
+        title: Pearson's Chi square test of independence between categorical variables
+        description: >-
+          Chi-square test of the independence of two categorical variables in a
+          contingency table
+        meaning: STATO:0000081
+      PEARSON_CHI_SQUARE_GOODNESS_OF_FIT_TEST:
+        title: Pearson's Chi square test of goodness of fit
+        description: >-
+          Chi-square test evaluating the goodness of fit of observed counts to an
+          expected distribution
+        meaning: STATO:0000309
+      YATES_CORRECTED_CHI_SQUARE_TEST:
+        title: Yate's corrected Chi-Squared test
+        description: >-
+          Chi-square test of association between two dichotomous variables with a
+          continuity correction
+        meaning: STATO:0000070
+        aliases:
+        - Yates' chi-squared test
+      CHI_SQUARE_TEST_FOR_HOMOGENEITY:
+        title: Chi-square test for homogeneity
+        description: >-
+          Test comparing proportions observed across multiple groups using
+          contingency table frequencies
+        meaning: STATO:0000701
+      FISHERS_EXACT_TEST:
+        title: Fisher's exact test
+        description: >-
+          Exact test for non-random association between two categorical variables
+        meaning: STATO:0000073
+        close_mappings:
+        - NCIT:C45725
+      BARNARDS_TEST:
+        title: Barnard's test
+        description: >-
+          Exact unconditional test of association between two categorical variables,
+          often more powerful than Fisher's exact test
+        meaning: STATO:0000310
+      MCNEMAR_TEST:
+        title: McNemar test
+        description: >-
+          Test applied to 2 x 2 contingency tables of paired nominal data to compare
+          marginal frequencies
+        meaning: STATO:0000433
+      COCHRANS_Q_TEST:
+        title: Cochran's q test for heterogeneity
+        description: >-
+          Test for unreplicated randomized block designs with a binary response and
+          paired data
+        meaning: STATO:0000434
+      COCHRAN_ARMITAGE_TEST_FOR_TREND:
+        title: Cochran-Armitage test for trend
+        description: >-
+          Test for association between a dichotomous variable and an ordered
+          categorical variable
+        meaning: STATO:0000148
+      COCHRAN_MANTEL_HAENSZEL_TEST:
+        title: Cochran-Mantel-Haenzel test for repeated tests of independence
+        description: >-
+          Test of independence between two categorical variables stratified by a
+          third variable
+        meaning: STATO:0000074
+        aliases:
+        - Cochran-Mantel-Haenszel test
+      EXACT_BINOMIAL_TEST:
+        title: exact binomial test
+        description: >-
+          Test of the statistical significance of deviations from a theoretically
+          expected distribution of observations into two categories
+        meaning: STATO:0000298
+        aliases:
+        - binomial test
+      HYPERGEOMETRIC_TEST:
+        title: hypergeometric test
+        description: >-
+          Test evaluating whether a random variable follows a hypergeometric
+          distribution; widely used for over-representation analysis
+        meaning: STATO:0000285
+        aliases:
+        - over-representation test
+      TEST_OF_ASSOCIATION_BETWEEN_CATEGORICAL_VARIABLES:
+        title: test of association between categorical variables
+        description: >-
+          Test evaluating whether a discrete predictor variable is associated with a
+          discrete response variable
+        meaning: STATO:0000027
+
+      # --- goodness of fit and normality ---
+      GOODNESS_OF_FIT_TEST:
+        title: goodness of fit statistical test
+        description: >-
+          Test evaluating whether a sample distribution can be considered equivalent
+          to a theoretical distribution
+        meaning: STATO:0000191
+      SHAPIRO_WILK_TEST:
+        title: Shapiro-Wilk test
+        description: >-
+          Goodness of fit test of the null hypothesis that a sample is drawn from a
+          normally distributed population
+        meaning: STATO:0000077
+      KOLMOGOROV_SMIRNOV_TEST:
+        title: Kolmogorov-Smirnov test
+        description: >-
+          Goodness of fit test of the null hypothesis that a sample is drawn from a
+          specified continuous probability distribution
+        meaning: STATO:0000083
+        close_mappings:
+        - NCIT:C53250
+      ANDERSON_DARLING_TEST:
+        title: Anderson-Darling test
+        description: >-
+          Goodness of fit test of whether a sample is drawn from a given probability
+          distribution, weighting the tails more heavily
+        meaning: STATO:0000042
+      HOSMER_LEMESHOW_TEST:
+        title: Hosmer-Lemeshow goodness-of-fit test
+        description: >-
+          Goodness of fit test for logistic regression models comparing predicted
+          probabilities against observed outcomes
+        meaning: STATO:0000653
+
+      # --- variance, sphericity and homogeneity ---
+      LEVENES_TEST:
+        title: Levene's test
+        description: Test of the null hypothesis of equality of variance across several populations
+        meaning: STATO:0000078
+      BARTLETTS_TEST:
+        title: Barlett's test
+        description: >-
+          Test of whether k samples are drawn from populations with equal variances;
+          sensitive to departures from normality
+        meaning: STATO:0000079
+        aliases:
+        - Bartlett's test
+      BROWN_FORSYTHE_TEST:
+        title: Brown Forsythe test
+        description: >-
+          Test of equality of group variances based on deviations from the group
+          medians
+        meaning: STATO:0000080
+      BREUSCH_PAGAN_TEST:
+        title: Breusch-Pagan test
+        description: >-
+          Score test of the hypothesis of constant error variance against the
+          alternative that error variance depends on the fitted values
+        meaning: STATO:0000284
+      # spelled with a 'k' to match STATO's label for STATO:0000137; the enum
+      # HomoscedasticityTestEnum below uses the more common 'c' spelling
+      HOMOSKEDASTICITY_TEST:
+        title: homoskedasticity test
+        description: Test evaluating whether variances from several random samples are similar
+        meaning: STATO:0000137
+        aliases:
+        - homoscedasticity test
+      HOMOGENEITY_TEST:
+        title: homogeneity test
+        description: >-
+          Test evaluating whether a statistical measure computed from several random
+          samples is similar
+        meaning: STATO:0000697
+      SPHERICITY_TEST:
+        title: sphericity test
+        description: >-
+          Test of the null hypothesis of equality of the variances of differences
+          between levels of a repeated measures factor
+        meaning: STATO:0000131
+      MAUCHLYS_TEST:
+        title: Mauchly's test for sphericity
+        description: >-
+          Test of sphericity in the context of repeated measures analysis of
+          variance
+        meaning: STATO:0000199
+
+      # --- odds ratio homogeneity ---
+      ODDS_RATIO_HOMOGENEITY_TEST:
+        title: odds ratio homogeneity test
+        description: >-
+          Test of the null hypothesis that odds ratios are consistent across strata
+          of a population
+        meaning: STATO:0000247
+      BRESLOW_DAY_TEST:
+        title: Breslow-Day test for homogeneity of odds ratio
+        description: >-
+          Test of whether odds ratios are homogeneous across several 2x2 contingency
+          tables
+        meaning: STATO:0000130
+      TARONES_TEST:
+        title: Tarone's test for homogeneity of odds ratio
+        description: Test of the null hypothesis that odds ratios are homogeneous across strata
+        meaning: STATO:0000136
+      WOOLFS_TEST:
+        title: Woolf's test
+        description: >-
+          Test of the null hypothesis that odds ratios are the same across all strata
+          of the population under investigation
+        meaning: STATO:0000246
+
+      # --- post-hoc multiple comparison procedures ---
+      POST_HOC_ANALYSIS:
+        title: post-hoc analysis
+        description: >-
+          Test carried out following an analysis of variance that rejected the null
+          hypothesis, to identify which groups differ
+        meaning: STATO:0000133
+      TUKEY_HSD_TEST:
+        title: Tukey HSD for Post-Hoc Analysis
+        description: >-
+          Post-hoc test following a significant ANOVA that determines which means
+          differ, controlling the family-wise error rate
+        meaning: STATO:0000187
+        aliases:
+        - Tukey honestly significant difference test
+      NEWMAN_KEULS_TEST:
+        title: Newman-Keuls test post-hoc analysis
+        description: >-
+          Stepwise multiple comparison procedure identifying sample means that differ
+          significantly, based on the studentized range statistic
+        meaning: STATO:0000261
+        aliases:
+        - Student-Newman-Keuls test
+      SCHEFFE_TEST:
+        title: Scheffe test
+        description: >-
+          Conservative post-hoc procedure evaluating all possible contrasts while
+          adjusting significance levels for multiple comparisons
+        meaning: STATO:0000156
+        aliases:
+        - Scheffé test
+      LEAST_SIGNIFICANT_DIFFERENCE_TEST:
+        title: Least significance different test
+        description: >-
+          Post-hoc test for multiple comparisons of treatments by means of the least
+          significant difference following an ANOVA
+        meaning: STATO:0000157
+        aliases:
+        - Fisher's LSD test
+        - Least significant difference test
+      DUNNS_TEST:
+        title: Dunn’s multiple comparison test
+        description: >-
+          Non-parametric post-hoc test run after a Kruskal-Wallis test to identify
+          which groups differ
+        meaning: STATO:0000490
+        aliases:
+        - Dunn's multiple comparison test
+      CONOVER_IMAN_TEST:
+        title: Conover-Iman test of multiple comparisons using rank sums
+        description: >-
+          Post-hoc test for pairwise multiple comparisons using rank sums following a
+          Kruskal-Wallis test
+        meaning: STATO:0000491
+
+      # --- outlier detection ---
+      GRUBBS_TEST:
+        title: Grubbs' test
+        description: >-
+          Test detecting a single outlier in a univariate data set assumed to come
+          from a normally distributed population
+        meaning: STATO:0000441
+      DIXON_Q_TEST:
+        title: Dixon Q test
+        description: >-
+          Test detecting outliers in a univariate data set assumed to come from a
+          normally distributed population
+        meaning: STATO:0000440
+      TIETJEN_MOORE_TEST:
+        title: Tietjen-Moore test for outliers
+        description: >-
+          Generalization of Grubbs' test allowing detection of more than one outlier
+        meaning: STATO:0000442
+      GENERALIZED_ESD_TEST:
+        title: generalized extreme studentized deviate test
+        description: >-
+          Outlier detection test with a built-in correction for multiple testing
+        meaning: STATO:0000443
+        aliases:
+        - generalized ESD test
+
+      # --- model comparison and regression diagnostics ---
+      LIKELIHOOD_RATIO_TEST:
+        title: Likelihood-ratio test
+        description: >-
+          Test of whether there is evidence for moving from a simple model to a more
+          complex model in which the simple model is nested
+        meaning: OBI:0000861
+      WALD_TEST:
+        title: Wald test
+        description: >-
+          Test evaluating whether one or more model coefficients differ from zero,
+          given their variance-covariance matrix
+        meaning: STATO:0000559
+        aliases:
+        - Wald chi-squared test
+
+      # --- survival and genetics ---
+      LOG_RANK_TEST:
+        title: log-rank test
+        description: Test comparing the survival distributions of two or more groups
+        meaning: STATO:0000640
+        aliases:
+        - logrank test
+      HARDY_WEINBERG_EQUILIBRIUM_TEST:
+        title: Hardy-Weinberg equilibrium testing
+        description: >-
+          Test of whether a population's allele proportions are in Hardy-Weinberg
+          equilibrium, often used as a genotyping quality control
+        meaning: STATO:0000181
+      TRANSMISSION_DISEQUILIBRIUM_TEST:
+        title: transmission disequilibrium test
+        description: >-
+          Test for genetic linkage between a genetic marker and a trait in families,
+          robust to population structure
+        meaning: STATO:0000275
+
+      # --- correlation tests ---
+      PEARSON_CORRELATION_TEST:
+        title: Pearson Correlation Test
+        description: >-
+          Test of whether two continuous variables are linearly associated, based on
+          Pearson's correlation coefficient
+        meaning: NCIT:C53244
+        # STATO:0000280 is the coefficient (a data item), not the test (a planned
+        # process), so this is related_ rather than close_
+        related_mappings:
+        - STATO:0000280
+      SPEARMAN_CORRELATION_TEST:
+        title: Spearman Correlation Test
+        description: >-
+          Non-parametric test of whether two variables are monotonically associated,
+          based on Spearman's rank correlation coefficient
+        meaning: NCIT:C53249
+        # see note on PEARSON_CORRELATION_TEST above
+        related_mappings:
+        - STATO:0000201
+
+      # --- study design oriented tests ---
+      AB_TEST:
+        title: A/B testing
+        description: Statistical testing comparing two types of treatments or interventions
+        meaning: STATO:0000715
+      BETWEEN_GROUP_COMPARISON_TEST:
+        title: between group comparison statistical test
+        description: >-
+          Test detecting differences between the means computed for each study group
+          population
+        meaning: STATO:0000279
+      WITHIN_SUBJECT_COMPARISON_TEST:
+        title: within subject comparison statistical test
+        description: >-
+          Test evaluating whether a change occurs within one experimental unit over
+          time following a treatment or event
+        meaning: STATO:0000202
+      NON_PARAMETRIC_TEST:
+        title: non-parametric test
+        description: Test making no assumption about the underlying data distribution
+        meaning: STATO:0000198
+        close_mappings:
+        - NCIT:C53229
+
+  TTestTypeEnum:
+    title: T-Test Type
+    description: Variants of Student's t-test
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      ONE_SAMPLE:
+        title: one sample t-test
+        description: Compares a sample mean against a specified population mean
+        meaning: STATO:0000302
+      PAIRED:
+        title: paired t-test
+        description: Compares paired observations from the same experimental units
+        meaning: STATO:0000095
+      TWO_SAMPLE_EQUAL_VARIANCE:
+        title: two sample t-test with equal variance
+        description: >-
+          Compares the means of two independent samples assumed to have equal
+          variances
+        meaning: STATO:0000303
+      TWO_SAMPLE_UNEQUAL_VARIANCE:
+        title: two sample t-test with unequal variance
+        description: >-
+          Compares the means of two independent samples with unequal variances
+          (Welch's t-test)
+        meaning: STATO:0000304
+      TRIMMED_MEANS:
+        title: Yuen t-Test with trimmed means
+        description: Robust t-test computed on trimmed means and winsorized variances
+        meaning: STATO:0000406
+
+  NormalityTestEnum:
+    title: Normality Test
+    description: >-
+      Goodness of fit tests commonly used to assess whether a sample is drawn from
+      a normally distributed population
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      SHAPIRO_WILK:
+        title: Shapiro-Wilk test
+        description: Tests the null hypothesis that a sample comes from a normal distribution
+        meaning: STATO:0000077
+      KOLMOGOROV_SMIRNOV:
+        title: Kolmogorov-Smirnov test
+        description: >-
+          Tests whether a sample is drawn from a specified continuous probability
+          distribution
+        meaning: STATO:0000083
+      ANDERSON_DARLING:
+        title: Anderson-Darling test
+        description: >-
+          Tests whether a sample is drawn from a given probability distribution, with
+          added sensitivity in the tails
+        meaning: STATO:0000042
+
+  HomoscedasticityTestEnum:
+    title: Homoscedasticity Test
+    description: Tests evaluating equality of variances across groups or samples
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      LEVENE:
+        title: Levene's test
+        description: Tests the null hypothesis of equality of variance in several populations
+        meaning: STATO:0000078
+      BARTLETT:
+        title: Barlett's test
+        description: Tests whether k samples come from populations with equal variances
+        meaning: STATO:0000079
+        aliases:
+        - Bartlett's test
+      BROWN_FORSYTHE:
+        title: Brown Forsythe test
+        description: Tests equality of group variances using deviations from group medians
+        meaning: STATO:0000080
+      BREUSCH_PAGAN:
+        title: Breusch-Pagan test
+        description: Tests for heteroscedasticity of regression residuals
+        meaning: STATO:0000284
+
+  PostHocTestEnum:
+    title: Post-Hoc Test
+    description: >-
+      Multiple comparison procedures carried out after a significant omnibus test
+      such as an ANOVA or Kruskal-Wallis test
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      TUKEY_HSD:
+        title: Tukey HSD for Post-Hoc Analysis
+        description: >-
+          Determines which means differ after a significant ANOVA while controlling
+          the family-wise error rate
+        meaning: STATO:0000187
+      NEWMAN_KEULS:
+        title: Newman-Keuls test post-hoc analysis
+        description: Stepwise multiple comparison procedure based on the studentized range
+        meaning: STATO:0000261
+      SCHEFFE:
+        title: Scheffe test
+        description: Conservative procedure evaluating all possible contrasts
+        meaning: STATO:0000156
+        aliases:
+        - Scheffé test
+      LEAST_SIGNIFICANT_DIFFERENCE:
+        title: Least significance different test
+        description: Pairwise comparisons using the least significant difference following an ANOVA
+        meaning: STATO:0000157
+        aliases:
+        - Fisher's LSD test
+        - Least significant difference test
+      DUNN:
+        title: Dunn’s multiple comparison test
+        description: Non-parametric post-hoc test following a Kruskal-Wallis test
+        meaning: STATO:0000490
+      CONOVER_IMAN:
+        title: Conover-Iman test of multiple comparisons using rank sums
+        description: Pairwise rank-sum comparisons following a Kruskal-Wallis test
+        meaning: STATO:0000491
+
+  MultipleTestingCorrectionEnum:
+    title: Multiple Testing Correction Method
+    description: >-
+      Methods for adjusting p-values or significance thresholds when many
+      hypotheses are tested simultaneously.
+
+      As with StatisticalTestEnum, concrete methods (BONFERRONI, HOLM_BONFERRONI,
+      BENJAMINI_HOCHBERG) sit alongside the error-rate classes they belong to
+      (FAMILY_WISE_ERROR_RATE, FALSE_DISCOVERY_RATE) and procedural classes
+      (SIMULTANEOUS, SEQUENTIAL). The classes are intended for sources that report
+      only "FDR-corrected" without naming a procedure.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    see_also:
+    - http://purl.obolibrary.org/obo/OBI_0200089
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      BONFERRONI:
+        title: Bonferroni Adjustment
+        description: >-
+          Divides the desired family-wise significance level by the number of
+          comparisons made
+        meaning: NCIT:C61594
+        aliases:
+        - Bonferroni correction
+      HOLM_BONFERRONI:
+        title: Holm-Bonferroni family-wise error rate correction method
+        description: >-
+          Sequentially rejective closed-test procedure controlling the family-wise
+          error rate
+        meaning: OBI:0200066
+        aliases:
+        - Holm correction
+      BENJAMINI_HOCHBERG:
+        title: Benjamini and Hochberg false discovery rate correction method
+        description: >-
+          Sequential p-value procedure controlling the false discovery rate under
+          independence or positive dependence
+        meaning: OBI:0200036
+        aliases:
+        - BH
+        - BH-FDR
+      BENJAMINI_YEKUTIELI:
+        title: Benjamini and Yekutieli false discovery rate correction method
+        description: >-
+          False discovery rate procedure valid under arbitrary dependence between
+          tests
+        meaning: OBI:0200049
+        aliases:
+        - BY
+      HOLM_FDR:
+        title: Holm false discovery rate correction
+        description: >-
+          Application of the Holm p-value procedure to correct false discovery rate.
+          Note that Holm's step-down procedure controls the family-wise error rate,
+          not the false discovery rate; the "false discovery rate" wording is STATO's
+          own label for this term. Prefer HOLM_BONFERRONI unless you specifically
+          need the STATO term.
+        meaning: STATO:0000551
+      HOMMEL_FDR:
+        title: Hommel false discovery rate correction
+        description: Application of the Hommel p-value procedure to correct false discovery rate
+        meaning: STATO:0000552
+      FAMILY_WISE_ERROR_RATE:
+        title: family wise error rate correction method
+        description: >-
+          Procedure controlling the probability of making at least one false positive
+          across a family of tests
+        meaning: OBI:0200073
+        aliases:
+        - FWER correction
+      FALSE_DISCOVERY_RATE:
+        title: false discovery rate correction method
+        description: >-
+          Procedure controlling the expected proportion of false positives among
+          rejected hypotheses
+        meaning: OBI:0200163
+      SIMULTANEOUS:
+        title: simultaneous multiple testing correction
+        description: >-
+          Correction method applying a single adjustment across all tests
+          simultaneously
+        meaning: STATO:0000601
+      SEQUENTIAL:
+        title: sequential multiple testing correction method
+        description: Correction method applying adjustments in a stepwise, ordered fashion
+        meaning: STATO:0000602
+      ALPHA_SPENDING:
+        title: alpha spending procedure
+        description: >-
+          Sequential procedure allocating portions of the overall type I error rate
+          across interim analyses
+        meaning: STATO:0000605
+      ALPHA_INVESTING:
+        title: alpha investing procedure
+        description: >-
+          Sequential procedure that earns and spends alpha as hypotheses are tested
+        meaning: STATO:0000604
+      NONE:
+        title: No correction
+        description: No adjustment made for multiple testing
+        annotations:
+          note: No appropriate ontology term found for absence of correction
+
+  CorrelationCoefficientEnum:
+    title: Correlation Coefficient
+    description: Coefficients quantifying the strength of association between two variables
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      PEARSON:
+        title: Pearson's correlation coefficient
+        description: >-
+          Evaluates the strength of linear association between two continuous
+          variables
+        meaning: STATO:0000280
+        aliases:
+        - Pearson's r
+      SPEARMAN:
+        title: Spearman's rank correlation coefficient
+        description: >-
+          Non-parametric measure of statistical dependence between two ranked
+          variables
+        meaning: STATO:0000201
+        aliases:
+        - Spearman's rho
+      KENDALL:
+        title: Kendall's correlation coefficient
+        description: Correlation coefficient between two ordinal or ranked variables
+        meaning: STATO:0000240
+        aliases:
+        - Kendall's tau
+
+  TestTailednessEnum:
+    title: Test Tailedness
+    description: >-
+      Whether a statistical test allocates the significance level to one or both
+      tails of the reference distribution
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      ONE_TAILED:
+        title: one tailed test
+        description: >-
+          Allocates all of the significance level to one tail, evaluating a
+          directional alternative hypothesis
+        meaning: STATO:0000286
+        aliases:
+        - one-sided test
+      TWO_TAILED:
+        title: two tailed test
+        description: >-
+          Allocates half of the significance level to each tail, evaluating a
+          non-directional alternative hypothesis
+        meaning: STATO:0000287
+        aliases:
+        - two-sided test
+
+  DistributionalAssumptionEnum:
+    title: Distributional Assumption
+    description: >-
+      Whether an inference procedure assumes a parametric form for the underlying
+      population distribution.
+
+      Note the deliberate type approximation: the values denote a property of a
+      procedure, but the available ontology terms (NCIT:C53230, STATO:0000198)
+      denote classes of test. Neither PATO nor OBI currently has a quality or
+      characteristic term for "parametric", so the test classes are used as the
+      closest available referent.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      PARAMETRIC:
+        title: Parametric Test
+        description: >-
+          Procedure that incorporates assumptions about the population probability
+          distribution
+        meaning: NCIT:C53230
+      NON_PARAMETRIC:
+        title: non-parametric test
+        description: Procedure that makes no assumption about the underlying data distribution
+        meaning: STATO:0000198
+        aliases:
+        - Non-Parametric Test
+        close_mappings:
+        - NCIT:C53229
+
+  ComparisonObjectiveEnum:
+    title: Comparison Objective
+    description: >-
+      The objective of a between-group comparison, particularly in the design of
+      controlled trials
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      SUPERIORITY:
+        title: superiority testing
+        description: >-
+          Comparison intended to show that the difference in effects exceeds a
+          prespecified threshold of meaningful benefit
+        meaning: STATO:0000718
+      NON_INFERIORITY:
+        title: non-inferiority testing
+        description: >-
+          Comparison intended to show that any difference in effects lies below a
+          prespecified threshold of meaningful harm
+        meaning: STATO:0000716
+      EQUIVALENCE:
+        title: equivalence testing
+        description: >-
+          Comparison intended to show that the absolute difference in effects is
+          smaller than a prespecified threshold
+        meaning: STATO:0000717
+
+license: MIT
+see_also:
+- https://linkml.github.io/valuesets
+default_range: string
