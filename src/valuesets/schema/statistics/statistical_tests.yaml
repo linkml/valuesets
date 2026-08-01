@@ -56,6 +56,18 @@ enums:
     description: >-
       Statistical hypothesis tests, drawn primarily from the descendants of
       'statistical hypothesis test' (OBI:0000673) in STATO.
+
+      This enum deliberately mixes abstraction levels: alongside concrete tests it
+      retains STATO's grouping classes (GOODNESS_OF_FIT_TEST, HOMOSKEDASTICITY_TEST,
+      SPHERICITY_TEST, POST_HOC_ANALYSIS, NON_PARAMETRIC_TEST and similar) so that a
+      source reporting only "a test of normality was applied" can still be annotated.
+      Prefer the most specific value that the source supports, and use a grouping
+      value only when the specific test is genuinely not stated.
+
+      Several values are also repeated in the narrower enums below
+      (TTestTypeEnum, NormalityTestEnum, HomoscedasticityTestEnum, PostHocTestEnum),
+      which exist to constrain slot ranges. The duplicated meanings are intentional;
+      from_meaning() resolves per enum class.
     status: DRAFT
     contributors:
     - orcid:0000-0002-6601-2165
@@ -102,6 +114,14 @@ enums:
         aliases:
         - independent samples t-test
         - unpaired t-test
+        annotations:
+          note: >-
+            The bare terms "unpaired t-test" and "independent samples t-test" are
+            ambiguous: they are attached here because this is the classical
+            equal-variance form, but common software defaults to the Welch variant
+            (R's t.test, scipy.stats.ttest_ind with equal_var=False). Choose
+            TWO_SAMPLE_T_TEST_UNEQUAL_VARIANCE when the source did not assume equal
+            variances.
       TWO_SAMPLE_T_TEST_UNEQUAL_VARIANCE:
         title: two sample t-test with unequal variance
         description: >-
@@ -110,6 +130,11 @@ enums:
         meaning: STATO:0000304
         aliases:
         - Welch's t-test
+        annotations:
+          note: >-
+            This is the default two-sample t-test in R and SciPy, so an unqualified
+            "unpaired t-test" in a methods section often means this rather than
+            TWO_SAMPLE_T_TEST_EQUAL_VARIANCE.
       YUEN_T_TEST:
         title: Yuen t-Test with trimmed means
         description: >-
@@ -387,6 +412,8 @@ enums:
           Score test of the hypothesis of constant error variance against the
           alternative that error variance depends on the fitted values
         meaning: STATO:0000284
+      # spelled with a 'k' to match STATO's label for STATO:0000137; the enum
+      # HomoscedasticityTestEnum below uses the more common 'c' spelling
       HOMOSKEDASTICITY_TEST:
         title: homoskedasticity test
         description: Test evaluating whether variances from several random samples are similar
@@ -465,6 +492,8 @@ enums:
           Conservative post-hoc procedure evaluating all possible contrasts while
           adjusting significance levels for multiple comparisons
         meaning: STATO:0000156
+        aliases:
+        - Scheffé test
       LEAST_SIGNIFICANT_DIFFERENCE_TEST:
         title: Least significance different test
         description: >-
@@ -473,6 +502,7 @@ enums:
         meaning: STATO:0000157
         aliases:
         - Fisher's LSD test
+        - Least significant difference test
       DUNNS_TEST:
         title: Dunn’s multiple comparison test
         description: >-
@@ -557,7 +587,9 @@ enums:
           Test of whether two continuous variables are linearly associated, based on
           Pearson's correlation coefficient
         meaning: NCIT:C53244
-        close_mappings:
+        # STATO:0000280 is the coefficient (a data item), not the test (a planned
+        # process), so this is related_ rather than close_
+        related_mappings:
         - STATO:0000280
       SPEARMAN_CORRELATION_TEST:
         title: Spearman Correlation Test
@@ -565,7 +597,8 @@ enums:
           Non-parametric test of whether two variables are monotonically associated,
           based on Spearman's rank correlation coefficient
         meaning: NCIT:C53249
-        close_mappings:
+        # see note on PEARSON_CORRELATION_TEST above
+        related_mappings:
         - STATO:0000201
 
       # --- study design oriented tests ---
@@ -711,12 +744,15 @@ enums:
         title: Scheffe test
         description: Conservative procedure evaluating all possible contrasts
         meaning: STATO:0000156
+        aliases:
+        - Scheffé test
       LEAST_SIGNIFICANT_DIFFERENCE:
         title: Least significance different test
         description: Pairwise comparisons using the least significant difference following an ANOVA
         meaning: STATO:0000157
         aliases:
         - Fisher's LSD test
+        - Least significant difference test
       DUNN:
         title: Dunn’s multiple comparison test
         description: Non-parametric post-hoc test following a Kruskal-Wallis test
@@ -730,7 +766,13 @@ enums:
     title: Multiple Testing Correction Method
     description: >-
       Methods for adjusting p-values or significance thresholds when many
-      hypotheses are tested simultaneously
+      hypotheses are tested simultaneously.
+
+      As with StatisticalTestEnum, concrete methods (BONFERRONI, HOLM_BONFERRONI,
+      BENJAMINI_HOCHBERG) sit alongside the error-rate classes they belong to
+      (FAMILY_WISE_ERROR_RATE, FALSE_DISCOVERY_RATE) and procedural classes
+      (SIMULTANEOUS, SEQUENTIAL). The classes are intended for sources that report
+      only "FDR-corrected" without naming a procedure.
     status: DRAFT
     contributors:
     - orcid:0000-0002-6601-2165
@@ -764,7 +806,7 @@ enums:
         meaning: OBI:0200036
         aliases:
         - BH
-        - FDR
+        - BH-FDR
       BENJAMINI_YEKUTIELI:
         title: Benjamini and Yekutieli false discovery rate correction method
         description: >-
@@ -775,7 +817,12 @@ enums:
         - BY
       HOLM_FDR:
         title: Holm false discovery rate correction
-        description: Application of the Holm p-value procedure to correct false discovery rate
+        description: >-
+          Application of the Holm p-value procedure to correct false discovery rate.
+          Note that Holm's step-down procedure controls the family-wise error rate,
+          not the false discovery rate; the "false discovery rate" wording is STATO's
+          own label for this term. Prefer HOLM_BONFERRONI unless you specifically
+          need the STATO term.
         meaning: STATO:0000551
       HOMMEL_FDR:
         title: Hommel false discovery rate correction
@@ -888,7 +935,13 @@ enums:
     title: Distributional Assumption
     description: >-
       Whether an inference procedure assumes a parametric form for the underlying
-      population distribution
+      population distribution.
+
+      Note the deliberate type approximation: the values denote a property of a
+      procedure, but the available ontology terms (NCIT:C53230, STATO:0000198)
+      denote classes of test. Neither PATO nor OBI currently has a quality or
+      characteristic term for "parametric", so the test classes are used as the
+      closest available referent.
     status: DRAFT
     contributors:
     - orcid:0000-0002-6601-2165

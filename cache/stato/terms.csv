@@ -1,0 +1,88 @@
+curie,label,retrieved_at
+STATO:0000302,one sample t-test,2026-08-01T19:01:47.740424
+STATO:0000095,paired t-test,2026-08-01T19:01:47.742147
+STATO:0000303,two sample t-test with equal variance,2026-08-01T19:01:47.743598
+STATO:0000304,two sample t-test with unequal variance,2026-08-01T19:01:47.744263
+STATO:0000406,Yuen t-Test with trimmed means,2026-08-01T19:01:47.745342
+STATO:0000052,Z-test,2026-08-01T19:01:47.746321
+STATO:0000153,one sample Hotelling T2 test,2026-08-01T19:01:47.747322
+STATO:0000098,two sample Hotelling T2 test,2026-08-01T19:01:47.748094
+STATO:0000044,one-way ANOVA,2026-08-01T19:01:47.749017
+STATO:0000045,two-way ANOVA,2026-08-01T19:01:47.749585
+STATO:0000048,multiway ANOVA,2026-08-01T19:01:47.750399
+STATO:0000260,repeated measure ANOVA,2026-08-01T19:01:47.751107
+STATO:0000454,multivariate analysis of variance,2026-08-01T19:01:47.752022
+STATO:0000179,ANCOVA,2026-08-01T19:01:47.752847
+STATO:0000086,F-test,2026-08-01T19:01:47.753615
+STATO:0000076,Mann-Whitney U-test,2026-08-01T19:01:47.754380
+STATO:0000092,Wilcoxon signed rank test,2026-08-01T19:01:47.755277
+STATO:0000094,Kruskal Wallis test,2026-08-01T19:01:47.755797
+STATO:0000641,Friedman test,2026-08-01T19:01:47.756802
+STATO:0000644,sign test,2026-08-01T19:01:47.757424
+STATO:0000081,Pearson's Chi square test of independence between categorical variables,2026-08-01T19:01:47.758164
+STATO:0000309,Pearson's Chi square test of goodness of fit,2026-08-01T19:01:47.758954
+STATO:0000070,Yate's corrected Chi-Squared test,2026-08-01T19:01:47.759825
+STATO:0000701,Chi-square test for homogeneity,2026-08-01T19:01:47.760853
+STATO:0000073,Fisher's exact test,2026-08-01T19:01:47.761499
+STATO:0000310,Barnard's test,2026-08-01T19:01:47.761996
+STATO:0000433,McNemar test,2026-08-01T19:01:47.762670
+STATO:0000434,Cochran's q test for heterogeneity,2026-08-01T19:01:47.763375
+STATO:0000148,Cochran-Armitage test for trend,2026-08-01T19:01:47.764085
+STATO:0000074,Cochran-Mantel-Haenzel test for repeated tests of independence,2026-08-01T19:01:47.764542
+STATO:0000298,exact binomial test,2026-08-01T19:01:47.765281
+STATO:0000285,hypergeometric test,2026-08-01T19:01:47.765954
+STATO:0000027,test of association between categorical variables,2026-08-01T19:01:47.766707
+STATO:0000191,goodness of fit statistical test,2026-08-01T19:01:47.767437
+STATO:0000077,Shapiro-Wilk test,2026-08-01T19:01:47.768181
+STATO:0000083,Kolmogorov-Smirnov test,2026-08-01T19:01:47.768726
+STATO:0000042,Anderson-Darling test,2026-08-01T19:01:47.769453
+STATO:0000653,Hosmer-Lemeshow goodness-of-fit test,2026-08-01T19:01:47.770167
+STATO:0000078,Levene's test,2026-08-01T19:01:47.770660
+STATO:0000079,Barlett's test,2026-08-01T19:01:47.771117
+STATO:0000080,Brown Forsythe test,2026-08-01T19:01:47.771631
+STATO:0000284,Breusch-Pagan test,2026-08-01T19:01:47.772265
+STATO:0000137,homoskedasticity test,2026-08-01T19:01:47.772927
+STATO:0000697,homogeneity test,2026-08-01T19:01:47.773745
+STATO:0000131,sphericity test,2026-08-01T19:01:47.774453
+STATO:0000199,Mauchly's test for sphericity,2026-08-01T19:01:47.775275
+STATO:0000247,odds ratio homogeneity test,2026-08-01T19:01:47.776012
+STATO:0000130,Breslow-Day test for homogeneity of odds ratio,2026-08-01T19:01:47.776724
+STATO:0000136,Tarone's test for homogeneity of odds ratio,2026-08-01T19:01:47.777231
+STATO:0000246,Woolf's test,2026-08-01T19:01:47.777682
+STATO:0000133,post-hoc analysis,2026-08-01T19:01:47.778132
+STATO:0000187,Tukey HSD for Post-Hoc Analysis,2026-08-01T19:01:47.779008
+STATO:0000261,Newman-Keuls test post-hoc analysis,2026-08-01T19:01:47.779618
+STATO:0000156,Scheffe test,2026-08-01T19:01:47.780025
+STATO:0000157,Least significance different test,2026-08-01T19:01:47.780782
+STATO:0000490,Dunn’s multiple comparison test,2026-08-01T19:01:47.781706
+STATO:0000491,Conover-Iman test of multiple comparisons using rank sums,2026-08-01T19:01:47.782257
+STATO:0000441,Grubbs' test,2026-08-01T19:01:47.783055
+STATO:0000440,Dixon Q test,2026-08-01T19:01:47.783584
+STATO:0000442,Tietjen-Moore test for outliers,2026-08-01T19:01:47.784294
+STATO:0000443,generalized extreme studentized deviate test,2026-08-01T19:01:47.784864
+STATO:0000559,Wald test,2026-08-01T19:01:47.785669
+STATO:0000640,log-rank test,2026-08-01T19:01:47.786482
+STATO:0000181,Hardy-Weinberg equilibrium testing,2026-08-01T19:01:47.787289
+STATO:0000275,transmission disequilibrium test,2026-08-01T19:01:47.788167
+STATO:0000715,A/B testing,2026-08-01T19:01:48.307569
+STATO:0000279,between group comparison statistical test,2026-08-01T19:01:48.308530
+STATO:0000202,within subject comparison statistical test,2026-08-01T19:01:48.309276
+STATO:0000198,non-parametric test,2026-08-01T19:01:48.310147
+STATO:0000551,Holm false discovery rate correction,2026-08-01T19:01:48.311327
+STATO:0000552,Hommel false discovery rate correction,2026-08-01T19:01:48.311935
+STATO:0000601,simultaneous multiple testing correction,2026-08-01T19:01:48.312675
+STATO:0000602,sequential multiple testing correction method,2026-08-01T19:01:48.313277
+STATO:0000605,alpha spending procedure,2026-08-01T19:01:48.314118
+STATO:0000604,alpha investing procedure,2026-08-01T19:01:48.314664
+STATO:0000280,Pearson's correlation coefficient,2026-08-01T19:01:48.315150
+STATO:0000201,Spearman's rank correlation coefficient,2026-08-01T19:01:48.315627
+STATO:0000240,Kendall's correlation coefficient,2026-08-01T19:01:48.316298
+STATO:0000286,one tailed test,2026-08-01T19:01:48.316757
+STATO:0000287,two tailed test,2026-08-01T19:01:48.317593
+STATO:0000718,superiority testing,2026-08-01T19:01:48.318415
+STATO:0000716,non-inferiority testing,2026-08-01T19:01:48.318875
+STATO:0000717,equivalence testing,2026-08-01T19:01:48.319434
+STATO:0000172,FPKM-fragments per kilobase of transcript per million fragments mapped,2026-08-01T19:02:03.077211
+STATO:0000206,RPKM-reads per kilobase of transcript per million fragments mapped,2026-08-01T19:02:03.078072
+STATO:0000036,outlier,2026-08-01T19:02:06.610997
+STATO:0000046,block design,2026-08-01T19:02:16.018125
