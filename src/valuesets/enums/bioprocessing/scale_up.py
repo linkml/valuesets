@@ -139,6 +139,16 @@ class DownstreamProcessEnum(RichEnum):
     DISTILLATION = "DISTILLATION"
     DRYING = "DRYING"
     HOMOGENIZATION = "HOMOGENIZATION"
+    CLARIFICATION = "CLARIFICATION"
+    FLOCCULATION = "FLOCCULATION"
+    ULTRAFILTRATION = "ULTRAFILTRATION"
+    DIAFILTRATION = "DIAFILTRATION"
+    TANGENTIAL_FLOW_FILTRATION = "TANGENTIAL_FLOW_FILTRATION"
+    BUFFER_EXCHANGE = "BUFFER_EXCHANGE"
+    ADSORPTION = "ADSORPTION"
+    VIRAL_INACTIVATION = "VIRAL_INACTIVATION"
+    POLISHING = "POLISHING"
+    LYOPHILIZATION = "LYOPHILIZATION"
 
 # Set metadata after class creation
 DownstreamProcessEnum._metadata = {
@@ -151,6 +161,16 @@ DownstreamProcessEnum._metadata = {
     "DISTILLATION": {'description': 'Distillation', 'meaning': 'CHMO:0001534', 'annotations': {'principle': 'Boiling point difference'}},
     "DRYING": {'description': 'Drying operations', 'meaning': 'CHMO:0001551', 'annotations': {'types': 'Spray, freeze, vacuum'}},
     "HOMOGENIZATION": {'description': 'Cell disruption/homogenization', 'annotations': {'methods': 'High pressure, bead mill'}},
+    "CLARIFICATION": {'description': 'Removal of cells and debris to produce a clarified harvest', 'annotations': {'methods': 'Centrifugation, depth filtration'}},
+    "FLOCCULATION": {'description': 'Aggregation of cells and debris into flocs to aid clarification'},
+    "ULTRAFILTRATION": {'description': 'Membrane concentration retaining macromolecules such as proteins', 'meaning': 'CHMO:0001645', 'annotations': {'mwco': 'Typically 1-1000 kDa'}},
+    "DIAFILTRATION": {'description': 'Buffer exchange and desalting by ultrafiltration with continuous makeup'},
+    "TANGENTIAL_FLOW_FILTRATION": {'description': 'Crossflow membrane filtration used for concentration and diafiltration', 'annotations': {'aliases': 'TFF, crossflow filtration'}},
+    "BUFFER_EXCHANGE": {'description': 'Replacement of the buffer matrix of a product stream'},
+    "ADSORPTION": {'description': 'Capture of product or impurities onto a solid sorbent'},
+    "VIRAL_INACTIVATION": {'description': 'Treatment step that inactivates potential viral contaminants', 'annotations': {'methods': 'Low pH, solvent/detergent, heat'}},
+    "POLISHING": {'description': 'Final chromatographic or filtration steps to remove trace impurities'},
+    "LYOPHILIZATION": {'description': 'Freeze-drying to produce a stable solid product', 'meaning': 'CHMO:0001553', 'annotations': {'aliases': 'freeze drying'}},
 }
 
 class FeedstockTypeEnum(RichEnum):
