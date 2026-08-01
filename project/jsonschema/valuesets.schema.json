@@ -57,6 +57,26 @@
             "title": "AccessRights",
             "type": "string"
         },
+        "ActivityCoefficientModel": {
+            "description": "Excess Gibbs energy / activity-coefficient models for non-ideal liquid phases (the SFF gamma method).",
+            "enum": [
+                "IDEAL",
+                "MARGULES",
+                "VAN_LAAR",
+                "REGULAR_SOLUTION",
+                "WILSON",
+                "NRTL",
+                "ELECTROLYTE_NRTL",
+                "UNIQUAC",
+                "UNIFAC",
+                "UNIFAC_DORTMUND",
+                "FLORY_HUGGINS",
+                "PITZER",
+                "COSMO_SAC"
+            ],
+            "title": "ActivityCoefficientModel",
+            "type": "string"
+        },
         "AdditiveManufacturingEnum": {
             "description": "3D printing and additive manufacturing methods",
             "enum": [
@@ -1606,6 +1626,24 @@
             "title": "ChemicalEntity",
             "type": "string"
         },
+        "ChemicalIdentifierScheme": {
+            "description": "Schemes used to identify chemical substances, including registry numbers, line notations, structure-derived keys, and database accessions.",
+            "enum": [
+                "CAS_RN",
+                "SMILES",
+                "INCHI",
+                "INCHIKEY",
+                "IUPAC_NAME",
+                "MOLECULAR_FORMULA",
+                "PUBCHEM_CID",
+                "CHEBI_ID",
+                "KEGG_COMPOUND",
+                "DRUGBANK_ID",
+                "EC_NUMBER"
+            ],
+            "title": "ChemicalIdentifierScheme",
+            "type": "string"
+        },
         "ChipFabricationNodeType": {
             "description": "Semiconductor fabrication process node sizes defining transistor feature dimensions",
             "enum": [
@@ -2057,6 +2095,16 @@
             "title": "CommunicationProtocolEnum",
             "type": "string"
         },
+        "ComparisonObjectiveEnum": {
+            "description": "The objective of a between-group comparison, particularly in the design of controlled trials",
+            "enum": [
+                "SUPERIORITY",
+                "NON_INFERIORITY",
+                "EQUIVALENCE"
+            ],
+            "title": "ComparisonObjectiveEnum",
+            "type": "string"
+        },
         "CompassDirection": {
             "description": "Cardinal and intercardinal compass directions",
             "enum": [
@@ -2301,6 +2349,16 @@
                 "CORPORATE_SECRETARY"
             ],
             "title": "CorporateGovernanceRoleEnum",
+            "type": "string"
+        },
+        "CorrelationCoefficientEnum": {
+            "description": "Coefficients quantifying the strength of association between two variables",
+            "enum": [
+                "PEARSON",
+                "SPEARMAN",
+                "KENDALL"
+            ],
+            "title": "CorrelationCoefficientEnum",
             "type": "string"
         },
         "CountryCodeISO2Enum": {
@@ -2563,6 +2621,61 @@
                 "ACETYL_COA"
             ],
             "title": "CurrencyChemical",
+            "type": "string"
+        },
+        "CurrencyCode": {
+            "description": "World currencies by ISO 4217 alpha-3 code. The numeric_code, symbol, and minor_unit (number of decimal places) annotations record the corresponding ISO 4217 attributes.",
+            "enum": [
+                "USD",
+                "EUR",
+                "JPY",
+                "GBP",
+                "CNY",
+                "AUD",
+                "CAD",
+                "CHF",
+                "HKD",
+                "SGD",
+                "SEK",
+                "NOK",
+                "DKK",
+                "NZD",
+                "KRW",
+                "INR",
+                "BRL",
+                "ZAR",
+                "RUB",
+                "MXN",
+                "TRY",
+                "PLN",
+                "THB",
+                "IDR",
+                "MYR",
+                "PHP",
+                "AED",
+                "SAR",
+                "ILS",
+                "CZK",
+                "HUF",
+                "RON",
+                "UAH",
+                "CLP",
+                "COP",
+                "ARS",
+                "EGP",
+                "NGN",
+                "KES",
+                "PKR",
+                "BDT",
+                "VND",
+                "TWD",
+                "KWD",
+                "BHD",
+                "OMR",
+                "QAR",
+                "ISK"
+            ],
+            "title": "CurrencyCode",
             "type": "string"
         },
         "CurrencyCodeISO4217Enum": {
@@ -3056,6 +3169,24 @@
             "title": "DerivatizationMethod",
             "type": "string"
         },
+        "DesignSimulationMethod": {
+            "description": "Methods used to design or simulate unit operations, particularly separation columns - ranging from graphical and shortcut methods to rigorous stage-by-stage and rate-based models.",
+            "enum": [
+                "MCCABE_THIELE",
+                "PONCHON_SAVARIT",
+                "FENSKE_UNDERWOOD_GILLILAND",
+                "KREMSER",
+                "MESH",
+                "INSIDE_OUT",
+                "RATE_BASED",
+                "EQUILIBRIUM_STAGE",
+                "SHORTCUT",
+                "RIGOROUS",
+                "PINCH_ANALYSIS"
+            ],
+            "title": "DesignSimulationMethod",
+            "type": "string"
+        },
         "DetectionModeEnum": {
             "description": "Detection modes for real-time PCR instruments",
             "enum": [
@@ -3132,6 +3263,15 @@
             "title": "Disease",
             "type": "string"
         },
+        "DistributionalAssumptionEnum": {
+            "description": "Whether an inference procedure assumes a parametric form for the underlying population distribution.\nNote the deliberate type approximation: the values denote a property of a procedure, but the available ontology terms (NCIT:C53230, STATO:0000198) denote classes of test. Neither PATO nor OBI currently has a quality or characteristic term for \"parametric\", so the test classes are used as the closest available referent.",
+            "enum": [
+                "PARAMETRIC",
+                "NON_PARAMETRIC"
+            ],
+            "title": "DistributionalAssumptionEnum",
+            "type": "string"
+        },
         "DocumentFormatEnum": {
             "description": "Document and text file formats",
             "enum": [
@@ -3161,7 +3301,17 @@
                 "EVAPORATION",
                 "DISTILLATION",
                 "DRYING",
-                "HOMOGENIZATION"
+                "HOMOGENIZATION",
+                "CLARIFICATION",
+                "FLOCCULATION",
+                "ULTRAFILTRATION",
+                "DIAFILTRATION",
+                "TANGENTIAL_FLOW_FILTRATION",
+                "BUFFER_EXCHANGE",
+                "ADSORPTION",
+                "VIRAL_INACTIVATION",
+                "POLISHING",
+                "LYOPHILIZATION"
             ],
             "title": "DownstreamProcessEnum",
             "type": "string"
@@ -3582,6 +3732,27 @@
                 "ENDPOINT_ENZYME_ASSAY"
             ],
             "title": "EnzymologyAssayEnum",
+            "type": "string"
+        },
+        "EquationOfStateModel": {
+            "description": "Equations of state used to compute fugacity coefficients and PVT behavior of fluids in process simulation (the SFF phi method).",
+            "enum": [
+                "IDEAL_GAS",
+                "VIRIAL",
+                "REDLICH_KWONG",
+                "SOAVE_REDLICH_KWONG",
+                "PENG_ROBINSON",
+                "PENG_ROBINSON_BOSTON_MATHIAS",
+                "SRK_BOSTON_MATHIAS",
+                "LEE_KESLER_PLOCKER",
+                "BENEDICT_WEBB_RUBIN_STARLING",
+                "PREDICTIVE_SRK",
+                "PC_SAFT",
+                "CUBIC_PLUS_ASSOCIATION",
+                "GERG_2008",
+                "IAPWS_95"
+            ],
+            "title": "EquationOfStateModel",
             "type": "string"
         },
         "EthnicityOMB1997Enum": {
@@ -4062,6 +4233,16 @@
                 "MULTICOLOR"
             ],
             "title": "FlowerColorEnum",
+            "type": "string"
+        },
+        "FlowsheetSolutionApproach": {
+            "description": "The overall computational strategy used to converge a process flowsheet.",
+            "enum": [
+                "SEQUENTIAL_MODULAR",
+                "EQUATION_ORIENTED",
+                "SIMULTANEOUS_MODULAR"
+            ],
+            "title": "FlowsheetSolutionApproach",
             "type": "string"
         },
         "FoodColoringEnum": {
@@ -4902,6 +5083,17 @@
                 "HISTORICAL"
             ],
             "title": "HistoricalStatusEnum",
+            "type": "string"
+        },
+        "HomoscedasticityTestEnum": {
+            "description": "Tests evaluating equality of variances across groups or samples",
+            "enum": [
+                "LEVENE",
+                "BARTLETT",
+                "BROWN_FORSYTHE",
+                "BREUSCH_PAGAN"
+            ],
+            "title": "HomoscedasticityTestEnum",
             "type": "string"
         },
         "HousingStatus": {
@@ -6537,6 +6729,19 @@
             "title": "MassErrorUnit",
             "type": "string"
         },
+        "MassFlowRateUnitEnum": {
+            "description": "Units of mass flow rate (mass per unit time)",
+            "enum": [
+                "KILOGRAM_PER_SECOND",
+                "KILOGRAM_PER_HOUR",
+                "GRAM_PER_SECOND",
+                "TONNE_PER_HOUR",
+                "TONNE_PER_DAY",
+                "POUND_PER_HOUR"
+            ],
+            "title": "MassFlowRateUnitEnum",
+            "type": "string"
+        },
         "MassSpectrometerFileFormat": {
             "description": "Standard file formats used in mass spectrometry",
             "enum": [
@@ -7047,6 +7252,30 @@
             "title": "MitoticPhase",
             "type": "string"
         },
+        "MixingRuleModel": {
+            "description": "Mixing rules applied to equation-of-state parameters for mixtures (the SFF mixture method).",
+            "enum": [
+                "IDEAL",
+                "VAN_DER_WAALS",
+                "HURON_VIDAL",
+                "MODIFIED_HURON_VIDAL",
+                "WONG_SANDLER",
+                "PSRK_MIXING"
+            ],
+            "title": "MixingRuleModel",
+            "type": "string"
+        },
+        "MolarFlowRateUnitEnum": {
+            "description": "Units of molar flow rate (amount of substance per unit time)",
+            "enum": [
+                "MOLE_PER_SECOND",
+                "MOLE_PER_HOUR",
+                "KILOMOLE_PER_HOUR",
+                "KILOMOLE_PER_SECOND"
+            ],
+            "title": "MolarFlowRateUnitEnum",
+            "type": "string"
+        },
         "MolecularFunction": {
             "description": "Molecular functions from Gene Ontology",
             "title": "MolecularFunction",
@@ -7107,6 +7336,26 @@
                 "P365_PLUS_AGED"
             ],
             "title": "MousePostnatalAgeGroupEnum",
+            "type": "string"
+        },
+        "MultipleTestingCorrectionEnum": {
+            "description": "Methods for adjusting p-values or significance thresholds when many hypotheses are tested simultaneously.\nAs with StatisticalTestEnum, concrete methods (BONFERRONI, HOLM_BONFERRONI, BENJAMINI_HOCHBERG) sit alongside the error-rate classes they belong to (FAMILY_WISE_ERROR_RATE, FALSE_DISCOVERY_RATE) and procedural classes (SIMULTANEOUS, SEQUENTIAL). The classes are intended for sources that report only \"FDR-corrected\" without naming a procedure.",
+            "enum": [
+                "BONFERRONI",
+                "HOLM_BONFERRONI",
+                "BENJAMINI_HOCHBERG",
+                "BENJAMINI_YEKUTIELI",
+                "HOLM_FDR",
+                "HOMMEL_FDR",
+                "FAMILY_WISE_ERROR_RATE",
+                "FALSE_DISCOVERY_RATE",
+                "SIMULTANEOUS",
+                "SEQUENTIAL",
+                "ALPHA_SPENDING",
+                "ALPHA_INVESTING",
+                "NONE"
+            ],
+            "title": "MultipleTestingCorrectionEnum",
             "type": "string"
         },
         "NAICSSectorEnum": {
@@ -7234,6 +7483,16 @@
                 "LOCAL"
             ],
             "title": "NewsTopicCategoryEnum",
+            "type": "string"
+        },
+        "NormalityTestEnum": {
+            "description": "Goodness of fit tests commonly used to assess whether a sample is drawn from a normally distributed population",
+            "enum": [
+                "SHAPIRO_WILK",
+                "KOLMOGOROV_SMIRNOV",
+                "ANDERSON_DARLING"
+            ],
+            "title": "NormalityTestEnum",
             "type": "string"
         },
         "NuclearFacilityTypeEnum": {
@@ -8288,6 +8547,19 @@
             "title": "PolymerTypeEnum",
             "type": "string"
         },
+        "PostHocTestEnum": {
+            "description": "Multiple comparison procedures carried out after a significant omnibus test such as an ANOVA or Kruskal-Wallis test",
+            "enum": [
+                "TUKEY_HSD",
+                "NEWMAN_KEULS",
+                "SCHEFFE",
+                "LEAST_SIGNIFICANT_DIFFERENCE",
+                "DUNN",
+                "CONOVER_IMAN"
+            ],
+            "title": "PostHocTestEnum",
+            "type": "string"
+        },
         "PowerPlantStatusEnum": {
             "description": "Operational status of nuclear power plants",
             "enum": [
@@ -8315,6 +8587,15 @@
                 "BTU_PER_HOUR"
             ],
             "title": "PowerUnit",
+            "type": "string"
+        },
+        "PoyntingCorrectionMethod": {
+            "description": "Treatment of the Poynting correction factor accounting for the effect of pressure on liquid fugacity (the SFF PCF method).",
+            "enum": [
+                "NONE",
+                "POYNTING"
+            ],
+            "title": "PoyntingCorrectionMethod",
             "type": "string"
         },
         "PredictionOutcomeType": {
@@ -8455,6 +8736,55 @@
             "title": "PriorityLevelEnum",
             "type": "string"
         },
+        "ProcessEquipmentType": {
+            "description": "Physical equipment / asset types used in process plants. These correspond to the nodes of a process flowsheet and complement UnitOperationType (which describes the function performed). Grouped via the equipment_class annotation.",
+            "enum": [
+                "STORAGE_TANK",
+                "PRESSURE_VESSEL",
+                "HOPPER",
+                "FLASH_DRUM",
+                "KNOCKOUT_DRUM",
+                "REACTOR",
+                "BIOREACTOR",
+                "FERMENTER",
+                "DISTILLATION_COLUMN",
+                "ABSORPTION_COLUMN",
+                "STRIPPING_COLUMN",
+                "EXTRACTION_COLUMN",
+                "CHROMATOGRAPHY_COLUMN",
+                "SCRUBBER",
+                "HEAT_EXCHANGER",
+                "CONDENSER",
+                "REBOILER",
+                "EVAPORATOR",
+                "FURNACE",
+                "BOILER",
+                "COOLING_TOWER",
+                "DRYER",
+                "CRYSTALLIZER",
+                "PUMP",
+                "COMPRESSOR",
+                "BLOWER",
+                "FAN",
+                "VALVE",
+                "CENTRIFUGE",
+                "FILTER",
+                "DECANTER",
+                "CLARIFIER",
+                "CYCLONE",
+                "HYDROCYCLONE",
+                "MEMBRANE_MODULE",
+                "SETTLER",
+                "MIXER",
+                "AGITATOR",
+                "MILL",
+                "CRUSHER",
+                "SCREEN",
+                "CONVEYOR"
+            ],
+            "title": "ProcessEquipmentType",
+            "type": "string"
+        },
         "ProcessImprovementApproachEnum": {
             "description": "Process improvement methodologies and approaches",
             "enum": [
@@ -8468,6 +8798,45 @@
                 "AGILE_PROCESS_IMPROVEMENT"
             ],
             "title": "ProcessImprovementApproachEnum",
+            "type": "string"
+        },
+        "ProcessIndustryCategory": {
+            "description": "Sectors of the process (continuous and batch) manufacturing industries. The pisces_category annotation records the corresponding top-level category in the PISCES Standard Flowsheet Format where one exists.",
+            "enum": [
+                "PETROLEUM_REFINING",
+                "PETROCHEMICAL",
+                "BULK_CHEMICAL",
+                "SPECIALTY_CHEMICAL",
+                "AGROCHEMICAL",
+                "POLYMER_AND_PLASTICS",
+                "PHARMACEUTICAL",
+                "BIOTECHNOLOGY",
+                "BIOFUEL",
+                "FOOD_AND_BEVERAGE",
+                "PULP_AND_PAPER",
+                "METALS_AND_MINING",
+                "WATER_AND_WASTEWATER_TREATMENT",
+                "POWER_GENERATION",
+                "GAS_PROCESSING",
+                "CEMENT_AND_CONSTRUCTION_MATERIALS",
+                "GLASS_AND_CERAMICS",
+                "TEXTILE",
+                "COSMETICS_AND_PERSONAL_CARE",
+                "NUCLEAR_FUEL",
+                "SEMICONDUCTOR"
+            ],
+            "title": "ProcessIndustryCategory",
+            "type": "string"
+        },
+        "ProcessOperationMode": {
+            "description": "The temporal mode in which a process or unit operation is run.",
+            "enum": [
+                "BATCH",
+                "CONTINUOUS",
+                "SEMI_BATCH",
+                "SEMI_CONTINUOUS"
+            ],
+            "title": "ProcessOperationMode",
             "type": "string"
         },
         "ProcessPerformanceMetric": {
@@ -8494,6 +8863,66 @@
                 "MICROFLUIDIC_SCALE"
             ],
             "title": "ProcessScaleEnum",
+            "type": "string"
+        },
+        "ProcessSimulator": {
+            "description": "Process simulation software packages used to model chemical and biochemical process flowsheets.",
+            "enum": [
+                "ASPEN_PLUS",
+                "ASPEN_HYSYS",
+                "ASPEN_CUSTOM_MODELER",
+                "UNISIM_DESIGN",
+                "PRO_II",
+                "AVEVA_PROCESS_SIMULATION",
+                "CHEMCAD",
+                "DWSIM",
+                "COCO_SIMULATOR",
+                "GPROMS",
+                "PROSIMPLUS",
+                "PETRO_SIM",
+                "BIOSTEAM",
+                "SUPERPRO_DESIGNER",
+                "IDAES",
+                "CAPE_OPEN"
+            ],
+            "title": "ProcessSimulator",
+            "type": "string"
+        },
+        "ProcessStreamPhase": {
+            "description": "The physical phase or phase combination of a process stream. For single-phase fundamental states see also StateOfMatterEnum in the physics module; this enum adds the multiphase combinations common in process engineering.",
+            "enum": [
+                "GAS",
+                "LIQUID",
+                "SOLID",
+                "SUPERCRITICAL",
+                "VAPOR_LIQUID",
+                "LIQUID_LIQUID",
+                "VAPOR_LIQUID_LIQUID",
+                "SLURRY",
+                "GAS_SOLID",
+                "MULTIPHASE"
+            ],
+            "title": "ProcessStreamPhase",
+            "type": "string"
+        },
+        "ProcessStreamRole": {
+            "description": "The functional role of a stream within a process flowsheet, independent of its chemical composition.",
+            "enum": [
+                "FEED",
+                "RAW_MATERIAL",
+                "PRODUCT",
+                "BYPRODUCT",
+                "INTERMEDIATE",
+                "RECYCLE",
+                "PURGE",
+                "BLEED",
+                "MAKEUP",
+                "WASTE",
+                "EFFLUENT",
+                "EMISSION",
+                "UTILITY"
+            ],
+            "title": "ProcessStreamRole",
             "type": "string"
         },
         "ProcessingStatus": {
@@ -10282,6 +10711,88 @@
             "title": "StateOfMatterEnum",
             "type": "string"
         },
+        "StatisticalTestEnum": {
+            "description": "Statistical hypothesis tests, drawn primarily from the descendants of 'statistical hypothesis test' (OBI:0000673) in STATO.\nThis enum deliberately mixes abstraction levels: alongside concrete tests it retains STATO's grouping classes (GOODNESS_OF_FIT_TEST, HOMOSKEDASTICITY_TEST, SPHERICITY_TEST, POST_HOC_ANALYSIS, NON_PARAMETRIC_TEST and similar) so that a source reporting only \"a test of normality was applied\" can still be annotated. Prefer the most specific value that the source supports, and use a grouping value only when the specific test is genuinely not stated.\nSeveral values are also repeated in the narrower enums below (TTestTypeEnum, NormalityTestEnum, HomoscedasticityTestEnum, PostHocTestEnum), which exist to constrain slot ranges. The duplicated meanings are intentional; from_meaning() resolves per enum class.",
+            "enum": [
+                "STUDENTS_T_TEST",
+                "ONE_SAMPLE_T_TEST",
+                "PAIRED_T_TEST",
+                "TWO_SAMPLE_T_TEST_EQUAL_VARIANCE",
+                "TWO_SAMPLE_T_TEST_UNEQUAL_VARIANCE",
+                "YUEN_T_TEST",
+                "Z_TEST",
+                "ONE_SAMPLE_HOTELLING_T2_TEST",
+                "TWO_SAMPLE_HOTELLING_T2_TEST",
+                "ANOVA",
+                "ONE_WAY_ANOVA",
+                "TWO_WAY_ANOVA",
+                "MULTIWAY_ANOVA",
+                "REPEATED_MEASURES_ANOVA",
+                "MANOVA",
+                "ANCOVA",
+                "F_TEST",
+                "MANN_WHITNEY_U_TEST",
+                "WILCOXON_SIGNED_RANK_TEST",
+                "KRUSKAL_WALLIS_TEST",
+                "FRIEDMAN_TEST",
+                "SIGN_TEST",
+                "CHI_SQUARE_TEST",
+                "PEARSON_CHI_SQUARE_TEST_OF_INDEPENDENCE",
+                "PEARSON_CHI_SQUARE_GOODNESS_OF_FIT_TEST",
+                "YATES_CORRECTED_CHI_SQUARE_TEST",
+                "CHI_SQUARE_TEST_FOR_HOMOGENEITY",
+                "FISHERS_EXACT_TEST",
+                "BARNARDS_TEST",
+                "MCNEMAR_TEST",
+                "COCHRANS_Q_TEST",
+                "COCHRAN_ARMITAGE_TEST_FOR_TREND",
+                "COCHRAN_MANTEL_HAENSZEL_TEST",
+                "EXACT_BINOMIAL_TEST",
+                "HYPERGEOMETRIC_TEST",
+                "TEST_OF_ASSOCIATION_BETWEEN_CATEGORICAL_VARIABLES",
+                "GOODNESS_OF_FIT_TEST",
+                "SHAPIRO_WILK_TEST",
+                "KOLMOGOROV_SMIRNOV_TEST",
+                "ANDERSON_DARLING_TEST",
+                "HOSMER_LEMESHOW_TEST",
+                "LEVENES_TEST",
+                "BARTLETTS_TEST",
+                "BROWN_FORSYTHE_TEST",
+                "BREUSCH_PAGAN_TEST",
+                "HOMOSKEDASTICITY_TEST",
+                "HOMOGENEITY_TEST",
+                "SPHERICITY_TEST",
+                "MAUCHLYS_TEST",
+                "ODDS_RATIO_HOMOGENEITY_TEST",
+                "BRESLOW_DAY_TEST",
+                "TARONES_TEST",
+                "WOOLFS_TEST",
+                "POST_HOC_ANALYSIS",
+                "TUKEY_HSD_TEST",
+                "NEWMAN_KEULS_TEST",
+                "SCHEFFE_TEST",
+                "LEAST_SIGNIFICANT_DIFFERENCE_TEST",
+                "DUNNS_TEST",
+                "CONOVER_IMAN_TEST",
+                "GRUBBS_TEST",
+                "DIXON_Q_TEST",
+                "TIETJEN_MOORE_TEST",
+                "GENERALIZED_ESD_TEST",
+                "LIKELIHOOD_RATIO_TEST",
+                "WALD_TEST",
+                "LOG_RANK_TEST",
+                "HARDY_WEINBERG_EQUILIBRIUM_TEST",
+                "TRANSMISSION_DISEQUILIBRIUM_TEST",
+                "PEARSON_CORRELATION_TEST",
+                "SPEARMAN_CORRELATION_TEST",
+                "AB_TEST",
+                "BETWEEN_GROUP_COMPARISON_TEST",
+                "WITHIN_SUBJECT_COMPARISON_TEST",
+                "NON_PARAMETRIC_TEST"
+            ],
+            "title": "StatisticalTestEnum",
+            "type": "string"
+        },
         "StatusEnum": {
             "description": "Values indicating whether a condition or observation is present, absent, or of unknown status.",
             "enum": [
@@ -10561,6 +11072,55 @@
             "title": "SynthesisMethodEnum",
             "type": "string"
         },
+        "SystemLifeCycleProcess15288": {
+            "description": "The 30 system life cycle processes grouped by ISO/IEC/IEEE 15288:2015.",
+            "enum": [
+                "ACQUISITION",
+                "SUPPLY",
+                "LIFE_CYCLE_MODEL_MANAGEMENT",
+                "INFRASTRUCTURE_MANAGEMENT",
+                "PORTFOLIO_MANAGEMENT",
+                "HUMAN_RESOURCE_MANAGEMENT",
+                "QUALITY_MANAGEMENT",
+                "PROJECT_PLANNING",
+                "PROJECT_ASSESSMENT_AND_CONTROL",
+                "DECISION_MANAGEMENT",
+                "RISK_MANAGEMENT",
+                "CONFIGURATION_MANAGEMENT",
+                "INFORMATION_MANAGEMENT",
+                "MEASUREMENT",
+                "QUALITY_ASSURANCE",
+                "KNOWLEDGE_MANAGEMENT",
+                "BUSINESS_OR_MISSION_ANALYSIS",
+                "STAKEHOLDER_NEEDS_AND_REQUIREMENTS_DEFINITION",
+                "SYSTEM_REQUIREMENTS_DEFINITION",
+                "ARCHITECTURE_DEFINITION",
+                "DESIGN_DEFINITION",
+                "SYSTEM_ANALYSIS",
+                "IMPLEMENTATION",
+                "INTEGRATION",
+                "VERIFICATION",
+                "TRANSITION",
+                "VALIDATION",
+                "OPERATION",
+                "MAINTENANCE",
+                "DISPOSAL"
+            ],
+            "title": "SystemLifeCycleProcess15288",
+            "type": "string"
+        },
+        "TTestTypeEnum": {
+            "description": "Variants of Student's t-test",
+            "enum": [
+                "ONE_SAMPLE",
+                "PAIRED",
+                "TWO_SAMPLE_EQUAL_VARIANCE",
+                "TWO_SAMPLE_UNEQUAL_VARIANCE",
+                "TRIMMED_MEANS"
+            ],
+            "title": "TTestTypeEnum",
+            "type": "string"
+        },
         "TailingCharacterizationType": {
             "description": "Types of measurements and analyses used to characterize mine tailings and other mineral processing residues for resource recovery potential",
             "enum": [
@@ -10620,6 +11180,15 @@
                 "RANKINE"
             ],
             "title": "TemperatureUnitEnum",
+            "type": "string"
+        },
+        "TestTailednessEnum": {
+            "description": "Whether a statistical test allocates the significance level to one or both tails of the reference distribution",
+            "enum": [
+                "ONE_TAILED",
+                "TWO_TAILED"
+            ],
+            "title": "TestTailednessEnum",
             "type": "string"
         },
         "TextCharset": {
@@ -10729,6 +11298,30 @@
                 "INTERNAL_ENERGY"
             ],
             "title": "ThermodynamicParameterEnum",
+            "type": "string"
+        },
+        "ThermodynamicPropertyPackage": {
+            "description": "Named property methods/packages offered by process simulators, typically combining an equation of state and/or an activity-coefficient model. Used where a single package label rather than separate gamma/phi methods is recorded.",
+            "enum": [
+                "IDEAL",
+                "NRTL",
+                "NRTL_RK",
+                "UNIQUAC",
+                "UNIFAC",
+                "WILSON",
+                "VAN_LAAR",
+                "PENG_ROBINSON",
+                "SOAVE_REDLICH_KWONG",
+                "ELECTROLYTE_NRTL",
+                "PITZER",
+                "CHAO_SEADER",
+                "GRAYSON_STREED",
+                "BRAUN_K10",
+                "PC_SAFT",
+                "STEAM_TABLES",
+                "API_SOUR"
+            ],
+            "title": "ThermodynamicPropertyPackage",
             "type": "string"
         },
         "TimeOfDay": {
@@ -11426,6 +12019,66 @@
             "title": "UniProtSpeciesCode",
             "type": "string"
         },
+        "UnitOperationType": {
+            "description": "Fundamental chemical and process engineering unit operations - the discrete processing steps that transform, separate, combine, or move process material. Grouped (via the unit_operation_class annotation) into momentum transfer, heat transfer, mass-transfer separations, mechanical separations, solids processing, reaction, and storage.",
+            "enum": [
+                "PUMPING",
+                "COMPRESSION",
+                "GAS_MOVING",
+                "FLOW_SPLITTING",
+                "STREAM_MIXING",
+                "HEAT_EXCHANGE",
+                "HEATING",
+                "COOLING",
+                "CONDENSATION",
+                "EVAPORATION",
+                "DISTILLATION",
+                "ABSORPTION",
+                "STRIPPING",
+                "LIQUID_LIQUID_EXTRACTION",
+                "LEACHING",
+                "ADSORPTION",
+                "ION_EXCHANGE",
+                "CHROMATOGRAPHY",
+                "CRYSTALLIZATION",
+                "PRECIPITATION",
+                "DRYING",
+                "FREEZE_DRYING",
+                "HUMIDIFICATION",
+                "MEMBRANE_SEPARATION",
+                "MICROFILTRATION",
+                "ULTRAFILTRATION",
+                "NANOFILTRATION",
+                "REVERSE_OSMOSIS",
+                "DIALYSIS",
+                "ELECTRODIALYSIS",
+                "PERVAPORATION",
+                "FILTRATION",
+                "CENTRIFUGATION",
+                "SEDIMENTATION",
+                "CLARIFICATION",
+                "FLOTATION",
+                "FLOCCULATION",
+                "CYCLONE_SEPARATION",
+                "SCREENING",
+                "GAS_LIQUID_SEPARATION",
+                "SIZE_REDUCTION",
+                "SIZE_ENLARGEMENT",
+                "MIXING",
+                "SOLIDS_CONVEYING",
+                "CHEMICAL_REACTION",
+                "FERMENTATION",
+                "COMBUSTION",
+                "GASIFICATION",
+                "PYROLYSIS",
+                "ELECTROLYSIS",
+                "NEUTRALIZATION",
+                "PURIFICATION",
+                "STORAGE"
+            ],
+            "title": "UnitOperationType",
+            "type": "string"
+        },
         "UpdateFrequency": {
             "description": "The frequency at which a dataset is updated with new data.\nBased on Dublin Core Collection Description Frequency Vocabulary.",
             "enum": [
@@ -11459,6 +12112,31 @@
                 "WEAPONS_GRADE"
             ],
             "title": "UraniumEnrichmentLevelEnum",
+            "type": "string"
+        },
+        "UtilityType": {
+            "description": "Common plant utilities consumed or produced by process unit operations, used for energy and mass balance accounting on a flowsheet.",
+            "enum": [
+                "STEAM",
+                "LOW_PRESSURE_STEAM",
+                "MEDIUM_PRESSURE_STEAM",
+                "HIGH_PRESSURE_STEAM",
+                "COOLING_WATER",
+                "CHILLED_WATER",
+                "REFRIGERANT",
+                "HOT_OIL",
+                "BRINE",
+                "ELECTRICITY",
+                "PROCESS_WATER",
+                "DEMINERALIZED_WATER",
+                "NATURAL_GAS",
+                "FUEL_GAS",
+                "COMPRESSED_AIR",
+                "INSTRUMENT_AIR",
+                "NITROGEN",
+                "FLARE"
+            ],
+            "title": "UtilityType",
             "type": "string"
         },
         "VaccinationPeriodicityEnum": {
@@ -11535,6 +12213,22 @@
                 "SPOT_SUPPLIER"
             ],
             "title": "VendorCategoryEnum",
+            "type": "string"
+        },
+        "VerificationValidationProcessIEEE1012": {
+            "description": "Verification and validation processes applied across the system, software, and hardware life cycle.",
+            "enum": [
+                "CONCEPT_AND_REQUIREMENTS_V_AND_V",
+                "ARCHITECTURE_AND_DESIGN_V_AND_V",
+                "IMPLEMENTATION_V_AND_V",
+                "INTEGRATION_V_AND_V",
+                "QUALIFICATION_TESTING",
+                "INSTALLATION_AND_CHECKOUT",
+                "OPERATION_V_AND_V",
+                "MAINTENANCE_V_AND_V",
+                "DISPOSAL_V_AND_V"
+            ],
+            "title": "VerificationValidationProcessIEEE1012",
             "type": "string"
         },
         "ViabilityEnum": {
@@ -11668,6 +12362,19 @@
                 "TEASPOON"
             ],
             "title": "VolumeUnitEnum",
+            "type": "string"
+        },
+        "VolumetricFlowRateUnitEnum": {
+            "description": "Units of volumetric flow rate (volume per unit time)",
+            "enum": [
+                "CUBIC_METER_PER_SECOND",
+                "CUBIC_METER_PER_HOUR",
+                "LITER_PER_SECOND",
+                "LITER_PER_MINUTE",
+                "GALLON_PER_MINUTE",
+                "CUBIC_FOOT_PER_MINUTE"
+            ],
+            "title": "VolumetricFlowRateUnitEnum",
             "type": "string"
         },
         "WasteDisposalMethodEnum": {
