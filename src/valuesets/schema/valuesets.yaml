@@ -53,6 +53,7 @@ imports:
 - industry/construction
 - industry/manufacturing
 - statistics/prediction_outcomes
+- statistics/statistical_tests
 - social/person_status
 - social/sdoh
 - bio/specimen_processing

@@ -84,3 +84,12 @@ OBI:0002107,bio-layer interferometry assay,2026-06-11T16:12:09.434877
 OBI:0000719,vaccine production,2026-06-23T05:48:33.992380
 OBI:0001046,bioreactor,2026-06-25T21:04:16.310785
 OBI:0000038,chromatography column,2026-06-25T21:04:16.311231
+OBI:0000739,Student's t-test,2026-08-01T18:09:56.250814
+OBI:0200201,ANOVA,2026-08-01T18:09:56.793715
+OBI:0200200,chi square test,2026-08-01T18:09:56.797834
+OBI:0000861,Likelihood-ratio test,2026-08-01T18:09:56.807917
+OBI:0200066,Holm-Bonferroni family-wise error rate correction method,2026-08-01T18:10:37.208512
+OBI:0200036,Benjamini and Hochberg false discovery rate correction method,2026-08-01T18:10:37.208912
+OBI:0200049,Benjamini and Yekutieli false discovery rate correction method,2026-08-01T18:10:37.209332
+OBI:0200073,family wise error rate correction method,2026-08-01T18:10:37.210357
+OBI:0200163,false discovery rate correction method,2026-08-01T18:10:37.210805
