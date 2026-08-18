@@ -20,6 +20,30 @@ go -- re-check ``gen-owl`` output before assuming the workaround is still needed
 These tests read the schema YAML directly rather than the generated
 ``valuesets.enums.clinical.gene2phenotype`` module, which does not exist until
 the derived-file regeneration workflow runs on main.
+
+What this suite is and is not for
+---------------------------------
+Structural references are already enforced by code generation: a permissible
+value whose ``is_a`` or ``mixins`` names a key that does not exist fails
+``just test`` at ``_test-schema``, because ``gen-project`` builds OWL and OWL
+generation resolves both (``ValueError: Cannot find permissible value``). That
+holds for ``mixins`` even though ``gen-owl`` then discards them -- it resolves
+first, drops after. So the mixin check below is a faster, clearer echo of an
+existing guarantee rather than the only thing standing between a typo and a
+broken build.
+
+Annotation values are the genuinely unguarded surface. They are free-form
+strings, so a misspelled ``nmd_status``/``variant_type_group``/
+``parent_mechanism``, or an omitted ``nmd_status``, passes ``_test-schema``
+with exit 0 and produces no diagnostic anywhere. That is what these tests exist
+for.
+
+The guard is not total. ``test_nmd_named_types_carry_the_axis`` keys off the
+name suffix, which is exact for the current eight values but would not see an
+NMD-qualified type named the other way round (``NMD_TRIGGERING_STOP_LOST``)
+that also omitted both encodings. A looser "key contains NMD" rule was
+considered and rejected: it would false-positive on a legitimate
+``NMD_TRANSCRIPT_VARIANT`` (SO:0001621), a plausible future addition.
 """
 
 from pathlib import Path
@@ -56,8 +80,17 @@ def schema():
 
 @pytest.fixture(scope="module")
 def variant_types(schema):
-    """Permissible values of G2PVariantType, keyed by permissible value name."""
-    return schema["enums"]["G2PVariantType"]["permissible_values"]
+    """
+    Permissible values of G2PVariantType, keyed by permissible value name.
+
+    Bodies are normalised to a dict so that a value written without one
+    (``SOME_KEY:``, which YAML parses as None) does not raise AttributeError in
+    the helpers below.
+    """
+    return {
+        name: pv or {}
+        for name, pv in schema["enums"]["G2PVariantType"]["permissible_values"].items()
+    }
 
 
 def _annotation(pv, key):
@@ -80,9 +113,11 @@ def test_mixins_resolve_to_permissible_values(variant_types):
     """
     Every mixin must name a real permissible value.
 
-    Without this, a misspelled qualifier (NMD_ESCAPPING) is silently skipped by
-    every other test in this file rather than flagged, which is the exact drift
-    the suite exists to catch.
+    Without this, a misspelled qualifier (NMD_ESCAPPING) is skipped by every
+    other test in this file rather than flagged. Code generation would also
+    reject it, so this is a fast and specific echo of that rather than the sole
+    defence -- it fails with the offending key rather than a generator
+    traceback.
     """
     for name, pv in variant_types.items():
         for mixin in pv.get("mixins") or []:
