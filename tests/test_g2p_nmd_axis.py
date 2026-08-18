@@ -12,10 +12,15 @@ in agreement: if a new NMD-qualified type is added with a mixin but no
 annotation, the OWL product silently loses the axis again with nothing else
 failing.
 
-The dropped-mixin behaviour was observed with linkml 1.9.5 / linkml-runtime
-1.9.5. If a later version emits permissible-value mixins as ``rdfs:subClassOf``,
-the ``nmd_status`` annotation becomes redundant and both it and these tests can
-go -- re-check ``gen-owl`` output before assuming the workaround is still needed.
+The dropped-mixin behaviour was measured on linkml 1.9.5 / linkml-runtime 1.9.5,
+on both of the repo's OWL paths: ``gen-owl`` invoked bare, as ``just gen-owl``
+does to produce the shipped ``project/owl/valuesets.owl.ttl``, and ``gen-owl``
+invoked with ``config.yaml``'s ``generator_args.owl``, as ``gen-project`` does.
+The latter includes ``mixins_as_expressions: true``, which despite the name does
+not surface permissible-value mixins -- it governs class mixins. If a later
+version emits permissible-value mixins as ``rdfs:subClassOf``, the ``nmd_status``
+annotation becomes redundant and both it and these tests can go -- re-check
+``gen-owl`` output before assuming the workaround is still needed.
 
 These tests read the schema YAML directly rather than the generated
 ``valuesets.enums.clinical.gene2phenotype`` module, which does not exist until
@@ -28,9 +33,15 @@ value whose ``is_a`` or ``mixins`` names a key that does not exist fails
 ``just test`` at ``_test-schema``, because ``gen-project`` builds OWL and OWL
 generation resolves both (``ValueError: Cannot find permissible value``). That
 holds for ``mixins`` even though ``gen-owl`` then discards them -- it resolves
-first, drops after. So the mixin check below is a faster, clearer echo of an
-existing guarantee rather than the only thing standing between a typo and a
+first, drops after. So the mixin check below is a faster, more specific echo of
+an existing guarantee rather than the only thing standing between a typo and a
 broken build.
+
+That guarantee was measured on linkml 1.9.5 and holds only while ``owl`` is
+absent from ``excludes`` in ``config.yaml``. Adding it there would stop
+``_test-schema`` resolving permissible-value ``is_a``/``mixins`` at all, and
+nothing would report that this paragraph had become false -- so re-check both if
+either changes.
 
 Annotation values are the genuinely unguarded surface. They are free-form
 strings, so a misspelled ``nmd_status``/``variant_type_group``/
@@ -94,8 +105,19 @@ def variant_types(schema):
 
 
 def _annotation(pv, key):
-    """Read an annotation, tolerating both the compact and {tag, value} forms."""
-    raw = (pv.get("annotations") or {}).get(key)
+    """
+    Read an annotation value.
+
+    Tolerates the three shapes LinkML accepts: a compact ``key: value`` mapping,
+    a ``key: {tag, value}`` mapping, and a list of ``{tag, value}`` dicts.
+    """
+    annotations = pv.get("annotations") or {}
+    if isinstance(annotations, list):
+        for item in annotations:
+            if isinstance(item, dict) and item.get("tag") == key:
+                return item.get("value")
+        return None
+    raw = annotations.get(key)
     if isinstance(raw, dict):
         return raw.get("value")
     return raw
@@ -114,10 +136,11 @@ def test_mixins_resolve_to_permissible_values(variant_types):
     Every mixin must name a real permissible value.
 
     Without this, a misspelled qualifier (NMD_ESCAPPING) is skipped by every
-    other test in this file rather than flagged. Code generation would also
-    reject it, so this is a fast and specific echo of that rather than the sole
-    defence -- it fails with the offending key rather than a generator
-    traceback.
+    other test in this file rather than flagged. Code generation also rejects
+    it, so this is not the sole defence. Its value is under a direct ``pytest``
+    run (editor, ``uv run pytest``), where it names the offending key; under
+    ``just test`` the reader sees the generator traceback instead, because
+    ``_test-schema`` runs before pytest and aborts first.
     """
     for name, pv in variant_types.items():
         for mixin in pv.get("mixins") or []:
@@ -184,7 +207,7 @@ def test_cross_reference_annotations_resolve(schema, annotation_key, target_enum
     targets = schema["enums"][target_enum]["permissible_values"]
     checked = 0
     for enum_name, enum_def in schema["enums"].items():
-        for pv_name, pv in (enum_def.get("permissible_values") or {}).items():
+        for pv_name, pv in ((enum_def or {}).get("permissible_values") or {}).items():
             value = _annotation(pv or {}, annotation_key)
             if value is None:
                 continue
