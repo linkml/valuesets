@@ -111,3 +111,6 @@ SO:0002161,short_tandem_repeat_change,2026-08-17T19:00:42.032826
 SO:0001019,copy_number_variation,2026-08-17T19:00:42.033415
 SO:0001893,transcript_ablation,2026-08-17T19:00:42.034028
 SO:0001889,transcript_amplification,2026-08-17T19:00:42.034584
+SO:0002054,loss_of_function_variant,2026-08-18T22:40:00.000000
+SO:0002053,gain_of_function_variant,2026-08-18T22:40:00.000000
+SO:0002052,dominant_negative_variant,2026-08-18T22:40:00.000000

@@ -32,43 +32,43 @@ slots:
   g2p_confidence:
     description: The G2P confidence category assigned to a gene-disease association
     range: G2PConfidenceCategory
-  allelic_requirement:
+  g2p_allelic_requirement:
     description: The genotype required at the locus for the disease to manifest
     range: G2PAllelicRequirement
-  cross_cutting_modifier:
+  g2p_cross_cutting_modifier:
     description: An additional qualifier on the allelic requirement of a gene-disease association
     range: G2PCrossCuttingModifier
-  molecular_mechanism:
+  g2p_molecular_mechanism:
     description: The mechanism of disease derived from the available evidence
     range: G2PMolecularMechanism
-  molecular_mechanism_synopsis:
+  g2p_molecular_mechanism_synopsis:
     description: A more detailed description of the molecular mechanism of disease
     range: G2PMolecularMechanismSynopsis
-  molecular_mechanism_support:
+  g2p_molecular_mechanism_support:
     description: Whether the molecular mechanism is directly evidenced or inferred
     range: G2PMolecularMechanismSupport
-  variant_consequence:
+  g2p_variant_consequence:
     description: The consequence of a reported variant at the protein or RNA level, per allele
     range: G2PVariantConsequence
-  variant_type:
+  g2p_variant_type:
     description: The type of variant associated with a curated gene-disease pair
     range: G2PVariantType
-  variant_type_group:
+  g2p_variant_type_group:
     description: The primary type grouping a variant type belongs to
     range: G2PVariantTypeGroup
-  mechanism_evidence_category:
+  g2p_mechanism_evidence_category:
     description: The broad category of experimental evidence supporting a molecular mechanism
     range: G2PMechanismEvidenceCategory
-  function_evidence:
+  g2p_function_evidence:
     description: Evidence in the function category supporting a molecular mechanism
     range: G2PFunctionEvidence
-  functional_alteration_evidence:
+  g2p_functional_alteration_evidence:
     description: Evidence in the functional alteration category supporting a molecular mechanism
     range: G2PFunctionalAlterationEvidence
-  models_evidence:
+  g2p_models_evidence:
     description: Evidence in the models category supporting a molecular mechanism
     range: G2PModelsEvidence
-  rescue_evidence:
+  g2p_rescue_evidence:
     description: Evidence in the rescue category supporting a molecular mechanism
     range: G2PRescueEvidence
   g2p_panel:
@@ -176,10 +176,21 @@ enums:
     description: >-
       The genotype required at the locus for the disease to manifest, also referred to in
       G2P as the genotype. HPO mode of inheritance (MOI) terminology is used; G2P uses
-      synonyms of the MOI terms as many of the disorders described are de novo. HPO itself
-      records each of these G2P genotype strings as an exact synonym of the term mapped
-      below (for example monoallelic_autosomal on HP:0000006), which is what makes these
-      mappings unambiguous.
+      synonyms of the MOI terms as many of the disorders described are de novo.
+
+      The nine values are G2P's published genotype list, taken verbatim from the API the
+      terminology page itself calls (GET /gene2phenotype/api/attribs/, key "genotype"), which
+      includes the bare monoallelic_X alongside monoallelic_X_hemizygous and
+      monoallelic_X_heterozygous.
+
+      All nine G2P genotype strings are recorded by HPO as oio:hasExactSynonym of the term
+      mapped below (verified against the HPO release directly; note that the OLS obo_synonym
+      field under-reports these, listing only synonyms that carry an xref). That
+      exact-synonym correspondence is what makes these mappings unambiguous.
+
+      By convention in this enum, title is the HPO term label and the G2P string is carried
+      as an alias, matching the pv-mapping guidance and clinical/genetics.yaml; consumers
+      wanting G2P's own display string should read aliases.
     status: STANDARD
     contributors:
     - orcid:0000-0002-6601-2165
@@ -697,7 +708,10 @@ enums:
       The consequence of the reported variants at the protein (for protein-coding genes) or
       the RNA (for non-protein coding genes), per allele. These are Sequence Ontology terms
       developed for G2P and described in PMID:37982373; the descriptions below are the
-      G2P-authored usage notes rather than the SO text definitions.
+      G2P-authored usage notes rather than the SO text definitions. As in the other SO-backed
+      enums here, title is uniformly the SO term label and any differing G2P label is carried
+      as an alias; for four of the six values the SO and G2P labels coincide, which is why
+      only altered_gene_product_sequence and function_uncertain_variant carry an alias.
     status: STANDARD
     contributors:
     - orcid:0000-0002-6601-2165
@@ -802,6 +816,12 @@ enums:
       publication. All terms are Sequence Ontology terms. Where G2P uses a label that differs
       from the current SO label, the G2P label is recorded as an alias. Descriptions are the
       SO text definitions where SO provides one.
+
+      The NMD-qualified types have two parents in SO, so they are modelled with the base
+      variant as is_a and the NMD qualifier as a mixin. LinkML preserves both, but the OWL
+      generator currently emits only the is_a parent as rdfs:subClassOf and drops the mixin,
+      so the NMD axis is additionally recorded in the nmd_status annotation to keep it
+      available in every generated artifact.
     status: STANDARD
     contributors:
     - orcid:0000-0002-6601-2165
@@ -828,6 +848,7 @@ enums:
         - NMD_triggering
         annotations:
           variant_type_group: NMD_VARIANTS
+          nmd_status: TRIGGERING
       NMD_ESCAPING:
         title: NMD_escaping_variant
         description: >-
@@ -842,6 +863,7 @@ enums:
         - NMD_escaping
         annotations:
           variant_type_group: NMD_VARIANTS
+          nmd_status: ESCAPING
       STOP_GAINED_NMD_TRIGGERING:
         title: stop_gained_NMD_triggering
         description: >-
@@ -853,6 +875,7 @@ enums:
         - NMD_TRIGGERING
         annotations:
           variant_type_group: NMD_VARIANTS
+          nmd_status: TRIGGERING
       STOP_GAINED_NMD_ESCAPING:
         title: stop_gained_NMD_escaping
         description: >-
@@ -864,6 +887,7 @@ enums:
         - NMD_ESCAPING
         annotations:
           variant_type_group: NMD_VARIANTS
+          nmd_status: ESCAPING
       FRAMESHIFT_VARIANT_NMD_TRIGGERING:
         title: frameshift_variant_NMD_triggering
         description: >-
@@ -874,6 +898,7 @@ enums:
         - NMD_TRIGGERING
         annotations:
           variant_type_group: NMD_VARIANTS
+          nmd_status: TRIGGERING
       FRAMESHIFT_VARIANT_NMD_ESCAPING:
         title: frameshift_variant_NMD_escaping
         description: >-
@@ -885,6 +910,7 @@ enums:
         - NMD_ESCAPING
         annotations:
           variant_type_group: NMD_VARIANTS
+          nmd_status: ESCAPING
       SPLICE_DONOR_VARIANT_NMD_TRIGGERING:
         title: splice_donor_variant_NMD_triggering
         description: >-
@@ -896,6 +922,7 @@ enums:
         - NMD_TRIGGERING
         annotations:
           variant_type_group: NMD_VARIANTS
+          nmd_status: TRIGGERING
       SPLICE_DONOR_VARIANT_NMD_ESCAPING:
         title: splice_donor_variant_NMD_escaping
         description: >-
@@ -907,6 +934,7 @@ enums:
         - NMD_ESCAPING
         annotations:
           variant_type_group: NMD_VARIANTS
+          nmd_status: ESCAPING
       SPLICE_ACCEPTOR_VARIANT_NMD_TRIGGERING:
         title: splice_acceptor_variant_NMD_triggering
         description: >-
@@ -918,6 +946,7 @@ enums:
         - NMD_TRIGGERING
         annotations:
           variant_type_group: NMD_VARIANTS
+          nmd_status: TRIGGERING
       SPLICE_ACCEPTOR_VARIANT_NMD_ESCAPING:
         title: splice_acceptor_variant_NMD_escaping
         description: >-
@@ -929,6 +958,7 @@ enums:
         - NMD_ESCAPING
         annotations:
           variant_type_group: NMD_VARIANTS
+          nmd_status: ESCAPING
       SPLICE_REGION_VARIANT:
         title: splice_region_variant
         description: >-
