@@ -11,6 +11,12 @@ description: >-
   cross-cutting modifiers, the Backwell and Marsh framework (PMID:35395171) for molecular
   mechanism, the ClinGen gene-disease validity SOP for mechanism evidence, and Sequence
   Ontology terms for variant consequence and variant type.
+
+  Permissible value descriptions are quoted verbatim from those sources, retaining their
+  original spelling and grammar (for example "casual role" for causal role, and
+  "segregration" for segregation in the GenCC confidence text) so that the text here can be
+  diffed against the source. Where a quoted definition is itself inconsistent this is called
+  out in the value's description rather than silently corrected.
 id: https://w3id.org/valuesets/clinical/gene2phenotype
 imports:
 - linkml:types
@@ -47,6 +53,27 @@ slots:
   variant_type:
     description: The type of variant associated with a curated gene-disease pair
     range: G2PVariantType
+  variant_type_group:
+    description: The primary type grouping a variant type belongs to
+    range: G2PVariantTypeGroup
+  mechanism_evidence_category:
+    description: The broad category of experimental evidence supporting a molecular mechanism
+    range: G2PMechanismEvidenceCategory
+  function_evidence:
+    description: Evidence in the function category supporting a molecular mechanism
+    range: G2PFunctionEvidence
+  functional_alteration_evidence:
+    description: Evidence in the functional alteration category supporting a molecular mechanism
+    range: G2PFunctionalAlterationEvidence
+  models_evidence:
+    description: Evidence in the models category supporting a molecular mechanism
+    range: G2PModelsEvidence
+  rescue_evidence:
+    description: Evidence in the rescue category supporting a molecular mechanism
+    range: G2PRescueEvidence
+  g2p_panel:
+    description: The G2P disease-area panel a gene-disease association appears on
+    range: G2PPanel
 enums:
   G2PConfidenceCategory:
     title: G2P Confidence Category
@@ -54,7 +81,11 @@ enums:
       The level of confidence that a gene-disease association is real, as asserted by G2P
       curators. G2P uses the GenCC gene-disease validity classification terms. Operationally
       several groups use definitive, strong and moderate for clinical reporting; limited,
-      disputed and refuted are not used for clinical reporting.
+      disputed and refuted are not used for clinical reporting. GenCC classification
+      identifiers are recorded in the gencc_classification_id annotation rather than as
+      meaning:, because the GENCC prefix is not registered in bioregistry, OLS or the OBO
+      PURL system and so cannot be resolved; the identifiers were taken from GenCC's own
+      submissions export.
     status: STANDARD
     contributors:
     - orcid:0000-0002-6601-2165
@@ -145,8 +176,10 @@ enums:
     description: >-
       The genotype required at the locus for the disease to manifest, also referred to in
       G2P as the genotype. HPO mode of inheritance (MOI) terminology is used; G2P uses
-      synonyms of the MOI terms as many of the disorders described are de novo. Each
-      permissible value here is an exact synonym of the HPO term it is mapped to.
+      synonyms of the MOI terms as many of the disorders described are de novo. HPO itself
+      records each of these G2P genotype strings as an exact synonym of the term mapped
+      below (for example monoallelic_autosomal on HP:0000006), which is what makes these
+      mappings unambiguous.
     status: STANDARD
     contributors:
     - orcid:0000-0002-6601-2165
@@ -279,7 +312,11 @@ enums:
         title: Typically de novo
         description: >-
           Plausible disease causing mutations that occur post zygotically (formation of
-          gametes).
+          gametes). Note that this G2P wording is internally inconsistent: post-zygotic
+          events are somatic, which is what TYPICALLY_MOSAIC describes, whereas
+          gametogenesis is pre-zygotic. The mapped HPO term HP:0025352 carries the intended
+          sense, defining conditions that are exclusively or predominantly observed to
+          display de novo variants.
         meaning: HP:0025352
         aliases:
         - typically de novo
@@ -404,28 +441,28 @@ enums:
           A process whereby a missense change destabilises the protein structure resulting in
           loss of function.
         annotations:
-          parent_mechanism: loss of function
+          parent_mechanism: LOSS_OF_FUNCTION
       INTERACTION_DISRUPTING_LOF:
         title: interaction-disrupting LOF
         description: >-
           A process whereby a variant allele disrupts interaction resulting in loss of
           function, for example a change in an interaction site.
         annotations:
-          parent_mechanism: loss of function
+          parent_mechanism: LOSS_OF_FUNCTION
       LOSS_OF_ACTIVITY_LOF:
         title: loss of activity LOF
         description: >-
           A process whereby a variant allele disrupts activity resulting in loss of function,
           for example a change in an active site.
         annotations:
-          parent_mechanism: loss of function
+          parent_mechanism: LOSS_OF_FUNCTION
       LOF_DUE_TO_PROTEIN_MISLOCALISATION:
         title: LOF due to protein mislocalisation
         description: >-
           A loss of function caused by mislocalisation of a protein, rather than direct
           disruption of its structure or function.
         annotations:
-          parent_mechanism: loss of function
+          parent_mechanism: LOSS_OF_FUNCTION
       ASSEMBLY_MEDIATED_DOMINANT_NEGATIVE:
         title: assembly-mediated dominant negative
         description: >-
@@ -433,21 +470,21 @@ enums:
           subunits but results in poisoning the activity of the hybrid complex, causing a
           disproportionate loss of function.
         annotations:
-          parent_mechanism: dominant negative
+          parent_mechanism: DOMINANT_NEGATIVE
       COMPETITIVE_DOMINANT_NEGATIVE:
         title: competitive dominant-negative
         description: >-
           A process whereby the novel protein disrupts specific interactions by competing
           with wild-type protein, thus having a dominant-negative effect.
         annotations:
-          parent_mechanism: dominant negative
+          parent_mechanism: DOMINANT_NEGATIVE
       ASSEMBLY_MEDIATED_GOF:
         title: assembly-mediated GOF
         description: >-
           A process whereby incorporation of a mutant subunit into a protein complex leads to
           a gain of function, for example through constitutive activation of a channel.
         annotations:
-          parent_mechanism: gain of function
+          parent_mechanism: GAIN_OF_FUNCTION
       LOCAL_LOF_LEADING_TO_OVERALL_GOF:
         title: local LOF leading to overall GOF
         description: >-
@@ -455,7 +492,7 @@ enums:
           protein, for example binding of a regulatory domain is disrupted but enzymatic
           activity is retained.
         annotations:
-          parent_mechanism: gain of function
+          parent_mechanism: GAIN_OF_FUNCTION
       AGGREGATION:
         title: aggregation
         description: >-
@@ -463,7 +500,7 @@ enums:
           of function, for example misfolded proteins self-assembling into large aggregates
           or RNA binding protein gelation.
         annotations:
-          parent_mechanism: gain of function
+          parent_mechanism: GAIN_OF_FUNCTION
       OTHER_GOF:
         title: other GOF
         description: >-
@@ -471,7 +508,7 @@ enums:
           for example a mutation in an active site which changes histone binding causing a
           novel function.
         annotations:
-          parent_mechanism: gain of function
+          parent_mechanism: GAIN_OF_FUNCTION
   G2PMolecularMechanismSupport:
     title: G2P Molecular Mechanism Support
     description: >-
@@ -790,7 +827,7 @@ enums:
         aliases:
         - NMD_triggering
         annotations:
-          variant_type_group: NMD_variants
+          variant_type_group: NMD_VARIANTS
       NMD_ESCAPING:
         title: NMD_escaping_variant
         description: >-
@@ -804,70 +841,94 @@ enums:
         aliases:
         - NMD_escaping
         annotations:
-          variant_type_group: NMD_variants
+          variant_type_group: NMD_VARIANTS
       STOP_GAINED_NMD_TRIGGERING:
         title: stop_gained_NMD_triggering
         description: >-
           A stop_gained (SO:0001587) variant that is degraded by nonsense-mediated decay
           (NMD).
         meaning: SO:0002321
+        is_a: STOP_GAINED
+        mixins:
+        - NMD_TRIGGERING
         annotations:
-          variant_type_group: NMD_variants
+          variant_type_group: NMD_VARIANTS
       STOP_GAINED_NMD_ESCAPING:
         title: stop_gained_NMD_escaping
         description: >-
           A stop_gained (SO:0001587) variant that allows the transcript to escape
           nonsense-mediated decay (NMD).
         meaning: SO:0002322
+        is_a: STOP_GAINED
+        mixins:
+        - NMD_ESCAPING
         annotations:
-          variant_type_group: NMD_variants
+          variant_type_group: NMD_VARIANTS
       FRAMESHIFT_VARIANT_NMD_TRIGGERING:
         title: frameshift_variant_NMD_triggering
         description: >-
           A frameshift_variant (SO:0001589) that is degraded by nonsense-mediated decay (NMD).
         meaning: SO:0002323
+        is_a: FRAMESHIFT_VARIANT
+        mixins:
+        - NMD_TRIGGERING
         annotations:
-          variant_type_group: NMD_variants
+          variant_type_group: NMD_VARIANTS
       FRAMESHIFT_VARIANT_NMD_ESCAPING:
         title: frameshift_variant_NMD_escaping
         description: >-
           A frameshift_variant (SO:0001589) that allows the transcript to escape
           nonsense-mediated decay (NMD).
         meaning: SO:0002324
+        is_a: FRAMESHIFT_VARIANT
+        mixins:
+        - NMD_ESCAPING
         annotations:
-          variant_type_group: NMD_variants
+          variant_type_group: NMD_VARIANTS
       SPLICE_DONOR_VARIANT_NMD_TRIGGERING:
         title: splice_donor_variant_NMD_triggering
         description: >-
           A splice_donor_variant (SO:0001575) that is degraded by nonsense-mediated decay
           (NMD).
         meaning: SO:0002325
+        is_a: SPLICE_DONOR_VARIANT
+        mixins:
+        - NMD_TRIGGERING
         annotations:
-          variant_type_group: NMD_variants
+          variant_type_group: NMD_VARIANTS
       SPLICE_DONOR_VARIANT_NMD_ESCAPING:
         title: splice_donor_variant_NMD_escaping
         description: >-
           A splice_donor_variant (SO:0001575) that allows the transcript to escape
           nonsense-mediated decay (NMD).
         meaning: SO:0002326
+        is_a: SPLICE_DONOR_VARIANT
+        mixins:
+        - NMD_ESCAPING
         annotations:
-          variant_type_group: NMD_variants
+          variant_type_group: NMD_VARIANTS
       SPLICE_ACCEPTOR_VARIANT_NMD_TRIGGERING:
         title: splice_acceptor_variant_NMD_triggering
         description: >-
           A splice_acceptor_variant (SO:0001574) that is degraded by nonsense-mediated decay
           (NMD).
         meaning: SO:0002327
+        is_a: SPLICE_ACCEPTOR_VARIANT
+        mixins:
+        - NMD_TRIGGERING
         annotations:
-          variant_type_group: NMD_variants
+          variant_type_group: NMD_VARIANTS
       SPLICE_ACCEPTOR_VARIANT_NMD_ESCAPING:
         title: splice_acceptor_variant_NMD_escaping
         description: >-
           A splice_acceptor_variant (SO:0001574) that allows the transcript to escape
           nonsense-mediated decay (NMD).
         meaning: SO:0002328
+        is_a: SPLICE_ACCEPTOR_VARIANT
+        mixins:
+        - NMD_ESCAPING
         annotations:
-          variant_type_group: NMD_variants
+          variant_type_group: NMD_VARIANTS
       SPLICE_REGION_VARIANT:
         title: splice_region_variant
         description: >-
@@ -875,49 +936,45 @@ enums:
           site, either within 1-3 bases of the exon or 3-8 bases of the intron.
         meaning: SO:0001630
         annotations:
-          variant_type_group: splice_variants
+          variant_type_group: SPLICE_VARIANTS
       SPLICE_ACCEPTOR_VARIANT:
         title: splice_acceptor_variant
         description: A splice variant that changes the 2 base region at the 3' end of an intron.
         meaning: SO:0001574
         annotations:
-          variant_type_group: splice_variants
+          variant_type_group: SPLICE_VARIANTS
       SPLICE_DONOR_VARIANT:
         title: splice_donor_variant
         description: >-
           A splice variant that changes the 2 base pair region at the 5' end of an intron.
         meaning: SO:0001575
         annotations:
-          variant_type_group: splice_variants
+          variant_type_group: SPLICE_VARIANTS
       FIVE_PRIME_UTR_VARIANT:
         title: 5_prime_UTR_variant
         description: A UTR variant of the 5' UTR.
         meaning: SO:0001623
-        aliases:
-        - 5_prime_UTR_variant
         annotations:
-          variant_type_group: regulatory_variants
+          variant_type_group: REGULATORY_VARIANTS
       THREE_PRIME_UTR_VARIANT:
         title: 3_prime_UTR_variant
         description: A UTR variant of the 3' UTR.
         meaning: SO:0001624
-        aliases:
-        - 3_prime_UTR_variant
         annotations:
-          variant_type_group: regulatory_variants
+          variant_type_group: REGULATORY_VARIANTS
       REGULATORY_REGION_VARIANT:
         title: regulatory_region_variant
         description: A sequence variant located within a regulatory region.
         meaning: SO:0001566
         annotations:
-          variant_type_group: regulatory_variants
+          variant_type_group: REGULATORY_VARIANTS
       START_LOST:
         title: start_lost
         description: >-
           A codon variant that changes at least one base of the canonical start codon.
         meaning: SO:0002012
         annotations:
-          variant_type_group: protein_changing_variants
+          variant_type_group: PROTEIN_CHANGING_VARIANTS
       STOP_GAINED:
         title: stop_gained
         description: >-
@@ -925,7 +982,7 @@ enums:
           premature stop codon, leading to a shortened polypeptide.
         meaning: SO:0001587
         annotations:
-          variant_type_group: protein_changing_variants
+          variant_type_group: PROTEIN_CHANGING_VARIANTS
       STOP_LOST:
         title: stop_lost
         description: >-
@@ -933,7 +990,7 @@ enums:
           changed, resulting in an elongated transcript.
         meaning: SO:0001578
         annotations:
-          variant_type_group: protein_changing_variants
+          variant_type_group: PROTEIN_CHANGING_VARIANTS
       FRAMESHIFT_VARIANT:
         title: frameshift_variant
         description: >-
@@ -941,7 +998,7 @@ enums:
           because the number of nucleotides inserted or deleted is not a multiple of three.
         meaning: SO:0001589
         annotations:
-          variant_type_group: protein_changing_variants
+          variant_type_group: PROTEIN_CHANGING_VARIANTS
       MISSENSE_VARIANT:
         title: missense_variant
         description: >-
@@ -949,46 +1006,46 @@ enums:
           acid sequence but where the length is preserved.
         meaning: SO:0001583
         annotations:
-          variant_type_group: protein_changing_variants
+          variant_type_group: PROTEIN_CHANGING_VARIANTS
       INFRAME_INSERTION:
         title: inframe_insertion
         description: >-
           An inframe non synonymous variant that inserts bases into in the coding sequence.
         meaning: SO:0001821
         annotations:
-          variant_type_group: protein_changing_variants
+          variant_type_group: PROTEIN_CHANGING_VARIANTS
       INFRAME_DELETION:
         title: inframe_deletion
         description: >-
           An inframe non synonymous variant that deletes bases from the coding sequence.
         meaning: SO:0001822
         annotations:
-          variant_type_group: protein_changing_variants
+          variant_type_group: PROTEIN_CHANGING_VARIANTS
       SYNONYMOUS_VARIANT:
         title: synonymous_variant
         description: >-
           A sequence variant where there is no resulting change to the encoded amino acid.
         meaning: SO:0001819
         annotations:
-          variant_type_group: other_variants
+          variant_type_group: OTHER_VARIANTS
       INTRON_VARIANT:
         title: intron_variant
         description: A transcript variant occurring within an intron.
         meaning: SO:0001627
         annotations:
-          variant_type_group: other_variants
+          variant_type_group: OTHER_VARIANTS
       INTERGENIC_VARIANT:
         title: intergenic_variant
         description: A sequence variant located in the intergenic region, between genes.
         meaning: SO:0001628
         annotations:
-          variant_type_group: other_variants
+          variant_type_group: OTHER_VARIANTS
       NON_CODING_TRANSCRIPT_VARIANT:
         title: non_coding_transcript_variant
         description: A transcript variant of a non coding RNA gene.
         meaning: SO:0001619
         annotations:
-          variant_type_group: other_variants
+          variant_type_group: OTHER_VARIANTS
       SHORT_TANDEM_REPEAT_CHANGE:
         title: short_tandem_repeat_change
         description: >-
@@ -997,14 +1054,14 @@ enums:
           description is taken from the SO term comment.
         meaning: SO:0002161
         annotations:
-          variant_type_group: other_variants
+          variant_type_group: OTHER_VARIANTS
       COPY_NUMBER_VARIATION:
         title: copy_number_variation
         description: >-
           A variation that increases or decreases the copy number of a given region.
         meaning: SO:0001019
         annotations:
-          variant_type_group: other_variants
+          variant_type_group: OTHER_VARIANTS
       WHOLE_PARTIAL_GENE_DELETION:
         title: transcript_ablation
         description: >-
@@ -1014,7 +1071,7 @@ enums:
         aliases:
         - whole_partial_gene_deletion
         annotations:
-          variant_type_group: other_variants
+          variant_type_group: OTHER_VARIANTS
       WHOLE_PARTIAL_GENE_DUPLICATION:
         title: transcript_amplification
         description: >-
@@ -1024,7 +1081,7 @@ enums:
         aliases:
         - whole_partial_gene_duplication
         annotations:
-          variant_type_group: other_variants
+          variant_type_group: OTHER_VARIANTS
   G2PPanel:
     title: G2P Panel
     description: >-
@@ -1040,6 +1097,8 @@ enums:
       stewards: https://www.ebi.ac.uk/gene2phenotype
       publishers: https://www.ebi.ac.uk/gene2phenotype
       source: https://www.ebi.ac.uk/gene2phenotype/panels
+      retrieved: '2026-08-18'
+      note: G2P adds panels over time; this list is a snapshot as of the retrieved date.
     permissible_values:
       CANCER:
         title: Cancer
