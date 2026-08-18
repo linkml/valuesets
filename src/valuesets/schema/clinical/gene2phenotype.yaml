@@ -822,10 +822,11 @@ enums:
       SO text definitions where SO provides one.
 
       The NMD-qualified types have two parents in SO, so they are modelled with the base
-      variant as is_a and the NMD qualifier as a mixin. LinkML preserves both, but the OWL
-      generator currently emits only the is_a parent as rdfs:subClassOf and drops the mixin,
-      so the NMD axis is additionally recorded in the nmd_status annotation to keep it
-      available in every generated artifact.
+      variant as is_a and the NMD qualifier as a mixin. LinkML preserves both, but as of
+      linkml 1.9.5 the OWL generator emits only the is_a parent as rdfs:subClassOf and drops
+      the mixin, so the NMD axis is additionally recorded in the nmd_status annotation to
+      keep it available in every generated artifact. If a later linkml emits
+      permissible-value mixins, that annotation is redundant and can go.
     status: STANDARD
     contributors:
     - orcid:0000-0002-6601-2165
