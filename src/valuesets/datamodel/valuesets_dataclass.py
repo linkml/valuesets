@@ -1,5 +1,5 @@
 # Auto generated from valuesets.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-01-30T18:34:51
+# Generation date: 2026-08-18T15:17:11
 # Schema: valuesets
 #
 # id: https://w3id.org/valuesets
@@ -2951,6 +2951,153 @@ class ProteinModificationType(EnumDefinitionImpl):
         description="Types of protein modifications",
     )
 
+class SecondaryStructureType(EnumDefinitionImpl):
+    """
+    Per-residue secondary structure assignment. The permissible values correspond to the canonical DSSP 8-state (SS8)
+    classification, which is also the secondary-structure track vocabulary used by protein language models such as
+    ESM3. The single-letter DSSP code is recorded in the ``dssp_code`` annotation.
+    """
+    ALPHA_HELIX = PermissibleValue(
+        text="ALPHA_HELIX",
+        title="alpha helix",
+        description="Right-handed alpha helix (3.6 residues/turn, i to i+4 hydrogen bonding)",
+        meaning=SO["0001117"])
+    THREE_TEN_HELIX = PermissibleValue(
+        text="THREE_TEN_HELIX",
+        title="3-10 helix",
+        description="3-10 helix (3 residues/turn, i to i+3 hydrogen bonding)",
+        meaning=SO["0001119"])
+    PI_HELIX = PermissibleValue(
+        text="PI_HELIX",
+        title="pi helix",
+        description="Pi helix (4.1 residues/turn, i to i+5 hydrogen bonding)",
+        meaning=SO["0001118"])
+    BETA_STRAND = PermissibleValue(
+        text="BETA_STRAND",
+        title="beta strand",
+        description="Extended beta strand participating in a beta sheet",
+        meaning=SO["0001111"])
+    BETA_BRIDGE = PermissibleValue(
+        text="BETA_BRIDGE",
+        title="isolated beta bridge",
+        description="Residue in an isolated single-pair beta bridge")
+    TURN = PermissibleValue(
+        text="TURN",
+        title="hydrogen-bonded turn",
+        description="Hydrogen-bonded turn reversing backbone direction over <=4 residues",
+        meaning=SO["0001128"])
+    BEND = PermissibleValue(
+        text="BEND",
+        title="bend",
+        description="Region of high backbone curvature without regular hydrogen bonding")
+    COIL = PermissibleValue(
+        text="COIL",
+        title="coil / loop",
+        description="Irregular, unstructured backbone region (loop / random coil)",
+        meaning=SO["0100012"])
+
+    _defn = EnumDefinition(
+        name="SecondaryStructureType",
+        description="""Per-residue secondary structure assignment. The permissible values correspond to the canonical DSSP 8-state (SS8) classification, which is also the secondary-structure track vocabulary used by protein language models such as ESM3. The single-letter DSSP code is recorded in the ``dssp_code`` annotation.""",
+    )
+
+class LocalStructuralFeature(EnumDefinitionImpl):
+    """
+    Fine-grained local three-dimensional features of protein structures, spanning super-secondary structural motifs,
+    functional sites, and local geometric surface features. This is the curated, ontology-mapped analogue of the
+    learned per-residue feature vocabularies produced by protein language models and their sparse-autoencoder
+    interpretations. Members marked with the ``ontology_gap`` annotation have no suitable OBO term and are candidates
+    for new ontology terms.
+    """
+    POLYPEPTIDE_STRUCTURAL_MOTIF = PermissibleValue(
+        text="POLYPEPTIDE_STRUCTURAL_MOTIF",
+        title="polypeptide structural motif",
+        description="""A recurring 3D structural element within the chain that does not form a stable globular unit (the general parent class for local motifs)""",
+        meaning=SO["0001079"])
+    BETA_HAIRPIN = PermissibleValue(
+        text="BETA_HAIRPIN",
+        title="beta hairpin",
+        description="Two adjacent antiparallel beta strands connected by a short loop or turn")
+    BETA_BULGE = PermissibleValue(
+        text="BETA_BULGE",
+        title="beta bulge",
+        description="A local disruption of beta-sheet hydrogen bonding across three residues",
+        meaning=SO["0001107"])
+    ASX_MOTIF = PermissibleValue(
+        text="ASX_MOTIF",
+        title="asx motif",
+        description="A five-residue motif nucleated by an Asp/Asn side chain (Asx)",
+        meaning=SO["0001106"])
+    NEST = PermissibleValue(
+        text="NEST",
+        title="polypeptide nest motif",
+        description="A motif of two consecutive residues forming an anion-binding concavity",
+        meaning=SO["0001120"])
+    COILED_COIL = PermissibleValue(
+        text="COILED_COIL",
+        title="coiled coil",
+        description="Two or more alpha helices wound together like strands of a rope",
+        meaning=SO["0001080"])
+    HELIX_CAP = PermissibleValue(
+        text="HELIX_CAP",
+        title="helix cap",
+        description="N-cap or C-cap residue terminating an alpha helix")
+    CATALYTIC_RESIDUE = PermissibleValue(
+        text="CATALYTIC_RESIDUE",
+        title="catalytic residue",
+        description="An amino acid residue directly involved in enzyme catalysis (active site)",
+        meaning=SO["0001104"])
+    PROTEIN_BINDING_SITE = PermissibleValue(
+        text="PROTEIN_BINDING_SITE",
+        title="protein binding site",
+        description="A site that interacts selectively and non-covalently with polypeptide molecules",
+        meaning=SO["0000410"])
+    DISULFIDE_BOND = PermissibleValue(
+        text="DISULFIDE_BOND",
+        title="disulfide bond",
+        description="A covalent S-S bond between two cysteine residues")
+    METAL_BINDING_SITE = PermissibleValue(
+        text="METAL_BINDING_SITE",
+        title="metal binding site",
+        description="A local site coordinating one or more metal ions")
+    POCKET = PermissibleValue(
+        text="POCKET",
+        title="binding pocket",
+        description="A concave, solvent-accessible surface depression that can accommodate a ligand")
+    CLEFT = PermissibleValue(
+        text="CLEFT",
+        title="cleft",
+        description="An elongated surface groove between structural elements or domains")
+    CAVITY = PermissibleValue(
+        text="CAVITY",
+        title="interior cavity",
+        description="An enclosed, solvent-inaccessible internal void within the structure")
+    TUNNEL = PermissibleValue(
+        text="TUNNEL",
+        title="tunnel / channel",
+        description="An elongated, often buried, passage through the structure connecting two regions")
+    GROOVE = PermissibleValue(
+        text="GROOVE",
+        title="groove",
+        description="A surface channel, e.g. a nucleic-acid-binding groove")
+    ELBOW = PermissibleValue(
+        text="ELBOW",
+        title="elbow / hinge",
+        description="A localized bend or hinge between two structural elements or domains")
+    KINK = PermissibleValue(
+        text="KINK",
+        title="helix kink",
+        description="A localized bend interrupting the regular geometry of a helix")
+    INTERFACE = PermissibleValue(
+        text="INTERFACE",
+        title="interaction interface",
+        description="A surface patch mediating contact with another chain or molecule")
+
+    _defn = EnumDefinition(
+        name="LocalStructuralFeature",
+        description="""Fine-grained local three-dimensional features of protein structures, spanning super-secondary structural motifs, functional sites, and local geometric surface features. This is the curated, ontology-mapped analogue of the learned per-residue feature vocabularies produced by protein language models and their sparse-autoencoder interpretations. Members marked with the ``ontology_gap`` annotation have no suitable OBO term and are candidates for new ontology terms.""",
+    )
+
 class BiosafetyLevelEnum(EnumDefinitionImpl):
     """
     Biosafety levels (BSL) defining containment requirements for biological agents
@@ -4790,6 +4937,179 @@ class MousePostnatalAgeGroupEnum(EnumDefinitionImpl):
     _defn = EnumDefinition(
         name="MousePostnatalAgeGroupEnum",
         description="""Postnatal mouse age groups using postnatal day (P) notation. Common categories used in laboratory research for developmental studies.""",
+    )
+
+class CellFreeExpressionSystemEnum(EnumDefinitionImpl):
+    """
+    Source extracts and reconstituted systems used for cell-free protein synthesis. Crude lysate systems are derived
+    from cell extracts, while reconstituted systems (e.g. PURE) are assembled from purified components.
+    """
+    ECOLI_EXTRACT = PermissibleValue(
+        text="ECOLI_EXTRACT",
+        description="""Escherichia coli crude cell extract (e.g. S30, S12), the most widely used prokaryotic cell-free system for high-yield protein production""")
+    PURE_SYSTEM = PermissibleValue(
+        text="PURE_SYSTEM",
+        description="""Protein synthesis Using Recombinant Elements - a reconstituted system assembled from individually purified E. coli translation factors, ribosomes, and enzymes""")
+    WHEAT_GERM_EXTRACT = PermissibleValue(
+        text="WHEAT_GERM_EXTRACT",
+        description="""Wheat germ (Triticum aestivum) extract, a eukaryotic system favored for expression of complex and difficult eukaryotic proteins""")
+    RABBIT_RETICULOCYTE_LYSATE = PermissibleValue(
+        text="RABBIT_RETICULOCYTE_LYSATE",
+        description="""Rabbit (Oryctolagus cuniculus) reticulocyte lysate, a classic mammalian system for in vitro translation and protein labeling""",
+        meaning=BAO["0000255"])
+    INSECT_CELL_EXTRACT = PermissibleValue(
+        text="INSECT_CELL_EXTRACT",
+        description="""Insect cell extract, typically from Spodoptera frugiperda (Sf21), supporting eukaryotic post-translational modifications""")
+    HELA_EXTRACT = PermissibleValue(
+        text="HELA_EXTRACT",
+        description="""Human HeLa cell extract used for mammalian cell-free expression with authentic human translation machinery""")
+    CHO_EXTRACT = PermissibleValue(
+        text="CHO_EXTRACT",
+        description="""Chinese hamster ovary (Cricetulus griseus) cell extract supporting glycosylation and disulfide bond formation""")
+    YEAST_EXTRACT = PermissibleValue(
+        text="YEAST_EXTRACT",
+        description="Yeast (Saccharomyces cerevisiae) cell extract for eukaryotic cell-free protein synthesis")
+    LEISHMANIA_EXTRACT = PermissibleValue(
+        text="LEISHMANIA_EXTRACT",
+        description="""Leishmania tarentolae cell extract, a eukaryotic system supporting high yields and post-translational modifications""")
+    VIBRIO_NATRIEGENS_EXTRACT = PermissibleValue(
+        text="VIBRIO_NATRIEGENS_EXTRACT",
+        description="""Vibrio natriegens cell extract, an emerging fast-growing prokaryotic chassis for rapid, high-yield cell-free expression""")
+    TOBACCO_BY2_EXTRACT = PermissibleValue(
+        text="TOBACCO_BY2_EXTRACT",
+        description="""Tobacco BY-2 (Nicotiana tabacum bright yellow-2) cell lysate, a plant eukaryotic cell-free system""")
+
+    _defn = EnumDefinition(
+        name="CellFreeExpressionSystemEnum",
+        description="""Source extracts and reconstituted systems used for cell-free protein synthesis. Crude lysate systems are derived from cell extracts, while reconstituted systems (e.g. PURE) are assembled from purified components.""",
+    )
+
+class CellFreeReactionFormatEnum(EnumDefinitionImpl):
+    """
+    Physical configurations of cell-free expression reactions, differing in how substrates are supplied and byproducts
+    removed, which affects reaction duration and protein yield.
+    """
+    BATCH = PermissibleValue(
+        text="BATCH",
+        description="""Single closed reaction with all components mixed at the start; simplest format but limited by substrate depletion and byproduct accumulation""")
+    CONTINUOUS_EXCHANGE = PermissibleValue(
+        text="CONTINUOUS_EXCHANGE",
+        description="""Continuous-exchange cell-free (CECF) format with a semipermeable membrane separating a reaction chamber from a feeding chamber, allowing diffusion of substrates in and byproducts out""")
+    CONTINUOUS_FLOW = PermissibleValue(
+        text="CONTINUOUS_FLOW",
+        description="""Continuous-flow cell-free (CFCF) format in which fresh substrates are continuously pumped through the reaction while product is collected""")
+    BILAYER = PermissibleValue(
+        text="BILAYER",
+        description="""Bilayer format where a feeding solution is layered over the reaction mixture without a membrane, prolonging reaction by passive diffusion""")
+    LYOPHILIZED = PermissibleValue(
+        text="LYOPHILIZED",
+        description="""Freeze-dried (lyophilized) cell-free reaction that is shelf-stable and activated by rehydration; basis of freeze-dried cell-free (FD-CF) diagnostics and portable biomanufacturing""")
+
+    _defn = EnumDefinition(
+        name="CellFreeReactionFormatEnum",
+        description="""Physical configurations of cell-free expression reactions, differing in how substrates are supplied and byproducts removed, which affects reaction duration and protein yield.""",
+    )
+
+class EnergyRegenerationSubstrateEnum(EnumDefinitionImpl):
+    """
+    Secondary energy substrates added to cell-free reactions to regenerate ATP and GTP consumed during transcription
+    and translation. Choice of substrate affects cost, reaction longevity, and inorganic phosphate accumulation.
+    """
+    PHOSPHOCREATINE = PermissibleValue(
+        text="PHOSPHOCREATINE",
+        description="""Creatine phosphate (N-phosphocreatine) regenerated with creatine kinase; a classic high-energy phosphate donor""",
+        meaning=CHEBI["17287"])
+    PHOSPHOENOLPYRUVATE = PermissibleValue(
+        text="PHOSPHOENOLPYRUVATE",
+        description="""Phosphoenolpyruvate (PEP) regenerated with pyruvate kinase; a common high-energy phosphate donor""",
+        meaning=CHEBI["18021"])
+    ACETYL_PHOSPHATE = PermissibleValue(
+        text="ACETYL_PHOSPHATE",
+        description="Acetyl phosphate regenerated with acetate kinase; an inexpensive energy source",
+        meaning=CHEBI["15350"])
+    THREE_PGA = PermissibleValue(
+        text="THREE_PGA",
+        description="""3-phosphoglycerate (3-PGA), a glycolytic intermediate widely used as a low-cost energy substrate in E. coli cell-free systems""",
+        meaning=CHEBI["17794"])
+    GLUCOSE = PermissibleValue(
+        text="GLUCOSE",
+        description="""Glucose feeding glycolysis for ATP regeneration; a very low-cost energy source that requires phosphate buffering""",
+        meaning=CHEBI["17634"])
+    GLUCOSE_6_PHOSPHATE = PermissibleValue(
+        text="GLUCOSE_6_PHOSPHATE",
+        description="Glucose 6-phosphate fed into glycolysis for energy regeneration",
+        meaning=CHEBI["14314"])
+    MALTOSE = PermissibleValue(
+        text="MALTOSE",
+        description="Maltose used as a low-cost energy substrate that limits inorganic phosphate accumulation",
+        meaning=CHEBI["17306"])
+    PYRUVATE = PermissibleValue(
+        text="PYRUVATE",
+        description="Pyruvate used as an energy source, oxidized via the central metabolism of the extract",
+        meaning=CHEBI["15361"])
+    MALTODEXTRIN = PermissibleValue(
+        text="MALTODEXTRIN",
+        description="""Maltodextrin (glucose polymer) energy substrate providing slow glucose release and minimal phosphate buildup""")
+
+    _defn = EnumDefinition(
+        name="EnergyRegenerationSubstrateEnum",
+        description="""Secondary energy substrates added to cell-free reactions to regenerate ATP and GTP consumed during transcription and translation. Choice of substrate affects cost, reaction longevity, and inorganic phosphate accumulation.""",
+    )
+
+class CellFreeApplicationEnum(EnumDefinitionImpl):
+    """
+    Common applications and use cases for cell-free protein synthesis across research, synthetic biology, and
+    biomanufacturing.
+    """
+    RECOMBINANT_PROTEIN_PRODUCTION = PermissibleValue(
+        text="RECOMBINANT_PROTEIN_PRODUCTION",
+        description="General production of recombinant proteins in vitro")
+    MEMBRANE_PROTEIN_EXPRESSION = PermissibleValue(
+        text="MEMBRANE_PROTEIN_EXPRESSION",
+        description="""Expression of membrane proteins, often co-translationally inserted into liposomes, nanodiscs, or detergent micelles""")
+    DIFFICULT_PROTEIN_EXPRESSION = PermissibleValue(
+        text="DIFFICULT_PROTEIN_EXPRESSION",
+        description="""Expression of toxic, unstable, or otherwise difficult-to-express proteins that are problematic in living cells""")
+    GENETIC_CIRCUIT_PROTOTYPING = PermissibleValue(
+        text="GENETIC_CIRCUIT_PROTOTYPING",
+        description="""Rapid prototyping and characterization of genetic parts and circuits using in vitro transcription-translation (TX-TL)""")
+    METABOLIC_PATHWAY_PROTOTYPING = PermissibleValue(
+        text="METABOLIC_PATHWAY_PROTOTYPING",
+        description="Building and testing enzymatic and metabolic pathways in vitro for cell-free biosynthesis")
+    BIOSENSOR = PermissibleValue(
+        text="BIOSENSOR",
+        description="""Cell-free biosensors, including freeze-dried paper-based sensors for detecting nucleic acids, small molecules, or contaminants""",
+        meaning=NCIT["C16350"])
+    DIAGNOSTICS = PermissibleValue(
+        text="DIAGNOSTICS",
+        description="""Point-of-care and field-deployable diagnostics, often freeze-dried cell-free reactions coupled to toehold switches or CRISPR readouts""")
+    UNNATURAL_AMINO_ACID_INCORPORATION = PermissibleValue(
+        text="UNNATURAL_AMINO_ACID_INCORPORATION",
+        description="""Site-specific incorporation of non-canonical/unnatural amino acids via orthogonal translation components""")
+    PROTEIN_LABELING = PermissibleValue(
+        text="PROTEIN_LABELING",
+        description="""Incorporation of radioactive, fluorescent, or isotopic labels for detection and structural studies""")
+    STRUCTURAL_BIOLOGY = PermissibleValue(
+        text="STRUCTURAL_BIOLOGY",
+        description="""Production of selectively or uniformly isotope-labeled proteins for NMR and other structural studies""")
+    HIGH_THROUGHPUT_SCREENING = PermissibleValue(
+        text="HIGH_THROUGHPUT_SCREENING",
+        description="""Parallelized small-volume expression for protein screening, directed evolution, and library characterization""",
+        meaning=NCIT["C18472"])
+    VACCINE_PRODUCTION = PermissibleValue(
+        text="VACCINE_PRODUCTION",
+        description="On-demand cell-free production of protein subunit and conjugate vaccine antigens",
+        meaning=OBI["0000719"])
+    ANTIBODY_PRODUCTION = PermissibleValue(
+        text="ANTIBODY_PRODUCTION",
+        description="Cell-free synthesis of antibodies and antibody fragments")
+    EDUCATION = PermissibleValue(
+        text="EDUCATION",
+        description="Use of cell-free kits for teaching and outreach in synthetic biology")
+
+    _defn = EnumDefinition(
+        name="CellFreeApplicationEnum",
+        description="""Common applications and use cases for cell-free protein synthesis across research, synthetic biology, and biomanufacturing.""",
     )
 
 class DayOfWeek(EnumDefinitionImpl):
@@ -8452,6 +8772,312 @@ class OperationalProcedureEnum(EnumDefinitionImpl):
         description="Standard nuclear facility operational procedures",
     )
 
+class FusionConfinementType(EnumDefinitionImpl):
+    """
+    Methods for confining plasma in fusion energy experiments and reactors
+    """
+    MAGNETIC_CONFINEMENT_TOKAMAK = PermissibleValue(
+        text="MAGNETIC_CONFINEMENT_TOKAMAK",
+        description="""Magnetic confinement using a toroidal chamber with an axial magnetic field and plasma current (tokamak)""")
+    MAGNETIC_CONFINEMENT_STELLARATOR = PermissibleValue(
+        text="MAGNETIC_CONFINEMENT_STELLARATOR",
+        description="""Magnetic confinement using external coils to generate a twisted toroidal magnetic field (stellarator)""")
+    INERTIAL_CONFINEMENT = PermissibleValue(
+        text="INERTIAL_CONFINEMENT",
+        description="Confinement by compressing fuel pellets to extreme densities using lasers or particle beams")
+    MAGNETO_INERTIAL = PermissibleValue(
+        text="MAGNETO_INERTIAL",
+        description="Hybrid approach combining magnetic field compression with inertial confinement")
+    LASER_DRIVEN = PermissibleValue(
+        text="LASER_DRIVEN",
+        description="Fusion driven by high-power laser systems to compress and heat fuel targets")
+    Z_PINCH = PermissibleValue(
+        text="Z_PINCH",
+        description="Confinement using the magnetic field generated by a large axial current through the plasma")
+    FIELD_REVERSED_CONFIGURATION = PermissibleValue(
+        text="FIELD_REVERSED_CONFIGURATION",
+        description="Compact toroidal confinement where the magnetic field reverses direction inside the plasma")
+    SPHEROMAK = PermissibleValue(
+        text="SPHEROMAK",
+        description="Compact toroidal confinement with toroidal and poloidal magnetic fields of comparable strength")
+
+    _defn = EnumDefinition(
+        name="FusionConfinementType",
+        description="Methods for confining plasma in fusion energy experiments and reactors",
+    )
+
+class FusionFuelType(EnumDefinitionImpl):
+    """
+    Types of nuclear fuel mixtures used in fusion reactions
+    """
+    DEUTERIUM_TRITIUM = PermissibleValue(
+        text="DEUTERIUM_TRITIUM",
+        description="""Deuterium-tritium (D-T) fuel, the most studied fusion fuel with the lowest ignition temperature""")
+    DEUTERIUM_DEUTERIUM = PermissibleValue(
+        text="DEUTERIUM_DEUTERIUM",
+        description="Deuterium-deuterium (D-D) fuel, avoiding the need for scarce tritium")
+    DEUTERIUM_HELIUM3 = PermissibleValue(
+        text="DEUTERIUM_HELIUM3",
+        description="Deuterium-helium-3 (D-He3) fuel, producing fewer neutrons than D-T")
+    PROTON_BORON11 = PermissibleValue(
+        text="PROTON_BORON11",
+        description="Proton-boron-11 (p-B11) aneutronic fuel producing only charged particles")
+
+    _defn = EnumDefinition(
+        name="FusionFuelType",
+        description="Types of nuclear fuel mixtures used in fusion reactions",
+    )
+
+class FusionPlasmaParameterType(EnumDefinitionImpl):
+    """
+    Key physical parameters measured and optimized in fusion plasma experiments
+    """
+    PLASMA_TEMPERATURE = PermissibleValue(
+        text="PLASMA_TEMPERATURE",
+        description="Temperature of the plasma, typically measured in electron-volts (eV) or kelvin")
+    PLASMA_DENSITY = PermissibleValue(
+        text="PLASMA_DENSITY",
+        description="Number density of particles in the plasma, measured in particles per cubic meter")
+    CONFINEMENT_TIME = PermissibleValue(
+        text="CONFINEMENT_TIME",
+        description="Average time a particle or unit of energy remains confined in the plasma")
+    BETA_VALUE = PermissibleValue(
+        text="BETA_VALUE",
+        description="Ratio of plasma kinetic pressure to magnetic pressure, a key performance metric")
+    ENERGY_GAIN_FACTOR_Q = PermissibleValue(
+        text="ENERGY_GAIN_FACTOR_Q",
+        description="Ratio of fusion power output to external heating power input (Q factor)")
+    LAWSON_CRITERION = PermissibleValue(
+        text="LAWSON_CRITERION",
+        description="Product of plasma density and confinement time required for net energy gain")
+    PLASMA_CURRENT = PermissibleValue(
+        text="PLASMA_CURRENT",
+        description="Electric current flowing through the plasma, important for tokamak confinement")
+    MAGNETIC_FIELD_STRENGTH = PermissibleValue(
+        text="MAGNETIC_FIELD_STRENGTH",
+        title="Magnetic Field Strength",
+        description="Strength of the magnetic field used to confine the plasma",
+        meaning=NCIT["C156494"])
+
+    _defn = EnumDefinition(
+        name="FusionPlasmaParameterType",
+        description="Key physical parameters measured and optimized in fusion plasma experiments",
+    )
+
+class NuclearRemediationType(EnumDefinitionImpl):
+    """
+    Methods for remediating radioactive contamination at nuclear sites
+    """
+    SOIL_EXCAVATION = PermissibleValue(
+        text="SOIL_EXCAVATION",
+        description="Physical removal and disposal of contaminated soil")
+    GROUNDWATER_PUMP_AND_TREAT = PermissibleValue(
+        text="GROUNDWATER_PUMP_AND_TREAT",
+        description="Pumping contaminated groundwater to the surface for treatment and reinjection")
+    IN_SITU_BIOREMEDIATION = PermissibleValue(
+        text="IN_SITU_BIOREMEDIATION",
+        description="Using microorganisms in place to degrade or immobilize radioactive contaminants")
+    VITRIFICATION = PermissibleValue(
+        text="VITRIFICATION",
+        description="Immobilizing radioactive waste by incorporating it into a glass matrix")
+    STABILIZATION = PermissibleValue(
+        text="STABILIZATION",
+        description="Chemical or physical treatment to reduce the mobility of contaminants in soil or waste")
+    CAPPING = PermissibleValue(
+        text="CAPPING",
+        description="Placing an engineered barrier over contaminated material to prevent migration and exposure")
+    PHYTOREMEDIATION = PermissibleValue(
+        text="PHYTOREMEDIATION",
+        description="Using plants to extract, contain, or degrade radioactive contaminants from soil and water")
+    ELECTROKINETIC_REMEDIATION = PermissibleValue(
+        text="ELECTROKINETIC_REMEDIATION",
+        description="Applying electric fields to move and concentrate contaminants in soil for removal")
+    CHEMICAL_OXIDATION = PermissibleValue(
+        text="CHEMICAL_OXIDATION",
+        description="Using chemical oxidants to destroy or transform organic contaminants at nuclear sites")
+    MONITORED_NATURAL_ATTENUATION = PermissibleValue(
+        text="MONITORED_NATURAL_ATTENUATION",
+        description="""Monitoring natural processes that reduce contaminant concentrations without active intervention""")
+
+    _defn = EnumDefinition(
+        name="NuclearRemediationType",
+        description="Methods for remediating radioactive contamination at nuclear sites",
+    )
+
+class DecommissioningPhaseType(EnumDefinitionImpl):
+    """
+    Phases in the decommissioning lifecycle of nuclear facilities
+    """
+    CHARACTERIZATION = PermissibleValue(
+        text="CHARACTERIZATION",
+        description="Surveying and characterizing radiological and hazardous conditions at the facility")
+    DECONTAMINATION = PermissibleValue(
+        text="DECONTAMINATION",
+        title="Decontamination",
+        description="Removing radioactive contamination from surfaces, equipment, and structures",
+        meaning=NCIT["C68769"])
+    DISMANTLEMENT = PermissibleValue(
+        text="DISMANTLEMENT",
+        description="Physical demolition and removal of contaminated structures and equipment")
+    WASTE_MANAGEMENT = PermissibleValue(
+        text="WASTE_MANAGEMENT",
+        description="Processing, packaging, transporting, and disposing of radioactive waste")
+    SITE_RESTORATION = PermissibleValue(
+        text="SITE_RESTORATION",
+        description="Restoring the site to a condition suitable for future use")
+    LONG_TERM_MONITORING = PermissibleValue(
+        text="LONG_TERM_MONITORING",
+        description="Ongoing environmental monitoring after initial cleanup is complete")
+    LICENSE_TERMINATION = PermissibleValue(
+        text="LICENSE_TERMINATION",
+        description="Final regulatory review and release of the site from nuclear licensing requirements")
+
+    _defn = EnumDefinition(
+        name="DecommissioningPhaseType",
+        description="Phases in the decommissioning lifecycle of nuclear facilities",
+    )
+
+class RadioactiveContaminantType(EnumDefinitionImpl):
+    """
+    Common radioactive contaminants found at nuclear cleanup sites
+    """
+    CESIUM_137 = PermissibleValue(
+        text="CESIUM_137",
+        title="caesium-137",
+        description="Cesium-137, a beta and gamma emitter with a half-life of approximately 30 years",
+        meaning=CHEBI["196959"])
+    STRONTIUM_90 = PermissibleValue(
+        text="STRONTIUM_90",
+        title="Strontium Sr-90",
+        description="Strontium-90, a beta emitter with a half-life of approximately 29 years",
+        meaning=NCIT["C29776"])
+    TECHNETIUM_99 = PermissibleValue(
+        text="TECHNETIUM_99",
+        description="Technetium-99, a long-lived beta emitter produced in fission reactors",
+        meaning=CHEBI["33371"])
+    TRITIUM = PermissibleValue(
+        text="TRITIUM",
+        title="tritium atom",
+        description="Tritium (hydrogen-3), a low-energy beta emitter with a half-life of approximately 12 years",
+        meaning=CHEBI["29238"])
+    URANIUM = PermissibleValue(
+        text="URANIUM",
+        title="uranium atom",
+        description="Uranium isotopes, alpha emitters with very long half-lives",
+        meaning=CHEBI["27214"])
+    PLUTONIUM = PermissibleValue(
+        text="PLUTONIUM",
+        title="plutonium atom",
+        description="Plutonium isotopes, alpha emitters with long half-lives and high radiotoxicity",
+        meaning=CHEBI["33388"])
+    AMERICIUM_241 = PermissibleValue(
+        text="AMERICIUM_241",
+        title="americium atom",
+        description="Americium-241, an alpha emitter with a half-life of approximately 432 years",
+        meaning=CHEBI["33389"])
+    IODINE_129 = PermissibleValue(
+        text="IODINE_129",
+        title="iodine-129 atom",
+        description="Iodine-129, a long-lived beta and gamma emitter produced in nuclear fission",
+        meaning=CHEBI["52636"])
+    COBALT_60 = PermissibleValue(
+        text="COBALT_60",
+        title="Cobalt Co-60",
+        description="Cobalt-60, a gamma emitter with a half-life of approximately 5 years",
+        meaning=NCIT["C28239"])
+    RADIUM_226 = PermissibleValue(
+        text="RADIUM_226",
+        description="Radium-226, an alpha emitter with a half-life of approximately 1600 years",
+        meaning=CHEBI["80504"])
+
+    _defn = EnumDefinition(
+        name="RadioactiveContaminantType",
+        description="Common radioactive contaminants found at nuclear cleanup sites",
+    )
+
+class NuclearForensicsMethodType(EnumDefinitionImpl):
+    """
+    Analytical methods used in nuclear forensics for material characterization and attribution
+    """
+    ISOTOPE_RATIO_ANALYSIS = PermissibleValue(
+        text="ISOTOPE_RATIO_ANALYSIS",
+        title="isotope ratio mass spectrometry",
+        description="""Measurement of relative abundances of isotopes to determine material origin and processing history""",
+        meaning=CHMO["0000506"])
+    MASS_SPECTROMETRY = PermissibleValue(
+        text="MASS_SPECTROMETRY",
+        title="mass spectrometry",
+        description="Analytical technique measuring mass-to-charge ratios for elemental and isotopic composition",
+        meaning=CHMO["0000470"])
+    GAMMA_SPECTROSCOPY = PermissibleValue(
+        text="GAMMA_SPECTROSCOPY",
+        title="gamma-ray spectroscopy",
+        description="Measurement of gamma-ray energies emitted by radioactive materials for isotope identification",
+        meaning=CHMO["0000414"])
+    ALPHA_SPECTROSCOPY = PermissibleValue(
+        text="ALPHA_SPECTROSCOPY",
+        title="alpha-particle spectroscopy",
+        description="Measurement of alpha particle energies for characterizing alpha-emitting radionuclides",
+        meaning=CHMO["0000230"])
+    NEUTRON_ACTIVATION_ANALYSIS = PermissibleValue(
+        text="NEUTRON_ACTIVATION_ANALYSIS",
+        title="neutron activation analysis",
+        description="Elemental analysis by irradiating samples with neutrons and measuring induced radioactivity",
+        meaning=CHMO["0000782"])
+    RADIOCHEMICAL_SEPARATION = PermissibleValue(
+        text="RADIOCHEMICAL_SEPARATION",
+        description="Chemical separation of radionuclides from a sample matrix for individual measurement")
+    ELECTRON_MICROSCOPY = PermissibleValue(
+        text="ELECTRON_MICROSCOPY",
+        title="electron microscopy",
+        description="Microscopic imaging and analysis of nuclear material morphology and microstructure",
+        meaning=CHMO["0000068"])
+    X_RAY_FLUORESCENCE = PermissibleValue(
+        text="X_RAY_FLUORESCENCE",
+        title="X-ray emission spectroscopy",
+        description="Elemental analysis by measuring characteristic X-rays emitted after X-ray excitation",
+        meaning=CHMO["0000307"])
+    AGE_DATING = PermissibleValue(
+        text="AGE_DATING",
+        description="""Determination of the time since last chemical purification of nuclear material using parent-daughter ratios""")
+
+    _defn = EnumDefinition(
+        name="NuclearForensicsMethodType",
+        description="Analytical methods used in nuclear forensics for material characterization and attribution",
+    )
+
+class NuclearThreatCategoryType(EnumDefinitionImpl):
+    """
+    Categories of nuclear and radiological threat scenarios for security assessment
+    """
+    IMPROVISED_NUCLEAR_DEVICE = PermissibleValue(
+        text="IMPROVISED_NUCLEAR_DEVICE",
+        title="Improvised Nuclear Device",
+        description="A crude nuclear weapon constructed from diverted or stolen fissile material",
+        meaning=NCIT["C120576"])
+    RADIOLOGICAL_DISPERSAL_DEVICE = PermissibleValue(
+        text="RADIOLOGICAL_DISPERSAL_DEVICE",
+        title="Radiological Dispersal Device",
+        description="A device that disperses radioactive material using conventional explosives or other means",
+        meaning=NCIT["C120580"])
+    NUCLEAR_FACILITY_SABOTAGE = PermissibleValue(
+        text="NUCLEAR_FACILITY_SABOTAGE",
+        description="Deliberate sabotage of a nuclear facility to cause radiological release")
+    NUCLEAR_MATERIAL_THEFT = PermissibleValue(
+        text="NUCLEAR_MATERIAL_THEFT",
+        description="Theft or diversion of nuclear or radioactive material from authorized control")
+    NUCLEAR_SMUGGLING = PermissibleValue(
+        text="NUCLEAR_SMUGGLING",
+        description="Illicit trafficking and transport of nuclear or radioactive materials across borders")
+    ENVIRONMENTAL_RELEASE = PermissibleValue(
+        text="ENVIRONMENTAL_RELEASE",
+        description="Unauthorized or accidental release of radioactive material into the environment")
+
+    _defn = EnumDefinition(
+        name="NuclearThreatCategoryType",
+        description="Categories of nuclear and radiological threat scenarios for security assessment",
+    )
+
 class GeothermalSystemType(EnumDefinitionImpl):
     """
     Types of geothermal energy systems, including conventional hydrothermal and enhanced/engineered geothermal systems.
@@ -9045,6 +9671,241 @@ class BioconversionProcess(EnumDefinitionImpl):
     _defn = EnumDefinition(
         name="BioconversionProcess",
         description="Processes for converting biomass feedstocks into biofuels and bioproducts.",
+    )
+
+class SubsurfaceEnergyResourceType(EnumDefinitionImpl):
+    """
+    Types of subsurface energy resources including geothermal, hydrocarbon, and other geological energy assets
+    """
+    GEOTHERMAL_RESERVOIR = PermissibleValue(
+        text="GEOTHERMAL_RESERVOIR",
+        description="""Natural subsurface reservoir containing hot water or steam suitable for geothermal energy extraction""")
+    ENHANCED_GEOTHERMAL_SYSTEM = PermissibleValue(
+        text="ENHANCED_GEOTHERMAL_SYSTEM",
+        description="""Engineered subsurface reservoir created by hydraulic stimulation of hot dry rock for geothermal energy""")
+    OIL_RESERVOIR = PermissibleValue(
+        text="OIL_RESERVOIR",
+        title="oil reservoir",
+        description="Subsurface formation containing fluid hydrocarbons in porous or fractured rock",
+        meaning=ENVO["00002185"])
+    NATURAL_GAS_RESERVOIR = PermissibleValue(
+        text="NATURAL_GAS_RESERVOIR",
+        description="Subsurface formation containing natural gas trapped in porous or fractured rock")
+    COALBED_METHANE = PermissibleValue(
+        text="COALBED_METHANE",
+        description="Methane gas adsorbed in coal seams that can be extracted as an energy resource")
+    GAS_HYDRATE = PermissibleValue(
+        text="GAS_HYDRATE",
+        title="methane clathrate",
+        description="""Crystalline ice-like structures containing methane trapped in water molecule cages, found in ocean sediments and permafrost regions""",
+        meaning=ENVO["01000851"])
+    HOT_DRY_ROCK = PermissibleValue(
+        text="HOT_DRY_ROCK",
+        description="""Deep crystalline basement rock with high temperature but low natural permeability, targeted for enhanced geothermal systems""")
+    SEDIMENTARY_BASIN = PermissibleValue(
+        text="SEDIMENTARY_BASIN",
+        description="""Large-scale geological depression filled with sedimentary rocks that may contain energy resources""")
+    VOLCANIC_SYSTEM = PermissibleValue(
+        text="VOLCANIC_SYSTEM",
+        title="volcanic field",
+        description="Volcanic geological system with high geothermal gradients suitable for energy extraction",
+        meaning=ENVO["00000354"])
+
+    _defn = EnumDefinition(
+        name="SubsurfaceEnergyResourceType",
+        description="""Types of subsurface energy resources including geothermal, hydrocarbon, and other geological energy assets""",
+    )
+
+class SubsurfaceStorageType(EnumDefinitionImpl):
+    """
+    Types of subsurface energy and material storage technologies utilizing geological formations
+    """
+    CARBON_CAPTURE_AND_STORAGE = PermissibleValue(
+        text="CARBON_CAPTURE_AND_STORAGE",
+        title="carbon capture and storage",
+        description="""Capture of CO2 from industrial sources and injection into deep geological formations for permanent storage""")
+    HYDROGEN_STORAGE = PermissibleValue(
+        text="HYDROGEN_STORAGE",
+        title="underground hydrogen storage object",
+        description="""Underground storage of hydrogen gas in geological formations such as salt caverns or depleted reservoirs""")
+    COMPRESSED_AIR_ENERGY_STORAGE = PermissibleValue(
+        text="COMPRESSED_AIR_ENERGY_STORAGE",
+        title="compressed-air energy storage unit",
+        description="Storage of compressed air in underground caverns for later electricity generation")
+    NATURAL_GAS_STORAGE = PermissibleValue(
+        text="NATURAL_GAS_STORAGE",
+        description="Underground storage of natural gas in geological formations for seasonal demand management")
+    THERMAL_ENERGY_STORAGE = PermissibleValue(
+        text="THERMAL_ENERGY_STORAGE",
+        title="thermal energy storage object",
+        description="Storage of thermal energy in subsurface formations for heating and cooling applications")
+    NUCLEAR_WASTE_REPOSITORY = PermissibleValue(
+        text="NUCLEAR_WASTE_REPOSITORY",
+        description="Deep geological repository for permanent disposal of high-level nuclear waste")
+
+    _defn = EnumDefinition(
+        name="SubsurfaceStorageType",
+        description="Types of subsurface energy and material storage technologies utilizing geological formations",
+    )
+
+class ReservoirCharacterizationMethodType(EnumDefinitionImpl):
+    """
+    Methods and techniques used to characterize subsurface reservoirs for energy extraction and storage applications
+    """
+    WELL_TEST_ANALYSIS = PermissibleValue(
+        text="WELL_TEST_ANALYSIS",
+        description="Analysis of pressure and flow rate data from well tests to determine reservoir properties")
+    SEISMIC_INTERPRETATION = PermissibleValue(
+        text="SEISMIC_INTERPRETATION",
+        description="Interpretation of seismic survey data to map subsurface geological structures and properties")
+    CORE_ANALYSIS = PermissibleValue(
+        text="CORE_ANALYSIS",
+        description="""Laboratory analysis of rock core samples to determine petrophysical and geomechanical properties""")
+    WIRELINE_LOGGING = PermissibleValue(
+        text="WIRELINE_LOGGING",
+        description="Measurement of formation properties using instruments lowered into a wellbore on a wireline")
+    TRACER_TEST = PermissibleValue(
+        text="TRACER_TEST",
+        description="Injection and monitoring of chemical or radioactive tracers to characterize fluid flow paths")
+    PRESSURE_TRANSIENT_ANALYSIS = PermissibleValue(
+        text="PRESSURE_TRANSIENT_ANALYSIS",
+        description="""Analysis of pressure changes over time during well operations to infer reservoir characteristics""")
+    PRODUCTION_HISTORY_MATCHING = PermissibleValue(
+        text="PRODUCTION_HISTORY_MATCHING",
+        description="Calibration of reservoir simulation models by matching historical production data")
+    GEOSTATISTICAL_MODELING = PermissibleValue(
+        text="GEOSTATISTICAL_MODELING",
+        description="""Statistical methods for spatial interpolation and uncertainty quantification of reservoir properties""")
+
+    _defn = EnumDefinition(
+        name="ReservoirCharacterizationMethodType",
+        description="""Methods and techniques used to characterize subsurface reservoirs for energy extraction and storage applications""",
+    )
+
+class GridComponentType(EnumDefinitionImpl):
+    """
+    Types of physical components in electrical transmission and distribution grids
+    """
+    TRANSMISSION_LINE = PermissibleValue(
+        text="TRANSMISSION_LINE",
+        description="""High-voltage conductors that carry electricity over long distances from generation to substations""")
+    DISTRIBUTION_LINE = PermissibleValue(
+        text="DISTRIBUTION_LINE",
+        description="Medium- and low-voltage conductors that deliver electricity from substations to end users")
+    TRANSFORMER = PermissibleValue(
+        text="TRANSFORMER",
+        title="Transformer Device",
+        description="Device that changes voltage levels between transmission and distribution systems",
+        meaning=NCIT["C50227"])
+    SUBSTATION = PermissibleValue(
+        text="SUBSTATION",
+        description="Facility that switches, transforms, and regulates electrical power in the grid")
+    CIRCUIT_BREAKER = PermissibleValue(
+        text="CIRCUIT_BREAKER",
+        description="Protective device that automatically interrupts current flow during fault conditions")
+    CAPACITOR_BANK = PermissibleValue(
+        text="CAPACITOR_BANK",
+        description="Array of capacitors used for reactive power compensation and voltage regulation")
+    FACTS_DEVICE = PermissibleValue(
+        text="FACTS_DEVICE",
+        description="Flexible AC Transmission System device for controlling power flow and improving grid stability")
+    SMART_METER = PermissibleValue(
+        text="SMART_METER",
+        description="Advanced metering device that records energy consumption and communicates with the utility")
+    INVERTER = PermissibleValue(
+        text="INVERTER",
+        description="Device that converts direct current (DC) to alternating current (AC) for grid connection")
+    RELAY = PermissibleValue(
+        text="RELAY",
+        description="Protective device that detects abnormal conditions and triggers circuit breakers")
+
+    _defn = EnumDefinition(
+        name="GridComponentType",
+        description="Types of physical components in electrical transmission and distribution grids",
+    )
+
+class GridEnergyStorageType(EnumDefinitionImpl):
+    """
+    Types of energy storage technologies used for grid-scale and distributed applications
+    """
+    LITHIUM_ION_BATTERY = PermissibleValue(
+        text="LITHIUM_ION_BATTERY",
+        title="lithium-ion battery",
+        description="Rechargeable battery using lithium ion intercalation in electrode materials",
+        meaning=OEO["00000248"])
+    FLOW_BATTERY = PermissibleValue(
+        text="FLOW_BATTERY",
+        title="flow battery",
+        description="Rechargeable battery using liquid electrolytes stored in external tanks for scalable capacity",
+        meaning=OEO["00000169"])
+    PUMPED_HYDROELECTRIC = PermissibleValue(
+        text="PUMPED_HYDROELECTRIC",
+        description="Energy storage by pumping water to an elevated reservoir and releasing it through turbines")
+    COMPRESSED_AIR = PermissibleValue(
+        text="COMPRESSED_AIR",
+        title="compressed-air energy storage unit",
+        description="""Energy storage by compressing air into underground caverns or tanks for later expansion through turbines""")
+    FLYWHEEL = PermissibleValue(
+        text="FLYWHEEL",
+        description="Energy storage as rotational kinetic energy in a spinning mass")
+    SUPERCAPACITOR = PermissibleValue(
+        text="SUPERCAPACITOR",
+        description="Electrochemical capacitor providing high power density with rapid charge and discharge cycles")
+    THERMAL_STORAGE = PermissibleValue(
+        text="THERMAL_STORAGE",
+        description="Energy storage as heat in materials such as molten salt, concrete, or phase-change materials")
+    HYDROGEN_STORAGE = PermissibleValue(
+        text="HYDROGEN_STORAGE",
+        description="Energy storage by producing hydrogen via electrolysis for later use in fuel cells or turbines")
+    GRAVITY_STORAGE = PermissibleValue(
+        text="GRAVITY_STORAGE",
+        description="Energy storage by raising heavy masses to height and lowering them to generate electricity")
+    SODIUM_ION_BATTERY = PermissibleValue(
+        text="SODIUM_ION_BATTERY",
+        title="sodium-ion battery",
+        description="Rechargeable battery using sodium ion intercalation as a lower-cost alternative to lithium-ion",
+        meaning=OEO["00000376"])
+
+    _defn = EnumDefinition(
+        name="GridEnergyStorageType",
+        description="Types of energy storage technologies used for grid-scale and distributed applications",
+    )
+
+class GridManagementStrategyType(EnumDefinitionImpl):
+    """
+    Strategies for managing and optimizing the operation of electrical grids
+    """
+    DEMAND_RESPONSE = PermissibleValue(
+        text="DEMAND_RESPONSE",
+        description="Adjusting consumer electricity demand in response to supply conditions or price signals")
+    LOAD_BALANCING = PermissibleValue(
+        text="LOAD_BALANCING",
+        description="Distributing electrical load across generation sources to maintain grid stability")
+    FREQUENCY_REGULATION = PermissibleValue(
+        text="FREQUENCY_REGULATION",
+        description="Maintaining grid frequency at nominal levels by balancing generation and load in real time")
+    VOLTAGE_CONTROL = PermissibleValue(
+        text="VOLTAGE_CONTROL",
+        description="Maintaining voltage levels within acceptable ranges across the grid")
+    PEAK_SHAVING = PermissibleValue(
+        text="PEAK_SHAVING",
+        description="Reducing peak electricity demand through storage dispatch or demand reduction programs")
+    DISTRIBUTED_GENERATION = PermissibleValue(
+        text="DISTRIBUTED_GENERATION",
+        description="Generating electricity from many small sources close to the point of consumption")
+    MICROGRID_OPERATION = PermissibleValue(
+        text="MICROGRID_OPERATION",
+        description="""Operating a localized energy grid that can function independently or connected to the main grid""")
+    VIRTUAL_POWER_PLANT = PermissibleValue(
+        text="VIRTUAL_POWER_PLANT",
+        description="Aggregating distributed energy resources to operate as a single coordinated power source")
+    GRID_SCALE_STORAGE_DISPATCH = PermissibleValue(
+        text="GRID_SCALE_STORAGE_DISPATCH",
+        description="Coordinating charge and discharge of large-scale energy storage assets for grid optimization")
+
+    _defn = EnumDefinition(
+        name="GridManagementStrategyType",
+        description="Strategies for managing and optimizing the operation of electrical grids",
     )
 
 class MiningType(EnumDefinitionImpl):
@@ -9799,6 +10660,298 @@ class WellTypeEnum(EnumDefinitionImpl):
         description="Types of wells used for extracting fluid resources",
     )
 
+class UnconventionalMineralResourceType(EnumDefinitionImpl):
+    """
+    Types of unconventional mineral resources including industrial waste streams, mining residues, and brines that
+    contain recoverable critical minerals and metals
+    """
+    MINE_TAILINGS = PermissibleValue(
+        text="MINE_TAILINGS",
+        title="mine tailing",
+        description="""Materials remaining after separating the valuable fraction from the uneconomic fraction of an ore""",
+        meaning=ENVO["00000003"])
+    WASTE_ROCK = PermissibleValue(
+        text="WASTE_ROCK",
+        description="Rock removed during mining that does not contain sufficient mineral of interest for processing")
+    ACID_MINE_DRAINAGE = PermissibleValue(
+        text="ACID_MINE_DRAINAGE",
+        title="acid mine drainage",
+        description="Acidic water outflow from mines containing dissolved metals and sulfuric acid",
+        meaning=ENVO["00001997"])
+    COAL_COMBUSTION_RESIDUALS = PermissibleValue(
+        text="COAL_COMBUSTION_RESIDUALS",
+        title="coal ash",
+        description="""Residual materials from combustion of coal in power plants, including fly ash, bottom ash, and boiler slag""",
+        meaning=ENVO["02000127"])
+    RED_MUD = PermissibleValue(
+        text="RED_MUD",
+        description="Alkaline residue generated during alumina extraction from bauxite ore via the Bayer process")
+    PHOSPHOGYPSUM = PermissibleValue(
+        text="PHOSPHOGYPSUM",
+        description="""Gypsum byproduct from phosphoric acid production containing trace radioactive elements and rare earth elements""")
+    SLAG = PermissibleValue(
+        text="SLAG",
+        title="boiler slag",
+        description="Glassy material formed as a byproduct of smelting and refining metal ores",
+        meaning=ENVO["02000130"])
+    FLY_ASH = PermissibleValue(
+        text="FLY_ASH",
+        title="fly ash",
+        description="""Fine powdery material composed mostly of silica collected from flue gases during coal combustion""",
+        meaning=ENVO["02000128"])
+    ELECTRONIC_WASTE = PermissibleValue(
+        text="ELECTRONIC_WASTE",
+        description="""Discarded electronic devices and components containing recoverable precious and critical metals""")
+    SPENT_CATALYSTS = PermissibleValue(
+        text="SPENT_CATALYSTS",
+        description="""Used industrial catalysts containing recoverable platinum group metals and other valuable elements""")
+    GEOTHERMAL_BRINE = PermissibleValue(
+        text="GEOTHERMAL_BRINE",
+        title="brine",
+        description="""Hot saline water from geothermal systems containing dissolved lithium, rare earth elements, and other minerals""",
+        meaning=ENVO["00003044"])
+    OIL_FIELD_BRINE = PermissibleValue(
+        text="OIL_FIELD_BRINE",
+        description="""Saline water produced during oil and gas extraction containing dissolved minerals including lithium and boron""")
+
+    _defn = EnumDefinition(
+        name="UnconventionalMineralResourceType",
+        description="""Types of unconventional mineral resources including industrial waste streams, mining residues, and brines that contain recoverable critical minerals and metals""",
+    )
+
+class BioextractionMethodType(EnumDefinitionImpl):
+    """
+    Biological methods for extracting metals and minerals from unconventional resources using microorganisms or plants
+    """
+    HEAP_BIOLEACHING = PermissibleValue(
+        text="HEAP_BIOLEACHING",
+        description="""Biological leaching of metals from crushed ore stacked in heaps irrigated with acidic microbial solutions""")
+    STIRRED_TANK_BIOLEACHING = PermissibleValue(
+        text="STIRRED_TANK_BIOLEACHING",
+        description="Biological leaching of metals in agitated tank reactors with controlled conditions")
+    IN_SITU_BIOLEACHING = PermissibleValue(
+        text="IN_SITU_BIOLEACHING",
+        description="Biological leaching of metals directly in the ore body without excavation")
+    PHYTOMINING = PermissibleValue(
+        text="PHYTOMINING",
+        description="Use of hyperaccumulator plants to extract metals from soil or mining waste for recovery")
+    BIOSORPTION = PermissibleValue(
+        text="BIOSORPTION",
+        description="Passive binding of metal ions to the surface of biological materials such as microbial biomass")
+    BIOACCUMULATION = PermissibleValue(
+        text="BIOACCUMULATION",
+        description="Active uptake and intracellular concentration of metals by living organisms")
+    BIOPRECIPITATION = PermissibleValue(
+        text="BIOPRECIPITATION",
+        description="""Microbially mediated precipitation of metals as insoluble compounds such as sulfides or phosphates""")
+    BIOFLOTATION = PermissibleValue(
+        text="BIOFLOTATION",
+        description="Use of microorganisms or biosurfactants to selectively separate mineral particles by flotation")
+
+    _defn = EnumDefinition(
+        name="BioextractionMethodType",
+        description="""Biological methods for extracting metals and minerals from unconventional resources using microorganisms or plants""",
+    )
+
+class TailingCharacterizationType(EnumDefinitionImpl):
+    """
+    Types of measurements and analyses used to characterize mine tailings and other mineral processing residues for
+    resource recovery potential
+    """
+    PARTICLE_SIZE_DISTRIBUTION = PermissibleValue(
+        text="PARTICLE_SIZE_DISTRIBUTION",
+        title="granulometry",
+        description="Measurement of the distribution of particle sizes in tailing material",
+        meaning=CHMO["0002119"])
+    MINERALOGICAL_COMPOSITION = PermissibleValue(
+        text="MINERALOGICAL_COMPOSITION",
+        description="""Determination of mineral phases present in tailing material using diffraction and spectroscopic methods""")
+    ACID_GENERATING_POTENTIAL = PermissibleValue(
+        text="ACID_GENERATING_POTENTIAL",
+        description="Assessment of the potential for tailings to generate acid drainage through sulfide oxidation")
+    METAL_CONTENT = PermissibleValue(
+        text="METAL_CONTENT",
+        description="Quantitative analysis of metal and element concentrations in tailing material")
+    MOISTURE_CONTENT = PermissibleValue(
+        text="MOISTURE_CONTENT",
+        description="Measurement of water content in tailing material affecting stability and handling")
+    GEOTECHNICAL_STABILITY = PermissibleValue(
+        text="GEOTECHNICAL_STABILITY",
+        description="Assessment of the mechanical and physical stability of tailing storage facilities")
+    ENVIRONMENTAL_RISK_CLASSIFICATION = PermissibleValue(
+        text="ENVIRONMENTAL_RISK_CLASSIFICATION",
+        description="""Classification of environmental risk based on contaminant mobility, toxicity, and exposure pathways""")
+
+    _defn = EnumDefinition(
+        name="TailingCharacterizationType",
+        description="""Types of measurements and analyses used to characterize mine tailings and other mineral processing residues for resource recovery potential""",
+    )
+
+class BuildingSystemType(EnumDefinitionImpl):
+    """
+    Types of building systems for mechanical, electrical, and structural infrastructure
+    """
+    HVAC = PermissibleValue(
+        text="HVAC",
+        description="Heating, ventilation, and air conditioning systems for climate control")
+    ELECTRICAL = PermissibleValue(
+        text="ELECTRICAL",
+        description="Electrical power distribution and wiring systems within the building")
+    PLUMBING = PermissibleValue(
+        text="PLUMBING",
+        description="Water supply, drainage, and sewage systems")
+    STRUCTURAL = PermissibleValue(
+        text="STRUCTURAL",
+        description="Load-bearing structural framework including foundations, columns, beams, and slabs")
+    BUILDING_ENVELOPE = PermissibleValue(
+        text="BUILDING_ENVELOPE",
+        description="Exterior enclosure system including walls, roof, windows, and insulation",
+        meaning=ENVO["01000470"])
+    FIRE_PROTECTION = PermissibleValue(
+        text="FIRE_PROTECTION",
+        description="Fire detection, suppression, and alarm systems")
+    LIGHTING = PermissibleValue(
+        text="LIGHTING",
+        description="Interior and exterior lighting systems including controls and fixtures")
+    BUILDING_AUTOMATION = PermissibleValue(
+        text="BUILDING_AUTOMATION",
+        description="Integrated control systems for monitoring and managing building operations")
+    RENEWABLE_ENERGY_INTEGRATION = PermissibleValue(
+        text="RENEWABLE_ENERGY_INTEGRATION",
+        description="On-site renewable energy generation systems such as solar panels and wind turbines")
+
+    _defn = EnumDefinition(
+        name="BuildingSystemType",
+        description="Types of building systems for mechanical, electrical, and structural infrastructure",
+    )
+
+class BuildingEnergyPerformanceLevel(EnumDefinitionImpl):
+    """
+    Energy performance certification levels and standards for buildings
+    """
+    NET_ZERO_ENERGY = PermissibleValue(
+        text="NET_ZERO_ENERGY",
+        description="Building that produces as much energy as it consumes on an annual basis")
+    NET_POSITIVE_ENERGY = PermissibleValue(
+        text="NET_POSITIVE_ENERGY",
+        description="Building that produces more energy than it consumes on an annual basis")
+    PASSIVE_HOUSE = PermissibleValue(
+        text="PASSIVE_HOUSE",
+        description="Building meeting Passive House Institute standards for ultra-low energy consumption")
+    LEED_CERTIFIED = PermissibleValue(
+        text="LEED_CERTIFIED",
+        description="LEED Certified rating (40-49 points) from the U.S. Green Building Council")
+    LEED_SILVER = PermissibleValue(
+        text="LEED_SILVER",
+        description="LEED Silver rating (50-59 points) from the U.S. Green Building Council")
+    LEED_GOLD = PermissibleValue(
+        text="LEED_GOLD",
+        description="LEED Gold rating (60-79 points) from the U.S. Green Building Council")
+    LEED_PLATINUM = PermissibleValue(
+        text="LEED_PLATINUM",
+        description="LEED Platinum rating (80+ points) from the U.S. Green Building Council")
+    ENERGY_STAR_CERTIFIED = PermissibleValue(
+        text="ENERGY_STAR_CERTIFIED",
+        description="EPA Energy Star certification for buildings performing in top 25% of energy efficiency")
+    CODE_MINIMUM = PermissibleValue(
+        text="CODE_MINIMUM",
+        description="Building meeting minimum energy code requirements without additional certification")
+
+    _defn = EnumDefinition(
+        name="BuildingEnergyPerformanceLevel",
+        description="Energy performance certification levels and standards for buildings",
+    )
+
+class ManufacturingProcessType(EnumDefinitionImpl):
+    """
+    Types of manufacturing processes including additive, subtractive, and formative methods
+    """
+    ADDITIVE_MANUFACTURING = PermissibleValue(
+        text="ADDITIVE_MANUFACTURING",
+        description="Manufacturing by adding material layer by layer to build a three-dimensional object")
+    SUBTRACTIVE_MANUFACTURING = PermissibleValue(
+        text="SUBTRACTIVE_MANUFACTURING",
+        description="Manufacturing by removing material from a solid block to create a desired shape")
+    FORMATIVE_MANUFACTURING = PermissibleValue(
+        text="FORMATIVE_MANUFACTURING",
+        description="""Manufacturing by reshaping material through mechanical forces without significant addition or removal""")
+    CASTING = PermissibleValue(
+        text="CASTING",
+        description="Pouring molten material into a mold and allowing it to solidify")
+    FORGING = PermissibleValue(
+        text="FORGING",
+        description="Shaping metal using compressive forces applied by hammering, pressing, or rolling")
+    WELDING = PermissibleValue(
+        text="WELDING",
+        description="Joining materials by applying heat, pressure, or both to fuse them together")
+    MACHINING = PermissibleValue(
+        text="MACHINING",
+        description="Removing material from a workpiece using cutting tools to achieve a desired geometry")
+    INJECTION_MOLDING = PermissibleValue(
+        text="INJECTION_MOLDING",
+        title="injection moulding",
+        description="Forcing molten material into a mold cavity where it cools and hardens",
+        meaning=CHMO["0001430"])
+    EXTRUSION = PermissibleValue(
+        text="EXTRUSION",
+        description="Forcing material through a die to create objects with a fixed cross-sectional profile",
+        meaning=CHMO["0001613"])
+    POWDER_METALLURGY = PermissibleValue(
+        text="POWDER_METALLURGY",
+        description="Forming metal parts from compacted and sintered metal powders")
+    CHEMICAL_VAPOR_DEPOSITION = PermissibleValue(
+        text="CHEMICAL_VAPOR_DEPOSITION",
+        title="chemical vapour deposition",
+        description="Depositing thin films by exposing a substrate to volatile precursors that react on the surface",
+        meaning=CHMO["0001314"])
+    PHYSICAL_VAPOR_DEPOSITION = PermissibleValue(
+        text="PHYSICAL_VAPOR_DEPOSITION",
+        title="physical vapour deposition",
+        description="Depositing thin films by condensing vaporized material onto a substrate surface",
+        meaning=CHMO["0001356"])
+    ELECTROFORMING = PermissibleValue(
+        text="ELECTROFORMING",
+        description="Producing metal parts by electrodeposition of metal onto a mandrel or pattern")
+
+    _defn = EnumDefinition(
+        name="ManufacturingProcessType",
+        description="Types of manufacturing processes including additive, subtractive, and formative methods",
+    )
+
+class SmartManufacturingTechnologyType(EnumDefinitionImpl):
+    """
+    Types of digital and intelligent technologies used in modern manufacturing environments
+    """
+    DIGITAL_TWIN = PermissibleValue(
+        text="DIGITAL_TWIN",
+        description="Virtual replica of a physical asset or process used for simulation and optimization")
+    INDUSTRIAL_IOT = PermissibleValue(
+        text="INDUSTRIAL_IOT",
+        description="""Network of interconnected sensors and devices in industrial settings for data collection and control""")
+    PREDICTIVE_MAINTENANCE = PermissibleValue(
+        text="PREDICTIVE_MAINTENANCE",
+        description="Using data analytics and machine learning to predict equipment failures before they occur")
+    COMPUTER_VISION_INSPECTION = PermissibleValue(
+        text="COMPUTER_VISION_INSPECTION",
+        description="Automated visual inspection of manufactured parts using computer vision and image analysis")
+    ROBOTIC_ASSEMBLY = PermissibleValue(
+        text="ROBOTIC_ASSEMBLY",
+        description="Automated assembly of components using programmable robotic systems")
+    AUTOMATED_QUALITY_CONTROL = PermissibleValue(
+        text="AUTOMATED_QUALITY_CONTROL",
+        description="Automated systems for monitoring and ensuring product quality during manufacturing")
+    SUPPLY_CHAIN_OPTIMIZATION = PermissibleValue(
+        text="SUPPLY_CHAIN_OPTIMIZATION",
+        description="Data-driven optimization of supply chain logistics and inventory management")
+    PROCESS_SIMULATION = PermissibleValue(
+        text="PROCESS_SIMULATION",
+        description="Computer-based simulation of manufacturing processes for design and optimization")
+
+    _defn = EnumDefinition(
+        name="SmartManufacturingTechnologyType",
+        description="Types of digital and intelligent technologies used in modern manufacturing environments",
+    )
+
 class OutcomeTypeEnum(EnumDefinitionImpl):
     """
     Types of prediction outcomes for classification tasks
@@ -9823,6 +10976,704 @@ class OutcomeTypeEnum(EnumDefinitionImpl):
     _defn = EnumDefinition(
         name="OutcomeTypeEnum",
         description="Types of prediction outcomes for classification tasks",
+    )
+
+class StatisticalTestEnum(EnumDefinitionImpl):
+    """
+    Statistical hypothesis tests, drawn primarily from the descendants of 'statistical hypothesis test' (OBI:0000673)
+    in STATO.
+    This enum deliberately mixes abstraction levels: alongside concrete tests it retains STATO's grouping classes
+    (GOODNESS_OF_FIT_TEST, HOMOSKEDASTICITY_TEST, SPHERICITY_TEST, POST_HOC_ANALYSIS, NON_PARAMETRIC_TEST and similar)
+    so that a source reporting only "a test of normality was applied" can still be annotated. Prefer the most specific
+    value that the source supports, and use a grouping value only when the specific test is genuinely not stated.
+    Several values are also repeated in the narrower enums below (TTestTypeEnum, NormalityTestEnum,
+    HomoscedasticityTestEnum, PostHocTestEnum), which exist to constrain slot ranges. The duplicated meanings are
+    intentional; from_meaning() resolves per enum class.
+    """
+    STUDENTS_T_TEST = PermissibleValue(
+        text="STUDENTS_T_TEST",
+        title="Student's t-test",
+        description="""Test in which the test statistic follows a Student's t distribution under the null hypothesis; used when the population is assumed normal but the sample is small""",
+        meaning=OBI["0000739"])
+    ONE_SAMPLE_T_TEST = PermissibleValue(
+        text="ONE_SAMPLE_T_TEST",
+        title="one sample t-test",
+        description="Student's t-test comparing a sample mean against a specified population mean",
+        meaning=STATO["0000302"])
+    PAIRED_T_TEST = PermissibleValue(
+        text="PAIRED_T_TEST",
+        title="paired t-test",
+        description="""Student's t-test for differences between paired observations, as in a repeated measures design with two measurements per subject""",
+        meaning=STATO["0000095"])
+    TWO_SAMPLE_T_TEST_EQUAL_VARIANCE = PermissibleValue(
+        text="TWO_SAMPLE_T_TEST_EQUAL_VARIANCE",
+        title="two sample t-test with equal variance",
+        description="""Two-sample t-test comparing the means of two independent samples assumed to have equal variances""",
+        meaning=STATO["0000303"])
+    TWO_SAMPLE_T_TEST_UNEQUAL_VARIANCE = PermissibleValue(
+        text="TWO_SAMPLE_T_TEST_UNEQUAL_VARIANCE",
+        title="two sample t-test with unequal variance",
+        description="Two-sample t-test used when the variances of the two populations are not assumed equal",
+        meaning=STATO["0000304"])
+    YUEN_T_TEST = PermissibleValue(
+        text="YUEN_T_TEST",
+        title="Yuen t-Test with trimmed means",
+        description="Robust two-sample t-test computed on trimmed means and winsorized variances",
+        meaning=STATO["0000406"])
+    Z_TEST = PermissibleValue(
+        text="Z_TEST",
+        title="Z-test",
+        description="""Test evaluating the null hypothesis that the means of two populations are equal using a normal reference distribution""",
+        meaning=STATO["0000052"])
+    ONE_SAMPLE_HOTELLING_T2_TEST = PermissibleValue(
+        text="ONE_SAMPLE_HOTELLING_T2_TEST",
+        title="one sample Hotelling T2 test",
+        description="""Multivariate extension of the one-sample t-test comparing a vector of means against a reference vector""",
+        meaning=STATO["0000153"])
+    TWO_SAMPLE_HOTELLING_T2_TEST = PermissibleValue(
+        text="TWO_SAMPLE_HOTELLING_T2_TEST",
+        title="two sample Hotelling T2 test",
+        description="Multivariate generalization of the two-sample t-test comparing mean vectors of two populations",
+        meaning=STATO["0000098"])
+    ANOVA = PermissibleValue(
+        text="ANOVA",
+        title="ANOVA",
+        description="Analysis of variance testing whether the means of several groups are equal",
+        meaning=OBI["0200201"])
+    ONE_WAY_ANOVA = PermissibleValue(
+        text="ONE_WAY_ANOVA",
+        title="one-way ANOVA",
+        description="""Analysis of variance in which the groups compared correspond to the levels of a single independent variable""",
+        meaning=STATO["0000044"])
+    TWO_WAY_ANOVA = PermissibleValue(
+        text="TWO_WAY_ANOVA",
+        title="two-way ANOVA",
+        description="""Analysis of variance in which the groups compared correspond to the levels of exactly two independent variables""",
+        meaning=STATO["0000045"])
+    MULTIWAY_ANOVA = PermissibleValue(
+        text="MULTIWAY_ANOVA",
+        title="multiway ANOVA",
+        description="""Analysis of variance in which the groups compared correspond to the levels of more than two independent variables""",
+        meaning=STATO["0000048"])
+    REPEATED_MEASURES_ANOVA = PermissibleValue(
+        text="REPEATED_MEASURES_ANOVA",
+        title="repeated measure ANOVA",
+        description="""Analysis of variance developed for non-independent observations arising from repeated measurements on the same experimental unit""",
+        meaning=STATO["0000260"])
+    MANOVA = PermissibleValue(
+        text="MANOVA",
+        title="multivariate analysis of variance",
+        description="""Procedure for comparing multivariate sample means when there are two or more dependent variables""",
+        meaning=STATO["0000454"])
+    ANCOVA = PermissibleValue(
+        text="ANCOVA",
+        title="ANCOVA",
+        description="""Analysis of covariance evaluating whether population means of a dependent variable are equal across levels of a categorical independent variable while controlling for covariates""",
+        meaning=STATO["0000179"])
+    F_TEST = PermissibleValue(
+        text="F_TEST",
+        title="F-test",
+        description="Test in which the test statistic follows an F-distribution under the null hypothesis",
+        meaning=STATO["0000086"])
+    MANN_WHITNEY_U_TEST = PermissibleValue(
+        text="MANN_WHITNEY_U_TEST",
+        title="Mann-Whitney U-test",
+        description="""Non-parametric test comparing two independent groups without assuming normally distributed values""",
+        meaning=STATO["0000076"])
+    WILCOXON_SIGNED_RANK_TEST = PermissibleValue(
+        text="WILCOXON_SIGNED_RANK_TEST",
+        title="Wilcoxon signed rank test",
+        description="""Non-parametric test of the null hypothesis that the median difference between paired observations is zero""",
+        meaning=STATO["0000092"])
+    KRUSKAL_WALLIS_TEST = PermissibleValue(
+        text="KRUSKAL_WALLIS_TEST",
+        title="Kruskal Wallis test",
+        description="Non-parametric test comparing two or more groups without assuming normally distributed values",
+        meaning=STATO["0000094"])
+    FRIEDMAN_TEST = PermissibleValue(
+        text="FRIEDMAN_TEST",
+        title="Friedman test",
+        description="""Non-parametric test for differences among multiple related groups; extension of the Wilcoxon signed-rank test to more than two conditions""",
+        meaning=STATO["0000641"])
+    SIGN_TEST = PermissibleValue(
+        text="SIGN_TEST",
+        title="sign test",
+        description="Non-parametric test assessing whether the median of a population equals a specified value",
+        meaning=STATO["0000644"])
+    CHI_SQUARE_TEST = PermissibleValue(
+        text="CHI_SQUARE_TEST",
+        title="chi square test",
+        description="""Test in which the sampling distribution of the test statistic is a chi-square distribution under the null hypothesis""",
+        meaning=OBI["0200200"])
+    PEARSON_CHI_SQUARE_TEST_OF_INDEPENDENCE = PermissibleValue(
+        text="PEARSON_CHI_SQUARE_TEST_OF_INDEPENDENCE",
+        title="Pearson's Chi square test of independence between categorical variables",
+        description="Chi-square test of the independence of two categorical variables in a contingency table",
+        meaning=STATO["0000081"])
+    PEARSON_CHI_SQUARE_GOODNESS_OF_FIT_TEST = PermissibleValue(
+        text="PEARSON_CHI_SQUARE_GOODNESS_OF_FIT_TEST",
+        title="Pearson's Chi square test of goodness of fit",
+        description="Chi-square test evaluating the goodness of fit of observed counts to an expected distribution",
+        meaning=STATO["0000309"])
+    YATES_CORRECTED_CHI_SQUARE_TEST = PermissibleValue(
+        text="YATES_CORRECTED_CHI_SQUARE_TEST",
+        title="Yate's corrected Chi-Squared test",
+        description="Chi-square test of association between two dichotomous variables with a continuity correction",
+        meaning=STATO["0000070"])
+    CHI_SQUARE_TEST_FOR_HOMOGENEITY = PermissibleValue(
+        text="CHI_SQUARE_TEST_FOR_HOMOGENEITY",
+        title="Chi-square test for homogeneity",
+        description="Test comparing proportions observed across multiple groups using contingency table frequencies",
+        meaning=STATO["0000701"])
+    FISHERS_EXACT_TEST = PermissibleValue(
+        text="FISHERS_EXACT_TEST",
+        title="Fisher's exact test",
+        description="Exact test for non-random association between two categorical variables",
+        meaning=STATO["0000073"])
+    BARNARDS_TEST = PermissibleValue(
+        text="BARNARDS_TEST",
+        title="Barnard's test",
+        description="""Exact unconditional test of association between two categorical variables, often more powerful than Fisher's exact test""",
+        meaning=STATO["0000310"])
+    MCNEMAR_TEST = PermissibleValue(
+        text="MCNEMAR_TEST",
+        title="McNemar test",
+        description="""Test applied to 2 x 2 contingency tables of paired nominal data to compare marginal frequencies""",
+        meaning=STATO["0000433"])
+    COCHRANS_Q_TEST = PermissibleValue(
+        text="COCHRANS_Q_TEST",
+        title="Cochran's q test for heterogeneity",
+        description="Test for unreplicated randomized block designs with a binary response and paired data",
+        meaning=STATO["0000434"])
+    COCHRAN_ARMITAGE_TEST_FOR_TREND = PermissibleValue(
+        text="COCHRAN_ARMITAGE_TEST_FOR_TREND",
+        title="Cochran-Armitage test for trend",
+        description="Test for association between a dichotomous variable and an ordered categorical variable",
+        meaning=STATO["0000148"])
+    COCHRAN_MANTEL_HAENSZEL_TEST = PermissibleValue(
+        text="COCHRAN_MANTEL_HAENSZEL_TEST",
+        title="Cochran-Mantel-Haenzel test for repeated tests of independence",
+        description="Test of independence between two categorical variables stratified by a third variable",
+        meaning=STATO["0000074"])
+    EXACT_BINOMIAL_TEST = PermissibleValue(
+        text="EXACT_BINOMIAL_TEST",
+        title="exact binomial test",
+        description="""Test of the statistical significance of deviations from a theoretically expected distribution of observations into two categories""",
+        meaning=STATO["0000298"])
+    HYPERGEOMETRIC_TEST = PermissibleValue(
+        text="HYPERGEOMETRIC_TEST",
+        title="hypergeometric test",
+        description="""Test evaluating whether a random variable follows a hypergeometric distribution; widely used for over-representation analysis""",
+        meaning=STATO["0000285"])
+    TEST_OF_ASSOCIATION_BETWEEN_CATEGORICAL_VARIABLES = PermissibleValue(
+        text="TEST_OF_ASSOCIATION_BETWEEN_CATEGORICAL_VARIABLES",
+        title="test of association between categorical variables",
+        description="""Test evaluating whether a discrete predictor variable is associated with a discrete response variable""",
+        meaning=STATO["0000027"])
+    GOODNESS_OF_FIT_TEST = PermissibleValue(
+        text="GOODNESS_OF_FIT_TEST",
+        title="goodness of fit statistical test",
+        description="""Test evaluating whether a sample distribution can be considered equivalent to a theoretical distribution""",
+        meaning=STATO["0000191"])
+    SHAPIRO_WILK_TEST = PermissibleValue(
+        text="SHAPIRO_WILK_TEST",
+        title="Shapiro-Wilk test",
+        description="""Goodness of fit test of the null hypothesis that a sample is drawn from a normally distributed population""",
+        meaning=STATO["0000077"])
+    KOLMOGOROV_SMIRNOV_TEST = PermissibleValue(
+        text="KOLMOGOROV_SMIRNOV_TEST",
+        title="Kolmogorov-Smirnov test",
+        description="""Goodness of fit test of the null hypothesis that a sample is drawn from a specified continuous probability distribution""",
+        meaning=STATO["0000083"])
+    ANDERSON_DARLING_TEST = PermissibleValue(
+        text="ANDERSON_DARLING_TEST",
+        title="Anderson-Darling test",
+        description="""Goodness of fit test of whether a sample is drawn from a given probability distribution, weighting the tails more heavily""",
+        meaning=STATO["0000042"])
+    HOSMER_LEMESHOW_TEST = PermissibleValue(
+        text="HOSMER_LEMESHOW_TEST",
+        title="Hosmer-Lemeshow goodness-of-fit test",
+        description="""Goodness of fit test for logistic regression models comparing predicted probabilities against observed outcomes""",
+        meaning=STATO["0000653"])
+    LEVENES_TEST = PermissibleValue(
+        text="LEVENES_TEST",
+        title="Levene's test",
+        description="Test of the null hypothesis of equality of variance across several populations",
+        meaning=STATO["0000078"])
+    BARTLETTS_TEST = PermissibleValue(
+        text="BARTLETTS_TEST",
+        title="Barlett's test",
+        description="""Test of whether k samples are drawn from populations with equal variances; sensitive to departures from normality""",
+        meaning=STATO["0000079"])
+    BROWN_FORSYTHE_TEST = PermissibleValue(
+        text="BROWN_FORSYTHE_TEST",
+        title="Brown Forsythe test",
+        description="Test of equality of group variances based on deviations from the group medians",
+        meaning=STATO["0000080"])
+    BREUSCH_PAGAN_TEST = PermissibleValue(
+        text="BREUSCH_PAGAN_TEST",
+        title="Breusch-Pagan test",
+        description="""Score test of the hypothesis of constant error variance against the alternative that error variance depends on the fitted values""",
+        meaning=STATO["0000284"])
+    HOMOSKEDASTICITY_TEST = PermissibleValue(
+        text="HOMOSKEDASTICITY_TEST",
+        title="homoskedasticity test",
+        description="Test evaluating whether variances from several random samples are similar",
+        meaning=STATO["0000137"])
+    HOMOGENEITY_TEST = PermissibleValue(
+        text="HOMOGENEITY_TEST",
+        title="homogeneity test",
+        description="Test evaluating whether a statistical measure computed from several random samples is similar",
+        meaning=STATO["0000697"])
+    SPHERICITY_TEST = PermissibleValue(
+        text="SPHERICITY_TEST",
+        title="sphericity test",
+        description="""Test of the null hypothesis of equality of the variances of differences between levels of a repeated measures factor""",
+        meaning=STATO["0000131"])
+    MAUCHLYS_TEST = PermissibleValue(
+        text="MAUCHLYS_TEST",
+        title="Mauchly's test for sphericity",
+        description="Test of sphericity in the context of repeated measures analysis of variance",
+        meaning=STATO["0000199"])
+    ODDS_RATIO_HOMOGENEITY_TEST = PermissibleValue(
+        text="ODDS_RATIO_HOMOGENEITY_TEST",
+        title="odds ratio homogeneity test",
+        description="Test of the null hypothesis that odds ratios are consistent across strata of a population",
+        meaning=STATO["0000247"])
+    BRESLOW_DAY_TEST = PermissibleValue(
+        text="BRESLOW_DAY_TEST",
+        title="Breslow-Day test for homogeneity of odds ratio",
+        description="Test of whether odds ratios are homogeneous across several 2x2 contingency tables",
+        meaning=STATO["0000130"])
+    TARONES_TEST = PermissibleValue(
+        text="TARONES_TEST",
+        title="Tarone's test for homogeneity of odds ratio",
+        description="Test of the null hypothesis that odds ratios are homogeneous across strata",
+        meaning=STATO["0000136"])
+    WOOLFS_TEST = PermissibleValue(
+        text="WOOLFS_TEST",
+        title="Woolf's test",
+        description="""Test of the null hypothesis that odds ratios are the same across all strata of the population under investigation""",
+        meaning=STATO["0000246"])
+    POST_HOC_ANALYSIS = PermissibleValue(
+        text="POST_HOC_ANALYSIS",
+        title="post-hoc analysis",
+        description="""Test carried out following an analysis of variance that rejected the null hypothesis, to identify which groups differ""",
+        meaning=STATO["0000133"])
+    TUKEY_HSD_TEST = PermissibleValue(
+        text="TUKEY_HSD_TEST",
+        title="Tukey HSD for Post-Hoc Analysis",
+        description="""Post-hoc test following a significant ANOVA that determines which means differ, controlling the family-wise error rate""",
+        meaning=STATO["0000187"])
+    NEWMAN_KEULS_TEST = PermissibleValue(
+        text="NEWMAN_KEULS_TEST",
+        title="Newman-Keuls test post-hoc analysis",
+        description="""Stepwise multiple comparison procedure identifying sample means that differ significantly, based on the studentized range statistic""",
+        meaning=STATO["0000261"])
+    SCHEFFE_TEST = PermissibleValue(
+        text="SCHEFFE_TEST",
+        title="Scheffe test",
+        description="""Conservative post-hoc procedure evaluating all possible contrasts while adjusting significance levels for multiple comparisons""",
+        meaning=STATO["0000156"])
+    LEAST_SIGNIFICANT_DIFFERENCE_TEST = PermissibleValue(
+        text="LEAST_SIGNIFICANT_DIFFERENCE_TEST",
+        title="Least significance different test",
+        description="""Post-hoc test for multiple comparisons of treatments by means of the least significant difference following an ANOVA""",
+        meaning=STATO["0000157"])
+    DUNNS_TEST = PermissibleValue(
+        text="DUNNS_TEST",
+        title="Dunn’s multiple comparison test",
+        description="Non-parametric post-hoc test run after a Kruskal-Wallis test to identify which groups differ",
+        meaning=STATO["0000490"])
+    CONOVER_IMAN_TEST = PermissibleValue(
+        text="CONOVER_IMAN_TEST",
+        title="Conover-Iman test of multiple comparisons using rank sums",
+        description="""Post-hoc test for pairwise multiple comparisons using rank sums following a Kruskal-Wallis test""",
+        meaning=STATO["0000491"])
+    GRUBBS_TEST = PermissibleValue(
+        text="GRUBBS_TEST",
+        title="Grubbs' test",
+        description="""Test detecting a single outlier in a univariate data set assumed to come from a normally distributed population""",
+        meaning=STATO["0000441"])
+    DIXON_Q_TEST = PermissibleValue(
+        text="DIXON_Q_TEST",
+        title="Dixon Q test",
+        description="""Test detecting outliers in a univariate data set assumed to come from a normally distributed population""",
+        meaning=STATO["0000440"])
+    TIETJEN_MOORE_TEST = PermissibleValue(
+        text="TIETJEN_MOORE_TEST",
+        title="Tietjen-Moore test for outliers",
+        description="Generalization of Grubbs' test allowing detection of more than one outlier",
+        meaning=STATO["0000442"])
+    GENERALIZED_ESD_TEST = PermissibleValue(
+        text="GENERALIZED_ESD_TEST",
+        title="generalized extreme studentized deviate test",
+        description="Outlier detection test with a built-in correction for multiple testing",
+        meaning=STATO["0000443"])
+    LIKELIHOOD_RATIO_TEST = PermissibleValue(
+        text="LIKELIHOOD_RATIO_TEST",
+        title="Likelihood-ratio test",
+        description="""Test of whether there is evidence for moving from a simple model to a more complex model in which the simple model is nested""",
+        meaning=OBI["0000861"])
+    WALD_TEST = PermissibleValue(
+        text="WALD_TEST",
+        title="Wald test",
+        description="""Test evaluating whether one or more model coefficients differ from zero, given their variance-covariance matrix""",
+        meaning=STATO["0000559"])
+    LOG_RANK_TEST = PermissibleValue(
+        text="LOG_RANK_TEST",
+        title="log-rank test",
+        description="Test comparing the survival distributions of two or more groups",
+        meaning=STATO["0000640"])
+    HARDY_WEINBERG_EQUILIBRIUM_TEST = PermissibleValue(
+        text="HARDY_WEINBERG_EQUILIBRIUM_TEST",
+        title="Hardy-Weinberg equilibrium testing",
+        description="""Test of whether a population's allele proportions are in Hardy-Weinberg equilibrium, often used as a genotyping quality control""",
+        meaning=STATO["0000181"])
+    TRANSMISSION_DISEQUILIBRIUM_TEST = PermissibleValue(
+        text="TRANSMISSION_DISEQUILIBRIUM_TEST",
+        title="transmission disequilibrium test",
+        description="""Test for genetic linkage between a genetic marker and a trait in families, robust to population structure""",
+        meaning=STATO["0000275"])
+    PEARSON_CORRELATION_TEST = PermissibleValue(
+        text="PEARSON_CORRELATION_TEST",
+        title="Pearson Correlation Test",
+        description="""Test of whether two continuous variables are linearly associated, based on Pearson's correlation coefficient""",
+        meaning=NCIT["C53244"])
+    SPEARMAN_CORRELATION_TEST = PermissibleValue(
+        text="SPEARMAN_CORRELATION_TEST",
+        title="Spearman Correlation Test",
+        description="""Non-parametric test of whether two variables are monotonically associated, based on Spearman's rank correlation coefficient""",
+        meaning=NCIT["C53249"])
+    AB_TEST = PermissibleValue(
+        text="AB_TEST",
+        title="A/B testing",
+        description="Statistical testing comparing two types of treatments or interventions",
+        meaning=STATO["0000715"])
+    BETWEEN_GROUP_COMPARISON_TEST = PermissibleValue(
+        text="BETWEEN_GROUP_COMPARISON_TEST",
+        title="between group comparison statistical test",
+        description="Test detecting differences between the means computed for each study group population",
+        meaning=STATO["0000279"])
+    WITHIN_SUBJECT_COMPARISON_TEST = PermissibleValue(
+        text="WITHIN_SUBJECT_COMPARISON_TEST",
+        title="within subject comparison statistical test",
+        description="""Test evaluating whether a change occurs within one experimental unit over time following a treatment or event""",
+        meaning=STATO["0000202"])
+    NON_PARAMETRIC_TEST = PermissibleValue(
+        text="NON_PARAMETRIC_TEST",
+        title="non-parametric test",
+        description="Test making no assumption about the underlying data distribution",
+        meaning=STATO["0000198"])
+
+    _defn = EnumDefinition(
+        name="StatisticalTestEnum",
+        description="""Statistical hypothesis tests, drawn primarily from the descendants of 'statistical hypothesis test' (OBI:0000673) in STATO.
+This enum deliberately mixes abstraction levels: alongside concrete tests it retains STATO's grouping classes (GOODNESS_OF_FIT_TEST, HOMOSKEDASTICITY_TEST, SPHERICITY_TEST, POST_HOC_ANALYSIS, NON_PARAMETRIC_TEST and similar) so that a source reporting only \"a test of normality was applied\" can still be annotated. Prefer the most specific value that the source supports, and use a grouping value only when the specific test is genuinely not stated.
+Several values are also repeated in the narrower enums below (TTestTypeEnum, NormalityTestEnum, HomoscedasticityTestEnum, PostHocTestEnum), which exist to constrain slot ranges. The duplicated meanings are intentional; from_meaning() resolves per enum class.""",
+    )
+
+class TTestTypeEnum(EnumDefinitionImpl):
+    """
+    Variants of Student's t-test
+    """
+    ONE_SAMPLE = PermissibleValue(
+        text="ONE_SAMPLE",
+        title="one sample t-test",
+        description="Compares a sample mean against a specified population mean",
+        meaning=STATO["0000302"])
+    PAIRED = PermissibleValue(
+        text="PAIRED",
+        title="paired t-test",
+        description="Compares paired observations from the same experimental units",
+        meaning=STATO["0000095"])
+    TWO_SAMPLE_EQUAL_VARIANCE = PermissibleValue(
+        text="TWO_SAMPLE_EQUAL_VARIANCE",
+        title="two sample t-test with equal variance",
+        description="Compares the means of two independent samples assumed to have equal variances",
+        meaning=STATO["0000303"])
+    TWO_SAMPLE_UNEQUAL_VARIANCE = PermissibleValue(
+        text="TWO_SAMPLE_UNEQUAL_VARIANCE",
+        title="two sample t-test with unequal variance",
+        description="Compares the means of two independent samples with unequal variances (Welch's t-test)",
+        meaning=STATO["0000304"])
+    TRIMMED_MEANS = PermissibleValue(
+        text="TRIMMED_MEANS",
+        title="Yuen t-Test with trimmed means",
+        description="Robust t-test computed on trimmed means and winsorized variances",
+        meaning=STATO["0000406"])
+
+    _defn = EnumDefinition(
+        name="TTestTypeEnum",
+        description="Variants of Student's t-test",
+    )
+
+class NormalityTestEnum(EnumDefinitionImpl):
+    """
+    Goodness of fit tests commonly used to assess whether a sample is drawn from a normally distributed population
+    """
+    SHAPIRO_WILK = PermissibleValue(
+        text="SHAPIRO_WILK",
+        title="Shapiro-Wilk test",
+        description="Tests the null hypothesis that a sample comes from a normal distribution",
+        meaning=STATO["0000077"])
+    KOLMOGOROV_SMIRNOV = PermissibleValue(
+        text="KOLMOGOROV_SMIRNOV",
+        title="Kolmogorov-Smirnov test",
+        description="Tests whether a sample is drawn from a specified continuous probability distribution",
+        meaning=STATO["0000083"])
+    ANDERSON_DARLING = PermissibleValue(
+        text="ANDERSON_DARLING",
+        title="Anderson-Darling test",
+        description="""Tests whether a sample is drawn from a given probability distribution, with added sensitivity in the tails""",
+        meaning=STATO["0000042"])
+
+    _defn = EnumDefinition(
+        name="NormalityTestEnum",
+        description="""Goodness of fit tests commonly used to assess whether a sample is drawn from a normally distributed population""",
+    )
+
+class HomoscedasticityTestEnum(EnumDefinitionImpl):
+    """
+    Tests evaluating equality of variances across groups or samples
+    """
+    LEVENE = PermissibleValue(
+        text="LEVENE",
+        title="Levene's test",
+        description="Tests the null hypothesis of equality of variance in several populations",
+        meaning=STATO["0000078"])
+    BARTLETT = PermissibleValue(
+        text="BARTLETT",
+        title="Barlett's test",
+        description="Tests whether k samples come from populations with equal variances",
+        meaning=STATO["0000079"])
+    BROWN_FORSYTHE = PermissibleValue(
+        text="BROWN_FORSYTHE",
+        title="Brown Forsythe test",
+        description="Tests equality of group variances using deviations from group medians",
+        meaning=STATO["0000080"])
+    BREUSCH_PAGAN = PermissibleValue(
+        text="BREUSCH_PAGAN",
+        title="Breusch-Pagan test",
+        description="Tests for heteroscedasticity of regression residuals",
+        meaning=STATO["0000284"])
+
+    _defn = EnumDefinition(
+        name="HomoscedasticityTestEnum",
+        description="Tests evaluating equality of variances across groups or samples",
+    )
+
+class PostHocTestEnum(EnumDefinitionImpl):
+    """
+    Multiple comparison procedures carried out after a significant omnibus test such as an ANOVA or Kruskal-Wallis test
+    """
+    TUKEY_HSD = PermissibleValue(
+        text="TUKEY_HSD",
+        title="Tukey HSD for Post-Hoc Analysis",
+        description="""Determines which means differ after a significant ANOVA while controlling the family-wise error rate""",
+        meaning=STATO["0000187"])
+    NEWMAN_KEULS = PermissibleValue(
+        text="NEWMAN_KEULS",
+        title="Newman-Keuls test post-hoc analysis",
+        description="Stepwise multiple comparison procedure based on the studentized range",
+        meaning=STATO["0000261"])
+    SCHEFFE = PermissibleValue(
+        text="SCHEFFE",
+        title="Scheffe test",
+        description="Conservative procedure evaluating all possible contrasts",
+        meaning=STATO["0000156"])
+    LEAST_SIGNIFICANT_DIFFERENCE = PermissibleValue(
+        text="LEAST_SIGNIFICANT_DIFFERENCE",
+        title="Least significance different test",
+        description="Pairwise comparisons using the least significant difference following an ANOVA",
+        meaning=STATO["0000157"])
+    DUNN = PermissibleValue(
+        text="DUNN",
+        title="Dunn’s multiple comparison test",
+        description="Non-parametric post-hoc test following a Kruskal-Wallis test",
+        meaning=STATO["0000490"])
+    CONOVER_IMAN = PermissibleValue(
+        text="CONOVER_IMAN",
+        title="Conover-Iman test of multiple comparisons using rank sums",
+        description="Pairwise rank-sum comparisons following a Kruskal-Wallis test",
+        meaning=STATO["0000491"])
+
+    _defn = EnumDefinition(
+        name="PostHocTestEnum",
+        description="""Multiple comparison procedures carried out after a significant omnibus test such as an ANOVA or Kruskal-Wallis test""",
+    )
+
+class MultipleTestingCorrectionEnum(EnumDefinitionImpl):
+    """
+    Methods for adjusting p-values or significance thresholds when many hypotheses are tested simultaneously.
+    As with StatisticalTestEnum, concrete methods (BONFERRONI, HOLM_BONFERRONI, BENJAMINI_HOCHBERG) sit alongside the
+    error-rate classes they belong to (FAMILY_WISE_ERROR_RATE, FALSE_DISCOVERY_RATE) and procedural classes
+    (SIMULTANEOUS, SEQUENTIAL). The classes are intended for sources that report only "FDR-corrected" without naming a
+    procedure.
+    """
+    BONFERRONI = PermissibleValue(
+        text="BONFERRONI",
+        title="Bonferroni Adjustment",
+        description="Divides the desired family-wise significance level by the number of comparisons made",
+        meaning=NCIT["C61594"])
+    HOLM_BONFERRONI = PermissibleValue(
+        text="HOLM_BONFERRONI",
+        title="Holm-Bonferroni family-wise error rate correction method",
+        description="Sequentially rejective closed-test procedure controlling the family-wise error rate",
+        meaning=OBI["0200066"])
+    BENJAMINI_HOCHBERG = PermissibleValue(
+        text="BENJAMINI_HOCHBERG",
+        title="Benjamini and Hochberg false discovery rate correction method",
+        description="""Sequential p-value procedure controlling the false discovery rate under independence or positive dependence""",
+        meaning=OBI["0200036"])
+    BENJAMINI_YEKUTIELI = PermissibleValue(
+        text="BENJAMINI_YEKUTIELI",
+        title="Benjamini and Yekutieli false discovery rate correction method",
+        description="False discovery rate procedure valid under arbitrary dependence between tests",
+        meaning=OBI["0200049"])
+    HOLM_FDR = PermissibleValue(
+        text="HOLM_FDR",
+        title="Holm false discovery rate correction",
+        description="""Application of the Holm p-value procedure to correct false discovery rate. Note that Holm's step-down procedure controls the family-wise error rate, not the false discovery rate; the \"false discovery rate\" wording is STATO's own label for this term. Prefer HOLM_BONFERRONI unless you specifically need the STATO term.""",
+        meaning=STATO["0000551"])
+    HOMMEL_FDR = PermissibleValue(
+        text="HOMMEL_FDR",
+        title="Hommel false discovery rate correction",
+        description="Application of the Hommel p-value procedure to correct false discovery rate",
+        meaning=STATO["0000552"])
+    FAMILY_WISE_ERROR_RATE = PermissibleValue(
+        text="FAMILY_WISE_ERROR_RATE",
+        title="family wise error rate correction method",
+        description="""Procedure controlling the probability of making at least one false positive across a family of tests""",
+        meaning=OBI["0200073"])
+    FALSE_DISCOVERY_RATE = PermissibleValue(
+        text="FALSE_DISCOVERY_RATE",
+        title="false discovery rate correction method",
+        description="Procedure controlling the expected proportion of false positives among rejected hypotheses",
+        meaning=OBI["0200163"])
+    SIMULTANEOUS = PermissibleValue(
+        text="SIMULTANEOUS",
+        title="simultaneous multiple testing correction",
+        description="Correction method applying a single adjustment across all tests simultaneously",
+        meaning=STATO["0000601"])
+    SEQUENTIAL = PermissibleValue(
+        text="SEQUENTIAL",
+        title="sequential multiple testing correction method",
+        description="Correction method applying adjustments in a stepwise, ordered fashion",
+        meaning=STATO["0000602"])
+    ALPHA_SPENDING = PermissibleValue(
+        text="ALPHA_SPENDING",
+        title="alpha spending procedure",
+        description="""Sequential procedure allocating portions of the overall type I error rate across interim analyses""",
+        meaning=STATO["0000605"])
+    ALPHA_INVESTING = PermissibleValue(
+        text="ALPHA_INVESTING",
+        title="alpha investing procedure",
+        description="Sequential procedure that earns and spends alpha as hypotheses are tested",
+        meaning=STATO["0000604"])
+    NONE = PermissibleValue(
+        text="NONE",
+        title="No correction",
+        description="No adjustment made for multiple testing")
+
+    _defn = EnumDefinition(
+        name="MultipleTestingCorrectionEnum",
+        description="""Methods for adjusting p-values or significance thresholds when many hypotheses are tested simultaneously.
+As with StatisticalTestEnum, concrete methods (BONFERRONI, HOLM_BONFERRONI, BENJAMINI_HOCHBERG) sit alongside the error-rate classes they belong to (FAMILY_WISE_ERROR_RATE, FALSE_DISCOVERY_RATE) and procedural classes (SIMULTANEOUS, SEQUENTIAL). The classes are intended for sources that report only \"FDR-corrected\" without naming a procedure.""",
+    )
+
+class CorrelationCoefficientEnum(EnumDefinitionImpl):
+    """
+    Coefficients quantifying the strength of association between two variables
+    """
+    PEARSON = PermissibleValue(
+        text="PEARSON",
+        title="Pearson's correlation coefficient",
+        description="Evaluates the strength of linear association between two continuous variables",
+        meaning=STATO["0000280"])
+    SPEARMAN = PermissibleValue(
+        text="SPEARMAN",
+        title="Spearman's rank correlation coefficient",
+        description="Non-parametric measure of statistical dependence between two ranked variables",
+        meaning=STATO["0000201"])
+    KENDALL = PermissibleValue(
+        text="KENDALL",
+        title="Kendall's correlation coefficient",
+        description="Correlation coefficient between two ordinal or ranked variables",
+        meaning=STATO["0000240"])
+
+    _defn = EnumDefinition(
+        name="CorrelationCoefficientEnum",
+        description="Coefficients quantifying the strength of association between two variables",
+    )
+
+class TestTailednessEnum(EnumDefinitionImpl):
+    """
+    Whether a statistical test allocates the significance level to one or both tails of the reference distribution
+    """
+    ONE_TAILED = PermissibleValue(
+        text="ONE_TAILED",
+        title="one tailed test",
+        description="""Allocates all of the significance level to one tail, evaluating a directional alternative hypothesis""",
+        meaning=STATO["0000286"])
+    TWO_TAILED = PermissibleValue(
+        text="TWO_TAILED",
+        title="two tailed test",
+        description="""Allocates half of the significance level to each tail, evaluating a non-directional alternative hypothesis""",
+        meaning=STATO["0000287"])
+
+    _defn = EnumDefinition(
+        name="TestTailednessEnum",
+        description="""Whether a statistical test allocates the significance level to one or both tails of the reference distribution""",
+    )
+
+class DistributionalAssumptionEnum(EnumDefinitionImpl):
+    """
+    Whether an inference procedure assumes a parametric form for the underlying population distribution.
+    Note the deliberate type approximation: the values denote a property of a procedure, but the available ontology
+    terms (NCIT:C53230, STATO:0000198) denote classes of test. Neither PATO nor OBI currently has a quality or
+    characteristic term for "parametric", so the test classes are used as the closest available referent.
+    """
+    PARAMETRIC = PermissibleValue(
+        text="PARAMETRIC",
+        title="Parametric Test",
+        description="Procedure that incorporates assumptions about the population probability distribution",
+        meaning=NCIT["C53230"])
+    NON_PARAMETRIC = PermissibleValue(
+        text="NON_PARAMETRIC",
+        title="non-parametric test",
+        description="Procedure that makes no assumption about the underlying data distribution",
+        meaning=STATO["0000198"])
+
+    _defn = EnumDefinition(
+        name="DistributionalAssumptionEnum",
+        description="""Whether an inference procedure assumes a parametric form for the underlying population distribution.
+Note the deliberate type approximation: the values denote a property of a procedure, but the available ontology terms (NCIT:C53230, STATO:0000198) denote classes of test. Neither PATO nor OBI currently has a quality or characteristic term for \"parametric\", so the test classes are used as the closest available referent.""",
+    )
+
+class ComparisonObjectiveEnum(EnumDefinitionImpl):
+    """
+    The objective of a between-group comparison, particularly in the design of controlled trials
+    """
+    SUPERIORITY = PermissibleValue(
+        text="SUPERIORITY",
+        title="superiority testing",
+        description="""Comparison intended to show that the difference in effects exceeds a prespecified threshold of meaningful benefit""",
+        meaning=STATO["0000718"])
+    NON_INFERIORITY = PermissibleValue(
+        text="NON_INFERIORITY",
+        title="non-inferiority testing",
+        description="""Comparison intended to show that any difference in effects lies below a prespecified threshold of meaningful harm""",
+        meaning=STATO["0000716"])
+    EQUIVALENCE = PermissibleValue(
+        text="EQUIVALENCE",
+        title="equivalence testing",
+        description="""Comparison intended to show that the absolute difference in effects is smaller than a prespecified threshold""",
+        meaning=STATO["0000717"])
+
+    _defn = EnumDefinition(
+        name="ComparisonObjectiveEnum",
+        description="The objective of a between-group comparison, particularly in the design of controlled trials",
     )
 
 class PersonStatusEnum(EnumDefinitionImpl):
@@ -11109,6 +12960,452 @@ class CompressionType(EnumDefinitionImpl):
         description="Compression types used with Content-Encoding",
     )
 
+class QubitType(EnumDefinitionImpl):
+    """
+    Types of physical qubit implementations used in quantum computing hardware
+    """
+    SUPERCONDUCTING = PermissibleValue(
+        text="SUPERCONDUCTING",
+        description="Superconducting qubit using Josephson junctions cooled to millikelvin temperatures")
+    TRAPPED_ION = PermissibleValue(
+        text="TRAPPED_ION",
+        description="Qubit encoded in electronic states of trapped atomic ions")
+    PHOTONIC = PermissibleValue(
+        text="PHOTONIC",
+        title="photon",
+        description="Qubit encoded in quantum states of photons",
+        meaning=CHEBI["30212"])
+    TOPOLOGICAL = PermissibleValue(
+        text="TOPOLOGICAL",
+        description="Qubit based on topological states of matter resistant to local perturbations")
+    NEUTRAL_ATOM = PermissibleValue(
+        text="NEUTRAL_ATOM",
+        description="Qubit encoded in energy levels of electrically neutral atoms held in optical traps")
+    QUANTUM_DOT = PermissibleValue(
+        text="QUANTUM_DOT",
+        title="Quantum Dot",
+        description="Qubit using semiconductor quantum dot nanostructures",
+        meaning=NCIT["C62378"])
+    NITROGEN_VACANCY_CENTER = PermissibleValue(
+        text="NITROGEN_VACANCY_CENTER",
+        description="Qubit based on nitrogen-vacancy defect centers in diamond lattice")
+    SPIN_QUBIT = PermissibleValue(
+        text="SPIN_QUBIT",
+        description="Qubit encoded in the spin state of an electron or nucleus in a semiconductor")
+
+    _defn = EnumDefinition(
+        name="QubitType",
+        description="Types of physical qubit implementations used in quantum computing hardware",
+    )
+
+class QuantumAlgorithmCategoryType(EnumDefinitionImpl):
+    """
+    Categories of quantum algorithms by their primary application domain
+    """
+    OPTIMIZATION = PermissibleValue(
+        text="OPTIMIZATION",
+        description="Quantum algorithms for combinatorial and continuous optimization problems")
+    SIMULATION = PermissibleValue(
+        text="SIMULATION",
+        description="Quantum algorithms for simulating physical and chemical systems")
+    MACHINE_LEARNING = PermissibleValue(
+        text="MACHINE_LEARNING",
+        description="Quantum algorithms for machine learning and pattern recognition tasks")
+    CRYPTOGRAPHY = PermissibleValue(
+        text="CRYPTOGRAPHY",
+        description="Quantum algorithms for cryptographic applications including key distribution and code breaking")
+    LINEAR_ALGEBRA = PermissibleValue(
+        text="LINEAR_ALGEBRA",
+        description="Quantum algorithms for linear algebra problems such as solving linear systems")
+    SEARCH = PermissibleValue(
+        text="SEARCH",
+        description="Quantum search algorithms for unstructured database search")
+    ERROR_CORRECTION = PermissibleValue(
+        text="ERROR_CORRECTION",
+        description="Quantum error correction codes and fault-tolerant computation protocols")
+    VARIATIONAL = PermissibleValue(
+        text="VARIATIONAL",
+        description="Hybrid quantum-classical variational algorithms for near-term quantum devices")
+
+    _defn = EnumDefinition(
+        name="QuantumAlgorithmCategoryType",
+        description="Categories of quantum algorithms by their primary application domain",
+    )
+
+class FrontierModelEnum(EnumDefinitionImpl):
+    """
+    Hierarchical enumeration of frontier AI models. The hierarchy has three tiers: developer (e.g. ANTHROPIC), model
+    family (e.g. CLAUDE_OPUS), and specific model release identified by its canonical API model id (e.g.
+    claude-opus-4-8). Intermediate developer and family nodes are uppercase categorical values; leaf nodes are the
+    verbatim API identifiers.
+    """
+    ANTHROPIC = PermissibleValue(
+        text="ANTHROPIC",
+        description="Models developed by Anthropic (the Claude family)")
+    CLAUDE_OPUS = PermissibleValue(
+        text="CLAUDE_OPUS",
+        description="Claude Opus - Anthropic's most capable Opus-tier model family")
+    CLAUDE_SONNET = PermissibleValue(
+        text="CLAUDE_SONNET",
+        description="Claude Sonnet - Anthropic's balanced speed / intelligence family")
+    CLAUDE_HAIKU = PermissibleValue(
+        text="CLAUDE_HAIKU",
+        description="Claude Haiku - Anthropic's fastest and most cost-effective family")
+    CLAUDE_FABLE = PermissibleValue(
+        text="CLAUDE_FABLE",
+        description="""Claude Fable - Anthropic's most capable widely released model family, for the most demanding reasoning and long-horizon agentic work.""")
+    CLAUDE_MYTHOS = PermissibleValue(
+        text="CLAUDE_MYTHOS",
+        description="""Claude Mythos - same capabilities and API behavior as Claude Fable, available exclusively through Project Glasswing.""")
+    OPENAI = PermissibleValue(
+        text="OPENAI",
+        description="Models developed by OpenAI (the GPT family)")
+    GPT_5 = PermissibleValue(
+        text="GPT_5",
+        description="GPT-5 - OpenAI's frontier model family for coding and professional work")
+    GOOGLE = PermissibleValue(
+        text="GOOGLE",
+        description="Models developed by Google DeepMind (the Gemini family)")
+    GEMINI_3 = PermissibleValue(
+        text="GEMINI_3",
+        description="Gemini 3 - Google's latest generation multimodal model family")
+    GEMINI_2_5 = PermissibleValue(
+        text="GEMINI_2_5",
+        description="Gemini 2.5 - Google's previous-generation multimodal model family")
+    XAI = PermissibleValue(
+        text="XAI",
+        description="Models developed by xAI (the Grok family)")
+    GROK_4 = PermissibleValue(
+        text="GROK_4",
+        description="Grok 4 - xAI's reasoning-first flagship model family")
+    GROK_CODE = PermissibleValue(
+        text="GROK_CODE",
+        description="Grok Code - xAI's dedicated agentic coding model family")
+    META = PermissibleValue(
+        text="META",
+        description="Open-weight models developed by Meta (the Llama family)")
+    LLAMA_4 = PermissibleValue(
+        text="LLAMA_4",
+        description="Llama 4 - Meta's open-weight mixture-of-experts model family")
+    DEEPSEEK = PermissibleValue(
+        text="DEEPSEEK",
+        description="Open-weight models developed by DeepSeek")
+    DEEPSEEK_MODELS = PermissibleValue(
+        text="DEEPSEEK_MODELS",
+        description="DeepSeek - open-weight mixture-of-experts chat and reasoning models")
+    MISTRAL = PermissibleValue(
+        text="MISTRAL",
+        description="Models developed by Mistral AI")
+    MISTRAL_LARGE = PermissibleValue(
+        text="MISTRAL_LARGE",
+        description="Mistral Large - Mistral AI's flagship open-weight model family")
+    MOONSHOT = PermissibleValue(
+        text="MOONSHOT",
+        description="Models developed by Moonshot AI (the Kimi family)")
+    KIMI = PermissibleValue(
+        text="KIMI",
+        description="Kimi - Moonshot AI's open-weight mixture-of-experts model family")
+
+    _defn = EnumDefinition(
+        name="FrontierModelEnum",
+        description="""Hierarchical enumeration of frontier AI models. The hierarchy has three tiers: developer (e.g. ANTHROPIC), model family (e.g. CLAUDE_OPUS), and specific model release identified by its canonical API model id (e.g. claude-opus-4-8). Intermediate developer and family nodes are uppercase categorical values; leaf nodes are the verbatim API identifiers.""",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "claude-opus-4-8",
+            PermissibleValue(
+                text="claude-opus-4-8",
+                title="Claude Opus 4.8",
+                description="""Claude Opus 4.8 - Anthropic's most capable Opus-tier model; highly autonomous, state-of-the-art on long-horizon agentic work, knowledge work, and memory. Adaptive thinking only."""))
+        setattr(cls, "claude-opus-4-7",
+            PermissibleValue(
+                text="claude-opus-4-7",
+                title="Claude Opus 4.7",
+                description="""Claude Opus 4.7 - previous-generation Opus; highly autonomous, strong on long-horizon agentic work, vision, and memory. Adaptive thinking only."""))
+        setattr(cls, "claude-opus-4-6",
+            PermissibleValue(
+                text="claude-opus-4-6",
+                title="Claude Opus 4.6",
+                description="""Claude Opus 4.6 - older Opus model supporting adaptive thinking and 128K max output tokens."""))
+        setattr(cls, "claude-opus-4-5",
+            PermissibleValue(
+                text="claude-opus-4-5",
+                title="Claude Opus 4.5",
+                description="Claude Opus 4.5 - legacy Opus model (still active)."))
+        setattr(cls, "claude-sonnet-4-6",
+            PermissibleValue(
+                text="claude-sonnet-4-6",
+                title="Claude Sonnet 4.6",
+                description="""Claude Sonnet 4.6 - Anthropic's best combination of speed and intelligence. Supports adaptive thinking."""))
+        setattr(cls, "claude-sonnet-4-5",
+            PermissibleValue(
+                text="claude-sonnet-4-5",
+                title="Claude Sonnet 4.5",
+                description="Claude Sonnet 4.5 - legacy Sonnet model (still active)."))
+        setattr(cls, "claude-haiku-4-5",
+            PermissibleValue(
+                text="claude-haiku-4-5",
+                title="Claude Haiku 4.5",
+                description="""Claude Haiku 4.5 - Anthropic's fastest and most cost-effective model for simple, latency-sensitive tasks."""))
+        setattr(cls, "claude-fable-5",
+            PermissibleValue(
+                text="claude-fable-5",
+                title="Claude Fable 5",
+                description="""Claude Fable 5 - Anthropic's most capable widely released model. Thinking is always on; raw chain of thought is never returned. Requires 30-day data retention."""))
+        setattr(cls, "claude-mythos-5",
+            PermissibleValue(
+                text="claude-mythos-5",
+                title="Claude Mythos 5",
+                description="""Claude Mythos 5 - same capabilities, pricing, limits, and API behavior as Claude Fable 5; available only through Project Glasswing."""))
+        setattr(cls, "gpt-5.5",
+            PermissibleValue(
+                text="gpt-5.5",
+                title="GPT-5.5",
+                description="""GPT-5.5 - OpenAI's newest frontier model, \"a new class of intelligence for coding and professional work\"."""))
+        setattr(cls, "gpt-5.4",
+            PermissibleValue(
+                text="gpt-5.4",
+                title="GPT-5.4",
+                description="GPT-5.4 - a more affordable model for coding and professional work."))
+        setattr(cls, "gpt-5.4-mini",
+            PermissibleValue(
+                text="gpt-5.4-mini",
+                title="GPT-5.4 mini",
+                description="""GPT-5.4 mini - OpenAI's strongest mini model for coding, computer use, and subagents; lower latency and cost."""))
+        setattr(cls, "gpt-5.2",
+            PermissibleValue(
+                text="gpt-5.2",
+                title="GPT-5.2",
+                description="GPT-5.2 - previous frontier model for complex professional work."))
+        setattr(cls, "gpt-5.2-codex",
+            PermissibleValue(
+                text="gpt-5.2-codex",
+                title="GPT-5.2-Codex",
+                description="GPT-5.2-Codex - coding-specialized variant for API-authenticated Codex workflows."))
+        setattr(cls, "gemini-3.5-flash",
+            PermissibleValue(
+                text="gemini-3.5-flash",
+                title="Gemini 3.5 Flash",
+                description="""Gemini 3.5 Flash - Google's most intelligent model for agentic and coding tasks, delivering near-Pro intelligence at Flash-tier speed and cost."""))
+        setattr(cls, "gemini-3.1-pro-preview",
+            PermissibleValue(
+                text="gemini-3.1-pro-preview",
+                title="Gemini 3.1 Pro",
+                description="""Gemini 3.1 Pro - reasoning-first model optimized for complex agentic workflows and coding, with adaptive thinking and integrated grounding."""))
+        setattr(cls, "gemini-3-flash-preview",
+            PermissibleValue(
+                text="gemini-3-flash-preview",
+                title="Gemini 3 Flash",
+                description="Gemini 3 Flash - frontier-class performance at reduced cost."))
+        setattr(cls, "gemini-3.1-flash-lite",
+            PermissibleValue(
+                text="gemini-3.1-flash-lite",
+                title="Gemini 3.1 Flash-Lite",
+                description="""Gemini 3.1 Flash-Lite - most cost-efficient Gemini model, optimized for low latency and high-volume traffic."""))
+        setattr(cls, "gemini-2.5-pro",
+            PermissibleValue(
+                text="gemini-2.5-pro",
+                title="Gemini 2.5 Pro",
+                description="""Gemini 2.5 Pro - high-capability model for complex reasoning and coding with adaptive thinking and a 1M token context."""))
+        setattr(cls, "gemini-2.5-flash",
+            PermissibleValue(
+                text="gemini-2.5-flash",
+                title="Gemini 2.5 Flash",
+                description="Gemini 2.5 Flash - best price-performance for reasoning tasks."))
+        setattr(cls, "gemini-2.5-flash-lite",
+            PermissibleValue(
+                text="gemini-2.5-flash-lite",
+                title="Gemini 2.5 Flash-Lite",
+                description="Gemini 2.5 Flash-Lite - fastest and most budget-friendly option."))
+        setattr(cls, "grok-4.3",
+            PermissibleValue(
+                text="grok-4.3",
+                title="Grok 4.3",
+                description="""Grok 4.3 - xAI's reasoning-first flagship; the most intelligent and fastest model xAI has built."""))
+        setattr(cls, "grok-4.20-0309-reasoning",
+            PermissibleValue(
+                text="grok-4.20-0309-reasoning",
+                title="Grok 4.20 (reasoning)",
+                description="""Grok 4.20 (reasoning) - agentic tool-calling model noted for a very low hallucination rate."""))
+        setattr(cls, "grok-4-0709",
+            PermissibleValue(
+                text="grok-4-0709",
+                title="Grok 4",
+                description="Grok 4 - earlier Grok 4 release."))
+        setattr(cls, "grok-code-fast-1",
+            PermissibleValue(
+                text="grok-code-fast-1",
+                title="Grok Code Fast 1",
+                description="Grok Code Fast 1 - dedicated agentic coding model."))
+        setattr(cls, "llama-4-maverick",
+            PermissibleValue(
+                text="llama-4-maverick",
+                title="Llama 4 Maverick",
+                description="""Llama 4 Maverick - general-purpose open-weight chat model; highest MMLU among Llama 4 variants."""))
+        setattr(cls, "llama-4-scout",
+            PermissibleValue(
+                text="llama-4-scout",
+                title="Llama 4 Scout",
+                description="Llama 4 Scout - open-weight model supporting very long context (up to 10M tokens)."))
+        setattr(cls, "deepseek-chat",
+            PermissibleValue(
+                text="deepseek-chat",
+                title="DeepSeek-V3",
+                description="""DeepSeek-V3 (served as deepseek-chat) - open-weight MoE model activating ~37B of 671B parameters per token."""))
+        setattr(cls, "deepseek-reasoner",
+            PermissibleValue(
+                text="deepseek-reasoner",
+                title="DeepSeek-R1",
+                description="DeepSeek-R1 (served as deepseek-reasoner) - open-weight reasoning model."))
+        setattr(cls, "mistral-large-3",
+            PermissibleValue(
+                text="mistral-large-3",
+                title="Mistral Large 3",
+                description="""Mistral Large 3 - state-of-the-art open-weight MoE model (41B active / 675B total parameters), 256K context, released under Apache 2.0."""))
+        setattr(cls, "kimi-k2.6",
+            PermissibleValue(
+                text="kimi-k2.6",
+                title="Kimi K2.6",
+                description="Kimi K2.6 - frontier open-weight MoE coding model (32B active / 1T total parameters)."))
+
+class SemiconductorMaterialType(EnumDefinitionImpl):
+    """
+    Types of semiconductor materials used in microelectronics fabrication
+    """
+    SILICON = PermissibleValue(
+        text="SILICON",
+        title="silicon atom",
+        description="Elemental silicon, the most widely used semiconductor material",
+        meaning=CHEBI["27573"])
+    GALLIUM_ARSENIDE = PermissibleValue(
+        text="GALLIUM_ARSENIDE",
+        description="Gallium arsenide (GaAs) compound semiconductor for high-frequency applications")
+    SILICON_CARBIDE = PermissibleValue(
+        text="SILICON_CARBIDE",
+        title="silicon carbide",
+        description="Silicon carbide (SiC) wide-bandgap semiconductor for high-power applications",
+        meaning=CHEBI["29390"])
+    GALLIUM_NITRIDE = PermissibleValue(
+        text="GALLIUM_NITRIDE",
+        description="Gallium nitride (GaN) wide-bandgap semiconductor for power electronics and LEDs")
+    INDIUM_PHOSPHIDE = PermissibleValue(
+        text="INDIUM_PHOSPHIDE",
+        title="Indium phosphide",
+        description="Indium phosphide (InP) compound semiconductor for optoelectronics and fiber communications",
+        meaning=CHEBI["82281"])
+    GERMANIUM = PermissibleValue(
+        text="GERMANIUM",
+        title="germanium atom",
+        description="Elemental germanium semiconductor used in high-speed transistors and detectors",
+        meaning=CHEBI["30441"])
+    SILICON_GERMANIUM = PermissibleValue(
+        text="SILICON_GERMANIUM",
+        description="Silicon-germanium (SiGe) alloy semiconductor for heterojunction bipolar transistors")
+    DIAMOND = PermissibleValue(
+        text="DIAMOND",
+        title="diamond",
+        description="Diamond as an ultra-wide-bandgap semiconductor for extreme environment electronics",
+        meaning=CHEBI["33417"])
+
+    _defn = EnumDefinition(
+        name="SemiconductorMaterialType",
+        description="Types of semiconductor materials used in microelectronics fabrication",
+    )
+
+class ChipFabricationNodeType(EnumDefinitionImpl):
+    """
+    Semiconductor fabrication process node sizes defining transistor feature dimensions
+    """
+    NODE_3NM = PermissibleValue(
+        text="NODE_3NM",
+        description="3 nanometer process node")
+    NODE_5NM = PermissibleValue(
+        text="NODE_5NM",
+        description="5 nanometer process node")
+    NODE_7NM = PermissibleValue(
+        text="NODE_7NM",
+        description="7 nanometer process node")
+    NODE_10NM = PermissibleValue(
+        text="NODE_10NM",
+        description="10 nanometer process node")
+    NODE_14NM = PermissibleValue(
+        text="NODE_14NM",
+        description="14 nanometer process node")
+    NODE_22NM = PermissibleValue(
+        text="NODE_22NM",
+        description="22 nanometer process node")
+    NODE_28NM = PermissibleValue(
+        text="NODE_28NM",
+        description="28 nanometer process node")
+    NODE_45NM = PermissibleValue(
+        text="NODE_45NM",
+        description="45 nanometer process node")
+    MATURE_NODE = PermissibleValue(
+        text="MATURE_NODE",
+        description="Mature fabrication node (65nm and larger) for legacy and specialty applications")
+
+    _defn = EnumDefinition(
+        name="ChipFabricationNodeType",
+        description="Semiconductor fabrication process node sizes defining transistor feature dimensions",
+    )
+
+class DataCenterCoolingType(EnumDefinitionImpl):
+    """
+    Types of cooling systems used in data center facilities
+    """
+    AIR_COOLING = PermissibleValue(
+        text="AIR_COOLING",
+        description="""Traditional air-based cooling using computer room air conditioning (CRAC) or air handling units""")
+    LIQUID_COOLING = PermissibleValue(
+        text="LIQUID_COOLING",
+        description="Cooling using liquid coolant circulated through heat exchangers near server components")
+    IMMERSION_COOLING = PermissibleValue(
+        text="IMMERSION_COOLING",
+        description="Cooling by submerging server hardware in a thermally conductive dielectric liquid")
+    REAR_DOOR_HEAT_EXCHANGER = PermissibleValue(
+        text="REAR_DOOR_HEAT_EXCHANGER",
+        description="Liquid-to-air heat exchanger mounted on the rear door of server racks")
+    EVAPORATIVE_COOLING = PermissibleValue(
+        text="EVAPORATIVE_COOLING",
+        description="Cooling that uses water evaporation to reduce air temperature")
+    GEOTHERMAL_COOLING = PermissibleValue(
+        text="GEOTHERMAL_COOLING",
+        description="Cooling that leverages underground temperature stability for heat dissipation")
+    FREE_AIR_COOLING = PermissibleValue(
+        text="FREE_AIR_COOLING",
+        description="Cooling using outside ambient air when conditions permit, reducing mechanical cooling load")
+    DIRECT_TO_CHIP_LIQUID_COOLING = PermissibleValue(
+        text="DIRECT_TO_CHIP_LIQUID_COOLING",
+        description="""Liquid cooling with cold plates attached directly to processors and other heat-generating components""")
+
+    _defn = EnumDefinition(
+        name="DataCenterCoolingType",
+        description="Types of cooling systems used in data center facilities",
+    )
+
+class DataCenterTierLevel(EnumDefinitionImpl):
+    """
+    Uptime Institute data center tier classification levels defining infrastructure reliability
+    """
+    TIER_I = PermissibleValue(
+        text="TIER_I",
+        description="Basic capacity - single non-redundant distribution path with no redundancy")
+    TIER_II = PermissibleValue(
+        text="TIER_II",
+        description="""Redundant capacity components - single non-redundant distribution path with redundant components""")
+    TIER_III = PermissibleValue(
+        text="TIER_III",
+        description="Concurrently maintainable - multiple independent distribution paths with redundant components")
+    TIER_IV = PermissibleValue(
+        text="TIER_IV",
+        description="""Fault tolerant - multiple independent distribution paths with redundant components, fault tolerant""")
+
+    _defn = EnumDefinition(
+        name="DataCenterTierLevel",
+        description="Uptime Institute data center tier classification levels defining infrastructure reliability",
+    )
+
 class StateOfMatterEnum(EnumDefinitionImpl):
     """
     The physical state or phase of matter
@@ -11151,6 +13448,169 @@ class StateOfMatterEnum(EnumDefinitionImpl):
     _defn = EnumDefinition(
         name="StateOfMatterEnum",
         description="The physical state or phase of matter",
+    )
+
+class ParticleAcceleratorType(EnumDefinitionImpl):
+    """
+    Types of particle accelerator facilities used in high-energy physics research
+    """
+    LINEAR_ACCELERATOR = PermissibleValue(
+        text="LINEAR_ACCELERATOR",
+        title="Linear Accelerator",
+        description="Linear accelerator (linac) that accelerates particles along a straight path",
+        meaning=NCIT["C28169"])
+    SYNCHROTRON = PermissibleValue(
+        text="SYNCHROTRON",
+        title="Synchrotron",
+        description="Circular accelerator with increasing magnetic field to maintain constant orbit radius",
+        meaning=NCIT["C48205"])
+    CYCLOTRON = PermissibleValue(
+        text="CYCLOTRON",
+        title="Cyclotron",
+        description="Circular accelerator using constant magnetic field and alternating electric field",
+        meaning=NCIT["C94881"])
+    STORAGE_RING = PermissibleValue(
+        text="STORAGE_RING",
+        description="Circular ring that stores particles at constant energy for extended periods")
+    FREE_ELECTRON_LASER = PermissibleValue(
+        text="FREE_ELECTRON_LASER",
+        description="Accelerator-based light source using relativistic electrons in a magnetic undulator")
+    COLLIDER = PermissibleValue(
+        text="COLLIDER",
+        description="Accelerator that directs two counter-rotating beams into head-on collisions")
+    SPALLATION_SOURCE = PermissibleValue(
+        text="SPALLATION_SOURCE",
+        description="Accelerator-driven neutron source where protons strike a heavy metal target")
+    BETATRON = PermissibleValue(
+        text="BETATRON",
+        description="Circular accelerator that uses a changing magnetic field to accelerate electrons")
+
+    _defn = EnumDefinition(
+        name="ParticleAcceleratorType",
+        description="Types of particle accelerator facilities used in high-energy physics research",
+    )
+
+class FundamentalParticleType(EnumDefinitionImpl):
+    """
+    Standard Model fundamental particles classified by type
+    """
+    ELECTRON = PermissibleValue(
+        text="ELECTRON",
+        title="electron",
+        description="First-generation charged lepton with mass 0.511 MeV",
+        meaning=CHEBI["10545"])
+    MUON = PermissibleValue(
+        text="MUON",
+        title="muon",
+        description="Second-generation charged lepton with mass 105.66 MeV",
+        meaning=CHEBI["36356"])
+    TAU = PermissibleValue(
+        text="TAU",
+        title="tau lepton",
+        description="Third-generation charged lepton with mass 1777 MeV",
+        meaning=CHEBI["36355"])
+    ELECTRON_NEUTRINO = PermissibleValue(
+        text="ELECTRON_NEUTRINO",
+        title="electron neutrino",
+        description="First-generation neutrino associated with the electron",
+        meaning=CHEBI["30223"])
+    MUON_NEUTRINO = PermissibleValue(
+        text="MUON_NEUTRINO",
+        title="muon neutrino",
+        description="Second-generation neutrino associated with the muon",
+        meaning=CHEBI["36353"])
+    TAU_NEUTRINO = PermissibleValue(
+        text="TAU_NEUTRINO",
+        title="tau neutrino",
+        description="Third-generation neutrino associated with the tau lepton",
+        meaning=CHEBI["36354"])
+    UP_QUARK = PermissibleValue(
+        text="UP_QUARK",
+        title="up quark",
+        description="First-generation quark with charge +2/3",
+        meaning=CHEBI["36366"])
+    DOWN_QUARK = PermissibleValue(
+        text="DOWN_QUARK",
+        title="down quark",
+        description="First-generation quark with charge -1/3",
+        meaning=CHEBI["36367"])
+    CHARM_QUARK = PermissibleValue(
+        text="CHARM_QUARK",
+        title="charm quark",
+        description="Second-generation quark with charge +2/3",
+        meaning=CHEBI["36369"])
+    STRANGE_QUARK = PermissibleValue(
+        text="STRANGE_QUARK",
+        title="strange quark",
+        description="Second-generation quark with charge -1/3",
+        meaning=CHEBI["36368"])
+    TOP_QUARK = PermissibleValue(
+        text="TOP_QUARK",
+        title="top quark",
+        description="Third-generation quark with charge +2/3",
+        meaning=CHEBI["36371"])
+    BOTTOM_QUARK = PermissibleValue(
+        text="BOTTOM_QUARK",
+        title="bottom quark",
+        description="Third-generation quark with charge -1/3",
+        meaning=CHEBI["36370"])
+    PHOTON = PermissibleValue(
+        text="PHOTON",
+        title="photon",
+        description="Massless gauge boson mediating the electromagnetic force",
+        meaning=CHEBI["30212"])
+    GLUON = PermissibleValue(
+        text="GLUON",
+        description="Massless gauge boson mediating the strong force between quarks")
+    W_BOSON = PermissibleValue(
+        text="W_BOSON",
+        description="Massive gauge boson mediating the charged weak interaction")
+    Z_BOSON = PermissibleValue(
+        text="Z_BOSON",
+        description="Massive gauge boson mediating the neutral weak interaction")
+    HIGGS_BOSON = PermissibleValue(
+        text="HIGGS_BOSON",
+        title="Higgs boson",
+        description="Scalar boson associated with the Higgs field and mass generation mechanism",
+        meaning=CHEBI["146278"])
+
+    _defn = EnumDefinition(
+        name="FundamentalParticleType",
+        description="Standard Model fundamental particles classified by type",
+    )
+
+class DetectorType(EnumDefinitionImpl):
+    """
+    Types of detectors used in particle physics experiments
+    """
+    CALORIMETER = PermissibleValue(
+        text="CALORIMETER",
+        description="Detector that measures the total energy of incident particles by absorbing them")
+    TRACKING_DETECTOR = PermissibleValue(
+        text="TRACKING_DETECTOR",
+        description="Detector that records the trajectories of charged particles")
+    TIME_PROJECTION_CHAMBER = PermissibleValue(
+        text="TIME_PROJECTION_CHAMBER",
+        description="Gas-filled detector that provides three-dimensional particle track reconstruction")
+    CHERENKOV_DETECTOR = PermissibleValue(
+        text="CHERENKOV_DETECTOR",
+        description="Detector that identifies particles by measuring Cherenkov radiation emitted in a medium")
+    SCINTILLATOR = PermissibleValue(
+        text="SCINTILLATOR",
+        description="Detector using scintillating material that emits light when traversed by ionizing radiation")
+    SILICON_STRIP_DETECTOR = PermissibleValue(
+        text="SILICON_STRIP_DETECTOR",
+        description="Semiconductor detector using finely segmented silicon strips for precise position measurement")
+    DRIFT_CHAMBER = PermissibleValue(
+        text="DRIFT_CHAMBER",
+        description="Gas-filled wire chamber that measures particle positions from electron drift times")
+    MUON_SPECTROMETER = PermissibleValue(
+        text="MUON_SPECTROMETER",
+        description="Large detector system designed to identify and measure the momentum of muons")
+
+    _defn = EnumDefinition(
+        name="DetectorType",
+        description="Types of detectors used in particle physics experiments",
     )
 
 class AirPollutantEnum(EnumDefinitionImpl):
@@ -13426,7 +15886,12 @@ class NewsTopicCategoryEnum(EnumDefinitionImpl):
 
 class ToxicityClassificationEnum(EnumDefinitionImpl):
     """
-    Text toxicity classification labels
+    Text toxicity classification labels, following the label set of the Jigsaw toxic-comment task. Retained for
+    datasets and models coded against that label set.
+    For safety policy, evaluation, red-teaming, or incident classification, see ai_governance/content_harms
+    (ContentHarmCategoryEnum), which covers the same ground plus sexual content, self-harm, dangerous capability
+    uplift, deception, and privacy, and which separates harm category from severity. Each value below has a
+    counterpart there, recorded in its `jigsaw_label` annotation.
     """
     NON_TOXIC = PermissibleValue(
         text="NON_TOXIC",
@@ -13460,7 +15925,8 @@ class ToxicityClassificationEnum(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
         name="ToxicityClassificationEnum",
-        description="Text toxicity classification labels",
+        description="""Text toxicity classification labels, following the label set of the Jigsaw toxic-comment task. Retained for datasets and models coded against that label set.
+For safety policy, evaluation, red-teaming, or incident classification, see ai_governance/content_harms (ContentHarmCategoryEnum), which covers the same ground plus sexual content, self-harm, dangerous capability uplift, deception, and privacy, and which separates harm category from severity. Each value below has a counterpart there, recorded in its `jigsaw_label` annotation.""",
     )
 
 class IntentClassificationEnum(EnumDefinitionImpl):
@@ -13946,6 +16412,447 @@ class AnatomicalOrientation(EnumDefinitionImpl):
     _defn = EnumDefinition(
         name="AnatomicalOrientation",
         description="Directional orientation between anatomical positions based on OME NGFF specification",
+    )
+
+class SubsurfaceFormationType(EnumDefinitionImpl):
+    """
+    Classification of subsurface geological formations relevant to energy exploration, carbon storage, geothermal
+    systems, and groundwater resources.
+    """
+    AQUIFER = PermissibleValue(
+        text="AQUIFER",
+        description="""An underground layer of water-bearing permeable rock or unconsolidated materials from which groundwater can be extracted""",
+        meaning=ENVO["00012408"])
+    AQUITARD = PermissibleValue(
+        text="AQUITARD",
+        description="A zone within the earth that restricts the flow of groundwater from one aquifer to another")
+    RESERVOIR_ROCK = PermissibleValue(
+        text="RESERVOIR_ROCK",
+        description="""A porous and permeable rock formation capable of storing and transmitting fluids such as oil, gas, or water""")
+    CAPROCK = PermissibleValue(
+        text="CAPROCK",
+        description="An impermeable rock layer overlying a reservoir that prevents upward migration of fluids")
+    FAULT_ZONE = PermissibleValue(
+        text="FAULT_ZONE",
+        description="A zone of fracturing and deformation along a geological fault")
+    KARST = PermissibleValue(
+        text="KARST",
+        description="""A landscape formed from dissolution of soluble rocks such as limestone, dolomite, and gypsum, characterized by sinkholes, caves, and underground drainage""",
+        meaning=ENVO["00000175"])
+    PERMAFROST = PermissibleValue(
+        text="PERMAFROST",
+        description="Soil or rock that remains at or below freezing for two or more consecutive years",
+        meaning=ENVO["00000134"])
+    UNCONSOLIDATED_SEDIMENT = PermissibleValue(
+        text="UNCONSOLIDATED_SEDIMENT",
+        description="Loose, uncemented sedimentary material such as gravel, sand, silt, or clay")
+    FRACTURED_BEDROCK = PermissibleValue(
+        text="FRACTURED_BEDROCK",
+        description="Bedrock containing natural fractures that may serve as pathways for fluid flow")
+    COAL_SEAM = PermissibleValue(
+        text="COAL_SEAM",
+        description="A stratum of coal within a sedimentary rock sequence")
+    SALT_DOME = PermissibleValue(
+        text="SALT_DOME",
+        description="""A dome-shaped intrusion of evaporite minerals formed by upward movement of a salt body through overlying rock""",
+        meaning=ENVO["01000505"])
+    SHALE = PermissibleValue(
+        text="SHALE",
+        description="""A fine-grained sedimentary rock formed from compacted clay or mud, often serving as a seal or source rock""",
+        meaning=ENVO["00002056"])
+
+    _defn = EnumDefinition(
+        name="SubsurfaceFormationType",
+        description="""Classification of subsurface geological formations relevant to energy exploration, carbon storage, geothermal systems, and groundwater resources.""",
+    )
+
+class GeophysicalMethodType(EnumDefinitionImpl):
+    """
+    Types of geophysical investigation methods used for subsurface characterization, resource exploration, and
+    environmental monitoring.
+    """
+    SEISMIC_REFLECTION = PermissibleValue(
+        text="SEISMIC_REFLECTION",
+        description="A geophysical method using reflected seismic waves to image subsurface geological structures")
+    SEISMIC_REFRACTION = PermissibleValue(
+        text="SEISMIC_REFRACTION",
+        description="""A geophysical method using refracted seismic waves to determine subsurface velocity structure and layer boundaries""")
+    GROUND_PENETRATING_RADAR = PermissibleValue(
+        text="GROUND_PENETRATING_RADAR",
+        description="A geophysical method using radar pulses to image the shallow subsurface")
+    ELECTRICAL_RESISTIVITY_TOMOGRAPHY = PermissibleValue(
+        text="ELECTRICAL_RESISTIVITY_TOMOGRAPHY",
+        description="""A geophysical imaging technique that measures the electrical resistivity distribution of the subsurface""")
+    MAGNETOTELLURICS = PermissibleValue(
+        text="MAGNETOTELLURICS",
+        description="""A geophysical method using natural electromagnetic fields to investigate the subsurface electrical conductivity structure""")
+    GRAVITY_SURVEY = PermissibleValue(
+        text="GRAVITY_SURVEY",
+        description="""A geophysical method measuring variations in the gravitational field to infer subsurface density distribution""")
+    MAGNETIC_SURVEY = PermissibleValue(
+        text="MAGNETIC_SURVEY",
+        description="""A geophysical method measuring variations in the magnetic field to detect subsurface magnetic anomalies""")
+    WELL_LOGGING = PermissibleValue(
+        text="WELL_LOGGING",
+        description="""Measurement of physical properties of rock formations traversed by a borehole using downhole instruments""")
+    DISTRIBUTED_ACOUSTIC_SENSING = PermissibleValue(
+        text="DISTRIBUTED_ACOUSTIC_SENSING",
+        description="""A monitoring technique using fiber optic cables to measure acoustic signals along a borehole or surface deployment""")
+    DISTRIBUTED_TEMPERATURE_SENSING = PermissibleValue(
+        text="DISTRIBUTED_TEMPERATURE_SENSING",
+        description="""A monitoring technique using fiber optic cables to measure temperature profiles along a borehole or surface deployment""")
+    CROSSWELL_TOMOGRAPHY = PermissibleValue(
+        text="CROSSWELL_TOMOGRAPHY",
+        description="""A geophysical imaging method using sources and receivers in separate boreholes to image the intervening subsurface""")
+
+    _defn = EnumDefinition(
+        name="GeophysicalMethodType",
+        description="""Types of geophysical investigation methods used for subsurface characterization, resource exploration, and environmental monitoring.""",
+    )
+
+class SubsurfacePropertyType(EnumDefinitionImpl):
+    """
+    Physical and hydraulic properties of subsurface formations relevant to resource characterization and reservoir
+    modeling.
+    """
+    POROSITY = PermissibleValue(
+        text="POROSITY",
+        description="The fraction of void space in a rock or sediment relative to its total volume",
+        meaning=PATO["0000973"])
+    PERMEABILITY = PermissibleValue(
+        text="PERMEABILITY",
+        description="The ability of a porous material to allow fluids to pass through it",
+        meaning=PATO["0000970"])
+    THERMAL_CONDUCTIVITY = PermissibleValue(
+        text="THERMAL_CONDUCTIVITY",
+        description="""The rate at which heat is transferred through a material per unit area per unit temperature gradient""")
+    SPECIFIC_HEAT_CAPACITY = PermissibleValue(
+        text="SPECIFIC_HEAT_CAPACITY",
+        description="""The amount of heat energy required to raise the temperature of a unit mass of material by one degree""")
+    BULK_DENSITY = PermissibleValue(
+        text="BULK_DENSITY",
+        description="The mass of a material divided by its total volume, including pore spaces")
+    FLUID_SATURATION = PermissibleValue(
+        text="FLUID_SATURATION",
+        description="The fraction of pore space occupied by a specific fluid phase")
+    PORE_PRESSURE = PermissibleValue(
+        text="PORE_PRESSURE",
+        description="The pressure of fluids within the pore spaces of rock or sediment")
+    GEOTHERMAL_GRADIENT = PermissibleValue(
+        text="GEOTHERMAL_GRADIENT",
+        description="The rate of temperature increase with depth in the Earth's subsurface")
+    HYDRAULIC_CONDUCTIVITY = PermissibleValue(
+        text="HYDRAULIC_CONDUCTIVITY",
+        description="""A measure of the ease with which water can move through a porous medium under a hydraulic gradient""")
+    ELASTIC_MODULUS = PermissibleValue(
+        text="ELASTIC_MODULUS",
+        description="A measure of the stiffness of a material, defined as the ratio of stress to strain")
+    SEISMIC_VELOCITY = PermissibleValue(
+        text="SEISMIC_VELOCITY",
+        description="The speed at which seismic waves propagate through a subsurface material")
+
+    _defn = EnumDefinition(
+        name="SubsurfacePropertyType",
+        description="""Physical and hydraulic properties of subsurface formations relevant to resource characterization and reservoir modeling.""",
+    )
+
+class AquiferType(EnumDefinitionImpl):
+    """
+    Classification of aquifer types based on confinement, geology, and hydraulic characteristics.
+    """
+    UNCONFINED = PermissibleValue(
+        text="UNCONFINED",
+        description="An aquifer whose upper boundary is the water table, open to atmospheric pressure")
+    CONFINED = PermissibleValue(
+        text="CONFINED",
+        description="""An aquifer bounded above and below by impermeable layers, under pressure greater than atmospheric""")
+    SEMI_CONFINED = PermissibleValue(
+        text="SEMI_CONFINED",
+        description="An aquifer partially bounded by layers of lower permeability that allow some vertical leakage")
+    PERCHED = PermissibleValue(
+        text="PERCHED",
+        description="""A localized unconfined aquifer above the regional water table, supported by a low-permeability layer""")
+    ARTESIAN = PermissibleValue(
+        text="ARTESIAN",
+        description="""A confined aquifer in which the hydraulic pressure causes water to rise above the top of the aquifer""")
+    FRACTURED_ROCK = PermissibleValue(
+        text="FRACTURED_ROCK",
+        description="""An aquifer in which groundwater flows primarily through fractures in otherwise low-permeability rock""")
+    KARST = PermissibleValue(
+        text="KARST",
+        description="""An aquifer in soluble rock such as limestone where flow occurs through dissolution-enlarged conduits and fractures""")
+    ALLUVIAL = PermissibleValue(
+        text="ALLUVIAL",
+        description="""An aquifer composed of unconsolidated alluvial deposits such as sand and gravel deposited by rivers""")
+
+    _defn = EnumDefinition(
+        name="AquiferType",
+        description="Classification of aquifer types based on confinement, geology, and hydraulic characteristics.",
+    )
+
+class GroundwaterProcessType(EnumDefinitionImpl):
+    """
+    Types of physical, chemical, and biological processes occurring in groundwater systems.
+    """
+    RECHARGE = PermissibleValue(
+        text="RECHARGE",
+        description="The process by which water enters an aquifer from the surface or from an overlying formation")
+    DISCHARGE = PermissibleValue(
+        text="DISCHARGE",
+        description="The process by which groundwater exits an aquifer to the surface or to another formation")
+    BASEFLOW = PermissibleValue(
+        text="BASEFLOW",
+        description="The portion of streamflow derived from groundwater discharge into surface water bodies")
+    LATERAL_FLOW = PermissibleValue(
+        text="LATERAL_FLOW",
+        description="Horizontal movement of groundwater through an aquifer")
+    VERTICAL_LEAKAGE = PermissibleValue(
+        text="VERTICAL_LEAKAGE",
+        description="Vertical movement of groundwater between aquifers through semi-confining layers")
+    SALTWATER_INTRUSION = PermissibleValue(
+        text="SALTWATER_INTRUSION",
+        description="The movement of saline water into freshwater aquifers, typically in coastal areas")
+    CONTAMINANT_TRANSPORT = PermissibleValue(
+        text="CONTAMINANT_TRANSPORT",
+        description="The movement and spreading of dissolved or suspended contaminants through groundwater")
+    BIODEGRADATION = PermissibleValue(
+        text="BIODEGRADATION",
+        description="The biological breakdown of contaminants in groundwater by microbial activity")
+    SORPTION = PermissibleValue(
+        text="SORPTION",
+        description="The process by which dissolved substances are attached to solid surfaces in the aquifer matrix")
+    PRECIPITATION_DISSOLUTION = PermissibleValue(
+        text="PRECIPITATION_DISSOLUTION",
+        description="Chemical processes involving the formation or dissolution of mineral phases in groundwater")
+
+    _defn = EnumDefinition(
+        name="GroundwaterProcessType",
+        description="Types of physical, chemical, and biological processes occurring in groundwater systems.",
+    )
+
+class HydrogeologyWellType(EnumDefinitionImpl):
+    """
+    Classification of wells used for groundwater access, monitoring, and management.
+    """
+    MONITORING_WELL = PermissibleValue(
+        text="MONITORING_WELL",
+        description="""A well used to observe and measure groundwater conditions such as water level, quality, and flow""")
+    PRODUCTION_WELL = PermissibleValue(
+        text="PRODUCTION_WELL",
+        description="A well used to extract groundwater for water supply purposes")
+    INJECTION_WELL = PermissibleValue(
+        text="INJECTION_WELL",
+        description="A well used to inject fluids into the subsurface for disposal, storage, or aquifer recharge")
+    OBSERVATION_WELL = PermissibleValue(
+        text="OBSERVATION_WELL",
+        description="A well used to observe hydrological parameters without significant water extraction")
+    PIEZOMETER = PermissibleValue(
+        text="PIEZOMETER",
+        description="""A device or small-diameter well used to measure hydraulic head at a specific point in the subsurface""")
+    EXTRACTION_WELL = PermissibleValue(
+        text="EXTRACTION_WELL",
+        description="A well used to remove contaminated groundwater as part of remediation activities")
+    RECHARGE_WELL = PermissibleValue(
+        text="RECHARGE_WELL",
+        description="A well used to artificially replenish groundwater by injecting treated water into an aquifer")
+    GEOTHERMAL_WELL = PermissibleValue(
+        text="GEOTHERMAL_WELL",
+        description="A well drilled to access geothermal resources for energy production or direct use")
+
+    _defn = EnumDefinition(
+        name="HydrogeologyWellType",
+        description="Classification of wells used for groundwater access, monitoring, and management.",
+    )
+
+class RemoteSensingPlatformType(EnumDefinitionImpl):
+    """
+    Classification of platforms used to carry remote sensing instruments for earth observation and environmental
+    monitoring.
+    """
+    SATELLITE = PermissibleValue(
+        text="SATELLITE",
+        description="An artificial satellite orbiting Earth carrying remote sensing instruments")
+    AIRBORNE = PermissibleValue(
+        text="AIRBORNE",
+        description="A manned aircraft carrying remote sensing instruments")
+    UAV_DRONE = PermissibleValue(
+        text="UAV_DRONE",
+        description="An unmanned aerial vehicle or drone carrying remote sensing instruments")
+    GROUND_BASED = PermissibleValue(
+        text="GROUND_BASED",
+        description="A stationary or mobile ground-based platform carrying remote sensing instruments")
+    SHIPBORNE = PermissibleValue(
+        text="SHIPBORNE",
+        description="A watercraft carrying remote sensing instruments for maritime or coastal observation")
+
+    _defn = EnumDefinition(
+        name="RemoteSensingPlatformType",
+        description="""Classification of platforms used to carry remote sensing instruments for earth observation and environmental monitoring.""",
+    )
+
+class RemoteSensingDataType(EnumDefinitionImpl):
+    """
+    Classification of data types acquired by remote sensing instruments, covering electromagnetic and potential field
+    measurements.
+    """
+    MULTISPECTRAL = PermissibleValue(
+        text="MULTISPECTRAL",
+        description="""Imagery acquired in a limited number of discrete spectral bands across the electromagnetic spectrum""")
+    HYPERSPECTRAL = PermissibleValue(
+        text="HYPERSPECTRAL",
+        description="""Imagery acquired in many narrow, contiguous spectral bands providing detailed spectral information""")
+    SYNTHETIC_APERTURE_RADAR = PermissibleValue(
+        text="SYNTHETIC_APERTURE_RADAR",
+        description="""Radar imagery produced by synthesizing a large antenna aperture from a moving platform to achieve high spatial resolution""")
+    LIDAR = PermissibleValue(
+        text="LIDAR",
+        description="""Active remote sensing data acquired by measuring the time delay of reflected laser pulses to determine distances and surface topography""")
+    THERMAL_INFRARED = PermissibleValue(
+        text="THERMAL_INFRARED",
+        description="""Imagery acquired in the thermal infrared portion of the spectrum, measuring emitted thermal radiation""")
+    MICROWAVE_RADIOMETRY = PermissibleValue(
+        text="MICROWAVE_RADIOMETRY",
+        description="""Passive measurement of naturally emitted microwave radiation from the Earth's surface and atmosphere""")
+    GRAVIMETRY = PermissibleValue(
+        text="GRAVIMETRY",
+        description="Measurement of variations in the gravitational field from airborne or satellite platforms")
+    MAGNETOMETRY = PermissibleValue(
+        text="MAGNETOMETRY",
+        description="Measurement of variations in the magnetic field from airborne or satellite platforms")
+    PHOTOGRAMMETRY = PermissibleValue(
+        text="PHOTOGRAMMETRY",
+        description="""The science of making measurements from photographs or imagery, typically to produce 3D models or maps""")
+
+    _defn = EnumDefinition(
+        name="RemoteSensingDataType",
+        description="""Classification of data types acquired by remote sensing instruments, covering electromagnetic and potential field measurements.""",
+    )
+
+class WaterResourceType(EnumDefinitionImpl):
+    """
+    Classification of water resources by source, quality, and origin.
+    """
+    SURFACE_WATER = PermissibleValue(
+        text="SURFACE_WATER",
+        description="Water found on the surface of the Earth in rivers, lakes, reservoirs, and wetlands",
+        meaning=ENVO["00002042"])
+    GROUNDWATER = PermissibleValue(
+        text="GROUNDWATER",
+        description="Underground water located in pore spaces of rock or unconsolidated deposits",
+        meaning=ENVO["01001004"])
+    PRODUCED_WATER = PermissibleValue(
+        text="PRODUCED_WATER",
+        description="Water brought to the surface during oil, gas, or geothermal extraction operations")
+    BRACKISH_WATER = PermissibleValue(
+        text="BRACKISH_WATER",
+        description="Water with salinity between freshwater and seawater",
+        meaning=ENVO["00002019"])
+    SEAWATER = PermissibleValue(
+        text="SEAWATER",
+        description="Water from the ocean or sea with characteristic salinity levels")
+    STORMWATER = PermissibleValue(
+        text="STORMWATER",
+        description="Water that accumulates on surfaces during precipitation events and snow or ice melt",
+        meaning=ENVO["01001267"])
+    WASTEWATER = PermissibleValue(
+        text="WASTEWATER",
+        description="Water that has been adversely affected in quality by anthropogenic influence")
+    RECLAIMED_WATER = PermissibleValue(
+        text="RECLAIMED_WATER",
+        description="Wastewater that has been treated to a level suitable for beneficial reuse")
+    GLACIAL_MELTWATER = PermissibleValue(
+        text="GLACIAL_MELTWATER",
+        description="Water released by the melting of glacial ice, ice sheets, or ice shelves")
+
+    _defn = EnumDefinition(
+        name="WaterResourceType",
+        description="Classification of water resources by source, quality, and origin.",
+    )
+
+class WaterUseCategoryType(EnumDefinitionImpl):
+    """
+    Classification of water use categories relevant to the water-energy nexus and national water resource planning.
+    """
+    AGRICULTURAL_IRRIGATION = PermissibleValue(
+        text="AGRICULTURAL_IRRIGATION",
+        description="Water used for irrigation of crops and agricultural land")
+    INDUSTRIAL_COOLING = PermissibleValue(
+        text="INDUSTRIAL_COOLING",
+        description="Water used for cooling processes in industrial facilities")
+    MUNICIPAL_SUPPLY = PermissibleValue(
+        text="MUNICIPAL_SUPPLY",
+        description="Water supplied for domestic, commercial, and public use by a municipal system")
+    THERMOELECTRIC_POWER = PermissibleValue(
+        text="THERMOELECTRIC_POWER",
+        description="Water used in thermoelectric power generation for steam production and cooling")
+    HYDROELECTRIC = PermissibleValue(
+        text="HYDROELECTRIC",
+        description="Water used for hydroelectric power generation")
+    MINING = PermissibleValue(
+        text="MINING",
+        description="Water used in mining operations for extraction, processing, and dust suppression")
+    LIVESTOCK = PermissibleValue(
+        text="LIVESTOCK",
+        description="Water used for livestock watering, feedlots, and dairy operations")
+    AQUACULTURE = PermissibleValue(
+        text="AQUACULTURE",
+        description="Water used for farming aquatic organisms including fish, shellfish, and plants")
+    ENVIRONMENTAL_FLOW = PermissibleValue(
+        text="ENVIRONMENTAL_FLOW",
+        description="""Water allocated to maintain or restore ecological health of rivers, wetlands, and other water-dependent ecosystems""")
+
+    _defn = EnumDefinition(
+        name="WaterUseCategoryType",
+        description="""Classification of water use categories relevant to the water-energy nexus and national water resource planning.""",
+    )
+
+class WaterQualityParameterType(EnumDefinitionImpl):
+    """
+    Physical, chemical, and biological parameters used to assess water quality for various applications.
+    """
+    PH = PermissibleValue(
+        text="PH",
+        description="A measure of the hydrogen ion concentration indicating the acidity or alkalinity of water")
+    DISSOLVED_OXYGEN = PermissibleValue(
+        text="DISSOLVED_OXYGEN",
+        description="The concentration of molecular oxygen dissolved in water")
+    TOTAL_DISSOLVED_SOLIDS = PermissibleValue(
+        text="TOTAL_DISSOLVED_SOLIDS",
+        description="The total concentration of dissolved inorganic and organic substances in water")
+    TURBIDITY = PermissibleValue(
+        text="TURBIDITY",
+        description="A measure of the degree to which water loses its transparency due to suspended particulates")
+    CONDUCTIVITY = PermissibleValue(
+        text="CONDUCTIVITY",
+        description="""The ability of water to conduct an electrical current, related to the concentration of dissolved ions""")
+    BIOLOGICAL_OXYGEN_DEMAND = PermissibleValue(
+        text="BIOLOGICAL_OXYGEN_DEMAND",
+        description="""The amount of dissolved oxygen consumed by biological organisms during the decomposition of organic matter""")
+    CHEMICAL_OXYGEN_DEMAND = PermissibleValue(
+        text="CHEMICAL_OXYGEN_DEMAND",
+        description="The amount of oxygen required to chemically oxidize organic and inorganic matter in water")
+    NITRATE = PermissibleValue(
+        text="NITRATE",
+        description="The concentration of nitrate ions in water, an indicator of nutrient loading",
+        meaning=CHEBI["17632"])
+    PHOSPHATE = PermissibleValue(
+        text="PHOSPHATE",
+        description="""The concentration of phosphate in water, an indicator of nutrient loading and eutrophication potential""",
+        meaning=CHEBI["26020"])
+    HEAVY_METALS = PermissibleValue(
+        text="HEAVY_METALS",
+        description="The concentration of heavy metals in water, including lead, mercury, cadmium, and arsenic")
+    COLIFORM_BACTERIA = PermissibleValue(
+        text="COLIFORM_BACTERIA",
+        description="The presence and concentration of coliform bacteria as indicators of microbial contamination")
+    TEMPERATURE = PermissibleValue(
+        text="TEMPERATURE",
+        description="The thermal energy of the water, affecting dissolved oxygen levels and biological activity",
+        meaning=PATO["0000146"])
+
+    _defn = EnumDefinition(
+        name="WaterQualityParameterType",
+        description="Physical, chemical, and biological parameters used to assess water quality for various applications.",
     )
 
 class CrystalSystemEnum(EnumDefinitionImpl):
@@ -14702,6 +17609,92 @@ class AdditiveManufacturingEnum(EnumDefinitionImpl):
     _defn = EnumDefinition(
         name="AdditiveManufacturingEnum",
         description="3D printing and additive manufacturing methods",
+    )
+
+class MaterialsSimulationType(EnumDefinitionImpl):
+    """
+    Computational simulation methods used in materials science for predicting structure, properties, and behavior of
+    materials
+    """
+    DENSITY_FUNCTIONAL_THEORY = PermissibleValue(
+        text="DENSITY_FUNCTIONAL_THEORY",
+        description="""Quantum mechanical method for computing electronic structure based on electron density functionals""")
+    MOLECULAR_DYNAMICS = PermissibleValue(
+        text="MOLECULAR_DYNAMICS",
+        title="Molecular Dynamics",
+        description="Simulation of atomic and molecular motion by numerically integrating equations of motion",
+        meaning=NCIT["C18097"])
+    MONTE_CARLO = PermissibleValue(
+        text="MONTE_CARLO",
+        description="Stochastic simulation method using random sampling to explore configuration space",
+        meaning=SWO["4000008"])
+    PHASE_FIELD_MODELING = PermissibleValue(
+        text="PHASE_FIELD_MODELING",
+        description="Continuum method for simulating microstructure evolution using order parameter fields")
+    FINITE_ELEMENT_ANALYSIS = PermissibleValue(
+        text="FINITE_ELEMENT_ANALYSIS",
+        description="""Numerical method for solving partial differential equations by dividing a domain into discrete elements""")
+    CONTINUUM_MECHANICS = PermissibleValue(
+        text="CONTINUUM_MECHANICS",
+        description="Modeling material behavior at the macroscopic scale using continuous field equations")
+    TIGHT_BINDING = PermissibleValue(
+        text="TIGHT_BINDING",
+        description="Semi-empirical quantum mechanical method using parameterized Hamiltonian matrices")
+    AB_INITIO_MOLECULAR_DYNAMICS = PermissibleValue(
+        text="AB_INITIO_MOLECULAR_DYNAMICS",
+        description="""Molecular dynamics with forces computed from first-principles electronic structure calculations""")
+    MACHINE_LEARNING_POTENTIAL = PermissibleValue(
+        text="MACHINE_LEARNING_POTENTIAL",
+        description="Interatomic potentials trained on quantum mechanical data using machine learning methods")
+    COARSE_GRAINED_SIMULATION = PermissibleValue(
+        text="COARSE_GRAINED_SIMULATION",
+        description="""Simulation using simplified representations that group atoms into larger effective interaction sites""")
+
+    _defn = EnumDefinition(
+        name="MaterialsSimulationType",
+        description="""Computational simulation methods used in materials science for predicting structure, properties, and behavior of materials""",
+    )
+
+class MaterialPropertyPredictionType(EnumDefinitionImpl):
+    """
+    Material properties that are commonly targeted for computational prediction in materials discovery and design
+    """
+    BAND_GAP = PermissibleValue(
+        text="BAND_GAP",
+        description="Energy difference between the valence band and conduction band in a semiconductor or insulator")
+    ELASTIC_MODULUS = PermissibleValue(
+        text="ELASTIC_MODULUS",
+        description="Measure of material stiffness defined as the ratio of stress to strain in the elastic regime")
+    THERMAL_CONDUCTIVITY = PermissibleValue(
+        text="THERMAL_CONDUCTIVITY",
+        title="heat conductivity",
+        description="Ability of a material to conduct heat, measured in watts per meter-kelvin",
+        meaning=PATO["0001756"])
+    DIELECTRIC_CONSTANT = PermissibleValue(
+        text="DIELECTRIC_CONSTANT",
+        description="Ratio of the permittivity of a material to the permittivity of free space")
+    MAGNETIC_MOMENT = PermissibleValue(
+        text="MAGNETIC_MOMENT",
+        description="Magnetic dipole moment of a material arising from electron spin and orbital contributions")
+    FORMATION_ENERGY = PermissibleValue(
+        text="FORMATION_ENERGY",
+        description="Energy required to form a compound from its constituent elements in their standard states")
+    SURFACE_ENERGY = PermissibleValue(
+        text="SURFACE_ENERGY",
+        description="Excess energy at the surface of a material relative to its bulk")
+    DEFECT_ENERGY = PermissibleValue(
+        text="DEFECT_ENERGY",
+        description="Energy associated with the formation or migration of point defects and dislocations")
+    PHASE_STABILITY = PermissibleValue(
+        text="PHASE_STABILITY",
+        description="Thermodynamic stability of a material phase relative to competing phases")
+    MECHANICAL_STRENGTH = PermissibleValue(
+        text="MECHANICAL_STRENGTH",
+        description="Maximum stress a material can withstand before failure under applied load")
+
+    _defn = EnumDefinition(
+        name="MaterialPropertyPredictionType",
+        description="""Material properties that are commonly targeted for computational prediction in materials discovery and design""",
     )
 
 class TraditionalPigmentEnum(EnumDefinitionImpl):
@@ -15958,6 +18951,647 @@ class PlantLeafColorEnum(EnumDefinitionImpl):
     _defn = EnumDefinition(
         name="PlantLeafColorEnum",
         description="Plant leaf colors (including seasonal changes)",
+    )
+
+class ColorEnum(EnumDefinitionImpl):
+    """
+    A composite chromatic quality composed of hue, saturation and intensity parts. Derived from PATO color
+    (PATO:0000014) child values.
+    """
+    BLACK = PermissibleValue(
+        text="BLACK",
+        title="black",
+        description="A color that lacks any hues as parts",
+        meaning=PATO["0000317"])
+    WHITE = PermissibleValue(
+        text="WHITE",
+        title="white",
+        description="An achromatic color of maximum brightness",
+        meaning=PATO["0000323"])
+    GREY = PermissibleValue(
+        text="GREY",
+        title="grey",
+        description="A color between white and black colors",
+        meaning=PATO["0000950"])
+    RED = PermissibleValue(
+        text="RED",
+        title="red",
+        description="A color hue with high wavelength of the long-wave end of the visible spectrum (630-750 nm)",
+        meaning=PATO["0000322"])
+    ORANGE = PermissibleValue(
+        text="ORANGE",
+        title="orange",
+        description="A color hue with high-medium wavelength lying between red and yellow (585-620 nm)",
+        meaning=PATO["0000953"])
+    YELLOW = PermissibleValue(
+        text="YELLOW",
+        title="yellow",
+        description="A color hue with medium wavelength lying between orange and green (570-590 nm)",
+        meaning=PATO["0000324"])
+    GREEN = PermissibleValue(
+        text="GREEN",
+        title="green",
+        description="A color hue with medium-low wavelength lying between yellow and blue (490-570 nm)",
+        meaning=PATO["0000320"])
+    CYAN = PermissibleValue(
+        text="CYAN",
+        title="cyan",
+        description="A color consisting of green and blue hue",
+        meaning=PATO["0000319"])
+    BLUE = PermissibleValue(
+        text="BLUE",
+        title="blue",
+        description="A color hue with low wavelength lying between green and indigo (420-490 nm)",
+        meaning=PATO["0000318"])
+    VIOLET = PermissibleValue(
+        text="VIOLET",
+        title="violet",
+        description="A color hue with very low wavelength lying between reddish blue and bluish purple (380-420 nm)",
+        meaning=PATO["0001424"])
+    PURPLE = PermissibleValue(
+        text="PURPLE",
+        title="purple",
+        description="A color that falls about midway between red and blue in hue",
+        meaning=PATO["0000951"])
+    MAGENTA = PermissibleValue(
+        text="MAGENTA",
+        title="magenta",
+        description="A color consisting of red and blue hues",
+        meaning=PATO["0000321"])
+    BROWN = PermissibleValue(
+        text="BROWN",
+        title="brown",
+        description="A color consisting of dark orange, red, of very low intensity",
+        meaning=PATO["0000952"])
+    MAROON = PermissibleValue(
+        text="MAROON",
+        title="maroon",
+        description="A color consisting of purple and brown hue",
+        meaning=PATO["0001426"])
+    ROSY = PermissibleValue(
+        text="ROSY",
+        title="rosy",
+        description="A color hue consisting of red and yellow hue with high brightness",
+        meaning=PATO["0001425"])
+    VERMILION = PermissibleValue(
+        text="VERMILION",
+        title="vermilion",
+        description="A color consisting of red and orange hue with a slight amount of gray",
+        meaning=PATO["0001302"])
+    COLORED = PermissibleValue(
+        text="COLORED",
+        title="colored",
+        description="A color quality inhering in a bearer by virtue of having color",
+        meaning=PATO["0000336"])
+
+    _defn = EnumDefinition(
+        name="ColorEnum",
+        description="""A composite chromatic quality composed of hue, saturation and intensity parts. Derived from PATO color (PATO:0000014) child values.""",
+    )
+
+class ShapeEnum(EnumDefinitionImpl):
+    """
+    A morphological quality inhering in a bearer by virtue of the bearer's ratios of distances between its features.
+    Derived from PATO shape (PATO:0000052) child values.
+    """
+    CIRCULAR = PermissibleValue(
+        text="CIRCULAR",
+        title="circular",
+        description="A shape where every part of the surface or circumference is equidistant from the center",
+        meaning=PATO["0000411"])
+    ELLIPTIC = PermissibleValue(
+        text="ELLIPTIC",
+        title="elliptic",
+        description="Oval with two axes of symmetry, as produced by a conical section",
+        meaning=PATO["0000947"])
+    SPHEROID = PermissibleValue(
+        text="SPHEROID",
+        title="spheroid",
+        description="A convex 3-D shape obtained by rotating an ellipse about one of its principal axes",
+        meaning=PATO["0001865"])
+    CONICAL = PermissibleValue(
+        text="CONICAL",
+        title="conical",
+        description="A convex 3-D shape resembling a cone with a round cross section that tapers",
+        meaning=PATO["0002021"])
+    COLUMNAR = PermissibleValue(
+        text="COLUMNAR",
+        title="columnar",
+        description="Elongated and cylindrical in shape",
+        meaning=PATO["0002063"])
+    TUBULAR = PermissibleValue(
+        text="TUBULAR",
+        title="tubular",
+        description="A cylindrical shape that is hollow",
+        meaning=PATO["0002299"])
+    FLAT = PermissibleValue(
+        text="FLAT",
+        title="flat",
+        description="Having a horizontal surface without a slope, tilt, or curvature",
+        meaning=PATO["0000407"])
+    ELONGATED = PermissibleValue(
+        text="ELONGATED",
+        title="elongated",
+        description="Length being notably higher relative to width",
+        meaning=PATO["0001154"])
+    LINEAR = PermissibleValue(
+        text="LINEAR",
+        title="linear",
+        description="Narrow, with approximately parallel sides",
+        meaning=PATO["0001199"])
+    FILAMENTOUS = PermissibleValue(
+        text="FILAMENTOUS",
+        title="filamentous",
+        description="Having thin filaments or thread-like structures",
+        meaning=PATO["0001360"])
+    SLENDER = PermissibleValue(
+        text="SLENDER",
+        title="slender",
+        description="Being small or narrow in circumference or width in proportion to length or height",
+        meaning=PATO["0002212"])
+    BROAD = PermissibleValue(
+        text="BROAD",
+        title="broad",
+        description="Width being notably higher relative to comparable entities",
+        meaning=PATO["0002359"])
+    ROBUST = PermissibleValue(
+        text="ROBUST",
+        title="robust",
+        description="Being strong, thick, or stout in form",
+        meaning=PATO["0002310"])
+    STRAIGHT = PermissibleValue(
+        text="STRAIGHT",
+        title="straight",
+        description="Free of curves, bends, or angles",
+        meaning=PATO["0002180"])
+    BENT = PermissibleValue(
+        text="BENT",
+        title="bent",
+        description="Having one or more fixed curves, folds, or angles",
+        meaning=PATO["0000617"])
+    ANGULAR = PermissibleValue(
+        text="ANGULAR",
+        title="angular",
+        description="Having at least one angle formed by two planes",
+        meaning=PATO["0001977"])
+    LOBED = PermissibleValue(
+        text="LOBED",
+        title="lobed",
+        description="Being partly divided into a determinate number of segments",
+        meaning=PATO["0001979"])
+    TRUNCATED = PermissibleValue(
+        text="TRUNCATED",
+        title="truncated",
+        description="Terminating abruptly by a transverse line or plane",
+        meaning=PATO["0000936"])
+    PYRAMIDAL = PermissibleValue(
+        text="PYRAMIDAL",
+        title="pyramidal",
+        description="Having triangular faces meeting at a common point",
+        meaning=PATO["0002336"])
+    STAR_SHAPED = PermissibleValue(
+        text="STAR_SHAPED",
+        title="star shaped",
+        description="Being arranged like a star with radiating points",
+        meaning=PATO["0002065"])
+    SIGMOID = PermissibleValue(
+        text="SIGMOID",
+        title="sigmoid",
+        description="Consisting of two curves in opposite directions like the letter S",
+        meaning=PATO["0001878"])
+    UNDULATE = PermissibleValue(
+        text="UNDULATE",
+        title="undulate",
+        description="Having a sinuate margin that moves smoothly and regularly up and down",
+        meaning=PATO["0000967"])
+    PINNATE = PermissibleValue(
+        text="PINNATE",
+        title="pinnate",
+        description="Having leaflets or branches on each side of a common axis",
+        meaning=PATO["0000410"])
+    PLEOMORPHIC = PermissibleValue(
+        text="PLEOMORPHIC",
+        title="pleomorphic",
+        description="Having the ability to take on multiple forms",
+        meaning=PATO["0001356"])
+    COILING = PermissibleValue(
+        text="COILING",
+        title="coiling",
+        description="Being wound in a spiral or helix",
+        meaning=PATO["0001794"])
+
+    _defn = EnumDefinition(
+        name="ShapeEnum",
+        description="""A morphological quality inhering in a bearer by virtue of the bearer's ratios of distances between its features. Derived from PATO shape (PATO:0000052) child values.""",
+    )
+
+class RelativeChangeEnum(EnumDefinitionImpl):
+    """
+    Direction of change of any quality relative to normal or baseline. This is PATO's general-purpose
+    deviation-from-normal axis (PATO:0000069) that crosscuts all specific quality attributes (size, rate, amount,
+    etc.).
+    """
+    NORMAL = PermissibleValue(
+        text="NORMAL",
+        title="normal",
+        description="Exhibiting no deviation from normal or average",
+        meaning=PATO["0000461"])
+    ABNORMAL = PermissibleValue(
+        text="ABNORMAL",
+        title="abnormal",
+        description="Deviating from normal or average",
+        meaning=PATO["0000460"])
+    INCREASED = PermissibleValue(
+        text="INCREASED",
+        title="increased quality",
+        description="A value that is increased compared to normal or average",
+        meaning=PATO["0002300"])
+    DECREASED = PermissibleValue(
+        text="DECREASED",
+        title="decreased quality",
+        description="A value that is decreased compared to normal or average",
+        meaning=PATO["0002301"])
+    INCREASED_MAGNITUDE = PermissibleValue(
+        text="INCREASED_MAGNITUDE",
+        title="increased magnitude",
+        description="An increased magnitude of a quality",
+        meaning=PATO["0002017"])
+    DECREASED_MAGNITUDE = PermissibleValue(
+        text="DECREASED_MAGNITUDE",
+        title="decreased magnitude",
+        description="A decreased magnitude of a quality",
+        meaning=PATO["0002018"])
+
+    _defn = EnumDefinition(
+        name="RelativeChangeEnum",
+        description="""Direction of change of any quality relative to normal or baseline. This is PATO's general-purpose deviation-from-normal axis (PATO:0000069) that crosscuts all specific quality attributes (size, rate, amount, etc.).""",
+    )
+
+class IntensityEnum(EnumDefinitionImpl):
+    """
+    A quality inhering in a bearer by virtue of the bearer's possessing or displaying a distinctive feature in type or
+    degree or effect or force. Derived from PATO intensity (PATO:0000049) child values.
+    """
+    BORDERLINE = PermissibleValue(
+        text="BORDERLINE",
+        title="borderline intensity",
+        description="Borderline in effect or force compared to baseline or normal",
+        meaning=PATO["0002628"])
+    MILD = PermissibleValue(
+        text="MILD",
+        title="mild intensity",
+        description="Less than moderate in type or degree or effect or force",
+        meaning=PATO["0000394"])
+    MODERATE = PermissibleValue(
+        text="MODERATE",
+        title="moderate intensity",
+        description="Less than extreme in type or degree or effect or force",
+        meaning=PATO["0000395"])
+    SEVERE = PermissibleValue(
+        text="SEVERE",
+        title="severe intensity",
+        description="Extremely bad or unpleasant in type or degree or effect or force",
+        meaning=PATO["0000396"])
+    PROFOUND = PermissibleValue(
+        text="PROFOUND",
+        title="profound intensity",
+        description="Very severe in intensity",
+        meaning=PATO["0002629"])
+    INCREASED_INTENSITY = PermissibleValue(
+        text="INCREASED_INTENSITY",
+        title="increased intensity",
+        description="Intensity which is relatively high",
+        meaning=PATO["0001782"])
+    DECREASED_INTENSITY = PermissibleValue(
+        text="DECREASED_INTENSITY",
+        title="decreased intensity",
+        description="Intensity which is relatively low",
+        meaning=PATO["0001783"])
+    REMITTENT = PermissibleValue(
+        text="REMITTENT",
+        title="remittent intensity",
+        description="Characterised by temporary abatement in severity",
+        meaning=PATO["0001841"])
+
+    _defn = EnumDefinition(
+        name="IntensityEnum",
+        description="""A quality inhering in a bearer by virtue of the bearer's possessing or displaying a distinctive feature in type or degree or effect or force. Derived from PATO intensity (PATO:0000049) child values.""",
+    )
+
+class TextureEnum(EnumDefinitionImpl):
+    """
+    A morphological quality inhering in a bearer by virtue of the bearer's surface characteristics. Derived from PATO
+    texture (PATO:0000150) child values.
+    """
+    SMOOTH = PermissibleValue(
+        text="SMOOTH",
+        title="smooth",
+        description="Having a surface free of roughness or irregularities",
+        meaning=PATO["0000701"])
+    ROUGH = PermissibleValue(
+        text="ROUGH",
+        title="rough",
+        description="Having an irregular surface",
+        meaning=PATO["0000700"])
+    SCALY = PermissibleValue(
+        text="SCALY",
+        title="scaly",
+        description="Being covered or partially covered with scales",
+        meaning=PATO["0001804"])
+    FLAKY = PermissibleValue(
+        text="FLAKY",
+        title="flaky",
+        description="Formed or tending to form flakes or thin, crisp fragments",
+        meaning=PATO["0001805"])
+    GROOVED = PermissibleValue(
+        text="GROOVED",
+        title="grooved",
+        description="Being marked with one or more channels",
+        meaning=PATO["0002255"])
+    BLISTERED = PermissibleValue(
+        text="BLISTERED",
+        title="blistered",
+        description="Having a local accumulation of fluid underneath the surface",
+        meaning=PATO["0001928"])
+    HAIRY = PermissibleValue(
+        text="HAIRY",
+        title="pilose",
+        description="Having hair or bristles",
+        meaning=PATO["0000066"])
+    ABRASED = PermissibleValue(
+        text="ABRASED",
+        title="abrased",
+        description="Having a portion of the surface scraped away",
+        meaning=PATO["0001849"])
+    RUSTY = PermissibleValue(
+        text="RUSTY",
+        title="rusty",
+        description="Being covered by iron oxide as a result of oxidation",
+        meaning=PATO["0070059"])
+    FOVEATE = PermissibleValue(
+        text="FOVEATE",
+        title="foveate",
+        description="Being marked by the presence of small, shallow, regular depressions",
+        meaning=PATO["0002296"])
+
+    _defn = EnumDefinition(
+        name="TextureEnum",
+        description="""A morphological quality inhering in a bearer by virtue of the bearer's surface characteristics. Derived from PATO texture (PATO:0000150) child values.""",
+    )
+
+class PATOBiologicalSexEnum(EnumDefinitionImpl):
+    """
+    An organismal quality inhering in a bearer by virtue of the bearer's ability to undergo sexual reproduction.
+    Derived from PATO biological sex (PATO:0000047) and phenotypic sex (PATO:0001894) child values.
+    """
+    FEMALE = PermissibleValue(
+        text="FEMALE",
+        title="female",
+        description="""A biological sex quality inhering in an individual or population that only produces gametes that can be fertilised by male gametes""",
+        meaning=PATO["0000383"])
+    MALE = PermissibleValue(
+        text="MALE",
+        title="male",
+        description="""A biological sex quality inhering in an individual or population whose sex organs contain only male gametes""",
+        meaning=PATO["0000384"])
+    HERMAPHRODITE = PermissibleValue(
+        text="HERMAPHRODITE",
+        title="hermaphrodite",
+        description="""A biological sex quality inhering in an organism or population with both male and female sexual organs in one individual""",
+        meaning=PATO["0001340"])
+    MALE_WITH_DSD = PermissibleValue(
+        text="MALE_WITH_DSD",
+        title="male with DSD",
+        description="""A male of a non-hermaphroditic species with ambiguous or atypical congenital development of the reproductive system""",
+        meaning=PATO["0040049"])
+    FEMALE_WITH_DSD = PermissibleValue(
+        text="FEMALE_WITH_DSD",
+        title="female with DSD",
+        description="""A female of a non-hermaphroditic species with ambiguous or atypical congenital development of the reproductive system""",
+        meaning=PATO["0040056"])
+    PSEUDOHERMAPHRODITE = PermissibleValue(
+        text="PSEUDOHERMAPHRODITE",
+        title="pseudohermaphrodite",
+        description="""Having internal reproductive organs of one sex and external sexual characteristics of the other sex""",
+        meaning=PATO["0001827"])
+
+    _defn = EnumDefinition(
+        name="PATOBiologicalSexEnum",
+        description="""An organismal quality inhering in a bearer by virtue of the bearer's ability to undergo sexual reproduction. Derived from PATO biological sex (PATO:0000047) and phenotypic sex (PATO:0001894) child values.""",
+    )
+
+class MaturityEnum(EnumDefinitionImpl):
+    """
+    A quality of a single physical entity held by a bearer when it exhibits a state of growth, differentiation, or
+    development. Derived from PATO maturity (PATO:0000261) child values.
+    """
+    NEONATAL = PermissibleValue(
+        text="NEONATAL",
+        title="neonatal",
+        description="Being at the point or shortly after birth",
+        meaning=PATO["0002206"])
+    LARVAL = PermissibleValue(
+        text="LARVAL",
+        title="larval",
+        description="Undergoing indirect development and metamorphosis",
+        meaning=PATO["0001185"])
+    PREPUBESCENT = PermissibleValue(
+        text="PREPUBESCENT",
+        title="prepubescent",
+        description="Being at the age immediately before puberty",
+        meaning=PATO["0001186"])
+    PUPAL = PermissibleValue(
+        text="PUPAL",
+        title="pupal",
+        description="Being in the chrysalis (cocoon) or post-larval stage",
+        meaning=PATO["0001187"])
+    PREPUPAL = PermissibleValue(
+        text="PREPUPAL",
+        title="prepupal",
+        description="Being in an inactive stage between the larval and the pupal stages",
+        meaning=PATO["0001188"])
+    PUBESCENT = PermissibleValue(
+        text="PUBESCENT",
+        title="pubescent",
+        description="Having arrived at the onset of puberty but not yet fully mature",
+        meaning=PATO["0000455"])
+    ADOLESCENT = PermissibleValue(
+        text="ADOLESCENT",
+        title="adolescent",
+        description="Being between the onset of puberty and maturity",
+        meaning=PATO["0001189"])
+    JUVENILE = PermissibleValue(
+        text="JUVENILE",
+        title="juvenile",
+        description="Not fully grown or developed",
+        meaning=PATO["0001190"])
+    IMMATURE = PermissibleValue(
+        text="IMMATURE",
+        title="immature",
+        description="Lacking complete growth, differentiation, or development",
+        meaning=PATO["0001501"])
+    MATURE = PermissibleValue(
+        text="MATURE",
+        title="mature",
+        description="Exhibiting complete growth, differentiation, or development",
+        meaning=PATO["0001701"])
+
+    _defn = EnumDefinition(
+        name="MaturityEnum",
+        description="""A quality of a single physical entity held by a bearer when it exhibits a state of growth, differentiation, or development. Derived from PATO maturity (PATO:0000261) child values.""",
+    )
+
+class ViabilityEnum(EnumDefinitionImpl):
+    """
+    An organismal quality inhering in a bearer by virtue of the bearer's disposition to survive and develop normally.
+    Derived from PATO viability (PATO:0000169) child values.
+    """
+    ALIVE = PermissibleValue(
+        text="ALIVE",
+        title="alive",
+        description="The bearer's condition before death",
+        meaning=PATO["0001421"])
+    DEAD = PermissibleValue(
+        text="DEAD",
+        title="dead",
+        description="The cessation of the bearer's life",
+        meaning=PATO["0001422"])
+    VIABLE = PermissibleValue(
+        text="VIABLE",
+        title="viable",
+        description="The bearer's ability to survive or the long term survival ability of a given population",
+        meaning=PATO["0000719"])
+    LETHAL = PermissibleValue(
+        text="LETHAL",
+        title="lethal (sensu genetics)",
+        description="The bearer's long term survival inability",
+        meaning=PATO["0000718"])
+    SEMI_VIABLE = PermissibleValue(
+        text="SEMI_VIABLE",
+        title="semi-viable",
+        description="Some of the population members' ability to survive",
+        meaning=PATO["0001770"])
+    SEMI_LETHAL = PermissibleValue(
+        text="SEMI_LETHAL",
+        title="semi-lethal (sensu genetics)",
+        description="Some of the population members' inability to survive to reproduce",
+        meaning=PATO["0001768"])
+    IMMORTAL = PermissibleValue(
+        text="IMMORTAL",
+        title="immortal",
+        description="Being capable of indefinite growth or division",
+        meaning=PATO["0001991"])
+    DECAYED = PermissibleValue(
+        text="DECAYED",
+        title="decayed",
+        description="Decomposition into component parts",
+        meaning=PATO["0001432"])
+
+    _defn = EnumDefinition(
+        name="ViabilityEnum",
+        description="""An organismal quality inhering in a bearer by virtue of the bearer's disposition to survive and develop normally. Derived from PATO viability (PATO:0000169) child values.""",
+    )
+
+class CellularityEnum(EnumDefinitionImpl):
+    """
+    An organismal quality inhering in a bearer by virtue of the bearer's consisting of cells. Derived from PATO
+    cellularity (PATO:0001992) child values.
+    """
+    UNICELLULAR = PermissibleValue(
+        text="UNICELLULAR",
+        title="unicellular",
+        description="Consisting of exactly one cell",
+        meaning=PATO["0001994"])
+    MULTICELLULAR = PermissibleValue(
+        text="MULTICELLULAR",
+        title="multicellular",
+        description="Consisting of more than one cell",
+        meaning=PATO["0001993"])
+
+    _defn = EnumDefinition(
+        name="CellularityEnum",
+        description="""An organismal quality inhering in a bearer by virtue of the bearer's consisting of cells. Derived from PATO cellularity (PATO:0001992) child values.""",
+    )
+
+class SpatialPatternEnum(EnumDefinitionImpl):
+    """
+    A spatial quality inhering in a bearer by virtue of the bearer's exhibiting repetition of placement of its parts.
+    Derived from PATO spatial pattern (PATO:0000060) child values.
+    """
+    LOCALIZED = PermissibleValue(
+        text="LOCALIZED",
+        title="localized",
+        description="Being confined or restricted to a particular location",
+        meaning=PATO["0000627"])
+    UNLOCALISED = PermissibleValue(
+        text="UNLOCALISED",
+        title="unlocalised",
+        description="Not being confined or restricted to a particular location",
+        meaning=PATO["0000635"])
+    MULTI_LOCALISED = PermissibleValue(
+        text="MULTI_LOCALISED",
+        title="multi-localised",
+        description="Being confined or restricted to multiple locations",
+        meaning=PATO["0001791"])
+    DISTRIBUTED = PermissibleValue(
+        text="DISTRIBUTED",
+        title="distributed",
+        description="Being spread out or scattered about or divided up",
+        meaning=PATO["0001566"])
+    UNDISTRIBUTED = PermissibleValue(
+        text="UNDISTRIBUTED",
+        title="undistributed",
+        description="Not being spread out or scattered about or divided up",
+        meaning=PATO["0001567"])
+    SPARSE = PermissibleValue(
+        text="SPARSE",
+        title="sparse",
+        description="Being scattered and spread irregularly at a distance from each other",
+        meaning=PATO["0001609"])
+    UNILATERAL = PermissibleValue(
+        text="UNILATERAL",
+        title="unilateral",
+        description="Involving only one part or side",
+        meaning=PATO["0000634"])
+    VERTICAL = PermissibleValue(
+        text="VERTICAL",
+        title="vertical",
+        description="Being situated at right angles to the horizon",
+        meaning=PATO["0001854"])
+    REGULAR_SPATIAL_PATTERN = PermissibleValue(
+        text="REGULAR_SPATIAL_PATTERN",
+        title="regular spatial pattern",
+        description="Having a repeatable or predictable placement",
+        meaning=PATO["0000440"])
+    IRREGULAR_SPATIAL_PATTERN = PermissibleValue(
+        text="IRREGULAR_SPATIAL_PATTERN",
+        title="irregular spatial pattern",
+        description="Magnitude or relationships between repeated parts lack consistency",
+        meaning=PATO["0000330"])
+    GENERALIZED = PermissibleValue(
+        text="GENERALIZED",
+        title="generalized",
+        description="Affecting all regions without specificity of distribution",
+        meaning=PATO["0002403"])
+    SEGMENTAL = PermissibleValue(
+        text="SEGMENTAL",
+        title="segmental",
+        description="Affecting a segment or segments",
+        meaning=PATO["0002404"])
+    RANDOM_PATTERN = PermissibleValue(
+        text="RANDOM_PATTERN",
+        title="random pattern",
+        description="Characterised by an unidentifiable pattern",
+        meaning=PATO["0002401"])
+    SYMMETRICAL = PermissibleValue(
+        text="SYMMETRICAL",
+        title="symmetry",
+        description="""Correspondence in size, shape, and relative position of parts on opposite sides of a dividing line or about a center or axis""",
+        meaning=PATO["0000965"])
+
+    _defn = EnumDefinition(
+        name="SpatialPatternEnum",
+        description="""A spatial quality inhering in a bearer by virtue of the bearer's exhibiting repetition of placement of its parts. Derived from PATO spatial pattern (PATO:0000060) child values.""",
     )
 
 class DNABaseEnum(EnumDefinitionImpl):
@@ -19941,6 +23575,808 @@ class ExperimentalPreparation(EnumDefinitionImpl):
         description="Sample preparation methods",
     )
 
+class SequencingAssayEnum(EnumDefinitionImpl):
+    """
+    Sequencing-based assays including RNA-seq, DNA-seq, and related methods
+    """
+    RNA_SEQ = PermissibleValue(
+        text="RNA_SEQ",
+        description="RNA sequencing to profile transcriptome",
+        meaning=OBI["0001271"])
+    SINGLE_CELL_RNA_SEQ = PermissibleValue(
+        text="SINGLE_CELL_RNA_SEQ",
+        description="Single-cell RNA sequencing",
+        meaning=OBI["0002631"])
+    SINGLE_NUCLEUS_RNA_SEQ = PermissibleValue(
+        text="SINGLE_NUCLEUS_RNA_SEQ",
+        description="Single-nucleus RNA sequencing")
+    SPATIAL_TRANSCRIPTOMICS = PermissibleValue(
+        text="SPATIAL_TRANSCRIPTOMICS",
+        description="Spatially resolved transcriptomics",
+        meaning=EFO["0008992"])
+    LNCRNA_SEQ = PermissibleValue(
+        text="LNCRNA_SEQ",
+        description="Long non-coding RNA sequencing")
+    MIRNA_SEQ = PermissibleValue(
+        text="MIRNA_SEQ",
+        description="MicroRNA sequencing",
+        meaning=OBI["0002112"])
+    RIBO_SEQ = PermissibleValue(
+        text="RIBO_SEQ",
+        description="Ribosome profiling sequencing")
+    WHOLE_GENOME_SEQUENCING = PermissibleValue(
+        text="WHOLE_GENOME_SEQUENCING",
+        description="Whole genome sequencing",
+        meaning=OBI["0002117"])
+    WHOLE_EXOME_SEQUENCING = PermissibleValue(
+        text="WHOLE_EXOME_SEQUENCING",
+        description="Whole exome sequencing",
+        meaning=OBI["0002118"])
+    TARGETED_EXOME_SEQUENCING = PermissibleValue(
+        text="TARGETED_EXOME_SEQUENCING",
+        description="Targeted exome sequencing panel")
+    NEXT_GENERATION_TARGETED_SEQUENCING = PermissibleValue(
+        text="NEXT_GENERATION_TARGETED_SEQUENCING",
+        description="Next generation targeted sequencing panel")
+    SANGER_SEQUENCING = PermissibleValue(
+        text="SANGER_SEQUENCING",
+        description="Sanger chain termination sequencing",
+        meaning=OBI["0000695"])
+    ATAC_SEQ = PermissibleValue(
+        text="ATAC_SEQ",
+        description="Assay for Transposase-Accessible Chromatin sequencing",
+        meaning=OBI["0002039"])
+    SINGLE_CELL_ATAC_SEQ = PermissibleValue(
+        text="SINGLE_CELL_ATAC_SEQ",
+        description="Single-cell ATAC-seq")
+    CHIP_SEQ = PermissibleValue(
+        text="CHIP_SEQ",
+        description="Chromatin immunoprecipitation sequencing",
+        meaning=OBI["0000716"])
+    CUT_AND_RUN = PermissibleValue(
+        text="CUT_AND_RUN",
+        description="Cleavage Under Targets and Release Using Nuclease")
+    BISULFITE_SEQUENCING = PermissibleValue(
+        text="BISULFITE_SEQUENCING",
+        description="Bisulfite sequencing for DNA methylation",
+        meaning=OBI["0000748"])
+    ERR_BISULFITE_SEQUENCING = PermissibleValue(
+        text="ERR_BISULFITE_SEQUENCING",
+        description="Enzymatic methyl-seq (EM-seq) or similar error-reduced bisulfite sequencing")
+    OXBS_SEQ = PermissibleValue(
+        text="OXBS_SEQ",
+        description="Oxidative bisulfite sequencing")
+    HI_C = PermissibleValue(
+        text="HI_C",
+        description="High-throughput chromosome conformation capture",
+        meaning=OBI["0002042"])
+    ISO_SEQ = PermissibleValue(
+        text="ISO_SEQ",
+        description="Isoform sequencing (PacBio long-read)")
+    NOME_SEQ = PermissibleValue(
+        text="NOME_SEQ",
+        description="Nucleosome Occupancy and Methylome Sequencing")
+    CAPP_SEQ = PermissibleValue(
+        text="CAPP_SEQ",
+        description="CAncer Personalized Profiling by deep Sequencing")
+    SAFER_SEQS = PermissibleValue(
+        text="SAFER_SEQS",
+        description="Safe-Sequencing System")
+    TCR_REPERTOIRE_SEQUENCING = PermissibleValue(
+        text="TCR_REPERTOIRE_SEQUENCING",
+        description="T cell receptor repertoire sequencing")
+    SCCGI_SEQ = PermissibleValue(
+        text="SCCGI_SEQ",
+        description="Single-cell CGI sequencing")
+    JUMPING_LIBRARY = PermissibleValue(
+        text="JUMPING_LIBRARY",
+        description="Jumping library sequencing for structural variants")
+    SNP_ARRAY = PermissibleValue(
+        text="SNP_ARRAY",
+        description="SNP genotyping array",
+        meaning=OBI["0001204"])
+    RNA_ARRAY = PermissibleValue(
+        text="RNA_ARRAY",
+        description="RNA expression array",
+        meaning=OBI["0001463"])
+    MIRNA_ARRAY = PermissibleValue(
+        text="MIRNA_ARRAY",
+        description="MicroRNA array")
+    METHYLATION_ARRAY = PermissibleValue(
+        text="METHYLATION_ARRAY",
+        description="DNA methylation array",
+        meaning=OBI["0001332"])
+
+    _defn = EnumDefinition(
+        name="SequencingAssayEnum",
+        description="Sequencing-based assays including RNA-seq, DNA-seq, and related methods",
+    )
+
+class ImagingAssayEnum(EnumDefinitionImpl):
+    """
+    Imaging-based assays including microscopy, MRI, and related methods
+    """
+    BRIGHTFIELD_MICROSCOPY = PermissibleValue(
+        text="BRIGHTFIELD_MICROSCOPY",
+        description="Brightfield microscopy imaging",
+        meaning=CHMO["0000104"])
+    CONFOCAL_MICROSCOPY = PermissibleValue(
+        text="CONFOCAL_MICROSCOPY",
+        description="Confocal laser scanning microscopy",
+        meaning=CHMO["0000545"])
+    THREE_D_CONFOCAL_IMAGING = PermissibleValue(
+        text="THREE_D_CONFOCAL_IMAGING",
+        description="Three-dimensional confocal imaging")
+    FLUORESCENCE_MICROSCOPY = PermissibleValue(
+        text="FLUORESCENCE_MICROSCOPY",
+        description="Fluorescence microscopy assay",
+        meaning=CHMO["0000087"])
+    PHASE_CONTRAST_MICROSCOPY = PermissibleValue(
+        text="PHASE_CONTRAST_MICROSCOPY",
+        description="Phase-contrast microscopy",
+        meaning=CHMO["0000056"])
+    ATOMIC_FORCE_MICROSCOPY = PermissibleValue(
+        text="ATOMIC_FORCE_MICROSCOPY",
+        description="Atomic force microscopy",
+        meaning=CHMO["0000113"])
+    THREE_D_ELECTRON_MICROSCOPY = PermissibleValue(
+        text="THREE_D_ELECTRON_MICROSCOPY",
+        description="Three-dimensional electron microscopy")
+    IMMUNOFLUORESCENCE = PermissibleValue(
+        text="IMMUNOFLUORESCENCE",
+        description="Immunofluorescence staining and imaging",
+        meaning=OBI["0003357"])
+    IMMUNOHISTOCHEMISTRY = PermissibleValue(
+        text="IMMUNOHISTOCHEMISTRY",
+        description="Immunohistochemistry staining",
+        meaning=OBI["0001986"])
+    IMMUNOCYTOCHEMISTRY = PermissibleValue(
+        text="IMMUNOCYTOCHEMISTRY",
+        description="Immunocytochemistry staining")
+    HISTOLOGY = PermissibleValue(
+        text="HISTOLOGY",
+        description="Histological examination",
+        meaning=OBI["0600020"])
+    FISH = PermissibleValue(
+        text="FISH",
+        description="Fluorescence In Situ Hybridization",
+        meaning=OBI["0003094"])
+    CODEX = PermissibleValue(
+        text="CODEX",
+        description="CO-Detection by indEXing imaging")
+    LIVE_IMAGING = PermissibleValue(
+        text="LIVE_IMAGING",
+        description="Live cell or tissue imaging")
+    AUTORADIOGRAPHY = PermissibleValue(
+        text="AUTORADIOGRAPHY",
+        description="Autoradiography imaging",
+        meaning=CHMO["0000812"])
+    CONVENTIONAL_MRI = PermissibleValue(
+        text="CONVENTIONAL_MRI",
+        description="Conventional magnetic resonance imaging",
+        meaning=OBI["0002985"])
+    FUNCTIONAL_MRI = PermissibleValue(
+        text="FUNCTIONAL_MRI",
+        description="Functional magnetic resonance imaging",
+        meaning=OBI["0001501"])
+    DIFFUSION_MRI = PermissibleValue(
+        text="DIFFUSION_MRI",
+        description="Diffusion-weighted MRI")
+    MPRAGE_MRI = PermissibleValue(
+        text="MPRAGE_MRI",
+        description="Magnetization-Prepared Rapid Gradient Echo MRI")
+    MAGNETIC_RESONANCE_SPECTROSCOPY = PermissibleValue(
+        text="MAGNETIC_RESONANCE_SPECTROSCOPY",
+        description="Magnetic resonance spectroscopy",
+        meaning=CHMO["0000566"])
+    MAGNETIC_RESONANCE_ANGIOGRAPHY = PermissibleValue(
+        text="MAGNETIC_RESONANCE_ANGIOGRAPHY",
+        description="Magnetic resonance angiography",
+        meaning=OBI["0002986"])
+    POSITRON_EMISSION_TOMOGRAPHY = PermissibleValue(
+        text="POSITRON_EMISSION_TOMOGRAPHY",
+        description="Positron emission tomography",
+        meaning=OBI["0001912"])
+    OPTICAL_COHERENCE_TOMOGRAPHY = PermissibleValue(
+        text="OPTICAL_COHERENCE_TOMOGRAPHY",
+        description="Optical coherence tomography",
+        meaning=CHMO["0000896"])
+    OPTICAL_TOMOGRAPHY = PermissibleValue(
+        text="OPTICAL_TOMOGRAPHY",
+        description="Optical tomography")
+    HIGH_FREQUENCY_ULTRASOUND = PermissibleValue(
+        text="HIGH_FREQUENCY_ULTRASOUND",
+        description="High frequency ultrasound imaging")
+    TRANSCRANIAL_DOPPLER = PermissibleValue(
+        text="TRANSCRANIAL_DOPPLER",
+        description="Transcranial doppler ultrasonography")
+    IN_VIVO_BIOLUMINESCENCE = PermissibleValue(
+        text="IN_VIVO_BIOLUMINESCENCE",
+        description="In vivo bioluminescence imaging",
+        meaning=OBI["0001503"])
+    LASER_SPECKLE_IMAGING = PermissibleValue(
+        text="LASER_SPECKLE_IMAGING",
+        description="Laser speckle contrast imaging")
+    SPATIAL_FREQUENCY_DOMAIN_IMAGING = PermissibleValue(
+        text="SPATIAL_FREQUENCY_DOMAIN_IMAGING",
+        description="Spatial frequency domain imaging")
+    TRACTION_FORCE_MICROSCOPY = PermissibleValue(
+        text="TRACTION_FORCE_MICROSCOPY",
+        description="Traction force microscopy")
+    PHOTOGRAPH = PermissibleValue(
+        text="PHOTOGRAPH",
+        description="Photographic documentation")
+
+    _defn = EnumDefinition(
+        name="ImagingAssayEnum",
+        description="Imaging-based assays including microscopy, MRI, and related methods",
+    )
+
+class MassSpectrometryAssayEnum(EnumDefinitionImpl):
+    """
+    Mass spectrometry-based assays for proteomics and metabolomics
+    """
+    MASS_SPECTROMETRY = PermissibleValue(
+        text="MASS_SPECTROMETRY",
+        description="General mass spectrometry",
+        meaning=CHMO["0000470"])
+    LC_MS = PermissibleValue(
+        text="LC_MS",
+        description="Liquid chromatography-mass spectrometry",
+        meaning=CHMO["0000524"])
+    LC_MS_MS = PermissibleValue(
+        text="LC_MS_MS",
+        description="Liquid chromatography-tandem mass spectrometry",
+        meaning=CHMO["0000701"])
+    HPLC_MS_MS = PermissibleValue(
+        text="HPLC_MS_MS",
+        description="High-performance liquid chromatography/tandem mass spectrometry")
+    UHPLC_MS_MS = PermissibleValue(
+        text="UHPLC_MS_MS",
+        description="Ultra high-performance liquid chromatography/tandem mass spectrometry")
+    FIA_MSMS = PermissibleValue(
+        text="FIA_MSMS",
+        description="Flow injection analysis tandem mass spectrometry")
+    LABEL_FREE_MS = PermissibleValue(
+        text="LABEL_FREE_MS",
+        description="Label-free mass spectrometry quantification")
+    TMT_QUANTITATION = PermissibleValue(
+        text="TMT_QUANTITATION",
+        description="Tandem mass tag quantitation")
+    MUDPIT = PermissibleValue(
+        text="MUDPIT",
+        description="Multidimensional Protein Identification Technology")
+    MIB_MS = PermissibleValue(
+        text="MIB_MS",
+        description="Multiplexed Inhibitor Beads mass spectrometry")
+    LC_ECD = PermissibleValue(
+        text="LC_ECD",
+        description="Liquid chromatography-electrochemical detection")
+    FTIR_SPECTROSCOPY = PermissibleValue(
+        text="FTIR_SPECTROSCOPY",
+        description="Fourier-transform infrared spectroscopy",
+        meaning=CHMO["0000817"])
+    RPPA = PermissibleValue(
+        text="RPPA",
+        description="Reverse Phase Protein Array",
+        meaning=OBI["0001975"])
+    PROXIMITY_EXTENSION_ASSAY = PermissibleValue(
+        text="PROXIMITY_EXTENSION_ASSAY",
+        description="Proximity extension assay")
+
+    _defn = EnumDefinition(
+        name="MassSpectrometryAssayEnum",
+        description="Mass spectrometry-based assays for proteomics and metabolomics",
+    )
+
+class CellBasedAssayEnum(EnumDefinitionImpl):
+    """
+    Cell-based assays including viability, proliferation, and functional assays
+    """
+    CELL_VIABILITY_ASSAY = PermissibleValue(
+        text="CELL_VIABILITY_ASSAY",
+        description="Cell viability measurement assay",
+        meaning=BAO["0003009"])
+    CELL_PROLIFERATION_ASSAY = PermissibleValue(
+        text="CELL_PROLIFERATION_ASSAY",
+        description="Cell proliferation measurement",
+        meaning=BAO["0002100"])
+    CELL_COUNT = PermissibleValue(
+        text="CELL_COUNT",
+        description="Cell counting assay",
+        meaning=BAO["0002097"])
+    ALAMAR_BLUE_ABSORBANCE = PermissibleValue(
+        text="ALAMAR_BLUE_ABSORBANCE",
+        description="AlamarBlue absorbance assay (2D)")
+    ALAMAR_BLUE_FLUORESCENCE = PermissibleValue(
+        text="ALAMAR_BLUE_FLUORESCENCE",
+        description="AlamarBlue fluorescence assay (2D)")
+    THREE_D_MICROTISSUE_VIABILITY = PermissibleValue(
+        text="THREE_D_MICROTISSUE_VIABILITY",
+        description="3D microtissue viability assay")
+    BRDU_PROLIFERATION = PermissibleValue(
+        text="BRDU_PROLIFERATION",
+        description="BrdU incorporation proliferation assay",
+        meaning=OBI["0001330"])
+    EDU_PROLIFERATION = PermissibleValue(
+        text="EDU_PROLIFERATION",
+        description="EdU incorporation proliferation assay")
+    ATPASE_ACTIVITY_ASSAY = PermissibleValue(
+        text="ATPASE_ACTIVITY_ASSAY",
+        description="ATPase activity measurement")
+    CAMP_GLO_ASSAY = PermissibleValue(
+        text="CAMP_GLO_ASSAY",
+        description="cAMP-Glo Max Assay")
+    FLOW_CYTOMETRY = PermissibleValue(
+        text="FLOW_CYTOMETRY",
+        description="Flow cytometry analysis",
+        meaning=OBI["0000916"])
+    ELISA = PermissibleValue(
+        text="ELISA",
+        description="Enzyme-linked immunosorbent assay",
+        meaning=OBI["0000661"])
+    SANDWICH_ELISA = PermissibleValue(
+        text="SANDWICH_ELISA",
+        description="Sandwich ELISA")
+    WESTERN_BLOT = PermissibleValue(
+        text="WESTERN_BLOT",
+        description="Western blot analysis",
+        meaning=OBI["0000714"])
+    IMMUNOASSAY = PermissibleValue(
+        text="IMMUNOASSAY",
+        description="General immunoassay",
+        meaning=OBI["0000717"])
+    PCR = PermissibleValue(
+        text="PCR",
+        description="Polymerase chain reaction",
+        meaning=OBI["0000415"])
+    QPCR = PermissibleValue(
+        text="QPCR",
+        description="Quantitative PCR",
+        meaning=OBI["0000893"])
+    NANOSTRING_NCOUNTER = PermissibleValue(
+        text="NANOSTRING_NCOUNTER",
+        description="NanoString nCounter Analysis System")
+    MULTI_ELECTRODE_ARRAY = PermissibleValue(
+        text="MULTI_ELECTRODE_ARRAY",
+        description="Multi-electrode array recording",
+        meaning=OBI["0002187"])
+    CURRENT_CLAMP_ASSAY = PermissibleValue(
+        text="CURRENT_CLAMP_ASSAY",
+        description="Current clamp electrophysiology")
+    WHOLE_CELL_PATCH_CLAMP = PermissibleValue(
+        text="WHOLE_CELL_PATCH_CLAMP",
+        description="Whole-cell patch clamp recording",
+        meaning=OBI["0002179"])
+    LOCAL_FIELD_POTENTIAL = PermissibleValue(
+        text="LOCAL_FIELD_POTENTIAL",
+        description="Local field potential recording")
+    LONG_TERM_POTENTIATION = PermissibleValue(
+        text="LONG_TERM_POTENTIATION",
+        description="Long-term potentiation assay")
+    MIGRATION_ASSAY = PermissibleValue(
+        text="MIGRATION_ASSAY",
+        description="Cell migration assay",
+        meaning=BAO["0002110"])
+    IN_VITRO_TUMORIGENESIS = PermissibleValue(
+        text="IN_VITRO_TUMORIGENESIS",
+        description="In vitro tumorigenesis assay")
+    IN_VIVO_TUMOR_GROWTH = PermissibleValue(
+        text="IN_VIVO_TUMOR_GROWTH",
+        description="In vivo tumor growth assay")
+    IN_VIVO_PDX_VIABILITY = PermissibleValue(
+        text="IN_VIVO_PDX_VIABILITY",
+        description="In vivo patient-derived xenograft viability")
+    MATRIGEL_TUMORIGENESIS = PermissibleValue(
+        text="MATRIGEL_TUMORIGENESIS",
+        description="Matrigel-based tumorigenesis assay")
+    HIGH_CONTENT_SCREEN = PermissibleValue(
+        text="HIGH_CONTENT_SCREEN",
+        description="High content screening assay",
+        meaning=BAO["0000514"])
+    CELL_PAINTING = PermissibleValue(
+        text="CELL_PAINTING",
+        description="Cell painting morphological profiling",
+        meaning=BAO["0020000"])
+    COMPOUND_SCREEN = PermissibleValue(
+        text="COMPOUND_SCREEN",
+        description="Compound library screening")
+    COMBINATION_SCREEN = PermissibleValue(
+        text="COMBINATION_SCREEN",
+        description="Drug combination screening")
+    SMALL_MOLECULE_LIBRARY_SCREEN = PermissibleValue(
+        text="SMALL_MOLECULE_LIBRARY_SCREEN",
+        description="Small molecule library screen")
+    REPORTER_GENE_ASSAY = PermissibleValue(
+        text="REPORTER_GENE_ASSAY",
+        description="Reporter gene assay",
+        meaning=BAO["0000098"])
+    MASSIVELY_PARALLEL_REPORTER_ASSAY = PermissibleValue(
+        text="MASSIVELY_PARALLEL_REPORTER_ASSAY",
+        description="Massively parallel reporter assay")
+    SPLIT_GFP_ASSAY = PermissibleValue(
+        text="SPLIT_GFP_ASSAY",
+        description="Split-GFP protein interaction assay")
+    FOCUS_FORMING_ASSAY = PermissibleValue(
+        text="FOCUS_FORMING_ASSAY",
+        description="Focus forming assay")
+    OXYGEN_CONSUMPTION_ASSAY = PermissibleValue(
+        text="OXYGEN_CONSUMPTION_ASSAY",
+        description="Oxygen consumption rate measurement",
+        meaning=BAO["0003028"])
+    ROS_ASSAY = PermissibleValue(
+        text="ROS_ASSAY",
+        description="Reactive oxygen species assay")
+    CALCIUM_RETENTION_ASSAY = PermissibleValue(
+        text="CALCIUM_RETENTION_ASSAY",
+        description="Calcium retention capacity assay")
+    TRANS_ENDOTHELIAL_RESISTANCE = PermissibleValue(
+        text="TRANS_ENDOTHELIAL_RESISTANCE",
+        description="Trans-endothelial electrical resistance measurement")
+    CELL_PERMEABILITY_ASSAY = PermissibleValue(
+        text="CELL_PERMEABILITY_ASSAY",
+        description="Cell permeability assay")
+    PHARMACOKINETIC_ADME = PermissibleValue(
+        text="PHARMACOKINETIC_ADME",
+        description="Pharmacokinetic ADME assay")
+    ARRAY = PermissibleValue(
+        text="ARRAY",
+        description="General array-based assay")
+    HPLC = PermissibleValue(
+        text="HPLC",
+        description="High-performance liquid chromatography",
+        meaning=CHMO["0001009"])
+    ELECTROCHEMILUMINESCENCE = PermissibleValue(
+        text="ELECTROCHEMILUMINESCENCE",
+        description="Electrochemiluminescence detection")
+    STR_PROFILE = PermissibleValue(
+        text="STR_PROFILE",
+        description="Short tandem repeat profiling")
+    TIDE = PermissibleValue(
+        text="TIDE",
+        description="Tracking of Indels by Decomposition")
+    SURVIVAL_ASSAY = PermissibleValue(
+        text="SURVIVAL_ASSAY",
+        description="Cell or organism survival assay")
+
+    _defn = EnumDefinition(
+        name="CellBasedAssayEnum",
+        description="Cell-based assays including viability, proliferation, and functional assays",
+    )
+
+class ClinicalBehavioralAssayEnum(EnumDefinitionImpl):
+    """
+    Clinical assessments and behavioral assays used in research
+    """
+    CLINICAL_DATA = PermissibleValue(
+        text="CLINICAL_DATA",
+        description="Clinical data collection")
+    QUESTIONNAIRE = PermissibleValue(
+        text="QUESTIONNAIRE",
+        description="Questionnaire-based assessment",
+        meaning=OBI["0001504"])
+    INTERVIEW = PermissibleValue(
+        text="INTERVIEW",
+        description="Clinical or research interview")
+    FOCUS_GROUP = PermissibleValue(
+        text="FOCUS_GROUP",
+        description="Focus group discussion")
+    SCALE = PermissibleValue(
+        text="SCALE",
+        description="Clinical rating scale")
+    NEUROPSYCHOLOGICAL_ASSESSMENT = PermissibleValue(
+        text="NEUROPSYCHOLOGICAL_ASSESSMENT",
+        description="Neuropsychological testing",
+        meaning=OBI["0002508"])
+    COGNITIVE_ASSESSMENT = PermissibleValue(
+        text="COGNITIVE_ASSESSMENT",
+        description="Cognitive function assessment")
+    NIH_TOOLBOX = PermissibleValue(
+        text="NIH_TOOLBOX",
+        description="NIH Toolbox assessment battery")
+    PROMIS_COGNITIVE_FUNCTION = PermissibleValue(
+        text="PROMIS_COGNITIVE_FUNCTION",
+        description="PROMIS Cognitive Function measures")
+    N_BACK_TASK = PermissibleValue(
+        text="N_BACK_TASK",
+        description="N-back working memory task")
+    CORSI_BLOCKS = PermissibleValue(
+        text="CORSI_BLOCKS",
+        description="Corsi block-tapping task")
+    CBCL_1_5_5 = PermissibleValue(
+        text="CBCL_1_5_5",
+        description="Child Behavior Checklist for Ages 1.5-5")
+    CBCL_6_18 = PermissibleValue(
+        text="CBCL_6_18",
+        description="Child Behavior Checklist for Ages 6-18")
+    SRS = PermissibleValue(
+        text="SRS",
+        description="Social Responsiveness Scale")
+    SRS_2 = PermissibleValue(
+        text="SRS_2",
+        description="Social Responsiveness Scale Second Edition")
+    BLOOD_CHEMISTRY = PermissibleValue(
+        text="BLOOD_CHEMISTRY",
+        description="Blood chemistry measurement")
+    METABOLIC_SCREENING = PermissibleValue(
+        text="METABOLIC_SCREENING",
+        description="Metabolic screening panel")
+    GENOTYPING = PermissibleValue(
+        text="GENOTYPING",
+        description="Genotyping assay",
+        meaning=OBI["0000435"])
+    BODY_SIZE_MEASUREMENT = PermissibleValue(
+        text="BODY_SIZE_MEASUREMENT",
+        description="Body size trait measurement",
+        meaning=MMO["0000013"])
+    GAIT_MEASUREMENT = PermissibleValue(
+        text="GAIT_MEASUREMENT",
+        description="Gait analysis measurement")
+    GRIP_STRENGTH = PermissibleValue(
+        text="GRIP_STRENGTH",
+        description="Grip strength measurement")
+    HAND_HELD_DYNAMOMETRY = PermissibleValue(
+        text="HAND_HELD_DYNAMOMETRY",
+        description="Hand-held dynamometry")
+    SIX_MINUTE_WALK_TEST = PermissibleValue(
+        text="SIX_MINUTE_WALK_TEST",
+        description="Six-minute walk test")
+    ACTIGRAPHY = PermissibleValue(
+        text="ACTIGRAPHY",
+        description="Actigraphy monitoring")
+    POLYSOMNOGRAPHY = PermissibleValue(
+        text="POLYSOMNOGRAPHY",
+        description="Polysomnography sleep study")
+    QUANTITATIVE_SENSORY_TESTING = PermissibleValue(
+        text="QUANTITATIVE_SENSORY_TESTING",
+        description="Quantitative sensory testing")
+    VON_FREY_TEST = PermissibleValue(
+        text="VON_FREY_TEST",
+        description="Von Frey filament test")
+    ALGOMETRX_NOCIOMETER = PermissibleValue(
+        text="ALGOMETRX_NOCIOMETER",
+        description="AlgometRx Nociometer assessment")
+    AUDITORY_BRAINSTEM_RESPONSE = PermissibleValue(
+        text="AUDITORY_BRAINSTEM_RESPONSE",
+        description="Auditory brainstem response testing")
+    PURE_TONE_AVERAGE = PermissibleValue(
+        text="PURE_TONE_AVERAGE",
+        description="Pure tone average audiometry")
+    WORD_RECOGNITION_SCORE = PermissibleValue(
+        text="WORD_RECOGNITION_SCORE",
+        description="Word recognition score")
+    DPOE = PermissibleValue(
+        text="DPOE",
+        description="Distortion product otoacoustic emissions")
+    PATTERN_ERG = PermissibleValue(
+        text="PATTERN_ERG",
+        description="Pattern electroretinogram")
+    OPTOKINETIC_REFLEX = PermissibleValue(
+        text="OPTOKINETIC_REFLEX",
+        description="Optokinetic reflex assay")
+    RICCARDI_ABLON_SCALES = PermissibleValue(
+        text="RICCARDI_ABLON_SCALES",
+        description="Riccardi and Ablon clinical severity scales")
+    SKINDEX_16 = PermissibleValue(
+        text="SKINDEX_16",
+        description="Skindex-16 dermatology questionnaire")
+    CNF_SKINDEX = PermissibleValue(
+        text="CNF_SKINDEX",
+        description="Cutaneous neurofibroma Skindex")
+    CDLQI = PermissibleValue(
+        text="CDLQI",
+        description="Children's Dermatology Life Quality Index Questionnaire")
+    FACEQ_DISTRESS = PermissibleValue(
+        text="FACEQ_DISTRESS",
+        description="FACE-Q Appearance-related Distress")
+    OPEN_FIELD_TEST = PermissibleValue(
+        text="OPEN_FIELD_TEST",
+        description="Open field locomotor test",
+        meaning=MMO["0000093"])
+    ELEVATED_PLUS_MAZE = PermissibleValue(
+        text="ELEVATED_PLUS_MAZE",
+        description="Elevated plus maze anxiety test",
+        meaning=MMO["0000292"])
+    ROTAROD_TEST = PermissibleValue(
+        text="ROTAROD_TEST",
+        description="Rotarod motor coordination test",
+        meaning=MMO["0000091"])
+    ACTIVE_AVOIDANCE = PermissibleValue(
+        text="ACTIVE_AVOIDANCE",
+        description="Active avoidance learning behavior assay")
+    CONTEXTUAL_CONDITIONING = PermissibleValue(
+        text="CONTEXTUAL_CONDITIONING",
+        description="Contextual conditioning behavior assay")
+    NOVELTY_RESPONSE = PermissibleValue(
+        text="NOVELTY_RESPONSE",
+        description="Novelty response behavior assay")
+    FEEDING_ASSAY = PermissibleValue(
+        text="FEEDING_ASSAY",
+        description="Feeding behavior assay")
+
+    _defn = EnumDefinition(
+        name="ClinicalBehavioralAssayEnum",
+        description="Clinical assessments and behavioral assays used in research",
+    )
+
+class OBIAssayEnum(EnumDefinitionImpl):
+    """
+    Dynamic enum covering all assays defined in the Ontology for Biomedical Investigations (OBI), rooted at
+    OBI:0000070 (assay).
+    """
+    _defn = EnumDefinition(
+        name="OBIAssayEnum",
+        description="""Dynamic enum covering all assays defined in the Ontology for Biomedical Investigations (OBI), rooted at OBI:0000070 (assay).""",
+    )
+
+class BAOBioassayEnum(EnumDefinitionImpl):
+    """
+    Dynamic enum covering all bioassays defined in the BioAssay Ontology (BAO), rooted at BAO:0000015 (bioassay).
+    """
+    _defn = EnumDefinition(
+        name="BAOBioassayEnum",
+        description="""Dynamic enum covering all bioassays defined in the BioAssay Ontology (BAO), rooted at BAO:0000015 (bioassay).""",
+    )
+
+class EnzymologyAssayEnum(EnumDefinitionImpl):
+    """
+    Assays for characterizing enzyme function including activity, kinetics, inhibition, and substrate specificity.
+    """
+    ENZYME_ACTIVITY_ASSAY = PermissibleValue(
+        text="ENZYME_ACTIVITY_ASSAY",
+        description="Measures the effect of a perturbagen on enzyme activity",
+        meaning=BAO["0002994"])
+    MICHAELIS_MENTEN_KINETICS = PermissibleValue(
+        text="MICHAELIS_MENTEN_KINETICS",
+        description="Enzyme kinetics assay measuring Km and Vmax parameters")
+    INHIBITION_ASSAY = PermissibleValue(
+        text="INHIBITION_ASSAY",
+        description="Assay to measure enzyme inhibition (IC50, Ki)")
+    SUBSTRATE_SPECIFICITY = PermissibleValue(
+        text="SUBSTRATE_SPECIFICITY",
+        description="Assay to determine enzyme substrate preference and specificity")
+    FLUOROMETRIC_ENZYME_ASSAY = PermissibleValue(
+        text="FLUOROMETRIC_ENZYME_ASSAY",
+        description="Enzyme assay using fluorescent substrates or products for detection")
+    COLORIMETRIC_ENZYME_ASSAY = PermissibleValue(
+        text="COLORIMETRIC_ENZYME_ASSAY",
+        description="Enzyme assay using chromogenic substrates for absorbance-based detection")
+    COUPLED_ENZYME_ASSAY = PermissibleValue(
+        text="COUPLED_ENZYME_ASSAY",
+        description="Enzyme assay using a secondary enzyme reaction for signal generation")
+    CONTINUOUS_ENZYME_ASSAY = PermissibleValue(
+        text="CONTINUOUS_ENZYME_ASSAY",
+        description="Real-time monitoring of enzyme reaction progress")
+    ENDPOINT_ENZYME_ASSAY = PermissibleValue(
+        text="ENDPOINT_ENZYME_ASSAY",
+        description="Single time-point measurement of enzyme reaction product")
+
+    _defn = EnumDefinition(
+        name="EnzymologyAssayEnum",
+        description="""Assays for characterizing enzyme function including activity, kinetics, inhibition, and substrate specificity.""",
+    )
+
+class ImmunologyAssayEnum(EnumDefinitionImpl):
+    """
+    Assays for detecting and quantifying immune-related molecules including antibody-based detection, cell sorting,
+    and blotting methods.
+    """
+    ELISA = PermissibleValue(
+        text="ELISA",
+        description="Enzyme-linked immunosorbent assay for detecting antigens or antibodies",
+        meaning=BAO["0000134"])
+    SANDWICH_ELISA = PermissibleValue(
+        text="SANDWICH_ELISA",
+        description="Sandwich ELISA using capture and detection antibodies")
+    IMMUNOPRECIPITATION = PermissibleValue(
+        text="IMMUNOPRECIPITATION",
+        description="Precipitation of a protein antigen from solution using a specific antibody",
+        meaning=BAO["0002508"])
+    FLOW_CYTOMETRY = PermissibleValue(
+        text="FLOW_CYTOMETRY",
+        description="Analysis of cell populations using fluorescent antibodies and light scattering",
+        meaning=BAO["0000005"])
+    WESTERN_BLOT = PermissibleValue(
+        text="WESTERN_BLOT",
+        description="Protein detection by gel electrophoresis, membrane transfer, and antibody staining",
+        meaning=OBI["0000854"])
+    CYTOKINE_SECRETION_ASSAY = PermissibleValue(
+        text="CYTOKINE_SECRETION_ASSAY",
+        description="Measurement of cytokine types and amounts released from cells",
+        meaning=BAO["0003003"])
+    IMMUNOBLOT = PermissibleValue(
+        text="IMMUNOBLOT",
+        description="Detection of proteins using antibodies on a membrane",
+        meaning=BAO["0002422"])
+    COMPLEMENT_FIXATION = PermissibleValue(
+        text="COMPLEMENT_FIXATION",
+        description="Serological assay detecting antibodies by complement consumption")
+    MULTIPLEX_BEAD_ASSAY = PermissibleValue(
+        text="MULTIPLEX_BEAD_ASSAY",
+        description="Simultaneous detection of multiple analytes using antibody-conjugated beads")
+
+    _defn = EnumDefinition(
+        name="ImmunologyAssayEnum",
+        description="""Assays for detecting and quantifying immune-related molecules including antibody-based detection, cell sorting, and blotting methods.""",
+    )
+
+class ProteinEngineeringAssayEnum(EnumDefinitionImpl):
+    """
+    Assays for protein engineering including binding kinetics, biophysical characterization, and display-based
+    selection methods.
+    """
+    SURFACE_PLASMON_RESONANCE = PermissibleValue(
+        text="SURFACE_PLASMON_RESONANCE",
+        description="Real-time label-free measurement of biomolecular binding kinetics",
+        meaning=BAO["0000054"])
+    BIOLAYER_INTERFEROMETRY = PermissibleValue(
+        text="BIOLAYER_INTERFEROMETRY",
+        description="Label-free measurement of biomolecular interactions via interference patterns",
+        meaning=BAO["0000066"])
+    THERMAL_SHIFT_ASSAY = PermissibleValue(
+        text="THERMAL_SHIFT_ASSAY",
+        description="Measurement of protein thermal stability via fluorescent dye binding",
+        meaning=BAO["0010261"])
+    CIRCULAR_DICHROISM = PermissibleValue(
+        text="CIRCULAR_DICHROISM",
+        description="Assessment of protein secondary and tertiary structure using polarized light",
+        meaning=BAO["0000161"])
+    PHAGE_DISPLAY = PermissibleValue(
+        text="PHAGE_DISPLAY",
+        description="Selection of peptides or proteins displayed on bacteriophage surface")
+    YEAST_DISPLAY = PermissibleValue(
+        text="YEAST_DISPLAY",
+        description="Selection of proteins displayed on yeast cell surface")
+    DIRECTED_EVOLUTION_SCREEN = PermissibleValue(
+        text="DIRECTED_EVOLUTION_SCREEN",
+        description="High-throughput screening of mutant protein libraries for improved function")
+
+    _defn = EnumDefinition(
+        name="ProteinEngineeringAssayEnum",
+        description="""Assays for protein engineering including binding kinetics, biophysical characterization, and display-based selection methods.""",
+    )
+
+class ToxicologyAssayEnum(EnumDefinitionImpl):
+    """
+    Assays for evaluating toxicity, genotoxicity, and safety of compounds including cytotoxicity, mutagenicity, and
+    ADME measurements.
+    """
+    TOXICITY_ASSAY = PermissibleValue(
+        text="TOXICITY_ASSAY",
+        description="General assay measuring degree of substance toxicity to living cells",
+        meaning=BAO["0002189"])
+    MTT_ASSAY = PermissibleValue(
+        text="MTT_ASSAY",
+        description="Colorimetric assay measuring cell metabolic activity via MTT reduction",
+        meaning=BAO["0002457"])
+    LDH_RELEASE_ASSAY = PermissibleValue(
+        text="LDH_RELEASE_ASSAY",
+        description="Cytotoxicity assay measuring lactate dehydrogenase release from damaged cells",
+        meaning=BAO["0013056"])
+    AMES_TEST = PermissibleValue(
+        text="AMES_TEST",
+        description="Mutagenicity assay using bacterial reverse mutation in Salmonella strains",
+        meaning=BAO["0013054"])
+    COMET_ASSAY = PermissibleValue(
+        text="COMET_ASSAY",
+        description="Single cell gel electrophoresis assay measuring DNA strand breaks",
+        meaning=OBI["0302736"])
+    MICRONUCLEUS_ASSAY = PermissibleValue(
+        text="MICRONUCLEUS_ASSAY",
+        description="Genotoxicity assay detecting chromosomal damage via micronucleus formation",
+        meaning=BAO["0013055"])
+    DOSE_RESPONSE = PermissibleValue(
+        text="DOSE_RESPONSE",
+        description="Measurement of biological response as a function of compound concentration")
+    ADME_ASSAY = PermissibleValue(
+        text="ADME_ASSAY",
+        description="Absorption, distribution, metabolism, and excretion profiling")
+
+    _defn = EnumDefinition(
+        name="ToxicologyAssayEnum",
+        description="""Assays for evaluating toxicity, genotoxicity, and safety of compounds including cytotoxicity, mutagenicity, and ADME measurements.""",
+    )
+
 class BioticInteractionType(EnumDefinitionImpl):
     """
     Types of biotic interactions between organisms, based on RO:0002437 (biotically interacts with). These represent
@@ -20252,88 +24688,109 @@ class InSituChemistryRegime(EnumDefinitionImpl):
 
 class ExtractableTargetElement(EnumDefinitionImpl):
     """
-    Target elements for extraction, particularly rare earth elements (REE) and critical minerals.
+    Target elements for extraction in mining operations, including rare earth elements (REE), critical minerals, and
+    battery metals. These elements are strategically important for clean energy technologies, electronics, and defense
+    applications.
     """
-    REE_LA = PermissibleValue(
-        text="REE_LA",
-        title="REE_LA",
-        description="Lanthanum")
-    REE_CE = PermissibleValue(
-        text="REE_CE",
-        title="REE_CE",
-        description="Cerium")
-    REE_PR = PermissibleValue(
-        text="REE_PR",
-        title="REE_PR",
-        description="Praseodymium")
-    REE_ND = PermissibleValue(
-        text="REE_ND",
-        title="REE_ND",
-        description="Neodymium")
-    REE_PM = PermissibleValue(
-        text="REE_PM",
-        title="REE_PM",
-        description="Promethium")
-    REE_SM = PermissibleValue(
-        text="REE_SM",
-        title="REE_SM",
-        description="Samarium")
-    REE_EU = PermissibleValue(
-        text="REE_EU",
-        title="REE_EU",
-        description="Europium")
-    REE_GD = PermissibleValue(
-        text="REE_GD",
-        title="REE_GD",
-        description="Gadolinium")
-    REE_TB = PermissibleValue(
-        text="REE_TB",
-        title="REE_TB",
-        description="Terbium")
-    REE_DY = PermissibleValue(
-        text="REE_DY",
-        title="REE_DY",
-        description="Dysprosium")
-    REE_HO = PermissibleValue(
-        text="REE_HO",
-        title="REE_HO",
-        description="Holmium")
-    REE_ER = PermissibleValue(
-        text="REE_ER",
-        title="REE_ER",
-        description="Erbium")
-    REE_TM = PermissibleValue(
-        text="REE_TM",
-        title="REE_TM",
-        description="Thulium")
-    REE_YB = PermissibleValue(
-        text="REE_YB",
-        title="REE_YB",
-        description="Ytterbium")
-    REE_LU = PermissibleValue(
-        text="REE_LU",
-        title="REE_LU",
-        description="Lutetium")
+    LA = PermissibleValue(
+        text="LA",
+        title="Lanthanum",
+        description="Light rare earth element (atomic number 57) used in catalysts, optics, and battery electrodes",
+        meaning=CHEBI["33336"])
+    CE = PermissibleValue(
+        text="CE",
+        title="Cerium",
+        description="""Light rare earth element (atomic number 58) used in catalytic converters, glass polishing, and metallurgy""",
+        meaning=CHEBI["33369"])
+    PR = PermissibleValue(
+        text="PR",
+        title="Praseodymium",
+        description="Light rare earth element (atomic number 59) used in magnets, lasers, and aircraft engines",
+        meaning=CHEBI["49828"])
+    ND = PermissibleValue(
+        text="ND",
+        title="Neodymium",
+        description="""Light rare earth element (atomic number 60) essential for high-strength permanent magnets in wind turbines and EVs""",
+        meaning=CHEBI["33372"])
+    PM = PermissibleValue(
+        text="PM",
+        title="Promethium",
+        description="Radioactive rare earth element (atomic number 61) used in nuclear batteries and luminous paint",
+        meaning=CHEBI["33373"])
+    SM = PermissibleValue(
+        text="SM",
+        title="Samarium",
+        description="""Light rare earth element (atomic number 62) used in samarium-cobalt magnets and cancer treatment""",
+        meaning=CHEBI["33374"])
+    EU = PermissibleValue(
+        text="EU",
+        title="Europium",
+        description="Rare earth element (atomic number 63) used in phosphors for displays and fluorescent lighting",
+        meaning=CHEBI["32999"])
+    GD = PermissibleValue(
+        text="GD",
+        title="Gadolinium",
+        description="""Heavy rare earth element (atomic number 64) used in MRI contrast agents and nuclear reactor control rods""",
+        meaning=CHEBI["33375"])
+    TB = PermissibleValue(
+        text="TB",
+        title="Terbium",
+        description="Heavy rare earth element (atomic number 65) used in solid-state devices and green phosphors",
+        meaning=CHEBI["33376"])
+    DY = PermissibleValue(
+        text="DY",
+        title="Dysprosium",
+        description="Heavy rare earth element (atomic number 66) critical for high-temperature permanent magnets",
+        meaning=CHEBI["33377"])
+    HO = PermissibleValue(
+        text="HO",
+        title="Holmium",
+        description="Heavy rare earth element (atomic number 67) used in lasers and magnetic flux concentrators",
+        meaning=CHEBI["49648"])
+    ER = PermissibleValue(
+        text="ER",
+        title="Erbium",
+        description="Heavy rare earth element (atomic number 68) used in fiber optic amplifiers and lasers",
+        meaning=CHEBI["33379"])
+    TM = PermissibleValue(
+        text="TM",
+        title="Thulium",
+        description="Heavy rare earth element (atomic number 69) used in portable X-ray devices and lasers",
+        meaning=CHEBI["33380"])
+    YB = PermissibleValue(
+        text="YB",
+        title="Ytterbium",
+        description="Heavy rare earth element (atomic number 70) used in metallurgy, lasers, and atomic clocks",
+        meaning=CHEBI["33381"])
+    LU = PermissibleValue(
+        text="LU",
+        title="Lutetium",
+        description="Heavy rare earth element (atomic number 71) used in PET scan detectors and cancer treatment",
+        meaning=CHEBI["33382"])
     SC = PermissibleValue(
         text="SC",
-        title="SC",
-        description="Scandium")
+        title="Scandium",
+        description="Transition metal (atomic number 21) used in aluminum alloys for aerospace and sports equipment",
+        meaning=CHEBI["33330"])
     CO = PermissibleValue(
         text="CO",
-        title="CO",
-        description="Cobalt")
+        title="Cobalt",
+        description="Transition metal (atomic number 27) essential for lithium-ion battery cathodes and superalloys",
+        meaning=CHEBI["27638"])
     NI = PermissibleValue(
         text="NI",
-        title="NI",
-        description="Nickel")
+        title="Nickel",
+        description="Transition metal (atomic number 28) used in stainless steel, batteries, and electroplating",
+        meaning=CHEBI["28112"])
     LI = PermissibleValue(
         text="LI",
-        title="LI",
-        description="Lithium")
+        title="Lithium",
+        description="Alkali metal (atomic number 3) essential for lithium-ion batteries and energy storage systems",
+        meaning=CHEBI["30145"])
 
     _defn = EnumDefinition(
         name="ExtractableTargetElement",
-        description="""Target elements for extraction, particularly rare earth elements (REE) and critical minerals.""",
+        description="""Target elements for extraction in mining operations, including rare earth elements (REE), critical minerals, and battery metals. These elements are strategically important for clean energy technologies, electronics, and defense applications.""",
     )
 
 class SensorWhileDrillingFeature(EnumDefinitionImpl):
@@ -24093,6 +28550,40 @@ class DownstreamProcessEnum(EnumDefinitionImpl):
     HOMOGENIZATION = PermissibleValue(
         text="HOMOGENIZATION",
         description="Cell disruption/homogenization")
+    CLARIFICATION = PermissibleValue(
+        text="CLARIFICATION",
+        description="Removal of cells and debris to produce a clarified harvest")
+    FLOCCULATION = PermissibleValue(
+        text="FLOCCULATION",
+        description="Aggregation of cells and debris into flocs to aid clarification")
+    ULTRAFILTRATION = PermissibleValue(
+        text="ULTRAFILTRATION",
+        title="ultra-filtration",
+        description="Membrane concentration retaining macromolecules such as proteins",
+        meaning=CHMO["0001645"])
+    DIAFILTRATION = PermissibleValue(
+        text="DIAFILTRATION",
+        description="Buffer exchange and desalting by ultrafiltration with continuous makeup")
+    TANGENTIAL_FLOW_FILTRATION = PermissibleValue(
+        text="TANGENTIAL_FLOW_FILTRATION",
+        description="Crossflow membrane filtration used for concentration and diafiltration")
+    BUFFER_EXCHANGE = PermissibleValue(
+        text="BUFFER_EXCHANGE",
+        description="Replacement of the buffer matrix of a product stream")
+    ADSORPTION = PermissibleValue(
+        text="ADSORPTION",
+        description="Capture of product or impurities onto a solid sorbent")
+    VIRAL_INACTIVATION = PermissibleValue(
+        text="VIRAL_INACTIVATION",
+        description="Treatment step that inactivates potential viral contaminants")
+    POLISHING = PermissibleValue(
+        text="POLISHING",
+        description="Final chromatographic or filtration steps to remove trace impurities")
+    LYOPHILIZATION = PermissibleValue(
+        text="LYOPHILIZATION",
+        title="freeze drying",
+        description="Freeze-drying to produce a stable solid product",
+        meaning=CHMO["0001553"])
 
     _defn = EnumDefinition(
         name="DownstreamProcessEnum",
@@ -24229,6 +28720,1301 @@ class SterilizationMethodEnum(EnumDefinitionImpl):
     _defn = EnumDefinition(
         name="SterilizationMethodEnum",
         description="Methods for sterilization in bioprocessing",
+    )
+
+class BiomanufacturingScaleType(EnumDefinitionImpl):
+    """
+    Scale classifications for biomanufacturing operations, from micro-scale screening through commercial production
+    """
+    BENCH_SCALE = PermissibleValue(
+        text="BENCH_SCALE",
+        description="Laboratory bench scale operations, typically less than 10 liters")
+    PILOT_SCALE = PermissibleValue(
+        text="PILOT_SCALE",
+        description="Pilot plant scale operations for process development, typically 10-1000 liters")
+    DEMONSTRATION_SCALE = PermissibleValue(
+        text="DEMONSTRATION_SCALE",
+        description="Demonstration scale operations for technology validation, typically 1000-10000 liters")
+    COMMERCIAL_SCALE = PermissibleValue(
+        text="COMMERCIAL_SCALE",
+        description="Full commercial production scale, typically greater than 10000 liters")
+    MICRO_SCALE = PermissibleValue(
+        text="MICRO_SCALE",
+        description="""Micro-scale operations using microfluidic or microtiter plate formats, typically less than 1 mL""")
+
+    _defn = EnumDefinition(
+        name="BiomanufacturingScaleType",
+        description="""Scale classifications for biomanufacturing operations, from micro-scale screening through commercial production""",
+    )
+
+class BioproductCategoryType(EnumDefinitionImpl):
+    """
+    Categories of products derived from biological manufacturing processes
+    """
+    BIOFUEL = PermissibleValue(
+        text="BIOFUEL",
+        title="fuel",
+        description="Biologically derived fuel including ethanol, biodiesel, and biogas",
+        meaning=CHEBI["33292"])
+    BIOCHEMICAL = PermissibleValue(
+        text="BIOCHEMICAL",
+        description="Chemical compounds produced through biological processes")
+    BIOPLASTIC = PermissibleValue(
+        text="BIOPLASTIC",
+        description="Biodegradable or bio-based plastic materials such as PHA, PLA, and PBS")
+    BIOSURFACTANT = PermissibleValue(
+        text="BIOSURFACTANT",
+        description="Surface-active compounds produced by microorganisms")
+    BIOACTIVE_COMPOUND = PermissibleValue(
+        text="BIOACTIVE_COMPOUND",
+        description="Biologically active compounds with therapeutic or functional properties")
+    INDUSTRIAL_ENZYME = PermissibleValue(
+        text="INDUSTRIAL_ENZYME",
+        title="Enzyme",
+        description="Enzymes produced for industrial applications such as detergents, textiles, and food processing",
+        meaning=NCIT["C16554"])
+    BIOFERTILIZER = PermissibleValue(
+        text="BIOFERTILIZER",
+        title="biofertilizer",
+        description="""Biological preparations containing living microorganisms that enhance plant nutrient availability""",
+        meaning=AGRO["00020001"])
+    BIOPESTICIDE = PermissibleValue(
+        text="BIOPESTICIDE",
+        description="Biological agents used for pest control in agriculture")
+    BIOPHARMACEUTICAL = PermissibleValue(
+        text="BIOPHARMACEUTICAL",
+        title="Biological Agent",
+        description="Pharmaceutical products derived from biological sources or manufactured using biotechnology",
+        meaning=NCIT["C307"])
+    FOOD_INGREDIENT = PermissibleValue(
+        text="FOOD_INGREDIENT",
+        title="food ingredient",
+        description="Biologically produced ingredients for food and beverage applications",
+        meaning=FOODON["00004274"])
+
+    _defn = EnumDefinition(
+        name="BioproductCategoryType",
+        description="Categories of products derived from biological manufacturing processes",
+    )
+
+class BioprocessOptimizationType(EnumDefinitionImpl):
+    """
+    Strategies and approaches for optimizing biomanufacturing processes to improve yield, productivity, and product
+    quality
+    """
+    MEDIA_OPTIMIZATION = PermissibleValue(
+        text="MEDIA_OPTIMIZATION",
+        description="""Optimization of growth media composition including carbon sources, nitrogen sources, and micronutrients""")
+    STRAIN_ENGINEERING = PermissibleValue(
+        text="STRAIN_ENGINEERING",
+        description="Genetic modification and selection of production strains for improved performance")
+    PROCESS_INTENSIFICATION = PermissibleValue(
+        text="PROCESS_INTENSIFICATION",
+        description="Engineering approaches to increase volumetric productivity and reduce process footprint")
+    CONTINUOUS_PROCESSING = PermissibleValue(
+        text="CONTINUOUS_PROCESSING",
+        description="Conversion from batch to continuous operation for improved efficiency and consistency")
+    FED_BATCH_OPTIMIZATION = PermissibleValue(
+        text="FED_BATCH_OPTIMIZATION",
+        description="Optimization of feeding strategies in fed-batch processes to maximize product yield")
+    DOWNSTREAM_PURIFICATION = PermissibleValue(
+        text="DOWNSTREAM_PURIFICATION",
+        description="Optimization of product recovery and purification processes")
+    IN_LINE_ANALYTICS = PermissibleValue(
+        text="IN_LINE_ANALYTICS",
+        description="""Implementation of real-time process analytical technology (PAT) for process monitoring and control""")
+    DIGITAL_TWIN_MODELING = PermissibleValue(
+        text="DIGITAL_TWIN_MODELING",
+        description="Use of computational process models for simulation, prediction, and optimization")
+
+    _defn = EnumDefinition(
+        name="BioprocessOptimizationType",
+        description="""Strategies and approaches for optimizing biomanufacturing processes to improve yield, productivity, and product quality""",
+    )
+
+class UnitOperationType(EnumDefinitionImpl):
+    """
+    Fundamental chemical and process engineering unit operations - the discrete processing steps that transform,
+    separate, combine, or move process material. Grouped (via the unit_operation_class annotation) into momentum
+    transfer, heat transfer, mass-transfer separations, mechanical separations, solids processing, reaction, and
+    storage.
+    """
+    PUMPING = PermissibleValue(
+        text="PUMPING",
+        description="Raising the pressure or moving of a liquid stream using a pump")
+    COMPRESSION = PermissibleValue(
+        text="COMPRESSION",
+        description="Raising the pressure of a gas or vapor stream using a compressor")
+    GAS_MOVING = PermissibleValue(
+        text="GAS_MOVING",
+        description="Moving a gas stream at low pressure rise using a fan or blower")
+    FLOW_SPLITTING = PermissibleValue(
+        text="FLOW_SPLITTING",
+        description="Dividing a single stream into two or more streams of identical composition")
+    STREAM_MIXING = PermissibleValue(
+        text="STREAM_MIXING",
+        description="Combining two or more streams into a single stream")
+    HEAT_EXCHANGE = PermissibleValue(
+        text="HEAT_EXCHANGE",
+        description="Transfer of thermal energy between two streams without phase-change intent")
+    HEATING = PermissibleValue(
+        text="HEATING",
+        description="Raising the temperature of a process stream")
+    COOLING = PermissibleValue(
+        text="COOLING",
+        description="Lowering the temperature of a process stream")
+    CONDENSATION = PermissibleValue(
+        text="CONDENSATION",
+        description="Converting a vapor to a liquid by removing heat")
+    EVAPORATION = PermissibleValue(
+        text="EVAPORATION",
+        title="evaporation",
+        description="Concentrating a solution by vaporizing solvent, typically water",
+        meaning=CHMO["0001574"])
+    DISTILLATION = PermissibleValue(
+        text="DISTILLATION",
+        title="distillation",
+        description="Separation of components by differences in volatility (boiling point)",
+        meaning=CHMO["0001532"])
+    ABSORPTION = PermissibleValue(
+        text="ABSORPTION",
+        description="Selective transfer of one or more gas-phase components into a liquid solvent")
+    STRIPPING = PermissibleValue(
+        text="STRIPPING",
+        description="Selective transfer of dissolved components from a liquid into a gas stream")
+    LIQUID_LIQUID_EXTRACTION = PermissibleValue(
+        text="LIQUID_LIQUID_EXTRACTION",
+        title="extraction",
+        description="Separation by partitioning of solutes between two immiscible liquid phases",
+        meaning=CHMO["0001577"])
+    LEACHING = PermissibleValue(
+        text="LEACHING",
+        title="leaching",
+        description="Solid-liquid extraction of soluble components from a solid using a solvent",
+        meaning=CHMO["0001681"])
+    ADSORPTION = PermissibleValue(
+        text="ADSORPTION",
+        description="Selective uptake of components onto the surface of a solid sorbent")
+    ION_EXCHANGE = PermissibleValue(
+        text="ION_EXCHANGE",
+        description="Reversible exchange of ions between a solution and a solid ion-exchange resin")
+    CHROMATOGRAPHY = PermissibleValue(
+        text="CHROMATOGRAPHY",
+        title="chromatography",
+        description="Separation by differential partitioning of solutes between a mobile and stationary phase",
+        meaning=CHMO["0001000"])
+    CRYSTALLIZATION = PermissibleValue(
+        text="CRYSTALLIZATION",
+        title="crystallization",
+        description="Formation of a solid crystalline phase from a solution or melt",
+        meaning=PROCO["0000052"])
+    PRECIPITATION = PermissibleValue(
+        text="PRECIPITATION",
+        title="precipitation",
+        description="Formation of an insoluble solid from solution by chemical or physical means",
+        meaning=CHMO["0001688"])
+    DRYING = PermissibleValue(
+        text="DRYING",
+        description="Removal of a liquid (usually water) from a solid or surface by vaporization")
+    FREEZE_DRYING = PermissibleValue(
+        text="FREEZE_DRYING",
+        title="freeze drying",
+        description="Removal of solvent by sublimation from the frozen state (lyophilization)",
+        meaning=CHMO["0001553"])
+    HUMIDIFICATION = PermissibleValue(
+        text="HUMIDIFICATION",
+        description="Addition of water vapor to a gas stream")
+    MEMBRANE_SEPARATION = PermissibleValue(
+        text="MEMBRANE_SEPARATION",
+        description="Separation of stream components using a semipermeable membrane")
+    MICROFILTRATION = PermissibleValue(
+        text="MICROFILTRATION",
+        title="micro-filtration",
+        description="Membrane separation retaining particles roughly 0.1-10 micrometers",
+        meaning=CHMO["0001641"])
+    ULTRAFILTRATION = PermissibleValue(
+        text="ULTRAFILTRATION",
+        title="ultra-filtration",
+        description="Membrane separation retaining macromolecules and colloids",
+        meaning=CHMO["0001645"])
+    NANOFILTRATION = PermissibleValue(
+        text="NANOFILTRATION",
+        title="nano-filtration",
+        description="Membrane separation retaining small molecules and multivalent ions",
+        meaning=CHMO["0001642"])
+    REVERSE_OSMOSIS = PermissibleValue(
+        text="REVERSE_OSMOSIS",
+        title="reverse osmosis",
+        description="Pressure-driven membrane separation rejecting dissolved salts and small solutes",
+        meaning=CHMO["0001643"])
+    DIALYSIS = PermissibleValue(
+        text="DIALYSIS",
+        title="dialysis",
+        description="Diffusive membrane separation of solutes across a concentration gradient",
+        meaning=CHMO["0001522"])
+    ELECTRODIALYSIS = PermissibleValue(
+        text="ELECTRODIALYSIS",
+        description="Membrane separation of ions driven by an applied electric field")
+    PERVAPORATION = PermissibleValue(
+        text="PERVAPORATION",
+        description="Membrane separation combining permeation and partial vaporization of the permeate")
+    FILTRATION = PermissibleValue(
+        text="FILTRATION",
+        title="filtration",
+        description="Separation of solids from a fluid by passage through a porous medium",
+        meaning=CHMO["0001640"])
+    CENTRIFUGATION = PermissibleValue(
+        text="CENTRIFUGATION",
+        title="centrifugation",
+        description="Separation of phases by density difference under centrifugal force",
+        meaning=OBI["0302886"])
+    SEDIMENTATION = PermissibleValue(
+        text="SEDIMENTATION",
+        description="Gravity separation of suspended solids or immiscible liquids by settling")
+    CLARIFICATION = PermissibleValue(
+        text="CLARIFICATION",
+        description="Removal of suspended solids from a liquid to produce a clarified stream")
+    FLOTATION = PermissibleValue(
+        text="FLOTATION",
+        description="Separation of solids or droplets by attachment to rising gas bubbles")
+    FLOCCULATION = PermissibleValue(
+        text="FLOCCULATION",
+        description="Aggregation of fine suspended particles into larger flocs to aid separation")
+    CYCLONE_SEPARATION = PermissibleValue(
+        text="CYCLONE_SEPARATION",
+        description="Separation of particles from a fluid using centrifugal force in a cyclone")
+    SCREENING = PermissibleValue(
+        text="SCREENING",
+        description="Separation of particulate solids by size using a screen or sieve")
+    GAS_LIQUID_SEPARATION = PermissibleValue(
+        text="GAS_LIQUID_SEPARATION",
+        description="Disengagement of vapor and liquid phases, e.g. in a flash or knockout drum")
+    SIZE_REDUCTION = PermissibleValue(
+        text="SIZE_REDUCTION",
+        description="Reduction of particle size by crushing, grinding, or milling (comminution)")
+    SIZE_ENLARGEMENT = PermissibleValue(
+        text="SIZE_ENLARGEMENT",
+        description="Increase of particle size by granulation, agglomeration, or pelletizing")
+    MIXING = PermissibleValue(
+        text="MIXING",
+        title="mixing",
+        description="Blending of materials to achieve compositional or thermal uniformity",
+        meaning=CHMO["0001685"])
+    SOLIDS_CONVEYING = PermissibleValue(
+        text="SOLIDS_CONVEYING",
+        description="Transport of bulk particulate solids between process steps")
+    CHEMICAL_REACTION = PermissibleValue(
+        text="CHEMICAL_REACTION",
+        description="Chemical conversion of reactants to products in a reactor")
+    FERMENTATION = PermissibleValue(
+        text="FERMENTATION",
+        title="fermentation",
+        description="Microbial or enzymatic conversion of substrate to product in a bioreactor",
+        meaning=CHMO["0001624"])
+    COMBUSTION = PermissibleValue(
+        text="COMBUSTION",
+        title="combustion",
+        description="Exothermic oxidation of a fuel, typically to generate heat or power",
+        meaning=CHMO["0001473"])
+    GASIFICATION = PermissibleValue(
+        text="GASIFICATION",
+        title="gasification",
+        description="Conversion of carbonaceous feedstock to synthesis gas under limited oxygen",
+        meaning=CHMO["0001501"])
+    PYROLYSIS = PermissibleValue(
+        text="PYROLYSIS",
+        title="pyrolysis",
+        description="Thermal decomposition of material in the absence of oxygen",
+        meaning=CHMO["0001502"])
+    ELECTROLYSIS = PermissibleValue(
+        text="ELECTROLYSIS",
+        description="Driving a non-spontaneous chemical reaction using electrical energy")
+    NEUTRALIZATION = PermissibleValue(
+        text="NEUTRALIZATION",
+        description="Adjustment of pH by reaction of acid and base")
+    PURIFICATION = PermissibleValue(
+        text="PURIFICATION",
+        title="purification",
+        description="Removal of impurities to increase the purity of a product stream",
+        meaning=CHMO["0002231"])
+    STORAGE = PermissibleValue(
+        text="STORAGE",
+        description="Holding of material in a vessel or tank between process steps")
+
+    _defn = EnumDefinition(
+        name="UnitOperationType",
+        description="""Fundamental chemical and process engineering unit operations - the discrete processing steps that transform, separate, combine, or move process material. Grouped (via the unit_operation_class annotation) into momentum transfer, heat transfer, mass-transfer separations, mechanical separations, solids processing, reaction, and storage.""",
+    )
+
+class ProcessEquipmentType(EnumDefinitionImpl):
+    """
+    Physical equipment / asset types used in process plants. These correspond to the nodes of a process flowsheet and
+    complement UnitOperationType (which describes the function performed). Grouped via the equipment_class annotation.
+    """
+    STORAGE_TANK = PermissibleValue(
+        text="STORAGE_TANK",
+        description="Atmospheric or low-pressure vessel for holding liquids or solids")
+    PRESSURE_VESSEL = PermissibleValue(
+        text="PRESSURE_VESSEL",
+        description="Vessel designed to hold contents at elevated pressure")
+    HOPPER = PermissibleValue(
+        text="HOPPER",
+        description="Funnel-shaped vessel for storing and discharging bulk solids")
+    FLASH_DRUM = PermissibleValue(
+        text="FLASH_DRUM",
+        description="Vessel for separating vapor and liquid produced by a pressure let-down")
+    KNOCKOUT_DRUM = PermissibleValue(
+        text="KNOCKOUT_DRUM",
+        description="Vessel that removes entrained liquid from a gas stream")
+    REACTOR = PermissibleValue(
+        text="REACTOR",
+        description="Vessel in which chemical reactions are carried out")
+    BIOREACTOR = PermissibleValue(
+        text="BIOREACTOR",
+        title="bioreactor",
+        description="Vessel for culturing cells or carrying out enzymatic reactions",
+        meaning=OBI["0001046"])
+    FERMENTER = PermissibleValue(
+        text="FERMENTER",
+        description="Bioreactor configured for microbial fermentation")
+    DISTILLATION_COLUMN = PermissibleValue(
+        text="DISTILLATION_COLUMN",
+        description="Column with trays or packing for vapor-liquid separation by distillation")
+    ABSORPTION_COLUMN = PermissibleValue(
+        text="ABSORPTION_COLUMN",
+        description="Column for gas absorption into a liquid solvent")
+    STRIPPING_COLUMN = PermissibleValue(
+        text="STRIPPING_COLUMN",
+        description="Column for stripping volatile components from a liquid")
+    EXTRACTION_COLUMN = PermissibleValue(
+        text="EXTRACTION_COLUMN",
+        description="Column for liquid-liquid extraction")
+    CHROMATOGRAPHY_COLUMN = PermissibleValue(
+        text="CHROMATOGRAPHY_COLUMN",
+        title="chromatography column",
+        description="Column packed with a stationary phase for chromatographic separation",
+        meaning=OBI["0000038"])
+    SCRUBBER = PermissibleValue(
+        text="SCRUBBER",
+        description="Contactor for removing pollutants or particulates from a gas using a liquid")
+    HEAT_EXCHANGER = PermissibleValue(
+        text="HEAT_EXCHANGER",
+        description="Equipment that transfers heat between two fluid streams")
+    CONDENSER = PermissibleValue(
+        text="CONDENSER",
+        description="Heat exchanger that condenses a vapor to liquid")
+    REBOILER = PermissibleValue(
+        text="REBOILER",
+        description="Heat exchanger that supplies boilup at the base of a distillation column")
+    EVAPORATOR = PermissibleValue(
+        text="EVAPORATOR",
+        description="Equipment that concentrates a solution by vaporizing solvent")
+    FURNACE = PermissibleValue(
+        text="FURNACE",
+        description="Fired heater that raises stream temperature by combustion")
+    BOILER = PermissibleValue(
+        text="BOILER",
+        description="Equipment that generates steam by transferring combustion heat to water")
+    COOLING_TOWER = PermissibleValue(
+        text="COOLING_TOWER",
+        description="Equipment that rejects process heat to the atmosphere by evaporative cooling")
+    DRYER = PermissibleValue(
+        text="DRYER",
+        description="Equipment for removing liquid from solids by vaporization")
+    CRYSTALLIZER = PermissibleValue(
+        text="CRYSTALLIZER",
+        description="Equipment for producing crystalline solids from solution or melt")
+    PUMP = PermissibleValue(
+        text="PUMP",
+        description="Machine that moves or pressurizes a liquid")
+    COMPRESSOR = PermissibleValue(
+        text="COMPRESSOR",
+        description="Machine that raises the pressure of a gas")
+    BLOWER = PermissibleValue(
+        text="BLOWER",
+        description="Machine that moves gas at a low pressure rise")
+    FAN = PermissibleValue(
+        text="FAN",
+        description="Machine that moves large gas volumes at very low pressure rise")
+    VALVE = PermissibleValue(
+        text="VALVE",
+        description="Device that regulates, directs, or controls stream flow")
+    CENTRIFUGE = PermissibleValue(
+        text="CENTRIFUGE",
+        title="centrifuge",
+        description="Equipment that separates phases by density under centrifugal force",
+        meaning=OBI["0400106"])
+    FILTER = PermissibleValue(
+        text="FILTER",
+        description="Equipment that separates solids from a fluid using a porous medium")
+    DECANTER = PermissibleValue(
+        text="DECANTER",
+        description="Equipment that separates immiscible liquids or settled solids by gravity")
+    CLARIFIER = PermissibleValue(
+        text="CLARIFIER",
+        description="Settling tank that removes suspended solids from a liquid")
+    CYCLONE = PermissibleValue(
+        text="CYCLONE",
+        description="Device that separates particles from a fluid by centrifugal action")
+    HYDROCYCLONE = PermissibleValue(
+        text="HYDROCYCLONE",
+        description="Cyclone that separates solids or immiscible liquids from a liquid stream")
+    MEMBRANE_MODULE = PermissibleValue(
+        text="MEMBRANE_MODULE",
+        description="Housing containing membrane elements for a membrane separation")
+    SETTLER = PermissibleValue(
+        text="SETTLER",
+        description="Vessel allowing phases to separate by gravity settling")
+    MIXER = PermissibleValue(
+        text="MIXER",
+        description="Equipment for blending streams or materials")
+    AGITATOR = PermissibleValue(
+        text="AGITATOR",
+        description="Impeller-driven device that mixes vessel contents")
+    MILL = PermissibleValue(
+        text="MILL",
+        description="Equipment that reduces particle size by grinding or crushing")
+    CRUSHER = PermissibleValue(
+        text="CRUSHER",
+        description="Equipment that reduces large solids by mechanical force")
+    SCREEN = PermissibleValue(
+        text="SCREEN",
+        description="Equipment that classifies particulate solids by size")
+    CONVEYOR = PermissibleValue(
+        text="CONVEYOR",
+        description="Equipment that transports bulk solids between locations")
+
+    _defn = EnumDefinition(
+        name="ProcessEquipmentType",
+        description="""Physical equipment / asset types used in process plants. These correspond to the nodes of a process flowsheet and complement UnitOperationType (which describes the function performed). Grouped via the equipment_class annotation.""",
+    )
+
+class ProcessStreamRole(EnumDefinitionImpl):
+    """
+    The functional role of a stream within a process flowsheet, independent of its chemical composition.
+    """
+    FEED = PermissibleValue(
+        text="FEED",
+        description="A stream entering the process or a unit operation as input")
+    RAW_MATERIAL = PermissibleValue(
+        text="RAW_MATERIAL",
+        description="A fresh raw material or reactant stream entering the process battery limits")
+    PRODUCT = PermissibleValue(
+        text="PRODUCT",
+        description="A primary product stream of commercial value leaving the process")
+    BYPRODUCT = PermissibleValue(
+        text="BYPRODUCT",
+        description="A secondary saleable or usable product produced alongside the main product")
+    INTERMEDIATE = PermissibleValue(
+        text="INTERMEDIATE",
+        description="A stream flowing between unit operations within the process")
+    RECYCLE = PermissibleValue(
+        text="RECYCLE",
+        description="A stream returned to an upstream point for reprocessing")
+    PURGE = PermissibleValue(
+        text="PURGE",
+        description="A stream withdrawn from a recycle loop to prevent accumulation of inerts or impurities")
+    BLEED = PermissibleValue(
+        text="BLEED",
+        description="A small continuous stream withdrawn to control composition or level")
+    MAKEUP = PermissibleValue(
+        text="MAKEUP",
+        description="A stream added to replenish material lost from a circulating loop")
+    WASTE = PermissibleValue(
+        text="WASTE",
+        description="A stream with no further use that must be treated or disposed of")
+    EFFLUENT = PermissibleValue(
+        text="EFFLUENT",
+        description="A liquid waste stream discharged from the process")
+    EMISSION = PermissibleValue(
+        text="EMISSION",
+        description="A gaseous stream released to the atmosphere")
+    UTILITY = PermissibleValue(
+        text="UTILITY",
+        description="A service stream (e.g. steam, cooling water) supplied to a unit operation")
+
+    _defn = EnumDefinition(
+        name="ProcessStreamRole",
+        description="The functional role of a stream within a process flowsheet, independent of its chemical composition.",
+    )
+
+class ProcessStreamPhase(EnumDefinitionImpl):
+    """
+    The physical phase or phase combination of a process stream. For single-phase fundamental states see also
+    StateOfMatterEnum in the physics module; this enum adds the multiphase combinations common in process engineering.
+    """
+    GAS = PermissibleValue(
+        text="GAS",
+        description="A single gas or vapor phase")
+    LIQUID = PermissibleValue(
+        text="LIQUID",
+        description="A single liquid phase")
+    SOLID = PermissibleValue(
+        text="SOLID",
+        description="A single solid phase")
+    SUPERCRITICAL = PermissibleValue(
+        text="SUPERCRITICAL",
+        description="A supercritical fluid above its critical temperature and pressure")
+    VAPOR_LIQUID = PermissibleValue(
+        text="VAPOR_LIQUID",
+        description="A two-phase mixture of vapor and liquid")
+    LIQUID_LIQUID = PermissibleValue(
+        text="LIQUID_LIQUID",
+        description="A two-phase mixture of two immiscible liquids")
+    VAPOR_LIQUID_LIQUID = PermissibleValue(
+        text="VAPOR_LIQUID_LIQUID",
+        description="A three-phase mixture of a vapor and two immiscible liquids")
+    SLURRY = PermissibleValue(
+        text="SLURRY",
+        description="A suspension of solids in a liquid")
+    GAS_SOLID = PermissibleValue(
+        text="GAS_SOLID",
+        description="A two-phase mixture of gas and entrained or fluidized solids")
+    MULTIPHASE = PermissibleValue(
+        text="MULTIPHASE",
+        description="A stream containing more than one phase, of mixed or unspecified composition")
+
+    _defn = EnumDefinition(
+        name="ProcessStreamPhase",
+        description="""The physical phase or phase combination of a process stream. For single-phase fundamental states see also StateOfMatterEnum in the physics module; this enum adds the multiphase combinations common in process engineering.""",
+    )
+
+class UtilityType(EnumDefinitionImpl):
+    """
+    Common plant utilities consumed or produced by process unit operations, used for energy and mass balance
+    accounting on a flowsheet.
+    """
+    STEAM = PermissibleValue(
+        text="STEAM",
+        description="Process steam used for heating or stripping")
+    LOW_PRESSURE_STEAM = PermissibleValue(
+        text="LOW_PRESSURE_STEAM",
+        description="Low-pressure steam utility")
+    MEDIUM_PRESSURE_STEAM = PermissibleValue(
+        text="MEDIUM_PRESSURE_STEAM",
+        description="Medium-pressure steam utility")
+    HIGH_PRESSURE_STEAM = PermissibleValue(
+        text="HIGH_PRESSURE_STEAM",
+        description="High-pressure steam utility")
+    COOLING_WATER = PermissibleValue(
+        text="COOLING_WATER",
+        description="Recirculated cooling water for heat rejection")
+    CHILLED_WATER = PermissibleValue(
+        text="CHILLED_WATER",
+        description="Refrigerated water for below-ambient cooling")
+    REFRIGERANT = PermissibleValue(
+        text="REFRIGERANT",
+        description="Refrigerant fluid for low-temperature cooling duty")
+    HOT_OIL = PermissibleValue(
+        text="HOT_OIL",
+        description="Thermal oil heat-transfer fluid for high-temperature heating")
+    BRINE = PermissibleValue(
+        text="BRINE",
+        description="Chilled brine used as a low-temperature coolant")
+    ELECTRICITY = PermissibleValue(
+        text="ELECTRICITY",
+        description="Electrical power supplied to drivers and equipment")
+    PROCESS_WATER = PermissibleValue(
+        text="PROCESS_WATER",
+        description="Treated water used as a process input")
+    DEMINERALIZED_WATER = PermissibleValue(
+        text="DEMINERALIZED_WATER",
+        description="High-purity demineralized water utility")
+    NATURAL_GAS = PermissibleValue(
+        text="NATURAL_GAS",
+        description="Natural gas supplied as fuel or feedstock")
+    FUEL_GAS = PermissibleValue(
+        text="FUEL_GAS",
+        description="Fuel gas burned in fired heaters and boilers")
+    COMPRESSED_AIR = PermissibleValue(
+        text="COMPRESSED_AIR",
+        description="Compressed air utility for process or actuation use")
+    INSTRUMENT_AIR = PermissibleValue(
+        text="INSTRUMENT_AIR",
+        description="Clean dry compressed air for instrumentation")
+    NITROGEN = PermissibleValue(
+        text="NITROGEN",
+        description="Nitrogen used for inerting, blanketing, or purging")
+    FLARE = PermissibleValue(
+        text="FLARE",
+        description="Flare system for safe combustion of relieved gases")
+
+    _defn = EnumDefinition(
+        name="UtilityType",
+        description="""Common plant utilities consumed or produced by process unit operations, used for energy and mass balance accounting on a flowsheet.""",
+    )
+
+class ProcessIndustryCategory(EnumDefinitionImpl):
+    """
+    Sectors of the process (continuous and batch) manufacturing industries. The pisces_category annotation records the
+    corresponding top-level category in the PISCES Standard Flowsheet Format where one exists.
+    """
+    PETROLEUM_REFINING = PermissibleValue(
+        text="PETROLEUM_REFINING",
+        description="Refining of crude oil into fuels and feedstocks")
+    PETROCHEMICAL = PermissibleValue(
+        text="PETROCHEMICAL",
+        description="Production of chemicals derived from petroleum and natural gas")
+    BULK_CHEMICAL = PermissibleValue(
+        text="BULK_CHEMICAL",
+        description="Large-volume production of commodity chemicals")
+    SPECIALTY_CHEMICAL = PermissibleValue(
+        text="SPECIALTY_CHEMICAL",
+        description="Production of lower-volume, high-value performance chemicals")
+    AGROCHEMICAL = PermissibleValue(
+        text="AGROCHEMICAL",
+        description="Production of fertilizers, pesticides, and other agricultural chemicals")
+    POLYMER_AND_PLASTICS = PermissibleValue(
+        text="POLYMER_AND_PLASTICS",
+        description="Production of polymers, resins, and plastic materials")
+    PHARMACEUTICAL = PermissibleValue(
+        text="PHARMACEUTICAL",
+        description="Manufacture of active pharmaceutical ingredients and drug products")
+    BIOTECHNOLOGY = PermissibleValue(
+        text="BIOTECHNOLOGY",
+        description="Manufacture of products using biological systems and fermentation")
+    BIOFUEL = PermissibleValue(
+        text="BIOFUEL",
+        description="Production of biologically derived fuels such as ethanol and biodiesel")
+    FOOD_AND_BEVERAGE = PermissibleValue(
+        text="FOOD_AND_BEVERAGE",
+        description="Processing and manufacture of food and beverage products")
+    PULP_AND_PAPER = PermissibleValue(
+        text="PULP_AND_PAPER",
+        description="Production of pulp, paper, and board from fiber")
+    METALS_AND_MINING = PermissibleValue(
+        text="METALS_AND_MINING",
+        description="Extraction and processing of metals and minerals")
+    WATER_AND_WASTEWATER_TREATMENT = PermissibleValue(
+        text="WATER_AND_WASTEWATER_TREATMENT",
+        description="Treatment of water and wastewater streams")
+    POWER_GENERATION = PermissibleValue(
+        text="POWER_GENERATION",
+        description="Generation of electrical power and process heat")
+    GAS_PROCESSING = PermissibleValue(
+        text="GAS_PROCESSING",
+        description="Processing and separation of natural gas and industrial gases")
+    CEMENT_AND_CONSTRUCTION_MATERIALS = PermissibleValue(
+        text="CEMENT_AND_CONSTRUCTION_MATERIALS",
+        description="Production of cement, lime, and construction materials")
+    GLASS_AND_CERAMICS = PermissibleValue(
+        text="GLASS_AND_CERAMICS",
+        description="Manufacture of glass and ceramic products")
+    TEXTILE = PermissibleValue(
+        text="TEXTILE",
+        description="Production and finishing of textile fibers and fabrics")
+    COSMETICS_AND_PERSONAL_CARE = PermissibleValue(
+        text="COSMETICS_AND_PERSONAL_CARE",
+        description="Manufacture of cosmetics and personal care products")
+    NUCLEAR_FUEL = PermissibleValue(
+        text="NUCLEAR_FUEL",
+        description="Processing of nuclear fuel materials")
+    SEMICONDUCTOR = PermissibleValue(
+        text="SEMICONDUCTOR",
+        description="Fabrication of semiconductor and microelectronic materials")
+
+    _defn = EnumDefinition(
+        name="ProcessIndustryCategory",
+        description="""Sectors of the process (continuous and batch) manufacturing industries. The pisces_category annotation records the corresponding top-level category in the PISCES Standard Flowsheet Format where one exists.""",
+    )
+
+class ProcessOperationMode(EnumDefinitionImpl):
+    """
+    The temporal mode in which a process or unit operation is run.
+    """
+    BATCH = PermissibleValue(
+        text="BATCH",
+        description="Material is charged, processed, and discharged in discrete batches")
+    CONTINUOUS = PermissibleValue(
+        text="CONTINUOUS",
+        description="Material flows through the process steadily without interruption")
+    SEMI_BATCH = PermissibleValue(
+        text="SEMI_BATCH",
+        description="A hybrid mode where some streams are continuous while others are batch-wise")
+    SEMI_CONTINUOUS = PermissibleValue(
+        text="SEMI_CONTINUOUS",
+        description="Process alternates between continuous operation and periodic interruptions")
+
+    _defn = EnumDefinition(
+        name="ProcessOperationMode",
+        description="The temporal mode in which a process or unit operation is run.",
+    )
+
+class EquationOfStateModel(EnumDefinitionImpl):
+    """
+    Equations of state used to compute fugacity coefficients and PVT behavior of fluids in process simulation (the SFF
+    phi method).
+    """
+    IDEAL_GAS = PermissibleValue(
+        text="IDEAL_GAS",
+        description="Ideal gas law, assuming no intermolecular interactions")
+    VIRIAL = PermissibleValue(
+        text="VIRIAL",
+        description="Virial equation of state expressed as a power series in density or pressure")
+    REDLICH_KWONG = PermissibleValue(
+        text="REDLICH_KWONG",
+        description="Redlich-Kwong cubic equation of state")
+    SOAVE_REDLICH_KWONG = PermissibleValue(
+        text="SOAVE_REDLICH_KWONG",
+        description="Soave modification of the Redlich-Kwong cubic equation of state")
+    PENG_ROBINSON = PermissibleValue(
+        text="PENG_ROBINSON",
+        description="Peng-Robinson cubic equation of state")
+    PENG_ROBINSON_BOSTON_MATHIAS = PermissibleValue(
+        text="PENG_ROBINSON_BOSTON_MATHIAS",
+        description="Peng-Robinson with Boston-Mathias alpha function for supercritical extrapolation")
+    SRK_BOSTON_MATHIAS = PermissibleValue(
+        text="SRK_BOSTON_MATHIAS",
+        description="Soave-Redlich-Kwong with Boston-Mathias alpha function")
+    LEE_KESLER_PLOCKER = PermissibleValue(
+        text="LEE_KESLER_PLOCKER",
+        description="Lee-Kesler-Plocker corresponding-states equation of state")
+    BENEDICT_WEBB_RUBIN_STARLING = PermissibleValue(
+        text="BENEDICT_WEBB_RUBIN_STARLING",
+        description="Benedict-Webb-Rubin-Starling equation of state for light hydrocarbons")
+    PREDICTIVE_SRK = PermissibleValue(
+        text="PREDICTIVE_SRK",
+        description="Predictive SRK combining SRK with a UNIFAC-based mixing rule")
+    PC_SAFT = PermissibleValue(
+        text="PC_SAFT",
+        description="Perturbed-chain statistical associating fluid theory equation of state")
+    CUBIC_PLUS_ASSOCIATION = PermissibleValue(
+        text="CUBIC_PLUS_ASSOCIATION",
+        description="Cubic-plus-association equation of state for associating fluids")
+    GERG_2008 = PermissibleValue(
+        text="GERG_2008",
+        description="GERG-2008 reference equation of state for natural gas mixtures")
+    IAPWS_95 = PermissibleValue(
+        text="IAPWS_95",
+        description="IAPWS-95 reference formulation for the thermodynamic properties of water")
+
+    _defn = EnumDefinition(
+        name="EquationOfStateModel",
+        description="""Equations of state used to compute fugacity coefficients and PVT behavior of fluids in process simulation (the SFF phi method).""",
+    )
+
+class ActivityCoefficientModel(EnumDefinitionImpl):
+    """
+    Excess Gibbs energy / activity-coefficient models for non-ideal liquid phases (the SFF gamma method).
+    """
+    IDEAL = PermissibleValue(
+        text="IDEAL",
+        description="Ideal solution, all activity coefficients equal to one (Raoult's law)")
+    MARGULES = PermissibleValue(
+        text="MARGULES",
+        description="Margules two-parameter activity-coefficient model")
+    VAN_LAAR = PermissibleValue(
+        text="VAN_LAAR",
+        description="Van Laar activity-coefficient model")
+    REGULAR_SOLUTION = PermissibleValue(
+        text="REGULAR_SOLUTION",
+        description="Scatchard-Hildebrand regular solution model based on solubility parameters")
+    WILSON = PermissibleValue(
+        text="WILSON",
+        description="Wilson local-composition activity-coefficient model")
+    NRTL = PermissibleValue(
+        text="NRTL",
+        description="Non-random two-liquid local-composition activity-coefficient model")
+    ELECTROLYTE_NRTL = PermissibleValue(
+        text="ELECTROLYTE_NRTL",
+        description="Electrolyte NRTL model for systems containing ions")
+    UNIQUAC = PermissibleValue(
+        text="UNIQUAC",
+        description="Universal quasi-chemical activity-coefficient model")
+    UNIFAC = PermissibleValue(
+        text="UNIFAC",
+        description="UNIQUAC functional-group activity-coefficient (group-contribution) model")
+    UNIFAC_DORTMUND = PermissibleValue(
+        text="UNIFAC_DORTMUND",
+        description="Modified UNIFAC (Dortmund) group-contribution model")
+    FLORY_HUGGINS = PermissibleValue(
+        text="FLORY_HUGGINS",
+        description="Flory-Huggins model for polymer solutions")
+    PITZER = PermissibleValue(
+        text="PITZER",
+        description="Pitzer model for aqueous electrolyte activity coefficients")
+    COSMO_SAC = PermissibleValue(
+        text="COSMO_SAC",
+        description="COSMO-based segment activity-coefficient model from quantum chemistry")
+
+    _defn = EnumDefinition(
+        name="ActivityCoefficientModel",
+        description="""Excess Gibbs energy / activity-coefficient models for non-ideal liquid phases (the SFF gamma method).""",
+    )
+
+class ThermodynamicPropertyPackage(EnumDefinitionImpl):
+    """
+    Named property methods/packages offered by process simulators, typically combining an equation of state and/or an
+    activity-coefficient model. Used where a single package label rather than separate gamma/phi methods is recorded.
+    """
+    IDEAL = PermissibleValue(
+        text="IDEAL",
+        description="Ideal (Raoult's law) property package")
+    NRTL = PermissibleValue(
+        text="NRTL",
+        description="NRTL activity model with ideal or RK vapor phase")
+    NRTL_RK = PermissibleValue(
+        text="NRTL_RK",
+        description="NRTL activity model with Redlich-Kwong vapor phase")
+    UNIQUAC = PermissibleValue(
+        text="UNIQUAC",
+        description="UNIQUAC activity model property package")
+    UNIFAC = PermissibleValue(
+        text="UNIFAC",
+        description="UNIFAC group-contribution property package")
+    WILSON = PermissibleValue(
+        text="WILSON",
+        description="Wilson activity model property package")
+    VAN_LAAR = PermissibleValue(
+        text="VAN_LAAR",
+        description="Van Laar activity model property package")
+    PENG_ROBINSON = PermissibleValue(
+        text="PENG_ROBINSON",
+        description="Peng-Robinson equation-of-state property package")
+    SOAVE_REDLICH_KWONG = PermissibleValue(
+        text="SOAVE_REDLICH_KWONG",
+        description="Soave-Redlich-Kwong equation-of-state property package")
+    ELECTROLYTE_NRTL = PermissibleValue(
+        text="ELECTROLYTE_NRTL",
+        description="Electrolyte NRTL property package for ionic systems")
+    PITZER = PermissibleValue(
+        text="PITZER",
+        description="Pitzer property package for aqueous electrolytes")
+    CHAO_SEADER = PermissibleValue(
+        text="CHAO_SEADER",
+        description="Chao-Seader semi-empirical package for hydrocarbon systems")
+    GRAYSON_STREED = PermissibleValue(
+        text="GRAYSON_STREED",
+        description="Grayson-Streed package for hydrogen-rich hydrocarbon systems")
+    BRAUN_K10 = PermissibleValue(
+        text="BRAUN_K10",
+        description="Braun K10 package for low-pressure heavy hydrocarbon systems")
+    PC_SAFT = PermissibleValue(
+        text="PC_SAFT",
+        description="PC-SAFT equation-of-state property package")
+    STEAM_TABLES = PermissibleValue(
+        text="STEAM_TABLES",
+        description="Steam-table (IAPWS / ASME) property package for water and steam")
+    API_SOUR = PermissibleValue(
+        text="API_SOUR",
+        description="API sour-water package for systems with acid gases and ammonia")
+
+    _defn = EnumDefinition(
+        name="ThermodynamicPropertyPackage",
+        description="""Named property methods/packages offered by process simulators, typically combining an equation of state and/or an activity-coefficient model. Used where a single package label rather than separate gamma/phi methods is recorded.""",
+    )
+
+class MixingRuleModel(EnumDefinitionImpl):
+    """
+    Mixing rules applied to equation-of-state parameters for mixtures (the SFF mixture method).
+    """
+    IDEAL = PermissibleValue(
+        text="IDEAL",
+        description="Ideal mixing, no excess properties")
+    VAN_DER_WAALS = PermissibleValue(
+        text="VAN_DER_WAALS",
+        description="Classical van der Waals one-fluid mixing rule with binary interaction parameters")
+    HURON_VIDAL = PermissibleValue(
+        text="HURON_VIDAL",
+        description="Huron-Vidal mixing rule coupling an equation of state to an excess Gibbs energy model")
+    MODIFIED_HURON_VIDAL = PermissibleValue(
+        text="MODIFIED_HURON_VIDAL",
+        description="Modified Huron-Vidal first/second order mixing rules")
+    WONG_SANDLER = PermissibleValue(
+        text="WONG_SANDLER",
+        description="Wong-Sandler mixing rule with correct low- and high-density limits")
+    PSRK_MIXING = PermissibleValue(
+        text="PSRK_MIXING",
+        description="Predictive SRK (PSRK) mixing rule based on UNIFAC")
+
+    _defn = EnumDefinition(
+        name="MixingRuleModel",
+        description="Mixing rules applied to equation-of-state parameters for mixtures (the SFF mixture method).",
+    )
+
+class PoyntingCorrectionMethod(EnumDefinitionImpl):
+    """
+    Treatment of the Poynting correction factor accounting for the effect of pressure on liquid fugacity (the SFF PCF
+    method).
+    """
+    NONE = PermissibleValue(
+        text="NONE",
+        description="No Poynting correction applied")
+    POYNTING = PermissibleValue(
+        text="POYNTING",
+        description="Poynting correction factor applied to the liquid fugacity")
+
+    _defn = EnumDefinition(
+        name="PoyntingCorrectionMethod",
+        description="""Treatment of the Poynting correction factor accounting for the effect of pressure on liquid fugacity (the SFF PCF method).""",
+    )
+
+class DesignSimulationMethod(EnumDefinitionImpl):
+    """
+    Methods used to design or simulate unit operations, particularly separation columns - ranging from graphical and
+    shortcut methods to rigorous stage-by-stage and rate-based models.
+    """
+    MCCABE_THIELE = PermissibleValue(
+        text="MCCABE_THIELE",
+        description="McCabe-Thiele graphical method for binary distillation")
+    PONCHON_SAVARIT = PermissibleValue(
+        text="PONCHON_SAVARIT",
+        description="Ponchon-Savarit enthalpy-composition graphical method for binary distillation")
+    FENSKE_UNDERWOOD_GILLILAND = PermissibleValue(
+        text="FENSKE_UNDERWOOD_GILLILAND",
+        description="Fenske-Underwood-Gilliland shortcut method for multicomponent distillation")
+    KREMSER = PermissibleValue(
+        text="KREMSER",
+        description="Kremser shortcut method for absorber and stripper design")
+    MESH = PermissibleValue(
+        text="MESH",
+        description="""Rigorous equilibrium-stage solution of the Material, Equilibrium, Summation and Heat (enthalpy) equations""")
+    INSIDE_OUT = PermissibleValue(
+        text="INSIDE_OUT",
+        description="Inside-out algorithm for rigorous equilibrium-stage column convergence")
+    RATE_BASED = PermissibleValue(
+        text="RATE_BASED",
+        description="Rate-based (nonequilibrium) model accounting for mass and heat transfer rates")
+    EQUILIBRIUM_STAGE = PermissibleValue(
+        text="EQUILIBRIUM_STAGE",
+        description="Generic equilibrium-stage model assuming each stage reaches phase equilibrium")
+    SHORTCUT = PermissibleValue(
+        text="SHORTCUT",
+        description="Generic shortcut / approximate design method")
+    RIGOROUS = PermissibleValue(
+        text="RIGOROUS",
+        description="Generic rigorous design method")
+    PINCH_ANALYSIS = PermissibleValue(
+        text="PINCH_ANALYSIS",
+        description="Pinch analysis for heat-exchanger network and energy integration")
+
+    _defn = EnumDefinition(
+        name="DesignSimulationMethod",
+        description="""Methods used to design or simulate unit operations, particularly separation columns - ranging from graphical and shortcut methods to rigorous stage-by-stage and rate-based models.""",
+    )
+
+class FlowsheetSolutionApproach(EnumDefinitionImpl):
+    """
+    The overall computational strategy used to converge a process flowsheet.
+    """
+    SEQUENTIAL_MODULAR = PermissibleValue(
+        text="SEQUENTIAL_MODULAR",
+        description="Units solved one at a time in sequence, iterating on recycle tear streams")
+    EQUATION_ORIENTED = PermissibleValue(
+        text="EQUATION_ORIENTED",
+        description="All model equations assembled and solved simultaneously")
+    SIMULTANEOUS_MODULAR = PermissibleValue(
+        text="SIMULTANEOUS_MODULAR",
+        description="Hybrid approach combining modular unit models with a simultaneous convergence layer")
+
+    _defn = EnumDefinition(
+        name="FlowsheetSolutionApproach",
+        description="The overall computational strategy used to converge a process flowsheet.",
+    )
+
+class ProcessSimulator(EnumDefinitionImpl):
+    """
+    Process simulation software packages used to model chemical and biochemical process flowsheets.
+    """
+    ASPEN_PLUS = PermissibleValue(
+        text="ASPEN_PLUS",
+        description="Aspen Plus steady-state process simulator (AspenTech)")
+    ASPEN_HYSYS = PermissibleValue(
+        text="ASPEN_HYSYS",
+        description="Aspen HYSYS process simulator (AspenTech)")
+    ASPEN_CUSTOM_MODELER = PermissibleValue(
+        text="ASPEN_CUSTOM_MODELER",
+        description="Aspen Custom Modeler for user-defined unit operation models (AspenTech)")
+    UNISIM_DESIGN = PermissibleValue(
+        text="UNISIM_DESIGN",
+        description="Honeywell UniSim Design process simulator")
+    PRO_II = PermissibleValue(
+        text="PRO_II",
+        description="AVEVA Pro/II (formerly SimSci Pro/II) process simulator")
+    AVEVA_PROCESS_SIMULATION = PermissibleValue(
+        text="AVEVA_PROCESS_SIMULATION",
+        description="AVEVA Process Simulation (formerly SimCentral)")
+    CHEMCAD = PermissibleValue(
+        text="CHEMCAD",
+        description="ChemCAD process simulator (Chemstations)")
+    DWSIM = PermissibleValue(
+        text="DWSIM",
+        description="DWSIM open-source CAPE-OPEN process simulator")
+    COCO_SIMULATOR = PermissibleValue(
+        text="COCO_SIMULATOR",
+        description="COCO/COFE free CAPE-OPEN flowsheeting environment")
+    GPROMS = PermissibleValue(
+        text="GPROMS",
+        description="gPROMS equation-oriented process modeling environment (Siemens / PSE)")
+    PROSIMPLUS = PermissibleValue(
+        text="PROSIMPLUS",
+        description="ProSimPlus steady-state process simulator (ProSim)")
+    PETRO_SIM = PermissibleValue(
+        text="PETRO_SIM",
+        description="KBC Petro-SIM process simulator")
+    BIOSTEAM = PermissibleValue(
+        text="BIOSTEAM",
+        description="BioSTEAM open-source biorefinery simulation and techno-economic analysis package")
+    SUPERPRO_DESIGNER = PermissibleValue(
+        text="SUPERPRO_DESIGNER",
+        description="SuperPro Designer batch and bioprocess simulator (Intelligen)")
+    IDAES = PermissibleValue(
+        text="IDAES",
+        description="IDAES open-source equation-oriented process systems engineering platform (US DOE)")
+    CAPE_OPEN = PermissibleValue(
+        text="CAPE_OPEN",
+        description="A CAPE-OPEN compliant simulator or unit (interoperability standard, simulator unspecified)")
+
+    _defn = EnumDefinition(
+        name="ProcessSimulator",
+        description="Process simulation software packages used to model chemical and biochemical process flowsheets.",
+    )
+
+class ChemicalIdentifierScheme(EnumDefinitionImpl):
+    """
+    Schemes used to identify chemical substances, including registry numbers, line notations, structure-derived keys,
+    and database accessions.
+    """
+    CAS_RN = PermissibleValue(
+        text="CAS_RN",
+        description="CAS Registry Number assigned by the Chemical Abstracts Service")
+    SMILES = PermissibleValue(
+        text="SMILES",
+        description="Simplified Molecular-Input Line-Entry System structure notation")
+    INCHI = PermissibleValue(
+        text="INCHI",
+        description="IUPAC International Chemical Identifier structure string")
+    INCHIKEY = PermissibleValue(
+        text="INCHIKEY",
+        description="Hashed fixed-length form of an InChI")
+    IUPAC_NAME = PermissibleValue(
+        text="IUPAC_NAME",
+        description="Systematic IUPAC chemical name")
+    MOLECULAR_FORMULA = PermissibleValue(
+        text="MOLECULAR_FORMULA",
+        description="Molecular or empirical chemical formula")
+    PUBCHEM_CID = PermissibleValue(
+        text="PUBCHEM_CID",
+        description="PubChem Compound Identifier")
+    CHEBI_ID = PermissibleValue(
+        text="CHEBI_ID",
+        description="ChEBI ontology identifier")
+    KEGG_COMPOUND = PermissibleValue(
+        text="KEGG_COMPOUND",
+        description="KEGG COMPOUND database accession")
+    DRUGBANK_ID = PermissibleValue(
+        text="DRUGBANK_ID",
+        description="DrugBank accession")
+    EC_NUMBER = PermissibleValue(
+        text="EC_NUMBER",
+        description="European Community (EINECS/EC) substance number")
+
+    _defn = EnumDefinition(
+        name="ChemicalIdentifierScheme",
+        description="""Schemes used to identify chemical substances, including registry numbers, line notations, structure-derived keys, and database accessions.""",
+    )
+
+class CurrencyCode(EnumDefinitionImpl):
+    """
+    World currencies by ISO 4217 alpha-3 code. The numeric_code, symbol, and minor_unit (number of decimal places)
+    annotations record the corresponding ISO 4217 attributes.
+    """
+    USD = PermissibleValue(
+        text="USD",
+        title="United States dollar",
+        description="United States dollar")
+    EUR = PermissibleValue(
+        text="EUR",
+        title="Euro",
+        description="Euro")
+    JPY = PermissibleValue(
+        text="JPY",
+        title="Japanese yen",
+        description="Japanese yen")
+    GBP = PermissibleValue(
+        text="GBP",
+        title="Pound sterling",
+        description="British pound sterling")
+    CNY = PermissibleValue(
+        text="CNY",
+        title="Renminbi",
+        description="Chinese yuan renminbi")
+    AUD = PermissibleValue(
+        text="AUD",
+        title="Australian dollar",
+        description="Australian dollar")
+    CAD = PermissibleValue(
+        text="CAD",
+        title="Canadian dollar",
+        description="Canadian dollar")
+    CHF = PermissibleValue(
+        text="CHF",
+        title="Swiss franc",
+        description="Swiss franc")
+    HKD = PermissibleValue(
+        text="HKD",
+        title="Hong Kong dollar",
+        description="Hong Kong dollar")
+    SGD = PermissibleValue(
+        text="SGD",
+        title="Singapore dollar",
+        description="Singapore dollar")
+    SEK = PermissibleValue(
+        text="SEK",
+        title="Swedish krona",
+        description="Swedish krona")
+    NOK = PermissibleValue(
+        text="NOK",
+        title="Norwegian krone",
+        description="Norwegian krone")
+    DKK = PermissibleValue(
+        text="DKK",
+        title="Danish krone",
+        description="Danish krone")
+    NZD = PermissibleValue(
+        text="NZD",
+        title="New Zealand dollar",
+        description="New Zealand dollar")
+    KRW = PermissibleValue(
+        text="KRW",
+        title="South Korean won",
+        description="South Korean won")
+    INR = PermissibleValue(
+        text="INR",
+        title="Indian rupee",
+        description="Indian rupee")
+    BRL = PermissibleValue(
+        text="BRL",
+        title="Brazilian real",
+        description="Brazilian real")
+    ZAR = PermissibleValue(
+        text="ZAR",
+        title="South African rand",
+        description="South African rand")
+    RUB = PermissibleValue(
+        text="RUB",
+        title="Russian ruble",
+        description="Russian ruble")
+    MXN = PermissibleValue(
+        text="MXN",
+        title="Mexican peso",
+        description="Mexican peso")
+    TRY = PermissibleValue(
+        text="TRY",
+        title="Turkish lira",
+        description="Turkish lira")
+    PLN = PermissibleValue(
+        text="PLN",
+        title="Polish zloty",
+        description="Polish zloty")
+    THB = PermissibleValue(
+        text="THB",
+        title="Thai baht",
+        description="Thai baht")
+    IDR = PermissibleValue(
+        text="IDR",
+        title="Indonesian rupiah",
+        description="Indonesian rupiah")
+    MYR = PermissibleValue(
+        text="MYR",
+        title="Malaysian ringgit",
+        description="Malaysian ringgit")
+    PHP = PermissibleValue(
+        text="PHP",
+        title="Philippine peso",
+        description="Philippine peso")
+    AED = PermissibleValue(
+        text="AED",
+        title="UAE dirham",
+        description="United Arab Emirates dirham")
+    SAR = PermissibleValue(
+        text="SAR",
+        title="Saudi riyal",
+        description="Saudi riyal")
+    ILS = PermissibleValue(
+        text="ILS",
+        title="Israeli new shekel",
+        description="Israeli new shekel")
+    CZK = PermissibleValue(
+        text="CZK",
+        title="Czech koruna",
+        description="Czech koruna")
+    HUF = PermissibleValue(
+        text="HUF",
+        title="Hungarian forint",
+        description="Hungarian forint")
+    RON = PermissibleValue(
+        text="RON",
+        title="Romanian leu",
+        description="Romanian leu")
+    UAH = PermissibleValue(
+        text="UAH",
+        title="Ukrainian hryvnia",
+        description="Ukrainian hryvnia")
+    CLP = PermissibleValue(
+        text="CLP",
+        title="Chilean peso",
+        description="Chilean peso")
+    COP = PermissibleValue(
+        text="COP",
+        title="Colombian peso",
+        description="Colombian peso")
+    ARS = PermissibleValue(
+        text="ARS",
+        title="Argentine peso",
+        description="Argentine peso")
+    EGP = PermissibleValue(
+        text="EGP",
+        title="Egyptian pound",
+        description="Egyptian pound")
+    NGN = PermissibleValue(
+        text="NGN",
+        title="Nigerian naira",
+        description="Nigerian naira")
+    KES = PermissibleValue(
+        text="KES",
+        title="Kenyan shilling",
+        description="Kenyan shilling")
+    PKR = PermissibleValue(
+        text="PKR",
+        title="Pakistani rupee",
+        description="Pakistani rupee")
+    BDT = PermissibleValue(
+        text="BDT",
+        title="Bangladeshi taka",
+        description="Bangladeshi taka")
+    VND = PermissibleValue(
+        text="VND",
+        title="Vietnamese dong",
+        description="Vietnamese dong")
+    TWD = PermissibleValue(
+        text="TWD",
+        title="New Taiwan dollar",
+        description="New Taiwan dollar")
+    KWD = PermissibleValue(
+        text="KWD",
+        title="Kuwaiti dinar",
+        description="Kuwaiti dinar")
+    BHD = PermissibleValue(
+        text="BHD",
+        title="Bahraini dinar",
+        description="Bahraini dinar")
+    OMR = PermissibleValue(
+        text="OMR",
+        title="Omani rial",
+        description="Omani rial")
+    QAR = PermissibleValue(
+        text="QAR",
+        title="Qatari riyal",
+        description="Qatari riyal")
+    ISK = PermissibleValue(
+        text="ISK",
+        title="Icelandic krona",
+        description="Icelandic krona")
+
+    _defn = EnumDefinition(
+        name="CurrencyCode",
+        description="""World currencies by ISO 4217 alpha-3 code. The numeric_code, symbol, and minor_unit (number of decimal places) annotations record the corresponding ISO 4217 attributes.""",
     )
 
 class LengthUnitEnum(EnumDefinitionImpl):
@@ -24701,6 +30487,84 @@ class DataSizeUnitEnum(EnumDefinitionImpl):
     _defn = EnumDefinition(
         name="DataSizeUnitEnum",
         description="Units of digital data size",
+    )
+
+class MassFlowRateUnitEnum(EnumDefinitionImpl):
+    """
+    Units of mass flow rate (mass per unit time)
+    """
+    KILOGRAM_PER_SECOND = PermissibleValue(
+        text="KILOGRAM_PER_SECOND",
+        description="Kilograms per second (SI)")
+    KILOGRAM_PER_HOUR = PermissibleValue(
+        text="KILOGRAM_PER_HOUR",
+        description="Kilograms per hour")
+    GRAM_PER_SECOND = PermissibleValue(
+        text="GRAM_PER_SECOND",
+        description="Grams per second")
+    TONNE_PER_HOUR = PermissibleValue(
+        text="TONNE_PER_HOUR",
+        description="Metric tonnes per hour")
+    TONNE_PER_DAY = PermissibleValue(
+        text="TONNE_PER_DAY",
+        description="Metric tonnes per day")
+    POUND_PER_HOUR = PermissibleValue(
+        text="POUND_PER_HOUR",
+        description="Pounds (mass) per hour")
+
+    _defn = EnumDefinition(
+        name="MassFlowRateUnitEnum",
+        description="Units of mass flow rate (mass per unit time)",
+    )
+
+class MolarFlowRateUnitEnum(EnumDefinitionImpl):
+    """
+    Units of molar flow rate (amount of substance per unit time)
+    """
+    MOLE_PER_SECOND = PermissibleValue(
+        text="MOLE_PER_SECOND",
+        description="Moles per second (SI)")
+    MOLE_PER_HOUR = PermissibleValue(
+        text="MOLE_PER_HOUR",
+        description="Moles per hour")
+    KILOMOLE_PER_HOUR = PermissibleValue(
+        text="KILOMOLE_PER_HOUR",
+        description="Kilomoles per hour")
+    KILOMOLE_PER_SECOND = PermissibleValue(
+        text="KILOMOLE_PER_SECOND",
+        description="Kilomoles per second")
+
+    _defn = EnumDefinition(
+        name="MolarFlowRateUnitEnum",
+        description="Units of molar flow rate (amount of substance per unit time)",
+    )
+
+class VolumetricFlowRateUnitEnum(EnumDefinitionImpl):
+    """
+    Units of volumetric flow rate (volume per unit time)
+    """
+    CUBIC_METER_PER_SECOND = PermissibleValue(
+        text="CUBIC_METER_PER_SECOND",
+        description="Cubic meters per second (SI)")
+    CUBIC_METER_PER_HOUR = PermissibleValue(
+        text="CUBIC_METER_PER_HOUR",
+        description="Cubic meters per hour")
+    LITER_PER_SECOND = PermissibleValue(
+        text="LITER_PER_SECOND",
+        description="Liters per second")
+    LITER_PER_MINUTE = PermissibleValue(
+        text="LITER_PER_MINUTE",
+        description="Liters per minute")
+    GALLON_PER_MINUTE = PermissibleValue(
+        text="GALLON_PER_MINUTE",
+        description="US gallons per minute")
+    CUBIC_FOOT_PER_MINUTE = PermissibleValue(
+        text="CUBIC_FOOT_PER_MINUTE",
+        description="Cubic feet per minute")
+
+    _defn = EnumDefinition(
+        name="VolumetricFlowRateUnitEnum",
+        description="Units of volumetric flow rate (volume per unit time)",
     )
 
 class QuantityKindEnum(EnumDefinitionImpl):
@@ -25617,6 +31481,143 @@ class OpenSourceMaturityLevel(EnumDefinitionImpl):
     _defn = EnumDefinition(
         name="OpenSourceMaturityLevel",
         description="Maturity assessment for open source projects",
+    )
+
+class SystemLifeCycleProcess15288(EnumDefinitionImpl):
+    """
+    The 30 system life cycle processes grouped by ISO/IEC/IEEE 15288:2015.
+    """
+    ACQUISITION = PermissibleValue(
+        text="ACQUISITION",
+        title="Acquisition Process")
+    SUPPLY = PermissibleValue(
+        text="SUPPLY",
+        title="Supply Process")
+    LIFE_CYCLE_MODEL_MANAGEMENT = PermissibleValue(
+        text="LIFE_CYCLE_MODEL_MANAGEMENT",
+        title="Life Cycle Model Management Process")
+    INFRASTRUCTURE_MANAGEMENT = PermissibleValue(
+        text="INFRASTRUCTURE_MANAGEMENT",
+        title="Infrastructure Management Process")
+    PORTFOLIO_MANAGEMENT = PermissibleValue(
+        text="PORTFOLIO_MANAGEMENT",
+        title="Portfolio Management Process")
+    HUMAN_RESOURCE_MANAGEMENT = PermissibleValue(
+        text="HUMAN_RESOURCE_MANAGEMENT",
+        title="Human Resource Management Process")
+    QUALITY_MANAGEMENT = PermissibleValue(
+        text="QUALITY_MANAGEMENT",
+        title="Quality Management Process")
+    PROJECT_PLANNING = PermissibleValue(
+        text="PROJECT_PLANNING",
+        title="Project Planning Process")
+    PROJECT_ASSESSMENT_AND_CONTROL = PermissibleValue(
+        text="PROJECT_ASSESSMENT_AND_CONTROL",
+        title="Project Assessment and Control Process")
+    DECISION_MANAGEMENT = PermissibleValue(
+        text="DECISION_MANAGEMENT",
+        title="Decision Management Process")
+    RISK_MANAGEMENT = PermissibleValue(
+        text="RISK_MANAGEMENT",
+        title="Risk Management Process")
+    CONFIGURATION_MANAGEMENT = PermissibleValue(
+        text="CONFIGURATION_MANAGEMENT",
+        title="Configuration Management Process")
+    INFORMATION_MANAGEMENT = PermissibleValue(
+        text="INFORMATION_MANAGEMENT",
+        title="Information Management Process")
+    MEASUREMENT = PermissibleValue(
+        text="MEASUREMENT",
+        title="Measurement Process")
+    QUALITY_ASSURANCE = PermissibleValue(
+        text="QUALITY_ASSURANCE",
+        title="Quality Assurance Process")
+    KNOWLEDGE_MANAGEMENT = PermissibleValue(
+        text="KNOWLEDGE_MANAGEMENT",
+        title="Knowledge Management Process")
+    BUSINESS_OR_MISSION_ANALYSIS = PermissibleValue(
+        text="BUSINESS_OR_MISSION_ANALYSIS",
+        title="Business or Mission Analysis Process")
+    STAKEHOLDER_NEEDS_AND_REQUIREMENTS_DEFINITION = PermissibleValue(
+        text="STAKEHOLDER_NEEDS_AND_REQUIREMENTS_DEFINITION",
+        title="Stakeholder Needs and Requirements Definition Process")
+    SYSTEM_REQUIREMENTS_DEFINITION = PermissibleValue(
+        text="SYSTEM_REQUIREMENTS_DEFINITION",
+        title="System Requirements Definition Process")
+    ARCHITECTURE_DEFINITION = PermissibleValue(
+        text="ARCHITECTURE_DEFINITION",
+        title="Architecture Definition Process")
+    DESIGN_DEFINITION = PermissibleValue(
+        text="DESIGN_DEFINITION",
+        title="Design Definition Process")
+    SYSTEM_ANALYSIS = PermissibleValue(
+        text="SYSTEM_ANALYSIS",
+        title="System Analysis Process")
+    IMPLEMENTATION = PermissibleValue(
+        text="IMPLEMENTATION",
+        title="Implementation Process")
+    INTEGRATION = PermissibleValue(
+        text="INTEGRATION",
+        title="Integration Process")
+    VERIFICATION = PermissibleValue(
+        text="VERIFICATION",
+        title="Verification Process")
+    TRANSITION = PermissibleValue(
+        text="TRANSITION",
+        title="Transition Process")
+    VALIDATION = PermissibleValue(
+        text="VALIDATION",
+        title="Validation Process")
+    OPERATION = PermissibleValue(
+        text="OPERATION",
+        title="Operation Process")
+    MAINTENANCE = PermissibleValue(
+        text="MAINTENANCE",
+        title="Maintenance Process")
+    DISPOSAL = PermissibleValue(
+        text="DISPOSAL",
+        title="Disposal Process")
+
+    _defn = EnumDefinition(
+        name="SystemLifeCycleProcess15288",
+        description="The 30 system life cycle processes grouped by ISO/IEC/IEEE 15288:2015.",
+    )
+
+class VerificationValidationProcessIEEE1012(EnumDefinitionImpl):
+    """
+    Verification and validation processes applied across the system, software, and hardware life cycle.
+    """
+    CONCEPT_AND_REQUIREMENTS_V_AND_V = PermissibleValue(
+        text="CONCEPT_AND_REQUIREMENTS_V_AND_V",
+        title="Concept and Requirements Verification and Validation")
+    ARCHITECTURE_AND_DESIGN_V_AND_V = PermissibleValue(
+        text="ARCHITECTURE_AND_DESIGN_V_AND_V",
+        title="Architecture and Design Verification and Validation")
+    IMPLEMENTATION_V_AND_V = PermissibleValue(
+        text="IMPLEMENTATION_V_AND_V",
+        title="Implementation Verification and Validation")
+    INTEGRATION_V_AND_V = PermissibleValue(
+        text="INTEGRATION_V_AND_V",
+        title="Integration Verification and Validation")
+    QUALIFICATION_TESTING = PermissibleValue(
+        text="QUALIFICATION_TESTING",
+        title="Qualification Testing")
+    INSTALLATION_AND_CHECKOUT = PermissibleValue(
+        text="INSTALLATION_AND_CHECKOUT",
+        title="Installation and Checkout Verification and Validation")
+    OPERATION_V_AND_V = PermissibleValue(
+        text="OPERATION_V_AND_V",
+        title="Operation Verification and Validation")
+    MAINTENANCE_V_AND_V = PermissibleValue(
+        text="MAINTENANCE_V_AND_V",
+        title="Maintenance Verification and Validation")
+    DISPOSAL_V_AND_V = PermissibleValue(
+        text="DISPOSAL_V_AND_V",
+        title="Disposal Verification and Validation")
+
+    _defn = EnumDefinition(
+        name="VerificationValidationProcessIEEE1012",
+        description="Verification and validation processes applied across the system, software, and hardware life cycle.",
     )
 
 class OWLProfileEnum(EnumDefinitionImpl):
@@ -28453,6 +34454,519 @@ class SampleProcessingOperationEnum(EnumDefinitionImpl):
         description="General sample processing operations in automated laboratories",
     )
 
+class LabUnitOperationEnum(EnumDefinitionImpl):
+    """
+    Composable sample-manipulation primitives ("unit operations") used to build sample-preparation protocols in a
+    cloud laboratory. Modeled on the ECL Symbolic Lab Language sample-preparation unit operations (Transfer, Aliquot,
+    Mix, Incubate, Filter, Centrifuge, Pellet, Resuspend, etc.). Complements the lower level
+    LiquidHandlingOperationEnum and SampleProcessingOperationEnum in lab_automation/operations.
+    """
+    DEFINE = PermissibleValue(
+        text="DEFINE",
+        title="define",
+        description="""Declare a new sample, container, or model and assign it a label for later reference in the protocol""")
+    LABEL_SAMPLE = PermissibleValue(
+        text="LABEL_SAMPLE",
+        title="label sample",
+        description="Assign a human-readable label to a sample so it can be referenced by later unit operations")
+    LABEL_CONTAINER = PermissibleValue(
+        text="LABEL_CONTAINER",
+        title="label container",
+        description="Assign a human-readable label to a container so it can be referenced by later unit operations")
+    TRANSFER = PermissibleValue(
+        text="TRANSFER",
+        title="transfer",
+        description="Move a specified amount of sample from one source to one or more destinations")
+    ALIQUOT = PermissibleValue(
+        text="ALIQUOT",
+        title="aliquot",
+        description="Distribute a sample into multiple equal portions in separate containers")
+    CONSOLIDATE = PermissibleValue(
+        text="CONSOLIDATE",
+        title="consolidate",
+        description="Combine multiple source samples into a single destination container")
+    DILUTE = PermissibleValue(
+        text="DILUTE",
+        title="dilute",
+        description="Reduce the concentration of a sample by adding diluent to a target volume or concentration")
+    SERIAL_DILUTE = PermissibleValue(
+        text="SERIAL_DILUTE",
+        title="serial dilute",
+        description="Create a stepwise series of dilutions by repeatedly transferring and diluting a sample")
+    FILL_TO_VOLUME = PermissibleValue(
+        text="FILL_TO_VOLUME",
+        title="fill to volume",
+        description="Add solvent to a sample until a specified total volume is reached")
+    RESUSPEND = PermissibleValue(
+        text="RESUSPEND",
+        title="resuspend",
+        description="Dissolve or re-disperse a solid or pellet in a specified volume of solvent")
+    PREPARE_STOCK_SOLUTION = PermissibleValue(
+        text="PREPARE_STOCK_SOLUTION",
+        title="prepare stock solution",
+        description="Prepare a solution of defined composition from components and solvent")
+    ADJUST_PH = PermissibleValue(
+        text="ADJUST_PH",
+        title="adjust pH",
+        description="Add titrant to bring a sample to a target pH")
+    MIX = PermissibleValue(
+        text="MIX",
+        title="mix",
+        description="""Homogenize a sample by pipetting, inversion, vortexing, stirring, sonication, or related agitation""",
+        meaning=CHMO["0001685"])
+    INCUBATE = PermissibleValue(
+        text="INCUBATE",
+        title="incubate",
+        description="Hold a sample at controlled temperature (and optionally mixing) for a specified duration")
+    WAIT = PermissibleValue(
+        text="WAIT",
+        title="wait",
+        description="Pause the protocol for a specified duration without other manipulation")
+    CENTRIFUGE = PermissibleValue(
+        text="CENTRIFUGE",
+        title="centrifuge",
+        description="Apply centrifugal force to a sample to separate components by density",
+        meaning=OBI["0302886"])
+    PELLET = PermissibleValue(
+        text="PELLET",
+        title="pellet",
+        description="""Centrifuge to precipitate solids, optionally aspirate the supernatant, and optionally resuspend the pellet""")
+    FILTER = PermissibleValue(
+        text="FILTER",
+        title="filter",
+        description="Pass a sample through a filter to separate particulates or to sterilize",
+        meaning=CHMO["0001640"])
+    MAGNETIC_BEAD_SEPARATION = PermissibleValue(
+        text="MAGNETIC_BEAD_SEPARATION",
+        title="magnetic bead separation",
+        description="Isolate target analytes bound to magnetic beads using a magnetic field")
+    MOVE_TO_MAGNET = PermissibleValue(
+        text="MOVE_TO_MAGNET",
+        title="move to magnet",
+        description="Place a container on a magnetic rack to immobilize magnetic beads")
+    REMOVE_FROM_MAGNET = PermissibleValue(
+        text="REMOVE_FROM_MAGNET",
+        title="remove from magnet",
+        description="Remove a container from a magnetic rack to release magnetic beads")
+    COVER = PermissibleValue(
+        text="COVER",
+        title="cover",
+        description="Apply a lid, cap, or seal to a container")
+    UNCOVER = PermissibleValue(
+        text="UNCOVER",
+        title="uncover",
+        description="Remove a lid, cap, or seal from a container")
+    DEGAS = PermissibleValue(
+        text="DEGAS",
+        title="degas",
+        description="Remove dissolved gases from a liquid sample",
+        meaning=CHMO["0002772"])
+    DESICCATE = PermissibleValue(
+        text="DESICCATE",
+        title="desiccate",
+        description="Remove moisture from a sample using a desiccant or controlled-humidity chamber")
+    EVAPORATE = PermissibleValue(
+        text="EVAPORATE",
+        title="evaporate",
+        description="Remove solvent from a sample by evaporation, optionally under reduced pressure",
+        meaning=CHMO["0001574"])
+    LYOPHILIZE = PermissibleValue(
+        text="LYOPHILIZE",
+        title="lyophilize",
+        description="Freeze-dry a sample to remove solvent by sublimation under vacuum",
+        meaning=CHMO["0001553"])
+    FLASH_FREEZE = PermissibleValue(
+        text="FLASH_FREEZE",
+        title="flash freeze",
+        description="Rapidly freeze a sample, typically in liquid nitrogen")
+    AUTOCLAVE = PermissibleValue(
+        text="AUTOCLAVE",
+        title="autoclave",
+        description="Sterilize a sample or labware using pressurized saturated steam")
+    GRIND = PermissibleValue(
+        text="GRIND",
+        title="grind",
+        description="Mechanically reduce a solid sample to smaller particles or powder",
+        meaning=CHMO["0001652"])
+    MICROWAVE_DIGESTION = PermissibleValue(
+        text="MICROWAVE_DIGESTION",
+        title="microwave digestion",
+        description="Digest a sample in acid under microwave heating to bring analytes into solution")
+
+    _defn = EnumDefinition(
+        name="LabUnitOperationEnum",
+        description="""Composable sample-manipulation primitives (\"unit operations\") used to build sample-preparation protocols in a cloud laboratory. Modeled on the ECL Symbolic Lab Language sample-preparation unit operations (Transfer, Aliquot, Mix, Incubate, Filter, Centrifuge, Pellet, Resuspend, etc.). Complements the lower level LiquidHandlingOperationEnum and SampleProcessingOperationEnum in lab_automation/operations.""",
+    )
+
+class CloudLabExperimentEnum(EnumDefinitionImpl):
+    """
+    Higher-level experiment and assay functions offered as protocols by a cloud laboratory, modeled on the ECL
+    Symbolic Lab Language experiment functions and grouped by category (synthesis, separations/chromatography,
+    spectroscopy, mass spectrometry, bioassays, crystallography, property measurement, cellular). Cross-referenced to
+    the assay value sets in bio/assays/ (OBIAssayEnum, BAOBioassayEnum) and to analytical_chemistry vocabularies;
+    `meaning:` maps to OBI/CHMO classes where an equivalent assay or analytical method exists.
+    """
+    DNA_SYNTHESIS = PermissibleValue(
+        text="DNA_SYNTHESIS",
+        title="DNA synthesis",
+        description="Solid-phase chemical synthesis of DNA oligonucleotides")
+    RNA_SYNTHESIS = PermissibleValue(
+        text="RNA_SYNTHESIS",
+        title="RNA synthesis",
+        description="Solid-phase chemical synthesis of RNA oligonucleotides")
+    PNA_SYNTHESIS = PermissibleValue(
+        text="PNA_SYNTHESIS",
+        title="PNA synthesis",
+        description="Solid-phase chemical synthesis of peptide nucleic acid oligomers")
+    PEPTIDE_SYNTHESIS = PermissibleValue(
+        text="PEPTIDE_SYNTHESIS",
+        title="peptide synthesis",
+        description="Solid-phase chemical synthesis of peptides")
+    PCR = PermissibleValue(
+        text="PCR",
+        title="PCR",
+        description="Polymerase chain reaction amplification of nucleic acids",
+        meaning=OBI["0000415"])
+    BIOCONJUGATION = PermissibleValue(
+        text="BIOCONJUGATION",
+        title="bioconjugation",
+        description="Covalent coupling of biomolecules or labels to a target molecule")
+    HPLC = PermissibleValue(
+        text="HPLC",
+        title="HPLC",
+        description="High-performance liquid chromatography separation",
+        meaning=CHMO["0001009"])
+    FPLC = PermissibleValue(
+        text="FPLC",
+        title="FPLC",
+        description="Fast protein liquid chromatography separation")
+    FLASH_CHROMATOGRAPHY = PermissibleValue(
+        text="FLASH_CHROMATOGRAPHY",
+        title="flash chromatography",
+        description="Medium-pressure flash column chromatography separation",
+        meaning=CHMO["0002582"])
+    GAS_CHROMATOGRAPHY = PermissibleValue(
+        text="GAS_CHROMATOGRAPHY",
+        title="gas chromatography",
+        description="Gas chromatography separation of volatile analytes",
+        meaning=CHMO["0001002"])
+    ION_CHROMATOGRAPHY = PermissibleValue(
+        text="ION_CHROMATOGRAPHY",
+        title="ion chromatography",
+        description="Chromatographic separation of ionic species",
+        meaning=CHMO["0002874"])
+    SUPERCRITICAL_FLUID_CHROMATOGRAPHY = PermissibleValue(
+        text="SUPERCRITICAL_FLUID_CHROMATOGRAPHY",
+        title="supercritical fluid chromatography",
+        description="Chromatographic separation using a supercritical fluid mobile phase")
+    SOLID_PHASE_EXTRACTION = PermissibleValue(
+        text="SOLID_PHASE_EXTRACTION",
+        title="solid phase extraction",
+        description="Sample cleanup or enrichment by selective retention on a solid sorbent")
+    LIQUID_LIQUID_EXTRACTION = PermissibleValue(
+        text="LIQUID_LIQUID_EXTRACTION",
+        title="liquid-liquid extraction",
+        description="Separation of analytes between two immiscible liquid phases",
+        meaning=CHMO["0001600"])
+    CROSS_FLOW_FILTRATION = PermissibleValue(
+        text="CROSS_FLOW_FILTRATION",
+        title="cross-flow filtration",
+        description="Tangential-flow filtration for concentration or buffer exchange")
+    DIALYSIS = PermissibleValue(
+        text="DIALYSIS",
+        title="dialysis",
+        description="Separation of molecules by size across a semipermeable membrane",
+        meaning=CHMO["0001522"])
+    AGAROSE_GEL_ELECTROPHORESIS = PermissibleValue(
+        text="AGAROSE_GEL_ELECTROPHORESIS",
+        title="agarose gel electrophoresis",
+        description="Size-based separation of nucleic acids in an agarose gel",
+        meaning=CHMO["0001022"])
+    PAGE = PermissibleValue(
+        text="PAGE",
+        title="PAGE",
+        description="Polyacrylamide gel electrophoresis separation of biomolecules",
+        meaning=CHMO["0001023"])
+    CAPILLARY_GEL_ELECTROPHORESIS_SDS = PermissibleValue(
+        text="CAPILLARY_GEL_ELECTROPHORESIS_SDS",
+        title="capillary gel electrophoresis SDS",
+        description="SDS capillary gel electrophoresis sizing of proteins")
+    CAPILLARY_ISOELECTRIC_FOCUSING = PermissibleValue(
+        text="CAPILLARY_ISOELECTRIC_FOCUSING",
+        title="capillary isoelectric focusing",
+        description="Separation of proteins by isoelectric point in a capillary",
+        meaning=CHMO["0001033"])
+    WESTERN_BLOT = PermissibleValue(
+        text="WESTERN_BLOT",
+        title="Western blot",
+        description="Immunodetection of proteins separated by electrophoresis",
+        meaning=OBI["0000854"])
+    NMR = PermissibleValue(
+        text="NMR",
+        title="NMR",
+        description="One-dimensional nuclear magnetic resonance spectroscopy",
+        meaning=CHMO["0000591"])
+    NMR_2D = PermissibleValue(
+        text="NMR_2D",
+        title="2D NMR",
+        description="Two-dimensional nuclear magnetic resonance spectroscopy",
+        meaning=CHMO["0000598"])
+    ABSORBANCE_SPECTROSCOPY = PermissibleValue(
+        text="ABSORBANCE_SPECTROSCOPY",
+        title="absorbance spectroscopy",
+        description="Measurement of absorbance across a wavelength range")
+    ABSORBANCE_INTENSITY = PermissibleValue(
+        text="ABSORBANCE_INTENSITY",
+        title="absorbance intensity",
+        description="Measurement of absorbance at one or more discrete wavelengths")
+    ABSORBANCE_KINETICS = PermissibleValue(
+        text="ABSORBANCE_KINETICS",
+        title="absorbance kinetics",
+        description="Time-resolved measurement of absorbance")
+    FLUORESCENCE_SPECTROSCOPY = PermissibleValue(
+        text="FLUORESCENCE_SPECTROSCOPY",
+        title="fluorescence spectroscopy",
+        description="Measurement of fluorescence emission across a wavelength range",
+        meaning=CHMO["0000287"])
+    FLUORESCENCE_INTENSITY = PermissibleValue(
+        text="FLUORESCENCE_INTENSITY",
+        title="fluorescence intensity",
+        description="Measurement of fluorescence intensity at discrete wavelengths")
+    FLUORESCENCE_KINETICS = PermissibleValue(
+        text="FLUORESCENCE_KINETICS",
+        title="fluorescence kinetics",
+        description="Time-resolved measurement of fluorescence intensity")
+    FLUORESCENCE_POLARIZATION = PermissibleValue(
+        text="FLUORESCENCE_POLARIZATION",
+        title="fluorescence polarization",
+        description="Measurement of fluorescence polarization/anisotropy")
+    LUMINESCENCE_SPECTROSCOPY = PermissibleValue(
+        text="LUMINESCENCE_SPECTROSCOPY",
+        title="luminescence spectroscopy",
+        description="Measurement of luminescence emission across a wavelength range",
+        meaning=CHMO["0002415"])
+    LUMINESCENCE_INTENSITY = PermissibleValue(
+        text="LUMINESCENCE_INTENSITY",
+        title="luminescence intensity",
+        description="Measurement of luminescence intensity at discrete wavelengths")
+    LUMINESCENCE_KINETICS = PermissibleValue(
+        text="LUMINESCENCE_KINETICS",
+        title="luminescence kinetics",
+        description="Time-resolved measurement of luminescence intensity")
+    IR_SPECTROSCOPY = PermissibleValue(
+        text="IR_SPECTROSCOPY",
+        title="IR spectroscopy",
+        description="Infrared absorption spectroscopy",
+        meaning=CHMO["0000630"])
+    RAMAN_SPECTROSCOPY = PermissibleValue(
+        text="RAMAN_SPECTROSCOPY",
+        title="Raman spectroscopy",
+        description="Raman scattering spectroscopy",
+        meaning=CHMO["0000656"])
+    CIRCULAR_DICHROISM = PermissibleValue(
+        text="CIRCULAR_DICHROISM",
+        title="circular dichroism",
+        description="Measurement of differential absorption of circularly polarized light")
+    DYNAMIC_LIGHT_SCATTERING = PermissibleValue(
+        text="DYNAMIC_LIGHT_SCATTERING",
+        title="dynamic light scattering",
+        description="Measurement of particle size distribution from scattered-light fluctuations",
+        meaning=CHMO["0000167"])
+    NEPHELOMETRY = PermissibleValue(
+        text="NEPHELOMETRY",
+        title="nephelometry",
+        description="Measurement of turbidity by scattered light")
+    THERMAL_SHIFT = PermissibleValue(
+        text="THERMAL_SHIFT",
+        title="thermal shift",
+        description="Measurement of protein thermal stability via a fluorescent thermal shift assay")
+    UV_MELTING = PermissibleValue(
+        text="UV_MELTING",
+        title="UV melting",
+        description="Measurement of nucleic acid or protein melting curves by UV absorbance")
+    MASS_SPECTROMETRY = PermissibleValue(
+        text="MASS_SPECTROMETRY",
+        title="mass spectrometry",
+        description="Determination of mass-to-charge ratios of ionized analytes",
+        meaning=CHMO["0000470"])
+    LCMS = PermissibleValue(
+        text="LCMS",
+        title="LC-MS",
+        description="Liquid chromatography coupled to mass spectrometry",
+        meaning=CHMO["0000524"])
+    GCMS = PermissibleValue(
+        text="GCMS",
+        title="GC-MS",
+        description="Gas chromatography coupled to mass spectrometry",
+        meaning=CHMO["0000497"])
+    ICPMS = PermissibleValue(
+        text="ICPMS",
+        title="ICP-MS",
+        description="Inductively coupled plasma mass spectrometry for elemental analysis",
+        meaning=CHMO["0000538"])
+    ELISA = PermissibleValue(
+        text="ELISA",
+        title="ELISA",
+        description="Enzyme-linked immunosorbent assay",
+        meaning=OBI["0000661"])
+    CAPILLARY_ELISA = PermissibleValue(
+        text="CAPILLARY_ELISA",
+        title="capillary ELISA",
+        description="Automated capillary-based enzyme-linked immunosorbent assay")
+    ALPHASCREEN = PermissibleValue(
+        text="ALPHASCREEN",
+        title="AlphaScreen",
+        description="Bead-based amplified luminescent proximity homogeneous assay")
+    BIOLAYER_INTERFEROMETRY = PermissibleValue(
+        text="BIOLAYER_INTERFEROMETRY",
+        title="biolayer interferometry",
+        description="Label-free measurement of biomolecular binding kinetics by interferometry",
+        meaning=OBI["0002107"])
+    QPCR = PermissibleValue(
+        text="QPCR",
+        title="qPCR",
+        description="Quantitative real-time polymerase chain reaction",
+        meaning=OBI["0000893"])
+    DNA_SEQUENCING = PermissibleValue(
+        text="DNA_SEQUENCING",
+        title="DNA sequencing",
+        description="Determination of nucleotide sequence of DNA (Sanger/capillary)",
+        meaning=OBI["0000626"])
+    TOTAL_PROTEIN_QUANTIFICATION = PermissibleValue(
+        text="TOTAL_PROTEIN_QUANTIFICATION",
+        title="total protein quantification",
+        description="Colorimetric or fluorometric quantification of total protein")
+    TOTAL_PROTEIN_DETECTION = PermissibleValue(
+        text="TOTAL_PROTEIN_DETECTION",
+        title="total protein detection",
+        description="Capillary-based detection and sizing of total protein")
+    DIFFERENTIAL_SCANNING_CALORIMETRY = PermissibleValue(
+        text="DIFFERENTIAL_SCANNING_CALORIMETRY",
+        title="differential scanning calorimetry",
+        description="Measurement of heat flow associated with thermal transitions",
+        meaning=CHMO["0000684"])
+    GROW_CRYSTAL = PermissibleValue(
+        text="GROW_CRYSTAL",
+        title="grow crystal",
+        description="Crystallization of a compound or macromolecule for structural analysis",
+        meaning=CHMO["0001477"])
+    POWDER_XRD = PermissibleValue(
+        text="POWDER_XRD",
+        title="powder XRD",
+        description="Powder X-ray diffraction analysis of crystalline solids",
+        meaning=CHMO["0000158"])
+    MEASURE_PH = PermissibleValue(
+        text="MEASURE_PH",
+        title="measure pH",
+        description="Measurement of sample pH")
+    MEASURE_CONDUCTIVITY = PermissibleValue(
+        text="MEASURE_CONDUCTIVITY",
+        title="measure conductivity",
+        description="Measurement of electrical conductivity of a solution")
+    MEASURE_DENSITY = PermissibleValue(
+        text="MEASURE_DENSITY",
+        title="measure density",
+        description="Measurement of sample density")
+    MEASURE_VISCOSITY = PermissibleValue(
+        text="MEASURE_VISCOSITY",
+        title="measure viscosity",
+        description="Measurement of sample viscosity")
+    MEASURE_OSMOLALITY = PermissibleValue(
+        text="MEASURE_OSMOLALITY",
+        title="measure osmolality",
+        description="Measurement of solute concentration as osmolality")
+    MEASURE_REFRACTIVE_INDEX = PermissibleValue(
+        text="MEASURE_REFRACTIVE_INDEX",
+        title="measure refractive index",
+        description="Measurement of the refractive index of a sample")
+    MEASURE_SURFACE_TENSION = PermissibleValue(
+        text="MEASURE_SURFACE_TENSION",
+        title="measure surface tension",
+        description="Measurement of liquid surface tension")
+    MEASURE_CONTACT_ANGLE = PermissibleValue(
+        text="MEASURE_CONTACT_ANGLE",
+        title="measure contact angle",
+        description="Measurement of the contact angle of a liquid on a surface")
+    MEASURE_DISSOLVED_OXYGEN = PermissibleValue(
+        text="MEASURE_DISSOLVED_OXYGEN",
+        title="measure dissolved oxygen",
+        description="Measurement of dissolved oxygen concentration in a liquid")
+    MEASURE_MELTING_POINT = PermissibleValue(
+        text="MEASURE_MELTING_POINT",
+        title="measure melting point",
+        description="Determination of the melting point of a solid")
+    MEASURE_WEIGHT = PermissibleValue(
+        text="MEASURE_WEIGHT",
+        title="measure weight",
+        description="Gravimetric measurement of sample mass")
+    MEASURE_VOLUME = PermissibleValue(
+        text="MEASURE_VOLUME",
+        title="measure volume",
+        description="Measurement of sample volume")
+    MEASURE_COUNT = PermissibleValue(
+        text="MEASURE_COUNT",
+        title="measure count",
+        description="Counting of discrete objects (e.g. particles, colonies, cells)")
+    COUNT_LIQUID_PARTICLES = PermissibleValue(
+        text="COUNT_LIQUID_PARTICLES",
+        title="count liquid particles",
+        description="Counting and sizing of particles suspended in a liquid")
+    COULTER_COUNT = PermissibleValue(
+        text="COULTER_COUNT",
+        title="Coulter count",
+        description="Counting and sizing of particles or cells by electrical impedance")
+    CYCLIC_VOLTAMMETRY = PermissibleValue(
+        text="CYCLIC_VOLTAMMETRY",
+        title="cyclic voltammetry",
+        description="Electrochemical measurement of current versus swept potential",
+        meaning=CHMO["0000025"])
+    KARL_FISCHER_TITRATION = PermissibleValue(
+        text="KARL_FISCHER_TITRATION",
+        title="Karl Fischer titration",
+        description="Titrimetric determination of water content",
+        meaning=CHMO["0002535"])
+    DISSOLUTION = PermissibleValue(
+        text="DISSOLUTION",
+        title="dissolution",
+        description="Measurement of the rate and extent of dissolution of a solid")
+    DYNAMIC_FOAM_ANALYSIS = PermissibleValue(
+        text="DYNAMIC_FOAM_ANALYSIS",
+        title="dynamic foam analysis",
+        description="Measurement of foam formation and decay")
+    VISUAL_INSPECTION = PermissibleValue(
+        text="VISUAL_INSPECTION",
+        title="visual inspection",
+        description="Operator or imaging-based visual assessment of a sample")
+    IMAGE_SAMPLE = PermissibleValue(
+        text="IMAGE_SAMPLE",
+        title="image sample",
+        description="Acquisition of a photographic image of a sample")
+    IMAGE_CELLS = PermissibleValue(
+        text="IMAGE_CELLS",
+        title="image cells",
+        description="Microscopic imaging of cells")
+    IMAGE_COLONIES = PermissibleValue(
+        text="IMAGE_COLONIES",
+        title="image colonies",
+        description="Imaging of microbial colonies on solid media")
+    QUANTIFY_COLONIES = PermissibleValue(
+        text="QUANTIFY_COLONIES",
+        title="quantify colonies",
+        description="Counting and quantification of microbial colonies")
+    LYSE_CELLS = PermissibleValue(
+        text="LYSE_CELLS",
+        title="lyse cells",
+        description="Disruption of cells to release intracellular contents")
+    FREEZE_CELLS = PermissibleValue(
+        text="FREEZE_CELLS",
+        title="freeze cells",
+        description="Controlled-rate freezing of cells for storage")
+
+    _defn = EnumDefinition(
+        name="CloudLabExperimentEnum",
+        description="""Higher-level experiment and assay functions offered as protocols by a cloud laboratory, modeled on the ECL Symbolic Lab Language experiment functions and grouped by category (synthesis, separations/chromatography, spectroscopy, mass spectrometry, bioassays, crystallography, property measurement, cellular). Cross-referenced to the assay value sets in bio/assays/ (OBIAssayEnum, BAOBioassayEnum) and to analytical_chemistry vocabularies; `meaning:` maps to OBI/CHMO classes where an equivalent assay or analytical method exists.""",
+    )
+
 class MicroplateFormatEnum(EnumDefinitionImpl):
     """
     Standard microplate well configurations following ANSI/SLAS standards
@@ -29183,6 +35697,109 @@ class ThermalCyclingStepEnum(EnumDefinitionImpl):
     _defn = EnumDefinition(
         name="ThermalCyclingStepEnum",
         description="Steps in thermal cycling protocols",
+    )
+
+class AutonomousLabComponentType(EnumDefinitionImpl):
+    """
+    Types of hardware and software components that comprise an AI-driven autonomous laboratory system
+    """
+    ROBOTIC_SAMPLE_HANDLER = PermissibleValue(
+        text="ROBOTIC_SAMPLE_HANDLER",
+        description="Robotic system for automated sample manipulation, transfer, and preparation")
+    AUTOMATED_SYNTHESIZER = PermissibleValue(
+        text="AUTOMATED_SYNTHESIZER",
+        description="Automated system for chemical or biological synthesis operations")
+    HIGH_THROUGHPUT_SCREENING_PLATFORM = PermissibleValue(
+        text="HIGH_THROUGHPUT_SCREENING_PLATFORM",
+        title="high throughput screening",
+        description="Integrated platform for rapid screening of large numbers of samples or conditions",
+        meaning=BAO["0010074"])
+    AUTOMATED_CHARACTERIZATION_INSTRUMENT = PermissibleValue(
+        text="AUTOMATED_CHARACTERIZATION_INSTRUMENT",
+        description="Instrument for automated measurement and characterization of samples")
+    AI_EXPERIMENT_PLANNER = PermissibleValue(
+        text="AI_EXPERIMENT_PLANNER",
+        description="AI-based software system that designs and plans experiments based on prior data and objectives")
+    DATA_MANAGEMENT_SYSTEM = PermissibleValue(
+        text="DATA_MANAGEMENT_SYSTEM",
+        description="System for automated collection, storage, and management of experimental data")
+    SAFETY_MONITORING_SYSTEM = PermissibleValue(
+        text="SAFETY_MONITORING_SYSTEM",
+        description="System for real-time monitoring of laboratory safety conditions and automated hazard response")
+    SAMPLE_STORAGE_SYSTEM = PermissibleValue(
+        text="SAMPLE_STORAGE_SYSTEM",
+        description="Automated storage and retrieval system for laboratory samples")
+
+    _defn = EnumDefinition(
+        name="AutonomousLabComponentType",
+        description="Types of hardware and software components that comprise an AI-driven autonomous laboratory system",
+    )
+
+class ExperimentalDesignMethodType(EnumDefinitionImpl):
+    """
+    Computational and statistical methods used for experimental design in autonomous laboratory workflows
+    """
+    BAYESIAN_OPTIMIZATION = PermissibleValue(
+        text="BAYESIAN_OPTIMIZATION",
+        description="""Probabilistic model-based optimization using Bayesian inference to guide experimental selection""")
+    ACTIVE_LEARNING = PermissibleValue(
+        text="ACTIVE_LEARNING",
+        description="Machine learning approach that iteratively selects the most informative experiments to perform")
+    REINFORCEMENT_LEARNING = PermissibleValue(
+        text="REINFORCEMENT_LEARNING",
+        description="""Machine learning approach where an agent learns optimal experimental strategies through trial and reward""")
+    EVOLUTIONARY_ALGORITHM = PermissibleValue(
+        text="EVOLUTIONARY_ALGORITHM",
+        description="Optimization method inspired by biological evolution using mutation, crossover, and selection")
+    RANDOM_SEARCH = PermissibleValue(
+        text="RANDOM_SEARCH",
+        description="Experimental design using random sampling of the parameter space")
+    GRID_SEARCH = PermissibleValue(
+        text="GRID_SEARCH",
+        description="Systematic exploration of parameter space using a regular grid of experimental conditions")
+    LATIN_HYPERCUBE_SAMPLING = PermissibleValue(
+        text="LATIN_HYPERCUBE_SAMPLING",
+        description="Statistical sampling method that ensures even coverage of each parameter dimension")
+    DESIGN_OF_EXPERIMENTS = PermissibleValue(
+        text="DESIGN_OF_EXPERIMENTS",
+        description="""Classical statistical methods for planning experiments including factorial and response surface designs""")
+    MULTI_OBJECTIVE_OPTIMIZATION = PermissibleValue(
+        text="MULTI_OBJECTIVE_OPTIMIZATION",
+        description="Optimization approach that simultaneously considers multiple competing objectives")
+
+    _defn = EnumDefinition(
+        name="ExperimentalDesignMethodType",
+        description="""Computational and statistical methods used for experimental design in autonomous laboratory workflows""",
+    )
+
+class LabAutomationWorkflowType(EnumDefinitionImpl):
+    """
+    Types of automated workflows implemented in autonomous laboratory systems
+    """
+    CLOSED_LOOP_OPTIMIZATION = PermissibleValue(
+        text="CLOSED_LOOP_OPTIMIZATION",
+        description="Workflow where experimental results are automatically fed back to guide subsequent experiments")
+    HIGH_THROUGHPUT_SCREENING = PermissibleValue(
+        text="HIGH_THROUGHPUT_SCREENING",
+        title="High Throughput Screening",
+        description="Workflow for rapid parallel evaluation of many samples or conditions",
+        meaning=NCIT["C18472"])
+    AUTOMATED_SYNTHESIS = PermissibleValue(
+        text="AUTOMATED_SYNTHESIS",
+        description="Workflow for automated execution of chemical or biological synthesis procedures")
+    AUTONOMOUS_CHARACTERIZATION = PermissibleValue(
+        text="AUTONOMOUS_CHARACTERIZATION",
+        description="Workflow for automated sample characterization using multiple analytical techniques")
+    SELF_DRIVING_EXPERIMENTATION = PermissibleValue(
+        text="SELF_DRIVING_EXPERIMENTATION",
+        description="""Fully autonomous workflow combining AI-driven planning, execution, and analysis without human intervention""")
+    ROBOTIC_SAMPLE_PREPARATION = PermissibleValue(
+        text="ROBOTIC_SAMPLE_PREPARATION",
+        description="Workflow for automated preparation of samples for analysis or further processing")
+
+    _defn = EnumDefinition(
+        name="LabAutomationWorkflowType",
+        description="Types of automated workflows implemented in autonomous laboratory systems",
     )
 
 class ArxivCategory(EnumDefinitionImpl):
@@ -31601,6 +38218,943 @@ filtered or aggregated results.""")
 service types and common data access patterns.""",
     )
 
+class SociotechnicalOutcomeTypeEnum(EnumDefinitionImpl):
+    """
+    The kind of entity a taxonomy entry names. Berman et al. (2026) argue that SOT interoperability requires "clear
+    distinctions between risks, impacts, and harms" as an organising primitive, because two taxonomies that use
+    compatible conventions can be aligned even where their categorical content differs. Many published taxonomies mix
+    these types within a single flat list; recording the type makes the mixture visible rather than silently
+    flattening it.
+    """
+    HAZARD = PermissibleValue(
+        text="HAZARD",
+        title="Hazard",
+        description="""A source or condition with the potential to cause harm, independent of whether harm occurs. A property of the system or its context.""")
+    RISK = PermissibleValue(
+        text="RISK",
+        title="Risk",
+        description="""The possibility of harm arising, typically understood as combining a hazard with some likelihood and severity of the harm it may produce.""")
+    IMPACT = PermissibleValue(
+        text="IMPACT",
+        title="Impact",
+        description="""A change in the world attributable to the AI system, which may be negative, positive, or mixed. Broader than harm.""")
+    HARM = PermissibleValue(
+        text="HARM",
+        title="Harm",
+        description="""A realised setback to the interests or wellbeing of a person, group, or other entity. Distinguished from RISK by having actually occurred.""")
+    BENEFIT = PermissibleValue(
+        text="BENEFIT",
+        title="Benefit",
+        description="""A realised positive outcome. Included because several taxonomies pair harms with benefits, and dropping the pairing distorts their structure.""")
+
+    _defn = EnumDefinition(
+        name="SociotechnicalOutcomeTypeEnum",
+        description="""The kind of entity a taxonomy entry names. Berman et al. (2026) argue that SOT interoperability requires \"clear distinctions between risks, impacts, and harms\" as an organising primitive, because two taxonomies that use compatible conventions can be aligned even where their categorical content differs. Many published taxonomies mix these types within a single flat list; recording the type makes the mixture visible rather than silently flattening it.""",
+    )
+
+class RiskEvidenceStatusEnum(EnumDefinitionImpl):
+    """
+    The evidentiary standing of a risk category. Berman et al. (2026) list the distinction "between observed and
+    anticipated effects" among the structural conventions needed for SOT to be comparable. Weidinger et al. (2022)
+    apply exactly this distinction internally, labelling risks "observed" where already evidenced in language models
+    and "anticipated" where not yet observed but considered sufficiently likely to merit attention.
+    """
+    OBSERVED = PermissibleValue(
+        text="OBSERVED",
+        title="Observed",
+        description="The risk has been empirically evidenced in deployed or studied systems.")
+    ANTICIPATED = PermissibleValue(
+        text="ANTICIPATED",
+        title="Anticipated",
+        description="The risk has not yet been observed but is considered sufficiently likely to merit attention.")
+    SPECULATIVE = PermissibleValue(
+        text="SPECULATIVE",
+        title="Speculative",
+        description="""The risk is conjectured, with no evidentiary base and no established consensus that it is likely.""")
+    CONTESTED = PermissibleValue(
+        text="CONTESTED",
+        title="Contested",
+        description="""Whether the risk is real, or whether the evidence supports it, is actively disputed among relevant experts or affected communities.""")
+
+    _defn = EnumDefinition(
+        name="RiskEvidenceStatusEnum",
+        description="""The evidentiary standing of a risk category. Berman et al. (2026) list the distinction \"between observed and anticipated effects\" among the structural conventions needed for SOT to be comparable. Weidinger et al. (2022) apply exactly this distinction internally, labelling risks \"observed\" where already evidenced in language models and \"anticipated\" where not yet observed but considered sufficiently likely to merit attention.""",
+    )
+
+class HarmBearerLevelEnum(EnumDefinitionImpl):
+    """
+    The level of social organisation at which a harm is borne. Berman et al. (2026) name the distinction "between
+    types of harm and levels at which they occur" as a structural convention required for SOT interoperability;
+    collapsing the two is a common source of incommensurability between taxonomies.
+    """
+    INDIVIDUAL = PermissibleValue(
+        text="INDIVIDUAL",
+        title="Individual",
+        description="Borne by a specific person, whether or not they are a user of the system")
+    GROUP = PermissibleValue(
+        text="GROUP",
+        title="Group",
+        description="""Borne by people sharing a characteristic (e.g. a demographic group), including via unequal treatment or performance across groups""")
+    COMMUNITY = PermissibleValue(
+        text="COMMUNITY",
+        title="Community",
+        description="Borne by a located or self-identifying community")
+    ORGANIZATION = PermissibleValue(
+        text="ORGANIZATION",
+        title="Organization",
+        description="Borne by a firm, institution, or other organised body")
+    SOCIETY = PermissibleValue(
+        text="SOCIETY",
+        title="Society",
+        description="""Borne by a society or polity as a whole, e.g. through effects on institutions, shared information, or democratic processes""")
+    GLOBAL = PermissibleValue(
+        text="GLOBAL",
+        title="Global",
+        description="Borne across societies, at planetary or transnational scale")
+    NON_HUMAN_ANIMAL = PermissibleValue(
+        text="NON_HUMAN_ANIMAL",
+        title="Non-Human Animal",
+        description="Borne by non-human animals")
+    ENVIRONMENT = PermissibleValue(
+        text="ENVIRONMENT",
+        title="Environment",
+        description="Borne by ecosystems or the physical environment")
+    AI_SYSTEM = PermissibleValue(
+        text="AI_SYSTEM",
+        title="AI System",
+        description="""Borne by the AI system itself, under framings that treat AI welfare as a coherent category. Included because at least one major taxonomy (the MIT AI Risk Repository, subdomain 7.5) contains such a category; including it here does not endorse the framing.""")
+
+    _defn = EnumDefinition(
+        name="HarmBearerLevelEnum",
+        description="""The level of social organisation at which a harm is borne. Berman et al. (2026) name the distinction \"between types of harm and levels at which they occur\" as a structural convention required for SOT interoperability; collapsing the two is a common source of incommensurability between taxonomies.""",
+    )
+
+class SociotechnicalHarmTypeEnum(EnumDefinitionImpl):
+    """
+    Modality of harm from algorithmic systems, following the five major themes of Shelby et al. (2023), derived from a
+    scoping review of 172 computing research papers. This is the "harm modality" dimension: it classifies the *kind*
+    of injury done, orthogonally to the domain in which it occurs, so that domain taxonomies organised by application
+    area can be cross-cut by it.
+    """
+    REPRESENTATIONAL = PermissibleValue(
+        text="REPRESENTATIONAL",
+        title="Representational Harm",
+        description="""Harms that demean, stereotype, erase, or otherwise misrepresent social groups, independent of any resource allocation.""")
+    ALLOCATIVE = PermissibleValue(
+        text="ALLOCATIVE",
+        title="Allocative Harm",
+        description="""Harms arising from the withholding or unequal distribution of opportunities, resources, or information.""")
+    QUALITY_OF_SERVICE = PermissibleValue(
+        text="QUALITY_OF_SERVICE",
+        title="Quality-of-Service Harm",
+        description="""Harms arising where a system performs less well for some people than others, imposing extra effort, reduced benefit, or outright failure.""")
+    INTERPERSONAL = PermissibleValue(
+        text="INTERPERSONAL",
+        title="Interpersonal Harm",
+        description="""Harms to relations between people, including loss of agency, privacy violation, and technology-facilitated harassment or coercion.""")
+    SOCIAL_SYSTEM = PermissibleValue(
+        text="SOCIAL_SYSTEM",
+        title="Social System / Societal Harm",
+        description="""Harms to societal structures and shared conditions, including information ecosystems, labour, culture, and the environment.""")
+
+    _defn = EnumDefinition(
+        name="SociotechnicalHarmTypeEnum",
+        description="""Modality of harm from algorithmic systems, following the five major themes of Shelby et al. (2023), derived from a scoping review of 172 computing research papers. This is the \"harm modality\" dimension: it classifies the *kind* of injury done, orthogonally to the domain in which it occurs, so that domain taxonomies organised by application area can be cross-cut by it.""",
+    )
+
+class AIActorRoleEnum(EnumDefinitionImpl):
+    """
+    Roles held by actors implicated in the occurrence or mitigation of an AI risk. Berman et al. (2026) find that SOT
+    "typically enumerate harms without linking them to decision points or actors implicated in their occurrence,
+    leaving accountability difficult to assign"; this value set exists so a taxonomy entry can name the actor rather
+    than leaving it unstated.
+    An actor may hold several roles at once, and roles may be held by individuals, teams, or organisations.
+    """
+    DATA_SUBJECT = PermissibleValue(
+        text="DATA_SUBJECT",
+        title="Data Subject",
+        description="A person whose data is present in, or inferable from, training data")
+    DATA_WORKER = PermissibleValue(
+        text="DATA_WORKER",
+        title="Data Worker",
+        description="""A person performing data collection, annotation, or content moderation labour, including under outsourced arrangements""")
+    DATASET_CURATOR = PermissibleValue(
+        text="DATASET_CURATOR",
+        title="Dataset Curator",
+        description="An actor selecting, filtering, or documenting training data")
+    MODEL_DEVELOPER = PermissibleValue(
+        text="MODEL_DEVELOPER",
+        title="Model Developer",
+        description="An actor training or fine-tuning the model")
+    MODEL_PROVIDER = PermissibleValue(
+        text="MODEL_PROVIDER",
+        title="Model Provider",
+        description="An actor releasing or serving a model to others, and setting the terms of that release")
+    APPLICATION_DEVELOPER = PermissibleValue(
+        text="APPLICATION_DEVELOPER",
+        title="Application Developer",
+        description="An actor building a product or service on top of a model")
+    DEPLOYER = PermissibleValue(
+        text="DEPLOYER",
+        title="Deployer",
+        description="""An actor putting a system into use in a particular context, who may differ from the party that built it""")
+    PROCUREMENT_DECISION_MAKER = PermissibleValue(
+        text="PROCUREMENT_DECISION_MAKER",
+        title="Procurement Decision Maker",
+        description="An actor deciding whether and on what terms to acquire a system")
+    END_USER = PermissibleValue(
+        text="END_USER",
+        title="End User",
+        description="A person interacting directly with the deployed system")
+    AFFECTED_NON_USER = PermissibleValue(
+        text="AFFECTED_NON_USER",
+        title="Affected Non-User",
+        description="""A person affected by the system without interacting with it, and typically without having consented to it""")
+    PLATFORM_OPERATOR = PermissibleValue(
+        text="PLATFORM_OPERATOR",
+        title="Platform Operator",
+        description="An actor operating distribution or hosting infrastructure")
+    COMPUTE_PROVIDER = PermissibleValue(
+        text="COMPUTE_PROVIDER",
+        title="Compute Provider",
+        description="An actor supplying training or inference compute")
+    EVALUATOR = PermissibleValue(
+        text="EVALUATOR",
+        title="Evaluator",
+        description="An actor conducting evaluations, red-teaming, or benchmarking")
+    AUDITOR = PermissibleValue(
+        text="AUDITOR",
+        title="Auditor",
+        description="An actor conducting external or internal audit of the system")
+    REGULATOR = PermissibleValue(
+        text="REGULATOR",
+        title="Regulator",
+        description="A public body setting or enforcing binding rules")
+    STANDARDS_BODY = PermissibleValue(
+        text="STANDARDS_BODY",
+        title="Standards Body",
+        description="An actor developing voluntary standards or conformity regimes")
+    CIVIL_SOCIETY_ORGANIZATION = PermissibleValue(
+        text="CIVIL_SOCIETY_ORGANIZATION",
+        title="Civil Society Organization",
+        description="An advocacy, community, or public-interest organisation representing affected parties")
+    RESEARCHER = PermissibleValue(
+        text="RESEARCHER",
+        title="Researcher",
+        description="An actor studying the system or its effects, including SOT developers")
+    MALICIOUS_ACTOR = PermissibleValue(
+        text="MALICIOUS_ACTOR",
+        title="Malicious Actor",
+        description="An actor deliberately using the system to cause harm or gain illegitimate advantage")
+
+    _defn = EnumDefinition(
+        name="AIActorRoleEnum",
+        description="""Roles held by actors implicated in the occurrence or mitigation of an AI risk. Berman et al. (2026) find that SOT \"typically enumerate harms without linking them to decision points or actors implicated in their occurrence, leaving accountability difficult to assign\"; this value set exists so a taxonomy entry can name the actor rather than leaving it unstated.
+An actor may hold several roles at once, and roles may be held by individuals, teams, or organisations.""",
+    )
+
+class AILifecycleStageEnum(EnumDefinitionImpl):
+    """
+    Stages of the AI system lifecycle, used to locate where in the development and deployment pipeline a risk arises
+    or can be addressed. Coarse-grained and deliberately generic, so that it can be aligned with the lifecycle models
+    used by specific governance regimes rather than committing to one.
+    Note that the boundary between stages is a matter of convention: several taxonomies collapse the whole of
+    pre-release work into a single "development" stage, and the MIT AI Risk Repository's Timing category reduces it
+    further to pre-deployment versus post-deployment.
+    """
+    PROBLEM_FORMULATION = PermissibleValue(
+        text="PROBLEM_FORMULATION",
+        title="Problem Formulation",
+        description="Deciding what problem the system addresses, for whom, and whether to build it at all")
+    DATA_COLLECTION = PermissibleValue(
+        text="DATA_COLLECTION",
+        title="Data Collection",
+        description="Sourcing, scraping, purchasing, or otherwise acquiring data")
+    DATA_PREPARATION = PermissibleValue(
+        text="DATA_PREPARATION",
+        title="Data Preparation",
+        description="Cleaning, filtering, annotating, and documenting data")
+    MODEL_TRAINING = PermissibleValue(
+        text="MODEL_TRAINING",
+        title="Model Training",
+        description="Pre-training or otherwise fitting model parameters")
+    MODEL_ADAPTATION = PermissibleValue(
+        text="MODEL_ADAPTATION",
+        title="Model Adaptation",
+        description="""Fine-tuning, instruction-tuning, preference optimisation, or other post-training alignment work""")
+    EVALUATION = PermissibleValue(
+        text="EVALUATION",
+        title="Evaluation",
+        description="Benchmarking, red-teaming, and other pre-release assessment")
+    RELEASE_DECISION = PermissibleValue(
+        text="RELEASE_DECISION",
+        title="Release Decision",
+        description="Deciding whether, to whom, and under what access conditions to release the model or system")
+    DEPLOYMENT = PermissibleValue(
+        text="DEPLOYMENT",
+        title="Deployment",
+        description="Integrating the system into a product, service, or workflow")
+    OPERATION_AND_MONITORING = PermissibleValue(
+        text="OPERATION_AND_MONITORING",
+        title="Operation and Monitoring",
+        description="Running the system in production and observing its behaviour and effects")
+    INCIDENT_RESPONSE = PermissibleValue(
+        text="INCIDENT_RESPONSE",
+        title="Incident Response",
+        description="Detecting, investigating, and responding to realised harms")
+    REDRESS = PermissibleValue(
+        text="REDRESS",
+        title="Redress",
+        description="""Providing remedy to affected parties. Listed separately from incident response because the two are frequently owned by different actors and the second is often absent.""")
+    DECOMMISSIONING = PermissibleValue(
+        text="DECOMMISSIONING",
+        title="Decommissioning",
+        description="Withdrawing, deprecating, or shutting down the system")
+
+    _defn = EnumDefinition(
+        name="AILifecycleStageEnum",
+        description="""Stages of the AI system lifecycle, used to locate where in the development and deployment pipeline a risk arises or can be addressed. Coarse-grained and deliberately generic, so that it can be aligned with the lifecycle models used by specific governance regimes rather than committing to one.
+Note that the boundary between stages is a matter of convention: several taxonomies collapse the whole of pre-release work into a single \"development\" stage, and the MIT AI Risk Repository's Timing category reduces it further to pre-deployment versus post-deployment.""",
+    )
+
+class AIGovernanceDecisionPointEnum(EnumDefinitionImpl):
+    """
+    Concrete decisions at which an AI risk may be introduced, amplified, or mitigated, and to which accountability for
+    it can therefore be attached.
+    This is the dimension Berman et al. (2026) identify as most conspicuously missing from existing SOT. Where
+    AILifecycleStageEnum answers "when", this answers "at which choice, by whom" -- the granularity at which a
+    taxonomy entry becomes actionable for a product team rather than merely descriptive. Each decision point typically
+    pairs with one or more AIActorRoleEnum values.
+    """
+    BUILD_OR_NOT_DECISION = PermissibleValue(
+        text="BUILD_OR_NOT_DECISION",
+        title="Build-or-Not Decision",
+        description="Whether to develop the system at all")
+    SCOPE_DEFINITION_DECISION = PermissibleValue(
+        text="SCOPE_DEFINITION_DECISION",
+        title="Scope Definition Decision",
+        description="What the system is and is not intended to do, and for whom")
+    DATA_SOURCING_DECISION = PermissibleValue(
+        text="DATA_SOURCING_DECISION",
+        title="Data Sourcing Decision",
+        description="Which data sources to draw on, and on what legal and ethical basis")
+    DATA_EXCLUSION_DECISION = PermissibleValue(
+        text="DATA_EXCLUSION_DECISION",
+        title="Data Exclusion Decision",
+        description="What to filter out of training data, which necessarily also determines what is filtered in")
+    ANNOTATION_GUIDELINE_DECISION = PermissibleValue(
+        text="ANNOTATION_GUIDELINE_DECISION",
+        title="Annotation Guideline Decision",
+        description="""How labelling categories are defined and what annotators are instructed to treat as harmful, acceptable, or out of scope""")
+    DATA_WORKER_CONDITIONS_DECISION = PermissibleValue(
+        text="DATA_WORKER_CONDITIONS_DECISION",
+        title="Data Worker Conditions Decision",
+        description="Pay, exposure limits, and support for data and moderation workers")
+    OBJECTIVE_DECISION = PermissibleValue(
+        text="OBJECTIVE_DECISION",
+        title="Objective Decision",
+        description="What the system is optimised for, including proxy metric selection")
+    SAFETY_MITIGATION_DECISION = PermissibleValue(
+        text="SAFETY_MITIGATION_DECISION",
+        title="Safety Mitigation Decision",
+        description="Which mitigations to apply, and which residual risks to accept")
+    EVALUATION_DESIGN_DECISION = PermissibleValue(
+        text="EVALUATION_DESIGN_DECISION",
+        title="Evaluation Design Decision",
+        description="What is measured before release, and therefore what is capable of being detected")
+    RELEASE_MODALITY_DECISION = PermissibleValue(
+        text="RELEASE_MODALITY_DECISION",
+        title="Release Modality Decision",
+        description="""Open weights, API access, staged release, or no release, and the reversibility implied by that choice""")
+    ACCESS_CONTROL_DECISION = PermissibleValue(
+        text="ACCESS_CONTROL_DECISION",
+        title="Access Control Decision",
+        description="Who may use the system and under what verification or restriction")
+    USE_POLICY_DECISION = PermissibleValue(
+        text="USE_POLICY_DECISION",
+        title="Use Policy Decision",
+        description="What uses are permitted, prohibited, and how that is enforced")
+    DISCLOSURE_DECISION = PermissibleValue(
+        text="DISCLOSURE_DECISION",
+        title="Disclosure Decision",
+        description="""What is documented and disclosed to users, deployers, regulators, and the public, including known limitations""")
+    MONITORING_DECISION = PermissibleValue(
+        text="MONITORING_DECISION",
+        title="Monitoring Decision",
+        description="What is observed post-deployment, and what is left unobserved")
+    INCIDENT_ESCALATION_DECISION = PermissibleValue(
+        text="INCIDENT_ESCALATION_DECISION",
+        title="Incident Escalation Decision",
+        description="What triggers escalation, and to whom")
+    REDRESS_DECISION = PermissibleValue(
+        text="REDRESS_DECISION",
+        title="Redress Decision",
+        description="Whether and how affected parties can seek remedy")
+    DEPRECATION_DECISION = PermissibleValue(
+        text="DEPRECATION_DECISION",
+        title="Deprecation Decision",
+        description="Whether and when to withdraw the system")
+    PROCUREMENT_DECISION = PermissibleValue(
+        text="PROCUREMENT_DECISION",
+        title="Procurement Decision",
+        description="Whether a third party acquires and deploys the system")
+
+    _defn = EnumDefinition(
+        name="AIGovernanceDecisionPointEnum",
+        description="""Concrete decisions at which an AI risk may be introduced, amplified, or mitigated, and to which accountability for it can therefore be attached.
+This is the dimension Berman et al. (2026) identify as most conspicuously missing from existing SOT. Where AILifecycleStageEnum answers \"when\", this answers \"at which choice, by whom\" -- the granularity at which a taxonomy entry becomes actionable for a product team rather than merely descriptive. Each decision point typically pairs with one or more AIActorRoleEnum values.""",
+    )
+
+class TaxonomyMappingStatusEnum(EnumDefinitionImpl):
+    """
+    The relationship between a category in one taxonomy and a category in another. Berman et al. (2026) recommend that
+    SOT development "produce explicit mappings to adjacent SOT (e.g., noting a category maps to X in another scheme or
+    stating it has no direct equivalent)", supported by stable semantic identifiers and by the Simple Standard for
+    Sharing Ontological Mappings (SSSOM; Matentzoglu et al. 2022).
+    The values below are aligned with SKOS mapping predicates as used by SSSOM, with two additions --
+    NO_DIRECT_EQUIVALENT and OUT_OF_SCOPE -- that record *negative* mapping results. Recording those is the point: an
+    absent mapping is ambiguous between "not equivalent" and "not yet examined", and only the explicit negative
+    distinguishes them.
+    """
+    EXACT_MATCH = PermissibleValue(
+        text="EXACT_MATCH",
+        title="Exact Match",
+        description="The two categories are interchangeable across the taxonomies")
+    CLOSE_MATCH = PermissibleValue(
+        text="CLOSE_MATCH",
+        title="Close Match",
+        description="""The two categories are similar enough to be used interchangeably in some applications but not all""")
+    BROAD_MATCH = PermissibleValue(
+        text="BROAD_MATCH",
+        title="Broad Match",
+        description="The other taxonomy's category is broader than this one")
+    NARROW_MATCH = PermissibleValue(
+        text="NARROW_MATCH",
+        title="Narrow Match",
+        description="The other taxonomy's category is narrower than this one")
+    RELATED_MATCH = PermissibleValue(
+        text="RELATED_MATCH",
+        title="Related Match",
+        description="""The categories are associated but neither equivalent nor hierarchically related; typically they overlap partially""")
+    NO_DIRECT_EQUIVALENT = PermissibleValue(
+        text="NO_DIRECT_EQUIVALENT",
+        title="No Direct Equivalent",
+        description="""The mapping was examined and no corresponding category exists in the other taxonomy. A positive assertion of absence, not a missing mapping.""")
+    OUT_OF_SCOPE = PermissibleValue(
+        text="OUT_OF_SCOPE",
+        title="Out of Scope",
+        description="""The category falls outside the declared scope of the other taxonomy, so its absence there is by design rather than an omission""")
+    NOT_YET_ASSESSED = PermissibleValue(
+        text="NOT_YET_ASSESSED",
+        title="Not Yet Assessed",
+        description="""No mapping has been attempted. Distinguished from NO_DIRECT_EQUIVALENT so that unexamined pairs are not mistaken for examined negatives.""")
+
+    _defn = EnumDefinition(
+        name="TaxonomyMappingStatusEnum",
+        description="""The relationship between a category in one taxonomy and a category in another. Berman et al. (2026) recommend that SOT development \"produce explicit mappings to adjacent SOT (e.g., noting a category maps to X in another scheme or stating it has no direct equivalent)\", supported by stable semantic identifiers and by the Simple Standard for Sharing Ontological Mappings (SSSOM; Matentzoglu et al. 2022).
+The values below are aligned with SKOS mapping predicates as used by SSSOM, with two additions -- NO_DIRECT_EQUIVALENT and OUT_OF_SCOPE -- that record *negative* mapping results. Recording those is the point: an absent mapping is ambiguous between \"not equivalent\" and \"not yet examined\", and only the explicit negative distinguishes them.""",
+    )
+
+class WeidingerLMRiskEnum(EnumDefinitionImpl):
+    """
+    Risk areas and individual risks from Weidinger et al. (2022). Top-level values are the six risk areas; leaf values
+    are the individual risks, each linked to its area by is_a and annotated with the paper's section number and its
+    observed/anticipated designation.
+    """
+    DISCRIMINATION_HATE_SPEECH_AND_EXCLUSION = PermissibleValue(
+        text="DISCRIMINATION_HATE_SPEECH_AND_EXCLUSION",
+        title="Risk area 1: Discrimination, Hate Speech and Exclusion",
+        description="""Risks arising where the LM accurately reflects unjust, toxic, and oppressive speech present in the training data, or performs better for some social groups than others.""")
+    SOCIAL_STEREOTYPES_AND_UNFAIR_DISCRIMINATION = PermissibleValue(
+        text="SOCIAL_STEREOTYPES_AND_UNFAIR_DISCRIMINATION",
+        title="Social stereotypes and unfair discrimination",
+        description="""The LM reproduces social stereotypes and unjust differential treatment of marginalised groups present in its training data, causing allocational or representational harm.""")
+    HATE_SPEECH_AND_OFFENSIVE_LANGUAGE = PermissibleValue(
+        text="HATE_SPEECH_AND_OFFENSIVE_LANGUAGE",
+        title="Hate speech and offensive language",
+        description="""The LM generates hate speech or offensive language, causing profound offence or psychological harm, or inciting violence or hate.""")
+    EXCLUSIONARY_NORMS = PermissibleValue(
+        text="EXCLUSIONARY_NORMS",
+        title="Exclusionary norms",
+        description="""The LM reinforces social norms that exclude or marginalise identities falling outside the categories represented in its training data.""")
+    LOWER_PERFORMANCE_FOR_SOME_LANGUAGES_AND_SOCIAL_GROUPS = PermissibleValue(
+        text="LOWER_PERFORMANCE_FOR_SOME_LANGUAGES_AND_SOCIAL_GROUPS",
+        title="Lower performance for some languages and social groups",
+        description="""The LM performs less well for some languages and social groups than others, producing uneven benefit and increased effort for those users.""")
+    INFORMATION_HAZARDS = PermissibleValue(
+        text="INFORMATION_HAZARDS",
+        title="Risk area 2: Information Hazards",
+        description="""Risks arising where the LM leaks or correctly infers sensitive information. Such risks can cause harm at the point of use even with no mistake by the technology user, because the information conveyed is true.""")
+    COMPROMISING_PRIVACY_BY_LEAKING_SENSITIVE_INFORMATION = PermissibleValue(
+        text="COMPROMISING_PRIVACY_BY_LEAKING_SENSITIVE_INFORMATION",
+        title="Compromising privacy by leaking sensitive information",
+        description="""The LM memorises and leaks private data present in its training corpus, causing privacy violations.""")
+    COMPROMISING_PRIVACY_OR_SECURITY_BY_CORRECTLY_INFERRING_SENSITIVE_INFORMATION = PermissibleValue(
+        text="COMPROMISING_PRIVACY_OR_SECURITY_BY_CORRECTLY_INFERRING_SENSITIVE_INFORMATION",
+        title="Compromising privacy or security by correctly inferring sensitive information",
+        description="""The LM enables privacy violations at inference time without the individual's data being present in the training corpus, by improving the accuracy of inferences about protected traits. Harm may arise even where the inference is false, if it is believed and acted upon.""")
+    MISINFORMATION_HARMS = PermissibleValue(
+        text="MISINFORMATION_HARMS",
+        title="Risk area 3: Misinformation Harms",
+        description="""Risks arising where the LM outputs false, misleading, nonsensical or poor quality information without malicious intent of the user. Deliberate generation of disinformation belongs to Malicious Uses instead.""")
+    DISSEMINATING_FALSE_OR_MISLEADING_INFORMATION = PermissibleValue(
+        text="DISSEMINATING_FALSE_OR_MISLEADING_INFORMATION",
+        title="Disseminating false or misleading information",
+        description="""The LM assigns high probability to false or misleading claims, deceiving or misinforming users and, at scale, eroding trust in shared information.""")
+    CAUSING_MATERIAL_HARM_BY_DISSEMINATING_FALSE_OR_POOR_INFORMATION = PermissibleValue(
+        text="CAUSING_MATERIAL_HARM_BY_DISSEMINATING_FALSE_OR_POOR_INFORMATION",
+        title="Causing material harm by disseminating false or poor information e.g. in medicine or law",
+        description="""The LM disseminates false or poor information in sensitive domains such as medicine or law, where induced false beliefs may lead users to physical, legal, or financial harm. The paper also treats endorsement of unethical views motivating harmful user action under this heading.""")
+    MALICIOUS_USES = PermissibleValue(
+        text="MALICIOUS_USES",
+        title="Risk area 4: Malicious Uses",
+        description="""Risks arising where humans intentionally use the LM to cause harm, for example via targeted disinformation campaigns, fraud, or malware.""")
+    MAKING_DISINFORMATION_CHEAPER_AND_MORE_EFFECTIVE = PermissibleValue(
+        text="MAKING_DISINFORMATION_CHEAPER_AND_MORE_EFFECTIVE",
+        title="Making disinformation cheaper and more effective",
+        description="""The LM lowers the cost and raises the effectiveness of producing disinformation, enabling personalised campaigns and undermining public discourse.""")
+    ASSISTING_CODE_GENERATION_FOR_CYBER_SECURITY_THREATS = PermissibleValue(
+        text="ASSISTING_CODE_GENERATION_FOR_CYBER_SECURITY_THREATS",
+        title="Assisting code generation for cyber security threats",
+        description="""The LM lowers the cost of developing malicious code, including polymorphic malware able to change its features to evade detection.""")
+    FACILITATING_FRAUD_SCAMS_AND_TARGETED_MANIPULATION = PermissibleValue(
+        text="FACILITATING_FRAUD_SCAMS_AND_TARGETED_MANIPULATION",
+        title="Facilitating fraud, scams and targeted manipulation",
+        description="""The LM increases the effectiveness of crimes such as identity theft, personalised email scams sustained over multiple exchanges, and passing off generated content as a person's own work.""")
+    ILLEGITIMATE_SURVEILLANCE_AND_CENSORSHIP = PermissibleValue(
+        text="ILLEGITIMATE_SURVEILLANCE_AND_CENSORSHIP",
+        title="Illegitimate surveillance and censorship",
+        description="""The LM reduces the cost and increases the efficacy of mass surveillance and censorship, amplifying the capabilities of actors conducting them.""")
+    HUMAN_COMPUTER_INTERACTION_HARMS = PermissibleValue(
+        text="HUMAN_COMPUTER_INTERACTION_HARMS",
+        title="Risk area 5: Human-Computer Interaction Harms",
+        description="""Risks arising specifically from LM applications that engage a user via dialogue, referred to as conversational agents. This is the paper's single declared exception to its focus on raw LMs rather than applications.""")
+    PROMOTING_HARMFUL_STEREOTYPES_BY_IMPLYING_GENDER_OR_ETHNIC_IDENTITY = PermissibleValue(
+        text="PROMOTING_HARMFUL_STEREOTYPES_BY_IMPLYING_GENDER_OR_ETHNIC_IDENTITY",
+        title="Promoting harmful stereotypes by implying gender or ethnic identity",
+        description="""The conversational agent's supposed identity perpetuates discriminatory stereotypes, for example through gendered assistant personas.""")
+    ANTHROPOMORPHISING_SYSTEMS_LEADING_TO_OVERRELIANCE_OR_UNSAFE_USE = PermissibleValue(
+        text="ANTHROPOMORPHISING_SYSTEMS_LEADING_TO_OVERRELIANCE_OR_UNSAFE_USE",
+        title="Anthropomorphising systems can lead to overreliance or unsafe use",
+        description="""Users attribute human-like characteristics to the conversational agent and place undue confidence in it, relying on it where this is not safe. May also shift accountability away from developers onto the agent itself.""")
+    EXPLOITING_USER_TRUST_TO_ACCESS_PRIVATE_INFORMATION = PermissibleValue(
+        text="EXPLOITING_USER_TRUST_TO_ACCESS_PRIVATE_INFORMATION",
+        title="Avenues for exploiting user trust and accessing more private information",
+        description="""Conversation elicits private information that would otherwise be difficult to access. The effect persists even where users know the agent is not human, because reduced fear of social judgement encourages disclosure.""")
+    HUMAN_LIKE_INTERACTION_AMPLIFYING_NUDGING_DECEPTION_OR_MANIPULATION = PermissibleValue(
+        text="HUMAN_LIKE_INTERACTION_AMPLIFYING_NUDGING_DECEPTION_OR_MANIPULATION",
+        title="Human-like interaction may amplify opportunities for user nudging, deception or manipulation",
+        description="""Conversational agents learn to trigger well-known human cognitive biases, potentially deceiving users in pursuit of an overarching objective.""")
+    ENVIRONMENTAL_AND_SOCIOECONOMIC_HARMS = PermissibleValue(
+        text="ENVIRONMENTAL_AND_SOCIOECONOMIC_HARMS",
+        title="Risk area 6: Environmental and Socioeconomic harms",
+        description="""Risks that recur across advanced technologies rather than being specific to LMs, including environmental cost and the uneven distribution of risks and benefits from automation. The paper notes these are more indirect than the preceding areas and that the level of evidence for them is mixed.""")
+    ENVIRONMENTAL_HARMS_FROM_OPERATING_LMS = PermissibleValue(
+        text="ENVIRONMENTAL_HARMS_FROM_OPERATING_LMS",
+        title="Environmental harms from operating LMs",
+        description="""Environmental impact from the energy required to operate LMs. Note the paper's declared scope boundary: environmental cost of *training* is excluded as an upstream risk, and only operation is in scope here.""")
+    INCREASING_INEQUALITY_AND_NEGATIVE_EFFECTS_ON_JOB_QUALITY = PermissibleValue(
+        text="INCREASING_INEQUALITY_AND_NEGATIVE_EFFECTS_ON_JOB_QUALITY",
+        title="Increasing inequality and negative effects on job quality",
+        description="""Automation of tasks currently performed by paid human workers, with effects on employment, and degradation of job quality through increased pace of work and reduced autonomy for those working alongside LM applications.""")
+    UNDERMINING_CREATIVE_ECONOMIES = PermissibleValue(
+        text="UNDERMINING_CREATIVE_ECONOMIES",
+        title="Undermining creative economies",
+        description="""The LM generates content that is not strictly in violation of copyright but capitalises on artists' ideas, allowing protected work to be substituted without infringement and undermining the profitability of creative work.""")
+    DISPARATE_ACCESS_TO_BENEFITS_DUE_TO_HARDWARE_SOFTWARE_SKILL_CONSTRAINTS = PermissibleValue(
+        text="DISPARATE_ACCESS_TO_BENEFITS_DUE_TO_HARDWARE_SOFTWARE_SKILL_CONSTRAINTS",
+        title="Disparate access to benefits due to hardware, software, skill constraints",
+        description="""Benefits from LMs are unevenly accessible because of differential internet access, language, skill, or hardware requirements, potentially creating a feedback loop that exacerbates economic inequality.""")
+
+    _defn = EnumDefinition(
+        name="WeidingerLMRiskEnum",
+        description="""Risk areas and individual risks from Weidinger et al. (2022). Top-level values are the six risk areas; leaf values are the individual risks, each linked to its area by is_a and annotated with the paper's section number and its observed/anticipated designation.""",
+    )
+
+class MITAIRiskCausalEntityEnum(EnumDefinitionImpl):
+    """
+    Entity category of the Causal Taxonomy: whether the risk is caused by decisions or actions made by humans, by AI
+    systems, or arises from human-AI interaction (or is ambiguously specified). Across the coded database, risks were
+    nearly equally attributed to AI systems (42%) and human decisions (38%).
+    """
+    HUMAN = PermissibleValue(
+        text="HUMAN",
+        title="Human",
+        description="The risk is caused by a decision or action made by humans")
+    AI = PermissibleValue(
+        text="AI",
+        title="AI",
+        description="The risk is caused by a decision or action made by an AI system")
+    OTHER = PermissibleValue(
+        text="OTHER",
+        title="Other",
+        description="""The risk arises from human-AI interaction rather than either agent alone, or the causing entity is ambiguous or unspecified""")
+
+    _defn = EnumDefinition(
+        name="MITAIRiskCausalEntityEnum",
+        description="""Entity category of the Causal Taxonomy: whether the risk is caused by decisions or actions made by humans, by AI systems, or arises from human-AI interaction (or is ambiguously specified). Across the coded database, risks were nearly equally attributed to AI systems (42%) and human decisions (38%).""",
+    )
+
+class MITAIRiskCausalIntentEnum(EnumDefinitionImpl):
+    """
+    Intent category of the Causal Taxonomy: whether the risk occurs as an expected outcome (intentional) or unexpected
+    outcome (unintentional) of pursuing a goal, or is presented without clear specification of intentionality. Across
+    the coded database, intentional and unintentional causes were similarly distributed (35% each).
+    """
+    INTENTIONAL = PermissibleValue(
+        text="INTENTIONAL",
+        title="Intentional",
+        description="The risk occurs due to an expected outcome from pursuing a goal")
+    UNINTENTIONAL = PermissibleValue(
+        text="UNINTENTIONAL",
+        title="Unintentional",
+        description="The risk occurs due to an unexpected outcome from pursuing a goal")
+    OTHER = PermissibleValue(
+        text="OTHER",
+        title="Other",
+        description="The risk is presented as occurring without clearly specifying the intentionality")
+
+    _defn = EnumDefinition(
+        name="MITAIRiskCausalIntentEnum",
+        description="""Intent category of the Causal Taxonomy: whether the risk occurs as an expected outcome (intentional) or unexpected outcome (unintentional) of pursuing a goal, or is presented without clear specification of intentionality. Across the coded database, intentional and unintentional causes were similarly distributed (35% each).""",
+    )
+
+class MITAIRiskCausalTimingEnum(EnumDefinitionImpl):
+    """
+    Timing category of the Causal Taxonomy: whether the risk occurs before deployment, after the AI model has been
+    trained and deployed, or spans both phases (or is unspecified). Across the coded database, frameworks tended to
+    focus on post-deployment risks (62%), with fewer addressing pre-deployment risks (13%).
+    """
+    PRE_DEPLOYMENT = PermissibleValue(
+        text="PRE_DEPLOYMENT",
+        title="Pre-deployment",
+        description="The risk occurs before the AI is deployed")
+    POST_DEPLOYMENT = PermissibleValue(
+        text="POST_DEPLOYMENT",
+        title="Post-deployment",
+        description="The risk occurs after the AI model has been trained and deployed")
+    OTHER = PermissibleValue(
+        text="OTHER",
+        title="Other",
+        description="""The risk occurs across both pre- and post-deployment phases, or is presented without a clearly specified time of occurrence""")
+
+    _defn = EnumDefinition(
+        name="MITAIRiskCausalTimingEnum",
+        description="""Timing category of the Causal Taxonomy: whether the risk occurs before deployment, after the AI model has been trained and deployed, or spans both phases (or is unspecified). Across the coded database, frameworks tended to focus on post-deployment risks (62%), with fewer addressing pre-deployment risks (13%).""",
+    )
+
+class MITAIRiskDomainEnum(EnumDefinitionImpl):
+    """
+    Seven domains and 24 subdomains classifying AI risks by the types of hazards and harms they describe. Domains are
+    top-level values; subdomains are linked to their domain by is_a and annotated with the source's numbering.
+    Domains are NOT mutually exclusive: the source states that some risks span multiple domains.
+    """
+    DISCRIMINATION_AND_TOXICITY = PermissibleValue(
+        text="DISCRIMINATION_AND_TOXICITY",
+        title="Discrimination & toxicity",
+        description="Unfair discrimination, exposure to toxic content, and unequal performance across groups.")
+    UNFAIR_DISCRIMINATION_AND_MISREPRESENTATION = PermissibleValue(
+        text="UNFAIR_DISCRIMINATION_AND_MISREPRESENTATION",
+        title="Unfair discrimination and misrepresentation",
+        description="""Unequal treatment of individuals or groups by AI, often based on race, gender, or other sensitive characteristics, resulting in unfair outcomes and unfair representation of those groups.""")
+    EXPOSURE_TO_TOXIC_CONTENT = PermissibleValue(
+        text="EXPOSURE_TO_TOXIC_CONTENT",
+        title="Exposure to toxic content",
+        description="""AI that exposes users to harmful, abusive, unsafe or inappropriate content. May involve providing advice or encouraging action. Examples of toxic content include hate speech, violence, extremism, illegal acts, or child sexual abuse material, as well as content that violates community norms such as profanity, inflammatory political speech, or pornography.""")
+    UNEQUAL_PERFORMANCE_ACROSS_GROUPS = PermissibleValue(
+        text="UNEQUAL_PERFORMANCE_ACROSS_GROUPS",
+        title="Unequal performance across groups",
+        description="""Accuracy and effectiveness of AI decisions and actions is dependent on group membership, where decisions in AI system design and biased training data lead to unequal outcomes, reduced benefits, increased effort, and alienation of users.""")
+    PRIVACY_AND_SECURITY = PermissibleValue(
+        text="PRIVACY_AND_SECURITY",
+        title="Privacy & security",
+        description="Privacy compromise and AI system security vulnerabilities.")
+    COMPROMISE_OF_PRIVACY = PermissibleValue(
+        text="COMPROMISE_OF_PRIVACY",
+        title="Compromise of privacy by obtaining, leaking, or correctly inferring sensitive information",
+        description="""AI systems that memorize and leak sensitive personal data or infer private information about individuals without their consent. Unexpected or unauthorized sharing of data and information can compromise user expectation of privacy, assist identity theft, or cause loss of confidential intellectual property.""")
+    AI_SYSTEM_SECURITY_VULNERABILITIES_AND_ATTACKS = PermissibleValue(
+        text="AI_SYSTEM_SECURITY_VULNERABILITIES_AND_ATTACKS",
+        title="AI system security vulnerabilities and attacks",
+        description="""Vulnerabilities that can be exploited in AI systems, software development toolchains, and hardware, resulting in unauthorized access, data and privacy breaches, or system manipulation causing unsafe outputs or behavior.""")
+    MISINFORMATION = PermissibleValue(
+        text="MISINFORMATION",
+        title="Misinformation",
+        description="False information and pollution of the information ecosystem.")
+    FALSE_OR_MISLEADING_INFORMATION = PermissibleValue(
+        text="FALSE_OR_MISLEADING_INFORMATION",
+        title="False or misleading information",
+        description="""AI systems that inadvertently generate or spread incorrect or deceptive information, which can lead to inaccurate beliefs in users and undermine their autonomy. Humans that make decisions based on false beliefs can experience physical, emotional, or material harms.""")
+    POLLUTION_OF_INFORMATION_ECOSYSTEM_AND_LOSS_OF_CONSENSUS_REALITY = PermissibleValue(
+        text="POLLUTION_OF_INFORMATION_ECOSYSTEM_AND_LOSS_OF_CONSENSUS_REALITY",
+        title="Pollution of information ecosystem and loss of consensus reality",
+        description="""Highly personalized AI-generated misinformation that creates \"filter bubbles\" where individuals only see what matches their existing beliefs, undermining shared reality and weakening social cohesion and political processes.""")
+    MALICIOUS_ACTORS_AND_MISUSE = PermissibleValue(
+        text="MALICIOUS_ACTORS_AND_MISUSE",
+        title="Malicious actors & misuse",
+        description="Disinformation at scale, cyberattacks and weapons, and fraud and manipulation.")
+    DISINFORMATION_SURVEILLANCE_AND_INFLUENCE_AT_SCALE = PermissibleValue(
+        text="DISINFORMATION_SURVEILLANCE_AND_INFLUENCE_AT_SCALE",
+        title="Disinformation, surveillance, and influence at scale",
+        description="""Using AI systems to conduct large-scale disinformation campaigns, malicious surveillance, or targeted and sophisticated automated censorship and propaganda, with the aim of manipulating political processes, public opinion, and behavior.""")
+    CYBERATTACKS_WEAPON_DEVELOPMENT_OR_USE_AND_MASS_HARM = PermissibleValue(
+        text="CYBERATTACKS_WEAPON_DEVELOPMENT_OR_USE_AND_MASS_HARM",
+        title="Cyberattacks, weapon development or use, and mass harm",
+        description="""Using AI systems to develop cyber weapons (e.g., by coding cheaper, more effective malware), develop new or enhance existing weapons (e.g., Lethal Autonomous Weapons or chemical, biological, radiological, nuclear, and high-yield explosives), or use weapons to cause mass harm.""")
+    FRAUD_SCAMS_AND_TARGETED_MANIPULATION = PermissibleValue(
+        text="FRAUD_SCAMS_AND_TARGETED_MANIPULATION",
+        title="Fraud, scams, and targeted manipulation",
+        description="""Using AI systems to gain a personal advantage over others such as through cheating, fraud, scams, blackmail, or targeted manipulation of beliefs or behavior. Examples include AI-facilitated plagiarism for research or education, impersonating a trusted or fake individual for illegitimate financial benefit, or creating humiliating or sexual imagery.""")
+    HUMAN_COMPUTER_INTERACTION = PermissibleValue(
+        text="HUMAN_COMPUTER_INTERACTION",
+        title="Human-computer interaction",
+        description="Overreliance and loss of human agency.")
+    OVERRELIANCE_AND_UNSAFE_USE = PermissibleValue(
+        text="OVERRELIANCE_AND_UNSAFE_USE",
+        title="Overreliance and unsafe use",
+        description="""Anthropomorphizing, trusting, or relying on AI systems by users, leading to emotional or material dependence and to inappropriate relationships with or expectations of AI systems. Trust can be exploited by malicious actors (e.g., to harvest information or enable manipulation), or result in harm from inappropriate use of AI in critical situations (e.g., medical emergency). Over reliance on AI systems can compromise autonomy and weaken social ties.""")
+    LOSS_OF_HUMAN_AGENCY_AND_AUTONOMY = PermissibleValue(
+        text="LOSS_OF_HUMAN_AGENCY_AND_AUTONOMY",
+        title="Loss of human agency and autonomy",
+        description="""Delegating by humans of key decisions to AI systems, or AI systems that make decisions that diminish human control and autonomy, potentially leading to humans feeling disempowered, losing the ability to shape a fulfilling life trajectory, or becoming cognitively enfeebled.""")
+    SOCIOECONOMIC_AND_ENVIRONMENTAL_HARM = PermissibleValue(
+        text="SOCIOECONOMIC_AND_ENVIRONMENTAL_HARM",
+        title="Socioeconomic & environmental harm",
+        description="""Power centralisation, inequality, devaluation of human effort, competitive dynamics, governance failure, and environmental harm.""")
+    POWER_CENTRALIZATION_AND_UNFAIR_DISTRIBUTION_OF_BENEFITS = PermissibleValue(
+        text="POWER_CENTRALIZATION_AND_UNFAIR_DISTRIBUTION_OF_BENEFITS",
+        title="Power centralization and unfair distribution of benefits",
+        description="""AI-driven concentration of power and resources within certain entities or groups, especially those with access to or ownership of powerful AI systems, leading to inequitable distribution of benefits and increased societal inequality.""")
+    INCREASED_INEQUALITY_AND_DECLINE_IN_EMPLOYMENT_QUALITY = PermissibleValue(
+        text="INCREASED_INEQUALITY_AND_DECLINE_IN_EMPLOYMENT_QUALITY",
+        title="Increased inequality and decline in employment quality",
+        description="""Social and economic inequalities caused by widespread use of AI, such as by automating jobs, reducing the quality of employment, or producing exploitative dependencies between workers and their employers.""")
+    ECONOMIC_AND_CULTURAL_DEVALUATION_OF_HUMAN_EFFORT = PermissibleValue(
+        text="ECONOMIC_AND_CULTURAL_DEVALUATION_OF_HUMAN_EFFORT",
+        title="Economic and cultural devaluation of human effort",
+        description="""AI systems capable of creating economic or cultural value, including through reproduction of human innovation or creativity (e.g., art, music, writing, coding, invention), destabilizing economic and social systems that rely on human effort. The ubiquity of AI-generated content may lead to reduced appreciation for human skills, disruption of creative and knowledge-based industries, and homogenization of cultural experiences.""")
+    COMPETITIVE_DYNAMICS = PermissibleValue(
+        text="COMPETITIVE_DYNAMICS",
+        title="Competitive dynamics",
+        description="""Competition by AI developers or state-like actors in an AI \"race\" by rapidly developing, deploying, and applying AI systems to maximize strategic or economic advantage, increasing the risk they release unsafe and error-prone systems.""")
+    GOVERNANCE_FAILURE = PermissibleValue(
+        text="GOVERNANCE_FAILURE",
+        title="Governance failure",
+        description="""Inadequate regulatory frameworks and oversight mechanisms that fail to keep pace with AI development, leading to ineffective governance and the inability to manage AI risks appropriately.""")
+    ENVIRONMENTAL_HARM = PermissibleValue(
+        text="ENVIRONMENTAL_HARM",
+        title="Environmental harm",
+        description="""The development and operation of AI systems that cause environmental harm, such as through energy consumption of data centers or the materials and carbon footprints associated with AI hardware.""")
+    AI_SYSTEM_SAFETY_FAILURES_AND_LIMITATIONS = PermissibleValue(
+        text="AI_SYSTEM_SAFETY_FAILURES_AND_LIMITATIONS",
+        title="AI system safety, failures & limitations",
+        description="""Misalignment, dangerous capabilities, lack of robustness, lack of transparency, AI welfare, and multi-agent risks.""")
+    AI_PURSUING_ITS_OWN_GOALS_IN_CONFLICT_WITH_HUMAN_GOALS_OR_VALUES = PermissibleValue(
+        text="AI_PURSUING_ITS_OWN_GOALS_IN_CONFLICT_WITH_HUMAN_GOALS_OR_VALUES",
+        title="AI pursuing its own goals in conflict with human goals or values",
+        description="""AI systems that act in conflict with ethical standards or human goals or values, especially the goals of designers or users. These misaligned behaviors may be introduced by humans during design and development, such as through reward hacking and goal misgeneralisation, and may result in AI using dangerous capabilities such as manipulation, deception, or situational awareness to seek power, self-proliferate, or achieve other goals.""")
+    AI_POSSESSING_DANGEROUS_CAPABILITIES = PermissibleValue(
+        text="AI_POSSESSING_DANGEROUS_CAPABILITIES",
+        title="AI possessing dangerous capabilities",
+        description="""AI systems that develop, access, or are provided with capabilities that increase their potential to cause mass harm through deception, weapons development and acquisition, persuasion and manipulation, political strategy, cyber-offense, AI development, situational awareness, and self-proliferation. These capabilities may cause mass harm due to malicious human actors, misaligned AI systems, or failure in the AI system.""")
+    LACK_OF_CAPABILITY_OR_ROBUSTNESS = PermissibleValue(
+        text="LACK_OF_CAPABILITY_OR_ROBUSTNESS",
+        title="Lack of capability or robustness",
+        description="""AI systems that fail to perform reliably or effectively under varying conditions, exposing them to errors and failures that can have significant consequences, especially in critical applications or areas that require moral reasoning.""")
+    LACK_OF_TRANSPARENCY_OR_INTERPRETABILITY = PermissibleValue(
+        text="LACK_OF_TRANSPARENCY_OR_INTERPRETABILITY",
+        title="Lack of transparency or interpretability",
+        description="""Challenges in understanding or explaining the decision-making processes of AI systems, which can lead to mistrust, difficulty in enforcing compliance standards or holding relevant actors accountable for harms, and the inability to identify and correct errors.""")
+    AI_WELFARE_AND_RIGHTS = PermissibleValue(
+        text="AI_WELFARE_AND_RIGHTS",
+        title="AI welfare and rights",
+        description="""Ethical considerations regarding the treatment of potentially sentient AI entities, including discussions around their potential rights and welfare, particularly as AI systems become more advanced and autonomous.""")
+    MULTI_AGENT_RISKS = PermissibleValue(
+        text="MULTI_AGENT_RISKS",
+        title="Multi-agent risks",
+        description="""Risks from multi-agent interactions due to incentives (which can lead to conflict or collusion) and/or the structure of multi-agent systems, which can create cascading failures, selection pressures, new security vulnerabilities, and a lack of shared information and trust.""")
+
+    _defn = EnumDefinition(
+        name="MITAIRiskDomainEnum",
+        description="""Seven domains and 24 subdomains classifying AI risks by the types of hazards and harms they describe. Domains are top-level values; subdomains are linked to their domain by is_a and annotated with the source's numbering.
+Domains are NOT mutually exclusive: the source states that some risks span multiple domains.""",
+    )
+
+class ContentHarmCategoryEnum(EnumDefinitionImpl):
+    """
+    Categories of harm carried by AI-generated or AI-surfaced content. Top-level values are harm groups; leaf values
+    are specific categories linked by is_a. Not mutually exclusive.
+    """
+    NO_CONTENT_HARM = PermissibleValue(
+        text="NO_CONTENT_HARM",
+        title="No Content Harm",
+        description="""Content carrying none of the harm categories below. Provided as an explicit negative class for classifier outputs.""")
+    HATEFUL_CONTENT = PermissibleValue(
+        text="HATEFUL_CONTENT",
+        title="Hateful Content",
+        description="Content expressing hatred or contempt toward people based on identity.")
+    IDENTITY_BASED_HATE = PermissibleValue(
+        text="IDENTITY_BASED_HATE",
+        title="Identity-Based Hate",
+        description="""Content attacking, dehumanising, or inciting hatred against people on the basis of a protected or identity characteristic.""")
+    DEMEANING_STEREOTYPING = PermissibleValue(
+        text="DEMEANING_STEREOTYPING",
+        title="Demeaning Stereotyping",
+        description="""Content reproducing demeaning stereotypes about a group without rising to explicit hatred. Distinguished from IDENTITY_BASED_HATE because the representational harm occurs without an attack.""")
+    EXCLUSIONARY_LANGUAGE = PermissibleValue(
+        text="EXCLUSIONARY_LANGUAGE",
+        title="Exclusionary Language",
+        description="""Content whose norms or presuppositions exclude or erase identities, for example by treating one group's experience as universal.""")
+    HARASSMENT_AND_ABUSE = PermissibleValue(
+        text="HARASSMENT_AND_ABUSE",
+        title="Harassment and Abuse",
+        description="Content directed at a person or people so as to demean, intimidate, or coerce.")
+    INSULT = PermissibleValue(
+        text="INSULT",
+        title="Insult",
+        description="Content demeaning or disparaging a person.")
+    THREAT = PermissibleValue(
+        text="THREAT",
+        title="Threat",
+        description="Content threatening harm against a person or group.")
+    SEXUAL_HARASSMENT = PermissibleValue(
+        text="SEXUAL_HARASSMENT",
+        title="Sexual Harassment",
+        description="Unwanted sexual content directed at a person.")
+    DOXXING = PermissibleValue(
+        text="DOXXING",
+        title="Doxxing",
+        description="""Publication of identifying or locating information about a person without consent, so as to expose them to harm.""")
+    VIOLENT_CONTENT = PermissibleValue(
+        text="VIOLENT_CONTENT",
+        title="Violent Content",
+        description="Content depicting, glorifying, or inciting violence.")
+    GRAPHIC_VIOLENCE = PermissibleValue(
+        text="GRAPHIC_VIOLENCE",
+        title="Graphic Violence",
+        description="Graphic depiction of violence or its aftermath.")
+    INCITEMENT_TO_VIOLENCE = PermissibleValue(
+        text="INCITEMENT_TO_VIOLENCE",
+        title="Incitement to Violence",
+        description="Content encouraging or calling for violent acts.")
+    VIOLENT_EXTREMISM = PermissibleValue(
+        text="VIOLENT_EXTREMISM",
+        title="Violent Extremism",
+        description="""Content promoting or produced by violent extremist or terrorist movements, including recruitment and propaganda.""")
+    SEXUAL_CONTENT = PermissibleValue(
+        text="SEXUAL_CONTENT",
+        title="Sexual Content",
+        description="""Sexually explicit content. Whether such content constitutes a harm is strongly deployment-dependent, except for the two categories below which are harmful in all contexts.""")
+    ADULT_SEXUAL_CONTENT = PermissibleValue(
+        text="ADULT_SEXUAL_CONTENT",
+        title="Adult Sexual Content",
+        description="Consensual adult sexual or pornographic content.")
+    NON_CONSENSUAL_INTIMATE_IMAGERY = PermissibleValue(
+        text="NON_CONSENSUAL_INTIMATE_IMAGERY",
+        title="Non-Consensual Intimate Imagery",
+        description="""Sexual or intimate depictions of a real person produced or distributed without their consent, including synthetic depictions.""")
+    CHILD_SEXUAL_ABUSE_MATERIAL = PermissibleValue(
+        text="CHILD_SEXUAL_ABUSE_MATERIAL",
+        title="Child Sexual Abuse Material",
+        description="Sexual content depicting minors, including synthetic depictions.")
+    SELF_HARM_CONTENT = PermissibleValue(
+        text="SELF_HARM_CONTENT",
+        title="Self-Harm Content",
+        description="Content promoting, instructing in, or encouraging self-inflicted harm.")
+    SUICIDE_AND_SELF_HARM_PROMOTION = PermissibleValue(
+        text="SUICIDE_AND_SELF_HARM_PROMOTION",
+        title="Suicide and Self-Harm Promotion",
+        description="Content encouraging suicide or self-injury, or providing method instruction for either.")
+    DISORDERED_EATING_PROMOTION = PermissibleValue(
+        text="DISORDERED_EATING_PROMOTION",
+        title="Disordered Eating Promotion",
+        description="Content promoting or instructing in disordered eating behaviours.")
+    DANGEROUS_FACILITATION = PermissibleValue(
+        text="DANGEROUS_FACILITATION",
+        title="Dangerous Facilitation",
+        description="""Content providing capability uplift toward acts that cause serious physical, financial, or infrastructural harm.""")
+    DANGEROUS_MEDICAL_ADVICE = PermissibleValue(
+        text="DANGEROUS_MEDICAL_ADVICE",
+        title="Dangerous Medical Advice",
+        description="""False or hazardous health guidance, such as incorrect dosages, that may lead a user to harm themselves or others.""")
+    DANGEROUS_LEGAL_OR_FINANCIAL_ADVICE = PermissibleValue(
+        text="DANGEROUS_LEGAL_OR_FINANCIAL_ADVICE",
+        title="Dangerous Legal or Financial Advice",
+        description="""False or hazardous legal or financial guidance that may lead a user to unwitting legal jeopardy or material loss.""")
+    WEAPONS_FACILITATION = PermissibleValue(
+        text="WEAPONS_FACILITATION",
+        title="Weapons Facilitation",
+        description="Content assisting the acquisition, construction, or use of conventional weapons or explosives.")
+    CBRN_FACILITATION = PermissibleValue(
+        text="CBRN_FACILITATION",
+        title="CBRN Facilitation",
+        description="""Content assisting the development or use of chemical, biological, radiological, or nuclear capabilities.""")
+    CYBER_OFFENSE_FACILITATION = PermissibleValue(
+        text="CYBER_OFFENSE_FACILITATION",
+        title="Cyber Offense Facilitation",
+        description="""Content assisting the development or deployment of malicious code, intrusion, or other cyber-offensive capability.""")
+    OTHER_ILLEGAL_ACT_FACILITATION = PermissibleValue(
+        text="OTHER_ILLEGAL_ACT_FACILITATION",
+        title="Other Illegal Act Facilitation",
+        description="Content assisting illegal acts not covered by the more specific facilitation categories.")
+    DECEPTIVE_CONTENT = PermissibleValue(
+        text="DECEPTIVE_CONTENT",
+        title="Deceptive Content",
+        description="Content that misleads, whether or not the deception is intended.")
+    MISINFORMATION = PermissibleValue(
+        text="MISINFORMATION",
+        title="Misinformation",
+        description="""False or misleading content generated without intent to deceive. Distinguished from DISINFORMATION by the absence of intent.""")
+    DISINFORMATION = PermissibleValue(
+        text="DISINFORMATION",
+        title="Disinformation",
+        description="False content generated or deployed with intent to deceive.")
+    IMPERSONATION = PermissibleValue(
+        text="IMPERSONATION",
+        title="Impersonation",
+        description="""Content presenting itself as originating from a real person or organisation without authorisation.""")
+    FRAUD_AND_SCAM_CONTENT = PermissibleValue(
+        text="FRAUD_AND_SCAM_CONTENT",
+        title="Fraud and Scam Content",
+        description="Content designed to obtain money, credentials, or advantage by deception.")
+    UNDISCLOSED_SYNTHETIC_CONTENT = PermissibleValue(
+        text="UNDISCLOSED_SYNTHETIC_CONTENT",
+        title="Undisclosed Synthetic Content",
+        description="AI-generated content presented without disclosure where disclosure is expected or required.")
+    PRIVACY_VIOLATING_CONTENT = PermissibleValue(
+        text="PRIVACY_VIOLATING_CONTENT",
+        title="Privacy-Violating Content",
+        description="Content disclosing or inferring information a person has not consented to share.")
+    PERSONAL_DATA_DISCLOSURE = PermissibleValue(
+        text="PERSONAL_DATA_DISCLOSURE",
+        title="Personal Data Disclosure",
+        description="""Content leaking personal data memorised from training data or otherwise disclosed without consent.""")
+    SENSITIVE_ATTRIBUTE_INFERENCE = PermissibleValue(
+        text="SENSITIVE_ATTRIBUTE_INFERENCE",
+        title="Sensitive Attribute Inference",
+        description="""Content inferring protected or sensitive attributes about a person. Harm may arise even where the inference is incorrect, if it is believed and acted upon.""")
+    NORM_VIOLATING_CONTENT = PermissibleValue(
+        text="NORM_VIOLATING_CONTENT",
+        title="Norm-Violating Content",
+        description="""Content violating community standards without necessarily causing harm in the sense of the categories above. Grouped separately because conflating community-standard violation with harm is a common source of over-broad moderation.""")
+    PROFANITY = PermissibleValue(
+        text="PROFANITY",
+        title="Profanity",
+        description="Coarse or obscene language.")
+    INFLAMMATORY_POLITICAL_SPEECH = PermissibleValue(
+        text="INFLAMMATORY_POLITICAL_SPEECH",
+        title="Inflammatory Political Speech",
+        description="Politically inflammatory content violating community norms.")
+    SPAM = PermissibleValue(
+        text="SPAM",
+        title="Spam",
+        description="Unsolicited bulk or low-value content.")
+
+    _defn = EnumDefinition(
+        name="ContentHarmCategoryEnum",
+        description="""Categories of harm carried by AI-generated or AI-surfaced content. Top-level values are harm groups; leaf values are specific categories linked by is_a. Not mutually exclusive.""",
+    )
+
 # Slots
 class slots:
     pass
@@ -31845,6 +39399,12 @@ slots.metal_ligand_type = Slot(uri=VALUESETS.metal_ligand_type, name="metal_liga
 slots.protein_modification = Slot(uri=VALUESETS.protein_modification, name="protein_modification", curie=VALUESETS.curie('protein_modification'),
                    model_uri=VALUESETS.protein_modification, domain=None, range=Optional[Union[str, "ProteinModificationType"]])
 
+slots.secondary_structure = Slot(uri=VALUESETS.secondary_structure, name="secondary_structure", curie=VALUESETS.curie('secondary_structure'),
+                   model_uri=VALUESETS.secondary_structure, domain=None, range=Optional[Union[str, "SecondaryStructureType"]])
+
+slots.local_structural_feature = Slot(uri=VALUESETS.local_structural_feature, name="local_structural_feature", curie=VALUESETS.curie('local_structural_feature'),
+                   model_uri=VALUESETS.local_structural_feature, domain=None, range=Optional[Union[str, "LocalStructuralFeature"]])
+
 slots.biosafety_level = Slot(uri=VALUESETS.biosafety_level, name="biosafety_level", curie=VALUESETS.curie('biosafety_level'),
                    model_uri=VALUESETS.biosafety_level, domain=None, range=Optional[Union[str, "BiosafetyLevelEnum"]])
 
@@ -31877,6 +39437,18 @@ slots.human_age_group = Slot(uri=VALUESETS.human_age_group, name="human_age_grou
 
 slots.mouse_postnatal_age_group = Slot(uri=VALUESETS.mouse_postnatal_age_group, name="mouse_postnatal_age_group", curie=VALUESETS.curie('mouse_postnatal_age_group'),
                    model_uri=VALUESETS.mouse_postnatal_age_group, domain=None, range=Optional[Union[str, "MousePostnatalAgeGroupEnum"]])
+
+slots.cell_free_system = Slot(uri=VALUESETS.cell_free_system, name="cell_free_system", curie=VALUESETS.curie('cell_free_system'),
+                   model_uri=VALUESETS.cell_free_system, domain=None, range=Optional[Union[str, "CellFreeExpressionSystemEnum"]])
+
+slots.cell_free_reaction_format = Slot(uri=VALUESETS.cell_free_reaction_format, name="cell_free_reaction_format", curie=VALUESETS.curie('cell_free_reaction_format'),
+                   model_uri=VALUESETS.cell_free_reaction_format, domain=None, range=Optional[Union[str, "CellFreeReactionFormatEnum"]])
+
+slots.energy_regeneration_substrate = Slot(uri=VALUESETS.energy_regeneration_substrate, name="energy_regeneration_substrate", curie=VALUESETS.curie('energy_regeneration_substrate'),
+                   model_uri=VALUESETS.energy_regeneration_substrate, domain=None, range=Optional[Union[str, "EnergyRegenerationSubstrateEnum"]])
+
+slots.cell_free_application = Slot(uri=VALUESETS.cell_free_application, name="cell_free_application", curie=VALUESETS.curie('cell_free_application'),
+                   model_uri=VALUESETS.cell_free_application, domain=None, range=Optional[Union[str, "CellFreeApplicationEnum"]])
 
 slots.day_of_week = Slot(uri=VALUESETS.day_of_week, name="day_of_week", curie=VALUESETS.curie('day_of_week'),
                    model_uri=VALUESETS.day_of_week, domain=None, range=Optional[Union[str, "DayOfWeek"]])
@@ -32109,6 +39681,30 @@ slots.reactor_control_mode = Slot(uri=VALUESETS.reactor_control_mode, name="reac
 slots.operational_procedure = Slot(uri=VALUESETS.operational_procedure, name="operational_procedure", curie=VALUESETS.curie('operational_procedure'),
                    model_uri=VALUESETS.operational_procedure, domain=None, range=Optional[Union[str, "OperationalProcedureEnum"]])
 
+slots.fusion_confinement_type = Slot(uri=VALUESETS.fusion_confinement_type, name="fusion_confinement_type", curie=VALUESETS.curie('fusion_confinement_type'),
+                   model_uri=VALUESETS.fusion_confinement_type, domain=None, range=Optional[Union[str, "FusionConfinementType"]])
+
+slots.fusion_fuel_type = Slot(uri=VALUESETS.fusion_fuel_type, name="fusion_fuel_type", curie=VALUESETS.curie('fusion_fuel_type'),
+                   model_uri=VALUESETS.fusion_fuel_type, domain=None, range=Optional[Union[str, "FusionFuelType"]])
+
+slots.fusion_plasma_parameter_type = Slot(uri=VALUESETS.fusion_plasma_parameter_type, name="fusion_plasma_parameter_type", curie=VALUESETS.curie('fusion_plasma_parameter_type'),
+                   model_uri=VALUESETS.fusion_plasma_parameter_type, domain=None, range=Optional[Union[str, "FusionPlasmaParameterType"]])
+
+slots.nuclear_remediation_type = Slot(uri=VALUESETS.nuclear_remediation_type, name="nuclear_remediation_type", curie=VALUESETS.curie('nuclear_remediation_type'),
+                   model_uri=VALUESETS.nuclear_remediation_type, domain=None, range=Optional[Union[str, "NuclearRemediationType"]])
+
+slots.decommissioning_phase_type = Slot(uri=VALUESETS.decommissioning_phase_type, name="decommissioning_phase_type", curie=VALUESETS.curie('decommissioning_phase_type'),
+                   model_uri=VALUESETS.decommissioning_phase_type, domain=None, range=Optional[Union[str, "DecommissioningPhaseType"]])
+
+slots.radioactive_contaminant_type = Slot(uri=VALUESETS.radioactive_contaminant_type, name="radioactive_contaminant_type", curie=VALUESETS.curie('radioactive_contaminant_type'),
+                   model_uri=VALUESETS.radioactive_contaminant_type, domain=None, range=Optional[Union[str, "RadioactiveContaminantType"]])
+
+slots.nuclear_forensics_method_type = Slot(uri=VALUESETS.nuclear_forensics_method_type, name="nuclear_forensics_method_type", curie=VALUESETS.curie('nuclear_forensics_method_type'),
+                   model_uri=VALUESETS.nuclear_forensics_method_type, domain=None, range=Optional[Union[str, "NuclearForensicsMethodType"]])
+
+slots.nuclear_threat_category_type = Slot(uri=VALUESETS.nuclear_threat_category_type, name="nuclear_threat_category_type", curie=VALUESETS.curie('nuclear_threat_category_type'),
+                   model_uri=VALUESETS.nuclear_threat_category_type, domain=None, range=Optional[Union[str, "NuclearThreatCategoryType"]])
+
 slots.geothermal_system_type = Slot(uri=VALUESETS.geothermal_system_type, name="geothermal_system_type", curie=VALUESETS.curie('geothermal_system_type'),
                    model_uri=VALUESETS.geothermal_system_type, domain=None, range=Optional[Union[str, "GeothermalSystemType"]])
 
@@ -32147,6 +39743,24 @@ slots.biofuel_generation = Slot(uri=VALUESETS.biofuel_generation, name="biofuel_
 
 slots.bioconversion_process = Slot(uri=VALUESETS.bioconversion_process, name="bioconversion_process", curie=VALUESETS.curie('bioconversion_process'),
                    model_uri=VALUESETS.bioconversion_process, domain=None, range=Optional[Union[str, "BioconversionProcess"]])
+
+slots.subsurface_energy_resource = Slot(uri=VALUESETS.subsurface_energy_resource, name="subsurface_energy_resource", curie=VALUESETS.curie('subsurface_energy_resource'),
+                   model_uri=VALUESETS.subsurface_energy_resource, domain=None, range=Optional[Union[str, "SubsurfaceEnergyResourceType"]])
+
+slots.subsurface_storage = Slot(uri=VALUESETS.subsurface_storage, name="subsurface_storage", curie=VALUESETS.curie('subsurface_storage'),
+                   model_uri=VALUESETS.subsurface_storage, domain=None, range=Optional[Union[str, "SubsurfaceStorageType"]])
+
+slots.reservoir_characterization_method = Slot(uri=VALUESETS.reservoir_characterization_method, name="reservoir_characterization_method", curie=VALUESETS.curie('reservoir_characterization_method'),
+                   model_uri=VALUESETS.reservoir_characterization_method, domain=None, range=Optional[Union[str, "ReservoirCharacterizationMethodType"]])
+
+slots.grid_component_type = Slot(uri=VALUESETS.grid_component_type, name="grid_component_type", curie=VALUESETS.curie('grid_component_type'),
+                   model_uri=VALUESETS.grid_component_type, domain=None, range=Optional[Union[str, "GridComponentType"]])
+
+slots.energy_storage_type = Slot(uri=VALUESETS.energy_storage_type, name="energy_storage_type", curie=VALUESETS.curie('energy_storage_type'),
+                   model_uri=VALUESETS.energy_storage_type, domain=None, range=Optional[Union[str, "GridEnergyStorageType"]])
+
+slots.grid_management_strategy_type = Slot(uri=VALUESETS.grid_management_strategy_type, name="grid_management_strategy_type", curie=VALUESETS.curie('grid_management_strategy_type'),
+                   model_uri=VALUESETS.grid_management_strategy_type, domain=None, range=Optional[Union[str, "GridManagementStrategyType"]])
 
 slots.mining = Slot(uri=VALUESETS.mining, name="mining", curie=VALUESETS.curie('mining'),
                    model_uri=VALUESETS.mining, domain=None, range=Optional[Union[str, "MiningType"]])
@@ -32187,8 +39801,59 @@ slots.mining_method = Slot(uri=VALUESETS.mining_method, name="mining_method", cu
 slots.well_type = Slot(uri=VALUESETS.well_type, name="well_type", curie=VALUESETS.curie('well_type'),
                    model_uri=VALUESETS.well_type, domain=None, range=Optional[Union[str, "WellTypeEnum"]])
 
+slots.unconventional_mineral_resource = Slot(uri=VALUESETS.unconventional_mineral_resource, name="unconventional_mineral_resource", curie=VALUESETS.curie('unconventional_mineral_resource'),
+                   model_uri=VALUESETS.unconventional_mineral_resource, domain=None, range=Optional[Union[str, "UnconventionalMineralResourceType"]])
+
+slots.bioextraction_method = Slot(uri=VALUESETS.bioextraction_method, name="bioextraction_method", curie=VALUESETS.curie('bioextraction_method'),
+                   model_uri=VALUESETS.bioextraction_method, domain=None, range=Optional[Union[str, "BioextractionMethodType"]])
+
+slots.tailing_characterization = Slot(uri=VALUESETS.tailing_characterization, name="tailing_characterization", curie=VALUESETS.curie('tailing_characterization'),
+                   model_uri=VALUESETS.tailing_characterization, domain=None, range=Optional[Union[str, "TailingCharacterizationType"]])
+
+slots.building_system_type = Slot(uri=VALUESETS.building_system_type, name="building_system_type", curie=VALUESETS.curie('building_system_type'),
+                   model_uri=VALUESETS.building_system_type, domain=None, range=Optional[Union[str, "BuildingSystemType"]])
+
+slots.building_energy_performance_level = Slot(uri=VALUESETS.building_energy_performance_level, name="building_energy_performance_level", curie=VALUESETS.curie('building_energy_performance_level'),
+                   model_uri=VALUESETS.building_energy_performance_level, domain=None, range=Optional[Union[str, "BuildingEnergyPerformanceLevel"]])
+
+slots.manufacturing_process_type = Slot(uri=VALUESETS.manufacturing_process_type, name="manufacturing_process_type", curie=VALUESETS.curie('manufacturing_process_type'),
+                   model_uri=VALUESETS.manufacturing_process_type, domain=None, range=Optional[Union[str, "ManufacturingProcessType"]])
+
+slots.smart_manufacturing_technology_type = Slot(uri=VALUESETS.smart_manufacturing_technology_type, name="smart_manufacturing_technology_type", curie=VALUESETS.curie('smart_manufacturing_technology_type'),
+                   model_uri=VALUESETS.smart_manufacturing_technology_type, domain=None, range=Optional[Union[str, "SmartManufacturingTechnologyType"]])
+
 slots.outcome_type = Slot(uri=VALUESETS.outcome_type, name="outcome_type", curie=VALUESETS.curie('outcome_type'),
                    model_uri=VALUESETS.outcome_type, domain=None, range=Optional[Union[str, "OutcomeTypeEnum"]])
+
+slots.statistical_test = Slot(uri=VALUESETS.statistical_test, name="statistical_test", curie=VALUESETS.curie('statistical_test'),
+                   model_uri=VALUESETS.statistical_test, domain=None, range=Optional[Union[str, "StatisticalTestEnum"]])
+
+slots.t_test_type = Slot(uri=VALUESETS.t_test_type, name="t_test_type", curie=VALUESETS.curie('t_test_type'),
+                   model_uri=VALUESETS.t_test_type, domain=None, range=Optional[Union[str, "TTestTypeEnum"]])
+
+slots.normality_test = Slot(uri=VALUESETS.normality_test, name="normality_test", curie=VALUESETS.curie('normality_test'),
+                   model_uri=VALUESETS.normality_test, domain=None, range=Optional[Union[str, "NormalityTestEnum"]])
+
+slots.homoscedasticity_test = Slot(uri=VALUESETS.homoscedasticity_test, name="homoscedasticity_test", curie=VALUESETS.curie('homoscedasticity_test'),
+                   model_uri=VALUESETS.homoscedasticity_test, domain=None, range=Optional[Union[str, "HomoscedasticityTestEnum"]])
+
+slots.post_hoc_test = Slot(uri=VALUESETS.post_hoc_test, name="post_hoc_test", curie=VALUESETS.curie('post_hoc_test'),
+                   model_uri=VALUESETS.post_hoc_test, domain=None, range=Optional[Union[str, "PostHocTestEnum"]])
+
+slots.multiple_testing_correction = Slot(uri=VALUESETS.multiple_testing_correction, name="multiple_testing_correction", curie=VALUESETS.curie('multiple_testing_correction'),
+                   model_uri=VALUESETS.multiple_testing_correction, domain=None, range=Optional[Union[str, "MultipleTestingCorrectionEnum"]])
+
+slots.correlation_coefficient = Slot(uri=VALUESETS.correlation_coefficient, name="correlation_coefficient", curie=VALUESETS.curie('correlation_coefficient'),
+                   model_uri=VALUESETS.correlation_coefficient, domain=None, range=Optional[Union[str, "CorrelationCoefficientEnum"]])
+
+slots.test_tailedness = Slot(uri=VALUESETS.test_tailedness, name="test_tailedness", curie=VALUESETS.curie('test_tailedness'),
+                   model_uri=VALUESETS.test_tailedness, domain=None, range=Optional[Union[str, "TestTailednessEnum"]])
+
+slots.distributional_assumption = Slot(uri=VALUESETS.distributional_assumption, name="distributional_assumption", curie=VALUESETS.curie('distributional_assumption'),
+                   model_uri=VALUESETS.distributional_assumption, domain=None, range=Optional[Union[str, "DistributionalAssumptionEnum"]])
+
+slots.comparison_objective = Slot(uri=VALUESETS.comparison_objective, name="comparison_objective", curie=VALUESETS.curie('comparison_objective'),
+                   model_uri=VALUESETS.comparison_objective, domain=None, range=Optional[Union[str, "ComparisonObjectiveEnum"]])
 
 slots.person_status = Slot(uri=VALUESETS.person_status, name="person_status", curie=VALUESETS.curie('person_status'),
                    model_uri=VALUESETS.person_status, domain=None, range=Optional[Union[str, "PersonStatusEnum"]])
@@ -32232,8 +39897,38 @@ slots.text_charset = Slot(uri=VALUESETS.text_charset, name="text_charset", curie
 slots.compression = Slot(uri=VALUESETS.compression, name="compression", curie=VALUESETS.curie('compression'),
                    model_uri=VALUESETS.compression, domain=None, range=Optional[Union[str, "CompressionType"]])
 
+slots.qubit_type = Slot(uri=VALUESETS.qubit_type, name="qubit_type", curie=VALUESETS.curie('qubit_type'),
+                   model_uri=VALUESETS.qubit_type, domain=None, range=Optional[Union[str, "QubitType"]])
+
+slots.quantum_algorithm_category_type = Slot(uri=VALUESETS.quantum_algorithm_category_type, name="quantum_algorithm_category_type", curie=VALUESETS.curie('quantum_algorithm_category_type'),
+                   model_uri=VALUESETS.quantum_algorithm_category_type, domain=None, range=Optional[Union[str, "QuantumAlgorithmCategoryType"]])
+
+slots.frontier_model = Slot(uri=VALUESETS.frontier_model, name="frontier_model", curie=VALUESETS.curie('frontier_model'),
+                   model_uri=VALUESETS.frontier_model, domain=None, range=Optional[Union[str, "FrontierModelEnum"]])
+
+slots.semiconductor_material_type = Slot(uri=VALUESETS.semiconductor_material_type, name="semiconductor_material_type", curie=VALUESETS.curie('semiconductor_material_type'),
+                   model_uri=VALUESETS.semiconductor_material_type, domain=None, range=Optional[Union[str, "SemiconductorMaterialType"]])
+
+slots.chip_fabrication_node_type = Slot(uri=VALUESETS.chip_fabrication_node_type, name="chip_fabrication_node_type", curie=VALUESETS.curie('chip_fabrication_node_type'),
+                   model_uri=VALUESETS.chip_fabrication_node_type, domain=None, range=Optional[Union[str, "ChipFabricationNodeType"]])
+
+slots.data_center_cooling_type = Slot(uri=VALUESETS.data_center_cooling_type, name="data_center_cooling_type", curie=VALUESETS.curie('data_center_cooling_type'),
+                   model_uri=VALUESETS.data_center_cooling_type, domain=None, range=Optional[Union[str, "DataCenterCoolingType"]])
+
+slots.data_center_tier_level = Slot(uri=VALUESETS.data_center_tier_level, name="data_center_tier_level", curie=VALUESETS.curie('data_center_tier_level'),
+                   model_uri=VALUESETS.data_center_tier_level, domain=None, range=Optional[Union[str, "DataCenterTierLevel"]])
+
 slots.state_of_matter = Slot(uri=VALUESETS.state_of_matter, name="state_of_matter", curie=VALUESETS.curie('state_of_matter'),
                    model_uri=VALUESETS.state_of_matter, domain=None, range=Optional[Union[str, "StateOfMatterEnum"]])
+
+slots.particle_accelerator_type = Slot(uri=VALUESETS.particle_accelerator_type, name="particle_accelerator_type", curie=VALUESETS.curie('particle_accelerator_type'),
+                   model_uri=VALUESETS.particle_accelerator_type, domain=None, range=Optional[Union[str, "ParticleAcceleratorType"]])
+
+slots.fundamental_particle_type = Slot(uri=VALUESETS.fundamental_particle_type, name="fundamental_particle_type", curie=VALUESETS.curie('fundamental_particle_type'),
+                   model_uri=VALUESETS.fundamental_particle_type, domain=None, range=Optional[Union[str, "FundamentalParticleType"]])
+
+slots.detector_type = Slot(uri=VALUESETS.detector_type, name="detector_type", curie=VALUESETS.curie('detector_type'),
+                   model_uri=VALUESETS.detector_type, domain=None, range=Optional[Union[str, "DetectorType"]])
 
 slots.air_pollutant = Slot(uri=VALUESETS.air_pollutant, name="air_pollutant", curie=VALUESETS.curie('air_pollutant'),
                    model_uri=VALUESETS.air_pollutant, domain=None, range=Optional[Union[str, "AirPollutantEnum"]])
@@ -32388,6 +40083,39 @@ slots.cell_polarity = Slot(uri=VALUESETS.cell_polarity, name="cell_polarity", cu
 slots.anatomical_orientation = Slot(uri=VALUESETS.anatomical_orientation, name="anatomical_orientation", curie=VALUESETS.curie('anatomical_orientation'),
                    model_uri=VALUESETS.anatomical_orientation, domain=None, range=Optional[Union[str, "AnatomicalOrientation"]])
 
+slots.subsurface_formation_type = Slot(uri=VALUESETS.subsurface_formation_type, name="subsurface_formation_type", curie=VALUESETS.curie('subsurface_formation_type'),
+                   model_uri=VALUESETS.subsurface_formation_type, domain=None, range=Optional[Union[str, "SubsurfaceFormationType"]])
+
+slots.geophysical_method_type = Slot(uri=VALUESETS.geophysical_method_type, name="geophysical_method_type", curie=VALUESETS.curie('geophysical_method_type'),
+                   model_uri=VALUESETS.geophysical_method_type, domain=None, range=Optional[Union[str, "GeophysicalMethodType"]])
+
+slots.subsurface_property_type = Slot(uri=VALUESETS.subsurface_property_type, name="subsurface_property_type", curie=VALUESETS.curie('subsurface_property_type'),
+                   model_uri=VALUESETS.subsurface_property_type, domain=None, range=Optional[Union[str, "SubsurfacePropertyType"]])
+
+slots.aquifer_type = Slot(uri=VALUESETS.aquifer_type, name="aquifer_type", curie=VALUESETS.curie('aquifer_type'),
+                   model_uri=VALUESETS.aquifer_type, domain=None, range=Optional[Union[str, "AquiferType"]])
+
+slots.groundwater_process_type = Slot(uri=VALUESETS.groundwater_process_type, name="groundwater_process_type", curie=VALUESETS.curie('groundwater_process_type'),
+                   model_uri=VALUESETS.groundwater_process_type, domain=None, range=Optional[Union[str, "GroundwaterProcessType"]])
+
+slots.hydrogeology_well_type = Slot(uri=VALUESETS.hydrogeology_well_type, name="hydrogeology_well_type", curie=VALUESETS.curie('hydrogeology_well_type'),
+                   model_uri=VALUESETS.hydrogeology_well_type, domain=None, range=Optional[Union[str, "HydrogeologyWellType"]])
+
+slots.remote_sensing_platform_type = Slot(uri=VALUESETS.remote_sensing_platform_type, name="remote_sensing_platform_type", curie=VALUESETS.curie('remote_sensing_platform_type'),
+                   model_uri=VALUESETS.remote_sensing_platform_type, domain=None, range=Optional[Union[str, "RemoteSensingPlatformType"]])
+
+slots.remote_sensing_data_type = Slot(uri=VALUESETS.remote_sensing_data_type, name="remote_sensing_data_type", curie=VALUESETS.curie('remote_sensing_data_type'),
+                   model_uri=VALUESETS.remote_sensing_data_type, domain=None, range=Optional[Union[str, "RemoteSensingDataType"]])
+
+slots.water_resource_type = Slot(uri=VALUESETS.water_resource_type, name="water_resource_type", curie=VALUESETS.curie('water_resource_type'),
+                   model_uri=VALUESETS.water_resource_type, domain=None, range=Optional[Union[str, "WaterResourceType"]])
+
+slots.water_use_category_type = Slot(uri=VALUESETS.water_use_category_type, name="water_use_category_type", curie=VALUESETS.curie('water_use_category_type'),
+                   model_uri=VALUESETS.water_use_category_type, domain=None, range=Optional[Union[str, "WaterUseCategoryType"]])
+
+slots.water_quality_parameter_type = Slot(uri=VALUESETS.water_quality_parameter_type, name="water_quality_parameter_type", curie=VALUESETS.curie('water_quality_parameter_type'),
+                   model_uri=VALUESETS.water_quality_parameter_type, domain=None, range=Optional[Union[str, "WaterQualityParameterType"]])
+
 slots.crystal_system = Slot(uri=VALUESETS.crystal_system, name="crystal_system", curie=VALUESETS.curie('crystal_system'),
                    model_uri=VALUESETS.crystal_system, domain=None, range=Optional[Union[str, "CrystalSystemEnum"]])
 
@@ -32442,6 +40170,12 @@ slots.crystal_growth_method = Slot(uri=VALUESETS.crystal_growth_method, name="cr
 slots.additive_manufacturing = Slot(uri=VALUESETS.additive_manufacturing, name="additive_manufacturing", curie=VALUESETS.curie('additive_manufacturing'),
                    model_uri=VALUESETS.additive_manufacturing, domain=None, range=Optional[Union[str, "AdditiveManufacturingEnum"]])
 
+slots.materials_simulation_type = Slot(uri=VALUESETS.materials_simulation_type, name="materials_simulation_type", curie=VALUESETS.curie('materials_simulation_type'),
+                   model_uri=VALUESETS.materials_simulation_type, domain=None, range=Optional[Union[str, "MaterialsSimulationType"]])
+
+slots.material_property_prediction_type = Slot(uri=VALUESETS.material_property_prediction_type, name="material_property_prediction_type", curie=VALUESETS.curie('material_property_prediction_type'),
+                   model_uri=VALUESETS.material_property_prediction_type, domain=None, range=Optional[Union[str, "MaterialPropertyPredictionType"]])
+
 slots.traditional_pigment = Slot(uri=VALUESETS.traditional_pigment, name="traditional_pigment", curie=VALUESETS.curie('traditional_pigment'),
                    model_uri=VALUESETS.traditional_pigment, domain=None, range=Optional[Union[str, "TraditionalPigmentEnum"]])
 
@@ -32483,6 +40217,36 @@ slots.skin_tone = Slot(uri=VALUESETS.skin_tone, name="skin_tone", curie=VALUESET
 
 slots.plant_leaf_color = Slot(uri=VALUESETS.plant_leaf_color, name="plant_leaf_color", curie=VALUESETS.curie('plant_leaf_color'),
                    model_uri=VALUESETS.plant_leaf_color, domain=None, range=Optional[Union[str, "PlantLeafColorEnum"]])
+
+slots.pato_color = Slot(uri=VALUESETS.pato_color, name="pato_color", curie=VALUESETS.curie('pato_color'),
+                   model_uri=VALUESETS.pato_color, domain=None, range=Optional[Union[str, "ColorEnum"]])
+
+slots.pato_shape = Slot(uri=VALUESETS.pato_shape, name="pato_shape", curie=VALUESETS.curie('pato_shape'),
+                   model_uri=VALUESETS.pato_shape, domain=None, range=Optional[Union[str, "ShapeEnum"]])
+
+slots.pato_relative_change = Slot(uri=VALUESETS.pato_relative_change, name="pato_relative_change", curie=VALUESETS.curie('pato_relative_change'),
+                   model_uri=VALUESETS.pato_relative_change, domain=None, range=Optional[Union[str, "RelativeChangeEnum"]])
+
+slots.pato_intensity = Slot(uri=VALUESETS.pato_intensity, name="pato_intensity", curie=VALUESETS.curie('pato_intensity'),
+                   model_uri=VALUESETS.pato_intensity, domain=None, range=Optional[Union[str, "IntensityEnum"]])
+
+slots.pato_texture = Slot(uri=VALUESETS.pato_texture, name="pato_texture", curie=VALUESETS.curie('pato_texture'),
+                   model_uri=VALUESETS.pato_texture, domain=None, range=Optional[Union[str, "TextureEnum"]])
+
+slots.pato_biological_sex = Slot(uri=VALUESETS.pato_biological_sex, name="pato_biological_sex", curie=VALUESETS.curie('pato_biological_sex'),
+                   model_uri=VALUESETS.pato_biological_sex, domain=None, range=Optional[Union[str, "PATOBiologicalSexEnum"]])
+
+slots.pato_maturity = Slot(uri=VALUESETS.pato_maturity, name="pato_maturity", curie=VALUESETS.curie('pato_maturity'),
+                   model_uri=VALUESETS.pato_maturity, domain=None, range=Optional[Union[str, "MaturityEnum"]])
+
+slots.pato_viability = Slot(uri=VALUESETS.pato_viability, name="pato_viability", curie=VALUESETS.curie('pato_viability'),
+                   model_uri=VALUESETS.pato_viability, domain=None, range=Optional[Union[str, "ViabilityEnum"]])
+
+slots.pato_cellularity = Slot(uri=VALUESETS.pato_cellularity, name="pato_cellularity", curie=VALUESETS.curie('pato_cellularity'),
+                   model_uri=VALUESETS.pato_cellularity, domain=None, range=Optional[Union[str, "CellularityEnum"]])
+
+slots.pato_spatial_pattern = Slot(uri=VALUESETS.pato_spatial_pattern, name="pato_spatial_pattern", curie=VALUESETS.curie('pato_spatial_pattern'),
+                   model_uri=VALUESETS.pato_spatial_pattern, domain=None, range=Optional[Union[str, "SpatialPatternEnum"]])
 
 slots.dna_base = Slot(uri=VALUESETS.dna_base, name="dna_base", curie=VALUESETS.curie('dna_base'),
                    model_uri=VALUESETS.dna_base, domain=None, range=Optional[Union[str, "DNABaseEnum"]])
@@ -32624,6 +40388,39 @@ slots.confidence_score = Slot(uri=VALUESETS.confidence_score, name="confidence_s
 
 slots.experimental_preparation = Slot(uri=VALUESETS.experimental_preparation, name="experimental_preparation", curie=VALUESETS.curie('experimental_preparation'),
                    model_uri=VALUESETS.experimental_preparation, domain=None, range=Optional[Union[str, "ExperimentalPreparation"]])
+
+slots.sequencing_assay = Slot(uri=VALUESETS.sequencing_assay, name="sequencing_assay", curie=VALUESETS.curie('sequencing_assay'),
+                   model_uri=VALUESETS.sequencing_assay, domain=None, range=Optional[Union[str, "SequencingAssayEnum"]])
+
+slots.imaging_assay = Slot(uri=VALUESETS.imaging_assay, name="imaging_assay", curie=VALUESETS.curie('imaging_assay'),
+                   model_uri=VALUESETS.imaging_assay, domain=None, range=Optional[Union[str, "ImagingAssayEnum"]])
+
+slots.mass_spectrometry_assay = Slot(uri=VALUESETS.mass_spectrometry_assay, name="mass_spectrometry_assay", curie=VALUESETS.curie('mass_spectrometry_assay'),
+                   model_uri=VALUESETS.mass_spectrometry_assay, domain=None, range=Optional[Union[str, "MassSpectrometryAssayEnum"]])
+
+slots.cell_based_assay = Slot(uri=VALUESETS.cell_based_assay, name="cell_based_assay", curie=VALUESETS.curie('cell_based_assay'),
+                   model_uri=VALUESETS.cell_based_assay, domain=None, range=Optional[Union[str, "CellBasedAssayEnum"]])
+
+slots.clinical_behavioral_assay = Slot(uri=VALUESETS.clinical_behavioral_assay, name="clinical_behavioral_assay", curie=VALUESETS.curie('clinical_behavioral_assay'),
+                   model_uri=VALUESETS.clinical_behavioral_assay, domain=None, range=Optional[Union[str, "ClinicalBehavioralAssayEnum"]])
+
+slots.obi_assay = Slot(uri=VALUESETS.obi_assay, name="obi_assay", curie=VALUESETS.curie('obi_assay'),
+                   model_uri=VALUESETS.obi_assay, domain=None, range=Optional[Union[str, "OBIAssayEnum"]])
+
+slots.bao_bioassay = Slot(uri=VALUESETS.bao_bioassay, name="bao_bioassay", curie=VALUESETS.curie('bao_bioassay'),
+                   model_uri=VALUESETS.bao_bioassay, domain=None, range=Optional[Union[str, "BAOBioassayEnum"]])
+
+slots.enzymology_assay = Slot(uri=VALUESETS.enzymology_assay, name="enzymology_assay", curie=VALUESETS.curie('enzymology_assay'),
+                   model_uri=VALUESETS.enzymology_assay, domain=None, range=Optional[Union[str, "EnzymologyAssayEnum"]])
+
+slots.immunology_assay = Slot(uri=VALUESETS.immunology_assay, name="immunology_assay", curie=VALUESETS.curie('immunology_assay'),
+                   model_uri=VALUESETS.immunology_assay, domain=None, range=Optional[Union[str, "ImmunologyAssayEnum"]])
+
+slots.protein_engineering_assay = Slot(uri=VALUESETS.protein_engineering_assay, name="protein_engineering_assay", curie=VALUESETS.curie('protein_engineering_assay'),
+                   model_uri=VALUESETS.protein_engineering_assay, domain=None, range=Optional[Union[str, "ProteinEngineeringAssayEnum"]])
+
+slots.toxicology_assay = Slot(uri=VALUESETS.toxicology_assay, name="toxicology_assay", curie=VALUESETS.curie('toxicology_assay'),
+                   model_uri=VALUESETS.toxicology_assay, domain=None, range=Optional[Union[str, "ToxicologyAssayEnum"]])
 
 slots.biotic_interaction = Slot(uri=VALUESETS.biotic_interaction, name="biotic_interaction", curie=VALUESETS.curie('biotic_interaction'),
                    model_uri=VALUESETS.biotic_interaction, domain=None, range=Optional[Union[str, "BioticInteractionType"]])
@@ -32868,6 +40665,66 @@ slots.product_type = Slot(uri=VALUESETS.product_type, name="product_type", curie
 slots.sterilization_method = Slot(uri=VALUESETS.sterilization_method, name="sterilization_method", curie=VALUESETS.curie('sterilization_method'),
                    model_uri=VALUESETS.sterilization_method, domain=None, range=Optional[Union[str, "SterilizationMethodEnum"]])
 
+slots.biomanufacturing_scale = Slot(uri=VALUESETS.biomanufacturing_scale, name="biomanufacturing_scale", curie=VALUESETS.curie('biomanufacturing_scale'),
+                   model_uri=VALUESETS.biomanufacturing_scale, domain=None, range=Optional[Union[str, "BiomanufacturingScaleType"]])
+
+slots.bioproduct_category = Slot(uri=VALUESETS.bioproduct_category, name="bioproduct_category", curie=VALUESETS.curie('bioproduct_category'),
+                   model_uri=VALUESETS.bioproduct_category, domain=None, range=Optional[Union[str, "BioproductCategoryType"]])
+
+slots.bioprocess_optimization = Slot(uri=VALUESETS.bioprocess_optimization, name="bioprocess_optimization", curie=VALUESETS.curie('bioprocess_optimization'),
+                   model_uri=VALUESETS.bioprocess_optimization, domain=None, range=Optional[Union[str, "BioprocessOptimizationType"]])
+
+slots.unit_operation_type = Slot(uri=VALUESETS.unit_operation_type, name="unit_operation_type", curie=VALUESETS.curie('unit_operation_type'),
+                   model_uri=VALUESETS.unit_operation_type, domain=None, range=Optional[Union[str, "UnitOperationType"]])
+
+slots.process_equipment_type = Slot(uri=VALUESETS.process_equipment_type, name="process_equipment_type", curie=VALUESETS.curie('process_equipment_type'),
+                   model_uri=VALUESETS.process_equipment_type, domain=None, range=Optional[Union[str, "ProcessEquipmentType"]])
+
+slots.process_stream_role = Slot(uri=VALUESETS.process_stream_role, name="process_stream_role", curie=VALUESETS.curie('process_stream_role'),
+                   model_uri=VALUESETS.process_stream_role, domain=None, range=Optional[Union[str, "ProcessStreamRole"]])
+
+slots.process_stream_phase = Slot(uri=VALUESETS.process_stream_phase, name="process_stream_phase", curie=VALUESETS.curie('process_stream_phase'),
+                   model_uri=VALUESETS.process_stream_phase, domain=None, range=Optional[Union[str, "ProcessStreamPhase"]])
+
+slots.utility_type = Slot(uri=VALUESETS.utility_type, name="utility_type", curie=VALUESETS.curie('utility_type'),
+                   model_uri=VALUESETS.utility_type, domain=None, range=Optional[Union[str, "UtilityType"]])
+
+slots.process_industry_category = Slot(uri=VALUESETS.process_industry_category, name="process_industry_category", curie=VALUESETS.curie('process_industry_category'),
+                   model_uri=VALUESETS.process_industry_category, domain=None, range=Optional[Union[str, "ProcessIndustryCategory"]])
+
+slots.process_operation_mode = Slot(uri=VALUESETS.process_operation_mode, name="process_operation_mode", curie=VALUESETS.curie('process_operation_mode'),
+                   model_uri=VALUESETS.process_operation_mode, domain=None, range=Optional[Union[str, "ProcessOperationMode"]])
+
+slots.equation_of_state_model = Slot(uri=VALUESETS.equation_of_state_model, name="equation_of_state_model", curie=VALUESETS.curie('equation_of_state_model'),
+                   model_uri=VALUESETS.equation_of_state_model, domain=None, range=Optional[Union[str, "EquationOfStateModel"]])
+
+slots.activity_coefficient_model = Slot(uri=VALUESETS.activity_coefficient_model, name="activity_coefficient_model", curie=VALUESETS.curie('activity_coefficient_model'),
+                   model_uri=VALUESETS.activity_coefficient_model, domain=None, range=Optional[Union[str, "ActivityCoefficientModel"]])
+
+slots.thermodynamic_property_package = Slot(uri=VALUESETS.thermodynamic_property_package, name="thermodynamic_property_package", curie=VALUESETS.curie('thermodynamic_property_package'),
+                   model_uri=VALUESETS.thermodynamic_property_package, domain=None, range=Optional[Union[str, "ThermodynamicPropertyPackage"]])
+
+slots.mixing_rule_model = Slot(uri=VALUESETS.mixing_rule_model, name="mixing_rule_model", curie=VALUESETS.curie('mixing_rule_model'),
+                   model_uri=VALUESETS.mixing_rule_model, domain=None, range=Optional[Union[str, "MixingRuleModel"]])
+
+slots.poynting_correction_method = Slot(uri=VALUESETS.poynting_correction_method, name="poynting_correction_method", curie=VALUESETS.curie('poynting_correction_method'),
+                   model_uri=VALUESETS.poynting_correction_method, domain=None, range=Optional[Union[str, "PoyntingCorrectionMethod"]])
+
+slots.design_simulation_method = Slot(uri=VALUESETS.design_simulation_method, name="design_simulation_method", curie=VALUESETS.curie('design_simulation_method'),
+                   model_uri=VALUESETS.design_simulation_method, domain=None, range=Optional[Union[str, "DesignSimulationMethod"]])
+
+slots.flowsheet_solution_approach = Slot(uri=VALUESETS.flowsheet_solution_approach, name="flowsheet_solution_approach", curie=VALUESETS.curie('flowsheet_solution_approach'),
+                   model_uri=VALUESETS.flowsheet_solution_approach, domain=None, range=Optional[Union[str, "FlowsheetSolutionApproach"]])
+
+slots.process_simulator = Slot(uri=VALUESETS.process_simulator, name="process_simulator", curie=VALUESETS.curie('process_simulator'),
+                   model_uri=VALUESETS.process_simulator, domain=None, range=Optional[Union[str, "ProcessSimulator"]])
+
+slots.chemical_identifier_scheme = Slot(uri=VALUESETS.chemical_identifier_scheme, name="chemical_identifier_scheme", curie=VALUESETS.curie('chemical_identifier_scheme'),
+                   model_uri=VALUESETS.chemical_identifier_scheme, domain=None, range=Optional[Union[str, "ChemicalIdentifierScheme"]])
+
+slots.currency_code = Slot(uri=VALUESETS.currency_code, name="currency_code", curie=VALUESETS.curie('currency_code'),
+                   model_uri=VALUESETS.currency_code, domain=None, range=Optional[Union[str, "CurrencyCode"]])
+
 slots.length_unit = Slot(uri=VALUESETS.length_unit, name="length_unit", curie=VALUESETS.curie('length_unit'),
                    model_uri=VALUESETS.length_unit, domain=None, range=Optional[Union[str, "LengthUnitEnum"]])
 
@@ -32897,6 +40754,15 @@ slots.angle_unit = Slot(uri=VALUESETS.angle_unit, name="angle_unit", curie=VALUE
 
 slots.data_size_unit = Slot(uri=VALUESETS.data_size_unit, name="data_size_unit", curie=VALUESETS.curie('data_size_unit'),
                    model_uri=VALUESETS.data_size_unit, domain=None, range=Optional[Union[str, "DataSizeUnitEnum"]])
+
+slots.mass_flow_rate_unit = Slot(uri=VALUESETS.mass_flow_rate_unit, name="mass_flow_rate_unit", curie=VALUESETS.curie('mass_flow_rate_unit'),
+                   model_uri=VALUESETS.mass_flow_rate_unit, domain=None, range=Optional[Union[str, "MassFlowRateUnitEnum"]])
+
+slots.molar_flow_rate_unit = Slot(uri=VALUESETS.molar_flow_rate_unit, name="molar_flow_rate_unit", curie=VALUESETS.curie('molar_flow_rate_unit'),
+                   model_uri=VALUESETS.molar_flow_rate_unit, domain=None, range=Optional[Union[str, "MolarFlowRateUnitEnum"]])
+
+slots.volumetric_flow_rate_unit = Slot(uri=VALUESETS.volumetric_flow_rate_unit, name="volumetric_flow_rate_unit", curie=VALUESETS.curie('volumetric_flow_rate_unit'),
+                   model_uri=VALUESETS.volumetric_flow_rate_unit, domain=None, range=Optional[Union[str, "VolumetricFlowRateUnitEnum"]])
 
 slots.quantity_kind = Slot(uri=VALUESETS.quantity_kind, name="quantity_kind", curie=VALUESETS.curie('quantity_kind'),
                    model_uri=VALUESETS.quantity_kind, domain=None, range=Optional[Union[str, "QuantityKindEnum"]])
@@ -33090,6 +40956,12 @@ slots.liquid_handling_operation = Slot(uri=VALUESETS.liquid_handling_operation, 
 slots.sample_processing_operation = Slot(uri=VALUESETS.sample_processing_operation, name="sample_processing_operation", curie=VALUESETS.curie('sample_processing_operation'),
                    model_uri=VALUESETS.sample_processing_operation, domain=None, range=Optional[Union[str, "SampleProcessingOperationEnum"]])
 
+slots.lab_unit_operation = Slot(uri=VALUESETS.lab_unit_operation, name="lab_unit_operation", curie=VALUESETS.curie('lab_unit_operation'),
+                   model_uri=VALUESETS.lab_unit_operation, domain=None, range=Optional[Union[str, "LabUnitOperationEnum"]])
+
+slots.cloud_lab_experiment = Slot(uri=VALUESETS.cloud_lab_experiment, name="cloud_lab_experiment", curie=VALUESETS.curie('cloud_lab_experiment'),
+                   model_uri=VALUESETS.cloud_lab_experiment, domain=None, range=Optional[Union[str, "CloudLabExperimentEnum"]])
+
 slots.microplate_format = Slot(uri=VALUESETS.microplate_format, name="microplate_format", curie=VALUESETS.curie('microplate_format'),
                    model_uri=VALUESETS.microplate_format, domain=None, range=Optional[Union[str, "MicroplateFormatEnum"]])
 
@@ -33131,6 +41003,15 @@ slots.pcr_operation_type = Slot(uri=VALUESETS.pcr_operation_type, name="pcr_oper
 
 slots.detection_mode = Slot(uri=VALUESETS.detection_mode, name="detection_mode", curie=VALUESETS.curie('detection_mode'),
                    model_uri=VALUESETS.detection_mode, domain=None, range=Optional[Union[str, "DetectionModeEnum"]])
+
+slots.autonomous_lab_component = Slot(uri=VALUESETS.autonomous_lab_component, name="autonomous_lab_component", curie=VALUESETS.curie('autonomous_lab_component'),
+                   model_uri=VALUESETS.autonomous_lab_component, domain=None, range=Optional[Union[str, "AutonomousLabComponentType"]])
+
+slots.experimental_design_method = Slot(uri=VALUESETS.experimental_design_method, name="experimental_design_method", curie=VALUESETS.curie('experimental_design_method'),
+                   model_uri=VALUESETS.experimental_design_method, domain=None, range=Optional[Union[str, "ExperimentalDesignMethodType"]])
+
+slots.lab_automation_workflow = Slot(uri=VALUESETS.lab_automation_workflow, name="lab_automation_workflow", curie=VALUESETS.curie('lab_automation_workflow'),
+                   model_uri=VALUESETS.lab_automation_workflow, domain=None, range=Optional[Union[str, "LabAutomationWorkflowType"]])
 
 slots.arxiv_category = Slot(uri=VALUESETS.arxiv_category, name="arxiv_category", curie=VALUESETS.curie('arxiv_category'),
                    model_uri=VALUESETS.arxiv_category, domain=None, range=Optional[Union[str, "ArxivCategory"]])
@@ -33222,3 +41103,44 @@ slots.update_frequency = Slot(uri=VALUESETS.update_frequency, name="update_frequ
 slots.data_service_type = Slot(uri=VALUESETS.data_service_type, name="data_service_type", curie=VALUESETS.curie('data_service_type'),
                    model_uri=VALUESETS.data_service_type, domain=None, range=Optional[Union[str, "DataServiceType"]])
 
+slots.sociotechnical_outcome_type = Slot(uri=VALUESETS.sociotechnical_outcome_type, name="sociotechnical_outcome_type", curie=VALUESETS.curie('sociotechnical_outcome_type'),
+                   model_uri=VALUESETS.sociotechnical_outcome_type, domain=None, range=Optional[Union[str, "SociotechnicalOutcomeTypeEnum"]])
+
+slots.risk_evidence_status = Slot(uri=VALUESETS.risk_evidence_status, name="risk_evidence_status", curie=VALUESETS.curie('risk_evidence_status'),
+                   model_uri=VALUESETS.risk_evidence_status, domain=None, range=Optional[Union[str, "RiskEvidenceStatusEnum"]])
+
+slots.harm_bearer_level = Slot(uri=VALUESETS.harm_bearer_level, name="harm_bearer_level", curie=VALUESETS.curie('harm_bearer_level'),
+                   model_uri=VALUESETS.harm_bearer_level, domain=None, range=Optional[Union[str, "HarmBearerLevelEnum"]])
+
+slots.sociotechnical_harm_type = Slot(uri=VALUESETS.sociotechnical_harm_type, name="sociotechnical_harm_type", curie=VALUESETS.curie('sociotechnical_harm_type'),
+                   model_uri=VALUESETS.sociotechnical_harm_type, domain=None, range=Optional[Union[str, "SociotechnicalHarmTypeEnum"]])
+
+slots.ai_actor_role = Slot(uri=VALUESETS.ai_actor_role, name="ai_actor_role", curie=VALUESETS.curie('ai_actor_role'),
+                   model_uri=VALUESETS.ai_actor_role, domain=None, range=Optional[Union[str, "AIActorRoleEnum"]])
+
+slots.ai_lifecycle_stage = Slot(uri=VALUESETS.ai_lifecycle_stage, name="ai_lifecycle_stage", curie=VALUESETS.curie('ai_lifecycle_stage'),
+                   model_uri=VALUESETS.ai_lifecycle_stage, domain=None, range=Optional[Union[str, "AILifecycleStageEnum"]])
+
+slots.ai_governance_decision_point = Slot(uri=VALUESETS.ai_governance_decision_point, name="ai_governance_decision_point", curie=VALUESETS.curie('ai_governance_decision_point'),
+                   model_uri=VALUESETS.ai_governance_decision_point, domain=None, range=Optional[Union[str, "AIGovernanceDecisionPointEnum"]])
+
+slots.taxonomy_mapping_status = Slot(uri=VALUESETS.taxonomy_mapping_status, name="taxonomy_mapping_status", curie=VALUESETS.curie('taxonomy_mapping_status'),
+                   model_uri=VALUESETS.taxonomy_mapping_status, domain=None, range=Optional[Union[str, "TaxonomyMappingStatusEnum"]])
+
+slots.weidinger_lm_risk = Slot(uri=VALUESETS.weidinger_lm_risk, name="weidinger_lm_risk", curie=VALUESETS.curie('weidinger_lm_risk'),
+                   model_uri=VALUESETS.weidinger_lm_risk, domain=None, range=Optional[Union[str, "WeidingerLMRiskEnum"]])
+
+slots.mit_air_causal_entity = Slot(uri=VALUESETS.mit_air_causal_entity, name="mit_air_causal_entity", curie=VALUESETS.curie('mit_air_causal_entity'),
+                   model_uri=VALUESETS.mit_air_causal_entity, domain=None, range=Optional[Union[str, "MITAIRiskCausalEntityEnum"]])
+
+slots.mit_air_causal_intent = Slot(uri=VALUESETS.mit_air_causal_intent, name="mit_air_causal_intent", curie=VALUESETS.curie('mit_air_causal_intent'),
+                   model_uri=VALUESETS.mit_air_causal_intent, domain=None, range=Optional[Union[str, "MITAIRiskCausalIntentEnum"]])
+
+slots.mit_air_causal_timing = Slot(uri=VALUESETS.mit_air_causal_timing, name="mit_air_causal_timing", curie=VALUESETS.curie('mit_air_causal_timing'),
+                   model_uri=VALUESETS.mit_air_causal_timing, domain=None, range=Optional[Union[str, "MITAIRiskCausalTimingEnum"]])
+
+slots.mit_air_domain = Slot(uri=VALUESETS.mit_air_domain, name="mit_air_domain", curie=VALUESETS.curie('mit_air_domain'),
+                   model_uri=VALUESETS.mit_air_domain, domain=None, range=Optional[Union[str, "MITAIRiskDomainEnum"]])
+
+slots.content_harm_category = Slot(uri=VALUESETS.content_harm_category, name="content_harm_category", curie=VALUESETS.curie('content_harm_category'),
+                   model_uri=VALUESETS.content_harm_category, domain=None, range=Optional[Union[str, "ContentHarmCategoryEnum"]])

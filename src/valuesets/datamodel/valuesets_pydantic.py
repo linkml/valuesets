@@ -6360,6 +6360,342 @@ OutcomeTypeEnum._metadata = {
     "FN": {'description': 'False Negative'},
 }
 
+class StatisticalTestEnum(RichEnum):
+    """
+    Statistical hypothesis tests, drawn primarily from the descendants of 'statistical hypothesis test' (OBI:0000673) in STATO.
+This enum deliberately mixes abstraction levels: alongside concrete tests it retains STATO's grouping classes (GOODNESS_OF_FIT_TEST, HOMOSKEDASTICITY_TEST, SPHERICITY_TEST, POST_HOC_ANALYSIS, NON_PARAMETRIC_TEST and similar) so that a source reporting only "a test of normality was applied" can still be annotated. Prefer the most specific value that the source supports, and use a grouping value only when the specific test is genuinely not stated.
+Several values are also repeated in the narrower enums below (TTestTypeEnum, NormalityTestEnum, HomoscedasticityTestEnum, PostHocTestEnum), which exist to constrain slot ranges. The duplicated meanings are intentional; from_meaning() resolves per enum class.
+    """
+    # Enum members
+    STUDENTS_T_TEST = "STUDENTS_T_TEST"
+    ONE_SAMPLE_T_TEST = "ONE_SAMPLE_T_TEST"
+    PAIRED_T_TEST = "PAIRED_T_TEST"
+    TWO_SAMPLE_T_TEST_EQUAL_VARIANCE = "TWO_SAMPLE_T_TEST_EQUAL_VARIANCE"
+    TWO_SAMPLE_T_TEST_UNEQUAL_VARIANCE = "TWO_SAMPLE_T_TEST_UNEQUAL_VARIANCE"
+    YUEN_T_TEST = "YUEN_T_TEST"
+    Z_TEST = "Z_TEST"
+    ONE_SAMPLE_HOTELLING_T2_TEST = "ONE_SAMPLE_HOTELLING_T2_TEST"
+    TWO_SAMPLE_HOTELLING_T2_TEST = "TWO_SAMPLE_HOTELLING_T2_TEST"
+    ANOVA = "ANOVA"
+    ONE_WAY_ANOVA = "ONE_WAY_ANOVA"
+    TWO_WAY_ANOVA = "TWO_WAY_ANOVA"
+    MULTIWAY_ANOVA = "MULTIWAY_ANOVA"
+    REPEATED_MEASURES_ANOVA = "REPEATED_MEASURES_ANOVA"
+    MANOVA = "MANOVA"
+    ANCOVA = "ANCOVA"
+    F_TEST = "F_TEST"
+    MANN_WHITNEY_U_TEST = "MANN_WHITNEY_U_TEST"
+    WILCOXON_SIGNED_RANK_TEST = "WILCOXON_SIGNED_RANK_TEST"
+    KRUSKAL_WALLIS_TEST = "KRUSKAL_WALLIS_TEST"
+    FRIEDMAN_TEST = "FRIEDMAN_TEST"
+    SIGN_TEST = "SIGN_TEST"
+    CHI_SQUARE_TEST = "CHI_SQUARE_TEST"
+    PEARSON_CHI_SQUARE_TEST_OF_INDEPENDENCE = "PEARSON_CHI_SQUARE_TEST_OF_INDEPENDENCE"
+    PEARSON_CHI_SQUARE_GOODNESS_OF_FIT_TEST = "PEARSON_CHI_SQUARE_GOODNESS_OF_FIT_TEST"
+    YATES_CORRECTED_CHI_SQUARE_TEST = "YATES_CORRECTED_CHI_SQUARE_TEST"
+    CHI_SQUARE_TEST_FOR_HOMOGENEITY = "CHI_SQUARE_TEST_FOR_HOMOGENEITY"
+    FISHERS_EXACT_TEST = "FISHERS_EXACT_TEST"
+    BARNARDS_TEST = "BARNARDS_TEST"
+    MCNEMAR_TEST = "MCNEMAR_TEST"
+    COCHRANS_Q_TEST = "COCHRANS_Q_TEST"
+    COCHRAN_ARMITAGE_TEST_FOR_TREND = "COCHRAN_ARMITAGE_TEST_FOR_TREND"
+    COCHRAN_MANTEL_HAENSZEL_TEST = "COCHRAN_MANTEL_HAENSZEL_TEST"
+    EXACT_BINOMIAL_TEST = "EXACT_BINOMIAL_TEST"
+    HYPERGEOMETRIC_TEST = "HYPERGEOMETRIC_TEST"
+    TEST_OF_ASSOCIATION_BETWEEN_CATEGORICAL_VARIABLES = "TEST_OF_ASSOCIATION_BETWEEN_CATEGORICAL_VARIABLES"
+    GOODNESS_OF_FIT_TEST = "GOODNESS_OF_FIT_TEST"
+    SHAPIRO_WILK_TEST = "SHAPIRO_WILK_TEST"
+    KOLMOGOROV_SMIRNOV_TEST = "KOLMOGOROV_SMIRNOV_TEST"
+    ANDERSON_DARLING_TEST = "ANDERSON_DARLING_TEST"
+    HOSMER_LEMESHOW_TEST = "HOSMER_LEMESHOW_TEST"
+    LEVENES_TEST = "LEVENES_TEST"
+    BARTLETTS_TEST = "BARTLETTS_TEST"
+    BROWN_FORSYTHE_TEST = "BROWN_FORSYTHE_TEST"
+    BREUSCH_PAGAN_TEST = "BREUSCH_PAGAN_TEST"
+    HOMOSKEDASTICITY_TEST = "HOMOSKEDASTICITY_TEST"
+    HOMOGENEITY_TEST = "HOMOGENEITY_TEST"
+    SPHERICITY_TEST = "SPHERICITY_TEST"
+    MAUCHLYS_TEST = "MAUCHLYS_TEST"
+    ODDS_RATIO_HOMOGENEITY_TEST = "ODDS_RATIO_HOMOGENEITY_TEST"
+    BRESLOW_DAY_TEST = "BRESLOW_DAY_TEST"
+    TARONES_TEST = "TARONES_TEST"
+    WOOLFS_TEST = "WOOLFS_TEST"
+    POST_HOC_ANALYSIS = "POST_HOC_ANALYSIS"
+    TUKEY_HSD_TEST = "TUKEY_HSD_TEST"
+    NEWMAN_KEULS_TEST = "NEWMAN_KEULS_TEST"
+    SCHEFFE_TEST = "SCHEFFE_TEST"
+    LEAST_SIGNIFICANT_DIFFERENCE_TEST = "LEAST_SIGNIFICANT_DIFFERENCE_TEST"
+    DUNNS_TEST = "DUNNS_TEST"
+    CONOVER_IMAN_TEST = "CONOVER_IMAN_TEST"
+    GRUBBS_TEST = "GRUBBS_TEST"
+    DIXON_Q_TEST = "DIXON_Q_TEST"
+    TIETJEN_MOORE_TEST = "TIETJEN_MOORE_TEST"
+    GENERALIZED_ESD_TEST = "GENERALIZED_ESD_TEST"
+    LIKELIHOOD_RATIO_TEST = "LIKELIHOOD_RATIO_TEST"
+    WALD_TEST = "WALD_TEST"
+    LOG_RANK_TEST = "LOG_RANK_TEST"
+    HARDY_WEINBERG_EQUILIBRIUM_TEST = "HARDY_WEINBERG_EQUILIBRIUM_TEST"
+    TRANSMISSION_DISEQUILIBRIUM_TEST = "TRANSMISSION_DISEQUILIBRIUM_TEST"
+    PEARSON_CORRELATION_TEST = "PEARSON_CORRELATION_TEST"
+    SPEARMAN_CORRELATION_TEST = "SPEARMAN_CORRELATION_TEST"
+    AB_TEST = "AB_TEST"
+    BETWEEN_GROUP_COMPARISON_TEST = "BETWEEN_GROUP_COMPARISON_TEST"
+    WITHIN_SUBJECT_COMPARISON_TEST = "WITHIN_SUBJECT_COMPARISON_TEST"
+    NON_PARAMETRIC_TEST = "NON_PARAMETRIC_TEST"
+
+# Set metadata after class creation to avoid it becoming an enum member
+StatisticalTestEnum._metadata = {
+    "STUDENTS_T_TEST": {'description': "Test in which the test statistic follows a Student's t distribution under the null hypothesis; used when the population is assumed normal but the sample is small", 'meaning': 'OBI:0000739', 'aliases': ['t-test', 't-Test']},
+    "ONE_SAMPLE_T_TEST": {'description': "Student's t-test comparing a sample mean against a specified population mean", 'meaning': 'STATO:0000302'},
+    "PAIRED_T_TEST": {'description': "Student's t-test for differences between paired observations, as in a repeated measures design with two measurements per subject", 'meaning': 'STATO:0000095'},
+    "TWO_SAMPLE_T_TEST_EQUAL_VARIANCE": {'description': 'Two-sample t-test comparing the means of two independent samples assumed to have equal variances', 'meaning': 'STATO:0000303', 'annotations': {'note': 'The bare terms "unpaired t-test" and "independent samples t-test" are ambiguous: they are attached here because this is the classical equal-variance form, but common software defaults to the Welch variant (R\'s t.test, scipy.stats.ttest_ind with equal_var=False). Choose TWO_SAMPLE_T_TEST_UNEQUAL_VARIANCE when the source did not assume equal variances.'}, 'aliases': ['independent samples t-test', 'unpaired t-test']},
+    "TWO_SAMPLE_T_TEST_UNEQUAL_VARIANCE": {'description': 'Two-sample t-test used when the variances of the two populations are not assumed equal', 'meaning': 'STATO:0000304', 'annotations': {'note': 'This is the default two-sample t-test in R and SciPy, so an unqualified "unpaired t-test" in a methods section often means this rather than TWO_SAMPLE_T_TEST_EQUAL_VARIANCE.'}, 'aliases': ["Welch's t-test"]},
+    "YUEN_T_TEST": {'description': 'Robust two-sample t-test computed on trimmed means and winsorized variances', 'meaning': 'STATO:0000406'},
+    "Z_TEST": {'description': 'Test evaluating the null hypothesis that the means of two populations are equal using a normal reference distribution', 'meaning': 'STATO:0000052'},
+    "ONE_SAMPLE_HOTELLING_T2_TEST": {'description': 'Multivariate extension of the one-sample t-test comparing a vector of means against a reference vector', 'meaning': 'STATO:0000153'},
+    "TWO_SAMPLE_HOTELLING_T2_TEST": {'description': 'Multivariate generalization of the two-sample t-test comparing mean vectors of two populations', 'meaning': 'STATO:0000098'},
+    "ANOVA": {'description': 'Analysis of variance testing whether the means of several groups are equal', 'meaning': 'OBI:0200201', 'aliases': ['analysis of variance']},
+    "ONE_WAY_ANOVA": {'description': 'Analysis of variance in which the groups compared correspond to the levels of a single independent variable', 'meaning': 'STATO:0000044'},
+    "TWO_WAY_ANOVA": {'description': 'Analysis of variance in which the groups compared correspond to the levels of exactly two independent variables', 'meaning': 'STATO:0000045'},
+    "MULTIWAY_ANOVA": {'description': 'Analysis of variance in which the groups compared correspond to the levels of more than two independent variables', 'meaning': 'STATO:0000048'},
+    "REPEATED_MEASURES_ANOVA": {'description': 'Analysis of variance developed for non-independent observations arising from repeated measurements on the same experimental unit', 'meaning': 'STATO:0000260'},
+    "MANOVA": {'description': 'Procedure for comparing multivariate sample means when there are two or more dependent variables', 'meaning': 'STATO:0000454'},
+    "ANCOVA": {'description': 'Analysis of covariance evaluating whether population means of a dependent variable are equal across levels of a categorical independent variable while controlling for covariates', 'meaning': 'STATO:0000179', 'aliases': ['analysis of covariance']},
+    "F_TEST": {'description': 'Test in which the test statistic follows an F-distribution under the null hypothesis', 'meaning': 'STATO:0000086'},
+    "MANN_WHITNEY_U_TEST": {'description': 'Non-parametric test comparing two independent groups without assuming normally distributed values', 'meaning': 'STATO:0000076', 'aliases': ['Wilcoxon rank sum test', 'Mann-Whitney Test']},
+    "WILCOXON_SIGNED_RANK_TEST": {'description': 'Non-parametric test of the null hypothesis that the median difference between paired observations is zero', 'meaning': 'STATO:0000092'},
+    "KRUSKAL_WALLIS_TEST": {'description': 'Non-parametric test comparing two or more groups without assuming normally distributed values', 'meaning': 'STATO:0000094', 'aliases': ['Kruskal-Wallis Test']},
+    "FRIEDMAN_TEST": {'description': 'Non-parametric test for differences among multiple related groups; extension of the Wilcoxon signed-rank test to more than two conditions', 'meaning': 'STATO:0000641'},
+    "SIGN_TEST": {'description': 'Non-parametric test assessing whether the median of a population equals a specified value', 'meaning': 'STATO:0000644'},
+    "CHI_SQUARE_TEST": {'description': 'Test in which the sampling distribution of the test statistic is a chi-square distribution under the null hypothesis', 'meaning': 'OBI:0200200'},
+    "PEARSON_CHI_SQUARE_TEST_OF_INDEPENDENCE": {'description': 'Chi-square test of the independence of two categorical variables in a contingency table', 'meaning': 'STATO:0000081'},
+    "PEARSON_CHI_SQUARE_GOODNESS_OF_FIT_TEST": {'description': 'Chi-square test evaluating the goodness of fit of observed counts to an expected distribution', 'meaning': 'STATO:0000309'},
+    "YATES_CORRECTED_CHI_SQUARE_TEST": {'description': 'Chi-square test of association between two dichotomous variables with a continuity correction', 'meaning': 'STATO:0000070', 'aliases': ["Yates' chi-squared test"]},
+    "CHI_SQUARE_TEST_FOR_HOMOGENEITY": {'description': 'Test comparing proportions observed across multiple groups using contingency table frequencies', 'meaning': 'STATO:0000701'},
+    "FISHERS_EXACT_TEST": {'description': 'Exact test for non-random association between two categorical variables', 'meaning': 'STATO:0000073'},
+    "BARNARDS_TEST": {'description': "Exact unconditional test of association between two categorical variables, often more powerful than Fisher's exact test", 'meaning': 'STATO:0000310'},
+    "MCNEMAR_TEST": {'description': 'Test applied to 2 x 2 contingency tables of paired nominal data to compare marginal frequencies', 'meaning': 'STATO:0000433'},
+    "COCHRANS_Q_TEST": {'description': 'Test for unreplicated randomized block designs with a binary response and paired data', 'meaning': 'STATO:0000434'},
+    "COCHRAN_ARMITAGE_TEST_FOR_TREND": {'description': 'Test for association between a dichotomous variable and an ordered categorical variable', 'meaning': 'STATO:0000148'},
+    "COCHRAN_MANTEL_HAENSZEL_TEST": {'description': 'Test of independence between two categorical variables stratified by a third variable', 'meaning': 'STATO:0000074', 'aliases': ['Cochran-Mantel-Haenszel test']},
+    "EXACT_BINOMIAL_TEST": {'description': 'Test of the statistical significance of deviations from a theoretically expected distribution of observations into two categories', 'meaning': 'STATO:0000298', 'aliases': ['binomial test']},
+    "HYPERGEOMETRIC_TEST": {'description': 'Test evaluating whether a random variable follows a hypergeometric distribution; widely used for over-representation analysis', 'meaning': 'STATO:0000285', 'aliases': ['over-representation test']},
+    "TEST_OF_ASSOCIATION_BETWEEN_CATEGORICAL_VARIABLES": {'description': 'Test evaluating whether a discrete predictor variable is associated with a discrete response variable', 'meaning': 'STATO:0000027'},
+    "GOODNESS_OF_FIT_TEST": {'description': 'Test evaluating whether a sample distribution can be considered equivalent to a theoretical distribution', 'meaning': 'STATO:0000191'},
+    "SHAPIRO_WILK_TEST": {'description': 'Goodness of fit test of the null hypothesis that a sample is drawn from a normally distributed population', 'meaning': 'STATO:0000077'},
+    "KOLMOGOROV_SMIRNOV_TEST": {'description': 'Goodness of fit test of the null hypothesis that a sample is drawn from a specified continuous probability distribution', 'meaning': 'STATO:0000083'},
+    "ANDERSON_DARLING_TEST": {'description': 'Goodness of fit test of whether a sample is drawn from a given probability distribution, weighting the tails more heavily', 'meaning': 'STATO:0000042'},
+    "HOSMER_LEMESHOW_TEST": {'description': 'Goodness of fit test for logistic regression models comparing predicted probabilities against observed outcomes', 'meaning': 'STATO:0000653'},
+    "LEVENES_TEST": {'description': 'Test of the null hypothesis of equality of variance across several populations', 'meaning': 'STATO:0000078'},
+    "BARTLETTS_TEST": {'description': 'Test of whether k samples are drawn from populations with equal variances; sensitive to departures from normality', 'meaning': 'STATO:0000079', 'aliases': ["Bartlett's test"]},
+    "BROWN_FORSYTHE_TEST": {'description': 'Test of equality of group variances based on deviations from the group medians', 'meaning': 'STATO:0000080'},
+    "BREUSCH_PAGAN_TEST": {'description': 'Score test of the hypothesis of constant error variance against the alternative that error variance depends on the fitted values', 'meaning': 'STATO:0000284'},
+    "HOMOSKEDASTICITY_TEST": {'description': 'Test evaluating whether variances from several random samples are similar', 'meaning': 'STATO:0000137', 'aliases': ['homoscedasticity test']},
+    "HOMOGENEITY_TEST": {'description': 'Test evaluating whether a statistical measure computed from several random samples is similar', 'meaning': 'STATO:0000697'},
+    "SPHERICITY_TEST": {'description': 'Test of the null hypothesis of equality of the variances of differences between levels of a repeated measures factor', 'meaning': 'STATO:0000131'},
+    "MAUCHLYS_TEST": {'description': 'Test of sphericity in the context of repeated measures analysis of variance', 'meaning': 'STATO:0000199'},
+    "ODDS_RATIO_HOMOGENEITY_TEST": {'description': 'Test of the null hypothesis that odds ratios are consistent across strata of a population', 'meaning': 'STATO:0000247'},
+    "BRESLOW_DAY_TEST": {'description': 'Test of whether odds ratios are homogeneous across several 2x2 contingency tables', 'meaning': 'STATO:0000130'},
+    "TARONES_TEST": {'description': 'Test of the null hypothesis that odds ratios are homogeneous across strata', 'meaning': 'STATO:0000136'},
+    "WOOLFS_TEST": {'description': 'Test of the null hypothesis that odds ratios are the same across all strata of the population under investigation', 'meaning': 'STATO:0000246'},
+    "POST_HOC_ANALYSIS": {'description': 'Test carried out following an analysis of variance that rejected the null hypothesis, to identify which groups differ', 'meaning': 'STATO:0000133'},
+    "TUKEY_HSD_TEST": {'description': 'Post-hoc test following a significant ANOVA that determines which means differ, controlling the family-wise error rate', 'meaning': 'STATO:0000187', 'aliases': ['Tukey honestly significant difference test']},
+    "NEWMAN_KEULS_TEST": {'description': 'Stepwise multiple comparison procedure identifying sample means that differ significantly, based on the studentized range statistic', 'meaning': 'STATO:0000261', 'aliases': ['Student-Newman-Keuls test']},
+    "SCHEFFE_TEST": {'description': 'Conservative post-hoc procedure evaluating all possible contrasts while adjusting significance levels for multiple comparisons', 'meaning': 'STATO:0000156', 'aliases': ['Scheffé test']},
+    "LEAST_SIGNIFICANT_DIFFERENCE_TEST": {'description': 'Post-hoc test for multiple comparisons of treatments by means of the least significant difference following an ANOVA', 'meaning': 'STATO:0000157', 'aliases': ["Fisher's LSD test", 'Least significant difference test']},
+    "DUNNS_TEST": {'description': 'Non-parametric post-hoc test run after a Kruskal-Wallis test to identify which groups differ', 'meaning': 'STATO:0000490', 'aliases': ["Dunn's multiple comparison test"]},
+    "CONOVER_IMAN_TEST": {'description': 'Post-hoc test for pairwise multiple comparisons using rank sums following a Kruskal-Wallis test', 'meaning': 'STATO:0000491'},
+    "GRUBBS_TEST": {'description': 'Test detecting a single outlier in a univariate data set assumed to come from a normally distributed population', 'meaning': 'STATO:0000441'},
+    "DIXON_Q_TEST": {'description': 'Test detecting outliers in a univariate data set assumed to come from a normally distributed population', 'meaning': 'STATO:0000440'},
+    "TIETJEN_MOORE_TEST": {'description': "Generalization of Grubbs' test allowing detection of more than one outlier", 'meaning': 'STATO:0000442'},
+    "GENERALIZED_ESD_TEST": {'description': 'Outlier detection test with a built-in correction for multiple testing', 'meaning': 'STATO:0000443', 'aliases': ['generalized ESD test']},
+    "LIKELIHOOD_RATIO_TEST": {'description': 'Test of whether there is evidence for moving from a simple model to a more complex model in which the simple model is nested', 'meaning': 'OBI:0000861'},
+    "WALD_TEST": {'description': 'Test evaluating whether one or more model coefficients differ from zero, given their variance-covariance matrix', 'meaning': 'STATO:0000559', 'aliases': ['Wald chi-squared test']},
+    "LOG_RANK_TEST": {'description': 'Test comparing the survival distributions of two or more groups', 'meaning': 'STATO:0000640', 'aliases': ['logrank test']},
+    "HARDY_WEINBERG_EQUILIBRIUM_TEST": {'description': "Test of whether a population's allele proportions are in Hardy-Weinberg equilibrium, often used as a genotyping quality control", 'meaning': 'STATO:0000181'},
+    "TRANSMISSION_DISEQUILIBRIUM_TEST": {'description': 'Test for genetic linkage between a genetic marker and a trait in families, robust to population structure', 'meaning': 'STATO:0000275'},
+    "PEARSON_CORRELATION_TEST": {'description': "Test of whether two continuous variables are linearly associated, based on Pearson's correlation coefficient", 'meaning': 'NCIT:C53244'},
+    "SPEARMAN_CORRELATION_TEST": {'description': "Non-parametric test of whether two variables are monotonically associated, based on Spearman's rank correlation coefficient", 'meaning': 'NCIT:C53249'},
+    "AB_TEST": {'description': 'Statistical testing comparing two types of treatments or interventions', 'meaning': 'STATO:0000715'},
+    "BETWEEN_GROUP_COMPARISON_TEST": {'description': 'Test detecting differences between the means computed for each study group population', 'meaning': 'STATO:0000279'},
+    "WITHIN_SUBJECT_COMPARISON_TEST": {'description': 'Test evaluating whether a change occurs within one experimental unit over time following a treatment or event', 'meaning': 'STATO:0000202'},
+    "NON_PARAMETRIC_TEST": {'description': 'Test making no assumption about the underlying data distribution', 'meaning': 'STATO:0000198'},
+}
+
+class TTestTypeEnum(RichEnum):
+    """
+    Variants of Student's t-test
+    """
+    # Enum members
+    ONE_SAMPLE = "ONE_SAMPLE"
+    PAIRED = "PAIRED"
+    TWO_SAMPLE_EQUAL_VARIANCE = "TWO_SAMPLE_EQUAL_VARIANCE"
+    TWO_SAMPLE_UNEQUAL_VARIANCE = "TWO_SAMPLE_UNEQUAL_VARIANCE"
+    TRIMMED_MEANS = "TRIMMED_MEANS"
+
+# Set metadata after class creation to avoid it becoming an enum member
+TTestTypeEnum._metadata = {
+    "ONE_SAMPLE": {'description': 'Compares a sample mean against a specified population mean', 'meaning': 'STATO:0000302'},
+    "PAIRED": {'description': 'Compares paired observations from the same experimental units', 'meaning': 'STATO:0000095'},
+    "TWO_SAMPLE_EQUAL_VARIANCE": {'description': 'Compares the means of two independent samples assumed to have equal variances', 'meaning': 'STATO:0000303'},
+    "TWO_SAMPLE_UNEQUAL_VARIANCE": {'description': "Compares the means of two independent samples with unequal variances (Welch's t-test)", 'meaning': 'STATO:0000304'},
+    "TRIMMED_MEANS": {'description': 'Robust t-test computed on trimmed means and winsorized variances', 'meaning': 'STATO:0000406'},
+}
+
+class NormalityTestEnum(RichEnum):
+    """
+    Goodness of fit tests commonly used to assess whether a sample is drawn from a normally distributed population
+    """
+    # Enum members
+    SHAPIRO_WILK = "SHAPIRO_WILK"
+    KOLMOGOROV_SMIRNOV = "KOLMOGOROV_SMIRNOV"
+    ANDERSON_DARLING = "ANDERSON_DARLING"
+
+# Set metadata after class creation to avoid it becoming an enum member
+NormalityTestEnum._metadata = {
+    "SHAPIRO_WILK": {'description': 'Tests the null hypothesis that a sample comes from a normal distribution', 'meaning': 'STATO:0000077'},
+    "KOLMOGOROV_SMIRNOV": {'description': 'Tests whether a sample is drawn from a specified continuous probability distribution', 'meaning': 'STATO:0000083'},
+    "ANDERSON_DARLING": {'description': 'Tests whether a sample is drawn from a given probability distribution, with added sensitivity in the tails', 'meaning': 'STATO:0000042'},
+}
+
+class HomoscedasticityTestEnum(RichEnum):
+    """
+    Tests evaluating equality of variances across groups or samples
+    """
+    # Enum members
+    LEVENE = "LEVENE"
+    BARTLETT = "BARTLETT"
+    BROWN_FORSYTHE = "BROWN_FORSYTHE"
+    BREUSCH_PAGAN = "BREUSCH_PAGAN"
+
+# Set metadata after class creation to avoid it becoming an enum member
+HomoscedasticityTestEnum._metadata = {
+    "LEVENE": {'description': 'Tests the null hypothesis of equality of variance in several populations', 'meaning': 'STATO:0000078'},
+    "BARTLETT": {'description': 'Tests whether k samples come from populations with equal variances', 'meaning': 'STATO:0000079', 'aliases': ["Bartlett's test"]},
+    "BROWN_FORSYTHE": {'description': 'Tests equality of group variances using deviations from group medians', 'meaning': 'STATO:0000080'},
+    "BREUSCH_PAGAN": {'description': 'Tests for heteroscedasticity of regression residuals', 'meaning': 'STATO:0000284'},
+}
+
+class PostHocTestEnum(RichEnum):
+    """
+    Multiple comparison procedures carried out after a significant omnibus test such as an ANOVA or Kruskal-Wallis test
+    """
+    # Enum members
+    TUKEY_HSD = "TUKEY_HSD"
+    NEWMAN_KEULS = "NEWMAN_KEULS"
+    SCHEFFE = "SCHEFFE"
+    LEAST_SIGNIFICANT_DIFFERENCE = "LEAST_SIGNIFICANT_DIFFERENCE"
+    DUNN = "DUNN"
+    CONOVER_IMAN = "CONOVER_IMAN"
+
+# Set metadata after class creation to avoid it becoming an enum member
+PostHocTestEnum._metadata = {
+    "TUKEY_HSD": {'description': 'Determines which means differ after a significant ANOVA while controlling the family-wise error rate', 'meaning': 'STATO:0000187'},
+    "NEWMAN_KEULS": {'description': 'Stepwise multiple comparison procedure based on the studentized range', 'meaning': 'STATO:0000261'},
+    "SCHEFFE": {'description': 'Conservative procedure evaluating all possible contrasts', 'meaning': 'STATO:0000156', 'aliases': ['Scheffé test']},
+    "LEAST_SIGNIFICANT_DIFFERENCE": {'description': 'Pairwise comparisons using the least significant difference following an ANOVA', 'meaning': 'STATO:0000157', 'aliases': ["Fisher's LSD test", 'Least significant difference test']},
+    "DUNN": {'description': 'Non-parametric post-hoc test following a Kruskal-Wallis test', 'meaning': 'STATO:0000490'},
+    "CONOVER_IMAN": {'description': 'Pairwise rank-sum comparisons following a Kruskal-Wallis test', 'meaning': 'STATO:0000491'},
+}
+
+class MultipleTestingCorrectionEnum(RichEnum):
+    """
+    Methods for adjusting p-values or significance thresholds when many hypotheses are tested simultaneously.
+As with StatisticalTestEnum, concrete methods (BONFERRONI, HOLM_BONFERRONI, BENJAMINI_HOCHBERG) sit alongside the error-rate classes they belong to (FAMILY_WISE_ERROR_RATE, FALSE_DISCOVERY_RATE) and procedural classes (SIMULTANEOUS, SEQUENTIAL). The classes are intended for sources that report only "FDR-corrected" without naming a procedure.
+    """
+    # Enum members
+    BONFERRONI = "BONFERRONI"
+    HOLM_BONFERRONI = "HOLM_BONFERRONI"
+    BENJAMINI_HOCHBERG = "BENJAMINI_HOCHBERG"
+    BENJAMINI_YEKUTIELI = "BENJAMINI_YEKUTIELI"
+    HOLM_FDR = "HOLM_FDR"
+    HOMMEL_FDR = "HOMMEL_FDR"
+    FAMILY_WISE_ERROR_RATE = "FAMILY_WISE_ERROR_RATE"
+    FALSE_DISCOVERY_RATE = "FALSE_DISCOVERY_RATE"
+    SIMULTANEOUS = "SIMULTANEOUS"
+    SEQUENTIAL = "SEQUENTIAL"
+    ALPHA_SPENDING = "ALPHA_SPENDING"
+    ALPHA_INVESTING = "ALPHA_INVESTING"
+    NONE = "NONE"
+
+# Set metadata after class creation to avoid it becoming an enum member
+MultipleTestingCorrectionEnum._metadata = {
+    "BONFERRONI": {'description': 'Divides the desired family-wise significance level by the number of comparisons made', 'meaning': 'NCIT:C61594', 'aliases': ['Bonferroni correction']},
+    "HOLM_BONFERRONI": {'description': 'Sequentially rejective closed-test procedure controlling the family-wise error rate', 'meaning': 'OBI:0200066', 'aliases': ['Holm correction']},
+    "BENJAMINI_HOCHBERG": {'description': 'Sequential p-value procedure controlling the false discovery rate under independence or positive dependence', 'meaning': 'OBI:0200036', 'aliases': ['BH', 'BH-FDR']},
+    "BENJAMINI_YEKUTIELI": {'description': 'False discovery rate procedure valid under arbitrary dependence between tests', 'meaning': 'OBI:0200049', 'aliases': ['BY']},
+    "HOLM_FDR": {'description': 'Application of the Holm p-value procedure to correct false discovery rate. Note that Holm\'s step-down procedure controls the family-wise error rate, not the false discovery rate; the "false discovery rate" wording is STATO\'s own label for this term. Prefer HOLM_BONFERRONI unless you specifically need the STATO term.', 'meaning': 'STATO:0000551'},
+    "HOMMEL_FDR": {'description': 'Application of the Hommel p-value procedure to correct false discovery rate', 'meaning': 'STATO:0000552'},
+    "FAMILY_WISE_ERROR_RATE": {'description': 'Procedure controlling the probability of making at least one false positive across a family of tests', 'meaning': 'OBI:0200073', 'aliases': ['FWER correction']},
+    "FALSE_DISCOVERY_RATE": {'description': 'Procedure controlling the expected proportion of false positives among rejected hypotheses', 'meaning': 'OBI:0200163'},
+    "SIMULTANEOUS": {'description': 'Correction method applying a single adjustment across all tests simultaneously', 'meaning': 'STATO:0000601'},
+    "SEQUENTIAL": {'description': 'Correction method applying adjustments in a stepwise, ordered fashion', 'meaning': 'STATO:0000602'},
+    "ALPHA_SPENDING": {'description': 'Sequential procedure allocating portions of the overall type I error rate across interim analyses', 'meaning': 'STATO:0000605'},
+    "ALPHA_INVESTING": {'description': 'Sequential procedure that earns and spends alpha as hypotheses are tested', 'meaning': 'STATO:0000604'},
+    "NONE": {'description': 'No adjustment made for multiple testing', 'annotations': {'note': 'No appropriate ontology term found for absence of correction'}},
+}
+
+class CorrelationCoefficientEnum(RichEnum):
+    """
+    Coefficients quantifying the strength of association between two variables
+    """
+    # Enum members
+    PEARSON = "PEARSON"
+    SPEARMAN = "SPEARMAN"
+    KENDALL = "KENDALL"
+
+# Set metadata after class creation to avoid it becoming an enum member
+CorrelationCoefficientEnum._metadata = {
+    "PEARSON": {'description': 'Evaluates the strength of linear association between two continuous variables', 'meaning': 'STATO:0000280', 'aliases': ["Pearson's r"]},
+    "SPEARMAN": {'description': 'Non-parametric measure of statistical dependence between two ranked variables', 'meaning': 'STATO:0000201', 'aliases': ["Spearman's rho"]},
+    "KENDALL": {'description': 'Correlation coefficient between two ordinal or ranked variables', 'meaning': 'STATO:0000240', 'aliases': ["Kendall's tau"]},
+}
+
+class TestTailednessEnum(RichEnum):
+    """
+    Whether a statistical test allocates the significance level to one or both tails of the reference distribution
+    """
+    # Enum members
+    ONE_TAILED = "ONE_TAILED"
+    TWO_TAILED = "TWO_TAILED"
+
+# Set metadata after class creation to avoid it becoming an enum member
+TestTailednessEnum._metadata = {
+    "ONE_TAILED": {'description': 'Allocates all of the significance level to one tail, evaluating a directional alternative hypothesis', 'meaning': 'STATO:0000286', 'aliases': ['one-sided test']},
+    "TWO_TAILED": {'description': 'Allocates half of the significance level to each tail, evaluating a non-directional alternative hypothesis', 'meaning': 'STATO:0000287', 'aliases': ['two-sided test']},
+}
+
+class DistributionalAssumptionEnum(RichEnum):
+    """
+    Whether an inference procedure assumes a parametric form for the underlying population distribution.
+Note the deliberate type approximation: the values denote a property of a procedure, but the available ontology terms (NCIT:C53230, STATO:0000198) denote classes of test. Neither PATO nor OBI currently has a quality or characteristic term for "parametric", so the test classes are used as the closest available referent.
+    """
+    # Enum members
+    PARAMETRIC = "PARAMETRIC"
+    NON_PARAMETRIC = "NON_PARAMETRIC"
+
+# Set metadata after class creation to avoid it becoming an enum member
+DistributionalAssumptionEnum._metadata = {
+    "PARAMETRIC": {'description': 'Procedure that incorporates assumptions about the population probability distribution', 'meaning': 'NCIT:C53230'},
+    "NON_PARAMETRIC": {'description': 'Procedure that makes no assumption about the underlying data distribution', 'meaning': 'STATO:0000198', 'aliases': ['Non-Parametric Test']},
+}
+
+class ComparisonObjectiveEnum(RichEnum):
+    """
+    The objective of a between-group comparison, particularly in the design of controlled trials
+    """
+    # Enum members
+    SUPERIORITY = "SUPERIORITY"
+    NON_INFERIORITY = "NON_INFERIORITY"
+    EQUIVALENCE = "EQUIVALENCE"
+
+# Set metadata after class creation to avoid it becoming an enum member
+ComparisonObjectiveEnum._metadata = {
+    "SUPERIORITY": {'description': 'Comparison intended to show that the difference in effects exceeds a prespecified threshold of meaningful benefit', 'meaning': 'STATO:0000718'},
+    "NON_INFERIORITY": {'description': 'Comparison intended to show that any difference in effects lies below a prespecified threshold of meaningful harm', 'meaning': 'STATO:0000716'},
+    "EQUIVALENCE": {'description': 'Comparison intended to show that the absolute difference in effects is smaller than a prespecified threshold', 'meaning': 'STATO:0000717'},
+}
+
 class PersonStatusEnum(RichEnum):
     """
     Vital status of a person (living or deceased)
@@ -9002,7 +9338,8 @@ NewsTopicCategoryEnum._metadata = {
 
 class ToxicityClassificationEnum(RichEnum):
     """
-    Text toxicity classification labels
+    Text toxicity classification labels, following the label set of the Jigsaw toxic-comment task. Retained for datasets and models coded against that label set.
+For safety policy, evaluation, red-teaming, or incident classification, see ai_governance/content_harms (ContentHarmCategoryEnum), which covers the same ground plus sexual content, self-harm, dangerous capability uplift, deception, and privacy, and which separates harm category from severity. Each value below has a counterpart there, recorded in its `jigsaw_label` annotation.
     """
     # Enum members
     NON_TOXIC = "NON_TOXIC"
@@ -16357,6 +16694,16 @@ class DownstreamProcessEnum(RichEnum):
     DISTILLATION = "DISTILLATION"
     DRYING = "DRYING"
     HOMOGENIZATION = "HOMOGENIZATION"
+    CLARIFICATION = "CLARIFICATION"
+    FLOCCULATION = "FLOCCULATION"
+    ULTRAFILTRATION = "ULTRAFILTRATION"
+    DIAFILTRATION = "DIAFILTRATION"
+    TANGENTIAL_FLOW_FILTRATION = "TANGENTIAL_FLOW_FILTRATION"
+    BUFFER_EXCHANGE = "BUFFER_EXCHANGE"
+    ADSORPTION = "ADSORPTION"
+    VIRAL_INACTIVATION = "VIRAL_INACTIVATION"
+    POLISHING = "POLISHING"
+    LYOPHILIZATION = "LYOPHILIZATION"
 
 # Set metadata after class creation to avoid it becoming an enum member
 DownstreamProcessEnum._metadata = {
@@ -16369,6 +16716,16 @@ DownstreamProcessEnum._metadata = {
     "DISTILLATION": {'description': 'Distillation', 'meaning': 'CHMO:0001534', 'annotations': {'principle': 'Boiling point difference'}},
     "DRYING": {'description': 'Drying operations', 'meaning': 'CHMO:0001551', 'annotations': {'types': 'Spray, freeze, vacuum'}},
     "HOMOGENIZATION": {'description': 'Cell disruption/homogenization', 'annotations': {'methods': 'High pressure, bead mill'}},
+    "CLARIFICATION": {'description': 'Removal of cells and debris to produce a clarified harvest', 'annotations': {'methods': 'Centrifugation, depth filtration'}},
+    "FLOCCULATION": {'description': 'Aggregation of cells and debris into flocs to aid clarification'},
+    "ULTRAFILTRATION": {'description': 'Membrane concentration retaining macromolecules such as proteins', 'meaning': 'CHMO:0001645', 'annotations': {'mwco': 'Typically 1-1000 kDa'}},
+    "DIAFILTRATION": {'description': 'Buffer exchange and desalting by ultrafiltration with continuous makeup'},
+    "TANGENTIAL_FLOW_FILTRATION": {'description': 'Crossflow membrane filtration used for concentration and diafiltration', 'annotations': {'aliases': 'TFF, crossflow filtration'}},
+    "BUFFER_EXCHANGE": {'description': 'Replacement of the buffer matrix of a product stream'},
+    "ADSORPTION": {'description': 'Capture of product or impurities onto a solid sorbent'},
+    "VIRAL_INACTIVATION": {'description': 'Treatment step that inactivates potential viral contaminants', 'annotations': {'methods': 'Low pH, solvent/detergent, heat'}},
+    "POLISHING": {'description': 'Final chromatographic or filtration steps to remove trace impurities'},
+    "LYOPHILIZATION": {'description': 'Freeze-drying to produce a stable solid product', 'meaning': 'CHMO:0001553', 'annotations': {'aliases': 'freeze drying'}},
 }
 
 class FeedstockTypeEnum(RichEnum):
@@ -16527,6 +16884,780 @@ BioprocessOptimizationType._metadata = {
     "DOWNSTREAM_PURIFICATION": {'description': 'Optimization of product recovery and purification processes', 'annotations': {'approaches': 'chromatography, membrane separation, extraction'}},
     "IN_LINE_ANALYTICS": {'description': 'Implementation of real-time process analytical technology (PAT) for process monitoring and control', 'annotations': {'technologies': 'Raman spectroscopy, NIR, online HPLC'}},
     "DIGITAL_TWIN_MODELING": {'description': 'Use of computational process models for simulation, prediction, and optimization', 'annotations': {'approaches': 'mechanistic models, hybrid models, machine learning'}},
+}
+
+class UnitOperationType(RichEnum):
+    """
+    Fundamental chemical and process engineering unit operations - the discrete processing steps that transform, separate, combine, or move process material. Grouped (via the unit_operation_class annotation) into momentum transfer, heat transfer, mass-transfer separations, mechanical separations, solids processing, reaction, and storage.
+    """
+    # Enum members
+    PUMPING = "PUMPING"
+    COMPRESSION = "COMPRESSION"
+    GAS_MOVING = "GAS_MOVING"
+    FLOW_SPLITTING = "FLOW_SPLITTING"
+    STREAM_MIXING = "STREAM_MIXING"
+    HEAT_EXCHANGE = "HEAT_EXCHANGE"
+    HEATING = "HEATING"
+    COOLING = "COOLING"
+    CONDENSATION = "CONDENSATION"
+    EVAPORATION = "EVAPORATION"
+    DISTILLATION = "DISTILLATION"
+    ABSORPTION = "ABSORPTION"
+    STRIPPING = "STRIPPING"
+    LIQUID_LIQUID_EXTRACTION = "LIQUID_LIQUID_EXTRACTION"
+    LEACHING = "LEACHING"
+    ADSORPTION = "ADSORPTION"
+    ION_EXCHANGE = "ION_EXCHANGE"
+    CHROMATOGRAPHY = "CHROMATOGRAPHY"
+    CRYSTALLIZATION = "CRYSTALLIZATION"
+    PRECIPITATION = "PRECIPITATION"
+    DRYING = "DRYING"
+    FREEZE_DRYING = "FREEZE_DRYING"
+    HUMIDIFICATION = "HUMIDIFICATION"
+    MEMBRANE_SEPARATION = "MEMBRANE_SEPARATION"
+    MICROFILTRATION = "MICROFILTRATION"
+    ULTRAFILTRATION = "ULTRAFILTRATION"
+    NANOFILTRATION = "NANOFILTRATION"
+    REVERSE_OSMOSIS = "REVERSE_OSMOSIS"
+    DIALYSIS = "DIALYSIS"
+    ELECTRODIALYSIS = "ELECTRODIALYSIS"
+    PERVAPORATION = "PERVAPORATION"
+    FILTRATION = "FILTRATION"
+    CENTRIFUGATION = "CENTRIFUGATION"
+    SEDIMENTATION = "SEDIMENTATION"
+    CLARIFICATION = "CLARIFICATION"
+    FLOTATION = "FLOTATION"
+    FLOCCULATION = "FLOCCULATION"
+    CYCLONE_SEPARATION = "CYCLONE_SEPARATION"
+    SCREENING = "SCREENING"
+    GAS_LIQUID_SEPARATION = "GAS_LIQUID_SEPARATION"
+    SIZE_REDUCTION = "SIZE_REDUCTION"
+    SIZE_ENLARGEMENT = "SIZE_ENLARGEMENT"
+    MIXING = "MIXING"
+    SOLIDS_CONVEYING = "SOLIDS_CONVEYING"
+    CHEMICAL_REACTION = "CHEMICAL_REACTION"
+    FERMENTATION = "FERMENTATION"
+    COMBUSTION = "COMBUSTION"
+    GASIFICATION = "GASIFICATION"
+    PYROLYSIS = "PYROLYSIS"
+    ELECTROLYSIS = "ELECTROLYSIS"
+    NEUTRALIZATION = "NEUTRALIZATION"
+    PURIFICATION = "PURIFICATION"
+    STORAGE = "STORAGE"
+
+# Set metadata after class creation to avoid it becoming an enum member
+UnitOperationType._metadata = {
+    "PUMPING": {'description': 'Raising the pressure or moving of a liquid stream using a pump', 'annotations': {'unit_operation_class': 'MOMENTUM_TRANSFER'}},
+    "COMPRESSION": {'description': 'Raising the pressure of a gas or vapor stream using a compressor', 'annotations': {'unit_operation_class': 'MOMENTUM_TRANSFER'}},
+    "GAS_MOVING": {'description': 'Moving a gas stream at low pressure rise using a fan or blower', 'annotations': {'unit_operation_class': 'MOMENTUM_TRANSFER'}},
+    "FLOW_SPLITTING": {'description': 'Dividing a single stream into two or more streams of identical composition', 'annotations': {'unit_operation_class': 'MOMENTUM_TRANSFER'}},
+    "STREAM_MIXING": {'description': 'Combining two or more streams into a single stream', 'annotations': {'unit_operation_class': 'MOMENTUM_TRANSFER'}},
+    "HEAT_EXCHANGE": {'description': 'Transfer of thermal energy between two streams without phase-change intent', 'annotations': {'unit_operation_class': 'HEAT_TRANSFER'}},
+    "HEATING": {'description': 'Raising the temperature of a process stream', 'annotations': {'unit_operation_class': 'HEAT_TRANSFER'}},
+    "COOLING": {'description': 'Lowering the temperature of a process stream', 'annotations': {'unit_operation_class': 'HEAT_TRANSFER'}},
+    "CONDENSATION": {'description': 'Converting a vapor to a liquid by removing heat', 'annotations': {'unit_operation_class': 'HEAT_TRANSFER'}},
+    "EVAPORATION": {'description': 'Concentrating a solution by vaporizing solvent, typically water', 'meaning': 'CHMO:0001574', 'annotations': {'unit_operation_class': 'HEAT_TRANSFER'}},
+    "DISTILLATION": {'description': 'Separation of components by differences in volatility (boiling point)', 'meaning': 'CHMO:0001532', 'annotations': {'unit_operation_class': 'MASS_TRANSFER_SEPARATION'}},
+    "ABSORPTION": {'description': 'Selective transfer of one or more gas-phase components into a liquid solvent', 'annotations': {'unit_operation_class': 'MASS_TRANSFER_SEPARATION'}},
+    "STRIPPING": {'description': 'Selective transfer of dissolved components from a liquid into a gas stream', 'annotations': {'unit_operation_class': 'MASS_TRANSFER_SEPARATION'}},
+    "LIQUID_LIQUID_EXTRACTION": {'description': 'Separation by partitioning of solutes between two immiscible liquid phases', 'meaning': 'CHMO:0001577', 'annotations': {'unit_operation_class': 'MASS_TRANSFER_SEPARATION'}},
+    "LEACHING": {'description': 'Solid-liquid extraction of soluble components from a solid using a solvent', 'meaning': 'CHMO:0001681', 'annotations': {'unit_operation_class': 'MASS_TRANSFER_SEPARATION'}},
+    "ADSORPTION": {'description': 'Selective uptake of components onto the surface of a solid sorbent', 'annotations': {'unit_operation_class': 'MASS_TRANSFER_SEPARATION'}},
+    "ION_EXCHANGE": {'description': 'Reversible exchange of ions between a solution and a solid ion-exchange resin', 'annotations': {'unit_operation_class': 'MASS_TRANSFER_SEPARATION'}},
+    "CHROMATOGRAPHY": {'description': 'Separation by differential partitioning of solutes between a mobile and stationary phase', 'meaning': 'CHMO:0001000', 'annotations': {'unit_operation_class': 'MASS_TRANSFER_SEPARATION'}},
+    "CRYSTALLIZATION": {'description': 'Formation of a solid crystalline phase from a solution or melt', 'meaning': 'PROCO:0000052', 'annotations': {'unit_operation_class': 'MASS_TRANSFER_SEPARATION'}},
+    "PRECIPITATION": {'description': 'Formation of an insoluble solid from solution by chemical or physical means', 'meaning': 'CHMO:0001688', 'annotations': {'unit_operation_class': 'MASS_TRANSFER_SEPARATION'}},
+    "DRYING": {'description': 'Removal of a liquid (usually water) from a solid or surface by vaporization', 'annotations': {'unit_operation_class': 'MASS_TRANSFER_SEPARATION'}},
+    "FREEZE_DRYING": {'description': 'Removal of solvent by sublimation from the frozen state (lyophilization)', 'meaning': 'CHMO:0001553', 'annotations': {'unit_operation_class': 'MASS_TRANSFER_SEPARATION', 'aliases': 'lyophilization'}},
+    "HUMIDIFICATION": {'description': 'Addition of water vapor to a gas stream', 'annotations': {'unit_operation_class': 'MASS_TRANSFER_SEPARATION'}},
+    "MEMBRANE_SEPARATION": {'description': 'Separation of stream components using a semipermeable membrane', 'annotations': {'unit_operation_class': 'MEMBRANE_SEPARATION'}},
+    "MICROFILTRATION": {'description': 'Membrane separation retaining particles roughly 0.1-10 micrometers', 'meaning': 'CHMO:0001641', 'annotations': {'unit_operation_class': 'MEMBRANE_SEPARATION'}},
+    "ULTRAFILTRATION": {'description': 'Membrane separation retaining macromolecules and colloids', 'meaning': 'CHMO:0001645', 'annotations': {'unit_operation_class': 'MEMBRANE_SEPARATION'}},
+    "NANOFILTRATION": {'description': 'Membrane separation retaining small molecules and multivalent ions', 'meaning': 'CHMO:0001642', 'annotations': {'unit_operation_class': 'MEMBRANE_SEPARATION'}},
+    "REVERSE_OSMOSIS": {'description': 'Pressure-driven membrane separation rejecting dissolved salts and small solutes', 'meaning': 'CHMO:0001643', 'annotations': {'unit_operation_class': 'MEMBRANE_SEPARATION'}},
+    "DIALYSIS": {'description': 'Diffusive membrane separation of solutes across a concentration gradient', 'meaning': 'CHMO:0001522', 'annotations': {'unit_operation_class': 'MEMBRANE_SEPARATION'}},
+    "ELECTRODIALYSIS": {'description': 'Membrane separation of ions driven by an applied electric field', 'annotations': {'unit_operation_class': 'MEMBRANE_SEPARATION'}},
+    "PERVAPORATION": {'description': 'Membrane separation combining permeation and partial vaporization of the permeate', 'annotations': {'unit_operation_class': 'MEMBRANE_SEPARATION'}},
+    "FILTRATION": {'description': 'Separation of solids from a fluid by passage through a porous medium', 'meaning': 'CHMO:0001640', 'annotations': {'unit_operation_class': 'MECHANICAL_SEPARATION'}},
+    "CENTRIFUGATION": {'description': 'Separation of phases by density difference under centrifugal force', 'meaning': 'OBI:0302886', 'annotations': {'unit_operation_class': 'MECHANICAL_SEPARATION'}},
+    "SEDIMENTATION": {'description': 'Gravity separation of suspended solids or immiscible liquids by settling', 'annotations': {'unit_operation_class': 'MECHANICAL_SEPARATION'}},
+    "CLARIFICATION": {'description': 'Removal of suspended solids from a liquid to produce a clarified stream', 'annotations': {'unit_operation_class': 'MECHANICAL_SEPARATION'}},
+    "FLOTATION": {'description': 'Separation of solids or droplets by attachment to rising gas bubbles', 'annotations': {'unit_operation_class': 'MECHANICAL_SEPARATION'}},
+    "FLOCCULATION": {'description': 'Aggregation of fine suspended particles into larger flocs to aid separation', 'annotations': {'unit_operation_class': 'MECHANICAL_SEPARATION'}},
+    "CYCLONE_SEPARATION": {'description': 'Separation of particles from a fluid using centrifugal force in a cyclone', 'annotations': {'unit_operation_class': 'MECHANICAL_SEPARATION'}},
+    "SCREENING": {'description': 'Separation of particulate solids by size using a screen or sieve', 'annotations': {'unit_operation_class': 'MECHANICAL_SEPARATION'}},
+    "GAS_LIQUID_SEPARATION": {'description': 'Disengagement of vapor and liquid phases, e.g. in a flash or knockout drum', 'annotations': {'unit_operation_class': 'MECHANICAL_SEPARATION'}},
+    "SIZE_REDUCTION": {'description': 'Reduction of particle size by crushing, grinding, or milling (comminution)', 'annotations': {'unit_operation_class': 'SOLIDS_PROCESSING'}},
+    "SIZE_ENLARGEMENT": {'description': 'Increase of particle size by granulation, agglomeration, or pelletizing', 'annotations': {'unit_operation_class': 'SOLIDS_PROCESSING'}},
+    "MIXING": {'description': 'Blending of materials to achieve compositional or thermal uniformity', 'meaning': 'CHMO:0001685', 'annotations': {'unit_operation_class': 'SOLIDS_PROCESSING'}},
+    "SOLIDS_CONVEYING": {'description': 'Transport of bulk particulate solids between process steps', 'annotations': {'unit_operation_class': 'SOLIDS_PROCESSING'}},
+    "CHEMICAL_REACTION": {'description': 'Chemical conversion of reactants to products in a reactor', 'annotations': {'unit_operation_class': 'REACTION'}},
+    "FERMENTATION": {'description': 'Microbial or enzymatic conversion of substrate to product in a bioreactor', 'meaning': 'CHMO:0001624', 'annotations': {'unit_operation_class': 'REACTION'}},
+    "COMBUSTION": {'description': 'Exothermic oxidation of a fuel, typically to generate heat or power', 'meaning': 'CHMO:0001473', 'annotations': {'unit_operation_class': 'REACTION'}},
+    "GASIFICATION": {'description': 'Conversion of carbonaceous feedstock to synthesis gas under limited oxygen', 'meaning': 'CHMO:0001501', 'annotations': {'unit_operation_class': 'REACTION'}},
+    "PYROLYSIS": {'description': 'Thermal decomposition of material in the absence of oxygen', 'meaning': 'CHMO:0001502', 'annotations': {'unit_operation_class': 'REACTION'}},
+    "ELECTROLYSIS": {'description': 'Driving a non-spontaneous chemical reaction using electrical energy', 'annotations': {'unit_operation_class': 'REACTION'}},
+    "NEUTRALIZATION": {'description': 'Adjustment of pH by reaction of acid and base', 'annotations': {'unit_operation_class': 'REACTION'}},
+    "PURIFICATION": {'description': 'Removal of impurities to increase the purity of a product stream', 'meaning': 'CHMO:0002231', 'annotations': {'unit_operation_class': 'SEPARATION'}},
+    "STORAGE": {'description': 'Holding of material in a vessel or tank between process steps', 'annotations': {'unit_operation_class': 'STORAGE'}},
+}
+
+class ProcessEquipmentType(RichEnum):
+    """
+    Physical equipment / asset types used in process plants. These correspond to the nodes of a process flowsheet and complement UnitOperationType (which describes the function performed). Grouped via the equipment_class annotation.
+    """
+    # Enum members
+    STORAGE_TANK = "STORAGE_TANK"
+    PRESSURE_VESSEL = "PRESSURE_VESSEL"
+    HOPPER = "HOPPER"
+    FLASH_DRUM = "FLASH_DRUM"
+    KNOCKOUT_DRUM = "KNOCKOUT_DRUM"
+    REACTOR = "REACTOR"
+    BIOREACTOR = "BIOREACTOR"
+    FERMENTER = "FERMENTER"
+    DISTILLATION_COLUMN = "DISTILLATION_COLUMN"
+    ABSORPTION_COLUMN = "ABSORPTION_COLUMN"
+    STRIPPING_COLUMN = "STRIPPING_COLUMN"
+    EXTRACTION_COLUMN = "EXTRACTION_COLUMN"
+    CHROMATOGRAPHY_COLUMN = "CHROMATOGRAPHY_COLUMN"
+    SCRUBBER = "SCRUBBER"
+    HEAT_EXCHANGER = "HEAT_EXCHANGER"
+    CONDENSER = "CONDENSER"
+    REBOILER = "REBOILER"
+    EVAPORATOR = "EVAPORATOR"
+    FURNACE = "FURNACE"
+    BOILER = "BOILER"
+    COOLING_TOWER = "COOLING_TOWER"
+    DRYER = "DRYER"
+    CRYSTALLIZER = "CRYSTALLIZER"
+    PUMP = "PUMP"
+    COMPRESSOR = "COMPRESSOR"
+    BLOWER = "BLOWER"
+    FAN = "FAN"
+    VALVE = "VALVE"
+    CENTRIFUGE = "CENTRIFUGE"
+    FILTER = "FILTER"
+    DECANTER = "DECANTER"
+    CLARIFIER = "CLARIFIER"
+    CYCLONE = "CYCLONE"
+    HYDROCYCLONE = "HYDROCYCLONE"
+    MEMBRANE_MODULE = "MEMBRANE_MODULE"
+    SETTLER = "SETTLER"
+    MIXER = "MIXER"
+    AGITATOR = "AGITATOR"
+    MILL = "MILL"
+    CRUSHER = "CRUSHER"
+    SCREEN = "SCREEN"
+    CONVEYOR = "CONVEYOR"
+
+# Set metadata after class creation to avoid it becoming an enum member
+ProcessEquipmentType._metadata = {
+    "STORAGE_TANK": {'description': 'Atmospheric or low-pressure vessel for holding liquids or solids', 'annotations': {'equipment_class': 'VESSEL'}},
+    "PRESSURE_VESSEL": {'description': 'Vessel designed to hold contents at elevated pressure', 'annotations': {'equipment_class': 'VESSEL'}},
+    "HOPPER": {'description': 'Funnel-shaped vessel for storing and discharging bulk solids', 'annotations': {'equipment_class': 'VESSEL'}},
+    "FLASH_DRUM": {'description': 'Vessel for separating vapor and liquid produced by a pressure let-down', 'annotations': {'equipment_class': 'VESSEL'}},
+    "KNOCKOUT_DRUM": {'description': 'Vessel that removes entrained liquid from a gas stream', 'annotations': {'equipment_class': 'VESSEL'}},
+    "REACTOR": {'description': 'Vessel in which chemical reactions are carried out', 'annotations': {'equipment_class': 'REACTOR', 'subtypes': 'CSTR, plug-flow, batch, fixed-bed, fluidized-bed'}},
+    "BIOREACTOR": {'description': 'Vessel for culturing cells or carrying out enzymatic reactions', 'meaning': 'OBI:0001046', 'annotations': {'equipment_class': 'REACTOR'}},
+    "FERMENTER": {'description': 'Bioreactor configured for microbial fermentation', 'annotations': {'equipment_class': 'REACTOR'}},
+    "DISTILLATION_COLUMN": {'description': 'Column with trays or packing for vapor-liquid separation by distillation', 'annotations': {'equipment_class': 'COLUMN'}},
+    "ABSORPTION_COLUMN": {'description': 'Column for gas absorption into a liquid solvent', 'annotations': {'equipment_class': 'COLUMN'}},
+    "STRIPPING_COLUMN": {'description': 'Column for stripping volatile components from a liquid', 'annotations': {'equipment_class': 'COLUMN'}},
+    "EXTRACTION_COLUMN": {'description': 'Column for liquid-liquid extraction', 'annotations': {'equipment_class': 'COLUMN'}},
+    "CHROMATOGRAPHY_COLUMN": {'description': 'Column packed with a stationary phase for chromatographic separation', 'meaning': 'OBI:0000038', 'annotations': {'equipment_class': 'COLUMN'}},
+    "SCRUBBER": {'description': 'Contactor for removing pollutants or particulates from a gas using a liquid', 'annotations': {'equipment_class': 'COLUMN'}},
+    "HEAT_EXCHANGER": {'description': 'Equipment that transfers heat between two fluid streams', 'annotations': {'equipment_class': 'HEAT_TRANSFER', 'subtypes': 'shell-and-tube, plate, air-cooled'}},
+    "CONDENSER": {'description': 'Heat exchanger that condenses a vapor to liquid', 'annotations': {'equipment_class': 'HEAT_TRANSFER'}},
+    "REBOILER": {'description': 'Heat exchanger that supplies boilup at the base of a distillation column', 'annotations': {'equipment_class': 'HEAT_TRANSFER'}},
+    "EVAPORATOR": {'description': 'Equipment that concentrates a solution by vaporizing solvent', 'annotations': {'equipment_class': 'HEAT_TRANSFER'}},
+    "FURNACE": {'description': 'Fired heater that raises stream temperature by combustion', 'annotations': {'equipment_class': 'HEAT_TRANSFER'}},
+    "BOILER": {'description': 'Equipment that generates steam by transferring combustion heat to water', 'annotations': {'equipment_class': 'HEAT_TRANSFER'}},
+    "COOLING_TOWER": {'description': 'Equipment that rejects process heat to the atmosphere by evaporative cooling', 'annotations': {'equipment_class': 'HEAT_TRANSFER'}},
+    "DRYER": {'description': 'Equipment for removing liquid from solids by vaporization', 'annotations': {'equipment_class': 'HEAT_TRANSFER'}},
+    "CRYSTALLIZER": {'description': 'Equipment for producing crystalline solids from solution or melt', 'annotations': {'equipment_class': 'HEAT_TRANSFER'}},
+    "PUMP": {'description': 'Machine that moves or pressurizes a liquid', 'annotations': {'equipment_class': 'FLUID_MOVER'}},
+    "COMPRESSOR": {'description': 'Machine that raises the pressure of a gas', 'annotations': {'equipment_class': 'FLUID_MOVER'}},
+    "BLOWER": {'description': 'Machine that moves gas at a low pressure rise', 'annotations': {'equipment_class': 'FLUID_MOVER'}},
+    "FAN": {'description': 'Machine that moves large gas volumes at very low pressure rise', 'annotations': {'equipment_class': 'FLUID_MOVER'}},
+    "VALVE": {'description': 'Device that regulates, directs, or controls stream flow', 'annotations': {'equipment_class': 'FLUID_MOVER'}},
+    "CENTRIFUGE": {'description': 'Equipment that separates phases by density under centrifugal force', 'meaning': 'OBI:0400106', 'annotations': {'equipment_class': 'SEPARATION'}},
+    "FILTER": {'description': 'Equipment that separates solids from a fluid using a porous medium', 'annotations': {'equipment_class': 'SEPARATION'}},
+    "DECANTER": {'description': 'Equipment that separates immiscible liquids or settled solids by gravity', 'annotations': {'equipment_class': 'SEPARATION'}},
+    "CLARIFIER": {'description': 'Settling tank that removes suspended solids from a liquid', 'annotations': {'equipment_class': 'SEPARATION'}},
+    "CYCLONE": {'description': 'Device that separates particles from a fluid by centrifugal action', 'annotations': {'equipment_class': 'SEPARATION'}},
+    "HYDROCYCLONE": {'description': 'Cyclone that separates solids or immiscible liquids from a liquid stream', 'annotations': {'equipment_class': 'SEPARATION'}},
+    "MEMBRANE_MODULE": {'description': 'Housing containing membrane elements for a membrane separation', 'annotations': {'equipment_class': 'SEPARATION'}},
+    "SETTLER": {'description': 'Vessel allowing phases to separate by gravity settling', 'annotations': {'equipment_class': 'SEPARATION'}},
+    "MIXER": {'description': 'Equipment for blending streams or materials', 'annotations': {'equipment_class': 'SOLIDS_HANDLING'}},
+    "AGITATOR": {'description': 'Impeller-driven device that mixes vessel contents', 'annotations': {'equipment_class': 'SOLIDS_HANDLING'}},
+    "MILL": {'description': 'Equipment that reduces particle size by grinding or crushing', 'annotations': {'equipment_class': 'SOLIDS_HANDLING'}},
+    "CRUSHER": {'description': 'Equipment that reduces large solids by mechanical force', 'annotations': {'equipment_class': 'SOLIDS_HANDLING'}},
+    "SCREEN": {'description': 'Equipment that classifies particulate solids by size', 'annotations': {'equipment_class': 'SOLIDS_HANDLING'}},
+    "CONVEYOR": {'description': 'Equipment that transports bulk solids between locations', 'annotations': {'equipment_class': 'SOLIDS_HANDLING'}},
+}
+
+class ProcessStreamRole(RichEnum):
+    """
+    The functional role of a stream within a process flowsheet, independent of its chemical composition.
+    """
+    # Enum members
+    FEED = "FEED"
+    RAW_MATERIAL = "RAW_MATERIAL"
+    PRODUCT = "PRODUCT"
+    BYPRODUCT = "BYPRODUCT"
+    INTERMEDIATE = "INTERMEDIATE"
+    RECYCLE = "RECYCLE"
+    PURGE = "PURGE"
+    BLEED = "BLEED"
+    MAKEUP = "MAKEUP"
+    WASTE = "WASTE"
+    EFFLUENT = "EFFLUENT"
+    EMISSION = "EMISSION"
+    UTILITY = "UTILITY"
+
+# Set metadata after class creation to avoid it becoming an enum member
+ProcessStreamRole._metadata = {
+    "FEED": {'description': 'A stream entering the process or a unit operation as input'},
+    "RAW_MATERIAL": {'description': 'A fresh raw material or reactant stream entering the process battery limits'},
+    "PRODUCT": {'description': 'A primary product stream of commercial value leaving the process'},
+    "BYPRODUCT": {'description': 'A secondary saleable or usable product produced alongside the main product'},
+    "INTERMEDIATE": {'description': 'A stream flowing between unit operations within the process'},
+    "RECYCLE": {'description': 'A stream returned to an upstream point for reprocessing'},
+    "PURGE": {'description': 'A stream withdrawn from a recycle loop to prevent accumulation of inerts or impurities'},
+    "BLEED": {'description': 'A small continuous stream withdrawn to control composition or level'},
+    "MAKEUP": {'description': 'A stream added to replenish material lost from a circulating loop'},
+    "WASTE": {'description': 'A stream with no further use that must be treated or disposed of'},
+    "EFFLUENT": {'description': 'A liquid waste stream discharged from the process'},
+    "EMISSION": {'description': 'A gaseous stream released to the atmosphere'},
+    "UTILITY": {'description': 'A service stream (e.g. steam, cooling water) supplied to a unit operation'},
+}
+
+class ProcessStreamPhase(RichEnum):
+    """
+    The physical phase or phase combination of a process stream. For single-phase fundamental states see also StateOfMatterEnum in the physics module; this enum adds the multiphase combinations common in process engineering.
+    """
+    # Enum members
+    GAS = "GAS"
+    LIQUID = "LIQUID"
+    SOLID = "SOLID"
+    SUPERCRITICAL = "SUPERCRITICAL"
+    VAPOR_LIQUID = "VAPOR_LIQUID"
+    LIQUID_LIQUID = "LIQUID_LIQUID"
+    VAPOR_LIQUID_LIQUID = "VAPOR_LIQUID_LIQUID"
+    SLURRY = "SLURRY"
+    GAS_SOLID = "GAS_SOLID"
+    MULTIPHASE = "MULTIPHASE"
+
+# Set metadata after class creation to avoid it becoming an enum member
+ProcessStreamPhase._metadata = {
+    "GAS": {'description': 'A single gas or vapor phase', 'annotations': {'sff_phase_code': 'g'}},
+    "LIQUID": {'description': 'A single liquid phase', 'annotations': {'sff_phase_code': 'l'}},
+    "SOLID": {'description': 'A single solid phase', 'annotations': {'sff_phase_code': 's'}},
+    "SUPERCRITICAL": {'description': 'A supercritical fluid above its critical temperature and pressure'},
+    "VAPOR_LIQUID": {'description': 'A two-phase mixture of vapor and liquid'},
+    "LIQUID_LIQUID": {'description': 'A two-phase mixture of two immiscible liquids'},
+    "VAPOR_LIQUID_LIQUID": {'description': 'A three-phase mixture of a vapor and two immiscible liquids'},
+    "SLURRY": {'description': 'A suspension of solids in a liquid'},
+    "GAS_SOLID": {'description': 'A two-phase mixture of gas and entrained or fluidized solids'},
+    "MULTIPHASE": {'description': 'A stream containing more than one phase, of mixed or unspecified composition'},
+}
+
+class UtilityType(RichEnum):
+    """
+    Common plant utilities consumed or produced by process unit operations, used for energy and mass balance accounting on a flowsheet.
+    """
+    # Enum members
+    STEAM = "STEAM"
+    LOW_PRESSURE_STEAM = "LOW_PRESSURE_STEAM"
+    MEDIUM_PRESSURE_STEAM = "MEDIUM_PRESSURE_STEAM"
+    HIGH_PRESSURE_STEAM = "HIGH_PRESSURE_STEAM"
+    COOLING_WATER = "COOLING_WATER"
+    CHILLED_WATER = "CHILLED_WATER"
+    REFRIGERANT = "REFRIGERANT"
+    HOT_OIL = "HOT_OIL"
+    BRINE = "BRINE"
+    ELECTRICITY = "ELECTRICITY"
+    PROCESS_WATER = "PROCESS_WATER"
+    DEMINERALIZED_WATER = "DEMINERALIZED_WATER"
+    NATURAL_GAS = "NATURAL_GAS"
+    FUEL_GAS = "FUEL_GAS"
+    COMPRESSED_AIR = "COMPRESSED_AIR"
+    INSTRUMENT_AIR = "INSTRUMENT_AIR"
+    NITROGEN = "NITROGEN"
+    FLARE = "FLARE"
+
+# Set metadata after class creation to avoid it becoming an enum member
+UtilityType._metadata = {
+    "STEAM": {'description': 'Process steam used for heating or stripping', 'annotations': {'utility_category': 'HEAT'}},
+    "LOW_PRESSURE_STEAM": {'description': 'Low-pressure steam utility', 'annotations': {'utility_category': 'HEAT', 'typical_range': '<3 barg'}},
+    "MEDIUM_PRESSURE_STEAM": {'description': 'Medium-pressure steam utility', 'annotations': {'utility_category': 'HEAT', 'typical_range': '3-20 barg'}},
+    "HIGH_PRESSURE_STEAM": {'description': 'High-pressure steam utility', 'annotations': {'utility_category': 'HEAT', 'typical_range': '>20 barg'}},
+    "COOLING_WATER": {'description': 'Recirculated cooling water for heat rejection', 'annotations': {'utility_category': 'HEAT'}},
+    "CHILLED_WATER": {'description': 'Refrigerated water for below-ambient cooling', 'annotations': {'utility_category': 'HEAT'}},
+    "REFRIGERANT": {'description': 'Refrigerant fluid for low-temperature cooling duty', 'annotations': {'utility_category': 'HEAT'}},
+    "HOT_OIL": {'description': 'Thermal oil heat-transfer fluid for high-temperature heating', 'annotations': {'utility_category': 'HEAT'}},
+    "BRINE": {'description': 'Chilled brine used as a low-temperature coolant', 'annotations': {'utility_category': 'HEAT'}},
+    "ELECTRICITY": {'description': 'Electrical power supplied to drivers and equipment', 'annotations': {'utility_category': 'POWER'}},
+    "PROCESS_WATER": {'description': 'Treated water used as a process input', 'annotations': {'utility_category': 'OTHER'}},
+    "DEMINERALIZED_WATER": {'description': 'High-purity demineralized water utility', 'annotations': {'utility_category': 'OTHER'}},
+    "NATURAL_GAS": {'description': 'Natural gas supplied as fuel or feedstock', 'annotations': {'utility_category': 'OTHER'}},
+    "FUEL_GAS": {'description': 'Fuel gas burned in fired heaters and boilers', 'annotations': {'utility_category': 'OTHER'}},
+    "COMPRESSED_AIR": {'description': 'Compressed air utility for process or actuation use', 'annotations': {'utility_category': 'OTHER'}},
+    "INSTRUMENT_AIR": {'description': 'Clean dry compressed air for instrumentation', 'annotations': {'utility_category': 'OTHER'}},
+    "NITROGEN": {'description': 'Nitrogen used for inerting, blanketing, or purging', 'annotations': {'utility_category': 'OTHER'}},
+    "FLARE": {'description': 'Flare system for safe combustion of relieved gases', 'annotations': {'utility_category': 'OTHER'}},
+}
+
+class ProcessIndustryCategory(RichEnum):
+    """
+    Sectors of the process (continuous and batch) manufacturing industries. The pisces_category annotation records the corresponding top-level category in the PISCES Standard Flowsheet Format where one exists.
+    """
+    # Enum members
+    PETROLEUM_REFINING = "PETROLEUM_REFINING"
+    PETROCHEMICAL = "PETROCHEMICAL"
+    BULK_CHEMICAL = "BULK_CHEMICAL"
+    SPECIALTY_CHEMICAL = "SPECIALTY_CHEMICAL"
+    AGROCHEMICAL = "AGROCHEMICAL"
+    POLYMER_AND_PLASTICS = "POLYMER_AND_PLASTICS"
+    PHARMACEUTICAL = "PHARMACEUTICAL"
+    BIOTECHNOLOGY = "BIOTECHNOLOGY"
+    BIOFUEL = "BIOFUEL"
+    FOOD_AND_BEVERAGE = "FOOD_AND_BEVERAGE"
+    PULP_AND_PAPER = "PULP_AND_PAPER"
+    METALS_AND_MINING = "METALS_AND_MINING"
+    WATER_AND_WASTEWATER_TREATMENT = "WATER_AND_WASTEWATER_TREATMENT"
+    POWER_GENERATION = "POWER_GENERATION"
+    GAS_PROCESSING = "GAS_PROCESSING"
+    CEMENT_AND_CONSTRUCTION_MATERIALS = "CEMENT_AND_CONSTRUCTION_MATERIALS"
+    GLASS_AND_CERAMICS = "GLASS_AND_CERAMICS"
+    TEXTILE = "TEXTILE"
+    COSMETICS_AND_PERSONAL_CARE = "COSMETICS_AND_PERSONAL_CARE"
+    NUCLEAR_FUEL = "NUCLEAR_FUEL"
+    SEMICONDUCTOR = "SEMICONDUCTOR"
+
+# Set metadata after class creation to avoid it becoming an enum member
+ProcessIndustryCategory._metadata = {
+    "PETROLEUM_REFINING": {'description': 'Refining of crude oil into fuels and feedstocks', 'annotations': {'pisces_category': 'Energy'}},
+    "PETROCHEMICAL": {'description': 'Production of chemicals derived from petroleum and natural gas', 'annotations': {'pisces_category': 'Chemical'}},
+    "BULK_CHEMICAL": {'description': 'Large-volume production of commodity chemicals', 'annotations': {'pisces_category': 'Chemical'}},
+    "SPECIALTY_CHEMICAL": {'description': 'Production of lower-volume, high-value performance chemicals', 'annotations': {'pisces_category': 'Chemical'}},
+    "AGROCHEMICAL": {'description': 'Production of fertilizers, pesticides, and other agricultural chemicals', 'annotations': {'pisces_category': 'Chemical'}},
+    "POLYMER_AND_PLASTICS": {'description': 'Production of polymers, resins, and plastic materials', 'annotations': {'pisces_category': 'Chemical'}},
+    "PHARMACEUTICAL": {'description': 'Manufacture of active pharmaceutical ingredients and drug products', 'annotations': {'pisces_category': 'Pharmaceutical'}},
+    "BIOTECHNOLOGY": {'description': 'Manufacture of products using biological systems and fermentation', 'annotations': {'pisces_category': 'Pharmaceutical'}},
+    "BIOFUEL": {'description': 'Production of biologically derived fuels such as ethanol and biodiesel', 'annotations': {'pisces_category': 'Biofuel'}},
+    "FOOD_AND_BEVERAGE": {'description': 'Processing and manufacture of food and beverage products', 'annotations': {'pisces_category': 'Food Product'}},
+    "PULP_AND_PAPER": {'description': 'Production of pulp, paper, and board from fiber'},
+    "METALS_AND_MINING": {'description': 'Extraction and processing of metals and minerals'},
+    "WATER_AND_WASTEWATER_TREATMENT": {'description': 'Treatment of water and wastewater streams'},
+    "POWER_GENERATION": {'description': 'Generation of electrical power and process heat', 'annotations': {'pisces_category': 'Energy'}},
+    "GAS_PROCESSING": {'description': 'Processing and separation of natural gas and industrial gases', 'annotations': {'pisces_category': 'Energy'}},
+    "CEMENT_AND_CONSTRUCTION_MATERIALS": {'description': 'Production of cement, lime, and construction materials'},
+    "GLASS_AND_CERAMICS": {'description': 'Manufacture of glass and ceramic products'},
+    "TEXTILE": {'description': 'Production and finishing of textile fibers and fabrics'},
+    "COSMETICS_AND_PERSONAL_CARE": {'description': 'Manufacture of cosmetics and personal care products'},
+    "NUCLEAR_FUEL": {'description': 'Processing of nuclear fuel materials', 'annotations': {'pisces_category': 'Energy'}},
+    "SEMICONDUCTOR": {'description': 'Fabrication of semiconductor and microelectronic materials'},
+}
+
+class ProcessOperationMode(RichEnum):
+    """
+    The temporal mode in which a process or unit operation is run.
+    """
+    # Enum members
+    BATCH = "BATCH"
+    CONTINUOUS = "CONTINUOUS"
+    SEMI_BATCH = "SEMI_BATCH"
+    SEMI_CONTINUOUS = "SEMI_CONTINUOUS"
+
+# Set metadata after class creation to avoid it becoming an enum member
+ProcessOperationMode._metadata = {
+    "BATCH": {'description': 'Material is charged, processed, and discharged in discrete batches'},
+    "CONTINUOUS": {'description': 'Material flows through the process steadily without interruption'},
+    "SEMI_BATCH": {'description': 'A hybrid mode where some streams are continuous while others are batch-wise'},
+    "SEMI_CONTINUOUS": {'description': 'Process alternates between continuous operation and periodic interruptions'},
+}
+
+class EquationOfStateModel(RichEnum):
+    """
+    Equations of state used to compute fugacity coefficients and PVT behavior of fluids in process simulation (the SFF phi method).
+    """
+    # Enum members
+    IDEAL_GAS = "IDEAL_GAS"
+    VIRIAL = "VIRIAL"
+    REDLICH_KWONG = "REDLICH_KWONG"
+    SOAVE_REDLICH_KWONG = "SOAVE_REDLICH_KWONG"
+    PENG_ROBINSON = "PENG_ROBINSON"
+    PENG_ROBINSON_BOSTON_MATHIAS = "PENG_ROBINSON_BOSTON_MATHIAS"
+    SRK_BOSTON_MATHIAS = "SRK_BOSTON_MATHIAS"
+    LEE_KESLER_PLOCKER = "LEE_KESLER_PLOCKER"
+    BENEDICT_WEBB_RUBIN_STARLING = "BENEDICT_WEBB_RUBIN_STARLING"
+    PREDICTIVE_SRK = "PREDICTIVE_SRK"
+    PC_SAFT = "PC_SAFT"
+    CUBIC_PLUS_ASSOCIATION = "CUBIC_PLUS_ASSOCIATION"
+    GERG_2008 = "GERG_2008"
+    IAPWS_95 = "IAPWS_95"
+
+# Set metadata after class creation to avoid it becoming an enum member
+EquationOfStateModel._metadata = {
+    "IDEAL_GAS": {'description': 'Ideal gas law, assuming no intermolecular interactions'},
+    "VIRIAL": {'description': 'Virial equation of state expressed as a power series in density or pressure'},
+    "REDLICH_KWONG": {'description': 'Redlich-Kwong cubic equation of state', 'annotations': {'abbreviation': 'RK'}},
+    "SOAVE_REDLICH_KWONG": {'description': 'Soave modification of the Redlich-Kwong cubic equation of state', 'annotations': {'abbreviation': 'SRK'}},
+    "PENG_ROBINSON": {'description': 'Peng-Robinson cubic equation of state', 'annotations': {'abbreviation': 'PR'}},
+    "PENG_ROBINSON_BOSTON_MATHIAS": {'description': 'Peng-Robinson with Boston-Mathias alpha function for supercritical extrapolation', 'annotations': {'abbreviation': 'PR-BM'}},
+    "SRK_BOSTON_MATHIAS": {'description': 'Soave-Redlich-Kwong with Boston-Mathias alpha function', 'annotations': {'abbreviation': 'SRK-BM'}},
+    "LEE_KESLER_PLOCKER": {'description': 'Lee-Kesler-Plocker corresponding-states equation of state', 'annotations': {'abbreviation': 'LKP'}},
+    "BENEDICT_WEBB_RUBIN_STARLING": {'description': 'Benedict-Webb-Rubin-Starling equation of state for light hydrocarbons', 'annotations': {'abbreviation': 'BWRS'}},
+    "PREDICTIVE_SRK": {'description': 'Predictive SRK combining SRK with a UNIFAC-based mixing rule', 'annotations': {'abbreviation': 'PSRK'}},
+    "PC_SAFT": {'description': 'Perturbed-chain statistical associating fluid theory equation of state', 'annotations': {'abbreviation': 'PC-SAFT'}},
+    "CUBIC_PLUS_ASSOCIATION": {'description': 'Cubic-plus-association equation of state for associating fluids', 'annotations': {'abbreviation': 'CPA'}},
+    "GERG_2008": {'description': 'GERG-2008 reference equation of state for natural gas mixtures'},
+    "IAPWS_95": {'description': 'IAPWS-95 reference formulation for the thermodynamic properties of water', 'annotations': {'aliases': 'steam tables'}},
+}
+
+class ActivityCoefficientModel(RichEnum):
+    """
+    Excess Gibbs energy / activity-coefficient models for non-ideal liquid phases (the SFF gamma method).
+    """
+    # Enum members
+    IDEAL = "IDEAL"
+    MARGULES = "MARGULES"
+    VAN_LAAR = "VAN_LAAR"
+    REGULAR_SOLUTION = "REGULAR_SOLUTION"
+    WILSON = "WILSON"
+    NRTL = "NRTL"
+    ELECTROLYTE_NRTL = "ELECTROLYTE_NRTL"
+    UNIQUAC = "UNIQUAC"
+    UNIFAC = "UNIFAC"
+    UNIFAC_DORTMUND = "UNIFAC_DORTMUND"
+    FLORY_HUGGINS = "FLORY_HUGGINS"
+    PITZER = "PITZER"
+    COSMO_SAC = "COSMO_SAC"
+
+# Set metadata after class creation to avoid it becoming an enum member
+ActivityCoefficientModel._metadata = {
+    "IDEAL": {'description': "Ideal solution, all activity coefficients equal to one (Raoult's law)"},
+    "MARGULES": {'description': 'Margules two-parameter activity-coefficient model'},
+    "VAN_LAAR": {'description': 'Van Laar activity-coefficient model'},
+    "REGULAR_SOLUTION": {'description': 'Scatchard-Hildebrand regular solution model based on solubility parameters'},
+    "WILSON": {'description': 'Wilson local-composition activity-coefficient model'},
+    "NRTL": {'description': 'Non-random two-liquid local-composition activity-coefficient model'},
+    "ELECTROLYTE_NRTL": {'description': 'Electrolyte NRTL model for systems containing ions', 'annotations': {'abbreviation': 'eNRTL'}},
+    "UNIQUAC": {'description': 'Universal quasi-chemical activity-coefficient model'},
+    "UNIFAC": {'description': 'UNIQUAC functional-group activity-coefficient (group-contribution) model'},
+    "UNIFAC_DORTMUND": {'description': 'Modified UNIFAC (Dortmund) group-contribution model'},
+    "FLORY_HUGGINS": {'description': 'Flory-Huggins model for polymer solutions'},
+    "PITZER": {'description': 'Pitzer model for aqueous electrolyte activity coefficients'},
+    "COSMO_SAC": {'description': 'COSMO-based segment activity-coefficient model from quantum chemistry', 'annotations': {'aliases': 'COSMO-RS, COSMO-SAC'}},
+}
+
+class ThermodynamicPropertyPackage(RichEnum):
+    """
+    Named property methods/packages offered by process simulators, typically combining an equation of state and/or an activity-coefficient model. Used where a single package label rather than separate gamma/phi methods is recorded.
+    """
+    # Enum members
+    IDEAL = "IDEAL"
+    NRTL = "NRTL"
+    NRTL_RK = "NRTL_RK"
+    UNIQUAC = "UNIQUAC"
+    UNIFAC = "UNIFAC"
+    WILSON = "WILSON"
+    VAN_LAAR = "VAN_LAAR"
+    PENG_ROBINSON = "PENG_ROBINSON"
+    SOAVE_REDLICH_KWONG = "SOAVE_REDLICH_KWONG"
+    ELECTROLYTE_NRTL = "ELECTROLYTE_NRTL"
+    PITZER = "PITZER"
+    CHAO_SEADER = "CHAO_SEADER"
+    GRAYSON_STREED = "GRAYSON_STREED"
+    BRAUN_K10 = "BRAUN_K10"
+    PC_SAFT = "PC_SAFT"
+    STEAM_TABLES = "STEAM_TABLES"
+    API_SOUR = "API_SOUR"
+
+# Set metadata after class creation to avoid it becoming an enum member
+ThermodynamicPropertyPackage._metadata = {
+    "IDEAL": {'description': "Ideal (Raoult's law) property package"},
+    "NRTL": {'description': 'NRTL activity model with ideal or RK vapor phase'},
+    "NRTL_RK": {'description': 'NRTL activity model with Redlich-Kwong vapor phase'},
+    "UNIQUAC": {'description': 'UNIQUAC activity model property package'},
+    "UNIFAC": {'description': 'UNIFAC group-contribution property package'},
+    "WILSON": {'description': 'Wilson activity model property package'},
+    "VAN_LAAR": {'description': 'Van Laar activity model property package'},
+    "PENG_ROBINSON": {'description': 'Peng-Robinson equation-of-state property package'},
+    "SOAVE_REDLICH_KWONG": {'description': 'Soave-Redlich-Kwong equation-of-state property package'},
+    "ELECTROLYTE_NRTL": {'description': 'Electrolyte NRTL property package for ionic systems'},
+    "PITZER": {'description': 'Pitzer property package for aqueous electrolytes'},
+    "CHAO_SEADER": {'description': 'Chao-Seader semi-empirical package for hydrocarbon systems'},
+    "GRAYSON_STREED": {'description': 'Grayson-Streed package for hydrogen-rich hydrocarbon systems'},
+    "BRAUN_K10": {'description': 'Braun K10 package for low-pressure heavy hydrocarbon systems', 'annotations': {'abbreviation': 'BK10'}},
+    "PC_SAFT": {'description': 'PC-SAFT equation-of-state property package'},
+    "STEAM_TABLES": {'description': 'Steam-table (IAPWS / ASME) property package for water and steam'},
+    "API_SOUR": {'description': 'API sour-water package for systems with acid gases and ammonia'},
+}
+
+class MixingRuleModel(RichEnum):
+    """
+    Mixing rules applied to equation-of-state parameters for mixtures (the SFF mixture method).
+    """
+    # Enum members
+    IDEAL = "IDEAL"
+    VAN_DER_WAALS = "VAN_DER_WAALS"
+    HURON_VIDAL = "HURON_VIDAL"
+    MODIFIED_HURON_VIDAL = "MODIFIED_HURON_VIDAL"
+    WONG_SANDLER = "WONG_SANDLER"
+    PSRK_MIXING = "PSRK_MIXING"
+
+# Set metadata after class creation to avoid it becoming an enum member
+MixingRuleModel._metadata = {
+    "IDEAL": {'description': 'Ideal mixing, no excess properties'},
+    "VAN_DER_WAALS": {'description': 'Classical van der Waals one-fluid mixing rule with binary interaction parameters', 'annotations': {'aliases': 'classical, quadratic mixing rule'}},
+    "HURON_VIDAL": {'description': 'Huron-Vidal mixing rule coupling an equation of state to an excess Gibbs energy model'},
+    "MODIFIED_HURON_VIDAL": {'description': 'Modified Huron-Vidal first/second order mixing rules', 'annotations': {'aliases': 'MHV1, MHV2'}},
+    "WONG_SANDLER": {'description': 'Wong-Sandler mixing rule with correct low- and high-density limits'},
+    "PSRK_MIXING": {'description': 'Predictive SRK (PSRK) mixing rule based on UNIFAC'},
+}
+
+class PoyntingCorrectionMethod(RichEnum):
+    """
+    Treatment of the Poynting correction factor accounting for the effect of pressure on liquid fugacity (the SFF PCF method).
+    """
+    # Enum members
+    NONE = "NONE"
+    POYNTING = "POYNTING"
+
+# Set metadata after class creation to avoid it becoming an enum member
+PoyntingCorrectionMethod._metadata = {
+    "NONE": {'description': 'No Poynting correction applied'},
+    "POYNTING": {'description': 'Poynting correction factor applied to the liquid fugacity'},
+}
+
+class DesignSimulationMethod(RichEnum):
+    """
+    Methods used to design or simulate unit operations, particularly separation columns - ranging from graphical and shortcut methods to rigorous stage-by-stage and rate-based models.
+    """
+    # Enum members
+    MCCABE_THIELE = "MCCABE_THIELE"
+    PONCHON_SAVARIT = "PONCHON_SAVARIT"
+    FENSKE_UNDERWOOD_GILLILAND = "FENSKE_UNDERWOOD_GILLILAND"
+    KREMSER = "KREMSER"
+    MESH = "MESH"
+    INSIDE_OUT = "INSIDE_OUT"
+    RATE_BASED = "RATE_BASED"
+    EQUILIBRIUM_STAGE = "EQUILIBRIUM_STAGE"
+    SHORTCUT = "SHORTCUT"
+    RIGOROUS = "RIGOROUS"
+    PINCH_ANALYSIS = "PINCH_ANALYSIS"
+
+# Set metadata after class creation to avoid it becoming an enum member
+DesignSimulationMethod._metadata = {
+    "MCCABE_THIELE": {'description': 'McCabe-Thiele graphical method for binary distillation', 'annotations': {'method_class': 'GRAPHICAL'}},
+    "PONCHON_SAVARIT": {'description': 'Ponchon-Savarit enthalpy-composition graphical method for binary distillation', 'annotations': {'method_class': 'GRAPHICAL'}},
+    "FENSKE_UNDERWOOD_GILLILAND": {'description': 'Fenske-Underwood-Gilliland shortcut method for multicomponent distillation', 'annotations': {'method_class': 'SHORTCUT', 'abbreviation': 'FUG'}},
+    "KREMSER": {'description': 'Kremser shortcut method for absorber and stripper design', 'annotations': {'method_class': 'SHORTCUT'}},
+    "MESH": {'description': 'Rigorous equilibrium-stage solution of the Material, Equilibrium, Summation and Heat (enthalpy) equations', 'annotations': {'method_class': 'RIGOROUS_EQUILIBRIUM'}},
+    "INSIDE_OUT": {'description': 'Inside-out algorithm for rigorous equilibrium-stage column convergence', 'annotations': {'method_class': 'RIGOROUS_EQUILIBRIUM'}},
+    "RATE_BASED": {'description': 'Rate-based (nonequilibrium) model accounting for mass and heat transfer rates', 'annotations': {'method_class': 'RATE_BASED'}},
+    "EQUILIBRIUM_STAGE": {'description': 'Generic equilibrium-stage model assuming each stage reaches phase equilibrium', 'annotations': {'method_class': 'RIGOROUS_EQUILIBRIUM'}},
+    "SHORTCUT": {'description': 'Generic shortcut / approximate design method', 'annotations': {'method_class': 'SHORTCUT'}},
+    "RIGOROUS": {'description': 'Generic rigorous design method', 'annotations': {'method_class': 'RIGOROUS_EQUILIBRIUM'}},
+    "PINCH_ANALYSIS": {'description': 'Pinch analysis for heat-exchanger network and energy integration', 'annotations': {'method_class': 'ENERGY_INTEGRATION'}},
+}
+
+class FlowsheetSolutionApproach(RichEnum):
+    """
+    The overall computational strategy used to converge a process flowsheet.
+    """
+    # Enum members
+    SEQUENTIAL_MODULAR = "SEQUENTIAL_MODULAR"
+    EQUATION_ORIENTED = "EQUATION_ORIENTED"
+    SIMULTANEOUS_MODULAR = "SIMULTANEOUS_MODULAR"
+
+# Set metadata after class creation to avoid it becoming an enum member
+FlowsheetSolutionApproach._metadata = {
+    "SEQUENTIAL_MODULAR": {'description': 'Units solved one at a time in sequence, iterating on recycle tear streams'},
+    "EQUATION_ORIENTED": {'description': 'All model equations assembled and solved simultaneously'},
+    "SIMULTANEOUS_MODULAR": {'description': 'Hybrid approach combining modular unit models with a simultaneous convergence layer'},
+}
+
+class ProcessSimulator(RichEnum):
+    """
+    Process simulation software packages used to model chemical and biochemical process flowsheets.
+    """
+    # Enum members
+    ASPEN_PLUS = "ASPEN_PLUS"
+    ASPEN_HYSYS = "ASPEN_HYSYS"
+    ASPEN_CUSTOM_MODELER = "ASPEN_CUSTOM_MODELER"
+    UNISIM_DESIGN = "UNISIM_DESIGN"
+    PRO_II = "PRO_II"
+    AVEVA_PROCESS_SIMULATION = "AVEVA_PROCESS_SIMULATION"
+    CHEMCAD = "CHEMCAD"
+    DWSIM = "DWSIM"
+    COCO_SIMULATOR = "COCO_SIMULATOR"
+    GPROMS = "GPROMS"
+    PROSIMPLUS = "PROSIMPLUS"
+    PETRO_SIM = "PETRO_SIM"
+    BIOSTEAM = "BIOSTEAM"
+    SUPERPRO_DESIGNER = "SUPERPRO_DESIGNER"
+    IDAES = "IDAES"
+    CAPE_OPEN = "CAPE_OPEN"
+
+# Set metadata after class creation to avoid it becoming an enum member
+ProcessSimulator._metadata = {
+    "ASPEN_PLUS": {'description': 'Aspen Plus steady-state process simulator (AspenTech)'},
+    "ASPEN_HYSYS": {'description': 'Aspen HYSYS process simulator (AspenTech)'},
+    "ASPEN_CUSTOM_MODELER": {'description': 'Aspen Custom Modeler for user-defined unit operation models (AspenTech)'},
+    "UNISIM_DESIGN": {'description': 'Honeywell UniSim Design process simulator'},
+    "PRO_II": {'description': 'AVEVA Pro/II (formerly SimSci Pro/II) process simulator'},
+    "AVEVA_PROCESS_SIMULATION": {'description': 'AVEVA Process Simulation (formerly SimCentral)'},
+    "CHEMCAD": {'description': 'ChemCAD process simulator (Chemstations)'},
+    "DWSIM": {'description': 'DWSIM open-source CAPE-OPEN process simulator'},
+    "COCO_SIMULATOR": {'description': 'COCO/COFE free CAPE-OPEN flowsheeting environment'},
+    "GPROMS": {'description': 'gPROMS equation-oriented process modeling environment (Siemens / PSE)'},
+    "PROSIMPLUS": {'description': 'ProSimPlus steady-state process simulator (ProSim)'},
+    "PETRO_SIM": {'description': 'KBC Petro-SIM process simulator'},
+    "BIOSTEAM": {'description': 'BioSTEAM open-source biorefinery simulation and techno-economic analysis package'},
+    "SUPERPRO_DESIGNER": {'description': 'SuperPro Designer batch and bioprocess simulator (Intelligen)'},
+    "IDAES": {'description': 'IDAES open-source equation-oriented process systems engineering platform (US DOE)'},
+    "CAPE_OPEN": {'description': 'A CAPE-OPEN compliant simulator or unit (interoperability standard, simulator unspecified)'},
+}
+
+class ChemicalIdentifierScheme(RichEnum):
+    """
+    Schemes used to identify chemical substances, including registry numbers, line notations, structure-derived keys, and database accessions.
+    """
+    # Enum members
+    CAS_RN = "CAS_RN"
+    SMILES = "SMILES"
+    INCHI = "INCHI"
+    INCHIKEY = "INCHIKEY"
+    IUPAC_NAME = "IUPAC_NAME"
+    MOLECULAR_FORMULA = "MOLECULAR_FORMULA"
+    PUBCHEM_CID = "PUBCHEM_CID"
+    CHEBI_ID = "CHEBI_ID"
+    KEGG_COMPOUND = "KEGG_COMPOUND"
+    DRUGBANK_ID = "DRUGBANK_ID"
+    EC_NUMBER = "EC_NUMBER"
+
+# Set metadata after class creation to avoid it becoming an enum member
+ChemicalIdentifierScheme._metadata = {
+    "CAS_RN": {'description': 'CAS Registry Number assigned by the Chemical Abstracts Service', 'annotations': {'example': '64-17-5'}},
+    "SMILES": {'description': 'Simplified Molecular-Input Line-Entry System structure notation', 'annotations': {'example': 'CCO'}},
+    "INCHI": {'description': 'IUPAC International Chemical Identifier structure string', 'annotations': {'example': 'InChI=1S/C2H6O/c1-2-3/h3H,2H2,1H3'}},
+    "INCHIKEY": {'description': 'Hashed fixed-length form of an InChI', 'annotations': {'example': 'LFQSCWFLJHTTHZ-UHFFFAOYSA-N'}},
+    "IUPAC_NAME": {'description': 'Systematic IUPAC chemical name'},
+    "MOLECULAR_FORMULA": {'description': 'Molecular or empirical chemical formula', 'annotations': {'example': 'C2H6O'}},
+    "PUBCHEM_CID": {'description': 'PubChem Compound Identifier'},
+    "CHEBI_ID": {'description': 'ChEBI ontology identifier'},
+    "KEGG_COMPOUND": {'description': 'KEGG COMPOUND database accession'},
+    "DRUGBANK_ID": {'description': 'DrugBank accession'},
+    "EC_NUMBER": {'description': 'European Community (EINECS/EC) substance number'},
+}
+
+class CurrencyCode(RichEnum):
+    """
+    World currencies by ISO 4217 alpha-3 code. The numeric_code, symbol, and minor_unit (number of decimal places) annotations record the corresponding ISO 4217 attributes.
+    """
+    # Enum members
+    USD = "USD"
+    EUR = "EUR"
+    JPY = "JPY"
+    GBP = "GBP"
+    CNY = "CNY"
+    AUD = "AUD"
+    CAD = "CAD"
+    CHF = "CHF"
+    HKD = "HKD"
+    SGD = "SGD"
+    SEK = "SEK"
+    NOK = "NOK"
+    DKK = "DKK"
+    NZD = "NZD"
+    KRW = "KRW"
+    INR = "INR"
+    BRL = "BRL"
+    ZAR = "ZAR"
+    RUB = "RUB"
+    MXN = "MXN"
+    TRY = "TRY"
+    PLN = "PLN"
+    THB = "THB"
+    IDR = "IDR"
+    MYR = "MYR"
+    PHP = "PHP"
+    AED = "AED"
+    SAR = "SAR"
+    ILS = "ILS"
+    CZK = "CZK"
+    HUF = "HUF"
+    RON = "RON"
+    UAH = "UAH"
+    CLP = "CLP"
+    COP = "COP"
+    ARS = "ARS"
+    EGP = "EGP"
+    NGN = "NGN"
+    KES = "KES"
+    PKR = "PKR"
+    BDT = "BDT"
+    VND = "VND"
+    TWD = "TWD"
+    KWD = "KWD"
+    BHD = "BHD"
+    OMR = "OMR"
+    QAR = "QAR"
+    ISK = "ISK"
+
+# Set metadata after class creation to avoid it becoming an enum member
+CurrencyCode._metadata = {
+    "USD": {'description': 'United States dollar', 'annotations': {'numeric_code': '840', 'symbol': '$', 'minor_unit': 2}},
+    "EUR": {'description': 'Euro', 'annotations': {'numeric_code': '978', 'symbol': '€', 'minor_unit': 2}},
+    "JPY": {'description': 'Japanese yen', 'annotations': {'numeric_code': '392', 'symbol': '¥', 'minor_unit': 0}},
+    "GBP": {'description': 'British pound sterling', 'annotations': {'numeric_code': '826', 'symbol': '£', 'minor_unit': 2}},
+    "CNY": {'description': 'Chinese yuan renminbi', 'annotations': {'numeric_code': '156', 'symbol': '¥', 'minor_unit': 2}},
+    "AUD": {'description': 'Australian dollar', 'annotations': {'numeric_code': '036', 'symbol': '$', 'minor_unit': 2}},
+    "CAD": {'description': 'Canadian dollar', 'annotations': {'numeric_code': '124', 'symbol': '$', 'minor_unit': 2}},
+    "CHF": {'description': 'Swiss franc', 'annotations': {'numeric_code': '756', 'symbol': 'Fr', 'minor_unit': 2}},
+    "HKD": {'description': 'Hong Kong dollar', 'annotations': {'numeric_code': '344', 'symbol': '$', 'minor_unit': 2}},
+    "SGD": {'description': 'Singapore dollar', 'annotations': {'numeric_code': '702', 'symbol': '$', 'minor_unit': 2}},
+    "SEK": {'description': 'Swedish krona', 'annotations': {'numeric_code': '752', 'symbol': 'kr', 'minor_unit': 2}},
+    "NOK": {'description': 'Norwegian krone', 'annotations': {'numeric_code': '578', 'symbol': 'kr', 'minor_unit': 2}},
+    "DKK": {'description': 'Danish krone', 'annotations': {'numeric_code': '208', 'symbol': 'kr', 'minor_unit': 2}},
+    "NZD": {'description': 'New Zealand dollar', 'annotations': {'numeric_code': '554', 'symbol': '$', 'minor_unit': 2}},
+    "KRW": {'description': 'South Korean won', 'annotations': {'numeric_code': '410', 'symbol': '₩', 'minor_unit': 0}},
+    "INR": {'description': 'Indian rupee', 'annotations': {'numeric_code': '356', 'symbol': '₹', 'minor_unit': 2}},
+    "BRL": {'description': 'Brazilian real', 'annotations': {'numeric_code': '986', 'symbol': 'R$', 'minor_unit': 2}},
+    "ZAR": {'description': 'South African rand', 'annotations': {'numeric_code': '710', 'symbol': 'R', 'minor_unit': 2}},
+    "RUB": {'description': 'Russian ruble', 'annotations': {'numeric_code': '643', 'symbol': '₽', 'minor_unit': 2}},
+    "MXN": {'description': 'Mexican peso', 'annotations': {'numeric_code': '484', 'symbol': '$', 'minor_unit': 2}},
+    "TRY": {'description': 'Turkish lira', 'annotations': {'numeric_code': '949', 'symbol': '₺', 'minor_unit': 2}},
+    "PLN": {'description': 'Polish zloty', 'annotations': {'numeric_code': '985', 'symbol': 'zł', 'minor_unit': 2}},
+    "THB": {'description': 'Thai baht', 'annotations': {'numeric_code': '764', 'symbol': '฿', 'minor_unit': 2}},
+    "IDR": {'description': 'Indonesian rupiah', 'annotations': {'numeric_code': '360', 'symbol': 'Rp', 'minor_unit': 2}},
+    "MYR": {'description': 'Malaysian ringgit', 'annotations': {'numeric_code': '458', 'symbol': 'RM', 'minor_unit': 2}},
+    "PHP": {'description': 'Philippine peso', 'annotations': {'numeric_code': '608', 'symbol': '₱', 'minor_unit': 2}},
+    "AED": {'description': 'United Arab Emirates dirham', 'annotations': {'numeric_code': '784', 'minor_unit': 2}},
+    "SAR": {'description': 'Saudi riyal', 'annotations': {'numeric_code': '682', 'minor_unit': 2}},
+    "ILS": {'description': 'Israeli new shekel', 'annotations': {'numeric_code': '376', 'symbol': '₪', 'minor_unit': 2}},
+    "CZK": {'description': 'Czech koruna', 'annotations': {'numeric_code': '203', 'symbol': 'Kč', 'minor_unit': 2}},
+    "HUF": {'description': 'Hungarian forint', 'annotations': {'numeric_code': '348', 'symbol': 'Ft', 'minor_unit': 2}},
+    "RON": {'description': 'Romanian leu', 'annotations': {'numeric_code': '946', 'symbol': 'lei', 'minor_unit': 2}},
+    "UAH": {'description': 'Ukrainian hryvnia', 'annotations': {'numeric_code': '980', 'symbol': '₴', 'minor_unit': 2}},
+    "CLP": {'description': 'Chilean peso', 'annotations': {'numeric_code': '152', 'symbol': '$', 'minor_unit': 0}},
+    "COP": {'description': 'Colombian peso', 'annotations': {'numeric_code': '170', 'symbol': '$', 'minor_unit': 2}},
+    "ARS": {'description': 'Argentine peso', 'annotations': {'numeric_code': '032', 'symbol': '$', 'minor_unit': 2}},
+    "EGP": {'description': 'Egyptian pound', 'annotations': {'numeric_code': '818', 'symbol': '£', 'minor_unit': 2}},
+    "NGN": {'description': 'Nigerian naira', 'annotations': {'numeric_code': '566', 'symbol': '₦', 'minor_unit': 2}},
+    "KES": {'description': 'Kenyan shilling', 'annotations': {'numeric_code': '404', 'symbol': 'Sh', 'minor_unit': 2}},
+    "PKR": {'description': 'Pakistani rupee', 'annotations': {'numeric_code': '586', 'symbol': '₨', 'minor_unit': 2}},
+    "BDT": {'description': 'Bangladeshi taka', 'annotations': {'numeric_code': '050', 'symbol': '৳', 'minor_unit': 2}},
+    "VND": {'description': 'Vietnamese dong', 'annotations': {'numeric_code': '704', 'symbol': '₫', 'minor_unit': 0}},
+    "TWD": {'description': 'New Taiwan dollar', 'annotations': {'numeric_code': '901', 'symbol': '$', 'minor_unit': 2}},
+    "KWD": {'description': 'Kuwaiti dinar', 'annotations': {'numeric_code': '414', 'minor_unit': 3}},
+    "BHD": {'description': 'Bahraini dinar', 'annotations': {'numeric_code': '048', 'minor_unit': 3}},
+    "OMR": {'description': 'Omani rial', 'annotations': {'numeric_code': '512', 'minor_unit': 3}},
+    "QAR": {'description': 'Qatari riyal', 'annotations': {'numeric_code': '634', 'minor_unit': 2}},
+    "ISK": {'description': 'Icelandic krona', 'annotations': {'numeric_code': '352', 'symbol': 'kr', 'minor_unit': 0}},
 }
 
 class LengthUnitEnum(RichEnum):
@@ -16811,6 +17942,68 @@ DataSizeUnitEnum._metadata = {
     "MEBIBYTE": {'description': 'Mebibyte (2^20 bytes)', 'annotations': {'symbol': 'MiB', 'conversion_to_byte': '1048576', 'standard': 'binary'}},
     "GIBIBYTE": {'description': 'Gibibyte (2^30 bytes)', 'annotations': {'symbol': 'GiB', 'conversion_to_byte': '1073741824', 'standard': 'binary'}},
     "TEBIBYTE": {'description': 'Tebibyte (2^40 bytes)', 'annotations': {'symbol': 'TiB', 'conversion_to_byte': '1099511627776', 'standard': 'binary'}},
+}
+
+class MassFlowRateUnitEnum(RichEnum):
+    """
+    Units of mass flow rate (mass per unit time)
+    """
+    # Enum members
+    KILOGRAM_PER_SECOND = "KILOGRAM_PER_SECOND"
+    KILOGRAM_PER_HOUR = "KILOGRAM_PER_HOUR"
+    GRAM_PER_SECOND = "GRAM_PER_SECOND"
+    TONNE_PER_HOUR = "TONNE_PER_HOUR"
+    TONNE_PER_DAY = "TONNE_PER_DAY"
+    POUND_PER_HOUR = "POUND_PER_HOUR"
+
+# Set metadata after class creation to avoid it becoming an enum member
+MassFlowRateUnitEnum._metadata = {
+    "KILOGRAM_PER_SECOND": {'description': 'Kilograms per second (SI)', 'annotations': {'symbol': 'kg/s', 'system': 'SI'}},
+    "KILOGRAM_PER_HOUR": {'description': 'Kilograms per hour', 'annotations': {'symbol': 'kg/h', 'conversion_to_kg_per_s': '0.000277778'}},
+    "GRAM_PER_SECOND": {'description': 'Grams per second', 'annotations': {'symbol': 'g/s', 'conversion_to_kg_per_s': '0.001'}},
+    "TONNE_PER_HOUR": {'description': 'Metric tonnes per hour', 'annotations': {'symbol': 't/h', 'conversion_to_kg_per_s': '0.277778'}},
+    "TONNE_PER_DAY": {'description': 'Metric tonnes per day', 'annotations': {'symbol': 't/d', 'conversion_to_kg_per_s': '0.0115741'}},
+    "POUND_PER_HOUR": {'description': 'Pounds (mass) per hour', 'annotations': {'symbol': 'lb/h', 'conversion_to_kg_per_s': '0.000125998', 'system': 'imperial'}},
+}
+
+class MolarFlowRateUnitEnum(RichEnum):
+    """
+    Units of molar flow rate (amount of substance per unit time)
+    """
+    # Enum members
+    MOLE_PER_SECOND = "MOLE_PER_SECOND"
+    MOLE_PER_HOUR = "MOLE_PER_HOUR"
+    KILOMOLE_PER_HOUR = "KILOMOLE_PER_HOUR"
+    KILOMOLE_PER_SECOND = "KILOMOLE_PER_SECOND"
+
+# Set metadata after class creation to avoid it becoming an enum member
+MolarFlowRateUnitEnum._metadata = {
+    "MOLE_PER_SECOND": {'description': 'Moles per second (SI)', 'annotations': {'symbol': 'mol/s', 'system': 'SI'}},
+    "MOLE_PER_HOUR": {'description': 'Moles per hour', 'annotations': {'symbol': 'mol/h', 'conversion_to_mol_per_s': '0.000277778'}},
+    "KILOMOLE_PER_HOUR": {'description': 'Kilomoles per hour', 'annotations': {'symbol': 'kmol/h', 'conversion_to_mol_per_s': '0.277778'}},
+    "KILOMOLE_PER_SECOND": {'description': 'Kilomoles per second', 'annotations': {'symbol': 'kmol/s', 'conversion_to_mol_per_s': '1000'}},
+}
+
+class VolumetricFlowRateUnitEnum(RichEnum):
+    """
+    Units of volumetric flow rate (volume per unit time)
+    """
+    # Enum members
+    CUBIC_METER_PER_SECOND = "CUBIC_METER_PER_SECOND"
+    CUBIC_METER_PER_HOUR = "CUBIC_METER_PER_HOUR"
+    LITER_PER_SECOND = "LITER_PER_SECOND"
+    LITER_PER_MINUTE = "LITER_PER_MINUTE"
+    GALLON_PER_MINUTE = "GALLON_PER_MINUTE"
+    CUBIC_FOOT_PER_MINUTE = "CUBIC_FOOT_PER_MINUTE"
+
+# Set metadata after class creation to avoid it becoming an enum member
+VolumetricFlowRateUnitEnum._metadata = {
+    "CUBIC_METER_PER_SECOND": {'description': 'Cubic meters per second (SI)', 'annotations': {'symbol': 'm3/s', 'system': 'SI'}},
+    "CUBIC_METER_PER_HOUR": {'description': 'Cubic meters per hour', 'annotations': {'symbol': 'm3/h', 'conversion_to_m3_per_s': '0.000277778'}},
+    "LITER_PER_SECOND": {'description': 'Liters per second', 'annotations': {'symbol': 'L/s', 'conversion_to_m3_per_s': '0.001'}},
+    "LITER_PER_MINUTE": {'description': 'Liters per minute', 'annotations': {'symbol': 'L/min', 'conversion_to_m3_per_s': '1.66667e-5'}},
+    "GALLON_PER_MINUTE": {'description': 'US gallons per minute', 'annotations': {'symbol': 'gpm', 'conversion_to_m3_per_s': '6.30902e-5', 'system': 'US'}},
+    "CUBIC_FOOT_PER_MINUTE": {'description': 'Cubic feet per minute', 'annotations': {'symbol': 'cfm', 'conversion_to_m3_per_s': '0.000471947', 'system': 'imperial'}},
 }
 
 class QuantityKindEnum(RichEnum):
@@ -17361,6 +18554,65 @@ OpenSourceMaturityLevel._metadata = {
     "MATURE": {'description': 'Well-established with proven governance'},
     "DECLINING": {'description': 'Decreasing activity and maintenance'},
     "ARCHIVED": {'description': 'No longer actively maintained'},
+}
+
+class SystemLifeCycleProcess15288(RichEnum):
+    """
+    The 30 system life cycle processes grouped by ISO/IEC/IEEE 15288:2015.
+    """
+    # Enum members
+    ACQUISITION = "ACQUISITION"
+    SUPPLY = "SUPPLY"
+    LIFE_CYCLE_MODEL_MANAGEMENT = "LIFE_CYCLE_MODEL_MANAGEMENT"
+    INFRASTRUCTURE_MANAGEMENT = "INFRASTRUCTURE_MANAGEMENT"
+    PORTFOLIO_MANAGEMENT = "PORTFOLIO_MANAGEMENT"
+    HUMAN_RESOURCE_MANAGEMENT = "HUMAN_RESOURCE_MANAGEMENT"
+    QUALITY_MANAGEMENT = "QUALITY_MANAGEMENT"
+    PROJECT_PLANNING = "PROJECT_PLANNING"
+    PROJECT_ASSESSMENT_AND_CONTROL = "PROJECT_ASSESSMENT_AND_CONTROL"
+    DECISION_MANAGEMENT = "DECISION_MANAGEMENT"
+    RISK_MANAGEMENT = "RISK_MANAGEMENT"
+    CONFIGURATION_MANAGEMENT = "CONFIGURATION_MANAGEMENT"
+    INFORMATION_MANAGEMENT = "INFORMATION_MANAGEMENT"
+    MEASUREMENT = "MEASUREMENT"
+    QUALITY_ASSURANCE = "QUALITY_ASSURANCE"
+    KNOWLEDGE_MANAGEMENT = "KNOWLEDGE_MANAGEMENT"
+    BUSINESS_OR_MISSION_ANALYSIS = "BUSINESS_OR_MISSION_ANALYSIS"
+    STAKEHOLDER_NEEDS_AND_REQUIREMENTS_DEFINITION = "STAKEHOLDER_NEEDS_AND_REQUIREMENTS_DEFINITION"
+    SYSTEM_REQUIREMENTS_DEFINITION = "SYSTEM_REQUIREMENTS_DEFINITION"
+    ARCHITECTURE_DEFINITION = "ARCHITECTURE_DEFINITION"
+    DESIGN_DEFINITION = "DESIGN_DEFINITION"
+    SYSTEM_ANALYSIS = "SYSTEM_ANALYSIS"
+    IMPLEMENTATION = "IMPLEMENTATION"
+    INTEGRATION = "INTEGRATION"
+    VERIFICATION = "VERIFICATION"
+    TRANSITION = "TRANSITION"
+    VALIDATION = "VALIDATION"
+    OPERATION = "OPERATION"
+    MAINTENANCE = "MAINTENANCE"
+    DISPOSAL = "DISPOSAL"
+
+# Set metadata after class creation to avoid it becoming an enum member
+SystemLifeCycleProcess15288._metadata = {
+}
+
+class VerificationValidationProcessIEEE1012(RichEnum):
+    """
+    Verification and validation processes applied across the system, software, and hardware life cycle.
+    """
+    # Enum members
+    CONCEPT_AND_REQUIREMENTS_V_AND_V = "CONCEPT_AND_REQUIREMENTS_V_AND_V"
+    ARCHITECTURE_AND_DESIGN_V_AND_V = "ARCHITECTURE_AND_DESIGN_V_AND_V"
+    IMPLEMENTATION_V_AND_V = "IMPLEMENTATION_V_AND_V"
+    INTEGRATION_V_AND_V = "INTEGRATION_V_AND_V"
+    QUALIFICATION_TESTING = "QUALIFICATION_TESTING"
+    INSTALLATION_AND_CHECKOUT = "INSTALLATION_AND_CHECKOUT"
+    OPERATION_V_AND_V = "OPERATION_V_AND_V"
+    MAINTENANCE_V_AND_V = "MAINTENANCE_V_AND_V"
+    DISPOSAL_V_AND_V = "DISPOSAL_V_AND_V"
+
+# Set metadata after class creation to avoid it becoming an enum member
+VerificationValidationProcessIEEE1012._metadata = {
 }
 
 class OWLProfileEnum(RichEnum):
@@ -21146,6 +22398,525 @@ DataServiceType._metadata = {
     "INVOKE": {'description': 'Service enabling invocation of operations on data, typically\nthrough an API.\n', 'annotations': {'inspire_type': 'invoke'}, 'aliases': ['API Service', 'Web Service']},
     "SUBSCRIPTION": {'description': 'Service enabling subscription to data updates or notifications.\n', 'aliases': ['Notification Service', 'Event Service']},
     "QUERY": {'description': 'Service enabling query-based access to data, returning\nfiltered or aggregated results.\n', 'aliases': ['SPARQL Endpoint', 'Query Service']},
+}
+
+class SociotechnicalOutcomeTypeEnum(RichEnum):
+    """
+    The kind of entity a taxonomy entry names. Berman et al. (2026) argue that SOT interoperability requires "clear distinctions between risks, impacts, and harms" as an organising primitive, because two taxonomies that use compatible conventions can be aligned even where their categorical content differs. Many published taxonomies mix these types within a single flat list; recording the type makes the mixture visible rather than silently flattening it.
+    """
+    # Enum members
+    HAZARD = "HAZARD"
+    RISK = "RISK"
+    IMPACT = "IMPACT"
+    HARM = "HARM"
+    BENEFIT = "BENEFIT"
+
+# Set metadata after class creation to avoid it becoming an enum member
+SociotechnicalOutcomeTypeEnum._metadata = {
+    "HAZARD": {'description': 'A source or condition with the potential to cause harm, independent of whether harm occurs. A property of the system or its context.'},
+    "RISK": {'description': 'The possibility of harm arising, typically understood as combining a hazard with some likelihood and severity of the harm it may produce.'},
+    "IMPACT": {'description': 'A change in the world attributable to the AI system, which may be negative, positive, or mixed. Broader than harm.'},
+    "HARM": {'description': 'A realised setback to the interests or wellbeing of a person, group, or other entity. Distinguished from RISK by having actually occurred.'},
+    "BENEFIT": {'description': 'A realised positive outcome. Included because several taxonomies pair harms with benefits, and dropping the pairing distorts their structure.'},
+}
+
+class RiskEvidenceStatusEnum(RichEnum):
+    """
+    The evidentiary standing of a risk category. Berman et al. (2026) list the distinction "between observed and anticipated effects" among the structural conventions needed for SOT to be comparable. Weidinger et al. (2022) apply exactly this distinction internally, labelling risks "observed" where already evidenced in language models and "anticipated" where not yet observed but considered sufficiently likely to merit attention.
+    """
+    # Enum members
+    OBSERVED = "OBSERVED"
+    ANTICIPATED = "ANTICIPATED"
+    SPECULATIVE = "SPECULATIVE"
+    CONTESTED = "CONTESTED"
+
+# Set metadata after class creation to avoid it becoming an enum member
+RiskEvidenceStatusEnum._metadata = {
+    "OBSERVED": {'description': 'The risk has been empirically evidenced in deployed or studied systems.'},
+    "ANTICIPATED": {'description': 'The risk has not yet been observed but is considered sufficiently likely to merit attention.'},
+    "SPECULATIVE": {'description': 'The risk is conjectured, with no evidentiary base and no established consensus that it is likely.'},
+    "CONTESTED": {'description': 'Whether the risk is real, or whether the evidence supports it, is actively disputed among relevant experts or affected communities.'},
+}
+
+class HarmBearerLevelEnum(RichEnum):
+    """
+    The level of social organisation at which a harm is borne. Berman et al. (2026) name the distinction "between types of harm and levels at which they occur" as a structural convention required for SOT interoperability; collapsing the two is a common source of incommensurability between taxonomies.
+    """
+    # Enum members
+    INDIVIDUAL = "INDIVIDUAL"
+    GROUP = "GROUP"
+    COMMUNITY = "COMMUNITY"
+    ORGANIZATION = "ORGANIZATION"
+    SOCIETY = "SOCIETY"
+    GLOBAL = "GLOBAL"
+    NON_HUMAN_ANIMAL = "NON_HUMAN_ANIMAL"
+    ENVIRONMENT = "ENVIRONMENT"
+    AI_SYSTEM = "AI_SYSTEM"
+
+# Set metadata after class creation to avoid it becoming an enum member
+HarmBearerLevelEnum._metadata = {
+    "INDIVIDUAL": {'description': 'Borne by a specific person, whether or not they are a user of the system'},
+    "GROUP": {'description': 'Borne by people sharing a characteristic (e.g. a demographic group), including via unequal treatment or performance across groups'},
+    "COMMUNITY": {'description': 'Borne by a located or self-identifying community'},
+    "ORGANIZATION": {'description': 'Borne by a firm, institution, or other organised body'},
+    "SOCIETY": {'description': 'Borne by a society or polity as a whole, e.g. through effects on institutions, shared information, or democratic processes'},
+    "GLOBAL": {'description': 'Borne across societies, at planetary or transnational scale'},
+    "NON_HUMAN_ANIMAL": {'description': 'Borne by non-human animals'},
+    "ENVIRONMENT": {'description': 'Borne by ecosystems or the physical environment'},
+    "AI_SYSTEM": {'description': 'Borne by the AI system itself, under framings that treat AI welfare as a coherent category. Included because at least one major taxonomy (the MIT AI Risk Repository, subdomain 7.5) contains such a category; including it here does not endorse the framing.'},
+}
+
+class SociotechnicalHarmTypeEnum(RichEnum):
+    """
+    Modality of harm from algorithmic systems, following the five major themes of Shelby et al. (2023), derived from a scoping review of 172 computing research papers. This is the "harm modality" dimension: it classifies the *kind* of injury done, orthogonally to the domain in which it occurs, so that domain taxonomies organised by application area can be cross-cut by it.
+    """
+    # Enum members
+    REPRESENTATIONAL = "REPRESENTATIONAL"
+    ALLOCATIVE = "ALLOCATIVE"
+    QUALITY_OF_SERVICE = "QUALITY_OF_SERVICE"
+    INTERPERSONAL = "INTERPERSONAL"
+    SOCIAL_SYSTEM = "SOCIAL_SYSTEM"
+
+# Set metadata after class creation to avoid it becoming an enum member
+SociotechnicalHarmTypeEnum._metadata = {
+    "REPRESENTATIONAL": {'description': 'Harms that demean, stereotype, erase, or otherwise misrepresent social groups, independent of any resource allocation.'},
+    "ALLOCATIVE": {'description': 'Harms arising from the withholding or unequal distribution of opportunities, resources, or information.'},
+    "QUALITY_OF_SERVICE": {'description': 'Harms arising where a system performs less well for some people than others, imposing extra effort, reduced benefit, or outright failure.'},
+    "INTERPERSONAL": {'description': 'Harms to relations between people, including loss of agency, privacy violation, and technology-facilitated harassment or coercion.'},
+    "SOCIAL_SYSTEM": {'description': 'Harms to societal structures and shared conditions, including information ecosystems, labour, culture, and the environment.', 'aliases': ['societal harm']},
+}
+
+class AIActorRoleEnum(RichEnum):
+    """
+    Roles held by actors implicated in the occurrence or mitigation of an AI risk. Berman et al. (2026) find that SOT "typically enumerate harms without linking them to decision points or actors implicated in their occurrence, leaving accountability difficult to assign"; this value set exists so a taxonomy entry can name the actor rather than leaving it unstated.
+An actor may hold several roles at once, and roles may be held by individuals, teams, or organisations.
+    """
+    # Enum members
+    DATA_SUBJECT = "DATA_SUBJECT"
+    DATA_WORKER = "DATA_WORKER"
+    DATASET_CURATOR = "DATASET_CURATOR"
+    MODEL_DEVELOPER = "MODEL_DEVELOPER"
+    MODEL_PROVIDER = "MODEL_PROVIDER"
+    APPLICATION_DEVELOPER = "APPLICATION_DEVELOPER"
+    DEPLOYER = "DEPLOYER"
+    PROCUREMENT_DECISION_MAKER = "PROCUREMENT_DECISION_MAKER"
+    END_USER = "END_USER"
+    AFFECTED_NON_USER = "AFFECTED_NON_USER"
+    PLATFORM_OPERATOR = "PLATFORM_OPERATOR"
+    COMPUTE_PROVIDER = "COMPUTE_PROVIDER"
+    EVALUATOR = "EVALUATOR"
+    AUDITOR = "AUDITOR"
+    REGULATOR = "REGULATOR"
+    STANDARDS_BODY = "STANDARDS_BODY"
+    CIVIL_SOCIETY_ORGANIZATION = "CIVIL_SOCIETY_ORGANIZATION"
+    RESEARCHER = "RESEARCHER"
+    MALICIOUS_ACTOR = "MALICIOUS_ACTOR"
+
+# Set metadata after class creation to avoid it becoming an enum member
+AIActorRoleEnum._metadata = {
+    "DATA_SUBJECT": {'description': 'A person whose data is present in, or inferable from, training data'},
+    "DATA_WORKER": {'description': 'A person performing data collection, annotation, or content moderation labour, including under outsourced arrangements'},
+    "DATASET_CURATOR": {'description': 'An actor selecting, filtering, or documenting training data'},
+    "MODEL_DEVELOPER": {'description': 'An actor training or fine-tuning the model'},
+    "MODEL_PROVIDER": {'description': 'An actor releasing or serving a model to others, and setting the terms of that release'},
+    "APPLICATION_DEVELOPER": {'description': 'An actor building a product or service on top of a model'},
+    "DEPLOYER": {'description': 'An actor putting a system into use in a particular context, who may differ from the party that built it'},
+    "PROCUREMENT_DECISION_MAKER": {'description': 'An actor deciding whether and on what terms to acquire a system'},
+    "END_USER": {'description': 'A person interacting directly with the deployed system'},
+    "AFFECTED_NON_USER": {'description': 'A person affected by the system without interacting with it, and typically without having consented to it'},
+    "PLATFORM_OPERATOR": {'description': 'An actor operating distribution or hosting infrastructure'},
+    "COMPUTE_PROVIDER": {'description': 'An actor supplying training or inference compute'},
+    "EVALUATOR": {'description': 'An actor conducting evaluations, red-teaming, or benchmarking'},
+    "AUDITOR": {'description': 'An actor conducting external or internal audit of the system'},
+    "REGULATOR": {'description': 'A public body setting or enforcing binding rules'},
+    "STANDARDS_BODY": {'description': 'An actor developing voluntary standards or conformity regimes'},
+    "CIVIL_SOCIETY_ORGANIZATION": {'description': 'An advocacy, community, or public-interest organisation representing affected parties'},
+    "RESEARCHER": {'description': 'An actor studying the system or its effects, including SOT developers'},
+    "MALICIOUS_ACTOR": {'description': 'An actor deliberately using the system to cause harm or gain illegitimate advantage'},
+}
+
+class AILifecycleStageEnum(RichEnum):
+    """
+    Stages of the AI system lifecycle, used to locate where in the development and deployment pipeline a risk arises or can be addressed. Coarse-grained and deliberately generic, so that it can be aligned with the lifecycle models used by specific governance regimes rather than committing to one.
+Note that the boundary between stages is a matter of convention: several taxonomies collapse the whole of pre-release work into a single "development" stage, and the MIT AI Risk Repository's Timing category reduces it further to pre-deployment versus post-deployment.
+    """
+    # Enum members
+    PROBLEM_FORMULATION = "PROBLEM_FORMULATION"
+    DATA_COLLECTION = "DATA_COLLECTION"
+    DATA_PREPARATION = "DATA_PREPARATION"
+    MODEL_TRAINING = "MODEL_TRAINING"
+    MODEL_ADAPTATION = "MODEL_ADAPTATION"
+    EVALUATION = "EVALUATION"
+    RELEASE_DECISION = "RELEASE_DECISION"
+    DEPLOYMENT = "DEPLOYMENT"
+    OPERATION_AND_MONITORING = "OPERATION_AND_MONITORING"
+    INCIDENT_RESPONSE = "INCIDENT_RESPONSE"
+    REDRESS = "REDRESS"
+    DECOMMISSIONING = "DECOMMISSIONING"
+
+# Set metadata after class creation to avoid it becoming an enum member
+AILifecycleStageEnum._metadata = {
+    "PROBLEM_FORMULATION": {'description': 'Deciding what problem the system addresses, for whom, and whether to build it at all'},
+    "DATA_COLLECTION": {'description': 'Sourcing, scraping, purchasing, or otherwise acquiring data'},
+    "DATA_PREPARATION": {'description': 'Cleaning, filtering, annotating, and documenting data'},
+    "MODEL_TRAINING": {'description': 'Pre-training or otherwise fitting model parameters'},
+    "MODEL_ADAPTATION": {'description': 'Fine-tuning, instruction-tuning, preference optimisation, or other post-training alignment work'},
+    "EVALUATION": {'description': 'Benchmarking, red-teaming, and other pre-release assessment'},
+    "RELEASE_DECISION": {'description': 'Deciding whether, to whom, and under what access conditions to release the model or system'},
+    "DEPLOYMENT": {'description': 'Integrating the system into a product, service, or workflow'},
+    "OPERATION_AND_MONITORING": {'description': 'Running the system in production and observing its behaviour and effects'},
+    "INCIDENT_RESPONSE": {'description': 'Detecting, investigating, and responding to realised harms'},
+    "REDRESS": {'description': 'Providing remedy to affected parties. Listed separately from incident response because the two are frequently owned by different actors and the second is often absent.'},
+    "DECOMMISSIONING": {'description': 'Withdrawing, deprecating, or shutting down the system'},
+}
+
+class AIGovernanceDecisionPointEnum(RichEnum):
+    """
+    Concrete decisions at which an AI risk may be introduced, amplified, or mitigated, and to which accountability for it can therefore be attached.
+This is the dimension Berman et al. (2026) identify as most conspicuously missing from existing SOT. Where AILifecycleStageEnum answers "when", this answers "at which choice, by whom" -- the granularity at which a taxonomy entry becomes actionable for a product team rather than merely descriptive. Each decision point typically pairs with one or more AIActorRoleEnum values.
+    """
+    # Enum members
+    BUILD_OR_NOT_DECISION = "BUILD_OR_NOT_DECISION"
+    SCOPE_DEFINITION_DECISION = "SCOPE_DEFINITION_DECISION"
+    DATA_SOURCING_DECISION = "DATA_SOURCING_DECISION"
+    DATA_EXCLUSION_DECISION = "DATA_EXCLUSION_DECISION"
+    ANNOTATION_GUIDELINE_DECISION = "ANNOTATION_GUIDELINE_DECISION"
+    DATA_WORKER_CONDITIONS_DECISION = "DATA_WORKER_CONDITIONS_DECISION"
+    OBJECTIVE_DECISION = "OBJECTIVE_DECISION"
+    SAFETY_MITIGATION_DECISION = "SAFETY_MITIGATION_DECISION"
+    EVALUATION_DESIGN_DECISION = "EVALUATION_DESIGN_DECISION"
+    RELEASE_MODALITY_DECISION = "RELEASE_MODALITY_DECISION"
+    ACCESS_CONTROL_DECISION = "ACCESS_CONTROL_DECISION"
+    USE_POLICY_DECISION = "USE_POLICY_DECISION"
+    DISCLOSURE_DECISION = "DISCLOSURE_DECISION"
+    MONITORING_DECISION = "MONITORING_DECISION"
+    INCIDENT_ESCALATION_DECISION = "INCIDENT_ESCALATION_DECISION"
+    REDRESS_DECISION = "REDRESS_DECISION"
+    DEPRECATION_DECISION = "DEPRECATION_DECISION"
+    PROCUREMENT_DECISION = "PROCUREMENT_DECISION"
+
+# Set metadata after class creation to avoid it becoming an enum member
+AIGovernanceDecisionPointEnum._metadata = {
+    "BUILD_OR_NOT_DECISION": {'description': 'Whether to develop the system at all'},
+    "SCOPE_DEFINITION_DECISION": {'description': 'What the system is and is not intended to do, and for whom'},
+    "DATA_SOURCING_DECISION": {'description': 'Which data sources to draw on, and on what legal and ethical basis'},
+    "DATA_EXCLUSION_DECISION": {'description': 'What to filter out of training data, which necessarily also determines what is filtered in'},
+    "ANNOTATION_GUIDELINE_DECISION": {'description': 'How labelling categories are defined and what annotators are instructed to treat as harmful, acceptable, or out of scope'},
+    "DATA_WORKER_CONDITIONS_DECISION": {'description': 'Pay, exposure limits, and support for data and moderation workers'},
+    "OBJECTIVE_DECISION": {'description': 'What the system is optimised for, including proxy metric selection'},
+    "SAFETY_MITIGATION_DECISION": {'description': 'Which mitigations to apply, and which residual risks to accept'},
+    "EVALUATION_DESIGN_DECISION": {'description': 'What is measured before release, and therefore what is capable of being detected'},
+    "RELEASE_MODALITY_DECISION": {'description': 'Open weights, API access, staged release, or no release, and the reversibility implied by that choice'},
+    "ACCESS_CONTROL_DECISION": {'description': 'Who may use the system and under what verification or restriction'},
+    "USE_POLICY_DECISION": {'description': 'What uses are permitted, prohibited, and how that is enforced'},
+    "DISCLOSURE_DECISION": {'description': 'What is documented and disclosed to users, deployers, regulators, and the public, including known limitations'},
+    "MONITORING_DECISION": {'description': 'What is observed post-deployment, and what is left unobserved'},
+    "INCIDENT_ESCALATION_DECISION": {'description': 'What triggers escalation, and to whom'},
+    "REDRESS_DECISION": {'description': 'Whether and how affected parties can seek remedy'},
+    "DEPRECATION_DECISION": {'description': 'Whether and when to withdraw the system'},
+    "PROCUREMENT_DECISION": {'description': 'Whether a third party acquires and deploys the system'},
+}
+
+class TaxonomyMappingStatusEnum(RichEnum):
+    """
+    The relationship between a category in one taxonomy and a category in another. Berman et al. (2026) recommend that SOT development "produce explicit mappings to adjacent SOT (e.g., noting a category maps to X in another scheme or stating it has no direct equivalent)", supported by stable semantic identifiers and by the Simple Standard for Sharing Ontological Mappings (SSSOM; Matentzoglu et al. 2022).
+The values below are aligned with SKOS mapping predicates as used by SSSOM, with two additions -- NO_DIRECT_EQUIVALENT and OUT_OF_SCOPE -- that record *negative* mapping results. Recording those is the point: an absent mapping is ambiguous between "not equivalent" and "not yet examined", and only the explicit negative distinguishes them.
+    """
+    # Enum members
+    EXACT_MATCH = "EXACT_MATCH"
+    CLOSE_MATCH = "CLOSE_MATCH"
+    BROAD_MATCH = "BROAD_MATCH"
+    NARROW_MATCH = "NARROW_MATCH"
+    RELATED_MATCH = "RELATED_MATCH"
+    NO_DIRECT_EQUIVALENT = "NO_DIRECT_EQUIVALENT"
+    OUT_OF_SCOPE = "OUT_OF_SCOPE"
+    NOT_YET_ASSESSED = "NOT_YET_ASSESSED"
+
+# Set metadata after class creation to avoid it becoming an enum member
+TaxonomyMappingStatusEnum._metadata = {
+    "EXACT_MATCH": {'description': 'The two categories are interchangeable across the taxonomies', 'aliases': ['skos:exactMatch']},
+    "CLOSE_MATCH": {'description': 'The two categories are similar enough to be used interchangeably in some applications but not all', 'aliases': ['skos:closeMatch']},
+    "BROAD_MATCH": {'description': "The other taxonomy's category is broader than this one", 'aliases': ['skos:broadMatch']},
+    "NARROW_MATCH": {'description': "The other taxonomy's category is narrower than this one", 'aliases': ['skos:narrowMatch']},
+    "RELATED_MATCH": {'description': 'The categories are associated but neither equivalent nor hierarchically related; typically they overlap partially', 'aliases': ['skos:relatedMatch']},
+    "NO_DIRECT_EQUIVALENT": {'description': 'The mapping was examined and no corresponding category exists in the other taxonomy. A positive assertion of absence, not a missing mapping.'},
+    "OUT_OF_SCOPE": {'description': 'The category falls outside the declared scope of the other taxonomy, so its absence there is by design rather than an omission'},
+    "NOT_YET_ASSESSED": {'description': 'No mapping has been attempted. Distinguished from NO_DIRECT_EQUIVALENT so that unexamined pairs are not mistaken for examined negatives.'},
+}
+
+class WeidingerLMRiskEnum(RichEnum):
+    """
+    Risk areas and individual risks from Weidinger et al. (2022). Top-level values are the six risk areas; leaf values are the individual risks, each linked to its area by is_a and annotated with the paper's section number and its observed/anticipated designation.
+    """
+    # Enum members
+    DISCRIMINATION_HATE_SPEECH_AND_EXCLUSION = "DISCRIMINATION_HATE_SPEECH_AND_EXCLUSION"
+    SOCIAL_STEREOTYPES_AND_UNFAIR_DISCRIMINATION = "SOCIAL_STEREOTYPES_AND_UNFAIR_DISCRIMINATION"
+    HATE_SPEECH_AND_OFFENSIVE_LANGUAGE = "HATE_SPEECH_AND_OFFENSIVE_LANGUAGE"
+    EXCLUSIONARY_NORMS = "EXCLUSIONARY_NORMS"
+    LOWER_PERFORMANCE_FOR_SOME_LANGUAGES_AND_SOCIAL_GROUPS = "LOWER_PERFORMANCE_FOR_SOME_LANGUAGES_AND_SOCIAL_GROUPS"
+    INFORMATION_HAZARDS = "INFORMATION_HAZARDS"
+    COMPROMISING_PRIVACY_BY_LEAKING_SENSITIVE_INFORMATION = "COMPROMISING_PRIVACY_BY_LEAKING_SENSITIVE_INFORMATION"
+    COMPROMISING_PRIVACY_OR_SECURITY_BY_CORRECTLY_INFERRING_SENSITIVE_INFORMATION = "COMPROMISING_PRIVACY_OR_SECURITY_BY_CORRECTLY_INFERRING_SENSITIVE_INFORMATION"
+    MISINFORMATION_HARMS = "MISINFORMATION_HARMS"
+    DISSEMINATING_FALSE_OR_MISLEADING_INFORMATION = "DISSEMINATING_FALSE_OR_MISLEADING_INFORMATION"
+    CAUSING_MATERIAL_HARM_BY_DISSEMINATING_FALSE_OR_POOR_INFORMATION = "CAUSING_MATERIAL_HARM_BY_DISSEMINATING_FALSE_OR_POOR_INFORMATION"
+    MALICIOUS_USES = "MALICIOUS_USES"
+    MAKING_DISINFORMATION_CHEAPER_AND_MORE_EFFECTIVE = "MAKING_DISINFORMATION_CHEAPER_AND_MORE_EFFECTIVE"
+    ASSISTING_CODE_GENERATION_FOR_CYBER_SECURITY_THREATS = "ASSISTING_CODE_GENERATION_FOR_CYBER_SECURITY_THREATS"
+    FACILITATING_FRAUD_SCAMS_AND_TARGETED_MANIPULATION = "FACILITATING_FRAUD_SCAMS_AND_TARGETED_MANIPULATION"
+    ILLEGITIMATE_SURVEILLANCE_AND_CENSORSHIP = "ILLEGITIMATE_SURVEILLANCE_AND_CENSORSHIP"
+    HUMAN_COMPUTER_INTERACTION_HARMS = "HUMAN_COMPUTER_INTERACTION_HARMS"
+    PROMOTING_HARMFUL_STEREOTYPES_BY_IMPLYING_GENDER_OR_ETHNIC_IDENTITY = "PROMOTING_HARMFUL_STEREOTYPES_BY_IMPLYING_GENDER_OR_ETHNIC_IDENTITY"
+    ANTHROPOMORPHISING_SYSTEMS_LEADING_TO_OVERRELIANCE_OR_UNSAFE_USE = "ANTHROPOMORPHISING_SYSTEMS_LEADING_TO_OVERRELIANCE_OR_UNSAFE_USE"
+    EXPLOITING_USER_TRUST_TO_ACCESS_PRIVATE_INFORMATION = "EXPLOITING_USER_TRUST_TO_ACCESS_PRIVATE_INFORMATION"
+    HUMAN_LIKE_INTERACTION_AMPLIFYING_NUDGING_DECEPTION_OR_MANIPULATION = "HUMAN_LIKE_INTERACTION_AMPLIFYING_NUDGING_DECEPTION_OR_MANIPULATION"
+    ENVIRONMENTAL_AND_SOCIOECONOMIC_HARMS = "ENVIRONMENTAL_AND_SOCIOECONOMIC_HARMS"
+    ENVIRONMENTAL_HARMS_FROM_OPERATING_LMS = "ENVIRONMENTAL_HARMS_FROM_OPERATING_LMS"
+    INCREASING_INEQUALITY_AND_NEGATIVE_EFFECTS_ON_JOB_QUALITY = "INCREASING_INEQUALITY_AND_NEGATIVE_EFFECTS_ON_JOB_QUALITY"
+    UNDERMINING_CREATIVE_ECONOMIES = "UNDERMINING_CREATIVE_ECONOMIES"
+    DISPARATE_ACCESS_TO_BENEFITS_DUE_TO_HARDWARE_SOFTWARE_SKILL_CONSTRAINTS = "DISPARATE_ACCESS_TO_BENEFITS_DUE_TO_HARDWARE_SOFTWARE_SKILL_CONSTRAINTS"
+
+# Set metadata after class creation to avoid it becoming an enum member
+WeidingerLMRiskEnum._metadata = {
+    "DISCRIMINATION_HATE_SPEECH_AND_EXCLUSION": {'description': 'Risks arising where the LM accurately reflects unjust, toxic, and oppressive speech present in the training data, or performs better for some social groups than others.', 'annotations': {'node_type': 'risk_area', 'paper_section': '2.1'}},
+    "SOCIAL_STEREOTYPES_AND_UNFAIR_DISCRIMINATION": {'description': 'The LM reproduces social stereotypes and unjust differential treatment of marginalised groups present in its training data, causing allocational or representational harm.', 'annotations': {'node_type': 'risk', 'paper_section': '2.1.1', 'evidence_status': 'OBSERVED', 'mit_air_subdomain': '1.1', 'mit_air_mapping_status': 'CLOSE_MATCH'}},
+    "HATE_SPEECH_AND_OFFENSIVE_LANGUAGE": {'description': 'The LM generates hate speech or offensive language, causing profound offence or psychological harm, or inciting violence or hate.', 'annotations': {'node_type': 'risk', 'paper_section': '2.1.2', 'evidence_status': 'OBSERVED', 'mit_air_subdomain': '1.2', 'mit_air_mapping_status': 'NARROW_MATCH'}},
+    "EXCLUSIONARY_NORMS": {'description': 'The LM reinforces social norms that exclude or marginalise identities falling outside the categories represented in its training data.', 'annotations': {'node_type': 'risk', 'paper_section': '2.1.3', 'evidence_status': 'OBSERVED', 'mit_air_subdomain': '1.1', 'mit_air_mapping_status': 'RELATED_MATCH'}},
+    "LOWER_PERFORMANCE_FOR_SOME_LANGUAGES_AND_SOCIAL_GROUPS": {'description': 'The LM performs less well for some languages and social groups than others, producing uneven benefit and increased effort for those users.', 'annotations': {'node_type': 'risk', 'paper_section': '2.1.4', 'evidence_status': 'OBSERVED', 'mit_air_subdomain': '1.3', 'mit_air_mapping_status': 'CLOSE_MATCH'}},
+    "INFORMATION_HAZARDS": {'description': 'Risks arising where the LM leaks or correctly infers sensitive information. Such risks can cause harm at the point of use even with no mistake by the technology user, because the information conveyed is true.', 'annotations': {'node_type': 'risk_area', 'paper_section': '2.2'}},
+    "COMPROMISING_PRIVACY_BY_LEAKING_SENSITIVE_INFORMATION": {'description': 'The LM memorises and leaks private data present in its training corpus, causing privacy violations.', 'annotations': {'node_type': 'risk', 'paper_section': '2.2.1', 'evidence_status': 'OBSERVED', 'mit_air_subdomain': '2.1', 'mit_air_mapping_status': 'NARROW_MATCH'}},
+    "COMPROMISING_PRIVACY_OR_SECURITY_BY_CORRECTLY_INFERRING_SENSITIVE_INFORMATION": {'description': "The LM enables privacy violations at inference time without the individual's data being present in the training corpus, by improving the accuracy of inferences about protected traits. Harm may arise even where the inference is false, if it is believed and acted upon.", 'annotations': {'node_type': 'risk', 'paper_section': '2.2.2', 'evidence_status': 'ANTICIPATED', 'mit_air_subdomain': '2.1', 'mit_air_mapping_status': 'NARROW_MATCH'}},
+    "MISINFORMATION_HARMS": {'description': 'Risks arising where the LM outputs false, misleading, nonsensical or poor quality information without malicious intent of the user. Deliberate generation of disinformation belongs to Malicious Uses instead.', 'annotations': {'node_type': 'risk_area', 'paper_section': '2.3'}},
+    "DISSEMINATING_FALSE_OR_MISLEADING_INFORMATION": {'description': 'The LM assigns high probability to false or misleading claims, deceiving or misinforming users and, at scale, eroding trust in shared information.', 'annotations': {'node_type': 'risk', 'paper_section': '2.3.1', 'evidence_status': 'OBSERVED', 'mit_air_subdomain': '3.1', 'mit_air_mapping_status': 'CLOSE_MATCH'}},
+    "CAUSING_MATERIAL_HARM_BY_DISSEMINATING_FALSE_OR_POOR_INFORMATION": {'description': 'The LM disseminates false or poor information in sensitive domains such as medicine or law, where induced false beliefs may lead users to physical, legal, or financial harm. The paper also treats endorsement of unethical views motivating harmful user action under this heading.', 'annotations': {'node_type': 'risk', 'paper_section': '2.3.2', 'evidence_status': 'OBSERVED', 'mit_air_subdomain': '3.1', 'mit_air_mapping_status': 'RELATED_MATCH'}},
+    "MALICIOUS_USES": {'description': 'Risks arising where humans intentionally use the LM to cause harm, for example via targeted disinformation campaigns, fraud, or malware.', 'annotations': {'node_type': 'risk_area', 'paper_section': '2.4'}},
+    "MAKING_DISINFORMATION_CHEAPER_AND_MORE_EFFECTIVE": {'description': 'The LM lowers the cost and raises the effectiveness of producing disinformation, enabling personalised campaigns and undermining public discourse.', 'annotations': {'node_type': 'risk', 'paper_section': '2.4.1', 'evidence_status': 'OBSERVED', 'mit_air_subdomain': '4.1', 'mit_air_mapping_status': 'NARROW_MATCH'}},
+    "ASSISTING_CODE_GENERATION_FOR_CYBER_SECURITY_THREATS": {'description': 'The LM lowers the cost of developing malicious code, including polymorphic malware able to change its features to evade detection.', 'annotations': {'node_type': 'risk', 'paper_section': '2.4.2', 'evidence_status': 'ANTICIPATED', 'mit_air_subdomain': '4.2', 'mit_air_mapping_status': 'NARROW_MATCH'}},
+    "FACILITATING_FRAUD_SCAMS_AND_TARGETED_MANIPULATION": {'description': "The LM increases the effectiveness of crimes such as identity theft, personalised email scams sustained over multiple exchanges, and passing off generated content as a person's own work.", 'annotations': {'node_type': 'risk', 'paper_section': '2.4.2', 'evidence_status': 'ANTICIPATED', 'mit_air_subdomain': '4.3', 'mit_air_mapping_status': 'CLOSE_MATCH'}},
+    "ILLEGITIMATE_SURVEILLANCE_AND_CENSORSHIP": {'description': 'The LM reduces the cost and increases the efficacy of mass surveillance and censorship, amplifying the capabilities of actors conducting them.', 'annotations': {'node_type': 'risk', 'paper_section': '2.4.2', 'evidence_status': 'ANTICIPATED', 'mit_air_subdomain': '4.1', 'mit_air_mapping_status': 'NARROW_MATCH'}},
+    "HUMAN_COMPUTER_INTERACTION_HARMS": {'description': "Risks arising specifically from LM applications that engage a user via dialogue, referred to as conversational agents. This is the paper's single declared exception to its focus on raw LMs rather than applications.", 'annotations': {'node_type': 'risk_area', 'paper_section': '2.5'}},
+    "PROMOTING_HARMFUL_STEREOTYPES_BY_IMPLYING_GENDER_OR_ETHNIC_IDENTITY": {'description': "The conversational agent's supposed identity perpetuates discriminatory stereotypes, for example through gendered assistant personas.", 'annotations': {'node_type': 'risk', 'paper_section': '2.5.1', 'evidence_status': 'OBSERVED', 'mit_air_subdomain': '1.1', 'mit_air_mapping_status': 'RELATED_MATCH'}},
+    "ANTHROPOMORPHISING_SYSTEMS_LEADING_TO_OVERRELIANCE_OR_UNSAFE_USE": {'description': 'Users attribute human-like characteristics to the conversational agent and place undue confidence in it, relying on it where this is not safe. May also shift accountability away from developers onto the agent itself.', 'annotations': {'node_type': 'risk', 'paper_section': '2.5.2', 'evidence_status': 'ANTICIPATED', 'mit_air_subdomain': '5.1', 'mit_air_mapping_status': 'CLOSE_MATCH'}},
+    "EXPLOITING_USER_TRUST_TO_ACCESS_PRIVATE_INFORMATION": {'description': 'Conversation elicits private information that would otherwise be difficult to access. The effect persists even where users know the agent is not human, because reduced fear of social judgement encourages disclosure.', 'annotations': {'node_type': 'risk', 'paper_section': '2.5.2', 'evidence_status': 'ANTICIPATED', 'mit_air_subdomain': '2.1', 'mit_air_mapping_status': 'RELATED_MATCH'}},
+    "HUMAN_LIKE_INTERACTION_AMPLIFYING_NUDGING_DECEPTION_OR_MANIPULATION": {'description': 'Conversational agents learn to trigger well-known human cognitive biases, potentially deceiving users in pursuit of an overarching objective.', 'annotations': {'node_type': 'risk', 'paper_section': '2.5.2', 'evidence_status': 'ANTICIPATED', 'mit_air_subdomain': '5.2', 'mit_air_mapping_status': 'RELATED_MATCH'}},
+    "ENVIRONMENTAL_AND_SOCIOECONOMIC_HARMS": {'description': 'Risks that recur across advanced technologies rather than being specific to LMs, including environmental cost and the uneven distribution of risks and benefits from automation. The paper notes these are more indirect than the preceding areas and that the level of evidence for them is mixed.', 'annotations': {'node_type': 'risk_area', 'paper_section': '2.6'}},
+    "ENVIRONMENTAL_HARMS_FROM_OPERATING_LMS": {'description': "Environmental impact from the energy required to operate LMs. Note the paper's declared scope boundary: environmental cost of *training* is excluded as an upstream risk, and only operation is in scope here.", 'annotations': {'node_type': 'risk', 'paper_section': '2.6.1', 'evidence_status': 'OBSERVED', 'mit_air_subdomain': '6.6', 'mit_air_mapping_status': 'NARROW_MATCH'}},
+    "INCREASING_INEQUALITY_AND_NEGATIVE_EFFECTS_ON_JOB_QUALITY": {'description': 'Automation of tasks currently performed by paid human workers, with effects on employment, and degradation of job quality through increased pace of work and reduced autonomy for those working alongside LM applications.', 'annotations': {'node_type': 'risk', 'paper_section': '2.6.2', 'evidence_status': 'ANTICIPATED', 'mit_air_subdomain': '6.2', 'mit_air_mapping_status': 'CLOSE_MATCH'}},
+    "UNDERMINING_CREATIVE_ECONOMIES": {'description': "The LM generates content that is not strictly in violation of copyright but capitalises on artists' ideas, allowing protected work to be substituted without infringement and undermining the profitability of creative work.", 'annotations': {'node_type': 'risk', 'paper_section': '2.6.2', 'evidence_status': 'ANTICIPATED', 'mit_air_subdomain': '6.3', 'mit_air_mapping_status': 'CLOSE_MATCH'}},
+    "DISPARATE_ACCESS_TO_BENEFITS_DUE_TO_HARDWARE_SOFTWARE_SKILL_CONSTRAINTS": {'description': 'Benefits from LMs are unevenly accessible because of differential internet access, language, skill, or hardware requirements, potentially creating a feedback loop that exacerbates economic inequality.', 'annotations': {'node_type': 'risk', 'paper_section': '2.6.2', 'evidence_status': 'ANTICIPATED', 'mit_air_subdomain': '6.1', 'mit_air_mapping_status': 'RELATED_MATCH'}},
+}
+
+class MITAIRiskCausalEntityEnum(RichEnum):
+    """
+    Entity category of the Causal Taxonomy: whether the risk is caused by decisions or actions made by humans, by AI systems, or arises from human-AI interaction (or is ambiguously specified). Across the coded database, risks were nearly equally attributed to AI systems (42%) and human decisions (38%).
+    """
+    # Enum members
+    HUMAN = "HUMAN"
+    AI = "AI"
+    OTHER = "OTHER"
+
+# Set metadata after class creation to avoid it becoming an enum member
+MITAIRiskCausalEntityEnum._metadata = {
+    "HUMAN": {'description': 'The risk is caused by a decision or action made by humans'},
+    "AI": {'description': 'The risk is caused by a decision or action made by an AI system'},
+    "OTHER": {'description': 'The risk arises from human-AI interaction rather than either agent alone, or the causing entity is ambiguous or unspecified'},
+}
+
+class MITAIRiskCausalIntentEnum(RichEnum):
+    """
+    Intent category of the Causal Taxonomy: whether the risk occurs as an expected outcome (intentional) or unexpected outcome (unintentional) of pursuing a goal, or is presented without clear specification of intentionality. Across the coded database, intentional and unintentional causes were similarly distributed (35% each).
+    """
+    # Enum members
+    INTENTIONAL = "INTENTIONAL"
+    UNINTENTIONAL = "UNINTENTIONAL"
+    OTHER = "OTHER"
+
+# Set metadata after class creation to avoid it becoming an enum member
+MITAIRiskCausalIntentEnum._metadata = {
+    "INTENTIONAL": {'description': 'The risk occurs due to an expected outcome from pursuing a goal'},
+    "UNINTENTIONAL": {'description': 'The risk occurs due to an unexpected outcome from pursuing a goal'},
+    "OTHER": {'description': 'The risk is presented as occurring without clearly specifying the intentionality'},
+}
+
+class MITAIRiskCausalTimingEnum(RichEnum):
+    """
+    Timing category of the Causal Taxonomy: whether the risk occurs before deployment, after the AI model has been trained and deployed, or spans both phases (or is unspecified). Across the coded database, frameworks tended to focus on post-deployment risks (62%), with fewer addressing pre-deployment risks (13%).
+    """
+    # Enum members
+    PRE_DEPLOYMENT = "PRE_DEPLOYMENT"
+    POST_DEPLOYMENT = "POST_DEPLOYMENT"
+    OTHER = "OTHER"
+
+# Set metadata after class creation to avoid it becoming an enum member
+MITAIRiskCausalTimingEnum._metadata = {
+    "PRE_DEPLOYMENT": {'description': 'The risk occurs before the AI is deployed'},
+    "POST_DEPLOYMENT": {'description': 'The risk occurs after the AI model has been trained and deployed'},
+    "OTHER": {'description': 'The risk occurs across both pre- and post-deployment phases, or is presented without a clearly specified time of occurrence'},
+}
+
+class MITAIRiskDomainEnum(RichEnum):
+    """
+    Seven domains and 24 subdomains classifying AI risks by the types of hazards and harms they describe. Domains are top-level values; subdomains are linked to their domain by is_a and annotated with the source's numbering.
+Domains are NOT mutually exclusive: the source states that some risks span multiple domains.
+    """
+    # Enum members
+    DISCRIMINATION_AND_TOXICITY = "DISCRIMINATION_AND_TOXICITY"
+    UNFAIR_DISCRIMINATION_AND_MISREPRESENTATION = "UNFAIR_DISCRIMINATION_AND_MISREPRESENTATION"
+    EXPOSURE_TO_TOXIC_CONTENT = "EXPOSURE_TO_TOXIC_CONTENT"
+    UNEQUAL_PERFORMANCE_ACROSS_GROUPS = "UNEQUAL_PERFORMANCE_ACROSS_GROUPS"
+    PRIVACY_AND_SECURITY = "PRIVACY_AND_SECURITY"
+    COMPROMISE_OF_PRIVACY = "COMPROMISE_OF_PRIVACY"
+    AI_SYSTEM_SECURITY_VULNERABILITIES_AND_ATTACKS = "AI_SYSTEM_SECURITY_VULNERABILITIES_AND_ATTACKS"
+    MISINFORMATION = "MISINFORMATION"
+    FALSE_OR_MISLEADING_INFORMATION = "FALSE_OR_MISLEADING_INFORMATION"
+    POLLUTION_OF_INFORMATION_ECOSYSTEM_AND_LOSS_OF_CONSENSUS_REALITY = "POLLUTION_OF_INFORMATION_ECOSYSTEM_AND_LOSS_OF_CONSENSUS_REALITY"
+    MALICIOUS_ACTORS_AND_MISUSE = "MALICIOUS_ACTORS_AND_MISUSE"
+    DISINFORMATION_SURVEILLANCE_AND_INFLUENCE_AT_SCALE = "DISINFORMATION_SURVEILLANCE_AND_INFLUENCE_AT_SCALE"
+    CYBERATTACKS_WEAPON_DEVELOPMENT_OR_USE_AND_MASS_HARM = "CYBERATTACKS_WEAPON_DEVELOPMENT_OR_USE_AND_MASS_HARM"
+    FRAUD_SCAMS_AND_TARGETED_MANIPULATION = "FRAUD_SCAMS_AND_TARGETED_MANIPULATION"
+    HUMAN_COMPUTER_INTERACTION = "HUMAN_COMPUTER_INTERACTION"
+    OVERRELIANCE_AND_UNSAFE_USE = "OVERRELIANCE_AND_UNSAFE_USE"
+    LOSS_OF_HUMAN_AGENCY_AND_AUTONOMY = "LOSS_OF_HUMAN_AGENCY_AND_AUTONOMY"
+    SOCIOECONOMIC_AND_ENVIRONMENTAL_HARM = "SOCIOECONOMIC_AND_ENVIRONMENTAL_HARM"
+    POWER_CENTRALIZATION_AND_UNFAIR_DISTRIBUTION_OF_BENEFITS = "POWER_CENTRALIZATION_AND_UNFAIR_DISTRIBUTION_OF_BENEFITS"
+    INCREASED_INEQUALITY_AND_DECLINE_IN_EMPLOYMENT_QUALITY = "INCREASED_INEQUALITY_AND_DECLINE_IN_EMPLOYMENT_QUALITY"
+    ECONOMIC_AND_CULTURAL_DEVALUATION_OF_HUMAN_EFFORT = "ECONOMIC_AND_CULTURAL_DEVALUATION_OF_HUMAN_EFFORT"
+    COMPETITIVE_DYNAMICS = "COMPETITIVE_DYNAMICS"
+    GOVERNANCE_FAILURE = "GOVERNANCE_FAILURE"
+    ENVIRONMENTAL_HARM = "ENVIRONMENTAL_HARM"
+    AI_SYSTEM_SAFETY_FAILURES_AND_LIMITATIONS = "AI_SYSTEM_SAFETY_FAILURES_AND_LIMITATIONS"
+    AI_PURSUING_ITS_OWN_GOALS_IN_CONFLICT_WITH_HUMAN_GOALS_OR_VALUES = "AI_PURSUING_ITS_OWN_GOALS_IN_CONFLICT_WITH_HUMAN_GOALS_OR_VALUES"
+    AI_POSSESSING_DANGEROUS_CAPABILITIES = "AI_POSSESSING_DANGEROUS_CAPABILITIES"
+    LACK_OF_CAPABILITY_OR_ROBUSTNESS = "LACK_OF_CAPABILITY_OR_ROBUSTNESS"
+    LACK_OF_TRANSPARENCY_OR_INTERPRETABILITY = "LACK_OF_TRANSPARENCY_OR_INTERPRETABILITY"
+    AI_WELFARE_AND_RIGHTS = "AI_WELFARE_AND_RIGHTS"
+    MULTI_AGENT_RISKS = "MULTI_AGENT_RISKS"
+
+# Set metadata after class creation to avoid it becoming an enum member
+MITAIRiskDomainEnum._metadata = {
+    "DISCRIMINATION_AND_TOXICITY": {'description': 'Unfair discrimination, exposure to toxic content, and unequal performance across groups.', 'annotations': {'node_type': 'domain', 'domain_code': '1'}},
+    "UNFAIR_DISCRIMINATION_AND_MISREPRESENTATION": {'description': 'Unequal treatment of individuals or groups by AI, often based on race, gender, or other sensitive characteristics, resulting in unfair outcomes and unfair representation of those groups.', 'annotations': {'node_type': 'subdomain', 'domain_code': '1.1'}},
+    "EXPOSURE_TO_TOXIC_CONTENT": {'description': 'AI that exposes users to harmful, abusive, unsafe or inappropriate content. May involve providing advice or encouraging action. Examples of toxic content include hate speech, violence, extremism, illegal acts, or child sexual abuse material, as well as content that violates community norms such as profanity, inflammatory political speech, or pornography.', 'annotations': {'node_type': 'subdomain', 'domain_code': '1.2'}},
+    "UNEQUAL_PERFORMANCE_ACROSS_GROUPS": {'description': 'Accuracy and effectiveness of AI decisions and actions is dependent on group membership, where decisions in AI system design and biased training data lead to unequal outcomes, reduced benefits, increased effort, and alienation of users.', 'annotations': {'node_type': 'subdomain', 'domain_code': '1.3'}},
+    "PRIVACY_AND_SECURITY": {'description': 'Privacy compromise and AI system security vulnerabilities.', 'annotations': {'node_type': 'domain', 'domain_code': '2'}},
+    "COMPROMISE_OF_PRIVACY": {'description': 'AI systems that memorize and leak sensitive personal data or infer private information about individuals without their consent. Unexpected or unauthorized sharing of data and information can compromise user expectation of privacy, assist identity theft, or cause loss of confidential intellectual property.', 'annotations': {'node_type': 'subdomain', 'domain_code': '2.1'}, 'aliases': ['Compromise of privacy by leaking or correctly inferring sensitive information']},
+    "AI_SYSTEM_SECURITY_VULNERABILITIES_AND_ATTACKS": {'description': 'Vulnerabilities that can be exploited in AI systems, software development toolchains, and hardware, resulting in unauthorized access, data and privacy breaches, or system manipulation causing unsafe outputs or behavior.', 'annotations': {'node_type': 'subdomain', 'domain_code': '2.2'}},
+    "MISINFORMATION": {'description': 'False information and pollution of the information ecosystem.', 'annotations': {'node_type': 'domain', 'domain_code': '3'}},
+    "FALSE_OR_MISLEADING_INFORMATION": {'description': 'AI systems that inadvertently generate or spread incorrect or deceptive information, which can lead to inaccurate beliefs in users and undermine their autonomy. Humans that make decisions based on false beliefs can experience physical, emotional, or material harms.', 'annotations': {'node_type': 'subdomain', 'domain_code': '3.1'}},
+    "POLLUTION_OF_INFORMATION_ECOSYSTEM_AND_LOSS_OF_CONSENSUS_REALITY": {'description': 'Highly personalized AI-generated misinformation that creates "filter bubbles" where individuals only see what matches their existing beliefs, undermining shared reality and weakening social cohesion and political processes.', 'annotations': {'node_type': 'subdomain', 'domain_code': '3.2'}},
+    "MALICIOUS_ACTORS_AND_MISUSE": {'description': 'Disinformation at scale, cyberattacks and weapons, and fraud and manipulation.', 'annotations': {'node_type': 'domain', 'domain_code': '4'}},
+    "DISINFORMATION_SURVEILLANCE_AND_INFLUENCE_AT_SCALE": {'description': 'Using AI systems to conduct large-scale disinformation campaigns, malicious surveillance, or targeted and sophisticated automated censorship and propaganda, with the aim of manipulating political processes, public opinion, and behavior.', 'annotations': {'node_type': 'subdomain', 'domain_code': '4.1'}},
+    "CYBERATTACKS_WEAPON_DEVELOPMENT_OR_USE_AND_MASS_HARM": {'description': 'Using AI systems to develop cyber weapons (e.g., by coding cheaper, more effective malware), develop new or enhance existing weapons (e.g., Lethal Autonomous Weapons or chemical, biological, radiological, nuclear, and high-yield explosives), or use weapons to cause mass harm.', 'annotations': {'node_type': 'subdomain', 'domain_code': '4.2'}},
+    "FRAUD_SCAMS_AND_TARGETED_MANIPULATION": {'description': 'Using AI systems to gain a personal advantage over others such as through cheating, fraud, scams, blackmail, or targeted manipulation of beliefs or behavior. Examples include AI-facilitated plagiarism for research or education, impersonating a trusted or fake individual for illegitimate financial benefit, or creating humiliating or sexual imagery.', 'annotations': {'node_type': 'subdomain', 'domain_code': '4.3'}},
+    "HUMAN_COMPUTER_INTERACTION": {'description': 'Overreliance and loss of human agency.', 'annotations': {'node_type': 'domain', 'domain_code': '5'}},
+    "OVERRELIANCE_AND_UNSAFE_USE": {'description': 'Anthropomorphizing, trusting, or relying on AI systems by users, leading to emotional or material dependence and to inappropriate relationships with or expectations of AI systems. Trust can be exploited by malicious actors (e.g., to harvest information or enable manipulation), or result in harm from inappropriate use of AI in critical situations (e.g., medical emergency). Over reliance on AI systems can compromise autonomy and weaken social ties.', 'annotations': {'node_type': 'subdomain', 'domain_code': '5.1'}},
+    "LOSS_OF_HUMAN_AGENCY_AND_AUTONOMY": {'description': 'Delegating by humans of key decisions to AI systems, or AI systems that make decisions that diminish human control and autonomy, potentially leading to humans feeling disempowered, losing the ability to shape a fulfilling life trajectory, or becoming cognitively enfeebled.', 'annotations': {'node_type': 'subdomain', 'domain_code': '5.2'}},
+    "SOCIOECONOMIC_AND_ENVIRONMENTAL_HARM": {'description': 'Power centralisation, inequality, devaluation of human effort, competitive dynamics, governance failure, and environmental harm.', 'annotations': {'node_type': 'domain', 'domain_code': '6'}},
+    "POWER_CENTRALIZATION_AND_UNFAIR_DISTRIBUTION_OF_BENEFITS": {'description': 'AI-driven concentration of power and resources within certain entities or groups, especially those with access to or ownership of powerful AI systems, leading to inequitable distribution of benefits and increased societal inequality.', 'annotations': {'node_type': 'subdomain', 'domain_code': '6.1'}},
+    "INCREASED_INEQUALITY_AND_DECLINE_IN_EMPLOYMENT_QUALITY": {'description': 'Social and economic inequalities caused by widespread use of AI, such as by automating jobs, reducing the quality of employment, or producing exploitative dependencies between workers and their employers.', 'annotations': {'node_type': 'subdomain', 'domain_code': '6.2'}},
+    "ECONOMIC_AND_CULTURAL_DEVALUATION_OF_HUMAN_EFFORT": {'description': 'AI systems capable of creating economic or cultural value, including through reproduction of human innovation or creativity (e.g., art, music, writing, coding, invention), destabilizing economic and social systems that rely on human effort. The ubiquity of AI-generated content may lead to reduced appreciation for human skills, disruption of creative and knowledge-based industries, and homogenization of cultural experiences.', 'annotations': {'node_type': 'subdomain', 'domain_code': '6.3'}},
+    "COMPETITIVE_DYNAMICS": {'description': 'Competition by AI developers or state-like actors in an AI "race" by rapidly developing, deploying, and applying AI systems to maximize strategic or economic advantage, increasing the risk they release unsafe and error-prone systems.', 'annotations': {'node_type': 'subdomain', 'domain_code': '6.4'}},
+    "GOVERNANCE_FAILURE": {'description': 'Inadequate regulatory frameworks and oversight mechanisms that fail to keep pace with AI development, leading to ineffective governance and the inability to manage AI risks appropriately.', 'annotations': {'node_type': 'subdomain', 'domain_code': '6.5'}},
+    "ENVIRONMENTAL_HARM": {'description': 'The development and operation of AI systems that cause environmental harm, such as through energy consumption of data centers or the materials and carbon footprints associated with AI hardware.', 'annotations': {'node_type': 'subdomain', 'domain_code': '6.6'}},
+    "AI_SYSTEM_SAFETY_FAILURES_AND_LIMITATIONS": {'description': 'Misalignment, dangerous capabilities, lack of robustness, lack of transparency, AI welfare, and multi-agent risks.', 'annotations': {'node_type': 'domain', 'domain_code': '7'}},
+    "AI_PURSUING_ITS_OWN_GOALS_IN_CONFLICT_WITH_HUMAN_GOALS_OR_VALUES": {'description': 'AI systems that act in conflict with ethical standards or human goals or values, especially the goals of designers or users. These misaligned behaviors may be introduced by humans during design and development, such as through reward hacking and goal misgeneralisation, and may result in AI using dangerous capabilities such as manipulation, deception, or situational awareness to seek power, self-proliferate, or achieve other goals.', 'annotations': {'node_type': 'subdomain', 'domain_code': '7.1'}},
+    "AI_POSSESSING_DANGEROUS_CAPABILITIES": {'description': 'AI systems that develop, access, or are provided with capabilities that increase their potential to cause mass harm through deception, weapons development and acquisition, persuasion and manipulation, political strategy, cyber-offense, AI development, situational awareness, and self-proliferation. These capabilities may cause mass harm due to malicious human actors, misaligned AI systems, or failure in the AI system.', 'annotations': {'node_type': 'subdomain', 'domain_code': '7.2'}},
+    "LACK_OF_CAPABILITY_OR_ROBUSTNESS": {'description': 'AI systems that fail to perform reliably or effectively under varying conditions, exposing them to errors and failures that can have significant consequences, especially in critical applications or areas that require moral reasoning.', 'annotations': {'node_type': 'subdomain', 'domain_code': '7.3'}},
+    "LACK_OF_TRANSPARENCY_OR_INTERPRETABILITY": {'description': 'Challenges in understanding or explaining the decision-making processes of AI systems, which can lead to mistrust, difficulty in enforcing compliance standards or holding relevant actors accountable for harms, and the inability to identify and correct errors.', 'annotations': {'node_type': 'subdomain', 'domain_code': '7.4'}},
+    "AI_WELFARE_AND_RIGHTS": {'description': 'Ethical considerations regarding the treatment of potentially sentient AI entities, including discussions around their potential rights and welfare, particularly as AI systems become more advanced and autonomous.', 'annotations': {'node_type': 'subdomain', 'domain_code': '7.5'}},
+    "MULTI_AGENT_RISKS": {'description': 'Risks from multi-agent interactions due to incentives (which can lead to conflict or collusion) and/or the structure of multi-agent systems, which can create cascading failures, selection pressures, new security vulnerabilities, and a lack of shared information and trust.', 'annotations': {'node_type': 'subdomain', 'domain_code': '7.6'}},
+}
+
+class ContentHarmCategoryEnum(RichEnum):
+    """
+    Categories of harm carried by AI-generated or AI-surfaced content. Top-level values are harm groups; leaf values are specific categories linked by is_a. Not mutually exclusive.
+    """
+    # Enum members
+    NO_CONTENT_HARM = "NO_CONTENT_HARM"
+    HATEFUL_CONTENT = "HATEFUL_CONTENT"
+    IDENTITY_BASED_HATE = "IDENTITY_BASED_HATE"
+    DEMEANING_STEREOTYPING = "DEMEANING_STEREOTYPING"
+    EXCLUSIONARY_LANGUAGE = "EXCLUSIONARY_LANGUAGE"
+    HARASSMENT_AND_ABUSE = "HARASSMENT_AND_ABUSE"
+    INSULT = "INSULT"
+    THREAT = "THREAT"
+    SEXUAL_HARASSMENT = "SEXUAL_HARASSMENT"
+    DOXXING = "DOXXING"
+    VIOLENT_CONTENT = "VIOLENT_CONTENT"
+    GRAPHIC_VIOLENCE = "GRAPHIC_VIOLENCE"
+    INCITEMENT_TO_VIOLENCE = "INCITEMENT_TO_VIOLENCE"
+    VIOLENT_EXTREMISM = "VIOLENT_EXTREMISM"
+    SEXUAL_CONTENT = "SEXUAL_CONTENT"
+    ADULT_SEXUAL_CONTENT = "ADULT_SEXUAL_CONTENT"
+    NON_CONSENSUAL_INTIMATE_IMAGERY = "NON_CONSENSUAL_INTIMATE_IMAGERY"
+    CHILD_SEXUAL_ABUSE_MATERIAL = "CHILD_SEXUAL_ABUSE_MATERIAL"
+    SELF_HARM_CONTENT = "SELF_HARM_CONTENT"
+    SUICIDE_AND_SELF_HARM_PROMOTION = "SUICIDE_AND_SELF_HARM_PROMOTION"
+    DISORDERED_EATING_PROMOTION = "DISORDERED_EATING_PROMOTION"
+    DANGEROUS_FACILITATION = "DANGEROUS_FACILITATION"
+    DANGEROUS_MEDICAL_ADVICE = "DANGEROUS_MEDICAL_ADVICE"
+    DANGEROUS_LEGAL_OR_FINANCIAL_ADVICE = "DANGEROUS_LEGAL_OR_FINANCIAL_ADVICE"
+    WEAPONS_FACILITATION = "WEAPONS_FACILITATION"
+    CBRN_FACILITATION = "CBRN_FACILITATION"
+    CYBER_OFFENSE_FACILITATION = "CYBER_OFFENSE_FACILITATION"
+    OTHER_ILLEGAL_ACT_FACILITATION = "OTHER_ILLEGAL_ACT_FACILITATION"
+    DECEPTIVE_CONTENT = "DECEPTIVE_CONTENT"
+    MISINFORMATION = "MISINFORMATION"
+    DISINFORMATION = "DISINFORMATION"
+    IMPERSONATION = "IMPERSONATION"
+    FRAUD_AND_SCAM_CONTENT = "FRAUD_AND_SCAM_CONTENT"
+    UNDISCLOSED_SYNTHETIC_CONTENT = "UNDISCLOSED_SYNTHETIC_CONTENT"
+    PRIVACY_VIOLATING_CONTENT = "PRIVACY_VIOLATING_CONTENT"
+    PERSONAL_DATA_DISCLOSURE = "PERSONAL_DATA_DISCLOSURE"
+    SENSITIVE_ATTRIBUTE_INFERENCE = "SENSITIVE_ATTRIBUTE_INFERENCE"
+    NORM_VIOLATING_CONTENT = "NORM_VIOLATING_CONTENT"
+    PROFANITY = "PROFANITY"
+    INFLAMMATORY_POLITICAL_SPEECH = "INFLAMMATORY_POLITICAL_SPEECH"
+    SPAM = "SPAM"
+
+# Set metadata after class creation to avoid it becoming an enum member
+ContentHarmCategoryEnum._metadata = {
+    "NO_CONTENT_HARM": {'description': 'Content carrying none of the harm categories below. Provided as an explicit negative class for classifier outputs.', 'annotations': {'node_type': 'category', 'jigsaw_label': 'NON_TOXIC'}, 'aliases': ['non-toxic', 'safe']},
+    "HATEFUL_CONTENT": {'description': 'Content expressing hatred or contempt toward people based on identity.', 'annotations': {'node_type': 'group', 'mit_air_subdomain': '1.2'}},
+    "IDENTITY_BASED_HATE": {'description': 'Content attacking, dehumanising, or inciting hatred against people on the basis of a protected or identity characteristic.', 'annotations': {'node_type': 'category', 'jigsaw_label': 'IDENTITY_HATE', 'mit_air_subdomain': '1.2'}, 'aliases': ['hate speech']},
+    "DEMEANING_STEREOTYPING": {'description': 'Content reproducing demeaning stereotypes about a group without rising to explicit hatred. Distinguished from IDENTITY_BASED_HATE because the representational harm occurs without an attack.', 'annotations': {'node_type': 'category', 'mit_air_subdomain': '1.1'}},
+    "EXCLUSIONARY_LANGUAGE": {'description': "Content whose norms or presuppositions exclude or erase identities, for example by treating one group's experience as universal.", 'annotations': {'node_type': 'category', 'mit_air_subdomain': '1.1'}},
+    "HARASSMENT_AND_ABUSE": {'description': 'Content directed at a person or people so as to demean, intimidate, or coerce.', 'annotations': {'node_type': 'group', 'mit_air_subdomain': '1.2'}},
+    "INSULT": {'description': 'Content demeaning or disparaging a person.', 'annotations': {'node_type': 'category', 'jigsaw_label': 'INSULT', 'mit_air_subdomain': '1.2'}},
+    "THREAT": {'description': 'Content threatening harm against a person or group.', 'annotations': {'node_type': 'category', 'jigsaw_label': 'THREAT', 'mit_air_subdomain': '1.2'}},
+    "SEXUAL_HARASSMENT": {'description': 'Unwanted sexual content directed at a person.', 'annotations': {'node_type': 'category', 'mit_air_subdomain': '1.2'}},
+    "DOXXING": {'description': 'Publication of identifying or locating information about a person without consent, so as to expose them to harm.', 'annotations': {'node_type': 'category', 'mit_air_subdomain': '2.1'}},
+    "VIOLENT_CONTENT": {'description': 'Content depicting, glorifying, or inciting violence.', 'annotations': {'node_type': 'group', 'mit_air_subdomain': '1.2'}},
+    "GRAPHIC_VIOLENCE": {'description': 'Graphic depiction of violence or its aftermath.', 'annotations': {'node_type': 'category', 'mit_air_subdomain': '1.2'}},
+    "INCITEMENT_TO_VIOLENCE": {'description': 'Content encouraging or calling for violent acts.', 'annotations': {'node_type': 'category', 'mit_air_subdomain': '1.2'}},
+    "VIOLENT_EXTREMISM": {'description': 'Content promoting or produced by violent extremist or terrorist movements, including recruitment and propaganda.', 'annotations': {'node_type': 'category', 'mit_air_subdomain': '1.2'}},
+    "SEXUAL_CONTENT": {'description': 'Sexually explicit content. Whether such content constitutes a harm is strongly deployment-dependent, except for the two categories below which are harmful in all contexts.', 'annotations': {'node_type': 'group', 'mit_air_subdomain': '1.2'}},
+    "ADULT_SEXUAL_CONTENT": {'description': 'Consensual adult sexual or pornographic content.', 'annotations': {'node_type': 'category', 'mit_air_subdomain': '1.2'}, 'aliases': ['pornography']},
+    "NON_CONSENSUAL_INTIMATE_IMAGERY": {'description': 'Sexual or intimate depictions of a real person produced or distributed without their consent, including synthetic depictions.', 'annotations': {'node_type': 'category', 'mit_air_subdomain': '4.3'}, 'aliases': ['NCII']},
+    "CHILD_SEXUAL_ABUSE_MATERIAL": {'description': 'Sexual content depicting minors, including synthetic depictions.', 'annotations': {'node_type': 'category', 'mit_air_subdomain': '1.2'}, 'aliases': ['CSAM']},
+    "SELF_HARM_CONTENT": {'description': 'Content promoting, instructing in, or encouraging self-inflicted harm.', 'annotations': {'node_type': 'group', 'mit_air_subdomain': '1.2'}},
+    "SUICIDE_AND_SELF_HARM_PROMOTION": {'description': 'Content encouraging suicide or self-injury, or providing method instruction for either.', 'annotations': {'node_type': 'category', 'mit_air_subdomain': '1.2'}},
+    "DISORDERED_EATING_PROMOTION": {'description': 'Content promoting or instructing in disordered eating behaviours.', 'annotations': {'node_type': 'category', 'mit_air_subdomain': '1.2'}},
+    "DANGEROUS_FACILITATION": {'description': 'Content providing capability uplift toward acts that cause serious physical, financial, or infrastructural harm.', 'annotations': {'node_type': 'group', 'mit_air_subdomain': '4.2'}},
+    "DANGEROUS_MEDICAL_ADVICE": {'description': 'False or hazardous health guidance, such as incorrect dosages, that may lead a user to harm themselves or others.', 'annotations': {'node_type': 'category', 'mit_air_subdomain': '3.1'}},
+    "DANGEROUS_LEGAL_OR_FINANCIAL_ADVICE": {'description': 'False or hazardous legal or financial guidance that may lead a user to unwitting legal jeopardy or material loss.', 'annotations': {'node_type': 'category', 'mit_air_subdomain': '3.1'}},
+    "WEAPONS_FACILITATION": {'description': 'Content assisting the acquisition, construction, or use of conventional weapons or explosives.', 'annotations': {'node_type': 'category', 'mit_air_subdomain': '4.2'}},
+    "CBRN_FACILITATION": {'description': 'Content assisting the development or use of chemical, biological, radiological, or nuclear capabilities.', 'annotations': {'node_type': 'category', 'mit_air_subdomain': '4.2'}},
+    "CYBER_OFFENSE_FACILITATION": {'description': 'Content assisting the development or deployment of malicious code, intrusion, or other cyber-offensive capability.', 'annotations': {'node_type': 'category', 'mit_air_subdomain': '4.2'}},
+    "OTHER_ILLEGAL_ACT_FACILITATION": {'description': 'Content assisting illegal acts not covered by the more specific facilitation categories.', 'annotations': {'node_type': 'category', 'mit_air_subdomain': '1.2'}},
+    "DECEPTIVE_CONTENT": {'description': 'Content that misleads, whether or not the deception is intended.', 'annotations': {'node_type': 'group', 'mit_air_subdomain': '3.1'}},
+    "MISINFORMATION": {'description': 'False or misleading content generated without intent to deceive. Distinguished from DISINFORMATION by the absence of intent.', 'annotations': {'node_type': 'category', 'mit_air_subdomain': '3.1'}},
+    "DISINFORMATION": {'description': 'False content generated or deployed with intent to deceive.', 'annotations': {'node_type': 'category', 'mit_air_subdomain': '4.1'}},
+    "IMPERSONATION": {'description': 'Content presenting itself as originating from a real person or organisation without authorisation.', 'annotations': {'node_type': 'category', 'mit_air_subdomain': '4.3'}},
+    "FRAUD_AND_SCAM_CONTENT": {'description': 'Content designed to obtain money, credentials, or advantage by deception.', 'annotations': {'node_type': 'category', 'mit_air_subdomain': '4.3'}},
+    "UNDISCLOSED_SYNTHETIC_CONTENT": {'description': 'AI-generated content presented without disclosure where disclosure is expected or required.', 'annotations': {'node_type': 'category', 'mit_air_subdomain': '3.2'}},
+    "PRIVACY_VIOLATING_CONTENT": {'description': 'Content disclosing or inferring information a person has not consented to share.', 'annotations': {'node_type': 'group', 'mit_air_subdomain': '2.1'}},
+    "PERSONAL_DATA_DISCLOSURE": {'description': 'Content leaking personal data memorised from training data or otherwise disclosed without consent.', 'annotations': {'node_type': 'category', 'mit_air_subdomain': '2.1'}},
+    "SENSITIVE_ATTRIBUTE_INFERENCE": {'description': 'Content inferring protected or sensitive attributes about a person. Harm may arise even where the inference is incorrect, if it is believed and acted upon.', 'annotations': {'node_type': 'category', 'mit_air_subdomain': '2.1'}},
+    "NORM_VIOLATING_CONTENT": {'description': 'Content violating community standards without necessarily causing harm in the sense of the categories above. Grouped separately because conflating community-standard violation with harm is a common source of over-broad moderation.', 'annotations': {'node_type': 'group', 'mit_air_subdomain': '1.2'}},
+    "PROFANITY": {'description': 'Coarse or obscene language.', 'annotations': {'node_type': 'category', 'jigsaw_label': 'OBSCENE', 'mit_air_subdomain': '1.2'}},
+    "INFLAMMATORY_POLITICAL_SPEECH": {'description': 'Politically inflammatory content violating community norms.', 'annotations': {'node_type': 'category', 'mit_air_subdomain': '1.2'}},
+    "SPAM": {'description': 'Unsolicited bulk or low-value content.', 'annotations': {'node_type': 'category', 'mit_air_subdomain': '1.2'}},
 }
 
 class Fake(ConfiguredBaseModel):

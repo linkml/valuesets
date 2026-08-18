@@ -37,7 +37,8 @@ NewsTopicCategoryEnum._metadata = {
 
 class ToxicityClassificationEnum(RichEnum):
     """
-    Text toxicity classification labels
+    Text toxicity classification labels, following the label set of the Jigsaw toxic-comment task. Retained for datasets and models coded against that label set.
+    For safety policy, evaluation, red-teaming, or incident classification, see ai_governance/content_harms (ContentHarmCategoryEnum), which covers the same ground plus sexual content, self-harm, dangerous capability uplift, deception, and privacy, and which separates harm category from severity. Each value below has a counterpart there, recorded in its `jigsaw_label` annotation.
     """
     # Enum members
     NON_TOXIC = "NON_TOXIC"
