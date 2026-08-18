@@ -12,6 +12,11 @@ in agreement: if a new NMD-qualified type is added with a mixin but no
 annotation, the OWL product silently loses the axis again with nothing else
 failing.
 
+The dropped-mixin behaviour was observed with linkml 1.9.5 / linkml-runtime
+1.9.5. If a later version emits permissible-value mixins as ``rdfs:subClassOf``,
+the ``nmd_status`` annotation becomes redundant and both it and these tests can
+go -- re-check ``gen-owl`` output before assuming the workaround is still needed.
+
 These tests read the schema YAML directly rather than the generated
 ``valuesets.enums.clinical.gene2phenotype`` module, which does not exist until
 the derived-file regeneration workflow runs on main.
@@ -29,13 +34,38 @@ SCHEMA_PATH = (
 
 NMD_QUALIFIERS = {"NMD_TRIGGERING", "NMD_ESCAPING"}
 
+# Number of NMD-qualified variant types currently in the schema. This is a
+# tripwire against the annotations being dropped wholesale, not a claim that the
+# count is fixed -- if G2P or SO add a type, update it deliberately.
+EXPECTED_NMD_QUALIFIED = 8
+
+# Annotations that name a permissible value of another enum. Each entry is
+# (annotation key, enum whose keys it must resolve against).
+PV_REFERENCE_ANNOTATIONS = [
+    ("nmd_status", "G2PVariantType"),
+    ("variant_type_group", "G2PVariantTypeGroup"),
+    ("parent_mechanism", "G2PMolecularMechanism"),
+]
+
 
 @pytest.fixture(scope="module")
-def variant_types():
-    """Permissible values of G2PVariantType, keyed by permissible value name."""
+def schema():
     with open(SCHEMA_PATH) as f:
-        schema = yaml.safe_load(f)
+        return yaml.safe_load(f)
+
+
+@pytest.fixture(scope="module")
+def variant_types(schema):
+    """Permissible values of G2PVariantType, keyed by permissible value name."""
     return schema["enums"]["G2PVariantType"]["permissible_values"]
+
+
+def _annotation(pv, key):
+    """Read an annotation, tolerating both the compact and {tag, value} forms."""
+    raw = (pv.get("annotations") or {}).get(key)
+    if isinstance(raw, dict):
+        return raw.get("value")
+    return raw
 
 
 def _nmd_mixins(pv):
@@ -43,7 +73,43 @@ def _nmd_mixins(pv):
 
 
 def _nmd_status(pv):
-    return (pv.get("annotations") or {}).get("nmd_status")
+    return _annotation(pv, "nmd_status")
+
+
+def test_mixins_resolve_to_permissible_values(variant_types):
+    """
+    Every mixin must name a real permissible value.
+
+    Without this, a misspelled qualifier (NMD_ESCAPPING) is silently skipped by
+    every other test in this file rather than flagged, which is the exact drift
+    the suite exists to catch.
+    """
+    for name, pv in variant_types.items():
+        for mixin in pv.get("mixins") or []:
+            assert mixin in variant_types, (
+                f"{name} has mixin {mixin!r}, which is not a permissible value "
+                f"of G2PVariantType"
+            )
+
+
+def test_nmd_named_types_carry_the_axis(variant_types):
+    """
+    A value named for an NMD qualifier must actually carry that axis.
+
+    Catches a new NMD-qualified type that was added without the mixin, the
+    annotation, or both.
+    """
+    for name, pv in variant_types.items():
+        for qualifier in NMD_QUALIFIERS:
+            if name == qualifier or not name.endswith(f"_{qualifier}"):
+                continue
+            assert qualifier in (pv.get("mixins") or []), (
+                f"{name} is named for {qualifier} but does not carry it as a mixin"
+            )
+            assert _nmd_status(pv) == qualifier, (
+                f"{name} is named for {qualifier} but its nmd_status is "
+                f"{_nmd_status(pv)!r}; the OWL output would lose the NMD axis"
+            )
 
 
 def test_every_nmd_mixin_has_matching_annotation(variant_types):
@@ -71,15 +137,28 @@ def test_every_nmd_annotation_has_matching_mixin(variant_types):
         )
 
 
-def test_nmd_status_values_are_permissible_value_keys(variant_types):
-    """nmd_status must reference real permissible values, like variant_type_group does."""
-    for name, pv in variant_types.items():
-        status = _nmd_status(pv)
-        if status is not None:
-            assert status in variant_types, (
-                f"{name} has nmd_status {status!r}, which is not a "
-                f"permissible value of G2PVariantType"
+@pytest.mark.parametrize("annotation_key,target_enum", PV_REFERENCE_ANNOTATIONS)
+def test_cross_reference_annotations_resolve(schema, annotation_key, target_enum):
+    """
+    Annotations naming a permissible value must resolve in their target enum.
+
+    These annotations use permissible value keys rather than display strings so
+    they are machine-resolvable; a typo would otherwise resolve to nothing with
+    nothing complaining.
+    """
+    targets = schema["enums"][target_enum]["permissible_values"]
+    checked = 0
+    for enum_name, enum_def in schema["enums"].items():
+        for pv_name, pv in (enum_def.get("permissible_values") or {}).items():
+            value = _annotation(pv or {}, annotation_key)
+            if value is None:
+                continue
+            checked += 1
+            assert value in targets, (
+                f"{enum_name}.{pv_name} has {annotation_key}={value!r}, which is "
+                f"not a permissible value of {target_enum}"
             )
+    assert checked, f"no {annotation_key} annotations found; has the convention changed?"
 
 
 def test_abstract_qualifiers_do_not_annotate_themselves(variant_types):
@@ -96,14 +175,20 @@ def test_abstract_qualifiers_do_not_annotate_themselves(variant_types):
         )
 
 
-def test_nmd_axis_is_non_empty_and_balanced(variant_types):
-    """Guard against the annotations being dropped wholesale."""
-    statuses = [
-        _nmd_status(pv) for pv in variant_types.values() if _nmd_status(pv) is not None
+def test_nmd_axis_is_not_dropped_wholesale(variant_types):
+    """
+    Tripwire for the annotations being deleted en masse, which the pairwise
+    tests cannot see (they skip values carrying neither encoding).
+    """
+    annotated = [
+        name for name, pv in variant_types.items() if _nmd_status(pv) is not None
     ]
-    assert len(statuses) == 8, f"expected 8 NMD-qualified types, found {len(statuses)}"
-    assert statuses.count("NMD_TRIGGERING") == 4
-    assert statuses.count("NMD_ESCAPING") == 4
+    assert len(annotated) == EXPECTED_NMD_QUALIFIED, (
+        f"expected {EXPECTED_NMD_QUALIFIED} NMD-qualified types, found "
+        f"{len(annotated)}. If G2P or SO legitimately added or removed one, "
+        f"update EXPECTED_NMD_QUALIFIED deliberately; otherwise the nmd_status "
+        f"annotations have gone missing and the OWL output has lost the axis."
+    )
 
 
 def test_nmd_qualified_types_keep_a_base_variant_parent(variant_types):
