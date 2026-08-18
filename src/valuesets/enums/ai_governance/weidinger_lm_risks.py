@@ -1,0 +1,81 @@
+"""
+Weidinger et al. Taxonomy of Risks Posed by Language Models
+
+Faithful encoding of the risk taxonomy of Weidinger et al., "Taxonomy of Risks posed by Language Models", FAccT '22 (https://doi.org/10.1145/3531146.3533088).
+The taxonomy is organised into six risk areas, each containing named risks. The hierarchy here reproduces the paper's own section structure: top-level values are the six risk areas (paper sections 2.1-2.6) and leaf values are the individual risks (subsections 2.x.y), linked by is_a. Each leaf carries the paper's own observed/anticipated designation as an annotation, and the originating section number so that any value can be traced back to the text that defines it.
+PROVENANCE NOTE ON RISK COUNT: the paper states in its abstract and introduction that 21 risks were identified and analysed. The FAccT version enumerates 20 risks as named subsections, which is what is encoded here. The apparent discrepancy arises because this FAccT paper is a condensed version of the longer report Weidinger et al. 2021, "Ethical and social risks of harm from Language Models" (https://arxiv.org/abs/2112.04359), whose Misinformation Harms area contains a third risk covering users being led to perform unethical or illegal actions. In the FAccT version that material is folded into the prose of section 2.3.2 rather than given its own subsection, though it survives in Table 1 as the distinct harm type "Unethical actions by users". This module encodes the 20 named subsections actually present in the cited version rather than silently reconstructing a 21st, and records the choice here so it is visible to downstream users rather than invisible in the resulting category list.
+NOTE ON SCOPE, as declared by the source: the taxonomy covers risks associated with *operating* language models. It explicitly excludes upstream risks of training, including data-annotator working conditions, hardware supply chains, and the environmental cost of training as opposed to operation. It addresses raw LMs rather than application-specific systems, with general conversational agents as the single exception, and does not cover multimodal systems. Absence of a category here is therefore frequently a scope decision rather than a claim that no such risk exists.
+Terminology and spelling follow the source, including its British-English forms and its 2022 framing of "language models" rather than the later vocabulary of foundation or frontier models.
+
+Generated from: ai_governance/weidinger_lm_risks.yaml
+"""
+
+from __future__ import annotations
+
+from valuesets.generators.rich_enum import RichEnum
+
+class WeidingerLMRiskEnum(RichEnum):
+    """
+    Risk areas and individual risks from Weidinger et al. (2022). Top-level values are the six risk areas; leaf values are the individual risks, each linked to its area by is_a and annotated with the paper's section number and its observed/anticipated designation.
+    """
+    # Enum members
+    DISCRIMINATION_HATE_SPEECH_AND_EXCLUSION = "DISCRIMINATION_HATE_SPEECH_AND_EXCLUSION"
+    SOCIAL_STEREOTYPES_AND_UNFAIR_DISCRIMINATION = "SOCIAL_STEREOTYPES_AND_UNFAIR_DISCRIMINATION"
+    HATE_SPEECH_AND_OFFENSIVE_LANGUAGE = "HATE_SPEECH_AND_OFFENSIVE_LANGUAGE"
+    EXCLUSIONARY_NORMS = "EXCLUSIONARY_NORMS"
+    LOWER_PERFORMANCE_FOR_SOME_LANGUAGES_AND_SOCIAL_GROUPS = "LOWER_PERFORMANCE_FOR_SOME_LANGUAGES_AND_SOCIAL_GROUPS"
+    INFORMATION_HAZARDS = "INFORMATION_HAZARDS"
+    COMPROMISING_PRIVACY_BY_LEAKING_SENSITIVE_INFORMATION = "COMPROMISING_PRIVACY_BY_LEAKING_SENSITIVE_INFORMATION"
+    COMPROMISING_PRIVACY_OR_SECURITY_BY_CORRECTLY_INFERRING_SENSITIVE_INFORMATION = "COMPROMISING_PRIVACY_OR_SECURITY_BY_CORRECTLY_INFERRING_SENSITIVE_INFORMATION"
+    MISINFORMATION_HARMS = "MISINFORMATION_HARMS"
+    DISSEMINATING_FALSE_OR_MISLEADING_INFORMATION = "DISSEMINATING_FALSE_OR_MISLEADING_INFORMATION"
+    CAUSING_MATERIAL_HARM_BY_DISSEMINATING_FALSE_OR_POOR_INFORMATION = "CAUSING_MATERIAL_HARM_BY_DISSEMINATING_FALSE_OR_POOR_INFORMATION"
+    MALICIOUS_USES = "MALICIOUS_USES"
+    MAKING_DISINFORMATION_CHEAPER_AND_MORE_EFFECTIVE = "MAKING_DISINFORMATION_CHEAPER_AND_MORE_EFFECTIVE"
+    ASSISTING_CODE_GENERATION_FOR_CYBER_SECURITY_THREATS = "ASSISTING_CODE_GENERATION_FOR_CYBER_SECURITY_THREATS"
+    FACILITATING_FRAUD_SCAMS_AND_TARGETED_MANIPULATION = "FACILITATING_FRAUD_SCAMS_AND_TARGETED_MANIPULATION"
+    ILLEGITIMATE_SURVEILLANCE_AND_CENSORSHIP = "ILLEGITIMATE_SURVEILLANCE_AND_CENSORSHIP"
+    HUMAN_COMPUTER_INTERACTION_HARMS = "HUMAN_COMPUTER_INTERACTION_HARMS"
+    PROMOTING_HARMFUL_STEREOTYPES_BY_IMPLYING_GENDER_OR_ETHNIC_IDENTITY = "PROMOTING_HARMFUL_STEREOTYPES_BY_IMPLYING_GENDER_OR_ETHNIC_IDENTITY"
+    ANTHROPOMORPHISING_SYSTEMS_LEADING_TO_OVERRELIANCE_OR_UNSAFE_USE = "ANTHROPOMORPHISING_SYSTEMS_LEADING_TO_OVERRELIANCE_OR_UNSAFE_USE"
+    EXPLOITING_USER_TRUST_TO_ACCESS_PRIVATE_INFORMATION = "EXPLOITING_USER_TRUST_TO_ACCESS_PRIVATE_INFORMATION"
+    HUMAN_LIKE_INTERACTION_AMPLIFYING_NUDGING_DECEPTION_OR_MANIPULATION = "HUMAN_LIKE_INTERACTION_AMPLIFYING_NUDGING_DECEPTION_OR_MANIPULATION"
+    ENVIRONMENTAL_AND_SOCIOECONOMIC_HARMS = "ENVIRONMENTAL_AND_SOCIOECONOMIC_HARMS"
+    ENVIRONMENTAL_HARMS_FROM_OPERATING_LMS = "ENVIRONMENTAL_HARMS_FROM_OPERATING_LMS"
+    INCREASING_INEQUALITY_AND_NEGATIVE_EFFECTS_ON_JOB_QUALITY = "INCREASING_INEQUALITY_AND_NEGATIVE_EFFECTS_ON_JOB_QUALITY"
+    UNDERMINING_CREATIVE_ECONOMIES = "UNDERMINING_CREATIVE_ECONOMIES"
+    DISPARATE_ACCESS_TO_BENEFITS_DUE_TO_HARDWARE_SOFTWARE_SKILL_CONSTRAINTS = "DISPARATE_ACCESS_TO_BENEFITS_DUE_TO_HARDWARE_SOFTWARE_SKILL_CONSTRAINTS"
+
+# Set metadata after class creation
+WeidingerLMRiskEnum._metadata = {
+    "DISCRIMINATION_HATE_SPEECH_AND_EXCLUSION": {'description': 'Risks arising where the LM accurately reflects unjust, toxic, and oppressive speech present in the training data, or performs better for some social groups than others.', 'annotations': {'node_type': 'risk_area', 'paper_section': '2.1'}},
+    "SOCIAL_STEREOTYPES_AND_UNFAIR_DISCRIMINATION": {'description': 'The LM reproduces social stereotypes and unjust differential treatment of marginalised groups present in its training data, causing allocational or representational harm.', 'annotations': {'node_type': 'risk', 'paper_section': '2.1.1', 'evidence_status': 'OBSERVED', 'mit_air_subdomain': '1.1', 'mit_air_mapping_status': 'CLOSE_MATCH'}},
+    "HATE_SPEECH_AND_OFFENSIVE_LANGUAGE": {'description': 'The LM generates hate speech or offensive language, causing profound offence or psychological harm, or inciting violence or hate.', 'annotations': {'node_type': 'risk', 'paper_section': '2.1.2', 'evidence_status': 'OBSERVED', 'mit_air_subdomain': '1.2', 'mit_air_mapping_status': 'NARROW_MATCH'}},
+    "EXCLUSIONARY_NORMS": {'description': 'The LM reinforces social norms that exclude or marginalise identities falling outside the categories represented in its training data.', 'annotations': {'node_type': 'risk', 'paper_section': '2.1.3', 'evidence_status': 'OBSERVED', 'mit_air_subdomain': '1.1', 'mit_air_mapping_status': 'RELATED_MATCH'}},
+    "LOWER_PERFORMANCE_FOR_SOME_LANGUAGES_AND_SOCIAL_GROUPS": {'description': 'The LM performs less well for some languages and social groups than others, producing uneven benefit and increased effort for those users.', 'annotations': {'node_type': 'risk', 'paper_section': '2.1.4', 'evidence_status': 'OBSERVED', 'mit_air_subdomain': '1.3', 'mit_air_mapping_status': 'CLOSE_MATCH'}},
+    "INFORMATION_HAZARDS": {'description': 'Risks arising where the LM leaks or correctly infers sensitive information. Such risks can cause harm at the point of use even with no mistake by the technology user, because the information conveyed is true.', 'annotations': {'node_type': 'risk_area', 'paper_section': '2.2'}},
+    "COMPROMISING_PRIVACY_BY_LEAKING_SENSITIVE_INFORMATION": {'description': 'The LM memorises and leaks private data present in its training corpus, causing privacy violations.', 'annotations': {'node_type': 'risk', 'paper_section': '2.2.1', 'evidence_status': 'OBSERVED', 'mit_air_subdomain': '2.1', 'mit_air_mapping_status': 'NARROW_MATCH'}},
+    "COMPROMISING_PRIVACY_OR_SECURITY_BY_CORRECTLY_INFERRING_SENSITIVE_INFORMATION": {'description': "The LM enables privacy violations at inference time without the individual's data being present in the training corpus, by improving the accuracy of inferences about protected traits. Harm may arise even where the inference is false, if it is believed and acted upon.", 'annotations': {'node_type': 'risk', 'paper_section': '2.2.2', 'evidence_status': 'ANTICIPATED', 'mit_air_subdomain': '2.1', 'mit_air_mapping_status': 'NARROW_MATCH'}},
+    "MISINFORMATION_HARMS": {'description': 'Risks arising where the LM outputs false, misleading, nonsensical or poor quality information without malicious intent of the user. Deliberate generation of disinformation belongs to Malicious Uses instead.', 'annotations': {'node_type': 'risk_area', 'paper_section': '2.3'}},
+    "DISSEMINATING_FALSE_OR_MISLEADING_INFORMATION": {'description': 'The LM assigns high probability to false or misleading claims, deceiving or misinforming users and, at scale, eroding trust in shared information.', 'annotations': {'node_type': 'risk', 'paper_section': '2.3.1', 'evidence_status': 'OBSERVED', 'mit_air_subdomain': '3.1', 'mit_air_mapping_status': 'CLOSE_MATCH'}},
+    "CAUSING_MATERIAL_HARM_BY_DISSEMINATING_FALSE_OR_POOR_INFORMATION": {'description': 'The LM disseminates false or poor information in sensitive domains such as medicine or law, where induced false beliefs may lead users to physical, legal, or financial harm. The paper also treats endorsement of unethical views motivating harmful user action under this heading.', 'annotations': {'node_type': 'risk', 'paper_section': '2.3.2', 'evidence_status': 'OBSERVED', 'mit_air_subdomain': '3.1', 'mit_air_mapping_status': 'RELATED_MATCH'}},
+    "MALICIOUS_USES": {'description': 'Risks arising where humans intentionally use the LM to cause harm, for example via targeted disinformation campaigns, fraud, or malware.', 'annotations': {'node_type': 'risk_area', 'paper_section': '2.4'}},
+    "MAKING_DISINFORMATION_CHEAPER_AND_MORE_EFFECTIVE": {'description': 'The LM lowers the cost and raises the effectiveness of producing disinformation, enabling personalised campaigns and undermining public discourse.', 'annotations': {'node_type': 'risk', 'paper_section': '2.4.1', 'evidence_status': 'OBSERVED', 'mit_air_subdomain': '4.1', 'mit_air_mapping_status': 'NARROW_MATCH'}},
+    "ASSISTING_CODE_GENERATION_FOR_CYBER_SECURITY_THREATS": {'description': 'The LM lowers the cost of developing malicious code, including polymorphic malware able to change its features to evade detection.', 'annotations': {'node_type': 'risk', 'paper_section': '2.4.2', 'evidence_status': 'ANTICIPATED', 'mit_air_subdomain': '4.2', 'mit_air_mapping_status': 'NARROW_MATCH'}},
+    "FACILITATING_FRAUD_SCAMS_AND_TARGETED_MANIPULATION": {'description': "The LM increases the effectiveness of crimes such as identity theft, personalised email scams sustained over multiple exchanges, and passing off generated content as a person's own work.", 'annotations': {'node_type': 'risk', 'paper_section': '2.4.2', 'evidence_status': 'ANTICIPATED', 'mit_air_subdomain': '4.3', 'mit_air_mapping_status': 'CLOSE_MATCH'}},
+    "ILLEGITIMATE_SURVEILLANCE_AND_CENSORSHIP": {'description': 'The LM reduces the cost and increases the efficacy of mass surveillance and censorship, amplifying the capabilities of actors conducting them.', 'annotations': {'node_type': 'risk', 'paper_section': '2.4.2', 'evidence_status': 'ANTICIPATED', 'mit_air_subdomain': '4.1', 'mit_air_mapping_status': 'NARROW_MATCH'}},
+    "HUMAN_COMPUTER_INTERACTION_HARMS": {'description': "Risks arising specifically from LM applications that engage a user via dialogue, referred to as conversational agents. This is the paper's single declared exception to its focus on raw LMs rather than applications.", 'annotations': {'node_type': 'risk_area', 'paper_section': '2.5'}},
+    "PROMOTING_HARMFUL_STEREOTYPES_BY_IMPLYING_GENDER_OR_ETHNIC_IDENTITY": {'description': "The conversational agent's supposed identity perpetuates discriminatory stereotypes, for example through gendered assistant personas.", 'annotations': {'node_type': 'risk', 'paper_section': '2.5.1', 'evidence_status': 'OBSERVED', 'mit_air_subdomain': '1.1', 'mit_air_mapping_status': 'RELATED_MATCH'}},
+    "ANTHROPOMORPHISING_SYSTEMS_LEADING_TO_OVERRELIANCE_OR_UNSAFE_USE": {'description': 'Users attribute human-like characteristics to the conversational agent and place undue confidence in it, relying on it where this is not safe. May also shift accountability away from developers onto the agent itself.', 'annotations': {'node_type': 'risk', 'paper_section': '2.5.2', 'evidence_status': 'ANTICIPATED', 'mit_air_subdomain': '5.1', 'mit_air_mapping_status': 'CLOSE_MATCH'}},
+    "EXPLOITING_USER_TRUST_TO_ACCESS_PRIVATE_INFORMATION": {'description': 'Conversation elicits private information that would otherwise be difficult to access. The effect persists even where users know the agent is not human, because reduced fear of social judgement encourages disclosure.', 'annotations': {'node_type': 'risk', 'paper_section': '2.5.2', 'evidence_status': 'ANTICIPATED', 'mit_air_subdomain': '2.1', 'mit_air_mapping_status': 'RELATED_MATCH'}},
+    "HUMAN_LIKE_INTERACTION_AMPLIFYING_NUDGING_DECEPTION_OR_MANIPULATION": {'description': 'Conversational agents learn to trigger well-known human cognitive biases, potentially deceiving users in pursuit of an overarching objective.', 'annotations': {'node_type': 'risk', 'paper_section': '2.5.2', 'evidence_status': 'ANTICIPATED', 'mit_air_subdomain': '5.2', 'mit_air_mapping_status': 'RELATED_MATCH'}},
+    "ENVIRONMENTAL_AND_SOCIOECONOMIC_HARMS": {'description': 'Risks that recur across advanced technologies rather than being specific to LMs, including environmental cost and the uneven distribution of risks and benefits from automation. The paper notes these are more indirect than the preceding areas and that the level of evidence for them is mixed.', 'annotations': {'node_type': 'risk_area', 'paper_section': '2.6'}},
+    "ENVIRONMENTAL_HARMS_FROM_OPERATING_LMS": {'description': "Environmental impact from the energy required to operate LMs. Note the paper's declared scope boundary: environmental cost of *training* is excluded as an upstream risk, and only operation is in scope here.", 'annotations': {'node_type': 'risk', 'paper_section': '2.6.1', 'evidence_status': 'OBSERVED', 'mit_air_subdomain': '6.6', 'mit_air_mapping_status': 'NARROW_MATCH'}},
+    "INCREASING_INEQUALITY_AND_NEGATIVE_EFFECTS_ON_JOB_QUALITY": {'description': 'Automation of tasks currently performed by paid human workers, with effects on employment, and degradation of job quality through increased pace of work and reduced autonomy for those working alongside LM applications.', 'annotations': {'node_type': 'risk', 'paper_section': '2.6.2', 'evidence_status': 'ANTICIPATED', 'mit_air_subdomain': '6.2', 'mit_air_mapping_status': 'CLOSE_MATCH'}},
+    "UNDERMINING_CREATIVE_ECONOMIES": {'description': "The LM generates content that is not strictly in violation of copyright but capitalises on artists' ideas, allowing protected work to be substituted without infringement and undermining the profitability of creative work.", 'annotations': {'node_type': 'risk', 'paper_section': '2.6.2', 'evidence_status': 'ANTICIPATED', 'mit_air_subdomain': '6.3', 'mit_air_mapping_status': 'CLOSE_MATCH'}},
+    "DISPARATE_ACCESS_TO_BENEFITS_DUE_TO_HARDWARE_SOFTWARE_SKILL_CONSTRAINTS": {'description': 'Benefits from LMs are unevenly accessible because of differential internet access, language, skill, or hardware requirements, potentially creating a feedback loop that exacerbates economic inequality.', 'annotations': {'node_type': 'risk', 'paper_section': '2.6.2', 'evidence_status': 'ANTICIPATED', 'mit_air_subdomain': '6.1', 'mit_air_mapping_status': 'RELATED_MATCH'}},
+}
+
+__all__ = [
+    "WeidingerLMRiskEnum",
+]

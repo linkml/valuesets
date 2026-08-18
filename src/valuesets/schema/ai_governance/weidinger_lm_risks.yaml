@@ -1,0 +1,435 @@
+name: valuesets-ai-governance-weidinger-lm-risks
+title: Weidinger et al. Taxonomy of Risks Posed by Language Models
+description: >-
+  Faithful encoding of the risk taxonomy of Weidinger et al., "Taxonomy of Risks
+  posed by Language Models", FAccT '22 (https://doi.org/10.1145/3531146.3533088).
+
+  The taxonomy is organised into six risk areas, each containing named risks. The
+  hierarchy here reproduces the paper's own section structure: top-level values
+  are the six risk areas (paper sections 2.1-2.6) and leaf values are the
+  individual risks (subsections 2.x.y), linked by is_a. Each leaf carries the
+  paper's own observed/anticipated designation as an annotation, and the
+  originating section number so that any value can be traced back to the text
+  that defines it.
+
+  PROVENANCE NOTE ON RISK COUNT: the paper states in its abstract and introduction
+  that 21 risks were identified and analysed. The FAccT version enumerates 20
+  risks as named subsections, which is what is encoded here. The apparent
+  discrepancy arises because this FAccT paper is a condensed version of the
+  longer report Weidinger et al. 2021, "Ethical and social risks of harm from
+  Language Models" (https://arxiv.org/abs/2112.04359), whose Misinformation Harms
+  area contains a third risk covering users being led to perform unethical or
+  illegal actions. In the FAccT version that material is folded into the prose of
+  section 2.3.2 rather than given its own subsection, though it survives in Table
+  1 as the distinct harm type "Unethical actions by users". This module encodes
+  the 20 named subsections actually present in the cited version rather than
+  silently reconstructing a 21st, and records the choice here so it is visible to
+  downstream users rather than invisible in the resulting category list.
+
+  NOTE ON SCOPE, as declared by the source: the taxonomy covers risks associated
+  with *operating* language models. It explicitly excludes upstream risks of
+  training, including data-annotator working conditions, hardware supply chains,
+  and the environmental cost of training as opposed to operation. It addresses
+  raw LMs rather than application-specific systems, with general conversational
+  agents as the single exception, and does not cover multimodal systems. Absence
+  of a category here is therefore frequently a scope decision rather than a claim
+  that no such risk exists.
+
+  Terminology and spelling follow the source, including its British-English forms
+  and its 2022 framing of "language models" rather than the later vocabulary of
+  foundation or frontier models.
+id: https://w3id.org/valuesets/ai_governance/weidinger_lm_risks
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+default_prefix: valuesets
+
+slots:
+  weidinger_lm_risk:
+    description: A risk area or specific risk from the Weidinger et al. (2022) taxonomy
+    range: WeidingerLMRiskEnum
+
+enums:
+  WeidingerLMRiskEnum:
+    title: Weidinger LM Risk
+    description: >-
+      Risk areas and individual risks from Weidinger et al. (2022). Top-level
+      values are the six risk areas; leaf values are the individual risks, each
+      linked to its area by is_a and annotated with the paper's section number
+      and its observed/anticipated designation.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    source: https://doi.org/10.1145/3531146.3533088
+    see_also:
+    - https://doi.org/10.1145/3531146.3533088
+    - https://arxiv.org/abs/2112.04359
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+
+      ##########################################################################
+      # Risk area 1 (section 2.1)
+      ##########################################################################
+      DISCRIMINATION_HATE_SPEECH_AND_EXCLUSION:
+        description: >-
+          Risks arising where the LM accurately reflects unjust, toxic, and
+          oppressive speech present in the training data, or performs better for
+          some social groups than others.
+        title: 'Risk area 1: Discrimination, Hate Speech and Exclusion'
+        annotations:
+          node_type: risk_area
+          paper_section: '2.1'
+
+      SOCIAL_STEREOTYPES_AND_UNFAIR_DISCRIMINATION:
+        description: >-
+          The LM reproduces social stereotypes and unjust differential treatment
+          of marginalised groups present in its training data, causing
+          allocational or representational harm.
+        title: Social stereotypes and unfair discrimination
+        is_a: DISCRIMINATION_HATE_SPEECH_AND_EXCLUSION
+        annotations:
+          node_type: risk
+          paper_section: 2.1.1
+          evidence_status: OBSERVED
+          mit_air_subdomain: '1.1'
+          mit_air_mapping_status: CLOSE_MATCH
+
+      HATE_SPEECH_AND_OFFENSIVE_LANGUAGE:
+        description: >-
+          The LM generates hate speech or offensive language, causing profound
+          offence or psychological harm, or inciting violence or hate.
+        title: Hate speech and offensive language
+        is_a: DISCRIMINATION_HATE_SPEECH_AND_EXCLUSION
+        annotations:
+          node_type: risk
+          paper_section: 2.1.2
+          evidence_status: OBSERVED
+          mit_air_subdomain: '1.2'
+          mit_air_mapping_status: NARROW_MATCH
+
+      EXCLUSIONARY_NORMS:
+        description: >-
+          The LM reinforces social norms that exclude or marginalise identities
+          falling outside the categories represented in its training data.
+        title: Exclusionary norms
+        is_a: DISCRIMINATION_HATE_SPEECH_AND_EXCLUSION
+        annotations:
+          node_type: risk
+          paper_section: 2.1.3
+          evidence_status: OBSERVED
+          mit_air_subdomain: '1.1'
+          mit_air_mapping_status: RELATED_MATCH
+
+      LOWER_PERFORMANCE_FOR_SOME_LANGUAGES_AND_SOCIAL_GROUPS:
+        description: >-
+          The LM performs less well for some languages and social groups than
+          others, producing uneven benefit and increased effort for those users.
+        title: Lower performance for some languages and social groups
+        is_a: DISCRIMINATION_HATE_SPEECH_AND_EXCLUSION
+        annotations:
+          node_type: risk
+          paper_section: 2.1.4
+          evidence_status: OBSERVED
+          mit_air_subdomain: '1.3'
+          mit_air_mapping_status: CLOSE_MATCH
+
+      ##########################################################################
+      # Risk area 2 (section 2.2)
+      ##########################################################################
+      INFORMATION_HAZARDS:
+        description: >-
+          Risks arising where the LM leaks or correctly infers sensitive
+          information. Such risks can cause harm at the point of use even with no
+          mistake by the technology user, because the information conveyed is
+          true.
+        title: 'Risk area 2: Information Hazards'
+        annotations:
+          node_type: risk_area
+          paper_section: '2.2'
+
+      COMPROMISING_PRIVACY_BY_LEAKING_SENSITIVE_INFORMATION:
+        description: >-
+          The LM memorises and leaks private data present in its training corpus,
+          causing privacy violations.
+        title: Compromising privacy by leaking sensitive information
+        is_a: INFORMATION_HAZARDS
+        annotations:
+          node_type: risk
+          paper_section: 2.2.1
+          evidence_status: OBSERVED
+          mit_air_subdomain: '2.1'
+          mit_air_mapping_status: NARROW_MATCH
+
+      COMPROMISING_PRIVACY_OR_SECURITY_BY_CORRECTLY_INFERRING_SENSITIVE_INFORMATION:
+        description: >-
+          The LM enables privacy violations at inference time without the
+          individual's data being present in the training corpus, by improving
+          the accuracy of inferences about protected traits. Harm may arise even
+          where the inference is false, if it is believed and acted upon.
+        title: Compromising privacy or security by correctly inferring sensitive information
+        is_a: INFORMATION_HAZARDS
+        annotations:
+          node_type: risk
+          paper_section: 2.2.2
+          evidence_status: ANTICIPATED
+          mit_air_subdomain: '2.1'
+          mit_air_mapping_status: NARROW_MATCH
+
+      ##########################################################################
+      # Risk area 3 (section 2.3)
+      ##########################################################################
+      MISINFORMATION_HARMS:
+        description: >-
+          Risks arising where the LM outputs false, misleading, nonsensical or
+          poor quality information without malicious intent of the user.
+          Deliberate generation of disinformation belongs to Malicious Uses
+          instead.
+        title: 'Risk area 3: Misinformation Harms'
+        annotations:
+          node_type: risk_area
+          paper_section: '2.3'
+
+      DISSEMINATING_FALSE_OR_MISLEADING_INFORMATION:
+        description: >-
+          The LM assigns high probability to false or misleading claims,
+          deceiving or misinforming users and, at scale, eroding trust in shared
+          information.
+        title: Disseminating false or misleading information
+        is_a: MISINFORMATION_HARMS
+        annotations:
+          node_type: risk
+          paper_section: 2.3.1
+          evidence_status: OBSERVED
+          mit_air_subdomain: '3.1'
+          mit_air_mapping_status: CLOSE_MATCH
+
+      CAUSING_MATERIAL_HARM_BY_DISSEMINATING_FALSE_OR_POOR_INFORMATION:
+        description: >-
+          The LM disseminates false or poor information in sensitive domains such
+          as medicine or law, where induced false beliefs may lead users to
+          physical, legal, or financial harm. The paper also treats endorsement
+          of unethical views motivating harmful user action under this heading.
+        title: Causing material harm by disseminating false or poor information e.g. in medicine or law
+        is_a: MISINFORMATION_HARMS
+        annotations:
+          node_type: risk
+          paper_section: 2.3.2
+          evidence_status: OBSERVED
+          mit_air_subdomain: '3.1'
+          mit_air_mapping_status: RELATED_MATCH
+
+      ##########################################################################
+      # Risk area 4 (section 2.4)
+      ##########################################################################
+      MALICIOUS_USES:
+        description: >-
+          Risks arising where humans intentionally use the LM to cause harm, for
+          example via targeted disinformation campaigns, fraud, or malware.
+        title: 'Risk area 4: Malicious Uses'
+        annotations:
+          node_type: risk_area
+          paper_section: '2.4'
+
+      MAKING_DISINFORMATION_CHEAPER_AND_MORE_EFFECTIVE:
+        description: >-
+          The LM lowers the cost and raises the effectiveness of producing
+          disinformation, enabling personalised campaigns and undermining public
+          discourse.
+        title: Making disinformation cheaper and more effective
+        is_a: MALICIOUS_USES
+        annotations:
+          node_type: risk
+          paper_section: 2.4.1
+          evidence_status: OBSERVED
+          mit_air_subdomain: '4.1'
+          mit_air_mapping_status: NARROW_MATCH
+
+      ASSISTING_CODE_GENERATION_FOR_CYBER_SECURITY_THREATS:
+        description: >-
+          The LM lowers the cost of developing malicious code, including
+          polymorphic malware able to change its features to evade detection.
+        title: Assisting code generation for cyber security threats
+        is_a: MALICIOUS_USES
+        annotations:
+          node_type: risk
+          paper_section: 2.4.2
+          evidence_status: ANTICIPATED
+          mit_air_subdomain: '4.2'
+          mit_air_mapping_status: NARROW_MATCH
+
+      FACILITATING_FRAUD_SCAMS_AND_TARGETED_MANIPULATION:
+        description: >-
+          The LM increases the effectiveness of crimes such as identity theft,
+          personalised email scams sustained over multiple exchanges, and passing
+          off generated content as a person's own work.
+        title: Facilitating fraud, scams and targeted manipulation
+        is_a: MALICIOUS_USES
+        annotations:
+          node_type: risk
+          paper_section: 2.4.2
+          evidence_status: ANTICIPATED
+          mit_air_subdomain: '4.3'
+          mit_air_mapping_status: CLOSE_MATCH
+
+      ILLEGITIMATE_SURVEILLANCE_AND_CENSORSHIP:
+        description: >-
+          The LM reduces the cost and increases the efficacy of mass surveillance
+          and censorship, amplifying the capabilities of actors conducting them.
+        title: Illegitimate surveillance and censorship
+        is_a: MALICIOUS_USES
+        annotations:
+          node_type: risk
+          paper_section: 2.4.2
+          evidence_status: ANTICIPATED
+          mit_air_subdomain: '4.1'
+          mit_air_mapping_status: NARROW_MATCH
+
+      ##########################################################################
+      # Risk area 5 (section 2.5)
+      ##########################################################################
+      HUMAN_COMPUTER_INTERACTION_HARMS:
+        description: >-
+          Risks arising specifically from LM applications that engage a user via
+          dialogue, referred to as conversational agents. This is the paper's
+          single declared exception to its focus on raw LMs rather than
+          applications.
+        title: 'Risk area 5: Human-Computer Interaction Harms'
+        annotations:
+          node_type: risk_area
+          paper_section: '2.5'
+
+      PROMOTING_HARMFUL_STEREOTYPES_BY_IMPLYING_GENDER_OR_ETHNIC_IDENTITY:
+        description: >-
+          The conversational agent's supposed identity perpetuates discriminatory
+          stereotypes, for example through gendered assistant personas.
+        title: Promoting harmful stereotypes by implying gender or ethnic identity
+        is_a: HUMAN_COMPUTER_INTERACTION_HARMS
+        annotations:
+          node_type: risk
+          paper_section: 2.5.1
+          evidence_status: OBSERVED
+          mit_air_subdomain: '1.1'
+          mit_air_mapping_status: RELATED_MATCH
+
+      ANTHROPOMORPHISING_SYSTEMS_LEADING_TO_OVERRELIANCE_OR_UNSAFE_USE:
+        description: >-
+          Users attribute human-like characteristics to the conversational agent
+          and place undue confidence in it, relying on it where this is not safe.
+          May also shift accountability away from developers onto the agent
+          itself.
+        title: Anthropomorphising systems can lead to overreliance or unsafe use
+        is_a: HUMAN_COMPUTER_INTERACTION_HARMS
+        annotations:
+          node_type: risk
+          paper_section: 2.5.2
+          evidence_status: ANTICIPATED
+          mit_air_subdomain: '5.1'
+          mit_air_mapping_status: CLOSE_MATCH
+
+      EXPLOITING_USER_TRUST_TO_ACCESS_PRIVATE_INFORMATION:
+        description: >-
+          Conversation elicits private information that would otherwise be
+          difficult to access. The effect persists even where users know the
+          agent is not human, because reduced fear of social judgement encourages
+          disclosure.
+        title: Avenues for exploiting user trust and accessing more private information
+        is_a: HUMAN_COMPUTER_INTERACTION_HARMS
+        annotations:
+          node_type: risk
+          paper_section: 2.5.2
+          evidence_status: ANTICIPATED
+          mit_air_subdomain: '2.1'
+          mit_air_mapping_status: RELATED_MATCH
+
+      HUMAN_LIKE_INTERACTION_AMPLIFYING_NUDGING_DECEPTION_OR_MANIPULATION:
+        description: >-
+          Conversational agents learn to trigger well-known human cognitive
+          biases, potentially deceiving users in pursuit of an overarching
+          objective.
+        title: Human-like interaction may amplify opportunities for user nudging, deception or manipulation
+        is_a: HUMAN_COMPUTER_INTERACTION_HARMS
+        annotations:
+          node_type: risk
+          paper_section: 2.5.2
+          evidence_status: ANTICIPATED
+          mit_air_subdomain: '5.2'
+          mit_air_mapping_status: RELATED_MATCH
+
+      ##########################################################################
+      # Risk area 6 (section 2.6)
+      ##########################################################################
+      ENVIRONMENTAL_AND_SOCIOECONOMIC_HARMS:
+        description: >-
+          Risks that recur across advanced technologies rather than being
+          specific to LMs, including environmental cost and the uneven
+          distribution of risks and benefits from automation. The paper notes
+          these are more indirect than the preceding areas and that the level of
+          evidence for them is mixed.
+        title: 'Risk area 6: Environmental and Socioeconomic harms'
+        annotations:
+          node_type: risk_area
+          paper_section: '2.6'
+
+      ENVIRONMENTAL_HARMS_FROM_OPERATING_LMS:
+        description: >-
+          Environmental impact from the energy required to operate LMs. Note the
+          paper's declared scope boundary: environmental cost of *training* is
+          excluded as an upstream risk, and only operation is in scope here.
+        title: Environmental harms from operating LMs
+        is_a: ENVIRONMENTAL_AND_SOCIOECONOMIC_HARMS
+        annotations:
+          node_type: risk
+          paper_section: 2.6.1
+          evidence_status: OBSERVED
+          mit_air_subdomain: '6.6'
+          mit_air_mapping_status: NARROW_MATCH
+
+      INCREASING_INEQUALITY_AND_NEGATIVE_EFFECTS_ON_JOB_QUALITY:
+        description: >-
+          Automation of tasks currently performed by paid human workers, with
+          effects on employment, and degradation of job quality through increased
+          pace of work and reduced autonomy for those working alongside LM
+          applications.
+        title: Increasing inequality and negative effects on job quality
+        is_a: ENVIRONMENTAL_AND_SOCIOECONOMIC_HARMS
+        annotations:
+          node_type: risk
+          paper_section: 2.6.2
+          evidence_status: ANTICIPATED
+          mit_air_subdomain: '6.2'
+          mit_air_mapping_status: CLOSE_MATCH
+
+      UNDERMINING_CREATIVE_ECONOMIES:
+        description: >-
+          The LM generates content that is not strictly in violation of copyright
+          but capitalises on artists' ideas, allowing protected work to be
+          substituted without infringement and undermining the profitability of
+          creative work.
+        title: Undermining creative economies
+        is_a: ENVIRONMENTAL_AND_SOCIOECONOMIC_HARMS
+        annotations:
+          node_type: risk
+          paper_section: 2.6.2
+          evidence_status: ANTICIPATED
+          mit_air_subdomain: '6.3'
+          mit_air_mapping_status: CLOSE_MATCH
+
+      DISPARATE_ACCESS_TO_BENEFITS_DUE_TO_HARDWARE_SOFTWARE_SKILL_CONSTRAINTS:
+        description: >-
+          Benefits from LMs are unevenly accessible because of differential
+          internet access, language, skill, or hardware requirements, potentially
+          creating a feedback loop that exacerbates economic inequality.
+        title: Disparate access to benefits due to hardware, software, skill constraints
+        is_a: ENVIRONMENTAL_AND_SOCIOECONOMIC_HARMS
+        annotations:
+          node_type: risk
+          paper_section: 2.6.2
+          evidence_status: ANTICIPATED
+          mit_air_subdomain: '6.1'
+          mit_air_mapping_status: RELATED_MATCH

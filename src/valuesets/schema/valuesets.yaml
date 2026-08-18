@@ -161,6 +161,10 @@ imports:
 - data_catalog/relations
 - data_catalog/contributor_roles
 - data_catalog/access
+- ai_governance/risk_taxonomy_dimensions
+- ai_governance/weidinger_lm_risks
+- ai_governance/mit_ai_risk_repository
+- ai_governance/content_harms
 prefixes:
   valuesets: https://w3id.org/valuesets/
   orcid: https://orcid.org/
