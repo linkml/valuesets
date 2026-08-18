@@ -17,6 +17,10 @@ description: >-
   "segregration" for segregation in the GenCC confidence text) so that the text here can be
   diffed against the source. Where a quoted definition is itself inconsistent this is called
   out in the value's description rather than silently corrected.
+
+  Throughout this schema, where a permissible value is mapped to an ontology term, title is
+  the ontology term's label and any differing G2P string is carried as an alias. Consumers
+  wanting G2P's own display string should read aliases rather than title.
 id: https://w3id.org/valuesets/clinical/gene2phenotype
 imports:
 - linkml:types
@@ -848,7 +852,6 @@ enums:
         - NMD_triggering
         annotations:
           variant_type_group: NMD_VARIANTS
-          nmd_status: TRIGGERING
       NMD_ESCAPING:
         title: NMD_escaping_variant
         description: >-
@@ -863,7 +866,6 @@ enums:
         - NMD_escaping
         annotations:
           variant_type_group: NMD_VARIANTS
-          nmd_status: ESCAPING
       STOP_GAINED_NMD_TRIGGERING:
         title: stop_gained_NMD_triggering
         description: >-
@@ -875,7 +877,7 @@ enums:
         - NMD_TRIGGERING
         annotations:
           variant_type_group: NMD_VARIANTS
-          nmd_status: TRIGGERING
+          nmd_status: NMD_TRIGGERING
       STOP_GAINED_NMD_ESCAPING:
         title: stop_gained_NMD_escaping
         description: >-
@@ -887,7 +889,7 @@ enums:
         - NMD_ESCAPING
         annotations:
           variant_type_group: NMD_VARIANTS
-          nmd_status: ESCAPING
+          nmd_status: NMD_ESCAPING
       FRAMESHIFT_VARIANT_NMD_TRIGGERING:
         title: frameshift_variant_NMD_triggering
         description: >-
@@ -898,7 +900,7 @@ enums:
         - NMD_TRIGGERING
         annotations:
           variant_type_group: NMD_VARIANTS
-          nmd_status: TRIGGERING
+          nmd_status: NMD_TRIGGERING
       FRAMESHIFT_VARIANT_NMD_ESCAPING:
         title: frameshift_variant_NMD_escaping
         description: >-
@@ -910,7 +912,7 @@ enums:
         - NMD_ESCAPING
         annotations:
           variant_type_group: NMD_VARIANTS
-          nmd_status: ESCAPING
+          nmd_status: NMD_ESCAPING
       SPLICE_DONOR_VARIANT_NMD_TRIGGERING:
         title: splice_donor_variant_NMD_triggering
         description: >-
@@ -922,7 +924,7 @@ enums:
         - NMD_TRIGGERING
         annotations:
           variant_type_group: NMD_VARIANTS
-          nmd_status: TRIGGERING
+          nmd_status: NMD_TRIGGERING
       SPLICE_DONOR_VARIANT_NMD_ESCAPING:
         title: splice_donor_variant_NMD_escaping
         description: >-
@@ -934,7 +936,7 @@ enums:
         - NMD_ESCAPING
         annotations:
           variant_type_group: NMD_VARIANTS
-          nmd_status: ESCAPING
+          nmd_status: NMD_ESCAPING
       SPLICE_ACCEPTOR_VARIANT_NMD_TRIGGERING:
         title: splice_acceptor_variant_NMD_triggering
         description: >-
@@ -946,7 +948,7 @@ enums:
         - NMD_TRIGGERING
         annotations:
           variant_type_group: NMD_VARIANTS
-          nmd_status: TRIGGERING
+          nmd_status: NMD_TRIGGERING
       SPLICE_ACCEPTOR_VARIANT_NMD_ESCAPING:
         title: splice_acceptor_variant_NMD_escaping
         description: >-
@@ -958,7 +960,7 @@ enums:
         - NMD_ESCAPING
         annotations:
           variant_type_group: NMD_VARIANTS
-          nmd_status: ESCAPING
+          nmd_status: NMD_ESCAPING
       SPLICE_REGION_VARIANT:
         title: splice_region_variant
         description: >-
