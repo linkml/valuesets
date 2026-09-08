@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://linkml.github.io/valuesets/elements/LicensingStageEnum/">
+        <link rel="canonical" href="https://linkml.github.io/valuesets/elements/g2p_variant_type/">
       
       
       
@@ -18,7 +18,7 @@
     
     
       
-        <title>Enum: LicensingStageEnum - valuesets</title>
+        <title>Slot: g2p_variant_type - valuesets</title>
       
     
     
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#enum-licensingstageenum" class="md-skip">
+        <a href="#slot-g2p_variant_type" class="md-skip">
           Skip to content
         </a>
       
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Enum: LicensingStageEnum
+              Slot: g2p_variant_type
             
           </span>
         </div>
@@ -625,18 +625,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#permissible-values" class="md-nav__link">
+  <a href="#properties" class="md-nav__link">
     <span class="md-ellipsis">
-      Permissible Values
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#slots" class="md-nav__link">
-    <span class="md-ellipsis">
-      Slots
+      Properties
     </span>
   </a>
   
@@ -663,6 +654,15 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mappings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mappings
+    </span>
+  </a>
   
 </li>
       
@@ -694,451 +694,49 @@
   
 
 
-<h1 id="enum-licensingstageenum">Enum: LicensingStageEnum</h1>
-<p><em>Nuclear facility licensing stages</em></p>
-<p>URI: <a href="https://w3id.org/valuesets/LicensingStageEnum">valuesets:LicensingStageEnum</a></p>
-<!-- bioportal-link -->
-<p><a href="https://bioportal.bioontology.org/ontologies/VALUESETS?p=classes&amp;conceptid=https%3A%2F%2Fw3id.org%2Fvaluesets%2FLicensingStageEnum">View in BioPortal</a></p>
-<h2 id="permissible-values">Permissible Values</h2>
-<!-- annotations-table -->
-<table>
-<thead>
-<tr>
-<th>Value</th>
-<th>Title</th>
-<th>Meaning</th>
-<th>Description</th>
-<th>Advantage</th>
-<th>Authorization</th>
-<th>Basis</th>
-<th>Completion</th>
-<th>Duration</th>
-<th>Economics</th>
-<th>Efficiency</th>
-<th>End State</th>
-<th>Extension</th>
-<th>Finality</th>
-<th>Flexibility</th>
-<th>Funding</th>
-<th>Milestone</th>
-<th>Oversight</th>
-<th>Release</th>
-<th>Renewal</th>
-<th>Requirements</th>
-<th>Review</th>
-<th>Schedule</th>
-<th>Scope</th>
-<th>Standardization</th>
-<th>Survey</th>
-<th>Testing</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>SITE_PERMIT</td>
-<td>Site Permit</td>
-<td></td>
-<td>Early site permit for nuclear facility</td>
-<td>reduced licensing risk</td>
-<td></td>
-<td></td>
-<td></td>
-<td>10-20 years typically</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>technology-neutral</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>site suitability evaluation</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>DESIGN_CERTIFICATION</td>
-<td>Design Certification</td>
-<td></td>
-<td>Certification of standardized reactor design</td>
-<td>reduced construction licensing time</td>
-<td></td>
-<td></td>
-<td></td>
-<td>15-20 years typically</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>reactor design approval</td>
-<td>enables multiple deployments</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>CONSTRUCTION_PERMIT</td>
-<td>Construction Permit</td>
-<td></td>
-<td>Authorization to begin nuclear facility construction</td>
-<td></td>
-<td>construction activities</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>major licensing milestone</td>
-<td>construction inspection program</td>
-<td></td>
-<td></td>
-<td>detailed design and safety analysis</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>OPERATING_LICENSE</td>
-<td>Operating License</td>
-<td></td>
-<td>Authorization for commercial reactor operation</td>
-<td></td>
-<td>power operation and fuel loading</td>
-<td></td>
-<td></td>
-<td>initially 40 years</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>possible for additional 20 years</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>extensive pre-operational testing</td>
-</tr>
-<tr>
-<td>LICENSE_RENEWAL</td>
-<td>License Renewal</td>
-<td></td>
-<td>Extension of operating license beyond initial term</td>
-<td></td>
-<td></td>
-<td>demonstrated safe operation</td>
-<td></td>
-<td></td>
-<td>enables continued operation</td>
-<td></td>
-<td></td>
-<td>additional 20 years typical</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>aging management program review</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>COMBINED_LICENSE</td>
-<td>Combined License (COL)</td>
-<td></td>
-<td>Combined construction and operating license</td>
-<td>single licensing process</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>streamlined licensing approach</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>complete design and safety analysis</td>
-<td></td>
-<td></td>
-<td>construction and operation authorization</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>DECOMMISSIONING_PLAN</td>
-<td>Decommissioning Plan Approval</td>
-<td></td>
-<td>Approval of facility decommissioning plan</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>final site condition</td>
-<td></td>
-<td></td>
-<td></td>
-<td>decommissioning funding assurance</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>decommissioning timeline</td>
-<td>facility dismantlement plan</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>LICENSE_TERMINATION</td>
-<td>License Termination</td>
-<td></td>
-<td>Final termination of nuclear facility license</td>
-<td></td>
-<td></td>
-<td></td>
-<td>decommissioning completion</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>end of regulatory oversight</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>site release for unrestricted use</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>final radiological survey</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h2 id="slots">Slots</h2>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="../licensing_stage/">licensing_stage</a></td>
-<td>Nuclear facility licensing stage</td>
-</tr>
-</tbody>
-</table>
+<h1 id="slot-g2p_variant_type">Slot: g2p_variant_type</h1>
+<p><em>The type of variant associated with a curated gene-disease pair</em></p>
+<p>URI: <a href="https://w3id.org/valuesets/g2p_variant_type">valuesets:g2p_variant_type</a>
+Alias: g2p_variant_type</p>
+<!-- no inheritance hierarchy -->
+
+<h2 id="properties">Properties</h2>
+<ul>
+<li>Range: <a href="../G2PVariantType/">G2PVariantType</a></li>
+</ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
 <li>from schema: https://w3id.org/valuesets</li>
 </ul>
+<h2 id="mappings">Mappings</h2>
+<table>
+<thead>
+<tr>
+<th>Mapping Type</th>
+<th>Mapped Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>self</td>
+<td>valuesets:g2p_variant_type</td>
+</tr>
+<tr>
+<td>native</td>
+<td>valuesets:g2p_variant_type</td>
+</tr>
+</tbody>
+</table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
-<pre><code class="language-yaml">name: LicensingStageEnum
-instantiates:
-- valuesets_meta:ValueSetEnumDefinition
-description: Nuclear facility licensing stages
-title: Licensing Stage
+<pre><code class="language-yaml">name: g2p_variant_type
+description: The type of variant associated with a curated gene-disease pair
 from_schema: https://w3id.org/valuesets
-contributors:
-- orcid:0000-0002-6601-2165
-- https://github.com/anthropics/claude-code
-status: DRAFT
 rank: 1000
-permissible_values:
-  SITE_PERMIT:
-    text: SITE_PERMIT
-    description: Early site permit for nuclear facility
-    annotations:
-      scope:
-        tag: scope
-        value: site suitability evaluation
-      duration:
-        tag: duration
-        value: 10-20 years typically
-      flexibility:
-        tag: flexibility
-        value: technology-neutral
-      advantage:
-        tag: advantage
-        value: reduced licensing risk
-    title: Site Permit
-  DESIGN_CERTIFICATION:
-    text: DESIGN_CERTIFICATION
-    description: Certification of standardized reactor design
-    annotations:
-      scope:
-        tag: scope
-        value: reactor design approval
-      duration:
-        tag: duration
-        value: 15-20 years typically
-      advantage:
-        tag: advantage
-        value: reduced construction licensing time
-      standardization:
-        tag: standardization
-        value: enables multiple deployments
-    title: Design Certification
-  CONSTRUCTION_PERMIT:
-    text: CONSTRUCTION_PERMIT
-    description: Authorization to begin nuclear facility construction
-    annotations:
-      authorization:
-        tag: authorization
-        value: construction activities
-      requirements:
-        tag: requirements
-        value: detailed design and safety analysis
-      oversight:
-        tag: oversight
-        value: construction inspection program
-      milestone:
-        tag: milestone
-        value: major licensing milestone
-    title: Construction Permit
-  OPERATING_LICENSE:
-    text: OPERATING_LICENSE
-    description: Authorization for commercial reactor operation
-    annotations:
-      authorization:
-        tag: authorization
-        value: power operation and fuel loading
-      duration:
-        tag: duration
-        value: initially 40 years
-      renewal:
-        tag: renewal
-        value: possible for additional 20 years
-      testing:
-        tag: testing
-        value: extensive pre-operational testing
-    title: Operating License
-  LICENSE_RENEWAL:
-    text: LICENSE_RENEWAL
-    description: Extension of operating license beyond initial term
-    annotations:
-      extension:
-        tag: extension
-        value: additional 20 years typical
-      review:
-        tag: review
-        value: aging management program review
-      basis:
-        tag: basis
-        value: demonstrated safe operation
-      economics:
-        tag: economics
-        value: enables continued operation
-    title: License Renewal
-  COMBINED_LICENSE:
-    text: COMBINED_LICENSE
-    description: Combined construction and operating license
-    annotations:
-      scope:
-        tag: scope
-        value: construction and operation authorization
-      advantage:
-        tag: advantage
-        value: single licensing process
-      requirements:
-        tag: requirements
-        value: complete design and safety analysis
-      efficiency:
-        tag: efficiency
-        value: streamlined licensing approach
-    title: Combined License (COL)
-  DECOMMISSIONING_PLAN:
-    text: DECOMMISSIONING_PLAN
-    description: Approval of facility decommissioning plan
-    annotations:
-      scope:
-        tag: scope
-        value: facility dismantlement plan
-      funding:
-        tag: funding
-        value: decommissioning funding assurance
-      schedule:
-        tag: schedule
-        value: decommissioning timeline
-      end_state:
-        tag: end_state
-        value: final site condition
-    title: Decommissioning Plan Approval
-  LICENSE_TERMINATION:
-    text: LICENSE_TERMINATION
-    description: Final termination of nuclear facility license
-    annotations:
-      completion:
-        tag: completion
-        value: decommissioning completion
-      survey:
-        tag: survey
-        value: final radiological survey
-      release:
-        tag: release
-        value: site release for unrestricted use
-      finality:
-        tag: finality
-        value: end of regulatory oversight
-    title: License Termination
+alias: g2p_variant_type
+range: G2PVariantType
 
 </code></pre>
 

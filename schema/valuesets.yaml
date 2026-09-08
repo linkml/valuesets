@@ -122,6 +122,7 @@ imports:
 - medical/pediatric_oncology/staging/neuroblastoma
 - clinical/nih_demographics
 - clinical/phenopackets
+- clinical/gene2phenotype
 - bioprocessing/scale_up
 - bioprocessing/biomanufacturing
 - process_engineering/unit_operations
@@ -54306,6 +54307,1397 @@ enums:
         description: Treatment response unknown
         meaning: NCIT:C17998
         title: Unknown
+  G2PConfidenceCategory:
+    name: G2PConfidenceCategory
+    definition_uri: https://w3id.org/valuesets/G2PConfidenceCategory
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    annotations:
+      stewards:
+        tag: stewards
+        value: https://www.ebi.ac.uk/gene2phenotype
+      publishers:
+        tag: publishers
+        value: https://www.ebi.ac.uk/gene2phenotype
+      source:
+        tag: source
+        value: https://www.ebi.ac.uk/gene2phenotype/about/terminology#g2p-confidence-section
+      standard:
+        tag: standard
+        value: GenCC gene-disease validity classification
+    description: The level of confidence that a gene-disease association is real,
+      as asserted by G2P curators. G2P uses the GenCC gene-disease validity classification
+      terms. Operationally several groups use definitive, strong and moderate for
+      clinical reporting; limited, disputed and refuted are not used for clinical
+      reporting. GenCC classification identifiers are recorded in the gencc_classification_id
+      annotation rather than as meaning:, because the GENCC prefix is not registered
+      in bioregistry, OLS or the OBO PURL system and so cannot be resolved; the identifiers
+      were taken from GenCC's own submissions export.
+    title: G2P Confidence Category
+    from_schema: https://w3id.org/valuesets/clinical/gene2phenotype
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: STANDARD
+    permissible_values:
+      DEFINITIVE:
+        text: DEFINITIVE
+        description: The role of this gene in this particular disease has been repeatedly
+          demonstrated in both the research and clinical diagnostic settings, and
+          has been upheld over time (at least 2 independent publication over 3 years'
+          time). No convincing evidence has emerged that contradicts the role of the
+          gene in the specified disease. (previously labelled as confirmed) The strength
+          of evidence within publications as well as their number and publication
+          dates is taken into account. In practice, this usually means at least 4
+          publications over 5 years. Typically this will also include convincing bioinformatic
+          or functional evidence of causation, making it very unlikely that this gene-disease
+          association would ever be refuted.
+        annotations:
+          gencc_classification_id:
+            tag: gencc_classification_id
+            value: GENCC:100001
+          clinical_reporting:
+            tag: clinical_reporting
+            value: 'true'
+        title: definitive
+        aliases:
+        - confirmed
+      STRONG:
+        text: STRONG
+        description: The role of this gene as a monogenic cause of disease has been
+          repeatedly and independently demonstrated providing very strong convincing
+          evidence in humans and no conflicting evidence for this gene's role in this
+          disease. (previously labelled as probable).
+        annotations:
+          gencc_classification_id:
+            tag: gencc_classification_id
+            value: GENCC:100002
+          clinical_reporting:
+            tag: clinical_reporting
+            value: 'true'
+        title: strong
+        aliases:
+        - probable
+      MODERATE:
+        text: MODERATE
+        description: There is moderate evidence in humans to support a casual role
+          for this gene in this disease with no contradictory evidence. The body of
+          evidence is not large (e.g possibly only one key paper) but appears convincing
+          enough that the gene-disease pair is likely to be validated with additional
+          evidence in the near future.
+        annotations:
+          gencc_classification_id:
+            tag: gencc_classification_id
+            value: GENCC:100003
+          clinical_reporting:
+            tag: clinical_reporting
+            value: 'true'
+        title: moderate
+      LIMITED:
+        text: LIMITED
+        description: Little human evidence exists to support a casual role for this
+          gene in this disease, but not all evidence has been refuted. For example,
+          there may be a collection of rare missense variants in humans but without
+          convincing functional impact, segregration data that could either arise
+          by chance (e.g across one or two meioses) or does not implicate a single
+          gene, or functional data without direct recapitulation of the phenotype.
+          Overall, the body of evidence does not meet contemporary criteria for claiming
+          a valid association with disease. The majority are probably false associations.
+          (previously labelled as possible).
+        annotations:
+          gencc_classification_id:
+            tag: gencc_classification_id
+            value: GENCC:100004
+          clinical_reporting:
+            tag: clinical_reporting
+            value: 'false'
+        title: limited
+        aliases:
+        - possible
+      DISPUTED:
+        text: DISPUTED
+        description: Although evidence has been reported, other evidence of equal
+          weight disputes the claim.
+        annotations:
+          gencc_classification_id:
+            tag: gencc_classification_id
+            value: GENCC:100005
+          clinical_reporting:
+            tag: clinical_reporting
+            value: 'false'
+        title: disputed
+      REFUTED:
+        text: REFUTED
+        description: There has been an assertion of a gene-disease association in
+          the literature, but new valid evidence has arisen that refutes the entire
+          original body of evidence.
+        annotations:
+          gencc_classification_id:
+            tag: gencc_classification_id
+            value: GENCC:100006
+          clinical_reporting:
+            tag: clinical_reporting
+            value: 'false'
+        title: refuted
+  G2PAllelicRequirement:
+    name: G2PAllelicRequirement
+    definition_uri: https://w3id.org/valuesets/G2PAllelicRequirement
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    annotations:
+      stewards:
+        tag: stewards
+        value: https://www.ebi.ac.uk/gene2phenotype
+      publishers:
+        tag: publishers
+        value: https://www.ebi.ac.uk/gene2phenotype
+      source:
+        tag: source
+        value: https://www.ebi.ac.uk/gene2phenotype/about/terminology#allelic-requirement-section
+      standard:
+        tag: standard
+        value: HPO mode of inheritance
+    description: 'The genotype required at the locus for the disease to manifest,
+      also referred to in G2P as the genotype. HPO mode of inheritance (MOI) terminology
+      is used; G2P uses synonyms of the MOI terms as many of the disorders described
+      are de novo.
+
+      The nine values are G2P''s published genotype list, taken verbatim from the
+      API the terminology page itself calls (GET /gene2phenotype/api/attribs/, key
+      "genotype"), which includes the bare monoallelic_X alongside monoallelic_X_hemizygous
+      and monoallelic_X_heterozygous.
+
+      All nine G2P genotype strings are recorded by HPO as oio:hasExactSynonym of
+      the term mapped below (verified against the HPO release directly; note that
+      the OLS obo_synonym field under-reports these, listing only synonyms that carry
+      an xref). That exact-synonym correspondence is what makes these mappings unambiguous.
+
+      By convention in this enum, title is the HPO term label and the G2P string is
+      carried as an alias, matching the pv-mapping guidance and clinical/genetics.yaml;
+      consumers wanting G2P''s own display string should read aliases.'
+    title: G2P Allelic Requirement
+    from_schema: https://w3id.org/valuesets/clinical/gene2phenotype
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: STANDARD
+    permissible_values:
+      MONOALLELIC_AUTOSOMAL:
+        text: MONOALLELIC_AUTOSOMAL
+        description: Plausible disease-causing mutations on an autosomal chromosome
+          identified on one allele in all or the vast majority of with specific disorder.
+        meaning: HP:0000006
+        title: Autosomal dominant inheritance
+        aliases:
+        - monoallelic_autosomal
+      BIALLELIC_AUTOSOMAL:
+        text: BIALLELIC_AUTOSOMAL
+        description: Plausible disease-causing homozygous or compound heterozygous
+          mutations identified on both alleles in the autosomal chromosome.
+        meaning: HP:0000007
+        title: Autosomal recessive inheritance
+        aliases:
+        - biallelic_autosomal
+      MONOALLELIC_X:
+        text: MONOALLELIC_X
+        description: Plausible disease-causing mutations identified on the X chromosome.
+        meaning: HP:0001417
+        title: X-linked inheritance
+        aliases:
+        - monoallelic_X
+      MONOALLELIC_X_HEMIZYGOUS:
+        text: MONOALLELIC_X_HEMIZYGOUS
+        description: Plausible disease-causing mutations identified on the X chromosome
+          in a male as a cause of a specific disease, the disorder being predominantly
+          recessive in female carriers.
+        meaning: HP:0001419
+        title: X-linked recessive inheritance
+        aliases:
+        - monoallelic_X_hemizygous
+      MONOALLELIC_X_HETEROZYGOUS:
+        text: MONOALLELIC_X_HETEROZYGOUS
+        description: Plausible disease-causing mutations identified in one copy of
+          the X chromosome in females as a cause of a specific disease, include disorders
+          where heterozygous females and hemizygous males are similarly affected e.g
+          SMC1A mutations.
+        meaning: HP:0001423
+        title: X-linked dominant inheritance
+        aliases:
+        - monoallelic_X_heterozygous
+      MONOALLELIC_Y_HEMIZYGOUS:
+        text: MONOALLELIC_Y_HEMIZYGOUS
+        description: Plausible disease-causing mutations identified in an allele found
+          in the Y chromosome. The Y chromosome is passed from father to son as this
+          mutation may affect only males.
+        meaning: HP:0001450
+        title: Y-linked inheritance
+        aliases:
+        - monoallelic_Y_hemizygous
+      MONOALLELIC_PAR:
+        text: MONOALLELIC_PAR
+        description: Plausible disease-causing mutations identified in an allele found
+          in the pseudoautosomal regions. Inheritance is not strictly sex-linked.
+        meaning: HP:0034340
+        title: Pseudoautosomal dominant inheritance
+        aliases:
+        - monoallelic_PAR
+      BIALLELIC_PAR:
+        text: BIALLELIC_PAR
+        description: Plausible disease-causing homozygous or compound heterozygous
+          mutations identified on both alleles found in the pseudoautosomal regions.
+          Inheritance is not strictly sex-linked.
+        meaning: HP:0034341
+        title: Pseudoautosomal recessive inheritance
+        aliases:
+        - biallelic_PAR
+      MITOCHONDRIAL:
+        text: MITOCHONDRIAL
+        description: Plausible disease-causing mutations identified on mitochondrial
+          DNA where homoplasmy or heteroplasmy are associated with a specific disorder.
+        meaning: HP:0001427
+        title: Mitochondrial inheritance
+        aliases:
+        - mitochondrial
+  G2PCrossCuttingModifier:
+    name: G2PCrossCuttingModifier
+    definition_uri: https://w3id.org/valuesets/G2PCrossCuttingModifier
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    annotations:
+      stewards:
+        tag: stewards
+        value: https://www.ebi.ac.uk/gene2phenotype
+      publishers:
+        tag: publishers
+        value: https://www.ebi.ac.uk/gene2phenotype
+      source:
+        tag: source
+        value: https://www.ebi.ac.uk/gene2phenotype/about/terminology#cross-cutting-modifier-section
+      standard:
+        tag: standard
+        value: HPO inheritance qualifier
+    description: Additional qualifiers applied to the allelic requirement of a G2P
+      gene-disease association. HPO inheritance qualifier terms (HP:0034335) are used
+      where available. Potential secondary finding and restricted mutation set are
+      G2P-specific and have no HPO equivalent.
+    title: G2P Cross Cutting Modifier
+    from_schema: https://w3id.org/valuesets/clinical/gene2phenotype
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: STANDARD
+    permissible_values:
+      DISPLAYS_ANTICIPATION:
+        text: DISPLAYS_ANTICIPATION
+        description: A phenomenon in which the severity of a disorder increases, or
+          the age of onset decreases, as the disorder is passed from one generation
+          to the next, typically due to expansion of a repeat sequence. For example,
+          Myotonic Dystrophy is caused by triplet repeat expansion in the DMPK gene.
+        meaning: HP:0003743
+        title: Genetic anticipation
+        aliases:
+        - displays anticipation
+      IMPRINTED_REGION:
+        text: IMPRINTED_REGION
+        description: Requires that the abnormal allele be paternal or maternal in
+          origin, depending on the disease-gene relationship. Imprinting refers to
+          a normal developmental process in which either the paternal or maternal
+          allele is inactivated, depending on the specific locus, thus leading to
+          expression from only one copy of the gene. Disease typically manifests when
+          a deleterious variant is inherited from a parent whose copy of the gene
+          would normally be expressed, but not when a deleterious variant is inherited
+          from a parent whose copy of the gene would normally be inactivated.
+        meaning: HP:0034338
+        title: Imprinted
+        aliases:
+        - imprinted region
+      TYPICALLY_DE_NOVO:
+        text: TYPICALLY_DE_NOVO
+        description: 'Plausible disease causing mutations that occur post zygotically
+          (formation of gametes). Note that this G2P wording is internally inconsistent:
+          post-zygotic events are somatic, which is what TYPICALLY_MOSAIC describes,
+          whereas gametogenesis is pre-zygotic. The mapped HPO term HP:0025352 carries
+          the intended sense, defining conditions that are exclusively or predominantly
+          observed to display de novo variants.'
+        meaning: HP:0025352
+        title: Typically de novo
+        aliases:
+        - typically de novo
+      TYPICALLY_MOSAIC:
+        text: TYPICALLY_MOSAIC
+        description: Plausible disease causing mutations identified on one allele
+          in a proportion of cells with the others being wild-type.
+        meaning: HP:0001442
+        title: Typified by somatic mosaicism
+        aliases:
+        - typically mosaic
+      TYPIFIED_BY_INCOMPLETE_PENETRANCE:
+        text: TYPIFIED_BY_INCOMPLETE_PENETRANCE
+        description: A condition in which not all individuals carrying the disease-causing
+          genotype manifest the associated phenotype.
+        meaning: HP:0003829
+        title: Typified by incomplete penetrance
+        aliases:
+        - typified by incomplete penetrance
+      POTENTIAL_SECONDARY_FINDING:
+        text: POTENTIAL_SECONDARY_FINDING
+        description: This includes ACMG Secondary Findings and/or late onset conditions.
+        title: potential secondary finding
+      RESTRICTED_MUTATION_SET:
+        text: RESTRICTED_MUTATION_SET
+        description: This is used when a disease is associated with a single recurrent
+          variant or a set of variants only found in a particular protein domain.
+        title: restricted mutation set
+  G2PMolecularMechanism:
+    name: G2PMolecularMechanism
+    definition_uri: https://w3id.org/valuesets/G2PMolecularMechanism
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    annotations:
+      stewards:
+        tag: stewards
+        value: https://www.ebi.ac.uk/gene2phenotype
+      publishers:
+        tag: publishers
+        value: https://www.ebi.ac.uk/gene2phenotype
+      source:
+        tag: source
+        value: https://www.ebi.ac.uk/gene2phenotype/about/terminology#molecular-mechanism-section
+      reference:
+        tag: reference
+        value: PMID:35395171
+    description: The mechanism of disease derived from the available evidence, following
+      the definitions of Backwell and Marsh (PMID:35395171). These mechanisms describe
+      a gene-disease association rather than an individual variant, so the Sequence
+      Ontology variant terms are recorded as close mappings rather than exact meanings.
+    title: G2P Molecular Mechanism
+    from_schema: https://w3id.org/valuesets/clinical/gene2phenotype
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: STANDARD
+    permissible_values:
+      LOSS_OF_FUNCTION:
+        text: LOSS_OF_FUNCTION
+        description: Loss-of-function variants involve a loss of the normal biological
+          function of a protein. Often these are nonsense or frameshift mutations
+          that introduce premature stop codons. Due to nonsense-mediated decay of
+          the resulting mRNAs, most premature stop codons will result in no protein
+          being produced, rather than a truncated protein. However, there are also
+          many examples of loss-of-function variants that change the amino acid sequence
+          and result in non-functional protein products. These mutations can cause
+          a complete loss of function (amorphic), analogous to a protein null mutation,
+          or only a partial loss of function (hypomorphic). May also include variants
+          in regulatory regions.
+        title: loss of function
+        aliases:
+        - loss_of_function_variant
+        close_mappings:
+        - SO:0002054
+      GAIN_OF_FUNCTION:
+        text: GAIN_OF_FUNCTION
+        description: Gain-of-function variants have their phenotypic effect because
+          the mutant protein does something different than the wild-type protein.
+          Often, these variants cause disease by increasing protein activity (hypermorphic)
+          or introducing a completely new function (neomorphic), but the specific
+          molecular mechanisms underlying gain-of-function mutations can be complex.
+          May also include variants in regulatory regions.
+        title: gain of function
+        aliases:
+        - gain_of_function_variant
+        close_mappings:
+        - SO:0002053
+      DOMINANT_NEGATIVE:
+        text: DOMINANT_NEGATIVE
+        description: Dominant-negative variants involve the mutant protein directly
+          or indirectly blocking the normal biological function of the wild-type protein
+          (antimorphic). They can thus cause a disproportionate (>50%) loss of function,
+          even though only half of the protein is mutated eg. heterozygous variants
+          in COL1A1 that disrupt the triple collagen helix.
+        title: dominant negative
+        aliases:
+        - antimorphic
+        - dominant_negative_variant
+        close_mappings:
+        - SO:0002052
+      UNDETERMINED_NON_LOSS_OF_FUNCTION:
+        text: UNDETERMINED_NON_LOSS_OF_FUNCTION
+        description: Very often it is difficult to distinguish between dominant negative
+          and gain of function, but it is clearly a non-loss-of-function mechanism
+          (e.g. from co-expression experiments showing a damaging effect from the
+          mutant allele).
+        title: undetermined non-loss-of-function
+        aliases:
+        - undetermined non-loss-of-function
+      UNDETERMINED:
+        text: UNDETERMINED
+        description: Not known.
+        title: undetermined
+  G2PMolecularMechanismSynopsis:
+    name: G2PMolecularMechanismSynopsis
+    definition_uri: https://w3id.org/valuesets/G2PMolecularMechanismSynopsis
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    annotations:
+      stewards:
+        tag: stewards
+        value: https://www.ebi.ac.uk/gene2phenotype
+      publishers:
+        tag: publishers
+        value: https://www.ebi.ac.uk/gene2phenotype
+      source:
+        tag: source
+        value: https://www.ebi.ac.uk/gene2phenotype/about/terminology#mechanism-synopsis-section
+      reference:
+        tag: reference
+        value: PMID:35395171
+    description: A more detailed description of the molecular mechanism of a G2P gene-disease
+      association, following the definitions of Backwell and Marsh (PMID:35395171).
+      A synopsis refines the higher-level molecular mechanism; more than one synopsis
+      may apply to a single gene-disease association.
+    title: G2P Molecular Mechanism Synopsis
+    from_schema: https://w3id.org/valuesets/clinical/gene2phenotype
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: STANDARD
+    permissible_values:
+      DESTABILISING_LOF:
+        text: DESTABILISING_LOF
+        description: A process whereby a missense change destabilises the protein
+          structure resulting in loss of function.
+        annotations:
+          parent_mechanism:
+            tag: parent_mechanism
+            value: LOSS_OF_FUNCTION
+        title: destabilising LOF
+      INTERACTION_DISRUPTING_LOF:
+        text: INTERACTION_DISRUPTING_LOF
+        description: A process whereby a variant allele disrupts interaction resulting
+          in loss of function, for example a change in an interaction site.
+        annotations:
+          parent_mechanism:
+            tag: parent_mechanism
+            value: LOSS_OF_FUNCTION
+        title: interaction-disrupting LOF
+      LOSS_OF_ACTIVITY_LOF:
+        text: LOSS_OF_ACTIVITY_LOF
+        description: A process whereby a variant allele disrupts activity resulting
+          in loss of function, for example a change in an active site.
+        annotations:
+          parent_mechanism:
+            tag: parent_mechanism
+            value: LOSS_OF_FUNCTION
+        title: loss of activity LOF
+      LOF_DUE_TO_PROTEIN_MISLOCALISATION:
+        text: LOF_DUE_TO_PROTEIN_MISLOCALISATION
+        description: A loss of function caused by mislocalisation of a protein, rather
+          than direct disruption of its structure or function.
+        annotations:
+          parent_mechanism:
+            tag: parent_mechanism
+            value: LOSS_OF_FUNCTION
+        title: LOF due to protein mislocalisation
+      ASSEMBLY_MEDIATED_DOMINANT_NEGATIVE:
+        text: ASSEMBLY_MEDIATED_DOMINANT_NEGATIVE
+        description: A protein change which does not prevent coassembly into a complex
+          with wild-type subunits but results in poisoning the activity of the hybrid
+          complex, causing a disproportionate loss of function.
+        annotations:
+          parent_mechanism:
+            tag: parent_mechanism
+            value: DOMINANT_NEGATIVE
+        title: assembly-mediated dominant negative
+      COMPETITIVE_DOMINANT_NEGATIVE:
+        text: COMPETITIVE_DOMINANT_NEGATIVE
+        description: A process whereby the novel protein disrupts specific interactions
+          by competing with wild-type protein, thus having a dominant-negative effect.
+        annotations:
+          parent_mechanism:
+            tag: parent_mechanism
+            value: DOMINANT_NEGATIVE
+        title: competitive dominant-negative
+      ASSEMBLY_MEDIATED_GOF:
+        text: ASSEMBLY_MEDIATED_GOF
+        description: A process whereby incorporation of a mutant subunit into a protein
+          complex leads to a gain of function, for example through constitutive activation
+          of a channel.
+        annotations:
+          parent_mechanism:
+            tag: parent_mechanism
+            value: GAIN_OF_FUNCTION
+        title: assembly-mediated GOF
+      LOCAL_LOF_LEADING_TO_OVERALL_GOF:
+        text: LOCAL_LOF_LEADING_TO_OVERALL_GOF
+        description: A gain of function caused by the localised loss of a specific
+          function within a protein, for example binding of a regulatory domain is
+          disrupted but enzymatic activity is retained.
+        annotations:
+          parent_mechanism:
+            tag: parent_mechanism
+            value: GAIN_OF_FUNCTION
+        title: local LOF leading to overall GOF
+      AGGREGATION:
+        text: AGGREGATION
+        description: A process by which the variant allele causes aggregation usually
+          causing toxic gain of function, for example misfolded proteins self-assembling
+          into large aggregates or RNA binding protein gelation.
+        annotations:
+          parent_mechanism:
+            tag: parent_mechanism
+            value: GAIN_OF_FUNCTION
+        title: aggregation
+      OTHER_GOF:
+        text: OTHER_GOF
+        description: A gain of function process other than local loss of function
+          or assembly mediated, for example a mutation in an active site which changes
+          histone binding causing a novel function.
+        annotations:
+          parent_mechanism:
+            tag: parent_mechanism
+            value: GAIN_OF_FUNCTION
+        title: other GOF
+  G2PMolecularMechanismSupport:
+    name: G2PMolecularMechanismSupport
+    definition_uri: https://w3id.org/valuesets/G2PMolecularMechanismSupport
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    annotations:
+      stewards:
+        tag: stewards
+        value: https://www.ebi.ac.uk/gene2phenotype
+      publishers:
+        tag: publishers
+        value: https://www.ebi.ac.uk/gene2phenotype
+      source:
+        tag: source
+        value: https://www.ebi.ac.uk/gene2phenotype/about/terminology#molecular-mechanism-section
+    description: Whether the molecular mechanism recorded for a G2P gene-disease association
+      is directly supported by reported evidence, or inferred by the curator.
+    title: G2P Molecular Mechanism Support
+    from_schema: https://w3id.org/valuesets/clinical/gene2phenotype
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: STANDARD
+    permissible_values:
+      EVIDENCE:
+        text: EVIDENCE
+        description: The molecular mechanism is directly supported by experimental
+          evidence reported in a publication attached to the record.
+        title: evidence
+      INFERRED:
+        text: INFERRED
+        description: The molecular mechanism is inferred by the curator rather than
+          directly evidenced in the attached publications.
+        title: inferred
+  G2PMechanismEvidenceCategory:
+    name: G2PMechanismEvidenceCategory
+    definition_uri: https://w3id.org/valuesets/G2PMechanismEvidenceCategory
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    annotations:
+      stewards:
+        tag: stewards
+        value: https://www.ebi.ac.uk/gene2phenotype
+      publishers:
+        tag: publishers
+        value: https://www.ebi.ac.uk/gene2phenotype
+      source:
+        tag: source
+        value: https://www.ebi.ac.uk/gene2phenotype/about/terminology#mechanism-evidence-section
+      standard:
+        tag: standard
+        value: ClinGen gene-disease validity SOP Experimental Evidence Summary Matrix
+    description: The broad category of experimental evidence supporting a molecular
+      mechanism in G2P. G2P evidence classifications reuse terms from the ClinGen
+      gene-disease validity SOP Experimental Evidence Summary Matrix.
+    title: G2P Mechanism Evidence Category
+    from_schema: https://w3id.org/valuesets/clinical/gene2phenotype
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: STANDARD
+    permissible_values:
+      FUNCTION:
+        text: FUNCTION
+        description: Evidence about the biochemical function, expression or interactions
+          of the gene product.
+        title: function
+      FUNCTIONAL_ALTERATION:
+        text: FUNCTIONAL_ALTERATION
+        description: Evidence from cells in which the function of the gene has been
+          disrupted, showing a phenotype consistent with the human disease process.
+        title: functional alteration
+      MODELS:
+        text: MODELS
+        description: Evidence from a cell culture model or non-human model organism
+          with a disrupted copy of the gene.
+        title: models
+      RESCUE:
+        text: RESCUE
+        description: Evidence that the phenotype can be rescued by restoring the wild-type
+          gene or gene product.
+        title: rescue
+  G2PFunctionEvidence:
+    name: G2PFunctionEvidence
+    definition_uri: https://w3id.org/valuesets/G2PFunctionEvidence
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    annotations:
+      stewards:
+        tag: stewards
+        value: https://www.ebi.ac.uk/gene2phenotype
+      publishers:
+        tag: publishers
+        value: https://www.ebi.ac.uk/gene2phenotype
+      source:
+        tag: source
+        value: https://www.ebi.ac.uk/gene2phenotype/about/terminology#mechanism-evidence-section
+    description: Types of evidence in the function category of the G2P molecular mechanism
+      evidence classification.
+    title: G2P Function Evidence
+    from_schema: https://w3id.org/valuesets/clinical/gene2phenotype
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: STANDARD
+    permissible_values:
+      BIOCHEMICAL:
+        text: BIOCHEMICAL
+        description: 'Evidence showing the gene product performs a biochemical function:
+          (A) shared with other known genes in the disease of interest, or (B) consistent
+          with the phenotype.'
+        title: biochemical
+      PROTEIN_INTERACTION:
+        text: PROTEIN_INTERACTION
+        description: Evidence showing the gene product interacts with proteins previously
+          implicated in the disease of interest.
+        title: protein interaction
+      PROTEIN_EXPRESSION:
+        text: PROTEIN_EXPRESSION
+        description: Evidence showing the gene is expressed in tissues relevant to
+          the disease of interest and/or is altered in expression in patients who
+          have the disease.
+        title: protein expression
+      IN_SILICO_MODELLING:
+        text: IN_SILICO_MODELLING
+        description: Evidence generated using computer simulations and models predicting
+          the functional impact of relevant gene-specific variants. These models can
+          predict protein structure changes, disruption of protein interactions, or
+          changes in gene and/or protein expression.
+        title: in silico modelling
+  G2PFunctionalAlterationEvidence:
+    name: G2PFunctionalAlterationEvidence
+    definition_uri: https://w3id.org/valuesets/G2PFunctionalAlterationEvidence
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    annotations:
+      stewards:
+        tag: stewards
+        value: https://www.ebi.ac.uk/gene2phenotype
+      publishers:
+        tag: publishers
+        value: https://www.ebi.ac.uk/gene2phenotype
+      source:
+        tag: source
+        value: https://www.ebi.ac.uk/gene2phenotype/about/terminology#mechanism-evidence-section
+    description: Types of evidence in the functional alteration category of the G2P
+      molecular mechanism evidence classification, distinguished by whether the cells
+      came from an affected individual.
+    title: G2P Functional Alteration Evidence
+    from_schema: https://w3id.org/valuesets/clinical/gene2phenotype
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: STANDARD
+    permissible_values:
+      PATIENT_CELLS:
+        text: PATIENT_CELLS
+        description: Evidence showing that cultured patient cells, in which the function
+          of the gene has been disrupted, have a phenotype that is consistent with
+          the human disease process.
+        title: patient cells
+      NON_PATIENT_CELLS:
+        text: NON_PATIENT_CELLS
+        description: Evidence showing that cultured non-patient cells, in which the
+          function of the gene has been disrupted, have a phenotype that is consistent
+          with the human disease process.
+        title: non patient cells
+  G2PModelsEvidence:
+    name: G2PModelsEvidence
+    definition_uri: https://w3id.org/valuesets/G2PModelsEvidence
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    annotations:
+      stewards:
+        tag: stewards
+        value: https://www.ebi.ac.uk/gene2phenotype
+      publishers:
+        tag: publishers
+        value: https://www.ebi.ac.uk/gene2phenotype
+      source:
+        tag: source
+        value: https://www.ebi.ac.uk/gene2phenotype/about/terminology#mechanism-evidence-section
+    description: Types of evidence in the models category of the G2P molecular mechanism
+      evidence classification.
+    title: G2P Models Evidence
+    from_schema: https://w3id.org/valuesets/clinical/gene2phenotype
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: STANDARD
+    permissible_values:
+      CELL_CULTURE_MODEL:
+        text: CELL_CULTURE_MODEL
+        description: A cell culture model with a disrupted copy of the gene shows
+          a phenotype consistent with the human disease state.
+        title: cell culture model
+      NON_HUMAN_MODEL_ORGANISM:
+        text: NON_HUMAN_MODEL_ORGANISM
+        description: A non-human model organism with a disrupted copy of the gene
+          shows a phenotype consistent with the human disease state.
+        title: non-human model organism
+  G2PRescueEvidence:
+    name: G2PRescueEvidence
+    definition_uri: https://w3id.org/valuesets/G2PRescueEvidence
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    annotations:
+      stewards:
+        tag: stewards
+        value: https://www.ebi.ac.uk/gene2phenotype
+      publishers:
+        tag: publishers
+        value: https://www.ebi.ac.uk/gene2phenotype
+      source:
+        tag: source
+        value: https://www.ebi.ac.uk/gene2phenotype/about/terminology#mechanism-evidence-section
+    description: Types of evidence in the rescue category of the G2P molecular mechanism
+      evidence classification, distinguished by the system in which rescue was demonstrated.
+    title: G2P Rescue Evidence
+    from_schema: https://w3id.org/valuesets/clinical/gene2phenotype
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: STANDARD
+    permissible_values:
+      PATIENT_CELLS:
+        text: PATIENT_CELLS
+        description: Evidence showing that the phenotype can be rescued in patient
+          cells.
+        title: patient cells
+      CELL_CULTURE_MODEL:
+        text: CELL_CULTURE_MODEL
+        description: Evidence showing that the phenotype can be rescued in cell culture
+          models.
+        title: cell culture model
+      NON_HUMAN_MODEL_ORGANISM:
+        text: NON_HUMAN_MODEL_ORGANISM
+        description: Evidence showing that the phenotype can be rescued in non-human
+          model organisms.
+        title: non-human model organism
+  G2PVariantConsequence:
+    name: G2PVariantConsequence
+    definition_uri: https://w3id.org/valuesets/G2PVariantConsequence
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    annotations:
+      stewards:
+        tag: stewards
+        value: https://www.ebi.ac.uk/gene2phenotype
+      publishers:
+        tag: publishers
+        value: https://www.ebi.ac.uk/gene2phenotype
+      source:
+        tag: source
+        value: https://www.ebi.ac.uk/gene2phenotype/about/terminology#variant-consequence-section
+      reference:
+        tag: reference
+        value: PMID:37982373
+    description: The consequence of the reported variants at the protein (for protein-coding
+      genes) or the RNA (for non-protein coding genes), per allele. These are Sequence
+      Ontology terms developed for G2P and described in PMID:37982373; the descriptions
+      below are the G2P-authored usage notes rather than the SO text definitions.
+      As in the other SO-backed enums here, title is uniformly the SO term label and
+      any differing G2P label is carried as an alias; for four of the six values the
+      SO and G2P labels coincide, which is why only altered_gene_product_sequence
+      and function_uncertain_variant carry an alias.
+    title: G2P Variant Consequence
+    from_schema: https://w3id.org/valuesets/clinical/gene2phenotype
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: STANDARD
+    permissible_values:
+      ALTERED_GENE_PRODUCT_LEVEL:
+        text: ALTERED_GENE_PRODUCT_LEVEL
+        description: A sequence variant that alters the level or amount of gene product
+          produced. This high-level term can be applied where the direction of level
+          change (increased vs decreased gene product level) is unknown or not confirmed,
+          e.g., promoter or enhancer variants, some splice variants.
+        meaning: SO:0002314
+        title: altered_gene_product_level
+      DECREASED_GENE_PRODUCT_LEVEL:
+        text: DECREASED_GENE_PRODUCT_LEVEL
+        description: A sequence variant that decreases the level or amount of gene
+          product produced, e.g., a 5' UTR variant that reduced protein levels by
+          disrupting translation, a 3' UTR variant that affects RNA stability, splice
+          variants that decrease but do not stop expression, variants leading to nonsense-mediated-decay
+          (NMD)-competent premature termination codon (PTCs), or gene-disrupting structural
+          variants.
+        meaning: SO:0002316
+        is_a: ALTERED_GENE_PRODUCT_LEVEL
+        title: decreased_gene_product_level
+      ABSENT_GENE_PRODUCT:
+        text: ABSENT_GENE_PRODUCT
+        description: A sequence variant that results in no gene product. e.g., whole
+          gene or other large scale disruptive structural variant, variants producing
+          NMD-competent PTCs.
+        meaning: SO:0002317
+        is_a: DECREASED_GENE_PRODUCT_LEVEL
+        title: absent_gene_product
+      INCREASED_GENE_PRODUCT_LEVEL:
+        text: INCREASED_GENE_PRODUCT_LEVEL
+        description: A variant that increases the level or amount of gene product
+          produced, e.g., non-disruptive gene duplications, some promoter or enhancer
+          variants.
+        meaning: SO:0002315
+        is_a: ALTERED_GENE_PRODUCT_LEVEL
+        title: increased_gene_product_level
+      ALTERED_GENE_PRODUCT_STRUCTURE:
+        text: ALTERED_GENE_PRODUCT_STRUCTURE
+        description: A sequence variant that alters the sequence of a gene product.
+          e.g., missense variants, NMD-incompetent PTCs, and other length-changing
+          variants (in-frame indels, stop loss).
+        meaning: SO:0002318
+        title: altered_gene_product_sequence
+        aliases:
+        - altered gene product structure
+      UNCERTAIN:
+        text: UNCERTAIN
+        description: A sequence variant in which the function of a gene product is
+          unknown with respect to a reference. Used by G2P where the consequence of
+          the reported variants could not be determined.
+        meaning: SO:0002220
+        title: function_uncertain_variant
+        aliases:
+        - uncertain
+  G2PVariantTypeGroup:
+    name: G2PVariantTypeGroup
+    definition_uri: https://w3id.org/valuesets/G2PVariantTypeGroup
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    annotations:
+      stewards:
+        tag: stewards
+        value: https://www.ebi.ac.uk/gene2phenotype
+      publishers:
+        tag: publishers
+        value: https://www.ebi.ac.uk/gene2phenotype
+      source:
+        tag: source
+        value: https://www.ebi.ac.uk/gene2phenotype/about/terminology#variant-types-section
+    description: The primary type grouping under which G2P organises the variant types
+      associated with a curated gene-disease pair.
+    title: G2P Variant Type Group
+    from_schema: https://w3id.org/valuesets/clinical/gene2phenotype
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: STANDARD
+    permissible_values:
+      NMD_VARIANTS:
+        text: NMD_VARIANTS
+        description: Variant types qualified by whether the resulting transcript is
+          predicted to trigger or escape nonsense-mediated decay.
+        title: NMD_variants
+      SPLICE_VARIANTS:
+        text: SPLICE_VARIANTS
+        description: Variant types affecting splice sites or splice regions.
+        title: splice_variants
+      REGULATORY_VARIANTS:
+        text: REGULATORY_VARIANTS
+        description: Variant types in untranslated or regulatory regions.
+        title: regulatory_variants
+      PROTEIN_CHANGING_VARIANTS:
+        text: PROTEIN_CHANGING_VARIANTS
+        description: Variant types that change the coding sequence of the gene product.
+        title: protein_changing_variants
+      OTHER_VARIANTS:
+        text: OTHER_VARIANTS
+        description: Variant types not covered by the NMD, splice, regulatory or protein
+          changing groups, including structural and repeat changes.
+        title: other_variants
+  G2PVariantType:
+    name: G2PVariantType
+    definition_uri: https://w3id.org/valuesets/G2PVariantType
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    annotations:
+      stewards:
+        tag: stewards
+        value: https://www.ebi.ac.uk/gene2phenotype
+      publishers:
+        tag: publishers
+        value: https://www.ebi.ac.uk/gene2phenotype
+      source:
+        tag: source
+        value: https://www.ebi.ac.uk/gene2phenotype/about/terminology#variant-types-section
+      standard:
+        tag: standard
+        value: Sequence Ontology
+    description: 'The types of variants associated with the curated gene-disease pair
+      reported in the publication. All terms are Sequence Ontology terms. Where G2P
+      uses a label that differs from the current SO label, the G2P label is recorded
+      as an alias. Descriptions are the SO text definitions where SO provides one.
+
+      The NMD-qualified types have two parents in SO, so they are modelled with the
+      base variant as is_a and the NMD qualifier as a mixin. LinkML preserves both,
+      but as of linkml 1.9.5 the OWL generator emits only the is_a parent as rdfs:subClassOf
+      and drops the mixin, so the NMD axis is additionally recorded in the nmd_status
+      annotation to keep it available in every generated artifact. If a later linkml
+      emits permissible-value mixins, that annotation is redundant and can go.'
+    title: G2P Variant Type
+    from_schema: https://w3id.org/valuesets/clinical/gene2phenotype
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: STANDARD
+    permissible_values:
+      NMD_TRIGGERING:
+        text: NMD_TRIGGERING
+        description: A sequence variant that leads to a change in the location of
+          a termination codon in a transcript that leads to nonsense-mediated decay
+          (NMD). The change in location of a termination codon can be caused by several
+          different types of sequence variants, including stop_gained (SO:0001587),
+          frameshift_variant (SO:0001589), splice_donor_variant (SO:0001575), and
+          splice_acceptor_variant (SO:0001574) types of variants.
+        meaning: SO:0002319
+        annotations:
+          variant_type_group:
+            tag: variant_type_group
+            value: NMD_VARIANTS
+        title: NMD_triggering_variant
+        aliases:
+        - NMD_triggering
+      NMD_ESCAPING:
+        text: NMD_ESCAPING
+        description: A sequence variant that leads to a change in the location of
+          a termination codon in a transcript but allows the transcript to escape
+          nonsense-mediated decay (NMD). The change in location of a termination codon
+          can be caused by several different types of sequence variants, including
+          stop_gained (SO:0001587), frameshift_variant (SO:0001589), splice_donor_variant
+          (SO:0001575), and splice_acceptor_variant (SO:0001574) types of variants.
+        meaning: SO:0002320
+        annotations:
+          variant_type_group:
+            tag: variant_type_group
+            value: NMD_VARIANTS
+        title: NMD_escaping_variant
+        aliases:
+        - NMD_escaping
+      STOP_GAINED_NMD_TRIGGERING:
+        text: STOP_GAINED_NMD_TRIGGERING
+        description: A stop_gained (SO:0001587) variant that is degraded by nonsense-mediated
+          decay (NMD).
+        meaning: SO:0002321
+        is_a: STOP_GAINED
+        mixins:
+        - NMD_TRIGGERING
+        annotations:
+          variant_type_group:
+            tag: variant_type_group
+            value: NMD_VARIANTS
+          nmd_status:
+            tag: nmd_status
+            value: NMD_TRIGGERING
+        title: stop_gained_NMD_triggering
+      STOP_GAINED_NMD_ESCAPING:
+        text: STOP_GAINED_NMD_ESCAPING
+        description: A stop_gained (SO:0001587) variant that allows the transcript
+          to escape nonsense-mediated decay (NMD).
+        meaning: SO:0002322
+        is_a: STOP_GAINED
+        mixins:
+        - NMD_ESCAPING
+        annotations:
+          variant_type_group:
+            tag: variant_type_group
+            value: NMD_VARIANTS
+          nmd_status:
+            tag: nmd_status
+            value: NMD_ESCAPING
+        title: stop_gained_NMD_escaping
+      FRAMESHIFT_VARIANT_NMD_TRIGGERING:
+        text: FRAMESHIFT_VARIANT_NMD_TRIGGERING
+        description: A frameshift_variant (SO:0001589) that is degraded by nonsense-mediated
+          decay (NMD).
+        meaning: SO:0002323
+        is_a: FRAMESHIFT_VARIANT
+        mixins:
+        - NMD_TRIGGERING
+        annotations:
+          variant_type_group:
+            tag: variant_type_group
+            value: NMD_VARIANTS
+          nmd_status:
+            tag: nmd_status
+            value: NMD_TRIGGERING
+        title: frameshift_variant_NMD_triggering
+      FRAMESHIFT_VARIANT_NMD_ESCAPING:
+        text: FRAMESHIFT_VARIANT_NMD_ESCAPING
+        description: A frameshift_variant (SO:0001589) that allows the transcript
+          to escape nonsense-mediated decay (NMD).
+        meaning: SO:0002324
+        is_a: FRAMESHIFT_VARIANT
+        mixins:
+        - NMD_ESCAPING
+        annotations:
+          variant_type_group:
+            tag: variant_type_group
+            value: NMD_VARIANTS
+          nmd_status:
+            tag: nmd_status
+            value: NMD_ESCAPING
+        title: frameshift_variant_NMD_escaping
+      SPLICE_DONOR_VARIANT_NMD_TRIGGERING:
+        text: SPLICE_DONOR_VARIANT_NMD_TRIGGERING
+        description: A splice_donor_variant (SO:0001575) that is degraded by nonsense-mediated
+          decay (NMD).
+        meaning: SO:0002325
+        is_a: SPLICE_DONOR_VARIANT
+        mixins:
+        - NMD_TRIGGERING
+        annotations:
+          variant_type_group:
+            tag: variant_type_group
+            value: NMD_VARIANTS
+          nmd_status:
+            tag: nmd_status
+            value: NMD_TRIGGERING
+        title: splice_donor_variant_NMD_triggering
+      SPLICE_DONOR_VARIANT_NMD_ESCAPING:
+        text: SPLICE_DONOR_VARIANT_NMD_ESCAPING
+        description: A splice_donor_variant (SO:0001575) that allows the transcript
+          to escape nonsense-mediated decay (NMD).
+        meaning: SO:0002326
+        is_a: SPLICE_DONOR_VARIANT
+        mixins:
+        - NMD_ESCAPING
+        annotations:
+          variant_type_group:
+            tag: variant_type_group
+            value: NMD_VARIANTS
+          nmd_status:
+            tag: nmd_status
+            value: NMD_ESCAPING
+        title: splice_donor_variant_NMD_escaping
+      SPLICE_ACCEPTOR_VARIANT_NMD_TRIGGERING:
+        text: SPLICE_ACCEPTOR_VARIANT_NMD_TRIGGERING
+        description: A splice_acceptor_variant (SO:0001574) that is degraded by nonsense-mediated
+          decay (NMD).
+        meaning: SO:0002327
+        is_a: SPLICE_ACCEPTOR_VARIANT
+        mixins:
+        - NMD_TRIGGERING
+        annotations:
+          variant_type_group:
+            tag: variant_type_group
+            value: NMD_VARIANTS
+          nmd_status:
+            tag: nmd_status
+            value: NMD_TRIGGERING
+        title: splice_acceptor_variant_NMD_triggering
+      SPLICE_ACCEPTOR_VARIANT_NMD_ESCAPING:
+        text: SPLICE_ACCEPTOR_VARIANT_NMD_ESCAPING
+        description: A splice_acceptor_variant (SO:0001574) that allows the transcript
+          to escape nonsense-mediated decay (NMD).
+        meaning: SO:0002328
+        is_a: SPLICE_ACCEPTOR_VARIANT
+        mixins:
+        - NMD_ESCAPING
+        annotations:
+          variant_type_group:
+            tag: variant_type_group
+            value: NMD_VARIANTS
+          nmd_status:
+            tag: nmd_status
+            value: NMD_ESCAPING
+        title: splice_acceptor_variant_NMD_escaping
+      SPLICE_REGION_VARIANT:
+        text: SPLICE_REGION_VARIANT
+        description: A sequence variant in which a change has occurred within the
+          region of the splice site, either within 1-3 bases of the exon or 3-8 bases
+          of the intron.
+        meaning: SO:0001630
+        annotations:
+          variant_type_group:
+            tag: variant_type_group
+            value: SPLICE_VARIANTS
+        title: splice_region_variant
+      SPLICE_ACCEPTOR_VARIANT:
+        text: SPLICE_ACCEPTOR_VARIANT
+        description: A splice variant that changes the 2 base region at the 3' end
+          of an intron.
+        meaning: SO:0001574
+        annotations:
+          variant_type_group:
+            tag: variant_type_group
+            value: SPLICE_VARIANTS
+        title: splice_acceptor_variant
+      SPLICE_DONOR_VARIANT:
+        text: SPLICE_DONOR_VARIANT
+        description: A splice variant that changes the 2 base pair region at the 5'
+          end of an intron.
+        meaning: SO:0001575
+        annotations:
+          variant_type_group:
+            tag: variant_type_group
+            value: SPLICE_VARIANTS
+        title: splice_donor_variant
+      FIVE_PRIME_UTR_VARIANT:
+        text: FIVE_PRIME_UTR_VARIANT
+        description: A UTR variant of the 5' UTR.
+        meaning: SO:0001623
+        annotations:
+          variant_type_group:
+            tag: variant_type_group
+            value: REGULATORY_VARIANTS
+        title: 5_prime_UTR_variant
+      THREE_PRIME_UTR_VARIANT:
+        text: THREE_PRIME_UTR_VARIANT
+        description: A UTR variant of the 3' UTR.
+        meaning: SO:0001624
+        annotations:
+          variant_type_group:
+            tag: variant_type_group
+            value: REGULATORY_VARIANTS
+        title: 3_prime_UTR_variant
+      REGULATORY_REGION_VARIANT:
+        text: REGULATORY_REGION_VARIANT
+        description: A sequence variant located within a regulatory region.
+        meaning: SO:0001566
+        annotations:
+          variant_type_group:
+            tag: variant_type_group
+            value: REGULATORY_VARIANTS
+        title: regulatory_region_variant
+      START_LOST:
+        text: START_LOST
+        description: A codon variant that changes at least one base of the canonical
+          start codon.
+        meaning: SO:0002012
+        annotations:
+          variant_type_group:
+            tag: variant_type_group
+            value: PROTEIN_CHANGING_VARIANTS
+        title: start_lost
+      STOP_GAINED:
+        text: STOP_GAINED
+        description: A sequence variant whereby at least one base of a codon is changed,
+          resulting in a premature stop codon, leading to a shortened polypeptide.
+        meaning: SO:0001587
+        annotations:
+          variant_type_group:
+            tag: variant_type_group
+            value: PROTEIN_CHANGING_VARIANTS
+        title: stop_gained
+      STOP_LOST:
+        text: STOP_LOST
+        description: A sequence variant where at least one base of the terminator
+          codon (stop) is changed, resulting in an elongated transcript.
+        meaning: SO:0001578
+        annotations:
+          variant_type_group:
+            tag: variant_type_group
+            value: PROTEIN_CHANGING_VARIANTS
+        title: stop_lost
+      FRAMESHIFT_VARIANT:
+        text: FRAMESHIFT_VARIANT
+        description: A sequence variant which causes a disruption of the translational
+          reading frame, because the number of nucleotides inserted or deleted is
+          not a multiple of three.
+        meaning: SO:0001589
+        annotations:
+          variant_type_group:
+            tag: variant_type_group
+            value: PROTEIN_CHANGING_VARIANTS
+        title: frameshift_variant
+      MISSENSE_VARIANT:
+        text: MISSENSE_VARIANT
+        description: A sequence variant, that changes one or more bases, resulting
+          in a different amino acid sequence but where the length is preserved.
+        meaning: SO:0001583
+        annotations:
+          variant_type_group:
+            tag: variant_type_group
+            value: PROTEIN_CHANGING_VARIANTS
+        title: missense_variant
+      INFRAME_INSERTION:
+        text: INFRAME_INSERTION
+        description: An inframe non synonymous variant that inserts bases into in
+          the coding sequence.
+        meaning: SO:0001821
+        annotations:
+          variant_type_group:
+            tag: variant_type_group
+            value: PROTEIN_CHANGING_VARIANTS
+        title: inframe_insertion
+      INFRAME_DELETION:
+        text: INFRAME_DELETION
+        description: An inframe non synonymous variant that deletes bases from the
+          coding sequence.
+        meaning: SO:0001822
+        annotations:
+          variant_type_group:
+            tag: variant_type_group
+            value: PROTEIN_CHANGING_VARIANTS
+        title: inframe_deletion
+      SYNONYMOUS_VARIANT:
+        text: SYNONYMOUS_VARIANT
+        description: A sequence variant where there is no resulting change to the
+          encoded amino acid.
+        meaning: SO:0001819
+        annotations:
+          variant_type_group:
+            tag: variant_type_group
+            value: OTHER_VARIANTS
+        title: synonymous_variant
+      INTRON_VARIANT:
+        text: INTRON_VARIANT
+        description: A transcript variant occurring within an intron.
+        meaning: SO:0001627
+        annotations:
+          variant_type_group:
+            tag: variant_type_group
+            value: OTHER_VARIANTS
+        title: intron_variant
+      INTERGENIC_VARIANT:
+        text: INTERGENIC_VARIANT
+        description: A sequence variant located in the intergenic region, between
+          genes.
+        meaning: SO:0001628
+        annotations:
+          variant_type_group:
+            tag: variant_type_group
+            value: OTHER_VARIANTS
+        title: intergenic_variant
+      NON_CODING_TRANSCRIPT_VARIANT:
+        text: NON_CODING_TRANSCRIPT_VARIANT
+        description: A transcript variant of a non coding RNA gene.
+        meaning: SO:0001619
+        annotations:
+          variant_type_group:
+            tag: variant_type_group
+            value: OTHER_VARIANTS
+        title: non_coding_transcript_variant
+      SHORT_TANDEM_REPEAT_CHANGE:
+        text: SHORT_TANDEM_REPEAT_CHANGE
+        description: A sequence variant where the copies of a short tandem repeat
+          (STR) feature are either contracted or expanded. SO:0002161 carries no text
+          definition; this description is taken from the SO term comment.
+        meaning: SO:0002161
+        annotations:
+          variant_type_group:
+            tag: variant_type_group
+            value: OTHER_VARIANTS
+        title: short_tandem_repeat_change
+      COPY_NUMBER_VARIATION:
+        text: COPY_NUMBER_VARIATION
+        description: A variation that increases or decreases the copy number of a
+          given region.
+        meaning: SO:0001019
+        annotations:
+          variant_type_group:
+            tag: variant_type_group
+            value: OTHER_VARIANTS
+        title: copy_number_variation
+      WHOLE_PARTIAL_GENE_DELETION:
+        text: WHOLE_PARTIAL_GENE_DELETION
+        description: A feature ablation whereby the deleted region includes a transcript
+          feature. Used by G2P to record whole or partial gene deletions.
+        meaning: SO:0001893
+        annotations:
+          variant_type_group:
+            tag: variant_type_group
+            value: OTHER_VARIANTS
+        title: transcript_ablation
+        aliases:
+        - whole_partial_gene_deletion
+      WHOLE_PARTIAL_GENE_DUPLICATION:
+        text: WHOLE_PARTIAL_GENE_DUPLICATION
+        description: A feature amplification of a region containing a transcript.
+          Used by G2P to record whole or partial gene duplications.
+        meaning: SO:0001889
+        annotations:
+          variant_type_group:
+            tag: variant_type_group
+            value: OTHER_VARIANTS
+        title: transcript_amplification
+        aliases:
+        - whole_partial_gene_duplication
+  G2PPanel:
+    name: G2PPanel
+    definition_uri: https://w3id.org/valuesets/G2PPanel
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    annotations:
+      stewards:
+        tag: stewards
+        value: https://www.ebi.ac.uk/gene2phenotype
+      publishers:
+        tag: publishers
+        value: https://www.ebi.ac.uk/gene2phenotype
+      source:
+        tag: source
+        value: https://www.ebi.ac.uk/gene2phenotype/panels
+      retrieved:
+        tag: retrieved
+        value: '2026-08-18'
+      note:
+        tag: note
+        value: G2P adds panels over time; this list is a snapshot as of the retrieved
+          date.
+    description: The disease-area panels into which G2P organises its curated gene-disease
+      associations. A gene-disease association may appear on more than one panel.
+    title: G2P Panel
+    from_schema: https://w3id.org/valuesets/clinical/gene2phenotype
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: STANDARD
+    permissible_values:
+      CANCER:
+        text: CANCER
+        description: Cancer disorders.
+        title: Cancer
+      CARDIAC:
+        text: CARDIAC
+        description: Cardiac disorders.
+        title: Cardiac
+      DD:
+        text: DD
+        description: Developmental disorders.
+        title: DD
+        aliases:
+        - Developmental disorders
+      EAR:
+        text: EAR
+        description: Ear disorders.
+        title: Ear
+      EYE:
+        text: EYE
+        description: Eye disorders.
+        title: Eye
+      SKELETAL:
+        text: SKELETAL
+        description: Skeletal disorders.
+        title: Skeletal
+      SKIN:
+        text: SKIN
+        description: Skin disorders.
+        title: Skin
   ProcessScaleEnum:
     name: ProcessScaleEnum
     definition_uri: https://w3id.org/valuesets/ProcessScaleEnum
@@ -80106,6 +81498,115 @@ slots:
     from_schema: https://w3id.org/valuesets/clinical/phenopackets
     slot_uri: valuesets:drug_response
     range: DrugResponseEnum
+  g2p_confidence:
+    name: g2p_confidence
+    definition_uri: https://w3id.org/valuesets/g2p_confidence
+    description: The G2P confidence category assigned to a gene-disease association
+    from_schema: https://w3id.org/valuesets/clinical/gene2phenotype
+    slot_uri: valuesets:g2p_confidence
+    range: G2PConfidenceCategory
+  g2p_allelic_requirement:
+    name: g2p_allelic_requirement
+    definition_uri: https://w3id.org/valuesets/g2p_allelic_requirement
+    description: The genotype required at the locus for the disease to manifest
+    from_schema: https://w3id.org/valuesets/clinical/gene2phenotype
+    slot_uri: valuesets:g2p_allelic_requirement
+    range: G2PAllelicRequirement
+  g2p_cross_cutting_modifier:
+    name: g2p_cross_cutting_modifier
+    definition_uri: https://w3id.org/valuesets/g2p_cross_cutting_modifier
+    description: An additional qualifier on the allelic requirement of a gene-disease
+      association
+    from_schema: https://w3id.org/valuesets/clinical/gene2phenotype
+    slot_uri: valuesets:g2p_cross_cutting_modifier
+    range: G2PCrossCuttingModifier
+  g2p_molecular_mechanism:
+    name: g2p_molecular_mechanism
+    definition_uri: https://w3id.org/valuesets/g2p_molecular_mechanism
+    description: The mechanism of disease derived from the available evidence
+    from_schema: https://w3id.org/valuesets/clinical/gene2phenotype
+    slot_uri: valuesets:g2p_molecular_mechanism
+    range: G2PMolecularMechanism
+  g2p_molecular_mechanism_synopsis:
+    name: g2p_molecular_mechanism_synopsis
+    definition_uri: https://w3id.org/valuesets/g2p_molecular_mechanism_synopsis
+    description: A more detailed description of the molecular mechanism of disease
+    from_schema: https://w3id.org/valuesets/clinical/gene2phenotype
+    slot_uri: valuesets:g2p_molecular_mechanism_synopsis
+    range: G2PMolecularMechanismSynopsis
+  g2p_molecular_mechanism_support:
+    name: g2p_molecular_mechanism_support
+    definition_uri: https://w3id.org/valuesets/g2p_molecular_mechanism_support
+    description: Whether the molecular mechanism is directly evidenced or inferred
+    from_schema: https://w3id.org/valuesets/clinical/gene2phenotype
+    slot_uri: valuesets:g2p_molecular_mechanism_support
+    range: G2PMolecularMechanismSupport
+  g2p_variant_consequence:
+    name: g2p_variant_consequence
+    definition_uri: https://w3id.org/valuesets/g2p_variant_consequence
+    description: The consequence of a reported variant at the protein or RNA level,
+      per allele
+    from_schema: https://w3id.org/valuesets/clinical/gene2phenotype
+    slot_uri: valuesets:g2p_variant_consequence
+    range: G2PVariantConsequence
+  g2p_variant_type:
+    name: g2p_variant_type
+    definition_uri: https://w3id.org/valuesets/g2p_variant_type
+    description: The type of variant associated with a curated gene-disease pair
+    from_schema: https://w3id.org/valuesets/clinical/gene2phenotype
+    slot_uri: valuesets:g2p_variant_type
+    range: G2PVariantType
+  g2p_variant_type_group:
+    name: g2p_variant_type_group
+    definition_uri: https://w3id.org/valuesets/g2p_variant_type_group
+    description: The primary type grouping a variant type belongs to
+    from_schema: https://w3id.org/valuesets/clinical/gene2phenotype
+    slot_uri: valuesets:g2p_variant_type_group
+    range: G2PVariantTypeGroup
+  g2p_mechanism_evidence_category:
+    name: g2p_mechanism_evidence_category
+    definition_uri: https://w3id.org/valuesets/g2p_mechanism_evidence_category
+    description: The broad category of experimental evidence supporting a molecular
+      mechanism
+    from_schema: https://w3id.org/valuesets/clinical/gene2phenotype
+    slot_uri: valuesets:g2p_mechanism_evidence_category
+    range: G2PMechanismEvidenceCategory
+  g2p_function_evidence:
+    name: g2p_function_evidence
+    definition_uri: https://w3id.org/valuesets/g2p_function_evidence
+    description: Evidence in the function category supporting a molecular mechanism
+    from_schema: https://w3id.org/valuesets/clinical/gene2phenotype
+    slot_uri: valuesets:g2p_function_evidence
+    range: G2PFunctionEvidence
+  g2p_functional_alteration_evidence:
+    name: g2p_functional_alteration_evidence
+    definition_uri: https://w3id.org/valuesets/g2p_functional_alteration_evidence
+    description: Evidence in the functional alteration category supporting a molecular
+      mechanism
+    from_schema: https://w3id.org/valuesets/clinical/gene2phenotype
+    slot_uri: valuesets:g2p_functional_alteration_evidence
+    range: G2PFunctionalAlterationEvidence
+  g2p_models_evidence:
+    name: g2p_models_evidence
+    definition_uri: https://w3id.org/valuesets/g2p_models_evidence
+    description: Evidence in the models category supporting a molecular mechanism
+    from_schema: https://w3id.org/valuesets/clinical/gene2phenotype
+    slot_uri: valuesets:g2p_models_evidence
+    range: G2PModelsEvidence
+  g2p_rescue_evidence:
+    name: g2p_rescue_evidence
+    definition_uri: https://w3id.org/valuesets/g2p_rescue_evidence
+    description: Evidence in the rescue category supporting a molecular mechanism
+    from_schema: https://w3id.org/valuesets/clinical/gene2phenotype
+    slot_uri: valuesets:g2p_rescue_evidence
+    range: G2PRescueEvidence
+  g2p_panel:
+    name: g2p_panel
+    definition_uri: https://w3id.org/valuesets/g2p_panel
+    description: The G2P disease-area panel a gene-disease association appears on
+    from_schema: https://w3id.org/valuesets/clinical/gene2phenotype
+    slot_uri: valuesets:g2p_panel
+    range: G2PPanel
   process_scale:
     name: process_scale
     definition_uri: https://w3id.org/valuesets/process_scale
@@ -81203,7 +82704,7 @@ classes:
     class_uri: valuesets:Fake
 metamodel_version: 1.7.0
 source_file: valuesets.yaml
-source_file_date: '2026-08-01T21:24:45'
-source_file_size: 4652
-generation_date: '2026-08-01T21:26:17'
+source_file_date: '2026-09-08T01:52:12'
+source_file_size: 4678
+generation_date: '2026-09-08T01:53:18'
 
