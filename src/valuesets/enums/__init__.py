@@ -70,6 +70,7 @@ from .bioprocessing.biomanufacturing import BiomanufacturingScaleType, Bioproduc
 from .bioprocessing.scale_up import ProcessScaleEnum, BioreactorTypeEnum, FermentationModeEnum, OxygenationStrategyEnum, AgitationTypeEnum, DownstreamProcessEnum, FeedstockTypeEnum, ProductTypeEnum, SterilizationMethodEnum
 
 # Business domain
+from .business.currencies import CurrencyCode
 from .business.human_resources import EmploymentTypeEnum, JobLevelEnum, HRFunctionEnum, CompensationTypeEnum, PerformanceRatingEnum, RecruitmentSourceEnum, TrainingTypeEnum, EmployeeStatusEnum, WorkArrangementEnum, BenefitsCategoryEnum
 from .business.industry_classifications import NAICSSectorEnum, EconomicSectorEnum, BusinessActivityTypeEnum, IndustryMaturityEnum, MarketStructureEnum, IndustryRegulationLevelEnum
 from .business.management_operations import ManagementMethodologyEnum, StrategicFrameworkEnum, OperationalModelEnum, PerformanceMeasurementEnum, DecisionMakingStyleEnum, LeadershipStyleEnum, BusinessProcessTypeEnum
@@ -79,10 +80,12 @@ from .business.supply_chain import ProcurementTypeEnum, VendorCategoryEnum, Supp
 
 # Chemistry domain
 from .chemistry.chemical_entities import SubatomicParticleEnum, BondTypeEnum, PeriodicTableBlockEnum, ElementFamilyEnum, ElementMetallicClassificationEnum, HardOrSoftEnum, BronstedAcidBaseRoleEnum, LewisAcidBaseRoleEnum, OxidationStateEnum, ChiralityEnum, NanostructureMorphologyEnum
+from .chemistry.identifiers import ChemicalIdentifierScheme
 from .chemistry.reaction_directionality import RelativeTimeEnum, PresenceEnum, ReactionDirectionality
 from .chemistry.reactions import ReactionTypeEnum, ReactionMechanismEnum, CatalystTypeEnum, ReactionConditionEnum, ReactionRateOrderEnum, EnzymeClassEnum, SolventClassEnum, ThermodynamicParameterEnum
 
 # Clinical domain
+from .clinical.gene2phenotype import G2PConfidenceCategory, G2PAllelicRequirement, G2PCrossCuttingModifier, G2PMolecularMechanism, G2PMolecularMechanismSynopsis, G2PMolecularMechanismSupport, G2PMechanismEvidenceCategory, G2PFunctionEvidence, G2PFunctionalAlterationEvidence, G2PModelsEvidence, G2PRescueEvidence, G2PVariantConsequence, G2PVariantTypeGroup, G2PVariantType, G2PPanel
 from .clinical.genetics import ModeOfInheritance
 from .clinical.nih_demographics import RaceOMB1997Enum, EthnicityOMB1997Enum, BiologicalSexEnum, AgeGroupEnum, ParticipantVitalStatusEnum, RecruitmentStatusEnum, StudyPhaseEnum
 from .clinical.phenopackets import KaryotypicSexEnum, PhenotypicSexEnum, AllelicStateEnum, LateralityEnum, OnsetTimingEnum, ACMGPathogenicityEnum, TherapeuticActionabilityEnum, InterpretationProgressEnum, RegimenStatusEnum, DrugResponseEnum
@@ -99,6 +102,8 @@ from .computing.microelectronics import SemiconductorMaterialType, ChipFabricati
 from .computing.mime_types import MimeType, MimeTypeCategory, TextCharset, CompressionType
 from .computing.ontologies import OWLProfileEnum
 from .computing.quantum import QubitType, QuantumAlgorithmCategoryType
+from .computing.systems_engineering import SystemLifeCycleProcess15288
+from .computing.verification_validation_ieee_1012 import VerificationValidationProcessIEEE1012
 
 # Core domain
 from .confidence_levels import RelativeTimeEnum, PresenceEnum, ConfidenceLevel, CIOConfidenceLevel, OBCSCertaintyLevel, IPCCLikelihoodScale, IPCCConfidenceLevel, NCITFivePointConfidenceScale
@@ -221,6 +226,13 @@ from .preservation.digital_objects import DigitalObjectCategory, CopyrightStatus
 from .preservation.events import PreservationEventType, PreservationEventOutcome
 from .preservation.fixity import CryptographicHashFunction
 
+# Process_Engineering domain
+from .process_engineering.process_industries import ProcessIndustryCategory, ProcessOperationMode
+from .process_engineering.process_modeling import DesignSimulationMethod, FlowsheetSolutionApproach, ProcessSimulator
+from .process_engineering.process_streams import ProcessStreamRole, ProcessStreamPhase, UtilityType
+from .process_engineering.thermodynamics import EquationOfStateModel, ActivityCoefficientModel, ThermodynamicPropertyPackage, MixingRuleModel, PoyntingCorrectionMethod
+from .process_engineering.unit_operations import UnitOperationType, ProcessEquipmentType
+
 # Publishing domain
 from .publishing.arxiv_categories import ArxivCategory
 from .publishing.osti_record import OstiWorkflowStatus, OstiAccessLimitation, OstiCollectionType, OstiSensitivityFlag, OstiOrganizationIdentifierType, OstiProductType, OstiOrganizationType, OstiPersonType, OstiContributorType, OstiRelatedIdentifierType, OstiRelationType, OstiIdentifierType, OstiGeolocationType, OstiMediaLocationType
@@ -234,12 +246,13 @@ from .spatial.spatial_qualifiers import SimpleSpatialDirection, AnatomicalSide, 
 
 # Statistics domain
 from .statistics.prediction_outcomes import OutcomeTypeEnum
+from .statistics.statistical_tests import StatisticalTestEnum, TTestTypeEnum, NormalityTestEnum, HomoscedasticityTestEnum, PostHocTestEnum, MultipleTestingCorrectionEnum, CorrelationCoefficientEnum, TestTailednessEnum, DistributionalAssumptionEnum, ComparisonObjectiveEnum
 
 # Time domain
 from .time.temporal import DayOfWeek, Month, Quarter, Season, TimePeriod, TimeOfDay, BusinessTimeFrame, GeologicalEra, HistoricalPeriod
 
 # Units domain
-from .units.measurements import LengthUnitEnum, MassUnitEnum, VolumeUnitEnum, TemperatureUnitEnum, TimeUnitEnum, PressureUnitEnum, ConcentrationUnitEnum, FrequencyUnitEnum, AngleUnitEnum, DataSizeUnitEnum
+from .units.measurements import LengthUnitEnum, MassUnitEnum, VolumeUnitEnum, TemperatureUnitEnum, TimeUnitEnum, PressureUnitEnum, ConcentrationUnitEnum, FrequencyUnitEnum, AngleUnitEnum, DataSizeUnitEnum, MassFlowRateUnitEnum, MolarFlowRateUnitEnum, VolumetricFlowRateUnitEnum
 from .units.quantity_kinds import QuantityKindEnum
 
 # Visual domain
@@ -250,6 +263,7 @@ __all__ = [
     "AcademicDegree",
     "AccessRights",
     "AcousticRadiationTypeEnum",
+    "ActivityCoefficientModel",
     "AdditiveManufacturingEnum",
     "AgeGroupEnum",
     "AgitationTypeEnum",
@@ -334,6 +348,7 @@ __all__ = [
     "CellPolarity",
     "CellProliferationState",
     "CellularityEnum",
+    "ChemicalIdentifierScheme",
     "ChipFabricationNodeType",
     "ChiralityEnum",
     "ChromatographyType",
@@ -347,6 +362,7 @@ __all__ = [
     "CommonMineral",
     "CommonOrganismTaxaEnum",
     "CommunicationProtocolEnum",
+    "ComparisonObjectiveEnum",
     "CompassDirection",
     "CompensationTypeEnum",
     "ComplianceStandardEnum",
@@ -365,6 +381,7 @@ __all__ = [
     "CoordinationGeometry",
     "CopyrightStatus",
     "CorporateGovernanceRoleEnum",
+    "CorrelationCoefficientEnum",
     "CountryCodeISO2Enum",
     "CountryCodeISO3Enum",
     "CriticalMineral",
@@ -375,6 +392,7 @@ __all__ = [
     "CrystalSystemEnum",
     "CrystallizationMethod",
     "CurrencyChemical",
+    "CurrencyCode",
     "CurrencyCodeISO4217Enum",
     "DNABaseEnum",
     "DNABaseExtendedEnum",
@@ -402,11 +420,13 @@ __all__ = [
     "DefectClassificationEnum",
     "DefenseInDepthLevelEnum",
     "DerivatizationMethod",
+    "DesignSimulationMethod",
     "DetectionModeEnum",
     "Detector",
     "DetectorType",
     "DiagnosticTestTypeEnum",
     "DigitalObjectCategory",
+    "DistributionalAssumptionEnum",
     "DocumentFormatEnum",
     "DownstreamProcessEnum",
     "DrugExposureProvenanceEnum",
@@ -438,6 +458,7 @@ __all__ = [
     "EnvironmentalImpact",
     "EnzymeClassEnum",
     "EnzymologyAssayEnum",
+    "EquationOfStateModel",
     "EthnicityOMB1997Enum",
     "ExecutionModeEnum",
     "ExperimentalDesignMethodType",
@@ -469,6 +490,7 @@ __all__ = [
     "FireSafetyColorEnum",
     "FissileIsotopeEnum",
     "FlowerColorEnum",
+    "FlowsheetSolutionApproach",
     "FoodColoringEnum",
     "FossilFuelTypeEnum",
     "FraudDetectionEnum",
@@ -484,6 +506,21 @@ __all__ = [
     "FusionConfinementType",
     "FusionFuelType",
     "FusionPlasmaParameterType",
+    "G2PAllelicRequirement",
+    "G2PConfidenceCategory",
+    "G2PCrossCuttingModifier",
+    "G2PFunctionEvidence",
+    "G2PFunctionalAlterationEvidence",
+    "G2PMechanismEvidenceCategory",
+    "G2PModelsEvidence",
+    "G2PMolecularMechanism",
+    "G2PMolecularMechanismSupport",
+    "G2PMolecularMechanismSynopsis",
+    "G2PPanel",
+    "G2PRescueEvidence",
+    "G2PVariantConsequence",
+    "G2PVariantType",
+    "G2PVariantTypeGroup",
     "GOAspect",
     "GOElectronicMethods",
     "GOEvidenceCode",
@@ -518,6 +555,7 @@ __all__ = [
     "HeavyMetalEnum",
     "HistoricalPeriod",
     "HistoricalStatusEnum",
+    "HomoscedasticityTestEnum",
     "HousingStatus",
     "HumanAgeGroupEnum",
     "HumanDevelopmentalStage",
@@ -597,6 +635,7 @@ __all__ = [
     "MaritimeSignalColorEnum",
     "MarketStructureEnum",
     "MassErrorUnit",
+    "MassFlowRateUnitEnum",
     "MassSpectrometerFileFormat",
     "MassSpectrometerVendor",
     "MassSpectrometryAssayEnum",
@@ -625,11 +664,14 @@ __all__ = [
     "MiningPhase",
     "MiningType",
     "MitoticPhase",
+    "MixingRuleModel",
     "ModeOfInheritance",
     "ModelSystemTypeEnum",
+    "MolarFlowRateUnitEnum",
     "Month",
     "MouseDevelopmentalStage",
     "MousePostnatalAgeGroupEnum",
+    "MultipleTestingCorrectionEnum",
     "NAICSSectorEnum",
     "NCITFivePointConfidenceScale",
     "NIHInstituteCenterEnum",
@@ -640,6 +682,7 @@ __all__ = [
     "NetworkProtocolEnum",
     "NeuroblastomaRiskGroup",
     "NewsTopicCategoryEnum",
+    "NormalityTestEnum",
     "NuclearFacilityTypeEnum",
     "NuclearForensicsMethodType",
     "NuclearFuelCycleStageEnum",
@@ -708,8 +751,10 @@ __all__ = [
     "PlateCoatingEnum",
     "PlateMaterialEnum",
     "PolymerTypeEnum",
+    "PostHocTestEnum",
     "PowerPlantStatusEnum",
     "PowerUnit",
+    "PoyntingCorrectionMethod",
     "PredictionOutcomeType",
     "PresenceEnum",
     "PreservationEventOutcome",
@@ -718,9 +763,15 @@ __all__ = [
     "PreservationLevelValue",
     "PressureUnitEnum",
     "PriorityLevelEnum",
+    "ProcessEquipmentType",
     "ProcessImprovementApproachEnum",
+    "ProcessIndustryCategory",
+    "ProcessOperationMode",
     "ProcessPerformanceMetric",
     "ProcessScaleEnum",
+    "ProcessSimulator",
+    "ProcessStreamPhase",
+    "ProcessStreamRole",
     "ProcessingStatus",
     "ProcurementTypeEnum",
     "ProductTypeEnum",
@@ -836,6 +887,7 @@ __all__ = [
     "StandardsMaturityLevel",
     "StandardsOrganizationEnum",
     "StateOfMatterEnum",
+    "StatisticalTestEnum",
     "StatusEnum",
     "SterilizationMethodEnum",
     "StrandType",
@@ -852,11 +904,14 @@ __all__ = [
     "SupplyChainStrategyEnum",
     "SymptomSeverityEnum",
     "SynthesisMethodEnum",
+    "SystemLifeCycleProcess15288",
+    "TTestTypeEnum",
     "TailingCharacterizationType",
     "TaxonomicRank",
     "TechnologyReadinessLevel",
     "TemperatureUnitEnum",
     "TemporalAggregationEnum",
+    "TestTailednessEnum",
     "TextCharset",
     "TextureEnum",
     "TherapeuticActionabilityEnum",
@@ -865,6 +920,7 @@ __all__ = [
     "ThermalCyclerTypeEnum",
     "ThermalCyclingStepEnum",
     "ThermodynamicParameterEnum",
+    "ThermodynamicPropertyPackage",
     "TimeOfDay",
     "TimePeriod",
     "TimeUnitEnum",
@@ -889,8 +945,10 @@ __all__ = [
     "USStateCodeEnum",
     "UnconventionalMineralResourceType",
     "UniProtSpeciesCode",
+    "UnitOperationType",
     "UpdateFrequency",
     "UraniumEnrichmentLevelEnum",
+    "UtilityType",
     "VaccinationPeriodicityEnum",
     "VaccinationStatusEnum",
     "VaccineCategoryEnum",
@@ -898,6 +956,7 @@ __all__ = [
     "ValueSetStewardEnum",
     "VectorTypeEnum",
     "VendorCategoryEnum",
+    "VerificationValidationProcessIEEE1012",
     "ViabilityEnum",
     "VideoFormatEnum",
     "ViralGenomeTypeEnum",
@@ -906,6 +965,7 @@ __all__ = [
     "VitalStatusEnum",
     "VitrificationMethod",
     "VolumeUnitEnum",
+    "VolumetricFlowRateUnitEnum",
     "WasteDisposalMethodEnum",
     "WasteFacilityTypeEnum",
     "WasteHalfLifeCategoryEnum",
