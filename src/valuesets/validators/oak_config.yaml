@@ -23,6 +23,7 @@ ontology_adapters:
   MSIO: sqlite:obo:msio
   GENO: sqlite:obo:geno
   CHMO: sqlite:obo:chmo
+  FBbi: sqlite:obo:fbbi
 
   # Data format and computation ontologies
   EDAM: sqlite:obo:edam

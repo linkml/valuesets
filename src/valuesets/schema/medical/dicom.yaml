@@ -25,6 +25,7 @@ prefixes:
   valuesets: https://w3id.org/valuesets/
   NCIT: http://purl.obolibrary.org/obo/NCIT_
   DCM: http://dicom.nema.org/resources/ontology/DCM/
+  FBbi: http://purl.obolibrary.org/obo/FBbi_
   orcid: https://orcid.org/
   valuesets_meta: https://w3id.org/valuesets/meta/
 default_prefix: valuesets
@@ -93,12 +94,14 @@ enums:
         meaning: NCIT:C17204
         exact_mappings:
         - DCM:CT
+        - FBbi:00001002
       CFM:
         title: Confocal Microscopy
         description: Laser-scanning microscopy that rejects out-of-focus light
         meaning: NCIT:C17753
         exact_mappings:
         - DCM:CFM
+        - FBbi:00000251
       DMS:
         title: Dermoscopy
         description: Non-invasive microscopic examination of the skin surface
@@ -133,6 +136,7 @@ enums:
         meaning: NCIT:C16853
         exact_mappings:
         - DCM:GM
+        - FBbi:00000241
         aliases:
         - General Microscopy
       IO:
@@ -233,6 +237,7 @@ enums:
         meaning: NCIT:C20828
         exact_mappings:
         - DCM:OCT
+        - FBbi:00000371
       OSS:
         title: Optical Surface Scanner
         description: Surface geometry acquired with an optical (non-laser) scanner
@@ -269,6 +274,7 @@ enums:
         meaning: NCIT:C38101
         exact_mappings:
         - DCM:RG
+        - FBbi:00001001
         aliases:
         - Radiographic imaging
       RTIMAGE:
