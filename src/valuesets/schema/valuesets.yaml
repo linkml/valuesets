@@ -114,6 +114,9 @@ imports:
 - industry/safety_colors
 - medical/clinical
 - medical/neuroimaging
+- medical/dicom
+- medical/imaging_deidentification
+- medical/imaging_data_management
 - medical/family_history
 - medical/pediatric_oncology/diagnosis_categories
 - medical/pediatric_oncology/iccc3
