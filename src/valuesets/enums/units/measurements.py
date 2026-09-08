@@ -295,6 +295,68 @@ DataSizeUnitEnum._metadata = {
     "TEBIBYTE": {'description': 'Tebibyte (2^40 bytes)', 'annotations': {'symbol': 'TiB', 'conversion_to_byte': '1099511627776', 'standard': 'binary'}},
 }
 
+class MassFlowRateUnitEnum(RichEnum):
+    """
+    Units of mass flow rate (mass per unit time)
+    """
+    # Enum members
+    KILOGRAM_PER_SECOND = "KILOGRAM_PER_SECOND"
+    KILOGRAM_PER_HOUR = "KILOGRAM_PER_HOUR"
+    GRAM_PER_SECOND = "GRAM_PER_SECOND"
+    TONNE_PER_HOUR = "TONNE_PER_HOUR"
+    TONNE_PER_DAY = "TONNE_PER_DAY"
+    POUND_PER_HOUR = "POUND_PER_HOUR"
+
+# Set metadata after class creation
+MassFlowRateUnitEnum._metadata = {
+    "KILOGRAM_PER_SECOND": {'description': 'Kilograms per second (SI)', 'annotations': {'symbol': 'kg/s', 'system': 'SI'}},
+    "KILOGRAM_PER_HOUR": {'description': 'Kilograms per hour', 'annotations': {'symbol': 'kg/h', 'conversion_to_kg_per_s': '0.000277778'}},
+    "GRAM_PER_SECOND": {'description': 'Grams per second', 'annotations': {'symbol': 'g/s', 'conversion_to_kg_per_s': '0.001'}},
+    "TONNE_PER_HOUR": {'description': 'Metric tonnes per hour', 'annotations': {'symbol': 't/h', 'conversion_to_kg_per_s': '0.277778'}},
+    "TONNE_PER_DAY": {'description': 'Metric tonnes per day', 'annotations': {'symbol': 't/d', 'conversion_to_kg_per_s': '0.0115741'}},
+    "POUND_PER_HOUR": {'description': 'Pounds (mass) per hour', 'annotations': {'symbol': 'lb/h', 'conversion_to_kg_per_s': '0.000125998', 'system': 'imperial'}},
+}
+
+class MolarFlowRateUnitEnum(RichEnum):
+    """
+    Units of molar flow rate (amount of substance per unit time)
+    """
+    # Enum members
+    MOLE_PER_SECOND = "MOLE_PER_SECOND"
+    MOLE_PER_HOUR = "MOLE_PER_HOUR"
+    KILOMOLE_PER_HOUR = "KILOMOLE_PER_HOUR"
+    KILOMOLE_PER_SECOND = "KILOMOLE_PER_SECOND"
+
+# Set metadata after class creation
+MolarFlowRateUnitEnum._metadata = {
+    "MOLE_PER_SECOND": {'description': 'Moles per second (SI)', 'annotations': {'symbol': 'mol/s', 'system': 'SI'}},
+    "MOLE_PER_HOUR": {'description': 'Moles per hour', 'annotations': {'symbol': 'mol/h', 'conversion_to_mol_per_s': '0.000277778'}},
+    "KILOMOLE_PER_HOUR": {'description': 'Kilomoles per hour', 'annotations': {'symbol': 'kmol/h', 'conversion_to_mol_per_s': '0.277778'}},
+    "KILOMOLE_PER_SECOND": {'description': 'Kilomoles per second', 'annotations': {'symbol': 'kmol/s', 'conversion_to_mol_per_s': '1000'}},
+}
+
+class VolumetricFlowRateUnitEnum(RichEnum):
+    """
+    Units of volumetric flow rate (volume per unit time)
+    """
+    # Enum members
+    CUBIC_METER_PER_SECOND = "CUBIC_METER_PER_SECOND"
+    CUBIC_METER_PER_HOUR = "CUBIC_METER_PER_HOUR"
+    LITER_PER_SECOND = "LITER_PER_SECOND"
+    LITER_PER_MINUTE = "LITER_PER_MINUTE"
+    GALLON_PER_MINUTE = "GALLON_PER_MINUTE"
+    CUBIC_FOOT_PER_MINUTE = "CUBIC_FOOT_PER_MINUTE"
+
+# Set metadata after class creation
+VolumetricFlowRateUnitEnum._metadata = {
+    "CUBIC_METER_PER_SECOND": {'description': 'Cubic meters per second (SI)', 'annotations': {'symbol': 'm3/s', 'system': 'SI'}},
+    "CUBIC_METER_PER_HOUR": {'description': 'Cubic meters per hour', 'annotations': {'symbol': 'm3/h', 'conversion_to_m3_per_s': '0.000277778'}},
+    "LITER_PER_SECOND": {'description': 'Liters per second', 'annotations': {'symbol': 'L/s', 'conversion_to_m3_per_s': '0.001'}},
+    "LITER_PER_MINUTE": {'description': 'Liters per minute', 'annotations': {'symbol': 'L/min', 'conversion_to_m3_per_s': '1.66667e-5'}},
+    "GALLON_PER_MINUTE": {'description': 'US gallons per minute', 'annotations': {'symbol': 'gpm', 'conversion_to_m3_per_s': '6.30902e-5', 'system': 'US'}},
+    "CUBIC_FOOT_PER_MINUTE": {'description': 'Cubic feet per minute', 'annotations': {'symbol': 'cfm', 'conversion_to_m3_per_s': '0.000471947', 'system': 'imperial'}},
+}
+
 __all__ = [
     "LengthUnitEnum",
     "MassUnitEnum",
@@ -306,4 +368,7 @@ __all__ = [
     "FrequencyUnitEnum",
     "AngleUnitEnum",
     "DataSizeUnitEnum",
+    "MassFlowRateUnitEnum",
+    "MolarFlowRateUnitEnum",
+    "VolumetricFlowRateUnitEnum",
 ]

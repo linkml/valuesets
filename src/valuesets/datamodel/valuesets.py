@@ -6360,6 +6360,342 @@ OutcomeTypeEnum._metadata = {
     "FN": {'description': 'False Negative'},
 }
 
+class StatisticalTestEnum(RichEnum):
+    """
+    Statistical hypothesis tests, drawn primarily from the descendants of 'statistical hypothesis test' (OBI:0000673) in STATO.
+This enum deliberately mixes abstraction levels: alongside concrete tests it retains STATO's grouping classes (GOODNESS_OF_FIT_TEST, HOMOSKEDASTICITY_TEST, SPHERICITY_TEST, POST_HOC_ANALYSIS, NON_PARAMETRIC_TEST and similar) so that a source reporting only "a test of normality was applied" can still be annotated. Prefer the most specific value that the source supports, and use a grouping value only when the specific test is genuinely not stated.
+Several values are also repeated in the narrower enums below (TTestTypeEnum, NormalityTestEnum, HomoscedasticityTestEnum, PostHocTestEnum), which exist to constrain slot ranges. The duplicated meanings are intentional; from_meaning() resolves per enum class.
+    """
+    # Enum members
+    STUDENTS_T_TEST = "STUDENTS_T_TEST"
+    ONE_SAMPLE_T_TEST = "ONE_SAMPLE_T_TEST"
+    PAIRED_T_TEST = "PAIRED_T_TEST"
+    TWO_SAMPLE_T_TEST_EQUAL_VARIANCE = "TWO_SAMPLE_T_TEST_EQUAL_VARIANCE"
+    TWO_SAMPLE_T_TEST_UNEQUAL_VARIANCE = "TWO_SAMPLE_T_TEST_UNEQUAL_VARIANCE"
+    YUEN_T_TEST = "YUEN_T_TEST"
+    Z_TEST = "Z_TEST"
+    ONE_SAMPLE_HOTELLING_T2_TEST = "ONE_SAMPLE_HOTELLING_T2_TEST"
+    TWO_SAMPLE_HOTELLING_T2_TEST = "TWO_SAMPLE_HOTELLING_T2_TEST"
+    ANOVA = "ANOVA"
+    ONE_WAY_ANOVA = "ONE_WAY_ANOVA"
+    TWO_WAY_ANOVA = "TWO_WAY_ANOVA"
+    MULTIWAY_ANOVA = "MULTIWAY_ANOVA"
+    REPEATED_MEASURES_ANOVA = "REPEATED_MEASURES_ANOVA"
+    MANOVA = "MANOVA"
+    ANCOVA = "ANCOVA"
+    F_TEST = "F_TEST"
+    MANN_WHITNEY_U_TEST = "MANN_WHITNEY_U_TEST"
+    WILCOXON_SIGNED_RANK_TEST = "WILCOXON_SIGNED_RANK_TEST"
+    KRUSKAL_WALLIS_TEST = "KRUSKAL_WALLIS_TEST"
+    FRIEDMAN_TEST = "FRIEDMAN_TEST"
+    SIGN_TEST = "SIGN_TEST"
+    CHI_SQUARE_TEST = "CHI_SQUARE_TEST"
+    PEARSON_CHI_SQUARE_TEST_OF_INDEPENDENCE = "PEARSON_CHI_SQUARE_TEST_OF_INDEPENDENCE"
+    PEARSON_CHI_SQUARE_GOODNESS_OF_FIT_TEST = "PEARSON_CHI_SQUARE_GOODNESS_OF_FIT_TEST"
+    YATES_CORRECTED_CHI_SQUARE_TEST = "YATES_CORRECTED_CHI_SQUARE_TEST"
+    CHI_SQUARE_TEST_FOR_HOMOGENEITY = "CHI_SQUARE_TEST_FOR_HOMOGENEITY"
+    FISHERS_EXACT_TEST = "FISHERS_EXACT_TEST"
+    BARNARDS_TEST = "BARNARDS_TEST"
+    MCNEMAR_TEST = "MCNEMAR_TEST"
+    COCHRANS_Q_TEST = "COCHRANS_Q_TEST"
+    COCHRAN_ARMITAGE_TEST_FOR_TREND = "COCHRAN_ARMITAGE_TEST_FOR_TREND"
+    COCHRAN_MANTEL_HAENSZEL_TEST = "COCHRAN_MANTEL_HAENSZEL_TEST"
+    EXACT_BINOMIAL_TEST = "EXACT_BINOMIAL_TEST"
+    HYPERGEOMETRIC_TEST = "HYPERGEOMETRIC_TEST"
+    TEST_OF_ASSOCIATION_BETWEEN_CATEGORICAL_VARIABLES = "TEST_OF_ASSOCIATION_BETWEEN_CATEGORICAL_VARIABLES"
+    GOODNESS_OF_FIT_TEST = "GOODNESS_OF_FIT_TEST"
+    SHAPIRO_WILK_TEST = "SHAPIRO_WILK_TEST"
+    KOLMOGOROV_SMIRNOV_TEST = "KOLMOGOROV_SMIRNOV_TEST"
+    ANDERSON_DARLING_TEST = "ANDERSON_DARLING_TEST"
+    HOSMER_LEMESHOW_TEST = "HOSMER_LEMESHOW_TEST"
+    LEVENES_TEST = "LEVENES_TEST"
+    BARTLETTS_TEST = "BARTLETTS_TEST"
+    BROWN_FORSYTHE_TEST = "BROWN_FORSYTHE_TEST"
+    BREUSCH_PAGAN_TEST = "BREUSCH_PAGAN_TEST"
+    HOMOSKEDASTICITY_TEST = "HOMOSKEDASTICITY_TEST"
+    HOMOGENEITY_TEST = "HOMOGENEITY_TEST"
+    SPHERICITY_TEST = "SPHERICITY_TEST"
+    MAUCHLYS_TEST = "MAUCHLYS_TEST"
+    ODDS_RATIO_HOMOGENEITY_TEST = "ODDS_RATIO_HOMOGENEITY_TEST"
+    BRESLOW_DAY_TEST = "BRESLOW_DAY_TEST"
+    TARONES_TEST = "TARONES_TEST"
+    WOOLFS_TEST = "WOOLFS_TEST"
+    POST_HOC_ANALYSIS = "POST_HOC_ANALYSIS"
+    TUKEY_HSD_TEST = "TUKEY_HSD_TEST"
+    NEWMAN_KEULS_TEST = "NEWMAN_KEULS_TEST"
+    SCHEFFE_TEST = "SCHEFFE_TEST"
+    LEAST_SIGNIFICANT_DIFFERENCE_TEST = "LEAST_SIGNIFICANT_DIFFERENCE_TEST"
+    DUNNS_TEST = "DUNNS_TEST"
+    CONOVER_IMAN_TEST = "CONOVER_IMAN_TEST"
+    GRUBBS_TEST = "GRUBBS_TEST"
+    DIXON_Q_TEST = "DIXON_Q_TEST"
+    TIETJEN_MOORE_TEST = "TIETJEN_MOORE_TEST"
+    GENERALIZED_ESD_TEST = "GENERALIZED_ESD_TEST"
+    LIKELIHOOD_RATIO_TEST = "LIKELIHOOD_RATIO_TEST"
+    WALD_TEST = "WALD_TEST"
+    LOG_RANK_TEST = "LOG_RANK_TEST"
+    HARDY_WEINBERG_EQUILIBRIUM_TEST = "HARDY_WEINBERG_EQUILIBRIUM_TEST"
+    TRANSMISSION_DISEQUILIBRIUM_TEST = "TRANSMISSION_DISEQUILIBRIUM_TEST"
+    PEARSON_CORRELATION_TEST = "PEARSON_CORRELATION_TEST"
+    SPEARMAN_CORRELATION_TEST = "SPEARMAN_CORRELATION_TEST"
+    AB_TEST = "AB_TEST"
+    BETWEEN_GROUP_COMPARISON_TEST = "BETWEEN_GROUP_COMPARISON_TEST"
+    WITHIN_SUBJECT_COMPARISON_TEST = "WITHIN_SUBJECT_COMPARISON_TEST"
+    NON_PARAMETRIC_TEST = "NON_PARAMETRIC_TEST"
+
+# Set metadata after class creation to avoid it becoming an enum member
+StatisticalTestEnum._metadata = {
+    "STUDENTS_T_TEST": {'description': "Test in which the test statistic follows a Student's t distribution under the null hypothesis; used when the population is assumed normal but the sample is small", 'meaning': 'OBI:0000739', 'aliases': ['t-test', 't-Test']},
+    "ONE_SAMPLE_T_TEST": {'description': "Student's t-test comparing a sample mean against a specified population mean", 'meaning': 'STATO:0000302'},
+    "PAIRED_T_TEST": {'description': "Student's t-test for differences between paired observations, as in a repeated measures design with two measurements per subject", 'meaning': 'STATO:0000095'},
+    "TWO_SAMPLE_T_TEST_EQUAL_VARIANCE": {'description': 'Two-sample t-test comparing the means of two independent samples assumed to have equal variances', 'meaning': 'STATO:0000303', 'annotations': {'note': 'The bare terms "unpaired t-test" and "independent samples t-test" are ambiguous: they are attached here because this is the classical equal-variance form, but common software defaults to the Welch variant (R\'s t.test, scipy.stats.ttest_ind with equal_var=False). Choose TWO_SAMPLE_T_TEST_UNEQUAL_VARIANCE when the source did not assume equal variances.'}, 'aliases': ['independent samples t-test', 'unpaired t-test']},
+    "TWO_SAMPLE_T_TEST_UNEQUAL_VARIANCE": {'description': 'Two-sample t-test used when the variances of the two populations are not assumed equal', 'meaning': 'STATO:0000304', 'annotations': {'note': 'This is the default two-sample t-test in R and SciPy, so an unqualified "unpaired t-test" in a methods section often means this rather than TWO_SAMPLE_T_TEST_EQUAL_VARIANCE.'}, 'aliases': ["Welch's t-test"]},
+    "YUEN_T_TEST": {'description': 'Robust two-sample t-test computed on trimmed means and winsorized variances', 'meaning': 'STATO:0000406'},
+    "Z_TEST": {'description': 'Test evaluating the null hypothesis that the means of two populations are equal using a normal reference distribution', 'meaning': 'STATO:0000052'},
+    "ONE_SAMPLE_HOTELLING_T2_TEST": {'description': 'Multivariate extension of the one-sample t-test comparing a vector of means against a reference vector', 'meaning': 'STATO:0000153'},
+    "TWO_SAMPLE_HOTELLING_T2_TEST": {'description': 'Multivariate generalization of the two-sample t-test comparing mean vectors of two populations', 'meaning': 'STATO:0000098'},
+    "ANOVA": {'description': 'Analysis of variance testing whether the means of several groups are equal', 'meaning': 'OBI:0200201', 'aliases': ['analysis of variance']},
+    "ONE_WAY_ANOVA": {'description': 'Analysis of variance in which the groups compared correspond to the levels of a single independent variable', 'meaning': 'STATO:0000044'},
+    "TWO_WAY_ANOVA": {'description': 'Analysis of variance in which the groups compared correspond to the levels of exactly two independent variables', 'meaning': 'STATO:0000045'},
+    "MULTIWAY_ANOVA": {'description': 'Analysis of variance in which the groups compared correspond to the levels of more than two independent variables', 'meaning': 'STATO:0000048'},
+    "REPEATED_MEASURES_ANOVA": {'description': 'Analysis of variance developed for non-independent observations arising from repeated measurements on the same experimental unit', 'meaning': 'STATO:0000260'},
+    "MANOVA": {'description': 'Procedure for comparing multivariate sample means when there are two or more dependent variables', 'meaning': 'STATO:0000454'},
+    "ANCOVA": {'description': 'Analysis of covariance evaluating whether population means of a dependent variable are equal across levels of a categorical independent variable while controlling for covariates', 'meaning': 'STATO:0000179', 'aliases': ['analysis of covariance']},
+    "F_TEST": {'description': 'Test in which the test statistic follows an F-distribution under the null hypothesis', 'meaning': 'STATO:0000086'},
+    "MANN_WHITNEY_U_TEST": {'description': 'Non-parametric test comparing two independent groups without assuming normally distributed values', 'meaning': 'STATO:0000076', 'aliases': ['Wilcoxon rank sum test', 'Mann-Whitney Test']},
+    "WILCOXON_SIGNED_RANK_TEST": {'description': 'Non-parametric test of the null hypothesis that the median difference between paired observations is zero', 'meaning': 'STATO:0000092'},
+    "KRUSKAL_WALLIS_TEST": {'description': 'Non-parametric test comparing two or more groups without assuming normally distributed values', 'meaning': 'STATO:0000094', 'aliases': ['Kruskal-Wallis Test']},
+    "FRIEDMAN_TEST": {'description': 'Non-parametric test for differences among multiple related groups; extension of the Wilcoxon signed-rank test to more than two conditions', 'meaning': 'STATO:0000641'},
+    "SIGN_TEST": {'description': 'Non-parametric test assessing whether the median of a population equals a specified value', 'meaning': 'STATO:0000644'},
+    "CHI_SQUARE_TEST": {'description': 'Test in which the sampling distribution of the test statistic is a chi-square distribution under the null hypothesis', 'meaning': 'OBI:0200200'},
+    "PEARSON_CHI_SQUARE_TEST_OF_INDEPENDENCE": {'description': 'Chi-square test of the independence of two categorical variables in a contingency table', 'meaning': 'STATO:0000081'},
+    "PEARSON_CHI_SQUARE_GOODNESS_OF_FIT_TEST": {'description': 'Chi-square test evaluating the goodness of fit of observed counts to an expected distribution', 'meaning': 'STATO:0000309'},
+    "YATES_CORRECTED_CHI_SQUARE_TEST": {'description': 'Chi-square test of association between two dichotomous variables with a continuity correction', 'meaning': 'STATO:0000070', 'aliases': ["Yates' chi-squared test"]},
+    "CHI_SQUARE_TEST_FOR_HOMOGENEITY": {'description': 'Test comparing proportions observed across multiple groups using contingency table frequencies', 'meaning': 'STATO:0000701'},
+    "FISHERS_EXACT_TEST": {'description': 'Exact test for non-random association between two categorical variables', 'meaning': 'STATO:0000073'},
+    "BARNARDS_TEST": {'description': "Exact unconditional test of association between two categorical variables, often more powerful than Fisher's exact test", 'meaning': 'STATO:0000310'},
+    "MCNEMAR_TEST": {'description': 'Test applied to 2 x 2 contingency tables of paired nominal data to compare marginal frequencies', 'meaning': 'STATO:0000433'},
+    "COCHRANS_Q_TEST": {'description': 'Test for unreplicated randomized block designs with a binary response and paired data', 'meaning': 'STATO:0000434'},
+    "COCHRAN_ARMITAGE_TEST_FOR_TREND": {'description': 'Test for association between a dichotomous variable and an ordered categorical variable', 'meaning': 'STATO:0000148'},
+    "COCHRAN_MANTEL_HAENSZEL_TEST": {'description': 'Test of independence between two categorical variables stratified by a third variable', 'meaning': 'STATO:0000074', 'aliases': ['Cochran-Mantel-Haenszel test']},
+    "EXACT_BINOMIAL_TEST": {'description': 'Test of the statistical significance of deviations from a theoretically expected distribution of observations into two categories', 'meaning': 'STATO:0000298', 'aliases': ['binomial test']},
+    "HYPERGEOMETRIC_TEST": {'description': 'Test evaluating whether a random variable follows a hypergeometric distribution; widely used for over-representation analysis', 'meaning': 'STATO:0000285', 'aliases': ['over-representation test']},
+    "TEST_OF_ASSOCIATION_BETWEEN_CATEGORICAL_VARIABLES": {'description': 'Test evaluating whether a discrete predictor variable is associated with a discrete response variable', 'meaning': 'STATO:0000027'},
+    "GOODNESS_OF_FIT_TEST": {'description': 'Test evaluating whether a sample distribution can be considered equivalent to a theoretical distribution', 'meaning': 'STATO:0000191'},
+    "SHAPIRO_WILK_TEST": {'description': 'Goodness of fit test of the null hypothesis that a sample is drawn from a normally distributed population', 'meaning': 'STATO:0000077'},
+    "KOLMOGOROV_SMIRNOV_TEST": {'description': 'Goodness of fit test of the null hypothesis that a sample is drawn from a specified continuous probability distribution', 'meaning': 'STATO:0000083'},
+    "ANDERSON_DARLING_TEST": {'description': 'Goodness of fit test of whether a sample is drawn from a given probability distribution, weighting the tails more heavily', 'meaning': 'STATO:0000042'},
+    "HOSMER_LEMESHOW_TEST": {'description': 'Goodness of fit test for logistic regression models comparing predicted probabilities against observed outcomes', 'meaning': 'STATO:0000653'},
+    "LEVENES_TEST": {'description': 'Test of the null hypothesis of equality of variance across several populations', 'meaning': 'STATO:0000078'},
+    "BARTLETTS_TEST": {'description': 'Test of whether k samples are drawn from populations with equal variances; sensitive to departures from normality', 'meaning': 'STATO:0000079', 'aliases': ["Bartlett's test"]},
+    "BROWN_FORSYTHE_TEST": {'description': 'Test of equality of group variances based on deviations from the group medians', 'meaning': 'STATO:0000080'},
+    "BREUSCH_PAGAN_TEST": {'description': 'Score test of the hypothesis of constant error variance against the alternative that error variance depends on the fitted values', 'meaning': 'STATO:0000284'},
+    "HOMOSKEDASTICITY_TEST": {'description': 'Test evaluating whether variances from several random samples are similar', 'meaning': 'STATO:0000137', 'aliases': ['homoscedasticity test']},
+    "HOMOGENEITY_TEST": {'description': 'Test evaluating whether a statistical measure computed from several random samples is similar', 'meaning': 'STATO:0000697'},
+    "SPHERICITY_TEST": {'description': 'Test of the null hypothesis of equality of the variances of differences between levels of a repeated measures factor', 'meaning': 'STATO:0000131'},
+    "MAUCHLYS_TEST": {'description': 'Test of sphericity in the context of repeated measures analysis of variance', 'meaning': 'STATO:0000199'},
+    "ODDS_RATIO_HOMOGENEITY_TEST": {'description': 'Test of the null hypothesis that odds ratios are consistent across strata of a population', 'meaning': 'STATO:0000247'},
+    "BRESLOW_DAY_TEST": {'description': 'Test of whether odds ratios are homogeneous across several 2x2 contingency tables', 'meaning': 'STATO:0000130'},
+    "TARONES_TEST": {'description': 'Test of the null hypothesis that odds ratios are homogeneous across strata', 'meaning': 'STATO:0000136'},
+    "WOOLFS_TEST": {'description': 'Test of the null hypothesis that odds ratios are the same across all strata of the population under investigation', 'meaning': 'STATO:0000246'},
+    "POST_HOC_ANALYSIS": {'description': 'Test carried out following an analysis of variance that rejected the null hypothesis, to identify which groups differ', 'meaning': 'STATO:0000133'},
+    "TUKEY_HSD_TEST": {'description': 'Post-hoc test following a significant ANOVA that determines which means differ, controlling the family-wise error rate', 'meaning': 'STATO:0000187', 'aliases': ['Tukey honestly significant difference test']},
+    "NEWMAN_KEULS_TEST": {'description': 'Stepwise multiple comparison procedure identifying sample means that differ significantly, based on the studentized range statistic', 'meaning': 'STATO:0000261', 'aliases': ['Student-Newman-Keuls test']},
+    "SCHEFFE_TEST": {'description': 'Conservative post-hoc procedure evaluating all possible contrasts while adjusting significance levels for multiple comparisons', 'meaning': 'STATO:0000156', 'aliases': ['Scheffé test']},
+    "LEAST_SIGNIFICANT_DIFFERENCE_TEST": {'description': 'Post-hoc test for multiple comparisons of treatments by means of the least significant difference following an ANOVA', 'meaning': 'STATO:0000157', 'aliases': ["Fisher's LSD test", 'Least significant difference test']},
+    "DUNNS_TEST": {'description': 'Non-parametric post-hoc test run after a Kruskal-Wallis test to identify which groups differ', 'meaning': 'STATO:0000490', 'aliases': ["Dunn's multiple comparison test"]},
+    "CONOVER_IMAN_TEST": {'description': 'Post-hoc test for pairwise multiple comparisons using rank sums following a Kruskal-Wallis test', 'meaning': 'STATO:0000491'},
+    "GRUBBS_TEST": {'description': 'Test detecting a single outlier in a univariate data set assumed to come from a normally distributed population', 'meaning': 'STATO:0000441'},
+    "DIXON_Q_TEST": {'description': 'Test detecting outliers in a univariate data set assumed to come from a normally distributed population', 'meaning': 'STATO:0000440'},
+    "TIETJEN_MOORE_TEST": {'description': "Generalization of Grubbs' test allowing detection of more than one outlier", 'meaning': 'STATO:0000442'},
+    "GENERALIZED_ESD_TEST": {'description': 'Outlier detection test with a built-in correction for multiple testing', 'meaning': 'STATO:0000443', 'aliases': ['generalized ESD test']},
+    "LIKELIHOOD_RATIO_TEST": {'description': 'Test of whether there is evidence for moving from a simple model to a more complex model in which the simple model is nested', 'meaning': 'OBI:0000861'},
+    "WALD_TEST": {'description': 'Test evaluating whether one or more model coefficients differ from zero, given their variance-covariance matrix', 'meaning': 'STATO:0000559', 'aliases': ['Wald chi-squared test']},
+    "LOG_RANK_TEST": {'description': 'Test comparing the survival distributions of two or more groups', 'meaning': 'STATO:0000640', 'aliases': ['logrank test']},
+    "HARDY_WEINBERG_EQUILIBRIUM_TEST": {'description': "Test of whether a population's allele proportions are in Hardy-Weinberg equilibrium, often used as a genotyping quality control", 'meaning': 'STATO:0000181'},
+    "TRANSMISSION_DISEQUILIBRIUM_TEST": {'description': 'Test for genetic linkage between a genetic marker and a trait in families, robust to population structure', 'meaning': 'STATO:0000275'},
+    "PEARSON_CORRELATION_TEST": {'description': "Test of whether two continuous variables are linearly associated, based on Pearson's correlation coefficient", 'meaning': 'NCIT:C53244'},
+    "SPEARMAN_CORRELATION_TEST": {'description': "Non-parametric test of whether two variables are monotonically associated, based on Spearman's rank correlation coefficient", 'meaning': 'NCIT:C53249'},
+    "AB_TEST": {'description': 'Statistical testing comparing two types of treatments or interventions', 'meaning': 'STATO:0000715'},
+    "BETWEEN_GROUP_COMPARISON_TEST": {'description': 'Test detecting differences between the means computed for each study group population', 'meaning': 'STATO:0000279'},
+    "WITHIN_SUBJECT_COMPARISON_TEST": {'description': 'Test evaluating whether a change occurs within one experimental unit over time following a treatment or event', 'meaning': 'STATO:0000202'},
+    "NON_PARAMETRIC_TEST": {'description': 'Test making no assumption about the underlying data distribution', 'meaning': 'STATO:0000198'},
+}
+
+class TTestTypeEnum(RichEnum):
+    """
+    Variants of Student's t-test
+    """
+    # Enum members
+    ONE_SAMPLE = "ONE_SAMPLE"
+    PAIRED = "PAIRED"
+    TWO_SAMPLE_EQUAL_VARIANCE = "TWO_SAMPLE_EQUAL_VARIANCE"
+    TWO_SAMPLE_UNEQUAL_VARIANCE = "TWO_SAMPLE_UNEQUAL_VARIANCE"
+    TRIMMED_MEANS = "TRIMMED_MEANS"
+
+# Set metadata after class creation to avoid it becoming an enum member
+TTestTypeEnum._metadata = {
+    "ONE_SAMPLE": {'description': 'Compares a sample mean against a specified population mean', 'meaning': 'STATO:0000302'},
+    "PAIRED": {'description': 'Compares paired observations from the same experimental units', 'meaning': 'STATO:0000095'},
+    "TWO_SAMPLE_EQUAL_VARIANCE": {'description': 'Compares the means of two independent samples assumed to have equal variances', 'meaning': 'STATO:0000303'},
+    "TWO_SAMPLE_UNEQUAL_VARIANCE": {'description': "Compares the means of two independent samples with unequal variances (Welch's t-test)", 'meaning': 'STATO:0000304'},
+    "TRIMMED_MEANS": {'description': 'Robust t-test computed on trimmed means and winsorized variances', 'meaning': 'STATO:0000406'},
+}
+
+class NormalityTestEnum(RichEnum):
+    """
+    Goodness of fit tests commonly used to assess whether a sample is drawn from a normally distributed population
+    """
+    # Enum members
+    SHAPIRO_WILK = "SHAPIRO_WILK"
+    KOLMOGOROV_SMIRNOV = "KOLMOGOROV_SMIRNOV"
+    ANDERSON_DARLING = "ANDERSON_DARLING"
+
+# Set metadata after class creation to avoid it becoming an enum member
+NormalityTestEnum._metadata = {
+    "SHAPIRO_WILK": {'description': 'Tests the null hypothesis that a sample comes from a normal distribution', 'meaning': 'STATO:0000077'},
+    "KOLMOGOROV_SMIRNOV": {'description': 'Tests whether a sample is drawn from a specified continuous probability distribution', 'meaning': 'STATO:0000083'},
+    "ANDERSON_DARLING": {'description': 'Tests whether a sample is drawn from a given probability distribution, with added sensitivity in the tails', 'meaning': 'STATO:0000042'},
+}
+
+class HomoscedasticityTestEnum(RichEnum):
+    """
+    Tests evaluating equality of variances across groups or samples
+    """
+    # Enum members
+    LEVENE = "LEVENE"
+    BARTLETT = "BARTLETT"
+    BROWN_FORSYTHE = "BROWN_FORSYTHE"
+    BREUSCH_PAGAN = "BREUSCH_PAGAN"
+
+# Set metadata after class creation to avoid it becoming an enum member
+HomoscedasticityTestEnum._metadata = {
+    "LEVENE": {'description': 'Tests the null hypothesis of equality of variance in several populations', 'meaning': 'STATO:0000078'},
+    "BARTLETT": {'description': 'Tests whether k samples come from populations with equal variances', 'meaning': 'STATO:0000079', 'aliases': ["Bartlett's test"]},
+    "BROWN_FORSYTHE": {'description': 'Tests equality of group variances using deviations from group medians', 'meaning': 'STATO:0000080'},
+    "BREUSCH_PAGAN": {'description': 'Tests for heteroscedasticity of regression residuals', 'meaning': 'STATO:0000284'},
+}
+
+class PostHocTestEnum(RichEnum):
+    """
+    Multiple comparison procedures carried out after a significant omnibus test such as an ANOVA or Kruskal-Wallis test
+    """
+    # Enum members
+    TUKEY_HSD = "TUKEY_HSD"
+    NEWMAN_KEULS = "NEWMAN_KEULS"
+    SCHEFFE = "SCHEFFE"
+    LEAST_SIGNIFICANT_DIFFERENCE = "LEAST_SIGNIFICANT_DIFFERENCE"
+    DUNN = "DUNN"
+    CONOVER_IMAN = "CONOVER_IMAN"
+
+# Set metadata after class creation to avoid it becoming an enum member
+PostHocTestEnum._metadata = {
+    "TUKEY_HSD": {'description': 'Determines which means differ after a significant ANOVA while controlling the family-wise error rate', 'meaning': 'STATO:0000187'},
+    "NEWMAN_KEULS": {'description': 'Stepwise multiple comparison procedure based on the studentized range', 'meaning': 'STATO:0000261'},
+    "SCHEFFE": {'description': 'Conservative procedure evaluating all possible contrasts', 'meaning': 'STATO:0000156', 'aliases': ['Scheffé test']},
+    "LEAST_SIGNIFICANT_DIFFERENCE": {'description': 'Pairwise comparisons using the least significant difference following an ANOVA', 'meaning': 'STATO:0000157', 'aliases': ["Fisher's LSD test", 'Least significant difference test']},
+    "DUNN": {'description': 'Non-parametric post-hoc test following a Kruskal-Wallis test', 'meaning': 'STATO:0000490'},
+    "CONOVER_IMAN": {'description': 'Pairwise rank-sum comparisons following a Kruskal-Wallis test', 'meaning': 'STATO:0000491'},
+}
+
+class MultipleTestingCorrectionEnum(RichEnum):
+    """
+    Methods for adjusting p-values or significance thresholds when many hypotheses are tested simultaneously.
+As with StatisticalTestEnum, concrete methods (BONFERRONI, HOLM_BONFERRONI, BENJAMINI_HOCHBERG) sit alongside the error-rate classes they belong to (FAMILY_WISE_ERROR_RATE, FALSE_DISCOVERY_RATE) and procedural classes (SIMULTANEOUS, SEQUENTIAL). The classes are intended for sources that report only "FDR-corrected" without naming a procedure.
+    """
+    # Enum members
+    BONFERRONI = "BONFERRONI"
+    HOLM_BONFERRONI = "HOLM_BONFERRONI"
+    BENJAMINI_HOCHBERG = "BENJAMINI_HOCHBERG"
+    BENJAMINI_YEKUTIELI = "BENJAMINI_YEKUTIELI"
+    HOLM_FDR = "HOLM_FDR"
+    HOMMEL_FDR = "HOMMEL_FDR"
+    FAMILY_WISE_ERROR_RATE = "FAMILY_WISE_ERROR_RATE"
+    FALSE_DISCOVERY_RATE = "FALSE_DISCOVERY_RATE"
+    SIMULTANEOUS = "SIMULTANEOUS"
+    SEQUENTIAL = "SEQUENTIAL"
+    ALPHA_SPENDING = "ALPHA_SPENDING"
+    ALPHA_INVESTING = "ALPHA_INVESTING"
+    NONE = "NONE"
+
+# Set metadata after class creation to avoid it becoming an enum member
+MultipleTestingCorrectionEnum._metadata = {
+    "BONFERRONI": {'description': 'Divides the desired family-wise significance level by the number of comparisons made', 'meaning': 'NCIT:C61594', 'aliases': ['Bonferroni correction']},
+    "HOLM_BONFERRONI": {'description': 'Sequentially rejective closed-test procedure controlling the family-wise error rate', 'meaning': 'OBI:0200066', 'aliases': ['Holm correction']},
+    "BENJAMINI_HOCHBERG": {'description': 'Sequential p-value procedure controlling the false discovery rate under independence or positive dependence', 'meaning': 'OBI:0200036', 'aliases': ['BH', 'BH-FDR']},
+    "BENJAMINI_YEKUTIELI": {'description': 'False discovery rate procedure valid under arbitrary dependence between tests', 'meaning': 'OBI:0200049', 'aliases': ['BY']},
+    "HOLM_FDR": {'description': 'Application of the Holm p-value procedure to correct false discovery rate. Note that Holm\'s step-down procedure controls the family-wise error rate, not the false discovery rate; the "false discovery rate" wording is STATO\'s own label for this term. Prefer HOLM_BONFERRONI unless you specifically need the STATO term.', 'meaning': 'STATO:0000551'},
+    "HOMMEL_FDR": {'description': 'Application of the Hommel p-value procedure to correct false discovery rate', 'meaning': 'STATO:0000552'},
+    "FAMILY_WISE_ERROR_RATE": {'description': 'Procedure controlling the probability of making at least one false positive across a family of tests', 'meaning': 'OBI:0200073', 'aliases': ['FWER correction']},
+    "FALSE_DISCOVERY_RATE": {'description': 'Procedure controlling the expected proportion of false positives among rejected hypotheses', 'meaning': 'OBI:0200163'},
+    "SIMULTANEOUS": {'description': 'Correction method applying a single adjustment across all tests simultaneously', 'meaning': 'STATO:0000601'},
+    "SEQUENTIAL": {'description': 'Correction method applying adjustments in a stepwise, ordered fashion', 'meaning': 'STATO:0000602'},
+    "ALPHA_SPENDING": {'description': 'Sequential procedure allocating portions of the overall type I error rate across interim analyses', 'meaning': 'STATO:0000605'},
+    "ALPHA_INVESTING": {'description': 'Sequential procedure that earns and spends alpha as hypotheses are tested', 'meaning': 'STATO:0000604'},
+    "NONE": {'description': 'No adjustment made for multiple testing', 'annotations': {'note': 'No appropriate ontology term found for absence of correction'}},
+}
+
+class CorrelationCoefficientEnum(RichEnum):
+    """
+    Coefficients quantifying the strength of association between two variables
+    """
+    # Enum members
+    PEARSON = "PEARSON"
+    SPEARMAN = "SPEARMAN"
+    KENDALL = "KENDALL"
+
+# Set metadata after class creation to avoid it becoming an enum member
+CorrelationCoefficientEnum._metadata = {
+    "PEARSON": {'description': 'Evaluates the strength of linear association between two continuous variables', 'meaning': 'STATO:0000280', 'aliases': ["Pearson's r"]},
+    "SPEARMAN": {'description': 'Non-parametric measure of statistical dependence between two ranked variables', 'meaning': 'STATO:0000201', 'aliases': ["Spearman's rho"]},
+    "KENDALL": {'description': 'Correlation coefficient between two ordinal or ranked variables', 'meaning': 'STATO:0000240', 'aliases': ["Kendall's tau"]},
+}
+
+class TestTailednessEnum(RichEnum):
+    """
+    Whether a statistical test allocates the significance level to one or both tails of the reference distribution
+    """
+    # Enum members
+    ONE_TAILED = "ONE_TAILED"
+    TWO_TAILED = "TWO_TAILED"
+
+# Set metadata after class creation to avoid it becoming an enum member
+TestTailednessEnum._metadata = {
+    "ONE_TAILED": {'description': 'Allocates all of the significance level to one tail, evaluating a directional alternative hypothesis', 'meaning': 'STATO:0000286', 'aliases': ['one-sided test']},
+    "TWO_TAILED": {'description': 'Allocates half of the significance level to each tail, evaluating a non-directional alternative hypothesis', 'meaning': 'STATO:0000287', 'aliases': ['two-sided test']},
+}
+
+class DistributionalAssumptionEnum(RichEnum):
+    """
+    Whether an inference procedure assumes a parametric form for the underlying population distribution.
+Note the deliberate type approximation: the values denote a property of a procedure, but the available ontology terms (NCIT:C53230, STATO:0000198) denote classes of test. Neither PATO nor OBI currently has a quality or characteristic term for "parametric", so the test classes are used as the closest available referent.
+    """
+    # Enum members
+    PARAMETRIC = "PARAMETRIC"
+    NON_PARAMETRIC = "NON_PARAMETRIC"
+
+# Set metadata after class creation to avoid it becoming an enum member
+DistributionalAssumptionEnum._metadata = {
+    "PARAMETRIC": {'description': 'Procedure that incorporates assumptions about the population probability distribution', 'meaning': 'NCIT:C53230'},
+    "NON_PARAMETRIC": {'description': 'Procedure that makes no assumption about the underlying data distribution', 'meaning': 'STATO:0000198', 'aliases': ['Non-Parametric Test']},
+}
+
+class ComparisonObjectiveEnum(RichEnum):
+    """
+    The objective of a between-group comparison, particularly in the design of controlled trials
+    """
+    # Enum members
+    SUPERIORITY = "SUPERIORITY"
+    NON_INFERIORITY = "NON_INFERIORITY"
+    EQUIVALENCE = "EQUIVALENCE"
+
+# Set metadata after class creation to avoid it becoming an enum member
+ComparisonObjectiveEnum._metadata = {
+    "SUPERIORITY": {'description': 'Comparison intended to show that the difference in effects exceeds a prespecified threshold of meaningful benefit', 'meaning': 'STATO:0000718'},
+    "NON_INFERIORITY": {'description': 'Comparison intended to show that any difference in effects lies below a prespecified threshold of meaningful harm', 'meaning': 'STATO:0000716'},
+    "EQUIVALENCE": {'description': 'Comparison intended to show that the absolute difference in effects is smaller than a prespecified threshold', 'meaning': 'STATO:0000717'},
+}
+
 class PersonStatusEnum(RichEnum):
     """
     Vital status of a person (living or deceased)
@@ -16229,6 +16565,366 @@ DrugResponseEnum._metadata = {
     "UNKNOWN_RESPONSE": {'description': 'Treatment response unknown', 'meaning': 'NCIT:C17998'},
 }
 
+class G2PConfidenceCategory(RichEnum):
+    """
+    The level of confidence that a gene-disease association is real, as asserted by G2P curators. G2P uses the GenCC gene-disease validity classification terms. Operationally several groups use definitive, strong and moderate for clinical reporting; limited, disputed and refuted are not used for clinical reporting. GenCC classification identifiers are recorded in the gencc_classification_id annotation rather than as meaning:, because the GENCC prefix is not registered in bioregistry, OLS or the OBO PURL system and so cannot be resolved; the identifiers were taken from GenCC's own submissions export.
+    """
+    # Enum members
+    DEFINITIVE = "DEFINITIVE"
+    STRONG = "STRONG"
+    MODERATE = "MODERATE"
+    LIMITED = "LIMITED"
+    DISPUTED = "DISPUTED"
+    REFUTED = "REFUTED"
+
+# Set metadata after class creation to avoid it becoming an enum member
+G2PConfidenceCategory._metadata = {
+    "DEFINITIVE": {'description': "The role of this gene in this particular disease has been repeatedly demonstrated in both the research and clinical diagnostic settings, and has been upheld over time (at least 2 independent publication over 3 years' time). No convincing evidence has emerged that contradicts the role of the gene in the specified disease. (previously labelled as confirmed) The strength of evidence within publications as well as their number and publication dates is taken into account. In practice, this usually means at least 4 publications over 5 years. Typically this will also include convincing bioinformatic or functional evidence of causation, making it very unlikely that this gene-disease association would ever be refuted.", 'annotations': {'gencc_classification_id': 'GENCC:100001', 'clinical_reporting': 'true'}, 'aliases': ['confirmed']},
+    "STRONG": {'description': "The role of this gene as a monogenic cause of disease has been repeatedly and independently demonstrated providing very strong convincing evidence in humans and no conflicting evidence for this gene's role in this disease. (previously labelled as probable).", 'annotations': {'gencc_classification_id': 'GENCC:100002', 'clinical_reporting': 'true'}, 'aliases': ['probable']},
+    "MODERATE": {'description': 'There is moderate evidence in humans to support a casual role for this gene in this disease with no contradictory evidence. The body of evidence is not large (e.g possibly only one key paper) but appears convincing enough that the gene-disease pair is likely to be validated with additional evidence in the near future.', 'annotations': {'gencc_classification_id': 'GENCC:100003', 'clinical_reporting': 'true'}},
+    "LIMITED": {'description': 'Little human evidence exists to support a casual role for this gene in this disease, but not all evidence has been refuted. For example, there may be a collection of rare missense variants in humans but without convincing functional impact, segregration data that could either arise by chance (e.g across one or two meioses) or does not implicate a single gene, or functional data without direct recapitulation of the phenotype. Overall, the body of evidence does not meet contemporary criteria for claiming a valid association with disease. The majority are probably false associations. (previously labelled as possible).', 'annotations': {'gencc_classification_id': 'GENCC:100004', 'clinical_reporting': 'false'}, 'aliases': ['possible']},
+    "DISPUTED": {'description': 'Although evidence has been reported, other evidence of equal weight disputes the claim.', 'annotations': {'gencc_classification_id': 'GENCC:100005', 'clinical_reporting': 'false'}},
+    "REFUTED": {'description': 'There has been an assertion of a gene-disease association in the literature, but new valid evidence has arisen that refutes the entire original body of evidence.', 'annotations': {'gencc_classification_id': 'GENCC:100006', 'clinical_reporting': 'false'}},
+}
+
+class G2PAllelicRequirement(RichEnum):
+    """
+    The genotype required at the locus for the disease to manifest, also referred to in G2P as the genotype. HPO mode of inheritance (MOI) terminology is used; G2P uses synonyms of the MOI terms as many of the disorders described are de novo.
+The nine values are G2P's published genotype list, taken verbatim from the API the terminology page itself calls (GET /gene2phenotype/api/attribs/, key "genotype"), which includes the bare monoallelic_X alongside monoallelic_X_hemizygous and monoallelic_X_heterozygous.
+All nine G2P genotype strings are recorded by HPO as oio:hasExactSynonym of the term mapped below (verified against the HPO release directly; note that the OLS obo_synonym field under-reports these, listing only synonyms that carry an xref). That exact-synonym correspondence is what makes these mappings unambiguous.
+By convention in this enum, title is the HPO term label and the G2P string is carried as an alias, matching the pv-mapping guidance and clinical/genetics.yaml; consumers wanting G2P's own display string should read aliases.
+    """
+    # Enum members
+    MONOALLELIC_AUTOSOMAL = "MONOALLELIC_AUTOSOMAL"
+    BIALLELIC_AUTOSOMAL = "BIALLELIC_AUTOSOMAL"
+    MONOALLELIC_X = "MONOALLELIC_X"
+    MONOALLELIC_X_HEMIZYGOUS = "MONOALLELIC_X_HEMIZYGOUS"
+    MONOALLELIC_X_HETEROZYGOUS = "MONOALLELIC_X_HETEROZYGOUS"
+    MONOALLELIC_Y_HEMIZYGOUS = "MONOALLELIC_Y_HEMIZYGOUS"
+    MONOALLELIC_PAR = "MONOALLELIC_PAR"
+    BIALLELIC_PAR = "BIALLELIC_PAR"
+    MITOCHONDRIAL = "MITOCHONDRIAL"
+
+# Set metadata after class creation to avoid it becoming an enum member
+G2PAllelicRequirement._metadata = {
+    "MONOALLELIC_AUTOSOMAL": {'description': 'Plausible disease-causing mutations on an autosomal chromosome identified on one allele in all or the vast majority of with specific disorder.', 'meaning': 'HP:0000006', 'aliases': ['monoallelic_autosomal']},
+    "BIALLELIC_AUTOSOMAL": {'description': 'Plausible disease-causing homozygous or compound heterozygous mutations identified on both alleles in the autosomal chromosome.', 'meaning': 'HP:0000007', 'aliases': ['biallelic_autosomal']},
+    "MONOALLELIC_X": {'description': 'Plausible disease-causing mutations identified on the X chromosome.', 'meaning': 'HP:0001417', 'aliases': ['monoallelic_X']},
+    "MONOALLELIC_X_HEMIZYGOUS": {'description': 'Plausible disease-causing mutations identified on the X chromosome in a male as a cause of a specific disease, the disorder being predominantly recessive in female carriers.', 'meaning': 'HP:0001419', 'aliases': ['monoallelic_X_hemizygous']},
+    "MONOALLELIC_X_HETEROZYGOUS": {'description': 'Plausible disease-causing mutations identified in one copy of the X chromosome in females as a cause of a specific disease, include disorders where heterozygous females and hemizygous males are similarly affected e.g SMC1A mutations.', 'meaning': 'HP:0001423', 'aliases': ['monoallelic_X_heterozygous']},
+    "MONOALLELIC_Y_HEMIZYGOUS": {'description': 'Plausible disease-causing mutations identified in an allele found in the Y chromosome. The Y chromosome is passed from father to son as this mutation may affect only males.', 'meaning': 'HP:0001450', 'aliases': ['monoallelic_Y_hemizygous']},
+    "MONOALLELIC_PAR": {'description': 'Plausible disease-causing mutations identified in an allele found in the pseudoautosomal regions. Inheritance is not strictly sex-linked.', 'meaning': 'HP:0034340', 'aliases': ['monoallelic_PAR']},
+    "BIALLELIC_PAR": {'description': 'Plausible disease-causing homozygous or compound heterozygous mutations identified on both alleles found in the pseudoautosomal regions. Inheritance is not strictly sex-linked.', 'meaning': 'HP:0034341', 'aliases': ['biallelic_PAR']},
+    "MITOCHONDRIAL": {'description': 'Plausible disease-causing mutations identified on mitochondrial DNA where homoplasmy or heteroplasmy are associated with a specific disorder.', 'meaning': 'HP:0001427', 'aliases': ['mitochondrial']},
+}
+
+class G2PCrossCuttingModifier(RichEnum):
+    """
+    Additional qualifiers applied to the allelic requirement of a G2P gene-disease association. HPO inheritance qualifier terms (HP:0034335) are used where available. Potential secondary finding and restricted mutation set are G2P-specific and have no HPO equivalent.
+    """
+    # Enum members
+    DISPLAYS_ANTICIPATION = "DISPLAYS_ANTICIPATION"
+    IMPRINTED_REGION = "IMPRINTED_REGION"
+    TYPICALLY_DE_NOVO = "TYPICALLY_DE_NOVO"
+    TYPICALLY_MOSAIC = "TYPICALLY_MOSAIC"
+    TYPIFIED_BY_INCOMPLETE_PENETRANCE = "TYPIFIED_BY_INCOMPLETE_PENETRANCE"
+    POTENTIAL_SECONDARY_FINDING = "POTENTIAL_SECONDARY_FINDING"
+    RESTRICTED_MUTATION_SET = "RESTRICTED_MUTATION_SET"
+
+# Set metadata after class creation to avoid it becoming an enum member
+G2PCrossCuttingModifier._metadata = {
+    "DISPLAYS_ANTICIPATION": {'description': 'A phenomenon in which the severity of a disorder increases, or the age of onset decreases, as the disorder is passed from one generation to the next, typically due to expansion of a repeat sequence. For example, Myotonic Dystrophy is caused by triplet repeat expansion in the DMPK gene.', 'meaning': 'HP:0003743', 'aliases': ['displays anticipation']},
+    "IMPRINTED_REGION": {'description': 'Requires that the abnormal allele be paternal or maternal in origin, depending on the disease-gene relationship. Imprinting refers to a normal developmental process in which either the paternal or maternal allele is inactivated, depending on the specific locus, thus leading to expression from only one copy of the gene. Disease typically manifests when a deleterious variant is inherited from a parent whose copy of the gene would normally be expressed, but not when a deleterious variant is inherited from a parent whose copy of the gene would normally be inactivated.', 'meaning': 'HP:0034338', 'aliases': ['imprinted region']},
+    "TYPICALLY_DE_NOVO": {'description': 'Plausible disease causing mutations that occur post zygotically (formation of gametes). Note that this G2P wording is internally inconsistent: post-zygotic events are somatic, which is what TYPICALLY_MOSAIC describes, whereas gametogenesis is pre-zygotic. The mapped HPO term HP:0025352 carries the intended sense, defining conditions that are exclusively or predominantly observed to display de novo variants.', 'meaning': 'HP:0025352', 'aliases': ['typically de novo']},
+    "TYPICALLY_MOSAIC": {'description': 'Plausible disease causing mutations identified on one allele in a proportion of cells with the others being wild-type.', 'meaning': 'HP:0001442', 'aliases': ['typically mosaic']},
+    "TYPIFIED_BY_INCOMPLETE_PENETRANCE": {'description': 'A condition in which not all individuals carrying the disease-causing genotype manifest the associated phenotype.', 'meaning': 'HP:0003829', 'aliases': ['typified by incomplete penetrance']},
+    "POTENTIAL_SECONDARY_FINDING": {'description': 'This includes ACMG Secondary Findings and/or late onset conditions.'},
+    "RESTRICTED_MUTATION_SET": {'description': 'This is used when a disease is associated with a single recurrent variant or a set of variants only found in a particular protein domain.'},
+}
+
+class G2PMolecularMechanism(RichEnum):
+    """
+    The mechanism of disease derived from the available evidence, following the definitions of Backwell and Marsh (PMID:35395171). These mechanisms describe a gene-disease association rather than an individual variant, so the Sequence Ontology variant terms are recorded as close mappings rather than exact meanings.
+    """
+    # Enum members
+    LOSS_OF_FUNCTION = "LOSS_OF_FUNCTION"
+    GAIN_OF_FUNCTION = "GAIN_OF_FUNCTION"
+    DOMINANT_NEGATIVE = "DOMINANT_NEGATIVE"
+    UNDETERMINED_NON_LOSS_OF_FUNCTION = "UNDETERMINED_NON_LOSS_OF_FUNCTION"
+    UNDETERMINED = "UNDETERMINED"
+
+# Set metadata after class creation to avoid it becoming an enum member
+G2PMolecularMechanism._metadata = {
+    "LOSS_OF_FUNCTION": {'description': 'Loss-of-function variants involve a loss of the normal biological function of a protein. Often these are nonsense or frameshift mutations that introduce premature stop codons. Due to nonsense-mediated decay of the resulting mRNAs, most premature stop codons will result in no protein being produced, rather than a truncated protein. However, there are also many examples of loss-of-function variants that change the amino acid sequence and result in non-functional protein products. These mutations can cause a complete loss of function (amorphic), analogous to a protein null mutation, or only a partial loss of function (hypomorphic). May also include variants in regulatory regions.', 'aliases': ['loss_of_function_variant']},
+    "GAIN_OF_FUNCTION": {'description': 'Gain-of-function variants have their phenotypic effect because the mutant protein does something different than the wild-type protein. Often, these variants cause disease by increasing protein activity (hypermorphic) or introducing a completely new function (neomorphic), but the specific molecular mechanisms underlying gain-of-function mutations can be complex. May also include variants in regulatory regions.', 'aliases': ['gain_of_function_variant']},
+    "DOMINANT_NEGATIVE": {'description': 'Dominant-negative variants involve the mutant protein directly or indirectly blocking the normal biological function of the wild-type protein (antimorphic). They can thus cause a disproportionate (>50%) loss of function, even though only half of the protein is mutated eg. heterozygous variants in COL1A1 that disrupt the triple collagen helix.', 'aliases': ['antimorphic', 'dominant_negative_variant']},
+    "UNDETERMINED_NON_LOSS_OF_FUNCTION": {'description': 'Very often it is difficult to distinguish between dominant negative and gain of function, but it is clearly a non-loss-of-function mechanism (e.g. from co-expression experiments showing a damaging effect from the mutant allele).', 'aliases': ['undetermined non-loss-of-function']},
+    "UNDETERMINED": {'description': 'Not known.'},
+}
+
+class G2PMolecularMechanismSynopsis(RichEnum):
+    """
+    A more detailed description of the molecular mechanism of a G2P gene-disease association, following the definitions of Backwell and Marsh (PMID:35395171). A synopsis refines the higher-level molecular mechanism; more than one synopsis may apply to a single gene-disease association.
+    """
+    # Enum members
+    DESTABILISING_LOF = "DESTABILISING_LOF"
+    INTERACTION_DISRUPTING_LOF = "INTERACTION_DISRUPTING_LOF"
+    LOSS_OF_ACTIVITY_LOF = "LOSS_OF_ACTIVITY_LOF"
+    LOF_DUE_TO_PROTEIN_MISLOCALISATION = "LOF_DUE_TO_PROTEIN_MISLOCALISATION"
+    ASSEMBLY_MEDIATED_DOMINANT_NEGATIVE = "ASSEMBLY_MEDIATED_DOMINANT_NEGATIVE"
+    COMPETITIVE_DOMINANT_NEGATIVE = "COMPETITIVE_DOMINANT_NEGATIVE"
+    ASSEMBLY_MEDIATED_GOF = "ASSEMBLY_MEDIATED_GOF"
+    LOCAL_LOF_LEADING_TO_OVERALL_GOF = "LOCAL_LOF_LEADING_TO_OVERALL_GOF"
+    AGGREGATION = "AGGREGATION"
+    OTHER_GOF = "OTHER_GOF"
+
+# Set metadata after class creation to avoid it becoming an enum member
+G2PMolecularMechanismSynopsis._metadata = {
+    "DESTABILISING_LOF": {'description': 'A process whereby a missense change destabilises the protein structure resulting in loss of function.', 'annotations': {'parent_mechanism': 'LOSS_OF_FUNCTION'}},
+    "INTERACTION_DISRUPTING_LOF": {'description': 'A process whereby a variant allele disrupts interaction resulting in loss of function, for example a change in an interaction site.', 'annotations': {'parent_mechanism': 'LOSS_OF_FUNCTION'}},
+    "LOSS_OF_ACTIVITY_LOF": {'description': 'A process whereby a variant allele disrupts activity resulting in loss of function, for example a change in an active site.', 'annotations': {'parent_mechanism': 'LOSS_OF_FUNCTION'}},
+    "LOF_DUE_TO_PROTEIN_MISLOCALISATION": {'description': 'A loss of function caused by mislocalisation of a protein, rather than direct disruption of its structure or function.', 'annotations': {'parent_mechanism': 'LOSS_OF_FUNCTION'}},
+    "ASSEMBLY_MEDIATED_DOMINANT_NEGATIVE": {'description': 'A protein change which does not prevent coassembly into a complex with wild-type subunits but results in poisoning the activity of the hybrid complex, causing a disproportionate loss of function.', 'annotations': {'parent_mechanism': 'DOMINANT_NEGATIVE'}},
+    "COMPETITIVE_DOMINANT_NEGATIVE": {'description': 'A process whereby the novel protein disrupts specific interactions by competing with wild-type protein, thus having a dominant-negative effect.', 'annotations': {'parent_mechanism': 'DOMINANT_NEGATIVE'}},
+    "ASSEMBLY_MEDIATED_GOF": {'description': 'A process whereby incorporation of a mutant subunit into a protein complex leads to a gain of function, for example through constitutive activation of a channel.', 'annotations': {'parent_mechanism': 'GAIN_OF_FUNCTION'}},
+    "LOCAL_LOF_LEADING_TO_OVERALL_GOF": {'description': 'A gain of function caused by the localised loss of a specific function within a protein, for example binding of a regulatory domain is disrupted but enzymatic activity is retained.', 'annotations': {'parent_mechanism': 'GAIN_OF_FUNCTION'}},
+    "AGGREGATION": {'description': 'A process by which the variant allele causes aggregation usually causing toxic gain of function, for example misfolded proteins self-assembling into large aggregates or RNA binding protein gelation.', 'annotations': {'parent_mechanism': 'GAIN_OF_FUNCTION'}},
+    "OTHER_GOF": {'description': 'A gain of function process other than local loss of function or assembly mediated, for example a mutation in an active site which changes histone binding causing a novel function.', 'annotations': {'parent_mechanism': 'GAIN_OF_FUNCTION'}},
+}
+
+class G2PMolecularMechanismSupport(RichEnum):
+    """
+    Whether the molecular mechanism recorded for a G2P gene-disease association is directly supported by reported evidence, or inferred by the curator.
+    """
+    # Enum members
+    EVIDENCE = "EVIDENCE"
+    INFERRED = "INFERRED"
+
+# Set metadata after class creation to avoid it becoming an enum member
+G2PMolecularMechanismSupport._metadata = {
+    "EVIDENCE": {'description': 'The molecular mechanism is directly supported by experimental evidence reported in a publication attached to the record.'},
+    "INFERRED": {'description': 'The molecular mechanism is inferred by the curator rather than directly evidenced in the attached publications.'},
+}
+
+class G2PMechanismEvidenceCategory(RichEnum):
+    """
+    The broad category of experimental evidence supporting a molecular mechanism in G2P. G2P evidence classifications reuse terms from the ClinGen gene-disease validity SOP Experimental Evidence Summary Matrix.
+    """
+    # Enum members
+    FUNCTION = "FUNCTION"
+    FUNCTIONAL_ALTERATION = "FUNCTIONAL_ALTERATION"
+    MODELS = "MODELS"
+    RESCUE = "RESCUE"
+
+# Set metadata after class creation to avoid it becoming an enum member
+G2PMechanismEvidenceCategory._metadata = {
+    "FUNCTION": {'description': 'Evidence about the biochemical function, expression or interactions of the gene product.'},
+    "FUNCTIONAL_ALTERATION": {'description': 'Evidence from cells in which the function of the gene has been disrupted, showing a phenotype consistent with the human disease process.'},
+    "MODELS": {'description': 'Evidence from a cell culture model or non-human model organism with a disrupted copy of the gene.'},
+    "RESCUE": {'description': 'Evidence that the phenotype can be rescued by restoring the wild-type gene or gene product.'},
+}
+
+class G2PFunctionEvidence(RichEnum):
+    """
+    Types of evidence in the function category of the G2P molecular mechanism evidence classification.
+    """
+    # Enum members
+    BIOCHEMICAL = "BIOCHEMICAL"
+    PROTEIN_INTERACTION = "PROTEIN_INTERACTION"
+    PROTEIN_EXPRESSION = "PROTEIN_EXPRESSION"
+    IN_SILICO_MODELLING = "IN_SILICO_MODELLING"
+
+# Set metadata after class creation to avoid it becoming an enum member
+G2PFunctionEvidence._metadata = {
+    "BIOCHEMICAL": {'description': 'Evidence showing the gene product performs a biochemical function: (A) shared with other known genes in the disease of interest, or (B) consistent with the phenotype.'},
+    "PROTEIN_INTERACTION": {'description': 'Evidence showing the gene product interacts with proteins previously implicated in the disease of interest.'},
+    "PROTEIN_EXPRESSION": {'description': 'Evidence showing the gene is expressed in tissues relevant to the disease of interest and/or is altered in expression in patients who have the disease.'},
+    "IN_SILICO_MODELLING": {'description': 'Evidence generated using computer simulations and models predicting the functional impact of relevant gene-specific variants. These models can predict protein structure changes, disruption of protein interactions, or changes in gene and/or protein expression.'},
+}
+
+class G2PFunctionalAlterationEvidence(RichEnum):
+    """
+    Types of evidence in the functional alteration category of the G2P molecular mechanism evidence classification, distinguished by whether the cells came from an affected individual.
+    """
+    # Enum members
+    PATIENT_CELLS = "PATIENT_CELLS"
+    NON_PATIENT_CELLS = "NON_PATIENT_CELLS"
+
+# Set metadata after class creation to avoid it becoming an enum member
+G2PFunctionalAlterationEvidence._metadata = {
+    "PATIENT_CELLS": {'description': 'Evidence showing that cultured patient cells, in which the function of the gene has been disrupted, have a phenotype that is consistent with the human disease process.'},
+    "NON_PATIENT_CELLS": {'description': 'Evidence showing that cultured non-patient cells, in which the function of the gene has been disrupted, have a phenotype that is consistent with the human disease process.'},
+}
+
+class G2PModelsEvidence(RichEnum):
+    """
+    Types of evidence in the models category of the G2P molecular mechanism evidence classification.
+    """
+    # Enum members
+    CELL_CULTURE_MODEL = "CELL_CULTURE_MODEL"
+    NON_HUMAN_MODEL_ORGANISM = "NON_HUMAN_MODEL_ORGANISM"
+
+# Set metadata after class creation to avoid it becoming an enum member
+G2PModelsEvidence._metadata = {
+    "CELL_CULTURE_MODEL": {'description': 'A cell culture model with a disrupted copy of the gene shows a phenotype consistent with the human disease state.'},
+    "NON_HUMAN_MODEL_ORGANISM": {'description': 'A non-human model organism with a disrupted copy of the gene shows a phenotype consistent with the human disease state.'},
+}
+
+class G2PRescueEvidence(RichEnum):
+    """
+    Types of evidence in the rescue category of the G2P molecular mechanism evidence classification, distinguished by the system in which rescue was demonstrated.
+    """
+    # Enum members
+    PATIENT_CELLS = "PATIENT_CELLS"
+    CELL_CULTURE_MODEL = "CELL_CULTURE_MODEL"
+    NON_HUMAN_MODEL_ORGANISM = "NON_HUMAN_MODEL_ORGANISM"
+
+# Set metadata after class creation to avoid it becoming an enum member
+G2PRescueEvidence._metadata = {
+    "PATIENT_CELLS": {'description': 'Evidence showing that the phenotype can be rescued in patient cells.'},
+    "CELL_CULTURE_MODEL": {'description': 'Evidence showing that the phenotype can be rescued in cell culture models.'},
+    "NON_HUMAN_MODEL_ORGANISM": {'description': 'Evidence showing that the phenotype can be rescued in non-human model organisms.'},
+}
+
+class G2PVariantConsequence(RichEnum):
+    """
+    The consequence of the reported variants at the protein (for protein-coding genes) or the RNA (for non-protein coding genes), per allele. These are Sequence Ontology terms developed for G2P and described in PMID:37982373; the descriptions below are the G2P-authored usage notes rather than the SO text definitions. As in the other SO-backed enums here, title is uniformly the SO term label and any differing G2P label is carried as an alias; for four of the six values the SO and G2P labels coincide, which is why only altered_gene_product_sequence and function_uncertain_variant carry an alias.
+    """
+    # Enum members
+    ALTERED_GENE_PRODUCT_LEVEL = "ALTERED_GENE_PRODUCT_LEVEL"
+    DECREASED_GENE_PRODUCT_LEVEL = "DECREASED_GENE_PRODUCT_LEVEL"
+    ABSENT_GENE_PRODUCT = "ABSENT_GENE_PRODUCT"
+    INCREASED_GENE_PRODUCT_LEVEL = "INCREASED_GENE_PRODUCT_LEVEL"
+    ALTERED_GENE_PRODUCT_STRUCTURE = "ALTERED_GENE_PRODUCT_STRUCTURE"
+    UNCERTAIN = "UNCERTAIN"
+
+# Set metadata after class creation to avoid it becoming an enum member
+G2PVariantConsequence._metadata = {
+    "ALTERED_GENE_PRODUCT_LEVEL": {'description': 'A sequence variant that alters the level or amount of gene product produced. This high-level term can be applied where the direction of level change (increased vs decreased gene product level) is unknown or not confirmed, e.g., promoter or enhancer variants, some splice variants.', 'meaning': 'SO:0002314'},
+    "DECREASED_GENE_PRODUCT_LEVEL": {'description': "A sequence variant that decreases the level or amount of gene product produced, e.g., a 5' UTR variant that reduced protein levels by disrupting translation, a 3' UTR variant that affects RNA stability, splice variants that decrease but do not stop expression, variants leading to nonsense-mediated-decay (NMD)-competent premature termination codon (PTCs), or gene-disrupting structural variants.", 'meaning': 'SO:0002316'},
+    "ABSENT_GENE_PRODUCT": {'description': 'A sequence variant that results in no gene product. e.g., whole gene or other large scale disruptive structural variant, variants producing NMD-competent PTCs.', 'meaning': 'SO:0002317'},
+    "INCREASED_GENE_PRODUCT_LEVEL": {'description': 'A variant that increases the level or amount of gene product produced, e.g., non-disruptive gene duplications, some promoter or enhancer variants.', 'meaning': 'SO:0002315'},
+    "ALTERED_GENE_PRODUCT_STRUCTURE": {'description': 'A sequence variant that alters the sequence of a gene product. e.g., missense variants, NMD-incompetent PTCs, and other length-changing variants (in-frame indels, stop loss).', 'meaning': 'SO:0002318', 'aliases': ['altered gene product structure']},
+    "UNCERTAIN": {'description': 'A sequence variant in which the function of a gene product is unknown with respect to a reference. Used by G2P where the consequence of the reported variants could not be determined.', 'meaning': 'SO:0002220', 'aliases': ['uncertain']},
+}
+
+class G2PVariantTypeGroup(RichEnum):
+    """
+    The primary type grouping under which G2P organises the variant types associated with a curated gene-disease pair.
+    """
+    # Enum members
+    NMD_VARIANTS = "NMD_VARIANTS"
+    SPLICE_VARIANTS = "SPLICE_VARIANTS"
+    REGULATORY_VARIANTS = "REGULATORY_VARIANTS"
+    PROTEIN_CHANGING_VARIANTS = "PROTEIN_CHANGING_VARIANTS"
+    OTHER_VARIANTS = "OTHER_VARIANTS"
+
+# Set metadata after class creation to avoid it becoming an enum member
+G2PVariantTypeGroup._metadata = {
+    "NMD_VARIANTS": {'description': 'Variant types qualified by whether the resulting transcript is predicted to trigger or escape nonsense-mediated decay.'},
+    "SPLICE_VARIANTS": {'description': 'Variant types affecting splice sites or splice regions.'},
+    "REGULATORY_VARIANTS": {'description': 'Variant types in untranslated or regulatory regions.'},
+    "PROTEIN_CHANGING_VARIANTS": {'description': 'Variant types that change the coding sequence of the gene product.'},
+    "OTHER_VARIANTS": {'description': 'Variant types not covered by the NMD, splice, regulatory or protein changing groups, including structural and repeat changes.'},
+}
+
+class G2PVariantType(RichEnum):
+    """
+    The types of variants associated with the curated gene-disease pair reported in the publication. All terms are Sequence Ontology terms. Where G2P uses a label that differs from the current SO label, the G2P label is recorded as an alias. Descriptions are the SO text definitions where SO provides one.
+The NMD-qualified types have two parents in SO, so they are modelled with the base variant as is_a and the NMD qualifier as a mixin. LinkML preserves both, but as of linkml 1.9.5 the OWL generator emits only the is_a parent as rdfs:subClassOf and drops the mixin, so the NMD axis is additionally recorded in the nmd_status annotation to keep it available in every generated artifact. If a later linkml emits permissible-value mixins, that annotation is redundant and can go.
+    """
+    # Enum members
+    NMD_TRIGGERING = "NMD_TRIGGERING"
+    NMD_ESCAPING = "NMD_ESCAPING"
+    STOP_GAINED_NMD_TRIGGERING = "STOP_GAINED_NMD_TRIGGERING"
+    STOP_GAINED_NMD_ESCAPING = "STOP_GAINED_NMD_ESCAPING"
+    FRAMESHIFT_VARIANT_NMD_TRIGGERING = "FRAMESHIFT_VARIANT_NMD_TRIGGERING"
+    FRAMESHIFT_VARIANT_NMD_ESCAPING = "FRAMESHIFT_VARIANT_NMD_ESCAPING"
+    SPLICE_DONOR_VARIANT_NMD_TRIGGERING = "SPLICE_DONOR_VARIANT_NMD_TRIGGERING"
+    SPLICE_DONOR_VARIANT_NMD_ESCAPING = "SPLICE_DONOR_VARIANT_NMD_ESCAPING"
+    SPLICE_ACCEPTOR_VARIANT_NMD_TRIGGERING = "SPLICE_ACCEPTOR_VARIANT_NMD_TRIGGERING"
+    SPLICE_ACCEPTOR_VARIANT_NMD_ESCAPING = "SPLICE_ACCEPTOR_VARIANT_NMD_ESCAPING"
+    SPLICE_REGION_VARIANT = "SPLICE_REGION_VARIANT"
+    SPLICE_ACCEPTOR_VARIANT = "SPLICE_ACCEPTOR_VARIANT"
+    SPLICE_DONOR_VARIANT = "SPLICE_DONOR_VARIANT"
+    FIVE_PRIME_UTR_VARIANT = "FIVE_PRIME_UTR_VARIANT"
+    THREE_PRIME_UTR_VARIANT = "THREE_PRIME_UTR_VARIANT"
+    REGULATORY_REGION_VARIANT = "REGULATORY_REGION_VARIANT"
+    START_LOST = "START_LOST"
+    STOP_GAINED = "STOP_GAINED"
+    STOP_LOST = "STOP_LOST"
+    FRAMESHIFT_VARIANT = "FRAMESHIFT_VARIANT"
+    MISSENSE_VARIANT = "MISSENSE_VARIANT"
+    INFRAME_INSERTION = "INFRAME_INSERTION"
+    INFRAME_DELETION = "INFRAME_DELETION"
+    SYNONYMOUS_VARIANT = "SYNONYMOUS_VARIANT"
+    INTRON_VARIANT = "INTRON_VARIANT"
+    INTERGENIC_VARIANT = "INTERGENIC_VARIANT"
+    NON_CODING_TRANSCRIPT_VARIANT = "NON_CODING_TRANSCRIPT_VARIANT"
+    SHORT_TANDEM_REPEAT_CHANGE = "SHORT_TANDEM_REPEAT_CHANGE"
+    COPY_NUMBER_VARIATION = "COPY_NUMBER_VARIATION"
+    WHOLE_PARTIAL_GENE_DELETION = "WHOLE_PARTIAL_GENE_DELETION"
+    WHOLE_PARTIAL_GENE_DUPLICATION = "WHOLE_PARTIAL_GENE_DUPLICATION"
+
+# Set metadata after class creation to avoid it becoming an enum member
+G2PVariantType._metadata = {
+    "NMD_TRIGGERING": {'description': 'A sequence variant that leads to a change in the location of a termination codon in a transcript that leads to nonsense-mediated decay (NMD). The change in location of a termination codon can be caused by several different types of sequence variants, including stop_gained (SO:0001587), frameshift_variant (SO:0001589), splice_donor_variant (SO:0001575), and splice_acceptor_variant (SO:0001574) types of variants.', 'meaning': 'SO:0002319', 'annotations': {'variant_type_group': 'NMD_VARIANTS'}, 'aliases': ['NMD_triggering']},
+    "NMD_ESCAPING": {'description': 'A sequence variant that leads to a change in the location of a termination codon in a transcript but allows the transcript to escape nonsense-mediated decay (NMD). The change in location of a termination codon can be caused by several different types of sequence variants, including stop_gained (SO:0001587), frameshift_variant (SO:0001589), splice_donor_variant (SO:0001575), and splice_acceptor_variant (SO:0001574) types of variants.', 'meaning': 'SO:0002320', 'annotations': {'variant_type_group': 'NMD_VARIANTS'}, 'aliases': ['NMD_escaping']},
+    "STOP_GAINED_NMD_TRIGGERING": {'description': 'A stop_gained (SO:0001587) variant that is degraded by nonsense-mediated decay (NMD).', 'meaning': 'SO:0002321', 'annotations': {'variant_type_group': 'NMD_VARIANTS', 'nmd_status': 'NMD_TRIGGERING'}},
+    "STOP_GAINED_NMD_ESCAPING": {'description': 'A stop_gained (SO:0001587) variant that allows the transcript to escape nonsense-mediated decay (NMD).', 'meaning': 'SO:0002322', 'annotations': {'variant_type_group': 'NMD_VARIANTS', 'nmd_status': 'NMD_ESCAPING'}},
+    "FRAMESHIFT_VARIANT_NMD_TRIGGERING": {'description': 'A frameshift_variant (SO:0001589) that is degraded by nonsense-mediated decay (NMD).', 'meaning': 'SO:0002323', 'annotations': {'variant_type_group': 'NMD_VARIANTS', 'nmd_status': 'NMD_TRIGGERING'}},
+    "FRAMESHIFT_VARIANT_NMD_ESCAPING": {'description': 'A frameshift_variant (SO:0001589) that allows the transcript to escape nonsense-mediated decay (NMD).', 'meaning': 'SO:0002324', 'annotations': {'variant_type_group': 'NMD_VARIANTS', 'nmd_status': 'NMD_ESCAPING'}},
+    "SPLICE_DONOR_VARIANT_NMD_TRIGGERING": {'description': 'A splice_donor_variant (SO:0001575) that is degraded by nonsense-mediated decay (NMD).', 'meaning': 'SO:0002325', 'annotations': {'variant_type_group': 'NMD_VARIANTS', 'nmd_status': 'NMD_TRIGGERING'}},
+    "SPLICE_DONOR_VARIANT_NMD_ESCAPING": {'description': 'A splice_donor_variant (SO:0001575) that allows the transcript to escape nonsense-mediated decay (NMD).', 'meaning': 'SO:0002326', 'annotations': {'variant_type_group': 'NMD_VARIANTS', 'nmd_status': 'NMD_ESCAPING'}},
+    "SPLICE_ACCEPTOR_VARIANT_NMD_TRIGGERING": {'description': 'A splice_acceptor_variant (SO:0001574) that is degraded by nonsense-mediated decay (NMD).', 'meaning': 'SO:0002327', 'annotations': {'variant_type_group': 'NMD_VARIANTS', 'nmd_status': 'NMD_TRIGGERING'}},
+    "SPLICE_ACCEPTOR_VARIANT_NMD_ESCAPING": {'description': 'A splice_acceptor_variant (SO:0001574) that allows the transcript to escape nonsense-mediated decay (NMD).', 'meaning': 'SO:0002328', 'annotations': {'variant_type_group': 'NMD_VARIANTS', 'nmd_status': 'NMD_ESCAPING'}},
+    "SPLICE_REGION_VARIANT": {'description': 'A sequence variant in which a change has occurred within the region of the splice site, either within 1-3 bases of the exon or 3-8 bases of the intron.', 'meaning': 'SO:0001630', 'annotations': {'variant_type_group': 'SPLICE_VARIANTS'}},
+    "SPLICE_ACCEPTOR_VARIANT": {'description': "A splice variant that changes the 2 base region at the 3' end of an intron.", 'meaning': 'SO:0001574', 'annotations': {'variant_type_group': 'SPLICE_VARIANTS'}},
+    "SPLICE_DONOR_VARIANT": {'description': "A splice variant that changes the 2 base pair region at the 5' end of an intron.", 'meaning': 'SO:0001575', 'annotations': {'variant_type_group': 'SPLICE_VARIANTS'}},
+    "FIVE_PRIME_UTR_VARIANT": {'description': "A UTR variant of the 5' UTR.", 'meaning': 'SO:0001623', 'annotations': {'variant_type_group': 'REGULATORY_VARIANTS'}},
+    "THREE_PRIME_UTR_VARIANT": {'description': "A UTR variant of the 3' UTR.", 'meaning': 'SO:0001624', 'annotations': {'variant_type_group': 'REGULATORY_VARIANTS'}},
+    "REGULATORY_REGION_VARIANT": {'description': 'A sequence variant located within a regulatory region.', 'meaning': 'SO:0001566', 'annotations': {'variant_type_group': 'REGULATORY_VARIANTS'}},
+    "START_LOST": {'description': 'A codon variant that changes at least one base of the canonical start codon.', 'meaning': 'SO:0002012', 'annotations': {'variant_type_group': 'PROTEIN_CHANGING_VARIANTS'}},
+    "STOP_GAINED": {'description': 'A sequence variant whereby at least one base of a codon is changed, resulting in a premature stop codon, leading to a shortened polypeptide.', 'meaning': 'SO:0001587', 'annotations': {'variant_type_group': 'PROTEIN_CHANGING_VARIANTS'}},
+    "STOP_LOST": {'description': 'A sequence variant where at least one base of the terminator codon (stop) is changed, resulting in an elongated transcript.', 'meaning': 'SO:0001578', 'annotations': {'variant_type_group': 'PROTEIN_CHANGING_VARIANTS'}},
+    "FRAMESHIFT_VARIANT": {'description': 'A sequence variant which causes a disruption of the translational reading frame, because the number of nucleotides inserted or deleted is not a multiple of three.', 'meaning': 'SO:0001589', 'annotations': {'variant_type_group': 'PROTEIN_CHANGING_VARIANTS'}},
+    "MISSENSE_VARIANT": {'description': 'A sequence variant, that changes one or more bases, resulting in a different amino acid sequence but where the length is preserved.', 'meaning': 'SO:0001583', 'annotations': {'variant_type_group': 'PROTEIN_CHANGING_VARIANTS'}},
+    "INFRAME_INSERTION": {'description': 'An inframe non synonymous variant that inserts bases into in the coding sequence.', 'meaning': 'SO:0001821', 'annotations': {'variant_type_group': 'PROTEIN_CHANGING_VARIANTS'}},
+    "INFRAME_DELETION": {'description': 'An inframe non synonymous variant that deletes bases from the coding sequence.', 'meaning': 'SO:0001822', 'annotations': {'variant_type_group': 'PROTEIN_CHANGING_VARIANTS'}},
+    "SYNONYMOUS_VARIANT": {'description': 'A sequence variant where there is no resulting change to the encoded amino acid.', 'meaning': 'SO:0001819', 'annotations': {'variant_type_group': 'OTHER_VARIANTS'}},
+    "INTRON_VARIANT": {'description': 'A transcript variant occurring within an intron.', 'meaning': 'SO:0001627', 'annotations': {'variant_type_group': 'OTHER_VARIANTS'}},
+    "INTERGENIC_VARIANT": {'description': 'A sequence variant located in the intergenic region, between genes.', 'meaning': 'SO:0001628', 'annotations': {'variant_type_group': 'OTHER_VARIANTS'}},
+    "NON_CODING_TRANSCRIPT_VARIANT": {'description': 'A transcript variant of a non coding RNA gene.', 'meaning': 'SO:0001619', 'annotations': {'variant_type_group': 'OTHER_VARIANTS'}},
+    "SHORT_TANDEM_REPEAT_CHANGE": {'description': 'A sequence variant where the copies of a short tandem repeat (STR) feature are either contracted or expanded. SO:0002161 carries no text definition; this description is taken from the SO term comment.', 'meaning': 'SO:0002161', 'annotations': {'variant_type_group': 'OTHER_VARIANTS'}},
+    "COPY_NUMBER_VARIATION": {'description': 'A variation that increases or decreases the copy number of a given region.', 'meaning': 'SO:0001019', 'annotations': {'variant_type_group': 'OTHER_VARIANTS'}},
+    "WHOLE_PARTIAL_GENE_DELETION": {'description': 'A feature ablation whereby the deleted region includes a transcript feature. Used by G2P to record whole or partial gene deletions.', 'meaning': 'SO:0001893', 'annotations': {'variant_type_group': 'OTHER_VARIANTS'}, 'aliases': ['whole_partial_gene_deletion']},
+    "WHOLE_PARTIAL_GENE_DUPLICATION": {'description': 'A feature amplification of a region containing a transcript. Used by G2P to record whole or partial gene duplications.', 'meaning': 'SO:0001889', 'annotations': {'variant_type_group': 'OTHER_VARIANTS'}, 'aliases': ['whole_partial_gene_duplication']},
+}
+
+class G2PPanel(RichEnum):
+    """
+    The disease-area panels into which G2P organises its curated gene-disease associations. A gene-disease association may appear on more than one panel.
+    """
+    # Enum members
+    CANCER = "CANCER"
+    CARDIAC = "CARDIAC"
+    DD = "DD"
+    EAR = "EAR"
+    EYE = "EYE"
+    SKELETAL = "SKELETAL"
+    SKIN = "SKIN"
+
+# Set metadata after class creation to avoid it becoming an enum member
+G2PPanel._metadata = {
+    "CANCER": {'description': 'Cancer disorders.'},
+    "CARDIAC": {'description': 'Cardiac disorders.'},
+    "DD": {'description': 'Developmental disorders.', 'aliases': ['Developmental disorders']},
+    "EAR": {'description': 'Ear disorders.'},
+    "EYE": {'description': 'Eye disorders.'},
+    "SKELETAL": {'description': 'Skeletal disorders.'},
+    "SKIN": {'description': 'Skin disorders.'},
+}
+
 class ProcessScaleEnum(RichEnum):
     """
     Scale of bioprocessing operations from lab bench to commercial production
@@ -16357,6 +17053,16 @@ class DownstreamProcessEnum(RichEnum):
     DISTILLATION = "DISTILLATION"
     DRYING = "DRYING"
     HOMOGENIZATION = "HOMOGENIZATION"
+    CLARIFICATION = "CLARIFICATION"
+    FLOCCULATION = "FLOCCULATION"
+    ULTRAFILTRATION = "ULTRAFILTRATION"
+    DIAFILTRATION = "DIAFILTRATION"
+    TANGENTIAL_FLOW_FILTRATION = "TANGENTIAL_FLOW_FILTRATION"
+    BUFFER_EXCHANGE = "BUFFER_EXCHANGE"
+    ADSORPTION = "ADSORPTION"
+    VIRAL_INACTIVATION = "VIRAL_INACTIVATION"
+    POLISHING = "POLISHING"
+    LYOPHILIZATION = "LYOPHILIZATION"
 
 # Set metadata after class creation to avoid it becoming an enum member
 DownstreamProcessEnum._metadata = {
@@ -16369,6 +17075,16 @@ DownstreamProcessEnum._metadata = {
     "DISTILLATION": {'description': 'Distillation', 'meaning': 'CHMO:0001534', 'annotations': {'principle': 'Boiling point difference'}},
     "DRYING": {'description': 'Drying operations', 'meaning': 'CHMO:0001551', 'annotations': {'types': 'Spray, freeze, vacuum'}},
     "HOMOGENIZATION": {'description': 'Cell disruption/homogenization', 'annotations': {'methods': 'High pressure, bead mill'}},
+    "CLARIFICATION": {'description': 'Removal of cells and debris to produce a clarified harvest', 'annotations': {'methods': 'Centrifugation, depth filtration'}},
+    "FLOCCULATION": {'description': 'Aggregation of cells and debris into flocs to aid clarification'},
+    "ULTRAFILTRATION": {'description': 'Membrane concentration retaining macromolecules such as proteins', 'meaning': 'CHMO:0001645', 'annotations': {'mwco': 'Typically 1-1000 kDa'}},
+    "DIAFILTRATION": {'description': 'Buffer exchange and desalting by ultrafiltration with continuous makeup'},
+    "TANGENTIAL_FLOW_FILTRATION": {'description': 'Crossflow membrane filtration used for concentration and diafiltration', 'annotations': {'aliases': 'TFF, crossflow filtration'}},
+    "BUFFER_EXCHANGE": {'description': 'Replacement of the buffer matrix of a product stream'},
+    "ADSORPTION": {'description': 'Capture of product or impurities onto a solid sorbent'},
+    "VIRAL_INACTIVATION": {'description': 'Treatment step that inactivates potential viral contaminants', 'annotations': {'methods': 'Low pH, solvent/detergent, heat'}},
+    "POLISHING": {'description': 'Final chromatographic or filtration steps to remove trace impurities'},
+    "LYOPHILIZATION": {'description': 'Freeze-drying to produce a stable solid product', 'meaning': 'CHMO:0001553', 'annotations': {'aliases': 'freeze drying'}},
 }
 
 class FeedstockTypeEnum(RichEnum):
@@ -16527,6 +17243,780 @@ BioprocessOptimizationType._metadata = {
     "DOWNSTREAM_PURIFICATION": {'description': 'Optimization of product recovery and purification processes', 'annotations': {'approaches': 'chromatography, membrane separation, extraction'}},
     "IN_LINE_ANALYTICS": {'description': 'Implementation of real-time process analytical technology (PAT) for process monitoring and control', 'annotations': {'technologies': 'Raman spectroscopy, NIR, online HPLC'}},
     "DIGITAL_TWIN_MODELING": {'description': 'Use of computational process models for simulation, prediction, and optimization', 'annotations': {'approaches': 'mechanistic models, hybrid models, machine learning'}},
+}
+
+class UnitOperationType(RichEnum):
+    """
+    Fundamental chemical and process engineering unit operations - the discrete processing steps that transform, separate, combine, or move process material. Grouped (via the unit_operation_class annotation) into momentum transfer, heat transfer, mass-transfer separations, mechanical separations, solids processing, reaction, and storage.
+    """
+    # Enum members
+    PUMPING = "PUMPING"
+    COMPRESSION = "COMPRESSION"
+    GAS_MOVING = "GAS_MOVING"
+    FLOW_SPLITTING = "FLOW_SPLITTING"
+    STREAM_MIXING = "STREAM_MIXING"
+    HEAT_EXCHANGE = "HEAT_EXCHANGE"
+    HEATING = "HEATING"
+    COOLING = "COOLING"
+    CONDENSATION = "CONDENSATION"
+    EVAPORATION = "EVAPORATION"
+    DISTILLATION = "DISTILLATION"
+    ABSORPTION = "ABSORPTION"
+    STRIPPING = "STRIPPING"
+    LIQUID_LIQUID_EXTRACTION = "LIQUID_LIQUID_EXTRACTION"
+    LEACHING = "LEACHING"
+    ADSORPTION = "ADSORPTION"
+    ION_EXCHANGE = "ION_EXCHANGE"
+    CHROMATOGRAPHY = "CHROMATOGRAPHY"
+    CRYSTALLIZATION = "CRYSTALLIZATION"
+    PRECIPITATION = "PRECIPITATION"
+    DRYING = "DRYING"
+    FREEZE_DRYING = "FREEZE_DRYING"
+    HUMIDIFICATION = "HUMIDIFICATION"
+    MEMBRANE_SEPARATION = "MEMBRANE_SEPARATION"
+    MICROFILTRATION = "MICROFILTRATION"
+    ULTRAFILTRATION = "ULTRAFILTRATION"
+    NANOFILTRATION = "NANOFILTRATION"
+    REVERSE_OSMOSIS = "REVERSE_OSMOSIS"
+    DIALYSIS = "DIALYSIS"
+    ELECTRODIALYSIS = "ELECTRODIALYSIS"
+    PERVAPORATION = "PERVAPORATION"
+    FILTRATION = "FILTRATION"
+    CENTRIFUGATION = "CENTRIFUGATION"
+    SEDIMENTATION = "SEDIMENTATION"
+    CLARIFICATION = "CLARIFICATION"
+    FLOTATION = "FLOTATION"
+    FLOCCULATION = "FLOCCULATION"
+    CYCLONE_SEPARATION = "CYCLONE_SEPARATION"
+    SCREENING = "SCREENING"
+    GAS_LIQUID_SEPARATION = "GAS_LIQUID_SEPARATION"
+    SIZE_REDUCTION = "SIZE_REDUCTION"
+    SIZE_ENLARGEMENT = "SIZE_ENLARGEMENT"
+    MIXING = "MIXING"
+    SOLIDS_CONVEYING = "SOLIDS_CONVEYING"
+    CHEMICAL_REACTION = "CHEMICAL_REACTION"
+    FERMENTATION = "FERMENTATION"
+    COMBUSTION = "COMBUSTION"
+    GASIFICATION = "GASIFICATION"
+    PYROLYSIS = "PYROLYSIS"
+    ELECTROLYSIS = "ELECTROLYSIS"
+    NEUTRALIZATION = "NEUTRALIZATION"
+    PURIFICATION = "PURIFICATION"
+    STORAGE = "STORAGE"
+
+# Set metadata after class creation to avoid it becoming an enum member
+UnitOperationType._metadata = {
+    "PUMPING": {'description': 'Raising the pressure or moving of a liquid stream using a pump', 'annotations': {'unit_operation_class': 'MOMENTUM_TRANSFER'}},
+    "COMPRESSION": {'description': 'Raising the pressure of a gas or vapor stream using a compressor', 'annotations': {'unit_operation_class': 'MOMENTUM_TRANSFER'}},
+    "GAS_MOVING": {'description': 'Moving a gas stream at low pressure rise using a fan or blower', 'annotations': {'unit_operation_class': 'MOMENTUM_TRANSFER'}},
+    "FLOW_SPLITTING": {'description': 'Dividing a single stream into two or more streams of identical composition', 'annotations': {'unit_operation_class': 'MOMENTUM_TRANSFER'}},
+    "STREAM_MIXING": {'description': 'Combining two or more streams into a single stream', 'annotations': {'unit_operation_class': 'MOMENTUM_TRANSFER'}},
+    "HEAT_EXCHANGE": {'description': 'Transfer of thermal energy between two streams without phase-change intent', 'annotations': {'unit_operation_class': 'HEAT_TRANSFER'}},
+    "HEATING": {'description': 'Raising the temperature of a process stream', 'annotations': {'unit_operation_class': 'HEAT_TRANSFER'}},
+    "COOLING": {'description': 'Lowering the temperature of a process stream', 'annotations': {'unit_operation_class': 'HEAT_TRANSFER'}},
+    "CONDENSATION": {'description': 'Converting a vapor to a liquid by removing heat', 'annotations': {'unit_operation_class': 'HEAT_TRANSFER'}},
+    "EVAPORATION": {'description': 'Concentrating a solution by vaporizing solvent, typically water', 'meaning': 'CHMO:0001574', 'annotations': {'unit_operation_class': 'HEAT_TRANSFER'}},
+    "DISTILLATION": {'description': 'Separation of components by differences in volatility (boiling point)', 'meaning': 'CHMO:0001532', 'annotations': {'unit_operation_class': 'MASS_TRANSFER_SEPARATION'}},
+    "ABSORPTION": {'description': 'Selective transfer of one or more gas-phase components into a liquid solvent', 'annotations': {'unit_operation_class': 'MASS_TRANSFER_SEPARATION'}},
+    "STRIPPING": {'description': 'Selective transfer of dissolved components from a liquid into a gas stream', 'annotations': {'unit_operation_class': 'MASS_TRANSFER_SEPARATION'}},
+    "LIQUID_LIQUID_EXTRACTION": {'description': 'Separation by partitioning of solutes between two immiscible liquid phases', 'meaning': 'CHMO:0001577', 'annotations': {'unit_operation_class': 'MASS_TRANSFER_SEPARATION'}},
+    "LEACHING": {'description': 'Solid-liquid extraction of soluble components from a solid using a solvent', 'meaning': 'CHMO:0001681', 'annotations': {'unit_operation_class': 'MASS_TRANSFER_SEPARATION'}},
+    "ADSORPTION": {'description': 'Selective uptake of components onto the surface of a solid sorbent', 'annotations': {'unit_operation_class': 'MASS_TRANSFER_SEPARATION'}},
+    "ION_EXCHANGE": {'description': 'Reversible exchange of ions between a solution and a solid ion-exchange resin', 'annotations': {'unit_operation_class': 'MASS_TRANSFER_SEPARATION'}},
+    "CHROMATOGRAPHY": {'description': 'Separation by differential partitioning of solutes between a mobile and stationary phase', 'meaning': 'CHMO:0001000', 'annotations': {'unit_operation_class': 'MASS_TRANSFER_SEPARATION'}},
+    "CRYSTALLIZATION": {'description': 'Formation of a solid crystalline phase from a solution or melt', 'meaning': 'PROCO:0000052', 'annotations': {'unit_operation_class': 'MASS_TRANSFER_SEPARATION'}},
+    "PRECIPITATION": {'description': 'Formation of an insoluble solid from solution by chemical or physical means', 'meaning': 'CHMO:0001688', 'annotations': {'unit_operation_class': 'MASS_TRANSFER_SEPARATION'}},
+    "DRYING": {'description': 'Removal of a liquid (usually water) from a solid or surface by vaporization', 'annotations': {'unit_operation_class': 'MASS_TRANSFER_SEPARATION'}},
+    "FREEZE_DRYING": {'description': 'Removal of solvent by sublimation from the frozen state (lyophilization)', 'meaning': 'CHMO:0001553', 'annotations': {'unit_operation_class': 'MASS_TRANSFER_SEPARATION', 'aliases': 'lyophilization'}},
+    "HUMIDIFICATION": {'description': 'Addition of water vapor to a gas stream', 'annotations': {'unit_operation_class': 'MASS_TRANSFER_SEPARATION'}},
+    "MEMBRANE_SEPARATION": {'description': 'Separation of stream components using a semipermeable membrane', 'annotations': {'unit_operation_class': 'MEMBRANE_SEPARATION'}},
+    "MICROFILTRATION": {'description': 'Membrane separation retaining particles roughly 0.1-10 micrometers', 'meaning': 'CHMO:0001641', 'annotations': {'unit_operation_class': 'MEMBRANE_SEPARATION'}},
+    "ULTRAFILTRATION": {'description': 'Membrane separation retaining macromolecules and colloids', 'meaning': 'CHMO:0001645', 'annotations': {'unit_operation_class': 'MEMBRANE_SEPARATION'}},
+    "NANOFILTRATION": {'description': 'Membrane separation retaining small molecules and multivalent ions', 'meaning': 'CHMO:0001642', 'annotations': {'unit_operation_class': 'MEMBRANE_SEPARATION'}},
+    "REVERSE_OSMOSIS": {'description': 'Pressure-driven membrane separation rejecting dissolved salts and small solutes', 'meaning': 'CHMO:0001643', 'annotations': {'unit_operation_class': 'MEMBRANE_SEPARATION'}},
+    "DIALYSIS": {'description': 'Diffusive membrane separation of solutes across a concentration gradient', 'meaning': 'CHMO:0001522', 'annotations': {'unit_operation_class': 'MEMBRANE_SEPARATION'}},
+    "ELECTRODIALYSIS": {'description': 'Membrane separation of ions driven by an applied electric field', 'annotations': {'unit_operation_class': 'MEMBRANE_SEPARATION'}},
+    "PERVAPORATION": {'description': 'Membrane separation combining permeation and partial vaporization of the permeate', 'annotations': {'unit_operation_class': 'MEMBRANE_SEPARATION'}},
+    "FILTRATION": {'description': 'Separation of solids from a fluid by passage through a porous medium', 'meaning': 'CHMO:0001640', 'annotations': {'unit_operation_class': 'MECHANICAL_SEPARATION'}},
+    "CENTRIFUGATION": {'description': 'Separation of phases by density difference under centrifugal force', 'meaning': 'OBI:0302886', 'annotations': {'unit_operation_class': 'MECHANICAL_SEPARATION'}},
+    "SEDIMENTATION": {'description': 'Gravity separation of suspended solids or immiscible liquids by settling', 'annotations': {'unit_operation_class': 'MECHANICAL_SEPARATION'}},
+    "CLARIFICATION": {'description': 'Removal of suspended solids from a liquid to produce a clarified stream', 'annotations': {'unit_operation_class': 'MECHANICAL_SEPARATION'}},
+    "FLOTATION": {'description': 'Separation of solids or droplets by attachment to rising gas bubbles', 'annotations': {'unit_operation_class': 'MECHANICAL_SEPARATION'}},
+    "FLOCCULATION": {'description': 'Aggregation of fine suspended particles into larger flocs to aid separation', 'annotations': {'unit_operation_class': 'MECHANICAL_SEPARATION'}},
+    "CYCLONE_SEPARATION": {'description': 'Separation of particles from a fluid using centrifugal force in a cyclone', 'annotations': {'unit_operation_class': 'MECHANICAL_SEPARATION'}},
+    "SCREENING": {'description': 'Separation of particulate solids by size using a screen or sieve', 'annotations': {'unit_operation_class': 'MECHANICAL_SEPARATION'}},
+    "GAS_LIQUID_SEPARATION": {'description': 'Disengagement of vapor and liquid phases, e.g. in a flash or knockout drum', 'annotations': {'unit_operation_class': 'MECHANICAL_SEPARATION'}},
+    "SIZE_REDUCTION": {'description': 'Reduction of particle size by crushing, grinding, or milling (comminution)', 'annotations': {'unit_operation_class': 'SOLIDS_PROCESSING'}},
+    "SIZE_ENLARGEMENT": {'description': 'Increase of particle size by granulation, agglomeration, or pelletizing', 'annotations': {'unit_operation_class': 'SOLIDS_PROCESSING'}},
+    "MIXING": {'description': 'Blending of materials to achieve compositional or thermal uniformity', 'meaning': 'CHMO:0001685', 'annotations': {'unit_operation_class': 'SOLIDS_PROCESSING'}},
+    "SOLIDS_CONVEYING": {'description': 'Transport of bulk particulate solids between process steps', 'annotations': {'unit_operation_class': 'SOLIDS_PROCESSING'}},
+    "CHEMICAL_REACTION": {'description': 'Chemical conversion of reactants to products in a reactor', 'annotations': {'unit_operation_class': 'REACTION'}},
+    "FERMENTATION": {'description': 'Microbial or enzymatic conversion of substrate to product in a bioreactor', 'meaning': 'CHMO:0001624', 'annotations': {'unit_operation_class': 'REACTION'}},
+    "COMBUSTION": {'description': 'Exothermic oxidation of a fuel, typically to generate heat or power', 'meaning': 'CHMO:0001473', 'annotations': {'unit_operation_class': 'REACTION'}},
+    "GASIFICATION": {'description': 'Conversion of carbonaceous feedstock to synthesis gas under limited oxygen', 'meaning': 'CHMO:0001501', 'annotations': {'unit_operation_class': 'REACTION'}},
+    "PYROLYSIS": {'description': 'Thermal decomposition of material in the absence of oxygen', 'meaning': 'CHMO:0001502', 'annotations': {'unit_operation_class': 'REACTION'}},
+    "ELECTROLYSIS": {'description': 'Driving a non-spontaneous chemical reaction using electrical energy', 'annotations': {'unit_operation_class': 'REACTION'}},
+    "NEUTRALIZATION": {'description': 'Adjustment of pH by reaction of acid and base', 'annotations': {'unit_operation_class': 'REACTION'}},
+    "PURIFICATION": {'description': 'Removal of impurities to increase the purity of a product stream', 'meaning': 'CHMO:0002231', 'annotations': {'unit_operation_class': 'SEPARATION'}},
+    "STORAGE": {'description': 'Holding of material in a vessel or tank between process steps', 'annotations': {'unit_operation_class': 'STORAGE'}},
+}
+
+class ProcessEquipmentType(RichEnum):
+    """
+    Physical equipment / asset types used in process plants. These correspond to the nodes of a process flowsheet and complement UnitOperationType (which describes the function performed). Grouped via the equipment_class annotation.
+    """
+    # Enum members
+    STORAGE_TANK = "STORAGE_TANK"
+    PRESSURE_VESSEL = "PRESSURE_VESSEL"
+    HOPPER = "HOPPER"
+    FLASH_DRUM = "FLASH_DRUM"
+    KNOCKOUT_DRUM = "KNOCKOUT_DRUM"
+    REACTOR = "REACTOR"
+    BIOREACTOR = "BIOREACTOR"
+    FERMENTER = "FERMENTER"
+    DISTILLATION_COLUMN = "DISTILLATION_COLUMN"
+    ABSORPTION_COLUMN = "ABSORPTION_COLUMN"
+    STRIPPING_COLUMN = "STRIPPING_COLUMN"
+    EXTRACTION_COLUMN = "EXTRACTION_COLUMN"
+    CHROMATOGRAPHY_COLUMN = "CHROMATOGRAPHY_COLUMN"
+    SCRUBBER = "SCRUBBER"
+    HEAT_EXCHANGER = "HEAT_EXCHANGER"
+    CONDENSER = "CONDENSER"
+    REBOILER = "REBOILER"
+    EVAPORATOR = "EVAPORATOR"
+    FURNACE = "FURNACE"
+    BOILER = "BOILER"
+    COOLING_TOWER = "COOLING_TOWER"
+    DRYER = "DRYER"
+    CRYSTALLIZER = "CRYSTALLIZER"
+    PUMP = "PUMP"
+    COMPRESSOR = "COMPRESSOR"
+    BLOWER = "BLOWER"
+    FAN = "FAN"
+    VALVE = "VALVE"
+    CENTRIFUGE = "CENTRIFUGE"
+    FILTER = "FILTER"
+    DECANTER = "DECANTER"
+    CLARIFIER = "CLARIFIER"
+    CYCLONE = "CYCLONE"
+    HYDROCYCLONE = "HYDROCYCLONE"
+    MEMBRANE_MODULE = "MEMBRANE_MODULE"
+    SETTLER = "SETTLER"
+    MIXER = "MIXER"
+    AGITATOR = "AGITATOR"
+    MILL = "MILL"
+    CRUSHER = "CRUSHER"
+    SCREEN = "SCREEN"
+    CONVEYOR = "CONVEYOR"
+
+# Set metadata after class creation to avoid it becoming an enum member
+ProcessEquipmentType._metadata = {
+    "STORAGE_TANK": {'description': 'Atmospheric or low-pressure vessel for holding liquids or solids', 'annotations': {'equipment_class': 'VESSEL'}},
+    "PRESSURE_VESSEL": {'description': 'Vessel designed to hold contents at elevated pressure', 'annotations': {'equipment_class': 'VESSEL'}},
+    "HOPPER": {'description': 'Funnel-shaped vessel for storing and discharging bulk solids', 'annotations': {'equipment_class': 'VESSEL'}},
+    "FLASH_DRUM": {'description': 'Vessel for separating vapor and liquid produced by a pressure let-down', 'annotations': {'equipment_class': 'VESSEL'}},
+    "KNOCKOUT_DRUM": {'description': 'Vessel that removes entrained liquid from a gas stream', 'annotations': {'equipment_class': 'VESSEL'}},
+    "REACTOR": {'description': 'Vessel in which chemical reactions are carried out', 'annotations': {'equipment_class': 'REACTOR', 'subtypes': 'CSTR, plug-flow, batch, fixed-bed, fluidized-bed'}},
+    "BIOREACTOR": {'description': 'Vessel for culturing cells or carrying out enzymatic reactions', 'meaning': 'OBI:0001046', 'annotations': {'equipment_class': 'REACTOR'}},
+    "FERMENTER": {'description': 'Bioreactor configured for microbial fermentation', 'annotations': {'equipment_class': 'REACTOR'}},
+    "DISTILLATION_COLUMN": {'description': 'Column with trays or packing for vapor-liquid separation by distillation', 'annotations': {'equipment_class': 'COLUMN'}},
+    "ABSORPTION_COLUMN": {'description': 'Column for gas absorption into a liquid solvent', 'annotations': {'equipment_class': 'COLUMN'}},
+    "STRIPPING_COLUMN": {'description': 'Column for stripping volatile components from a liquid', 'annotations': {'equipment_class': 'COLUMN'}},
+    "EXTRACTION_COLUMN": {'description': 'Column for liquid-liquid extraction', 'annotations': {'equipment_class': 'COLUMN'}},
+    "CHROMATOGRAPHY_COLUMN": {'description': 'Column packed with a stationary phase for chromatographic separation', 'meaning': 'OBI:0000038', 'annotations': {'equipment_class': 'COLUMN'}},
+    "SCRUBBER": {'description': 'Contactor for removing pollutants or particulates from a gas using a liquid', 'annotations': {'equipment_class': 'COLUMN'}},
+    "HEAT_EXCHANGER": {'description': 'Equipment that transfers heat between two fluid streams', 'annotations': {'equipment_class': 'HEAT_TRANSFER', 'subtypes': 'shell-and-tube, plate, air-cooled'}},
+    "CONDENSER": {'description': 'Heat exchanger that condenses a vapor to liquid', 'annotations': {'equipment_class': 'HEAT_TRANSFER'}},
+    "REBOILER": {'description': 'Heat exchanger that supplies boilup at the base of a distillation column', 'annotations': {'equipment_class': 'HEAT_TRANSFER'}},
+    "EVAPORATOR": {'description': 'Equipment that concentrates a solution by vaporizing solvent', 'annotations': {'equipment_class': 'HEAT_TRANSFER'}},
+    "FURNACE": {'description': 'Fired heater that raises stream temperature by combustion', 'annotations': {'equipment_class': 'HEAT_TRANSFER'}},
+    "BOILER": {'description': 'Equipment that generates steam by transferring combustion heat to water', 'annotations': {'equipment_class': 'HEAT_TRANSFER'}},
+    "COOLING_TOWER": {'description': 'Equipment that rejects process heat to the atmosphere by evaporative cooling', 'annotations': {'equipment_class': 'HEAT_TRANSFER'}},
+    "DRYER": {'description': 'Equipment for removing liquid from solids by vaporization', 'annotations': {'equipment_class': 'HEAT_TRANSFER'}},
+    "CRYSTALLIZER": {'description': 'Equipment for producing crystalline solids from solution or melt', 'annotations': {'equipment_class': 'HEAT_TRANSFER'}},
+    "PUMP": {'description': 'Machine that moves or pressurizes a liquid', 'annotations': {'equipment_class': 'FLUID_MOVER'}},
+    "COMPRESSOR": {'description': 'Machine that raises the pressure of a gas', 'annotations': {'equipment_class': 'FLUID_MOVER'}},
+    "BLOWER": {'description': 'Machine that moves gas at a low pressure rise', 'annotations': {'equipment_class': 'FLUID_MOVER'}},
+    "FAN": {'description': 'Machine that moves large gas volumes at very low pressure rise', 'annotations': {'equipment_class': 'FLUID_MOVER'}},
+    "VALVE": {'description': 'Device that regulates, directs, or controls stream flow', 'annotations': {'equipment_class': 'FLUID_MOVER'}},
+    "CENTRIFUGE": {'description': 'Equipment that separates phases by density under centrifugal force', 'meaning': 'OBI:0400106', 'annotations': {'equipment_class': 'SEPARATION'}},
+    "FILTER": {'description': 'Equipment that separates solids from a fluid using a porous medium', 'annotations': {'equipment_class': 'SEPARATION'}},
+    "DECANTER": {'description': 'Equipment that separates immiscible liquids or settled solids by gravity', 'annotations': {'equipment_class': 'SEPARATION'}},
+    "CLARIFIER": {'description': 'Settling tank that removes suspended solids from a liquid', 'annotations': {'equipment_class': 'SEPARATION'}},
+    "CYCLONE": {'description': 'Device that separates particles from a fluid by centrifugal action', 'annotations': {'equipment_class': 'SEPARATION'}},
+    "HYDROCYCLONE": {'description': 'Cyclone that separates solids or immiscible liquids from a liquid stream', 'annotations': {'equipment_class': 'SEPARATION'}},
+    "MEMBRANE_MODULE": {'description': 'Housing containing membrane elements for a membrane separation', 'annotations': {'equipment_class': 'SEPARATION'}},
+    "SETTLER": {'description': 'Vessel allowing phases to separate by gravity settling', 'annotations': {'equipment_class': 'SEPARATION'}},
+    "MIXER": {'description': 'Equipment for blending streams or materials', 'annotations': {'equipment_class': 'SOLIDS_HANDLING'}},
+    "AGITATOR": {'description': 'Impeller-driven device that mixes vessel contents', 'annotations': {'equipment_class': 'SOLIDS_HANDLING'}},
+    "MILL": {'description': 'Equipment that reduces particle size by grinding or crushing', 'annotations': {'equipment_class': 'SOLIDS_HANDLING'}},
+    "CRUSHER": {'description': 'Equipment that reduces large solids by mechanical force', 'annotations': {'equipment_class': 'SOLIDS_HANDLING'}},
+    "SCREEN": {'description': 'Equipment that classifies particulate solids by size', 'annotations': {'equipment_class': 'SOLIDS_HANDLING'}},
+    "CONVEYOR": {'description': 'Equipment that transports bulk solids between locations', 'annotations': {'equipment_class': 'SOLIDS_HANDLING'}},
+}
+
+class ProcessStreamRole(RichEnum):
+    """
+    The functional role of a stream within a process flowsheet, independent of its chemical composition.
+    """
+    # Enum members
+    FEED = "FEED"
+    RAW_MATERIAL = "RAW_MATERIAL"
+    PRODUCT = "PRODUCT"
+    BYPRODUCT = "BYPRODUCT"
+    INTERMEDIATE = "INTERMEDIATE"
+    RECYCLE = "RECYCLE"
+    PURGE = "PURGE"
+    BLEED = "BLEED"
+    MAKEUP = "MAKEUP"
+    WASTE = "WASTE"
+    EFFLUENT = "EFFLUENT"
+    EMISSION = "EMISSION"
+    UTILITY = "UTILITY"
+
+# Set metadata after class creation to avoid it becoming an enum member
+ProcessStreamRole._metadata = {
+    "FEED": {'description': 'A stream entering the process or a unit operation as input'},
+    "RAW_MATERIAL": {'description': 'A fresh raw material or reactant stream entering the process battery limits'},
+    "PRODUCT": {'description': 'A primary product stream of commercial value leaving the process'},
+    "BYPRODUCT": {'description': 'A secondary saleable or usable product produced alongside the main product'},
+    "INTERMEDIATE": {'description': 'A stream flowing between unit operations within the process'},
+    "RECYCLE": {'description': 'A stream returned to an upstream point for reprocessing'},
+    "PURGE": {'description': 'A stream withdrawn from a recycle loop to prevent accumulation of inerts or impurities'},
+    "BLEED": {'description': 'A small continuous stream withdrawn to control composition or level'},
+    "MAKEUP": {'description': 'A stream added to replenish material lost from a circulating loop'},
+    "WASTE": {'description': 'A stream with no further use that must be treated or disposed of'},
+    "EFFLUENT": {'description': 'A liquid waste stream discharged from the process'},
+    "EMISSION": {'description': 'A gaseous stream released to the atmosphere'},
+    "UTILITY": {'description': 'A service stream (e.g. steam, cooling water) supplied to a unit operation'},
+}
+
+class ProcessStreamPhase(RichEnum):
+    """
+    The physical phase or phase combination of a process stream. For single-phase fundamental states see also StateOfMatterEnum in the physics module; this enum adds the multiphase combinations common in process engineering.
+    """
+    # Enum members
+    GAS = "GAS"
+    LIQUID = "LIQUID"
+    SOLID = "SOLID"
+    SUPERCRITICAL = "SUPERCRITICAL"
+    VAPOR_LIQUID = "VAPOR_LIQUID"
+    LIQUID_LIQUID = "LIQUID_LIQUID"
+    VAPOR_LIQUID_LIQUID = "VAPOR_LIQUID_LIQUID"
+    SLURRY = "SLURRY"
+    GAS_SOLID = "GAS_SOLID"
+    MULTIPHASE = "MULTIPHASE"
+
+# Set metadata after class creation to avoid it becoming an enum member
+ProcessStreamPhase._metadata = {
+    "GAS": {'description': 'A single gas or vapor phase', 'annotations': {'sff_phase_code': 'g'}},
+    "LIQUID": {'description': 'A single liquid phase', 'annotations': {'sff_phase_code': 'l'}},
+    "SOLID": {'description': 'A single solid phase', 'annotations': {'sff_phase_code': 's'}},
+    "SUPERCRITICAL": {'description': 'A supercritical fluid above its critical temperature and pressure'},
+    "VAPOR_LIQUID": {'description': 'A two-phase mixture of vapor and liquid'},
+    "LIQUID_LIQUID": {'description': 'A two-phase mixture of two immiscible liquids'},
+    "VAPOR_LIQUID_LIQUID": {'description': 'A three-phase mixture of a vapor and two immiscible liquids'},
+    "SLURRY": {'description': 'A suspension of solids in a liquid'},
+    "GAS_SOLID": {'description': 'A two-phase mixture of gas and entrained or fluidized solids'},
+    "MULTIPHASE": {'description': 'A stream containing more than one phase, of mixed or unspecified composition'},
+}
+
+class UtilityType(RichEnum):
+    """
+    Common plant utilities consumed or produced by process unit operations, used for energy and mass balance accounting on a flowsheet.
+    """
+    # Enum members
+    STEAM = "STEAM"
+    LOW_PRESSURE_STEAM = "LOW_PRESSURE_STEAM"
+    MEDIUM_PRESSURE_STEAM = "MEDIUM_PRESSURE_STEAM"
+    HIGH_PRESSURE_STEAM = "HIGH_PRESSURE_STEAM"
+    COOLING_WATER = "COOLING_WATER"
+    CHILLED_WATER = "CHILLED_WATER"
+    REFRIGERANT = "REFRIGERANT"
+    HOT_OIL = "HOT_OIL"
+    BRINE = "BRINE"
+    ELECTRICITY = "ELECTRICITY"
+    PROCESS_WATER = "PROCESS_WATER"
+    DEMINERALIZED_WATER = "DEMINERALIZED_WATER"
+    NATURAL_GAS = "NATURAL_GAS"
+    FUEL_GAS = "FUEL_GAS"
+    COMPRESSED_AIR = "COMPRESSED_AIR"
+    INSTRUMENT_AIR = "INSTRUMENT_AIR"
+    NITROGEN = "NITROGEN"
+    FLARE = "FLARE"
+
+# Set metadata after class creation to avoid it becoming an enum member
+UtilityType._metadata = {
+    "STEAM": {'description': 'Process steam used for heating or stripping', 'annotations': {'utility_category': 'HEAT'}},
+    "LOW_PRESSURE_STEAM": {'description': 'Low-pressure steam utility', 'annotations': {'utility_category': 'HEAT', 'typical_range': '<3 barg'}},
+    "MEDIUM_PRESSURE_STEAM": {'description': 'Medium-pressure steam utility', 'annotations': {'utility_category': 'HEAT', 'typical_range': '3-20 barg'}},
+    "HIGH_PRESSURE_STEAM": {'description': 'High-pressure steam utility', 'annotations': {'utility_category': 'HEAT', 'typical_range': '>20 barg'}},
+    "COOLING_WATER": {'description': 'Recirculated cooling water for heat rejection', 'annotations': {'utility_category': 'HEAT'}},
+    "CHILLED_WATER": {'description': 'Refrigerated water for below-ambient cooling', 'annotations': {'utility_category': 'HEAT'}},
+    "REFRIGERANT": {'description': 'Refrigerant fluid for low-temperature cooling duty', 'annotations': {'utility_category': 'HEAT'}},
+    "HOT_OIL": {'description': 'Thermal oil heat-transfer fluid for high-temperature heating', 'annotations': {'utility_category': 'HEAT'}},
+    "BRINE": {'description': 'Chilled brine used as a low-temperature coolant', 'annotations': {'utility_category': 'HEAT'}},
+    "ELECTRICITY": {'description': 'Electrical power supplied to drivers and equipment', 'annotations': {'utility_category': 'POWER'}},
+    "PROCESS_WATER": {'description': 'Treated water used as a process input', 'annotations': {'utility_category': 'OTHER'}},
+    "DEMINERALIZED_WATER": {'description': 'High-purity demineralized water utility', 'annotations': {'utility_category': 'OTHER'}},
+    "NATURAL_GAS": {'description': 'Natural gas supplied as fuel or feedstock', 'annotations': {'utility_category': 'OTHER'}},
+    "FUEL_GAS": {'description': 'Fuel gas burned in fired heaters and boilers', 'annotations': {'utility_category': 'OTHER'}},
+    "COMPRESSED_AIR": {'description': 'Compressed air utility for process or actuation use', 'annotations': {'utility_category': 'OTHER'}},
+    "INSTRUMENT_AIR": {'description': 'Clean dry compressed air for instrumentation', 'annotations': {'utility_category': 'OTHER'}},
+    "NITROGEN": {'description': 'Nitrogen used for inerting, blanketing, or purging', 'annotations': {'utility_category': 'OTHER'}},
+    "FLARE": {'description': 'Flare system for safe combustion of relieved gases', 'annotations': {'utility_category': 'OTHER'}},
+}
+
+class ProcessIndustryCategory(RichEnum):
+    """
+    Sectors of the process (continuous and batch) manufacturing industries. The pisces_category annotation records the corresponding top-level category in the PISCES Standard Flowsheet Format where one exists.
+    """
+    # Enum members
+    PETROLEUM_REFINING = "PETROLEUM_REFINING"
+    PETROCHEMICAL = "PETROCHEMICAL"
+    BULK_CHEMICAL = "BULK_CHEMICAL"
+    SPECIALTY_CHEMICAL = "SPECIALTY_CHEMICAL"
+    AGROCHEMICAL = "AGROCHEMICAL"
+    POLYMER_AND_PLASTICS = "POLYMER_AND_PLASTICS"
+    PHARMACEUTICAL = "PHARMACEUTICAL"
+    BIOTECHNOLOGY = "BIOTECHNOLOGY"
+    BIOFUEL = "BIOFUEL"
+    FOOD_AND_BEVERAGE = "FOOD_AND_BEVERAGE"
+    PULP_AND_PAPER = "PULP_AND_PAPER"
+    METALS_AND_MINING = "METALS_AND_MINING"
+    WATER_AND_WASTEWATER_TREATMENT = "WATER_AND_WASTEWATER_TREATMENT"
+    POWER_GENERATION = "POWER_GENERATION"
+    GAS_PROCESSING = "GAS_PROCESSING"
+    CEMENT_AND_CONSTRUCTION_MATERIALS = "CEMENT_AND_CONSTRUCTION_MATERIALS"
+    GLASS_AND_CERAMICS = "GLASS_AND_CERAMICS"
+    TEXTILE = "TEXTILE"
+    COSMETICS_AND_PERSONAL_CARE = "COSMETICS_AND_PERSONAL_CARE"
+    NUCLEAR_FUEL = "NUCLEAR_FUEL"
+    SEMICONDUCTOR = "SEMICONDUCTOR"
+
+# Set metadata after class creation to avoid it becoming an enum member
+ProcessIndustryCategory._metadata = {
+    "PETROLEUM_REFINING": {'description': 'Refining of crude oil into fuels and feedstocks', 'annotations': {'pisces_category': 'Energy'}},
+    "PETROCHEMICAL": {'description': 'Production of chemicals derived from petroleum and natural gas', 'annotations': {'pisces_category': 'Chemical'}},
+    "BULK_CHEMICAL": {'description': 'Large-volume production of commodity chemicals', 'annotations': {'pisces_category': 'Chemical'}},
+    "SPECIALTY_CHEMICAL": {'description': 'Production of lower-volume, high-value performance chemicals', 'annotations': {'pisces_category': 'Chemical'}},
+    "AGROCHEMICAL": {'description': 'Production of fertilizers, pesticides, and other agricultural chemicals', 'annotations': {'pisces_category': 'Chemical'}},
+    "POLYMER_AND_PLASTICS": {'description': 'Production of polymers, resins, and plastic materials', 'annotations': {'pisces_category': 'Chemical'}},
+    "PHARMACEUTICAL": {'description': 'Manufacture of active pharmaceutical ingredients and drug products', 'annotations': {'pisces_category': 'Pharmaceutical'}},
+    "BIOTECHNOLOGY": {'description': 'Manufacture of products using biological systems and fermentation', 'annotations': {'pisces_category': 'Pharmaceutical'}},
+    "BIOFUEL": {'description': 'Production of biologically derived fuels such as ethanol and biodiesel', 'annotations': {'pisces_category': 'Biofuel'}},
+    "FOOD_AND_BEVERAGE": {'description': 'Processing and manufacture of food and beverage products', 'annotations': {'pisces_category': 'Food Product'}},
+    "PULP_AND_PAPER": {'description': 'Production of pulp, paper, and board from fiber'},
+    "METALS_AND_MINING": {'description': 'Extraction and processing of metals and minerals'},
+    "WATER_AND_WASTEWATER_TREATMENT": {'description': 'Treatment of water and wastewater streams'},
+    "POWER_GENERATION": {'description': 'Generation of electrical power and process heat', 'annotations': {'pisces_category': 'Energy'}},
+    "GAS_PROCESSING": {'description': 'Processing and separation of natural gas and industrial gases', 'annotations': {'pisces_category': 'Energy'}},
+    "CEMENT_AND_CONSTRUCTION_MATERIALS": {'description': 'Production of cement, lime, and construction materials'},
+    "GLASS_AND_CERAMICS": {'description': 'Manufacture of glass and ceramic products'},
+    "TEXTILE": {'description': 'Production and finishing of textile fibers and fabrics'},
+    "COSMETICS_AND_PERSONAL_CARE": {'description': 'Manufacture of cosmetics and personal care products'},
+    "NUCLEAR_FUEL": {'description': 'Processing of nuclear fuel materials', 'annotations': {'pisces_category': 'Energy'}},
+    "SEMICONDUCTOR": {'description': 'Fabrication of semiconductor and microelectronic materials'},
+}
+
+class ProcessOperationMode(RichEnum):
+    """
+    The temporal mode in which a process or unit operation is run.
+    """
+    # Enum members
+    BATCH = "BATCH"
+    CONTINUOUS = "CONTINUOUS"
+    SEMI_BATCH = "SEMI_BATCH"
+    SEMI_CONTINUOUS = "SEMI_CONTINUOUS"
+
+# Set metadata after class creation to avoid it becoming an enum member
+ProcessOperationMode._metadata = {
+    "BATCH": {'description': 'Material is charged, processed, and discharged in discrete batches'},
+    "CONTINUOUS": {'description': 'Material flows through the process steadily without interruption'},
+    "SEMI_BATCH": {'description': 'A hybrid mode where some streams are continuous while others are batch-wise'},
+    "SEMI_CONTINUOUS": {'description': 'Process alternates between continuous operation and periodic interruptions'},
+}
+
+class EquationOfStateModel(RichEnum):
+    """
+    Equations of state used to compute fugacity coefficients and PVT behavior of fluids in process simulation (the SFF phi method).
+    """
+    # Enum members
+    IDEAL_GAS = "IDEAL_GAS"
+    VIRIAL = "VIRIAL"
+    REDLICH_KWONG = "REDLICH_KWONG"
+    SOAVE_REDLICH_KWONG = "SOAVE_REDLICH_KWONG"
+    PENG_ROBINSON = "PENG_ROBINSON"
+    PENG_ROBINSON_BOSTON_MATHIAS = "PENG_ROBINSON_BOSTON_MATHIAS"
+    SRK_BOSTON_MATHIAS = "SRK_BOSTON_MATHIAS"
+    LEE_KESLER_PLOCKER = "LEE_KESLER_PLOCKER"
+    BENEDICT_WEBB_RUBIN_STARLING = "BENEDICT_WEBB_RUBIN_STARLING"
+    PREDICTIVE_SRK = "PREDICTIVE_SRK"
+    PC_SAFT = "PC_SAFT"
+    CUBIC_PLUS_ASSOCIATION = "CUBIC_PLUS_ASSOCIATION"
+    GERG_2008 = "GERG_2008"
+    IAPWS_95 = "IAPWS_95"
+
+# Set metadata after class creation to avoid it becoming an enum member
+EquationOfStateModel._metadata = {
+    "IDEAL_GAS": {'description': 'Ideal gas law, assuming no intermolecular interactions'},
+    "VIRIAL": {'description': 'Virial equation of state expressed as a power series in density or pressure'},
+    "REDLICH_KWONG": {'description': 'Redlich-Kwong cubic equation of state', 'annotations': {'abbreviation': 'RK'}},
+    "SOAVE_REDLICH_KWONG": {'description': 'Soave modification of the Redlich-Kwong cubic equation of state', 'annotations': {'abbreviation': 'SRK'}},
+    "PENG_ROBINSON": {'description': 'Peng-Robinson cubic equation of state', 'annotations': {'abbreviation': 'PR'}},
+    "PENG_ROBINSON_BOSTON_MATHIAS": {'description': 'Peng-Robinson with Boston-Mathias alpha function for supercritical extrapolation', 'annotations': {'abbreviation': 'PR-BM'}},
+    "SRK_BOSTON_MATHIAS": {'description': 'Soave-Redlich-Kwong with Boston-Mathias alpha function', 'annotations': {'abbreviation': 'SRK-BM'}},
+    "LEE_KESLER_PLOCKER": {'description': 'Lee-Kesler-Plocker corresponding-states equation of state', 'annotations': {'abbreviation': 'LKP'}},
+    "BENEDICT_WEBB_RUBIN_STARLING": {'description': 'Benedict-Webb-Rubin-Starling equation of state for light hydrocarbons', 'annotations': {'abbreviation': 'BWRS'}},
+    "PREDICTIVE_SRK": {'description': 'Predictive SRK combining SRK with a UNIFAC-based mixing rule', 'annotations': {'abbreviation': 'PSRK'}},
+    "PC_SAFT": {'description': 'Perturbed-chain statistical associating fluid theory equation of state', 'annotations': {'abbreviation': 'PC-SAFT'}},
+    "CUBIC_PLUS_ASSOCIATION": {'description': 'Cubic-plus-association equation of state for associating fluids', 'annotations': {'abbreviation': 'CPA'}},
+    "GERG_2008": {'description': 'GERG-2008 reference equation of state for natural gas mixtures'},
+    "IAPWS_95": {'description': 'IAPWS-95 reference formulation for the thermodynamic properties of water', 'annotations': {'aliases': 'steam tables'}},
+}
+
+class ActivityCoefficientModel(RichEnum):
+    """
+    Excess Gibbs energy / activity-coefficient models for non-ideal liquid phases (the SFF gamma method).
+    """
+    # Enum members
+    IDEAL = "IDEAL"
+    MARGULES = "MARGULES"
+    VAN_LAAR = "VAN_LAAR"
+    REGULAR_SOLUTION = "REGULAR_SOLUTION"
+    WILSON = "WILSON"
+    NRTL = "NRTL"
+    ELECTROLYTE_NRTL = "ELECTROLYTE_NRTL"
+    UNIQUAC = "UNIQUAC"
+    UNIFAC = "UNIFAC"
+    UNIFAC_DORTMUND = "UNIFAC_DORTMUND"
+    FLORY_HUGGINS = "FLORY_HUGGINS"
+    PITZER = "PITZER"
+    COSMO_SAC = "COSMO_SAC"
+
+# Set metadata after class creation to avoid it becoming an enum member
+ActivityCoefficientModel._metadata = {
+    "IDEAL": {'description': "Ideal solution, all activity coefficients equal to one (Raoult's law)"},
+    "MARGULES": {'description': 'Margules two-parameter activity-coefficient model'},
+    "VAN_LAAR": {'description': 'Van Laar activity-coefficient model'},
+    "REGULAR_SOLUTION": {'description': 'Scatchard-Hildebrand regular solution model based on solubility parameters'},
+    "WILSON": {'description': 'Wilson local-composition activity-coefficient model'},
+    "NRTL": {'description': 'Non-random two-liquid local-composition activity-coefficient model'},
+    "ELECTROLYTE_NRTL": {'description': 'Electrolyte NRTL model for systems containing ions', 'annotations': {'abbreviation': 'eNRTL'}},
+    "UNIQUAC": {'description': 'Universal quasi-chemical activity-coefficient model'},
+    "UNIFAC": {'description': 'UNIQUAC functional-group activity-coefficient (group-contribution) model'},
+    "UNIFAC_DORTMUND": {'description': 'Modified UNIFAC (Dortmund) group-contribution model'},
+    "FLORY_HUGGINS": {'description': 'Flory-Huggins model for polymer solutions'},
+    "PITZER": {'description': 'Pitzer model for aqueous electrolyte activity coefficients'},
+    "COSMO_SAC": {'description': 'COSMO-based segment activity-coefficient model from quantum chemistry', 'annotations': {'aliases': 'COSMO-RS, COSMO-SAC'}},
+}
+
+class ThermodynamicPropertyPackage(RichEnum):
+    """
+    Named property methods/packages offered by process simulators, typically combining an equation of state and/or an activity-coefficient model. Used where a single package label rather than separate gamma/phi methods is recorded.
+    """
+    # Enum members
+    IDEAL = "IDEAL"
+    NRTL = "NRTL"
+    NRTL_RK = "NRTL_RK"
+    UNIQUAC = "UNIQUAC"
+    UNIFAC = "UNIFAC"
+    WILSON = "WILSON"
+    VAN_LAAR = "VAN_LAAR"
+    PENG_ROBINSON = "PENG_ROBINSON"
+    SOAVE_REDLICH_KWONG = "SOAVE_REDLICH_KWONG"
+    ELECTROLYTE_NRTL = "ELECTROLYTE_NRTL"
+    PITZER = "PITZER"
+    CHAO_SEADER = "CHAO_SEADER"
+    GRAYSON_STREED = "GRAYSON_STREED"
+    BRAUN_K10 = "BRAUN_K10"
+    PC_SAFT = "PC_SAFT"
+    STEAM_TABLES = "STEAM_TABLES"
+    API_SOUR = "API_SOUR"
+
+# Set metadata after class creation to avoid it becoming an enum member
+ThermodynamicPropertyPackage._metadata = {
+    "IDEAL": {'description': "Ideal (Raoult's law) property package"},
+    "NRTL": {'description': 'NRTL activity model with ideal or RK vapor phase'},
+    "NRTL_RK": {'description': 'NRTL activity model with Redlich-Kwong vapor phase'},
+    "UNIQUAC": {'description': 'UNIQUAC activity model property package'},
+    "UNIFAC": {'description': 'UNIFAC group-contribution property package'},
+    "WILSON": {'description': 'Wilson activity model property package'},
+    "VAN_LAAR": {'description': 'Van Laar activity model property package'},
+    "PENG_ROBINSON": {'description': 'Peng-Robinson equation-of-state property package'},
+    "SOAVE_REDLICH_KWONG": {'description': 'Soave-Redlich-Kwong equation-of-state property package'},
+    "ELECTROLYTE_NRTL": {'description': 'Electrolyte NRTL property package for ionic systems'},
+    "PITZER": {'description': 'Pitzer property package for aqueous electrolytes'},
+    "CHAO_SEADER": {'description': 'Chao-Seader semi-empirical package for hydrocarbon systems'},
+    "GRAYSON_STREED": {'description': 'Grayson-Streed package for hydrogen-rich hydrocarbon systems'},
+    "BRAUN_K10": {'description': 'Braun K10 package for low-pressure heavy hydrocarbon systems', 'annotations': {'abbreviation': 'BK10'}},
+    "PC_SAFT": {'description': 'PC-SAFT equation-of-state property package'},
+    "STEAM_TABLES": {'description': 'Steam-table (IAPWS / ASME) property package for water and steam'},
+    "API_SOUR": {'description': 'API sour-water package for systems with acid gases and ammonia'},
+}
+
+class MixingRuleModel(RichEnum):
+    """
+    Mixing rules applied to equation-of-state parameters for mixtures (the SFF mixture method).
+    """
+    # Enum members
+    IDEAL = "IDEAL"
+    VAN_DER_WAALS = "VAN_DER_WAALS"
+    HURON_VIDAL = "HURON_VIDAL"
+    MODIFIED_HURON_VIDAL = "MODIFIED_HURON_VIDAL"
+    WONG_SANDLER = "WONG_SANDLER"
+    PSRK_MIXING = "PSRK_MIXING"
+
+# Set metadata after class creation to avoid it becoming an enum member
+MixingRuleModel._metadata = {
+    "IDEAL": {'description': 'Ideal mixing, no excess properties'},
+    "VAN_DER_WAALS": {'description': 'Classical van der Waals one-fluid mixing rule with binary interaction parameters', 'annotations': {'aliases': 'classical, quadratic mixing rule'}},
+    "HURON_VIDAL": {'description': 'Huron-Vidal mixing rule coupling an equation of state to an excess Gibbs energy model'},
+    "MODIFIED_HURON_VIDAL": {'description': 'Modified Huron-Vidal first/second order mixing rules', 'annotations': {'aliases': 'MHV1, MHV2'}},
+    "WONG_SANDLER": {'description': 'Wong-Sandler mixing rule with correct low- and high-density limits'},
+    "PSRK_MIXING": {'description': 'Predictive SRK (PSRK) mixing rule based on UNIFAC'},
+}
+
+class PoyntingCorrectionMethod(RichEnum):
+    """
+    Treatment of the Poynting correction factor accounting for the effect of pressure on liquid fugacity (the SFF PCF method).
+    """
+    # Enum members
+    NONE = "NONE"
+    POYNTING = "POYNTING"
+
+# Set metadata after class creation to avoid it becoming an enum member
+PoyntingCorrectionMethod._metadata = {
+    "NONE": {'description': 'No Poynting correction applied'},
+    "POYNTING": {'description': 'Poynting correction factor applied to the liquid fugacity'},
+}
+
+class DesignSimulationMethod(RichEnum):
+    """
+    Methods used to design or simulate unit operations, particularly separation columns - ranging from graphical and shortcut methods to rigorous stage-by-stage and rate-based models.
+    """
+    # Enum members
+    MCCABE_THIELE = "MCCABE_THIELE"
+    PONCHON_SAVARIT = "PONCHON_SAVARIT"
+    FENSKE_UNDERWOOD_GILLILAND = "FENSKE_UNDERWOOD_GILLILAND"
+    KREMSER = "KREMSER"
+    MESH = "MESH"
+    INSIDE_OUT = "INSIDE_OUT"
+    RATE_BASED = "RATE_BASED"
+    EQUILIBRIUM_STAGE = "EQUILIBRIUM_STAGE"
+    SHORTCUT = "SHORTCUT"
+    RIGOROUS = "RIGOROUS"
+    PINCH_ANALYSIS = "PINCH_ANALYSIS"
+
+# Set metadata after class creation to avoid it becoming an enum member
+DesignSimulationMethod._metadata = {
+    "MCCABE_THIELE": {'description': 'McCabe-Thiele graphical method for binary distillation', 'annotations': {'method_class': 'GRAPHICAL'}},
+    "PONCHON_SAVARIT": {'description': 'Ponchon-Savarit enthalpy-composition graphical method for binary distillation', 'annotations': {'method_class': 'GRAPHICAL'}},
+    "FENSKE_UNDERWOOD_GILLILAND": {'description': 'Fenske-Underwood-Gilliland shortcut method for multicomponent distillation', 'annotations': {'method_class': 'SHORTCUT', 'abbreviation': 'FUG'}},
+    "KREMSER": {'description': 'Kremser shortcut method for absorber and stripper design', 'annotations': {'method_class': 'SHORTCUT'}},
+    "MESH": {'description': 'Rigorous equilibrium-stage solution of the Material, Equilibrium, Summation and Heat (enthalpy) equations', 'annotations': {'method_class': 'RIGOROUS_EQUILIBRIUM'}},
+    "INSIDE_OUT": {'description': 'Inside-out algorithm for rigorous equilibrium-stage column convergence', 'annotations': {'method_class': 'RIGOROUS_EQUILIBRIUM'}},
+    "RATE_BASED": {'description': 'Rate-based (nonequilibrium) model accounting for mass and heat transfer rates', 'annotations': {'method_class': 'RATE_BASED'}},
+    "EQUILIBRIUM_STAGE": {'description': 'Generic equilibrium-stage model assuming each stage reaches phase equilibrium', 'annotations': {'method_class': 'RIGOROUS_EQUILIBRIUM'}},
+    "SHORTCUT": {'description': 'Generic shortcut / approximate design method', 'annotations': {'method_class': 'SHORTCUT'}},
+    "RIGOROUS": {'description': 'Generic rigorous design method', 'annotations': {'method_class': 'RIGOROUS_EQUILIBRIUM'}},
+    "PINCH_ANALYSIS": {'description': 'Pinch analysis for heat-exchanger network and energy integration', 'annotations': {'method_class': 'ENERGY_INTEGRATION'}},
+}
+
+class FlowsheetSolutionApproach(RichEnum):
+    """
+    The overall computational strategy used to converge a process flowsheet.
+    """
+    # Enum members
+    SEQUENTIAL_MODULAR = "SEQUENTIAL_MODULAR"
+    EQUATION_ORIENTED = "EQUATION_ORIENTED"
+    SIMULTANEOUS_MODULAR = "SIMULTANEOUS_MODULAR"
+
+# Set metadata after class creation to avoid it becoming an enum member
+FlowsheetSolutionApproach._metadata = {
+    "SEQUENTIAL_MODULAR": {'description': 'Units solved one at a time in sequence, iterating on recycle tear streams'},
+    "EQUATION_ORIENTED": {'description': 'All model equations assembled and solved simultaneously'},
+    "SIMULTANEOUS_MODULAR": {'description': 'Hybrid approach combining modular unit models with a simultaneous convergence layer'},
+}
+
+class ProcessSimulator(RichEnum):
+    """
+    Process simulation software packages used to model chemical and biochemical process flowsheets.
+    """
+    # Enum members
+    ASPEN_PLUS = "ASPEN_PLUS"
+    ASPEN_HYSYS = "ASPEN_HYSYS"
+    ASPEN_CUSTOM_MODELER = "ASPEN_CUSTOM_MODELER"
+    UNISIM_DESIGN = "UNISIM_DESIGN"
+    PRO_II = "PRO_II"
+    AVEVA_PROCESS_SIMULATION = "AVEVA_PROCESS_SIMULATION"
+    CHEMCAD = "CHEMCAD"
+    DWSIM = "DWSIM"
+    COCO_SIMULATOR = "COCO_SIMULATOR"
+    GPROMS = "GPROMS"
+    PROSIMPLUS = "PROSIMPLUS"
+    PETRO_SIM = "PETRO_SIM"
+    BIOSTEAM = "BIOSTEAM"
+    SUPERPRO_DESIGNER = "SUPERPRO_DESIGNER"
+    IDAES = "IDAES"
+    CAPE_OPEN = "CAPE_OPEN"
+
+# Set metadata after class creation to avoid it becoming an enum member
+ProcessSimulator._metadata = {
+    "ASPEN_PLUS": {'description': 'Aspen Plus steady-state process simulator (AspenTech)'},
+    "ASPEN_HYSYS": {'description': 'Aspen HYSYS process simulator (AspenTech)'},
+    "ASPEN_CUSTOM_MODELER": {'description': 'Aspen Custom Modeler for user-defined unit operation models (AspenTech)'},
+    "UNISIM_DESIGN": {'description': 'Honeywell UniSim Design process simulator'},
+    "PRO_II": {'description': 'AVEVA Pro/II (formerly SimSci Pro/II) process simulator'},
+    "AVEVA_PROCESS_SIMULATION": {'description': 'AVEVA Process Simulation (formerly SimCentral)'},
+    "CHEMCAD": {'description': 'ChemCAD process simulator (Chemstations)'},
+    "DWSIM": {'description': 'DWSIM open-source CAPE-OPEN process simulator'},
+    "COCO_SIMULATOR": {'description': 'COCO/COFE free CAPE-OPEN flowsheeting environment'},
+    "GPROMS": {'description': 'gPROMS equation-oriented process modeling environment (Siemens / PSE)'},
+    "PROSIMPLUS": {'description': 'ProSimPlus steady-state process simulator (ProSim)'},
+    "PETRO_SIM": {'description': 'KBC Petro-SIM process simulator'},
+    "BIOSTEAM": {'description': 'BioSTEAM open-source biorefinery simulation and techno-economic analysis package'},
+    "SUPERPRO_DESIGNER": {'description': 'SuperPro Designer batch and bioprocess simulator (Intelligen)'},
+    "IDAES": {'description': 'IDAES open-source equation-oriented process systems engineering platform (US DOE)'},
+    "CAPE_OPEN": {'description': 'A CAPE-OPEN compliant simulator or unit (interoperability standard, simulator unspecified)'},
+}
+
+class ChemicalIdentifierScheme(RichEnum):
+    """
+    Schemes used to identify chemical substances, including registry numbers, line notations, structure-derived keys, and database accessions.
+    """
+    # Enum members
+    CAS_RN = "CAS_RN"
+    SMILES = "SMILES"
+    INCHI = "INCHI"
+    INCHIKEY = "INCHIKEY"
+    IUPAC_NAME = "IUPAC_NAME"
+    MOLECULAR_FORMULA = "MOLECULAR_FORMULA"
+    PUBCHEM_CID = "PUBCHEM_CID"
+    CHEBI_ID = "CHEBI_ID"
+    KEGG_COMPOUND = "KEGG_COMPOUND"
+    DRUGBANK_ID = "DRUGBANK_ID"
+    EC_NUMBER = "EC_NUMBER"
+
+# Set metadata after class creation to avoid it becoming an enum member
+ChemicalIdentifierScheme._metadata = {
+    "CAS_RN": {'description': 'CAS Registry Number assigned by the Chemical Abstracts Service', 'annotations': {'example': '64-17-5'}},
+    "SMILES": {'description': 'Simplified Molecular-Input Line-Entry System structure notation', 'annotations': {'example': 'CCO'}},
+    "INCHI": {'description': 'IUPAC International Chemical Identifier structure string', 'annotations': {'example': 'InChI=1S/C2H6O/c1-2-3/h3H,2H2,1H3'}},
+    "INCHIKEY": {'description': 'Hashed fixed-length form of an InChI', 'annotations': {'example': 'LFQSCWFLJHTTHZ-UHFFFAOYSA-N'}},
+    "IUPAC_NAME": {'description': 'Systematic IUPAC chemical name'},
+    "MOLECULAR_FORMULA": {'description': 'Molecular or empirical chemical formula', 'annotations': {'example': 'C2H6O'}},
+    "PUBCHEM_CID": {'description': 'PubChem Compound Identifier'},
+    "CHEBI_ID": {'description': 'ChEBI ontology identifier'},
+    "KEGG_COMPOUND": {'description': 'KEGG COMPOUND database accession'},
+    "DRUGBANK_ID": {'description': 'DrugBank accession'},
+    "EC_NUMBER": {'description': 'European Community (EINECS/EC) substance number'},
+}
+
+class CurrencyCode(RichEnum):
+    """
+    World currencies by ISO 4217 alpha-3 code. The numeric_code, symbol, and minor_unit (number of decimal places) annotations record the corresponding ISO 4217 attributes.
+    """
+    # Enum members
+    USD = "USD"
+    EUR = "EUR"
+    JPY = "JPY"
+    GBP = "GBP"
+    CNY = "CNY"
+    AUD = "AUD"
+    CAD = "CAD"
+    CHF = "CHF"
+    HKD = "HKD"
+    SGD = "SGD"
+    SEK = "SEK"
+    NOK = "NOK"
+    DKK = "DKK"
+    NZD = "NZD"
+    KRW = "KRW"
+    INR = "INR"
+    BRL = "BRL"
+    ZAR = "ZAR"
+    RUB = "RUB"
+    MXN = "MXN"
+    TRY = "TRY"
+    PLN = "PLN"
+    THB = "THB"
+    IDR = "IDR"
+    MYR = "MYR"
+    PHP = "PHP"
+    AED = "AED"
+    SAR = "SAR"
+    ILS = "ILS"
+    CZK = "CZK"
+    HUF = "HUF"
+    RON = "RON"
+    UAH = "UAH"
+    CLP = "CLP"
+    COP = "COP"
+    ARS = "ARS"
+    EGP = "EGP"
+    NGN = "NGN"
+    KES = "KES"
+    PKR = "PKR"
+    BDT = "BDT"
+    VND = "VND"
+    TWD = "TWD"
+    KWD = "KWD"
+    BHD = "BHD"
+    OMR = "OMR"
+    QAR = "QAR"
+    ISK = "ISK"
+
+# Set metadata after class creation to avoid it becoming an enum member
+CurrencyCode._metadata = {
+    "USD": {'description': 'United States dollar', 'annotations': {'numeric_code': '840', 'symbol': '$', 'minor_unit': 2}},
+    "EUR": {'description': 'Euro', 'annotations': {'numeric_code': '978', 'symbol': '€', 'minor_unit': 2}},
+    "JPY": {'description': 'Japanese yen', 'annotations': {'numeric_code': '392', 'symbol': '¥', 'minor_unit': 0}},
+    "GBP": {'description': 'British pound sterling', 'annotations': {'numeric_code': '826', 'symbol': '£', 'minor_unit': 2}},
+    "CNY": {'description': 'Chinese yuan renminbi', 'annotations': {'numeric_code': '156', 'symbol': '¥', 'minor_unit': 2}},
+    "AUD": {'description': 'Australian dollar', 'annotations': {'numeric_code': '036', 'symbol': '$', 'minor_unit': 2}},
+    "CAD": {'description': 'Canadian dollar', 'annotations': {'numeric_code': '124', 'symbol': '$', 'minor_unit': 2}},
+    "CHF": {'description': 'Swiss franc', 'annotations': {'numeric_code': '756', 'symbol': 'Fr', 'minor_unit': 2}},
+    "HKD": {'description': 'Hong Kong dollar', 'annotations': {'numeric_code': '344', 'symbol': '$', 'minor_unit': 2}},
+    "SGD": {'description': 'Singapore dollar', 'annotations': {'numeric_code': '702', 'symbol': '$', 'minor_unit': 2}},
+    "SEK": {'description': 'Swedish krona', 'annotations': {'numeric_code': '752', 'symbol': 'kr', 'minor_unit': 2}},
+    "NOK": {'description': 'Norwegian krone', 'annotations': {'numeric_code': '578', 'symbol': 'kr', 'minor_unit': 2}},
+    "DKK": {'description': 'Danish krone', 'annotations': {'numeric_code': '208', 'symbol': 'kr', 'minor_unit': 2}},
+    "NZD": {'description': 'New Zealand dollar', 'annotations': {'numeric_code': '554', 'symbol': '$', 'minor_unit': 2}},
+    "KRW": {'description': 'South Korean won', 'annotations': {'numeric_code': '410', 'symbol': '₩', 'minor_unit': 0}},
+    "INR": {'description': 'Indian rupee', 'annotations': {'numeric_code': '356', 'symbol': '₹', 'minor_unit': 2}},
+    "BRL": {'description': 'Brazilian real', 'annotations': {'numeric_code': '986', 'symbol': 'R$', 'minor_unit': 2}},
+    "ZAR": {'description': 'South African rand', 'annotations': {'numeric_code': '710', 'symbol': 'R', 'minor_unit': 2}},
+    "RUB": {'description': 'Russian ruble', 'annotations': {'numeric_code': '643', 'symbol': '₽', 'minor_unit': 2}},
+    "MXN": {'description': 'Mexican peso', 'annotations': {'numeric_code': '484', 'symbol': '$', 'minor_unit': 2}},
+    "TRY": {'description': 'Turkish lira', 'annotations': {'numeric_code': '949', 'symbol': '₺', 'minor_unit': 2}},
+    "PLN": {'description': 'Polish zloty', 'annotations': {'numeric_code': '985', 'symbol': 'zł', 'minor_unit': 2}},
+    "THB": {'description': 'Thai baht', 'annotations': {'numeric_code': '764', 'symbol': '฿', 'minor_unit': 2}},
+    "IDR": {'description': 'Indonesian rupiah', 'annotations': {'numeric_code': '360', 'symbol': 'Rp', 'minor_unit': 2}},
+    "MYR": {'description': 'Malaysian ringgit', 'annotations': {'numeric_code': '458', 'symbol': 'RM', 'minor_unit': 2}},
+    "PHP": {'description': 'Philippine peso', 'annotations': {'numeric_code': '608', 'symbol': '₱', 'minor_unit': 2}},
+    "AED": {'description': 'United Arab Emirates dirham', 'annotations': {'numeric_code': '784', 'minor_unit': 2}},
+    "SAR": {'description': 'Saudi riyal', 'annotations': {'numeric_code': '682', 'minor_unit': 2}},
+    "ILS": {'description': 'Israeli new shekel', 'annotations': {'numeric_code': '376', 'symbol': '₪', 'minor_unit': 2}},
+    "CZK": {'description': 'Czech koruna', 'annotations': {'numeric_code': '203', 'symbol': 'Kč', 'minor_unit': 2}},
+    "HUF": {'description': 'Hungarian forint', 'annotations': {'numeric_code': '348', 'symbol': 'Ft', 'minor_unit': 2}},
+    "RON": {'description': 'Romanian leu', 'annotations': {'numeric_code': '946', 'symbol': 'lei', 'minor_unit': 2}},
+    "UAH": {'description': 'Ukrainian hryvnia', 'annotations': {'numeric_code': '980', 'symbol': '₴', 'minor_unit': 2}},
+    "CLP": {'description': 'Chilean peso', 'annotations': {'numeric_code': '152', 'symbol': '$', 'minor_unit': 0}},
+    "COP": {'description': 'Colombian peso', 'annotations': {'numeric_code': '170', 'symbol': '$', 'minor_unit': 2}},
+    "ARS": {'description': 'Argentine peso', 'annotations': {'numeric_code': '032', 'symbol': '$', 'minor_unit': 2}},
+    "EGP": {'description': 'Egyptian pound', 'annotations': {'numeric_code': '818', 'symbol': '£', 'minor_unit': 2}},
+    "NGN": {'description': 'Nigerian naira', 'annotations': {'numeric_code': '566', 'symbol': '₦', 'minor_unit': 2}},
+    "KES": {'description': 'Kenyan shilling', 'annotations': {'numeric_code': '404', 'symbol': 'Sh', 'minor_unit': 2}},
+    "PKR": {'description': 'Pakistani rupee', 'annotations': {'numeric_code': '586', 'symbol': '₨', 'minor_unit': 2}},
+    "BDT": {'description': 'Bangladeshi taka', 'annotations': {'numeric_code': '050', 'symbol': '৳', 'minor_unit': 2}},
+    "VND": {'description': 'Vietnamese dong', 'annotations': {'numeric_code': '704', 'symbol': '₫', 'minor_unit': 0}},
+    "TWD": {'description': 'New Taiwan dollar', 'annotations': {'numeric_code': '901', 'symbol': '$', 'minor_unit': 2}},
+    "KWD": {'description': 'Kuwaiti dinar', 'annotations': {'numeric_code': '414', 'minor_unit': 3}},
+    "BHD": {'description': 'Bahraini dinar', 'annotations': {'numeric_code': '048', 'minor_unit': 3}},
+    "OMR": {'description': 'Omani rial', 'annotations': {'numeric_code': '512', 'minor_unit': 3}},
+    "QAR": {'description': 'Qatari riyal', 'annotations': {'numeric_code': '634', 'minor_unit': 2}},
+    "ISK": {'description': 'Icelandic krona', 'annotations': {'numeric_code': '352', 'symbol': 'kr', 'minor_unit': 0}},
 }
 
 class LengthUnitEnum(RichEnum):
@@ -16811,6 +18301,68 @@ DataSizeUnitEnum._metadata = {
     "MEBIBYTE": {'description': 'Mebibyte (2^20 bytes)', 'annotations': {'symbol': 'MiB', 'conversion_to_byte': '1048576', 'standard': 'binary'}},
     "GIBIBYTE": {'description': 'Gibibyte (2^30 bytes)', 'annotations': {'symbol': 'GiB', 'conversion_to_byte': '1073741824', 'standard': 'binary'}},
     "TEBIBYTE": {'description': 'Tebibyte (2^40 bytes)', 'annotations': {'symbol': 'TiB', 'conversion_to_byte': '1099511627776', 'standard': 'binary'}},
+}
+
+class MassFlowRateUnitEnum(RichEnum):
+    """
+    Units of mass flow rate (mass per unit time)
+    """
+    # Enum members
+    KILOGRAM_PER_SECOND = "KILOGRAM_PER_SECOND"
+    KILOGRAM_PER_HOUR = "KILOGRAM_PER_HOUR"
+    GRAM_PER_SECOND = "GRAM_PER_SECOND"
+    TONNE_PER_HOUR = "TONNE_PER_HOUR"
+    TONNE_PER_DAY = "TONNE_PER_DAY"
+    POUND_PER_HOUR = "POUND_PER_HOUR"
+
+# Set metadata after class creation to avoid it becoming an enum member
+MassFlowRateUnitEnum._metadata = {
+    "KILOGRAM_PER_SECOND": {'description': 'Kilograms per second (SI)', 'annotations': {'symbol': 'kg/s', 'system': 'SI'}},
+    "KILOGRAM_PER_HOUR": {'description': 'Kilograms per hour', 'annotations': {'symbol': 'kg/h', 'conversion_to_kg_per_s': '0.000277778'}},
+    "GRAM_PER_SECOND": {'description': 'Grams per second', 'annotations': {'symbol': 'g/s', 'conversion_to_kg_per_s': '0.001'}},
+    "TONNE_PER_HOUR": {'description': 'Metric tonnes per hour', 'annotations': {'symbol': 't/h', 'conversion_to_kg_per_s': '0.277778'}},
+    "TONNE_PER_DAY": {'description': 'Metric tonnes per day', 'annotations': {'symbol': 't/d', 'conversion_to_kg_per_s': '0.0115741'}},
+    "POUND_PER_HOUR": {'description': 'Pounds (mass) per hour', 'annotations': {'symbol': 'lb/h', 'conversion_to_kg_per_s': '0.000125998', 'system': 'imperial'}},
+}
+
+class MolarFlowRateUnitEnum(RichEnum):
+    """
+    Units of molar flow rate (amount of substance per unit time)
+    """
+    # Enum members
+    MOLE_PER_SECOND = "MOLE_PER_SECOND"
+    MOLE_PER_HOUR = "MOLE_PER_HOUR"
+    KILOMOLE_PER_HOUR = "KILOMOLE_PER_HOUR"
+    KILOMOLE_PER_SECOND = "KILOMOLE_PER_SECOND"
+
+# Set metadata after class creation to avoid it becoming an enum member
+MolarFlowRateUnitEnum._metadata = {
+    "MOLE_PER_SECOND": {'description': 'Moles per second (SI)', 'annotations': {'symbol': 'mol/s', 'system': 'SI'}},
+    "MOLE_PER_HOUR": {'description': 'Moles per hour', 'annotations': {'symbol': 'mol/h', 'conversion_to_mol_per_s': '0.000277778'}},
+    "KILOMOLE_PER_HOUR": {'description': 'Kilomoles per hour', 'annotations': {'symbol': 'kmol/h', 'conversion_to_mol_per_s': '0.277778'}},
+    "KILOMOLE_PER_SECOND": {'description': 'Kilomoles per second', 'annotations': {'symbol': 'kmol/s', 'conversion_to_mol_per_s': '1000'}},
+}
+
+class VolumetricFlowRateUnitEnum(RichEnum):
+    """
+    Units of volumetric flow rate (volume per unit time)
+    """
+    # Enum members
+    CUBIC_METER_PER_SECOND = "CUBIC_METER_PER_SECOND"
+    CUBIC_METER_PER_HOUR = "CUBIC_METER_PER_HOUR"
+    LITER_PER_SECOND = "LITER_PER_SECOND"
+    LITER_PER_MINUTE = "LITER_PER_MINUTE"
+    GALLON_PER_MINUTE = "GALLON_PER_MINUTE"
+    CUBIC_FOOT_PER_MINUTE = "CUBIC_FOOT_PER_MINUTE"
+
+# Set metadata after class creation to avoid it becoming an enum member
+VolumetricFlowRateUnitEnum._metadata = {
+    "CUBIC_METER_PER_SECOND": {'description': 'Cubic meters per second (SI)', 'annotations': {'symbol': 'm3/s', 'system': 'SI'}},
+    "CUBIC_METER_PER_HOUR": {'description': 'Cubic meters per hour', 'annotations': {'symbol': 'm3/h', 'conversion_to_m3_per_s': '0.000277778'}},
+    "LITER_PER_SECOND": {'description': 'Liters per second', 'annotations': {'symbol': 'L/s', 'conversion_to_m3_per_s': '0.001'}},
+    "LITER_PER_MINUTE": {'description': 'Liters per minute', 'annotations': {'symbol': 'L/min', 'conversion_to_m3_per_s': '1.66667e-5'}},
+    "GALLON_PER_MINUTE": {'description': 'US gallons per minute', 'annotations': {'symbol': 'gpm', 'conversion_to_m3_per_s': '6.30902e-5', 'system': 'US'}},
+    "CUBIC_FOOT_PER_MINUTE": {'description': 'Cubic feet per minute', 'annotations': {'symbol': 'cfm', 'conversion_to_m3_per_s': '0.000471947', 'system': 'imperial'}},
 }
 
 class QuantityKindEnum(RichEnum):
@@ -17361,6 +18913,65 @@ OpenSourceMaturityLevel._metadata = {
     "MATURE": {'description': 'Well-established with proven governance'},
     "DECLINING": {'description': 'Decreasing activity and maintenance'},
     "ARCHIVED": {'description': 'No longer actively maintained'},
+}
+
+class SystemLifeCycleProcess15288(RichEnum):
+    """
+    The 30 system life cycle processes grouped by ISO/IEC/IEEE 15288:2015.
+    """
+    # Enum members
+    ACQUISITION = "ACQUISITION"
+    SUPPLY = "SUPPLY"
+    LIFE_CYCLE_MODEL_MANAGEMENT = "LIFE_CYCLE_MODEL_MANAGEMENT"
+    INFRASTRUCTURE_MANAGEMENT = "INFRASTRUCTURE_MANAGEMENT"
+    PORTFOLIO_MANAGEMENT = "PORTFOLIO_MANAGEMENT"
+    HUMAN_RESOURCE_MANAGEMENT = "HUMAN_RESOURCE_MANAGEMENT"
+    QUALITY_MANAGEMENT = "QUALITY_MANAGEMENT"
+    PROJECT_PLANNING = "PROJECT_PLANNING"
+    PROJECT_ASSESSMENT_AND_CONTROL = "PROJECT_ASSESSMENT_AND_CONTROL"
+    DECISION_MANAGEMENT = "DECISION_MANAGEMENT"
+    RISK_MANAGEMENT = "RISK_MANAGEMENT"
+    CONFIGURATION_MANAGEMENT = "CONFIGURATION_MANAGEMENT"
+    INFORMATION_MANAGEMENT = "INFORMATION_MANAGEMENT"
+    MEASUREMENT = "MEASUREMENT"
+    QUALITY_ASSURANCE = "QUALITY_ASSURANCE"
+    KNOWLEDGE_MANAGEMENT = "KNOWLEDGE_MANAGEMENT"
+    BUSINESS_OR_MISSION_ANALYSIS = "BUSINESS_OR_MISSION_ANALYSIS"
+    STAKEHOLDER_NEEDS_AND_REQUIREMENTS_DEFINITION = "STAKEHOLDER_NEEDS_AND_REQUIREMENTS_DEFINITION"
+    SYSTEM_REQUIREMENTS_DEFINITION = "SYSTEM_REQUIREMENTS_DEFINITION"
+    ARCHITECTURE_DEFINITION = "ARCHITECTURE_DEFINITION"
+    DESIGN_DEFINITION = "DESIGN_DEFINITION"
+    SYSTEM_ANALYSIS = "SYSTEM_ANALYSIS"
+    IMPLEMENTATION = "IMPLEMENTATION"
+    INTEGRATION = "INTEGRATION"
+    VERIFICATION = "VERIFICATION"
+    TRANSITION = "TRANSITION"
+    VALIDATION = "VALIDATION"
+    OPERATION = "OPERATION"
+    MAINTENANCE = "MAINTENANCE"
+    DISPOSAL = "DISPOSAL"
+
+# Set metadata after class creation to avoid it becoming an enum member
+SystemLifeCycleProcess15288._metadata = {
+}
+
+class VerificationValidationProcessIEEE1012(RichEnum):
+    """
+    Verification and validation processes applied across the system, software, and hardware life cycle.
+    """
+    # Enum members
+    CONCEPT_AND_REQUIREMENTS_V_AND_V = "CONCEPT_AND_REQUIREMENTS_V_AND_V"
+    ARCHITECTURE_AND_DESIGN_V_AND_V = "ARCHITECTURE_AND_DESIGN_V_AND_V"
+    IMPLEMENTATION_V_AND_V = "IMPLEMENTATION_V_AND_V"
+    INTEGRATION_V_AND_V = "INTEGRATION_V_AND_V"
+    QUALIFICATION_TESTING = "QUALIFICATION_TESTING"
+    INSTALLATION_AND_CHECKOUT = "INSTALLATION_AND_CHECKOUT"
+    OPERATION_V_AND_V = "OPERATION_V_AND_V"
+    MAINTENANCE_V_AND_V = "MAINTENANCE_V_AND_V"
+    DISPOSAL_V_AND_V = "DISPOSAL_V_AND_V"
+
+# Set metadata after class creation to avoid it becoming an enum member
+VerificationValidationProcessIEEE1012._metadata = {
 }
 
 class OWLProfileEnum(RichEnum):
