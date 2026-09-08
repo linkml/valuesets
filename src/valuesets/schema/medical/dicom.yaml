@@ -11,10 +11,9 @@ description: >-
   from PACS, and the open-source toolkits commonly used to read, validate and serve DICOM
   files.
 
-  These value sets support the medical imaging data lifecycle described in "Toward AI-Ready
-  Medical Imaging Data" (Nikolov et al., Bridge2AI consortium), in particular the data
-  extraction, conformance checking and metadata tag validation stages, where VR, VM and
-  attribute type rules are checked with tools such as dciodvfy, dcentvfy, DVTk and pydicom.
+  These value sets support DICOM data extraction, conformance checking and metadata tag
+  validation, where VR, VM and attribute type rules are checked with tools such as dciodvfy,
+  dcentvfy, DVTk and pydicom.
 
   Codes that come from the DICOM standard itself (modality codes, VRs, action codes) are
   kept in their standard form rather than being upper-cased or expanded.

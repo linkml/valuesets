@@ -9,13 +9,8 @@ description: >-
   remove reconstructable facial features from head CT and MRI volumes.
 
   Defacing only addresses pixel data. A complete de-identification pipeline also strips or
-  pseudonymizes protected health information in the DICOM header, as recommended by the
-  Medical Image De-Identification (MIDI) Task Group (Clunie et al., 2025), and anticipates
-  adversarial re-identification, for example face-recognition matching of surface renderings
-  of MRI head scans (Schwarz et al., 2019).
-
-  Drawn from "Toward AI-Ready Medical Imaging Data" (Nikolov et al., Bridge2AI consortium),
-  which reviews the de-facing tools and methods listed here.
+  pseudonymizes protected health information in the DICOM header, and anticipates adversarial
+  re-identification such as face-recognition matching of surface renderings of head scans.
 id: https://w3id.org/valuesets/medical/imaging_deidentification
 imports:
 - linkml:types

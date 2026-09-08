@@ -7,10 +7,7 @@ description: >-
   systems that hold imaging data, the categories of structural and semantic problems found
   by DICOM validation tools, the image quality metrics computed during pixel data
   validation, the interoperability standards used to link images to clinical records, and
-  the NIH Bridge2AI data generation projects whose imaging datasets motivated the framework.
-
-  Based on the six-stage data lifecycle framework in "Toward AI-Ready Medical Imaging Data"
-  (Nikolov et al., Bridge2AI Standards, Practices and Quality Assessment Working Group).
+  the NIH Bridge2AI data generation projects that produce AI-ready imaging datasets.
 id: https://w3id.org/valuesets/medical/imaging_data_management
 imports:
 - linkml:types
