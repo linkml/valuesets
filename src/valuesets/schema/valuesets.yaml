@@ -120,6 +120,7 @@ imports:
 - medical/pediatric_oncology/staging/neuroblastoma
 - clinical/nih_demographics
 - clinical/phenopackets
+- clinical/gene2phenotype
 - bioprocessing/scale_up
 - bioprocessing/biomanufacturing
 - process_engineering/unit_operations
