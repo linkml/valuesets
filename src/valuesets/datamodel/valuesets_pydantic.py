@@ -6360,6 +6360,342 @@ OutcomeTypeEnum._metadata = {
     "FN": {'description': 'False Negative'},
 }
 
+class StatisticalTestEnum(RichEnum):
+    """
+    Statistical hypothesis tests, drawn primarily from the descendants of 'statistical hypothesis test' (OBI:0000673) in STATO.
+This enum deliberately mixes abstraction levels: alongside concrete tests it retains STATO's grouping classes (GOODNESS_OF_FIT_TEST, HOMOSKEDASTICITY_TEST, SPHERICITY_TEST, POST_HOC_ANALYSIS, NON_PARAMETRIC_TEST and similar) so that a source reporting only "a test of normality was applied" can still be annotated. Prefer the most specific value that the source supports, and use a grouping value only when the specific test is genuinely not stated.
+Several values are also repeated in the narrower enums below (TTestTypeEnum, NormalityTestEnum, HomoscedasticityTestEnum, PostHocTestEnum), which exist to constrain slot ranges. The duplicated meanings are intentional; from_meaning() resolves per enum class.
+    """
+    # Enum members
+    STUDENTS_T_TEST = "STUDENTS_T_TEST"
+    ONE_SAMPLE_T_TEST = "ONE_SAMPLE_T_TEST"
+    PAIRED_T_TEST = "PAIRED_T_TEST"
+    TWO_SAMPLE_T_TEST_EQUAL_VARIANCE = "TWO_SAMPLE_T_TEST_EQUAL_VARIANCE"
+    TWO_SAMPLE_T_TEST_UNEQUAL_VARIANCE = "TWO_SAMPLE_T_TEST_UNEQUAL_VARIANCE"
+    YUEN_T_TEST = "YUEN_T_TEST"
+    Z_TEST = "Z_TEST"
+    ONE_SAMPLE_HOTELLING_T2_TEST = "ONE_SAMPLE_HOTELLING_T2_TEST"
+    TWO_SAMPLE_HOTELLING_T2_TEST = "TWO_SAMPLE_HOTELLING_T2_TEST"
+    ANOVA = "ANOVA"
+    ONE_WAY_ANOVA = "ONE_WAY_ANOVA"
+    TWO_WAY_ANOVA = "TWO_WAY_ANOVA"
+    MULTIWAY_ANOVA = "MULTIWAY_ANOVA"
+    REPEATED_MEASURES_ANOVA = "REPEATED_MEASURES_ANOVA"
+    MANOVA = "MANOVA"
+    ANCOVA = "ANCOVA"
+    F_TEST = "F_TEST"
+    MANN_WHITNEY_U_TEST = "MANN_WHITNEY_U_TEST"
+    WILCOXON_SIGNED_RANK_TEST = "WILCOXON_SIGNED_RANK_TEST"
+    KRUSKAL_WALLIS_TEST = "KRUSKAL_WALLIS_TEST"
+    FRIEDMAN_TEST = "FRIEDMAN_TEST"
+    SIGN_TEST = "SIGN_TEST"
+    CHI_SQUARE_TEST = "CHI_SQUARE_TEST"
+    PEARSON_CHI_SQUARE_TEST_OF_INDEPENDENCE = "PEARSON_CHI_SQUARE_TEST_OF_INDEPENDENCE"
+    PEARSON_CHI_SQUARE_GOODNESS_OF_FIT_TEST = "PEARSON_CHI_SQUARE_GOODNESS_OF_FIT_TEST"
+    YATES_CORRECTED_CHI_SQUARE_TEST = "YATES_CORRECTED_CHI_SQUARE_TEST"
+    CHI_SQUARE_TEST_FOR_HOMOGENEITY = "CHI_SQUARE_TEST_FOR_HOMOGENEITY"
+    FISHERS_EXACT_TEST = "FISHERS_EXACT_TEST"
+    BARNARDS_TEST = "BARNARDS_TEST"
+    MCNEMAR_TEST = "MCNEMAR_TEST"
+    COCHRANS_Q_TEST = "COCHRANS_Q_TEST"
+    COCHRAN_ARMITAGE_TEST_FOR_TREND = "COCHRAN_ARMITAGE_TEST_FOR_TREND"
+    COCHRAN_MANTEL_HAENSZEL_TEST = "COCHRAN_MANTEL_HAENSZEL_TEST"
+    EXACT_BINOMIAL_TEST = "EXACT_BINOMIAL_TEST"
+    HYPERGEOMETRIC_TEST = "HYPERGEOMETRIC_TEST"
+    TEST_OF_ASSOCIATION_BETWEEN_CATEGORICAL_VARIABLES = "TEST_OF_ASSOCIATION_BETWEEN_CATEGORICAL_VARIABLES"
+    GOODNESS_OF_FIT_TEST = "GOODNESS_OF_FIT_TEST"
+    SHAPIRO_WILK_TEST = "SHAPIRO_WILK_TEST"
+    KOLMOGOROV_SMIRNOV_TEST = "KOLMOGOROV_SMIRNOV_TEST"
+    ANDERSON_DARLING_TEST = "ANDERSON_DARLING_TEST"
+    HOSMER_LEMESHOW_TEST = "HOSMER_LEMESHOW_TEST"
+    LEVENES_TEST = "LEVENES_TEST"
+    BARTLETTS_TEST = "BARTLETTS_TEST"
+    BROWN_FORSYTHE_TEST = "BROWN_FORSYTHE_TEST"
+    BREUSCH_PAGAN_TEST = "BREUSCH_PAGAN_TEST"
+    HOMOSKEDASTICITY_TEST = "HOMOSKEDASTICITY_TEST"
+    HOMOGENEITY_TEST = "HOMOGENEITY_TEST"
+    SPHERICITY_TEST = "SPHERICITY_TEST"
+    MAUCHLYS_TEST = "MAUCHLYS_TEST"
+    ODDS_RATIO_HOMOGENEITY_TEST = "ODDS_RATIO_HOMOGENEITY_TEST"
+    BRESLOW_DAY_TEST = "BRESLOW_DAY_TEST"
+    TARONES_TEST = "TARONES_TEST"
+    WOOLFS_TEST = "WOOLFS_TEST"
+    POST_HOC_ANALYSIS = "POST_HOC_ANALYSIS"
+    TUKEY_HSD_TEST = "TUKEY_HSD_TEST"
+    NEWMAN_KEULS_TEST = "NEWMAN_KEULS_TEST"
+    SCHEFFE_TEST = "SCHEFFE_TEST"
+    LEAST_SIGNIFICANT_DIFFERENCE_TEST = "LEAST_SIGNIFICANT_DIFFERENCE_TEST"
+    DUNNS_TEST = "DUNNS_TEST"
+    CONOVER_IMAN_TEST = "CONOVER_IMAN_TEST"
+    GRUBBS_TEST = "GRUBBS_TEST"
+    DIXON_Q_TEST = "DIXON_Q_TEST"
+    TIETJEN_MOORE_TEST = "TIETJEN_MOORE_TEST"
+    GENERALIZED_ESD_TEST = "GENERALIZED_ESD_TEST"
+    LIKELIHOOD_RATIO_TEST = "LIKELIHOOD_RATIO_TEST"
+    WALD_TEST = "WALD_TEST"
+    LOG_RANK_TEST = "LOG_RANK_TEST"
+    HARDY_WEINBERG_EQUILIBRIUM_TEST = "HARDY_WEINBERG_EQUILIBRIUM_TEST"
+    TRANSMISSION_DISEQUILIBRIUM_TEST = "TRANSMISSION_DISEQUILIBRIUM_TEST"
+    PEARSON_CORRELATION_TEST = "PEARSON_CORRELATION_TEST"
+    SPEARMAN_CORRELATION_TEST = "SPEARMAN_CORRELATION_TEST"
+    AB_TEST = "AB_TEST"
+    BETWEEN_GROUP_COMPARISON_TEST = "BETWEEN_GROUP_COMPARISON_TEST"
+    WITHIN_SUBJECT_COMPARISON_TEST = "WITHIN_SUBJECT_COMPARISON_TEST"
+    NON_PARAMETRIC_TEST = "NON_PARAMETRIC_TEST"
+
+# Set metadata after class creation to avoid it becoming an enum member
+StatisticalTestEnum._metadata = {
+    "STUDENTS_T_TEST": {'description': "Test in which the test statistic follows a Student's t distribution under the null hypothesis; used when the population is assumed normal but the sample is small", 'meaning': 'OBI:0000739', 'aliases': ['t-test', 't-Test']},
+    "ONE_SAMPLE_T_TEST": {'description': "Student's t-test comparing a sample mean against a specified population mean", 'meaning': 'STATO:0000302'},
+    "PAIRED_T_TEST": {'description': "Student's t-test for differences between paired observations, as in a repeated measures design with two measurements per subject", 'meaning': 'STATO:0000095'},
+    "TWO_SAMPLE_T_TEST_EQUAL_VARIANCE": {'description': 'Two-sample t-test comparing the means of two independent samples assumed to have equal variances', 'meaning': 'STATO:0000303', 'annotations': {'note': 'The bare terms "unpaired t-test" and "independent samples t-test" are ambiguous: they are attached here because this is the classical equal-variance form, but common software defaults to the Welch variant (R\'s t.test, scipy.stats.ttest_ind with equal_var=False). Choose TWO_SAMPLE_T_TEST_UNEQUAL_VARIANCE when the source did not assume equal variances.'}, 'aliases': ['independent samples t-test', 'unpaired t-test']},
+    "TWO_SAMPLE_T_TEST_UNEQUAL_VARIANCE": {'description': 'Two-sample t-test used when the variances of the two populations are not assumed equal', 'meaning': 'STATO:0000304', 'annotations': {'note': 'This is the default two-sample t-test in R and SciPy, so an unqualified "unpaired t-test" in a methods section often means this rather than TWO_SAMPLE_T_TEST_EQUAL_VARIANCE.'}, 'aliases': ["Welch's t-test"]},
+    "YUEN_T_TEST": {'description': 'Robust two-sample t-test computed on trimmed means and winsorized variances', 'meaning': 'STATO:0000406'},
+    "Z_TEST": {'description': 'Test evaluating the null hypothesis that the means of two populations are equal using a normal reference distribution', 'meaning': 'STATO:0000052'},
+    "ONE_SAMPLE_HOTELLING_T2_TEST": {'description': 'Multivariate extension of the one-sample t-test comparing a vector of means against a reference vector', 'meaning': 'STATO:0000153'},
+    "TWO_SAMPLE_HOTELLING_T2_TEST": {'description': 'Multivariate generalization of the two-sample t-test comparing mean vectors of two populations', 'meaning': 'STATO:0000098'},
+    "ANOVA": {'description': 'Analysis of variance testing whether the means of several groups are equal', 'meaning': 'OBI:0200201', 'aliases': ['analysis of variance']},
+    "ONE_WAY_ANOVA": {'description': 'Analysis of variance in which the groups compared correspond to the levels of a single independent variable', 'meaning': 'STATO:0000044'},
+    "TWO_WAY_ANOVA": {'description': 'Analysis of variance in which the groups compared correspond to the levels of exactly two independent variables', 'meaning': 'STATO:0000045'},
+    "MULTIWAY_ANOVA": {'description': 'Analysis of variance in which the groups compared correspond to the levels of more than two independent variables', 'meaning': 'STATO:0000048'},
+    "REPEATED_MEASURES_ANOVA": {'description': 'Analysis of variance developed for non-independent observations arising from repeated measurements on the same experimental unit', 'meaning': 'STATO:0000260'},
+    "MANOVA": {'description': 'Procedure for comparing multivariate sample means when there are two or more dependent variables', 'meaning': 'STATO:0000454'},
+    "ANCOVA": {'description': 'Analysis of covariance evaluating whether population means of a dependent variable are equal across levels of a categorical independent variable while controlling for covariates', 'meaning': 'STATO:0000179', 'aliases': ['analysis of covariance']},
+    "F_TEST": {'description': 'Test in which the test statistic follows an F-distribution under the null hypothesis', 'meaning': 'STATO:0000086'},
+    "MANN_WHITNEY_U_TEST": {'description': 'Non-parametric test comparing two independent groups without assuming normally distributed values', 'meaning': 'STATO:0000076', 'aliases': ['Wilcoxon rank sum test', 'Mann-Whitney Test']},
+    "WILCOXON_SIGNED_RANK_TEST": {'description': 'Non-parametric test of the null hypothesis that the median difference between paired observations is zero', 'meaning': 'STATO:0000092'},
+    "KRUSKAL_WALLIS_TEST": {'description': 'Non-parametric test comparing two or more groups without assuming normally distributed values', 'meaning': 'STATO:0000094', 'aliases': ['Kruskal-Wallis Test']},
+    "FRIEDMAN_TEST": {'description': 'Non-parametric test for differences among multiple related groups; extension of the Wilcoxon signed-rank test to more than two conditions', 'meaning': 'STATO:0000641'},
+    "SIGN_TEST": {'description': 'Non-parametric test assessing whether the median of a population equals a specified value', 'meaning': 'STATO:0000644'},
+    "CHI_SQUARE_TEST": {'description': 'Test in which the sampling distribution of the test statistic is a chi-square distribution under the null hypothesis', 'meaning': 'OBI:0200200'},
+    "PEARSON_CHI_SQUARE_TEST_OF_INDEPENDENCE": {'description': 'Chi-square test of the independence of two categorical variables in a contingency table', 'meaning': 'STATO:0000081'},
+    "PEARSON_CHI_SQUARE_GOODNESS_OF_FIT_TEST": {'description': 'Chi-square test evaluating the goodness of fit of observed counts to an expected distribution', 'meaning': 'STATO:0000309'},
+    "YATES_CORRECTED_CHI_SQUARE_TEST": {'description': 'Chi-square test of association between two dichotomous variables with a continuity correction', 'meaning': 'STATO:0000070', 'aliases': ["Yates' chi-squared test"]},
+    "CHI_SQUARE_TEST_FOR_HOMOGENEITY": {'description': 'Test comparing proportions observed across multiple groups using contingency table frequencies', 'meaning': 'STATO:0000701'},
+    "FISHERS_EXACT_TEST": {'description': 'Exact test for non-random association between two categorical variables', 'meaning': 'STATO:0000073'},
+    "BARNARDS_TEST": {'description': "Exact unconditional test of association between two categorical variables, often more powerful than Fisher's exact test", 'meaning': 'STATO:0000310'},
+    "MCNEMAR_TEST": {'description': 'Test applied to 2 x 2 contingency tables of paired nominal data to compare marginal frequencies', 'meaning': 'STATO:0000433'},
+    "COCHRANS_Q_TEST": {'description': 'Test for unreplicated randomized block designs with a binary response and paired data', 'meaning': 'STATO:0000434'},
+    "COCHRAN_ARMITAGE_TEST_FOR_TREND": {'description': 'Test for association between a dichotomous variable and an ordered categorical variable', 'meaning': 'STATO:0000148'},
+    "COCHRAN_MANTEL_HAENSZEL_TEST": {'description': 'Test of independence between two categorical variables stratified by a third variable', 'meaning': 'STATO:0000074', 'aliases': ['Cochran-Mantel-Haenszel test']},
+    "EXACT_BINOMIAL_TEST": {'description': 'Test of the statistical significance of deviations from a theoretically expected distribution of observations into two categories', 'meaning': 'STATO:0000298', 'aliases': ['binomial test']},
+    "HYPERGEOMETRIC_TEST": {'description': 'Test evaluating whether a random variable follows a hypergeometric distribution; widely used for over-representation analysis', 'meaning': 'STATO:0000285', 'aliases': ['over-representation test']},
+    "TEST_OF_ASSOCIATION_BETWEEN_CATEGORICAL_VARIABLES": {'description': 'Test evaluating whether a discrete predictor variable is associated with a discrete response variable', 'meaning': 'STATO:0000027'},
+    "GOODNESS_OF_FIT_TEST": {'description': 'Test evaluating whether a sample distribution can be considered equivalent to a theoretical distribution', 'meaning': 'STATO:0000191'},
+    "SHAPIRO_WILK_TEST": {'description': 'Goodness of fit test of the null hypothesis that a sample is drawn from a normally distributed population', 'meaning': 'STATO:0000077'},
+    "KOLMOGOROV_SMIRNOV_TEST": {'description': 'Goodness of fit test of the null hypothesis that a sample is drawn from a specified continuous probability distribution', 'meaning': 'STATO:0000083'},
+    "ANDERSON_DARLING_TEST": {'description': 'Goodness of fit test of whether a sample is drawn from a given probability distribution, weighting the tails more heavily', 'meaning': 'STATO:0000042'},
+    "HOSMER_LEMESHOW_TEST": {'description': 'Goodness of fit test for logistic regression models comparing predicted probabilities against observed outcomes', 'meaning': 'STATO:0000653'},
+    "LEVENES_TEST": {'description': 'Test of the null hypothesis of equality of variance across several populations', 'meaning': 'STATO:0000078'},
+    "BARTLETTS_TEST": {'description': 'Test of whether k samples are drawn from populations with equal variances; sensitive to departures from normality', 'meaning': 'STATO:0000079', 'aliases': ["Bartlett's test"]},
+    "BROWN_FORSYTHE_TEST": {'description': 'Test of equality of group variances based on deviations from the group medians', 'meaning': 'STATO:0000080'},
+    "BREUSCH_PAGAN_TEST": {'description': 'Score test of the hypothesis of constant error variance against the alternative that error variance depends on the fitted values', 'meaning': 'STATO:0000284'},
+    "HOMOSKEDASTICITY_TEST": {'description': 'Test evaluating whether variances from several random samples are similar', 'meaning': 'STATO:0000137', 'aliases': ['homoscedasticity test']},
+    "HOMOGENEITY_TEST": {'description': 'Test evaluating whether a statistical measure computed from several random samples is similar', 'meaning': 'STATO:0000697'},
+    "SPHERICITY_TEST": {'description': 'Test of the null hypothesis of equality of the variances of differences between levels of a repeated measures factor', 'meaning': 'STATO:0000131'},
+    "MAUCHLYS_TEST": {'description': 'Test of sphericity in the context of repeated measures analysis of variance', 'meaning': 'STATO:0000199'},
+    "ODDS_RATIO_HOMOGENEITY_TEST": {'description': 'Test of the null hypothesis that odds ratios are consistent across strata of a population', 'meaning': 'STATO:0000247'},
+    "BRESLOW_DAY_TEST": {'description': 'Test of whether odds ratios are homogeneous across several 2x2 contingency tables', 'meaning': 'STATO:0000130'},
+    "TARONES_TEST": {'description': 'Test of the null hypothesis that odds ratios are homogeneous across strata', 'meaning': 'STATO:0000136'},
+    "WOOLFS_TEST": {'description': 'Test of the null hypothesis that odds ratios are the same across all strata of the population under investigation', 'meaning': 'STATO:0000246'},
+    "POST_HOC_ANALYSIS": {'description': 'Test carried out following an analysis of variance that rejected the null hypothesis, to identify which groups differ', 'meaning': 'STATO:0000133'},
+    "TUKEY_HSD_TEST": {'description': 'Post-hoc test following a significant ANOVA that determines which means differ, controlling the family-wise error rate', 'meaning': 'STATO:0000187', 'aliases': ['Tukey honestly significant difference test']},
+    "NEWMAN_KEULS_TEST": {'description': 'Stepwise multiple comparison procedure identifying sample means that differ significantly, based on the studentized range statistic', 'meaning': 'STATO:0000261', 'aliases': ['Student-Newman-Keuls test']},
+    "SCHEFFE_TEST": {'description': 'Conservative post-hoc procedure evaluating all possible contrasts while adjusting significance levels for multiple comparisons', 'meaning': 'STATO:0000156', 'aliases': ['Scheffé test']},
+    "LEAST_SIGNIFICANT_DIFFERENCE_TEST": {'description': 'Post-hoc test for multiple comparisons of treatments by means of the least significant difference following an ANOVA', 'meaning': 'STATO:0000157', 'aliases': ["Fisher's LSD test", 'Least significant difference test']},
+    "DUNNS_TEST": {'description': 'Non-parametric post-hoc test run after a Kruskal-Wallis test to identify which groups differ', 'meaning': 'STATO:0000490', 'aliases': ["Dunn's multiple comparison test"]},
+    "CONOVER_IMAN_TEST": {'description': 'Post-hoc test for pairwise multiple comparisons using rank sums following a Kruskal-Wallis test', 'meaning': 'STATO:0000491'},
+    "GRUBBS_TEST": {'description': 'Test detecting a single outlier in a univariate data set assumed to come from a normally distributed population', 'meaning': 'STATO:0000441'},
+    "DIXON_Q_TEST": {'description': 'Test detecting outliers in a univariate data set assumed to come from a normally distributed population', 'meaning': 'STATO:0000440'},
+    "TIETJEN_MOORE_TEST": {'description': "Generalization of Grubbs' test allowing detection of more than one outlier", 'meaning': 'STATO:0000442'},
+    "GENERALIZED_ESD_TEST": {'description': 'Outlier detection test with a built-in correction for multiple testing', 'meaning': 'STATO:0000443', 'aliases': ['generalized ESD test']},
+    "LIKELIHOOD_RATIO_TEST": {'description': 'Test of whether there is evidence for moving from a simple model to a more complex model in which the simple model is nested', 'meaning': 'OBI:0000861'},
+    "WALD_TEST": {'description': 'Test evaluating whether one or more model coefficients differ from zero, given their variance-covariance matrix', 'meaning': 'STATO:0000559', 'aliases': ['Wald chi-squared test']},
+    "LOG_RANK_TEST": {'description': 'Test comparing the survival distributions of two or more groups', 'meaning': 'STATO:0000640', 'aliases': ['logrank test']},
+    "HARDY_WEINBERG_EQUILIBRIUM_TEST": {'description': "Test of whether a population's allele proportions are in Hardy-Weinberg equilibrium, often used as a genotyping quality control", 'meaning': 'STATO:0000181'},
+    "TRANSMISSION_DISEQUILIBRIUM_TEST": {'description': 'Test for genetic linkage between a genetic marker and a trait in families, robust to population structure', 'meaning': 'STATO:0000275'},
+    "PEARSON_CORRELATION_TEST": {'description': "Test of whether two continuous variables are linearly associated, based on Pearson's correlation coefficient", 'meaning': 'NCIT:C53244'},
+    "SPEARMAN_CORRELATION_TEST": {'description': "Non-parametric test of whether two variables are monotonically associated, based on Spearman's rank correlation coefficient", 'meaning': 'NCIT:C53249'},
+    "AB_TEST": {'description': 'Statistical testing comparing two types of treatments or interventions', 'meaning': 'STATO:0000715'},
+    "BETWEEN_GROUP_COMPARISON_TEST": {'description': 'Test detecting differences between the means computed for each study group population', 'meaning': 'STATO:0000279'},
+    "WITHIN_SUBJECT_COMPARISON_TEST": {'description': 'Test evaluating whether a change occurs within one experimental unit over time following a treatment or event', 'meaning': 'STATO:0000202'},
+    "NON_PARAMETRIC_TEST": {'description': 'Test making no assumption about the underlying data distribution', 'meaning': 'STATO:0000198'},
+}
+
+class TTestTypeEnum(RichEnum):
+    """
+    Variants of Student's t-test
+    """
+    # Enum members
+    ONE_SAMPLE = "ONE_SAMPLE"
+    PAIRED = "PAIRED"
+    TWO_SAMPLE_EQUAL_VARIANCE = "TWO_SAMPLE_EQUAL_VARIANCE"
+    TWO_SAMPLE_UNEQUAL_VARIANCE = "TWO_SAMPLE_UNEQUAL_VARIANCE"
+    TRIMMED_MEANS = "TRIMMED_MEANS"
+
+# Set metadata after class creation to avoid it becoming an enum member
+TTestTypeEnum._metadata = {
+    "ONE_SAMPLE": {'description': 'Compares a sample mean against a specified population mean', 'meaning': 'STATO:0000302'},
+    "PAIRED": {'description': 'Compares paired observations from the same experimental units', 'meaning': 'STATO:0000095'},
+    "TWO_SAMPLE_EQUAL_VARIANCE": {'description': 'Compares the means of two independent samples assumed to have equal variances', 'meaning': 'STATO:0000303'},
+    "TWO_SAMPLE_UNEQUAL_VARIANCE": {'description': "Compares the means of two independent samples with unequal variances (Welch's t-test)", 'meaning': 'STATO:0000304'},
+    "TRIMMED_MEANS": {'description': 'Robust t-test computed on trimmed means and winsorized variances', 'meaning': 'STATO:0000406'},
+}
+
+class NormalityTestEnum(RichEnum):
+    """
+    Goodness of fit tests commonly used to assess whether a sample is drawn from a normally distributed population
+    """
+    # Enum members
+    SHAPIRO_WILK = "SHAPIRO_WILK"
+    KOLMOGOROV_SMIRNOV = "KOLMOGOROV_SMIRNOV"
+    ANDERSON_DARLING = "ANDERSON_DARLING"
+
+# Set metadata after class creation to avoid it becoming an enum member
+NormalityTestEnum._metadata = {
+    "SHAPIRO_WILK": {'description': 'Tests the null hypothesis that a sample comes from a normal distribution', 'meaning': 'STATO:0000077'},
+    "KOLMOGOROV_SMIRNOV": {'description': 'Tests whether a sample is drawn from a specified continuous probability distribution', 'meaning': 'STATO:0000083'},
+    "ANDERSON_DARLING": {'description': 'Tests whether a sample is drawn from a given probability distribution, with added sensitivity in the tails', 'meaning': 'STATO:0000042'},
+}
+
+class HomoscedasticityTestEnum(RichEnum):
+    """
+    Tests evaluating equality of variances across groups or samples
+    """
+    # Enum members
+    LEVENE = "LEVENE"
+    BARTLETT = "BARTLETT"
+    BROWN_FORSYTHE = "BROWN_FORSYTHE"
+    BREUSCH_PAGAN = "BREUSCH_PAGAN"
+
+# Set metadata after class creation to avoid it becoming an enum member
+HomoscedasticityTestEnum._metadata = {
+    "LEVENE": {'description': 'Tests the null hypothesis of equality of variance in several populations', 'meaning': 'STATO:0000078'},
+    "BARTLETT": {'description': 'Tests whether k samples come from populations with equal variances', 'meaning': 'STATO:0000079', 'aliases': ["Bartlett's test"]},
+    "BROWN_FORSYTHE": {'description': 'Tests equality of group variances using deviations from group medians', 'meaning': 'STATO:0000080'},
+    "BREUSCH_PAGAN": {'description': 'Tests for heteroscedasticity of regression residuals', 'meaning': 'STATO:0000284'},
+}
+
+class PostHocTestEnum(RichEnum):
+    """
+    Multiple comparison procedures carried out after a significant omnibus test such as an ANOVA or Kruskal-Wallis test
+    """
+    # Enum members
+    TUKEY_HSD = "TUKEY_HSD"
+    NEWMAN_KEULS = "NEWMAN_KEULS"
+    SCHEFFE = "SCHEFFE"
+    LEAST_SIGNIFICANT_DIFFERENCE = "LEAST_SIGNIFICANT_DIFFERENCE"
+    DUNN = "DUNN"
+    CONOVER_IMAN = "CONOVER_IMAN"
+
+# Set metadata after class creation to avoid it becoming an enum member
+PostHocTestEnum._metadata = {
+    "TUKEY_HSD": {'description': 'Determines which means differ after a significant ANOVA while controlling the family-wise error rate', 'meaning': 'STATO:0000187'},
+    "NEWMAN_KEULS": {'description': 'Stepwise multiple comparison procedure based on the studentized range', 'meaning': 'STATO:0000261'},
+    "SCHEFFE": {'description': 'Conservative procedure evaluating all possible contrasts', 'meaning': 'STATO:0000156', 'aliases': ['Scheffé test']},
+    "LEAST_SIGNIFICANT_DIFFERENCE": {'description': 'Pairwise comparisons using the least significant difference following an ANOVA', 'meaning': 'STATO:0000157', 'aliases': ["Fisher's LSD test", 'Least significant difference test']},
+    "DUNN": {'description': 'Non-parametric post-hoc test following a Kruskal-Wallis test', 'meaning': 'STATO:0000490'},
+    "CONOVER_IMAN": {'description': 'Pairwise rank-sum comparisons following a Kruskal-Wallis test', 'meaning': 'STATO:0000491'},
+}
+
+class MultipleTestingCorrectionEnum(RichEnum):
+    """
+    Methods for adjusting p-values or significance thresholds when many hypotheses are tested simultaneously.
+As with StatisticalTestEnum, concrete methods (BONFERRONI, HOLM_BONFERRONI, BENJAMINI_HOCHBERG) sit alongside the error-rate classes they belong to (FAMILY_WISE_ERROR_RATE, FALSE_DISCOVERY_RATE) and procedural classes (SIMULTANEOUS, SEQUENTIAL). The classes are intended for sources that report only "FDR-corrected" without naming a procedure.
+    """
+    # Enum members
+    BONFERRONI = "BONFERRONI"
+    HOLM_BONFERRONI = "HOLM_BONFERRONI"
+    BENJAMINI_HOCHBERG = "BENJAMINI_HOCHBERG"
+    BENJAMINI_YEKUTIELI = "BENJAMINI_YEKUTIELI"
+    HOLM_FDR = "HOLM_FDR"
+    HOMMEL_FDR = "HOMMEL_FDR"
+    FAMILY_WISE_ERROR_RATE = "FAMILY_WISE_ERROR_RATE"
+    FALSE_DISCOVERY_RATE = "FALSE_DISCOVERY_RATE"
+    SIMULTANEOUS = "SIMULTANEOUS"
+    SEQUENTIAL = "SEQUENTIAL"
+    ALPHA_SPENDING = "ALPHA_SPENDING"
+    ALPHA_INVESTING = "ALPHA_INVESTING"
+    NONE = "NONE"
+
+# Set metadata after class creation to avoid it becoming an enum member
+MultipleTestingCorrectionEnum._metadata = {
+    "BONFERRONI": {'description': 'Divides the desired family-wise significance level by the number of comparisons made', 'meaning': 'NCIT:C61594', 'aliases': ['Bonferroni correction']},
+    "HOLM_BONFERRONI": {'description': 'Sequentially rejective closed-test procedure controlling the family-wise error rate', 'meaning': 'OBI:0200066', 'aliases': ['Holm correction']},
+    "BENJAMINI_HOCHBERG": {'description': 'Sequential p-value procedure controlling the false discovery rate under independence or positive dependence', 'meaning': 'OBI:0200036', 'aliases': ['BH', 'BH-FDR']},
+    "BENJAMINI_YEKUTIELI": {'description': 'False discovery rate procedure valid under arbitrary dependence between tests', 'meaning': 'OBI:0200049', 'aliases': ['BY']},
+    "HOLM_FDR": {'description': 'Application of the Holm p-value procedure to correct false discovery rate. Note that Holm\'s step-down procedure controls the family-wise error rate, not the false discovery rate; the "false discovery rate" wording is STATO\'s own label for this term. Prefer HOLM_BONFERRONI unless you specifically need the STATO term.', 'meaning': 'STATO:0000551'},
+    "HOMMEL_FDR": {'description': 'Application of the Hommel p-value procedure to correct false discovery rate', 'meaning': 'STATO:0000552'},
+    "FAMILY_WISE_ERROR_RATE": {'description': 'Procedure controlling the probability of making at least one false positive across a family of tests', 'meaning': 'OBI:0200073', 'aliases': ['FWER correction']},
+    "FALSE_DISCOVERY_RATE": {'description': 'Procedure controlling the expected proportion of false positives among rejected hypotheses', 'meaning': 'OBI:0200163'},
+    "SIMULTANEOUS": {'description': 'Correction method applying a single adjustment across all tests simultaneously', 'meaning': 'STATO:0000601'},
+    "SEQUENTIAL": {'description': 'Correction method applying adjustments in a stepwise, ordered fashion', 'meaning': 'STATO:0000602'},
+    "ALPHA_SPENDING": {'description': 'Sequential procedure allocating portions of the overall type I error rate across interim analyses', 'meaning': 'STATO:0000605'},
+    "ALPHA_INVESTING": {'description': 'Sequential procedure that earns and spends alpha as hypotheses are tested', 'meaning': 'STATO:0000604'},
+    "NONE": {'description': 'No adjustment made for multiple testing', 'annotations': {'note': 'No appropriate ontology term found for absence of correction'}},
+}
+
+class CorrelationCoefficientEnum(RichEnum):
+    """
+    Coefficients quantifying the strength of association between two variables
+    """
+    # Enum members
+    PEARSON = "PEARSON"
+    SPEARMAN = "SPEARMAN"
+    KENDALL = "KENDALL"
+
+# Set metadata after class creation to avoid it becoming an enum member
+CorrelationCoefficientEnum._metadata = {
+    "PEARSON": {'description': 'Evaluates the strength of linear association between two continuous variables', 'meaning': 'STATO:0000280', 'aliases': ["Pearson's r"]},
+    "SPEARMAN": {'description': 'Non-parametric measure of statistical dependence between two ranked variables', 'meaning': 'STATO:0000201', 'aliases': ["Spearman's rho"]},
+    "KENDALL": {'description': 'Correlation coefficient between two ordinal or ranked variables', 'meaning': 'STATO:0000240', 'aliases': ["Kendall's tau"]},
+}
+
+class TestTailednessEnum(RichEnum):
+    """
+    Whether a statistical test allocates the significance level to one or both tails of the reference distribution
+    """
+    # Enum members
+    ONE_TAILED = "ONE_TAILED"
+    TWO_TAILED = "TWO_TAILED"
+
+# Set metadata after class creation to avoid it becoming an enum member
+TestTailednessEnum._metadata = {
+    "ONE_TAILED": {'description': 'Allocates all of the significance level to one tail, evaluating a directional alternative hypothesis', 'meaning': 'STATO:0000286', 'aliases': ['one-sided test']},
+    "TWO_TAILED": {'description': 'Allocates half of the significance level to each tail, evaluating a non-directional alternative hypothesis', 'meaning': 'STATO:0000287', 'aliases': ['two-sided test']},
+}
+
+class DistributionalAssumptionEnum(RichEnum):
+    """
+    Whether an inference procedure assumes a parametric form for the underlying population distribution.
+Note the deliberate type approximation: the values denote a property of a procedure, but the available ontology terms (NCIT:C53230, STATO:0000198) denote classes of test. Neither PATO nor OBI currently has a quality or characteristic term for "parametric", so the test classes are used as the closest available referent.
+    """
+    # Enum members
+    PARAMETRIC = "PARAMETRIC"
+    NON_PARAMETRIC = "NON_PARAMETRIC"
+
+# Set metadata after class creation to avoid it becoming an enum member
+DistributionalAssumptionEnum._metadata = {
+    "PARAMETRIC": {'description': 'Procedure that incorporates assumptions about the population probability distribution', 'meaning': 'NCIT:C53230'},
+    "NON_PARAMETRIC": {'description': 'Procedure that makes no assumption about the underlying data distribution', 'meaning': 'STATO:0000198', 'aliases': ['Non-Parametric Test']},
+}
+
+class ComparisonObjectiveEnum(RichEnum):
+    """
+    The objective of a between-group comparison, particularly in the design of controlled trials
+    """
+    # Enum members
+    SUPERIORITY = "SUPERIORITY"
+    NON_INFERIORITY = "NON_INFERIORITY"
+    EQUIVALENCE = "EQUIVALENCE"
+
+# Set metadata after class creation to avoid it becoming an enum member
+ComparisonObjectiveEnum._metadata = {
+    "SUPERIORITY": {'description': 'Comparison intended to show that the difference in effects exceeds a prespecified threshold of meaningful benefit', 'meaning': 'STATO:0000718'},
+    "NON_INFERIORITY": {'description': 'Comparison intended to show that any difference in effects lies below a prespecified threshold of meaningful harm', 'meaning': 'STATO:0000716'},
+    "EQUIVALENCE": {'description': 'Comparison intended to show that the absolute difference in effects is smaller than a prespecified threshold', 'meaning': 'STATO:0000717'},
+}
+
 class PersonStatusEnum(RichEnum):
     """
     Vital status of a person (living or deceased)
@@ -15338,6 +15674,720 @@ FMRIParadigmTypeEnum._metadata = {
     "NATURALISTIC": {'description': 'Ecologically valid stimuli (movies, stories)', 'meaning': 'EDAM:topic_3678', 'annotations': {'stimulus_type': 'complex, realistic', 'advantage': 'ecological validity', 'analysis': 'inter-subject correlation'}, 'aliases': ['Experimental design and studies']},
 }
 
+class DICOMModalityEnum(RichEnum):
+    """
+    Acquisition modality codes from DICOM PS3.16 Context ID 29 (Acquisition Modality), the defined terms for the Modality (0008,0060) attribute. The permissible value is the DICOM code itself; the title is the NCI Thesaurus label where a mapping exists and the DICOM code meaning is carried as an alias when it differs. Where an NCI Thesaurus term exists it is the meaning and the DCM code is an exact mapping; otherwise the DCM code is the meaning, so every value carries its DCM code in one of the two fields. Waveform modalities (ECG, EEG, etc.) are defined in CID 34 and are not included here, nor are the non-acquisition values that also appear in Modality (0008,0060) such as SR, PR, SEG, KO, DOC, OT and the RT objects.
+    """
+    # Enum members
+    AR = "AR"
+    BI = "BI"
+    BMD = "BMD"
+    CR = "CR"
+    CT = "CT"
+    CFM = "CFM"
+    DMS = "DMS"
+    DG = "DG"
+    DX = "DX"
+    ES = "ES"
+    XC = "XC"
+    GM = "GM"
+    IO = "IO"
+    IVOCT = "IVOCT"
+    IVUS = "IVUS"
+    KER = "KER"
+    LS = "LS"
+    LEN = "LEN"
+    MR = "MR"
+    MG = "MG"
+    NM = "NM"
+    OAM = "OAM"
+    OPM = "OPM"
+    OP = "OP"
+    OPT = "OPT"
+    OPTBSV = "OPTBSV"
+    OPTENF = "OPTENF"
+    OPV = "OPV"
+    OCT = "OCT"
+    OSS = "OSS"
+    PX = "PX"
+    PA = "PA"
+    PT = "PT"
+    RF = "RF"
+    RG = "RG"
+    RTIMAGE = "RTIMAGE"
+    SM = "SM"
+    SRF = "SRF"
+    TG = "TG"
+    US = "US"
+    BDUS = "BDUS"
+    VA = "VA"
+    XA = "XA"
+
+# Set metadata after class creation to avoid it becoming an enum member
+DICOMModalityEnum._metadata = {
+    "AR": {'description': 'Automated measurement of refractive error of the eye', 'meaning': 'NCIT:C176330'},
+    "BI": {'description': 'Imaging based on magnetic fields produced by the body, such as magnetoencephalography', 'meaning': 'DCM:BI'},
+    "BMD": {'description': 'Measurement of bone mineral content and density, such as DXA', 'meaning': 'NCIT:C190514'},
+    "CR": {'description': 'X-ray imaging using a phosphor imaging plate read out to a digital image', 'meaning': 'NCIT:C190521'},
+    "CT": {'description': 'Cross-sectional X-ray imaging reconstructed by computer', 'meaning': 'NCIT:C17204'},
+    "CFM": {'description': 'Laser-scanning microscopy that rejects out-of-focus light', 'meaning': 'NCIT:C17753'},
+    "DMS": {'description': 'Non-invasive microscopic examination of the skin surface', 'meaning': 'NCIT:C116478'},
+    "DG": {'description': 'Transillumination imaging of tissue, historically used for the breast', 'meaning': 'DCM:DG'},
+    "DX": {'description': 'Projection X-ray imaging acquired directly with a digital detector', 'meaning': 'NCIT:C18001'},
+    "ES": {'description': 'Imaging from an endoscope inserted into a body cavity or organ, including laryngoscopy and video endoscopy', 'meaning': 'NCIT:C16546', 'aliases': ['Endoscopy']},
+    "XC": {'description': 'Visible-light photography of the patient with an external camera', 'meaning': 'DCM:XC'},
+    "GM": {'description': 'General microscopy not otherwise classified', 'meaning': 'NCIT:C16853', 'aliases': ['General Microscopy']},
+    "IO": {'description': 'Dental X-ray imaging with the detector inside the mouth', 'meaning': 'NCIT:C190548', 'aliases': ['Intra-oral Radiography']},
+    "IVOCT": {'description': 'Catheter-based optical coherence tomography of blood vessels', 'meaning': 'NCIT:C190550'},
+    "IVUS": {'description': 'Catheter-based ultrasound imaging of blood vessels', 'meaning': 'NCIT:C99535'},
+    "KER": {'description': 'Measurement of the curvature of the anterior corneal surface', 'meaning': 'NCIT:C190551'},
+    "LS": {'description': 'Surface geometry acquired with a laser scanner', 'meaning': 'DCM:LS'},
+    "LEN": {'description': 'Measurement of the optical properties of spectacle lenses', 'meaning': 'DCM:LEN'},
+    "MR": {'description': 'Imaging using radiofrequency pulses in a strong magnetic field', 'meaning': 'NCIT:C16809', 'aliases': ['Magnetic Resonance']},
+    "MG": {'description': 'Low-dose X-ray imaging of the breast', 'meaning': 'NCIT:C16818'},
+    "NM": {'description': 'Gamma camera imaging of an administered radiotracer, including planar and SPECT', 'meaning': 'NCIT:C62667', 'aliases': ['Nuclear Medicine']},
+    "OAM": {'description': 'Measurement of axial dimensions of the eye, such as axial length', 'meaning': 'DCM:OAM'},
+    "OPM": {'description': 'Topographic or thickness maps of ocular structures', 'meaning': 'DCM:OPM'},
+    "OP": {'description': 'Photography of the eye, including fundus and slit lamp photography', 'meaning': 'NCIT:C190559'},
+    "OPT": {'description': 'Optical coherence tomography of the eye, including retinal OCT B-scans', 'meaning': 'NCIT:C190561'},
+    "OPTBSV": {'description': 'Volume analysis derived from ophthalmic OCT B-scans', 'meaning': 'DCM:OPTBSV'},
+    "OPTENF": {'description': 'Transverse (en face) images derived from ophthalmic OCT volumes', 'meaning': 'NCIT:C190563', 'aliases': ['Ophthalmic Tomography En Face']},
+    "OPV": {'description': 'Perimetry results describing the visual field', 'meaning': 'DCM:OPV'},
+    "OCT": {'description': 'Interferometric imaging using near-infrared light, used outside ophthalmology', 'meaning': 'NCIT:C20828'},
+    "OSS": {'description': 'Surface geometry acquired with an optical (non-laser) scanner', 'meaning': 'DCM:OSS'},
+    "PX": {'description': 'Dental panoramic radiography of the jaws', 'meaning': 'DCM:PX'},
+    "PA": {'description': 'Imaging of ultrasonic waves generated by optical absorption of pulsed light', 'meaning': 'NCIT:C116749', 'aliases': ['Photoacoustic']},
+    "PT": {'description': 'Tomographic imaging of a positron-emitting radiotracer', 'meaning': 'NCIT:C17007'},
+    "RF": {'description': 'Real-time X-ray imaging, including radiofluoroscopy', 'meaning': 'NCIT:C16588', 'aliases': ['Radiofluoroscopy']},
+    "RG": {'description': 'Conventional film or screen radiographic imaging', 'meaning': 'NCIT:C38101', 'aliases': ['Radiographic imaging']},
+    "RTIMAGE": {'description': 'Radiotherapy portal or setup image', 'meaning': 'DCM:RTIMAGE'},
+    "SM": {'description': 'Whole slide imaging of microscope slides', 'meaning': 'DCM:SM'},
+    "SRF": {'description': 'Refraction measured with patient feedback', 'meaning': 'DCM:SRF'},
+    "TG": {'description': 'Imaging of body surface temperature', 'meaning': 'NCIT:C17194'},
+    "US": {'description': 'Imaging using high-frequency sound waves, including static images and cine loops', 'meaning': 'NCIT:C17230', 'aliases': ['Ultrasound']},
+    "BDUS": {'description': 'Quantitative ultrasound estimation of bone mineral density', 'meaning': 'NCIT:C190516'},
+    "VA": {'description': 'Measurement of the sharpness of vision', 'meaning': 'NCIT:C87149'},
+    "XA": {'description': 'X-ray imaging of blood vessels with contrast, including digital subtraction angiography', 'meaning': 'NCIT:C20080'},
+}
+
+class DICOMValueRepresentationEnum(RichEnum):
+    """
+    The Value Representations (VRs) defined in DICOM PS3.5 Section 6.2, which specify the data type and format of the value of a data element. Tag validation tools check that each attribute is encoded with the VR required by the data dictionary. Permissible values are the two-letter DICOM VR codes.
+    """
+    # Enum members
+    AE = "AE"
+    AS = "AS"
+    AT = "AT"
+    CS = "CS"
+    DA = "DA"
+    DS = "DS"
+    DT = "DT"
+    FL = "FL"
+    FD = "FD"
+    IS = "IS"
+    LO = "LO"
+    LT = "LT"
+    OB = "OB"
+    OD = "OD"
+    OF = "OF"
+    OL = "OL"
+    OV = "OV"
+    OW = "OW"
+    PN = "PN"
+    SH = "SH"
+    SL = "SL"
+    SQ = "SQ"
+    SS = "SS"
+    ST = "ST"
+    SV = "SV"
+    TM = "TM"
+    UC = "UC"
+    UI = "UI"
+    UL = "UL"
+    UN = "UN"
+    UR = "UR"
+    US = "US"
+    UT = "UT"
+    UV = "UV"
+
+# Set metadata after class creation to avoid it becoming an enum member
+DICOMValueRepresentationEnum._metadata = {
+    "AE": {'description': 'A string identifying an Application Entity; 16 bytes maximum', 'annotations': {'category': 'string'}},
+    "AS": {'description': 'Age in the format nnnD, nnnW, nnnM or nnnY (days, weeks, months, years)', 'annotations': {'category': 'string'}},
+    "AT": {'description': 'An ordered pair of 16-bit unsigned integers that is the value of a data element tag', 'annotations': {'category': 'binary'}},
+    "CS": {'description': 'A string identifying a controlled concept; uppercase letters, digits, space and underscore, 16 bytes maximum', 'annotations': {'category': 'string'}},
+    "DA": {'description': 'A date in the format YYYYMMDD', 'annotations': {'category': 'date_time'}},
+    "DS": {'description': 'A string representing a fixed point or floating point number', 'annotations': {'category': 'string'}},
+    "DT": {'description': 'A concatenated date-time string of the form YYYYMMDDHHMMSS.FFFFFF&ZZXX', 'annotations': {'category': 'date_time'}},
+    "FL": {'description': 'Single precision IEEE 754 binary32 floating point value', 'annotations': {'category': 'binary'}},
+    "FD": {'description': 'Double precision IEEE 754 binary64 floating point value', 'annotations': {'category': 'binary'}},
+    "IS": {'description': 'A string representing a base-10 integer', 'annotations': {'category': 'string'}},
+    "LO": {'description': 'A character string of up to 64 characters', 'annotations': {'category': 'string'}},
+    "LT": {'description': 'A character string that may contain one or more paragraphs, up to 10240 characters', 'annotations': {'category': 'text'}},
+    "OB": {'description': 'An octet stream whose encoding is specified by the negotiated transfer syntax', 'annotations': {'category': 'binary'}},
+    "OD": {'description': 'A stream of IEEE 754 binary64 values', 'annotations': {'category': 'binary'}},
+    "OF": {'description': 'A stream of IEEE 754 binary32 values', 'annotations': {'category': 'binary'}},
+    "OL": {'description': 'A stream of 32-bit words', 'annotations': {'category': 'binary'}},
+    "OV": {'description': 'A stream of 64-bit words', 'annotations': {'category': 'binary'}},
+    "OW": {'description': 'A stream of 16-bit words; commonly used for Pixel Data', 'annotations': {'category': 'binary'}},
+    "PN": {'description': 'A character string encoded using a five-component convention (family, given, middle, prefix, suffix)', 'annotations': {'category': 'string'}},
+    "SH": {'description': 'A character string of up to 16 characters', 'annotations': {'category': 'string'}},
+    "SL": {'description': "Signed 32-bit two's complement integer", 'annotations': {'category': 'binary'}},
+    "SQ": {'description': 'A sequence of zero or more items, each of which is a nested data set', 'annotations': {'category': 'sequence'}},
+    "SS": {'description': "Signed 16-bit two's complement integer", 'annotations': {'category': 'binary'}},
+    "ST": {'description': 'A character string that may contain one or more paragraphs, up to 1024 characters', 'annotations': {'category': 'text'}},
+    "SV": {'description': 'Signed 64-bit integer', 'annotations': {'category': 'binary'}},
+    "TM": {'description': 'A time in the format HHMMSS.FFFFFF', 'annotations': {'category': 'date_time'}},
+    "UC": {'description': 'A character string of unlimited length', 'annotations': {'category': 'string'}},
+    "UI": {'description': 'A string of numeric components separated by periods, up to 64 characters, used for UIDs such as SOP Instance UIDs and transfer syntax UIDs', 'annotations': {'category': 'string'}},
+    "UL": {'description': 'Unsigned 32-bit integer', 'annotations': {'category': 'binary'}},
+    "UN": {'description': 'An octet stream whose encoding of the contents is unknown', 'annotations': {'category': 'binary'}},
+    "UR": {'description': 'A string identifying a URI or URL as defined in RFC 3986', 'annotations': {'category': 'string'}},
+    "US": {'description': 'Unsigned 16-bit integer', 'annotations': {'category': 'binary'}},
+    "UT": {'description': 'A character string that may contain one or more paragraphs, of unlimited length', 'annotations': {'category': 'text'}},
+    "UV": {'description': 'Unsigned 64-bit integer', 'annotations': {'category': 'binary'}},
+}
+
+class DICOMAttributeTypeEnum(RichEnum):
+    """
+    Attribute requirement types defined in DICOM PS3.5 Section 7.4, which state whether an attribute must be present in a data set and whether it may have a zero-length value. Conformance checkers report missing Type 1 and Type 2 attributes as errors. These types also determine which de-identification action (D, Z or X) may be applied to an attribute.
+    """
+    # Enum members
+    TYPE_1 = "TYPE_1"
+    TYPE_1C = "TYPE_1C"
+    TYPE_2 = "TYPE_2"
+    TYPE_2C = "TYPE_2C"
+    TYPE_3 = "TYPE_3"
+
+# Set metadata after class creation to avoid it becoming an enum member
+DICOMAttributeTypeEnum._metadata = {
+    "TYPE_1": {'description': 'The attribute shall be present with a valid non-zero-length value', 'aliases': ['1']},
+    "TYPE_1C": {'description': 'The attribute shall be present with a valid value when a specified condition is met, and shall not be present otherwise', 'aliases': ['1C']},
+    "TYPE_2": {'description': 'The attribute shall be present but may have a zero-length value if the value is unknown', 'aliases': ['2']},
+    "TYPE_2C": {'description': 'The attribute shall be present, possibly with zero length, when a specified condition is met', 'aliases': ['2C']},
+    "TYPE_3": {'description': 'The attribute is optional and may be absent or present with or without a value', 'aliases': ['3']},
+}
+
+class DICOMTransferSyntaxEnum(RichEnum):
+    """
+    Transfer syntaxes registered in DICOM PS3.6 Annex A that define the byte ordering, VR encoding and pixel data compression of a DICOM data set. Pixel data validation includes confirming that decompression from a lossy or lossless transfer syntax yields the expected bit depth and that no unintended data loss occurred. Video transfer syntaxes (MPEG-2, H.264, HEVC) are used for endoscopy and ultrasound cine acquisitions. Fragmentable variants of the MPEG transfer syntaxes and retired JPEG processes are omitted; the full registry is at the see_also link.
+    """
+    # Enum members
+    IMPLICIT_VR_LITTLE_ENDIAN = "IMPLICIT_VR_LITTLE_ENDIAN"
+    EXPLICIT_VR_LITTLE_ENDIAN = "EXPLICIT_VR_LITTLE_ENDIAN"
+    ENCAPSULATED_UNCOMPRESSED_EXPLICIT_VR_LITTLE_ENDIAN = "ENCAPSULATED_UNCOMPRESSED_EXPLICIT_VR_LITTLE_ENDIAN"
+    DEFLATED_EXPLICIT_VR_LITTLE_ENDIAN = "DEFLATED_EXPLICIT_VR_LITTLE_ENDIAN"
+    EXPLICIT_VR_BIG_ENDIAN = "EXPLICIT_VR_BIG_ENDIAN"
+    JPEG_BASELINE_PROCESS_1 = "JPEG_BASELINE_PROCESS_1"
+    JPEG_EXTENDED_PROCESS_2_4 = "JPEG_EXTENDED_PROCESS_2_4"
+    JPEG_LOSSLESS_PROCESS_14 = "JPEG_LOSSLESS_PROCESS_14"
+    JPEG_LOSSLESS_PROCESS_14_SV1 = "JPEG_LOSSLESS_PROCESS_14_SV1"
+    JPEG_LS_LOSSLESS = "JPEG_LS_LOSSLESS"
+    JPEG_LS_NEAR_LOSSLESS = "JPEG_LS_NEAR_LOSSLESS"
+    JPEG_2000_LOSSLESS_ONLY = "JPEG_2000_LOSSLESS_ONLY"
+    JPEG_2000 = "JPEG_2000"
+    JPEG_2000_MULTICOMPONENT_LOSSLESS_ONLY = "JPEG_2000_MULTICOMPONENT_LOSSLESS_ONLY"
+    JPEG_2000_MULTICOMPONENT = "JPEG_2000_MULTICOMPONENT"
+    JPIP_REFERENCED = "JPIP_REFERENCED"
+    JPIP_REFERENCED_DEFLATE = "JPIP_REFERENCED_DEFLATE"
+    MPEG2_MAIN_PROFILE_MAIN_LEVEL = "MPEG2_MAIN_PROFILE_MAIN_LEVEL"
+    MPEG2_MAIN_PROFILE_HIGH_LEVEL = "MPEG2_MAIN_PROFILE_HIGH_LEVEL"
+    MPEG4_AVC_H264_HIGH_PROFILE_LEVEL_4_1 = "MPEG4_AVC_H264_HIGH_PROFILE_LEVEL_4_1"
+    MPEG4_AVC_H264_BD_COMPATIBLE_HIGH_PROFILE_LEVEL_4_1 = "MPEG4_AVC_H264_BD_COMPATIBLE_HIGH_PROFILE_LEVEL_4_1"
+    MPEG4_AVC_H264_HIGH_PROFILE_LEVEL_4_2_2D = "MPEG4_AVC_H264_HIGH_PROFILE_LEVEL_4_2_2D"
+    MPEG4_AVC_H264_HIGH_PROFILE_LEVEL_4_2_3D = "MPEG4_AVC_H264_HIGH_PROFILE_LEVEL_4_2_3D"
+    MPEG4_AVC_H264_STEREO_HIGH_PROFILE_LEVEL_4_2 = "MPEG4_AVC_H264_STEREO_HIGH_PROFILE_LEVEL_4_2"
+    HEVC_H265_MAIN_PROFILE_LEVEL_5_1 = "HEVC_H265_MAIN_PROFILE_LEVEL_5_1"
+    HEVC_H265_MAIN_10_PROFILE_LEVEL_5_1 = "HEVC_H265_MAIN_10_PROFILE_LEVEL_5_1"
+    JPEG_XL_LOSSLESS = "JPEG_XL_LOSSLESS"
+    JPEG_XL_JPEG_RECOMPRESSION = "JPEG_XL_JPEG_RECOMPRESSION"
+    JPEG_XL = "JPEG_XL"
+    HTJ2K_LOSSLESS_ONLY = "HTJ2K_LOSSLESS_ONLY"
+    HTJ2K_RPCL_LOSSLESS_ONLY = "HTJ2K_RPCL_LOSSLESS_ONLY"
+    HTJ2K = "HTJ2K"
+    RLE_LOSSLESS = "RLE_LOSSLESS"
+    SMPTE_ST_2110_20_UNCOMPRESSED_PROGRESSIVE_VIDEO = "SMPTE_ST_2110_20_UNCOMPRESSED_PROGRESSIVE_VIDEO"
+    SMPTE_ST_2110_20_UNCOMPRESSED_INTERLACED_VIDEO = "SMPTE_ST_2110_20_UNCOMPRESSED_INTERLACED_VIDEO"
+
+# Set metadata after class creation to avoid it becoming an enum member
+DICOMTransferSyntaxEnum._metadata = {
+    "IMPLICIT_VR_LITTLE_ENDIAN": {'description': 'Default transfer syntax for DICOM; VRs are looked up from the data dictionary rather than encoded', 'annotations': {'uid': '1.2.840.10008.1.2', 'compression': 'none'}},
+    "EXPLICIT_VR_LITTLE_ENDIAN": {'description': 'Uncompressed encoding with VRs explicitly encoded in each data element', 'annotations': {'uid': '1.2.840.10008.1.2.1', 'compression': 'none'}},
+    "ENCAPSULATED_UNCOMPRESSED_EXPLICIT_VR_LITTLE_ENDIAN": {'description': 'Uncompressed pixel data encapsulated in fragments, one per frame', 'annotations': {'uid': '1.2.840.10008.1.2.1.98', 'compression': 'none'}},
+    "DEFLATED_EXPLICIT_VR_LITTLE_ENDIAN": {'description': 'Explicit VR Little Endian data set compressed as a whole with the deflate algorithm', 'annotations': {'uid': '1.2.840.10008.1.2.1.99', 'compression': 'lossless'}},
+    "EXPLICIT_VR_BIG_ENDIAN": {'description': 'Big endian byte ordering with explicit VRs; retired but still encountered in legacy archives', 'annotations': {'uid': '1.2.840.10008.1.2.2', 'compression': 'none', 'retired': 'true'}},
+    "JPEG_BASELINE_PROCESS_1": {'description': 'Default transfer syntax for lossy JPEG 8-bit image compression', 'annotations': {'uid': '1.2.840.10008.1.2.4.50', 'compression': 'lossy'}},
+    "JPEG_EXTENDED_PROCESS_2_4": {'description': 'Default transfer syntax for lossy JPEG 12-bit image compression (Process 4 only)', 'annotations': {'uid': '1.2.840.10008.1.2.4.51', 'compression': 'lossy'}},
+    "JPEG_LOSSLESS_PROCESS_14": {'description': 'Lossless JPEG compression using any predictor', 'annotations': {'uid': '1.2.840.10008.1.2.4.57', 'compression': 'lossless'}},
+    "JPEG_LOSSLESS_PROCESS_14_SV1": {'description': 'Default transfer syntax for lossless JPEG image compression', 'annotations': {'uid': '1.2.840.10008.1.2.4.70', 'compression': 'lossless'}},
+    "JPEG_LS_LOSSLESS": {'description': 'Lossless compression using the JPEG-LS (ISO 14495) algorithm', 'annotations': {'uid': '1.2.840.10008.1.2.4.80', 'compression': 'lossless'}},
+    "JPEG_LS_NEAR_LOSSLESS": {'description': 'Near-lossless JPEG-LS compression with a bounded per-pixel error', 'annotations': {'uid': '1.2.840.10008.1.2.4.81', 'compression': 'lossy'}},
+    "JPEG_2000_LOSSLESS_ONLY": {'description': 'JPEG 2000 wavelet compression restricted to reversible (lossless) mode', 'annotations': {'uid': '1.2.840.10008.1.2.4.90', 'compression': 'lossless'}},
+    "JPEG_2000": {'description': 'JPEG 2000 wavelet compression, lossy or lossless', 'annotations': {'uid': '1.2.840.10008.1.2.4.91', 'compression': 'lossy or lossless'}},
+    "JPEG_2000_MULTICOMPONENT_LOSSLESS_ONLY": {'description': 'JPEG 2000 Part 2 multi-component transform, reversible mode only', 'annotations': {'uid': '1.2.840.10008.1.2.4.92', 'compression': 'lossless'}},
+    "JPEG_2000_MULTICOMPONENT": {'description': 'JPEG 2000 Part 2 multi-component transform, lossy or lossless', 'annotations': {'uid': '1.2.840.10008.1.2.4.93', 'compression': 'lossy or lossless'}},
+    "JPIP_REFERENCED": {'description': 'Pixel data referenced via a JPEG 2000 Interactive Protocol URL rather than encoded in the data set', 'annotations': {'uid': '1.2.840.10008.1.2.4.94', 'compression': 'referenced'}},
+    "JPIP_REFERENCED_DEFLATE": {'description': 'JPIP referenced pixel data with the remaining data set deflated', 'annotations': {'uid': '1.2.840.10008.1.2.4.95', 'compression': 'referenced'}},
+    "MPEG2_MAIN_PROFILE_MAIN_LEVEL": {'description': 'MPEG-2 video compression for standard definition video', 'annotations': {'uid': '1.2.840.10008.1.2.4.100', 'compression': 'lossy', 'media': 'video'}},
+    "MPEG2_MAIN_PROFILE_HIGH_LEVEL": {'description': 'MPEG-2 video compression for high definition video', 'annotations': {'uid': '1.2.840.10008.1.2.4.101', 'compression': 'lossy', 'media': 'video'}},
+    "MPEG4_AVC_H264_HIGH_PROFILE_LEVEL_4_1": {'description': 'H.264 video compression for high definition video', 'annotations': {'uid': '1.2.840.10008.1.2.4.102', 'compression': 'lossy', 'media': 'video'}},
+    "MPEG4_AVC_H264_BD_COMPATIBLE_HIGH_PROFILE_LEVEL_4_1": {'description': 'H.264 video compression constrained for Blu-ray Disc compatibility', 'annotations': {'uid': '1.2.840.10008.1.2.4.103', 'compression': 'lossy', 'media': 'video'}},
+    "MPEG4_AVC_H264_HIGH_PROFILE_LEVEL_4_2_2D": {'description': 'H.264 video compression for 2D video at higher frame rates and resolutions', 'annotations': {'uid': '1.2.840.10008.1.2.4.104', 'compression': 'lossy', 'media': 'video'}},
+    "MPEG4_AVC_H264_HIGH_PROFILE_LEVEL_4_2_3D": {'description': 'H.264 video compression for 3D (stereoscopic) video', 'annotations': {'uid': '1.2.840.10008.1.2.4.105', 'compression': 'lossy', 'media': 'video'}},
+    "MPEG4_AVC_H264_STEREO_HIGH_PROFILE_LEVEL_4_2": {'description': 'H.264 stereo high profile for stereoscopic video', 'annotations': {'uid': '1.2.840.10008.1.2.4.106', 'compression': 'lossy', 'media': 'video'}},
+    "HEVC_H265_MAIN_PROFILE_LEVEL_5_1": {'description': 'HEVC video compression with 8-bit samples', 'annotations': {'uid': '1.2.840.10008.1.2.4.107', 'compression': 'lossy', 'media': 'video'}},
+    "HEVC_H265_MAIN_10_PROFILE_LEVEL_5_1": {'description': 'HEVC video compression with 10-bit samples', 'annotations': {'uid': '1.2.840.10008.1.2.4.108', 'compression': 'lossy', 'media': 'video'}},
+    "JPEG_XL_LOSSLESS": {'description': 'JPEG XL compression restricted to lossless mode', 'annotations': {'uid': '1.2.840.10008.1.2.4.110', 'compression': 'lossless'}},
+    "JPEG_XL_JPEG_RECOMPRESSION": {'description': 'Lossless recompression of existing JPEG codestreams using JPEG XL', 'annotations': {'uid': '1.2.840.10008.1.2.4.111', 'compression': 'lossless'}},
+    "JPEG_XL": {'description': 'JPEG XL compression, lossy or lossless', 'annotations': {'uid': '1.2.840.10008.1.2.4.112', 'compression': 'lossy or lossless'}},
+    "HTJ2K_LOSSLESS_ONLY": {'description': 'High-throughput JPEG 2000 (Part 15) restricted to lossless mode', 'annotations': {'uid': '1.2.840.10008.1.2.4.201', 'compression': 'lossless'}},
+    "HTJ2K_RPCL_LOSSLESS_ONLY": {'description': 'Lossless high-throughput JPEG 2000 with resolution-position-component-layer progression for progressive decoding', 'annotations': {'uid': '1.2.840.10008.1.2.4.202', 'compression': 'lossless'}},
+    "HTJ2K": {'description': 'High-throughput JPEG 2000, lossy or lossless', 'annotations': {'uid': '1.2.840.10008.1.2.4.203', 'compression': 'lossy or lossless'}},
+    "RLE_LOSSLESS": {'description': 'Run-length encoded lossless compression, widely used for ultrasound', 'annotations': {'uid': '1.2.840.10008.1.2.5', 'compression': 'lossless'}},
+    "SMPTE_ST_2110_20_UNCOMPRESSED_PROGRESSIVE_VIDEO": {'description': 'Uncompressed progressive video streamed per SMPTE ST 2110-20, used in real-time video communication', 'annotations': {'uid': '1.2.840.10008.1.2.7.1', 'compression': 'none', 'media': 'video'}},
+    "SMPTE_ST_2110_20_UNCOMPRESSED_INTERLACED_VIDEO": {'description': 'Uncompressed interlaced video streamed per SMPTE ST 2110-20', 'annotations': {'uid': '1.2.840.10008.1.2.7.2', 'compression': 'none', 'media': 'video'}},
+}
+
+class DICOMNetworkServiceEnum(RichEnum):
+    """
+    Network services used to query, retrieve and store DICOM instances between imaging systems such as PACS, modalities and research archives. Includes the classic DIMSE (DICOM Message Service Element) services of PS3.7 and the RESTful DICOMweb services of PS3.18. Cataloguing which services a source repository supports is part of the data landscape assessment that precedes extraction.
+    """
+    # Enum members
+    C_ECHO = "C_ECHO"
+    C_STORE = "C_STORE"
+    C_FIND = "C_FIND"
+    C_MOVE = "C_MOVE"
+    C_GET = "C_GET"
+    N_EVENT_REPORT = "N_EVENT_REPORT"
+    N_GET = "N_GET"
+    N_SET = "N_SET"
+    N_ACTION = "N_ACTION"
+    N_CREATE = "N_CREATE"
+    N_DELETE = "N_DELETE"
+    QIDO_RS = "QIDO_RS"
+    WADO_RS = "WADO_RS"
+    STOW_RS = "STOW_RS"
+    WADO_URI = "WADO_URI"
+    UPS_RS = "UPS_RS"
+    CUSTOM_API = "CUSTOM_API"
+
+# Set metadata after class creation to avoid it becoming an enum member
+DICOMNetworkServiceEnum._metadata = {
+    "C_ECHO": {'description': 'DIMSE verification service used to test connectivity between two application entities', 'annotations': {'protocol': 'DIMSE'}},
+    "C_STORE": {'description': 'DIMSE storage service that pushes a composite instance to a peer', 'annotations': {'protocol': 'DIMSE'}},
+    "C_FIND": {'description': "DIMSE query service that matches attributes against a peer's database at patient, study, series or instance level", 'annotations': {'protocol': 'DIMSE'}},
+    "C_MOVE": {'description': 'DIMSE retrieve service that instructs a peer to send matching instances to a named destination via C-STORE', 'annotations': {'protocol': 'DIMSE'}},
+    "C_GET": {'description': 'DIMSE retrieve service that returns matching instances on the same association', 'annotations': {'protocol': 'DIMSE'}},
+    "N_EVENT_REPORT": {'description': 'DIMSE-N notification service used to report events on a normalized SOP instance', 'annotations': {'protocol': 'DIMSE'}},
+    "N_GET": {'description': 'DIMSE-N service that retrieves attribute values of a normalized SOP instance', 'annotations': {'protocol': 'DIMSE'}},
+    "N_SET": {'description': 'DIMSE-N service that modifies attribute values of a normalized SOP instance', 'annotations': {'protocol': 'DIMSE'}},
+    "N_ACTION": {'description': 'DIMSE-N service that requests an action on a normalized SOP instance, such as storage commitment', 'annotations': {'protocol': 'DIMSE'}},
+    "N_CREATE": {'description': 'DIMSE-N service that creates a normalized SOP instance', 'annotations': {'protocol': 'DIMSE'}},
+    "N_DELETE": {'description': 'DIMSE-N service that deletes a normalized SOP instance', 'annotations': {'protocol': 'DIMSE'}},
+    "QIDO_RS": {'description': 'DICOMweb RESTful query service (Query based on ID for DICOM Objects) for searching studies, series and instances', 'annotations': {'protocol': 'DICOMweb'}},
+    "WADO_RS": {'description': 'DICOMweb RESTful retrieve service (Web Access to DICOM Objects) for retrieving studies, series, instances, frames, metadata and rendered images', 'annotations': {'protocol': 'DICOMweb'}},
+    "STOW_RS": {'description': 'DICOMweb RESTful store service (Store Over the Web) for uploading instances', 'annotations': {'protocol': 'DICOMweb'}},
+    "WADO_URI": {'description': 'Legacy DICOMweb URI-based retrieve service for single instances', 'annotations': {'protocol': 'DICOMweb'}},
+    "UPS_RS": {'description': 'DICOMweb RESTful worklist service for Unified Procedure Step management', 'annotations': {'protocol': 'DICOMweb'}},
+    "CUSTOM_API": {'description': 'A vendor- or institution-specific interface that is not a standard DICOM network service'},
+}
+
+class DICOMSoftwareToolEnum(RichEnum):
+    """
+    Software toolkits, libraries, validators, servers and platforms commonly used to read, write, validate, anonymize and serve DICOM data in research data management pipelines. The category annotation distinguishes general-purpose toolkits from conformance validators, archive servers and metadata anonymizers.
+    """
+    # Enum members
+    DCMTK = "DCMTK"
+    PYDICOM = "PYDICOM"
+    GDCM = "GDCM"
+    DCM4CHE = "DCM4CHE"
+    ITK = "ITK"
+    DVTK = "DVTK"
+    DICOM3TOOLS = "DICOM3TOOLS"
+    DCIODVFY = "DCIODVFY"
+    DCENTVFY = "DCENTVFY"
+    PIXELMED = "PIXELMED"
+    RSNA_CTP = "RSNA_CTP"
+    ORTHANC = "ORTHANC"
+    DCM4CHEE = "DCM4CHEE"
+    XNAT = "XNAT"
+    TCIA_UTILS = "TCIA_UTILS"
+    DICOM_CLEANER = "DICOM_CLEANER"
+    HOROS = "HOROS"
+    OSIRIX = "OSIRIX"
+    SLICER_3D = "SLICER_3D"
+    ITK_SNAP = "ITK_SNAP"
+
+# Set metadata after class creation to avoid it becoming an enum member
+DICOMSoftwareToolEnum._metadata = {
+    "DCMTK": {'description': 'OFFIS DICOM Toolkit; C/C++ libraries and command-line utilities implementing DICOM network services and file handling', 'annotations': {'category': 'toolkit', 'language': 'C++', 'license': 'BSD', 'url': 'https://dicom.offis.de/en/dcmtk/'}},
+    "PYDICOM": {'description': 'Pure Python library for reading, modifying and writing DICOM files, including pixel data access', 'annotations': {'category': 'toolkit', 'language': 'Python', 'license': 'MIT', 'url': 'https://github.com/pydicom/pydicom'}},
+    "GDCM": {'description': 'Grassroots DICOM; C++ library with Python and other bindings for DICOM file and image codec handling', 'annotations': {'category': 'toolkit', 'language': 'C++', 'license': 'BSD', 'url': 'https://sourceforge.net/projects/gdcm/'}},
+    "DCM4CHE": {'description': 'Java DICOM toolkit and the basis of the dcm4chee archive', 'annotations': {'category': 'toolkit', 'language': 'Java', 'license': 'MPL/GPL/LGPL', 'url': 'https://www.dcm4che.org/'}},
+    "ITK": {'description': 'Insight Toolkit; C++ image processing library with DICOM readers built on GDCM', 'annotations': {'category': 'toolkit', 'language': 'C++', 'license': 'Apache-2.0', 'url': 'https://itk.org/'}},
+    "DVTK": {'description': 'DICOM Validation Toolkit; validates object conformance and network behaviour against the standard', 'annotations': {'category': 'validator', 'language': 'C#', 'license': 'LGPL', 'url': 'https://www.dvtk.org/'}},
+    "DICOM3TOOLS": {'description': "David Clunie's command-line utilities for creating, modifying, dumping and validating DICOM files", 'annotations': {'category': 'validator', 'language': 'C++', 'license': 'BSD', 'url': 'http://www.dclunie.com/dicom3tools.html'}},
+    "DCIODVFY": {'description': 'dicom3tools utility that verifies a file against the Information Object Definition for its modality, reporting missing required attributes, incorrect VRs and values outside allowed ranges', 'annotations': {'category': 'validator', 'part_of': 'dicom3tools'}},
+    "DCENTVFY": {'description': 'dicom3tools utility that checks consistency of entity-level attributes across multiple files, such as all instances in a series sharing the same Series Instance UID', 'annotations': {'category': 'validator', 'part_of': 'dicom3tools'}},
+    "PIXELMED": {'description': 'PixelMed Java DICOM toolkit, including the DicomCleaner metadata anonymizer', 'annotations': {'category': 'toolkit', 'language': 'Java', 'license': 'BSD', 'url': 'https://www.pixelmed.com/'}},
+    "RSNA_CTP": {'description': 'RSNA Clinical Trial Processor; pipeline application with a configurable DICOM anonymizer', 'annotations': {'category': 'anonymizer', 'language': 'Java', 'url': 'https://mircwiki.rsna.org/index.php?title=CTP-The_RSNA_Clinical_Trial_Processor'}},
+    "ORTHANC": {'description': 'Lightweight open-source DICOM server with a REST API and DICOMweb plugin', 'annotations': {'category': 'server', 'language': 'C++', 'license': 'GPL-3.0', 'url': 'https://www.orthanc-server.com/'}},
+    "DCM4CHEE": {'description': 'Open-source DICOM archive and image manager built on dcm4che', 'annotations': {'category': 'server', 'language': 'Java', 'url': 'https://www.dcm4che.org/'}},
+    "XNAT": {'description': 'Extensible Neuroimaging Archive Toolkit; open-source imaging informatics platform for managing, storing and sharing imaging data', 'annotations': {'category': 'platform', 'language': 'Java', 'license': 'BSD', 'url': 'https://www.xnat.org/'}},
+    "TCIA_UTILS": {'description': 'Python utilities from The Cancer Imaging Archive for querying, downloading and inventorying DICOM metadata', 'annotations': {'category': 'toolkit', 'language': 'Python', 'url': 'https://github.com/kirbyju/tcia_utils'}},
+    "DICOM_CLEANER": {'description': 'PixelMed graphical tool for metadata de-identification and blackout of burned-in text', 'annotations': {'category': 'anonymizer', 'language': 'Java', 'part_of': 'PixelMed'}},
+    "HOROS": {'description': 'Open-source macOS DICOM viewer forked from OsiriX with built-in anonymization', 'annotations': {'category': 'viewer', 'license': 'LGPL-3.0', 'url': 'https://horosproject.org/'}},
+    "OSIRIX": {'description': 'Commercial macOS DICOM viewer and workstation', 'annotations': {'category': 'viewer', 'license': 'commercial', 'url': 'https://www.osirix-viewer.com/'}},
+    "SLICER_3D": {'description': 'Open-source platform for medical image visualization, segmentation and analysis with DICOM import', 'annotations': {'category': 'viewer', 'license': 'BSD-style', 'url': 'https://www.slicer.org/'}},
+    "ITK_SNAP": {'description': 'Open-source tool for manual and semi-automatic segmentation of 3D medical images', 'annotations': {'category': 'viewer', 'license': 'GPL', 'url': 'http://www.itksnap.org/'}},
+}
+
+class DICOMDeidentificationMethodEnum(RichEnum):
+    """
+    The Basic Application Level Confidentiality Profile and its options defined in DICOM PS3.15 Annex E, as coded in PS3.16 Context ID 7050 (De-identification Method). These codes are recorded in the De-identification Method Code Sequence (0012,0064) to document what was done to an instance. The "Clean" options remove additional identifying content; the "Retain" options preserve information that the basic profile would otherwise remove.
+    """
+    # Enum members
+    BASIC_APPLICATION_CONFIDENTIALITY_PROFILE = "BASIC_APPLICATION_CONFIDENTIALITY_PROFILE"
+    CLEAN_PIXEL_DATA_OPTION = "CLEAN_PIXEL_DATA_OPTION"
+    CLEAN_RECOGNIZABLE_VISUAL_FEATURES_OPTION = "CLEAN_RECOGNIZABLE_VISUAL_FEATURES_OPTION"
+    CLEAN_GRAPHICS_OPTION = "CLEAN_GRAPHICS_OPTION"
+    CLEAN_STRUCTURED_CONTENT_OPTION = "CLEAN_STRUCTURED_CONTENT_OPTION"
+    CLEAN_DESCRIPTORS_OPTION = "CLEAN_DESCRIPTORS_OPTION"
+    RETAIN_LONGITUDINAL_TEMPORAL_INFORMATION_FULL_DATES_OPTION = "RETAIN_LONGITUDINAL_TEMPORAL_INFORMATION_FULL_DATES_OPTION"
+    RETAIN_LONGITUDINAL_TEMPORAL_INFORMATION_MODIFIED_DATES_OPTION = "RETAIN_LONGITUDINAL_TEMPORAL_INFORMATION_MODIFIED_DATES_OPTION"
+    RETAIN_PATIENT_CHARACTERISTICS_OPTION = "RETAIN_PATIENT_CHARACTERISTICS_OPTION"
+    RETAIN_DEVICE_IDENTITY_OPTION = "RETAIN_DEVICE_IDENTITY_OPTION"
+    RETAIN_UIDS_OPTION = "RETAIN_UIDS_OPTION"
+    RETAIN_SAFE_PRIVATE_OPTION = "RETAIN_SAFE_PRIVATE_OPTION"
+    RETAIN_INSTITUTION_IDENTITY_OPTION = "RETAIN_INSTITUTION_IDENTITY_OPTION"
+
+# Set metadata after class creation to avoid it becoming an enum member
+DICOMDeidentificationMethodEnum._metadata = {
+    "BASIC_APPLICATION_CONFIDENTIALITY_PROFILE": {'description': 'The baseline profile that removes or replaces all attributes known to carry identifying information, including UIDs, dates and descriptive text', 'meaning': 'DCM:113100', 'annotations': {'kind': 'profile'}},
+    "CLEAN_PIXEL_DATA_OPTION": {'description': 'Burned-in identifying text and annotations in the pixel data are removed', 'meaning': 'DCM:113101', 'annotations': {'kind': 'clean option'}},
+    "CLEAN_RECOGNIZABLE_VISUAL_FEATURES_OPTION": {'description': 'Recognizable visual features such as the face are removed from pixel data; this is the option under which de-facing is recorded', 'meaning': 'DCM:113102', 'annotations': {'kind': 'clean option'}},
+    "CLEAN_GRAPHICS_OPTION": {'description': 'Identifying information in graphic annotations, overlays and presentation states is removed', 'meaning': 'DCM:113103', 'annotations': {'kind': 'clean option'}},
+    "CLEAN_STRUCTURED_CONTENT_OPTION": {'description': 'Identifying information in structured report content items is removed', 'meaning': 'DCM:113104', 'annotations': {'kind': 'clean option'}},
+    "CLEAN_DESCRIPTORS_OPTION": {'description': 'Free-text descriptors such as Study Description are cleaned of identifying content rather than removed', 'meaning': 'DCM:113105', 'annotations': {'kind': 'clean option'}},
+    "RETAIN_LONGITUDINAL_TEMPORAL_INFORMATION_FULL_DATES_OPTION": {'description': 'Dates and times are retained unmodified to preserve the temporal relationship between studies', 'meaning': 'DCM:113106', 'annotations': {'kind': 'retain option'}},
+    "RETAIN_LONGITUDINAL_TEMPORAL_INFORMATION_MODIFIED_DATES_OPTION": {'description': 'Dates and times are shifted consistently so that intervals between studies are preserved', 'meaning': 'DCM:113107', 'annotations': {'kind': 'retain option'}},
+    "RETAIN_PATIENT_CHARACTERISTICS_OPTION": {'description': 'Physical characteristics such as age, sex, height and weight are retained', 'meaning': 'DCM:113108', 'annotations': {'kind': 'retain option'}},
+    "RETAIN_DEVICE_IDENTITY_OPTION": {'description': 'Device identifying attributes such as manufacturer, model and serial number are retained', 'meaning': 'DCM:113109', 'annotations': {'kind': 'retain option'}},
+    "RETAIN_UIDS_OPTION": {'description': 'Original UIDs are retained rather than replaced', 'meaning': 'DCM:113110', 'annotations': {'kind': 'retain option'}},
+    "RETAIN_SAFE_PRIVATE_OPTION": {'description': 'Private attributes known not to contain identifying information are retained', 'meaning': 'DCM:113111', 'annotations': {'kind': 'retain option'}},
+    "RETAIN_INSTITUTION_IDENTITY_OPTION": {'description': 'Institution identifying attributes such as institution name and address are retained', 'meaning': 'DCM:113112', 'annotations': {'kind': 'retain option'}},
+}
+
+class DICOMDeidentificationActionEnum(RichEnum):
+    """
+    Action codes from DICOM PS3.15 Table E.1-1a that specify how a de-identifier treats each attribute under the Basic Application Level Confidentiality Profile. Compound codes (for example Z/D) indicate that the first action applies unless the attribute's type requires the second to maintain IOD conformance. Permissible values use the DICOM code letters, with slashes replaced by underscores in compound codes.
+    """
+    # Enum members
+    D = "D"
+    Z = "Z"
+    X = "X"
+    K = "K"
+    C = "C"
+    U = "U"
+    Z_D = "Z_D"
+    X_Z = "X_Z"
+    X_D = "X_D"
+    X_Z_D = "X_Z_D"
+    X_Z_U = "X_Z_U"
+
+# Set metadata after class creation to avoid it becoming an enum member
+DICOMDeidentificationActionEnum._metadata = {
+    "D": {'description': 'Replace with a non-zero length value that may be a dummy value and consistent with the VR'},
+    "Z": {'description': 'Replace with a zero length value, or a non-zero length value that may be a dummy value and consistent with the VR'},
+    "X": {'description': 'Remove the attribute, and if the attribute is a sequence, remove all sequence items and their contained attributes'},
+    "K": {'description': 'Keep unchanged for non-sequence attributes; cleaned for sequences'},
+    "C": {'description': 'Replace with values of similar meaning known not to contain identifying information and consistent with the VR'},
+    "U": {'description': 'Replace with a non-zero length UID that is internally consistent within a set of instances'},
+    "Z_D": {'description': 'Z unless D is required to maintain IOD conformance (Type 2 versus Type 1)', 'aliases': ['Z/D']},
+    "X_Z": {'description': 'X unless Z is required to maintain IOD conformance (Type 3 versus Type 2)', 'aliases': ['X/Z']},
+    "X_D": {'description': 'X unless D is required to maintain IOD conformance (Type 3 versus Type 1)', 'aliases': ['X/D']},
+    "X_Z_D": {'description': 'X unless Z or D is required to maintain IOD conformance (Type 3 versus Type 2 versus Type 1)', 'aliases': ['X/Z/D']},
+    "X_Z_U": {'description': 'X unless Z or replacement of contained instance UIDs (U) is required to maintain IOD conformance (Type 3 versus Type 2 versus Type 1 sequences containing UID references)', 'aliases': ['X/Z/U*']},
+}
+
+class ImageDeidentificationTargetEnum(RichEnum):
+    """
+    The components of a medical imaging object that can carry identifying information and therefore need to be addressed by a de-identification workflow. A workflow first assesses whether an image requires pixel-level (face or head) de-identification or only metadata de-identification.
+    """
+    # Enum members
+    HEADER_METADATA = "HEADER_METADATA"
+    PRIVATE_ATTRIBUTES = "PRIVATE_ATTRIBUTES"
+    BURNED_IN_ANNOTATION = "BURNED_IN_ANNOTATION"
+    FACIAL_FEATURES = "FACIAL_FEATURES"
+    UNIQUE_IDENTIFIERS = "UNIQUE_IDENTIFIERS"
+    STRUCTURED_CONTENT = "STRUCTURED_CONTENT"
+
+# Set metadata after class creation to avoid it becoming an enum member
+ImageDeidentificationTargetEnum._metadata = {
+    "HEADER_METADATA": {'description': 'Standard DICOM attributes such as patient name, identifiers, birth date and study dates'},
+    "PRIVATE_ATTRIBUTES": {'description': 'Vendor-specific private tags that may contain identifying information and are not covered by the standard attribute list'},
+    "BURNED_IN_ANNOTATION": {'description': 'Text or graphics rendered into the pixel data, common in ultrasound, secondary capture and screenshots'},
+    "FACIAL_FEATURES": {'description': 'Facial surface anatomy reconstructable from volumetric head CT or MRI pixel data, or visible in photographs and video'},
+    "UNIQUE_IDENTIFIERS": {'description': 'Study, series and instance UIDs and accession numbers that can link an instance back to the source system'},
+    "STRUCTURED_CONTENT": {'description': 'Identifying content in structured reports, overlays, presentation states and embedded documents'},
+}
+
+class DeidentificationRegulatoryFrameworkEnum(RichEnum):
+    """
+    Regulations and standards that define when medical imaging data is considered de-identified. Under HIPAA, full-face photographs and comparable images are direct identifiers; under the GDPR, facial images are biometric personal data requiring special handling.
+    """
+    # Enum members
+    HIPAA_SAFE_HARBOR = "HIPAA_SAFE_HARBOR"
+    HIPAA_EXPERT_DETERMINATION = "HIPAA_EXPERT_DETERMINATION"
+    GDPR_ANONYMISATION = "GDPR_ANONYMISATION"
+    GDPR_PSEUDONYMISATION = "GDPR_PSEUDONYMISATION"
+    DICOM_PS3_15_CONFIDENTIALITY_PROFILE = "DICOM_PS3_15_CONFIDENTIALITY_PROFILE"
+    MIDI_TASK_GROUP_RECOMMENDATIONS = "MIDI_TASK_GROUP_RECOMMENDATIONS"
+
+# Set metadata after class creation to avoid it becoming an enum member
+DeidentificationRegulatoryFrameworkEnum._metadata = {
+    "HIPAA_SAFE_HARBOR": {'description': 'US HIPAA Privacy Rule method requiring removal of 18 specified identifier types, including full-face photographs and comparable images', 'annotations': {'jurisdiction': 'United States', 'citation': '45 CFR 164.514(b)(2)'}},
+    "HIPAA_EXPERT_DETERMINATION": {'description': 'US HIPAA Privacy Rule method in which a qualified expert determines that the risk of re-identification is very small', 'annotations': {'jurisdiction': 'United States', 'citation': '45 CFR 164.514(b)(1)'}},
+    "GDPR_ANONYMISATION": {'description': 'Irreversible processing such that the data subject is no longer identifiable, taking the data outside the scope of the EU General Data Protection Regulation', 'meaning': 'NCIT:C142392', 'annotations': {'jurisdiction': 'European Union'}, 'aliases': ['GDPR anonymisation']},
+    "GDPR_PSEUDONYMISATION": {'description': 'Processing so that data can no longer be attributed to a subject without additional information kept separately, as defined in GDPR Article 4(5)', 'meaning': 'NCIT:C142654', 'annotations': {'jurisdiction': 'European Union'}, 'aliases': ['GDPR pseudonymisation']},
+    "DICOM_PS3_15_CONFIDENTIALITY_PROFILE": {'description': "The DICOM standard's own de-identification profile and options, designed to satisfy known regulations", 'annotations': {'jurisdiction': 'international'}},
+    "MIDI_TASK_GROUP_RECOMMENDATIONS": {'description': 'Best practices and recommendations of the Medical Image De-Identification (MIDI) Task Group (Clunie et al.)', 'annotations': {'jurisdiction': 'international'}},
+}
+
+class DefacingMethodEnum(RichEnum):
+    """
+    Approaches to pixel-level de-identification that remove or obscure facial features in head imaging. Skull-stripping removes all non-brain tissue and may discard useful anatomy; face-specific methods aim to remove only facial features while preserving as much of the head volume as possible.
+    """
+    # Enum members
+    SKULL_STRIPPING = "SKULL_STRIPPING"
+    TEMPLATE_BASED_MASKING = "TEMPLATE_BASED_MASKING"
+    SURFACE_BLURRING = "SURFACE_BLURRING"
+    SHEARING_PLANE = "SHEARING_PLANE"
+    DEEP_LEARNING_SEGMENTATION = "DEEP_LEARNING_SEGMENTATION"
+    REFACING = "REFACING"
+    MANUAL_MASKING = "MANUAL_MASKING"
+    FACE_DETECTION_AND_BLURRING = "FACE_DETECTION_AND_BLURRING"
+    MANUAL_CROP_OR_BLUR = "MANUAL_CROP_OR_BLUR"
+
+# Set metadata after class creation to avoid it becoming an enum member
+DefacingMethodEnum._metadata = {
+    "SKULL_STRIPPING": {'description': 'Removal of all non-brain tissue including scalp, skull and face, for example with FSL BET or AFNI 3dSkullStrip', 'annotations': {'preserves_skull': 'false'}, 'aliases': ['brain extraction']},
+    "TEMPLATE_BASED_MASKING": {'description': 'Registration of the image to a standard brain template such as MNI152 followed by application of a predefined binary face mask that zeros out facial voxels', 'annotations': {'preserves_skull': 'true', 'example_tools': 'PyDeface, FreeSurfer mri_deface, mydeface'}},
+    "SURFACE_BLURRING": {'description': 'Diffusion or blurring of face surface voxels to obscure identity while preserving head shape, as in Milchenko and Marcus (2013)', 'annotations': {'preserves_skull': 'true'}},
+    "SHEARING_PLANE": {'description': 'Removal of the front of the head by computing a plane through the head and discarding voxels in front of it, as in QuickShear', 'annotations': {'preserves_skull': 'partial'}, 'aliases': ['cropping plane']},
+    "DEEP_LEARNING_SEGMENTATION": {'description': 'Use of a trained neural network such as a 3D U-Net to segment facial features (eyes, ears, nose) and mask or blur them', 'annotations': {'preserves_skull': 'true', 'example_tools': 'DeepDefacer, Asan Defacer'}},
+    "REFACING": {'description': "Replacement of the subject's face with an average or synthetic face so that images retain a realistic head surface", 'annotations': {'preserves_skull': 'true', 'example_tools': 'AFNI refacer'}},
+    "MANUAL_MASKING": {'description': 'Interactive painting or erosion of a face mask in an image editor such as 3D Slicer or ITK-SNAP, followed by zeroing or blurring of masked voxels', 'annotations': {'preserves_skull': 'true'}},
+    "FACE_DETECTION_AND_BLURRING": {'description': 'Frame-by-frame detection of faces in 2D images or video followed by blurring, pixelation or masking, for example with OpenCV Haar cascades', 'annotations': {'applicable_to': 'photographs, video'}},
+    "MANUAL_CROP_OR_BLUR": {'description': 'Manual cropping or blurring of the face region in photographs or video with an image or video editor', 'annotations': {'applicable_to': 'photographs, video'}},
+}
+
+class DefacingToolEnum(RichEnum):
+    """
+    Software tools and pipelines used for pixel-level de-identification of head imaging and photographs, with their supported modalities, method and licensing. Metadata-only anonymizers are included for completeness because they are commonly paired with defacing tools, but they do not remove facial features.
+    """
+    # Enum members
+    PYDEFACE = "PYDEFACE"
+    FREESURFER_MRI_DEFACE = "FREESURFER_MRI_DEFACE"
+    AFNI_REFACER = "AFNI_REFACER"
+    QUICKSHEAR = "QUICKSHEAR"
+    DEEPDEFACER = "DEEPDEFACER"
+    ASAN_DEFACER = "ASAN_DEFACER"
+    MYDEFACE = "MYDEFACE"
+    MASK_FACE = "MASK_FACE"
+    FSL_BET = "FSL_BET"
+    AFNI_3DSKULLSTRIP = "AFNI_3DSKULLSTRIP"
+    ITK_SNAP = "ITK_SNAP"
+    SLICER_3D = "SLICER_3D"
+    IMAGEJ_FIJI = "IMAGEJ_FIJI"
+    OPENCV = "OPENCV"
+    OSIRIX_HOROS_PLUGIN = "OSIRIX_HOROS_PLUGIN"
+    PIXELMED_DICOM_ANONYMIZER = "PIXELMED_DICOM_ANONYMIZER"
+    MANUAL_PHOTO_VIDEO_EDITING = "MANUAL_PHOTO_VIDEO_EDITING"
+
+# Set metadata after class creation to avoid it becoming an enum member
+DefacingToolEnum._metadata = {
+    "PYDEFACE": {'description': 'Aligns a T1-weighted MRI to a template with FSL FLIRT and zeros out voxels in a predefined facial mask', 'annotations': {'modality': 'MRI (T1w)', 'method': 'template-based masking', 'license': 'BSD', 'url': 'https://github.com/poldracklab/pydeface'}},
+    "FREESURFER_MRI_DEFACE": {'description': 'Template mask defacing using affine registration to fit a generic face mask, distributed with FreeSurfer', 'annotations': {'modality': 'MRI (T1w)', 'method': 'template-based masking', 'license': 'FreeSurfer'}},
+    "AFNI_REFACER": {'description': 'AFNI template-based defacing and refacing tool, often combined with skull stripping', 'annotations': {'modality': 'MRI (T1w)', 'method': 'refacing', 'license': 'AFNI (open source)'}},
+    "QUICKSHEAR": {'description': 'Computes a shearing plane through the head and removes the front of the head', 'annotations': {'modality': 'MRI (T1w)', 'method': 'shearing plane', 'license': 'open source'}},
+    "DEEPDEFACER": {'description': '3D U-Net trained to generate a facial mask from T1 MRI scans', 'annotations': {'modality': 'MRI (T1w, T2w)', 'method': 'deep learning segmentation', 'license': 'open source'}},
+    "ASAN_DEFACER": {'description': '3D U-Net that segments eyes, ears and nose and masks them, applicable to MRI and CT', 'annotations': {'modality': 'MRI, CT', 'method': 'deep learning segmentation', 'license': 'open source'}},
+    "MYDEFACE": {'description': 'Defacing utility similar to PyDeface using an FSL FLIRT-registered mask', 'annotations': {'modality': 'MRI (T1w, FLAIR)', 'method': 'template-based masking', 'license': 'BSD', 'url': 'https://github.com/neurolabusc/mydeface'}},
+    "MASK_FACE": {'description': 'Surface blurring tool from Milchenko and Marcus that obscures surface anatomy in volumetric data', 'annotations': {'modality': 'MRI, CT', 'method': 'surface blurring', 'license': 'open source'}},
+    "FSL_BET": {'description': 'FMRIB Software Library Brain Extraction Tool; removes all non-brain tissue', 'annotations': {'modality': 'MRI, CT, PET', 'method': 'skull stripping', 'license': 'FSL (open source)'}},
+    "AFNI_3DSKULLSTRIP": {'description': 'AFNI brain extraction program; removes all non-brain tissue', 'annotations': {'modality': 'MRI, CT, PET', 'method': 'skull stripping', 'license': 'AFNI (open source)'}},
+    "ITK_SNAP": {'description': 'Interactive segmentation tool used to manually paint or erode a face mask in any 3D volume', 'annotations': {'modality': 'any 3D volume', 'method': 'manual masking', 'license': 'GPL'}},
+    "SLICER_3D": {'description': 'Image computing platform used to manually paint a face mask over a region of interest', 'annotations': {'modality': 'any 3D volume', 'method': 'manual masking', 'license': 'BSD-style'}},
+    "IMAGEJ_FIJI": {'description': 'General image analysis tools used to manually blur or crop the face region in 2D or 3D images', 'annotations': {'modality': '2D and 3D images', 'method': 'manual crop or blur', 'license': 'open source'}},
+    "OPENCV": {'description': 'Computer vision library used for face detection (for example Haar cascades) followed by blurring or pixelation in video and 2D images', 'annotations': {'modality': 'video, 2D images', 'method': 'face detection and blurring', 'license': 'Apache-2.0'}},
+    "OSIRIX_HOROS_PLUGIN": {'description': 'Viewer plugins offering built-in anonymization with face removal options for multi-modality DICOM', 'annotations': {'modality': 'DICOM (multi-modality)', 'method': 'template-based masking', 'license': 'commercial / free'}},
+    "PIXELMED_DICOM_ANONYMIZER": {'description': 'Metadata anonymization only; does not mask faces', 'annotations': {'modality': 'DICOM files', 'method': 'metadata anonymization', 'license': 'BSD'}},
+    "MANUAL_PHOTO_VIDEO_EDITING": {'description': 'Cropping or blurring faces in photographs and videos with general-purpose editors', 'annotations': {'modality': 'photographs, video', 'method': 'manual crop or blur'}},
+}
+
+class ImagingDataLifecycleStageEnum(RichEnum):
+    """
+    Sequential stages of DICOM data management for preparing FAIR, AI-ready medical imaging datasets. Stages after extraction form the data reliability workflow that checks that imaging data is complete, standardized and biologically plausible before sharing.
+    """
+    # Enum members
+    DATA_EXTRACTION_AND_METADATA_CHARACTERIZATION = "DATA_EXTRACTION_AND_METADATA_CHARACTERIZATION"
+    FILE_INTEGRITY_VERIFICATION = "FILE_INTEGRITY_VERIFICATION"
+    DATA_COMPLETENESS_AND_CONFORMANCE_CHECKS = "DATA_COMPLETENESS_AND_CONFORMANCE_CHECKS"
+    METADATA_TAG_VALIDATION = "METADATA_TAG_VALIDATION"
+    IMAGE_QUALITY_AND_PIXEL_DATA_VALIDATION = "IMAGE_QUALITY_AND_PIXEL_DATA_VALIDATION"
+    DEIDENTIFICATION = "DEIDENTIFICATION"
+
+# Set metadata after class creation to avoid it becoming an enum member
+ImagingDataLifecycleStageEnum._metadata = {
+    "DATA_EXTRACTION_AND_METADATA_CHARACTERIZATION": {'description': 'Extraction of imaging data from clinical repositories such as PACS, preceded by a landscape assessment of source locations, database systems, modalities and acquisition devices', 'annotations': {'stage_number': 1}},
+    "FILE_INTEGRITY_VERIFICATION": {'description': 'Computation and periodic re-verification of cryptographic checksums such as SHA-256 to detect silent corruption from network errors, media decay or system failure', 'annotations': {'stage_number': 2}},
+    "DATA_COMPLETENESS_AND_CONFORMANCE_CHECKS": {'description': 'Detection of structurally invalid DICOM files (truncated, wrong VR encoding, missing required tags) and checks of internal coherence such as identifier uniqueness and demographic consistency across sites', 'annotations': {'stage_number': 3}},
+    "METADATA_TAG_VALIDATION": {'description': "Validation of DICOM attributes against the standard's VR, VM and type rules and against biological plausibility, and inventory of private tags", 'annotations': {'stage_number': 4}},
+    "IMAGE_QUALITY_AND_PIXEL_DATA_VALIDATION": {'description': 'Verification that pixel data is readable and plausible, that decompression preserves bit depth, and computation of image quality metrics', 'annotations': {'stage_number': 5}},
+    "DEIDENTIFICATION": {'description': 'Removal of protected health information from headers and of facial features from pixel data before sharing and reuse', 'meaning': 'NCIT:C45970', 'annotations': {'stage_number': 6}},
+}
+
+class ImagingDataSourceTypeEnum(RichEnum):
+    """
+    Types of systems in a hospital or research network that hold medical imaging data and from which it may be extracted. A landscape assessment records, for each source, the platform vendor, software version, supported query mechanisms, patient identifier handling, retention policy and anonymization capabilities.
+    """
+    # Enum members
+    PACS = "PACS"
+    VENDOR_NEUTRAL_ARCHIVE = "VENDOR_NEUTRAL_ARCHIVE"
+    DEPARTMENTAL_IMAGING_ARCHIVE = "DEPARTMENTAL_IMAGING_ARCHIVE"
+    RESEARCH_IMAGING_PLATFORM = "RESEARCH_IMAGING_PLATFORM"
+    MODALITY_WORKSTATION = "MODALITY_WORKSTATION"
+    ELECTRONIC_HEALTH_RECORD = "ELECTRONIC_HEALTH_RECORD"
+    PUBLIC_IMAGING_REPOSITORY = "PUBLIC_IMAGING_REPOSITORY"
+    CLOUD_IMAGING_ARCHIVE = "CLOUD_IMAGING_ARCHIVE"
+
+# Set metadata after class creation to avoid it becoming an enum member
+ImagingDataSourceTypeEnum._metadata = {
+    "PACS": {'description': 'Clinical system for storing, retrieving and distributing medical images, typically the central radiology archive', 'meaning': 'NCIT:C17624'},
+    "VENDOR_NEUTRAL_ARCHIVE": {'description': 'Enterprise archive that stores images from multiple departments and PACS vendors in a standard format', 'aliases': ['VNA']},
+    "DEPARTMENTAL_IMAGING_ARCHIVE": {'description': 'Local archive maintained by a clinical department such as cardiology, ophthalmology or endoscopy outside the central PACS'},
+    "RESEARCH_IMAGING_PLATFORM": {'description': 'Research-specific imaging informatics database such as XNAT used to manage, store and share imaging data'},
+    "MODALITY_WORKSTATION": {'description': 'Acquisition device or attached workstation that exports images through vendor-specific software'},
+    "ELECTRONIC_HEALTH_RECORD": {'description': 'Clinical record system that references or embeds imaging studies and provides encounter linkage', 'meaning': 'NCIT:C142529'},
+    "PUBLIC_IMAGING_REPOSITORY": {'description': 'Openly accessible imaging data resource such as The Cancer Imaging Archive or OpenNeuro'},
+    "CLOUD_IMAGING_ARCHIVE": {'description': 'Cloud-hosted object storage or managed imaging service holding DICOM data'},
+}
+
+class DICOMValidationIssueTypeEnum(RichEnum):
+    """
+    Categories of problems detected when validating DICOM files and collections for completeness, conformance, metadata consistency, pixel data integrity and plausibility. Used to classify findings from tools such as dciodvfy, dcentvfy, DVTk and pydicom during data reliability workflows.
+    """
+    # Enum members
+    TRUNCATED_FILE = "TRUNCATED_FILE"
+    INVALID_VR_ENCODING = "INVALID_VR_ENCODING"
+    MISSING_REQUIRED_ATTRIBUTE = "MISSING_REQUIRED_ATTRIBUTE"
+    VALUE_MULTIPLICITY_VIOLATION = "VALUE_MULTIPLICITY_VIOLATION"
+    VALUE_OUT_OF_RANGE = "VALUE_OUT_OF_RANGE"
+    INVALID_UID_SYNTAX = "INVALID_UID_SYNTAX"
+    DUPLICATE_UID = "DUPLICATE_UID"
+    INCONSISTENT_ENTITY_ATTRIBUTES = "INCONSISTENT_ENTITY_ATTRIBUTES"
+    DATE_INCONSISTENCY = "DATE_INCONSISTENCY"
+    IMPLAUSIBLE_VALUE = "IMPLAUSIBLE_VALUE"
+    NONSTANDARD_PRIVATE_ATTRIBUTE = "NONSTANDARD_PRIVATE_ATTRIBUTE"
+    IDENTIFIER_LINKAGE_ERROR = "IDENTIFIER_LINKAGE_ERROR"
+    UNREADABLE_PIXEL_DATA = "UNREADABLE_PIXEL_DATA"
+    DECOMPRESSION_MISMATCH = "DECOMPRESSION_MISMATCH"
+    CHECKSUM_MISMATCH = "CHECKSUM_MISMATCH"
+    PROTECTED_HEALTH_INFORMATION_PRESENT = "PROTECTED_HEALTH_INFORMATION_PRESENT"
+
+# Set metadata after class creation to avoid it becoming an enum member
+DICOMValidationIssueTypeEnum._metadata = {
+    "TRUNCATED_FILE": {'description': 'The file is incomplete, for example a truncated transfer syntax or missing pixel data at the end of the file', 'annotations': {'category': 'structural'}},
+    "INVALID_VR_ENCODING": {'description': 'An attribute is encoded with a Value Representation that does not match the data dictionary or the transfer syntax', 'annotations': {'category': 'structural'}},
+    "MISSING_REQUIRED_ATTRIBUTE": {'description': 'A Type 1 or Type 2 attribute required by the IOD, such as StudyInstanceUID or PixelData, is absent', 'annotations': {'category': 'conformance'}},
+    "VALUE_MULTIPLICITY_VIOLATION": {'description': 'An attribute has more or fewer values than permitted by its Value Multiplicity', 'annotations': {'category': 'conformance'}},
+    "VALUE_OUT_OF_RANGE": {'description': 'An attribute value is outside the enumerated or defined range allowed by the standard', 'annotations': {'category': 'conformance'}},
+    "INVALID_UID_SYNTAX": {'description': 'A UID does not conform to DICOM UID syntax, for example non-numeric components or excess length', 'annotations': {'category': 'conformance'}},
+    "DUPLICATE_UID": {'description': 'The same SOP Instance UID or other UID is reused across instances that should be distinct', 'annotations': {'category': 'consistency'}},
+    "INCONSISTENT_ENTITY_ATTRIBUTES": {'description': 'Attributes that should be identical across instances of the same entity differ, such as instances in one series carrying different Series Instance UIDs', 'annotations': {'category': 'consistency'}},
+    "DATE_INCONSISTENCY": {'description': "Dates are mutually inconsistent, such as a study date after the patient's death date or a series date before the study date", 'annotations': {'category': 'plausibility'}},
+    "IMPLAUSIBLE_VALUE": {'description': 'A syntactically valid value that is biologically implausible, such as a patient age of 150 years', 'annotations': {'category': 'plausibility'}},
+    "NONSTANDARD_PRIVATE_ATTRIBUTE": {'description': "A private tag is present that is not documented in the site's private tag dictionary", 'annotations': {'category': 'documentation'}},
+    "IDENTIFIER_LINKAGE_ERROR": {'description': 'Patient or study identifiers do not link correctly to clinical records, or demographics disagree across linked records', 'annotations': {'category': 'consistency'}},
+    "UNREADABLE_PIXEL_DATA": {'description': 'The pixel data cannot be decoded, typically due to acquisition or packaging problems', 'annotations': {'category': 'pixel data'}},
+    "DECOMPRESSION_MISMATCH": {'description': 'Decompressed pixel data has an unexpected bit depth or differs from the uncompressed original beyond the expected loss', 'annotations': {'category': 'pixel data'}},
+    "CHECKSUM_MISMATCH": {'description': "The file's cryptographic hash no longer matches the value recorded at ingest, indicating corruption or alteration", 'annotations': {'category': 'integrity'}},
+    "PROTECTED_HEALTH_INFORMATION_PRESENT": {'description': 'Identifying information remains in the header, private tags or pixel data after de-identification', 'annotations': {'category': 'privacy'}},
+}
+
+class ImageQualityMetricEnum(RichEnum):
+    """
+    Metrics computed during image quality and pixel data validation to document that images are readable and of adequate fidelity for AI applications. Simple metrics can be extended to check conformance with FDA technical performance guidance for quantitative imaging devices where applicable.
+    """
+    # Enum members
+    PIXEL_READABILITY = "PIXEL_READABILITY"
+    INTENSITY_HISTOGRAM = "INTENSITY_HISTOGRAM"
+    SIGNAL_TO_NOISE_RATIO = "SIGNAL_TO_NOISE_RATIO"
+    CONTRAST_TO_NOISE_RATIO = "CONTRAST_TO_NOISE_RATIO"
+    SHARPNESS = "SHARPNESS"
+    BIT_DEPTH = "BIT_DEPTH"
+    PIXEL_SPACING = "PIXEL_SPACING"
+    SLICE_THICKNESS = "SLICE_THICKNESS"
+    COMPRESSION_FIDELITY = "COMPRESSION_FIDELITY"
+    ARTIFACT_PRESENCE = "ARTIFACT_PRESENCE"
+
+# Set metadata after class creation to avoid it becoming an enum member
+ImageQualityMetricEnum._metadata = {
+    "PIXEL_READABILITY": {'description': 'Whether the pixel array can be decoded without error'},
+    "INTENSITY_HISTOGRAM": {'description': 'Distribution of pixel intensities, checked for extreme outliers, clipping or empty images'},
+    "SIGNAL_TO_NOISE_RATIO": {'description': 'Ratio of signal in a region of interest to the standard deviation of background noise', 'meaning': 'NCIT:C94983', 'aliases': ['SNR']},
+    "CONTRAST_TO_NOISE_RATIO": {'description': 'Difference in signal between two regions relative to background noise', 'aliases': ['CNR']},
+    "SHARPNESS": {'description': 'Measure of edge definition or high-frequency content, such as Laplacian variance'},
+    "BIT_DEPTH": {'description': 'Number of bits per pixel stored and allocated, checked for consistency after decompression'},
+    "PIXEL_SPACING": {'description': 'Physical distance between pixel centres, checked for presence and plausibility'},
+    "SLICE_THICKNESS": {'description': 'Nominal thickness of each slice in a volumetric acquisition, checked for presence and plausibility'},
+    "COMPRESSION_FIDELITY": {'description': 'Agreement between compressed and original pixel data, for example comparing a JPEG-compressed instance with its uncompressed source'},
+    "ARTIFACT_PRESENCE": {'description': 'Detection of motion, metal, aliasing or other acquisition artifacts'},
+}
+
+class ImagingInteroperabilityStandardEnum(RichEnum):
+    """
+    Standards and data models used to represent medical imaging metadata and to link images with clinical records, electronic health records and multimodal research datasets.
+    """
+    # Enum members
+    DICOM = "DICOM"
+    DICOMWEB = "DICOMWEB"
+    HL7_FHIR_IMAGINGSTUDY = "HL7_FHIR_IMAGINGSTUDY"
+    OMOP_CDM_IMAGING_EXTENSION = "OMOP_CDM_IMAGING_EXTENSION"
+    IHE_PROFILES = "IHE_PROFILES"
+    BIDS = "BIDS"
+    NIFTI = "NIFTI"
+
+# Set metadata after class creation to avoid it becoming an enum member
+ImagingInteroperabilityStandardEnum._metadata = {
+    "DICOM": {'description': 'Digital Imaging and Communications in Medicine (ISO 12052), the standard for storing, transmitting and managing medical imaging data', 'annotations': {'url': 'https://www.dicomstandard.org/'}},
+    "DICOMWEB": {'description': 'RESTful web services for DICOM (QIDO-RS, WADO-RS, STOW-RS) defined in DICOM PS3.18', 'annotations': {'url': 'https://www.dicomstandard.org/using/dicomweb'}},
+    "HL7_FHIR_IMAGINGSTUDY": {'description': 'FHIR resource representing a DICOM study and its series and instances, used to integrate imaging metadata into FHIR-based systems', 'annotations': {'url': 'https://www.hl7.org/fhir/imagingstudy.html'}},
+    "OMOP_CDM_IMAGING_EXTENSION": {'description': 'OHDSI Observational Medical Outcomes Partnership Common Data Model extension for imaging-based observational research, used to link DICOM studies to clinical encounters', 'annotations': {'url': 'https://github.com/OHDSI/OmopImaging'}},
+    "IHE_PROFILES": {'description': 'Integrating the Healthcare Enterprise profiles for image sharing and identifier management, such as XDS-I and PIX', 'annotations': {'url': 'https://www.ihe.net/'}},
+    "BIDS": {'description': 'Community standard for organizing and describing neuroimaging datasets, commonly used after conversion from DICOM', 'annotations': {'url': 'https://bids.neuroimaging.io/'}},
+    "NIFTI": {'description': 'Neuroimaging Informatics Technology Initiative file format for volumetric images, the usual target of DICOM conversion in neuroimaging pipelines', 'annotations': {'url': 'https://nifti.nimh.nih.gov/'}},
+}
+
+class Bridge2AIDataGenerationProjectEnum(RichEnum):
+    """
+    Data generation projects (Grand Challenges) of the NIH Bridge to Artificial Intelligence (Bridge2AI) program, which creates standardized, annotated, ethically sourced AI-ready datasets across a diverse set of modalities.
+    """
+    # Enum members
+    CHORUS = "CHORUS"
+    AI_READI = "AI_READI"
+    VOICE = "VOICE"
+    CM4AI = "CM4AI"
+
+# Set metadata after class creation to avoid it becoming an enum member
+Bridge2AIDataGenerationProjectEnum._metadata = {
+    "CHORUS": {'description': 'Collaborative Hospital Repository Uniting Standards; the AI/ML for Clinical Care Grand Challenge, linking ICU imaging (MRI, CT, ultrasound, X-ray) with physiologic and clinical data', 'annotations': {'url': 'https://bridge2ai.org/data-chorus/'}, 'aliases': ['Clinical Care']},
+    "AI_READI": {'description': 'Artificial Intelligence Ready and Equitable Atlas for Diabetes Insights; the Salutogenesis Grand Challenge, including ophthalmology retinal imaging', 'annotations': {'url': 'https://bridge2ai.org/people-ai-readi/'}, 'aliases': ['Salutogenesis']},
+    "VOICE": {'description': 'The Precision Public Health Grand Challenge, connecting voice recordings with laryngoscopy video, brain MRI and CT, and omics data', 'annotations': {'url': 'https://bridge2ai.org/people-voice/'}, 'aliases': ['Precision Public Health']},
+    "CM4AI": {'description': 'Cell Maps for Artificial Intelligence; the Functional Genomics Grand Challenge, mapping cellular architecture with imaging and proteomics', 'annotations': {'url': 'https://cm4ai.org/'}, 'aliases': ['Functional Genomics']},
+}
+
 class FamilyRelationship(RichEnum):
     """
     Family relationships used in pedigree and family history documentation
@@ -16229,6 +17279,366 @@ DrugResponseEnum._metadata = {
     "UNKNOWN_RESPONSE": {'description': 'Treatment response unknown', 'meaning': 'NCIT:C17998'},
 }
 
+class G2PConfidenceCategory(RichEnum):
+    """
+    The level of confidence that a gene-disease association is real, as asserted by G2P curators. G2P uses the GenCC gene-disease validity classification terms. Operationally several groups use definitive, strong and moderate for clinical reporting; limited, disputed and refuted are not used for clinical reporting. GenCC classification identifiers are recorded in the gencc_classification_id annotation rather than as meaning:, because the GENCC prefix is not registered in bioregistry, OLS or the OBO PURL system and so cannot be resolved; the identifiers were taken from GenCC's own submissions export.
+    """
+    # Enum members
+    DEFINITIVE = "DEFINITIVE"
+    STRONG = "STRONG"
+    MODERATE = "MODERATE"
+    LIMITED = "LIMITED"
+    DISPUTED = "DISPUTED"
+    REFUTED = "REFUTED"
+
+# Set metadata after class creation to avoid it becoming an enum member
+G2PConfidenceCategory._metadata = {
+    "DEFINITIVE": {'description': "The role of this gene in this particular disease has been repeatedly demonstrated in both the research and clinical diagnostic settings, and has been upheld over time (at least 2 independent publication over 3 years' time). No convincing evidence has emerged that contradicts the role of the gene in the specified disease. (previously labelled as confirmed) The strength of evidence within publications as well as their number and publication dates is taken into account. In practice, this usually means at least 4 publications over 5 years. Typically this will also include convincing bioinformatic or functional evidence of causation, making it very unlikely that this gene-disease association would ever be refuted.", 'annotations': {'gencc_classification_id': 'GENCC:100001', 'clinical_reporting': 'true'}, 'aliases': ['confirmed']},
+    "STRONG": {'description': "The role of this gene as a monogenic cause of disease has been repeatedly and independently demonstrated providing very strong convincing evidence in humans and no conflicting evidence for this gene's role in this disease. (previously labelled as probable).", 'annotations': {'gencc_classification_id': 'GENCC:100002', 'clinical_reporting': 'true'}, 'aliases': ['probable']},
+    "MODERATE": {'description': 'There is moderate evidence in humans to support a casual role for this gene in this disease with no contradictory evidence. The body of evidence is not large (e.g possibly only one key paper) but appears convincing enough that the gene-disease pair is likely to be validated with additional evidence in the near future.', 'annotations': {'gencc_classification_id': 'GENCC:100003', 'clinical_reporting': 'true'}},
+    "LIMITED": {'description': 'Little human evidence exists to support a casual role for this gene in this disease, but not all evidence has been refuted. For example, there may be a collection of rare missense variants in humans but without convincing functional impact, segregration data that could either arise by chance (e.g across one or two meioses) or does not implicate a single gene, or functional data without direct recapitulation of the phenotype. Overall, the body of evidence does not meet contemporary criteria for claiming a valid association with disease. The majority are probably false associations. (previously labelled as possible).', 'annotations': {'gencc_classification_id': 'GENCC:100004', 'clinical_reporting': 'false'}, 'aliases': ['possible']},
+    "DISPUTED": {'description': 'Although evidence has been reported, other evidence of equal weight disputes the claim.', 'annotations': {'gencc_classification_id': 'GENCC:100005', 'clinical_reporting': 'false'}},
+    "REFUTED": {'description': 'There has been an assertion of a gene-disease association in the literature, but new valid evidence has arisen that refutes the entire original body of evidence.', 'annotations': {'gencc_classification_id': 'GENCC:100006', 'clinical_reporting': 'false'}},
+}
+
+class G2PAllelicRequirement(RichEnum):
+    """
+    The genotype required at the locus for the disease to manifest, also referred to in G2P as the genotype. HPO mode of inheritance (MOI) terminology is used; G2P uses synonyms of the MOI terms as many of the disorders described are de novo.
+The nine values are G2P's published genotype list, taken verbatim from the API the terminology page itself calls (GET /gene2phenotype/api/attribs/, key "genotype"), which includes the bare monoallelic_X alongside monoallelic_X_hemizygous and monoallelic_X_heterozygous.
+All nine G2P genotype strings are recorded by HPO as oio:hasExactSynonym of the term mapped below (verified against the HPO release directly; note that the OLS obo_synonym field under-reports these, listing only synonyms that carry an xref). That exact-synonym correspondence is what makes these mappings unambiguous.
+By convention in this enum, title is the HPO term label and the G2P string is carried as an alias, matching the pv-mapping guidance and clinical/genetics.yaml; consumers wanting G2P's own display string should read aliases.
+    """
+    # Enum members
+    MONOALLELIC_AUTOSOMAL = "MONOALLELIC_AUTOSOMAL"
+    BIALLELIC_AUTOSOMAL = "BIALLELIC_AUTOSOMAL"
+    MONOALLELIC_X = "MONOALLELIC_X"
+    MONOALLELIC_X_HEMIZYGOUS = "MONOALLELIC_X_HEMIZYGOUS"
+    MONOALLELIC_X_HETEROZYGOUS = "MONOALLELIC_X_HETEROZYGOUS"
+    MONOALLELIC_Y_HEMIZYGOUS = "MONOALLELIC_Y_HEMIZYGOUS"
+    MONOALLELIC_PAR = "MONOALLELIC_PAR"
+    BIALLELIC_PAR = "BIALLELIC_PAR"
+    MITOCHONDRIAL = "MITOCHONDRIAL"
+
+# Set metadata after class creation to avoid it becoming an enum member
+G2PAllelicRequirement._metadata = {
+    "MONOALLELIC_AUTOSOMAL": {'description': 'Plausible disease-causing mutations on an autosomal chromosome identified on one allele in all or the vast majority of with specific disorder.', 'meaning': 'HP:0000006', 'aliases': ['monoallelic_autosomal']},
+    "BIALLELIC_AUTOSOMAL": {'description': 'Plausible disease-causing homozygous or compound heterozygous mutations identified on both alleles in the autosomal chromosome.', 'meaning': 'HP:0000007', 'aliases': ['biallelic_autosomal']},
+    "MONOALLELIC_X": {'description': 'Plausible disease-causing mutations identified on the X chromosome.', 'meaning': 'HP:0001417', 'aliases': ['monoallelic_X']},
+    "MONOALLELIC_X_HEMIZYGOUS": {'description': 'Plausible disease-causing mutations identified on the X chromosome in a male as a cause of a specific disease, the disorder being predominantly recessive in female carriers.', 'meaning': 'HP:0001419', 'aliases': ['monoallelic_X_hemizygous']},
+    "MONOALLELIC_X_HETEROZYGOUS": {'description': 'Plausible disease-causing mutations identified in one copy of the X chromosome in females as a cause of a specific disease, include disorders where heterozygous females and hemizygous males are similarly affected e.g SMC1A mutations.', 'meaning': 'HP:0001423', 'aliases': ['monoallelic_X_heterozygous']},
+    "MONOALLELIC_Y_HEMIZYGOUS": {'description': 'Plausible disease-causing mutations identified in an allele found in the Y chromosome. The Y chromosome is passed from father to son as this mutation may affect only males.', 'meaning': 'HP:0001450', 'aliases': ['monoallelic_Y_hemizygous']},
+    "MONOALLELIC_PAR": {'description': 'Plausible disease-causing mutations identified in an allele found in the pseudoautosomal regions. Inheritance is not strictly sex-linked.', 'meaning': 'HP:0034340', 'aliases': ['monoallelic_PAR']},
+    "BIALLELIC_PAR": {'description': 'Plausible disease-causing homozygous or compound heterozygous mutations identified on both alleles found in the pseudoautosomal regions. Inheritance is not strictly sex-linked.', 'meaning': 'HP:0034341', 'aliases': ['biallelic_PAR']},
+    "MITOCHONDRIAL": {'description': 'Plausible disease-causing mutations identified on mitochondrial DNA where homoplasmy or heteroplasmy are associated with a specific disorder.', 'meaning': 'HP:0001427', 'aliases': ['mitochondrial']},
+}
+
+class G2PCrossCuttingModifier(RichEnum):
+    """
+    Additional qualifiers applied to the allelic requirement of a G2P gene-disease association. HPO inheritance qualifier terms (HP:0034335) are used where available. Potential secondary finding and restricted mutation set are G2P-specific and have no HPO equivalent.
+    """
+    # Enum members
+    DISPLAYS_ANTICIPATION = "DISPLAYS_ANTICIPATION"
+    IMPRINTED_REGION = "IMPRINTED_REGION"
+    TYPICALLY_DE_NOVO = "TYPICALLY_DE_NOVO"
+    TYPICALLY_MOSAIC = "TYPICALLY_MOSAIC"
+    TYPIFIED_BY_INCOMPLETE_PENETRANCE = "TYPIFIED_BY_INCOMPLETE_PENETRANCE"
+    POTENTIAL_SECONDARY_FINDING = "POTENTIAL_SECONDARY_FINDING"
+    RESTRICTED_MUTATION_SET = "RESTRICTED_MUTATION_SET"
+
+# Set metadata after class creation to avoid it becoming an enum member
+G2PCrossCuttingModifier._metadata = {
+    "DISPLAYS_ANTICIPATION": {'description': 'A phenomenon in which the severity of a disorder increases, or the age of onset decreases, as the disorder is passed from one generation to the next, typically due to expansion of a repeat sequence. For example, Myotonic Dystrophy is caused by triplet repeat expansion in the DMPK gene.', 'meaning': 'HP:0003743', 'aliases': ['displays anticipation']},
+    "IMPRINTED_REGION": {'description': 'Requires that the abnormal allele be paternal or maternal in origin, depending on the disease-gene relationship. Imprinting refers to a normal developmental process in which either the paternal or maternal allele is inactivated, depending on the specific locus, thus leading to expression from only one copy of the gene. Disease typically manifests when a deleterious variant is inherited from a parent whose copy of the gene would normally be expressed, but not when a deleterious variant is inherited from a parent whose copy of the gene would normally be inactivated.', 'meaning': 'HP:0034338', 'aliases': ['imprinted region']},
+    "TYPICALLY_DE_NOVO": {'description': 'Plausible disease causing mutations that occur post zygotically (formation of gametes). Note that this G2P wording is internally inconsistent: post-zygotic events are somatic, which is what TYPICALLY_MOSAIC describes, whereas gametogenesis is pre-zygotic. The mapped HPO term HP:0025352 carries the intended sense, defining conditions that are exclusively or predominantly observed to display de novo variants.', 'meaning': 'HP:0025352', 'aliases': ['typically de novo']},
+    "TYPICALLY_MOSAIC": {'description': 'Plausible disease causing mutations identified on one allele in a proportion of cells with the others being wild-type.', 'meaning': 'HP:0001442', 'aliases': ['typically mosaic']},
+    "TYPIFIED_BY_INCOMPLETE_PENETRANCE": {'description': 'A condition in which not all individuals carrying the disease-causing genotype manifest the associated phenotype.', 'meaning': 'HP:0003829', 'aliases': ['typified by incomplete penetrance']},
+    "POTENTIAL_SECONDARY_FINDING": {'description': 'This includes ACMG Secondary Findings and/or late onset conditions.'},
+    "RESTRICTED_MUTATION_SET": {'description': 'This is used when a disease is associated with a single recurrent variant or a set of variants only found in a particular protein domain.'},
+}
+
+class G2PMolecularMechanism(RichEnum):
+    """
+    The mechanism of disease derived from the available evidence, following the definitions of Backwell and Marsh (PMID:35395171). These mechanisms describe a gene-disease association rather than an individual variant, so the Sequence Ontology variant terms are recorded as close mappings rather than exact meanings.
+    """
+    # Enum members
+    LOSS_OF_FUNCTION = "LOSS_OF_FUNCTION"
+    GAIN_OF_FUNCTION = "GAIN_OF_FUNCTION"
+    DOMINANT_NEGATIVE = "DOMINANT_NEGATIVE"
+    UNDETERMINED_NON_LOSS_OF_FUNCTION = "UNDETERMINED_NON_LOSS_OF_FUNCTION"
+    UNDETERMINED = "UNDETERMINED"
+
+# Set metadata after class creation to avoid it becoming an enum member
+G2PMolecularMechanism._metadata = {
+    "LOSS_OF_FUNCTION": {'description': 'Loss-of-function variants involve a loss of the normal biological function of a protein. Often these are nonsense or frameshift mutations that introduce premature stop codons. Due to nonsense-mediated decay of the resulting mRNAs, most premature stop codons will result in no protein being produced, rather than a truncated protein. However, there are also many examples of loss-of-function variants that change the amino acid sequence and result in non-functional protein products. These mutations can cause a complete loss of function (amorphic), analogous to a protein null mutation, or only a partial loss of function (hypomorphic). May also include variants in regulatory regions.', 'aliases': ['loss_of_function_variant']},
+    "GAIN_OF_FUNCTION": {'description': 'Gain-of-function variants have their phenotypic effect because the mutant protein does something different than the wild-type protein. Often, these variants cause disease by increasing protein activity (hypermorphic) or introducing a completely new function (neomorphic), but the specific molecular mechanisms underlying gain-of-function mutations can be complex. May also include variants in regulatory regions.', 'aliases': ['gain_of_function_variant']},
+    "DOMINANT_NEGATIVE": {'description': 'Dominant-negative variants involve the mutant protein directly or indirectly blocking the normal biological function of the wild-type protein (antimorphic). They can thus cause a disproportionate (>50%) loss of function, even though only half of the protein is mutated eg. heterozygous variants in COL1A1 that disrupt the triple collagen helix.', 'aliases': ['antimorphic', 'dominant_negative_variant']},
+    "UNDETERMINED_NON_LOSS_OF_FUNCTION": {'description': 'Very often it is difficult to distinguish between dominant negative and gain of function, but it is clearly a non-loss-of-function mechanism (e.g. from co-expression experiments showing a damaging effect from the mutant allele).', 'aliases': ['undetermined non-loss-of-function']},
+    "UNDETERMINED": {'description': 'Not known.'},
+}
+
+class G2PMolecularMechanismSynopsis(RichEnum):
+    """
+    A more detailed description of the molecular mechanism of a G2P gene-disease association, following the definitions of Backwell and Marsh (PMID:35395171). A synopsis refines the higher-level molecular mechanism; more than one synopsis may apply to a single gene-disease association.
+    """
+    # Enum members
+    DESTABILISING_LOF = "DESTABILISING_LOF"
+    INTERACTION_DISRUPTING_LOF = "INTERACTION_DISRUPTING_LOF"
+    LOSS_OF_ACTIVITY_LOF = "LOSS_OF_ACTIVITY_LOF"
+    LOF_DUE_TO_PROTEIN_MISLOCALISATION = "LOF_DUE_TO_PROTEIN_MISLOCALISATION"
+    ASSEMBLY_MEDIATED_DOMINANT_NEGATIVE = "ASSEMBLY_MEDIATED_DOMINANT_NEGATIVE"
+    COMPETITIVE_DOMINANT_NEGATIVE = "COMPETITIVE_DOMINANT_NEGATIVE"
+    ASSEMBLY_MEDIATED_GOF = "ASSEMBLY_MEDIATED_GOF"
+    LOCAL_LOF_LEADING_TO_OVERALL_GOF = "LOCAL_LOF_LEADING_TO_OVERALL_GOF"
+    AGGREGATION = "AGGREGATION"
+    OTHER_GOF = "OTHER_GOF"
+
+# Set metadata after class creation to avoid it becoming an enum member
+G2PMolecularMechanismSynopsis._metadata = {
+    "DESTABILISING_LOF": {'description': 'A process whereby a missense change destabilises the protein structure resulting in loss of function.', 'annotations': {'parent_mechanism': 'LOSS_OF_FUNCTION'}},
+    "INTERACTION_DISRUPTING_LOF": {'description': 'A process whereby a variant allele disrupts interaction resulting in loss of function, for example a change in an interaction site.', 'annotations': {'parent_mechanism': 'LOSS_OF_FUNCTION'}},
+    "LOSS_OF_ACTIVITY_LOF": {'description': 'A process whereby a variant allele disrupts activity resulting in loss of function, for example a change in an active site.', 'annotations': {'parent_mechanism': 'LOSS_OF_FUNCTION'}},
+    "LOF_DUE_TO_PROTEIN_MISLOCALISATION": {'description': 'A loss of function caused by mislocalisation of a protein, rather than direct disruption of its structure or function.', 'annotations': {'parent_mechanism': 'LOSS_OF_FUNCTION'}},
+    "ASSEMBLY_MEDIATED_DOMINANT_NEGATIVE": {'description': 'A protein change which does not prevent coassembly into a complex with wild-type subunits but results in poisoning the activity of the hybrid complex, causing a disproportionate loss of function.', 'annotations': {'parent_mechanism': 'DOMINANT_NEGATIVE'}},
+    "COMPETITIVE_DOMINANT_NEGATIVE": {'description': 'A process whereby the novel protein disrupts specific interactions by competing with wild-type protein, thus having a dominant-negative effect.', 'annotations': {'parent_mechanism': 'DOMINANT_NEGATIVE'}},
+    "ASSEMBLY_MEDIATED_GOF": {'description': 'A process whereby incorporation of a mutant subunit into a protein complex leads to a gain of function, for example through constitutive activation of a channel.', 'annotations': {'parent_mechanism': 'GAIN_OF_FUNCTION'}},
+    "LOCAL_LOF_LEADING_TO_OVERALL_GOF": {'description': 'A gain of function caused by the localised loss of a specific function within a protein, for example binding of a regulatory domain is disrupted but enzymatic activity is retained.', 'annotations': {'parent_mechanism': 'GAIN_OF_FUNCTION'}},
+    "AGGREGATION": {'description': 'A process by which the variant allele causes aggregation usually causing toxic gain of function, for example misfolded proteins self-assembling into large aggregates or RNA binding protein gelation.', 'annotations': {'parent_mechanism': 'GAIN_OF_FUNCTION'}},
+    "OTHER_GOF": {'description': 'A gain of function process other than local loss of function or assembly mediated, for example a mutation in an active site which changes histone binding causing a novel function.', 'annotations': {'parent_mechanism': 'GAIN_OF_FUNCTION'}},
+}
+
+class G2PMolecularMechanismSupport(RichEnum):
+    """
+    Whether the molecular mechanism recorded for a G2P gene-disease association is directly supported by reported evidence, or inferred by the curator.
+    """
+    # Enum members
+    EVIDENCE = "EVIDENCE"
+    INFERRED = "INFERRED"
+
+# Set metadata after class creation to avoid it becoming an enum member
+G2PMolecularMechanismSupport._metadata = {
+    "EVIDENCE": {'description': 'The molecular mechanism is directly supported by experimental evidence reported in a publication attached to the record.'},
+    "INFERRED": {'description': 'The molecular mechanism is inferred by the curator rather than directly evidenced in the attached publications.'},
+}
+
+class G2PMechanismEvidenceCategory(RichEnum):
+    """
+    The broad category of experimental evidence supporting a molecular mechanism in G2P. G2P evidence classifications reuse terms from the ClinGen gene-disease validity SOP Experimental Evidence Summary Matrix.
+    """
+    # Enum members
+    FUNCTION = "FUNCTION"
+    FUNCTIONAL_ALTERATION = "FUNCTIONAL_ALTERATION"
+    MODELS = "MODELS"
+    RESCUE = "RESCUE"
+
+# Set metadata after class creation to avoid it becoming an enum member
+G2PMechanismEvidenceCategory._metadata = {
+    "FUNCTION": {'description': 'Evidence about the biochemical function, expression or interactions of the gene product.'},
+    "FUNCTIONAL_ALTERATION": {'description': 'Evidence from cells in which the function of the gene has been disrupted, showing a phenotype consistent with the human disease process.'},
+    "MODELS": {'description': 'Evidence from a cell culture model or non-human model organism with a disrupted copy of the gene.'},
+    "RESCUE": {'description': 'Evidence that the phenotype can be rescued by restoring the wild-type gene or gene product.'},
+}
+
+class G2PFunctionEvidence(RichEnum):
+    """
+    Types of evidence in the function category of the G2P molecular mechanism evidence classification.
+    """
+    # Enum members
+    BIOCHEMICAL = "BIOCHEMICAL"
+    PROTEIN_INTERACTION = "PROTEIN_INTERACTION"
+    PROTEIN_EXPRESSION = "PROTEIN_EXPRESSION"
+    IN_SILICO_MODELLING = "IN_SILICO_MODELLING"
+
+# Set metadata after class creation to avoid it becoming an enum member
+G2PFunctionEvidence._metadata = {
+    "BIOCHEMICAL": {'description': 'Evidence showing the gene product performs a biochemical function: (A) shared with other known genes in the disease of interest, or (B) consistent with the phenotype.'},
+    "PROTEIN_INTERACTION": {'description': 'Evidence showing the gene product interacts with proteins previously implicated in the disease of interest.'},
+    "PROTEIN_EXPRESSION": {'description': 'Evidence showing the gene is expressed in tissues relevant to the disease of interest and/or is altered in expression in patients who have the disease.'},
+    "IN_SILICO_MODELLING": {'description': 'Evidence generated using computer simulations and models predicting the functional impact of relevant gene-specific variants. These models can predict protein structure changes, disruption of protein interactions, or changes in gene and/or protein expression.'},
+}
+
+class G2PFunctionalAlterationEvidence(RichEnum):
+    """
+    Types of evidence in the functional alteration category of the G2P molecular mechanism evidence classification, distinguished by whether the cells came from an affected individual.
+    """
+    # Enum members
+    PATIENT_CELLS = "PATIENT_CELLS"
+    NON_PATIENT_CELLS = "NON_PATIENT_CELLS"
+
+# Set metadata after class creation to avoid it becoming an enum member
+G2PFunctionalAlterationEvidence._metadata = {
+    "PATIENT_CELLS": {'description': 'Evidence showing that cultured patient cells, in which the function of the gene has been disrupted, have a phenotype that is consistent with the human disease process.'},
+    "NON_PATIENT_CELLS": {'description': 'Evidence showing that cultured non-patient cells, in which the function of the gene has been disrupted, have a phenotype that is consistent with the human disease process.'},
+}
+
+class G2PModelsEvidence(RichEnum):
+    """
+    Types of evidence in the models category of the G2P molecular mechanism evidence classification.
+    """
+    # Enum members
+    CELL_CULTURE_MODEL = "CELL_CULTURE_MODEL"
+    NON_HUMAN_MODEL_ORGANISM = "NON_HUMAN_MODEL_ORGANISM"
+
+# Set metadata after class creation to avoid it becoming an enum member
+G2PModelsEvidence._metadata = {
+    "CELL_CULTURE_MODEL": {'description': 'A cell culture model with a disrupted copy of the gene shows a phenotype consistent with the human disease state.'},
+    "NON_HUMAN_MODEL_ORGANISM": {'description': 'A non-human model organism with a disrupted copy of the gene shows a phenotype consistent with the human disease state.'},
+}
+
+class G2PRescueEvidence(RichEnum):
+    """
+    Types of evidence in the rescue category of the G2P molecular mechanism evidence classification, distinguished by the system in which rescue was demonstrated.
+    """
+    # Enum members
+    PATIENT_CELLS = "PATIENT_CELLS"
+    CELL_CULTURE_MODEL = "CELL_CULTURE_MODEL"
+    NON_HUMAN_MODEL_ORGANISM = "NON_HUMAN_MODEL_ORGANISM"
+
+# Set metadata after class creation to avoid it becoming an enum member
+G2PRescueEvidence._metadata = {
+    "PATIENT_CELLS": {'description': 'Evidence showing that the phenotype can be rescued in patient cells.'},
+    "CELL_CULTURE_MODEL": {'description': 'Evidence showing that the phenotype can be rescued in cell culture models.'},
+    "NON_HUMAN_MODEL_ORGANISM": {'description': 'Evidence showing that the phenotype can be rescued in non-human model organisms.'},
+}
+
+class G2PVariantConsequence(RichEnum):
+    """
+    The consequence of the reported variants at the protein (for protein-coding genes) or the RNA (for non-protein coding genes), per allele. These are Sequence Ontology terms developed for G2P and described in PMID:37982373; the descriptions below are the G2P-authored usage notes rather than the SO text definitions. As in the other SO-backed enums here, title is uniformly the SO term label and any differing G2P label is carried as an alias; for four of the six values the SO and G2P labels coincide, which is why only altered_gene_product_sequence and function_uncertain_variant carry an alias.
+    """
+    # Enum members
+    ALTERED_GENE_PRODUCT_LEVEL = "ALTERED_GENE_PRODUCT_LEVEL"
+    DECREASED_GENE_PRODUCT_LEVEL = "DECREASED_GENE_PRODUCT_LEVEL"
+    ABSENT_GENE_PRODUCT = "ABSENT_GENE_PRODUCT"
+    INCREASED_GENE_PRODUCT_LEVEL = "INCREASED_GENE_PRODUCT_LEVEL"
+    ALTERED_GENE_PRODUCT_STRUCTURE = "ALTERED_GENE_PRODUCT_STRUCTURE"
+    UNCERTAIN = "UNCERTAIN"
+
+# Set metadata after class creation to avoid it becoming an enum member
+G2PVariantConsequence._metadata = {
+    "ALTERED_GENE_PRODUCT_LEVEL": {'description': 'A sequence variant that alters the level or amount of gene product produced. This high-level term can be applied where the direction of level change (increased vs decreased gene product level) is unknown or not confirmed, e.g., promoter or enhancer variants, some splice variants.', 'meaning': 'SO:0002314'},
+    "DECREASED_GENE_PRODUCT_LEVEL": {'description': "A sequence variant that decreases the level or amount of gene product produced, e.g., a 5' UTR variant that reduced protein levels by disrupting translation, a 3' UTR variant that affects RNA stability, splice variants that decrease but do not stop expression, variants leading to nonsense-mediated-decay (NMD)-competent premature termination codon (PTCs), or gene-disrupting structural variants.", 'meaning': 'SO:0002316'},
+    "ABSENT_GENE_PRODUCT": {'description': 'A sequence variant that results in no gene product. e.g., whole gene or other large scale disruptive structural variant, variants producing NMD-competent PTCs.', 'meaning': 'SO:0002317'},
+    "INCREASED_GENE_PRODUCT_LEVEL": {'description': 'A variant that increases the level or amount of gene product produced, e.g., non-disruptive gene duplications, some promoter or enhancer variants.', 'meaning': 'SO:0002315'},
+    "ALTERED_GENE_PRODUCT_STRUCTURE": {'description': 'A sequence variant that alters the sequence of a gene product. e.g., missense variants, NMD-incompetent PTCs, and other length-changing variants (in-frame indels, stop loss).', 'meaning': 'SO:0002318', 'aliases': ['altered gene product structure']},
+    "UNCERTAIN": {'description': 'A sequence variant in which the function of a gene product is unknown with respect to a reference. Used by G2P where the consequence of the reported variants could not be determined.', 'meaning': 'SO:0002220', 'aliases': ['uncertain']},
+}
+
+class G2PVariantTypeGroup(RichEnum):
+    """
+    The primary type grouping under which G2P organises the variant types associated with a curated gene-disease pair.
+    """
+    # Enum members
+    NMD_VARIANTS = "NMD_VARIANTS"
+    SPLICE_VARIANTS = "SPLICE_VARIANTS"
+    REGULATORY_VARIANTS = "REGULATORY_VARIANTS"
+    PROTEIN_CHANGING_VARIANTS = "PROTEIN_CHANGING_VARIANTS"
+    OTHER_VARIANTS = "OTHER_VARIANTS"
+
+# Set metadata after class creation to avoid it becoming an enum member
+G2PVariantTypeGroup._metadata = {
+    "NMD_VARIANTS": {'description': 'Variant types qualified by whether the resulting transcript is predicted to trigger or escape nonsense-mediated decay.'},
+    "SPLICE_VARIANTS": {'description': 'Variant types affecting splice sites or splice regions.'},
+    "REGULATORY_VARIANTS": {'description': 'Variant types in untranslated or regulatory regions.'},
+    "PROTEIN_CHANGING_VARIANTS": {'description': 'Variant types that change the coding sequence of the gene product.'},
+    "OTHER_VARIANTS": {'description': 'Variant types not covered by the NMD, splice, regulatory or protein changing groups, including structural and repeat changes.'},
+}
+
+class G2PVariantType(RichEnum):
+    """
+    The types of variants associated with the curated gene-disease pair reported in the publication. All terms are Sequence Ontology terms. Where G2P uses a label that differs from the current SO label, the G2P label is recorded as an alias. Descriptions are the SO text definitions where SO provides one.
+The NMD-qualified types have two parents in SO, so they are modelled with the base variant as is_a and the NMD qualifier as a mixin. LinkML preserves both, but as of linkml 1.9.5 the OWL generator emits only the is_a parent as rdfs:subClassOf and drops the mixin, so the NMD axis is additionally recorded in the nmd_status annotation to keep it available in every generated artifact. If a later linkml emits permissible-value mixins, that annotation is redundant and can go.
+    """
+    # Enum members
+    NMD_TRIGGERING = "NMD_TRIGGERING"
+    NMD_ESCAPING = "NMD_ESCAPING"
+    STOP_GAINED_NMD_TRIGGERING = "STOP_GAINED_NMD_TRIGGERING"
+    STOP_GAINED_NMD_ESCAPING = "STOP_GAINED_NMD_ESCAPING"
+    FRAMESHIFT_VARIANT_NMD_TRIGGERING = "FRAMESHIFT_VARIANT_NMD_TRIGGERING"
+    FRAMESHIFT_VARIANT_NMD_ESCAPING = "FRAMESHIFT_VARIANT_NMD_ESCAPING"
+    SPLICE_DONOR_VARIANT_NMD_TRIGGERING = "SPLICE_DONOR_VARIANT_NMD_TRIGGERING"
+    SPLICE_DONOR_VARIANT_NMD_ESCAPING = "SPLICE_DONOR_VARIANT_NMD_ESCAPING"
+    SPLICE_ACCEPTOR_VARIANT_NMD_TRIGGERING = "SPLICE_ACCEPTOR_VARIANT_NMD_TRIGGERING"
+    SPLICE_ACCEPTOR_VARIANT_NMD_ESCAPING = "SPLICE_ACCEPTOR_VARIANT_NMD_ESCAPING"
+    SPLICE_REGION_VARIANT = "SPLICE_REGION_VARIANT"
+    SPLICE_ACCEPTOR_VARIANT = "SPLICE_ACCEPTOR_VARIANT"
+    SPLICE_DONOR_VARIANT = "SPLICE_DONOR_VARIANT"
+    FIVE_PRIME_UTR_VARIANT = "FIVE_PRIME_UTR_VARIANT"
+    THREE_PRIME_UTR_VARIANT = "THREE_PRIME_UTR_VARIANT"
+    REGULATORY_REGION_VARIANT = "REGULATORY_REGION_VARIANT"
+    START_LOST = "START_LOST"
+    STOP_GAINED = "STOP_GAINED"
+    STOP_LOST = "STOP_LOST"
+    FRAMESHIFT_VARIANT = "FRAMESHIFT_VARIANT"
+    MISSENSE_VARIANT = "MISSENSE_VARIANT"
+    INFRAME_INSERTION = "INFRAME_INSERTION"
+    INFRAME_DELETION = "INFRAME_DELETION"
+    SYNONYMOUS_VARIANT = "SYNONYMOUS_VARIANT"
+    INTRON_VARIANT = "INTRON_VARIANT"
+    INTERGENIC_VARIANT = "INTERGENIC_VARIANT"
+    NON_CODING_TRANSCRIPT_VARIANT = "NON_CODING_TRANSCRIPT_VARIANT"
+    SHORT_TANDEM_REPEAT_CHANGE = "SHORT_TANDEM_REPEAT_CHANGE"
+    COPY_NUMBER_VARIATION = "COPY_NUMBER_VARIATION"
+    WHOLE_PARTIAL_GENE_DELETION = "WHOLE_PARTIAL_GENE_DELETION"
+    WHOLE_PARTIAL_GENE_DUPLICATION = "WHOLE_PARTIAL_GENE_DUPLICATION"
+
+# Set metadata after class creation to avoid it becoming an enum member
+G2PVariantType._metadata = {
+    "NMD_TRIGGERING": {'description': 'A sequence variant that leads to a change in the location of a termination codon in a transcript that leads to nonsense-mediated decay (NMD). The change in location of a termination codon can be caused by several different types of sequence variants, including stop_gained (SO:0001587), frameshift_variant (SO:0001589), splice_donor_variant (SO:0001575), and splice_acceptor_variant (SO:0001574) types of variants.', 'meaning': 'SO:0002319', 'annotations': {'variant_type_group': 'NMD_VARIANTS'}, 'aliases': ['NMD_triggering']},
+    "NMD_ESCAPING": {'description': 'A sequence variant that leads to a change in the location of a termination codon in a transcript but allows the transcript to escape nonsense-mediated decay (NMD). The change in location of a termination codon can be caused by several different types of sequence variants, including stop_gained (SO:0001587), frameshift_variant (SO:0001589), splice_donor_variant (SO:0001575), and splice_acceptor_variant (SO:0001574) types of variants.', 'meaning': 'SO:0002320', 'annotations': {'variant_type_group': 'NMD_VARIANTS'}, 'aliases': ['NMD_escaping']},
+    "STOP_GAINED_NMD_TRIGGERING": {'description': 'A stop_gained (SO:0001587) variant that is degraded by nonsense-mediated decay (NMD).', 'meaning': 'SO:0002321', 'annotations': {'variant_type_group': 'NMD_VARIANTS', 'nmd_status': 'NMD_TRIGGERING'}},
+    "STOP_GAINED_NMD_ESCAPING": {'description': 'A stop_gained (SO:0001587) variant that allows the transcript to escape nonsense-mediated decay (NMD).', 'meaning': 'SO:0002322', 'annotations': {'variant_type_group': 'NMD_VARIANTS', 'nmd_status': 'NMD_ESCAPING'}},
+    "FRAMESHIFT_VARIANT_NMD_TRIGGERING": {'description': 'A frameshift_variant (SO:0001589) that is degraded by nonsense-mediated decay (NMD).', 'meaning': 'SO:0002323', 'annotations': {'variant_type_group': 'NMD_VARIANTS', 'nmd_status': 'NMD_TRIGGERING'}},
+    "FRAMESHIFT_VARIANT_NMD_ESCAPING": {'description': 'A frameshift_variant (SO:0001589) that allows the transcript to escape nonsense-mediated decay (NMD).', 'meaning': 'SO:0002324', 'annotations': {'variant_type_group': 'NMD_VARIANTS', 'nmd_status': 'NMD_ESCAPING'}},
+    "SPLICE_DONOR_VARIANT_NMD_TRIGGERING": {'description': 'A splice_donor_variant (SO:0001575) that is degraded by nonsense-mediated decay (NMD).', 'meaning': 'SO:0002325', 'annotations': {'variant_type_group': 'NMD_VARIANTS', 'nmd_status': 'NMD_TRIGGERING'}},
+    "SPLICE_DONOR_VARIANT_NMD_ESCAPING": {'description': 'A splice_donor_variant (SO:0001575) that allows the transcript to escape nonsense-mediated decay (NMD).', 'meaning': 'SO:0002326', 'annotations': {'variant_type_group': 'NMD_VARIANTS', 'nmd_status': 'NMD_ESCAPING'}},
+    "SPLICE_ACCEPTOR_VARIANT_NMD_TRIGGERING": {'description': 'A splice_acceptor_variant (SO:0001574) that is degraded by nonsense-mediated decay (NMD).', 'meaning': 'SO:0002327', 'annotations': {'variant_type_group': 'NMD_VARIANTS', 'nmd_status': 'NMD_TRIGGERING'}},
+    "SPLICE_ACCEPTOR_VARIANT_NMD_ESCAPING": {'description': 'A splice_acceptor_variant (SO:0001574) that allows the transcript to escape nonsense-mediated decay (NMD).', 'meaning': 'SO:0002328', 'annotations': {'variant_type_group': 'NMD_VARIANTS', 'nmd_status': 'NMD_ESCAPING'}},
+    "SPLICE_REGION_VARIANT": {'description': 'A sequence variant in which a change has occurred within the region of the splice site, either within 1-3 bases of the exon or 3-8 bases of the intron.', 'meaning': 'SO:0001630', 'annotations': {'variant_type_group': 'SPLICE_VARIANTS'}},
+    "SPLICE_ACCEPTOR_VARIANT": {'description': "A splice variant that changes the 2 base region at the 3' end of an intron.", 'meaning': 'SO:0001574', 'annotations': {'variant_type_group': 'SPLICE_VARIANTS'}},
+    "SPLICE_DONOR_VARIANT": {'description': "A splice variant that changes the 2 base pair region at the 5' end of an intron.", 'meaning': 'SO:0001575', 'annotations': {'variant_type_group': 'SPLICE_VARIANTS'}},
+    "FIVE_PRIME_UTR_VARIANT": {'description': "A UTR variant of the 5' UTR.", 'meaning': 'SO:0001623', 'annotations': {'variant_type_group': 'REGULATORY_VARIANTS'}},
+    "THREE_PRIME_UTR_VARIANT": {'description': "A UTR variant of the 3' UTR.", 'meaning': 'SO:0001624', 'annotations': {'variant_type_group': 'REGULATORY_VARIANTS'}},
+    "REGULATORY_REGION_VARIANT": {'description': 'A sequence variant located within a regulatory region.', 'meaning': 'SO:0001566', 'annotations': {'variant_type_group': 'REGULATORY_VARIANTS'}},
+    "START_LOST": {'description': 'A codon variant that changes at least one base of the canonical start codon.', 'meaning': 'SO:0002012', 'annotations': {'variant_type_group': 'PROTEIN_CHANGING_VARIANTS'}},
+    "STOP_GAINED": {'description': 'A sequence variant whereby at least one base of a codon is changed, resulting in a premature stop codon, leading to a shortened polypeptide.', 'meaning': 'SO:0001587', 'annotations': {'variant_type_group': 'PROTEIN_CHANGING_VARIANTS'}},
+    "STOP_LOST": {'description': 'A sequence variant where at least one base of the terminator codon (stop) is changed, resulting in an elongated transcript.', 'meaning': 'SO:0001578', 'annotations': {'variant_type_group': 'PROTEIN_CHANGING_VARIANTS'}},
+    "FRAMESHIFT_VARIANT": {'description': 'A sequence variant which causes a disruption of the translational reading frame, because the number of nucleotides inserted or deleted is not a multiple of three.', 'meaning': 'SO:0001589', 'annotations': {'variant_type_group': 'PROTEIN_CHANGING_VARIANTS'}},
+    "MISSENSE_VARIANT": {'description': 'A sequence variant, that changes one or more bases, resulting in a different amino acid sequence but where the length is preserved.', 'meaning': 'SO:0001583', 'annotations': {'variant_type_group': 'PROTEIN_CHANGING_VARIANTS'}},
+    "INFRAME_INSERTION": {'description': 'An inframe non synonymous variant that inserts bases into in the coding sequence.', 'meaning': 'SO:0001821', 'annotations': {'variant_type_group': 'PROTEIN_CHANGING_VARIANTS'}},
+    "INFRAME_DELETION": {'description': 'An inframe non synonymous variant that deletes bases from the coding sequence.', 'meaning': 'SO:0001822', 'annotations': {'variant_type_group': 'PROTEIN_CHANGING_VARIANTS'}},
+    "SYNONYMOUS_VARIANT": {'description': 'A sequence variant where there is no resulting change to the encoded amino acid.', 'meaning': 'SO:0001819', 'annotations': {'variant_type_group': 'OTHER_VARIANTS'}},
+    "INTRON_VARIANT": {'description': 'A transcript variant occurring within an intron.', 'meaning': 'SO:0001627', 'annotations': {'variant_type_group': 'OTHER_VARIANTS'}},
+    "INTERGENIC_VARIANT": {'description': 'A sequence variant located in the intergenic region, between genes.', 'meaning': 'SO:0001628', 'annotations': {'variant_type_group': 'OTHER_VARIANTS'}},
+    "NON_CODING_TRANSCRIPT_VARIANT": {'description': 'A transcript variant of a non coding RNA gene.', 'meaning': 'SO:0001619', 'annotations': {'variant_type_group': 'OTHER_VARIANTS'}},
+    "SHORT_TANDEM_REPEAT_CHANGE": {'description': 'A sequence variant where the copies of a short tandem repeat (STR) feature are either contracted or expanded. SO:0002161 carries no text definition; this description is taken from the SO term comment.', 'meaning': 'SO:0002161', 'annotations': {'variant_type_group': 'OTHER_VARIANTS'}},
+    "COPY_NUMBER_VARIATION": {'description': 'A variation that increases or decreases the copy number of a given region.', 'meaning': 'SO:0001019', 'annotations': {'variant_type_group': 'OTHER_VARIANTS'}},
+    "WHOLE_PARTIAL_GENE_DELETION": {'description': 'A feature ablation whereby the deleted region includes a transcript feature. Used by G2P to record whole or partial gene deletions.', 'meaning': 'SO:0001893', 'annotations': {'variant_type_group': 'OTHER_VARIANTS'}, 'aliases': ['whole_partial_gene_deletion']},
+    "WHOLE_PARTIAL_GENE_DUPLICATION": {'description': 'A feature amplification of a region containing a transcript. Used by G2P to record whole or partial gene duplications.', 'meaning': 'SO:0001889', 'annotations': {'variant_type_group': 'OTHER_VARIANTS'}, 'aliases': ['whole_partial_gene_duplication']},
+}
+
+class G2PPanel(RichEnum):
+    """
+    The disease-area panels into which G2P organises its curated gene-disease associations. A gene-disease association may appear on more than one panel.
+    """
+    # Enum members
+    CANCER = "CANCER"
+    CARDIAC = "CARDIAC"
+    DD = "DD"
+    EAR = "EAR"
+    EYE = "EYE"
+    SKELETAL = "SKELETAL"
+    SKIN = "SKIN"
+
+# Set metadata after class creation to avoid it becoming an enum member
+G2PPanel._metadata = {
+    "CANCER": {'description': 'Cancer disorders.'},
+    "CARDIAC": {'description': 'Cardiac disorders.'},
+    "DD": {'description': 'Developmental disorders.', 'aliases': ['Developmental disorders']},
+    "EAR": {'description': 'Ear disorders.'},
+    "EYE": {'description': 'Eye disorders.'},
+    "SKELETAL": {'description': 'Skeletal disorders.'},
+    "SKIN": {'description': 'Skin disorders.'},
+}
+
 class ProcessScaleEnum(RichEnum):
     """
     Scale of bioprocessing operations from lab bench to commercial production
@@ -16357,6 +17767,16 @@ class DownstreamProcessEnum(RichEnum):
     DISTILLATION = "DISTILLATION"
     DRYING = "DRYING"
     HOMOGENIZATION = "HOMOGENIZATION"
+    CLARIFICATION = "CLARIFICATION"
+    FLOCCULATION = "FLOCCULATION"
+    ULTRAFILTRATION = "ULTRAFILTRATION"
+    DIAFILTRATION = "DIAFILTRATION"
+    TANGENTIAL_FLOW_FILTRATION = "TANGENTIAL_FLOW_FILTRATION"
+    BUFFER_EXCHANGE = "BUFFER_EXCHANGE"
+    ADSORPTION = "ADSORPTION"
+    VIRAL_INACTIVATION = "VIRAL_INACTIVATION"
+    POLISHING = "POLISHING"
+    LYOPHILIZATION = "LYOPHILIZATION"
 
 # Set metadata after class creation to avoid it becoming an enum member
 DownstreamProcessEnum._metadata = {
@@ -16369,6 +17789,16 @@ DownstreamProcessEnum._metadata = {
     "DISTILLATION": {'description': 'Distillation', 'meaning': 'CHMO:0001534', 'annotations': {'principle': 'Boiling point difference'}},
     "DRYING": {'description': 'Drying operations', 'meaning': 'CHMO:0001551', 'annotations': {'types': 'Spray, freeze, vacuum'}},
     "HOMOGENIZATION": {'description': 'Cell disruption/homogenization', 'annotations': {'methods': 'High pressure, bead mill'}},
+    "CLARIFICATION": {'description': 'Removal of cells and debris to produce a clarified harvest', 'annotations': {'methods': 'Centrifugation, depth filtration'}},
+    "FLOCCULATION": {'description': 'Aggregation of cells and debris into flocs to aid clarification'},
+    "ULTRAFILTRATION": {'description': 'Membrane concentration retaining macromolecules such as proteins', 'meaning': 'CHMO:0001645', 'annotations': {'mwco': 'Typically 1-1000 kDa'}},
+    "DIAFILTRATION": {'description': 'Buffer exchange and desalting by ultrafiltration with continuous makeup'},
+    "TANGENTIAL_FLOW_FILTRATION": {'description': 'Crossflow membrane filtration used for concentration and diafiltration', 'annotations': {'aliases': 'TFF, crossflow filtration'}},
+    "BUFFER_EXCHANGE": {'description': 'Replacement of the buffer matrix of a product stream'},
+    "ADSORPTION": {'description': 'Capture of product or impurities onto a solid sorbent'},
+    "VIRAL_INACTIVATION": {'description': 'Treatment step that inactivates potential viral contaminants', 'annotations': {'methods': 'Low pH, solvent/detergent, heat'}},
+    "POLISHING": {'description': 'Final chromatographic or filtration steps to remove trace impurities'},
+    "LYOPHILIZATION": {'description': 'Freeze-drying to produce a stable solid product', 'meaning': 'CHMO:0001553', 'annotations': {'aliases': 'freeze drying'}},
 }
 
 class FeedstockTypeEnum(RichEnum):
@@ -16527,6 +17957,780 @@ BioprocessOptimizationType._metadata = {
     "DOWNSTREAM_PURIFICATION": {'description': 'Optimization of product recovery and purification processes', 'annotations': {'approaches': 'chromatography, membrane separation, extraction'}},
     "IN_LINE_ANALYTICS": {'description': 'Implementation of real-time process analytical technology (PAT) for process monitoring and control', 'annotations': {'technologies': 'Raman spectroscopy, NIR, online HPLC'}},
     "DIGITAL_TWIN_MODELING": {'description': 'Use of computational process models for simulation, prediction, and optimization', 'annotations': {'approaches': 'mechanistic models, hybrid models, machine learning'}},
+}
+
+class UnitOperationType(RichEnum):
+    """
+    Fundamental chemical and process engineering unit operations - the discrete processing steps that transform, separate, combine, or move process material. Grouped (via the unit_operation_class annotation) into momentum transfer, heat transfer, mass-transfer separations, mechanical separations, solids processing, reaction, and storage.
+    """
+    # Enum members
+    PUMPING = "PUMPING"
+    COMPRESSION = "COMPRESSION"
+    GAS_MOVING = "GAS_MOVING"
+    FLOW_SPLITTING = "FLOW_SPLITTING"
+    STREAM_MIXING = "STREAM_MIXING"
+    HEAT_EXCHANGE = "HEAT_EXCHANGE"
+    HEATING = "HEATING"
+    COOLING = "COOLING"
+    CONDENSATION = "CONDENSATION"
+    EVAPORATION = "EVAPORATION"
+    DISTILLATION = "DISTILLATION"
+    ABSORPTION = "ABSORPTION"
+    STRIPPING = "STRIPPING"
+    LIQUID_LIQUID_EXTRACTION = "LIQUID_LIQUID_EXTRACTION"
+    LEACHING = "LEACHING"
+    ADSORPTION = "ADSORPTION"
+    ION_EXCHANGE = "ION_EXCHANGE"
+    CHROMATOGRAPHY = "CHROMATOGRAPHY"
+    CRYSTALLIZATION = "CRYSTALLIZATION"
+    PRECIPITATION = "PRECIPITATION"
+    DRYING = "DRYING"
+    FREEZE_DRYING = "FREEZE_DRYING"
+    HUMIDIFICATION = "HUMIDIFICATION"
+    MEMBRANE_SEPARATION = "MEMBRANE_SEPARATION"
+    MICROFILTRATION = "MICROFILTRATION"
+    ULTRAFILTRATION = "ULTRAFILTRATION"
+    NANOFILTRATION = "NANOFILTRATION"
+    REVERSE_OSMOSIS = "REVERSE_OSMOSIS"
+    DIALYSIS = "DIALYSIS"
+    ELECTRODIALYSIS = "ELECTRODIALYSIS"
+    PERVAPORATION = "PERVAPORATION"
+    FILTRATION = "FILTRATION"
+    CENTRIFUGATION = "CENTRIFUGATION"
+    SEDIMENTATION = "SEDIMENTATION"
+    CLARIFICATION = "CLARIFICATION"
+    FLOTATION = "FLOTATION"
+    FLOCCULATION = "FLOCCULATION"
+    CYCLONE_SEPARATION = "CYCLONE_SEPARATION"
+    SCREENING = "SCREENING"
+    GAS_LIQUID_SEPARATION = "GAS_LIQUID_SEPARATION"
+    SIZE_REDUCTION = "SIZE_REDUCTION"
+    SIZE_ENLARGEMENT = "SIZE_ENLARGEMENT"
+    MIXING = "MIXING"
+    SOLIDS_CONVEYING = "SOLIDS_CONVEYING"
+    CHEMICAL_REACTION = "CHEMICAL_REACTION"
+    FERMENTATION = "FERMENTATION"
+    COMBUSTION = "COMBUSTION"
+    GASIFICATION = "GASIFICATION"
+    PYROLYSIS = "PYROLYSIS"
+    ELECTROLYSIS = "ELECTROLYSIS"
+    NEUTRALIZATION = "NEUTRALIZATION"
+    PURIFICATION = "PURIFICATION"
+    STORAGE = "STORAGE"
+
+# Set metadata after class creation to avoid it becoming an enum member
+UnitOperationType._metadata = {
+    "PUMPING": {'description': 'Raising the pressure or moving of a liquid stream using a pump', 'annotations': {'unit_operation_class': 'MOMENTUM_TRANSFER'}},
+    "COMPRESSION": {'description': 'Raising the pressure of a gas or vapor stream using a compressor', 'annotations': {'unit_operation_class': 'MOMENTUM_TRANSFER'}},
+    "GAS_MOVING": {'description': 'Moving a gas stream at low pressure rise using a fan or blower', 'annotations': {'unit_operation_class': 'MOMENTUM_TRANSFER'}},
+    "FLOW_SPLITTING": {'description': 'Dividing a single stream into two or more streams of identical composition', 'annotations': {'unit_operation_class': 'MOMENTUM_TRANSFER'}},
+    "STREAM_MIXING": {'description': 'Combining two or more streams into a single stream', 'annotations': {'unit_operation_class': 'MOMENTUM_TRANSFER'}},
+    "HEAT_EXCHANGE": {'description': 'Transfer of thermal energy between two streams without phase-change intent', 'annotations': {'unit_operation_class': 'HEAT_TRANSFER'}},
+    "HEATING": {'description': 'Raising the temperature of a process stream', 'annotations': {'unit_operation_class': 'HEAT_TRANSFER'}},
+    "COOLING": {'description': 'Lowering the temperature of a process stream', 'annotations': {'unit_operation_class': 'HEAT_TRANSFER'}},
+    "CONDENSATION": {'description': 'Converting a vapor to a liquid by removing heat', 'annotations': {'unit_operation_class': 'HEAT_TRANSFER'}},
+    "EVAPORATION": {'description': 'Concentrating a solution by vaporizing solvent, typically water', 'meaning': 'CHMO:0001574', 'annotations': {'unit_operation_class': 'HEAT_TRANSFER'}},
+    "DISTILLATION": {'description': 'Separation of components by differences in volatility (boiling point)', 'meaning': 'CHMO:0001532', 'annotations': {'unit_operation_class': 'MASS_TRANSFER_SEPARATION'}},
+    "ABSORPTION": {'description': 'Selective transfer of one or more gas-phase components into a liquid solvent', 'annotations': {'unit_operation_class': 'MASS_TRANSFER_SEPARATION'}},
+    "STRIPPING": {'description': 'Selective transfer of dissolved components from a liquid into a gas stream', 'annotations': {'unit_operation_class': 'MASS_TRANSFER_SEPARATION'}},
+    "LIQUID_LIQUID_EXTRACTION": {'description': 'Separation by partitioning of solutes between two immiscible liquid phases', 'meaning': 'CHMO:0001577', 'annotations': {'unit_operation_class': 'MASS_TRANSFER_SEPARATION'}},
+    "LEACHING": {'description': 'Solid-liquid extraction of soluble components from a solid using a solvent', 'meaning': 'CHMO:0001681', 'annotations': {'unit_operation_class': 'MASS_TRANSFER_SEPARATION'}},
+    "ADSORPTION": {'description': 'Selective uptake of components onto the surface of a solid sorbent', 'annotations': {'unit_operation_class': 'MASS_TRANSFER_SEPARATION'}},
+    "ION_EXCHANGE": {'description': 'Reversible exchange of ions between a solution and a solid ion-exchange resin', 'annotations': {'unit_operation_class': 'MASS_TRANSFER_SEPARATION'}},
+    "CHROMATOGRAPHY": {'description': 'Separation by differential partitioning of solutes between a mobile and stationary phase', 'meaning': 'CHMO:0001000', 'annotations': {'unit_operation_class': 'MASS_TRANSFER_SEPARATION'}},
+    "CRYSTALLIZATION": {'description': 'Formation of a solid crystalline phase from a solution or melt', 'meaning': 'PROCO:0000052', 'annotations': {'unit_operation_class': 'MASS_TRANSFER_SEPARATION'}},
+    "PRECIPITATION": {'description': 'Formation of an insoluble solid from solution by chemical or physical means', 'meaning': 'CHMO:0001688', 'annotations': {'unit_operation_class': 'MASS_TRANSFER_SEPARATION'}},
+    "DRYING": {'description': 'Removal of a liquid (usually water) from a solid or surface by vaporization', 'annotations': {'unit_operation_class': 'MASS_TRANSFER_SEPARATION'}},
+    "FREEZE_DRYING": {'description': 'Removal of solvent by sublimation from the frozen state (lyophilization)', 'meaning': 'CHMO:0001553', 'annotations': {'unit_operation_class': 'MASS_TRANSFER_SEPARATION', 'aliases': 'lyophilization'}},
+    "HUMIDIFICATION": {'description': 'Addition of water vapor to a gas stream', 'annotations': {'unit_operation_class': 'MASS_TRANSFER_SEPARATION'}},
+    "MEMBRANE_SEPARATION": {'description': 'Separation of stream components using a semipermeable membrane', 'annotations': {'unit_operation_class': 'MEMBRANE_SEPARATION'}},
+    "MICROFILTRATION": {'description': 'Membrane separation retaining particles roughly 0.1-10 micrometers', 'meaning': 'CHMO:0001641', 'annotations': {'unit_operation_class': 'MEMBRANE_SEPARATION'}},
+    "ULTRAFILTRATION": {'description': 'Membrane separation retaining macromolecules and colloids', 'meaning': 'CHMO:0001645', 'annotations': {'unit_operation_class': 'MEMBRANE_SEPARATION'}},
+    "NANOFILTRATION": {'description': 'Membrane separation retaining small molecules and multivalent ions', 'meaning': 'CHMO:0001642', 'annotations': {'unit_operation_class': 'MEMBRANE_SEPARATION'}},
+    "REVERSE_OSMOSIS": {'description': 'Pressure-driven membrane separation rejecting dissolved salts and small solutes', 'meaning': 'CHMO:0001643', 'annotations': {'unit_operation_class': 'MEMBRANE_SEPARATION'}},
+    "DIALYSIS": {'description': 'Diffusive membrane separation of solutes across a concentration gradient', 'meaning': 'CHMO:0001522', 'annotations': {'unit_operation_class': 'MEMBRANE_SEPARATION'}},
+    "ELECTRODIALYSIS": {'description': 'Membrane separation of ions driven by an applied electric field', 'annotations': {'unit_operation_class': 'MEMBRANE_SEPARATION'}},
+    "PERVAPORATION": {'description': 'Membrane separation combining permeation and partial vaporization of the permeate', 'annotations': {'unit_operation_class': 'MEMBRANE_SEPARATION'}},
+    "FILTRATION": {'description': 'Separation of solids from a fluid by passage through a porous medium', 'meaning': 'CHMO:0001640', 'annotations': {'unit_operation_class': 'MECHANICAL_SEPARATION'}},
+    "CENTRIFUGATION": {'description': 'Separation of phases by density difference under centrifugal force', 'meaning': 'OBI:0302886', 'annotations': {'unit_operation_class': 'MECHANICAL_SEPARATION'}},
+    "SEDIMENTATION": {'description': 'Gravity separation of suspended solids or immiscible liquids by settling', 'annotations': {'unit_operation_class': 'MECHANICAL_SEPARATION'}},
+    "CLARIFICATION": {'description': 'Removal of suspended solids from a liquid to produce a clarified stream', 'annotations': {'unit_operation_class': 'MECHANICAL_SEPARATION'}},
+    "FLOTATION": {'description': 'Separation of solids or droplets by attachment to rising gas bubbles', 'annotations': {'unit_operation_class': 'MECHANICAL_SEPARATION'}},
+    "FLOCCULATION": {'description': 'Aggregation of fine suspended particles into larger flocs to aid separation', 'annotations': {'unit_operation_class': 'MECHANICAL_SEPARATION'}},
+    "CYCLONE_SEPARATION": {'description': 'Separation of particles from a fluid using centrifugal force in a cyclone', 'annotations': {'unit_operation_class': 'MECHANICAL_SEPARATION'}},
+    "SCREENING": {'description': 'Separation of particulate solids by size using a screen or sieve', 'annotations': {'unit_operation_class': 'MECHANICAL_SEPARATION'}},
+    "GAS_LIQUID_SEPARATION": {'description': 'Disengagement of vapor and liquid phases, e.g. in a flash or knockout drum', 'annotations': {'unit_operation_class': 'MECHANICAL_SEPARATION'}},
+    "SIZE_REDUCTION": {'description': 'Reduction of particle size by crushing, grinding, or milling (comminution)', 'annotations': {'unit_operation_class': 'SOLIDS_PROCESSING'}},
+    "SIZE_ENLARGEMENT": {'description': 'Increase of particle size by granulation, agglomeration, or pelletizing', 'annotations': {'unit_operation_class': 'SOLIDS_PROCESSING'}},
+    "MIXING": {'description': 'Blending of materials to achieve compositional or thermal uniformity', 'meaning': 'CHMO:0001685', 'annotations': {'unit_operation_class': 'SOLIDS_PROCESSING'}},
+    "SOLIDS_CONVEYING": {'description': 'Transport of bulk particulate solids between process steps', 'annotations': {'unit_operation_class': 'SOLIDS_PROCESSING'}},
+    "CHEMICAL_REACTION": {'description': 'Chemical conversion of reactants to products in a reactor', 'annotations': {'unit_operation_class': 'REACTION'}},
+    "FERMENTATION": {'description': 'Microbial or enzymatic conversion of substrate to product in a bioreactor', 'meaning': 'CHMO:0001624', 'annotations': {'unit_operation_class': 'REACTION'}},
+    "COMBUSTION": {'description': 'Exothermic oxidation of a fuel, typically to generate heat or power', 'meaning': 'CHMO:0001473', 'annotations': {'unit_operation_class': 'REACTION'}},
+    "GASIFICATION": {'description': 'Conversion of carbonaceous feedstock to synthesis gas under limited oxygen', 'meaning': 'CHMO:0001501', 'annotations': {'unit_operation_class': 'REACTION'}},
+    "PYROLYSIS": {'description': 'Thermal decomposition of material in the absence of oxygen', 'meaning': 'CHMO:0001502', 'annotations': {'unit_operation_class': 'REACTION'}},
+    "ELECTROLYSIS": {'description': 'Driving a non-spontaneous chemical reaction using electrical energy', 'annotations': {'unit_operation_class': 'REACTION'}},
+    "NEUTRALIZATION": {'description': 'Adjustment of pH by reaction of acid and base', 'annotations': {'unit_operation_class': 'REACTION'}},
+    "PURIFICATION": {'description': 'Removal of impurities to increase the purity of a product stream', 'meaning': 'CHMO:0002231', 'annotations': {'unit_operation_class': 'SEPARATION'}},
+    "STORAGE": {'description': 'Holding of material in a vessel or tank between process steps', 'annotations': {'unit_operation_class': 'STORAGE'}},
+}
+
+class ProcessEquipmentType(RichEnum):
+    """
+    Physical equipment / asset types used in process plants. These correspond to the nodes of a process flowsheet and complement UnitOperationType (which describes the function performed). Grouped via the equipment_class annotation.
+    """
+    # Enum members
+    STORAGE_TANK = "STORAGE_TANK"
+    PRESSURE_VESSEL = "PRESSURE_VESSEL"
+    HOPPER = "HOPPER"
+    FLASH_DRUM = "FLASH_DRUM"
+    KNOCKOUT_DRUM = "KNOCKOUT_DRUM"
+    REACTOR = "REACTOR"
+    BIOREACTOR = "BIOREACTOR"
+    FERMENTER = "FERMENTER"
+    DISTILLATION_COLUMN = "DISTILLATION_COLUMN"
+    ABSORPTION_COLUMN = "ABSORPTION_COLUMN"
+    STRIPPING_COLUMN = "STRIPPING_COLUMN"
+    EXTRACTION_COLUMN = "EXTRACTION_COLUMN"
+    CHROMATOGRAPHY_COLUMN = "CHROMATOGRAPHY_COLUMN"
+    SCRUBBER = "SCRUBBER"
+    HEAT_EXCHANGER = "HEAT_EXCHANGER"
+    CONDENSER = "CONDENSER"
+    REBOILER = "REBOILER"
+    EVAPORATOR = "EVAPORATOR"
+    FURNACE = "FURNACE"
+    BOILER = "BOILER"
+    COOLING_TOWER = "COOLING_TOWER"
+    DRYER = "DRYER"
+    CRYSTALLIZER = "CRYSTALLIZER"
+    PUMP = "PUMP"
+    COMPRESSOR = "COMPRESSOR"
+    BLOWER = "BLOWER"
+    FAN = "FAN"
+    VALVE = "VALVE"
+    CENTRIFUGE = "CENTRIFUGE"
+    FILTER = "FILTER"
+    DECANTER = "DECANTER"
+    CLARIFIER = "CLARIFIER"
+    CYCLONE = "CYCLONE"
+    HYDROCYCLONE = "HYDROCYCLONE"
+    MEMBRANE_MODULE = "MEMBRANE_MODULE"
+    SETTLER = "SETTLER"
+    MIXER = "MIXER"
+    AGITATOR = "AGITATOR"
+    MILL = "MILL"
+    CRUSHER = "CRUSHER"
+    SCREEN = "SCREEN"
+    CONVEYOR = "CONVEYOR"
+
+# Set metadata after class creation to avoid it becoming an enum member
+ProcessEquipmentType._metadata = {
+    "STORAGE_TANK": {'description': 'Atmospheric or low-pressure vessel for holding liquids or solids', 'annotations': {'equipment_class': 'VESSEL'}},
+    "PRESSURE_VESSEL": {'description': 'Vessel designed to hold contents at elevated pressure', 'annotations': {'equipment_class': 'VESSEL'}},
+    "HOPPER": {'description': 'Funnel-shaped vessel for storing and discharging bulk solids', 'annotations': {'equipment_class': 'VESSEL'}},
+    "FLASH_DRUM": {'description': 'Vessel for separating vapor and liquid produced by a pressure let-down', 'annotations': {'equipment_class': 'VESSEL'}},
+    "KNOCKOUT_DRUM": {'description': 'Vessel that removes entrained liquid from a gas stream', 'annotations': {'equipment_class': 'VESSEL'}},
+    "REACTOR": {'description': 'Vessel in which chemical reactions are carried out', 'annotations': {'equipment_class': 'REACTOR', 'subtypes': 'CSTR, plug-flow, batch, fixed-bed, fluidized-bed'}},
+    "BIOREACTOR": {'description': 'Vessel for culturing cells or carrying out enzymatic reactions', 'meaning': 'OBI:0001046', 'annotations': {'equipment_class': 'REACTOR'}},
+    "FERMENTER": {'description': 'Bioreactor configured for microbial fermentation', 'annotations': {'equipment_class': 'REACTOR'}},
+    "DISTILLATION_COLUMN": {'description': 'Column with trays or packing for vapor-liquid separation by distillation', 'annotations': {'equipment_class': 'COLUMN'}},
+    "ABSORPTION_COLUMN": {'description': 'Column for gas absorption into a liquid solvent', 'annotations': {'equipment_class': 'COLUMN'}},
+    "STRIPPING_COLUMN": {'description': 'Column for stripping volatile components from a liquid', 'annotations': {'equipment_class': 'COLUMN'}},
+    "EXTRACTION_COLUMN": {'description': 'Column for liquid-liquid extraction', 'annotations': {'equipment_class': 'COLUMN'}},
+    "CHROMATOGRAPHY_COLUMN": {'description': 'Column packed with a stationary phase for chromatographic separation', 'meaning': 'OBI:0000038', 'annotations': {'equipment_class': 'COLUMN'}},
+    "SCRUBBER": {'description': 'Contactor for removing pollutants or particulates from a gas using a liquid', 'annotations': {'equipment_class': 'COLUMN'}},
+    "HEAT_EXCHANGER": {'description': 'Equipment that transfers heat between two fluid streams', 'annotations': {'equipment_class': 'HEAT_TRANSFER', 'subtypes': 'shell-and-tube, plate, air-cooled'}},
+    "CONDENSER": {'description': 'Heat exchanger that condenses a vapor to liquid', 'annotations': {'equipment_class': 'HEAT_TRANSFER'}},
+    "REBOILER": {'description': 'Heat exchanger that supplies boilup at the base of a distillation column', 'annotations': {'equipment_class': 'HEAT_TRANSFER'}},
+    "EVAPORATOR": {'description': 'Equipment that concentrates a solution by vaporizing solvent', 'annotations': {'equipment_class': 'HEAT_TRANSFER'}},
+    "FURNACE": {'description': 'Fired heater that raises stream temperature by combustion', 'annotations': {'equipment_class': 'HEAT_TRANSFER'}},
+    "BOILER": {'description': 'Equipment that generates steam by transferring combustion heat to water', 'annotations': {'equipment_class': 'HEAT_TRANSFER'}},
+    "COOLING_TOWER": {'description': 'Equipment that rejects process heat to the atmosphere by evaporative cooling', 'annotations': {'equipment_class': 'HEAT_TRANSFER'}},
+    "DRYER": {'description': 'Equipment for removing liquid from solids by vaporization', 'annotations': {'equipment_class': 'HEAT_TRANSFER'}},
+    "CRYSTALLIZER": {'description': 'Equipment for producing crystalline solids from solution or melt', 'annotations': {'equipment_class': 'HEAT_TRANSFER'}},
+    "PUMP": {'description': 'Machine that moves or pressurizes a liquid', 'annotations': {'equipment_class': 'FLUID_MOVER'}},
+    "COMPRESSOR": {'description': 'Machine that raises the pressure of a gas', 'annotations': {'equipment_class': 'FLUID_MOVER'}},
+    "BLOWER": {'description': 'Machine that moves gas at a low pressure rise', 'annotations': {'equipment_class': 'FLUID_MOVER'}},
+    "FAN": {'description': 'Machine that moves large gas volumes at very low pressure rise', 'annotations': {'equipment_class': 'FLUID_MOVER'}},
+    "VALVE": {'description': 'Device that regulates, directs, or controls stream flow', 'annotations': {'equipment_class': 'FLUID_MOVER'}},
+    "CENTRIFUGE": {'description': 'Equipment that separates phases by density under centrifugal force', 'meaning': 'OBI:0400106', 'annotations': {'equipment_class': 'SEPARATION'}},
+    "FILTER": {'description': 'Equipment that separates solids from a fluid using a porous medium', 'annotations': {'equipment_class': 'SEPARATION'}},
+    "DECANTER": {'description': 'Equipment that separates immiscible liquids or settled solids by gravity', 'annotations': {'equipment_class': 'SEPARATION'}},
+    "CLARIFIER": {'description': 'Settling tank that removes suspended solids from a liquid', 'annotations': {'equipment_class': 'SEPARATION'}},
+    "CYCLONE": {'description': 'Device that separates particles from a fluid by centrifugal action', 'annotations': {'equipment_class': 'SEPARATION'}},
+    "HYDROCYCLONE": {'description': 'Cyclone that separates solids or immiscible liquids from a liquid stream', 'annotations': {'equipment_class': 'SEPARATION'}},
+    "MEMBRANE_MODULE": {'description': 'Housing containing membrane elements for a membrane separation', 'annotations': {'equipment_class': 'SEPARATION'}},
+    "SETTLER": {'description': 'Vessel allowing phases to separate by gravity settling', 'annotations': {'equipment_class': 'SEPARATION'}},
+    "MIXER": {'description': 'Equipment for blending streams or materials', 'annotations': {'equipment_class': 'SOLIDS_HANDLING'}},
+    "AGITATOR": {'description': 'Impeller-driven device that mixes vessel contents', 'annotations': {'equipment_class': 'SOLIDS_HANDLING'}},
+    "MILL": {'description': 'Equipment that reduces particle size by grinding or crushing', 'annotations': {'equipment_class': 'SOLIDS_HANDLING'}},
+    "CRUSHER": {'description': 'Equipment that reduces large solids by mechanical force', 'annotations': {'equipment_class': 'SOLIDS_HANDLING'}},
+    "SCREEN": {'description': 'Equipment that classifies particulate solids by size', 'annotations': {'equipment_class': 'SOLIDS_HANDLING'}},
+    "CONVEYOR": {'description': 'Equipment that transports bulk solids between locations', 'annotations': {'equipment_class': 'SOLIDS_HANDLING'}},
+}
+
+class ProcessStreamRole(RichEnum):
+    """
+    The functional role of a stream within a process flowsheet, independent of its chemical composition.
+    """
+    # Enum members
+    FEED = "FEED"
+    RAW_MATERIAL = "RAW_MATERIAL"
+    PRODUCT = "PRODUCT"
+    BYPRODUCT = "BYPRODUCT"
+    INTERMEDIATE = "INTERMEDIATE"
+    RECYCLE = "RECYCLE"
+    PURGE = "PURGE"
+    BLEED = "BLEED"
+    MAKEUP = "MAKEUP"
+    WASTE = "WASTE"
+    EFFLUENT = "EFFLUENT"
+    EMISSION = "EMISSION"
+    UTILITY = "UTILITY"
+
+# Set metadata after class creation to avoid it becoming an enum member
+ProcessStreamRole._metadata = {
+    "FEED": {'description': 'A stream entering the process or a unit operation as input'},
+    "RAW_MATERIAL": {'description': 'A fresh raw material or reactant stream entering the process battery limits'},
+    "PRODUCT": {'description': 'A primary product stream of commercial value leaving the process'},
+    "BYPRODUCT": {'description': 'A secondary saleable or usable product produced alongside the main product'},
+    "INTERMEDIATE": {'description': 'A stream flowing between unit operations within the process'},
+    "RECYCLE": {'description': 'A stream returned to an upstream point for reprocessing'},
+    "PURGE": {'description': 'A stream withdrawn from a recycle loop to prevent accumulation of inerts or impurities'},
+    "BLEED": {'description': 'A small continuous stream withdrawn to control composition or level'},
+    "MAKEUP": {'description': 'A stream added to replenish material lost from a circulating loop'},
+    "WASTE": {'description': 'A stream with no further use that must be treated or disposed of'},
+    "EFFLUENT": {'description': 'A liquid waste stream discharged from the process'},
+    "EMISSION": {'description': 'A gaseous stream released to the atmosphere'},
+    "UTILITY": {'description': 'A service stream (e.g. steam, cooling water) supplied to a unit operation'},
+}
+
+class ProcessStreamPhase(RichEnum):
+    """
+    The physical phase or phase combination of a process stream. For single-phase fundamental states see also StateOfMatterEnum in the physics module; this enum adds the multiphase combinations common in process engineering.
+    """
+    # Enum members
+    GAS = "GAS"
+    LIQUID = "LIQUID"
+    SOLID = "SOLID"
+    SUPERCRITICAL = "SUPERCRITICAL"
+    VAPOR_LIQUID = "VAPOR_LIQUID"
+    LIQUID_LIQUID = "LIQUID_LIQUID"
+    VAPOR_LIQUID_LIQUID = "VAPOR_LIQUID_LIQUID"
+    SLURRY = "SLURRY"
+    GAS_SOLID = "GAS_SOLID"
+    MULTIPHASE = "MULTIPHASE"
+
+# Set metadata after class creation to avoid it becoming an enum member
+ProcessStreamPhase._metadata = {
+    "GAS": {'description': 'A single gas or vapor phase', 'annotations': {'sff_phase_code': 'g'}},
+    "LIQUID": {'description': 'A single liquid phase', 'annotations': {'sff_phase_code': 'l'}},
+    "SOLID": {'description': 'A single solid phase', 'annotations': {'sff_phase_code': 's'}},
+    "SUPERCRITICAL": {'description': 'A supercritical fluid above its critical temperature and pressure'},
+    "VAPOR_LIQUID": {'description': 'A two-phase mixture of vapor and liquid'},
+    "LIQUID_LIQUID": {'description': 'A two-phase mixture of two immiscible liquids'},
+    "VAPOR_LIQUID_LIQUID": {'description': 'A three-phase mixture of a vapor and two immiscible liquids'},
+    "SLURRY": {'description': 'A suspension of solids in a liquid'},
+    "GAS_SOLID": {'description': 'A two-phase mixture of gas and entrained or fluidized solids'},
+    "MULTIPHASE": {'description': 'A stream containing more than one phase, of mixed or unspecified composition'},
+}
+
+class UtilityType(RichEnum):
+    """
+    Common plant utilities consumed or produced by process unit operations, used for energy and mass balance accounting on a flowsheet.
+    """
+    # Enum members
+    STEAM = "STEAM"
+    LOW_PRESSURE_STEAM = "LOW_PRESSURE_STEAM"
+    MEDIUM_PRESSURE_STEAM = "MEDIUM_PRESSURE_STEAM"
+    HIGH_PRESSURE_STEAM = "HIGH_PRESSURE_STEAM"
+    COOLING_WATER = "COOLING_WATER"
+    CHILLED_WATER = "CHILLED_WATER"
+    REFRIGERANT = "REFRIGERANT"
+    HOT_OIL = "HOT_OIL"
+    BRINE = "BRINE"
+    ELECTRICITY = "ELECTRICITY"
+    PROCESS_WATER = "PROCESS_WATER"
+    DEMINERALIZED_WATER = "DEMINERALIZED_WATER"
+    NATURAL_GAS = "NATURAL_GAS"
+    FUEL_GAS = "FUEL_GAS"
+    COMPRESSED_AIR = "COMPRESSED_AIR"
+    INSTRUMENT_AIR = "INSTRUMENT_AIR"
+    NITROGEN = "NITROGEN"
+    FLARE = "FLARE"
+
+# Set metadata after class creation to avoid it becoming an enum member
+UtilityType._metadata = {
+    "STEAM": {'description': 'Process steam used for heating or stripping', 'annotations': {'utility_category': 'HEAT'}},
+    "LOW_PRESSURE_STEAM": {'description': 'Low-pressure steam utility', 'annotations': {'utility_category': 'HEAT', 'typical_range': '<3 barg'}},
+    "MEDIUM_PRESSURE_STEAM": {'description': 'Medium-pressure steam utility', 'annotations': {'utility_category': 'HEAT', 'typical_range': '3-20 barg'}},
+    "HIGH_PRESSURE_STEAM": {'description': 'High-pressure steam utility', 'annotations': {'utility_category': 'HEAT', 'typical_range': '>20 barg'}},
+    "COOLING_WATER": {'description': 'Recirculated cooling water for heat rejection', 'annotations': {'utility_category': 'HEAT'}},
+    "CHILLED_WATER": {'description': 'Refrigerated water for below-ambient cooling', 'annotations': {'utility_category': 'HEAT'}},
+    "REFRIGERANT": {'description': 'Refrigerant fluid for low-temperature cooling duty', 'annotations': {'utility_category': 'HEAT'}},
+    "HOT_OIL": {'description': 'Thermal oil heat-transfer fluid for high-temperature heating', 'annotations': {'utility_category': 'HEAT'}},
+    "BRINE": {'description': 'Chilled brine used as a low-temperature coolant', 'annotations': {'utility_category': 'HEAT'}},
+    "ELECTRICITY": {'description': 'Electrical power supplied to drivers and equipment', 'annotations': {'utility_category': 'POWER'}},
+    "PROCESS_WATER": {'description': 'Treated water used as a process input', 'annotations': {'utility_category': 'OTHER'}},
+    "DEMINERALIZED_WATER": {'description': 'High-purity demineralized water utility', 'annotations': {'utility_category': 'OTHER'}},
+    "NATURAL_GAS": {'description': 'Natural gas supplied as fuel or feedstock', 'annotations': {'utility_category': 'OTHER'}},
+    "FUEL_GAS": {'description': 'Fuel gas burned in fired heaters and boilers', 'annotations': {'utility_category': 'OTHER'}},
+    "COMPRESSED_AIR": {'description': 'Compressed air utility for process or actuation use', 'annotations': {'utility_category': 'OTHER'}},
+    "INSTRUMENT_AIR": {'description': 'Clean dry compressed air for instrumentation', 'annotations': {'utility_category': 'OTHER'}},
+    "NITROGEN": {'description': 'Nitrogen used for inerting, blanketing, or purging', 'annotations': {'utility_category': 'OTHER'}},
+    "FLARE": {'description': 'Flare system for safe combustion of relieved gases', 'annotations': {'utility_category': 'OTHER'}},
+}
+
+class ProcessIndustryCategory(RichEnum):
+    """
+    Sectors of the process (continuous and batch) manufacturing industries. The pisces_category annotation records the corresponding top-level category in the PISCES Standard Flowsheet Format where one exists.
+    """
+    # Enum members
+    PETROLEUM_REFINING = "PETROLEUM_REFINING"
+    PETROCHEMICAL = "PETROCHEMICAL"
+    BULK_CHEMICAL = "BULK_CHEMICAL"
+    SPECIALTY_CHEMICAL = "SPECIALTY_CHEMICAL"
+    AGROCHEMICAL = "AGROCHEMICAL"
+    POLYMER_AND_PLASTICS = "POLYMER_AND_PLASTICS"
+    PHARMACEUTICAL = "PHARMACEUTICAL"
+    BIOTECHNOLOGY = "BIOTECHNOLOGY"
+    BIOFUEL = "BIOFUEL"
+    FOOD_AND_BEVERAGE = "FOOD_AND_BEVERAGE"
+    PULP_AND_PAPER = "PULP_AND_PAPER"
+    METALS_AND_MINING = "METALS_AND_MINING"
+    WATER_AND_WASTEWATER_TREATMENT = "WATER_AND_WASTEWATER_TREATMENT"
+    POWER_GENERATION = "POWER_GENERATION"
+    GAS_PROCESSING = "GAS_PROCESSING"
+    CEMENT_AND_CONSTRUCTION_MATERIALS = "CEMENT_AND_CONSTRUCTION_MATERIALS"
+    GLASS_AND_CERAMICS = "GLASS_AND_CERAMICS"
+    TEXTILE = "TEXTILE"
+    COSMETICS_AND_PERSONAL_CARE = "COSMETICS_AND_PERSONAL_CARE"
+    NUCLEAR_FUEL = "NUCLEAR_FUEL"
+    SEMICONDUCTOR = "SEMICONDUCTOR"
+
+# Set metadata after class creation to avoid it becoming an enum member
+ProcessIndustryCategory._metadata = {
+    "PETROLEUM_REFINING": {'description': 'Refining of crude oil into fuels and feedstocks', 'annotations': {'pisces_category': 'Energy'}},
+    "PETROCHEMICAL": {'description': 'Production of chemicals derived from petroleum and natural gas', 'annotations': {'pisces_category': 'Chemical'}},
+    "BULK_CHEMICAL": {'description': 'Large-volume production of commodity chemicals', 'annotations': {'pisces_category': 'Chemical'}},
+    "SPECIALTY_CHEMICAL": {'description': 'Production of lower-volume, high-value performance chemicals', 'annotations': {'pisces_category': 'Chemical'}},
+    "AGROCHEMICAL": {'description': 'Production of fertilizers, pesticides, and other agricultural chemicals', 'annotations': {'pisces_category': 'Chemical'}},
+    "POLYMER_AND_PLASTICS": {'description': 'Production of polymers, resins, and plastic materials', 'annotations': {'pisces_category': 'Chemical'}},
+    "PHARMACEUTICAL": {'description': 'Manufacture of active pharmaceutical ingredients and drug products', 'annotations': {'pisces_category': 'Pharmaceutical'}},
+    "BIOTECHNOLOGY": {'description': 'Manufacture of products using biological systems and fermentation', 'annotations': {'pisces_category': 'Pharmaceutical'}},
+    "BIOFUEL": {'description': 'Production of biologically derived fuels such as ethanol and biodiesel', 'annotations': {'pisces_category': 'Biofuel'}},
+    "FOOD_AND_BEVERAGE": {'description': 'Processing and manufacture of food and beverage products', 'annotations': {'pisces_category': 'Food Product'}},
+    "PULP_AND_PAPER": {'description': 'Production of pulp, paper, and board from fiber'},
+    "METALS_AND_MINING": {'description': 'Extraction and processing of metals and minerals'},
+    "WATER_AND_WASTEWATER_TREATMENT": {'description': 'Treatment of water and wastewater streams'},
+    "POWER_GENERATION": {'description': 'Generation of electrical power and process heat', 'annotations': {'pisces_category': 'Energy'}},
+    "GAS_PROCESSING": {'description': 'Processing and separation of natural gas and industrial gases', 'annotations': {'pisces_category': 'Energy'}},
+    "CEMENT_AND_CONSTRUCTION_MATERIALS": {'description': 'Production of cement, lime, and construction materials'},
+    "GLASS_AND_CERAMICS": {'description': 'Manufacture of glass and ceramic products'},
+    "TEXTILE": {'description': 'Production and finishing of textile fibers and fabrics'},
+    "COSMETICS_AND_PERSONAL_CARE": {'description': 'Manufacture of cosmetics and personal care products'},
+    "NUCLEAR_FUEL": {'description': 'Processing of nuclear fuel materials', 'annotations': {'pisces_category': 'Energy'}},
+    "SEMICONDUCTOR": {'description': 'Fabrication of semiconductor and microelectronic materials'},
+}
+
+class ProcessOperationMode(RichEnum):
+    """
+    The temporal mode in which a process or unit operation is run.
+    """
+    # Enum members
+    BATCH = "BATCH"
+    CONTINUOUS = "CONTINUOUS"
+    SEMI_BATCH = "SEMI_BATCH"
+    SEMI_CONTINUOUS = "SEMI_CONTINUOUS"
+
+# Set metadata after class creation to avoid it becoming an enum member
+ProcessOperationMode._metadata = {
+    "BATCH": {'description': 'Material is charged, processed, and discharged in discrete batches'},
+    "CONTINUOUS": {'description': 'Material flows through the process steadily without interruption'},
+    "SEMI_BATCH": {'description': 'A hybrid mode where some streams are continuous while others are batch-wise'},
+    "SEMI_CONTINUOUS": {'description': 'Process alternates between continuous operation and periodic interruptions'},
+}
+
+class EquationOfStateModel(RichEnum):
+    """
+    Equations of state used to compute fugacity coefficients and PVT behavior of fluids in process simulation (the SFF phi method).
+    """
+    # Enum members
+    IDEAL_GAS = "IDEAL_GAS"
+    VIRIAL = "VIRIAL"
+    REDLICH_KWONG = "REDLICH_KWONG"
+    SOAVE_REDLICH_KWONG = "SOAVE_REDLICH_KWONG"
+    PENG_ROBINSON = "PENG_ROBINSON"
+    PENG_ROBINSON_BOSTON_MATHIAS = "PENG_ROBINSON_BOSTON_MATHIAS"
+    SRK_BOSTON_MATHIAS = "SRK_BOSTON_MATHIAS"
+    LEE_KESLER_PLOCKER = "LEE_KESLER_PLOCKER"
+    BENEDICT_WEBB_RUBIN_STARLING = "BENEDICT_WEBB_RUBIN_STARLING"
+    PREDICTIVE_SRK = "PREDICTIVE_SRK"
+    PC_SAFT = "PC_SAFT"
+    CUBIC_PLUS_ASSOCIATION = "CUBIC_PLUS_ASSOCIATION"
+    GERG_2008 = "GERG_2008"
+    IAPWS_95 = "IAPWS_95"
+
+# Set metadata after class creation to avoid it becoming an enum member
+EquationOfStateModel._metadata = {
+    "IDEAL_GAS": {'description': 'Ideal gas law, assuming no intermolecular interactions'},
+    "VIRIAL": {'description': 'Virial equation of state expressed as a power series in density or pressure'},
+    "REDLICH_KWONG": {'description': 'Redlich-Kwong cubic equation of state', 'annotations': {'abbreviation': 'RK'}},
+    "SOAVE_REDLICH_KWONG": {'description': 'Soave modification of the Redlich-Kwong cubic equation of state', 'annotations': {'abbreviation': 'SRK'}},
+    "PENG_ROBINSON": {'description': 'Peng-Robinson cubic equation of state', 'annotations': {'abbreviation': 'PR'}},
+    "PENG_ROBINSON_BOSTON_MATHIAS": {'description': 'Peng-Robinson with Boston-Mathias alpha function for supercritical extrapolation', 'annotations': {'abbreviation': 'PR-BM'}},
+    "SRK_BOSTON_MATHIAS": {'description': 'Soave-Redlich-Kwong with Boston-Mathias alpha function', 'annotations': {'abbreviation': 'SRK-BM'}},
+    "LEE_KESLER_PLOCKER": {'description': 'Lee-Kesler-Plocker corresponding-states equation of state', 'annotations': {'abbreviation': 'LKP'}},
+    "BENEDICT_WEBB_RUBIN_STARLING": {'description': 'Benedict-Webb-Rubin-Starling equation of state for light hydrocarbons', 'annotations': {'abbreviation': 'BWRS'}},
+    "PREDICTIVE_SRK": {'description': 'Predictive SRK combining SRK with a UNIFAC-based mixing rule', 'annotations': {'abbreviation': 'PSRK'}},
+    "PC_SAFT": {'description': 'Perturbed-chain statistical associating fluid theory equation of state', 'annotations': {'abbreviation': 'PC-SAFT'}},
+    "CUBIC_PLUS_ASSOCIATION": {'description': 'Cubic-plus-association equation of state for associating fluids', 'annotations': {'abbreviation': 'CPA'}},
+    "GERG_2008": {'description': 'GERG-2008 reference equation of state for natural gas mixtures'},
+    "IAPWS_95": {'description': 'IAPWS-95 reference formulation for the thermodynamic properties of water', 'annotations': {'aliases': 'steam tables'}},
+}
+
+class ActivityCoefficientModel(RichEnum):
+    """
+    Excess Gibbs energy / activity-coefficient models for non-ideal liquid phases (the SFF gamma method).
+    """
+    # Enum members
+    IDEAL = "IDEAL"
+    MARGULES = "MARGULES"
+    VAN_LAAR = "VAN_LAAR"
+    REGULAR_SOLUTION = "REGULAR_SOLUTION"
+    WILSON = "WILSON"
+    NRTL = "NRTL"
+    ELECTROLYTE_NRTL = "ELECTROLYTE_NRTL"
+    UNIQUAC = "UNIQUAC"
+    UNIFAC = "UNIFAC"
+    UNIFAC_DORTMUND = "UNIFAC_DORTMUND"
+    FLORY_HUGGINS = "FLORY_HUGGINS"
+    PITZER = "PITZER"
+    COSMO_SAC = "COSMO_SAC"
+
+# Set metadata after class creation to avoid it becoming an enum member
+ActivityCoefficientModel._metadata = {
+    "IDEAL": {'description': "Ideal solution, all activity coefficients equal to one (Raoult's law)"},
+    "MARGULES": {'description': 'Margules two-parameter activity-coefficient model'},
+    "VAN_LAAR": {'description': 'Van Laar activity-coefficient model'},
+    "REGULAR_SOLUTION": {'description': 'Scatchard-Hildebrand regular solution model based on solubility parameters'},
+    "WILSON": {'description': 'Wilson local-composition activity-coefficient model'},
+    "NRTL": {'description': 'Non-random two-liquid local-composition activity-coefficient model'},
+    "ELECTROLYTE_NRTL": {'description': 'Electrolyte NRTL model for systems containing ions', 'annotations': {'abbreviation': 'eNRTL'}},
+    "UNIQUAC": {'description': 'Universal quasi-chemical activity-coefficient model'},
+    "UNIFAC": {'description': 'UNIQUAC functional-group activity-coefficient (group-contribution) model'},
+    "UNIFAC_DORTMUND": {'description': 'Modified UNIFAC (Dortmund) group-contribution model'},
+    "FLORY_HUGGINS": {'description': 'Flory-Huggins model for polymer solutions'},
+    "PITZER": {'description': 'Pitzer model for aqueous electrolyte activity coefficients'},
+    "COSMO_SAC": {'description': 'COSMO-based segment activity-coefficient model from quantum chemistry', 'annotations': {'aliases': 'COSMO-RS, COSMO-SAC'}},
+}
+
+class ThermodynamicPropertyPackage(RichEnum):
+    """
+    Named property methods/packages offered by process simulators, typically combining an equation of state and/or an activity-coefficient model. Used where a single package label rather than separate gamma/phi methods is recorded.
+    """
+    # Enum members
+    IDEAL = "IDEAL"
+    NRTL = "NRTL"
+    NRTL_RK = "NRTL_RK"
+    UNIQUAC = "UNIQUAC"
+    UNIFAC = "UNIFAC"
+    WILSON = "WILSON"
+    VAN_LAAR = "VAN_LAAR"
+    PENG_ROBINSON = "PENG_ROBINSON"
+    SOAVE_REDLICH_KWONG = "SOAVE_REDLICH_KWONG"
+    ELECTROLYTE_NRTL = "ELECTROLYTE_NRTL"
+    PITZER = "PITZER"
+    CHAO_SEADER = "CHAO_SEADER"
+    GRAYSON_STREED = "GRAYSON_STREED"
+    BRAUN_K10 = "BRAUN_K10"
+    PC_SAFT = "PC_SAFT"
+    STEAM_TABLES = "STEAM_TABLES"
+    API_SOUR = "API_SOUR"
+
+# Set metadata after class creation to avoid it becoming an enum member
+ThermodynamicPropertyPackage._metadata = {
+    "IDEAL": {'description': "Ideal (Raoult's law) property package"},
+    "NRTL": {'description': 'NRTL activity model with ideal or RK vapor phase'},
+    "NRTL_RK": {'description': 'NRTL activity model with Redlich-Kwong vapor phase'},
+    "UNIQUAC": {'description': 'UNIQUAC activity model property package'},
+    "UNIFAC": {'description': 'UNIFAC group-contribution property package'},
+    "WILSON": {'description': 'Wilson activity model property package'},
+    "VAN_LAAR": {'description': 'Van Laar activity model property package'},
+    "PENG_ROBINSON": {'description': 'Peng-Robinson equation-of-state property package'},
+    "SOAVE_REDLICH_KWONG": {'description': 'Soave-Redlich-Kwong equation-of-state property package'},
+    "ELECTROLYTE_NRTL": {'description': 'Electrolyte NRTL property package for ionic systems'},
+    "PITZER": {'description': 'Pitzer property package for aqueous electrolytes'},
+    "CHAO_SEADER": {'description': 'Chao-Seader semi-empirical package for hydrocarbon systems'},
+    "GRAYSON_STREED": {'description': 'Grayson-Streed package for hydrogen-rich hydrocarbon systems'},
+    "BRAUN_K10": {'description': 'Braun K10 package for low-pressure heavy hydrocarbon systems', 'annotations': {'abbreviation': 'BK10'}},
+    "PC_SAFT": {'description': 'PC-SAFT equation-of-state property package'},
+    "STEAM_TABLES": {'description': 'Steam-table (IAPWS / ASME) property package for water and steam'},
+    "API_SOUR": {'description': 'API sour-water package for systems with acid gases and ammonia'},
+}
+
+class MixingRuleModel(RichEnum):
+    """
+    Mixing rules applied to equation-of-state parameters for mixtures (the SFF mixture method).
+    """
+    # Enum members
+    IDEAL = "IDEAL"
+    VAN_DER_WAALS = "VAN_DER_WAALS"
+    HURON_VIDAL = "HURON_VIDAL"
+    MODIFIED_HURON_VIDAL = "MODIFIED_HURON_VIDAL"
+    WONG_SANDLER = "WONG_SANDLER"
+    PSRK_MIXING = "PSRK_MIXING"
+
+# Set metadata after class creation to avoid it becoming an enum member
+MixingRuleModel._metadata = {
+    "IDEAL": {'description': 'Ideal mixing, no excess properties'},
+    "VAN_DER_WAALS": {'description': 'Classical van der Waals one-fluid mixing rule with binary interaction parameters', 'annotations': {'aliases': 'classical, quadratic mixing rule'}},
+    "HURON_VIDAL": {'description': 'Huron-Vidal mixing rule coupling an equation of state to an excess Gibbs energy model'},
+    "MODIFIED_HURON_VIDAL": {'description': 'Modified Huron-Vidal first/second order mixing rules', 'annotations': {'aliases': 'MHV1, MHV2'}},
+    "WONG_SANDLER": {'description': 'Wong-Sandler mixing rule with correct low- and high-density limits'},
+    "PSRK_MIXING": {'description': 'Predictive SRK (PSRK) mixing rule based on UNIFAC'},
+}
+
+class PoyntingCorrectionMethod(RichEnum):
+    """
+    Treatment of the Poynting correction factor accounting for the effect of pressure on liquid fugacity (the SFF PCF method).
+    """
+    # Enum members
+    NONE = "NONE"
+    POYNTING = "POYNTING"
+
+# Set metadata after class creation to avoid it becoming an enum member
+PoyntingCorrectionMethod._metadata = {
+    "NONE": {'description': 'No Poynting correction applied'},
+    "POYNTING": {'description': 'Poynting correction factor applied to the liquid fugacity'},
+}
+
+class DesignSimulationMethod(RichEnum):
+    """
+    Methods used to design or simulate unit operations, particularly separation columns - ranging from graphical and shortcut methods to rigorous stage-by-stage and rate-based models.
+    """
+    # Enum members
+    MCCABE_THIELE = "MCCABE_THIELE"
+    PONCHON_SAVARIT = "PONCHON_SAVARIT"
+    FENSKE_UNDERWOOD_GILLILAND = "FENSKE_UNDERWOOD_GILLILAND"
+    KREMSER = "KREMSER"
+    MESH = "MESH"
+    INSIDE_OUT = "INSIDE_OUT"
+    RATE_BASED = "RATE_BASED"
+    EQUILIBRIUM_STAGE = "EQUILIBRIUM_STAGE"
+    SHORTCUT = "SHORTCUT"
+    RIGOROUS = "RIGOROUS"
+    PINCH_ANALYSIS = "PINCH_ANALYSIS"
+
+# Set metadata after class creation to avoid it becoming an enum member
+DesignSimulationMethod._metadata = {
+    "MCCABE_THIELE": {'description': 'McCabe-Thiele graphical method for binary distillation', 'annotations': {'method_class': 'GRAPHICAL'}},
+    "PONCHON_SAVARIT": {'description': 'Ponchon-Savarit enthalpy-composition graphical method for binary distillation', 'annotations': {'method_class': 'GRAPHICAL'}},
+    "FENSKE_UNDERWOOD_GILLILAND": {'description': 'Fenske-Underwood-Gilliland shortcut method for multicomponent distillation', 'annotations': {'method_class': 'SHORTCUT', 'abbreviation': 'FUG'}},
+    "KREMSER": {'description': 'Kremser shortcut method for absorber and stripper design', 'annotations': {'method_class': 'SHORTCUT'}},
+    "MESH": {'description': 'Rigorous equilibrium-stage solution of the Material, Equilibrium, Summation and Heat (enthalpy) equations', 'annotations': {'method_class': 'RIGOROUS_EQUILIBRIUM'}},
+    "INSIDE_OUT": {'description': 'Inside-out algorithm for rigorous equilibrium-stage column convergence', 'annotations': {'method_class': 'RIGOROUS_EQUILIBRIUM'}},
+    "RATE_BASED": {'description': 'Rate-based (nonequilibrium) model accounting for mass and heat transfer rates', 'annotations': {'method_class': 'RATE_BASED'}},
+    "EQUILIBRIUM_STAGE": {'description': 'Generic equilibrium-stage model assuming each stage reaches phase equilibrium', 'annotations': {'method_class': 'RIGOROUS_EQUILIBRIUM'}},
+    "SHORTCUT": {'description': 'Generic shortcut / approximate design method', 'annotations': {'method_class': 'SHORTCUT'}},
+    "RIGOROUS": {'description': 'Generic rigorous design method', 'annotations': {'method_class': 'RIGOROUS_EQUILIBRIUM'}},
+    "PINCH_ANALYSIS": {'description': 'Pinch analysis for heat-exchanger network and energy integration', 'annotations': {'method_class': 'ENERGY_INTEGRATION'}},
+}
+
+class FlowsheetSolutionApproach(RichEnum):
+    """
+    The overall computational strategy used to converge a process flowsheet.
+    """
+    # Enum members
+    SEQUENTIAL_MODULAR = "SEQUENTIAL_MODULAR"
+    EQUATION_ORIENTED = "EQUATION_ORIENTED"
+    SIMULTANEOUS_MODULAR = "SIMULTANEOUS_MODULAR"
+
+# Set metadata after class creation to avoid it becoming an enum member
+FlowsheetSolutionApproach._metadata = {
+    "SEQUENTIAL_MODULAR": {'description': 'Units solved one at a time in sequence, iterating on recycle tear streams'},
+    "EQUATION_ORIENTED": {'description': 'All model equations assembled and solved simultaneously'},
+    "SIMULTANEOUS_MODULAR": {'description': 'Hybrid approach combining modular unit models with a simultaneous convergence layer'},
+}
+
+class ProcessSimulator(RichEnum):
+    """
+    Process simulation software packages used to model chemical and biochemical process flowsheets.
+    """
+    # Enum members
+    ASPEN_PLUS = "ASPEN_PLUS"
+    ASPEN_HYSYS = "ASPEN_HYSYS"
+    ASPEN_CUSTOM_MODELER = "ASPEN_CUSTOM_MODELER"
+    UNISIM_DESIGN = "UNISIM_DESIGN"
+    PRO_II = "PRO_II"
+    AVEVA_PROCESS_SIMULATION = "AVEVA_PROCESS_SIMULATION"
+    CHEMCAD = "CHEMCAD"
+    DWSIM = "DWSIM"
+    COCO_SIMULATOR = "COCO_SIMULATOR"
+    GPROMS = "GPROMS"
+    PROSIMPLUS = "PROSIMPLUS"
+    PETRO_SIM = "PETRO_SIM"
+    BIOSTEAM = "BIOSTEAM"
+    SUPERPRO_DESIGNER = "SUPERPRO_DESIGNER"
+    IDAES = "IDAES"
+    CAPE_OPEN = "CAPE_OPEN"
+
+# Set metadata after class creation to avoid it becoming an enum member
+ProcessSimulator._metadata = {
+    "ASPEN_PLUS": {'description': 'Aspen Plus steady-state process simulator (AspenTech)'},
+    "ASPEN_HYSYS": {'description': 'Aspen HYSYS process simulator (AspenTech)'},
+    "ASPEN_CUSTOM_MODELER": {'description': 'Aspen Custom Modeler for user-defined unit operation models (AspenTech)'},
+    "UNISIM_DESIGN": {'description': 'Honeywell UniSim Design process simulator'},
+    "PRO_II": {'description': 'AVEVA Pro/II (formerly SimSci Pro/II) process simulator'},
+    "AVEVA_PROCESS_SIMULATION": {'description': 'AVEVA Process Simulation (formerly SimCentral)'},
+    "CHEMCAD": {'description': 'ChemCAD process simulator (Chemstations)'},
+    "DWSIM": {'description': 'DWSIM open-source CAPE-OPEN process simulator'},
+    "COCO_SIMULATOR": {'description': 'COCO/COFE free CAPE-OPEN flowsheeting environment'},
+    "GPROMS": {'description': 'gPROMS equation-oriented process modeling environment (Siemens / PSE)'},
+    "PROSIMPLUS": {'description': 'ProSimPlus steady-state process simulator (ProSim)'},
+    "PETRO_SIM": {'description': 'KBC Petro-SIM process simulator'},
+    "BIOSTEAM": {'description': 'BioSTEAM open-source biorefinery simulation and techno-economic analysis package'},
+    "SUPERPRO_DESIGNER": {'description': 'SuperPro Designer batch and bioprocess simulator (Intelligen)'},
+    "IDAES": {'description': 'IDAES open-source equation-oriented process systems engineering platform (US DOE)'},
+    "CAPE_OPEN": {'description': 'A CAPE-OPEN compliant simulator or unit (interoperability standard, simulator unspecified)'},
+}
+
+class ChemicalIdentifierScheme(RichEnum):
+    """
+    Schemes used to identify chemical substances, including registry numbers, line notations, structure-derived keys, and database accessions.
+    """
+    # Enum members
+    CAS_RN = "CAS_RN"
+    SMILES = "SMILES"
+    INCHI = "INCHI"
+    INCHIKEY = "INCHIKEY"
+    IUPAC_NAME = "IUPAC_NAME"
+    MOLECULAR_FORMULA = "MOLECULAR_FORMULA"
+    PUBCHEM_CID = "PUBCHEM_CID"
+    CHEBI_ID = "CHEBI_ID"
+    KEGG_COMPOUND = "KEGG_COMPOUND"
+    DRUGBANK_ID = "DRUGBANK_ID"
+    EC_NUMBER = "EC_NUMBER"
+
+# Set metadata after class creation to avoid it becoming an enum member
+ChemicalIdentifierScheme._metadata = {
+    "CAS_RN": {'description': 'CAS Registry Number assigned by the Chemical Abstracts Service', 'annotations': {'example': '64-17-5'}},
+    "SMILES": {'description': 'Simplified Molecular-Input Line-Entry System structure notation', 'annotations': {'example': 'CCO'}},
+    "INCHI": {'description': 'IUPAC International Chemical Identifier structure string', 'annotations': {'example': 'InChI=1S/C2H6O/c1-2-3/h3H,2H2,1H3'}},
+    "INCHIKEY": {'description': 'Hashed fixed-length form of an InChI', 'annotations': {'example': 'LFQSCWFLJHTTHZ-UHFFFAOYSA-N'}},
+    "IUPAC_NAME": {'description': 'Systematic IUPAC chemical name'},
+    "MOLECULAR_FORMULA": {'description': 'Molecular or empirical chemical formula', 'annotations': {'example': 'C2H6O'}},
+    "PUBCHEM_CID": {'description': 'PubChem Compound Identifier'},
+    "CHEBI_ID": {'description': 'ChEBI ontology identifier'},
+    "KEGG_COMPOUND": {'description': 'KEGG COMPOUND database accession'},
+    "DRUGBANK_ID": {'description': 'DrugBank accession'},
+    "EC_NUMBER": {'description': 'European Community (EINECS/EC) substance number'},
+}
+
+class CurrencyCode(RichEnum):
+    """
+    World currencies by ISO 4217 alpha-3 code. The numeric_code, symbol, and minor_unit (number of decimal places) annotations record the corresponding ISO 4217 attributes.
+    """
+    # Enum members
+    USD = "USD"
+    EUR = "EUR"
+    JPY = "JPY"
+    GBP = "GBP"
+    CNY = "CNY"
+    AUD = "AUD"
+    CAD = "CAD"
+    CHF = "CHF"
+    HKD = "HKD"
+    SGD = "SGD"
+    SEK = "SEK"
+    NOK = "NOK"
+    DKK = "DKK"
+    NZD = "NZD"
+    KRW = "KRW"
+    INR = "INR"
+    BRL = "BRL"
+    ZAR = "ZAR"
+    RUB = "RUB"
+    MXN = "MXN"
+    TRY = "TRY"
+    PLN = "PLN"
+    THB = "THB"
+    IDR = "IDR"
+    MYR = "MYR"
+    PHP = "PHP"
+    AED = "AED"
+    SAR = "SAR"
+    ILS = "ILS"
+    CZK = "CZK"
+    HUF = "HUF"
+    RON = "RON"
+    UAH = "UAH"
+    CLP = "CLP"
+    COP = "COP"
+    ARS = "ARS"
+    EGP = "EGP"
+    NGN = "NGN"
+    KES = "KES"
+    PKR = "PKR"
+    BDT = "BDT"
+    VND = "VND"
+    TWD = "TWD"
+    KWD = "KWD"
+    BHD = "BHD"
+    OMR = "OMR"
+    QAR = "QAR"
+    ISK = "ISK"
+
+# Set metadata after class creation to avoid it becoming an enum member
+CurrencyCode._metadata = {
+    "USD": {'description': 'United States dollar', 'annotations': {'numeric_code': '840', 'symbol': '$', 'minor_unit': 2}},
+    "EUR": {'description': 'Euro', 'annotations': {'numeric_code': '978', 'symbol': '€', 'minor_unit': 2}},
+    "JPY": {'description': 'Japanese yen', 'annotations': {'numeric_code': '392', 'symbol': '¥', 'minor_unit': 0}},
+    "GBP": {'description': 'British pound sterling', 'annotations': {'numeric_code': '826', 'symbol': '£', 'minor_unit': 2}},
+    "CNY": {'description': 'Chinese yuan renminbi', 'annotations': {'numeric_code': '156', 'symbol': '¥', 'minor_unit': 2}},
+    "AUD": {'description': 'Australian dollar', 'annotations': {'numeric_code': '036', 'symbol': '$', 'minor_unit': 2}},
+    "CAD": {'description': 'Canadian dollar', 'annotations': {'numeric_code': '124', 'symbol': '$', 'minor_unit': 2}},
+    "CHF": {'description': 'Swiss franc', 'annotations': {'numeric_code': '756', 'symbol': 'Fr', 'minor_unit': 2}},
+    "HKD": {'description': 'Hong Kong dollar', 'annotations': {'numeric_code': '344', 'symbol': '$', 'minor_unit': 2}},
+    "SGD": {'description': 'Singapore dollar', 'annotations': {'numeric_code': '702', 'symbol': '$', 'minor_unit': 2}},
+    "SEK": {'description': 'Swedish krona', 'annotations': {'numeric_code': '752', 'symbol': 'kr', 'minor_unit': 2}},
+    "NOK": {'description': 'Norwegian krone', 'annotations': {'numeric_code': '578', 'symbol': 'kr', 'minor_unit': 2}},
+    "DKK": {'description': 'Danish krone', 'annotations': {'numeric_code': '208', 'symbol': 'kr', 'minor_unit': 2}},
+    "NZD": {'description': 'New Zealand dollar', 'annotations': {'numeric_code': '554', 'symbol': '$', 'minor_unit': 2}},
+    "KRW": {'description': 'South Korean won', 'annotations': {'numeric_code': '410', 'symbol': '₩', 'minor_unit': 0}},
+    "INR": {'description': 'Indian rupee', 'annotations': {'numeric_code': '356', 'symbol': '₹', 'minor_unit': 2}},
+    "BRL": {'description': 'Brazilian real', 'annotations': {'numeric_code': '986', 'symbol': 'R$', 'minor_unit': 2}},
+    "ZAR": {'description': 'South African rand', 'annotations': {'numeric_code': '710', 'symbol': 'R', 'minor_unit': 2}},
+    "RUB": {'description': 'Russian ruble', 'annotations': {'numeric_code': '643', 'symbol': '₽', 'minor_unit': 2}},
+    "MXN": {'description': 'Mexican peso', 'annotations': {'numeric_code': '484', 'symbol': '$', 'minor_unit': 2}},
+    "TRY": {'description': 'Turkish lira', 'annotations': {'numeric_code': '949', 'symbol': '₺', 'minor_unit': 2}},
+    "PLN": {'description': 'Polish zloty', 'annotations': {'numeric_code': '985', 'symbol': 'zł', 'minor_unit': 2}},
+    "THB": {'description': 'Thai baht', 'annotations': {'numeric_code': '764', 'symbol': '฿', 'minor_unit': 2}},
+    "IDR": {'description': 'Indonesian rupiah', 'annotations': {'numeric_code': '360', 'symbol': 'Rp', 'minor_unit': 2}},
+    "MYR": {'description': 'Malaysian ringgit', 'annotations': {'numeric_code': '458', 'symbol': 'RM', 'minor_unit': 2}},
+    "PHP": {'description': 'Philippine peso', 'annotations': {'numeric_code': '608', 'symbol': '₱', 'minor_unit': 2}},
+    "AED": {'description': 'United Arab Emirates dirham', 'annotations': {'numeric_code': '784', 'minor_unit': 2}},
+    "SAR": {'description': 'Saudi riyal', 'annotations': {'numeric_code': '682', 'minor_unit': 2}},
+    "ILS": {'description': 'Israeli new shekel', 'annotations': {'numeric_code': '376', 'symbol': '₪', 'minor_unit': 2}},
+    "CZK": {'description': 'Czech koruna', 'annotations': {'numeric_code': '203', 'symbol': 'Kč', 'minor_unit': 2}},
+    "HUF": {'description': 'Hungarian forint', 'annotations': {'numeric_code': '348', 'symbol': 'Ft', 'minor_unit': 2}},
+    "RON": {'description': 'Romanian leu', 'annotations': {'numeric_code': '946', 'symbol': 'lei', 'minor_unit': 2}},
+    "UAH": {'description': 'Ukrainian hryvnia', 'annotations': {'numeric_code': '980', 'symbol': '₴', 'minor_unit': 2}},
+    "CLP": {'description': 'Chilean peso', 'annotations': {'numeric_code': '152', 'symbol': '$', 'minor_unit': 0}},
+    "COP": {'description': 'Colombian peso', 'annotations': {'numeric_code': '170', 'symbol': '$', 'minor_unit': 2}},
+    "ARS": {'description': 'Argentine peso', 'annotations': {'numeric_code': '032', 'symbol': '$', 'minor_unit': 2}},
+    "EGP": {'description': 'Egyptian pound', 'annotations': {'numeric_code': '818', 'symbol': '£', 'minor_unit': 2}},
+    "NGN": {'description': 'Nigerian naira', 'annotations': {'numeric_code': '566', 'symbol': '₦', 'minor_unit': 2}},
+    "KES": {'description': 'Kenyan shilling', 'annotations': {'numeric_code': '404', 'symbol': 'Sh', 'minor_unit': 2}},
+    "PKR": {'description': 'Pakistani rupee', 'annotations': {'numeric_code': '586', 'symbol': '₨', 'minor_unit': 2}},
+    "BDT": {'description': 'Bangladeshi taka', 'annotations': {'numeric_code': '050', 'symbol': '৳', 'minor_unit': 2}},
+    "VND": {'description': 'Vietnamese dong', 'annotations': {'numeric_code': '704', 'symbol': '₫', 'minor_unit': 0}},
+    "TWD": {'description': 'New Taiwan dollar', 'annotations': {'numeric_code': '901', 'symbol': '$', 'minor_unit': 2}},
+    "KWD": {'description': 'Kuwaiti dinar', 'annotations': {'numeric_code': '414', 'minor_unit': 3}},
+    "BHD": {'description': 'Bahraini dinar', 'annotations': {'numeric_code': '048', 'minor_unit': 3}},
+    "OMR": {'description': 'Omani rial', 'annotations': {'numeric_code': '512', 'minor_unit': 3}},
+    "QAR": {'description': 'Qatari riyal', 'annotations': {'numeric_code': '634', 'minor_unit': 2}},
+    "ISK": {'description': 'Icelandic krona', 'annotations': {'numeric_code': '352', 'symbol': 'kr', 'minor_unit': 0}},
 }
 
 class LengthUnitEnum(RichEnum):
@@ -16811,6 +19015,68 @@ DataSizeUnitEnum._metadata = {
     "MEBIBYTE": {'description': 'Mebibyte (2^20 bytes)', 'annotations': {'symbol': 'MiB', 'conversion_to_byte': '1048576', 'standard': 'binary'}},
     "GIBIBYTE": {'description': 'Gibibyte (2^30 bytes)', 'annotations': {'symbol': 'GiB', 'conversion_to_byte': '1073741824', 'standard': 'binary'}},
     "TEBIBYTE": {'description': 'Tebibyte (2^40 bytes)', 'annotations': {'symbol': 'TiB', 'conversion_to_byte': '1099511627776', 'standard': 'binary'}},
+}
+
+class MassFlowRateUnitEnum(RichEnum):
+    """
+    Units of mass flow rate (mass per unit time)
+    """
+    # Enum members
+    KILOGRAM_PER_SECOND = "KILOGRAM_PER_SECOND"
+    KILOGRAM_PER_HOUR = "KILOGRAM_PER_HOUR"
+    GRAM_PER_SECOND = "GRAM_PER_SECOND"
+    TONNE_PER_HOUR = "TONNE_PER_HOUR"
+    TONNE_PER_DAY = "TONNE_PER_DAY"
+    POUND_PER_HOUR = "POUND_PER_HOUR"
+
+# Set metadata after class creation to avoid it becoming an enum member
+MassFlowRateUnitEnum._metadata = {
+    "KILOGRAM_PER_SECOND": {'description': 'Kilograms per second (SI)', 'annotations': {'symbol': 'kg/s', 'system': 'SI'}},
+    "KILOGRAM_PER_HOUR": {'description': 'Kilograms per hour', 'annotations': {'symbol': 'kg/h', 'conversion_to_kg_per_s': '0.000277778'}},
+    "GRAM_PER_SECOND": {'description': 'Grams per second', 'annotations': {'symbol': 'g/s', 'conversion_to_kg_per_s': '0.001'}},
+    "TONNE_PER_HOUR": {'description': 'Metric tonnes per hour', 'annotations': {'symbol': 't/h', 'conversion_to_kg_per_s': '0.277778'}},
+    "TONNE_PER_DAY": {'description': 'Metric tonnes per day', 'annotations': {'symbol': 't/d', 'conversion_to_kg_per_s': '0.0115741'}},
+    "POUND_PER_HOUR": {'description': 'Pounds (mass) per hour', 'annotations': {'symbol': 'lb/h', 'conversion_to_kg_per_s': '0.000125998', 'system': 'imperial'}},
+}
+
+class MolarFlowRateUnitEnum(RichEnum):
+    """
+    Units of molar flow rate (amount of substance per unit time)
+    """
+    # Enum members
+    MOLE_PER_SECOND = "MOLE_PER_SECOND"
+    MOLE_PER_HOUR = "MOLE_PER_HOUR"
+    KILOMOLE_PER_HOUR = "KILOMOLE_PER_HOUR"
+    KILOMOLE_PER_SECOND = "KILOMOLE_PER_SECOND"
+
+# Set metadata after class creation to avoid it becoming an enum member
+MolarFlowRateUnitEnum._metadata = {
+    "MOLE_PER_SECOND": {'description': 'Moles per second (SI)', 'annotations': {'symbol': 'mol/s', 'system': 'SI'}},
+    "MOLE_PER_HOUR": {'description': 'Moles per hour', 'annotations': {'symbol': 'mol/h', 'conversion_to_mol_per_s': '0.000277778'}},
+    "KILOMOLE_PER_HOUR": {'description': 'Kilomoles per hour', 'annotations': {'symbol': 'kmol/h', 'conversion_to_mol_per_s': '0.277778'}},
+    "KILOMOLE_PER_SECOND": {'description': 'Kilomoles per second', 'annotations': {'symbol': 'kmol/s', 'conversion_to_mol_per_s': '1000'}},
+}
+
+class VolumetricFlowRateUnitEnum(RichEnum):
+    """
+    Units of volumetric flow rate (volume per unit time)
+    """
+    # Enum members
+    CUBIC_METER_PER_SECOND = "CUBIC_METER_PER_SECOND"
+    CUBIC_METER_PER_HOUR = "CUBIC_METER_PER_HOUR"
+    LITER_PER_SECOND = "LITER_PER_SECOND"
+    LITER_PER_MINUTE = "LITER_PER_MINUTE"
+    GALLON_PER_MINUTE = "GALLON_PER_MINUTE"
+    CUBIC_FOOT_PER_MINUTE = "CUBIC_FOOT_PER_MINUTE"
+
+# Set metadata after class creation to avoid it becoming an enum member
+VolumetricFlowRateUnitEnum._metadata = {
+    "CUBIC_METER_PER_SECOND": {'description': 'Cubic meters per second (SI)', 'annotations': {'symbol': 'm3/s', 'system': 'SI'}},
+    "CUBIC_METER_PER_HOUR": {'description': 'Cubic meters per hour', 'annotations': {'symbol': 'm3/h', 'conversion_to_m3_per_s': '0.000277778'}},
+    "LITER_PER_SECOND": {'description': 'Liters per second', 'annotations': {'symbol': 'L/s', 'conversion_to_m3_per_s': '0.001'}},
+    "LITER_PER_MINUTE": {'description': 'Liters per minute', 'annotations': {'symbol': 'L/min', 'conversion_to_m3_per_s': '1.66667e-5'}},
+    "GALLON_PER_MINUTE": {'description': 'US gallons per minute', 'annotations': {'symbol': 'gpm', 'conversion_to_m3_per_s': '6.30902e-5', 'system': 'US'}},
+    "CUBIC_FOOT_PER_MINUTE": {'description': 'Cubic feet per minute', 'annotations': {'symbol': 'cfm', 'conversion_to_m3_per_s': '0.000471947', 'system': 'imperial'}},
 }
 
 class QuantityKindEnum(RichEnum):
@@ -17361,6 +19627,65 @@ OpenSourceMaturityLevel._metadata = {
     "MATURE": {'description': 'Well-established with proven governance'},
     "DECLINING": {'description': 'Decreasing activity and maintenance'},
     "ARCHIVED": {'description': 'No longer actively maintained'},
+}
+
+class SystemLifeCycleProcess15288(RichEnum):
+    """
+    The 30 system life cycle processes grouped by ISO/IEC/IEEE 15288:2015.
+    """
+    # Enum members
+    ACQUISITION = "ACQUISITION"
+    SUPPLY = "SUPPLY"
+    LIFE_CYCLE_MODEL_MANAGEMENT = "LIFE_CYCLE_MODEL_MANAGEMENT"
+    INFRASTRUCTURE_MANAGEMENT = "INFRASTRUCTURE_MANAGEMENT"
+    PORTFOLIO_MANAGEMENT = "PORTFOLIO_MANAGEMENT"
+    HUMAN_RESOURCE_MANAGEMENT = "HUMAN_RESOURCE_MANAGEMENT"
+    QUALITY_MANAGEMENT = "QUALITY_MANAGEMENT"
+    PROJECT_PLANNING = "PROJECT_PLANNING"
+    PROJECT_ASSESSMENT_AND_CONTROL = "PROJECT_ASSESSMENT_AND_CONTROL"
+    DECISION_MANAGEMENT = "DECISION_MANAGEMENT"
+    RISK_MANAGEMENT = "RISK_MANAGEMENT"
+    CONFIGURATION_MANAGEMENT = "CONFIGURATION_MANAGEMENT"
+    INFORMATION_MANAGEMENT = "INFORMATION_MANAGEMENT"
+    MEASUREMENT = "MEASUREMENT"
+    QUALITY_ASSURANCE = "QUALITY_ASSURANCE"
+    KNOWLEDGE_MANAGEMENT = "KNOWLEDGE_MANAGEMENT"
+    BUSINESS_OR_MISSION_ANALYSIS = "BUSINESS_OR_MISSION_ANALYSIS"
+    STAKEHOLDER_NEEDS_AND_REQUIREMENTS_DEFINITION = "STAKEHOLDER_NEEDS_AND_REQUIREMENTS_DEFINITION"
+    SYSTEM_REQUIREMENTS_DEFINITION = "SYSTEM_REQUIREMENTS_DEFINITION"
+    ARCHITECTURE_DEFINITION = "ARCHITECTURE_DEFINITION"
+    DESIGN_DEFINITION = "DESIGN_DEFINITION"
+    SYSTEM_ANALYSIS = "SYSTEM_ANALYSIS"
+    IMPLEMENTATION = "IMPLEMENTATION"
+    INTEGRATION = "INTEGRATION"
+    VERIFICATION = "VERIFICATION"
+    TRANSITION = "TRANSITION"
+    VALIDATION = "VALIDATION"
+    OPERATION = "OPERATION"
+    MAINTENANCE = "MAINTENANCE"
+    DISPOSAL = "DISPOSAL"
+
+# Set metadata after class creation to avoid it becoming an enum member
+SystemLifeCycleProcess15288._metadata = {
+}
+
+class VerificationValidationProcessIEEE1012(RichEnum):
+    """
+    Verification and validation processes applied across the system, software, and hardware life cycle.
+    """
+    # Enum members
+    CONCEPT_AND_REQUIREMENTS_V_AND_V = "CONCEPT_AND_REQUIREMENTS_V_AND_V"
+    ARCHITECTURE_AND_DESIGN_V_AND_V = "ARCHITECTURE_AND_DESIGN_V_AND_V"
+    IMPLEMENTATION_V_AND_V = "IMPLEMENTATION_V_AND_V"
+    INTEGRATION_V_AND_V = "INTEGRATION_V_AND_V"
+    QUALIFICATION_TESTING = "QUALIFICATION_TESTING"
+    INSTALLATION_AND_CHECKOUT = "INSTALLATION_AND_CHECKOUT"
+    OPERATION_V_AND_V = "OPERATION_V_AND_V"
+    MAINTENANCE_V_AND_V = "MAINTENANCE_V_AND_V"
+    DISPOSAL_V_AND_V = "DISPOSAL_V_AND_V"
+
+# Set metadata after class creation to avoid it becoming an enum member
+VerificationValidationProcessIEEE1012._metadata = {
 }
 
 class OWLProfileEnum(RichEnum):

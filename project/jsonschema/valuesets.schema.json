@@ -57,6 +57,26 @@
             "title": "AccessRights",
             "type": "string"
         },
+        "ActivityCoefficientModel": {
+            "description": "Excess Gibbs energy / activity-coefficient models for non-ideal liquid phases (the SFF gamma method).",
+            "enum": [
+                "IDEAL",
+                "MARGULES",
+                "VAN_LAAR",
+                "REGULAR_SOLUTION",
+                "WILSON",
+                "NRTL",
+                "ELECTROLYTE_NRTL",
+                "UNIQUAC",
+                "UNIFAC",
+                "UNIFAC_DORTMUND",
+                "FLORY_HUGGINS",
+                "PITZER",
+                "COSMO_SAC"
+            ],
+            "title": "ActivityCoefficientModel",
+            "type": "string"
+        },
         "AdditiveManufacturingEnum": {
             "description": "3D printing and additive manufacturing methods",
             "enum": [
@@ -897,6 +917,11 @@
             "title": "BioleachOrganism",
             "type": "string"
         },
+        "BiologicalImagingMethod": {
+            "description": "Any imaging method from FBbi, covering recorded images (macroscopy, microscopy, radiography, tomography) and portrayed images (diagrams, graphic illustrations, montages)",
+            "title": "BiologicalImagingMethod",
+            "type": "string"
+        },
         "BiologicalKingdom": {
             "description": "Major kingdoms/domains of life",
             "enum": [
@@ -1151,6 +1176,17 @@
                 "FACE_CENTERED_CUBIC"
             ],
             "title": "BravaisLatticeEnum",
+            "type": "string"
+        },
+        "Bridge2AIDataGenerationProjectEnum": {
+            "description": "Data generation projects (Grand Challenges) of the NIH Bridge to Artificial Intelligence (Bridge2AI) program, which creates standardized, annotated, ethically sourced AI-ready datasets across a diverse set of modalities.",
+            "enum": [
+                "CHORUS",
+                "AI_READI",
+                "VOICE",
+                "CM4AI"
+            ],
+            "title": "Bridge2AIDataGenerationProjectEnum",
             "type": "string"
         },
         "BronstedAcidBaseRoleEnum": {
@@ -1606,6 +1642,24 @@
             "title": "ChemicalEntity",
             "type": "string"
         },
+        "ChemicalIdentifierScheme": {
+            "description": "Schemes used to identify chemical substances, including registry numbers, line notations, structure-derived keys, and database accessions.",
+            "enum": [
+                "CAS_RN",
+                "SMILES",
+                "INCHI",
+                "INCHIKEY",
+                "IUPAC_NAME",
+                "MOLECULAR_FORMULA",
+                "PUBCHEM_CID",
+                "CHEBI_ID",
+                "KEGG_COMPOUND",
+                "DRUGBANK_ID",
+                "EC_NUMBER"
+            ],
+            "title": "ChemicalIdentifierScheme",
+            "type": "string"
+        },
         "ChipFabricationNodeType": {
             "description": "Semiconductor fabrication process node sizes defining transistor feature dimensions",
             "enum": [
@@ -2057,6 +2111,16 @@
             "title": "CommunicationProtocolEnum",
             "type": "string"
         },
+        "ComparisonObjectiveEnum": {
+            "description": "The objective of a between-group comparison, particularly in the design of controlled trials",
+            "enum": [
+                "SUPERIORITY",
+                "NON_INFERIORITY",
+                "EQUIVALENCE"
+            ],
+            "title": "ComparisonObjectiveEnum",
+            "type": "string"
+        },
         "CompassDirection": {
             "description": "Cardinal and intercardinal compass directions",
             "enum": [
@@ -2241,6 +2305,11 @@
             "title": "ContinentEnum",
             "type": "string"
         },
+        "ContrastEnhancingMethod": {
+            "description": "Optical and computational contrast-enhancing methods from FBbi, such as phase contrast, DIC and deconvolution",
+            "title": "ContrastEnhancingMethod",
+            "type": "string"
+        },
         "ContributorType": {
             "description": "The type of contributor being represented.",
             "enum": [
@@ -2301,6 +2370,16 @@
                 "CORPORATE_SECRETARY"
             ],
             "title": "CorporateGovernanceRoleEnum",
+            "type": "string"
+        },
+        "CorrelationCoefficientEnum": {
+            "description": "Coefficients quantifying the strength of association between two variables",
+            "enum": [
+                "PEARSON",
+                "SPEARMAN",
+                "KENDALL"
+            ],
+            "title": "CorrelationCoefficientEnum",
             "type": "string"
         },
         "CountryCodeISO2Enum": {
@@ -2565,6 +2644,61 @@
             "title": "CurrencyChemical",
             "type": "string"
         },
+        "CurrencyCode": {
+            "description": "World currencies by ISO 4217 alpha-3 code. The numeric_code, symbol, and minor_unit (number of decimal places) annotations record the corresponding ISO 4217 attributes.",
+            "enum": [
+                "USD",
+                "EUR",
+                "JPY",
+                "GBP",
+                "CNY",
+                "AUD",
+                "CAD",
+                "CHF",
+                "HKD",
+                "SGD",
+                "SEK",
+                "NOK",
+                "DKK",
+                "NZD",
+                "KRW",
+                "INR",
+                "BRL",
+                "ZAR",
+                "RUB",
+                "MXN",
+                "TRY",
+                "PLN",
+                "THB",
+                "IDR",
+                "MYR",
+                "PHP",
+                "AED",
+                "SAR",
+                "ILS",
+                "CZK",
+                "HUF",
+                "RON",
+                "UAH",
+                "CLP",
+                "COP",
+                "ARS",
+                "EGP",
+                "NGN",
+                "KES",
+                "PKR",
+                "BDT",
+                "VND",
+                "TWD",
+                "KWD",
+                "BHD",
+                "OMR",
+                "QAR",
+                "ISK"
+            ],
+            "title": "CurrencyCode",
+            "type": "string"
+        },
         "CurrencyCodeISO4217Enum": {
             "description": "ISO 4217 currency codes",
             "enum": [
@@ -2602,6 +2736,263 @@
                 "EGP"
             ],
             "title": "CurrencyCodeISO4217Enum",
+            "type": "string"
+        },
+        "DICOMAttributeTypeEnum": {
+            "description": "Attribute requirement types defined in DICOM PS3.5 Section 7.4, which state whether an attribute must be present in a data set and whether it may have a zero-length value. Conformance checkers report missing Type 1 and Type 2 attributes as errors. These types also determine which de-identification action (D, Z or X) may be applied to an attribute.",
+            "enum": [
+                "TYPE_1",
+                "TYPE_1C",
+                "TYPE_2",
+                "TYPE_2C",
+                "TYPE_3"
+            ],
+            "title": "DICOMAttributeTypeEnum",
+            "type": "string"
+        },
+        "DICOMDeidentificationActionEnum": {
+            "description": "Action codes from DICOM PS3.15 Table E.1-1a that specify how a de-identifier treats each attribute under the Basic Application Level Confidentiality Profile. Compound codes (for example Z/D) indicate that the first action applies unless the attribute's type requires the second to maintain IOD conformance. Permissible values use the DICOM code letters, with slashes replaced by underscores in compound codes.",
+            "enum": [
+                "D",
+                "Z",
+                "X",
+                "K",
+                "C",
+                "U",
+                "Z_D",
+                "X_Z",
+                "X_D",
+                "X_Z_D",
+                "X_Z_U"
+            ],
+            "title": "DICOMDeidentificationActionEnum",
+            "type": "string"
+        },
+        "DICOMDeidentificationMethodEnum": {
+            "description": "The Basic Application Level Confidentiality Profile and its options defined in DICOM PS3.15 Annex E, as coded in PS3.16 Context ID 7050 (De-identification Method). These codes are recorded in the De-identification Method Code Sequence (0012,0064) to document what was done to an instance. The \"Clean\" options remove additional identifying content; the \"Retain\" options preserve information that the basic profile would otherwise remove.",
+            "enum": [
+                "BASIC_APPLICATION_CONFIDENTIALITY_PROFILE",
+                "CLEAN_PIXEL_DATA_OPTION",
+                "CLEAN_RECOGNIZABLE_VISUAL_FEATURES_OPTION",
+                "CLEAN_GRAPHICS_OPTION",
+                "CLEAN_STRUCTURED_CONTENT_OPTION",
+                "CLEAN_DESCRIPTORS_OPTION",
+                "RETAIN_LONGITUDINAL_TEMPORAL_INFORMATION_FULL_DATES_OPTION",
+                "RETAIN_LONGITUDINAL_TEMPORAL_INFORMATION_MODIFIED_DATES_OPTION",
+                "RETAIN_PATIENT_CHARACTERISTICS_OPTION",
+                "RETAIN_DEVICE_IDENTITY_OPTION",
+                "RETAIN_UIDS_OPTION",
+                "RETAIN_SAFE_PRIVATE_OPTION",
+                "RETAIN_INSTITUTION_IDENTITY_OPTION"
+            ],
+            "title": "DICOMDeidentificationMethodEnum",
+            "type": "string"
+        },
+        "DICOMModalityEnum": {
+            "description": "Acquisition modality codes from DICOM PS3.16 Context ID 29 (Acquisition Modality), the defined terms for the Modality (0008,0060) attribute. The permissible value is the DICOM code itself; the title is the NCI Thesaurus label where a mapping exists and the DICOM code meaning is carried as an alias when it differs. Where an NCI Thesaurus term exists it is the meaning and the DCM code is an exact mapping; otherwise the DCM code is the meaning, so every value carries its DCM code in one of the two fields. Waveform modalities (ECG, EEG, etc.) are defined in CID 34 and are not included here, nor are the non-acquisition values that also appear in Modality (0008,0060) such as SR, PR, SEG, KO, DOC, OT and the RT objects.",
+            "enum": [
+                "AR",
+                "BI",
+                "BMD",
+                "CR",
+                "CT",
+                "CFM",
+                "DMS",
+                "DG",
+                "DX",
+                "ES",
+                "XC",
+                "GM",
+                "IO",
+                "IVOCT",
+                "IVUS",
+                "KER",
+                "LS",
+                "LEN",
+                "MR",
+                "MG",
+                "NM",
+                "OAM",
+                "OPM",
+                "OP",
+                "OPT",
+                "OPTBSV",
+                "OPTENF",
+                "OPV",
+                "OCT",
+                "OSS",
+                "PX",
+                "PA",
+                "PT",
+                "RF",
+                "RG",
+                "RTIMAGE",
+                "SM",
+                "SRF",
+                "TG",
+                "US",
+                "BDUS",
+                "VA",
+                "XA"
+            ],
+            "title": "DICOMModalityEnum",
+            "type": "string"
+        },
+        "DICOMNetworkServiceEnum": {
+            "description": "Network services used to query, retrieve and store DICOM instances between imaging systems such as PACS, modalities and research archives. Includes the classic DIMSE (DICOM Message Service Element) services of PS3.7 and the RESTful DICOMweb services of PS3.18. Cataloguing which services a source repository supports is part of the data landscape assessment that precedes extraction.",
+            "enum": [
+                "C_ECHO",
+                "C_STORE",
+                "C_FIND",
+                "C_MOVE",
+                "C_GET",
+                "N_EVENT_REPORT",
+                "N_GET",
+                "N_SET",
+                "N_ACTION",
+                "N_CREATE",
+                "N_DELETE",
+                "QIDO_RS",
+                "WADO_RS",
+                "STOW_RS",
+                "WADO_URI",
+                "UPS_RS",
+                "CUSTOM_API"
+            ],
+            "title": "DICOMNetworkServiceEnum",
+            "type": "string"
+        },
+        "DICOMSoftwareToolEnum": {
+            "description": "Software toolkits, libraries, validators, servers and platforms commonly used to read, write, validate, anonymize and serve DICOM data in research data management pipelines. The category annotation distinguishes general-purpose toolkits from conformance validators, archive servers and metadata anonymizers.",
+            "enum": [
+                "DCMTK",
+                "PYDICOM",
+                "GDCM",
+                "DCM4CHE",
+                "ITK",
+                "DVTK",
+                "DICOM3TOOLS",
+                "DCIODVFY",
+                "DCENTVFY",
+                "PIXELMED",
+                "RSNA_CTP",
+                "ORTHANC",
+                "DCM4CHEE",
+                "XNAT",
+                "TCIA_UTILS",
+                "DICOM_CLEANER",
+                "HOROS",
+                "OSIRIX",
+                "SLICER_3D",
+                "ITK_SNAP"
+            ],
+            "title": "DICOMSoftwareToolEnum",
+            "type": "string"
+        },
+        "DICOMTransferSyntaxEnum": {
+            "description": "Transfer syntaxes registered in DICOM PS3.6 Annex A that define the byte ordering, VR encoding and pixel data compression of a DICOM data set. Pixel data validation includes confirming that decompression from a lossy or lossless transfer syntax yields the expected bit depth and that no unintended data loss occurred. Video transfer syntaxes (MPEG-2, H.264, HEVC) are used for endoscopy and ultrasound cine acquisitions. Fragmentable variants of the MPEG transfer syntaxes and retired JPEG processes are omitted; the full registry is at the see_also link.",
+            "enum": [
+                "IMPLICIT_VR_LITTLE_ENDIAN",
+                "EXPLICIT_VR_LITTLE_ENDIAN",
+                "ENCAPSULATED_UNCOMPRESSED_EXPLICIT_VR_LITTLE_ENDIAN",
+                "DEFLATED_EXPLICIT_VR_LITTLE_ENDIAN",
+                "EXPLICIT_VR_BIG_ENDIAN",
+                "JPEG_BASELINE_PROCESS_1",
+                "JPEG_EXTENDED_PROCESS_2_4",
+                "JPEG_LOSSLESS_PROCESS_14",
+                "JPEG_LOSSLESS_PROCESS_14_SV1",
+                "JPEG_LS_LOSSLESS",
+                "JPEG_LS_NEAR_LOSSLESS",
+                "JPEG_2000_LOSSLESS_ONLY",
+                "JPEG_2000",
+                "JPEG_2000_MULTICOMPONENT_LOSSLESS_ONLY",
+                "JPEG_2000_MULTICOMPONENT",
+                "JPIP_REFERENCED",
+                "JPIP_REFERENCED_DEFLATE",
+                "MPEG2_MAIN_PROFILE_MAIN_LEVEL",
+                "MPEG2_MAIN_PROFILE_HIGH_LEVEL",
+                "MPEG4_AVC_H264_HIGH_PROFILE_LEVEL_4_1",
+                "MPEG4_AVC_H264_BD_COMPATIBLE_HIGH_PROFILE_LEVEL_4_1",
+                "MPEG4_AVC_H264_HIGH_PROFILE_LEVEL_4_2_2D",
+                "MPEG4_AVC_H264_HIGH_PROFILE_LEVEL_4_2_3D",
+                "MPEG4_AVC_H264_STEREO_HIGH_PROFILE_LEVEL_4_2",
+                "HEVC_H265_MAIN_PROFILE_LEVEL_5_1",
+                "HEVC_H265_MAIN_10_PROFILE_LEVEL_5_1",
+                "JPEG_XL_LOSSLESS",
+                "JPEG_XL_JPEG_RECOMPRESSION",
+                "JPEG_XL",
+                "HTJ2K_LOSSLESS_ONLY",
+                "HTJ2K_RPCL_LOSSLESS_ONLY",
+                "HTJ2K",
+                "RLE_LOSSLESS",
+                "SMPTE_ST_2110_20_UNCOMPRESSED_PROGRESSIVE_VIDEO",
+                "SMPTE_ST_2110_20_UNCOMPRESSED_INTERLACED_VIDEO"
+            ],
+            "title": "DICOMTransferSyntaxEnum",
+            "type": "string"
+        },
+        "DICOMValidationIssueTypeEnum": {
+            "description": "Categories of problems detected when validating DICOM files and collections for completeness, conformance, metadata consistency, pixel data integrity and plausibility. Used to classify findings from tools such as dciodvfy, dcentvfy, DVTk and pydicom during data reliability workflows.",
+            "enum": [
+                "TRUNCATED_FILE",
+                "INVALID_VR_ENCODING",
+                "MISSING_REQUIRED_ATTRIBUTE",
+                "VALUE_MULTIPLICITY_VIOLATION",
+                "VALUE_OUT_OF_RANGE",
+                "INVALID_UID_SYNTAX",
+                "DUPLICATE_UID",
+                "INCONSISTENT_ENTITY_ATTRIBUTES",
+                "DATE_INCONSISTENCY",
+                "IMPLAUSIBLE_VALUE",
+                "NONSTANDARD_PRIVATE_ATTRIBUTE",
+                "IDENTIFIER_LINKAGE_ERROR",
+                "UNREADABLE_PIXEL_DATA",
+                "DECOMPRESSION_MISMATCH",
+                "CHECKSUM_MISMATCH",
+                "PROTECTED_HEALTH_INFORMATION_PRESENT"
+            ],
+            "title": "DICOMValidationIssueTypeEnum",
+            "type": "string"
+        },
+        "DICOMValueRepresentationEnum": {
+            "description": "The Value Representations (VRs) defined in DICOM PS3.5 Section 6.2, which specify the data type and format of the value of a data element. Tag validation tools check that each attribute is encoded with the VR required by the data dictionary. Permissible values are the two-letter DICOM VR codes.",
+            "enum": [
+                "AE",
+                "AS",
+                "AT",
+                "CS",
+                "DA",
+                "DS",
+                "DT",
+                "FL",
+                "FD",
+                "IS",
+                "LO",
+                "LT",
+                "OB",
+                "OD",
+                "OF",
+                "OL",
+                "OV",
+                "OW",
+                "PN",
+                "SH",
+                "SL",
+                "SQ",
+                "SS",
+                "ST",
+                "SV",
+                "TM",
+                "UC",
+                "UI",
+                "UL",
+                "UN",
+                "UR",
+                "US",
+                "UT",
+                "UV"
+            ],
+            "title": "DICOMValueRepresentationEnum",
             "type": "string"
         },
         "DNABaseEnum": {
@@ -3020,6 +3411,46 @@
             "title": "DecommissioningPhaseType",
             "type": "string"
         },
+        "DefacingMethodEnum": {
+            "description": "Approaches to pixel-level de-identification that remove or obscure facial features in head imaging. Skull-stripping removes all non-brain tissue and may discard useful anatomy; face-specific methods aim to remove only facial features while preserving as much of the head volume as possible.",
+            "enum": [
+                "SKULL_STRIPPING",
+                "TEMPLATE_BASED_MASKING",
+                "SURFACE_BLURRING",
+                "SHEARING_PLANE",
+                "DEEP_LEARNING_SEGMENTATION",
+                "REFACING",
+                "MANUAL_MASKING",
+                "FACE_DETECTION_AND_BLURRING",
+                "MANUAL_CROP_OR_BLUR"
+            ],
+            "title": "DefacingMethodEnum",
+            "type": "string"
+        },
+        "DefacingToolEnum": {
+            "description": "Software tools and pipelines used for pixel-level de-identification of head imaging and photographs, with their supported modalities, method and licensing. Metadata-only anonymizers are included for completeness because they are commonly paired with defacing tools, but they do not remove facial features.",
+            "enum": [
+                "PYDEFACE",
+                "FREESURFER_MRI_DEFACE",
+                "AFNI_REFACER",
+                "QUICKSHEAR",
+                "DEEPDEFACER",
+                "ASAN_DEFACER",
+                "MYDEFACE",
+                "MASK_FACE",
+                "FSL_BET",
+                "AFNI_3DSKULLSTRIP",
+                "ITK_SNAP",
+                "SLICER_3D",
+                "IMAGEJ_FIJI",
+                "OPENCV",
+                "OSIRIX_HOROS_PLUGIN",
+                "PIXELMED_DICOM_ANONYMIZER",
+                "MANUAL_PHOTO_VIDEO_EDITING"
+            ],
+            "title": "DefacingToolEnum",
+            "type": "string"
+        },
         "DefectClassificationEnum": {
             "description": "Manufacturing defect classification",
             "enum": [
@@ -3043,6 +3474,19 @@
             "title": "DefenseInDepthLevelEnum",
             "type": "string"
         },
+        "DeidentificationRegulatoryFrameworkEnum": {
+            "description": "Regulations and standards that define when medical imaging data is considered de-identified. Under HIPAA, full-face photographs and comparable images are direct identifiers; under the GDPR, facial images are biometric personal data requiring special handling.",
+            "enum": [
+                "HIPAA_SAFE_HARBOR",
+                "HIPAA_EXPERT_DETERMINATION",
+                "GDPR_ANONYMISATION",
+                "GDPR_PSEUDONYMISATION",
+                "DICOM_PS3_15_CONFIDENTIALITY_PROFILE",
+                "MIDI_TASK_GROUP_RECOMMENDATIONS"
+            ],
+            "title": "DeidentificationRegulatoryFrameworkEnum",
+            "type": "string"
+        },
         "DerivatizationMethod": {
             "description": "Chemical derivatization methods for sample preparation",
             "enum": [
@@ -3054,6 +3498,24 @@
                 "OXIMATION"
             ],
             "title": "DerivatizationMethod",
+            "type": "string"
+        },
+        "DesignSimulationMethod": {
+            "description": "Methods used to design or simulate unit operations, particularly separation columns - ranging from graphical and shortcut methods to rigorous stage-by-stage and rate-based models.",
+            "enum": [
+                "MCCABE_THIELE",
+                "PONCHON_SAVARIT",
+                "FENSKE_UNDERWOOD_GILLILAND",
+                "KREMSER",
+                "MESH",
+                "INSIDE_OUT",
+                "RATE_BASED",
+                "EQUILIBRIUM_STAGE",
+                "SHORTCUT",
+                "RIGOROUS",
+                "PINCH_ANALYSIS"
+            ],
+            "title": "DesignSimulationMethod",
             "type": "string"
         },
         "DetectionModeEnum": {
@@ -3132,6 +3594,15 @@
             "title": "Disease",
             "type": "string"
         },
+        "DistributionalAssumptionEnum": {
+            "description": "Whether an inference procedure assumes a parametric form for the underlying population distribution.\nNote the deliberate type approximation: the values denote a property of a procedure, but the available ontology terms (NCIT:C53230, STATO:0000198) denote classes of test. Neither PATO nor OBI currently has a quality or characteristic term for \"parametric\", so the test classes are used as the closest available referent.",
+            "enum": [
+                "PARAMETRIC",
+                "NON_PARAMETRIC"
+            ],
+            "title": "DistributionalAssumptionEnum",
+            "type": "string"
+        },
         "DocumentFormatEnum": {
             "description": "Document and text file formats",
             "enum": [
@@ -3161,7 +3632,17 @@
                 "EVAPORATION",
                 "DISTILLATION",
                 "DRYING",
-                "HOMOGENIZATION"
+                "HOMOGENIZATION",
+                "CLARIFICATION",
+                "FLOCCULATION",
+                "ULTRAFILTRATION",
+                "DIAFILTRATION",
+                "TANGENTIAL_FLOW_FILTRATION",
+                "BUFFER_EXCHANGE",
+                "ADSORPTION",
+                "VIRAL_INACTIVATION",
+                "POLISHING",
+                "LYOPHILIZATION"
             ],
             "title": "DownstreamProcessEnum",
             "type": "string"
@@ -3582,6 +4063,27 @@
                 "ENDPOINT_ENZYME_ASSAY"
             ],
             "title": "EnzymologyAssayEnum",
+            "type": "string"
+        },
+        "EquationOfStateModel": {
+            "description": "Equations of state used to compute fugacity coefficients and PVT behavior of fluids in process simulation (the SFF phi method).",
+            "enum": [
+                "IDEAL_GAS",
+                "VIRIAL",
+                "REDLICH_KWONG",
+                "SOAVE_REDLICH_KWONG",
+                "PENG_ROBINSON",
+                "PENG_ROBINSON_BOSTON_MATHIAS",
+                "SRK_BOSTON_MATHIAS",
+                "LEE_KESLER_PLOCKER",
+                "BENEDICT_WEBB_RUBIN_STARLING",
+                "PREDICTIVE_SRK",
+                "PC_SAFT",
+                "CUBIC_PLUS_ASSOCIATION",
+                "GERG_2008",
+                "IAPWS_95"
+            ],
+            "title": "EquationOfStateModel",
             "type": "string"
         },
         "EthnicityOMB1997Enum": {
@@ -4064,6 +4566,21 @@
             "title": "FlowerColorEnum",
             "type": "string"
         },
+        "FlowsheetSolutionApproach": {
+            "description": "The overall computational strategy used to converge a process flowsheet.",
+            "enum": [
+                "SEQUENTIAL_MODULAR",
+                "EQUATION_ORIENTED",
+                "SIMULTANEOUS_MODULAR"
+            ],
+            "title": "FlowsheetSolutionApproach",
+            "type": "string"
+        },
+        "FluorescenceMicroscopyMethod": {
+            "description": "Fluorescence microscopy methods from FBbi, including wide-field, confocal, multi-photon, light sheet and total internal reflection fluorescence microscopy",
+            "title": "FluorescenceMicroscopyMethod",
+            "type": "string"
+        },
         "FoodColoringEnum": {
             "description": "Food coloring and natural food dyes",
             "enum": [
@@ -4337,6 +4854,214 @@
                 "MAGNETIC_FIELD_STRENGTH"
             ],
             "title": "FusionPlasmaParameterType",
+            "type": "string"
+        },
+        "G2PAllelicRequirement": {
+            "description": "The genotype required at the locus for the disease to manifest, also referred to in G2P as the genotype. HPO mode of inheritance (MOI) terminology is used; G2P uses synonyms of the MOI terms as many of the disorders described are de novo.\nThe nine values are G2P's published genotype list, taken verbatim from the API the terminology page itself calls (GET /gene2phenotype/api/attribs/, key \"genotype\"), which includes the bare monoallelic_X alongside monoallelic_X_hemizygous and monoallelic_X_heterozygous.\nAll nine G2P genotype strings are recorded by HPO as oio:hasExactSynonym of the term mapped below (verified against the HPO release directly; note that the OLS obo_synonym field under-reports these, listing only synonyms that carry an xref). That exact-synonym correspondence is what makes these mappings unambiguous.\nBy convention in this enum, title is the HPO term label and the G2P string is carried as an alias, matching the pv-mapping guidance and clinical/genetics.yaml; consumers wanting G2P's own display string should read aliases.",
+            "enum": [
+                "MONOALLELIC_AUTOSOMAL",
+                "BIALLELIC_AUTOSOMAL",
+                "MONOALLELIC_X",
+                "MONOALLELIC_X_HEMIZYGOUS",
+                "MONOALLELIC_X_HETEROZYGOUS",
+                "MONOALLELIC_Y_HEMIZYGOUS",
+                "MONOALLELIC_PAR",
+                "BIALLELIC_PAR",
+                "MITOCHONDRIAL"
+            ],
+            "title": "G2PAllelicRequirement",
+            "type": "string"
+        },
+        "G2PConfidenceCategory": {
+            "description": "The level of confidence that a gene-disease association is real, as asserted by G2P curators. G2P uses the GenCC gene-disease validity classification terms. Operationally several groups use definitive, strong and moderate for clinical reporting; limited, disputed and refuted are not used for clinical reporting. GenCC classification identifiers are recorded in the gencc_classification_id annotation rather than as meaning:, because the GENCC prefix is not registered in bioregistry, OLS or the OBO PURL system and so cannot be resolved; the identifiers were taken from GenCC's own submissions export.",
+            "enum": [
+                "DEFINITIVE",
+                "STRONG",
+                "MODERATE",
+                "LIMITED",
+                "DISPUTED",
+                "REFUTED"
+            ],
+            "title": "G2PConfidenceCategory",
+            "type": "string"
+        },
+        "G2PCrossCuttingModifier": {
+            "description": "Additional qualifiers applied to the allelic requirement of a G2P gene-disease association. HPO inheritance qualifier terms (HP:0034335) are used where available. Potential secondary finding and restricted mutation set are G2P-specific and have no HPO equivalent.",
+            "enum": [
+                "DISPLAYS_ANTICIPATION",
+                "IMPRINTED_REGION",
+                "TYPICALLY_DE_NOVO",
+                "TYPICALLY_MOSAIC",
+                "TYPIFIED_BY_INCOMPLETE_PENETRANCE",
+                "POTENTIAL_SECONDARY_FINDING",
+                "RESTRICTED_MUTATION_SET"
+            ],
+            "title": "G2PCrossCuttingModifier",
+            "type": "string"
+        },
+        "G2PFunctionEvidence": {
+            "description": "Types of evidence in the function category of the G2P molecular mechanism evidence classification.",
+            "enum": [
+                "BIOCHEMICAL",
+                "PROTEIN_INTERACTION",
+                "PROTEIN_EXPRESSION",
+                "IN_SILICO_MODELLING"
+            ],
+            "title": "G2PFunctionEvidence",
+            "type": "string"
+        },
+        "G2PFunctionalAlterationEvidence": {
+            "description": "Types of evidence in the functional alteration category of the G2P molecular mechanism evidence classification, distinguished by whether the cells came from an affected individual.",
+            "enum": [
+                "PATIENT_CELLS",
+                "NON_PATIENT_CELLS"
+            ],
+            "title": "G2PFunctionalAlterationEvidence",
+            "type": "string"
+        },
+        "G2PMechanismEvidenceCategory": {
+            "description": "The broad category of experimental evidence supporting a molecular mechanism in G2P. G2P evidence classifications reuse terms from the ClinGen gene-disease validity SOP Experimental Evidence Summary Matrix.",
+            "enum": [
+                "FUNCTION",
+                "FUNCTIONAL_ALTERATION",
+                "MODELS",
+                "RESCUE"
+            ],
+            "title": "G2PMechanismEvidenceCategory",
+            "type": "string"
+        },
+        "G2PModelsEvidence": {
+            "description": "Types of evidence in the models category of the G2P molecular mechanism evidence classification.",
+            "enum": [
+                "CELL_CULTURE_MODEL",
+                "NON_HUMAN_MODEL_ORGANISM"
+            ],
+            "title": "G2PModelsEvidence",
+            "type": "string"
+        },
+        "G2PMolecularMechanism": {
+            "description": "The mechanism of disease derived from the available evidence, following the definitions of Backwell and Marsh (PMID:35395171). These mechanisms describe a gene-disease association rather than an individual variant, so the Sequence Ontology variant terms are recorded as close mappings rather than exact meanings.",
+            "enum": [
+                "LOSS_OF_FUNCTION",
+                "GAIN_OF_FUNCTION",
+                "DOMINANT_NEGATIVE",
+                "UNDETERMINED_NON_LOSS_OF_FUNCTION",
+                "UNDETERMINED"
+            ],
+            "title": "G2PMolecularMechanism",
+            "type": "string"
+        },
+        "G2PMolecularMechanismSupport": {
+            "description": "Whether the molecular mechanism recorded for a G2P gene-disease association is directly supported by reported evidence, or inferred by the curator.",
+            "enum": [
+                "EVIDENCE",
+                "INFERRED"
+            ],
+            "title": "G2PMolecularMechanismSupport",
+            "type": "string"
+        },
+        "G2PMolecularMechanismSynopsis": {
+            "description": "A more detailed description of the molecular mechanism of a G2P gene-disease association, following the definitions of Backwell and Marsh (PMID:35395171). A synopsis refines the higher-level molecular mechanism; more than one synopsis may apply to a single gene-disease association.",
+            "enum": [
+                "DESTABILISING_LOF",
+                "INTERACTION_DISRUPTING_LOF",
+                "LOSS_OF_ACTIVITY_LOF",
+                "LOF_DUE_TO_PROTEIN_MISLOCALISATION",
+                "ASSEMBLY_MEDIATED_DOMINANT_NEGATIVE",
+                "COMPETITIVE_DOMINANT_NEGATIVE",
+                "ASSEMBLY_MEDIATED_GOF",
+                "LOCAL_LOF_LEADING_TO_OVERALL_GOF",
+                "AGGREGATION",
+                "OTHER_GOF"
+            ],
+            "title": "G2PMolecularMechanismSynopsis",
+            "type": "string"
+        },
+        "G2PPanel": {
+            "description": "The disease-area panels into which G2P organises its curated gene-disease associations. A gene-disease association may appear on more than one panel.",
+            "enum": [
+                "CANCER",
+                "CARDIAC",
+                "DD",
+                "EAR",
+                "EYE",
+                "SKELETAL",
+                "SKIN"
+            ],
+            "title": "G2PPanel",
+            "type": "string"
+        },
+        "G2PRescueEvidence": {
+            "description": "Types of evidence in the rescue category of the G2P molecular mechanism evidence classification, distinguished by the system in which rescue was demonstrated.",
+            "enum": [
+                "PATIENT_CELLS",
+                "CELL_CULTURE_MODEL",
+                "NON_HUMAN_MODEL_ORGANISM"
+            ],
+            "title": "G2PRescueEvidence",
+            "type": "string"
+        },
+        "G2PVariantConsequence": {
+            "description": "The consequence of the reported variants at the protein (for protein-coding genes) or the RNA (for non-protein coding genes), per allele. These are Sequence Ontology terms developed for G2P and described in PMID:37982373; the descriptions below are the G2P-authored usage notes rather than the SO text definitions. As in the other SO-backed enums here, title is uniformly the SO term label and any differing G2P label is carried as an alias; for four of the six values the SO and G2P labels coincide, which is why only altered_gene_product_sequence and function_uncertain_variant carry an alias.",
+            "enum": [
+                "ALTERED_GENE_PRODUCT_LEVEL",
+                "DECREASED_GENE_PRODUCT_LEVEL",
+                "ABSENT_GENE_PRODUCT",
+                "INCREASED_GENE_PRODUCT_LEVEL",
+                "ALTERED_GENE_PRODUCT_STRUCTURE",
+                "UNCERTAIN"
+            ],
+            "title": "G2PVariantConsequence",
+            "type": "string"
+        },
+        "G2PVariantType": {
+            "description": "The types of variants associated with the curated gene-disease pair reported in the publication. All terms are Sequence Ontology terms. Where G2P uses a label that differs from the current SO label, the G2P label is recorded as an alias. Descriptions are the SO text definitions where SO provides one.\nThe NMD-qualified types have two parents in SO, so they are modelled with the base variant as is_a and the NMD qualifier as a mixin. LinkML preserves both, but as of linkml 1.9.5 the OWL generator emits only the is_a parent as rdfs:subClassOf and drops the mixin, so the NMD axis is additionally recorded in the nmd_status annotation to keep it available in every generated artifact. If a later linkml emits permissible-value mixins, that annotation is redundant and can go.",
+            "enum": [
+                "NMD_TRIGGERING",
+                "NMD_ESCAPING",
+                "STOP_GAINED_NMD_TRIGGERING",
+                "STOP_GAINED_NMD_ESCAPING",
+                "FRAMESHIFT_VARIANT_NMD_TRIGGERING",
+                "FRAMESHIFT_VARIANT_NMD_ESCAPING",
+                "SPLICE_DONOR_VARIANT_NMD_TRIGGERING",
+                "SPLICE_DONOR_VARIANT_NMD_ESCAPING",
+                "SPLICE_ACCEPTOR_VARIANT_NMD_TRIGGERING",
+                "SPLICE_ACCEPTOR_VARIANT_NMD_ESCAPING",
+                "SPLICE_REGION_VARIANT",
+                "SPLICE_ACCEPTOR_VARIANT",
+                "SPLICE_DONOR_VARIANT",
+                "FIVE_PRIME_UTR_VARIANT",
+                "THREE_PRIME_UTR_VARIANT",
+                "REGULATORY_REGION_VARIANT",
+                "START_LOST",
+                "STOP_GAINED",
+                "STOP_LOST",
+                "FRAMESHIFT_VARIANT",
+                "MISSENSE_VARIANT",
+                "INFRAME_INSERTION",
+                "INFRAME_DELETION",
+                "SYNONYMOUS_VARIANT",
+                "INTRON_VARIANT",
+                "INTERGENIC_VARIANT",
+                "NON_CODING_TRANSCRIPT_VARIANT",
+                "SHORT_TANDEM_REPEAT_CHANGE",
+                "COPY_NUMBER_VARIATION",
+                "WHOLE_PARTIAL_GENE_DELETION",
+                "WHOLE_PARTIAL_GENE_DUPLICATION"
+            ],
+            "title": "G2PVariantType",
+            "type": "string"
+        },
+        "G2PVariantTypeGroup": {
+            "description": "The primary type grouping under which G2P organises the variant types associated with a curated gene-disease pair.",
+            "enum": [
+                "NMD_VARIANTS",
+                "SPLICE_VARIANTS",
+                "REGULATORY_VARIANTS",
+                "PROTEIN_CHANGING_VARIANTS",
+                "OTHER_VARIANTS"
+            ],
+            "title": "G2PVariantTypeGroup",
             "type": "string"
         },
         "GOElectronicMethods": {
@@ -4904,6 +5629,17 @@
             "title": "HistoricalStatusEnum",
             "type": "string"
         },
+        "HomoscedasticityTestEnum": {
+            "description": "Tests evaluating equality of variances across groups or samples",
+            "enum": [
+                "LEVENE",
+                "BARTLETT",
+                "BROWN_FORSYTHE",
+                "BREUSCH_PAGAN"
+            ],
+            "title": "HomoscedasticityTestEnum",
+            "type": "string"
+        },
         "HousingStatus": {
             "description": "Housing status of patients per UDS Plus HRSA standards",
             "enum": [
@@ -5250,6 +5986,19 @@
             "title": "ImageDefinedRiskFactor",
             "type": "string"
         },
+        "ImageDeidentificationTargetEnum": {
+            "description": "The components of a medical imaging object that can carry identifying information and therefore need to be addressed by a de-identification workflow. A workflow first assesses whether an image requires pixel-level (face or head) de-identification or only metadata de-identification.",
+            "enum": [
+                "HEADER_METADATA",
+                "PRIVATE_ATTRIBUTES",
+                "BURNED_IN_ANNOTATION",
+                "FACIAL_FEATURES",
+                "UNIQUE_IDENTIFIERS",
+                "STRUCTURED_CONTENT"
+            ],
+            "title": "ImageDeidentificationTargetEnum",
+            "type": "string"
+        },
         "ImageFileFormatEnum": {
             "description": "Common image file formats",
             "enum": [
@@ -5265,6 +6014,28 @@
                 "ICO"
             ],
             "title": "ImageFileFormatEnum",
+            "type": "string"
+        },
+        "ImageQualityMetricEnum": {
+            "description": "Metrics computed during image quality and pixel data validation to document that images are readable and of adequate fidelity for AI applications. Simple metrics can be extended to check conformance with FDA technical performance guidance for quantitative imaging devices where applicable.",
+            "enum": [
+                "PIXEL_READABILITY",
+                "INTENSITY_HISTOGRAM",
+                "SIGNAL_TO_NOISE_RATIO",
+                "CONTRAST_TO_NOISE_RATIO",
+                "SHARPNESS",
+                "BIT_DEPTH",
+                "PIXEL_SPACING",
+                "SLICE_THICKNESS",
+                "COMPRESSION_FIDELITY",
+                "ARTIFACT_PRESENCE"
+            ],
+            "title": "ImageQualityMetricEnum",
+            "type": "string"
+        },
+        "ImagedParameter": {
+            "description": "Physical parameters of the specimen recorded by an image, from FBbi, such as absorption, elastic and inelastic scattering, refractive index, retardance, fluorescence emission, electron density and elevation",
+            "title": "ImagedParameter",
             "type": "string"
         },
         "ImagingAssayEnum": {
@@ -5303,6 +6074,68 @@
                 "PHOTOGRAPH"
             ],
             "title": "ImagingAssayEnum",
+            "type": "string"
+        },
+        "ImagingDataLifecycleStageEnum": {
+            "description": "Sequential stages of DICOM data management for preparing FAIR, AI-ready medical imaging datasets. Stages after extraction form the data reliability workflow that checks that imaging data is complete, standardized and biologically plausible before sharing.",
+            "enum": [
+                "DATA_EXTRACTION_AND_METADATA_CHARACTERIZATION",
+                "FILE_INTEGRITY_VERIFICATION",
+                "DATA_COMPLETENESS_AND_CONFORMANCE_CHECKS",
+                "METADATA_TAG_VALIDATION",
+                "IMAGE_QUALITY_AND_PIXEL_DATA_VALIDATION",
+                "DEIDENTIFICATION"
+            ],
+            "title": "ImagingDataLifecycleStageEnum",
+            "type": "string"
+        },
+        "ImagingDataSourceTypeEnum": {
+            "description": "Types of systems in a hospital or research network that hold medical imaging data and from which it may be extracted. A landscape assessment records, for each source, the platform vendor, software version, supported query mechanisms, patient identifier handling, retention policy and anonymization capabilities.",
+            "enum": [
+                "PACS",
+                "VENDOR_NEUTRAL_ARCHIVE",
+                "DEPARTMENTAL_IMAGING_ARCHIVE",
+                "RESEARCH_IMAGING_PLATFORM",
+                "MODALITY_WORKSTATION",
+                "ELECTRONIC_HEALTH_RECORD",
+                "PUBLIC_IMAGING_REPOSITORY",
+                "CLOUD_IMAGING_ARCHIVE"
+            ],
+            "title": "ImagingDataSourceTypeEnum",
+            "type": "string"
+        },
+        "ImagingDetectionMethod": {
+            "description": "Detection methods from FBbi, characterized by what is detected (photons, electrons, acoustic waves, induced current), field of detection and detector geometry (spot or area detector)",
+            "title": "ImagingDetectionMethod",
+            "type": "string"
+        },
+        "ImagingIlluminationMethod": {
+            "description": "Illumination methods from FBbi, characterized by the probe (photons, electrons, acoustic waves, neutrons, ions), field (widefield, narrowfield, nearfield, farfield), coherence, timing and geometry",
+            "title": "ImagingIlluminationMethod",
+            "type": "string"
+        },
+        "ImagingInteroperabilityStandardEnum": {
+            "description": "Standards and data models used to represent medical imaging metadata and to link images with clinical records, electronic health records and multimodal research datasets.",
+            "enum": [
+                "DICOM",
+                "DICOMWEB",
+                "HL7_FHIR_IMAGINGSTUDY",
+                "OMOP_CDM_IMAGING_EXTENSION",
+                "IHE_PROFILES",
+                "BIDS",
+                "NIFTI"
+            ],
+            "title": "ImagingInteroperabilityStandardEnum",
+            "type": "string"
+        },
+        "ImagingSamplePreparationMethod": {
+            "description": "Sample preparation methods from FBbi, describing the state of the specimen at imaging time such as embedded, sectioned, whole mounted or permeabilized tissue, dispersed or adherent cells, and fixation methods",
+            "title": "ImagingSamplePreparationMethod",
+            "type": "string"
+        },
+        "ImagingVisualizationMethod": {
+            "description": "Visualization methods from FBbi, the largest branch of the ontology, covering visualization of labels conjugated to probes, of contiguous regions, and by chemical attribute (histological stains, fluorescent dyes and fluorescent proteins)",
+            "title": "ImagingVisualizationMethod",
             "type": "string"
         },
         "ImmuneCell": {
@@ -6161,6 +6994,11 @@
             "title": "LicensingStageEnum",
             "type": "string"
         },
+        "LightMicroscopyMethod": {
+            "description": "Light microscopy methods from FBbi, including bright-field, phase contrast, differential interference contrast, polarization, fluorescence and optical coherence tomography",
+            "title": "LightMicroscopyMethod",
+            "type": "string"
+        },
         "LipidCategory": {
             "description": "Major categories of lipids based on SwissLipids classification",
             "enum": [
@@ -6537,6 +7375,19 @@
             "title": "MassErrorUnit",
             "type": "string"
         },
+        "MassFlowRateUnitEnum": {
+            "description": "Units of mass flow rate (mass per unit time)",
+            "enum": [
+                "KILOGRAM_PER_SECOND",
+                "KILOGRAM_PER_HOUR",
+                "GRAM_PER_SECOND",
+                "TONNE_PER_HOUR",
+                "TONNE_PER_DAY",
+                "POUND_PER_HOUR"
+            ],
+            "title": "MassFlowRateUnitEnum",
+            "type": "string"
+        },
         "MassSpectrometerFileFormat": {
             "description": "Standard file formats used in mass spectrometry",
             "enum": [
@@ -6816,6 +7667,11 @@
             "title": "MicroplateFormatEnum",
             "type": "string"
         },
+        "MicroscopyMethod": {
+            "description": "Any microscopy method from FBbi, including X-ray microscopy, microscopy with lenses (light and electron microscopy) and scanning probe microscopy",
+            "title": "MicroscopyMethod",
+            "type": "string"
+        },
         "MicroscopyMethodEnum": {
             "description": "Microscopy techniques for material characterization",
             "enum": [
@@ -7047,6 +7903,30 @@
             "title": "MitoticPhase",
             "type": "string"
         },
+        "MixingRuleModel": {
+            "description": "Mixing rules applied to equation-of-state parameters for mixtures (the SFF mixture method).",
+            "enum": [
+                "IDEAL",
+                "VAN_DER_WAALS",
+                "HURON_VIDAL",
+                "MODIFIED_HURON_VIDAL",
+                "WONG_SANDLER",
+                "PSRK_MIXING"
+            ],
+            "title": "MixingRuleModel",
+            "type": "string"
+        },
+        "MolarFlowRateUnitEnum": {
+            "description": "Units of molar flow rate (amount of substance per unit time)",
+            "enum": [
+                "MOLE_PER_SECOND",
+                "MOLE_PER_HOUR",
+                "KILOMOLE_PER_HOUR",
+                "KILOMOLE_PER_SECOND"
+            ],
+            "title": "MolarFlowRateUnitEnum",
+            "type": "string"
+        },
         "MolecularFunction": {
             "description": "Molecular functions from Gene Ontology",
             "title": "MolecularFunction",
@@ -7107,6 +7987,26 @@
                 "P365_PLUS_AGED"
             ],
             "title": "MousePostnatalAgeGroupEnum",
+            "type": "string"
+        },
+        "MultipleTestingCorrectionEnum": {
+            "description": "Methods for adjusting p-values or significance thresholds when many hypotheses are tested simultaneously.\nAs with StatisticalTestEnum, concrete methods (BONFERRONI, HOLM_BONFERRONI, BENJAMINI_HOCHBERG) sit alongside the error-rate classes they belong to (FAMILY_WISE_ERROR_RATE, FALSE_DISCOVERY_RATE) and procedural classes (SIMULTANEOUS, SEQUENTIAL). The classes are intended for sources that report only \"FDR-corrected\" without naming a procedure.",
+            "enum": [
+                "BONFERRONI",
+                "HOLM_BONFERRONI",
+                "BENJAMINI_HOCHBERG",
+                "BENJAMINI_YEKUTIELI",
+                "HOLM_FDR",
+                "HOMMEL_FDR",
+                "FAMILY_WISE_ERROR_RATE",
+                "FALSE_DISCOVERY_RATE",
+                "SIMULTANEOUS",
+                "SEQUENTIAL",
+                "ALPHA_SPENDING",
+                "ALPHA_INVESTING",
+                "NONE"
+            ],
+            "title": "MultipleTestingCorrectionEnum",
             "type": "string"
         },
         "NAICSSectorEnum": {
@@ -7234,6 +8134,16 @@
                 "LOCAL"
             ],
             "title": "NewsTopicCategoryEnum",
+            "type": "string"
+        },
+        "NormalityTestEnum": {
+            "description": "Goodness of fit tests commonly used to assess whether a sample is drawn from a normally distributed population",
+            "enum": [
+                "SHAPIRO_WILK",
+                "KOLMOGOROV_SMIRNOV",
+                "ANDERSON_DARLING"
+            ],
+            "title": "NormalityTestEnum",
             "type": "string"
         },
         "NuclearFacilityTypeEnum": {
@@ -8288,6 +9198,19 @@
             "title": "PolymerTypeEnum",
             "type": "string"
         },
+        "PostHocTestEnum": {
+            "description": "Multiple comparison procedures carried out after a significant omnibus test such as an ANOVA or Kruskal-Wallis test",
+            "enum": [
+                "TUKEY_HSD",
+                "NEWMAN_KEULS",
+                "SCHEFFE",
+                "LEAST_SIGNIFICANT_DIFFERENCE",
+                "DUNN",
+                "CONOVER_IMAN"
+            ],
+            "title": "PostHocTestEnum",
+            "type": "string"
+        },
         "PowerPlantStatusEnum": {
             "description": "Operational status of nuclear power plants",
             "enum": [
@@ -8315,6 +9238,15 @@
                 "BTU_PER_HOUR"
             ],
             "title": "PowerUnit",
+            "type": "string"
+        },
+        "PoyntingCorrectionMethod": {
+            "description": "Treatment of the Poynting correction factor accounting for the effect of pressure on liquid fugacity (the SFF PCF method).",
+            "enum": [
+                "NONE",
+                "POYNTING"
+            ],
+            "title": "PoyntingCorrectionMethod",
             "type": "string"
         },
         "PredictionOutcomeType": {
@@ -8455,6 +9387,55 @@
             "title": "PriorityLevelEnum",
             "type": "string"
         },
+        "ProcessEquipmentType": {
+            "description": "Physical equipment / asset types used in process plants. These correspond to the nodes of a process flowsheet and complement UnitOperationType (which describes the function performed). Grouped via the equipment_class annotation.",
+            "enum": [
+                "STORAGE_TANK",
+                "PRESSURE_VESSEL",
+                "HOPPER",
+                "FLASH_DRUM",
+                "KNOCKOUT_DRUM",
+                "REACTOR",
+                "BIOREACTOR",
+                "FERMENTER",
+                "DISTILLATION_COLUMN",
+                "ABSORPTION_COLUMN",
+                "STRIPPING_COLUMN",
+                "EXTRACTION_COLUMN",
+                "CHROMATOGRAPHY_COLUMN",
+                "SCRUBBER",
+                "HEAT_EXCHANGER",
+                "CONDENSER",
+                "REBOILER",
+                "EVAPORATOR",
+                "FURNACE",
+                "BOILER",
+                "COOLING_TOWER",
+                "DRYER",
+                "CRYSTALLIZER",
+                "PUMP",
+                "COMPRESSOR",
+                "BLOWER",
+                "FAN",
+                "VALVE",
+                "CENTRIFUGE",
+                "FILTER",
+                "DECANTER",
+                "CLARIFIER",
+                "CYCLONE",
+                "HYDROCYCLONE",
+                "MEMBRANE_MODULE",
+                "SETTLER",
+                "MIXER",
+                "AGITATOR",
+                "MILL",
+                "CRUSHER",
+                "SCREEN",
+                "CONVEYOR"
+            ],
+            "title": "ProcessEquipmentType",
+            "type": "string"
+        },
         "ProcessImprovementApproachEnum": {
             "description": "Process improvement methodologies and approaches",
             "enum": [
@@ -8468,6 +9449,45 @@
                 "AGILE_PROCESS_IMPROVEMENT"
             ],
             "title": "ProcessImprovementApproachEnum",
+            "type": "string"
+        },
+        "ProcessIndustryCategory": {
+            "description": "Sectors of the process (continuous and batch) manufacturing industries. The pisces_category annotation records the corresponding top-level category in the PISCES Standard Flowsheet Format where one exists.",
+            "enum": [
+                "PETROLEUM_REFINING",
+                "PETROCHEMICAL",
+                "BULK_CHEMICAL",
+                "SPECIALTY_CHEMICAL",
+                "AGROCHEMICAL",
+                "POLYMER_AND_PLASTICS",
+                "PHARMACEUTICAL",
+                "BIOTECHNOLOGY",
+                "BIOFUEL",
+                "FOOD_AND_BEVERAGE",
+                "PULP_AND_PAPER",
+                "METALS_AND_MINING",
+                "WATER_AND_WASTEWATER_TREATMENT",
+                "POWER_GENERATION",
+                "GAS_PROCESSING",
+                "CEMENT_AND_CONSTRUCTION_MATERIALS",
+                "GLASS_AND_CERAMICS",
+                "TEXTILE",
+                "COSMETICS_AND_PERSONAL_CARE",
+                "NUCLEAR_FUEL",
+                "SEMICONDUCTOR"
+            ],
+            "title": "ProcessIndustryCategory",
+            "type": "string"
+        },
+        "ProcessOperationMode": {
+            "description": "The temporal mode in which a process or unit operation is run.",
+            "enum": [
+                "BATCH",
+                "CONTINUOUS",
+                "SEMI_BATCH",
+                "SEMI_CONTINUOUS"
+            ],
+            "title": "ProcessOperationMode",
             "type": "string"
         },
         "ProcessPerformanceMetric": {
@@ -8494,6 +9514,66 @@
                 "MICROFLUIDIC_SCALE"
             ],
             "title": "ProcessScaleEnum",
+            "type": "string"
+        },
+        "ProcessSimulator": {
+            "description": "Process simulation software packages used to model chemical and biochemical process flowsheets.",
+            "enum": [
+                "ASPEN_PLUS",
+                "ASPEN_HYSYS",
+                "ASPEN_CUSTOM_MODELER",
+                "UNISIM_DESIGN",
+                "PRO_II",
+                "AVEVA_PROCESS_SIMULATION",
+                "CHEMCAD",
+                "DWSIM",
+                "COCO_SIMULATOR",
+                "GPROMS",
+                "PROSIMPLUS",
+                "PETRO_SIM",
+                "BIOSTEAM",
+                "SUPERPRO_DESIGNER",
+                "IDAES",
+                "CAPE_OPEN"
+            ],
+            "title": "ProcessSimulator",
+            "type": "string"
+        },
+        "ProcessStreamPhase": {
+            "description": "The physical phase or phase combination of a process stream. For single-phase fundamental states see also StateOfMatterEnum in the physics module; this enum adds the multiphase combinations common in process engineering.",
+            "enum": [
+                "GAS",
+                "LIQUID",
+                "SOLID",
+                "SUPERCRITICAL",
+                "VAPOR_LIQUID",
+                "LIQUID_LIQUID",
+                "VAPOR_LIQUID_LIQUID",
+                "SLURRY",
+                "GAS_SOLID",
+                "MULTIPHASE"
+            ],
+            "title": "ProcessStreamPhase",
+            "type": "string"
+        },
+        "ProcessStreamRole": {
+            "description": "The functional role of a stream within a process flowsheet, independent of its chemical composition.",
+            "enum": [
+                "FEED",
+                "RAW_MATERIAL",
+                "PRODUCT",
+                "BYPRODUCT",
+                "INTERMEDIATE",
+                "RECYCLE",
+                "PURGE",
+                "BLEED",
+                "MAKEUP",
+                "WASTE",
+                "EFFLUENT",
+                "EMISSION",
+                "UTILITY"
+            ],
+            "title": "ProcessStreamRole",
             "type": "string"
         },
         "ProcessingStatus": {
@@ -9446,6 +10526,11 @@
             "title": "ReservoirCharacterizationMethodType",
             "type": "string"
         },
+        "ResolutionEnhancingMethod": {
+            "description": "Super-resolution methods from FBbi, such as structured illumination, point-localization methods, STED and GSD",
+            "title": "ResolutionEnhancingMethod",
+            "type": "string"
+        },
         "RightsBasis": {
             "description": "The basis for the right or permission granted for an object.\nBased on PREMIS rights basis vocabulary.",
             "enum": [
@@ -10015,6 +11100,11 @@
             "title": "SourceMaterialTypeEnum",
             "type": "string"
         },
+        "SourceOfImageContrast": {
+            "description": "Physical bases of image contrast from FBbi, such as differences in chemical composition, distribution of an epitope, protein or nucleic acid sequence, stain binding, refractive index boundaries, fluorescence lifetime and optical anisotropy",
+            "title": "SourceOfImageContrast",
+            "type": "string"
+        },
         "SourcingStrategyEnum": {
             "description": "Sourcing strategy approaches",
             "enum": [
@@ -10280,6 +11370,88 @@
                 "QUARK_GLUON_PLASMA"
             ],
             "title": "StateOfMatterEnum",
+            "type": "string"
+        },
+        "StatisticalTestEnum": {
+            "description": "Statistical hypothesis tests, drawn primarily from the descendants of 'statistical hypothesis test' (OBI:0000673) in STATO.\nThis enum deliberately mixes abstraction levels: alongside concrete tests it retains STATO's grouping classes (GOODNESS_OF_FIT_TEST, HOMOSKEDASTICITY_TEST, SPHERICITY_TEST, POST_HOC_ANALYSIS, NON_PARAMETRIC_TEST and similar) so that a source reporting only \"a test of normality was applied\" can still be annotated. Prefer the most specific value that the source supports, and use a grouping value only when the specific test is genuinely not stated.\nSeveral values are also repeated in the narrower enums below (TTestTypeEnum, NormalityTestEnum, HomoscedasticityTestEnum, PostHocTestEnum), which exist to constrain slot ranges. The duplicated meanings are intentional; from_meaning() resolves per enum class.",
+            "enum": [
+                "STUDENTS_T_TEST",
+                "ONE_SAMPLE_T_TEST",
+                "PAIRED_T_TEST",
+                "TWO_SAMPLE_T_TEST_EQUAL_VARIANCE",
+                "TWO_SAMPLE_T_TEST_UNEQUAL_VARIANCE",
+                "YUEN_T_TEST",
+                "Z_TEST",
+                "ONE_SAMPLE_HOTELLING_T2_TEST",
+                "TWO_SAMPLE_HOTELLING_T2_TEST",
+                "ANOVA",
+                "ONE_WAY_ANOVA",
+                "TWO_WAY_ANOVA",
+                "MULTIWAY_ANOVA",
+                "REPEATED_MEASURES_ANOVA",
+                "MANOVA",
+                "ANCOVA",
+                "F_TEST",
+                "MANN_WHITNEY_U_TEST",
+                "WILCOXON_SIGNED_RANK_TEST",
+                "KRUSKAL_WALLIS_TEST",
+                "FRIEDMAN_TEST",
+                "SIGN_TEST",
+                "CHI_SQUARE_TEST",
+                "PEARSON_CHI_SQUARE_TEST_OF_INDEPENDENCE",
+                "PEARSON_CHI_SQUARE_GOODNESS_OF_FIT_TEST",
+                "YATES_CORRECTED_CHI_SQUARE_TEST",
+                "CHI_SQUARE_TEST_FOR_HOMOGENEITY",
+                "FISHERS_EXACT_TEST",
+                "BARNARDS_TEST",
+                "MCNEMAR_TEST",
+                "COCHRANS_Q_TEST",
+                "COCHRAN_ARMITAGE_TEST_FOR_TREND",
+                "COCHRAN_MANTEL_HAENSZEL_TEST",
+                "EXACT_BINOMIAL_TEST",
+                "HYPERGEOMETRIC_TEST",
+                "TEST_OF_ASSOCIATION_BETWEEN_CATEGORICAL_VARIABLES",
+                "GOODNESS_OF_FIT_TEST",
+                "SHAPIRO_WILK_TEST",
+                "KOLMOGOROV_SMIRNOV_TEST",
+                "ANDERSON_DARLING_TEST",
+                "HOSMER_LEMESHOW_TEST",
+                "LEVENES_TEST",
+                "BARTLETTS_TEST",
+                "BROWN_FORSYTHE_TEST",
+                "BREUSCH_PAGAN_TEST",
+                "HOMOSKEDASTICITY_TEST",
+                "HOMOGENEITY_TEST",
+                "SPHERICITY_TEST",
+                "MAUCHLYS_TEST",
+                "ODDS_RATIO_HOMOGENEITY_TEST",
+                "BRESLOW_DAY_TEST",
+                "TARONES_TEST",
+                "WOOLFS_TEST",
+                "POST_HOC_ANALYSIS",
+                "TUKEY_HSD_TEST",
+                "NEWMAN_KEULS_TEST",
+                "SCHEFFE_TEST",
+                "LEAST_SIGNIFICANT_DIFFERENCE_TEST",
+                "DUNNS_TEST",
+                "CONOVER_IMAN_TEST",
+                "GRUBBS_TEST",
+                "DIXON_Q_TEST",
+                "TIETJEN_MOORE_TEST",
+                "GENERALIZED_ESD_TEST",
+                "LIKELIHOOD_RATIO_TEST",
+                "WALD_TEST",
+                "LOG_RANK_TEST",
+                "HARDY_WEINBERG_EQUILIBRIUM_TEST",
+                "TRANSMISSION_DISEQUILIBRIUM_TEST",
+                "PEARSON_CORRELATION_TEST",
+                "SPEARMAN_CORRELATION_TEST",
+                "AB_TEST",
+                "BETWEEN_GROUP_COMPARISON_TEST",
+                "WITHIN_SUBJECT_COMPARISON_TEST",
+                "NON_PARAMETRIC_TEST"
+            ],
+            "title": "StatisticalTestEnum",
             "type": "string"
         },
         "StatusEnum": {
@@ -10561,6 +11733,55 @@
             "title": "SynthesisMethodEnum",
             "type": "string"
         },
+        "SystemLifeCycleProcess15288": {
+            "description": "The 30 system life cycle processes grouped by ISO/IEC/IEEE 15288:2015.",
+            "enum": [
+                "ACQUISITION",
+                "SUPPLY",
+                "LIFE_CYCLE_MODEL_MANAGEMENT",
+                "INFRASTRUCTURE_MANAGEMENT",
+                "PORTFOLIO_MANAGEMENT",
+                "HUMAN_RESOURCE_MANAGEMENT",
+                "QUALITY_MANAGEMENT",
+                "PROJECT_PLANNING",
+                "PROJECT_ASSESSMENT_AND_CONTROL",
+                "DECISION_MANAGEMENT",
+                "RISK_MANAGEMENT",
+                "CONFIGURATION_MANAGEMENT",
+                "INFORMATION_MANAGEMENT",
+                "MEASUREMENT",
+                "QUALITY_ASSURANCE",
+                "KNOWLEDGE_MANAGEMENT",
+                "BUSINESS_OR_MISSION_ANALYSIS",
+                "STAKEHOLDER_NEEDS_AND_REQUIREMENTS_DEFINITION",
+                "SYSTEM_REQUIREMENTS_DEFINITION",
+                "ARCHITECTURE_DEFINITION",
+                "DESIGN_DEFINITION",
+                "SYSTEM_ANALYSIS",
+                "IMPLEMENTATION",
+                "INTEGRATION",
+                "VERIFICATION",
+                "TRANSITION",
+                "VALIDATION",
+                "OPERATION",
+                "MAINTENANCE",
+                "DISPOSAL"
+            ],
+            "title": "SystemLifeCycleProcess15288",
+            "type": "string"
+        },
+        "TTestTypeEnum": {
+            "description": "Variants of Student's t-test",
+            "enum": [
+                "ONE_SAMPLE",
+                "PAIRED",
+                "TWO_SAMPLE_EQUAL_VARIANCE",
+                "TWO_SAMPLE_UNEQUAL_VARIANCE",
+                "TRIMMED_MEANS"
+            ],
+            "title": "TTestTypeEnum",
+            "type": "string"
+        },
         "TailingCharacterizationType": {
             "description": "Types of measurements and analyses used to characterize mine tailings and other mineral processing residues for resource recovery potential",
             "enum": [
@@ -10620,6 +11841,15 @@
                 "RANKINE"
             ],
             "title": "TemperatureUnitEnum",
+            "type": "string"
+        },
+        "TestTailednessEnum": {
+            "description": "Whether a statistical test allocates the significance level to one or both tails of the reference distribution",
+            "enum": [
+                "ONE_TAILED",
+                "TWO_TAILED"
+            ],
+            "title": "TestTailednessEnum",
             "type": "string"
         },
         "TextCharset": {
@@ -10731,6 +11961,30 @@
             "title": "ThermodynamicParameterEnum",
             "type": "string"
         },
+        "ThermodynamicPropertyPackage": {
+            "description": "Named property methods/packages offered by process simulators, typically combining an equation of state and/or an activity-coefficient model. Used where a single package label rather than separate gamma/phi methods is recorded.",
+            "enum": [
+                "IDEAL",
+                "NRTL",
+                "NRTL_RK",
+                "UNIQUAC",
+                "UNIFAC",
+                "WILSON",
+                "VAN_LAAR",
+                "PENG_ROBINSON",
+                "SOAVE_REDLICH_KWONG",
+                "ELECTROLYTE_NRTL",
+                "PITZER",
+                "CHAO_SEADER",
+                "GRAYSON_STREED",
+                "BRAUN_K10",
+                "PC_SAFT",
+                "STEAM_TABLES",
+                "API_SOUR"
+            ],
+            "title": "ThermodynamicPropertyPackage",
+            "type": "string"
+        },
         "TimeOfDay": {
             "description": "Common times of day",
             "enum": [
@@ -10805,6 +12059,11 @@
                 "NZDT"
             ],
             "title": "TimeZoneEnum",
+            "type": "string"
+        },
+        "TissueFixationMethod": {
+            "description": "Fixation methods from FBbi, such as aldehyde, alcohol, freeze and heat fixation",
+            "title": "TissueFixationMethod",
             "type": "string"
         },
         "TissuePreservationEnum": {
@@ -11426,6 +12685,66 @@
             "title": "UniProtSpeciesCode",
             "type": "string"
         },
+        "UnitOperationType": {
+            "description": "Fundamental chemical and process engineering unit operations - the discrete processing steps that transform, separate, combine, or move process material. Grouped (via the unit_operation_class annotation) into momentum transfer, heat transfer, mass-transfer separations, mechanical separations, solids processing, reaction, and storage.",
+            "enum": [
+                "PUMPING",
+                "COMPRESSION",
+                "GAS_MOVING",
+                "FLOW_SPLITTING",
+                "STREAM_MIXING",
+                "HEAT_EXCHANGE",
+                "HEATING",
+                "COOLING",
+                "CONDENSATION",
+                "EVAPORATION",
+                "DISTILLATION",
+                "ABSORPTION",
+                "STRIPPING",
+                "LIQUID_LIQUID_EXTRACTION",
+                "LEACHING",
+                "ADSORPTION",
+                "ION_EXCHANGE",
+                "CHROMATOGRAPHY",
+                "CRYSTALLIZATION",
+                "PRECIPITATION",
+                "DRYING",
+                "FREEZE_DRYING",
+                "HUMIDIFICATION",
+                "MEMBRANE_SEPARATION",
+                "MICROFILTRATION",
+                "ULTRAFILTRATION",
+                "NANOFILTRATION",
+                "REVERSE_OSMOSIS",
+                "DIALYSIS",
+                "ELECTRODIALYSIS",
+                "PERVAPORATION",
+                "FILTRATION",
+                "CENTRIFUGATION",
+                "SEDIMENTATION",
+                "CLARIFICATION",
+                "FLOTATION",
+                "FLOCCULATION",
+                "CYCLONE_SEPARATION",
+                "SCREENING",
+                "GAS_LIQUID_SEPARATION",
+                "SIZE_REDUCTION",
+                "SIZE_ENLARGEMENT",
+                "MIXING",
+                "SOLIDS_CONVEYING",
+                "CHEMICAL_REACTION",
+                "FERMENTATION",
+                "COMBUSTION",
+                "GASIFICATION",
+                "PYROLYSIS",
+                "ELECTROLYSIS",
+                "NEUTRALIZATION",
+                "PURIFICATION",
+                "STORAGE"
+            ],
+            "title": "UnitOperationType",
+            "type": "string"
+        },
         "UpdateFrequency": {
             "description": "The frequency at which a dataset is updated with new data.\nBased on Dublin Core Collection Description Frequency Vocabulary.",
             "enum": [
@@ -11459,6 +12778,31 @@
                 "WEAPONS_GRADE"
             ],
             "title": "UraniumEnrichmentLevelEnum",
+            "type": "string"
+        },
+        "UtilityType": {
+            "description": "Common plant utilities consumed or produced by process unit operations, used for energy and mass balance accounting on a flowsheet.",
+            "enum": [
+                "STEAM",
+                "LOW_PRESSURE_STEAM",
+                "MEDIUM_PRESSURE_STEAM",
+                "HIGH_PRESSURE_STEAM",
+                "COOLING_WATER",
+                "CHILLED_WATER",
+                "REFRIGERANT",
+                "HOT_OIL",
+                "BRINE",
+                "ELECTRICITY",
+                "PROCESS_WATER",
+                "DEMINERALIZED_WATER",
+                "NATURAL_GAS",
+                "FUEL_GAS",
+                "COMPRESSED_AIR",
+                "INSTRUMENT_AIR",
+                "NITROGEN",
+                "FLARE"
+            ],
+            "title": "UtilityType",
             "type": "string"
         },
         "VaccinationPeriodicityEnum": {
@@ -11535,6 +12879,22 @@
                 "SPOT_SUPPLIER"
             ],
             "title": "VendorCategoryEnum",
+            "type": "string"
+        },
+        "VerificationValidationProcessIEEE1012": {
+            "description": "Verification and validation processes applied across the system, software, and hardware life cycle.",
+            "enum": [
+                "CONCEPT_AND_REQUIREMENTS_V_AND_V",
+                "ARCHITECTURE_AND_DESIGN_V_AND_V",
+                "IMPLEMENTATION_V_AND_V",
+                "INTEGRATION_V_AND_V",
+                "QUALIFICATION_TESTING",
+                "INSTALLATION_AND_CHECKOUT",
+                "OPERATION_V_AND_V",
+                "MAINTENANCE_V_AND_V",
+                "DISPOSAL_V_AND_V"
+            ],
+            "title": "VerificationValidationProcessIEEE1012",
             "type": "string"
         },
         "ViabilityEnum": {
@@ -11668,6 +13028,19 @@
                 "TEASPOON"
             ],
             "title": "VolumeUnitEnum",
+            "type": "string"
+        },
+        "VolumetricFlowRateUnitEnum": {
+            "description": "Units of volumetric flow rate (volume per unit time)",
+            "enum": [
+                "CUBIC_METER_PER_SECOND",
+                "CUBIC_METER_PER_HOUR",
+                "LITER_PER_SECOND",
+                "LITER_PER_MINUTE",
+                "GALLON_PER_MINUTE",
+                "CUBIC_FOOT_PER_MINUTE"
+            ],
+            "title": "VolumetricFlowRateUnitEnum",
             "type": "string"
         },
         "WasteDisposalMethodEnum": {
