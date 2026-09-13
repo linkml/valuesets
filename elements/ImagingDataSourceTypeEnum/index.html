@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://linkml.github.io/valuesets/elements/Protein/">
+        <link rel="canonical" href="https://linkml.github.io/valuesets/elements/ImagingDataSourceTypeEnum/">
       
       
       
@@ -18,7 +18,7 @@
     
     
       
-        <title>Enum: Protein - valuesets</title>
+        <title>Enum: ImagingDataSourceTypeEnum - valuesets</title>
       
     
     
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#enum-protein" class="md-skip">
+        <a href="#enum-imagingdatasourcetypeenum" class="md-skip">
           Skip to content
         </a>
       
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Enum: Protein
+              Enum: ImagingDataSourceTypeEnum
             
           </span>
         </div>
@@ -625,9 +625,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#dynamic-enum-query" class="md-nav__link">
+  <a href="#permissible-values" class="md-nav__link">
     <span class="md-ellipsis">
-      Dynamic Enum Query
+      Permissible Values
     </span>
   </a>
   
@@ -694,16 +694,73 @@
   
 
 
-<h1 id="enum-protein">Enum: Protein</h1>
-<p><em>Proteins and protein complexes</em></p>
-<p>URI: <a href="https://w3id.org/valuesets/Protein">valuesets:Protein</a></p>
+<h1 id="enum-imagingdatasourcetypeenum">Enum: ImagingDataSourceTypeEnum</h1>
+<p><em>Types of systems in a hospital or research network that hold medical imaging data and from which it may be extracted. A landscape assessment records, for each source, the platform vendor, software version, supported query mechanisms, patient identifier handling, retention policy and anonymization capabilities.</em></p>
+<p>URI: <a href="https://w3id.org/valuesets/ImagingDataSourceTypeEnum">valuesets:ImagingDataSourceTypeEnum</a></p>
 <!-- bioportal-link -->
-<p><a href="https://bioportal.bioontology.org/ontologies/VALUESETS?p=classes&amp;conceptid=https%3A%2F%2Fw3id.org%2Fvaluesets%2FProtein">View in BioPortal</a></p>
-<p><em>This is a dynamic enum</em></p>
-<h2 id="dynamic-enum-query">Dynamic Enum Query</h2>
-<p>This value set is dynamically populated from an ontology.</p>
-<p><strong>Query:</strong> <a href="http://purl.obolibrary.org/obo/PR_000000001">protein</a> and subclasses</p>
-<p><strong>Prefixes used:</strong> <code>PR, obo, rdfs</code></p>
+<p><a href="https://bioportal.bioontology.org/ontologies/VALUESETS?p=classes&amp;conceptid=https%3A%2F%2Fw3id.org%2Fvaluesets%2FImagingDataSourceTypeEnum">View in BioPortal</a></p>
+<h2 id="permissible-values">Permissible Values</h2>
+<!-- annotations-table -->
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Title</th>
+<th>Meaning</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PACS</td>
+<td>Picture Archiving and Communication System</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C17624">NCIT:C17624</a></td>
+<td>Clinical system for storing, retrieving and distributing medical images, typically the central radiology archive</td>
+</tr>
+<tr>
+<td>VENDOR_NEUTRAL_ARCHIVE</td>
+<td>Vendor neutral archive</td>
+<td></td>
+<td>Enterprise archive that stores images from multiple departments and PACS vendors in a standard format</td>
+</tr>
+<tr>
+<td>DEPARTMENTAL_IMAGING_ARCHIVE</td>
+<td>Departmental imaging archive</td>
+<td></td>
+<td>Local archive maintained by a clinical department such as cardiology, ophthalmology or endoscopy outside the central PACS</td>
+</tr>
+<tr>
+<td>RESEARCH_IMAGING_PLATFORM</td>
+<td>Research imaging platform</td>
+<td></td>
+<td>Research-specific imaging informatics database such as XNAT used to manage, store and share imaging data</td>
+</tr>
+<tr>
+<td>MODALITY_WORKSTATION</td>
+<td>Modality workstation</td>
+<td></td>
+<td>Acquisition device or attached workstation that exports images through vendor-specific software</td>
+</tr>
+<tr>
+<td>ELECTRONIC_HEALTH_RECORD</td>
+<td>Electronic Health Record</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C142529">NCIT:C142529</a></td>
+<td>Clinical record system that references or embeds imaging studies and provides encounter linkage</td>
+</tr>
+<tr>
+<td>PUBLIC_IMAGING_REPOSITORY</td>
+<td>Public imaging repository</td>
+<td></td>
+<td>Openly accessible imaging data resource such as The Cancer Imaging Archive or OpenNeuro</td>
+</tr>
+<tr>
+<td>CLOUD_IMAGING_ARCHIVE</td>
+<td>Cloud imaging archive</td>
+<td></td>
+<td>Cloud-hosted object storage or managed imaging service holding DICOM data</td>
+</tr>
+</tbody>
+</table>
 <h2 id="slots">Slots</h2>
 <table>
 <thead>
@@ -714,8 +771,8 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../protein/">protein</a></td>
-<td>Proteins and protein complexes</td>
+<td><a href="../imaging_data_source_type/">imaging_data_source_type</a></td>
+<td>The type of system from which imaging data is extracted</td>
 </tr>
 </tbody>
 </table>
@@ -727,24 +784,65 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
-<pre><code class="language-yaml">name: Protein
+<pre><code class="language-yaml">name: ImagingDataSourceTypeEnum
 instantiates:
 - valuesets_meta:ValueSetEnumDefinition
-description: Proteins and protein complexes
-title: Protein
+description: Types of systems in a hospital or research network that hold medical
+  imaging data and from which it may be extracted. A landscape assessment records,
+  for each source, the platform vendor, software version, supported query mechanisms,
+  patient identifier handling, retention policy and anonymization capabilities.
+title: Imaging Data Source Type
 from_schema: https://w3id.org/valuesets
 contributors:
 - orcid:0000-0002-6601-2165
 - https://github.com/anthropics/claude-code
 status: DRAFT
 rank: 1000
-reachable_from:
-  source_ontology: obo:pr
-  source_nodes:
-  - PR:000000001
-  relationship_types:
-  - rdfs:subClassOf
-  include_self: true
+permissible_values:
+  PACS:
+    text: PACS
+    description: Clinical system for storing, retrieving and distributing medical
+      images, typically the central radiology archive
+    meaning: NCIT:C17624
+    title: Picture Archiving and Communication System
+  VENDOR_NEUTRAL_ARCHIVE:
+    text: VENDOR_NEUTRAL_ARCHIVE
+    description: Enterprise archive that stores images from multiple departments and
+      PACS vendors in a standard format
+    title: Vendor neutral archive
+    aliases:
+    - VNA
+  DEPARTMENTAL_IMAGING_ARCHIVE:
+    text: DEPARTMENTAL_IMAGING_ARCHIVE
+    description: Local archive maintained by a clinical department such as cardiology,
+      ophthalmology or endoscopy outside the central PACS
+    title: Departmental imaging archive
+  RESEARCH_IMAGING_PLATFORM:
+    text: RESEARCH_IMAGING_PLATFORM
+    description: Research-specific imaging informatics database such as XNAT used
+      to manage, store and share imaging data
+    title: Research imaging platform
+  MODALITY_WORKSTATION:
+    text: MODALITY_WORKSTATION
+    description: Acquisition device or attached workstation that exports images through
+      vendor-specific software
+    title: Modality workstation
+  ELECTRONIC_HEALTH_RECORD:
+    text: ELECTRONIC_HEALTH_RECORD
+    description: Clinical record system that references or embeds imaging studies
+      and provides encounter linkage
+    meaning: NCIT:C142529
+    title: Electronic Health Record
+  PUBLIC_IMAGING_REPOSITORY:
+    text: PUBLIC_IMAGING_REPOSITORY
+    description: Openly accessible imaging data resource such as The Cancer Imaging
+      Archive or OpenNeuro
+    title: Public imaging repository
+  CLOUD_IMAGING_ARCHIVE:
+    text: CLOUD_IMAGING_ARCHIVE
+    description: Cloud-hosted object storage or managed imaging service holding DICOM
+      data
+    title: Cloud imaging archive
 
 </code></pre>
 

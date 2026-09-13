@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://linkml.github.io/valuesets/elements/Protein/">
+        <link rel="canonical" href="https://linkml.github.io/valuesets/elements/image_deidentification_target/">
       
       
       
@@ -18,7 +18,7 @@
     
     
       
-        <title>Enum: Protein - valuesets</title>
+        <title>Slot: image_deidentification_target - valuesets</title>
       
     
     
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#enum-protein" class="md-skip">
+        <a href="#slot-image_deidentification_target" class="md-skip">
           Skip to content
         </a>
       
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Enum: Protein
+              Slot: image_deidentification_target
             
           </span>
         </div>
@@ -625,18 +625,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#dynamic-enum-query" class="md-nav__link">
+  <a href="#properties" class="md-nav__link">
     <span class="md-ellipsis">
-      Dynamic Enum Query
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#slots" class="md-nav__link">
-    <span class="md-ellipsis">
-      Slots
+      Properties
     </span>
   </a>
   
@@ -663,6 +654,15 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mappings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mappings
+    </span>
+  </a>
   
 </li>
       
@@ -694,57 +694,49 @@
   
 
 
-<h1 id="enum-protein">Enum: Protein</h1>
-<p><em>Proteins and protein complexes</em></p>
-<p>URI: <a href="https://w3id.org/valuesets/Protein">valuesets:Protein</a></p>
-<!-- bioportal-link -->
-<p><a href="https://bioportal.bioontology.org/ontologies/VALUESETS?p=classes&amp;conceptid=https%3A%2F%2Fw3id.org%2Fvaluesets%2FProtein">View in BioPortal</a></p>
-<p><em>This is a dynamic enum</em></p>
-<h2 id="dynamic-enum-query">Dynamic Enum Query</h2>
-<p>This value set is dynamically populated from an ontology.</p>
-<p><strong>Query:</strong> <a href="http://purl.obolibrary.org/obo/PR_000000001">protein</a> and subclasses</p>
-<p><strong>Prefixes used:</strong> <code>PR, obo, rdfs</code></p>
-<h2 id="slots">Slots</h2>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="../protein/">protein</a></td>
-<td>Proteins and protein complexes</td>
-</tr>
-</tbody>
-</table>
+<h1 id="slot-image_deidentification_target">Slot: image_deidentification_target</h1>
+<p><em>The part of an imaging object from which identifying information is removed</em></p>
+<p>URI: <a href="https://w3id.org/valuesets/image_deidentification_target">valuesets:image_deidentification_target</a>
+Alias: image_deidentification_target</p>
+<!-- no inheritance hierarchy -->
+
+<h2 id="properties">Properties</h2>
+<ul>
+<li>Range: <a href="../ImageDeidentificationTargetEnum/">ImageDeidentificationTargetEnum</a></li>
+</ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
 <li>from schema: https://w3id.org/valuesets</li>
 </ul>
+<h2 id="mappings">Mappings</h2>
+<table>
+<thead>
+<tr>
+<th>Mapping Type</th>
+<th>Mapped Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>self</td>
+<td>valuesets:image_deidentification_target</td>
+</tr>
+<tr>
+<td>native</td>
+<td>valuesets:image_deidentification_target</td>
+</tr>
+</tbody>
+</table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
-<pre><code class="language-yaml">name: Protein
-instantiates:
-- valuesets_meta:ValueSetEnumDefinition
-description: Proteins and protein complexes
-title: Protein
+<pre><code class="language-yaml">name: image_deidentification_target
+description: The part of an imaging object from which identifying information is removed
 from_schema: https://w3id.org/valuesets
-contributors:
-- orcid:0000-0002-6601-2165
-- https://github.com/anthropics/claude-code
-status: DRAFT
 rank: 1000
-reachable_from:
-  source_ontology: obo:pr
-  source_nodes:
-  - PR:000000001
-  relationship_types:
-  - rdfs:subClassOf
-  include_self: true
+alias: image_deidentification_target
+range: ImageDeidentificationTargetEnum
 
 </code></pre>
 

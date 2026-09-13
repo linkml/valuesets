@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://linkml.github.io/valuesets/elements/Protein/">
+        <link rel="canonical" href="https://linkml.github.io/valuesets/elements/ImagingDataLifecycleStageEnum/">
       
       
       
@@ -18,7 +18,7 @@
     
     
       
-        <title>Enum: Protein - valuesets</title>
+        <title>Enum: ImagingDataLifecycleStageEnum - valuesets</title>
       
     
     
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#enum-protein" class="md-skip">
+        <a href="#enum-imagingdatalifecyclestageenum" class="md-skip">
           Skip to content
         </a>
       
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Enum: Protein
+              Enum: ImagingDataLifecycleStageEnum
             
           </span>
         </div>
@@ -625,9 +625,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#dynamic-enum-query" class="md-nav__link">
+  <a href="#permissible-values" class="md-nav__link">
     <span class="md-ellipsis">
-      Dynamic Enum Query
+      Permissible Values
     </span>
   </a>
   
@@ -694,16 +694,75 @@
   
 
 
-<h1 id="enum-protein">Enum: Protein</h1>
-<p><em>Proteins and protein complexes</em></p>
-<p>URI: <a href="https://w3id.org/valuesets/Protein">valuesets:Protein</a></p>
+<h1 id="enum-imagingdatalifecyclestageenum">Enum: ImagingDataLifecycleStageEnum</h1>
+<p><em>Sequential stages of DICOM data management for preparing FAIR, AI-ready medical imaging datasets. Stages after extraction form the data reliability workflow that checks that imaging data is complete, standardized and biologically plausible before sharing.</em></p>
+<p>URI: <a href="https://w3id.org/valuesets/ImagingDataLifecycleStageEnum">valuesets:ImagingDataLifecycleStageEnum</a></p>
 <!-- bioportal-link -->
-<p><a href="https://bioportal.bioontology.org/ontologies/VALUESETS?p=classes&amp;conceptid=https%3A%2F%2Fw3id.org%2Fvaluesets%2FProtein">View in BioPortal</a></p>
-<p><em>This is a dynamic enum</em></p>
-<h2 id="dynamic-enum-query">Dynamic Enum Query</h2>
-<p>This value set is dynamically populated from an ontology.</p>
-<p><strong>Query:</strong> <a href="http://purl.obolibrary.org/obo/PR_000000001">protein</a> and subclasses</p>
-<p><strong>Prefixes used:</strong> <code>PR, obo, rdfs</code></p>
+<p><a href="https://bioportal.bioontology.org/ontologies/VALUESETS?p=classes&amp;conceptid=https%3A%2F%2Fw3id.org%2Fvaluesets%2FImagingDataLifecycleStageEnum">View in BioPortal</a></p>
+<h2 id="permissible-values">Permissible Values</h2>
+<!-- annotations-table -->
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Title</th>
+<th>Meaning</th>
+<th>Description</th>
+<th>Broad Mappings</th>
+<th>Stage Number</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DATA_EXTRACTION_AND_METADATA_CHARACTERIZATION</td>
+<td>Data extraction and metadata characterization</td>
+<td></td>
+<td>Extraction of imaging data from clinical repositories such as PACS, preceded by a landscape assessment of source locations, database systems, modalities and acquisition devices</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C44285">NCIT:C44285</a></td>
+<td>1</td>
+</tr>
+<tr>
+<td>FILE_INTEGRITY_VERIFICATION</td>
+<td>File integrity verification</td>
+<td></td>
+<td>Computation and periodic re-verification of cryptographic checksums such as SHA-256 to detect silent corruption from network errors, media decay or system failure</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C142477">NCIT:C142477</a></td>
+<td>2</td>
+</tr>
+<tr>
+<td>DATA_COMPLETENESS_AND_CONFORMANCE_CHECKS</td>
+<td>Data completeness and conformance checks</td>
+<td></td>
+<td>Detection of structurally invalid DICOM files (truncated, wrong VR encoding, missing required tags) and checks of internal coherence such as identifier uniqueness and demographic consistency across sites</td>
+<td></td>
+<td>3</td>
+</tr>
+<tr>
+<td>METADATA_TAG_VALIDATION</td>
+<td>Metadata tag validation</td>
+<td></td>
+<td>Validation of DICOM attributes against the standard's VR, VM and type rules and against biological plausibility, and inventory of private tags</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C142500">NCIT:C142500</a></td>
+<td>4</td>
+</tr>
+<tr>
+<td>IMAGE_QUALITY_AND_PIXEL_DATA_VALIDATION</td>
+<td>Image quality and pixel data validation</td>
+<td></td>
+<td>Verification that pixel data is readable and plausible, that decompression preserves bit depth, and computation of image quality metrics</td>
+<td></td>
+<td>5</td>
+</tr>
+<tr>
+<td>DEIDENTIFICATION</td>
+<td>Pixel-level and metadata de-identification</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C45970">NCIT:C45970</a></td>
+<td>Removal of protected health information from headers and of facial features from pixel data before sharing and reuse</td>
+<td></td>
+<td>6</td>
+</tr>
+</tbody>
+</table>
 <h2 id="slots">Slots</h2>
 <table>
 <thead>
@@ -714,8 +773,8 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../protein/">protein</a></td>
-<td>Proteins and protein complexes</td>
+<td><a href="../imaging_data_lifecycle_stage/">imaging_data_lifecycle_stage</a></td>
+<td>The stage of the medical imaging data management lifecycle</td>
 </tr>
 </tbody>
 </table>
@@ -727,24 +786,85 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
-<pre><code class="language-yaml">name: Protein
+<pre><code class="language-yaml">name: ImagingDataLifecycleStageEnum
 instantiates:
 - valuesets_meta:ValueSetEnumDefinition
-description: Proteins and protein complexes
-title: Protein
+description: Sequential stages of DICOM data management for preparing FAIR, AI-ready
+  medical imaging datasets. Stages after extraction form the data reliability workflow
+  that checks that imaging data is complete, standardized and biologically plausible
+  before sharing.
+title: Imaging Data Lifecycle Stage
 from_schema: https://w3id.org/valuesets
 contributors:
 - orcid:0000-0002-6601-2165
 - https://github.com/anthropics/claude-code
 status: DRAFT
 rank: 1000
-reachable_from:
-  source_ontology: obo:pr
-  source_nodes:
-  - PR:000000001
-  relationship_types:
-  - rdfs:subClassOf
-  include_self: true
+permissible_values:
+  DATA_EXTRACTION_AND_METADATA_CHARACTERIZATION:
+    text: DATA_EXTRACTION_AND_METADATA_CHARACTERIZATION
+    description: Extraction of imaging data from clinical repositories such as PACS,
+      preceded by a landscape assessment of source locations, database systems, modalities
+      and acquisition devices
+    annotations:
+      stage_number:
+        tag: stage_number
+        value: 1
+    title: Data extraction and metadata characterization
+    broad_mappings:
+    - NCIT:C44285
+  FILE_INTEGRITY_VERIFICATION:
+    text: FILE_INTEGRITY_VERIFICATION
+    description: Computation and periodic re-verification of cryptographic checksums
+      such as SHA-256 to detect silent corruption from network errors, media decay
+      or system failure
+    annotations:
+      stage_number:
+        tag: stage_number
+        value: 2
+    title: File integrity verification
+    broad_mappings:
+    - NCIT:C142477
+  DATA_COMPLETENESS_AND_CONFORMANCE_CHECKS:
+    text: DATA_COMPLETENESS_AND_CONFORMANCE_CHECKS
+    description: Detection of structurally invalid DICOM files (truncated, wrong VR
+      encoding, missing required tags) and checks of internal coherence such as identifier
+      uniqueness and demographic consistency across sites
+    annotations:
+      stage_number:
+        tag: stage_number
+        value: 3
+    title: Data completeness and conformance checks
+  METADATA_TAG_VALIDATION:
+    text: METADATA_TAG_VALIDATION
+    description: Validation of DICOM attributes against the standard's VR, VM and
+      type rules and against biological plausibility, and inventory of private tags
+    annotations:
+      stage_number:
+        tag: stage_number
+        value: 4
+    title: Metadata tag validation
+    broad_mappings:
+    - NCIT:C142500
+  IMAGE_QUALITY_AND_PIXEL_DATA_VALIDATION:
+    text: IMAGE_QUALITY_AND_PIXEL_DATA_VALIDATION
+    description: Verification that pixel data is readable and plausible, that decompression
+      preserves bit depth, and computation of image quality metrics
+    annotations:
+      stage_number:
+        tag: stage_number
+        value: 5
+    title: Image quality and pixel data validation
+  DEIDENTIFICATION:
+    text: DEIDENTIFICATION
+    description: Removal of protected health information from headers and of facial
+      features from pixel data before sharing and reuse
+    meaning: NCIT:C45970
+    annotations:
+      stage_number:
+        tag: stage_number
+        value: 6
+    title: Pixel-level and metadata de-identification
 
 </code></pre>
 

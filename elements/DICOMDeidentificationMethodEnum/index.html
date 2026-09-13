@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://linkml.github.io/valuesets/elements/Protein/">
+        <link rel="canonical" href="https://linkml.github.io/valuesets/elements/DICOMDeidentificationMethodEnum/">
       
       
       
@@ -18,7 +18,7 @@
     
     
       
-        <title>Enum: Protein - valuesets</title>
+        <title>Enum: DICOMDeidentificationMethodEnum - valuesets</title>
       
     
     
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#enum-protein" class="md-skip">
+        <a href="#enum-dicomdeidentificationmethodenum" class="md-skip">
           Skip to content
         </a>
       
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Enum: Protein
+              Enum: DICOMDeidentificationMethodEnum
             
           </span>
         </div>
@@ -625,9 +625,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#dynamic-enum-query" class="md-nav__link">
+  <a href="#permissible-values" class="md-nav__link">
     <span class="md-ellipsis">
-      Dynamic Enum Query
+      Permissible Values
     </span>
   </a>
   
@@ -637,6 +637,15 @@
   <a href="#slots" class="md-nav__link">
     <span class="md-ellipsis">
       Slots
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      See Also
     </span>
   </a>
   
@@ -694,16 +703,117 @@
   
 
 
-<h1 id="enum-protein">Enum: Protein</h1>
-<p><em>Proteins and protein complexes</em></p>
-<p>URI: <a href="https://w3id.org/valuesets/Protein">valuesets:Protein</a></p>
+<h1 id="enum-dicomdeidentificationmethodenum">Enum: DICOMDeidentificationMethodEnum</h1>
+<p><em>The Basic Application Level Confidentiality Profile and its options defined in DICOM PS3.15 Annex E, as coded in PS3.16 Context ID 7050 (De-identification Method). These codes are recorded in the De-identification Method Code Sequence (0012,0064) to document what was done to an instance. The "Clean" options remove additional identifying content; the "Retain" options preserve information that the basic profile would otherwise remove.</em></p>
+<p>URI: <a href="https://w3id.org/valuesets/DICOMDeidentificationMethodEnum">valuesets:DICOMDeidentificationMethodEnum</a></p>
 <!-- bioportal-link -->
-<p><a href="https://bioportal.bioontology.org/ontologies/VALUESETS?p=classes&amp;conceptid=https%3A%2F%2Fw3id.org%2Fvaluesets%2FProtein">View in BioPortal</a></p>
-<p><em>This is a dynamic enum</em></p>
-<h2 id="dynamic-enum-query">Dynamic Enum Query</h2>
-<p>This value set is dynamically populated from an ontology.</p>
-<p><strong>Query:</strong> <a href="http://purl.obolibrary.org/obo/PR_000000001">protein</a> and subclasses</p>
-<p><strong>Prefixes used:</strong> <code>PR, obo, rdfs</code></p>
+<p><a href="https://bioportal.bioontology.org/ontologies/VALUESETS?p=classes&amp;conceptid=https%3A%2F%2Fw3id.org%2Fvaluesets%2FDICOMDeidentificationMethodEnum">View in BioPortal</a></p>
+<h2 id="permissible-values">Permissible Values</h2>
+<!-- annotations-table -->
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Title</th>
+<th>Meaning</th>
+<th>Description</th>
+<th>Kind</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BASIC_APPLICATION_CONFIDENTIALITY_PROFILE</td>
+<td>Basic Application Confidentiality Profile</td>
+<td><a href="http://dicom.nema.org/resources/ontology/DCM/113100">DCM:113100</a></td>
+<td>The baseline profile that removes or replaces all attributes known to carry identifying information, including UIDs, dates and descriptive text</td>
+<td>profile</td>
+</tr>
+<tr>
+<td>CLEAN_PIXEL_DATA_OPTION</td>
+<td>Clean Pixel Data Option</td>
+<td><a href="http://dicom.nema.org/resources/ontology/DCM/113101">DCM:113101</a></td>
+<td>Burned-in identifying text and annotations in the pixel data are removed</td>
+<td>clean option</td>
+</tr>
+<tr>
+<td>CLEAN_RECOGNIZABLE_VISUAL_FEATURES_OPTION</td>
+<td>Clean Recognizable Visual Features Option</td>
+<td><a href="http://dicom.nema.org/resources/ontology/DCM/113102">DCM:113102</a></td>
+<td>Recognizable visual features such as the face are removed from pixel data; this is the option under which de-facing is recorded</td>
+<td>clean option</td>
+</tr>
+<tr>
+<td>CLEAN_GRAPHICS_OPTION</td>
+<td>Clean Graphics Option</td>
+<td><a href="http://dicom.nema.org/resources/ontology/DCM/113103">DCM:113103</a></td>
+<td>Identifying information in graphic annotations, overlays and presentation states is removed</td>
+<td>clean option</td>
+</tr>
+<tr>
+<td>CLEAN_STRUCTURED_CONTENT_OPTION</td>
+<td>Clean Structured Content Option</td>
+<td><a href="http://dicom.nema.org/resources/ontology/DCM/113104">DCM:113104</a></td>
+<td>Identifying information in structured report content items is removed</td>
+<td>clean option</td>
+</tr>
+<tr>
+<td>CLEAN_DESCRIPTORS_OPTION</td>
+<td>Clean Descriptors Option</td>
+<td><a href="http://dicom.nema.org/resources/ontology/DCM/113105">DCM:113105</a></td>
+<td>Free-text descriptors such as Study Description are cleaned of identifying content rather than removed</td>
+<td>clean option</td>
+</tr>
+<tr>
+<td>RETAIN_LONGITUDINAL_TEMPORAL_INFORMATION_FULL_DATES_OPTION</td>
+<td>Retain Longitudinal Temporal Information Full Dates Option</td>
+<td><a href="http://dicom.nema.org/resources/ontology/DCM/113106">DCM:113106</a></td>
+<td>Dates and times are retained unmodified to preserve the temporal relationship between studies</td>
+<td>retain option</td>
+</tr>
+<tr>
+<td>RETAIN_LONGITUDINAL_TEMPORAL_INFORMATION_MODIFIED_DATES_OPTION</td>
+<td>Retain Longitudinal Temporal Information Modified Dates Option</td>
+<td><a href="http://dicom.nema.org/resources/ontology/DCM/113107">DCM:113107</a></td>
+<td>Dates and times are shifted consistently so that intervals between studies are preserved</td>
+<td>retain option</td>
+</tr>
+<tr>
+<td>RETAIN_PATIENT_CHARACTERISTICS_OPTION</td>
+<td>Retain Patient Characteristics Option</td>
+<td><a href="http://dicom.nema.org/resources/ontology/DCM/113108">DCM:113108</a></td>
+<td>Physical characteristics such as age, sex, height and weight are retained</td>
+<td>retain option</td>
+</tr>
+<tr>
+<td>RETAIN_DEVICE_IDENTITY_OPTION</td>
+<td>Retain Device Identity Option</td>
+<td><a href="http://dicom.nema.org/resources/ontology/DCM/113109">DCM:113109</a></td>
+<td>Device identifying attributes such as manufacturer, model and serial number are retained</td>
+<td>retain option</td>
+</tr>
+<tr>
+<td>RETAIN_UIDS_OPTION</td>
+<td>Retain UIDs Option</td>
+<td><a href="http://dicom.nema.org/resources/ontology/DCM/113110">DCM:113110</a></td>
+<td>Original UIDs are retained rather than replaced</td>
+<td>retain option</td>
+</tr>
+<tr>
+<td>RETAIN_SAFE_PRIVATE_OPTION</td>
+<td>Retain Safe Private Option</td>
+<td><a href="http://dicom.nema.org/resources/ontology/DCM/113111">DCM:113111</a></td>
+<td>Private attributes known not to contain identifying information are retained</td>
+<td>retain option</td>
+</tr>
+<tr>
+<td>RETAIN_INSTITUTION_IDENTITY_OPTION</td>
+<td>Retain Institution Identity Option</td>
+<td><a href="http://dicom.nema.org/resources/ontology/DCM/113112">DCM:113112</a></td>
+<td>Institution identifying attributes such as institution name and address are retained</td>
+<td>retain option</td>
+</tr>
+</tbody>
+</table>
 <h2 id="slots">Slots</h2>
 <table>
 <thead>
@@ -714,11 +824,16 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../protein/">protein</a></td>
-<td>Proteins and protein complexes</td>
+<td><a href="../dicom_deidentification_method/">dicom_deidentification_method</a></td>
+<td>A DICOM de-identification profile or option applied to an image object</td>
 </tr>
 </tbody>
 </table>
+<h2 id="see-also">See Also</h2>
+<ul>
+<li><a href="https://dicom.nema.org/medical/dicom/current/output/chtml/part16/sect_CID_7050.html">https://dicom.nema.org/medical/dicom/current/output/chtml/part16/sect_CID_7050.html</a></li>
+<li><a href="https://dicom.nema.org/medical/dicom/current/output/chtml/part15/chapter_E.html">https://dicom.nema.org/medical/dicom/current/output/chtml/part15/chapter_E.html</a></li>
+</ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
@@ -727,24 +842,154 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
-<pre><code class="language-yaml">name: Protein
+<pre><code class="language-yaml">name: DICOMDeidentificationMethodEnum
 instantiates:
 - valuesets_meta:ValueSetEnumDefinition
-description: Proteins and protein complexes
-title: Protein
+description: The Basic Application Level Confidentiality Profile and its options defined
+  in DICOM PS3.15 Annex E, as coded in PS3.16 Context ID 7050 (De-identification Method).
+  These codes are recorded in the De-identification Method Code Sequence (0012,0064)
+  to document what was done to an instance. The &quot;Clean&quot; options remove additional
+  identifying content; the &quot;Retain&quot; options preserve information that the basic profile
+  would otherwise remove.
+title: DICOM De-identification Method
 from_schema: https://w3id.org/valuesets
+see_also:
+- https://dicom.nema.org/medical/dicom/current/output/chtml/part16/sect_CID_7050.html
+- https://dicom.nema.org/medical/dicom/current/output/chtml/part15/chapter_E.html
 contributors:
 - orcid:0000-0002-6601-2165
 - https://github.com/anthropics/claude-code
 status: DRAFT
 rank: 1000
-reachable_from:
-  source_ontology: obo:pr
-  source_nodes:
-  - PR:000000001
-  relationship_types:
-  - rdfs:subClassOf
-  include_self: true
+permissible_values:
+  BASIC_APPLICATION_CONFIDENTIALITY_PROFILE:
+    text: BASIC_APPLICATION_CONFIDENTIALITY_PROFILE
+    description: The baseline profile that removes or replaces all attributes known
+      to carry identifying information, including UIDs, dates and descriptive text
+    meaning: DCM:113100
+    annotations:
+      kind:
+        tag: kind
+        value: profile
+    title: Basic Application Confidentiality Profile
+  CLEAN_PIXEL_DATA_OPTION:
+    text: CLEAN_PIXEL_DATA_OPTION
+    description: Burned-in identifying text and annotations in the pixel data are
+      removed
+    meaning: DCM:113101
+    annotations:
+      kind:
+        tag: kind
+        value: clean option
+    title: Clean Pixel Data Option
+  CLEAN_RECOGNIZABLE_VISUAL_FEATURES_OPTION:
+    text: CLEAN_RECOGNIZABLE_VISUAL_FEATURES_OPTION
+    description: Recognizable visual features such as the face are removed from pixel
+      data; this is the option under which de-facing is recorded
+    meaning: DCM:113102
+    annotations:
+      kind:
+        tag: kind
+        value: clean option
+    title: Clean Recognizable Visual Features Option
+  CLEAN_GRAPHICS_OPTION:
+    text: CLEAN_GRAPHICS_OPTION
+    description: Identifying information in graphic annotations, overlays and presentation
+      states is removed
+    meaning: DCM:113103
+    annotations:
+      kind:
+        tag: kind
+        value: clean option
+    title: Clean Graphics Option
+  CLEAN_STRUCTURED_CONTENT_OPTION:
+    text: CLEAN_STRUCTURED_CONTENT_OPTION
+    description: Identifying information in structured report content items is removed
+    meaning: DCM:113104
+    annotations:
+      kind:
+        tag: kind
+        value: clean option
+    title: Clean Structured Content Option
+  CLEAN_DESCRIPTORS_OPTION:
+    text: CLEAN_DESCRIPTORS_OPTION
+    description: Free-text descriptors such as Study Description are cleaned of identifying
+      content rather than removed
+    meaning: DCM:113105
+    annotations:
+      kind:
+        tag: kind
+        value: clean option
+    title: Clean Descriptors Option
+  RETAIN_LONGITUDINAL_TEMPORAL_INFORMATION_FULL_DATES_OPTION:
+    text: RETAIN_LONGITUDINAL_TEMPORAL_INFORMATION_FULL_DATES_OPTION
+    description: Dates and times are retained unmodified to preserve the temporal
+      relationship between studies
+    meaning: DCM:113106
+    annotations:
+      kind:
+        tag: kind
+        value: retain option
+    title: Retain Longitudinal Temporal Information Full Dates Option
+  RETAIN_LONGITUDINAL_TEMPORAL_INFORMATION_MODIFIED_DATES_OPTION:
+    text: RETAIN_LONGITUDINAL_TEMPORAL_INFORMATION_MODIFIED_DATES_OPTION
+    description: Dates and times are shifted consistently so that intervals between
+      studies are preserved
+    meaning: DCM:113107
+    annotations:
+      kind:
+        tag: kind
+        value: retain option
+    title: Retain Longitudinal Temporal Information Modified Dates Option
+  RETAIN_PATIENT_CHARACTERISTICS_OPTION:
+    text: RETAIN_PATIENT_CHARACTERISTICS_OPTION
+    description: Physical characteristics such as age, sex, height and weight are
+      retained
+    meaning: DCM:113108
+    annotations:
+      kind:
+        tag: kind
+        value: retain option
+    title: Retain Patient Characteristics Option
+  RETAIN_DEVICE_IDENTITY_OPTION:
+    text: RETAIN_DEVICE_IDENTITY_OPTION
+    description: Device identifying attributes such as manufacturer, model and serial
+      number are retained
+    meaning: DCM:113109
+    annotations:
+      kind:
+        tag: kind
+        value: retain option
+    title: Retain Device Identity Option
+  RETAIN_UIDS_OPTION:
+    text: RETAIN_UIDS_OPTION
+    description: Original UIDs are retained rather than replaced
+    meaning: DCM:113110
+    annotations:
+      kind:
+        tag: kind
+        value: retain option
+    title: Retain UIDs Option
+  RETAIN_SAFE_PRIVATE_OPTION:
+    text: RETAIN_SAFE_PRIVATE_OPTION
+    description: Private attributes known not to contain identifying information are
+      retained
+    meaning: DCM:113111
+    annotations:
+      kind:
+        tag: kind
+        value: retain option
+    title: Retain Safe Private Option
+  RETAIN_INSTITUTION_IDENTITY_OPTION:
+    text: RETAIN_INSTITUTION_IDENTITY_OPTION
+    description: Institution identifying attributes such as institution name and address
+      are retained
+    meaning: DCM:113112
+    annotations:
+      kind:
+        tag: kind
+        value: retain option
+    title: Retain Institution Identity Option
 
 </code></pre>
 

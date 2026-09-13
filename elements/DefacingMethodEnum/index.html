@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://linkml.github.io/valuesets/elements/Protein/">
+        <link rel="canonical" href="https://linkml.github.io/valuesets/elements/DefacingMethodEnum/">
       
       
       
@@ -18,7 +18,7 @@
     
     
       
-        <title>Enum: Protein - valuesets</title>
+        <title>Enum: DefacingMethodEnum - valuesets</title>
       
     
     
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#enum-protein" class="md-skip">
+        <a href="#enum-defacingmethodenum" class="md-skip">
           Skip to content
         </a>
       
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Enum: Protein
+              Enum: DefacingMethodEnum
             
           </span>
         </div>
@@ -625,9 +625,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#dynamic-enum-query" class="md-nav__link">
+  <a href="#permissible-values" class="md-nav__link">
     <span class="md-ellipsis">
-      Dynamic Enum Query
+      Permissible Values
     </span>
   </a>
   
@@ -694,16 +694,109 @@
   
 
 
-<h1 id="enum-protein">Enum: Protein</h1>
-<p><em>Proteins and protein complexes</em></p>
-<p>URI: <a href="https://w3id.org/valuesets/Protein">valuesets:Protein</a></p>
+<h1 id="enum-defacingmethodenum">Enum: DefacingMethodEnum</h1>
+<p><em>Approaches to pixel-level de-identification that remove or obscure facial features in head imaging. Skull-stripping removes all non-brain tissue and may discard useful anatomy; face-specific methods aim to remove only facial features while preserving as much of the head volume as possible.</em></p>
+<p>URI: <a href="https://w3id.org/valuesets/DefacingMethodEnum">valuesets:DefacingMethodEnum</a></p>
 <!-- bioportal-link -->
-<p><a href="https://bioportal.bioontology.org/ontologies/VALUESETS?p=classes&amp;conceptid=https%3A%2F%2Fw3id.org%2Fvaluesets%2FProtein">View in BioPortal</a></p>
-<p><em>This is a dynamic enum</em></p>
-<h2 id="dynamic-enum-query">Dynamic Enum Query</h2>
-<p>This value set is dynamically populated from an ontology.</p>
-<p><strong>Query:</strong> <a href="http://purl.obolibrary.org/obo/PR_000000001">protein</a> and subclasses</p>
-<p><strong>Prefixes used:</strong> <code>PR, obo, rdfs</code></p>
+<p><a href="https://bioportal.bioontology.org/ontologies/VALUESETS?p=classes&amp;conceptid=https%3A%2F%2Fw3id.org%2Fvaluesets%2FDefacingMethodEnum">View in BioPortal</a></p>
+<h2 id="permissible-values">Permissible Values</h2>
+<!-- annotations-table -->
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Title</th>
+<th>Meaning</th>
+<th>Description</th>
+<th>Applicable To</th>
+<th>Example Tools</th>
+<th>Preserves Skull</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SKULL_STRIPPING</td>
+<td>Skull stripping</td>
+<td></td>
+<td>Removal of all non-brain tissue including scalp, skull and face, for example with FSL BET or AFNI 3dSkullStrip</td>
+<td></td>
+<td></td>
+<td>false</td>
+</tr>
+<tr>
+<td>TEMPLATE_BASED_MASKING</td>
+<td>Template-based masking</td>
+<td></td>
+<td>Registration of the image to a standard brain template such as MNI152 followed by application of a predefined binary face mask that zeros out facial voxels</td>
+<td></td>
+<td>PyDeface, FreeSurfer mri_deface, mydeface</td>
+<td>true</td>
+</tr>
+<tr>
+<td>SURFACE_BLURRING</td>
+<td>Surface blurring</td>
+<td></td>
+<td>Diffusion or blurring of face surface voxels to obscure identity while preserving head shape, as in Milchenko and Marcus (2013)</td>
+<td></td>
+<td></td>
+<td>true</td>
+</tr>
+<tr>
+<td>SHEARING_PLANE</td>
+<td>Shearing plane</td>
+<td></td>
+<td>Removal of the front of the head by computing a plane through the head and discarding voxels in front of it, as in QuickShear</td>
+<td></td>
+<td></td>
+<td>partial</td>
+</tr>
+<tr>
+<td>DEEP_LEARNING_SEGMENTATION</td>
+<td>Deep learning segmentation</td>
+<td></td>
+<td>Use of a trained neural network such as a 3D U-Net to segment facial features (eyes, ears, nose) and mask or blur them</td>
+<td></td>
+<td>DeepDefacer, Asan Defacer</td>
+<td>true</td>
+</tr>
+<tr>
+<td>REFACING</td>
+<td>Refacing</td>
+<td></td>
+<td>Replacement of the subject's face with an average or synthetic face so that images retain a realistic head surface</td>
+<td></td>
+<td>AFNI refacer</td>
+<td>true</td>
+</tr>
+<tr>
+<td>MANUAL_MASKING</td>
+<td>Manual masking</td>
+<td></td>
+<td>Interactive painting or erosion of a face mask in an image editor such as 3D Slicer or ITK-SNAP, followed by zeroing or blurring of masked voxels</td>
+<td></td>
+<td></td>
+<td>true</td>
+</tr>
+<tr>
+<td>FACE_DETECTION_AND_BLURRING</td>
+<td>Face detection and blurring</td>
+<td></td>
+<td>Frame-by-frame detection of faces in 2D images or video followed by blurring, pixelation or masking, for example with OpenCV Haar cascades</td>
+<td>photographs, video</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>MANUAL_CROP_OR_BLUR</td>
+<td>Manual crop or blur</td>
+<td></td>
+<td>Manual cropping or blurring of the face region in photographs or video with an image or video editor</td>
+<td>photographs, video</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <h2 id="slots">Slots</h2>
 <table>
 <thead>
@@ -714,8 +807,8 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../protein/">protein</a></td>
-<td>Proteins and protein complexes</td>
+<td><a href="../defacing_method/">defacing_method</a></td>
+<td>The method used to remove facial features from image pixel data</td>
 </tr>
 </tbody>
 </table>
@@ -727,24 +820,116 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
-<pre><code class="language-yaml">name: Protein
+<pre><code class="language-yaml">name: DefacingMethodEnum
 instantiates:
 - valuesets_meta:ValueSetEnumDefinition
-description: Proteins and protein complexes
-title: Protein
+description: Approaches to pixel-level de-identification that remove or obscure facial
+  features in head imaging. Skull-stripping removes all non-brain tissue and may discard
+  useful anatomy; face-specific methods aim to remove only facial features while preserving
+  as much of the head volume as possible.
+title: Defacing Method
 from_schema: https://w3id.org/valuesets
 contributors:
 - orcid:0000-0002-6601-2165
 - https://github.com/anthropics/claude-code
 status: DRAFT
 rank: 1000
-reachable_from:
-  source_ontology: obo:pr
-  source_nodes:
-  - PR:000000001
-  relationship_types:
-  - rdfs:subClassOf
-  include_self: true
+permissible_values:
+  SKULL_STRIPPING:
+    text: SKULL_STRIPPING
+    description: Removal of all non-brain tissue including scalp, skull and face,
+      for example with FSL BET or AFNI 3dSkullStrip
+    annotations:
+      preserves_skull:
+        tag: preserves_skull
+        value: 'false'
+    title: Skull stripping
+    aliases:
+    - brain extraction
+  TEMPLATE_BASED_MASKING:
+    text: TEMPLATE_BASED_MASKING
+    description: Registration of the image to a standard brain template such as MNI152
+      followed by application of a predefined binary face mask that zeros out facial
+      voxels
+    annotations:
+      preserves_skull:
+        tag: preserves_skull
+        value: 'true'
+      example_tools:
+        tag: example_tools
+        value: PyDeface, FreeSurfer mri_deface, mydeface
+    title: Template-based masking
+  SURFACE_BLURRING:
+    text: SURFACE_BLURRING
+    description: Diffusion or blurring of face surface voxels to obscure identity
+      while preserving head shape, as in Milchenko and Marcus (2013)
+    annotations:
+      preserves_skull:
+        tag: preserves_skull
+        value: 'true'
+    title: Surface blurring
+  SHEARING_PLANE:
+    text: SHEARING_PLANE
+    description: Removal of the front of the head by computing a plane through the
+      head and discarding voxels in front of it, as in QuickShear
+    annotations:
+      preserves_skull:
+        tag: preserves_skull
+        value: partial
+    title: Shearing plane
+    aliases:
+    - cropping plane
+  DEEP_LEARNING_SEGMENTATION:
+    text: DEEP_LEARNING_SEGMENTATION
+    description: Use of a trained neural network such as a 3D U-Net to segment facial
+      features (eyes, ears, nose) and mask or blur them
+    annotations:
+      preserves_skull:
+        tag: preserves_skull
+        value: 'true'
+      example_tools:
+        tag: example_tools
+        value: DeepDefacer, Asan Defacer
+    title: Deep learning segmentation
+  REFACING:
+    text: REFACING
+    description: Replacement of the subject's face with an average or synthetic face
+      so that images retain a realistic head surface
+    annotations:
+      preserves_skull:
+        tag: preserves_skull
+        value: 'true'
+      example_tools:
+        tag: example_tools
+        value: AFNI refacer
+    title: Refacing
+  MANUAL_MASKING:
+    text: MANUAL_MASKING
+    description: Interactive painting or erosion of a face mask in an image editor
+      such as 3D Slicer or ITK-SNAP, followed by zeroing or blurring of masked voxels
+    annotations:
+      preserves_skull:
+        tag: preserves_skull
+        value: 'true'
+    title: Manual masking
+  FACE_DETECTION_AND_BLURRING:
+    text: FACE_DETECTION_AND_BLURRING
+    description: Frame-by-frame detection of faces in 2D images or video followed
+      by blurring, pixelation or masking, for example with OpenCV Haar cascades
+    annotations:
+      applicable_to:
+        tag: applicable_to
+        value: photographs, video
+    title: Face detection and blurring
+  MANUAL_CROP_OR_BLUR:
+    text: MANUAL_CROP_OR_BLUR
+    description: Manual cropping or blurring of the face region in photographs or
+      video with an image or video editor
+    annotations:
+      applicable_to:
+        tag: applicable_to
+        value: photographs, video
+    title: Manual crop or blur
 
 </code></pre>
 

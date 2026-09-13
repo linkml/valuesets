@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://linkml.github.io/valuesets/elements/Protein/">
+        <link rel="canonical" href="https://linkml.github.io/valuesets/elements/DICOMNetworkServiceEnum/">
       
       
       
@@ -18,7 +18,7 @@
     
     
       
-        <title>Enum: Protein - valuesets</title>
+        <title>Enum: DICOMNetworkServiceEnum - valuesets</title>
       
     
     
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#enum-protein" class="md-skip">
+        <a href="#enum-dicomnetworkserviceenum" class="md-skip">
           Skip to content
         </a>
       
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Enum: Protein
+              Enum: DICOMNetworkServiceEnum
             
           </span>
         </div>
@@ -625,9 +625,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#dynamic-enum-query" class="md-nav__link">
+  <a href="#permissible-values" class="md-nav__link">
     <span class="md-ellipsis">
-      Dynamic Enum Query
+      Permissible Values
     </span>
   </a>
   
@@ -637,6 +637,15 @@
   <a href="#slots" class="md-nav__link">
     <span class="md-ellipsis">
       Slots
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      See Also
     </span>
   </a>
   
@@ -694,16 +703,145 @@
   
 
 
-<h1 id="enum-protein">Enum: Protein</h1>
-<p><em>Proteins and protein complexes</em></p>
-<p>URI: <a href="https://w3id.org/valuesets/Protein">valuesets:Protein</a></p>
+<h1 id="enum-dicomnetworkserviceenum">Enum: DICOMNetworkServiceEnum</h1>
+<p><em>Network services used to query, retrieve and store DICOM instances between imaging systems such as PACS, modalities and research archives. Includes the classic DIMSE (DICOM Message Service Element) services of PS3.7 and the RESTful DICOMweb services of PS3.18. Cataloguing which services a source repository supports is part of the data landscape assessment that precedes extraction.</em></p>
+<p>URI: <a href="https://w3id.org/valuesets/DICOMNetworkServiceEnum">valuesets:DICOMNetworkServiceEnum</a></p>
 <!-- bioportal-link -->
-<p><a href="https://bioportal.bioontology.org/ontologies/VALUESETS?p=classes&amp;conceptid=https%3A%2F%2Fw3id.org%2Fvaluesets%2FProtein">View in BioPortal</a></p>
-<p><em>This is a dynamic enum</em></p>
-<h2 id="dynamic-enum-query">Dynamic Enum Query</h2>
-<p>This value set is dynamically populated from an ontology.</p>
-<p><strong>Query:</strong> <a href="http://purl.obolibrary.org/obo/PR_000000001">protein</a> and subclasses</p>
-<p><strong>Prefixes used:</strong> <code>PR, obo, rdfs</code></p>
+<p><a href="https://bioportal.bioontology.org/ontologies/VALUESETS?p=classes&amp;conceptid=https%3A%2F%2Fw3id.org%2Fvaluesets%2FDICOMNetworkServiceEnum">View in BioPortal</a></p>
+<h2 id="permissible-values">Permissible Values</h2>
+<!-- annotations-table -->
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Title</th>
+<th>Meaning</th>
+<th>Description</th>
+<th>Protocol</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C_ECHO</td>
+<td>C-ECHO</td>
+<td></td>
+<td>DIMSE verification service used to test connectivity between two application entities</td>
+<td>DIMSE</td>
+</tr>
+<tr>
+<td>C_STORE</td>
+<td>C-STORE</td>
+<td></td>
+<td>DIMSE storage service that pushes a composite instance to a peer</td>
+<td>DIMSE</td>
+</tr>
+<tr>
+<td>C_FIND</td>
+<td>C-FIND</td>
+<td></td>
+<td>DIMSE query service that matches attributes against a peer's database at patient, study, series or instance level</td>
+<td>DIMSE</td>
+</tr>
+<tr>
+<td>C_MOVE</td>
+<td>C-MOVE</td>
+<td></td>
+<td>DIMSE retrieve service that instructs a peer to send matching instances to a named destination via C-STORE</td>
+<td>DIMSE</td>
+</tr>
+<tr>
+<td>C_GET</td>
+<td>C-GET</td>
+<td></td>
+<td>DIMSE retrieve service that returns matching instances on the same association</td>
+<td>DIMSE</td>
+</tr>
+<tr>
+<td>N_EVENT_REPORT</td>
+<td>N-EVENT-REPORT</td>
+<td></td>
+<td>DIMSE-N notification service used to report events on a normalized SOP instance</td>
+<td>DIMSE</td>
+</tr>
+<tr>
+<td>N_GET</td>
+<td>N-GET</td>
+<td></td>
+<td>DIMSE-N service that retrieves attribute values of a normalized SOP instance</td>
+<td>DIMSE</td>
+</tr>
+<tr>
+<td>N_SET</td>
+<td>N-SET</td>
+<td></td>
+<td>DIMSE-N service that modifies attribute values of a normalized SOP instance</td>
+<td>DIMSE</td>
+</tr>
+<tr>
+<td>N_ACTION</td>
+<td>N-ACTION</td>
+<td></td>
+<td>DIMSE-N service that requests an action on a normalized SOP instance, such as storage commitment</td>
+<td>DIMSE</td>
+</tr>
+<tr>
+<td>N_CREATE</td>
+<td>N-CREATE</td>
+<td></td>
+<td>DIMSE-N service that creates a normalized SOP instance</td>
+<td>DIMSE</td>
+</tr>
+<tr>
+<td>N_DELETE</td>
+<td>N-DELETE</td>
+<td></td>
+<td>DIMSE-N service that deletes a normalized SOP instance</td>
+<td>DIMSE</td>
+</tr>
+<tr>
+<td>QIDO_RS</td>
+<td>QIDO-RS</td>
+<td></td>
+<td>DICOMweb RESTful query service (Query based on ID for DICOM Objects) for searching studies, series and instances</td>
+<td>DICOMweb</td>
+</tr>
+<tr>
+<td>WADO_RS</td>
+<td>WADO-RS</td>
+<td></td>
+<td>DICOMweb RESTful retrieve service (Web Access to DICOM Objects) for retrieving studies, series, instances, frames, metadata and rendered images</td>
+<td>DICOMweb</td>
+</tr>
+<tr>
+<td>STOW_RS</td>
+<td>STOW-RS</td>
+<td></td>
+<td>DICOMweb RESTful store service (Store Over the Web) for uploading instances</td>
+<td>DICOMweb</td>
+</tr>
+<tr>
+<td>WADO_URI</td>
+<td>WADO-URI</td>
+<td></td>
+<td>Legacy DICOMweb URI-based retrieve service for single instances</td>
+<td>DICOMweb</td>
+</tr>
+<tr>
+<td>UPS_RS</td>
+<td>UPS-RS</td>
+<td></td>
+<td>DICOMweb RESTful worklist service for Unified Procedure Step management</td>
+<td>DICOMweb</td>
+</tr>
+<tr>
+<td>CUSTOM_API</td>
+<td>Custom API</td>
+<td></td>
+<td>A vendor- or institution-specific interface that is not a standard DICOM network service</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <h2 id="slots">Slots</h2>
 <table>
 <thead>
@@ -714,11 +852,16 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../protein/">protein</a></td>
-<td>Proteins and protein complexes</td>
+<td><a href="../dicom_network_service/">dicom_network_service</a></td>
+<td>The DICOM network service used to query, retrieve or store instances</td>
 </tr>
 </tbody>
 </table>
+<h2 id="see-also">See Also</h2>
+<ul>
+<li><a href="https://dicom.nema.org/medical/dicom/current/output/chtml/part07/chapter_7.html">https://dicom.nema.org/medical/dicom/current/output/chtml/part07/chapter_7.html</a></li>
+<li><a href="https://dicom.nema.org/medical/dicom/current/output/chtml/part18/PS3.18.html">https://dicom.nema.org/medical/dicom/current/output/chtml/part18/PS3.18.html</a></li>
+</ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
@@ -727,24 +870,169 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
-<pre><code class="language-yaml">name: Protein
+<pre><code class="language-yaml">name: DICOMNetworkServiceEnum
 instantiates:
 - valuesets_meta:ValueSetEnumDefinition
-description: Proteins and protein complexes
-title: Protein
+description: Network services used to query, retrieve and store DICOM instances between
+  imaging systems such as PACS, modalities and research archives. Includes the classic
+  DIMSE (DICOM Message Service Element) services of PS3.7 and the RESTful DICOMweb
+  services of PS3.18. Cataloguing which services a source repository supports is part
+  of the data landscape assessment that precedes extraction.
+title: DICOM Network Service
 from_schema: https://w3id.org/valuesets
+see_also:
+- https://dicom.nema.org/medical/dicom/current/output/chtml/part07/chapter_7.html
+- https://dicom.nema.org/medical/dicom/current/output/chtml/part18/PS3.18.html
 contributors:
 - orcid:0000-0002-6601-2165
 - https://github.com/anthropics/claude-code
 status: DRAFT
 rank: 1000
-reachable_from:
-  source_ontology: obo:pr
-  source_nodes:
-  - PR:000000001
-  relationship_types:
-  - rdfs:subClassOf
-  include_self: true
+permissible_values:
+  C_ECHO:
+    text: C_ECHO
+    description: DIMSE verification service used to test connectivity between two
+      application entities
+    annotations:
+      protocol:
+        tag: protocol
+        value: DIMSE
+    title: C-ECHO
+  C_STORE:
+    text: C_STORE
+    description: DIMSE storage service that pushes a composite instance to a peer
+    annotations:
+      protocol:
+        tag: protocol
+        value: DIMSE
+    title: C-STORE
+  C_FIND:
+    text: C_FIND
+    description: DIMSE query service that matches attributes against a peer's database
+      at patient, study, series or instance level
+    annotations:
+      protocol:
+        tag: protocol
+        value: DIMSE
+    title: C-FIND
+  C_MOVE:
+    text: C_MOVE
+    description: DIMSE retrieve service that instructs a peer to send matching instances
+      to a named destination via C-STORE
+    annotations:
+      protocol:
+        tag: protocol
+        value: DIMSE
+    title: C-MOVE
+  C_GET:
+    text: C_GET
+    description: DIMSE retrieve service that returns matching instances on the same
+      association
+    annotations:
+      protocol:
+        tag: protocol
+        value: DIMSE
+    title: C-GET
+  N_EVENT_REPORT:
+    text: N_EVENT_REPORT
+    description: DIMSE-N notification service used to report events on a normalized
+      SOP instance
+    annotations:
+      protocol:
+        tag: protocol
+        value: DIMSE
+    title: N-EVENT-REPORT
+  N_GET:
+    text: N_GET
+    description: DIMSE-N service that retrieves attribute values of a normalized SOP
+      instance
+    annotations:
+      protocol:
+        tag: protocol
+        value: DIMSE
+    title: N-GET
+  N_SET:
+    text: N_SET
+    description: DIMSE-N service that modifies attribute values of a normalized SOP
+      instance
+    annotations:
+      protocol:
+        tag: protocol
+        value: DIMSE
+    title: N-SET
+  N_ACTION:
+    text: N_ACTION
+    description: DIMSE-N service that requests an action on a normalized SOP instance,
+      such as storage commitment
+    annotations:
+      protocol:
+        tag: protocol
+        value: DIMSE
+    title: N-ACTION
+  N_CREATE:
+    text: N_CREATE
+    description: DIMSE-N service that creates a normalized SOP instance
+    annotations:
+      protocol:
+        tag: protocol
+        value: DIMSE
+    title: N-CREATE
+  N_DELETE:
+    text: N_DELETE
+    description: DIMSE-N service that deletes a normalized SOP instance
+    annotations:
+      protocol:
+        tag: protocol
+        value: DIMSE
+    title: N-DELETE
+  QIDO_RS:
+    text: QIDO_RS
+    description: DICOMweb RESTful query service (Query based on ID for DICOM Objects)
+      for searching studies, series and instances
+    annotations:
+      protocol:
+        tag: protocol
+        value: DICOMweb
+    title: QIDO-RS
+  WADO_RS:
+    text: WADO_RS
+    description: DICOMweb RESTful retrieve service (Web Access to DICOM Objects) for
+      retrieving studies, series, instances, frames, metadata and rendered images
+    annotations:
+      protocol:
+        tag: protocol
+        value: DICOMweb
+    title: WADO-RS
+  STOW_RS:
+    text: STOW_RS
+    description: DICOMweb RESTful store service (Store Over the Web) for uploading
+      instances
+    annotations:
+      protocol:
+        tag: protocol
+        value: DICOMweb
+    title: STOW-RS
+  WADO_URI:
+    text: WADO_URI
+    description: Legacy DICOMweb URI-based retrieve service for single instances
+    annotations:
+      protocol:
+        tag: protocol
+        value: DICOMweb
+    title: WADO-URI
+  UPS_RS:
+    text: UPS_RS
+    description: DICOMweb RESTful worklist service for Unified Procedure Step management
+    annotations:
+      protocol:
+        tag: protocol
+        value: DICOMweb
+    title: UPS-RS
+  CUSTOM_API:
+    text: CUSTOM_API
+    description: A vendor- or institution-specific interface that is not a standard
+      DICOM network service
+    title: Custom API
 
 </code></pre>
 

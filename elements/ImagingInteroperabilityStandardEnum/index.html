@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://linkml.github.io/valuesets/elements/Protein/">
+        <link rel="canonical" href="https://linkml.github.io/valuesets/elements/ImagingInteroperabilityStandardEnum/">
       
       
       
@@ -18,7 +18,7 @@
     
     
       
-        <title>Enum: Protein - valuesets</title>
+        <title>Enum: ImagingInteroperabilityStandardEnum - valuesets</title>
       
     
     
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#enum-protein" class="md-skip">
+        <a href="#enum-imaginginteroperabilitystandardenum" class="md-skip">
           Skip to content
         </a>
       
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Enum: Protein
+              Enum: ImagingInteroperabilityStandardEnum
             
           </span>
         </div>
@@ -625,9 +625,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#dynamic-enum-query" class="md-nav__link">
+  <a href="#permissible-values" class="md-nav__link">
     <span class="md-ellipsis">
-      Dynamic Enum Query
+      Permissible Values
     </span>
   </a>
   
@@ -694,16 +694,75 @@
   
 
 
-<h1 id="enum-protein">Enum: Protein</h1>
-<p><em>Proteins and protein complexes</em></p>
-<p>URI: <a href="https://w3id.org/valuesets/Protein">valuesets:Protein</a></p>
+<h1 id="enum-imaginginteroperabilitystandardenum">Enum: ImagingInteroperabilityStandardEnum</h1>
+<p><em>Standards and data models used to represent medical imaging metadata and to link images with clinical records, electronic health records and multimodal research datasets.</em></p>
+<p>URI: <a href="https://w3id.org/valuesets/ImagingInteroperabilityStandardEnum">valuesets:ImagingInteroperabilityStandardEnum</a></p>
 <!-- bioportal-link -->
-<p><a href="https://bioportal.bioontology.org/ontologies/VALUESETS?p=classes&amp;conceptid=https%3A%2F%2Fw3id.org%2Fvaluesets%2FProtein">View in BioPortal</a></p>
-<p><em>This is a dynamic enum</em></p>
-<h2 id="dynamic-enum-query">Dynamic Enum Query</h2>
-<p>This value set is dynamically populated from an ontology.</p>
-<p><strong>Query:</strong> <a href="http://purl.obolibrary.org/obo/PR_000000001">protein</a> and subclasses</p>
-<p><strong>Prefixes used:</strong> <code>PR, obo, rdfs</code></p>
+<p><a href="https://bioportal.bioontology.org/ontologies/VALUESETS?p=classes&amp;conceptid=https%3A%2F%2Fw3id.org%2Fvaluesets%2FImagingInteroperabilityStandardEnum">View in BioPortal</a></p>
+<h2 id="permissible-values">Permissible Values</h2>
+<!-- annotations-table -->
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Title</th>
+<th>Meaning</th>
+<th>Description</th>
+<th>Url</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DICOM</td>
+<td>DICOM</td>
+<td></td>
+<td>Digital Imaging and Communications in Medicine (ISO 12052), the standard for storing, transmitting and managing medical imaging data</td>
+<td>https://www.dicomstandard.org/</td>
+</tr>
+<tr>
+<td>DICOMWEB</td>
+<td>DICOMweb</td>
+<td></td>
+<td>RESTful web services for DICOM (QIDO-RS, WADO-RS, STOW-RS) defined in DICOM PS3.18</td>
+<td>https://www.dicomstandard.org/using/dicomweb</td>
+</tr>
+<tr>
+<td>HL7_FHIR_IMAGINGSTUDY</td>
+<td>HL7 FHIR ImagingStudy</td>
+<td></td>
+<td>FHIR resource representing a DICOM study and its series and instances, used to integrate imaging metadata into FHIR-based systems</td>
+<td>https://www.hl7.org/fhir/imagingstudy.html</td>
+</tr>
+<tr>
+<td>OMOP_CDM_IMAGING_EXTENSION</td>
+<td>OMOP CDM Imaging Extension</td>
+<td></td>
+<td>OHDSI Observational Medical Outcomes Partnership Common Data Model extension for imaging-based observational research, used to link DICOM studies to clinical encounters</td>
+<td>https://github.com/OHDSI/OmopImaging</td>
+</tr>
+<tr>
+<td>IHE_PROFILES</td>
+<td>IHE integration profiles</td>
+<td></td>
+<td>Integrating the Healthcare Enterprise profiles for image sharing and identifier management, such as XDS-I and PIX</td>
+<td>https://www.ihe.net/</td>
+</tr>
+<tr>
+<td>BIDS</td>
+<td>Brain Imaging Data Structure</td>
+<td></td>
+<td>Community standard for organizing and describing neuroimaging datasets, commonly used after conversion from DICOM</td>
+<td>https://bids.neuroimaging.io/</td>
+</tr>
+<tr>
+<td>NIFTI</td>
+<td>NIfTI</td>
+<td></td>
+<td>Neuroimaging Informatics Technology Initiative file format for volumetric images, the usual target of DICOM conversion in neuroimaging pipelines</td>
+<td>https://nifti.nimh.nih.gov/</td>
+</tr>
+</tbody>
+</table>
 <h2 id="slots">Slots</h2>
 <table>
 <thead>
@@ -714,8 +773,8 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../protein/">protein</a></td>
-<td>Proteins and protein complexes</td>
+<td><a href="../imaging_interoperability_standard/">imaging_interoperability_standard</a></td>
+<td>A standard used to represent or link imaging data with clinical data</td>
 </tr>
 </tbody>
 </table>
@@ -727,24 +786,84 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
-<pre><code class="language-yaml">name: Protein
+<pre><code class="language-yaml">name: ImagingInteroperabilityStandardEnum
 instantiates:
 - valuesets_meta:ValueSetEnumDefinition
-description: Proteins and protein complexes
-title: Protein
+description: Standards and data models used to represent medical imaging metadata
+  and to link images with clinical records, electronic health records and multimodal
+  research datasets.
+title: Imaging Interoperability Standard
 from_schema: https://w3id.org/valuesets
 contributors:
 - orcid:0000-0002-6601-2165
 - https://github.com/anthropics/claude-code
 status: DRAFT
 rank: 1000
-reachable_from:
-  source_ontology: obo:pr
-  source_nodes:
-  - PR:000000001
-  relationship_types:
-  - rdfs:subClassOf
-  include_self: true
+permissible_values:
+  DICOM:
+    text: DICOM
+    description: Digital Imaging and Communications in Medicine (ISO 12052), the standard
+      for storing, transmitting and managing medical imaging data
+    annotations:
+      url:
+        tag: url
+        value: https://www.dicomstandard.org/
+    title: DICOM
+  DICOMWEB:
+    text: DICOMWEB
+    description: RESTful web services for DICOM (QIDO-RS, WADO-RS, STOW-RS) defined
+      in DICOM PS3.18
+    annotations:
+      url:
+        tag: url
+        value: https://www.dicomstandard.org/using/dicomweb
+    title: DICOMweb
+  HL7_FHIR_IMAGINGSTUDY:
+    text: HL7_FHIR_IMAGINGSTUDY
+    description: FHIR resource representing a DICOM study and its series and instances,
+      used to integrate imaging metadata into FHIR-based systems
+    annotations:
+      url:
+        tag: url
+        value: https://www.hl7.org/fhir/imagingstudy.html
+    title: HL7 FHIR ImagingStudy
+  OMOP_CDM_IMAGING_EXTENSION:
+    text: OMOP_CDM_IMAGING_EXTENSION
+    description: OHDSI Observational Medical Outcomes Partnership Common Data Model
+      extension for imaging-based observational research, used to link DICOM studies
+      to clinical encounters
+    annotations:
+      url:
+        tag: url
+        value: https://github.com/OHDSI/OmopImaging
+    title: OMOP CDM Imaging Extension
+  IHE_PROFILES:
+    text: IHE_PROFILES
+    description: Integrating the Healthcare Enterprise profiles for image sharing
+      and identifier management, such as XDS-I and PIX
+    annotations:
+      url:
+        tag: url
+        value: https://www.ihe.net/
+    title: IHE integration profiles
+  BIDS:
+    text: BIDS
+    description: Community standard for organizing and describing neuroimaging datasets,
+      commonly used after conversion from DICOM
+    annotations:
+      url:
+        tag: url
+        value: https://bids.neuroimaging.io/
+    title: Brain Imaging Data Structure
+  NIFTI:
+    text: NIFTI
+    description: Neuroimaging Informatics Technology Initiative file format for volumetric
+      images, the usual target of DICOM conversion in neuroimaging pipelines
+    annotations:
+      url:
+        tag: url
+        value: https://nifti.nimh.nih.gov/
+    title: NIfTI
 
 </code></pre>
 

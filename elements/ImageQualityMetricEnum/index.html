@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://linkml.github.io/valuesets/elements/Protein/">
+        <link rel="canonical" href="https://linkml.github.io/valuesets/elements/ImageQualityMetricEnum/">
       
       
       
@@ -18,7 +18,7 @@
     
     
       
-        <title>Enum: Protein - valuesets</title>
+        <title>Enum: ImageQualityMetricEnum - valuesets</title>
       
     
     
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#enum-protein" class="md-skip">
+        <a href="#enum-imagequalitymetricenum" class="md-skip">
           Skip to content
         </a>
       
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Enum: Protein
+              Enum: ImageQualityMetricEnum
             
           </span>
         </div>
@@ -625,9 +625,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#dynamic-enum-query" class="md-nav__link">
+  <a href="#permissible-values" class="md-nav__link">
     <span class="md-ellipsis">
-      Dynamic Enum Query
+      Permissible Values
     </span>
   </a>
   
@@ -694,16 +694,85 @@
   
 
 
-<h1 id="enum-protein">Enum: Protein</h1>
-<p><em>Proteins and protein complexes</em></p>
-<p>URI: <a href="https://w3id.org/valuesets/Protein">valuesets:Protein</a></p>
+<h1 id="enum-imagequalitymetricenum">Enum: ImageQualityMetricEnum</h1>
+<p><em>Metrics computed during image quality and pixel data validation to document that images are readable and of adequate fidelity for AI applications. Simple metrics can be extended to check conformance with FDA technical performance guidance for quantitative imaging devices where applicable.</em></p>
+<p>URI: <a href="https://w3id.org/valuesets/ImageQualityMetricEnum">valuesets:ImageQualityMetricEnum</a></p>
 <!-- bioportal-link -->
-<p><a href="https://bioportal.bioontology.org/ontologies/VALUESETS?p=classes&amp;conceptid=https%3A%2F%2Fw3id.org%2Fvaluesets%2FProtein">View in BioPortal</a></p>
-<p><em>This is a dynamic enum</em></p>
-<h2 id="dynamic-enum-query">Dynamic Enum Query</h2>
-<p>This value set is dynamically populated from an ontology.</p>
-<p><strong>Query:</strong> <a href="http://purl.obolibrary.org/obo/PR_000000001">protein</a> and subclasses</p>
-<p><strong>Prefixes used:</strong> <code>PR, obo, rdfs</code></p>
+<p><a href="https://bioportal.bioontology.org/ontologies/VALUESETS?p=classes&amp;conceptid=https%3A%2F%2Fw3id.org%2Fvaluesets%2FImageQualityMetricEnum">View in BioPortal</a></p>
+<h2 id="permissible-values">Permissible Values</h2>
+<!-- annotations-table -->
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Title</th>
+<th>Meaning</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PIXEL_READABILITY</td>
+<td>Pixel readability</td>
+<td></td>
+<td>Whether the pixel array can be decoded without error</td>
+</tr>
+<tr>
+<td>INTENSITY_HISTOGRAM</td>
+<td>Intensity histogram</td>
+<td></td>
+<td>Distribution of pixel intensities, checked for extreme outliers, clipping or empty images</td>
+</tr>
+<tr>
+<td>SIGNAL_TO_NOISE_RATIO</td>
+<td>Signal to Noise Ratio</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C94983">NCIT:C94983</a></td>
+<td>Ratio of signal in a region of interest to the standard deviation of background noise</td>
+</tr>
+<tr>
+<td>CONTRAST_TO_NOISE_RATIO</td>
+<td>Contrast to noise ratio</td>
+<td></td>
+<td>Difference in signal between two regions relative to background noise</td>
+</tr>
+<tr>
+<td>SHARPNESS</td>
+<td>Sharpness</td>
+<td></td>
+<td>Measure of edge definition or high-frequency content, such as Laplacian variance</td>
+</tr>
+<tr>
+<td>BIT_DEPTH</td>
+<td>Bit depth</td>
+<td></td>
+<td>Number of bits per pixel stored and allocated, checked for consistency after decompression</td>
+</tr>
+<tr>
+<td>PIXEL_SPACING</td>
+<td>Pixel spacing</td>
+<td></td>
+<td>Physical distance between pixel centres, checked for presence and plausibility</td>
+</tr>
+<tr>
+<td>SLICE_THICKNESS</td>
+<td>Slice thickness</td>
+<td></td>
+<td>Nominal thickness of each slice in a volumetric acquisition, checked for presence and plausibility</td>
+</tr>
+<tr>
+<td>COMPRESSION_FIDELITY</td>
+<td>Compression fidelity</td>
+<td></td>
+<td>Agreement between compressed and original pixel data, for example comparing a JPEG-compressed instance with its uncompressed source</td>
+</tr>
+<tr>
+<td>ARTIFACT_PRESENCE</td>
+<td>Artifact presence</td>
+<td></td>
+<td>Detection of motion, metal, aliasing or other acquisition artifacts</td>
+</tr>
+</tbody>
+</table>
 <h2 id="slots">Slots</h2>
 <table>
 <thead>
@@ -714,8 +783,8 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../protein/">protein</a></td>
-<td>Proteins and protein complexes</td>
+<td><a href="../image_quality_metric/">image_quality_metric</a></td>
+<td>A metric computed to assess image pixel data quality</td>
 </tr>
 </tbody>
 </table>
@@ -727,24 +796,73 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
-<pre><code class="language-yaml">name: Protein
+<pre><code class="language-yaml">name: ImageQualityMetricEnum
 instantiates:
 - valuesets_meta:ValueSetEnumDefinition
-description: Proteins and protein complexes
-title: Protein
+description: Metrics computed during image quality and pixel data validation to document
+  that images are readable and of adequate fidelity for AI applications. Simple metrics
+  can be extended to check conformance with FDA technical performance guidance for
+  quantitative imaging devices where applicable.
+title: Image Quality Metric
 from_schema: https://w3id.org/valuesets
 contributors:
 - orcid:0000-0002-6601-2165
 - https://github.com/anthropics/claude-code
 status: DRAFT
 rank: 1000
-reachable_from:
-  source_ontology: obo:pr
-  source_nodes:
-  - PR:000000001
-  relationship_types:
-  - rdfs:subClassOf
-  include_self: true
+permissible_values:
+  PIXEL_READABILITY:
+    text: PIXEL_READABILITY
+    description: Whether the pixel array can be decoded without error
+    title: Pixel readability
+  INTENSITY_HISTOGRAM:
+    text: INTENSITY_HISTOGRAM
+    description: Distribution of pixel intensities, checked for extreme outliers,
+      clipping or empty images
+    title: Intensity histogram
+  SIGNAL_TO_NOISE_RATIO:
+    text: SIGNAL_TO_NOISE_RATIO
+    description: Ratio of signal in a region of interest to the standard deviation
+      of background noise
+    meaning: NCIT:C94983
+    title: Signal to Noise Ratio
+    aliases:
+    - SNR
+  CONTRAST_TO_NOISE_RATIO:
+    text: CONTRAST_TO_NOISE_RATIO
+    description: Difference in signal between two regions relative to background noise
+    title: Contrast to noise ratio
+    aliases:
+    - CNR
+  SHARPNESS:
+    text: SHARPNESS
+    description: Measure of edge definition or high-frequency content, such as Laplacian
+      variance
+    title: Sharpness
+  BIT_DEPTH:
+    text: BIT_DEPTH
+    description: Number of bits per pixel stored and allocated, checked for consistency
+      after decompression
+    title: Bit depth
+  PIXEL_SPACING:
+    text: PIXEL_SPACING
+    description: Physical distance between pixel centres, checked for presence and
+      plausibility
+    title: Pixel spacing
+  SLICE_THICKNESS:
+    text: SLICE_THICKNESS
+    description: Nominal thickness of each slice in a volumetric acquisition, checked
+      for presence and plausibility
+    title: Slice thickness
+  COMPRESSION_FIDELITY:
+    text: COMPRESSION_FIDELITY
+    description: Agreement between compressed and original pixel data, for example
+      comparing a JPEG-compressed instance with its uncompressed source
+    title: Compression fidelity
+  ARTIFACT_PRESENCE:
+    text: ARTIFACT_PRESENCE
+    description: Detection of motion, metal, aliasing or other acquisition artifacts
+    title: Artifact presence
 
 </code></pre>
 

@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://linkml.github.io/valuesets/elements/Protein/">
+        <link rel="canonical" href="https://linkml.github.io/valuesets/elements/Bridge2AIDataGenerationProjectEnum/">
       
       
       
@@ -18,7 +18,7 @@
     
     
       
-        <title>Enum: Protein - valuesets</title>
+        <title>Enum: Bridge2AIDataGenerationProjectEnum - valuesets</title>
       
     
     
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#enum-protein" class="md-skip">
+        <a href="#enum-bridge2aidatagenerationprojectenum" class="md-skip">
           Skip to content
         </a>
       
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Enum: Protein
+              Enum: Bridge2AIDataGenerationProjectEnum
             
           </span>
         </div>
@@ -625,9 +625,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#dynamic-enum-query" class="md-nav__link">
+  <a href="#permissible-values" class="md-nav__link">
     <span class="md-ellipsis">
-      Dynamic Enum Query
+      Permissible Values
     </span>
   </a>
   
@@ -637,6 +637,15 @@
   <a href="#slots" class="md-nav__link">
     <span class="md-ellipsis">
       Slots
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      See Also
     </span>
   </a>
   
@@ -694,16 +703,54 @@
   
 
 
-<h1 id="enum-protein">Enum: Protein</h1>
-<p><em>Proteins and protein complexes</em></p>
-<p>URI: <a href="https://w3id.org/valuesets/Protein">valuesets:Protein</a></p>
+<h1 id="enum-bridge2aidatagenerationprojectenum">Enum: Bridge2AIDataGenerationProjectEnum</h1>
+<p><em>Data generation projects (Grand Challenges) of the NIH Bridge to Artificial Intelligence (Bridge2AI) program, which creates standardized, annotated, ethically sourced AI-ready datasets across a diverse set of modalities.</em></p>
+<p>URI: <a href="https://w3id.org/valuesets/Bridge2AIDataGenerationProjectEnum">valuesets:Bridge2AIDataGenerationProjectEnum</a></p>
 <!-- bioportal-link -->
-<p><a href="https://bioportal.bioontology.org/ontologies/VALUESETS?p=classes&amp;conceptid=https%3A%2F%2Fw3id.org%2Fvaluesets%2FProtein">View in BioPortal</a></p>
-<p><em>This is a dynamic enum</em></p>
-<h2 id="dynamic-enum-query">Dynamic Enum Query</h2>
-<p>This value set is dynamically populated from an ontology.</p>
-<p><strong>Query:</strong> <a href="http://purl.obolibrary.org/obo/PR_000000001">protein</a> and subclasses</p>
-<p><strong>Prefixes used:</strong> <code>PR, obo, rdfs</code></p>
+<p><a href="https://bioportal.bioontology.org/ontologies/VALUESETS?p=classes&amp;conceptid=https%3A%2F%2Fw3id.org%2Fvaluesets%2FBridge2AIDataGenerationProjectEnum">View in BioPortal</a></p>
+<h2 id="permissible-values">Permissible Values</h2>
+<!-- annotations-table -->
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Title</th>
+<th>Meaning</th>
+<th>Description</th>
+<th>Url</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CHORUS</td>
+<td>CHoRUS</td>
+<td></td>
+<td>Collaborative Hospital Repository Uniting Standards; the AI/ML for Clinical Care Grand Challenge, linking ICU imaging (MRI, CT, ultrasound, X-ray) with physiologic and clinical data</td>
+<td>https://bridge2ai.org/data-chorus/</td>
+</tr>
+<tr>
+<td>AI_READI</td>
+<td>AI-READI</td>
+<td></td>
+<td>Artificial Intelligence Ready and Equitable Atlas for Diabetes Insights; the Salutogenesis Grand Challenge, including ophthalmology retinal imaging</td>
+<td>https://bridge2ai.org/people-ai-readi/</td>
+</tr>
+<tr>
+<td>VOICE</td>
+<td>Voice as a Biomarker of Health</td>
+<td></td>
+<td>The Precision Public Health Grand Challenge, connecting voice recordings with laryngoscopy video, brain MRI and CT, and omics data</td>
+<td>https://bridge2ai.org/people-voice/</td>
+</tr>
+<tr>
+<td>CM4AI</td>
+<td>CM4AI</td>
+<td></td>
+<td>Cell Maps for Artificial Intelligence; the Functional Genomics Grand Challenge, mapping cellular architecture with imaging and proteomics</td>
+<td>https://cm4ai.org/</td>
+</tr>
+</tbody>
+</table>
 <h2 id="slots">Slots</h2>
 <table>
 <thead>
@@ -714,11 +761,15 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../protein/">protein</a></td>
-<td>Proteins and protein complexes</td>
+<td><a href="../bridge2ai_data_generation_project/">bridge2ai_data_generation_project</a></td>
+<td>The Bridge2AI data generation project that produced a dataset</td>
 </tr>
 </tbody>
 </table>
+<h2 id="see-also">See Also</h2>
+<ul>
+<li><a href="https://bridge2ai.org/">https://bridge2ai.org/</a></li>
+</ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
@@ -727,24 +778,67 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
-<pre><code class="language-yaml">name: Protein
+<pre><code class="language-yaml">name: Bridge2AIDataGenerationProjectEnum
 instantiates:
 - valuesets_meta:ValueSetEnumDefinition
-description: Proteins and protein complexes
-title: Protein
+description: Data generation projects (Grand Challenges) of the NIH Bridge to Artificial
+  Intelligence (Bridge2AI) program, which creates standardized, annotated, ethically
+  sourced AI-ready datasets across a diverse set of modalities.
+title: Bridge2AI Data Generation Project
 from_schema: https://w3id.org/valuesets
+see_also:
+- https://bridge2ai.org/
 contributors:
 - orcid:0000-0002-6601-2165
 - https://github.com/anthropics/claude-code
 status: DRAFT
 rank: 1000
-reachable_from:
-  source_ontology: obo:pr
-  source_nodes:
-  - PR:000000001
-  relationship_types:
-  - rdfs:subClassOf
-  include_self: true
+permissible_values:
+  CHORUS:
+    text: CHORUS
+    description: Collaborative Hospital Repository Uniting Standards; the AI/ML for
+      Clinical Care Grand Challenge, linking ICU imaging (MRI, CT, ultrasound, X-ray)
+      with physiologic and clinical data
+    annotations:
+      url:
+        tag: url
+        value: https://bridge2ai.org/data-chorus/
+    title: CHoRUS
+    aliases:
+    - Clinical Care
+  AI_READI:
+    text: AI_READI
+    description: Artificial Intelligence Ready and Equitable Atlas for Diabetes Insights;
+      the Salutogenesis Grand Challenge, including ophthalmology retinal imaging
+    annotations:
+      url:
+        tag: url
+        value: https://bridge2ai.org/people-ai-readi/
+    title: AI-READI
+    aliases:
+    - Salutogenesis
+  VOICE:
+    text: VOICE
+    description: The Precision Public Health Grand Challenge, connecting voice recordings
+      with laryngoscopy video, brain MRI and CT, and omics data
+    annotations:
+      url:
+        tag: url
+        value: https://bridge2ai.org/people-voice/
+    title: Voice as a Biomarker of Health
+    aliases:
+    - Precision Public Health
+  CM4AI:
+    text: CM4AI
+    description: Cell Maps for Artificial Intelligence; the Functional Genomics Grand
+      Challenge, mapping cellular architecture with imaging and proteomics
+    annotations:
+      url:
+        tag: url
+        value: https://cm4ai.org/
+    title: CM4AI
+    aliases:
+    - Functional Genomics
 
 </code></pre>
 

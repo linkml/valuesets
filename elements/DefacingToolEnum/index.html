@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://linkml.github.io/valuesets/elements/Protein/">
+        <link rel="canonical" href="https://linkml.github.io/valuesets/elements/DefacingToolEnum/">
       
       
       
@@ -18,7 +18,7 @@
     
     
       
-        <title>Enum: Protein - valuesets</title>
+        <title>Enum: DefacingToolEnum - valuesets</title>
       
     
     
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#enum-protein" class="md-skip">
+        <a href="#enum-defacingtoolenum" class="md-skip">
           Skip to content
         </a>
       
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Enum: Protein
+              Enum: DefacingToolEnum
             
           </span>
         </div>
@@ -625,9 +625,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#dynamic-enum-query" class="md-nav__link">
+  <a href="#permissible-values" class="md-nav__link">
     <span class="md-ellipsis">
-      Dynamic Enum Query
+      Permissible Values
     </span>
   </a>
   
@@ -694,16 +694,199 @@
   
 
 
-<h1 id="enum-protein">Enum: Protein</h1>
-<p><em>Proteins and protein complexes</em></p>
-<p>URI: <a href="https://w3id.org/valuesets/Protein">valuesets:Protein</a></p>
+<h1 id="enum-defacingtoolenum">Enum: DefacingToolEnum</h1>
+<p><em>Software tools and pipelines used for pixel-level de-identification of head imaging and photographs, with their supported modalities, method and licensing. Metadata-only anonymizers are included for completeness because they are commonly paired with defacing tools, but they do not remove facial features.</em></p>
+<p>URI: <a href="https://w3id.org/valuesets/DefacingToolEnum">valuesets:DefacingToolEnum</a></p>
 <!-- bioportal-link -->
-<p><a href="https://bioportal.bioontology.org/ontologies/VALUESETS?p=classes&amp;conceptid=https%3A%2F%2Fw3id.org%2Fvaluesets%2FProtein">View in BioPortal</a></p>
-<p><em>This is a dynamic enum</em></p>
-<h2 id="dynamic-enum-query">Dynamic Enum Query</h2>
-<p>This value set is dynamically populated from an ontology.</p>
-<p><strong>Query:</strong> <a href="http://purl.obolibrary.org/obo/PR_000000001">protein</a> and subclasses</p>
-<p><strong>Prefixes used:</strong> <code>PR, obo, rdfs</code></p>
+<p><a href="https://bioportal.bioontology.org/ontologies/VALUESETS?p=classes&amp;conceptid=https%3A%2F%2Fw3id.org%2Fvaluesets%2FDefacingToolEnum">View in BioPortal</a></p>
+<h2 id="permissible-values">Permissible Values</h2>
+<!-- annotations-table -->
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Title</th>
+<th>Meaning</th>
+<th>Description</th>
+<th>License</th>
+<th>Method</th>
+<th>Modality</th>
+<th>Url</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PYDEFACE</td>
+<td>PyDeface</td>
+<td></td>
+<td>Aligns a T1-weighted MRI to a template with FSL FLIRT and zeros out voxels in a predefined facial mask</td>
+<td>BSD</td>
+<td>template-based masking</td>
+<td>MRI (T1w)</td>
+<td>https://github.com/poldracklab/pydeface</td>
+</tr>
+<tr>
+<td>FREESURFER_MRI_DEFACE</td>
+<td>FreeSurfer mri_deface</td>
+<td></td>
+<td>Template mask defacing using affine registration to fit a generic face mask, distributed with FreeSurfer</td>
+<td>FreeSurfer</td>
+<td>template-based masking</td>
+<td>MRI (T1w)</td>
+<td></td>
+</tr>
+<tr>
+<td>AFNI_REFACER</td>
+<td>AFNI @afni_refacer_run</td>
+<td></td>
+<td>AFNI template-based defacing and refacing tool, often combined with skull stripping</td>
+<td>AFNI (open source)</td>
+<td>refacing</td>
+<td>MRI (T1w)</td>
+<td></td>
+</tr>
+<tr>
+<td>QUICKSHEAR</td>
+<td>QuickShear</td>
+<td></td>
+<td>Computes a shearing plane through the head and removes the front of the head</td>
+<td>open source</td>
+<td>shearing plane</td>
+<td>MRI (T1w)</td>
+<td></td>
+</tr>
+<tr>
+<td>DEEPDEFACER</td>
+<td>DeepDefacer</td>
+<td></td>
+<td>3D U-Net trained to generate a facial mask from T1 MRI scans</td>
+<td>open source</td>
+<td>deep learning segmentation</td>
+<td>MRI (T1w, T2w)</td>
+<td></td>
+</tr>
+<tr>
+<td>ASAN_DEFACER</td>
+<td>Asan Defacer</td>
+<td></td>
+<td>3D U-Net that segments eyes, ears and nose and masks them, applicable to MRI and CT</td>
+<td>open source</td>
+<td>deep learning segmentation</td>
+<td>MRI, CT</td>
+<td></td>
+</tr>
+<tr>
+<td>MYDEFACE</td>
+<td>mydeface</td>
+<td></td>
+<td>Defacing utility similar to PyDeface using an FSL FLIRT-registered mask</td>
+<td>BSD</td>
+<td>template-based masking</td>
+<td>MRI (T1w, FLAIR)</td>
+<td>https://github.com/neurolabusc/mydeface</td>
+</tr>
+<tr>
+<td>MASK_FACE</td>
+<td>mask_face</td>
+<td></td>
+<td>Surface blurring tool from Milchenko and Marcus that obscures surface anatomy in volumetric data</td>
+<td>open source</td>
+<td>surface blurring</td>
+<td>MRI, CT</td>
+<td></td>
+</tr>
+<tr>
+<td>FSL_BET</td>
+<td>FSL BET</td>
+<td></td>
+<td>FMRIB Software Library Brain Extraction Tool; removes all non-brain tissue</td>
+<td>FSL (open source)</td>
+<td>skull stripping</td>
+<td>MRI, CT, PET</td>
+<td></td>
+</tr>
+<tr>
+<td>AFNI_3DSKULLSTRIP</td>
+<td>AFNI 3dSkullStrip</td>
+<td></td>
+<td>AFNI brain extraction program; removes all non-brain tissue</td>
+<td>AFNI (open source)</td>
+<td>skull stripping</td>
+<td>MRI, CT, PET</td>
+<td></td>
+</tr>
+<tr>
+<td>ITK_SNAP</td>
+<td>ITK-SNAP</td>
+<td></td>
+<td>Interactive segmentation tool used to manually paint or erode a face mask in any 3D volume</td>
+<td>GPL</td>
+<td>manual masking</td>
+<td>any 3D volume</td>
+<td></td>
+</tr>
+<tr>
+<td>SLICER_3D</td>
+<td>3D Slicer</td>
+<td></td>
+<td>Image computing platform used to manually paint a face mask over a region of interest</td>
+<td>BSD-style</td>
+<td>manual masking</td>
+<td>any 3D volume</td>
+<td></td>
+</tr>
+<tr>
+<td>IMAGEJ_FIJI</td>
+<td>ImageJ / Fiji</td>
+<td></td>
+<td>General image analysis tools used to manually blur or crop the face region in 2D or 3D images</td>
+<td>open source</td>
+<td>manual crop or blur</td>
+<td>2D and 3D images</td>
+<td></td>
+</tr>
+<tr>
+<td>OPENCV</td>
+<td>OpenCV</td>
+<td></td>
+<td>Computer vision library used for face detection (for example Haar cascades) followed by blurring or pixelation in video and 2D images</td>
+<td>Apache-2.0</td>
+<td>face detection and blurring</td>
+<td>video, 2D images</td>
+<td></td>
+</tr>
+<tr>
+<td>OSIRIX_HOROS_PLUGIN</td>
+<td>OsiriX / Horos plugin</td>
+<td></td>
+<td>Viewer plugins offering built-in anonymization with face removal options for multi-modality DICOM</td>
+<td>commercial / free</td>
+<td>template-based masking</td>
+<td>DICOM (multi-modality)</td>
+<td></td>
+</tr>
+<tr>
+<td>PIXELMED_DICOM_ANONYMIZER</td>
+<td>PixelMed DICOM Anonymizer</td>
+<td></td>
+<td>Metadata anonymization only; does not mask faces</td>
+<td>BSD</td>
+<td>metadata anonymization</td>
+<td>DICOM files</td>
+<td></td>
+</tr>
+<tr>
+<td>MANUAL_PHOTO_VIDEO_EDITING</td>
+<td>Manual photo or video editing</td>
+<td></td>
+<td>Cropping or blurring faces in photographs and videos with general-purpose editors</td>
+<td></td>
+<td>manual crop or blur</td>
+<td>photographs, video</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <h2 id="slots">Slots</h2>
 <table>
 <thead>
@@ -714,8 +897,8 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../protein/">protein</a></td>
-<td>Proteins and protein complexes</td>
+<td><a href="../defacing_tool/">defacing_tool</a></td>
+<td>The software tool used to remove facial features from image pixel data</td>
 </tr>
 </tbody>
 </table>
@@ -727,24 +910,276 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
-<pre><code class="language-yaml">name: Protein
+<pre><code class="language-yaml">name: DefacingToolEnum
 instantiates:
 - valuesets_meta:ValueSetEnumDefinition
-description: Proteins and protein complexes
-title: Protein
+description: Software tools and pipelines used for pixel-level de-identification of
+  head imaging and photographs, with their supported modalities, method and licensing.
+  Metadata-only anonymizers are included for completeness because they are commonly
+  paired with defacing tools, but they do not remove facial features.
+title: Defacing Tool
 from_schema: https://w3id.org/valuesets
 contributors:
 - orcid:0000-0002-6601-2165
 - https://github.com/anthropics/claude-code
 status: DRAFT
 rank: 1000
-reachable_from:
-  source_ontology: obo:pr
-  source_nodes:
-  - PR:000000001
-  relationship_types:
-  - rdfs:subClassOf
-  include_self: true
+permissible_values:
+  PYDEFACE:
+    text: PYDEFACE
+    description: Aligns a T1-weighted MRI to a template with FSL FLIRT and zeros out
+      voxels in a predefined facial mask
+    annotations:
+      modality:
+        tag: modality
+        value: MRI (T1w)
+      method:
+        tag: method
+        value: template-based masking
+      license:
+        tag: license
+        value: BSD
+      url:
+        tag: url
+        value: https://github.com/poldracklab/pydeface
+    title: PyDeface
+  FREESURFER_MRI_DEFACE:
+    text: FREESURFER_MRI_DEFACE
+    description: Template mask defacing using affine registration to fit a generic
+      face mask, distributed with FreeSurfer
+    annotations:
+      modality:
+        tag: modality
+        value: MRI (T1w)
+      method:
+        tag: method
+        value: template-based masking
+      license:
+        tag: license
+        value: FreeSurfer
+    title: FreeSurfer mri_deface
+  AFNI_REFACER:
+    text: AFNI_REFACER
+    description: AFNI template-based defacing and refacing tool, often combined with
+      skull stripping
+    annotations:
+      modality:
+        tag: modality
+        value: MRI (T1w)
+      method:
+        tag: method
+        value: refacing
+      license:
+        tag: license
+        value: AFNI (open source)
+    title: AFNI @afni_refacer_run
+  QUICKSHEAR:
+    text: QUICKSHEAR
+    description: Computes a shearing plane through the head and removes the front
+      of the head
+    annotations:
+      modality:
+        tag: modality
+        value: MRI (T1w)
+      method:
+        tag: method
+        value: shearing plane
+      license:
+        tag: license
+        value: open source
+    title: QuickShear
+  DEEPDEFACER:
+    text: DEEPDEFACER
+    description: 3D U-Net trained to generate a facial mask from T1 MRI scans
+    annotations:
+      modality:
+        tag: modality
+        value: MRI (T1w, T2w)
+      method:
+        tag: method
+        value: deep learning segmentation
+      license:
+        tag: license
+        value: open source
+    title: DeepDefacer
+  ASAN_DEFACER:
+    text: ASAN_DEFACER
+    description: 3D U-Net that segments eyes, ears and nose and masks them, applicable
+      to MRI and CT
+    annotations:
+      modality:
+        tag: modality
+        value: MRI, CT
+      method:
+        tag: method
+        value: deep learning segmentation
+      license:
+        tag: license
+        value: open source
+    title: Asan Defacer
+  MYDEFACE:
+    text: MYDEFACE
+    description: Defacing utility similar to PyDeface using an FSL FLIRT-registered
+      mask
+    annotations:
+      modality:
+        tag: modality
+        value: MRI (T1w, FLAIR)
+      method:
+        tag: method
+        value: template-based masking
+      license:
+        tag: license
+        value: BSD
+      url:
+        tag: url
+        value: https://github.com/neurolabusc/mydeface
+    title: mydeface
+  MASK_FACE:
+    text: MASK_FACE
+    description: Surface blurring tool from Milchenko and Marcus that obscures surface
+      anatomy in volumetric data
+    annotations:
+      modality:
+        tag: modality
+        value: MRI, CT
+      method:
+        tag: method
+        value: surface blurring
+      license:
+        tag: license
+        value: open source
+    title: mask_face
+  FSL_BET:
+    text: FSL_BET
+    description: FMRIB Software Library Brain Extraction Tool; removes all non-brain
+      tissue
+    annotations:
+      modality:
+        tag: modality
+        value: MRI, CT, PET
+      method:
+        tag: method
+        value: skull stripping
+      license:
+        tag: license
+        value: FSL (open source)
+    title: FSL BET
+  AFNI_3DSKULLSTRIP:
+    text: AFNI_3DSKULLSTRIP
+    description: AFNI brain extraction program; removes all non-brain tissue
+    annotations:
+      modality:
+        tag: modality
+        value: MRI, CT, PET
+      method:
+        tag: method
+        value: skull stripping
+      license:
+        tag: license
+        value: AFNI (open source)
+    title: AFNI 3dSkullStrip
+  ITK_SNAP:
+    text: ITK_SNAP
+    description: Interactive segmentation tool used to manually paint or erode a face
+      mask in any 3D volume
+    annotations:
+      modality:
+        tag: modality
+        value: any 3D volume
+      method:
+        tag: method
+        value: manual masking
+      license:
+        tag: license
+        value: GPL
+    title: ITK-SNAP
+  SLICER_3D:
+    text: SLICER_3D
+    description: Image computing platform used to manually paint a face mask over
+      a region of interest
+    annotations:
+      modality:
+        tag: modality
+        value: any 3D volume
+      method:
+        tag: method
+        value: manual masking
+      license:
+        tag: license
+        value: BSD-style
+    title: 3D Slicer
+  IMAGEJ_FIJI:
+    text: IMAGEJ_FIJI
+    description: General image analysis tools used to manually blur or crop the face
+      region in 2D or 3D images
+    annotations:
+      modality:
+        tag: modality
+        value: 2D and 3D images
+      method:
+        tag: method
+        value: manual crop or blur
+      license:
+        tag: license
+        value: open source
+    title: ImageJ / Fiji
+  OPENCV:
+    text: OPENCV
+    description: Computer vision library used for face detection (for example Haar
+      cascades) followed by blurring or pixelation in video and 2D images
+    annotations:
+      modality:
+        tag: modality
+        value: video, 2D images
+      method:
+        tag: method
+        value: face detection and blurring
+      license:
+        tag: license
+        value: Apache-2.0
+    title: OpenCV
+  OSIRIX_HOROS_PLUGIN:
+    text: OSIRIX_HOROS_PLUGIN
+    description: Viewer plugins offering built-in anonymization with face removal
+      options for multi-modality DICOM
+    annotations:
+      modality:
+        tag: modality
+        value: DICOM (multi-modality)
+      method:
+        tag: method
+        value: template-based masking
+      license:
+        tag: license
+        value: commercial / free
+    title: OsiriX / Horos plugin
+  PIXELMED_DICOM_ANONYMIZER:
+    text: PIXELMED_DICOM_ANONYMIZER
+    description: Metadata anonymization only; does not mask faces
+    annotations:
+      modality:
+        tag: modality
+        value: DICOM files
+      method:
+        tag: method
+        value: metadata anonymization
+      license:
+        tag: license
+        value: BSD
+    title: PixelMed DICOM Anonymizer
+  MANUAL_PHOTO_VIDEO_EDITING:
+    text: MANUAL_PHOTO_VIDEO_EDITING
+    description: Cropping or blurring faces in photographs and videos with general-purpose
+      editors
+    annotations:
+      modality:
+        tag: modality
+        value: photographs, video
+      method:
+        tag: method
+        value: manual crop or blur
+    title: Manual photo or video editing
 
 </code></pre>
 

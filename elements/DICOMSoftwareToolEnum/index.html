@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://linkml.github.io/valuesets/elements/Protein/">
+        <link rel="canonical" href="https://linkml.github.io/valuesets/elements/DICOMSoftwareToolEnum/">
       
       
       
@@ -18,7 +18,7 @@
     
     
       
-        <title>Enum: Protein - valuesets</title>
+        <title>Enum: DICOMSoftwareToolEnum - valuesets</title>
       
     
     
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#enum-protein" class="md-skip">
+        <a href="#enum-dicomsoftwaretoolenum" class="md-skip">
           Skip to content
         </a>
       
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Enum: Protein
+              Enum: DICOMSoftwareToolEnum
             
           </span>
         </div>
@@ -625,9 +625,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#dynamic-enum-query" class="md-nav__link">
+  <a href="#permissible-values" class="md-nav__link">
     <span class="md-ellipsis">
-      Dynamic Enum Query
+      Permissible Values
     </span>
   </a>
   
@@ -694,16 +694,250 @@
   
 
 
-<h1 id="enum-protein">Enum: Protein</h1>
-<p><em>Proteins and protein complexes</em></p>
-<p>URI: <a href="https://w3id.org/valuesets/Protein">valuesets:Protein</a></p>
+<h1 id="enum-dicomsoftwaretoolenum">Enum: DICOMSoftwareToolEnum</h1>
+<p><em>Software toolkits, libraries, validators, servers and platforms commonly used to read, write, validate, anonymize and serve DICOM data in research data management pipelines. The category annotation distinguishes general-purpose toolkits from conformance validators, archive servers and metadata anonymizers.</em></p>
+<p>URI: <a href="https://w3id.org/valuesets/DICOMSoftwareToolEnum">valuesets:DICOMSoftwareToolEnum</a></p>
 <!-- bioportal-link -->
-<p><a href="https://bioportal.bioontology.org/ontologies/VALUESETS?p=classes&amp;conceptid=https%3A%2F%2Fw3id.org%2Fvaluesets%2FProtein">View in BioPortal</a></p>
-<p><em>This is a dynamic enum</em></p>
-<h2 id="dynamic-enum-query">Dynamic Enum Query</h2>
-<p>This value set is dynamically populated from an ontology.</p>
-<p><strong>Query:</strong> <a href="http://purl.obolibrary.org/obo/PR_000000001">protein</a> and subclasses</p>
-<p><strong>Prefixes used:</strong> <code>PR, obo, rdfs</code></p>
+<p><a href="https://bioportal.bioontology.org/ontologies/VALUESETS?p=classes&amp;conceptid=https%3A%2F%2Fw3id.org%2Fvaluesets%2FDICOMSoftwareToolEnum">View in BioPortal</a></p>
+<h2 id="permissible-values">Permissible Values</h2>
+<!-- annotations-table -->
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Title</th>
+<th>Meaning</th>
+<th>Description</th>
+<th>Category</th>
+<th>Language</th>
+<th>License</th>
+<th>Part Of</th>
+<th>Url</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DCMTK</td>
+<td>DCMTK</td>
+<td></td>
+<td>OFFIS DICOM Toolkit; C/C++ libraries and command-line utilities implementing DICOM network services and file handling</td>
+<td>toolkit</td>
+<td>C++</td>
+<td>BSD</td>
+<td></td>
+<td>https://dicom.offis.de/en/dcmtk/</td>
+</tr>
+<tr>
+<td>PYDICOM</td>
+<td>pydicom</td>
+<td></td>
+<td>Pure Python library for reading, modifying and writing DICOM files, including pixel data access</td>
+<td>toolkit</td>
+<td>Python</td>
+<td>MIT</td>
+<td></td>
+<td>https://github.com/pydicom/pydicom</td>
+</tr>
+<tr>
+<td>GDCM</td>
+<td>GDCM</td>
+<td></td>
+<td>Grassroots DICOM; C++ library with Python and other bindings for DICOM file and image codec handling</td>
+<td>toolkit</td>
+<td>C++</td>
+<td>BSD</td>
+<td></td>
+<td>https://sourceforge.net/projects/gdcm/</td>
+</tr>
+<tr>
+<td>DCM4CHE</td>
+<td>dcm4che</td>
+<td></td>
+<td>Java DICOM toolkit and the basis of the dcm4chee archive</td>
+<td>toolkit</td>
+<td>Java</td>
+<td>MPL/GPL/LGPL</td>
+<td></td>
+<td>https://www.dcm4che.org/</td>
+</tr>
+<tr>
+<td>ITK</td>
+<td>ITK</td>
+<td></td>
+<td>Insight Toolkit; C++ image processing library with DICOM readers built on GDCM</td>
+<td>toolkit</td>
+<td>C++</td>
+<td>Apache-2.0</td>
+<td></td>
+<td>https://itk.org/</td>
+</tr>
+<tr>
+<td>DVTK</td>
+<td>DVTk</td>
+<td></td>
+<td>DICOM Validation Toolkit; validates object conformance and network behaviour against the standard</td>
+<td>validator</td>
+<td>C#</td>
+<td>LGPL</td>
+<td></td>
+<td>https://www.dvtk.org/</td>
+</tr>
+<tr>
+<td>DICOM3TOOLS</td>
+<td>dicom3tools</td>
+<td></td>
+<td>David Clunie's command-line utilities for creating, modifying, dumping and validating DICOM files</td>
+<td>validator</td>
+<td>C++</td>
+<td>BSD</td>
+<td></td>
+<td>http://www.dclunie.com/dicom3tools.html</td>
+</tr>
+<tr>
+<td>DCIODVFY</td>
+<td>dciodvfy</td>
+<td></td>
+<td>dicom3tools utility that verifies a file against the Information Object Definition for its modality, reporting missing required attributes, incorrect VRs and values outside allowed ranges</td>
+<td>validator</td>
+<td></td>
+<td></td>
+<td>dicom3tools</td>
+<td></td>
+</tr>
+<tr>
+<td>DCENTVFY</td>
+<td>dcentvfy</td>
+<td></td>
+<td>dicom3tools utility that checks consistency of entity-level attributes across multiple files, such as all instances in a series sharing the same Series Instance UID</td>
+<td>validator</td>
+<td></td>
+<td></td>
+<td>dicom3tools</td>
+<td></td>
+</tr>
+<tr>
+<td>PIXELMED</td>
+<td>PixelMed</td>
+<td></td>
+<td>PixelMed Java DICOM toolkit, including the DicomCleaner metadata anonymizer</td>
+<td>toolkit</td>
+<td>Java</td>
+<td>BSD</td>
+<td></td>
+<td>https://www.pixelmed.com/</td>
+</tr>
+<tr>
+<td>RSNA_CTP</td>
+<td>RSNA CTP</td>
+<td></td>
+<td>RSNA Clinical Trial Processor; pipeline application with a configurable DICOM anonymizer</td>
+<td>anonymizer</td>
+<td>Java</td>
+<td></td>
+<td></td>
+<td>https://mircwiki.rsna.org/index.php?title=CTP-The_RSNA_Clinical_Trial_Processor</td>
+</tr>
+<tr>
+<td>ORTHANC</td>
+<td>Orthanc</td>
+<td></td>
+<td>Lightweight open-source DICOM server with a REST API and DICOMweb plugin</td>
+<td>server</td>
+<td>C++</td>
+<td>GPL-3.0</td>
+<td></td>
+<td>https://www.orthanc-server.com/</td>
+</tr>
+<tr>
+<td>DCM4CHEE</td>
+<td>dcm4chee</td>
+<td></td>
+<td>Open-source DICOM archive and image manager built on dcm4che</td>
+<td>server</td>
+<td>Java</td>
+<td></td>
+<td></td>
+<td>https://www.dcm4che.org/</td>
+</tr>
+<tr>
+<td>XNAT</td>
+<td>XNAT</td>
+<td></td>
+<td>Extensible Neuroimaging Archive Toolkit; open-source imaging informatics platform for managing, storing and sharing imaging data</td>
+<td>platform</td>
+<td>Java</td>
+<td>BSD</td>
+<td></td>
+<td>https://www.xnat.org/</td>
+</tr>
+<tr>
+<td>TCIA_UTILS</td>
+<td>tcia_utils</td>
+<td></td>
+<td>Python utilities from The Cancer Imaging Archive for querying, downloading and inventorying DICOM metadata</td>
+<td>toolkit</td>
+<td>Python</td>
+<td></td>
+<td></td>
+<td>https://github.com/kirbyju/tcia_utils</td>
+</tr>
+<tr>
+<td>DICOM_CLEANER</td>
+<td>DicomCleaner</td>
+<td></td>
+<td>PixelMed graphical tool for metadata de-identification and blackout of burned-in text</td>
+<td>anonymizer</td>
+<td>Java</td>
+<td></td>
+<td>PixelMed</td>
+<td></td>
+</tr>
+<tr>
+<td>HOROS</td>
+<td>Horos</td>
+<td></td>
+<td>Open-source macOS DICOM viewer forked from OsiriX with built-in anonymization</td>
+<td>viewer</td>
+<td></td>
+<td>LGPL-3.0</td>
+<td></td>
+<td>https://horosproject.org/</td>
+</tr>
+<tr>
+<td>OSIRIX</td>
+<td>OsiriX</td>
+<td></td>
+<td>Commercial macOS DICOM viewer and workstation</td>
+<td>viewer</td>
+<td></td>
+<td>commercial</td>
+<td></td>
+<td>https://www.osirix-viewer.com/</td>
+</tr>
+<tr>
+<td>SLICER_3D</td>
+<td>3D Slicer</td>
+<td></td>
+<td>Open-source platform for medical image visualization, segmentation and analysis with DICOM import</td>
+<td>viewer</td>
+<td></td>
+<td>BSD-style</td>
+<td></td>
+<td>https://www.slicer.org/</td>
+</tr>
+<tr>
+<td>ITK_SNAP</td>
+<td>ITK-SNAP</td>
+<td></td>
+<td>Open-source tool for manual and semi-automatic segmentation of 3D medical images</td>
+<td>viewer</td>
+<td></td>
+<td>GPL</td>
+<td></td>
+<td>http://www.itksnap.org/</td>
+</tr>
+</tbody>
+</table>
 <h2 id="slots">Slots</h2>
 <table>
 <thead>
@@ -714,8 +948,8 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../protein/">protein</a></td>
-<td>Proteins and protein complexes</td>
+<td><a href="../dicom_software_tool/">dicom_software_tool</a></td>
+<td>A software toolkit, validator, server or library used to process DICOM data</td>
 </tr>
 </tbody>
 </table>
@@ -727,24 +961,343 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
-<pre><code class="language-yaml">name: Protein
+<pre><code class="language-yaml">name: DICOMSoftwareToolEnum
 instantiates:
 - valuesets_meta:ValueSetEnumDefinition
-description: Proteins and protein complexes
-title: Protein
+description: Software toolkits, libraries, validators, servers and platforms commonly
+  used to read, write, validate, anonymize and serve DICOM data in research data management
+  pipelines. The category annotation distinguishes general-purpose toolkits from conformance
+  validators, archive servers and metadata anonymizers.
+title: DICOM Software Tool
 from_schema: https://w3id.org/valuesets
 contributors:
 - orcid:0000-0002-6601-2165
 - https://github.com/anthropics/claude-code
 status: DRAFT
 rank: 1000
-reachable_from:
-  source_ontology: obo:pr
-  source_nodes:
-  - PR:000000001
-  relationship_types:
-  - rdfs:subClassOf
-  include_self: true
+permissible_values:
+  DCMTK:
+    text: DCMTK
+    description: OFFIS DICOM Toolkit; C/C++ libraries and command-line utilities implementing
+      DICOM network services and file handling
+    annotations:
+      category:
+        tag: category
+        value: toolkit
+      language:
+        tag: language
+        value: C++
+      license:
+        tag: license
+        value: BSD
+      url:
+        tag: url
+        value: https://dicom.offis.de/en/dcmtk/
+    title: DCMTK
+  PYDICOM:
+    text: PYDICOM
+    description: Pure Python library for reading, modifying and writing DICOM files,
+      including pixel data access
+    annotations:
+      category:
+        tag: category
+        value: toolkit
+      language:
+        tag: language
+        value: Python
+      license:
+        tag: license
+        value: MIT
+      url:
+        tag: url
+        value: https://github.com/pydicom/pydicom
+    title: pydicom
+  GDCM:
+    text: GDCM
+    description: Grassroots DICOM; C++ library with Python and other bindings for
+      DICOM file and image codec handling
+    annotations:
+      category:
+        tag: category
+        value: toolkit
+      language:
+        tag: language
+        value: C++
+      license:
+        tag: license
+        value: BSD
+      url:
+        tag: url
+        value: https://sourceforge.net/projects/gdcm/
+    title: GDCM
+  DCM4CHE:
+    text: DCM4CHE
+    description: Java DICOM toolkit and the basis of the dcm4chee archive
+    annotations:
+      category:
+        tag: category
+        value: toolkit
+      language:
+        tag: language
+        value: Java
+      license:
+        tag: license
+        value: MPL/GPL/LGPL
+      url:
+        tag: url
+        value: https://www.dcm4che.org/
+    title: dcm4che
+  ITK:
+    text: ITK
+    description: Insight Toolkit; C++ image processing library with DICOM readers
+      built on GDCM
+    annotations:
+      category:
+        tag: category
+        value: toolkit
+      language:
+        tag: language
+        value: C++
+      license:
+        tag: license
+        value: Apache-2.0
+      url:
+        tag: url
+        value: https://itk.org/
+    title: ITK
+  DVTK:
+    text: DVTK
+    description: DICOM Validation Toolkit; validates object conformance and network
+      behaviour against the standard
+    annotations:
+      category:
+        tag: category
+        value: validator
+      language:
+        tag: language
+        value: C#
+      license:
+        tag: license
+        value: LGPL
+      url:
+        tag: url
+        value: https://www.dvtk.org/
+    title: DVTk
+  DICOM3TOOLS:
+    text: DICOM3TOOLS
+    description: David Clunie's command-line utilities for creating, modifying, dumping
+      and validating DICOM files
+    annotations:
+      category:
+        tag: category
+        value: validator
+      language:
+        tag: language
+        value: C++
+      license:
+        tag: license
+        value: BSD
+      url:
+        tag: url
+        value: http://www.dclunie.com/dicom3tools.html
+    title: dicom3tools
+  DCIODVFY:
+    text: DCIODVFY
+    description: dicom3tools utility that verifies a file against the Information
+      Object Definition for its modality, reporting missing required attributes, incorrect
+      VRs and values outside allowed ranges
+    annotations:
+      category:
+        tag: category
+        value: validator
+      part_of:
+        tag: part_of
+        value: dicom3tools
+    title: dciodvfy
+  DCENTVFY:
+    text: DCENTVFY
+    description: dicom3tools utility that checks consistency of entity-level attributes
+      across multiple files, such as all instances in a series sharing the same Series
+      Instance UID
+    annotations:
+      category:
+        tag: category
+        value: validator
+      part_of:
+        tag: part_of
+        value: dicom3tools
+    title: dcentvfy
+  PIXELMED:
+    text: PIXELMED
+    description: PixelMed Java DICOM toolkit, including the DicomCleaner metadata
+      anonymizer
+    annotations:
+      category:
+        tag: category
+        value: toolkit
+      language:
+        tag: language
+        value: Java
+      license:
+        tag: license
+        value: BSD
+      url:
+        tag: url
+        value: https://www.pixelmed.com/
+    title: PixelMed
+  RSNA_CTP:
+    text: RSNA_CTP
+    description: RSNA Clinical Trial Processor; pipeline application with a configurable
+      DICOM anonymizer
+    annotations:
+      category:
+        tag: category
+        value: anonymizer
+      language:
+        tag: language
+        value: Java
+      url:
+        tag: url
+        value: https://mircwiki.rsna.org/index.php?title=CTP-The_RSNA_Clinical_Trial_Processor
+    title: RSNA CTP
+  ORTHANC:
+    text: ORTHANC
+    description: Lightweight open-source DICOM server with a REST API and DICOMweb
+      plugin
+    annotations:
+      category:
+        tag: category
+        value: server
+      language:
+        tag: language
+        value: C++
+      license:
+        tag: license
+        value: GPL-3.0
+      url:
+        tag: url
+        value: https://www.orthanc-server.com/
+    title: Orthanc
+  DCM4CHEE:
+    text: DCM4CHEE
+    description: Open-source DICOM archive and image manager built on dcm4che
+    annotations:
+      category:
+        tag: category
+        value: server
+      language:
+        tag: language
+        value: Java
+      url:
+        tag: url
+        value: https://www.dcm4che.org/
+    title: dcm4chee
+  XNAT:
+    text: XNAT
+    description: Extensible Neuroimaging Archive Toolkit; open-source imaging informatics
+      platform for managing, storing and sharing imaging data
+    annotations:
+      category:
+        tag: category
+        value: platform
+      language:
+        tag: language
+        value: Java
+      license:
+        tag: license
+        value: BSD
+      url:
+        tag: url
+        value: https://www.xnat.org/
+    title: XNAT
+  TCIA_UTILS:
+    text: TCIA_UTILS
+    description: Python utilities from The Cancer Imaging Archive for querying, downloading
+      and inventorying DICOM metadata
+    annotations:
+      category:
+        tag: category
+        value: toolkit
+      language:
+        tag: language
+        value: Python
+      url:
+        tag: url
+        value: https://github.com/kirbyju/tcia_utils
+    title: tcia_utils
+  DICOM_CLEANER:
+    text: DICOM_CLEANER
+    description: PixelMed graphical tool for metadata de-identification and blackout
+      of burned-in text
+    annotations:
+      category:
+        tag: category
+        value: anonymizer
+      language:
+        tag: language
+        value: Java
+      part_of:
+        tag: part_of
+        value: PixelMed
+    title: DicomCleaner
+  HOROS:
+    text: HOROS
+    description: Open-source macOS DICOM viewer forked from OsiriX with built-in anonymization
+    annotations:
+      category:
+        tag: category
+        value: viewer
+      license:
+        tag: license
+        value: LGPL-3.0
+      url:
+        tag: url
+        value: https://horosproject.org/
+    title: Horos
+  OSIRIX:
+    text: OSIRIX
+    description: Commercial macOS DICOM viewer and workstation
+    annotations:
+      category:
+        tag: category
+        value: viewer
+      license:
+        tag: license
+        value: commercial
+      url:
+        tag: url
+        value: https://www.osirix-viewer.com/
+    title: OsiriX
+  SLICER_3D:
+    text: SLICER_3D
+    description: Open-source platform for medical image visualization, segmentation
+      and analysis with DICOM import
+    annotations:
+      category:
+        tag: category
+        value: viewer
+      license:
+        tag: license
+        value: BSD-style
+      url:
+        tag: url
+        value: https://www.slicer.org/
+    title: 3D Slicer
+  ITK_SNAP:
+    text: ITK_SNAP
+    description: Open-source tool for manual and semi-automatic segmentation of 3D
+      medical images
+    annotations:
+      category:
+        tag: category
+        value: viewer
+      license:
+        tag: license
+        value: GPL
+      url:
+        tag: url
+        value: http://www.itksnap.org/
+    title: ITK-SNAP
 
 </code></pre>
 

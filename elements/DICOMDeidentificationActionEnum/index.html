@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://linkml.github.io/valuesets/elements/Protein/">
+        <link rel="canonical" href="https://linkml.github.io/valuesets/elements/DICOMDeidentificationActionEnum/">
       
       
       
@@ -18,7 +18,7 @@
     
     
       
-        <title>Enum: Protein - valuesets</title>
+        <title>Enum: DICOMDeidentificationActionEnum - valuesets</title>
       
     
     
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#enum-protein" class="md-skip">
+        <a href="#enum-dicomdeidentificationactionenum" class="md-skip">
           Skip to content
         </a>
       
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Enum: Protein
+              Enum: DICOMDeidentificationActionEnum
             
           </span>
         </div>
@@ -625,9 +625,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#dynamic-enum-query" class="md-nav__link">
+  <a href="#permissible-values" class="md-nav__link">
     <span class="md-ellipsis">
-      Dynamic Enum Query
+      Permissible Values
     </span>
   </a>
   
@@ -637,6 +637,15 @@
   <a href="#slots" class="md-nav__link">
     <span class="md-ellipsis">
       Slots
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      See Also
     </span>
   </a>
   
@@ -694,16 +703,91 @@
   
 
 
-<h1 id="enum-protein">Enum: Protein</h1>
-<p><em>Proteins and protein complexes</em></p>
-<p>URI: <a href="https://w3id.org/valuesets/Protein">valuesets:Protein</a></p>
+<h1 id="enum-dicomdeidentificationactionenum">Enum: DICOMDeidentificationActionEnum</h1>
+<p><em>Action codes from DICOM PS3.15 Table E.1-1a that specify how a de-identifier treats each attribute under the Basic Application Level Confidentiality Profile. Compound codes (for example Z/D) indicate that the first action applies unless the attribute's type requires the second to maintain IOD conformance. Permissible values use the DICOM code letters, with slashes replaced by underscores in compound codes.</em></p>
+<p>URI: <a href="https://w3id.org/valuesets/DICOMDeidentificationActionEnum">valuesets:DICOMDeidentificationActionEnum</a></p>
 <!-- bioportal-link -->
-<p><a href="https://bioportal.bioontology.org/ontologies/VALUESETS?p=classes&amp;conceptid=https%3A%2F%2Fw3id.org%2Fvaluesets%2FProtein">View in BioPortal</a></p>
-<p><em>This is a dynamic enum</em></p>
-<h2 id="dynamic-enum-query">Dynamic Enum Query</h2>
-<p>This value set is dynamically populated from an ontology.</p>
-<p><strong>Query:</strong> <a href="http://purl.obolibrary.org/obo/PR_000000001">protein</a> and subclasses</p>
-<p><strong>Prefixes used:</strong> <code>PR, obo, rdfs</code></p>
+<p><a href="https://bioportal.bioontology.org/ontologies/VALUESETS?p=classes&amp;conceptid=https%3A%2F%2Fw3id.org%2Fvaluesets%2FDICOMDeidentificationActionEnum">View in BioPortal</a></p>
+<h2 id="permissible-values">Permissible Values</h2>
+<!-- annotations-table -->
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Title</th>
+<th>Meaning</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>D</td>
+<td>Replace with dummy value</td>
+<td></td>
+<td>Replace with a non-zero length value that may be a dummy value and consistent with the VR</td>
+</tr>
+<tr>
+<td>Z</td>
+<td>Replace with zero-length or dummy value</td>
+<td></td>
+<td>Replace with a zero length value, or a non-zero length value that may be a dummy value and consistent with the VR</td>
+</tr>
+<tr>
+<td>X</td>
+<td>Remove</td>
+<td></td>
+<td>Remove the attribute, and if the attribute is a sequence, remove all sequence items and their contained attributes</td>
+</tr>
+<tr>
+<td>K</td>
+<td>Keep</td>
+<td></td>
+<td>Keep unchanged for non-sequence attributes; cleaned for sequences</td>
+</tr>
+<tr>
+<td>C</td>
+<td>Clean</td>
+<td></td>
+<td>Replace with values of similar meaning known not to contain identifying information and consistent with the VR</td>
+</tr>
+<tr>
+<td>U</td>
+<td>Replace UID</td>
+<td></td>
+<td>Replace with a non-zero length UID that is internally consistent within a set of instances</td>
+</tr>
+<tr>
+<td>Z_D</td>
+<td>Z unless D required</td>
+<td></td>
+<td>Z unless D is required to maintain IOD conformance (Type 2 versus Type 1)</td>
+</tr>
+<tr>
+<td>X_Z</td>
+<td>X unless Z required</td>
+<td></td>
+<td>X unless Z is required to maintain IOD conformance (Type 3 versus Type 2)</td>
+</tr>
+<tr>
+<td>X_D</td>
+<td>X unless D required</td>
+<td></td>
+<td>X unless D is required to maintain IOD conformance (Type 3 versus Type 1)</td>
+</tr>
+<tr>
+<td>X_Z_D</td>
+<td>X unless Z or D required</td>
+<td></td>
+<td>X unless Z or D is required to maintain IOD conformance (Type 3 versus Type 2 versus Type 1)</td>
+</tr>
+<tr>
+<td>X_Z_U</td>
+<td>X unless Z or U required</td>
+<td></td>
+<td>X unless Z or replacement of contained instance UIDs (U) is required to maintain IOD conformance (Type 3 versus Type 2 versus Type 1 sequences containing UID references)</td>
+</tr>
+</tbody>
+</table>
 <h2 id="slots">Slots</h2>
 <table>
 <thead>
@@ -714,11 +798,15 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../protein/">protein</a></td>
-<td>Proteins and protein complexes</td>
+<td><a href="../dicom_deidentification_action/">dicom_deidentification_action</a></td>
+<td>The de-identification action applied to a DICOM attribute</td>
 </tr>
 </tbody>
 </table>
+<h2 id="see-also">See Also</h2>
+<ul>
+<li><a href="https://dicom.nema.org/medical/dicom/current/output/chtml/part15/chapter_E.html">https://dicom.nema.org/medical/dicom/current/output/chtml/part15/chapter_E.html</a></li>
+</ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
@@ -727,24 +815,89 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
-<pre><code class="language-yaml">name: Protein
+<pre><code class="language-yaml">name: DICOMDeidentificationActionEnum
 instantiates:
 - valuesets_meta:ValueSetEnumDefinition
-description: Proteins and protein complexes
-title: Protein
+description: Action codes from DICOM PS3.15 Table E.1-1a that specify how a de-identifier
+  treats each attribute under the Basic Application Level Confidentiality Profile.
+  Compound codes (for example Z/D) indicate that the first action applies unless the
+  attribute's type requires the second to maintain IOD conformance. Permissible values
+  use the DICOM code letters, with slashes replaced by underscores in compound codes.
+title: DICOM De-identification Action Code
 from_schema: https://w3id.org/valuesets
+see_also:
+- https://dicom.nema.org/medical/dicom/current/output/chtml/part15/chapter_E.html
 contributors:
 - orcid:0000-0002-6601-2165
 - https://github.com/anthropics/claude-code
 status: DRAFT
 rank: 1000
-reachable_from:
-  source_ontology: obo:pr
-  source_nodes:
-  - PR:000000001
-  relationship_types:
-  - rdfs:subClassOf
-  include_self: true
+permissible_values:
+  D:
+    text: D
+    description: Replace with a non-zero length value that may be a dummy value and
+      consistent with the VR
+    title: Replace with dummy value
+  Z:
+    text: Z
+    description: Replace with a zero length value, or a non-zero length value that
+      may be a dummy value and consistent with the VR
+    title: Replace with zero-length or dummy value
+  X:
+    text: X
+    description: Remove the attribute, and if the attribute is a sequence, remove
+      all sequence items and their contained attributes
+    title: Remove
+  K:
+    text: K
+    description: Keep unchanged for non-sequence attributes; cleaned for sequences
+    title: Keep
+  C:
+    text: C
+    description: Replace with values of similar meaning known not to contain identifying
+      information and consistent with the VR
+    title: Clean
+  U:
+    text: U
+    description: Replace with a non-zero length UID that is internally consistent
+      within a set of instances
+    title: Replace UID
+  Z_D:
+    text: Z_D
+    description: Z unless D is required to maintain IOD conformance (Type 2 versus
+      Type 1)
+    title: Z unless D required
+    aliases:
+    - Z/D
+  X_Z:
+    text: X_Z
+    description: X unless Z is required to maintain IOD conformance (Type 3 versus
+      Type 2)
+    title: X unless Z required
+    aliases:
+    - X/Z
+  X_D:
+    text: X_D
+    description: X unless D is required to maintain IOD conformance (Type 3 versus
+      Type 1)
+    title: X unless D required
+    aliases:
+    - X/D
+  X_Z_D:
+    text: X_Z_D
+    description: X unless Z or D is required to maintain IOD conformance (Type 3 versus
+      Type 2 versus Type 1)
+    title: X unless Z or D required
+    aliases:
+    - X/Z/D
+  X_Z_U:
+    text: X_Z_U
+    description: X unless Z or replacement of contained instance UIDs (U) is required
+      to maintain IOD conformance (Type 3 versus Type 2 versus Type 1 sequences containing
+      UID references)
+    title: X unless Z or U required
+    aliases:
+    - X/Z/U*
 
 </code></pre>
 

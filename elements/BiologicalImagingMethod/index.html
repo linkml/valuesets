@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://linkml.github.io/valuesets/elements/Protein/">
+        <link rel="canonical" href="https://linkml.github.io/valuesets/elements/BiologicalImagingMethod/">
       
       
       
@@ -18,7 +18,7 @@
     
     
       
-        <title>Enum: Protein - valuesets</title>
+        <title>Enum: BiologicalImagingMethod - valuesets</title>
       
     
     
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#enum-protein" class="md-skip">
+        <a href="#enum-biologicalimagingmethod" class="md-skip">
           Skip to content
         </a>
       
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Enum: Protein
+              Enum: BiologicalImagingMethod
             
           </span>
         </div>
@@ -694,16 +694,16 @@
   
 
 
-<h1 id="enum-protein">Enum: Protein</h1>
-<p><em>Proteins and protein complexes</em></p>
-<p>URI: <a href="https://w3id.org/valuesets/Protein">valuesets:Protein</a></p>
+<h1 id="enum-biologicalimagingmethod">Enum: BiologicalImagingMethod</h1>
+<p><em>Any imaging method from FBbi, covering recorded images (macroscopy, microscopy, radiography, tomography) and portrayed images (diagrams, graphic illustrations, montages)</em></p>
+<p>URI: <a href="https://w3id.org/valuesets/BiologicalImagingMethod">valuesets:BiologicalImagingMethod</a></p>
 <!-- bioportal-link -->
-<p><a href="https://bioportal.bioontology.org/ontologies/VALUESETS?p=classes&amp;conceptid=https%3A%2F%2Fw3id.org%2Fvaluesets%2FProtein">View in BioPortal</a></p>
+<p><a href="https://bioportal.bioontology.org/ontologies/VALUESETS?p=classes&amp;conceptid=https%3A%2F%2Fw3id.org%2Fvaluesets%2FBiologicalImagingMethod">View in BioPortal</a></p>
 <p><em>This is a dynamic enum</em></p>
 <h2 id="dynamic-enum-query">Dynamic Enum Query</h2>
 <p>This value set is dynamically populated from an ontology.</p>
-<p><strong>Query:</strong> <a href="http://purl.obolibrary.org/obo/PR_000000001">protein</a> and subclasses</p>
-<p><strong>Prefixes used:</strong> <code>PR, obo, rdfs</code></p>
+<p><strong>Query:</strong> subclasses of <a href="http://purl.obolibrary.org/obo/FBbi_00000222">FBbi:00000222</a></p>
+<p><strong>Prefixes used:</strong> <code>FBbi, obo, rdfs</code></p>
 <h2 id="slots">Slots</h2>
 <table>
 <thead>
@@ -714,8 +714,8 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../protein/">protein</a></td>
-<td>Proteins and protein complexes</td>
+<td><a href="../biological_imaging_method/">biological_imaging_method</a></td>
+<td>The method used to record or portray a biological image</td>
 </tr>
 </tbody>
 </table>
@@ -727,11 +727,13 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
-<pre><code class="language-yaml">name: Protein
+<pre><code class="language-yaml">name: BiologicalImagingMethod
 instantiates:
 - valuesets_meta:ValueSetEnumDefinition
-description: Proteins and protein complexes
-title: Protein
+description: Any imaging method from FBbi, covering recorded images (macroscopy, microscopy,
+  radiography, tomography) and portrayed images (diagrams, graphic illustrations,
+  montages)
+title: Biological Imaging Method
 from_schema: https://w3id.org/valuesets
 contributors:
 - orcid:0000-0002-6601-2165
@@ -739,12 +741,12 @@ contributors:
 status: DRAFT
 rank: 1000
 reachable_from:
-  source_ontology: obo:pr
+  source_ontology: obo:fbbi
   source_nodes:
-  - PR:000000001
+  - FBbi:00000222
   relationship_types:
   - rdfs:subClassOf
-  include_self: true
+  include_self: false
 
 </code></pre>
 

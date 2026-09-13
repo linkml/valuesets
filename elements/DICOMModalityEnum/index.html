@@ -1,0 +1,1532 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://linkml.github.io/valuesets/elements/DICOMModalityEnum/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Enum: DICOMModalityEnum - valuesets</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/ansi-colours.css">
+    
+      <link rel="stylesheet" href="../../css/jupyter-cells.css">
+    
+      <link rel="stylesheet" href="../../css/pandas-dataframe.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#enum-dicommodalityenum" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="valuesets" class="md-header__button md-logo" aria-label="valuesets" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            valuesets
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Enum: DICOMModalityEnum
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/linkml/valuesets" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="valuesets" class="md-nav__button md-logo" aria-label="valuesets" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    valuesets
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/linkml/valuesets" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Schema
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../governance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Governance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    How-To Guides
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            How-To Guides
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to-guides/agentic-ide-support/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Using Common Value Sets with Agentic IDE Support via Context7 MCP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to-guides/dynamic-valuesets-validation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dynamic Value Sets and Validation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to-guides/sync-uniprot-species/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    How to Sync UniProt Species Data
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slot-generation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Slot Generation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Views
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Views
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../views/genesis-mission/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DOE Genesis Mission
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../views/microbial-ecology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Microbial Ecology
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../views/rare-disease/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Rare Disease
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../views/lab-automation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab Automation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slides/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Slides
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    About
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#permissible-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      Permissible Values
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slots" class="md-nav__link">
+    <span class="md-ellipsis">
+      Slots
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      See Also
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#identifier-and-mapping-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      Identifier and Mapping Information
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Identifier and Mapping Information">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#schema-source" class="md-nav__link">
+    <span class="md-ellipsis">
+      Schema Source
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linkml-source" class="md-nav__link">
+    <span class="md-ellipsis">
+      LinkML Source
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="enum-dicommodalityenum">Enum: DICOMModalityEnum</h1>
+<p><em>Acquisition modality codes from DICOM PS3.16 Context ID 29 (Acquisition Modality), the defined terms for the Modality (0008,0060) attribute. The permissible value is the DICOM code itself; the title is the NCI Thesaurus label where a mapping exists and the DICOM code meaning is carried as an alias when it differs. Where an NCI Thesaurus term exists it is the meaning and the DCM code is an exact mapping; otherwise the DCM code is the meaning, so every value carries its DCM code in one of the two fields. Waveform modalities (ECG, EEG, etc.) are defined in CID 34 and are not included here, nor are the non-acquisition values that also appear in Modality (0008,0060) such as SR, PR, SEG, KO, DOC, OT and the RT objects.</em></p>
+<p>URI: <a href="https://w3id.org/valuesets/DICOMModalityEnum">valuesets:DICOMModalityEnum</a></p>
+<!-- bioportal-link -->
+<p><a href="https://bioportal.bioontology.org/ontologies/VALUESETS?p=classes&amp;conceptid=https%3A%2F%2Fw3id.org%2Fvaluesets%2FDICOMModalityEnum">View in BioPortal</a></p>
+<h2 id="permissible-values">Permissible Values</h2>
+<!-- annotations-table -->
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Title</th>
+<th>Meaning</th>
+<th>Description</th>
+<th>Exact Mappings</th>
+<th>Close Mappings</th>
+<th>Broad Mappings</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AR</td>
+<td>Autorefraction</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C176330">NCIT:C176330</a></td>
+<td>Automated measurement of refractive error of the eye</td>
+<td><a href="http://dicom.nema.org/resources/ontology/DCM/AR">DCM:AR</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>BI</td>
+<td>Biomagnetic Imaging</td>
+<td><a href="http://dicom.nema.org/resources/ontology/DCM/BI">DCM:BI</a></td>
+<td>Imaging based on magnetic fields produced by the body, such as magnetoencephalography</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>BMD</td>
+<td>Bone Mineral Densitometry</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C190514">NCIT:C190514</a></td>
+<td>Measurement of bone mineral content and density, such as DXA</td>
+<td><a href="http://dicom.nema.org/resources/ontology/DCM/BMD">DCM:BMD</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>CR</td>
+<td>Computed Radiography</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C190521">NCIT:C190521</a></td>
+<td>X-ray imaging using a phosphor imaging plate read out to a digital image</td>
+<td><a href="http://dicom.nema.org/resources/ontology/DCM/CR">DCM:CR</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>CT</td>
+<td>Computed Tomography</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C17204">NCIT:C17204</a></td>
+<td>Cross-sectional X-ray imaging reconstructed by computer</td>
+<td><a href="http://dicom.nema.org/resources/ontology/DCM/CT">DCM:CT</a></td>
+<td><a href="http://purl.obolibrary.org/obo/FBbi_00001002">FBbi:00001002</a></td>
+<td></td>
+</tr>
+<tr>
+<td>CFM</td>
+<td>Confocal Microscopy</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C17753">NCIT:C17753</a></td>
+<td>Laser-scanning microscopy that rejects out-of-focus light</td>
+<td><a href="http://dicom.nema.org/resources/ontology/DCM/CFM">DCM:CFM</a>, <a href="http://purl.obolibrary.org/obo/FBbi_00000251">FBbi:00000251</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>DMS</td>
+<td>Dermoscopy</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C116478">NCIT:C116478</a></td>
+<td>Non-invasive microscopic examination of the skin surface</td>
+<td><a href="http://dicom.nema.org/resources/ontology/DCM/DMS">DCM:DMS</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>DG</td>
+<td>Diaphanography</td>
+<td><a href="http://dicom.nema.org/resources/ontology/DCM/DG">DCM:DG</a></td>
+<td>Transillumination imaging of tissue, historically used for the breast</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>DX</td>
+<td>Digital Radiography</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C18001">NCIT:C18001</a></td>
+<td>Projection X-ray imaging acquired directly with a digital detector</td>
+<td><a href="http://dicom.nema.org/resources/ontology/DCM/DX">DCM:DX</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>ES</td>
+<td>Endoscopic Procedure</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C16546">NCIT:C16546</a></td>
+<td>Imaging from an endoscope inserted into a body cavity or organ, including laryngoscopy and video endoscopy</td>
+<td><a href="http://dicom.nema.org/resources/ontology/DCM/ES">DCM:ES</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>XC</td>
+<td>External-camera Photography</td>
+<td><a href="http://dicom.nema.org/resources/ontology/DCM/XC">DCM:XC</a></td>
+<td>Visible-light photography of the patient with an external camera</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>GM</td>
+<td>Microscopy</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C16853">NCIT:C16853</a></td>
+<td>General microscopy not otherwise classified</td>
+<td><a href="http://dicom.nema.org/resources/ontology/DCM/GM">DCM:GM</a></td>
+<td></td>
+<td><a href="http://purl.obolibrary.org/obo/FBbi_00000241">FBbi:00000241</a></td>
+</tr>
+<tr>
+<td>IO</td>
+<td>Intraoral Radiography</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C190548">NCIT:C190548</a></td>
+<td>Dental X-ray imaging with the detector inside the mouth</td>
+<td><a href="http://dicom.nema.org/resources/ontology/DCM/IO">DCM:IO</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>IVOCT</td>
+<td>Intravascular Optical Coherence Tomography</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C190550">NCIT:C190550</a></td>
+<td>Catheter-based optical coherence tomography of blood vessels</td>
+<td><a href="http://dicom.nema.org/resources/ontology/DCM/IVOCT">DCM:IVOCT</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>IVUS</td>
+<td>Intravascular Ultrasound</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C99535">NCIT:C99535</a></td>
+<td>Catheter-based ultrasound imaging of blood vessels</td>
+<td><a href="http://dicom.nema.org/resources/ontology/DCM/IVUS">DCM:IVUS</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>KER</td>
+<td>Keratometry</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C190551">NCIT:C190551</a></td>
+<td>Measurement of the curvature of the anterior corneal surface</td>
+<td><a href="http://dicom.nema.org/resources/ontology/DCM/KER">DCM:KER</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>LS</td>
+<td>Laser surface scan</td>
+<td><a href="http://dicom.nema.org/resources/ontology/DCM/LS">DCM:LS</a></td>
+<td>Surface geometry acquired with a laser scanner</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>LEN</td>
+<td>Lensometry</td>
+<td><a href="http://dicom.nema.org/resources/ontology/DCM/LEN">DCM:LEN</a></td>
+<td>Measurement of the optical properties of spectacle lenses</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>MR</td>
+<td>Magnetic Resonance Imaging</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C16809">NCIT:C16809</a></td>
+<td>Imaging using radiofrequency pulses in a strong magnetic field</td>
+<td><a href="http://dicom.nema.org/resources/ontology/DCM/MR">DCM:MR</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>MG</td>
+<td>Mammography</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C16818">NCIT:C16818</a></td>
+<td>Low-dose X-ray imaging of the breast</td>
+<td><a href="http://dicom.nema.org/resources/ontology/DCM/MG">DCM:MG</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>NM</td>
+<td>Radionuclide Imaging</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C62667">NCIT:C62667</a></td>
+<td>Gamma camera imaging of an administered radiotracer, including planar and SPECT</td>
+<td><a href="http://dicom.nema.org/resources/ontology/DCM/NM">DCM:NM</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>OAM</td>
+<td>Ophthalmic Axial Measurements</td>
+<td><a href="http://dicom.nema.org/resources/ontology/DCM/OAM">DCM:OAM</a></td>
+<td>Measurement of axial dimensions of the eye, such as axial length</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>OPM</td>
+<td>Ophthalmic Mapping</td>
+<td><a href="http://dicom.nema.org/resources/ontology/DCM/OPM">DCM:OPM</a></td>
+<td>Topographic or thickness maps of ocular structures</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>OP</td>
+<td>Ophthalmic Photography</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C190559">NCIT:C190559</a></td>
+<td>Photography of the eye, including fundus and slit lamp photography</td>
+<td><a href="http://dicom.nema.org/resources/ontology/DCM/OP">DCM:OP</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>OPT</td>
+<td>Ophthalmic Tomography</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C190561">NCIT:C190561</a></td>
+<td>Optical coherence tomography of the eye, including retinal OCT B-scans</td>
+<td><a href="http://dicom.nema.org/resources/ontology/DCM/OPT">DCM:OPT</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>OPTBSV</td>
+<td>Ophthalmic Tomography B-scan Volume Analysis</td>
+<td><a href="http://dicom.nema.org/resources/ontology/DCM/OPTBSV">DCM:OPTBSV</a></td>
+<td>Volume analysis derived from ophthalmic OCT B-scans</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>OPTENF</td>
+<td>En-face Optical Coherence Tomography</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C190563">NCIT:C190563</a></td>
+<td>Transverse (en face) images derived from ophthalmic OCT volumes</td>
+<td><a href="http://dicom.nema.org/resources/ontology/DCM/OPTENF">DCM:OPTENF</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>OPV</td>
+<td>Ophthalmic Visual Field</td>
+<td><a href="http://dicom.nema.org/resources/ontology/DCM/OPV">DCM:OPV</a></td>
+<td>Perimetry results describing the visual field</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>OCT</td>
+<td>Optical Coherence Tomography</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C20828">NCIT:C20828</a></td>
+<td>Interferometric imaging using near-infrared light, used outside ophthalmology</td>
+<td><a href="http://dicom.nema.org/resources/ontology/DCM/OCT">DCM:OCT</a>, <a href="http://purl.obolibrary.org/obo/FBbi_00000371">FBbi:00000371</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>OSS</td>
+<td>Optical Surface Scanner</td>
+<td><a href="http://dicom.nema.org/resources/ontology/DCM/OSS">DCM:OSS</a></td>
+<td>Surface geometry acquired with an optical (non-laser) scanner</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>PX</td>
+<td>Panoramic X-Ray</td>
+<td><a href="http://dicom.nema.org/resources/ontology/DCM/PX">DCM:PX</a></td>
+<td>Dental panoramic radiography of the jaws</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>PA</td>
+<td>Photoacoustic Imaging</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C116749">NCIT:C116749</a></td>
+<td>Imaging of ultrasonic waves generated by optical absorption of pulsed light</td>
+<td><a href="http://dicom.nema.org/resources/ontology/DCM/PA">DCM:PA</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>PT</td>
+<td>Positron Emission Tomography</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C17007">NCIT:C17007</a></td>
+<td>Tomographic imaging of a positron-emitting radiotracer</td>
+<td><a href="http://dicom.nema.org/resources/ontology/DCM/PT">DCM:PT</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>RF</td>
+<td>Fluoroscopy</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C16588">NCIT:C16588</a></td>
+<td>Real-time X-ray imaging, including radiofluoroscopy</td>
+<td><a href="http://dicom.nema.org/resources/ontology/DCM/RF">DCM:RF</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>RG</td>
+<td>X-Ray Imaging</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C38101">NCIT:C38101</a></td>
+<td>Conventional film or screen radiographic imaging</td>
+<td><a href="http://dicom.nema.org/resources/ontology/DCM/RG">DCM:RG</a></td>
+<td><a href="http://purl.obolibrary.org/obo/FBbi_00001001">FBbi:00001001</a></td>
+<td></td>
+</tr>
+<tr>
+<td>RTIMAGE</td>
+<td>RT Image</td>
+<td><a href="http://dicom.nema.org/resources/ontology/DCM/RTIMAGE">DCM:RTIMAGE</a></td>
+<td>Radiotherapy portal or setup image</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>SM</td>
+<td>Slide Microscopy</td>
+<td><a href="http://dicom.nema.org/resources/ontology/DCM/SM">DCM:SM</a></td>
+<td>Whole slide imaging of microscope slides</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>SRF</td>
+<td>Subjective Refraction</td>
+<td><a href="http://dicom.nema.org/resources/ontology/DCM/SRF">DCM:SRF</a></td>
+<td>Refraction measured with patient feedback</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>TG</td>
+<td>Thermography</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C17194">NCIT:C17194</a></td>
+<td>Imaging of body surface temperature</td>
+<td><a href="http://dicom.nema.org/resources/ontology/DCM/TG">DCM:TG</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>US</td>
+<td>Ultrasound Imaging</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C17230">NCIT:C17230</a></td>
+<td>Imaging using high-frequency sound waves, including static images and cine loops</td>
+<td><a href="http://dicom.nema.org/resources/ontology/DCM/US">DCM:US</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>BDUS</td>
+<td>Ultrasound Bone Densitometry</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C190516">NCIT:C190516</a></td>
+<td>Quantitative ultrasound estimation of bone mineral density</td>
+<td><a href="http://dicom.nema.org/resources/ontology/DCM/BDUS">DCM:BDUS</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>VA</td>
+<td>Visual Acuity</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C87149">NCIT:C87149</a></td>
+<td>Measurement of the sharpness of vision</td>
+<td><a href="http://dicom.nema.org/resources/ontology/DCM/VA">DCM:VA</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>XA</td>
+<td>X-ray Angiography</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C20080">NCIT:C20080</a></td>
+<td>X-ray imaging of blood vessels with contrast, including digital subtraction angiography</td>
+<td><a href="http://dicom.nema.org/resources/ontology/DCM/XA">DCM:XA</a></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="slots">Slots</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../dicom_modality/">dicom_modality</a></td>
+<td>The DICOM acquisition modality code of an imaging instance or series</td>
+</tr>
+</tbody>
+</table>
+<h2 id="see-also">See Also</h2>
+<ul>
+<li><a href="https://dicom.nema.org/medical/dicom/current/output/chtml/part16/sect_CID_29.html">https://dicom.nema.org/medical/dicom/current/output/chtml/part16/sect_CID_29.html</a></li>
+</ul>
+<h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
+<h3 id="schema-source">Schema Source</h3>
+<ul>
+<li>from schema: https://w3id.org/valuesets</li>
+</ul>
+<h2 id="linkml-source">LinkML Source</h2>
+<details>
+
+<pre><code class="language-yaml">name: DICOMModalityEnum
+instantiates:
+- valuesets_meta:ValueSetEnumDefinition
+description: Acquisition modality codes from DICOM PS3.16 Context ID 29 (Acquisition
+  Modality), the defined terms for the Modality (0008,0060) attribute. The permissible
+  value is the DICOM code itself; the title is the NCI Thesaurus label where a mapping
+  exists and the DICOM code meaning is carried as an alias when it differs. Where
+  an NCI Thesaurus term exists it is the meaning and the DCM code is an exact mapping;
+  otherwise the DCM code is the meaning, so every value carries its DCM code in one
+  of the two fields. Waveform modalities (ECG, EEG, etc.) are defined in CID 34 and
+  are not included here, nor are the non-acquisition values that also appear in Modality
+  (0008,0060) such as SR, PR, SEG, KO, DOC, OT and the RT objects.
+title: DICOM Acquisition Modality
+from_schema: https://w3id.org/valuesets
+see_also:
+- https://dicom.nema.org/medical/dicom/current/output/chtml/part16/sect_CID_29.html
+contributors:
+- orcid:0000-0002-6601-2165
+- https://github.com/anthropics/claude-code
+status: DRAFT
+rank: 1000
+permissible_values:
+  AR:
+    text: AR
+    description: Automated measurement of refractive error of the eye
+    meaning: NCIT:C176330
+    title: Autorefraction
+    exact_mappings:
+    - DCM:AR
+  BI:
+    text: BI
+    description: Imaging based on magnetic fields produced by the body, such as magnetoencephalography
+    meaning: DCM:BI
+    title: Biomagnetic Imaging
+  BMD:
+    text: BMD
+    description: Measurement of bone mineral content and density, such as DXA
+    meaning: NCIT:C190514
+    title: Bone Mineral Densitometry
+    exact_mappings:
+    - DCM:BMD
+  CR:
+    text: CR
+    description: X-ray imaging using a phosphor imaging plate read out to a digital
+      image
+    meaning: NCIT:C190521
+    title: Computed Radiography
+    exact_mappings:
+    - DCM:CR
+  CT:
+    text: CT
+    description: Cross-sectional X-ray imaging reconstructed by computer
+    meaning: NCIT:C17204
+    title: Computed Tomography
+    exact_mappings:
+    - DCM:CT
+    close_mappings:
+    - FBbi:00001002
+  CFM:
+    text: CFM
+    description: Laser-scanning microscopy that rejects out-of-focus light
+    meaning: NCIT:C17753
+    title: Confocal Microscopy
+    exact_mappings:
+    - DCM:CFM
+    - FBbi:00000251
+  DMS:
+    text: DMS
+    description: Non-invasive microscopic examination of the skin surface
+    meaning: NCIT:C116478
+    title: Dermoscopy
+    exact_mappings:
+    - DCM:DMS
+  DG:
+    text: DG
+    description: Transillumination imaging of tissue, historically used for the breast
+    meaning: DCM:DG
+    title: Diaphanography
+  DX:
+    text: DX
+    description: Projection X-ray imaging acquired directly with a digital detector
+    meaning: NCIT:C18001
+    title: Digital Radiography
+    exact_mappings:
+    - DCM:DX
+  ES:
+    text: ES
+    description: Imaging from an endoscope inserted into a body cavity or organ, including
+      laryngoscopy and video endoscopy
+    meaning: NCIT:C16546
+    title: Endoscopic Procedure
+    aliases:
+    - Endoscopy
+    exact_mappings:
+    - DCM:ES
+  XC:
+    text: XC
+    description: Visible-light photography of the patient with an external camera
+    meaning: DCM:XC
+    title: External-camera Photography
+  GM:
+    text: GM
+    description: General microscopy not otherwise classified
+    meaning: NCIT:C16853
+    title: Microscopy
+    aliases:
+    - General Microscopy
+    exact_mappings:
+    - DCM:GM
+    broad_mappings:
+    - FBbi:00000241
+  IO:
+    text: IO
+    description: Dental X-ray imaging with the detector inside the mouth
+    meaning: NCIT:C190548
+    title: Intraoral Radiography
+    aliases:
+    - Intra-oral Radiography
+    exact_mappings:
+    - DCM:IO
+  IVOCT:
+    text: IVOCT
+    description: Catheter-based optical coherence tomography of blood vessels
+    meaning: NCIT:C190550
+    title: Intravascular Optical Coherence Tomography
+    exact_mappings:
+    - DCM:IVOCT
+  IVUS:
+    text: IVUS
+    description: Catheter-based ultrasound imaging of blood vessels
+    meaning: NCIT:C99535
+    title: Intravascular Ultrasound
+    exact_mappings:
+    - DCM:IVUS
+  KER:
+    text: KER
+    description: Measurement of the curvature of the anterior corneal surface
+    meaning: NCIT:C190551
+    title: Keratometry
+    exact_mappings:
+    - DCM:KER
+  LS:
+    text: LS
+    description: Surface geometry acquired with a laser scanner
+    meaning: DCM:LS
+    title: Laser surface scan
+  LEN:
+    text: LEN
+    description: Measurement of the optical properties of spectacle lenses
+    meaning: DCM:LEN
+    title: Lensometry
+  MR:
+    text: MR
+    description: Imaging using radiofrequency pulses in a strong magnetic field
+    meaning: NCIT:C16809
+    title: Magnetic Resonance Imaging
+    aliases:
+    - Magnetic Resonance
+    exact_mappings:
+    - DCM:MR
+  MG:
+    text: MG
+    description: Low-dose X-ray imaging of the breast
+    meaning: NCIT:C16818
+    title: Mammography
+    exact_mappings:
+    - DCM:MG
+  NM:
+    text: NM
+    description: Gamma camera imaging of an administered radiotracer, including planar
+      and SPECT
+    meaning: NCIT:C62667
+    title: Radionuclide Imaging
+    aliases:
+    - Nuclear Medicine
+    exact_mappings:
+    - DCM:NM
+  OAM:
+    text: OAM
+    description: Measurement of axial dimensions of the eye, such as axial length
+    meaning: DCM:OAM
+    title: Ophthalmic Axial Measurements
+  OPM:
+    text: OPM
+    description: Topographic or thickness maps of ocular structures
+    meaning: DCM:OPM
+    title: Ophthalmic Mapping
+  OP:
+    text: OP
+    description: Photography of the eye, including fundus and slit lamp photography
+    meaning: NCIT:C190559
+    title: Ophthalmic Photography
+    exact_mappings:
+    - DCM:OP
+  OPT:
+    text: OPT
+    description: Optical coherence tomography of the eye, including retinal OCT B-scans
+    meaning: NCIT:C190561
+    title: Ophthalmic Tomography
+    exact_mappings:
+    - DCM:OPT
+  OPTBSV:
+    text: OPTBSV
+    description: Volume analysis derived from ophthalmic OCT B-scans
+    meaning: DCM:OPTBSV
+    title: Ophthalmic Tomography B-scan Volume Analysis
+  OPTENF:
+    text: OPTENF
+    description: Transverse (en face) images derived from ophthalmic OCT volumes
+    meaning: NCIT:C190563
+    title: En-face Optical Coherence Tomography
+    aliases:
+    - Ophthalmic Tomography En Face
+    exact_mappings:
+    - DCM:OPTENF
+  OPV:
+    text: OPV
+    description: Perimetry results describing the visual field
+    meaning: DCM:OPV
+    title: Ophthalmic Visual Field
+  OCT:
+    text: OCT
+    description: Interferometric imaging using near-infrared light, used outside ophthalmology
+    meaning: NCIT:C20828
+    title: Optical Coherence Tomography
+    exact_mappings:
+    - DCM:OCT
+    - FBbi:00000371
+  OSS:
+    text: OSS
+    description: Surface geometry acquired with an optical (non-laser) scanner
+    meaning: DCM:OSS
+    title: Optical Surface Scanner
+  PX:
+    text: PX
+    description: Dental panoramic radiography of the jaws
+    meaning: DCM:PX
+    title: Panoramic X-Ray
+  PA:
+    text: PA
+    description: Imaging of ultrasonic waves generated by optical absorption of pulsed
+      light
+    meaning: NCIT:C116749
+    title: Photoacoustic Imaging
+    aliases:
+    - Photoacoustic
+    exact_mappings:
+    - DCM:PA
+  PT:
+    text: PT
+    description: Tomographic imaging of a positron-emitting radiotracer
+    meaning: NCIT:C17007
+    title: Positron Emission Tomography
+    exact_mappings:
+    - DCM:PT
+  RF:
+    text: RF
+    description: Real-time X-ray imaging, including radiofluoroscopy
+    meaning: NCIT:C16588
+    title: Fluoroscopy
+    aliases:
+    - Radiofluoroscopy
+    exact_mappings:
+    - DCM:RF
+  RG:
+    text: RG
+    description: Conventional film or screen radiographic imaging
+    meaning: NCIT:C38101
+    title: X-Ray Imaging
+    aliases:
+    - Radiographic imaging
+    exact_mappings:
+    - DCM:RG
+    close_mappings:
+    - FBbi:00001001
+  RTIMAGE:
+    text: RTIMAGE
+    description: Radiotherapy portal or setup image
+    meaning: DCM:RTIMAGE
+    title: RT Image
+  SM:
+    text: SM
+    description: Whole slide imaging of microscope slides
+    meaning: DCM:SM
+    title: Slide Microscopy
+  SRF:
+    text: SRF
+    description: Refraction measured with patient feedback
+    meaning: DCM:SRF
+    title: Subjective Refraction
+  TG:
+    text: TG
+    description: Imaging of body surface temperature
+    meaning: NCIT:C17194
+    title: Thermography
+    exact_mappings:
+    - DCM:TG
+  US:
+    text: US
+    description: Imaging using high-frequency sound waves, including static images
+      and cine loops
+    meaning: NCIT:C17230
+    title: Ultrasound Imaging
+    aliases:
+    - Ultrasound
+    exact_mappings:
+    - DCM:US
+  BDUS:
+    text: BDUS
+    description: Quantitative ultrasound estimation of bone mineral density
+    meaning: NCIT:C190516
+    title: Ultrasound Bone Densitometry
+    exact_mappings:
+    - DCM:BDUS
+  VA:
+    text: VA
+    description: Measurement of the sharpness of vision
+    meaning: NCIT:C87149
+    title: Visual Acuity
+    exact_mappings:
+    - DCM:VA
+  XA:
+    text: XA
+    description: X-ray imaging of blood vessels with contrast, including digital subtraction
+      angiography
+    meaning: NCIT:C20080
+    title: X-ray Angiography
+    exact_mappings:
+    - DCM:XA
+
+</code></pre>
+
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.tabs.link"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

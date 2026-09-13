@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://linkml.github.io/valuesets/elements/Protein/">
+        <link rel="canonical" href="https://linkml.github.io/valuesets/elements/DICOMValidationIssueTypeEnum/">
       
       
       
@@ -18,7 +18,7 @@
     
     
       
-        <title>Enum: Protein - valuesets</title>
+        <title>Enum: DICOMValidationIssueTypeEnum - valuesets</title>
       
     
     
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#enum-protein" class="md-skip">
+        <a href="#enum-dicomvalidationissuetypeenum" class="md-skip">
           Skip to content
         </a>
       
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Enum: Protein
+              Enum: DICOMValidationIssueTypeEnum
             
           </span>
         </div>
@@ -625,9 +625,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#dynamic-enum-query" class="md-nav__link">
+  <a href="#permissible-values" class="md-nav__link">
     <span class="md-ellipsis">
-      Dynamic Enum Query
+      Permissible Values
     </span>
   </a>
   
@@ -694,16 +694,138 @@
   
 
 
-<h1 id="enum-protein">Enum: Protein</h1>
-<p><em>Proteins and protein complexes</em></p>
-<p>URI: <a href="https://w3id.org/valuesets/Protein">valuesets:Protein</a></p>
+<h1 id="enum-dicomvalidationissuetypeenum">Enum: DICOMValidationIssueTypeEnum</h1>
+<p><em>Categories of problems detected when validating DICOM files and collections for completeness, conformance, metadata consistency, pixel data integrity and plausibility. Used to classify findings from tools such as dciodvfy, dcentvfy, DVTk and pydicom during data reliability workflows.</em></p>
+<p>URI: <a href="https://w3id.org/valuesets/DICOMValidationIssueTypeEnum">valuesets:DICOMValidationIssueTypeEnum</a></p>
 <!-- bioportal-link -->
-<p><a href="https://bioportal.bioontology.org/ontologies/VALUESETS?p=classes&amp;conceptid=https%3A%2F%2Fw3id.org%2Fvaluesets%2FProtein">View in BioPortal</a></p>
-<p><em>This is a dynamic enum</em></p>
-<h2 id="dynamic-enum-query">Dynamic Enum Query</h2>
-<p>This value set is dynamically populated from an ontology.</p>
-<p><strong>Query:</strong> <a href="http://purl.obolibrary.org/obo/PR_000000001">protein</a> and subclasses</p>
-<p><strong>Prefixes used:</strong> <code>PR, obo, rdfs</code></p>
+<p><a href="https://bioportal.bioontology.org/ontologies/VALUESETS?p=classes&amp;conceptid=https%3A%2F%2Fw3id.org%2Fvaluesets%2FDICOMValidationIssueTypeEnum">View in BioPortal</a></p>
+<h2 id="permissible-values">Permissible Values</h2>
+<!-- annotations-table -->
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Title</th>
+<th>Meaning</th>
+<th>Description</th>
+<th>Category</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TRUNCATED_FILE</td>
+<td>Truncated file</td>
+<td></td>
+<td>The file is incomplete, for example a truncated transfer syntax or missing pixel data at the end of the file</td>
+<td>structural</td>
+</tr>
+<tr>
+<td>INVALID_VR_ENCODING</td>
+<td>Invalid VR encoding</td>
+<td></td>
+<td>An attribute is encoded with a Value Representation that does not match the data dictionary or the transfer syntax</td>
+<td>structural</td>
+</tr>
+<tr>
+<td>MISSING_REQUIRED_ATTRIBUTE</td>
+<td>Missing required attribute</td>
+<td></td>
+<td>A Type 1 or Type 2 attribute required by the IOD, such as StudyInstanceUID or PixelData, is absent</td>
+<td>conformance</td>
+</tr>
+<tr>
+<td>VALUE_MULTIPLICITY_VIOLATION</td>
+<td>Value multiplicity violation</td>
+<td></td>
+<td>An attribute has more or fewer values than permitted by its Value Multiplicity</td>
+<td>conformance</td>
+</tr>
+<tr>
+<td>VALUE_OUT_OF_RANGE</td>
+<td>Value out of range</td>
+<td></td>
+<td>An attribute value is outside the enumerated or defined range allowed by the standard</td>
+<td>conformance</td>
+</tr>
+<tr>
+<td>INVALID_UID_SYNTAX</td>
+<td>Invalid UID syntax</td>
+<td></td>
+<td>A UID does not conform to DICOM UID syntax, for example non-numeric components or excess length</td>
+<td>conformance</td>
+</tr>
+<tr>
+<td>DUPLICATE_UID</td>
+<td>Duplicate UID</td>
+<td></td>
+<td>The same SOP Instance UID or other UID is reused across instances that should be distinct</td>
+<td>consistency</td>
+</tr>
+<tr>
+<td>INCONSISTENT_ENTITY_ATTRIBUTES</td>
+<td>Inconsistent entity attributes</td>
+<td></td>
+<td>Attributes that should be identical across instances of the same entity differ, such as instances in one series carrying different Series Instance UIDs</td>
+<td>consistency</td>
+</tr>
+<tr>
+<td>DATE_INCONSISTENCY</td>
+<td>Date inconsistency</td>
+<td></td>
+<td>Dates are mutually inconsistent, such as a study date after the patient's death date or a series date before the study date</td>
+<td>plausibility</td>
+</tr>
+<tr>
+<td>IMPLAUSIBLE_VALUE</td>
+<td>Implausible value</td>
+<td></td>
+<td>A syntactically valid value that is biologically implausible, such as a patient age of 150 years</td>
+<td>plausibility</td>
+</tr>
+<tr>
+<td>NONSTANDARD_PRIVATE_ATTRIBUTE</td>
+<td>Nonstandard private attribute</td>
+<td></td>
+<td>A private tag is present that is not documented in the site's private tag dictionary</td>
+<td>documentation</td>
+</tr>
+<tr>
+<td>IDENTIFIER_LINKAGE_ERROR</td>
+<td>Identifier linkage error</td>
+<td></td>
+<td>Patient or study identifiers do not link correctly to clinical records, or demographics disagree across linked records</td>
+<td>consistency</td>
+</tr>
+<tr>
+<td>UNREADABLE_PIXEL_DATA</td>
+<td>Unreadable pixel data</td>
+<td></td>
+<td>The pixel data cannot be decoded, typically due to acquisition or packaging problems</td>
+<td>pixel data</td>
+</tr>
+<tr>
+<td>DECOMPRESSION_MISMATCH</td>
+<td>Decompression mismatch</td>
+<td></td>
+<td>Decompressed pixel data has an unexpected bit depth or differs from the uncompressed original beyond the expected loss</td>
+<td>pixel data</td>
+</tr>
+<tr>
+<td>CHECKSUM_MISMATCH</td>
+<td>Checksum mismatch</td>
+<td></td>
+<td>The file's cryptographic hash no longer matches the value recorded at ingest, indicating corruption or alteration</td>
+<td>integrity</td>
+</tr>
+<tr>
+<td>PROTECTED_HEALTH_INFORMATION_PRESENT</td>
+<td>Protected health information present</td>
+<td></td>
+<td>Identifying information remains in the header, private tags or pixel data after de-identification</td>
+<td>privacy</td>
+</tr>
+</tbody>
+</table>
 <h2 id="slots">Slots</h2>
 <table>
 <thead>
@@ -714,8 +836,8 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../protein/">protein</a></td>
-<td>Proteins and protein complexes</td>
+<td><a href="../dicom_validation_issue_type/">dicom_validation_issue_type</a></td>
+<td>The category of problem found when validating a DICOM file or collection</td>
 </tr>
 </tbody>
 </table>
@@ -727,24 +849,166 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
-<pre><code class="language-yaml">name: Protein
+<pre><code class="language-yaml">name: DICOMValidationIssueTypeEnum
 instantiates:
 - valuesets_meta:ValueSetEnumDefinition
-description: Proteins and protein complexes
-title: Protein
+description: Categories of problems detected when validating DICOM files and collections
+  for completeness, conformance, metadata consistency, pixel data integrity and plausibility.
+  Used to classify findings from tools such as dciodvfy, dcentvfy, DVTk and pydicom
+  during data reliability workflows.
+title: DICOM Validation Issue Type
 from_schema: https://w3id.org/valuesets
 contributors:
 - orcid:0000-0002-6601-2165
 - https://github.com/anthropics/claude-code
 status: DRAFT
 rank: 1000
-reachable_from:
-  source_ontology: obo:pr
-  source_nodes:
-  - PR:000000001
-  relationship_types:
-  - rdfs:subClassOf
-  include_self: true
+permissible_values:
+  TRUNCATED_FILE:
+    text: TRUNCATED_FILE
+    description: The file is incomplete, for example a truncated transfer syntax or
+      missing pixel data at the end of the file
+    annotations:
+      category:
+        tag: category
+        value: structural
+    title: Truncated file
+  INVALID_VR_ENCODING:
+    text: INVALID_VR_ENCODING
+    description: An attribute is encoded with a Value Representation that does not
+      match the data dictionary or the transfer syntax
+    annotations:
+      category:
+        tag: category
+        value: structural
+    title: Invalid VR encoding
+  MISSING_REQUIRED_ATTRIBUTE:
+    text: MISSING_REQUIRED_ATTRIBUTE
+    description: A Type 1 or Type 2 attribute required by the IOD, such as StudyInstanceUID
+      or PixelData, is absent
+    annotations:
+      category:
+        tag: category
+        value: conformance
+    title: Missing required attribute
+  VALUE_MULTIPLICITY_VIOLATION:
+    text: VALUE_MULTIPLICITY_VIOLATION
+    description: An attribute has more or fewer values than permitted by its Value
+      Multiplicity
+    annotations:
+      category:
+        tag: category
+        value: conformance
+    title: Value multiplicity violation
+  VALUE_OUT_OF_RANGE:
+    text: VALUE_OUT_OF_RANGE
+    description: An attribute value is outside the enumerated or defined range allowed
+      by the standard
+    annotations:
+      category:
+        tag: category
+        value: conformance
+    title: Value out of range
+  INVALID_UID_SYNTAX:
+    text: INVALID_UID_SYNTAX
+    description: A UID does not conform to DICOM UID syntax, for example non-numeric
+      components or excess length
+    annotations:
+      category:
+        tag: category
+        value: conformance
+    title: Invalid UID syntax
+  DUPLICATE_UID:
+    text: DUPLICATE_UID
+    description: The same SOP Instance UID or other UID is reused across instances
+      that should be distinct
+    annotations:
+      category:
+        tag: category
+        value: consistency
+    title: Duplicate UID
+  INCONSISTENT_ENTITY_ATTRIBUTES:
+    text: INCONSISTENT_ENTITY_ATTRIBUTES
+    description: Attributes that should be identical across instances of the same
+      entity differ, such as instances in one series carrying different Series Instance
+      UIDs
+    annotations:
+      category:
+        tag: category
+        value: consistency
+    title: Inconsistent entity attributes
+  DATE_INCONSISTENCY:
+    text: DATE_INCONSISTENCY
+    description: Dates are mutually inconsistent, such as a study date after the patient's
+      death date or a series date before the study date
+    annotations:
+      category:
+        tag: category
+        value: plausibility
+    title: Date inconsistency
+  IMPLAUSIBLE_VALUE:
+    text: IMPLAUSIBLE_VALUE
+    description: A syntactically valid value that is biologically implausible, such
+      as a patient age of 150 years
+    annotations:
+      category:
+        tag: category
+        value: plausibility
+    title: Implausible value
+  NONSTANDARD_PRIVATE_ATTRIBUTE:
+    text: NONSTANDARD_PRIVATE_ATTRIBUTE
+    description: A private tag is present that is not documented in the site's private
+      tag dictionary
+    annotations:
+      category:
+        tag: category
+        value: documentation
+    title: Nonstandard private attribute
+  IDENTIFIER_LINKAGE_ERROR:
+    text: IDENTIFIER_LINKAGE_ERROR
+    description: Patient or study identifiers do not link correctly to clinical records,
+      or demographics disagree across linked records
+    annotations:
+      category:
+        tag: category
+        value: consistency
+    title: Identifier linkage error
+  UNREADABLE_PIXEL_DATA:
+    text: UNREADABLE_PIXEL_DATA
+    description: The pixel data cannot be decoded, typically due to acquisition or
+      packaging problems
+    annotations:
+      category:
+        tag: category
+        value: pixel data
+    title: Unreadable pixel data
+  DECOMPRESSION_MISMATCH:
+    text: DECOMPRESSION_MISMATCH
+    description: Decompressed pixel data has an unexpected bit depth or differs from
+      the uncompressed original beyond the expected loss
+    annotations:
+      category:
+        tag: category
+        value: pixel data
+    title: Decompression mismatch
+  CHECKSUM_MISMATCH:
+    text: CHECKSUM_MISMATCH
+    description: The file's cryptographic hash no longer matches the value recorded
+      at ingest, indicating corruption or alteration
+    annotations:
+      category:
+        tag: category
+        value: integrity
+    title: Checksum mismatch
+  PROTECTED_HEALTH_INFORMATION_PRESENT:
+    text: PROTECTED_HEALTH_INFORMATION_PRESENT
+    description: Identifying information remains in the header, private tags or pixel
+      data after de-identification
+    annotations:
+      category:
+        tag: category
+        value: privacy
+    title: Protected health information present
 
 </code></pre>
 

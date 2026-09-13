@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://linkml.github.io/valuesets/elements/Protein/">
+        <link rel="canonical" href="https://linkml.github.io/valuesets/elements/DeidentificationRegulatoryFrameworkEnum/">
       
       
       
@@ -18,7 +18,7 @@
     
     
       
-        <title>Enum: Protein - valuesets</title>
+        <title>Enum: DeidentificationRegulatoryFrameworkEnum - valuesets</title>
       
     
     
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#enum-protein" class="md-skip">
+        <a href="#enum-deidentificationregulatoryframeworkenum" class="md-skip">
           Skip to content
         </a>
       
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Enum: Protein
+              Enum: DeidentificationRegulatoryFrameworkEnum
             
           </span>
         </div>
@@ -625,9 +625,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#dynamic-enum-query" class="md-nav__link">
+  <a href="#permissible-values" class="md-nav__link">
     <span class="md-ellipsis">
-      Dynamic Enum Query
+      Permissible Values
     </span>
   </a>
   
@@ -694,16 +694,75 @@
   
 
 
-<h1 id="enum-protein">Enum: Protein</h1>
-<p><em>Proteins and protein complexes</em></p>
-<p>URI: <a href="https://w3id.org/valuesets/Protein">valuesets:Protein</a></p>
+<h1 id="enum-deidentificationregulatoryframeworkenum">Enum: DeidentificationRegulatoryFrameworkEnum</h1>
+<p><em>Regulations and standards that define when medical imaging data is considered de-identified. Under HIPAA, full-face photographs and comparable images are direct identifiers; under the GDPR, facial images are biometric personal data requiring special handling.</em></p>
+<p>URI: <a href="https://w3id.org/valuesets/DeidentificationRegulatoryFrameworkEnum">valuesets:DeidentificationRegulatoryFrameworkEnum</a></p>
 <!-- bioportal-link -->
-<p><a href="https://bioportal.bioontology.org/ontologies/VALUESETS?p=classes&amp;conceptid=https%3A%2F%2Fw3id.org%2Fvaluesets%2FProtein">View in BioPortal</a></p>
-<p><em>This is a dynamic enum</em></p>
-<h2 id="dynamic-enum-query">Dynamic Enum Query</h2>
-<p>This value set is dynamically populated from an ontology.</p>
-<p><strong>Query:</strong> <a href="http://purl.obolibrary.org/obo/PR_000000001">protein</a> and subclasses</p>
-<p><strong>Prefixes used:</strong> <code>PR, obo, rdfs</code></p>
+<p><a href="https://bioportal.bioontology.org/ontologies/VALUESETS?p=classes&amp;conceptid=https%3A%2F%2Fw3id.org%2Fvaluesets%2FDeidentificationRegulatoryFrameworkEnum">View in BioPortal</a></p>
+<h2 id="permissible-values">Permissible Values</h2>
+<!-- annotations-table -->
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Title</th>
+<th>Meaning</th>
+<th>Description</th>
+<th>Citation</th>
+<th>Jurisdiction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HIPAA_SAFE_HARBOR</td>
+<td>HIPAA Safe Harbor</td>
+<td></td>
+<td>US HIPAA Privacy Rule method requiring removal of 18 specified identifier types, including full-face photographs and comparable images</td>
+<td>45 CFR 164.514(b)(2)</td>
+<td>United States</td>
+</tr>
+<tr>
+<td>HIPAA_EXPERT_DETERMINATION</td>
+<td>HIPAA Expert Determination</td>
+<td></td>
+<td>US HIPAA Privacy Rule method in which a qualified expert determines that the risk of re-identification is very small</td>
+<td>45 CFR 164.514(b)(1)</td>
+<td>United States</td>
+</tr>
+<tr>
+<td>GDPR_ANONYMISATION</td>
+<td>Anonymization</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C142392">NCIT:C142392</a></td>
+<td>Irreversible processing such that the data subject is no longer identifiable, taking the data outside the scope of the EU General Data Protection Regulation</td>
+<td></td>
+<td>European Union</td>
+</tr>
+<tr>
+<td>GDPR_PSEUDONYMISATION</td>
+<td>Pseudonymization</td>
+<td><a href="http://purl.obolibrary.org/obo/NCIT_C142654">NCIT:C142654</a></td>
+<td>Processing so that data can no longer be attributed to a subject without additional information kept separately, as defined in GDPR Article 4(5)</td>
+<td></td>
+<td>European Union</td>
+</tr>
+<tr>
+<td>DICOM_PS3_15_CONFIDENTIALITY_PROFILE</td>
+<td>DICOM PS3.15 Attribute Confidentiality Profile</td>
+<td></td>
+<td>The DICOM standard's own de-identification profile and options, designed to satisfy known regulations</td>
+<td></td>
+<td>international</td>
+</tr>
+<tr>
+<td>MIDI_TASK_GROUP_RECOMMENDATIONS</td>
+<td>MIDI Task Group best practices</td>
+<td></td>
+<td>Best practices and recommendations of the Medical Image De-Identification (MIDI) Task Group (Clunie et al.)</td>
+<td></td>
+<td>international</td>
+</tr>
+</tbody>
+</table>
 <h2 id="slots">Slots</h2>
 <table>
 <thead>
@@ -714,8 +773,8 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../protein/">protein</a></td>
-<td>Proteins and protein complexes</td>
+<td><a href="../deidentification_regulatory_framework/">deidentification_regulatory_framework</a></td>
+<td>The regulation or standard under which data is de-identified</td>
 </tr>
 </tbody>
 </table>
@@ -727,24 +786,87 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
-<pre><code class="language-yaml">name: Protein
+<pre><code class="language-yaml">name: DeidentificationRegulatoryFrameworkEnum
 instantiates:
 - valuesets_meta:ValueSetEnumDefinition
-description: Proteins and protein complexes
-title: Protein
+description: Regulations and standards that define when medical imaging data is considered
+  de-identified. Under HIPAA, full-face photographs and comparable images are direct
+  identifiers; under the GDPR, facial images are biometric personal data requiring
+  special handling.
+title: De-identification Regulatory Framework
 from_schema: https://w3id.org/valuesets
 contributors:
 - orcid:0000-0002-6601-2165
 - https://github.com/anthropics/claude-code
 status: DRAFT
 rank: 1000
-reachable_from:
-  source_ontology: obo:pr
-  source_nodes:
-  - PR:000000001
-  relationship_types:
-  - rdfs:subClassOf
-  include_self: true
+permissible_values:
+  HIPAA_SAFE_HARBOR:
+    text: HIPAA_SAFE_HARBOR
+    description: US HIPAA Privacy Rule method requiring removal of 18 specified identifier
+      types, including full-face photographs and comparable images
+    annotations:
+      jurisdiction:
+        tag: jurisdiction
+        value: United States
+      citation:
+        tag: citation
+        value: 45 CFR 164.514(b)(2)
+    title: HIPAA Safe Harbor
+  HIPAA_EXPERT_DETERMINATION:
+    text: HIPAA_EXPERT_DETERMINATION
+    description: US HIPAA Privacy Rule method in which a qualified expert determines
+      that the risk of re-identification is very small
+    annotations:
+      jurisdiction:
+        tag: jurisdiction
+        value: United States
+      citation:
+        tag: citation
+        value: 45 CFR 164.514(b)(1)
+    title: HIPAA Expert Determination
+  GDPR_ANONYMISATION:
+    text: GDPR_ANONYMISATION
+    description: Irreversible processing such that the data subject is no longer identifiable,
+      taking the data outside the scope of the EU General Data Protection Regulation
+    meaning: NCIT:C142392
+    annotations:
+      jurisdiction:
+        tag: jurisdiction
+        value: European Union
+    title: Anonymization
+    aliases:
+    - GDPR anonymisation
+  GDPR_PSEUDONYMISATION:
+    text: GDPR_PSEUDONYMISATION
+    description: Processing so that data can no longer be attributed to a subject
+      without additional information kept separately, as defined in GDPR Article 4(5)
+    meaning: NCIT:C142654
+    annotations:
+      jurisdiction:
+        tag: jurisdiction
+        value: European Union
+    title: Pseudonymization
+    aliases:
+    - GDPR pseudonymisation
+  DICOM_PS3_15_CONFIDENTIALITY_PROFILE:
+    text: DICOM_PS3_15_CONFIDENTIALITY_PROFILE
+    description: The DICOM standard's own de-identification profile and options, designed
+      to satisfy known regulations
+    annotations:
+      jurisdiction:
+        tag: jurisdiction
+        value: international
+    title: DICOM PS3.15 Attribute Confidentiality Profile
+  MIDI_TASK_GROUP_RECOMMENDATIONS:
+    text: MIDI_TASK_GROUP_RECOMMENDATIONS
+    description: Best practices and recommendations of the Medical Image De-Identification
+      (MIDI) Task Group (Clunie et al.)
+    annotations:
+      jurisdiction:
+        tag: jurisdiction
+        value: international
+    title: MIDI Task Group best practices
 
 </code></pre>
 

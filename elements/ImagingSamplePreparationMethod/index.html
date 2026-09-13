@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://linkml.github.io/valuesets/elements/Protein/">
+        <link rel="canonical" href="https://linkml.github.io/valuesets/elements/ImagingSamplePreparationMethod/">
       
       
       
@@ -18,7 +18,7 @@
     
     
       
-        <title>Enum: Protein - valuesets</title>
+        <title>Enum: ImagingSamplePreparationMethod - valuesets</title>
       
     
     
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#enum-protein" class="md-skip">
+        <a href="#enum-imagingsamplepreparationmethod" class="md-skip">
           Skip to content
         </a>
       
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Enum: Protein
+              Enum: ImagingSamplePreparationMethod
             
           </span>
         </div>
@@ -694,16 +694,16 @@
   
 
 
-<h1 id="enum-protein">Enum: Protein</h1>
-<p><em>Proteins and protein complexes</em></p>
-<p>URI: <a href="https://w3id.org/valuesets/Protein">valuesets:Protein</a></p>
+<h1 id="enum-imagingsamplepreparationmethod">Enum: ImagingSamplePreparationMethod</h1>
+<p><em>Sample preparation methods from FBbi, describing the state of the specimen at imaging time such as embedded, sectioned, whole mounted or permeabilized tissue, dispersed or adherent cells, and fixation methods</em></p>
+<p>URI: <a href="https://w3id.org/valuesets/ImagingSamplePreparationMethod">valuesets:ImagingSamplePreparationMethod</a></p>
 <!-- bioportal-link -->
-<p><a href="https://bioportal.bioontology.org/ontologies/VALUESETS?p=classes&amp;conceptid=https%3A%2F%2Fw3id.org%2Fvaluesets%2FProtein">View in BioPortal</a></p>
+<p><a href="https://bioportal.bioontology.org/ontologies/VALUESETS?p=classes&amp;conceptid=https%3A%2F%2Fw3id.org%2Fvaluesets%2FImagingSamplePreparationMethod">View in BioPortal</a></p>
 <p><em>This is a dynamic enum</em></p>
 <h2 id="dynamic-enum-query">Dynamic Enum Query</h2>
 <p>This value set is dynamically populated from an ontology.</p>
-<p><strong>Query:</strong> <a href="http://purl.obolibrary.org/obo/PR_000000001">protein</a> and subclasses</p>
-<p><strong>Prefixes used:</strong> <code>PR, obo, rdfs</code></p>
+<p><strong>Query:</strong> subclasses of <a href="http://purl.obolibrary.org/obo/FBbi_00000001">FBbi:00000001</a></p>
+<p><strong>Prefixes used:</strong> <code>FBbi, obo, rdfs</code></p>
 <h2 id="slots">Slots</h2>
 <table>
 <thead>
@@ -714,8 +714,8 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../protein/">protein</a></td>
-<td>Proteins and protein complexes</td>
+<td><a href="../imaging_sample_preparation_method/">imaging_sample_preparation_method</a></td>
+<td>How the specimen was prepared before imaging</td>
 </tr>
 </tbody>
 </table>
@@ -727,11 +727,13 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
-<pre><code class="language-yaml">name: Protein
+<pre><code class="language-yaml">name: ImagingSamplePreparationMethod
 instantiates:
 - valuesets_meta:ValueSetEnumDefinition
-description: Proteins and protein complexes
-title: Protein
+description: Sample preparation methods from FBbi, describing the state of the specimen
+  at imaging time such as embedded, sectioned, whole mounted or permeabilized tissue,
+  dispersed or adherent cells, and fixation methods
+title: Imaging Sample Preparation Method
 from_schema: https://w3id.org/valuesets
 contributors:
 - orcid:0000-0002-6601-2165
@@ -739,12 +741,12 @@ contributors:
 status: DRAFT
 rank: 1000
 reachable_from:
-  source_ontology: obo:pr
+  source_ontology: obo:fbbi
   source_nodes:
-  - PR:000000001
+  - FBbi:00000001
   relationship_types:
   - rdfs:subClassOf
-  include_self: true
+  include_self: false
 
 </code></pre>
 

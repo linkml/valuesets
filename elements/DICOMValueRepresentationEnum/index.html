@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://linkml.github.io/valuesets/elements/Protein/">
+        <link rel="canonical" href="https://linkml.github.io/valuesets/elements/DICOMValueRepresentationEnum/">
       
       
       
@@ -18,7 +18,7 @@
     
     
       
-        <title>Enum: Protein - valuesets</title>
+        <title>Enum: DICOMValueRepresentationEnum - valuesets</title>
       
     
     
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#enum-protein" class="md-skip">
+        <a href="#enum-dicomvaluerepresentationenum" class="md-skip">
           Skip to content
         </a>
       
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Enum: Protein
+              Enum: DICOMValueRepresentationEnum
             
           </span>
         </div>
@@ -625,9 +625,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#dynamic-enum-query" class="md-nav__link">
+  <a href="#permissible-values" class="md-nav__link">
     <span class="md-ellipsis">
-      Dynamic Enum Query
+      Permissible Values
     </span>
   </a>
   
@@ -637,6 +637,15 @@
   <a href="#slots" class="md-nav__link">
     <span class="md-ellipsis">
       Slots
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      See Also
     </span>
   </a>
   
@@ -694,16 +703,264 @@
   
 
 
-<h1 id="enum-protein">Enum: Protein</h1>
-<p><em>Proteins and protein complexes</em></p>
-<p>URI: <a href="https://w3id.org/valuesets/Protein">valuesets:Protein</a></p>
+<h1 id="enum-dicomvaluerepresentationenum">Enum: DICOMValueRepresentationEnum</h1>
+<p><em>The Value Representations (VRs) defined in DICOM PS3.5 Section 6.2, which specify the data type and format of the value of a data element. Tag validation tools check that each attribute is encoded with the VR required by the data dictionary. Permissible values are the two-letter DICOM VR codes.</em></p>
+<p>URI: <a href="https://w3id.org/valuesets/DICOMValueRepresentationEnum">valuesets:DICOMValueRepresentationEnum</a></p>
 <!-- bioportal-link -->
-<p><a href="https://bioportal.bioontology.org/ontologies/VALUESETS?p=classes&amp;conceptid=https%3A%2F%2Fw3id.org%2Fvaluesets%2FProtein">View in BioPortal</a></p>
-<p><em>This is a dynamic enum</em></p>
-<h2 id="dynamic-enum-query">Dynamic Enum Query</h2>
-<p>This value set is dynamically populated from an ontology.</p>
-<p><strong>Query:</strong> <a href="http://purl.obolibrary.org/obo/PR_000000001">protein</a> and subclasses</p>
-<p><strong>Prefixes used:</strong> <code>PR, obo, rdfs</code></p>
+<p><a href="https://bioportal.bioontology.org/ontologies/VALUESETS?p=classes&amp;conceptid=https%3A%2F%2Fw3id.org%2Fvaluesets%2FDICOMValueRepresentationEnum">View in BioPortal</a></p>
+<h2 id="permissible-values">Permissible Values</h2>
+<!-- annotations-table -->
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Title</th>
+<th>Meaning</th>
+<th>Description</th>
+<th>Category</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AE</td>
+<td>Application Entity</td>
+<td></td>
+<td>A string identifying an Application Entity; 16 bytes maximum</td>
+<td>string</td>
+</tr>
+<tr>
+<td>AS</td>
+<td>Age String</td>
+<td></td>
+<td>Age in the format nnnD, nnnW, nnnM or nnnY (days, weeks, months, years)</td>
+<td>string</td>
+</tr>
+<tr>
+<td>AT</td>
+<td>Attribute Tag</td>
+<td></td>
+<td>An ordered pair of 16-bit unsigned integers that is the value of a data element tag</td>
+<td>binary</td>
+</tr>
+<tr>
+<td>CS</td>
+<td>Code String</td>
+<td></td>
+<td>A string identifying a controlled concept; uppercase letters, digits, space and underscore, 16 bytes maximum</td>
+<td>string</td>
+</tr>
+<tr>
+<td>DA</td>
+<td>Date</td>
+<td></td>
+<td>A date in the format YYYYMMDD</td>
+<td>date_time</td>
+</tr>
+<tr>
+<td>DS</td>
+<td>Decimal String</td>
+<td></td>
+<td>A string representing a fixed point or floating point number</td>
+<td>string</td>
+</tr>
+<tr>
+<td>DT</td>
+<td>Date Time</td>
+<td></td>
+<td>A concatenated date-time string of the form YYYYMMDDHHMMSS.FFFFFF&amp;ZZXX</td>
+<td>date_time</td>
+</tr>
+<tr>
+<td>FL</td>
+<td>Floating Point Single</td>
+<td></td>
+<td>Single precision IEEE 754 binary32 floating point value</td>
+<td>binary</td>
+</tr>
+<tr>
+<td>FD</td>
+<td>Floating Point Double</td>
+<td></td>
+<td>Double precision IEEE 754 binary64 floating point value</td>
+<td>binary</td>
+</tr>
+<tr>
+<td>IS</td>
+<td>Integer String</td>
+<td></td>
+<td>A string representing a base-10 integer</td>
+<td>string</td>
+</tr>
+<tr>
+<td>LO</td>
+<td>Long String</td>
+<td></td>
+<td>A character string of up to 64 characters</td>
+<td>string</td>
+</tr>
+<tr>
+<td>LT</td>
+<td>Long Text</td>
+<td></td>
+<td>A character string that may contain one or more paragraphs, up to 10240 characters</td>
+<td>text</td>
+</tr>
+<tr>
+<td>OB</td>
+<td>Other Byte</td>
+<td></td>
+<td>An octet stream whose encoding is specified by the negotiated transfer syntax</td>
+<td>binary</td>
+</tr>
+<tr>
+<td>OD</td>
+<td>Other Double</td>
+<td></td>
+<td>A stream of IEEE 754 binary64 values</td>
+<td>binary</td>
+</tr>
+<tr>
+<td>OF</td>
+<td>Other Float</td>
+<td></td>
+<td>A stream of IEEE 754 binary32 values</td>
+<td>binary</td>
+</tr>
+<tr>
+<td>OL</td>
+<td>Other Long</td>
+<td></td>
+<td>A stream of 32-bit words</td>
+<td>binary</td>
+</tr>
+<tr>
+<td>OV</td>
+<td>Other 64-bit Very Long</td>
+<td></td>
+<td>A stream of 64-bit words</td>
+<td>binary</td>
+</tr>
+<tr>
+<td>OW</td>
+<td>Other Word</td>
+<td></td>
+<td>A stream of 16-bit words; commonly used for Pixel Data</td>
+<td>binary</td>
+</tr>
+<tr>
+<td>PN</td>
+<td>Person Name</td>
+<td></td>
+<td>A character string encoded using a five-component convention (family, given, middle, prefix, suffix)</td>
+<td>string</td>
+</tr>
+<tr>
+<td>SH</td>
+<td>Short String</td>
+<td></td>
+<td>A character string of up to 16 characters</td>
+<td>string</td>
+</tr>
+<tr>
+<td>SL</td>
+<td>Signed Long</td>
+<td></td>
+<td>Signed 32-bit two's complement integer</td>
+<td>binary</td>
+</tr>
+<tr>
+<td>SQ</td>
+<td>Sequence of Items</td>
+<td></td>
+<td>A sequence of zero or more items, each of which is a nested data set</td>
+<td>sequence</td>
+</tr>
+<tr>
+<td>SS</td>
+<td>Signed Short</td>
+<td></td>
+<td>Signed 16-bit two's complement integer</td>
+<td>binary</td>
+</tr>
+<tr>
+<td>ST</td>
+<td>Short Text</td>
+<td></td>
+<td>A character string that may contain one or more paragraphs, up to 1024 characters</td>
+<td>text</td>
+</tr>
+<tr>
+<td>SV</td>
+<td>Signed 64-bit Very Long</td>
+<td></td>
+<td>Signed 64-bit integer</td>
+<td>binary</td>
+</tr>
+<tr>
+<td>TM</td>
+<td>Time</td>
+<td></td>
+<td>A time in the format HHMMSS.FFFFFF</td>
+<td>date_time</td>
+</tr>
+<tr>
+<td>UC</td>
+<td>Unlimited Characters</td>
+<td></td>
+<td>A character string of unlimited length</td>
+<td>string</td>
+</tr>
+<tr>
+<td>UI</td>
+<td>Unique Identifier (UID)</td>
+<td></td>
+<td>A string of numeric components separated by periods, up to 64 characters, used for UIDs such as SOP Instance UIDs and transfer syntax UIDs</td>
+<td>string</td>
+</tr>
+<tr>
+<td>UL</td>
+<td>Unsigned Long</td>
+<td></td>
+<td>Unsigned 32-bit integer</td>
+<td>binary</td>
+</tr>
+<tr>
+<td>UN</td>
+<td>Unknown</td>
+<td></td>
+<td>An octet stream whose encoding of the contents is unknown</td>
+<td>binary</td>
+</tr>
+<tr>
+<td>UR</td>
+<td>Universal Resource Identifier or Universal Resource Locator (URI/URL)</td>
+<td></td>
+<td>A string identifying a URI or URL as defined in RFC 3986</td>
+<td>string</td>
+</tr>
+<tr>
+<td>US</td>
+<td>Unsigned Short</td>
+<td></td>
+<td>Unsigned 16-bit integer</td>
+<td>binary</td>
+</tr>
+<tr>
+<td>UT</td>
+<td>Unlimited Text</td>
+<td></td>
+<td>A character string that may contain one or more paragraphs, of unlimited length</td>
+<td>text</td>
+</tr>
+<tr>
+<td>UV</td>
+<td>Unsigned 64-bit Very Long</td>
+<td></td>
+<td>Unsigned 64-bit integer</td>
+<td>binary</td>
+</tr>
+</tbody>
+</table>
 <h2 id="slots">Slots</h2>
 <table>
 <thead>
@@ -714,11 +971,15 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../protein/">protein</a></td>
-<td>Proteins and protein complexes</td>
+<td><a href="../dicom_value_representation/">dicom_value_representation</a></td>
+<td>The DICOM Value Representation (VR) of an attribute</td>
 </tr>
 </tbody>
 </table>
+<h2 id="see-also">See Also</h2>
+<ul>
+<li><a href="https://dicom.nema.org/medical/dicom/current/output/chtml/part05/sect_6.2.html">https://dicom.nema.org/medical/dicom/current/output/chtml/part05/sect_6.2.html</a></li>
+</ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
@@ -727,24 +988,305 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
-<pre><code class="language-yaml">name: Protein
+<pre><code class="language-yaml">name: DICOMValueRepresentationEnum
 instantiates:
 - valuesets_meta:ValueSetEnumDefinition
-description: Proteins and protein complexes
-title: Protein
+description: The Value Representations (VRs) defined in DICOM PS3.5 Section 6.2, which
+  specify the data type and format of the value of a data element. Tag validation
+  tools check that each attribute is encoded with the VR required by the data dictionary.
+  Permissible values are the two-letter DICOM VR codes.
+title: DICOM Value Representation
 from_schema: https://w3id.org/valuesets
+see_also:
+- https://dicom.nema.org/medical/dicom/current/output/chtml/part05/sect_6.2.html
 contributors:
 - orcid:0000-0002-6601-2165
 - https://github.com/anthropics/claude-code
 status: DRAFT
 rank: 1000
-reachable_from:
-  source_ontology: obo:pr
-  source_nodes:
-  - PR:000000001
-  relationship_types:
-  - rdfs:subClassOf
-  include_self: true
+permissible_values:
+  AE:
+    text: AE
+    description: A string identifying an Application Entity; 16 bytes maximum
+    annotations:
+      category:
+        tag: category
+        value: string
+    title: Application Entity
+  AS:
+    text: AS
+    description: Age in the format nnnD, nnnW, nnnM or nnnY (days, weeks, months,
+      years)
+    annotations:
+      category:
+        tag: category
+        value: string
+    title: Age String
+  AT:
+    text: AT
+    description: An ordered pair of 16-bit unsigned integers that is the value of
+      a data element tag
+    annotations:
+      category:
+        tag: category
+        value: binary
+    title: Attribute Tag
+  CS:
+    text: CS
+    description: A string identifying a controlled concept; uppercase letters, digits,
+      space and underscore, 16 bytes maximum
+    annotations:
+      category:
+        tag: category
+        value: string
+    title: Code String
+  DA:
+    text: DA
+    description: A date in the format YYYYMMDD
+    annotations:
+      category:
+        tag: category
+        value: date_time
+    title: Date
+  DS:
+    text: DS
+    description: A string representing a fixed point or floating point number
+    annotations:
+      category:
+        tag: category
+        value: string
+    title: Decimal String
+  DT:
+    text: DT
+    description: A concatenated date-time string of the form YYYYMMDDHHMMSS.FFFFFF&amp;ZZXX
+    annotations:
+      category:
+        tag: category
+        value: date_time
+    title: Date Time
+  FL:
+    text: FL
+    description: Single precision IEEE 754 binary32 floating point value
+    annotations:
+      category:
+        tag: category
+        value: binary
+    title: Floating Point Single
+  FD:
+    text: FD
+    description: Double precision IEEE 754 binary64 floating point value
+    annotations:
+      category:
+        tag: category
+        value: binary
+    title: Floating Point Double
+  IS:
+    text: IS
+    description: A string representing a base-10 integer
+    annotations:
+      category:
+        tag: category
+        value: string
+    title: Integer String
+  LO:
+    text: LO
+    description: A character string of up to 64 characters
+    annotations:
+      category:
+        tag: category
+        value: string
+    title: Long String
+  LT:
+    text: LT
+    description: A character string that may contain one or more paragraphs, up to
+      10240 characters
+    annotations:
+      category:
+        tag: category
+        value: text
+    title: Long Text
+  OB:
+    text: OB
+    description: An octet stream whose encoding is specified by the negotiated transfer
+      syntax
+    annotations:
+      category:
+        tag: category
+        value: binary
+    title: Other Byte
+  OD:
+    text: OD
+    description: A stream of IEEE 754 binary64 values
+    annotations:
+      category:
+        tag: category
+        value: binary
+    title: Other Double
+  OF:
+    text: OF
+    description: A stream of IEEE 754 binary32 values
+    annotations:
+      category:
+        tag: category
+        value: binary
+    title: Other Float
+  OL:
+    text: OL
+    description: A stream of 32-bit words
+    annotations:
+      category:
+        tag: category
+        value: binary
+    title: Other Long
+  OV:
+    text: OV
+    description: A stream of 64-bit words
+    annotations:
+      category:
+        tag: category
+        value: binary
+    title: Other 64-bit Very Long
+  OW:
+    text: OW
+    description: A stream of 16-bit words; commonly used for Pixel Data
+    annotations:
+      category:
+        tag: category
+        value: binary
+    title: Other Word
+  PN:
+    text: PN
+    description: A character string encoded using a five-component convention (family,
+      given, middle, prefix, suffix)
+    annotations:
+      category:
+        tag: category
+        value: string
+    title: Person Name
+  SH:
+    text: SH
+    description: A character string of up to 16 characters
+    annotations:
+      category:
+        tag: category
+        value: string
+    title: Short String
+  SL:
+    text: SL
+    description: Signed 32-bit two's complement integer
+    annotations:
+      category:
+        tag: category
+        value: binary
+    title: Signed Long
+  SQ:
+    text: SQ
+    description: A sequence of zero or more items, each of which is a nested data
+      set
+    annotations:
+      category:
+        tag: category
+        value: sequence
+    title: Sequence of Items
+  SS:
+    text: SS
+    description: Signed 16-bit two's complement integer
+    annotations:
+      category:
+        tag: category
+        value: binary
+    title: Signed Short
+  ST:
+    text: ST
+    description: A character string that may contain one or more paragraphs, up to
+      1024 characters
+    annotations:
+      category:
+        tag: category
+        value: text
+    title: Short Text
+  SV:
+    text: SV
+    description: Signed 64-bit integer
+    annotations:
+      category:
+        tag: category
+        value: binary
+    title: Signed 64-bit Very Long
+  TM:
+    text: TM
+    description: A time in the format HHMMSS.FFFFFF
+    annotations:
+      category:
+        tag: category
+        value: date_time
+    title: Time
+  UC:
+    text: UC
+    description: A character string of unlimited length
+    annotations:
+      category:
+        tag: category
+        value: string
+    title: Unlimited Characters
+  UI:
+    text: UI
+    description: A string of numeric components separated by periods, up to 64 characters,
+      used for UIDs such as SOP Instance UIDs and transfer syntax UIDs
+    annotations:
+      category:
+        tag: category
+        value: string
+    title: Unique Identifier (UID)
+  UL:
+    text: UL
+    description: Unsigned 32-bit integer
+    annotations:
+      category:
+        tag: category
+        value: binary
+    title: Unsigned Long
+  UN:
+    text: UN
+    description: An octet stream whose encoding of the contents is unknown
+    annotations:
+      category:
+        tag: category
+        value: binary
+    title: Unknown
+  UR:
+    text: UR
+    description: A string identifying a URI or URL as defined in RFC 3986
+    annotations:
+      category:
+        tag: category
+        value: string
+    title: Universal Resource Identifier or Universal Resource Locator (URI/URL)
+  US:
+    text: US
+    description: Unsigned 16-bit integer
+    annotations:
+      category:
+        tag: category
+        value: binary
+    title: Unsigned Short
+  UT:
+    text: UT
+    description: A character string that may contain one or more paragraphs, of unlimited
+      length
+    annotations:
+      category:
+        tag: category
+        value: text
+    title: Unlimited Text
+  UV:
+    text: UV
+    description: Unsigned 64-bit integer
+    annotations:
+      category:
+        tag: category
+        value: binary
+    title: Unsigned 64-bit Very Long
 
 </code></pre>
 

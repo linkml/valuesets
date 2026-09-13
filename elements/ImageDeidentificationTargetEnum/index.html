@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://linkml.github.io/valuesets/elements/Protein/">
+        <link rel="canonical" href="https://linkml.github.io/valuesets/elements/ImageDeidentificationTargetEnum/">
       
       
       
@@ -18,7 +18,7 @@
     
     
       
-        <title>Enum: Protein - valuesets</title>
+        <title>Enum: ImageDeidentificationTargetEnum - valuesets</title>
       
     
     
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#enum-protein" class="md-skip">
+        <a href="#enum-imagedeidentificationtargetenum" class="md-skip">
           Skip to content
         </a>
       
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Enum: Protein
+              Enum: ImageDeidentificationTargetEnum
             
           </span>
         </div>
@@ -625,9 +625,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#dynamic-enum-query" class="md-nav__link">
+  <a href="#permissible-values" class="md-nav__link">
     <span class="md-ellipsis">
-      Dynamic Enum Query
+      Permissible Values
     </span>
   </a>
   
@@ -694,16 +694,61 @@
   
 
 
-<h1 id="enum-protein">Enum: Protein</h1>
-<p><em>Proteins and protein complexes</em></p>
-<p>URI: <a href="https://w3id.org/valuesets/Protein">valuesets:Protein</a></p>
+<h1 id="enum-imagedeidentificationtargetenum">Enum: ImageDeidentificationTargetEnum</h1>
+<p><em>The components of a medical imaging object that can carry identifying information and therefore need to be addressed by a de-identification workflow. A workflow first assesses whether an image requires pixel-level (face or head) de-identification or only metadata de-identification.</em></p>
+<p>URI: <a href="https://w3id.org/valuesets/ImageDeidentificationTargetEnum">valuesets:ImageDeidentificationTargetEnum</a></p>
 <!-- bioportal-link -->
-<p><a href="https://bioportal.bioontology.org/ontologies/VALUESETS?p=classes&amp;conceptid=https%3A%2F%2Fw3id.org%2Fvaluesets%2FProtein">View in BioPortal</a></p>
-<p><em>This is a dynamic enum</em></p>
-<h2 id="dynamic-enum-query">Dynamic Enum Query</h2>
-<p>This value set is dynamically populated from an ontology.</p>
-<p><strong>Query:</strong> <a href="http://purl.obolibrary.org/obo/PR_000000001">protein</a> and subclasses</p>
-<p><strong>Prefixes used:</strong> <code>PR, obo, rdfs</code></p>
+<p><a href="https://bioportal.bioontology.org/ontologies/VALUESETS?p=classes&amp;conceptid=https%3A%2F%2Fw3id.org%2Fvaluesets%2FImageDeidentificationTargetEnum">View in BioPortal</a></p>
+<h2 id="permissible-values">Permissible Values</h2>
+<!-- annotations-table -->
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Title</th>
+<th>Meaning</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HEADER_METADATA</td>
+<td>Header metadata</td>
+<td></td>
+<td>Standard DICOM attributes such as patient name, identifiers, birth date and study dates</td>
+</tr>
+<tr>
+<td>PRIVATE_ATTRIBUTES</td>
+<td>Private attributes</td>
+<td></td>
+<td>Vendor-specific private tags that may contain identifying information and are not covered by the standard attribute list</td>
+</tr>
+<tr>
+<td>BURNED_IN_ANNOTATION</td>
+<td>Burned-in annotation</td>
+<td></td>
+<td>Text or graphics rendered into the pixel data, common in ultrasound, secondary capture and screenshots</td>
+</tr>
+<tr>
+<td>FACIAL_FEATURES</td>
+<td>Facial features</td>
+<td></td>
+<td>Facial surface anatomy reconstructable from volumetric head CT or MRI pixel data, or visible in photographs and video</td>
+</tr>
+<tr>
+<td>UNIQUE_IDENTIFIERS</td>
+<td>Unique identifiers</td>
+<td></td>
+<td>Study, series and instance UIDs and accession numbers that can link an instance back to the source system</td>
+</tr>
+<tr>
+<td>STRUCTURED_CONTENT</td>
+<td>Structured content</td>
+<td></td>
+<td>Identifying content in structured reports, overlays, presentation states and embedded documents</td>
+</tr>
+</tbody>
+</table>
 <h2 id="slots">Slots</h2>
 <table>
 <thead>
@@ -714,8 +759,8 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../protein/">protein</a></td>
-<td>Proteins and protein complexes</td>
+<td><a href="../image_deidentification_target/">image_deidentification_target</a></td>
+<td>The part of an imaging object from which identifying information is removed</td>
 </tr>
 </tbody>
 </table>
@@ -727,24 +772,51 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
-<pre><code class="language-yaml">name: Protein
+<pre><code class="language-yaml">name: ImageDeidentificationTargetEnum
 instantiates:
 - valuesets_meta:ValueSetEnumDefinition
-description: Proteins and protein complexes
-title: Protein
+description: The components of a medical imaging object that can carry identifying
+  information and therefore need to be addressed by a de-identification workflow.
+  A workflow first assesses whether an image requires pixel-level (face or head) de-identification
+  or only metadata de-identification.
+title: Image De-identification Target
 from_schema: https://w3id.org/valuesets
 contributors:
 - orcid:0000-0002-6601-2165
 - https://github.com/anthropics/claude-code
 status: DRAFT
 rank: 1000
-reachable_from:
-  source_ontology: obo:pr
-  source_nodes:
-  - PR:000000001
-  relationship_types:
-  - rdfs:subClassOf
-  include_self: true
+permissible_values:
+  HEADER_METADATA:
+    text: HEADER_METADATA
+    description: Standard DICOM attributes such as patient name, identifiers, birth
+      date and study dates
+    title: Header metadata
+  PRIVATE_ATTRIBUTES:
+    text: PRIVATE_ATTRIBUTES
+    description: Vendor-specific private tags that may contain identifying information
+      and are not covered by the standard attribute list
+    title: Private attributes
+  BURNED_IN_ANNOTATION:
+    text: BURNED_IN_ANNOTATION
+    description: Text or graphics rendered into the pixel data, common in ultrasound,
+      secondary capture and screenshots
+    title: Burned-in annotation
+  FACIAL_FEATURES:
+    text: FACIAL_FEATURES
+    description: Facial surface anatomy reconstructable from volumetric head CT or
+      MRI pixel data, or visible in photographs and video
+    title: Facial features
+  UNIQUE_IDENTIFIERS:
+    text: UNIQUE_IDENTIFIERS
+    description: Study, series and instance UIDs and accession numbers that can link
+      an instance back to the source system
+    title: Unique identifiers
+  STRUCTURED_CONTENT:
+    text: STRUCTURED_CONTENT
+    description: Identifying content in structured reports, overlays, presentation
+      states and embedded documents
+    title: Structured content
 
 </code></pre>
 

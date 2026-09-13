@@ -1,0 +1,1618 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://linkml.github.io/valuesets/elements/DICOMTransferSyntaxEnum/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Enum: DICOMTransferSyntaxEnum - valuesets</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/ansi-colours.css">
+    
+      <link rel="stylesheet" href="../../css/jupyter-cells.css">
+    
+      <link rel="stylesheet" href="../../css/pandas-dataframe.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#enum-dicomtransfersyntaxenum" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="valuesets" class="md-header__button md-logo" aria-label="valuesets" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            valuesets
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Enum: DICOMTransferSyntaxEnum
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/linkml/valuesets" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="valuesets" class="md-nav__button md-logo" aria-label="valuesets" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    valuesets
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/linkml/valuesets" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Schema
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../governance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Governance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    How-To Guides
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            How-To Guides
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to-guides/agentic-ide-support/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Using Common Value Sets with Agentic IDE Support via Context7 MCP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to-guides/dynamic-valuesets-validation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dynamic Value Sets and Validation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to-guides/sync-uniprot-species/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    How to Sync UniProt Species Data
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slot-generation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Slot Generation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Views
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Views
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../views/genesis-mission/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DOE Genesis Mission
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../views/microbial-ecology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Microbial Ecology
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../views/rare-disease/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Rare Disease
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../views/lab-automation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab Automation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slides/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Slides
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    About
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#permissible-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      Permissible Values
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slots" class="md-nav__link">
+    <span class="md-ellipsis">
+      Slots
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      See Also
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#identifier-and-mapping-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      Identifier and Mapping Information
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Identifier and Mapping Information">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#schema-source" class="md-nav__link">
+    <span class="md-ellipsis">
+      Schema Source
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linkml-source" class="md-nav__link">
+    <span class="md-ellipsis">
+      LinkML Source
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="enum-dicomtransfersyntaxenum">Enum: DICOMTransferSyntaxEnum</h1>
+<p><em>Transfer syntaxes registered in DICOM PS3.6 Annex A that define the byte ordering, VR encoding and pixel data compression of a DICOM data set. Pixel data validation includes confirming that decompression from a lossy or lossless transfer syntax yields the expected bit depth and that no unintended data loss occurred. Video transfer syntaxes (MPEG-2, H.264, HEVC) are used for endoscopy and ultrasound cine acquisitions. Fragmentable variants of the MPEG transfer syntaxes and retired JPEG processes are omitted; the full registry is at the see_also link.</em></p>
+<p>URI: <a href="https://w3id.org/valuesets/DICOMTransferSyntaxEnum">valuesets:DICOMTransferSyntaxEnum</a></p>
+<!-- bioportal-link -->
+<p><a href="https://bioportal.bioontology.org/ontologies/VALUESETS?p=classes&amp;conceptid=https%3A%2F%2Fw3id.org%2Fvaluesets%2FDICOMTransferSyntaxEnum">View in BioPortal</a></p>
+<h2 id="permissible-values">Permissible Values</h2>
+<!-- annotations-table -->
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Title</th>
+<th>Meaning</th>
+<th>Description</th>
+<th>Compression</th>
+<th>Media</th>
+<th>Retired</th>
+<th>Uid</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IMPLICIT_VR_LITTLE_ENDIAN</td>
+<td>Implicit VR Little Endian</td>
+<td></td>
+<td>Default transfer syntax for DICOM; VRs are looked up from the data dictionary rather than encoded</td>
+<td>none</td>
+<td></td>
+<td></td>
+<td>1.2.840.10008.1.2</td>
+</tr>
+<tr>
+<td>EXPLICIT_VR_LITTLE_ENDIAN</td>
+<td>Explicit VR Little Endian</td>
+<td></td>
+<td>Uncompressed encoding with VRs explicitly encoded in each data element</td>
+<td>none</td>
+<td></td>
+<td></td>
+<td>1.2.840.10008.1.2.1</td>
+</tr>
+<tr>
+<td>ENCAPSULATED_UNCOMPRESSED_EXPLICIT_VR_LITTLE_ENDIAN</td>
+<td>Encapsulated Uncompressed Explicit VR Little Endian</td>
+<td></td>
+<td>Uncompressed pixel data encapsulated in fragments, one per frame</td>
+<td>none</td>
+<td></td>
+<td></td>
+<td>1.2.840.10008.1.2.1.98</td>
+</tr>
+<tr>
+<td>DEFLATED_EXPLICIT_VR_LITTLE_ENDIAN</td>
+<td>Deflated Explicit VR Little Endian</td>
+<td></td>
+<td>Explicit VR Little Endian data set compressed as a whole with the deflate algorithm</td>
+<td>lossless</td>
+<td></td>
+<td></td>
+<td>1.2.840.10008.1.2.1.99</td>
+</tr>
+<tr>
+<td>EXPLICIT_VR_BIG_ENDIAN</td>
+<td>Explicit VR Big Endian (Retired)</td>
+<td></td>
+<td>Big endian byte ordering with explicit VRs; retired but still encountered in legacy archives</td>
+<td>none</td>
+<td></td>
+<td>true</td>
+<td>1.2.840.10008.1.2.2</td>
+</tr>
+<tr>
+<td>JPEG_BASELINE_PROCESS_1</td>
+<td>JPEG Baseline (Process 1)</td>
+<td></td>
+<td>Default transfer syntax for lossy JPEG 8-bit image compression</td>
+<td>lossy</td>
+<td></td>
+<td></td>
+<td>1.2.840.10008.1.2.4.50</td>
+</tr>
+<tr>
+<td>JPEG_EXTENDED_PROCESS_2_4</td>
+<td>JPEG Extended (Process 2 &amp; 4)</td>
+<td></td>
+<td>Default transfer syntax for lossy JPEG 12-bit image compression (Process 4 only)</td>
+<td>lossy</td>
+<td></td>
+<td></td>
+<td>1.2.840.10008.1.2.4.51</td>
+</tr>
+<tr>
+<td>JPEG_LOSSLESS_PROCESS_14</td>
+<td>JPEG Lossless, Non-Hierarchical (Process 14)</td>
+<td></td>
+<td>Lossless JPEG compression using any predictor</td>
+<td>lossless</td>
+<td></td>
+<td></td>
+<td>1.2.840.10008.1.2.4.57</td>
+</tr>
+<tr>
+<td>JPEG_LOSSLESS_PROCESS_14_SV1</td>
+<td>JPEG Lossless, Non-Hierarchical, First-Order Prediction (Process 14 [Selection Value 1])</td>
+<td></td>
+<td>Default transfer syntax for lossless JPEG image compression</td>
+<td>lossless</td>
+<td></td>
+<td></td>
+<td>1.2.840.10008.1.2.4.70</td>
+</tr>
+<tr>
+<td>JPEG_LS_LOSSLESS</td>
+<td>JPEG-LS Lossless Image Compression</td>
+<td></td>
+<td>Lossless compression using the JPEG-LS (ISO 14495) algorithm</td>
+<td>lossless</td>
+<td></td>
+<td></td>
+<td>1.2.840.10008.1.2.4.80</td>
+</tr>
+<tr>
+<td>JPEG_LS_NEAR_LOSSLESS</td>
+<td>JPEG-LS Lossy (Near-Lossless) Image Compression</td>
+<td></td>
+<td>Near-lossless JPEG-LS compression with a bounded per-pixel error</td>
+<td>lossy</td>
+<td></td>
+<td></td>
+<td>1.2.840.10008.1.2.4.81</td>
+</tr>
+<tr>
+<td>JPEG_2000_LOSSLESS_ONLY</td>
+<td>JPEG 2000 Image Compression (Lossless Only)</td>
+<td></td>
+<td>JPEG 2000 wavelet compression restricted to reversible (lossless) mode</td>
+<td>lossless</td>
+<td></td>
+<td></td>
+<td>1.2.840.10008.1.2.4.90</td>
+</tr>
+<tr>
+<td>JPEG_2000</td>
+<td>JPEG 2000 Image Compression</td>
+<td></td>
+<td>JPEG 2000 wavelet compression, lossy or lossless</td>
+<td>lossy or lossless</td>
+<td></td>
+<td></td>
+<td>1.2.840.10008.1.2.4.91</td>
+</tr>
+<tr>
+<td>JPEG_2000_MULTICOMPONENT_LOSSLESS_ONLY</td>
+<td>JPEG 2000 Part 2 Multi-component Image Compression (Lossless Only)</td>
+<td></td>
+<td>JPEG 2000 Part 2 multi-component transform, reversible mode only</td>
+<td>lossless</td>
+<td></td>
+<td></td>
+<td>1.2.840.10008.1.2.4.92</td>
+</tr>
+<tr>
+<td>JPEG_2000_MULTICOMPONENT</td>
+<td>JPEG 2000 Part 2 Multi-component Image Compression</td>
+<td></td>
+<td>JPEG 2000 Part 2 multi-component transform, lossy or lossless</td>
+<td>lossy or lossless</td>
+<td></td>
+<td></td>
+<td>1.2.840.10008.1.2.4.93</td>
+</tr>
+<tr>
+<td>JPIP_REFERENCED</td>
+<td>JPIP Referenced</td>
+<td></td>
+<td>Pixel data referenced via a JPEG 2000 Interactive Protocol URL rather than encoded in the data set</td>
+<td>referenced</td>
+<td></td>
+<td></td>
+<td>1.2.840.10008.1.2.4.94</td>
+</tr>
+<tr>
+<td>JPIP_REFERENCED_DEFLATE</td>
+<td>JPIP Referenced Deflate</td>
+<td></td>
+<td>JPIP referenced pixel data with the remaining data set deflated</td>
+<td>referenced</td>
+<td></td>
+<td></td>
+<td>1.2.840.10008.1.2.4.95</td>
+</tr>
+<tr>
+<td>MPEG2_MAIN_PROFILE_MAIN_LEVEL</td>
+<td>MPEG2 Main Profile / Main Level</td>
+<td></td>
+<td>MPEG-2 video compression for standard definition video</td>
+<td>lossy</td>
+<td>video</td>
+<td></td>
+<td>1.2.840.10008.1.2.4.100</td>
+</tr>
+<tr>
+<td>MPEG2_MAIN_PROFILE_HIGH_LEVEL</td>
+<td>MPEG2 Main Profile / High Level</td>
+<td></td>
+<td>MPEG-2 video compression for high definition video</td>
+<td>lossy</td>
+<td>video</td>
+<td></td>
+<td>1.2.840.10008.1.2.4.101</td>
+</tr>
+<tr>
+<td>MPEG4_AVC_H264_HIGH_PROFILE_LEVEL_4_1</td>
+<td>MPEG-4 AVC/H.264 High Profile / Level 4.1</td>
+<td></td>
+<td>H.264 video compression for high definition video</td>
+<td>lossy</td>
+<td>video</td>
+<td></td>
+<td>1.2.840.10008.1.2.4.102</td>
+</tr>
+<tr>
+<td>MPEG4_AVC_H264_BD_COMPATIBLE_HIGH_PROFILE_LEVEL_4_1</td>
+<td>MPEG-4 AVC/H.264 BD-compatible High Profile / Level 4.1</td>
+<td></td>
+<td>H.264 video compression constrained for Blu-ray Disc compatibility</td>
+<td>lossy</td>
+<td>video</td>
+<td></td>
+<td>1.2.840.10008.1.2.4.103</td>
+</tr>
+<tr>
+<td>MPEG4_AVC_H264_HIGH_PROFILE_LEVEL_4_2_2D</td>
+<td>MPEG-4 AVC/H.264 High Profile / Level 4.2 For 2D Video</td>
+<td></td>
+<td>H.264 video compression for 2D video at higher frame rates and resolutions</td>
+<td>lossy</td>
+<td>video</td>
+<td></td>
+<td>1.2.840.10008.1.2.4.104</td>
+</tr>
+<tr>
+<td>MPEG4_AVC_H264_HIGH_PROFILE_LEVEL_4_2_3D</td>
+<td>MPEG-4 AVC/H.264 High Profile / Level 4.2 For 3D Video</td>
+<td></td>
+<td>H.264 video compression for 3D (stereoscopic) video</td>
+<td>lossy</td>
+<td>video</td>
+<td></td>
+<td>1.2.840.10008.1.2.4.105</td>
+</tr>
+<tr>
+<td>MPEG4_AVC_H264_STEREO_HIGH_PROFILE_LEVEL_4_2</td>
+<td>MPEG-4 AVC/H.264 Stereo High Profile / Level 4.2</td>
+<td></td>
+<td>H.264 stereo high profile for stereoscopic video</td>
+<td>lossy</td>
+<td>video</td>
+<td></td>
+<td>1.2.840.10008.1.2.4.106</td>
+</tr>
+<tr>
+<td>HEVC_H265_MAIN_PROFILE_LEVEL_5_1</td>
+<td>HEVC/H.265 Main Profile / Level 5.1</td>
+<td></td>
+<td>HEVC video compression with 8-bit samples</td>
+<td>lossy</td>
+<td>video</td>
+<td></td>
+<td>1.2.840.10008.1.2.4.107</td>
+</tr>
+<tr>
+<td>HEVC_H265_MAIN_10_PROFILE_LEVEL_5_1</td>
+<td>HEVC/H.265 Main 10 Profile / Level 5.1</td>
+<td></td>
+<td>HEVC video compression with 10-bit samples</td>
+<td>lossy</td>
+<td>video</td>
+<td></td>
+<td>1.2.840.10008.1.2.4.108</td>
+</tr>
+<tr>
+<td>JPEG_XL_LOSSLESS</td>
+<td>JPEG XL Lossless</td>
+<td></td>
+<td>JPEG XL compression restricted to lossless mode</td>
+<td>lossless</td>
+<td></td>
+<td></td>
+<td>1.2.840.10008.1.2.4.110</td>
+</tr>
+<tr>
+<td>JPEG_XL_JPEG_RECOMPRESSION</td>
+<td>JPEG XL JPEG Recompression</td>
+<td></td>
+<td>Lossless recompression of existing JPEG codestreams using JPEG XL</td>
+<td>lossless</td>
+<td></td>
+<td></td>
+<td>1.2.840.10008.1.2.4.111</td>
+</tr>
+<tr>
+<td>JPEG_XL</td>
+<td>JPEG XL</td>
+<td></td>
+<td>JPEG XL compression, lossy or lossless</td>
+<td>lossy or lossless</td>
+<td></td>
+<td></td>
+<td>1.2.840.10008.1.2.4.112</td>
+</tr>
+<tr>
+<td>HTJ2K_LOSSLESS_ONLY</td>
+<td>High-Throughput JPEG 2000 Image Compression (Lossless Only)</td>
+<td></td>
+<td>High-throughput JPEG 2000 (Part 15) restricted to lossless mode</td>
+<td>lossless</td>
+<td></td>
+<td></td>
+<td>1.2.840.10008.1.2.4.201</td>
+</tr>
+<tr>
+<td>HTJ2K_RPCL_LOSSLESS_ONLY</td>
+<td>High-Throughput JPEG 2000 with RPCL Options Image Compression (Lossless Only)</td>
+<td></td>
+<td>Lossless high-throughput JPEG 2000 with resolution-position-component-layer progression for progressive decoding</td>
+<td>lossless</td>
+<td></td>
+<td></td>
+<td>1.2.840.10008.1.2.4.202</td>
+</tr>
+<tr>
+<td>HTJ2K</td>
+<td>High-Throughput JPEG 2000 Image Compression</td>
+<td></td>
+<td>High-throughput JPEG 2000, lossy or lossless</td>
+<td>lossy or lossless</td>
+<td></td>
+<td></td>
+<td>1.2.840.10008.1.2.4.203</td>
+</tr>
+<tr>
+<td>RLE_LOSSLESS</td>
+<td>RLE Lossless</td>
+<td></td>
+<td>Run-length encoded lossless compression, widely used for ultrasound</td>
+<td>lossless</td>
+<td></td>
+<td></td>
+<td>1.2.840.10008.1.2.5</td>
+</tr>
+<tr>
+<td>SMPTE_ST_2110_20_UNCOMPRESSED_PROGRESSIVE_VIDEO</td>
+<td>SMPTE ST 2110-20 Uncompressed Progressive Active Video</td>
+<td></td>
+<td>Uncompressed progressive video streamed per SMPTE ST 2110-20, used in real-time video communication</td>
+<td>none</td>
+<td>video</td>
+<td></td>
+<td>1.2.840.10008.1.2.7.1</td>
+</tr>
+<tr>
+<td>SMPTE_ST_2110_20_UNCOMPRESSED_INTERLACED_VIDEO</td>
+<td>SMPTE ST 2110-20 Uncompressed Interlaced Active Video</td>
+<td></td>
+<td>Uncompressed interlaced video streamed per SMPTE ST 2110-20</td>
+<td>none</td>
+<td>video</td>
+<td></td>
+<td>1.2.840.10008.1.2.7.2</td>
+</tr>
+</tbody>
+</table>
+<h2 id="slots">Slots</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../dicom_transfer_syntax/">dicom_transfer_syntax</a></td>
+<td>The DICOM transfer syntax used to encode a data set or its pixel data</td>
+</tr>
+</tbody>
+</table>
+<h2 id="see-also">See Also</h2>
+<ul>
+<li><a href="https://dicom.nema.org/medical/dicom/current/output/chtml/part06/chapter_A.html">https://dicom.nema.org/medical/dicom/current/output/chtml/part06/chapter_A.html</a></li>
+</ul>
+<h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
+<h3 id="schema-source">Schema Source</h3>
+<ul>
+<li>from schema: https://w3id.org/valuesets</li>
+</ul>
+<h2 id="linkml-source">LinkML Source</h2>
+<details>
+
+<pre><code class="language-yaml">name: DICOMTransferSyntaxEnum
+instantiates:
+- valuesets_meta:ValueSetEnumDefinition
+description: Transfer syntaxes registered in DICOM PS3.6 Annex A that define the byte
+  ordering, VR encoding and pixel data compression of a DICOM data set. Pixel data
+  validation includes confirming that decompression from a lossy or lossless transfer
+  syntax yields the expected bit depth and that no unintended data loss occurred.
+  Video transfer syntaxes (MPEG-2, H.264, HEVC) are used for endoscopy and ultrasound
+  cine acquisitions. Fragmentable variants of the MPEG transfer syntaxes and retired
+  JPEG processes are omitted; the full registry is at the see_also link.
+title: DICOM Transfer Syntax
+from_schema: https://w3id.org/valuesets
+see_also:
+- https://dicom.nema.org/medical/dicom/current/output/chtml/part06/chapter_A.html
+contributors:
+- orcid:0000-0002-6601-2165
+- https://github.com/anthropics/claude-code
+status: DRAFT
+rank: 1000
+permissible_values:
+  IMPLICIT_VR_LITTLE_ENDIAN:
+    text: IMPLICIT_VR_LITTLE_ENDIAN
+    description: Default transfer syntax for DICOM; VRs are looked up from the data
+      dictionary rather than encoded
+    annotations:
+      uid:
+        tag: uid
+        value: 1.2.840.10008.1.2
+      compression:
+        tag: compression
+        value: none
+    title: Implicit VR Little Endian
+  EXPLICIT_VR_LITTLE_ENDIAN:
+    text: EXPLICIT_VR_LITTLE_ENDIAN
+    description: Uncompressed encoding with VRs explicitly encoded in each data element
+    annotations:
+      uid:
+        tag: uid
+        value: 1.2.840.10008.1.2.1
+      compression:
+        tag: compression
+        value: none
+    title: Explicit VR Little Endian
+  ENCAPSULATED_UNCOMPRESSED_EXPLICIT_VR_LITTLE_ENDIAN:
+    text: ENCAPSULATED_UNCOMPRESSED_EXPLICIT_VR_LITTLE_ENDIAN
+    description: Uncompressed pixel data encapsulated in fragments, one per frame
+    annotations:
+      uid:
+        tag: uid
+        value: 1.2.840.10008.1.2.1.98
+      compression:
+        tag: compression
+        value: none
+    title: Encapsulated Uncompressed Explicit VR Little Endian
+  DEFLATED_EXPLICIT_VR_LITTLE_ENDIAN:
+    text: DEFLATED_EXPLICIT_VR_LITTLE_ENDIAN
+    description: Explicit VR Little Endian data set compressed as a whole with the
+      deflate algorithm
+    annotations:
+      uid:
+        tag: uid
+        value: 1.2.840.10008.1.2.1.99
+      compression:
+        tag: compression
+        value: lossless
+    title: Deflated Explicit VR Little Endian
+  EXPLICIT_VR_BIG_ENDIAN:
+    text: EXPLICIT_VR_BIG_ENDIAN
+    description: Big endian byte ordering with explicit VRs; retired but still encountered
+      in legacy archives
+    annotations:
+      uid:
+        tag: uid
+        value: 1.2.840.10008.1.2.2
+      compression:
+        tag: compression
+        value: none
+      retired:
+        tag: retired
+        value: 'true'
+    title: Explicit VR Big Endian (Retired)
+  JPEG_BASELINE_PROCESS_1:
+    text: JPEG_BASELINE_PROCESS_1
+    description: Default transfer syntax for lossy JPEG 8-bit image compression
+    annotations:
+      uid:
+        tag: uid
+        value: 1.2.840.10008.1.2.4.50
+      compression:
+        tag: compression
+        value: lossy
+    title: JPEG Baseline (Process 1)
+  JPEG_EXTENDED_PROCESS_2_4:
+    text: JPEG_EXTENDED_PROCESS_2_4
+    description: Default transfer syntax for lossy JPEG 12-bit image compression (Process
+      4 only)
+    annotations:
+      uid:
+        tag: uid
+        value: 1.2.840.10008.1.2.4.51
+      compression:
+        tag: compression
+        value: lossy
+    title: JPEG Extended (Process 2 &amp; 4)
+  JPEG_LOSSLESS_PROCESS_14:
+    text: JPEG_LOSSLESS_PROCESS_14
+    description: Lossless JPEG compression using any predictor
+    annotations:
+      uid:
+        tag: uid
+        value: 1.2.840.10008.1.2.4.57
+      compression:
+        tag: compression
+        value: lossless
+    title: JPEG Lossless, Non-Hierarchical (Process 14)
+  JPEG_LOSSLESS_PROCESS_14_SV1:
+    text: JPEG_LOSSLESS_PROCESS_14_SV1
+    description: Default transfer syntax for lossless JPEG image compression
+    annotations:
+      uid:
+        tag: uid
+        value: 1.2.840.10008.1.2.4.70
+      compression:
+        tag: compression
+        value: lossless
+    title: JPEG Lossless, Non-Hierarchical, First-Order Prediction (Process 14 [Selection
+      Value 1])
+  JPEG_LS_LOSSLESS:
+    text: JPEG_LS_LOSSLESS
+    description: Lossless compression using the JPEG-LS (ISO 14495) algorithm
+    annotations:
+      uid:
+        tag: uid
+        value: 1.2.840.10008.1.2.4.80
+      compression:
+        tag: compression
+        value: lossless
+    title: JPEG-LS Lossless Image Compression
+  JPEG_LS_NEAR_LOSSLESS:
+    text: JPEG_LS_NEAR_LOSSLESS
+    description: Near-lossless JPEG-LS compression with a bounded per-pixel error
+    annotations:
+      uid:
+        tag: uid
+        value: 1.2.840.10008.1.2.4.81
+      compression:
+        tag: compression
+        value: lossy
+    title: JPEG-LS Lossy (Near-Lossless) Image Compression
+  JPEG_2000_LOSSLESS_ONLY:
+    text: JPEG_2000_LOSSLESS_ONLY
+    description: JPEG 2000 wavelet compression restricted to reversible (lossless)
+      mode
+    annotations:
+      uid:
+        tag: uid
+        value: 1.2.840.10008.1.2.4.90
+      compression:
+        tag: compression
+        value: lossless
+    title: JPEG 2000 Image Compression (Lossless Only)
+  JPEG_2000:
+    text: JPEG_2000
+    description: JPEG 2000 wavelet compression, lossy or lossless
+    annotations:
+      uid:
+        tag: uid
+        value: 1.2.840.10008.1.2.4.91
+      compression:
+        tag: compression
+        value: lossy or lossless
+    title: JPEG 2000 Image Compression
+  JPEG_2000_MULTICOMPONENT_LOSSLESS_ONLY:
+    text: JPEG_2000_MULTICOMPONENT_LOSSLESS_ONLY
+    description: JPEG 2000 Part 2 multi-component transform, reversible mode only
+    annotations:
+      uid:
+        tag: uid
+        value: 1.2.840.10008.1.2.4.92
+      compression:
+        tag: compression
+        value: lossless
+    title: JPEG 2000 Part 2 Multi-component Image Compression (Lossless Only)
+  JPEG_2000_MULTICOMPONENT:
+    text: JPEG_2000_MULTICOMPONENT
+    description: JPEG 2000 Part 2 multi-component transform, lossy or lossless
+    annotations:
+      uid:
+        tag: uid
+        value: 1.2.840.10008.1.2.4.93
+      compression:
+        tag: compression
+        value: lossy or lossless
+    title: JPEG 2000 Part 2 Multi-component Image Compression
+  JPIP_REFERENCED:
+    text: JPIP_REFERENCED
+    description: Pixel data referenced via a JPEG 2000 Interactive Protocol URL rather
+      than encoded in the data set
+    annotations:
+      uid:
+        tag: uid
+        value: 1.2.840.10008.1.2.4.94
+      compression:
+        tag: compression
+        value: referenced
+    title: JPIP Referenced
+  JPIP_REFERENCED_DEFLATE:
+    text: JPIP_REFERENCED_DEFLATE
+    description: JPIP referenced pixel data with the remaining data set deflated
+    annotations:
+      uid:
+        tag: uid
+        value: 1.2.840.10008.1.2.4.95
+      compression:
+        tag: compression
+        value: referenced
+    title: JPIP Referenced Deflate
+  MPEG2_MAIN_PROFILE_MAIN_LEVEL:
+    text: MPEG2_MAIN_PROFILE_MAIN_LEVEL
+    description: MPEG-2 video compression for standard definition video
+    annotations:
+      uid:
+        tag: uid
+        value: 1.2.840.10008.1.2.4.100
+      compression:
+        tag: compression
+        value: lossy
+      media:
+        tag: media
+        value: video
+    title: MPEG2 Main Profile / Main Level
+  MPEG2_MAIN_PROFILE_HIGH_LEVEL:
+    text: MPEG2_MAIN_PROFILE_HIGH_LEVEL
+    description: MPEG-2 video compression for high definition video
+    annotations:
+      uid:
+        tag: uid
+        value: 1.2.840.10008.1.2.4.101
+      compression:
+        tag: compression
+        value: lossy
+      media:
+        tag: media
+        value: video
+    title: MPEG2 Main Profile / High Level
+  MPEG4_AVC_H264_HIGH_PROFILE_LEVEL_4_1:
+    text: MPEG4_AVC_H264_HIGH_PROFILE_LEVEL_4_1
+    description: H.264 video compression for high definition video
+    annotations:
+      uid:
+        tag: uid
+        value: 1.2.840.10008.1.2.4.102
+      compression:
+        tag: compression
+        value: lossy
+      media:
+        tag: media
+        value: video
+    title: MPEG-4 AVC/H.264 High Profile / Level 4.1
+  MPEG4_AVC_H264_BD_COMPATIBLE_HIGH_PROFILE_LEVEL_4_1:
+    text: MPEG4_AVC_H264_BD_COMPATIBLE_HIGH_PROFILE_LEVEL_4_1
+    description: H.264 video compression constrained for Blu-ray Disc compatibility
+    annotations:
+      uid:
+        tag: uid
+        value: 1.2.840.10008.1.2.4.103
+      compression:
+        tag: compression
+        value: lossy
+      media:
+        tag: media
+        value: video
+    title: MPEG-4 AVC/H.264 BD-compatible High Profile / Level 4.1
+  MPEG4_AVC_H264_HIGH_PROFILE_LEVEL_4_2_2D:
+    text: MPEG4_AVC_H264_HIGH_PROFILE_LEVEL_4_2_2D
+    description: H.264 video compression for 2D video at higher frame rates and resolutions
+    annotations:
+      uid:
+        tag: uid
+        value: 1.2.840.10008.1.2.4.104
+      compression:
+        tag: compression
+        value: lossy
+      media:
+        tag: media
+        value: video
+    title: MPEG-4 AVC/H.264 High Profile / Level 4.2 For 2D Video
+  MPEG4_AVC_H264_HIGH_PROFILE_LEVEL_4_2_3D:
+    text: MPEG4_AVC_H264_HIGH_PROFILE_LEVEL_4_2_3D
+    description: H.264 video compression for 3D (stereoscopic) video
+    annotations:
+      uid:
+        tag: uid
+        value: 1.2.840.10008.1.2.4.105
+      compression:
+        tag: compression
+        value: lossy
+      media:
+        tag: media
+        value: video
+    title: MPEG-4 AVC/H.264 High Profile / Level 4.2 For 3D Video
+  MPEG4_AVC_H264_STEREO_HIGH_PROFILE_LEVEL_4_2:
+    text: MPEG4_AVC_H264_STEREO_HIGH_PROFILE_LEVEL_4_2
+    description: H.264 stereo high profile for stereoscopic video
+    annotations:
+      uid:
+        tag: uid
+        value: 1.2.840.10008.1.2.4.106
+      compression:
+        tag: compression
+        value: lossy
+      media:
+        tag: media
+        value: video
+    title: MPEG-4 AVC/H.264 Stereo High Profile / Level 4.2
+  HEVC_H265_MAIN_PROFILE_LEVEL_5_1:
+    text: HEVC_H265_MAIN_PROFILE_LEVEL_5_1
+    description: HEVC video compression with 8-bit samples
+    annotations:
+      uid:
+        tag: uid
+        value: 1.2.840.10008.1.2.4.107
+      compression:
+        tag: compression
+        value: lossy
+      media:
+        tag: media
+        value: video
+    title: HEVC/H.265 Main Profile / Level 5.1
+  HEVC_H265_MAIN_10_PROFILE_LEVEL_5_1:
+    text: HEVC_H265_MAIN_10_PROFILE_LEVEL_5_1
+    description: HEVC video compression with 10-bit samples
+    annotations:
+      uid:
+        tag: uid
+        value: 1.2.840.10008.1.2.4.108
+      compression:
+        tag: compression
+        value: lossy
+      media:
+        tag: media
+        value: video
+    title: HEVC/H.265 Main 10 Profile / Level 5.1
+  JPEG_XL_LOSSLESS:
+    text: JPEG_XL_LOSSLESS
+    description: JPEG XL compression restricted to lossless mode
+    annotations:
+      uid:
+        tag: uid
+        value: 1.2.840.10008.1.2.4.110
+      compression:
+        tag: compression
+        value: lossless
+    title: JPEG XL Lossless
+  JPEG_XL_JPEG_RECOMPRESSION:
+    text: JPEG_XL_JPEG_RECOMPRESSION
+    description: Lossless recompression of existing JPEG codestreams using JPEG XL
+    annotations:
+      uid:
+        tag: uid
+        value: 1.2.840.10008.1.2.4.111
+      compression:
+        tag: compression
+        value: lossless
+    title: JPEG XL JPEG Recompression
+  JPEG_XL:
+    text: JPEG_XL
+    description: JPEG XL compression, lossy or lossless
+    annotations:
+      uid:
+        tag: uid
+        value: 1.2.840.10008.1.2.4.112
+      compression:
+        tag: compression
+        value: lossy or lossless
+    title: JPEG XL
+  HTJ2K_LOSSLESS_ONLY:
+    text: HTJ2K_LOSSLESS_ONLY
+    description: High-throughput JPEG 2000 (Part 15) restricted to lossless mode
+    annotations:
+      uid:
+        tag: uid
+        value: 1.2.840.10008.1.2.4.201
+      compression:
+        tag: compression
+        value: lossless
+    title: High-Throughput JPEG 2000 Image Compression (Lossless Only)
+  HTJ2K_RPCL_LOSSLESS_ONLY:
+    text: HTJ2K_RPCL_LOSSLESS_ONLY
+    description: Lossless high-throughput JPEG 2000 with resolution-position-component-layer
+      progression for progressive decoding
+    annotations:
+      uid:
+        tag: uid
+        value: 1.2.840.10008.1.2.4.202
+      compression:
+        tag: compression
+        value: lossless
+    title: High-Throughput JPEG 2000 with RPCL Options Image Compression (Lossless
+      Only)
+  HTJ2K:
+    text: HTJ2K
+    description: High-throughput JPEG 2000, lossy or lossless
+    annotations:
+      uid:
+        tag: uid
+        value: 1.2.840.10008.1.2.4.203
+      compression:
+        tag: compression
+        value: lossy or lossless
+    title: High-Throughput JPEG 2000 Image Compression
+  RLE_LOSSLESS:
+    text: RLE_LOSSLESS
+    description: Run-length encoded lossless compression, widely used for ultrasound
+    annotations:
+      uid:
+        tag: uid
+        value: 1.2.840.10008.1.2.5
+      compression:
+        tag: compression
+        value: lossless
+    title: RLE Lossless
+  SMPTE_ST_2110_20_UNCOMPRESSED_PROGRESSIVE_VIDEO:
+    text: SMPTE_ST_2110_20_UNCOMPRESSED_PROGRESSIVE_VIDEO
+    description: Uncompressed progressive video streamed per SMPTE ST 2110-20, used
+      in real-time video communication
+    annotations:
+      uid:
+        tag: uid
+        value: 1.2.840.10008.1.2.7.1
+      compression:
+        tag: compression
+        value: none
+      media:
+        tag: media
+        value: video
+    title: SMPTE ST 2110-20 Uncompressed Progressive Active Video
+  SMPTE_ST_2110_20_UNCOMPRESSED_INTERLACED_VIDEO:
+    text: SMPTE_ST_2110_20_UNCOMPRESSED_INTERLACED_VIDEO
+    description: Uncompressed interlaced video streamed per SMPTE ST 2110-20
+    annotations:
+      uid:
+        tag: uid
+        value: 1.2.840.10008.1.2.7.2
+      compression:
+        tag: compression
+        value: none
+      media:
+        tag: media
+        value: video
+    title: SMPTE ST 2110-20 Uncompressed Interlaced Active Video
+
+</code></pre>
+
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.tabs.link"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>
