@@ -1,0 +1,1066 @@
+name: dicom
+title: DICOM Standard Value Sets
+description: >-
+  Value sets drawn from the Digital Imaging and Communications in Medicine (DICOM)
+  standard (ISO 12052), the internationally recognized format for storing, transmitting
+  and managing medical imaging data. Covers the acquisition modality codes used in the
+  Modality (0008,0060) attribute, the Value Representations (VRs) that govern attribute
+  encoding, the attribute requirement types (1, 1C, 2, 2C, 3) used in Information Object
+  Definitions, the registered transfer syntaxes that define byte ordering and pixel data
+  compression, the DIMSE and DICOMweb network services used to query and retrieve images
+  from PACS, and the open-source toolkits commonly used to read, validate and serve DICOM
+  files.
+
+  These value sets support DICOM data extraction, conformance checking and metadata tag
+  validation, where VR, VM and attribute type rules are checked with tools such as dciodvfy,
+  dcentvfy, DVTk and pydicom.
+
+  Codes that come from the DICOM standard itself (modality codes, VRs, action codes) are
+  kept in their standard form rather than being upper-cased or expanded.
+id: https://w3id.org/valuesets/medical/dicom
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  valuesets: https://w3id.org/valuesets/
+  NCIT: http://purl.obolibrary.org/obo/NCIT_
+  DCM: http://dicom.nema.org/resources/ontology/DCM/
+  FBbi: http://purl.obolibrary.org/obo/FBbi_
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+default_prefix: valuesets
+slots:
+  dicom_modality:
+    description: The DICOM acquisition modality code of an imaging instance or series
+    range: DICOMModalityEnum
+  dicom_value_representation:
+    description: The DICOM Value Representation (VR) of an attribute
+    range: DICOMValueRepresentationEnum
+  dicom_attribute_type:
+    description: The DICOM attribute requirement type of an attribute within an IOD module
+    range: DICOMAttributeTypeEnum
+  dicom_transfer_syntax:
+    description: The DICOM transfer syntax used to encode a data set or its pixel data
+    range: DICOMTransferSyntaxEnum
+  dicom_network_service:
+    description: The DICOM network service used to query, retrieve or store instances
+    range: DICOMNetworkServiceEnum
+  dicom_software_tool:
+    description: A software toolkit, validator, server or library used to process DICOM data
+    range: DICOMSoftwareToolEnum
+enums:
+  DICOMModalityEnum:
+    title: DICOM Acquisition Modality
+    description: >-
+      Acquisition modality codes from DICOM PS3.16 Context ID 29 (Acquisition Modality),
+      the defined terms for the Modality (0008,0060) attribute. The permissible value is the
+      DICOM code itself; the title is the NCI Thesaurus label where a mapping exists and the
+      DICOM code meaning is carried as an alias when it differs. Where an NCI Thesaurus term
+      exists it is the meaning and the DCM code is an exact mapping; otherwise the DCM code is
+      the meaning, so every value carries its DCM code in one of the two fields. Waveform
+      modalities (ECG, EEG, etc.) are defined in CID 34 and are not included here, nor are
+      the non-acquisition values that also appear in Modality (0008,0060) such as SR, PR, SEG,
+      KO, DOC, OT and the RT objects.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    see_also:
+    - https://dicom.nema.org/medical/dicom/current/output/chtml/part16/sect_CID_29.html
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      AR:
+        title: Autorefraction
+        description: Automated measurement of refractive error of the eye
+        meaning: NCIT:C176330
+        exact_mappings:
+        - DCM:AR
+      BI:
+        title: Biomagnetic Imaging
+        description: Imaging based on magnetic fields produced by the body, such as magnetoencephalography
+        meaning: DCM:BI
+      BMD:
+        title: Bone Mineral Densitometry
+        description: Measurement of bone mineral content and density, such as DXA
+        meaning: NCIT:C190514
+        exact_mappings:
+        - DCM:BMD
+      CR:
+        title: Computed Radiography
+        description: X-ray imaging using a phosphor imaging plate read out to a digital image
+        meaning: NCIT:C190521
+        exact_mappings:
+        - DCM:CR
+      CT:
+        title: Computed Tomography
+        description: Cross-sectional X-ray imaging reconstructed by computer
+        meaning: NCIT:C17204
+        exact_mappings:
+        - DCM:CT
+        close_mappings:
+        - FBbi:00001002
+      CFM:
+        title: Confocal Microscopy
+        description: Laser-scanning microscopy that rejects out-of-focus light
+        meaning: NCIT:C17753
+        exact_mappings:
+        - DCM:CFM
+        - FBbi:00000251
+      DMS:
+        title: Dermoscopy
+        description: Non-invasive microscopic examination of the skin surface
+        meaning: NCIT:C116478
+        exact_mappings:
+        - DCM:DMS
+      DG:
+        title: Diaphanography
+        description: Transillumination imaging of tissue, historically used for the breast
+        meaning: DCM:DG
+      DX:
+        title: Digital Radiography
+        description: Projection X-ray imaging acquired directly with a digital detector
+        meaning: NCIT:C18001
+        exact_mappings:
+        - DCM:DX
+      ES:
+        title: Endoscopic Procedure
+        description: Imaging from an endoscope inserted into a body cavity or organ, including laryngoscopy and video endoscopy
+        meaning: NCIT:C16546
+        exact_mappings:
+        - DCM:ES
+        aliases:
+        - Endoscopy
+      XC:
+        title: External-camera Photography
+        description: Visible-light photography of the patient with an external camera
+        meaning: DCM:XC
+      GM:
+        title: Microscopy
+        description: General microscopy not otherwise classified
+        meaning: NCIT:C16853
+        exact_mappings:
+        - DCM:GM
+        broad_mappings:
+        - FBbi:00000241
+        aliases:
+        - General Microscopy
+      IO:
+        title: Intraoral Radiography
+        description: Dental X-ray imaging with the detector inside the mouth
+        meaning: NCIT:C190548
+        exact_mappings:
+        - DCM:IO
+        aliases:
+        - Intra-oral Radiography
+      IVOCT:
+        title: Intravascular Optical Coherence Tomography
+        description: Catheter-based optical coherence tomography of blood vessels
+        meaning: NCIT:C190550
+        exact_mappings:
+        - DCM:IVOCT
+      IVUS:
+        title: Intravascular Ultrasound
+        description: Catheter-based ultrasound imaging of blood vessels
+        meaning: NCIT:C99535
+        exact_mappings:
+        - DCM:IVUS
+      KER:
+        title: Keratometry
+        description: Measurement of the curvature of the anterior corneal surface
+        meaning: NCIT:C190551
+        exact_mappings:
+        - DCM:KER
+      LS:
+        title: Laser surface scan
+        description: Surface geometry acquired with a laser scanner
+        meaning: DCM:LS
+      LEN:
+        title: Lensometry
+        description: Measurement of the optical properties of spectacle lenses
+        meaning: DCM:LEN
+      MR:
+        title: Magnetic Resonance Imaging
+        description: Imaging using radiofrequency pulses in a strong magnetic field
+        meaning: NCIT:C16809
+        exact_mappings:
+        - DCM:MR
+        aliases:
+        - Magnetic Resonance
+      MG:
+        title: Mammography
+        description: Low-dose X-ray imaging of the breast
+        meaning: NCIT:C16818
+        exact_mappings:
+        - DCM:MG
+      NM:
+        title: Radionuclide Imaging
+        description: Gamma camera imaging of an administered radiotracer, including planar and SPECT
+        meaning: NCIT:C62667
+        exact_mappings:
+        - DCM:NM
+        aliases:
+        - Nuclear Medicine
+      OAM:
+        title: Ophthalmic Axial Measurements
+        description: Measurement of axial dimensions of the eye, such as axial length
+        meaning: DCM:OAM
+      OPM:
+        title: Ophthalmic Mapping
+        description: Topographic or thickness maps of ocular structures
+        meaning: DCM:OPM
+      OP:
+        title: Ophthalmic Photography
+        description: Photography of the eye, including fundus and slit lamp photography
+        meaning: NCIT:C190559
+        exact_mappings:
+        - DCM:OP
+      OPT:
+        title: Ophthalmic Tomography
+        description: Optical coherence tomography of the eye, including retinal OCT B-scans
+        meaning: NCIT:C190561
+        exact_mappings:
+        - DCM:OPT
+      OPTBSV:
+        title: Ophthalmic Tomography B-scan Volume Analysis
+        description: Volume analysis derived from ophthalmic OCT B-scans
+        meaning: DCM:OPTBSV
+      OPTENF:
+        title: En-face Optical Coherence Tomography
+        description: Transverse (en face) images derived from ophthalmic OCT volumes
+        meaning: NCIT:C190563
+        exact_mappings:
+        - DCM:OPTENF
+        aliases:
+        - Ophthalmic Tomography En Face
+      OPV:
+        title: Ophthalmic Visual Field
+        description: Perimetry results describing the visual field
+        meaning: DCM:OPV
+      OCT:
+        title: Optical Coherence Tomography
+        description: Interferometric imaging using near-infrared light, used outside ophthalmology
+        meaning: NCIT:C20828
+        exact_mappings:
+        - DCM:OCT
+        - FBbi:00000371
+      OSS:
+        title: Optical Surface Scanner
+        description: Surface geometry acquired with an optical (non-laser) scanner
+        meaning: DCM:OSS
+      PX:
+        title: Panoramic X-Ray
+        description: Dental panoramic radiography of the jaws
+        meaning: DCM:PX
+      PA:
+        title: Photoacoustic Imaging
+        description: Imaging of ultrasonic waves generated by optical absorption of pulsed light
+        meaning: NCIT:C116749
+        exact_mappings:
+        - DCM:PA
+        aliases:
+        - Photoacoustic
+      PT:
+        title: Positron Emission Tomography
+        description: Tomographic imaging of a positron-emitting radiotracer
+        meaning: NCIT:C17007
+        exact_mappings:
+        - DCM:PT
+      RF:
+        title: Fluoroscopy
+        description: Real-time X-ray imaging, including radiofluoroscopy
+        meaning: NCIT:C16588
+        exact_mappings:
+        - DCM:RF
+        aliases:
+        - Radiofluoroscopy
+      RG:
+        title: X-Ray Imaging
+        description: Conventional film or screen radiographic imaging
+        meaning: NCIT:C38101
+        exact_mappings:
+        - DCM:RG
+        close_mappings:
+        - FBbi:00001001
+        aliases:
+        - Radiographic imaging
+      RTIMAGE:
+        title: RT Image
+        description: Radiotherapy portal or setup image
+        meaning: DCM:RTIMAGE
+      SM:
+        title: Slide Microscopy
+        description: Whole slide imaging of microscope slides
+        meaning: DCM:SM
+      SRF:
+        title: Subjective Refraction
+        description: Refraction measured with patient feedback
+        meaning: DCM:SRF
+      TG:
+        title: Thermography
+        description: Imaging of body surface temperature
+        meaning: NCIT:C17194
+        exact_mappings:
+        - DCM:TG
+      US:
+        title: Ultrasound Imaging
+        description: Imaging using high-frequency sound waves, including static images and cine loops
+        meaning: NCIT:C17230
+        exact_mappings:
+        - DCM:US
+        aliases:
+        - Ultrasound
+      BDUS:
+        title: Ultrasound Bone Densitometry
+        description: Quantitative ultrasound estimation of bone mineral density
+        meaning: NCIT:C190516
+        exact_mappings:
+        - DCM:BDUS
+      VA:
+        title: Visual Acuity
+        description: Measurement of the sharpness of vision
+        meaning: NCIT:C87149
+        exact_mappings:
+        - DCM:VA
+      XA:
+        title: X-ray Angiography
+        description: X-ray imaging of blood vessels with contrast, including digital subtraction angiography
+        meaning: NCIT:C20080
+        exact_mappings:
+        - DCM:XA
+
+  DICOMValueRepresentationEnum:
+    title: DICOM Value Representation
+    description: >-
+      The Value Representations (VRs) defined in DICOM PS3.5 Section 6.2, which specify the
+      data type and format of the value of a data element. Tag validation tools check that
+      each attribute is encoded with the VR required by the data dictionary. Permissible
+      values are the two-letter DICOM VR codes.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    see_also:
+    - https://dicom.nema.org/medical/dicom/current/output/chtml/part05/sect_6.2.html
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      AE:
+        title: Application Entity
+        description: A string identifying an Application Entity; 16 bytes maximum
+        annotations:
+          category: string
+      AS:
+        title: Age String
+        description: Age in the format nnnD, nnnW, nnnM or nnnY (days, weeks, months, years)
+        annotations:
+          category: string
+      AT:
+        title: Attribute Tag
+        description: An ordered pair of 16-bit unsigned integers that is the value of a data element tag
+        annotations:
+          category: binary
+      CS:
+        title: Code String
+        description: A string identifying a controlled concept; uppercase letters, digits, space and underscore, 16 bytes maximum
+        annotations:
+          category: string
+      DA:
+        title: Date
+        description: A date in the format YYYYMMDD
+        annotations:
+          category: date_time
+      DS:
+        title: Decimal String
+        description: A string representing a fixed point or floating point number
+        annotations:
+          category: string
+      DT:
+        title: Date Time
+        description: A concatenated date-time string of the form YYYYMMDDHHMMSS.FFFFFF&ZZXX
+        annotations:
+          category: date_time
+      FL:
+        title: Floating Point Single
+        description: Single precision IEEE 754 binary32 floating point value
+        annotations:
+          category: binary
+      FD:
+        title: Floating Point Double
+        description: Double precision IEEE 754 binary64 floating point value
+        annotations:
+          category: binary
+      IS:
+        title: Integer String
+        description: A string representing a base-10 integer
+        annotations:
+          category: string
+      LO:
+        title: Long String
+        description: A character string of up to 64 characters
+        annotations:
+          category: string
+      LT:
+        title: Long Text
+        description: A character string that may contain one or more paragraphs, up to 10240 characters
+        annotations:
+          category: text
+      OB:
+        title: Other Byte
+        description: An octet stream whose encoding is specified by the negotiated transfer syntax
+        annotations:
+          category: binary
+      OD:
+        title: Other Double
+        description: A stream of IEEE 754 binary64 values
+        annotations:
+          category: binary
+      OF:
+        title: Other Float
+        description: A stream of IEEE 754 binary32 values
+        annotations:
+          category: binary
+      OL:
+        title: Other Long
+        description: A stream of 32-bit words
+        annotations:
+          category: binary
+      OV:
+        title: Other 64-bit Very Long
+        description: A stream of 64-bit words
+        annotations:
+          category: binary
+      OW:
+        title: Other Word
+        description: A stream of 16-bit words; commonly used for Pixel Data
+        annotations:
+          category: binary
+      PN:
+        title: Person Name
+        description: A character string encoded using a five-component convention (family, given, middle, prefix, suffix)
+        annotations:
+          category: string
+      SH:
+        title: Short String
+        description: A character string of up to 16 characters
+        annotations:
+          category: string
+      SL:
+        title: Signed Long
+        description: Signed 32-bit two's complement integer
+        annotations:
+          category: binary
+      SQ:
+        title: Sequence of Items
+        description: A sequence of zero or more items, each of which is a nested data set
+        annotations:
+          category: sequence
+      SS:
+        title: Signed Short
+        description: Signed 16-bit two's complement integer
+        annotations:
+          category: binary
+      ST:
+        title: Short Text
+        description: A character string that may contain one or more paragraphs, up to 1024 characters
+        annotations:
+          category: text
+      SV:
+        title: Signed 64-bit Very Long
+        description: Signed 64-bit integer
+        annotations:
+          category: binary
+      TM:
+        title: Time
+        description: A time in the format HHMMSS.FFFFFF
+        annotations:
+          category: date_time
+      UC:
+        title: Unlimited Characters
+        description: A character string of unlimited length
+        annotations:
+          category: string
+      UI:
+        title: Unique Identifier (UID)
+        description: A string of numeric components separated by periods, up to 64 characters, used for UIDs such as SOP Instance UIDs and transfer syntax UIDs
+        annotations:
+          category: string
+      UL:
+        title: Unsigned Long
+        description: Unsigned 32-bit integer
+        annotations:
+          category: binary
+      UN:
+        title: Unknown
+        description: An octet stream whose encoding of the contents is unknown
+        annotations:
+          category: binary
+      UR:
+        title: Universal Resource Identifier or Universal Resource Locator (URI/URL)
+        description: A string identifying a URI or URL as defined in RFC 3986
+        annotations:
+          category: string
+      US:
+        title: Unsigned Short
+        description: Unsigned 16-bit integer
+        annotations:
+          category: binary
+      UT:
+        title: Unlimited Text
+        description: A character string that may contain one or more paragraphs, of unlimited length
+        annotations:
+          category: text
+      UV:
+        title: Unsigned 64-bit Very Long
+        description: Unsigned 64-bit integer
+        annotations:
+          category: binary
+
+  DICOMAttributeTypeEnum:
+    title: DICOM Attribute Type
+    description: >-
+      Attribute requirement types defined in DICOM PS3.5 Section 7.4, which state whether an
+      attribute must be present in a data set and whether it may have a zero-length value.
+      Conformance checkers report missing Type 1 and Type 2 attributes as errors. These types
+      also determine which de-identification action (D, Z or X) may be applied to an attribute.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    see_also:
+    - https://dicom.nema.org/medical/dicom/current/output/chtml/part05/sect_7.4.html
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      TYPE_1:
+        title: Type 1 (Required)
+        description: The attribute shall be present with a valid non-zero-length value
+        aliases:
+        - "1"
+      TYPE_1C:
+        title: Type 1C (Conditionally Required)
+        description: The attribute shall be present with a valid value when a specified condition is met, and shall not be present otherwise
+        aliases:
+        - 1C
+      TYPE_2:
+        title: Type 2 (Required, Empty if Unknown)
+        description: The attribute shall be present but may have a zero-length value if the value is unknown
+        aliases:
+        - "2"
+      TYPE_2C:
+        title: Type 2C (Conditionally Required, Empty if Unknown)
+        description: The attribute shall be present, possibly with zero length, when a specified condition is met
+        aliases:
+        - 2C
+      TYPE_3:
+        title: Type 3 (Optional)
+        description: The attribute is optional and may be absent or present with or without a value
+        aliases:
+        - "3"
+
+  DICOMTransferSyntaxEnum:
+    title: DICOM Transfer Syntax
+    description: >-
+      Transfer syntaxes registered in DICOM PS3.6 Annex A that define the byte ordering, VR
+      encoding and pixel data compression of a DICOM data set. Pixel data validation includes
+      confirming that decompression from a lossy or lossless transfer syntax yields the
+      expected bit depth and that no unintended data loss occurred. Video transfer syntaxes
+      (MPEG-2, H.264, HEVC) are used for endoscopy and ultrasound cine acquisitions.
+      Fragmentable variants of the MPEG transfer syntaxes and retired JPEG processes are
+      omitted; the full registry is at the see_also link.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    see_also:
+    - https://dicom.nema.org/medical/dicom/current/output/chtml/part06/chapter_A.html
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      IMPLICIT_VR_LITTLE_ENDIAN:
+        title: Implicit VR Little Endian
+        description: Default transfer syntax for DICOM; VRs are looked up from the data dictionary rather than encoded
+        annotations:
+          uid: 1.2.840.10008.1.2
+          compression: none
+      EXPLICIT_VR_LITTLE_ENDIAN:
+        title: Explicit VR Little Endian
+        description: Uncompressed encoding with VRs explicitly encoded in each data element
+        annotations:
+          uid: 1.2.840.10008.1.2.1
+          compression: none
+      ENCAPSULATED_UNCOMPRESSED_EXPLICIT_VR_LITTLE_ENDIAN:
+        title: Encapsulated Uncompressed Explicit VR Little Endian
+        description: Uncompressed pixel data encapsulated in fragments, one per frame
+        annotations:
+          uid: 1.2.840.10008.1.2.1.98
+          compression: none
+      DEFLATED_EXPLICIT_VR_LITTLE_ENDIAN:
+        title: Deflated Explicit VR Little Endian
+        description: Explicit VR Little Endian data set compressed as a whole with the deflate algorithm
+        annotations:
+          uid: 1.2.840.10008.1.2.1.99
+          compression: lossless
+      EXPLICIT_VR_BIG_ENDIAN:
+        title: Explicit VR Big Endian (Retired)
+        description: Big endian byte ordering with explicit VRs; retired but still encountered in legacy archives
+        annotations:
+          uid: 1.2.840.10008.1.2.2
+          compression: none
+          retired: 'true'
+      JPEG_BASELINE_PROCESS_1:
+        title: JPEG Baseline (Process 1)
+        description: Default transfer syntax for lossy JPEG 8-bit image compression
+        annotations:
+          uid: 1.2.840.10008.1.2.4.50
+          compression: lossy
+      JPEG_EXTENDED_PROCESS_2_4:
+        title: JPEG Extended (Process 2 & 4)
+        description: Default transfer syntax for lossy JPEG 12-bit image compression (Process 4 only)
+        annotations:
+          uid: 1.2.840.10008.1.2.4.51
+          compression: lossy
+      JPEG_LOSSLESS_PROCESS_14:
+        title: JPEG Lossless, Non-Hierarchical (Process 14)
+        description: Lossless JPEG compression using any predictor
+        annotations:
+          uid: 1.2.840.10008.1.2.4.57
+          compression: lossless
+      JPEG_LOSSLESS_PROCESS_14_SV1:
+        title: JPEG Lossless, Non-Hierarchical, First-Order Prediction (Process 14 [Selection Value 1])
+        description: Default transfer syntax for lossless JPEG image compression
+        annotations:
+          uid: 1.2.840.10008.1.2.4.70
+          compression: lossless
+      JPEG_LS_LOSSLESS:
+        title: JPEG-LS Lossless Image Compression
+        description: Lossless compression using the JPEG-LS (ISO 14495) algorithm
+        annotations:
+          uid: 1.2.840.10008.1.2.4.80
+          compression: lossless
+      JPEG_LS_NEAR_LOSSLESS:
+        title: JPEG-LS Lossy (Near-Lossless) Image Compression
+        description: Near-lossless JPEG-LS compression with a bounded per-pixel error
+        annotations:
+          uid: 1.2.840.10008.1.2.4.81
+          compression: lossy
+      JPEG_2000_LOSSLESS_ONLY:
+        title: JPEG 2000 Image Compression (Lossless Only)
+        description: JPEG 2000 wavelet compression restricted to reversible (lossless) mode
+        annotations:
+          uid: 1.2.840.10008.1.2.4.90
+          compression: lossless
+      JPEG_2000:
+        title: JPEG 2000 Image Compression
+        description: JPEG 2000 wavelet compression, lossy or lossless
+        annotations:
+          uid: 1.2.840.10008.1.2.4.91
+          compression: lossy or lossless
+      JPEG_2000_MULTICOMPONENT_LOSSLESS_ONLY:
+        title: JPEG 2000 Part 2 Multi-component Image Compression (Lossless Only)
+        description: JPEG 2000 Part 2 multi-component transform, reversible mode only
+        annotations:
+          uid: 1.2.840.10008.1.2.4.92
+          compression: lossless
+      JPEG_2000_MULTICOMPONENT:
+        title: JPEG 2000 Part 2 Multi-component Image Compression
+        description: JPEG 2000 Part 2 multi-component transform, lossy or lossless
+        annotations:
+          uid: 1.2.840.10008.1.2.4.93
+          compression: lossy or lossless
+      JPIP_REFERENCED:
+        title: JPIP Referenced
+        description: Pixel data referenced via a JPEG 2000 Interactive Protocol URL rather than encoded in the data set
+        annotations:
+          uid: 1.2.840.10008.1.2.4.94
+          compression: referenced
+      JPIP_REFERENCED_DEFLATE:
+        title: JPIP Referenced Deflate
+        description: JPIP referenced pixel data with the remaining data set deflated
+        annotations:
+          uid: 1.2.840.10008.1.2.4.95
+          compression: referenced
+      MPEG2_MAIN_PROFILE_MAIN_LEVEL:
+        title: MPEG2 Main Profile / Main Level
+        description: MPEG-2 video compression for standard definition video
+        annotations:
+          uid: 1.2.840.10008.1.2.4.100
+          compression: lossy
+          media: video
+      MPEG2_MAIN_PROFILE_HIGH_LEVEL:
+        title: MPEG2 Main Profile / High Level
+        description: MPEG-2 video compression for high definition video
+        annotations:
+          uid: 1.2.840.10008.1.2.4.101
+          compression: lossy
+          media: video
+      MPEG4_AVC_H264_HIGH_PROFILE_LEVEL_4_1:
+        title: MPEG-4 AVC/H.264 High Profile / Level 4.1
+        description: H.264 video compression for high definition video
+        annotations:
+          uid: 1.2.840.10008.1.2.4.102
+          compression: lossy
+          media: video
+      MPEG4_AVC_H264_BD_COMPATIBLE_HIGH_PROFILE_LEVEL_4_1:
+        title: MPEG-4 AVC/H.264 BD-compatible High Profile / Level 4.1
+        description: H.264 video compression constrained for Blu-ray Disc compatibility
+        annotations:
+          uid: 1.2.840.10008.1.2.4.103
+          compression: lossy
+          media: video
+      MPEG4_AVC_H264_HIGH_PROFILE_LEVEL_4_2_2D:
+        title: MPEG-4 AVC/H.264 High Profile / Level 4.2 For 2D Video
+        description: H.264 video compression for 2D video at higher frame rates and resolutions
+        annotations:
+          uid: 1.2.840.10008.1.2.4.104
+          compression: lossy
+          media: video
+      MPEG4_AVC_H264_HIGH_PROFILE_LEVEL_4_2_3D:
+        title: MPEG-4 AVC/H.264 High Profile / Level 4.2 For 3D Video
+        description: H.264 video compression for 3D (stereoscopic) video
+        annotations:
+          uid: 1.2.840.10008.1.2.4.105
+          compression: lossy
+          media: video
+      MPEG4_AVC_H264_STEREO_HIGH_PROFILE_LEVEL_4_2:
+        title: MPEG-4 AVC/H.264 Stereo High Profile / Level 4.2
+        description: H.264 stereo high profile for stereoscopic video
+        annotations:
+          uid: 1.2.840.10008.1.2.4.106
+          compression: lossy
+          media: video
+      HEVC_H265_MAIN_PROFILE_LEVEL_5_1:
+        title: HEVC/H.265 Main Profile / Level 5.1
+        description: HEVC video compression with 8-bit samples
+        annotations:
+          uid: 1.2.840.10008.1.2.4.107
+          compression: lossy
+          media: video
+      HEVC_H265_MAIN_10_PROFILE_LEVEL_5_1:
+        title: HEVC/H.265 Main 10 Profile / Level 5.1
+        description: HEVC video compression with 10-bit samples
+        annotations:
+          uid: 1.2.840.10008.1.2.4.108
+          compression: lossy
+          media: video
+      JPEG_XL_LOSSLESS:
+        title: JPEG XL Lossless
+        description: JPEG XL compression restricted to lossless mode
+        annotations:
+          uid: 1.2.840.10008.1.2.4.110
+          compression: lossless
+      JPEG_XL_JPEG_RECOMPRESSION:
+        title: JPEG XL JPEG Recompression
+        description: Lossless recompression of existing JPEG codestreams using JPEG XL
+        annotations:
+          uid: 1.2.840.10008.1.2.4.111
+          compression: lossless
+      JPEG_XL:
+        title: JPEG XL
+        description: JPEG XL compression, lossy or lossless
+        annotations:
+          uid: 1.2.840.10008.1.2.4.112
+          compression: lossy or lossless
+      HTJ2K_LOSSLESS_ONLY:
+        title: High-Throughput JPEG 2000 Image Compression (Lossless Only)
+        description: High-throughput JPEG 2000 (Part 15) restricted to lossless mode
+        annotations:
+          uid: 1.2.840.10008.1.2.4.201
+          compression: lossless
+      HTJ2K_RPCL_LOSSLESS_ONLY:
+        title: High-Throughput JPEG 2000 with RPCL Options Image Compression (Lossless Only)
+        description: Lossless high-throughput JPEG 2000 with resolution-position-component-layer progression for progressive decoding
+        annotations:
+          uid: 1.2.840.10008.1.2.4.202
+          compression: lossless
+      HTJ2K:
+        title: High-Throughput JPEG 2000 Image Compression
+        description: High-throughput JPEG 2000, lossy or lossless
+        annotations:
+          uid: 1.2.840.10008.1.2.4.203
+          compression: lossy or lossless
+      RLE_LOSSLESS:
+        title: RLE Lossless
+        description: Run-length encoded lossless compression, widely used for ultrasound
+        annotations:
+          uid: 1.2.840.10008.1.2.5
+          compression: lossless
+      SMPTE_ST_2110_20_UNCOMPRESSED_PROGRESSIVE_VIDEO:
+        title: SMPTE ST 2110-20 Uncompressed Progressive Active Video
+        description: Uncompressed progressive video streamed per SMPTE ST 2110-20, used in real-time video communication
+        annotations:
+          uid: 1.2.840.10008.1.2.7.1
+          compression: none
+          media: video
+      SMPTE_ST_2110_20_UNCOMPRESSED_INTERLACED_VIDEO:
+        title: SMPTE ST 2110-20 Uncompressed Interlaced Active Video
+        description: Uncompressed interlaced video streamed per SMPTE ST 2110-20
+        annotations:
+          uid: 1.2.840.10008.1.2.7.2
+          compression: none
+          media: video
+
+  DICOMNetworkServiceEnum:
+    title: DICOM Network Service
+    description: >-
+      Network services used to query, retrieve and store DICOM instances between imaging
+      systems such as PACS, modalities and research archives. Includes the classic DIMSE
+      (DICOM Message Service Element) services of PS3.7 and the RESTful DICOMweb services of
+      PS3.18. Cataloguing which services a source repository supports is part of the data
+      landscape assessment that precedes extraction.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    see_also:
+    - https://dicom.nema.org/medical/dicom/current/output/chtml/part07/chapter_7.html
+    - https://dicom.nema.org/medical/dicom/current/output/chtml/part18/PS3.18.html
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      C_ECHO:
+        title: C-ECHO
+        description: DIMSE verification service used to test connectivity between two application entities
+        annotations:
+          protocol: DIMSE
+      C_STORE:
+        title: C-STORE
+        description: DIMSE storage service that pushes a composite instance to a peer
+        annotations:
+          protocol: DIMSE
+      C_FIND:
+        title: C-FIND
+        description: DIMSE query service that matches attributes against a peer's database at patient, study, series or instance level
+        annotations:
+          protocol: DIMSE
+      C_MOVE:
+        title: C-MOVE
+        description: DIMSE retrieve service that instructs a peer to send matching instances to a named destination via C-STORE
+        annotations:
+          protocol: DIMSE
+      C_GET:
+        title: C-GET
+        description: DIMSE retrieve service that returns matching instances on the same association
+        annotations:
+          protocol: DIMSE
+      N_EVENT_REPORT:
+        title: N-EVENT-REPORT
+        description: DIMSE-N notification service used to report events on a normalized SOP instance
+        annotations:
+          protocol: DIMSE
+      N_GET:
+        title: N-GET
+        description: DIMSE-N service that retrieves attribute values of a normalized SOP instance
+        annotations:
+          protocol: DIMSE
+      N_SET:
+        title: N-SET
+        description: DIMSE-N service that modifies attribute values of a normalized SOP instance
+        annotations:
+          protocol: DIMSE
+      N_ACTION:
+        title: N-ACTION
+        description: DIMSE-N service that requests an action on a normalized SOP instance, such as storage commitment
+        annotations:
+          protocol: DIMSE
+      N_CREATE:
+        title: N-CREATE
+        description: DIMSE-N service that creates a normalized SOP instance
+        annotations:
+          protocol: DIMSE
+      N_DELETE:
+        title: N-DELETE
+        description: DIMSE-N service that deletes a normalized SOP instance
+        annotations:
+          protocol: DIMSE
+      QIDO_RS:
+        title: QIDO-RS
+        description: DICOMweb RESTful query service (Query based on ID for DICOM Objects) for searching studies, series and instances
+        annotations:
+          protocol: DICOMweb
+      WADO_RS:
+        title: WADO-RS
+        description: DICOMweb RESTful retrieve service (Web Access to DICOM Objects) for retrieving studies, series, instances, frames, metadata and rendered images
+        annotations:
+          protocol: DICOMweb
+      STOW_RS:
+        title: STOW-RS
+        description: DICOMweb RESTful store service (Store Over the Web) for uploading instances
+        annotations:
+          protocol: DICOMweb
+      WADO_URI:
+        title: WADO-URI
+        description: Legacy DICOMweb URI-based retrieve service for single instances
+        annotations:
+          protocol: DICOMweb
+      UPS_RS:
+        title: UPS-RS
+        description: DICOMweb RESTful worklist service for Unified Procedure Step management
+        annotations:
+          protocol: DICOMweb
+      CUSTOM_API:
+        title: Custom API
+        description: A vendor- or institution-specific interface that is not a standard DICOM network service
+
+  DICOMSoftwareToolEnum:
+    title: DICOM Software Tool
+    description: >-
+      Software toolkits, libraries, validators, servers and platforms commonly used to read,
+      write, validate, anonymize and serve DICOM data in research data management pipelines.
+      The category annotation distinguishes general-purpose toolkits from conformance
+      validators, archive servers and metadata anonymizers.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      DCMTK:
+        title: DCMTK
+        description: OFFIS DICOM Toolkit; C/C++ libraries and command-line utilities implementing DICOM network services and file handling
+        annotations:
+          category: toolkit
+          language: C++
+          license: BSD
+          url: https://dicom.offis.de/en/dcmtk/
+      PYDICOM:
+        title: pydicom
+        description: Pure Python library for reading, modifying and writing DICOM files, including pixel data access
+        annotations:
+          category: toolkit
+          language: Python
+          license: MIT
+          url: https://github.com/pydicom/pydicom
+      GDCM:
+        title: GDCM
+        description: Grassroots DICOM; C++ library with Python and other bindings for DICOM file and image codec handling
+        annotations:
+          category: toolkit
+          language: C++
+          license: BSD
+          url: https://sourceforge.net/projects/gdcm/
+      DCM4CHE:
+        title: dcm4che
+        description: Java DICOM toolkit and the basis of the dcm4chee archive
+        annotations:
+          category: toolkit
+          language: Java
+          license: MPL/GPL/LGPL
+          url: https://www.dcm4che.org/
+      ITK:
+        title: ITK
+        description: Insight Toolkit; C++ image processing library with DICOM readers built on GDCM
+        annotations:
+          category: toolkit
+          language: C++
+          license: Apache-2.0
+          url: https://itk.org/
+      DVTK:
+        title: DVTk
+        description: DICOM Validation Toolkit; validates object conformance and network behaviour against the standard
+        annotations:
+          category: validator
+          language: C#
+          license: LGPL
+          url: https://www.dvtk.org/
+      DICOM3TOOLS:
+        title: dicom3tools
+        description: David Clunie's command-line utilities for creating, modifying, dumping and validating DICOM files
+        annotations:
+          category: validator
+          language: C++
+          license: BSD
+          url: http://www.dclunie.com/dicom3tools.html
+      DCIODVFY:
+        title: dciodvfy
+        description: dicom3tools utility that verifies a file against the Information Object Definition for its modality, reporting missing required attributes, incorrect VRs and values outside allowed ranges
+        annotations:
+          category: validator
+          part_of: dicom3tools
+      DCENTVFY:
+        title: dcentvfy
+        description: dicom3tools utility that checks consistency of entity-level attributes across multiple files, such as all instances in a series sharing the same Series Instance UID
+        annotations:
+          category: validator
+          part_of: dicom3tools
+      PIXELMED:
+        title: PixelMed
+        description: PixelMed Java DICOM toolkit, including the DicomCleaner metadata anonymizer
+        annotations:
+          category: toolkit
+          language: Java
+          license: BSD
+          url: https://www.pixelmed.com/
+      RSNA_CTP:
+        title: RSNA CTP
+        description: RSNA Clinical Trial Processor; pipeline application with a configurable DICOM anonymizer
+        annotations:
+          category: anonymizer
+          language: Java
+          url: https://mircwiki.rsna.org/index.php?title=CTP-The_RSNA_Clinical_Trial_Processor
+      ORTHANC:
+        title: Orthanc
+        description: Lightweight open-source DICOM server with a REST API and DICOMweb plugin
+        annotations:
+          category: server
+          language: C++
+          license: GPL-3.0
+          url: https://www.orthanc-server.com/
+      DCM4CHEE:
+        title: dcm4chee
+        description: Open-source DICOM archive and image manager built on dcm4che
+        annotations:
+          category: server
+          language: Java
+          url: https://www.dcm4che.org/
+      XNAT:
+        title: XNAT
+        description: Extensible Neuroimaging Archive Toolkit; open-source imaging informatics platform for managing, storing and sharing imaging data
+        annotations:
+          category: platform
+          language: Java
+          license: BSD
+          url: https://www.xnat.org/
+      TCIA_UTILS:
+        title: tcia_utils
+        description: Python utilities from The Cancer Imaging Archive for querying, downloading and inventorying DICOM metadata
+        annotations:
+          category: toolkit
+          language: Python
+          url: https://github.com/kirbyju/tcia_utils
+      DICOM_CLEANER:
+        title: DicomCleaner
+        description: PixelMed graphical tool for metadata de-identification and blackout of burned-in text
+        annotations:
+          category: anonymizer
+          language: Java
+          part_of: PixelMed
+      HOROS:
+        title: Horos
+        description: Open-source macOS DICOM viewer forked from OsiriX with built-in anonymization
+        annotations:
+          category: viewer
+          license: LGPL-3.0
+          url: https://horosproject.org/
+      OSIRIX:
+        title: OsiriX
+        description: Commercial macOS DICOM viewer and workstation
+        annotations:
+          category: viewer
+          license: commercial
+          url: https://www.osirix-viewer.com/
+      SLICER_3D:
+        title: 3D Slicer
+        description: Open-source platform for medical image visualization, segmentation and analysis with DICOM import
+        annotations:
+          category: viewer
+          license: BSD-style
+          url: https://www.slicer.org/
+      ITK_SNAP:
+        title: ITK-SNAP
+        description: Open-source tool for manual and semi-automatic segmentation of 3D medical images
+        annotations:
+          category: viewer
+          license: GPL
+          url: http://www.itksnap.org/

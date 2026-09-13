@@ -1,0 +1,371 @@
+name: imaging_data_management
+title: Medical Imaging Data Management Value Sets
+description: >-
+  Value sets for managing medical imaging data through its research lifecycle, from
+  extraction out of clinical repositories through validation, quality assessment and
+  de-identification to AI-ready datasets. Covers the lifecycle stages, the types of source
+  systems that hold imaging data, the categories of structural and semantic problems found
+  by DICOM validation tools, the image quality metrics computed during pixel data
+  validation, the interoperability standards used to link images to clinical records, and
+  the NIH Bridge2AI data generation projects that produce AI-ready imaging datasets.
+id: https://w3id.org/valuesets/medical/imaging_data_management
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  valuesets: https://w3id.org/valuesets/
+  NCIT: http://purl.obolibrary.org/obo/NCIT_
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+default_prefix: valuesets
+slots:
+  imaging_data_lifecycle_stage:
+    description: The stage of the medical imaging data management lifecycle
+    range: ImagingDataLifecycleStageEnum
+  imaging_data_source_type:
+    description: The type of system from which imaging data is extracted
+    range: ImagingDataSourceTypeEnum
+  dicom_validation_issue_type:
+    description: The category of problem found when validating a DICOM file or collection
+    range: DICOMValidationIssueTypeEnum
+  image_quality_metric:
+    description: A metric computed to assess image pixel data quality
+    range: ImageQualityMetricEnum
+  imaging_interoperability_standard:
+    description: A standard used to represent or link imaging data with clinical data
+    range: ImagingInteroperabilityStandardEnum
+  bridge2ai_data_generation_project:
+    description: The Bridge2AI data generation project that produced a dataset
+    range: Bridge2AIDataGenerationProjectEnum
+enums:
+  ImagingDataLifecycleStageEnum:
+    title: Imaging Data Lifecycle Stage
+    description: >-
+      Sequential stages of DICOM data management for preparing FAIR, AI-ready medical imaging
+      datasets. Stages after extraction form the data reliability workflow that checks that
+      imaging data is complete, standardized and biologically plausible before sharing.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      DATA_EXTRACTION_AND_METADATA_CHARACTERIZATION:
+        title: Data extraction and metadata characterization
+        description: Extraction of imaging data from clinical repositories such as PACS, preceded by a landscape assessment of source locations, database systems, modalities and acquisition devices
+        broad_mappings:
+        - NCIT:C44285
+        annotations:
+          stage_number: 1
+      FILE_INTEGRITY_VERIFICATION:
+        title: File integrity verification
+        description: Computation and periodic re-verification of cryptographic checksums such as SHA-256 to detect silent corruption from network errors, media decay or system failure
+        broad_mappings:
+        - NCIT:C142477
+        annotations:
+          stage_number: 2
+      DATA_COMPLETENESS_AND_CONFORMANCE_CHECKS:
+        title: Data completeness and conformance checks
+        description: Detection of structurally invalid DICOM files (truncated, wrong VR encoding, missing required tags) and checks of internal coherence such as identifier uniqueness and demographic consistency across sites
+        annotations:
+          stage_number: 3
+      METADATA_TAG_VALIDATION:
+        title: Metadata tag validation
+        description: Validation of DICOM attributes against the standard's VR, VM and type rules and against biological plausibility, and inventory of private tags
+        broad_mappings:
+        - NCIT:C142500
+        annotations:
+          stage_number: 4
+      IMAGE_QUALITY_AND_PIXEL_DATA_VALIDATION:
+        title: Image quality and pixel data validation
+        description: Verification that pixel data is readable and plausible, that decompression preserves bit depth, and computation of image quality metrics
+        annotations:
+          stage_number: 5
+      DEIDENTIFICATION:
+        title: Pixel-level and metadata de-identification
+        description: Removal of protected health information from headers and of facial features from pixel data before sharing and reuse
+        meaning: NCIT:C45970
+        annotations:
+          stage_number: 6
+
+  ImagingDataSourceTypeEnum:
+    title: Imaging Data Source Type
+    description: >-
+      Types of systems in a hospital or research network that hold medical imaging data and
+      from which it may be extracted. A landscape assessment records, for each source, the
+      platform vendor, software version, supported query mechanisms, patient identifier
+      handling, retention policy and anonymization capabilities.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      PACS:
+        title: Picture Archiving and Communication System
+        description: Clinical system for storing, retrieving and distributing medical images, typically the central radiology archive
+        meaning: NCIT:C17624
+      VENDOR_NEUTRAL_ARCHIVE:
+        title: Vendor neutral archive
+        description: Enterprise archive that stores images from multiple departments and PACS vendors in a standard format
+        aliases:
+        - VNA
+      DEPARTMENTAL_IMAGING_ARCHIVE:
+        title: Departmental imaging archive
+        description: Local archive maintained by a clinical department such as cardiology, ophthalmology or endoscopy outside the central PACS
+      RESEARCH_IMAGING_PLATFORM:
+        title: Research imaging platform
+        description: Research-specific imaging informatics database such as XNAT used to manage, store and share imaging data
+      MODALITY_WORKSTATION:
+        title: Modality workstation
+        description: Acquisition device or attached workstation that exports images through vendor-specific software
+      ELECTRONIC_HEALTH_RECORD:
+        title: Electronic Health Record
+        description: Clinical record system that references or embeds imaging studies and provides encounter linkage
+        meaning: NCIT:C142529
+      PUBLIC_IMAGING_REPOSITORY:
+        title: Public imaging repository
+        description: Openly accessible imaging data resource such as The Cancer Imaging Archive or OpenNeuro
+      CLOUD_IMAGING_ARCHIVE:
+        title: Cloud imaging archive
+        description: Cloud-hosted object storage or managed imaging service holding DICOM data
+
+  DICOMValidationIssueTypeEnum:
+    title: DICOM Validation Issue Type
+    description: >-
+      Categories of problems detected when validating DICOM files and collections for
+      completeness, conformance, metadata consistency, pixel data integrity and plausibility.
+      Used to classify findings from tools such as dciodvfy, dcentvfy, DVTk and pydicom
+      during data reliability workflows.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      TRUNCATED_FILE:
+        title: Truncated file
+        description: The file is incomplete, for example a truncated transfer syntax or missing pixel data at the end of the file
+        annotations:
+          category: structural
+      INVALID_VR_ENCODING:
+        title: Invalid VR encoding
+        description: An attribute is encoded with a Value Representation that does not match the data dictionary or the transfer syntax
+        annotations:
+          category: structural
+      MISSING_REQUIRED_ATTRIBUTE:
+        title: Missing required attribute
+        description: A Type 1 or Type 2 attribute required by the IOD, such as StudyInstanceUID or PixelData, is absent
+        annotations:
+          category: conformance
+      VALUE_MULTIPLICITY_VIOLATION:
+        title: Value multiplicity violation
+        description: An attribute has more or fewer values than permitted by its Value Multiplicity
+        annotations:
+          category: conformance
+      VALUE_OUT_OF_RANGE:
+        title: Value out of range
+        description: An attribute value is outside the enumerated or defined range allowed by the standard
+        annotations:
+          category: conformance
+      INVALID_UID_SYNTAX:
+        title: Invalid UID syntax
+        description: A UID does not conform to DICOM UID syntax, for example non-numeric components or excess length
+        annotations:
+          category: conformance
+      DUPLICATE_UID:
+        title: Duplicate UID
+        description: The same SOP Instance UID or other UID is reused across instances that should be distinct
+        annotations:
+          category: consistency
+      INCONSISTENT_ENTITY_ATTRIBUTES:
+        title: Inconsistent entity attributes
+        description: Attributes that should be identical across instances of the same entity differ, such as instances in one series carrying different Series Instance UIDs
+        annotations:
+          category: consistency
+      DATE_INCONSISTENCY:
+        title: Date inconsistency
+        description: Dates are mutually inconsistent, such as a study date after the patient's death date or a series date before the study date
+        annotations:
+          category: plausibility
+      IMPLAUSIBLE_VALUE:
+        title: Implausible value
+        description: A syntactically valid value that is biologically implausible, such as a patient age of 150 years
+        annotations:
+          category: plausibility
+      NONSTANDARD_PRIVATE_ATTRIBUTE:
+        title: Nonstandard private attribute
+        description: A private tag is present that is not documented in the site's private tag dictionary
+        annotations:
+          category: documentation
+      IDENTIFIER_LINKAGE_ERROR:
+        title: Identifier linkage error
+        description: Patient or study identifiers do not link correctly to clinical records, or demographics disagree across linked records
+        annotations:
+          category: consistency
+      UNREADABLE_PIXEL_DATA:
+        title: Unreadable pixel data
+        description: The pixel data cannot be decoded, typically due to acquisition or packaging problems
+        annotations:
+          category: pixel data
+      DECOMPRESSION_MISMATCH:
+        title: Decompression mismatch
+        description: Decompressed pixel data has an unexpected bit depth or differs from the uncompressed original beyond the expected loss
+        annotations:
+          category: pixel data
+      CHECKSUM_MISMATCH:
+        title: Checksum mismatch
+        description: The file's cryptographic hash no longer matches the value recorded at ingest, indicating corruption or alteration
+        annotations:
+          category: integrity
+      PROTECTED_HEALTH_INFORMATION_PRESENT:
+        title: Protected health information present
+        description: Identifying information remains in the header, private tags or pixel data after de-identification
+        annotations:
+          category: privacy
+
+  ImageQualityMetricEnum:
+    title: Image Quality Metric
+    description: >-
+      Metrics computed during image quality and pixel data validation to document that images
+      are readable and of adequate fidelity for AI applications. Simple metrics can be
+      extended to check conformance with FDA technical performance guidance for quantitative
+      imaging devices where applicable.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      PIXEL_READABILITY:
+        title: Pixel readability
+        description: Whether the pixel array can be decoded without error
+      INTENSITY_HISTOGRAM:
+        title: Intensity histogram
+        description: Distribution of pixel intensities, checked for extreme outliers, clipping or empty images
+      SIGNAL_TO_NOISE_RATIO:
+        title: Signal to Noise Ratio
+        description: Ratio of signal in a region of interest to the standard deviation of background noise
+        meaning: NCIT:C94983
+        aliases:
+        - SNR
+      CONTRAST_TO_NOISE_RATIO:
+        title: Contrast to noise ratio
+        description: Difference in signal between two regions relative to background noise
+        aliases:
+        - CNR
+      SHARPNESS:
+        title: Sharpness
+        description: Measure of edge definition or high-frequency content, such as Laplacian variance
+      BIT_DEPTH:
+        title: Bit depth
+        description: Number of bits per pixel stored and allocated, checked for consistency after decompression
+      PIXEL_SPACING:
+        title: Pixel spacing
+        description: Physical distance between pixel centres, checked for presence and plausibility
+      SLICE_THICKNESS:
+        title: Slice thickness
+        description: Nominal thickness of each slice in a volumetric acquisition, checked for presence and plausibility
+      COMPRESSION_FIDELITY:
+        title: Compression fidelity
+        description: Agreement between compressed and original pixel data, for example comparing a JPEG-compressed instance with its uncompressed source
+      ARTIFACT_PRESENCE:
+        title: Artifact presence
+        description: Detection of motion, metal, aliasing or other acquisition artifacts
+
+  ImagingInteroperabilityStandardEnum:
+    title: Imaging Interoperability Standard
+    description: >-
+      Standards and data models used to represent medical imaging metadata and to link
+      images with clinical records, electronic health records and multimodal research
+      datasets.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      DICOM:
+        title: DICOM
+        description: Digital Imaging and Communications in Medicine (ISO 12052), the standard for storing, transmitting and managing medical imaging data
+        annotations:
+          url: https://www.dicomstandard.org/
+      DICOMWEB:
+        title: DICOMweb
+        description: RESTful web services for DICOM (QIDO-RS, WADO-RS, STOW-RS) defined in DICOM PS3.18
+        annotations:
+          url: https://www.dicomstandard.org/using/dicomweb
+      HL7_FHIR_IMAGINGSTUDY:
+        title: HL7 FHIR ImagingStudy
+        description: FHIR resource representing a DICOM study and its series and instances, used to integrate imaging metadata into FHIR-based systems
+        annotations:
+          url: https://www.hl7.org/fhir/imagingstudy.html
+      OMOP_CDM_IMAGING_EXTENSION:
+        title: OMOP CDM Imaging Extension
+        description: OHDSI Observational Medical Outcomes Partnership Common Data Model extension for imaging-based observational research, used to link DICOM studies to clinical encounters
+        annotations:
+          url: https://github.com/OHDSI/OmopImaging
+      IHE_PROFILES:
+        title: IHE integration profiles
+        description: Integrating the Healthcare Enterprise profiles for image sharing and identifier management, such as XDS-I and PIX
+        annotations:
+          url: https://www.ihe.net/
+      BIDS:
+        title: Brain Imaging Data Structure
+        description: Community standard for organizing and describing neuroimaging datasets, commonly used after conversion from DICOM
+        annotations:
+          url: https://bids.neuroimaging.io/
+      NIFTI:
+        title: NIfTI
+        description: Neuroimaging Informatics Technology Initiative file format for volumetric images, the usual target of DICOM conversion in neuroimaging pipelines
+        annotations:
+          url: https://nifti.nimh.nih.gov/
+
+  Bridge2AIDataGenerationProjectEnum:
+    title: Bridge2AI Data Generation Project
+    description: >-
+      Data generation projects (Grand Challenges) of the NIH Bridge to Artificial Intelligence
+      (Bridge2AI) program, which creates standardized, annotated, ethically sourced AI-ready
+      datasets across a diverse set of modalities.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    see_also:
+    - https://bridge2ai.org/
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      CHORUS:
+        title: CHoRUS
+        description: Collaborative Hospital Repository Uniting Standards; the AI/ML for Clinical Care Grand Challenge, linking ICU imaging (MRI, CT, ultrasound, X-ray) with physiologic and clinical data
+        aliases:
+        - Clinical Care
+        annotations:
+          url: https://bridge2ai.org/data-chorus/
+      AI_READI:
+        title: AI-READI
+        description: Artificial Intelligence Ready and Equitable Atlas for Diabetes Insights; the Salutogenesis Grand Challenge, including ophthalmology retinal imaging
+        aliases:
+        - Salutogenesis
+        annotations:
+          url: https://bridge2ai.org/people-ai-readi/
+      VOICE:
+        title: Voice as a Biomarker of Health
+        description: The Precision Public Health Grand Challenge, connecting voice recordings with laryngoscopy video, brain MRI and CT, and omics data
+        aliases:
+        - Precision Public Health
+        annotations:
+          url: https://bridge2ai.org/people-voice/
+      CM4AI:
+        title: CM4AI
+        description: Cell Maps for Artificial Intelligence; the Functional Genomics Grand Challenge, mapping cellular architecture with imaging and proteomics
+        aliases:
+        - Functional Genomics
+        annotations:
+          url: https://cm4ai.org/
