@@ -1,0 +1,297 @@
+name: biological_imaging_methods
+title: Biological Imaging Methods Value Sets
+description: >-
+  Dynamic enumerations populated from the Biological Imaging Methods Ontology (FBbi), which
+  describes the methods involved in producing a biological image. FBbi is organized as nine
+  top-level branches under "method involved in biological imaging": sample preparation,
+  visualization (stains, probes and labels), imaging method (microscopy, radiography,
+  tomography and portrayed images), illumination, detection, imaged parameter, contrast
+  enhancement, resolution enhancement and source of contrast. Each branch is exposed here as
+  a value set, with additional value sets for the microscopy, light microscopy and
+  fluorescence microscopy subtrees that are most often needed as controlled vocabularies in
+  imaging metadata.
+id: https://w3id.org/valuesets/bio/biological_imaging_methods
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  valuesets: https://w3id.org/valuesets/
+  FBbi: http://purl.obolibrary.org/obo/FBbi_
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+default_prefix: valuesets
+slots:
+  biological_imaging_method:
+    description: The method used to record or portray a biological image
+    range: BiologicalImagingMethod
+  biological_microscopy_method:
+    description: The microscopy method used to acquire an image
+    range: MicroscopyMethod
+  light_microscopy_method:
+    description: The light microscopy method used to acquire an image
+    range: LightMicroscopyMethod
+  fluorescence_microscopy_method:
+    description: The fluorescence microscopy method used to acquire an image
+    range: FluorescenceMicroscopyMethod
+  imaging_sample_preparation_method:
+    description: How the specimen was prepared before imaging
+    range: ImagingSamplePreparationMethod
+  tissue_fixation_method:
+    description: The fixation method applied to the specimen before imaging
+    range: TissueFixationMethod
+  imaging_visualization_method:
+    description: The stain, probe or label-based method used to visualize structures in the specimen
+    range: ImagingVisualizationMethod
+  imaging_illumination_method:
+    description: How the specimen was illuminated during image acquisition
+    range: ImagingIlluminationMethod
+  imaging_detection_method:
+    description: How the signal from the specimen was detected during image acquisition
+    range: ImagingDetectionMethod
+  imaged_parameter:
+    description: The physical parameter of the specimen that the image records
+    range: ImagedParameter
+  contrast_enhancing_method:
+    description: The optical or computational method used to enhance image contrast
+    range: ContrastEnhancingMethod
+  resolution_enhancing_method:
+    description: The super-resolution method used to exceed the diffraction limit
+    range: ResolutionEnhancingMethod
+  source_of_image_contrast:
+    description: The physical basis of contrast in the image
+    range: SourceOfImageContrast
+enums:
+  BiologicalImagingMethod:
+    title: Biological Imaging Method
+    description: >-
+      Any imaging method from FBbi, covering recorded images (macroscopy, microscopy,
+      radiography, tomography) and portrayed images (diagrams, graphic illustrations, montages)
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    reachable_from:
+      source_ontology: obo:fbbi
+      source_nodes:
+      - FBbi:00000222
+      include_self: false
+      relationship_types:
+      - rdfs:subClassOf
+  MicroscopyMethod:
+    title: Microscopy Method
+    description: >-
+      Any microscopy method from FBbi, including X-ray microscopy, microscopy with lenses
+      (light and electron microscopy) and scanning probe microscopy
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    reachable_from:
+      source_ontology: obo:fbbi
+      source_nodes:
+      - FBbi:00000241
+      include_self: false
+      relationship_types:
+      - rdfs:subClassOf
+  LightMicroscopyMethod:
+    title: Light Microscopy Method
+    description: >-
+      Light microscopy methods from FBbi, including bright-field, phase contrast, differential
+      interference contrast, polarization, fluorescence and optical coherence tomography
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    reachable_from:
+      source_ontology: obo:fbbi
+      source_nodes:
+      - FBbi:00000345
+      include_self: false
+      relationship_types:
+      - rdfs:subClassOf
+  FluorescenceMicroscopyMethod:
+    title: Fluorescence Microscopy Method
+    description: >-
+      Fluorescence microscopy methods from FBbi, including wide-field, confocal, multi-photon,
+      light sheet and total internal reflection fluorescence microscopy
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    reachable_from:
+      source_ontology: obo:fbbi
+      source_nodes:
+      - FBbi:00000246
+      include_self: false
+      relationship_types:
+      - rdfs:subClassOf
+  ImagingSamplePreparationMethod:
+    title: Imaging Sample Preparation Method
+    description: >-
+      Sample preparation methods from FBbi, describing the state of the specimen at imaging
+      time such as embedded, sectioned, whole mounted or permeabilized tissue, dispersed or
+      adherent cells, and fixation methods
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    reachable_from:
+      source_ontology: obo:fbbi
+      source_nodes:
+      - FBbi:00000001
+      include_self: false
+      relationship_types:
+      - rdfs:subClassOf
+  TissueFixationMethod:
+    title: Tissue Fixation Method
+    description: Fixation methods from FBbi, such as aldehyde, alcohol, freeze and heat fixation
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    reachable_from:
+      source_ontology: obo:fbbi
+      source_nodes:
+      - FBbi:00001012
+      include_self: false
+      relationship_types:
+      - rdfs:subClassOf
+  ImagingVisualizationMethod:
+    title: Imaging Visualization Method
+    description: >-
+      Visualization methods from FBbi, the largest branch of the ontology, covering
+      visualization of labels conjugated to probes, of contiguous regions, and by chemical
+      attribute (histological stains, fluorescent dyes and fluorescent proteins)
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    reachable_from:
+      source_ontology: obo:fbbi
+      source_nodes:
+      - FBbi:00000031
+      include_self: false
+      relationship_types:
+      - rdfs:subClassOf
+  ImagingIlluminationMethod:
+    title: Imaging Illumination Method
+    description: >-
+      Illumination methods from FBbi, characterized by the probe (photons, electrons,
+      acoustic waves, neutrons, ions), field (widefield, narrowfield, nearfield, farfield),
+      coherence, timing and geometry
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    reachable_from:
+      source_ontology: obo:fbbi
+      source_nodes:
+      - FBbi:00000268
+      include_self: false
+      relationship_types:
+      - rdfs:subClassOf
+  ImagingDetectionMethod:
+    title: Imaging Detection Method
+    description: >-
+      Detection methods from FBbi, characterized by what is detected (photons, electrons,
+      acoustic waves, induced current), field of detection and detector geometry (spot or
+      area detector)
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    reachable_from:
+      source_ontology: obo:fbbi
+      source_nodes:
+      - FBbi:00000269
+      include_self: false
+      relationship_types:
+      - rdfs:subClassOf
+  ImagedParameter:
+    title: Imaged Parameter
+    description: >-
+      Physical parameters of the specimen recorded by an image, from FBbi, such as
+      absorption, elastic and inelastic scattering, refractive index, retardance,
+      fluorescence emission, electron density and elevation
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    reachable_from:
+      source_ontology: obo:fbbi
+      source_nodes:
+      - FBbi:00000270
+      include_self: false
+      relationship_types:
+      - rdfs:subClassOf
+  ContrastEnhancingMethod:
+    title: Contrast Enhancing Method
+    description: Optical and computational contrast-enhancing methods from FBbi, such as phase contrast, DIC and deconvolution
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    reachable_from:
+      source_ontology: obo:fbbi
+      source_nodes:
+      - FBbi:00000271
+      include_self: false
+      relationship_types:
+      - rdfs:subClassOf
+  ResolutionEnhancingMethod:
+    title: Resolution Enhancing Method
+    description: Super-resolution methods from FBbi, such as structured illumination, point-localization methods, STED and GSD
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    reachable_from:
+      source_ontology: obo:fbbi
+      source_nodes:
+      - FBbi:00000321
+      include_self: false
+      relationship_types:
+      - rdfs:subClassOf
+  SourceOfImageContrast:
+    title: Source of Image Contrast
+    description: >-
+      Physical bases of image contrast from FBbi, such as differences in chemical composition,
+      distribution of an epitope, protein or nucleic acid sequence, stain binding, refractive
+      index boundaries, fluorescence lifetime and optical anisotropy
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    reachable_from:
+      source_ontology: obo:fbbi
+      source_nodes:
+      - FBbi:00000590
+      include_self: false
+      relationship_types:
+      - rdfs:subClassOf

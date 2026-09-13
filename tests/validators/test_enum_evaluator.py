@@ -211,3 +211,83 @@ def test_cache_behavior():
     label1 = evaluator.get_ontology_label("TEST:123")
     label2 = evaluator.get_ontology_label("TEST:123")
     assert mock_adapter.label.call_count == 2  # Called twice
+
+
+def _evaluator_with_mock(tmp_path, labels):
+    """Evaluator whose NCIT adapter is a mock returning labels from the given dict."""
+    config = ValidationConfig(oak_adapter_string="dummy:", cache_dir=tmp_path / "cache")
+    evaluator = EnumEvaluator(config=config)
+    mock_adapter = Mock()
+    mock_adapter.label = Mock(side_effect=lambda curie: labels.get(curie))
+    # NCIT is a configured (strict) prefix in oak_config.yaml; inject before any lookup
+    evaluator._per_prefix_adapters['ncit'] = mock_adapter
+    evaluator._prefix_caches['ncit'] = {}
+    evaluator._per_prefix_adapters['_default'] = mock_adapter
+    return evaluator
+
+
+def test_validate_reachable_from_source_nodes(tmp_path):
+    """Dynamic enums have their source nodes resolved even with no permissible values."""
+    from linkml_runtime.linkml_model.meta import EnumDefinition, ReachabilityQuery
+
+    evaluator = _evaluator_with_mock(tmp_path, {"NCIT:C17204": "Computed Tomography"})
+
+    good = EnumDefinition(
+        name="GoodDynamic",
+        reachable_from=ReachabilityQuery(source_nodes=["NCIT:C17204"]),
+    )
+    assert evaluator.validate_enum(good, "GoodDynamic") == []
+
+    bad = EnumDefinition(
+        name="BadDynamic",
+        reachable_from=ReachabilityQuery(source_nodes=["NCIT:C999999999"]),
+    )
+    issues = evaluator.validate_enum(bad, "BadDynamic")
+    assert len(issues) == 1
+    assert issues[0].severity == "ERROR"
+    assert issues[0].value_name == "<reachable_from>"
+    assert issues[0].meaning == "NCIT:C999999999"
+
+
+def test_validate_mapping_slots(tmp_path):
+    """exact/close/broad mappings must resolve; a resolvable one needs no label match."""
+    from linkml_runtime.linkml_model import EnumDefinition, PermissibleValue
+
+    evaluator = _evaluator_with_mock(tmp_path, {
+        "NCIT:C17204": "Computed Tomography",
+        "NCIT:C38101": "X-Ray Imaging",
+    })
+
+    enum_def = EnumDefinition(
+        name="Modality",
+        permissible_values={
+            "CT": PermissibleValue(
+                text="CT",
+                title="Computed Tomography",
+                meaning="NCIT:C17204",
+                close_mappings=["NCIT:C38101"],  # label differs from title: allowed for mappings
+                exact_mappings=["NCIT:C999999999"],  # does not resolve
+            ),
+        },
+    )
+    issues = evaluator.validate_enum(enum_def, "Modality")
+    assert len(issues) == 1
+    assert issues[0].severity == "ERROR"
+    assert issues[0].meaning == "NCIT:C999999999"
+    assert "exact_mappings" in issues[0].message
+
+
+def test_unconfigured_prefix_mapping_is_info(tmp_path):
+    """Unresolvable mappings with an unconfigured prefix are INFO, not ERROR."""
+    from linkml_runtime.linkml_model import EnumDefinition, PermissibleValue
+
+    evaluator = _evaluator_with_mock(tmp_path, {})
+    enum_def = EnumDefinition(
+        name="Tools",
+        permissible_values={
+            "X": PermissibleValue(text="X", exact_mappings=["TESTONT:1"]),
+        },
+    )
+    issues = evaluator.validate_enum(enum_def, "Tools")
+    assert len(issues) == 1
+    assert issues[0].severity == "INFO"
