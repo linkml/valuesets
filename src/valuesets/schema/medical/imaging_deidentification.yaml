@@ -260,15 +260,19 @@ enums:
           jurisdiction: United States
           citation: 45 CFR 164.514(b)(1)
       GDPR_ANONYMISATION:
-        title: GDPR anonymisation
+        title: Anonymization
         description: Irreversible processing such that the data subject is no longer identifiable, taking the data outside the scope of the EU General Data Protection Regulation
         meaning: NCIT:C142392
+        aliases:
+        - GDPR anonymisation
         annotations:
           jurisdiction: European Union
       GDPR_PSEUDONYMISATION:
-        title: GDPR pseudonymisation
+        title: Pseudonymization
         description: Processing so that data can no longer be attributed to a subject without additional information kept separately, as defined in GDPR Article 4(5)
         meaning: NCIT:C142654
+        aliases:
+        - GDPR pseudonymisation
         annotations:
           jurisdiction: European Union
       DICOM_PS3_15_CONFIDENTIALITY_PROFILE:

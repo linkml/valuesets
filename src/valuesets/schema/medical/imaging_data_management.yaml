@@ -54,13 +54,15 @@ enums:
       DATA_EXTRACTION_AND_METADATA_CHARACTERIZATION:
         title: Data extraction and metadata characterization
         description: Extraction of imaging data from clinical repositories such as PACS, preceded by a landscape assessment of source locations, database systems, modalities and acquisition devices
-        meaning: NCIT:C44285
+        broad_mappings:
+        - NCIT:C44285
         annotations:
           stage_number: 1
       FILE_INTEGRITY_VERIFICATION:
         title: File integrity verification
         description: Computation and periodic re-verification of cryptographic checksums such as SHA-256 to detect silent corruption from network errors, media decay or system failure
-        meaning: NCIT:C142477
+        broad_mappings:
+        - NCIT:C142477
         annotations:
           stage_number: 2
       DATA_COMPLETENESS_AND_CONFORMANCE_CHECKS:
@@ -71,7 +73,8 @@ enums:
       METADATA_TAG_VALIDATION:
         title: Metadata tag validation
         description: Validation of DICOM attributes against the standard's VR, VM and type rules and against biological plausibility, and inventory of private tags
-        meaning: NCIT:C142500
+        broad_mappings:
+        - NCIT:C142500
         annotations:
           stage_number: 4
       IMAGE_QUALITY_AND_PIXEL_DATA_VALIDATION:

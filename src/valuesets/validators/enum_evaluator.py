@@ -2,7 +2,9 @@
 Enum evaluator for validating ontology mappings in LinkML schemas.
 
 This module validates that ontology term mappings (meanings) in enum definitions
-match the expected labels from the ontology.
+match the expected labels from the ontology, and that terms referenced from
+mapping slots (exact/close/broad/narrow/related_mappings) and from the
+reachable_from.source_nodes of dynamic enums resolve in their ontology.
 
 Uses OAK (Ontology Access Kit) as the abstraction layer for all ontology access.
 """
@@ -416,24 +418,91 @@ class EnumEvaluator:
 
         return aliases
 
+    MAPPING_SLOTS = (
+        "exact_mappings",
+        "close_mappings",
+        "broad_mappings",
+        "narrow_mappings",
+        "related_mappings",
+    )
+
+    def _is_skipped_prefix(self, curie: str) -> bool:
+        """True if the CURIE's prefix is configured with an empty adapter (deliberately unvalidated)."""
+        prefix = curie.split(":")[0] if ":" in curie else None
+        return bool(prefix and prefix.lower() in self._oak_config and not self._oak_config[prefix.lower()])
+
+    def _check_resolvable(self, curie: str, enum_name: str, value_name: str,
+                          context: str) -> Optional[ValidationIssue]:
+        """
+        Check that a CURIE resolves to a label in its ontology.
+
+        Used for mapping slots and reachable_from source nodes, where only
+        existence of the term is required (no label match against the value).
+        Returns an issue if the term cannot be resolved, else None.
+        """
+        if self._is_skipped_prefix(curie):
+            logger.debug(f"Skipping validation for {curie} (empty adapter string in config)")
+            return None
+        if self.get_ontology_label(curie) is not None:
+            return None
+        prefix = curie.split(":")[0] if ":" in curie else None
+        if prefix and self.is_prefix_configured(prefix):
+            severity = "ERROR"
+            message = f"Could not retrieve label for configured ontology term {curie} in {context}"
+        else:
+            severity = "INFO"
+            message = f"Could not retrieve label for {curie} in {context}"
+        return ValidationIssue(
+            enum_name=enum_name,
+            value_name=value_name,
+            severity=severity,
+            message=message,
+            meaning=curie
+        )
+
+    def validate_reachable_from(self, enum_def: EnumDefinition, enum_name: str) -> List[ValidationIssue]:
+        """Validate that every reachable_from source node of a dynamic enum resolves."""
+        issues = []
+        rq = enum_def.reachable_from
+        if not rq or not rq.source_nodes:
+            return issues
+        for node in rq.source_nodes:
+            issue = self._check_resolvable(str(node), enum_name, "<reachable_from>", "reachable_from.source_nodes")
+            if issue:
+                issues.append(issue)
+        return issues
+
     def validate_enum(self, enum_def: EnumDefinition, enum_name: str) -> List[ValidationIssue]:
         """
         Validate a single enum definition.
+
+        Checks three kinds of ontology reference:
+        - ``meaning`` on each permissible value: must resolve and its label must
+          match the value name, title or an alias
+        - mapping slots (exact/close/broad/narrow/related_mappings) on each
+          permissible value: must resolve
+        - ``reachable_from.source_nodes`` on dynamic enums: must resolve
         """
-        issues = []
+        issues = self.validate_reachable_from(enum_def, enum_name)
 
         if not enum_def.permissible_values:
             return issues
 
         for value_name, pv in enum_def.permissible_values.items():
+            # Mapping slots only need to resolve
+            for slot in self.MAPPING_SLOTS:
+                for curie in (getattr(pv, slot, None) or []):
+                    issue = self._check_resolvable(str(curie), enum_name, value_name, slot)
+                    if issue:
+                        issues.append(issue)
+
             # Check if there's a meaning (ontology mapping)
             meaning = pv.meaning
             if not meaning:
                 continue
 
             # Check if this prefix has an empty adapter string (skip validation)
-            prefix = meaning.split(":")[0] if ":" in meaning else None
-            if prefix and prefix.lower() in self._oak_config and not self._oak_config[prefix.lower()]:
+            if self._is_skipped_prefix(meaning):
                 logger.debug(f"Skipping validation for {meaning} (empty adapter string in config)")
                 continue
 
@@ -500,17 +569,22 @@ class EnumEvaluator:
             for enum_name, enum_def in sv.all_enums().items():
                 result.total_enums_checked += 1
 
+                if enum_def.reachable_from and enum_def.reachable_from.source_nodes:
+                    result.total_mappings_checked += len(enum_def.reachable_from.source_nodes)
+
                 if enum_def.permissible_values:
                     result.total_values_checked += len(enum_def.permissible_values)
 
-                    # Count mappings
+                    # Count mappings (meaning plus mapping slots)
                     for pv in enum_def.permissible_values.values():
                         if pv.meaning:
                             result.total_mappings_checked += 1
+                        for slot in self.MAPPING_SLOTS:
+                            result.total_mappings_checked += len(getattr(pv, slot, None) or [])
 
-                    # Validate the enum
-                    issues = self.validate_enum(enum_def, enum_name)
-                    result.issues.extend(issues)
+                # Validate the enum (dynamic enums are checked even without permissible values)
+                issues = self.validate_enum(enum_def, enum_name)
+                result.issues.extend(issues)
 
         except Exception as e:
             logger.error(f"Error validating schema {schema_path}: {e}")

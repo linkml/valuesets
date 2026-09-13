@@ -55,8 +55,12 @@ enums:
       Acquisition modality codes from DICOM PS3.16 Context ID 29 (Acquisition Modality),
       the defined terms for the Modality (0008,0060) attribute. The permissible value is the
       DICOM code itself; the title is the NCI Thesaurus label where a mapping exists and the
-      DICOM code meaning is carried as an alias when it differs. Waveform modalities (ECG,
-      EEG, etc.) are defined in CID 34 and are not included here.
+      DICOM code meaning is carried as an alias when it differs. Where an NCI Thesaurus term
+      exists it is the meaning and the DCM code is an exact mapping; otherwise the DCM code is
+      the meaning, so every value carries its DCM code in one of the two fields. Waveform
+      modalities (ECG, EEG, etc.) are defined in CID 34 and are not included here, nor are
+      the non-acquisition values that also appear in Modality (0008,0060) such as SR, PR, SEG,
+      KO, DOC, OT and the RT objects.
     status: DRAFT
     contributors:
     - orcid:0000-0002-6601-2165
@@ -94,6 +98,7 @@ enums:
         meaning: NCIT:C17204
         exact_mappings:
         - DCM:CT
+        close_mappings:
         - FBbi:00001002
       CFM:
         title: Confocal Microscopy
@@ -136,6 +141,7 @@ enums:
         meaning: NCIT:C16853
         exact_mappings:
         - DCM:GM
+        broad_mappings:
         - FBbi:00000241
         aliases:
         - General Microscopy
@@ -274,6 +280,7 @@ enums:
         meaning: NCIT:C38101
         exact_mappings:
         - DCM:RG
+        close_mappings:
         - FBbi:00001001
         aliases:
         - Radiographic imaging
