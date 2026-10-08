@@ -94,6 +94,7 @@ imports:
 - bio/sequence_chemistry
 - bio/sequencing_platforms
 - bio/genomics
+- bio/genome_assemblies
 - bio/protein_evidence
 - bio/currency_chemicals
 - bio/plant_developmental_stages
