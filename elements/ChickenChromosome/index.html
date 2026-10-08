@@ -1,0 +1,1740 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://linkml.github.io/valuesets/elements/ChickenChromosome/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Enum: ChickenChromosome - valuesets</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/ansi-colours.css">
+    
+      <link rel="stylesheet" href="../../css/jupyter-cells.css">
+    
+      <link rel="stylesheet" href="../../css/pandas-dataframe.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#enum-chickenchromosome" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="valuesets" class="md-header__button md-logo" aria-label="valuesets" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            valuesets
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Enum: ChickenChromosome
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/linkml/valuesets" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="valuesets" class="md-nav__button md-logo" aria-label="valuesets" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    valuesets
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/linkml/valuesets" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Schema
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../governance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Governance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    How-To Guides
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            How-To Guides
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to-guides/agentic-ide-support/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Using Common Value Sets with Agentic IDE Support via Context7 MCP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to-guides/dynamic-valuesets-validation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dynamic Value Sets and Validation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to-guides/sync-uniprot-species/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    How to Sync UniProt Species Data
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slot-generation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Slot Generation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Views
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Views
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../views/genesis-mission/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DOE Genesis Mission
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../views/microbial-ecology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Microbial Ecology
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../views/rare-disease/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Rare Disease
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../views/lab-automation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab Automation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slides/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Slides
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    About
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#permissible-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      Permissible Values
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#identifier-and-mapping-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      Identifier and Mapping Information
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Identifier and Mapping Information">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#annotations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Annotations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#schema-source" class="md-nav__link">
+    <span class="md-ellipsis">
+      Schema Source
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linkml-source" class="md-nav__link">
+    <span class="md-ellipsis">
+      LinkML Source
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="enum-chickenchromosome">Enum: ChickenChromosome</h1>
+<p><em>Nuclear and mitochondrial chromosomes of Gallus gallus (chicken), as represented in the Monochrom Ontology (CHR). Sequence lengths and accessions are from the UCSC galGal6 assembly.</em></p>
+<p>URI: <a href="https://w3id.org/valuesets/ChickenChromosome">valuesets:ChickenChromosome</a></p>
+<!-- bioportal-link -->
+<p><a href="https://bioportal.bioontology.org/ontologies/VALUESETS?p=classes&amp;conceptid=https%3A%2F%2Fw3id.org%2Fvaluesets%2FChickenChromosome">View in BioPortal</a></p>
+<h2 id="permissible-values">Permissible Values</h2>
+<!-- annotations-table -->
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Title</th>
+<th>Meaning</th>
+<th>Description</th>
+<th>Genbank Accession</th>
+<th>Length Bp</th>
+<th>Refseq Accession</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CHR1</td>
+<td>1</td>
+<td><a href="http://purl.obolibrary.org/obo/CHR_9031-chr1">CHR:9031-chr1</a></td>
+<td>chromosome 1 (Chicken)</td>
+<td>CM000093.5</td>
+<td>197608386</td>
+<td>NC_006088.5</td>
+</tr>
+<tr>
+<td>CHR2</td>
+<td>2</td>
+<td><a href="http://purl.obolibrary.org/obo/CHR_9031-chr2">CHR:9031-chr2</a></td>
+<td>chromosome 2 (Chicken)</td>
+<td>CM000094.5</td>
+<td>149682049</td>
+<td>NC_006089.5</td>
+</tr>
+<tr>
+<td>CHR3</td>
+<td>3</td>
+<td><a href="http://purl.obolibrary.org/obo/CHR_9031-chr3">CHR:9031-chr3</a></td>
+<td>chromosome 3 (Chicken)</td>
+<td>CM000095.5</td>
+<td>110838418</td>
+<td>NC_006090.5</td>
+</tr>
+<tr>
+<td>CHR4</td>
+<td>4</td>
+<td><a href="http://purl.obolibrary.org/obo/CHR_9031-chr4">CHR:9031-chr4</a></td>
+<td>chromosome 4 (Chicken)</td>
+<td>CM000096.5</td>
+<td>91315245</td>
+<td>NC_006091.5</td>
+</tr>
+<tr>
+<td>CHR5</td>
+<td>5</td>
+<td><a href="http://purl.obolibrary.org/obo/CHR_9031-chr5">CHR:9031-chr5</a></td>
+<td>chromosome 5 (Chicken)</td>
+<td>CM000097.5</td>
+<td>59809098</td>
+<td>NC_006092.5</td>
+</tr>
+<tr>
+<td>CHR6</td>
+<td>6</td>
+<td><a href="http://purl.obolibrary.org/obo/CHR_9031-chr6">CHR:9031-chr6</a></td>
+<td>chromosome 6 (Chicken)</td>
+<td>CM000098.5</td>
+<td>36374701</td>
+<td>NC_006093.5</td>
+</tr>
+<tr>
+<td>CHR7</td>
+<td>7</td>
+<td><a href="http://purl.obolibrary.org/obo/CHR_9031-chr7">CHR:9031-chr7</a></td>
+<td>chromosome 7 (Chicken)</td>
+<td>CM000099.5</td>
+<td>36742308</td>
+<td>NC_006094.5</td>
+</tr>
+<tr>
+<td>CHR8</td>
+<td>8</td>
+<td><a href="http://purl.obolibrary.org/obo/CHR_9031-chr8">CHR:9031-chr8</a></td>
+<td>chromosome 8 (Chicken)</td>
+<td>CM000100.5</td>
+<td>30219446</td>
+<td>NC_006095.5</td>
+</tr>
+<tr>
+<td>CHR9</td>
+<td>9</td>
+<td><a href="http://purl.obolibrary.org/obo/CHR_9031-chr9">CHR:9031-chr9</a></td>
+<td>chromosome 9 (Chicken)</td>
+<td>CM000101.5</td>
+<td>24153086</td>
+<td>NC_006096.5</td>
+</tr>
+<tr>
+<td>CHR10</td>
+<td>10</td>
+<td><a href="http://purl.obolibrary.org/obo/CHR_9031-chr10">CHR:9031-chr10</a></td>
+<td>chromosome 10 (Chicken)</td>
+<td>CM000102.5</td>
+<td>21119840</td>
+<td>NC_006097.5</td>
+</tr>
+<tr>
+<td>CHR11</td>
+<td>11</td>
+<td><a href="http://purl.obolibrary.org/obo/CHR_9031-chr11">CHR:9031-chr11</a></td>
+<td>chromosome 11 (Chicken)</td>
+<td>CM000103.5</td>
+<td>20200042</td>
+<td>NC_006098.5</td>
+</tr>
+<tr>
+<td>CHR12</td>
+<td>12</td>
+<td><a href="http://purl.obolibrary.org/obo/CHR_9031-chr12">CHR:9031-chr12</a></td>
+<td>chromosome 12 (Chicken)</td>
+<td>CM000104.5</td>
+<td>20387278</td>
+<td>NC_006099.5</td>
+</tr>
+<tr>
+<td>CHR13</td>
+<td>13</td>
+<td><a href="http://purl.obolibrary.org/obo/CHR_9031-chr13">CHR:9031-chr13</a></td>
+<td>chromosome 13 (Chicken)</td>
+<td>CM000105.5</td>
+<td>19166714</td>
+<td>NC_006100.5</td>
+</tr>
+<tr>
+<td>CHR14</td>
+<td>14</td>
+<td><a href="http://purl.obolibrary.org/obo/CHR_9031-chr14">CHR:9031-chr14</a></td>
+<td>chromosome 14 (Chicken)</td>
+<td>CM000106.5</td>
+<td>16219308</td>
+<td>NC_006101.5</td>
+</tr>
+<tr>
+<td>CHR15</td>
+<td>15</td>
+<td><a href="http://purl.obolibrary.org/obo/CHR_9031-chr15">CHR:9031-chr15</a></td>
+<td>chromosome 15 (Chicken)</td>
+<td>CM000107.5</td>
+<td>13062184</td>
+<td>NC_006102.5</td>
+</tr>
+<tr>
+<td>CHR16</td>
+<td>16</td>
+<td><a href="http://purl.obolibrary.org/obo/CHR_9031-chr16">CHR:9031-chr16</a></td>
+<td>chromosome 16 (Chicken)</td>
+<td>CM000108.5</td>
+<td>2844601</td>
+<td>NC_006103.5</td>
+</tr>
+<tr>
+<td>CHR17</td>
+<td>17</td>
+<td><a href="http://purl.obolibrary.org/obo/CHR_9031-chr17">CHR:9031-chr17</a></td>
+<td>chromosome 17 (Chicken)</td>
+<td>CM000109.5</td>
+<td>10762512</td>
+<td>NC_006104.5</td>
+</tr>
+<tr>
+<td>CHR18</td>
+<td>18</td>
+<td><a href="http://purl.obolibrary.org/obo/CHR_9031-chr18">CHR:9031-chr18</a></td>
+<td>chromosome 18 (Chicken)</td>
+<td>CM000110.5</td>
+<td>11373140</td>
+<td>NC_006105.5</td>
+</tr>
+<tr>
+<td>CHR19</td>
+<td>19</td>
+<td><a href="http://purl.obolibrary.org/obo/CHR_9031-chr19">CHR:9031-chr19</a></td>
+<td>chromosome 19 (Chicken)</td>
+<td>CM000111.5</td>
+<td>10323212</td>
+<td>NC_006106.5</td>
+</tr>
+<tr>
+<td>CHR20</td>
+<td>20</td>
+<td><a href="http://purl.obolibrary.org/obo/CHR_9031-chr20">CHR:9031-chr20</a></td>
+<td>chromosome 20 (Chicken)</td>
+<td>CM000112.5</td>
+<td>13897287</td>
+<td>NC_006107.5</td>
+</tr>
+<tr>
+<td>CHR21</td>
+<td>21</td>
+<td><a href="http://purl.obolibrary.org/obo/CHR_9031-chr21">CHR:9031-chr21</a></td>
+<td>chromosome 21 (Chicken)</td>
+<td>CM000113.5</td>
+<td>6844979</td>
+<td>NC_006108.5</td>
+</tr>
+<tr>
+<td>CHR22</td>
+<td>22</td>
+<td><a href="http://purl.obolibrary.org/obo/CHR_9031-chr22">CHR:9031-chr22</a></td>
+<td>chromosome 22 (Chicken)</td>
+<td>CM000114.5</td>
+<td>5459462</td>
+<td>NC_006109.5</td>
+</tr>
+<tr>
+<td>CHR23</td>
+<td>23</td>
+<td><a href="http://purl.obolibrary.org/obo/CHR_9031-chr23">CHR:9031-chr23</a></td>
+<td>chromosome 23 (Chicken)</td>
+<td>CM000115.5</td>
+<td>6149580</td>
+<td>NC_006110.5</td>
+</tr>
+<tr>
+<td>CHR24</td>
+<td>24</td>
+<td><a href="http://purl.obolibrary.org/obo/CHR_9031-chr24">CHR:9031-chr24</a></td>
+<td>chromosome 24 (Chicken)</td>
+<td>CM000116.5</td>
+<td>6491222</td>
+<td>NC_006111.5</td>
+</tr>
+<tr>
+<td>CHR25</td>
+<td>25</td>
+<td><a href="http://purl.obolibrary.org/obo/CHR_9031-chr25">CHR:9031-chr25</a></td>
+<td>chromosome 25 (Chicken)</td>
+<td>CM000124.5</td>
+<td>3980610</td>
+<td>NC_006112.4</td>
+</tr>
+<tr>
+<td>CHR26</td>
+<td>26</td>
+<td><a href="http://purl.obolibrary.org/obo/CHR_9031-chr26">CHR:9031-chr26</a></td>
+<td>chromosome 26 (Chicken)</td>
+<td>CM000117.5</td>
+<td>6055710</td>
+<td>NC_006113.5</td>
+</tr>
+<tr>
+<td>CHR27</td>
+<td>27</td>
+<td><a href="http://purl.obolibrary.org/obo/CHR_9031-chr27">CHR:9031-chr27</a></td>
+<td>chromosome 27 (Chicken)</td>
+<td>CM000118.5</td>
+<td>8080432</td>
+<td>NC_006114.5</td>
+</tr>
+<tr>
+<td>CHR28</td>
+<td>28</td>
+<td><a href="http://purl.obolibrary.org/obo/CHR_9031-chr28">CHR:9031-chr28</a></td>
+<td>chromosome 28 (Chicken)</td>
+<td>CM000119.5</td>
+<td>5116882</td>
+<td>NC_006115.5</td>
+</tr>
+<tr>
+<td>CHR30</td>
+<td>30</td>
+<td><a href="http://purl.obolibrary.org/obo/CHR_9031-chr30">CHR:9031-chr30</a></td>
+<td>chromosome 30 (Chicken)</td>
+<td>CM003637.2</td>
+<td>1818525</td>
+<td>NC_028739.2</td>
+</tr>
+<tr>
+<td>CHR31</td>
+<td>31</td>
+<td><a href="http://purl.obolibrary.org/obo/CHR_9031-chr31">CHR:9031-chr31</a></td>
+<td>chromosome 31 (Chicken)</td>
+<td>CM003638.2</td>
+<td>6153034</td>
+<td>NC_028740.2</td>
+</tr>
+<tr>
+<td>CHR32</td>
+<td>32</td>
+<td><a href="http://purl.obolibrary.org/obo/CHR_9031-chr32">CHR:9031-chr32</a></td>
+<td>chromosome 32 (Chicken)</td>
+<td>CM000120.4</td>
+<td>725831</td>
+<td>NC_006119.4</td>
+</tr>
+<tr>
+<td>CHR33</td>
+<td>33</td>
+<td><a href="http://purl.obolibrary.org/obo/CHR_9031-chr33">CHR:9031-chr33</a></td>
+<td>chromosome 33 (Chicken)</td>
+<td>CM000123.5</td>
+<td>7821666</td>
+<td>NC_008465.4</td>
+</tr>
+<tr>
+<td>CHRZ</td>
+<td>Z</td>
+<td><a href="http://purl.obolibrary.org/obo/CHR_9031-chrZ">CHR:9031-chrZ</a></td>
+<td>chromosome Z (Chicken)</td>
+<td>CM000122.5</td>
+<td>82529921</td>
+<td>NC_006127.5</td>
+</tr>
+<tr>
+<td>CHRW</td>
+<td>W</td>
+<td><a href="http://purl.obolibrary.org/obo/CHR_9031-chrW">CHR:9031-chrW</a></td>
+<td>chromosome W (Chicken)</td>
+<td>CM000121.5</td>
+<td>6813114</td>
+<td>NC_006126.5</td>
+</tr>
+<tr>
+<td>CHRM</td>
+<td>M</td>
+<td><a href="http://purl.obolibrary.org/obo/CHR_9031-chrM">CHR:9031-chrM</a></td>
+<td>chromosome M (Chicken)</td>
+<td>X52392.1</td>
+<td>16775</td>
+<td>NC_001323.1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
+<h3 id="annotations">Annotations</h3>
+<table>
+<thead>
+<tr>
+<th>property</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>source_ontology</td>
+<td>http://purl.obolibrary.org/obo/chr.owl</td>
+</tr>
+<tr>
+<td>taxon</td>
+<td>NCBITaxon:9031</td>
+</tr>
+</tbody>
+</table>
+<h3 id="schema-source">Schema Source</h3>
+<ul>
+<li>from schema: https://w3id.org/valuesets</li>
+</ul>
+<h2 id="linkml-source">LinkML Source</h2>
+<details>
+
+<pre><code class="language-yaml">name: ChickenChromosome
+instantiates:
+- valuesets_meta:ValueSetEnumDefinition
+annotations:
+  source_ontology:
+    tag: source_ontology
+    value: http://purl.obolibrary.org/obo/chr.owl
+  taxon:
+    tag: taxon
+    value: NCBITaxon:9031
+description: Nuclear and mitochondrial chromosomes of Gallus gallus (chicken), as
+  represented in the Monochrom Ontology (CHR). Sequence lengths and accessions are
+  from the UCSC galGal6 assembly.
+title: Gallus gallus Chromosome
+from_schema: https://w3id.org/valuesets
+contributors:
+- orcid:0000-0002-6601-2165
+- https://github.com/anthropics/claude-code
+status: DRAFT
+rank: 1000
+permissible_values:
+  CHR1:
+    text: CHR1
+    description: chromosome 1 (Chicken)
+    meaning: CHR:9031-chr1
+    annotations:
+      refseq_accession:
+        tag: refseq_accession
+        value: NC_006088.5
+      genbank_accession:
+        tag: genbank_accession
+        value: CM000093.5
+      length_bp:
+        tag: length_bp
+        value: 197608386
+    title: '1'
+    aliases:
+    - chr1
+  CHR2:
+    text: CHR2
+    description: chromosome 2 (Chicken)
+    meaning: CHR:9031-chr2
+    annotations:
+      refseq_accession:
+        tag: refseq_accession
+        value: NC_006089.5
+      genbank_accession:
+        tag: genbank_accession
+        value: CM000094.5
+      length_bp:
+        tag: length_bp
+        value: 149682049
+    title: '2'
+    aliases:
+    - chr2
+  CHR3:
+    text: CHR3
+    description: chromosome 3 (Chicken)
+    meaning: CHR:9031-chr3
+    annotations:
+      refseq_accession:
+        tag: refseq_accession
+        value: NC_006090.5
+      genbank_accession:
+        tag: genbank_accession
+        value: CM000095.5
+      length_bp:
+        tag: length_bp
+        value: 110838418
+    title: '3'
+    aliases:
+    - chr3
+  CHR4:
+    text: CHR4
+    description: chromosome 4 (Chicken)
+    meaning: CHR:9031-chr4
+    annotations:
+      refseq_accession:
+        tag: refseq_accession
+        value: NC_006091.5
+      genbank_accession:
+        tag: genbank_accession
+        value: CM000096.5
+      length_bp:
+        tag: length_bp
+        value: 91315245
+    title: '4'
+    aliases:
+    - chr4
+  CHR5:
+    text: CHR5
+    description: chromosome 5 (Chicken)
+    meaning: CHR:9031-chr5
+    annotations:
+      refseq_accession:
+        tag: refseq_accession
+        value: NC_006092.5
+      genbank_accession:
+        tag: genbank_accession
+        value: CM000097.5
+      length_bp:
+        tag: length_bp
+        value: 59809098
+    title: '5'
+    aliases:
+    - chr5
+  CHR6:
+    text: CHR6
+    description: chromosome 6 (Chicken)
+    meaning: CHR:9031-chr6
+    annotations:
+      refseq_accession:
+        tag: refseq_accession
+        value: NC_006093.5
+      genbank_accession:
+        tag: genbank_accession
+        value: CM000098.5
+      length_bp:
+        tag: length_bp
+        value: 36374701
+    title: '6'
+    aliases:
+    - chr6
+  CHR7:
+    text: CHR7
+    description: chromosome 7 (Chicken)
+    meaning: CHR:9031-chr7
+    annotations:
+      refseq_accession:
+        tag: refseq_accession
+        value: NC_006094.5
+      genbank_accession:
+        tag: genbank_accession
+        value: CM000099.5
+      length_bp:
+        tag: length_bp
+        value: 36742308
+    title: '7'
+    aliases:
+    - chr7
+  CHR8:
+    text: CHR8
+    description: chromosome 8 (Chicken)
+    meaning: CHR:9031-chr8
+    annotations:
+      refseq_accession:
+        tag: refseq_accession
+        value: NC_006095.5
+      genbank_accession:
+        tag: genbank_accession
+        value: CM000100.5
+      length_bp:
+        tag: length_bp
+        value: 30219446
+    title: '8'
+    aliases:
+    - chr8
+  CHR9:
+    text: CHR9
+    description: chromosome 9 (Chicken)
+    meaning: CHR:9031-chr9
+    annotations:
+      refseq_accession:
+        tag: refseq_accession
+        value: NC_006096.5
+      genbank_accession:
+        tag: genbank_accession
+        value: CM000101.5
+      length_bp:
+        tag: length_bp
+        value: 24153086
+    title: '9'
+    aliases:
+    - chr9
+  CHR10:
+    text: CHR10
+    description: chromosome 10 (Chicken)
+    meaning: CHR:9031-chr10
+    annotations:
+      refseq_accession:
+        tag: refseq_accession
+        value: NC_006097.5
+      genbank_accession:
+        tag: genbank_accession
+        value: CM000102.5
+      length_bp:
+        tag: length_bp
+        value: 21119840
+    title: '10'
+    aliases:
+    - chr10
+  CHR11:
+    text: CHR11
+    description: chromosome 11 (Chicken)
+    meaning: CHR:9031-chr11
+    annotations:
+      refseq_accession:
+        tag: refseq_accession
+        value: NC_006098.5
+      genbank_accession:
+        tag: genbank_accession
+        value: CM000103.5
+      length_bp:
+        tag: length_bp
+        value: 20200042
+    title: '11'
+    aliases:
+    - chr11
+  CHR12:
+    text: CHR12
+    description: chromosome 12 (Chicken)
+    meaning: CHR:9031-chr12
+    annotations:
+      refseq_accession:
+        tag: refseq_accession
+        value: NC_006099.5
+      genbank_accession:
+        tag: genbank_accession
+        value: CM000104.5
+      length_bp:
+        tag: length_bp
+        value: 20387278
+    title: '12'
+    aliases:
+    - chr12
+  CHR13:
+    text: CHR13
+    description: chromosome 13 (Chicken)
+    meaning: CHR:9031-chr13
+    annotations:
+      refseq_accession:
+        tag: refseq_accession
+        value: NC_006100.5
+      genbank_accession:
+        tag: genbank_accession
+        value: CM000105.5
+      length_bp:
+        tag: length_bp
+        value: 19166714
+    title: '13'
+    aliases:
+    - chr13
+  CHR14:
+    text: CHR14
+    description: chromosome 14 (Chicken)
+    meaning: CHR:9031-chr14
+    annotations:
+      refseq_accession:
+        tag: refseq_accession
+        value: NC_006101.5
+      genbank_accession:
+        tag: genbank_accession
+        value: CM000106.5
+      length_bp:
+        tag: length_bp
+        value: 16219308
+    title: '14'
+    aliases:
+    - chr14
+  CHR15:
+    text: CHR15
+    description: chromosome 15 (Chicken)
+    meaning: CHR:9031-chr15
+    annotations:
+      refseq_accession:
+        tag: refseq_accession
+        value: NC_006102.5
+      genbank_accession:
+        tag: genbank_accession
+        value: CM000107.5
+      length_bp:
+        tag: length_bp
+        value: 13062184
+    title: '15'
+    aliases:
+    - chr15
+  CHR16:
+    text: CHR16
+    description: chromosome 16 (Chicken)
+    meaning: CHR:9031-chr16
+    annotations:
+      refseq_accession:
+        tag: refseq_accession
+        value: NC_006103.5
+      genbank_accession:
+        tag: genbank_accession
+        value: CM000108.5
+      length_bp:
+        tag: length_bp
+        value: 2844601
+    title: '16'
+    aliases:
+    - chr16
+  CHR17:
+    text: CHR17
+    description: chromosome 17 (Chicken)
+    meaning: CHR:9031-chr17
+    annotations:
+      refseq_accession:
+        tag: refseq_accession
+        value: NC_006104.5
+      genbank_accession:
+        tag: genbank_accession
+        value: CM000109.5
+      length_bp:
+        tag: length_bp
+        value: 10762512
+    title: '17'
+    aliases:
+    - chr17
+  CHR18:
+    text: CHR18
+    description: chromosome 18 (Chicken)
+    meaning: CHR:9031-chr18
+    annotations:
+      refseq_accession:
+        tag: refseq_accession
+        value: NC_006105.5
+      genbank_accession:
+        tag: genbank_accession
+        value: CM000110.5
+      length_bp:
+        tag: length_bp
+        value: 11373140
+    title: '18'
+    aliases:
+    - chr18
+  CHR19:
+    text: CHR19
+    description: chromosome 19 (Chicken)
+    meaning: CHR:9031-chr19
+    annotations:
+      refseq_accession:
+        tag: refseq_accession
+        value: NC_006106.5
+      genbank_accession:
+        tag: genbank_accession
+        value: CM000111.5
+      length_bp:
+        tag: length_bp
+        value: 10323212
+    title: '19'
+    aliases:
+    - chr19
+  CHR20:
+    text: CHR20
+    description: chromosome 20 (Chicken)
+    meaning: CHR:9031-chr20
+    annotations:
+      refseq_accession:
+        tag: refseq_accession
+        value: NC_006107.5
+      genbank_accession:
+        tag: genbank_accession
+        value: CM000112.5
+      length_bp:
+        tag: length_bp
+        value: 13897287
+    title: '20'
+    aliases:
+    - chr20
+  CHR21:
+    text: CHR21
+    description: chromosome 21 (Chicken)
+    meaning: CHR:9031-chr21
+    annotations:
+      refseq_accession:
+        tag: refseq_accession
+        value: NC_006108.5
+      genbank_accession:
+        tag: genbank_accession
+        value: CM000113.5
+      length_bp:
+        tag: length_bp
+        value: 6844979
+    title: '21'
+    aliases:
+    - chr21
+  CHR22:
+    text: CHR22
+    description: chromosome 22 (Chicken)
+    meaning: CHR:9031-chr22
+    annotations:
+      refseq_accession:
+        tag: refseq_accession
+        value: NC_006109.5
+      genbank_accession:
+        tag: genbank_accession
+        value: CM000114.5
+      length_bp:
+        tag: length_bp
+        value: 5459462
+    title: '22'
+    aliases:
+    - chr22
+  CHR23:
+    text: CHR23
+    description: chromosome 23 (Chicken)
+    meaning: CHR:9031-chr23
+    annotations:
+      refseq_accession:
+        tag: refseq_accession
+        value: NC_006110.5
+      genbank_accession:
+        tag: genbank_accession
+        value: CM000115.5
+      length_bp:
+        tag: length_bp
+        value: 6149580
+    title: '23'
+    aliases:
+    - chr23
+  CHR24:
+    text: CHR24
+    description: chromosome 24 (Chicken)
+    meaning: CHR:9031-chr24
+    annotations:
+      refseq_accession:
+        tag: refseq_accession
+        value: NC_006111.5
+      genbank_accession:
+        tag: genbank_accession
+        value: CM000116.5
+      length_bp:
+        tag: length_bp
+        value: 6491222
+    title: '24'
+    aliases:
+    - chr24
+  CHR25:
+    text: CHR25
+    description: chromosome 25 (Chicken)
+    meaning: CHR:9031-chr25
+    annotations:
+      refseq_accession:
+        tag: refseq_accession
+        value: NC_006112.4
+      genbank_accession:
+        tag: genbank_accession
+        value: CM000124.5
+      length_bp:
+        tag: length_bp
+        value: 3980610
+    title: '25'
+    aliases:
+    - chr25
+  CHR26:
+    text: CHR26
+    description: chromosome 26 (Chicken)
+    meaning: CHR:9031-chr26
+    annotations:
+      refseq_accession:
+        tag: refseq_accession
+        value: NC_006113.5
+      genbank_accession:
+        tag: genbank_accession
+        value: CM000117.5
+      length_bp:
+        tag: length_bp
+        value: 6055710
+    title: '26'
+    aliases:
+    - chr26
+  CHR27:
+    text: CHR27
+    description: chromosome 27 (Chicken)
+    meaning: CHR:9031-chr27
+    annotations:
+      refseq_accession:
+        tag: refseq_accession
+        value: NC_006114.5
+      genbank_accession:
+        tag: genbank_accession
+        value: CM000118.5
+      length_bp:
+        tag: length_bp
+        value: 8080432
+    title: '27'
+    aliases:
+    - chr27
+  CHR28:
+    text: CHR28
+    description: chromosome 28 (Chicken)
+    meaning: CHR:9031-chr28
+    annotations:
+      refseq_accession:
+        tag: refseq_accession
+        value: NC_006115.5
+      genbank_accession:
+        tag: genbank_accession
+        value: CM000119.5
+      length_bp:
+        tag: length_bp
+        value: 5116882
+    title: '28'
+    aliases:
+    - chr28
+  CHR30:
+    text: CHR30
+    description: chromosome 30 (Chicken)
+    meaning: CHR:9031-chr30
+    annotations:
+      refseq_accession:
+        tag: refseq_accession
+        value: NC_028739.2
+      genbank_accession:
+        tag: genbank_accession
+        value: CM003637.2
+      length_bp:
+        tag: length_bp
+        value: 1818525
+    title: '30'
+    aliases:
+    - chr30
+  CHR31:
+    text: CHR31
+    description: chromosome 31 (Chicken)
+    meaning: CHR:9031-chr31
+    annotations:
+      refseq_accession:
+        tag: refseq_accession
+        value: NC_028740.2
+      genbank_accession:
+        tag: genbank_accession
+        value: CM003638.2
+      length_bp:
+        tag: length_bp
+        value: 6153034
+    title: '31'
+    aliases:
+    - chr31
+  CHR32:
+    text: CHR32
+    description: chromosome 32 (Chicken)
+    meaning: CHR:9031-chr32
+    annotations:
+      refseq_accession:
+        tag: refseq_accession
+        value: NC_006119.4
+      genbank_accession:
+        tag: genbank_accession
+        value: CM000120.4
+      length_bp:
+        tag: length_bp
+        value: 725831
+    title: '32'
+    aliases:
+    - chr32
+  CHR33:
+    text: CHR33
+    description: chromosome 33 (Chicken)
+    meaning: CHR:9031-chr33
+    annotations:
+      refseq_accession:
+        tag: refseq_accession
+        value: NC_008465.4
+      genbank_accession:
+        tag: genbank_accession
+        value: CM000123.5
+      length_bp:
+        tag: length_bp
+        value: 7821666
+    title: '33'
+    aliases:
+    - chr33
+  CHRZ:
+    text: CHRZ
+    description: chromosome Z (Chicken)
+    meaning: CHR:9031-chrZ
+    annotations:
+      refseq_accession:
+        tag: refseq_accession
+        value: NC_006127.5
+      genbank_accession:
+        tag: genbank_accession
+        value: CM000122.5
+      length_bp:
+        tag: length_bp
+        value: 82529921
+    title: Z
+    aliases:
+    - chrZ
+  CHRW:
+    text: CHRW
+    description: chromosome W (Chicken)
+    meaning: CHR:9031-chrW
+    annotations:
+      refseq_accession:
+        tag: refseq_accession
+        value: NC_006126.5
+      genbank_accession:
+        tag: genbank_accession
+        value: CM000121.5
+      length_bp:
+        tag: length_bp
+        value: 6813114
+    title: W
+    aliases:
+    - chrW
+  CHRM:
+    text: CHRM
+    description: chromosome M (Chicken)
+    meaning: CHR:9031-chrM
+    annotations:
+      refseq_accession:
+        tag: refseq_accession
+        value: NC_001323.1
+      genbank_accession:
+        tag: genbank_accession
+        value: X52392.1
+      length_bp:
+        tag: length_bp
+        value: 16775
+    title: M
+    aliases:
+    - chrM
+    - MT
+    - chrMT
+
+</code></pre>
+
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.tabs.link"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

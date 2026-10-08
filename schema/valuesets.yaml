@@ -96,6 +96,7 @@ imports:
 - bio/sequence_chemistry
 - bio/sequencing_platforms
 - bio/genomics
+- bio/genome_assemblies
 - bio/protein_evidence
 - bio/currency_chemicals
 - bio/plant_developmental_stages
@@ -40143,6 +40144,3230 @@ enums:
       AMINO_ACID:
         text: AMINO_ACID
         description: An amino acid sequence, as would be found in an FAA file.
+  HumanGenomeBuild:
+    name: HumanGenomeBuild
+    definition_uri: https://w3id.org/valuesets/HumanGenomeBuild
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    annotations:
+      taxon:
+        tag: taxon
+        value: NCBITaxon:9606
+      stewards:
+        tag: stewards
+        value: https://www.ncbi.nlm.nih.gov/grc
+    description: Human (Homo sapiens) reference genome assemblies. Permissible value
+      names follow the Genome Reference Consortium (GRC) / NCBI assembly names; UCSC
+      database names (hg38, hg19, ...) are given as aliases. Meanings are the INSDC
+      assembly accessions for the base (unpatched) release; patch releases share the
+      same coordinate system.
+    title: Human Genome Build
+    from_schema: https://w3id.org/valuesets/bio/genome_assemblies
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      GRCh38:
+        text: GRCh38
+        description: Genome Reference Consortium Human Build 38, released December
+          2013. Current primary human reference assembly (latest patch GRCh38.p14,
+          GCA_000001405.29).
+        meaning: insdc.gca:GCA_000001405.15
+        annotations:
+          ucsc_name:
+            tag: ucsc_name
+            value: hg38
+          refseq_accession:
+            tag: refseq_accession
+            value: GCF_000001405.26
+          ncbi_assembly_name:
+            tag: ncbi_assembly_name
+            value: GRCh38
+        title: GRCh38
+        aliases:
+        - hg38
+        - GRCh38
+        - GRCh38.p14
+      GRCh37:
+        text: GRCh37
+        description: Genome Reference Consortium Human Build 37, released February
+          2009. UCSC hg19 is largely equivalent but uses a different mitochondrial
+          sequence (NC_001807 rather than the rCRS NC_012920) and "chr"-prefixed sequence
+          names.
+        meaning: insdc.gca:GCA_000001405.1
+        annotations:
+          ucsc_name:
+            tag: ucsc_name
+            value: hg19
+          refseq_accession:
+            tag: refseq_accession
+            value: GCF_000001405.13
+          ncbi_assembly_name:
+            tag: ncbi_assembly_name
+            value: GRCh37
+        title: GRCh37
+        aliases:
+        - hg19
+        - GRCh37
+        - GRCh37.p13
+        - b37
+      NCBI36:
+        text: NCBI36
+        description: NCBI Build 36.1 of the human genome, released March 2006. Superseded.
+        annotations:
+          ucsc_name:
+            tag: ucsc_name
+            value: hg18
+          refseq_accession:
+            tag: refseq_accession
+            value: GCF_000001405.12
+          ncbi_assembly_name:
+            tag: ncbi_assembly_name
+            value: NCBI36
+        title: NCBI36
+        aliases:
+        - hg18
+        - NCBI Build 36
+      T2T_CHM13v2:
+        text: T2T_CHM13v2
+        description: Telomere-to-Telomere Consortium complete gapless assembly of
+          the CHM13 hydatidiform mole cell line, version 2.0 (adds chrY from HG002),
+          released 2022.
+        meaning: insdc.gca:GCA_009914755.4
+        annotations:
+          ucsc_name:
+            tag: ucsc_name
+            value: hs1
+          refseq_accession:
+            tag: refseq_accession
+            value: GCF_009914755.1
+          ncbi_assembly_name:
+            tag: ncbi_assembly_name
+            value: T2T-CHM13v2.0
+        title: T2T-CHM13v2.0
+        aliases:
+        - T2T-CHM13v2.0
+        - CHM13v2.0
+        - hs1
+  ModelOrganismGenomeBuild:
+    name: ModelOrganismGenomeBuild
+    definition_uri: https://w3id.org/valuesets/ModelOrganismGenomeBuild
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    description: Reference genome assemblies for common model organisms, including
+      all non-human builds used by the Monochrom Ontology. Permissible value names
+      follow the NCBI assembly names (with dots replaced by underscores); UCSC database
+      names are given as aliases.
+    title: Model Organism Genome Build
+    from_schema: https://w3id.org/valuesets/bio/genome_assemblies
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      GRCm39:
+        text: GRCm39
+        description: Genome Reference Consortium Mouse Build 39 (Mus musculus), released
+          2020
+        meaning: insdc.gca:GCA_000001635.9
+        annotations:
+          ucsc_name:
+            tag: ucsc_name
+            value: mm39
+          refseq_accession:
+            tag: refseq_accession
+            value: GCF_000001635.27
+          taxon:
+            tag: taxon
+            value: NCBITaxon:10090
+        title: GRCm39
+        aliases:
+        - mm39
+      GRCm38:
+        text: GRCm38
+        description: Genome Reference Consortium Mouse Build 38 (Mus musculus), released
+          2011
+        meaning: insdc.gca:GCA_000001635.2
+        annotations:
+          ucsc_name:
+            tag: ucsc_name
+            value: mm10
+          refseq_accession:
+            tag: refseq_accession
+            value: GCF_000001635.20
+          taxon:
+            tag: taxon
+            value: NCBITaxon:10090
+        title: GRCm38
+        aliases:
+        - mm10
+      mRatBN7_2:
+        text: mRatBN7_2
+        description: Rat (Rattus norvegicus) reference assembly mRatBN7.2, released
+          2020
+        meaning: insdc.gca:GCA_015227675.2
+        annotations:
+          ucsc_name:
+            tag: ucsc_name
+            value: rn7
+          refseq_accession:
+            tag: refseq_accession
+            value: GCF_015227675.2
+          taxon:
+            tag: taxon
+            value: NCBITaxon:10116
+        title: mRatBN7.2
+        aliases:
+        - rn7
+        - mRatBN7.2
+      Rnor_6_0:
+        text: Rnor_6_0
+        description: Rat (Rattus norvegicus) reference assembly Rnor_6.0, released
+          2014
+        meaning: insdc.gca:GCA_000001895.4
+        annotations:
+          ucsc_name:
+            tag: ucsc_name
+            value: rn6
+          refseq_accession:
+            tag: refseq_accession
+            value: GCF_000001895.5
+          taxon:
+            tag: taxon
+            value: NCBITaxon:10116
+        title: Rnor_6.0
+        aliases:
+        - rn6
+        - Rnor_6.0
+      GRCz11:
+        text: GRCz11
+        description: Genome Reference Consortium Zebrafish Build 11 (Danio rerio),
+          released 2017
+        meaning: insdc.gca:GCA_000002035.4
+        annotations:
+          ucsc_name:
+            tag: ucsc_name
+            value: danRer11
+          refseq_accession:
+            tag: refseq_accession
+            value: GCF_000002035.6
+          taxon:
+            tag: taxon
+            value: NCBITaxon:7955
+        title: GRCz11
+        aliases:
+        - danRer11
+      GRCz10:
+        text: GRCz10
+        description: Genome Reference Consortium Zebrafish Build 10 (Danio rerio),
+          released 2014
+        meaning: insdc.gca:GCA_000002035.3
+        annotations:
+          ucsc_name:
+            tag: ucsc_name
+            value: danRer10
+          refseq_accession:
+            tag: refseq_accession
+            value: GCF_000002035.5
+          taxon:
+            tag: taxon
+            value: NCBITaxon:7955
+        title: GRCz10
+        aliases:
+        - danRer10
+      GRCg6a:
+        text: GRCg6a
+        description: Genome Reference Consortium Chicken Build 6a (Gallus gallus),
+          released 2018
+        meaning: insdc.gca:GCA_000002315.5
+        annotations:
+          ucsc_name:
+            tag: ucsc_name
+            value: galGal6
+          refseq_accession:
+            tag: refseq_accession
+            value: GCF_000002315.6
+          taxon:
+            tag: taxon
+            value: NCBITaxon:9031
+        title: GRCg6a
+        aliases:
+        - galGal6
+      WBcel235:
+        text: WBcel235
+        description: WormBase Caenorhabditis elegans reference assembly WBcel235,
+          released 2013
+        meaning: insdc.gca:GCA_000002985.3
+        annotations:
+          ucsc_name:
+            tag: ucsc_name
+            value: ce11
+          refseq_accession:
+            tag: refseq_accession
+            value: GCF_000002985.6
+          taxon:
+            tag: taxon
+            value: NCBITaxon:6239
+        title: WBcel235
+        aliases:
+        - ce11
+      BDGP6:
+        text: BDGP6
+        description: Drosophila melanogaster reference assembly, Release 6 plus ISO1
+          mitochondrial genome
+        meaning: insdc.gca:GCA_000001215.4
+        annotations:
+          ucsc_name:
+            tag: ucsc_name
+            value: dm6
+          refseq_accession:
+            tag: refseq_accession
+            value: GCF_000001215.4
+          taxon:
+            tag: taxon
+            value: NCBITaxon:7227
+        title: Release 6 plus ISO1 MT
+        aliases:
+        - dm6
+        - Release 6 plus ISO1 MT
+      Callithrix_jacchus_cj1700_1_1:
+        text: Callithrix_jacchus_cj1700_1_1
+        description: Common marmoset (Callithrix jacchus) reference assembly cj1700_1.1,
+          released 2019
+        meaning: insdc.gca:GCA_009663435.2
+        annotations:
+          ucsc_name:
+            tag: ucsc_name
+            value: calJac4
+          refseq_accession:
+            tag: refseq_accession
+            value: GCF_009663435.1
+          taxon:
+            tag: taxon
+            value: NCBITaxon:9483
+        title: Callithrix_jacchus_cj1700_1.1
+        aliases:
+        - calJac4
+        - Callithrix_jacchus_cj1700_1.1
+  HumanChromosome:
+    name: HumanChromosome
+    definition_uri: https://w3id.org/valuesets/HumanChromosome
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    annotations:
+      source_ontology:
+        tag: source_ontology
+        value: http://purl.obolibrary.org/obo/chr.owl
+      taxon:
+        tag: taxon
+        value: NCBITaxon:9606
+    description: Nuclear and mitochondrial chromosomes of Homo sapiens (human), as
+      represented in the Monochrom Ontology (CHR). Sequence lengths and accessions
+      are from the UCSC hg38 assembly.
+    title: Homo sapiens Chromosome
+    from_schema: https://w3id.org/valuesets/bio/genome_assemblies
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      CHR1:
+        text: CHR1
+        description: chromosome 1 (Human)
+        meaning: CHR:9606-chr1
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_000001.11
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000663.2
+          length_bp:
+            tag: length_bp
+            value: 248956422
+        title: '1'
+        aliases:
+        - chr1
+      CHR2:
+        text: CHR2
+        description: chromosome 2 (Human)
+        meaning: CHR:9606-chr2
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_000002.12
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000664.2
+          length_bp:
+            tag: length_bp
+            value: 242193529
+        title: '2'
+        aliases:
+        - chr2
+      CHR3:
+        text: CHR3
+        description: chromosome 3 (Human)
+        meaning: CHR:9606-chr3
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_000003.12
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000665.2
+          length_bp:
+            tag: length_bp
+            value: 198295559
+        title: '3'
+        aliases:
+        - chr3
+      CHR4:
+        text: CHR4
+        description: chromosome 4 (Human)
+        meaning: CHR:9606-chr4
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_000004.12
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000666.2
+          length_bp:
+            tag: length_bp
+            value: 190214555
+        title: '4'
+        aliases:
+        - chr4
+      CHR5:
+        text: CHR5
+        description: chromosome 5 (Human)
+        meaning: CHR:9606-chr5
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_000005.10
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000667.2
+          length_bp:
+            tag: length_bp
+            value: 181538259
+        title: '5'
+        aliases:
+        - chr5
+      CHR6:
+        text: CHR6
+        description: chromosome 6 (Human)
+        meaning: CHR:9606-chr6
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_000006.12
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000668.2
+          length_bp:
+            tag: length_bp
+            value: 170805979
+        title: '6'
+        aliases:
+        - chr6
+      CHR7:
+        text: CHR7
+        description: chromosome 7 (Human)
+        meaning: CHR:9606-chr7
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_000007.14
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000669.2
+          length_bp:
+            tag: length_bp
+            value: 159345973
+        title: '7'
+        aliases:
+        - chr7
+      CHR8:
+        text: CHR8
+        description: chromosome 8 (Human)
+        meaning: CHR:9606-chr8
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_000008.11
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000670.2
+          length_bp:
+            tag: length_bp
+            value: 145138636
+        title: '8'
+        aliases:
+        - chr8
+      CHR9:
+        text: CHR9
+        description: chromosome 9 (Human)
+        meaning: CHR:9606-chr9
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_000009.12
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000671.2
+          length_bp:
+            tag: length_bp
+            value: 138394717
+        title: '9'
+        aliases:
+        - chr9
+      CHR10:
+        text: CHR10
+        description: chromosome 10 (Human)
+        meaning: CHR:9606-chr10
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_000010.11
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000672.2
+          length_bp:
+            tag: length_bp
+            value: 133797422
+        title: '10'
+        aliases:
+        - chr10
+      CHR11:
+        text: CHR11
+        description: chromosome 11 (Human)
+        meaning: CHR:9606-chr11
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_000011.10
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000673.2
+          length_bp:
+            tag: length_bp
+            value: 135086622
+        title: '11'
+        aliases:
+        - chr11
+      CHR12:
+        text: CHR12
+        description: chromosome 12 (Human)
+        meaning: CHR:9606-chr12
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_000012.12
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000674.2
+          length_bp:
+            tag: length_bp
+            value: 133275309
+        title: '12'
+        aliases:
+        - chr12
+      CHR13:
+        text: CHR13
+        description: chromosome 13 (Human)
+        meaning: CHR:9606-chr13
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_000013.11
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000675.2
+          length_bp:
+            tag: length_bp
+            value: 114364328
+        title: '13'
+        aliases:
+        - chr13
+      CHR14:
+        text: CHR14
+        description: chromosome 14 (Human)
+        meaning: CHR:9606-chr14
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_000014.9
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000676.2
+          length_bp:
+            tag: length_bp
+            value: 107043718
+        title: '14'
+        aliases:
+        - chr14
+      CHR15:
+        text: CHR15
+        description: chromosome 15 (Human)
+        meaning: CHR:9606-chr15
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_000015.10
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000677.2
+          length_bp:
+            tag: length_bp
+            value: 101991189
+        title: '15'
+        aliases:
+        - chr15
+      CHR16:
+        text: CHR16
+        description: chromosome 16 (Human)
+        meaning: CHR:9606-chr16
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_000016.10
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000678.2
+          length_bp:
+            tag: length_bp
+            value: 90338345
+        title: '16'
+        aliases:
+        - chr16
+      CHR17:
+        text: CHR17
+        description: chromosome 17 (Human)
+        meaning: CHR:9606-chr17
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_000017.11
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000679.2
+          length_bp:
+            tag: length_bp
+            value: 83257441
+        title: '17'
+        aliases:
+        - chr17
+      CHR18:
+        text: CHR18
+        description: chromosome 18 (Human)
+        meaning: CHR:9606-chr18
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_000018.10
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000680.2
+          length_bp:
+            tag: length_bp
+            value: 80373285
+        title: '18'
+        aliases:
+        - chr18
+      CHR19:
+        text: CHR19
+        description: chromosome 19 (Human)
+        meaning: CHR:9606-chr19
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_000019.10
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000681.2
+          length_bp:
+            tag: length_bp
+            value: 58617616
+        title: '19'
+        aliases:
+        - chr19
+      CHR20:
+        text: CHR20
+        description: chromosome 20 (Human)
+        meaning: CHR:9606-chr20
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_000020.11
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000682.2
+          length_bp:
+            tag: length_bp
+            value: 64444167
+        title: '20'
+        aliases:
+        - chr20
+      CHR21:
+        text: CHR21
+        description: chromosome 21 (Human)
+        meaning: CHR:9606-chr21
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_000021.9
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000683.2
+          length_bp:
+            tag: length_bp
+            value: 46709983
+        title: '21'
+        aliases:
+        - chr21
+      CHR22:
+        text: CHR22
+        description: chromosome 22 (Human)
+        meaning: CHR:9606-chr22
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_000022.11
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000684.2
+          length_bp:
+            tag: length_bp
+            value: 50818468
+        title: '22'
+        aliases:
+        - chr22
+      CHRX:
+        text: CHRX
+        description: chromosome X (Human)
+        meaning: CHR:9606-chrX
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_000023.11
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000685.2
+          length_bp:
+            tag: length_bp
+            value: 156040895
+        title: X
+        aliases:
+        - chrX
+      CHRY:
+        text: CHRY
+        description: chromosome Y (Human)
+        meaning: CHR:9606-chrY
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_000024.10
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000686.2
+          length_bp:
+            tag: length_bp
+            value: 57227415
+        title: Y
+        aliases:
+        - chrY
+      CHRM:
+        text: CHRM
+        description: chromosome M (Human)
+        meaning: CHR:9606-chrM
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_012920.1
+          genbank_accession:
+            tag: genbank_accession
+            value: J01415.2
+          length_bp:
+            tag: length_bp
+            value: 16569
+        title: M
+        aliases:
+        - chrM
+        - MT
+        - chrMT
+  MouseChromosome:
+    name: MouseChromosome
+    definition_uri: https://w3id.org/valuesets/MouseChromosome
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    annotations:
+      source_ontology:
+        tag: source_ontology
+        value: http://purl.obolibrary.org/obo/chr.owl
+      taxon:
+        tag: taxon
+        value: NCBITaxon:10090
+    description: Nuclear and mitochondrial chromosomes of Mus musculus (mouse), as
+      represented in the Monochrom Ontology (CHR). Sequence lengths and accessions
+      are from the UCSC mm39 assembly.
+    title: Mus musculus Chromosome
+    from_schema: https://w3id.org/valuesets/bio/genome_assemblies
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      CHR1:
+        text: CHR1
+        description: chromosome 1 (Mouse)
+        meaning: CHR:10090-chr1
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_000067.7
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000994.3
+          length_bp:
+            tag: length_bp
+            value: 195154279
+        title: '1'
+        aliases:
+        - chr1
+      CHR2:
+        text: CHR2
+        description: chromosome 2 (Mouse)
+        meaning: CHR:10090-chr2
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_000068.8
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000995.3
+          length_bp:
+            tag: length_bp
+            value: 181755017
+        title: '2'
+        aliases:
+        - chr2
+      CHR3:
+        text: CHR3
+        description: chromosome 3 (Mouse)
+        meaning: CHR:10090-chr3
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_000069.7
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000996.3
+          length_bp:
+            tag: length_bp
+            value: 159745316
+        title: '3'
+        aliases:
+        - chr3
+      CHR4:
+        text: CHR4
+        description: chromosome 4 (Mouse)
+        meaning: CHR:10090-chr4
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_000070.7
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000997.3
+          length_bp:
+            tag: length_bp
+            value: 156860686
+        title: '4'
+        aliases:
+        - chr4
+      CHR5:
+        text: CHR5
+        description: chromosome 5 (Mouse)
+        meaning: CHR:10090-chr5
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_000071.7
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000998.3
+          length_bp:
+            tag: length_bp
+            value: 151758149
+        title: '5'
+        aliases:
+        - chr5
+      CHR6:
+        text: CHR6
+        description: chromosome 6 (Mouse)
+        meaning: CHR:10090-chr6
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_000072.7
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000999.3
+          length_bp:
+            tag: length_bp
+            value: 149588044
+        title: '6'
+        aliases:
+        - chr6
+      CHR7:
+        text: CHR7
+        description: chromosome 7 (Mouse)
+        meaning: CHR:10090-chr7
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_000073.7
+          genbank_accession:
+            tag: genbank_accession
+            value: CM001000.3
+          length_bp:
+            tag: length_bp
+            value: 144995196
+        title: '7'
+        aliases:
+        - chr7
+      CHR8:
+        text: CHR8
+        description: chromosome 8 (Mouse)
+        meaning: CHR:10090-chr8
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_000074.7
+          genbank_accession:
+            tag: genbank_accession
+            value: CM001001.3
+          length_bp:
+            tag: length_bp
+            value: 130127694
+        title: '8'
+        aliases:
+        - chr8
+      CHR9:
+        text: CHR9
+        description: chromosome 9 (Mouse)
+        meaning: CHR:10090-chr9
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_000075.7
+          genbank_accession:
+            tag: genbank_accession
+            value: CM001002.3
+          length_bp:
+            tag: length_bp
+            value: 124359700
+        title: '9'
+        aliases:
+        - chr9
+      CHR10:
+        text: CHR10
+        description: chromosome 10 (Mouse)
+        meaning: CHR:10090-chr10
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_000076.7
+          genbank_accession:
+            tag: genbank_accession
+            value: CM001003.3
+          length_bp:
+            tag: length_bp
+            value: 130530862
+        title: '10'
+        aliases:
+        - chr10
+      CHR11:
+        text: CHR11
+        description: chromosome 11 (Mouse)
+        meaning: CHR:10090-chr11
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_000077.7
+          genbank_accession:
+            tag: genbank_accession
+            value: CM001004.3
+          length_bp:
+            tag: length_bp
+            value: 121973369
+        title: '11'
+        aliases:
+        - chr11
+      CHR12:
+        text: CHR12
+        description: chromosome 12 (Mouse)
+        meaning: CHR:10090-chr12
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_000078.7
+          genbank_accession:
+            tag: genbank_accession
+            value: CM001005.3
+          length_bp:
+            tag: length_bp
+            value: 120092757
+        title: '12'
+        aliases:
+        - chr12
+      CHR13:
+        text: CHR13
+        description: chromosome 13 (Mouse)
+        meaning: CHR:10090-chr13
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_000079.7
+          genbank_accession:
+            tag: genbank_accession
+            value: CM001006.3
+          length_bp:
+            tag: length_bp
+            value: 120883175
+        title: '13'
+        aliases:
+        - chr13
+      CHR14:
+        text: CHR14
+        description: chromosome 14 (Mouse)
+        meaning: CHR:10090-chr14
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_000080.7
+          genbank_accession:
+            tag: genbank_accession
+            value: CM001007.3
+          length_bp:
+            tag: length_bp
+            value: 125139656
+        title: '14'
+        aliases:
+        - chr14
+      CHR15:
+        text: CHR15
+        description: chromosome 15 (Mouse)
+        meaning: CHR:10090-chr15
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_000081.7
+          genbank_accession:
+            tag: genbank_accession
+            value: CM001008.3
+          length_bp:
+            tag: length_bp
+            value: 104073951
+        title: '15'
+        aliases:
+        - chr15
+      CHR16:
+        text: CHR16
+        description: chromosome 16 (Mouse)
+        meaning: CHR:10090-chr16
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_000082.7
+          genbank_accession:
+            tag: genbank_accession
+            value: CM001009.3
+          length_bp:
+            tag: length_bp
+            value: 98008968
+        title: '16'
+        aliases:
+        - chr16
+      CHR17:
+        text: CHR17
+        description: chromosome 17 (Mouse)
+        meaning: CHR:10090-chr17
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_000083.7
+          genbank_accession:
+            tag: genbank_accession
+            value: CM001010.3
+          length_bp:
+            tag: length_bp
+            value: 95294699
+        title: '17'
+        aliases:
+        - chr17
+      CHR18:
+        text: CHR18
+        description: chromosome 18 (Mouse)
+        meaning: CHR:10090-chr18
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_000084.7
+          genbank_accession:
+            tag: genbank_accession
+            value: CM001011.3
+          length_bp:
+            tag: length_bp
+            value: 90720763
+        title: '18'
+        aliases:
+        - chr18
+      CHR19:
+        text: CHR19
+        description: chromosome 19 (Mouse)
+        meaning: CHR:10090-chr19
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_000085.7
+          genbank_accession:
+            tag: genbank_accession
+            value: CM001012.3
+          length_bp:
+            tag: length_bp
+            value: 61420004
+        title: '19'
+        aliases:
+        - chr19
+      CHRX:
+        text: CHRX
+        description: chromosome X (Mouse)
+        meaning: CHR:10090-chrX
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_000086.8
+          genbank_accession:
+            tag: genbank_accession
+            value: CM001013.3
+          length_bp:
+            tag: length_bp
+            value: 169476592
+        title: X
+        aliases:
+        - chrX
+      CHRY:
+        text: CHRY
+        description: chromosome Y (Mouse)
+        meaning: CHR:10090-chrY
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_000087.8
+          genbank_accession:
+            tag: genbank_accession
+            value: CM001014.3
+          length_bp:
+            tag: length_bp
+            value: 91455967
+        title: Y
+        aliases:
+        - chrY
+      CHRM:
+        text: CHRM
+        description: chromosome M (Mouse)
+        meaning: CHR:10090-chrM
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_005089.1
+          genbank_accession:
+            tag: genbank_accession
+            value: AY172335.1
+          length_bp:
+            tag: length_bp
+            value: 16299
+        title: M
+        aliases:
+        - chrM
+        - MT
+        - chrMT
+  RatChromosome:
+    name: RatChromosome
+    definition_uri: https://w3id.org/valuesets/RatChromosome
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    annotations:
+      source_ontology:
+        tag: source_ontology
+        value: http://purl.obolibrary.org/obo/chr.owl
+      taxon:
+        tag: taxon
+        value: NCBITaxon:10116
+    description: Nuclear and mitochondrial chromosomes of Rattus norvegicus (rat),
+      as represented in the Monochrom Ontology (CHR). Sequence lengths and accessions
+      are from the UCSC rn6 assembly.
+    title: Rattus norvegicus Chromosome
+    from_schema: https://w3id.org/valuesets/bio/genome_assemblies
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      CHR1:
+        text: CHR1
+        description: chromosome 1 (Rat)
+        meaning: CHR:10116-chr1
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_005100.4
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000072.5
+          length_bp:
+            tag: length_bp
+            value: 282763074
+        title: '1'
+        aliases:
+        - chr1
+      CHR2:
+        text: CHR2
+        description: chromosome 2 (Rat)
+        meaning: CHR:10116-chr2
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_005101.4
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000073.5
+          length_bp:
+            tag: length_bp
+            value: 266435125
+        title: '2'
+        aliases:
+        - chr2
+      CHR3:
+        text: CHR3
+        description: chromosome 3 (Rat)
+        meaning: CHR:10116-chr3
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_005102.4
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000074.5
+          length_bp:
+            tag: length_bp
+            value: 177699992
+        title: '3'
+        aliases:
+        - chr3
+      CHR4:
+        text: CHR4
+        description: chromosome 4 (Rat)
+        meaning: CHR:10116-chr4
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_005103.4
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000075.5
+          length_bp:
+            tag: length_bp
+            value: 184226339
+        title: '4'
+        aliases:
+        - chr4
+      CHR5:
+        text: CHR5
+        description: chromosome 5 (Rat)
+        meaning: CHR:10116-chr5
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_005104.4
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000076.5
+          length_bp:
+            tag: length_bp
+            value: 173707219
+        title: '5'
+        aliases:
+        - chr5
+      CHR6:
+        text: CHR6
+        description: chromosome 6 (Rat)
+        meaning: CHR:10116-chr6
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_005105.4
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000077.5
+          length_bp:
+            tag: length_bp
+            value: 147991367
+        title: '6'
+        aliases:
+        - chr6
+      CHR7:
+        text: CHR7
+        description: chromosome 7 (Rat)
+        meaning: CHR:10116-chr7
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_005106.4
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000078.5
+          length_bp:
+            tag: length_bp
+            value: 145729302
+        title: '7'
+        aliases:
+        - chr7
+      CHR8:
+        text: CHR8
+        description: chromosome 8 (Rat)
+        meaning: CHR:10116-chr8
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_005107.4
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000079.5
+          length_bp:
+            tag: length_bp
+            value: 133307652
+        title: '8'
+        aliases:
+        - chr8
+      CHR9:
+        text: CHR9
+        description: chromosome 9 (Rat)
+        meaning: CHR:10116-chr9
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_005108.4
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000080.5
+          length_bp:
+            tag: length_bp
+            value: 122095297
+        title: '9'
+        aliases:
+        - chr9
+      CHR10:
+        text: CHR10
+        description: chromosome 10 (Rat)
+        meaning: CHR:10116-chr10
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_005109.4
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000081.5
+          length_bp:
+            tag: length_bp
+            value: 112626471
+        title: '10'
+        aliases:
+        - chr10
+      CHR11:
+        text: CHR11
+        description: chromosome 11 (Rat)
+        meaning: CHR:10116-chr11
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_005110.4
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000082.5
+          length_bp:
+            tag: length_bp
+            value: 90463843
+        title: '11'
+        aliases:
+        - chr11
+      CHR12:
+        text: CHR12
+        description: chromosome 12 (Rat)
+        meaning: CHR:10116-chr12
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_005111.4
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000083.5
+          length_bp:
+            tag: length_bp
+            value: 52716770
+        title: '12'
+        aliases:
+        - chr12
+      CHR13:
+        text: CHR13
+        description: chromosome 13 (Rat)
+        meaning: CHR:10116-chr13
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_005112.4
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000084.5
+          length_bp:
+            tag: length_bp
+            value: 114033958
+        title: '13'
+        aliases:
+        - chr13
+      CHR14:
+        text: CHR14
+        description: chromosome 14 (Rat)
+        meaning: CHR:10116-chr14
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_005113.4
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000085.5
+          length_bp:
+            tag: length_bp
+            value: 115493446
+        title: '14'
+        aliases:
+        - chr14
+      CHR15:
+        text: CHR15
+        description: chromosome 15 (Rat)
+        meaning: CHR:10116-chr15
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_005114.4
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000086.5
+          length_bp:
+            tag: length_bp
+            value: 111246239
+        title: '15'
+        aliases:
+        - chr15
+      CHR16:
+        text: CHR16
+        description: chromosome 16 (Rat)
+        meaning: CHR:10116-chr16
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_005115.4
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000087.5
+          length_bp:
+            tag: length_bp
+            value: 90668790
+        title: '16'
+        aliases:
+        - chr16
+      CHR17:
+        text: CHR17
+        description: chromosome 17 (Rat)
+        meaning: CHR:10116-chr17
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_005116.4
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000088.5
+          length_bp:
+            tag: length_bp
+            value: 90843779
+        title: '17'
+        aliases:
+        - chr17
+      CHR18:
+        text: CHR18
+        description: chromosome 18 (Rat)
+        meaning: CHR:10116-chr18
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_005117.4
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000089.5
+          length_bp:
+            tag: length_bp
+            value: 88201929
+        title: '18'
+        aliases:
+        - chr18
+      CHR19:
+        text: CHR19
+        description: chromosome 19 (Rat)
+        meaning: CHR:10116-chr19
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_005118.4
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000090.5
+          length_bp:
+            tag: length_bp
+            value: 62275575
+        title: '19'
+        aliases:
+        - chr19
+      CHR20:
+        text: CHR20
+        description: chromosome 20 (Rat)
+        meaning: CHR:10116-chr20
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_005119.4
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000091.5
+          length_bp:
+            tag: length_bp
+            value: 56205956
+        title: '20'
+        aliases:
+        - chr20
+      CHRX:
+        text: CHRX
+        description: chromosome X (Rat)
+        meaning: CHR:10116-chrX
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_005120.4
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000092.5
+          length_bp:
+            tag: length_bp
+            value: 159970021
+        title: X
+        aliases:
+        - chrX
+      CHRY:
+        text: CHRY
+        description: chromosome Y (Rat)
+        meaning: CHR:10116-chrY
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_024475.1
+          genbank_accession:
+            tag: genbank_accession
+            value: CM002824.1
+          length_bp:
+            tag: length_bp
+            value: 3310458
+        title: Y
+        aliases:
+        - chrY
+      CHRM:
+        text: CHRM
+        description: chromosome M (Rat)
+        meaning: CHR:10116-chrM
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_001665.2
+          genbank_accession:
+            tag: genbank_accession
+            value: AY172581.1
+          length_bp:
+            tag: length_bp
+            value: 16313
+        title: M
+        aliases:
+        - chrM
+        - MT
+        - chrMT
+  ZebrafishChromosome:
+    name: ZebrafishChromosome
+    definition_uri: https://w3id.org/valuesets/ZebrafishChromosome
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    annotations:
+      source_ontology:
+        tag: source_ontology
+        value: http://purl.obolibrary.org/obo/chr.owl
+      taxon:
+        tag: taxon
+        value: NCBITaxon:7955
+    description: Nuclear and mitochondrial chromosomes of Danio rerio (zebrafish),
+      as represented in the Monochrom Ontology (CHR). Sequence lengths and accessions
+      are from the UCSC danRer11 assembly.
+    title: Danio rerio Chromosome
+    from_schema: https://w3id.org/valuesets/bio/genome_assemblies
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      CHR1:
+        text: CHR1
+        description: chromosome 1 (Danio rerio)
+        meaning: CHR:7955-chr1
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_007112.7
+          genbank_accession:
+            tag: genbank_accession
+            value: CM002885.2
+          length_bp:
+            tag: length_bp
+            value: 59578282
+        title: '1'
+        aliases:
+        - chr1
+      CHR2:
+        text: CHR2
+        description: chromosome 2 (Danio rerio)
+        meaning: CHR:7955-chr2
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_007113.7
+          genbank_accession:
+            tag: genbank_accession
+            value: CM002886.2
+          length_bp:
+            tag: length_bp
+            value: 59640629
+        title: '2'
+        aliases:
+        - chr2
+      CHR3:
+        text: CHR3
+        description: chromosome 3 (Danio rerio)
+        meaning: CHR:7955-chr3
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_007114.7
+          genbank_accession:
+            tag: genbank_accession
+            value: CM002887.2
+          length_bp:
+            tag: length_bp
+            value: 62628489
+        title: '3'
+        aliases:
+        - chr3
+      CHR4:
+        text: CHR4
+        description: chromosome 4 (Danio rerio)
+        meaning: CHR:7955-chr4
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_007115.7
+          genbank_accession:
+            tag: genbank_accession
+            value: CM002888.2
+          length_bp:
+            tag: length_bp
+            value: 78093715
+        title: '4'
+        aliases:
+        - chr4
+      CHR5:
+        text: CHR5
+        description: chromosome 5 (Danio rerio)
+        meaning: CHR:7955-chr5
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_007116.7
+          genbank_accession:
+            tag: genbank_accession
+            value: CM002889.2
+          length_bp:
+            tag: length_bp
+            value: 72500376
+        title: '5'
+        aliases:
+        - chr5
+      CHR6:
+        text: CHR6
+        description: chromosome 6 (Danio rerio)
+        meaning: CHR:7955-chr6
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_007117.7
+          genbank_accession:
+            tag: genbank_accession
+            value: CM002890.2
+          length_bp:
+            tag: length_bp
+            value: 60270059
+        title: '6'
+        aliases:
+        - chr6
+      CHR7:
+        text: CHR7
+        description: chromosome 7 (Danio rerio)
+        meaning: CHR:7955-chr7
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_007118.7
+          genbank_accession:
+            tag: genbank_accession
+            value: CM002891.2
+          length_bp:
+            tag: length_bp
+            value: 74282399
+        title: '7'
+        aliases:
+        - chr7
+      CHR8:
+        text: CHR8
+        description: chromosome 8 (Danio rerio)
+        meaning: CHR:7955-chr8
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_007119.7
+          genbank_accession:
+            tag: genbank_accession
+            value: CM002892.2
+          length_bp:
+            tag: length_bp
+            value: 54304671
+        title: '8'
+        aliases:
+        - chr8
+      CHR9:
+        text: CHR9
+        description: chromosome 9 (Danio rerio)
+        meaning: CHR:7955-chr9
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_007120.7
+          genbank_accession:
+            tag: genbank_accession
+            value: CM002893.2
+          length_bp:
+            tag: length_bp
+            value: 56459846
+        title: '9'
+        aliases:
+        - chr9
+      CHR10:
+        text: CHR10
+        description: chromosome 10 (Danio rerio)
+        meaning: CHR:7955-chr10
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_007121.7
+          genbank_accession:
+            tag: genbank_accession
+            value: CM002894.2
+          length_bp:
+            tag: length_bp
+            value: 45420867
+        title: '10'
+        aliases:
+        - chr10
+      CHR11:
+        text: CHR11
+        description: chromosome 11 (Danio rerio)
+        meaning: CHR:7955-chr11
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_007122.7
+          genbank_accession:
+            tag: genbank_accession
+            value: CM002895.2
+          length_bp:
+            tag: length_bp
+            value: 45484837
+        title: '11'
+        aliases:
+        - chr11
+      CHR12:
+        text: CHR12
+        description: chromosome 12 (Danio rerio)
+        meaning: CHR:7955-chr12
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_007123.7
+          genbank_accession:
+            tag: genbank_accession
+            value: CM002896.2
+          length_bp:
+            tag: length_bp
+            value: 49182954
+        title: '12'
+        aliases:
+        - chr12
+      CHR13:
+        text: CHR13
+        description: chromosome 13 (Danio rerio)
+        meaning: CHR:7955-chr13
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_007124.7
+          genbank_accession:
+            tag: genbank_accession
+            value: CM002897.2
+          length_bp:
+            tag: length_bp
+            value: 52186027
+        title: '13'
+        aliases:
+        - chr13
+      CHR14:
+        text: CHR14
+        description: chromosome 14 (Danio rerio)
+        meaning: CHR:7955-chr14
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_007125.7
+          genbank_accession:
+            tag: genbank_accession
+            value: CM002898.2
+          length_bp:
+            tag: length_bp
+            value: 52660232
+        title: '14'
+        aliases:
+        - chr14
+      CHR15:
+        text: CHR15
+        description: chromosome 15 (Danio rerio)
+        meaning: CHR:7955-chr15
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_007126.7
+          genbank_accession:
+            tag: genbank_accession
+            value: CM002899.2
+          length_bp:
+            tag: length_bp
+            value: 48040578
+        title: '15'
+        aliases:
+        - chr15
+      CHR16:
+        text: CHR16
+        description: chromosome 16 (Danio rerio)
+        meaning: CHR:7955-chr16
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_007127.7
+          genbank_accession:
+            tag: genbank_accession
+            value: CM002900.2
+          length_bp:
+            tag: length_bp
+            value: 55266484
+        title: '16'
+        aliases:
+        - chr16
+      CHR17:
+        text: CHR17
+        description: chromosome 17 (Danio rerio)
+        meaning: CHR:7955-chr17
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_007128.7
+          genbank_accession:
+            tag: genbank_accession
+            value: CM002901.2
+          length_bp:
+            tag: length_bp
+            value: 53461100
+        title: '17'
+        aliases:
+        - chr17
+      CHR18:
+        text: CHR18
+        description: chromosome 18 (Danio rerio)
+        meaning: CHR:7955-chr18
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_007129.7
+          genbank_accession:
+            tag: genbank_accession
+            value: CM002902.2
+          length_bp:
+            tag: length_bp
+            value: 51023478
+        title: '18'
+        aliases:
+        - chr18
+      CHR19:
+        text: CHR19
+        description: chromosome 19 (Danio rerio)
+        meaning: CHR:7955-chr19
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_007130.7
+          genbank_accession:
+            tag: genbank_accession
+            value: CM002903.2
+          length_bp:
+            tag: length_bp
+            value: 48449771
+        title: '19'
+        aliases:
+        - chr19
+      CHR20:
+        text: CHR20
+        description: chromosome 20 (Danio rerio)
+        meaning: CHR:7955-chr20
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_007131.7
+          genbank_accession:
+            tag: genbank_accession
+            value: CM002904.2
+          length_bp:
+            tag: length_bp
+            value: 55201332
+        title: '20'
+        aliases:
+        - chr20
+      CHR21:
+        text: CHR21
+        description: chromosome 21 (Danio rerio)
+        meaning: CHR:7955-chr21
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_007132.7
+          genbank_accession:
+            tag: genbank_accession
+            value: CM002905.2
+          length_bp:
+            tag: length_bp
+            value: 45934066
+        title: '21'
+        aliases:
+        - chr21
+      CHR22:
+        text: CHR22
+        description: chromosome 22 (Danio rerio)
+        meaning: CHR:7955-chr22
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_007133.7
+          genbank_accession:
+            tag: genbank_accession
+            value: CM002906.2
+          length_bp:
+            tag: length_bp
+            value: 39133080
+        title: '22'
+        aliases:
+        - chr22
+      CHR23:
+        text: CHR23
+        description: chromosome 23 (Danio rerio)
+        meaning: CHR:7955-chr23
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_007134.7
+          genbank_accession:
+            tag: genbank_accession
+            value: CM002907.2
+          length_bp:
+            tag: length_bp
+            value: 46223584
+        title: '23'
+        aliases:
+        - chr23
+      CHR24:
+        text: CHR24
+        description: chromosome 24 (Danio rerio)
+        meaning: CHR:7955-chr24
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_007135.7
+          genbank_accession:
+            tag: genbank_accession
+            value: CM002908.2
+          length_bp:
+            tag: length_bp
+            value: 42172926
+        title: '24'
+        aliases:
+        - chr24
+      CHR25:
+        text: CHR25
+        description: chromosome 25 (Danio rerio)
+        meaning: CHR:7955-chr25
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_007136.7
+          genbank_accession:
+            tag: genbank_accession
+            value: CM002909.2
+          length_bp:
+            tag: length_bp
+            value: 37502051
+        title: '25'
+        aliases:
+        - chr25
+      CHRM:
+        text: CHRM
+        description: chromosome M (Danio rerio)
+        meaning: CHR:7955-chrM
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_002333.2
+          genbank_accession:
+            tag: genbank_accession
+            value: AC024175.3
+          length_bp:
+            tag: length_bp
+            value: 16596
+        title: M
+        aliases:
+        - chrM
+        - MT
+        - chrMT
+  ChickenChromosome:
+    name: ChickenChromosome
+    definition_uri: https://w3id.org/valuesets/ChickenChromosome
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    annotations:
+      source_ontology:
+        tag: source_ontology
+        value: http://purl.obolibrary.org/obo/chr.owl
+      taxon:
+        tag: taxon
+        value: NCBITaxon:9031
+    description: Nuclear and mitochondrial chromosomes of Gallus gallus (chicken),
+      as represented in the Monochrom Ontology (CHR). Sequence lengths and accessions
+      are from the UCSC galGal6 assembly.
+    title: Gallus gallus Chromosome
+    from_schema: https://w3id.org/valuesets/bio/genome_assemblies
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      CHR1:
+        text: CHR1
+        description: chromosome 1 (Chicken)
+        meaning: CHR:9031-chr1
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_006088.5
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000093.5
+          length_bp:
+            tag: length_bp
+            value: 197608386
+        title: '1'
+        aliases:
+        - chr1
+      CHR2:
+        text: CHR2
+        description: chromosome 2 (Chicken)
+        meaning: CHR:9031-chr2
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_006089.5
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000094.5
+          length_bp:
+            tag: length_bp
+            value: 149682049
+        title: '2'
+        aliases:
+        - chr2
+      CHR3:
+        text: CHR3
+        description: chromosome 3 (Chicken)
+        meaning: CHR:9031-chr3
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_006090.5
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000095.5
+          length_bp:
+            tag: length_bp
+            value: 110838418
+        title: '3'
+        aliases:
+        - chr3
+      CHR4:
+        text: CHR4
+        description: chromosome 4 (Chicken)
+        meaning: CHR:9031-chr4
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_006091.5
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000096.5
+          length_bp:
+            tag: length_bp
+            value: 91315245
+        title: '4'
+        aliases:
+        - chr4
+      CHR5:
+        text: CHR5
+        description: chromosome 5 (Chicken)
+        meaning: CHR:9031-chr5
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_006092.5
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000097.5
+          length_bp:
+            tag: length_bp
+            value: 59809098
+        title: '5'
+        aliases:
+        - chr5
+      CHR6:
+        text: CHR6
+        description: chromosome 6 (Chicken)
+        meaning: CHR:9031-chr6
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_006093.5
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000098.5
+          length_bp:
+            tag: length_bp
+            value: 36374701
+        title: '6'
+        aliases:
+        - chr6
+      CHR7:
+        text: CHR7
+        description: chromosome 7 (Chicken)
+        meaning: CHR:9031-chr7
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_006094.5
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000099.5
+          length_bp:
+            tag: length_bp
+            value: 36742308
+        title: '7'
+        aliases:
+        - chr7
+      CHR8:
+        text: CHR8
+        description: chromosome 8 (Chicken)
+        meaning: CHR:9031-chr8
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_006095.5
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000100.5
+          length_bp:
+            tag: length_bp
+            value: 30219446
+        title: '8'
+        aliases:
+        - chr8
+      CHR9:
+        text: CHR9
+        description: chromosome 9 (Chicken)
+        meaning: CHR:9031-chr9
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_006096.5
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000101.5
+          length_bp:
+            tag: length_bp
+            value: 24153086
+        title: '9'
+        aliases:
+        - chr9
+      CHR10:
+        text: CHR10
+        description: chromosome 10 (Chicken)
+        meaning: CHR:9031-chr10
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_006097.5
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000102.5
+          length_bp:
+            tag: length_bp
+            value: 21119840
+        title: '10'
+        aliases:
+        - chr10
+      CHR11:
+        text: CHR11
+        description: chromosome 11 (Chicken)
+        meaning: CHR:9031-chr11
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_006098.5
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000103.5
+          length_bp:
+            tag: length_bp
+            value: 20200042
+        title: '11'
+        aliases:
+        - chr11
+      CHR12:
+        text: CHR12
+        description: chromosome 12 (Chicken)
+        meaning: CHR:9031-chr12
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_006099.5
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000104.5
+          length_bp:
+            tag: length_bp
+            value: 20387278
+        title: '12'
+        aliases:
+        - chr12
+      CHR13:
+        text: CHR13
+        description: chromosome 13 (Chicken)
+        meaning: CHR:9031-chr13
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_006100.5
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000105.5
+          length_bp:
+            tag: length_bp
+            value: 19166714
+        title: '13'
+        aliases:
+        - chr13
+      CHR14:
+        text: CHR14
+        description: chromosome 14 (Chicken)
+        meaning: CHR:9031-chr14
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_006101.5
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000106.5
+          length_bp:
+            tag: length_bp
+            value: 16219308
+        title: '14'
+        aliases:
+        - chr14
+      CHR15:
+        text: CHR15
+        description: chromosome 15 (Chicken)
+        meaning: CHR:9031-chr15
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_006102.5
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000107.5
+          length_bp:
+            tag: length_bp
+            value: 13062184
+        title: '15'
+        aliases:
+        - chr15
+      CHR16:
+        text: CHR16
+        description: chromosome 16 (Chicken)
+        meaning: CHR:9031-chr16
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_006103.5
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000108.5
+          length_bp:
+            tag: length_bp
+            value: 2844601
+        title: '16'
+        aliases:
+        - chr16
+      CHR17:
+        text: CHR17
+        description: chromosome 17 (Chicken)
+        meaning: CHR:9031-chr17
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_006104.5
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000109.5
+          length_bp:
+            tag: length_bp
+            value: 10762512
+        title: '17'
+        aliases:
+        - chr17
+      CHR18:
+        text: CHR18
+        description: chromosome 18 (Chicken)
+        meaning: CHR:9031-chr18
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_006105.5
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000110.5
+          length_bp:
+            tag: length_bp
+            value: 11373140
+        title: '18'
+        aliases:
+        - chr18
+      CHR19:
+        text: CHR19
+        description: chromosome 19 (Chicken)
+        meaning: CHR:9031-chr19
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_006106.5
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000111.5
+          length_bp:
+            tag: length_bp
+            value: 10323212
+        title: '19'
+        aliases:
+        - chr19
+      CHR20:
+        text: CHR20
+        description: chromosome 20 (Chicken)
+        meaning: CHR:9031-chr20
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_006107.5
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000112.5
+          length_bp:
+            tag: length_bp
+            value: 13897287
+        title: '20'
+        aliases:
+        - chr20
+      CHR21:
+        text: CHR21
+        description: chromosome 21 (Chicken)
+        meaning: CHR:9031-chr21
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_006108.5
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000113.5
+          length_bp:
+            tag: length_bp
+            value: 6844979
+        title: '21'
+        aliases:
+        - chr21
+      CHR22:
+        text: CHR22
+        description: chromosome 22 (Chicken)
+        meaning: CHR:9031-chr22
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_006109.5
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000114.5
+          length_bp:
+            tag: length_bp
+            value: 5459462
+        title: '22'
+        aliases:
+        - chr22
+      CHR23:
+        text: CHR23
+        description: chromosome 23 (Chicken)
+        meaning: CHR:9031-chr23
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_006110.5
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000115.5
+          length_bp:
+            tag: length_bp
+            value: 6149580
+        title: '23'
+        aliases:
+        - chr23
+      CHR24:
+        text: CHR24
+        description: chromosome 24 (Chicken)
+        meaning: CHR:9031-chr24
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_006111.5
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000116.5
+          length_bp:
+            tag: length_bp
+            value: 6491222
+        title: '24'
+        aliases:
+        - chr24
+      CHR25:
+        text: CHR25
+        description: chromosome 25 (Chicken)
+        meaning: CHR:9031-chr25
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_006112.4
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000124.5
+          length_bp:
+            tag: length_bp
+            value: 3980610
+        title: '25'
+        aliases:
+        - chr25
+      CHR26:
+        text: CHR26
+        description: chromosome 26 (Chicken)
+        meaning: CHR:9031-chr26
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_006113.5
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000117.5
+          length_bp:
+            tag: length_bp
+            value: 6055710
+        title: '26'
+        aliases:
+        - chr26
+      CHR27:
+        text: CHR27
+        description: chromosome 27 (Chicken)
+        meaning: CHR:9031-chr27
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_006114.5
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000118.5
+          length_bp:
+            tag: length_bp
+            value: 8080432
+        title: '27'
+        aliases:
+        - chr27
+      CHR28:
+        text: CHR28
+        description: chromosome 28 (Chicken)
+        meaning: CHR:9031-chr28
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_006115.5
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000119.5
+          length_bp:
+            tag: length_bp
+            value: 5116882
+        title: '28'
+        aliases:
+        - chr28
+      CHR30:
+        text: CHR30
+        description: chromosome 30 (Chicken)
+        meaning: CHR:9031-chr30
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_028739.2
+          genbank_accession:
+            tag: genbank_accession
+            value: CM003637.2
+          length_bp:
+            tag: length_bp
+            value: 1818525
+        title: '30'
+        aliases:
+        - chr30
+      CHR31:
+        text: CHR31
+        description: chromosome 31 (Chicken)
+        meaning: CHR:9031-chr31
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_028740.2
+          genbank_accession:
+            tag: genbank_accession
+            value: CM003638.2
+          length_bp:
+            tag: length_bp
+            value: 6153034
+        title: '31'
+        aliases:
+        - chr31
+      CHR32:
+        text: CHR32
+        description: chromosome 32 (Chicken)
+        meaning: CHR:9031-chr32
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_006119.4
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000120.4
+          length_bp:
+            tag: length_bp
+            value: 725831
+        title: '32'
+        aliases:
+        - chr32
+      CHR33:
+        text: CHR33
+        description: chromosome 33 (Chicken)
+        meaning: CHR:9031-chr33
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_008465.4
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000123.5
+          length_bp:
+            tag: length_bp
+            value: 7821666
+        title: '33'
+        aliases:
+        - chr33
+      CHRZ:
+        text: CHRZ
+        description: chromosome Z (Chicken)
+        meaning: CHR:9031-chrZ
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_006127.5
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000122.5
+          length_bp:
+            tag: length_bp
+            value: 82529921
+        title: Z
+        aliases:
+        - chrZ
+      CHRW:
+        text: CHRW
+        description: chromosome W (Chicken)
+        meaning: CHR:9031-chrW
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_006126.5
+          genbank_accession:
+            tag: genbank_accession
+            value: CM000121.5
+          length_bp:
+            tag: length_bp
+            value: 6813114
+        title: W
+        aliases:
+        - chrW
+      CHRM:
+        text: CHRM
+        description: chromosome M (Chicken)
+        meaning: CHR:9031-chrM
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_001323.1
+          genbank_accession:
+            tag: genbank_accession
+            value: X52392.1
+          length_bp:
+            tag: length_bp
+            value: 16775
+        title: M
+        aliases:
+        - chrM
+        - MT
+        - chrMT
+  CElegansChromosome:
+    name: CElegansChromosome
+    definition_uri: https://w3id.org/valuesets/CElegansChromosome
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    annotations:
+      source_ontology:
+        tag: source_ontology
+        value: http://purl.obolibrary.org/obo/chr.owl
+      taxon:
+        tag: taxon
+        value: NCBITaxon:6239
+    description: Nuclear and mitochondrial chromosomes of Caenorhabditis elegans (C.
+      elegans), as represented in the Monochrom Ontology (CHR). Sequence lengths and
+      accessions are from the UCSC ce11 assembly.
+    title: Caenorhabditis elegans Chromosome
+    from_schema: https://w3id.org/valuesets/bio/genome_assemblies
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      CHRI:
+        text: CHRI
+        description: chromosome I (C elegans)
+        meaning: CHR:6239-chrI
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_003279.8
+          length_bp:
+            tag: length_bp
+            value: 15072434
+        title: I
+        aliases:
+        - chrI
+      CHRII:
+        text: CHRII
+        description: chromosome II (C elegans)
+        meaning: CHR:6239-chrII
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_003280.10
+          length_bp:
+            tag: length_bp
+            value: 15279421
+        title: II
+        aliases:
+        - chrII
+      CHRIII:
+        text: CHRIII
+        description: chromosome III (C elegans)
+        meaning: CHR:6239-chrIII
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_003281.10
+          length_bp:
+            tag: length_bp
+            value: 13783801
+        title: III
+        aliases:
+        - chrIII
+      CHRIV:
+        text: CHRIV
+        description: chromosome IV (C elegans)
+        meaning: CHR:6239-chrIV
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_003282.8
+          length_bp:
+            tag: length_bp
+            value: 17493829
+        title: IV
+        aliases:
+        - chrIV
+      CHRV:
+        text: CHRV
+        description: chromosome V (C elegans)
+        meaning: CHR:6239-chrV
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_003283.11
+          length_bp:
+            tag: length_bp
+            value: 20924180
+        title: V
+        aliases:
+        - chrV
+      CHRX:
+        text: CHRX
+        description: chromosome X (C elegans)
+        meaning: CHR:6239-chrX
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_003284.9
+          length_bp:
+            tag: length_bp
+            value: 17718942
+        title: X
+        aliases:
+        - chrX
+      CHRM:
+        text: CHRM
+        description: chromosome M (C elegans)
+        meaning: CHR:6239-chrM
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_001328.1
+          length_bp:
+            tag: length_bp
+            value: 13794
+        title: M
+        aliases:
+        - chrM
+        - MT
+        - chrMT
+  MarmosetChromosome:
+    name: MarmosetChromosome
+    definition_uri: https://w3id.org/valuesets/MarmosetChromosome
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    annotations:
+      source_ontology:
+        tag: source_ontology
+        value: http://purl.obolibrary.org/obo/chr.owl
+      taxon:
+        tag: taxon
+        value: NCBITaxon:9483
+    description: Nuclear and mitochondrial chromosomes of Callithrix jacchus (marmoset),
+      as represented in the Monochrom Ontology (CHR). Sequence lengths and accessions
+      are from the UCSC calJac4 assembly.
+    title: Callithrix jacchus Chromosome
+    from_schema: https://w3id.org/valuesets/bio/genome_assemblies
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    status: DRAFT
+    permissible_values:
+      CHR1:
+        text: CHR1
+        description: chromosome 1 (Marmoset)
+        meaning: CHR:9483-chr1
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_048383.1
+          genbank_accession:
+            tag: genbank_accession
+            value: CM018917.1
+          length_bp:
+            tag: length_bp
+            value: 217961735
+        title: '1'
+        aliases:
+        - chr1
+      CHR2:
+        text: CHR2
+        description: chromosome 2 (Marmoset)
+        meaning: CHR:9483-chr2
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_048384.1
+          genbank_accession:
+            tag: genbank_accession
+            value: CM018918.1
+          length_bp:
+            tag: length_bp
+            value: 204486479
+        title: '2'
+        aliases:
+        - chr2
+      CHR3:
+        text: CHR3
+        description: chromosome 3 (Marmoset)
+        meaning: CHR:9483-chr3
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_048385.1
+          genbank_accession:
+            tag: genbank_accession
+            value: CM018919.1
+          length_bp:
+            tag: length_bp
+            value: 191910223
+        title: '3'
+        aliases:
+        - chr3
+      CHR4:
+        text: CHR4
+        description: chromosome 4 (Marmoset)
+        meaning: CHR:9483-chr4
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_048386.1
+          genbank_accession:
+            tag: genbank_accession
+            value: CM018920.1
+          length_bp:
+            tag: length_bp
+            value: 174041770
+        title: '4'
+        aliases:
+        - chr4
+      CHR5:
+        text: CHR5
+        description: chromosome 5 (Marmoset)
+        meaning: CHR:9483-chr5
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_048387.1
+          genbank_accession:
+            tag: genbank_accession
+            value: CM018921.1
+          length_bp:
+            tag: length_bp
+            value: 164351765
+        title: '5'
+        aliases:
+        - chr5
+      CHR6:
+        text: CHR6
+        description: chromosome 6 (Marmoset)
+        meaning: CHR:9483-chr6
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_048388.1
+          genbank_accession:
+            tag: genbank_accession
+            value: CM018922.1
+          length_bp:
+            tag: length_bp
+            value: 161003406
+        title: '6'
+        aliases:
+        - chr6
+      CHR7:
+        text: CHR7
+        description: chromosome 7 (Marmoset)
+        meaning: CHR:9483-chr7
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_048389.1
+          genbank_accession:
+            tag: genbank_accession
+            value: CM018923.1
+          length_bp:
+            tag: length_bp
+            value: 157546058
+        title: '7'
+        aliases:
+        - chr7
+      CHR8:
+        text: CHR8
+        description: chromosome 8 (Marmoset)
+        meaning: CHR:9483-chr8
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_048390.1
+          genbank_accession:
+            tag: genbank_accession
+            value: CM018924.1
+          length_bp:
+            tag: length_bp
+            value: 126850804
+        title: '8'
+        aliases:
+        - chr8
+      CHR9:
+        text: CHR9
+        description: chromosome 9 (Marmoset)
+        meaning: CHR:9483-chr9
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_048391.1
+          genbank_accession:
+            tag: genbank_accession
+            value: CM018925.1
+          length_bp:
+            tag: length_bp
+            value: 134044658
+        title: '9'
+        aliases:
+        - chr9
+      CHR10:
+        text: CHR10
+        description: chromosome 10 (Marmoset)
+        meaning: CHR:9483-chr10
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_048392.1
+          genbank_accession:
+            tag: genbank_accession
+            value: CM018926.1
+          length_bp:
+            tag: length_bp
+            value: 137671225
+        title: '10'
+        aliases:
+        - chr10
+      CHR11:
+        text: CHR11
+        description: chromosome 11 (Marmoset)
+        meaning: CHR:9483-chr11
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_048393.1
+          genbank_accession:
+            tag: genbank_accession
+            value: CM018927.1
+          length_bp:
+            tag: length_bp
+            value: 129688756
+        title: '11'
+        aliases:
+        - chr11
+      CHR12:
+        text: CHR12
+        description: chromosome 12 (Marmoset)
+        meaning: CHR:9483-chr12
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_048394.1
+          genbank_accession:
+            tag: genbank_accession
+            value: CM018928.1
+          length_bp:
+            tag: length_bp
+            value: 124486764
+        title: '12'
+        aliases:
+        - chr12
+      CHR13:
+        text: CHR13
+        description: chromosome 13 (Marmoset)
+        meaning: CHR:9483-chr13
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_048395.1
+          genbank_accession:
+            tag: genbank_accession
+            value: CM018929.1
+          length_bp:
+            tag: length_bp
+            value: 118934817
+        title: '13'
+        aliases:
+        - chr13
+      CHR14:
+        text: CHR14
+        description: chromosome 14 (Marmoset)
+        meaning: CHR:9483-chr14
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_048396.1
+          genbank_accession:
+            tag: genbank_accession
+            value: CM018930.1
+          length_bp:
+            tag: length_bp
+            value: 112090317
+        title: '14'
+        aliases:
+        - chr14
+      CHR15:
+        text: CHR15
+        description: chromosome 15 (Marmoset)
+        meaning: CHR:9483-chr15
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_048397.1
+          genbank_accession:
+            tag: genbank_accession
+            value: CM018931.1
+          length_bp:
+            tag: length_bp
+            value: 99198953
+        title: '15'
+        aliases:
+        - chr15
+      CHR16:
+        text: CHR16
+        description: chromosome 16 (Marmoset)
+        meaning: CHR:9483-chr16
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_048398.1
+          genbank_accession:
+            tag: genbank_accession
+            value: CM018932.1
+          length_bp:
+            tag: length_bp
+            value: 97817134
+        title: '16'
+        aliases:
+        - chr16
+      CHR17:
+        text: CHR17
+        description: chromosome 17 (Marmoset)
+        meaning: CHR:9483-chr17
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_048399.1
+          genbank_accession:
+            tag: genbank_accession
+            value: CM018933.1
+          length_bp:
+            tag: length_bp
+            value: 74942703
+        title: '17'
+        aliases:
+        - chr17
+      CHR18:
+        text: CHR18
+        description: chromosome 18 (Marmoset)
+        meaning: CHR:9483-chr18
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_048400.1
+          genbank_accession:
+            tag: genbank_accession
+            value: CM018934.1
+          length_bp:
+            tag: length_bp
+            value: 47031477
+        title: '18'
+        aliases:
+        - chr18
+      CHR19:
+        text: CHR19
+        description: chromosome 19 (Marmoset)
+        meaning: CHR:9483-chr19
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_048401.1
+          genbank_accession:
+            tag: genbank_accession
+            value: CM018935.1
+          length_bp:
+            tag: length_bp
+            value: 51570929
+        title: '19'
+        aliases:
+        - chr19
+      CHR20:
+        text: CHR20
+        description: chromosome 20 (Marmoset)
+        meaning: CHR:9483-chr20
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_048402.1
+          genbank_accession:
+            tag: genbank_accession
+            value: CM018936.1
+          length_bp:
+            tag: length_bp
+            value: 45615054
+        title: '20'
+        aliases:
+        - chr20
+      CHR21:
+        text: CHR21
+        description: chromosome 21 (Marmoset)
+        meaning: CHR:9483-chr21
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_048403.1
+          genbank_accession:
+            tag: genbank_accession
+            value: CM018937.1
+          length_bp:
+            tag: length_bp
+            value: 51259342
+        title: '21'
+        aliases:
+        - chr21
+      CHR22:
+        text: CHR22
+        description: chromosome 22 (Marmoset)
+        meaning: CHR:9483-chr22
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_048404.1
+          genbank_accession:
+            tag: genbank_accession
+            value: CM018938.1
+          length_bp:
+            tag: length_bp
+            value: 51300780
+        title: '22'
+        aliases:
+        - chr22
+      CHRX:
+        text: CHRX
+        description: chromosome X (Marmoset)
+        meaning: CHR:9483-chrX
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_048405.1
+          genbank_accession:
+            tag: genbank_accession
+            value: CM018939.1
+          length_bp:
+            tag: length_bp
+            value: 148168104
+        title: X
+        aliases:
+        - chrX
+      CHRY:
+        text: CHRY
+        description: chromosome Y (Marmoset)
+        meaning: CHR:9483-chrY
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_048406.1
+          genbank_accession:
+            tag: genbank_accession
+            value: CM023155.1
+          length_bp:
+            tag: length_bp
+            value: 8228174
+        title: Y
+        aliases:
+        - chrY
+      CHRM:
+        text: CHRM
+        description: chromosome M (Marmoset)
+        meaning: CHR:9483-chrM
+        annotations:
+          refseq_accession:
+            tag: refseq_accession
+            value: NC_025586.1
+          genbank_accession:
+            tag: genbank_accession
+            value: KM588314.1
+          length_bp:
+            tag: length_bp
+            value: 16499
+        title: M
+        aliases:
+        - chrM
+        - MT
+        - chrMT
   ProteinEvidenceForExistence:
     name: ProteinEvidenceForExistence
     definition_uri: https://w3id.org/valuesets/ProteinEvidenceForExistence
@@ -84044,6 +87269,34 @@ slots:
     from_schema: https://w3id.org/common-value-sets/genomics
     slot_uri: valuesets:sequence
     range: SequenceType
+  human_genome_build:
+    name: human_genome_build
+    definition_uri: https://w3id.org/valuesets/human_genome_build
+    description: Reference genome build (assembly) for human sequence coordinates
+    from_schema: https://w3id.org/valuesets/bio/genome_assemblies
+    slot_uri: valuesets:human_genome_build
+    range: HumanGenomeBuild
+  model_organism_genome_build:
+    name: model_organism_genome_build
+    definition_uri: https://w3id.org/valuesets/model_organism_genome_build
+    description: Reference genome build (assembly) for a model organism
+    from_schema: https://w3id.org/valuesets/bio/genome_assemblies
+    slot_uri: valuesets:model_organism_genome_build
+    range: ModelOrganismGenomeBuild
+  human_chromosome:
+    name: human_chromosome
+    definition_uri: https://w3id.org/valuesets/human_chromosome
+    description: A human chromosome
+    from_schema: https://w3id.org/valuesets/bio/genome_assemblies
+    slot_uri: valuesets:human_chromosome
+    range: HumanChromosome
+  mouse_chromosome:
+    name: mouse_chromosome
+    definition_uri: https://w3id.org/valuesets/mouse_chromosome
+    description: A mouse chromosome
+    from_schema: https://w3id.org/valuesets/bio/genome_assemblies
+    slot_uri: valuesets:mouse_chromosome
+    range: MouseChromosome
   protein_evidence_for_existence:
     name: protein_evidence_for_existence
     definition_uri: https://w3id.org/valuesets/protein_evidence_for_existence
@@ -86115,7 +89368,7 @@ classes:
     class_uri: valuesets:Fake
 metamodel_version: 1.7.0
 source_file: valuesets.yaml
-source_file_date: '2026-09-13T06:18:57'
-source_file_size: 4796
-generation_date: '2026-09-13T06:20:21'
+source_file_date: '2026-10-08T14:20:25'
+source_file_size: 4820
+generation_date: '2026-10-08T14:21:58'
 
