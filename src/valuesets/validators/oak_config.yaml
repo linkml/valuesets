@@ -26,6 +26,10 @@ ontology_adapters:
   FBbi: sqlite:obo:fbbi
   # DICOM controlled terminology (DCM) has no OAK adapter; codes are checked by hand against PS3.16
   DCM:
+  # Monochrom (CHR) has no OAK sqlite build; IDs are checked against the released chr.obo
+  CHR:
+  # INSDC assembly accessions (GCA_*) are checked against the NCBI Datasets API
+  insdc.gca:
 
   # Data format and computation ontologies
   EDAM: sqlite:obo:edam
