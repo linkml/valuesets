@@ -1,0 +1,348 @@
+name: valuesets-computational-modeling-modeling-software
+title: Computational Modeling Software Value Sets
+description: >-
+  Value sets for widely used software that simulates, analyses, fits or
+  translates computational models, and for the roles such software plays.
+  Each software value carries annotations giving its roles
+  (ModelingSoftwareRole), the modeling frameworks it supports
+  (ModelingFramework) and the model formats it reads (ModelEncodingFormat),
+  "|"-separated, so that a model description can be checked for consistency.
+  Where a tool is listed in the BioSimulators registry, its registry id is
+  recorded as biosimulators_id and the frameworks and formats follow the
+  registry entry (retrieved 2026-11-21); the registry is the authoritative
+  source for the full list of algorithms each tool implements.
+
+
+  This list is curated, not exhaustive, and will lag behind new tools.
+id: https://w3id.org/valuesets/computational_modeling/modeling_software
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+default_prefix: valuesets
+slots:
+  modeling_software:
+    description: Software used to simulate, analyse, fit or translate a computational model
+    range: ModelingSoftware
+  modeling_software_role:
+    description: The role a piece of software plays in a modeling workflow
+    range: ModelingSoftwareRole
+    multivalued: true
+enums:
+  ModelingSoftwareRole:
+    title: Modeling Software Role
+    description: >-
+      The role a piece of software plays in a modeling workflow. One tool can
+      play several roles.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      SIMULATOR:
+        description: Runs a model forward or solves for its states (simulation engine).
+      ANALYSIS_TOOLKIT:
+        description: >-
+          Analyses model structure or behaviour without (only) forward
+          simulation, such as attractor enumeration or flux analysis.
+      PARAMETER_INFERENCE:
+        description: Estimates model parameters, or their distribution, from data.
+      FORMAT_TRANSLATOR:
+        description: Converts models between formats or formalisms.
+      MODELING_ENVIRONMENT:
+        description: Provides an integrated environment for building, editing and running models.
+
+  ModelingSoftware:
+    title: Modeling Software
+    description: Widely used software for computational models in biology.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      TELLURIUM:
+        title: tellurium
+        description: Python environment for reaction-network models, built on libRoadRunner and Antimony.
+        see_also:
+        - http://tellurium.analogmachine.org/
+        annotations:
+          biosimulators_id: tellurium
+          roles: SIMULATOR|MODELING_ENVIRONMENT
+          frameworks: ODE|STOCHASTIC_REACTION_NETWORK
+          formats: SBML|ANTIMONY
+      LIBROADRUNNER:
+        title: libRoadRunner
+        description: High-performance SBML simulation engine for ODE and stochastic simulation.
+        see_also:
+        - https://github.com/sys-bio/roadrunner
+        annotations:
+          roles: SIMULATOR
+          frameworks: ODE|STOCHASTIC_REACTION_NETWORK
+          formats: SBML
+      COPASI:
+        title: COPASI
+        description: Environment for simulation and analysis of biochemical networks.
+        see_also:
+        - http://copasi.org/
+        annotations:
+          biosimulators_id: copasi
+          roles: SIMULATOR|ANALYSIS_TOOLKIT|PARAMETER_INFERENCE|MODELING_ENVIRONMENT
+          frameworks: ODE|STOCHASTIC_REACTION_NETWORK|SDE|HYBRID
+          formats: SBML
+      VCELL:
+        title: Virtual Cell
+        description: Environment for non-spatial and spatial, deterministic and stochastic cell models.
+        see_also:
+        - http://vcell.org/
+        annotations:
+          biosimulators_id: vcell
+          roles: SIMULATOR|MODELING_ENVIRONMENT
+          frameworks: ODE|PDE|PARTICLE_BASED_SPATIAL|HYBRID
+          formats: SBML|VCML
+      AMICI:
+        title: AMICI
+        description: ODE simulation with forward and adjoint sensitivities, for parameter estimation workflows.
+        see_also:
+        - https://github.com/AMICI-dev/amici
+        annotations:
+          biosimulators_id: amici
+          roles: SIMULATOR
+          frameworks: ODE
+          formats: SBML
+      GILLESPY2:
+        title: GillesPy2
+        description: Python package for stochastic and deterministic simulation of reaction networks.
+        see_also:
+        - https://github.com/StochSS/GillesPy2
+        annotations:
+          biosimulators_id: gillespy2
+          roles: SIMULATOR
+          frameworks: ODE|STOCHASTIC_REACTION_NETWORK
+          formats: SBML
+      BIONETGEN:
+        title: BioNetGen
+        description: Rule-based modeling with network generation, ODE and stochastic simulation.
+        see_also:
+        - https://bionetgen.org/
+        annotations:
+          biosimulators_id: bionetgen
+          roles: SIMULATOR|MODELING_ENVIRONMENT
+          frameworks: ODE|STOCHASTIC_REACTION_NETWORK
+          formats: BNGL
+      PYSB:
+        title: PySB
+        description: Python framework for rule-based models, with export to BNGL, Kappa and SBML.
+        see_also:
+        - http://pysb.org/
+        annotations:
+          biosimulators_id: pysb
+          roles: MODELING_ENVIRONMENT|FORMAT_TRANSLATOR|SIMULATOR
+          frameworks: ODE|STOCHASTIC_REACTION_NETWORK
+          formats: PYSB|BNGL|KAPPA|SBML
+      KASIM:
+        title: KaSim
+        description: Stochastic simulator for Kappa rule-based models.
+        see_also:
+        - https://github.com/Kappa-Dev/KappaTools
+        annotations:
+          biosimulators_id: kasim
+          roles: SIMULATOR
+          frameworks: STOCHASTIC_REACTION_NETWORK
+          formats: KAPPA
+      COBRAPY:
+        title: COBRApy
+        description: Python package for constraint-based reconstruction and analysis.
+        see_also:
+        - https://opencobra.github.io/cobrapy/
+        annotations:
+          biosimulators_id: cobrapy
+          roles: ANALYSIS_TOOLKIT
+          frameworks: FLUX_BALANCE
+          formats: SBML|COBRA_JSON|COBRA_MAT
+      COBRA_TOOLBOX:
+        title: COBRA Toolbox
+        description: MATLAB toolbox for constraint-based reconstruction and analysis.
+        see_also:
+        - https://opencobra.github.io/cobratoolbox/
+        annotations:
+          biosimulators_id: cobratoolbox
+          roles: ANALYSIS_TOOLKIT
+          frameworks: FLUX_BALANCE|HYBRID
+          formats: SBML|COBRA_MAT
+      MABOSS:
+        title: MaBoSS
+        description: Continuous-time stochastic simulator for logical models.
+        see_also:
+        - https://maboss.curie.fr/
+        annotations:
+          biosimulators_id: maboss
+          roles: SIMULATOR
+          frameworks: STOCHASTIC_LOGICAL_NETWORK
+          formats: MABOSS|SBML
+      GINSIM:
+        title: GINsim
+        description: Environment for building and analysing logical regulatory graphs.
+        see_also:
+        - http://ginsim.org/
+        annotations:
+          biosimulators_id: ginsim
+          roles: MODELING_ENVIRONMENT|ANALYSIS_TOOLKIT|SIMULATOR
+          frameworks: BOOLEAN_NETWORK|MULTI_VALUED_LOGICAL_NETWORK
+          formats: GINML|SBML
+      BIOLQM:
+        title: bioLQM
+        description: Java toolkit for logical model formats and transformations used by GINsim.
+        see_also:
+        - https://github.com/colomoto/bioLQM
+        annotations:
+          roles: FORMAT_TRANSLATOR|ANALYSIS_TOOLKIT
+          frameworks: BOOLEAN_NETWORK|MULTI_VALUED_LOGICAL_NETWORK
+          formats: SBML|GINML|BOOLNET
+      BOOLNET:
+        title: BoolNet
+        description: R package for generating, simulating and analysing Boolean networks.
+        see_also:
+        - https://sysbio.uni-ulm.de/?Software:BoolNet
+        annotations:
+          biosimulators_id: boolnet
+          roles: SIMULATOR|ANALYSIS_TOOLKIT
+          frameworks: BOOLEAN_NETWORK
+          formats: BOOLNET|SBML
+      BIODIVINE_AEON:
+        title: biodivine-aeon (AEON)
+        description: Symbolic attractor and parameter analysis of asynchronous Boolean networks.
+        see_also:
+        - https://biodivine.fi.muni.cz/aeon/
+        - https://github.com/sybila/biodivine-aeon-py
+        annotations:
+          roles: ANALYSIS_TOOLKIT
+          frameworks: BOOLEAN_NETWORK
+          formats: AEON|BOOLNET|SBML
+      PYBOOLNET:
+        title: PyBoolNet
+        description: Python package for Boolean network analysis, including trap spaces and model checking.
+        see_also:
+        - https://github.com/hklarner/pyboolnet
+        annotations:
+          roles: ANALYSIS_TOOLKIT
+          frameworks: BOOLEAN_NETWORK
+          formats: BOOLNET
+      CASQ:
+        title: CaSQ
+        description: Converts process-description maps (CellDesigner, SBGN) into SBML-qual logical models.
+        see_also:
+        - https://github.com/soli/casq
+        annotations:
+          roles: FORMAT_TRANSLATOR
+          frameworks: BOOLEAN_NETWORK
+          formats: SBML
+      COMPUCELL3D:
+        title: CompuCell3D
+        description: Multicellular modeling environment based on the cellular Potts model.
+        see_also:
+        - https://compucell3d.org/
+        annotations:
+          roles: SIMULATOR|MODELING_ENVIRONMENT
+          frameworks: CELLULAR_POTTS|PDE|HYBRID
+          formats: CC3D
+      MORPHEUS:
+        title: Morpheus
+        description: Multicellular modeling environment combining cellular Potts, ODE and PDE models.
+        see_also:
+        - https://morpheus.gitlab.io/
+        annotations:
+          biosimulators_id: morpheus
+          roles: SIMULATOR|MODELING_ENVIRONMENT
+          frameworks: CELLULAR_POTTS|ODE|SDE|PDE|STOCHASTIC_REACTION_NETWORK|HYBRID
+          formats: MORPHEUSML|SBML
+      PHYSICELL:
+        title: PhysiCell
+        description: Off-lattice, centre-based agent-based framework for multicellular systems.
+        see_also:
+        - http://physicell.org/
+        annotations:
+          roles: SIMULATOR
+          frameworks: AGENT_BASED|PDE|HYBRID
+          formats: PHYSICELL_XML|MULTICELLDS
+      CHASTE:
+        title: Chaste
+        description: C++ library for cardiac, multicellular and tissue simulations.
+        see_also:
+        - https://chaste.github.io/
+        annotations:
+          roles: SIMULATOR
+          frameworks: AGENT_BASED|PDE|ODE|HYBRID
+          formats: GENERAL_PURPOSE_CODE|CELLML
+      NETLOGO:
+        title: NetLogo
+        description: General-purpose agent-based modeling environment.
+        see_also:
+        - https://ccl.northwestern.edu/netlogo/
+        annotations:
+          roles: MODELING_ENVIRONMENT|SIMULATOR
+          frameworks: AGENT_BASED|CELLULAR_AUTOMATON
+          formats: GENERAL_PURPOSE_CODE
+      MESA:
+        title: Mesa
+        description: Python framework for agent-based modeling.
+        see_also:
+        - https://github.com/projectmesa/mesa
+        annotations:
+          roles: MODELING_ENVIRONMENT|SIMULATOR
+          frameworks: AGENT_BASED
+          formats: GENERAL_PURPOSE_CODE
+      SMOLDYN:
+        title: Smoldyn
+        description: Particle-based spatial stochastic simulator.
+        see_also:
+        - http://www.smoldyn.org/
+        annotations:
+          biosimulators_id: smoldyn
+          roles: SIMULATOR
+          frameworks: PARTICLE_BASED_SPATIAL
+          formats: SMOLDYN
+      MCELL:
+        title: MCell
+        description: Monte Carlo simulator of molecules diffusing and reacting in realistic 3D geometry.
+        see_also:
+        - https://mcell.org/
+        annotations:
+          biosimulators_id: mcell
+          roles: SIMULATOR
+          frameworks: PARTICLE_BASED_SPATIAL
+      MAUD:
+        title: Maud
+        description: >-
+          Bayesian inference of kinetic model parameters from steady-state
+          measurements, using Stan.
+        see_also:
+        - https://github.com/biosustain/Maud
+        annotations:
+          roles: PARAMETER_INFERENCE
+          frameworks: ODE
+          formats: MAUD_TOML
+      PYPESTO:
+        title: pyPESTO
+        description: Python toolbox for parameter estimation, profiling and sampling.
+        see_also:
+        - https://github.com/ICB-DCM/pyPESTO
+        annotations:
+          roles: PARAMETER_INFERENCE
+          frameworks: ODE
+          formats: SBML
+      DATA2DYNAMICS:
+        title: Data2Dynamics
+        description: MATLAB framework for parameter estimation and identifiability analysis of ODE models.
+        see_also:
+        - https://github.com/Data2Dynamics/d2d
+        annotations:
+          roles: PARAMETER_INFERENCE
+          frameworks: ODE
+          formats: SBML|GENERAL_PURPOSE_CODE

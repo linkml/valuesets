@@ -1,0 +1,511 @@
+name: valuesets-computational-modeling-model-formalism
+title: Computational Model Formalism Value Sets
+description: >-
+  Value sets describing the mathematical formalism of a computational model,
+  split into independent axes: the overall paradigm, the type of state
+  variables, how time, chance and space are represented, what a single
+  variable stands for, and how the model is written down. A model is
+  described by choosing one value on each axis that applies to it; axes that
+  do not apply (for example time representation for a statistical model) are
+  left unset.
+
+
+  The axes follow the dimensions of the Systems Biology Ontology "modelling
+  framework" branch (SBO:0000004), which pre-composes continuous/discrete,
+  spatial/non-spatial and deterministic/stochastic. ModelingFramework provides
+  named combinations of the axes for convenience; each of its values records
+  its axis values as annotations, and those annotations are tested against the
+  axis enums so the shorthand cannot drift from its definition.
+id: https://w3id.org/valuesets/computational_modeling/model_formalism
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+  SBO: http://biomodels.net/SBO/SBO_
+default_prefix: valuesets
+slots:
+  modeling_paradigm:
+    description: The top-level paradigm of a computational model
+    range: ModelingParadigm
+  model_state_variable_type:
+    description: The type of values the state variables of a model can take
+    range: ModelStateVariableType
+  model_time_representation:
+    description: How a model represents time
+    range: ModelTimeRepresentation
+  model_stochasticity:
+    description: Whether a model's behaviour is determined, branching, or probabilistic
+    range: ModelStochasticity
+  model_spatial_representation:
+    description: How a model represents space
+    range: ModelSpatialRepresentation
+  model_entity_resolution:
+    description: What a single model variable or agent stands for
+    range: ModelEntityResolution
+  model_specification_style:
+    description: How a model is authored, independently of how it is simulated
+    range: ModelSpecificationStyle
+  modeling_framework:
+    description: A named modeling framework, shorthand for a combination of the formalism axes
+    range: ModelingFramework
+enums:
+  ModelingParadigm:
+    title: Modeling Paradigm
+    description: >-
+      The top-level kind of computational model: a mechanistic model whose
+      state evolves according to rules or equations, a mechanistic model that
+      only bounds the admissible states, or a statistical model learned from
+      data.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      MECHANISTIC_DYNAMICAL:
+        description: >-
+          A mechanistic model whose state changes according to explicit rules
+          or equations (differential equations, reaction kinetics, logical
+          update rules, agent rules).
+      MECHANISTIC_CONSTRAINT_BASED:
+        description: >-
+          A mechanistic model that captures bounds on the possible behaviour
+          of a system, typically at steady state, which may be further reduced
+          by an objective function. Includes genome-scale metabolic models.
+        close_mappings:
+        - SBO:0000693
+      STATISTICAL_LEARNED:
+        description: >-
+          A model whose input-output mapping is learned from data rather than
+          derived from mechanism, such as QSAR and machine-learning models.
+      OTHER:
+        description: A paradigm not covered by the other values
+
+  ModelStateVariableType:
+    title: Model State Variable Type
+    description: The type of values that the state variables of a model can take.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      CONTINUOUS:
+        description: >-
+          State variables are real-valued quantities such as concentrations,
+          amounts or fluxes.
+        close_mappings:
+        - SBO:0000062
+      DISCRETE_COUNT:
+        description: State variables are integer counts, such as numbers of molecules.
+        close_mappings:
+        - SBO:0000063
+      BOOLEAN:
+        description: State variables take one of two values (on/off, active/inactive).
+        close_mappings:
+        - SBO:0000547
+      MULTI_VALUED:
+        description: State variables take one of a small, defined number of ordered levels.
+        close_mappings:
+        - SBO:0000548
+      FUZZY:
+        description: State variables take intermediate or undetermined logical values.
+        close_mappings:
+        - SBO:0000549
+      MIXED:
+        description: >-
+          Different state variables are of different types, as in a hybrid
+          model with both continuous and discrete variables.
+
+  ModelTimeRepresentation:
+    title: Model Time Representation
+    description: How a model represents time.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      CONTINUOUS_TIME:
+        description: >-
+          Time is a real-valued variable; the state changes continuously or
+          at events placed anywhere on the time line.
+      DISCRETE_TIME:
+        description: >-
+          Time advances in discrete steps or updates, as in a logical network
+          or a cellular automaton.
+      NONE:
+        description: >-
+          The model has no explicit time; it describes a steady state, an
+          equilibrium, or a static input-output mapping.
+
+  ModelStochasticity:
+    title: Model Stochasticity
+    description: >-
+      Whether a model's behaviour from a given state is fully determined,
+      branches without assigned probabilities, or branches with assigned
+      probabilities.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      DETERMINISTIC:
+        description: The same initial state always produces the same behaviour.
+      NONDETERMINISTIC:
+        description: >-
+          A state can have several possible successors, with no probabilities
+          attached, as in the asynchronous updating of a logical network. The
+          analysis concerns which behaviours are possible.
+      STOCHASTIC:
+        description: >-
+          A state can have several possible successors, each with an assigned
+          probability or rate, as in a stochastic reaction network or a
+          stochastic differential equation.
+
+  ModelSpatialRepresentation:
+    title: Model Spatial Representation
+    description: How a model represents space.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      NON_SPATIAL:
+        description: The system is treated as a single well-mixed volume, or space is irrelevant.
+      COMPARTMENTAL:
+        description: >-
+          The system is divided into several well-mixed compartments (organelles,
+          organs, tissues) with exchange between them, but no geometry inside
+          each compartment.
+      CONTINUUM:
+        description: >-
+          Quantities are fields defined over continuous space, typically
+          described by partial differential equations.
+      LATTICE:
+        description: Space is a discrete grid, as in cellular automata and cellular Potts models.
+      OFF_LATTICE:
+        description: >-
+          Entities have positions in continuous space without a grid, as in
+          centre-based cell models and particle-based molecular simulation.
+
+  ModelEntityResolution:
+    title: Model Entity Resolution
+    description: >-
+      What a single model variable or agent stands for: an aggregate quantity
+      for a population of identical entities, or an individual entity. This is
+      the axis that distinguishes an agent-based model from a population model
+      independently of how space is represented.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      POPULATION_AGGREGATE:
+        description: >-
+          A variable is the amount, concentration or activity of a whole
+          population of entities of one type (a molecular species, a cell type).
+      INDIVIDUAL_PARTICLE:
+        description: >-
+          Each simulated element is an individual molecule or particle with
+          little internal state.
+      INDIVIDUAL_AGENT:
+        description: >-
+          Each simulated element is an individual agent (a cell, an organism,
+          a vesicle) with its own internal state and behavioural rules.
+
+  ModelSpecificationStyle:
+    title: Model Specification Style
+    description: >-
+      How a model is authored, independently of the formalism it is simulated
+      in. A rule-based model, for example, can be expanded into ordinary
+      differential equations or simulated stochastically without network
+      generation.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      REACTION_NETWORK:
+        description: An explicit list of species and reactions with rate laws or stoichiometry.
+      RULE_BASED:
+        description: >-
+          Rules over molecular sites and states from which the set of species
+          and reactions is generated or simulated implicitly.
+      EXPLICIT_EQUATIONS:
+        description: Mathematical equations written directly, rather than generated from reactions.
+      LOGICAL_RULES:
+        description: An update rule (a logical function of regulators) for each variable.
+      AGENT_RULES:
+        description: Behavioural rules for individual agents and their interactions.
+      LEARNED_FUNCTION:
+        description: A function fitted to data, such as a regression model or neural network.
+
+  ModelingFramework:
+    title: Modeling Framework
+    description: >-
+      Named modeling frameworks, as shorthand for common combinations of the
+      formalism axes. Each value records its axis values as annotations
+      (paradigm, state_variable_type, time_representation, stochasticity,
+      spatial_representation, entity_resolution); where an axis admits
+      several values they are separated by "|". Use the axis enums directly
+      when a model does not fit a named framework.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      ODE:
+        title: Ordinary differential equations
+        description: >-
+          Deterministic continuous model of well-mixed quantities, described by
+          ordinary differential equations. Includes most kinetic models of
+          biochemical networks and physiologically-based pharmacokinetic models.
+        meaning: SBO:0000675
+        aliases:
+        - deterministic non-spatial continuous framework
+        annotations:
+          paradigm: MECHANISTIC_DYNAMICAL
+          state_variable_type: CONTINUOUS
+          time_representation: CONTINUOUS_TIME
+          stochasticity: DETERMINISTIC
+          spatial_representation: NON_SPATIAL|COMPARTMENTAL
+          entity_resolution: POPULATION_AGGREGATE
+      DAE:
+        title: Differential-algebraic equations
+        description: >-
+          Deterministic continuous model combining differential equations with
+          algebraic constraints.
+        annotations:
+          paradigm: MECHANISTIC_DYNAMICAL
+          state_variable_type: CONTINUOUS
+          time_representation: CONTINUOUS_TIME
+          stochasticity: DETERMINISTIC
+          spatial_representation: NON_SPATIAL|COMPARTMENTAL
+          entity_resolution: POPULATION_AGGREGATE
+      DDE:
+        title: Delay differential equations
+        description: >-
+          Deterministic continuous model in which rates depend on the state at
+          earlier times.
+        annotations:
+          paradigm: MECHANISTIC_DYNAMICAL
+          state_variable_type: CONTINUOUS
+          time_representation: CONTINUOUS_TIME
+          stochasticity: DETERMINISTIC
+          spatial_representation: NON_SPATIAL|COMPARTMENTAL
+          entity_resolution: POPULATION_AGGREGATE
+      SDE:
+        title: Stochastic differential equations
+        description: >-
+          Continuous model of well-mixed quantities with stochastic terms, such
+          as the chemical Langevin equation.
+        meaning: SBO:0000676
+        aliases:
+        - stochastic non-spatial continuous framework
+        annotations:
+          paradigm: MECHANISTIC_DYNAMICAL
+          state_variable_type: CONTINUOUS
+          time_representation: CONTINUOUS_TIME
+          stochasticity: STOCHASTIC
+          spatial_representation: NON_SPATIAL|COMPARTMENTAL
+          entity_resolution: POPULATION_AGGREGATE
+      PDE:
+        title: Partial differential equations
+        description: >-
+          Continuous model of quantities distributed over space, such as a
+          reaction-diffusion system.
+        meaning: SBO:0000292
+        aliases:
+        - spatial continuous framework
+        annotations:
+          paradigm: MECHANISTIC_DYNAMICAL
+          state_variable_type: CONTINUOUS
+          time_representation: CONTINUOUS_TIME|NONE
+          stochasticity: DETERMINISTIC
+          spatial_representation: CONTINUUM
+          entity_resolution: POPULATION_AGGREGATE
+      STOCHASTIC_REACTION_NETWORK:
+        title: Stochastic reaction network
+        description: >-
+          Discrete stochastic model of molecule counts in a well-mixed volume,
+          governed by the chemical master equation and typically simulated with
+          the Gillespie algorithm or its approximations.
+        meaning: SBO:0000679
+        aliases:
+        - population-based discrete non-spatial simulation
+        annotations:
+          paradigm: MECHANISTIC_DYNAMICAL
+          state_variable_type: DISCRETE_COUNT
+          time_representation: CONTINUOUS_TIME
+          stochasticity: STOCHASTIC
+          spatial_representation: NON_SPATIAL|COMPARTMENTAL
+          entity_resolution: POPULATION_AGGREGATE
+      SPATIAL_STOCHASTIC_REACTION_NETWORK:
+        title: Spatial stochastic reaction network
+        description: >-
+          Discrete stochastic model tracking molecule counts in each subvolume
+          of a spatial mesh (reaction-diffusion master equation).
+        annotations:
+          paradigm: MECHANISTIC_DYNAMICAL
+          state_variable_type: DISCRETE_COUNT
+          time_representation: CONTINUOUS_TIME
+          stochasticity: STOCHASTIC
+          spatial_representation: LATTICE
+          entity_resolution: POPULATION_AGGREGATE
+      PARTICLE_BASED_SPATIAL:
+        title: Particle-based spatial simulation
+        description: >-
+          Model tracking individual molecules or particles moving in space,
+          for example by Brownian dynamics.
+        meaning: SBO:0000678
+        aliases:
+        - particle-based discrete spatial simulation
+        annotations:
+          paradigm: MECHANISTIC_DYNAMICAL
+          state_variable_type: CONTINUOUS
+          time_representation: CONTINUOUS_TIME|DISCRETE_TIME
+          stochasticity: STOCHASTIC
+          spatial_representation: OFF_LATTICE
+          entity_resolution: INDIVIDUAL_PARTICLE
+      BOOLEAN_NETWORK:
+        title: Boolean network
+        description: >-
+          Logical model in which each variable is on or off and is updated by a
+          Boolean function of its regulators.
+        meaning: SBO:0000547
+        aliases:
+        - boolean logical framework
+        annotations:
+          paradigm: MECHANISTIC_DYNAMICAL
+          state_variable_type: BOOLEAN
+          time_representation: DISCRETE_TIME
+          stochasticity: DETERMINISTIC|NONDETERMINISTIC
+          spatial_representation: NON_SPATIAL
+          entity_resolution: POPULATION_AGGREGATE
+      MULTI_VALUED_LOGICAL_NETWORK:
+        title: Multi-valued logical network
+        description: >-
+          Logical model in which variables take one of several discrete levels,
+          as in the Thomas formalism.
+        meaning: SBO:0000548
+        aliases:
+        - multi-valued logical framework
+        annotations:
+          paradigm: MECHANISTIC_DYNAMICAL
+          state_variable_type: MULTI_VALUED
+          time_representation: DISCRETE_TIME
+          stochasticity: DETERMINISTIC|NONDETERMINISTIC
+          spatial_representation: NON_SPATIAL
+          entity_resolution: POPULATION_AGGREGATE
+      STOCHASTIC_LOGICAL_NETWORK:
+        title: Stochastic logical network
+        description: >-
+          Logical model with transition rates or probabilities attached to
+          the update of each variable, simulated in continuous time as in
+          MaBoSS.
+        annotations:
+          paradigm: MECHANISTIC_DYNAMICAL
+          state_variable_type: BOOLEAN|MULTI_VALUED
+          time_representation: CONTINUOUS_TIME|DISCRETE_TIME
+          stochasticity: STOCHASTIC
+          spatial_representation: NON_SPATIAL
+          entity_resolution: POPULATION_AGGREGATE
+      PETRI_NET:
+        title: Petri net
+        description: >-
+          Bipartite graph of places and transitions with tokens; includes the
+          discrete, stochastic and continuous Petri net variants.
+        annotations:
+          paradigm: MECHANISTIC_DYNAMICAL
+          state_variable_type: DISCRETE_COUNT|CONTINUOUS
+          time_representation: DISCRETE_TIME|CONTINUOUS_TIME
+          stochasticity: DETERMINISTIC|NONDETERMINISTIC|STOCHASTIC
+          spatial_representation: NON_SPATIAL
+          entity_resolution: POPULATION_AGGREGATE
+      FLUX_BALANCE:
+        title: Flux balance (constraint-based) model
+        description: >-
+          Steady-state model of reaction fluxes constrained by stoichiometry and
+          flux bounds, typically optimised for an objective. Genome-scale
+          metabolic models are models of this kind; flux balance analysis is
+          an algorithm applied to them (see SimulationAlgorithm).
+        meaning: SBO:0000624
+        aliases:
+        - flux balance framework
+        annotations:
+          paradigm: MECHANISTIC_CONSTRAINT_BASED
+          state_variable_type: CONTINUOUS
+          time_representation: NONE
+          stochasticity: DETERMINISTIC
+          spatial_representation: NON_SPATIAL|COMPARTMENTAL
+          entity_resolution: POPULATION_AGGREGATE
+      AGENT_BASED:
+        title: Agent-based model
+        description: >-
+          Model of individual agents with internal state and behavioural rules,
+          with or without explicit space.
+        annotations:
+          paradigm: MECHANISTIC_DYNAMICAL
+          state_variable_type: MIXED|DISCRETE_COUNT|CONTINUOUS
+          time_representation: DISCRETE_TIME|CONTINUOUS_TIME
+          stochasticity: DETERMINISTIC|STOCHASTIC
+          spatial_representation: NON_SPATIAL|COMPARTMENTAL|LATTICE|OFF_LATTICE
+          entity_resolution: INDIVIDUAL_AGENT
+      CELLULAR_POTTS:
+        title: Cellular Potts model
+        description: >-
+          Lattice-based multicellular model in which each cell occupies a set
+          of lattice sites and moves by energy-minimising stochastic updates.
+        annotations:
+          paradigm: MECHANISTIC_DYNAMICAL
+          state_variable_type: MIXED
+          time_representation: DISCRETE_TIME
+          stochasticity: STOCHASTIC
+          spatial_representation: LATTICE
+          entity_resolution: INDIVIDUAL_AGENT
+      CELLULAR_AUTOMATON:
+        title: Cellular automaton
+        description: >-
+          Lattice of cells, each with a discrete state updated by a rule over
+          its neighbours.
+        annotations:
+          paradigm: MECHANISTIC_DYNAMICAL
+          state_variable_type: BOOLEAN|MULTI_VALUED
+          time_representation: DISCRETE_TIME
+          stochasticity: DETERMINISTIC|STOCHASTIC
+          spatial_representation: LATTICE
+          entity_resolution: INDIVIDUAL_AGENT
+      STATISTICAL_MODEL:
+        title: Statistical or machine-learning model
+        description: >-
+          Model learned from data, such as a QSAR regression, a classifier or
+          a neural network.
+        annotations:
+          paradigm: STATISTICAL_LEARNED
+      HYBRID:
+        title: Hybrid model
+        description: >-
+          Model combining several of the frameworks above, for example an
+          agent-based model with an intracellular logical network in each agent,
+          or flux balance coupled to ordinary differential equations. Describe
+          each component with its own framework where possible.
+        meaning: SBO:0000681
+        aliases:
+        - hybrid framework

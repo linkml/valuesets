@@ -1,0 +1,192 @@
+name: valuesets-computational-modeling-model-formats
+title: Computational Model Format Value Sets
+description: >-
+  Value sets for the formats in which computational models, simulation
+  experiments and modeling projects are written. Format versions (for example
+  SBML Level 3 Version 2) are not separate values and belong in a separate
+  version field. SBML packages are a separate, multivalued enum rather than
+  separate format values. Pathway-knowledge formats that cannot be executed
+  (SBGN-ML, BioPAX, GO-CAM) are out of scope.
+id: https://w3id.org/valuesets/computational_modeling/model_formats
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+  EDAM: http://edamontology.org/
+default_prefix: valuesets
+slots:
+  model_encoding_format:
+    description: The format in which a computational model is encoded
+    range: ModelEncodingFormat
+  sbml_package:
+    description: An SBML Level 3 package used by an SBML model
+    range: SbmlPackage
+    multivalued: true
+  simulation_experiment_format:
+    description: The format in which a simulation or estimation experiment is described
+    range: SimulationExperimentFormat
+  model_packaging_format:
+    description: The format in which a modeling project is packaged
+    range: ModelPackagingFormat
+enums:
+  ModelEncodingFormat:
+    title: Model Encoding Format
+    description: Formats in which a computational model itself is encoded.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      SBML:
+        title: SBML
+        description: >-
+          Systems Biology Markup Language, the standard XML format for models of
+          biological processes. Use SbmlPackage to record packages such as qual
+          (logical models) or fbc (constraint-based models).
+        meaning: EDAM:format_2585
+      CELLML:
+        title: CellML
+        description: XML format for mathematical models, widely used for physiology.
+        meaning: EDAM:format_3240
+      NEUROML:
+        title: NeuroML
+        description: XML format for models of neurons and neuronal networks.
+        meaning: EDAM:format_3971
+      BNGL:
+        title: BioNetGen language
+        description: Text format for rule-based models of biochemical systems.
+        meaning: EDAM:format_3972
+      KAPPA:
+        title: Kappa
+        description: Rule-based modeling language for site-graph rewriting, used by KaSim.
+      PYSB:
+        title: PySB
+        description: Rule-based models written as Python programs with the PySB library.
+      ANTIMONY:
+        title: Antimony
+        description: Human-readable text language for reaction-network models that compiles to SBML.
+      VCML:
+        title: Virtual Cell Markup Language
+        description: Native XML format of the Virtual Cell environment.
+      BOOLNET:
+        title: BoolNet / bnet
+        description: >-
+          Text format listing one logical update rule per variable, used by
+          BoolNet, PyBoolNet and biodivine-aeon.
+      AEON:
+        title: AEON
+        description: Text format for logical models with partially specified rules, used by biodivine-aeon.
+      GINML:
+        title: GINML
+        description: XML format of GINsim for logical regulatory graphs (zipped as zginml).
+      MABOSS:
+        title: MaBoSS bnd/cfg
+        description: Paired network (bnd) and configuration (cfg) files for MaBoSS stochastic logical models.
+      COBRA_JSON:
+        title: COBRApy JSON
+        description: JSON serialisation of constraint-based models used by COBRApy and the BiGG database.
+      COBRA_MAT:
+        title: COBRA Toolbox MAT
+        description: MATLAB MAT-file structure used by the COBRA Toolbox for constraint-based models.
+      SMOLDYN:
+        title: Smoldyn configuration
+        description: Text configuration format of the Smoldyn particle-based simulator.
+      MORPHEUSML:
+        title: MorpheusML
+        description: XML format of the Morpheus multicellular modeling environment.
+      PHYSICELL_XML:
+        title: PhysiCell XML
+        description: XML settings and rules files of the PhysiCell agent-based framework.
+      CC3D:
+        title: CompuCell3D project
+        description: Project files (CC3DML and Python steppables) of CompuCell3D.
+      MULTICELLDS:
+        title: MultiCellDS
+        description: XML data standard for multicellular simulation configurations and outputs.
+      MAUD_TOML:
+        title: Maud TOML
+        description: TOML files describing a kinetic model, priors and measurements for Maud.
+      GENERAL_PURPOSE_CODE:
+        title: General-purpose code
+        description: >-
+          A model written directly in a general-purpose programming language
+          (Python, MATLAB, Julia, R, C++) without a model exchange format.
+
+  SbmlPackage:
+    title: SBML Package
+    description: >-
+      SBML Level 3 packages. A model using several packages takes several
+      values; CORE stands for SBML Level 3 Core used with no package.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      CORE:
+        description: SBML Level 3 Core, for reaction-network and equation-based models.
+      QUAL:
+        description: Qualitative models, for logical (Boolean and multi-valued) networks.
+      FBC:
+        description: Flux balance constraints, for constraint-based models and gene-product associations.
+      COMP:
+        description: Hierarchical model composition.
+      MULTI:
+        description: Multistate and multicomponent species, for rule-based models.
+      SPATIAL:
+        description: Spatial processes and geometry.
+      DISTRIB:
+        description: Statistical distributions for parameters and values.
+      GROUPS:
+        description: Grouping of model elements.
+      LAYOUT:
+        description: Diagram layout of model elements.
+      RENDER:
+        description: Rendering style for diagram layouts.
+
+  SimulationExperimentFormat:
+    title: Simulation Experiment Format
+    description: >-
+      Formats describing what is done with a model: the simulations,
+      parameter changes, estimation problems and outputs of an experiment.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      SED_ML:
+        title: SED-ML
+        description: Simulation Experiment Description Markup Language.
+        meaning: EDAM:format_3685
+      PETAB:
+        title: PEtab
+        description: Tabular format for specifying parameter estimation problems for kinetic models.
+        meaning: EDAM:format_4015
+
+  ModelPackagingFormat:
+    title: Model Packaging Format
+    description: Formats that bundle a model with its experiments, data and metadata.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      COMBINE_OMEX:
+        title: COMBINE OMEX archive
+        description: Zip archive with a manifest bundling models, SED-ML files, data and metadata.
+        meaning: EDAM:format_3686
+        aliases:
+        - COMBINE OMEX
+      RO_CRATE:
+        title: RO-Crate
+        description: Research Object Crate packaging of files with JSON-LD metadata.

@@ -1,0 +1,259 @@
+name: valuesets-computational-modeling-simulation-methods
+title: Simulation and Analysis Method Value Sets
+description: >-
+  Value sets separating what is done with a computational model (the analysis
+  task) from the algorithm that does it. A genome-scale metabolic model is a
+  FLUX_BALANCE model (ModelingFramework); FLUX_OPTIMIZATION is the task;
+  flux balance analysis is the algorithm. Algorithms are drawn from the
+  Kinetic Simulation Algorithm Ontology (KiSAO): SimulationAlgorithm admits
+  any KiSAO algorithm, and CommonSimulationAlgorithm is a static list of
+  frequently used ones.
+id: https://w3id.org/valuesets/computational_modeling/simulation_methods
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+  KISAO: http://purl.obolibrary.org/obo/KISAO_
+default_prefix: valuesets
+slots:
+  model_analysis_task:
+    description: What is done with a computational model in a simulation or analysis
+    range: ModelAnalysisTask
+  simulation_algorithm:
+    description: The algorithm used to simulate or analyse a computational model, from KiSAO
+    range: SimulationAlgorithm
+  common_simulation_algorithm:
+    description: A frequently used simulation or analysis algorithm
+    range: CommonSimulationAlgorithm
+enums:
+  ModelAnalysisTask:
+    title: Model Analysis Task
+    description: What is done with a computational model, independently of the algorithm used.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      TIME_COURSE:
+        description: Simulate the state of the model over time from given initial conditions.
+      STEADY_STATE:
+        description: Find steady states or equilibria of the model.
+      ATTRACTOR_ANALYSIS:
+        description: >-
+          Identify the long-term behaviours of a discrete model (fixed points,
+          cyclic attractors, trap spaces).
+      PARAMETER_SCAN:
+        description: Repeat a simulation over a range or grid of parameter values.
+      SENSITIVITY_ANALYSIS:
+        description: Quantify how outputs depend on parameters or inputs.
+      PARAMETER_ESTIMATION:
+        description: Infer parameter values, or their distribution, from data.
+      IDENTIFIABILITY_ANALYSIS:
+        description: Determine which parameters can be determined from the available data.
+      UNCERTAINTY_QUANTIFICATION:
+        description: Propagate uncertainty in parameters or inputs to outputs.
+      BIFURCATION_ANALYSIS:
+        description: Find parameter values at which the qualitative behaviour changes.
+      FLUX_OPTIMIZATION:
+        description: Find a flux distribution optimal for an objective under constraints.
+      FLUX_RANGE_ANALYSIS:
+        description: Determine the feasible range of each flux under constraints.
+      PERTURBATION_SCREEN:
+        description: >-
+          Simulate systematic perturbations such as gene knockouts, knockdowns,
+          constitutive activation or drug treatment.
+      MODEL_CHECKING:
+        description: Verify formally whether the model satisfies a stated property.
+      MODEL_REDUCTION:
+        description: Derive a smaller model that preserves selected behaviour.
+      MODEL_COMPARISON:
+        description: Compare a model with another model or with a reference description.
+
+  SimulationAlgorithm:
+    title: Simulation Algorithm
+    description: >-
+      Any modelling and simulation algorithm in the Kinetic Simulation
+      Algorithm Ontology (KiSAO).
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    reachable_from:
+      source_ontology: obo:kisao
+      source_nodes:
+      - KISAO:0000000
+      include_self: false
+      relationship_types:
+      - rdfs:subClassOf
+
+  CommonSimulationAlgorithm:
+    title: Common Simulation Algorithm
+    description: >-
+      Frequently used simulation and analysis algorithms, each mapped to its
+      KiSAO term. The annotation "framework" names the ModelingFramework
+      values the algorithm applies to ("|"-separated).
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      CVODE:
+        description: Variable-order, variable-step ODE solver from SUNDIALS (BDF or Adams-Moulton).
+        meaning: KISAO:0000019
+        annotations:
+          framework: ODE
+      CVODES:
+        description: CVODE extended with forward and adjoint sensitivity analysis.
+        meaning: KISAO:0000496
+        annotations:
+          framework: ODE
+      LSODA:
+        description: Livermore ODE solver with automatic switching between stiff and non-stiff methods.
+        meaning: KISAO:0000088
+        annotations:
+          framework: ODE
+      IDA:
+        description: Variable-order, variable-step DAE solver from SUNDIALS.
+        meaning: KISAO:0000283
+        annotations:
+          framework: DAE|ODE
+      EULER_FORWARD:
+        description: Explicit fixed-step forward Euler method.
+        meaning: KISAO:0000030
+        aliases:
+        - Euler forward method
+        annotations:
+          framework: ODE
+      RUNGE_KUTTA_4:
+        description: Explicit fourth-order Runge-Kutta method.
+        meaning: KISAO:0000032
+        aliases:
+        - explicit fourth-order Runge-Kutta method
+        annotations:
+          framework: ODE
+      GILLESPIE_DIRECT:
+        description: Exact stochastic simulation algorithm, direct method.
+        meaning: KISAO:0000029
+        aliases:
+        - Gillespie direct algorithm
+        annotations:
+          framework: STOCHASTIC_REACTION_NETWORK
+      GIBSON_BRUCK_NEXT_REACTION:
+        description: Exact stochastic simulation algorithm using the next reaction method.
+        meaning: KISAO:0000027
+        aliases:
+        - Gibson-Bruck next reaction algorithm
+        annotations:
+          framework: STOCHASTIC_REACTION_NETWORK
+      TAU_LEAPING:
+        description: Approximate accelerated stochastic simulation firing several reactions per step.
+        meaning: KISAO:0000039
+        aliases:
+        - tau-leaping method
+        annotations:
+          framework: STOCHASTIC_REACTION_NETWORK
+      NETWORK_FREE_SIMULATION:
+        description: Stochastic simulation of rule-based models without generating the reaction network (NFsim).
+        meaning: KISAO:0000263
+        aliases:
+        - NFSim agent-based simulation method
+        annotations:
+          framework: STOCHASTIC_REACTION_NETWORK
+      SYNCHRONOUS_LOGICAL_UPDATE:
+        description: Logical model simulation in which all variables are updated at each step.
+        meaning: KISAO:0000449
+        aliases:
+        - synchronous logical model simulation method
+        annotations:
+          framework: BOOLEAN_NETWORK|MULTI_VALUED_LOGICAL_NETWORK
+      ASYNCHRONOUS_LOGICAL_UPDATE:
+        description: Logical model simulation in which one variable is updated at a time, giving branching behaviour.
+        meaning: KISAO:0000450
+        aliases:
+        - asynchronous logical model simulation method
+        annotations:
+          framework: BOOLEAN_NETWORK|MULTI_VALUED_LOGICAL_NETWORK
+      PROBABILISTIC_LOGICAL_UPDATE:
+        description: Logical model simulation with probabilities attached to the updates.
+        meaning: KISAO:0000573
+        aliases:
+        - probabilistic logical model simulation method
+        annotations:
+          framework: BOOLEAN_NETWORK|MULTI_VALUED_LOGICAL_NETWORK|STOCHASTIC_LOGICAL_NETWORK
+      LOGICAL_STABLE_STATE_SEARCH:
+        description: Identification of the stable states (fixed points) of a logical model.
+        meaning: KISAO:0000660
+        aliases:
+        - logical model stable state search method
+        annotations:
+          framework: BOOLEAN_NETWORK|MULTI_VALUED_LOGICAL_NETWORK
+      LOGICAL_TRAP_SPACE_IDENTIFICATION:
+        description: Identification of the trap spaces of a logical model.
+        meaning: KISAO:0000661
+        aliases:
+        - logical model trap space identification method
+        annotations:
+          framework: BOOLEAN_NETWORK|MULTI_VALUED_LOGICAL_NETWORK
+      BOOLEAN_KINETIC_MONTE_CARLO:
+        description: Continuous-time stochastic simulation of logical models, as implemented in MaBoSS.
+        meaning: KISAO:0000581
+        aliases:
+        - BKMC
+        annotations:
+          framework: STOCHASTIC_LOGICAL_NETWORK
+      MULTI_STATE_AGENT_BASED_SIMULATION:
+        description: Agent-based simulation of molecules with multiple states, as used for rule-based models.
+        meaning: KISAO:0000017
+        aliases:
+        - multi-state agent-based simulation method
+        annotations:
+          framework: STOCHASTIC_REACTION_NETWORK|AGENT_BASED
+      FLUX_BALANCE_ANALYSIS:
+        description: Optimisation of an objective over the steady-state flux space.
+        meaning: KISAO:0000437
+        aliases:
+        - flux balance analysis
+        annotations:
+          framework: FLUX_BALANCE
+      PARSIMONIOUS_FLUX_BALANCE_ANALYSIS:
+        description: Flux balance analysis that also minimises total flux.
+        meaning: KISAO:0000620
+        aliases:
+        - parsimonius flux balance analysis
+        annotations:
+          framework: FLUX_BALANCE
+      FLUX_VARIABILITY_ANALYSIS:
+        description: Determination of the minimum and maximum of each flux at (near-)optimal objective.
+        meaning: KISAO:0000526
+        aliases:
+        - flux variability analysis
+        annotations:
+          framework: FLUX_BALANCE
+      MOMA:
+        description: Minimisation of metabolic adjustment (quadratic form) for predicting knockout flux distributions.
+        meaning: KISAO:0000576
+        aliases:
+        - quadratic MOMA
+        annotations:
+          framework: FLUX_BALANCE
+      ROOM:
+        description: Regulatory on/off minimisation of flux changes for predicting knockout flux distributions.
+        meaning: KISAO:0000580
+        annotations:
+          framework: FLUX_BALANCE
+      DYNAMIC_FLUX_BALANCE_ANALYSIS:
+        description: Flux balance analysis coupled to time-varying extracellular concentrations (static optimisation approach).
+        meaning: KISAO:0000500
+        aliases:
+        - SOA-DFBA
+        annotations:
+          framework: FLUX_BALANCE|HYBRID
