@@ -5,8 +5,16 @@ description: >-
   translates computational models, and for the roles such software plays.
   Each software value carries annotations giving its roles
   (ModelingSoftwareRole), the modeling frameworks it supports
-  (ModelingFramework) and the model formats it reads (ModelEncodingFormat),
-  "|"-separated, so that a model description can be checked for consistency.
+  (ModelingFramework), the model formats it reads (ModelEncodingFormat), the
+  simulation experiment formats it accepts (experiment_formats,
+  SimulationExperimentFormat) and the packaging formats it executes
+  (packaging_formats, ModelPackagingFormat), "|"-separated, so that a model
+  description can be checked for consistency. SED-ML and COMBINE/OMEX support
+  is recorded for every tool that ships a BioSimulators image, which executes
+  SED-ML in COMBINE/OMEX archives through the BioSimulators interface even
+  where the tool itself does not read them. PEtab support follows the PEtab
+  project's own software support list (AMICI, pyPESTO, Data2Dynamics; COPASI
+  reaches PEtab only through a separate converter and is not marked).
   Where a tool is listed in the BioSimulators registry, its registry id is
   recorded as biosimulators_id and the frameworks and formats follow the
   registry entry (retrieved 2026-11-21); the registry is the authoritative
@@ -77,6 +85,8 @@ enums:
           roles: SIMULATOR|MODELING_ENVIRONMENT
           frameworks: ODE|STOCHASTIC_REACTION_NETWORK
           formats: SBML|ANTIMONY
+          experiment_formats: SED_ML
+          packaging_formats: COMBINE_OMEX
       LIBROADRUNNER:
         title: libRoadRunner
         description: High-performance SBML simulation engine for ODE and stochastic simulation.
@@ -96,6 +106,8 @@ enums:
           roles: SIMULATOR|ANALYSIS_TOOLKIT|PARAMETER_INFERENCE|MODELING_ENVIRONMENT
           frameworks: ODE|STOCHASTIC_REACTION_NETWORK|SDE|HYBRID
           formats: SBML
+          experiment_formats: SED_ML
+          packaging_formats: COMBINE_OMEX
       VCELL:
         title: Virtual Cell
         description: Environment for non-spatial and spatial, deterministic and stochastic cell models.
@@ -106,6 +118,8 @@ enums:
           roles: SIMULATOR|MODELING_ENVIRONMENT
           frameworks: ODE|PDE|PARTICLE_BASED_SPATIAL|HYBRID
           formats: SBML|VCML
+          experiment_formats: SED_ML
+          packaging_formats: COMBINE_OMEX
       AMICI:
         title: AMICI
         description: ODE simulation with forward and adjoint sensitivities, for parameter estimation workflows.
@@ -116,6 +130,8 @@ enums:
           roles: SIMULATOR
           frameworks: ODE
           formats: SBML
+          experiment_formats: PETAB|SED_ML
+          packaging_formats: COMBINE_OMEX
       GILLESPY2:
         title: GillesPy2
         description: Python package for stochastic and deterministic simulation of reaction networks.
@@ -126,6 +142,8 @@ enums:
           roles: SIMULATOR
           frameworks: ODE|STOCHASTIC_REACTION_NETWORK
           formats: SBML
+          experiment_formats: SED_ML
+          packaging_formats: COMBINE_OMEX
       BIONETGEN:
         title: BioNetGen
         description: Rule-based modeling with network generation, ODE and stochastic simulation.
@@ -136,6 +154,8 @@ enums:
           roles: SIMULATOR|MODELING_ENVIRONMENT
           frameworks: ODE|STOCHASTIC_REACTION_NETWORK
           formats: BNGL
+          experiment_formats: SED_ML
+          packaging_formats: COMBINE_OMEX
       PYSB:
         title: PySB
         description: Python framework for rule-based models, with export to BNGL, Kappa and SBML.
@@ -166,6 +186,8 @@ enums:
           roles: ANALYSIS_TOOLKIT
           frameworks: FLUX_BALANCE
           formats: SBML|COBRA_JSON|COBRA_MAT
+          experiment_formats: SED_ML
+          packaging_formats: COMBINE_OMEX
       COBRA_TOOLBOX:
         title: COBRA Toolbox
         description: MATLAB toolbox for constraint-based reconstruction and analysis.
@@ -196,6 +218,8 @@ enums:
           roles: MODELING_ENVIRONMENT|ANALYSIS_TOOLKIT|SIMULATOR
           frameworks: BOOLEAN_NETWORK|MULTI_VALUED_LOGICAL_NETWORK
           formats: GINML|SBML
+          experiment_formats: SED_ML
+          packaging_formats: COMBINE_OMEX
       BIOLQM:
         title: bioLQM
         description: Java toolkit for logical model formats and transformations used by GINsim.
@@ -215,6 +239,8 @@ enums:
           roles: SIMULATOR|ANALYSIS_TOOLKIT
           frameworks: BOOLEAN_NETWORK
           formats: BOOLNET|SBML
+          experiment_formats: SED_ML
+          packaging_formats: COMBINE_OMEX
       BIODIVINE_AEON:
         title: biodivine-aeon (AEON)
         description: Symbolic attractor and parameter analysis of asynchronous Boolean networks.
@@ -308,6 +334,8 @@ enums:
           roles: SIMULATOR
           frameworks: PARTICLE_BASED_SPATIAL
           formats: SMOLDYN
+          experiment_formats: SED_ML
+          packaging_formats: COMBINE_OMEX
       MCELL:
         title: MCell
         description: Monte Carlo simulator of molecules diffusing and reacting in realistic 3D geometry.
@@ -317,6 +345,7 @@ enums:
           biosimulators_id: mcell
           roles: SIMULATOR
           frameworks: PARTICLE_BASED_SPATIAL
+          formats: BNGL|GENERAL_PURPOSE_CODE
       MAUD:
         title: Maud
         description: >-
@@ -337,6 +366,7 @@ enums:
           roles: PARAMETER_INFERENCE
           frameworks: ODE
           formats: SBML
+          experiment_formats: PETAB
       DATA2DYNAMICS:
         title: Data2Dynamics
         description: MATLAB framework for parameter estimation and identifiability analysis of ODE models.
@@ -346,3 +376,4 @@ enums:
           roles: PARAMETER_INFERENCE
           frameworks: ODE
           formats: SBML|GENERAL_PURPOSE_CODE
+          experiment_formats: PETAB

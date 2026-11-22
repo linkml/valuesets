@@ -101,6 +101,8 @@ enums:
           for example to test whether a pathway description is complete.
       EDUCATION:
         description: To teach or illustrate a mechanism.
+      OTHER:
+        description: A purpose not covered by the other values
 
   ModelSubjectSpecificity:
     title: Model Subject Specificity
@@ -202,3 +204,5 @@ enums:
         description: Obtained by reducing, extracting from or approximating another model.
       COMPOSED_FROM_MODELS:
         description: Assembled by combining existing models.
+      OTHER:
+        description: A derivation not covered by the other values

@@ -11,7 +11,8 @@ annotation strings, which no schema validator checks:
   ``state_variable_type``, ...).
 * ``CommonSimulationAlgorithm`` records the frameworks an algorithm applies to
   (``framework``), and ``ModelingSoftware`` records each tool's ``roles``,
-  ``frameworks`` and ``formats``.
+  ``frameworks``, ``formats``, ``experiment_formats`` and
+  ``packaging_formats``.
 
 These tests check that every such annotation value is a permissible value of
 the enum it refers to, so renaming or removing a value cannot silently leave a
@@ -85,9 +86,14 @@ CHECKS = [
             "roles": "ModelingSoftwareRole",
             "frameworks": "ModelingFramework",
             "formats": "ModelEncodingFormat",
+            "experiment_formats": "SimulationExperimentFormat",
+            "packaging_formats": "ModelPackagingFormat",
         },
     ),
 ]
+
+# Annotation keys that are not references to another enum.
+NON_REFERENCE_KEYS = {"ModelingSoftware": {"biosimulators_id"}}
 
 
 @pytest.mark.parametrize(
@@ -110,9 +116,15 @@ def test_checks_can_fail():
 
 
 def test_mechanistic_dynamical_frameworks_declare_every_axis():
-    """A named mechanistic framework must say where it sits on every formalism axis."""
+    """A named mechanistic framework must say where it sits on every formalism axis.
+
+    HYBRID is exempt: it combines other frameworks, and each component is
+    described with its own framework, so it has no single position on the axes.
+    """
     missing = []
     for pv, pv_def in ENUMS["ModelingFramework"]["permissible_values"].items():
+        if pv == "HYBRID":
+            continue
         annotations = (pv_def or {}).get("annotations") or {}
         if not str(annotations.get("paradigm", "")).startswith("MECHANISTIC"):
             continue
@@ -129,3 +141,27 @@ def test_all_files_imported_by_main_schema():
     imports = set(main.get("imports") or [])
     for name in FILES:
         assert f"computational_modeling/{name.removesuffix('.yaml')}" in imports
+
+
+@pytest.mark.parametrize(
+    "enum_name,annotation_to_enum", CHECKS, ids=[c[0] for c in CHECKS]
+)
+def test_annotation_keys_are_known(enum_name, annotation_to_enum):
+    """A misspelt annotation key (e.g. ``framwork``) would escape every other check."""
+    allowed = set(annotation_to_enum) | NON_REFERENCE_KEYS.get(enum_name, set())
+    unknown = [
+        f"{pv}.{key}"
+        for pv, pv_def in ENUMS[enum_name]["permissible_values"].items()
+        for key in ((pv_def or {}).get("annotations") or {})
+        if key not in allowed
+    ]
+    assert not unknown, "unknown annotation keys:\n" + "\n".join(unknown)
+
+
+def test_every_software_entry_records_formats():
+    missing = [
+        pv
+        for pv, pv_def in ENUMS["ModelingSoftware"]["permissible_values"].items()
+        if "formats" not in ((pv_def or {}).get("annotations") or {})
+    ]
+    assert not missing, f"software without formats: {missing}"

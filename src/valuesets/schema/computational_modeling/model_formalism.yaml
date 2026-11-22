@@ -254,6 +254,8 @@ enums:
         description: Behavioural rules for individual agents and their interactions.
       LEARNED_FUNCTION:
         description: A function fitted to data, such as a regression model or neural network.
+      OTHER:
+        description: A specification style not covered by the other values
 
   ModelingFramework:
     title: Modeling Framework
@@ -491,7 +493,12 @@ enums:
           time_representation: DISCRETE_TIME
           stochasticity: DETERMINISTIC|STOCHASTIC
           spatial_representation: LATTICE
-          entity_resolution: INDIVIDUAL_AGENT
+          entity_resolution: POPULATION_AGGREGATE
+        comments:
+        - >-
+          A cellular automaton site holds a local state updated by a rule
+          shared by all sites, so it is a population-level variable at one
+          location rather than an agent with its own behavioural rules.
       STATISTICAL_MODEL:
         title: Statistical or machine-learning model
         description: >-
@@ -509,3 +516,5 @@ enums:
         meaning: SBO:0000681
         aliases:
         - hybrid framework
+        annotations:
+          paradigm: MECHANISTIC_DYNAMICAL|MECHANISTIC_CONSTRAINT_BASED

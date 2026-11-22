@@ -116,6 +116,8 @@ enums:
         description: >-
           A model written directly in a general-purpose programming language
           (Python, MATLAB, Julia, R, C++) without a model exchange format.
+      OTHER:
+        description: A model encoding format not covered by the other values
 
   SbmlPackage:
     title: SBML Package

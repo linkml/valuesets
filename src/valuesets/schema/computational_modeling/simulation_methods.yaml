@@ -73,6 +73,8 @@ enums:
         description: Derive a smaller model that preserves selected behaviour.
       MODEL_COMPARISON:
         description: Compare a model with another model or with a reference description.
+      OTHER:
+        description: An analysis task not covered by the other values
 
   SimulationAlgorithm:
     title: Simulation Algorithm
@@ -229,6 +231,7 @@ enums:
         meaning: KISAO:0000620
         aliases:
         - parsimonius flux balance analysis
+        - parsimonious flux balance analysis
         annotations:
           framework: FLUX_BALANCE
       FLUX_VARIABILITY_ANALYSIS:
