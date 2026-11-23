@@ -172,6 +172,8 @@ enums:
         title: PEtab
         description: Tabular format for specifying parameter estimation problems for kinetic models.
         meaning: EDAM:format_4015
+      OTHER:
+        description: A simulation experiment format not covered by the other values
 
   ModelPackagingFormat:
     title: Model Packaging Format
@@ -192,3 +194,5 @@ enums:
       RO_CRATE:
         title: RO-Crate
         description: Research Object Crate packaging of files with JSON-LD metadata.
+      OTHER:
+        description: A packaging format not covered by the other values

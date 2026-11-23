@@ -118,15 +118,15 @@ def test_checks_can_fail():
 def test_mechanistic_dynamical_frameworks_declare_every_axis():
     """A named mechanistic framework must say where it sits on every formalism axis.
 
-    HYBRID is exempt: it combines other frameworks, and each component is
-    described with its own framework, so it has no single position on the axes.
+    Composite frameworks such as HYBRID, whose paradigm lists several values,
+    are exempt: each component is described with its own framework, so the
+    composite has no single position on the axes.
     """
     missing = []
     for pv, pv_def in ENUMS["ModelingFramework"]["permissible_values"].items():
-        if pv == "HYBRID":
-            continue
         annotations = (pv_def or {}).get("annotations") or {}
-        if not str(annotations.get("paradigm", "")).startswith("MECHANISTIC"):
+        paradigms = [p.strip() for p in str(annotations.get("paradigm", "")).split("|") if p.strip()]
+        if len(paradigms) != 1 or not paradigms[0].startswith("MECHANISTIC"):
             continue
         for axis in FRAMEWORK_AXES:
             if axis not in annotations:

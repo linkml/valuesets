@@ -99,6 +99,11 @@ enums:
       COPASI:
         title: COPASI
         description: Environment for simulation and analysis of biochemical networks.
+        comments:
+        - >-
+          PEtab is not recorded: COPASI reaches PEtab problems only through
+          the separate python-petab-importer converter listed in the PEtab
+          project's software support documentation.
         see_also:
         - http://copasi.org/
         annotations:
