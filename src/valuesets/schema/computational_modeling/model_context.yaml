@@ -1,0 +1,208 @@
+name: valuesets-computational-modeling-model-context
+title: Computational Model Context Value Sets
+description: >-
+  Value sets describing what a computational model is about and how it was
+  made, independently of its mathematics: the biological scales it covers,
+  what it is for, whose biology it represents, how it is coupled to data, how
+  its parameters were obtained, and where its structure came from.
+
+
+  Labels such as "multiscale model", "digital twin" or "PBPK model" are
+  deliberately not values here. They are combinations: a multiscale model has
+  several ModelBiologicalScale values; a digital twin is INDIVIDUAL_SPECIFIC
+  with CONTINUOUSLY_ASSIMILATED data coupling; a PBPK model is an ODE model
+  (see ModelingFramework) at ORGANISM scale with a COMPARTMENTAL spatial
+  representation.
+id: https://w3id.org/valuesets/computational_modeling/model_context
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  valuesets: https://w3id.org/valuesets/
+  orcid: https://orcid.org/
+  valuesets_meta: https://w3id.org/valuesets/meta/
+default_prefix: valuesets
+slots:
+  model_biological_scale:
+    description: A biological scale represented by a computational model; multivalued for multiscale models
+    range: ModelBiologicalScale
+    multivalued: true
+  model_purpose:
+    description: What a computational model is built to do
+    range: ModelPurpose
+    multivalued: true
+  model_subject_specificity:
+    description: Whose biology a computational model represents
+    range: ModelSubjectSpecificity
+  model_data_coupling:
+    description: How a computational model is coupled to data from the system it represents
+    range: ModelDataCoupling
+  model_parameterization_status:
+    description: How the parameters of a computational model were obtained
+    range: ModelParameterizationStatus
+  model_derivation:
+    description: Where the structure of a computational model came from
+    range: ModelDerivation
+enums:
+  ModelBiologicalScale:
+    title: Model Biological Scale
+    description: >-
+      A level of biological organisation represented explicitly in a model.
+      A multiscale model takes several values.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      MOLECULAR:
+        description: Individual molecules, molecular structures, or molecular interactions.
+      SUBCELLULAR:
+        description: >-
+          Pathways, networks, organelles or compartments within a cell, such as
+          a signalling cascade or a metabolic network.
+      CELLULAR:
+        description: Whole cells and their behaviours (growth, division, death, migration).
+      TISSUE:
+        description: Multicellular tissues and their organisation.
+      ORGAN:
+        description: Organs or organ systems.
+      ORGANISM:
+        description: The whole organism, including whole-body physiology and pharmacokinetics.
+      POPULATION:
+        description: Populations of organisms, as in epidemiological or ecological models.
+
+  ModelPurpose:
+    title: Model Purpose
+    description: What a model is built to do.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      MECHANISTIC_EXPLANATION:
+        description: To explain how an observed behaviour arises from known mechanisms.
+      HYPOTHESIS_TESTING:
+        description: To test whether a hypothesised mechanism can produce an observed behaviour.
+      QUANTITATIVE_PREDICTION:
+        description: To predict quantitative outcomes of new conditions or perturbations.
+      DESIGN:
+        description: >-
+          To design an intervention, experiment, strain or circuit, as in
+          metabolic engineering or synthetic biology.
+      RISK_ASSESSMENT:
+        description: To estimate hazard, exposure or risk, as in toxicology and regulatory science.
+      KNOWLEDGE_INTEGRATION:
+        description: >-
+          To integrate curated knowledge into a consistent, checkable form,
+          for example to test whether a pathway description is complete.
+      EDUCATION:
+        description: To teach or illustrate a mechanism.
+      OTHER:
+        description: A purpose not covered by the other values
+
+  ModelSubjectSpecificity:
+    title: Model Subject Specificity
+    description: Whose biology a model represents.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      GENERIC:
+        description: A generic mechanism not tied to a particular organism, cell type or individual.
+      CONTEXT_SPECIFIC:
+        description: >-
+          A particular organism, strain, cell type or tissue, such as a
+          cell-type-specific metabolic model.
+      POPULATION_TYPICAL:
+        description: A typical or average member of a population.
+      VIRTUAL_POPULATION:
+        description: >-
+          A set of parameterisations representing the variability of a
+          population (a virtual cohort).
+      INDIVIDUAL_SPECIFIC:
+        description: A particular individual patient, organism or culture.
+
+  ModelDataCoupling:
+    title: Model Data Coupling
+    description: How a model is coupled to data from the system it represents over time.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      STATIC:
+        description: The model is built or calibrated once and then used without updating.
+      PERIODICALLY_RECALIBRATED:
+        description: The model is recalibrated against new data at intervals.
+      CONTINUOUSLY_ASSIMILATED:
+        description: >-
+          The model's state or parameters are updated as data from the
+          represented system arrive, as in a digital twin.
+
+  ModelParameterizationStatus:
+    title: Model Parameterization Status
+    description: How the parameters of a model were obtained.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      NOT_APPLICABLE:
+        description: The formalism has no numerical parameters, as in a Boolean network.
+      STRUCTURE_ONLY:
+        description: >-
+          The structure is specified but parameters are not, so only behaviour
+          that holds for any parameter values can be analysed.
+      SAMPLED_UNCALIBRATED:
+        description: >-
+          Parameters are sampled from broad ranges to study behaviour across
+          parameter space, without calibration to data.
+      LITERATURE_VALUES:
+        description: Parameters are taken from published measurements or earlier models.
+      FITTED_POINT_ESTIMATE:
+        description: Parameters are fitted to data as a single best estimate.
+      POSTERIOR_DISTRIBUTION:
+        description: >-
+          Parameters are represented as a probability distribution inferred
+          from data, as in Bayesian kinetic model inference.
+
+  ModelDerivation:
+    title: Model Derivation
+    description: Where the structure of a model came from.
+    status: DRAFT
+    contributors:
+    - orcid:0000-0002-6601-2165
+    - https://github.com/anthropics/claude-code
+    instantiates:
+    - valuesets_meta:ValueSetEnumDefinition
+    permissible_values:
+      HAND_AUTHORED:
+        description: Written by a modeller from the literature and expert knowledge.
+      GENERATED_FROM_KNOWLEDGE_BASE:
+        description: >-
+          Generated mechanically from a curated knowledge resource, such as a
+          pathway database, a signed-interaction resource, or a causal activity
+          model, by a fixed translation rule.
+      RECONSTRUCTED_FROM_GENOME:
+        description: >-
+          Reconstructed from genome annotation, as for draft genome-scale
+          metabolic models.
+      INFERRED_FROM_DATA:
+        description: Structure inferred from experimental data, as in network inference.
+      REDUCED_FROM_MODEL:
+        description: Obtained by reducing, extracting from or approximating another model.
+      COMPOSED_FROM_MODELS:
+        description: Assembled by combining existing models.
+      OTHER:
+        description: A derivation not covered by the other values

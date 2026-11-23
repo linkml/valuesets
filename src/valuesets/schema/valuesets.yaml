@@ -133,6 +133,11 @@ imports:
 - process_engineering/process_industries
 - process_engineering/thermodynamics
 - process_engineering/process_modeling
+- computational_modeling/model_formalism
+- computational_modeling/model_context
+- computational_modeling/model_formats
+- computational_modeling/simulation_methods
+- computational_modeling/modeling_software
 - chemistry/identifiers
 - business/currencies
 - units/measurements
